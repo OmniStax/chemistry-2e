@@ -2,32 +2,40 @@
  "id": "18.9",
  "module": "m68837",
  "chapter": "18",
- "title": "Occurrence, Preparation, and Compounds of Oxygen",
- "short": "Oxygen",
- "lead": "Oxygen, the most abundant element in the earth’s crust, is separated from liquid air and reacts with nearly every element. The section takes up <span data-concept=\"ozone\">ozone</span>, the <span data-concept=\"oxide\">oxides</span>, <span data-concept=\"peroxide\">peroxides</span>, <span data-concept=\"superoxide\">superoxides</span> and <span data-concept=\"hydroxide\">hydroxides</span> of the representative metals with the <span data-concept=\"chlor-alkali-process\">chlor-alkali process</span>, and the nonmetal oxides and the <span data-concept=\"oxyacid\">oxyacids</span> of nitrogen, phosphorus, sulfur and the halogens with their <span data-concept=\"salt\">salts</span>.",
+ "title": "氧的存在、制备与化合物",
+ "short": "氧",
+ "lead": "氧是地壳中含量最丰富的元素，从液态空气中分离得到，几乎能与所有元素反应。本节讨论<span data-concept=\"ozone\">臭氧</span>，主族金属的<span data-concept=\"oxide\">氧化物</span>、<span data-concept=\"peroxide\">过氧化物</span>、<span data-concept=\"superoxide\">超氧化物</span>和<span data-concept=\"hydroxide\">氢氧化物</span>，以及<span data-concept=\"chlor-alkali-process\">氯碱工艺</span>；还有氮、磷、硫和卤素的非金属氧化物和<span data-concept=\"oxyacid\">含氧酸</span>及其<span data-concept=\"salt\">盐</span>。",
  "objectives": [
-  "Describe the properties, preparation, and compounds of oxygen",
-  "Describe the preparation, properties, and uses of some representative metal oxides, peroxides, and hydroxides"
+  "描述氧的性质、制备和化合物",
+  "描述一些典型金属氧化物、过氧化物和氢氧化物的制备、性质和用途"
  ],
- "summary_html": "<p>Oxygen is one of the most reactive elements. This reactivity, coupled with its abundance, makes the chemistry of oxygen very rich and well understood.</p><p>Compounds of the representative metals with oxygen exist in three categories (1) <span data-concept=\"oxide\">oxides</span>, (2) <span data-concept=\"peroxide\">peroxides</span> and <span data-concept=\"superoxide\">superoxides</span>, and (3) <span data-concept=\"hydroxide\">hydroxides</span>. Heating the corresponding hydroxides, <span data-concept=\"nitrate\">nitrates</span>, or <span data-concept=\"carbonate\">carbonates</span> is the most common method for producing oxides. Heating the metal or metal oxide in oxygen may lead to the formation of peroxides and superoxides. The soluble oxides dissolve in water to form solutions of hydroxides. Most metals oxides are <span data-concept=\"base-anhydride\">base anhydrides</span> and react with <span data-concept=\"acid\">acids</span>. The hydroxides of the representative metals react with acids in <span data-concept=\"acid-base-reaction\">acid-base reactions</span> to form <span data-concept=\"salt\">salts</span> and water. The hydroxides have many commercial uses.</p><p>All nonmetals except fluorine form multiple oxides. Nearly all of the nonmetal oxides are <span data-concept=\"acid-anhydride\">acid anhydrides</span>. <span data-concept=\"oxyacid-structure-and-strength\">The acidity of oxyacids requires that the hydrogen atoms bond to the oxygen atoms in the molecule rather than to the other nonmetal atom</span>. Generally, the strength of the oxyacid increases with the number of oxygen atoms bonded to the nonmetal atom and not to a hydrogen.</p>",
- "notes": "The Link to Learning video of gold dissolving in aqua regia is left out, and the section keeps as printed “2HCL”, the unbalanced Na₂O(s) + H₂O(l) ⟶ NaOH(aq), “Tl₂O(s) + H₂O(aq)”, “peroxides ions”, the comma after “a bond order of 1½”, “tin(IV), SnO₂, and lead(IV), PbO₂”, “few second- and third-row transition metals”, “The process known as the chlor-alkali process, utilizes”, “Nitrogen pentaoxide”, “hydrogen phosphate ion, HPO₃²⁻” for hydrogen phosphite, the Δ over the arrow of 2H₂SO₃ + O₂, K<sub>a</sub> = 1.2 × 10⁻² for both HSO₄⁻ and the first step of H₂SO₃, “2+-oxidation state”, “7+-oxidation state”, the subscripted comma after H₂S, the summary’s “Most metals oxides” and the key’s “the oxygen electron”.",
+ "summary_html": "<p>氧是反应性最强的元素之一。这种反应性加上它的丰度，使氧的化学非常丰富，而且为人们所深入了解。</p><p>主族金属与氧形成的化合物分为三类：（1）<span data-concept=\"oxide\">氧化物</span>，（2）<span data-concept=\"peroxide\">过氧化物</span>和<span data-concept=\"superoxide\">超氧化物</span>，以及（3）<span data-concept=\"hydroxide\">氢氧化物</span>。加热相应的氢氧化物、<span data-concept=\"nitrate\">硝酸盐</span>或<span data-concept=\"carbonate\">碳酸盐</span>是制备氧化物最常用的方法。在氧中加热金属或金属氧化物，可能生成过氧化物和超氧化物。可溶性氧化物溶于水形成氢氧化物溶液。大多数金属氧化物是<span data-concept=\"base-anhydride\">碱酐</span>，能与<span data-concept=\"acid\">酸</span>反应。主族金属的氢氧化物与酸发生<span data-concept=\"acid-base-reaction\">酸碱反应</span>，生成<span data-concept=\"salt\">盐</span>和水。氢氧化物有许多商业用途。</p><p>除氟之外，所有非金属都形成多种氧化物。几乎所有非金属氧化物都是<span data-concept=\"acid-anhydride\">酸酐</span>。<span data-concept=\"oxyacid-structure-and-strength\">含氧酸的酸性要求氢原子与分子中的氧原子键合，而不是与另一个非金属原子键合</span>。一般来说，含氧酸的强度随着与非金属原子键合、而不与氢键合的氧原子数目的增加而增强。</p>",
+ "notes": "关于金溶于王水的“学习链接”视频已省略。本节保留了原书印刷的“2HCL”、未配平的 Na₂O(s) + H₂O(l) ⟶ NaOH(aq)、“Tl₂O(s) + H₂O(aq)”、“peroxides ions”、“a bond order of 1½”之后的逗号、“tin(IV), SnO₂, and lead(IV), PbO₂”、“few second- and third-row transition metals”、“The process known as the chlor-alkali process, utilizes”、“Nitrogen pentaoxide”、把亚磷酸氢根称作“hydrogen phosphate ion, HPO₃²⁻”、HSO₄⁻ 和 H₂SO₃ 第一步电离均为 K<sub>a</sub> = 1.2 × 10⁻²、“2+-oxidation state”、“7+-oxidation state”、H₂S 之后下标处的逗号、摘要中的“Most metals oxides”以及答案中的“the oxygen electron”。",
  "ai": {
   "text": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-10-05",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key. The unkeyed exercises fs-idp152584704, fs-idm11343008, fs-idm41302384 and fs-idm53754112 (equations to write) and fs-idm95780080 (the volume of sulfuric acid that neutralizes a mass of calcium carbonate) are left out, and no answer is computed for them. Nothing is moved.",
+ "exercise_notes": "Bloom 层级和概念标签由 AI 生成。答案取自原书的答案册。没有答案的习题 fs-idp152584704、fs-idm11343008、fs-idm41302384 和 fs-idm53754112（写方程式）以及 fs-idm95780080（中和一定质量碳酸钙所需硫酸的体积）已省略，也没有为它们计算答案。未作任何移动。",
  "figures": [
   {
    "id": "fig-ozone",
@@ -39,6 +47,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -52,6 +65,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -65,6 +83,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -78,6 +101,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -91,6 +119,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -104,6 +137,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -117,6 +155,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -130,6 +173,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -143,6 +191,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -156,6 +209,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -169,6 +227,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -182,6 +245,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -195,6 +263,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -211,7 +284,7 @@
     "/media/ch18/CNX_Chem_18_09_ClO3Ion.jpg",
     "/media/ch18/CNX_Chem_18_09_PerchloIon.jpg"
    ],
-   "original_caption": "(Figure 18.55) Chlorite ions, ClO₂⁻, are produced when chlorous acid reacts with bases. (Figure 18.56) Chlorate ions, ClO₃⁻, are produced when halic acids react with bases. (Figure 18.57) Perchlorate ions, ClO₄⁻, can be produced when perchloric acid reacts with a base or by electrolysis of hot solutions of their chlorides.",
+   "original_caption": "（Figure 18.55）亚氯酸与碱反应时生成亚氯酸根离子 ClO₂⁻。（Figure 18.56）卤酸与碱反应时生成氯酸根离子 ClO₃⁻。（Figure 18.57）高氯酸与碱反应，或电解其氯化物的热溶液时，可以生成高氯酸根离子 ClO₄⁻。",
    "draws": [
     "equilibrium-constant"
    ],
@@ -224,6 +297,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   }
@@ -842,7 +920,7 @@
     "at": "end"
    },
    "cite": "oxides",
-   "prompt": "Predict the product of burning francium in air.",
+   "prompt": "预测钫在空气中燃烧的产物。",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -859,7 +937,7 @@
     "at": "end"
    },
    "cite": "oxides",
-   "prompt": "Write balanced chemical equations for the following reactions:<br>(a) zinc metal heated in a stream of oxygen gas<br>(b) zinc carbonate heated until loss of mass stops<br>(c) zinc carbonate added to a solution of acetic acid, CH<sub>3</sub>CO<sub>2</sub>H<br>(d) zinc added to a solution of hydrobromic acid",
+   "prompt": "写出下列反应的配平化学方程式：<br>（a）锌金属在氧气流中加热<br>（b）加热碳酸锌直到质量不再减少<br>（c）将碳酸锌加入乙酸 CH<sub>3</sub>CO<sub>2</sub>H 溶液中<br>（d）将锌加入氢溴酸溶液中",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -876,7 +954,7 @@
     "at": "end"
    },
    "cite": "oxides",
-   "prompt": "Illustrate the amphoteric nature of aluminum hydroxide by citing suitable equations.",
+   "prompt": "引用适当的方程式，说明氢氧化铝的两性。",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -893,7 +971,7 @@
     "at": "end"
    },
    "cite": "oxides",
-   "prompt": "Write balanced chemical equations for the following reactions:<br>(a) sodium oxide added to water<br>(b) cesium carbonate added to an excess of an aqueous solution of HF<br>(c) aluminum oxide added to an aqueous solution of HClO<sub>4</sub><br>(d) a solution of sodium carbonate added to solution of barium nitrate<br>(e) titanium metal produced from the reaction of titanium tetrachloride with elemental sodium",
+   "prompt": "写出下列反应的配平化学方程式：<br>（a）将氧化钠加入水中<br>（b）将碳酸铯加入过量的 HF 水溶液中<br>（c）将氧化铝加入 HClO<sub>4</sub> 水溶液中<br>（d）将碳酸钠溶液加入硝酸钡溶液中<br>（e）四氯化钛与单质钠反应生成钛金属",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -910,11 +988,11 @@
     "at": "end"
    },
    "cite": "halogen-oxyacids",
-   "prompt": "Which is the stronger acid, HClO<sub>4</sub> or HBrO<sub>4</sub>? Why?",
+   "prompt": "HClO<sub>4</sub> 和 HBrO<sub>4</sub> 哪个酸性更强？为什么？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "HClO<sub>4</sub> is the stronger acid because, in a series of oxyacids with similar formulas, the higher the electronegativity of the central atom, the stronger is the attraction of the central atom for the electrons of the oxygen(s). The stronger attraction of the oxygen electron results in a stronger attraction of oxygen for the electrons in the O-H bond, making the hydrogen more easily released. The weaker this bond, the stronger the acid."
+    "solution": "HClO<sub>4</sub> 的酸性更强，因为在一系列分子式相似的含氧酸中，中心原子的电负性越高，中心原子对氧的电子的吸引就越强。对氧的电子的吸引更强，使氧对 O-H 键中电子的吸引更强，氢就更容易释放。这个键越弱，酸性越强。"
    }
   },
   {
@@ -927,11 +1005,11 @@
     "at": "end"
    },
    "cite": "sulfur-oxyacids",
-   "prompt": "Which is the stronger acid, H<sub>2</sub>SO<sub>4</sub> or H<sub>2</sub>SeO<sub>4</sub>? Why? You may wish to review the chapter on acid-base equilibria.",
+   "prompt": "H<sub>2</sub>SO<sub>4</sub> 和 H<sub>2</sub>SeO<sub>4</sub> 哪个酸性更强？为什么？你可以复习一下关于酸碱平衡的章节。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "As H<sub>2</sub>SO<sub>4</sub> and H<sub>2</sub>SeO<sub>4</sub> are both oxyacids and their central atoms both have the same oxidation number, the acid strength depends on the relative electronegativity of the central atom. As sulfur is more electronegative than selenium, H<sub>2</sub>SO<sub>4</sub> is the stronger acid."
+    "solution": "由于 H<sub>2</sub>SO<sub>4</sub> 和 H<sub>2</sub>SeO<sub>4</sub> 都是含氧酸，而且它们的中心原子具有相同的氧化数，酸的强度取决于中心原子的相对电负性。硫的电负性大于硒，所以 H<sub>2</sub>SO<sub>4</sub> 的酸性更强。"
    }
   }
  ],
@@ -1009,12 +1087,12 @@
   {
    "id": "c-na2o-balance",
    "kind": "correction",
-   "html": "The book’s equation is not balanced. One Na<sub>2</sub>O gives two NaOH: Na<sub>2</sub>O(<em>s</em>) + H<sub>2</sub>O(<em>l</em>) ⟶ 2NaOH(<em>aq</em>)."
+   "html": "书中的方程式没有配平。一个 Na<sub>2</sub>O 生成两个 NaOH：Na<sub>2</sub>O(<em>s</em>) + H<sub>2</sub>O(<em>l</em>) ⟶ 2NaOH(<em>aq</em>)。"
   },
   {
    "id": "c-hydrogen-phosphite",
    "kind": "correction",
-   "html": "The book names HPO<sub>3</sub><sup>2−</sup> the hydrogen phosphate ion. Formed from phosphorous acid, H<sub>3</sub>PO<sub>3</sub>, it is the hydrogen phosphite ion; hydrogen phosphate is HPO<sub>4</sub><sup>2−</sup>."
+   "html": "书中把 HPO<sub>3</sub><sup>2−</sup> 称为磷酸氢根离子。它由亚磷酸 H<sub>3</sub>PO<sub>3</sub> 形成，应是亚磷酸氢根离子；磷酸氢根是 HPO<sub>4</sub><sup>2−</sup>。"
   }
  ]
 }

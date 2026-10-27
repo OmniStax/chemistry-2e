@@ -32,14 +32,14 @@ const frac = (pct) => String(+(pct / 100).toFixed(4));
 ===================================================================== */
 (function () {
   const d = sim('sim-atom-symbol', 600);
-  const NAMES = ['hydrogen', 'helium', 'lithium', 'beryllium', 'boron', 'carbon', 'nitrogen', 'oxygen', 'fluorine', 'neon', 'sodium', 'magnesium'];
+  const NAMES = ['氢', '氦', '锂', '铍', '硼', '碳', '氮', '氧', '氟', '氖', '钠', '镁'];
   const SYMS = ['H', 'He', 'Li', 'Be', 'B', 'C', 'N', 'O', 'F', 'Ne', 'Na', 'Mg'];
   /* the stable isotopes of hydrogen to magnesium, by mass number */
   const STABLE = [[1, 2], [3, 4], [6, 7], [9], [10, 11], [12, 13], [14, 15], [16, 17, 18], [19], [20, 21, 22], [23], [24, 25, 26]];
-  const P = ctl(d.controls, { label: '\\text{protons}', cls: '', min: 1, max: 12, step: 1, value: 2, unit: '', dec: 0, aria: 'number of protons' });
-  const N = ctl(d.controls, { label: '\\text{neutrons}', cls: '', min: 0, max: 14, step: 1, value: 2, unit: '', dec: 0, aria: 'number of neutrons' });
-  const E = ctl(d.controls, { label: '\\text{electrons}', cls: '', min: 0, max: 14, step: 1, value: 0, unit: '', dec: 0, aria: 'number of electrons',
-    specials: [{ at: () => P.v, label: 'neutral' }] });
+  const P = ctl(d.controls, { label: '\\text{质子}', cls: '', min: 1, max: 12, step: 1, value: 2, unit: '', dec: 0, aria: '质子数' });
+  const N = ctl(d.controls, { label: '\\text{中子}', cls: '', min: 0, max: 14, step: 1, value: 2, unit: '', dec: 0, aria: '中子数' });
+  const E = ctl(d.controls, { label: '\\text{电子}', cls: '', min: 0, max: 14, step: 1, value: 0, unit: '', dec: 0, aria: '电子数',
+    specials: [{ at: () => P.v, label: '中性' }] });
   let hits = [];
   F.hover(d.stage, () => hits);
   let last = '';
@@ -60,7 +60,7 @@ const frac = (pct) => String(+(pct / 100).toFixed(4));
       const s = spots[k];
       disc(ctx, s.x, s.y, r, F.el(s.isP ? 'p+' : 'n0'));
       if (s.isP) sign(ctx, s.x, s.y, r, true);
-      hits.push({ x: s.x, y: s.y, r, name: s.isP ? 'proton' : 'neutron' });
+      hits.push({ x: s.x, y: s.y, r, name: s.isP ? '质子' : '中子' });
     }
     /* the electrons, evenly round a dashed ring */
     const R = 200;
@@ -71,11 +71,11 @@ const frac = (pct) => String(+(pct / 100).toFixed(4));
       const x = cx + R * Math.cos(a), y = cy + R * Math.sin(a);
       disc(ctx, x, y, 10, F.el('e-'));
       sign(ctx, x, y, 10, false);
-      hits.push({ x, y, r: 12, name: 'electron' });
+      hits.push({ x, y, r: 12, name: '电子' });
     }
     /* the legend, one representative of each kind */
     const ly = 568;
-    [['p+', 'proton', true], ['n0', 'neutron', null], ['e-', 'electron', false]].forEach(([k, s, pl], i) => {
+    [['p+', '质子', true], ['n0', '中子', null], ['e-', '电子', false]].forEach(([k, s, pl], i) => {
       const x = 90 + i * 170, rr = k === 'e-' ? 10 : r;
       disc(ctx, x, ly, rr, F.el(k));
       if (pl !== null) sign(ctx, x, ly, rr, pl);
@@ -93,22 +93,22 @@ const frac = (pct) => String(+(pct / 100).toFixed(4));
     const aw = F.measure(ctx, String(A), { size: 56, weight: 600 });
     const zw = F.measure(ctx, String(p), { size: 56, weight: 600 });
     line(ctx, left - aw - 12, up, 730, up - 40, alpha(PAL.ink, 0.4), 2);
-    text(ctx, 'mass number', 720, up - 40, PAL.ink, { size: 20, align: 'right' });
+    text(ctx, '质量数', 720, up - 40, PAL.ink, { size: 20, align: 'right' });
     line(ctx, left - zw - 12, down, 730, down + 40, alpha(PAL.ink, 0.4), 2);
-    text(ctx, 'atomic number', 720, down + 40, PAL.ink, { size: 20, align: 'right' });
-    text(ctx, '(often omitted)', 720, down + 64, PAL.muted, { size: 17, align: 'right' });
+    text(ctx, '原子序数', 720, down + 40, PAL.ink, { size: 20, align: 'right' });
+    text(ctx, '（常省略）', 720, down + 64, PAL.muted, { size: 17, align: 'right' });
     const cw = q !== 0 ? F.measure(ctx, chargeSup(q), { size: 56, weight: 600 }) : 0;
     line(ctx, right + cw + 10, up, 1250, up - 40, alpha(PAL.ink, 0.4), 2);
-    text(ctx, q === 0 ? 'charge (none)' : 'charge', 1260, up - 40, q === 0 ? PAL.muted : C('charge'), { size: 20 });
+    text(ctx, q === 0 ? '电荷（无）' : '电荷', 1260, up - 40, q === 0 ? PAL.muted : C('charge'), { size: 20 });
     /* what the atom is */
-    const kind = q === 0 ? 'neutral atom' : q > 0 ? 'cation' : 'anion';
-    text(ctx, name + '-' + A + ' (' + sym + '-' + A + ')', sx, 440, PAL.ink, { size: 24, weight: 600, align: 'center' });
-    text(ctx, kind + ', ' + (stable ? 'a stable isotope' : 'an unstable isotope'), sx, 476, PAL.muted, { size: 20, align: 'center' });
+    const kind = q === 0 ? '中性原子' : q > 0 ? '阳离子' : '阴离子';
+    text(ctx, name + '-' + A + '（' + sym + '-' + A + '）', sx, 440, PAL.ink, { size: 24, weight: 600, align: 'center' });
+    text(ctx, kind + '，' + (stable ? '稳定同位素' : '不稳定同位素'), sx, 476, PAL.muted, { size: 20, align: 'center' });
     headline(ctx, q === 0
-      ? `A neutral atom of ${name}-${A} has ${p} protons, ${n} neutrons, and ${e} electrons.`
-      : `An ion of ${name}-${A} with ${p} protons and ${e} electrons has a charge of ${chargeWord(q)}.`);
-    const s = `\\text{atomic charge} = \\text{protons} - \\text{electrons} = ${p} - ${e} = \\htmlClass{kv-charge}{${chargeWord(q)}}`;
-    const small = `A = Z + number of neutrons = ${p} + ${n} = ${A}. ${q === 0 ? 'The atom is neutral because its protons and electrons are equal in number.' : q > 0 ? 'The atom has lost electrons, so it is a cation.' : 'The atom has gained electrons, so it is an anion.'}`;
+      ? `中性的${name}-${A} 原子有 ${p} 个质子、${n} 个中子和 ${e} 个电子。`
+      : `有 ${p} 个质子和 ${e} 个电子的${name}-${A} 离子，电荷为 ${chargeWord(q)}。`);
+    const s = `\\text{原子电荷} = \\text{质子数} - \\text{电子数} = ${p} - ${e} = \\htmlClass{kv-charge}{${chargeWord(q)}}`;
+    const small = `A = Z + 中子数 = ${p} + ${n} = ${A}。${q === 0 ? '原子呈电中性，因为质子数与电子数相等。' : q > 0 ? '原子失去了电子，所以它是阳离子。' : '原子得到了电子，所以它是阴离子。'}`;
     if (s + small !== last) { last = s + small; readout(d.readout, s, small); }
   }
   register(d.fig, { update: () => {}, draw });
@@ -132,15 +132,16 @@ const frac = (pct) => String(+(pct / 100).toFixed(4));
   };
   /* each mass also kept as the book prints it, trailing zeros included */
   Object.values(ELEMENTS).forEach((e) => e.iso.forEach((s) => { s.ms = s.m.toFixed(Math.max(4, (String(s.m).split('.')[1] || '').length)); }));
+  const ZH = { boron: '硼', neon: '氖', chlorine: '氯', lithium: '锂' };
   const cur = () => ELEMENTS[pick.value];
   const lab = (el, i) => `{}^{${el.iso[i].A}}\\text{${el.sym}}\\ (\\%)`;
-  const pick = F.select(d.controls, { label: 'element', aria: 'element', value: 'boron',
-    options: Object.keys(ELEMENTS).map((k) => ({ value: k, label: k })), onInput: () => setup() });
-  const S1 = ctl(d.controls, { label: lab(ELEMENTS.boron, 0), cls: '', min: 0, max: 100, step: 0.01, value: 19.9, unit: '%', dec: 2, aria: 'percent of the first isotope',
-    specials: [{ at: () => cur().iso[0].nat, label: 'nature' }],
+  const pick = F.select(d.controls, { label: '元素', aria: '元素', value: 'boron',
+    options: Object.keys(ELEMENTS).map((k) => ({ value: k, label: ZH[k] })), onInput: () => setup() });
+  const S1 = ctl(d.controls, { label: lab(ELEMENTS.boron, 0), cls: '', min: 0, max: 100, step: 0.01, value: 19.9, unit: '%', dec: 2, aria: '第一种同位素的百分数',
+    specials: [{ at: () => cur().iso[0].nat, label: '天然' }],
     onInput: () => { if (cur().iso.length === 3 && S1.v + S2.v > 100) S2.set(100 - S1.v); } });
-  const S2 = ctl(d.controls, { label: lab(ELEMENTS.neon, 1), cls: '', min: 0, max: 10, step: 0.01, value: 0.47, unit: '%', dec: 2, aria: 'percent of the second isotope',
-    specials: [{ at: () => (cur().iso.length === 3 ? cur().iso[1].nat : null), label: 'nature' }],
+  const S2 = ctl(d.controls, { label: lab(ELEMENTS.neon, 1), cls: '', min: 0, max: 10, step: 0.01, value: 0.47, unit: '%', dec: 2, aria: '第二种同位素的百分数',
+    specials: [{ at: () => (cur().iso.length === 3 ? cur().iso[1].nat : null), label: '天然' }],
     onInput: () => { if (S1.v + S2.v > 100) S1.set(100 - S2.v); } });
   S2.show(false, { ms: 0 });
   function setup() {
@@ -161,7 +162,7 @@ const frac = (pct) => String(+(pct / 100).toFixed(4));
     /* the mass axis spans half a mass unit either side of the isotopes; abundance 0 to 120 %, headroom for a bar's label at 100 % */
     const box = { l: 170, r: 1250, t: 120, b: 400 };
     const { X, Y } = F.axes(ctx, box, [lo, hi], [0, 120], { nx: Math.round((hi - lo) * 2), ny: 4, fx: (v) => fmt(v, 1),
-      xl: 'isotopic mass (amu)', xc: C('mass'), yl: 'abundance (%)' });
+      xl: '同位素质量（amu）', xc: C('mass'), yl: '丰度（%）' });
     e.iso.forEach((s, i) => {
       const x = X(s.m), y = Y(pct[i]);
       const col = s.ref ? F.ref(s.ref) : F.cat(i);
@@ -173,15 +174,15 @@ const frac = (pct) => String(+(pct / 100).toFixed(4));
     line(ctx, xa, Y(Math.max(...pct)), xa, box.b, C('mass'), 3, [10, 10]);
     ctx.save(); ctx.beginPath(); ctx.moveTo(xa, box.b + 2); ctx.lineTo(xa - 11, box.b + 15); ctx.lineTo(xa + 11, box.b + 15); ctx.closePath();
     ctx.fillStyle = C('mass'); ctx.fill(); ctx.restore();
-    text(ctx, `average ${fmt(avg, 2)} amu`, xa, box.b + 90, C('mass'), { size: 22, weight: 600, align: 'center', bg: alpha(PAL.panel, 0.9) });
-    const name = pick.value;
+    text(ctx, `平均 ${fmt(avg, 2)} amu`, xa, box.b + 90, C('mass'), { size: 22, weight: 600, align: 'center', bg: alpha(PAL.panel, 0.9) });
+    const name = ZH[pick.value];
     const only = e.iso.find((s, i) => pct[i] >= 99.995);
-    headline(ctx, only ? `Every atom in this mix is ${name}-${only.A}, so the average mass is its own, ${fmt(avg, 2)} amu.`
-      : `The average mass of ${name} in this mix is ${fmt(avg, 2)} amu, though no single atom of ${name} has that mass.`);
+    headline(ctx, only ? `这个混合物中的每个原子都是${name}-${only.A}，所以平均质量就是它自己的质量，${fmt(avg, 2)} amu。`
+      : `这个混合物中${name}的平均质量为 ${fmt(avg, 2)} amu，尽管没有哪个${name}原子具有这个质量。`);
     const terms = e.iso.map((s, i) => `(${frac(pct[i])} \\times \\htmlClass{kv-mass}{${s.ms}\\ \\text{amu}})`).join(' + ');
     const sums = prod.map((v) => `\\htmlClass{kv-mass}{${fmt(v, 2)}\\ \\text{amu}}`).join(' + ');
-    const t = `\\text{average mass} = ${terms} = ${sums} = \\htmlClass{kv-mass}{${fmt(avg, 2)}\\ \\text{amu}}`;
-    const small = n === 3 ? `The percent of ${e.sym}-${e.iso[2].A} is what the other two leave, ${fmt(pct[2], 2)} %.` : `The percent of ${e.sym}-${e.iso[1].A} is what the first leaves, ${fmt(pct[1], 2)} %.`;
+    const t = `\\text{平均质量} = ${terms} = ${sums} = \\htmlClass{kv-mass}{${fmt(avg, 2)}\\ \\text{amu}}`;
+    const small = n === 3 ? `${e.sym}-${e.iso[2].A} 的百分数等于另外两种剩下的部分，${fmt(pct[2], 2)} %。` : `${e.sym}-${e.iso[1].A} 的百分数等于第一种剩下的部分，${fmt(pct[1], 2)} %。`;
     if (t + small !== last) { last = t + small; readout(d.readout, t, small); }
   }
   register(d.fig, { update: () => {}, draw });
@@ -204,8 +205,9 @@ const frac = (pct) => String(+(pct / 100).toFixed(4));
     neon: { sym: 'Ne', iso: [{ A: 20, m: 19.9924, nat: 90.48 }, { A: 21, m: 20.9938, nat: 0.27 }, { A: 22, m: 21.9914, nat: 9.25 }] },
     chlorine: { sym: 'Cl', iso: [{ A: 35, m: 34.96885, nat: 75.76 }, { A: 37, m: 36.96590, nat: 24.24 }] },
   };
-  const pick = F.choice(d.controls, { label: 'element', aria: 'element', value: 'zirconium',
-    options: Object.keys(ELEMENTS).map((k) => ({ value: k, label: k })), onInput: () => cy.reset() });
+  const ZH = { zirconium: '锆', boron: '硼', neon: '氖', chlorine: '氯' };
+  const pick = F.choice(d.controls, { label: '元素', aria: '元素', value: 'zirconium',
+    options: Object.keys(ELEMENTS).map((k) => ({ value: k, label: ZH[k] })), onInput: () => cy.reset() });
   const T = 5, SPREAD = 6;                       /* one cycle of 5 s; path spread drawn six times its true size */
   const cy = cycle(() => T, 1.2);
   const Y0 = 230, XS = 150, XA = 470, XB = 610, R0 = 200, V0 = 700;
@@ -266,32 +268,32 @@ const frac = (pct) => String(+(pct / 100).toFixed(4));
       }
     });
     /* the frame labels */
-    text(ctx, 'sample', 40, Y0 - 76, csam, { size: 18, weight: 600 });
+    text(ctx, '样品', 40, Y0 - 76, csam, { size: 18, weight: 600 });
     line(ctx, 64, Y0 - 62, 64, Y0 - 44, alpha(csam, 0.6), 2);
-    text(ctx, 'heater', 150, Y0 - 76, PAL.ink, { size: 18 });
+    text(ctx, '加热器', 150, Y0 - 76, PAL.ink, { size: 18 });
     line(ctx, 140, Y0 - 62, 120, Y0 - 36, alpha(PAL.ink, 0.4), 2);
-    text(ctx, 'electron beam', 128, Y0 + 116, PAL.ink, { size: 18 });
-    text(ctx, 'accelerating plates', 290, Y0 + 70, PAL.ink, { size: 18, align: 'center' });
-    text(ctx, 'magnetic field', (XA + XB) / 2, Y0 - 90, cfld, { size: 18, weight: 600, align: 'center' });
+    text(ctx, '电子束', 128, Y0 + 116, PAL.ink, { size: 18 });
+    text(ctx, '加速极板', 290, Y0 + 70, PAL.ink, { size: 18, align: 'center' });
+    text(ctx, '磁场', (XA + XB) / 2, Y0 - 90, cfld, { size: 18, weight: 600, align: 'center' });
     const [dx, dy] = [DET.x + (c0 + half) * px, DET.y + (c0 + half) * py];
-    text(ctx, 'detector', dx - 20, dy + 26, PAL.ink, { size: 18, align: 'right' });
+    text(ctx, '探测器', dx - 20, dy + 26, PAL.ink, { size: 18, align: 'right' });
     /* the spectrum: relative abundance 0 to 100 % against mass-to-charge ratio, a unit either side of the isotopes */
     const lo = e.iso[0].A - 1, hi = e.iso[e.iso.length - 1].A + 1, wide = hi - lo > 4;
     const box = { l: 960, r: 1360, t: 150, b: 440 };
     const { X, Y } = F.axes(ctx, box, [lo, hi], [0, 100], { nx: hi - lo, ny: 4, fx: (v) => (!wide || (v - lo) % 2 === 1 ? fmt(v, 0) : ''),
-      xl: 'mass-to-charge ratio', yl: 'relative abundance (%)' });
+      xl: '质荷比', yl: '相对丰度（%）' });
     e.iso.forEach((s, i) => {
       const travel = paths[i].L / paths[i].v, k = Math.max(0, Math.min(1, (t - travel) / (T - travel)));
       const h = s.nat * k, x = X(s.A);
       ctx.save(); ctx.fillStyle = F.cat(i); ctx.fillRect(x - 9, Y(h), 18, box.b - Y(h)); ctx.restore();
       if (k > 0) text(ctx, `${e.sym}-${s.A}`, x, Y(h) - 16 - (wide && i % 2 ? 24 : 0), PAL.ink, { size: 17, align: 'center' });
     });
-    text(ctx, `Path spread drawn ${SPREAD}× its true size.`, box.l, box.b + 90, PAL.muted, { size: 16 });
-    headline(ctx, `Ions of ${e.iso.map((s) => e.sym + '-' + s.A).join(', ')} are bent by the field, the lightest most, and sorted into peaks.`);
+    text(ctx, `路径的散布按其真实大小的 ${SPREAD} 倍绘制。`, box.l, box.b + 90, PAL.muted, { size: 16 });
+    headline(ctx, `${e.iso.map((s) => e.sym + '-' + s.A).join('、')} 的离子被磁场偏转，最轻的偏转得最厉害，并被分选成各个峰。`);
     const prod = e.iso.map((s) => +((s.nat / 100) * s.m).toFixed(2));
     const avg = prod.reduce((a, b) => a + b, 0);
-    const str = `\\text{average mass} = (${prod.map((v) => fmt(v, 2)).join(' + ')})\\ \\text{amu} = \\htmlClass{kv-mass}{${fmt(avg, 2)}\\ \\text{amu}}`;
-    if (str !== last) { last = str; readout(d.readout, str, 'Each term is an isotope’s fractional abundance, the height of its peak, times its isotopic mass.'); }
+    const str = `\\text{平均质量} = (${prod.map((v) => fmt(v, 2)).join(' + ')})\\ \\text{amu} = \\htmlClass{kv-mass}{${fmt(avg, 2)}\\ \\text{amu}}`;
+    if (str !== last) { last = str; readout(d.readout, str, '每一项都是一种同位素的丰度分数（即其峰的高度）乘以它的同位素质量。'); }
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();

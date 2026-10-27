@@ -20,14 +20,14 @@ const clamp = (x) => Math.max(0, Math.min(1, x));
     { name: 'C–N', bonds: [['C–N', 1.43, 290], ['C=N', 1.38, 615], ['C≡N', 1.16, 891]] },
     { name: 'C–O', bonds: [['C–O', 1.43, 350], ['C=O', 1.23, 741], ['C≡O', 1.13, 1080]] },
   ];
-  const ORDER = ['single', 'double', 'triple'];
+  const ORDER = ['单键', '双键', '三键'];
   /* fixed axes: 1.0 to 1.6 Å holds every length of the table, 0 to 1200 kJ/mol every energy */
   const box = { l: 170, r: 1060, t: 150, b: 490 };
   let hits = []; F.hover(d.stage, () => hits);
   function draw() {
     const { ctx } = begin(d.c);
     const cE = C('energy');
-    const { X, Y } = axes(ctx, box, [1.0, 1.6], [0, 1200], { nx: 6, ny: 6, xl: 'bond length (Å)', xc: C('length'), yl: 'bond energy (kJ/mol)', yc: cE, fx: (v) => fmt(v, 1) });
+    const { X, Y } = axes(ctx, box, [1.0, 1.6], [0, 1200], { nx: 6, ny: 6, xl: '键长（Å）', xc: C('length'), yl: '键能（kJ/mol）', yc: cE, fx: (v) => fmt(v, 1) });
     hits = [];
     PAIRS.forEach((p, i) => {
       const col = F.cat(i);
@@ -37,15 +37,15 @@ const clamp = (x) => Math.max(0, Math.min(1, x));
       }
       p.bonds.forEach(([n, x, y], k) => {
         dot(ctx, X(x), Y(y), col, true, 10);
-        hits.push({ x: X(x), y: Y(y), r: 16, name: `${n}, a ${ORDER[k]} bond: ${fmt(x, 2)} Å and ${y} kJ/mol` });
+        hits.push({ x: X(x), y: Y(y), r: 16, name: `${n}，${ORDER[k]}：${fmt(x, 2)} Å 和 ${y} kJ/mol` });
       });
       /* the legend beside the graph, one entry per pair of atoms */
       const ly = 170 + i * 46;
       dot(ctx, 1130, ly, col, true, 10);
-      text(ctx, `${p.name} bonds`, 1152, ly, PAL.ink, { size: 22, base: 'middle' });
+      text(ctx, `${p.name} 键`, 1152, ly, PAL.ink, { size: 22, base: 'middle' });
     });
-    headline(ctx, 'Between the same two atoms, the triple bond is the shortest and the strongest, and the single bond the longest and the weakest.');
-    F.tex(d.readout, '\\text{C–C}: \\kDbond = 345,\\ 611,\\ 837\\ \\text{kJ/mol at } 1.54,\\ 1.34,\\ 1.20\\ \\text{Å}');
+    headline(ctx, '在同样的两个原子之间，三键最短也最强，单键最长也最弱。');
+    F.tex(d.readout, '\\text{C–C}: \\kDbond = 345,\\ 611,\\ 837\\ \\text{kJ/mol，对应键长 } 1.54,\\ 1.34,\\ 1.20\\ \\text{Å}');
   }
   still(d, draw);
 })();
@@ -66,7 +66,7 @@ const clamp = (x) => Math.max(0, Math.min(1, x));
       broken: [['C≡O', 1080], ['H–H', 436], ['H–H', 436]], formed: [['C–H', 415], ['C–H', 415], ['C–H', 415], ['C–O', 350], ['O–H', 464]],
       sb: '1080 + 2(436)', sf: '3(415) + 350 + 464' },
   };
-  const rc = F.choice(d.controls, { label: '\\text{reaction}', aria: 'the reaction', value: 'hcl',
+  const rc = F.choice(d.controls, { label: '\\text{反应}', aria: '反应', value: 'hcl',
     options: Object.keys(RX).map((k) => ({ value: k, label: RX[k].label })) });
   /* fixed scale: 0 to 2200 kJ holds the larger stack of either reaction, 2059 kJ */
   const box = { l: 200, r: 1300, t: 110, b: 540 };
@@ -81,7 +81,7 @@ const clamp = (x) => Math.max(0, Math.min(1, x));
       ctx.save(); ctx.fillStyle = alpha(cE, i % 2 ? 0.16 : 0.28); ctx.fillRect(x, y - h, BW, h);
       ctx.strokeStyle = cE; ctx.lineWidth = 2; ctx.strokeRect(x, y - h, BW, h); ctx.restore();
       if (h >= 30) text(ctx, `${n}  ${v}`, x + BW / 2, y - h / 2, PAL.ink, { size: 18, align: 'center', base: 'middle' });
-      hits.push({ x: x + BW / 2, y: y - h / 2, r: Math.min(h / 2, 60), name: `${n} bond ${kind}, ${v} kJ/mol` });
+      hits.push({ x: x + BW / 2, y: y - h / 2, r: Math.min(h / 2, 60), name: `${n} 键${kind}，${v} kJ/mol` });
       y -= h;
     });
     return y;
@@ -89,7 +89,7 @@ const clamp = (x) => Math.max(0, Math.min(1, x));
   function panel(ctx, r) {
     const cE = C('energy');
     const b = sum(r.broken), f = sum(r.formed), dH = b - f;
-    const yb = stack(ctx, r.broken, XB, cE, 'broken'), yf = stack(ctx, r.formed, XF, cE, 'formed');
+    const yb = stack(ctx, r.broken, XB, cE, '被断开'), yf = stack(ctx, r.formed, XF, cE, '被形成');
     text(ctx, `${b} kJ`, XB + BW / 2, yb - 18, cE, { size: 22, weight: 600, align: 'center' });
     text(ctx, `${f} kJ`, XF + BW / 2, yf - 18, cE, { size: 22, weight: 600, align: 'center' });
     /* ΔH: the level of the bonds broken carried across, and the gap to the level of the bonds formed */
@@ -105,12 +105,12 @@ const clamp = (x) => Math.max(0, Math.min(1, x));
     const { ctx } = begin(d.c);
     hits = [];
     line(ctx, box.l, box.b, box.r, box.b, PAL.ink, 3);
-    text(ctx, 'bonds broken (energy in)', XB + BW / 2, box.b + 30, PAL.ink, { size: 20, align: 'center' });
-    text(ctx, 'bonds formed (energy out)', XF + BW / 2, box.b + 30, PAL.ink, { size: 20, align: 'center' });
+    text(ctx, '断开的键（输入能量）', XB + BW / 2, box.b + 30, PAL.ink, { size: 20, align: 'center' });
+    text(ctx, '形成的键（放出能量）', XF + BW / 2, box.b + 30, PAL.ink, { size: 20, align: 'center' });
     Object.keys(RX).forEach((k) => rc.only(ctx, k, () => panel(ctx, RX[k]), [0, 0]));
     const r = RX[rc.value], b = sum(r.broken), f = sum(r.formed), dH = b - f;
-    headline(ctx, `Breaking the bonds takes ${b} kJ and forming the new bonds releases ${f} kJ, so ΔH is ${minus(dH)} kJ and the reaction is ${dH < 0 ? 'exothermic' : 'endothermic'}.`);
-    F.tex(d.readout, `${r.tex}\\qquad \\kdH = \\textstyle\\sum \\kDbond_{\\text{broken}} - \\sum \\kDbond_{\\text{formed}} = [${r.sb}] - [${r.sf}] = ${minus(dH)}\\ \\text{kJ}`);
+    headline(ctx, `断开这些键需要 ${b} kJ，形成新键放出 ${f} kJ，所以 ΔH 为 ${minus(dH)} kJ，反应是${dH < 0 ? '放热' : '吸热'}的。`);
+    F.tex(d.readout, `${r.tex}\\qquad \\kdH = \\textstyle\\sum \\kDbond_{\\text{断开}} - \\sum \\kDbond_{\\text{形成}} = [${r.sb}] - [${r.sf}] = ${minus(dH)}\\ \\text{kJ}`);
   }
   still(d, draw);
 })();
@@ -124,9 +124,9 @@ const clamp = (x) => Math.max(0, Math.min(1, x));
 (function () {
   const d = sim('sim-lattice', 640);
   const Z = ['1', '2', '3'].map((v) => ({ value: v, label: v }));
-  const zp = F.choice(d.controls, { label: 'Z^{+}', aria: 'the charge of the cation', value: '1', options: Z });
-  const zm = F.choice(d.controls, { label: 'Z^{-}', aria: 'the charge of the anion', value: '1', options: Z });
-  const Ro = ctl(d.controls, { label: '\\kRo', cls: 'length', min: 150, max: 400, step: 1, value: 201, unit: 'pm', dec: 0, aria: 'the interionic distance in picometers',
+  const zp = F.choice(d.controls, { label: 'Z^{+}', aria: '阳离子的电荷', value: '1', options: Z });
+  const zm = F.choice(d.controls, { label: 'Z^{-}', aria: '阴离子的电荷', value: '1', options: Z });
+  const Ro = ctl(d.controls, { label: '\\kRo', cls: 'length', min: 150, max: 400, step: 1, value: 201, unit: 'pm', dec: 0, aria: '离子间距，单位皮米',
     detents: [{ v: 201, label: 'LiF' }] });
   const CL = 1023 * 201;   /* kJ·pm/mol */
   const LIF = 1023;
@@ -148,8 +148,8 @@ const clamp = (x) => Math.max(0, Math.min(1, x));
     const p = +zp.value, m = +zm.value, R = Ro.v, E = (CL * p * m) / R;
     hits = [];
     const rc = 0.4 * R * S, ra = 0.6 * R * S, xc = CX - (rc + ra) / 2, xa = xc + rc + ra;
-    ion(ctx, xc, CY, rc, 'M' + SUP[p] + '⁺', `the cation M, charge +${p}`);
-    ion(ctx, xa, CY, ra, 'X' + SUP[m] + '⁻', `the anion X, charge −${m}`);
+    ion(ctx, xc, CY, rc, 'M' + SUP[p] + '⁺', `阳离子 M，电荷 +${p}`);
+    ion(ctx, xa, CY, ra, 'X' + SUP[m] + '⁻', `阴离子 X，电荷 −${m}`);
     dot(ctx, xc, CY, PAL.ink, true, 4); dot(ctx, xa, CY, PAL.ink, true, 4);
     const by = CY + ra + 26;
     line(ctx, xc, CY, xc, by + 6, alpha(PAL.ink, 0.35), 2, [4, 8]);
@@ -170,7 +170,7 @@ const clamp = (x) => Math.max(0, Math.min(1, x));
     const Es = fmt(E, 0);
     if (BX(E) - BX(LIF) > 150) text(ctx, `${Es}`, BX(E) + 10, bar.y + bar.h / 2, cE, { size: 20, weight: 600, base: 'middle' });
     const ratio = E / LIF;
-    headline(ctx, `With charges of ${p} and ${m} at ${R} pm, the lattice energy is ${Es} kJ/mol, ${fmt(ratio, 1)} times that of LiF.`);
+    headline(ctx, `电荷为 ${p} 和 ${m}、距离为 ${R} pm 时，晶格能为 ${Es} kJ/mol，是 LiF 的 ${fmt(ratio, 1)} 倍。`);
     F.tex(d.readout, `\\kdHlat = \\frac{C(Z^{+})(Z^{-})}{\\kRo} = \\frac{(2.056\\times 10^{5}\\ \\text{kJ pm/mol})(${p})(${m})}{${R}\\ \\text{pm}} = ${Es}\\ \\text{kJ/mol}`);
   }
   still(d, draw);
@@ -185,14 +185,14 @@ const clamp = (x) => Math.max(0, Math.min(1, x));
 ===================================================================== */
 (function () {
   const d = sim('sim-born-haber', 700);
-  const st = ctl(d.controls, { label: '\\text{step}', cls: '', min: 0, max: 5, step: 0.01, value: 0, unit: '', dec: 2, aria: 'the steps of the Born-Haber cycle' });
-  F.story(d, st, { stops: [{ v: 0, label: 'elements' }, { v: 1, label: 'sublimation' }, { v: 2, label: 'ionization' }, { v: 3, label: '½ D' }, { v: 4, label: 'EA' }, { v: 5, label: 'lattice' }], ms: 1400 });
+  const st = ctl(d.controls, { label: '\\text{步骤}', cls: '', min: 0, max: 5, step: 0.01, value: 0, unit: '', dec: 2, aria: '玻恩-哈伯循环的各个步骤' });
+  F.story(d, st, { stops: [{ v: 0, label: '单质' }, { v: 1, label: '升华' }, { v: 2, label: '电离' }, { v: 3, label: '½ D' }, { v: 4, label: 'EA' }, { v: 5, label: '晶格' }], ms: 1400 });
   const STEPS = [
-    { dh: 76.5, name: 'ΔH_{s}° = 76.5', what: 'Solid cesium sublimes to gaseous atoms, absorbing 76.5 kJ/mol.', tex: '\\kdHs', num: '76.5' },
-    { dh: 375.7, name: 'IE = 375.7', what: 'The gaseous cesium atoms are ionized, absorbing 375.7 kJ/mol.', tex: '\\kIE', num: '375.7' },
-    { dh: 79.4, name: '½D = 79.4', what: 'Half a mole of F–F bonds is broken, absorbing 79.4 kJ/mol.', tex: '\\tfrac{1}{2}\\kDbond', num: '79.4' },
-    { dh: -328.2, name: 'EA = −328.2', what: 'The fluorine atoms gain electrons, releasing 328.2 kJ/mol.', tex: '\\kEA', num: '(-328.2)' },
-    { dh: -756.9, name: '−ΔH_{lattice} = −756.9', what: 'The gaseous ions come together as solid CsF, releasing the lattice energy, 756.9 kJ/mol.', tex: '(-\\kdHlat)', num: '(-756.9)' },
+    { dh: 76.5, name: 'ΔH_{s}° = 76.5', what: '固态铯升华为气态原子，吸收 76.5 kJ/mol。', tex: '\\kdHs', num: '76.5' },
+    { dh: 375.7, name: 'IE = 375.7', what: '气态铯原子被电离，吸收 375.7 kJ/mol。', tex: '\\kIE', num: '375.7' },
+    { dh: 79.4, name: '½D = 79.4', what: '断开半摩尔 F–F 键，吸收 79.4 kJ/mol。', tex: '\\tfrac{1}{2}\\kDbond', num: '79.4' },
+    { dh: -328.2, name: 'EA = −328.2', what: '氟原子得到电子，放出 328.2 kJ/mol。', tex: '\\kEA', num: '(-328.2)' },
+    { dh: -756.9, name: '−ΔH_{lattice} = −756.9', what: '气态离子结合成固体 CsF，放出晶格能 756.9 kJ/mol。', tex: '(-\\kdHlat)', num: '(-756.9)' },
   ];
   const LEVELS = ['Cs(s) + ½F₂(g)', 'Cs(g) + ½F₂(g)', 'Cs⁺(g) + ½F₂(g)', 'Cs⁺(g) + F(g)', 'Cs⁺(g) + F⁻(g)', 'CsF(s)'];
   const E = [0]; STEPS.forEach((s) => E.push(E[E.length - 1] + s.dh));
@@ -225,9 +225,9 @@ const clamp = (x) => Math.max(0, Math.min(1, x));
       F.faded(ctx, clamp((k - 0.5) * 2), [0, 0], () => text(ctx, `${stp.name}`, i === 4 ? x - 12 : x + 12, (y0 + y1) / 2 + (stp.dh > 0 ? 8 : 0), cE, { size: 18, weight: 600, base: 'middle', align: i === 4 ? 'right' : 'left' }));
     });
     const sumTo = E[done];
-    headline(ctx, done === 0 ? 'The cycle starts from cesium metal and fluorine gas, whose enthalpy of formation to CsF(s) is −553.5 kJ/mol.'
+    headline(ctx, done === 0 ? '循环从金属铯和氟气开始，由它们生成 CsF(s) 的生成焓为 −553.5 kJ/mol。'
       : done < 5 ? STEPS[done - 1].what
-      : 'The five steps add up to the enthalpy of formation, −553.5 kJ/mol, so the lattice energy of CsF is 756.9 kJ/mol.');
+      : '五个步骤相加等于生成焓 −553.5 kJ/mol，所以 CsF 的晶格能为 756.9 kJ/mol。');
     const terms = STEPS.slice(0, done);
     const tex = done === 0 ? '\\kdHf = -553.5\\ \\text{kJ/mol}'
       : done < 5 ? `\\kdH = ${terms.map((t) => t.tex).join(' + ')} = ${terms.map((t) => t.num).join(' + ')} = ${minus(fmt(sumTo, 1))}\\ \\text{kJ/mol}`

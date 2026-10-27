@@ -30,7 +30,7 @@ function sci(x) {
 (function () {
   const d = sim('sim-order-plots', 540);
   const BOXES = [120, 590, 1060].map((l) => ({ l, r: l + 290, t: 150, b: 420 }));
-  const ORDER = ['zero order', 'first order', 'second order'];
+  const ORDER = ['零级', '一级', '二级'];
   const FN = [(c) => c, Math.log, (c) => 1 / c];
   const nh3W = [0, 200, 400, 600, 800, 1000], nh3Q = [0, 100, 200, 300, 400, 500, 700, 1000];
   const SETS = {
@@ -38,28 +38,28 @@ function sci(x) {
       sp: 'H_{2}O_{2}', tu: 'h', x: [0, 24], nx: 4, fx: (v) => fmt(v, 0),
       series: [{ t: [0, 6, 12, 18, 24], c: [1, 0.5, 0.25, 0.125, 0.0625], straight: 1 }],
       y: [[0, 1.2, 6, (v) => fmt(v, 1)], [-3, 1, 4, (v) => minus(fmt(v, 0))], [0, 20, 4, (v) => fmt(v, 0)]],
-      head: 'Only ln[H_{2}O_{2}] against t is a straight line, so the decomposition is first order.',
-      ro: `\\kk = -\\text{slope} = -\\frac{-2.772 - 0.000}{${hue('time', '24.00\\ \\text{h}')} - ${hue('time', '0.00\\ \\text{h}')}} = ${hue('rate-constant', '0.116\\ \\text{h}^{-1}')}`,
+      head: '只有 ln[H_{2}O_{2}] 对 t 的图是直线，所以该分解是一级反应。',
+      ro: `\\kk = -\\text{斜率} = -\\frac{-2.772 - 0.000}{${hue('time', '24.00\\ \\text{h}')} - ${hue('time', '0.00\\ \\text{h}')}} = ${hue('rate-constant', '0.116\\ \\text{h}^{-1}')}`,
     },
     c4h6: {
       sp: 'C_{4}H_{6}', tu: 's', x: [0, 6400], nx: 4, fx: (v) => fmt(v, 0),
       series: [{ t: [0, 1600, 3200, 4800, 6200], c: [1.0e-2, 5.04e-3, 3.37e-3, 2.53e-3, 2.08e-3], straight: 2 }],
       y: [[0, 0.012, 4, (v) => fmt(v, 3)], [-7, -4, 3, (v) => minus(fmt(v, 0))], [0, 600, 3, (v) => fmt(v, 0)]],
-      head: 'Only 1/[C_{4}H_{6}] against t is a straight line, so the dimerization is second order.',
-      ro: `\\kk = \\text{slope} = \\frac{481\\ M^{-1} - 100\\ M^{-1}}{${hue('time', '6200\\ \\text{s}')} - ${hue('time', '0\\ \\text{s}')}} = ${hue('rate-constant', '0.0614\\ M^{-1}\\,\\text{s}^{-1}')}`,
+      head: '只有 1/[C_{4}H_{6}] 对 t 的图是直线，所以该二聚反应是二级反应。',
+      ro: `\\kk = \\text{斜率} = \\frac{481\\ M^{-1} - 100\\ M^{-1}}{${hue('time', '6200\\ \\text{s}')} - ${hue('time', '0\\ \\text{s}')}} = ${hue('rate-constant', '0.0614\\ M^{-1}\\,\\text{s}^{-1}')}`,
     },
     nh3: {
       sp: 'NH_{3}', tu: 's', x: [0, 1000], nx: 4, fx: (v) => fmt(v, 0),
       series: [
-        { ref: 'tungsten', name: 'on W', t: nh3W, c: nh3W.map((t) => 2.8e-3 - 1.3e-6 * t), straight: 0 },
-        { ref: 'quartz', name: 'on SiO_{2}', t: nh3Q, c: nh3Q.map((t) => 2.8e-3 * Math.exp(-1.384e-3 * t)), straight: 1 },
+        { ref: 'tungsten', name: '在 W 上', t: nh3W, c: nh3W.map((t) => 2.8e-3 - 1.3e-6 * t), straight: 0 },
+        { ref: 'quartz', name: '在 SiO_{2} 上', t: nh3Q, c: nh3Q.map((t) => 2.8e-3 * Math.exp(-1.384e-3 * t)), straight: 1 },
       ],
       y: [[0, 0.004, 4, (v) => fmt(v, 3)], [-8, -5, 3, (v) => minus(fmt(v, 0))], [0, 1600, 4, (v) => fmt(v, 0)]],
-      head: 'On tungsten [NH_{3}] falls in a straight line, zero order; on quartz ln[NH_{3}] does, first order.',
-      ro: `\\kk = -\\text{slope} = -\\frac{${hue('concentration', '0.0015\\ \\text{mol L}^{-1}')} - ${hue('concentration', '0.0028\\ \\text{mol L}^{-1}')}}{${hue('time', '1000\\ \\text{s}')} - ${hue('time', '0\\ \\text{s}')}} = ${hue('rate-constant', '1.3 \\times 10^{-6}\\ \\text{mol L}^{-1}\\,\\text{s}^{-1}')}`,
+      head: '在钨上，[NH_{3}] 呈直线下降，是零级；在石英上，ln[NH_{3}] 呈直线，是一级。',
+      ro: `\\kk = -\\text{斜率} = -\\frac{${hue('concentration', '0.0015\\ \\text{mol L}^{-1}')} - ${hue('concentration', '0.0028\\ \\text{mol L}^{-1}')}}{${hue('time', '1000\\ \\text{s}')} - ${hue('time', '0\\ \\text{s}')}} = ${hue('rate-constant', '1.3 \\times 10^{-6}\\ \\text{mol L}^{-1}\\,\\text{s}^{-1}')}`,
     },
   };
-  const pick = F.choice(d.controls, { label: '\\text{reaction}', options: [{ value: 'h2o2', label: 'H₂O₂' }, { value: 'c4h6', label: 'C₄H₆' }, { value: 'nh3', label: 'NH₃' }], value: 'h2o2', aria: 'the reaction whose concentration data are plotted' });
+  const pick = F.choice(d.controls, { label: '\\text{反应}', options: [{ value: 'h2o2', label: 'H₂O₂' }, { value: 'c4h6', label: 'C₄H₆' }, { value: 'nh3', label: 'NH₃' }], value: 'h2o2', aria: '浓度数据被作图的反应' });
   let hits = [];
   F.hover(d.stage, () => hits);
   const yTitle = (sp, i) => (i === 0 ? `[${sp}] (M)` : i === 1 ? `ln[${sp}]` : `1/[${sp}] (M⁻¹)`);
@@ -83,7 +83,7 @@ function sci(x) {
         for (const p of pts) lab.block(p.x - 10, p.y - 10, p.x + 10, p.y + 10);
         for (const p of pts) {
           dot(ctx, p.x, p.y, col, true, 8);
-          if (live) hits.push({ x: p.x, y: p.y, r: 14, name: `${s.ref ? 'NH₃ ' + sub(s.name) : sub(S.sp)} at ${p.t} ${S.tu}: ${valueText(i, p.v)}` });
+          if (live) hits.push({ x: p.x, y: p.y, r: 14, name: `${s.ref ? 'NH₃ ' + sub(s.name) : sub(S.sp)}，${p.t} ${S.tu} 时：${valueText(i, p.v)}` });
         }
         if (straight) {
           /* the slope's name sits off the middle of the chord on the side away from the corner its points come from, which no point occupies */
@@ -91,7 +91,7 @@ function sci(x) {
           const cx = (p0.x + p1.x) / 2, cy = (p0.y + p1.y) / 2, sg = crowd(cx + nx * 30, cy + ny * 30) > crowd(cx - nx * 30 - 110, cy - ny * 30) ? -1 : 1;
           const mx = cx + sg * nx * 30 - (sg < 0 ? 110 : 0), my = cy + sg * ny * 30;
           lab.place({ l: mx - 6, t: my - 14, r: mx + 110, b: my + 14 });
-          text(ctx, i === 2 ? 'slope = k' : 'slope = −k', mx, my, C('rate-constant'), { size: 19, weight: 600, bg: PAL.panel });
+          text(ctx, i === 2 ? '斜率 = k' : '斜率 = −k', mx, my, C('rate-constant'), { size: 19, weight: 600, bg: PAL.panel });
         }
         if (s.ref && i === 0) lab.add(s.name, p1.x, p1.y, 1, 0, col, 19, 18);
       });
@@ -127,11 +127,11 @@ function sci(x) {
   const d = sim('sim-half-lives', 700);
   const TH = 6, TS = 3600 * TH, TIMES = [0, 6, 12, 18, 24], XS = [220, 460, 700, 940, 1180];
   const ORD = {
-    first: { k: Math.LN2 / TS, c: (t) => Math.exp(-(Math.LN2 / TS) * t * 3600), ends: [6, 12, 18, 24], head: 'The concentration halves every 6.00 h, however much is left.' },
-    second: { k: 1 / TS, c: (t) => 1 / (1 + (t * 3600) / TS), ends: [6, 18], head: 'Each half-life is twice as long as the one before: 6.00 h, then 12.0 h.' },
-    zero: { k: 1 / (2 * TS), c: (t) => Math.max(0, 1 - (t * 3600) / (2 * TS)), ends: [6, 9, 10.5, 11.25], head: 'Each half-life is half as long as the one before: 6.00 h, then 3.00 h, then 1.50 h.' },
+    first: { k: Math.LN2 / TS, c: (t) => Math.exp(-(Math.LN2 / TS) * t * 3600), ends: [6, 12, 18, 24], head: '无论还剩多少，浓度每 6.00 h 减半。' },
+    second: { k: 1 / TS, c: (t) => 1 / (1 + (t * 3600) / TS), ends: [6, 18], head: '每个半衰期都是前一个的两倍长：6.00 h，然后是 12.0 h。' },
+    zero: { k: 1 / (2 * TS), c: (t) => Math.max(0, 1 - (t * 3600) / (2 * TS)), ends: [6, 9, 10.5, 11.25], head: '每个半衰期都只有前一个的一半长：6.00 h，然后是 3.00 h，再是 1.50 h。' },
   };
-  const order = F.choice(d.controls, { label: '\\text{order}', options: [{ value: 'zero', label: 'zero order' }, { value: 'first', label: 'first order' }, { value: 'second', label: 'second order' }], value: 'first', aria: 'the order of the reaction', ms: 0, onInput: () => cy.reset() });
+  const order = F.choice(d.controls, { label: '\\text{级数}', options: [{ value: 'zero', label: '零级' }, { value: 'first', label: '一级' }, { value: 'second', label: '二级' }], value: 'first', aria: '反应的级数', ms: 0, onInput: () => cy.reset() });
   const cy = cycle(() => 24, 1.2);
   const B = { l: 150, r: 1300, t: 420, b: 620 };
   let hits = [];
@@ -157,9 +157,9 @@ function sci(x) {
       text(ctx, conc(c) + ' M', XS[i], y, ct, { size: 21, weight: 600, align: 'center' });
       text(ctx, ti === 0 ? '0 s' : `$${sci(ti * 3600)}$ s`, XS[i], y + 28, tc, { size: 19, align: 'center', tex: true });
       text(ctx, `(${ti} h)`, XS[i], y + 54, tc, { size: 19, align: 'center' });
-      hits.push({ x: XS[i], y: (g.top + g.bot) / 2, r: 75, name: `the sample at ${ti} h: ${conc(c)} M` });
+      hits.push({ x: XS[i], y: (g.top + g.bot) / 2, r: 75, name: `${ti} h 时的样品：${conc(c)} M` });
     });
-    const a = F.axes(ctx, B, [0, 24], [0, 1.2], { nx: 4, ny: 6, fx: (v) => fmt(v, 0), fy: (v) => fmt(v, 1), xl: 'time (h)', xc: tc, yl: '[H_{2}O_{2}] (M)', yc: ct });
+    const a = F.axes(ctx, B, [0, 24], [0, 1.2], { nx: 4, ny: 6, fx: (v) => fmt(v, 0), fy: (v) => fmt(v, 1), xl: '时间（h）', xc: tc, yl: '[H_{2}O_{2}] (M)', yc: ct });
     for (const ti of TIMES) if (ti > 0 && ti <= now) {
       const c = O.c(ti);
       line(ctx, a.X(ti), a.Y(c), a.X(ti), B.b, alpha(PAL.ink, 0.35), 2, [4, 8]);
@@ -172,7 +172,7 @@ function sci(x) {
         const w = a.X(end) - a.X(start), len = (end - start).toPrecision(3) + ' h';
         hbracket(ctx, a.X(start), a.X(end), row, tc, w >= 90 ? len : undefined, { size: 19, side: 'below' });
         dot(ctx, a.X(end), a.Y(O.c(end)), ct, false, 8);
-        hits.push({ x: (a.X(start) + a.X(end)) / 2, y: row, r: Math.max(14, w / 2), name: `half-life ${i + 1}: ${len}` });
+        hits.push({ x: (a.X(start) + a.X(end)) / 2, y: row, r: Math.max(14, w / 2), name: `第 ${i + 1} 个半衰期：${len}` });
       }
       start = end;
     });
@@ -181,7 +181,7 @@ function sci(x) {
     let ro;
     if (order.value === 'first') ro = `\\kconcAt = \\kconcAz e^{-\\kk\\kt} = (${A0})\\,e^{-(${K(sci(O.k) + '\\ \\text{s}^{-1}')})(${T})} = ${hue('concentration', conc(cn) + '\\ M')}`;
     else if (order.value === 'second') ro = `\\frac{1}{\\kconcAt} = \\kk\\kt + \\frac{1}{\\kconcAz} = (${K(sci(O.k) + '\\ M^{-1}\\,\\text{s}^{-1}')})(${T}) + \\frac{1}{${A0}} = ${sci(1 / cn)}\\ M^{-1}`;
-    else ro = cn > 0 ? `\\kconcAt = -\\kk\\kt + \\kconcAz = -(${K(sci(O.k) + '\\ M\\,\\text{s}^{-1}')})(${T}) + ${A0} = ${hue('concentration', conc(cn) + '\\ M')}` : `\\kconcAt = ${hue('concentration', '0\\ M')}\\text{, all of A used up at } \\kt = ${hue('time', sci(2 * TS) + '\\ \\text{s}')}`;
+    else ro = cn > 0 ? `\\kconcAt = -\\kk\\kt + \\kconcAz = -(${K(sci(O.k) + '\\ M\\,\\text{s}^{-1}')})(${T}) + ${A0} = ${hue('concentration', conc(cn) + '\\ M')}` : `\\kconcAt = ${hue('concentration', '0\\ M')}\\text{，A 在 } \\kt = ${hue('time', sci(2 * TS) + '\\ \\text{s}')}\\text{ 时全部用完}`;
     tex(d.readout, ro, false, { values: false });
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 4), draw });

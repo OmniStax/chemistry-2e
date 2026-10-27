@@ -16,11 +16,11 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
 ===================================================================== */
 (function () {
   const d = sim('sim-initial-rates', 510);
-  const A = ctl(d.controls, { label: '\\kconcA', cls: 'concentration', min: 0.02, max: 0.15, step: 0.01, value: 0.1, unit: 'M', dec: 2, detents: [0.1, 0.15], aria: 'concentration of A, in moles per liter' });
-  const B = ctl(d.controls, { label: '\\kconcB', cls: 'concentration', min: 0.02, max: 0.15, step: 0.01, value: 0.1, unit: 'M', dec: 2, detents: [0.1, 0.15], aria: 'concentration of B, in moles per liter' });
+  const A = ctl(d.controls, { label: '\\kconcA', cls: 'concentration', min: 0.02, max: 0.15, step: 0.01, value: 0.1, unit: 'M', dec: 2, detents: [0.1, 0.15], aria: 'A 的浓度，单位为摩尔每升' });
+  const B = ctl(d.controls, { label: '\\kconcB', cls: 'concentration', min: 0.02, max: 0.15, step: 0.01, value: 0.1, unit: 'M', dec: 2, detents: [0.1, 0.15], aria: 'B 的浓度，单位为摩尔每升' });
   const ORD = [0, 1, 2].map((v) => ({ value: String(v), label: String(v) }));
-  const mO = F.choice(d.controls, { label: 'm', key: 'm', options: ORD, value: '2', aria: 'order of the reaction in A' });
-  const nO = F.choice(d.controls, { label: 'n', key: 'n', options: ORD, value: '1', aria: 'order of the reaction in B' });
+  const mO = F.choice(d.controls, { label: 'm', key: 'm', options: ORD, value: '2', aria: '反应对 A 的级数' });
+  const nO = F.choice(d.controls, { label: 'n', key: 'n', options: ORD, value: '1', aria: '反应对 B 的级数' });
   const R1 = 3.0, C0 = 0.1, XR = [0, 0.2], YR = [0, 16];
   const TRIALS = [
     { id: 'trial-1', n: 1, a: 0.1, b: 0.1, r: 3.0 },
@@ -40,7 +40,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
   F.hover(d.stage, () => hits);
   function panel(ctx, lab, box, xl, held, heldOk, f, pts, cur) {
     const cr = C('rate'), cc = C('concentration');
-    const g = F.axes(ctx, box, XR, YR, { nx: 4, ny: 4, fx: (v) => fmt(v, 2), xl, xc: cc, yl: 'rate (10⁻³ mol L⁻¹ s⁻¹)', yc: cr });
+    const g = F.axes(ctx, box, XR, YR, { nx: 4, ny: 4, fx: (v) => fmt(v, 2), xl, xc: cc, yl: '速率（10⁻³ mol L⁻¹ s⁻¹）', yc: cr });
     text(ctx, held, box.r, box.t - 24, PAL.muted, { size: 18, align: 'right' });
     ctx.save(); ctx.beginPath(); ctx.rect(box.l, box.t - 4, box.r - box.l, box.b - box.t + 8); ctx.clip();
     F.curve(ctx, (x) => Math.min(f(x), YR[1] + 1), XR[0], XR[1], g.X, g.Y, cr, 5, 120);
@@ -52,11 +52,11 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     for (const t of pts) {
       const tx = g.X(t.x), ty = g.Y(t.r), col = F.ref(t.id);
       F.faded(ctx, heldOk ? 1 : 0.3, [0, 0], () => { ctx.save(); ctx.strokeStyle = col; ctx.lineWidth = 4; ctx.beginPath(); ctx.arc(tx, ty, 15, 0, 2 * Math.PI); ctx.stroke(); ctx.restore(); });
-      if (heldOk) lab.add('trial ' + t.n, tx, ty, -0.7, -0.7, col, 20, 26);
-      hits.push({ x: tx, y: ty, r: 16, name: `trial ${t.n} of Example 12.5: ${fmt(t.r / 1000, 5)} mol L⁻¹ s⁻¹` });
+      if (heldOk) lab.add('实验 ' + t.n, tx, ty, -0.7, -0.7, col, 20, 26);
+      hits.push({ x: tx, y: ty, r: 16, name: `例 12.5 的实验 ${t.n}：${fmt(t.r / 1000, 5)} mol L⁻¹ s⁻¹` });
     }
     F.dot(ctx, px, py, cr, true, 9);
-    hits.push({ x: px, y: py, r: 12, name: 'the rate at the chosen concentrations' });
+    hits.push({ x: px, y: py, r: 12, name: '所选浓度下的速率' });
     return g;
   }
   function draw() {
@@ -66,19 +66,19 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     const mE = mO.mix((v) => +v), nE = nO.mix((v) => +v);
     const r = rateOf(a, b, m, n);
     const missed = TRIALS.filter((t) => Math.abs(rateOf(t.a, t.b, m, n) - t.r) > 0.01).map((t) => t.n);
-    const lg = panel(ctx, lab, LB, '[A] (M)', `at [B] = ${fmt(b, 2)} M`, at(b, C0), (x) => rateOf(x, b, mE, nE),
+    const lg = panel(ctx, lab, LB, '[A] (M)', `[B] = ${fmt(b, 2)} M 时`, at(b, C0), (x) => rateOf(x, b, mE, nE),
       TRIALS.filter((t) => t.b === C0).map((t) => ({ ...t, x: t.a })), { x: a, y: rateOf(a, b, mE, nE) });
-    panel(ctx, lab, RB, '[B] (M)', `at [A] = ${fmt(a, 2)} M`, at(a, C0), (x) => rateOf(a, x, mE, nE),
+    panel(ctx, lab, RB, '[B] (M)', `[A] = ${fmt(a, 2)} M 时`, at(a, C0), (x) => rateOf(a, x, mE, nE),
       TRIALS.filter((t) => t.a === C0).map((t) => ({ ...t, x: t.b })), { x: b, y: rateOf(a, b, mE, nE) });
-    lab.add('rate law', lg.X(0.05), lg.Y(rateOf(0.05, b, mE, nE)), -0.3, -1, C('rate'), 20, 30);
+    lab.add('速率定律', lg.X(0.05), lg.Y(rateOf(0.05, b, mE, nE)), -0.3, -1, C('rate'), 20, 30);
     lab.flush();
-    const ords = `$m = ${m}$ and $n = ${n}$`;
-    topline(ctx, !missed.length ? `The rate law with ${ords} passes through all three trials.`
-      : `The rate law with ${ords} misses trial${missed.length > 1 ? 's' : ''} ${missed.join(' and ')}.`);
+    const ords = `$m = ${m}$，$n = ${n}$`;
+    topline(ctx, !missed.length ? `${ords} 时的速率定律通过全部三次实验的点。`
+      : `${ords} 时的速率定律未通过实验 ${missed.join(' 和 ')} 的点。`);
     const x = m + n;
     tex(d.readout, `\\krate = \\kk\\kconcA^{${m}}\\kconcB^{${n}} = (${hue('rate-constant', sci(R1 * 1e-3 / Math.pow(C0, x), 1) + '\\ ' + KUNIT[x])})(${hue('concentration', fmt(a, 2) + '\\ \\text{M}')})^{${m}}(${hue('concentration', fmt(b, 2) + '\\ \\text{M}')})^{${n}} = ${hue('rate', sci(r * 1e-3, 2) + '\\ \\text{mol L}^{-1}\\,\\text{s}^{-1}')}`);
     const sm = d.readout.appendChild(el('small'));
-    tex(sm, `\\text{overall order: } m + n = ${m} + ${n} = ${x}`);
+    tex(sm, `\\text{总级数: } m + n = ${m} + ${n} = ${x}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

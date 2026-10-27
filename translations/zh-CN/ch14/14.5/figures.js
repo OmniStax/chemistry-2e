@@ -33,17 +33,17 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
   const d = sim('sim-stepwise', 640);
   const ACIDS = {
     h2co3: { c0: 0.033, K: [4.3e-7, 4.7e-11], sp: ['H_{2}CO_{3}', 'HCO_{3}⁻', 'CO_{3}²⁻'], hover: ['H₂CO₃', 'HCO₃⁻', 'CO₃²⁻'],
-      a: '[\\text{H}_{2}\\text{CO}_{3}]_{0}', aria: 'initial concentration of H2CO3' },
+      a: '[\\text{H}_{2}\\text{CO}_{3}]_{0}', aria: 'H2CO3 的初始浓度' },
     h2s: { c0: 0.1, K: [8.9e-8, 1.0e-19], sp: ['H_{2}S', 'HS⁻', 'S²⁻'], hover: ['H₂S', 'HS⁻', 'S²⁻'],
-      a: '[\\text{H}_{2}\\text{S}]_{0}', aria: 'initial concentration of H2S' },
+      a: '[\\text{H}_{2}\\text{S}]_{0}', aria: 'H2S 的初始浓度' },
     h3po4: { c0: 0.1, K: [7.5e-3, 6.2e-8, 4.2e-13], sp: ['H_{3}PO_{4}', 'H_{2}PO_{4}⁻', 'HPO_{4}²⁻', 'PO_{4}³⁻'], hover: ['H₃PO₄', 'H₂PO₄⁻', 'HPO₄²⁻', 'PO₄³⁻'],
-      a: '[\\text{H}_{3}\\text{PO}_{4}]_{0}', aria: 'initial concentration of H3PO4' },
+      a: '[\\text{H}_{3}\\text{PO}_{4}]_{0}', aria: 'H3PO4 的初始浓度' },
   };
   const TEX = { h2co3: ['\\text{H}_{2}\\text{CO}_{3}', '\\text{HCO}_{3}^{-}', '\\text{CO}_{3}^{2-}'], h2s: ['\\text{H}_{2}\\text{S}', '\\text{HS}^{-}', '\\text{S}^{2-}'],
     h3po4: ['\\text{H}_{3}\\text{PO}_{4}', '\\text{H}_{2}\\text{PO}_{4}^{-}', '\\text{HPO}_{4}^{2-}', '\\text{PO}_{4}^{3-}'] };
   const KS = ['K_{a1}', 'K_{a2}', 'K_{a3}'];
   const pick = F.choice(d.controls, {
-    label: '\\text{acid}', aria: 'the acid', value: 'h2co3', ms: 0,
+    label: '\\text{酸}', aria: '酸', value: 'h2co3', ms: 0,
     options: [{ value: 'h2co3', label: 'H₂CO₃' }, { value: 'h2s', label: 'H₂S' }, { value: 'h3po4', label: 'H₃PO₄' }],
     onInput: () => { const a = ACIDS[pick.value]; c0.set(Math.log10(a.c0)); c0.relabel(hue('concentration', a.a), a.aria); },
   });
@@ -68,11 +68,11 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     const cC = C('concentration'), cK = C('equilibrium-constant');
     if (cBox) cBox.textContent = sigText(c, 2) + ' M';
 
-    const rel = (hi, lo) => (hi >= lo ? `${sigText(hi / lo, 2)} times below` : `${sigText(lo / hi, 2)} times above`);
-    const lines = topline(ctx, `${a.sp[1]} lies ${rel(v[0], v[1])} ${a.sp[0]}, and ${a.sp[2]} ${rel(v[1], v[2])} ${a.sp[1]}.`);
+    const rel = (hi, lo, ref) => (hi >= lo ? `约为 ${ref} 的 1/${sigText(hi / lo, 2)}` : `是 ${ref} 的 ${sigText(lo / hi, 2)} 倍`);
+    const lines = topline(ctx, `${a.sp[1]} ${rel(v[0], v[1], a.sp[0])}，${a.sp[2]} ${rel(v[1], v[2], a.sp[1])}。`);
     const lab = F.labeller(ctx, H, { headline: lines });
 
-    const ax = F.axes(ctx, B, [0, n], LY, { nx: n, ny: 8, fx: () => '', fy: (s) => pow10(Math.round(s) + L0), yl: 'concentration (M)', yc: cC });
+    const ax = F.axes(ctx, B, [0, n], LY, { nx: n, ny: 8, fx: () => '', fy: (s) => pow10(Math.round(s) + L0), yl: '浓度（M）', yc: cC });
     const { X } = ax, Y = (lg) => ax.Y(lg - L0), mid = (i) => X(i + 0.5);
     lab.block(B.l - 110, B.t - 44, B.l + 190, B.t - 6); lab.block(B.l - 110, B.t, B.l - 4, B.b + 20); lab.block(B.l, B.b + 4, B.r, B.b + 90);
 
@@ -101,7 +101,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
 
     const T = TEX[key], xt = sigTex(x), ct = hue('concentration', sigTex(c, 2));
     ro.set(`\\kKaone = \\frac{(x)(x)}{${ct} - x} = \\frac{(\\mk{x1}{${xt}})(\\mk{x2}{${xt}})}{\\mk{c}{${ct}} - \\mk{x3}{${xt}}} = \\mk{K}{${sigTex(a.K[0], 2)}}`,
-      `$[${T[2]}] = \\kKatwo [${T[1]}]/\\kconcHyd$ = ${sigText(a.K[1], 2)} M at every starting concentration, since $[${T[1]}] = \\kconcHyd$.`);
+      `$[${T[2]}] = \\kKatwo [${T[1]}]/\\kconcHyd$ = ${sigText(a.K[1], 2)} M，在每个起始浓度下都是如此，因为 $[${T[1]}] = \\kconcHyd$。`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

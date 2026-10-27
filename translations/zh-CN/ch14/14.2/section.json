@@ -2,33 +2,41 @@
  "id": "14.2",
  "module": "m68804",
  "chapter": "14",
- "title": "pH and pOH",
- "short": "pH and pOH",
- "lead": "The <span data-concept=\"concentration\">concentrations</span> of hydronium and hydroxide ions in water span many orders of magnitude. This section expresses them on the logarithmic <span data-concept=\"ph\">pH</span> and <span data-concept=\"poh\">pOH</span> scales, uses those scales to describe a solution as acidic, basic, or neutral, and shows how the <span data-concept=\"ph\">pH</span> of a solution is measured.",
+ "title": "pH 和 pOH",
+ "short": "pH 和 pOH",
+ "lead": "水中水合氢离子和氢氧根离子的<span data-concept=\"concentration\">浓度</span>跨越许多个数量级。本节用对数形式的 <span data-concept=\"ph\">pH</span> 和 <span data-concept=\"poh\">pOH</span> 标度来表示它们，用这些标度把溶液描述为酸性、碱性或中性，并说明如何测量溶液的 <span data-concept=\"ph\">pH</span>。",
  "objectives": [
-  "Explain the characterization of aqueous solutions as acidic, basic, or neutral",
-  "Express hydronium and hydroxide ion concentrations on the pH and pOH scales",
-  "Perform calculations relating pH and pOH"
+  "解释如何将水溶液描述为酸性、碱性或中性",
+  "用 pH 和 pOH 标度表示水合氢离子和氢氧根离子的浓度",
+  "进行与 pH 和 pOH 相关的计算"
  ],
- "summary_html": "<p><span data-concept=\"concentration\">Concentrations</span> of hydronium and hydroxide ions in aqueous media are often represented as logarithmic <span data-concept=\"ph\">pH</span> and <span data-concept=\"poh\">pOH</span> values, respectively. At <span data-type=\"temperature\">25 °C</span>, the autoprotolysis equilibrium for water requires the sum of <span data-concept=\"ph\">pH</span> and <span data-concept=\"poh\">pOH</span> to equal <span data-type=\"equilibrium-constant\">14</span> for any aqueous solution. The relative <span data-concept=\"concentration\">concentrations</span> of hydronium and hydroxide ion in a solution define its status as acidic ([H<sub>3</sub>O<sup>+</sup>] &gt; [OH<sup>−</sup>]), basic ([H<sub>3</sub>O<sup>+</sup>] &lt; [OH<sup>−</sup>]), or neutral ([H<sub>3</sub>O<sup>+</sup>] = [OH<sup>−</sup>]). At <span data-type=\"temperature\">25 °C</span>, a <span data-concept=\"ph\">pH</span> &lt; 7 indicates an <span data-concept=\"acidic-solution\">acidic solution</span>, a <span data-concept=\"ph\">pH</span> &gt; 7 a <span data-concept=\"basic-solution\">basic solution</span>, and a <span data-concept=\"ph\">pH</span> = 7 a <span data-concept=\"neutral-solution\">neutral solution</span>.</p>",
- "notes": "Nothing of the section is left out. Kept as printed: Figure 14.3’s caption “It also is corrodes statues”, and the key to the last exercise, which gives the hydronium ion concentration the question asks for under the label [OH⁻].",
+ "summary_html": "<p>水介质中水合氢离子和氢氧根离子的<span data-concept=\"concentration\">浓度</span>常分别用对数形式的 <span data-concept=\"ph\">pH</span> 和 <span data-concept=\"poh\">pOH</span> 值表示。在 <span data-type=\"temperature\">25 °C</span> 时，水的质子自递平衡要求任何水溶液的 <span data-concept=\"ph\">pH</span> 与 <span data-concept=\"poh\">pOH</span> 之和等于 <span data-type=\"equilibrium-constant\">14</span>。溶液中水合氢离子和氢氧根离子的相对<span data-concept=\"concentration\">浓度</span>决定了它是酸性（[H<sub>3</sub>O<sup>+</sup>] &gt; [OH<sup>−</sup>]）、碱性（[H<sub>3</sub>O<sup>+</sup>] &lt; [OH<sup>−</sup>]）还是中性（[H<sub>3</sub>O<sup>+</sup>] = [OH<sup>−</sup>]）。在 <span data-type=\"temperature\">25 °C</span> 时，<span data-concept=\"ph\">pH</span> &lt; 7 表示<span data-concept=\"acidic-solution\">酸性溶液</span>，<span data-concept=\"ph\">pH</span> &gt; 7 表示<span data-concept=\"basic-solution\">碱性溶液</span>，<span data-concept=\"ph\">pH</span> = 7 表示<span data-concept=\"neutral-solution\">中性溶液</span>。</p>",
+ "notes": "本节没有任何内容被省略。按原样保留的有：图 14.3 说明中的“It also is corrodes statues”，以及最后一道习题的答案，它把题目所求的水合氢离子浓度标为 [OH⁻]。",
  "ai": {
   "text": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-10-05",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The five unkeyed numerical exercises are left out, and no answer is computed for them: fs-idm59232064, fs-idp100037936, fs-idm113520992, fs-idm93267520, fs-idm60999568. pH and pOH answers accept 1% and concentrations 2%, except lime juice’s, read from Figure 14.2, which accepts 10%. The key to fs-idm209904880 labels its hydronium ion concentration [OH⁻], as printed.",
+ "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案来自书后答案和“学习检测”的答案。五道没有给出答案的数值习题已略去，也没有为它们算出答案：fs-idm59232064、fs-idp100037936、fs-idm113520992、fs-idm93267520、fs-idm60999568。pH 和 pOH 的答案接受 1% 的误差，浓度接受 2%，但青柠汁的浓度例外（其 pH 读自图 14.2），接受 10%。书后答案中 fs-idm209904880 的水合氢离子浓度标为 [OH⁻]，按原样保留。",
  "figures": [
   {
    "id": "sim-ph-scale",
@@ -37,7 +45,7 @@
    "originals": [
     "/media/ch14/CNX_Chem_14_02_phscale.jpg"
    ],
-   "original_caption": "The pH and pOH scales represent concentrations of H₃O⁺ and OH⁻, respectively. The pH and pOH values of some common substances at 25 °C are shown in this chart.",
+   "original_caption": "pH 和 pOH 标度分别表示 H₃O⁺ 和 OH⁻ 的浓度。图中给出了一些常见物质在 25 °C 时的 pH 和 pOH。",
    "draws": [
     "concentration",
     "temperature",
@@ -48,6 +56,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -61,6 +74,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -74,6 +92,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -87,6 +110,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   }
@@ -199,13 +227,13 @@
     "after": "ex-ph-from-h3o"
    },
    "cite": "calculations",
-   "prompt": "Water exposed to air contains carbonic acid, H<sub>2</sub>CO<sub>3</sub>, due to the reaction between carbon dioxide and water:<br>CO<sub>2</sub>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>2</sub>CO<sub>3</sub>(<em>aq</em>)<br>Air-saturated water has a hydronium ion concentration caused by the dissolved CO<sub>2</sub> of 2.0 × 10<sup>−6</sup> <em>M</em>, about 20-times larger than that of pure water. Calculate the pH of the solution at 25 °C.",
+   "prompt": "暴露在空气中的水含有碳酸 H<sub>2</sub>CO<sub>3</sub>，这是二氧化碳与水反应的结果：<br>CO<sub>2</sub>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>2</sub>CO<sub>3</sub>(<em>aq</em>)<br>空气饱和的水中，由溶解的 CO<sub>2</sub> 产生的水合氢离子浓度为 2.0 × 10<sup>−6</sup> <em>M</em>，约为纯水的 20 倍。计算该溶液在 25 °C 时的 pH。",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 5.7,
     "tol": 0.01,
-    "hint": "pH = −log[H<sub>3</sub>O<sup>+</sup>]; keep two decimal places for the two significant figures of the concentration.",
+    "hint": "pH = −log[H<sub>3</sub>O<sup>+</sup>]；浓度有两位有效数字，所以保留两位小数。",
     "solution": "5.70"
    }
   },
@@ -219,13 +247,13 @@
     "after": "ex-h3o-from-ph"
    },
    "cite": "calculations",
-   "prompt": "Calculate the hydronium ion concentration of a solution with a pH of −1.07.",
+   "prompt": "计算 pH 为 −1.07 的溶液的水合氢离子浓度。",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 12,
     "unit": "M",
-    "hint": "[H<sub>3</sub>O<sup>+</sup>] = 10<sup>−pH</sup>, so here it is 10<sup>1.07</sup>.",
+    "hint": "[H<sub>3</sub>O<sup>+</sup>] = 10<sup>−pH</sup>，所以这里是 10<sup>1.07</sup>。",
     "solution": "12 <em>M</em>"
    }
   },
@@ -239,7 +267,7 @@
     "after": "ex-poh"
    },
    "cite": "calculations",
-   "prompt": "The hydronium ion concentration of vinegar is approximately 4 × 10<sup>−3</sup> <em>M</em>. What are the corresponding values of pOH and pH?",
+   "prompt": "食醋的水合氢离子浓度约为 4 × 10<sup>−3</sup> <em>M</em>。对应的 pOH 和 pH 各是多少？",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -248,13 +276,13 @@
       "part": "pOH",
       "value": 11.6,
       "tol": 0.01,
-      "hint": "Find the pH from [H<sub>3</sub>O<sup>+</sup>] first, then subtract it from 14.00."
+      "hint": "先由 [H<sub>3</sub>O<sup>+</sup>] 求出 pH，再用 14.00 减去它。"
      },
      {
       "part": "pH",
       "value": 2.4,
       "tol": 0.01,
-      "hint": "pH = −log[H<sub>3</sub>O<sup>+</sup>]."
+      "hint": "pH = −log[H<sub>3</sub>O<sup>+</sup>]。"
      }
     ],
     "solution": "pOH = 11.6, pH = 2.4"
@@ -270,11 +298,11 @@
     "at": "end"
    },
    "cite": "neutral-ph",
-   "prompt": "Explain why a sample of pure water at 40 °C is neutral even though [H<sub>3</sub>O<sup>+</sup>] = 1.7 × 10<sup>−7</sup> <em>M</em>. <em>K</em><sub>w</sub> is 2.9 × 10<sup>−14</sup> at 40 °C.",
+   "prompt": "解释为什么 40 °C 的纯水样品即使 [H<sub>3</sub>O<sup>+</sup>] = 1.7 × 10<sup>−7</sup> <em>M</em> 也是中性的。40 °C 时 <em>K</em><sub>w</sub> 为 2.9 × 10<sup>−14</sup>。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "In a neutral solution [H<sub>3</sub>O<sup>+</sup>] = [OH<sup>−</sup>]. At 40 °C, [H<sub>3</sub>O<sup>+</sup>] = [OH<sup>−</sup>] = (2.910 × 10<sup>−14</sup>)<sup>1/2</sup> = 1.7 × 10<sup>−7</sup>."
+    "solution": "在中性溶液中 [H<sub>3</sub>O<sup>+</sup>] = [OH<sup>−</sup>]。在 40 °C 时，[H<sub>3</sub>O<sup>+</sup>] = [OH<sup>−</sup>] = (2.910 × 10<sup>−14</sup>)<sup>1/2</sup> = 1.7 × 10<sup>−7</sup>。"
    }
   },
   {
@@ -287,7 +315,7 @@
     "at": "end"
    },
    "cite": "neutral-ph",
-   "prompt": "The ionization constant for water (<em>K</em><sub>w</sub>) is 9.311 × 10<sup>−14</sup> at 60 °C. Calculate [H<sub>3</sub>O<sup>+</sup>], [OH<sup>−</sup>], pH, and pOH for pure water at 60 °C.",
+   "prompt": "水的离子积常数 (<em>K</em><sub>w</sub>) 在 60 °C 时为 9.311 × 10<sup>−14</sup>。计算 60 °C 纯水的 [H<sub>3</sub>O<sup>+</sup>]、[OH<sup>−</sup>]、pH 和 pOH。",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -296,7 +324,7 @@
       "part": "[H<sub>3</sub>O<sup>+</sup>]",
       "value": 3.051e-07,
       "unit": "M",
-      "hint": "In pure water [H<sub>3</sub>O<sup>+</sup>] = [OH<sup>−</sup>] = <em>x</em>, so <em>x</em><sup>2</sup> = <em>K</em><sub>w</sub>."
+      "hint": "在纯水中 [H<sub>3</sub>O<sup>+</sup>] = [OH<sup>−</sup>] = <em>x</em>，所以 <em>x</em><sup>2</sup> = <em>K</em><sub>w</sub>。"
      },
      {
       "part": "[OH<sup>−</sup>]",
@@ -307,7 +335,7 @@
       "part": "pH",
       "value": 6.5156,
       "tol": 0.01,
-      "hint": "pH = −log[H<sub>3</sub>O<sup>+</sup>]."
+      "hint": "pH = −log[H<sub>3</sub>O<sup>+</sup>]。"
      },
      {
       "part": "pOH",
@@ -328,7 +356,7 @@
     "at": "end"
    },
    "cite": "calculations",
-   "prompt": "Calculate the pH and the pOH of each of the following solutions at 25 °C for which the substances ionize completely:<br>(a) 0.000259 <em>M</em> HClO<sub>4</sub><br>(b) 0.21 <em>M</em> NaOH<br>(c) 0.000071 <em>M</em> Ba(OH)<sub>2</sub><br>(d) 2.5 <em>M</em> KOH",
+   "prompt": "计算下列各溶液在 25 °C 时的 pH 和 pOH，其中的物质均完全电离：<br>（a）0.000259 <em>M</em> HClO<sub>4</sub><br>（b）0.21 <em>M</em> NaOH<br>（c）0.000071 <em>M</em> Ba(OH)<sub>2</sub><br>（d）2.5 <em>M</em> KOH",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -337,7 +365,7 @@
       "part": "(a) pH",
       "value": 3.587,
       "tol": 0.01,
-      "hint": "HClO<sub>4</sub> ionizes completely, so [H<sub>3</sub>O<sup>+</sup>] is 0.000259 <em>M</em>."
+      "hint": "HClO<sub>4</sub> 完全电离，所以 [H<sub>3</sub>O<sup>+</sup>] 为 0.000259 <em>M</em>。"
      },
      {
       "part": "(a) pOH",
@@ -348,7 +376,7 @@
       "part": "(b) pOH",
       "value": 0.68,
       "tol": 0.01,
-      "hint": "Start from [OH<sup>−</sup>] = 0.21 <em>M</em> and find the pOH first."
+      "hint": "从 [OH<sup>−</sup>] = 0.21 <em>M</em> 出发，先求 pOH。"
      },
      {
       "part": "(b) pH",
@@ -359,7 +387,7 @@
       "part": "(c) pOH",
       "value": 3.85,
       "tol": 0.01,
-      "hint": "Each Ba(OH)<sub>2</sub> gives two hydroxide ions."
+      "hint": "每个 Ba(OH)<sub>2</sub> 给出两个氢氧根离子。"
      },
      {
       "part": "(c) pH",
@@ -370,7 +398,7 @@
       "part": "(d) pOH",
       "value": -0.4,
       "tol": 0.01,
-      "hint": "A hydroxide ion concentration above 1 <em>M</em> gives a negative pOH."
+      "hint": "氢氧根离子浓度高于 1 <em>M</em> 时，pOH 为负值。"
      },
      {
       "part": "(d) pH",
@@ -378,7 +406,7 @@
       "tol": 0.01
      }
     ],
-    "solution": "(a) pH = 3.587; pOH = 10.413; (b) pOH = 0.68; pH = 13.32; (c) pOH = 3.85; pH = 10.15; (d) pOH = −0.40; pH = 14.4"
+    "solution": "（a）pH = 3.587；pOH = 10.413；（b）pOH = 0.68；pH = 13.32；（c）pOH = 3.85；pH = 10.15；（d）pOH = −0.40；pH = 14.4"
    }
   },
   {
@@ -391,7 +419,7 @@
     "at": "end"
    },
    "cite": "calculations",
-   "prompt": "What are the hydronium and hydroxide ion concentrations in a solution whose pH is 6.52?",
+   "prompt": "pH 为 6.52 的溶液中，水合氢离子和氢氧根离子的浓度各是多少？",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -400,16 +428,16 @@
       "part": "[H<sub>3</sub>O<sup>+</sup>]",
       "value": 3e-07,
       "unit": "M",
-      "hint": "[H<sub>3</sub>O<sup>+</sup>] = 10<sup>−pH</sup>."
+      "hint": "[H<sub>3</sub>O<sup>+</sup>] = 10<sup>−pH</sup>。"
      },
      {
       "part": "[OH<sup>−</sup>]",
       "value": 3.3e-08,
       "unit": "M",
-      "hint": "Divide <em>K</em><sub>w</sub> by [H<sub>3</sub>O<sup>+</sup>], or use pOH = 14.00 − pH."
+      "hint": "用 <em>K</em><sub>w</sub> 除以 [H<sub>3</sub>O<sup>+</sup>]，或者用 pOH = 14.00 − pH。"
      }
     ],
-    "solution": "[H<sub>3</sub>O<sup>+</sup>] = 3.0 × 10<sup>−7</sup> <em>M</em>; [OH<sup>−</sup>] = 3.3 × 10<sup>−8</sup> <em>M</em>"
+    "solution": "[H<sub>3</sub>O<sup>+</sup>] = 3.0 × 10<sup>−7</sup> <em>M</em>；[OH<sup>−</sup>] = 3.3 × 10<sup>−8</sup> <em>M</em>"
    }
   },
   {
@@ -422,7 +450,7 @@
     "at": "end"
    },
    "cite": "neutral-ph",
-   "prompt": "Calculate the hydronium ion concentration and the hydroxide ion concentration in lime juice from its pH. See Figure 14.2 for useful information.",
+   "prompt": "根据青柠汁的 pH，计算其中的水合氢离子浓度和氢氧根离子浓度。有用的信息见图 14.2。",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -432,7 +460,7 @@
       "value": 0.01,
       "unit": "M",
       "tol": 0.1,
-      "hint": "Read the pH of lime juice from the scale of Figure 14.2, then use [H<sub>3</sub>O<sup>+</sup>] = 10<sup>−pH</sup>."
+      "hint": "从图 14.2 的标度上读出青柠汁的 pH，再用 [H<sub>3</sub>O<sup>+</sup>] = 10<sup>−pH</sup>。"
      },
      {
       "part": "[OH<sup>−</sup>]",
@@ -441,7 +469,7 @@
       "tol": 0.1
      }
     ],
-    "solution": "[H<sub>3</sub>O<sup>+</sup>] = 1 × 10<sup>−2</sup> <em>M</em>; [OH<sup>−</sup>] = 1 × 10<sup>−12</sup> <em>M</em>"
+    "solution": "[H<sub>3</sub>O<sup>+</sup>] = 1 × 10<sup>−2</sup> <em>M</em>；[OH<sup>−</sup>] = 1 × 10<sup>−12</sup> <em>M</em>"
    }
   },
   {
@@ -454,13 +482,13 @@
     "at": "end"
    },
    "cite": "calculations",
-   "prompt": "The hydroxide ion concentration in household ammonia is 3.2 × 10<sup>−3</sup> <em>M</em> at 25 °C. What is the concentration of hydronium ions in the solution?",
+   "prompt": "家用氨水中的氢氧根离子浓度在 25 °C 时为 3.2 × 10<sup>−3</sup> <em>M</em>。该溶液中水合氢离子的浓度是多少？",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 3.1e-12,
     "unit": "M",
-    "hint": "[H<sub>3</sub>O<sup>+</sup>] = <em>K</em><sub>w</sub>/[OH<sup>−</sup>], with <em>K</em><sub>w</sub> = 1.0 × 10<sup>−14</sup> at 25 °C.",
+    "hint": "[H<sub>3</sub>O<sup>+</sup>] = <em>K</em><sub>w</sub>/[OH<sup>−</sup>]，其中 25 °C 时 <em>K</em><sub>w</sub> = 1.0 × 10<sup>−14</sup>。",
     "solution": "[OH<sup>−</sup>]<sup class=\"fn\" data-note=\"c-e25-h3o\"></sup> = 3.1 × 10<sup>−12</sup> <em>M</em>"
    }
   }
@@ -567,20 +595,20 @@
   {
    "id": "c-e25-h3o",
    "kind": "correction",
-   "html": "The key names the concentration [OH<sup>−</sup>]; the 3.1 × 10<sup>−12</sup> <em>M</em> it gives is the hydronium ion concentration, [H<sub>3</sub>O<sup>+</sup>]."
+   "html": "答案把该浓度标为 [OH<sup>−</sup>]；它给出的 3.1 × 10<sup>−12</sup> <em>M</em> 实际上是水合氢离子的浓度 [H<sub>3</sub>O<sup>+</sup>]。"
   }
  ],
  "derivations": [
   {
    "id": "pkw",
-   "what": "the relation between pH and pOH",
-   "source": "Chemistry 2e, 14.2 pH and pOH",
+   "what": "pH 与 pOH 的关系",
+   "source": "化学（第2版），14.2 pH 和 pOH",
    "nodes": [
     {
      "assumes": [
       {
        "tex": "\\log xy = \\log x + \\log y",
-       "src": "Appendix B"
+       "src": "附录 B"
       },
       {
        "tex": "\\kpH = -\\log\\kconcHyd",
@@ -631,7 +659,7 @@
        "src": "14.2"
       },
       {
-       "tex": "\\kKw = 1.0\\times10^{-14}\\ \\text{at}\\ 25\\ {}^{\\circ}\\text{C}",
+       "tex": "\\kKw = 1.0\\times10^{-14}\\ \\text{（在}\\ 25\\ {}^{\\circ}\\text{C}\\text{时）}",
        "src": "14.1"
       }
      ],

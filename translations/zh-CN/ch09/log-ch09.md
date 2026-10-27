@@ -1,0 +1,48 @@
+### Pass: chapter 9 (2026-10-26): Gases, pages and merge (claude-sonnet-5-5, medium)
+
+Seven page agents in parallel (`ch09/intro`, `9.1` to `9.6`) translated their `section.json`, `text.html` and `figures.js` from the glossary and `docs/prompts/translate.md`; a chapter merge agent then folded in their records and swept the chapter. Each page appended `{"model": "claude-sonnet-5-5", "effort": "medium"}` to `ai` (text, and figures where there is a `figures.js`; the figure entries carry `part` 翻译) and kept the earlier entries (claude-opus-5-5, low and high) of the source build. `built` is 2026-10-26.
+
+Counts (blocks, photographs, other figures, tables, worked examples, exercises): intro 1, 1, 0, 0, 0, 0; 9.1 6, 4, 7, 1, 4, 15; 9.2 10, 2, 8, 0, 6, 27; 9.3 8, 4, 6, 1, 9, 27; 9.4 5, 1, 2, 0, 3, 9; 9.5 4, 0, 5, 0, 1, 8; 9.6 4, 0, 2, 1, 1, 7.
+
+Glossary: `glossary-ch09.json` had 222 rows before the merge; the pages' pending files held 106 rows (intro 0, 9.1 19, 9.2 22, 9.3 38, 9.4 15, 9.5 8, 9.6 4), 1 of them (`bulb` 玻璃泡) already in the shard, so 105 were added: 327 rows (9.1 83, 9.2 83, 9.3 73, 9.4 40, 9.5 30, 9.6 17, intro 1), sources lower-cased as in the shared glossary, sorted by source. No row duplicates the shared glossary. Targets already used by other shards were reused (反应物, 产物, 氯仿, 丙烯, 碳酸钙, 表面积); no two pages chose different targets for one source, so no page needed a sweep for a target. 34 rows carry `"confirm": "termonline"` (not looked up in this pass) and 8 `"confirm": "owner"`. Rows left open against other shards: `molecular weight` 相对分子质量 (化学名词; ch12 has the deprecated 分子量), `stoichiometry` 化学计量 (heading use; ch17 has 化学计量学 for the discipline), `bench` 工作台 (ch07 has 演示台 for a demonstration bench), all in `notes-ch09.md`.
+
+Scenarios: the pages recorded 157 rows (intro 4, 9.1 20, 9.2 30, 9.3 42, 9.4 22, 9.5 30, 9.6 9). The merge folded the figure and sim eyebrows, the figure citations, the table eyebrows and the five photo credits into one "Every page" group of 5 rows (it also holds the new row for first mentions of persons), and added the rows the sweep found (the 液面 span of 9.1, the `Unknown` subscript of 9.4). `config.md` and `notes-ch09.md` carry the same 155 rows: Every page 5, intro 4, 9.1 19, 9.2 28, 9.3 40, 9.4 21, 9.5 29, 9.6 9. Every page's `glossary-pending.json` and `forced-scenarios.md` was deleted.
+
+Sweep decisions, with reasons:
+- Persons: the standard Chinese rendering with the original once in parentheses at the first mention in the chapter (埃万杰利斯塔·托里拆利（Evangelista Torricelli）, 纪尧姆·阿蒙顿（Guillaume Amontons）, 约瑟夫·路易·盖–吕萨克（Joseph Louis Gay-Lussac）, 雅克·亚历山大·塞萨尔·查理（Jacques Alexandre César Charles）, 罗伯特·玻意耳（Robert Boyle）, 阿梅代奥·阿伏加德罗（Amedeo Avogadro）, 安托万·拉瓦锡（Antoine Lavoisier）, 约瑟夫-路易·拉格朗日（Joseph-Louis Lagrange）, 玛丽·安妮·波尔兹·拉瓦锡（Marie-Anne Paulze Lavoisier）, 苏珊·所罗门（Susan Solomon，图 9.26）, 托马斯·格雷厄姆（Thomas Graham）, 约翰内斯·范德华（Johannes van der Waals）). The pages had Chinese only; the ch01 formula (约翰·道尔顿（John Dalton）) asks for both. Photo-credit names stay in Latin letters.
+- Spacing: seven places where a span of digits or a formula met a Chinese character without a space (在 273 K, 需要 1020 L, 因为 1 摩尔, 占有 1.00 L, 是 N₂, N₂ 与, H₂ 化合, 比较重的 ²³⁸UF₆, 方均根速率 u_rms 定义为) now follow the ch01 form. Inline math that touches a Chinese character (`$\frac{1}{13.6}$倍`) is left as it is; ch01 has the same.
+- 9.3 exercise e8 had a stray top-level `hint` in its `multi` answer, copied from the part's hint; the checker's schema refused it, so it was removed (the hint stays on the part, as in the source).
+- 9.4 `\kMM_{Unknown}` and `\text{rate of effusion of Unknown}` (3 places) are reader-visible words: written `\kMM_{\text{未知}}` with `\text{}` translated; `translation_parity.py` accepts it.
+- Labels checked against ch01: 例 N.M, 学习检测 (24 in the text, one per source "Check Your Learning", 9.6's lower-case "Check your Learning" included), 解, 答案, 日常生活中的化学, 各门科学如何相互联系, 化学家小传; the table eyebrows are 表 9.1 to 表 9.3, the Figure and Sim eyebrows stay English. Part labels in prose are （a）（b）; the half-width `(a)` in 9.5 is a quotation of a figure label. The English `answer.parts[].part` strings (9.1, 9.2, 9.3, 9.6) stay as in ch01 (owner note there).
+- Data-concept spans: 1,431 spans checked against the glossary targets (concept rows, the concept's terms, the span's English text). 21 differ and all are whole-word wraps recorded in the scenarios: 血压, 收缩压, 舒张压, 压力计, 总压 (`gas-pressure`); 液面, 液氨, 液态 (`liquid`); 摄氏; 室温, 体温 (`temperature`); 棱长; 氢气, 氨气, 氮气, 燃气 (`gas`); 一氧化二氮 (`oxide`); 计量 (`stoichiometry`); 裂变 (`nuclear-fission`, no glossary row for the concept's word). Spans moved inside their block by word order keep their `data-concept` multiset.
+- English left in the text nodes: names and credits, ATA, BCD, GHG, IPCC, KMT, NOAA, STP, ppm, IUPAC, unit symbols (atm, kPa, torr, psi, mbar, mol), formulas, the 希腊语 word *sphygmos*, the letter name rho, *The Coldest March* and *The New York Times* (the latter as 《纽约时报》), and 大奖章 Grande Medaille. Rows in the glossary that the source text does not use (for example 热力学温度, 储罐, 气体温度计, 理想气体常数 appear only in the source's `source.md` or in no page) were left in the shard.
+
+Checks: `node --check figures.js` passes on 9.1 to 9.6; the 6 `section.json`, intro's, `chapter.json`, `book-rows.json`, `glossary-ch09.json`, `book.json` and the shared glossary parse; the `id`, `data-*`, `class` multisets and tag counts of the seven `text.html` equal the source's (intro, 9.1 to 9.6: OK); `translation_parity.py --chapter ch09`: intro ok, and the remaining lines are 9.1 to 9.6's pure-number or unit-symbol solutions that need no translation (20 lines) and the `figures.js` word-order and article lines of the recorded scenarios (18 lines); `OMNISTAX_CONTENT_DIR=/home/user OMNISTAX_BOOKS=chemistry-2e-zh-cn npm run check:content`: "21 chapters, 114 sections, 21 introduction or summary pages, 30 checks, no errors, 14 warnings" (the 12 appendix sheet titles and two non-numeric cells). The humanizer review and the `npm run dev` read-through (translate.md 8.4) are outstanding for the owner.
+
+### Review pass: chapter 9 (2026-10-27): Gases (reviewer opus; fixer claude-sonnet-5-5, medium)
+
+Findings of the reviewer (`review-ch09.md`): critical 0, major 4, minor 45, plus one owner item (分子运动论 vs 分子动理论). 49 numbered rows: 41 applied whole, 2 applied in part, 6 declined or only recorded.
+
+Applied (row numbers of the review table):
+- Major: 1 (9.6 `那样与压强<em>成反比</em>`), 2 and 3 (spans removed from the 9.4 and 9.6 `summary_html`), 4 declined (below).
+- Minor: 5, 6, 7, 8, 9, 10, 11, 12 (also `chapter.json` P meaning and the `amontons-law` concept statement via `ost set`), 13, 14, 15, 16, 17, 18 (rows in config and notes), 19 (盖-吕萨克 hyphen: 9.2 text, shard rows, config, notes; 麦克斯韦–玻尔兹曼 keeps its en dash), 20, 21, 22, 23, 24, 25, 26, 27, 28 declined, 31, 32 (9.3 氢气 and 9.5 氮气 spans; the recorded 氢气体温度计 kept), 33 in part, 34, 36, 37, 38 (all table heads and axis labels now full-width （…）), 39, 41, 42, 43, 44, 45, 46, 47 (低温/高温 in 9.2 text, 9.6 text and 9.6 section.json; 升高温度 and 降低温度 untouched), 48 in part, 49.
+- Shard `glossary-ch09.json` (327 to 332 rows): `royal society` 英国皇家学会; new rows `collection flask` 收集瓶, `waste gas` 废气, `front` 正视, `above` 俯视, `corner` 斜视; `joseph louis gay-lussac`, `gay-lussac’s law` and `marie anne paulze lavoisier` re-spelled with the hyphen.
+- config.md and notes-ch09.md: rows updated (Figure 9.7 caption, NOAA credit with 改编自, Example 9.18 rationale corrected, collection flask, 9.6 stoichiometry) and 6 rows added (inline-math punctuation scenario, unit symbols in part lists, English subscripts, 废气, 。 in 9.4, 压缩因子); three owner doubts added to notes.
+
+Declined or only recorded, with reasons:
+- 4 (物质的量 to 摩尔数): the ch01 decision and GB 3102 fix 物质的量 for the amount of substance; the sentences carry one `mole` span each, so dropping 以摩尔计 would change the span multiset. Recorded as an owner doubt.
+- 28 (实验式质量 to 实验式量): the source writes "empirical mass" with a `mass` span, so 质量 stays under the span; the source itself drifts.
+- 29 (punctuation inside inline math): recorded as a scenario; the LaTeX is kept byte for byte (translate.md 5).
+- 30 (683 billion): digits kept (translate.md 3.4); only the wrong rationale in the record corrected.
+- 33 in part: 英国皇家学会 applied; 《最冷的三月》 declined, no published Chinese title is known and one must not be invented.
+- 35 (公吨 to 吨): the source distinguishes "metric ton (1000 kg)" from "ton"; the glossary row keeps 公吨.
+- 40 (species): the ch14 shard already has 物种 for the same source; reuse is required. Owner doubt.
+- 48 in part: 压缩因子曲线 applied; the objective keeps 压缩因子 (Z) and the correction from the source word "compressibility" is recorded.
+- Owner item (分子运动论): not changed; recorded in notes.
+
+Checks, after the sweep:
+- `node --check figures.js` passes on 9.1 to 9.6; `section.json` of intro and 9.1 to 9.6, `chapter.json`, `book-rows.json`, `glossary-ch09.json`, `book.json` and the shared glossary parse (shared glossary not edited).
+- Tag, `id`, `class` and `data-*` multisets equal the source for every `text.html` and every HTML leaf of every `section.json`, except `data-original-caption` (translated by design): OK.
+- `translation_parity.py --chapter ch09`: intro ok; the other pages list only the 20 pure-number or unit-symbol solutions and the 18 `figures.js` word-order lines of the first pass (no new line).
+- `check:content`: `21 chapters, 114 sections, 21 introduction or summary pages, 30 checks, no errors, 14 warnings` (the 14 are the sheets titles, none in ch09).
+- Superseded forms grepped and absent in ch09: 盖–吕萨克, 收集烧瓶, 压力表, 低温度/高温度 (after 较, 最, 升, 降 excluded), 废气体, 气体氮, 压缩性曲线, 皇家学会 without 英国, 玛丽·安妮.

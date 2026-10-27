@@ -38,11 +38,11 @@ const zOf = (g, P, T) => (P * molarVolume(g.a, g.b, P, T)) / (R * T);
   const crossing = (g, T) => { const den = g.a - R * T * g.b; if (den <= 0) return null; const V = (g.a * g.b) / den; return (R * T) / V; };
   const WHO = ['h2', 'n2', 'o2', 'ch4', 'co2'];
   const d = sim('sim-z-graph', 560);
-  const gas = F.select(d.controls, { label: '\\text{gas}', aria: 'the gas the readout follows', options: ZG.map((g, i) => ({ value: String(i), label: g.f })), value: '4', ms: 0 });
+  const gas = F.select(d.controls, { label: '\\text{气体}', aria: '读数所对应的气体', options: ZG.map((g, i) => ({ value: String(i), label: g.f })), value: '4', ms: 0 });
   let Tc = null;
-  const Pc = ctl(d.controls, { label: '\\kP', cls: 'pressure', min: 0, max: 1000, step: 5, value: 200, unit: 'atm', dec: 0, aria: 'pressure in atmospheres',
+  const Pc = ctl(d.controls, { label: '\\kP', cls: 'pressure', min: 0, max: 1000, step: 5, value: 200, unit: 'atm', dec: 0, aria: '以标准大气压为单位的压强',
     specials: [{ at: () => (Tc ? crossing(ZG[+gas.value], Tc.v) : null), label: 'Z = 1' }] });
-  Tc = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 310, max: 800, step: 5, value: 310, unit: 'K', dec: 0, aria: 'temperature in kelvin' });
+  Tc = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 310, max: 800, step: 5, value: 310, unit: 'K', dec: 0, aria: '以开尔文为单位的温度' });
   const box = { l: 150, r: 1060, t: 120, b: 480 };
   function draw() {
     const { ctx } = begin(d.c);
@@ -50,7 +50,7 @@ const zOf = (g, P, T) => (P * molarVolume(g.a, g.b, P, T)) / (R * T);
     const { X, Y } = axes(ctx, box, [0, 1000], [0, 2.5], { xl: 'P (atm)', xc: C('pressure'), yl: 'Z', yc: PAL.ink, nx: 5, ny: 5, fy: (v) => fmt(v, 1) });
     ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.05); ctx.fillRect(box.l, Y(1), box.r - box.l, box.b - Y(1)); ctx.restore();
     line(ctx, box.l, Y(1), box.r, Y(1), PAL.ink, 3, [10, 10]);
-    text(ctx, 'ideal gas', box.r - 8, Y(1) - 12, PAL.ink, { size: 18, align: 'right', bg: PAL.panel });
+    text(ctx, '理想气体', box.r - 8, Y(1) - 12, PAL.ink, { size: 18, align: 'right', bg: PAL.panel });
     ctx.save(); ctx.beginPath(); ctx.rect(box.l, box.t - 4, box.r - box.l, box.b - box.t + 4); ctx.clip();
     ZG.forEach((q, i) => { if (i !== gi) curve(ctx, (p) => zOf(q, Math.max(p, 0.5), T), 0, 1000, X, Y, F.ref(WHO[i]), 3, 100); });
     curve(ctx, (p) => zOf(g, Math.max(p, 0.5), T), 0, 1000, X, Y, F.ref(WHO[gi]), 5, 100);
@@ -65,8 +65,8 @@ const zOf = (g, P, T) => (P * molarVolume(g.a, g.b, P, T)) / (R * T);
       text(ctx, q.f, 1164, y + 7, F.ref(WHO[i]), { size: 20, weight: i === gi ? 700 : 400 });
     });
     const Vm = molarVolume(g.a, g.b, Pe, T), VmS = +Vm.toPrecision(4), zS = (Pe * VmS) / (R * T);
-    topline(ctx, P < 1 ? 'At a pressure near zero, every gas has Z = 1 and behaves as an ideal gas.'
-      : 'At ' + fmt(P, 0) + ' atm and ' + fmt(T, 0) + ' K, Z for ' + g.f + ' is ' + fmt(zS, 2) + ', so its molar volume is ' + fmt(100 * zS, 0) + '% of an ideal gas’s.');
+    topline(ctx, P < 1 ? '压强接近零时，每种气体的 Z = 1，表现为理想气体。'
+      : '在 ' + fmt(P, 0) + ' atm 和 ' + fmt(T, 0) + ' K 时，' + g.f + ' 的 Z 为 ' + fmt(zS, 2) + '，因此其摩尔体积是理想气体的 ' + fmt(100 * zS, 0) + '%。');
     tex(d.readout, P < 1 ? 'Z = \\frac{\\kP\\kVm}{R\\kT} = 1'
       : `Z = \\frac{\\kP\\kVm}{R\\kT} = \\frac{(${hue('pressure', fmt(P, 0))}\\ \\text{atm})(${hue('volume', String(VmS))}\\ \\text{L/mol})}{(0.08206\\ \\text{L atm/(mol K)})(${hue('temperature', fmt(T, 0))}\\ \\text{K})} = ${fmt(zS, 2)}`);
   }
@@ -89,10 +89,10 @@ const zOf = (g, P, T) => (P * molarVolume(g.a, g.b, P, T)) / (R * T);
 ===================================================================== */
 (function () {
   const GASES = [
-    { f: 'He', word: 'helium', m: 4.0, a: 0.0342, b: 0.0237, atoms: [['He', 0, 0, 6]] },
-    { f: 'N₂', word: 'nitrogen', m: 28.0, a: 1.39, b: 0.0391, atoms: [['N', -6, 0, 7], ['N', 6, 0, 7]] },
-    { f: 'O₂', word: 'oxygen', m: 32.0, a: 1.36, b: 0.0318, atoms: [['O', -6, 0, 7], ['O', 6, 0, 7]] },
-    { f: 'CO₂', word: 'carbon dioxide', m: 44.0, a: 3.59, b: 0.0427, atoms: [['O', -13, 0, 7], ['O', 13, 0, 7], ['C', 0, 0, 6.5]] },
+    { f: 'He', word: '氦', m: 4.0, a: 0.0342, b: 0.0237, atoms: [['He', 0, 0, 6]] },
+    { f: 'N₂', word: '氮', m: 28.0, a: 1.39, b: 0.0391, atoms: [['N', -6, 0, 7], ['N', 6, 0, 7]] },
+    { f: 'O₂', word: '氧', m: 32.0, a: 1.36, b: 0.0318, atoms: [['O', -6, 0, 7], ['O', 6, 0, 7]] },
+    { f: 'CO₂', word: '二氧化碳', m: 44.0, a: 3.59, b: 0.0427, atoms: [['O', -13, 0, 7], ['O', 13, 0, 7], ['C', 0, 0, 6.5]] },
   ];
   const V0 = 4.25, HW = 1.1, HH = 0.85, HD = 0.85, CXI = -1.45, CXR = 1.45, K = 0.011;
   const palSig = () => [PAL.ink, PAL.panel, PAL.muted, F.el('He'), F.el('N'), F.el('O'), F.el('C'), F.ref('ideal-gas'), F.ref('real-gas')].join('|');
@@ -100,12 +100,12 @@ const zOf = (g, P, T) => (P * molarVolume(g.a, g.b, P, T)) / (R * T);
   const heading3 = () => { const z = 2 * Math.random() - 1, a = Math.random() * TAU, r = Math.sqrt(1 - z * z); return [r * Math.cos(a), r * Math.sin(a), z]; };
 
   const d = sim('sim-real-boxes');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [-1.22, 1.22], views: [{ label: 'front', yaw: 0, pitch: 0.1 }, { label: 'corner', yaw: 0.6, pitch: 0.3 }], h: 360, dist: 7.6, tilt: 0.1 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [-1.22, 1.22], views: [{ label: '正视', yaw: 0, pitch: 0.1 }, { label: '斜视', yaw: 0.6, pitch: 0.3 }], h: 360, dist: 7.6, tilt: 0.1 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 300);
-  const held = F.choice(d.controls, { label: '\\text{held constant}', aria: 'the quantity held constant', options: [{ value: 'P', label: 'pressure' }, { value: 'V', label: 'volume' }], value: 'V', ms: 0, onInput: restart });
-  const gas = F.choice(d.controls, { label: '\\text{gas}', aria: 'the gas in both boxes', options: GASES.map((g, i) => ({ value: String(i), label: g.f })), value: '3', ms: 0, onInput: restart });
-  const Nc = ctl(d.controls, { label: '\\kn', cls: 'amount', min: 0.5, max: 10, step: 0.01, value: 3.46, unit: 'mol', dec: 2, aria: 'amount of gas in moles' });
-  const Tc = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 310, max: 600, step: 1, value: 502, unit: 'K', dec: 0, aria: 'temperature in kelvin' });
+  const held = F.choice(d.controls, { label: '\\text{保持恒定}', aria: '保持恒定的量', options: [{ value: 'P', label: '压强' }, { value: 'V', label: '体积' }], value: 'V', ms: 0, onInput: restart });
+  const gas = F.choice(d.controls, { label: '\\text{气体}', aria: '两个盒子中的气体', options: GASES.map((g, i) => ({ value: String(i), label: g.f })), value: '3', ms: 0, onInput: restart });
+  const Nc = ctl(d.controls, { label: '\\kn', cls: 'amount', min: 0.5, max: 10, step: 0.01, value: 3.46, unit: 'mol', dec: 2, aria: '以摩尔为单位的气体的物质的量' });
+  const Tc = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 310, max: 600, step: 1, value: 502, unit: 'K', dec: 0, aria: '以开尔文为单位的温度' });
 
   const g = () => GASES[+gas.value];
   function state() {
@@ -168,18 +168,18 @@ const zOf = (g, P, T) => (P * molarVolume(g.a, g.b, P, T)) / (R * T);
   function build(s) {
     const key = [held.value, gas.value, boxes[0].P.length, fmt(s.Vr, 2), palSig()].join('|'); if (key === sig) return; sig = key;
     v.clear(); ms = [[], []];
-    const q = s.q, name = (q.atoms.length === 1 ? 'an atom of ' : 'a molecule of ') + q.word + ', ' + q.f;
+    const q = s.q, name = '一个' + q.word + (q.atoms.length === 1 ? '原子' : '分子') + '，' + q.f;
     boxes.forEach((b, bi) => {
       const hw = halfW(b, s);
       const who = F.ref(b.id === 'ideal' ? 'ideal-gas' : 'real-gas');
       const glassBox = new T3D.Mesh(new T3D.BoxGeometry(2 * hw, 2 * HH, 2 * HD), mat3(who, glass({ opacity: 0.14 }))); glassBox.position.set(b.cx, 0, 0); glassBox.renderOrder = 2; grp.add(glassBox);
       const edges = new T3D.LineSegments(new T3D.EdgesGeometry(glassBox.geometry), new T3D.LineBasicMaterial({ color: who, transparent: true, opacity: 0.7 })); edges.position.copy(glassBox.position); grp.add(edges);
-      v.pickable(glassBox, b.id === 'ideal' ? 'the ideal gas' : 'the real gas, ' + q.word);
-      v.label(b.id === 'ideal' ? 'ideal' : 'real', [b.cx, HH + 0.14, 0], grp, 6).style.color = who;
+      v.pickable(glassBox, b.id === 'ideal' ? '理想气体' : '实际气体，' + q.word);
+      v.label(b.id === 'ideal' ? '理想' : '实际', [b.cx, HH + 0.14, 0], grp, 6).style.color = who;
       const sc = b.id === 'ideal' ? 0.2 : 1;
       ms[bi] = b.P.map(() => {
         const m = new T3D.Group(); grp.add(m);
-        q.atoms.forEach(([elm, dx, dy, rr]) => v.pickable(sphere3(m, [dx * K * sc, dy * K * sc, 0], rr * K * 1.3 * sc + (sc < 1 ? 0.012 : 0), F.el(elm)), (b.id === 'ideal' ? 'an ideal particle standing for ' : '') + name));
+        q.atoms.forEach(([elm, dx, dy, rr]) => v.pickable(sphere3(m, [dx * K * sc, dy * K * sc, 0], rr * K * 1.3 * sc + (sc < 1 ? 0.012 : 0), F.el(elm)), (b.id === 'ideal' ? '一个理想粒子，代表' : '') + name));
         return m;
       });
     });
@@ -195,46 +195,46 @@ const zOf = (g, P, T) => (P * molarVolume(g.a, g.b, P, T)) / (R * T);
     const q = s.q, cp = C('pressure'), cv = C('volume'), atP = held.value === 'P';
     if (!atP) {
       const diff = +sig3(s.Pr) - +sig3(s.Pi);
-      topline(ctx, 'At ' + fmt(s.T, 0) + ' K, ' + fmt(s.n, 2) + ' mol of ' + q.f + ' in 4.25 L exerts ' + sig3(s.Pr) + ' atm, ' + fmt(Math.abs(diff), Math.abs(diff) < 1 ? 2 : 1) + ' atm ' + (diff < 0 ? 'less' : 'more') + ' than an ideal gas would.');
+      topline(ctx, '在 ' + fmt(s.T, 0) + ' K 时，4.25 L 中的 ' + fmt(s.n, 2) + ' mol ' + q.f + ' 产生 ' + sig3(s.Pr) + ' atm 的压强，比理想气体' + (diff < 0 ? '低' : '高') + ' ' + fmt(Math.abs(diff), Math.abs(diff) < 1 ? 2 : 1) + ' atm。');
       /* pressure axis fixed at 0 to 140 atm, above the largest nRT/(V − nb), 129 atm for 10 mol of CO₂ at 600 K */
       const X = (p) => 250 + (p / 140) * 1000;
       const bar = (y, p0, p1, fill) => { ctx.save(); ctx.fillStyle = fill; ctx.fillRect(X(p0), y - 16, X(p1) - X(p0), 32); ctx.restore(); };
-      text(ctx, 'ideal gas', 230, 118, F.ref('ideal-gas'), { size: 20, align: 'right' });
+      text(ctx, '理想气体', 230, 118, F.ref('ideal-gas'), { size: 20, align: 'right' });
       bar(111, 0, s.Pi, alpha(cp, 0.75));
       text(ctx, 'nRT/V = ' + sig3(s.Pi) + ' atm', X(s.Pi) + 12, 118, cp, { size: 18, weight: 600 });
-      text(ctx, 'real gas', 230, 188, F.ref('real-gas'), { size: 20, align: 'right' });
+      text(ctx, '实际气体', 230, 188, F.ref('real-gas'), { size: 20, align: 'right' });
       bar(181, 0, s.Pr, alpha(cp, 0.75));
       ctx.save(); ctx.strokeStyle = cp; ctx.lineWidth = 2; ctx.setLineDash([6, 6]); ctx.strokeRect(X(Math.min(s.Pr, s.rep)), 165, Math.abs(X(s.rep) - X(s.Pr)), 32); ctx.restore();
-      text(ctx, 'nRT/(V − nb) = ' + sig3(s.rep) + ' atm, less n²a/V² = ' + sig3(s.att) + ' atm', X(0), 151, cp, { size: 18, weight: 600 });
+      text(ctx, 'nRT/(V − nb) = ' + sig3(s.rep) + ' atm，减去 n²a/V² = ' + sig3(s.att) + ' atm', X(0), 151, cp, { size: 18, weight: 600 });
       line(ctx, X(0), 222, X(140), 222, PAL.muted, 2);
       scale(ctx, X, 0, 140, 20, 222, '', 1);
       text(ctx, 'P (atm)', X(140), 276, cp, { size: 18, weight: 600, align: 'right' });
     } else {
       const diff = +fmt(s.Vr, 2) - V0, nb = s.n * q.b;
-      topline(ctx, 'At ' + sig3(s.Pi) + ' atm and ' + fmt(s.T, 0) + ' K, ' + fmt(s.n, 2) + ' mol of ' + q.f + ' fills ' + fmt(s.Vr, 2) + ' L, ' + fmt(Math.abs(diff), 2) + ' L ' + (diff < 0 ? 'less' : 'more') + ' than the 4.25 L an ideal gas would fill.');
+      topline(ctx, '在 ' + sig3(s.Pi) + ' atm 和 ' + fmt(s.T, 0) + ' K 时，' + fmt(s.n, 2) + ' mol ' + q.f + ' 占据 ' + fmt(s.Vr, 2) + ' L，比理想气体所占的 4.25 L ' + (diff < 0 ? '小' : '大') + ' ' + fmt(Math.abs(diff), 2) + ' L。');
       /* volume axis fixed at 0 to 5 L; the real volume stays below 4.6 L across the sliders */
       const X = (V) => 250 + (V / 5) * 1000;
       const bar = (y, a0, a1, fill) => { ctx.save(); ctx.fillStyle = fill; ctx.fillRect(X(a0), y - 16, X(a1) - X(a0), 32); ctx.restore(); };
-      text(ctx, 'ideal gas', 230, 118, F.ref('ideal-gas'), { size: 20, align: 'right' });
+      text(ctx, '理想气体', 230, 118, F.ref('ideal-gas'), { size: 20, align: 'right' });
       bar(111, 0, V0, alpha(cv, 0.75));
       text(ctx, 'V = nRT/P = 4.25 L', X(V0) + 12, 118, cv, { size: 18, weight: 600 });
-      text(ctx, 'real gas', 230, 188, F.ref('real-gas'), { size: 20, align: 'right' });
+      text(ctx, '实际气体', 230, 188, F.ref('real-gas'), { size: 20, align: 'right' });
       bar(181, 0, s.Vr, alpha(cv, 0.75));
       bar(181, 0, nb, alpha(PAL.ink, 0.35));
-      text(ctx, 'V = ' + fmt(s.Vr, 2) + ' L, of which nb = ' + fmt(nb, 3) + ' L', X(0), 151, cv, { size: 18, weight: 600 });
+      text(ctx, 'V = ' + fmt(s.Vr, 2) + ' L，其中 nb = ' + fmt(nb, 3) + ' L', X(0), 151, cv, { size: 18, weight: 600 });
       line(ctx, X(0), 222, X(5), 222, PAL.muted, 2);
       scale(ctx, X, 0, 5, 1, 222, '', 1);
       text(ctx, 'V (L)', X(5), 276, cv, { size: 18, weight: 600, align: 'right' });
     }
-    text(ctx, 'molecules drawn: four per mole; the ideal particles are drawn at a fifth of their size', 250, 294, PAL.muted, { size: 16 });
+    text(ctx, '画出的分子：每摩尔 4 个；理想粒子按其大小的五分之一绘出', 250, 294, PAL.muted, { size: 16 });
     const n = hue('amount', fmt(s.n, 2)), T = hue('temperature', fmt(s.T, 0)), a = String(q.a), b = String(q.b);
     if (!atP) {
       ro.set(`\\kP = \\frac{\\kn R\\kT}{\\kV-\\kn b}-\\frac{\\kn^{2}a}{\\kV^{2}} = \\frac{(${n})(0.08206)(${T})}{${hue('volume', '4.25')}-(${n})(${b})}-\\frac{(${n})^{2}(${a})}{(${hue('volume', '4.25')})^{2}} = ${hue('pressure', sig3(s.Pr))}\\ \\text{atm}`,
-        'An ideal gas in the same flask would exert ' + sig3(s.Pi) + ' atm.', { form: 'V' });
+        '同一烧瓶中的理想气体将产生 ' + sig3(s.Pi) + ' atm 的压强。', { form: 'V' });
     } else {
       const Ps = hue('pressure', sig3(s.Pi)), Vs = hue('volume', fmt(s.Vr, 3));
       ro.set(`\\left(\\kP+\\frac{\\kn^{2}a}{\\kV^{2}}\\right)(\\kV-\\kn b) = (${Ps}+${sig3(s.attP)})(${Vs}-${fmt(s.n * q.b, 3)}) = (${n})(0.08206)(${T}) = ${fmt(s.nRT, 1)}\\ \\text{L atm}`,
-        'An ideal gas at the same pressure would fill 4.25 L.', { form: 'P' });
+        '相同压强下的理想气体将占据 4.25 L。', { form: 'P' });
     }
   }
   const ro = F.readout(d);

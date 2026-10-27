@@ -2,31 +2,39 @@
  "id": "18.10",
  "module": "m68838",
  "chapter": "18",
- "title": "Occurrence, Preparation, and Properties of Sulfur",
- "short": "Sulfur",
- "lead": "Sulfur is found in elemental deposits, in sulfide and <span data-concept=\"sulfate\">sulfate</span> minerals and in natural and volcanic gases. The <span data-concept=\"frasch-process\">Frasch process</span> brings it up from underground deposits, and as a nonmetal of group 16 it <span data-concept=\"oxidizing-agent\">oxidizes</span> metals and is itself oxidized by more electronegative nonmetals.",
+ "title": "硫的存在、制备与性质",
+ "short": "硫",
+ "lead": "硫以单质矿床的形式存在，也存在于硫化物和<span data-concept=\"sulfate\">硫酸盐</span>矿物以及天然气和火山气体中。<span data-concept=\"frasch-process\">弗拉施法</span>把硫从地下矿床中开采出来；作为第 16 族的非金属，硫能<span data-concept=\"oxidizing-agent\">氧化</span>金属，自身则被电负性更大的非金属氧化。",
  "objectives": [
-  "Describe the properties, preparation, and uses of sulfur"
+  "描述硫的性质、制备和用途"
  ],
- "summary_html": "<p>Sulfur (group 16) reacts with almost all metals and readily forms the sulfide ion, S<sup>2−</sup>, in which it has as <span data-concept=\"oxidation-number\">oxidation state</span> of 2−. Sulfur reacts with most <span data-concept=\"nonmetal\">nonmetals</span>.</p>",
- "notes": "The section keeps as printed the summary’s “has as oxidation state of 2−”, and the key to fs-idm213191488 writes “SO₂, sp² 4+” without its comma.",
+ "summary_html": "<p>硫（第 16 族）几乎与所有金属反应，容易形成硫离子 S<sup>2−</sup>，其中硫的<span data-concept=\"oxidation-number\">氧化态</span>为 2−。硫与大多数<span data-concept=\"nonmetal\">非金属</span>反应。</p>",
+ "notes": "本节照原样保留了小结中英文原文的误写“has as oxidation state of 2−”（译文按“氧化态为 2−”译出），以及习题 fs-idm213191488 答案中“SO₂，sp² 4+”少了一个逗号。",
  "ai": {
   "text": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-10-05",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels, concept tags, hints and suggested approaches are AI-generated. Answers come from the book’s answer key. The unkeyed exercise fs-idp17880736 (the Lewis structures of SF₄, K₂SO₄, SO₂Cl₂, H₂SO₃ and SO₃) is left out, and no answer is drawn for it. The unkeyed choice items fs-idm200394080 and fs-idm130857952 are kept open with their options and a suggested approach, and the unkeyed conceptual exercises fs-idm5069504 and fs-idm217260912 carry a suggested approach marked as OmniStax’s own. Exercises fs-idm200394080, fs-idm130857952 and fs-idm217260912 use the sulfurous and sulfuric acids of 18.9 and stay where the book prints them. Nothing is moved.",
+ "exercise_notes": "布鲁姆层级、概念标签、提示和建议解法由 AI 生成。答案来自本书的答案册。没有答案的习题 fs-idp17880736（SF₄、K₂SO₄、SO₂Cl₂、H₂SO₃ 和 SO₃ 的路易斯结构）未收入，也没有为它作答。没有答案的选择题 fs-idm200394080 和 fs-idm130857952 保持开放，附有选项和建议解法；没有答案的概念题 fs-idm5069504 和 fs-idm217260912 附有建议解法，并注明为 OmniStax 自己所写。习题 fs-idm200394080、fs-idm130857952 和 fs-idm217260912 用到 18.9 中的亚硫酸和硫酸，仍留在本书印出的位置。没有移动任何内容。",
  "figures": [
   {
    "id": "fig-volcano",
@@ -38,6 +46,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -48,7 +61,7 @@
    "originals": [
     "/media/ch18/CNX_Chem_18_10_FrachMine.jpg"
    ],
-   "original_caption": "The Frasch process is used to mine sulfur from underground deposits.",
+   "original_caption": "弗拉施法用于开采地下矿床中的硫。",
    "draws": [
     "temperature",
     "pressure"
@@ -68,6 +81,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   }
@@ -161,11 +179,11 @@
     "at": "end"
    },
    "cite": "properties",
-   "prompt": "Explain why hydrogen sulfide is a gas at room temperature, whereas water, which has a lower molecular mass, is a liquid.",
+   "prompt": "解释为什么硫化氢在室温下是气体，而分子质量更小的水却是液体。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Water is a liquid because its molecules are held together by hydrogen bonds, while hydrogen sulfide molecules attract one another only by much weaker forces. Hydrogen bonding requires hydrogen bonded to a small, highly electronegative atom such as oxygen. Oxygen (electronegativity 3.5) makes the O–H bonds very polar, and each H<sub>2</sub>O molecule hydrogen bonds strongly to its neighbors through its lone pairs and its partly positive hydrogen atoms. Sulfur is larger and less electronegative (2.5, close to hydrogen at 2.1), so the S–H bonds are only slightly polar and H<sub>2</sub>S forms essentially no hydrogen bonds; only dispersion forces and weak dipole-dipole attractions hold its molecules together. Although H<sub>2</sub>S has the higher molar mass, 34 g/mol against 18 g/mol, far less energy is needed to separate its molecules, so it boils at about −60 °C, whereas water boils at 100 °C."
+    "solution": "水是液体，因为其分子之间通过氢键结合在一起，而硫化氢分子之间只靠弱得多的作用力相互吸引。形成氢键要求氢与氧这样小而电负性很大的原子相连。氧（电负性 3.5）使 O–H 键的极性很强，每个 H<sub>2</sub>O 分子通过孤电子对和带部分正电荷的氢原子与相邻分子形成很强的氢键。硫更大、电负性更小（2.5，与氢的 2.1 接近），所以 S–H 键只有轻微的极性，H<sub>2</sub>S 基本不形成氢键；它的分子只靠色散力和较弱的偶极–偶极吸引力结合在一起。尽管 H<sub>2</sub>S 的摩尔质量较大，为 34 g/mol，而水为 18 g/mol，但使其分子分开所需的能量要少得多，所以它在约 −60 °C 沸腾，而水在 100 °C 沸腾。"
    }
   },
   {
@@ -178,11 +196,11 @@
     "at": "end"
    },
    "cite": "properties",
-   "prompt": "Give the hybridization and oxidation state for sulfur in SO<sub>2</sub>, in SO<sub>3</sub>, and in H<sub>2</sub>SO<sub>4</sub>.",
+   "prompt": "给出 SO<sub>2</sub>、SO<sub>3</sub> 和 H<sub>2</sub>SO<sub>4</sub> 中硫的杂化方式和氧化态。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "SO<sub>2</sub>, <em>sp</em><sup>2</sup> 4+; SO<sub>3</sub>, <em>sp</em><sup>2</sup>, 6+; H<sub>2</sub>SO<sub>4</sub>, <em>sp</em><sup>3</sup>, 6+"
+    "solution": "SO<sub>2</sub>，<em>sp</em><sup>2</sup> 4+；SO<sub>3</sub>，<em>sp</em><sup>2</sup>，6+；H<sub>2</sub>SO<sub>4</sub>，<em>sp</em><sup>3</sup>，6+"
    }
   },
   {
@@ -195,11 +213,11 @@
     "at": "end"
    },
    "cite": "properties",
-   "prompt": "Which is the stronger acid, NaHSO<sub>3</sub> or NaHSO<sub>4</sub>?",
+   "prompt": "NaHSO<sub>3</sub> 和 NaHSO<sub>4</sub> 哪个是更强的酸？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "NaHSO<sub>4</sub> is the stronger acid. Each salt supplies its anion as the acid: ${\\text{HSO}}_{4}{}^{−}$ from NaHSO<sub>4</sub> and ${\\text{HSO}}_{3}{}^{−}$ from NaHSO<sub>3</sub>. In ${\\text{HSO}}_{4}{}^{−}$ the sulfur atom is bonded to four oxygen atoms and has an oxidation state of +6; in ${\\text{HSO}}_{3}{}^{−}$ it is bonded to three oxygen atoms and has an oxidation state of +4. For oxyacids of the same central atom, acid strength increases with the number of oxygen atoms bonded to it, because the extra electronegative oxygen atoms and the higher oxidation state draw electron density away from the O–H bond, making it more polar and the proton easier to lose, and they also spread the negative charge of the conjugate base. ${\\text{HSO}}_{4}{}^{−}$ has <em>K</em><sub>a</sub> = 1.2 × 10<sup>−2</sup>, whereas ${\\text{HSO}}_{3}{}^{−}$ has <em>K</em><sub>a</sub> = 6.4 × 10<sup>−8</sup>."
+    "solution": "NaHSO<sub>4</sub> 是更强的酸。每种盐都以其阴离子作为酸：NaHSO<sub>4</sub> 提供 ${\\text{HSO}}_{4}{}^{−}$，NaHSO<sub>3</sub> 提供 ${\\text{HSO}}_{3}{}^{−}$。在 ${\\text{HSO}}_{4}{}^{−}$ 中，硫原子与四个氧原子键合，氧化态为 +6；在 ${\\text{HSO}}_{3}{}^{−}$ 中，它与三个氧原子键合，氧化态为 +4。对于中心原子相同的含氧酸，酸性随与中心原子键合的氧原子数增加而增强，因为多出的电负性大的氧原子和较高的氧化态会把电子密度从 O–H 键上吸走，使该键的极性更强、质子更容易失去，同时也使共轭碱的负电荷更分散。${\\text{HSO}}_{4}{}^{−}$ 的 <em>K</em><sub>a</sub> = 1.2 × 10<sup>−2</sup>，而 ${\\text{HSO}}_{3}{}^{−}$ 的 <em>K</em><sub>a</sub> = 6.4 × 10<sup>−8</sup>。"
    }
   },
   {
@@ -212,11 +230,11 @@
     "at": "end"
    },
    "cite": "properties",
-   "prompt": "Determine the oxidation state of sulfur in SF<sub>6</sub>, SO<sub>2</sub>F<sub>2</sub>, and KHS.",
+   "prompt": "确定 SF<sub>6</sub>、SO<sub>2</sub>F<sub>2</sub> 和 KHS 中硫的氧化态。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "SF<sub>6</sub>: S = 6+; SO<sub>2</sub>F<sub>2</sub>: S = 6+; KHS: S = 2−"
+    "solution": "SF<sub>6</sub>：S = 6+；SO<sub>2</sub>F<sub>2</sub>：S = 6+；KHS：S = 2−"
    }
   },
   {
@@ -229,11 +247,11 @@
     "at": "end"
    },
    "cite": "properties",
-   "prompt": "Which is a stronger acid, sulfurous acid or sulfuric acid? Why?",
+   "prompt": "亚硫酸和硫酸哪个是更强的酸？为什么？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Sulfuric acid, H<sub>2</sub>SO<sub>4</sub>, is the stronger acid; it is a strong acid, while sulfurous acid, H<sub>2</sub>SO<sub>3</sub>, is weak (<em>K</em><sub>a1</sub> = 1.6 × 10<sup>−2</sup>). In sulfuric acid the sulfur atom is bonded to four oxygen atoms, two of them OH groups, and has an oxidation state of +6; in sulfurous acid it is bonded to three oxygen atoms, two of them OH groups, and has an oxidation state of +4. Each additional oxygen atom bonded to the central atom, together with the higher oxidation state of sulfur, draws more electron density away from the O–H bonds. Those bonds become more polar, so the hydrogen ions are lost more easily, and the negative charge left on the anion is spread over more oxygen atoms, which stabilizes ${\\text{HSO}}_{4}{}^{−}$ more than ${\\text{HSO}}_{3}{}^{−}$. For this reason H<sub>2</sub>SO<sub>4</sub> ionizes completely in its first step in water, while H<sub>2</sub>SO<sub>3</sub> ionizes only partly."
+    "solution": "硫酸 H<sub>2</sub>SO<sub>4</sub> 是更强的酸；它是强酸，而亚硫酸 H<sub>2</sub>SO<sub>3</sub> 是弱酸（<em>K</em><sub>a1</sub> = 1.6 × 10<sup>−2</sup>）。在硫酸中，硫原子与四个氧原子键合，其中两个是 OH 基团，氧化态为 +6；在亚硫酸中，它与三个氧原子键合，其中两个是 OH 基团，氧化态为 +4。与中心原子键合的每一个额外的氧原子，连同硫较高的氧化态，会把更多的电子密度从 O–H 键上吸走。这些键的极性变得更强，因此氢离子更容易失去，而且留在阴离子上的负电荷分散到更多的氧原子上，使 ${\\text{HSO}}_{4}{}^{−}$ 比 ${\\text{HSO}}_{3}{}^{−}$ 更加稳定。因此，H<sub>2</sub>SO<sub>4</sub> 在水中第一步完全电离，而 H<sub>2</sub>SO<sub>3</sub> 只部分电离。"
    }
   },
   {
@@ -246,11 +264,11 @@
     "at": "end"
    },
    "cite": "properties",
-   "prompt": "Oxygen forms double bonds in O<sub>2</sub>, but sulfur forms single bonds in S<sub>8</sub>. Why?",
+   "prompt": "氧在 O<sub>2</sub> 中形成双键，而硫在 S<sub>8</sub> 中形成单键。为什么？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Sulfur is able to form double bonds only at high temperatures (substantially endothermic conditions), which is not the case for oxygen."
+    "solution": "硫只有在高温下（吸热程度很大的条件下）才能形成双键，而氧不是这样。"
    }
   },
   {
@@ -263,11 +281,11 @@
     "at": "end"
    },
    "cite": "properties",
-   "prompt": "Write two balanced chemical equations in which sulfuric acid acts as an oxidizing agent.",
+   "prompt": "写出两个硫酸作为氧化剂的配平的化学方程式。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "There are many possible answers including: $\\text{Cu}(s)+2{\\text{H}}_{2}{\\text{SO}}_{4}(l)\\;\\longrightarrow \\;{\\text{CuSO}}_{4}(aq)+{\\text{SO}}_{2}(g)+2{\\text{H}}_{2}\\text{O}(l)$ and $\\text{C}(s)+2{\\text{H}}_{2}{\\text{SO}}_{4}(l)\\;\\longrightarrow \\;{\\text{CO}}_{2}(g)+2{\\text{SO}}_{2}(g)+2{\\text{H}}_{2}\\text{O}(l)$"
+    "solution": "答案有很多，包括：$\\text{Cu}(s)+2{\\text{H}}_{2}{\\text{SO}}_{4}(l)\\;\\longrightarrow \\;{\\text{CuSO}}_{4}(aq)+{\\text{SO}}_{2}(g)+2{\\text{H}}_{2}\\text{O}(l)$ 和 $\\text{C}(s)+2{\\text{H}}_{2}{\\text{SO}}_{4}(l)\\;\\longrightarrow \\;{\\text{CO}}_{2}(g)+2{\\text{SO}}_{2}(g)+2{\\text{H}}_{2}\\text{O}(l)$"
    }
   },
   {
@@ -280,11 +298,11 @@
     "at": "end"
    },
    "cite": "properties",
-   "prompt": "Explain why sulfuric acid, H<sub>2</sub>SO<sub>4</sub>, which is a covalent molecule, dissolves in water and produces a solution that contains ions.",
+   "prompt": "解释为什么共价分子硫酸 H<sub>2</sub>SO<sub>4</sub> 能溶于水并产生含有离子的溶液。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Sulfuric acid dissolves and forms ions because it is a strong acid that transfers a proton to water. Its molecule contains two highly polar O–H bonds: the sulfur atom, in the +6 oxidation state and bonded to four electronegative oxygen atoms, draws electron density away from them. When the molecule dissolves it hydrogen bonds to water, and a water molecule, acting as a base, takes a proton from an O–H group. The first ionization is complete: $${\\text{H}}_{2}{\\text{SO}}_{4}(aq)+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;{\\text{H}}_{3}{\\text{O}}^{+}(aq)+{\\text{HSO}}_{4}{}^{−}(aq)$$ The hydrogen sulfate ion then ionizes partly in a second step: $${\\text{HSO}}_{4}{}^{−}(aq)+{\\text{H}}_{2}\\text{O}(l)\\;\\rightleftharpoons \\;{\\text{H}}_{3}{\\text{O}}^{+}(aq)+{\\text{SO}}_{4}{}^{2−}(aq)$$ The covalent molecules thus become hydronium ions, hydrogen sulfate ions and some sulfate ions, which are stabilized by hydration, so the solution conducts electricity."
+    "solution": "硫酸溶解并形成离子，因为它是强酸，会把质子转移给水。它的分子含有两个极性很强的 O–H 键：氧化态为 +6、与四个电负性大的氧原子键合的硫原子，把电子密度从这两个键上吸走。分子溶解时，它与水形成氢键，水分子作为碱，从 O–H 基团上夺取一个质子。第一步电离是完全的：$${\\text{H}}_{2}{\\text{SO}}_{4}(aq)+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;{\\text{H}}_{3}{\\text{O}}^{+}(aq)+{\\text{HSO}}_{4}{}^{−}(aq)$$ 硫酸氢根离子随后在第二步中部分电离：$${\\text{HSO}}_{4}{}^{−}(aq)+{\\text{H}}_{2}\\text{O}(l)\\;\\rightleftharpoons \\;{\\text{H}}_{3}{\\text{O}}^{+}(aq)+{\\text{SO}}_{4}{}^{2−}(aq)$$ 这样，共价分子就变成了水合氢离子、硫酸氢根离子和一些经水合而稳定的硫酸根离子，所以溶液能导电。"
    }
   },
   {
@@ -297,7 +315,7 @@
     "at": "end"
    },
    "cite": "properties",
-   "prompt": "How many grams of Epsom salts (MgSO<sub>4</sub>⋅7H<sub>2</sub>O) will form from 5.0 kg of magnesium?",
+   "prompt": "5.0 kg 镁能生成多少克泻盐（MgSO<sub>4</sub>⋅7H<sub>2</sub>O）？",
    "answer": {
     "type": "number",
     "generated_by": "source",
@@ -305,7 +323,7 @@
     "unit": "g",
     "tol": 0.02,
     "part": "the mass of Epsom salts",
-    "hint": "Convert the mass of magnesium to moles with its molar mass, use the one-to-one ratio of Mg to MgSO<sub>4</sub>⋅7H<sub>2</sub>O, and convert moles of the hydrate to grams with its molar mass.",
+    "hint": "用镁的摩尔质量把镁的质量换算成物质的量，利用 Mg 与 MgSO<sub>4</sub>⋅7H<sub>2</sub>O 的一比一关系，再用水合物的摩尔质量把其物质的量换算成克。",
     "solution": "5.1 × 10<sup>4</sup> g"
    }
   }

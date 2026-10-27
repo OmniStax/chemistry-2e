@@ -82,9 +82,9 @@ function equationRow(ctx, y, items, plus, arrowAt, back) {
 ===================================================================== */
 (function () {
   const H = 410, d = sim('fig-water-ammonia', H);
-  const DIR = F.choice(d.controls, { label: '\\text{direction}', key: 'direction', aria: 'the direction in which the equation is read',
-    options: [{ value: 'forward', label: 'forward' }, { value: 'reverse', label: 'reverse' }], value: 'forward', onInput: () => draw() });
-  const VIEW = F.choice(d.controls, { label: '\\text{view}', options: VIEWS, value: '2d', aria: 'a flat drawing or a scene to turn', ms: 0, onInput: () => V.show() });
+  const DIR = F.choice(d.controls, { label: '\\text{方向}', key: 'direction', aria: '读方程式的方向',
+    options: [{ value: 'forward', label: '正向' }, { value: 'reverse', label: '逆向' }], value: 'forward', onInput: () => draw() });
+  const VIEW = F.choice(d.controls, { label: '\\text{视图}', options: VIEWS, value: '2d', aria: '平面图或可转动的立体场景', ms: 0, onInput: () => V.show() });
   const ro = F.readout(d);
   let hits = []; F.hover(d.stage, () => hits);
 
@@ -100,24 +100,24 @@ function equationRow(ctx, y, items, plus, arrowAt, back) {
   }
   const hw = 52.25 * RAD;
   const MOL = {
-    water: { name: 'water molecule', atoms: [['O', 0, 0.2, 0], ['H', -0.96 * Math.sin(hw), 0.2 - 0.96 * Math.cos(hw), 0], ['H', 0.96 * Math.sin(hw), 0.2 - 0.96 * Math.cos(hw), 0]] },
-    hydroxide: { name: 'hydroxide ion', atoms: [['O', -0.3, 0, 0], ['H', 0.6, 0.33, 0.1]] },
-    ammonia: { name: 'ammonia molecule', atoms: [['N', 0, 0.25, -0.15], ...cone([0, -0.55, 0.83], 67.9 * RAD, 1.01, 3, 0.5).map((p) => ['H', p[0], p[1] + 0.25, p[2] - 0.15])] },
-    ammonium: { name: 'ammonium ion', atoms: [['N', 0, -0.1, 0], ['H', 0, 0.93, 0], ...cone([0, -1, 0], 70.53 * RAD, 1.03, 3, 0.35).map((p) => ['H', p[0], p[1] - 0.1, p[2]])] },
+    water: { name: '水分子', atoms: [['O', 0, 0.2, 0], ['H', -0.96 * Math.sin(hw), 0.2 - 0.96 * Math.cos(hw), 0], ['H', 0.96 * Math.sin(hw), 0.2 - 0.96 * Math.cos(hw), 0]] },
+    hydroxide: { name: '氢氧根离子', atoms: [['O', -0.3, 0, 0], ['H', 0.6, 0.33, 0.1]] },
+    ammonia: { name: '氨分子', atoms: [['N', 0, 0.25, -0.15], ...cone([0, -0.55, 0.83], 67.9 * RAD, 1.01, 3, 0.5).map((p) => ['H', p[0], p[1] + 0.25, p[2] - 0.15])] },
+    ammonium: { name: '铵根离子', atoms: [['N', 0, -0.1, 0], ['H', 0, 0.93, 0], ...cone([0, -1, 0], 70.53 * RAD, 1.03, 3, 0.35).map((p) => ['H', p[0], p[1] - 0.1, p[2]])] },
   };
   const RV = { O: 0.76, N: 0.8, H: 0.55 };
-  const NAME = { O: 'oxygen atom', N: 'nitrogen atom', H: 'hydrogen atom' };
+  const NAME = { O: '氧原子', N: '氮原子', H: '氢原子' };
   /* the book's arrangement, left to right: water, hydroxide | ammonia, ammonium */
   const SLOT = { water: -7.6, hydroxide: -2.5, ammonia: 2.5, ammonium: 7.6 };
   const PAIR = { water: 'acid', hydroxide: 'acid', ammonia: 'base', ammonium: 'base' };
   const ROLE = {
-    forward: { water: 'H_{2}O (acid)', hydroxide: 'OH⁻ (conjugate base)', ammonia: 'NH_{3} (base)', ammonium: 'NH_{4}⁺ (conjugate acid)' },
-    reverse: { water: 'H_{2}O (conjugate acid)', hydroxide: 'OH⁻ (base)', ammonia: 'NH_{3} (conjugate base)', ammonium: 'NH_{4}⁺ (acid)' },
+    forward: { water: 'H_{2}O（酸）', hydroxide: 'OH⁻（共轭碱）', ammonia: 'NH_{3}（碱）', ammonium: 'NH_{4}⁺（共轭酸）' },
+    reverse: { water: 'H_{2}O（共轭酸）', hydroxide: 'OH⁻（碱）', ammonia: 'NH_{3}（共轭碱）', ammonium: 'NH_{4}⁺（酸）' },
   };
-  const STEP = { forward: ['Remove H⁺', 'Add H⁺'], reverse: ['Add H⁺', 'Remove H⁺'] };
+  const STEP = { forward: ['移去 H⁺', '加上 H⁺'], reverse: ['加上 H⁺', '移去 H⁺'] };
   const HEAD = {
-    forward: 'Water gives a proton to ammonia: water is the acid and ammonia the base.',
-    reverse: 'In reverse, ammonium ion gives a proton to hydroxide ion, now the base.',
+    forward: '水把一个质子给予氨：水是酸，氨是碱。',
+    reverse: '逆向时，铵根离子把一个质子给予氢氧根离子，后者此时是碱。',
   };
   const species = (k) => ({ water: '\\text{H}_{2}\\text{O}(l)', hydroxide: '\\text{OH}^{-}(aq)', ammonia: '\\text{NH}_{3}(aq)', ammonium: '\\text{NH}_{4}{}^{+}(aq)' })[k];
   const EQ = {
@@ -141,8 +141,8 @@ function equationRow(ctx, y, items, plus, arrowAt, back) {
     const { ctx } = begin(d.c); hits = [];
     headline(ctx, HEAD[DIR.value]);
     const sx = (k) => CX + SLOT[k] * U;
-    brace(ctx, sx('water') - 100, sx('hydroxide') + 120, 140, 'Conjugate acid-base pair');
-    brace(ctx, sx('ammonia') - 110, sx('ammonium') + 110, 140, 'Conjugate acid-base pair');
+    brace(ctx, sx('water') - 100, sx('hydroxide') + 120, 140, '共轭酸碱对');
+    brace(ctx, sx('ammonia') - 110, sx('ammonium') + 110, 140, '共轭酸碱对');
     Object.keys(MOL).forEach((k) => {
       ['forward', 'reverse'].forEach((dir) => DIR.only(ctx, dir, () => text(ctx, ROLE[dir][k], sx(k), 184, pairColor(k), { size: 22, weight: 600, align: 'center' }), [0, 8]));
       const m = MOL[k], who = m.name;
@@ -150,7 +150,7 @@ function equationRow(ctx, y, items, plus, arrowAt, back) {
         const px = sx(k) + x * U, py = CY - y * U;
         atom(ctx, px, py, s, RV[s] * U);
       });
-      [...m.atoms].sort((a, b) => b[3] - a[3]).forEach(([s, x, y]) => hits.push({ x: sx(k) + x * U, y: CY - y * U, r: RV[s] * U * 0.8, name: `${NAME[s]} of the ${who}` }));
+      [...m.atoms].sort((a, b) => b[3] - a[3]).forEach(([s, x, y]) => hits.push({ x: sx(k) + x * U, y: CY - y * U, r: RV[s] * U * 0.8, name: `${who}中的${NAME[s]}` }));
     });
     /* each arrow turns by shrinking through zero and growing the other way */
     const turn = DIR.mix((v) => (v === 'forward' ? 1 : -1));
@@ -165,14 +165,14 @@ function equationRow(ctx, y, items, plus, arrowAt, back) {
   let g = null;
   function mount() {
     const v = F.view3d(d.stage, { spin: 'off', h: 410, dist: 17, tilt: 0, pitch: [-1.3, 1.3], yaw: [-1.2, 1.2],
-      views: [{ label: 'front', yaw: 0, pitch: 0 }, { label: 'above', yaw: 0, pitch: 1.25 }] });
+      views: [{ label: '正面', yaw: 0, pitch: 0 }, { label: '上方', yaw: 0, pitch: 1.25 }] });
     g = v.part(0);
     return v;
   }
   function draw3d(v) {
     if (!v.scene) return;
     v.clear();
-    Object.keys(MOL).forEach((k) => MOL[k].atoms.forEach(([s, x, y, z]) => v.pickable(F.mesh.sphere(g, [x + SLOT[k], y, z], RV[s], F.el(s)), `${NAME[s]} of the ${MOL[k].name}`)));
+    Object.keys(MOL).forEach((k) => MOL[k].atoms.forEach(([s, x, y, z]) => v.pickable(F.mesh.sphere(g, [x + SLOT[k], y, z], RV[s], F.el(s)), `${MOL[k].name}中的${NAME[s]}`)));
     const turn = DIR.mix((x) => (x === 'forward' ? 1 : -1));
     [['water', 'hydroxide'], ['ammonia', 'ammonium']].forEach(([a, b]) => {
       const m = (SLOT[a] + SLOT[b]) / 2, half = 0.95 * turn;
@@ -210,7 +210,7 @@ function equationRow(ctx, y, items, plus, arrowAt, back) {
     text(ctx, '+', 1085, Y, PAL.ink, { size: 30, align: 'center' });
     lewis(ctx, [{ s: 'F', x: 1200, y: Y, c: A, lp: [90, 0, 270, 180] }], []);
     text(ctx, '⁻', 1238, Y - 30, A, { size: 30, weight: 600 });
-    equationRow(ctx, 238, [['HF', 126, 'Acid', A], ['H_{2}O', 410, 'Base', B], ['H_{3}O⁺', 900, 'Acid', B], ['F⁻', 1200, 'Base', A]], [275, 1085], [560, 720]);
+    equationRow(ctx, 238, [['HF', 126, '酸', A], ['H_{2}O', 410, '碱', B], ['H_{3}O⁺', 900, '酸', B], ['F⁻', 1200, '碱', A]], [275, 1085], [560, 720]);
   }
   still(d, draw);
 })();
@@ -248,7 +248,7 @@ function equationRow(ctx, y, items, plus, arrowAt, back) {
     text(ctx, '+', 1130, Y, PAL.ink, { size: 30, align: 'center' });
     lewis(ctx, [{ s: 'O', x: 1215, y: Y, c: A, lp: [90, 180, 270] }, { s: 'H', x: 1215 + L, y: Y, c: A }], [[0, 1, 1, A]]);
     brackets(ctx, 1170, 1312, Y - 40, Y + 40, '⁻');
-    equationRow(ctx, 336, [['H_{2}O', 110, 'Acid', A], ['C_{5}NH_{5}', 400, 'Base', B], ['C_{5}NH_{6}⁺', 930, 'Acid', B], ['OH⁻', 1241, 'Base', A]], [228, 1130], [560, 680]);
+    equationRow(ctx, 336, [['H_{2}O', 110, '酸', A], ['C_{5}NH_{5}', 400, '碱', B], ['C_{5}NH_{6}⁺', 930, '酸', B], ['OH⁻', 1241, '碱', A]], [228, 1130], [560, 680]);
   }
   still(d, draw);
 })();
@@ -273,7 +273,7 @@ function equationRow(ctx, y, items, plus, arrowAt, back) {
     text(ctx, '+', 1085, Y, PAL.ink, { size: 30, align: 'center' });
     lewis(ctx, [{ s: 'O', x: 1180, y: Y, c: A, lp: [90, 180, 270] }, { s: 'H', x: 1180 + L, y: Y, c: A }], [[0, 1, 1, A]]);
     brackets(ctx, 1135, 1277, Y - 40, Y + 40, '⁻');
-    equationRow(ctx, 238, [['H_{2}O', 130, 'Acid', A], ['H_{2}O', 410, 'Base', B], ['H_{3}O⁺', 900, 'Acid', B], ['OH⁻', 1206, 'Base', A]], [270, 1085], [560, 730], 1.6);
+    equationRow(ctx, 238, [['H_{2}O', 130, '酸', A], ['H_{2}O', 410, '碱', B], ['H_{3}O⁺', 900, '酸', B], ['OH⁻', 1206, '碱', A]], [270, 1085], [560, 730], 1.6);
   }
   still(d, draw);
 })();
@@ -292,13 +292,13 @@ function equationRow(ctx, y, items, plus, arrowAt, back) {
   const H = 520, d = sim('sim-kw', H);
   const KW = { 25: 1.0e-14, 40: 2.9e-14, 60: 9.3e-14, 80: 2.4e-13, 100: 5.6e-13 };
   const LOG = Object.fromEntries(Object.entries(KW).map(([t, k]) => [t, Math.log10(k)]));
-  const T = F.choice(d.controls, { label: '\\kT', key: 'T', aria: 'the temperature of the water', value: '25',
+  const T = F.choice(d.controls, { label: '\\kT', key: 'T', aria: '水的温度', value: '25',
     options: Object.keys(KW).map((t) => ({ value: t, label: `${t} °C` })),
     onInput: (t) => { if (onWater) h.set(LOG[t] / 2); h.refresh(); draw(); } });
   const h = ctl(d.controls, { label: '\\log \\kconcHyd', cls: 'concentration', key: 'logH', min: -12, max: -2, step: 0.01, value: -7, unit: '', dec: 2,
-    aria: 'the base-ten logarithm of the hydronium ion concentration in molar',
+    aria: '水合氢离子浓度（以 mol/L 计）的以 10 为底的对数',
     detents: [{ v: Math.log10(2.0e-6), label: '2.0 × 10⁻⁶ M' }],
-    specials: [{ at: () => LOG[T.value] / 2, label: 'pure water' }], onInput: () => draw() });
+    specials: [{ at: () => LOG[T.value] / 2, label: '纯水' }], onInput: () => draw() });
   const ro = F.readout(d);
   const G = { l: 210, r: 1250, t: 112, b: 420 };
   const SUP = { '-': '⁻', 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴', 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹' };
@@ -341,9 +341,9 @@ function equationRow(ctx, y, items, plus, arrowAt, back) {
     text(ctx, `${sciTxt(Ov)} M`, G.l + 12, Math.min(Math.max(p.y, G.t + 14), G.b - 46), cc, { size: 17, weight: 600, bg: PAL.panel });
     const r = Hv / Ov;
     headline(ctx, onWater
-      ? `At ${t} °C, pure water holds equal concentrations of hydronium and hydroxide ions, ${sciTxt(Hv)} M each.`
-      : r >= 1 ? `At ${t} °C there is ${big(r)} times as much hydronium ion as hydroxide ion.`
-        : `At ${t} °C there is ${big(1 / r)} times as much hydroxide ion as hydronium ion.`);
+      ? `在 ${t} °C 时，纯水中水合氢离子和氢氧根离子的浓度相等，均为 ${sciTxt(Hv)} M。`
+      : r >= 1 ? `在 ${t} °C 时，水合氢离子是氢氧根离子的 ${big(r)} 倍。`
+        : `在 ${t} °C 时，氢氧根离子是水合氢离子的 ${big(1 / r)} 倍。`);
     const k = hue('equilibrium-constant', sciTex(K)), hv = hue('concentration', sciTex(Hv)), ov = hue('concentration', sciTex(Ov));
     ro.set(onWater
       ? `\\mk{H}{\\kconcHyd} = \\mk{O}{\\kconcOH} = \\sqrt{\\mk{K}{\\kKw}} = \\sqrt{\\mk{Kv}{${k}}} = \\mk{Ov}{${ov}}\\ M`

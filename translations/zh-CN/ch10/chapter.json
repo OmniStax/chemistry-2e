@@ -1,7 +1,7 @@
 {
  "id": "10",
  "dir": "ch10",
- "title": "Liquids and Solids",
+ "title": "液体与固体",
  "intro": {
   "module": "m68760",
   "slug": "10-introduction"
@@ -10,37 +10,37 @@
   {
    "id": "10.1",
    "module": "m68761",
-   "title": "Intermolecular Forces",
+   "title": "分子间作用力",
    "slug": "10-1-intermolecular-forces"
   },
   {
    "id": "10.2",
    "module": "m68764",
-   "title": "Properties of Liquids",
+   "title": "液体的性质",
    "slug": "10-2-properties-of-liquids"
   },
   {
    "id": "10.3",
    "module": "m68768",
-   "title": "Phase Transitions",
+   "title": "相变",
    "slug": "10-3-phase-transitions"
   },
   {
    "id": "10.4",
    "module": "m68769",
-   "title": "Phase Diagrams",
+   "title": "相图",
    "slug": "10-4-phase-diagrams"
   },
   {
    "id": "10.5",
    "module": "m68770",
-   "title": "The Solid State of Matter",
+   "title": "物质的固态",
    "slug": "10-5-the-solid-state-of-matter"
   },
   {
    "id": "10.6",
    "module": "m68773",
-   "title": "Lattice Structures in Crystalline Solids",
+   "title": "晶态固体中的晶格结构",
    "slug": "10-6-lattice-structures-in-crystalline-solids"
   }
  ],
@@ -48,7 +48,7 @@
   {
    "sym": "h_cap",
    "concept": "length",
-   "meaning": "the height of the liquid inside a capillary tube relative to the surface of the liquid outside the tube",
+   "meaning": "毛细管内液面相对于管外液面的高度",
    "unit": "m",
    "section": "10.2",
    "anchor": "10.2-capillary-rise"
@@ -56,7 +56,7 @@
   {
    "sym": "T_surf",
    "concept": "surface-tension",
-   "meaning": "the surface tension of the liquid",
+   "meaning": "液体的表面张力",
    "unit": "N/m (mN/m in the book's tables)",
    "section": "10.2",
    "anchor": "10.2-capillary-rise"
@@ -65,7 +65,7 @@
    "sym": "θ_contact",
    "concept": "capillary-rise-equation",
    "type": "angle",
-   "meaning": "the contact angle between the liquid and the tube",
+   "meaning": "液体与管壁之间的接触角",
    "unit": "°",
    "section": "10.2",
    "anchor": "10.2-capillary-rise"
@@ -73,7 +73,7 @@
   {
    "sym": "r_tube",
    "concept": "length",
-   "meaning": "the radius of the capillary tube",
+   "meaning": "毛细管的半径",
    "unit": "m",
    "section": "10.2",
    "anchor": "10.2-capillary-rise"
@@ -81,7 +81,7 @@
   {
    "sym": "ρ",
    "concept": "density",
-   "meaning": "the density of the liquid",
+   "meaning": "液体的密度",
    "unit": "kg/m³",
    "section": "10.2",
    "anchor": "10.2-capillary-rise"
@@ -89,7 +89,7 @@
   {
    "sym": "g_grav",
    "concept": "acceleration-due-to-gravity",
-   "meaning": "the acceleration due to gravity, 9.8 m/s²",
+   "meaning": "重力加速度，9.8 m/s²",
    "unit": "m/s²",
    "section": "10.2",
    "anchor": "10.2-capillary-rise"
@@ -97,7 +97,7 @@
   {
    "sym": "P",
    "concept": "vapor-pressure",
-   "meaning": "the vapor pressure of the liquid",
+   "meaning": "液体的蒸气压",
    "unit": "kPa",
    "section": "10.3",
    "anchor": "10.3-clausius"
@@ -105,7 +105,7 @@
   {
    "sym": "T",
    "concept": "temperature",
-   "meaning": "the temperature, in kelvin",
+   "meaning": "温度，以开尔文表示",
    "unit": "K",
    "section": "10.3",
    "anchor": "10.3-clausius"
@@ -113,7 +113,7 @@
   {
    "sym": "ΔH_vap",
    "concept": "enthalpies-of-phase-change",
-   "meaning": "the enthalpy of vaporization of the liquid",
+   "meaning": "液体的汽化焓",
    "unit": "kJ/mol",
    "section": "10.3",
    "anchor": "10.3-clausius"
@@ -121,7 +121,7 @@
   {
    "sym": "ΔH_fus",
    "concept": "enthalpies-of-phase-change",
-   "meaning": "the enthalpy of fusion of the solid",
+   "meaning": "固体的熔化焓",
    "unit": "kJ/mol",
    "section": "10.3",
    "anchor": "10.3-sublimation"
@@ -129,7 +129,7 @@
   {
    "sym": "ΔH_sub",
    "concept": "enthalpies-of-phase-change",
-   "meaning": "the enthalpy of sublimation of the solid",
+   "meaning": "固体的升华焓",
    "unit": "kJ/mol",
    "section": "10.3",
    "anchor": "10.3-sublimation"
@@ -137,7 +137,7 @@
   {
    "sym": "R",
    "concept": "ideal-gas-constant",
-   "meaning": "the gas constant, 8.3145 J/mol·K",
+   "meaning": "理想气体常数，8.3145 J/mol·K",
    "unit": "J/mol·K",
    "section": "10.3",
    "anchor": "10.3-clausius"
@@ -145,7 +145,7 @@
   {
    "sym": "A_cc",
    "concept": "clausius-clapeyron-equation",
-   "meaning": "a constant whose value depends on the chemical identity of the substance",
+   "meaning": "一个常数，其值取决于物质的本性",
    "unit": "kPa",
    "section": "10.3",
    "anchor": "10.3-clausius"
@@ -153,7 +153,7 @@
   {
    "sym": "P_1",
    "concept": "vapor-pressure",
-   "meaning": "the vapor pressure at the temperature T₁",
+   "meaning": "温度 T₁ 下的蒸气压",
    "unit": "kPa",
    "section": "10.3",
    "anchor": "10.3-clausius"
@@ -161,7 +161,7 @@
   {
    "sym": "P_2",
    "concept": "vapor-pressure",
-   "meaning": "the vapor pressure at the temperature T₂",
+   "meaning": "温度 T₂ 下的蒸气压",
    "unit": "kPa",
    "section": "10.3",
    "anchor": "10.3-clausius"
@@ -169,7 +169,7 @@
   {
    "sym": "T_1",
    "concept": "temperature",
-   "meaning": "the first temperature",
+   "meaning": "第一个温度",
    "unit": "K",
    "section": "10.3",
    "anchor": "10.3-clausius"
@@ -177,7 +177,7 @@
   {
    "sym": "T_2",
    "concept": "temperature",
-   "meaning": "the second temperature",
+   "meaning": "第二个温度",
    "unit": "K",
    "section": "10.3",
    "anchor": "10.3-clausius"
@@ -185,7 +185,7 @@
   {
    "sym": "a_cell",
    "concept": "length",
-   "meaning": "the edge length of a cubic unit cell",
+   "meaning": "立方晶胞的棱长",
    "unit": "pm",
    "section": "10.6",
    "anchor": "10.6-ex-po"
@@ -193,7 +193,7 @@
   {
    "sym": "r_atom",
    "concept": "length",
-   "meaning": "the radius of an atom or ion in the unit cell",
+   "meaning": "晶胞中原子或离子的半径",
    "unit": "pm",
    "section": "10.6",
    "anchor": "10.6-ex-po"
@@ -201,14 +201,14 @@
   {
    "sym": "n_order",
    "concept": "bragg-equation",
-   "meaning": "the order of the diffraction, a whole number",
+   "meaning": "衍射的级数，为整数",
    "section": "10.6",
    "anchor": "10.6-xray"
   },
   {
    "sym": "λ",
    "concept": "wavelength",
-   "meaning": "the wavelength of the X-rays",
+   "meaning": "X 射线的波长",
    "unit": "nm",
    "section": "10.6",
    "anchor": "10.6-xray"
@@ -216,7 +216,7 @@
   {
    "sym": "d_plane",
    "concept": "length",
-   "meaning": "the distance between adjacent crystal planes",
+   "meaning": "相邻晶面之间的距离",
    "unit": "nm",
    "section": "10.6",
    "anchor": "10.6-xray"
@@ -225,7 +225,7 @@
    "sym": "θ_bragg",
    "concept": "bragg-equation",
    "type": "angle",
-   "meaning": "the angle of the diffracted beam",
+   "meaning": "衍射角",
    "unit": "°",
    "section": "10.6",
    "anchor": "10.6-xray"
@@ -233,7 +233,7 @@
   {
    "sym": "q",
    "concept": "heat-flow",
-   "meaning": "the heat absorbed or released by a substance as it warms, cools or changes state",
+   "meaning": "物质升温、降温或改变状态时吸收或放出的热量",
    "unit": "J",
    "section": "10.3",
    "anchor": "10.3-heating-curves"
@@ -241,7 +241,7 @@
   {
    "sym": "m",
    "concept": "mass",
-   "meaning": "the mass of the substance being heated or cooled",
+   "meaning": "被加热或冷却的物质的质量",
    "unit": "g",
    "section": "10.3",
    "anchor": "10.3-heating-curves"
@@ -249,7 +249,7 @@
   {
    "sym": "c_spec",
    "concept": "specific-heat-capacity",
-   "meaning": "the specific heat of the substance in the phase being heated",
+   "meaning": "物质在被加热的那一相中的比热容",
    "unit": "J/g °C",
    "section": "10.3",
    "anchor": "10.3-heating-curves"
@@ -257,7 +257,7 @@
   {
    "sym": "ΔT",
    "concept": "temperature",
-   "meaning": "the temperature change of the substance",
+   "meaning": "物质的温度变化",
    "unit": "°C",
    "section": "10.3",
    "anchor": "10.3-heating-curves"
@@ -265,7 +265,7 @@
   {
    "sym": "n",
    "concept": "mole",
-   "meaning": "the amount of the substance that changes phase, in moles",
+   "meaning": "发生相变的物质的量，单位为摩尔",
    "unit": "mol",
    "section": "10.3",
    "anchor": "10.3-heating-curves"
@@ -273,7 +273,7 @@
   {
    "sym": "ΔH",
    "concept": "enthalpies-of-phase-change",
-   "meaning": "the enthalpy change of a phase transition, per mole of the substance",
+   "meaning": "相变的焓变，按每摩尔物质计",
    "unit": "kJ/mol",
    "section": "10.3",
    "anchor": "10.3-vaporization-enthalpy"
@@ -281,7 +281,7 @@
   {
    "sym": "l_edge",
    "concept": "length",
-   "meaning": "the edge length of the simple cubic unit cell of polonium",
+   "meaning": "钋的简单立方晶胞的棱长",
    "unit": "pm",
    "section": "10.6",
    "anchor": "10.6-ex-po"
@@ -289,7 +289,7 @@
   {
    "sym": "d_diag",
    "concept": "length",
-   "meaning": "the length of the diagonal of a face of the unit cell",
+   "meaning": "晶胞一个面的对角线的长度",
    "unit": "pm",
    "section": "10.6",
    "anchor": "10.6-ex-ca"
@@ -297,7 +297,7 @@
   {
    "sym": "V",
    "concept": "volume",
-   "meaning": "the volume of the unit cell, its edge length cubed",
+   "meaning": "晶胞的体积，即其棱长的立方",
    "unit": "cm³",
    "section": "10.6",
    "anchor": "10.6-ex-po"
@@ -305,7 +305,7 @@
   {
    "sym": "m",
    "concept": "mass",
-   "meaning": "the mass of the atoms contained within one unit cell",
+   "meaning": "一个晶胞内所含原子的质量",
    "unit": "g",
    "section": "10.6",
    "anchor": "10.6-ex-po"
@@ -313,7 +313,7 @@
   {
    "sym": "ρ",
    "concept": "density",
-   "meaning": "the density of the metal, the mass of its unit cell divided by the volume of the cell",
+   "meaning": "金属的密度，即其晶胞的质量除以晶胞的体积",
    "unit": "g/cm³",
    "section": "10.6",
    "anchor": "10.6-ex-po"

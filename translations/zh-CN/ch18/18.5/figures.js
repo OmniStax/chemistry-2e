@@ -29,8 +29,8 @@ const rnd = (k, j) => { const s = Math.sin(k * 127.1 + j * 311.7) * 43758.5453; 
   const RB = 1.15, YB = -1.5, YT = 0.55, YL = 0.2;
   const BW = 0.95, BD = 0.55, YBAT = -0.45, YCAP = -0.7;
   const XT = 0.24, RT = 0.21, YM = -0.58, YC = 2.0, PER_ML = 0.2;
-  const GAS = { H: { x: -XT, el: 'H', max: 8, every: TH, r: 0.034, gap: 0.05, name: 'a hydrogen molecule, H₂, rising from the cathode' },
-    O: { x: XT, el: 'O', max: 4, every: 2 * TH, r: 0.046, gap: 0.066, name: 'an oxygen molecule, O₂, rising from the anode' } };
+  const GAS = { H: { x: -XT, el: 'H', max: 8, every: TH, r: 0.034, gap: 0.05, name: '从阴极升起的氢分子 H₂' },
+    O: { x: XT, el: 'O', max: 4, every: 2 * TH, r: 0.046, gap: 0.066, name: '从阳极升起的氧分子 O₂' } };
   const level = (g, t) => YC - PER_ML * g.max * t / T;
   const cy = cycle(() => T, 1.2);
 
@@ -59,22 +59,22 @@ const rnd = (k, j) => { const s = Math.sin(k * 127.1 + j * 311.7) * 43758.5453; 
   function build() {
     if (!v.scene || palSig() === sig) return; sig = palSig();
     v.clear(); water = {}; pools = {};
-    v.pickable(F.mesh.box(grp, [0, YB - 0.06, 0], [4.8, 0.1, 2.8], PAL.soft), 'the bench');
+    v.pickable(F.mesh.box(grp, [0, YB - 0.06, 0], [4.8, 0.1, 2.8], PAL.soft), '实验台');
     cyl(RB, YB, YT, glassMat(), true);
     const floor = new T3D.Mesh(new T3D.CircleGeometry(RB, 40), glassMat()); floor.rotation.x = -Math.PI / 2; floor.position.y = YB + 0.005; grp.add(floor);
     ring(0, YT, RB, 0.02, PAL.muted);
-    v.pickable(cyl(RB - 0.02, YB + 0.01, YL, liquidMat()), 'water containing sulfuric acid');
+    v.pickable(cyl(RB - 0.02, YB + 0.01, YL, liquidMat()), '含硫酸的水');
     /* the battery: its body, its dark top and its two terminals */
-    v.pickable(F.mesh.box(grp, [0, (YB + YCAP) / 2 + 0.01, 0], [BW, YCAP - YB - 0.02, BD], PAL.soft), 'the battery');
-    v.pickable(F.mesh.box(grp, [0, (YCAP + YBAT) / 2, 0], [BW, YBAT - YCAP, BD], PAL.muted), 'the battery');
+    v.pickable(F.mesh.box(grp, [0, (YB + YCAP) / 2 + 0.01, 0], [BW, YCAP - YB - 0.02, BD], PAL.soft), '电池');
+    v.pickable(F.mesh.box(grp, [0, (YCAP + YBAT) / 2, 0], [BW, YBAT - YCAP, BD], PAL.muted), '电池');
     for (const g of [GAS.H, GAS.O]) {
-      v.pickable(F.mesh.stick(grp, [g.x, YBAT, 0], [g.x, YBAT + 0.07, 0], 0.08, PAL.muted), g.el === 'H' ? 'the negative terminal, the cathode, where hydrogen forms' : 'the positive terminal, the anode, where oxygen forms');
+      v.pickable(F.mesh.stick(grp, [g.x, YBAT, 0], [g.x, YBAT + 0.07, 0], 0.08, PAL.muted), g.el === 'H' ? '负极接线柱，即阴极，氢在此生成' : '正极接线柱，即阳极，氧在此生成');
       /* the tube: open at the mouth, closed by a dome above YC */
-      v.pickable(cyl(RT, YM, YC, glassMat(), true), g.el === 'H' ? 'the test tube collecting hydrogen' : 'the test tube collecting oxygen').position.x = g.x;
+      v.pickable(cyl(RT, YM, YC, glassMat(), true), g.el === 'H' ? '收集氢气的试管' : '收集氧气的试管').position.x = g.x;
       const dome = new T3D.Mesh(new T3D.SphereGeometry(RT, 32, 12, 0, TAU, 0, Math.PI / 2), glassMat()); dome.position.set(g.x, YC, 0); grp.add(dome);
       for (let ml = 2; ml <= 10; ml += 2) ring(g.x, YC - PER_ML * ml, RT + 0.004, 0.006, PAL.muted);
       const w = new T3D.Mesh(new T3D.CylinderGeometry(RT - 0.015, RT - 0.015, 1, 32), liquidMat(0.5)); grp.add(w);
-      water[g.el] = v.pickable(w, 'water held up in the tube');
+      water[g.el] = v.pickable(w, '管中被顶住的水');
       water[g.el + 's'] = ring(g.x, 0, RT - 0.01, 0.014, PAL.ink);
       pools[g.el] = Array.from({ length: Math.ceil(2.2 / RISE / g.every) + 2 }, () => molecule(g));
     }
@@ -84,11 +84,11 @@ const rnd = (k, j) => { const s = Math.sin(k * 127.1 + j * 311.7) * 43758.5453; 
     const tag = (s, p, to) => { v.label(s, p, grp, 0); lead([p[0] + Math.sign(to[0] - p[0]) * 0.35, p[1], p[2]], to); };
     tag('H<sub>2</sub>(<em>g</em>)', [-1.75, 1.6, 0], [-XT - RT, 1.6, 0]);
     tag('O<sub>2</sub>(<em>g</em>)', [1.75, 1.6, 0], [XT + RT, 1.6, 0]);
-    tag('cathode (−)', [-1.85, -0.42, 0], [-XT - 0.08, YBAT + 0.04, 0]);
-    tag('anode (+)', [1.85, -0.42, 0], [XT + 0.08, YBAT + 0.04, 0]);
-    tag('battery', [-1.85, -1.15, 0], [-BW / 2, -1.15, 0]);
+    tag('阴极（−）', [-1.85, -0.42, 0], [-XT - 0.08, YBAT + 0.04, 0]);
+    tag('阳极（+）', [1.85, -0.42, 0], [XT + 0.08, YBAT + 0.04, 0]);
+    tag('电池', [-1.85, -1.15, 0], [-BW / 2, -1.15, 0]);
     tag('H<sub>2</sub>O(<em>l</em>) + H<sub>2</sub>SO<sub>4</sub>', [1.95, -1.15, 0], [RB - 0.25, -1.15, 0]);
-    v.headline('Hydrogen collects at the cathode (−) twice as fast as oxygen at the anode (+).');
+    v.headline('氢在阴极（−）收集的速度是氧在阳极（+）的两倍。');
   }
   function place(t) {
     for (const g of [GAS.H, GAS.O]) {
@@ -118,9 +118,9 @@ const rnd = (k, j) => { const s = Math.sin(k * 127.1 + j * 311.7) * 43758.5453; 
     if (s !== lastTex) { lastTex = s; F.tex(d.readout, s, false, { values: false }); }
     /* the legend: the book's three molecules, named once */
     const { ctx } = begin(cnv), y = 50;
-    const items = [['water, H₂O(l)', [['O', 0, 0, 13], ['H', -13, 11, 9], ['H', 13, 11, 9]]],
-      ['hydrogen, H₂(g)', [['H', -7, 0, 9], ['H', 7, 0, 9]]],
-      ['oxygen, O₂(g)', [['O', -9, 0, 12], ['O', 9, 0, 12]]]];
+    const items = [['水，H₂O(l)', [['O', 0, 0, 13], ['H', -13, 11, 9], ['H', 13, 11, 9]]],
+      ['氢气，H₂(g)', [['H', -7, 0, 9], ['H', 7, 0, 9]]],
+      ['氧气，O₂(g)', [['O', -9, 0, 12], ['O', 9, 0, 12]]]];
     items.forEach(([name, atoms], i) => {
       const cx = 380 + i * 330;
       atoms.forEach(([e, dx, dy, r]) => {

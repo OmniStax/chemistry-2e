@@ -2,33 +2,41 @@
  "id": "14.4",
  "module": "m68806",
  "chapter": "14",
- "title": "Hydrolysis of Salts",
- "short": "Hydrolysis of Salts",
- "lead": "The ions of a dissolved <span data-concept=\"salt\">salt</span> may react with water as acids or bases. This section shows how to tell from its ions whether a <span data-concept=\"salt\">salt</span> solution will be <span data-concept=\"acidic-solution\">acidic</span>, <span data-concept=\"basic-solution\">basic</span>, or <span data-concept=\"neutral-solution\">neutral</span>, how to calculate the <span data-concept=\"ph\">pH</span> of such a solution, and what happens when metal ions that bond to water molecules dissolve.",
+ "title": "盐的水解",
+ "short": "盐的水解",
+ "lead": "溶解的<span data-concept=\"salt\">盐</span>所含的离子可能作为酸或碱与水反应。本节说明如何根据盐的离子判断<span data-concept=\"salt\">盐</span>溶液是<span data-concept=\"acidic-solution\">酸性</span>、<span data-concept=\"basic-solution\">碱性</span>还是<span data-concept=\"neutral-solution\">中性</span>的，如何计算这类溶液的 <span data-concept=\"ph\">pH</span>，以及与水分子键合的金属离子溶解时会发生什么。",
  "objectives": [
-  "Predict whether a salt solution will be acidic, basic, or neutral",
-  "Calculate the concentrations of the various species in a salt solution",
-  "Describe the acid ionization of hydrated metal ions"
+  "预测盐溶液是酸性、碱性还是中性",
+  "计算盐溶液中各种物种的浓度",
+  "描述水合金属离子的酸电离"
  ],
- "summary_html": "<p>The ions composing <span data-concept=\"salt\">salts</span> may possess acidic or basic character, ionizing when dissolved in water to yield <span data-concept=\"acidic-solution\">acidic</span> or <span data-concept=\"basic-solution\">basic solutions</span>. <span data-concept=\"salt-ion-acidity\">Acidic cations are typically the conjugate partners of weak bases, and basic anions are the conjugate partners of weak acids</span>. <span data-concept=\"hydrated-metal-ion-acidity\">Many metal ions bond to water molecules when dissolved to yield complex ions that may function as acids</span>.</p>",
- "notes": "Nothing of the section is left out, and Example 14.15’s and Example 14.18’s ICE tables are written as tables from their images. Example 14.15’s question ends without a question mark and its second line closes (x)(x)/0.233 − x) with one parenthesis, the base ionization of acetate writes its hydroxide as OH−, and Example 14.17 (b) runs “,and” together, all as printed.",
+ "summary_html": "<p>组成<span data-concept=\"salt\">盐</span>的离子可能具有酸性或碱性，溶解于水时发生电离，生成<span data-concept=\"acidic-solution\">酸性</span>或<span data-concept=\"basic-solution\">碱性溶液</span>。<span data-concept=\"salt-ion-acidity\">酸性阳离子通常是弱碱的共轭酸，碱性阴离子是弱酸的共轭碱</span>。<span data-concept=\"hydrated-metal-ion-acidity\">许多金属离子溶解时与水分子键合，生成可起酸作用的配离子</span>。</p>",
+ "notes": "本节没有任何内容被略去；例 14.15 和例 14.18 的 ICE 表由它们的图片改写为表格。例 14.15 的问句末尾没有问号，其第二行 (x)(x)/0.233 − x) 只有一个右括号，乙酸根的碱电离方程式把氢氧根写成 OH−，例 14.17 (b) 中“,and”连写在一起（中文无空格，这一处无从体现），均按原样保留。",
  "ai": {
   "text": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-10-05",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The unkeyed numerical exercise fs-idm1823584, on a solution of novocaine, is left out, and no answer is computed for it. The unkeyed exercises fs-idm95651552, fs-idm94404336 and fs-idm8587472 are kept with a suggested approach marked as AI-generated. Three exercises are set here from Section 14.3 because they test the hydrolysis of salts this section introduces: fs-idm94404336 and fs-idm94046624, on the neutralization of a strong acid with a weak base and of a weak acid with a strong base, and fs-idm8587472, on placing the hydrated aluminum ion in Figure 14.7.",
+ "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案取自书后答案和“学习检测”的答案。没有答案的数值题 fs-idm1823584（关于普鲁卡因溶液）被略去，也没有为它算出答案。没有答案的 fs-idm95651552、fs-idm94404336 和 fs-idm8587472 保留，并附有一份标明为 AI 生成的建议思路。三道习题从第 14.3 节移到这里，因为它们考查本节所引入的盐的水解：fs-idm94404336 和 fs-idm94046624，关于强酸与弱碱、弱酸与强碱的中和；fs-idm8587472，关于把水合铝离子放进图 14.7。",
  "figures": [
   {
    "id": "sim-salt-ions",
@@ -41,6 +49,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -51,7 +64,7 @@
    "originals": [
     "/media/ch14/CNX_Chem_14_04_hydronium.jpg"
    ],
-   "original_caption": "When an aluminum ion reacts with water, the hydrated aluminum ion becomes a weak acid.",
+   "original_caption": "铝离子与水反应时，水合铝离子成为一种弱酸。",
    "draws": [
     "equilibrium-constant",
     "concentration"
@@ -66,6 +79,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   }
@@ -189,15 +207,15 @@
     "after": "ex-anilinium"
    },
    "cite": "acidic-ions",
-   "prompt": "What is the hydronium ion concentration in a 0.100-<em>M</em> solution of ammonium nitrate, NH<sub>4</sub>NO<sub>3</sub>, a salt composed of the ions ${\\text{NH}}_{4}{}^{\\text{+}}$ and ${\\text{NO}}_{3}{}^{\\text{−}}.$ Which is the stronger acid ${\\text{C}}_{6}{\\text{H}}_{5}{\\text{NH}}_{3}{}^{\\text{+}}$ or ${\\text{NH}}_{4}{}^{\\text{+}}?$",
+   "prompt": "在 0.100 <em>M</em> 硝酸铵 NH<sub>4</sub>NO<sub>3</sub> 溶液中，水合氢离子浓度是多少？硝酸铵是一种盐，其组成离子为 ${\\text{NH}}_{4}{}^{\\text{+}}$ 和 ${\\text{NO}}_{3}{}^{\\text{−}}.$ 哪一种酸更强，${\\text{C}}_{6}{\\text{H}}_{5}{\\text{NH}}_{3}{}^{\\text{+}}$ 还是 ${\\text{NH}}_{4}{}^{\\text{+}}?$",
    "answer": {
     "type": "number",
     "part": "[H<sub>3</sub>O<sup>+</sup>]",
     "value": 7.5e-06,
     "unit": "M",
     "generated_by": "source",
-    "hint": "Find $K_{\\text{a}}$ for ${\\text{NH}}_{4}{}^{+}$ from $K_{\\text{b}}$ for ammonia, then set up an ICE table as in Example 14.15; the nitrate ion is inert.",
-    "solution": "[H<sub>3</sub>O<sup>+</sup>] = 7.5 × 10<sup>−6</sup> <em>M</em>; ${\\text{C}}_{6}{\\text{H}}_{5}{\\text{NH}}_{3}{}^{\\text{+}}$ is the stronger acid."
+    "hint": "由氨的 $K_{\\text{b}}$ 求出 ${\\text{NH}}_{4}{}^{+}$ 的 $K_{\\text{a}}$，然后像例 14.15 那样列出 ICE 表；硝酸根离子不水解。",
+    "solution": "[H<sub>3</sub>O<sup>+</sup>] = 7.5 × 10<sup>−6</sup> <em>M</em>；${\\text{C}}_{6}{\\text{H}}_{5}{\\text{NH}}_{3}{}^{\\text{+}}$ 是更强的酸。"
    }
   },
   {
@@ -210,13 +228,13 @@
     "after": "ex-acetate"
    },
    "cite": "basic-ions",
-   "prompt": "What is the pH of a 0.083-<em>M</em> solution of NaCN?",
+   "prompt": "0.083 <em>M</em> NaCN 溶液的 pH 是多少？",
    "answer": {
     "type": "number",
     "value": 11.11,
     "tol": 0.001,
     "generated_by": "source",
-    "hint": "The cyanide ion is the conjugate base of the weak acid HCN: find its $K_{\\text{b}}$ from $K_{\\text{a}}$ for HCN, solve for [OH<sup>−</sup>], and convert to pH.",
+    "hint": "氰根离子是弱酸 HCN 的共轭碱：由 HCN 的 $K_{\\text{a}}$ 求出它的 $K_{\\text{b}}$，解出 [OH<sup>−</sup>]，再换算成 pH。",
     "solution": "11.11"
    }
   },
@@ -230,11 +248,11 @@
     "after": "ex-salt-nature"
    },
    "cite": "both-ions",
-   "prompt": "Determine whether aqueous solutions of the following salts are acidic, basic, or neutral:<br>(a) K<sub>2</sub>CO<sub>3</sub><br>(b) CaCl<sub>2</sub><br>(c) KH<sub>2</sub>PO<sub>4</sub><br>(d) (NH<sub>4</sub>)<sub>2</sub>CO<sub>3</sub>",
+   "prompt": "判断下列盐的水溶液是酸性、碱性还是中性的：<br>（a）K<sub>2</sub>CO<sub>3</sub><br>（b）CaCl<sub>2</sub><br>（c）KH<sub>2</sub>PO<sub>4</sub><br>（d）(NH<sub>4</sub>)<sub>2</sub>CO<sub>3</sub>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) basic; (b) neutral; (c) acidic; (d) basic"
+    "solution": "（a）碱性；（b）中性；（c）酸性；（d）碱性"
    }
   },
   {
@@ -247,13 +265,13 @@
     "after": "ex-aluminum"
    },
    "cite": "metal-ions",
-   "prompt": "What is $[\\text{Al}{({\\text{H}}_{2}\\text{O})}_{5}({\\text{OH})}^{2+}]$ in a 0.15-<em>M</em> solution of Al(NO<sub>3</sub>)<sub>3</sub> that contains enough of the strong acid HNO<sub>3</sub> to bring [H<sub>3</sub>O<sup>+</sup>] to 0.10 <em>M</em>?",
+   "prompt": "在含有足量强酸 HNO<sub>3</sub>、使 [H<sub>3</sub>O<sup>+</sup>] 达到 0.10 <em>M</em> 的 0.15 <em>M</em> Al(NO<sub>3</sub>)<sub>3</sub> 溶液中，$[\\text{Al}{({\\text{H}}_{2}\\text{O})}_{5}({\\text{OH})}^{2+}]$ 是多少？",
    "answer": {
     "type": "number",
     "value": 2.1e-05,
     "unit": "M",
     "generated_by": "source",
-    "hint": "With [H<sub>3</sub>O<sup>+</sup>] held at 0.10 <em>M</em> by the strong acid, solve the $K_{\\text{a}}$ expression of Example 14.18 for the one unknown concentration.",
+    "hint": "强酸使 [H<sub>3</sub>O<sup>+</sup>] 保持在 0.10 <em>M</em>，解例 14.18 的 $K_{\\text{a}}$ 表达式，求出那个唯一的未知浓度。",
     "solution": "2.1 × 10<sup>−5</sup> <em>M</em>"
    }
   },
@@ -268,11 +286,11 @@
     "at": "end"
    },
    "cite": "acidic-ions",
-   "prompt": "Explain why the neutralization reaction of a strong acid and a weak base gives a weakly acidic solution.",
+   "prompt": "解释为什么强酸与弱碱的中和反应得到弱酸性溶液。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The salt formed contains the conjugate acid of the weak base, a weak acid, alongside an anion that does not react with water. Take ammonia and hydrochloric acid: NH<sub>3</sub>(<em>aq</em>) + HCl(<em>aq</em>) ⟶ NH<sub>4</sub>Cl(<em>aq</em>). The ammonium chloride dissolves as NH<sub>4</sub><sup>+</sup> and Cl<sup>−</sup> ions. The chloride ion is the conjugate base of a strong acid, so it is too weak a base to take protons from water and leaves the pH unchanged. The ammonium ion is the conjugate acid of the weak base NH<sub>3</sub>, and it ionizes slightly: NH<sub>4</sub><sup>+</sup>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + NH<sub>3</sub>(<em>aq</em>), with <em>K</em><sub>a</sub> = <em>K</em><sub>w</sub>/<em>K</em><sub>b</sub> = (1.0 × 10<sup>−14</sup>)/(1.8 × 10<sup>−5</sup>) = 5.6 × 10<sup>−10</sup>. This small ionization raises [H<sub>3</sub>O<sup>+</sup>] above 1.0 × 10<sup>−7</sup> <em>M</em>, so the neutralized solution is weakly acidic."
+    "solution": "所生成的盐含有弱碱的共轭酸（一种弱酸），以及一个不与水反应的阴离子。以氨和盐酸为例：NH<sub>3</sub>(<em>aq</em>) + HCl(<em>aq</em>) ⟶ NH<sub>4</sub>Cl(<em>aq</em>)。氯化铵溶解为 NH<sub>4</sub><sup>+</sup> 和 Cl<sup>−</sup> 离子。氯离子是强酸的共轭碱，其碱性太弱，无法从水中夺取质子，因而不改变 pH。铵根离子是弱碱 NH<sub>3</sub> 的共轭酸，它发生轻微电离：NH<sub>4</sub><sup>+</sup>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + NH<sub>3</sub>(<em>aq</em>)，其中 <em>K</em><sub>a</sub> = <em>K</em><sub>w</sub>/<em>K</em><sub>b</sub> = (1.0 × 10<sup>−14</sup>)/(1.8 × 10<sup>−5</sup>) = 5.6 × 10<sup>−10</sup>。这点微小的电离使 [H<sub>3</sub>O<sup>+</sup>] 高于 1.0 × 10<sup>−7</sup> <em>M</em>，所以中和后的溶液呈弱酸性。"
    }
   },
   {
@@ -286,11 +304,11 @@
     "at": "end"
    },
    "cite": "basic-ions",
-   "prompt": "Explain why the neutralization reaction of a weak acid and a strong base gives a weakly basic solution.",
+   "prompt": "解释为什么弱酸与强碱的中和反应得到弱碱性溶液。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "The salt ionizes in solution, but the anion slightly reacts with water to form the weak acid. This reaction also forms OH<sup>−</sup>, which causes the solution to be basic."
+    "solution": "盐在溶液中电离，但其阴离子会与水轻微反应，生成弱酸。这一反应同时生成 OH<sup>−</sup>，使溶液呈碱性。"
    }
   },
   {
@@ -304,11 +322,11 @@
     "at": "end"
    },
    "cite": "metal-ions",
-   "prompt": "Using the <em>K</em><sub>a</sub> value of 1.4 × 10<sup>−5</sup>, place $\\text{Al}{({\\text{H}}_{2}\\text{O})}_{6}{}^{3+}$ in the correct location in Figure 14.7.",
+   "prompt": "利用 <em>K</em><sub>a</sub> 值 1.4 × 10<sup>−5</sup>，把 $\\text{Al}{({\\text{H}}_{2}\\text{O})}_{6}{}^{3+}$ 放在图 14.7 中的正确位置。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The hydrated aluminum ion, with <em>K</em><sub>a</sub> = 1.4 × 10<sup>−5</sup>, belongs on the acid side just below acetic acid (<em>K</em><sub>a</sub> = 1.8 × 10<sup>−5</sup>) and above carbonic acid (4.3 × 10<sup>−7</sup>), since the acids in the figure are ordered by decreasing <em>K</em><sub>a</sub>. It is a slightly weaker acid than acetic acid. Its conjugate base, [Al(H<sub>2</sub>O)<sub>5</sub>(OH)]<sup>2+</sup>, sits opposite it on the base side, with <em>K</em><sub>b</sub> = <em>K</em><sub>w</sub>/<em>K</em><sub>a</sub> = (1.0 × 10<sup>−14</sup>)/(1.4 × 10<sup>−5</sup>) = 7.1 × 10<sup>−10</sup>. That makes it a slightly stronger base than the acetate ion (<em>K</em><sub>b</sub> = 5.6 × 10<sup>−10</sup>) and a weaker one than the hydrogen carbonate ion (2.3 × 10<sup>−8</sup>), as the inverse relation between the strengths of conjugate partners requires."
+    "solution": "水合铝离子的 <em>K</em><sub>a</sub> = 1.4 × 10<sup>−5</sup>，应放在酸一侧，紧接在乙酸（<em>K</em><sub>a</sub> = 1.8 × 10<sup>−5</sup>）之下、碳酸（4.3 × 10<sup>−7</sup>）之上，因为图中的酸按 <em>K</em><sub>a</sub> 递减排列。它是比乙酸稍弱的酸。它的共轭碱 [Al(H<sub>2</sub>O)<sub>5</sub>(OH)]<sup>2+</sup> 在碱一侧与它相对，<em>K</em><sub>b</sub> = <em>K</em><sub>w</sub>/<em>K</em><sub>a</sub> = (1.0 × 10<sup>−14</sup>)/(1.4 × 10<sup>−5</sup>) = 7.1 × 10<sup>−10</sup>。这使它成为比乙酸根离子（<em>K</em><sub>b</sub> = 5.6 × 10<sup>−10</sup>）稍强的碱，又比碳酸氢根离子（2.3 × 10<sup>−8</sup>）弱，正如共轭酸碱对的强度之间的反比关系所要求的那样。"
    }
   },
   {
@@ -321,11 +339,11 @@
     "at": "end"
    },
    "cite": "both-ions",
-   "prompt": "Determine whether aqueous solutions of the following salts are acidic, basic, or neutral:<br>(a) Al(NO<sub>3</sub>)<sub>3</sub><br>(b) RbI<br>(c) KHCO<sub>2</sub><br>(d) CH<sub>3</sub>NH<sub>3</sub>Br",
+   "prompt": "判断下列盐的水溶液是酸性、碱性还是中性的：<br>（a）Al(NO<sub>3</sub>)<sub>3</sub><br>（b）RbI<br>（c）KHCO<sub>2</sub><br>（d）CH<sub>3</sub>NH<sub>3</sub>Br",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "(a) acidic; (b) neutral; (c) basic; (d) acidic. (a) Al(NO<sub>3</sub>)<sub>3</sub> gives the hydrated aluminum ion, [Al(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup>, a weak acid with <em>K</em><sub>a</sub> = 1.4 × 10<sup>−5</sup>, and the nitrate ion, the conjugate base of the strong acid HNO<sub>3</sub>, which does not react with water. (b) Rb<sup>+</sup> is a group 1 cation and I<sup>−</sup> is the conjugate base of the strong acid HI, so neither ion reacts with water. (c) K<sup>+</sup> is a group 1 cation, and the formate ion HCO<sub>2</sub><sup>−</sup> is the conjugate base of the weak formic acid (<em>K</em><sub>a</sub> = 1.8 × 10<sup>−4</sup>); it reacts with water, HCO<sub>2</sub><sup>−</sup>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ HCO<sub>2</sub>H(<em>aq</em>) + OH<sup>−</sup>(<em>aq</em>), with <em>K</em><sub>b</sub> = 5.6 × 10<sup>−11</sup>. (d) CH<sub>3</sub>NH<sub>3</sub><sup>+</sup> is the conjugate acid of the weak base methylamine (<em>K</em><sub>b</sub> = 4.4 × 10<sup>−4</sup>), so it ionizes as an acid with <em>K</em><sub>a</sub> = 2.3 × 10<sup>−11</sup>, while Br<sup>−</sup>, the conjugate base of the strong acid HBr, does not react with water."
+    "solution": "（a）酸性；（b）中性；（c）碱性；（d）酸性。（a）Al(NO<sub>3</sub>)<sub>3</sub> 给出水合铝离子 [Al(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup>（一种弱酸，<em>K</em><sub>a</sub> = 1.4 × 10<sup>−5</sup>）和硝酸根离子；硝酸根离子是强酸 HNO<sub>3</sub> 的共轭碱，不与水反应。（b）Rb<sup>+</sup> 是第 1 族阳离子，I<sup>−</sup> 是强酸 HI 的共轭碱，所以两种离子都不与水反应。（c）K<sup>+</sup> 是第 1 族阳离子，甲酸根离子 HCO<sub>2</sub><sup>−</sup> 是弱酸甲酸（<em>K</em><sub>a</sub> = 1.8 × 10<sup>−4</sup>）的共轭碱；它与水反应，HCO<sub>2</sub><sup>−</sup>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ HCO<sub>2</sub>H(<em>aq</em>) + OH<sup>−</sup>(<em>aq</em>)，其 <em>K</em><sub>b</sub> = 5.6 × 10<sup>−11</sup>。（d）CH<sub>3</sub>NH<sub>3</sub><sup>+</sup> 是弱碱甲胺（<em>K</em><sub>b</sub> = 4.4 × 10<sup>−4</sup>）的共轭酸，所以它作为酸电离，<em>K</em><sub>a</sub> = 2.3 × 10<sup>−11</sup>，而 Br<sup>−</sup> 是强酸 HBr 的共轭碱，不与水反应。"
    }
   },
   {
@@ -338,11 +356,11 @@
     "at": "end"
    },
    "cite": "both-ions",
-   "prompt": "Determine whether aqueous solutions of the following salts are acidic, basic, or neutral:<br>(a) FeCl<sub>3</sub><br>(b) K<sub>2</sub>CO<sub>3</sub><br>(c) NH<sub>4</sub>Br<br>(d) KClO<sub>4</sub>",
+   "prompt": "判断下列盐的水溶液是酸性、碱性还是中性的：<br>（a）FeCl<sub>3</sub><br>（b）K<sub>2</sub>CO<sub>3</sub><br>（c）NH<sub>4</sub>Br<br>（d）KClO<sub>4</sub>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) acidic; (b) basic; (c) acidic; (d) neutral"
+    "solution": "（a）酸性；（b）碱性；（c）酸性；（d）中性"
    }
   }
  ],

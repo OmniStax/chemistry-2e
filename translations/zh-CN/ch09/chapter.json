@@ -1,7 +1,7 @@
 {
   "id": "9",
   "dir": "ch09",
-  "title": "Gases",
+  "title": "气体",
   "intro": {
     "module": "m68748",
     "slug": "9-introduction"
@@ -10,37 +10,37 @@
     {
       "id": "9.1",
       "module": "m68750",
-      "title": "Gas Pressure",
+      "title": "气体压强",
       "slug": "9-1-gas-pressure"
     },
     {
       "id": "9.2",
       "module": "m68751",
-      "title": "Relating Pressure, Volume, Amount, and Temperature: The Ideal Gas Law",
+      "title": "压强、体积、物质的量与温度的关系：理想气体状态方程",
       "slug": "9-2-relating-pressure-volume-amount-and-temperature-the-ideal-gas-law"
     },
     {
       "id": "9.3",
       "module": "m68752",
-      "title": "Stoichiometry of Gaseous Substances, Mixtures, and Reactions",
+      "title": "气态物质、混合物与反应的化学计量",
       "slug": "9-3-stoichiometry-of-gaseous-substances-mixtures-and-reactions"
     },
     {
       "id": "9.4",
       "module": "m68754",
-      "title": "Effusion and Diffusion of Gases",
+      "title": "气体的泻流与扩散",
       "slug": "9-4-effusion-and-diffusion-of-gases"
     },
     {
       "id": "9.5",
       "module": "m68758",
-      "title": "The Kinetic-Molecular Theory",
+      "title": "分子运动论",
       "slug": "9-5-the-kinetic-molecular-theory"
     },
     {
       "id": "9.6",
       "module": "m68759",
-      "title": "Non-Ideal Gas Behavior",
+      "title": "非理想气体的行为",
       "slug": "9-6-non-ideal-gas-behavior"
     }
   ],
@@ -48,7 +48,7 @@
     {
       "sym": "P",
       "concept": "gas-pressure",
-      "meaning": "the pressure a gas exerts, the force of its molecules’ collisions divided by the area they strike",
+      "meaning": "气体所产生的压强，即其分子碰撞的力除以所撞击的面积",
       "unit": "Pa (also kPa, bar, psi, atm, torr and mm Hg)",
       "section": "9.1",
       "anchor": "9.1-pressure"
@@ -56,7 +56,7 @@
     {
       "sym": "F_force",
       "concept": "force",
-      "meaning": "the force exerted on a surface",
+      "meaning": "作用在表面上的力",
       "unit": "N",
       "section": "9.1",
       "anchor": "9.1-pressure"
@@ -64,7 +64,7 @@
     {
       "sym": "A_area",
       "concept": "area",
-      "meaning": "the area over which the force is applied",
+      "meaning": "力所作用的面积",
       "unit": "m²",
       "section": "9.1",
       "anchor": "9.1-pressure"
@@ -72,7 +72,7 @@
     {
       "sym": "p_hydro",
       "concept": "hydrostatic-pressure",
-      "meaning": "the hydrostatic pressure, the pressure a column of fluid exerts because of gravity",
+      "meaning": "流体静压强，即一段流体柱因重力而产生的压强",
       "unit": "Pa",
       "section": "9.1",
       "anchor": "9.1-barometer"
@@ -80,7 +80,7 @@
     {
       "sym": "h_col",
       "concept": "length",
-      "meaning": "the height of the column of fluid",
+      "meaning": "流体柱的高度",
       "unit": "m",
       "section": "9.1",
       "anchor": "9.1-barometer"
@@ -88,7 +88,7 @@
     {
       "sym": "ρ",
       "concept": "density",
-      "meaning": "the density of the fluid",
+      "meaning": "流体的密度",
       "unit": "kg/m³",
       "section": "9.1",
       "anchor": "9.1-barometer"
@@ -96,7 +96,7 @@
     {
       "sym": "g_grav",
       "concept": "acceleration-due-to-gravity",
-      "meaning": "the acceleration due to gravity",
+      "meaning": "重力加速度",
       "unit": "m/s²",
       "section": "9.1",
       "anchor": "9.1-barometer"
@@ -105,21 +105,21 @@
       "sym": "P_atm",
       "concept": "atmospheric-pressure-and-barometer",
       "type": "pressure",
-      "meaning": "the pressure of the atmosphere",
+      "meaning": "大气的压强",
       "unit": "torr",
       "section": "9.1"
     },
     {
       "sym": "P_gas",
       "concept": "gas-pressure",
-      "meaning": "the pressure of the gas in the flask",
+      "meaning": "烧瓶中气体的压强",
       "unit": "torr",
       "section": "9.1"
     },
     {
       "sym": "P",
       "concept": "gas-pressure",
-      "meaning": "the pressure of a gas, measured on a gauge attached to the vessel that holds it",
+      "meaning": "气体的压强，由连在盛放它的容器上的压力计测得",
       "unit": "atm (also kPa, torr, psi and bar, as the measurement is reported)",
       "section": "9.2",
       "anchor": "9.2-amontons"
@@ -127,7 +127,7 @@
     {
       "sym": "V",
       "concept": "volume",
-      "meaning": "the volume of the gas, which is the volume of the vessel that confines it",
+      "meaning": "气体的体积，即限制住它的容器的体积",
       "unit": "L",
       "section": "9.2",
       "anchor": "9.2-charles"
@@ -135,7 +135,7 @@
     {
       "sym": "n",
       "concept": "mole",
-      "meaning": "the amount of gas in the vessel, counted in moles",
+      "meaning": "容器中气体的物质的量，以摩尔计",
       "unit": "mol",
       "section": "9.2",
       "anchor": "9.2-avogadro"
@@ -143,7 +143,7 @@
     {
       "sym": "T",
       "concept": "temperature",
-      "meaning": "the temperature of the gas on the kelvin scale, which every gas law calculation requires",
+      "meaning": "气体的开尔文温度，每一个气体定律的计算都要用它",
       "unit": "K",
       "section": "9.2",
       "anchor": "9.2-amontons"
@@ -151,7 +151,7 @@
     {
       "sym": "R",
       "concept": "ideal-gas-constant",
-      "meaning": "the ideal gas constant, also called the universal gas constant, whose value follows from the units the pressure, volume and temperature are written in",
+      "meaning": "理想气体常数，也称普适气体常数，其数值取决于压强、体积和温度所用的单位",
       "unit": "0.08206 L atm mol⁻¹ K⁻¹, or 8.314 kPa L mol⁻¹ K⁻¹",
       "section": "9.2",
       "anchor": "9.2-ideal-gas-law"
@@ -159,7 +159,7 @@
     {
       "sym": "P_1",
       "concept": "gas-pressure",
-      "meaning": "the pressure of a confined gas in its first condition, before the change the problem describes",
+      "meaning": "处于第一种状态（问题所描述的变化之前）的封闭气体的压强",
       "unit": "atm",
       "section": "9.2",
       "anchor": "9.2-amontons"
@@ -167,7 +167,7 @@
     {
       "sym": "P_2",
       "concept": "gas-pressure",
-      "meaning": "the pressure of the same gas in its second condition, after the change",
+      "meaning": "同一气体处于第二种状态（变化之后）的压强",
       "unit": "atm",
       "section": "9.2",
       "anchor": "9.2-amontons"
@@ -175,7 +175,7 @@
     {
       "sym": "V_1",
       "concept": "volume",
-      "meaning": "the volume of a confined gas in its first condition",
+      "meaning": "处于第一种状态的封闭气体的体积",
       "unit": "L",
       "section": "9.2",
       "anchor": "9.2-charles"
@@ -183,7 +183,7 @@
     {
       "sym": "V_2",
       "concept": "volume",
-      "meaning": "the volume of the same gas in its second condition",
+      "meaning": "同一气体处于第二种状态的体积",
       "unit": "L",
       "section": "9.2",
       "anchor": "9.2-charles"
@@ -191,7 +191,7 @@
     {
       "sym": "T_1",
       "concept": "temperature",
-      "meaning": "the kelvin temperature of a confined gas in its first condition",
+      "meaning": "处于第一种状态的封闭气体的开尔文温度",
       "unit": "K",
       "section": "9.2",
       "anchor": "9.2-amontons"
@@ -199,7 +199,7 @@
     {
       "sym": "T_2",
       "concept": "temperature",
-      "meaning": "the kelvin temperature of the same gas in its second condition",
+      "meaning": "同一气体处于第二种状态的开尔文温度",
       "unit": "K",
       "section": "9.2",
       "anchor": "9.2-amontons"
@@ -207,7 +207,7 @@
     {
       "sym": "n_1",
       "concept": "mole",
-      "meaning": "the amount of a confined gas in its first condition, counted in moles",
+      "meaning": "处于第一种状态的封闭气体的物质的量，以摩尔计",
       "unit": "mol",
       "section": "9.2",
       "anchor": "9.2-avogadro"
@@ -215,7 +215,7 @@
     {
       "sym": "n_2",
       "concept": "mole",
-      "meaning": "the amount of the same gas in its second condition",
+      "meaning": "同一气体处于第二种状态的物质的量",
       "unit": "mol",
       "section": "9.2",
       "anchor": "9.2-avogadro"
@@ -223,7 +223,7 @@
     {
       "sym": "d",
       "concept": "density",
-      "meaning": "the density of a gas, its mass divided by its volume",
+      "meaning": "气体的密度，即其质量除以体积",
       "unit": "g/L",
       "section": "9.3",
       "anchor": "9.3-density"
@@ -231,7 +231,7 @@
     {
       "sym": "MM",
       "concept": "molar-mass",
-      "meaning": "the molar mass of the gas, its mass divided by its amount in moles",
+      "meaning": "气体的摩尔质量，即其质量除以以摩尔计的物质的量",
       "unit": "g/mol",
       "section": "9.3",
       "anchor": "9.3-density"
@@ -239,7 +239,7 @@
     {
       "sym": "m",
       "concept": "mass",
-      "meaning": "the mass of the gas sample",
+      "meaning": "气体样品的质量",
       "unit": "g",
       "section": "9.3",
       "anchor": "9.3-density"
@@ -247,7 +247,7 @@
     {
       "sym": "P_total",
       "concept": "gas-pressure",
-      "meaning": "the total pressure of a mixture of gases",
+      "meaning": "混合气体的总压",
       "unit": "atm",
       "section": "9.3",
       "anchor": "9.3-dalton"
@@ -255,7 +255,7 @@
     {
       "sym": "P_A",
       "concept": "partial-pressure",
-      "meaning": "the partial pressure of gas A, the pressure it would exert alone in the container",
+      "meaning": "气体 A 的分压，即它单独存在于容器中时所产生的压强",
       "unit": "atm",
       "section": "9.3",
       "anchor": "9.3-dalton"
@@ -263,7 +263,7 @@
     {
       "sym": "P_B",
       "concept": "partial-pressure",
-      "meaning": "the partial pressure of gas B",
+      "meaning": "气体 B 的分压",
       "unit": "atm",
       "section": "9.3",
       "anchor": "9.3-dalton"
@@ -271,7 +271,7 @@
     {
       "sym": "P_C",
       "concept": "partial-pressure",
-      "meaning": "the partial pressure of gas C",
+      "meaning": "气体 C 的分压",
       "unit": "atm",
       "section": "9.3",
       "anchor": "9.3-dalton"
@@ -279,7 +279,7 @@
     {
       "sym": "X_A",
       "concept": "mole-fraction",
-      "meaning": "the mole fraction of gas A, its moles divided by the total moles of the mixture",
+      "meaning": "气体 A 的摩尔分数，即其物质的量除以混合物的总物质的量",
       "unit": "none",
       "section": "9.3",
       "anchor": "9.3-dalton"
@@ -287,7 +287,7 @@
     {
       "sym": "n_A",
       "concept": "mole",
-      "meaning": "the amount of gas A in the mixture",
+      "meaning": "混合物中气体 A 的物质的量",
       "unit": "mol",
       "section": "9.3",
       "anchor": "9.3-dalton"
@@ -295,7 +295,7 @@
     {
       "sym": "n_total",
       "concept": "mole",
-      "meaning": "the total amount of all the gases in the mixture",
+      "meaning": "混合物中所有气体的总物质的量",
       "unit": "mol",
       "section": "9.3",
       "anchor": "9.3-dalton"
@@ -303,7 +303,7 @@
     {
       "sym": "MM_A",
       "concept": "molar-mass",
-      "meaning": "the molar mass of gas A",
+      "meaning": "气体 A 的摩尔质量",
       "unit": "g/mol",
       "section": "9.4",
       "anchor": "9.4-graham"
@@ -311,7 +311,7 @@
     {
       "sym": "MM_B",
       "concept": "molar-mass",
-      "meaning": "the molar mass of gas B",
+      "meaning": "气体 B 的摩尔质量",
       "unit": "g/mol",
       "section": "9.4",
       "anchor": "9.4-graham"
@@ -319,7 +319,7 @@
     {
       "sym": "KE",
       "concept": "kinetic-energy",
-      "meaning": "the kinetic energy of a particle of mass m moving at speed u",
+      "meaning": "质量为 m、速率为 u 的粒子的动能",
       "unit": "J",
       "section": "9.5",
       "anchor": "9.5-speeds"
@@ -327,7 +327,7 @@
     {
       "sym": "u",
       "concept": "speed",
-      "meaning": "the speed of one gas molecule",
+      "meaning": "单个气体分子的速率",
       "unit": "m/s",
       "section": "9.5",
       "anchor": "9.5-speeds"
@@ -336,7 +336,7 @@
       "sym": "u_rms",
       "concept": "root-mean-square-speed",
       "type": "velocity",
-      "meaning": "the root mean square speed of the molecules of a gas, the square root of the average of their squared speeds",
+      "meaning": "气体分子的方均根速率，即分子速率平方的平均值的平方根",
       "unit": "m/s",
       "section": "9.5",
       "anchor": "9.5-speeds"
@@ -344,7 +344,7 @@
     {
       "sym": "KE_avg",
       "concept": "kinetic-energy",
-      "meaning": "the average kinetic energy of a mole of gas molecules",
+      "meaning": "1 摩尔气体分子的平均动能",
       "unit": "J/mol",
       "section": "9.5",
       "anchor": "9.5-speeds"
@@ -352,7 +352,7 @@
     {
       "sym": "MM",
       "concept": "molar-mass",
-      "meaning": "the molar mass of the gas, expressed in kilograms per mole in the speed equation",
+      "meaning": "气体的摩尔质量，在速率公式中以千克每摩尔表示",
       "unit": "kg/mol",
       "section": "9.5",
       "anchor": "9.5-speeds"
@@ -360,7 +360,7 @@
     {
       "sym": "Z_comp",
       "concept": "compressibility-factor",
-      "meaning": "the compressibility factor, the measured molar volume of a gas divided by the molar volume of an ideal gas at the same temperature and pressure",
+      "meaning": "压缩因子，即气体的实测摩尔体积除以同温同压下理想气体的摩尔体积",
       "unit": "none",
       "section": "9.6",
       "anchor": "9.6-compressibility"
@@ -368,7 +368,7 @@
     {
       "sym": "V_m",
       "concept": "molar-volume",
-      "meaning": "the molar volume of a gas, the volume of 1 mole of it",
+      "meaning": "气体的摩尔体积，即 1 摩尔该气体的体积",
       "unit": "L/mol",
       "section": "9.6",
       "anchor": "9.6-compressibility"
@@ -376,7 +376,7 @@
     {
       "sym": "a_vdw",
       "concept": "van-der-waals-equation",
-      "meaning": "the van der Waals constant for the attraction between the molecules of a particular gas",
+      "meaning": "特定气体分子间吸引力的范德华常数",
       "unit": "L² atm/mol²",
       "section": "9.6",
       "anchor": "9.6-van-der-waals"
@@ -385,7 +385,7 @@
       "sym": "b_vdw",
       "concept": "van-der-waals-equation",
       "type": "volume",
-      "meaning": "the van der Waals constant for the size of the molecules of a particular gas",
+      "meaning": "特定气体分子大小的范德华常数",
       "unit": "L/mol",
       "section": "9.6",
       "anchor": "9.6-van-der-waals"

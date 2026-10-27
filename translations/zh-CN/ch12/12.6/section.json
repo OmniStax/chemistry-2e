@@ -2,34 +2,42 @@
  "id": "12.6",
  "module": "m68794",
  "chapter": "12",
- "title": "Reaction Mechanisms",
- "short": "Reaction Mechanisms",
- "lead": "Most reactions take place as a sequence of elementary steps, the reaction’s <span data-concept=\"reaction-mechanism\">mechanism</span>. The section counts the reactant entities in each step, writes <span data-concept=\"rate-law\">rate laws</span> for single steps, and compares the <span data-concept=\"rate-law\">rate law</span> a proposed mechanism predicts with the one found by experiment, through the step that limits the <span data-concept=\"reaction-rate\">rate</span>.",
+ "title": "反应机理",
+ "short": "反应机理",
+ "lead": "大多数反应是以一系列基元步骤的形式进行的，这些步骤就是该反应的<span data-concept=\"reaction-mechanism\">机理</span>。本节数出每一步中的反应物粒子数，写出单个步骤的<span data-concept=\"rate-law\">速率定律</span>，并通过限制<span data-concept=\"reaction-rate\">速率</span>的那一步，将所提出的机理预测的<span data-concept=\"rate-law\">速率定律</span>与实验得到的速率定律进行比较。",
  "objectives": [
-  "Distinguish net reactions from elementary reactions (steps)",
-  "Identify the molecularity of elementary reactions",
-  "Write a balanced chemical equation for a process given its reaction mechanism",
-  "Derive the rate law consistent with a given reaction mechanism"
+  "区分净反应与基元反应（步骤）",
+  "确定基元反应的反应分子数",
+  "根据给定的反应机理，写出某一过程的配平的化学方程式",
+  "推导与给定反应机理一致的速率定律"
  ],
- "summary_html": "<p>The sequence of individual steps, or elementary reactions, by which reactants are converted into products during the course of a reaction is called the <span data-concept=\"reaction-mechanism\">reaction mechanism</span>. The <span data-concept=\"molecularity\">molecularity</span> of an elementary reaction is the number of reactant entities involved, typically one (unimolecular), two (bimolecular), or, less commonly, three (termolecular). The overall <span data-concept=\"reaction-rate\">rate of a reaction</span> is determined by the rate of the slowest in its mechanism, called the <span data-concept=\"rate-determining-step\">rate-determining step</span>. Unimolecular elementary reactions have first-order <span data-concept=\"rate-law\">rate laws</span>, while bimolecular elementary reactions have second-order <span data-concept=\"rate-law\">rate laws</span>. By comparing the <span data-concept=\"rate-law\">rate laws</span> derived from a reaction mechanism to that determined experimentally, the mechanism may be deemed either incorrect or plausible.</p>",
- "notes": "Nothing of the section is left out; the text keeps “a single reactant entities” and “the butadiene reaction” for the decomposition of cyclobutane as printed.",
+ "summary_html": "<p>反应过程中，反应物转化为产物所经历的一系列单个步骤，即基元反应，称为<span data-concept=\"reaction-mechanism\">反应机理</span>。基元反应的<span data-concept=\"molecularity\">反应分子数</span>是参与反应的反应物粒子数，通常为一个（单分子）、两个（双分子），或者较少见地为三个（三分子）。反应的总<span data-concept=\"reaction-rate\">速率</span>由其机理中最慢一步的速率决定，这一步称为<span data-concept=\"rate-determining-step\">速率控制步骤</span>。单分子基元反应的<span data-concept=\"rate-law\">速率定律</span>为一级，而双分子基元反应的<span data-concept=\"rate-law\">速率定律</span>为二级。将由反应机理导出的<span data-concept=\"rate-law\">速率定律</span>与实验测得的速率定律相比较，该机理可被判定为不正确或合理。</p>",
+ "notes": "本节没有任何内容被略去；正文照原书保留了用“丁二烯反应”指环丁烷分解的说法，以及“单个反应物粒子”（原书为“a single reactant entities”，语法有误，中文无法体现）。",
  "ai": {
   "text": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-10-05",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answer. No exercise is left out: the five unkeyed exercises (fs-idm14620304, fs-idp48807664, fs-idp38703248, fs-idp63617152, fs-idp225129424) carry a suggested approach marked as OmniStax’s own, and fs-idp38703248 keeps its five reactions as an open question that is never graded. The key to the AP item fs-idm20987200 is printed as the book gives it, with k in mol² L⁻² min⁻¹ and “Step II” for the mechanism’s Step 2.",
+ "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案来自书中的答案表和“学习检测”的答案。没有任何习题被略去：五道没有答案的习题（fs-idm14620304、fs-idp48807664、fs-idp38703248、fs-idp63617152、fs-idp225129424）带有一个建议的解题思路，标明为 OmniStax 自己所加，其中 fs-idp38703248 的五个反应保留为不评分的开放题。AP 题 fs-idm20987200 的答案照书中所给印出，其中 k 的单位为 mol² L⁻² min⁻¹，并以“步骤 II”指机理的步骤 2。",
  "figures": [
   {
    "id": "fig-cyclobutane",
@@ -51,6 +59,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -61,7 +74,7 @@
    "originals": [
     "/media/ch12/CNX_Chem_12_06_BimoElRe.jpg"
    ],
-   "original_caption": "The probable mechanism for the reaction between NO₂ and CO to yield NO and CO₂.",
+   "original_caption": "NO₂ 与 CO 反应生成 NO 和 CO₂ 的可能机理。",
    "draws": [
     "rate",
     "rate-constant",
@@ -77,6 +90,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -90,6 +108,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -107,6 +130,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   }
@@ -264,7 +292,7 @@
     "after": "ex-mechanism"
    },
    "cite": "fast-equilibrium",
-   "prompt": "The first step of a proposed multistep mechanism is:\n$$\\text{F}_{2}(g)\\rightleftharpoons 2\\text{F}(g)\\;\\text{fast}$$\nDerive the equation relating atomic fluorine concentration to molecular fluorine concentration.",
+   "prompt": "所提出的某个多步机理的第一步为：\n$$\\text{F}_{2}(g)\\rightleftharpoons 2\\text{F}(g)\\;\\text{快}$$\n请推导原子氟浓度与分子氟浓度之间的关系式。",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -280,11 +308,11 @@
     "at": "end"
    },
    "cite": "termolecular",
-   "prompt": "Why are elementary reactions involving three or more reactants very uncommon?",
+   "prompt": "为什么涉及三个或更多个反应物的基元反应非常少见？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Elementary reactions involving three or more reactants are very uncommon because all the reactant entities must collide at the same instant, and such simultaneous collisions are rare. The probability of three particles colliding simultaneously is less than one one-thousandth of the probability of two particles colliding, so a termolecular step occurs far less often than a bimolecular one under the same conditions. Each additional particle must arrive at that same moment as well, so a collision of four or more particles is less likely still and is practically never observed. A reaction whose equation shows three or more reactants therefore almost always proceeds through a mechanism of unimolecular and bimolecular steps; only a few termolecular steps are established, such as those that appear to be involved in the reaction of nitric oxide with oxygen."
+    "solution": "涉及三个或更多个反应物的基元反应非常少见，因为所有反应物粒子必须在同一时刻碰撞，而这样的同时碰撞很罕见。三个粒子同时碰撞的概率不到两个粒子碰撞概率的千分之一，所以在相同条件下，三分子步骤发生的频率远低于双分子步骤。每多一个粒子，也都必须在同一时刻到达，因此四个或更多个粒子的碰撞可能性更小，实际上从未观察到。所以，方程式中显示有三个或更多个反应物的反应，几乎总是通过由单分子步骤和双分子步骤组成的机理进行；只有少数三分子步骤得到确证，例如似乎参与一氧化氮与氧气反应的那些步骤。"
    }
   },
   {
@@ -296,11 +324,11 @@
     "at": "end"
    },
    "cite": "mechanisms",
-   "prompt": "In general, can we predict the effect of doubling the concentration of <em>A</em> on the rate of the overall reaction $A+B\\;\\longrightarrow \\;C$? Can we predict the effect if the reaction is known to be an elementary reaction?",
+   "prompt": "一般来说，我们能否预测将 <em>A</em> 的浓度加倍对总反应 $A+B\\;\\longrightarrow \\;C$ 的速率有何影响？如果已知该反应是基元反应，我们能否预测其影响？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "No. In general, for the overall reaction, we cannot predict the effect of changing the concentration without knowing the rate law. Yes. If the reaction is an elementary reaction, then doubling the concentration of <em>A</em> doubles the rate."
+    "solution": "不能。一般来说，对于总反应，在不知道速率定律的情况下，我们无法预测改变浓度的影响。能。如果该反应是基元反应，则将 <em>A</em> 的浓度加倍会使速率加倍。"
    }
   },
   {
@@ -312,11 +340,11 @@
     "at": "end"
    },
    "cite": "mechanisms",
-   "prompt": "Define these terms:<br>(a) unimolecular reaction<br>(b) bimolecular reaction<br>(c) elementary reaction<br>(d) overall reaction",
+   "prompt": "给出下列术语的定义：<br>（a）单分子反应<br>（b）双分子反应<br>（c）基元反应<br>（d）总反应",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "(a) A unimolecular reaction is an elementary reaction involving a single reactant entity that reacts to produce one or more molecules of product, $A\\;\\longrightarrow \\;\\text{products}$, such as ${\\text{O}}_{3}\\;\\longrightarrow \\;{\\text{O}}_{2}+\\text{O}$; its rate law is first order, $\\krate=\\kk\\kconcA$.<br>(b) A bimolecular reaction is an elementary reaction involving two reactant entities, $A+B\\;\\longrightarrow \\;\\text{products}$ or $2A\\;\\longrightarrow \\;\\text{products}$, such as $\\text{O}+{\\text{O}}_{3}\\;\\longrightarrow \\;2{\\text{O}}_{2}$; its rate law is second order, $\\krate=\\kk\\kconcA\\kconcB$ or $\\krate=\\kk\\kconcA^{2}$.<br>(c) An elementary reaction is a reaction that takes place in a single step, precisely as represented by its equation; each step of a reaction mechanism is an elementary reaction, and its rate law can be written from its molecularity.<br>(d) An overall reaction is the balanced chemical equation for the net change, obtained by adding the elementary reactions of the mechanism, in which intermediates produced in one step and consumed in a later step cancel; for the two-step decomposition of ozone, it is $2{\\text{O}}_{3}(g)\\;\\longrightarrow \\;3{\\text{O}}_{2}(g)$."
+    "solution": "（a）单分子反应是仅涉及单个反应物粒子的基元反应，该粒子发生反应生成一个或多个产物分子，$A\\;\\longrightarrow \\;\\text{产物}$，例如 ${\\text{O}}_{3}\\;\\longrightarrow \\;{\\text{O}}_{2}+\\text{O}$；其速率定律为一级，$\\krate=\\kk\\kconcA$。<br>（b）双分子反应是涉及两个反应物粒子的基元反应，$A+B\\;\\longrightarrow \\;\\text{产物}$ 或 $2A\\;\\longrightarrow \\;\\text{产物}$，例如 $\\text{O}+{\\text{O}}_{3}\\;\\longrightarrow \\;2{\\text{O}}_{2}$；其速率定律为二级，$\\krate=\\kk\\kconcA\\kconcB$ 或 $\\krate=\\kk\\kconcA^{2}$。<br>（c）基元反应是一步完成、恰如其方程式所表示的反应；反应机理的每一步都是基元反应，其速率定律可以根据反应分子数写出。<br>（d）总反应是表示净变化的配平的化学方程式，由机理中的各基元反应相加而得，其中在一步中生成、在后一步中消耗的中间体相互抵消；对于臭氧的两步分解，它是 $2{\\text{O}}_{3}(g)\\;\\longrightarrow \\;3{\\text{O}}_{2}(g)$。"
    }
   },
   {
@@ -328,11 +356,11 @@
     "at": "end"
    },
    "cite": "termolecular",
-   "prompt": "What is the rate law for the elementary termolecular reaction $A+2B\\;\\longrightarrow \\;\\text{products?}$ For $3A\\;\\longrightarrow \\;\\text{products?}$",
+   "prompt": "基元三分子反应 $A+2B\\;\\longrightarrow \\;\\text{产物}$ 的速率定律是什么？$3A\\;\\longrightarrow \\;\\text{产物}$ 的呢？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Rate = <em>k</em>[<em>A</em>][<em>B</em>]<sup>2</sup>; Rate = <em>k</em>[<em>A</em>]<sup>3</sup>"
+    "solution": "速率 = <em>k</em>[<em>A</em>][<em>B</em>]<sup>2</sup>；速率 = <em>k</em>[<em>A</em>]<sup>3</sup>"
    }
   },
   {
@@ -344,11 +372,11 @@
     "at": "end"
    },
    "cite": "mechanisms",
-   "prompt": "Given the following reactions and the corresponding rate laws, in which of the reactions might the elementary reaction and the overall reaction be the same?<br>(a) $\\text{Cl}_{2}+\\text{CO}\\;\\longrightarrow \\;\\text{Cl}_{2}\\text{CO}$, $\\text{rate}=k{[\\text{Cl}_{2}]}^{3/2}[\\text{CO}]$<br>(b) $\\text{PCl}_{3}+\\text{Cl}_{2}\\;\\longrightarrow \\;\\text{PCl}_{5}$, $\\text{rate}=k[\\text{PCl}_{3}][\\text{Cl}_{2}]$<br>(c) $2\\text{NO}+\\text{H}_{2}\\;\\longrightarrow \\;\\text{N}_{2}+\\text{H}_{2}\\text{O}_{2}$, $\\text{rate}=k[\\text{NO}][\\text{H}_{2}]$<br>(d) $2\\text{NO}+\\text{O}_{2}\\;\\longrightarrow \\;2\\text{NO}_{2}$, $\\text{rate}=k{[\\text{NO}]}^{2}[\\text{O}_{2}]$<br>(e) $\\text{NO}+\\text{O}_{3}\\;\\longrightarrow \\;\\text{NO}_{2}+\\text{O}_{2}$, $\\text{rate}=k[\\text{NO}][\\text{O}_{3}]$",
+   "prompt": "给定下列反应及其相应的速率定律，在哪些反应中，基元反应与总反应可能是相同的？<br>（a）$\\text{Cl}_{2}+\\text{CO}\\;\\longrightarrow \\;\\text{Cl}_{2}\\text{CO}$，$\\text{速率}=k{[\\text{Cl}_{2}]}^{3/2}[\\text{CO}]$<br>（b）$\\text{PCl}_{3}+\\text{Cl}_{2}\\;\\longrightarrow \\;\\text{PCl}_{5}$，$\\text{速率}=k[\\text{PCl}_{3}][\\text{Cl}_{2}]$<br>（c）$2\\text{NO}+\\text{H}_{2}\\;\\longrightarrow \\;\\text{N}_{2}+\\text{H}_{2}\\text{O}_{2}$，$\\text{速率}=k[\\text{NO}][\\text{H}_{2}]$<br>（d）$2\\text{NO}+\\text{O}_{2}\\;\\longrightarrow \\;2\\text{NO}_{2}$，$\\text{速率}=k{[\\text{NO}]}^{2}[\\text{O}_{2}]$<br>（e）$\\text{NO}+\\text{O}_{3}\\;\\longrightarrow \\;\\text{NO}_{2}+\\text{O}_{2}$，$\\text{速率}=k[\\text{NO}][\\text{O}_{3}]$",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Reactions (b), (d) and (e) might be single elementary reactions, and reactions (a) and (c) cannot be. If a reaction were one elementary step, its rate law would follow from its equation, each concentration raised to the power of that reactant’s coefficient. For (a), that would be $\\text{rate}=k[\\text{Cl}_{2}][\\text{CO}]$, but the observed rate law has ${[\\text{Cl}_{2}]}^{3/2}$, a fractional order no single step can give. For (b), the predicted $\\text{rate}=k[\\text{PCl}_{3}][\\text{Cl}_{2}]$ matches the given rate law. For (c), the predicted $\\text{rate}=k{[\\text{NO}]}^{2}[\\text{H}_{2}]$ differs from the given first order in NO. For (d), the predicted $\\text{rate}=k{[\\text{NO}]}^{2}[\\text{O}_{2}]$ matches, consistent with the termolecular step this reaction appears to involve. For (e), the predicted $\\text{rate}=k[\\text{NO}][\\text{O}_{3}]$ matches. A matching rate law shows only that a single step is possible, not that it is the actual mechanism."
+    "solution": "反应（b）、（d）和（e）可能是单个基元反应，反应（a）和（c）则不可能。如果某反应是一个基元步骤，其速率定律应由其方程式得出，即每种浓度都取该反应物系数的次方。对于（a），这将是 $\\text{速率}=k[\\text{Cl}_{2}][\\text{CO}]$，但所观察到的速率定律含有 ${[\\text{Cl}_{2}]}^{3/2}$，这是任何单个步骤都不可能给出的分数级数。对于（b），预测的 $\\text{速率}=k[\\text{PCl}_{3}][\\text{Cl}_{2}]$ 与给定的速率定律相符。对于（c），预测的 $\\text{速率}=k{[\\text{NO}]}^{2}[\\text{H}_{2}]$ 与给定的对 NO 为一级不同。对于（d），预测的 $\\text{速率}=k{[\\text{NO}]}^{2}[\\text{O}_{2}]$ 相符，这与该反应似乎涉及的三分子步骤一致。对于（e），预测的 $\\text{速率}=k[\\text{NO}][\\text{O}_{3}]$ 相符。速率定律相符只说明单个步骤是可能的，并不说明它就是实际的机理。"
    }
   },
   {
@@ -360,11 +388,11 @@
     "at": "end"
    },
    "cite": "bimolecular",
-   "prompt": "Write the rate law for each of the following elementary reactions:<br>(a) $\\text{O}_{3}\\overset{\\;\\text{sunlight}\\;}{\\to}\\text{O}_{2}+\\text{O}$<br>(b) $\\text{O}_{3}+\\text{Cl}\\;\\longrightarrow \\;\\text{O}_{2}+\\text{ClO}$<br>(c) $\\text{ClO}+\\text{O}\\;\\longrightarrow \\;\\text{Cl}+\\text{O}_{2}$<br>(d) $\\text{O}_{3}+\\text{NO}\\;\\longrightarrow \\;\\text{NO}_{2}+\\text{O}_{2}$<br>(e) $\\text{NO}_{2}+\\text{O}\\;\\longrightarrow \\;\\text{NO}+\\text{O}_{2}$",
+   "prompt": "写出下列各基元反应的速率定律：<br>（a）$\\text{O}_{3}\\overset{\\;\\text{日光}\\;}{\\to}\\text{O}_{2}+\\text{O}$<br>（b）$\\text{O}_{3}+\\text{Cl}\\;\\longrightarrow \\;\\text{O}_{2}+\\text{ClO}$<br>（c）$\\text{ClO}+\\text{O}\\;\\longrightarrow \\;\\text{Cl}+\\text{O}_{2}$<br>（d）$\\text{O}_{3}+\\text{NO}\\;\\longrightarrow \\;\\text{NO}_{2}+\\text{O}_{2}$<br>（e）$\\text{NO}_{2}+\\text{O}\\;\\longrightarrow \\;\\text{NO}+\\text{O}_{2}$",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) Rate<sub>1</sub> = <em>k</em>[O<sub>3</sub>]; (b) Rate<sub>2</sub> = <em>k</em>[O<sub>3</sub>][Cl]; (c) Rate<sub>3</sub> = <em>k</em>[ClO][O]; (d) Rate<sub>2</sub> = <em>k</em>[O<sub>3</sub>][NO]; (e) Rate<sub>3</sub> = <em>k</em>[NO<sub>2</sub>][O]"
+    "solution": "（a）速率<sub>1</sub> = <em>k</em>[O<sub>3</sub>]；（b）速率<sub>2</sub> = <em>k</em>[O<sub>3</sub>][Cl]；（c）速率<sub>3</sub> = <em>k</em>[ClO][O]；（d）速率<sub>2</sub> = <em>k</em>[O<sub>3</sub>][NO]；（e）速率<sub>3</sub> = <em>k</em>[NO<sub>2</sub>][O]"
    }
   },
   {
@@ -376,11 +404,11 @@
     "at": "end"
    },
    "cite": "rate-determining",
-   "prompt": "Nitrogen monoxide, NO, reacts with hydrogen, H<sub>2</sub>, according to the following equation:\n$$2\\text{NO}+2\\text{H}_{2}\\;\\longrightarrow \\;\\text{N}_{2}+2\\text{H}_{2}\\text{O}$$\nWhat would the rate law be if the mechanism for this reaction were:\n$$\\begin{array}{l}2\\text{NO}+\\text{H}_{2}\\;\\longrightarrow \\;\\text{N}_{2}+\\text{H}_{2}\\text{O}_{2}\\;(\\text{slow}) \\\\ \\text{H}_{2}\\text{O}_{2}+\\text{H}_{2}\\;\\longrightarrow \\;2\\text{H}_{2}\\text{O}\\;(\\text{fast})\\end{array}$$",
+   "prompt": "一氧化氮 NO 与氢气 H<sub>2</sub> 按下列方程式反应：\n$$2\\text{NO}+2\\text{H}_{2}\\;\\longrightarrow \\;\\text{N}_{2}+2\\text{H}_{2}\\text{O}$$\n如果该反应的机理为下列所示，速率定律会是什么？\n$$\\begin{array}{l}2\\text{NO}+\\text{H}_{2}\\;\\longrightarrow \\;\\text{N}_{2}+\\text{H}_{2}\\text{O}_{2}\\;(\\text{慢}) \\\\ \\text{H}_{2}\\text{O}_{2}+\\text{H}_{2}\\;\\longrightarrow \\;2\\text{H}_{2}\\text{O}\\;(\\text{快})\\end{array}$$",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "$\\text{rate}=k{[\\text{NO}]}^{2}[\\text{H}_{2}]$. The first step is the slow one, so it is the rate-determining step, and when the first step is the slow one, the rate law for the overall reaction is the rate law of that step. As an elementary reaction, $2\\text{NO}+\\text{H}_{2}\\;\\longrightarrow \\;\\text{N}_{2}+\\text{H}_{2}\\text{O}_{2}$ has a rate law written from its molecularity: second order in NO, from its coefficient of 2, and first order in H<sub>2</sub>, third order overall. The fast second step consumes the H<sub>2</sub>O<sub>2</sub> as fast as it forms and does not affect the rate. The mechanism is consistent with the equation, because adding the two steps cancels the intermediate H<sub>2</sub>O<sub>2</sub> and gives $2\\text{NO}+2\\text{H}_{2}\\;\\longrightarrow \\;\\text{N}_{2}+2\\text{H}_{2}\\text{O}$."
+    "solution": "$\\text{速率}=k{[\\text{NO}]}^{2}[\\text{H}_{2}]$。第一步是慢步骤，因此它是速率控制步骤，而当第一步为慢步骤时，总反应的速率定律就是这一步的速率定律。作为基元反应，$2\\text{NO}+\\text{H}_{2}\\;\\longrightarrow \\;\\text{N}_{2}+\\text{H}_{2}\\text{O}_{2}$ 的速率定律由其反应分子数写出：由系数 2 可知对 NO 为二级，对 H<sub>2</sub> 为一级，总体为三级。快的第二步一生成 H<sub>2</sub>O<sub>2</sub> 就将其消耗，不影响速率。该机理与方程式一致，因为将两步相加，中间体 H<sub>2</sub>O<sub>2</sub> 相互抵消，得到 $2\\text{NO}+2\\text{H}_{2}\\;\\longrightarrow \\;\\text{N}_{2}+2\\text{H}_{2}\\text{O}$。"
    }
   },
   {
@@ -392,7 +420,7 @@
     "at": "end"
    },
    "cite": "rate-determining",
-   "prompt": "Experiments were conducted to study the rate of the reaction represented by this equation.<sup>1</sup>\n$$2\\text{NO}(g)+2\\text{H}_{2}(g)\\;\\longrightarrow \\;\\text{N}_{2}(g)+2\\text{H}_{2}\\text{O}(g)$$\nInitial concentrations and rates of reaction are given here.<table><thead><tr><th>Experiment</th><th>Initial Concentration [NO] (mol L<sup>−1</sup>)</th><th>Initial Concentration, [H<sub>2</sub>] (mol L<sup>−1</sup>)</th><th>Initial Rate of Formation of N<sub>2</sub> (mol L<sup>−1</sup> min<sup>−1</sup>)</th></tr></thead><tbody><tr><td>1</td><td>0.0060</td><td>0.0010</td><td>1.8 × 10<sup>−4</sup></td></tr><tr><td>2</td><td>0.0060</td><td>0.0020</td><td>3.6 × 10<sup>−4</sup></td></tr><tr><td>3</td><td>0.0010</td><td>0.0060</td><td>0.30 × 10<sup>−4</sup></td></tr><tr><td>4</td><td>0.0020</td><td>0.0060</td><td>1.2 × 10<sup>−4</sup></td></tr></tbody></table>Consider the following questions:<br>(a) Determine the order for each of the reactants, NO and H<sub>2</sub>, from the data given and show your reasoning.<br>(b) Write the overall rate law for the reaction.<br>(c) Calculate the value of the rate constant, <em>k</em>, for the reaction. Include units.<br>(d) For experiment 2, calculate the concentration of NO remaining when exactly one-half of the original amount of H<sub>2</sub> had been consumed.<br>(e) The following sequence of elementary steps is a proposed mechanism for the reaction.<br>Step 1: $\\text{NO}+\\text{NO}\\;\\rightleftharpoons \\;\\text{N}_{2}\\text{O}_{2}$<br>Step 2: $\\text{N}_{2}\\text{O}_{2}+\\text{H}_{2}\\;\\rightleftharpoons \\;\\text{H}_{2}\\text{O}+\\text{N}_{2}\\text{O}$<br>Step 3: $\\text{N}_{2}\\text{O}+\\text{H}_{2}\\;\\rightleftharpoons \\;\\text{N}_{2}+\\text{H}_{2}\\text{O}$<br>Based on the data presented, which of these is the rate determining step? Show that the mechanism is consistent with the observed rate law for the reaction and the overall stoichiometry of the reaction.<br><small><sup>1</sup> This question is taken from the Chemistry Advanced Placement Examination and is used with the permission of the Educational Testing Service.</small>",
+   "prompt": "进行了实验以研究下列方程式所表示的反应的速率。<sup>1</sup>\n$$2\\text{NO}(g)+2\\text{H}_{2}(g)\\;\\longrightarrow \\;\\text{N}_{2}(g)+2\\text{H}_{2}\\text{O}(g)$$\n初始浓度和反应速率如下所示。<table><thead><tr><th>实验</th><th>初始浓度 [NO] (mol L<sup>−1</sup>)</th><th>初始浓度 [H<sub>2</sub>] (mol L<sup>−1</sup>)</th><th>N<sub>2</sub> 的初始生成速率（mol L<sup>−1</sup> min<sup>−1</sup>）</th></tr></thead><tbody><tr><td>1</td><td>0.0060</td><td>0.0010</td><td>1.8 × 10<sup>−4</sup></td></tr><tr><td>2</td><td>0.0060</td><td>0.0020</td><td>3.6 × 10<sup>−4</sup></td></tr><tr><td>3</td><td>0.0010</td><td>0.0060</td><td>0.30 × 10<sup>−4</sup></td></tr><tr><td>4</td><td>0.0020</td><td>0.0060</td><td>1.2 × 10<sup>−4</sup></td></tr></tbody></table>请考虑下列问题：<br>（a）根据所给数据确定反应物 NO 和 H<sub>2</sub> 各自的级数，并说明你的推理。<br>（b）写出该反应的总速率定律。<br>（c）计算该反应的速率常数 <em>k</em> 的值，并写出单位。<br>（d）对于实验 2，当 H<sub>2</sub> 的起始量恰好消耗掉一半时，计算剩余的 NO 的浓度。<br>（e）下面的一系列基元步骤是为该反应提出的一个机理。<br>步骤 1：$\\text{NO}+\\text{NO}\\;\\rightleftharpoons \\;\\text{N}_{2}\\text{O}_{2}$<br>步骤 2：$\\text{N}_{2}\\text{O}_{2}+\\text{H}_{2}\\;\\rightleftharpoons \\;\\text{H}_{2}\\text{O}+\\text{N}_{2}\\text{O}$<br>步骤 3：$\\text{N}_{2}\\text{O}+\\text{H}_{2}\\;\\rightleftharpoons \\;\\text{N}_{2}+\\text{H}_{2}\\text{O}$<br>根据所给数据，其中哪一步是速率控制步骤？请证明该机理与该反应观察到的速率定律以及该反应的总化学计量关系一致。<br><small><sup>1</sup> 此题取自化学大学先修课程（Advanced Placement）考试，经教育测试服务中心（Educational Testing Service）许可使用。</small>",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -401,16 +429,16 @@
       "part": "(c) the rate constant <em>k</em>",
       "value": 5000.0,
       "unit": "mol² L⁻² min⁻¹",
-      "hint": "Find the orders by comparing experiments that change one concentration at a time, then solve the rate law for k with the numbers of any one experiment."
+      "hint": "通过比较每次只改变一种浓度的实验来求出级数，然后用任一实验的数值解速率定律，求出 k。"
      },
      {
       "part": "(d) [NO] remaining in experiment 2",
       "value": 0.005,
       "unit": "mol/L",
-      "hint": "The equation uses NO and H<sub>2</sub> in a 2:2 ratio, so each mole of H<sub>2</sub> consumed uses one mole of NO."
+      "hint": "方程式中 NO 与 H<sub>2</sub> 的比为 2:2，所以每消耗 1 mol H<sub>2</sub>，就用去 1 mol NO。"
      }
     ],
-    "solution": "(a) Doubling [H<sub>2</sub>] doubles the rate. [H<sub>2</sub>] must enter the rate law to the first power. Doubling [NO] increases the rate by a factor of 4. [NO] must enter the rate law to the second power. (b) Rate = <em>k</em> [NO]<sup>2</sup>[H<sub>2</sub>]; (c) <em>k</em> = 5.0 × 10<sup>3</sup> mol<sup>2</sup> L<sup>−2</sup> min<sup>−1</sup>; (d) 0.0050 mol/L; (e) Step II is the rate-determining step. If step I gives N<sub>2</sub>O<sub>2</sub> in adequate amount, steps 1 and 2 combine to give $2\\text{NO}+\\text{H}_{2}\\;\\longrightarrow \\;\\text{H}_{2}\\text{O}+\\text{N}_{2}\\text{O}.$ This reaction corresponds to the observed rate law. Combine steps 1 and 2 with step 3, which occurs by supposition in a rapid fashion, to give the appropriate stoichiometry."
+    "solution": "（a）将 [H<sub>2</sub>] 加倍，速率加倍。[H<sub>2</sub>] 必须以一次方进入速率定律。将 [NO] 加倍，速率增大为原来的 4 倍。[NO] 必须以二次方进入速率定律。（b）速率 = <em>k</em> [NO]<sup>2</sup>[H<sub>2</sub>]；（c）<em>k</em> = 5.0 × 10<sup>3</sup> mol<sup>2</sup> L<sup>−2</sup> min<sup>−1</sup>；（d）0.0050 mol/L；（e）步骤 II 是速率控制步骤。如果步骤 I 生成足量的 N<sub>2</sub>O<sub>2</sub>，则步骤 1 和 2 相加得到 $2\\text{NO}+\\text{H}_{2}\\;\\longrightarrow \\;\\text{H}_{2}\\text{O}+\\text{N}_{2}\\text{O}$。该反应符合观察到的速率定律。将步骤 1 和 2 与按假设很快发生的步骤 3 相加，即得到相应的化学计量关系。"
    }
   },
   {
@@ -422,11 +450,11 @@
     "at": "end"
    },
    "cite": "fast-equilibrium",
-   "prompt": "The reaction of CO with Cl<sub>2</sub> gives phosgene (COCl<sub>2</sub>), a poisonous gas used as a chemical weapon during World War I. Use the mechanism shown here to complete the following exercises:<br>$\\text{Cl}_{2}(g)\\;\\rightleftharpoons \\;2\\text{Cl}(g)$ (fast, k<sub>1</sub> represents the forward rate constant, <em>k</em><sub>−1</sub> the reverse rate constant)<br>$\\text{CO}(g)+\\text{Cl}(g)\\;\\longrightarrow \\;\\text{COCl}(g)$ (slow, <em>k</em><sub>2</sub> the rate constant)<br>$\\text{COCl}(g)+\\text{Cl}(g)\\;\\longrightarrow \\;\\text{COCl}_{2}(g)$ (fast, <em>k</em><sub>3</sub> the rate constant)<br>(a) Write the overall reaction.<br>(b) Identify all intermediates.<br>(c) Write the rate law for each elementary reaction.<br>(d) Write the overall rate law expression.",
+   "prompt": "CO 与 Cl<sub>2</sub> 反应生成光气（COCl<sub>2</sub>），这是一种有毒气体，第一次世界大战期间曾被用作化学武器。请利用下面所示的机理完成以下各题：<br>$\\text{Cl}_{2}(g)\\;\\rightleftharpoons \\;2\\text{Cl}(g)$（快，k<sub>1</sub> 表示正向速率常数，<em>k</em><sub>−1</sub> 表示逆向速率常数）<br>$\\text{CO}(g)+\\text{Cl}(g)\\;\\longrightarrow \\;\\text{COCl}(g)$（慢，<em>k</em><sub>2</sub> 为速率常数）<br>$\\text{COCl}(g)+\\text{Cl}(g)\\;\\longrightarrow \\;\\text{COCl}_{2}(g)$（快，<em>k</em><sub>3</sub> 为速率常数）<br>（a）写出总反应。<br>（b）找出所有中间体。<br>（c）写出每个基元反应的速率定律。<br>（d）写出总速率定律表达式。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "(a) $\\text{CO}(g)+\\text{Cl}_{2}(g)\\;\\longrightarrow \\;\\text{COCl}_{2}(g)$. Adding the three steps gives $\\text{Cl}_{2}+\\text{CO}+\\text{Cl}+\\text{COCl}+\\text{Cl}\\;\\longrightarrow \\;2\\text{Cl}+\\text{COCl}+\\text{COCl}_{2}$, and the two Cl atoms and the COCl cancel from both sides.<br>(b) Cl and COCl are the intermediates: Cl is produced in the first step and consumed in the second and third, and COCl is produced in the second step and consumed in the third.<br>(c) Step 1 forward, ${\\krate}_{1}=\\kkone[\\text{Cl}_{2}]$; step 1 reverse, ${\\krate}_{-1}=\\kkmone{[\\text{Cl}]}^{2}$; step 2, ${\\krate}_{2}=\\kktwo[\\text{CO}][\\text{Cl}]$; step 3, ${\\krate}_{3}={\\kk}_{3}[\\text{COCl}][\\text{Cl}]$.<br>(d) $\\krate=\\kktwo{\\left(\\frac{\\kkone}{\\kkmone}\\right)}^{1/2}[\\text{CO}]{[\\text{Cl}_{2}]}^{1/2}$, or $\\krate=\\kk[\\text{CO}]{[\\text{Cl}_{2}]}^{1/2}$. The slow second step determines the rate, $\\krate=\\kktwo[\\text{CO}][\\text{Cl}]$, but [Cl] is the concentration of an intermediate. The fast first step is at equilibrium, so its forward and reverse rates are equal, $\\kkone[\\text{Cl}_{2}]=\\kkmone{[\\text{Cl}]}^{2}$, which gives $[\\text{Cl}]={\\left(\\frac{\\kkone}{\\kkmone}\\right)}^{1/2}{[\\text{Cl}_{2}]}^{1/2}$. Substituting this into the rate law of step 2 gives the overall rate law, with $\\kk=\\kktwo{\\left(\\frac{\\kkone}{\\kkmone}\\right)}^{1/2}$."
+    "solution": "（a）$\\text{CO}(g)+\\text{Cl}_{2}(g)\\;\\longrightarrow \\;\\text{COCl}_{2}(g)$。将三步相加得到 $\\text{Cl}_{2}+\\text{CO}+\\text{Cl}+\\text{COCl}+\\text{Cl}\\;\\longrightarrow \\;2\\text{Cl}+\\text{COCl}+\\text{COCl}_{2}$，两边的两个 Cl 原子和 COCl 相互抵消。<br>（b）Cl 和 COCl 是中间体：Cl 在第一步中生成，在第二步和第三步中消耗，COCl 在第二步中生成，在第三步中消耗。<br>（c）步骤 1 正向，${\\krate}_{1}=\\kkone[\\text{Cl}_{2}]$；步骤 1 逆向，${\\krate}_{-1}=\\kkmone{[\\text{Cl}]}^{2}$；步骤 2，${\\krate}_{2}=\\kktwo[\\text{CO}][\\text{Cl}]$；步骤 3，${\\krate}_{3}={\\kk}_{3}[\\text{COCl}][\\text{Cl}]$。<br>（d）$\\krate=\\kktwo{\\left(\\frac{\\kkone}{\\kkmone}\\right)}^{1/2}[\\text{CO}]{[\\text{Cl}_{2}]}^{1/2}$，或 $\\krate=\\kk[\\text{CO}]{[\\text{Cl}_{2}]}^{1/2}$。慢的第二步决定速率，$\\krate=\\kktwo[\\text{CO}][\\text{Cl}]$，但 [Cl] 是中间体的浓度。快的第一步处于平衡，所以其正向和逆向速率相等，$\\kkone[\\text{Cl}_{2}]=\\kkmone{[\\text{Cl}]}^{2}$，由此得 $[\\text{Cl}]={\\left(\\frac{\\kkone}{\\kkmone}\\right)}^{1/2}{[\\text{Cl}_{2}]}^{1/2}$。将此式代入步骤 2 的速率定律，即得总速率定律，其中 $\\kk=\\kktwo{\\left(\\frac{\\kkone}{\\kkmone}\\right)}^{1/2}$。"
    }
   }
  ],
@@ -537,32 +565,32 @@
   {
    "id": "c-cyclobutane",
    "kind": "correction",
-   "html": "The book says the butadiene reaction. The unimolecular step described is the decomposition of cyclobutane, C<sub>4</sub>H<sub>8</sub> ⟶ 2C<sub>2</sub>H<sub>4</sub>."
+   "html": "书中写的是“丁二烯反应”。所描述的单分子步骤是环丁烷的分解，C<sub>4</sub>H<sub>8</sub> ⟶ 2C<sub>2</sub>H<sub>4</sub>。"
   }
  ],
  "derivations": [
   {
    "id": "n2o2-equilibrium",
-   "what": "the concentration of an intermediate in a fast equilibrium",
-   "source": "Chemistry 2e, 12.6 Reaction Mechanisms",
+   "what": "快速平衡中中间体的浓度",
+   "source": "化学（第2版），12.6 反应机理",
    "nodes": [
     {
      "assumes": [
       {
-       "text": "A reversible reaction is at equilibrium when the rates of the forward and reverse processes are equal.",
+       "text": "当正向和逆向过程的速率相等时，可逆反应处于平衡。",
        "src": "12.6"
       },
       {
-       "tex": "{\\krate}_{\\text{forward}} = \\kkone{[\\text{NO}]}^{2}",
+       "tex": "{\\krate}_{\\text{正向}} = \\kkone{[\\text{NO}]}^{2}",
        "src": "12.6"
       },
       {
-       "tex": "{\\krate}_{\\text{reverse}} = \\kkmone[{\\text{N}}_{2}{\\text{O}}_{2}]",
+       "tex": "{\\krate}_{\\text{逆向}} = \\kkmone[{\\text{N}}_{2}{\\text{O}}_{2}]",
        "src": "12.6"
       }
      ],
      "then": {
-      "tex": "\\mk{f}{{\\krate}_{\\text{forward}}} = \\mk{r}{{\\krate}_{\\text{reverse}}}",
+      "tex": "\\mk{f}{{\\krate}_{\\text{正向}}} = \\mk{r}{{\\krate}_{\\text{逆向}}}",
       "src": "12.6",
       "uses": [
        0
@@ -593,13 +621,13 @@
   },
   {
    "id": "mechanism-rate-law",
-   "what": "the rate law of a mechanism with a fast equilibrium before the slow step",
-   "source": "Chemistry 2e, 12.6 Reaction Mechanisms, Example 12.14",
+   "what": "慢步骤之前有快速平衡的机理的速率定律",
+   "source": "化学（第2版），12.6 反应机理，例 12.14",
    "nodes": [
     {
      "assumes": [
       {
-       "text": "Step 1 is at equilibrium: its forward and reverse rates are equal.",
+       "text": "步骤 1 处于平衡：其正向和逆向速率相等。",
        "src": "12.6"
       },
       {
@@ -611,7 +639,7 @@
      ],
      "then": {
       "tex": "\\mk{f}{{\\krate}_{1}} = \\mk{r}{{\\krate}_{-1}}",
-      "src": "Example 12.14",
+      "src": "例 12.14",
       "uses": [
        0
       ]
@@ -639,12 +667,12 @@
        }
       }
      ],
-     "src": "Example 12.14"
+     "src": "例 12.14"
     },
     {
      "assumes": [
       {
-       "text": "Step 2 is the rate-determining step, so the overall reaction has its rate law.",
+       "text": "步骤 2 是速率控制步骤，所以总反应具有它的速率定律。",
        "src": "12.6"
       },
       {
@@ -653,23 +681,23 @@
      ],
      "then": {
       "tex": "\\mk{r2}{{\\krate}_{2}} = \\mk{k2}{\\kktwo}\\mk{c}{[{\\text{NOCl}}_{2}]}\\mk{no}{[\\text{NO}]}",
-      "src": "Example 12.14"
+      "src": "例 12.14"
      },
      "steps": [
       {
-       "tex": "\\mk{r2}{{\\krate}_{2}} = \\mk{ro}{{\\krate}_{\\text{overall}}} = \\mk{k2}{\\kktwo}\\mk{c}{[{\\text{NOCl}}_{2}]}\\mk{no}{[\\text{NO}]}",
+       "tex": "\\mk{r2}{{\\krate}_{2}} = \\mk{ro}{{\\krate}_{\\text{总}}} = \\mk{k2}{\\kktwo}\\mk{c}{[{\\text{NOCl}}_{2}]}\\mk{no}{[\\text{NO}]}",
        "uses": [
         0
        ]
       },
       {
-       "tex": "\\mk{r2}{{\\krate}_{2}} = \\mk{ro}{{\\krate}_{\\text{overall}}} = \\mk{k2}{\\kktwo}\\mk{c}{\\left(\\frac{\\kkone}{\\kkmone}\\right)[\\text{NO}][{\\text{Cl}}_{2}]}\\mk{no}{[\\text{NO}]}",
+       "tex": "\\mk{r2}{{\\krate}_{2}} = \\mk{ro}{{\\krate}_{\\text{总}}} = \\mk{k2}{\\kktwo}\\mk{c}{\\left(\\frac{\\kkone}{\\kkmone}\\right)[\\text{NO}][{\\text{Cl}}_{2}]}\\mk{no}{[\\text{NO}]}",
        "uses": [
         1
        ]
       },
       {
-       "tex": "\\mk{r2}{{\\krate}_{2}} = \\mk{ro}{{\\krate}_{\\text{overall}}} = \\mk{k2}{\\left(\\frac{\\kktwo\\kkone}{\\kkmone}\\right)}\\mk{no}{{[\\text{NO}]}^{2}}\\mk{cl}{[{\\text{Cl}}_{2}]}",
+       "tex": "\\mk{r2}{{\\krate}_{2}} = \\mk{ro}{{\\krate}_{\\text{总}}} = \\mk{k2}{\\left(\\frac{\\kktwo\\kkone}{\\kkmone}\\right)}\\mk{no}{{[\\text{NO}]}^{2}}\\mk{cl}{[{\\text{Cl}}_{2}]}",
        "uses": [],
        "map": {
         "c": [
@@ -680,7 +708,7 @@
        }
       }
      ],
-     "src": "Example 12.14"
+     "src": "例 12.14"
     }
    ]
   }

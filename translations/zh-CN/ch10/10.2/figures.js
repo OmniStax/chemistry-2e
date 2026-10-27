@@ -18,18 +18,18 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
   const d = sim('sim-caprise', 640);
   /* surface tension in mN/m from Table 10.3; density in g/cm3 (water as Example 10.4 takes it); contact angle with glass in degrees */
   const LIQ = {
-    water: { name: 'water', T: 71.99, rho: 1.00, th: 0 },
-    ethanol: { name: 'ethanol', T: 21.97, rho: 0.789, th: 0 },
-    glycol: { name: 'ethylene glycol', T: 47.99, rho: 1.11, th: 0 },
-    mercury: { name: 'mercury', T: 458.48, rho: 13.53, th: 140 },
+    water: { name: '水', T: 71.99, rho: 1.00, th: 0 },
+    ethanol: { name: '乙醇', T: 21.97, rho: 0.789, th: 0 },
+    glycol: { name: '乙二醇', T: 47.99, rho: 1.11, th: 0 },
+    mercury: { name: '汞', T: 458.48, rho: 13.53, th: 140 },
   };
   const G = 9.8, RAD = Math.PI / 180;
   /* the height in cm for a tube of diameter dmm in mm */
   const hOf = (k, dmm) => { const q = LIQ[k]; return (2 * (q.T / 1000) * Math.cos(q.th * RAD)) / ((dmm / 2000) * q.rho * 1000 * G) * 100; };
-  const liq = F.select(d.controls, { label: '\\text{liquid}', aria: 'the liquid in the beaker', value: 'water',
+  const liq = F.select(d.controls, { label: '\\text{液体}', aria: '烧杯中的液体', value: 'water',
     options: Object.keys(LIQ).map((k) => ({ value: k, label: LIQ[k].name })) });
-  const D = ctl(d.controls, { label: 'd', cls: 'length', min: 0.2, max: 2, step: 0.01, value: 0.25, unit: 'mm', dec: 2, aria: 'diameter of the narrow tube in millimeters',
-    specials: [{ at: 0.25, label: 'Example 10.4' }] });
+  const D = ctl(d.controls, { label: 'd', cls: 'length', min: 0.2, max: 2, step: 0.01, value: 0.25, unit: 'mm', dec: 2, aria: '细管的直径，单位为毫米',
+    specials: [{ at: 0.25, label: '例 10.4' }] });
 
   /* height scale: 20 units per cm, fixed from -6 cm (mercury in the narrowest tube, -5.3 cm) to 16 cm (water, 14.7 cm) */
   const S = 20, Y0 = 420, Yh = (cm) => Y0 - cm * S;
@@ -107,7 +107,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     height(X2 + a2 + 22, m.h2, hOf(key, 2 * dmm), 1);
     text(ctx, 'd = ' + fmt(dmm, 2) + ' mm', X1, 622, cL, { size: 18, align: 'center' });
     text(ctx, '2d = ' + fmt(2 * dmm, 2) + ' mm', X2, 622, cL, { size: 18, align: 'center' });
-    text(ctx, 'tube widths drawn 10 times true size', 1075, 614, PAL.muted, { size: 15, align: 'center' });
+    text(ctx, '管宽按实际尺寸的 10 倍绘制', 1075, 614, PAL.muted, { size: 15, align: 'center' });
 
     /* the close-up of the narrow tube's meniscus, at its own scale */
     const CX = 1075, CY = 350, CR = 200, A = 120, YM = CY + 30;
@@ -122,15 +122,15 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     const pC = { x: CX + A, y: YM - sC };
     if (m.th > 4) angleArc(ctx, pC, 54, -Math.PI / 2 - m.th * RAD, -Math.PI / 2, 'θ = ' + fmt(q.th, 0) + '°', undefined, cA);
     else text(ctx, 'θ = 0°', CX + A - 16, YM - sC + 44, cA, { size: 20, weight: 600, align: 'right', bg: PAL.panel });
-    text(ctx, 'the meniscus in the narrow tube, magnified', CX, CY - CR - 22, PAL.muted, { size: 17, align: 'center' });
+    text(ctx, '细管中的弯月面（放大）', CX, CY - CR - 22, PAL.muted, { size: 17, align: 'center' });
     const wets = q.th < 90;
-    text(ctx, wets ? 'adhesion to the glass outweighs cohesion: the liquid wets it' : 'cohesion outweighs adhesion to the glass: the liquid does not wet it',
+    text(ctx, wets ? '与玻璃的黏附作用胜过内聚作用：液体润湿玻璃' : '内聚作用胜过与玻璃的黏附作用：液体不润湿玻璃',
       CX, CY + CR + 28, PAL.ink, { size: 18, align: 'center' });
 
-    const Name = q.name[0].toUpperCase() + q.name.slice(1), h1 = hOf(key, dmm), h2 = hOf(key, 2 * dmm);
+    const Name = q.name, h1 = hOf(key, dmm), h2 = hOf(key, 2 * dmm);
     headline(ctx, wets
-      ? `${Name} rises ${word(h1)} in the tube ${fmt(dmm, 2)} mm across and ${word(h2)} in the tube twice as wide.`
-      : `${Name} stands ${word(h1)} below the surface in the tube ${fmt(dmm, 2)} mm across and ${word(h2)} below it in the tube twice as wide.`);
+      ? `${Name}在直径为 ${fmt(dmm, 2)} mm 的管中上升 ${word(h1)}，在宽度为其两倍的管中上升 ${word(h2)}。`
+      : `${Name}在直径为 ${fmt(dmm, 2)} mm 的管中比液面低 ${word(h1)}，在宽度为其两倍的管中比液面低 ${word(h2)}。`);
 
     const hm = h1 / 100;
     tex(d.readout, `\\khcap=\\frac{2\\kTsurf\\cos\\kthetacont}{\\krtube\\krho\\kgrav}=\\frac{2(${hue('surface-tension', fmt(q.T / 1000, 5) + '\\ \\text{N/m}')})\\cos ${hue('angle', fmt(q.th, 0) + '^\\circ')}}{(${hue('length', sci(dmm / 2000) + '\\ \\text{m}')})(${hue('density', fmt(q.rho * 1000, 0) + '\\ \\text{kg/m}^{3}')})(${hue('acceleration', '9.8\\ \\text{m/s}^{2}')})}=${hue('length', fmt(hm, Math.abs(hm) < 0.1 ? 4 : 3) + '\\ \\text{m}')}`);

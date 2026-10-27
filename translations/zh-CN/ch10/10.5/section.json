@@ -2,16 +2,16 @@
  "id": "10.5",
  "module": "m68770",
  "chapter": "10",
- "title": "The Solid State of Matter",
- "short": "The Solid State of Matter",
- "lead": "A solid may hold its particles in a definite repeating pattern or in no pattern at all, and crystalline solids divide into ionic, metallic, covalent network and molecular solids by the <span data-concept=\"force\">forces</span> that hold their particles together. Those <span data-concept=\"force\">forces</span> explain the properties of each kind, and defects interrupt a crystal’s pattern.",
+ "title": "物质的固态",
+ "short": "物质的固态",
+ "lead": "固体中的粒子可以按确定的重复图案排列，也可以毫无图案可言；晶态固体则按使其粒子结合在一起的<span data-concept=\"force\">作用力</span>分为离子固体、金属固体、共价网状固体和分子固体。这些<span data-concept=\"force\">作用力</span>解释了每一类固体的性质，而缺陷会打断晶体的图案。",
  "objectives": [
-  "Define and describe the bonding and properties of ionic, molecular, metallic, and covalent network crystalline solids",
-  "Describe the main types of crystalline solids: ionic solids, metallic solids, covalent network solids, and molecular solids",
-  "Explain the ways in which crystal defects can occur in a solid"
+  "定义并描述离子、分子、金属和共价网状晶态固体的成键与性质",
+  "描述晶态固体的主要类型：离子固体、金属固体、共价网状固体和分子固体",
+  "解释固体中晶体缺陷产生的方式"
  ],
- "summary_html": "<p>Some substances form crystalline solids consisting of particles in a very organized structure; others form amorphous (noncrystalline) solids with an internal structure that is not ordered. The main types of crystalline solids are ionic solids, metallic solids, covalent network solids, and molecular solids. The properties of the different kinds of crystalline solids are due to the types of particles of which they consist, the arrangements of the particles, and the strengths of the attractions between them. Because their particles experience identical attractions, crystalline solids have distinct melting <span data-concept=\"temperature\">temperatures</span>; the particles in amorphous solids experience a range of interactions, so they soften gradually and melt over a range of <span data-concept=\"temperature\">temperatures</span>. Some crystalline solids have defects in the definite repeating pattern of their particles. These defects (which include vacancies, atoms or ions not in the regular positions, and impurities) change physical properties such as electrical conductivity, which is exploited in the silicon crystals used to manufacture computer chips.</p>",
- "notes": "The book's singular headers “Covalent Network Solid” and “Molecular Solid” are set in the plural. Figures 10.37 and 10.38 are folded into one live figure of silicon dioxide, and Figures 10.39 to 10.42 into one crystal with a choice of substance; the melting point of crystalline SiO₂ (1713 °C) and the start of fused silica's softening range (about 1100 °C) that the first uses are handbook values the book does not print. Figure 10.43 is kept as the book's image.",
+ "summary_html": "<p>有些物质形成晶态固体，其粒子排列得非常有序；另一些物质形成无定形（非晶态）固体，其内部结构并不有序。晶态固体的主要类型有离子固体、金属固体、共价网状固体和分子固体。不同类型晶态固体的性质，取决于它们所含粒子的种类、粒子的排列方式以及粒子之间吸引作用的强度。由于粒子所受的吸引作用相同，晶态固体有明确的熔化<span data-concept=\"temperature\">温度</span>；无定形固体中的粒子所受的相互作用各不相同，因此它们逐渐软化，并在一定范围的<span data-concept=\"temperature\">温度</span>内熔化。有些晶态固体在其粒子的确定重复图案中存在缺陷。这些缺陷（包括空位、不在规则位置上的原子或离子，以及杂质）会改变导电性等物理性质，用于制造计算机芯片的硅晶体就利用了这一点。</p>",
+ "notes": "书中单数形式的标题“Covalent Network Solid”和“Molecular Solid”改为复数形式。图 10.37 和图 10.38 合并为一个关于二氧化硅的动态图，图 10.39 至图 10.42 合并为一个可选择物质的晶体；前一个图所用的晶态 SiO₂ 熔点（1713 °C）和熔融石英开始软化的温度（约 1100 °C）是手册数值，书中并未给出。图 10.43 保留书中的图像。",
  "ai": {
   "text": [
    {
@@ -21,27 +21,42 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-09-28",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels, concept tags, weights and hints are AI-generated. Answers come from the book's answer key. The two unkeyed choice exercises fs-idp95742064 and fs-idp12717008 are kept as open items with their options and are never graded; they and the four other unkeyed exercises (fs-idp61090560, fs-idm41685552, fs-idm128882560, fs-idm126229856) carry a suggested approach marked as OmniStax's own. No exercise is left out.",
+ "exercise_notes": "布鲁姆层级、概念标签、权重和提示由 AI 生成。答案取自书后答案。两道没有答案的选择题 fs-idp95742064 和 fs-idp12717008 保留为附有选项的开放题，不评分；它们与另外四道没有答案的习题（fs-idp61090560、fs-idm41685552、fs-idm128882560、fs-idm126229856）都附有标明为 OmniStax 自拟的建议思路。没有遗漏任何习题。",
  "figures": [
   {
    "id": "sim-order",
    "kind": "sim",
    "number": "10.37",
-   "folds": ["10.38"],
-   "originals": ["/media/ch10/CNX_Chem_10_05_TypesSol.jpg", "/media/ch10/CNX_Chem_10_05_BoronOxide.jpg"],
-   "original_caption": "(Figure 10.37) The entities of a solid phase may be arranged in a regular, repeating pattern (crystalline solids) or randomly (amorphous). (Figure 10.38) (a) Silicon dioxide, SiO2, is abundant in nature as one of several crystalline forms of the mineral quartz. (b) Rapid cooling of molten SiO2 yields an amorphous solid known as “fused silica”.",
-   "draws": ["temperature"],
+   "folds": [
+    "10.38"
+   ],
+   "originals": [
+    "/media/ch10/CNX_Chem_10_05_TypesSol.jpg",
+    "/media/ch10/CNX_Chem_10_05_BoronOxide.jpg"
+   ],
+   "original_caption": "（图 10.37）固相中的粒子可以按规则的重复图案排列（晶态固体），也可以随机排列（无定形固体）。（图 10.38）（a）二氧化硅 SiO2 在自然界中大量存在，是矿物石英的几种晶体形态之一。（b）熔融的 SiO2 经快速冷却，得到称为“熔融石英”的无定形固体。",
+   "draws": [
+    "temperature"
+   ],
    "conventions": [
     "O",
     "Si"
@@ -56,6 +71,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "broken links drawn as gaps"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -63,10 +83,21 @@
    "id": "sim-solids",
    "kind": "sim",
    "number": "10.39",
-   "folds": ["10.40", "10.41", "10.42"],
-   "originals": ["/media/ch10/CNX_Chem_10_05_IonicSolid.jpg", "/media/ch10/CNX_Chem_10_05_Metallic.jpg", "/media/ch10/CNX_Chem_10_05_NtwrkSolid.jpg", "/media/ch10/CNX_Chem_10_05_MolSolids.jpg"],
-   "original_caption": "(Figure 10.39) Sodium chloride is an ionic solid. (Figure 10.40) Copper is a metallic solid. (Figure 10.41) A covalent crystal contains a three-dimensional network of covalent bonds, as illustrated by the structures of diamond, silicon dioxide, silicon carbide, and graphite. Graphite is an exceptional example, composed of planar sheets of covalent crystals that are held together in layers by noncovalent forces. Unlike typical covalent solids, graphite is very soft and electrically conductive. (Figure 10.42) Carbon dioxide (CO2) consists of small, nonpolar molecules and forms a molecular solid with a melting point of −78 °C. Iodine (I2) consists of larger, nonpolar molecules and forms a molecular solid that melts at 114 °C.",
-   "draws": ["temperature"],
+   "folds": [
+    "10.40",
+    "10.41",
+    "10.42"
+   ],
+   "originals": [
+    "/media/ch10/CNX_Chem_10_05_IonicSolid.jpg",
+    "/media/ch10/CNX_Chem_10_05_Metallic.jpg",
+    "/media/ch10/CNX_Chem_10_05_NtwrkSolid.jpg",
+    "/media/ch10/CNX_Chem_10_05_MolSolids.jpg"
+   ],
+   "original_caption": "（图 10.39）氯化钠是一种离子固体。（图 10.40）铜是一种金属固体。（图 10.41）共价晶体含有由共价键构成的三维网状结构，金刚石、二氧化硅、碳化硅和石墨的结构即是例证。石墨是一个特例，它由平面片层的共价晶体组成，层与层之间靠非共价作用力结合在一起。与典型的共价固体不同，石墨很软，并且能导电。（图 10.42）二氧化碳（CO2）由小的非极性分子组成，形成熔点为 −78 °C 的分子固体。碘（I2）由较大的非极性分子组成，形成在 114 °C 熔化的分子固体。",
+   "draws": [
+    "temperature"
+   ],
    "conventions": [
     "Na",
     "Cl",
@@ -86,17 +117,31 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "crystal lowered below the headline"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
-  { "id": "fig-carbon", "kind": "photo", "number": "10.43", "draws": [] },
+  {
+   "id": "fig-carbon",
+   "kind": "photo",
+   "number": "10.43",
+   "draws": []
+  },
   {
    "id": "sim-graphene",
    "kind": "sim",
    "number": "10.44",
-   "originals": ["/media/ch10/CNX_Chem_10_05_Graphene.jpg"],
-   "original_caption": "Graphene sheets can be formed into buckyballs, nanotubes, and stacked layers.",
-   "draws": ["length"],
+   "originals": [
+    "/media/ch10/CNX_Chem_10_05_Graphene.jpg"
+   ],
+   "original_caption": "石墨烯片可以形成巴基球、纳米管和堆叠层。",
+   "draws": [
+    "length"
+   ],
    "conventions": [
     "C"
    ],
@@ -105,6 +150,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -112,36 +162,111 @@
    "id": "fig-defects",
    "kind": "figure",
    "number": "10.45",
-   "originals": ["/media/ch10/CNX_Chem_10_05_CrystDfcts.jpg"],
-   "original_caption": "Types of crystal defects include vacancies, interstitial atoms, and substitutions impurities.",
+   "originals": [
+    "/media/ch10/CNX_Chem_10_05_CrystDfcts.jpg"
+   ],
+   "original_caption": "晶体缺陷的类型包括空位、间隙原子和置换杂质。",
    "draws": [],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   }
  ],
  "coverage": [
-  { "span": "crystalline-amorphous", "concept": "crystalline-and-amorphous-solids", "verb": "introduces" },
-  { "span": "crystalline-amorphous", "concept": "crystalline-solid", "verb": "introduces" },
-  { "span": "crystalline-amorphous", "concept": "amorphous-solid", "verb": "introduces" },
-  { "span": "ionic-solids", "concept": "types-of-crystalline-solids", "verb": "introduces" },
-  { "span": "ionic-solids", "concept": "ionic-solid", "verb": "introduces" },
-  { "span": "metallic-solids", "concept": "types-of-crystalline-solids", "verb": "uses" },
-  { "span": "metallic-solids", "concept": "metallic-solid", "verb": "introduces" },
-  { "span": "network-solids", "concept": "types-of-crystalline-solids", "verb": "uses" },
-  { "span": "network-solids", "concept": "covalent-network-solid", "verb": "introduces" },
-  { "span": "molecular-solids", "concept": "types-of-crystalline-solids", "verb": "uses" },
-  { "span": "molecular-solids", "concept": "molecular-solid", "verb": "introduces" },
-  { "span": "properties", "concept": "classify-crystalline-solid", "verb": "introduces" },
-  { "span": "properties", "concept": "crystalline-and-amorphous-solids", "verb": "reinforces" },
-  { "span": "properties", "concept": "types-of-crystalline-solids", "verb": "reinforces" },
-  { "span": "defects", "concept": "crystal-defects", "verb": "introduces" },
-  { "span": "defects", "concept": "vacancy", "verb": "introduces" },
-  { "span": "defects", "concept": "interstitial-sites", "verb": "introduces" }
+  {
+   "span": "crystalline-amorphous",
+   "concept": "crystalline-and-amorphous-solids",
+   "verb": "introduces"
+  },
+  {
+   "span": "crystalline-amorphous",
+   "concept": "crystalline-solid",
+   "verb": "introduces"
+  },
+  {
+   "span": "crystalline-amorphous",
+   "concept": "amorphous-solid",
+   "verb": "introduces"
+  },
+  {
+   "span": "ionic-solids",
+   "concept": "types-of-crystalline-solids",
+   "verb": "introduces"
+  },
+  {
+   "span": "ionic-solids",
+   "concept": "ionic-solid",
+   "verb": "introduces"
+  },
+  {
+   "span": "metallic-solids",
+   "concept": "types-of-crystalline-solids",
+   "verb": "uses"
+  },
+  {
+   "span": "metallic-solids",
+   "concept": "metallic-solid",
+   "verb": "introduces"
+  },
+  {
+   "span": "network-solids",
+   "concept": "types-of-crystalline-solids",
+   "verb": "uses"
+  },
+  {
+   "span": "network-solids",
+   "concept": "covalent-network-solid",
+   "verb": "introduces"
+  },
+  {
+   "span": "molecular-solids",
+   "concept": "types-of-crystalline-solids",
+   "verb": "uses"
+  },
+  {
+   "span": "molecular-solids",
+   "concept": "molecular-solid",
+   "verb": "introduces"
+  },
+  {
+   "span": "properties",
+   "concept": "classify-crystalline-solid",
+   "verb": "introduces"
+  },
+  {
+   "span": "properties",
+   "concept": "crystalline-and-amorphous-solids",
+   "verb": "reinforces"
+  },
+  {
+   "span": "properties",
+   "concept": "types-of-crystalline-solids",
+   "verb": "reinforces"
+  },
+  {
+   "span": "defects",
+   "concept": "crystal-defects",
+   "verb": "introduces"
+  },
+  {
+   "span": "defects",
+   "concept": "vacancy",
+   "verb": "introduces"
+  },
+  {
+   "span": "defects",
+   "concept": "interstitial-sites",
+   "verb": "introduces"
+  }
  ],
  "exercises": [
   {
@@ -149,128 +274,261 @@
    "source_id": "fs-idp61090560",
    "kind": "exercise",
    "bloom": "Understand",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "crystalline-amorphous",
-   "prompt": "What types of liquids typically form amorphous solids?",
-   "answer": { "type": "open", "generated_by": "ai", "solution": "Liquids made of large molecules, or of a mixture of molecules whose movements are restricted, typically form amorphous solids. As such a liquid cools, its bulky molecules cannot move into a definite repeating pattern before they are held in place, so it freezes with its particles randomly arranged. Candle wax is an example: it is composed of large hydrocarbon molecules and solidifies as an amorphous solid. Fast cooling has the same effect on a liquid that could otherwise crystallize: molten silicon dioxide cooled rapidly gives the amorphous solid fused silica instead of crystalline quartz. Metals and ionic compounds, whose particles are small and move freely in the liquid, typically form ordered, crystalline solids." }
+   "prompt": "哪类液体通常形成无定形固体？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "由大分子构成的液体，或由运动受到限制的分子组成的混合物的液体，通常形成无定形固体。这类液体冷却时，体积庞大的分子在被固定住之前来不及排成确定的重复图案，所以凝固时其粒子是随机排列的。蜡烛的蜡就是一例：它由大的烃分子构成，凝固成无定形固体。快速冷却对本来可以结晶的液体也有同样的效果：熔融的二氧化硅经快速冷却，得到的是无定形固体熔融石英，而不是晶态的石英。金属和离子化合物的粒子较小，在液体中可以自由移动，通常形成有序的晶态固体。"
+   }
   },
   {
    "id": "e2",
    "source_id": "fs-idm10952384",
    "kind": "exercise",
    "bloom": "Apply",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "molecular-solids",
-   "prompt": "At very low temperatures oxygen, O<sub>2</sub>, freezes and forms a crystalline solid. Which best describes these crystals?",
-   "answer": { "type": "choice", "generated_by": "source", "options": ["ionic", "covalent network", "metallic", "amorphous", "molecular crystals"], "correct": 4, "hint": "Decide what particles solid oxygen is built from: ions, metal atoms, a network of bonded atoms, or separate molecules.", "solution": "(e) molecular crystals" }
+   "prompt": "在极低的温度下，氧气 O<sub>2</sub> 会凝固并形成晶态固体。下列哪项最能描述这些晶体？",
+   "answer": {
+    "type": "choice",
+    "generated_by": "source",
+    "options": [
+     "离子型",
+     "共价网状",
+     "金属型",
+     "无定形",
+     "分子晶体"
+    ],
+    "correct": 4,
+    "hint": "判断固态氧由什么粒子构成：离子、金属原子、成键原子构成的网状结构，还是独立的分子。",
+    "solution": "（e）分子晶体"
+   }
   },
   {
    "id": "e3",
    "source_id": "fs-idp95742064",
    "kind": "exercise",
    "bloom": "Apply",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "properties",
-   "prompt": "As it cools, olive oil slowly solidifies and forms a solid over a range of temperatures. Which best describes the solid?<br>(a) ionic<br>(b) covalent network<br>(c) metallic<br>(d) amorphous<br>(e) molecular crystals",
-   "answer": { "type": "open", "generated_by": "ai", "solution": "(d) amorphous. A crystalline solid has a precise melting temperature because every unit in it is held by the same forces, so all of its attractions form and break at one temperature. Olive oil instead solidifies over a range of temperatures, which is the behavior of an amorphous solid. Its molecules are large and of several kinds, so they are structurally nonequivalent: some attractions are weaker than others, and they take hold at different temperatures as the oil cools, just as they break one after another when an amorphous solid is heated and softens gradually. Ionic, covalent network, metallic, and molecular crystals all have a definite melting temperature, so none of them fits." }
+   "prompt": "橄榄油冷却时缓慢凝固，在一定温度范围内形成固体。下列哪项最能描述这种固体？<br>（a）离子型<br>（b）共价网状<br>（c）金属型<br>（d）无定形<br>（e）分子晶体",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "（d）无定形。晶态固体有精确的熔化温度，因为其中每个单元所受的作用力相同，所以它的全部吸引作用都在同一温度下形成和断开。橄榄油则是在一定温度范围内凝固，这是无定形固体的行为。它的分子很大，而且有好几种，所以在结构上并不等同：有些吸引作用比另一些弱，油冷却时它们在不同的温度下依次形成，就像加热无定形固体时它们依次断开、固体逐渐软化一样。离子型、共价网状、金属型和分子晶体都有确定的熔化温度，所以都不符合。"
+   }
   },
   {
    "id": "e4",
    "source_id": "fs-idp91522240",
    "kind": "exercise",
    "bloom": "Understand",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "properties",
-   "prompt": "Explain why ice, which is a crystalline solid, has a melting temperature of 0 °C, whereas butter, which is an amorphous solid, softens over a range of temperatures.",
-   "answer": { "type": "open", "generated_by": "source", "solution": "Ice has a crystalline structure stabilized by hydrogen bonding. These intermolecular forces are of comparable strength and thus require the same amount of energy to overcome. As a result, ice melts at a single temperature and not over a range of temperatures. The various, very large molecules that compose butter experience varied van der Waals attractions of various strengths that are overcome at various temperatures, and so the melting process occurs over a wide temperature range." }
+   "prompt": "解释为什么冰这种晶态固体的熔化温度为 0 °C，而黄油这种无定形固体则在一定温度范围内软化。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "冰具有由氢键稳定的晶体结构。这些分子间作用力的强度相当，因此克服它们所需的能量相同。结果是，冰在单一温度下熔化，而不是在一定温度范围内熔化。构成黄油的各种非常大的分子，受到强度各异的范德华吸引，这些吸引在不同的温度下被克服，所以熔化过程发生在很宽的温度范围内。"
+   }
   },
   {
    "id": "e5",
    "source_id": "fs-idm41685552",
    "kind": "exercise",
    "bloom": "Apply",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "properties",
-   "prompt": "Identify the type of crystalline solid (metallic, network covalent, ionic, or molecular) formed by each of the following substances:<br>(a) SiO<sub>2</sub><br>(b) KCl<br>(c) Cu<br>(d) CO<sub>2</sub><br>(e) C (diamond)<br>(f) BaSO<sub>4</sub><br>(g) NH<sub>3</sub><br>(h) NH<sub>4</sub>F<br>(i) C<sub>2</sub>H<sub>5</sub>OH",
-   "answer": { "type": "open", "generated_by": "ai", "solution": "(a) SiO<sub>2</sub>: covalent network, one of the compounds whose atoms are joined by an unbroken network of covalent bonds. (b) KCl: ionic, a metal with a nonmetal, built of K<sup>+</sup> and Cl<sup>−</sup> ions. (c) Cu: metallic, copper atoms held by metallic bonding. (d) CO<sub>2</sub>: molecular, discrete CO<sub>2</sub> molecules held by IMFs. (e) C (diamond): covalent network, each carbon atom covalently bonded to its neighbors throughout the crystal. (f) BaSO<sub>4</sub>: ionic, built of Ba<sup>2+</sup> and SO<sub>4</sub><sup>2−</sup> ions. (g) NH<sub>3</sub>: molecular, discrete polar NH<sub>3</sub> molecules held by IMFs. (h) NH<sub>4</sub>F: ionic, built of NH<sub>4</sub><sup>+</sup> and F<sup>−</sup> ions even though it contains no metal. (i) C<sub>2</sub>H<sub>5</sub>OH: molecular, discrete ethanol molecules held by IMFs." }
+   "prompt": "指出下列各物质形成的晶态固体的类型（金属型、共价网状、离子型或分子型）：<br>（a）SiO<sub>2</sub><br>（b）KCl<br>（c）Cu<br>（d）CO<sub>2</sub><br>（e）C（金刚石）<br>（f）BaSO<sub>4</sub><br>（g）NH<sub>3</sub><br>（h）NH<sub>4</sub>F<br>（i）C<sub>2</sub>H<sub>5</sub>OH",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "（a）SiO<sub>2</sub>：共价网状，是原子由不间断的共价键网络连接而成的化合物之一。（b）KCl：离子型，是金属与非金属形成的，由 K<sup>+</sup> 和 Cl<sup>−</sup> 离子构成。（c）Cu：金属型，铜原子靠金属键结合。（d）CO<sub>2</sub>：分子型，独立的 CO<sub>2</sub> 分子靠 IMF 结合。（e）C（金刚石）：共价网状，每个碳原子在整个晶体中都与相邻原子以共价键相连。（f）BaSO<sub>4</sub>：离子型，由 Ba<sup>2+</sup> 和 SO<sub>4</sub><sup>2−</sup> 离子构成。（g）NH<sub>3</sub>：分子型，独立的极性 NH<sub>3</sub> 分子靠 IMF 结合。（h）NH<sub>4</sub>F：离子型，虽然不含金属，但由 NH<sub>4</sub><sup>+</sup> 和 F<sup>−</sup> 离子构成。（i）C<sub>2</sub>H<sub>5</sub>OH：分子型，独立的乙醇分子靠 IMF 结合。"
+   }
   },
   {
    "id": "e6",
    "source_id": "fs-idp150351456",
    "kind": "exercise",
    "bloom": "Apply",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "properties",
-   "prompt": "Identify the type of crystalline solid (metallic, network covalent, ionic, or molecular) formed by each of the following substances:<br>(a) CaCl<sub>2</sub><br>(b) SiC<br>(c) N<sub>2</sub><br>(d) Fe<br>(e) C (graphite)<br>(f) CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>CH<sub>3</sub><br>(g) HCl<br>(h) NH<sub>4</sub>NO<sub>3</sub><br>(i) K<sub>3</sub>PO<sub>4</sub>",
-   "answer": { "type": "open", "generated_by": "source", "solution": "(a) ionic; (b) covalent network; (c) molecular; (d) metallic; (e) covalent network; (f) molecular; (g) molecular; (h) ionic; (i) ionic" }
+   "prompt": "指出下列各物质形成的晶态固体的类型（金属型、共价网状、离子型或分子型）：<br>（a）CaCl<sub>2</sub><br>（b）SiC<br>（c）N<sub>2</sub><br>（d）Fe<br>（e）C（石墨）<br>（f）CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>CH<sub>3</sub><br>（g）HCl<br>（h）NH<sub>4</sub>NO<sub>3</sub><br>（i）K<sub>3</sub>PO<sub>4</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）离子型；（b）共价网状；（c）分子型；（d）金属型；（e）共价网状；（f）分子型；（g）分子型；（h）离子型；（i）离子型"
+   }
   },
   {
    "id": "e7",
    "source_id": "fs-idm128882560",
    "kind": "exercise",
    "bloom": "Analyze",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "properties",
-   "prompt": "Classify each substance in the table as either a metallic, ionic, molecular, or covalent network solid:<br><table><thead><tr><th>Substance</th><th>Appearance</th><th>Melting Point</th><th>Electrical Conductivity</th><th>Solubility in Water</th></tr></thead><tbody><tr><td>X</td><td>lustrous, malleable</td><td>1500 °C</td><td>high</td><td>insoluble</td></tr><tr><td>Y</td><td>soft, yellow</td><td>113 °C</td><td>none</td><td>insoluble</td></tr><tr><td>Z</td><td>hard, white</td><td>800 °C</td><td>only if melted/dissolved</td><td>soluble</td></tr></tbody></table>",
-   "answer": { "type": "open", "generated_by": "ai", "solution": "X is metallic, Y is molecular, and Z is ionic. X is lustrous and malleable and conducts electricity well, the properties Table 10.4 gives for metallic solids, whose atoms sit in a sea of delocalized electrons; its melting point of 1500 °C is typical of a transition metal, and metals do not dissolve in water. Y is soft, does not conduct, and melts at only 113 °C, so its particles are neutral molecules held by weak IMFs; these properties match sulfur. Z is hard, melts at a high 800 °C, dissolves in water, and conducts only when melted or dissolved, which is the behavior of an ionic solid: its ions are held in place in the crystal and become free to move only in the liquid or in solution." }
+   "prompt": "把表中的每种物质分类为金属固体、离子固体、分子固体或共价网状固体：<br><table><thead><tr><th>物质</th><th>外观</th><th>熔点</th><th>导电性</th><th>在水中的溶解性</th></tr></thead><tbody><tr><td>X</td><td>有光泽，有延展性</td><td>1500 °C</td><td>高</td><td>不溶</td></tr><tr><td>Y</td><td>软，黄色</td><td>113 °C</td><td>无</td><td>不溶</td></tr><tr><td>Z</td><td>硬，白色</td><td>800 °C</td><td>仅在熔融/溶解时导电</td><td>可溶</td></tr></tbody></table>",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "X 是金属型，Y 是分子型，Z 是离子型。X 有光泽、有延展性，导电性好，这是表 10.4 中给出的金属固体的性质，其原子处于离域电子的海洋之中；它 1500 °C 的熔点是典型的过渡金属的熔点，而金属不溶于水。Y 软，不导电，熔点只有 113 °C，所以其粒子是靠弱 IMF 结合的中性分子；这些性质与硫相符。Z 硬，熔点高达 800 °C，溶于水，仅在熔融或溶解时导电，这是离子固体的行为：其离子在晶体中被固定在原位，只有在液体或溶液中才能自由移动。"
+   }
   },
   {
    "id": "e8",
    "source_id": "fs-idm39063008",
    "kind": "exercise",
    "bloom": "Analyze",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "properties",
-   "prompt": "Classify each substance in the table as either a metallic, ionic, molecular, or covalent network solid:<br><table><thead><tr><th>Substance</th><th>Appearance</th><th>Melting Point</th><th>Electrical Conductivity</th><th>Solubility in Water</th></tr></thead><tbody><tr><td>X</td><td>brittle, white</td><td>800 °C</td><td>only if melted/dissolved</td><td>soluble</td></tr><tr><td>Y</td><td>shiny, malleable</td><td>1100 °C</td><td>high</td><td>insoluble</td></tr><tr><td>Z</td><td>hard, colorless</td><td>3550 °C</td><td>none</td><td>insoluble</td></tr></tbody></table>",
-   "answer": { "type": "open", "generated_by": "source", "solution": "X = ionic; Y = metallic; Z = covalent network" }
+   "prompt": "把表中的每种物质分类为金属固体、离子固体、分子固体或共价网状固体：<br><table><thead><tr><th>物质</th><th>外观</th><th>熔点</th><th>导电性</th><th>在水中的溶解性</th></tr></thead><tbody><tr><td>X</td><td>脆，白色</td><td>800 °C</td><td>仅在熔融/溶解时导电</td><td>可溶</td></tr><tr><td>Y</td><td>闪亮，有延展性</td><td>1100 °C</td><td>高</td><td>不溶</td></tr><tr><td>Z</td><td>硬，无色</td><td>3550 °C</td><td>无</td><td>不溶</td></tr></tbody></table>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "X = 离子型；Y = 金属型；Z = 共价网状"
+   }
   },
   {
    "id": "e9",
    "source_id": "fs-idm126229856",
    "kind": "exercise",
    "bloom": "Analyze",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "properties",
-   "prompt": "Identify the following substances as ionic, metallic, covalent network, or molecular solids:<br>Substance A is malleable, ductile, conducts electricity well, and has a melting point of 1135 °C. Substance B is brittle, does not conduct electricity as a solid but does when molten, and has a melting point of 2072 °C. Substance C is very hard, does not conduct electricity, and has a melting point of 3440 °C. Substance D is soft, does not conduct electricity, and has a melting point of 185 °C.",
-   "answer": { "type": "open", "generated_by": "ai", "solution": "A is metallic, B is ionic, C is covalent network, and D is molecular. A is malleable and ductile and conducts electricity well, properties found only in metallic solids, and its melting point of 1135 °C is typical of a transition metal. B is brittle and conducts only when molten, because its ions become free to move in the liquid; its melting point of 2072 °C is the very high melting point of an ionic solid such as Al<sub>2</sub>O<sub>3</sub>. C is very hard, does not conduct, and melts at 3440 °C, the properties of a covalent network solid, whose melting requires breaking covalent bonds, as in diamond. D is soft, does not conduct, and melts at only 185 °C, so it is built of molecules held by IMFs; table sugar is a molecular solid with this melting point." }
+   "prompt": "把下列物质分别判定为离子固体、金属固体、共价网状固体或分子固体：<br>物质 A 有展性、有延性，导电性好，熔点为 1135 °C。物质 B 脆，固态时不导电而熔融时导电，熔点为 2072 °C。物质 C 非常硬，不导电，熔点为 3440 °C。物质 D 软，不导电，熔点为 185 °C。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "A 是金属型，B 是离子型，C 是共价网状，D 是分子型。A 有展性和延性，导电性好，这些性质只有金属固体才具备，其 1135 °C 的熔点是典型的过渡金属的熔点。B 脆，只在熔融时导电，因为其离子在液体中可以自由移动；它 2072 °C 的熔点是 Al<sub>2</sub>O<sub>3</sub> 之类离子固体的很高的熔点。C 非常硬，不导电，在 3440 °C 熔化，这是共价网状固体的性质，其熔化需要断开共价键，如金刚石。D 软，不导电，只在 185 °C 熔化，所以它由靠 IMF 结合的分子构成；食糖就是具有这一熔点的分子固体。"
+   }
   },
   {
    "id": "e10",
    "source_id": "fs-idp33413008",
    "kind": "exercise",
    "bloom": "Apply",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "properties",
-   "prompt": "Substance A is shiny, conducts electricity well, and melts at 975 °C. Substance A is likely a(n):",
-   "answer": { "type": "choice", "generated_by": "source", "options": ["ionic solid", "metallic solid", "molecular solid", "covalent network solid"], "correct": 1, "hint": "Find the row of Table 10.4 whose properties include luster and good electrical conductivity.", "solution": "(b) metallic solid" }
+   "prompt": "物质 A 有光泽，导电性好，在 975 °C 熔化。物质 A 很可能是：",
+   "answer": {
+    "type": "choice",
+    "generated_by": "source",
+    "options": [
+     "离子固体",
+     "金属固体",
+     "分子固体",
+     "共价网状固体"
+    ],
+    "correct": 1,
+    "hint": "在表 10.4 中找出其性质包含光泽和良好导电性的那一行。",
+    "solution": "（b）金属固体"
+   }
   },
   {
    "id": "e11",
    "source_id": "fs-idp12717008",
    "kind": "exercise",
    "bloom": "Apply",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "properties",
-   "prompt": "Substance B is hard, does not conduct electricity, and melts at 1200 °C. Substance B is likely a(n):<br>(a) ionic solid<br>(b) metallic solid<br>(c) molecular solid<br>(d) covalent network solid",
-   "answer": { "type": "open", "generated_by": "ai", "solution": "(d) covalent network solid. Hardness, no electrical conductivity, and a high melting point of 1200 °C are the properties Table 10.4 lists for a covalent network solid, whose atoms are held by a network of strong covalent bonds. A metallic solid would conduct electricity well, and a molecular solid would have a low melting point, so neither fits. An ionic solid is also hard with a high melting point, but it conducts electricity when molten or dissolved because its ions become free to move. Substance B is described as not conducting at all, so the covalent network solid is the likely choice." }
+   "prompt": "物质 B 硬，不导电，在 1200 °C 熔化。物质 B 很可能是：<br>（a）离子固体<br>（b）金属固体<br>（c）分子固体<br>（d）共价网状固体",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "（d）共价网状固体。硬度大、不导电、熔点高达 1200 °C，是表 10.4 中列出的共价网状固体的性质，其原子靠强共价键网络结合。金属固体导电性好，分子固体熔点低，所以都不符合。离子固体同样很硬，熔点也高，但它在熔融或溶解时会导电，因为其离子可以自由移动。物质 B 被描述为完全不导电，所以共价网状固体是较可能的选择。"
+   }
   }
  ],
  "exercise_concepts": [
-  { "exercise": "e1", "concept": "crystalline-and-amorphous-solids" },
-  { "exercise": "e2", "concept": "classify-crystalline-solid" },
-  { "exercise": "e2", "concept": "types-of-crystalline-solids" },
-  { "exercise": "e3", "concept": "crystalline-and-amorphous-solids" },
-  { "exercise": "e4", "concept": "crystalline-and-amorphous-solids" },
-  { "exercise": "e4", "concept": "hydrogen-bonding", "weight": 1, "weights_by": "ai" },
-  { "exercise": "e5", "concept": "classify-crystalline-solid" },
-  { "exercise": "e6", "concept": "classify-crystalline-solid" },
-  { "exercise": "e7", "concept": "classify-crystalline-solid" },
-  { "exercise": "e7", "concept": "types-of-crystalline-solids" },
-  { "exercise": "e8", "concept": "classify-crystalline-solid" },
-  { "exercise": "e8", "concept": "types-of-crystalline-solids" },
-  { "exercise": "e9", "concept": "classify-crystalline-solid" },
-  { "exercise": "e9", "concept": "types-of-crystalline-solids" },
-  { "exercise": "e10", "concept": "types-of-crystalline-solids" },
-  { "exercise": "e11", "concept": "types-of-crystalline-solids" }
+  {
+   "exercise": "e1",
+   "concept": "crystalline-and-amorphous-solids"
+  },
+  {
+   "exercise": "e2",
+   "concept": "classify-crystalline-solid"
+  },
+  {
+   "exercise": "e2",
+   "concept": "types-of-crystalline-solids"
+  },
+  {
+   "exercise": "e3",
+   "concept": "crystalline-and-amorphous-solids"
+  },
+  {
+   "exercise": "e4",
+   "concept": "crystalline-and-amorphous-solids"
+  },
+  {
+   "exercise": "e4",
+   "concept": "hydrogen-bonding",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e5",
+   "concept": "classify-crystalline-solid"
+  },
+  {
+   "exercise": "e6",
+   "concept": "classify-crystalline-solid"
+  },
+  {
+   "exercise": "e7",
+   "concept": "classify-crystalline-solid"
+  },
+  {
+   "exercise": "e7",
+   "concept": "types-of-crystalline-solids"
+  },
+  {
+   "exercise": "e8",
+   "concept": "classify-crystalline-solid"
+  },
+  {
+   "exercise": "e8",
+   "concept": "types-of-crystalline-solids"
+  },
+  {
+   "exercise": "e9",
+   "concept": "classify-crystalline-solid"
+  },
+  {
+   "exercise": "e9",
+   "concept": "types-of-crystalline-solids"
+  },
+  {
+   "exercise": "e10",
+   "concept": "types-of-crystalline-solids"
+  },
+  {
+   "exercise": "e11",
+   "concept": "types-of-crystalline-solids"
+  }
  ]
 }

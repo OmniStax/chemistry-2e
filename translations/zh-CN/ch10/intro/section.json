@@ -2,15 +2,19 @@
  "id": "intro",
  "module": "m68760",
  "chapter": "10",
- "title": "Introduction",
- "short": "Introduction",
+ "title": "引言",
+ "short": "引言",
  "lead": "",
- "notes": "The list of the chapter’s section titles that the module carries in place of learning objectives is left out, since the contents view lists them. The parenthesis the book opens before “repeated acidification” is never closed; the sentence is kept as printed.",
+ "notes": "本模块没有学习目标，而是列出本章各节的标题，这份列表已略去，因为目录视图中已有各节标题。书中在“反复酸化”之前打开的括号始终没有闭合，该句按原样保留。",
  "ai": {
   "text": [
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
@@ -20,7 +24,7 @@
    }
   ]
  },
- "built": "2026-09-28",
+ "built": "2026-10-26",
  "figures": [
   {
    "id": "fig-dry-ice",

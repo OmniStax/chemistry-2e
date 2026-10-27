@@ -32,8 +32,8 @@ const knots = (ks) => (x) => {
 (function () {
   const d = sim('sim-catalysis', 560);
   const R0 = 6, P0 = 10, EU = 26, RT = 8.314e-3 * 298;
-  const ea = ctl(d.controls, { label: '\\htmlClass{kv-energy}{E}_{\\text{a},\\htmlData{ref=catalyzed}{\\text{cat}}}', cls: 'energy', key: 'ea-cat', min: 6, max: 26, step: 1, value: 14, unit: 'kJ/mol', dec: 0, aria: 'activation energy of the catalyzed path, in kilojoules per mole' });
-  const path = F.choice(d.controls, { label: '\\text{catalyzed path}', key: 'steps', options: [{ value: 'two', label: 'two steps' }, { value: 'one', label: 'one step' }], value: 'two' });
+  const ea = ctl(d.controls, { label: '\\htmlClass{kv-energy}{E}_{\\text{a},\\htmlData{ref=catalyzed}{\\text{催化}}}', cls: 'energy', key: 'ea-cat', min: 6, max: 26, step: 1, value: 14, unit: 'kJ/mol', dec: 0, aria: '催化路径的活化能，单位为千焦每摩尔' });
+  const path = F.choice(d.controls, { label: '\\text{催化路径}', key: 'steps', options: [{ value: 'two', label: '两步' }, { value: 'one', label: '一步' }], value: 'two' });
   const ro = F.readout(d);
   const G = { l: 150, r: 1250, t: 120, b: 470 };
   const uncat = knots([[0, R0], [0.14, R0], [0.5, R0 + EU], [0.86, P0], [1, P0]]);
@@ -48,15 +48,15 @@ const knots = (ks) => (x) => {
     const e = Math.floor(Math.log10(v)), m = v / 10 ** e;
     return `${m.toFixed(2)} \\times 10^{${e}}`;
   };
-  const Ecat = '\\htmlClass{kv-energy}{E}_{\\text{a},\\htmlData{ref=catalyzed}{\\text{cat}}}';
-  const Eun = '\\htmlClass{kv-energy}{E}_{\\text{a},\\htmlData{ref=uncatalyzed}{\\text{uncat}}}';
-  const kcat = '\\kk_{\\htmlData{ref=catalyzed}{\\text{cat}}}', kun = '\\kk_{\\htmlData{ref=uncatalyzed}{\\text{uncat}}}';
+  const Ecat = '\\htmlClass{kv-energy}{E}_{\\text{a},\\htmlData{ref=catalyzed}{\\text{催化}}}';
+  const Eun = '\\htmlClass{kv-energy}{E}_{\\text{a},\\htmlData{ref=uncatalyzed}{\\text{未催化}}}';
+  const kcat = '\\kk_{\\htmlData{ref=catalyzed}{\\text{催化}}}', kun = '\\kk_{\\htmlData{ref=uncatalyzed}{\\text{未催化}}}';
   let hits = [];
   F.hover(d.stage, () => hits);
   function draw() {
     const { ctx, H } = begin(d.c), lab = F.labeller(ctx, H, { headline: true });
     const e = ea.v, ce = C('energy'), cu = F.ref('uncatalyzed'), cc = F.ref('catalyzed');
-    const g = F.axes(ctx, G, [0, 1], [0, 40], { nx: 1, ny: 4, fx: () => '', xl: 'extent of reaction', yl: 'energy (kJ/mol)', yc: ce });
+    const g = F.axes(ctx, G, [0, 1], [0, 40], { nx: 1, ny: 4, fx: () => '', xl: '反应进程', yl: '能量（kJ/mol）', yc: ce });
     line(ctx, g.X(0), g.Y(R0), g.X(0.97), g.Y(R0), alpha(PAL.ink, 0.45), 3, [10, 10]);
     F.curve(ctx, uncat, 0, 1, g.X, g.Y, cu, 5, 220);
     path.curve(ctx, (v) => shape(v, e).f, 0, 1, g.X, g.Y, cc, 5, 220);
@@ -67,26 +67,26 @@ const knots = (ks) => (x) => {
     F.vbracket(ctx, g.X(0.93), g.Y(R0), g.Y(P0), ce);
     /* the legend, in the empty corner above the reactants */
     const lx = G.l + 36, ly = G.t + 24;
-    line(ctx, lx, ly, lx + 44, ly, cu, 5); text(ctx, 'uncatalyzed', lx + 56, ly, cu, { size: 20, weight: 600 });
-    line(ctx, lx, ly + 32, lx + 44, ly + 32, cc, 5); text(ctx, 'catalyzed', lx + 56, ly + 32, cc, { size: 20, weight: 600 });
+    line(ctx, lx, ly, lx + 44, ly, cu, 5); text(ctx, '未催化', lx + 56, ly, cu, { size: 20, weight: 600 });
+    line(ctx, lx, ly + 32, lx + 44, ly + 32, cc, 5); text(ctx, '催化', lx + 56, ly + 32, cc, { size: 20, weight: 600 });
     lab.block(lx - 8, ly - 16, lx + 200, ly + 48);
     lab.add('E_{a}', xc, g.Y(R0 + e / 2), -1, 0, ce, 22, 16);
     lab.add('E_{a}', xu, g.Y(R0 + EU / 2), 1, 0, ce, 22, 16);
     lab.add('ΔH', g.X(0.93), g.Y((R0 + P0) / 2), 1, 0, ce, 22, 18);
-    lab.add('reactants', g.X(0.06), g.Y(R0), 0, 1, PAL.ink, 20, 22);
-    lab.add('products', g.X(0.97), g.Y(P0), 0, -1, PAL.ink, 20, 22);
+    lab.add('反应物', g.X(0.06), g.Y(R0), 0, 1, PAL.ink, 20, 22);
+    lab.add('产物', g.X(0.97), g.Y(P0), 0, -1, PAL.ink, 20, 22);
     lab.flush();
     /* the intermediate in the valley of the two-step path, named below the reactants' level where nothing is drawn */
     const two = shape('two', e), vx = g.X(two.mid[0]), vy = g.Y(two.mid[1]);
     path.only(ctx, 'two', () => {
       line(ctx, vx, vy + 10, vx + 34, g.Y(R0) + 24, alpha(cc, 0.7), 2, [4, 6]);
-      text(ctx, 'intermediate', vx + 40, g.Y(R0) + 34, PAL.ink, { size: 20 });
+      text(ctx, '中间体', vx + 40, g.Y(R0) + 34, PAL.ink, { size: 20 });
     }, [0, 0]);
     const now = shape(path.value, e);
-    hits = [{ x: g.X(0.5), y: g.Y(R0 + EU), r: 26, name: 'transition state of the uncatalyzed path' }]
-      .concat(now.ts.map(([x, y], i) => ({ x: g.X(x), y: g.Y(y), r: 22, name: now.ts.length > 1 ? (i ? 'second' : 'first') + ' transition state of the catalyzed path' : 'transition state of the catalyzed path' })))
-      .concat(now.mid ? [{ x: g.X(now.mid[0]), y: g.Y(now.mid[1]), r: 22, name: 'intermediate of the catalyzed path, in the valley between its transition states' }] : []);
-    topline(ctx, e >= EU ? 'At 26 kJ/mol the two barriers stand equally high, and neither path is faster.' : `On the catalyzed path $\\kEa$ is ${e} kJ/mol against 26 kJ/mol, from the same reactants to the same products.`);
+    hits = [{ x: g.X(0.5), y: g.Y(R0 + EU), r: 26, name: '未催化路径的过渡态' }]
+      .concat(now.ts.map(([x, y], i) => ({ x: g.X(x), y: g.Y(y), r: 22, name: now.ts.length > 1 ? (i ? '催化路径的第二个' : '催化路径的第一个') + '过渡态' : '催化路径的过渡态' })))
+      .concat(now.mid ? [{ x: g.X(now.mid[0]), y: g.Y(now.mid[1]), r: 22, name: '催化路径的中间体，位于它的两个过渡态之间的谷中' }] : []);
+    topline(ctx, e >= EU ? '在 26 kJ/mol 时，两个能垒一样高，两条路径谁也不比谁快。' : `在催化路径上 $\\kEa$ 为 ${e} kJ/mol，而未催化路径为 26 kJ/mol，二者都是从相同的反应物到相同的产物。`);
     const ratio = Math.exp((EU - e) / RT);
     ro.set(`\\mk{ratio}{\\frac{${kcat}}{${kun}}} = \\mk{law}{\\exp\\left(\\frac{${Eun} - ${Ecat}}{R\\kT}\\right)} = \\exp\\left(\\frac{(${hue('energy', '26')} - \\mk{ec}{${hue('energy', String(e))}})\\ \\text{kJ/mol}}{(8.314 \\times 10^{-3}\\ \\text{kJ mol}^{-1}\\,\\text{K}^{-1})(${hue('temperature', '298\\ \\text{K}')})}\\right) = \\mk{val}{${big(ratio)}}`);
   }
@@ -110,7 +110,7 @@ const knots = (ks) => (x) => {
 (function () {
   const d = sim('sim-hydrogenation');
   const v = F.view3d(d.stage, { h: 470, dist: 6.4, tilt: 0.42, spin: 'off', pitch: [0.05, 1.3], yaw: [-1.2, 1.2],
-    views: [{ label: 'front', yaw: 0, pitch: 0.42 }, { label: 'above', yaw: 0, pitch: 1.25 }] });
+    views: [{ label: '正面', yaw: 0, pitch: 0.42 }, { label: '上方', yaw: 0, pitch: 1.25 }] });
   const has3 = !!v.scene;
   if (!has3) v.wrap.style.display = 'none';
   const FLAT = has3 ? 0 : 360, cnv = F.makeCanvas(d.stage, 130 + FLAT);
@@ -164,14 +164,14 @@ const knots = (ks) => (x) => {
     return { atoms, bonds, step };
   }
   const STEPS = [
-    '(a) Hydrogen is adsorbed on the surface, breaking the H–H bonds and forming Ni–H bonds.',
-    '(b) Ethylene is adsorbed on the surface, breaking the C–C π-bond and forming Ni–C bonds.',
-    '(c) Atoms diffuse across the surface and form new C–H bonds when they collide.',
-    '(d) C<sub>2</sub>H<sub>6</sub> molecules desorb from the Ni surface.',
+    '（a）氢气吸附在表面上，H–H 键断裂，形成 Ni–H 键。',
+    '（b）乙烯吸附在表面上，C–C π 键断裂，形成 Ni–C 键。',
+    '（c）原子在表面上扩散，碰撞时形成新的 C–H 键。',
+    '（d）C<sub>2</sub>H<sub>6</sub> 分子从 Ni 表面脱附。',
   ];
-  const TAGS = ['(a) hydrogen adsorbed', '(b) ethylene adsorbed', '(c) atoms meet', '(d) ethane desorbs'];
+  const TAGS = ['（a）氢气吸附', '（b）乙烯吸附', '（c）原子相遇', '（d）乙烷脱附'];
   const KIND = { h: 'H', c: 'C', e: 'H' };
-  const NAME = { H: 'a hydrogen atom, H', C: 'a carbon atom, C' };
+  const NAME = { H: '氢原子 H', C: '碳原子 C' };
   const RAD = { H: 0.095, C: 0.145 };
   const grp = has3 ? v.part(0) : null;
   let sig = '', meshes = {}, sticks = {};
@@ -182,11 +182,11 @@ const knots = (ks) => (x) => {
     v.clear(); meshes = {}; sticks = {};
     grp.position.y = -0.7;
     const slab = F.mesh.box(grp, [0, NI_Y - 0.2, 0], [3.5, 0.4, 2.5], F.el('Ni'));
-    v.pickable(slab, 'the nickel catalyst, a solid');
-    NI.forEach((p) => v.pickable(F.mesh.sphere(grp, p, NI_R, F.el('Ni')), 'a nickel atom of the catalyst surface, Ni'));
+    v.pickable(slab, '镍催化剂，一种固体');
+    NI.forEach((p) => v.pickable(F.mesh.sphere(grp, p, NI_R, F.el('Ni')), '催化剂表面的一个镍原子 Ni'));
     Object.keys(s.atoms).forEach((id) => { const el = KIND[id[0]]; meshes[id] = v.pickable(F.mesh.sphere(grp, s.atoms[id], RAD[el], F.el(el)), NAME[el]); });
     s.bonds.forEach((b) => { sticks[b.id] = F.mesh.stick(grp, b.p, b.q, b.id.startsWith('nic') ? 0.022 : 0.032, b.id.startsWith('nic') ? PAL.muted : PAL.ink); });
-    v.label('Ni surface', [-1.95, NI_Y, 0.4], grp, 0);
+    v.label('Ni 表面', [-1.95, NI_Y, 0.4], grp, 0);
   }
   function place(s) {
     if (!has3) return;
@@ -202,7 +202,7 @@ const knots = (ks) => (x) => {
     NI.filter((p) => p[2] === 1).forEach((p) => ball(p, 'Ni', NI_R));
     s.bonds.forEach((b) => { if (b.on) line(ctx, X(b.p), Y(b.p), X(b.q), Y(b.q), b.id.startsWith('nic') ? PAL.muted : PAL.ink, 3); });
     Object.keys(s.atoms).forEach((id) => { const el = KIND[id[0]]; ball(s.atoms[id], el, RAD[el]); });
-    text(ctx, 'Ni surface', 200, Y([0, NI_Y, 0]) + 56, PAL.ink, { size: 20 });
+    text(ctx, 'Ni 表面', 200, Y([0, NI_Y, 0]) + 56, PAL.ink, { size: 20 });
     topline(ctx, STEPS[s.step].replace(/<sub>(\d)<\/sub>/g, '_{$1}'));
   }
   function draw() {
@@ -232,7 +232,7 @@ const knots = (ks) => (x) => {
 (function () {
   const d = sim('sim-enzyme', 540);
   const LOOP = 4, cy = cycle(() => LOOP, 1.2);
-  const model = F.choice(d.controls, { label: '\\text{model}', key: 'model', options: [{ value: 'lock', label: 'lock-and-key' }, { value: 'induced', label: 'induced fit' }], value: 'lock', onInput: () => cy.reset() });
+  const model = F.choice(d.controls, { label: '\\text{模型}', key: 'model', options: [{ value: 'lock', label: '锁钥模型' }, { value: 'induced', label: '诱导契合模型' }], value: 'lock', onInput: () => cy.reset() });
   const Y0 = 330, XL = 470, XR = 930, PL = 650, PR = 750;
   const bump = (x, c, w) => (Math.abs(x - c) < w ? Math.cos((Math.PI * (x - c)) / (2 * w)) ** 2 : 0);
   const shoulders = (x) => -14 * bump(x, 530, 50) - 14 * bump(x, 870, 50);
@@ -245,8 +245,8 @@ const knots = (ks) => (x) => {
   const XS = []; for (let x = XL; x <= XR; x += 2) XS.push(x);
   /* the substrates as they sit docked: a body and the tip that binds */
   const SUBS = [
-    { box: [600, 226, 98, 102], radii: [44, 6, 6, 18], tip: 'round', name: 'substrate with a rounded tip', path: [-170, -110] },
-    { box: [702, 226, 98, 102], radii: [6, 44, 18, 6], tip: 'point', name: 'substrate with a pointed tip', path: [170, -110] },
+    { box: [600, 226, 98, 102], radii: [44, 6, 6, 18], tip: 'round', name: '带圆头的底物', path: [-170, -110] },
+    { box: [702, 226, 98, 102], radii: [6, 44, 18, 6], tip: 'point', name: '带尖头的底物', path: [170, -110] },
   ];
   /* where a substrate is, offset from its docked place along a curve that drops and then swings in */
   const offset = (s, k) => { const [px, py] = s.path, u = 1 - k; return [u * u * px + 2 * u * k * px, u * u * py + 2 * u * k * -50]; };
@@ -271,20 +271,20 @@ const knots = (ks) => (x) => {
     XS.forEach((x, i) => { const y = lerp(looseTop(x), fitTop(x), k); if (i) ctx.lineTo(x, y); else ctx.moveTo(x, y); });
     for (let i = 0; i <= 60; i++) { const a = (Math.PI * i) / 60; ctx.lineTo(700 + 230 * Math.cos(a), Y0 + 150 * Math.sin(a)); }
     ctx.closePath(); ctx.fillStyle = alpha(ce, 0.2); ctx.fill(); ctx.strokeStyle = ce; ctx.lineWidth = 6; ctx.lineJoin = 'round'; ctx.stroke(); ctx.restore();
-    hits = [{ x: 700, y: Y0 + 90, r: 90, name: 'enzyme' }, { x: PL, y: Y0 + 12, r: 26, name: 'pocket of the active site for the rounded tip' }, { x: PR, y: Y0 + 12, r: 26, name: 'pocket of the active site for the pointed tip' }];
+    hits = [{ x: 700, y: Y0 + 90, r: 90, name: '酶' }, { x: PL, y: Y0 + 12, r: 26, name: '活性部位中容纳圆头的口袋' }, { x: PR, y: Y0 + 12, r: 26, name: '活性部位中容纳尖头的口袋' }];
     SUBS.forEach((s) => {
       const [dx, dy] = offset(s, go);
       substrate(ctx, s, dx, dy, cs);
       hits.unshift({ x: s.box[0] + s.box[2] / 2 + dx, y: s.box[1] + s.box[3] / 2 + dy, r: 60, name: s.name });
     });
-    text(ctx, 'enzyme', 700, Y0 + 176, ce, { size: 22, weight: 600, align: 'center' });
-    F.label(ctx, 'active site', 626, Y0 + 4, { side: 'left', gap: 170, size: 20 });
+    text(ctx, '酶', 700, Y0 + 176, ce, { size: 22, weight: 600, align: 'center' });
+    F.label(ctx, '活性部位', 626, Y0 + 4, { side: 'left', gap: 170, size: 20 });
     const lx = 1080, ly = 120;
     ctx.save(); ctx.fillStyle = alpha(cs, 0.22); ctx.strokeStyle = cs; ctx.lineWidth = 3; ctx.beginPath(); ctx.roundRect(lx, ly - 14, 40, 28, 8); ctx.fill(); ctx.stroke(); ctx.restore();
-    text(ctx, 'substrates', lx + 52, ly, cs, { size: 20, weight: 600 });
-    topline(ctx, go >= 1 ? 'The enzyme–substrate complex has formed.' : model.value === 'lock' ? 'The active site already has the shape of the substrates.' : 'The active site changes shape to fit the substrates as they arrive.');
+    text(ctx, '底物', lx + 52, ly, cs, { size: 20, weight: 600 });
+    topline(ctx, go >= 1 ? '酶-底物复合物已经形成。' : model.value === 'lock' ? '活性部位已经具有底物的形状。' : '活性部位随底物到来而改变形状以与之吻合。');
   }
-  F.tex(d.readout, '\\htmlData{ref=enzyme}{\\text{enzyme}} + \\htmlData{ref=substrates}{\\text{substrates}} \\longrightarrow \\text{enzyme–substrate complex}');
+  F.tex(d.readout, '\\htmlData{ref=enzyme}{\\text{酶}} + \\htmlData{ref=substrates}{\\text{底物}} \\longrightarrow \\text{酶-底物复合物}');
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
 };

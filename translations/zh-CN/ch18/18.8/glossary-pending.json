@@ -1,0 +1,20 @@
+{
+ "terms": [
+  {"source": "phosphorus(III) oxide", "target": "氧化磷(III)", "authority": "cnterm-chemistry", "note": "Written in the stock form like the shared row mercury(II) oxide = 氧化汞(II); alias tetraphosphorus hexaoxide = 六氧化四磷 (ch02 row). Standard textbook also says 三氧化二磷.", "section": "18.8", "confirm": "termonline"},
+  {"source": "phosphorus(V) oxide", "target": "氧化磷(V)", "authority": "cnterm-chemistry", "note": "Stock form; alias tetraphosphorus decaoxide = 十氧化四磷 (ch02 row); ch18 row phosphorus pentoxide = 五氧化二磷.", "section": "18.8", "confirm": "termonline"},
+  {"source": "orthophosphoric acid", "target": "正磷酸", "authority": "cnterm-chemistry", "note": "Distinguished from phosphoric acid = 磷酸 (shared row) as 正磷酸 is the ortho acid H3PO4.", "section": "18.8", "confirm": "termonline"},
+  {"source": "enthalpy of formation", "target": "生成焓", "authority": "cnterm-chemistry", "note": "The source says 'enthalpy of formation' without 'standard'; the span carries the concept standard-enthalpy-of-formation (标准生成焓).", "section": "18.8", "confirm": "termonline"},
+  {"source": "diphosphorus tetrahydride", "target": "四氢化二磷", "authority": "cnterm-chemistry", "note": "Systematic name (also 联膦).", "section": "18.8", "confirm": "termonline"},
+  {"source": "tetraphosphorus trisulfide", "target": "三硫化四磷", "authority": "cnterm-chemistry", "note": "", "section": "18.8", "confirm": "termonline"},
+  {"source": "ferrophosphorus", "target": "磷铁", "authority": "cnterm-chemistry", "note": "", "section": "18.8", "confirm": "termonline"},
+  {"source": "phosphor bronze", "target": "磷青铜", "authority": "cnterm-chemistry", "note": "Uses shared/ch18 row bronze = 青铜.", "section": "18.8", "confirm": "termonline"},
+  {"source": "strike-anywhere match", "target": "擦燃火柴", "authority": "book", "note": "Match that lights on any rough surface; no standard entry found.", "section": "18.8", "confirm": "owner"},
+  {"source": "drying agent", "target": "干燥剂", "authority": "cnterm-chemistry", "note": "", "section": "18.8", "confirm": "termonline"},
+  {"source": "pesticide", "target": "农药", "authority": "book", "note": "Common textbook usage.", "section": "18.8", "confirm": "owner"},
+  {"source": "octahedron", "target": "八面体", "authority": "cnterm-chemistry", "note": "Shared row octahedral = 八面体形; tetrahedron = 四面体 (ch18).", "section": "18.8", "confirm": "termonline"},
+  {"source": "trigonal bipyramid", "target": "三角双锥", "authority": "cnterm-chemistry", "note": "Noun form of ch18 row trigonal bipyramidal = 三角双锥形.", "section": "18.8", "confirm": "termonline"},
+  {"source": "valence d orbital", "target": "价层 d 轨道", "authority": "cnterm-chemistry", "note": "", "section": "18.8", "confirm": "termonline"},
+  {"source": "species", "target": "物种", "authority": "cnterm-chemistry", "note": "Chemical species, in the Figure 18.41 selector label.", "section": "18.8", "confirm": "termonline"},
+  {"source": "phosphorous acid salts (dihydrogen phosphite / hydrogen phosphite)", "target": "亚磷酸二氢盐 / 亚磷酸氢盐", "authority": "cnterm-chemistry", "note": "Built from ch18 row phosphite = 亚磷酸盐.", "section": "18.8", "confirm": "termonline"}
+ ]
+}

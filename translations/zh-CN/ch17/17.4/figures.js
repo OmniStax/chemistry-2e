@@ -35,9 +35,9 @@ const N_OPTS = ['1', '2', '3', '4', '6'].map((v) => ({ value: v, label: v }));
   const V = { K: [380, 205], G: [150, 470], E: [610, 470] };
   const e0 = F.ctl(d.controls, {
     label: '\\kEocell', cls: 'potential', min: -1.5, max: 1.5, step: 0.001, value: 1.247, unit: 'V', dec: 3,
-    aria: 'standard cell potential, in volts', specials: [{ at: 0, label: 'K = 1' }],
+    aria: '标准电池电势，单位为伏特', specials: [{ at: 0, label: 'K = 1' }],
   });
-  const nPick = F.choice(d.controls, { label: '\\kn', options: N_OPTS, value: '2', aria: 'moles of electrons transferred' });
+  const nPick = F.choice(d.controls, { label: '\\kn', options: N_OPTS, value: '2', aria: '转移电子的物质的量' });
   const ro = F.readout(d);
   let hits = [];
   F.hover(d.stage, () => hits);
@@ -55,10 +55,10 @@ const N_OPTS = ['1', '2', '3', '4', '6'].map((v) => ({ value: v, label: v }));
     const cE = C('potential'), cG = C('energy'), cK = C('equilibrium-constant');
     hits = [];
     const head = zero
-      ? 'With $\\kEocell = 0$, $\\kdGo = 0$ and $\\kK = 1$: the reaction is at equilibrium under standard conditions.'
+      ? '当 $\\kEocell = 0$ 时，$\\kdGo = 0$ 且 $\\kK = 1$：该反应在标准条件下处于平衡。'
       : E > 0
-        ? 'With $\\kEocell > 0$, $\\kdGo < 0$ and $\\kK > 1$: the reaction is spontaneous under standard conditions, and products are more abundant at equilibrium.'
-        : 'With $\\kEocell < 0$, $\\kdGo > 0$ and $\\kK < 1$: the reaction is nonspontaneous under standard conditions, and reactants are more abundant at equilibrium.';
+        ? '当 $\\kEocell > 0$ 时，$\\kdGo < 0$ 且 $\\kK > 1$：该反应在标准条件下是自发的，平衡时产物更多。'
+        : '当 $\\kEocell < 0$ 时，$\\kdGo > 0$ 且 $\\kK < 1$：该反应在标准条件下是非自发的，平衡时反应物更多。';
     topline(ctx, head);
 
     /* the triangle: three double-headed arrows of notation, each with its relation */
@@ -73,23 +73,23 @@ const N_OPTS = ['1', '2', '3', '4', '6'].map((v) => ({ value: v, label: v }));
     text(ctx, `$\\kK = ${kTex}$`, V.K[0], V.K[1] - 40, PAL.ink, { size: 24, align: 'center', tex: true });
     text(ctx, `$\\kdGo = ${g.toFixed(1)}$ kJ/mol`, V.G[0] - 60, V.G[1] + 46, PAL.ink, { size: 24, align: 'left', tex: true });
     text(ctx, `$\\kEocell = ${signedT(E, 3)}$ V`, V.E[0] + 60, V.E[1] + 46, PAL.ink, { size: 24, align: 'right', tex: true });
-    hits.push({ x: V.K[0], y: V.K[1], r: 18, name: `K, the equilibrium constant: ${kTex.replace('\\times', '×')}` });
-    hits.push({ x: V.G[0], y: V.G[1], r: 18, name: `ΔG°, the standard free energy change: ${minus(g.toFixed(1))} kJ/mol` });
-    hits.push({ x: V.E[0], y: V.E[1], r: 18, name: `E°cell, the standard cell potential: ${signed(E, 3)} V` });
+    hits.push({ x: V.K[0], y: V.K[1], r: 18, name: `K，平衡常数：${kTex.replace('\\times', '×')}` });
+    hits.push({ x: V.G[0], y: V.G[1], r: 18, name: `ΔG°，标准自由能变：${minus(g.toFixed(1))} kJ/mol` });
+    hits.push({ x: V.E[0], y: V.E[1], r: 18, name: `E°cell，标准电池电势：${signed(E, 3)} V` });
 
     /* K against E°cell on a logarithmic axis */
     const { X, Y } = F.axes(ctx, G, [-1.5, 1.5], [-60, 60], {
       nx: 6, ny: 4, xl: 'E°_{cell} (V)', xc: cE, yl: 'K', yc: cK,
       fx: (v) => (v > 0 ? '+' : '') + minus(v.toFixed(1)), fy: (v) => pow10(Math.round(v)),
     });
-    text(ctx, 'spontaneous', G.r - 12, Y(10), PAL.muted, { size: 17, align: 'right' });
-    text(ctx, 'nonspontaneous', G.l + 12, Y(-10), PAL.muted, { size: 17, align: 'left' });
+    text(ctx, '自发', G.r - 12, Y(10), PAL.muted, { size: 17, align: 'right' });
+    text(ctx, '非自发', G.l + 12, Y(-10), PAL.muted, { size: 17, align: 'left' });
     ctx.save(); ctx.beginPath(); ctx.rect(G.l, G.t, G.r - G.l, G.b - G.t); ctx.clip();
     nPick.curve(ctx, (v) => (x) => +v * x / NERNST, -1.5, 1.5, X, Y, cK, 5, 2);
     ctx.restore();
     const p = F.pinned(ctx, G, X, Y, E, lk, cK, pow10(Math.round(lk)));
     if (!p.out) line(ctx, p.x, p.y + 11, p.x, G.b, alpha(cE, 0.7), 2, [4, 8]);
-    hits.push({ x: p.x, y: p.y, r: 16, name: `K = ${kTex.replace('\\times', '×')} at E°cell = ${signed(E, 3)} V, n = ${n}` });
+    hits.push({ x: p.x, y: p.y, r: 16, name: `E°cell = ${signed(E, 3)} V、n = ${n} 时，K = ${kTex.replace('\\times', '×')}` });
 
     const nv = hue('amount', n), Fv = hue('charge', '96{,}485') + '\\ \\text{C/mol}';
     const Ev = hue('potential', E < 0 ? `(${E.toFixed(3)}` : E.toFixed(3)) + '\\ \\text{J/C}' + (E < 0 ? ')' : '');
@@ -117,15 +117,15 @@ const N_OPTS = ['1', '2', '3', '4', '6'].map((v) => ({ value: v, label: v }));
   const ready = () => lq && eo && nPick;
   lq = F.ctl(d.controls, {
     label: '\\log \\kQrxn', cls: 'equilibrium-constant', key: 'logQ', min: -8, max: 8, step: 0.001, value: -1.114, unit: '', dec: 3,
-    aria: 'the logarithm of the reaction quotient',
+    aria: '反应商的对数',
     specials: [{ at: () => (ready() ? +nPick.value * eo.v / NERNST : null), label: 'Q = K' }],
   });
   eo = F.ctl(d.controls, {
     label: '\\kEocell', cls: 'potential', min: -1, max: 1, step: 0.01, value: -0.17, unit: 'V', dec: 2,
-    aria: 'standard cell potential, in volts',
+    aria: '标准电池电势，单位为伏特',
     specials: [{ at: () => (ready() ? NERNST * lq.v / +nPick.value : null), label: 'E = 0' }],
   });
-  nPick = F.choice(d.controls, { label: '\\kn', options: ['1', '2', '3', '4', '5', '6'].map((v) => ({ value: v, label: v })), value: '2', aria: 'moles of electrons transferred' });
+  nPick = F.choice(d.controls, { label: '\\kn', options: ['1', '2', '3', '4', '5', '6'].map((v) => ({ value: v, label: v })), value: '2', aria: '转移电子的物质的量' });
   [lq, eo].forEach((c) => c.refresh());
   const ro = F.readout(d);
   let hits = [];
@@ -140,15 +140,15 @@ const N_OPTS = ['1', '2', '3', '4', '6'].map((v) => ({ value: v, label: v }));
     const cE = C('potential'), cK = C('equilibrium-constant');
     hits = [];
     const head = at
-      ? '$\\kQrxn = \\kK$: $\\kEcell = 0$, and the system is at equilibrium.'
-      : `With $\\kQrxn = ${qs}$, $\\kEcell = ${signedT(Ec, 3)}$ V: the reaction is ${Ec > 0 ? 'spontaneous' : 'nonspontaneous'} in this mixture.`;
+      ? '$\\kQrxn = \\kK$：$\\kEcell = 0$，体系处于平衡。'
+      : `当 $\\kQrxn = ${qs}$ 时，$\\kEcell = ${signedT(Ec, 3)}$ V：该混合物中的反应是${Ec > 0 ? '自发的' : '非自发的'}。`;
     const lab = F.labeller(ctx, H, { headline: topline(ctx, head) });
     const { X, Y } = F.axes(ctx, G, [-8, 8], [-1.5, 1.5], {
       nx: 8, ny: 6, xl: 'Q', xc: cK, yl: 'E_{cell} (V)', yc: cE,
       fx: (v) => pow10(Math.round(v)), fy: (v) => (v > 0 ? '+' : '') + minus(v.toFixed(1)),
     });
-    text(ctx, 'spontaneous', G.r - 14, Y(1.38), PAL.muted, { size: 17, align: 'right' });
-    text(ctx, 'nonspontaneous', G.r - 14, Y(-1.38), PAL.muted, { size: 17, align: 'right' });
+    text(ctx, '自发', G.r - 14, Y(1.38), PAL.muted, { size: 17, align: 'right' });
+    text(ctx, '非自发', G.r - 14, Y(-1.38), PAL.muted, { size: 17, align: 'right' });
     lab.block(G.r - 130, Y(1.38) - 14, G.r, Y(1.38) + 14);
     lab.block(G.r - 150, Y(-1.38) - 14, G.r, Y(-1.38) + 14);
     nPick.curve(ctx, (v) => (s) => E0 - NERNST / +v * s, -8, 8, X, Y, cE, 5, 2);
@@ -157,11 +157,11 @@ const N_OPTS = ['1', '2', '3', '4', '6'].map((v) => ({ value: v, label: v }));
     dot(ctx, X(0), Y(E0), cE, false, 10);
     const side = x < 0 ? -1 : 1;
     lab.add('E°_{cell}', X(0), Y(E0), -0.5 * side, -0.85, cE, 22, 26);
-    hits.push({ x: X(0), y: Y(E0), r: 16, name: `E°cell = ${signed(E0, 2)} V, where Q = 1` });
+    hits.push({ x: X(0), y: Y(E0), r: 16, name: `E°cell = ${signed(E0, 2)} V，此处 Q = 1` });
     if (xk >= -8 && xk <= 8) {
       dot(ctx, X(xk), Y(0), cK, false, 10);
       if (!at) lab.add('Q = K', X(xk), Y(0), 0.4, E0 >= 0 ? 0.9 : -0.9, cK, 22, 28);
-      hits.push({ x: X(xk), y: Y(0), r: 16, name: `Q = K = ${sci(xk).replace('\\times', '×')}, where E_cell = 0` });
+      hits.push({ x: X(xk), y: Y(0), r: 16, name: `Q = K = ${sci(xk).replace('\\times', '×')}，此处 E_cell = 0` });
     }
 
     /* the reader's mixture */
@@ -169,7 +169,7 @@ const N_OPTS = ['1', '2', '3', '4', '6'].map((v) => ({ value: v, label: v }));
     line(ctx, X(x), py + 11, X(x), G.b, alpha(cK, 0.7), 2, [4, 8]);
     dot(ctx, X(x), py, cE, true, 9);
     lab.add(at ? 'Q = K' : `${signed(Ec, 3)} V`, X(x), py, 0.5 * side, 0.85, at ? cK : cE, 22, 30);
-    hits.push({ x: X(x), y: py, r: 16, name: `the mixture: Q = ${qs.replace('\\times', '×')}, E_cell = ${signed(Ec, 3)} V` });
+    hits.push({ x: X(x), y: py, r: 16, name: `该混合物：Q = ${qs.replace('\\times', '×')}，E_cell = ${signed(Ec, 3)} V` });
     lab.flush();
 
     const nv = hue('amount', n);
@@ -180,7 +180,7 @@ const N_OPTS = ['1', '2', '3', '4', '6'].map((v) => ({ value: v, label: v }));
       const E0v = hue('potential', E0r.toFixed(2)) + '\\ \\text{V}';
       tex = `\\mk{E}{\\kEcell} = \\mk{Eo}{\\kEocell} - \\frac{0.0592\\ \\text{V}}{\\mk{n}{\\kn}}\\log\\mk{Q}{\\kQrxn} = \\mk{eo}{${E0v}} - \\frac{0.0592\\ \\text{V}}{\\mk{nv}{${nv}}}\\log\\mk{q}{${hue('equilibrium-constant', qs)}} = \\mk{e}{${hue('potential', signedT(Ec, 3))}}\\ \\text{V}`;
     }
-    ro.set(tex, `Each tenfold rise in $\\kQrxn$ lowers $\\kEcell$ by ${slope.toFixed(4)} V.`, { form: at });
+    ro.set(tex, `$\\kQrxn$ 每升高为原来的 10 倍，$\\kEcell$ 就降低 ${slope.toFixed(4)} V。`, { form: at });
   }
   still(d, draw);
 })();
@@ -200,7 +200,7 @@ const N_OPTS = ['1', '2', '3', '4', '6'].map((v) => ({ value: v, label: v }));
 (function () {
   const T3D = window.THREE;
   const d = sim('sim-concentration-cell');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: 'front', yaw: 0, pitch: 0.16 }, { label: 'above', yaw: 0, pitch: 1.1 }], h: 660, dist: 8.4, tilt: 0.16 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: '正视', yaw: 0, pitch: 0.16 }, { label: '俯视', yaw: 0, pitch: 1.1 }], h: 660, dist: 8.4, tilt: 0.16 });
   const grp = v.part(0), H2 = 300, cnv = F.makeCanvas(d.stage, H2);
   grp.position.y = -0.35;
   const T = 6, LIFE = 1.2, NEV = 10, DXI = 0.02, XI_END = 0.199;
@@ -269,35 +269,35 @@ const N_OPTS = ['1', '2', '3', '4', '6'].map((v) => ({ value: v, label: v }));
     if (!v.scene || palSig() === sig) return; sig = palSig();
     v.clear(); parts = {};
     const glass = { transparent: true, opacity: 0.1, depthWrite: false, side: T3D.DoubleSide };
-    v.pickable(F.mesh.box(grp, [0, YB - 0.06, 0], [6.4, 0.1, 2.2], PAL.soft), 'bench');
+    v.pickable(F.mesh.box(grp, [0, YB - 0.06, 0], [6.4, 0.1, 2.2], PAL.soft), '实验台');
     for (const [x, who] of [[XA, 'anode'], [XC, 'cathode']]) {
       const b = new T3D.Mesh(new T3D.CylinderGeometry(RB, RB, YT - YB, 40, 1, true), F.mesh.mat(PAL.ink, glass)); b.position.set(x, (YT + YB) / 2, 0); grp.add(b);
       const floor = new T3D.Mesh(new T3D.CircleGeometry(RB, 40), F.mesh.mat(PAL.ink, glass)); floor.rotation.x = -Math.PI / 2; floor.position.set(x, YB + 0.005, 0); grp.add(floor);
       const liq = new T3D.Mesh(new T3D.CylinderGeometry(RB - 0.02, RB - 0.02, YL - YB - 0.01, 40), F.mesh.mat(PAL.muted, { transparent: true, opacity: 0.14, depthWrite: false })); liq.position.set(x, (YL + YB) / 2, 0); grp.add(liq);
-      v.pickable(liq, who === 'anode' ? 'the anode half-cell’s solution, the dilute one at the start' : 'the cathode half-cell’s solution, the concentrated one at the start');
+      v.pickable(liq, who === 'anode' ? '阳极半电池的溶液，起初是稀的那一个' : '阴极半电池的溶液，起初是浓的那一个');
     }
     const bridge = rounded([[-XS, YP, 0], [-XS, 0.9, 0], [XS, 0.9, 0], [XS, YP, 0]], 0.3);
-    v.pickable(tube(bridge, 0.13, PAL.ink, glass), 'the salt bridge');
+    v.pickable(tube(bridge, 0.13, PAL.ink, glass), '盐桥');
     tube(bridge, 0.105, PAL.muted, { transparent: true, opacity: 0.16, depthWrite: false });
-    for (const s of [-1, 1]) v.pickable(F.mesh.stick(grp, [s * XS, YP - 0.04, 0], [s * XS, YP + 0.08, 0], 0.12, PAL.muted), 'a porous plug');
+    for (const s of [-1, 1]) v.pickable(F.mesh.stick(grp, [s * XS, YP - 0.04, 0], [s * XS, YP + 0.08, 0], 0.12, PAL.muted), '多孔塞');
     const ta = [AX, PLATE.y1, 0], tc = [CX, PLATE.y1, 0];
     const smooth = rounded([ta, [ta[0], YW, 0], [tc[0], YW, 0], tc], 0.35);
-    v.pickable(tube(smooth, 0.025, PAL.ink), 'the wire of the external circuit');
-    v.pickable(F.mesh.box(grp, [0, YW, 0], [1.1, 0.46, 0.3], PAL.panel), 'the external circuit');
+    v.pickable(tube(smooth, 0.025, PAL.ink), '外电路的导线');
+    v.pickable(F.mesh.box(grp, [0, YW, 0], [1.1, 0.46, 0.3], PAL.panel), '外电路');
     F.mesh.box(grp, [0, YW, 0], [1.14, 0.5, 0.26], PAL.muted);
     wire = along(smooth.map((p) => [p[0], p[1], 0]), 200);
-    electrons = Array.from({ length: NE }, () => v.pickable(F.mesh.sphere(grp, [0, -50, 0], 0.05, F.el('e-')), 'an electron, e⁻, in the wire'));
+    electrons = Array.from({ length: NE }, () => v.pickable(F.mesh.sphere(grp, [0, -50, 0], 0.05, F.el('e-')), '导线中的一个电子 e⁻'));
     for (const [x, who] of [[AX, 'anode'], [CX, 'cathode']]) {
-      const name = who === 'anode' ? 'the zinc anode, which dissolves' : 'the zinc cathode, onto which zinc plates';
+      const name = who === 'anode' ? '锌阳极，正在溶解' : '锌阴极，锌在其上析出';
       v.pickable(F.mesh.box(grp, [x, (YL + PLATE.y1) / 2, 0], [PLATE.w, PLATE.y1 - YL, PLATE.d], F.el('Zn')), name);
       parts[who] = v.pickable(F.mesh.box(grp, [x, (YL + PLATE.y0) / 2, 0], [PLATE.w, YL - PLATE.y0, PLATE.d], F.el('Zn')), name);
     }
-    outs = Array.from({ length: NEV }, () => ion('a zinc ion, Zn²⁺, entering the anode solution'));
-    ins = Array.from({ length: NEV }, () => ion('a zinc ion, Zn²⁺, about to plate onto the cathode as zinc'));
+    outs = Array.from({ length: NEV }, () => ion('一个锌离子 Zn²⁺，正进入阳极溶液'));
+    ins = Array.from({ length: NEV }, () => ion('一个即将在阴极上析出为锌的锌离子 Zn²⁺'));
     const spots = [[XA - 1.35, 0.55, 0], [XC + 1.35, 0.55, 0], [0, 0.4, 0], [XA, YB - 0.3, 1.0], [XC, YB - 0.3, 1.0]];
-    ['Zn anode (−)', 'Zn cathode (+)', 'salt bridge', 'dilute Zn<sup>2+</sup>(<em>aq</em>)', 'concentrated Zn<sup>2+</sup>(<em>aq</em>)'].forEach((s, i) => v.label(s, spots[i], grp, 0));
-    v.label('external circuit', [0, YW + 0.4, 0], grp, 0);
-    v.headline('Electrons flow until the two Zn<sup>2+</sup> concentrations are equal.');
+    ['Zn 阳极（−）', 'Zn 阴极（+）', '盐桥', '稀 Zn<sup>2+</sup>(<em>aq</em>)', '浓 Zn<sup>2+</sup>(<em>aq</em>)'].forEach((s, i) => v.label(s, spots[i], grp, 0));
+    v.label('外电路', [0, YW + 0.4, 0], grp, 0);
+    v.headline('电子持续流动，直到两处 Zn<sup>2+</sup> 的浓度相等。');
   }
   function placeIons(t) {
     EV.forEach((tk, k) => {
@@ -329,16 +329,16 @@ const N_OPTS = ['1', '2', '3', '4', '6'].map((v) => ({ value: v, label: v }));
     const ca = (0.10 + xi).toFixed(2), cc = (0.50 - xi).toFixed(2);
     const E = -(NERNST / 2) * Math.log10(+ca / +cc), Es = signedT(E, 3);
     const tex = `\\mk{E}{\\kEcell} = \\mk{Eo}{\\kEocell} - \\frac{0.0592\\ \\text{V}}{\\mk{n}{\\kn}}\\log\\mk{Q}{\\kQrxn} = \\mk{eo}{${hue('potential', '0.000')}\\ \\text{V}} - \\frac{0.0592\\ \\text{V}}{\\mk{nv}{${hue('amount', 2)}}}\\log\\frac{\\mk{ca}{${hue('concentration', ca)}}}{\\mk{cc}{${hue('concentration', cc)}}} = \\mk{e}{${hue('potential', Es)}}\\ \\text{V}`;
-    if (tex !== lastTex) { lastTex = tex; ro.set(tex, 'For every two electrons through the wire, one Zn²⁺ ion enters the anode solution and one plates onto the cathode as zinc.', { values: false }); }
+    if (tex !== lastTex) { lastTex = tex; ro.set(tex, '导线中每通过两个电子，就有一个 Zn²⁺ 离子进入阳极溶液，同时有一个在阴极上析出为锌。', { values: false }); }
 
     /* the legend and the two graphs, drawn to the present moment */
     const { ctx } = begin(cnv);
     const cT = C('time'), cC = C('concentration'), cE = C('potential');
     const rA = F.ref('anode-half-cell'), rC = F.ref('cathode-half-cell');
-    dot(ctx, 250, 34, F.el('e-'), true, 8); text(ctx, 'electron, e⁻', 270, 34, PAL.ink, { size: 22 });
+    dot(ctx, 250, 34, F.el('e-'), true, 8); text(ctx, '电子 e⁻', 270, 34, PAL.ink, { size: 22 });
     dot(ctx, 520, 34, F.el('Zn'), true, 10); text(ctx, 'Zn²⁺', 540, 34, PAL.ink, { size: 22 });
-    line(ctx, 720, 34, 760, 34, rA, 5); text(ctx, 'anode half-cell', 772, 34, rA, { size: 22 });
-    line(ctx, 1010, 34, 1050, 34, rC, 5); text(ctx, 'cathode half-cell', 1062, 34, rC, { size: 22 });
+    line(ctx, 720, 34, 760, 34, rA, 5); text(ctx, '阳极半电池', 772, 34, rA, { size: 22 });
+    line(ctx, 1010, 34, 1050, 34, rC, 5); text(ctx, '阴极半电池', 1062, 34, rC, { size: 22 });
     const L = { l: 150, r: 640, t: 100, b: 230 }, R = { l: 850, r: 1340, t: 100, b: 230 };
     const a1 = F.axes(ctx, L, [0, T], [0, 0.6], { nx: 4, ny: 3, xl: 't', xc: cT, yl: '[Zn²⁺] (M)', yc: cC, fx: () => '', fy: (y) => y.toFixed(1) });
     line(ctx, L.l, a1.Y(0.3), L.r, a1.Y(0.3), alpha(PAL.ink, 0.4), 2, [10, 10]);

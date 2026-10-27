@@ -1,0 +1,1791 @@
+{
+ "terms": [
+  {
+   "source": "abbreviated electron configuration",
+   "target": "简化电子构型",
+   "authority": "book",
+   "url": "",
+   "concept": "writing-electron-configurations",
+   "note": "the [Ne]3s¹ form.",
+   "section": "6.4"
+  },
+  {
+   "source": "Albert Einstein",
+   "target": "阿尔伯特·爱因斯坦",
+   "authority": "book",
+   "url": "",
+   "note": "same as the chapter 21 shard.",
+   "section": "6.1"
+  },
+  {
+   "source": "AM radio",
+   "target": "调幅广播",
+   "authority": "book",
+   "url": "",
+   "note": "AM and FM stay in Latin letters when they name the band: AM 调幅, FM 调频.",
+   "section": "6.1"
+  },
+  {
+   "source": "amplitude",
+   "target": "振幅",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "amplitude",
+   "note": "same target as the chapter 10 shard.",
+   "section": "6.1"
+  },
+  {
+   "source": "amplitude modulation",
+   "target": "调幅",
+   "authority": "cnterm-physics",
+   "url": "",
+   "note": "",
+   "section": "6.1"
+  },
+  {
+   "source": "angular momentum",
+   "target": "角动量",
+   "authority": "cnterm-physics",
+   "url": "",
+   "note": "",
+   "section": "6.3"
+  },
+  {
+   "source": "atomic orbital",
+   "target": "原子轨道",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "atomic-orbital",
+   "note": "化学名词 原子轨道; orbital alone is 轨道 (chapter 7 shard).",
+   "section": "6.3"
+  },
+  {
+   "source": "atomic radius",
+   "target": "原子半径",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "same target as the chapter 18 shard.",
+   "section": "6.5"
+  },
+  {
+   "source": "Aufbau principle",
+   "target": "构造原理",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "aufbau-principle",
+   "note": "same target as the chapter 7 shard.",
+   "section": "6.4"
+  },
+  {
+   "source": "Balmer",
+   "target": "巴耳末",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "6.1"
+  },
+  {
+   "source": "Balmer and Rydberg formulas",
+   "target": "巴耳末公式和里德伯公式",
+   "authority": "book",
+   "url": "",
+   "note": "heading.",
+   "section": "6.1"
+  },
+  {
+   "source": "Balmer equation",
+   "target": "巴耳末公式",
+   "authority": "book",
+   "url": "",
+   "concept": "rydberg-equation",
+   "note": "巴耳末公式 (physics 巴耳末), see Rydberg equation.",
+   "section": "6.1"
+  },
+  {
+   "source": "blackbody",
+   "target": "黑体",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "blackbody",
+   "note": "物理学名词 黑体.",
+   "section": "6.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "Blackbody radiation and Planck’s quantized energies",
+   "target": "黑体辐射与普朗克的量子化能量",
+   "authority": "book",
+   "url": "",
+   "concept": "blackbody-radiation",
+   "note": "concept name.",
+   "section": "6.1"
+  },
+  {
+   "source": "Bohr",
+   "target": "玻尔",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "6.2"
+  },
+  {
+   "source": "Bohr energy levels",
+   "target": "玻尔能级",
+   "authority": "book",
+   "url": "",
+   "concept": "bohr-energy-levels",
+   "note": "concept name; energy level is 能级 in the chapter 7 shard.",
+   "section": "6.2"
+  },
+  {
+   "source": "Bohr model",
+   "target": "玻尔模型",
+   "authority": "book",
+   "url": "",
+   "concept": "bohr-model",
+   "note": "",
+   "section": "6.2"
+  },
+  {
+   "source": "Bohr orbit radius",
+   "target": "玻尔轨道半径",
+   "authority": "book",
+   "url": "",
+   "concept": "bohr-orbit-radius",
+   "note": "concept name.",
+   "section": "6.2"
+  },
+  {
+   "source": "Bohr radius",
+   "target": "玻尔半径",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "bohr-orbit-radius",
+   "note": "物理学名词 玻尔半径.",
+   "section": "6.2"
+  },
+  {
+   "source": "Bohr's model of the hydrogen atom",
+   "target": "玻尔的氢原子模型",
+   "authority": "book",
+   "url": "",
+   "concept": "bohr-model",
+   "note": "the term string with a straight apostrophe.",
+   "section": "6.2"
+  },
+  {
+   "source": "Bohr’s model",
+   "target": "玻尔模型",
+   "authority": "book",
+   "url": "",
+   "concept": "bohr-model",
+   "note": "short form in the prose.",
+   "section": "6.2"
+  },
+  {
+   "source": "Bohr’s model of the hydrogen atom",
+   "target": "玻尔的氢原子模型",
+   "authority": "book",
+   "url": "",
+   "concept": "bohr-model",
+   "note": "concept name and term (the term row of the book spells the apostrophe straight).",
+   "section": "6.2"
+  },
+  {
+   "source": "Bohr’s stationary states",
+   "target": "玻尔的定态",
+   "authority": "book",
+   "url": "",
+   "concept": "bohr-stationary-states",
+   "note": "concept name; 定态 stationary state.",
+   "section": "6.2"
+  },
+  {
+   "source": "building-up order",
+   "target": "构造顺序",
+   "authority": "book",
+   "url": "",
+   "concept": "aufbau-principle",
+   "note": "the filling order of the Aufbau principle.",
+   "section": "6.4"
+  },
+  {
+   "source": "Calculating transition energies",
+   "target": "计算跃迁能量",
+   "authority": "book",
+   "url": "",
+   "concept": "calculating-bohr-transition-energies",
+   "note": "concept name.",
+   "section": "6.2"
+  },
+  {
+   "source": "carrier",
+   "target": "载波",
+   "authority": "cnterm-physics",
+   "url": "",
+   "note": "the radio wave that carries the signal.",
+   "section": "6.1"
+  },
+  {
+   "source": "Clinton Davisson",
+   "target": "克林顿·戴维孙",
+   "authority": "book",
+   "url": "",
+   "note": "戴维孙 (physics usage, as 汤姆孙).",
+   "section": "6.3"
+  },
+  {
+   "source": "completely filled subshell",
+   "target": "全充满的亚层",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "configuration-exceptions",
+   "note": "",
+   "section": "6.4"
+  },
+  {
+   "source": "continuous spectrum",
+   "target": "连续光谱",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "continuous-spectrum",
+   "note": "物理学名词 连续谱 / 连续光谱; 连续光谱 matches 线状光谱.",
+   "section": "6.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "core electron",
+   "target": "内层电子",
+   "authority": "book",
+   "url": "",
+   "concept": "core-electrons",
+   "note": "same target as the chapter 7 shard.",
+   "section": "6.4"
+  },
+  {
+   "source": "core electrons",
+   "target": "内层电子",
+   "authority": "book",
+   "url": "",
+   "concept": "core-electrons",
+   "note": "plural.",
+   "section": "6.4"
+  },
+  {
+   "source": "covalent radius",
+   "target": "共价半径",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "covalent-radius",
+   "note": "same target as the chapter 18 shard.",
+   "section": "6.5"
+  },
+  {
+   "source": "Covalent radius trend",
+   "target": "共价半径的递变规律",
+   "authority": "book",
+   "url": "",
+   "concept": "covalent-radius-trend",
+   "note": "concept name; 递变规律 as in the chapter 14 shard (periodic trend 周期性递变规律).",
+   "section": "6.5"
+  },
+  {
+   "source": "crest",
+   "target": "波峰",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "wavelength",
+   "note": "peak of a wave.",
+   "section": "6.1"
+  },
+  {
+   "source": "d block",
+   "target": "d 区",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "periodic-table-blocks",
+   "note": "",
+   "section": "6.4"
+  },
+  {
+   "source": "d orbital",
+   "target": "d 轨道",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "d-orbital",
+   "note": "",
+   "section": "6.3"
+  },
+  {
+   "source": "Davisson",
+   "target": "戴维孙",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "6.3"
+  },
+  {
+   "source": "de Broglie",
+   "target": "德布罗意",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "6.3"
+  },
+  {
+   "source": "De Broglie wavelength",
+   "target": "德布罗意波长",
+   "authority": "book",
+   "url": "",
+   "concept": "de-broglie-wavelength",
+   "note": "concept name and term; 德布罗意 as the usual transliteration.",
+   "section": "6.3"
+  },
+  {
+   "source": "de Broglie wavelength",
+   "target": "德布罗意波长",
+   "authority": "book",
+   "url": "",
+   "concept": "de-broglie-wavelength",
+   "note": "",
+   "section": "6.3"
+  },
+  {
+   "source": "degenerate",
+   "target": "简并的",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "degenerate-orbitals",
+   "note": "物理学名词 简并.",
+   "section": "6.3"
+  },
+  {
+   "source": "degenerate orbitals",
+   "target": "简并轨道",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "degenerate-orbitals",
+   "note": "化学名词 简并轨道.",
+   "section": "6.3",
+   "confirm": "termonline"
+  },
+  {
+   "source": "Development of Quantum Theory",
+   "target": "量子理论的发展",
+   "authority": "book",
+   "url": "",
+   "note": "section title.",
+   "section": "6.3"
+  },
+  {
+   "source": "diamagnetic",
+   "target": "抗磁性的",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "化学名词 抗磁性; paramagnetic is 顺磁性的 in the chapter 18 shard.",
+   "section": "6.4",
+   "confirm": "termonline"
+  },
+  {
+   "source": "Dorothy Crowfoot Hodgkin",
+   "target": "多萝西·克劳福特·霍奇金",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "6.1"
+  },
+  {
+   "source": "double slit",
+   "target": "双缝",
+   "authority": "cnterm-physics",
+   "url": "",
+   "note": "the two narrow slits of the interference experiment.",
+   "section": "6.3"
+  },
+  {
+   "source": "dumbbell-shaped",
+   "target": "哑铃形",
+   "authority": "book",
+   "url": "",
+   "concept": "p-orbital",
+   "note": "",
+   "section": "6.3"
+  },
+  {
+   "source": "Effective nuclear charge",
+   "target": "有效核电荷",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "effective-nuclear-charge",
+   "note": "concept name; termonline lists 有效电荷 (effective charge) and 核电荷 under 物理学名词, no exact entry; 有效核电荷 is the textbook form.",
+   "section": "6.5",
+   "confirm": "termonline"
+  },
+  {
+   "source": "effective nuclear charge",
+   "target": "有效核电荷",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "effective-nuclear-charge",
+   "note": "",
+   "section": "6.5",
+   "confirm": "termonline"
+  },
+  {
+   "source": "Einstein",
+   "target": "爱因斯坦",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "6.1"
+  },
+  {
+   "source": "Electromagnetic Energy",
+   "target": "电磁能",
+   "authority": "book",
+   "url": "",
+   "note": "section title.",
+   "section": "6.1"
+  },
+  {
+   "source": "electromagnetic radiation",
+   "target": "电磁辐射",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "electromagnetic-radiation",
+   "note": "same target as the chapter 10 shard.",
+   "section": "6.1"
+  },
+  {
+   "source": "electromagnetic spectrum",
+   "target": "电磁波谱",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "electromagnetic-spectrum",
+   "note": "物理学名词 电磁波谱.",
+   "section": "6.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "electron affinity",
+   "target": "电子亲和能",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "electron-affinity",
+   "note": "same target as the chapter 7 shard.",
+   "section": "6.5"
+  },
+  {
+   "source": "Electron affinity trend",
+   "target": "电子亲和能的递变规律",
+   "authority": "book",
+   "url": "",
+   "concept": "electron-affinity-trend",
+   "note": "concept name.",
+   "section": "6.5"
+  },
+  {
+   "source": "electron configuration",
+   "target": "电子构型",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "electron-configuration",
+   "note": "same target as the chapter 18 shard.",
+   "section": "6.4"
+  },
+  {
+   "source": "Electron configurations and the periodic table",
+   "target": "电子构型与元素周期表",
+   "authority": "book",
+   "url": "",
+   "concept": "periodic-table-blocks",
+   "note": "concept name.",
+   "section": "6.4"
+  },
+  {
+   "source": "Electron configurations of ions",
+   "target": "离子的电子构型",
+   "authority": "book",
+   "url": "",
+   "concept": "ion-configurations",
+   "note": "concept name; as in the chapter 7 shard.",
+   "section": "6.4"
+  },
+  {
+   "source": "Electronic Structure and Periodic Properties of Elements",
+   "target": "元素的电子结构与周期性质",
+   "authority": "book",
+   "url": "",
+   "note": "chapter title.",
+   "section": "6"
+  },
+  {
+   "source": "Electronic Structure of Atoms (Electron Configurations)",
+   "target": "原子的电子结构（电子构型）",
+   "authority": "book",
+   "url": "",
+   "note": "section title; electronic structure 电子结构 as in the chapter 7 shard.",
+   "section": "6.4"
+  },
+  {
+   "source": "Emission and absorption of a photon",
+   "target": "光子的发射与吸收",
+   "authority": "book",
+   "url": "",
+   "concept": "photon-emission-absorption",
+   "note": "concept name.",
+   "section": "6.2"
+  },
+  {
+   "source": "Energy order of atomic orbitals",
+   "target": "原子轨道的能量顺序",
+   "authority": "book",
+   "url": "",
+   "concept": "orbital-energy-order",
+   "note": "concept name.",
+   "section": "6.4"
+  },
+  {
+   "source": "Erwin Schrödinger",
+   "target": "埃尔温·薛定谔",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "6.3"
+  },
+  {
+   "source": "Exceptions to the predicted configurations",
+   "target": "预测构型的例外",
+   "authority": "book",
+   "url": "",
+   "concept": "configuration-exceptions",
+   "note": "concept name.",
+   "section": "6.4"
+  },
+  {
+   "source": "excited electronic state",
+   "target": "电子激发态",
+   "authority": "book",
+   "url": "",
+   "concept": "excited-state",
+   "note": "the book's \"excited electronic state\".",
+   "section": "6.2"
+  },
+  {
+   "source": "excited state",
+   "target": "激发态",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "excited-state",
+   "note": "物理学名词 激发态.",
+   "section": "6.2",
+   "confirm": "termonline"
+  },
+  {
+   "source": "f block",
+   "target": "f 区",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "periodic-table-blocks",
+   "note": "",
+   "section": "6.4"
+  },
+  {
+   "source": "f orbital",
+   "target": "f 轨道",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "f-orbital",
+   "note": "",
+   "section": "6.3"
+  },
+  {
+   "source": "filling order",
+   "target": "填充顺序",
+   "authority": "book",
+   "url": "",
+   "concept": "orbital-energy-order",
+   "note": "",
+   "section": "6.4"
+  },
+  {
+   "source": "first ionization energy",
+   "target": "第一电离能",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "ionization-energy",
+   "note": "same target as the chapter 18 shard.",
+   "section": "6.5"
+  },
+  {
+   "source": "frequency (ν)",
+   "target": "频率（ν）",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "frequency",
+   "note": "the shared row frequency is 频率.",
+   "section": "6.1"
+  },
+  {
+   "source": "frequency modulation",
+   "target": "调频",
+   "authority": "cnterm-physics",
+   "url": "",
+   "note": "",
+   "section": "6.1"
+  },
+  {
+   "source": "gamma ray",
+   "target": "γ 射线",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "electromagnetic-spectrum",
+   "note": "same target as the chapter 21 shard.",
+   "section": "6.1"
+  },
+  {
+   "source": "gamma rays",
+   "target": "γ 射线",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "electromagnetic-spectrum",
+   "note": "plural.",
+   "section": "6.1"
+  },
+  {
+   "source": "George Uhlenbeck",
+   "target": "乔治·乌伦贝克",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "6.3"
+  },
+  {
+   "source": "Germer",
+   "target": "革末",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "6.3"
+  },
+  {
+   "source": "Goudsmit",
+   "target": "古德斯米特",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "6.3"
+  },
+  {
+   "source": "ground electronic state",
+   "target": "电子基态",
+   "authority": "book",
+   "url": "",
+   "concept": "ground-state",
+   "note": "the book's \"ground electronic state\".",
+   "section": "6.2"
+  },
+  {
+   "source": "ground state",
+   "target": "基态",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "ground-state",
+   "note": "same target as the chapter 7 shard.",
+   "section": "6.2"
+  },
+  {
+   "source": "Ground state and excited state",
+   "target": "基态与激发态",
+   "authority": "book",
+   "url": "",
+   "concept": "ground-and-excited-states",
+   "note": "concept name.",
+   "section": "6.2"
+  },
+  {
+   "source": "half-filled subshell",
+   "target": "半充满的亚层",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "configuration-exceptions",
+   "note": "",
+   "section": "6.4"
+  },
+  {
+   "source": "Heisenberg",
+   "target": "海森伯",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "6.3"
+  },
+  {
+   "source": "Heisenberg uncertainty principle",
+   "target": "海森伯不确定性原理",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "heisenberg-uncertainty",
+   "note": "textbook usage 不确定性原理 (物理学名词 lists 不确定[性]原理 / 不确定关系).",
+   "section": "6.3",
+   "confirm": "termonline"
+  },
+  {
+   "source": "hertz",
+   "target": "赫兹",
+   "authority": "gb3100",
+   "url": "",
+   "concept": "hertz",
+   "note": "GB 3100/3102 赫[兹].",
+   "section": "6.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "hertz (Hz)",
+   "target": "赫兹（Hz）",
+   "authority": "gb3100",
+   "url": "",
+   "concept": "hertz",
+   "note": "GB 3100/3102 赫[兹].",
+   "section": "6.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "Hodgkin",
+   "target": "霍奇金",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "6.1"
+  },
+  {
+   "source": "Hund",
+   "target": "洪特",
+   "authority": "book",
+   "url": "",
+   "note": "洪特 in 洪特规则 (化学名词).",
+   "section": "6.4"
+  },
+  {
+   "source": "Hund’s rule",
+   "target": "洪特规则",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "hunds-rule",
+   "note": "化学名词 洪特规则 (physics 洪德定则).",
+   "section": "6.4",
+   "confirm": "termonline"
+  },
+  {
+   "source": "Hydrogen-like atoms and ions",
+   "target": "类氢原子和类氢离子",
+   "authority": "book",
+   "url": "",
+   "concept": "hydrogen-like-ions",
+   "note": "concept name; 物理学名词 类氢原子, 类氢离子.",
+   "section": "6.2"
+  },
+  {
+   "source": "infrared",
+   "target": "红外线",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "electromagnetic-spectrum",
+   "note": "红外线 as 紫外线 in the chapter 18 shard.",
+   "section": "6.1"
+  },
+  {
+   "source": "inner transition elements",
+   "target": "内过渡元素",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "periodic-table-blocks",
+   "note": "化学名词 内过渡元素; ch07 inner transition element.",
+   "section": "6.4"
+  },
+  {
+   "source": "Instability of the planetary atom",
+   "target": "行星式原子的不稳定性",
+   "authority": "book",
+   "url": "",
+   "concept": "classical-atom-instability",
+   "note": "concept name.",
+   "section": "6.2"
+  },
+  {
+   "source": "intensity",
+   "target": "强度",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "intensity",
+   "note": "same target as the chapter 10 shard.",
+   "section": "6.1"
+  },
+  {
+   "source": "interference pattern",
+   "target": "干涉图样",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "interference-pattern",
+   "note": "物理学名词 干涉图样 (also 干涉图); interference 干涉 is in the chapter 10 shard.",
+   "section": "6.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "Ionic radius trend",
+   "target": "离子半径的递变规律",
+   "authority": "book",
+   "url": "",
+   "concept": "ionic-radius-trend",
+   "note": "concept name.",
+   "section": "6.5"
+  },
+  {
+   "source": "ionization energy",
+   "target": "电离能",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "ionization-energy",
+   "note": "same target as the chapter 18 shard.",
+   "section": "6.5"
+  },
+  {
+   "source": "Ionization energy trend",
+   "target": "电离能的递变规律",
+   "authority": "book",
+   "url": "",
+   "concept": "ionization-energy-trend",
+   "note": "concept name.",
+   "section": "6.5"
+  },
+  {
+   "source": "ionization limit",
+   "target": "电离极限",
+   "authority": "cnterm-physics",
+   "url": "",
+   "note": "E = 0, where the electron is removed from the nucleus altogether; 物理学名词 电离极限.",
+   "section": "6.2",
+   "confirm": "termonline"
+  },
+  {
+   "source": "isoelectronic",
+   "target": "等电子的",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "isoelectronic",
+   "note": "same target as the chapter 7 shard.",
+   "section": "6.5"
+  },
+  {
+   "source": "Isoelectronic species",
+   "target": "等电子粒子",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "isoelectronic",
+   "note": "concept name; \"species\" of atoms and ions: 粒子 rather than 物种; the term row isoelectronic is 等电子的 (chapter 7 shard).",
+   "section": "6.5",
+   "confirm": "termonline"
+  },
+  {
+   "source": "isoelectronic species",
+   "target": "等电子粒子",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "isoelectronic",
+   "note": "",
+   "section": "6.5"
+  },
+  {
+   "source": "Johann Balmer",
+   "target": "约翰·巴耳末",
+   "authority": "book",
+   "url": "",
+   "note": "巴耳末 is the 物理学名词 form.",
+   "section": "6.1"
+  },
+  {
+   "source": "Johannes Rydberg",
+   "target": "约翰内斯·里德伯",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "6.1"
+  },
+  {
+   "source": "Lester Germer",
+   "target": "莱斯特·革末",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "6.3"
+  },
+  {
+   "source": "line spectra",
+   "target": "线状光谱",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "line-spectra",
+   "note": "plural of line spectrum.",
+   "section": "6.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "line spectrum",
+   "target": "线状光谱",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "line-spectra",
+   "note": "物理学名词 and 化学名词 use 线状光谱 (also 线光谱); same word for the concept name Line spectra. termonline: no exact entry returned.",
+   "section": "6.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "Louis de Broglie",
+   "target": "路易·德布罗意",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "6.3"
+  },
+  {
+   "source": "magnetic quantum number",
+   "target": "磁量子数",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "magnetic-quantum-number",
+   "note": "",
+   "section": "6.3",
+   "confirm": "termonline"
+  },
+  {
+   "source": "magnetic quantum number (mₗ)",
+   "target": "磁量子数（mₗ）",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "magnetic-quantum-number",
+   "note": "化学名词 磁量子数.",
+   "section": "6.3",
+   "confirm": "termonline"
+  },
+  {
+   "source": "main group element",
+   "target": "主族元素",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "periodic-table-blocks",
+   "note": "",
+   "section": "6.4"
+  },
+  {
+   "source": "main group elements",
+   "target": "主族元素",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "periodic-table-blocks",
+   "note": "same target as representative elements (ch02, ch18).",
+   "section": "6.4"
+  },
+  {
+   "source": "matter wave",
+   "target": "物质波",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "de-broglie-wavelength",
+   "note": "物理学名词 物质波.",
+   "section": "6.3"
+  },
+  {
+   "source": "Max Born",
+   "target": "马克斯·玻恩",
+   "authority": "book",
+   "url": "",
+   "note": "玻恩 as in the chapter 7 shard.",
+   "section": "6.3"
+  },
+  {
+   "source": "Max Planck",
+   "target": "马克斯·普朗克",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "6.1"
+  },
+  {
+   "source": "Maxwell",
+   "target": "麦克斯韦",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "6.1"
+  },
+  {
+   "source": "metallic character",
+   "target": "金属性",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "predicting-periodic-trends",
+   "note": "",
+   "section": "6.5"
+  },
+  {
+   "source": "microwave",
+   "target": "微波",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "electromagnetic-spectrum",
+   "note": "",
+   "section": "6.1"
+  },
+  {
+   "source": "Niels Bohr",
+   "target": "尼尔斯·玻尔",
+   "authority": "book",
+   "url": "",
+   "note": "玻尔 as in the chapter 14 shard (克里斯蒂安·玻尔).",
+   "section": "6.2"
+  },
+  {
+   "source": "Nobel Prize",
+   "target": "诺贝尔奖",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "6.1"
+  },
+  {
+   "source": "node",
+   "target": "节点",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "node",
+   "note": "one Chinese word for the book's node of a standing wave (波节) and of an orbital (节点); 节点 is kept for both so the concept has one term. 径向节点 for radial node.",
+   "section": "6.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "nodes",
+   "target": "节点",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "node",
+   "note": "plural of node.",
+   "section": "6.1"
+  },
+  {
+   "source": "nuclear charge",
+   "target": "核电荷",
+   "authority": "cnterm-physics",
+   "url": "",
+   "note": "物理学名词 核电荷.",
+   "section": "6.2"
+  },
+  {
+   "source": "orbit",
+   "target": "轨道",
+   "authority": "cnterm-physics",
+   "url": "",
+   "note": "Bohr orbit; written 玻尔轨道 or with a qualifier so it is not confused with orbital (also 轨道 in the chapter 7 shard, the book's orbital). The page agents write 原子轨道 for atomic orbital.",
+   "section": "6.2"
+  },
+  {
+   "source": "orbital diagram",
+   "target": "轨道表示式",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "orbital-diagram",
+   "note": "the usual Chinese textbook name (轨道表示式), not 轨道图.",
+   "section": "6.4",
+   "confirm": "termonline"
+  },
+  {
+   "source": "orbital diagrams",
+   "target": "轨道表示式",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "orbital-diagram",
+   "note": "plural.",
+   "section": "6.4"
+  },
+  {
+   "source": "p block",
+   "target": "p 区",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "periodic-table-blocks",
+   "note": "",
+   "section": "6.4"
+  },
+  {
+   "source": "p orbital",
+   "target": "p 轨道",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "p-orbital",
+   "note": "",
+   "section": "6.3"
+  },
+  {
+   "source": "Pauli",
+   "target": "泡利",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "6.3"
+  },
+  {
+   "source": "Pauli exclusion principle",
+   "target": "泡利不相容原理",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "pauli-exclusion-principle",
+   "note": "化学名词 泡利不相容原理.",
+   "section": "6.3",
+   "confirm": "termonline"
+  },
+  {
+   "source": "peak (of a wave)",
+   "target": "波峰",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "wavelength",
+   "note": "",
+   "section": "6.1"
+  },
+  {
+   "source": "periodic trend",
+   "target": "周期性递变规律",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "predicting-periodic-trends",
+   "note": "same target as the chapter 14 shard.",
+   "section": "6.5"
+  },
+  {
+   "source": "Periodic Variations in Element Properties",
+   "target": "元素性质的周期性变化",
+   "authority": "book",
+   "url": "",
+   "note": "section title.",
+   "section": "6.5"
+  },
+  {
+   "source": "photoelectric effect",
+   "target": "光电效应",
+   "authority": "cnterm-physics",
+   "url": "https://www.termonline.cn/detail?id=9ff3e5ff26ac11eea440b068e6519520",
+   "concept": "photoelectric-effect",
+   "note": "termonline 2026-10-27: confirmed (物理学名词).",
+   "section": "6.1"
+  },
+  {
+   "source": "photon",
+   "target": "光子",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "photon",
+   "note": "same target as the chapter 21 shard.",
+   "section": "6.1"
+  },
+  {
+   "source": "Photon energy",
+   "target": "光子能量",
+   "authority": "book",
+   "url": "",
+   "concept": "photon-energy",
+   "note": "concept name.",
+   "section": "6.1"
+  },
+  {
+   "source": "photons",
+   "target": "光子",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "photon",
+   "note": "plural.",
+   "section": "6.1"
+  },
+  {
+   "source": "Planck",
+   "target": "普朗克",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "6.1"
+  },
+  {
+   "source": "Planck's constant",
+   "target": "普朗克常量",
+   "authority": "gb3100",
+   "url": "",
+   "concept": "blackbody-radiation",
+   "note": "straight apostrophe.",
+   "section": "6.1"
+  },
+  {
+   "source": "Planck’s constant",
+   "target": "普朗克常量",
+   "authority": "gb3100",
+   "url": "",
+   "concept": "blackbody-radiation",
+   "note": "GB 3102 普朗克常量.",
+   "section": "6.1"
+  },
+  {
+   "source": "planetary atom",
+   "target": "行星式原子",
+   "authority": "book",
+   "url": "",
+   "note": "the planetary (Rutherford) picture of the atom.",
+   "section": "6.2"
+  },
+  {
+   "source": "planetary model",
+   "target": "行星模型",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "6.2"
+  },
+  {
+   "source": "Predicting periodic trends",
+   "target": "预测周期性递变规律",
+   "authority": "book",
+   "url": "",
+   "concept": "predicting-periodic-trends",
+   "note": "concept name.",
+   "section": "6.5"
+  },
+  {
+   "source": "principal quantum number",
+   "target": "主量子数",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "principal-quantum-number-shells",
+   "note": "",
+   "section": "6.3"
+  },
+  {
+   "source": "principal quantum number (n)",
+   "target": "主量子数（n）",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "principal-quantum-number-shells",
+   "note": "化学名词 主量子数.",
+   "section": "6.3",
+   "confirm": "termonline"
+  },
+  {
+   "source": "probability density",
+   "target": "概率密度",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "electron-density",
+   "note": "物理学名词 概率密度; second term of the concept electron density.",
+   "section": "6.3"
+  },
+  {
+   "source": "quantization",
+   "target": "量子化",
+   "authority": "cnterm-chemistry",
+   "url": "https://www.termonline.cn/detail?id=b1575a2426a711eeb59ab068e6519520",
+   "concept": "quantization",
+   "note": "termonline 2026-10-27: confirmed (化学名词, 物理学名词).",
+   "section": "6.1"
+  },
+  {
+   "source": "quantum mechanics",
+   "target": "量子力学",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "quantum-mechanics",
+   "note": "物理学名词 量子力学.",
+   "section": "6.3"
+  },
+  {
+   "source": "quantum number",
+   "target": "量子数",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "quantum-number",
+   "note": "物理学名词 量子数.",
+   "section": "6.2",
+   "confirm": "termonline"
+  },
+  {
+   "source": "quantum numbers",
+   "target": "量子数",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "quantum-number",
+   "note": "plural.",
+   "section": "6.2"
+  },
+  {
+   "source": "radial node",
+   "target": "径向节点",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "",
+   "section": "6.3"
+  },
+  {
+   "source": "radio wave",
+   "target": "无线电波",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "electromagnetic-spectrum",
+   "note": "",
+   "section": "6.1"
+  },
+  {
+   "source": "representative elements",
+   "target": "主族元素",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "periodic-table-blocks",
+   "note": "shared with ch02.",
+   "section": "6.4"
+  },
+  {
+   "source": "Rydberg",
+   "target": "里德伯",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "6.1"
+  },
+  {
+   "source": "Rydberg constant",
+   "target": "里德伯常量",
+   "authority": "gb3100",
+   "url": "",
+   "concept": "rydberg-equation",
+   "note": "GB 3102 里德伯常量.",
+   "section": "6.1"
+  },
+  {
+   "source": "Rydberg constant from the Bohr model",
+   "target": "由玻尔模型得到的里德伯常量",
+   "authority": "book",
+   "url": "",
+   "concept": "rydberg-constant-recovered",
+   "note": "concept name.",
+   "section": "6.2"
+  },
+  {
+   "source": "Rydberg equation",
+   "target": "里德伯公式",
+   "authority": "book",
+   "url": "",
+   "concept": "rydberg-equation",
+   "note": "里德伯公式 is the usual Chinese name; also the Balmer formula 巴耳末公式.",
+   "section": "6.1"
+  },
+  {
+   "source": "s block",
+   "target": "s 区",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "periodic-table-blocks",
+   "note": "block is 区 (chapter 18 shard).",
+   "section": "6.4"
+  },
+  {
+   "source": "s orbital",
+   "target": "s 轨道",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "s-orbital",
+   "note": "space between the Latin letter and the CJK, as 杂化轨道 in the chapter 18 shard.",
+   "section": "6.3"
+  },
+  {
+   "source": "Schrödinger",
+   "target": "薛定谔",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "6.3"
+  },
+  {
+   "source": "secondary (angular momentum) quantum number (l)",
+   "target": "角量子数（l）",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "angular-momentum-quantum-number",
+   "note": "the two names of the book (secondary, angular momentum) are one Chinese term: a forced scenario for the page, where the parenthesis is written 角量子数（副量子数、角动量量子数）.",
+   "section": "6.3",
+   "confirm": "termonline"
+  },
+  {
+   "source": "Secondary quantum number",
+   "target": "角量子数",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "angular-momentum-quantum-number",
+   "note": "concept name; the book's secondary and angular momentum quantum number are one Chinese term 角量子数 (also 副量子数, 角动量量子数).",
+   "section": "6.3",
+   "confirm": "termonline"
+  },
+  {
+   "source": "series limit",
+   "target": "线系极限",
+   "authority": "cnterm-physics",
+   "url": "",
+   "note": "physics 线系极限.",
+   "section": "6.2",
+   "confirm": "termonline"
+  },
+  {
+   "source": "shield",
+   "target": "屏蔽",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "effective-nuclear-charge",
+   "note": "verb; the shared/ch21 shielding row is 屏蔽.",
+   "section": "6.5"
+  },
+  {
+   "source": "signal",
+   "target": "信号",
+   "authority": "cnterm-physics",
+   "url": "",
+   "note": "",
+   "section": "6.1"
+  },
+  {
+   "source": "slit",
+   "target": "狭缝",
+   "authority": "cnterm-physics",
+   "url": "",
+   "note": "",
+   "section": "6.3"
+  },
+  {
+   "source": "spin",
+   "target": "自旋",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "spin-quantum-number",
+   "note": "物理学名词 自旋.",
+   "section": "6.3"
+  },
+  {
+   "source": "spin quantum number",
+   "target": "自旋量子数",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "spin-quantum-number",
+   "note": "",
+   "section": "6.3",
+   "confirm": "termonline"
+  },
+  {
+   "source": "spin quantum number (mₛ)",
+   "target": "自旋量子数（mₛ）",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "spin-quantum-number",
+   "note": "化学名词 自旋量子数.",
+   "section": "6.3",
+   "confirm": "termonline"
+  },
+  {
+   "source": "standing wave",
+   "target": "驻波",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "standing-wave",
+   "note": "物理学名词 驻波; the book's alternative \"stationary wave\" is the same word.",
+   "section": "6.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "Standing waves and quantization",
+   "target": "驻波与量子化",
+   "authority": "book",
+   "url": "",
+   "concept": "standing-waves-quantization",
+   "note": "concept name.",
+   "section": "6.1"
+  },
+  {
+   "source": "stationary wave",
+   "target": "驻波",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "standing-wave",
+   "note": "synonym of standing wave in the book.",
+   "section": "6.1"
+  },
+  {
+   "source": "subshell",
+   "target": "亚层",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "subshell",
+   "note": "textbook usage 亚层 (化学名词 电子亚层); shell is 电子层 (shared with ch02).",
+   "section": "6.3",
+   "confirm": "termonline"
+  },
+  {
+   "source": "Successive ionization energies",
+   "target": "逐级电离能",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "successive-ionization-energies",
+   "note": "concept name; successive ionization is 逐级电离 (chapter 14 shard).",
+   "section": "6.5"
+  },
+  {
+   "source": "successive ionization energy",
+   "target": "逐级电离能",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "successive-ionization-energies",
+   "note": "",
+   "section": "6.5"
+  },
+  {
+   "source": "The Bohr Model",
+   "target": "玻尔模型",
+   "authority": "book",
+   "url": "",
+   "note": "section title.",
+   "section": "6.2"
+  },
+  {
+   "source": "Thomas Young",
+   "target": "托马斯·杨",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "6.1"
+  },
+  {
+   "source": "threshold frequency",
+   "target": "阈频率",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "photoelectric-effect",
+   "note": "物理学名词 阈频率 (also 截止频率).",
+   "section": "6.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "torus",
+   "target": "环面",
+   "authority": "book",
+   "url": "",
+   "concept": "d-orbital",
+   "note": "the doughnut in the d_z² orbital.",
+   "section": "6.3"
+  },
+  {
+   "source": "transition (of an electron)",
+   "target": "跃迁",
+   "authority": "cnterm-physics",
+   "url": "",
+   "note": "the move of an electron between orbits or levels; 物理学名词 跃迁.",
+   "section": "6.2"
+  },
+  {
+   "source": "transition elements",
+   "target": "过渡元素",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "periodic-table-blocks",
+   "note": "化学名词 过渡元素; the shared row transition metal is 过渡金属 (the metals only).",
+   "section": "6.4"
+  },
+  {
+   "source": "trough (of a wave)",
+   "target": "波谷",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "wavelength",
+   "note": "not the chapter 10 trough (水槽); the low point of a wave.",
+   "section": "6.1"
+  },
+  {
+   "source": "ultraviolet catastrophe",
+   "target": "紫外灾难",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "blackbody-radiation",
+   "note": "物理学名词 紫外灾难.",
+   "section": "6.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "valence electron",
+   "target": "价电子",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "valence-electrons",
+   "note": "",
+   "section": "6.4"
+  },
+  {
+   "source": "valence electrons",
+   "target": "价电子",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "valence-electrons",
+   "note": "same target as the chapter 7 shard.",
+   "section": "6.4"
+  },
+  {
+   "source": "Valence electrons and core electrons",
+   "target": "价电子与内层电子",
+   "authority": "book",
+   "url": "",
+   "concept": "valence-and-core-electrons",
+   "note": "concept name.",
+   "section": "6.4"
+  },
+  {
+   "source": "valence shell",
+   "target": "价层",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "concept": "valence-shell",
+   "note": "same target as the chapter 18 shard.",
+   "section": "6.4"
+  },
+  {
+   "source": "visible light",
+   "target": "可见光",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "electromagnetic-spectrum",
+   "note": "",
+   "section": "6.1"
+  },
+  {
+   "source": "wave",
+   "target": "波",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "wave",
+   "note": "same target as the chapter 10 shard (波); spans on 波 in 电磁波, 驻波.",
+   "section": "6.1"
+  },
+  {
+   "source": "Wave properties",
+   "target": "波的性质",
+   "authority": "book",
+   "url": "",
+   "concept": "wave-properties",
+   "note": "concept name.",
+   "section": "6.1"
+  },
+  {
+   "source": "Wave speed",
+   "target": "波速",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "wave-speed-relation",
+   "note": "concept name; 物理学名词 波速.",
+   "section": "6.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "wave-particle duality",
+   "target": "波粒二象性",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "wave-particle-duality",
+   "note": "物理学名词 波粒二象性.",
+   "section": "6.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "wavefunction (ψ)",
+   "target": "波函数（ψ）",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "wavefunction",
+   "note": "the shared row wavefunction is 波函数.",
+   "section": "6.3"
+  },
+  {
+   "source": "wavefunctions",
+   "target": "波函数",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "wavefunction",
+   "note": "plural.",
+   "section": "6.3"
+  },
+  {
+   "source": "Wavefunctions and orbitals as probability",
+   "target": "波函数和原子轨道的概率解释",
+   "authority": "book",
+   "url": "",
+   "concept": "wavefunction-probability",
+   "note": "concept name.",
+   "section": "6.3"
+  },
+  {
+   "source": "wavelength (λ)",
+   "target": "波长（λ）",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "wavelength",
+   "note": "the shared row wavelength is 波长; symbol in full-width parentheses as for meter (m).",
+   "section": "6.1"
+  },
+  {
+   "source": "Werner Heisenberg",
+   "target": "维尔纳·海森伯",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "6.3"
+  },
+  {
+   "source": "Wireless Communication",
+   "target": "无线通信",
+   "authority": "book",
+   "url": "",
+   "note": "box heading.",
+   "section": "6.1"
+  },
+  {
+   "source": "Wolfgang Pauli",
+   "target": "沃尔夫冈·泡利",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "6.3"
+  },
+  {
+   "source": "work function",
+   "target": "功函数",
+   "authority": "cnterm-physics",
+   "url": "",
+   "concept": "photoelectric-effect",
+   "note": "物理学名词 功函数 (逸出功).",
+   "section": "6.1"
+  },
+  {
+   "source": "Working with quantum numbers",
+   "target": "运用量子数",
+   "authority": "book",
+   "url": "",
+   "concept": "working-with-quantum-numbers",
+   "note": "concept name.",
+   "section": "6.3"
+  },
+  {
+   "source": "Writing electron configurations and orbital diagrams",
+   "target": "书写电子构型和轨道表示式",
+   "authority": "book",
+   "url": "",
+   "concept": "writing-electron-configurations",
+   "note": "concept name.",
+   "section": "6.4"
+  }
+ ]
+}

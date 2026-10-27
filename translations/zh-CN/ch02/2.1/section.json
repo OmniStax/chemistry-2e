@@ -2,15 +2,15 @@
  "id": "2.1",
  "module": "m68685",
  "chapter": "2",
- "title": "Early Ideas in Atomic Theory",
- "short": "Early atomic theory",
- "lead": "The idea that matter consists of atoms is older than chemistry, but it became a scientific theory only when John Dalton used it to explain what chemists could measure: the <span data-concept=\"mass\">masses</span> in which elements combine to form compounds.",
+ "title": "原子论的早期思想",
+ "short": "早期原子论",
+ "lead": "物质由原子构成的想法比化学还要古老，但它直到约翰·道尔顿用它来解释化学家能够测量的现象，即元素化合形成化合物时的<span data-concept=\"mass\">质量</span>，才成为一种科学理论。",
  "objectives": [
-  "State the postulates of Dalton’s atomic theory",
-  "Use postulates of Dalton’s atomic theory to explain the laws of definite and multiple proportions"
+  "陈述道尔顿原子论的假设",
+  "用道尔顿原子论的假设解释定比定律和倍比定律"
  ],
- "summary_html": "<p>The ancient Greeks proposed that matter consists of extremely small particles called atoms. Dalton postulated that each element has a characteristic type of atom that differs in properties from atoms of all other elements, and that atoms of different elements can combine in fixed, small, whole-number ratios to form compounds. Samples of a particular compound all have the same elemental proportions by <span data-concept=\"mass\">mass</span>. When two elements form different compounds, a given <span data-concept=\"mass\">mass</span> of one element will combine with <span data-concept=\"mass\">masses</span> of the other element in a small, whole-number ratio. During any chemical change, atoms are neither created nor destroyed.</p>",
- "notes": "The section prints no Link to Learning note and no boxed note, and nothing of it is left out.",
+ "summary_html": "<p>古希腊人提出，物质由称为原子的极其微小的粒子构成。道尔顿假设，每种元素都有一种特有的原子，其性质不同于所有其他元素的原子，并且不同元素的原子可以按固定的、较小的整数比结合形成化合物。某一化合物的所有样品，其各元素的<span data-concept=\"mass\">质量</span>比都相同。当两种元素形成不同的化合物时，与给定<span data-concept=\"mass\">质量</span>的一种元素化合的另一种元素的<span data-concept=\"mass\">质量</span>之比为较小的整数比。在任何化学变化中，原子既不被创造也不被消灭。</p>",
+ "notes": "本节没有印出“学习链接”注记，也没有框注，并且没有任何内容被省略。",
  "ai": {
   "text": [
    {
@@ -20,18 +20,26 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-09-28",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels, concept tags and weights are AI-generated. Both Check Your Learning items carry the book’s own answers, and the two odd-numbered exercises carry the book’s key. The two even-numbered exercises (fs-idp28065472 and fs-idp146757152) have no keyed answer; both ask for a judgment about Dalton’s postulates or the laws of mass rather than a single number, so they are kept with an AI-written suggested approach, marked as generated, that gives the method without standing in for the key. Nothing was left out and nothing was held for another section.",
+ "exercise_notes": "布鲁姆层级、概念标签和权重由 AI 生成。两道学习检测题都附有原书自带的答案，两道奇数编号的习题附有原书的答案。两道偶数编号的习题（fs-idp28065472 和 fs-idp146757152）没有给出标准答案；两题要求的都是对道尔顿的假设或质量定律作出判断，而不是求出单一的数值，所以保留这两题，并附上由 AI 撰写、标明为生成的建议解法，它给出方法，但不代替标准答案。没有任何内容被省略，也没有任何内容留给其他小节。",
  "figures": [
   {
    "id": "fig-penny",
@@ -52,7 +60,7 @@
    "originals": [
     "/media/ch02/CNX_Chem_02_01_Dalton3.jpg"
    ],
-   "original_caption": "When the elements copper (a shiny, red-brown solid, shown here as brown spheres) and oxygen (a clear and colorless gas, shown here as red spheres) react, their atoms rearrange to form a compound containing copper and oxygen (a powdery, black solid). (credit copper: modification of work by http://images-of-elements.com/copper.php)",
+   "original_caption": "当铜（有光泽的红棕色固体，这里画成棕色球）和氧（无色透明的气体，这里画成红色球）这两种元素发生反应时，它们的原子重新排列，形成含有铜和氧的化合物（粉末状的黑色固体）。（来源 铜：改编自 http://images-of-elements.com/copper.php 的作品）",
    "draws": [],
    "conventions": [
     "Cu",
@@ -68,6 +76,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "note dropped, it repeated the caption"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -88,6 +101,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "spheres in the green and blue the example names"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -111,6 +129,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "note dropped, it repeated the caption"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -121,7 +144,7 @@
    "originals": [
     "/media/ch02/CNX_Chem_02_01_MultProp.jpg"
    ],
-   "original_caption": "Compared to the copper chlorine compound in (a), where copper is represented by brown spheres and chlorine by green spheres, the copper chlorine compound in (b) has twice as many chlorine atoms per copper atom. (credit a: modification of work by “Benjah-bmm27”/Wikimedia Commons; credit b: modification of work by “Walkerma”/Wikimedia Commons)",
+   "original_caption": "与（a）中的铜氯化合物相比，（b）中的铜氯化合物每个铜原子所对应的氯原子数是前者的两倍；铜用棕色球表示，氯用绿色球表示。（来源 a：改编自 “Benjah-bmm27”/Wikimedia Commons 的作品；b：改编自 “Walkerma”/Wikimedia Commons 的作品）",
    "draws": [
     "mass"
    ],
@@ -139,6 +162,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "note dropped, it repeated the caption"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   }
@@ -202,13 +230,13 @@
    },
    "figure": {
     "src": "/media/ch02/CNX_Chem_02_01_Dalton8_img.jpg",
-    "alt": "This equation shows that the starting materials of the reaction are two sets of bonded, green spheres which are each being combined with two smaller, bonded blue spheres. The products of the change are two molecules that each contain one blue sphere bonded between two green spheres."
+    "alt": "这个方程式表明，反应的起始物质是两组相连的绿色球，每组都与两个相连的较小蓝色球结合。变化的产物是两个分子，每个分子含有一个蓝色球，它连接在两个绿色球之间。"
    },
-   "prompt": "In the following drawing, the green spheres represent atoms of a certain element. The blue spheres represent atoms of another element. If the spheres touch, they are part of a single unit of a compound. Does the following chemical change represented by these symbols violate any of the ideas of Dalton’s atomic theory? If so, which one?",
+   "prompt": "在下面的图中，绿色球代表某种元素的原子。蓝色球代表另一种元素的原子。如果球相互接触，它们就是化合物的一个单元的组成部分。下面用这些符号表示的化学变化是否违背了道尔顿原子论的任何观点？如果违背了，是哪一条？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "The starting materials consist of four green spheres and two blue spheres. The products consist of four green spheres and two blue spheres. This does not violate any of Dalton’s postulates: Atoms are neither created nor destroyed, but are redistributed in small, whole-number ratios."
+    "solution": "起始物质由四个绿色球和两个蓝色球组成。产物由四个绿色球和两个蓝色球组成。这不违背道尔顿的任何假设：原子既不被创造也不被消灭，而是按较小的整数比重新分配。"
    }
   },
   {
@@ -220,11 +248,11 @@
     "at": "inline",
     "after": "ex-proportions"
    },
-   "prompt": "A sample of compound X (a clear, colorless, combustible liquid with a noticeable odor) is analyzed and found to contain 14.13 g carbon and 2.96 g hydrogen. A sample of compound Y (a clear, colorless, combustible liquid with a noticeable odor that is slightly different from X’s odor) is analyzed and found to contain 19.91 g carbon and 3.34 g hydrogen. Are these data an example of the law of definite proportions, the law of multiple proportions, or neither? What do these data tell you about substances X and Y?",
+   "prompt": "对化合物 X（一种无色透明、有明显气味的可燃液体）的一份样品进行分析，发现它含有 14.13 g 碳和 2.96 g 氢。对化合物 Y（一种无色透明、有明显气味的可燃液体，其气味与 X 的气味略有不同）的一份样品进行分析，发现它含有 19.91 g 碳和 3.34 g 氢。这些数据是定比定律的例子，还是倍比定律的例子，或者两者都不是？这些数据告诉你关于物质 X 和 Y 的什么信息？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "In compound X, the mass ratio of carbon to hydrogen is $\\frac{\\text{14.13 g C}}{\\text{2.96 g H}}.$ In compound Y, the mass ratio of carbon to hydrogen is $\\frac{\\text{19.91 g C}}{\\text{3.34 g H}}.$ The ratio of these ratios is $\\frac{\\frac{\\text{14.13 g C}}{\\text{2.96 g H}}}{\\frac{\\text{19.91 g C}}{\\text{3.34 g H}}}\\;=\\;\\frac{\\text{4.77 g C/g H}}{\\text{5.96 g C/g H}}\\;=0.800=\\;\\frac{4}{5}.$ This small, whole-number ratio supports the law of multiple proportions. This means that X and Y are different compounds."
+    "solution": "在化合物 X 中，碳与氢的质量比为 $\\frac{\\text{14.13 g C}}{\\text{2.96 g H}}.$ 在化合物 Y 中，碳与氢的质量比为 $\\frac{\\text{19.91 g C}}{\\text{3.34 g H}}.$ 这两个比值的比值为 $\\frac{\\frac{\\text{14.13 g C}}{\\text{2.96 g H}}}{\\frac{\\text{19.91 g C}}{\\text{3.34 g H}}}\\;=\\;\\frac{\\text{4.77 g C/g H}}{\\text{5.96 g C/g H}}\\;=0.800=\\;\\frac{4}{5}.$ 这个较小的整数比支持倍比定律。这意味着 X 和 Y 是不同的化合物。"
    }
   },
   {
@@ -238,13 +266,13 @@
    "cite": "daltons-postulates",
    "figure": {
     "src": "/media/ch02/CNX_Chem_02_01_Dalton10_img.jpg",
-    "alt": "This equation contains the starting materials of a single, green sphere plus two smaller, blue spheres bonded together. When the starting materials are added together the products of the change are one blue sphere bonded with one green sphere plus one blue sphere bonded with one green sphere."
+    "alt": "这个方程式的起始物质是一个单独的绿色球加上两个相连的较小蓝色球。把起始物质放在一起后，变化的产物是一个蓝色球与一个绿色球相连，再加上一个蓝色球与一个绿色球相连。"
    },
-   "prompt": "In the following drawing, the green spheres represent atoms of a certain element. The blue spheres represent atoms of another element. If the spheres of different elements touch, they are part of a single unit of a compound. The following chemical change represented by these spheres may violate one of the ideas of Dalton’s atomic theory. Which one?",
+   "prompt": "在下面的图中，绿色球代表某种元素的原子。蓝色球代表另一种元素的原子。如果不同元素的球相互接触，它们就是化合物的一个单元的组成部分。下面用这些球表示的化学变化可能违背了道尔顿原子论的某一观点。是哪一条？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "The starting materials consist of one green sphere and two blue spheres. The products consist of two green spheres and two blue spheres. This violates Dalton’s postulate that that atoms are not created during a chemical change, but are merely redistributed."
+    "solution": "起始物质由一个绿色球和两个蓝色球组成。产物由两个绿色球和两个蓝色球组成。这违背了道尔顿的假设，即原子在化学变化中不会被创造，而只是被重新分配。"
    }
   },
   {
@@ -256,11 +284,11 @@
     "at": "end"
    },
    "cite": "daltons-postulates",
-   "prompt": "Which postulate of Dalton’s theory is consistent with the following observation concerning the weights of reactants and products? When 100 grams of solid calcium carbonate is heated, 44 grams of carbon dioxide and 56 grams of calcium oxide are produced.",
+   "prompt": "关于反应物和产物的重量，下面的观察结果与道尔顿理论的哪一条假设相一致？加热 100 克固体碳酸钙时，生成 44 克二氧化碳和 56 克氧化钙。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The observation is consistent with the postulate that atoms are neither created nor destroyed during a chemical change, but are instead rearranged to yield substances that are different from those present before the change. The products have a total mass of 44 g + 56 g = 100 g, exactly the mass of the calcium carbonate that was heated. Every calcium, carbon and oxygen atom in the calcium carbonate is still present afterward, rearranged into carbon dioxide and calcium oxide, and atoms of each element have a fixed mass, so the total mass cannot change. That unchanged total is the law of conservation of matter, which this postulate explains."
+    "solution": "这一观察结果与下面这条假设相一致：原子在化学变化中既不被创造也不被消灭，而是重新排列，生成与变化前存在的物质不同的物质。产物的总质量为 44 g + 56 g = 100 g，恰好等于被加热的碳酸钙的质量。碳酸钙中的每一个钙原子、碳原子和氧原子在变化之后依然存在，只是重新排列成了二氧化碳和氧化钙，而每种元素的原子都有固定的质量，所以总质量不可能改变。这个保持不变的总质量就是物质守恒定律，而这条假设解释了该定律。"
    }
   },
   {
@@ -272,11 +300,11 @@
     "at": "end"
    },
    "cite": "definite-proportions",
-   "prompt": "Identify the postulate of Dalton’s theory that is violated by the following observations: 59.95% of one sample of titanium dioxide is titanium; 60.10% of a different sample of titanium dioxide is titanium.",
+   "prompt": "指出下面的观察结果违背了道尔顿理论的哪一条假设：一份二氧化钛样品中有 59.95% 是钛；另一份不同的二氧化钛样品中有 60.10% 是钛。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "This statement violates Dalton’s fourth postulate: In a given compound, the numbers of atoms of each type (and thus also the percentage) always have the same ratio."
+    "solution": "这一表述违背了道尔顿的第四条假设：在给定的化合物中，各类原子的数目（因而也包括百分含量）之比始终相同。"
    }
   },
   {
@@ -288,11 +316,11 @@
     "at": "end"
    },
    "cite": "multiple-proportions",
-   "prompt": "Samples of compound X, Y, and Z are analyzed, with results shown here.<table><thead><tr><th>Compound</th><th>Description</th><th>Mass of Carbon</th><th>Mass of Hydrogen</th></tr></thead><tbody><tr><td>X</td><td>clear, colorless, liquid with strong odor</td><td>1.776 g</td><td>0.148 g</td></tr><tr><td>Y</td><td>clear, colorless, liquid with strong odor</td><td>1.974 g</td><td>0.329 g</td></tr><tr><td>Z</td><td>clear, colorless, liquid with strong odor</td><td>7.812 g</td><td>0.651 g</td></tr></tbody></table>Do these data provide example(s) of the law of definite proportions, the law of multiple proportions, neither, or both? What do these data tell you about compounds X, Y, and Z?",
+   "prompt": "对化合物 X、Y 和 Z 的样品进行分析，结果如下所示。<table><thead><tr><th>化合物</th><th>描述</th><th>碳的质量</th><th>氢的质量</th></tr></thead><tbody><tr><td>X</td><td>无色透明、有强烈气味的液体</td><td>1.776 g</td><td>0.148 g</td></tr><tr><td>Y</td><td>无色透明、有强烈气味的液体</td><td>1.974 g</td><td>0.329 g</td></tr><tr><td>Z</td><td>无色透明、有强烈气味的液体</td><td>7.812 g</td><td>0.651 g</td></tr></tbody></table>这些数据提供的是定比定律的例子、倍比定律的例子、两者都不是，还是两者皆有？这些数据告诉你关于化合物 X、Y 和 Z 的什么信息？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The data provide examples of both laws. The mass of carbon per gram of hydrogen is 1.776 g / 0.148 g = 12.0 g for X, 1.974 g / 0.329 g = 6.00 g for Y, and 7.812 g / 0.651 g = 12.0 g for Z. X and Z have the same ratio of carbon to hydrogen by mass, which is what the law of definite proportions requires of two samples of one compound, so X and Z may be the same compound; an equal mass ratio alone does not prove it, since different compounds can share one. Y has a different ratio, so it is a different compound from X and Z. For a fixed mass of hydrogen, the masses of carbon in X and in Y stand in the ratio 12.0 : 6.00 = 2 : 1, a ratio of small, whole numbers, so X and Y, and likewise Z and Y, are an example of the law of multiple proportions. X and Z contain twice as much carbon per gram of hydrogen as Y does."
+    "solution": "这些数据提供了两条定律的例子。每克氢所对应的碳的质量，X 为 1.776 g / 0.148 g = 12.0 g，Y 为 1.974 g / 0.329 g = 6.00 g，Z 为 7.812 g / 0.651 g = 12.0 g。X 和 Z 的碳氢质量比相同，这正是定比定律对同一种化合物的两份样品所要求的，所以 X 和 Z 可能是同一种化合物；但仅凭质量比相等并不能证明这一点，因为不同的化合物可以具有同一个质量比。Y 的质量比不同，所以它与 X 和 Z 是不同的化合物。对于固定质量的氢，X 中与 Y 中的碳的质量之比为 12.0 : 6.00 = 2 : 1，是较小的整数比，所以 X 和 Y，同样还有 Z 和 Y，是倍比定律的例子。X 和 Z 每克氢所对应的碳是 Y 的两倍。"
    }
   }
  ],
@@ -341,21 +369,21 @@
  "referents": [
   {
    "id": "sample-a",
-   "label": "sample A",
+   "label": "样品 A",
    "figures": [
     "sim-isooctane"
    ]
   },
   {
    "id": "sample-b",
-   "label": "sample B",
+   "label": "样品 B",
    "figures": [
     "sim-isooctane"
    ]
   },
   {
    "id": "sample-c",
-   "label": "sample C",
+   "label": "样品 C",
    "figures": [
     "sim-isooctane"
    ]

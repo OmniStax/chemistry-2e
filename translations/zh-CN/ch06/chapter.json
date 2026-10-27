@@ -1,7 +1,7 @@
 {
   "id": "6",
   "dir": "ch06",
-  "title": "Electronic Structure and Periodic Properties of Elements",
+  "title": "元素的电子结构与周期性质",
   "intro": {
     "module": "m68728",
     "slug": "6-introduction"
@@ -10,31 +10,31 @@
     {
       "id": "6.1",
       "module": "m68729",
-      "title": "Electromagnetic Energy",
+      "title": "电磁能",
       "slug": "6-1-electromagnetic-energy"
     },
     {
       "id": "6.2",
       "module": "m68732",
-      "title": "The Bohr Model",
+      "title": "玻尔模型",
       "slug": "6-2-the-bohr-model"
     },
     {
       "id": "6.3",
       "module": "m68733",
-      "title": "Development of Quantum Theory",
+      "title": "量子理论的发展",
       "slug": "6-3-development-of-quantum-theory"
     },
     {
       "id": "6.4",
       "module": "m68734",
-      "title": "Electronic Structure of Atoms (Electron Configurations)",
+      "title": "原子的电子结构（电子构型）",
       "slug": "6-4-electronic-structure-of-atoms-electron-configurations"
     },
     {
       "id": "6.5",
       "module": "m68735",
-      "title": "Periodic Variations in Element Properties",
+      "title": "元素性质的周期性变化",
       "slug": "6-5-periodic-variations-in-element-properties"
     }
   ],
@@ -42,7 +42,7 @@
     {
       "sym": "λ",
       "concept": "wavelength",
-      "meaning": "the wavelength of a wave, the distance between two consecutive peaks or troughs",
+      "meaning": "波的波长，即两个相邻波峰或波谷之间的距离",
       "unit": "m",
       "section": "6.1",
       "anchor": "6.1-wave-speed"
@@ -50,7 +50,7 @@
     {
       "sym": "ν",
       "concept": "frequency",
-      "meaning": "the frequency of a wave, the number of wave cycles that pass a specified point in space per unit time",
+      "meaning": "波的频率，即单位时间内通过空间中某一指定点的波的周期数",
       "unit": "Hz",
       "section": "6.1",
       "anchor": "6.1-wave-speed"
@@ -58,7 +58,7 @@
     {
       "sym": "c",
       "concept": "wave-speed-relation",
-      "meaning": "the speed of light in a vacuum, 2.998 × 10⁸ m/s, which is the product of the wavelength and the frequency",
+      "meaning": "真空中的光速，2.998 × 10⁸ m/s，等于波长与频率之积",
       "unit": "m/s",
       "section": "6.1",
       "anchor": "6.1-wave-speed",
@@ -68,7 +68,7 @@
       "sym": "E",
       "concept": "photon-energy",
       "type": "energy",
-      "meaning": "the energy of one photon, or the quantized vibrational energy of Planck’s treatment",
+      "meaning": "一个光子的能量，或普朗克处理中量子化的振动能量",
       "unit": "J",
       "section": "6.1",
       "anchor": "6.1-blackbody"
@@ -76,7 +76,7 @@
     {
       "sym": "h",
       "concept": "blackbody-radiation",
-      "meaning": "Planck’s constant, 6.626 × 10⁻³⁴ J s",
+      "meaning": "普朗克常量，6.626 × 10⁻³⁴ J s",
       "unit": "J s",
       "section": "6.1",
       "anchor": "6.1-blackbody"
@@ -84,7 +84,7 @@
     {
       "sym": "n_quantum",
       "concept": "quantization",
-      "meaning": "the whole number that counts the half-wavelengths of a standing wave, or the quanta of Planck’s vibrational energies",
+      "meaning": "数出驻波的半波长个数或普朗克振动能量的量子数的整数",
       "section": "6.1",
       "anchor": "6.1-blackbody"
     },
@@ -92,7 +92,7 @@
       "sym": "λ_max",
       "concept": "blackbody-radiation",
       "type": "wavelength",
-      "meaning": "the wavelength at which a blackbody curve has its maximum",
+      "meaning": "黑体曲线取极大值处的波长",
       "unit": "m",
       "section": "6.1",
       "anchor": "6.1-blackbody"
@@ -100,7 +100,7 @@
     {
       "sym": "T",
       "concept": "temperature",
-      "meaning": "the temperature of a blackbody, the single parameter on which its distribution depends",
+      "meaning": "黑体的温度，其分布所取决于的唯一参数",
       "unit": "K",
       "section": "6.1",
       "anchor": "6.1-blackbody"
@@ -108,7 +108,7 @@
     {
       "sym": "R_inf",
       "concept": "rydberg-equation",
-      "meaning": "the Rydberg constant, 1.097 × 10⁷ m⁻¹",
+      "meaning": "里德伯常量，1.097 × 10⁷ m⁻¹",
       "unit": "m⁻¹",
       "section": "6.1",
       "anchor": "6.1-rydberg"
@@ -116,7 +116,7 @@
     {
       "sym": "k",
       "concept": "rydberg-equation",
-      "meaning": "the constant of Balmer’s empirical equation for the visible lines of hydrogen",
+      "meaning": "巴耳末氢可见光谱线经验公式中的常数",
       "unit": "m⁻¹",
       "section": "6.1",
       "anchor": "6.1-rydberg"
@@ -124,7 +124,7 @@
     {
       "sym": "E_n",
       "concept": "bohr-energy-levels",
-      "meaning": "the energy of an electron in the Bohr orbit with quantum number n, measured from the ionization limit and so always negative",
+      "meaning": "量子数为 n 的玻尔轨道上电子的能量，从电离极限算起，因而总是负值",
       "unit": "J",
       "section": "6.2",
       "anchor": "6.2-stationary-states"
@@ -133,7 +133,7 @@
       "sym": "ΔE",
       "concept": "photon-emission-absorption",
       "type": "energy",
-      "meaning": "the difference between the orbital energies an electron moves between, which is the energy of the photon emitted or absorbed",
+      "meaning": "电子所跃迁的两个轨道的能量之差，即所发射或吸收的光子的能量",
       "unit": "J",
       "section": "6.2",
       "anchor": "6.2-stationary-states"
@@ -141,7 +141,7 @@
     {
       "sym": "n_quantum",
       "concept": "quantum-number",
-      "meaning": "the quantum number of a Bohr orbit, a positive integer that labels one of the allowed orbits and takes no value between them",
+      "meaning": "玻尔轨道的量子数，一个正整数，标记一条允许的轨道，在两个整数之间不取任何值",
       "redefines": true,
       "section": "6.2",
       "anchor": "6.2-stationary-states"
@@ -149,14 +149,14 @@
     {
       "sym": "Z",
       "concept": "atomic-number-and-mass-number",
-      "meaning": "the nuclear charge, which is +1 for hydrogen, +2 for He⁺, +3 for Li²⁺ and so on",
+      "meaning": "核电荷，氢为 +1，He⁺ 为 +2，Li²⁺ 为 +3，依此类推",
       "section": "6.2",
       "anchor": "6.2-hydrogen-like"
     },
     {
       "sym": "k",
       "concept": "bohr-energy-levels",
-      "meaning": "the constant of Bohr’s equation for the energy of the electron, made of fundamental constants such as the electron mass and charge and Planck's constant, with a value of 2.179 × 10⁻¹⁸ J",
+      "meaning": "玻尔电子能量公式中的常数，由电子质量、电子电荷和普朗克常量等基本常量构成，值为 2.179 × 10⁻¹⁸ J",
       "redefines": true,
       "unit": "J",
       "section": "6.2",
@@ -165,7 +165,7 @@
     {
       "sym": "r",
       "concept": "bohr-orbit-radius",
-      "meaning": "the radius of the circular orbit an electron is allowed to move in",
+      "meaning": "电子允许在其上运动的圆形轨道的半径",
       "unit": "m",
       "section": "6.2",
       "anchor": "6.2-orbit-radius"
@@ -173,7 +173,7 @@
     {
       "sym": "a_0",
       "concept": "bohr-orbit-radius",
-      "meaning": "the Bohr radius, the radius of the ground-state orbit of hydrogen, with a value of 5.292 × 10⁻¹¹ m",
+      "meaning": "玻尔半径，氢基态轨道的半径，值为 5.292 × 10⁻¹¹ m",
       "unit": "m",
       "section": "6.2",
       "anchor": "6.2-orbit-radius"
@@ -181,7 +181,7 @@
     {
       "sym": "E_i",
       "concept": "bohr-energy-levels",
-      "meaning": "the energy of the orbit the electron starts in",
+      "meaning": "电子出发时所在轨道的能量",
       "unit": "J",
       "section": "6.2",
       "anchor": "6.2-stationary-states"
@@ -189,7 +189,7 @@
     {
       "sym": "E_f",
       "concept": "bohr-energy-levels",
-      "meaning": "the energy of the orbit the electron ends in",
+      "meaning": "电子到达时所在轨道的能量",
       "unit": "J",
       "section": "6.2",
       "anchor": "6.2-stationary-states"
@@ -197,7 +197,7 @@
     {
       "sym": "λ",
       "concept": "wavelength",
-      "meaning": "the wavelength of the photon emitted or absorbed when an electron moves between two orbits",
+      "meaning": "电子在两个轨道之间跃迁时所发射或吸收的光子的波长",
       "unit": "m",
       "section": "6.2",
       "anchor": "6.2-stationary-states"
@@ -205,7 +205,7 @@
     {
       "sym": "ν",
       "concept": "frequency",
-      "meaning": "the frequency of that photon, to which its energy is proportional",
+      "meaning": "该光子的频率，其能量与之成正比",
       "unit": "Hz",
       "section": "6.2",
       "anchor": "6.2-stationary-states"
@@ -213,7 +213,7 @@
     {
       "sym": "h",
       "concept": "blackbody-radiation",
-      "meaning": "Planck's constant, 6.626 × 10⁻³⁴ J s, which ties a photon's energy to its frequency",
+      "meaning": "普朗克常量，6.626 × 10⁻³⁴ J s，把光子的能量与频率联系起来",
       "unit": "J s",
       "section": "6.2",
       "anchor": "6.2-stationary-states"
@@ -221,7 +221,7 @@
     {
       "sym": "c",
       "concept": "wave-speed-relation",
-      "meaning": "the speed of light in a vacuum, 2.998 × 10⁸ m/s",
+      "meaning": "真空中的光速，2.998 × 10⁸ m/s",
       "unit": "m/s",
       "section": "6.2",
       "anchor": "6.2-stationary-states",
@@ -230,7 +230,7 @@
     {
       "sym": "R_inf",
       "concept": "rydberg-equation",
-      "meaning": "the Rydberg constant, which Bohr's model recovers as the quotient k/hc",
+      "meaning": "里德伯常量，玻尔模型把它还原为商 k/hc",
       "unit": "m⁻¹",
       "section": "6.2",
       "anchor": "6.2-rydberg-recovered"
@@ -239,7 +239,7 @@
       "sym": "λ",
       "concept": "de-broglie-wavelength",
       "type": "wavelength",
-      "meaning": "the de Broglie wavelength of a particle of mass m moving with velocity v",
+      "meaning": "质量为 m、速度为 v 的粒子的德布罗意波长",
       "unit": "m",
       "section": "6.3",
       "anchor": "6.3-de-broglie"
@@ -247,7 +247,7 @@
     {
       "sym": "m",
       "concept": "mass",
-      "meaning": "the mass of the particle",
+      "meaning": "粒子的质量",
       "unit": "kg",
       "section": "6.3",
       "anchor": "6.3-de-broglie"
@@ -255,7 +255,7 @@
     {
       "sym": "v",
       "concept": "velocity",
-      "meaning": "the velocity of the particle, not to be confused with the frequency ν",
+      "meaning": "粒子的速度，不要与频率 ν 混淆",
       "unit": "m/s",
       "section": "6.3",
       "anchor": "6.3-de-broglie"
@@ -263,7 +263,7 @@
     {
       "sym": "p_momentum",
       "concept": "momentum",
-      "meaning": "the linear momentum of the particle, the product of its mass and velocity",
+      "meaning": "粒子的线动量，即其质量与速度的乘积",
       "unit": "kg m/s",
       "section": "6.3",
       "anchor": "6.3-de-broglie"
@@ -271,7 +271,7 @@
     {
       "sym": "r",
       "concept": "bohr-orbit-radius",
-      "meaning": "the radius of the circular orbit that the electron wave must fit",
+      "meaning": "电子波必须与之相合的圆形轨道的半径",
       "unit": "m",
       "section": "6.3",
       "anchor": "6.3-de-broglie"
@@ -280,7 +280,7 @@
       "sym": "Δx",
       "concept": "heisenberg-uncertainty",
       "type": "length",
-      "meaning": "the uncertainty in the position of a particle",
+      "meaning": "粒子位置的不确定量",
       "unit": "m",
       "section": "6.3",
       "anchor": "6.3-uncertainty"
@@ -289,7 +289,7 @@
       "sym": "Δp_x",
       "concept": "heisenberg-uncertainty",
       "type": "momentum",
-      "meaning": "the uncertainty in the momentum of a particle along x",
+      "meaning": "粒子沿 x 方向动量的不确定量",
       "unit": "kg m/s",
       "section": "6.3",
       "anchor": "6.3-uncertainty"
@@ -297,7 +297,7 @@
     {
       "sym": "hbar",
       "concept": "blackbody-radiation",
-      "meaning": "Planck’s constant divided by 2π, 1.055 × 10⁻³⁴ J s",
+      "meaning": "普朗克常量除以 2π，1.055 × 10⁻³⁴ J s",
       "unit": "J s",
       "section": "6.3",
       "anchor": "6.3-uncertainty"
@@ -305,14 +305,14 @@
     {
       "sym": "ψ",
       "concept": "wavefunction",
-      "meaning": "the wavefunction of an electron, whose squared magnitude gives the probability of finding it near a point in space",
+      "meaning": "电子的波函数，其模的平方给出在空间某点附近找到电子的概率",
       "section": "6.3",
       "anchor": "6.3-quantum-model"
     },
     {
       "sym": "E",
       "concept": "energy-and-work",
-      "meaning": "the total energy of the quantum particle in the Schrödinger equation",
+      "meaning": "薛定谔方程中量子粒子的总能量",
       "unit": "J",
       "section": "6.3",
       "anchor": "6.3-quantum-model"
@@ -321,7 +321,7 @@
       "sym": "ΔE",
       "concept": "photon-emission-absorption",
       "type": "energy",
-      "meaning": "the energy change of an electronic transition, positive when a photon is absorbed and negative when one is emitted",
+      "meaning": "电子跃迁的能量变化，吸收光子时为正，发射光子时为负",
       "unit": "J",
       "section": "6.3",
       "anchor": "6.3-shells"
@@ -329,63 +329,63 @@
     {
       "sym": "n_quantum",
       "concept": "principal-quantum-number-shells",
-      "meaning": "the principal quantum number, 1, 2, 3, …, which names the shell",
+      "meaning": "主量子数，1, 2, 3, …，标明电子层",
       "section": "6.3",
       "anchor": "6.3-shells"
     },
     {
       "sym": "n_i",
       "concept": "principal-quantum-number-shells",
-      "meaning": "the principal quantum number of the initial energy state",
+      "meaning": "初始能量状态的主量子数",
       "section": "6.3",
       "anchor": "6.3-shells"
     },
     {
       "sym": "n_f",
       "concept": "principal-quantum-number-shells",
-      "meaning": "the principal quantum number of the final energy state",
+      "meaning": "最终能量状态的主量子数",
       "section": "6.3",
       "anchor": "6.3-shells"
     },
     {
       "sym": "l_quantum",
       "concept": "angular-momentum-quantum-number",
-      "meaning": "the secondary (angular momentum) quantum number, 0 to n − 1, which names the subshell and the shape of the orbital",
+      "meaning": "角量子数（副量子数、角动量量子数），取 0 到 n − 1，标明亚层和轨道的形状",
       "section": "6.3",
       "anchor": "6.3-subshells"
     },
     {
       "sym": "m_l",
       "concept": "magnetic-quantum-number",
-      "meaning": "the magnetic quantum number, −l to +l, which gives the orientation of the orbital",
+      "meaning": "磁量子数，取 −l 到 +l，给出轨道的取向",
       "section": "6.3",
       "anchor": "6.3-orientation"
     },
     {
       "sym": "m_s",
       "concept": "spin-quantum-number",
-      "meaning": "the spin quantum number, +1/2 or −1/2",
+      "meaning": "自旋量子数，+1/2 或 −1/2",
       "section": "6.3",
       "anchor": "6.3-spin"
     },
     {
       "sym": "Z",
       "concept": "atomic-number-and-mass-number",
-      "meaning": "the nuclear charge, the number of protons in the nucleus",
+      "meaning": "核电荷，即原子核中的质子数",
       "section": "6.5",
       "anchor": "6.5-effective-nuclear-charge"
     },
     {
       "sym": "Z_eff",
       "concept": "effective-nuclear-charge",
-      "meaning": "the effective nuclear charge, the pull the nucleus exerts on one electron once the shielding of the others is taken into account",
+      "meaning": "有效核电荷，计入其他电子的屏蔽后原子核对某一电子的吸引",
       "section": "6.5",
       "anchor": "6.5-effective-nuclear-charge"
     },
     {
       "sym": "IE",
       "concept": "ionization-energy",
-      "meaning": "an ionization energy, the energy required to remove an electron from a gaseous atom or ion; IE₁ for the first electron, IE₂ for the second",
+      "meaning": "电离能，从气态原子或离子中移去一个电子所需的能量；IE₁ 对应第一个电子，IE₂ 对应第二个电子",
       "unit": "kJ/mol",
       "section": "6.5",
       "anchor": "6.5-ionization-energy"
@@ -393,7 +393,7 @@
     {
       "sym": "EA",
       "concept": "electron-affinity",
-      "meaning": "the electron affinity, the energy change when a gaseous atom accepts an electron",
+      "meaning": "电子亲和能，气态原子接受一个电子时的能量变化",
       "unit": "kJ/mol",
       "section": "6.5",
       "anchor": "6.5-electron-affinity"
@@ -401,7 +401,7 @@
     {
       "sym": "r",
       "concept": "covalent-radius",
-      "meaning": "the covalent radius of an atom, one-half the distance between the nuclei of two identical atoms joined by a covalent bond",
+      "meaning": "原子的共价半径，即由共价键连接的两个相同原子的核间距的一半",
       "unit": "pm",
       "section": "6.5",
       "anchor": "6.5-covalent-radius"
@@ -409,7 +409,7 @@
     {
       "sym": "E",
       "concept": "bohr-energy-levels",
-      "meaning": "the energy of the electron in a Bohr orbit, zero at the ionization limit where the electron is completely removed from the nucleus",
+      "meaning": "玻尔轨道上电子的能量，在电离极限处为零，此时电子已完全脱离原子核",
       "unit": "J",
       "section": "6.2",
       "anchor": "6.2-orbit-radius",
@@ -418,7 +418,7 @@
     {
       "sym": "ν",
       "concept": "frequency",
-      "meaning": "the frequency of a wave, written ν, which is not the velocity v",
+      "meaning": "波的频率，记作 ν，不是速度 v",
       "unit": "Hz",
       "section": "6.3",
       "anchor": "6.3-de-broglie"

@@ -2,16 +2,16 @@
  "id": "7.6",
  "module": "m68742",
  "chapter": "7",
- "title": "Molecular Structure and Polarity",
- "short": "Molecular Structure and Polarity",
- "lead": "A Lewis structure is drawn flat, but a molecule occupies space, and its bonds have measurable distances and angles. Valence shell electron-pair repulsion theory predicts how the regions of electron density arrange themselves around a central atom, and the shape a molecule takes decides how its <span data-concept=\"bond-dipole-moment\">bond dipole moments</span> combine.",
+ "title": "分子构型与极性",
+ "short": "分子构型与极性",
+ "lead": "路易斯结构式是平面画出的，但分子占据空间，其键具有可测量的距离和角度。价层电子对互斥理论预测各个电子密度区域如何围绕中心原子排布，而分子所取的形状决定其<span data-concept=\"bond-dipole-moment\">键偶极矩</span>如何叠加。",
  "objectives": [
-  "Predict the structures of small molecules using valence shell electron pair repulsion (VSEPR) theory",
-  "Explain the concepts of polar covalent bonds and molecular polarity",
-  "Assess the polarity of a molecule based on its bonding and structure"
+  "利用价层电子对互斥（VSEPR）理论预测小分子的构型",
+  "解释极性共价键和分子极性的概念",
+  "根据分子的成键情况和构型判断分子的极性"
  ],
- "summary_html": "<p>VSEPR theory predicts the three-dimensional arrangement of atoms in a molecule. It states that valence electrons will assume an electron-pair geometry that minimizes repulsions between areas of high electron density (bonds and/or lone pairs). Molecular structure, which refers only to the placement of atoms in a molecule and not the electrons, is equivalent to electron-pair geometry only when there are no lone electron pairs around the central atom. A dipole moment measures a separation of charge. For one bond, the <span data-concept=\"bond-dipole-moment\">bond dipole moment</span> is determined by the difference in electronegativity between the two atoms. For a molecule, the overall dipole moment is determined by both the individual bond moments and how these dipoles are arranged in the molecular structure. Polar molecules (those with an appreciable dipole moment) interact with electric fields, whereas nonpolar molecules do not.</p>",
- "notes": "The two Link to Learning notes are left out: the PhET molecular shape simulator, whose place the bench of Figure 7.16 takes, and the PhET molecule polarity simulation, whose place the bond-moment bench of Figure 7.26 and Figure 7.28 take; Examples 7.17 and 7.18 keep the book’s words about those simulations.",
+ "summary_html": "<p>VSEPR 理论预测分子中原子的三维排布。它指出，价电子将采取使高电子密度区域（键和/或孤电子对）之间排斥最小的电子对构型。分子构型只指分子中原子的位置，而不指电子，只有当中心原子周围没有孤电子对时，它才等同于电子对构型。偶极矩度量电荷的分离。对于一个键，<span data-concept=\"bond-dipole-moment\">键偶极矩</span>由两个原子之间的电负性之差决定。对于一个分子，总偶极矩既取决于各个键矩，也取决于这些偶极在分子构型中的排布方式。极性分子（具有可观偶极矩的分子）与电场相互作用，而非极性分子则不然。</p>",
+ "notes": "两个“学习链接”框被略去：一个是 PhET 分子形状模拟器，其位置由图 7.16 的演示台取代；另一个是 PhET 分子极性模拟，其位置由图 7.26 和图 7.28 的键矩演示台取代；例 7.17 和例 7.18 保留了书中关于这两个模拟的文字。",
  "ai": {
   "text": [
    {
@@ -24,6 +24,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
@@ -34,12 +38,16 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-09-12",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels, concept tags and weights are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers; the unkeyed items fs-idm179024, fs-idm5404912, fs-idp23296480, fs-idp24689744, fs-idm62749296, fs-idp90274464, fs-idp95408832, fs-idp120029040, fs-idp126465632 and fs-idm2150336, each of which asks for a definite prediction the book does not key, are left out, and the unkeyed conceptual items fs-idp281408272, fs-idp134531056 and fs-idm5235936 carry a suggested approach marked as OmniStax’s own. Of the five items that are instructions to run a PhET simulation, four are set against the figures of this page with their prompts rewritten to name them: fs-idp56829344 against the bond-moment bench of Figure 7.26 set to NH₃, with its part (a) on ozone left out since the bench draws no bond moment between two atoms of the same element, and fs-idp46580240, fs-idp17379424 and fs-idp37961056 against the bench of Figure 7.16; the two keyed ones keep the book’s answers and the two unkeyed ones carry a suggested approach marked as OmniStax’s own. The fifth, fs-idp67065360, a two-atom molecule whose electronegativities the reader adjusts, is carried by no figure of the page and is left out. The Check Your Learning of Example 7.17 is set against the bench of Figure 7.16 with its prompt rewritten and the book’s “Answers will vary” kept as an open answer. The two questions that ask which of two atoms or which of two words is right are set as a choice over the book’s own options. The images the book prints inside its answers to fs-idp149682416, fs-idp122940912 and fs-idp73458400 are kept in those answers.",
+ "exercise_notes": "布鲁姆层级、概念标签和权重均由 AI 生成。答案取自书后答案以及“学习检测”的答案；没有答案的习题 fs-idm179024、fs-idm5404912、fs-idp23296480、fs-idp24689744、fs-idm62749296、fs-idp90274464、fs-idp95408832、fs-idp120029040、fs-idp126465632 和 fs-idm2150336（每一道都要求给出书中没有给出答案的明确预测）被略去，没有答案的概念性习题 fs-idp281408272、fs-idp134531056 和 fs-idm5235936 则附有标明为 OmniStax 自拟的建议思路。在五道要求运行 PhET 模拟的习题中，有四道对照本页的图重新改写了题干并点明这些图：fs-idp56829344 对照图 7.26 的键矩演示台（设为 NH₃），其中关于臭氧的（a）小问被略去，因为该演示台不画同一元素两个原子之间的键矩；fs-idp46580240、fs-idp17379424 和 fs-idp37961056 对照图 7.16 的演示台；其中有答案的两道保留书中的答案，没有答案的两道附有标明为 OmniStax 自拟的建议思路。第五道 fs-idp67065360 是让读者调节电负性的双原子分子，本页没有任何一幅图承载它，因此被略去。例 7.17 的“学习检测”对照图 7.16 的演示台，题干已改写，书中的“答案各不相同”则作为开放式答案保留。两道问“两个原子中哪一个”或“两个词中哪一个正确”的题，被设为针对书中原有选项的选择题。书中印在习题 fs-idp149682416、fs-idp122940912 和 fs-idp73458400 的答案里的图，保留在这些答案中。",
  "figures": [
   {
    "id": "sim-formaldehyde",
@@ -48,8 +56,11 @@
    "originals": [
     "/media/ch07/CNX_Chem_07_06_CH2O.jpg"
    ],
-   "original_caption": "Bond distances (lengths) and angles are shown for the formaldehyde molecule, H₂CO.",
-   "draws": ["angle", "length"],
+   "original_caption": "图中显示了甲醛分子 H₂CO 中键的距离（长度）和角度。",
+   "draws": [
+    "angle",
+    "length"
+   ],
    "conventions": [
     "C",
     "O",
@@ -70,6 +81,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: notes repeating caption and headline dropped, atom labels closer"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -80,8 +96,10 @@
    "originals": [
     "/media/ch07/CNX_Chem_07_06_BeF2.jpg"
    ],
-   "original_caption": "The BeF₂ molecule adopts a linear structure in which the two bonds are as far apart as possible, on opposite sides of the Be atom.",
-   "draws": ["angle"],
+   "original_caption": "BeF₂ 分子具有直线形构型，其中两个键相距尽可能远，位于 Be 原子的相对两侧。",
+   "draws": [
+    "angle"
+   ],
    "ai": [
     {
      "model": "claude-fable-5-1",
@@ -97,6 +115,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: note that repeated the caption dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -113,8 +136,10 @@
     "/media/ch07/CNX_Chem_07_06_molgeom.jpg",
     "/media/ch07/CNX_Chem_07_06_Axeq.jpg"
    ],
-   "original_caption": "(Figure 7.16) The basic electron-pair geometries predicted by VSEPR theory maximize the space around any region of electron density (bonds or lone pairs). (Figure 7.19) The molecular structures are identical to the electron-pair geometries when there are no lone pairs present (first column). For a particular number of electron pairs (row), the molecular structures for one or more lone pairs are determined based on modifications of the corresponding electron-pair geometry. (Figure 7.20) (a) In a trigonal bipyramid, the two axial positions are located directly across from one another, whereas the three equatorial positions are located in a triangular arrangement. (b–d) The two lone pairs (red lines) in ClF₃ have several possible arrangements, but the T-shaped molecular structure (b) is the one actually observed, consistent with the larger lone pairs both occupying equatorial positions.",
-   "draws": ["angle"],
+   "original_caption": "（图 7.16）VSEPR 理论预测的基本电子对构型使任何电子密度区域（键或孤电子对）周围的空间最大。（图 7.19）没有孤电子对时（第一列），分子构型与电子对构型相同。对于给定的电子对数目（行），含有一对或多对孤电子对的分子构型，由相应电子对构型的修改决定。（图 7.20）（a）在三角双锥中，两个轴向位置正好彼此相对，而三个赤道位置排成三角形。（b–d）ClF₃ 中的两对孤电子对（红线）有几种可能的排布，但实际观察到的是 T 形分子构型（b），这与较大的孤电子对都占据赤道位置相一致。",
+   "draws": [
+    "angle"
+   ],
    "ai": [
     {
      "model": "claude-fable-5-1",
@@ -130,13 +155,21 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: sketch sites apart, camera back, name lines and ClF3 row fixed"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
   {
    "id": "sim-domains",
    "kind": "sim",
-   "draws": ["angle", "time"],
+   "draws": [
+    "angle",
+    "time"
+   ],
    "ai": [
     {
      "model": "claude-fable-5-1",
@@ -152,6 +185,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: camera back, graph clear of headline, repeated notes dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -162,7 +200,7 @@
    "originals": [
     "/media/ch07/CNX_Chem_07_06_CH4.jpg"
    ],
-   "original_caption": "The molecular structure of the methane molecule, CH₄, is shown with a tetrahedral arrangement of the hydrogen atoms. VSEPR structures like this one are often drawn using the wedge and dash notation, in which solid lines represent bonds in the plane of the page, solid wedges represent bonds coming up out of the plane, and dashed lines represent bonds going down into the plane.",
+   "original_caption": "图中显示了甲烷分子 CH₄ 的分子构型，氢原子呈四面体排布。像这样的 VSEPR 构型常用楔形线与虚线表示法来画，其中实线表示位于纸面内的键，实心楔形线表示从纸面向上伸出的键，虚线表示向下伸入纸面的键。",
    "draws": [],
    "ai": [
     {
@@ -179,6 +217,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: fourth hydrogen drawn apart from the third, note dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -189,8 +232,10 @@
    "originals": [
     "/media/ch07/CNX_Chem_07_06_NH3.jpg"
    ],
-   "original_caption": "(a) The electron-pair geometry for the ammonia molecule is tetrahedral with one lone pair and three single bonds. (b) The trigonal pyramidal molecular structure is determined from the electron-pair geometry. (c) The actual bond angles deviate slightly from the idealized angles because the lone pair takes up a larger region of space than do the single bonds, causing the HNH angle to be slightly smaller than 109.5°.",
-   "draws": ["angle"],
+   "original_caption": "（a）氨分子的电子对构型为四面体形，有一对孤电子对和三个单键。（b）三角锥形分子构型由电子对构型确定。（c）实际键角稍微偏离理想角度，因为孤电子对占据的空间区域比单键更大，使 HNH 角略小于 109.5°。",
+   "draws": [
+    "angle"
+   ],
    "conventions": [
     "N",
     "H"
@@ -210,6 +255,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: panel letters replace colliding captions, repeated note dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -230,6 +280,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -250,6 +305,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -260,7 +320,9 @@
    "originals": [
     "/media/ch07/CNX_Chem_07_06_BCl3mol.jpg"
    ],
-   "draws": ["angle"],
+   "draws": [
+    "angle"
+   ],
    "ai": [
     {
      "model": "claude-fable-5-1",
@@ -276,6 +338,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: note that repeated the caption dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -296,6 +363,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -306,7 +378,7 @@
    "originals": [
     "/media/ch07/CNX_Chem_07_06_NH4mol.jpg"
    ],
-   "original_caption": "The ammonium ion displays a tetrahedral electron-pair geometry as well as a tetrahedral molecular structure.",
+   "original_caption": "铵根离子既具有四面体形电子对构型，也具有四面体形分子构型。",
    "draws": [],
    "ai": [
     {
@@ -323,6 +395,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: fourth hydrogen drawn apart, repeated note dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -343,6 +420,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -353,7 +435,7 @@
    "originals": [
     "/media/ch07/CNX_Chem_07_06_H2Omol.jpg"
    ],
-   "original_caption": "(a) H₂O has four regions of electron density around the central atom, so it has a tetrahedral electron-pair geometry. (b) Two of the electron regions are lone pairs, so the molecular structure is bent.",
+   "original_caption": "（a）H₂O 的中心原子周围有四个电子密度区域，因此具有四面体形电子对构型。（b）其中两个电子区域是孤电子对，因此分子构型为 V 形。",
    "draws": [],
    "conventions": [
     "O",
@@ -374,6 +456,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: panel letters replace repeated captions, note trimmed"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -394,6 +481,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -404,7 +496,7 @@
    "originals": [
     "/media/ch07/CNX_Chem_07_06_SF4mol.jpg"
    ],
-   "original_caption": "(a) SF4 has a trigonal bipyramidal arrangement of the five regions of electron density. (b) One of the regions is a lone pair, which results in a seesaw-shaped molecular structure.",
+   "original_caption": "（a）SF4 的五个电子密度区域呈三角双锥形排布。（b）其中一个区域是孤电子对，由此得到跷跷板形分子构型。",
    "draws": [],
    "conventions": [
     "S",
@@ -425,6 +517,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: panel letters replace captions that repeated the figure caption"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -445,6 +542,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -455,7 +557,7 @@
    "originals": [
     "/media/ch07/CNX_Chem_07_06_XEF4mol.jpg"
    ],
-   "original_caption": "(a) XeF₄ adopts an octahedral arrangement with two lone pairs (red lines) and four bonds in the electron-pair geometry. (b) The molecular structure is square planar with the lone pairs directly across from one another.",
+   "original_caption": "（a）XeF₄ 的电子对构型为八面体形排布，有两对孤电子对（红线）和四个键。（b）分子构型为平面正方形，两对孤电子对正好彼此相对。",
    "draws": [],
    "conventions": [
     "Xe",
@@ -476,6 +578,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: panel letters replace repeated captions, note dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -496,6 +603,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -521,6 +633,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: note that repeated the caption dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -535,8 +652,10 @@
     "/media/ch07/CNX_Chem_07_06_BondVector.jpg",
     "/media/ch07/CNX_Chem_07_06_CO2H2Odip.jpg"
    ],
-   "original_caption": "(Figure 7.26) (a) There is a small difference in electronegativity between C and H, represented as a short vector. (b) The electronegativity difference between B and F is much larger, so the vector representing the bond moment is much longer. (Figure 7.27) The overall dipole moment of a molecule depends on the individual bond dipole moments and how they are arranged. (a) Each CO bond has a bond dipole moment, but they point in opposite directions so that the net CO₂ molecule is nonpolar. (b) In contrast, water is polar because the OH bond moments do not cancel out.",
-   "draws": ["dipole-moment"],
+   "original_caption": "（图 7.26）（a）C 和 H 之间的电负性之差很小，用一个短矢量表示。（b）B 和 F 之间的电负性之差大得多，因此表示键矩的矢量长得多。（图 7.27）分子的总偶极矩取决于各个键偶极矩以及它们的排布方式。（a）每个 CO 键都有键偶极矩，但它们方向相反，所以 CO₂ 分子整体是非极性的。（b）相反，水是极性的，因为 OH 键矩没有相互抵消。",
+   "draws": [
+    "dipole-moment"
+   ],
    "conventions": [
     "C",
     "O",
@@ -563,6 +682,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: crossed tails for plus signs, legend line, repeated notes dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -572,7 +696,9 @@
    "originals": [
     "/media/ch07/CNX_Chem_07_06_OSC_img.jpg"
    ],
-   "draws": ["dipole-moment"],
+   "draws": [
+    "dipole-moment"
+   ],
    "conventions": [
     "O",
     "C",
@@ -593,6 +719,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: note that repeated the caption dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -602,7 +733,9 @@
    "originals": [
     "/media/ch07/CNX_Chem_07_06_CHCl3_img.jpg"
    ],
-   "draws": ["dipole-moment"],
+   "draws": [
+    "dipole-moment"
+   ],
    "ai": [
     {
      "model": "claude-fable-5-1",
@@ -618,6 +751,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: fourth hydrogen drawn apart, repeated side notes dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -627,7 +765,9 @@
    "originals": [
     "/media/ch07/CNX_Chem_07_06_SH2NH3_img.jpg"
    ],
-   "draws": ["charge"],
+   "draws": [
+    "charge"
+   ],
    "ai": [
     {
      "model": "claude-fable-5-1",
@@ -638,6 +778,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -648,8 +793,10 @@
    "originals": [
     "/media/ch07/CNX_Chem_07_06_Dipolfield.jpg"
    ],
-   "original_caption": "(a) Molecules are always randomly distributed in the liquid state in the absence of an electric field. (b) When an electric field is applied, polar molecules like HF will align to the dipoles with the field direction.",
-   "draws": ["charge"],
+   "original_caption": "（a）没有电场时，液态下的分子总是随机分布。（b）施加电场时，像 HF 这样的极性分子会使其偶极与电场方向对齐。",
+   "draws": [
+    "charge"
+   ],
    "conventions": [
     "H",
     "F"
@@ -669,6 +816,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: one representative δ pair, hover names, repeated note dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   }
@@ -941,11 +1093,11 @@
     "after": "ex-co2-bcl3"
    },
    "cite": "predicting",
-   "prompt": "Carbonate, ${\\text{CO}}_{3}{}^{\\text{2−}},$ is a common polyatomic ion found in various materials from eggshells to antacids. What are the electron-pair geometry and molecular structure of this polyatomic ion?",
+   "prompt": "碳酸根离子 ${\\text{CO}}_{3}{}^{\\text{2−}}$ 是一种常见的多原子离子，存在于从蛋壳到抗酸剂的各种物质中。这种多原子离子的电子对构型和分子构型分别是什么？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "The electron-pair geometry is trigonal planar and the molecular structure is trigonal planar. Due to resonance, all three C–O bonds are identical. Whether they are single, double, or an average of the two, each bond counts as one region of electron density."
+    "solution": "电子对构型是平面三角形，分子构型也是平面三角形。由于共振，三个 C–O 键完全相同。无论它们是单键、双键，还是二者的平均，每个键都算作一个电子密度区域。"
    }
   },
   {
@@ -958,11 +1110,11 @@
     "after": "ex-ammonium"
    },
    "cite": "predicting",
-   "prompt": "Identify a molecule with trigonal bipyramidal molecular structure.",
+   "prompt": "找出一种具有三角双锥形分子构型的分子。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Any molecule with five electron pairs around the central atoms including no lone pairs will be trigonal bipyramidal. PF<sub>5</sub> is a common example."
+    "solution": "任何中心原子周围有五个电子对且不含孤电子对的分子都是三角双锥形。PF<sub>5</sub> 是一个常见的例子。"
    }
   },
   {
@@ -975,11 +1127,11 @@
     "after": "ex-water"
    },
    "cite": "predicting",
-   "prompt": "The hydronium ion, H<sub>3</sub>O<sup>+</sup>, forms when acids are dissolved in water. Predict the electron-pair geometry and molecular structure of this cation.",
+   "prompt": "水合氢离子 H<sub>3</sub>O<sup>+</sup> 在酸溶于水时形成。预测这种阳离子的电子对构型和分子构型。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "electron pair geometry: tetrahedral; molecular structure: trigonal pyramidal"
+    "solution": "电子对构型：四面体形；分子构型：三角锥形"
    }
   },
   {
@@ -992,11 +1144,11 @@
     "after": "ex-sf4"
    },
    "cite": "predicting",
-   "prompt": "Predict the electron pair geometry and molecular structure for molecules of XeF<sub>2</sub>.",
+   "prompt": "预测 XeF<sub>2</sub> 分子的电子对构型和分子构型。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "The electron-pair geometry is trigonal bipyramidal. The molecular structure is linear."
+    "solution": "电子对构型是三角双锥形。分子构型是直线形。"
    }
   },
   {
@@ -1009,11 +1161,11 @@
     "after": "ex-xef4"
    },
    "cite": "predicting",
-   "prompt": "In a certain molecule, the central atom has three lone pairs and two bonds. What will the electron pair geometry and molecular structure be?",
+   "prompt": "在某个分子中，中心原子有三对孤电子对和两个键。其电子对构型和分子构型分别是什么？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "electron pair geometry: trigonal bipyramidal; molecular structure: linear"
+    "solution": "电子对构型：三角双锥形；分子构型：直线形"
    }
   },
   {
@@ -1028,13 +1180,13 @@
    "cite": "multicenter",
    "figure": {
     "src": "/media/ch07/CNX_Chem_07_06_ala_img.jpg",
-    "alt": "A Lewis structure depicts a nitrogen atom with two lone pairs of electrons that is single bonded to two hydrogen atoms and a carbon atom, which is, in turn, single bonded to a hydrogen atom, a methyl group and another carbon atom. This carbon atom is single bonded to an oxygen atom with two lone pairs of electrons and single bonded to an oxygen that has two lone pairs of electrons and a single bond to a hydrogen atom."
+    "alt": "路易斯结构式：一个带有两对孤电子对的氮原子，以单键与两个氢原子和一个碳原子相连，该碳原子又依次以单键与一个氢原子、一个甲基和另一个碳原子相连。这个碳原子以单键与带有两对孤电子对的一个氧原子相连，并以单键与另一个带有两对孤电子对且以单键连有一个氢原子的氧原子相连。"
    },
-   "prompt": "Another amino acid is alanine, which has the Lewis structure shown here. Predict the electron-pair geometry and local structure of the nitrogen atom, the three carbon atoms, and the oxygen atom with hydrogen attached:",
+   "prompt": "另一种氨基酸是丙氨酸，其路易斯结构式如下所示。预测氮原子、三个碳原子以及连有氢的氧原子的电子对构型和局部构型：",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "electron-pair geometries: nitrogen––tetrahedral; carbon (<u>C</u>H)—tetrahedral; carbon (<u>C</u>H<sub>3</sub>)—tetrahedral; carbon (<u>C</u>O<sub>2</sub>)—trigonal planar; oxygen (<u>O</u>H)—tetrahedral; local structures: nitrogen—trigonal pyramidal; carbon (<u>C</u>H)—tetrahedral; carbon (<u>C</u>H<sub>3</sub>)—tetrahedral; carbon (<u>C</u>O<sub>2</sub>)—trigonal planar; oxygen (<u>O</u>H)—bent (109°)"
+    "solution": "电子对构型：氮——四面体形；碳（<u>C</u>H）——四面体形；碳（<u>C</u>H<sub>3</sub>）——四面体形；碳（<u>C</u>O<sub>2</sub>）——平面三角形；氧（<u>O</u>H）——四面体形；局部构型：氮——三角锥形；碳（<u>C</u>H）——四面体形；碳（<u>C</u>H<sub>3</sub>）——四面体形；碳（<u>C</u>O<sub>2</sub>）——平面三角形；氧（<u>O</u>H）——V 形（109°）"
    }
   },
   {
@@ -1047,11 +1199,11 @@
     "after": "ex-shape-simulator"
    },
    "cite": "geometries",
-   "prompt": "Build a more complex molecule on the bench of Figure 7.16, setting five or six regions of electron density and one or more lone pairs. Identify the electron-pair geometry, the molecular structure, and the bond angles. Then try to find a chemical formula that would match the structure you have built.",
+   "prompt": "在图 7.16 的演示台上搭建一个更复杂的分子，设置五个或六个电子密度区域以及一对或多对孤电子对。确定其电子对构型、分子构型和键角。然后试着找出与你搭建的构型相符的化学式。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Answers will vary. For example, an atom with four single bonds, a double bond, and a lone pair has an octahedral electron-group geometry and a square pyramidal molecular structure. XeOF<sub>4</sub> is a molecule that adopts this structure."
+    "solution": "答案各不相同。例如，一个原子有四个单键、一个双键和一对孤电子对，则其电子基团几何构型为八面体形，分子构型为四方锥形。XeOF<sub>4</sub> 就是具有这种构型的分子。"
    }
   },
   {
@@ -1064,11 +1216,11 @@
     "after": "ex-polarity-simulator"
    },
    "cite": "bond-dipole",
-   "prompt": "Determine the partial charges that will give the largest possible bond dipoles.",
+   "prompt": "确定能给出最大可能键偶极矩的部分电荷。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "The largest bond moments will occur with the largest partial charges. The two solutions above represent how unevenly the electrons are shared in the bond. The bond moments will be maximized when the electronegativity difference is greatest. The controls for A and C should be set to one extreme, and B should be set to the opposite extreme. Although the magnitude of the bond moment will not change based on whether B is the most electronegative or the least, the direction of the bond moment will."
+    "solution": "部分电荷最大时，键矩最大。上面的两个解表示电子在键中被共用时的不均匀程度。当电负性之差最大时，键矩达到最大。A 和 C 的控件应设为同一个极端，B 应设为相反的极端。虽然键矩的大小不会因 B 是电负性最大还是最小而改变，但键矩的方向会改变。"
    }
   },
   {
@@ -1080,11 +1232,11 @@
     "at": "end"
    },
    "cite": "structure-versus-geometry",
-   "prompt": "Explain why the HOH molecule is bent, whereas the HBeH molecule is linear.",
+   "prompt": "解释为什么 HOH 分子是 V 形的，而 HBeH 分子是直线形的。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "The placement of the two sets of unpaired electrons in water forces the bonds to assume a tetrahedral arrangement, and the resulting HOH molecule is bent. The HBeH molecule (in which Be has only two electrons to bond with the two electrons from the hydrogens) must have the electron pairs as far from one another as possible and is therefore linear."
+    "solution": "水中两组未成对电子的位置迫使各键采取四面体形排布，因此得到的 HOH 分子是 V 形的。HBeH 分子（其中 Be 只有两个电子与氢提供的两个电子成键）必须使电子对彼此尽可能远，因此是直线形的。"
    }
   },
   {
@@ -1096,11 +1248,11 @@
     "at": "end"
    },
    "cite": "structure-versus-geometry",
-   "prompt": "What feature of a Lewis structure can be used to tell if a molecule’s (or ion’s) electron-pair geometry and molecular structure will be identical?",
+   "prompt": "路易斯结构式的哪一特征可以用来判断分子（或离子）的电子对构型和分子构型是否相同？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The number of lone pairs on the central atom. When the central atom of the Lewis structure has no lone pairs, every region of electron density around it is a bond to another atom, so the molecular structure, which describes the positions of the atoms, is the same as the electron-pair geometry, which describes the positions of all the regions. Methane, CH<sub>4</sub>, with four bonds and no lone pair on carbon, is tetrahedral in both senses, as are BCl<sub>3</sub> (trigonal planar) and CO<sub>2</sub> (linear). When the central atom carries one or more lone pairs, the two differ: ammonia, NH<sub>3</sub>, has four regions and a tetrahedral electron-pair geometry, but one region is a lone pair, so its molecular structure is trigonal pyramidal."
+    "solution": "中心原子上孤电子对的数目。路易斯结构式中的中心原子没有孤电子对时，它周围的每个电子密度区域都是与另一个原子相连的键，所以描述原子位置的分子构型与描述所有区域位置的电子对构型相同。甲烷 CH<sub>4</sub> 有四个键，碳上没有孤电子对，在这两种意义上都是四面体形，BCl<sub>3</sub>（平面三角形）和 CO<sub>2</sub>（直线形）也是如此。中心原子带有一对或多对孤电子对时，二者就不同了：氨 NH<sub>3</sub> 有四个区域，电子对构型为四面体形，但其中一个区域是孤电子对，所以它的分子构型是三角锥形。"
    }
   },
   {
@@ -1112,11 +1264,11 @@
     "at": "end"
    },
    "cite": "structure-versus-geometry",
-   "prompt": "Explain the difference between electron-pair geometry and molecular structure.",
+   "prompt": "解释电子对构型与分子构型的区别。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Space must be provided for each pair of electrons whether they are in a bond or are present as lone pairs. Electron-pair geometry considers the placement of all electrons. Molecular structure considers only the bonding-pair geometry."
+    "solution": "无论电子对是在键中还是以孤电子对的形式存在，都必须为每一对电子提供空间。电子对构型考虑所有电子的位置。分子构型只考虑成键电子对的几何构型。"
    }
   },
   {
@@ -1128,11 +1280,11 @@
     "at": "end"
    },
    "cite": "repulsion-order",
-   "prompt": "Why is the H–N–H angle in NH<sub>3</sub> smaller than the H–C–H bond angle in CH<sub>4</sub>? Why is the H–N–H angle in ${\\text{NH}}_{4}{}^{+}$ identical to the H–C–H bond angle in CH<sub>4</sub>?",
+   "prompt": "为什么 NH<sub>3</sub> 中的 H–N–H 角小于 CH<sub>4</sub> 中的 H–C–H 键角？为什么 ${\\text{NH}}_{4}{}^{+}$ 中的 H–N–H 角与 CH<sub>4</sub> 中的 H–C–H 键角相同？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Both molecules have four regions of electron density around the central atom and a tetrahedral electron-pair geometry, but in NH<sub>3</sub> one of the four regions is a lone pair. A lone pair occupies a larger region of space than a single bond, and lone pair-bonding pair repulsion is greater than bonding pair-bonding pair repulsion, so the lone pair pushes the three N–H bonds closer together and the H–N–H angle, about 107°, is smaller than the 109.5° H–C–H angle of CH<sub>4</sub>. In ${\\text{NH}}_{4}{}^{+}$ the nitrogen atom forms a fourth N–H bond with the electron pair that was the lone pair in NH<sub>3</sub>. The ion then has four bonding regions and no lone pair, exactly like CH<sub>4</sub>, so all four regions repel one another equally and every H–N–H angle is the ideal tetrahedral angle, 109.5°."
+    "solution": "两个分子的中心原子周围都有四个电子密度区域，电子对构型都是四面体形，但在 NH<sub>3</sub> 中，四个区域之一是孤电子对。孤电子对占据的空间区域比单键大，而且孤电子对-成键电子对的排斥大于成键电子对-成键电子对的排斥，所以孤电子对把三个 N–H 键推得更靠近，H–N–H 角约为 107°，小于 CH<sub>4</sub> 中 109.5° 的 H–C–H 角。在 ${\\text{NH}}_{4}{}^{+}$ 中，氮原子用 NH<sub>3</sub> 中原来是孤电子对的那对电子形成了第四个 N–H 键。于是该离子有四个成键区域而没有孤电子对，与 CH<sub>4</sub> 完全一样，所以四个区域相互的排斥相等，每个 H–N–H 角都是理想的四面体角 109.5°。"
    }
   },
   {
@@ -1144,11 +1296,11 @@
     "at": "end"
    },
    "cite": "molecular-dipole",
-   "prompt": "Explain how a molecule that contains polar bonds can be nonpolar.",
+   "prompt": "解释含有极性键的分子怎么可能是非极性的。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "As long as the polar bonds are compensated (for example. two identical atoms are found directly across the central atom from one another), the molecule can be nonpolar."
+    "solution": "只要极性键相互补偿（例如，两个相同的原子正好位于中心原子的相对两侧），分子就可以是非极性的。"
    }
   },
   {
@@ -1160,11 +1312,11 @@
     "at": "end"
    },
    "cite": "molecular-dipole",
-   "prompt": "As a general rule, MX<sub>n</sub> molecules (where M represents a central atom and X represents terminal atoms; n = 2 – 5) are polar if there is one or more lone pairs of electrons on M. NH<sub>3</sub> (M = N, X = H, n = 3) is an example. There are two molecular structures with lone pairs that are exceptions to this rule. What are they?",
+   "prompt": "一般来说，如果 M 上有一对或多对孤电子对，MX<sub>n</sub> 分子（其中 M 表示中心原子，X 表示端位原子；n = 2 – 5）就是极性的。NH<sub>3</sub>（M = N，X = H，n = 3）就是一个例子。有两种带有孤电子对的分子构型是这一规则的例外。它们是什么？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The linear structure with three lone pairs, as in XeF<sub>2</sub>, and the square planar structure with two lone pairs, as in XeF<sub>4</sub>. A molecule is nonpolar when its bond moments cancel. In the linear case there are five regions in a trigonal bipyramidal electron-pair geometry; the three lone pairs take the three more spacious equatorial positions, leaving the two M–X bonds in the axial positions, 180° apart, so their equal bond moments point in opposite directions and cancel. In the square planar case there are six regions in an octahedral electron-pair geometry; the two lone pairs sit on opposite sides of the central atom to minimize lone pair-lone pair repulsion, leaving four M–X bonds in a plane in two opposed pairs, so their bond moments also cancel. Both molecules are therefore nonpolar although M carries lone pairs."
+    "solution": "带有三对孤电子对的直线形构型（如 XeF<sub>2</sub>）和带有两对孤电子对的平面正方形构型（如 XeF<sub>4</sub>）。分子的键矩相互抵消时是非极性的。在直线形的情形中，有五个区域，电子对构型为三角双锥形；三对孤电子对占据三个更宽敞的赤道位置，使两个 M–X 键处于相隔 180° 的轴向位置，所以它们相等的键矩方向相反而相互抵消。在平面正方形的情形中，有六个区域，电子对构型为八面体形；为使孤电子对-孤电子对的排斥最小，两对孤电子对位于中心原子的相对两侧，使四个 M–X 键在一个平面内成两对相对的键，所以它们的键矩也相互抵消。因此，尽管 M 上带有孤电子对，这两种分子都是非极性的。"
    }
   },
   {
@@ -1176,11 +1328,11 @@
     "at": "end"
    },
    "cite": "predicting",
-   "prompt": "Predict the electron pair geometry and the molecular structure of each of the following molecules or ions:\n(a) SF<sub>6</sub>\n(b) PCl<sub>5</sub>\n(c) BeH<sub>2</sub>\n(d) ${\\text{CH}}_{3}{}^{+}$",
+   "prompt": "预测下列各分子或离子的电子对构型和分子构型：\n（a）SF<sub>6</sub>\n（b）PCl<sub>5</sub>\n（c）BeH<sub>2</sub>\n（d）${\\text{CH}}_{3}{}^{+}$",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) Both the electron geometry and the molecular structure are octahedral. (b) Both the electron geometry and the molecular structure are trigonal bipyramid. (c) Both the electron geometry and the molecular structure are linear. (d) Both the electron geometry and the molecular structure are trigonal planar."
+    "solution": "（a）电子几何构型和分子构型都是八面体形。（b）电子几何构型和分子构型都是三角双锥形。（c）电子几何构型和分子构型都是直线形。（d）电子几何构型和分子构型都是平面三角形。"
    }
   },
   {
@@ -1192,11 +1344,11 @@
     "at": "end"
    },
    "cite": "predicting",
-   "prompt": "What are the electron-pair geometry and the molecular structure of each of the following molecules or ions?\n(a) ClF<sub>5</sub>\n(b) ${\\text{ClO}}_{2}{}^{\\text{−}}$\n(c) ${\\text{TeCl}}_{4}{}^{\\text{2−}}$\n(d) PCl<sub>3</sub>\n(e) SeF<sub>4</sub>\n(f) ${\\text{PH}}_{2}{}^{\\text{−}}$",
+   "prompt": "下列各分子或离子的电子对构型和分子构型分别是什么？\n（a）ClF<sub>5</sub>\n（b）${\\text{ClO}}_{2}{}^{\\text{−}}$\n（c）${\\text{TeCl}}_{4}{}^{\\text{2−}}$\n（d）PCl<sub>3</sub>\n（e）SeF<sub>4</sub>\n（f）${\\text{PH}}_{2}{}^{\\text{−}}$",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) electron-pair geometry: octahedral, molecular structure: square pyramidal; (b) electron-pair geometry: tetrahedral, molecular structure: bent; (c) electron-pair geometry: octahedral, molecular structure: square planar; (d) electron-pair geometry: tetrahedral, molecular structure: trigonal pyramidal; (e) electron-pair geometry: trigonal bypyramidal, molecular structure: seesaw; (f) electron-pair geometry: tetrahedral, molecular structure: bent (109°)"
+    "solution": "（a）电子对构型：八面体形，分子构型：四方锥形；（b）电子对构型：四面体形，分子构型：V 形；（c）电子对构型：八面体形，分子构型：平面正方形；（d）电子对构型：四面体形，分子构型：三角锥形；（e）电子对构型：三角双锥形，分子构型：跷跷板形；（f）电子对构型：四面体形，分子构型：V 形（109°）"
    }
   },
   {
@@ -1208,11 +1360,11 @@
     "at": "end"
    },
    "cite": "predicting",
-   "prompt": "Identify the electron pair geometry and the molecular structure of each of the following molecules:\n(a) ClNO (N is the central atom)\n(b) CS<sub>2</sub>\n(c) Cl<sub>2</sub>CO (C is the central atom)\n(d) Cl<sub>2</sub>SO (S is the central atom)\n(e) SO<sub>2</sub>F<sub>2</sub> (S is the central atom)\n(f) XeO<sub>2</sub>F<sub>2</sub> (Xe is the central atom)\n(g) ${\\text{ClOF}}_{2}{}^{+}$ (Cl is the central atom)",
+   "prompt": "确定下列各分子的电子对构型和分子构型：\n（a）ClNO（N 为中心原子）\n（b）CS<sub>2</sub>\n（c）Cl<sub>2</sub>CO（C 为中心原子）\n（d）Cl<sub>2</sub>SO（S 为中心原子）\n（e）SO<sub>2</sub>F<sub>2</sub>（S 为中心原子）\n（f）XeO<sub>2</sub>F<sub>2</sub>（Xe 为中心原子）\n（g）${\\text{ClOF}}_{2}{}^{+}$（Cl 为中心原子）",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) electron-pair geometry: trigonal planar, molecular structure: bent (120°); (b) electron-pair geometry: linear, molecular structure: linear; (c) electron-pair geometry: trigonal planar, molecular structure: trigonal planar; (d) electron-pair geometry: tetrahedral, molecular structure: trigonal pyramidal; (e) electron-pair geometry: tetrahedral, molecular structure: tetrahedral; (f) electron-pair geometry: trigonal bipyramidal, molecular structure: seesaw; (g) electron-pair geometry: tetrahedral, molecular structure: trigonal pyramidal"
+    "solution": "（a）电子对构型：平面三角形，分子构型：V 形（120°）；（b）电子对构型：直线形，分子构型：直线形；（c）电子对构型：平面三角形，分子构型：平面三角形；（d）电子对构型：四面体形，分子构型：三角锥形；（e）电子对构型：四面体形，分子构型：四面体形；（f）电子对构型：三角双锥形，分子构型：跷跷板形；（g）电子对构型：四面体形，分子构型：三角锥形"
    }
   },
   {
@@ -1224,11 +1376,11 @@
     "at": "end"
    },
    "cite": "molecular-dipole",
-   "prompt": "Which of the following molecules and ions contain polar bonds? Which of these molecules and ions have dipole moments?\n(a) ClF<sub>5</sub>\n(b) ${\\text{ClO}}_{2}{}^{\\text{−}}$\n(c) ${\\text{TeCl}}_{4}{}^{\\text{2−}}$\n(d) PCl<sub>3</sub>\n(e) SeF<sub>4</sub>\n(f) ${\\text{PH}}_{2}{}^{\\text{−}}$\n(g) XeF<sub>2</sub>",
+   "prompt": "下列分子和离子中，哪些含有极性键？其中哪些分子和离子具有偶极矩？\n（a）ClF<sub>5</sub>\n（b）${\\text{ClO}}_{2}{}^{\\text{−}}$\n（c）${\\text{TeCl}}_{4}{}^{\\text{2−}}$\n（d）PCl<sub>3</sub>\n（e）SeF<sub>4</sub>\n（f）${\\text{PH}}_{2}{}^{\\text{−}}$\n（g）XeF<sub>2</sub>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "All of these molecules and ions contain polar bonds. Only ClF<sub>5</sub>, ${\\text{ClO}}_{2}{}^{\\text{−}},$ PCl<sub>3</sub>, SeF<sub>4</sub>, and ${\\text{PH}}_{2}{}^{\\text{−}}$ have dipole moments."
+    "solution": "所有这些分子和离子都含有极性键。只有 ClF<sub>5</sub>、${\\text{ClO}}_{2}{}^{\\text{−}}$、PCl<sub>3</sub>、SeF<sub>4</sub> 和 ${\\text{PH}}_{2}{}^{\\text{−}}$ 具有偶极矩。"
    }
   },
   {
@@ -1240,11 +1392,11 @@
     "at": "end"
    },
    "cite": "molecular-dipole",
-   "prompt": "Which of the following molecules have dipole moments?\n(a) CS<sub>2</sub>\n(b) SeS<sub>2</sub>\n(c) CCl<sub>2</sub>F<sub>2</sub>\n(d) PCl<sub>3</sub> (P is the central atom)\n(e) ClNO (N is the central atom)",
+   "prompt": "下列分子中，哪些具有偶极矩？\n（a）CS<sub>2</sub>\n（b）SeS<sub>2</sub>\n（c）CCl<sub>2</sub>F<sub>2</sub>\n（d）PCl<sub>3</sub>（P 为中心原子）\n（e）ClNO（N 为中心原子）",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "SeS<sub>2</sub>, CCl<sub>2</sub>F<sub>2</sub>, PCl<sub>3</sub>, and ClNO all have dipole moments."
+    "solution": "SeS<sub>2</sub>、CCl<sub>2</sub>F<sub>2</sub>、PCl<sub>3</sub> 和 ClNO 都具有偶极矩。"
    }
   },
   {
@@ -1256,13 +1408,13 @@
     "at": "end"
    },
    "cite": "molecular-dipole",
-   "prompt": "The molecule XF<sub>3</sub> has a dipole moment. Is X boron or phosphorus?",
+   "prompt": "XF<sub>3</sub> 分子具有偶极矩。X 是硼还是磷？",
    "answer": {
     "type": "choice",
     "generated_by": "source",
     "options": [
-     "boron",
-     "phosphorus"
+     "硼",
+     "磷"
     ],
     "correct": 1,
     "solution": "P"
@@ -1277,16 +1429,16 @@
     "at": "end"
    },
    "cite": "molecular-dipole",
-   "prompt": "Is the Cl<sub>2</sub>BBCl<sub>2</sub> molecule polar or nonpolar?",
+   "prompt": "Cl<sub>2</sub>BBCl<sub>2</sub> 分子是极性的还是非极性的？",
    "answer": {
     "type": "choice",
     "generated_by": "source",
     "options": [
-     "polar",
-     "nonpolar"
+     "极性的",
+     "非极性的"
     ],
     "correct": 1,
-    "solution": "nonpolar"
+    "solution": "非极性的"
    }
   },
   {
@@ -1298,11 +1450,11 @@
     "at": "end"
    },
    "cite": "multicenter",
-   "prompt": "Describe the molecular structure around the indicated atom or atoms:\n(a) the sulfur atom in sulfuric acid, H<sub>2</sub>SO<sub>4</sub> [(HO)<sub>2</sub>SO<sub>2</sub>]\n(b) the chlorine atom in chloric acid, HClO<sub>3</sub> [HOClO<sub>2</sub>]\n(c) the oxygen atom in hydrogen peroxide, HOOH\n(d) the nitrogen atom in nitric acid, HNO<sub>3</sub> [HONO<sub>2</sub>]\n(e) the oxygen atom in the OH group in nitric acid, HNO<sub>3</sub> [HONO<sub>2</sub>]\n(f) the central oxygen atom in the ozone molecule, O<sub>3</sub>\n(g) each of the carbon atoms in propyne, CH<sub>3</sub>CCH\n(h) the carbon atom in Freon, CCl<sub>2</sub>F<sub>2</sub>\n(i) each of the carbon atoms in allene, H<sub>2</sub>CCCH<sub>2</sub>",
+   "prompt": "描述所指示的一个或多个原子周围的分子构型：\n（a）硫酸 H<sub>2</sub>SO<sub>4</sub> [(HO)<sub>2</sub>SO<sub>2</sub>] 中的硫原子\n（b）氯酸 HClO<sub>3</sub> [HOClO<sub>2</sub>] 中的氯原子\n（c）过氧化氢 HOOH 中的氧原子\n（d）硝酸 HNO<sub>3</sub> [HONO<sub>2</sub>] 中的氮原子\n（e）硝酸 HNO<sub>3</sub> [HONO<sub>2</sub>] 中 OH 基团里的氧原子\n（f）臭氧分子 O<sub>3</sub> 中的中心氧原子\n（g）丙炔 CH<sub>3</sub>CCH 中的每个碳原子\n（h）氟利昂 CCl<sub>2</sub>F<sub>2</sub> 中的碳原子\n（i）丙二烯 H<sub>2</sub>CCCH<sub>2</sub> 中的每个碳原子",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) tetrahedral; (b) trigonal pyramidal; (c) bent (109°); (d) trigonal planar; (e) bent (<120°); (f) bent (109°); (g) <u>C</u>H<sub>3</sub>CCH tetrahedral, CH<sub>3</sub><u>CC</u>H linear; (h) tetrahedral; (i) H<sub>2</sub>C<u>C</u>CH<sub>2</sub> linear; H<sub>2</sub><u>C</u>C<u>C</u>H<sub>2</sub> trigonal planar"
+    "solution": "（a）四面体形；（b）三角锥形；（c）V 形（109°）；（d）平面三角形；（e）V 形（<120°）；（f）V 形（109°）；（g）<u>C</u>H<sub>3</sub>CCH 为四面体形，CH<sub>3</sub><u>CC</u>H 为直线形；（h）四面体形；（i）H<sub>2</sub>C<u>C</u>CH<sub>2</sub> 为直线形；H<sub>2</sub><u>C</u>C<u>C</u>H<sub>2</sub> 为平面三角形"
    }
   },
   {
@@ -1314,11 +1466,11 @@
     "at": "end"
    },
    "cite": "structure-versus-geometry",
-   "prompt": "A molecule with the formula AB<sub>2</sub>, in which A and B represent different atoms, could have one of three different shapes. Sketch and name the three different shapes that this molecule might have. Give an example of a molecule or ion for each shape.",
+   "prompt": "化学式为 AB<sub>2</sub> 的分子（其中 A 和 B 代表不同的原子）可能具有三种不同形状之一。画出并命名这种分子可能具有的三种不同形状。为每种形状各举一个分子或离子的例子。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "<img src=\"/media/ch07/CNX_Chem_07_06_Ques23ans_img.jpg\" alt=\"Three Lewis diagrams are shown. The first diagram shows the letter A single bonded to the left and right to the letter B. An example, CO2, and the term linear are written beside this diagram. The second diagram shows the letter A with two lone pairs of electrons, single bonded to the left and lower right to the letter B. An example, H2O, and the term bent with an approximately 109 degree angle are written beside this diagram. The third diagram shows the letter A with one lone electron pair, single bonded to the left and lower right to the letter B. An example, SO2, and the term bent with an approximately 120 degree angle are written beside this diagram.\">"
+    "solution": "<img src=\"/media/ch07/CNX_Chem_07_06_Ques23ans_img.jpg\" alt=\"给出三个路易斯图。第一个图显示字母 A 向左和向右各以单键与字母 B 相连，图旁写有例子 CO2 和术语“直线形”。第二个图显示带有两对孤电子对的字母 A，向左和向右下方各以单键与字母 B 相连，图旁写有例子 H2O 和术语“V 形，角度约为 109 度”。第三个图显示带有一对孤电子对的字母 A，向左和向右下方各以单键与字母 B 相连，图旁写有例子 SO2 和术语“V 形，角度约为 120 度”。\">"
    }
   },
   {
@@ -1330,11 +1482,11 @@
     "at": "end"
    },
    "cite": "predicting",
-   "prompt": "Draw the Lewis electron dot structures for these molecules, including resonance structures where appropriate:\n(a) ${\\text{CS}}_{3}{}^{\\text{2−}}$\n(b) CS<sub>2</sub>\n(c) CS\n(d) predict the molecular shapes for ${\\text{CS}}_{3}{}^{\\text{2−}}$ and CS<sub>2</sub> and explain how you arrived at your predictions",
+   "prompt": "画出下列分子的路易斯电子式，适当时包括共振式：\n（a）${\\text{CS}}_{3}{}^{\\text{2−}}$\n（b）CS<sub>2</sub>\n（c）CS\n（d）预测 ${\\text{CS}}_{3}{}^{\\text{2−}}$ 和 CS<sub>2</sub> 的分子形状，并说明你是如何得出预测的",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) <img src=\"/media/ch07/CNX_Chem_07_06_CS3a_img.jpg\" alt=\"Three resonance structures of the CS3 2− ion, each in brackets with a 2− charge and joined by double-headed arrows: a carbon atom single bonded to two sulfur atoms that carry three lone pairs each and double bonded to a third that carries two, the double bond moving to a different sulfur in each structure.\"> (b) <img src=\"/media/ch07/CNX_Chem_07_06_CS3b_img.jpg\" alt=\"The Lewis structure of CS2: a carbon atom double bonded to two sulfur atoms, each of which has two lone pairs of electrons.\"> (c) <img src=\"/media/ch07/CNX_Chem_07_06_CS3c_img.jpg\" alt=\"The Lewis structure of CS: a carbon with one lone electron pair triple bonded to a sulfur with one lone electron pair.\"> (d) ${\\text{CS}}_{3}{}^{\\text{2−}}$ includes three regions of electron density (all are bonds with no lone pairs); the shape is trigonal planar; CS<sub>2</sub> has only two regions of electron density (all bonds with no lone pairs); the shape is linear"
+    "solution": "（a）<img src=\"/media/ch07/CNX_Chem_07_06_CS3a_img.jpg\" alt=\"CS3 2− 离子的三个共振式，各置于方括号中并带有 2− 电荷，以双向箭头相连：一个碳原子以单键与两个各带有三对孤电子对的硫原子相连，并以双键与带有两对孤电子对的第三个硫原子相连，双键在每个结构中移到不同的硫原子上。\"> （b）<img src=\"/media/ch07/CNX_Chem_07_06_CS3b_img.jpg\" alt=\"CS2 的路易斯结构式：一个碳原子以双键与两个硫原子相连，每个硫原子各有两对孤电子对。\"> （c）<img src=\"/media/ch07/CNX_Chem_07_06_CS3c_img.jpg\" alt=\"CS 的路易斯结构式：一个带有一对孤电子对的碳原子以三键与带有一对孤电子对的硫原子相连。\"> （d）${\\text{CS}}_{3}{}^{\\text{2−}}$ 含有三个电子密度区域（都是键，没有孤电子对）；形状为平面三角形；CS<sub>2</sub> 只有两个电子密度区域（都是键，没有孤电子对）；形状为直线形"
    }
   },
   {
@@ -1346,11 +1498,11 @@
     "at": "end"
    },
    "cite": "multicenter",
-   "prompt": "A compound with a molar mass of about 42 g/mol contains 85.7% carbon and 14.3% hydrogen. What is its molecular structure?",
+   "prompt": "某化合物的摩尔质量约为 42 g/mol，含碳 85.7%、氢 14.3%。它的分子构型是什么？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "The Lewis structure is made from three units, but the atoms must be rearranged: <img src=\"/media/ch07/CNX_Chem_07_06_Ques28ans_img.jpg\" alt=\"A Lewis structure is shown in which a carbon atom is single bonded to three hydrogen atoms and a second carbon atom. The second carbon is single bonded to a hydrogen atom and double bonded to a third carbon atom which is single bonded to two hydrogen atoms.\">"
+    "solution": "路易斯结构式由三个单元构成，但原子必须重新排布：<img src=\"/media/ch07/CNX_Chem_07_06_Ques28ans_img.jpg\" alt=\"一个路易斯结构式，其中一个碳原子以单键与三个氢原子和第二个碳原子相连。第二个碳原子以单键与一个氢原子相连，并以双键与第三个碳原子相连，第三个碳原子以单键与两个氢原子相连。\">"
    }
   },
   {
@@ -1362,11 +1514,11 @@
     "at": "end"
    },
    "cite": "molecular-dipole",
-   "prompt": "Set the bond-moment bench of Figure 7.26 to NH<sub>3</sub> and drag the molecule to turn it until you can see all three bond moments. (a) Look at the bond dipoles for NH<sub>3</sub>. Use these dipoles to predict whether N or H is more electronegative. (b) Predict whether there should be a molecular dipole for NH<sub>3</sub> and, if so, in which direction it will point. Compare your prediction with the heavier arrow the bench draws for the dipole moment.",
+   "prompt": "把图 7.26 的键矩演示台设为 NH<sub>3</sub>，拖动分子使其转动，直到你能看到全部三个键矩。（a）观察 NH<sub>3</sub> 的键偶极矩，并据此预测 N 和 H 哪一个电负性更大。（b）预测 NH<sub>3</sub> 是否应有分子偶极，如果有，它指向哪个方向。把你的预测与演示台为偶极矩画出的较粗箭头作比较。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "The molecular dipole points away from the hydrogen atoms."
+    "solution": "分子偶极指向远离氢原子的方向。"
    }
   },
   {
@@ -1378,11 +1530,11 @@
     "at": "end"
    },
    "cite": "geometries",
-   "prompt": "Build a molecule on the bench of Figure 7.16. Starting with the central atom, count one double bond, one single bond and one lone pair as its regions of electron density, and set the sliders to match. Turn the molecule to observe the complete geometry. Name the electron-pair geometry and molecular structure and predict the bond angle. Then read the two names and the ideal angle beneath the drawing to check your answers.",
+   "prompt": "在图 7.16 的演示台上搭建一个分子。从中心原子开始，把一个双键、一个单键和一对孤电子对算作它的电子密度区域，并相应设置滑块。转动分子以观察完整的几何构型。说出电子对构型和分子构型的名称，并预测键角。然后读出绘图下方的两个名称和理想角度，核对你的答案。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The electron-pair geometry is trigonal planar, the molecular structure is bent, and the bond angle is predicted to be slightly less than the ideal 120°. A single bond and a double bond each count as one region of electron density, and the lone pair is a third, so the central atom has three regions, and three regions are arranged in a trigonal planar electron-pair geometry with 120° between them. Only two of the regions hold atoms, so the molecular structure, which describes the positions of the atoms, is bent. The lone pair occupies a larger region of space than either bond, so it pushes the two bonds closer together and the angle between them falls below 120°. The bench set to three regions with one lone pair prints trigonal planar, bent and 120°."
+    "solution": "电子对构型为平面三角形，分子构型为 V 形，预测键角略小于理想的 120°。一个单键和一个双键各算作一个电子密度区域，孤电子对是第三个，所以中心原子有三个区域，三个区域排成平面三角形电子对构型，彼此之间的夹角为 120°。只有两个区域上有原子，所以描述原子位置的分子构型是 V 形。孤电子对占据的空间区域比任一个键都大，因此把两个键推得更靠近，它们之间的角小于 120°。演示台设为三个区域、一对孤电子对时，会显示平面三角形、V 形和 120°。"
    }
   },
   {
@@ -1394,11 +1546,11 @@
     "at": "end"
    },
    "cite": "repulsion-order",
-   "prompt": "Set the bench of Figure 7.16 to four regions of electron density with two lone pairs, which is the water molecule, and note the ideal angle it prints. Then compare it with the bond angle of 104.5° that Example 7.13 gives water, which the bond-moment bench of Figure 7.26 draws when it is set to H<sub>2</sub>O. Explain the difference observed.",
+   "prompt": "把图 7.16 的演示台设为四个电子密度区域、两对孤电子对，即水分子，并记下它显示的理想角度。然后把它与例 7.13 给出的水的 104.5° 键角作比较，图 7.26 的键矩演示台设为 H<sub>2</sub>O 时画的就是这个角度。解释所观察到的差别。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "The structures are very similar. In the model mode, each electron group occupies the same amount of space, so the bond angle is shown as 109.5°. In the “real” mode, the lone pairs are larger, causing the hydrogens to be compressed. This leads to the smaller angle of 104.5°."
+    "solution": "这两种构型非常相似。在模型模式中，每个电子基团占据的空间相同，因此键角显示为 109.5°。在“真实”模式中，孤电子对更大，使氢被压缩。这就导致了 104.5° 的较小角度。"
    }
   },
   {
@@ -1410,11 +1562,11 @@
     "at": "end"
    },
    "cite": "repulsion-order",
-   "prompt": "The S<sub>2</sub>O molecule has a central sulfur atom bonded to an oxygen atom and to a second sulfur atom, with one lone pair on the central atom. Set the bench of Figure 7.16 to the regions of electron density around the central sulfur atom and read the ideal angle it prints. Explain whether the real bond angle should be larger or smaller than this ideal angle.",
+   "prompt": "S<sub>2</sub>O 分子有一个中心硫原子，与一个氧原子和第二个硫原子相连，中心原子上有一对孤电子对。把图 7.16 的演示台设为中心硫原子周围的电子密度区域，并读出它显示的理想角度。解释实际键角应比这个理想角度大还是小。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The bench set to three regions with one lone pair prints a trigonal planar electron-pair geometry, a bent molecular structure and an ideal angle of 120°, and the real S–S–O angle is smaller than 120°. The central sulfur atom has two bonds, one to oxygen and one to sulfur, and one lone pair; each bond counts as one region of electron density whatever its order, so there are three regions in a trigonal planar arrangement. Because lone pair-bonding pair repulsion is greater than bonding pair-bonding pair repulsion, and a lone pair occupies a larger region of space than a bond, the lone pair pushes the two bonds toward each other and closes the angle between them. The measured angle in S<sub>2</sub>O is about 118°."
+    "solution": "演示台设为三个区域、一对孤电子对时，显示平面三角形电子对构型、V 形分子构型和 120° 的理想角度，而实际的 S–S–O 角小于 120°。中心硫原子有两个键，一个与氧相连，一个与硫相连，还有一对孤电子对；无论键级如何，每个键都算作一个电子密度区域，所以有三个区域，呈平面三角形排布。由于孤电子对-成键电子对的排斥大于成键电子对-成键电子对的排斥，而且孤电子对占据的空间区域比键大，孤电子对把两个键推向彼此，使它们之间的角变小。S<sub>2</sub>O 中测得的角约为 118°。"
    }
   }
  ],
@@ -1629,14 +1781,14 @@
  "referents": [
   {
    "id": "negative-plate",
-   "label": "the negative plate of the electric field",
+   "label": "电场的负极板",
    "figures": [
     "sim-field"
    ]
   },
   {
    "id": "positive-plate",
-   "label": "the positive plate of the electric field",
+   "label": "电场的正极板",
    "figures": [
     "sim-field"
    ]

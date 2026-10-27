@@ -24,17 +24,17 @@ const clamp01 = (x) => Math.max(0, Math.min(1, x));
   const SX = 760;
   const y = (p) => TOP + (p + 1.5) * ROW;
   const SOL = [
-    ['1 M HCl', 0, 0], ['gastric juice', 1.5, 1.25], ['lime juice', 2.0, 1.8], ['1 M CH_{3}CO_{2}H (vinegar)', 2.4, 2.35],
-    ['stomach acid', 2.9, 2.9], ['wine', 3.5, 3.55], ['orange juice', 4.2, 4.2], ['coffee', 5.0, 5.05], ['rain water', 5.7, 5.7],
-    ['pure water', 7.0, 7.0], ['blood', 7.4, 7.6], ['ocean water', 8.0, 8.2], ['baking soda', 8.4, 8.75],
-    ['Milk of Magnesia', 10.5, 10.5], ['household ammonia, NH_{3}', 11.9, 11.85], ['bleach', 12.6, 12.6], ['1 M NaOH', 14.0, 14.0],
+    ['1 M HCl', 0, 0], ['胃液', 1.5, 1.25], ['青柠汁', 2.0, 1.8], ['1 M CH_{3}CO_{2}H（食醋）', 2.4, 2.35],
+    ['胃酸', 2.9, 2.9], ['葡萄酒', 3.5, 3.55], ['橙汁', 4.2, 4.2], ['咖啡', 5.0, 5.05], ['雨水', 5.7, 5.7],
+    ['纯水', 7.0, 7.0], ['血液', 7.4, 7.6], ['海水', 8.0, 8.2], ['小苏打', 8.4, 8.75],
+    ['镁乳', 10.5, 10.5], ['家用氨水，NH_{3}', 11.9, 11.85], ['漂白剂', 12.6, 12.6], ['1 M NaOH', 14.0, 14.0],
   ];
   let tc = null;
   const ph = F.ctl(d.controls, {
     label: '\\kpH', cls: 'concentration', min: -1, max: 15, step: 0.01, value: 7, unit: '', dec: 2,
-    aria: 'pH of the solution', specials: [{ at: () => PKW[tc ? tc.value : '25'] / 2, label: 'neutral' }],
+    aria: '溶液的 pH', specials: [{ at: () => PKW[tc ? tc.value : '25'] / 2, label: '中性' }],
   });
-  tc = F.choice(d.controls, { label: '\\kT', options: [{ value: '25', label: '25 °C' }, { value: '80', label: '80 °C' }], value: '25', aria: 'temperature of the solutions' });
+  tc = F.choice(d.controls, { label: '\\kT', options: [{ value: '25', label: '25 °C' }, { value: '80', label: '80 °C' }], value: '25', aria: '溶液的温度' });
   let hits = [];
   F.hover(d.stage, () => hits);
   /* a concentration to two significant figures as TeX */
@@ -43,7 +43,7 @@ const clamp01 = (x) => Math.max(0, Math.min(1, x));
     if (+m.toFixed(1) >= 10) { m /= 10; e += 1; }
     return e === 0 ? m.toFixed(1) : `${m.toFixed(1)}\\times10^{${e}}`;
   }
-  const power = (k) => (k === 0 ? '$10^{0}$ or 1' : `$10^{${-k}}$`);
+  const power = (k) => (k === 0 ? '$10^{0}$ 或 1' : `$10^{${-k}}$`);
   function draw() {
     const { ctx } = begin(d.c), cC = C('concentration'), pkw = tc.mix((v) => PKW[v]), pkwNow = PKW[tc.value], p = ph.v, ym = y(p);
     hits = [];
@@ -58,7 +58,7 @@ const clamp01 = (x) => Math.max(0, Math.min(1, x));
     text(ctx, '$\\kconcOH$ (M)', (COL[1] + COL[2]) / 2, 127, cC, { size: 22, weight: 600, align: 'center', tex: true });
     text(ctx, '$\\kpH$', (COL[2] + COL[3]) / 2, 127, cC, { size: 22, weight: 600, align: 'center', tex: true });
     text(ctx, '$\\kpOH$', (COL[3] + COL[4]) / 2, 127, cC, { size: 22, weight: 600, align: 'center', tex: true });
-    text(ctx, 'Sample Solution', (COL[4] + R) / 2, 127, PAL.ink, { size: 22, weight: 600, align: 'center' });
+    text(ctx, '样品溶液', (COL[4] + R) / 2, 127, PAL.ink, { size: 22, weight: 600, align: 'center' });
     for (let k = -1; k <= 15; k++) {
       const yy = y(k), a = near(yy);
       if (a <= 0) continue;
@@ -82,15 +82,15 @@ const clamp01 = (x) => Math.max(0, Math.min(1, x));
         const yl = y(lp);
         arrow(ctx, SX + 80, yl, SX + 4, y(pv), PAL.ink, 2);
         text(ctx, name, SX + 90, yl, PAL.ink, { size: 21 });
-        hits.push({ x: SX + 150, y: yl, r: 22, name: `${name.replace(/_\{(\d)\}/g, (m, n) => '₀₁₂₃₄₅₆₇₈₉'[n])}: pH about ${pv.toFixed(1)} at 25 °C` });
+        hits.push({ x: SX + 150, y: yl, r: 22, name: `${name.replace(/_\{(\d)\}/g, (m, n) => '₀₁₂₃₄₅₆₇₈₉'[n])}：25 °C 时 pH 约为 ${pv.toFixed(1)}` });
       }
     }, [0, 0]);
     const AX = 1320;
     arrow(ctx, AX, yN - 16, AX, y(-0.6), PAL.ink, 4);
     arrow(ctx, AX, yN + 16, AX, y(14.6), PAL.ink, 4);
-    text(ctx, 'acidic', AX - 22, y(0.2), PAL.ink, { size: 22, align: 'right' });
-    text(ctx, 'neutral', AX - 22, yN, PAL.ink, { size: 22, align: 'right' });
-    text(ctx, 'basic', AX - 22, y(13.8), PAL.ink, { size: 22, align: 'right' });
+    text(ctx, '酸性', AX - 22, y(0.2), PAL.ink, { size: 22, align: 'right' });
+    text(ctx, '中性', AX - 22, yN, PAL.ink, { size: 22, align: 'right' });
+    text(ctx, '碱性', AX - 22, y(13.8), PAL.ink, { size: 22, align: 'right' });
     line(ctx, L, ym, SX, ym, cC, 3);
     dot(ctx, SX, ym, cC, true, 9);
     const poh = pkwNow - p, chip = { size: 22, weight: 600, bg: PAL.panel };
@@ -98,9 +98,9 @@ const clamp01 = (x) => Math.max(0, Math.min(1, x));
     text(ctx, `$${conc(poh)}$`, COL[1] + 22, ym, cC, { ...chip, tex: true });
     text(ctx, minus(p.toFixed(2)), (COL[2] + COL[3]) / 2, ym, cC, { ...chip, align: 'center' });
     text(ctx, minus(poh.toFixed(2)), (COL[3] + COL[4]) / 2, ym, cC, { ...chip, align: 'center' });
-    const diff = p - pkwNow / 2, kind = Math.abs(diff) < 0.005 ? 'neutral' : diff < 0 ? 'acidic' : 'basic';
-    const rel = kind === 'neutral' ? 'equals' : kind === 'acidic' ? 'is greater than' : 'is less than';
-    topline(ctx, `At ${tc.value} °C, pH ${minus(p.toFixed(2))} is ${kind}: $\\kconcHyd$ ${rel} $\\kconcOH$.`);
+    const diff = p - pkwNow / 2, kind = Math.abs(diff) < 0.005 ? '中性' : diff < 0 ? '酸性' : '碱性';
+    const rel = kind === '中性' ? '等于' : kind === '酸性' ? '大于' : '小于';
+    topline(ctx, `在 ${tc.value} °C 时，pH ${minus(p.toFixed(2))} 呈${kind}：$\\kconcHyd$ ${rel} $\\kconcOH$。`);
     const H = (v) => (v < 0 ? `(${hue('concentration', minus(v.toFixed(2)))})` : hue('concentration', v.toFixed(2)));
     tex(d.readout, `\\kpH + \\kpOH = ${H(p)} + ${H(poh)} = \\kpKw = ${hue('equilibrium-constant', pkwNow.toFixed(2))}`);
   }

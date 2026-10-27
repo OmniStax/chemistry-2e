@@ -33,7 +33,7 @@ const rnd = (i, j) => { const s = Math.sin(i * 127.1 + j * 311.7) * 43758.5453; 
 
   const cy = F.cycle(() => T, 1.2);
   const temp = F.ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 100, max: 200, step: 1, value: TB, unit: '°C', dec: 0,
-    specials: [{ at: MP, label: 'melting point' }], onInput: () => cy.reset() });
+    specials: [{ at: MP, label: '熔点' }], onInput: () => cy.reset() });
   const ro = F.readout(d);
   let hits = [];
   F.hover(d.stage, () => hits);
@@ -72,7 +72,7 @@ const rnd = (i, j) => { const s = Math.sin(i * 127.1 + j * 311.7) * 43758.5453; 
   const diatomic = (el) => (ctx, x, y, a = 1) => { ball(ctx, x - 4.5, y, 5.5, F.el(el), a); ball(ctx, x + 4.5, y, 5.5, F.el(el), a); };
   const n2 = diatomic('N'), o2 = diatomic('O');
   const sulfur = (ctx, x, y, a = 1) => ball(ctx, x, y, 7, F.el('S'), a);
-  const KIND = { water: [water, 'a water molecule, H₂O'], n2: [n2, 'a nitrogen molecule of the air, N₂'], o2: [o2, 'an oxygen molecule of the air, O₂'], s: [sulfur, 'liquid sulfur'] };
+  const KIND = { water: [water, '水分子 H₂O'], n2: [n2, '空气中的氮分子 N₂'], o2: [o2, '空气中的氧分子 O₂'], s: [sulfur, '液态硫'] };
 
   function rect(ctx, x, y, w, h, fill) { ctx.fillStyle = fill; ctx.fillRect(x, y, w, h); }
   function pipeWall(ctx, x, y1, y2, w = WALL) { rect(ctx, x - w / 2, y1, w, y2 - y1, PAL.ink); }
@@ -118,7 +118,7 @@ const rnd = (i, j) => { const s = Math.sin(i * 127.1 + j * 311.7) * 43758.5453; 
     if (R > 60) for (let i = 0; i < 6; i++) {
       const u = frac(t * 0.6 + i / 6), side = i % 2 ? 1 : -1, x0 = CX + side * Math.min(R * 0.8, 170), y0 = POOL.y + 18;
       const x = lerp(x0, CX + side * (RI + RM) / 2, u), y = lerp(y0, YM + 4, u);
-      sulfur(ctx, x, y, clamp01(u / 0.15) * clamp01((1 - u) / 0.15)); hits.push({ x, y, r: 10, name: 'liquid sulfur' });
+      sulfur(ctx, x, y, clamp01(u / 0.15) * clamp01((1 - u) / 0.15)); hits.push({ x, y, r: 10, name: '液态硫' });
     }
 
     /* water down the outer pipe, two laps per cycle, fading into the deposit at the foot */
@@ -164,30 +164,30 @@ const rnd = (i, j) => { const s = Math.sin(i * 127.1 + j * 311.7) * 43758.5453; 
     ctx.restore();
 
     hits.push(
-      { x: CX - (RM + RO) / 2, y: 520, r: 26, name: 'outermost pipe: superheated water' }, { x: CX + (RM + RO) / 2, y: 520, r: 26, name: 'outermost pipe: superheated water' },
-      { x: CX, y: 420, r: 20, name: 'innermost pipe: compressed air' },
-      { x: CX - (RI + RM) / 2, y: 420, r: 22, name: 'middle pipe: sulfur, water, and air rising' }, { x: CX + (RI + RM) / 2, y: 420, r: 22, name: 'middle pipe: sulfur, water, and air rising' },
-      { x: 200, y: 540, r: 60, name: 'soil' }, { x: 1150, y: 760, r: 70, name: 'solid sulfur deposit' });
-    if (R > 30) hits.push({ x: CX - R * 0.6, y: POOL.y + 10, r: 24, name: 'liquid sulfur' }, { x: CX + R * 0.6, y: POOL.y + 10, r: 24, name: 'liquid sulfur' });
+      { x: CX - (RM + RO) / 2, y: 520, r: 26, name: '最外层管：过热水' }, { x: CX + (RM + RO) / 2, y: 520, r: 26, name: '最外层管：过热水' },
+      { x: CX, y: 420, r: 20, name: '最内层管：压缩空气' },
+      { x: CX - (RI + RM) / 2, y: 420, r: 22, name: '中间管：上升的硫、水和空气' }, { x: CX + (RI + RM) / 2, y: 420, r: 22, name: '中间管：上升的硫、水和空气' },
+      { x: 200, y: 540, r: 60, name: '土壤' }, { x: 1150, y: 760, r: 70, name: '固态硫矿床' });
+    if (R > 30) hits.push({ x: CX - R * 0.6, y: POOL.y + 10, r: 24, name: '液态硫' }, { x: CX + R * 0.6, y: POOL.y + 10, r: 24, name: '液态硫' });
 
     /* labels on the parts that stay put */
-    F.label(ctx, 'compressed air', XIN - 90, YAIR + 22, { side: 'below', gap: 26, size: 20 });
-    F.label(ctx, 'superheated water', XIN - 90, YWIN - 22, { side: 'above', gap: 26, size: 20 });
+    F.label(ctx, '压缩空气', XIN - 90, YAIR + 22, { side: 'below', gap: 26, size: 20 });
+    F.label(ctx, '过热水', XIN - 90, YWIN - 22, { side: 'above', gap: 26, size: 20 });
     text(ctx, '10 atm', XIN - 90, YWIN + 50, C('pressure'), { size: 20, weight: 600, align: 'center', bg: PAL.panel });
-    text(ctx, 'sulfur, water, and air', XOUT + 10, yo - 50, PAL.ink, { size: 20, weight: 600, bg: PAL.panel });
-    text(ctx, 'soil', 90, (GROUND + DEPOSIT) / 2, PAL.ink, { size: 20, weight: 600, bg: PAL.panel });
-    text(ctx, 'solid sulfur deposit', 1060, DEPOSIT + 60, PAL.ink, { size: 20, weight: 600, bg: PAL.panel });
-    if (R > 1) F.faded(ctx, clamp01((R - 40) / 60), [0, 0], () => F.label(ctx, 'liquid sulfur', CX + 0.6 * R, POOL.y + 12, { side: 'right', gap: 330 - 0.6 * R, size: 20 }));
+    text(ctx, '硫、水和空气', XOUT + 10, yo - 50, PAL.ink, { size: 20, weight: 600, bg: PAL.panel });
+    text(ctx, '土壤', 90, (GROUND + DEPOSIT) / 2, PAL.ink, { size: 20, weight: 600, bg: PAL.panel });
+    text(ctx, '固态硫矿床', 1060, DEPOSIT + 60, PAL.ink, { size: 20, weight: 600, bg: PAL.panel });
+    if (R > 1) F.faded(ctx, clamp01((R - 40) / 60), [0, 0], () => F.label(ctx, '液态硫', CX + 0.6 * R, POOL.y + 12, { side: 'right', gap: 330 - 0.6 * R, size: 20 }));
 
     /* the moving kinds, once each */
-    const items = [['H₂O', (x, y) => water(ctx, x, y)], ['N₂ and O₂ (air)', (x, y) => { n2(ctx, x - 7, y); o2(ctx, x + 13, y); }], ['S', (x, y) => sulfur(ctx, x, y)]];
+    const items = [['H₂O', (x, y) => water(ctx, x, y)], ['N₂ 和 O₂（空气）', (x, y) => { n2(ctx, x - 7, y); o2(ctx, x + 13, y); }], ['S', (x, y) => sulfur(ctx, x, y)]];
     items.forEach(([s, mark], i) => { const y = 300 + 40 * i; mark(70, y); text(ctx, s, 100, y, PAL.ink, { size: 17 }); });
 
-    topline(ctx, Tv > MP ? 'Hot water melts the sulfur, and compressed air lifts it up the middle pipe.'
-      : Tv === MP ? 'At 113 °C the water only reaches the melting point of sulfur, so none melts yet.'
-      : 'Water cooler than the melting point of sulfur leaves the deposit solid, so only water and air rise.');
+    topline(ctx, Tv > MP ? '热水使硫熔化，压缩空气把它沿中间的管向上推。'
+      : Tv === MP ? '在 113 °C 时，水刚好达到硫的熔点，所以硫还没有熔化。'
+      : '温度低于硫熔点的水使矿床保持固态，所以只有水和空气上升。');
     const rel = Tv > MP ? '>' : Tv === MP ? '=' : '<';
-    ro.set(`\\kT = \\mk{tv}{${Tv.toFixed(0)}\\ ^\\circ\\text{C}} \\mk{rel}{${rel}} \\mk{mp}{${hue('temperature', `${MP}\\ ^\\circ\\text{C}`)}}\\text{, the melting point of sulfur}`, undefined, { form: rel });
+    ro.set(`\\kT = \\mk{tv}{${Tv.toFixed(0)}\\ ^\\circ\\text{C}} \\mk{rel}{${rel}} \\mk{mp}{${hue('temperature', `${MP}\\ ^\\circ\\text{C}`)}}\\text{，硫的熔点}`, undefined, { form: rel });
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();

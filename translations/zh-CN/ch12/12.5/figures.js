@@ -32,8 +32,8 @@ const sciText = (x, sig) => { const { m, e } = sci(x, sig); return `${minus(m.to
   const EA = 200, DH = -34, WALL = 1.9, DT = 1 / 120;
   let traj = [0];
   const cy = cycle(() => (traj.length - 1) * DT, 1.2);
-  const side = F.choice(d.controls, { label: '\\text{strikes}', options: [{ value: 'O', label: 'oxygen end first' }, { value: 'C', label: 'carbon end first' }], value: 'C', aria: 'which end of the carbon monoxide molecule strikes the oxygen molecule', onInput: () => { plan(); cy.reset(); } });
-  const eS = ctl(d.controls, { label: '\\text{collision energy}', cls: 'energy', min: 50, max: 320, step: 5, value: 240, unit: 'kJ/mol', dec: 0, specials: [{ at: EA, label: 'activation energy' }], aria: 'the energy the collision brings, in kilojoules per mole', onInput: () => { plan(); cy.reset(); } });
+  const side = F.choice(d.controls, { label: '\\text{先碰撞的一端}', options: [{ value: 'O', label: '氧端先碰' }, { value: 'C', label: '碳端先碰' }], value: 'C', aria: '一氧化碳分子的哪一端撞击氧分子', onInput: () => { plan(); cy.reset(); } });
+  const eS = ctl(d.controls, { label: '\\text{碰撞能量}', cls: 'energy', min: 50, max: 320, step: 5, value: 240, unit: 'kJ/mol', dec: 0, specials: [{ at: EA, label: '活化能' }], aria: '碰撞所带的能量，单位为千焦每摩尔', onInput: () => { plan(); cy.reset(); } });
   const U = (s, o) => {
     if (s <= 3.4) return 0;
     if (o === 'O') return s <= 4.25 ? WALL * EA * S((s - 3.4) / 0.85) : WALL * EA + (s - 4.25) * 4000;
@@ -65,10 +65,10 @@ const sciText = (x, sig) => { const { m, e } = sci(x, sig); return `${minus(m.to
     const h = s - 4.25, xC = -0.375 - 0.45 * h, Ob = xC + 0.75 - 0.23 * S(h);
     return { C: xC, Oa: xC - 0.5 - 0.02 * S(h), Ob, Oc: Ob + 0.65 + 0.9 * h };
   }
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [-1.22, 1.22], views: [{ label: 'side', yaw: 0, pitch: 0.18 }, { label: 'above', yaw: 0, pitch: 1.2 }], h: 300, dist: 5.6, tilt: 0.18 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [-1.22, 1.22], views: [{ label: '侧面', yaw: 0, pitch: 0.18 }, { label: '上方', yaw: 0, pitch: 1.2 }], h: 300, dist: 5.6, tilt: 0.18 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 470);
   if (grp) grp.position.y = -0.4;
-  const NAMES = { Oa: 'an oxygen atom from the carbon monoxide molecule', C: 'the carbon atom from the carbon monoxide molecule', Ob: 'an oxygen atom from the oxygen molecule', Oc: 'an oxygen atom from the oxygen molecule' };
+  const NAMES = { Oa: '一氧化碳分子中的氧原子', C: '一氧化碳分子中的碳原子', Ob: '氧分子中的氧原子', Oc: '氧分子中的氧原子' };
   let sig = '', balls = {};
   function build() {
     if (!grp) return;
@@ -82,11 +82,11 @@ const sciText = (x, sig) => { const { m, e } = sci(x, sig); return `${minus(m.to
     build();
     if (grp) { const a = atomsAt(s, o); for (const k in balls) balls[k].position.set(a[k], 0, 0); v.invalidate(); }
     v.headline(o === 'O'
-      ? 'Oxygen strikes oxygen: no arrangement of these atoms leads to CO<sub>2</sub>, and the molecules bounce apart.'
-      : E >= EA ? 'The carbon end strikes with at least $\\kEa$: the molecules pass the transition state and part as CO<sub>2</sub> and O.'
-        : 'The carbon end strikes with less than $\\kEa$: the molecules climb part of the way to the transition state and bounce apart.');
+      ? '氧撞击氧：这几个原子无论怎样排布，都不会生成 CO<sub>2</sub>，两个分子相互弹开。'
+      : E >= EA ? '碳端以至少 $\\kEa$ 的能量撞击：分子越过过渡态，分开成 CO<sub>2</sub> 和 O。'
+        : '碳端以小于 $\\kEa$ 的能量撞击：分子沿通往过渡态的路爬上一段，然后相互弹开。');
     const { ctx } = begin(cnv), ce = C('energy'), cC = side.a('C'), guide = alpha(PAL.ink, 0.35);
-    const { X, Y } = F.axes(ctx, B, [0, 1], [-100, 350], { nx: 4, ny: 9, fx: () => '', fy: (y) => minus(fmt(y, 0)), xl: 'extent of reaction', yl: 'energy (kJ/mol)', yc: ce });
+    const { X, Y } = F.axes(ctx, B, [0, 1], [-100, 350], { nx: 4, ny: 9, fx: () => '', fy: (y) => minus(fmt(y, 0)), xl: '反应进程', yl: '能量（kJ/mol）', yc: ce });
     line(ctx, B.l, Y(0), B.r, Y(0), guide, 2, [10, 10]);
     F.faded(ctx, cC, [0, 0], () => line(ctx, X(0.5), Y(DH), B.r, Y(DH), guide, 2, [10, 10]));
     clipTo(ctx, B, () => side.curve(ctx, (val) => (x) => U(sOf(x), val), 0, 1, X, Y, PAL.ink, 5, 240));
@@ -94,14 +94,14 @@ const sciText = (x, sig) => { const { m, e } = sci(x, sig); return `${minus(m.to
     F.faded(ctx, cC, [0, 0], () => {
       F.vbracket(ctx, X(0.5), Y(0), Y(EA), ce, 'E_{a}', 1);
       F.vbracket(ctx, X(0.5), Y(0), Y(DH), ce, 'ΔH', 1);
-      text(ctx, 'transition state', X(0.5), Y(EA) - 30, PAL.ink, { size: 20, align: 'center', bg: PAL.panel });
+      text(ctx, '过渡态', X(0.5), Y(EA) - 30, PAL.ink, { size: 20, align: 'center', bg: PAL.panel });
       text(ctx, 'CO_{2} + O', X(0.8), Y(DH) + 30, PAL.ink, { size: 20, align: 'center', bg: PAL.panel });
     });
     text(ctx, 'CO + O_{2}', X(0.06), Y(0) - 26, PAL.ink, { size: 20, align: 'left', bg: PAL.panel });
-    text(ctx, 'collision energy', B.r - 4, Y(E) - 20, ce, { size: 18, align: 'right', weight: 600, bg: PAL.panel });
+    text(ctx, '碰撞能量', B.r - 4, Y(E) - 20, ce, { size: 18, align: 'right', weight: 600, bg: PAL.panel });
     dot(ctx, X(xiOf(s)), Y(U(s, o)), ce, true, 10);
     const rel = E > EA ? '>' : E < EA ? '<' : '=';
-    tex(d.readout, `\\text{collision energy} = ${hue('energy', E + '\\ \\text{kJ/mol}')} ${rel} \\kEa = ${hue('energy', EA + '\\ \\text{kJ/mol}')}`);
+    tex(d.readout, `\\text{碰撞能量} = ${hue('energy', E + '\\ \\text{kJ/mol}')} ${rel} \\kEa = ${hue('energy', EA + '\\ \\text{kJ/mol}')}`);
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
@@ -119,8 +119,8 @@ const sciText = (x, sig) => { const { m, e } = sci(x, sig); return `${minus(m.to
 (function () {
   const d = sim('sim-distribution', 560);
   const RK = 8.314e-3, T1 = 300;
-  const eaS = ctl(d.controls, { label: '\\kEa', cls: 'energy', min: 2, max: 28, step: 1, value: 12, unit: 'kJ/mol', dec: 0, aria: 'activation energy, in kilojoules per mole' });
-  const tS = ctl(d.controls, { label: '\\kTtwo', cls: 'temperature', min: 300, max: 900, step: 10, value: 600, unit: 'K', dec: 0, aria: 'the second temperature, in kelvin' });
+  const eaS = ctl(d.controls, { label: '\\kEa', cls: 'energy', min: 2, max: 28, step: 1, value: 12, unit: 'kJ/mol', dec: 0, aria: '活化能，单位为千焦每摩尔' });
+  const tS = ctl(d.controls, { label: '\\kTtwo', cls: 'temperature', min: 300, max: 900, step: 10, value: 600, unit: 'K', dec: 0, aria: '第二个温度，单位为开尔文' });
   const f = (E, T) => { const rt = RK * T; return E <= 0 ? 0 : 2 / Math.sqrt(Math.PI) * rt ** -1.5 * Math.sqrt(E) * Math.exp(-E / rt); };
   function erfc(x) {
     const z = Math.abs(x), t = 1 / (1 + 0.5 * z);
@@ -132,9 +132,9 @@ const sciText = (x, sig) => { const { m, e } = sci(x, sig); return `${minus(m.to
   const B = { l: 130, r: 1300, t: 110, b: 470 };
   function draw() {
     const { ctx, H } = begin(d.c), Ea = eaS.v, T2 = tS.v, ce = C('energy');
-    const head = F.headline(ctx, `At $\\kTtwo$ = ${T2} K, ${pct(above(Ea, T2))}% of the molecules reach $\\kEa$ = ${Ea} kJ/mol, against ${pct(above(Ea, T1))}% at $\\kTone$ = ${T1} K.`);
+    const head = F.headline(ctx, `在 $\\kTtwo$ = ${T2} K 时，有 ${pct(above(Ea, T2))}% 的分子达到 $\\kEa$ = ${Ea} kJ/mol，而在 $\\kTone$ = ${T1} K 时为 ${pct(above(Ea, T1))}%。`);
     const lab = F.labeller(ctx, H, { headline: head });
-    const { X, Y } = F.axes(ctx, B, [0, 30], [0, 0.24], { nx: 6, ny: 4, fy: () => '', xl: 'kinetic energy (kJ/mol)', xc: ce, yl: 'number of molecules' });
+    const { X, Y } = F.axes(ctx, B, [0, 30], [0, 0.24], { nx: 6, ny: 4, fy: () => '', xl: '动能（kJ/mol）', xc: ce, yl: '分子数' });
     const k = F.arrival(d), curves = [[T1, F.cat(0), 'T_{1}'], [T2, F.cat(1), 'T_{2}']];
     for (const [T, col] of curves) {
       ctx.save(); ctx.globalAlpha *= 0.3 * k; ctx.fillStyle = col; ctx.beginPath(); ctx.moveTo(X(Ea), Y(0));
@@ -147,7 +147,7 @@ const sciText = (x, sig) => { const { m, e } = sci(x, sig); return `${minus(m.to
     for (const [T, col, name] of curves) { const E = 2.2 * RK * T; lab.add(`${name} = ${T} K`, X(E), Y(f(E, T)), 0.7, -0.7, col, 20, 26); }
     lab.flush();
     const val = Ea * 1000 / 8.314 * (1 / T2 - 1 / T1), ratio = Math.exp(-val);
-    tex(d.readout, `\\ln\\frac{\\kkone}{\\kktwo} = \\frac{\\kEa}{R}\\left(\\frac{1}{\\kTtwo}-\\frac{1}{\\kTone}\\right) = \\frac{${hue('energy', Ea * 1000 + '\\ \\text{J mol}^{-1}')}}{8.314\\ \\text{J mol}^{-1}\\,\\text{K}^{-1}}\\left(\\frac{1}{${hue('temperature', T2 + '\\ \\text{K}')}}-\\frac{1}{${hue('temperature', T1 + '\\ \\text{K}')}}\\right) = ${fmt(val, 2)},\\ \\text{so}\\ \\kktwo = ${ratio >= 10 ? fmt(ratio, 0) : fmt(ratio, 2)}\\,\\kkone`);
+    tex(d.readout, `\\ln\\frac{\\kkone}{\\kktwo} = \\frac{\\kEa}{R}\\left(\\frac{1}{\\kTtwo}-\\frac{1}{\\kTone}\\right) = \\frac{${hue('energy', Ea * 1000 + '\\ \\text{J mol}^{-1}')}}{8.314\\ \\text{J mol}^{-1}\\,\\text{K}^{-1}}\\left(\\frac{1}{${hue('temperature', T2 + '\\ \\text{K}')}}-\\frac{1}{${hue('temperature', T1 + '\\ \\text{K}')}}\\right) = ${fmt(val, 2)},\\ \\text{所以}\\ \\kktwo = ${ratio >= 10 ? fmt(ratio, 0) : fmt(ratio, 2)}\\,\\kkone`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -165,8 +165,8 @@ const sciText = (x, sig) => { const { m, e } = sci(x, sig); return `${minus(m.to
   const d = sim('sim-arrhenius-plot', 600);
   const Ts = [555, 575, 645, 700, 781], inv = [1.80, 1.74, 1.55, 1.43, 1.28], lk = [-14.860, -13.617, -9.362, -6.759, -3.231];
   const opts = [];
-  for (let i = 0; i < 5; i++) for (let j = i + 1; j < 5; j++) opts.push({ value: `${i}-${j}`, label: `${Ts[i]} K and ${Ts[j]} K` });
-  const pair = F.select(d.controls, { label: '\\text{points}', options: opts, value: '0-4', aria: 'the two measurements the slope is taken between' });
+  for (let i = 0; i < 5; i++) for (let j = i + 1; j < 5; j++) opts.push({ value: `${i}-${j}`, label: `${Ts[i]} K 和 ${Ts[j]} K` });
+  const pair = F.select(d.controls, { label: '\\text{数据点}', options: opts, value: '0-4', aria: '取斜率所用的两个测量点' });
   const n = 5, mx = inv.reduce((a, b) => a + b) / n, my = lk.reduce((a, b) => a + b) / n;
   const fit = inv.reduce((a, x, i) => a + (x - mx) * (lk[i] - my), 0) / inv.reduce((a, x) => a + (x - mx) ** 2, 0);
   const lineAt = (x) => my + fit * (x - mx);
@@ -175,7 +175,7 @@ const sciText = (x, sig) => { const { m, e } = sci(x, sig); return `${minus(m.to
     const { ctx, H } = begin(d.c), [i, j] = pair.value.split('-').map(Number);
     const dl = lk[i] - lk[j], dx = +(inv[i] - inv[j]).toFixed(2), sr = sci(dl / (dx * 1e-3), 2), slope = sr.m * 10 ** sr.e;
     const Ea = -slope * 8.314;
-    const head = F.headline(ctx, `Between ${Ts[i]} K and ${Ts[j]} K, $\\Delta\\ln\\kk$ = ${minus(dl.toFixed(3))} over $\\Delta(1/\\kT)$ = ${dx.toFixed(2)} × 10⁻³ K⁻¹: a slope of ${sciText(slope, 2)} K.`);
+    const head = F.headline(ctx, `在 ${Ts[i]} K 与 ${Ts[j]} K 之间，$\\Delta\\ln\\kk$ = ${minus(dl.toFixed(3))} 除以 $\\Delta(1/\\kT)$ = ${dx.toFixed(2)} × 10⁻³ K⁻¹，得斜率为 ${sciText(slope, 2)} K。`);
     const lab = F.labeller(ctx, H, { headline: head });
     const { X, Y } = F.axes(ctx, B, [1.2, 1.9], [-16, -2], { nx: 7, ny: 7, fx: (x) => fmt(x, 1), fy: (y) => minus(fmt(y, 0)), xl: '1/T (10⁻³ K⁻¹)', yl: 'ln k' });
     clipTo(ctx, B, () => F.curve(ctx, lineAt, 1.22, 1.88, X, Y, PAL.ink, 4, 2));
@@ -188,7 +188,7 @@ const sciText = (x, sig) => { const { m, e } = sci(x, sig); return `${minus(m.to
     lab.beside({ x1: X(inv[j]), y1: Y(lk[i]), x2: X(inv[j]), y2: Y(lk[j]) }, 'left', 'Δ ln k', PAL.ink, 20);
     lab.beside({ x1: X(inv[j]), y1: Y(lk[i]), x2: X(inv[i]), y2: Y(lk[i]) }, 'right', 'Δ(1/T)', PAL.ink, 20);
     lab.flush();
-    tex(d.readout, `\\kEa = -\\text{slope}\\times R = -(${sciTex(slope, 2)}\\ \\text{K})(8.314\\ \\text{J mol}^{-1}\\,\\text{K}^{-1}) = ${hue('energy', sciTex(Ea, 2) + '\\ \\text{J mol}^{-1}')}`);
+    tex(d.readout, `\\kEa = -\\text{斜率}\\times R = -(${sciTex(slope, 2)}\\ \\text{K})(8.314\\ \\text{J mol}^{-1}\\,\\text{K}^{-1}) = ${hue('energy', sciTex(Ea, 2) + '\\ \\text{J mol}^{-1}')}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

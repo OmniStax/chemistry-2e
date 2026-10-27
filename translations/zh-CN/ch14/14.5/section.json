@@ -2,31 +2,39 @@
  "id": "14.5",
  "module": "m68807",
  "chapter": "14",
- "title": "Polyprotic Acids",
- "short": "Polyprotic Acids",
- "lead": "Some acids hold more than one ionizable hydrogen atom, as carbonic acid and phosphoric acid do, and give them up to water one proton at a time, each step with an <span data-concept=\"acid-ionization-constant\">ionization constant</span> of its own; some bases, such as the carbonate ion, accept more than one proton in the same stepwise way.",
+ "title": "多元酸",
+ "short": "多元酸",
+ "lead": "有些酸含有不止一个可电离的氢原子，碳酸和磷酸就是如此，它们一次一个地把质子转移给水，每一步都有各自的<span data-concept=\"acid-ionization-constant\">电离常数</span>；有些碱，如碳酸根离子，也以同样的分步方式接受不止一个质子。",
  "objectives": [
-  "Extend previously introduced equilibrium concepts to acids and bases that may donate or accept more than one proton"
+  "将前面介绍过的平衡概念推广到可以给出或接受不止一个质子的酸和碱"
  ],
- "summary_html": "<p>An acid that contains more than one ionizable proton is a polyprotic acid. These acids undergo <span data-concept=\"stepwise-ionization\">stepwise ionization</span> reactions involving the transfer of single protons. The ionization constants for polyprotic acids decrease with each subsequent step; these decreases typically are large enough to permit simple equilibrium calculations that treat each step separately.</p>",
- "notes": "Nothing of the section is left out; the ICE table of Example 14.19 is written as a table, the acetic acid equation is kept as the book’s image, and the example’s closing line keeps its [H₃O⁺] = 1.2 × 10⁻⁴ without a unit, as printed.",
+ "summary_html": "<p>含有不止一个可电离质子的酸称为多元酸。这类酸发生涉及单个质子转移的<span data-concept=\"stepwise-ionization\">分步电离</span>反应。多元酸的电离常数随每一步依次减小；这种减小通常大到足以使我们可以分别处理各步，进行简单的平衡计算。</p>",
+ "notes": "本节没有任何内容被省略；例 14.19 的 ICE 表写成表格，乙酸方程式保留书中的图片，例题结尾一行保留印刷的 [H₃O⁺] = 1.2 × 10⁻⁴，不带单位。",
  "ai": {
   "text": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-10-05",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answer. The two unkeyed numerical exercises are left out, and no answer is computed for them: fs-idp108710816 and fs-idp33679104. The keyed exercise fs-idm75310368 (exercise 64, nicotine as a base that accepts two protons) is printed in Section 14.3 and set here because it tests the polyprotic bases this section introduces. Part (c) of exercise 76 is a demonstration whose worked answer is the book’s, given with the solution. Numeric answers accept 2%, except the one-significant-figure concentrations of the Check Your Learning and of exercise 64, which accept 10%.",
+ "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案取自书后答案和“学习检测”的答案。两道没有答案的数值习题被省略，也没有为它们计算答案：fs-idp108710816 和 fs-idp33679104。有答案的习题 fs-idm75310368（习题 64，尼古丁作为接受两个质子的碱）印在 14.3 节，这里将其放入，因为它考查本节介绍的多元碱。习题 76 的 (c) 部分是一项论证，其详解答案取自书中，随解答给出。数值答案接受 2% 的误差，但学习检测和习题 64 中只有一位有效数字的浓度例外，它们接受 10%。",
  "figures": [
   {
    "id": "sim-stepwise",
@@ -40,6 +48,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -52,6 +65,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   }
@@ -160,7 +178,7 @@
     "after": "ex-diprotic"
    },
    "cite": "calculations",
-   "prompt": "The concentration of H<sub>2</sub>S in a saturated aqueous solution at room temperature is approximately 0.1 <em>M</em>. Calculate $[{\\text{H}}_{3}{\\text{O}}^{\\text{+}}],$ [HS<sup>−</sup>], and [S<sup>2−</sup>] in the solution:<br>${\\text{H}}_{2}\\text{S}(aq)+{\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{HS}}^{-}(aq)\\hspace{5em}{K}_{\\text{a}1}=8.9\\;\\times\\;{10}^{-8}$<br>${\\text{HS}}^{-}(aq)+{\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{S}}^{2-}(aq)\\hspace{5em}{K}_{\\text{a}2}=1.0\\;\\times\\;{10}^{-19}$",
+   "prompt": "室温下，H<sub>2</sub>S 在饱和水溶液中的浓度约为 0.1 <em>M</em>。计算溶液中的 $[{\\text{H}}_{3}{\\text{O}}^{\\text{+}}],$ [HS<sup>−</sup>] 和 [S<sup>2−</sup>]：<br>${\\text{H}}_{2}\\text{S}(aq)+{\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{HS}}^{-}(aq)\\hspace{5em}{K}_{\\text{a}1}=8.9\\;\\times\\;{10}^{-8}$<br>${\\text{HS}}^{-}(aq)+{\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{S}}^{2-}(aq)\\hspace{5em}{K}_{\\text{a}2}=1.0\\;\\times\\;{10}^{-19}$",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -169,17 +187,17 @@
       "part": "[H₃O⁺] = [HS⁻]",
       "value": 9.4e-05,
       "unit": "M",
-      "hint": "Treat the first ionization alone with an ICE table, as in Example 14.19, assuming x is small beside 0.1."
+      "hint": "像例 14.19 那样，用 ICE 表单独处理第一步电离，假设 x 比 0.1 小得多。"
      },
      {
       "part": "[S²⁻]",
       "value": 1e-19,
       "unit": "M",
       "tol": 0.1,
-      "hint": "Put the [H₃O⁺] and [HS⁻] of the first step into the expression for the second ionization."
+      "hint": "把第一步得到的 [H₃O⁺] 和 [HS⁻] 代入第二步电离的表达式。"
      }
     ],
-    "solution": "[H<sub>2</sub>S] = 0.1 <em>M</em>; $[{\\text{H}}_{3}{\\text{O}}^{\\text{+}}]$ = [HS<sup>−</sup>] = 0.000094 <em>M</em>; [S<sup>2−</sup>] = 1 × 10<sup>−19</sup> <em>M</em>"
+    "solution": "[H<sub>2</sub>S] = 0.1 <em>M</em>；$[{\\text{H}}_{3}{\\text{O}}^{\\text{+}}]$ = [HS<sup>−</sup>] = 0.000094 <em>M</em>；[S<sup>2−</sup>] = 1 × 10<sup>−19</sup> <em>M</em>"
    }
   },
   {
@@ -193,7 +211,7 @@
     "at": "end"
    },
    "cite": "bases",
-   "prompt": "Nicotine, C<sub>10</sub>H<sub>14</sub>N<sub>2</sub>, is a base that will accept two protons (<em>K</em><sub>b1</sub> = 7 × 10<sup>−7</sup>, <em>K</em><sub>b2</sub> = 1.4 × 10<sup>−11</sup>). What is the concentration of each species present in a 0.050-<em>M</em> solution of nicotine?",
+   "prompt": "尼古丁 C<sub>10</sub>H<sub>14</sub>N<sub>2</sub> 是一种可以接受两个质子的碱（<em>K</em><sub>b1</sub> = 7 × 10<sup>−7</sup>，<em>K</em><sub>b2</sub> = 1.4 × 10<sup>−11</sup>）。在 0.050 <em>M</em> 的尼古丁溶液中，存在的每种物种的浓度各是多少？",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -202,7 +220,7 @@
       "part": "[C₁₀H₁₄N₂]",
       "value": 0.049,
       "unit": "M",
-      "hint": "Treat the first step, the base ionization with K_b1, alone with an ICE table, as a polyprotic acid is treated."
+      "hint": "像处理多元酸那样，用 ICE 表单独处理第一步，即 K_b1 对应的碱电离。"
      },
      {
       "part": "[C₁₀H₁₄N₂H⁺]",
@@ -214,7 +232,7 @@
       "part": "[C₁₀H₁₄N₂H₂²⁺]",
       "value": 1.4e-11,
       "unit": "M",
-      "hint": "The second step's product comes from K_b2 with the [C₁₀H₁₄N₂H⁺] and [OH⁻] of the first step."
+      "hint": "第二步的产物由 K_b2 以及第一步的 [C₁₀H₁₄N₂H⁺] 和 [OH⁻] 求得。"
      },
      {
       "part": "[OH⁻]",
@@ -227,10 +245,10 @@
       "value": 5.3e-11,
       "unit": "M",
       "tol": 0.1,
-      "hint": "Use the ion-product constant for water with [OH⁻]."
+      "hint": "用水的离子积常数和 [OH⁻] 求解。"
      }
     ],
-    "solution": "[C<sub>10</sub>H<sub>14</sub>N<sub>2</sub>] = 0.049 <em>M</em>; [C<sub>10</sub>H<sub>14</sub>N<sub>2</sub>H<sup>+</sup>] = 1.9 × 10<sup>−4</sup> <em>M</em>; $[{\\text{C}}_{10}{\\text{H}}_{14}{\\text{N}}_{2}{\\text{H}}_{2}{}^{2+}]$ = 1.4 × 10<sup>−11</sup> <em>M</em>; [OH<sup>−</sup>] = 1.9 × 10<sup>−4</sup> <em>M</em>; [H<sub>3</sub>O<sup>+</sup>] = 5.3 × 10<sup>−11</sup> <em>M</em>"
+    "solution": "[C<sub>10</sub>H<sub>14</sub>N<sub>2</sub>] = 0.049 <em>M</em>；[C<sub>10</sub>H<sub>14</sub>N<sub>2</sub>H<sup>+</sup>] = 1.9 × 10<sup>−4</sup> <em>M</em>；$[{\\text{C}}_{10}{\\text{H}}_{14}{\\text{N}}_{2}{\\text{H}}_{2}{}^{2+}]$ = 1.4 × 10<sup>−11</sup> <em>M</em>；[OH<sup>−</sup>] = 1.9 × 10<sup>−4</sup> <em>M</em>；[H<sub>3</sub>O<sup>+</sup>] = 5.3 × 10<sup>−11</sup> <em>M</em>"
    }
   },
   {
@@ -243,11 +261,11 @@
     "at": "end"
    },
    "cite": "diprotic",
-   "prompt": "Which of the following concentrations would be practically equal in a calculation of the equilibrium concentrations in a 0.134-<em>M</em> solution of H<sub>2</sub>CO<sub>3</sub>, a diprotic acid: $[{\\text{H}}_{3}{\\text{O}}^{\\text{+}}],$ [OH<sup>−</sup>], [H<sub>2</sub>CO<sub>3</sub>], $[{\\text{HCO}}_{3}{}^{-}],$ $[{\\text{CO}}_{3}{}^{2-}]?$ No calculations are needed to answer this question.",
+   "prompt": "在计算 0.134 <em>M</em> 的二元酸 H<sub>2</sub>CO<sub>3</sub> 溶液中的平衡浓度时，下列哪些浓度几乎相等：$[{\\text{H}}_{3}{\\text{O}}^{\\text{+}}],$ [OH<sup>−</sup>]、[H<sub>2</sub>CO<sub>3</sub>]、$[{\\text{HCO}}_{3}{}^{-}],$ $[{\\text{CO}}_{3}{}^{2-}]?$ 回答这个问题不需要计算。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "[H<sub>3</sub>O<sup>+</sup>] and $[{\\text{HCO}}_{3}{}^{-}]$ are practically equal"
+    "solution": "[H<sub>3</sub>O<sup>+</sup>] 和 $[{\\text{HCO}}_{3}{}^{-}]$ 几乎相等"
    }
   },
   {
@@ -260,7 +278,7 @@
     "at": "end"
    },
    "cite": "calculations",
-   "prompt": "Calculate the concentration of each species present in a 0.010-<em>M</em> solution of phthalic acid, C<sub>6</sub>H<sub>4</sub>(CO<sub>2</sub>H)<sub>2</sub>.<br>$\\begin{array}{l}{\\text{C}}_{6}{\\text{H}}_{4}{({\\text{CO}}_{2}\\text{H})}_{2}(aq)+{\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{C}}_{6}{\\text{H}}_{4}({\\text{CO}}_{2}\\text{H})\\;{({\\text{CO}}_{2})}^{-}(aq)\\hspace{4em}{K}_{\\text{a}}=1.1\\;\\times\\;{10}^{-3} \\\\ {\\text{C}}_{6}{\\text{H}}_{4}({\\text{CO}}_{2}\\text{H})({\\text{CO}}_{2}){}^{-}\\;(aq)+{\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{C}}_{6}{\\text{H}}_{4}{({\\text{CO}}_{2})}_{2}{}^{2-}(aq)\\hspace{5em}{K}_{\\text{a}}=3.9\\;\\times\\;{10}^{-6}\\end{array}$",
+   "prompt": "计算 0.010 <em>M</em> 的邻苯二甲酸 C<sub>6</sub>H<sub>4</sub>(CO<sub>2</sub>H)<sub>2</sub> 溶液中存在的每种物种的浓度。<br>$\\begin{array}{l}{\\text{C}}_{6}{\\text{H}}_{4}{({\\text{CO}}_{2}\\text{H})}_{2}(aq)+{\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{C}}_{6}{\\text{H}}_{4}({\\text{CO}}_{2}\\text{H})\\;{({\\text{CO}}_{2})}^{-}(aq)\\hspace{4em}{K}_{\\text{a}}=1.1\\;\\times\\;{10}^{-3} \\\\ {\\text{C}}_{6}{\\text{H}}_{4}({\\text{CO}}_{2}\\text{H})({\\text{CO}}_{2}){}^{-}\\;(aq)+{\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{C}}_{6}{\\text{H}}_{4}{({\\text{CO}}_{2})}_{2}{}^{2-}(aq)\\hspace{5em}{K}_{\\text{a}}=3.9\\;\\times\\;{10}^{-6}\\end{array}$",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -269,7 +287,7 @@
       "part": "[C₆H₄(CO₂H)₂]",
       "value": 0.0072,
       "unit": "M",
-      "hint": "K_a1 is too large beside 0.010 to neglect x, so solve the first step's quadratic."
+      "hint": "K_a1 相对于 0.010 太大，不能忽略 x，所以要解第一步的一元二次方程。"
      },
      {
       "part": "[C₆H₄(CO₂H)(CO₂)⁻] = [H₃O⁺]",
@@ -280,7 +298,7 @@
       "part": "[C₆H₄(CO₂)₂²⁻]",
       "value": 3.9e-06,
       "unit": "M",
-      "hint": "With the first step's two equal concentrations in the second ionization's expression, they cancel."
+      "hint": "把第一步得到的两个相等的浓度代入第二步电离的表达式，它们相互抵消。"
      },
      {
       "part": "[OH⁻]",
@@ -301,7 +319,7 @@
     "at": "end"
    },
    "cite": "calculations",
-   "prompt": "The ion HTe<sup>−</sup> is an amphiprotic species; it can act as either an acid or a base.<br>(a) What is <em>K</em><sub>a</sub> for the acid reaction of HTe<sup>−</sup> with H<sub>2</sub>O?<br>(b) What is <em>K</em><sub>b</sub> for the reaction in which HTe<sup>−</sup> functions as a base in water?<br>(c) Demonstrate whether or not the second ionization of H<sub>2</sub>Te can be neglected in the calculation of [HTe<sup>−</sup>] in a 0.10 M solution of H<sub>2</sub>Te.",
+   "prompt": "离子 HTe<sup>−</sup> 是质子两性物种；它既可以作为酸，也可以作为碱。<br>（a）HTe<sup>−</sup> 与 H<sub>2</sub>O 的酸反应的 <em>K</em><sub>a</sub> 是多少？<br>（b）HTe<sup>−</sup> 在水中作为碱的反应的 <em>K</em><sub>b</sub> 是多少？<br>（c）论证在计算 0.10 M 的 H<sub>2</sub>Te 溶液中的 [HTe<sup>−</sup>] 时，H<sub>2</sub>Te 的第二步电离是否可以忽略。",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -309,15 +327,15 @@
      {
       "part": "(a) <em>K</em><sub>a</sub>",
       "value": 1.5e-11,
-      "hint": "The acid reaction of HTe⁻ is the second ionization of H₂Te; look up its constant in Appendix H."
+      "hint": "HTe⁻ 的酸反应就是 H₂Te 的第二步电离；在附录 H 中查找其常数。"
      },
      {
       "part": "(b) <em>K</em><sub>b</sub>",
       "value": 4.3e-12,
-      "hint": "HTe⁻ acting as a base is the conjugate base of H₂Te, so divide K_w by the first ionization constant of H₂Te."
+      "hint": "HTe⁻ 作为碱是 H₂Te 的共轭碱，所以用 K_w 除以 H₂Te 的第一电离常数。"
      }
     ],
-    "solution": "(a) ${K}_{\\text{a2}}=1.5\\;\\times\\;{10}^{-11};$<br>(b) ${K}_{\\text{b}}=4.3\\;\\times\\;{10}^{-12};$<br>(c) $\\frac{[{\\text{Te}}^{2-}][{\\text{H}}_{3}{\\text{O}}^{\\text{+}}]}{[{\\text{HTe}}^{-}]}=\\frac{(x)(0.0141+x)}{(0.0141-x)}\\approx\\frac{(x)(0.0141)}{0.0141}=1.5\\;\\times\\;{10}^{-11}$<br>Solving for <em>x</em> gives 1.5 × 10<sup>−11</sup> <em>M</em>. Therefore, compared with 0.014 <em>M</em>, this value is negligible (1.1 × 10<sup>−7</sup>%)."
+    "solution": "（a）${K}_{\\text{a2}}=1.5\\;\\times\\;{10}^{-11};$<br>（b）${K}_{\\text{b}}=4.3\\;\\times\\;{10}^{-12};$<br>（c）$\\frac{[{\\text{Te}}^{2-}][{\\text{H}}_{3}{\\text{O}}^{\\text{+}}]}{[{\\text{HTe}}^{-}]}=\\frac{(x)(0.0141+x)}{(0.0141-x)}\\approx\\frac{(x)(0.0141)}{0.0141}=1.5\\;\\times\\;{10}^{-11}$<br>解出 <em>x</em> 得 1.5 × 10<sup>−11</sup> <em>M</em>。因此，与 0.014 <em>M</em> 相比，这个值可以忽略（1.1 × 10<sup>−7</sup>%）。"
    }
   }
  ],
@@ -375,7 +393,7 @@
   {
    "id": "c-hydronium-unit",
    "kind": "correction",
-   "html": "The book gives [H<sub>3</sub>O<sup>+</sup>] = 1.2 × 10<sup>−4</sup> without its unit; it is 1.2 × 10<sup>−4</sup> <em>M</em>."
+   "html": "书中给出 [H<sub>3</sub>O<sup>+</sup>] = 1.2 × 10<sup>−4</sup> 时没有写单位；它是 1.2 × 10<sup>−4</sup> <em>M</em>。"
   }
  ]
 }

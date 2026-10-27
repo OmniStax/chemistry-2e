@@ -2,34 +2,42 @@
   "id": "12.4",
   "module": "m68791",
   "chapter": "12",
-  "title": "Integrated Rate Laws",
-  "short": "Integrated Rate Laws",
-  "lead": "Integrating a rate law gives an equation for how the <span data-concept=\"concentration\">concentration</span> of a reactant changes with <span data-concept=\"time\">time</span>. The section writes these integrated rate laws for first-, second-, and zero-order reactions, reads the order and the <span data-concept=\"rate-constant\">rate constant</span> of a reaction from plots of its data, and defines the <span data-concept=\"half-life\">half-life</span> of a reaction.",
+  "title": "积分速率定律",
+  "short": "积分速率定律",
+  "lead": "对速率定律积分，就得到一个方程，说明反应物的<span data-concept=\"concentration\">浓度</span>如何随<span data-concept=\"time\">时间</span>变化。本节写出一级、二级和零级反应的这些积分速率定律，由反应的数据图读出反应的级数和<span data-concept=\"rate-constant\">速率常数</span>，并定义反应的<span data-concept=\"half-life\">半衰期</span>。",
   "objectives": [
-    "Explain the form and function of an integrated rate law",
-    "Perform integrated rate law calculations for zero-, first-, and second-order reactions",
-    "Define half-life and carry out related calculations",
-    "Identify the order of a reaction from concentration/time data"
+    "说明积分速率定律的形式和作用",
+    "对零级、一级和二级反应进行积分速率定律的计算",
+    "定义半衰期并进行相关计算",
+    "由浓度/时间数据确定反应的级数"
   ],
-  "summary_html": "<p>Integrated rate laws are mathematically derived from differential rate laws, and they describe the <span data-concept=\"time\">time</span> dependence of reactant and product <span data-concept=\"concentration\">concentrations</span>.</p><p>The <span data-concept=\"half-life\">half-life</span> of a reaction is the <span data-concept=\"time\">time</span> required to decrease the amount of a given reactant by one-half. A reaction’s <span data-concept=\"half-life\">half-life</span> varies with <span data-concept=\"rate-constant\">rate constant</span> and, for some reaction orders, reactant <span data-concept=\"concentration\">concentration</span>. The <span data-concept=\"half-life\">half-life</span> of a zero-order reaction decreases as the initial <span data-concept=\"concentration\">concentration</span> of the reactant in the reaction decreases. The <span data-concept=\"half-life\">half-life</span> of a first-order reaction is independent of <span data-concept=\"concentration\">concentration</span>, and the <span data-concept=\"half-life\">half-life</span> of a second-order reaction decreases as the <span data-concept=\"concentration\">concentration</span> increases.</p>",
-  "notes": "Nothing of the section is left out; Example 12.8 keeps the book’s “1/0.200 mol⁻¹” for 1/(0.200 mol L⁻¹) as printed.",
+  "summary_html": "<p>积分速率定律由微分速率定律经数学推导得出，它们描述反应物和产物的<span data-concept=\"concentration\">浓度</span>对<span data-concept=\"time\">时间</span>的依赖关系。</p><p>反应的<span data-concept=\"half-life\">半衰期</span>是使给定反应物的量减少一半所需的<span data-concept=\"time\">时间</span>。反应的<span data-concept=\"half-life\">半衰期</span>随<span data-concept=\"rate-constant\">速率常数</span>而变化，对某些反应级数，还随反应物的<span data-concept=\"concentration\">浓度</span>而变化。零级反应的<span data-concept=\"half-life\">半衰期</span>随反应中反应物的初始<span data-concept=\"concentration\">浓度</span>降低而缩短。一级反应的<span data-concept=\"half-life\">半衰期</span>与<span data-concept=\"concentration\">浓度</span>无关，二级反应的<span data-concept=\"half-life\">半衰期</span>随<span data-concept=\"concentration\">浓度</span>增大而缩短。</p>",
+  "notes": "本节没有任何内容被略去；例 12.8 保留了书中用 “1/0.200 mol⁻¹” 表示 1/(0.200 mol L⁻¹) 的印刷形式。",
   "ai": {
     "text": [
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ],
     "figures": [
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ]
   },
-  "built": "2026-10-05",
+  "built": "2026-10-26",
   "exercises_lead": "",
-  "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers; the plots and the table the key prints are kept in the answers as printed. The eight unkeyed numerical exercises are left out, and no answer is computed for them: fs-idm81797520, fs-idp123052496, fs-idm71090800, fs-idm82644240, fs-idm22532944, fs-idm45932336, fs-idp120051200, fs-idm43018880. The unkeyed conceptual exercise fs-idp11885680 carries a suggested approach marked as OmniStax’s own. Rate constants read from a plot accept 5% tolerance and the 18 min of Example 12.12’s Check Your Learning 3%; other numeric answers accept 2%.",
+  "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案来自书中的答案表和“学习检测”的答案；答案表中印出的图和表按原样保留在答案里。八道没有答案的数值习题被略去，也没有为它们算出答案：fs-idm81797520、fs-idp123052496、fs-idm71090800、fs-idm82644240、fs-idm22532944、fs-idm45932336、fs-idp120051200、fs-idm43018880。没有答案的概念性习题 fs-idp11885680 带有一个建议的解题思路，标明为 OmniStax 自己所加。由图读出的速率常数接受 5% 的容差，例 12.12 的“学习检测”中的 18 min 接受 3%；其他数值答案接受 2%。",
   "figures": [
     {
       "id": "sim-order-plots",
@@ -44,7 +52,7 @@
         "/media/ch12/CNX_Chem_12_04_2OrdKin.jpg",
         "/media/ch12/CNX_Chem_12_04_AmDecomK.jpg"
       ],
-      "original_caption": "(Figure 12.9) A linear relationship between ln[H₂O₂] and time suggests the decomposition of hydrogen peroxide is a first-order reaction. (Figure 12.10) These two graphs show first- and second-order plots for the dimerization of C₄H₆. The linear trend in the second-order plot (right) indicates that the reaction follows second-order kinetics. (Figure 12.11) The decomposition of NH₃ on a tungsten (W) surface is a zero-order reaction, whereas on a quartz (SiO₂) surface, the reaction is first order.",
+      "original_caption": "（图 12.9）ln[H₂O₂] 与时间之间的线性关系表明，过氧化氢的分解是一级反应。（图 12.10）这两幅图分别是 C₄H₆ 二聚反应的一级图和二级图。二级图（右）中的线性趋势表明，该反应遵循二级动力学。（图 12.11）NH₃ 在钨（W）表面上的分解是零级反应，而在石英（SiO₂）表面上，该反应是一级反应。",
       "draws": [
         "concentration",
         "time",
@@ -55,6 +63,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -65,7 +78,7 @@
       "originals": [
         "/media/ch12/CNX_Chem_12_04_HPerDcmp.jpg"
       ],
-      "original_caption": "The decomposition of H₂O₂ (2H₂O₂ ⟶ 2H₂O + O₂) at 40 °C is illustrated. The intensity of the color symbolizes the concentration of H₂O₂ at the indicated times; H₂O₂ is actually colorless.",
+      "original_caption": "图示 H₂O₂ 在 40 °C 下的分解（2H₂O₂ ⟶ 2H₂O + O₂）。颜色的深浅表示 H₂O₂ 在所标时刻的浓度；H₂O₂ 实际上是无色的。",
       "draws": [
         "concentration",
         "time",
@@ -76,6 +89,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     }
@@ -188,14 +206,14 @@
         "after": "ex-first-order"
       },
       "cite": "first-order",
-      "prompt": "Iodine-131 is a radioactive isotope that is used to diagnose and treat some forms of thyroid cancer. Iodine-131 decays to xenon-131 according to the equation:<br>I-131 ⟶ Xe-131 + electron<br>The decay is first-order with a rate constant of 0.138 d<sup>−1</sup>. How many days will it take for 90% of the iodine−131 in a 0.500 <em>M</em> solution of this substance to decay to Xe-131?",
+      "prompt": "碘-131 是一种放射性同位素，用于诊断和治疗某些形式的甲状腺癌。碘-131 按下式衰变为氙-131：<br>I-131 ⟶ Xe-131 + 电子<br>该衰变是一级的，速率常数为 0.138 d<sup>−1</sup>。在 0.500 <em>M</em> 的这种物质溶液中，90% 的碘-131 衰变为 Xe-131 需要多少天？",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 16.7,
         "unit": "d",
-        "hint": "Ninety percent decayed leaves 10%, so ln([A]<sub>0</sub>/[A]<sub><em>t</em></sub>) = ln 10; divide by <em>k</em>.",
-        "solution": "16.7 days"
+        "hint": "衰变 90% 后剩下 10%，所以 ln([A]<sub>0</sub>/[A]<sub><em>t</em></sub>) = ln 10；再除以 <em>k</em>。",
+        "solution": "16.7 天"
       }
     },
     {
@@ -208,11 +226,11 @@
         "after": "ex-plot-first"
       },
       "cite": "first-order",
-      "prompt": "Graph the following data to determine whether the reaction <em>A</em> ⟶ <em>B</em> + <em>C</em> is first order.<table><thead><tr><th>Time (s)</th><th>[<em>A</em>]</th></tr></thead><tbody><tr><td>4.0</td><td>0.220</td></tr><tr><td>8.0</td><td>0.144</td></tr><tr><td>12.0</td><td>0.110</td></tr><tr><td>16.0</td><td>0.088</td></tr><tr><td>20.0</td><td>0.074</td></tr></tbody></table>",
+      "prompt": "画出下列数据的图，判断反应 <em>A</em> ⟶ <em>B</em> + <em>C</em> 是否为一级。<table><thead><tr><th>时间（s）</th><th>[<em>A</em>]</th></tr></thead><tbody><tr><td>4.0</td><td>0.220</td></tr><tr><td>8.0</td><td>0.144</td></tr><tr><td>12.0</td><td>0.110</td></tr><tr><td>16.0</td><td>0.088</td></tr><tr><td>20.0</td><td>0.074</td></tr></tbody></table>",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "The plot of ln[<em>A</em>]<sub><em>t</em></sub> vs. <em>t</em> is not linear, indicating the reaction is not first order:<br><img src=\"/media/ch12/CNX_Chem_12_04_CYL1_img.jpg\" alt=\"A graph titled ln[A] vs. Time, with time in seconds on the x-axis marked at 5, 10, 15, 20 and 25 and ln[A] on the y-axis marked at negative 3, negative 2, negative 1 and 0. A slight curve connects five points at about (4, negative 1.5), (8, negative 2), (12, negative 2.2), (16, negative 2.4) and (20, negative 2.6).\"><br>"
+        "solution": "ln[<em>A</em>]<sub><em>t</em></sub> 对 <em>t</em> 的图不是线性的，表明该反应不是一级：<br><img src=\"/media/ch12/CNX_Chem_12_04_CYL1_img.jpg\" alt=\"一幅题为“ln[A] 对时间”的图，x 轴为时间，单位为秒，在 5、10、15、20 和 25 处有标记，y 轴为 ln[A]，在 −3、−2、−1 和 0 处有标记。一条略有弯曲的曲线连接五个点，约为 (4, −1.5)、(8, −2)、(12, −2.2)、(16, −2.4) 和 (20, −2.6)。\"><br>"
       }
     },
     {
@@ -225,14 +243,14 @@
         "after": "ex-second-order"
       },
       "cite": "second-order",
-      "prompt": "If the initial concentration of butadiene is 0.0200 <em>M</em>, what is the concentration remaining after 20.0 min?",
+      "prompt": "如果丁二烯的初始浓度为 0.0200 <em>M</em>，20.0 min 后剩余的浓度是多少？",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 0.0195,
         "unit": "mol/L",
         "tol": 0.005,
-        "hint": "Use 1/[<em>A</em>]<sub><em>t</em></sub> = <em>kt</em> + 1/[<em>A</em>]<sub>0</sub> with <em>k</em> = 5.76 × 10<sup>−2</sup> L mol<sup>−1</sup> min<sup>−1</sup>.",
+        "hint": "用 1/[<em>A</em>]<sub><em>t</em></sub> = <em>kt</em> + 1/[<em>A</em>]<sub>0</sub>，其中 <em>k</em> = 5.76 × 10<sup>−2</sup> L mol<sup>−1</sup> min<sup>−1</sup>。",
         "solution": "0.0195 mol/L"
       }
     },
@@ -246,11 +264,11 @@
         "after": "ex-plot-second"
       },
       "cite": "second-order",
-      "prompt": "Do the following data fit a second-order rate law?<table><thead><tr><th>Time (s)</th><th>[<em>A</em>] (<em>M</em>)</th></tr></thead><tbody><tr><td>5</td><td>0.952</td></tr><tr><td>10</td><td>0.625</td></tr><tr><td>15</td><td>0.465</td></tr><tr><td>20</td><td>0.370</td></tr><tr><td>25</td><td>0.308</td></tr><tr><td>35</td><td>0.230</td></tr></tbody></table>",
+      "prompt": "下列数据是否符合二级速率定律？<table><thead><tr><th>时间（s）</th><th>[<em>A</em>] (<em>M</em>)</th></tr></thead><tbody><tr><td>5</td><td>0.952</td></tr><tr><td>10</td><td>0.625</td></tr><tr><td>15</td><td>0.465</td></tr><tr><td>20</td><td>0.370</td></tr><tr><td>25</td><td>0.308</td></tr><tr><td>35</td><td>0.230</td></tr></tbody></table>",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "Yes. The plot of 1/[<em>A</em>]<sub><em>t</em></sub> vs. <em>t</em> is linear:<br><img src=\"/media/ch12/CNX_Chem_12_04_CYL2_img.jpg\" alt=\"A graph titled 1 divided by [A] vs. Time, with time in seconds on the x-axis marked every 10 from 0 to 40 and 1 divided by [A] on the y-axis marked every 1 from 0 to 5. A rising line runs through six points at about (4, 1), (10, 1.5), (15, 2.2), (20, 2.8), (26, 3.4) and (36, 4.4).\"><br>"
+        "solution": "符合。1/[<em>A</em>]<sub><em>t</em></sub> 对 <em>t</em> 的图是线性的：<br><img src=\"/media/ch12/CNX_Chem_12_04_CYL2_img.jpg\" alt=\"一幅题为“1 除以 [A] 对时间”的图，x 轴为时间，单位为秒，从 0 到 40 每 10 标记一次，y 轴为 1 除以 [A]，从 0 到 5 每 1 标记一次。一条上升的直线穿过六个点，约为 (4, 1)、(10, 1.5)、(15, 2.2)、(20, 2.8)、(26, 3.4) 和 (36, 4.4)。\"><br>"
       }
     },
     {
@@ -263,13 +281,13 @@
         "after": "ex-zero-order"
       },
       "cite": "zero-order",
-      "prompt": "The zero-order plot in Figure 12.11 shows an initial ammonia concentration of 0.0028 mol L<sup>−1</sup> decreasing linearly with time for 1000 s. Assuming no change in this zero-order behavior, at what time (min) will the concentration reach 0.0001 mol L<sup>−1</sup>?",
+      "prompt": "图 12.11 中的零级图显示，氨的初始浓度 0.0028 mol L<sup>−1</sup> 在 1000 s 内随时间线性下降。假定这种零级行为不变，浓度在什么时间（min）会达到 0.0001 mol L<sup>−1</sup>？",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 35,
         "unit": "min",
-        "hint": "Solve [<em>A</em>]<sub><em>t</em></sub> = −<em>kt</em> + [<em>A</em>]<sub>0</sub> for <em>t</em> with <em>k</em> = 1.3 × 10<sup>−6</sup> mol L<sup>−1</sup> s<sup>−1</sup>, then convert seconds to minutes.",
+        "hint": "以 <em>k</em> = 1.3 × 10<sup>−6</sup> mol L<sup>−1</sup> s<sup>−1</sup> 对 <em>t</em> 求解 [<em>A</em>]<sub><em>t</em></sub> = −<em>kt</em> + [<em>A</em>]<sub>0</sub>，再把秒换算成分钟。",
         "solution": "35 min"
       }
     },
@@ -283,14 +301,14 @@
         "after": "ex-half-life-first"
       },
       "cite": "half-life",
-      "prompt": "The first-order radioactive decay of iodine-131 exhibits a rate constant of 0.138 d<sup>−1</sup>. What is the half-life for this decay?",
+      "prompt": "碘-131 的一级放射性衰变的速率常数为 0.138 d<sup>−1</sup>。这一衰变的半衰期是多少？",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 5.02,
         "unit": "d",
-        "hint": "For a first-order reaction, <em>t</em><sub>1/2</sub> = 0.693/<em>k</em>.",
-        "solution": "5.02 d."
+        "hint": "对一级反应，<em>t</em><sub>1/2</sub> = 0.693/<em>k</em>。",
+        "solution": "5.02 d。"
       }
     },
     {
@@ -303,14 +321,14 @@
         "after": "ex-half-life-others"
       },
       "cite": "half-life",
-      "prompt": "What is the half-life (min) for the thermal decomposition of ammonia on tungsten (see Example 12.10)?",
+      "prompt": "氨在钨上热分解的半衰期（min）是多少（见例 12.10）？",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 18,
         "unit": "min",
         "tol": 0.03,
-        "hint": "The reaction is zero order, so <em>t</em><sub>1/2</sub> = [<em>A</em>]<sub>0</sub>/2<em>k</em> with [<em>A</em>]<sub>0</sub> = 0.0028 mol L<sup>−1</sup> and <em>k</em> = 1.3 × 10<sup>−6</sup> mol L<sup>−1</sup> s<sup>−1</sup>.",
+        "hint": "该反应是零级的，所以 <em>t</em><sub>1/2</sub> = [<em>A</em>]<sub>0</sub>/2<em>k</em>，其中 [<em>A</em>]<sub>0</sub> = 0.0028 mol L<sup>−1</sup>，<em>k</em> = 1.3 × 10<sup>−6</sup> mol L<sup>−1</sup> s<sup>−1</sup>。",
         "solution": "18 min"
       }
     },
@@ -323,11 +341,11 @@
         "at": "end"
       },
       "cite": "first-order",
-      "prompt": "Describe how graphical methods can be used to determine the order of a reaction and its rate constant from a series of data that includes the concentration of <em>A</em> at varying times.",
+      "prompt": "说明如何利用图解法，由一系列包含 <em>A</em> 在不同时间的浓度的数据，确定反应的级数及其速率常数。",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "The order is the one whose integrated rate law gives a straight line when the data are plotted, and the rate constant comes from that line’s slope. From the data, ln[<em>A</em>] and 1/[<em>A</em>] are calculated at each time, and [<em>A</em>], ln[<em>A</em>] and 1/[<em>A</em>] are each plotted against <em>t</em>. Each integrated rate law has the form <em>y</em> = <em>mx</em> + <em>b</em> for one of these plots: $\\kconcAt=-\\kk\\kt+\\kconcAz$ for a zero-order reaction, $\\ln\\kconcAt=(-\\kk)(\\kt)+\\ln\\kconcAz$ for a first-order reaction, and $\\frac{1}{\\kconcAt}=\\kk\\kt+\\frac{1}{\\kconcAz}$ for a second-order reaction. Only one of the three plots is linear, and it names the order: [<em>A</em>] against <em>t</em> for zero order, ln[<em>A</em>] against <em>t</em> for first order, and 1/[<em>A</em>] against <em>t</em> for second order. The slope of that line, read from two points far apart on it, gives the rate constant: the slope is $-\\kk$ for zero and first order, so $\\kk$ is the negative of the slope, and the slope is $\\kk$ itself for second order."
+        "solution": "级数是这样一种：按其积分速率定律作图时，数据落在一条直线上；速率常数则由这条直线的斜率得出。由数据算出每个时间的 ln[<em>A</em>] 和 1/[<em>A</em>]，再分别画出 [<em>A</em>]、ln[<em>A</em>] 和 1/[<em>A</em>] 对 <em>t</em> 的图。每个积分速率定律对这些图中的某一幅都具有 <em>y</em> = <em>mx</em> + <em>b</em> 的形式：零级反应是 $\\kconcAt=-\\kk\\kt+\\kconcAz$，一级反应是 $\\ln\\kconcAt=(-\\kk)(\\kt)+\\ln\\kconcAz$，二级反应是 $\\frac{1}{\\kconcAt}=\\kk\\kt+\\frac{1}{\\kconcAz}$。三幅图中只有一幅是线性的，它就给出级数：[<em>A</em>] 对 <em>t</em> 为零级，ln[<em>A</em>] 对 <em>t</em> 为一级，1/[<em>A</em>] 对 <em>t</em> 为二级。这条直线的斜率（取直线上相距较远的两点读出）给出速率常数：零级和一级的斜率是 $-\\kk$，所以 $\\kk$ 是斜率的相反数；二级的斜率就是 $\\kk$ 本身。"
       }
     },
     {
@@ -339,7 +357,7 @@
         "at": "end"
       },
       "cite": "first-order",
-      "prompt": "Use the data provided to graphically determine the order and rate constant of the following reaction: SO<sub>2</sub>Cl<sub>2</sub> ⟶ SO<sub>2</sub> + Cl<sub>2</sub><table><tbody><tr><th>Time (s)</th><td>0</td><td>5.00 × 10<sup>3</sup></td><td>1.00 × 10<sup>4</sup></td><td>1.50 × 10<sup>4</sup></td></tr><tr><th>[SO<sub>2</sub>Cl<sub>2</sub>] (<em>M</em>)</th><td>0.100</td><td>0.0896</td><td>0.0802</td><td>0.0719</td></tr><tr><th>Time (s)</th><td>2.50 × 10<sup>4</sup></td><td>3.00 × 10<sup>4</sup></td><td>4.00 × 10<sup>4</sup></td><td></td></tr><tr><th>[SO<sub>2</sub>Cl<sub>2</sub>] (<em>M</em>)</th><td>0.0577</td><td>0.0517</td><td>0.0415</td><td></td></tr></tbody></table>",
+      "prompt": "利用所给数据，以图解方式确定下列反应的级数和速率常数：SO<sub>2</sub>Cl<sub>2</sub> ⟶ SO<sub>2</sub> + Cl<sub>2</sub><table><tbody><tr><th>时间（s）</th><td>0</td><td>5.00 × 10<sup>3</sup></td><td>1.00 × 10<sup>4</sup></td><td>1.50 × 10<sup>4</sup></td></tr><tr><th>[SO<sub>2</sub>Cl<sub>2</sub>] (<em>M</em>)</th><td>0.100</td><td>0.0896</td><td>0.0802</td><td>0.0719</td></tr><tr><th>时间（s）</th><td>2.50 × 10<sup>4</sup></td><td>3.00 × 10<sup>4</sup></td><td>4.00 × 10<sup>4</sup></td><td></td></tr><tr><th>[SO<sub>2</sub>Cl<sub>2</sub>] (<em>M</em>)</th><td>0.0577</td><td>0.0517</td><td>0.0415</td><td></td></tr></tbody></table>",
       "answer": {
         "type": "multi",
         "generated_by": "source",
@@ -347,17 +365,17 @@
           {
             "part": "order",
             "value": 1,
-            "hint": "Plot ln[SO<sub>2</sub>Cl<sub>2</sub>] and 1/[SO<sub>2</sub>Cl<sub>2</sub>] against time and see which is straight."
+            "hint": "画出 ln[SO<sub>2</sub>Cl<sub>2</sub>] 和 1/[SO<sub>2</sub>Cl<sub>2</sub>] 对时间的图，看哪一个是直线。"
           },
           {
             "part": "<em>k</em>",
             "value": 2.2e-05,
             "unit": "s⁻¹",
             "tol": 0.05,
-            "hint": "The rate constant is the negative of the slope of the straight plot."
+            "hint": "速率常数是那条直线斜率的相反数。"
           }
         ],
-        "solution": "Plotting a graph of ln[SO<sub>2</sub>Cl<sub>2</sub>] versus <em>t</em> reveals a linear trend; therefore we know this is a first-order reaction:<br><img src=\"/media/ch12/CNX_Chem_12_04_Exercise02_img.jpg\" alt=\"A graph with time in seconds on the x-axis, from 0 to 4.00 times 10 to the 4 marked every 1.00 times 10 to the 4, and ln[SO2Cl2] on the y-axis marked from negative 3.5 to negative 2.5. A falling straight line runs through seven points from about (0, negative 2.3) to (3.0 times 10 to the 4, negative 3.2).\"><br><em>k</em> = 2.20 × 10<sup>–5</sup> s<sup>−1</sup>"
+        "solution": "画出 ln[SO<sub>2</sub>Cl<sub>2</sub>] 对 <em>t</em> 的图，显示出线性趋势；因此可知这是一级反应：<br><img src=\"/media/ch12/CNX_Chem_12_04_Exercise02_img.jpg\" alt=\"一幅图，x 轴为时间，单位为秒，从 0 到 4.00 乘以 10 的 4 次方，每 1.00 乘以 10 的 4 次方标记一次，y 轴为 ln[SO2Cl2]，从 −3.5 到 −2.5 标记。一条下降的直线穿过七个点，从约 (0, −2.3) 到 (3.0 乘以 10 的 4 次方, −3.2)。\"><br><em>k</em> = 2.20 × 10<sup>–5</sup> s<sup>−1</sup>"
       }
     },
     {
@@ -369,7 +387,7 @@
         "at": "end"
       },
       "cite": "second-order",
-      "prompt": "Pure ozone decomposes slowly to oxygen, 2O<sub>3</sub>(<em>g</em>) ⟶ 3O<sub>2</sub>(<em>g</em>). Use the data provided in a graphical method and determine the order and rate constant of the reaction.<table><tbody><tr><th>Time (h)</th><td>0</td><td>2.0 × 10<sup>3</sup></td><td>7.6 × 10<sup>3</sup></td><td>1.00 × 10<sup>4</sup></td></tr><tr><th>[O<sub>3</sub>] (<em>M</em>)</th><td>1.00 × 10<sup>−5</sup></td><td>4.98 × 10<sup>−6</sup></td><td>2.07 × 10<sup>−6</sup></td><td>1.66 × 10<sup>−6</sup></td></tr><tr><th>Time (h)</th><td>1.23 × 10<sup>4</sup></td><td>1.43 × 10<sup>4</sup></td><td>1.70 × 10<sup>4</sup></td><td></td></tr><tr><th>[O<sub>3</sub>] (<em>M</em>)</th><td>1.39 × 10<sup>−6</sup></td><td>1.22 × 10<sup>−6</sup></td><td>1.05 × 10<sup>−6</sup></td><td></td></tr></tbody></table>",
+      "prompt": "纯臭氧缓慢分解为氧气，2O<sub>3</sub>(<em>g</em>) ⟶ 3O<sub>2</sub>(<em>g</em>)。用所给数据，通过图解法确定该反应的级数和速率常数。<table><tbody><tr><th>时间（h）</th><td>0</td><td>2.0 × 10<sup>3</sup></td><td>7.6 × 10<sup>3</sup></td><td>1.00 × 10<sup>4</sup></td></tr><tr><th>[O<sub>3</sub>] (<em>M</em>)</th><td>1.00 × 10<sup>−5</sup></td><td>4.98 × 10<sup>−6</sup></td><td>2.07 × 10<sup>−6</sup></td><td>1.66 × 10<sup>−6</sup></td></tr><tr><th>时间（h）</th><td>1.23 × 10<sup>4</sup></td><td>1.43 × 10<sup>4</sup></td><td>1.70 × 10<sup>4</sup></td><td></td></tr><tr><th>[O<sub>3</sub>] (<em>M</em>)</th><td>1.39 × 10<sup>−6</sup></td><td>1.22 × 10<sup>−6</sup></td><td>1.05 × 10<sup>−6</sup></td><td></td></tr></tbody></table>",
       "answer": {
         "type": "multi",
         "generated_by": "source",
@@ -377,17 +395,17 @@
           {
             "part": "order",
             "value": 2,
-            "hint": "Try ln[O<sub>3</sub>] and 1/[O<sub>3</sub>] against time; one of them is straight."
+            "hint": "试画出 ln[O<sub>3</sub>] 和 1/[O<sub>3</sub>] 对时间的图；其中一个是直线。"
           },
           {
             "part": "<em>k</em>",
             "value": 50.1,
             "unit": "L mol⁻¹ h⁻¹",
             "tol": 0.05,
-            "hint": "For a second-order reaction the rate constant is the slope of the 1/[O<sub>3</sub>] plot."
+            "hint": "对二级反应，速率常数是 1/[O<sub>3</sub>] 图的斜率。"
           }
         ],
-        "solution": "<br><img src=\"/media/ch12/CNX_Chem_12_04_Exercise04_img_new.jpg\" alt=\"A graph with t in hours on the x-axis, marked at 0, 2, 6, 10, 14 and 18 thousand, and 1 divided by [O3] on the y-axis marked every 1 from 0 to 9. A rising straight line runs through seven points from (0, 1.00) to (1.70 times 10 to the 4, 9.52); a right triangle drawn on it has its horizontal leg labeled delta t and its vertical leg labeled delta 1 divided by [O3].\"><br>The plot is nicely linear, so the reaction is second order. <em>k</em> = 50.1 L mol<sup>−1</sup> h<sup>−1</sup>"
+        "solution": "<br><img src=\"/media/ch12/CNX_Chem_12_04_Exercise04_img_new.jpg\" alt=\"一幅图，x 轴为 t，单位为小时，在 0、2 000、6 000、10 000、14 000 和 18 000 处有标记，y 轴为 1 除以 [O3]，从 0 到 9 每 1 标记一次。一条上升的直线穿过七个点，从 (0, 1.00) 到 (1.70 乘以 10 的 4 次方, 9.52)；直线上画有一个直角三角形，其水平直角边标为 Δt，竖直直角边标为 Δ(1/[O3])。\"><br>图线非常好地呈线性，所以该反应是二级。<em>k</em> = 50.1 L mol<sup>−1</sup> h<sup>−1</sup>"
       }
     },
     {
@@ -399,13 +417,13 @@
         "at": "end"
       },
       "cite": "half-life",
-      "prompt": "What is the half-life for the first-order decay of phosphorus-32? (<sup>32</sup><sub>15</sub>P ⟶ <sup>32</sup><sub>16</sub>S + e<sup>−</sup>) The rate constant for the decay is 4.85 × 10<sup>−2</sup> day<sup>−1</sup>.",
+      "prompt": "磷-32 一级衰变的半衰期是多少？（<sup>32</sup><sub>15</sub>P ⟶ <sup>32</sup><sub>16</sub>S + e<sup>−</sup>）该衰变的速率常数为 4.85 × 10<sup>−2</sup> 天<sup>−1</sup>。",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 14.3,
         "unit": "d",
-        "hint": "For a first-order decay, <em>t</em><sub>1/2</sub> = 0.693/<em>k</em>.",
+        "hint": "对一级衰变，<em>t</em><sub>1/2</sub> = 0.693/<em>k</em>。",
         "solution": "14.3 d"
       }
     },
@@ -418,13 +436,13 @@
         "at": "end"
       },
       "cite": "half-life",
-      "prompt": "What is the half-life for the decomposition of NOCl when the concentration of NOCl is 0.15 <em>M</em>? The rate constant for this second-order reaction is 8.0 × 10<sup>−8</sup> L mol<sup>−1</sup> s<sup>−1</sup>.",
+      "prompt": "NOCl 的浓度为 0.15 <em>M</em> 时，NOCl 分解的半衰期是多少？这个二级反应的速率常数为 8.0 × 10<sup>−8</sup> L mol<sup>−1</sup> s<sup>−1</sup>。",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 83000000.0,
         "unit": "s",
-        "hint": "For a second-order reaction, <em>t</em><sub>1/2</sub> = 1/(<em>k</em>[<em>A</em>]<sub>0</sub>).",
+        "hint": "对二级反应，<em>t</em><sub>1/2</sub> = 1/(<em>k</em>[<em>A</em>]<sub>0</sub>)。",
         "solution": "8.3 × 10<sup>7</sup> s"
       }
     },
@@ -437,13 +455,13 @@
         "at": "end"
       },
       "cite": "half-life",
-      "prompt": "The reaction of compound <em>A</em> to give compounds <em>C</em> and <em>D</em> was found to be second-order in <em>A</em>. The rate constant for the reaction was determined to be 2.42 L mol<sup>−1</sup> s<sup>−1</sup>. If the initial concentration is 0.500 mol/L, what is the value of t<sub>1/2</sub>?",
+      "prompt": "化合物 <em>A</em> 反应生成化合物 <em>C</em> 和 <em>D</em>，发现该反应对 <em>A</em> 是二级的。测得该反应的速率常数为 2.42 L mol<sup>−1</sup> s<sup>−1</sup>。如果初始浓度为 0.500 mol/L，t<sub>1/2</sub> 的值是多少？",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 0.826,
         "unit": "s",
-        "hint": "For a second-order reaction, <em>t</em><sub>1/2</sub> = 1/(<em>k</em>[<em>A</em>]<sub>0</sub>).",
+        "hint": "对二级反应，<em>t</em><sub>1/2</sub> = 1/(<em>k</em>[<em>A</em>]<sub>0</sub>)。",
         "solution": "0.826 s"
       }
     },
@@ -456,7 +474,7 @@
         "at": "end"
       },
       "cite": "first-order",
-      "prompt": "Some bacteria are resistant to the antibiotic penicillin because they produce penicillinase, an enzyme with a molecular weight of 3 × 10<sup>4</sup> g/mol that converts penicillin into inactive molecules. Although the kinetics of enzyme-catalyzed reactions can be complex, at low concentrations this reaction can be described by a rate law that is first order in the catalyst (penicillinase) and that also involves the concentration of penicillin. From the following data: 1.0 L of a solution containing 0.15 µg (0.15 × 10<sup>−6</sup> g) of penicillinase, determine the order of the reaction with respect to penicillin and the value of the rate constant.<table><thead><tr><th>[Penicillin] (<em>M</em>)</th><th>Rate (mol L<sup>−1</sup> min<sup>−1</sup>)</th></tr></thead><tbody><tr><td>2.0 × 10<sup>−6</sup></td><td>1.0 × 10<sup>−10</sup></td></tr><tr><td>3.0 × 10<sup>−6</sup></td><td>1.5 × 10<sup>−10</sup></td></tr><tr><td>4.0 × 10<sup>−6</sup></td><td>2.0 × 10<sup>−10</sup></td></tr></tbody></table>",
+      "prompt": "有些细菌对抗生素青霉素有抗药性，因为它们产生青霉素酶，这是一种分子量为 3 × 10<sup>4</sup> g/mol 的酶，能把青霉素转变为无活性的分子。尽管酶催化反应的动力学可能很复杂，但在低浓度下，这个反应可以用对催化剂（青霉素酶）为一级、同时还涉及青霉素浓度的速率定律来描述。由下列数据：1.0 L 溶液中含 0.15 µg（0.15 × 10<sup>−6</sup> g）青霉素酶，确定反应对青霉素的级数和速率常数的值。<table><thead><tr><th>[青霉素] (<em>M</em>)</th><th>速率（mol L<sup>−1</sup> min<sup>−1</sup>）</th></tr></thead><tbody><tr><td>2.0 × 10<sup>−6</sup></td><td>1.0 × 10<sup>−10</sup></td></tr><tr><td>3.0 × 10<sup>−6</sup></td><td>1.5 × 10<sup>−10</sup></td></tr><tr><td>4.0 × 10<sup>−6</sup></td><td>2.0 × 10<sup>−10</sup></td></tr></tbody></table>",
       "answer": {
         "type": "multi",
         "generated_by": "source",
@@ -464,17 +482,17 @@
           {
             "part": "order in penicillin",
             "value": 1,
-            "hint": "Compare how the rate changes as the penicillin concentration doubles."
+            "hint": "比较青霉素浓度加倍时速率如何变化。"
           },
           {
             "part": "<em>k</em>",
             "value": 10000000.0,
             "unit": "L mol⁻¹ min⁻¹",
             "tol": 0.05,
-            "hint": "The rate law is rate = <em>k</em>[penicillinase][penicillin]; find the molar concentration of penicillinase from its mass and molecular weight."
+            "hint": "速率定律是速率 = <em>k</em>[青霉素酶][青霉素]；由青霉素酶的质量和分子量求出其物质的量浓度。"
           }
         ],
-        "solution": "The reaction is first order. <em>k</em> = 1.0 × 10<sup>7</sup> L mol<sup>−1</sup> min<sup>−1</sup>"
+        "solution": "该反应是一级的。<em>k</em> = 1.0 × 10<sup>7</sup> L mol<sup>−1</sup> min<sup>−1</sup>"
       }
     },
     {
@@ -486,7 +504,7 @@
         "at": "end"
       },
       "cite": "half-life",
-      "prompt": "There are two molecules with the formula C<sub>3</sub>H<sub>6</sub>. Propene, CH<sub>3</sub>CH=CH<sub>2</sub>, is the monomer of the polymer polypropylene, which is used for indoor-outdoor carpets. Cyclopropane is used as an anesthetic:<br><img src=\"/media/ch12/CNX_Chem_12_04_Cycloprop_img.jpg\" alt=\"A structural formula for cyclopropane: three CH2 groups at the corners of an equilateral triangle, joined by single bonds.\"><br>When heated to 499 °C, cyclopropane rearranges (isomerizes) and forms propene with a rate constant of 5.95 × 10<sup>−4</sup> s<sup>−1</sup>. What is the half-life of this reaction? What fraction of the cyclopropane remains after 0.75 h at 499 °C?",
+      "prompt": "分子式为 C<sub>3</sub>H<sub>6</sub> 的分子有两种。丙烯 CH<sub>3</sub>CH=CH<sub>2</sub> 是聚丙烯的单体，聚丙烯用于室内外两用地毯。环丙烷用作麻醉剂：<br><img src=\"/media/ch12/CNX_Chem_12_04_Cycloprop_img.jpg\" alt=\"环丙烷的结构式：三个 CH2 基团位于等边三角形的顶点，以单键相连。\"><br>加热到 499 °C 时，环丙烷发生重排（异构化），生成丙烯，速率常数为 5.95 × 10<sup>−4</sup> s<sup>−1</sup>。这个反应的半衰期是多少？在 499 °C 下经过 0.75 h，环丙烷还剩下多大比例？",
       "answer": {
         "type": "multi",
         "generated_by": "source",
@@ -495,17 +513,17 @@
             "part": "half-life",
             "value": 1160,
             "unit": "s",
-            "hint": "The reaction is first order, so <em>t</em><sub>1/2</sub> = 0.693/<em>k</em>."
+            "hint": "该反应是一级的，所以 <em>t</em><sub>1/2</sub> = 0.693/<em>k</em>。"
           },
           {
             "part": "cyclopropane remaining",
             "value": 20,
             "unit": "%",
             "tol": 0.03,
-            "hint": "Convert 0.75 h to seconds and use [<em>A</em>]<sub><em>t</em></sub>/[<em>A</em>]<sub>0</sub> = <em>e</em><sup>−<em>kt</em></sup>."
+            "hint": "把 0.75 h 换算成秒，再用 [<em>A</em>]<sub><em>t</em></sub>/[<em>A</em>]<sub>0</sub> = <em>e</em><sup>−<em>kt</em></sup>。"
           }
         ],
-        "solution": "1.16 × 10<sup>3</sup> s ; 20% remains"
+        "solution": "1.16 × 10<sup>3</sup> s ；剩下 20%"
       }
     },
     {
@@ -517,14 +535,14 @@
         "at": "end"
       },
       "cite": "half-life",
-      "prompt": "Suppose that the half-life of steroids taken by an athlete is 42 days. Assuming that the steroids biodegrade by a first-order process, how long would it take for 1/64 of the initial dose to remain in the athlete’s body?",
+      "prompt": "假定运动员服用的类固醇的半衰期为 42 天。假设类固醇按一级过程生物降解，要经过多长时间，运动员体内才会剩下初始剂量的 1/64？",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 252,
         "unit": "days",
-        "hint": "One sixty-fourth is one-half multiplied by itself six times.",
-        "solution": "252 days"
+        "hint": "六十四分之一就是二分之一自乘六次。",
+        "solution": "252 天"
       }
     },
     {
@@ -536,7 +554,7 @@
         "at": "end"
       },
       "cite": "first-order",
-      "prompt": "Nitroglycerine is an extremely sensitive explosive. In a series of carefully controlled experiments, samples of the explosive were heated to 160 °C and their first-order decomposition studied. Determine the average rate constants for each experiment using the following data:<table><tbody><tr><th>Initial [C<sub>3</sub>H<sub>5</sub>N<sub>3</sub>O<sub>9</sub>] (<em>M</em>)</th><td>4.88</td><td>3.52</td><td>2.29</td><td>1.81</td><td>5.33</td><td>4.05</td><td>2.95</td><td>1.72</td></tr><tr><th><em>t</em> (s)</th><td>300</td><td>300</td><td>300</td><td>300</td><td>180</td><td>180</td><td>180</td><td>180</td></tr><tr><th>% Decomposed</th><td>52.0</td><td>52.9</td><td>53.2</td><td>53.9</td><td>34.6</td><td>35.9</td><td>36.0</td><td>35.4</td></tr></tbody></table>",
+      "prompt": "硝化甘油是一种极其敏感的炸药。在一系列精心控制的实验中，把炸药样品加热到 160 °C，研究其一级分解。利用下列数据，确定每次实验的平均速率常数：<table><tbody><tr><th>初始 [C<sub>3</sub>H<sub>5</sub>N<sub>3</sub>O<sub>9</sub>] (<em>M</em>)</th><td>4.88</td><td>3.52</td><td>2.29</td><td>1.81</td><td>5.33</td><td>4.05</td><td>2.95</td><td>1.72</td></tr><tr><th><em>t</em> (s)</th><td>300</td><td>300</td><td>300</td><td>300</td><td>180</td><td>180</td><td>180</td><td>180</td></tr><tr><th>分解的百分数</th><td>52.0</td><td>52.9</td><td>53.2</td><td>53.9</td><td>34.6</td><td>35.9</td><td>36.0</td><td>35.4</td></tr></tbody></table>",
       "answer": {
         "type": "open",
         "generated_by": "source",
@@ -677,14 +695,14 @@
   "referents": [
     {
       "id": "tungsten",
-      "label": "the tungsten surface",
+      "label": "钨表面",
       "figures": [
         "sim-order-plots"
       ]
     },
     {
       "id": "quartz",
-      "label": "the quartz surface",
+      "label": "石英表面",
       "figures": [
         "sim-order-plots"
       ]
@@ -694,14 +712,14 @@
     {
       "id": "c-second-order-unit",
       "kind": "correction",
-      "html": "The book writes the initial concentration as 0.200 mol<sup>−1</sup> in $\\frac{1}{0.200\\;\\text{mol}^{-1}}$. It is 0.200 mol L<sup>−1</sup>, so its reciprocal is 5.00 L mol<sup>−1</sup>, as the next line has it."
+      "html": "书中把 $\\frac{1}{0.200\\;\\text{mol}^{-1}}$ 里的初始浓度写成 0.200 mol<sup>−1</sup>。它应为 0.200 mol L<sup>−1</sup>，所以其倒数是 5.00 L mol<sup>−1</sup>，与下一行一致。"
     }
   ],
   "derivations": [
     {
       "id": "half-life-first-order",
-      "what": "the half-life of a first-order reaction",
-      "source": "Chemistry 2e, 12.4 Integrated Rate Laws",
+      "what": "一级反应的半衰期",
+      "source": "化学（第2版），12.4 积分速率定律",
       "nodes": [
         {
           "assumes": [
@@ -762,8 +780,8 @@
     },
     {
       "id": "half-life-second-order",
-      "what": "the half-life of a second-order reaction",
-      "source": "Chemistry 2e, 12.4 Integrated Rate Laws",
+      "what": "二级反应的半衰期",
+      "source": "化学（第2版），12.4 积分速率定律",
       "nodes": [
         {
           "assumes": [
@@ -787,7 +805,10 @@
             },
             {
               "tex": "\\frac{1}{\\mk{at}{\\frac{1}{2}\\kconcAz}} - \\mk{a0}{\\frac{1}{\\kconcAz}} = \\mk{k}{\\kk}\\mk{t}{\\kthalf}",
-              "uses": [0, 1]
+              "uses": [
+                0,
+                1
+              ]
             },
             {
               "tex": "\\mk{at}{\\frac{2}{\\kconcAz}} - \\mk{a0}{\\frac{1}{\\kconcAz}} = \\mk{k}{\\kk}\\mk{t}{\\kthalf}",
@@ -818,8 +839,8 @@
     },
     {
       "id": "half-life-zero-order",
-      "what": "the half-life of a zero-order reaction",
-      "source": "Chemistry 2e, 12.4 Integrated Rate Laws",
+      "what": "零级反应的半衰期",
+      "source": "化学（第2版），12.4 积分速率定律",
       "nodes": [
         {
           "assumes": [
@@ -839,7 +860,10 @@
           "steps": [
             {
               "tex": "\\mk{a}{\\frac{\\kconcAz}{2}} = -\\mk{k}{\\kk}\\mk{t}{\\kthalf} + \\mk{a0}{\\kconcAz}",
-              "uses": [0, 1]
+              "uses": [
+                0,
+                1
+              ]
             },
             {
               "tex": "\\mk{k}{\\kk}\\mk{t}{\\kthalf} = \\mk{a0}{\\kconcAz} - \\mk{a}{\\frac{\\kconcAz}{2}}",

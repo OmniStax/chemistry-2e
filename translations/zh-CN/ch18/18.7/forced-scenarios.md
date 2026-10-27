@@ -1,0 +1,28 @@
+# Forced scenarios, 18.7
+
+| File | Span or line | What was done | Why |
+|---|---|---|---|
+| text.html | spans on 室温 (`temperature`, 4 spans), 氮气 and 氧气 (`gas`, 3 spans), 笑气 (`gas`) | the span wraps the whole Chinese compound that contains the concept's word; the concept words are 温度, 气体 | the source wraps one English word of "room temperature", "nitrogen gas", "oxygen gas", "laughing gas"; Chinese names each in one word (translate.md 3.3; Chapter 1 precedent) |
+| text.html | occurrence, "fractional distillation" (span `distillation`) | the span wraps 分馏 (glossary row fractional distillation) | Chinese names fractional distillation in one word; 蒸馏 alone would drop 分 |
+| text.html | spans on 沸腾 (`boiling-point`) and 凝固 (`melting-point`), "It boils at 77 K and freezes at 63 K" | the two verbs are translated as verbs, and the spans wrap them | the source puts the concept spans on the verbs "boils" and "freezes" |
+| text.html | spans on 液态 / 固态 (`liquid`, `solid`) in "liquid air", "Liquid nitrogen", "Liquid and solid NO", "the liquid and solid states" | the spans wrap 液态 / 固态 where the glossary has 液体 / 固体; 液体 / 固体 stay for "a blue liquid" and "a white solid" | Chinese says 液态空气, 液态氮, 固态 NO for the state of matter (Chapter 1 precedent) |
+| text.html | nitrous oxide, nitric oxide, "dinitrogen oxide" (`oxide` spans) | the span wraps the whole compound name (一氧化二氮, 一氧化氮, 氧化亚氮); "nitrous oxide (dinitrogen oxide)" is written 一氧化二氮（氧化亚氮） | Chinese names the compound in one word, so the span cannot wrap only "oxide" (Chapter 1 precedent); the two English names of N₂O become the systematic and the traditional Chinese name |
+| text.html | nitric acid, nitrous acid, ammonium nitrate, "nitrate ion", "ammonium ion" (`acid`, `nitrate`, `ion` spans) | the span wraps 硝酸, 亚硝酸, 硝酸铵; 硝酸根 and 铵根 carry the `nitrate` span and 离子 the `ion` span | the compound or ion name is one Chinese word (Chapter 1 precedent) |
+| text.html | "nitrogen(III) oxide", "oxides of nitrogen(III), nitrogen(IV), and nitrogen(V)", "phosphorus(V) oxide" | written 氮(III)氧化物, 氮(III)、氮(IV)和氮(V)的氧化物, 磷(V)氧化物; `oxide` span on 氧化物 | stock-number names; the span keeps its place on the word for oxide |
+| text.html | "more than 20 million tons ... every square mile" (span `mass`) | written 超过 2000 万短吨 and 每平方英里 | Chinese counts in 万; ton is the US short ton and mile has no SI symbol here (Chapter 1: 短吨, 英里, 4.4) |
+| text.html | "At low pressures or at high temperatures", "At low temperatures" | written 在压强低或温度高时, 在温度低时; spans on 压强 and 温度 | Chinese puts the adjective after the noun, and the `gas-pressure` and `temperature` spans stay on the nouns |
+| text.html | "supports combustion" (span `combustion-reaction`) | written 支持燃烧, the span on 燃烧 | the glossary word is 燃烧; English "supports combustion" has no shorter Chinese form |
+| text.html | "molecular (left) and resonance (right) structures" (Figures 18.33 and 18.35) | written 分子结构（左）和共振结构（右）, span on 共振 | the span wraps the word "resonance" only, as in the source |
+| text.html | Figure 18.38 caption, `N<sub>2</sub>O<sub>5.</sub>` | the stray full stop inside the subscript is kept, and the sentence is ordered to end on the formula (…，该分子为 N₂O₅.) with no 。 added | the source prints the full stop inside the subscript (section notes); kept as printed |
+| text.html | `Figure 18.32` caption credits ("credit “roots”: …; credit “root nodules”: …") | （来源“根”：改编自美国农业部的作品；“根瘤”：改编自 Louisa Howard 的作品）; "United States Department of Agriculture" written 美国农业部 | the book-wide credit formula (Chapter 1); a named credit keeps its labels, translated; an agency with a standard Chinese name is translated, a person is not |
+| text.html | Figure 18.36 caption credit | （来源：改编自 Mark Ott 的作品） | Chapter 1 credit formula |
+| text.html | `\text{oxidizing agent:}`, `\text{reducing agent:}` | `\text{氧化剂:}`, `\text{还原剂:}` | words inside `\text{}` are translated; the colon stays ASCII inside math (translate.md 3.5) |
+| text.html | figure and sim eyebrows; figure citations; "Chemistry in Everyday Life" eyebrow | `Figure 18.32` to `Figure 18.38` and `Sim` kept; 图 18.x in prose; 日常生活中的化学 | translate.md 4.6 and the glossary row |
+| text.html | headings "Occurrence and properties of nitrogen", "Reactions of the nitrogen oxides" | 氮的存在与性质, 氮的氧化物的反应 | the two headings match no concept name; built from the glossary words, the others are the concept names 氮的氧化物 and 二氧化氮与四氧化二氮 |
+| text.html | "Atmospheric nitrogen consists of N2 molecules ... due to the strong nitrogen-nitrogen triple bond" | 氮氮三键 | the hyphenated compound modifier has no Chinese form (4.1) |
+| text.html | sim-head "N₂O₄ units" | written N₂O₄ 单元 | "units" here is the formula unit counted in mol |
+| figures.js | `views` labels `front`, `above` | 前视, 俯视 | view-button names; shortest forms |
+| figures.js | `topline` sentence | `在 ${s.t} K 时，${share}% 的分子是棕色的 NO_{2}，${100 - share}% 是无色的 N_{2}O_{4}。` | English "X% of the molecules are A and Y% B" reordered with the same two slots; `NO_{2}` keeps its macro run |
+| figures.js | `MOLS[].name`, `pickable` names (sealed vessel, piston, piston rod) | 四氧化二氮，N₂O₄ / 二氧化氮，NO₂ (the same labels as the referents), 密闭容器中的气体, 活塞, 活塞杆 | hover names; the leading article "the" has no Chinese form (4.1) |
+| section.json | exercises e63 prompt, "the chapters on chemical bonding and advanced theories of covalent bonding" | 化学键与分子几何构型以及共价键的高级理论这两章 | the two chapter titles in the book's Chinese titles; the second (ch08) is not yet decided, see glossary-pending |
+| section.json | exercise e63 (c) solution alt text | "negative sign" kept although the ion is NO₂⁺ | the alt text describes NO₂⁺ with a negative sign in the source; the book's slip is kept |

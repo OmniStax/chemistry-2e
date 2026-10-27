@@ -2,17 +2,17 @@
   "id": "9.6",
   "module": "m68759",
   "chapter": "9",
-  "title": "Non-Ideal Gas Behavior",
-  "short": "Non-Ideal Gases",
-  "lead": "Real gas molecules take up some space and attract one another, so no real gas obeys the ideal gas law exactly, and the compressibility factor, Z, measures how far a gas departs from it. The van der Waals equation corrects the ideal gas law for the <span data-concept=\"volume\">volume</span> of the molecules and for the attractions between them.",
+  "title": "非理想气体的行为",
+  "short": "非理想气体",
+  "lead": "实际气体的分子占有一定的空间且相互吸引，因此没有一种实际气体严格遵守理想气体状态方程，压缩因子 Z 衡量气体偏离它的程度。范德华方程针对分子的<span data-concept=\"volume\">体积</span>以及分子之间的吸引，对理想气体状态方程作了修正。",
   "objectives": [
-    "Describe the physical factors that lead to deviations from ideal gas behavior",
-    "Explain how these factors are represented in the van der Waals equation",
-    "Define compressibility (Z) and describe how its variation with pressure reflects non-ideal behavior",
-    "Quantify non-ideal behavior by comparing computations of gas properties using the ideal gas law and the van der Waals equation"
+    "描述导致偏离理想气体行为的物理因素",
+    "解释这些因素在范德华方程中是如何表示的",
+    "定义压缩因子（Z），并说明其随压强的变化如何反映非理想行为",
+    "通过比较用理想气体状态方程和范德华方程计算所得的气体性质，定量描述非理想行为"
   ],
-  "summary_html": "<p>Gas molecules possess a finite <span data-concept=\"volume\">volume</span> and experience <span data-concept=\"force\">forces</span> of attraction for one another. Consequently, gas behavior is not necessarily described well by the ideal gas law. Under conditions of low <span data-concept=\"gas-pressure\">pressure</span> and high <span data-concept=\"temperature\">temperature</span>, these factors are negligible, the ideal gas equation is an accurate description of gas behavior, and the gas is said to exhibit ideal behavior. However, at lower <span data-concept=\"temperature\">temperatures</span> and higher <span data-concept=\"gas-pressure\">pressures</span>, corrections for molecular <span data-concept=\"volume\">volume</span> and molecular attractions are required to account for finite molecular size and attractive <span data-concept=\"force\">forces</span>. The van der Waals equation is a modified version of the ideal gas law that can be used to account for the non-ideal behavior of gases under these conditions.</p>",
-  "notes": "The section prints no Link to Learning note. The book’s image of the van der Waals equation is set as an equation with its two labels. Example 9.24’s unit “L² atm mol²” is kept as printed.",
+  "summary_html": "<p>气体分子具有有限的<span data-concept=\"volume\">体积</span>，并且彼此之间存在<span data-concept=\"force\">吸引力</span>。因此，气体的行为未必能由理想气体状态方程很好地描述。在低<span data-concept=\"gas-pressure\">压强</span>和<span data-concept=\"temperature\">高温</span>的条件下，这些因素可以忽略，理想气体方程能准确描述气体的行为，此时称气体表现为理想行为。然而，在较低的<span data-concept=\"temperature\">温度</span>和较高的<span data-concept=\"gas-pressure\">压强</span>下，需要对分子<span data-concept=\"volume\">体积</span>和分子间吸引作出修正，以体现有限的分子大小和吸引<span data-concept=\"force\">力</span>。范德华方程是理想气体状态方程的修正形式，可用来说明气体在这些条件下的非理想行为。</p>",
+  "notes": "本节没有印出“学习链接”注释。书中的范德华方程图片被排成带有两个标注的方程。例 9.24 中的单位“L² atm mol²”按原样保留。",
   "ai": {
     "text": [
       {
@@ -22,31 +22,50 @@
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ],
     "figures": [
       {
         "model": "claude-opus-5-5",
         "effort": "low"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ]
   },
-  "built": "2026-09-28",
+  "built": "2026-10-26",
   "exercises_lead": "",
-  "exercise_notes": "Bloom levels, concept tags, weights, hints and the suggested approaches marked as OmniStax’s own are AI-generated. Answers come from the book’s answer key and from the Check your Learning answer. The Check your Learning item is set inline after Example 9.24, and its answer keeps the book’s five significant figures. The unkeyed numerical exercise fs-idm23432208 (0.467 mol of CO₂ in a 0.245-L flask) is left out, and no answer is computed for it. The two unkeyed conceptual exercises are kept with a suggested approach marked as OmniStax’s own. The item that begins “If XX behaved” is kept as printed. Numeric answers accept 2% tolerance.",
+  "exercise_notes": "布鲁姆层级、概念标签、权重、提示以及标明为 OmniStax 自己撰写的建议思路均由 AI 生成。答案来自书后答案和“学习检测”的答案。“学习检测”一题排在例 9.24 之后，其答案保留书中的五位有效数字。没有书后答案的数值习题 fs-idm23432208（0.467 mol CO₂ 在 0.245 L 的烧瓶中）被略去，也没有为它算出答案。两道没有书后答案的概念题保留，并附有标明为 OmniStax 自己撰写的建议思路。以“如果 XX 表现为理想气体”开头的那道题按原样保留。数值答案接受 2% 的容差。",
   "figures": [
     {
       "id": "sim-z-graph",
       "kind": "sim",
       "number": "9.35",
-      "originals": ["/media/ch09/CNX_Chem_09_06_ZvsPgraph.jpg"],
-      "original_caption": "A graph of the compressibility factor (Z) vs. pressure shows that gases can exhibit significant deviations from the behavior predicted by the ideal gas law.",
-      "draws": ["pressure", "volume", "temperature"],
+      "originals": [
+        "/media/ch09/CNX_Chem_09_06_ZvsPgraph.jpg"
+      ],
+      "original_caption": "压缩因子（Z）对压强的图像表明，气体可能表现出与理想气体状态方程所预测的行为有显著偏差。",
+      "draws": [
+        "pressure",
+        "volume",
+        "temperature"
+      ],
       "ai": [
         {
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -54,9 +73,16 @@
       "id": "sim-real-boxes",
       "kind": "sim",
       "number": "9.36",
-      "originals": ["/media/ch09/CNX_Chem_09_06_RealGas2.jpg"],
-      "original_caption": "(a) Attractions between gas molecules serve to decrease the gas volume at constant pressure compared to an ideal gas whose molecules experience no attractive forces. (b) These attractive forces will decrease the force of collisions between the molecules and container walls, therefore reducing the pressure exerted at constant volume compared to an ideal gas.",
-      "draws": ["pressure", "volume", "temperature", "amount"],
+      "originals": [
+        "/media/ch09/CNX_Chem_09_06_RealGas2.jpg"
+      ],
+      "original_caption": "（a）与分子不受吸引力作用的理想气体相比，气体分子之间的吸引使气体在恒定压强下的体积减小。（b）这些吸引力会减小分子与容器壁碰撞的力，因此与理想气体相比，在恒定体积下所产生的压强降低。",
+      "draws": [
+        "pressure",
+        "volume",
+        "temperature",
+        "amount"
+      ],
       "conventions": [
         "He",
         "N",
@@ -73,94 +99,332 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "real-gas bar labels above the bar; camera framed for the corner view"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     }
   ],
   "coverage": [
-    {"span": "compressibility", "concept": "compressibility-factor", "verb": "introduces"},
-    {"span": "compressibility", "concept": "ideal-gas-law", "verb": "uses"},
-    {"span": "causes", "concept": "causes-of-non-ideal-behavior", "verb": "introduces"},
-    {"span": "causes", "concept": "compressibility-factor", "verb": "uses"},
-    {"span": "causes", "concept": "boyles-law", "verb": "uses"},
-    {"span": "van-der-waals", "concept": "van-der-waals-equation", "verb": "introduces"},
-    {"span": "van-der-waals", "concept": "causes-of-non-ideal-behavior", "verb": "reinforces"},
-    {"span": "van-der-waals", "concept": "compressibility-factor", "verb": "reinforces"},
-    {"span": "van-der-waals", "concept": "ideal-gas-law", "verb": "uses"},
-    {"span": "ideal-conditions", "concept": "conditions-for-ideal-behavior", "verb": "introduces"},
-    {"span": "ex-co2-flask", "concept": "van-der-waals-equation", "verb": "uses"},
-    {"span": "ex-co2-flask", "concept": "ideal-gas-law", "verb": "uses"}
+    {
+      "span": "compressibility",
+      "concept": "compressibility-factor",
+      "verb": "introduces"
+    },
+    {
+      "span": "compressibility",
+      "concept": "ideal-gas-law",
+      "verb": "uses"
+    },
+    {
+      "span": "causes",
+      "concept": "causes-of-non-ideal-behavior",
+      "verb": "introduces"
+    },
+    {
+      "span": "causes",
+      "concept": "compressibility-factor",
+      "verb": "uses"
+    },
+    {
+      "span": "causes",
+      "concept": "boyles-law",
+      "verb": "uses"
+    },
+    {
+      "span": "van-der-waals",
+      "concept": "van-der-waals-equation",
+      "verb": "introduces"
+    },
+    {
+      "span": "van-der-waals",
+      "concept": "causes-of-non-ideal-behavior",
+      "verb": "reinforces"
+    },
+    {
+      "span": "van-der-waals",
+      "concept": "compressibility-factor",
+      "verb": "reinforces"
+    },
+    {
+      "span": "van-der-waals",
+      "concept": "ideal-gas-law",
+      "verb": "uses"
+    },
+    {
+      "span": "ideal-conditions",
+      "concept": "conditions-for-ideal-behavior",
+      "verb": "introduces"
+    },
+    {
+      "span": "ex-co2-flask",
+      "concept": "van-der-waals-equation",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-co2-flask",
+      "concept": "ideal-gas-law",
+      "verb": "uses"
+    }
   ],
   "exercises": [
-    {"id": "cyl1", "source_id": "fs-idp133812128", "kind": "check-your-learning", "bloom": "Apply", "place": {"at": "inline", "after": "ex-co2-flask"}, "cite": "ideal-conditions", "prompt": "A 560-mL flask contains 21.3 g N<sub>2</sub> at 145 °C. Calculate the pressure of N<sub>2</sub>:<br>(a) from the ideal gas law<br>(b) from the van der Waals equation<br>(c) Explain the reason(s) for the difference.", "answer": {"type": "multi", "generated_by": "source", "parts": [{"part": "(a) ideal gas law", "value": 46.562, "unit": "atm", "hint": "Convert the mass of nitrogen to moles with its molar mass, the temperature to kelvin and the volume to liters, then use P = nRT/V."}, {"part": "(b) van der Waals equation", "value": 46.594, "unit": "atm", "hint": "Use P = nRT/(V − nb) − n²a/V² with a = 1.39 L² atm/mol² and b = 0.0391 L/mol from Table 9.3."}], "solution": "(a) 46.562 atm; (b) 46.594 atm; (c) The van der Waals equation takes into account the volume of the gas molecules themselves as well as intermolecular attractions."}},
-    {"id": "e1", "source_id": "fs-idm14870688", "kind": "exercise", "bloom": "Analyze", "place": {"at": "end"}, "cite": "compressibility", "prompt": "Graphs showing the behavior of several different gases follow. Which of these gases exhibit behavior significantly different from that expected for ideal gases?<br><img src=\"/media/ch09/CNX_Chem_09_06_Exercise1_img.jpg\" alt=\"Six graphs. Gas A: volume against temperature at constant n and P, a straight line rising from the lower left. Gas B: PV against P at constant n and T, a horizontal straight line. Gas C: moles against PV/RT, a curve that dips slightly and then rises. Gas D: moles against PV/RT at constant n and P, a horizontal straight line. Gas E: volume against temperature at constant n and P, a curve rising from the lower left. Gas F: pressure against temperature at constant n and V, a curve that rises steeply and then more slowly.\">", "answer": {"type": "open", "generated_by": "source", "solution": "Gases C, E, and F"}},
-    {"id": "e2", "source_id": "fs-idp200327600", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "van-der-waals", "prompt": "Explain why the plot of <em>PV</em> for CO<sub>2</sub> differs from that of an ideal gas.<br><img src=\"/media/ch09/CNX_Chem_09_06_RealGases.jpg\" alt=\"A graph of PV in atm L against P in atm from 0 to 2 atm. The ideal gas is a horizontal line near 22.42 atm L. He rises slightly in a straight line. CH4 dips below the ideal line and then rises to cross it just past 1 atm. CO2 dips below the ideal line and then rises to cross it at about 0.8 atm, reaching nearly 22.62 atm L near 1.2 atm.\">", "answer": {"type": "open", "generated_by": "ai", "solution": "Because CO<sub>2</sub> molecules attract one another and occupy a volume of their own, which an ideal gas does not. For an ideal gas at constant temperature $\\kP\\kV$ is the same at every pressure, so its plot is a horizontal line at 22.42 L atm. The attractions of CO<sub>2</sub> are strong, with $a$ = 3.59 L<sup>2</sup> atm/mol<sup>2</sup> in Table 9.3, more than twice that of N<sub>2</sub> or O<sub>2</sub>. As the pressure rises and the molecules come closer, these attractions pull them together and make the gas more compressible than an ideal gas, so its volume, and with it $\\kP\\kV$, falls below the ideal line. As the pressure rises further, the molecules are crowded together, and their own volume, $\\kbvdw$ = 0.0427 L/mol, leaves less empty space to compress; the gas becomes less compressible than an ideal gas, so $\\kP\\kV$ turns upward and crosses the ideal line. Helium, whose attractions are very weak, shows only the rise."}},
-    {"id": "e3", "source_id": "fs-idm29887312", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "ideal-conditions", "prompt": "Under which of the following sets of conditions does a real gas behave most like an ideal gas, and for which conditions is a real gas expected to deviate from ideal behavior? Explain.<br>(a) high pressure, small volume<br>(b) high temperature, low pressure<br>(c) low temperature, high pressure", "answer": {"type": "open", "generated_by": "source", "solution": "The gas behavior most like an ideal gas will occur under the conditions that minimize the chances of significant interactions between the gaseous atoms/molecules, namely, low pressures (fewer atoms/molecules per unit volume) and high temperatures (greater kinetic energies of atoms/molecules make them less susceptible to attractive forces). The conditions described in (b), high temperature and low pressure, are therefore most likely to yield ideal gas behavior."}},
-    {"id": "e4", "source_id": "fs-idm58636672", "kind": "exercise", "bloom": "Remember", "place": {"at": "end"}, "cite": "causes", "prompt": "Describe the factors responsible for the deviation of the behavior of real gases from that of an ideal gas.", "answer": {"type": "open", "generated_by": "ai", "solution": "Real gases deviate from ideal behavior because their molecules occupy a volume of their own and attract one another, whereas an ideal gas assumes particles of no significant volume and no attractions. The volume of the molecules matters at high pressure, when they are crowded together: the space they move in is less than the volume of the container, so the gas is less compressible and its volume larger than an ideal gas’s, and the van der Waals equation subtracts $\\kn\\kbvdw$ from $\\kV$ to correct for it. The attractions matter when the molecules are close together and slow, at moderately high pressure and low temperature: molecules near a wall are pulled back toward the rest and strike it more softly, so the pressure is less than an ideal gas would exert, and the equation adds $\\frac{\\kn^{2}a}{\\kV^{2}}$ to $\\kP$ to correct for it. At low pressure and high temperature both effects are small, and real gases behave nearly ideally."}},
-    {"id": "e5", "source_id": "fs-idp137909616", "kind": "exercise", "bloom": "Apply", "place": {"at": "end"}, "cite": "van-der-waals", "prompt": "For which of the following gases should the correction for the molecular volume be largest: CO, CO<sub>2</sub>, H<sub>2</sub>, He, NH<sub>3</sub>, SF<sub>6</sub>?", "answer": {"type": "open", "generated_by": "source", "solution": "SF<sub>6</sub>"}},
-    {"id": "e7", "source_id": "fs-idm89275552", "kind": "exercise", "bloom": "Analyze", "place": {"at": "end"}, "cite": "van-der-waals", "prompt": "Answer the following questions:<br>(a) If XX behaved as an ideal gas, what would its graph of Z vs. P look like?<br>(b) For most of this chapter, we performed calculations treating gases as ideal. Was this justified?<br>(c) What is the effect of the volume of gas molecules on Z? Under what conditions is this effect small? When is it large? Explain using an appropriate diagram.<br>(d) What is the effect of intermolecular attractions on the value of Z? Under what conditions is this effect small? When is it large? Explain using an appropriate diagram.<br>(e) In general, under what temperature conditions would you expect Z to have the largest deviations from the Z for an ideal gas?", "answer": {"type": "open", "generated_by": "source", "solution": "(a) A straight horizontal line at 1.0; (b) When real gases are at low pressures and high temperatures, they behave close enough to ideal gases that they are approximated as such; however, in some cases, we see that at a high pressure and temperature, the ideal gas approximation breaks down and is significantly different from the pressure calculated by the ideal gas equation. (c) The greater the compressibility, the more the volume matters. At low pressures, the correction factor for intermolecular attractions is more significant, and the effect of the volume of the gas molecules on Z would be a small lowering compressibility. At higher pressures, the effect of the volume of the gas molecules themselves on Z would increase compressibility (see Figure 9.35). (d) Once again, at low pressures, the effect of intermolecular attractions on Z would be more important than the correction factor for the volume of the gas molecules themselves, though perhaps still small. At higher pressures and low temperatures, the effect of intermolecular attractions would be larger. See Figure 9.35. (e) Low temperatures"}}
+    {
+      "id": "cyl1",
+      "source_id": "fs-idp133812128",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-co2-flask"
+      },
+      "cite": "ideal-conditions",
+      "prompt": "一个 560 mL 的烧瓶中盛有 21.3 g N<sub>2</sub>，温度为 145 °C。计算 N<sub>2</sub> 的压强：<br>（a）由理想气体状态方程<br>（b）由范德华方程<br>（c）解释两者存在差异的原因。",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "(a) ideal gas law",
+            "value": 46.562,
+            "unit": "atm",
+            "hint": "用摩尔质量把氮的质量换算成物质的量，把温度换算成开尔文，把体积换算成升，然后用 P = nRT/V。"
+          },
+          {
+            "part": "(b) van der Waals equation",
+            "value": 46.594,
+            "unit": "atm",
+            "hint": "用 P = nRT/(V − nb) − n²a/V²，其中 a = 1.39 L² atm/mol²，b = 0.0391 L/mol，取自表 9.3。"
+          }
+        ],
+        "solution": "（a）46.562 atm；（b）46.594 atm；（c）范德华方程考虑了气体分子本身的体积以及分子间的吸引力。"
+      }
+    },
+    {
+      "id": "e1",
+      "source_id": "fs-idm14870688",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "compressibility",
+      "prompt": "下面的图线表示几种不同气体的行为。这些气体中，哪些的行为与理想气体的预期有显著不同？<br><img src=\"/media/ch09/CNX_Chem_09_06_Exercise1_img.jpg\" alt=\"六幅图。气体 A：n 和 P 恒定时体积对温度，一条从左下方上升的直线。气体 B：n 和 T 恒定时 PV 对 P，一条水平直线。气体 C：物质的量对 PV/RT，一条先略微下凹而后上升的曲线。气体 D：n 和 P 恒定时物质的量对 PV/RT，一条水平直线。气体 E：n 和 P 恒定时体积对温度，一条从左下方上升的曲线。气体 F：n 和 V 恒定时压强对温度，一条先陡峭上升而后变缓的曲线。\">",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "气体 C、E 和 F"
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idp200327600",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "van-der-waals",
+      "prompt": "解释为什么 CO<sub>2</sub> 的 <em>PV</em> 图线不同于理想气体的图线。<br><img src=\"/media/ch09/CNX_Chem_09_06_RealGases.jpg\" alt=\"PV（单位 atm L）对 P（单位 atm，0 到 2 atm）的图。理想气体是一条接近 22.42 atm L 的水平线。He 沿一条直线略微上升。CH4 先下降到理想线之下，然后上升，在刚过 1 atm 处与之相交。CO2 先下降到理想线之下，然后上升，在约 0.8 atm 处与之相交，在 1.2 atm 附近达到接近 22.62 atm L。\">",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "因为 CO<sub>2</sub> 分子相互吸引，并且占有自身的体积，而理想气体则不然。对于理想气体，在恒定温度下 $\\kP\\kV$ 在任何压强下都相同，所以它的图线是 22.42 L atm 处的一条水平线。CO<sub>2</sub> 的吸引作用很强，表 9.3 中其 $a$ = 3.59 L<sup>2</sup> atm/mol<sup>2</sup>，是 N<sub>2</sub> 或 O<sub>2</sub> 的两倍多。随着压强升高、分子靠得更近，这些吸引作用把分子拉到一起，使气体比理想气体更易压缩，因此它的体积以及 $\\kP\\kV$ 降到理想线之下。压强进一步升高时，分子被挤在一起，它们自身的体积 $\\kbvdw$ = 0.0427 L/mol 使可供压缩的空隙变少；气体变得比理想气体更难压缩，所以 $\\kP\\kV$ 转而上升，并与理想线相交。氦的吸引作用非常弱，只表现出上升。"
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idm29887312",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "ideal-conditions",
+      "prompt": "在下列哪一组条件下，实际气体的行为最接近理想气体？在哪些条件下，实际气体预期会偏离理想行为？请说明理由。<br>（a）高压强，小体积<br>（b）高温，低压强<br>（c）低温，高压强",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "气体的行为最接近理想气体，将出现在使气态原子/分子之间发生显著相互作用的可能性降到最低的条件下，即低压强（单位体积中的原子/分子较少）和高温（原子/分子较大的动能使它们不易受吸引力的影响）。因此，（b）所述的条件，即高温和低压强，最有可能产生理想气体的行为。"
+      }
+    },
+    {
+      "id": "e4",
+      "source_id": "fs-idm58636672",
+      "kind": "exercise",
+      "bloom": "Remember",
+      "place": {
+        "at": "end"
+      },
+      "cite": "causes",
+      "prompt": "描述造成实际气体的行为偏离理想气体的因素。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "实际气体偏离理想行为，是因为它们的分子占有自身的体积并且相互吸引，而理想气体假定粒子没有显著的体积，也没有吸引。分子的体积在高压强下起作用，此时分子被挤在一起：它们活动的空间小于容器的体积，所以气体更难压缩，其体积比理想气体的大，范德华方程从 $\\kV$ 中减去 $\\kn\\kbvdw$ 来修正这一点。吸引作用在分子靠得很近而且运动较慢时起作用，即在中等偏高的压强和低温下：靠近器壁的分子被拉回其余分子一边，撞击器壁时更轻，所以压强比理想气体所产生的小，方程在 $\\kP$ 上加 $\\frac{\\kn^{2}a}{\\kV^{2}}$ 来修正这一点。在低压强和高温下，这两种效应都很小，实际气体的行为接近理想。"
+      }
+    },
+    {
+      "id": "e5",
+      "source_id": "fs-idp137909616",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "van-der-waals",
+      "prompt": "下列气体中，哪一种的分子体积修正应当最大：CO、CO<sub>2</sub>、H<sub>2</sub>、He、NH<sub>3</sub>、SF<sub>6</sub>？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "SF<sub>6</sub>"
+      }
+    },
+    {
+      "id": "e7",
+      "source_id": "fs-idm89275552",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "van-der-waals",
+      "prompt": "回答下列问题：<br>（a）如果 XX 表现为理想气体，它的 Z 对 P 的图线会是什么样？<br>（b）本章的大部分内容里，我们都是把气体当作理想气体来计算的。这样做合理吗？<br>（c）气体分子的体积对 Z 有什么影响？在什么条件下这种影响很小？什么时候很大？请用适当的图示加以说明。<br>（d）分子间吸引力对 Z 的值有什么影响？在什么条件下这种影响很小？什么时候很大？请用适当的图示加以说明。<br>（e）一般来说，在什么温度条件下，你预期 Z 与理想气体的 Z 偏差最大？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）在 1.0 处的一条水平直线；（b）实际气体处于低压强和高温时，其行为与理想气体十分接近，可以近似按理想气体处理；然而在某些情况下，我们看到，在高压强和高温下，理想气体的近似失效，与用理想气体方程算出的压强有显著差别。（c）压缩性越大，体积的作用越大。在低压强下，分子间吸引力的修正因子更为重要，气体分子的体积对 Z 的影响是使压缩性略微降低。在较高压强下，气体分子本身的体积对 Z 的影响是使压缩性增大（见图 9.35）。（d）同样，在低压强下，分子间吸引力对 Z 的影响比气体分子本身体积的修正因子更重要，尽管可能仍然很小。在较高压强和低温下，分子间吸引力的影响会更大。见图 9.35。（e）低温"
+      }
+    }
   ],
   "exercise_concepts": [
-    {"exercise": "cyl1", "concept": "van-der-waals-equation", "weight": 2, "weights_by": "ai"},
-    {"exercise": "cyl1", "concept": "ideal-gas-law", "weight": 1, "weights_by": "ai"},
-    {"exercise": "e1", "concept": "compressibility-factor", "weight": 2, "weights_by": "ai"},
-    {"exercise": "e1", "concept": "conditions-for-ideal-behavior", "weight": 1, "weights_by": "ai"},
-    {"exercise": "e2", "concept": "causes-of-non-ideal-behavior", "weight": 2, "weights_by": "ai"},
-    {"exercise": "e2", "concept": "compressibility-factor", "weight": 1, "weights_by": "ai"},
-    {"exercise": "e3", "concept": "conditions-for-ideal-behavior", "weight": 2, "weights_by": "ai"},
-    {"exercise": "e4", "concept": "causes-of-non-ideal-behavior", "weight": 2, "weights_by": "ai"},
-    {"exercise": "e5", "concept": "van-der-waals-equation", "weight": 2, "weights_by": "ai"},
-    {"exercise": "e5", "concept": "causes-of-non-ideal-behavior", "weight": 1, "weights_by": "ai"},
-    {"exercise": "e7", "concept": "compressibility-factor", "weight": 2, "weights_by": "ai"},
-    {"exercise": "e7", "concept": "conditions-for-ideal-behavior", "weight": 1, "weights_by": "ai"},
-    {"exercise": "e7", "concept": "causes-of-non-ideal-behavior", "weight": 1, "weights_by": "ai"}
+    {
+      "exercise": "cyl1",
+      "concept": "van-der-waals-equation",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "ideal-gas-law",
+      "weight": 1,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e1",
+      "concept": "compressibility-factor",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e1",
+      "concept": "conditions-for-ideal-behavior",
+      "weight": 1,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e2",
+      "concept": "causes-of-non-ideal-behavior",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e2",
+      "concept": "compressibility-factor",
+      "weight": 1,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e3",
+      "concept": "conditions-for-ideal-behavior",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e4",
+      "concept": "causes-of-non-ideal-behavior",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e5",
+      "concept": "van-der-waals-equation",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e5",
+      "concept": "causes-of-non-ideal-behavior",
+      "weight": 1,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e7",
+      "concept": "compressibility-factor",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e7",
+      "concept": "conditions-for-ideal-behavior",
+      "weight": 1,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e7",
+      "concept": "causes-of-non-ideal-behavior",
+      "weight": 1,
+      "weights_by": "ai"
+    }
   ],
   "referents": [
     {
       "id": "h2",
-      "label": "the hydrogen curve",
+      "label": "氢的曲线",
       "figures": [
         "sim-z-graph"
       ]
     },
     {
       "id": "n2",
-      "label": "the nitrogen curve",
+      "label": "氮的曲线",
       "figures": [
         "sim-z-graph"
       ]
     },
     {
       "id": "o2",
-      "label": "the oxygen curve",
+      "label": "氧的曲线",
       "figures": [
         "sim-z-graph"
       ]
     },
     {
       "id": "ch4",
-      "label": "the methane curve",
+      "label": "甲烷的曲线",
       "figures": [
         "sim-z-graph"
       ]
     },
     {
       "id": "co2",
-      "label": "the carbon dioxide curve",
+      "label": "二氧化碳的曲线",
       "figures": [
         "sim-z-graph"
       ]
     },
     {
       "id": "ideal-gas",
-      "label": "the ideal gas",
+      "label": "理想气体",
       "figures": [
         "sim-real-boxes"
       ]
     },
     {
       "id": "real-gas",
-      "label": "the real gas",
+      "label": "实际气体",
       "figures": [
         "sim-real-boxes"
       ]
@@ -170,7 +434,7 @@
     {
       "id": "c-a-units",
       "kind": "correction",
-      "html": "The book writes the units of <em>a</em> as L<sup>2</sup> atm mol<sup>2</sup>. They are L<sup>2</sup> atm mol<sup>−2</sup>, as Table 9.3 gives them, so that the term comes out in atm."
+      "html": "书中把 <em>a</em> 的单位写成 L<sup>2</sup> atm mol<sup>2</sup>。它们应为 L<sup>2</sup> atm mol<sup>−2</sup>，如表 9.3 所给，这样该项的结果才以 atm 为单位。"
     }
   ]
 }

@@ -2,16 +2,16 @@
   "id": "10.1",
   "module": "m68761",
   "chapter": "10",
-  "title": "Intermolecular Forces",
-  "short": "Intermolecular Forces",
-  "lead": "Whether a substance is a solid, a liquid or a gas depends on a contest between the attractions its particles feel for one another and the <span data-concept=\"kinetic-energy\">kinetic energy</span> that drives them apart. Three kinds of attraction act between neutral molecules, dispersion forces, dipole-dipole attractions and hydrogen bonds, and the structure of a molecule tells us which of them it experiences.",
+  "title": "分子间作用力",
+  "short": "分子间作用力",
+  "lead": "一种物质是固体、液体还是气体，取决于其粒子之间的吸引与驱使它们分开的<span data-concept=\"kinetic-energy\">动能</span>之间的较量。中性分子之间有三种吸引在起作用，即色散力、偶极–偶极吸引力和氢键，而分子的结构告诉我们它受到其中的哪几种。",
   "objectives": [
-    "Describe the types of intermolecular forces possible between atoms or molecules in condensed phases (dispersion forces, dipole-dipole attractions, and hydrogen bonding)",
-    "Identify the types of intermolecular forces experienced by specific molecules based on their structures",
-    "Explain the relation between the intermolecular forces present within a substance and the temperatures associated with changes in its physical state"
+    "描述凝聚相中原子或分子之间可能存在的各类分子间作用力（色散力、偶极–偶极吸引力和氢键）",
+    "根据特定分子的结构，确定它们所受的分子间作用力的类型",
+    "解释物质内部存在的分子间作用力与其物态变化所对应的温度之间的关系"
   ],
-  "summary_html": "<p>The physical properties of condensed matter (liquids and solids) can be explained in terms of the kinetic molecular theory. In a liquid, intermolecular attractive <span data-concept=\"force\">forces</span> hold the molecules in contact, although they still have sufficient KE to move past each other.</p><p>Intermolecular attractive <span data-concept=\"force\">forces</span>, collectively referred to as van der Waals forces, are responsible for the behavior of liquids and solids and are electrostatic in nature. Dipole-dipole attractions result from the electrostatic attraction of the partial negative end of one polar molecule for the partial positive end of another. The temporary dipole that results from the motion of the electrons in an atom can induce a dipole in an adjacent atom and give rise to the London dispersion force. London <span data-concept=\"force\">forces</span> increase with increasing molecular size. Hydrogen bonds are a special type of dipole-dipole attraction that results when hydrogen is bonded to one of the three most electronegative elements: F, O, or N.</p>",
-  "notes": "The two Link to Learning notes are left out, the PhET States of Matter simulation, whose place the phases figure takes, and a video of Kellar Autumn’s gecko research; the book’s own slips are kept as printed, ethanol’s boiling point given as 78.4 °C in Example 10.3’s problem and 78.5 °C in its solution, and “ICI” for ICl in the key to the exercise on dispersion forces, dipole-dipole attractions and hydrogen bonds.",
+  "summary_html": "<p>凝聚态物质（液体和固体）的物理性质可以用分子运动论来解释。在液体中，分子间的吸引<span data-concept=\"force\">力</span>使分子保持接触，不过分子仍有足够的 KE 相互滑过。</p><p>分子间吸引<span data-concept=\"force\">力</span>统称为范德华力，是液体和固体行为的成因，本质上是静电的。偶极–偶极吸引力来自一个极性分子带部分负电荷的一端对另一个分子带部分正电荷的一端的静电吸引。原子中电子的运动所产生的暂时偶极可以在相邻原子中诱导出偶极，并产生伦敦色散力。伦敦<span data-concept=\"force\">力</span>随分子尺寸增大而增大。氢键是一种特殊类型的偶极–偶极吸引力，当氢与三种电负性最大的元素 F、O 或 N 之一键合时产生。</p>",
+  "notes": "两个“学习链接”框被略去：一个是 PhET 物态模拟，本页展示各相的图取代了它的位置；另一个是关于凯勒·奥特姆壁虎研究的视频。书中自身的疏漏照原样保留：例 10.3 的题目中乙醇的沸点给为 78.4 °C，而其解答中为 78.5 °C；关于色散力、偶极–偶极吸引力和氢键的习题的答案中，把 ICl 写成了“ICI”。",
   "ai": {
     "text": [
       {
@@ -21,26 +21,38 @@
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ],
     "figures": [
       {
         "model": "claude-opus-5-5",
         "effort": "low"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ]
   },
-  "built": "2026-09-28",
+  "built": "2026-10-26",
   "exercises_lead": "",
-  "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The unkeyed conceptual items fs-idp56789136, fs-idp137732064, fs-idm102175568, fs-idm75414800, fs-idp70845808, fs-idp59807680, fs-idp11327328, fs-idm24391648 and fs-idp83473328 carry a suggested approach marked as OmniStax’s own. The simulation exercise fs-idm78391360, which opens the PhET States of Matter simulation, is held: the phases figure of this page does not carry the simulation’s interaction-potential part.",
+  "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案取自书后答案以及“学习检测”的答案。没有答案的概念性习题 fs-idp56789136、fs-idp137732064、fs-idm102175568、fs-idm75414800、fs-idp70845808、fs-idp59807680、fs-idp11327328、fs-idm24391648 和 fs-idp83473328 附有标明为 OmniStax 自拟的建议思路。模拟类习题 fs-idm78391360 要求打开 PhET 物态模拟，已暂缓：本页展示各相的图不含该模拟的相互作用势部分。",
   "figures": [
     {
       "id": "sim-phases",
       "kind": "sim",
       "number": "10.2",
-      "originals": ["/media/ch10/CNX_Chem_10_01_KMTPhases1.jpg"],
-      "original_caption": "Transitions between solid, liquid, and gaseous states of a substance occur when conditions of temperature or pressure favor the associated changes in intermolecular forces. (Note: The space between particles in the gas phase is much greater than shown.)",
-      "draws": ["temperature"],
+      "originals": [
+        "/media/ch10/CNX_Chem_10_01_KMTPhases1.jpg"
+      ],
+      "original_caption": "物质在固态、液态和气态之间的转变，发生在温度或压强的条件有利于分子间作用力发生相应变化的时候。（注：气相中粒子之间的空间比图中所示大得多。）",
+      "draws": [
+        "temperature"
+      ],
       "conventions": [
         "Ne",
         "Ar",
@@ -58,17 +70,34 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "clock stepped, so the particles move"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
-    { "id": "fig-water-photo", "kind": "photo", "number": "10.3", "draws": [] },
-    { "id": "fig-butane-photo", "kind": "photo", "number": "10.4", "draws": [] },
+    {
+      "id": "fig-water-photo",
+      "kind": "photo",
+      "number": "10.3",
+      "draws": []
+    },
+    {
+      "id": "fig-butane-photo",
+      "kind": "photo",
+      "number": "10.4",
+      "draws": []
+    },
     {
       "id": "sim-intra-inter",
       "kind": "sim",
       "number": "10.5",
-      "originals": ["/media/ch10/CNX_Chem_10_01_IntravInter.jpg"],
-      "original_caption": "Intramolecular forces keep a molecule intact. Intermolecular forces hold multiple molecules together and determine many of a substance’s properties.",
+      "originals": [
+        "/media/ch10/CNX_Chem_10_01_IntravInter.jpg"
+      ],
+      "original_caption": "分子内作用力使一个分子保持完整。分子间作用力使多个分子结合在一起，并决定物质的许多性质。",
       "draws": [],
       "conventions": [
         "Cl",
@@ -84,6 +113,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "force labels moved off the atoms"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -91,9 +125,13 @@
       "id": "sim-dispersion",
       "kind": "sim",
       "number": "10.6",
-      "originals": ["/media/ch10/CNX_Chem_10_01_DispForces.jpg"],
-      "original_caption": "Dispersion forces result from the formation of temporary dipoles, as illustrated here for two nonpolar diatomic molecules.",
-      "draws": ["temperature"],
+      "originals": [
+        "/media/ch10/CNX_Chem_10_01_DispForces.jpg"
+      ],
+      "original_caption": "色散力来自暂时偶极的形成，此处以两个非极性双原子分子为例加以说明。",
+      "draws": [
+        "temperature"
+      ],
       "ai": [
         {
           "model": "claude-opus-5-5",
@@ -104,6 +142,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "clock stepped, δ labels in ink, force label lifted, note dropped"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -116,6 +159,11 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -123,9 +171,14 @@
       "id": "sim-pentanes",
       "kind": "sim",
       "number": "10.7",
-      "originals": ["/media/ch10/CNX_Chem_10_01_PentIso.jpg"],
-      "original_caption": "The strength of the dispersion forces increases with the contact area between molecules, as demonstrated by the boiling points of these pentane isomers.",
-      "draws": ["temperature", "area"],
+      "originals": [
+        "/media/ch10/CNX_Chem_10_01_PentIso.jpg"
+      ],
+      "original_caption": "色散力的强度随分子之间接触面积的增大而增大，这些戊烷异构体的沸点就说明了这一点。",
+      "draws": [
+        "temperature",
+        "area"
+      ],
       "conventions": [
         "C",
         "H"
@@ -140,22 +193,39 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "2D scaled to the tallest isomer, 3D contact label beside, no idle spin"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
-    { "id": "fig-geckos", "kind": "photo", "number": "10.8", "draws": [] },
+    {
+      "id": "fig-geckos",
+      "kind": "photo",
+      "number": "10.8",
+      "draws": []
+    },
     {
       "id": "fig-dipoles",
       "kind": "figure",
       "number": "10.9",
-      "originals": ["/media/ch10/CNX_Chem_10_01_DipDip.jpg"],
-      "original_caption": "This image shows two arrangements of polar molecules, such as HCl, that allow an attraction between the partial negative end of one molecule and the partial positive end of another.",
+      "originals": [
+        "/media/ch10/CNX_Chem_10_01_DipDip.jpg"
+      ],
+      "original_caption": "此图显示了极性分子（例如 HCl）的两种排列方式，这两种排列使一个分子带部分负电荷的一端与另一个分子带部分正电荷的一端之间可以产生吸引。",
       "draws": [],
       "ai": [
         {
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -163,8 +233,10 @@
       "id": "sim-hbond",
       "kind": "sim",
       "number": "10.10",
-      "originals": ["/media/ch10/CNX_Chem_10_01_HBonding.jpg"],
-      "original_caption": "Water molecules participate in multiple hydrogen-bonding interactions with nearby water molecules.",
+      "originals": [
+        "/media/ch10/CNX_Chem_10_01_HBonding.jpg"
+      ],
+      "original_caption": "水分子与附近的水分子形成多重氢键相互作用。",
       "draws": [],
       "conventions": [
         "O",
@@ -180,6 +252,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "3D cluster smaller and lowered below the headline"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -187,10 +264,17 @@
       "id": "sim-hydrides",
       "kind": "sim",
       "number": "10.11",
-      "folds": ["10.12"],
-      "originals": ["/media/ch10/CNX_Chem_10_01_HydrideBP1.jpg", "/media/ch10/CNX_Chem_10_01_HydrideBP2.jpg"],
-      "original_caption": "(Figure 10.11) For the group 15, 16, and 17 hydrides, the boiling points for each class of compounds increase with increasing molecular mass for elements in periods 3, 4, and 5. (Figure 10.12) In comparison to periods 3−5, the binary hydrides of period 2 elements in groups 17, 16 and 15 (F, O and N, respectively) exhibit anomalously high boiling points due to hydrogen bonding.",
-      "draws": ["temperature"],
+      "folds": [
+        "10.12"
+      ],
+      "originals": [
+        "/media/ch10/CNX_Chem_10_01_HydrideBP1.jpg",
+        "/media/ch10/CNX_Chem_10_01_HydrideBP2.jpg"
+      ],
+      "original_caption": "（图 10.11）对于第 15、16 和 17 族氢化物，各类化合物的沸点随第 3、4、5 周期元素的分子质量增大而升高。（图 10.12）与第 3−5 周期相比，第 17、16 和 15 族中第 2 周期元素（分别为 F、O 和 N）的二元氢化物由于氢键而表现出异常高的沸点。",
+      "draws": [
+        "temperature"
+      ],
       "ai": [
         {
           "model": "claude-opus-5-5",
@@ -201,36 +285,143 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "period-2 names spread apart"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
-    { "id": "fig-dna", "kind": "photo", "number": "10.13", "draws": [] },
-    { "id": "fig-dna-pairs", "kind": "photo", "number": "10.14", "draws": [] }
+    {
+      "id": "fig-dna",
+      "kind": "photo",
+      "number": "10.13",
+      "draws": []
+    },
+    {
+      "id": "fig-dna-pairs",
+      "kind": "photo",
+      "number": "10.14",
+      "draws": []
+    }
   ],
   "coverage": [
-    { "span": "kmt", "concept": "phase-from-imf-and-kinetic-energy", "verb": "introduces" },
-    { "span": "kmt", "concept": "kinetic-molecular-theory", "verb": "uses" },
-    { "span": "kmt", "concept": "intermolecular-force", "verb": "introduces" },
-    { "span": "forces", "concept": "intermolecular-versus-intramolecular-forces", "verb": "introduces" },
-    { "span": "forces", "concept": "van-der-waals-force", "verb": "introduces" },
-    { "span": "dispersion", "concept": "dispersion-forces", "verb": "introduces" },
-    { "span": "dispersion", "concept": "instantaneous-dipole", "verb": "introduces" },
-    { "span": "dispersion", "concept": "induced-dipole", "verb": "introduces" },
-    { "span": "polarizability", "concept": "polarizability-and-dispersion-strength", "verb": "introduces" },
-    { "span": "polarizability", "concept": "rank-by-intermolecular-forces", "verb": "introduces" },
-    { "span": "polarizability", "concept": "dispersion-forces", "verb": "uses" },
-    { "span": "polarizability", "concept": "polarizability", "verb": "introduces" },
-    { "span": "shape", "concept": "shape-and-dispersion-strength", "verb": "introduces" },
-    { "span": "shape", "concept": "dispersion-forces", "verb": "uses" },
-    { "span": "geckos", "concept": "dispersion-forces", "verb": "reinforces" },
-    { "span": "dipole", "concept": "dipole-dipole-attraction", "verb": "introduces" },
-    { "span": "dipole", "concept": "molecular-polarity", "verb": "uses" },
-    { "span": "dipole", "concept": "rank-by-intermolecular-forces", "verb": "uses" },
-    { "span": "hbond", "concept": "hydrogen-bonding", "verb": "introduces" },
-    { "span": "hbond", "concept": "electronegativity", "verb": "uses" },
-    { "span": "hydrides", "concept": "hydrogen-bonding", "verb": "reinforces" },
-    { "span": "hydrides", "concept": "rank-by-intermolecular-forces", "verb": "uses" },
-    { "span": "dna", "concept": "hydrogen-bonding", "verb": "reinforces" }
+    {
+      "span": "kmt",
+      "concept": "phase-from-imf-and-kinetic-energy",
+      "verb": "introduces"
+    },
+    {
+      "span": "kmt",
+      "concept": "kinetic-molecular-theory",
+      "verb": "uses"
+    },
+    {
+      "span": "kmt",
+      "concept": "intermolecular-force",
+      "verb": "introduces"
+    },
+    {
+      "span": "forces",
+      "concept": "intermolecular-versus-intramolecular-forces",
+      "verb": "introduces"
+    },
+    {
+      "span": "forces",
+      "concept": "van-der-waals-force",
+      "verb": "introduces"
+    },
+    {
+      "span": "dispersion",
+      "concept": "dispersion-forces",
+      "verb": "introduces"
+    },
+    {
+      "span": "dispersion",
+      "concept": "instantaneous-dipole",
+      "verb": "introduces"
+    },
+    {
+      "span": "dispersion",
+      "concept": "induced-dipole",
+      "verb": "introduces"
+    },
+    {
+      "span": "polarizability",
+      "concept": "polarizability-and-dispersion-strength",
+      "verb": "introduces"
+    },
+    {
+      "span": "polarizability",
+      "concept": "rank-by-intermolecular-forces",
+      "verb": "introduces"
+    },
+    {
+      "span": "polarizability",
+      "concept": "dispersion-forces",
+      "verb": "uses"
+    },
+    {
+      "span": "polarizability",
+      "concept": "polarizability",
+      "verb": "introduces"
+    },
+    {
+      "span": "shape",
+      "concept": "shape-and-dispersion-strength",
+      "verb": "introduces"
+    },
+    {
+      "span": "shape",
+      "concept": "dispersion-forces",
+      "verb": "uses"
+    },
+    {
+      "span": "geckos",
+      "concept": "dispersion-forces",
+      "verb": "reinforces"
+    },
+    {
+      "span": "dipole",
+      "concept": "dipole-dipole-attraction",
+      "verb": "introduces"
+    },
+    {
+      "span": "dipole",
+      "concept": "molecular-polarity",
+      "verb": "uses"
+    },
+    {
+      "span": "dipole",
+      "concept": "rank-by-intermolecular-forces",
+      "verb": "uses"
+    },
+    {
+      "span": "hbond",
+      "concept": "hydrogen-bonding",
+      "verb": "introduces"
+    },
+    {
+      "span": "hbond",
+      "concept": "electronegativity",
+      "verb": "uses"
+    },
+    {
+      "span": "hydrides",
+      "concept": "hydrogen-bonding",
+      "verb": "reinforces"
+    },
+    {
+      "span": "hydrides",
+      "concept": "rank-by-intermolecular-forces",
+      "verb": "uses"
+    },
+    {
+      "span": "dna",
+      "concept": "hydrogen-bonding",
+      "verb": "reinforces"
+    }
   ],
   "exercises": [
     {
@@ -238,296 +429,555 @@
       "source_id": "fs-idm100317728",
       "kind": "check-your-learning",
       "bloom": "Apply",
-      "place": { "at": "inline", "after": "ex-london" },
+      "place": {
+        "at": "inline",
+        "after": "ex-london"
+      },
       "cite": "polarizability",
-      "prompt": "Order the following hydrocarbons from lowest to highest boiling point: C<sub>2</sub>H<sub>6</sub>, C<sub>3</sub>H<sub>8</sub>, and C<sub>4</sub>H<sub>10</sub>.",
-      "answer": { "type": "open", "generated_by": "source", "solution": "C<sub>2</sub>H<sub>6</sub> &lt; C<sub>3</sub>H<sub>8</sub> &lt; C<sub>4</sub>H<sub>10</sub>. All of these compounds are nonpolar and only have London dispersion forces: the larger the molecule, the larger the dispersion forces and the higher the boiling point. The ordering from lowest to highest boiling point is therefore C<sub>2</sub>H<sub>6</sub> &lt; C<sub>3</sub>H<sub>8</sub> &lt; C<sub>4</sub>H<sub>10</sub>." }
+      "prompt": "将下列烃按沸点从低到高排序：C<sub>2</sub>H<sub>6</sub>、C<sub>3</sub>H<sub>8</sub> 和 C<sub>4</sub>H<sub>10</sub>。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "C<sub>2</sub>H<sub>6</sub> &lt; C<sub>3</sub>H<sub>8</sub> &lt; C<sub>4</sub>H<sub>10</sub>。这些化合物都是非极性的，只有伦敦色散力：分子越大，色散力越大，沸点越高。因此沸点由低到高的顺序为 C<sub>2</sub>H<sub>6</sub> &lt; C<sub>3</sub>H<sub>8</sub> &lt; C<sub>4</sub>H<sub>10</sub>。"
+      }
     },
     {
       "id": "cyl2",
       "source_id": "fs-idm116129040",
       "kind": "check-your-learning",
       "bloom": "Apply",
-      "place": { "at": "inline", "after": "ex-dipole" },
+      "place": {
+        "at": "inline",
+        "after": "ex-dipole"
+      },
       "cite": "dipole",
-      "prompt": "Predict which will have the higher boiling point: ICl or Br<sub>2</sub>. Explain your reasoning.",
-      "answer": { "type": "open", "generated_by": "source", "solution": "ICl. ICl and Br<sub>2</sub> have similar masses (~160 amu) and therefore experience similar London dispersion forces. ICl is polar and thus also exhibits dipole-dipole attractions; Br<sub>2</sub> is nonpolar and does not. The relatively stronger dipole-dipole attractions require more energy to overcome, so ICl will have the higher boiling point." }
+      "prompt": "预测 ICl 和 Br<sub>2</sub> 哪个的沸点更高。请解释你的理由。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "ICl。ICl 和 Br<sub>2</sub> 的质量相近（约 160 amu），因此所受的伦敦色散力相近。ICl 是极性的，因而还表现出偶极–偶极吸引力；Br<sub>2</sub> 是非极性的，没有这种吸引力。相对较强的偶极–偶极吸引力需要更多的能量来克服，所以 ICl 的沸点更高。"
+      }
     },
     {
       "id": "cyl3",
       "source_id": "fs-idm118983568",
       "kind": "check-your-learning",
       "bloom": "Apply",
-      "place": { "at": "inline", "after": "ex-hbond" },
+      "place": {
+        "at": "inline",
+        "after": "ex-hbond"
+      },
       "cite": "hydrides",
-      "prompt": "Ethane (CH<sub>3</sub>CH<sub>3</sub>) has a melting point of −183 °C and a boiling point of −89 °C. Predict the melting and boiling points for methylamine (CH<sub>3</sub>NH<sub>2</sub>). Explain your reasoning.",
-      "answer": { "type": "open", "generated_by": "source", "solution": "The melting point and boiling point for methylamine are predicted to be significantly greater than those of ethane. CH<sub>3</sub>CH<sub>3</sub> and CH<sub>3</sub>NH<sub>2</sub> are similar in size and mass, but methylamine possesses an −NH group and therefore may exhibit hydrogen bonding. This greatly increases its IMFs, and therefore its melting and boiling points. It is difficult to predict values, but the known values are a melting point of −93 °C and a boiling point of −6 °C." }
+      "prompt": "乙烷（CH<sub>3</sub>CH<sub>3</sub>）的熔点为 −183 °C，沸点为 −89 °C。预测甲胺（CH<sub>3</sub>NH<sub>2</sub>）的熔点和沸点。请解释你的理由。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "预测甲胺的熔点和沸点显著高于乙烷。CH<sub>3</sub>CH<sub>3</sub> 和 CH<sub>3</sub>NH<sub>2</sub> 的大小和质量相近，但甲胺含有 −NH 基团，因此可能表现出氢键。这大大增强了它的 IMF，因而提高了它的熔点和沸点。很难预测具体数值，但已知的数值是熔点 −93 °C，沸点 −6 °C。"
+      }
     },
     {
       "id": "e1",
       "source_id": "fs-idp113763312",
       "kind": "exercise",
       "bloom": "Understand",
-      "place": { "at": "end" },
+      "place": {
+        "at": "end"
+      },
       "cite": "kmt",
-      "prompt": "In terms of their bulk properties, how do liquids and solids differ? How are they similar?",
-      "answer": { "type": "open", "generated_by": "source", "solution": "Liquids and solids are similar in that they are matter composed of atoms, ions, or molecules. They are incompressible and have similar densities that are both much larger than those of gases. They are different in that liquids have no fixed shape, and solids are rigid." }
+      "prompt": "就宏观性质而言，液体和固体有何不同？又有何相似之处？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "液体和固体的相似之处在于它们都是由原子、离子或分子构成的物质。它们都不可压缩，密度相近，且都远大于气体的密度。它们的不同之处在于，液体没有固定的形状，而固体是刚性的。"
+      }
     },
     {
       "id": "e2",
       "source_id": "fs-idp56789136",
       "kind": "exercise",
       "bloom": "Understand",
-      "place": { "at": "end" },
+      "place": {
+        "at": "end"
+      },
       "cite": "kmt",
-      "prompt": "In terms of the kinetic molecular theory, in what ways are liquids similar to solids? In what ways are liquids different from solids?",
-      "answer": { "type": "open", "generated_by": "ai", "solution": "Liquids are like solids in that their particles are close together and in contact with one another, so both are condensed phases: each has a definite volume, is nearly incompressible, and is far denser than a gas, because in both the intermolecular attractions are strong relative to the kinetic energies of the particles. Liquids differ from solids in how the particles are arranged and how they move. In a solid the particles are held in fixed positions, often in a regular, repeating pattern, and can only vibrate about those positions. In a liquid the particles are randomly arranged and have enough kinetic energy to move past one another while remaining in contact, so a liquid flows and takes the shape of its container, whereas a solid keeps its own shape." }
+      "prompt": "用分子运动论来说，液体在哪些方面与固体相似？在哪些方面与固体不同？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "液体与固体相似，在于它们的粒子彼此靠近并相互接触，所以两者都是凝聚相：各有确定的体积，几乎不可压缩，密度远大于气体，因为在两者中分子间吸引相对于粒子的动能都很强。液体与固体的不同在于粒子的排列方式和运动方式。在固体中，粒子被固定在确定的位置上，往往呈规则的、重复的图案，只能在这些位置附近振动。在液体中，粒子随机排列，具有足够的动能相互滑过，同时保持接触，所以液体会流动并呈容器的形状，而固体保持自己的形状。"
+      }
     },
     {
       "id": "e3",
       "source_id": "fs-idm25346224",
       "kind": "exercise",
       "bloom": "Understand",
-      "place": { "at": "end" },
+      "place": {
+        "at": "end"
+      },
       "cite": "kmt",
-      "prompt": "In terms of the kinetic molecular theory, in what ways are liquids similar to gases? In what ways are liquids different from gases?",
-      "answer": { "type": "open", "generated_by": "source", "solution": "They are similar in that the atoms or molecules are free to move from one position to another. They differ in that the particles of a liquid are confined to the shape of the vessel in which they are placed. In contrast, a gas will expand without limit to fill the space into which it is placed." }
+      "prompt": "用分子运动论来说，液体在哪些方面与气体相似？在哪些方面与气体不同？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "它们的相似之处在于原子或分子可以自由地从一个位置移动到另一个位置。不同之处在于，液体的粒子被限制在盛放它们的容器的形状内。相反，气体会无限制地膨胀以充满所置入的空间。"
+      }
     },
     {
       "id": "e4",
       "source_id": "fs-idp137732064",
       "kind": "exercise",
       "bloom": "Understand",
-      "place": { "at": "end" },
+      "place": {
+        "at": "end"
+      },
       "cite": "kmt",
-      "prompt": "Explain why liquids assume the shape of any container into which they are poured, whereas solids are rigid and retain their shape.",
-      "answer": { "type": "open", "generated_by": "ai", "solution": "A liquid takes the shape of its container because its molecules have enough kinetic energy to move past one another, although their attractions keep them in contact. The sample therefore flows under gravity until it fills the bottom of whatever vessel holds it, while its volume stays the same. In a solid the IMFs are strong enough relative to the kinetic energies of the particles that the particles are locked in fixed positions and can only vibrate about them. Because they cannot move in relation to one another, the solid cannot flow, and it is rigid and keeps its shape." }
+      "prompt": "解释为什么液体会呈现倒入的任何容器的形状，而固体是刚性的并保持其形状。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "液体呈容器的形状，是因为它的分子具有足够的动能相互滑过，尽管它们之间的吸引使分子保持接触。因此样品在重力作用下流动，直到充满盛放它的容器的底部，同时体积保持不变。在固体中，IMF 相对于粒子的动能足够强，使粒子被锁定在固定的位置上，只能在这些位置附近振动。由于它们不能相对于彼此移动，固体不能流动，它是刚性的并保持自己的形状。"
+      }
     },
     {
       "id": "e5",
       "source_id": "fs-idm121006064",
       "kind": "exercise",
       "bloom": "Understand",
-      "place": { "at": "end" },
+      "place": {
+        "at": "end"
+      },
       "cite": "forces",
-      "prompt": "What is the evidence that all neutral atoms and molecules exert attractive forces on each other?",
-      "answer": { "type": "open", "generated_by": "source", "solution": "All atoms and molecules will condense into a liquid or solid in which the attractive forces exceed the kinetic energy of the molecules, at sufficiently low temperature." }
+      "prompt": "有什么证据表明所有中性原子和分子彼此之间都存在吸引力？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "在足够低的温度下，所有原子和分子都会凝结成液体或固体，此时吸引力超过分子的动能。"
+      }
     },
     {
       "id": "e6",
       "source_id": "fs-idm20127408",
       "kind": "exercise",
       "bloom": "Remember",
-      "place": { "at": "end" },
+      "place": {
+        "at": "end"
+      },
       "cite": "dispersion",
-      "prompt": "Define the following and give an example of each:<br>(a) dispersion force<br>(b) dipole-dipole attraction<br>(c) hydrogen bond",
-      "answer": { "type": "open", "generated_by": "source", "solution": "(a) Dispersion forces occur as an atom develops a temporary dipole moment when its electrons are distributed asymmetrically about the nucleus. This structure is more prevalent in large atoms such as argon or radon. A second atom can then be distorted by the appearance of the dipole in the first atom. The electrons of the second atom are attracted toward the positive end of the first atom, which sets up a dipole in the second atom. The net result is rapidly fluctuating, temporary dipoles that attract one another (e.g., Ar). (b) A dipole-dipole attraction is a force that results from an electrostatic attraction of the positive end of one polar molecule for the negative end of another polar molecule (e.g., ICI molecules<sup class=\"fn\" data-note=\"c-e6-icl\"></sup> attract one another by dipole-dipole interaction). (c) Hydrogen bonds form whenever a hydrogen atom is bonded to one of the more electronegative atoms, such as a fluorine, oxygen, or nitrogen atom. The electrostatic attraction between the partially positive hydrogen atom in one molecule and the partially negative atom in another molecule gives rise to a strong dipole-dipole interaction called a hydrogen bond (e.g., HF⋯HF)." }
+      "prompt": "定义下列各项并各举一例：<br>（a）色散力<br>（b）偶极–偶极吸引力<br>（c）氢键",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）当原子的电子围绕原子核不对称分布时，原子会产生一个暂时的偶极矩，色散力由此产生。这种结构在氩或氡这样的大原子中更为普遍。第二个原子随后会因第一个原子中偶极的出现而发生畸变。第二个原子的电子被吸引向第一个原子的正端，从而在第二个原子中形成偶极。最终结果是迅速涨落的、相互吸引的暂时偶极（例如 Ar）。（b）偶极–偶极吸引力是一个极性分子的正端与另一个极性分子的负端之间的静电吸引所产生的力（例如 ICI 分子<sup class=\"fn\" data-note=\"c-e6-icl\"></sup>通过偶极–偶极相互作用而相互吸引）。（c）只要氢原子与氟、氧或氮原子这样电负性较大的原子之一键合，就会形成氢键。一个分子中带部分正电荷的氢原子与另一个分子中带部分负电荷的原子之间的静电吸引，产生一种称为氢键的很强的偶极–偶极相互作用（例如 HF⋯HF）。"
+      }
     },
     {
       "id": "e7",
       "source_id": "fs-idm102175568",
       "kind": "exercise",
       "bloom": "Understand",
-      "place": { "at": "end" },
+      "place": {
+        "at": "end"
+      },
       "cite": "kmt",
-      "prompt": "The types of intermolecular forces in a substance are identical whether it is a solid, a liquid, or a gas. Why then does a substance change phase from a gas to a liquid or to a solid?",
-      "answer": { "type": "open", "generated_by": "ai", "solution": "A gas condenses or freezes because cooling or compressing it changes the kinetic energies of the molecules relative to the IMFs, even though the kinds of force stay the same. The phase depends on the balance between the two. Cooling a gas lowers the average kinetic energy of its molecules, and compressing it brings the molecules closer together, where the attractions between them are stronger. Once the molecules no longer have enough kinetic energy to overcome the attractions that draw them together, they stay in contact and the gas condenses to a liquid. Further cooling lowers the kinetic energy until the IMFs hold the molecules in fixed positions, and the liquid freezes to a solid." }
+      "prompt": "无论物质是固体、液体还是气体，其中分子间作用力的类型都是相同的。那么，为什么物质会发生相变，从气体变为液体或固体呢？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "气体凝结或凝固，是因为冷却或压缩改变了分子的动能相对于 IMF 的大小，尽管力的种类保持不变。相取决于两者之间的平衡。冷却气体会降低其分子的平均动能，压缩则使分子靠得更近，使它们之间的吸引更强。一旦分子不再有足够的动能去克服把它们吸引在一起的作用，它们就保持接触，气体凝结为液体。进一步冷却会降低动能，直到 IMF 把分子保持在固定的位置上，液体凝固为固体。"
+      }
     },
     {
       "id": "e8",
       "source_id": "fs-idp44839120",
       "kind": "exercise",
       "bloom": "Understand",
-      "place": { "at": "end" },
+      "place": {
+        "at": "end"
+      },
       "cite": "polarizability",
-      "prompt": "Why do the boiling points of the noble gases increase in the order He &lt; Ne &lt; Ar &lt; Kr &lt; Xe?",
-      "answer": { "type": "open", "generated_by": "source", "solution": "The London forces typically increase as the number of electrons increase." }
+      "prompt": "为什么稀有气体的沸点按 He &lt; Ne &lt; Ar &lt; Kr &lt; Xe 的顺序升高？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "伦敦力通常随电子数的增多而增大。"
+      }
     },
     {
       "id": "e9",
       "source_id": "fs-idm75414800",
       "kind": "exercise",
       "bloom": "Analyze",
-      "place": { "at": "end" },
+      "place": {
+        "at": "end"
+      },
       "cite": "hydrides",
-      "prompt": "Neon and HF have approximately the same molecular masses.<br>(a) Explain why the boiling points of Neon and HF differ.<br>(b) Compare the change in the boiling points of Ne, Ar, Kr, and Xe with the change of the boiling points of HF, HCl, HBr, and HI, and explain the difference between the changes with increasing atomic or molecular mass.",
-      "answer": { "type": "open", "generated_by": "ai", "solution": "(a) Neon boils at −246 °C and HF at about 20 °C, because HF molecules attract one another by hydrogen bonds and neon atoms attract one another only by dispersion forces. A neon atom is a single nonpolar atom, and its dispersion forces are weak because the atom is small. An HF molecule has about the same mass, so its dispersion forces are similar, but it is polar and has a hydrogen atom bonded to fluorine. HF molecules therefore attract one another by dipole-dipole attractions and, much more strongly, by hydrogen bonds, so far more energy is needed to separate them.<br>(b) The boiling points of the noble gases rise steadily with atomic mass, from −246 °C for Ne through −186 °C for Ar and −153 °C for Kr to −108 °C for Xe, because their only attractions are dispersion forces, which grow as the atoms become larger and more polarizable. The hydrogen halides break this pattern: HCl (−85 °C), HBr (−67 °C), and HI (−35 °C) rise with molecular mass as their dispersion forces grow, but HF, the lightest, boils highest of all at about 20 °C. Only HF of the four can form hydrogen bonds, and these outweigh the larger dispersion forces of the heavier hydrogen halides." }
+      "prompt": "氖和 HF 的分子质量大致相同。<br>（a）解释为什么氖和 HF 的沸点不同。<br>（b）比较 Ne、Ar、Kr 和 Xe 的沸点变化与 HF、HCl、HBr 和 HI 的沸点变化，并解释随原子质量或分子质量增大，这两种变化有何不同。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "（a）氖在 −246 °C 沸腾，HF 在约 20 °C 沸腾，因为 HF 分子之间通过氢键相互吸引，而氖原子之间只通过色散力相互吸引。氖原子是单个非极性原子，由于原子很小，其色散力很弱。HF 分子的质量与之大致相同，因此其色散力相近，但它是极性的，并且有一个氢原子与氟键合。因此 HF 分子之间通过偶极–偶极吸引力，以及强得多的氢键相互吸引，所以分开它们需要多得多的能量。<br>（b）稀有气体的沸点随原子质量稳步升高，从 Ne 的 −246 °C，经 Ar 的 −186 °C 和 Kr 的 −153 °C，到 Xe 的 −108 °C，因为它们唯一的吸引是色散力，而色散力随原子变大、更易极化而增大。卤化氢打破了这一规律：HCl（−85 °C）、HBr（−67 °C）和 HI（−35 °C）随分子质量增大而升高，因为它们的色散力增大，但最轻的 HF 却在约 20 °C 沸腾，是这四者中最高的。四者中只有 HF 能形成氢键，这种氢键的作用超过了较重卤化氢更大的色散力。"
+      }
     },
     {
       "id": "e10",
       "source_id": "fs-idm50276560",
       "kind": "exercise",
       "bloom": "Apply",
-      "place": { "at": "end" },
+      "place": {
+        "at": "end"
+      },
       "cite": "hydrides",
-      "prompt": "Arrange each of the following sets of compounds in order of increasing boiling point temperature:<br>(a) HCl, H<sub>2</sub>O, SiH<sub>4</sub><br>(b) F<sub>2</sub>, Cl<sub>2</sub>, Br<sub>2</sub><br>(c) CH<sub>4</sub>, C<sub>2</sub>H<sub>6</sub>, C<sub>3</sub>H<sub>8</sub><br>(d) O<sub>2</sub>, NO, N<sub>2</sub>",
-      "answer": { "type": "open", "generated_by": "source", "solution": "(a) SiH<sub>4</sub> &lt; HCl &lt; H<sub>2</sub>O; (b) F<sub>2</sub> &lt; Cl<sub>2</sub> &lt; Br<sub>2</sub>; (c) CH<sub>4</sub> &lt; C<sub>2</sub>H<sub>6</sub> &lt; C<sub>3</sub>H<sub>8</sub>; (d) N<sub>2</sub> &lt; O<sub>2</sub> &lt; NO" }
+      "prompt": "将下列各组化合物按沸点温度升高的顺序排列：<br>（a）HCl、H<sub>2</sub>O、SiH<sub>4</sub><br>（b）F<sub>2</sub>、Cl<sub>2</sub>、Br<sub>2</sub><br>（c）CH<sub>4</sub>、C<sub>2</sub>H<sub>6</sub>、C<sub>3</sub>H<sub>8</sub><br>（d）O<sub>2</sub>、NO、N<sub>2</sub>",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）SiH<sub>4</sub> &lt; HCl &lt; H<sub>2</sub>O；（b）F<sub>2</sub> &lt; Cl<sub>2</sub> &lt; Br<sub>2</sub>；（c）CH<sub>4</sub> &lt; C<sub>2</sub>H<sub>6</sub> &lt; C<sub>3</sub>H<sub>8</sub>；（d）N<sub>2</sub> &lt; O<sub>2</sub> &lt; NO"
+      }
     },
     {
       "id": "e11",
       "source_id": "fs-idp70845808",
       "kind": "exercise",
       "bloom": "Analyze",
-      "place": { "at": "end" },
+      "place": {
+        "at": "end"
+      },
       "cite": "hydrides",
-      "prompt": "The molecular mass of butanol, C<sub>4</sub>H<sub>9</sub>OH, is 74.14; that of ethylene glycol, CH<sub>2</sub>(OH)CH<sub>2</sub>OH, is 62.08, yet their boiling points are 117.2 °C and 174 °C, respectively. Explain the reason for the difference.",
-      "answer": { "type": "open", "generated_by": "ai", "solution": "Ethylene glycol boils at the higher temperature because each of its molecules has two −OH groups, whereas a butanol molecule has only one. Butanol is the heavier and larger molecule, so its dispersion forces are somewhat stronger, and these alone would give it the higher boiling point. In both liquids the strongest attractions are hydrogen bonds between a hydrogen atom bonded to oxygen in one molecule and a lone pair on an oxygen atom of a neighbor. With two −OH groups, an ethylene glycol molecule can take part in about twice as many hydrogen bonds as a butanol molecule, so the attractions between its molecules are much stronger overall. More energy, and so a higher temperature, is needed to separate the molecules in boiling: 174 °C for ethylene glycol against 117.2 °C for butanol." }
+      "prompt": "丁醇 C<sub>4</sub>H<sub>9</sub>OH 的分子质量为 74.14；乙二醇 CH<sub>2</sub>(OH)CH<sub>2</sub>OH 的分子质量为 62.08，但它们的沸点分别为 117.2 °C 和 174 °C。解释造成这一差异的原因。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "乙二醇的沸点较高，因为它的每个分子有两个 −OH 基团，而丁醇分子只有一个。丁醇是更重、更大的分子，所以它的色散力稍强，仅凭这一点会使它的沸点更高。在两种液体中，最强的吸引都是一个分子中与氧键合的氢原子与相邻分子中氧原子上的孤电子对之间的氢键。有两个 −OH 基团的乙二醇分子所能参与的氢键数目大约是丁醇分子的两倍，所以其分子之间的总体吸引要强得多。使分子在沸腾时分开需要更多的能量，也就需要更高的温度：乙二醇为 174 °C，而丁醇为 117.2 °C。"
+      }
     },
     {
       "id": "e12",
       "source_id": "fs-idp19547744",
       "kind": "exercise",
       "bloom": "Analyze",
-      "place": { "at": "end" },
+      "place": {
+        "at": "end"
+      },
       "cite": "dipole",
-      "prompt": "On the basis of intermolecular attractions, explain the differences in the boiling points of <em>n</em>–butane (−1 °C) and chloroethane (12 °C), which have similar molar masses.",
-      "answer": { "type": "open", "generated_by": "source", "solution": "Only rather small dipole-dipole interactions from C-H bonds are available to hold <em>n</em>-butane in the liquid state. Chloroethane, however, has rather large dipole interactions because of the Cl-C bond; the interaction, therefore, is stronger, leading to a higher boiling point." }
+      "prompt": "根据分子间吸引力，解释摩尔质量相近的<em>正</em>丁烷（−1 °C）和氯乙烷（12 °C）沸点的差异。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "只有 C-H 键所产生的相当小的偶极–偶极相互作用可用来使<em>正</em>丁烷保持在液态。然而，氯乙烷由于 Cl-C 键而具有相当大的偶极相互作用；因此相互作用更强，导致沸点更高。"
+      }
     },
     {
       "id": "e13",
       "source_id": "fs-idp59807680",
       "kind": "exercise",
       "bloom": "Analyze",
-      "place": { "at": "end" },
+      "place": {
+        "at": "end"
+      },
       "cite": "hydrides",
-      "prompt": "On the basis of dipole moments and/or hydrogen bonding, explain in a qualitative way the differences in the boiling points of acetone (56.2 °C) and 1-propanol (97.4 °C), which have similar molar masses.",
-      "answer": { "type": "open", "generated_by": "ai", "solution": "1-Propanol boils at the higher temperature because its molecules can form hydrogen bonds with one another and acetone molecules cannot. The two compounds have similar molar masses, about 58 g/mol for acetone and 60 g/mol for 1-propanol, so their dispersion forces are comparable. Acetone, (CH<sub>3</sub>)<sub>2</sub>CO, is polar because of its C=O group, so its molecules attract each other by dipole-dipole attractions, but none of its hydrogen atoms is bonded to oxygen, so it cannot form hydrogen bonds among its own molecules. 1-Propanol, CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>OH, is also polar and has an −OH group, whose hydrogen atom is attracted to a lone pair on the oxygen atom of a neighboring molecule. Hydrogen bonds are stronger than ordinary dipole-dipole attractions, so 1-propanol must be heated to 97.4 °C to boil, while acetone boils at 56.2 °C." }
+      "prompt": "根据偶极矩和/或氢键，定性地解释摩尔质量相近的丙酮（56.2 °C）和 1-丙醇（97.4 °C）沸点的差异。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "1-丙醇的沸点较高，因为它的分子之间可以形成氢键，而丙酮分子不能。这两种化合物的摩尔质量相近，丙酮约为 58 g/mol，1-丙醇约为 60 g/mol，所以它们的色散力相当。丙酮 (CH<sub>3</sub>)<sub>2</sub>CO 因其 C=O 基团而是极性的，所以它的分子之间通过偶极–偶极吸引力相互吸引，但它没有任何氢原子与氧键合，所以不能在自身分子之间形成氢键。1-丙醇 CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>OH 也是极性的，并且有一个 −OH 基团，其氢原子被相邻分子氧原子上的孤电子对吸引。氢键比普通的偶极–偶极吸引力强，所以 1-丙醇必须加热到 97.4 °C 才沸腾，而丙酮在 56.2 °C 就沸腾。"
+      }
     },
     {
       "id": "e14",
       "source_id": "fs-idp12526608",
       "kind": "exercise",
       "bloom": "Apply",
-      "place": { "at": "end" },
+      "place": {
+        "at": "end"
+      },
       "cite": "hydrides",
-      "prompt": "The melting point of H<sub>2</sub>O(<em>s</em>) is 0 °C. Would you expect the melting point of H<sub>2</sub>S(<em>s</em>) to be −85 °C, 0 °C, or 185 °C? Explain your answer.",
-      "answer": { "type": "choice", "generated_by": "source", "options": ["−85 °C", "0 °C", "185 °C"], "correct": 0, "hint": "Ask which of the two compounds can form hydrogen bonds.", "solution": "−85 °C. Water has stronger hydrogen bonds, so it melts at a higher temperature." }
+      "prompt": "H<sub>2</sub>O(<em>s</em>) 的熔点是 0 °C。你预计 H<sub>2</sub>S(<em>s</em>) 的熔点是 −85 °C、0 °C 还是 185 °C？请解释你的答案。",
+      "answer": {
+        "type": "choice",
+        "generated_by": "source",
+        "options": [
+          "−85 °C",
+          "0 °C",
+          "185 °C"
+        ],
+        "correct": 0,
+        "hint": "想一想这两种化合物中哪一种能形成氢键。",
+        "solution": "−85 °C。水具有更强的氢键，所以它在更高的温度熔化。"
+      }
     },
     {
       "id": "e15",
       "source_id": "fs-idp11327328",
       "kind": "exercise",
       "bloom": "Analyze",
-      "place": { "at": "end" },
+      "place": {
+        "at": "end"
+      },
       "cite": "dipole",
-      "prompt": "Silane (SiH<sub>4</sub>), phosphine (PH<sub>3</sub>), and hydrogen sulfide (H<sub>2</sub>S) melt at −185 °C, −133 °C, and −85 °C, respectively. What does this suggest about the polar character and intermolecular attractions of the three compounds?",
-      "answer": { "type": "open", "generated_by": "ai", "solution": "The melting points suggest that the polarity of the molecules, and with it the strength of their dipole-dipole attractions, increases in the order SiH<sub>4</sub> &lt; PH<sub>3</sub> &lt; H<sub>2</sub>S. The three molecules have similar sizes and molar masses (32, 34, and 34 g/mol), so their dispersion forces are comparable. SiH<sub>4</sub> is tetrahedral and its bond dipoles cancel, so it is nonpolar and has only dispersion forces; it melts lowest, at −185 °C. PH<sub>3</sub> is trigonal pyramidal with a lone pair on phosphorus, so it is polar, though only slightly, because phosphorus and hydrogen have nearly the same electronegativity; weak dipole-dipole attractions add to its dispersion forces and raise its melting point to −133 °C. H<sub>2</sub>S is bent, and sulfur is more electronegative than hydrogen, so its S–H bonds are more polar and it has the largest dipole moment of the three. Its dipole-dipole attractions are the strongest, and it melts highest, at −85 °C." }
+      "prompt": "硅烷（SiH<sub>4</sub>）、膦（PH<sub>3</sub>）和硫化氢（H<sub>2</sub>S）的熔点分别为 −185 °C、−133 °C 和 −85 °C。这对这三种化合物的极性和分子间吸引力说明了什么？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "这些熔点表明，分子的极性以及与之相关的偶极–偶极吸引力的强度，按 SiH<sub>4</sub> &lt; PH<sub>3</sub> &lt; H<sub>2</sub>S 的顺序增大。这三种分子的大小和摩尔质量相近（32、34 和 34 g/mol），所以它们的色散力相当。SiH<sub>4</sub> 是四面体形，其键偶极相互抵消，所以它是非极性的，只有色散力；它的熔点最低，为 −185 °C。PH<sub>3</sub> 是三角锥形，磷上有一对孤电子对，所以它是极性的，不过只是略有极性，因为磷和氢的电负性几乎相同；微弱的偶极–偶极吸引力叠加在它的色散力上，使其熔点升高到 −133 °C。H<sub>2</sub>S 是 V 形，硫的电负性大于氢，所以它的 S–H 键极性更强，在这三者中偶极矩最大。它的偶极–偶极吸引力最强，熔点最高，为 −85 °C。"
+      }
     },
     {
       "id": "e16",
       "source_id": "fs-idm54846080",
       "kind": "exercise",
       "bloom": "Understand",
-      "place": { "at": "end" },
+      "place": {
+        "at": "end"
+      },
       "cite": "hbond",
-      "prompt": "Explain why a hydrogen bond between two water molecules is weaker than a hydrogen bond between two hydrogen fluoride molecules.",
-      "answer": { "type": "open", "generated_by": "source", "solution": "The hydrogen bond between two hydrogen fluoride molecules is stronger than that between two water molecules because the electronegativity of F is greater than that of O. Consequently, the partial negative charge on F is greater than that on O. The hydrogen bond between the partially positive H and the larger partially negative F will be stronger than that formed between H and O." }
+      "prompt": "解释为什么两个水分子之间的氢键比两个氟化氢分子之间的氢键弱。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "氟化氢分子之间的氢键比水分子之间的氢键强，因为 F 的电负性大于 O 的电负性。因此，F 上的部分负电荷大于 O 上的部分负电荷。带部分正电荷的 H 与较大的、带部分负电荷的 F 之间的氢键，将比 H 与 O 之间形成的氢键更强。"
+      }
     },
     {
       "id": "e17",
       "source_id": "fs-idm24391648",
       "kind": "exercise",
       "bloom": "Apply",
-      "place": { "at": "end" },
+      "place": {
+        "at": "end"
+      },
       "cite": "hbond",
-      "figure": { "src": "/media/ch10/CNX_Chem_10_01_AceticAcid_img.jpg", "alt": "A Lewis structure shows a carbon atom single bonded to three hydrogen atoms and one other carbon atom, that is in turn double bonded to an oxygen atom and single bonded to another oxygen atom that is single bonded to a hydrogen atom. Dotted lines connect the terminal oxygen and hydrogen atoms to a reciprocal lewis structure to the right, rotated 180 degrees. Each dotted line is labeled “hydrogen bond.”" },
-      "prompt": "Under certain conditions, molecules of acetic acid, CH<sub>3</sub>COOH, form “dimers,” pairs of acetic acid molecules held together by strong intermolecular attractions. Draw a dimer of acetic acid, showing how two CH<sub>3</sub>COOH molecules are held together, and stating the type of IMF that is responsible.",
-      "answer": { "type": "open", "generated_by": "ai", "solution": "The two molecules are held together by two hydrogen bonds. In the dimer the two CH<sub>3</sub>COOH molecules face each other through their COOH groups, one turned end for end relative to the other, with the CH<sub>3</sub> groups pointing outward. The hydrogen atom of the O–H group of each molecule carries a partial positive charge and is attracted to a lone pair on the C=O oxygen atom of the other molecule, which carries a partial negative charge. Drawn flat, the two COOH groups and the two hydrogen bonds form a ring of eight atoms, C=O····H–O–C=O····H–O–, which closes on the first carbon atom, the dotted lines marking the hydrogen bonds. The attraction is hydrogen bonding because each hydrogen atom is bonded to a highly electronegative oxygen atom and is attracted to a lone pair on an oxygen atom of the neighboring molecule." }
+      "figure": {
+        "src": "/media/ch10/CNX_Chem_10_01_AceticAcid_img.jpg",
+        "alt": "路易斯结构显示一个碳原子与三个氢原子和另一个碳原子单键相连，后一个碳原子又与一个氧原子双键相连，并与另一个氧原子单键相连，这个氧原子再与一个氢原子单键相连。虚线把末端的氧原子和氢原子连接到右侧旋转了 180 度的对应路易斯结构上。每条虚线都标为“氢键”。"
+      },
+      "prompt": "在某些条件下，乙酸 CH<sub>3</sub>COOH 的分子会形成“二聚体”，即由强分子间吸引力结合在一起的成对乙酸分子。画出乙酸的二聚体，表明两个 CH<sub>3</sub>COOH 分子是如何结合在一起的，并说明起作用的是哪种类型的 IMF。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "两个分子由两个氢键结合在一起。在二聚体中，两个 CH<sub>3</sub>COOH 分子通过它们的 COOH 基团相对，一个相对于另一个首尾倒置，CH<sub>3</sub> 基团指向外侧。每个分子的 O–H 基团的氢原子带部分正电荷，被另一个分子 C=O 氧原子上的孤电子对吸引，该氧原子带部分负电荷。平面画出时，两个 COOH 基团和两个氢键形成一个八原子的环，C=O····H–O–C=O····H–O–，并在第一个碳原子处闭合，虚线表示氢键。这种吸引是氢键，因为每个氢原子都与一个电负性很大的氧原子键合，并被相邻分子氧原子上的孤电子对吸引。"
+      }
     },
     {
       "id": "e18",
       "source_id": "fs-idp57460448",
       "kind": "exercise",
       "bloom": "Apply",
-      "place": { "at": "end" },
+      "place": {
+        "at": "end"
+      },
       "cite": "hbond",
-      "figure": { "src": "/media/ch10/CNX_Chem_10_01_Aminacidch_img.jpg", "alt": "Two turns of a helical structure are shown horizontally. Three Lewis structures are superimposed on the helix. The first shows horizontally stacked dashes next to an oxygen atom, with three dots connecting to a hydrogen atom, and a single dash connecting the hydrogen atom to a nitrogen atom. The second shows a carbon atom double bonded to an oxygen atom, then three dots connecting to a hydrogen atom which is bonded to a nitrogen atom. The third shows a carbon atom double bonded to an oxygen atom with three dots extending to the right of the oxygen atom." },
-      "prompt": "Proteins are chains of amino acids that can form in a variety of arrangements, one of which is a helix. What kind of IMF is responsible for holding the protein strand in this shape? On the protein image, show the locations of the IMFs that hold the protein together.",
-      "answer": { "type": "open", "generated_by": "source", "solution": "H-bonding is the principle IMF holding the protein strands together. The H-bonding is between the N−H and C=O." }
+      "figure": {
+        "src": "/media/ch10/CNX_Chem_10_01_Aminacidch_img.jpg",
+        "alt": "水平显示螺旋结构的两圈。螺旋上叠加了三个路易斯结构。第一个显示一个氧原子旁边水平堆叠的短横线，三个点把它与一个氢原子相连，一条短横线把该氢原子与一个氮原子相连。第二个显示一个碳原子与一个氧原子双键相连，然后三个点连接到一个氢原子，该氢原子与一个氮原子键合。第三个显示一个碳原子与一个氧原子双键相连，三个点延伸到氧原子的右侧。"
+      },
+      "prompt": "蛋白质是氨基酸链，可以形成各种排列，其中之一是螺旋。是哪种 IMF 使蛋白质链保持这种形状？在蛋白质图像上标出使蛋白质保持在一起的 IMF 的位置。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "氢键是使蛋白质链保持在一起的主要 IMF。氢键存在于 N−H 与 C=O 之间。"
+      }
     },
     {
       "id": "e19",
       "source_id": "fs-idp83473328",
       "kind": "exercise",
       "bloom": "Understand",
-      "place": { "at": "end" },
+      "place": {
+        "at": "end"
+      },
       "cite": "kmt",
-      "prompt": "The density of liquid NH<sub>3</sub> is 0.64 g/mL; the density of gaseous NH<sub>3</sub> at STP is 0.0007 g/mL. Explain the difference between the densities of these two phases.",
-      "answer": { "type": "open", "generated_by": "ai", "solution": "Liquid ammonia is about 900 times as dense as the gas at STP (0.64 g/mL ÷ 0.0007 g/mL ≈ 900) because the same molecules are packed far more closely in the liquid. Density is mass divided by volume, and the mass of each molecule is the same in both phases, so the difference comes from how much volume a given number of molecules occupies. In the liquid the IMFs, chiefly hydrogen bonds between NH<sub>3</sub> molecules, keep the molecules in contact with one another, so a given mass occupies a small volume. In the gas the kinetic energies of the molecules overcome these attractions, and the molecules are widely separated, with mostly empty space between them, so the same mass of ammonia spreads over a volume roughly 900 times larger." }
+      "prompt": "液态 NH<sub>3</sub> 的密度是 0.64 g/mL；气态 NH<sub>3</sub> 在 STP 下的密度是 0.0007 g/mL。解释这两种相的密度之差。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "液氨的密度约为 STP 下气体的 900 倍（0.64 g/mL ÷ 0.0007 g/mL ≈ 900），因为同样的分子在液体中堆积得紧密得多。密度是质量除以体积，两种相中每个分子的质量相同，所以差别来自一定数目的分子所占的体积。在液体中，IMF（主要是 NH<sub>3</sub> 分子之间的氢键）使分子彼此保持接触，所以一定质量只占很小的体积。在气体中，分子的动能克服了这些吸引，分子相距很远，之间大部分是空隙，所以同样质量的氨分布在大约 900 倍的体积中。"
+      }
     },
     {
       "id": "e20",
       "source_id": "fs-idp18248944",
       "kind": "exercise",
       "bloom": "Apply",
-      "place": { "at": "end" },
+      "place": {
+        "at": "end"
+      },
       "cite": "hydrides",
-      "prompt": "Identify the intermolecular forces present in the following solids:<br>(a) CH<sub>3</sub>CH<sub>2</sub>OH<br>(b) CH<sub>3</sub>CH<sub>2</sub>CH<sub>3</sub><br>(c) CH<sub>3</sub>CH<sub>2</sub>Cl",
-      "answer": { "type": "open", "generated_by": "source", "solution": "(a) hydrogen bonding, dipole-dipole attraction, and dispersion forces; (b) dispersion forces; (c) dipole-dipole attraction and dispersion forces" }
+      "prompt": "确定下列固体中存在的分子间作用力：<br>（a）CH<sub>3</sub>CH<sub>2</sub>OH<br>（b）CH<sub>3</sub>CH<sub>2</sub>CH<sub>3</sub><br>（c）CH<sub>3</sub>CH<sub>2</sub>Cl",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）氢键、偶极–偶极吸引力和色散力；（b）色散力；（c）偶极–偶极吸引力和色散力"
+      }
     }
   ],
   "exercise_concepts": [
-    { "exercise": "cyl1", "concept": "polarizability-and-dispersion-strength" },
-    { "exercise": "cyl1", "concept": "rank-by-intermolecular-forces" },
-    { "exercise": "cyl2", "concept": "dipole-dipole-attraction" },
-    { "exercise": "cyl2", "concept": "rank-by-intermolecular-forces" },
-    { "exercise": "cyl3", "concept": "hydrogen-bonding" },
-    { "exercise": "cyl3", "concept": "rank-by-intermolecular-forces" },
-    { "exercise": "e1", "concept": "phase-from-imf-and-kinetic-energy" },
-    { "exercise": "e2", "concept": "phase-from-imf-and-kinetic-energy" },
-    { "exercise": "e3", "concept": "phase-from-imf-and-kinetic-energy" },
-    { "exercise": "e4", "concept": "phase-from-imf-and-kinetic-energy" },
-    { "exercise": "e5", "concept": "intermolecular-versus-intramolecular-forces" },
-    { "exercise": "e5", "concept": "phase-from-imf-and-kinetic-energy" },
-    { "exercise": "e6", "concept": "dispersion-forces" },
-    { "exercise": "e6", "concept": "dipole-dipole-attraction" },
-    { "exercise": "e6", "concept": "hydrogen-bonding" },
-    { "exercise": "e7", "concept": "phase-from-imf-and-kinetic-energy" },
-    { "exercise": "e8", "concept": "polarizability-and-dispersion-strength" },
-    { "exercise": "e9", "concept": "hydrogen-bonding" },
-    { "exercise": "e9", "concept": "polarizability-and-dispersion-strength" },
-    { "exercise": "e10", "concept": "rank-by-intermolecular-forces" },
-    { "exercise": "e11", "concept": "hydrogen-bonding" },
-    { "exercise": "e11", "concept": "rank-by-intermolecular-forces" },
-    { "exercise": "e12", "concept": "dipole-dipole-attraction" },
-    { "exercise": "e12", "concept": "rank-by-intermolecular-forces" },
-    { "exercise": "e13", "concept": "hydrogen-bonding" },
-    { "exercise": "e13", "concept": "rank-by-intermolecular-forces" },
-    { "exercise": "e14", "concept": "hydrogen-bonding" },
-    { "exercise": "e15", "concept": "dipole-dipole-attraction" },
-    { "exercise": "e15", "concept": "rank-by-intermolecular-forces" },
-    { "exercise": "e16", "concept": "hydrogen-bonding" },
-    { "exercise": "e17", "concept": "hydrogen-bonding" },
-    { "exercise": "e18", "concept": "hydrogen-bonding" },
-    { "exercise": "e19", "concept": "phase-from-imf-and-kinetic-energy" },
-    { "exercise": "e20", "concept": "rank-by-intermolecular-forces" },
-    { "exercise": "e20", "concept": "dispersion-forces" }
+    {
+      "exercise": "cyl1",
+      "concept": "polarizability-and-dispersion-strength"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "rank-by-intermolecular-forces"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "dipole-dipole-attraction"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "rank-by-intermolecular-forces"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "hydrogen-bonding"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "rank-by-intermolecular-forces"
+    },
+    {
+      "exercise": "e1",
+      "concept": "phase-from-imf-and-kinetic-energy"
+    },
+    {
+      "exercise": "e2",
+      "concept": "phase-from-imf-and-kinetic-energy"
+    },
+    {
+      "exercise": "e3",
+      "concept": "phase-from-imf-and-kinetic-energy"
+    },
+    {
+      "exercise": "e4",
+      "concept": "phase-from-imf-and-kinetic-energy"
+    },
+    {
+      "exercise": "e5",
+      "concept": "intermolecular-versus-intramolecular-forces"
+    },
+    {
+      "exercise": "e5",
+      "concept": "phase-from-imf-and-kinetic-energy"
+    },
+    {
+      "exercise": "e6",
+      "concept": "dispersion-forces"
+    },
+    {
+      "exercise": "e6",
+      "concept": "dipole-dipole-attraction"
+    },
+    {
+      "exercise": "e6",
+      "concept": "hydrogen-bonding"
+    },
+    {
+      "exercise": "e7",
+      "concept": "phase-from-imf-and-kinetic-energy"
+    },
+    {
+      "exercise": "e8",
+      "concept": "polarizability-and-dispersion-strength"
+    },
+    {
+      "exercise": "e9",
+      "concept": "hydrogen-bonding"
+    },
+    {
+      "exercise": "e9",
+      "concept": "polarizability-and-dispersion-strength"
+    },
+    {
+      "exercise": "e10",
+      "concept": "rank-by-intermolecular-forces"
+    },
+    {
+      "exercise": "e11",
+      "concept": "hydrogen-bonding"
+    },
+    {
+      "exercise": "e11",
+      "concept": "rank-by-intermolecular-forces"
+    },
+    {
+      "exercise": "e12",
+      "concept": "dipole-dipole-attraction"
+    },
+    {
+      "exercise": "e12",
+      "concept": "rank-by-intermolecular-forces"
+    },
+    {
+      "exercise": "e13",
+      "concept": "hydrogen-bonding"
+    },
+    {
+      "exercise": "e13",
+      "concept": "rank-by-intermolecular-forces"
+    },
+    {
+      "exercise": "e14",
+      "concept": "hydrogen-bonding"
+    },
+    {
+      "exercise": "e15",
+      "concept": "dipole-dipole-attraction"
+    },
+    {
+      "exercise": "e15",
+      "concept": "rank-by-intermolecular-forces"
+    },
+    {
+      "exercise": "e16",
+      "concept": "hydrogen-bonding"
+    },
+    {
+      "exercise": "e17",
+      "concept": "hydrogen-bonding"
+    },
+    {
+      "exercise": "e18",
+      "concept": "hydrogen-bonding"
+    },
+    {
+      "exercise": "e19",
+      "concept": "phase-from-imf-and-kinetic-energy"
+    },
+    {
+      "exercise": "e20",
+      "concept": "rank-by-intermolecular-forces"
+    },
+    {
+      "exercise": "e20",
+      "concept": "dispersion-forces"
+    }
   ],
   "referents": [
     {
       "id": "group-14",
-      "label": "the carbon family (group 14 hydrides)",
+      "label": "碳族（第 14 族氢化物）",
       "figures": [
         "sim-hydrides"
       ]
     },
     {
       "id": "group-15",
-      "label": "the nitrogen family (group 15 hydrides)",
+      "label": "氮族（第 15 族氢化物）",
       "figures": [
         "sim-hydrides"
       ]
     },
     {
       "id": "group-16",
-      "label": "the oxygen family (group 16 hydrides)",
+      "label": "氧族（第 16 族氢化物）",
       "figures": [
         "sim-hydrides"
       ]
     },
     {
       "id": "group-17",
-      "label": "the halogen family (group 17 hydrides)",
+      "label": "卤族（第 17 族氢化物）",
       "figures": [
         "sim-hydrides"
       ]
@@ -537,12 +987,12 @@
     {
       "id": "c-ethanol-bp",
       "kind": "correction",
-      "html": "The book prints 78.5 °C here, where the problem gives the boiling point of ethanol as 78.4 °C. The value meant is 78.4 °C."
+      "html": "书中此处印的是 78.5 °C，而题目中给出的乙醇沸点是 78.4 °C。应为 78.4 °C。"
     },
     {
       "id": "c-e6-icl",
       "kind": "correction",
-      "html": "The key writes ICI; the polar molecule meant is iodine monochloride, ICl."
+      "html": "答案中写的是 ICI；本意的极性分子是一氯化碘 ICl。"
     }
   ]
 }

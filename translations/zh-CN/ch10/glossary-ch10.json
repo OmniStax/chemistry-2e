@@ -1,0 +1,2833 @@
+{
+  "terms": [
+    {
+      "source": "1-propanol",
+      "target": "1-丙醇",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "2,2,4-trimethylpentane",
+      "target": "2,2,4-三甲基戊烷",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "systematic name of isooctane (异辛烷, glossary).",
+      "section": "10.3"
+    },
+    {
+      "source": "ABAB stacking",
+      "target": "ABAB 堆叠",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "10.6"
+    },
+    {
+      "source": "ABCABC stacking",
+      "target": "ABCABC 堆叠",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "10.6"
+    },
+    {
+      "source": "abrasive",
+      "target": "磨料",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "not looked up in this pass.",
+      "section": "10.5",
+      "confirm": "termonline"
+    },
+    {
+      "source": "absorption vessel",
+      "target": "吸收釜",
+      "authority": "book",
+      "url": "",
+      "note": "Figure 10.36 alt text.",
+      "section": "10.4"
+    },
+    {
+      "source": "adenine",
+      "target": "腺嘌呤",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1"
+    },
+    {
+      "source": "adhesion",
+      "target": "黏附",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the process; the force is 黏附力 (adhesive force).",
+      "section": "10.2",
+      "confirm": "termonline"
+    },
+    {
+      "source": "adhesive (n.)",
+      "target": "胶黏剂",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "\"better adhesives\"; 胶黏剂 is the standard noun, distinct from 黏附力 (adhesive force).",
+      "section": "10.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Adhesive force",
+      "target": "黏附力",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "adhesive force; 化学名词 writes 黏附 with the 黏 form (not 粘).",
+      "section": "10.2",
+      "concept": "adhesive-force",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Agnes Pockels",
+      "target": "阿格内斯·波克尔斯",
+      "authority": "book",
+      "url": "",
+      "note": "person; transliterated.",
+      "section": "10.2",
+      "confirm": "owner"
+    },
+    {
+      "source": "alcohols",
+      "target": "醇",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "cyl1, the class of compounds (methanol to butanol); the glossary row alcohol 酒精 is the drink's alcohol, as in ch12 12.3 pending alcohol (compound class) 醇.",
+      "section": "10.3"
+    },
+    {
+      "source": "Alex Greaney",
+      "target": "Alex Greaney",
+      "authority": "book",
+      "url": "",
+      "note": "person; no standard Chinese rendering found, kept in Latin letters.",
+      "section": "10.1",
+      "confirm": "owner"
+    },
+    {
+      "source": "Alice Ball",
+      "target": "爱丽丝·鲍尔",
+      "authority": "book",
+      "url": "",
+      "note": "person; no standard rendering found, transliterated.",
+      "section": "10.1",
+      "confirm": "owner"
+    },
+    {
+      "source": "alpha polonium",
+      "target": "α-钋",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Alyssa Stark",
+      "target": "艾丽莎·斯塔克",
+      "authority": "book",
+      "url": "",
+      "note": "person; transliterated.",
+      "section": "10.1",
+      "confirm": "owner"
+    },
+    {
+      "source": "amorphous silicon dioxide",
+      "target": "无定形二氧化硅",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.5"
+    },
+    {
+      "source": "amplitude",
+      "target": "振幅",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "concept amplitude (still English in book.json).",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Andre Geim",
+      "target": "安德烈·海姆",
+      "authority": "book",
+      "url": "",
+      "note": "person; standard transliteration (2010 Nobel Prize in Physics).",
+      "section": "10.5",
+      "confirm": "owner"
+    },
+    {
+      "source": "angle of the diffracted beam",
+      "target": "衍射角",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "atomic packing",
+      "target": "原子堆积",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "axis (of a unit cell)",
+      "target": "轴",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "a, b, c axes of a unit cell.",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "base camp",
+      "target": "大本营",
+      "authority": "book",
+      "url": "",
+      "note": "cyl2.",
+      "section": "10.3"
+    },
+    {
+      "source": "base pair",
+      "target": "碱基对",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "complementary base pairs = 互补碱基对.",
+      "section": "10.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "base-centered",
+      "target": "底心",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "body-centered 体心 and face-centered 面心 are in the chapter shard; the lattice type C.",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "binary hydride",
+      "target": "二元氢化物",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "二元 (binary) + 氢化物 (hydride, shared glossary).",
+      "section": "10.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "body center",
+      "target": "体心",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6"
+    },
+    {
+      "source": "body diagonal",
+      "target": "体对角线",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6"
+    },
+    {
+      "source": "body-centered cubic (BCC) solid",
+      "target": "体心立方（BCC）固体",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Body-centered cubic solid",
+      "target": "体心立方固体",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "concept": "body-centered-cubic-solid"
+    },
+    {
+      "source": "Body-centered cubic unit cell",
+      "target": "体心立方晶胞",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "concept": "body-centered-cubic-unit-cell"
+    },
+    {
+      "source": "Boiling point and normal boiling point",
+      "target": "沸点与正常沸点",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.3",
+      "concept": "boiling-point"
+    },
+    {
+      "source": "Boston",
+      "target": "波士顿",
+      "authority": "book",
+      "url": "",
+      "note": "place; standard Chinese name.",
+      "section": "10.3"
+    },
+    {
+      "source": "Bragg angle",
+      "target": "布拉格角",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "type-span \"the Bragg angle\".",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Bragg equation",
+      "target": "布拉格方程",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "concept": "bragg-equation"
+    },
+    {
+      "source": "buckyball",
+      "target": "巴基球",
+      "authority": "book",
+      "url": "",
+      "note": "the book's informal name for the C₆₀ fullerene (富勒烯 is in the shared glossary); 巴基球 is the usual Chinese informal name.",
+      "section": "10.5",
+      "confirm": "termonline"
+    },
+    {
+      "source": "butane",
+      "target": "丁烷",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1"
+    },
+    {
+      "source": "butanol",
+      "target": "丁醇",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "C4H9OH.",
+      "section": "10.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "butter",
+      "target": "黄油",
+      "authority": "book",
+      "url": "",
+      "note": "everyday word.",
+      "section": "10.5"
+    },
+    {
+      "source": "calcium fluoride",
+      "target": "氟化钙",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6"
+    },
+    {
+      "source": "Calculating heat from a heating curve",
+      "target": "由加热曲线计算热量",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.3",
+      "concept": "heating-curve-calculations"
+    },
+    {
+      "source": "Capillary action",
+      "target": "毛细现象",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "化学名词 has 毛细现象 for capillary action (毛细作用 is the alias).",
+      "section": "10.2",
+      "concept": "capillary-action",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Capillary rise",
+      "target": "毛细上升",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.2",
+      "concept": "capillary-rise-equation"
+    },
+    {
+      "source": "capillary tube",
+      "target": "毛细管",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.2"
+    },
+    {
+      "source": "carbon family / nitrogen family / oxygen family / halogen family",
+      "target": "碳族 / 氮族 / 氧族 / 卤族",
+      "authority": "book",
+      "url": "",
+      "note": "referent labels and legend of Figure 10.11 + 10.12: 碳族（第 14 族）, 氮族（第 15 族）, 氧族（第 16 族）, 卤族（第 17 族）.",
+      "section": "10.1",
+      "confirm": "owner"
+    },
+    {
+      "source": "carborundum",
+      "target": "金刚砂",
+      "authority": "book",
+      "url": "",
+      "note": "trade name for silicon carbide; usual Chinese name.",
+      "section": "10.5",
+      "confirm": "termonline"
+    },
+    {
+      "source": "cellulose",
+      "target": "纤维素",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1"
+    },
+    {
+      "source": "cesium chloride",
+      "target": "氯化铯",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6"
+    },
+    {
+      "source": "change of state",
+      "target": "物态变化",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "物态 is the Chapter 1 target of 'states of matter'.",
+      "section": "10.3"
+    },
+    {
+      "source": "chaulmoogra oil",
+      "target": "大风子油",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the oil of the chaulmoogra tree (intro).",
+      "section": "10.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "chemical identity",
+      "target": "本性",
+      "authority": "book",
+      "url": "",
+      "note": "'depends on the chemical identity of the substance' 取决于物质的本性; not 化学组成 (chemical composition).",
+      "section": "10.3",
+      "confirm": "termonline"
+    },
+    {
+      "source": "chloroethane",
+      "target": "氯乙烷",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Classifying a crystalline solid",
+      "target": "晶态固体的分类",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.5",
+      "concept": "classify-crystalline-solid"
+    },
+    {
+      "source": "Clausius-Clapeyron equation",
+      "target": "克劳修斯–克拉珀龙方程",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "物理学名词 克拉珀龙; the order follows textbook usage.",
+      "section": "10.3",
+      "concept": "clausius-clapeyron-equation",
+      "confirm": "termonline"
+    },
+    {
+      "source": "closest-packed array",
+      "target": "最密堆积阵列",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "array written 阵列 (anion array, cubic array); 最密堆积 is the shard word.",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "coal",
+      "target": "煤",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6"
+    },
+    {
+      "source": "cohesion",
+      "target": "内聚",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the process; the force is 内聚力 (cohesive force).",
+      "section": "10.2",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Cohesive and adhesive forces",
+      "target": "内聚力与黏附力",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.2",
+      "concept": "cohesive-and-adhesive-forces"
+    },
+    {
+      "source": "Cohesive force",
+      "target": "内聚力",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.2",
+      "concept": "cohesive-force",
+      "confirm": "termonline"
+    },
+    {
+      "source": "condensed phase",
+      "target": "凝聚相",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1"
+    },
+    {
+      "source": "Congcong Hu",
+      "target": "Congcong Hu",
+      "authority": "book",
+      "url": "",
+      "note": "person; Chinese name whose characters are not given, kept in Latin letters.",
+      "section": "10.1",
+      "confirm": "owner"
+    },
+    {
+      "source": "constructive interference",
+      "target": "相长干涉",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "contact angle",
+      "target": "接触角",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "",
+      "section": "10.2"
+    },
+    {
+      "source": "contact area",
+      "target": "接触面积",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "10.1"
+    },
+    {
+      "source": "cooling curve",
+      "target": "冷却曲线",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.3"
+    },
+    {
+      "source": "Coordination number",
+      "target": "配位数",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "both the crystal sense (nearest neighbours) and the complex sense, as the concept statement says.",
+      "section": "10.6",
+      "concept": "coordination-number"
+    },
+    {
+      "source": "corner",
+      "target": "顶角",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "of a unit cell.",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Critical point",
+      "target": "临界点",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.4",
+      "concept": "critical-point"
+    },
+    {
+      "source": "Critical point and supercritical fluid",
+      "target": "临界点与超临界流体",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.4",
+      "concept": "critical-point-and-supercritical-fluid"
+    },
+    {
+      "source": "critical pressure",
+      "target": "临界压强",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "'the critical pressure' (supercritical paragraph, table head); the gas-pressure span wraps 压强.",
+      "section": "10.4"
+    },
+    {
+      "source": "critical temperature",
+      "target": "临界温度",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the temperature span wraps 温度; table head, Example 10.13, exercises.",
+      "section": "10.4"
+    },
+    {
+      "source": "Crystal defects",
+      "target": "晶体缺陷",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.5",
+      "concept": "crystal-defects"
+    },
+    {
+      "source": "crystal plane",
+      "target": "晶面",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6"
+    },
+    {
+      "source": "crystal system",
+      "target": "晶系",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the book says 'lattice system'.",
+      "section": "10.6"
+    },
+    {
+      "source": "Crystalline and amorphous solids",
+      "target": "晶态固体与无定形固体",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.5",
+      "concept": "crystalline-and-amorphous-solids"
+    },
+    {
+      "source": "Cubic closest packing",
+      "target": "立方最密堆积",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "concept": "cubic-closest-packing"
+    },
+    {
+      "source": "cubic closest packing (CCP)",
+      "target": "立方最密堆积（CCP）",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6"
+    },
+    {
+      "source": "cubic hole",
+      "target": "立方空隙",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6"
+    },
+    {
+      "source": "cubic system",
+      "target": "立方晶系",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6"
+    },
+    {
+      "source": "Cubic unit cells",
+      "target": "立方晶胞",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "concept": "cubic-unit-cells"
+    },
+    {
+      "source": "cylinder",
+      "target": "钢瓶",
+      "authority": "book",
+      "url": "",
+      "note": "gas cylinder of Example 10.13 and exercise e5.",
+      "section": "10.4"
+    },
+    {
+      "source": "cytosine",
+      "target": "胞嘧啶",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1"
+    },
+    {
+      "source": "decaffeination",
+      "target": "咖啡因脱除",
+      "authority": "book",
+      "url": "",
+      "note": "'Decaffeinating Coffee Using Supercritical CO₂'; 脱除咖啡因 is the plain wording.",
+      "section": "10.4"
+    },
+    {
+      "source": "defect",
+      "target": "缺陷",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.5"
+    },
+    {
+      "source": "delocalized electrons",
+      "target": "离域电子",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "not looked up in this pass.",
+      "section": "10.5",
+      "confirm": "termonline"
+    },
+    {
+      "source": "deoxyribonucleic acid (DNA)",
+      "target": "脱氧核糖核酸（DNA）",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1"
+    },
+    {
+      "source": "deoxyribose",
+      "target": "脱氧核糖",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Deposition",
+      "target": "凝华",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.3",
+      "concept": "deposition"
+    },
+    {
+      "source": "destructive interference",
+      "target": "相消干涉",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "dichloromethane",
+      "target": "二氯甲烷",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "decaffeination box.",
+      "section": "10.4"
+    },
+    {
+      "source": "diethyl ether",
+      "target": "乙醚",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1"
+    },
+    {
+      "source": "Diffraction",
+      "target": "衍射",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "concept": "diffraction"
+    },
+    {
+      "source": "diffraction pattern",
+      "target": "衍射图样",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "the book also says diffraction image: 衍射图像 (Franklin box).",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "dimer (of acetic acid)",
+      "target": "二聚体",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "dimethyl ether",
+      "target": "二甲醚",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1"
+    },
+    {
+      "source": "dipole-dipole attraction",
+      "target": "偶极–偶极吸引力",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the book says attraction; 取向力 is the alias of the Keesom force and is not used.",
+      "section": "10.1"
+    },
+    {
+      "source": "Dipole-dipole attractions",
+      "target": "偶极–偶极吸引力",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the book says attraction; 取向力 is the alias of the Keesom force and is not used.",
+      "section": "10.1",
+      "concept": "dipole-dipole-attraction"
+    },
+    {
+      "source": "dipole-dipole force",
+      "target": "偶极–偶极作用力",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "where the book writes 'force' in an example title; the concept 'dipole-dipole attraction' is 偶极–偶极吸引力.",
+      "section": "10.1"
+    },
+    {
+      "source": "dipole-induced dipole attraction",
+      "target": "偶极–诱导偶极吸引力",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "dispersion force",
+      "target": "色散力",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1"
+    },
+    {
+      "source": "doped",
+      "target": "掺杂的",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.5"
+    },
+    {
+      "source": "doping",
+      "target": "掺杂",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.5"
+    },
+    {
+      "source": "double helix",
+      "target": "双螺旋",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1"
+    },
+    {
+      "source": "dry ice",
+      "target": "干冰",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.4"
+    },
+    {
+      "source": "ductility",
+      "target": "延性",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "paired with malleability the pair reads 展性和延性 (化学名词 has 展性 / 延性); see the row 'malleability (paired with ductility)'.",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Dynamic equilibrium",
+      "target": "动态平衡",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.3",
+      "concept": "dynamic-equilibrium"
+    },
+    {
+      "source": "edge length",
+      "target": "棱长",
+      "authority": "book",
+      "url": "",
+      "note": "Chapter 1 decision (棱长).",
+      "section": "10.6"
+    },
+    {
+      "source": "electromagnetic radiation",
+      "target": "电磁辐射",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "concept electromagnetic-radiation (still English in book.json).",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "electronegative",
+      "target": "电负性",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "not looked up in this pass.",
+      "section": "10.5",
+      "confirm": "termonline"
+    },
+    {
+      "source": "electropositive",
+      "target": "电正性",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "not looked up in this pass.",
+      "section": "10.5",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Enthalpies of phase change",
+      "target": "相变焓",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.3",
+      "concept": "enthalpies-of-phase-change"
+    },
+    {
+      "source": "enthalpy of fusion",
+      "target": "熔化焓",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.3"
+    },
+    {
+      "source": "enthalpy of vaporization",
+      "target": "汽化焓",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.3"
+    },
+    {
+      "source": "ester",
+      "target": "酯",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1"
+    },
+    {
+      "source": "ether",
+      "target": "醚",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the compound class; diethyl ether is 乙醚.",
+      "section": "10.1"
+    },
+    {
+      "source": "ethyl chloride",
+      "target": "氯乙烷",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "exercise e18; 氯乙烷 is the systematic name of the compound the book calls ethyl chloride.",
+      "section": "10.3"
+    },
+    {
+      "source": "ethyl ether",
+      "target": "乙醚",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "cyl2: the book's 'ethyl ether' is diethyl ether, the glossary row 乙醚.",
+      "section": "10.3"
+    },
+    {
+      "source": "ethylene glycol",
+      "target": "乙二醇",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.2"
+    },
+    {
+      "source": "evaporation",
+      "target": "蒸发",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.3"
+    },
+    {
+      "source": "extraction",
+      "target": "萃取",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "decaffeination box (supercritical fluid extraction, 超临界流体萃取).",
+      "section": "10.4"
+    },
+    {
+      "source": "extraction vessel",
+      "target": "萃取釜",
+      "authority": "book",
+      "url": "",
+      "note": "Figure 10.36 alt text.",
+      "section": "10.4"
+    },
+    {
+      "source": "face center",
+      "target": "面心",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6"
+    },
+    {
+      "source": "face diagonal",
+      "target": "面对角线",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6"
+    },
+    {
+      "source": "face-centered cubic (FCC) solid",
+      "target": "面心立方（FCC）固体",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6"
+    },
+    {
+      "source": "Face-centered cubic solid",
+      "target": "面心立方固体",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "concept": "face-centered-cubic-solid"
+    },
+    {
+      "source": "Face-centered cubic unit cell",
+      "target": "面心立方晶胞",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "concept": "face-centered-cubic-unit-cell"
+    },
+    {
+      "source": "Finch University of Health Sciences (Chicago Medical School)",
+      "target": "芬奇健康科学大学（芝加哥医学院）",
+      "authority": "book",
+      "url": "",
+      "note": "institution; transliterated.",
+      "section": "10.6",
+      "confirm": "owner"
+    },
+    {
+      "source": "Finding a formula from hole occupancy",
+      "target": "由空隙的占据情况求化学式",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "concept": "formula-from-hole-occupancy"
+    },
+    {
+      "source": "Finding radius and density from a unit cell",
+      "target": "由晶胞求半径和密度",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "concept": "unit-cell-radius-and-density"
+    },
+    {
+      "source": "fire extinguisher",
+      "target": "灭火器",
+      "authority": "book",
+      "url": "",
+      "note": "Example 10.13.",
+      "section": "10.4"
+    },
+    {
+      "source": "first order diffraction",
+      "target": "一级衍射",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "一级 as in the ch12 row first order.",
+      "section": "10.6"
+    },
+    {
+      "source": "float",
+      "target": "浮子",
+      "authority": "book",
+      "url": "",
+      "note": "Figure 10.35 alt text (the coloured floats in the container).",
+      "section": "10.4"
+    },
+    {
+      "source": "fraction of space filled",
+      "target": "空间占有率",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the book says 'the atoms fill about 52% of the space'; 空间占有率 (堆积的空间利用率) is the textbook term for the filled fraction.",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Francis Crick",
+      "target": "弗朗西斯·克里克",
+      "authority": "book",
+      "url": "",
+      "note": "person; the shard has 沃森和克里克.",
+      "section": "10.6",
+      "confirm": "owner"
+    },
+    {
+      "source": "freeze-drying",
+      "target": "冷冻干燥",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.4"
+    },
+    {
+      "source": "Fritz London",
+      "target": "弗里茨·伦敦",
+      "authority": "book",
+      "url": "",
+      "note": "person; 伦敦 as in 伦敦色散力.",
+      "section": "10.1"
+    },
+    {
+      "source": "frost",
+      "target": "霜",
+      "authority": "book",
+      "url": "",
+      "note": "formation of frost as an example of deposition (凝华).",
+      "section": "10.3"
+    },
+    {
+      "source": "Ft. Davis, Texas",
+      "target": "得克萨斯州戴维斯堡",
+      "authority": "book",
+      "url": "",
+      "note": "place (exercise e12); written 得克萨斯州戴维斯堡.",
+      "section": "10.3",
+      "confirm": "owner"
+    },
+    {
+      "source": "fused silica",
+      "target": "熔融石英",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.5"
+    },
+    {
+      "source": "fusion",
+      "target": "熔化",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "same word as melting (glossary 熔化); in 'Fusion (melting)' the second word is written 熔融, see forced-scenarios.md.",
+      "section": "10.3",
+      "confirm": "termonline"
+    },
+    {
+      "source": "gallium arsenide",
+      "target": "砷化镓",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1"
+    },
+    {
+      "source": "gecko",
+      "target": "壁虎",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1"
+    },
+    {
+      "source": "glacier",
+      "target": "冰川",
+      "authority": "book",
+      "url": "",
+      "note": "Figure 10.33 and the water-diagram paragraph.",
+      "section": "10.4"
+    },
+    {
+      "source": "guanine",
+      "target": "鸟嘌呤",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1"
+    },
+    {
+      "source": "heat of vaporization",
+      "target": "汽化热",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "exercises e12 and e16, where the book uses 'heat of vaporization' for the molar enthalpy of vaporization; 汽化焓 is the glossary row enthalpy of vaporization.",
+      "section": "10.3"
+    },
+    {
+      "source": "Heating and cooling curves",
+      "target": "加热曲线与冷却曲线",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.3",
+      "concept": "heating-curve"
+    },
+    {
+      "source": "heating curve",
+      "target": "加热曲线",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.3"
+    },
+    {
+      "source": "hematocrit",
+      "target": "血细胞比容",
+      "authority": "book",
+      "url": "",
+      "note": "medical term for the volume fraction of red cells in blood.",
+      "section": "10.2",
+      "confirm": "termonline"
+    },
+    {
+      "source": "hexagonal (crystal system)",
+      "target": "六方",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "crystal system 六方晶系; shown as 六方 in the unit-cell select.",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Hexagonal and cubic closest packing",
+      "target": "六方最密堆积与立方最密堆积",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "concept": "closest-packing"
+    },
+    {
+      "source": "Hexagonal closest packing",
+      "target": "六方最密堆积",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "concept": "hexagonal-closest-packing"
+    },
+    {
+      "source": "hexagonal closest packing (HCP)",
+      "target": "六方最密堆积（HCP）",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6"
+    },
+    {
+      "source": "hexagonal layer",
+      "target": "六方层",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "closest-packed layer of spheres.",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "hexagonal prism",
+      "target": "六棱柱",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "hexane",
+      "target": "己烷",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1"
+    },
+    {
+      "source": "Hole",
+      "target": "空隙",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the book says hole or interstice; 空隙 covers both, 间隙位置 is interstitial sites.",
+      "section": "10.6",
+      "concept": "crystal-hole",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Holes in closest-packed arrays",
+      "target": "最密堆积中的空隙",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "concept": "holes-in-closest-packed-arrays"
+    },
+    {
+      "source": "hollow (of a layer)",
+      "target": "凹处",
+      "authority": "book",
+      "url": "",
+      "note": "the dips in a close-packed layer in which the next layer rests.",
+      "section": "10.6",
+      "confirm": "owner"
+    },
+    {
+      "source": "homologous series",
+      "target": "同系列",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "exercise e14 (CH4, C2H6, C3H8); 化学名词 同系列, the members are 同系物.",
+      "section": "10.3",
+      "confirm": "termonline"
+    },
+    {
+      "source": "honey",
+      "target": "蜂蜜",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "10.2"
+    },
+    {
+      "source": "hydrophobic",
+      "target": "疏水的",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1"
+    },
+    {
+      "source": "hypotenuse",
+      "target": "斜边",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "10.6"
+    },
+    {
+      "source": "ice cream",
+      "target": "冰激凌",
+      "authority": "book",
+      "url": "",
+      "note": "Figure 10.32; 冰淇淋 is the other common writing, 冰激凌 is the Xiandai Hanyu Cidian form.",
+      "section": "10.4"
+    },
+    {
+      "source": "IMFs",
+      "target": "IMF",
+      "authority": "book",
+      "url": "",
+      "note": "the book's abbreviation of 'intermolecular forces', kept in Latin letters; defined as 分子间作用力（IMF） in 10.1, plural collapsed.",
+      "section": "10.3"
+    },
+    {
+      "source": "impurity",
+      "target": "杂质",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.5"
+    },
+    {
+      "source": "Induced dipole",
+      "target": "诱导偶极",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1",
+      "concept": "induced-dipole",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Instantaneous dipole",
+      "target": "瞬时偶极",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Chinese textbooks also write 瞬间偶极; 瞬时偶极 follows 化学名词.",
+      "section": "10.1",
+      "concept": "instantaneous-dipole",
+      "confirm": "termonline"
+    },
+    {
+      "source": "intensity",
+      "target": "强度",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "wave intensity (concept intensity, still English in book.json); the text writes 振幅（强度）.",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "interatomic distance",
+      "target": "原子间距",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "interference",
+      "target": "干涉",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Intermolecular and intramolecular forces",
+      "target": "分子间作用力与分子内作用力",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1",
+      "concept": "intermolecular-versus-intramolecular-forces"
+    },
+    {
+      "source": "interplanar spacing",
+      "target": "晶面间距",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the book says 'the distance between adjacent crystal planes'.",
+      "section": "10.6"
+    },
+    {
+      "source": "interstitial impurity",
+      "target": "间隙杂质",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.5",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Interstitial sites",
+      "target": "间隙位置",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.5",
+      "concept": "interstitial-sites",
+      "confirm": "termonline"
+    },
+    {
+      "source": "intramolecular force",
+      "target": "分子内作用力",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1"
+    },
+    {
+      "source": "iodine monochloride",
+      "target": "一氯化碘",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "ICl (footnote c-e6-icl).",
+      "section": "10.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Ionic solid",
+      "target": "离子固体",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.5",
+      "concept": "ionic-solid"
+    },
+    {
+      "source": "Irving Langmuir",
+      "target": "欧文·朗缪尔",
+      "authority": "book",
+      "url": "",
+      "note": "person; 朗缪尔 is the standard rendering.",
+      "section": "10.2"
+    },
+    {
+      "source": "Isomorphous",
+      "target": "同晶型的",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "adjective; 化学名词 同晶型.",
+      "section": "10.6",
+      "concept": "isomorphous",
+      "confirm": "termonline"
+    },
+    {
+      "source": "isopentane",
+      "target": "异戊烷",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1"
+    },
+    {
+      "source": "James Watson",
+      "target": "詹姆斯·沃森",
+      "authority": "book",
+      "url": "",
+      "note": "person.",
+      "section": "10.6",
+      "confirm": "owner"
+    },
+    {
+      "source": "K shell / L shell",
+      "target": "K 层 / L 层",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "electron shells; ch18 has 内层 and 价层.",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Katharine Blodgett",
+      "target": "凯瑟琳·布洛杰特",
+      "authority": "book",
+      "url": "",
+      "note": "person; transliterated.",
+      "section": "10.2",
+      "confirm": "owner"
+    },
+    {
+      "source": "Kellar Autumn",
+      "target": "凯勒·奥特姆",
+      "authority": "book",
+      "url": "",
+      "note": "person; transliterated.",
+      "section": "10.1",
+      "confirm": "owner"
+    },
+    {
+      "source": "Konstantin Novoselov",
+      "target": "康斯坦丁·诺沃肖洛夫",
+      "authority": "book",
+      "url": "",
+      "note": "person; standard transliteration (2010 Nobel Prize in Physics).",
+      "section": "10.5",
+      "confirm": "owner"
+    },
+    {
+      "source": "lattice point",
+      "target": "格点",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "物理学名词 格点; the book defines the unit cell by its lattice points.",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "lattice system",
+      "target": "晶系",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the seven lattice systems are the seven crystal systems; the book's 'lattice system' is written 晶系.",
+      "section": "10.6"
+    },
+    {
+      "source": "Leadville, Colorado",
+      "target": "科罗拉多州莱德维尔",
+      "authority": "book",
+      "url": "",
+      "note": "place.",
+      "section": "10.3"
+    },
+    {
+      "source": "leprosy",
+      "target": "麻风病",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the chapter introduction (intro).",
+      "section": "10.1"
+    },
+    {
+      "source": "liquefy",
+      "target": "液化",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.4"
+    },
+    {
+      "source": "liquid-gas curve",
+      "target": "液–气曲线",
+      "authority": "book",
+      "url": "",
+      "note": "also solid-liquid 固–液 and solid-gas 固–气; the source 'liquid-vapor' and 'solid-vapor' curves are written 液–蒸气曲线 and 固–蒸气曲线 with the en dash of the glossary row 固–液曲线的斜率.",
+      "section": "10.4"
+    },
+    {
+      "source": "lithium selenide",
+      "target": "硒化锂",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "selenide ion 硒离子 is the ch18 row.",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "local anesthetic",
+      "target": "局部麻醉剂",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "exercise e18; 麻醉剂 follows the pending row anesthetic of ch12 12.4.",
+      "section": "10.3",
+      "confirm": "termonline"
+    },
+    {
+      "source": "logarithmic scale",
+      "target": "对数标度",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "pressure axis of Figure 10.34; 物理学名词 对数标度.",
+      "section": "10.4"
+    },
+    {
+      "source": "London forces",
+      "target": "伦敦力",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the book's short form of London dispersion forces (伦敦色散力); used throughout, the Example 10.1 title included.",
+      "section": "10.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Lord Rayleigh",
+      "target": "瑞利勋爵",
+      "authority": "book",
+      "url": "",
+      "note": "person; standard rendering.",
+      "section": "10.2",
+      "confirm": "owner"
+    },
+    {
+      "source": "magma",
+      "target": "岩浆",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "magnetic oxide of cobalt",
+      "target": "钴的磁性氧化物",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Co₃O₄.",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "malleability",
+      "target": "延展性",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "alone (malleable, malleability) 延展性, the ch02 precedent; where it stands beside ductility the pair is 展性 / 延性.",
+      "section": "10.5"
+    },
+    {
+      "source": "malleability (paired with ductility)",
+      "target": "展性",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "where the English says 'malleable, ductile' / 'malleability and ductility', 化学名词 has the pair 展性 / 延性, since 延展性 already covers both; ch02 writes 有展性 for malleable. Differs from the single-use row malleability (延展性).",
+      "section": "10.5",
+      "confirm": "termonline"
+    },
+    {
+      "source": "manganese oxides",
+      "target": "锰的氧化物",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Maurice Wilkins",
+      "target": "莫里斯·威尔金斯",
+      "authority": "book",
+      "url": "",
+      "note": "person.",
+      "section": "10.6",
+      "confirm": "owner"
+    },
+    {
+      "source": "melt",
+      "target": "熔化",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the verb of 熔化 (melting).",
+      "section": "10.3"
+    },
+    {
+      "source": "Melting point and freezing point",
+      "target": "熔点与凝固点",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.3",
+      "concept": "melting-point"
+    },
+    {
+      "source": "metallic bonding",
+      "target": "金属键",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "same as metallic bond; the book uses both forms.",
+      "section": "10.5",
+      "confirm": "termonline"
+    },
+    {
+      "source": "methylamine",
+      "target": "甲胺",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "moiety (F-H, O-H, N-H)",
+      "target": "基团",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "\"moieties\" rendered 基团; 化学名词 gives 部分/基团 for moiety.",
+      "section": "10.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "molasses",
+      "target": "糖蜜",
+      "authority": "book",
+      "url": "",
+      "note": "exercise e4 idiom 'slower than molasses in winter' rendered 比冬天的糖蜜还慢.",
+      "section": "10.2"
+    },
+    {
+      "source": "molecular shape",
+      "target": "分子形状",
+      "authority": "book",
+      "url": "",
+      "note": "not 分子构型 (molecular geometry); the book speaks of the shape that sets the contact area.",
+      "section": "10.1"
+    },
+    {
+      "source": "Molecular shape and dispersion forces",
+      "target": "分子形状与色散力",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1",
+      "concept": "shape-and-dispersion-strength"
+    },
+    {
+      "source": "Molecular solid",
+      "target": "分子固体",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.5",
+      "concept": "molecular-solid"
+    },
+    {
+      "source": "monochromatic",
+      "target": "单色的",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "monochromatic X-rays written 单色 X 射线.",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "monoclinic",
+      "target": "单斜",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "crystal system 单斜晶系 (ch18 has 单斜硫).",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "mothballs",
+      "target": "樟脑丸",
+      "authority": "book",
+      "url": "",
+      "note": "exercise e5; 卫生球 is the other common name, 樟脑丸 is the general one.",
+      "section": "10.3"
+    },
+    {
+      "source": "motor oil",
+      "target": "机油",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "engine lubricating oil; 机油 is the common Chinese name (润滑油 is the class).",
+      "section": "10.2",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Mount Everest",
+      "target": "珠穆朗玛峰",
+      "authority": "book",
+      "url": "",
+      "note": "place; standard Chinese name.",
+      "section": "10.3"
+    },
+    {
+      "source": "n-butane",
+      "target": "正丁烷",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "n- written 正 (n-pentane 正戊烷 likewise); the <em> on the n stays on 正.",
+      "section": "10.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "n-pentane",
+      "target": "正戊烷",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "see n-butane.",
+      "section": "10.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "National Institutes of Health",
+      "target": "National Institutes of Health",
+      "authority": "book",
+      "url": "",
+      "note": "photo-credit name kept in Latin letters as printed (ch01 decision for NIH History Office, USGS).",
+      "section": "10.6"
+    },
+    {
+      "source": "neopentane",
+      "target": "新戊烷",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1"
+    },
+    {
+      "source": "nitrogenous base",
+      "target": "含氮碱基",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "nitrosyl fluoride",
+      "target": "亚硝酰氟",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "ONF; 亚硝酰氟 follows 亚硝酰氯 (nitrosyl chloride).",
+      "section": "10.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Nobel Prize in Physics",
+      "target": "诺贝尔物理学奖",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "10.5",
+      "confirm": "owner"
+    },
+    {
+      "source": "Nobel Prize in Physiology or Medicine",
+      "target": "诺贝尔生理学或医学奖",
+      "authority": "book",
+      "url": "",
+      "note": "诺贝尔奖 is the ch02 row.",
+      "section": "10.6"
+    },
+    {
+      "source": "non-reflective glass",
+      "target": "减反射玻璃",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "技术名称; 增透玻璃 is the other name.",
+      "section": "10.2",
+      "confirm": "termonline"
+    },
+    {
+      "source": "noncovalent",
+      "target": "非共价的",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1"
+    },
+    {
+      "source": "Normal boiling point",
+      "target": "正常沸点",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.3",
+      "concept": "normal-boiling-point",
+      "confirm": "termonline"
+    },
+    {
+      "source": "nucleotide",
+      "target": "核苷酸",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1"
+    },
+    {
+      "source": "Octahedral hole",
+      "target": "八面体空隙",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "concept": "octahedral-hole"
+    },
+    {
+      "source": "octahedron",
+      "target": "八面体",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the solid figure; tetrahedron 四面体 is the ch18 row, the geometry words 四面体形/八面体形 stay for the molecular sense.",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "octane-rating system",
+      "target": "辛烷值评定体系",
+      "authority": "book",
+      "url": "",
+      "note": "Example 10.7, written 汽油辛烷值评定体系; 辛烷值 is the glossary row octane rating (ch02 pending 2.1).",
+      "section": "10.3"
+    },
+    {
+      "source": "order of diffraction",
+      "target": "衍射级数",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Oregon State University",
+      "target": "俄勒冈州立大学",
+      "authority": "book",
+      "url": "",
+      "note": "institution; standard rendering.",
+      "section": "10.1",
+      "confirm": "owner"
+    },
+    {
+      "source": "orthorhombic",
+      "target": "正交",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "crystal system 正交晶系.",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "ovarian cancer",
+      "target": "卵巢癌",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6"
+    },
+    {
+      "source": "paper towel",
+      "target": "纸巾",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "10.2"
+    },
+    {
+      "source": "pentane",
+      "target": "戊烷",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1"
+    },
+    {
+      "source": "percent by mass",
+      "target": "质量分数",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "GB 3102.8 name of the quantity w; the answer part label stays English as printed (ch01 owner note).",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Perito Moreno glacier",
+      "target": "佩里托·莫雷诺冰川",
+      "authority": "book",
+      "url": "",
+      "note": "Figure 10.33 caption; Latin name added once in parentheses as for other names without a fixed rendering.",
+      "section": "10.4"
+    },
+    {
+      "source": "Phase and intermolecular forces",
+      "target": "相与分子间作用力",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1",
+      "concept": "phase-from-imf-and-kinetic-energy"
+    },
+    {
+      "source": "phase change",
+      "target": "相变",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the book uses 'phase change' and 'phase transition' alike.",
+      "section": "10.3"
+    },
+    {
+      "source": "phase diagram",
+      "target": "相图",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.4"
+    },
+    {
+      "source": "Phase diagrams",
+      "target": "相图",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.4",
+      "concept": "phase-diagram"
+    },
+    {
+      "source": "phase transition",
+      "target": "相变",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "same target as 'phase change'.",
+      "section": "10.3"
+    },
+    {
+      "source": "phosphate group",
+      "target": "磷酸基团",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "phosphide ion",
+      "target": "磷离子",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "pattern of 硫离子, 氯离子 and 氧离子; 磷化物 is the ch18 row for the compound class.",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "plateau",
+      "target": "平台",
+      "authority": "book",
+      "url": "",
+      "note": "the flat part of a heating curve.",
+      "section": "10.3"
+    },
+    {
+      "source": "Polarizability and dispersion forces",
+      "target": "极化率与色散力",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1",
+      "concept": "polarizability-and-dispersion-strength"
+    },
+    {
+      "source": "polarizable",
+      "target": "易极化的",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "polyethylene",
+      "target": "聚乙烯",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.2",
+      "confirm": "termonline"
+    },
+    {
+      "source": "post-transition metal",
+      "target": "后过渡金属",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "not looked up in this pass; usual textbook form.",
+      "section": "10.5",
+      "confirm": "termonline"
+    },
+    {
+      "source": "potassium chloride",
+      "target": "氯化钾",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "exercise e19 (KCl).",
+      "section": "10.3"
+    },
+    {
+      "source": "primitive cubic unit cell",
+      "target": "素立方晶胞",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "propane",
+      "target": "丙烷",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1"
+    },
+    {
+      "source": "protein",
+      "target": "蛋白质",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "exercise e18, DNA note.",
+      "section": "10.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "pyrimidine",
+      "target": "嘧啶",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "DNA bases.",
+      "section": "10.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Pythagorean theorem",
+      "target": "勾股定理",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "10.6"
+    },
+    {
+      "source": "Ranking boiling points",
+      "target": "沸点高低的排序",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1",
+      "concept": "rank-by-intermolecular-forces"
+    },
+    {
+      "source": "Raymond Gosling",
+      "target": "雷蒙德·戈斯林",
+      "authority": "book",
+      "url": "",
+      "note": "person; no standard rendering found, transliterated.",
+      "section": "10.6",
+      "confirm": "owner"
+    },
+    {
+      "source": "Reading a phase diagram",
+      "target": "读相图",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.4",
+      "concept": "read-phase-diagram"
+    },
+    {
+      "source": "repeating unit",
+      "target": "重复单元",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6"
+    },
+    {
+      "source": "rhombohedral",
+      "target": "菱方",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "crystal system as the book names it (rhombohedral lattice); 化学名词 files it under 三方晶系 (rhombohedral setting), 菱方 is the common textbook word.",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "ribonucleic acid (RNA)",
+      "target": "核糖核酸（RNA）",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "DNA 脱氧核糖核酸（DNA） is the 10.1 shard row.",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "right triangle",
+      "target": "直角三角形",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "10.6"
+    },
+    {
+      "source": "Rosalind Franklin",
+      "target": "罗莎琳德·富兰克林",
+      "authority": "book",
+      "url": "",
+      "note": "person; the standard rendering.",
+      "section": "10.6"
+    },
+    {
+      "source": "Rosalind Franklin University of Medicine and Science",
+      "target": "罗莎琳德·富兰克林医科与科学大学",
+      "authority": "book",
+      "url": "",
+      "note": "institution; 罗莎琳德·富兰克林 is the shard row.",
+      "section": "10.6",
+      "confirm": "owner"
+    },
+    {
+      "source": "rubidium iodide",
+      "target": "碘化铷",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "rutile",
+      "target": "金红石",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "mineral name.",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "SAE",
+      "target": "SAE",
+      "authority": "book",
+      "url": "",
+      "note": "motor-oil viscosity grade (Society of Automotive Engineers); kept as printed.",
+      "section": "10.2"
+    },
+    {
+      "source": "scattered wave",
+      "target": "散射波",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "setae",
+      "target": "刚毛",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "gecko setae; the standard zoological rendering.",
+      "section": "10.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "seven lattice systems",
+      "target": "七个晶系",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6"
+    },
+    {
+      "source": "shear force",
+      "target": "剪切力",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "physics 剪切力 (shear force).",
+      "section": "10.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Simple cubic structure",
+      "target": "简单立方结构",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "concept": "simple-cubic-structure"
+    },
+    {
+      "source": "Simple cubic unit cell",
+      "target": "简单立方晶胞",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "concept": "simple-cubic-unit-cell"
+    },
+    {
+      "source": "single-molecule layers of film",
+      "target": "单分子层薄膜",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.2",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Slope of the solid-liquid curve",
+      "target": "固–液曲线的斜率",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.4",
+      "concept": "solid-liquid-curve-slope"
+    },
+    {
+      "source": "Space lattice",
+      "target": "空间点阵",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "化学名词 空间点阵; the shared glossary has 晶格 for lattice.",
+      "section": "10.6",
+      "concept": "space-lattice",
+      "confirm": "termonline"
+    },
+    {
+      "source": "spatulae",
+      "target": "铲状体",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the flat triangular tips of a gecko seta; no standard term found, 铲状体 chosen.",
+      "section": "10.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "specific heat",
+      "target": "比热容",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the book's 'specific heat' (J/g °C); 比热容 is the 化学名词 and 物理学名词 term.",
+      "section": "10.3"
+    },
+    {
+      "source": "steam",
+      "target": "水蒸气",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the book's 'steam' is water in the gas phase; 水蒸气 (the shared glossary has water vapor).",
+      "section": "10.3"
+    },
+    {
+      "source": "stoichiometry (of an ionic compound)",
+      "target": "化学计量",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the ch09 row 'stoichiometry'; ch17 has 化学计量学. The concept stoichiometry is still English in book.json.",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "substitution impurity",
+      "target": "置换杂质",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.5",
+      "confirm": "termonline"
+    },
+    {
+      "source": "sugar-phosphate backbone",
+      "target": "糖–磷酸骨架",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "figure alt text (Figure 10.13, 10.14); the shared glossary 磷酸盐 is the salt, here the group.",
+      "section": "10.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "supercooled",
+      "target": "过冷的",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.4",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Supercritical fluid",
+      "target": "超临界流体",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.4",
+      "concept": "supercritical-fluid",
+      "confirm": "termonline"
+    },
+    {
+      "source": "sweat",
+      "target": "汗液",
+      "authority": "book",
+      "url": "",
+      "note": "body fluid of perspiration (Example 10.9, Figure 10.25); 汗液 is the plain textbook word.",
+      "section": "10.3"
+    },
+    {
+      "source": "syrup",
+      "target": "糖浆",
+      "authority": "book",
+      "url": "",
+      "note": "food syrup poured on pancakes.",
+      "section": "10.2"
+    },
+    {
+      "source": "tennis ball",
+      "target": "网球",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "10.6"
+    },
+    {
+      "source": "tetragonal",
+      "target": "四方",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "crystal system 四方晶系; shown as 简单四方 / 体心四方 in the unit-cell select.",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Tetrahedral hole",
+      "target": "四面体空隙",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "concept": "tetrahedral-hole"
+    },
+    {
+      "source": "thallium(I) iodide",
+      "target": "碘化铊(I)",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "format of 氧化汞(II).",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "thermochemistry",
+      "target": "热化学",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the chapter on thermochemistry (glossary has only 热化学循环); the concept thermochemistry of book.json is English until its chapter.",
+      "section": "10.3"
+    },
+    {
+      "source": "thermos bottle",
+      "target": "保温瓶",
+      "authority": "book",
+      "url": "",
+      "note": "'a very good thermos bottle' in the melting-and-freezing paragraph; the generic Chinese name, not the brand.",
+      "section": "10.3"
+    },
+    {
+      "source": "thin layer chromatography",
+      "target": "薄层色谱法",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.2",
+      "confirm": "termonline"
+    },
+    {
+      "source": "thymine",
+      "target": "胸腺嘧啶",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1"
+    },
+    {
+      "source": "titanium oxide",
+      "target": "氧化钛",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "二氧化钛 is the ch18 row for titanium dioxide.",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "triclinic",
+      "target": "三斜",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "crystal system 三斜晶系.",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Triple point",
+      "target": "三相点",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.4",
+      "concept": "triple-point"
+    },
+    {
+      "source": "trough",
+      "target": "水槽",
+      "authority": "book",
+      "url": "",
+      "note": "Pockels' and Langmuir's film balance; no standard short Chinese name for the generic 'trough' (朗缪尔槽 for Langmuir trough).",
+      "section": "10.2",
+      "confirm": "owner"
+    },
+    {
+      "source": "Types of crystalline solids",
+      "target": "晶态固体的类型",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.5",
+      "concept": "types-of-crystalline-solids"
+    },
+    {
+      "source": "Unit cell",
+      "target": "晶胞",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "concept": "unit-cell"
+    },
+    {
+      "source": "Unit cells of ionic compounds",
+      "target": "离子化合物的晶胞",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "concept": "ionic-unit-cells"
+    },
+    {
+      "source": "University of Akron",
+      "target": "阿克伦大学",
+      "authority": "book",
+      "url": "",
+      "note": "institution; standard rendering.",
+      "section": "10.1",
+      "confirm": "owner"
+    },
+    {
+      "source": "unzip",
+      "target": "解开",
+      "authority": "book",
+      "url": "",
+      "note": "the book's figure of speech about the two DNA strands; no standard term.",
+      "section": "10.1"
+    },
+    {
+      "source": "Using the two-point Clausius-Clapeyron equation",
+      "target": "使用两点形式的克劳修斯–克拉珀龙方程",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.3",
+      "concept": "clausius-clapeyron-calculations"
+    },
+    {
+      "source": "Vacancy",
+      "target": "空位",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.5",
+      "concept": "vacancy"
+    },
+    {
+      "source": "Van der Waals force",
+      "target": "范德华力",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1",
+      "concept": "van-der-waals-force"
+    },
+    {
+      "source": "vapor",
+      "target": "蒸气",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.3"
+    },
+    {
+      "source": "Vapor pressure and dynamic equilibrium",
+      "target": "蒸气压与动态平衡",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.3",
+      "concept": "vapor-pressure-dynamic-equilibrium"
+    },
+    {
+      "source": "Vapor pressure and intermolecular forces",
+      "target": "蒸气压与分子间作用力",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.3",
+      "concept": "vapor-pressure-and-imf"
+    },
+    {
+      "source": "Vapor pressure rises with temperature",
+      "target": "蒸气压随温度升高而增大",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.3",
+      "concept": "vapor-pressure-and-temperature"
+    },
+    {
+      "source": "VELCRO brand fasteners",
+      "target": "VELCRO 牌尼龙搭扣",
+      "authority": "book",
+      "url": "",
+      "note": "brand name kept; 尼龙搭扣 is the standard Chinese for hook-and-loop fasteners.",
+      "section": "10.1",
+      "confirm": "owner"
+    },
+    {
+      "source": "virus",
+      "target": "病毒",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6"
+    },
+    {
+      "source": "W. H. Bragg",
+      "target": "W. H. 布拉格",
+      "authority": "book",
+      "url": "",
+      "note": "the initials kept as printed; the shard has William Henry Bragg 威廉·亨利·布拉格.",
+      "section": "10.6",
+      "confirm": "owner"
+    },
+    {
+      "source": "water strider",
+      "target": "水黾",
+      "authority": "book",
+      "url": "",
+      "note": "the insect of Figure 10.17.",
+      "section": "10.2",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Watson and Crick",
+      "target": "沃森和克里克",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.1"
+    },
+    {
+      "source": "wave",
+      "target": "波",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "concept wave (still English in book.json); spans on 波 in 电磁波, 散射波, 衍射波.",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "wet (verb)",
+      "target": "润湿",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the verb of 润湿.",
+      "section": "10.2"
+    },
+    {
+      "source": "wetting",
+      "target": "润湿",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.2"
+    },
+    {
+      "source": "William Henry Bragg",
+      "target": "威廉·亨利·布拉格",
+      "authority": "book",
+      "url": "",
+      "note": "person.",
+      "section": "10.6"
+    },
+    {
+      "source": "William Lawrence Bragg",
+      "target": "威廉·劳伦斯·布拉格",
+      "authority": "book",
+      "url": "",
+      "note": "person.",
+      "section": "10.6"
+    },
+    {
+      "source": "X-ray crystallographer",
+      "target": "X 射线晶体学家",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "10.6"
+    },
+    {
+      "source": "X-ray crystallography",
+      "target": "X 射线晶体学",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6",
+      "concept": "x-ray-crystallography",
+      "confirm": "termonline"
+    },
+    {
+      "source": "X-ray diffraction",
+      "target": "X 射线衍射",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "10.6"
+    },
+    {
+      "source": "X-ray diffractometer",
+      "target": "X 射线衍射仪",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the book also says diffractometer alone: 衍射仪.",
+      "section": "10.6",
+      "confirm": "termonline"
+    },
+    {
+      "source": "xylem",
+      "target": "木质部",
+      "authority": "book",
+      "url": "",
+      "note": "plant tissue; standard botanical term.",
+      "section": "10.2",
+      "confirm": "termonline"
+    },
+    {
+      "source": "zinc blende",
+      "target": "闪锌矿",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "cubic ZnS.",
+      "section": "10.6",
+      "confirm": "termonline"
+    }
+  ]
+}

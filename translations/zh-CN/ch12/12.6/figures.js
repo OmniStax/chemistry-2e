@@ -7,7 +7,7 @@ const still = (d, draw) => register(d.fig, { update: () => {}, draw });
 const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
 const TAU = 2 * Math.PI;
 const VIEWS = [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }];
-const NAME = { H: 'hydrogen atom', C: 'carbon atom', N: 'nitrogen atom', O: 'oxygen atom' };
+const NAME = { H: '氢原子', C: '碳原子', N: '氮原子', O: '氧原子' };
 
 /* an atom as a disc in its element's color; hydrogen is light and takes an ink outline so that it reads on a light page */
 function atom(ctx, x, y, sym, r) {
@@ -41,7 +41,7 @@ function views(d, VIEW, mount, draw) {
 (function () {
   const H = 410;
   const d = sim('fig-cyclobutane', H);
-  const VIEW = F.choice(d.controls, { label: '\\text{view}', options: VIEWS, value: '2d', aria: 'a flat drawing or a scene to turn', ms: 0, onInput: () => V.show() });
+  const VIEW = F.choice(d.controls, { label: '\\text{视图}', options: VIEWS, value: '2d', aria: '平面图或可旋转的场景', ms: 0, onInput: () => V.show() });
   let hits = []; F.hover(d.stage, () => hits);
 
   /* ---------- the book's structural formulas ---------- */
@@ -52,7 +52,7 @@ function views(d, VIEW, mount, draw) {
   }
   function formula(ctx, atoms, bonds, who) {
     bonds.forEach(([i, j, o]) => bondLine(ctx, atoms[i].slice(1), atoms[j].slice(1), o));
-    atoms.forEach(([sym, x, y]) => { text(ctx, sym, x, y + 1, PAL.ink, { size: 30, weight: 600, align: 'center' }); hits.push({ x, y, r: 20, name: `${NAME[sym]} of ${who}` }); });
+    atoms.forEach(([sym, x, y]) => { text(ctx, sym, x, y + 1, PAL.ink, { size: 30, weight: 600, align: 'center' }); hits.push({ x, y, r: 20, name: `${who}中的${NAME[sym]}` }); });
   }
   function cyclobutane(cx) {
     const h = S / 2, A = [];
@@ -71,14 +71,14 @@ function views(d, VIEW, mount, draw) {
   }
   function draw2d() {
     const { ctx } = begin(d.c); hits = [];
-    headline(ctx, 'A single molecule of cyclobutane, C₄H₈, is the only reactant, so the step is unimolecular.');
-    formula(ctx, ...cyclobutane(300), 'cyclobutane');
+    headline(ctx, '单个环丁烷分子 C₄H₈ 是唯一的反应物，所以该步骤是单分子的。');
+    formula(ctx, ...cyclobutane(300), '环丁烷');
     F.arrow(ctx, 520, CY, 690, CY, PAL.ink, 4);
-    formula(ctx, ...ethylene(900), 'ethylene');
+    formula(ctx, ...ethylene(900), '乙烯');
     text(ctx, '+', 1065, CY, PAL.ink, { size: 34, align: 'center' });
-    formula(ctx, ...ethylene(1230), 'ethylene');
+    formula(ctx, ...ethylene(1230), '乙烯');
     const ly = CY + S / 2 + S + 44;
-    [[300, 'cyclobutane'], [900, 'ethylene'], [1230, 'ethylene']].forEach(([x, s]) => text(ctx, s, x, ly, PAL.muted, { size: 20, align: 'center' }));
+    [[300, '环丁烷'], [900, '乙烯'], [1230, '乙烯']].forEach(([x, s]) => text(ctx, s, x, ly, PAL.muted, { size: 20, align: 'center' }));
   }
 
   /* ---------- the same molecules in three dimensions ---------- */
@@ -96,24 +96,24 @@ function views(d, VIEW, mount, draw) {
   let g = null, sig = '';
   function mount() {
     const v = F.view3d(d.stage, { spin: 'off', h: 420, dist: 11, tilt: 0, pitch: [-1.4, 1.4], yaw: [-1.2, 1.2],
-      views: [{ label: 'front', yaw: 0, pitch: 0 }, { label: 'edge on', yaw: 0, pitch: 1.4 }] });
+      views: [{ label: '正面', yaw: 0, pitch: 0 }, { label: '侧向', yaw: 0, pitch: 1.4 }] });
     g = v.part(0);
     return v;
   }
   function molecule(v, m, dx, who) {
     m.bonds.forEach(([i, j, o]) => F.mesh.bond(g, [m.atoms[i][1] + dx, m.atoms[i][2], m.atoms[i][3]], [m.atoms[j][1] + dx, m.atoms[j][2], m.atoms[j][3]], o, 0.07));
-    m.atoms.forEach(([s, x, y, zz]) => v.pickable(F.mesh.sphere(g, [x + dx, y, zz], RB[s], F.el(s)), `${NAME[s]} of ${who}`));
+    m.atoms.forEach(([s, x, y, zz]) => v.pickable(F.mesh.sphere(g, [x + dx, y, zz], RB[s], F.el(s)), `${who}中的${NAME[s]}`));
   }
   function draw3d(v) {
     if (!v.scene) return;
     const s = [PAL.ink, PAL.muted, F.el('C'), F.el('H')].join('|');
     if (s !== sig) {
       sig = s; v.clear();
-      molecule(v, CB, -3.6, 'cyclobutane');
+      molecule(v, CB, -3.6, '环丁烷');
       F.mesh.arrow(g, [-1.9, 0, 0], [-0.5, 0, 0], 0.05, PAL.ink);
-      molecule(v, ET, 1.0, 'ethylene'); molecule(v, ET, 3.7, 'ethylene');
+      molecule(v, ET, 1.0, '乙烯'); molecule(v, ET, 3.7, '乙烯');
     }
-    v.headline('The ring of cyclobutane is slightly puckered; each ethylene molecule is flat.');
+    v.headline('环丁烷的环略有褶皱；每个乙烯分子都是平面的。');
     v.invalidate();
   }
   const V = views(d, VIEW, mount, draw);
@@ -139,7 +139,7 @@ function views(d, VIEW, mount, draw) {
   const H = 430;
   const d = sim('sim-no2-co', H);
   const SYM = ['N', 'O', 'O', 'C', 'O'];          /* N, the O that stays, the O that moves, C, the O of CO */
-  const WHO = ['the nitrogen atom', 'the oxygen atom that stays on nitrogen', 'the oxygen atom that passes from nitrogen to carbon', 'the carbon atom', 'the oxygen atom of carbon monoxide'];
+  const WHO = ['氮原子', '留在氮上的氧原子', '从氮转移到碳的氧原子', '碳原子', '一氧化碳中的氧原子'];
   const RAW = {
     react: [[-2.4, -0.45], [-3.5, 0.02], [-1.3, 0.02], [1.0, 0], [2.13, 0]],
     ts: [[-0.95, -0.85], [-2.0, -0.25], [0, 0], [1.35, 0], [2.48, 0]],
@@ -153,15 +153,15 @@ function views(d, VIEW, mount, draw) {
     POS[k] = RAW[k].flatMap((p) => [p[0] - mx, p[1] - my]);
   });
   const STAGES = {
-    react: { label: 'NO₂ + CO', head: 'A molecule of NO₂ and a molecule of CO, two reactant entities, collide in a single step.',
+    react: { label: 'NO₂ + CO', head: '一个 NO₂ 分子与一个 CO 分子这两个反应物粒子在单个步骤中碰撞。',
       names: [['NO₂', [0, 1, 2]], ['CO', [3, 4]]] },
-    ts: { label: 'transition state', head: 'In the transition state one oxygen atom is held between the nitrogen atom and the carbon atom.',
-      names: [['transition state', [0, 1, 2, 3, 4]]] },
-    prod: { label: 'NO + CO₂', head: 'That oxygen atom now belongs to carbon: the step ends as a molecule of NO and a molecule of CO₂.',
+    ts: { label: '过渡态', head: '在过渡态中，一个氧原子被维系在氮原子与碳原子之间。',
+      names: [['过渡态', [0, 1, 2, 3, 4]]] },
+    prod: { label: 'NO + CO₂', head: '那个氧原子现在属于碳：该步骤结束时生成一个 NO 分子和一个 CO₂ 分子。',
       names: [['NO', [0, 1]], ['CO₂', [2, 3, 4]]] },
   };
-  const stage = F.choice(d.controls, { label: '\\text{stage}', key: 'stage', options: Object.keys(STAGES).map((k) => ({ value: k, label: STAGES[k].label })), value: 'react', aria: 'the stage of the collision', onInput: () => draw() });
-  const VIEW = F.choice(d.controls, { label: '\\text{view}', options: VIEWS, value: '2d', aria: 'a flat drawing or a scene to turn', ms: 0, onInput: () => V.show() });
+  const stage = F.choice(d.controls, { label: '\\text{阶段}', key: 'stage', options: Object.keys(STAGES).map((k) => ({ value: k, label: STAGES[k].label })), value: 'react', aria: '碰撞的阶段', onInput: () => draw() });
+  const VIEW = F.choice(d.controls, { label: '\\text{视图}', options: VIEWS, value: '2d', aria: '平面图或可旋转的场景', ms: 0, onInput: () => V.show() });
   const ORDER = [0, 3, 1, 2, 4];                  /* nitrogen and carbon drawn first, the oxygens over them, as the book shades them */
   const U = 120, CX = 700, CYc = 235;
   let hits = []; F.hover(d.stage, () => hits);
@@ -182,7 +182,7 @@ function views(d, VIEW, mount, draw) {
   let g = null;
   function mount() {
     const v = F.view3d(d.stage, { spin: 'off', h: 420, dist: 8.5, tilt: 0, pitch: [-1.05, 1.05], yaw: [-1.2, 1.2],
-      views: [{ label: 'front', yaw: 0, pitch: 0 }, { label: 'above', yaw: 0, pitch: 1.0 }] });
+      views: [{ label: '正面', yaw: 0, pitch: 0 }, { label: '上方', yaw: 0, pitch: 1.0 }] });
     g = v.part(0);
     return v;
   }
@@ -217,9 +217,9 @@ function views(d, VIEW, mount, draw) {
   const H = 600;
   const d = sim('sim-slow-step', H);
   const K = { min: 0.2, max: 5, step: 0.1, unit: 'M⁻¹ s⁻¹', dec: 1 };
-  const k1 = ctl(d.controls, { ...K, label: '\\kkone', cls: 'rate-constant', value: 0.5, aria: 'rate constant of step 1' });
-  const k2 = ctl(d.controls, { ...K, label: '\\kktwo', cls: 'rate-constant', value: 5, aria: 'rate constant of step 2' });
-  const tS = ctl(d.controls, { label: '\\kt', cls: 'time', min: 0, max: 100, step: 1, value: 20, unit: 's', dec: 0, aria: 'time' });
+  const k1 = ctl(d.controls, { ...K, label: '\\kkone', cls: 'rate-constant', value: 0.5, aria: '步骤 1 的速率常数' });
+  const k2 = ctl(d.controls, { ...K, label: '\\kktwo', cls: 'rate-constant', value: 5, aria: '步骤 2 的速率常数' });
+  const tS = ctl(d.controls, { label: '\\kt', cls: 'time', min: 0, max: 100, step: 1, value: 20, unit: 's', dec: 0, aria: '时间' });
   const C0 = 0.1, T = 100, DT = 0.05, N = Math.round(T / DT);
   const SP = [{ i: 0, name: 'NO₂' }, { i: 1, name: 'NO₃' }, { i: 3, name: 'CO₂' }];
   let run = null, key = '';
@@ -255,18 +255,18 @@ function views(d, VIEW, mount, draw) {
     const { ctx } = begin(d.c), lab = F.labeller(ctx, H, { headline: true });
     hits = [];
     const ratio = b / a, slow = ratio >= 3 ? 1 : ratio <= 1 / 3 ? 2 : 0;
-    topline(ctx, slow === 1 ? 'Step 1 is the slow step: NO₃ is used as fast as it forms, and CO₂ forms at the rate of step 1.'
-      : slow === 2 ? 'Step 2 is the slow step: NO₃ piles up, and CO₂ forms only as fast as step 2 uses it.'
-      : 'Neither step is much slower than the other, so NO₃ builds up partway before it is used.');
-    [['Step 1:', 'NO₂ + NO₂ ⟶ NO₃ + NO', slow === 1 ? '(slow)' : slow === 2 ? '(fast)' : ''],
-     ['Step 2:', 'NO₃ + CO ⟶ NO₂ + CO₂', slow === 2 ? '(slow)' : slow === 1 ? '(fast)' : '']].forEach(([s, eq, tag], i) => {
+    topline(ctx, slow === 1 ? '步骤 1 是慢步骤：NO₃ 一生成就被用掉，CO₂ 按步骤 1 的速率生成。'
+      : slow === 2 ? '步骤 2 是慢步骤：NO₃ 不断积累，CO₂ 的生成速度只能达到步骤 2 消耗 NO₃ 的速度。'
+      : '两步中没有哪一步比另一步慢很多，所以 NO₃ 在被用掉之前会累积到一定程度。');
+    [['步骤 1：', 'NO₂ + NO₂ ⟶ NO₃ + NO', slow === 1 ? '（慢）' : slow === 2 ? '（快）' : ''],
+     ['步骤 2：', 'NO₃ + CO ⟶ NO₂ + CO₂', slow === 2 ? '（慢）' : slow === 1 ? '（快）' : '']].forEach(([s, eq, tag], i) => {
       const y = 122 + i * 36;
       text(ctx, s, BOX.l, y, PAL.muted, { size: 20 });
       text(ctx, eq, BOX.l + 90, y, PAL.ink, { size: 22 });
-      if (tag) text(ctx, tag, BOX.l + 410, y, tag === '(slow)' ? PAL.ink : PAL.muted, { size: 20, weight: tag === '(slow)' ? 600 : 400 });
+      if (tag) text(ctx, tag, BOX.l + 410, y, tag === '（慢）' ? PAL.ink : PAL.muted, { size: 20, weight: tag === '（慢）' ? 600 : 400 });
       lab.block(BOX.l - 8, y - 16, BOX.l + 480, y + 16);
     });
-    const g = F.axes(ctx, BOX, [0, T], [0, C0], { nx: 5, ny: 5, fy: (v) => fmt(v, 2), xl: 't (s)', xc: C('time'), yl: 'concentration (M)', yc: C('concentration') });
+    const g = F.axes(ctx, BOX, [0, T], [0, C0], { nx: 5, ny: 5, fy: (v) => fmt(v, 2), xl: 't (s)', xc: C('time'), yl: '浓度（M）', yc: C('concentration') });
     line(ctx, g.X(t), BOX.t, g.X(t), BOX.b, alpha(PAL.ink, 0.35), 2, [4, 8]);
     const yt = at(t);
     SP.forEach(({ i, name }, n) => {
@@ -276,7 +276,7 @@ function views(d, VIEW, mount, draw) {
       lab.add(name, g.X(T), g.Y(run[N][i]), 1, 0, col, 22, 14);
       const px = g.X(t), py = g.Y(yt[i]);
       F.dot(ctx, px, py, col, true, 8);
-      hits.push({ x: px, y: py, r: 12, name: `the concentration of ${name} at ${fmt(t, 0)} s` });
+      hits.push({ x: px, y: py, r: 12, name: `${name} 在 ${fmt(t, 0)} s 时的浓度` });
     });
     lab.flush();
     const r1 = a * yt[0] * yt[0], r2 = b * yt[1] * yt[2];

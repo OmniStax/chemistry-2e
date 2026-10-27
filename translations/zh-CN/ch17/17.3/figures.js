@@ -24,14 +24,14 @@ const inTex = (s) => s.replace(MINUS, '-');
   const CU_BLUE = '#3c9ad6';                    /* the blue of Cu²⁺(aq) */
   const RED_IN = '#c62828', BLACK_IN = '#1f1f1f';   /* the voltmeter's own red and black inputs */
   const X = {
-    ag: { el: 'Ag', name: 'silver', ion: 'Ag⁺', n: 1, E: 0.7996, dec: 4, label: 'Ag⁺/Ag' },
-    cu: { el: 'Cu', name: 'copper', ion: 'Cu²⁺', n: 2, E: 0.337, dec: 3, label: 'Cu²⁺/Cu' },
-    pb: { el: 'Pb', name: 'lead', ion: 'Pb²⁺', n: 2, E: -0.1262, dec: 4, label: 'Pb²⁺/Pb' },
-    zn: { el: 'Zn', name: 'zinc', ion: 'Zn²⁺', n: 2, E: -0.7618, dec: 4, label: 'Zn²⁺/Zn' },
+    ag: { el: 'Ag', name: '银', ion: 'Ag⁺', n: 1, E: 0.7996, dec: 4, label: 'Ag⁺/Ag' },
+    cu: { el: 'Cu', name: '铜', ion: 'Cu²⁺', n: 2, E: 0.337, dec: 3, label: 'Cu²⁺/Cu' },
+    pb: { el: 'Pb', name: '铅', ion: 'Pb²⁺', n: 2, E: -0.1262, dec: 4, label: 'Pb²⁺/Pb' },
+    zn: { el: 'Zn', name: '锌', ion: 'Zn²⁺', n: 2, E: -0.7618, dec: 4, label: 'Zn²⁺/Zn' },
   };
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.05, 1.22], yaw: [-1.05, 1.05], views: [{ label: 'front', yaw: 0, pitch: 0.2 }, { label: 'above', yaw: 0, pitch: 1.15 }], h: 600, dist: 7.2, tilt: 0.2 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.05, 1.22], yaw: [-1.05, 1.05], views: [{ label: '正视', yaw: 0, pitch: 0.2 }, { label: '俯视', yaw: 0, pitch: 1.15 }], h: 600, dist: 7.2, tilt: 0.2 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 470);
-  const pick = F.choice(d.controls, { label: '\\text{half-cell X}', options: Object.keys(X).map((k) => ({ value: k, label: X[k].label })), value: 'cu', aria: 'the half-cell wired to the red input', onInput: () => {} });
+  const pick = F.choice(d.controls, { label: '\\text{半电池 X}', options: Object.keys(X).map((k) => ({ value: k, label: X[k].label })), value: 'cu', aria: '接到红色输入端的半电池', onInput: () => {} });
   const cy = F.cycle(() => Infinity, 0);
   const P = (x, y, z = 0) => [x, y - 0.62, z];
   const XL = -1.3, XR = 1.3, BENCH = -0.75, SURF = 0.05, TUBE_X = -1.5, ROD_X = 1.5, VY = 1.6;
@@ -56,38 +56,38 @@ const inTex = (s) => s.replace(MINUS, '-');
     if (!v.scene || palSig() === sig) return; sig = palSig();
     v.clear();
     const x = X[pick.value];
-    v.pickable(F.mesh.box(grp, P(0, BENCH - 0.05, 0), [4.8, 0.1, 1.9], PAL.soft), 'the bench');
+    v.pickable(F.mesh.box(grp, P(0, BENCH - 0.05, 0), [4.8, 0.1, 1.9], PAL.soft), '实验台');
     for (const bx of [XL, XR]) {
       const b = new T3D.Mesh(new T3D.CylinderGeometry(0.62, 0.62, 1.3, 44, 1, true), F.mesh.mat(PAL.ink, glass()));
       b.position.set(...P(bx, BENCH + 0.65)); grp.add(b);
-      v.pickable(b, bx < 0 ? 'the beaker of the SHE' : 'the beaker of half-cell X');
+      v.pickable(b, bx < 0 ? 'SHE 的烧杯' : '半电池 X 的烧杯');
     }
     const shSol = new T3D.Mesh(new T3D.CylinderGeometry(0.6, 0.6, SURF - BENCH, 44), F.mesh.mat(PAL.ink, { transparent: true, opacity: 0.07, depthWrite: false }));
     shSol.position.set(...P(XL, (SURF + BENCH) / 2)); grp.add(shSol); v.pickable(shSol, '1 M H⁺(aq)');
     sol = new T3D.Mesh(new T3D.CylinderGeometry(0.6, 0.6, SURF - BENCH, 44), F.mesh.mat(solColor(pick.value), { transparent: true, opacity: solAlpha(pick.value), depthWrite: false }));
     sol.position.set(...P(XR, (SURF + BENCH) / 2)); grp.add(sol); v.pickable(sol, `1 M ${x.ion}(aq)`);
     const tube = new T3D.Mesh(new T3D.CylinderGeometry(0.14, 0.14, 1.45, 28, 1, true), F.mesh.mat(PAL.ink, glass()));
-    tube.position.set(...P(TUBE_X, 0.27)); grp.add(tube); v.pickable(tube, 'the glass tube of the SHE');
-    v.pickable(F.mesh.stick(grp, P(TUBE_X - 0.42, 0.8), P(TUBE_X - 0.14, 0.8), 0.045, PAL.muted, glass()), 'the H₂ inlet, 1 bar');
-    v.pickable(F.mesh.box(grp, P(TUBE_X, -0.5), [0.22, 0.24, 0.03], F.el('Pt')), 'the platinum electrode');
-    v.pickable(F.mesh.stick(grp, P(TUBE_X, -0.4), P(TUBE_X, 1.05), 0.016, PAL.ink), 'the platinum wire');
+    tube.position.set(...P(TUBE_X, 0.27)); grp.add(tube); v.pickable(tube, 'SHE 的玻璃管');
+    v.pickable(F.mesh.stick(grp, P(TUBE_X - 0.42, 0.8), P(TUBE_X - 0.14, 0.8), 0.045, PAL.muted, glass()), 'H₂ 进气口，1 bar');
+    v.pickable(F.mesh.box(grp, P(TUBE_X, -0.5), [0.22, 0.24, 0.03], F.el('Pt')), '铂电极');
+    v.pickable(F.mesh.stick(grp, P(TUBE_X, -0.4), P(TUBE_X, 1.05), 0.016, PAL.ink), '铂丝');
     rod = F.mesh.box(grp, P(ROD_X, -0.04), [0.2, 1.32, 0.05], F.el(x.el));
-    v.pickable(rod, `the ${x.name} electrode`);
-    for (const s of [-1, 1]) v.pickable(F.mesh.stick(grp, P(s * 0.86, -0.3), P(s * 0.86, 0.85), 0.11, PAL.ink, glass()), 'the salt bridge');
+    v.pickable(rod, `${x.name}电极`);
+    for (const s of [-1, 1]) v.pickable(F.mesh.stick(grp, P(s * 0.86, -0.3), P(s * 0.86, 0.85), 0.11, PAL.ink, glass()), '盐桥');
     const arch = new T3D.Mesh(new T3D.TorusGeometry(0.86, 0.11, 14, 40, Math.PI), F.mesh.mat(PAL.ink, glass()));
-    arch.position.set(...P(0, 0.85)); grp.add(arch); v.pickable(arch, 'the salt bridge');
+    arch.position.set(...P(0, 0.85)); grp.add(arch); v.pickable(arch, '盐桥');
     for (let i = 0; i < PATH.length - 1; i++) {
       if (i === 2) continue;
-      v.pickable(F.mesh.stick(grp, PATH[i], PATH[i + 1], 0.02, PAL.ink), i < 2 ? 'the wire to the black input' : 'the wire to the red input');
+      v.pickable(F.mesh.stick(grp, PATH[i], PATH[i + 1], 0.02, PAL.ink), i < 2 ? '接黑色输入端的导线' : '接红色输入端的导线');
     }
-    v.pickable(F.mesh.box(grp, P(0, VY), [1.1, 0.4, 0.18], PAL.muted), 'the voltmeter');
-    v.pickable(F.mesh.sphere(grp, P(-0.52, VY), 0.065, F.fact(BLACK_IN)), 'the black (negative) input');
-    v.pickable(F.mesh.sphere(grp, P(0.52, VY), 0.065, F.fact(RED_IN)), 'the red (positive) input');
-    electrons = Array.from({ length: NE }, () => v.pickable(F.mesh.sphere(grp, P(0, 0), 0.05, F.el('e-')), 'an electron, e⁻'));
-    bubbles = Array.from({ length: NB }, () => v.pickable(F.mesh.sphere(grp, P(0, 0), 0.035, F.el('H'), { transparent: true, opacity: 0.85 }), 'a bubble of H₂ gas'));
+    v.pickable(F.mesh.box(grp, P(0, VY), [1.1, 0.4, 0.18], PAL.muted), '电压表');
+    v.pickable(F.mesh.sphere(grp, P(-0.52, VY), 0.065, F.fact(BLACK_IN)), '黑色（负）输入端');
+    v.pickable(F.mesh.sphere(grp, P(0.52, VY), 0.065, F.fact(RED_IN)), '红色（正）输入端');
+    electrons = Array.from({ length: NE }, () => v.pickable(F.mesh.sphere(grp, P(0, 0), 0.05, F.el('e-')), '一个电子 e⁻'));
+    bubbles = Array.from({ length: NB }, () => v.pickable(F.mesh.sphere(grp, P(0, 0), 0.035, F.el('H'), { transparent: true, opacity: 0.85 }), '一个 H₂ 气泡'));
     v.label(`${signed(x.E, x.dec)} V`, P(0, VY, 0.1), grp, 0);
-    v.label('SHE in 1 <em>M</em> H<sup>+</sup>', P(XL, BENCH + 0.12, 0.8), grp, 0);
-    v.label(`${x.el} in 1 <em>M</em> ${x.ion}`, P(XR, BENCH + 0.12, 0.8), grp, 0);
+    v.label('1 <em>M</em> H<sup>+</sup> 中的 SHE', P(XL, BENCH + 0.12, 0.8), grp, 0);
+    v.label(`1 <em>M</em> ${x.ion} 中的 ${x.el}`, P(XR, BENCH + 0.12, 0.8), grp, 0);
     v.label('<em>T</em> = 298 K', P(0, -0.45, 0), grp, 0);
   }
 
@@ -156,22 +156,22 @@ const inTex = (s) => s.replace(MINUS, '-');
         m.position.set(...P(TUBE_X + dx + 0.03 * Math.sin(6 * h + i), -0.45 + h * 0.48, dz));
       });
       v.headline(dir > 0
-        ? `The voltmeter reads ${signed(x.E, x.dec)} V: electrons flow from the SHE to the ${x.name} electrode.`
-        : `The voltmeter reads ${signed(x.E, x.dec)} V: electrons flow from the ${x.name} electrode to the SHE.`);
+        ? `电压表读数为 ${signed(x.E, x.dec)} V：电子从 SHE 流向${x.name}电极。`
+        : `电压表读数为 ${signed(x.E, x.dec)} V：电子从${x.name}电极流向 SHE。`);
       v.invalidate();
     }
     const { ctx } = begin(cnv);
     const u = t / PERIOD, reduceAtX = dir > 0;
-    text(ctx, 'platinum electrode surface (SHE)', CX[0], 30, PAL.ink, { size: 24, weight: 600, align: 'center' });
-    text(ctx, `${x.name} electrode surface (X)`, CX[1], 30, PAL.ink, { size: 24, weight: 600, align: 'center' });
+    text(ctx, '铂电极表面（SHE）', CX[0], 30, PAL.ink, { size: 24, weight: 600, align: 'center' });
+    text(ctx, `${x.name}电极表面（X）`, CX[1], 30, PAL.ink, { size: 24, weight: 600, align: 'center' });
     surface(ctx, CX[0], CYS, R, 'Pt', null, u, (xs, ly, w) => meetH(ctx, xs, ly, reduceAtX ? 1 - w : w));
     surface(ctx, CX[1], CYS, R, x.el, k === 'cu' ? alpha(F.fact(CU_BLUE), 0.22) : null, u, (xs, ly, w) => meetM(ctx, xs, ly, reduceAtX ? w : 1 - w, x.el, x.n));
     const eDot = (px, py) => ball(ctx, px, py, 5, F.el('e-'));
-    legend(ctx, CX[0], 384, [['Pt atom', (px, py) => ball(ctx, px, py, 10, F.el('Pt'))], ['H⁺ ion', (px, py) => ball(ctx, px, py, 6, F.el('H'))], ['H₂ molecule', (px, py) => { ball(ctx, px - 4, py, 7, F.el('H')); ball(ctx, px + 4, py, 7, F.el('H')); }], ['electron, e⁻', eDot]]);
-    legend(ctx, CX[1], 384, [[`${x.el} atom`, (px, py) => ball(ctx, px, py, 10, F.el(x.el))], [`${x.ion} ion`, (px, py) => ball(ctx, px, py, 7, F.el(x.el))], ['electron, e⁻', eDot]]);
+    legend(ctx, CX[0], 384, [['Pt 原子', (px, py) => ball(ctx, px, py, 10, F.el('Pt'))], ['H⁺ 离子', (px, py) => ball(ctx, px, py, 6, F.el('H'))], ['H₂ 分子', (px, py) => { ball(ctx, px - 4, py, 7, F.el('H')); ball(ctx, px + 4, py, 7, F.el('H')); }], ['电子 e⁻', eDot]]);
+    legend(ctx, CX[1], 384, [[`${x.el} 原子`, (px, py) => ball(ctx, px, py, 10, F.el(x.el))], [`${x.ion} 离子`, (px, py) => ball(ctx, px, py, 7, F.el(x.el))], ['电子 e⁻', eDot]]);
     const e = x.n === 1 ? 'e⁻' : `${x.n}e⁻`;
-    text(ctx, reduceAtX ? 'anode, oxidation:  H_2(g) ⟶ 2H⁺(aq) + 2e⁻' : 'cathode, reduction:  2H⁺(aq) + 2e⁻ ⟶ H_2(g)', CX[0], 434, PAL.ink, { size: 23, align: 'center' });
-    text(ctx, reduceAtX ? `cathode, reduction:  ${x.ion}(aq) + ${e} ⟶ ${x.el}(s)` : `anode, oxidation:  ${x.el}(s) ⟶ ${x.ion}(aq) + ${e}`, CX[1], 434, PAL.ink, { size: 23, align: 'center' });
+    text(ctx, reduceAtX ? '阳极，氧化：H_2(g) ⟶ 2H⁺(aq) + 2e⁻' : '阴极，还原：2H⁺(aq) + 2e⁻ ⟶ H_2(g)', CX[0], 434, PAL.ink, { size: 23, align: 'center' });
+    text(ctx, reduceAtX ? `阴极，还原：${x.ion}(aq) + ${e} ⟶ ${x.el}(s)` : `阳极，氧化：${x.el}(s) ⟶ ${x.ion}(aq) + ${e}`, CX[1], 434, PAL.ink, { size: 23, align: 'center' });
     tex(d.readout, `\\kEocell = \\kEoX - \\kEshe = ${fmt(x.E, x.dec)}\\ \\text{V} - 0\\ \\text{V} = ${inTex(signed(x.E, x.dec))}\\ \\text{V}`);
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
@@ -227,8 +227,8 @@ const inTex = (s) => s.replace(MINUS, '-');
   ].map(([id, ox, red, half, s]) => ({ id, ox, red, half, s, E: parseFloat(s.replace(MINUS, '-')), dec: (s.split('.')[1] || '').length }));
   const BY = Object.fromEntries(ROWS.map((r) => [r.id, r]));
   const opts = ROWS.map((r) => ({ value: r.id, label: `${r.ox}/${r.red}, ${r.s} V` }));
-  const cat = F.select(d.controls, { label: '\\text{cathode}', options: opts, value: 'ag', aria: 'the cathode half-cell', key: 'cathode' });
-  const an = F.select(d.controls, { label: '\\text{anode}', options: opts, value: 'cu', aria: 'the anode half-cell', key: 'anode' });
+  const cat = F.select(d.controls, { label: '\\text{阴极}', options: opts, value: 'ag', aria: '阴极半电池', key: 'cathode' });
+  const an = F.select(d.controls, { label: '\\text{阳极}', options: opts, value: 'cu', aria: '阳极半电池', key: 'anode' });
   const TOP = 3.0, BOT = -3.1, Y0 = 140, Y1 = 730, AX = 330, RUNG = 690, LX = 706;
   const Y = (e) => Y0 + ((TOP - e) / (TOP - BOT)) * (Y1 - Y0);
   F.hover(d.stage, () => ROWS.map((r) => ({ x: AX + 16, y: Y(r.E), r: 9, name: `${r.half}, E° = ${r.s} V` })));
@@ -254,16 +254,16 @@ const inTex = (s) => s.replace(MINUS, '-');
     }
     text(ctx, '$\\kEo$ (V)', AX, Y0 - 34, cp, { size: 22, weight: 600, align: 'center', tex: true });
     arrow(ctx, 150, 370, 150, 175, alpha(PAL.ink, 0.5), 3);
-    text(ctx, 'stronger oxidants', 150, 155, PAL.muted, { size: 17, align: 'center' });
+    text(ctx, '更强的氧化剂', 150, 155, PAL.muted, { size: 17, align: 'center' });
     arrow(ctx, 150, 500, 150, 695, alpha(PAL.ink, 0.5), 3);
-    text(ctx, 'stronger reductants', 150, 715, PAL.muted, { size: 17, align: 'center' });
+    text(ctx, '更强的还原剂', 150, 715, PAL.muted, { size: 17, align: 'center' });
     ROWS.forEach((r) => line(ctx, AX, Y(r.E), AX + 32, Y(r.E), alpha(PAL.ink, 0.45), 2));
     line(ctx, AX, Y(0), RUNG, Y(0), alpha(PAL.ink, 0.45), 2, [10, 10]);
     const same = rc === ra;
     const tags = [];
     if (rc.id !== 'h' && ra.id !== 'h') tags.push({ y: Y(0), s: `${BY.h.half},  0.00 V`, c: PAL.muted, w: 400 });
-    tags.push({ y: yc, s: `cathode:  ${rc.half},  ${rc.s} V`, c: cC, w: 600 });
-    if (!same) tags.push({ y: ya, s: `anode:  ${ra.half},  ${ra.s} V`, c: cA, w: 600 });
+    tags.push({ y: yc, s: `阴极：${rc.half}，${rc.s} V`, c: cC, w: 600 });
+    if (!same) tags.push({ y: ya, s: `阳极：${ra.half}，${ra.s} V`, c: cA, w: 600 });
     spread(tags, 34, Y0 - 12, Y1 + 12);
     line(ctx, AX, ya, RUNG, ya, cA, 4);
     line(ctx, AX, yc, RUNG, yc, cC, 4);
@@ -273,9 +273,9 @@ const inTex = (s) => s.replace(MINUS, '-');
       if (Math.abs(yc - ya) > 16) arrow(ctx, 540, ya, 540, yc, cp, 4);
       text(ctx, `${signed(ec, dec)} V`, 524, (ya + yc) / 2, cp, { size: 22, weight: 600, align: 'right', bg: PAL.panel });
     }
-    topline(ctx, same ? 'With the same half-cell on both sides, the cell potential is zero and there is no net reaction.'
-      : ec > 0 ? `The oxidant ${rc.ox} sits above the reductant ${ra.red}, so the reaction is spontaneous.`
-        : `The oxidant ${rc.ox} sits below the reductant ${ra.red}, so the reaction is nonspontaneous.`);
+    topline(ctx, same ? '两侧是同一个半电池时，电池电势为零，没有净反应。'
+      : ec > 0 ? `氧化剂 ${rc.ox} 位于还原剂 ${ra.red} 之上，所以反应是自发的。`
+        : `氧化剂 ${rc.ox} 位于还原剂 ${ra.red} 之下，所以反应是非自发的。`);
     const aTerm = ra.E < 0 ? `(${value(ra)}\\ \\text{V})` : `${value(ra)}\\ \\text{V}`;
     tex(d.readout, `\\kEocell = \\kEocathode - \\kEoanode = ${value(rc)}\\ \\text{V} - ${aTerm} = ${inTex(signed(ec, dec))}\\ \\text{V}`);
   }

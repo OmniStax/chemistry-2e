@@ -1,0 +1,109 @@
+{
+  "terms": [
+    {
+      "source": "aqueous solution",
+      "target": "水溶液",
+      "authority": "cnterm-chemistry",
+      "note": "standard term; the book concept 'aqueous-solution' is untranslated in book.json (another chapter).",
+      "section": "18.2"
+    },
+    {
+      "source": "colligative property",
+      "target": "依数性",
+      "authority": "cnterm-chemistry",
+      "note": "化学名词 依数性; the text writes 'colligative effect', rendered 依数性效应.",
+      "section": "18.2"
+    },
+    {
+      "source": "direct current",
+      "target": "直流电",
+      "authority": "cnterm-chemistry",
+      "note": "物理学名词 直流; 直流电 in running prose.",
+      "section": "18.2"
+    },
+    {
+      "source": "product",
+      "target": "产物",
+      "authority": "cnterm-chemistry",
+      "note": "same target as pending row in 2.1.",
+      "section": "18.2"
+    },
+    {
+      "source": "hood",
+      "target": "集气罩",
+      "authority": "book",
+      "note": "gas-collecting hood of the Downs cell; no authority entry.",
+      "section": "18.2"
+    },
+    {
+      "source": "beryl",
+      "target": "绿柱石",
+      "authority": "cnterm-chemistry",
+      "note": "mineral name; same target as ch07 shard.",
+      "section": "18.2"
+    },
+    {
+      "source": "sinter",
+      "target": "烧结",
+      "authority": "cnterm-chemistry",
+      "note": "exercise e7 step label.",
+      "section": "18.2"
+    },
+    {
+      "source": "metastannic acid",
+      "target": "偏锡酸",
+      "authority": "cnterm-chemistry",
+      "note": "H2SnO3; 化学名词 偏锡酸.",
+      "section": "18.2"
+    },
+    {
+      "source": "oxycarbonate",
+      "target": "碱式碳酸盐",
+      "authority": "book",
+      "note": "exercise e6 AI solution; 'oxycarbonate layer' on magnesium rendered as the basic carbonate layer, doubt kept for termonline.",
+      "section": "18.2"
+    },
+    {
+      "source": "emerald",
+      "target": "祖母绿",
+      "authority": "cnterm-chemistry",
+      "note": "gemstone.",
+      "section": "18.2"
+    },
+    {
+      "source": "aquamarine",
+      "target": "海蓝宝石",
+      "authority": "cnterm-chemistry",
+      "note": "gemstone.",
+      "section": "18.2"
+    },
+    {
+      "source": "Charles M. Hall",
+      "target": "查尔斯·M·霍尔",
+      "authority": "book",
+      "note": "person name, standard rendering of Hall 霍尔 as in Hall–Héroult cell.",
+      "section": "18.2"
+    },
+    {
+      "source": "Paul L. T. Héroult",
+      "target": "保罗·L·T·埃鲁",
+      "authority": "book",
+      "note": "person name, Héroult 埃鲁 as in the cell name.",
+      "section": "18.2"
+    },
+    {
+      "source": "Oberlin College",
+      "target": "奥伯林学院",
+      "authority": "book",
+      "note": "US college; Ohio 俄亥俄州.",
+      "section": "18.2"
+    },
+    {
+      "source": "Fundamental Equilibrium Concepts",
+      "target": "基本平衡概念",
+      "authority": "book",
+      "note": "chapter title as cited in prose ('the chapter on fundamental equilibrium concepts'); to be aligned with ch13 title once translated.",
+      "section": "18.2"
+    }
+  ]
+}

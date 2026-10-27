@@ -1,0 +1,1373 @@
+{
+ "types": [],
+ "symbols": [],
+ "concepts": [
+  {
+   "id": "daltons-atomic-theory",
+   "kind": "axiom",
+   "section": "2.1",
+   "name": "道尔顿原子论",
+   "terms": [
+    "道尔顿原子论"
+   ],
+   "statement": "道尔顿的假设指出，物质由原子构成，同一种元素的原子都具有相同的特征质量，并且与其他任何元素的原子不同。化合物含有两种或更多种元素的原子，原子数之比为较小的整数比。化学变化既不创造也不消灭原子，只是使原子重新排列。这些假设在微观层面上解释了你已经遇到过的物质的宏观行为，包括物质守恒，此后每一种关于原子的图像都从这些假设出发。"
+  },
+  {
+   "id": "law-of-definite-proportions",
+   "kind": "axiom",
+   "section": "2.1",
+   "name": "定比定律",
+   "terms": [
+    "定组成定律",
+    "定比定律"
+   ],
+   "statement": "纯化合物的所有样品都含有相同的元素，且这些元素的质量比相同。如果化合物中各种原子的数目之比始终相同，这正是道尔顿第四条假设所预言的结果。注意其逆命题并不成立：质量比相同的两个样品不一定是同一种物质。"
+  },
+  {
+   "id": "law-of-multiple-proportions",
+   "kind": "axiom",
+   "section": "2.1",
+   "name": "倍比定律",
+   "terms": [
+    "倍比定律"
+   ],
+   "statement": "当两种元素形成不止一种化合物时，与固定质量的一种元素反应的另一种元素的质量之比为较小的整数比。取两个质量比的比值就能显示这一点，而原子论可以立即解释它，因为一种化合物只是每个原子所对应的另一种元素的原子数更多。"
+  },
+  {
+   "id": "discovery-of-the-electron",
+   "kind": "idea",
+   "section": "2.2",
+   "name": "汤姆孙的阴极射线与电子",
+   "statement": "阴极射线管中的射线束向正电荷偏转，背离负电荷，而且无论电极含有哪种金属，射线束都相同，其荷质比表明它的粒子比原子轻得多。汤姆孙得出结论：这些粒子是所有原子中带负电的亚原子成分，这是原子并非不可分割的第一个证据。"
+  },
+  {
+   "id": "fundamental-charge",
+   "kind": "axiom",
+   "section": "2.2",
+   "name": "密立根的元电荷",
+   "terms": [
+    "元电荷"
+   ],
+   "statement": "密立根测量的每个油滴所带的电荷都是 1.6 × 10⁻¹⁹ C 的整数倍，所以这个值一定是单个电子的电荷。结合汤姆孙的荷质比，通过简单的计算即可得到电子的质量。",
+   "forms": [
+    {
+     "id": "eq-electron-mass",
+     "latex": "\\text{Mass of electron}=1.602\\times10^{-19}\\;\\text{C}\\times\\frac{1\\;\\text{kg}}{1.759\\times10^{11}\\;\\text{C}}=9.107\\times10^{-31}\\;\\text{kg}",
+     "condition": "密立根测得的电子电荷除以汤姆孙测得的荷质比",
+     "anchor": "2.2-oil-drop"
+    }
+   ]
+  },
+  {
+   "id": "nuclear-model-of-the-atom",
+   "kind": "idea",
+   "section": "2.2",
+   "name": "卢瑟福的核式原子",
+   "statement": "大多数 α 粒子径直穿过金箔，少数发生轻微偏转，极少数几乎沿原路弹回。卢瑟福推断：原子内部大部分是空的，中心有一个小而重、带正电的原子核，这一图像取代了葡萄干布丁模型和类似土星的模型，至今仍在使用。"
+  },
+  {
+   "id": "subatomic-particles",
+   "kind": "definition",
+   "section": "2.2",
+   "name": "亚原子粒子",
+   "statement": "原子由三种亚原子粒子构成：位于原子核外、带负电且很轻的电子，以及位于核内、带正电的质子和不带电、质量与质子几乎相同的中子。本章所讲的原子序数、质量数、同位素和离子，都是按这三种粒子来计数的。"
+  },
+  {
+   "id": "isotopes",
+   "kind": "definition",
+   "section": "2.2",
+   "name": "同位素",
+   "terms": [
+    "同位素"
+   ],
+   "statement": "同一种元素的原子质量可以不同而化学性质相同，因为它们的质子数相同而中子数不同。同位素的存在，正是道尔顿的第二条假设必须改用化学性质而不是质量来表述的原因。"
+  },
+  {
+   "id": "alpha-particle",
+   "kind": "definition",
+   "section": "2.2",
+   "name": "α 粒子",
+   "terms": [
+    "α 粒子"
+   ],
+   "statement": "α 粒子是由两个质子和两个中子组成的带正电的粒子。"
+  },
+  {
+   "id": "nucleus",
+   "kind": "definition",
+   "section": "2.2",
+   "name": "原子核",
+   "terms": [
+    "原子核"
+   ],
+   "statement": "原子核是原子中质量集中、带正电的中心，由质子和中子组成。"
+  },
+  {
+   "id": "electron",
+   "kind": "definition",
+   "section": "2.2",
+   "name": "电子",
+   "terms": [
+    "电子"
+   ],
+   "statement": "电子是位于原子核外、质量相对很小的带负电的亚原子粒子。"
+  },
+  {
+   "id": "proton",
+   "kind": "definition",
+   "section": "2.2",
+   "name": "质子",
+   "terms": [
+    "质子"
+   ],
+   "statement": "质子是位于原子核内、带正电的亚原子粒子。"
+  },
+  {
+   "id": "neutron",
+   "kind": "definition",
+   "section": "2.2",
+   "name": "中子",
+   "terms": [
+    "中子"
+   ],
+   "statement": "中子是位于原子核内、不带电的亚原子粒子。"
+  },
+  {
+   "id": "atomic-mass-unit",
+   "kind": "definition",
+   "section": "2.3",
+   "name": "原子质量单位",
+   "terms": [
+    "原子质量单位（amu）",
+    "道尔顿（Da）",
+    "统一原子质量单位（u）"
+   ],
+   "statement": "原子非常小，用克和库仑都不方便，所以原子的质量用原子质量单位表示，它恰好是一个碳-12 原子质量的十二分之一，原子的电荷则用一个电子的电荷作为单位。在这两种标度上，质子和中子的质量各约为 1 amu，电荷分别为 1+ 和 0，电子的质量约为 0.00055 amu，电荷为 1−。"
+  },
+  {
+   "id": "atomic-number-and-mass-number",
+   "kind": "definition",
+   "section": "2.3",
+   "name": "原子序数与质量数",
+   "symbol": "Z",
+   "statement": "原子序数是原子核中的质子数，是元素的决定性特征；质量数是质子数与中子数之和。二者之差是中子数，在中性原子中，原子序数同时也是电子数。",
+   "forms": [
+    {
+     "id": "eq-nucleon-numbers",
+     "latex": "\\begin{array}{rll}\\text{atomic number}\\;(Z) & = & \\text{number of protons} \\\\ \\text{mass number}\\;(A) & = & \\text{number of protons}+\\text{number of neutrons} \\\\ A-Z & = & \\text{number of neutrons}\\end{array}",
+     "anchor": "2.3-atomic-number"
+    }
+   ]
+  },
+  {
+   "id": "ions-and-atomic-charge",
+   "kind": "definition",
+   "section": "2.3",
+   "name": "离子与原子电荷",
+   "symbol": "Z_plus",
+   "statement": "当原子中的质子数与电子数不相等时，它所带的电荷等于质子数减去电子数，这样的原子称为离子。得到电子的原子成为带负电的阴离子，失去电子的原子成为带正电的阳离子。",
+   "forms": [
+    {
+     "id": "eq-atomic-charge",
+     "latex": "\\text{atomic charge}=\\text{number of protons}-\\text{number of electrons}",
+     "anchor": "2.3-ions"
+    }
+   ]
+  },
+  {
+   "id": "composition-of-an-atom",
+   "kind": "skill",
+   "section": "2.3",
+   "name": "计算质子数、中子数和电子数",
+   "statement": "根据元素的原子序数、质量数和电荷，就可以计算出各种粒子的数目。原子序数给出质子数，质量数减去原子序数给出中子数，质子数减去电荷给出电子数。把同样的推理反过来用，则可由各粒子的数目求出电荷。"
+  },
+  {
+   "id": "chemical-symbols",
+   "kind": "definition",
+   "section": "2.3",
+   "name": "化学符号",
+   "terms": [
+    "化学符号"
+   ],
+   "statement": "由一个、两个或三个字母组成的化学符号代表一种元素或该元素的一个原子，无论你指的是单个原子还是装满一罐的原子。只有第一个字母大写，所以 Co 是钴，而 CO 是一氧化碳；有些符号来自元素在另一种语言中的名称。"
+  },
+  {
+   "id": "isotope-symbols",
+   "kind": "skill",
+   "section": "2.3",
+   "name": "书写同位素符号",
+   "statement": "原子的完整符号是在元素符号上，把质量数写在左上角，原子序数写在左下角（常省略），电荷写在右上角。阅读和书写这些符号，以及镁-24 或 Mg-24 这样的等价名称，是本书此后表示某种同位素或离子的方式。"
+  },
+  {
+   "id": "average-atomic-mass",
+   "kind": "result",
+   "section": "2.3",
+   "name": "平均原子质量",
+   "terms": [
+    "原子质量",
+    "原子量"
+   ],
+   "statement": "周期表中列出的元素质量，是对其天然存在的同位素取加权平均，即每种同位素的质量乘以其丰度分数之和。因此大多数原子质量不是整数，而且要明白，没有哪个原子具有平均质量：没有哪个硼原子的质量是 10.8 amu。",
+   "forms": [
+    {
+     "id": "eq-average-atomic-mass",
+     "latex": "\\text{average mass}=\\sum_{i}(\\text{fractional abundance}\\times\\text{isotopic mass})_{i}",
+     "condition": "天然存在的元素样品，其各同位素的丰度分数之和为 1",
+     "anchor": "2.3-atomic-mass"
+    }
+   ]
+  },
+  {
+   "id": "isotopic-abundance-from-average-mass",
+   "kind": "skill",
+   "section": "2.3",
+   "name": "求同位素丰度",
+   "statement": "对于有两种同位素的元素，可以把其中一种的分数记为 x，另一种记为 1 − x，平均质量的方程就成为一个一元方程。解出它，就把平均原子质量还原成各同位素的百分组成。"
+  },
+  {
+   "id": "mass-spectrometry",
+   "kind": "idea",
+   "section": "2.3",
+   "name": "质谱法",
+   "statement": "质谱仪使汽化样品的原子或分子带电，让离子通过电场或磁场发生偏转，偏转量取决于它们的质量和电荷，并记录到达每个质荷比的离子数。每个峰的高度正比于该质荷比处离子所占的分数，所以从质谱可以读出存在哪些同位素以及它们的丰度。"
+  },
+  {
+   "id": "ion",
+   "kind": "definition",
+   "section": "2.3",
+   "name": "离子",
+   "terms": [
+    "离子"
+   ],
+   "statement": "离子是带电的原子或分子，其质子数与电子数不相等。"
+  },
+  {
+   "id": "cation",
+   "kind": "definition",
+   "section": "2.3",
+   "name": "阳离子",
+   "terms": [
+    "阳离子"
+   ],
+   "statement": "阳离子是带正电的原子或分子，其电子数少于质子数。"
+  },
+  {
+   "id": "anion",
+   "kind": "definition",
+   "section": "2.3",
+   "name": "阴离子",
+   "terms": [
+    "阴离子"
+   ],
+   "statement": "阴离子是带负电的原子或分子，其电子数多于质子数。"
+  },
+  {
+   "id": "atomic-number",
+   "kind": "definition",
+   "section": "2.3",
+   "name": "原子序数",
+   "symbol": "Z",
+   "terms": [
+    "原子序数（Z）"
+   ],
+   "statement": "原子的原子序数（Z）是其原子核中的质子数。"
+  },
+  {
+   "id": "mass-number",
+   "kind": "definition",
+   "section": "2.3",
+   "name": "质量数",
+   "symbol": "A",
+   "terms": [
+    "质量数（A）"
+   ],
+   "statement": "原子的质量数（A）是其原子核中中子数与质子数之和。"
+  },
+  {
+   "id": "molecular-formula",
+   "kind": "definition",
+   "section": "2.4",
+   "name": "分子式",
+   "terms": [
+    "分子式"
+   ],
+   "statement": "分子式用元素符号和下标写出分子中各种原子的数目。许多元素本身以分子形式存在，例如双原子的 H₂、O₂ 和 N₂，以及八原子的 S₈，因此这类元素的化学式不同于它的元素符号。"
+  },
+  {
+   "id": "subscripts-and-coefficients",
+   "kind": "idea",
+   "section": "2.4",
+   "name": "下标不是系数",
+   "statement": "下标表示一个分子中键合在一起的原子数，而写在前面的数字表示独立的单元数。H₂ 是由两个键合原子构成的一个分子，2H 是两个独立的原子，2H₂ 是两个分子，这是书写氢的四种方式所表示的四种不同的东西。"
+  },
+  {
+   "id": "structural-formulas-and-models",
+   "kind": "definition",
+   "section": "2.4",
+   "name": "结构式与分子模型",
+   "statement": "结构式用线表示键，显示哪些原子与哪些原子相连；球棍模型显示原子在空间中的排列，空间填充模型显示它们的相对大小。每一种表示方式都补充了分子式所没有的信息。"
+  },
+  {
+   "id": "empirical-formula-from-molecular-formula",
+   "kind": "skill",
+   "section": "2.4",
+   "name": "求实验式",
+   "statement": "实验式给出化合物中原子或离子数目的最简整数比，用分子式的各下标除以它们的最大公因数即可求得。分子式总是实验式的整数倍，所以乙酸 C₂H₄O₂ 和葡萄糖具有相同的实验式 CH₂O。"
+  },
+  {
+   "id": "isomers",
+   "kind": "definition",
+   "section": "2.4",
+   "name": "异构体",
+   "terms": [
+    "异构体"
+   ],
+   "statement": "相同的原子可以用不同的方式连接，所以分子式相同的化合物可以有不同的结构和不同的性质。构造异构体的差别在于原子的连接方式，如乙酸和甲酸甲酯；立体异构体的差别仅在于原子在空间中的取向，如香芹酮的两种互为镜像的形式。"
+  },
+  {
+   "id": "empirical-formula-of-a-compound",
+   "kind": "definition",
+   "section": "2.4",
+   "name": "实验式",
+   "terms": [
+    "实验式"
+   ],
+   "statement": "实验式以原子的最简整数比表示化合物的组成。"
+  },
+  {
+   "id": "structural-formula",
+   "kind": "definition",
+   "section": "2.4",
+   "name": "结构式",
+   "terms": [
+    "结构式"
+   ],
+   "statement": "结构式表示分子中的原子及其连接方式。"
+  },
+  {
+   "id": "structural-isomer",
+   "kind": "definition",
+   "section": "2.4",
+   "name": "构造异构体",
+   "terms": [
+    "构造异构体"
+   ],
+   "statement": "构造异构体是分子式相同、但因原子键合方式不同而物理性质和化学性质不同的物质。"
+  },
+  {
+   "id": "spatial-isomer",
+   "kind": "definition",
+   "section": "2.4",
+   "name": "立体异构体",
+   "terms": [
+    "立体异构体"
+   ],
+   "statement": "立体异构体是原子在空间中的相对取向不同的化合物。"
+  },
+  {
+   "id": "periodic-law",
+   "kind": "axiom",
+   "section": "2.5",
+   "name": "周期律",
+   "terms": [
+    "周期律"
+   ],
+   "statement": "元素的性质是其原子序数的周期函数。门捷列夫按原子质量排列元素，并利用这一规律预言尚未发现的元素，到二十世纪时已经清楚，决定周期表次序的是原子序数而不是质量。"
+  },
+  {
+   "id": "periods-and-groups",
+   "kind": "definition",
+   "section": "2.5",
+   "name": "周期与族",
+   "statement": "现代元素周期表把元素按原子序数递增的顺序排成七个横行，称为周期，和十八个纵列，称为族，因此性质相似的元素落在同一族中。每个方格给出元素的原子序数、符号和平均原子质量，方括号中的质量表示该元素只含放射性同位素。"
+  },
+  {
+   "id": "metals-nonmetals-metalloids",
+   "kind": "definition",
+   "section": "2.5",
+   "name": "金属、非金属和半金属",
+   "statement": "金属有光泽，有展性，能很好地导热和导电；非金属暗淡，导电性差；半金属的导电性适中，兼有两类的一些性质。这三类元素占据周期表的不同区域，所以元素在表中的位置可以预测它的一般性质。"
+  },
+  {
+   "id": "element-families",
+   "kind": "definition",
+   "section": "2.5",
+   "name": "主族元素与过渡金属",
+   "statement": "第 1、2 族和第 13 至 18 族是主族元素，第 3 至 12 族是过渡金属，表下方的两行是内过渡金属，即镧系元素和锕系元素。有几个族有自己的名称，即碱金属、碱土金属、氮族元素、氧族元素、卤素和稀有气体，同一族的成员具有相似的化学性质。"
+  },
+  {
+   "id": "name-group-of-element",
+   "kind": "skill",
+   "section": "2.5",
+   "name": "说出元素所在族的名称",
+   "statement": "在周期表中找到任一元素并说出它所在族的名称，也能从族名和周期找出元素。接下来的两节要靠对周期表的这种熟练程度来预测离子和命名化合物。"
+  },
+  {
+   "id": "periodic-table",
+   "kind": "definition",
+   "section": "2.5",
+   "name": "元素周期表",
+   "terms": [
+    "元素周期表"
+   ],
+   "statement": "元素周期表是把化学性质相似的元素排在相近位置的元素表。"
+  },
+  {
+   "id": "group-of-the-periodic-table",
+   "kind": "definition",
+   "section": "2.5",
+   "name": "族",
+   "terms": [
+    "族"
+   ],
+   "statement": "族是元素周期表中的一个纵列。"
+  },
+  {
+   "id": "period-of-the-periodic-table",
+   "kind": "definition",
+   "section": "2.5",
+   "name": "周期",
+   "terms": [
+    "周期"
+   ],
+   "statement": "周期是元素周期表中的一个横行（英文也称 series）。"
+  },
+  {
+   "id": "metal",
+   "kind": "definition",
+   "section": "2.5",
+   "name": "金属",
+   "terms": [
+    "金属"
+   ],
+   "statement": "金属是有光泽、有展性、能很好地导热和导电的元素。"
+  },
+  {
+   "id": "nonmetal",
+   "kind": "definition",
+   "section": "2.5",
+   "name": "非金属",
+   "terms": [
+    "非金属"
+   ],
+   "statement": "非金属是外观暗淡、导热和导电性差的元素。"
+  },
+  {
+   "id": "metalloid",
+   "kind": "definition",
+   "section": "2.5",
+   "name": "半金属",
+   "terms": [
+    "半金属"
+   ],
+   "statement": "半金属是导热和导电性适中、兼有金属和非金属的一些性质的元素。"
+  },
+  {
+   "id": "main-group-element",
+   "kind": "definition",
+   "section": "2.5",
+   "name": "主族元素",
+   "terms": [
+    "主族元素"
+   ],
+   "statement": "主族元素，也称为代表元素，是第 1、2 族和第 13–18 族的元素。"
+  },
+  {
+   "id": "transition-metal",
+   "kind": "definition",
+   "section": "2.5",
+   "name": "过渡金属",
+   "terms": [
+    "过渡金属"
+   ],
+   "statement": "过渡金属是第 3–12 族的元素（更严格地说是第 3–11 族）。"
+  },
+  {
+   "id": "inner-transition-metal",
+   "kind": "definition",
+   "section": "2.5",
+   "name": "内过渡金属",
+   "terms": [
+    "内过渡金属"
+   ],
+   "statement": "内过渡金属是周期表最下面两行的元素；第一行的是镧系元素，第二行的是锕系元素。"
+  },
+  {
+   "id": "lanthanide",
+   "kind": "definition",
+   "section": "2.5",
+   "name": "镧系元素",
+   "terms": [
+    "镧系元素",
+    "镧系"
+   ],
+   "statement": "镧系元素是周期表最下面两行中上面一行的内过渡金属。"
+  },
+  {
+   "id": "actinide",
+   "kind": "definition",
+   "section": "2.5",
+   "name": "锕系元素",
+   "terms": [
+    "锕系元素",
+    "锕系"
+   ],
+   "statement": "锕系元素是周期表最下面两行中下面一行的内过渡金属。"
+  },
+  {
+   "id": "alkali-metal",
+   "kind": "definition",
+   "section": "2.5",
+   "name": "碱金属",
+   "terms": [
+    "碱金属"
+   ],
+   "statement": "碱金属是第 1 族的元素。"
+  },
+  {
+   "id": "alkaline-earth-metal",
+   "kind": "definition",
+   "section": "2.5",
+   "name": "碱土金属",
+   "terms": [
+    "碱土金属"
+   ],
+   "statement": "碱土金属是第 2 族的元素。"
+  },
+  {
+   "id": "pnictogen",
+   "kind": "definition",
+   "section": "2.5",
+   "name": "氮族元素",
+   "terms": [
+    "氮族元素"
+   ],
+   "statement": "氮族元素是第 15 族的元素。"
+  },
+  {
+   "id": "chalcogen",
+   "kind": "definition",
+   "section": "2.5",
+   "name": "氧族元素",
+   "terms": [
+    "氧族元素"
+   ],
+   "statement": "氧族元素是第 16 族的元素。"
+  },
+  {
+   "id": "halogen",
+   "kind": "definition",
+   "section": "2.5",
+   "name": "卤素",
+   "terms": [
+    "卤素"
+   ],
+   "statement": "卤素是第 17 族的元素。"
+  },
+  {
+   "id": "noble-gas",
+   "kind": "definition",
+   "section": "2.5",
+   "name": "稀有气体",
+   "terms": [
+    "惰性气体",
+    "稀有气体"
+   ],
+   "statement": "稀有气体，也称为惰性气体，是第 18 族的元素。"
+  },
+  {
+   "id": "predict-ion-charge-from-group",
+   "kind": "skill",
+   "section": "2.6",
+   "name": "由族预测离子电荷",
+   "statement": "主族金属倾向于失去足够的电子，使电子数与前一个稀有气体相同，形成电荷等于其族序数的阳离子；非金属倾向于得到足够的电子，使电子数与后一个稀有气体相同，形成阴离子，其电荷等于它在稀有气体左边的族数。这一规律在周期表中部减弱，铁和铜等金属会形成不止一种电荷的离子。"
+  },
+  {
+   "id": "polyatomic-ions",
+   "kind": "definition",
+   "section": "2.6",
+   "name": "多原子离子与含氧酸根",
+   "terms": [
+    "多原子离子"
+   ],
+   "statement": "多原子离子是由键合的原子构成、带有总电荷并作为一个整体起作用的原子团，含氧酸根是其中含有氧的一类。要记住常见离子的名称、化学式和电荷。后缀 -ate 和 -ite 以及前缀 per- 和 hypo- 表示氧原子较多或较少。"
+  },
+  {
+   "id": "ionic-and-covalent-bonds",
+   "kind": "definition",
+   "section": "2.6",
+   "name": "离子键与共价键",
+   "statement": "当原子转移电子形成离子时，带相反电荷的离子之间的静电吸引就是离子键。当原子共用电子形成分子时，原子核与共用电子对之间的吸引就是共价键。化合物中存在的键决定它是离子化合物还是分子化合物。"
+  },
+  {
+   "id": "ionic-compounds",
+   "kind": "definition",
+   "section": "2.6",
+   "name": "离子化合物",
+   "terms": [
+    "离子化合物"
+   ],
+   "statement": "金属与一种或多种非金属化合，通常形成离子化合物，这是一种由离子键结合的固体，熔点高，熔融时导电而固态时不导电。它的化学式给出的是离子的相对数目而不是分子，因为离子化合物不含分立的分子。"
+  },
+  {
+   "id": "ionic-compound-formula",
+   "kind": "skill",
+   "section": "2.6",
+   "name": "书写离子化合物的化学式",
+   "statement": "离子化合物呈电中性，所以它的化学式按使正负电荷相等的比例取各种离子，需要不止一个多原子离子时，把它作为一个整体放在括号里。两个 Al³⁺ 和三个 O²⁻ 得到 Al₂O₃，一个 Ca²⁺ 和两个 H₂PO₄⁻ 得到 Ca(H₂PO₄)₂。"
+  },
+  {
+   "id": "molecular-compounds",
+   "kind": "definition",
+   "section": "2.6",
+   "name": "分子化合物",
+   "terms": [
+    "共价化合物",
+    "分子化合物"
+   ],
+   "statement": "非金属的化合物通常由以共价键结合的分立的中性分子构成，在常温常压下往往是气体、低沸点液体或低熔点固体。书中指出，根据在周期表中的位置来预测这一点是一种简单化的做法，有一些有趣的例外。"
+  },
+  {
+   "id": "predict-bond-type",
+   "kind": "skill",
+   "section": "2.6",
+   "name": "判断是离子化合物还是分子化合物",
+   "statement": "给定一个化学式，在周期表中找出其中的元素。金属与非金属，或含有多原子离子的化合物，是离子化合物，只由非金属构成的是分子化合物。在为下一节中的任何化合物命名之前，要先问这个问题。"
+  },
+  {
+   "id": "monatomic-ion",
+   "kind": "definition",
+   "section": "2.6",
+   "name": "单原子离子",
+   "terms": [
+    "单原子离子"
+   ],
+   "statement": "单原子离子是由单个原子构成的离子。"
+  },
+  {
+   "id": "oxyanion",
+   "kind": "definition",
+   "section": "2.6",
+   "name": "含氧酸根",
+   "terms": [
+    "含氧酸根"
+   ],
+   "statement": "含氧酸根是由一个中心原子与氧原子键合而成的多原子阴离子。"
+  },
+  {
+   "id": "covalent-bond",
+   "kind": "definition",
+   "section": "2.6",
+   "name": "共价键",
+   "terms": [
+    "共价键"
+   ],
+   "statement": "共价键是原子之间共用电子而形成的键。"
+  },
+  {
+   "id": "ionic-bond",
+   "kind": "definition",
+   "section": "2.6",
+   "name": "离子键",
+   "terms": [
+    "离子键"
+   ],
+   "statement": "离子键是带相反电荷的阳离子与阴离子之间的静电吸引，通常在金属原子把电子转移给非金属原子时形成。"
+  },
+  {
+   "id": "name-ionic-compounds",
+   "kind": "skill",
+   "section": "2.7",
+   "name": "离子化合物的命名",
+   "statement": "离子化合物的名称是阳离子在前、阴离子在后：先是金属的名称，然后是词尾换为 -ide 的非金属的名称，或照原样写多原子离子的名称。由于电荷决定了离子的比例，名称中不必说明各有多少个。"
+  },
+  {
+   "id": "name-variable-charge-metal-compounds",
+   "kind": "skill",
+   "section": "2.7",
+   "name": "变价金属化合物的命名",
+   "statement": "当金属能形成不止一种电荷的离子时，其离子的电荷由化学式和阴离子的固定电荷算出，写成罗马数字，放在金属名称后的括号里，如 iron(II) chloride 和 iron(III) chloride。表示较低和较高电荷的旧后缀 -ous 和 -ic 在某些行业中仍在使用。"
+  },
+  {
+   "id": "name-hydrates",
+   "kind": "skill",
+   "section": "2.7",
+   "name": "水合物的命名",
+   "statement": "水合物的命名，是在无水化合物的名称上加一个希腊语前缀，表示每个化学式单元中的水分子数，再加上 hydrate 一词；它的化学式则是在后面加一个居中的圆点、这个数和 H₂O。五水合硫酸铜(II)是 CuSO₄·5H₂O。"
+  },
+  {
+   "id": "name-binary-molecular-compounds",
+   "kind": "skill",
+   "section": "2.7",
+   "name": "二元分子化合物的命名",
+   "statement": "两种非金属可以按几种比例化合，所以二元分子化合物的名称用希腊语前缀给出每种原子的数目：金属性较强的元素在前，另一种元素在后并带后缀 -ide，第一个元素不用 mono-。CO 是 carbon monoxide，N₂O₄ 是 dinitrogen tetroxide。"
+  },
+  {
+   "id": "name-binary-acids",
+   "kind": "skill",
+   "section": "2.7",
+   "name": "无氧酸的命名",
+   "statement": "氢与另一种非金属形成的化合物溶于水时，按酸来命名：把 hydrogen 换成前缀 hydro-，在另一种元素的名称后加 -ic，再加上 acid 一词，所以溶于水的 hydrogen chloride 是 hydrochloric acid。"
+  },
+  {
+   "id": "name-oxyacids",
+   "kind": "skill",
+   "section": "2.7",
+   "name": "含氧酸的命名",
+   "statement": "含氧酸根据它的含氧酸根来命名：略去 hydrogen，把 -ate 换成 -ic 或把 -ite 换成 -ous，再加 acid，所以 H₂CO₃ 是 carbonic acid，HNO₂ 是 nitrous acid。sulfuric acid 和 sulfurous acid 是书中所述的例外。"
+  },
+  {
+   "id": "hydrate",
+   "kind": "definition",
+   "section": "2.7",
+   "name": "水合物",
+   "terms": [
+    "水合物"
+   ],
+   "statement": "水合物是晶体中含有一个或多个结合水分子的化合物，书写时在无水化合物的化学式与每个化学式单元的水分子数之间加一个圆点。"
+  },
+  {
+   "id": "nomenclature",
+   "kind": "definition",
+   "section": "2.7",
+   "name": "命名法",
+   "terms": [
+    "命名法"
+   ],
+   "statement": "命名法是为感兴趣的对象命名的一套规则，化学命名法给每种化合物一个名称，由这个名称可以写出它的化学式。"
+  },
+  {
+   "id": "binary-compound",
+   "kind": "definition",
+   "section": "2.7",
+   "name": "二元化合物",
+   "terms": [
+    "二元化合物"
+   ],
+   "statement": "二元化合物是含有两种不同元素的化合物。"
+  },
+  {
+   "id": "binary-acid",
+   "kind": "definition",
+   "section": "2.7",
+   "name": "无氧酸",
+   "terms": [
+    "无氧酸"
+   ],
+   "statement": "无氧酸是氢与另一种元素形成的化合物，其键合方式使它溶于水时释放 H⁺ 离子。"
+  },
+  {
+   "id": "oxyacid",
+   "kind": "definition",
+   "section": "2.7",
+   "name": "含氧酸",
+   "terms": [
+    "含氧酸"
+   ],
+   "statement": "含氧酸是氢、氧与另一种元素形成的化合物，其键合方式使它溶于水时释放 H⁺ 离子。"
+  },
+  {
+   "id": "formula-unit",
+   "kind": "definition",
+   "section": "2.7",
+   "name": "化学式单元",
+   "terms": [
+    "化学式单元"
+   ],
+   "statement": "化学式单元是化合物的化学式所表示的原子或离子的集合，是其各部分的最小整数比；对没有分子的离子化合物来说，它所起的作用相当于分子对分子化合物的作用。"
+  },
+  {
+   "id": "electrically-neutral",
+   "kind": "definition",
+   "section": "2.2",
+   "name": "电中性",
+   "statement": "当粒子或物质的正电荷与负电荷相互平衡，使其净电荷为零时，它是电中性的；原子含有的电子数与质子数相同时是中性的。"
+  }
+ ],
+ "concept_prereqs": [
+  {
+   "concept": "daltons-atomic-theory",
+   "prereq": "atoms-and-molecules"
+  },
+  {
+   "concept": "daltons-atomic-theory",
+   "prereq": "elements-and-compounds"
+  },
+  {
+   "concept": "daltons-atomic-theory",
+   "prereq": "conservation-of-matter"
+  },
+  {
+   "concept": "law-of-definite-proportions",
+   "prereq": "daltons-atomic-theory"
+  },
+  {
+   "concept": "law-of-multiple-proportions",
+   "prereq": "law-of-definite-proportions"
+  },
+  {
+   "concept": "discovery-of-the-electron",
+   "prereq": "daltons-atomic-theory"
+  },
+  {
+   "concept": "fundamental-charge",
+   "prereq": "discovery-of-the-electron"
+  },
+  {
+   "concept": "fundamental-charge",
+   "prereq": "scientific-notation"
+  },
+  {
+   "concept": "nuclear-model-of-the-atom",
+   "prereq": "discovery-of-the-electron"
+  },
+  {
+   "concept": "subatomic-particles",
+   "prereq": "nuclear-model-of-the-atom"
+  },
+  {
+   "concept": "subatomic-particles",
+   "prereq": "fundamental-charge"
+  },
+  {
+   "concept": "isotopes",
+   "prereq": "subatomic-particles"
+  },
+  {
+   "concept": "isotopes",
+   "prereq": "daltons-atomic-theory"
+  },
+  {
+   "concept": "atomic-mass-unit",
+   "prereq": "subatomic-particles"
+  },
+  {
+   "concept": "atomic-mass-unit",
+   "prereq": "unit-prefixes"
+  },
+  {
+   "concept": "atomic-number-and-mass-number",
+   "prereq": "subatomic-particles"
+  },
+  {
+   "concept": "ions-and-atomic-charge",
+   "prereq": "atomic-number-and-mass-number"
+  },
+  {
+   "concept": "composition-of-an-atom",
+   "prereq": "atomic-number-and-mass-number"
+  },
+  {
+   "concept": "composition-of-an-atom",
+   "prereq": "ions-and-atomic-charge"
+  },
+  {
+   "concept": "chemical-symbols",
+   "prereq": "elements-and-compounds"
+  },
+  {
+   "concept": "isotope-symbols",
+   "prereq": "chemical-symbols"
+  },
+  {
+   "concept": "isotope-symbols",
+   "prereq": "isotopes"
+  },
+  {
+   "concept": "isotope-symbols",
+   "prereq": "composition-of-an-atom"
+  },
+  {
+   "concept": "average-atomic-mass",
+   "prereq": "isotopes"
+  },
+  {
+   "concept": "average-atomic-mass",
+   "prereq": "atomic-mass-unit"
+  },
+  {
+   "concept": "average-atomic-mass",
+   "prereq": "significant-figures-in-calculations"
+  },
+  {
+   "concept": "isotopic-abundance-from-average-mass",
+   "prereq": "average-atomic-mass"
+  },
+  {
+   "concept": "mass-spectrometry",
+   "prereq": "isotopes"
+  },
+  {
+   "concept": "mass-spectrometry",
+   "prereq": "ions-and-atomic-charge"
+  },
+  {
+   "concept": "molecular-formula",
+   "prereq": "chemical-symbols"
+  },
+  {
+   "concept": "molecular-formula",
+   "prereq": "atoms-and-molecules"
+  },
+  {
+   "concept": "subscripts-and-coefficients",
+   "prereq": "molecular-formula"
+  },
+  {
+   "concept": "structural-formulas-and-models",
+   "prereq": "molecular-formula"
+  },
+  {
+   "concept": "empirical-formula-from-molecular-formula",
+   "prereq": "molecular-formula"
+  },
+  {
+   "concept": "empirical-formula-from-molecular-formula",
+   "prereq": "law-of-definite-proportions"
+  },
+  {
+   "concept": "isomers",
+   "prereq": "structural-formulas-and-models"
+  },
+  {
+   "concept": "periodic-law",
+   "prereq": "atomic-number-and-mass-number"
+  },
+  {
+   "concept": "periodic-law",
+   "prereq": "average-atomic-mass"
+  },
+  {
+   "concept": "periods-and-groups",
+   "prereq": "periodic-law"
+  },
+  {
+   "concept": "periods-and-groups",
+   "prereq": "chemical-symbols"
+  },
+  {
+   "concept": "metals-nonmetals-metalloids",
+   "prereq": "periods-and-groups"
+  },
+  {
+   "concept": "metals-nonmetals-metalloids",
+   "prereq": "physical-property"
+  },
+  {
+   "concept": "element-families",
+   "prereq": "periods-and-groups"
+  },
+  {
+   "concept": "name-group-of-element",
+   "prereq": "element-families"
+  },
+  {
+   "concept": "predict-ion-charge-from-group",
+   "prereq": "ions-and-atomic-charge"
+  },
+  {
+   "concept": "predict-ion-charge-from-group",
+   "prereq": "element-families"
+  },
+  {
+   "concept": "predict-ion-charge-from-group",
+   "prereq": "metals-nonmetals-metalloids"
+  },
+  {
+   "concept": "polyatomic-ions",
+   "prereq": "ions-and-atomic-charge"
+  },
+  {
+   "concept": "polyatomic-ions",
+   "prereq": "molecular-formula"
+  },
+  {
+   "concept": "ionic-and-covalent-bonds",
+   "prereq": "ions-and-atomic-charge"
+  },
+  {
+   "concept": "ionic-compounds",
+   "prereq": "ionic-and-covalent-bonds"
+  },
+  {
+   "concept": "ionic-compounds",
+   "prereq": "metals-nonmetals-metalloids"
+  },
+  {
+   "concept": "ionic-compound-formula",
+   "prereq": "ionic-compounds"
+  },
+  {
+   "concept": "ionic-compound-formula",
+   "prereq": "predict-ion-charge-from-group"
+  },
+  {
+   "concept": "ionic-compound-formula",
+   "prereq": "polyatomic-ions"
+  },
+  {
+   "concept": "ionic-compound-formula",
+   "prereq": "empirical-formula-from-molecular-formula"
+  },
+  {
+   "concept": "molecular-compounds",
+   "prereq": "ionic-and-covalent-bonds"
+  },
+  {
+   "concept": "molecular-compounds",
+   "prereq": "metals-nonmetals-metalloids"
+  },
+  {
+   "concept": "predict-bond-type",
+   "prereq": "ionic-compounds"
+  },
+  {
+   "concept": "predict-bond-type",
+   "prereq": "molecular-compounds"
+  },
+  {
+   "concept": "name-ionic-compounds",
+   "prereq": "ionic-compound-formula"
+  },
+  {
+   "concept": "name-ionic-compounds",
+   "prereq": "predict-bond-type"
+  },
+  {
+   "concept": "name-variable-charge-metal-compounds",
+   "prereq": "name-ionic-compounds"
+  },
+  {
+   "concept": "name-hydrates",
+   "prereq": "name-ionic-compounds"
+  },
+  {
+   "concept": "name-binary-molecular-compounds",
+   "prereq": "molecular-compounds"
+  },
+  {
+   "concept": "name-binary-molecular-compounds",
+   "prereq": "predict-bond-type"
+  },
+  {
+   "concept": "name-binary-acids",
+   "prereq": "name-binary-molecular-compounds"
+  },
+  {
+   "concept": "name-oxyacids",
+   "prereq": "polyatomic-ions"
+  },
+  {
+   "concept": "name-oxyacids",
+   "prereq": "name-binary-acids"
+  },
+  {
+   "concept": "ionic-bond",
+   "prereq": "ionic-and-covalent-bonds"
+  },
+  {
+   "concept": "ionic-bond",
+   "prereq": "ionic-compounds"
+  },
+  {
+   "concept": "alpha-particle",
+   "prereq": "subatomic-particles"
+  },
+  {
+   "concept": "nucleus",
+   "prereq": "nuclear-model-of-the-atom"
+  },
+  {
+   "concept": "nucleus",
+   "prereq": "subatomic-particles"
+  },
+  {
+   "concept": "periodic-table",
+   "prereq": "elements-and-compounds"
+  },
+  {
+   "concept": "hydrate",
+   "prereq": "ionic-compounds"
+  },
+  {
+   "concept": "binary-compound",
+   "prereq": "elements-and-compounds"
+  },
+  {
+   "concept": "binary-acid",
+   "prereq": "binary-compound"
+  },
+  {
+   "concept": "oxyacid",
+   "prereq": "polyatomic-ions"
+  },
+  {
+   "concept": "electron",
+   "prereq": "subatomic-particles"
+  },
+  {
+   "concept": "electron",
+   "prereq": "discovery-of-the-electron"
+  },
+  {
+   "concept": "proton",
+   "prereq": "subatomic-particles"
+  },
+  {
+   "concept": "proton",
+   "prereq": "nucleus"
+  },
+  {
+   "concept": "neutron",
+   "prereq": "subatomic-particles"
+  },
+  {
+   "concept": "neutron",
+   "prereq": "nucleus"
+  },
+  {
+   "concept": "ion",
+   "prereq": "ions-and-atomic-charge"
+  },
+  {
+   "concept": "cation",
+   "prereq": "ion"
+  },
+  {
+   "concept": "anion",
+   "prereq": "ion"
+  },
+  {
+   "concept": "atomic-number",
+   "prereq": "atomic-number-and-mass-number"
+  },
+  {
+   "concept": "atomic-number",
+   "prereq": "proton"
+  },
+  {
+   "concept": "mass-number",
+   "prereq": "atomic-number-and-mass-number"
+  },
+  {
+   "concept": "mass-number",
+   "prereq": "proton"
+  },
+  {
+   "concept": "mass-number",
+   "prereq": "neutron"
+  },
+  {
+   "concept": "empirical-formula-of-a-compound",
+   "prereq": "molecular-formula"
+  },
+  {
+   "concept": "structural-formula",
+   "prereq": "structural-formulas-and-models"
+  },
+  {
+   "concept": "structural-isomer",
+   "prereq": "isomers"
+  },
+  {
+   "concept": "spatial-isomer",
+   "prereq": "isomers"
+  },
+  {
+   "concept": "group-of-the-periodic-table",
+   "prereq": "periods-and-groups"
+  },
+  {
+   "concept": "group-of-the-periodic-table",
+   "prereq": "periodic-table"
+  },
+  {
+   "concept": "period-of-the-periodic-table",
+   "prereq": "periods-and-groups"
+  },
+  {
+   "concept": "period-of-the-periodic-table",
+   "prereq": "periodic-table"
+  },
+  {
+   "concept": "metal",
+   "prereq": "metals-nonmetals-metalloids"
+  },
+  {
+   "concept": "nonmetal",
+   "prereq": "metals-nonmetals-metalloids"
+  },
+  {
+   "concept": "metalloid",
+   "prereq": "metals-nonmetals-metalloids"
+  },
+  {
+   "concept": "main-group-element",
+   "prereq": "element-families"
+  },
+  {
+   "concept": "transition-metal",
+   "prereq": "element-families"
+  },
+  {
+   "concept": "inner-transition-metal",
+   "prereq": "element-families"
+  },
+  {
+   "concept": "lanthanide",
+   "prereq": "inner-transition-metal"
+  },
+  {
+   "concept": "actinide",
+   "prereq": "inner-transition-metal"
+  },
+  {
+   "concept": "alkali-metal",
+   "prereq": "element-families"
+  },
+  {
+   "concept": "alkaline-earth-metal",
+   "prereq": "element-families"
+  },
+  {
+   "concept": "pnictogen",
+   "prereq": "element-families"
+  },
+  {
+   "concept": "chalcogen",
+   "prereq": "element-families"
+  },
+  {
+   "concept": "halogen",
+   "prereq": "element-families"
+  },
+  {
+   "concept": "noble-gas",
+   "prereq": "element-families"
+  },
+  {
+   "concept": "monatomic-ion",
+   "prereq": "ion"
+  },
+  {
+   "concept": "oxyanion",
+   "prereq": "polyatomic-ions"
+  },
+  {
+   "concept": "covalent-bond",
+   "prereq": "ionic-and-covalent-bonds"
+  },
+  {
+   "concept": "covalent-bond",
+   "prereq": "electron"
+  },
+  {
+   "concept": "composition-of-an-atom",
+   "prereq": "proton"
+  },
+  {
+   "concept": "composition-of-an-atom",
+   "prereq": "neutron"
+  },
+  {
+   "concept": "composition-of-an-atom",
+   "prereq": "electron"
+  },
+  {
+   "concept": "composition-of-an-atom",
+   "prereq": "atomic-number"
+  },
+  {
+   "concept": "composition-of-an-atom",
+   "prereq": "mass-number"
+  },
+  {
+   "concept": "isotope-symbols",
+   "prereq": "atomic-number"
+  },
+  {
+   "concept": "isotope-symbols",
+   "prereq": "mass-number"
+  },
+  {
+   "concept": "predict-ion-charge-from-group",
+   "prereq": "monatomic-ion"
+  },
+  {
+   "concept": "predict-ion-charge-from-group",
+   "prereq": "group-of-the-periodic-table"
+  },
+  {
+   "concept": "name-group-of-element",
+   "prereq": "group-of-the-periodic-table"
+  },
+  {
+   "concept": "empirical-formula-from-molecular-formula",
+   "prereq": "empirical-formula-of-a-compound"
+  },
+  {
+   "concept": "periodic-law",
+   "prereq": "periodic-table"
+  },
+  {
+   "concept": "name-hydrates",
+   "prereq": "hydrate"
+  },
+  {
+   "concept": "name-binary-molecular-compounds",
+   "prereq": "binary-compound"
+  },
+  {
+   "concept": "name-binary-molecular-compounds",
+   "prereq": "nomenclature"
+  },
+  {
+   "concept": "name-binary-acids",
+   "prereq": "binary-acid"
+  },
+  {
+   "concept": "name-oxyacids",
+   "prereq": "oxyacid"
+  },
+  {
+   "concept": "name-ionic-compounds",
+   "prereq": "nomenclature"
+  },
+  {
+   "concept": "name-ionic-compounds",
+   "prereq": "monatomic-ion"
+  },
+  {
+   "concept": "ionic-compound-formula",
+   "prereq": "cation"
+  },
+  {
+   "concept": "ionic-compound-formula",
+   "prereq": "anion"
+  },
+  {
+   "concept": "predict-bond-type",
+   "prereq": "covalent-bond"
+  },
+  {
+   "concept": "predict-bond-type",
+   "prereq": "metal"
+  },
+  {
+   "concept": "predict-bond-type",
+   "prereq": "nonmetal"
+  },
+  {
+   "concept": "molecular-compounds",
+   "prereq": "covalent-bond"
+  },
+  {
+   "concept": "formula-unit",
+   "prereq": "ionic-compound-formula"
+  },
+  {
+   "concept": "electrically-neutral",
+   "prereq": "fundamental-charge"
+  }
+ ]
+}

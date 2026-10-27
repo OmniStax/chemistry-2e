@@ -24,16 +24,16 @@ const { C, PAL, alpha, register, begin, line, text, headline } = F;
     ClO3: { n: 3, label: 'ClO₃⁻', tex: '\\text{ClO}_{3}^{-}', acid: '\\text{HClO}_{3}', acidPlain: 'HClO_{3}', pKa: null },
     ClO4: { n: 4, label: 'ClO₄⁻', tex: '\\text{ClO}_{4}^{-}', acid: '\\text{HClO}_{4}', acidPlain: 'HClO_{4}', pKa: null },
   };
-  const COUNT = ['', 'one', 'two', 'three', 'four'];
+  const COUNT = ['', '一', '两', '三', '四'];
   const HEAD = {
-    ClO: 'In $\\text{ClO}^{-}$, one of chlorine’s four electron pairs bonds an oxygen atom and three are lone pairs.',
-    ClO2: 'In $\\text{ClO}_{2}^{-}$, two of chlorine’s four electron pairs bond oxygen atoms and two are lone pairs.',
-    ClO3: 'In $\\text{ClO}_{3}^{-}$, three of chlorine’s four electron pairs bond oxygen atoms and one is a lone pair.',
-    ClO4: 'In $\\text{ClO}_{4}^{-}$, all four of chlorine’s electron pairs bond oxygen atoms and no lone pair is left.',
+    ClO: '在 $\\text{ClO}^{-}$ 中，氯的四对电子中有一对与氧原子成键，三对是孤电子对。',
+    ClO2: '在 $\\text{ClO}_{2}^{-}$ 中，氯的四对电子中有两对与氧原子成键，两对是孤电子对。',
+    ClO3: '在 $\\text{ClO}_{3}^{-}$ 中，氯的四对电子中有三对与氧原子成键，一对是孤电子对。',
+    ClO4: '在 $\\text{ClO}_{4}^{-}$ 中，氯的四对电子全部与氧原子成键，没有剩下孤电子对。',
   };
-  const ion = F.choice(d.controls, { label: '\\text{ion}', key: 'ion', aria: 'the chlorine oxyanion',
+  const ion = F.choice(d.controls, { label: '\\text{离子}', key: 'ion', aria: '氯的含氧阴离子',
     options: ORDER.map((v) => ({ value: v, label: ION[v].label })), value: 'ClO2', onInput: () => draw() });
-  const VIEW = F.choice(d.controls, { label: '\\text{view}', key: 'view', aria: 'a flat Lewis structure or a scene to turn',
+  const VIEW = F.choice(d.controls, { label: '\\text{视图}', key: 'view', aria: '平面路易斯结构式或可转动的场景',
     options: [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }], value: '2d', ms: 0, onInput: () => show() });
   const strip = F.makeCanvas(d.stage, 200);
   const ro = F.readout(d);
@@ -46,7 +46,7 @@ const { C, PAL, alpha, register, begin, line, text, headline } = F;
   /* ---------- the flat view: the book's electron-dot structure ---------- */
   const CX = 700, CY = 238, BOND = 100, LP = 30, SPREAD = 6.5;
   const DIR = { right: [1, 0], left: [-1, 0], down: [0, 1], up: [0, -1] };
-  const NAME = { Cl: 'chlorine atom', O: 'oxygen atom' };
+  const NAME = { Cl: '氯原子', O: '氧原子' };
   function pair(ctx, x, y, dx, dy, name, a = 1) {
     if (a <= 0.01) return;
     ctx.save(); ctx.globalAlpha *= a;
@@ -72,13 +72,13 @@ const { C, PAL, alpha, register, begin, line, text, headline } = F;
       const w = weight(s), [dx, dy] = DIR[s];
       /* chlorine's pair on this side slides out to the shared place as the oxygen arrives */
       const r = LP + (BOND / 2 - LP) * w;
-      pair(ctx, CX + dx * r, CY + dy * r, dx, dy, w > 0.5 ? 'bonding pair shared by chlorine and oxygen' : 'lone pair on chlorine');
+      pair(ctx, CX + dx * r, CY + dy * r, dx, dy, w > 0.5 ? '氯与氧共用的成键电子对' : '氯上的孤电子对');
       if (w <= 0.01) return;
       const back = (1 - w) * 24, ox = CX + dx * (BOND - back), oy = CY + dy * (BOND - back);
       F.faded(ctx, w, [0, 0], () => {
         text(ctx, 'O', ox, oy + 1, PAL.ink, { size: 30, align: 'center' });
         Object.keys(DIR).filter((t) => t !== { right: 'left', left: 'right', up: 'down', down: 'up' }[s])
-          .forEach((t) => { const [ex, ey] = DIR[t]; pair(ctx, ox + ex * LP, oy + ey * LP, ex, ey, w > 0.5 ? 'lone pair on oxygen' : null); });
+          .forEach((t) => { const [ex, ey] = DIR[t]; pair(ctx, ox + ex * LP, oy + ey * LP, ex, ey, w > 0.5 ? '氧上的孤电子对' : null); });
       });
       if (w > 0.5) hits.push({ x: ox, y: oy, r: 22, name: NAME.O });
     });
@@ -91,7 +91,7 @@ const { C, PAL, alpha, register, begin, line, text, headline } = F;
   let V = null, g = null;
   function mount() {
     V = F.view3d(d.stage, { spin: 'idle', h: 470, dist: 7.6, tilt: 0.2, pitch: [-Math.PI / 2, Math.PI / 2],
-      views: [{ label: 'front', yaw: 0, pitch: 0.2 }, { label: 'side', yaw: Math.PI / 2, pitch: 0.2 }] });
+      views: [{ label: '正面', yaw: 0, pitch: 0.2 }, { label: '侧面', yaw: Math.PI / 2, pitch: 0.2 }] });
     d.stage.insertBefore(V.wrap, strip);
     const bar = d.stage.querySelector('.view3d-bar'); if (bar) d.stage.insertBefore(bar, strip);
     g = V.part(0); g.position.y = -0.3;
@@ -107,7 +107,7 @@ const { C, PAL, alpha, register, begin, line, text, headline } = F;
         V.pickable(m, NAME.O);
         bond(g, [0, 0, 0], u.map((x) => x * R3 * (0.3 + 0.7 * w)), 1);
       }
-      if (w < 0.99) { const lb = lobe(g, [0, 0, 0], u, 1.45 * (1 - 0.6 * w)); lb.material.opacity = 0.5 * (1 - w); V.pickable(lb, 'lone pair on chlorine'); }
+      if (w < 0.99) { const lb = lobe(g, [0, 0, 0], u, 1.45 * (1 - 0.6 * w)); lb.material.opacity = 0.5 * (1 - w); V.pickable(lb, '氯上的孤电子对'); }
     });
     const P = (s) => T3[s].map((x) => x * R3), edge = alpha(PAL.ink, 0.35);
     polyline(g, ['right', 'left', 'down', 'right', 'up', 'left'].map(P), edge);
@@ -135,9 +135,9 @@ const { C, PAL, alpha, register, begin, line, text, headline } = F;
       text(ctx, String(p), X(p), Y + 30, PAL.muted, { size: 17, align: 'center' });
     }
     ctx.save(); ctx.fillStyle = alpha(hue, 0.1); ctx.fillRect(BAND[0], Y - 26, BAND[1] - BAND[0], 52); ctx.restore();
-    text(ctx, 'strong acids', (BAND[0] + BAND[1]) / 2, Y + 30, PAL.muted, { size: 17, align: 'center' });
+    text(ctx, '强酸', (BAND[0] + BAND[1]) / 2, Y + 30, PAL.muted, { size: 17, align: 'center' });
     F.arrow(ctx, 680, 176, 960, 176, PAL.muted, 3);
-    text(ctx, 'stronger acid', 668, 176, PAL.muted, { size: 17, align: 'right' });
+    text(ctx, '酸性更强', 668, 176, PAL.muted, { size: 17, align: 'right' });
     ORDER.forEach((v) => {
       const x = SPOT[v], on = ion.a(v);
       F.dot(ctx, x, Y, hue, false, 10);
@@ -151,7 +151,7 @@ const { C, PAL, alpha, register, begin, line, text, headline } = F;
     const tex = `\\mk{a}{${t.acid}(aq)} + \\mk{w}{\\text{H}_{2}\\text{O}(l)}\\mk{r}{\\;${weak ? '\\rightleftharpoons' : '\\longrightarrow'}\\;}\\mk{h}{\\text{H}_{3}\\text{O}^{+}(aq)} + \\mk{b}{${t.tex}(aq)}`
       + (weak ? `\\qquad \\mk{k}{\\kpKa = ${t.pKa.toFixed(1)}}` : '');
     const n = t.n, ox = 2 * n - 1;
-    const note = `With ${COUNT[n]} oxygen atom${n > 1 ? 's' : ''} at 2− and a charge of 1− on the ion, chlorine’s oxidation state is ${ox}+.`;
+    const note = `${COUNT[n]}个氧原子的氧化态为 2−，离子的电荷为 1−，所以氯的氧化态为 ${ox}+。`;
     ro.set(tex, note, { form: weak });
   }
 

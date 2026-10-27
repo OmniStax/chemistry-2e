@@ -6,7 +6,7 @@ const { sphere, stick, lobe } = F.mesh;
 const sim = (id, H) => F.sim(root, id, H);
 const still = (d, draw) => register(d.fig, { update: () => {}, draw });
 const RAD = Math.PI / 180;
-const NAME = { F: 'fluorine', Cl: 'chlorine', Br: 'bromine', I: 'iodine' };
+const NAME = { F: '氟', Cl: '氯', Br: '溴', I: '碘' };
 const cap = (s) => s[0].toUpperCase() + s.slice(1);
 
 /* =====================================================================
@@ -19,21 +19,21 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
   const H = 560, d = sim('sim-halogen-ladder', H);
   const E = { F: 2.87, Cl: 1.36, Br: 1.09, I: 0.54 };            /* V; 18.5 prints Cl, Br, I, Appendix L gives F */
   const ORDER = ['F', 'Cl', 'Br', 'I'];
-  const ION = { F: 'fluoride', Cl: 'chloride', Br: 'bromide', I: 'iodide' };
+  const ION = { F: '氟离子', Cl: '氯离子', Br: '溴离子', I: '碘离子' };
   const WATER = { Cl: '#c9dc6a', Br: '#d9822b', I: '#8a4b1f' };   /* chlorine water pale yellow-green, bromine water orange, iodine and triiodide brown */
   const Y = (e) => 500 - e * 125;                                  /* E° from 0 to 3 V, fixed */
   const AX = 220, R0 = 250, R1 = 440, TX = 1090, TW = 110, TT = 150, TB = 450, LIQ = 230;
-  const ox = F.choice(d.controls, { label: '\\text{halogen added}', key: 'halogen', aria: 'the halogen added', options: ['Cl', 'Br', 'I'].map((s) => ({ value: s, label: `${s}₂` })), value: 'Cl' });
-  const rd = F.choice(d.controls, { label: '\\text{halide ion}', key: 'halide', aria: 'the halide ion in solution', options: ORDER.map((s) => ({ value: s, label: `${s}⁻` })), value: 'Br' });
+  const ox = F.choice(d.controls, { label: '\\text{加入的卤素}', key: 'halogen', aria: '加入的卤素', options: ['Cl', 'Br', 'I'].map((s) => ({ value: s, label: `${s}₂` })), value: 'Cl' });
+  const rd = F.choice(d.controls, { label: '\\text{卤离子}', key: 'halide', aria: '溶液中的卤离子', options: ORDER.map((s) => ({ value: s, label: `${s}⁻` })), value: 'Br' });
   const { formula: fx } = F.readout(d);
   const sol = (x, y) => F.fact(E[x] > E[y] ? WATER[y] : WATER[x]);
   function story(x, y) {
     const tx = `\\text{${x}}`, ty = `\\text{${y}}`;
-    if (E[x] > E[y]) return { head: `${cap(NAME[x])} oxidizes ${ION[y]} ion to ${NAME[y]}: $${tx}_2 + 2${ty}^- \\longrightarrow ${ty}_2 + 2${tx}^-$.`, has: `${y}_{2}(aq) + ${x}⁻(aq)` };
-    if (x === 'I' && y === 'I') return { head: 'Iodine dissolves in iodide solution as the brown triiodide ion: $\\text{I}_2 + \\text{I}^- \\longrightarrow \\text{I}_3{}^-$.', has: 'I_{3}⁻(aq)' };
-    if (x === y) return { head: `${cap(NAME[x])} and ${ION[y]} ion are the two sides of one couple, so nothing is oxidized.`, has: `${x}_{2}(aq) + ${y}⁻(aq)` };
-    if (y === 'F') return { head: `${cap(NAME[x])} cannot oxidize fluoride ion, the most difficult halide ion to oxidize.`, has: `${x}_{2}(aq) + F⁻(aq)` };
-    return { head: `${cap(NAME[x])}, the weaker oxidizing agent, does not oxidize ${ION[y]} ion.`, has: `${x}_{2}(aq) + ${y}⁻(aq)` };
+    if (E[x] > E[y]) return { head: `${cap(NAME[x])}把${ION[y]}氧化成${NAME[y]}：$${tx}_2 + 2${ty}^- \\longrightarrow ${ty}_2 + 2${tx}^-$。`, has: `${y}_{2}(aq) + ${x}⁻(aq)` };
+    if (x === 'I' && y === 'I') return { head: '碘溶于碘化物溶液，形成棕色的三碘离子：$\\text{I}_2 + \\text{I}^- \\longrightarrow \\text{I}_3{}^-$。', has: 'I_{3}⁻(aq)' };
+    if (x === y) return { head: `${cap(NAME[x])}和${ION[y]}是同一电对的两侧，所以没有物质被氧化。`, has: `${x}_{2}(aq) + ${y}⁻(aq)` };
+    if (y === 'F') return { head: `${cap(NAME[x])}不能氧化氟离子，氟离子是最难氧化的卤离子。`, has: `${x}_{2}(aq) + F⁻(aq)` };
+    return { head: `${cap(NAME[x])}是较弱的氧化剂，不能氧化${ION[y]}。`, has: `${x}_{2}(aq) + ${y}⁻(aq)` };
   }
   let hits = [];
   F.hover(d.stage, () => hits);
@@ -52,9 +52,9 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
       line(ctx, R0, yy, R1, yy, alpha(P, 0.65 + 0.35 * w), 2.5 + 3.5 * w);
       text(ctx, `${q}_{2} + 2e⁻ ⟶ 2${q}⁻`, R1 + 18, yy, PAL.ink, { size: 20 });
       text(ctx, `+${E[q].toFixed(2)} V`, R1 + 238, yy, P, { size: 20, weight: 600 });
-      if (wx[i] > 0.01) F.faded(ctx, wx[i], [0, 0], () => text(ctx, q === y ? `${q}_{2} added, ${q}⁻ in solution` : `${q}_{2} added`, R1 + 340, yy, PAL.ink, { size: 17 }));
-      if (wy[i] > 0.01 && !(q === x && q === y)) F.faded(ctx, wy[i], [0, 0], () => text(ctx, `${q}⁻ in solution`, R1 + 340, yy, PAL.ink, { size: 17 }));
-      hits.push({ x: (R0 + R1) / 2, y: yy, r: 14, name: `the ${q}₂/${q}⁻ couple, E° = +${E[q].toFixed(2)} V` });
+      if (wx[i] > 0.01) F.faded(ctx, wx[i], [0, 0], () => text(ctx, q === y ? `加入 ${q}_{2}，溶液中有 ${q}⁻` : `加入 ${q}_{2}`, R1 + 340, yy, PAL.ink, { size: 17 }));
+      if (wy[i] > 0.01 && !(q === x && q === y)) F.faded(ctx, wy[i], [0, 0], () => text(ctx, `溶液中有 ${q}⁻`, R1 + 340, yy, PAL.ink, { size: 17 }));
+      hits.push({ x: (R0 + R1) / 2, y: yy, r: 14, name: `${q}₂/${q}⁻ 电对，E° = +${E[q].toFixed(2)} V` });
     });
     /* electrons pass from the halide up to the halogen where the halogen's couple lies above */
     if (E[x] > E[y]) F.faded(ctx, Math.min(ox.k, rd.k), [0, 0], () => {
@@ -69,7 +69,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     ctx.save(); tube(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.stroke(); ctx.restore();
     line(ctx, TX - TW / 2 - 12, TT, TX + TW / 2 + 12, TT, PAL.ink, 3);
     text(ctx, s.has, TX, TB + 38, PAL.ink, { size: 22, align: 'center' });
-    hits.push({ x: TX, y: (LIQ + TB) / 2, r: TW / 2, name: `the solution: ${s.has.replace(/_\{(\d)\}/g, (m, n) => '₀₁₂₃₄₅₆₇₈₉'[n])}` });
+    hits.push({ x: TX, y: (LIQ + TB) / 2, r: TW / 2, name: `溶液：${s.has.replace(/_\{(\d)\}/g, (m, n) => '₀₁₂₃₄₅₆₇₈₉'[n])}` });
     topline(ctx, s.head);
     const sign = (v) => (v > 0.004 ? `+${v.toFixed(2)}` : v < -0.004 ? `-${(-v).toFixed(2)}` : '0.00');
     F.morph(fx, `\\kEo = \\mk{a}{\\kEo{}_{\\text{${x}}_2/\\text{${x}}^-}} - \\mk{b}{\\kEo{}_{\\text{${y}}_2/\\text{${y}}^-}} = \\mk{av}{${E[x].toFixed(2)}\\ \\text{V}} - \\mk{bv}{${E[y].toFixed(2)}\\ \\text{V}} = \\mk{r}{${sign(E[x] - E[y])}\\ \\text{V}}`);
@@ -87,7 +87,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
 ===================================================================== */
 (function () {
   const d = sim('sim-interhalogens');
-  const FREE = { spin: 'idle', views: [{ label: 'side', yaw: 0.35, pitch: 0.22 }, { label: 'down the axis', yaw: 0, pitch: Math.PI / 2 }] };
+  const FREE = { spin: 'idle', views: [{ label: '侧视', yaw: 0.35, pitch: 0.22 }, { label: '沿轴向下', yaw: 0, pitch: Math.PI / 2 }] };
   const v = F.view3d(d.stage, { ...FREE, h: 600, dist: 7.6 });
   const g = v.part(0);
   const K = 0.62;                                               /* scene units per ångström */
@@ -106,13 +106,13 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
   const TH = [-1 / 3, Math.sqrt(8) / 3];                        /* cos and sin of the tetrahedral angle */
   /* fluorine sites 0 to 6 and lone-pair sites 0 to 2 per count of fluorine atoms; rot is the turn to the book's view */
   const SHAPE = {
-    1: { F: [null, null, [1, 0, 0], null, null, null, null], L: [[TH[0], 0, TH[1]], [TH[0], TH[1] * 0.866, -TH[1] * 0.5], [TH[0], -TH[1] * 0.866, -TH[1] * 0.5]], rot: [0, 0, Math.PI / 2], shape: 'linear', tag: 2 },
-    3: { F: [[-cT, sT, 0], [-cT, -sT, 0], [1, 0, 0], null, null, null, null], L: [[-0.5, 0, 0.866], [-0.5, 0, -0.866], null], rot: [0, 0, 0], shape: 'T-shaped', tag: 2 },
-    5: { F: [[c82, s82, 0], [c82, -s82, 0], [1, 0, 0], [c82, 0, s82], [c82, 0, -s82], null, null], L: [[-1, 0, 0], null, null], rot: [0, 0, Math.PI / 2], shape: 'square pyramidal', tag: 0 },
-    7: { F: [[c72, s72, 0], [c72, -s72, 0], [1, 0, 0], [0, 0, 1], [0, 0, -1], [c144, s144, 0], [c144, -s144, 0]], L: [null, null, null], rot: [-Math.PI / 2, 0, 0], shape: 'pentagonal bipyramidal', tag: 2 },
+    1: { F: [null, null, [1, 0, 0], null, null, null, null], L: [[TH[0], 0, TH[1]], [TH[0], TH[1] * 0.866, -TH[1] * 0.5], [TH[0], -TH[1] * 0.866, -TH[1] * 0.5]], rot: [0, 0, Math.PI / 2], shape: '直线形', tag: 2 },
+    3: { F: [[-cT, sT, 0], [-cT, -sT, 0], [1, 0, 0], null, null, null, null], L: [[-0.5, 0, 0.866], [-0.5, 0, -0.866], null], rot: [0, 0, 0], shape: 'T 形', tag: 2 },
+    5: { F: [[c82, s82, 0], [c82, -s82, 0], [1, 0, 0], [c82, 0, s82], [c82, 0, -s82], null, null], L: [[-1, 0, 0], null, null], rot: [0, 0, Math.PI / 2], shape: '四方锥形', tag: 0 },
+    7: { F: [[c72, s72, 0], [c72, -s72, 0], [1, 0, 0], [0, 0, 1], [0, 0, -1], [c144, s144, 0], [c144, -s144, 0]], L: [null, null, null], rot: [-Math.PI / 2, 0, 0], shape: '五角双锥形', tag: 2 },
   };
-  const COUNT = ['one', '', '', 'three', '', 'five', '', 'seven'];
-  const PAIRS = ['', 'one lone pair', 'two lone pairs', 'three lone pairs'];
+  const COUNT = ['一', '', '', '三', '', '五', '', '七'];
+  const PAIRS = ['', '一个孤电子对', '两个孤电子对', '三个孤电子对'];
   const MOL = {};
   [['Cl', [1.63, 1.65, 1.65]], ['Br', [1.76, 1.77, 1.75]], ['I', [1.91, 1.93, 1.86, 1.83]]].forEach(([X, lens]) => lens.forEach((len, i) => {
     const n = 2 * i + 1;
@@ -121,12 +121,12 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
   Object.values(MOL).forEach((m) => {
     const lp = (7 - m.n) / 2, top = m.X !== 'I' && m.n === 5, lim = m.n === 7;
     m.head = m.n === 1
-      ? `${m.label} is linear: one fluorine atom bonded to ${NAME[m.X]} in the 1+ oxidation state, with three lone pairs.`
-      : `${m.label} is ${SHAPE[m.n].shape}: ${COUNT[m.n]} fluorine atoms about ${NAME[m.X]} in the ${m.n}+ oxidation state${top ? `, the highest ${NAME[m.X]} reaches` : lim ? ', the limit for the halogens' : `, with ${PAIRS[lp]}`}.`;
+      ? `${m.label} 为直线形：一个氟原子与处于 1+ 氧化态的${NAME[m.X]}键合，并有三个孤电子对。`
+      : `${m.label} 为${SHAPE[m.n].shape}：${COUNT[m.n]}个氟原子围绕处于 ${m.n}+ 氧化态的${NAME[m.X]}${top ? `，这是${NAME[m.X]}所能达到的最高氧化态` : lim ? '，这是卤素的极限' : `，并有${PAIRS[lp]}`}。`;
   });
   const fade = (a) => (a < 0.999 ? { transparent: true, opacity: a } : undefined);
   const plain = (e, a) => { e.style.opacity = String(Math.max(0, Math.min(1, a))); return e; };
-  const pick = F.select(d.controls, { label: '\\text{molecule}', aria: 'the interhalogen', options: Object.entries(MOL).map(([k, m]) => ({ value: k, label: m.label })), value: 'IF3' });
+  const pick = F.select(d.controls, { label: '\\text{分子}', aria: '卤素互化物', options: Object.entries(MOL).map(([k, m]) => ({ value: k, label: m.label })), value: 'IF3' });
   const ro = F.readout(d);
   function draw() {
     const k = pick.k, A = MOL[pick.from], B = MOL[pick.value], SA = SHAPE[A.n], SB = SHAPE[B.n];
@@ -138,14 +138,14 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     g.updateMatrixWorld(true);
     const cc = A.X === B.X ? F.el(B.X) : F.mixColor(F.el(A.X), F.el(B.X), k);
     const X = k < 0.5 ? A.X : B.X;
-    v.pickable(sphere(h, [0, 0, 0], rad(A.X) + (rad(B.X) - rad(A.X)) * k, cc), `${NAME[X]} (${X})`);
+    v.pickable(sphere(h, [0, 0, 0], rad(A.X) + (rad(B.X) - rad(A.X)) * k, cc), `${NAME[X]}（${X}）`);
     let named = null;
     for (let n = 0; n < 7; n++) {
       const da = SA.F[n], db = SB.F[n], on = (da ? 1 : 0) + ((db ? 1 : 0) - (da ? 1 : 0)) * k;
       if (on <= 0.01) continue;
       /* an arriving or leaving fluorine runs out of or into the central atom along the direction it ends or started at */
       const p = V.mul(da && db ? slerp(da, db, k) : db || da, len * (da && db ? 1 : 0.35 + 0.65 * on));
-      v.pickable(sphere(h, p, rad('F') * (0.3 + 0.7 * on), F.el('F'), fade(on)), 'fluorine (F)');
+      v.pickable(sphere(h, p, rad('F') * (0.3 + 0.7 * on), F.el('F'), fade(on)), '氟（F）');
       const m = V.mul(p, 0.5);
       stick(h, [0, 0, 0], m, 0.075, cc, fade(on));
       stick(h, m, p, 0.075, F.el('F'), fade(on));
@@ -157,7 +157,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
       if (on <= 0.01) continue;
       const dir = la && lb ? slerp(la, lb, k) : lb || la;
       const m = lobe(h, [0, 0, 0], dir, 0.95 * (0.4 + 0.6 * on), PAL.ink); m.material.opacity = 0.35 * on;
-      v.pickable(m, `a lone pair on ${NAME[X]}`);
+      v.pickable(m, `${NAME[X]}上的孤电子对`);
       /* the lone pair that points most across the line of sight carries the label */
       const w = h.localToWorld(F.mesh.vec(dir)).sub(h.localToWorld(F.mesh.vec([0, 0, 0]))).normalize();
       const far = 1 - Math.abs(w.z);
@@ -165,11 +165,11 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     }
     v.label(X, [0, 0, 0], h, 0);
     if (named) v.label('F', named, h, 0);
-    if (lp) plain(v.label('lone pair', lp.p, h, 0), lp.on);
+    if (lp) plain(v.label('孤电子对', lp.p, h, 0), lp.on);
     v.headline(B.head);
     const lone = (7 - B.n) / 2;
-    ro.set(`\\mk{m}{\\text{${B.X}F}${B.n > 1 ? `_{${B.n}}` : ''}}:\\ \\mk{b}{${B.n}}\\ \\text{bond${B.n > 1 ? 's' : ''}} + \\mk{l}{${lone}}\\ \\text{lone pair${lone === 1 ? '' : 's'}} = \\mk{p}{${B.n + lone}}\\ \\text{electron pairs}`,
-      `Covalent radii: $\\kr{}_{\\text{${B.X}}} = ${RCOV[B.X]}\\ \\text{pm}$, $\\kr{}_{\\text{F}} = 64\\ \\text{pm}$.`);
+    ro.set(`\\mk{m}{\\text{${B.X}F}${B.n > 1 ? `_{${B.n}}` : ''}}:\\ \\mk{b}{${B.n}}\\ \\text{个键} + \\mk{l}{${lone}}\\ \\text{个孤电子对} = \\mk{p}{${B.n + lone}}\\ \\text{个电子对}`,
+      `共价半径：$\\kr{}_{\\text{${B.X}}} = ${RCOV[B.X]}\\ \\text{pm}$，$\\kr{}_{\\text{F}} = 64\\ \\text{pm}$。`);
   }
   still(d, draw);
 })();

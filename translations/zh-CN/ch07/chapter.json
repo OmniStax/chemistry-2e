@@ -1,7 +1,7 @@
 {
   "id": "7",
   "dir": "ch07",
-  "title": "Chemical Bonding and Molecular Geometry",
+  "title": "化学键与分子几何构型",
   "intro": {
     "module": "m68736",
     "slug": "7-introduction"
@@ -10,37 +10,37 @@
     {
       "id": "7.1",
       "module": "m68737",
-      "title": "Ionic Bonding",
+      "title": "离子键",
       "slug": "7-1-ionic-bonding"
     },
     {
       "id": "7.2",
       "module": "m68738",
-      "title": "Covalent Bonding",
+      "title": "共价键",
       "slug": "7-2-covalent-bonding"
     },
     {
       "id": "7.3",
       "module": "m68739",
-      "title": "Lewis Symbols and Structures",
+      "title": "路易斯符号与路易斯结构式",
       "slug": "7-3-lewis-symbols-and-structures"
     },
     {
       "id": "7.4",
       "module": "m68740",
-      "title": "Formal Charges and Resonance",
+      "title": "形式电荷与共振",
       "slug": "7-4-formal-charges-and-resonance"
     },
     {
       "id": "7.5",
       "module": "m68741",
-      "title": "Strengths of Ionic and Covalent Bonds",
+      "title": "离子键与共价键的强度",
       "slug": "7-5-strengths-of-ionic-and-covalent-bonds"
     },
     {
       "id": "7.6",
       "module": "m68742",
-      "title": "Molecular Structure and Polarity",
+      "title": "分子构型与极性",
       "slug": "7-6-molecular-structure-and-polarity"
     }
   ],
@@ -48,21 +48,21 @@
     {
       "sym": "EN",
       "concept": "electronegativity",
-      "meaning": "the electronegativity of an atom, the tendency of the atom to attract the electrons of a bond toward itself, on Pauling's relative scale from 0 to 4",
+      "meaning": "原子的电负性，即原子将键中电子吸引向自身的倾向，采用鲍林相对标度，范围为 0 至 4",
       "section": "7.2",
       "anchor": "7.2-electronegativity"
     },
     {
       "sym": "ΔEN",
       "concept": "electronegativity",
-      "meaning": "the absolute value of the difference in electronegativity between two bonded atoms, a rough measure of the polarity of the bond",
+      "meaning": "两个成键原子电负性之差的绝对值，是键的极性大小的粗略度量",
       "section": "7.2",
       "anchor": "7.2-bond-type"
     },
     {
       "sym": "D_bond",
       "concept": "bond-energy",
-      "meaning": "the bond energy, the energy required to break one mole of a particular covalent bond in gaseous molecules; always positive",
+      "meaning": "键能，即在气态分子中断开 1 摩尔某种共价键所需的能量；恒为正值",
       "unit": "kJ/mol",
       "section": "7.5",
       "anchor": "7.5-bond-strength"
@@ -70,7 +70,7 @@
     {
       "sym": "ΔH",
       "concept": "enthalpy-change",
-      "meaning": "the enthalpy change of a reaction, estimated from the bond energies of the bonds broken and formed",
+      "meaning": "反应的焓变，由所断开的键和所形成的键的键能估算",
       "unit": "kJ",
       "section": "7.5",
       "anchor": "7.5-enthalpy"
@@ -78,7 +78,7 @@
     {
       "sym": "ΔH°",
       "concept": "enthalpy-change",
-      "meaning": "the standard enthalpy change of a reaction",
+      "meaning": "反应的标准焓变",
       "unit": "kJ",
       "section": "7.5",
       "anchor": "7.5-bond-strength"
@@ -86,7 +86,7 @@
     {
       "sym": "ΔH_lattice",
       "concept": "lattice-energy",
-      "meaning": "the lattice energy, the energy required to separate one mole of an ionic solid into its gaseous ions",
+      "meaning": "晶格能，即把 1 摩尔离子固体分离成气态离子所需的能量",
       "unit": "kJ/mol",
       "section": "7.5",
       "anchor": "7.5-lattice"
@@ -94,21 +94,21 @@
     {
       "sym": "C_lattice",
       "concept": "lattice-energy-trends",
-      "meaning": "a constant that depends on the type of crystal structure",
+      "meaning": "取决于晶体结构类型的常数",
       "section": "7.5",
       "anchor": "7.5-lattice-trends"
     },
     {
       "sym": "Z_plus",
       "concept": "ions-and-atomic-charge",
-      "meaning": "the charge on the cation",
+      "meaning": "阳离子的电荷",
       "section": "7.5",
       "anchor": "7.5-lattice-trends"
     },
     {
       "sym": "Z_minus",
       "concept": "ions-and-atomic-charge",
-      "meaning": "the charge on the anion",
+      "meaning": "阴离子的电荷",
       "section": "7.5",
       "anchor": "7.5-lattice-trends"
     },
@@ -116,7 +116,7 @@
       "sym": "R_o",
       "concept": "lattice-energy-trends",
       "type": "length",
-      "meaning": "the interionic distance, the sum of the radii of the positive and negative ions",
+      "meaning": "离子间距，即正、负离子半径之和",
       "unit": "pm",
       "section": "7.5",
       "anchor": "7.5-lattice-trends"
@@ -124,7 +124,7 @@
     {
       "sym": "ΔH_f°",
       "concept": "standard-enthalpy-of-formation",
-      "meaning": "the standard enthalpy of formation of the ionic compound from its elements",
+      "meaning": "离子化合物由其单质生成的标准生成焓",
       "unit": "kJ/mol",
       "section": "7.5",
       "anchor": "7.5-born-haber"
@@ -132,7 +132,7 @@
     {
       "sym": "ΔH_s°",
       "concept": "enthalpies-of-phase-change",
-      "meaning": "the enthalpy of sublimation of the metal",
+      "meaning": "金属的升华焓",
       "unit": "kJ/mol",
       "section": "7.5",
       "anchor": "7.5-born-haber"
@@ -140,7 +140,7 @@
     {
       "sym": "IE",
       "concept": "ionization-energy",
-      "meaning": "the ionization energy of the metal atom",
+      "meaning": "金属原子的电离能",
       "unit": "kJ/mol",
       "section": "7.5",
       "anchor": "7.5-born-haber"
@@ -148,7 +148,7 @@
     {
       "sym": "EA",
       "concept": "electron-affinity",
-      "meaning": "the electron affinity of the nonmetal atom, negative when the step releases energy",
+      "meaning": "非金属原子的电子亲和能，该步骤放出能量时为负值",
       "unit": "kJ/mol",
       "section": "7.5",
       "anchor": "7.5-born-haber"
@@ -156,7 +156,7 @@
     {
       "sym": "μ",
       "concept": "bond-dipole-moment",
-      "meaning": "the bond dipole moment, the magnitude of the separation of charge in a bond",
+      "meaning": "键偶极矩，即键中电荷分离的大小",
       "unit": "C·m",
       "section": "7.6",
       "anchor": "7.6-bond-dipole"
@@ -165,7 +165,7 @@
       "sym": "Q_partial",
       "concept": "bond-polarity",
       "type": "charge",
-      "meaning": "the magnitude of the partial charges at the two ends of a bond, determined by the electronegativity difference between the bonded atoms",
+      "meaning": "键两端部分电荷的大小，由成键原子的电负性差决定",
       "unit": "C",
       "section": "7.6",
       "anchor": "7.6-bond-dipole"
@@ -173,7 +173,7 @@
     {
       "sym": "r_bond",
       "concept": "bond-length",
-      "meaning": "the distance between the two partial charges, which is the distance between the nuclei of the bonded atoms",
+      "meaning": "两部分电荷之间的距离，即成键原子的原子核间距",
       "unit": "Å (1 Å = 10⁻¹⁰ m, 100 pm = 1 Å)",
       "section": "7.6",
       "anchor": "7.6-bond-dipole"
@@ -181,7 +181,7 @@
     {
       "sym": "ΔH",
       "concept": "enthalpy-change",
-      "meaning": "the enthalpy change of dissociating one mole of solid NaCl into its gaseous ions",
+      "meaning": "1 摩尔固态 NaCl 解离为气态离子的焓变",
       "unit": "kJ",
       "section": "7.1",
       "anchor": "7.1-formation"
@@ -189,7 +189,7 @@
     {
       "sym": "ΔH",
       "concept": "enthalpy-change",
-      "meaning": "the enthalpy change of breaking, or of forming, the bonds of one mole of hydrogen molecules",
+      "meaning": "断开（或形成）1 摩尔氢分子中的键的焓变",
       "unit": "kJ",
       "section": "7.2",
       "anchor": "7.2-formation"

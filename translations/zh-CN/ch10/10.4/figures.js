@@ -27,7 +27,7 @@ const sim = (id, H) => F.sim(root, id, H);
   const cc = (Ta, Pa, B) => (T) => Pa * Math.exp(B * (1 / (Ta + K) - 1 / (T + K)));
   const S = {
     water: {
-      name: 'water', mol: 'H_{2}O', Tt: 0.01, Pt: 0.6117, Tc: 374, Pc: 22089,
+      name: '水', mol: 'H_{2}O', Tt: 0.01, Pt: 0.6117, Tc: 374, Pc: 22089,
       /* steam-table vapor pressures, °C and kPa */
       vap: table([[0.01, 0.6117], [20, 2.339], [40, 7.384], [60, 19.95], [80, 47.41], [100, 101.325], [150, 476.2], [200, 1554.9], [250, 3976], [300, 8588], [350, 16529], [374, 22089]]),
       /* the vapor pressure of ice */
@@ -35,18 +35,18 @@ const sim = (id, H) => F.sim(root, id, H);
       /* the melting point of ice falls about 1 °C for every 13,000 kPa at first, and 10 °C by 110,000 kPa */
       melt: (P) => 0.01 - 7.6e-5 * P - 1.37e-10 * P * P,
       T: [-50, 600], nT: 13, lP: [-2, 5],
-      s: 'ice', l: 'liquid water', g: 'water vapor',
+      s: '冰', l: '液态水', g: '水蒸气',
       at: { solid: [-25, 3.2], liquid: [150, 4], gas: [260, 0], scf: [487, 4.68] },
       start: [-10, 50],
     },
     co2: {
-      name: 'carbon dioxide', mol: 'CO_{2}', Tt: -56.6, Pt: 518, Tc: 31.1, Pc: 7380,
+      name: '二氧化碳', mol: 'CO_{2}', Tt: -56.6, Pt: 518, Tc: 31.1, Pc: 7380,
       vap: cc(-56.6, 518, ln(7380 / 518) / (1 / (K - 56.6) - 1 / (K + 31.1))),
       sub: cc(-56.6, 518, 26100 / 8.314),
       /* rising 83 °C over 10⁶ kPa, as the book's Figure 10.34 draws it */
       melt: (P) => -56.6 + (83 * (P - 518)) / 1e6,
       T: [-100, 100], nT: 8, lP: [1, 6],
-      s: 'solid carbon dioxide', l: 'liquid carbon dioxide', g: 'gaseous carbon dioxide',
+      s: '固态二氧化碳', l: '液态二氧化碳', g: '气态二氧化碳',
       at: { solid: [-86, 4], liquid: [-12, 5.2], gas: [45, 2.4], scf: [66, 5] },
       start: [-30, 2000],
     },
@@ -64,8 +64,8 @@ const sim = (id, H) => F.sim(root, id, H);
   const fmtP = (p) => p >= 10000 ? Math.round(p).toLocaleString('en-US') : p >= 100 ? (Number.isInteger(p) ? String(p) : p.toFixed(1)) : String(+p.toPrecision(p >= 1 ? 3 : 2));
   const fmtT = (t, dec = 1) => fmt(t, dec).replace('-', '−');
 
-  const sub = F.choice(d.controls, { label: '\\text{substance}', aria: 'the substance', value: 'water',
-    options: [{ value: 'water', label: 'water' }, { value: 'co2', label: 'carbon dioxide' }],
+  const sub = F.choice(d.controls, { label: '\\text{物质}', aria: '所选的物质', value: 'water',
+    options: [{ value: 'water', label: '水' }, { value: 'co2', label: '二氧化碳' }],
     onInput: (v) => { TS[v].set(S[v].start[0]); TS.water.show(v === 'water'); TS.co2.show(v === 'co2'); Psl.range(pRange(v, S[v].start[1])); TS[v].refresh(); } });
   const cur = () => S[sub.value];
   /* the temperatures where the isobar at P crosses a curve, in order of rising temperature */
@@ -77,14 +77,14 @@ const sim = (id, H) => F.sim(root, id, H);
   }
   let Psl = null;
   /* one temperature slider per substance, each spanning its own diagram's axis */
-  const tSlider = (key) => { const s = S[key]; return ctl(d.controls, { label: '\\kT', cls: 'temperature', min: s.T[0], max: s.T[1], step: 0.1, value: s.start[0], unit: '°C', dec: 1, aria: 'temperature in degrees Celsius',
-    specials: [{ at: s.Tt, label: 'triple point' }, { at: s.Tc, label: 'critical point' },
+  const tSlider = (key) => { const s = S[key]; return ctl(d.controls, { label: '\\kT', cls: 'temperature', min: s.T[0], max: s.T[1], step: 0.1, value: s.start[0], unit: '°C', dec: 1, aria: '以摄氏度表示的温度',
+    specials: [{ at: s.Tt, label: '三相点' }, { at: s.Tc, label: '临界点' },
       { at: () => (Psl ? crossings(s, PS[Psl.v])[0]?.T ?? null : null) }, { at: () => (Psl ? crossings(s, PS[Psl.v])[1]?.T ?? null : null) }] }); };
   const TS = { water: tSlider('water'), co2: tSlider('co2') };
   TS.co2.show(false, { ms: 0 });
   const Tsl = () => TS[sub.value];
-  Psl = ctl(d.controls, { label: '\\kP', cls: 'pressure', min: pRange('water').min, max: pRange('water').max, step: 1, value: pIdx(50), unit: 'kPa', dec: 0, aria: 'pressure in kilopascals',
-    specials: [{ at: () => pIdx(cur().Pt), label: 'triple point' }, { at: () => pIdx(101.325), label: '1 atm' }, { at: () => pIdx(cur().Pc), label: 'critical point' }] });
+  Psl = ctl(d.controls, { label: '\\kP', cls: 'pressure', min: pRange('water').min, max: pRange('water').max, step: 1, value: pIdx(50), unit: 'kPa', dec: 0, aria: '以千帕表示的压强',
+    specials: [{ at: () => pIdx(cur().Pt), label: '三相点' }, { at: () => pIdx(101.325), label: '1 atm' }, { at: () => pIdx(cur().Pc), label: '临界点' }] });
   const pVal = Psl.el.querySelector('.ctl-val'), pInp = Psl.el.querySelector('input');
   const showP = () => { const s = fmtP(PS[Math.round(Psl.v)]) + ' kPa'; if (pVal.textContent !== s) pVal.textContent = s; pInp.setAttribute('aria-valuetext', s); };
 
@@ -131,7 +131,7 @@ const sim = (id, H) => F.sim(root, id, H);
     for (let i = 0; i <= s.nT; i++) { const t = s.T[0] + i * step; if (i) line(ctx, X(t), B.t, X(t), B.b, PAL.rule, 1.5); text(ctx, fmtT(t, 0), X(t), B.b + 26, PAL.muted, { size: 17, align: 'center' }); }
     for (let e = s.lP[0]; e <= s.lP[1]; e++) { if (e > s.lP[0]) line(ctx, B.l, Y(e), B.r, Y(e), PAL.rule, 1.5); text(ctx, decade(e), B.l - 14, Y(e), PAL.muted, { size: 17, align: 'right' }); }
   }
-  const NAMES = { melt: ['melting', 'freezing'], boil: ['vaporization', 'condensation'], sub: ['sublimation', 'deposition'] };
+  const NAMES = { melt: ['熔化', '凝固'], boil: ['汽化', '凝结'], sub: ['升华', '凝华'] };
 
   /* ---------- the molecule window ---------- */
   const W = { l: 1000, r: 1340, t: 150, b: 490 }, N = 49;
@@ -182,8 +182,8 @@ const sim = (id, H) => F.sim(root, id, H);
     /* the frame: the ticks of the old substance fade as the new ones arrive */
     ['water', 'co2'].forEach((key) => sub.only(ctx, key, () => frame(ctx, key), [0, 0]));
     line(ctx, B.l, B.t, B.l, B.b, PAL.muted, 2); line(ctx, B.l, B.b, B.r, B.b, PAL.muted, 2);
-    text(ctx, 'Temperature (°C)', B.r, B.b + 60, C('temperature'), { align: 'right', weight: 600, size: 20 });
-    text(ctx, 'Pressure (kPa)', B.l, B.t - 26, C('pressure'), { align: 'left', weight: 600, size: 20 });
+    text(ctx, '温度 (°C)', B.r, B.b + 60, C('temperature'), { align: 'right', weight: 600, size: 20 });
+    text(ctx, '压强 (kPa)', B.l, B.t - 26, C('pressure'), { align: 'left', weight: 600, size: 20 });
 
     /* the curves, one substance's bending into the other's */
     const a = CURVES[sub.from ?? v], b = CURVES[v], mixP = (p, q) => [p[0] + (q[0] - p[0]) * F.ease.smooth(k), p[1] + (q[1] - p[1]) * F.ease.smooth(k)];
@@ -198,13 +198,13 @@ const sim = (id, H) => F.sim(root, id, H);
     /* the region names and the two points, for the substance shown */
     ['water', 'co2'].forEach((key) => sub.only(ctx, key, () => {
       const q = S[key], sc = scales(q), c = CURVES[key];
-      text(ctx, 'solid', sc.X(q.at.solid[0]), sc.Y(q.at.solid[1]), PAL.ink, { size: 22, align: 'center' });
-      text(ctx, 'liquid', sc.X(q.at.liquid[0]), sc.Y(q.at.liquid[1]), PAL.ink, { size: 22, align: 'center' });
-      text(ctx, 'gas', sc.X(q.at.gas[0]), sc.Y(q.at.gas[1]), PAL.ink, { size: 22, align: 'center' });
-      text(ctx, 'supercritical fluid', (c.cp[0] + B.r) / 2, (c.cp[1] + B.t) / 2, PAL.ink, { size: 17, align: 'center' });
+      text(ctx, '固体', sc.X(q.at.solid[0]), sc.Y(q.at.solid[1]), PAL.ink, { size: 22, align: 'center' });
+      text(ctx, '液体', sc.X(q.at.liquid[0]), sc.Y(q.at.liquid[1]), PAL.ink, { size: 22, align: 'center' });
+      text(ctx, '气体', sc.X(q.at.gas[0]), sc.Y(q.at.gas[1]), PAL.ink, { size: 22, align: 'center' });
+      text(ctx, '超临界流体', (c.cp[0] + B.r) / 2, (c.cp[1] + B.t) / 2, PAL.ink, { size: 17, align: 'center' });
       const tpUp = key === v && Math.abs(Y(L10(P)) - c.tp[1]) < 40;
-      text(ctx, 'triple point', c.tp[0] + 14, c.tp[1] + (tpUp ? -22 : 24), F.ref('triple-point'), { size: 17, align: 'left', bg: PAL.panel });
-      text(ctx, 'critical point', c.cp[0] + 12, c.cp[1] + 22, F.ref('critical-point'), { size: 17, align: 'left', bg: PAL.panel });
+      text(ctx, '三相点', c.tp[0] + 14, c.tp[1] + (tpUp ? -22 : 24), F.ref('triple-point'), { size: 17, align: 'left', bg: PAL.panel });
+      text(ctx, '临界点', c.cp[0] + 12, c.cp[1] + 22, F.ref('critical-point'), { size: 17, align: 'left', bg: PAL.panel });
     }, [0, 0]));
 
     /* the isobar through the state point, the temperatures where it crosses a curve, and the point itself */
@@ -247,32 +247,32 @@ const sim = (id, H) => F.sim(root, id, H);
     mols.forEach(([x, y, ang, on]) => { if (on < 0.02) return; ctx.save(); ctx.globalAlpha *= on; molecule(ctx, v, x, y, ang); ctx.restore(); });
     ctx.restore();
     ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.strokeRect(W.l, W.t, W.r - W.l, W.b - W.t); ctx.restore();
-    text(ctx, s.mol + ' molecules in the sample', (W.l + W.r) / 2, W.t - 22, PAL.muted, { size: 17, align: 'center' });
-    const WORD = { solid: 'solid', liquid: 'liquid', gas: 'gas', scf: 'supercritical fluid' };
-    const bandName = st.key === 'critical' ? 'at the critical point' : st.bands.map((ph) => WORD[ph]).reverse().join(' over ');
+    text(ctx, '样品中的 ' + s.mol + ' 分子', (W.l + W.r) / 2, W.t - 22, PAL.muted, { size: 17, align: 'center' });
+    const WORD = { solid: '固体', liquid: '液体', gas: '气体', scf: '超临界流体' };
+    const bandName = st.key === 'critical' ? '在临界点' : st.bands.map((ph) => WORD[ph]).reverse().join('，其下为');
     text(ctx, bandName, (W.l + W.r) / 2, W.b + 28, PAL.ink, { size: 20, align: 'center' });
 
     /* the sentence at the top and the readout */
     const Tw = fmtT(T) + ' °C', Pw = fmtP(P) + ' kPa', cap = (w) => w[0].toUpperCase() + w.slice(1);
-    const where = `At ${Tw} and ${Pw}`;
+    const where = `在 ${Tw} 和 ${Pw} 时`;
     const H = {
-      solid: `${where}, ${s.name} is a solid${v === 'water' ? ' (ice)' : ''}.`,
-      liquid: `${where}, ${s.name} is a liquid.`,
-      gas: `${where}, ${s.name} is a gas.`,
-      scf: `${where}, above its critical point, ${s.name} is a supercritical fluid.`,
-      melt: `${where}, ${s.s} and ${s.l} are in equilibrium, so ${s.name} melts or freezes here.`,
-      boil: `${where}, ${s.l} and ${s.g} are in equilibrium, so ${s.name} boils or condenses here.`,
-      sub: `${where}, ${s.s} and ${s.g} are in equilibrium, so ${s.name} sublimes or is deposited here.`,
-      triple: `At the triple point, ${fmtT(s.Tt, 2)} °C and ${fmtP(s.Pt)} kPa, ${s.s}, ${s.l}, and ${s.g} are all in equilibrium.`,
-      critical: `At the critical point, ${fmtT(s.Tc)} °C and ${fmtP(s.Pc)} kPa, the boundary between ${s.l} and ${s.g} disappears.`,
+      solid: `${where}，${s.name}是固体${v === 'water' ? '（冰）' : ''}。`,
+      liquid: `${where}，${s.name}是液体。`,
+      gas: `${where}，${s.name}是气体。`,
+      scf: `${where}，${s.name}高于其临界点，是超临界流体。`,
+      melt: `${where}，${s.s}与${s.l}处于平衡，所以${s.name}在此熔化或凝固。`,
+      boil: `${where}，${s.l}与${s.g}处于平衡，所以${s.name}在此沸腾或凝结。`,
+      sub: `${where}，${s.s}与${s.g}处于平衡，所以${s.name}在此升华或凝华。`,
+      triple: `在三相点（${fmtT(s.Tt, 2)} °C 和 ${fmtP(s.Pt)} kPa）时，${s.s}、${s.l}和${s.g}三者都处于平衡。`,
+      critical: `在临界点（${fmtT(s.Tc)} °C 和 ${fmtP(s.Pc)} kPa）时，${s.l}与${s.g}之间的分界消失。`,
     };
     headline(ctx, H[st.key]);
-    const PH = { solid: '\\text{solid}', liquid: '\\text{liquid}', gas: '\\text{gas}', scf: '\\text{supercritical fluid}', melt: '\\text{solid} \\rightleftharpoons \\text{liquid}', boil: '\\text{liquid} \\rightleftharpoons \\text{gas}', sub: '\\text{solid} \\rightleftharpoons \\text{gas}', triple: '\\text{solid},\\ \\text{liquid},\\ \\text{gas}', critical: '\\text{critical point}' };
+    const PH = { solid: '\\text{固体}', liquid: '\\text{液体}', gas: '\\text{气体}', scf: '\\text{超临界流体}', melt: '\\text{固体} \\rightleftharpoons \\text{液体}', boil: '\\text{液体} \\rightleftharpoons \\text{气体}', sub: '\\text{固体} \\rightleftharpoons \\text{气体}', triple: '\\text{固体、液体、气体}', critical: '\\text{临界点}' };
     const all = crossings(s, P), heat = P < s.Pt
-      ? `Heated at ${Pw}, below the triple-point pressure, ${s.s} sublimes at ${fmtT(all[0].T, 0)} °C, and ${s.name} never forms a liquid.`
+      ? `在 ${Pw} 下加热，该压强低于三相点压强，${s.s}在 ${fmtT(all[0].T, 0)} °C 升华，${s.name}始终不形成液体。`
       : P < s.Pc
-        ? `Heated at ${Pw}, ${s.s} melts at ${fmtT(all[0].T, 0)} °C and the liquid boils at ${fmtT(all[1].T, 0)} °C.`
-        : `Heated at ${Pw}, above the critical pressure, ${s.s} melts at ${fmtT(all[0].T, 0)} °C, and above ${fmtT(s.Tc)} °C the liquid becomes a supercritical fluid without boiling.`;
+        ? `在 ${Pw} 下加热，${s.s}在 ${fmtT(all[0].T, 0)} °C 熔化，液体在 ${fmtT(all[1].T, 0)} °C 沸腾。`
+        : `在 ${Pw} 下加热，该压强高于临界压强，${s.s}在 ${fmtT(all[0].T, 0)} °C 熔化，高于 ${fmtT(s.Tc)} °C 后液体不经沸腾就变为超临界流体。`;
     ro.set(`\\kT = ${fmt(T, 1)}\\ ^\\circ\\text{C},\\quad \\kP = ${fmtP(P).replace(/,/g, '{,}')}\\ \\text{kPa}\\quad \\Longrightarrow \\quad ${PH[st.key]}`, cap(heat));
   }
   register(d.fig, { update: () => {}, draw });

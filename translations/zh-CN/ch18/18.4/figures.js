@@ -24,15 +24,15 @@ const VIEW3 = { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3 };
 (function () {
   const d = sim('fig-oxidation-states', 560);
   const COLS = [
-    { g: 0, head: 'H', name: 'hydrogen', s: [1, -1] },
-    { g: 1, head: 'C', name: 'carbon', run: [4, -4] },
-    { g: 2, head: 'N', name: 'nitrogen', run: [5, -3] },
-    { g: 2, head: 'P, As', name: 'phosphorus and arsenic', s: [5, 3, -3] },
-    { g: 3, head: 'O', name: 'oxygen', s: [-1, -2] },
-    { g: 3, head: 'S, Se', name: 'sulfur and selenium', s: [6, 4, -2] },
-    { g: 4, head: 'F', name: 'fluorine', s: [-1] },
-    { g: 4, head: 'Cl, Br, I', name: 'chlorine, bromine and iodine', s: [7, 5, 3, 1, -1] },
-    { g: 5, head: 'Xe', name: 'xenon', s: [8, 6, 4, 2] },
+    { g: 0, head: 'H', name: '氢', s: [1, -1] },
+    { g: 1, head: 'C', name: '碳', run: [4, -4] },
+    { g: 2, head: 'N', name: '氮', run: [5, -3] },
+    { g: 2, head: 'P, As', name: '磷和砷', s: [5, 3, -3] },
+    { g: 3, head: 'O', name: '氧', s: [-1, -2] },
+    { g: 3, head: 'S, Se', name: '硫和硒', s: [6, 4, -2] },
+    { g: 4, head: 'F', name: '氟', s: [-1] },
+    { g: 4, head: 'Cl, Br, I', name: '氯、溴和碘', s: [7, 5, 3, 1, -1] },
+    { g: 5, head: 'Xe', name: '氙', s: [8, 6, 4, 2] },
   ];
   const st = (s) => (s > 0 ? `${s}+` : s < 0 ? `${-s}−` : '0');
   const T = 118, B = 526, L = 196, R = 1376, GAP = 18, STEP = (B - T) / 12;
@@ -51,7 +51,7 @@ const VIEW3 = { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3 };
       line(ctx, L, Y(s), R, Y(s), alpha(PAL.ink, s === 0 ? 0.4 : 0.12), s === 0 ? 2 : 1.5);
       text(ctx, st(s), L - 22, Y(s), PAL.muted, { size: 17, align: 'right' });
     }
-    text(ctx, 'oxidation state', L - 22, T - 52, PAL.muted, { size: 17, align: 'right' });
+    text(ctx, '氧化态', L - 22, T - 52, PAL.muted, { size: 17, align: 'right' });
     COLS.forEach((c, i) => {
       const x = X(i);
       text(ctx, c.head, x, T - 46, PAL.ink, { size: 22, weight: 600, align: 'center' });
@@ -61,9 +61,9 @@ const VIEW3 = { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3 };
         for (let s = hi; s >= lo; s--) {
           const end = s === hi || s === lo;
           F.dot(ctx, x, Y(s), PAL.ink, true, end ? 9 : 5);
-          hits.push({ x, y: Y(s), r: 11, name: `${c.name}: ${st(s)}, one of its states from ${st(hi)} to ${st(lo)}` });
+          hits.push({ x, y: Y(s), r: 11, name: `${c.name}：${st(s)}，是其从 ${st(hi)} 到 ${st(lo)} 的氧化态之一` });
         }
-      } else c.s.forEach((s) => { F.dot(ctx, x, Y(s), PAL.ink, true, 9); hits.push({ x, y: Y(s), r: 11, name: `${c.name}: ${st(s)}` }); });
+      } else c.s.forEach((s) => { F.dot(ctx, x, Y(s), PAL.ink, true, 9); hits.push({ x, y: Y(s), r: 11, name: `${c.name}：${st(s)}` }); });
     });
   });
 })();
@@ -79,7 +79,7 @@ const VIEW3 = { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3 };
 ===================================================================== */
 (function () {
   const d = sim('sim-carbon');
-  const v = F.view3d(d.stage, { ...VIEW3, h: 460, dist: 8.4, views: [{ label: 'face on', yaw: 0, pitch: 0 }, { label: 'edge on', yaw: Math.PI / 2, pitch: 0 }] });
+  const v = F.view3d(d.stage, { ...VIEW3, h: 460, dist: 8.4, views: [{ label: '正面', yaw: 0, pitch: 0 }, { label: '侧面', yaw: Math.PI / 2, pitch: 0 }] });
   const grp = v.part(0); if (grp) grp.position.y = -0.3;
   const A = 0.3, NC = 8, NR = 6, PER = R3 * A, Wd = NC * PER, RT = Wd / TAU, GAP = 0.71, RA = 0.08, RB = 0.03;
   const flat = [];
@@ -116,8 +116,8 @@ const VIEW3 = { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3 };
   }));
   const bp = bucky.map((p) => p.map((x) => (x * A) / 2)), bb = [];
   for (let i = 0; i < bp.length; i++) for (let j = i + 1; j < bp.length; j++) if (Math.abs(dist3(bp[i], bp[j]) - A) < 0.01) bb.push([i, j]);
-  const FORM = F.choice(d.controls, { label: '\\text{form}', options: [{ value: 'diamond', label: 'diamond' }, { value: 'graphite', label: 'graphite' }, { value: 'graphene', label: 'graphene' }, { value: 'tube', label: 'nanotube' }, { value: 'ball', label: 'C<sub>60</sub>' }], value: 'diamond', aria: 'the form of carbon' });
-  const NAME = { diamond: 'a carbon atom of diamond, bonded to four others', sheet: 'a carbon atom, bonded to three others in a six-membered ring', layer: 'a carbon atom of another graphite layer', ball: 'a carbon atom of C₆₀' };
+  const FORM = F.choice(d.controls, { label: '\\text{形态}', options: [{ value: 'diamond', label: '金刚石' }, { value: 'graphite', label: '石墨' }, { value: 'graphene', label: '石墨烯' }, { value: 'tube', label: '纳米管' }, { value: 'ball', label: 'C<sub>60</sub>' }], value: 'diamond', aria: '碳的形态' });
+  const NAME = { diamond: '金刚石的碳原子，与另外四个原子成键', sheet: '碳原子，在六元环中与另外三个原子成键', layer: '石墨另一层的碳原子', ball: 'C₆₀ 的碳原子' };
   let sig = '', sheet, sMesh = [], sBond = [], upper, lower, diaG, ballG;
   function build() {
     const key = palSig(['C']); if (key === sig || !grp) return; sig = key;
@@ -125,7 +125,7 @@ const VIEW3 = { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3 };
     sheet = new T3.Group(); upper = new T3.Group(); lower = new T3.Group(); diaG = new T3.Group(); ballG = new T3.Group();
     grp.add(sheet, upper, lower, diaG, ballG);
     sMesh = flat.map((p) => v.pickable(F.mesh.sphere(sheet, [p[0], p[1], 0], RA, F.el('C')), NAME.sheet));
-    sBond = sheetBonds.map(([a, b]) => v.pickable(F.mesh.stick(sheet, [flat[a][0], flat[a][1], 0], [flat[b][0], flat[b][1], 0], RB, PAL.muted), 'a C–C bond: a σ bond, with a share of the π bonding'));
+    sBond = sheetBonds.map(([a, b]) => v.pickable(F.mesh.stick(sheet, [flat[a][0], flat[a][1], 0], [flat[b][0], flat[b][1], 0], RB, PAL.muted), 'C–C 键：一个 σ 键，并分得一部分 π 键合'));
     [upper, lower].forEach((g) => {
       const pts = flat.map((p) => [p[0], p[1] + A, 0]);
       const on = (p) => Math.abs(p[1]) <= yMid + 1e-6;
@@ -133,23 +133,23 @@ const VIEW3 = { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3 };
       sheetBonds.forEach(([a, b], i) => { if (!wraps[i] && on(pts[a]) && on(pts[b])) F.mesh.stick(g, pts[a], pts[b], RB, PAL.muted); });
     });
     dia.forEach((p, i) => { if (keep[i]) v.pickable(F.mesh.sphere(diaG, p, RA, F.el('C')), NAME.diamond); });
-    diaBonds.forEach(([i, j]) => { if (keep[i] && keep[j]) v.pickable(F.mesh.stick(diaG, dia[i], dia[j], RB, PAL.muted), 'a C–C single bond'); });
+    diaBonds.forEach(([i, j]) => { if (keep[i] && keep[j]) v.pickable(F.mesh.stick(diaG, dia[i], dia[j], RB, PAL.muted), 'C–C 单键'); });
     bp.forEach((p) => v.pickable(F.mesh.sphere(ballG, p, RA, F.el('C')), NAME.ball));
     bb.forEach(([i, j]) => F.mesh.stick(ballG, bp[i], bp[j], RB, PAL.muted));
   }
   const HEAD = {
-    diamond: 'In diamond each carbon atom forms four single bonds to four other atoms at the corners of a tetrahedron.',
-    graphite: 'In graphite each carbon atom bonds to three others in a planar layer; weak forces hold the layers together.',
-    graphene: 'Graphene is a single layer of graphite, one atom thick.',
-    tube: 'A carbon nanotube is the same layer of six-membered rings rolled into a small tube.',
-    ball: 'C₆₀, buckminsterfullerene, is an icosahedral molecule of 60 carbon atoms.',
+    diamond: '在金刚石中，每个碳原子与位于四面体顶点的四个其他原子形成四个单键。',
+    graphite: '在石墨中，每个碳原子在平面层内与另外三个原子成键；弱作用力把各层结合在一起。',
+    graphene: '石墨烯是石墨的单层，一个原子厚。',
+    tube: '碳纳米管是由同样的六元环层卷成的小管。',
+    ball: 'C₆₀ 即巴克敏斯特富勒烯，是含有 60 个碳原子的二十面体分子。',
   };
   const RO = {
-    diamond: `\\text{4 single bonds per C atom }(sp^{3})\\text{, a 3D network} \\;\\to\\; \\text{very hard, melts at }{\\sim}${degC(4400)}`,
-    graphite: '\\sigma\\text{ and }\\pi\\text{ bonds in a layer }(sp^{2})\\text{, London forces between} \\;\\to\\; \\text{soft, conducts}',
-    graphene: '\\text{one layer of }sp^{2}\\text{ rings, no stacking} \\;\\to\\; \\text{strong, conducts}',
-    tube: '\\text{the layer wrapped into a tube} \\;\\to\\; \\text{harder than diamond}',
-    ball: '60\\text{ C atoms in a closed, icosahedral cage}',
+    diamond: `\\text{每个 C 原子 4 个单键 }(sp^{3})\\text{，三维网络} \\;\\to\\; \\text{很硬，熔点 }{\\sim}${degC(4400)}`,
+    graphite: '\\sigma\\text{ 键和 }\\pi\\text{ 键位于层内 }(sp^{2})\\text{，层间为伦敦色散力} \\;\\to\\; \\text{质软，导电}',
+    graphene: '\\text{一层 }sp^{2}\\text{ 环，不堆叠} \\;\\to\\; \\text{坚固，导电}',
+    tube: '\\text{该层卷成管} \\;\\to\\; \\text{比金刚石更硬}',
+    ball: '60\\text{ 个 C 原子构成封闭的二十面体笼}',
   };
   function draw() {
     build(); if (!grp || !sheet) return;
@@ -224,15 +224,15 @@ const VIEW3 = { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3 };
     };
     bonds.forEach(([i, j]) => { const p = at(atoms[i]), q = at(atoms[j]); bond(p, q, cls(q[0] - p[0], q[1] - p[1]) === dbl); });
     stubs.forEach(({ i, u, w }) => { const p = at(atoms[i]), q = [p[0] + u * b * 0.62, p[1] + w * b * 0.62]; q.end = true; bond(p, q, cls(u, w) === dbl); });
-    atoms.forEach((p) => { const [x, y] = at(p); text(ctx, 'C', x, y, PAL.ink, { size: 22, align: 'center' }); hits.push({ x, y, r: 12, name: 'a carbon atom, with one double bond in this resonance form' }); });
+    atoms.forEach((p) => { const [x, y] = at(p); text(ctx, 'C', x, y, PAL.ink, { size: 22, align: 'center' }); hits.push({ x, y, r: 12, name: '碳原子，在此共振式中有一个双键' }); });
   }
   still(d, () => {
     const { ctx } = begin(d.c); hits.length = 0;
     const P = (p) => view.P(p);
-    ring.forEach((p) => { const base = P(p), top = P([p[0], -LOBE, p[2]]); lobe(ctx, base, top, 30, F.cat(1)); hits.push({ x: (base[0] + top[0]) / 2, y: (base[1] + top[1]) / 2, r: 20, name: 'an unhybridized p orbital, the lobe of one phase below the plane' }); });
+    ring.forEach((p) => { const base = P(p), top = P([p[0], -LOBE, p[2]]); lobe(ctx, base, top, 30, F.cat(1)); hits.push({ x: (base[0] + top[0]) / 2, y: (base[1] + top[1]) / 2, r: 20, name: '未杂化的 p 轨道，位于平面下方的一个相的瓣' }); });
     rBonds.forEach(([i, j]) => { const a = P(ring[i]), c = P(ring[j]); line(ctx, a[0], a[1], c[0], c[1], PAL.ink, 3); });
-    ring.forEach((p) => { const q = P(p); F.dot(ctx, q[0], q[1], PAL.ink, true, 5); hits.push({ x: q[0], y: q[1], r: 9, name: 'a carbon atom, sp² hybridized, bonded to its neighbors by σ bonds in the plane' }); });
-    order.forEach((i) => { const p = ring[i], base = P(p), top = P([p[0], LOBE, p[2]]); lobe(ctx, base, top, 30, F.cat(0)); hits.push({ x: (base[0] + top[0]) / 2, y: (base[1] + top[1]) / 2, r: 20, name: 'an unhybridized p orbital, the lobe of the other phase above the plane' }); });
+    ring.forEach((p) => { const q = P(p); F.dot(ctx, q[0], q[1], PAL.ink, true, 5); hits.push({ x: q[0], y: q[1], r: 9, name: '碳原子，sp² 杂化，在平面内通过 σ 键与邻居成键' }); });
+    order.forEach((i) => { const p = ring[i], base = P(p), top = P([p[0], LOBE, p[2]]); lobe(ctx, base, top, 30, F.cat(0)); hits.push({ x: (base[0] + top[0]) / 2, y: (base[1] + top[1]) / 2, r: 20, name: '未杂化的 p 轨道，位于平面上方的另一个相的瓣' }); });
     form(ctx, 790, 214, 0);
     form(ctx, 1236, 214, 1);
     arrow(ctx, 980, 214, 1046, 214, PAL.ink, 3); arrow(ctx, 1046, 214, 980, 214, PAL.ink, 3);
@@ -252,7 +252,7 @@ const VIEW3 = { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3 };
 ===================================================================== */
 (function () {
   const d = sim('sim-phosphorus');
-  const v = F.view3d(d.stage, { ...VIEW3, h: 420, dist: 7.2, views: [{ label: 'front', yaw: 0, pitch: 0.15 }, { label: 'above', yaw: 0, pitch: 1.2 }] });
+  const v = F.view3d(d.stage, { ...VIEW3, h: 420, dist: 7.2, views: [{ label: '正面', yaw: 0, pitch: 0.15 }, { label: '上方', yaw: 0, pitch: 1.2 }] });
   const grp = v.part(0);
   const E = 0.6, H = E * Math.sqrt(2 / 3), OPEN = 1.35, SP = OPEN * E + E, N = 4;
   /* a tetrahedron, base in the xz plane, a and b at the front, apex d up; s spreads a and b to OPEN × E */
@@ -261,19 +261,19 @@ const VIEW3 = { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3 };
   const T3 = window.THREE;
   const WHITE = [[-2.0, 0.35, 0.25, 0.9, 0.4, 0.2], [-0.65, -0.45, -0.35, 2.1, 1.3, 0.5], [0.7, 0.4, 0.3, 0.3, 2.4, 1.1], [2.0, -0.3, -0.2, 1.5, 0.7, 2.6]];
   const qW = T3 ? WHITE.map(([, , , a, b, c]) => new T3.Quaternion().setFromEuler(new T3.Euler(a, b, c))) : [];
-  const FORM = F.choice(d.controls, { label: '\\text{form}', options: [{ value: 'white', label: 'white phosphorus' }, { value: 'red', label: 'red phosphorus' }], value: 'white', aria: 'the allotrope of phosphorus' });
+  const FORM = F.choice(d.controls, { label: '\\text{形态}', options: [{ value: 'white', label: '白磷' }, { value: 'red', label: '红磷' }], value: 'white', aria: '磷的同素异形体' });
   let sig = '', atoms = [], sticks = [], ab = [], links = [], stubs = [], gOpen, gLink;
   function build() {
     const key = palSig(['P']); if (key === sig || !grp) return; sig = key;
     v.clear(); gOpen = new T3.Group(); gLink = new T3.Group(); grp.add(gOpen, gLink);
     atoms = []; sticks = []; ab = []; links = []; stubs = [];
     for (let m = 0; m < N; m++) {
-      atoms.push([0, 1, 2, 3].map(() => v.pickable(F.mesh.sphere(grp, [0, 0, 0], 0.15, F.el('P')), 'a phosphorus atom, P, bonded to three other P atoms')));
-      sticks.push(EDGES.map(() => v.pickable(F.mesh.stick(grp, [0, 0, 0], [1, 0, 0], 0.05, PAL.muted), 'a P–P single bond within a tetrahedron')));
-      ab.push(v.pickable(F.mesh.stick(gOpen, [0, 0, 0], [1, 0, 0], 0.05, PAL.muted), 'a P–P single bond, the one that opens on heating'));
-      if (m + 1 < N) links.push(v.pickable(F.mesh.stick(gLink, [0, 0, 0], [1, 0, 0], 0.05, PAL.muted), 'a P–P single bond joining two tetrahedra'));
+      atoms.push([0, 1, 2, 3].map(() => v.pickable(F.mesh.sphere(grp, [0, 0, 0], 0.15, F.el('P')), '磷原子 P，与另外三个 P 原子成键')));
+      sticks.push(EDGES.map(() => v.pickable(F.mesh.stick(grp, [0, 0, 0], [1, 0, 0], 0.05, PAL.muted), '四面体内的 P–P 单键')));
+      ab.push(v.pickable(F.mesh.stick(gOpen, [0, 0, 0], [1, 0, 0], 0.05, PAL.muted), 'P–P 单键，加热时断开的那个'));
+      if (m + 1 < N) links.push(v.pickable(F.mesh.stick(gLink, [0, 0, 0], [1, 0, 0], 0.05, PAL.muted), '连接两个四面体的 P–P 单键'));
     }
-    stubs = [0, 1].map(() => v.pickable(F.mesh.stick(gLink, [0, 0, 0], [1, 0, 0], 0.05, PAL.muted), 'a P–P bond to the next tetrahedron of the network'));
+    stubs = [0, 1].map(() => v.pickable(F.mesh.stick(gLink, [0, 0, 0], [1, 0, 0], 0.05, PAL.muted), '通向网络中下一个四面体的 P–P 键'));
   }
   function draw() {
     build(); if (!grp || !T3 || !atoms.length) return;
@@ -293,11 +293,11 @@ const VIEW3 = { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3 };
     F.mesh.setStick(stubs[1], pos[N - 1][1], [pos[N - 1][1][0] + E * 0.55, pos[N - 1][1][1], pos[N - 1][1][2]]);
     F.fade3(gOpen, 1 - smooth(0.1, 0.45, k));
     F.fade3(gLink, smooth(0.8, 1, k));
-    v.headline(FORM.value === 'white' ? 'White phosphorus exists as P₄ molecules, four atoms at the corners of a regular tetrahedron.' : 'Heated to 270–300 °C without air, the P₄ tetrahedra join through P–P single bonds into red phosphorus.');
+    v.headline(FORM.value === 'white' ? '白磷以 P₄ 分子的形式存在，四个原子位于正四面体的顶点。' : '在隔绝空气的情况下加热到 270–300 °C，P₄ 四面体通过 P–P 单键连接成红磷。');
     v.invalidate();
     readout(d.readout, FORM.value === 'white'
-      ? `\\text{P}_{4}\\text{ molecules, each P bonded to 3 P} \\;\\to\\; \\text{melts at }${degC('44.2')}\\text{, very reactive, very toxic}`
-      : `\\text{P}_{4}\\text{ tetrahedra joined by P–P bonds, each P bonded to 3 P} \\;\\to\\; \\text{melts at }{\\sim}${degC(600)}\\text{, much less reactive, essentially nontoxic}`);
+      ? `\\text{P}_{4}\\text{ 分子，每个 P 与 3 个 P 成键} \\;\\to\\; \\text{熔点 }${degC('44.2')}\\text{，反应性很强，毒性很大}`
+      : `\\text{P}_{4}\\text{ 四面体由 P–P 键连接，每个 P 与 3 个 P 成键} \\;\\to\\; \\text{熔点 }{\\sim}${degC(600)}\\text{，反应性低得多，基本无毒}`);
   }
   still(d, draw);
 })();
@@ -316,9 +316,9 @@ const VIEW3 = { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3 };
 ===================================================================== */
 (function () {
   const d = sim('sim-sulfur');
-  const v = F.view3d(d.stage, { ...VIEW3, h: 420, dist: 6.2, views: [{ label: 'front', yaw: 0, pitch: 0.1 }, { label: 'above', yaw: 0, pitch: 1.2 }] });
+  const v = F.view3d(d.stage, { ...VIEW3, h: 420, dist: 6.2, views: [{ label: '正面', yaw: 0, pitch: 0.1 }, { label: '上方', yaw: 0, pitch: 1.2 }] });
   const grp = v.part(0), c2 = F.makeCanvas(d.stage, 210); if (grp) grp.position.y = -0.2;
-  const Tsl = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 113, max: 260, step: 1, value: 113, unit: '°C', dec: 0, aria: 'temperature of the liquid sulfur in degrees Celsius', specials: [{ at: 230, label: 'does not pour' }] });
+  const Tsl = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 113, max: 260, step: 1, value: 113, unit: '°C', dec: 0, aria: '液态硫的温度，单位为摄氏度', specials: [{ at: 230, label: '不易倒出' }] });
   const BD = 0.42, NA = 32;
   const STRAW = '#e3c75a', AMBER = '#d4892b', DARK = '#8c1d12';
   const T3 = window.THREE;
@@ -384,17 +384,17 @@ const VIEW3 = { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3 };
   function build() {
     const key = palSig(['S']); if (key === sig || !grp) return; sig = key;
     v.clear();
-    atomM = confA.map((p) => v.pickable(F.mesh.sphere(grp, p, 0.13, F.el('S')), 'a sulfur atom, S, bonded to two neighbors'));
-    endM = confA.map((p) => v.pickable(F.mesh.sphere(grp, [0, -99, 0], 0.16, PAL.panel, { transparent: true, opacity: 0, depthWrite: false }), 'a sulfur atom at the end of a chain, bonded to one neighbor: such dangling atoms absorb light differently and color the liquid dark red'));
-    pairM = PAIRS.map(() => v.pickable(F.mesh.stick(grp, [0, 0, 0], [1, 0, 0], 0.045, PAL.muted), 'an S–S single bond'));
+    atomM = confA.map((p) => v.pickable(F.mesh.sphere(grp, p, 0.13, F.el('S')), '硫原子 S，与两个邻居成键'));
+    endM = confA.map((p) => v.pickable(F.mesh.sphere(grp, [0, -99, 0], 0.16, PAL.panel, { transparent: true, opacity: 0, depthWrite: false }), '链末端的硫原子，与一个邻居成键：这种悬空原子吸收光的方式不同，使液体呈暗红色'));
+    pairM = PAIRS.map(() => v.pickable(F.mesh.stick(grp, [0, 0, 0], [1, 0, 0], 0.045, PAL.muted), 'S–S 单键'));
   }
   const HEAD = [
-    (T) => `At ${T} °C the straw-colored liquid is quite mobile: its S₈ molecules are crowns that move past one another.`,
-    (T) => `At ${T} °C S–S bonds in the rings break, and the rings open into S₈ chains.`,
-    (T) => `At ${T} °C the chains combine end to end into longer chains, and the liquid darkens.`,
-    (T) => `At ${T} °C the long chains tangle with one another, and the dark red liquid does not pour easily.`,
+    (T) => `在 ${T} °C 时，稻草色的液体流动性相当好：其 S₈ 分子是皇冠状的环，彼此滑过。`,
+    (T) => `在 ${T} °C 时，环中的 S–S 键断裂，环打开成 S₈ 链。`,
+    (T) => `在 ${T} °C 时，链首尾相连成更长的链，液体颜色变深。`,
+    (T) => `在 ${T} °C 时，长链彼此缠结，暗红色的液体不易倒出。`,
   ];
-  const WORDS = ['\\text{S}_{8}\\text{ rings; a mobile liquid}', '\\text{S}_{8}\\text{ chains}', '\\text{longer chains; the liquid darkens}', '\\text{long, tangled chains; so viscous it does not pour}'];
+  const WORDS = ['\\text{S}_{8}\\text{ 环；流动性好的液体}', '\\text{S}_{8}\\text{ 链}', '\\text{更长的链；液体颜色变深}', '\\text{长而缠结的链；黏稠得倒不出来}'];
   function draw() {
     build();
     const T = Tsl.v, s = stage(T), i = Math.min(2, Math.floor(s)), k = F.ease.smooth(s - i), near = Math.round(s);
@@ -415,11 +415,11 @@ const VIEW3 = { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3 };
     line(ctx, x0, y, x1, y, PAL.ink, 2);
     for (let t = 100; t <= 260; t += 20) { line(ctx, X(t), y, X(t), y + 8, PAL.ink, 2); if (Math.abs(t - T) > 12) text(ctx, String(t), X(t), y + 24, PAL.muted, { size: 17, align: 'center' }); }
     text(ctx, 'T (°C)', x1 + 14, y - 13, F.C('temperature'), { size: 17, weight: 600 });
-    [[113, 'melts, 113 °C'], [230, 'does not pour easily, 230 °C']].forEach(([t, s2]) => {
+    [[113, '熔化，113 °C'], [230, '不易倒出，230 °C']].forEach(([t, s2]) => {
       line(ctx, X(t), y - 64, X(t), y - 26, alpha(PAL.ink, 0.45), 2, [4, 6]);
       text(ctx, s2, X(t) + (t === 230 ? -8 : 8), y - 74, PAL.muted, { size: 17, align: t === 230 ? 'right' : 'left' });
     });
-    text(ctx, 'liquid sulfur', x0 - 18, y - 13, PAL.muted, { size: 17, align: 'right' });
+    text(ctx, '液态硫', x0 - 18, y - 13, PAL.muted, { size: 17, align: 'right' });
     const px = X(T);
     ctx.save(); ctx.fillStyle = F.C('temperature'); ctx.beginPath(); ctx.moveTo(px, y + 4); ctx.lineTo(px - 10, y + 40); ctx.lineTo(px + 10, y + 40); ctx.closePath(); ctx.fill(); ctx.restore();
     text(ctx, `${T} °C`, px, y + 58, F.C('temperature'), { size: 20, weight: 600, align: 'center' });

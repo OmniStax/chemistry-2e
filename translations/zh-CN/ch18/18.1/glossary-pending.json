@@ -1,0 +1,487 @@
+{
+ "terms": [
+  {
+   "source": "emission spectrum",
+   "target": "发射光谱",
+   "authority": "cnterm-physics",
+   "note": "物理学名词: 发射光谱. Name of the concept line-spectra in this page.",
+   "section": "18.1"
+  },
+  {
+   "source": "reduction potential",
+   "target": "还原电势",
+   "authority": "cnterm-chemistry",
+   "note": "Same stem as 标准还原电势 (standard reduction potential, ch18 shard); the concept standard-electrode-potential is 标准电极电势.",
+   "section": "18.1"
+  },
+  {
+   "source": "post-transition metal",
+   "target": "后过渡金属",
+   "authority": "textbook",
+   "note": "Textbook usage.",
+   "section": "18.1"
+  },
+  {
+   "source": "divalent",
+   "target": "二价的",
+   "authority": "cnterm-chemistry",
+   "note": "二价阳离子.",
+   "section": "18.1"
+  },
+  {
+   "source": "tri-positive ion",
+   "target": "三价正离子",
+   "authority": "textbook",
+   "note": "Rendered by meaning (带三个正电荷的阳离子); no standard entry.",
+   "section": "18.1"
+  },
+  {
+   "source": "shell",
+   "target": "电子层",
+   "authority": "cnterm-chemistry",
+   "note": "化学名词: 电子层. Concept shell; outermost shell is 最外层.",
+   "section": "18.1"
+  },
+  {
+   "source": "subshell",
+   "target": "亚层",
+   "authority": "cnterm-chemistry",
+   "note": "化学名词: 亚层.",
+   "section": "18.1"
+  },
+  {
+   "source": "organic compound",
+   "target": "有机化合物",
+   "authority": "cnterm-chemistry",
+   "note": "Concept organic-compound.",
+   "section": "18.1"
+  },
+  {
+   "source": "product",
+   "target": "产物",
+   "authority": "cnterm-chemistry",
+   "note": "Reaction product; concept product.",
+   "section": "18.1"
+  },
+  {
+   "source": "paraffin oil",
+   "target": "石蜡油",
+   "authority": "textbook",
+   "note": "Textbook usage.",
+   "section": "18.1"
+  },
+  {
+   "source": "mineral oil",
+   "target": "矿物油",
+   "authority": "textbook",
+   "note": "Textbook usage.",
+   "section": "18.1"
+  },
+  {
+   "source": "kerosene",
+   "target": "煤油",
+   "authority": "cnterm-chemistry",
+   "note": "",
+   "section": "18.1"
+  },
+  {
+   "source": "flame test",
+   "target": "焰色试验",
+   "authority": "cnterm-chemistry",
+   "note": "化学名词: 焰色试验.",
+   "section": "18.1"
+  },
+  {
+   "source": "infrared spectroscopy",
+   "target": "红外光谱法",
+   "authority": "cnterm-chemistry",
+   "note": "",
+   "section": "18.1"
+  },
+  {
+   "source": "parts per million",
+   "target": "百万分之一",
+   "authority": "cnterm-chemistry",
+   "note": "Written 百万分之 30 for 30 parts per million.",
+   "section": "18.1"
+  },
+  {
+   "source": "tin pest",
+   "target": "锡疫",
+   "authority": "textbook",
+   "note": "Also 锡病 for tin disease; confirm.",
+   "section": "18.1"
+  },
+  {
+   "source": "tin disease",
+   "target": "锡病",
+   "authority": "textbook",
+   "note": "Same disease as tin pest (锡疫).",
+   "section": "18.1"
+  },
+  {
+   "source": "galvanic anode",
+   "target": "电偶阳极",
+   "authority": "textbook",
+   "note": "Alternative name of the sacrificial anode; confirm.",
+   "section": "18.1"
+  },
+  {
+   "source": "magnesium oxycarbonate",
+   "target": "氧碳酸镁",
+   "authority": "textbook",
+   "note": "Literal rendering of the printed name; the usual 碱式碳酸镁 is a different name for the surface layer; confirm.",
+   "section": "18.1"
+  },
+  {
+   "source": "galvanized steel",
+   "target": "镀锌钢",
+   "authority": "textbook",
+   "note": "galvanized = 镀锌的 (ch18 shard).",
+   "section": "18.1"
+  },
+  {
+   "source": "lead storage battery",
+   "target": "铅酸电池",
+   "authority": "textbook",
+   "note": "Reuses 铅酸电池 (lead-acid battery).",
+   "section": "18.1"
+  },
+  {
+   "source": "electrical discharge",
+   "target": "放电",
+   "authority": "cnterm-chemistry",
+   "note": "",
+   "section": "18.1"
+  },
+  {
+   "source": "fire extinguisher",
+   "target": "灭火器",
+   "authority": "textbook",
+   "note": "",
+   "section": "18.1"
+  },
+  {
+   "source": "fireworks",
+   "target": "烟火",
+   "authority": "textbook",
+   "note": "",
+   "section": "18.1"
+  },
+  {
+   "source": "flare",
+   "target": "照明弹",
+   "authority": "textbook",
+   "note": "",
+   "section": "18.1"
+  },
+  {
+   "source": "tin plate-sheet iron",
+   "target": "镀锡薄铁板",
+   "authority": "textbook",
+   "note": "The printed odd name; tin can = 锡罐 with the English in parentheses (forced scenario).",
+   "section": "18.1"
+  },
+  {
+   "source": "Food and Drug Administration (FDA)",
+   "target": "美国食品药品监督管理局（FDA）",
+   "authority": "textbook",
+   "note": "Organisation name.",
+   "section": "18.1"
+  },
+  {
+   "source": "Environmental Protection Agency (EPA)",
+   "target": "美国环境保护署（EPA）",
+   "authority": "textbook",
+   "note": "Organisation name.",
+   "section": "18.1"
+  },
+  {
+   "source": "Centers for Disease Control (CDC)",
+   "target": "美国疾病控制与预防中心（CDC）",
+   "authority": "textbook",
+   "note": "Organisation name.",
+   "section": "18.1"
+  },
+  {
+   "source": "scandium",
+   "target": "钪",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "vanadium",
+   "target": "钒",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "niobium",
+   "target": "铌",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "palladium",
+   "target": "钯",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "lanthanum",
+   "target": "镧",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "cerium",
+   "target": "铈",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "neodymium",
+   "target": "钕",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "samarium",
+   "target": "钐",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "europium",
+   "target": "铕",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "terbium",
+   "target": "铽",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "dysprosium",
+   "target": "镝",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "holmium",
+   "target": "钬",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "erbium",
+   "target": "铒",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "thulium",
+   "target": "铥",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "ytterbium",
+   "target": "镱",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "lutetium",
+   "target": "镥",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "hafnium",
+   "target": "铪",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "actinium",
+   "target": "锕",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "protactinium",
+   "target": "镤",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "neptunium",
+   "target": "镎",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "plutonium",
+   "target": "钚",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "curium",
+   "target": "锔",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "berkelium",
+   "target": "锫",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "californium",
+   "target": "锎",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "einsteinium",
+   "target": "锿",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "fermium",
+   "target": "镄",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "mendelevium",
+   "target": "钔",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "nobelium",
+   "target": "锘",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "lawrencium",
+   "target": "铹",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "rutherfordium",
+   "target": "𬬻",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "dubnium",
+   "target": "𬭊",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "bohrium",
+   "target": "𬭛",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "hassium",
+   "target": "𬭶",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "meitnerium",
+   "target": "鿏",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "darmstadtium",
+   "target": "𫟼",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "roentgenium",
+   "target": "𬬭",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "nihonium",
+   "target": "鿭",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "moscovium",
+   "target": "镆",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "tennessine",
+   "target": "鿬",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  },
+  {
+   "source": "oganesson",
+   "target": "鿫",
+   "authority": "cnterm-chemistry",
+   "note": "element name, 化学名词（化学元素名称）; hover name of Figure 18.2.",
+   "section": "18.1"
+  }
+ ]
+}

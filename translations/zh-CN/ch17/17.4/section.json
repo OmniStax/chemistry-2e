@@ -2,33 +2,41 @@
   "id": "17.4",
   "module": "m68824",
   "chapter": "17",
-  "title": "Potential, Free Energy, and Equilibrium",
-  "short": "Potential, Free Energy, and Equilibrium",
-  "lead": "The <span data-concept=\"cell-potential\">cell potential</span> of a redox reaction, its <span data-concept=\"gibbs-free-energy\">free energy change</span> and its <span data-concept=\"equilibrium-constant\">equilibrium constant</span> are three measures of one driving force. This section relates them through <span data-concept=\"faradays-constant\">Faraday’s constant</span> and follows the potential away from standard conditions with the <span data-concept=\"nernst-equation\">Nernst equation</span>, down to a <span data-concept=\"concentration-cell\">concentration cell</span>.",
+  "title": "电势、自由能与平衡",
+  "short": "电势、自由能与平衡",
+  "lead": "氧化还原反应的<span data-concept=\"cell-potential\">电池电势</span>、<span data-concept=\"gibbs-free-energy\">自由能变</span>和<span data-concept=\"equilibrium-constant\">平衡常数</span>，是同一种推动力的三种度量。本节通过<span data-concept=\"faradays-constant\">法拉第常数</span>把它们联系起来，并用<span data-concept=\"nernst-equation\">能斯特方程</span>跟踪电势偏离标准条件时的变化，直至<span data-concept=\"concentration-cell\">浓差电池</span>。",
   "objectives": [
-    "Explain the relations between potential, free energy change, and equilibrium constants",
-    "Perform calculations involving the relations between cell potentials, free energy changes, and equilibrium",
-    "Use the Nernst equation to determine cell potentials under nonstandard conditions"
+    "解释电势、自由能变与平衡常数之间的关系",
+    "进行涉及电池电势、自由能变与平衡之间关系的计算",
+    "利用能斯特方程确定非标准条件下的电池电势"
   ],
-  "summary_html": "<p>Potential is a thermodynamic quantity reflecting the intrinsic driving force of a redox process, and it is directly related to the <span data-concept=\"gibbs-free-energy\">free energy change</span> and <span data-concept=\"equilibrium-constant\">equilibrium constant</span> for the process. For redox processes taking place in electrochemical cells, the maximum (electrical) <span data-concept=\"work\">work</span> done by the system is easily computed from the <span data-concept=\"cell-potential\">cell potential</span> and the reaction stoichiometry and is equal to the <span data-concept=\"gibbs-free-energy\">free energy change</span> for the process. The <span data-concept=\"equilibrium-constant\">equilibrium constant</span> for a redox reaction is logarithmically related to the reaction’s <span data-concept=\"cell-potential\">cell potential</span>, with larger (more positive) potentials indicating reactions with greater driving force that equilibrate when the reaction has proceeded far towards completion (large value of $\\kK$). Finally, the potential of a redox process varies with the composition of the reaction mixture, being related to the reactions standard potential and the value of its <span data-concept=\"reaction-quotient\">reaction quotient</span>, $\\kQrxn$, as described by the <span data-concept=\"nernst-equation\">Nernst equation</span>.</p>",
-  "notes": "Nothing of the section is left out. The run-together “TFaraday's constant … C/mol e–.he relation”, “(298) K)” and Example 17.7’s “−0.1 7 V” are kept as printed.",
+  "summary_html": "<p>电势是反映氧化还原过程内在推动力的一个热力学量，它与该过程的<span data-concept=\"gibbs-free-energy\">自由能变</span>和<span data-concept=\"equilibrium-constant\">平衡常数</span>直接相关。对于在电化学池中进行的氧化还原过程，体系所做的最大（电）<span data-concept=\"work\">功</span>很容易由<span data-concept=\"cell-potential\">电池电势</span>和反应的化学计量关系算出，并且等于该过程的<span data-concept=\"gibbs-free-energy\">自由能变</span>。氧化还原反应的<span data-concept=\"equilibrium-constant\">平衡常数</span>与反应的<span data-concept=\"cell-potential\">电池电势</span>呈对数关系：电势越大（越正），说明反应的推动力越大，反应进行到很接近完全时才达到平衡（$\\kK$ 的值很大）。最后，氧化还原过程的电势随反应混合物的组成而变化，它与反应的标准电势以及<span data-concept=\"reaction-quotient\">反应商</span> $\\kQrxn$ 的值有关，如<span data-concept=\"nernst-equation\">能斯特方程</span>所述。</p>",
+  "notes": "本节没有任何内容被省略。原文中连在一起的“TFaraday's constant … C/mol e–.he relation”、“(298) K)”以及例 17.7 中的“−0.1 7 V”都按原样保留。",
   "ai": {
     "text": [
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ],
     "figures": [
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ]
   },
-  "built": "2026-10-05",
+  "built": "2026-10-26",
   "exercises_lead": "",
-  "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. Two unkeyed exercises whose answers would have to be worked out are left out: fs-idp27704096 (standard cell potentials from two free energy changes) and fs-idp126191568 (ΔG and ΔG° for the reactions of the previous problem). The equilibrium constants of fs-idp17461440 and of the first Check Your Learning are checked to a tenth, since a millivolt of cell potential moves K by several percent. Nothing is moved.",
+  "exercise_notes": "布鲁姆层级、概念标签和提示均由 AI 生成。答案取自书后答案以及“学习检测”的答案。有两道没有给出答案、需要自行算出答案的习题被略去：fs-idp27704096（由两个自由能变求标准电池电势）和 fs-idp126191568（上一题各反应的 ΔG 和 ΔG°）。fs-idp17461440 的平衡常数和第一个“学习检测”的平衡常数核对到十分之一的容差，因为 1 毫伏的电池电势变化就会使 K 改变百分之几。没有任何内容被移动。",
   "figures": [
     {
       "id": "sim-relations",
@@ -37,7 +45,7 @@
       "originals": [
         "/media/ch17/CNX_Chem_17_04_Relation.jpg"
       ],
-      "original_caption": "Graphic depicting the relation between three important thermodynamic properties.",
+      "original_caption": "表示三个重要热力学性质之间关系的图示。",
       "draws": [
         "potential",
         "energy",
@@ -51,6 +59,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -67,6 +80,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -89,6 +107,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     }
@@ -96,14 +119,14 @@
   "referents": [
     {
       "id": "anode-half-cell",
-      "label": "the anode half-cell",
+      "label": "阳极半电池",
       "figures": [
         "sim-concentration-cell"
       ]
     },
     {
       "id": "cathode-half-cell",
-      "label": "the cathode half-cell",
+      "label": "阴极半电池",
       "figures": [
         "sim-concentration-cell"
       ]
@@ -382,7 +405,7 @@
         "after": "ex-relations"
       },
       "cite": "ex-relations",
-      "prompt": "What is the standard free energy change and the equilibrium constant for the following reaction at room temperature? Is the reaction spontaneous?<br>$\\text{Sn}(s)+2{\\text{Cu}}^{2+}(aq)\\rightleftharpoons {\\text{Sn}}^{2+}(aq)+2{\\text{Cu}}^{\\text{+}}(aq)$",
+      "prompt": "下列反应在室温下的标准自由能变和平衡常数各是多少？该反应是自发的吗？<br>$\\text{Sn}(s)+2{\\text{Cu}}^{2+}(aq)\\rightleftharpoons {\\text{Sn}}^{2+}(aq)+2{\\text{Cu}}^{\\text{+}}(aq)$",
       "answer": {
         "type": "multi",
         "parts": [
@@ -390,17 +413,17 @@
             "part": "standard free energy change, Δ<em>G</em>°",
             "value": -56.2,
             "unit": "kJ/mol",
-            "hint": "Find <em>E</em>°<sub>cell</sub> from the Sn<sup>2+</sup>/Sn and Cu<sup>2+</sup>/Cu<sup>+</sup> potentials of Appendix L, then use Δ<em>G</em>° = −<em>nFE</em>°<sub>cell</sub> with <em>n</em> = 2."
+            "hint": "由附录 L 中 Sn<sup>2+</sup>/Sn 和 Cu<sup>2+</sup>/Cu<sup>+</sup> 的电势求出 <em>E</em>°<sub>cell</sub>，再用 Δ<em>G</em>° = −<em>nFE</em>°<sub>cell</sub>，其中 <em>n</em> = 2。"
           },
           {
             "part": "equilibrium constant, <em>K</em>",
             "value": 6800000000.0,
             "tol": 0.1,
-            "hint": "<em>K</em> = 10<sup><em>nE</em>°<sub>cell</sub>/0.0592 V</sup>."
+            "hint": "<em>K</em> = 10<sup><em>nE</em>°<sub>cell</sub>/0.0592 V</sup>。"
           }
         ],
         "generated_by": "source",
-        "solution": "Spontaneous; <em>n</em> = 2; ${E}_{\\text{cell}}^{{}^{\\circ}}=\\text{+0.291 V};$ $\\text{Δ}G\\text{°}=−56.2\\;\\frac{\\text{kJ}}{\\text{mol}};$ <em>K</em> = 6.8 × 10<sup>9</sup>."
+        "solution": "自发；<em>n</em> = 2；${E}_{\\text{cell}}^{{}^{\\circ}}=\\text{+0.291 V};$ $\\text{Δ}G\\text{°}=−56.2\\;\\frac{\\text{kJ}}{\\text{mol}};$ <em>K</em> = 6.8 × 10<sup>9</sup>。"
       }
     },
     {
@@ -413,7 +436,7 @@
         "after": "ex-nonstandard"
       },
       "cite": "ex-nonstandard",
-      "prompt": "For the cell schematic below, identify values for <em>n</em> and <em>Q</em>, and calculate the cell potential, <em>E</em><sub>cell</sub>.<br>$\\text{Al}(s)\\,|\\,{\\text{Al}}^{3+}(aq,\\;0.15\\;M)\\,\\|\\,{\\text{Cu}}^{2+}(aq,\\;0.025\\;M)\\,|\\,\\text{Cu}(s)$",
+      "prompt": "对于下面的电池图式，确定 <em>n</em> 和 <em>Q</em> 的值，并计算电池电势 <em>E</em><sub>cell</sub>。<br>$\\text{Al}(s)\\,|\\,{\\text{Al}}^{3+}(aq,\\;0.15\\;M)\\,\\|\\,{\\text{Cu}}^{2+}(aq,\\;0.025\\;M)\\,|\\,\\text{Cu}(s)$",
       "answer": {
         "type": "multi",
         "parts": [
@@ -421,12 +444,12 @@
             "part": "<em>n</em>",
             "value": 6,
             "tol": 0.001,
-            "hint": "Balance the electrons between two Al atoms and three Cu<sup>2+</sup> ions."
+            "hint": "使两个 Al 原子与三个 Cu<sup>2+</sup> 离子之间的电子数配平。"
           },
           {
             "part": "<em>Q</em>",
             "value": 1440,
-            "hint": "<em>Q</em> = [Al<sup>3+</sup>]<sup>2</sup>/[Cu<sup>2+</sup>]<sup>3</sup>."
+            "hint": "<em>Q</em> = [Al<sup>3+</sup>]<sup>2</sup>/[Cu<sup>2+</sup>]<sup>3</sup>。"
           },
           {
             "part": "<em>E</em><sub>cell</sub>",
@@ -436,7 +459,7 @@
           }
         ],
         "generated_by": "source",
-        "solution": "<em>n</em> = 6; <em>Q</em> = 1440; <em>E</em><sub>cell</sub> = +1.97 V, spontaneous."
+        "solution": "<em>n</em> = 6；<em>Q</em> = 1440；<em>E</em><sub>cell</sub> = +1.97 V，自发。"
       }
     },
     {
@@ -449,7 +472,7 @@
         "after": "ex-concentration"
       },
       "cite": "ex-concentration",
-      "prompt": "The concentration cell above was allowed to operate until the cell reaction reached equilibrium. What are the cell potential and the concentrations of zinc(II) in each half-cell for the cell now?",
+      "prompt": "上面的浓差电池一直工作到电池反应达到平衡。此时电池的电池电势以及每个半电池中锌(II)的浓度各是多少？",
       "answer": {
         "type": "multi",
         "parts": [
@@ -457,17 +480,17 @@
             "part": "<em>E</em><sub>cell</sub>",
             "value": 0,
             "unit": "V",
-            "hint": "At equilibrium <em>Q</em> = <em>K</em>, and for a concentration cell <em>K</em> = 1."
+            "hint": "平衡时 <em>Q</em> = <em>K</em>，而对于浓差电池，<em>K</em> = 1。"
           },
           {
             "part": "[Zn<sup>2+</sup>] in each half-cell",
             "value": 0.3,
             "unit": "M",
-            "hint": "The two half-cells hold equal volumes, so the zinc(II) ions are shared equally between them."
+            "hint": "两个半电池所盛体积相等，所以锌(II)离子在它们之间平均分配。"
           }
         ],
         "generated_by": "source",
-        "solution": "<em>E</em><sub>cell</sub> = 0.000 V; [Zn<sup>2+</sup>]<sub>cathode</sub> = [Zn<sup>2+</sup>]<sub>anode</sub> = 0.30 <em>M</em>"
+        "solution": "<em>E</em><sub>cell</sub> = 0.000 V；[Zn<sup>2+</sup>]<sub>阴极</sub> = [Zn<sup>2+</sup>]<sub>阳极</sub> = 0.30 <em>M</em>"
       }
     },
     {
@@ -480,7 +503,7 @@
         "at": "end"
       },
       "cite": "dg",
-      "prompt": "For each pair of standard cell potential and electron stoichiometry values below, calculate a corresponding standard free energy change (kJ).<br>(a) 0.000 V, <em>n</em> = 2<br>(b) +0.434 V, <em>n</em> = 2<br>(c) −2.439 V, <em>n</em> = 1",
+      "prompt": "对于下面每一对标准电池电势与电子化学计量数的值，计算相应的标准自由能变（kJ）。<br>（a）0.000 V，<em>n</em> = 2<br>（b）+0.434 V，<em>n</em> = 2<br>（c）−2.439 V，<em>n</em> = 1",
       "answer": {
         "type": "multi",
         "parts": [
@@ -501,7 +524,7 @@
           }
         ],
         "generated_by": "source",
-        "solution": "(a) 0 kJ/mol; (b) −83.7 kJ/mol; (c) +235.3 kJ/mol"
+        "solution": "（a）0 kJ/mol；（b）−83.7 kJ/mol；（c）+235.3 kJ/mol"
       }
     },
     {
@@ -514,11 +537,11 @@
         "at": "end"
       },
       "cite": "nernst",
-      "prompt": "Determine the standard cell potential and the cell potential under the stated conditions for the electrochemical reactions described here. State whether each is spontaneous or nonspontaneous under each set of conditions at 298.15 K.<br>(a) $\\text{Hg}(l)+{\\text{S}}^{2−}(aq\\text{, 0.10}\\;M)+2{\\text{Ag}}^{\\text{+}}(aq\\text{, 0.25}\\;M)\\;\\longrightarrow \\;2\\text{Ag}(s)+\\text{HgS}(s)$<br>(b) The cell made from an anode half-cell consisting of an aluminum electrode in 0.015 <em>M</em> aluminum nitrate solution and a cathode half-cell consisting of a nickel electrode in 0.25 <em>M</em> nickel(II) nitrate solution.<br>(c) The cell comprised of a half-cell in which aqueous bromide ion (1.0 <em>M</em>) is being oxidized to aqueous bromine (0.11 <em>M</em>) and a half-cell in which Al<sup>3+</sup> (0.023 <em>M</em>) is being reduced to aluminum metal.",
+      "prompt": "确定这里所描述的电化学反应的标准电池电势和在所述条件下的电池电势。说明在 298.15 K 下，每一种在每组条件下是自发的还是非自发的。<br>（a）$\\text{Hg}(l)+{\\text{S}}^{2−}(aq\\text{, 0.10}\\;M)+2{\\text{Ag}}^{\\text{+}}(aq\\text{, 0.25}\\;M)\\;\\longrightarrow \\;2\\text{Ag}(s)+\\text{HgS}(s)$<br>（b）由阳极半电池（铝电极浸在 0.015 <em>M</em> 硝酸铝溶液中）和阴极半电池（镍电极浸在 0.25 <em>M</em> 硝酸镍(II)溶液中）构成的电池。<br>（c）由两个半电池构成的电池：一个半电池中，水溶液中的溴离子（1.0 <em>M</em>）被氧化为水溶液中的溴（0.11 <em>M</em>）；另一个半电池中，Al<sup>3+</sup>（0.023 <em>M</em>）被还原为金属铝。",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "(a) standard cell potential: 1.50 V, spontaneous; cell potential under stated conditions: 1.43 V, spontaneous; (b) standard cell potential: 1.405 V, spontaneous; cell potential under stated conditions: 1.423 V, spontaneous; (c) standard cell potential: −2.749 V, nonspontaneous; cell potential under stated conditions: −2.733 V, nonspontaneous"
+        "solution": "（a）标准电池电势：1.50 V，自发；所述条件下的电池电势：1.43 V，自发；（b）标准电池电势：1.405 V，自发；所述条件下的电池电势：1.423 V，自发；（c）标准电池电势：−2.749 V，非自发；所述条件下的电池电势：−2.733 V，非自发"
       }
     },
     {
@@ -531,7 +554,7 @@
         "at": "end"
       },
       "cite": "k",
-      "prompt": "Use the data in Appendix L to calculate equilibrium constants for the following reactions. Assume 298.15 K if no temperature is given.<br>(a) $\\text{AgCl}(s)\\rightleftharpoons {\\text{Ag}}^{\\text{+}}(aq)+{\\text{Cl}}^{\\text{−}}(aq)$<br>(b) $\\text{CdS}(s)\\rightleftharpoons {\\text{Cd}}^{2+}(aq)+{\\text{S}}^{2−}(aq)\\hspace{5em}\\text{at 377 K}$<br>(c) ${\\text{Hg}}^{2+}(aq)+4{\\text{Br}}^{\\text{−}}(aq)\\rightleftharpoons {[{\\text{HgBr}}_{4}]}^{2−}(aq)$<br>(d) ${\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons {\\text{H}}^{\\text{+}}(aq)+{\\text{OH}}^{\\text{−}}(aq)\\hspace{5em}\\text{at 25}\\;{}^{\\circ}\\text{C}$",
+      "prompt": "利用附录 L 中的数据计算下列反应的平衡常数。如果没有给出温度，则假定为 298.15 K。<br>（a）$\\text{AgCl}(s)\\rightleftharpoons {\\text{Ag}}^{\\text{+}}(aq)+{\\text{Cl}}^{\\text{−}}(aq)$<br>（b）$\\text{CdS}(s)\\rightleftharpoons {\\text{Cd}}^{2+}(aq)+{\\text{S}}^{2−}(aq)\\hspace{5em}\\text{在 377 K 时}$<br>（c）${\\text{Hg}}^{2+}(aq)+4{\\text{Br}}^{\\text{−}}(aq)\\rightleftharpoons {[{\\text{HgBr}}_{4}]}^{2−}(aq)$<br>（d）${\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons {\\text{H}}^{\\text{+}}(aq)+{\\text{OH}}^{\\text{−}}(aq)\\hspace{5em}\\text{在 25}\\;{}^{\\circ}\\text{C 时}$",
       "answer": {
         "type": "multi",
         "parts": [
@@ -557,7 +580,7 @@
           }
         ],
         "generated_by": "source",
-        "solution": "(a) 1.7 × 10<sup>−10</sup>; (b) 2.6 × 10<sup>−21</sup>; (c) 4.693 × 10<sup>21</sup>; (d) 1.0 × 10<sup>−14</sup>"
+        "solution": "（a）1.7 × 10<sup>−10</sup>；（b）2.6 × 10<sup>−21</sup>；（c）4.693 × 10<sup>21</sup>；（d）1.0 × 10<sup>−14</sup>"
       }
     }
   ],
@@ -610,17 +633,17 @@
   "derivations": [
     {
       "id": "free-energy-cell-potential",
-      "what": "the standard free energy change from the standard cell potential",
-      "source": "Chemistry 2e, 17.4 Potential, Free Energy, and Equilibrium",
+      "what": "由标准电池电势求标准自由能变",
+      "source": "化学（第2版），17.4 电势、自由能与平衡",
       "nodes": [
         {
           "assumes": [
             {
-              "text": "In a galvanic cell under standard state conditions, essentially all the work is associated with transferring the electrons from reductant to oxidant.",
+              "text": "在标准状态条件下的原电池中，基本上全部的功都与电子从还原剂转移到氧化剂有关。",
               "src": "17.4"
             },
             {
-              "text": "The work, $w$, is negative if it is done by the system.",
+              "text": "如果功 $w$ 由体系做出，则它为负。",
               "src": "5.3"
             },
             {
@@ -628,7 +651,7 @@
               "src": "17.3"
             },
             {
-              "text": "Faraday’s constant, $F$, is the charge in coulombs of one mole of electrons.",
+              "text": "法拉第常数 $F$ 是 1 摩尔电子的电荷（以库仑计）。",
               "src": "17.4"
             }
           ],
@@ -649,14 +672,14 @@
                 1,
                 2
               ],
-              "cap": "A potential is energy per unit charge, so moving the charge $Q$ through $E^\\circ_\\text{cell}$ is work of size $QE^\\circ_\\text{cell}$; the cell does this work, so it is negative."
+              "cap": "电势是单位电荷的能量，所以使电荷 $Q$ 通过 $E^\\circ_\\text{cell}$ 所做的功的大小为 $QE^\\circ_\\text{cell}$；这个功由电池做出，所以为负。"
             },
             {
               "tex": "\\mk{G}{\\kdGo} = \\mk{e}{\\kwelec} = \\mk{x}{-\\kn\\kFaraday}\\mk{E}{\\kEocell}",
               "uses": [
                 3
               ],
-              "cap": "$n$ moles of electrons carry the charge $nF$."
+              "cap": "$n$ 摩尔电子所携带的电荷是 $nF$。"
             },
             {
               "tex": "\\mk{G}{\\kdGo} = \\mk{x}{-\\kn\\kFaraday}\\mk{E}{\\kEocell}",
@@ -669,8 +692,8 @@
     },
     {
       "id": "cell-potential-k",
-      "what": "the standard cell potential and the equilibrium constant",
-      "source": "Chemistry 2e, 17.4 Potential, Free Energy, and Equilibrium",
+      "what": "标准电池电势与平衡常数",
+      "source": "化学（第2版），17.4 电势、自由能与平衡",
       "nodes": [
         {
           "assumes": [
@@ -701,8 +724,8 @@
     },
     {
       "id": "nernst",
-      "what": "the Nernst equation",
-      "source": "Chemistry 2e, 17.4 Potential, Free Energy, and Equilibrium",
+      "what": "能斯特方程",
+      "source": "化学（第2版），17.4 电势、自由能与平衡",
       "nodes": [
         {
           "assumes": [
@@ -726,7 +749,7 @@
                 1,
                 0
               ],
-              "cap": "Free energy and potential are related the same way under any conditions, so $\\Delta G = -nFE_\\text{cell}$ as $\\Delta G^\\circ = -nFE^\\circ_\\text{cell}$."
+              "cap": "无论在什么条件下，自由能与电势的关系都相同，所以正如 $\\Delta G^\\circ = -nFE^\\circ_\\text{cell}$，有 $\\Delta G = -nFE_\\text{cell}$。"
             },
             {
               "tex": "\\mk{G}{\\kEcell} = \\mk{G0}{\\kEocell} - \\mk{L}{\\;\\frac{R\\kT}{\\kn\\kFaraday}\\;\\text{ln}\\;\\kQrxn}",
@@ -739,8 +762,8 @@
     },
     {
       "id": "nernst-298",
-      "what": "the Nernst equation at 298 K in base-10 logarithms",
-      "source": "Chemistry 2e, 17.4 Potential, Free Energy, and Equilibrium",
+      "what": "298 K 时以 10 为底对数形式的能斯特方程",
+      "source": "化学（第2版），17.4 电势、自由能与平衡",
       "nodes": [
         {
           "assumes": [
@@ -762,7 +785,7 @@
             },
             {
               "tex": "\\ln x = 2.303\\,\\log x",
-              "src": "Appendix B"
+              "src": "附录 B"
             }
           ],
           "then": {
@@ -789,7 +812,7 @@
               "uses": [
                 4
               ],
-              "cap": "Since $x = 10^{\\log x}$ and the natural logarithm of 10 is 2.303, $\\ln x = 2.303\\log x$."
+              "cap": "由于 $x = 10^{\\log x}$，而 10 的自然对数为 2.303，所以 $\\ln x = 2.303\\log x$。"
             },
             {
               "tex": "\\mk{E}{\\kEcell} = \\mk{E0}{\\kEocell} - \\mk{c}{\\;\\frac{0.0592\\text{ V}}{\\kn}}\\;\\mk{L}{\\text{log}\\;\\kQrxn}",

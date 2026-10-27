@@ -3,7 +3,7 @@ window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['7.4'] = function (root, F) {
 const { el, tex, PAL, register, begin, line, text, headline } = F;
 const RAD = Math.PI / 180;
-const NAMES = { C: 'carbon', N: 'nitrogen', O: 'oxygen', S: 'sulfur' };
+const NAMES = { C: '碳', N: '氮', O: '氧', S: '硫' };
 const VALENCE = { C: 4, N: 5, O: 6, S: 6 };
 const sum = (a) => a.reduce((t, x) => t + x, 0);
 const signed = (q) => (q > 0 ? `+${q}` : q < 0 ? `−${-q}` : '0');
@@ -62,21 +62,21 @@ function lewis(ctx, S, o) {
   });
   const STRUCTS = [
     { label: 'CO₂: O=C=O', name: 'CO_{2}', ...lin(['O', 'C', 'O'], [2, 0, 2], [2, 2], ''),
-      verdict: 'Every formal charge is zero, so this structure is preferred (Guideline 1).' },
+      verdict: '每个形式电荷都为零，所以这个结构更优（准则 1）。' },
     { label: 'CO₂: O≡C–O', name: 'CO_{2}', ...lin(['O', 'C', 'O'], [1, 0, 3], [3, 1], ''),
-      verdict: 'Two atoms carry formal charges of +1 and −1, so this structure is less likely than O=C=O (Guideline 1).' },
+      verdict: '有两个原子带有 +1 和 −1 的形式电荷，所以这个结构不如 O=C=O 可能（准则 1）。' },
     { label: 'CO₂: O=O=C', name: 'CO_{2}', ...lin(['O', 'O', 'C'], [2, 0, 2], [2, 2], ''),
-      verdict: 'Formal charges of +2 and −2 are larger than in either structure with carbon in the center (Guideline 2).' },
+      verdict: '+2 和 −2 的形式电荷，比碳在中心的两种结构中的形式电荷都大（准则 2）。' },
     { label: 'NCS⁻', name: 'NCS⁻', ...lin(['N', 'C', 'S'], [2, 0, 2], [2, 2], '−'),
-      verdict: 'Only one atom carries a formal charge, and the −1 is on nitrogen, the most electronegative atom, so this arrangement is preferred (Guidelines 2 and 4).' },
+      verdict: '只有一个原子带有形式电荷，且 −1 在电负性最大的氮原子上，所以这种排布更优（准则 2 和 4）。' },
     { label: 'CNS⁻', name: 'CNS⁻', ...lin(['C', 'N', 'S'], [2, 0, 2], [2, 2], '−'),
-      verdict: 'Two atoms carry formal charges, one of them −2, so this arrangement is less likely than NCS⁻ (Guideline 2).' },
+      verdict: '有两个原子带有形式电荷，其中一个为 −2，所以这种排布不如 NCS⁻ 可能（准则 2）。' },
     { label: 'CSN⁻', name: 'CSN⁻', ...lin(['C', 'S', 'N'], [2, 0, 2], [2, 2], '−'),
-      verdict: 'Every atom carries a formal charge, as large as +2 and −2, so this arrangement is the least likely (Guideline 2).' },
+      verdict: '每个原子都带有形式电荷，大到 +2 和 −2，所以这种排布最不可能（准则 2）。' },
     { label: 'N₂O: N≡N–O', name: 'N_{2}O', ...lin(['N', 'N', 'O'], [1, 0, 3], [3, 1], ''),
-      verdict: 'No formal charge is larger than one, and the −1 is on oxygen, the more electronegative atom, so this structure is preferred (Guidelines 2 and 4).' },
+      verdict: '没有大于一的形式电荷，且 −1 在电负性较大的氧原子上，所以这个结构更优（准则 2 和 4）。' },
     { label: 'N₂O: N=O=N', name: 'N_{2}O', ...lin(['N', 'O', 'N'], [2, 0, 2], [2, 2], ''),
-      verdict: 'The central oxygen atom carries +2 between two atoms of −1, so this structure is less likely than N≡N–O (Guideline 2).' },
+      verdict: '中心的氧原子带 +2，两侧的原子各带 −1，所以这个结构不如 N≡N–O 可能（准则 2）。' },
   ];
   /* per atom: valence electrons, lone pair electrons, bonding electrons and the formal charge they give */
   const book = (S) => S.atoms.map((a, i) => {
@@ -86,8 +86,8 @@ function lewis(ctx, S, o) {
   });
 
   const d = F.sim(root, 'sim-formal-charge', H);
-  const pickS = F.select(d.controls, { label: '\\text{structure}', options: STRUCTS.map((s, i) => ({ value: String(i), label: s.label })), value: '0' });
-  const pickA = F.choice(d.controls, { label: '\\text{atom}', options: [{ value: '0', label: 'left' }, { value: '1', label: 'central' }, { value: '2', label: 'right' }], value: '1' });
+  const pickS = F.select(d.controls, { label: '\\text{结构}', options: STRUCTS.map((s, i) => ({ value: String(i), label: s.label })), value: '0' });
+  const pickA = F.choice(d.controls, { label: '\\text{原子}', options: [{ value: '0', label: '左' }, { value: '1', label: '中心' }, { value: '2', label: '右' }], value: '1' });
   let hits = [];
   F.hover(d.stage, () => hits);
 
@@ -105,14 +105,14 @@ function lewis(ctx, S, o) {
     const si = +pickS.value, ai = +pickA.value, k = pickS.k;
     if (k < 1 && pickS.from !== pickS.value) drawOne(ctx, +pickS.from, 1 - k);
     drawOne(ctx, si, k < 1 && pickS.from !== pickS.value ? k : 1);
-    text(ctx, 'formal charge', CX - GAP - 110, CY + 110, PAL.muted, { size: 17, align: 'right' });
+    text(ctx, '形式电荷', CX - GAP - 110, CY + 110, PAL.muted, { size: 17, align: 'right' });
     const S = STRUCTS[si], B = book(S), total = sum(B.map((b) => b.fc));
     headline(ctx, S.verdict);
-    hits = S.atoms.map((a, i) => ({ x: CX + a.x, y: CY, r: 36, name: `${NAMES[a.s]} (${a.s}): formal charge ${signed(B[i].fc)}` }));
+    hits = S.atoms.map((a, i) => ({ x: CX + a.x, y: CY, r: 36, name: `${NAMES[a.s]}（${a.s}）：形式电荷 ${signed(B[i].fc)}` }));
     const b = B[ai], a = S.atoms[ai];
     readout(d.readout,
-      `\\text{formal charge of ${a.s}} = ${b.v} - ${b.lone} - \\tfrac{1}{2}(${b.bonding}) = ${b.fc < 0 ? '-' : ''}${Math.abs(b.fc)}`,
-      `The formal charges add up to ${B.map((x, i) => (i === 0 ? signed(x.fc) : `${x.fc < 0 ? '−' : '+'} ${Math.abs(x.fc)}`)).join(' ')} = ${signed(total)}, the charge of ${S.charge ? 'the ion' : 'the molecule'}.`);
+      `\\text{${a.s} 的形式电荷} = ${b.v} - ${b.lone} - \\tfrac{1}{2}(${b.bonding}) = ${b.fc < 0 ? '-' : ''}${Math.abs(b.fc)}`,
+      `形式电荷之和为 ${B.map((x, i) => (i === 0 ? signed(x.fc) : `${x.fc < 0 ? '−' : '+'} ${Math.abs(x.fc)}`)).join(' ')} = ${signed(total)}，等于${S.charge ? '该离子' : '该分子'}的电荷。`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -130,15 +130,15 @@ function lewis(ctx, S, o) {
       label: 'NO₂⁻', center: 'N', bond: 'N–O', charge: '−', share: '½−',
       atoms: [{ s: 'N', x: 0, y: -20, lp: 1 }, { s: 'O', x: -115, y: 45 }, { s: 'O', x: 115, y: 45 }],
       forms: [[1, 2], [2, 1]],
-      tex: '\\text{bonds per N–O} = \\frac{1 + 2}{2} = 1.5',
-      head: 'Two resonance forms: in the hybrid, each N–O bond is the average of a single and a double bond.',
+      tex: '\\text{每个 N–O 的键数} = \\frac{1 + 2}{2} = 1.5',
+      head: '两个共振式：在杂化体中，每个 N–O 键是一个单键与一个双键的平均。',
     },
     co3: {
       label: 'CO₃²⁻', center: 'C', bond: 'C–O', charge: '2−', share: '⅔−',
       atoms: [{ s: 'C', x: 0, y: 0, lp: 0 }, { s: 'O', x: -105, y: 60 }, { s: 'O', x: 105, y: 60 }, { s: 'O', x: 0, y: -120 }],
       forms: [[2, 1, 1], [1, 2, 1], [1, 1, 2]],
-      tex: '\\text{bonds per C–O} = \\frac{1 + 1 + 2}{3} \\approx 1.33',
-      head: 'Three resonance forms: in the hybrid, each C–O bond is the average of two single bonds and one double bond.',
+      tex: '\\text{每个 C–O 的键数} = \\frac{1 + 1 + 2}{3} \\approx 1.33',
+      head: '三个共振式：在杂化体中，每个 C–O 键是两个单键与一个双键的平均。',
     },
   };
   const form = (I, orders) => ({
@@ -148,7 +148,7 @@ function lewis(ctx, S, o) {
   const hybrid = (I) => ({ atoms: I.atoms.map((a, i) => (i === 0 ? a : { ...a, lp: 0 })), bonds: I.atoms.slice(1).map((_, j) => [0, j + 1, 'h']), charge: I.charge });
 
   const d = F.sim(root, 'sim-resonance-hybrid', H);
-  const pick = F.choice(d.controls, { label: '\\text{ion}', options: Object.entries(IONS).map(([v, I]) => ({ value: v, label: I.label })), value: 'no2' });
+  const pick = F.choice(d.controls, { label: '\\text{离子}', options: Object.entries(IONS).map(([v, I]) => ({ value: v, label: I.label })), value: 'no2' });
   let hits = [];
   F.hover(d.stage, () => hits);
 
@@ -163,15 +163,15 @@ function lewis(ctx, S, o) {
         F.arrow(ctx, (ax + bx) / 2, ROW, bx, ROW, PAL.ink, 3); F.arrow(ctx, (ax + bx) / 2, ROW, ax, ROW, PAL.ink, 3);
       }
     });
-    text(ctx, 'resonance forms', 700, ROW + 105, PAL.muted, { size: 17, align: 'center' });
+    text(ctx, '共振式', 700, ROW + 105, PAL.muted, { size: 17, align: 'center' });
     line(ctx, 260, ROW + 132, 1140, ROW + 132, PAL.rule, 1.5);
     const P = lewis(ctx, hybrid(I), { cx: 700, cy: HY, sc: 0.9, margin: 72 });
     P.slice(1).forEach(([x, y]) => {
       const dx = x - P[0][0], dy = y - P[0][1], L = Math.hypot(dx, dy);
       text(ctx, I.share, x + dx / L * 44, y + dy / L * 44, PAL.ink, { size: 22, weight: 600, align: 'center' });
     });
-    text(ctx, 'resonance hybrid', 700, H - 18, PAL.muted, { size: 17, align: 'center' });
-    I.atoms.forEach((a, i) => out.push({ x: P[i][0], y: P[i][1], r: 36, name: i ? `oxygen (O): ${I.share.replace('−', '')} of the negative charge` : `${NAMES[a.s]} (${a.s}), the central atom` }));
+    text(ctx, '共振杂化体', 700, H - 18, PAL.muted, { size: 17, align: 'center' });
+    I.atoms.forEach((a, i) => out.push({ x: P[i][0], y: P[i][1], r: 36, name: i ? `氧（O）：负电荷的 ${I.share.replace('−', '')}` : `${NAMES[a.s]}（${a.s}），中心原子` }));
     return out;
   }
 

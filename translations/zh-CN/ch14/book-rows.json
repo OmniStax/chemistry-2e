@@ -1,0 +1,1282 @@
+{
+ "types": [],
+ "symbols": [
+  {
+   "sym": "[H3O+]",
+   "latex": "[\\text{H}_{3}\\text{O}^{+}]",
+   "macro": "\\kconcHyd"
+  },
+  {
+   "sym": "[OH-]",
+   "latex": "[\\text{OH}^{-}]",
+   "macro": "\\kconcOH"
+  },
+  {
+   "sym": "[HA]",
+   "latex": "[\\text{HA}]",
+   "macro": "\\kconcHA"
+  },
+  {
+   "sym": "[A-]",
+   "latex": "[\\text{A}^{-}]",
+   "macro": "\\kconcAm"
+  },
+  {
+   "sym": "[HB+]",
+   "latex": "[\\text{HB}^{+}]",
+   "macro": "\\kconcHBp"
+  },
+  {
+   "sym": "[HA]_0",
+   "latex": "[\\text{HA}]_{0}",
+   "macro": "\\kconcHAz"
+  },
+  {
+   "sym": "[H3O+]_eq",
+   "latex": "[\\text{H}_{3}\\text{O}^{+}]_{\\text{eq}}",
+   "macro": "\\kconcHydeq"
+  },
+  {
+   "sym": "K_w",
+   "latex": "K_{\\text{w}}",
+   "macro": "\\kKw"
+  },
+  {
+   "sym": "K_a",
+   "latex": "K_{\\text{a}}",
+   "macro": "\\kKa"
+  },
+  {
+   "sym": "K_b_ion",
+   "latex": "K_{\\text{b}}",
+   "macro": "\\kKbion"
+  },
+  {
+   "sym": "pK_w",
+   "latex": "\\text{p}K_{\\text{w}}",
+   "macro": "\\kpKw"
+  },
+  {
+   "sym": "pK_a",
+   "latex": "\\text{p}K_{\\text{a}}",
+   "macro": "\\kpKa"
+  },
+  {
+   "sym": "pK_b",
+   "latex": "\\text{p}K_{\\text{b}}",
+   "macro": "\\kpKb"
+  },
+  {
+   "sym": "K_a1",
+   "latex": "K_{\\text{a1}}",
+   "macro": "\\kKaone"
+  },
+  {
+   "sym": "K_a2",
+   "latex": "K_{\\text{a2}}",
+   "macro": "\\kKatwo"
+  },
+  {
+   "sym": "K_a3",
+   "latex": "K_{\\text{a3}}",
+   "macro": "\\kKathree"
+  },
+  {
+   "sym": "K_b1",
+   "latex": "K_{\\text{b1}}",
+   "macro": "\\kKbone"
+  },
+  {
+   "sym": "K_b2",
+   "latex": "K_{\\text{b2}}",
+   "macro": "\\kKbtwo"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "bronsted-lowry-acids-bases",
+   "kind": "definition",
+   "section": "14.1",
+   "name": "布朗斯特–劳里酸碱",
+   "statement": "布朗斯特和劳里按氢离子的转移来定义酸和碱：给出质子的化合物是布朗斯特–劳里酸，接受质子的化合物是布朗斯特–劳里碱。因此，酸碱反应就是质子从给体转移到受体的过程。"
+  },
+  {
+   "id": "conjugate-acid-base-pairs",
+   "kind": "definition",
+   "section": "14.1",
+   "name": "共轭酸碱对",
+   "statement": "酸给出 H<sup>+</sup> 后剩下的物种是它的共轭碱，因为它在逆反应中作为质子受体起反应；碱接受 H<sup>+</sup> 后转变为它的共轭酸。因此，每个布朗斯特–劳里反应都涉及两个共轭酸碱对。"
+  },
+  {
+   "id": "write-ionization-equations",
+   "kind": "skill",
+   "section": "14.1",
+   "name": "书写酸和碱的电离方程式",
+   "statement": "酸电离是酸与水反应生成水合氢离子和该酸的共轭碱的反应；碱电离是碱与水反应生成氢氧根离子和该碱的共轭酸的反应。书写这些方程式，需要判断哪个物种给出质子、哪个物种接受质子。"
+  },
+  {
+   "id": "amphiprotic-species",
+   "kind": "definition",
+   "section": "14.1",
+   "name": "质子两性物种",
+   "terms": [
+    "质子两性的"
+   ],
+   "statement": "既能给出质子又能接受质子的物种是质子两性的。把它加入水中，它的酸平衡和碱平衡会同时建立。"
+  },
+  {
+   "id": "water-autoionization",
+   "kind": "idea",
+   "section": "14.1",
+   "name": "水的自电离",
+   "statement": "液态水会发生非常轻微的自电离，这个反应的平衡常数就是水的离子积常数 $K_{\\text{w}}$。该过程是吸热的，所以电离的程度以及 $K_{\\text{w}}$ 都随温度升高而增大。"
+  },
+  {
+   "id": "kw-ion-concentrations",
+   "kind": "skill",
+   "section": "14.1",
+   "name": "计算水中的离子浓度",
+   "statement": "水合氢离子浓度与氢氧根离子浓度之积由 $K_{\\text{w}}$ 固定，所以二者成反比：知道其中一个就能得到另一个，而在纯水中，二者都等于 $K_{\\text{w}}$ 的平方根。"
+  },
+  {
+   "id": "bronsted-lowry-acid",
+   "kind": "definition",
+   "section": "14.1",
+   "name": "布朗斯特–劳里酸",
+   "terms": [
+    "布朗斯特–劳里酸"
+   ],
+   "statement": "布朗斯特–劳里酸是把质子（H<sup>+</sup>）给予另一种化合物的化合物。"
+  },
+  {
+   "id": "bronsted-lowry-base",
+   "kind": "definition",
+   "section": "14.1",
+   "name": "布朗斯特–劳里碱",
+   "terms": [
+    "布朗斯特–劳里碱"
+   ],
+   "statement": "布朗斯特–劳里碱是从另一种化合物接受质子（H<sup>+</sup>）的化合物。"
+  },
+  {
+   "id": "conjugate-acid",
+   "kind": "definition",
+   "section": "14.1",
+   "name": "共轭酸",
+   "terms": [
+    "共轭酸"
+   ],
+   "statement": "碱的共轭酸是该碱接受一个质子后形成的物种。"
+  },
+  {
+   "id": "conjugate-base",
+   "kind": "definition",
+   "section": "14.1",
+   "name": "共轭碱",
+   "terms": [
+    "共轭碱"
+   ],
+   "statement": "酸的共轭碱是该酸给出一个质子后形成的物种。"
+  },
+  {
+   "id": "acid-ionization",
+   "kind": "definition",
+   "section": "14.1",
+   "name": "酸电离",
+   "terms": [
+    "酸电离"
+   ],
+   "statement": "酸电离是酸与水的反应，生成水合氢离子和该酸的共轭碱。"
+  },
+  {
+   "id": "base-ionization",
+   "kind": "definition",
+   "section": "14.1",
+   "name": "碱电离",
+   "terms": [
+    "碱电离"
+   ],
+   "statement": "碱电离是碱与水的反应，生成氢氧根离子和该碱的共轭酸。"
+  },
+  {
+   "id": "amphoteric",
+   "kind": "definition",
+   "section": "14.1",
+   "name": "两性的",
+   "terms": [
+    "两性的"
+   ],
+   "statement": "两性物种是既能作为酸又能作为碱的物种。"
+  },
+  {
+   "id": "autoionization",
+   "kind": "definition",
+   "section": "14.1",
+   "name": "自电离",
+   "terms": [
+    "自电离"
+   ],
+   "statement": "自电离是相同物种之间发生的、生成离子型产物的反应；对水而言，两个分子反应生成一个水合氢离子和一个氢氧根离子。"
+  },
+  {
+   "id": "ion-product-constant-for-water",
+   "kind": "definition",
+   "section": "14.1",
+   "name": "水的离子积常数",
+   "symbol": "K_w",
+   "terms": [
+    "水的离子积常数"
+   ],
+   "type": "equilibrium-constant",
+   "statement": "水的离子积常数 $K_{\\text{w}}$ 是水自电离的平衡常数，等于水合氢离子浓度与氢氧根离子浓度之积；25 °C 时为 1.0 × 10<sup>−14</sup>。",
+   "forms": [
+    {
+     "id": "eq-kw",
+     "latex": "K_{\\text{w}}=[\\text{H}_{3}\\text{O}^{+}][\\text{OH}^{-}]=1.0\\times10^{-14}",
+     "ktex": "K_{\\text{w}}=\\kconcHyd\\kconcOH=1.0\\times10^{-14}",
+     "condition": "任何 25 °C 的水溶液",
+     "anchor": "14.1-autoionization"
+    }
+   ]
+  },
+  {
+   "id": "ph-and-poh-scales",
+   "kind": "definition",
+   "section": "14.2",
+   "name": "pH 和 pOH 标度",
+   "statement": "水合氢离子和氢氧根离子的浓度跨越许多个数量级，所以用 p 函数，即以 10 为底的负对数来表示：pH = −log[H<sub>3</sub>O<sup>+</sup>]，pOH = −log[OH<sup>−</sup>]。pH 每相差一个单位，水合氢离子浓度就相差十倍。"
+  },
+  {
+   "id": "ph-plus-poh",
+   "kind": "result",
+   "section": "14.2",
+   "name": "pH 与 pOH 之和",
+   "statement": "对 $K_{\\text{w}}$ 的表达式取负对数可知，任何水溶液的 pH 与 pOH 之和等于 p$K_{\\text{w}}$，25 °C 时为 14.00。",
+   "forms": [
+    {
+     "id": "eq-ph-plus-poh",
+     "latex": "\\text{pH}+\\text{pOH}=\\text{p}K_{\\text{w}}=14.00",
+     "ktex": "\\kpH+\\kpOH=\\text{p}K_{\\text{w}}=14.00",
+     "condition": "任何 25 °C 的水溶液",
+     "anchor": "14.2-p-functions"
+    }
+   ]
+  },
+  {
+   "id": "ph-calculations",
+   "kind": "skill",
+   "section": "14.2",
+   "name": "浓度、pH 与 pOH 之间的换算",
+   "statement": "pH 和 pOH 的定义以及二者之和，使我们能在 [H<sub>3</sub>O<sup>+</sup>]、[OH<sup>−</sup>]、pH 和 pOH 之间相互换算；对一个数值取对数时，结果保留的小数位数与该数值的有效数字位数相同。"
+  },
+  {
+   "id": "measuring-ph",
+   "kind": "idea",
+   "section": "14.2",
+   "name": "用 pH 计和指示剂测量 pH",
+   "statement": "溶液的酸性通常通过测量 pH 来评估，可以用 pH 计直接测量，也可以用有色指示剂目测；pOH 通常不测量，因为它很容易由 pH 算出。"
+  },
+  {
+   "id": "acidic-solution",
+   "kind": "definition",
+   "section": "14.2",
+   "name": "酸性溶液",
+   "terms": [
+    "酸性的"
+   ],
+   "statement": "酸性溶液中水合氢离子的浓度大于氢氧根离子的浓度。"
+  },
+  {
+   "id": "basic-solution",
+   "kind": "definition",
+   "section": "14.2",
+   "name": "碱性溶液",
+   "terms": [
+    "碱性的"
+   ],
+   "statement": "碱性溶液中水合氢离子的浓度小于氢氧根离子的浓度。"
+  },
+  {
+   "id": "neutral-solution",
+   "kind": "definition",
+   "section": "14.2",
+   "name": "中性溶液",
+   "terms": [
+    "中性的"
+   ],
+   "statement": "中性溶液中水合氢离子和氢氧根离子的浓度相等。由于 $K_{\\text{w}}$ 随温度而变，中性溶液的 pH 也随温度而变：25 °C 时为 7.00。"
+  },
+  {
+   "id": "ph",
+   "kind": "definition",
+   "section": "14.2",
+   "name": "pH",
+   "symbol": "pH",
+   "terms": [
+    "pH"
+   ],
+   "type": "concentration",
+   "statement": "溶液的 pH 是其水合氢离子的物质的量浓度以 10 为底的负对数。",
+   "forms": [
+    {
+     "id": "eq-ph",
+     "latex": "\\text{pH}=-\\log[\\text{H}_{3}\\text{O}^{+}]",
+     "ktex": "\\kpH=-\\log\\kconcHyd",
+     "condition": "任何水溶液",
+     "anchor": "14.2-p-functions"
+    },
+    {
+     "id": "eq-h3o-from-ph",
+     "latex": "[\\text{H}_{3}\\text{O}^{+}]=10^{-\\text{pH}}",
+     "ktex": "\\kconcHyd=10^{-\\kpH}",
+     "condition": "任何水溶液",
+     "anchor": "14.2-p-functions"
+    }
+   ]
+  },
+  {
+   "id": "poh",
+   "kind": "definition",
+   "section": "14.2",
+   "name": "pOH",
+   "symbol": "pOH",
+   "terms": [
+    "pOH"
+   ],
+   "type": "concentration",
+   "statement": "溶液的 pOH 是其氢氧根离子的物质的量浓度以 10 为底的负对数。",
+   "forms": [
+    {
+     "id": "eq-poh",
+     "latex": "\\text{pOH}=-\\log[\\text{OH}^{-}]",
+     "ktex": "\\kpOH=-\\log\\kconcOH",
+     "condition": "任何水溶液",
+     "anchor": "14.2-p-functions"
+    },
+    {
+     "id": "eq-oh-from-poh",
+     "latex": "[\\text{OH}^{-}]=10^{-\\text{pOH}}",
+     "ktex": "\\kconcOH=10^{-\\kpOH}",
+     "condition": "任何水溶液",
+     "anchor": "14.2-p-functions"
+    }
+   ]
+  },
+  {
+   "id": "acid-base-ionization-constants",
+   "kind": "definition",
+   "section": "14.3",
+   "name": "酸和碱的相对强度",
+   "statement": "酸或碱的相对强度，是它在水中电离的程度，用其电离的平衡常数来衡量，其中作为溶剂的水不出现。该常数越大，酸或碱越强。"
+  },
+  {
+   "id": "percent-ionization",
+   "kind": "definition",
+   "section": "14.3",
+   "name": "电离百分数",
+   "terms": [
+    "电离百分数"
+   ],
+   "statement": "衡量酸的强度的另一种方法是电离百分数，即平衡时水合氢离子的浓度除以酸的初始浓度，再乘以 100。与 $K_{\\text{a}}$ 不同，弱酸的电离百分数随其初始浓度而变，浓度增大时电离百分数减小。",
+   "forms": [
+    {
+     "id": "eq-percent-ionization",
+     "latex": "\\text{Percent ionization}=\\frac{[\\text{H}_{3}\\text{O}^{+}]_{\\text{eq}}}{[\\text{HA}]_{0}}\\times100",
+     "ktex": "\\text{Percent ionization}=\\frac{\\kconcHydeq}{\\kconcHAz}\\times100",
+     "condition": "弱酸 HA",
+     "anchor": "14.3-ionization"
+    }
+   ]
+  },
+  {
+   "id": "conjugate-pair-strengths",
+   "kind": "result",
+   "section": "14.3",
+   "name": "共轭酸碱对的强度",
+   "statement": "将 HA 的酸电离与 A<sup>−</sup> 的碱电离相加，就得到水的自电离，所以二者的电离常数之积等于 $K_{\\text{w}}$。酸或碱越强，其共轭碱（或共轭酸）越弱，强酸或强碱的共轭物，强度可以忽略不计。",
+   "forms": [
+    {
+     "id": "eq-ka-kb-kw",
+     "latex": "K_{\\text{a}}\\times K_{\\text{b}}=1.0\\times10^{-14}=K_{\\text{w}}",
+     "condition": "25 °C 的共轭酸碱对",
+     "anchor": "14.3-conjugate"
+    }
+   ]
+  },
+  {
+   "id": "leveling-effect",
+   "kind": "idea",
+   "section": "14.3",
+   "name": "拉平效应",
+   "terms": [
+    "拉平效应"
+   ],
+   "statement": "比 H<sub>3</sub>O<sup>+</sup> 更强的酸与水完全反应生成 H<sub>3</sub>O<sup>+</sup>，比 OH<sup>−</sup> 更强的碱与水完全反应生成 OH<sup>−</sup>，所以在水中，所有这类酸和碱表现出同样的强度。只有在碱性或酸性比水更弱的溶剂中，它们的差别才显现出来。"
+  },
+  {
+   "id": "ka-kb-from-equilibrium-data",
+   "kind": "skill",
+   "section": "14.3",
+   "name": "确定 Ka 或 Kb",
+   "statement": "把平衡浓度代入电离常数表达式，可以直接得到 $K_{\\text{a}}$ 或 $K_{\\text{b}}$；若只知道形式浓度和 pH，则由 pH 得到平衡时的 [H<sub>3</sub>O<sup>+</sup>]，其余浓度由 ICE 表求出。"
+  },
+  {
+   "id": "weak-acid-base-equilibrium-concentrations",
+   "kind": "skill",
+   "section": "14.3",
+   "name": "计算弱酸或弱碱的平衡",
+   "statement": "由初始浓度和电离常数建立 ICE 表，可以得到各平衡浓度。当常数很小而初始浓度很大时，只要 $x$ 小于初始浓度的 5%，就可以忽略变化量 $x$ 相对于初始浓度的大小；否则要解一元二次方程。"
+  },
+  {
+   "id": "binary-acid-strength",
+   "kind": "result",
+   "section": "14.3",
+   "name": "无氧酸的强度",
+   "statement": "在元素周期表的同一周期中，二元氢化物的酸强度随非金属电负性的增大而增大，因为 H–A 键的极性增大；沿一个族向下，则随 H–A 键强度的减小而增大。"
+  },
+  {
+   "id": "oxyacid-strength",
+   "kind": "result",
+   "section": "14.3",
+   "name": "含氧酸和羟基化合物的强度",
+   "statement": "在三元化合物 E–O–H 中，电负性低的中心原子使 E–O 键呈离子性，该化合物是碱；电负性高或氧化数高的中心原子会从 O–H 键吸引电子密度，使该化合物成为酸。电负性居中的元素形成两性氢氧化物。"
+  },
+  {
+   "id": "acid-ionization-constant",
+   "kind": "definition",
+   "section": "14.3",
+   "name": "酸电离常数",
+   "symbol": "K_a",
+   "terms": [
+    "酸电离常数"
+   ],
+   "type": "equilibrium-constant",
+   "statement": "酸电离常数 $K_{\\text{a}}$ 是弱酸电离的平衡常数；它的负对数是 p$K_{\\text{a}}$。",
+   "forms": [
+    {
+     "id": "eq-ka",
+     "latex": "K_{\\text{a}}=\\frac{[\\text{H}_{3}\\text{O}^{+}][\\text{A}^{-}]}{[\\text{HA}]}",
+     "ktex": "K_{\\text{a}}=\\frac{\\kconcHyd\\kconcAm}{\\kconcHA}",
+     "condition": "达到平衡时 HA + H₂O ⇌ H₃O⁺ + A⁻ 的电离",
+     "anchor": "14.3-ionization"
+    },
+    {
+     "id": "eq-pka",
+     "latex": "\\text{p}K_{\\text{a}}=-\\log K_{\\text{a}}",
+     "condition": "任何弱酸",
+     "section": "14.6",
+     "anchor": "14.6-henderson-hasselbalch"
+    }
+   ]
+  },
+  {
+   "id": "base-ionization-constant",
+   "kind": "definition",
+   "section": "14.3",
+   "name": "碱电离常数",
+   "symbol": "K_b_ion",
+   "terms": [
+    "碱电离常数"
+   ],
+   "type": "equilibrium-constant",
+   "statement": "碱电离常数 $K_{\\text{b}}$ 是弱碱电离的平衡常数；它的负对数是 p$K_{\\text{b}}$。",
+   "forms": [
+    {
+     "id": "eq-kb",
+     "latex": "K_{\\text{b}}=\\frac{[\\text{HB}^{+}][\\text{OH}^{-}]}{[\\text{B}]}",
+     "ktex": "K_{\\text{b}}=\\frac{\\kconcHBp\\kconcOH}{\\kconcB}",
+     "condition": "达到平衡时 B + H₂O ⇌ HB⁺ + OH⁻ 的电离",
+     "anchor": "14.3-ionization"
+    },
+    {
+     "id": "eq-pkb",
+     "latex": "\\text{p}K_{\\text{b}}=-\\log K_{\\text{b}}",
+     "condition": "任何弱碱",
+     "section": "14.6",
+     "anchor": "14.6-henderson-hasselbalch"
+    }
+   ]
+  },
+  {
+   "id": "salt-ion-acidity",
+   "kind": "result",
+   "section": "14.4",
+   "name": "盐中的酸性离子和碱性离子",
+   "statement": "溶解的盐的离子可能与水发生酸电离或碱电离。酸性阳离子通常是弱碱的共轭酸，碱性阴离子是弱酸的共轭碱，而强酸和强碱的共轭物，如 1 族和 2 族的阳离子，则不水解。"
+  },
+  {
+   "id": "predict-salt-solution-ph",
+   "kind": "skill",
+   "section": "14.4",
+   "name": "预测盐溶液的酸碱性",
+   "statement": "我们逐个考察每种离子；如果一种盐同时含有酸性离子和碱性离子，或只含一种质子两性离子，则按 $K_{\\text{a}}$ 和 $K_{\\text{b}}$ 哪个更大来判断溶液是酸性还是碱性。"
+  },
+  {
+   "id": "salt-solution-calculations",
+   "kind": "skill",
+   "section": "14.4",
+   "name": "计算盐溶液的 pH",
+   "statement": "盐的酸性离子或碱性离子的电离常数，可由其共轭酸或共轭碱的电离常数通过 $K_{\\text{a}}\\times K_{\\text{b}}=K_{\\text{w}}$ 求得，再按通常的 ICE 方法得到平衡浓度和 pH。"
+  },
+  {
+   "id": "hydrated-metal-ion-acidity",
+   "kind": "idea",
+   "section": "14.4",
+   "name": "作为酸的水合金属离子",
+   "statement": "许多金属离子与水分子成键，形成 [Al(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> 这样的配离子；金属从成键的水分子吸引电子密度，削弱其 O–H 键，使它们能够给出质子。除 1 族离子和一些 2 族离子外，大多数金属离子都在一定程度上发生酸电离。"
+  },
+  {
+   "id": "polyprotic-acids",
+   "kind": "idea",
+   "section": "14.5",
+   "name": "多元酸分步电离",
+   "statement": "酸按每个分子能给出的质子数分为一元酸、二元酸和三元酸。多元酸分步电离，一次一个质子，而且每一步电离的程度都比前一步小，所以 $K_{\\text{a1}}>K_{\\text{a2}}>K_{\\text{a3}}$。"
+  },
+  {
+   "id": "stepwise-ionization-calculations",
+   "kind": "skill",
+   "section": "14.5",
+   "name": "计算多元酸溶液中各物种的浓度",
+   "statement": "如果弱二元酸的第一电离常数至少比第二电离常数大 20 倍，就可以把每一步分开处理：第一步得到 [H<sub>3</sub>O<sup>+</sup>] 和一价阴离子的浓度，这些浓度再代入第二步。"
+  },
+  {
+   "id": "polyprotic-bases",
+   "kind": "idea",
+   "section": "14.5",
+   "name": "多元碱",
+   "statement": "多元碱分步接受不止一个质子，和多元酸一样，每一步相继的碱电离常数都比前一步小。"
+  },
+  {
+   "id": "monoprotic-acid",
+   "kind": "definition",
+   "section": "14.5",
+   "name": "一元酸",
+   "terms": [
+    "一元酸"
+   ],
+   "statement": "一元酸是每个分子含有一个可电离氢原子的酸。"
+  },
+  {
+   "id": "diprotic-acid",
+   "kind": "definition",
+   "section": "14.5",
+   "name": "二元酸",
+   "terms": [
+    "二元酸"
+   ],
+   "statement": "二元酸是每个分子含有两个可电离氢原子的酸。"
+  },
+  {
+   "id": "triprotic-acid",
+   "kind": "definition",
+   "section": "14.5",
+   "name": "三元酸",
+   "terms": [
+    "三元酸"
+   ],
+   "statement": "三元酸是每个分子含有三个可电离氢原子的酸。"
+  },
+  {
+   "id": "diprotic-base",
+   "kind": "definition",
+   "section": "14.5",
+   "name": "二元碱",
+   "terms": [
+    "二元碱"
+   ],
+   "statement": "二元碱是能够接受两个质子的碱。"
+  },
+  {
+   "id": "stepwise-ionization",
+   "kind": "definition",
+   "section": "14.5",
+   "name": "分步电离",
+   "terms": [
+    "分步电离"
+   ],
+   "statement": "分步电离是酸依次逐个失去质子而电离的过程。"
+  },
+  {
+   "id": "buffer-composition",
+   "kind": "definition",
+   "section": "14.6",
+   "name": "什么是缓冲溶液",
+   "terms": [
+    "缓冲溶液"
+   ],
+   "statement": "含有可观数量的弱共轭酸碱对的溶液是缓冲溶液，加入少量强酸或强碱时，它能抵抗 pH 的变化。"
+  },
+  {
+   "id": "how-buffers-work",
+   "kind": "idea",
+   "section": "14.6",
+   "name": "缓冲溶液的作用原理",
+   "statement": "共轭对中的弱酸中和加入的氢氧根离子，将其转化为共轭碱；共轭碱中和加入的水合氢离子，将其转化为弱酸。二者的比值只有很小的变化，pH 的变化也很小。"
+  },
+  {
+   "id": "buffer-ph-calculations",
+   "kind": "skill",
+   "section": "14.6",
+   "name": "计算缓冲溶液的 pH",
+   "statement": "先让加入的强酸或强碱与中和它的那种缓冲组分完全反应，求出两种组分的新浓度，然后像以前一样解平衡。"
+  },
+  {
+   "id": "buffer-capacity",
+   "kind": "definition",
+   "section": "14.6",
+   "name": "缓冲容量",
+   "terms": [
+    "缓冲容量"
+   ],
+   "statement": "缓冲容量是在 pH 发生显著变化之前，能加入一定体积缓冲溶液中的酸或碱的量。缓冲溶液能中和的酸或碱的量，只等于它所含的、消耗该酸或碱的那种组分的量，所以其容量取决于两种组分的量；弱酸及其盐适用于 pH 低于 7 的情形，弱碱及其盐适用于 pH 高于 7 的情形。"
+  },
+  {
+   "id": "henderson-hasselbalch",
+   "kind": "result",
+   "section": "14.6",
+   "name": "亨德森–哈塞尔巴尔赫方程",
+   "terms": [
+    "亨德森–哈塞尔巴尔赫方程"
+   ],
+   "statement": "将酸电离常数表达式整理后取负对数，得到 pH = p$K_{\\text{a}}$ + log([A<sup>−</sup>]/[HA])，它把缓冲溶液的 pH 与其弱酸的 $K_{\\text{a}}$ 以及共轭对浓度之比联系起来；二者相等时，pH = p$K_{\\text{a}}$。",
+   "forms": [
+    {
+     "id": "eq-henderson-hasselbalch",
+     "latex": "\\text{pH}=\\text{p}K_{\\text{a}}+\\log\\frac{[\\text{A}^{-}]}{[\\text{HA}]}",
+     "ktex": "\\kpH=\\text{p}K_{\\text{a}}+\\log\\frac{\\kconcAm}{\\kconcHA}",
+     "condition": "由弱酸 HA 及其共轭碱 A⁻ 组成的缓冲溶液",
+     "anchor": "14.6-henderson-hasselbalch"
+    }
+   ]
+  },
+  {
+   "id": "titration-curve",
+   "kind": "idea",
+   "section": "14.7",
+   "name": "滴定曲线及其各阶段",
+   "terms": [
+    "滴定曲线"
+   ],
+   "statement": "滴定曲线表示样品的 pH 随所加滴定剂体积的变化。曲线的起点由酸决定，化学计量点之前的区域由未反应的酸及其共轭碱决定，化学计量点由产物本身决定，pH 在此急剧上升，化学计量点之后的区域则由过量的滴定剂决定。"
+  },
+  {
+   "id": "strong-acid-titration-ph",
+   "kind": "skill",
+   "section": "14.7",
+   "name": "计算强酸滴定中的 pH",
+   "statement": "化学计量点之前，过量的强酸决定 pH。在化学计量点只剩下水和一种中性盐，所以 25 °C 时 pH 为 7.00。过了化学计量点，过量的强碱决定 pH。"
+  },
+  {
+   "id": "weak-acid-titration-ph",
+   "kind": "skill",
+   "section": "14.7",
+   "name": "计算弱酸滴定中的 pH",
+   "statement": "加入碱之前，pH 就是该弱酸的 pH；到化学计量点的一半时，酸与其共轭碱相等，所以 pH = p$K_{\\text{a}}$；在化学计量点，只有共轭碱使溶液呈碱性；过了化学计量点，过量的强碱决定 pH。"
+  },
+  {
+   "id": "acid-base-indicators",
+   "kind": "idea",
+   "section": "14.7",
+   "name": "酸碱指示剂的作用原理",
+   "terms": [
+    "酸碱指示剂"
+   ],
+   "statement": "指示剂是一种弱酸或弱碱，其共轭形式具有不同的颜色，所看到的颜色由比值 [In<sup>−</sup>]/[HIn] 决定，而该比值由溶液的 pH 决定。因此颜色变化分布在一个约两个 pH 单位宽、以其 p$K_{\\text{a}}$ 附近为中心的变色区间内。"
+  },
+  {
+   "id": "choose-indicator",
+   "kind": "skill",
+   "section": "14.7",
+   "name": "为滴定选择指示剂",
+   "statement": "合适的指示剂，其变色区间应落在滴定曲线在化学计量点处陡峭、近乎垂直的部分之内，这样越过化学计量点时它的颜色才会急剧变化。"
+  },
+  {
+   "id": "color-change-interval",
+   "kind": "definition",
+   "section": "14.7",
+   "name": "变色区间",
+   "terms": [
+    "变色区间"
+   ],
+   "statement": "指示剂的变色区间是其颜色变化发生的 pH 范围。"
+  }
+ ],
+ "concept_prereqs": [
+  {
+   "concept": "bronsted-lowry-acids-bases",
+   "prereq": "acids-and-bases"
+  },
+  {
+   "concept": "conjugate-acid-base-pairs",
+   "prereq": "bronsted-lowry-acids-bases"
+  },
+  {
+   "concept": "conjugate-acid-base-pairs",
+   "prereq": "reversible-reaction"
+  },
+  {
+   "concept": "write-ionization-equations",
+   "prereq": "conjugate-acid-base-pairs"
+  },
+  {
+   "concept": "write-ionization-equations",
+   "prereq": "strong-and-weak-acids-bases"
+  },
+  {
+   "concept": "amphiprotic-species",
+   "prereq": "bronsted-lowry-acids-bases"
+  },
+  {
+   "concept": "water-autoionization",
+   "prereq": "amphiprotic-species"
+  },
+  {
+   "concept": "water-autoionization",
+   "prereq": "equilibrium-constant"
+  },
+  {
+   "concept": "water-autoionization",
+   "prereq": "homogeneous-and-heterogeneous-equilibria"
+  },
+  {
+   "concept": "water-autoionization",
+   "prereq": "temperature-changes-k"
+  },
+  {
+   "concept": "kw-ion-concentrations",
+   "prereq": "water-autoionization"
+  },
+  {
+   "concept": "kw-ion-concentrations",
+   "prereq": "molarity"
+  },
+  {
+   "concept": "ph-and-poh-scales",
+   "prereq": "kw-ion-concentrations"
+  },
+  {
+   "concept": "ph-plus-poh",
+   "prereq": "ph-and-poh-scales"
+  },
+  {
+   "concept": "ph-plus-poh",
+   "prereq": "water-autoionization"
+  },
+  {
+   "concept": "ph-calculations",
+   "prereq": "ph-plus-poh"
+  },
+  {
+   "concept": "ph-calculations",
+   "prereq": "kw-ion-concentrations"
+  },
+  {
+   "concept": "measuring-ph",
+   "prereq": "ph-and-poh-scales"
+  },
+  {
+   "concept": "acid-base-ionization-constants",
+   "prereq": "write-ionization-equations"
+  },
+  {
+   "concept": "acid-base-ionization-constants",
+   "prereq": "equilibrium-constant"
+  },
+  {
+   "concept": "acid-base-ionization-constants",
+   "prereq": "magnitude-of-k"
+  },
+  {
+   "concept": "percent-ionization",
+   "prereq": "acid-base-ionization-constants"
+  },
+  {
+   "concept": "percent-ionization",
+   "prereq": "ph-calculations"
+  },
+  {
+   "concept": "conjugate-pair-strengths",
+   "prereq": "acid-base-ionization-constants"
+  },
+  {
+   "concept": "conjugate-pair-strengths",
+   "prereq": "coupled-equilibria"
+  },
+  {
+   "concept": "conjugate-pair-strengths",
+   "prereq": "water-autoionization"
+  },
+  {
+   "concept": "leveling-effect",
+   "prereq": "conjugate-pair-strengths"
+  },
+  {
+   "concept": "ka-kb-from-equilibrium-data",
+   "prereq": "acid-base-ionization-constants"
+  },
+  {
+   "concept": "ka-kb-from-equilibrium-data",
+   "prereq": "k-from-ice-table"
+  },
+  {
+   "concept": "ka-kb-from-equilibrium-data",
+   "prereq": "ph-calculations"
+  },
+  {
+   "concept": "weak-acid-base-equilibrium-concentrations",
+   "prereq": "acid-base-ionization-constants"
+  },
+  {
+   "concept": "weak-acid-base-equilibrium-concentrations",
+   "prereq": "equilibrium-from-initial-concentrations"
+  },
+  {
+   "concept": "weak-acid-base-equilibrium-concentrations",
+   "prereq": "small-x-approximation"
+  },
+  {
+   "concept": "weak-acid-base-equilibrium-concentrations",
+   "prereq": "ph-calculations"
+  },
+  {
+   "concept": "binary-acid-strength",
+   "prereq": "acid-base-ionization-constants"
+  },
+  {
+   "concept": "binary-acid-strength",
+   "prereq": "electronegativity"
+  },
+  {
+   "concept": "binary-acid-strength",
+   "prereq": "bond-strength-and-length"
+  },
+  {
+   "concept": "oxyacid-strength",
+   "prereq": "acid-base-ionization-constants"
+  },
+  {
+   "concept": "oxyacid-strength",
+   "prereq": "electronegativity"
+  },
+  {
+   "concept": "oxyacid-strength",
+   "prereq": "oxidation-numbers"
+  },
+  {
+   "concept": "oxyacid-strength",
+   "prereq": "amphiprotic-species"
+  },
+  {
+   "concept": "salt-ion-acidity",
+   "prereq": "conjugate-pair-strengths"
+  },
+  {
+   "concept": "salt-ion-acidity",
+   "prereq": "dissociation-of-ionic-compounds"
+  },
+  {
+   "concept": "predict-salt-solution-ph",
+   "prereq": "salt-ion-acidity"
+  },
+  {
+   "concept": "predict-salt-solution-ph",
+   "prereq": "amphiprotic-species"
+  },
+  {
+   "concept": "salt-solution-calculations",
+   "prereq": "salt-ion-acidity"
+  },
+  {
+   "concept": "salt-solution-calculations",
+   "prereq": "weak-acid-base-equilibrium-concentrations"
+  },
+  {
+   "concept": "hydrated-metal-ion-acidity",
+   "prereq": "salt-ion-acidity"
+  },
+  {
+   "concept": "hydrated-metal-ion-acidity",
+   "prereq": "bond-polarity"
+  },
+  {
+   "concept": "polyprotic-acids",
+   "prereq": "acid-base-ionization-constants"
+  },
+  {
+   "concept": "polyprotic-acids",
+   "prereq": "write-ionization-equations"
+  },
+  {
+   "concept": "stepwise-ionization-calculations",
+   "prereq": "polyprotic-acids"
+  },
+  {
+   "concept": "stepwise-ionization-calculations",
+   "prereq": "weak-acid-base-equilibrium-concentrations"
+  },
+  {
+   "concept": "polyprotic-bases",
+   "prereq": "polyprotic-acids"
+  },
+  {
+   "concept": "polyprotic-bases",
+   "prereq": "amphiprotic-species"
+  },
+  {
+   "concept": "buffer-composition",
+   "prereq": "conjugate-acid-base-pairs"
+  },
+  {
+   "concept": "buffer-composition",
+   "prereq": "acid-base-ionization-constants"
+  },
+  {
+   "concept": "how-buffers-work",
+   "prereq": "buffer-composition"
+  },
+  {
+   "concept": "how-buffers-work",
+   "prereq": "neutralization-reaction"
+  },
+  {
+   "concept": "how-buffers-work",
+   "prereq": "concentration-stress"
+  },
+  {
+   "concept": "buffer-ph-calculations",
+   "prereq": "how-buffers-work"
+  },
+  {
+   "concept": "buffer-ph-calculations",
+   "prereq": "weak-acid-base-equilibrium-concentrations"
+  },
+  {
+   "concept": "buffer-ph-calculations",
+   "prereq": "molarity-calculations"
+  },
+  {
+   "concept": "buffer-capacity",
+   "prereq": "how-buffers-work"
+  },
+  {
+   "concept": "henderson-hasselbalch",
+   "prereq": "buffer-composition"
+  },
+  {
+   "concept": "henderson-hasselbalch",
+   "prereq": "ph-and-poh-scales"
+  },
+  {
+   "concept": "titration-curve",
+   "prereq": "titration"
+  },
+  {
+   "concept": "titration-curve",
+   "prereq": "ph-calculations"
+  },
+  {
+   "concept": "strong-acid-titration-ph",
+   "prereq": "titration-curve"
+  },
+  {
+   "concept": "strong-acid-titration-ph",
+   "prereq": "titration-calculation"
+  },
+  {
+   "concept": "weak-acid-titration-ph",
+   "prereq": "titration-curve"
+  },
+  {
+   "concept": "weak-acid-titration-ph",
+   "prereq": "henderson-hasselbalch"
+  },
+  {
+   "concept": "weak-acid-titration-ph",
+   "prereq": "salt-solution-calculations"
+  },
+  {
+   "concept": "acid-base-indicators",
+   "prereq": "henderson-hasselbalch"
+  },
+  {
+   "concept": "acid-base-indicators",
+   "prereq": "measuring-ph"
+  },
+  {
+   "concept": "choose-indicator",
+   "prereq": "acid-base-indicators"
+  },
+  {
+   "concept": "choose-indicator",
+   "prereq": "titration-curve"
+  },
+  {
+   "concept": "bronsted-lowry-acid",
+   "prereq": "bronsted-lowry-acids-bases"
+  },
+  {
+   "concept": "bronsted-lowry-base",
+   "prereq": "bronsted-lowry-acids-bases"
+  },
+  {
+   "concept": "conjugate-acid",
+   "prereq": "conjugate-acid-base-pairs"
+  },
+  {
+   "concept": "conjugate-acid",
+   "prereq": "bronsted-lowry-base"
+  },
+  {
+   "concept": "conjugate-base",
+   "prereq": "conjugate-acid-base-pairs"
+  },
+  {
+   "concept": "conjugate-base",
+   "prereq": "bronsted-lowry-acid"
+  },
+  {
+   "concept": "acid-ionization",
+   "prereq": "bronsted-lowry-acid"
+  },
+  {
+   "concept": "acid-ionization",
+   "prereq": "conjugate-base"
+  },
+  {
+   "concept": "base-ionization",
+   "prereq": "bronsted-lowry-base"
+  },
+  {
+   "concept": "base-ionization",
+   "prereq": "conjugate-acid"
+  },
+  {
+   "concept": "amphoteric",
+   "prereq": "acids-and-bases"
+  },
+  {
+   "concept": "autoionization",
+   "prereq": "bronsted-lowry-acids-bases"
+  },
+  {
+   "concept": "ion-product-constant-for-water",
+   "prereq": "autoionization"
+  },
+  {
+   "concept": "ion-product-constant-for-water",
+   "prereq": "equilibrium-constant"
+  },
+  {
+   "concept": "ion-product-constant-for-water",
+   "prereq": "molarity"
+  },
+  {
+   "concept": "acidic-solution",
+   "prereq": "molarity"
+  },
+  {
+   "concept": "basic-solution",
+   "prereq": "molarity"
+  },
+  {
+   "concept": "neutral-solution",
+   "prereq": "molarity"
+  },
+  {
+   "concept": "ph",
+   "prereq": "ph-and-poh-scales"
+  },
+  {
+   "concept": "ph",
+   "prereq": "molarity"
+  },
+  {
+   "concept": "poh",
+   "prereq": "ph-and-poh-scales"
+  },
+  {
+   "concept": "poh",
+   "prereq": "molarity"
+  },
+  {
+   "concept": "acid-ionization-constant",
+   "prereq": "acid-base-ionization-constants"
+  },
+  {
+   "concept": "acid-ionization-constant",
+   "prereq": "acid-ionization"
+  },
+  {
+   "concept": "acid-ionization-constant",
+   "prereq": "equilibrium-constant"
+  },
+  {
+   "concept": "base-ionization-constant",
+   "prereq": "acid-base-ionization-constants"
+  },
+  {
+   "concept": "base-ionization-constant",
+   "prereq": "base-ionization"
+  },
+  {
+   "concept": "base-ionization-constant",
+   "prereq": "equilibrium-constant"
+  },
+  {
+   "concept": "monoprotic-acid",
+   "prereq": "bronsted-lowry-acid"
+  },
+  {
+   "concept": "diprotic-acid",
+   "prereq": "bronsted-lowry-acid"
+  },
+  {
+   "concept": "diprotic-acid",
+   "prereq": "polyprotic-acids"
+  },
+  {
+   "concept": "triprotic-acid",
+   "prereq": "bronsted-lowry-acid"
+  },
+  {
+   "concept": "triprotic-acid",
+   "prereq": "polyprotic-acids"
+  },
+  {
+   "concept": "diprotic-base",
+   "prereq": "bronsted-lowry-base"
+  },
+  {
+   "concept": "diprotic-base",
+   "prereq": "polyprotic-bases"
+  },
+  {
+   "concept": "stepwise-ionization",
+   "prereq": "acid-ionization"
+  },
+  {
+   "concept": "stepwise-ionization",
+   "prereq": "polyprotic-acids"
+  },
+  {
+   "concept": "color-change-interval",
+   "prereq": "acid-base-indicators"
+  },
+  {
+   "concept": "color-change-interval",
+   "prereq": "ph"
+  },
+  {
+   "concept": "write-ionization-equations",
+   "prereq": "acid-ionization"
+  },
+  {
+   "concept": "write-ionization-equations",
+   "prereq": "base-ionization"
+  },
+  {
+   "concept": "water-autoionization",
+   "prereq": "autoionization"
+  },
+  {
+   "concept": "water-autoionization",
+   "prereq": "ion-product-constant-for-water"
+  },
+  {
+   "concept": "kw-ion-concentrations",
+   "prereq": "ion-product-constant-for-water"
+  },
+  {
+   "concept": "ph-plus-poh",
+   "prereq": "ph"
+  },
+  {
+   "concept": "ph-plus-poh",
+   "prereq": "poh"
+  },
+  {
+   "concept": "ph-calculations",
+   "prereq": "ph"
+  },
+  {
+   "concept": "ph-calculations",
+   "prereq": "poh"
+  },
+  {
+   "concept": "percent-ionization",
+   "prereq": "acid-ionization"
+  },
+  {
+   "concept": "conjugate-pair-strengths",
+   "prereq": "acid-ionization-constant"
+  },
+  {
+   "concept": "conjugate-pair-strengths",
+   "prereq": "base-ionization-constant"
+  },
+  {
+   "concept": "ka-kb-from-equilibrium-data",
+   "prereq": "acid-ionization-constant"
+  },
+  {
+   "concept": "ka-kb-from-equilibrium-data",
+   "prereq": "base-ionization-constant"
+  },
+  {
+   "concept": "weak-acid-base-equilibrium-concentrations",
+   "prereq": "acid-ionization-constant"
+  },
+  {
+   "concept": "weak-acid-base-equilibrium-concentrations",
+   "prereq": "base-ionization-constant"
+  },
+  {
+   "concept": "stepwise-ionization-calculations",
+   "prereq": "stepwise-ionization"
+  },
+  {
+   "concept": "henderson-hasselbalch",
+   "prereq": "ph"
+  },
+  {
+   "concept": "henderson-hasselbalch",
+   "prereq": "acid-ionization-constant"
+  },
+  {
+   "concept": "buffer-ph-calculations",
+   "prereq": "ph"
+  },
+  {
+   "concept": "strong-acid-titration-ph",
+   "prereq": "ph"
+  },
+  {
+   "concept": "weak-acid-titration-ph",
+   "prereq": "ph"
+  },
+  {
+   "concept": "weak-acid-titration-ph",
+   "prereq": "acid-ionization-constant"
+  },
+  {
+   "concept": "titration-curve",
+   "prereq": "ph"
+  },
+  {
+   "concept": "choose-indicator",
+   "prereq": "color-change-interval"
+  },
+  {
+   "concept": "acidic-solution",
+   "prereq": "water-autoionization"
+  },
+  {
+   "concept": "basic-solution",
+   "prereq": "water-autoionization"
+  },
+  {
+   "concept": "neutral-solution",
+   "prereq": "water-autoionization"
+  }
+ ]
+}

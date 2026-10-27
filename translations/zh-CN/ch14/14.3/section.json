@@ -2,33 +2,41 @@
  "id": "14.3",
  "module": "m68805",
  "chapter": "14",
- "title": "Relative Strengths of Acids and Bases",
- "short": "Relative Strengths of Acids and Bases",
- "lead": "Some acids and bases ionize almost completely in water and others only slightly. This section measures that strength with ionization constants and <span data-concept=\"percent-ionization\">percent ionization</span>, compares the strengths of conjugate partners, works through equilibrium calculations for solutions of <span data-concept=\"weak-acid\">weak acids</span> and bases, and looks at how the structure of a molecule sets its acid strength.",
+ "title": "酸和碱的相对强度",
+ "short": "酸和碱的相对强度",
+ "lead": "有些酸和碱在水中几乎完全电离，另一些则只轻微电离。本节用电离常数和<span data-concept=\"percent-ionization\">电离百分数</span>来度量这种强度，比较共轭酸碱对双方的强度，对<span data-concept=\"weak-acid\">弱酸</span>和弱碱的溶液进行平衡计算，并考察分子的结构如何决定它的酸强度。",
  "objectives": [
-  "Assess the relative strengths of acids and bases according to their ionization constants",
-  "Rationalize trends in acid–base strength in relation to molecular structure",
-  "Carry out equilibrium calculations for weak acid–base systems"
+  "根据电离常数评估酸和碱的相对强度",
+  "结合分子结构，对酸碱强度的递变规律作出合理解释",
+  "对弱酸–弱碱体系进行平衡计算"
  ],
- "summary_html": "<p>The relative strengths of acids and bases are reflected in the magnitudes of their ionization constants; the stronger the acid or base, the larger its ionization constant. A reciprocal relation exists between the strengths of a <span data-concept=\"conjugate-acid-base-pairs\">conjugate acid-base pair</span>: the stronger the acid, the weaker its <span data-concept=\"conjugate-base\">conjugate base</span>. Water exerts a <span data-concept=\"leveling-effect\">leveling effect</span> on dissolved acids or bases, reacting completely to generate its characteristic hydronium and hydroxide ions (the strongest acid and base that may exist in water). The strengths of the binary acids increase from left to right across a period of the periodic table (CH<sub>4</sub> &lt; NH<sub>3</sub> &lt; H<sub>2</sub>O &lt; HF), and they increase down a group (HF &lt; HCl &lt; HBr &lt; HI). The strengths of <span data-concept=\"oxyacid\">oxyacids</span> that contain the same central element increase as the oxidation number of the element increases (H<sub>2</sub>SO<sub>3</sub> &lt; H<sub>2</sub>SO<sub>4</sub>). The strengths of <span data-concept=\"oxyacid\">oxyacids</span> also increase as the <span data-concept=\"electronegativity\">electronegativity</span> of the central element increases [H<sub>2</sub>SeO<sub>4</sub> &lt; H<sub>2</sub>SO<sub>4</sub>].</p>",
- "notes": "The Link to Learning pointing to a simulation of strong and weak acids and bases at the molecular level is left out, and the Sim after Example 14.7 takes its place. The book’s “wheres”, “much lesser than”, CH<sub>2</sub>CO<sub>2</sub><sup>−</sup> for acetate ion in the order of base strengths, the Check Your Learning of Example 14.11 ending in a period, and the empty Change cell for formic acid in the ICE table of Example 14.12 are kept as printed.",
+ "summary_html": "<p>酸和碱的相对强度反映在其电离常数的大小上；酸或碱越强，其电离常数越大。<span data-concept=\"conjugate-acid-base-pairs\">共轭酸碱对</span>的强度之间存在互为倒数的关系：酸越强，其<span data-concept=\"conjugate-base\">共轭碱</span>越弱。水对溶解的酸或碱起<span data-concept=\"leveling-effect\">拉平效应</span>，与它们完全反应而生成水所特有的水合氢离子和氢氧根离子（能够存在于水中的最强酸和最强碱）。无氧酸的强度沿元素周期表的一个周期从左到右增大（CH<sub>4</sub> &lt; NH<sub>3</sub> &lt; H<sub>2</sub>O &lt; HF），沿一个族向下也增大（HF &lt; HCl &lt; HBr &lt; HI）。含有同一中心元素的<span data-concept=\"oxyacid\">含氧酸</span>的强度随该元素氧化数的增大而增大（H<sub>2</sub>SO<sub>3</sub> &lt; H<sub>2</sub>SO<sub>4</sub>）。<span data-concept=\"oxyacid\">含氧酸</span>的强度也随中心元素的<span data-concept=\"electronegativity\">电负性</span>增大而增大 [H<sub>2</sub>SeO<sub>4</sub> &lt; H<sub>2</sub>SO<sub>4</sub>]。</p>",
+ "notes": "指向分子层面强酸和弱酸、强碱和弱碱模拟的“学习链接”被略去，例 14.7 之后的 Sim 取代了它的位置。书中的“wheres”、“much lesser than”、碱强度顺序中写成 CH<sub>2</sub>CO<sub>2</sub><sup>−</sup> 的乙酸根离子、例 14.11 以句号结尾的“学习检测”，以及例 14.12 的 ICE 表中甲酸那一列空着的“变化”一格，都按原样保留。",
  "ai": {
   "text": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-10-05",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and the Check Your Learning answers; the keys of fs-idp38295632 (“triethylamine” for trimethylamine), fs-idm79424752 and fs-idp3008704 are kept as printed. The eight unkeyed numerical exercises are left out, and no answer is computed for them: fs-idm38113296, fs-idm65088304, fs-idp58811168, fs-idm5851168, fs-idm78141920, fs-idm68637072, fs-idp85725440, fs-idm82940432. The ten unkeyed conceptual exercises carry a suggested approach marked as OmniStax’s own, and the unkeyed choice item fs-idp75773712 is kept open with its three options and an approach. Four exercises printed here are set in later sections because they test what those sections introduce: fs-idm94404336, fs-idm94046624 and fs-idm8587472 in Section 14.4, and fs-idm75310368 in Section 14.5. Ionization constants accept 5% tolerance, pH values 0.02 units.",
+ "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案取自书后答案和“学习检测”的答案；fs-idp38295632（把三甲胺写成“三乙胺”）、fs-idm79424752 和 fs-idp3008704 的答案按原样保留。八道没有答案的数值题被略去，也没有为它们算出答案：fs-idm38113296、fs-idm65088304、fs-idp58811168、fs-idm5851168、fs-idm78141920、fs-idm68637072、fs-idp85725440、fs-idm82940432。十道没有答案的概念题附有一份标明为 OmniStax 自己所写的建议思路，没有答案的选择题 fs-idp75773712 保持开放，附有它的三个选项和一份建议思路。书中印在此处的四道习题被放在后面的小节，因为它们考查那些小节所引入的内容：fs-idm94404336、fs-idm94046624 和 fs-idm8587472 放在第 14.4 节，fs-idm75310368 放在第 14.5 节。电离常数接受 5% 的容差，pH 值接受 0.02 个单位。",
  "figures": [
   {
    "id": "fig-strong",
@@ -62,6 +70,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -76,7 +89,7 @@
     "/media/ch14/CNX_Chem_14_03_strengths.jpg",
     "/media/ch14/CNX_Chem_14_03_corresp.jpg"
    ],
-   "original_caption": "(Figure 14.7) Relative strengths of several conjugate acid-base pairs are shown. (Figure 14.8) This figure shows strengths of conjugate acid-base pairs relative to the strength of water as the reference substance.",
+   "original_caption": "（图 14.7）图中给出了几个共轭酸碱对的相对强度。（图 14.8）此图给出了以水为参比物质时各共轭酸碱对的强度。",
    "draws": [
     "equilibrium-constant"
    ],
@@ -85,6 +98,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -180,7 +198,7 @@
  "referents": [
   {
    "id": "acid",
-   "label": "the acid, HA",
+   "label": "酸 HA",
    "figures": [
     "sim-acid-water",
     "sim-conjugate-ladder"
@@ -188,7 +206,7 @@
   },
   {
    "id": "base",
-   "label": "its conjugate base, A⁻",
+   "label": "其共轭碱 A⁻",
    "figures": [
     "sim-acid-water",
     "sim-conjugate-ladder"
@@ -368,15 +386,15 @@
     "after": "ex-percent"
    },
    "cite": "ionization",
-   "prompt": "Calculate the percent ionization of a 0.10-<em>M</em> solution of acetic acid with a pH of 2.89.",
+   "prompt": "计算 pH 为 2.89 的 0.10 <em>M</em> 乙酸溶液的电离百分数。",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 1.3,
     "unit": "%",
     "tol": 0.05,
-    "hint": "Convert the pH to [H<sub>3</sub>O<sup>+</sup>] = 10<sup>−pH</sup>, divide by the initial concentration of the acid, and multiply by 100.",
-    "solution": "1.3% ionized"
+    "hint": "把 pH 换算成 [H<sub>3</sub>O<sup>+</sup>] = 10<sup>−pH</sup>，除以酸的初始浓度，再乘以 100。",
+    "solution": "电离了 1.3%"
    }
   },
   {
@@ -389,7 +407,7 @@
     "after": "ex-conjugate"
    },
    "cite": "conjugate",
-   "prompt": "Determine the relative acid strengths of ${\\text{NH}}_{4}{}^{\\text{+}}$ and HCN by comparing their ionization constants. The ionization constant of HCN is given in Appendix H as 4.9 × 10<sup>−10</sup>. The ionization constant of ${\\text{NH}}_{4}{}^{\\text{+}}$ is not listed, but the ionization constant of its conjugate base, NH<sub>3</sub>, is listed as 1.8 × 10<sup>−5</sup>.",
+   "prompt": "通过比较电离常数，确定 ${\\text{NH}}_{4}{}^{\\text{+}}$ 和 HCN 的相对酸强度。HCN 的电离常数在附录 H 中给出，为 4.9 × 10<sup>−10</sup>。${\\text{NH}}_{4}{}^{\\text{+}}$ 的电离常数没有列出，但它的共轭碱 NH<sub>3</sub> 的电离常数列为 1.8 × 10<sup>−5</sup>。",
    "answer": {
     "type": "choice",
     "generated_by": "source",
@@ -398,8 +416,8 @@
      "HCN"
     ],
     "correct": 0,
-    "hint": "Find <em>K</em><sub>a</sub> for NH<sub>4</sub><sup>+</sup> as <em>K</em><sub>w</sub>/<em>K</em><sub>b</sub> of NH<sub>3</sub>, then compare it with <em>K</em><sub>a</sub> for HCN.",
-    "solution": "${\\text{NH}}_{4}{}^{\\text{+}}$ is the slightly stronger acid (<em>K</em><sub>a</sub> for ${\\text{NH}}_{4}{}^{\\text{+}}$ = 5.6 × 10<sup>−10</sup>)."
+    "hint": "把 NH<sub>4</sub><sup>+</sup> 的 <em>K</em><sub>a</sub> 求为 NH<sub>3</sub> 的 <em>K</em><sub>w</sub>/<em>K</em><sub>b</sub>，再把它与 HCN 的 <em>K</em><sub>a</sub> 比较。",
+    "solution": "${\\text{NH}}_{4}{}^{\\text{+}}$ 是稍强的酸（${\\text{NH}}_{4}{}^{\\text{+}}$ 的 <em>K</em><sub>a</sub> = 5.6 × 10<sup>−10</sup>）。"
    }
   },
   {
@@ -412,14 +430,14 @@
     "after": "ex-ka-data"
    },
    "cite": "calculations",
-   "prompt": "The ${\\text{HSO}}_{4}{}^{\\text{-}}$ ion, weak acid used in some household cleansers:<br>${\\text{HSO}}_{4}{}^{\\text{-}}(aq)+{\\text{H}}_{2}\\text{O}(l)\\;\\rightleftharpoons \\;{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{SO}}_{4}{}^{2-}(aq)$<br>What is the acid ionization constant for this weak acid if an equilibrium mixture has the following composition: $[{\\text{H}}_{3}{\\text{O}}^{\\text{+}}]$ = 0.027 <em>M</em>; $[{\\text{HSO}}_{4}{}^{\\text{-}}]=0.29\\;M;$ and $[{\\text{SO}}_{4}{}^{2-}]=0.13\\;M?$",
+   "prompt": "${\\text{HSO}}_{4}{}^{\\text{-}}$ 离子，一种用于某些家用清洁剂的弱酸：<br>${\\text{HSO}}_{4}{}^{\\text{-}}(aq)+{\\text{H}}_{2}\\text{O}(l)\\;\\rightleftharpoons \\;{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{SO}}_{4}{}^{2-}(aq)$<br>如果一个平衡混合物的组成如下，这种弱酸的酸电离常数是多少：$[{\\text{H}}_{3}{\\text{O}}^{\\text{+}}]$ = 0.027 <em>M</em>；$[{\\text{HSO}}_{4}{}^{\\text{-}}]=0.29\\;M;$ 以及 $[{\\text{SO}}_{4}{}^{2-}]=0.13\\;M?$",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 0.012,
     "tol": 0.05,
-    "hint": "Substitute the three equilibrium concentrations into <em>K</em><sub>a</sub> = [H<sub>3</sub>O<sup>+</sup>][SO<sub>4</sub><sup>2−</sup>]/[HSO<sub>4</sub><sup>−</sup>].",
-    "solution": "<em>K</em><sub>a</sub> for ${\\text{HSO}}_{4}{}^{\\text{-}}$ = 1.2 × 10<sup>−2</sup>"
+    "hint": "把三个平衡浓度代入 <em>K</em><sub>a</sub> = [H<sub>3</sub>O<sup>+</sup>][SO<sub>4</sub><sup>2−</sup>]/[HSO<sub>4</sub><sup>−</sup>]。",
+    "solution": "${\\text{HSO}}_{4}{}^{\\text{-}}$ 的 <em>K</em><sub>a</sub> = 1.2 × 10<sup>−2</sup>"
    }
   },
   {
@@ -432,14 +450,14 @@
     "after": "ex-kb-data"
    },
    "cite": "calculations",
-   "prompt": "What is the equilibrium constant for the ionization of the ${\\text{HPO}}_{4}{}^{2-}$ ion, a weak base<br>${\\text{HPO}}_{4}{}^{2-}(aq)+{\\text{H}}_{2}\\text{O}(l)\\;\\rightleftharpoons \\;{\\text{H}}_{2}{\\text{PO}}_{4}{}^{\\text{-}}(aq)+{\\text{OH}}^{\\text{-}}(aq)$<br>if the composition of an equilibrium mixture is as follows: [OH<sup>−</sup>] = 1.3 × 10<sup>−6</sup> <em>M</em>; $[{\\text{H}}_{2}{\\text{PO}}_{4}{}^{\\text{-}}]=0.042\\;M;$ and $[{\\text{HPO}}_{4}{}^{2-}]=0.341\\;M?$",
+   "prompt": "弱碱 ${\\text{HPO}}_{4}{}^{2-}$ 离子电离的平衡常数是多少<br>${\\text{HPO}}_{4}{}^{2-}(aq)+{\\text{H}}_{2}\\text{O}(l)\\;\\rightleftharpoons \\;{\\text{H}}_{2}{\\text{PO}}_{4}{}^{\\text{-}}(aq)+{\\text{OH}}^{\\text{-}}(aq)$<br>如果平衡混合物的组成如下：[OH<sup>−</sup>] = 1.3 × 10<sup>−6</sup> <em>M</em>；$[{\\text{H}}_{2}{\\text{PO}}_{4}{}^{\\text{-}}]=0.042\\;M;$ 以及 $[{\\text{HPO}}_{4}{}^{2-}]=0.341\\;M?$",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 1.6e-07,
     "tol": 0.05,
-    "hint": "Substitute into <em>K</em><sub>b</sub> = [H<sub>2</sub>PO<sub>4</sub><sup>−</sup>][OH<sup>−</sup>]/[HPO<sub>4</sub><sup>2−</sup>].",
-    "solution": "<em>K</em><sub>b</sub> for ${\\text{HPO}}_{4}{}^{2-}=1.6\\;\\times \\;{10}^{-7}$"
+    "hint": "代入 <em>K</em><sub>b</sub> = [H<sub>2</sub>PO<sub>4</sub><sup>−</sup>][OH<sup>−</sup>]/[HPO<sub>4</sub><sup>2−</sup>]。",
+    "solution": "<em>K</em><sub>b</sub> 为：${\\text{HPO}}_{4}{}^{2-}=1.6\\;\\times \\;{10}^{-7}$"
    }
   },
   {
@@ -452,13 +470,13 @@
     "after": "ex-ka-ph"
    },
    "cite": "calculations",
-   "prompt": "The pH of a solution of household ammonia, a 0.950-<em>M</em> solution of NH<sub>3,</sub> is 11.612. What is <em>K</em><sub>b</sub> for NH<sub>3</sub>.",
+   "prompt": "家用氨水（0.950 <em>M</em> 的 NH<sub>3</sub> 溶液）的 pH 为 11.612。NH<sub>3</sub> 的 <em>K</em><sub>b</sub> 是多少。",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 1.8e-05,
     "tol": 0.05,
-    "hint": "The pOH, 14.00 − pH, gives [OH<sup>−</sup>] = [NH<sub>4</sub><sup>+</sup>]; an ICE table from 0.950 <em>M</em> gives [NH<sub>3</sub>] at equilibrium.",
+    "hint": "由 pOH（14.00 − pH）得 [OH<sup>−</sup>] = [NH<sub>4</sub><sup>+</sup>]；由 0.950 <em>M</em> 起算的 ICE 表给出平衡时的 [NH<sub>3</sub>]。",
     "solution": "<em>K</em><sub>b</sub> = 1.8 × 10<sup>−5</sup>"
    }
   },
@@ -472,15 +490,15 @@
     "after": "ex-weak-acid"
    },
    "cite": "calculations",
-   "prompt": "Only a small fraction of a weak acid ionizes in aqueous solution. What is the percent ionization of a 0.100-<em>M</em> solution of acetic acid, CH<sub>3</sub>CO<sub>2</sub>H?<br>${\\text{CH}}_{3}{\\text{CO}}_{2}\\text{H}(aq)+{\\text{H}}_{2}\\text{O}(l)\\;\\rightleftharpoons \\;{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{CH}}_{3}{\\text{CO}}_{2}{}^{\\text{-}}(aq)\\hspace{5em}{K}_{\\text{a}}=1.8\\;\\times \\;{10}^{-5}$",
+   "prompt": "只有一小部分弱酸在水溶液中电离。乙酸 CH<sub>3</sub>CO<sub>2</sub>H 的 0.100 <em>M</em> 溶液的电离百分数是多少？<br>${\\text{CH}}_{3}{\\text{CO}}_{2}\\text{H}(aq)+{\\text{H}}_{2}\\text{O}(l)\\;\\rightleftharpoons \\;{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{CH}}_{3}{\\text{CO}}_{2}{}^{\\text{-}}(aq)\\hspace{5em}{K}_{\\text{a}}=1.8\\;\\times \\;{10}^{-5}$",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 1.3,
     "unit": "%",
     "tol": 0.05,
-    "hint": "Solve <em>x</em><sup>2</sup>/(0.100 − <em>x</em>) = 1.8 × 10<sup>−5</sup> for <em>x</em> = [H<sub>3</sub>O<sup>+</sup>], then divide by 0.100 and multiply by 100.",
-    "solution": "percent ionization = 1.3%"
+    "hint": "解 <em>x</em><sup>2</sup>/(0.100 − <em>x</em>) = 1.8 × 10<sup>−5</sup>，得 <em>x</em> = [H<sub>3</sub>O<sup>+</sup>]，再除以 0.100 并乘以 100。",
+    "solution": "电离百分数 = 1.3%"
    }
   },
   {
@@ -493,7 +511,7 @@
     "after": "ex-weak-base"
    },
    "cite": "calculations",
-   "prompt": "Calculate the hydroxide ion concentration and the percent ionization of a 0.0325-<em>M</em> solution of ammonia, a weak base with a <em>K</em><sub>b</sub> of 1.76 × 10<sup>−5</sup>.",
+   "prompt": "计算氨（一种 <em>K</em><sub>b</sub> 为 1.76 × 10<sup>−5</sup> 的弱碱）的 0.0325 <em>M</em> 溶液中的氢氧根离子浓度和电离百分数。",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -502,16 +520,16 @@
       "part": "[OH<sup>−</sup>]",
       "value": 0.000756,
       "unit": "M",
-      "hint": "Solve <em>x</em><sup>2</sup>/(0.0325 − <em>x</em>) = 1.76 × 10<sup>−5</sup> for <em>x</em> = [OH<sup>−</sup>]."
+      "hint": "解 <em>x</em><sup>2</sup>/(0.0325 − <em>x</em>) = 1.76 × 10<sup>−5</sup>，得 <em>x</em> = [OH<sup>−</sup>]。"
      },
      {
       "part": "percent ionization",
       "value": 2.33,
       "unit": "%",
-      "hint": "Divide [OH<sup>−</sup>] by 0.0325 <em>M</em> and multiply by 100."
+      "hint": "用 [OH<sup>−</sup>] 除以 0.0325 <em>M</em>，再乘以 100。"
      }
     ],
-    "solution": "7.56 × 10<sup>−4</sup> <em>M</em>, 2.33%"
+    "solution": "7.56 × 10<sup>−4</sup> <em>M</em>，2.33%"
    }
   },
   {
@@ -524,13 +542,13 @@
     "after": "ex-quadratic"
    },
    "cite": "calculations",
-   "prompt": "Calculate the pH in a 0.010-<em>M</em> solution of caffeine, a weak base:<br>${\\text{C}}_{8}{\\text{H}}_{10}{\\text{N}}_{4}{\\text{O}}_{2}(aq)+{\\text{H}}_{2}\\text{O}(l)\\;\\rightleftharpoons \\;{\\text{C}}_{8}{\\text{H}}_{10}{\\text{N}}_{4}{\\text{O}}_{2}{\\text{H}}^{\\text{+}}(aq)+{\\text{OH}}^{\\text{-}}(aq)\\hspace{5em}{K}_{\\text{b}}=2.5\\;\\times \\;{10}^{-4}$",
+   "prompt": "计算咖啡因（一种弱碱）的 0.010 <em>M</em> 溶液的 pH：<br>${\\text{C}}_{8}{\\text{H}}_{10}{\\text{N}}_{4}{\\text{O}}_{2}(aq)+{\\text{H}}_{2}\\text{O}(l)\\;\\rightleftharpoons \\;{\\text{C}}_{8}{\\text{H}}_{10}{\\text{N}}_{4}{\\text{O}}_{2}{\\text{H}}^{\\text{+}}(aq)+{\\text{OH}}^{\\text{-}}(aq)\\hspace{5em}{K}_{\\text{b}}=2.5\\;\\times \\;{10}^{-4}$",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 11.16,
     "tol": 0.002,
-    "hint": "Let <em>x</em> = [OH<sup>−</sup>] and solve <em>x</em><sup>2</sup>/(0.010 − <em>x</em>) = 2.5 × 10<sup>−4</sup>; <em>x</em> is not small against 0.010, so use the quadratic formula. Then pH = 14.00 − pOH.",
+    "hint": "设 <em>x</em> = [OH<sup>−</sup>]，解 <em>x</em><sup>2</sup>/(0.010 − <em>x</em>) = 2.5 × 10<sup>−4</sup>；<em>x</em> 与 0.010 相比并不小，所以要用求根公式。然后 pH = 14.00 − pOH。",
     "solution": "pH 11.16"
    }
   },
@@ -544,11 +562,11 @@
     "at": "end"
    },
    "cite": "conjugate",
-   "prompt": "Use this list of important industrial compounds (and Figure 14.8) to answer the following questions regarding: Ca(OH)<sub>2</sub>, CH<sub>3</sub>CO<sub>2</sub>H, HCl, H<sub>2</sub>CO<sub>3</sub>, HF, HNO<sub>2</sub>, HNO<sub>3</sub>, H<sub>3</sub>PO<sub>4</sub>, H<sub>2</sub>SO<sub>4</sub>, NH<sub>3</sub>, NaOH, Na<sub>2</sub>CO<sub>3</sub>.<br>(a) Identify the strong Brønsted-Lowry acids and strong Brønsted-Lowry bases.<br>(b) Identify the compounds that can behave as Brønsted-Lowry acids with strengths lying between those of H<sub>3</sub>O<sup>+</sup> and H<sub>2</sub>O.<br>(c) Identify the compounds that can behave as Brønsted-Lowry bases with strengths lying between those of H<sub>2</sub>O and OH<sup>−</sup>.",
+   "prompt": "利用这份重要工业化合物的清单（以及图 14.8），回答下列与以下物质有关的问题：Ca(OH)<sub>2</sub>、CH<sub>3</sub>CO<sub>2</sub>H、HCl、H<sub>2</sub>CO<sub>3</sub>、HF、HNO<sub>2</sub>、HNO<sub>3</sub>、H<sub>3</sub>PO<sub>4</sub>、H<sub>2</sub>SO<sub>4</sub>、NH<sub>3</sub>、NaOH、Na<sub>2</sub>CO<sub>3</sub>。<br>（a）找出其中的强布朗斯特–劳里酸和强布朗斯特–劳里碱。<br>（b）找出能作为布朗斯特–劳里酸、且强度介于 H<sub>3</sub>O<sup>+</sup> 和 H<sub>2</sub>O 之间的化合物。<br>（c）找出能作为布朗斯特–劳里碱、且强度介于 H<sub>2</sub>O 和 OH<sup>−</sup> 之间的化合物。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "(a) The strong acids are HCl, HNO<sub>3</sub> and H<sub>2</sub>SO<sub>4</sub>; the strong bases are NaOH and Ca(OH)<sub>2</sub>. The three acids lie above hydronium ion in Figure 14.8 and ionize completely in water, and the two hydroxides dissolve to release hydroxide ion completely. (b) The acids between H<sub>3</sub>O<sup>+</sup> and H<sub>2</sub>O are CH<sub>3</sub>CO<sub>2</sub>H, H<sub>2</sub>CO<sub>3</sub>, HF, HNO<sub>2</sub> and H<sub>3</sub>PO<sub>4</sub>. Each is a weak acid that ionizes only partly in water, transferring protons to it to a limited extent. (c) The bases between H<sub>2</sub>O and OH<sup>−</sup> are NH<sub>3</sub> and Na<sub>2</sub>CO<sub>3</sub>, whose carbonate ion is the conjugate base of the weak acid HCO<sub>3</sub><sup>−</sup>. Both are weak bases that take protons from water only partly, so they are stronger bases than water but weaker than hydroxide ion."
+    "solution": "（a）强酸是 HCl、HNO<sub>3</sub> 和 H<sub>2</sub>SO<sub>4</sub>；强碱是 NaOH 和 Ca(OH)<sub>2</sub>。这三种酸在图 14.8 中位于水合氢离子之上，在水中完全电离，这两种氢氧化物溶解后完全释放出氢氧根离子。（b）介于 H<sub>3</sub>O<sup>+</sup> 和 H<sub>2</sub>O 之间的酸是 CH<sub>3</sub>CO<sub>2</sub>H、H<sub>2</sub>CO<sub>3</sub>、HF、HNO<sub>2</sub> 和 H<sub>3</sub>PO<sub>4</sub>。它们都是弱酸，在水中只部分电离，在有限的程度上把质子转移给水。（c）介于 H<sub>2</sub>O 和 OH<sup>−</sup> 之间的碱是 NH<sub>3</sub> 和 Na<sub>2</sub>CO<sub>3</sub>，后者的碳酸根离子是弱酸 HCO<sub>3</sub><sup>−</sup> 的共轭碱。两者都是只从水中部分夺取质子的弱碱，所以它们的碱性比水强，但比氢氧根离子弱。"
    }
   },
   {
@@ -561,7 +579,7 @@
     "at": "end"
    },
    "cite": "calculations",
-   "prompt": "The odor of vinegar is due to the presence of acetic acid, CH<sub>3</sub>CO<sub>2</sub>H, a weak acid. List, in order of descending concentration, all of the ionic and molecular species present in a 1-<em>M</em> aqueous solution of this acid.",
+   "prompt": "食醋的气味来自乙酸 CH<sub>3</sub>CO<sub>2</sub>H，一种弱酸。按浓度从高到低的顺序，列出这种酸的 1 <em>M</em> 水溶液中存在的所有离子物种和分子物种。",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -578,11 +596,11 @@
     "at": "end"
    },
    "cite": "calculations",
-   "prompt": "Household ammonia is a solution of the weak base NH<sub>3</sub> in water. List, in order of descending concentration, all of the ionic and molecular species present in a 1-<em>M</em> aqueous solution of this base.",
+   "prompt": "家用氨水是弱碱 NH<sub>3</sub> 的水溶液。按浓度从高到低的顺序，列出这种碱的 1 <em>M</em> 水溶液中存在的所有离子物种和分子物种。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "[H<sub>2</sub>O] &gt; [NH<sub>3</sub>] &gt; [OH<sup>−</sup>] ≈ [NH<sub>4</sub><sup>+</sup>] &gt; [H<sub>3</sub>O<sup>+</sup>]. Water is the solvent, about 55 <em>M</em>, far more concentrated than any solute. Ammonia is a weak base, so in NH<sub>3</sub>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ NH<sub>4</sub><sup>+</sup>(<em>aq</em>) + OH<sup>−</sup>(<em>aq</em>) only a small fraction of the 1 <em>M</em> NH<sub>3</sub> reacts, and most of it remains as molecules. Each molecule that reacts gives one NH<sub>4</sub><sup>+</sup> and one OH<sup>−</sup>, so these two concentrations are nearly equal; [OH<sup>−</sup>] is very slightly larger because water’s own ionization adds a little hydroxide. Since [H<sub>3</sub>O<sup>+</sup>][OH<sup>−</sup>] = <em>K</em><sub>w</sub> = 1.0 × 10<sup>−14</sup>, a basic solution with appreciable [OH<sup>−</sup>] has a very small [H<sub>3</sub>O<sup>+</sup>], the lowest of all."
+    "solution": "[H<sub>2</sub>O] &gt; [NH<sub>3</sub>] &gt; [OH<sup>−</sup>] ≈ [NH<sub>4</sub><sup>+</sup>] &gt; [H<sub>3</sub>O<sup>+</sup>]。水是溶剂，约 55 <em>M</em>，浓度远高于任何溶质。氨是弱碱，所以在 NH<sub>3</sub>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ NH<sub>4</sub><sup>+</sup>(<em>aq</em>) + OH<sup>−</sup>(<em>aq</em>) 中，1 <em>M</em> 的 NH<sub>3</sub> 只有一小部分发生反应，大部分仍以分子形式存在。每个发生反应的分子给出一个 NH<sub>4</sub><sup>+</sup> 和一个 OH<sup>−</sup>，所以这两者的浓度几乎相等；[OH<sup>−</sup>] 略大一点，因为水自身的电离又增添了一点氢氧根。由于 [H<sub>3</sub>O<sup>+</sup>][OH<sup>−</sup>] = <em>K</em><sub>w</sub> = 1.0 × 10<sup>−14</sup>，[OH<sup>−</sup>] 可观的碱性溶液中 [H<sub>3</sub>O<sup>+</sup>] 非常小，是所有物种中最低的。"
    }
   },
   {
@@ -595,11 +613,11 @@
     "at": "end"
    },
    "cite": "ternary",
-   "prompt": "Explain why the ionization constant, <em>K</em><sub>a</sub>, for H<sub>2</sub>SO<sub>4</sub> is larger than the ionization constant for H<sub>2</sub>SO<sub>3</sub>.",
+   "prompt": "解释为什么 H<sub>2</sub>SO<sub>4</sub> 的电离常数 <em>K</em><sub>a</sub> 比 H<sub>2</sub>SO<sub>3</sub> 的电离常数大。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "The oxidation state of the sulfur in H<sub>2</sub>SO<sub>4</sub> is greater than the oxidation state of the sulfur in H<sub>2</sub>SO<sub>3</sub>."
+    "solution": "H<sub>2</sub>SO<sub>4</sub> 中硫的氧化态大于 H<sub>2</sub>SO<sub>3</sub> 中硫的氧化态。"
    }
   },
   {
@@ -612,11 +630,11 @@
     "at": "end"
    },
    "cite": "structure",
-   "prompt": "Explain why the ionization constant, <em>K</em><sub>a</sub>, for HI is larger than the ionization constant for HF.",
+   "prompt": "解释为什么 HI 的电离常数 <em>K</em><sub>a</sub> 比 HF 的电离常数大。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "<em>K</em><sub>a</sub> for HI is larger because the H–I bond is much weaker than the H–F bond. Fluorine and iodine are both in group 17, and for binary acids in one group the acid strength increases as the H–A bond strength decreases down the group: HF &lt; HCl &lt; HBr &lt; HI. The iodine atom is much larger than the fluorine atom, so the H–I bond is longer and weaker, and HI gives up its proton to water readily. It ionizes completely and is a strong acid. The short, strong H–F bond breaks far less readily, so HF ionizes only partly in water and is a weak acid, with <em>K</em><sub>a</sub> = 6.4 × 10<sup>−4</sup>."
+    "solution": "HI 的 <em>K</em><sub>a</sub> 较大，因为 H–I 键比 H–F 键弱得多。氟和碘都在第 17 族，对于同一族中的无氧酸，酸强度随着沿该族向下 H–A 键强度的减小而增大：HF &lt; HCl &lt; HBr &lt; HI。碘原子比氟原子大得多，所以 H–I 键更长、更弱，HI 很容易把质子给予水。它完全电离，是强酸。短而强的 H–F 键断裂起来要难得多，所以 HF 在水中只部分电离，是弱酸，<em>K</em><sub>a</sub> = 6.4 × 10<sup>−4</sup>。"
    }
   },
   {
@@ -629,7 +647,7 @@
     "at": "end"
    },
    "cite": "conjugate",
-   "prompt": "Gastric juice, the digestive fluid produced in the stomach, contains hydrochloric acid, HCl. Milk of Magnesia, a suspension of solid Mg(OH)<sub>2</sub> in an aqueous medium, is sometimes used to neutralize excess stomach acid. Write a complete balanced equation for the neutralization reaction, and identify the conjugate acid-base pairs.",
+   "prompt": "胃液是胃中产生的消化液，含有盐酸 HCl。镁乳是固体 Mg(OH)<sub>2</sub> 在水介质中的悬浮液，有时用来中和过多的胃酸。写出中和反应的完整配平方程式，并指出其中的共轭酸碱对。",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -646,11 +664,11 @@
     "at": "end"
    },
    "cite": "conjugate",
-   "prompt": "Nitric acid reacts with insoluble copper(II) oxide to form soluble copper(II) nitrate, Cu(NO<sub>3</sub>)<sub>2</sub>, a compound that has been used to prevent the growth of algae in swimming pools. Write the balanced chemical equation for the reaction of an aqueous solution of HNO<sub>3</sub> with CuO.",
+   "prompt": "硝酸与不溶的氧化铜(II) 反应，生成可溶的硝酸铜(II) Cu(NO<sub>3</sub>)<sub>2</sub>，这种化合物曾被用来防止游泳池中藻类的生长。写出 HNO<sub>3</sub> 水溶液与 CuO 反应的配平化学方程式。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "2HNO<sub>3</sub>(<em>aq</em>) + CuO(<em>s</em>) ⟶ Cu(NO<sub>3</sub>)<sub>2</sub>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>). Copper(II) oxide acts as a base: its oxide ion accepts two protons from the acid to form one water molecule, and Cu<sup>2+</sup> pairs with two nitrate ions. The equation balances with one Cu, two N, seven O (six from the two HNO<sub>3</sub> and one from CuO) and two H on each side. As a net ionic equation, 2H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + CuO(<em>s</em>) ⟶ Cu<sup>2+</sup>(<em>aq</em>) + 3H<sub>2</sub>O(<em>l</em>)."
+    "solution": "2HNO<sub>3</sub>(<em>aq</em>) + CuO(<em>s</em>) ⟶ Cu(NO<sub>3</sub>)<sub>2</sub>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>)。氧化铜(II) 起碱的作用：它的氧离子从酸那里接受两个质子，形成一个水分子，而 Cu<sup>2+</sup> 与两个硝酸根离子配对。该方程式两边各有一个 Cu、两个 N、七个 O（六个来自两个 HNO<sub>3</sub>，一个来自 CuO）和两个 H，因而是配平的。写成净离子方程式为 2H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + CuO(<em>s</em>) ⟶ Cu<sup>2+</sup>(<em>aq</em>) + 3H<sub>2</sub>O(<em>l</em>)。"
    }
   },
   {
@@ -663,13 +681,13 @@
     "at": "end"
    },
    "cite": "conjugate",
-   "prompt": "What is the ionization constant at 25 °C for the weak acid ${\\text{CH}}_{3}{\\text{NH}}_{3}{}^{\\text{+}},$ the conjugate acid of the weak base CH<sub>3</sub>NH<sub>2</sub>, <em>K</em><sub>b</sub> = 4.4 × 10<sup>−4</sup>.",
+   "prompt": "弱碱 CH<sub>3</sub>NH<sub>2</sub> 的 <em>K</em><sub>b</sub> = 4.4 × 10<sup>−4</sup>，它的共轭酸即弱酸 ${\\text{CH}}_{3}{\\text{NH}}_{3}{}^{\\text{+}},$ 在 25 °C 时的电离常数是多少。",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 2.3e-11,
     "tol": 0.05,
-    "hint": "<em>K</em><sub>a</sub> = <em>K</em><sub>w</sub>/<em>K</em><sub>b</sub> with <em>K</em><sub>w</sub> = 1.0 × 10<sup>−14</sup>.",
+    "hint": "<em>K</em><sub>a</sub> = <em>K</em><sub>w</sub>/<em>K</em><sub>b</sub>，其中 <em>K</em><sub>w</sub> = 1.0 × 10<sup>−14</sup>。",
     "solution": "${K}_{\\text{a}}=2.3\\;\\times \\;{10}^{-11}$"
    }
   },
@@ -683,11 +701,11 @@
     "at": "end"
    },
    "cite": "conjugate",
-   "prompt": "Which base, CH<sub>3</sub>NH<sub>2</sub> or (CH<sub>3</sub>)<sub>2</sub>NH, is the stronger base? Which conjugate acid, ${({\\text{CH}}_{3})}_{2}{\\text{NH}}_{2}{}^{\\text{+}}$ or ${\\text{CH}}_{3}{\\text{NH}}_{3}{}^{\\text{+}}$, is the stronger acid?",
+   "prompt": "CH<sub>3</sub>NH<sub>2</sub> 和 (CH<sub>3</sub>)<sub>2</sub>NH 这两种碱中，哪一种是较强的碱？共轭酸 ${({\\text{CH}}_{3})}_{2}{\\text{NH}}_{2}{}^{\\text{+}}$ 和 ${\\text{CH}}_{3}{\\text{NH}}_{3}{}^{\\text{+}}$ 中，哪一种是较强的酸？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "The stronger base or stronger acid is the one with the larger <em>K</em><sub>b</sub> or <em>K</em><sub>a</sub>, respectively. In these two examples, they are (CH<sub>3</sub>)<sub>2</sub>NH and ${\\text{CH}}_{3}{\\text{NH}}_{3}{}^{\\text{+}}.$"
+    "solution": "较强的碱或较强的酸，分别是 <em>K</em><sub>b</sub> 或 <em>K</em><sub>a</sub> 较大的那一个。在这两个例子中，它们是 (CH<sub>3</sub>)<sub>2</sub>NH 和 ${\\text{CH}}_{3}{\\text{NH}}_{3}{}^{\\text{+}}.$"
    }
   },
   {
@@ -700,11 +718,11 @@
     "at": "end"
    },
    "cite": "conjugate",
-   "prompt": "Which is the stronger acid, ${\\text{NH}}_{4}{}^{\\text{+}}$ or HBrO?",
+   "prompt": "${\\text{NH}}_{4}{}^{\\text{+}}$ 和 HBrO 中，哪一个是较强的酸？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "HBrO is the stronger acid. Appendix H gives <em>K</em><sub>a</sub> = 2.8 × 10<sup>−9</sup> for HBrO. The ammonium ion is the conjugate acid of ammonia, so its <em>K</em><sub>a</sub> follows from <em>K</em><sub>a</sub> × <em>K</em><sub>b</sub> = <em>K</em><sub>w</sub> and the <em>K</em><sub>b</sub> of NH<sub>3</sub>, 1.8 × 10<sup>−5</sup>: <em>K</em><sub>a</sub> = (1.0 × 10<sup>−14</sup>)/(1.8 × 10<sup>−5</sup>) = 5.6 × 10<sup>−10</sup>. The larger ionization constant belongs to the acid that ionizes to the greater extent, and 2.8 × 10<sup>−9</sup> is about five times 5.6 × 10<sup>−10</sup>, so HBrO is the stronger acid of the two."
+    "solution": "HBrO 是较强的酸。附录 H 给出 HBrO 的 <em>K</em><sub>a</sub> = 2.8 × 10<sup>−9</sup>。铵根离子是氨的共轭酸，所以它的 <em>K</em><sub>a</sub> 由 <em>K</em><sub>a</sub> × <em>K</em><sub>b</sub> = <em>K</em><sub>w</sub> 和 NH<sub>3</sub> 的 <em>K</em><sub>b</sub>（1.8 × 10<sup>−5</sup>）得出：<em>K</em><sub>a</sub> = (1.0 × 10<sup>−14</sup>)/(1.8 × 10<sup>−5</sup>) = 5.6 × 10<sup>−10</sup>。较大的电离常数属于电离程度较大的酸，而 2.8 × 10<sup>−9</sup> 约为 5.6 × 10<sup>−10</sup> 的五倍，所以两者中 HBrO 是较强的酸。"
    }
   },
   {
@@ -717,11 +735,11 @@
     "at": "end"
    },
    "cite": "conjugate",
-   "prompt": "Which is the stronger base, (CH<sub>3</sub>)<sub>3</sub>N or ${\\text{H}}_{2}{\\text{BO}}_{3}{}^{\\text{-}}?$",
+   "prompt": "(CH<sub>3</sub>)<sub>3</sub>N 和 ${\\text{H}}_{2}{\\text{BO}}_{3}{}^{\\text{-}}?$ 中，哪一个是较强的碱？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "triethylamine<sup class=\"fn\" data-note=\"c-e39-name\"></sup>"
+    "solution": "三乙胺<sup class=\"fn\" data-note=\"c-e39-name\"></sup>"
    }
   },
   {
@@ -734,11 +752,11 @@
     "at": "end"
    },
    "cite": "structure",
-   "prompt": "Predict which acid in each of the following pairs is the stronger and explain your reasoning for each.<br>(a) H<sub>2</sub>O or HF<br>(b) B(OH)<sub>3</sub> or Al(OH)<sub>3</sub><br>(c) ${\\text{HSO}}_{3}{}^{\\text{-}}$ or ${\\text{HSO}}_{4}{}^{\\text{-}}$<br>(d) NH<sub>3</sub> or H<sub>2</sub>S<br>(e) H<sub>2</sub>O or H<sub>2</sub>Te",
+   "prompt": "预测下列各对酸中哪一种较强，并分别说明你的理由。<br>（a）H<sub>2</sub>O 或 HF<br>（b）B(OH)<sub>3</sub> 或 Al(OH)<sub>3</sub><br>（c）${\\text{HSO}}_{3}{}^{\\text{-}}$ 或 ${\\text{HSO}}_{4}{}^{\\text{-}}$<br>（d）NH<sub>3</sub> 或 H<sub>2</sub>S<br>（e）H<sub>2</sub>O 或 H<sub>2</sub>Te",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "(a) HF. H<sub>2</sub>O and HF are binary acids of the same row; across a row acidity increases with the electronegativity of A, and F is more electronegative than O, so the H–F bond is more polar. (b) B(OH)<sub>3</sub>. In hydroxy compounds the acidity increases with the electronegativity of the central atom; boron (2.0) is more electronegative than aluminum (1.5), so B(OH)<sub>3</sub> is a weak acid while Al(OH)<sub>3</sub> is amphoteric. (c) HSO<sub>4</sub><sup>−</sup>. Both have sulfur as the central atom, but sulfur has oxidation number +6 in HSO<sub>4</sub><sup>−</sup> and +4 in HSO<sub>3</sub><sup>−</sup>; the extra oxygen draws electron density from the O–H bond and makes it easier to break. (d) H<sub>2</sub>S. Acidity of binary acids increases from left to right in a row and from top to bottom in a group; sulfur lies to the right of and below nitrogen, so both trends favor H<sub>2</sub>S, a weak acid, while NH<sub>3</sub> acts as a base in water. (e) H<sub>2</sub>Te. O and Te are both in group 16, and the H–Te bond is much weaker than the H–O bond, so H<sub>2</sub>Te loses a proton more readily."
+    "solution": "（a）HF。H<sub>2</sub>O 和 HF 是同一周期的无氧酸；沿一个周期，酸性随 A 的电负性增大而增强，而 F 的电负性比 O 大，所以 H–F 键的极性更大。（b）B(OH)<sub>3</sub>。在羟基化合物中，酸性随中心原子的电负性增大而增强；硼（2.0）的电负性比铝（1.5）大，所以 B(OH)<sub>3</sub> 是弱酸，而 Al(OH)<sub>3</sub> 是两性的。（c）HSO<sub>4</sub><sup>−</sup>。两者的中心原子都是硫，但硫在 HSO<sub>4</sub><sup>−</sup> 中的氧化数是 +6，在 HSO<sub>3</sub><sup>−</sup> 中是 +4；多出的那个氧从 O–H 键吸引电子密度，使它更容易断裂。（d）H<sub>2</sub>S。无氧酸的酸性在一个周期内从左到右增强，在一个族内从上到下增强；硫位于氮的右方和下方，所以两种递变趋势都有利于弱酸 H<sub>2</sub>S，而 NH<sub>3</sub> 在水中起碱的作用。（e）H<sub>2</sub>Te。O 和 Te 都在第 16 族，而 H–Te 键比 H–O 键弱得多，所以 H<sub>2</sub>Te 更容易失去质子。"
    }
   },
   {
@@ -751,11 +769,11 @@
     "at": "end"
    },
    "cite": "structure",
-   "prompt": "Predict which compound in each of the following pairs of compounds is more acidic and explain your reasoning for each.<br>(a) ${\\text{HSO}}_{4}{}^{\\text{-}}$ or ${\\text{HSeO}}_{4}{}^{\\text{-}}$<br>(b) NH<sub>3</sub> or H<sub>2</sub>O<br>(c) PH<sub>3</sub> or HI<br>(d) NH<sub>3</sub> or PH<sub>3</sub><br>(e) H<sub>2</sub>S or HBr",
+   "prompt": "预测下列各对化合物中哪一种酸性更强，并分别说明你的理由。<br>（a）${\\text{HSO}}_{4}{}^{\\text{-}}$ 或 ${\\text{HSeO}}_{4}{}^{\\text{-}}$<br>（b）NH<sub>3</sub> 或 H<sub>2</sub>O<br>（c）PH<sub>3</sub> 或 HI<br>（d）NH<sub>3</sub> 或 PH<sub>3</sub><br>（e）H<sub>2</sub>S 或 HBr",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) ${\\text{HSO}}_{4}{}^{\\text{-}};$ higher electronegativity of the central ion. (b) H<sub>2</sub>O; NH<sub>3</sub> is a base and water is neutral, or decide on the basis of <em>K</em><sub>a</sub> values. (c) HI; PH<sub>3</sub> is weaker than HCl; HCl is weaker than HI. Thus, PH<sub>3</sub> is weaker than HI. (d) PH<sub>3</sub>; in binary compounds of hydrogen with nonmetals, the acidity increases for the element lower in a group. (e) HBr; in a period, the acidity increases from left to right; in a group, it increases from top to bottom. Br is to the left and below S, so HBr is the stronger acid."
+    "solution": "（a）${\\text{HSO}}_{4}{}^{\\text{-}};$ 中心离子的电负性较高。（b）H<sub>2</sub>O；NH<sub>3</sub> 是碱而水是中性的，或者根据 <em>K</em><sub>a</sub> 值来判断。（c）HI；PH<sub>3</sub> 比 HCl 弱；HCl 比 HI 弱。因此 PH<sub>3</sub> 比 HI 弱。（d）PH<sub>3</sub>；在氢与非金属的二元化合物中，该元素在族中的位置越低，酸性越强。（e）HBr；在一个周期内，酸性从左到右增强；在一个族内，从上到下增强。Br 在 S 的左下方，所以 HBr 是较强的酸。"
    }
   },
   {
@@ -768,11 +786,11 @@
     "at": "end"
    },
    "cite": "structure",
-   "prompt": "Rank the compounds in each of the following groups in order of increasing acidity or basicity, as indicated, and explain the order you assign.<br>(a) acidity: HCl, HBr, HI<br>(b) basicity: H<sub>2</sub>O, OH<sup>−</sup>, H<sup>−</sup>, Cl<sup>−</sup><br>(c) basicity: Mg(OH)<sub>2</sub>, Si(OH)<sub>4</sub>, ClO<sub>3</sub>(OH) (Hint: Formula could also be written as HClO<sub>4</sub>.)<br>(d) acidity: HF, H<sub>2</sub>O, NH<sub>3</sub>, CH<sub>4</sub>",
+   "prompt": "按酸性或碱性（如所指明）增强的顺序，对下列各组中的化合物排序，并解释你所定的顺序。<br>（a）酸性：HCl、HBr、HI<br>（b）碱性：H<sub>2</sub>O、OH<sup>−</sup>、H<sup>−</sup>、Cl<sup>−</sup><br>（c）碱性：Mg(OH)<sub>2</sub>、Si(OH)<sub>4</sub>、ClO<sub>3</sub>(OH)（提示：该化学式也可以写成 HClO<sub>4</sub>。）<br>（d）酸性：HF、H<sub>2</sub>O、NH<sub>3</sub>、CH<sub>4</sub>",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "(a) HCl &lt; HBr &lt; HI. These are binary acids of group 17, and acidity increases down the group as the H–X bond becomes longer and weaker. (b) Cl<sup>−</sup> &lt; H<sub>2</sub>O &lt; OH<sup>−</sup> &lt; H<sup>−</sup>. The stronger an acid, the weaker its conjugate base. HCl is a stronger acid than H<sub>3</sub>O<sup>+</sup>, since it gives its proton to water completely, so Cl<sup>−</sup> is a weaker base than H<sub>2</sub>O. Water is a weaker acid than H<sub>3</sub>O<sup>+</sup>, so its conjugate base OH<sup>−</sup> is stronger than H<sub>2</sub>O. H<sub>2</sub> is a far weaker acid than water, so H<sup>−</sup> lies below OH<sup>−</sup> in Figure 14.8 and takes a proton from water completely. (c) ClO<sub>3</sub>(OH) &lt; Si(OH)<sub>4</sub> &lt; Mg(OH)<sub>2</sub>. The electronegativities of the central atoms are Cl 3.0, Si 1.8 and Mg 1.2. A low-electronegativity atom like Mg forms an ionic bond with OH that breaks to release hydroxide ion, so Mg(OH)<sub>2</sub> is a base; highly electronegative Cl, in the +7 oxidation state, pulls electron density from the O–H bond, so ClO<sub>3</sub>(OH) is the strong acid HClO<sub>4</sub>; Si(OH)<sub>4</sub> lies between as a very weak acid. (d) CH<sub>4</sub> &lt; NH<sub>3</sub> &lt; H<sub>2</sub>O &lt; HF. These are binary acids of the second row, and acidity increases from left to right as the electronegativity of C &lt; N &lt; O &lt; F rises and the H–A bond grows more polar."
+    "solution": "（a）HCl &lt; HBr &lt; HI。这些是第 17 族的无氧酸，酸性沿该族向下增强，因为 H–X 键变得更长更弱。（b）Cl<sup>−</sup> &lt; H<sub>2</sub>O &lt; OH<sup>−</sup> &lt; H<sup>−</sup>。酸越强，其共轭碱越弱。HCl 是比 H<sub>3</sub>O<sup>+</sup> 更强的酸，因为它把质子完全给予水，所以 Cl<sup>−</sup> 是比 H<sub>2</sub>O 更弱的碱。水是比 H<sub>3</sub>O<sup>+</sup> 更弱的酸，所以它的共轭碱 OH<sup>−</sup> 比 H<sub>2</sub>O 强。H<sub>2</sub> 是比水弱得多的酸，所以 H<sup>−</sup> 在图 14.8 中位于 OH<sup>−</sup> 之下，并完全从水中夺取质子。（c）ClO<sub>3</sub>(OH) &lt; Si(OH)<sub>4</sub> &lt; Mg(OH)<sub>2</sub>。中心原子的电负性分别是 Cl 3.0、Si 1.8 和 Mg 1.2。像 Mg 这样电负性低的原子与 OH 形成离子键，这个键断裂而释放出氢氧根离子，所以 Mg(OH)<sub>2</sub> 是碱；电负性很高的 Cl 处于 +7 氧化态，从 O–H 键吸引电子密度，所以 ClO<sub>3</sub>(OH) 就是强酸 HClO<sub>4</sub>；Si(OH)<sub>4</sub> 介于两者之间，是很弱的酸。（d）CH<sub>4</sub> &lt; NH<sub>3</sub> &lt; H<sub>2</sub>O &lt; HF。这些是第二周期的无氧酸，酸性从左到右增强，因为 C &lt; N &lt; O &lt; F 的电负性增大，H–A 键的极性变得更大。"
    }
   },
   {
@@ -785,11 +803,11 @@
     "at": "end"
    },
    "cite": "ternary",
-   "prompt": "Rank the compounds in each of the following groups in order of increasing acidity or basicity, as indicated, and explain the order you assign.<br>(a) acidity: NaHSO<sub>3</sub>, NaHSeO<sub>3</sub>, NaHSO<sub>4</sub><br>(b) basicity: ${\\text{BrO}}_{2}{}^{\\text{-}},$ ${\\text{ClO}}_{2}{}^{\\text{-}},$ ${\\text{IO}}_{2}{}^{\\text{-}}$<br>(c) acidity: HOCl, HOBr, HOI<br>(d) acidity: HOCl, HOClO, HOClO<sub>2</sub>, HOClO<sub>3</sub><br>(e) basicity: ${\\text{NH}}_{2}{}^{\\text{-}},$ HS<sup>−</sup>, HTe<sup>−</sup>, ${\\text{PH}}_{2}{}^{\\text{-}}$<br>(f) basicity: BrO<sup>−</sup>, ${\\text{BrO}}_{2}{}^{\\text{-}},$ ${\\text{BrO}}_{3}{}^{\\text{-}},$ ${\\text{BrO}}_{4}{}^{\\text{-}}$",
+   "prompt": "按酸性或碱性（如所指明）增强的顺序，对下列各组中的化合物排序，并解释你所定的顺序。<br>（a）酸性：NaHSO<sub>3</sub>、NaHSeO<sub>3</sub>、NaHSO<sub>4</sub><br>（b）碱性：${\\text{BrO}}_{2}{}^{\\text{-}},$ ${\\text{ClO}}_{2}{}^{\\text{-}},$ ${\\text{IO}}_{2}{}^{\\text{-}}$<br>（c）酸性：HOCl、HOBr、HOI<br>（d）酸性：HOCl、HOClO、HOClO<sub>2</sub>、HOClO<sub>3</sub><br>（e）碱性：${\\text{NH}}_{2}{}^{\\text{-}},$ HS<sup>−</sup>、HTe<sup>−</sup>、${\\text{PH}}_{2}{}^{\\text{-}}$<br>（f）碱性：BrO<sup>−</sup>、${\\text{BrO}}_{2}{}^{\\text{-}},$ ${\\text{BrO}}_{3}{}^{\\text{-}},$ ${\\text{BrO}}_{4}{}^{\\text{-}}$",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) NaHSeO<sub>3</sub> < NaHSO<sub>3</sub> < NaHSO<sub>4</sub>; in polyoxy acids, the more electronegative central element—S, in this case—forms the stronger acid. The larger number of oxygen atoms on the central atom (giving it a higher oxidation state) also creates a greater release of hydrogen atoms, resulting in a stronger acid. As a salt, the acidity increases in the same manner. (b) ${\\text{ClO}}_{2}{}^{\\text{-}}<{\\text{BrO}}_{2}{}^{\\text{-}}<{\\text{IO}}_{2}{}^{\\text{-}};$ the basicity of the anions in a series of acids will be the opposite of the acidity in their oxyacids. The acidity increases as the electronegativity of the central atom increases. Cl is more electronegative than Br, and I is the least electronegative of the three. (c) HOI < HOBr < HOCl; in a series of the same form of oxyacids, the acidity increases as the electronegativity of the central atom increases. Cl is more electronegative than Br, and I is the least electronegative of the three. (d) HOCl < HOClO < HOClO<sub>2</sub> < HOClO<sub>3</sub>; in a series of oxyacids of the same central element, the acidity increases as the number of oxygen atoms increases (or as the oxidation state of the central atom increases). (e) ${\\text{HTe}}^{\\text{-}}<{\\text{HS}}^{\\text{-}}\\ll \\;{\\text{PH}}_{2}{}^{\\text{-}}<{\\text{NH}}_{2}{}^{\\text{-}};$ ${\\text{PH}}_{2}{}^{\\text{-}}$ and ${\\text{NH}}_{2}{}^{\\text{-}}$ are anions of weak bases, so they act as strong bases toward H<sup>+</sup>. ${\\text{HTe}}^{\\text{-}}$ and HS<sup>−</sup> are anions of weak acids, so they have less basic character. In a periodic group, the more electronegative element has the more basic anion. (f) ${\\text{BrO}}_{4}{}^{\\text{-}}<{\\text{BrO}}_{3}{}^{\\text{-}}<{\\text{BrO}}_{2}{}^{\\text{-}}<{\\text{BrO}}^{\\text{-}};$ with a larger number of oxygen atoms (that is, as the oxidation state of the central ion increases), the corresponding acid becomes more acidic and the anion consequently less basic."
+    "solution": "（a）NaHSeO<sub>3</sub> < NaHSO<sub>3</sub> < NaHSO<sub>4</sub>；在含氧酸中，电负性更大的中心元素（此处为 S）形成更强的酸。中心原子上氧原子的数目越多（使它的氧化态越高），氢原子的释放也越多，从而形成更强的酸。作为盐，其酸性也以同样的方式增强。（b）${\\text{ClO}}_{2}{}^{\\text{-}}<{\\text{BrO}}_{2}{}^{\\text{-}}<{\\text{IO}}_{2}{}^{\\text{-}};$ 一系列酸的阴离子的碱性，与它们的含氧酸的酸性相反。酸性随中心原子的电负性增大而增强。Cl 的电负性比 Br 大，而 I 是三者中电负性最小的。（c）HOI < HOBr < HOCl；在同一形式的一系列含氧酸中，酸性随中心原子的电负性增大而增强。Cl 的电负性比 Br 大，而 I 是三者中电负性最小的。（d）HOCl < HOClO < HOClO<sub>2</sub> < HOClO<sub>3</sub>；在中心元素相同的一系列含氧酸中，酸性随氧原子数目的增加（或随中心原子氧化态的升高）而增强。（e）${\\text{HTe}}^{\\text{-}}<{\\text{HS}}^{\\text{-}}\\ll \\;{\\text{PH}}_{2}{}^{\\text{-}}<{\\text{NH}}_{2}{}^{\\text{-}};$ ${\\text{PH}}_{2}{}^{\\text{-}}$ 和 ${\\text{NH}}_{2}{}^{\\text{-}}$ 是弱碱的阴离子，所以它们对 H<sup>+</sup> 起强碱的作用。${\\text{HTe}}^{\\text{-}}$ 和 HS<sup>−</sup> 是弱酸的阴离子，所以它们的碱性较弱。在元素周期表的一个族中，电负性更大的元素具有碱性更强的阴离子。（f）${\\text{BrO}}_{4}{}^{\\text{-}}<{\\text{BrO}}_{3}{}^{\\text{-}}<{\\text{BrO}}_{2}{}^{\\text{-}}<{\\text{BrO}}^{\\text{-}};$ 随着氧原子数目的增多（即随着中心离子氧化态的升高），相应的酸酸性变强，阴离子的碱性随之变弱。"
    }
   },
   {
@@ -802,11 +820,11 @@
     "at": "end"
    },
    "cite": "conjugate",
-   "prompt": "Both HF and HCN ionize in water to a limited extent. Which of the conjugate bases, F<sup>−</sup> or CN<sup>−</sup>, is the stronger base?",
+   "prompt": "HF 和 HCN 在水中都只在有限的程度上电离。共轭碱 F<sup>−</sup> 和 CN<sup>−</sup> 中，哪一个是较强的碱？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "CN<sup>−</sup> is the stronger base. Appendix H gives <em>K</em><sub>a</sub> = 6.4 × 10<sup>−4</sup> for HF and 4.9 × 10<sup>−10</sup> for HCN, so HCN is much the weaker acid. For a conjugate pair <em>K</em><sub>b</sub> = <em>K</em><sub>w</sub>/<em>K</em><sub>a</sub>, so the conjugate base of the weaker acid is the stronger base: <em>K</em><sub>b</sub> for F<sup>−</sup> is (1.0 × 10<sup>−14</sup>)/(6.4 × 10<sup>−4</sup>) = 1.6 × 10<sup>−11</sup>, and <em>K</em><sub>b</sub> for CN<sup>−</sup> is (1.0 × 10<sup>−14</sup>)/(4.9 × 10<sup>−10</sup>) = 2.0 × 10<sup>−5</sup>. The cyanide ion’s <em>K</em><sub>b</sub> is about a million times larger than the fluoride ion’s."
+    "solution": "CN<sup>−</sup> 是较强的碱。附录 H 给出 HF 的 <em>K</em><sub>a</sub> = 6.4 × 10<sup>−4</sup>，HCN 的为 4.9 × 10<sup>−10</sup>，所以 HCN 是弱得多的酸。对于共轭酸碱对，<em>K</em><sub>b</sub> = <em>K</em><sub>w</sub>/<em>K</em><sub>a</sub>，所以较弱的酸的共轭碱是较强的碱：F<sup>−</sup> 的 <em>K</em><sub>b</sub> 为 (1.0 × 10<sup>−14</sup>)/(6.4 × 10<sup>−4</sup>) = 1.6 × 10<sup>−11</sup>，CN<sup>−</sup> 的 <em>K</em><sub>b</sub> 为 (1.0 × 10<sup>−14</sup>)/(4.9 × 10<sup>−10</sup>) = 2.0 × 10<sup>−5</sup>。氰根离子的 <em>K</em><sub>b</sub> 约比氟离子的大一百万倍。"
    }
   },
   {
@@ -819,7 +837,7 @@
     "at": "end"
    },
    "cite": "calculations",
-   "prompt": "The active ingredient formed by aspirin in the body is salicylic acid, C<sub>6</sub>H<sub>4</sub>OH(CO<sub>2</sub>H). The carboxyl group (−CO<sub>2</sub>H) acts as a weak acid. The phenol group (an OH group bonded to an aromatic ring) also acts as an acid but a much weaker acid. List, in order of descending concentration, all of the ionic and molecular species present in a 0.001-<em>M</em> aqueous solution of C<sub>6</sub>H<sub>4</sub>OH(CO<sub>2</sub>H).",
+   "prompt": "阿司匹林在体内形成的有效成分是水杨酸 C<sub>6</sub>H<sub>4</sub>OH(CO<sub>2</sub>H)。羧基（−CO<sub>2</sub>H）起弱酸的作用。酚羟基（与芳环相连的 OH 基团）也起酸的作用，但酸性弱得多。按浓度从高到低的顺序，列出 C<sub>6</sub>H<sub>4</sub>OH(CO<sub>2</sub>H) 的 0.001 <em>M</em> 水溶液中存在的所有离子物种和分子物种。",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -836,11 +854,11 @@
     "at": "end"
    },
    "cite": "calculations",
-   "prompt": "Are the concentrations of hydronium ion and hydroxide ion in a solution of an acid or a base in water directly proportional or inversely proportional? Explain your answer.",
+   "prompt": "酸或碱的水溶液中，水合氢离子的浓度与氢氧根离子的浓度是成正比还是成反比？解释你的答案。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "They are inversely proportional. In any aqueous solution at a given temperature the two concentrations obey <em>K</em><sub>w</sub> = [H<sub>3</sub>O<sup>+</sup>][OH<sup>−</sup>], which is 1.0 × 10<sup>−14</sup> at 25 °C. Because their product is fixed, [OH<sup>−</sup>] = <em>K</em><sub>w</sub>/[H<sub>3</sub>O<sup>+</sup>], and making one concentration ten times larger makes the other ten times smaller. Dissolving an acid raises [H<sub>3</sub>O<sup>+</sup>], and the water equilibrium shifts to lower [OH<sup>−</sup>]: in 0.010 <em>M</em> HCl, [H<sub>3</sub>O<sup>+</sup>] = 1.0 × 10<sup>−2</sup> <em>M</em> and [OH<sup>−</sup>] = 1.0 × 10<sup>−12</sup> <em>M</em>. Dissolving a base does the reverse."
+    "solution": "它们成反比。在给定温度下的任何水溶液中，这两个浓度都服从 <em>K</em><sub>w</sub> = [H<sub>3</sub>O<sup>+</sup>][OH<sup>−</sup>]，它在 25 °C 时为 1.0 × 10<sup>−14</sup>。因为它们的乘积是固定的，所以 [OH<sup>−</sup>] = <em>K</em><sub>w</sub>/[H<sub>3</sub>O<sup>+</sup>]，使一个浓度变为十倍，另一个就变为十分之一。溶解酸使 [H<sub>3</sub>O<sup>+</sup>] 升高，水的平衡发生移动而使 [OH<sup>−</sup>] 降低：在 0.010 <em>M</em> HCl 中，[H<sub>3</sub>O<sup>+</sup>] = 1.0 × 10<sup>−2</sup> <em>M</em>，[OH<sup>−</sup>] = 1.0 × 10<sup>−12</sup> <em>M</em>。溶解碱则相反。"
    }
   },
   {
@@ -853,11 +871,11 @@
     "at": "end"
    },
    "cite": "calculations",
-   "prompt": "What two common assumptions can simplify calculation of equilibrium concentrations in a solution of a weak acid or base?",
+   "prompt": "哪两个常用的假设可以简化弱酸或弱碱溶液中平衡浓度的计算？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "1. Assume that the change in initial concentration of the acid as the equilibrium is established can be neglected, so this concentration can be assumed constant and equal to the initial value of the total acid concentration. 2. Assume we can neglect the contribution of water to the equilibrium concentration of H<sub>3</sub>O<sup>+</sup>."
+    "solution": "1. 假设在建立平衡的过程中，酸的初始浓度的变化可以忽略，所以这一浓度可以假定为常数，且等于酸的总浓度的初始值。2. 假设我们可以忽略水对 H<sub>3</sub>O<sup>+</sup> 平衡浓度的贡献。"
    }
   },
   {
@@ -870,18 +888,18 @@
     "at": "end"
    },
    "cite": "calculations",
-   "prompt": "Which of the following will increase the percent of NH<sub>3</sub> that is converted to the ammonium ion in water?",
+   "prompt": "下列哪一项会使水中转化为铵根离子的 NH<sub>3</sub> 的百分数增大？",
    "answer": {
     "type": "choice",
     "generated_by": "source",
     "options": [
-     "addition of NaOH",
-     "addition of HCl",
-     "addition of NH<sub>4</sub>Cl"
+     "加入 NaOH",
+     "加入 HCl",
+     "加入 NH<sub>4</sub>Cl"
     ],
     "correct": 1,
-    "hint": "Write NH<sub>3</sub> + H<sub>2</sub>O ⇌ NH<sub>4</sub><sup>+</sup> + OH<sup>−</sup> and ask which addition removes a product, shifting the equilibrium to the right.",
-    "solution": "(b) The addition of HCl"
+    "hint": "写出 NH<sub>3</sub> + H<sub>2</sub>O ⇌ NH<sub>4</sub><sup>+</sup> + OH<sup>−</sup>，然后问哪一种加入会移去一种产物，使平衡向右移动。",
+    "solution": "（b）加入 HCl"
    }
   },
   {
@@ -894,11 +912,11 @@
     "at": "end"
    },
    "cite": "calculations",
-   "prompt": "Which of the following will increase the percentage of HF that is converted to the fluoride ion in water?<br>(a) addition of NaOH<br>(b) addition of HCl<br>(c) addition of NaF",
+   "prompt": "下列哪一项会使水中转化为氟离子的 HF 的百分数增大？<br>（a）加入 NaOH<br>（b）加入 HCl<br>（c）加入 NaF",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Only (a), the addition of NaOH, increases the percentage of HF converted to fluoride ion. The ionization is HF(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + F<sup>−</sup>(<em>aq</em>). (a) Hydroxide ion from NaOH reacts with H<sub>3</sub>O<sup>+</sup> to form water, lowering [H<sub>3</sub>O<sup>+</sup>], so by Le Châtelier’s principle the equilibrium shifts to the right and more HF ionizes. (b) HCl ionizes completely and adds H<sub>3</sub>O<sup>+</sup>, a product, so the equilibrium shifts to the left and the percent ionization of HF falls. (c) NaF adds F<sup>−</sup>, also a product, so the equilibrium again shifts to the left and less HF is converted to fluoride ion."
+    "solution": "只有（a），即加入 NaOH，会使 HF 转化为氟离子的百分数增大。电离为 HF(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + F<sup>−</sup>(<em>aq</em>)。（a）NaOH 中的氢氧根离子与 H<sub>3</sub>O<sup>+</sup> 反应生成水，使 [H<sub>3</sub>O<sup>+</sup>] 降低，所以按勒夏特列原理，平衡向右移动，有更多的 HF 电离。（b）HCl 完全电离，增添了产物 H<sub>3</sub>O<sup>+</sup>，所以平衡向左移动，HF 的电离百分数下降。（c）NaF 增添了 F<sup>−</sup>，它也是产物，所以平衡再次向左移动，转化为氟离子的 HF 更少。"
    }
   },
   {
@@ -911,11 +929,11 @@
     "at": "end"
    },
    "cite": "calculations",
-   "prompt": "What is the effect on the concentrations of ${\\text{NO}}_{2}{}^{\\text{-}},$ HNO<sub>2</sub>, and OH<sup>−</sup> when the following are added to a solution of KNO<sub>2</sub> in water:<br>(a) HCl<br>(b) HNO<sub>2</sub><br>(c) NaOH<br>(d) NaCl<br>(e) KNO<sub>2</sub>",
+   "prompt": "向 KNO<sub>2</sub> 的水溶液中加入下列物质时，对 ${\\text{NO}}_{2}{}^{\\text{-}},$ HNO<sub>2</sub> 和 OH<sup>−</sup> 的浓度有什么影响：<br>（a）HCl<br>（b）HNO<sub>2</sub><br>（c）NaOH<br>（d）NaCl<br>（e）KNO<sub>2</sub>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) Adding HCl will add H<sub>3</sub>O<sup>+</sup> ions, which will then react with the OH<sup>−</sup> ions, lowering their concentration. The equilibrium will shift to the right, increasing the concentration of HNO<sub>2</sub>, and decreasing the concentration of ${\\text{NO}}_{2}{}^{\\text{-}}$ ions. (b) Adding HNO<sub>2</sub> increases the concentration of HNO<sub>2</sub> and shifts the equilibrium to the left, increasing the concentration of ${\\text{NO}}_{2}{}^{\\text{-}}$ ions and decreasing the concentration of OH<sup>−</sup> ions. (c) Adding NaOH adds OH<sup>−</sup> ions, which shifts the equilibrium to the left, increasing the concentration of ${\\text{NO}}_{2}{}^{\\text{-}}$ ions and decreasing the concentrations of HNO<sub>2</sub>. (d) Adding NaCl has no effect on the concentrations of the ions. (e) Adding KNO<sub>2</sub> adds ${\\text{NO}}_{2}{}^{\\text{-}}$ ions and shifts the equilibrium to the right, increasing the HNO<sub>2</sub> and OH<sup>−</sup> ion concentrations."
+    "solution": "（a）加入 HCl 会增加 H<sub>3</sub>O<sup>+</sup> 离子，它们随后与 OH<sup>−</sup> 离子反应，使其浓度降低。平衡将向右移动，使 HNO<sub>2</sub> 的浓度增大，使 ${\\text{NO}}_{2}{}^{\\text{-}}$ 离子的浓度减小。（b）加入 HNO<sub>2</sub> 使 HNO<sub>2</sub> 的浓度增大，并使平衡向左移动，使 ${\\text{NO}}_{2}{}^{\\text{-}}$ 离子的浓度增大，使 OH<sup>−</sup> 离子的浓度减小。（c）加入 NaOH 增加了 OH<sup>−</sup> 离子，使平衡向左移动，使 ${\\text{NO}}_{2}{}^{\\text{-}}$ 离子的浓度增大，使 HNO<sub>2</sub> 的浓度减小。（d）加入 NaCl 对这些离子的浓度没有影响。（e）加入 KNO<sub>2</sub> 增加了 ${\\text{NO}}_{2}{}^{\\text{-}}$ 离子，使平衡向右移动，使 HNO<sub>2</sub> 和 OH<sup>−</sup> 离子的浓度增大。"
    }
   },
   {
@@ -928,11 +946,11 @@
     "at": "end"
    },
    "cite": "calculations",
-   "prompt": "What is the effect on the concentration of hydrofluoric acid, hydronium ion, and fluoride ion when the following are added to separate solutions of hydrofluoric acid?<br>(a) HCl<br>(b) KF<br>(c) NaCl<br>(d) KOH<br>(e) HF",
+   "prompt": "分别向氢氟酸溶液中加入下列物质时，对氢氟酸、水合氢离子和氟离子的浓度有什么影响？<br>（a）HCl<br>（b）KF<br>（c）NaCl<br>（d）KOH<br>（e）HF",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The equilibrium is HF(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + F<sup>−</sup>(<em>aq</em>). (a) HCl ionizes completely and adds H<sub>3</sub>O<sup>+</sup>, so [H<sub>3</sub>O<sup>+</sup>] increases; the equilibrium shifts to the left, [F<sup>−</sup>] decreases and [HF] increases. (b) KF adds F<sup>−</sup>, so [F<sup>−</sup>] increases; the equilibrium shifts to the left, [H<sub>3</sub>O<sup>+</sup>] decreases and [HF] increases. (c) NaCl has no effect: Na<sup>+</sup> is a group 1 cation and Cl<sup>−</sup> is the conjugate base of a strong acid, so neither reacts with any species in the equilibrium, and all three concentrations stay the same. (d) KOH adds OH<sup>−</sup>, which reacts with H<sub>3</sub>O<sup>+</sup> to form water, so [H<sub>3</sub>O<sup>+</sup>] decreases; the equilibrium shifts to the right, [HF] decreases and [F<sup>−</sup>] increases. (e) Added HF increases [HF]; the equilibrium shifts to the right, so [H<sub>3</sub>O<sup>+</sup>] and [F<sup>−</sup>] both increase, though the fraction of HF ionized becomes smaller."
+    "solution": "平衡为 HF(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + F<sup>−</sup>(<em>aq</em>)。（a）HCl 完全电离，增添了 H<sub>3</sub>O<sup>+</sup>，所以 [H<sub>3</sub>O<sup>+</sup>] 增大；平衡向左移动，[F<sup>−</sup>] 减小，[HF] 增大。（b）KF 增添了 F<sup>−</sup>，所以 [F<sup>−</sup>] 增大；平衡向左移动，[H<sub>3</sub>O<sup>+</sup>] 减小，[HF] 增大。（c）NaCl 没有影响：Na<sup>+</sup> 是第 1 族阳离子，Cl<sup>−</sup> 是强酸的共轭碱，所以两者都不与平衡中的任何物种反应，三个浓度都保持不变。（d）KOH 增添了 OH<sup>−</sup>，它与 H<sub>3</sub>O<sup>+</sup> 反应生成水，所以 [H<sub>3</sub>O<sup>+</sup>] 减小；平衡向右移动，[HF] 减小，[F<sup>−</sup>] 增大。（e）加入的 HF 使 [HF] 增大；平衡向右移动，所以 [H<sub>3</sub>O<sup>+</sup>] 和 [F<sup>−</sup>] 都增大，不过 HF 电离的比例变小。"
    }
   },
   {
@@ -945,11 +963,11 @@
     "at": "end"
    },
    "cite": "calculations",
-   "prompt": "Why is the hydronium ion concentration in a solution that is 0.10 <em>M</em> in HCl and 0.10 <em>M</em> in HCOOH determined by the concentration of HCl?",
+   "prompt": "为什么在 HCl 为 0.10 <em>M</em>、HCOOH 为 0.10 <em>M</em> 的溶液中，水合氢离子的浓度是由 HCl 的浓度决定的？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "This is a case in which the solution contains a mixture of acids of different ionization strengths. In solution, the HCO<sub>2</sub>H exists primarily as HCO<sub>2</sub>H molecules because the ionization of the weak acid is suppressed by the strong acid. Therefore, the HCO<sub>2</sub>H contributes a negligible amount of hydronium ions to the solution. The stronger acid, HCl, is the dominant producer of hydronium ions because it is completely ionized. In such a solution, the stronger acid determines the concentration of hydronium ions, and the ionization of the weaker acid is fixed by the [H<sub>3</sub>O<sup>+</sup>] produced by the stronger acid."
+    "solution": "这是溶液中含有不同电离强度的酸的混合物的情形。在溶液中，HCO<sub>2</sub>H 主要以 HCO<sub>2</sub>H 分子的形式存在，因为弱酸的电离受到强酸的抑制。因此，HCO<sub>2</sub>H 给溶液贡献的水合氢离子的量可以忽略。较强的酸 HCl 是水合氢离子的主要产生者，因为它是完全电离的。在这样的溶液中，较强的酸决定水合氢离子的浓度，而较弱的酸的电离则由较强的酸产生的 [H<sub>3</sub>O<sup>+</sup>] 所确定。"
    }
   },
   {
@@ -962,7 +980,7 @@
     "at": "end"
    },
    "cite": "calculations",
-   "prompt": "From the equilibrium concentrations given, calculate <em>K</em><sub>a</sub> for each of the weak acids and <em>K</em><sub>b</sub> for each of the weak bases.<br>(a) NH<sub>3</sub>: [OH<sup>−</sup>] = 3.1 × 10<sup>−3</sup> <em>M</em>;<br>$[{\\text{NH}}_{4}{}^{\\text{+}}]$ = 3.1 × 10<sup>−3</sup> <em>M</em>;<br>[NH<sub>3</sub>] = 0.533 <em>M</em>;<br>(b) HNO<sub>2</sub>: $[{\\text{H}}_{3}{\\text{O}}^{\\text{+}}]$ = 0.011 <em>M</em>;<br>$[{\\text{NO}}_{2}{}^{\\text{-}}]$ = 0.0438 <em>M</em>;<br>[HNO<sub>2</sub>] = 1.07 <em>M</em>;<br>(c) (CH<sub>3</sub>)<sub>3</sub>N: [(CH<sub>3</sub>)<sub>3</sub>N] = 0.25 <em>M</em>;<br>[(CH<sub>3</sub>)<sub>3</sub>NH<sup>+</sup>] = 4.3 × 10<sup>−3</sup> <em>M</em>;<br>[OH<sup>−</sup>] = 3.7 × 10<sup>−3</sup> <em>M</em>;<br>(d) ${\\text{NH}}_{4}{}^{\\text{+}}:$ $[{\\text{NH}}_{4}{}^{\\text{+}}]$ = 0.100 <em>M</em>;<br>[NH<sub>3</sub>] = 7.5 × 10<sup>−6</sup> <em>M</em>;<br>[H<sub>3</sub>O<sup>+</sup>] = 7.5 × 10<sup>−6</sup> <em>M</em>",
+   "prompt": "根据所给的平衡浓度，计算每种弱酸的 <em>K</em><sub>a</sub> 和每种弱碱的 <em>K</em><sub>b</sub>。<br>（a）NH<sub>3</sub>：[OH<sup>−</sup>] = 3.1 × 10<sup>−3</sup> <em>M</em>；<br>$[{\\text{NH}}_{4}{}^{\\text{+}}]$ = 3.1 × 10<sup>−3</sup> <em>M</em>；<br>[NH<sub>3</sub>] = 0.533 <em>M</em>；<br>（b）HNO<sub>2</sub>：$[{\\text{H}}_{3}{\\text{O}}^{\\text{+}}]$ = 0.011 <em>M</em>；<br>$[{\\text{NO}}_{2}{}^{\\text{-}}]$ = 0.0438 <em>M</em>；<br>[HNO<sub>2</sub>] = 1.07 <em>M</em>；<br>（c）(CH<sub>3</sub>)<sub>3</sub>N：[(CH<sub>3</sub>)<sub>3</sub>N] = 0.25 <em>M</em>；<br>[(CH<sub>3</sub>)<sub>3</sub>NH<sup>+</sup>] = 4.3 × 10<sup>−3</sup> <em>M</em>；<br>[OH<sup>−</sup>] = 3.7 × 10<sup>−3</sup> <em>M</em>；<br>（d）${\\text{NH}}_{4}{}^{\\text{+}}:$ $[{\\text{NH}}_{4}{}^{\\text{+}}]$ = 0.100 <em>M</em>；<br>[NH<sub>3</sub>] = 7.5 × 10<sup>−6</sup> <em>M</em>；<br>[H<sub>3</sub>O<sup>+</sup>] = 7.5 × 10<sup>−6</sup> <em>M</em>",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -971,28 +989,28 @@
       "part": "(a) <em>K</em><sub>b</sub>",
       "value": 1.8e-05,
       "tol": 0.05,
-      "hint": "<em>K</em><sub>b</sub> = [NH<sub>4</sub><sup>+</sup>][OH<sup>−</sup>]/[NH<sub>3</sub>]."
+      "hint": "<em>K</em><sub>b</sub> = [NH<sub>4</sub><sup>+</sup>][OH<sup>−</sup>]/[NH<sub>3</sub>]。"
      },
      {
       "part": "(b) <em>K</em><sub>a</sub>",
       "value": 0.00045,
       "tol": 0.05,
-      "hint": "<em>K</em><sub>a</sub> = [H<sub>3</sub>O<sup>+</sup>][NO<sub>2</sub><sup>−</sup>]/[HNO<sub>2</sub>]."
+      "hint": "<em>K</em><sub>a</sub> = [H<sub>3</sub>O<sup>+</sup>][NO<sub>2</sub><sup>−</sup>]/[HNO<sub>2</sub>]。"
      },
      {
       "part": "(c) <em>K</em><sub>b</sub>",
       "value": 6.4e-05,
       "tol": 0.05,
-      "hint": "<em>K</em><sub>b</sub> = [(CH<sub>3</sub>)<sub>3</sub>NH<sup>+</sup>][OH<sup>−</sup>]/[(CH<sub>3</sub>)<sub>3</sub>N]."
+      "hint": "<em>K</em><sub>b</sub> = [(CH<sub>3</sub>)<sub>3</sub>NH<sup>+</sup>][OH<sup>−</sup>]/[(CH<sub>3</sub>)<sub>3</sub>N]。"
      },
      {
       "part": "(d) <em>K</em><sub>a</sub>",
       "value": 5.6e-10,
       "tol": 0.05,
-      "hint": "<em>K</em><sub>a</sub> = [H<sub>3</sub>O<sup>+</sup>][NH<sub>3</sub>]/[NH<sub>4</sub><sup>+</sup>]."
+      "hint": "<em>K</em><sub>a</sub> = [H<sub>3</sub>O<sup>+</sup>][NH<sub>3</sub>]/[NH<sub>4</sub><sup>+</sup>]。"
      }
     ],
-    "solution": "(a) ${K}_{\\text{b}}=1.8\\;\\times \\;{10}^{-5};$ (b) ${K}_{\\text{a}}=4.5\\;\\times \\;{10}^{-4};$ (c) ${K}_{\\text{b}}=6.4\\;\\times \\;{10}^{-5};$ (d) ${K}_{\\text{a}}=5.6\\;\\times \\;{10}^{-10}$"
+    "solution": "（a）${K}_{\\text{b}}=1.8\\;\\times \\;{10}^{-5};$ （b）${K}_{\\text{a}}=4.5\\;\\times \\;{10}^{-4};$ （c）${K}_{\\text{b}}=6.4\\;\\times \\;{10}^{-5};$ （d）${K}_{\\text{a}}=5.6\\;\\times \\;{10}^{-10}$"
    }
   },
   {
@@ -1005,13 +1023,13 @@
     "at": "end"
    },
    "cite": "calculations",
-   "prompt": "Determine <em>K</em><sub>a</sub> for hydrogen sulfate ion, ${\\text{HSO}}_{4}{}^{\\text{-}}.$ In a 0.10-<em>M</em> solution the acid is 29% ionized.",
+   "prompt": "确定硫酸氢根离子的 <em>K</em><sub>a</sub>，${\\text{HSO}}_{4}{}^{\\text{-}}.$ 在 0.10 <em>M</em> 溶液中，该酸电离了 29%。",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 0.012,
     "tol": 0.05,
-    "hint": "29% ionized makes [H<sub>3</sub>O<sup>+</sup>] = [SO<sub>4</sub><sup>2−</sup>] = 0.029 <em>M</em> and leaves 0.071 <em>M</em> of HSO<sub>4</sub><sup>−</sup>.",
+    "hint": "电离 29% 即 [H<sub>3</sub>O<sup>+</sup>] = [SO<sub>4</sub><sup>2−</sup>] = 0.029 <em>M</em>，剩下 0.071 <em>M</em> 的 HSO<sub>4</sub><sup>−</sup>。",
     "solution": "${K}_{\\text{a}}=1.2\\;\\times \\;{10}^{-2}$"
    }
   },
@@ -1025,7 +1043,7 @@
     "at": "end"
    },
    "cite": "conjugate",
-   "prompt": "Calculate the ionization constant for each of the following acids or bases from the ionization constant of its conjugate base or conjugate acid:<br>(a) HTe<sup>−</sup> (as a base)<br>(b) ${({\\text{CH}}_{3})}_{3}{\\text{NH}}^{\\text{+}}$<br>(c) ${\\text{HAsO}}_{4}{}^{2–}$ (as a base)<br>(d) ${\\text{HO}}_{2}{}^{\\text{-}}$ (as a base)<br>(e) ${\\text{C}}_{6}{\\text{H}}_{5}{\\text{NH}}_{3}{}^{\\text{+}}$<br>(f) ${\\text{HSO}}_{3}{}^{\\text{-}}$ (as a base)",
+   "prompt": "根据共轭碱或共轭酸的电离常数，计算下列各酸或碱的电离常数：<br>（a）HTe<sup>−</sup>（作为碱）<br>（b）${({\\text{CH}}_{3})}_{3}{\\text{NH}}^{\\text{+}}$<br>（c）${\\text{HAsO}}_{4}{}^{2–}$（作为碱）<br>（d）${\\text{HO}}_{2}{}^{\\text{-}}$（作为碱）<br>（e）${\\text{C}}_{6}{\\text{H}}_{5}{\\text{NH}}_{3}{}^{\\text{+}}$<br>（f）${\\text{HSO}}_{3}{}^{\\text{-}}$（作为碱）",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -1034,40 +1052,40 @@
       "part": "(a) <em>K</em><sub>b</sub>",
       "value": 4.3e-12,
       "tol": 0.05,
-      "hint": "<em>K</em><sub>b</sub> = <em>K</em><sub>w</sub>/<em>K</em><sub>a</sub> with <em>K</em><sub>a</sub> for HTe<sup>−</sup> from H<sub>2</sub>Te in Appendix H."
+      "hint": "<em>K</em><sub>b</sub> = <em>K</em><sub>w</sub>/<em>K</em><sub>a</sub>，其中 HTe<sup>−</sup> 的 <em>K</em><sub>a</sub> 取自附录 H 中的 H<sub>2</sub>Te。"
      },
      {
       "part": "(b) <em>K</em><sub>a</sub>",
       "value": 1.6e-10,
       "tol": 0.05,
-      "hint": "<em>K</em><sub>a</sub> = <em>K</em><sub>w</sub>/<em>K</em><sub>b</sub> for trimethylamine in Appendix I."
+      "hint": "<em>K</em><sub>a</sub> = <em>K</em><sub>w</sub>/<em>K</em><sub>b</sub>，其中 <em>K</em><sub>b</sub> 取自附录 I 中的三甲胺。"
      },
      {
       "part": "(c) <em>K</em><sub>b</sub>",
       "value": 5.9e-08,
       "tol": 0.05,
-      "hint": "<em>K</em><sub>b</sub> = <em>K</em><sub>w</sub>/<em>K</em><sub>a</sub>, with the second ionization constant of arsenic acid."
+      "hint": "<em>K</em><sub>b</sub> = <em>K</em><sub>w</sub>/<em>K</em><sub>a</sub>，其中 <em>K</em><sub>a</sub> 取砷酸的第二电离常数。"
      },
      {
       "part": "(d) <em>K</em><sub>b</sub>",
       "value": 0.0042,
       "tol": 0.05,
-      "hint": "<em>K</em><sub>b</sub> = <em>K</em><sub>w</sub>/<em>K</em><sub>a</sub> for hydrogen peroxide."
+      "hint": "<em>K</em><sub>b</sub> = <em>K</em><sub>w</sub>/<em>K</em><sub>a</sub>，其中 <em>K</em><sub>a</sub> 取过氧化氢的值。"
      },
      {
       "part": "(e)",
       "value": 2.3e-05,
       "tol": 0.05,
-      "hint": "Use <em>K</em><sub>w</sub> and the <em>K</em><sub>b</sub> of phenylamine (aniline) in Appendix I."
+      "hint": "使用 <em>K</em><sub>w</sub> 和附录 I 中苯胺的 <em>K</em><sub>b</sub>。"
      },
      {
       "part": "(f) <em>K</em><sub>b</sub>",
       "value": 6.3e-13,
       "tol": 0.05,
-      "hint": "<em>K</em><sub>b</sub> = <em>K</em><sub>w</sub>/<em>K</em><sub>a</sub>, with the first ionization constant of sulfurous acid."
+      "hint": "<em>K</em><sub>b</sub> = <em>K</em><sub>w</sub>/<em>K</em><sub>a</sub>，其中 <em>K</em><sub>a</sub> 取亚硫酸的第一电离常数。"
      }
     ],
-    "solution": "(a) ${K}_{\\text{b}}=4.3\\;\\times \\;{10}^{-12}$ (b) ${K}_{\\text{a}}=1.6\\;\\times \\;{10}^{-10}$ (c) ${K}_{\\text{b}}=5.9\\;\\times \\;{10}^{-8}$ (d) ${K}_{\\text{b}}=4.2\\;\\times \\;{10}^{-3}$ (e) ${K}_{\\text{b}}=2.3\\;\\times \\;{10}^{-5}$ (f) ${K}_{\\text{b}}=6.3\\;\\times \\;{10}^{-13}$"
+    "solution": "（a）${K}_{\\text{b}}=4.3\\;\\times \\;{10}^{-12}$ （b）${K}_{\\text{a}}=1.6\\;\\times \\;{10}^{-10}$ （c）${K}_{\\text{b}}=5.9\\;\\times \\;{10}^{-8}$ （d）${K}_{\\text{b}}=4.2\\;\\times \\;{10}^{-3}$ （e）${K}_{\\text{b}}=2.3\\;\\times \\;{10}^{-5}$ （f）${K}_{\\text{b}}=6.3\\;\\times \\;{10}^{-13}$"
    }
   },
   {
@@ -1080,11 +1098,11 @@
     "at": "end"
    },
    "cite": "calculations",
-   "prompt": "Calculate the concentration of all solute species in each of the following solutions of acids or bases. Assume that the ionization of water can be neglected, and show that the change in the initial concentrations can be neglected.<br>(a) 0.0092 <em>M</em> HClO, a weak acid<br>(b) 0.0784 <em>M</em> C<sub>6</sub>H<sub>5</sub>NH<sub>2</sub>, a weak base<br>(c) 0.0810 <em>M</em> HCN, a weak acid<br>(d) 0.11 <em>M</em> (CH<sub>3</sub>)<sub>3</sub>N, a weak base<br>(e) 0.120 <em>M</em> $\\text{Fe}{({\\text{H}}_{2}\\text{O})}_{6}{}^{2+}$ a weak acid, <em>K</em><sub>a</sub> = 1.6 × 10<sup>−7</sup>",
+   "prompt": "计算下列每种酸溶液或碱溶液中所有溶质物种的浓度。假设水的电离可以忽略，并说明初始浓度的变化可以忽略。<br>（a）0.0092 <em>M</em> HClO，一种弱酸<br>（b）0.0784 <em>M</em> C<sub>6</sub>H<sub>5</sub>NH<sub>2</sub>，一种弱碱<br>（c）0.0810 <em>M</em> HCN，一种弱酸<br>（d）0.11 <em>M</em> (CH<sub>3</sub>)<sub>3</sub>N，一种弱碱<br>（e）0.120 <em>M</em> $\\text{Fe}{({\\text{H}}_{2}\\text{O})}_{6}{}^{2+}$ 一种弱酸，<em>K</em><sub>a</sub> = 1.6 × 10<sup>−7</sup>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) $\\frac{[{\\text{H}}_{3}{\\text{O}}^{\\text{+}}][{\\text{ClO}}^{\\text{-}}]}{[\\text{HClO}]}\\;=\\;\\frac{(x)(x)}{(0.0092-x)}\\;\\approx \\;\\frac{(x)(x)}{0.0092}\\;=2.9\\;\\times \\;{10}^{-8}$<br>Solving for <em>x</em> gives 1.63 × 10<sup>−5</sup> <em>M</em>. This value is less than 5% of 0.0092, so the assumption that it can be neglected is valid. Thus, the concentrations of solute species at equilibrium are:<br>[H<sub>3</sub>O<sup>+</sup>] = [ClO<sup>–</sup>] = 1.6 × 10<sup>−5</sup> <em>M</em><br>[HClO<sup>–</sup>] = 0.0092 <em>M</em><br>[OH<sup>−</sup>] = 6.1 × 10<sup>−10</sup> <em>M</em>;<br>(b) $\\frac{[{\\text{C}}_{6}{\\text{H}}_{5}{\\text{NH}}_{3}{}^{\\text{+}}][{\\text{OH}}^{\\text{-}}]}{[{\\text{C}}_{6}{\\text{H}}_{5}{\\text{NH}}_{2}]}\\;=\\;\\frac{(x)(x)}{(0.0784-x)}\\;\\approx \\;\\frac{(x)(x)}{0.0784}\\;=4.3\\;\\times \\;{10}^{-10}$<br>Solving for <em>x</em> gives 5.81 × 10<sup>−6</sup> <em>M</em>. This value is less than 5% of 0.0784, so the assumption that it can be neglected is valid. Thus, the concentrations of solute species at equilibrium are:<br>$[{\\text{C}}_{6}\\text{H}5{\\text{NH}}_{3}{}^{\\text{+}}]$ = [OH<sup>−</sup>] = 5.8 × 10<sup>−6</sup> <em>M</em><br>[C<sub>6</sub>H<sub>5</sub>NH<sub>2</sub>] = 0.0784 <em>M</em><br>[H<sub>3</sub>O<sup>+</sup>] = 1.7× 10<sup>−9</sup> <em>M</em>;<br>(c) $\\frac{[{\\text{H}}_{3}{\\text{O}}^{\\text{+}}][{\\text{CN}}^{\\text{-}}]}{[\\text{HCN}]}\\;=\\;\\frac{(x)(x)}{(0.0810-x)}\\;\\approx \\;\\frac{(x)(x)}{0.0810}\\;=4.9\\;\\times \\;{10}^{-10}$<br>Solving for <em>x</em> gives 6.30 × 10<sup>−6</sup> <em>M</em>. This value is less than 5% of 0.0810, so the assumption that it can be neglected is valid. Thus, the concentrations of solute species at equilibrium are:<br>[H<sub>3</sub>O<sup>+</sup>] = [CN<sup>−</sup>] = 6.3 × 10<sup>−6</sup> <em>M</em><br>[HCN] = 0.0810 <em>M</em><br>[OH<sup>−</sup>] = 1.6 × 10<sup>−9</sup> <em>M</em>;<br>(d) $\\frac{[{({\\text{CH}}_{3})}_{3}{\\text{NH}}^{\\text{+}}][{\\text{OH}}^{\\text{-}}]}{[{({\\text{CH}}_{3})}_{3}\\text{N}]}\\;=\\;\\frac{(x)(x)}{(0.11-x)}\\;\\approx \\;\\frac{(x)(x)}{0.11}\\;=6.3\\;\\times \\;{10}^{-5}$<br>Solving for <em>x</em> gives 2.63 × 10<sup>−3</sup> <em>M</em>. This value is less than 5% of 0.11, so the assumption that it can be neglected is valid. Thus, the concentrations of solute species at equilibrium are:<br>[(CH<sub>3</sub>)<sub>3</sub>NH<sup>+</sup>] = [OH<sup>−</sup>] = 2.6 × 10<sup>−3</sup> <em>M</em><br>[(CH<sub>3</sub>)<sub>3</sub>N] = 0.11 <em>M</em><br>[H<sub>3</sub>O<sup>+</sup>] = 3.8 × 10<sup>−12</sup> <em>M</em>;<br>(e) $\\frac{[\\text{Fe}{({\\text{H}}_{2}\\text{O})}_{5}({\\text{OH})}^{\\text{+}}][{\\text{H}}_{3}{\\text{O}}^{\\text{+}}]}{[\\text{Fe}{({\\text{H}}_{2}\\text{O})}_{6}{}^{2+}]}\\;=\\;\\frac{(x)(x)}{(0.120-x)}\\;\\approx \\;\\frac{(x)(x)}{0.120}\\;=1.6\\;\\times \\;{10}^{-7}$<br>Solving for <em>x</em> gives 1.39 × 10<sup>−4</sup> <em>M</em>. This value is less than 5% of 0.120, so the assumption that it can be neglected is valid. Thus, the concentrations of solute species at equilibrium are:<br>[Fe(H<sub>2</sub>O)<sub>5</sub>(OH)<sup>+</sup>] = [H<sub>3</sub>O<sup>+</sup>] = 1.4 × 10<sup>−4</sup> <em>M</em><br>$[\\text{Fe}{({\\text{H}}_{2}\\text{O})}_{6}{}^{2+}]$ = 0.120 <em>M</em><br>[OH<sup>−</sup>] = 7.2 × 10<sup>−11</sup> <em>M</em>"
+    "solution": "（a）$\\frac{[{\\text{H}}_{3}{\\text{O}}^{\\text{+}}][{\\text{ClO}}^{\\text{-}}]}{[\\text{HClO}]}\\;=\\;\\frac{(x)(x)}{(0.0092-x)}\\;\\approx \\;\\frac{(x)(x)}{0.0092}\\;=2.9\\;\\times \\;{10}^{-8}$<br>解出 <em>x</em> 得 1.63 × 10<sup>−5</sup> <em>M</em>。这个值小于 0.0092 的 5%，所以认为它可以忽略的假设是成立的。因此，溶质物种的平衡浓度为：<br>[H<sub>3</sub>O<sup>+</sup>] = [ClO<sup>–</sup>] = 1.6 × 10<sup>−5</sup> <em>M</em><br>[HClO<sup>–</sup>] = 0.0092 <em>M</em><br>[OH<sup>−</sup>] = 6.1 × 10<sup>−10</sup> <em>M</em>；<br>（b）$\\frac{[{\\text{C}}_{6}{\\text{H}}_{5}{\\text{NH}}_{3}{}^{\\text{+}}][{\\text{OH}}^{\\text{-}}]}{[{\\text{C}}_{6}{\\text{H}}_{5}{\\text{NH}}_{2}]}\\;=\\;\\frac{(x)(x)}{(0.0784-x)}\\;\\approx \\;\\frac{(x)(x)}{0.0784}\\;=4.3\\;\\times \\;{10}^{-10}$<br>解出 <em>x</em> 得 5.81 × 10<sup>−6</sup> <em>M</em>。这个值小于 0.0784 的 5%，所以认为它可以忽略的假设是成立的。因此，溶质物种的平衡浓度为：<br>$[{\\text{C}}_{6}\\text{H}5{\\text{NH}}_{3}{}^{\\text{+}}]$ = [OH<sup>−</sup>] = 5.8 × 10<sup>−6</sup> <em>M</em><br>[C<sub>6</sub>H<sub>5</sub>NH<sub>2</sub>] = 0.0784 <em>M</em><br>[H<sub>3</sub>O<sup>+</sup>] = 1.7× 10<sup>−9</sup> <em>M</em>；<br>（c）$\\frac{[{\\text{H}}_{3}{\\text{O}}^{\\text{+}}][{\\text{CN}}^{\\text{-}}]}{[\\text{HCN}]}\\;=\\;\\frac{(x)(x)}{(0.0810-x)}\\;\\approx \\;\\frac{(x)(x)}{0.0810}\\;=4.9\\;\\times \\;{10}^{-10}$<br>解出 <em>x</em> 得 6.30 × 10<sup>−6</sup> <em>M</em>。这个值小于 0.0810 的 5%，所以认为它可以忽略的假设是成立的。因此，溶质物种的平衡浓度为：<br>[H<sub>3</sub>O<sup>+</sup>] = [CN<sup>−</sup>] = 6.3 × 10<sup>−6</sup> <em>M</em><br>[HCN] = 0.0810 <em>M</em><br>[OH<sup>−</sup>] = 1.6 × 10<sup>−9</sup> <em>M</em>；<br>（d）$\\frac{[{({\\text{CH}}_{3})}_{3}{\\text{NH}}^{\\text{+}}][{\\text{OH}}^{\\text{-}}]}{[{({\\text{CH}}_{3})}_{3}\\text{N}]}\\;=\\;\\frac{(x)(x)}{(0.11-x)}\\;\\approx \\;\\frac{(x)(x)}{0.11}\\;=6.3\\;\\times \\;{10}^{-5}$<br>解出 <em>x</em> 得 2.63 × 10<sup>−3</sup> <em>M</em>。这个值小于 0.11 的 5%，所以认为它可以忽略的假设是成立的。因此，溶质物种的平衡浓度为：<br>[(CH<sub>3</sub>)<sub>3</sub>NH<sup>+</sup>] = [OH<sup>−</sup>] = 2.6 × 10<sup>−3</sup> <em>M</em><br>[(CH<sub>3</sub>)<sub>3</sub>N] = 0.11 <em>M</em><br>[H<sub>3</sub>O<sup>+</sup>] = 3.8 × 10<sup>−12</sup> <em>M</em>；<br>（e）$\\frac{[\\text{Fe}{({\\text{H}}_{2}\\text{O})}_{5}({\\text{OH})}^{\\text{+}}][{\\text{H}}_{3}{\\text{O}}^{\\text{+}}]}{[\\text{Fe}{({\\text{H}}_{2}\\text{O})}_{6}{}^{2+}]}\\;=\\;\\frac{(x)(x)}{(0.120-x)}\\;\\approx \\;\\frac{(x)(x)}{0.120}\\;=1.6\\;\\times \\;{10}^{-7}$<br>解出 <em>x</em> 得 1.39 × 10<sup>−4</sup> <em>M</em>。这个值小于 0.120 的 5%，所以认为它可以忽略的假设是成立的。因此，溶质物种的平衡浓度为：<br>[Fe(H<sub>2</sub>O)<sub>5</sub>(OH)<sup>+</sup>] = [H<sub>3</sub>O<sup>+</sup>] = 1.4 × 10<sup>−4</sup> <em>M</em><br>$[\\text{Fe}{({\\text{H}}_{2}\\text{O})}_{6}{}^{2+}]$ = 0.120 <em>M</em><br>[OH<sup>−</sup>] = 7.2 × 10<sup>−11</sup> <em>M</em>"
    }
   },
   {
@@ -1097,13 +1115,13 @@
     "at": "end"
    },
    "cite": "calculations",
-   "prompt": "White vinegar is a 5.0% by mass solution of acetic acid in water. If the density of white vinegar is 1.007 g/cm<sup>3</sup>, what is the pH?",
+   "prompt": "白醋是乙酸在水中的溶液，按质量计为 5.0%。如果白醋的密度为 1.007 g/cm<sup>3</sup>，pH 是多少？",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 2.41,
     "tol": 0.004,
-    "hint": "One liter of vinegar has a mass of 1007 g, 5.0% of it acetic acid; convert to molarity, then solve <em>x</em><sup>2</sup>/(<em>c</em> − <em>x</em>) = 1.8 × 10<sup>−5</sup> for <em>x</em> = [H<sub>3</sub>O<sup>+</sup>].",
+    "hint": "一升醋的质量为 1007 g，其中 5.0% 是乙酸；换算成物质的量浓度，然后解 <em>x</em><sup>2</sup>/(<em>c</em> − <em>x</em>) = 1.8 × 10<sup>−5</sup>，得 <em>x</em> = [H<sub>3</sub>O<sup>+</sup>]。",
     "solution": "pH = 2.41"
    }
   },
@@ -1117,13 +1135,13 @@
     "at": "end"
    },
    "cite": "calculations",
-   "prompt": "The pH of a 0.15-<em>M</em> solution of ${\\text{HSO}}_{4}{}^{\\text{-}}$ is 1.43. Determine <em>K</em><sub>a</sub> for ${\\text{HSO}}_{4}{}^{\\text{-}}$ from these data.",
+   "prompt": "${\\text{HSO}}_{4}{}^{\\text{-}}$ 的 0.15 <em>M</em> 溶液的 pH 为 1.43。根据这些数据确定 ${\\text{HSO}}_{4}{}^{\\text{-}}$ 的 <em>K</em><sub>a</sub>。",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 0.012,
     "tol": 0.05,
-    "hint": "[H<sub>3</sub>O<sup>+</sup>] = 10<sup>−1.43</sup> = [SO<sub>4</sub><sup>2−</sup>]; subtract it from 0.15 <em>M</em> for [HSO<sub>4</sub><sup>−</sup>].",
+    "hint": "[H<sub>3</sub>O<sup>+</sup>] = 10<sup>−1.43</sup> = [SO<sub>4</sub><sup>2−</sup>]；用 0.15 <em>M</em> 减去它，得 [HSO<sub>4</sub><sup>−</sup>]。",
     "solution": "${K}_{\\text{a}}=1.2\\;\\times \\;{10}^{-2}$"
    }
   },
@@ -1137,13 +1155,13 @@
     "at": "end"
    },
    "cite": "calculations",
-   "prompt": "The pH of a solution of household ammonia, a 0.950 M solution of NH<sub>3,</sub> is 11.612. Determine <em>K</em><sub>b</sub> for NH<sub>3</sub> from these data.",
+   "prompt": "家用氨水，一种 0.950 M 的 NH<sub>3</sub> 溶液，其 pH 为 11.612。根据这些数据确定 NH<sub>3</sub> 的 <em>K</em><sub>b</sub>。",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 1.77e-05,
     "tol": 0.03,
-    "hint": "pOH = 14.00 − 11.612 gives [OH<sup>−</sup>] = [NH<sub>4</sub><sup>+</sup>]; subtract it from 0.950 <em>M</em> for [NH<sub>3</sub>].",
+    "hint": "pOH = 14.00 − 11.612 给出 [OH<sup>−</sup>] = [NH<sub>4</sub><sup>+</sup>]；用 0.950 <em>M</em> 减去它，得 [NH<sub>3</sub>]。",
     "solution": "${K}_{\\text{b}}=1.77\\;\\times \\;{10}^{-5}$"
    }
   }
@@ -1446,19 +1464,19 @@
   {
    "id": "c-acetate-formula",
    "kind": "correction",
-   "html": "The book writes acetate ion as CH<sub>2</sub>CO<sub>2</sub><sup>−</sup> in this order. Acetate is CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>, as in the equations below."
+   "html": "书中按这个顺序把乙酸根离子写成 CH<sub>2</sub>CO<sub>2</sub><sup>−</sup>。乙酸根是 CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>，如下面的方程式所示。"
   },
   {
    "id": "c-e39-name",
    "kind": "correction",
-   "html": "The key names triethylamine; (CH<sub>3</sub>)<sub>3</sub>N is trimethylamine, which is the stronger base (<em>K</em><sub>b</sub> = 6.3 × 10<sup>−5</sup> against 1.7 × 10<sup>−5</sup> for H<sub>2</sub>BO<sub>3</sub><sup>−</sup>)."
+   "html": "答案写的是三乙胺；(CH<sub>3</sub>)<sub>3</sub>N 是三甲胺，它是较强的碱（<em>K</em><sub>b</sub> = 6.3 × 10<sup>−5</sup>，而 H<sub>2</sub>BO<sub>3</sub><sup>−</sup> 为 1.7 × 10<sup>−5</sup>）。"
   }
  ],
  "derivations": [
   {
    "id": "ka-kb-kw",
-   "what": "the product of the ionization constants of a conjugate pair",
-   "source": "Chemistry 2e, 14.3 Relative Strengths of Acids and Bases",
+   "what": "共轭酸碱对的电离常数之积",
+   "source": "化学（第2版），14.3 酸和碱的相对强度",
    "nodes": [
     {
      "assumes": [

@@ -2,15 +2,15 @@
   "id": "9.2",
   "module": "m68751",
   "chapter": "9",
-  "title": "Relating Pressure, Volume, Amount, and Temperature: The Ideal Gas Law",
-  "short": "The Ideal Gas Law",
-  "lead": "Four properties describe a sample of gas, its <span data-concept=\"gas-pressure\">pressure</span>, its <span data-concept=\"volume\">volume</span>, its <span data-concept=\"temperature\">temperature</span> and its amount, and the scientists of the balloon age found how each pair is related when the other two are held constant. Their four laws, Amontons’s, Charles’s, Boyle’s and Avogadro’s, combine into a single equation for a gas behaving ideally, from which any one property can be found from the others.",
+  "title": "压强、体积、物质的量与温度的关系：理想气体状态方程",
+  "short": "理想气体状态方程",
+  "lead": "描述一份气体样品有四个性质：<span data-concept=\"gas-pressure\">压强</span>、<span data-concept=\"volume\">体积</span>、<span data-concept=\"temperature\">温度</span>和物质的量，气球时代的科学家们发现了在另外两个量保持不变时，每两个量之间的关系。他们的四个定律——阿蒙顿定律、查理定律、玻意耳定律和阿伏加德罗定律——合并成一个适用于理想行为气体的方程，由它可以根据其余各量求出任意一个性质。",
   "objectives": [
-    "Identify the mathematical relationships between the various properties of gases",
-    "Use the ideal gas law, and related gas laws, to compute the values of various gas properties under specified conditions"
+    "找出气体各种性质之间的数学关系",
+    "运用理想气体状态方程及相关气体定律，计算指定条件下气体各种性质的值"
   ],
-  "summary_html": "<p>The behavior of gases can be described by several laws based on experimental observations of their properties. The <span data-concept=\"gas-pressure\">pressure</span> of a given amount of gas is directly proportional to its absolute <span data-concept=\"temperature\">temperature</span>, provided that the <span data-concept=\"volume\">volume</span> does not change (Amontons’s law). The <span data-concept=\"volume\">volume</span> of a given gas sample is directly proportional to its absolute <span data-concept=\"temperature\">temperature</span> at constant <span data-concept=\"gas-pressure\">pressure</span> (Charles’s law). The <span data-concept=\"volume\">volume</span> of a given amount of gas is inversely proportional to its <span data-concept=\"gas-pressure\">pressure</span> when <span data-concept=\"temperature\">temperature</span> is held constant (Boyle’s law). Under the same conditions of <span data-concept=\"temperature\">temperature</span> and <span data-concept=\"gas-pressure\">pressure</span>, equal <span data-concept=\"volume\">volumes</span> of all gases contain the same number of molecules (Avogadro’s law).</p><p>The equations describing these laws are special cases of the ideal gas law, <em>PV</em> = <em>nRT</em>, where <em>P</em> is the <span data-concept=\"gas-pressure\">pressure</span> of the gas, <em>V</em> is its <span data-concept=\"volume\">volume</span>, <em>n</em> is the number of <span data-concept=\"mole\">moles</span> of the gas, <em>T</em> is its kelvin <span data-concept=\"temperature\">temperature</span>, and <em>R</em> is the ideal (universal) gas constant.</p>",
-  "notes": "The two Link to Learning notes are left out: a video of a gas shrinking as it is cooled and expanding as it is warmed, and the PhET simulation of pressure, volume, temperature and amount, whose place the gas box of this page takes. Figure 9.17, a photograph of coral at the Great Barrier Reef beside the scuba diving note, is left out as a stock scene, and the photograph of a weather balloon beside exercise 31 of the chapter is left out with it; exercises 26, 28, 30, 32, 34, 36, 38, 40 and 44 of the chapter have no answer in the book’s key and are left out.",
+  "summary_html": "<p>气体的行为可以用若干根据其性质的实验观测得出的定律来描述。在<span data-concept=\"volume\">体积</span>不变的条件下，一定量气体的<span data-concept=\"gas-pressure\">压强</span>与其热力学<span data-concept=\"temperature\">温度</span>成正比（阿蒙顿定律）。在<span data-concept=\"gas-pressure\">压强</span>一定时，给定气体样品的<span data-concept=\"volume\">体积</span>与其热力学<span data-concept=\"temperature\">温度</span>成正比（查理定律）。在<span data-concept=\"temperature\">温度</span>保持不变时，一定量气体的<span data-concept=\"volume\">体积</span>与其<span data-concept=\"gas-pressure\">压强</span>成反比（玻意耳定律）。在相同的<span data-concept=\"temperature\">温度</span>和<span data-concept=\"gas-pressure\">压强</span>条件下，相同<span data-concept=\"volume\">体积</span>的任何气体含有相同数目的分子（阿伏加德罗定律）。</p><p>描述这些定律的方程是理想气体状态方程 <em>PV</em> = <em>nRT</em> 的特例，其中 <em>P</em> 是气体的<span data-concept=\"gas-pressure\">压强</span>，<em>V</em> 是其<span data-concept=\"volume\">体积</span>，<em>n</em> 是气体的物质的量，以<span data-concept=\"mole\">摩尔</span>计，<em>T</em> 是其开尔文<span data-concept=\"temperature\">温度</span>，<em>R</em> 是理想（普适）气体常数。</p>",
+  "notes": "两则“学习链接”被略去：一则是气体冷却时收缩、加热时膨胀的视频，另一则是压强、体积、温度和物质的量的 PhET 模拟，本页的气体盒子取代了它的位置。图 9.17 是大堡礁珊瑚的照片，位于水肺潜水的提示框旁，作为陪衬场景被略去；本章习题 31 旁的气象气球照片也一并略去；本章习题 26、28、30、32、34、36、38、40 和 44 在书中的答案表里没有答案，也被略去。",
   "ai": {
     "text": [
       {
@@ -23,6 +23,10 @@
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ],
     "figures": [
@@ -33,12 +37,16 @@
       {
         "model": "claude-opus-5-5",
         "effort": "low"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ]
   },
-  "built": "2026-09-12",
+  "built": "2026-10-26",
   "exercises_lead": "",
-  "exercise_notes": "Bloom levels, concept tags, weights and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The six Check Your Learning items are set inline after their examples; the book keys the syringe item of Example 9.8 as (a) about 17–18 mL, (b) ~18 mL and (c) 17.7 mL, so the number checked is part (c) and the whole answer is the solution. The unkeyed numerical exercises fs-idm179450656 (the syringe at 12.5 mL), fs-idm244984432 (the temperature of the carbon monoxide), fs-idm179333888 (the balloon with five more breaths), fs-idm207691136 (the air bag in kPa), fs-idm171506192 (the iodine vapor), fs-idm87206720 (the high altitude balloon), fs-idm131888352 (the scuba tank filled to capacity), fs-idp25823920 (the oxygen consumed in an hour) and fs-idm26646416 (the helium from radium) are left out, and no answer is computed for them. The six unkeyed conceptual exercises are kept with a suggested approach marked as OmniStax’s own. The keyed exercise fs-idm188679440 asks for four graphs and the book answers it with a drawing; the solution here describes that drawing in the book’s words from its own description of the figure and names the Sim of the page that draws the four graphs live. Numeric answers accept 2% tolerance.",
+  "exercise_notes": "布鲁姆层级、概念标签、权重和提示均由 AI 生成。答案取自书后答案以及“学习检测”的答案。六道“学习检测”题在各自的例题之后随文给出；书中对例 9.8 的注射器一题给出的答案是（a）约 17–18 mL，（b）~18 mL，（c）17.7 mL，所以核对的数值是（c）部分，完整答案放在解答中。没有答案的数值习题 fs-idm179450656（12.5 mL 的注射器）、fs-idm244984432（一氧化碳的温度）、fs-idm179333888（再多呼吸五次的气球）、fs-idm207691136（以 kPa 计的安全气囊）、fs-idm171506192（碘蒸气）、fs-idm87206720（高空气球）、fs-idm131888352（充满的水肺气瓶）、fs-idp25823920（一小时内消耗的氧气）和 fs-idm26646416（镭产生的氦）被略去，也没有为它们算出答案。六道没有答案的概念题保留，所附的建议思路标明为 OmniStax 自己所写。有答案的习题 fs-idm188679440 要求画四幅图，书中以一幅图作答；这里的解答用书中对该图自己的描述来说明这幅图，并指出本页中实时画出这四幅图的模拟。数值答案接受 2% 的容差。",
   "figures": [
     {
       "id": "fig-ballooning",
@@ -53,7 +61,7 @@
       "originals": [
         "/media/ch09/CNX_Chem_09_01_Amontons1.jpg"
       ],
-      "original_caption": "The effect of temperature on gas pressure: When the hot plate is off, the pressure of the gas in the sphere is relatively low. As the gas is heated, the pressure of the gas in the sphere increases.",
+      "original_caption": "温度对气体压强的影响：电热板关闭时，球内气体的压强相对较低。气体被加热后，球内气体的压强增大。",
       "draws": [
         "pressure",
         "temperature",
@@ -79,6 +87,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "framed so label and plate show; dial unit clear; strip and note trimmed"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -89,7 +102,7 @@
       "originals": [
         "/media/ch09/CNX_Chem_09_02_Amontons2.jpg"
       ],
-      "original_caption": "For a constant volume and amount of air, the pressure and temperature are directly proportional, provided the temperature is in kelvin. (Measurements cannot be made at lower temperatures because of the condensation of the gas.) When this line is extrapolated to lower pressures, it reaches a pressure of 0 at –273 °C, which is 0 on the kelvin scale and the lowest possible temperature, called absolute zero.",
+      "original_caption": "体积和空气的量一定时，压强与温度成正比，前提是温度用开尔文表示。（在更低的温度下无法测量，因为气体会凝结。）将这条直线外推到更低的压强，它在 –273 °C 处达到压强 0，这对应开尔文温标的 0，也是可能的最低温度，称为绝对零度。",
       "draws": [
         "pressure",
         "temperature"
@@ -109,6 +122,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "pressure axis to 120 kPa; notes and labels clear of lines"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -119,7 +137,7 @@
       "originals": [
         "/media/ch09/CNX_Chem_09_02_Charles2.jpg"
       ],
-      "original_caption": "The volume and temperature are linearly related for 1 mole of methane gas at a constant pressure of 1 atm. If the temperature is in kelvin, volume and temperature are directly proportional. The line stops at 111 K because methane liquefies at this temperature; when extrapolated, it intersects the graph’s origin, representing a temperature of absolute zero.",
+      "original_caption": "在 1 atm 的恒定压强下，1 摩尔甲烷气体的体积与温度呈线性关系。若温度用开尔文表示，体积与温度成正比。直线止于 111 K，因为甲烷在此温度液化；外推时，它与图的原点相交，对应绝对零度的温度。",
       "draws": [
         "volume",
         "temperature"
@@ -139,6 +157,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "notes clear of the line and labels; subscripted V labels"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -153,7 +176,7 @@
         "/media/ch09/CNX_Chem_09_03_BoylesLaw1.jpg",
         "/media/ch09/CNX_Chem_09_02_Boyleslaw2.jpg"
       ],
-      "original_caption": "(Figure 9.13) When a gas occupies a smaller volume, it exerts a higher pressure; when it occupies a larger volume, it exerts a lower pressure (assuming the amount of gas and the temperature do not change). Since P and V are inversely proportional, a graph of 1/P vs. V is linear. (Figure 9.14) The relationship between pressure and volume is inversely proportional. (a) The graph of P vs. V is a hyperbola, whereas (b) the graph of (1/P) vs. V is linear.",
+      "original_caption": "（图 9.13）气体占据较小体积时，施加的压强较高；占据较大体积时，施加的压强较低（假定气体的量和温度不变）。由于 P 与 V 成反比，1/P 对 V 的图是直线。（图 9.14）压强与体积的关系是成反比。（a）P 对 V 的图是双曲线，而（b）(1/P) 对 V 的图是直线。",
       "draws": [
         "pressure",
         "volume"
@@ -173,6 +196,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "dial unit clear; P labels and hyperbola note apart; note trimmed"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -183,7 +211,7 @@
       "originals": [
         "/media/ch09/CNX_Chem_09_02_BoylesLaw4.jpg"
       ],
-      "original_caption": "Breathing occurs because expanding and contracting lung volume creates small pressure differences between your lungs and your surroundings, causing air to be drawn into and forced out of your lungs.",
+      "original_caption": "呼吸之所以发生，是因为肺的体积扩张和收缩，在肺与周围环境之间造成微小的压强差，使空气被吸入肺中和被压出肺外。",
       "draws": [
         "volume",
         "pressure"
@@ -203,6 +231,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "rewritten: library silhouette with a chest lens, two lungs, readout"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -243,6 +276,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "dial unit clear of the end labels"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -270,6 +308,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "law names above the frames; note that repeated the caption dropped"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -280,7 +323,7 @@
       "originals": [
         "/media/ch09/CNX_Chem_09_02_HENH3O2.jpg"
       ],
-      "original_caption": "Regardless of its chemical identity, one mole of gas behaving ideally occupies a volume of ~22.4 L at STP.",
+      "original_caption": "无论化学成分如何，1 摩尔表现为理想行为的气体在 STP 下占据的体积约为 22.4 L。",
       "draws": [
         "volume",
         "amount",
@@ -311,6 +354,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "3D names above the balloons; strip line and note trimmed"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     }
@@ -543,13 +591,13 @@
         "after": "ex-hair-spray"
       },
       "cite": "amontons",
-      "prompt": "A sample of nitrogen, N<sub>2</sub>, occupies 45.0 mL at 27 °C and 600 torr. What pressure will it have if cooled to –73 °C while the volume remains constant?",
+      "prompt": "一份氮气 N<sub>2</sub> 样品在 27 °C 和 600 torr 下占 45.0 mL。若体积保持不变而将其冷却到 –73 °C，压强将是多少？",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 400,
         "unit": "torr",
-        "hint": "Convert both temperatures to kelvin and use P₁/T₁ = P₂/T₂; the volume does not change.",
+        "hint": "把两个温度都换算成开尔文，使用 P₁/T₁ = P₂/T₂；体积不变。",
         "solution": "400 torr"
       }
     },
@@ -563,13 +611,13 @@
         "after": "ex-co2"
       },
       "cite": "charles",
-      "prompt": "A sample of oxygen, O<sub>2</sub>, occupies 32.2 mL at 30 °C and 452 torr. What volume will it occupy at –70 °C and the same pressure?",
+      "prompt": "一份氧气 O<sub>2</sub> 样品在 30 °C 和 452 torr 下占 32.2 mL。在 –70 °C 和相同压强下，它将占多大体积？",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 21.6,
         "unit": "mL",
-        "hint": "The pressure is held, so V₁/T₁ = V₂/T₂ with both temperatures in kelvin.",
+        "hint": "压强不变，所以 V₁/T₁ = V₂/T₂，两个温度都用开尔文。",
         "solution": "21.6 mL"
       }
     },
@@ -583,13 +631,13 @@
         "after": "ex-gas-thermometer"
       },
       "cite": "charles",
-      "prompt": "What is the volume of a sample of ethane at 467 K and 1.1 atm if it occupies 405 mL at 298 K and 1.1 atm?",
+      "prompt": "一份乙烷样品在 298 K 和 1.1 atm 下占 405 mL，它在 467 K 和 1.1 atm 下的体积是多少？",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 635,
         "unit": "mL",
-        "hint": "The pressure is the same in both states, so the volume scales with the kelvin temperature.",
+        "hint": "两个状态的压强相同，所以体积与开尔文温度成比例变化。",
         "solution": "635 mL"
       }
     },
@@ -603,15 +651,15 @@
         "after": "ex-syringe"
       },
       "cite": "boyle",
-      "prompt": "The sample of gas in Figure 9.13 has a volume of 30.0 mL at a pressure of 6.5 psi. Determine the volume of the gas at a pressure of 11.0 psi, using: (a) the <em>P</em>-<em>V</em> graph in Figure 9.13 (b) the 1/<em>P</em> vs. <em>V</em> graph in Figure 9.13 (c) the Boyle’s law equation. Comment on the likely accuracy of each method.",
+      "prompt": "图 9.13 中的气体样品在 6.5 psi 的压强下体积为 30.0 mL。请用以下方法确定气体在 11.0 psi 压强下的体积：（a）图 9.13 中的 <em>P</em>-<em>V</em> 图 （b）图 9.13 中的 1/<em>P</em> 对 <em>V</em> 图 （c）玻意耳定律方程。请评论每种方法可能的准确度。",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 17.7,
         "unit": "mL",
         "part": "(c)",
-        "hint": "For part (c), P₁V₁ = P₂V₂ with the temperature and the amount of gas unchanged.",
-        "solution": "(a) about 17–18 mL; (b) ~18 mL; (c) 17.7 mL; it was more difficult to estimate well from the <em>P</em>-<em>V</em> graph, so (a) is likely more inaccurate than (b); the calculation will be as accurate as the equation and measurements allow"
+        "hint": "（c）部分用 P₁V₁ = P₂V₂，温度和气体的量均不变。",
+        "solution": "（a）约 17–18 mL；（b）~18 mL；（c）17.7 mL；从 <em>P</em>-<em>V</em> 图上很难估计准确，所以（a）可能比（b）更不准确；计算的准确度取决于方程和测量所允许的程度"
       }
     },
     {
@@ -624,13 +672,13 @@
         "after": "ex-methane"
       },
       "cite": "ideal-gas-law",
-      "prompt": "Calculate the pressure in bar of 2520 moles of hydrogen gas stored at 27 °C in the 180-L storage tank of a modern hydrogen-powered car.",
+      "prompt": "计算现代氢动力汽车 180 L 的储氢罐中，27 °C 下储存的 2520 摩尔氢气的压强，以 bar 表示。",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 350,
         "unit": "bar",
-        "hint": "Solve PV = nRT for P with the temperature in kelvin, then convert the pressure to bar.",
+        "hint": "由 PV = nRT 解出 P，温度用开尔文，然后把压强换算成 bar。",
         "solution": "350 bar"
       }
     },
@@ -644,13 +692,13 @@
         "after": "ex-scuba"
       },
       "cite": "combined-gas-law",
-      "prompt": "A sample of ammonia is found to occupy 0.250 L under laboratory conditions of 27 °C and 0.850 atm. Find the volume of this sample at 0 °C and 1.00 atm.",
+      "prompt": "发现一份氨样品在 27 °C 和 0.850 atm 的实验室条件下占 0.250 L。求这份样品在 0 °C 和 1.00 atm 下的体积。",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 0.193,
         "unit": "L",
-        "hint": "The amount of ammonia does not change, so P₁V₁/T₁ = P₂V₂/T₂.",
+        "hint": "氨的量不变，所以 P₁V₁/T₁ = P₂V₂/T₂。",
         "solution": "0.193 L"
       }
     },
@@ -663,11 +711,11 @@
         "at": "end"
       },
       "cite": "amontons",
-      "prompt": "Sometimes leaving a bicycle in the sun on a hot day will cause a blowout. Why?",
+      "prompt": "有时把自行车留在炎热天气的阳光下会爆胎。为什么？",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "The sun heats the air inside the tire, and its pressure rises until the tire can no longer hold it. The tire holds a fixed amount of air in a volume that can grow very little, so Amontons’s law applies: at constant volume and amount, the pressure is directly proportional to the kelvin temperature, $\\frac{\\kPone}{\\kTone}=\\frac{\\kPtwo}{\\kTtwo}$. A dark tire in the sun on a hot day can warm from 20 °C to 50 °C, that is from 293 K to 323 K, which raises the pressure by a factor of $\\frac{323\\;\\text{K}}{293\\;\\text{K}}=1.10$, ten percent. A tire already pumped close to its limit is pushed past it, and it bursts, just as the heated can of hair spray in Example 9.5 may."
+        "solution": "太阳加热轮胎内的空气，其压强升高，直到轮胎再也承受不住。轮胎里装着一定量的空气，体积几乎不能增大，所以适用阿蒙顿定律：体积和物质的量一定时，压强与开尔文温度成正比，$\\frac{\\kPone}{\\kTone}=\\frac{\\kPtwo}{\\kTtwo}$。炎热天气里阳光下的深色轮胎可以从 20 °C 升温到 50 °C，即从 293 K 升到 323 K，这使压强增大到原来的 $\\frac{323\\;\\text{K}}{293\\;\\text{K}}=1.10$ 倍，即增加百分之十。一个已经打气接近极限的轮胎会被推过这个极限而爆裂，就像例 9.5 中受热的发胶罐可能发生的那样。"
       }
     },
     {
@@ -679,11 +727,11 @@
         "at": "end"
       },
       "cite": "boyle",
-      "prompt": "Explain how the volume of the bubbles exhausted by a scuba diver (Figure 9.16) change as they rise to the surface, assuming that they remain intact.",
+      "prompt": "假定潜水员（图 9.16）呼出的气泡保持完整，请解释这些气泡的体积在上升到水面的过程中如何变化。",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "As the bubbles rise, the pressure decreases, so their volume increases as suggested by Boyle’s law."
+        "solution": "气泡上升时，压强减小，所以它们的体积增大，正如玻意耳定律所指出的。"
       }
     },
     {
@@ -695,11 +743,11 @@
         "at": "end"
       },
       "cite": "boyle",
-      "prompt": "One way to state Boyle’s law is “All other things being equal, the pressure of a gas is inversely proportional to its volume.” (a) What is the meaning of the term “inversely proportional?” (b) What are the “other things” that must be equal?",
+      "prompt": "叙述玻意耳定律的一种方式是：“在其他条件相同的情况下，气体的压强与其体积成反比。” （a）“成反比”一词是什么意思？（b）必须相同的“其他条件”是什么？",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "(a) Two quantities are inversely proportional when increasing one by some factor decreases the other by the same factor, so that their product stays constant: $\\kP=\\frac{k}{\\kV}$, or $\\kP\\kV=k$. Halving the volume of the gas doubles its pressure, and tripling the volume reduces the pressure to one third. (b) The other things are the temperature of the gas and the amount of gas. Boyle’s law holds for a given amount of gas held at constant temperature; heating the gas or adding more of it while the volume changes would change the pressure for reasons other than the change in volume."
+        "solution": "（a）两个量成反比，是指其中一个增大若干倍时，另一个减小相同的倍数，因而它们的乘积保持不变：$\\kP=\\frac{k}{\\kV}$，即 $\\kP\\kV=k$。把气体的体积减半，压强加倍；把体积增至三倍，压强减小到三分之一。（b）其他条件是气体的温度和气体的量。玻意耳定律适用于温度恒定的一定量气体；在体积变化的同时加热气体或加入更多气体，会因体积变化以外的原因改变压强。"
       }
     },
     {
@@ -711,11 +759,11 @@
         "at": "end"
       },
       "cite": "avogadro",
-      "prompt": "An alternate way to state Avogadro’s law is “All other things being equal, the number of molecules in a gas is directly proportional to the volume of the gas.” (a) What is the meaning of the term “directly proportional?” (b) What are the “other things” that must be equal?",
+      "prompt": "叙述阿伏加德罗定律的另一种方式是：“在其他条件相同的情况下，气体中的分子数与气体的体积成正比。” （a）“成正比”一词是什么意思？（b）必须相同的“其他条件”是什么？",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "(a) The number of particles in the gas increases as the volume increases. (b) temperature, pressure"
+        "solution": "（a）体积增大时，气体中的粒子数增多。（b）温度、压强"
       }
     },
     {
@@ -727,11 +775,11 @@
         "at": "end"
       },
       "cite": "charles",
-      "prompt": "How would the graph in Figure 9.12 change if the number of moles of gas in the sample used to determine the curve were doubled?",
+      "prompt": "如果用来测定该曲线的样品中气体的物质的量加倍，图 9.12 中的图将如何变化？",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "The line would be twice as steep: at every temperature the volume would be twice as great, and the line would still pass through the origin at absolute zero. The graph plots the volume of 1 mole of methane against its kelvin temperature at a constant pressure of 1 atm. By the ideal gas law, $\\kV=\\frac{\\kn R}{\\kP}\\kT$, so the slope of the line is $\\frac{\\kn R}{\\kP}$, and doubling $\\kn$ at the same pressure doubles the slope; this is Avogadro’s law, the volume being directly proportional to the number of moles. At 273 K, 1 mol occupies 22.4 L and 2 mol occupy 44.8 L. The line would still stop at 111 K, where methane liquefies at 1 atm whatever the amount."
+        "solution": "这条直线的斜率将变为原来的两倍：在每个温度下，体积都将是原来的两倍，而直线在绝对零度时仍通过原点。该图画的是 1 摩尔甲烷在 1 atm 恒定压强下的体积对其开尔文温度。由理想气体状态方程，$\\kV=\\frac{\\kn R}{\\kP}\\kT$，所以直线的斜率是 $\\frac{\\kn R}{\\kP}$，在相同压强下把 $\\kn$ 加倍，斜率也加倍；这就是阿伏加德罗定律，体积与物质的量成正比。在 273 K 时，1 mol 占 22.4 L，2 mol 占 44.8 L。直线仍然止于 111 K，因为甲烷在 1 atm 下于此温度液化，与气体的量无关。"
       }
     },
     {
@@ -743,11 +791,11 @@
         "at": "end"
       },
       "cite": "boyle",
-      "prompt": "How would the graph in Figure 9.13 change if the number of moles of gas in the sample used to determine the curve were doubled?",
+      "prompt": "如果用来测定该曲线的样品中气体的物质的量加倍，图 9.13 中的图将如何变化？",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "The curve would be farther to the right and higher up, but the same basic shape."
+        "solution": "曲线会更靠右、更靠上，但基本形状相同。"
       }
     },
     {
@@ -759,11 +807,11 @@
         "at": "end"
       },
       "cite": "ideal-gas-law",
-      "prompt": "In addition to the data found in Figure 9.13, what other information do we need to find the mass of the sample of air used to determine the graph?",
+      "prompt": "除了图 9.13 中的数据之外，还需要什么其他信息，才能求出用来作该图的空气样品的质量？",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "The temperature of the sample and the molar mass of air. The figure gives the pressure and volume of the sample at room temperature but not the exact temperature, and the ideal gas law needs all three to give the amount: $\\kn=\\frac{\\kP\\kV}{R\\kT}$. The mass is then the amount times the molar mass, $\\km=\\kn\\kMM$, and for air the molar mass is the average for its mixture of mostly nitrogen and oxygen, about 29 g/mol. If the sample were at 25 °C, for instance, the point at 15.0 mL and 13.0 psi (0.885 atm) would give $\\kn=\\frac{(0.885\\;\\text{atm})(0.0150\\;\\text{L})}{(0.08206\\;\\text{L atm mol}^{-1}\\text{K}^{-1})(298\\;\\text{K})}=5.43\\times10^{-4}\\;\\text{mol}$, and a mass of $(5.43\\times10^{-4}\\;\\text{mol})(29\\;\\text{g/mol})=0.016\\;\\text{g}$."
+        "solution": "样品的温度和空气的摩尔质量。图中给出了样品在室温下的压强和体积，但没有给出确切的温度，而理想气体状态方程需要这三个量才能求出物质的量：$\\kn=\\frac{\\kP\\kV}{R\\kT}$。质量则是物质的量乘以摩尔质量，$\\km=\\kn\\kMM$，空气的摩尔质量是它那种主要由氮和氧组成的混合物的平均值，约 29 g/mol。例如，若样品在 25 °C，则 15.0 mL、13.0 psi（0.885 atm）的那个点给出 $\\kn=\\frac{(0.885\\;\\text{atm})(0.0150\\;\\text{L})}{(0.08206\\;\\text{L atm mol}^{-1}\\text{K}^{-1})(298\\;\\text{K})}=5.43\\times10^{-4}\\;\\text{mol}$，质量为 $(5.43\\times10^{-4}\\;\\text{mol})(29\\;\\text{g/mol})=0.016\\;\\text{g}$。"
       }
     },
     {
@@ -775,14 +823,14 @@
         "at": "end"
       },
       "cite": "charles",
-      "prompt": "Determine the volume of 1 mol of CH<sub>4</sub> gas at 150 K and 1 atm, using Figure 9.12.",
+      "prompt": "利用图 9.12，确定 1 mol CH<sub>4</sub> 气体在 150 K 和 1 atm 下的体积。",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 12.5,
         "unit": "L",
-        "hint": "Read the volume off the line of Figure 9.12 at 150 K, or use V/T = k with one of the tabulated points.",
-        "solution": "About 12.5 L"
+        "hint": "从图 9.12 的直线上读出 150 K 处的体积，或者用 V/T = k 和表中的一个点。",
+        "solution": "约 12.5 L"
       }
     },
     {
@@ -794,13 +842,13 @@
         "at": "end"
       },
       "cite": "amontons",
-      "prompt": "A spray can is used until it is empty except for the propellant gas, which has a pressure of 1344 torr at 23 °C. If the can is thrown into a fire (T = 475 °C), what will be the pressure in the hot can?",
+      "prompt": "一罐喷雾剂一直用到只剩下推进剂气体，其压强在 23 °C 时为 1344 torr。若把这个罐扔进火里（T = 475 °C），热罐中的压强将是多少？",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 3400,
         "unit": "torr",
-        "hint": "The can is rigid, so P₁/T₁ = P₂/T₂ with both temperatures in kelvin.",
+        "hint": "罐是刚性的，所以 P₁/T₁ = P₂/T₂，两个温度都用开尔文。",
         "solution": "3.40 $\\times$ 10<sup>3</sup> torr"
       }
     },
@@ -813,13 +861,13 @@
         "at": "end"
       },
       "cite": "charles",
-      "prompt": "A 2.50-L volume of hydrogen measured at –196 °C is warmed to 100 °C. Calculate the volume of the gas at the higher temperature, assuming no change in pressure.",
+      "prompt": "将 –196 °C 时测得的 2.50 L 氢气加热到 100 °C。假定压强不变，计算该气体在较高温度下的体积。",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 12.1,
         "unit": "L",
-        "hint": "Charles’s law: V₁/T₁ = V₂/T₂, with –196 °C and 100 °C converted to kelvin.",
+        "hint": "查理定律：V₁/T₁ = V₂/T₂，先把 –196 °C 和 100 °C 换算成开尔文。",
         "solution": "12.1 L"
       }
     },
@@ -832,13 +880,13 @@
         "at": "end"
       },
       "cite": "ideal-gas-law",
-      "prompt": "A weather balloon contains 8.80 moles of helium at a pressure of 0.992 atm and a temperature of 25 °C at ground level. What is the volume of the balloon under these conditions?",
+      "prompt": "一个气象气球在地面处装有 8.80 摩尔氦气，压强为 0.992 atm，温度为 25 °C。在这些条件下气球的体积是多少？",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 217,
         "unit": "L",
-        "hint": "Solve PV = nRT for V with R = 0.08206 L atm mol⁻¹ K⁻¹ and T in kelvin.",
+        "hint": "由 PV = nRT 解出 V，取 R = 0.08206 L atm mol⁻¹ K⁻¹，T 用开尔文。",
         "solution": "217 L"
       }
     },
@@ -851,7 +899,7 @@
         "at": "end"
       },
       "cite": "ideal-gas-law",
-      "prompt": "How many moles of gaseous boron trifluoride, BF<sub>3</sub>, are contained in a 4.3410-L bulb at 788.0 K if the pressure is 1.220 atm? How many grams of BF<sub>3</sub>?",
+      "prompt": "在 788.0 K、压强为 1.220 atm 的 4.3410 L 玻璃泡中，含有多少摩尔气态三氟化硼 BF<sub>3</sub>？BF<sub>3</sub> 有多少克？",
       "answer": {
         "type": "multi",
         "generated_by": "source",
@@ -860,13 +908,13 @@
             "part": "moles",
             "value": 0.0819,
             "unit": "mol",
-            "hint": "Solve PV = nRT for n."
+            "hint": "由 PV = nRT 解出 n。"
           },
           {
             "part": "grams",
             "value": 5.553,
             "unit": "g",
-            "hint": "Multiply the amount by the molar mass of BF₃."
+            "hint": "把物质的量乘以 BF₃ 的摩尔质量。"
           }
         ],
         "solution": "8.190 $\\times$ 10<sup>–2</sup> mol; 5.553 g"
@@ -881,7 +929,7 @@
         "at": "end"
       },
       "cite": "ideal-gas-law",
-      "prompt": "How many grams of gas are present in each of the following cases? (a) 0.100 L of CO<sub>2</sub> at 307 torr and 26 °C (b) 8.75 L of C<sub>2</sub>H<sub>4</sub>, at 378.3 kPa and 483 K (c) 221 mL of Ar at 0.23 torr and –54 °C",
+      "prompt": "在下列各种情况下，各有多少克气体？ （a）307 torr、26 °C 下的 0.100 L CO<sub>2</sub> （b）378.3 kPa、483 K 下的 8.75 L C<sub>2</sub>H<sub>4</sub> （c）0.23 torr、–54 °C 下的 221 mL Ar",
       "answer": {
         "type": "multi",
         "generated_by": "source",
@@ -890,22 +938,22 @@
             "part": "(a)",
             "value": 0.0724,
             "unit": "g",
-            "hint": "Find n from PV = nRT with the pressure in atm, then multiply by the molar mass of CO₂."
+            "hint": "压强用 atm，由 PV = nRT 求 n，再乘以 CO₂ 的摩尔质量。"
           },
           {
             "part": "(b)",
             "value": 23.1,
             "unit": "g",
-            "hint": "With the pressure in kPa, use R = 8.314 kPa L mol⁻¹ K⁻¹."
+            "hint": "压强用 kPa，取 R = 8.314 kPa L mol⁻¹ K⁻¹。"
           },
           {
             "part": "(c)",
             "value": 0.00015,
             "unit": "g",
-            "hint": "Convert 221 mL to litres and –54 °C to kelvin before solving for n."
+            "hint": "先把 221 mL 换算成升、–54 °C 换算成开尔文，再解 n。"
           }
         ],
-        "solution": "(a) 7.24 $\\times$ 10<sup>–2</sup> g; (b) 23.1 g; (c) 1.5 $\\times$ 10<sup>–4</sup> g"
+        "solution": "（a）7.24 $\\times$ 10<sup>–2</sup> g；（b）23.1 g；（c）1.5 $\\times$ 10<sup>–4</sup> g"
       }
     },
     {
@@ -917,13 +965,13 @@
         "at": "end"
       },
       "cite": "combined-gas-law",
-      "prompt": "A cylinder of medical oxygen has a volume of 35.4 L, and contains O<sub>2</sub> at a pressure of 151 atm and a temperature of 25 °C. What volume of O<sub>2</sub> does this correspond to at normal body conditions, that is, 1 atm and 37 °C?",
+      "prompt": "一个医用氧气瓶的容积为 35.4 L，内装 O<sub>2</sub>，压强为 151 atm，温度为 25 °C。在正常体内条件，即 1 atm 和 37 °C 下，这相当于多大体积的 O<sub>2</sub>？",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 5561,
         "unit": "L",
-        "hint": "The amount of oxygen is fixed, so P₁V₁/T₁ = P₂V₂/T₂.",
+        "hint": "氧气的量固定，所以 P₁V₁/T₁ = P₂V₂/T₂。",
         "solution": "5561 L"
       }
     },
@@ -936,13 +984,13 @@
         "at": "end"
       },
       "cite": "ideal-gas-law",
-      "prompt": "A 20.0-L cylinder containing 11.34 kg of butane, C<sub>4</sub>H<sub>10</sub>, was opened to the atmosphere. Calculate the mass of the gas remaining in the cylinder if it were opened and the gas escaped until the pressure in the cylinder was equal to the atmospheric pressure, 0.983 atm, and a temperature of 27 °C.",
+      "prompt": "一个装有 11.34 kg 丁烷 C<sub>4</sub>H<sub>10</sub> 的 20.0 L 气瓶向大气打开。假设气瓶被打开，气体逸出，直到瓶内压强等于大气压 0.983 atm，温度为 27 °C，计算留在气瓶中的气体的质量。",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 46.4,
         "unit": "g",
-        "hint": "The gas left fills 20.0 L at 0.983 atm and 300 K; find its amount from PV = nRT and convert to a mass with the molar mass of butane.",
+        "hint": "剩下的气体在 0.983 atm 和 300 K 下充满 20.0 L；由 PV = nRT 求出它的物质的量，再用丁烷的摩尔质量换算成质量。",
         "solution": "46.4 g"
       }
     },
@@ -955,11 +1003,11 @@
         "at": "end"
       },
       "cite": "ideal-gas-law",
-      "prompt": "For a given amount of gas showing ideal behavior, draw labeled graphs of: (a) the variation of <em>P</em> with <em>V</em> (b) the variation of <em>V</em> with <em>T</em> (c) the variation of <em>P</em> with <em>T</em> (d) the variation of $\\frac{1}{P}$ with <em>V</em>",
+      "prompt": "对于表现为理想行为的一定量气体，请画出带标注的图：（a）<em>P</em> 随 <em>V</em> 的变化 （b）<em>V</em> 随 <em>T</em> 的变化 （c）<em>P</em> 随 <em>T</em> 的变化 （d）$\\frac{1}{P}$ 随 <em>V</em> 的变化",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "For a gas exhibiting ideal behavior: (a) with volume on the horizontal axis and pressure on the vertical, a curved line falling with a decreasing rate of change, labeled n, T constant; (b) with temperature on the horizontal axis and volume on the vertical, a rising straight line, labeled n, P constant; (c) with temperature on the horizontal axis and pressure on the vertical, a rising straight line, labeled n, V constant; (d) with volume on the horizontal axis and 1/P on the vertical, a rising straight line, labeled n, T constant. The second Sim of the section draws all four from one state of the gas."
+        "solution": "对于表现为理想行为的气体：（a）横轴为体积、纵轴为压强，一条下降的曲线，下降的速率逐渐减小，标注 n、T 恒定；（b）横轴为温度、纵轴为体积，一条上升的直线，标注 n、P 恒定；（c）横轴为温度、纵轴为压强，一条上升的直线，标注 n、V 恒定；（d）横轴为体积、纵轴为 1/P，一条上升的直线，标注 n、T 恒定。本节的第二个模拟根据气体的同一个状态画出了这四幅图。"
       }
     },
     {
@@ -971,11 +1019,11 @@
         "at": "end"
       },
       "cite": "stp",
-      "prompt": "A liter of methane gas, CH<sub>4</sub>, at STP contains more atoms of hydrogen than does a liter of pure hydrogen gas, H<sub>2</sub>, at STP. Using Avogadro’s law as a starting point, explain why.",
+      "prompt": "在 STP 下，一升甲烷气体 CH<sub>4</sub> 所含的氢原子比一升纯氢气 H<sub>2</sub> 所含的更多。请以阿伏加德罗定律为出发点，解释原因。",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Because the two liters hold the same number of molecules, and each methane molecule carries four hydrogen atoms where each hydrogen molecule carries two. Avogadro’s law says that equal volumes of gases at the same temperature and pressure contain the same number of molecules, whatever the gas. At STP 1 mol of any gas occupies 22.4 L, so each liter holds $\\frac{1\\;\\text{L}}{22.4\\;\\text{L/mol}}=0.0446$ mol of molecules. The liter of CH<sub>4</sub> then contains $4\\times0.0446=0.178$ mol of hydrogen atoms, and the liter of H<sub>2</sub> contains $2\\times0.0446=0.0893$ mol, so the methane holds twice as many hydrogen atoms."
+        "solution": "因为这两升气体含有相同数目的分子，而每个甲烷分子含四个氢原子，每个氢分子含两个。阿伏加德罗定律说，在相同温度和压强下，相同体积的气体含有相同数目的分子，与气体种类无关。在 STP 下，1 mol 任何气体占 22.4 L，所以每升含 $\\frac{1\\;\\text{L}}{22.4\\;\\text{L/mol}}=0.0446$ mol 分子。于是这一升 CH<sub>4</sub> 含 $4\\times0.0446=0.178$ mol 氢原子，这一升 H<sub>2</sub> 含 $2\\times0.0446=0.0893$ mol，所以甲烷所含的氢原子数是氢气的两倍。"
       }
     },
     {
@@ -987,7 +1035,7 @@
         "at": "end"
       },
       "cite": "stp",
-      "prompt": "The effect of chlorofluorocarbons (such as CCl<sub>2</sub>F<sub>2</sub>) on the depletion of the ozone layer is well known. The use of substitutes, such as CH<sub>3</sub>CH<sub>2</sub>F(<em>g</em>), for the chlorofluorocarbons, has largely corrected the problem. Calculate the volume occupied by 10.0 g of each of these compounds at STP: (a) CCl<sub>2</sub>F<sub>2</sub>(<em>g</em>) (b) CH<sub>3</sub>CH<sub>2</sub>F(<em>g</em>)",
+      "prompt": "氯氟烃（如 CCl<sub>2</sub>F<sub>2</sub>）对臭氧层的消耗作用众所周知。用 CH<sub>3</sub>CH<sub>2</sub>F(<em>g</em>) 等替代品取代氯氟烃，已在很大程度上纠正了这个问题。请计算 10.0 g 这两种化合物在 STP 下各占的体积： （a）CCl<sub>2</sub>F<sub>2</sub>(<em>g</em>) （b）CH<sub>3</sub>CH<sub>2</sub>F(<em>g</em>)",
       "answer": {
         "type": "multi",
         "generated_by": "source",
@@ -996,16 +1044,16 @@
             "part": "(a)",
             "value": 1.85,
             "unit": "L",
-            "hint": "Convert 10.0 g to moles with the molar mass, then multiply by the standard molar volume, 22.4 L/mol."
+            "hint": "用摩尔质量把 10.0 g 换算成摩尔数，再乘以标准摩尔体积 22.4 L/mol。"
           },
           {
             "part": "(b)",
             "value": 4.66,
             "unit": "L",
-            "hint": "The same steps with the molar mass of CH₃CH₂F."
+            "hint": "对 CH₃CH₂F 的摩尔质量做同样的步骤。"
           }
         ],
-        "solution": "(a) 1.85 L CCl<sub>2</sub>F<sub>2</sub>; (b) 4.66 L CH<sub>3</sub>CH<sub>2</sub>F"
+        "solution": "（a）1.85 L CCl<sub>2</sub>F<sub>2</sub>；（b）4.66 L CH<sub>3</sub>CH<sub>2</sub>F"
       }
     },
     {
@@ -1017,13 +1065,13 @@
         "at": "end"
       },
       "cite": "combined-gas-law",
-      "prompt": "A balloon with a volume of 100.21 L at 21 °C and 0.981 atm is released and just barely clears the top of Mount Crumpit in British Columbia. If the final volume of the balloon is 144.53 L at a temperature of 5.24 °C, what is the pressure experienced by the balloon as it clears Mount Crumpit?",
+      "prompt": "一个体积为 100.21 L（21 °C、0.981 atm）的气球被放飞，刚好飘过不列颠哥伦比亚省的 Crumpit 山顶。若气球的最终体积为 144.53 L，温度为 5.24 °C，则气球飘过 Crumpit 山时所受的压强是多少？",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 0.644,
         "unit": "atm",
-        "hint": "The combined gas law with both temperatures in kelvin, solved for P₂.",
+        "hint": "用联合气体定律，两个温度都用开尔文，解出 P₂。",
         "solution": "0.644 atm"
       }
     },
@@ -1036,11 +1084,11 @@
         "at": "end"
       },
       "cite": "amontons",
-      "prompt": "If the temperature of a fixed amount of a gas is doubled at constant volume, what happens to the pressure?",
+      "prompt": "若一定量气体的温度在体积不变时加倍，压强会怎样？",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "The pressure doubles. At constant volume and a fixed amount of gas, Amontons’s law makes the pressure directly proportional to the kelvin temperature, $\\frac{\\kPone}{\\kTone}=\\frac{\\kPtwo}{\\kTtwo}$, so $\\kPtwo=\\kPone\\frac{\\kTtwo}{\\kTone}=2\\kPone$ when $\\kTtwo=2\\kTone$. A gas at 1.00 atm and 300 K heated to 600 K, for instance, reaches 2.00 atm. The doubling must be on the kelvin scale: warming a gas from 20 °C to 40 °C takes it only from 293 K to 313 K, and raises the pressure by a factor of 1.07."
+        "solution": "压强加倍。体积不变、气体的量一定时，阿蒙顿定律使压强与开尔文温度成正比，$\\frac{\\kPone}{\\kTone}=\\frac{\\kPtwo}{\\kTtwo}$，所以当 $\\kTtwo=2\\kTone$ 时，$\\kPtwo=\\kPone\\frac{\\kTtwo}{\\kTone}=2\\kPone$。例如，1.00 atm、300 K 的气体加热到 600 K，压强达到 2.00 atm。加倍必须是在开尔文温标上：把气体从 20 °C 加热到 40 °C，只是使它从 293 K 升到 313 K，压强只增大到原来的 1.07 倍。"
       }
     },
     {
@@ -1052,11 +1100,11 @@
         "at": "end"
       },
       "cite": "boyle",
-      "prompt": "If the volume of a fixed amount of a gas is tripled at constant temperature, what happens to the pressure?",
+      "prompt": "若一定量气体的体积在温度不变时增至三倍，压强会怎样？",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "The pressure decreases by a factor of 3."
+        "solution": "压强减小到原来的三分之一。"
       }
     }
   ],
@@ -1213,28 +1261,28 @@
   "referents": [
     {
       "id": "sphere",
-      "label": "the sealed sphere",
+      "label": "密封球",
       "figures": [
         "sim-amontons-sphere"
       ]
     },
     {
       "id": "syringe",
-      "label": "the syringe",
+      "label": "注射器",
       "figures": [
         "sim-boyle"
       ]
     },
     {
       "id": "lungs",
-      "label": "the lungs",
+      "label": "肺",
       "figures": [
         "sim-breathing"
       ]
     },
     {
       "id": "diaphragm",
-      "label": "the diaphragm",
+      "label": "膈",
       "figures": [
         "sim-breathing"
       ]

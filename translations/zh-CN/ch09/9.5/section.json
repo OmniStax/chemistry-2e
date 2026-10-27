@@ -2,15 +2,15 @@
   "id": "9.5",
   "module": "m68758",
   "chapter": "9",
-  "title": "The Kinetic-Molecular Theory",
-  "short": "Kinetic-Molecular Theory",
-  "lead": "The gas laws describe how gases behave but do not say why, and the kinetic-molecular theory answers with a simple picture of molecules in constant motion, colliding elastically with one another and with the walls of their container. Its postulates explain the gas laws and tie the <span data-concept=\"speed\">speeds</span> and <span data-concept=\"kinetic-energy\">kinetic energies</span> of gas molecules to their <span data-concept=\"temperature\">temperature</span> and <span data-concept=\"molar-mass\">molar mass</span>.",
+  "title": "分子运动论",
+  "short": "分子运动论",
+  "lead": "气体定律描述了气体的行为，却没有说明其原因，而分子运动论用一幅简单的图景作出回答：分子在不停地运动，彼此之间以及与容器壁发生弹性碰撞。它的假设解释了气体定律，并把气体分子的<span data-concept=\"speed\">速率</span>和<span data-concept=\"kinetic-energy\">动能</span>与气体的<span data-concept=\"temperature\">温度</span>和<span data-concept=\"molar-mass\">摩尔质量</span>联系起来。",
   "objectives": [
-    "State the postulates of the kinetic-molecular theory",
-    "Use this theory’s postulates to explain the gas laws"
+    "陈述分子运动论的假设",
+    "用这一理论的假设解释气体定律"
   ],
-  "summary_html": "<p>The kinetic molecular theory is a simple but very effective model that effectively explains ideal gas behavior. The theory assumes that gases consist of widely separated molecules of negligible <span data-concept=\"volume\">volume</span> that are in constant motion, colliding elastically with one another and the walls of their container with average <span data-concept=\"speed\">speeds</span> determined by their absolute <span data-concept=\"temperature\">temperatures</span>. The individual molecules of a gas exhibit a range of <span data-concept=\"speed\">speeds</span>, the distribution of these <span data-concept=\"speed\">speeds</span> being dependent on the <span data-concept=\"temperature\">temperature</span> of the gas and the <span data-concept=\"mass\">mass</span> of its molecules.</p>",
-  "notes": "The Link to Learning note pointing to an online gas simulator is left out, and the box of gas with its count of molecular speeds takes its place. Figures 9.33 and 9.34 are folded into Figure 9.32 as its two comparisons. The sentence “According to Graham’s law” that opens Part II, the image label “Charles’s Law” on panel (a) of Figure 9.31, the Greek ν that the caption of Figure 9.32 writes for the most probable speed and the lower-case start of the caption of Figure 9.34 are kept as printed.",
+  "summary_html": "<p>分子运动论是一个简单而又非常有效的模型，能够有效地解释理想气体的行为。该理论假定，气体由相距很远、<span data-concept=\"volume\">体积</span>可以忽略的分子组成，这些分子不停地运动，彼此之间以及与容器壁发生弹性碰撞，其平均<span data-concept=\"speed\">速率</span>由绝对<span data-concept=\"temperature\">温度</span>决定。气体中的单个分子表现出一定范围的<span data-concept=\"speed\">速率</span>，这些<span data-concept=\"speed\">速率</span>的分布取决于气体的<span data-concept=\"temperature\">温度</span>和其分子的<span data-concept=\"mass\">质量</span>。</p>",
+  "notes": "指向在线气体模拟器的“学习链接”提示被略去，取而代之的是一个盛有气体并统计分子速率的盒子。图 9.33 和图 9.34 并入图 9.32，作为它的两组对比。第二部分开头的句子“根据格雷厄姆定律”、图 9.31 的 (a) 图上的图片标注“Charles’s Law”、图 9.32 的图注为最概然速率所写的希腊字母 ν，以及图 9.34 的图注以小写字母开头，均按原样保留。",
   "ai": {
     "text": [
       {
@@ -20,26 +20,41 @@
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ],
     "figures": [
       {
         "model": "claude-opus-5-5",
         "effort": "low"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ]
   },
-  "built": "2026-09-28",
+  "built": "2026-10-26",
   "exercises_lead": "",
-  "exercise_notes": "Bloom levels, concept tags, weights and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answer. The Check Your Learning item is set inline after Example 9.23. The unkeyed numerical exercises fs-idp62923856 (the ratios of the kinetic energies and speeds of SO₂ and O₂) and fs-idm98413904 (the root mean square speed of N₂ from that of H₂) are left out, and no answer is computed for them. The unkeyed conceptual exercises fs-idm159823744, fs-idm213877296 and fs-idm194405232 are kept with a suggested approach marked as OmniStax’s own. Exercise fs-idp16129152 refers to Figure 9.34, which draws no H₂ or H₂O curve, and exercise fs-idm150122880 uses the gas density of Section 9.3; both are kept as printed. Numeric answers accept 2% tolerance.",
+  "exercise_notes": "布鲁姆层级、概念标签、权重和提示均由 AI 生成。答案取自书后答案以及“学习检测”的答案。“学习检测”题紧接例 9.23 内嵌排列。没有答案的数值习题 fs-idp62923856（SO₂ 与 O₂ 的动能之比和速率之比）和 fs-idm98413904（由 H₂ 的方均根速率求 N₂ 的方均根速率）被略去，也没有为它们算出答案。没有答案的概念性习题 fs-idm159823744、fs-idm213877296 和 fs-idm194405232 予以保留，并附有标明为 OmniStax 自拟的建议解法。习题 fs-idp16129152 提到图 9.34，而该图并未画出 H₂ 或 H₂O 的曲线；习题 fs-idm150122880 用到了 9.3 节的气体密度；两者均按原样保留。数值答案接受 2% 的容差。",
   "figures": [
     {
       "id": "sim-kmt",
       "kind": "sim",
       "number": "9.31",
-      "originals": ["/media/ch09/CNX_Chem_09_04_KMT2.jpg"],
-      "original_caption": "(a) When gas temperature increases, gas pressure increases due to increased force and frequency of molecular collisions. (b) When volume decreases, gas pressure increases due to increased frequency of molecular collisions. (c) When the amount of gas increases at a constant pressure, volume increases to yield a constant number of collisions per unit wall area per unit time.",
-      "draws": ["pressure", "volume", "temperature", "amount"],
+      "originals": [
+        "/media/ch09/CNX_Chem_09_04_KMT2.jpg"
+      ],
+      "original_caption": "（a）当气体温度升高时，由于分子碰撞的力和频率增大，气体压强增大。（b）当体积减小时，由于分子碰撞的频率增大，气体压强增大。（c）当气体的物质的量在压强不变时增加，体积增大，使单位时间内器壁单位面积上的碰撞次数保持不变。",
+      "draws": [
+        "pressure",
+        "volume",
+        "temperature",
+        "amount"
+      ],
       "conventions": [
         "N"
       ],
@@ -53,6 +68,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "scene lowered so names fit; orbit bounded to 52°"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -60,14 +80,22 @@
       "id": "sim-speeds",
       "kind": "sim",
       "number": "9.32",
-      "folds": ["9.33", "9.34"],
+      "folds": [
+        "9.33",
+        "9.34"
+      ],
       "originals": [
         "/media/ch09/CNX_Chem_09_05_MolSpeed1.jpg",
         "/media/ch09/CNX_Chem_09_05_MolSpeed2.jpg",
         "/media/ch09/CNX_Chem_09_05_MolSpeed3.jpg"
       ],
-      "original_caption": "(Figure 9.32) The molecular speed distribution for oxygen gas at 300 K is shown here. Very few molecules move at either very low or very high speeds. The number of molecules with intermediate speeds increases rapidly up to a maximum, which is the most probable speed, then drops off rapidly. Note that the most probable speed, νp, is a little less than 400 m/s, while the root mean square speed, urms, is closer to 500 m/s. (Figure 9.33) The molecular speed distribution for nitrogen gas (N2) shifts to the right and flattens as the temperature increases; it shifts to the left and heightens as the temperature decreases. (Figure 9.34) molecular speed is directly related to molecular mass. At a given temperature, lighter molecules move faster on average than heavier molecules.",
-      "draws": ["temperature", "energy", "mass", "velocity"],
+      "original_caption": "（图 9.32）此处所示为 300 K 下氧气的分子速率分布。很少有分子以很低或很高的速率运动。具有中等速率的分子数迅速增加，直至一个最大值，即最概然速率，然后迅速下降。请注意，最概然速率 νp 略小于 400 m/s，而方均根速率 urms 更接近 500 m/s。（图 9.33）氮气（N2）的分子速率分布随着温度升高而向右移动并变平；随着温度降低而向左移动并变高。（图 9.34）分子速率与分子质量直接相关。在给定温度下，较轻的分子平均而言比较重的分子运动得更快。",
+      "draws": [
+        "temperature",
+        "energy",
+        "mass",
+        "velocity"
+      ],
       "ai": [
         {
           "model": "claude-opus-5-5",
@@ -78,13 +106,22 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "caption: the compare choice draws the chosen gas, not nitrogen"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
     {
       "id": "sim-gasbox",
       "kind": "sim",
-      "draws": ["temperature", "energy", "velocity"],
+      "draws": [
+        "temperature",
+        "energy",
+        "velocity"
+      ],
       "conventions": [
         "He",
         "N",
@@ -96,50 +133,278 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     }
   ],
   "coverage": [
-    {"span": "postulates", "concept": "kinetic-molecular-theory", "verb": "introduces"},
-    {"span": "kmt-part-1", "concept": "kmt-explains-gas-laws", "verb": "introduces"},
-    {"span": "kmt-part-1", "concept": "kinetic-molecular-theory", "verb": "uses"},
-    {"span": "kmt-part-1", "concept": "speed", "verb": "introduces"},
-    {"span": "speeds", "concept": "maxwell-boltzmann-distribution", "verb": "introduces"},
-    {"span": "speeds", "concept": "average-kinetic-energy-and-temperature", "verb": "introduces"},
-    {"span": "speeds", "concept": "root-mean-square-speed", "verb": "introduces"},
-    {"span": "ex-urms", "concept": "root-mean-square-speed", "verb": "uses"},
-    {"span": "kmt-part-2", "concept": "grahams-law-from-kmt", "verb": "introduces"},
-    {"span": "kmt-part-2", "concept": "root-mean-square-speed", "verb": "uses"},
-    {"span": "kmt-part-2", "concept": "grahams-law", "verb": "uses"}
+    {
+      "span": "postulates",
+      "concept": "kinetic-molecular-theory",
+      "verb": "introduces"
+    },
+    {
+      "span": "kmt-part-1",
+      "concept": "kmt-explains-gas-laws",
+      "verb": "introduces"
+    },
+    {
+      "span": "kmt-part-1",
+      "concept": "kinetic-molecular-theory",
+      "verb": "uses"
+    },
+    {
+      "span": "kmt-part-1",
+      "concept": "speed",
+      "verb": "introduces"
+    },
+    {
+      "span": "speeds",
+      "concept": "maxwell-boltzmann-distribution",
+      "verb": "introduces"
+    },
+    {
+      "span": "speeds",
+      "concept": "average-kinetic-energy-and-temperature",
+      "verb": "introduces"
+    },
+    {
+      "span": "speeds",
+      "concept": "root-mean-square-speed",
+      "verb": "introduces"
+    },
+    {
+      "span": "ex-urms",
+      "concept": "root-mean-square-speed",
+      "verb": "uses"
+    },
+    {
+      "span": "kmt-part-2",
+      "concept": "grahams-law-from-kmt",
+      "verb": "introduces"
+    },
+    {
+      "span": "kmt-part-2",
+      "concept": "root-mean-square-speed",
+      "verb": "uses"
+    },
+    {
+      "span": "kmt-part-2",
+      "concept": "grahams-law",
+      "verb": "uses"
+    }
   ],
   "exercises": [
-    {"id": "cyl1", "source_id": "fs-idm203397264", "kind": "check-your-learning", "bloom": "Apply", "place": {"at": "inline", "after": "ex-urms"}, "cite": "speeds", "prompt": "Calculate the root-mean-square speed for a mole of oxygen molecules at –23 °C.", "answer": {"type": "number", "generated_by": "source", "value": 441, "unit": "m/s", "hint": "Convert the temperature to kelvin and the molar mass of O₂ to kg/mol, then use the square root of 3RT over the molar mass with R = 8.314 J/mol·K.", "solution": "441 m/s"}},
-    {"id": "e1", "source_id": "fs-idm159823744", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "postulates", "prompt": "Using the postulates of the kinetic molecular theory, explain why a gas uniformly fills a container of any shape.", "answer": {"type": "open", "generated_by": "ai", "solution": "A gas fills its container uniformly because its molecules move freely and randomly in every direction, with nothing holding them together. The postulates say that gases are composed of molecules in continuous motion, traveling in straight lines and changing direction only when they collide with other molecules or with the walls. The molecules are small compared with the distances between them, so they leave the space almost empty and do not crowd one another out, and they exert no attractive or repulsive forces on one another, so no group of them clings together in one part of the container. Their collisions are elastic, so the motion never runs down. Moving at random, molecules reach every corner of the space, whatever its shape, and they keep spreading from regions of higher concentration to lower until the same number are found in every part of equal volume."}},
-    {"id": "e2", "source_id": "fs-idm178556768", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "speeds", "prompt": "Can the speed of a given molecule in a gas double at constant temperature? Explain your answer.", "answer": {"type": "open", "generated_by": "source", "solution": "Yes. At any given instant, there are a range of values of molecular speeds in a sample of gas. Any single molecule can speed up or slow down as it collides with other molecules. The average speed of all the molecules is constant at constant temperature."}},
-    {"id": "e3", "source_id": "fs-idm213877296", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "speeds", "prompt": "Describe what happens to the average kinetic energy of ideal gas molecules when the conditions are changed as follows: (a) The pressure of the gas is increased by reducing the volume at constant temperature. (b) The pressure of the gas is increased by increasing the temperature at constant volume. (c) The average speed of the molecules is increased by a factor of 2.", "answer": {"type": "open", "generated_by": "ai", "solution": "(a) The average kinetic energy does not change. It depends only on the kelvin temperature, $\\kKEavg=\\frac{3}{2}R\\kT$, and here the temperature is held constant; the pressure rises because the same molecules strike a smaller wall area more often, not because they move faster. (b) The average kinetic energy increases, in proportion to the kelvin temperature: the molecules move faster and strike the walls more often and harder. (c) The average kinetic energy increases by a factor of 4. Kinetic energy is proportional to the square of the speed, $\\kKEavg=\\frac{1}{2}\\kMM\\kurms^{2}$, so doubling the speeds of the molecules gives $2^{2}=4$ times the kinetic energy, and the kelvin temperature of the gas must have risen fourfold to bring it about."}},
-    {"id": "e4", "source_id": "fs-idp16129152", "kind": "exercise", "bloom": "Analyze", "place": {"at": "end"}, "cite": "speeds", "prompt": "The distribution of molecular speeds in a sample of helium is shown in Figure 9.34. If the sample is cooled, will the distribution of speeds look more like that of H<sub>2</sub> or of H<sub>2</sub>O? Explain your answer.", "answer": {"type": "open", "generated_by": "source", "solution": "H<sub>2</sub>O. Cooling slows the speeds of the He atoms, causing them to behave as though they were heavier."}},
-    {"id": "e5", "source_id": "fs-idm124543936", "kind": "exercise", "bloom": "Analyze", "place": {"at": "end"}, "cite": "speeds", "prompt": "A 1-L sample of CO initially at STP is heated to 546 K, and its volume is increased to 2 L. (a) What effect do these changes have on the pressure exerted by the gas? (b) What is the effect on the average kinetic energy of the molecules? (c) What is the effect on the root mean square speed of the molecules?", "answer": {"type": "open", "generated_by": "source", "solution": "(a) The pressure of the gas remains constant. (b) The average kinetic energy doubles. (c) The root mean square speed increases to $\\sqrt{2}$ times its initial value; <em>u</em><sub>rms</sub> is proportional to $\\sqrt{{\\text{KE}}_{\\text{avg}}}$."}},
-    {"id": "e6", "source_id": "fs-idm150122880", "kind": "exercise", "bloom": "Apply", "place": {"at": "end"}, "cite": "kmt-part-1", "prompt": "Answer the following questions: (a) Is the pressure of the gas in the hot-air balloon shown at the opening of this chapter greater than, less than, or equal to that of the atmosphere outside the balloon? (b) Is the density of the gas in the hot-air balloon shown at the opening of this chapter greater than, less than, or equal to that of the atmosphere outside the balloon? (c) At a pressure of 1 atm and a temperature of 20 °C, dry air has a density of 1.2256 g/L. What is the (average) molar mass of dry air? (d) The average temperature of the gas in a hot-air balloon is 1.30 $\\times$ 10<sup>2</sup> °F. Calculate its density, assuming the molar mass equals that of dry air. (e) The lifting capacity of a hot-air balloon is equal to the difference in the mass of the cool air displaced by the balloon and the mass of the gas in the balloon. What is the difference in the mass of 1.00 L of the cool air in part (c) and the hot air in part (d)? (f) An average balloon has a diameter of 60 feet and a volume of 1.1 $\\times$ 10<sup>5</sup> ft<sup>3</sup>. What is the lifting power of such a balloon? If the weight of the balloon and its rigging is 500 pounds, what is its capacity for carrying passengers and cargo? (g) A balloon carries 40.0 gallons of liquid propane (density 0.5005 g/L). What volume of CO<sub>2</sub> and H<sub>2</sub>O gas is produced by the combustion of this propane at STP? (h) A balloon flight can last about 90 minutes. If all of the fuel is burned during this time, what is the approximate rate of heat loss (in kJ/min) from the hot air in the bag during the flight?", "answer": {"type": "open", "generated_by": "source", "solution": "(a) equal; (b) less than; (c) 29.48 g mol<sup>−1</sup>; (d) 1.0966 g L<sup>−1</sup>; (e) 0.129 g/L; (f) 4.01 $\\times$ 10<sup>5</sup> g; net lifting capacity = 384 lb; (g) 270 L; (h) 39.1 kJ min<sup>−1</sup>"}},
-    {"id": "e7", "source_id": "fs-idm194405232", "kind": "exercise", "bloom": "Analyze", "place": {"at": "end"}, "cite": "kmt-part-2", "prompt": "Show that the ratio of the rate of diffusion of Gas 1 to the rate of diffusion of Gas 2, $\\frac{{R}_{1}}{{R}_{2}},$ is the same at 0 °C and 100 °C.", "answer": {"type": "open", "generated_by": "ai", "solution": "The ratio equals $\\sqrt{\\frac{\\kMM_{2}}{\\kMM_{1}}}$, which contains no temperature, so it is the same at 0 °C and at 100 °C. The rate at which a gas diffuses is proportional to the root mean square speed of its molecules, $\\kurms=\\sqrt{\\frac{3R\\kT}{\\kMM}}$, and both gases are at the same temperature. Then $\\frac{R_{1}}{R_{2}}=\\frac{\\sqrt{3R\\kT/\\kMM_{1}}}{\\sqrt{3R\\kT/\\kMM_{2}}}=\\sqrt{\\frac{\\kMM_{2}}{\\kMM_{1}}}$, since $3R\\kT$ cancels from numerator and denominator; this is Graham’s law. For hydrogen and oxygen, $\\kurms$ is 1838 m/s and 461 m/s at 273 K, and 2149 m/s and 539 m/s at 373 K, and both ratios are 3.98, equal to $\\sqrt{\\frac{32.00\\;\\text{g/mol}}{2.016\\;\\text{g/mol}}}=3.98$. Raising the temperature speeds both gases up by the same factor, $\\sqrt{\\frac{373\\;\\text{K}}{273\\;\\text{K}}}=1.17$, and leaves their ratio unchanged."}}
+    {
+      "id": "cyl1",
+      "source_id": "fs-idm203397264",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-urms"
+      },
+      "cite": "speeds",
+      "prompt": "计算 1 摩尔氧分子在 –23 °C 时的方均根速率。",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 441,
+        "unit": "m/s",
+        "hint": "先把温度换算为开尔文，把 O₂ 的摩尔质量换算为 kg/mol，再用 3RT 除以摩尔质量后的平方根计算，其中 R = 8.314 J/mol·K。",
+        "solution": "441 m/s"
+      }
+    },
+    {
+      "id": "e1",
+      "source_id": "fs-idm159823744",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "postulates",
+      "prompt": "利用分子运动论的假设，解释为什么气体能均匀地充满任意形状的容器。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "气体能均匀地充满容器，是因为它的分子可以向各个方向自由而无规则地运动，没有任何东西把它们束缚在一起。这些假设指出，气体由连续运动的分子组成，分子沿直线运动，只有在与其他分子或与器壁碰撞时才改变方向。分子与它们之间的距离相比很小，所以空间几乎是空的，分子不会互相挤占；它们彼此之间也没有吸引力或排斥力，所以没有一群分子会聚集在容器的某一处。它们的碰撞是弹性的，所以运动不会逐渐停止。分子作无规则运动，无论空间是什么形状，都能到达每一个角落，并且不断从浓度较高的区域扩散到浓度较低的区域，直到每个体积相等的部分里都有同样多的分子。"
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idm178556768",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "speeds",
+      "prompt": "在恒定温度下，气体中某个给定分子的速率能否加倍？请解释你的答案。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "能。在任何给定的时刻，气体样品中分子的速率有一个取值范围。任何一个分子在与其他分子碰撞时都可以加快或减慢。所有分子的平均速率在恒定温度下是恒定的。"
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idm213877296",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "speeds",
+      "prompt": "当条件作如下改变时，描述理想气体分子的平均动能会怎样变化：（a）在恒定温度下，通过减小体积使气体的压强增大。（b）在恒定体积下，通过升高温度使气体的压强增大。（c）分子的平均速率增大为原来的 2 倍。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "（a）平均动能不变。它只取决于开尔文温度，$\\kKEavg=\\frac{3}{2}R\\kT$，而此处温度保持不变；压强升高，是因为同样的分子更频繁地撞击较小的器壁面积，而不是因为它们运动得更快。（b）平均动能增大，与开尔文温度成正比：分子运动得更快，撞击器壁更频繁、更有力。（c）平均动能增大为原来的 4 倍。动能与速率的平方成正比，$\\kKEavg=\\frac{1}{2}\\kMM\\kurms^{2}$，所以分子的速率加倍，动能就是原来的 $2^{2}=4$ 倍，而气体的开尔文温度必须升高到原来的 4 倍才能做到这一点。"
+      }
+    },
+    {
+      "id": "e4",
+      "source_id": "fs-idp16129152",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "speeds",
+      "prompt": "氦样品中分子速率的分布如图 9.34 所示。如果样品被冷却，速率分布看起来更像 H<sub>2</sub> 的还是 H<sub>2</sub>O 的？请解释你的答案。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "H<sub>2</sub>O。冷却使 He 原子的速率变慢，使它们的行为好像变重了一样。"
+      }
+    },
+    {
+      "id": "e5",
+      "source_id": "fs-idm124543936",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "speeds",
+      "prompt": "最初处于 STP 的 1 L CO 样品被加热到 546 K，其体积增大到 2 L。（a）这些变化对气体所施加的压强有什么影响？（b）对分子的平均动能有什么影响？（c）对分子的方均根速率有什么影响？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）气体的压强保持不变。（b）平均动能加倍。（c）方均根速率增大到初始值的 $\\sqrt{2}$ 倍；<em>u</em><sub>rms</sub> 与 $\\sqrt{{\\text{KE}}_{\\text{avg}}}$ 成正比。"
+      }
+    },
+    {
+      "id": "e6",
+      "source_id": "fs-idm150122880",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "kmt-part-1",
+      "prompt": "回答下列问题：（a）本章开头所示热气球中气体的压强，比气球外大气的压强大、小还是相等？（b）本章开头所示热气球中气体的密度，比气球外大气的密度大、小还是相等？（c）在 1 atm 的压强和 20 °C 的温度下，干燥空气的密度为 1.2256 g/L。干燥空气的（平均）摩尔质量是多少？（d）热气球中气体的平均温度为 1.30 $\\times$ 10<sup>2</sup> °F。假设其摩尔质量等于干燥空气的摩尔质量，计算它的密度。（e）热气球的升力等于气球排开的冷空气的质量与气球中气体的质量之差。（c）部分的冷空气与（d）部分的热空气，1.00 L 的质量之差是多少？（f）一个普通气球的直径为 60 英尺，体积为 1.1 $\\times$ 10<sup>5</sup> ft<sup>3</sup>。这样的气球的升力是多少？如果气球及其索具的重量为 500 磅，它载人和载货的能力是多少？（g）一个气球携带 40.0 加仑液态丙烷（密度 0.5005 g/L）。这些丙烷燃烧在 STP 下生成的 CO<sub>2</sub> 和 H<sub>2</sub>O 气体的体积是多少？（h）一次气球飞行可持续约 90 分钟。如果所有燃料都在这段时间内烧完，飞行期间气囊内热空气的热量损失的近似速率（以 kJ/min 计）是多少？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）相等；（b）小于；（c）29.48 g mol<sup>−1</sup>；（d）1.0966 g L<sup>−1</sup>；（e）0.129 g/L；（f）4.01 $\\times$ 10<sup>5</sup> g；净载重能力 = 384 磅；（g）270 L；（h）39.1 kJ min<sup>−1</sup>"
+      }
+    },
+    {
+      "id": "e7",
+      "source_id": "fs-idm194405232",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "kmt-part-2",
+      "prompt": "证明气体 1 的扩散速率与气体 2 的扩散速率之比 $\\frac{{R}_{1}}{{R}_{2}},$ 在 0 °C 和 100 °C 时相同。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "该比值等于 $\\sqrt{\\frac{\\kMM_{2}}{\\kMM_{1}}}$，其中不含温度，所以在 0 °C 和 100 °C 时相同。气体的扩散速率与其分子的方均根速率 $\\kurms=\\sqrt{\\frac{3R\\kT}{\\kMM}}$ 成正比，而两种气体处于相同的温度。于是 $\\frac{R_{1}}{R_{2}}=\\frac{\\sqrt{3R\\kT/\\kMM_{1}}}{\\sqrt{3R\\kT/\\kMM_{2}}}=\\sqrt{\\frac{\\kMM_{2}}{\\kMM_{1}}}$，因为 $3R\\kT$ 在分子和分母中约去；这就是格雷厄姆定律。对于氢和氧，$\\kurms$ 在 273 K 时分别为 1838 m/s 和 461 m/s，在 373 K 时分别为 2149 m/s 和 539 m/s，两个比值都是 3.98，等于 $\\sqrt{\\frac{32.00\\;\\text{g/mol}}{2.016\\;\\text{g/mol}}}=3.98$。升高温度使两种气体都加快相同的倍数，$\\sqrt{\\frac{373\\;\\text{K}}{273\\;\\text{K}}}=1.17$，它们的比值保持不变。"
+      }
+    }
   ],
   "exercise_concepts": [
-    {"exercise": "cyl1", "concept": "root-mean-square-speed", "weight": 2, "weights_by": "ai"},
-    {"exercise": "e1", "concept": "kinetic-molecular-theory", "weight": 2, "weights_by": "ai"},
-    {"exercise": "e2", "concept": "maxwell-boltzmann-distribution", "weight": 2, "weights_by": "ai"},
-    {"exercise": "e3", "concept": "average-kinetic-energy-and-temperature", "weight": 2, "weights_by": "ai"},
-    {"exercise": "e3", "concept": "kmt-explains-gas-laws", "weight": 1, "weights_by": "ai"},
-    {"exercise": "e4", "concept": "maxwell-boltzmann-distribution", "weight": 2, "weights_by": "ai"},
-    {"exercise": "e5", "concept": "average-kinetic-energy-and-temperature", "weight": 2, "weights_by": "ai"},
-    {"exercise": "e5", "concept": "root-mean-square-speed", "weight": 1, "weights_by": "ai"},
-    {"exercise": "e6", "concept": "kmt-explains-gas-laws", "weight": 1, "weights_by": "ai"},
-    {"exercise": "e6", "concept": "gas-density", "weight": 2, "weights_by": "ai"},
-    {"exercise": "e7", "concept": "grahams-law-from-kmt", "weight": 2, "weights_by": "ai"}
+    {
+      "exercise": "cyl1",
+      "concept": "root-mean-square-speed",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e1",
+      "concept": "kinetic-molecular-theory",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e2",
+      "concept": "maxwell-boltzmann-distribution",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e3",
+      "concept": "average-kinetic-energy-and-temperature",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e3",
+      "concept": "kmt-explains-gas-laws",
+      "weight": 1,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e4",
+      "concept": "maxwell-boltzmann-distribution",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e5",
+      "concept": "average-kinetic-energy-and-temperature",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e5",
+      "concept": "root-mean-square-speed",
+      "weight": 1,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e6",
+      "concept": "kmt-explains-gas-laws",
+      "weight": 1,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e6",
+      "concept": "gas-density",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e7",
+      "concept": "grahams-law-from-kmt",
+      "weight": 2,
+      "weights_by": "ai"
+    }
   ],
   "referents": [
     {
       "id": "baseline",
-      "label": "the baseline cylinder",
+      "label": "基准气缸",
       "figures": [
         "sim-kmt",
         "sim-gasbox"
@@ -147,7 +412,7 @@
     },
     {
       "id": "changed",
-      "label": "the changed cylinder",
+      "label": "变化后的气缸",
       "figures": [
         "sim-kmt",
         "sim-gasbox"
@@ -155,35 +420,35 @@
     },
     {
       "id": "xenon",
-      "label": "the xenon curve",
+      "label": "氙的曲线",
       "figures": [
         "sim-speeds"
       ]
     },
     {
       "id": "argon",
-      "label": "the argon curve",
+      "label": "氩的曲线",
       "figures": [
         "sim-speeds"
       ]
     },
     {
       "id": "neon",
-      "label": "the neon curve",
+      "label": "氖的曲线",
       "figures": [
         "sim-speeds"
       ]
     },
     {
       "id": "helium",
-      "label": "the helium curve",
+      "label": "氦的曲线",
       "figures": [
         "sim-speeds"
       ]
     },
     {
       "id": "speed-count",
-      "label": "the count of speeds",
+      "label": "速率的计数",
       "figures": [
         "sim-gasbox"
       ]
@@ -193,14 +458,14 @@
     {
       "id": "c-grahams-law",
       "kind": "correction",
-      "html": "The book attributes this to Graham’s law. What follows is the kinetic-molecular theory’s account of a gas; Graham’s law concerns the rates of effusion and diffusion."
+      "html": "书中把这一点归于格雷厄姆定律。下文所述是分子运动论对气体的解释；格雷厄姆定律涉及的是泻流和扩散的速率。"
     }
   ],
   "derivations": [
     {
       "id": "root-mean-square-speed",
-      "what": "the root mean square speed of a gas",
-      "source": "Chemistry 2e, 9.5 The Kinetic-Molecular Theory",
+      "what": "气体的方均根速率",
+      "source": "化学（第2版），9.5 分子运动论",
       "nodes": [
         {
           "assumes": [
@@ -209,7 +474,7 @@
               "src": "9.5"
             },
             {
-              "text": "A mole of gas is $N_A$ molecules, and its molar mass $\\kMM$, in kg/mol, is their total mass.",
+              "text": "1 摩尔气体含有 $N_A$ 个分子，其摩尔质量 $\\kMM$（以 kg/mol 计）是它们的总质量。",
               "src": "3.1"
             }
           ],
@@ -221,7 +486,7 @@
             {
               "tex": "\\mk{KE}{\\overline{\\kKE}} = \\tfrac{1}{2}\\mk{m}{\\km}\\mk{u}{\\overline{\\ku^{2}}}",
               "uses": [],
-              "cap": "Averaged over the molecules, which all have the same mass $\\km$, $\\tfrac{1}{2}\\km\\ku^{2}$ becomes $\\tfrac{1}{2}\\km$ times the average of $\\ku^{2}$."
+              "cap": "对所有质量均为 $\\km$ 的分子求平均，$\\tfrac{1}{2}\\km\\ku^{2}$ 变为 $\\tfrac{1}{2}\\km$ 乘以 $\\ku^{2}$ 的平均值。"
             },
             {
               "tex": "\\mk{KE}{\\overline{\\kKE}} = \\tfrac{1}{2}\\mk{m}{\\km}\\mk{u}{\\kurms^{2}}",
@@ -234,7 +499,7 @@
               "uses": [
                 1
               ],
-              "cap": "$\\kKEavg$ is the kinetic energy of a mole of molecules, $N_A$ times the average of one."
+              "cap": "$\\kKEavg$ 是 1 摩尔分子的动能，即单个分子平均动能的 $N_A$ 倍。"
             },
             {
               "tex": "\\mk{KE}{\\kKEavg} = \\tfrac{1}{2}\\mk{m}{\\kMM}\\mk{u}{\\kurms^{2}}",
@@ -287,13 +552,13 @@
     },
     {
       "id": "grahams-law",
-      "what": "Graham’s law from the kinetic-molecular theory",
-      "source": "Chemistry 2e, 9.5 The Kinetic-Molecular Theory",
+      "what": "由分子运动论推出格雷厄姆定律",
+      "source": "化学（第2版），9.5 分子运动论",
       "nodes": [
         {
           "assumes": [
             {
-              "tex": "\\text{effusion rate}\\;\\propto\\;\\kurms",
+              "tex": "\\text{泻流速率}\\;\\propto\\;\\kurms",
               "src": "9.5"
             },
             {
@@ -301,26 +566,26 @@
               "src": "9.5"
             },
             {
-              "text": "The two gases are at the same temperature $\\kT$."
+              "text": "两种气体处于相同的温度 $\\kT$。"
             }
           ],
           "then": {
-            "tex": "\\dfrac{\\mk{rA}{\\text{effusion rate A}}}{\\mk{rB}{\\text{effusion rate B}}} = \\dfrac{\\mk{uA}{\\ku_{\\text{rms}\\;\\text{A}}}}{\\mk{uB}{\\ku_{\\text{rms}\\;\\text{B}}}}",
+            "tex": "\\dfrac{\\mk{rA}{\\text{A 的泻流速率}}}{\\mk{rB}{\\text{B 的泻流速率}}} = \\dfrac{\\mk{uA}{\\ku_{\\text{rms}\\;\\text{A}}}}{\\mk{uB}{\\ku_{\\text{rms}\\;\\text{B}}}}",
             "src": "9.5",
             "uses": [
               0
             ],
-            "why": "Each rate is the same constant times its gas’s $\\kurms$, and the constant cancels in the ratio."
+            "why": "每种气体的泻流速率都是同一个常数乘以该气体的 $\\kurms$，这个常数在比值中约去。"
           },
           "steps": [
             {
-              "tex": "\\dfrac{\\mk{rA}{\\text{effusion rate A}}}{\\mk{rB}{\\text{effusion rate B}}} = \\dfrac{\\mk{uA}{\\sqrt{\\dfrac{3R\\kT}{\\kMMA}}}}{\\mk{uB}{\\sqrt{\\dfrac{3R\\kT}{\\kMMB}}}}",
+              "tex": "\\dfrac{\\mk{rA}{\\text{A 的泻流速率}}}{\\mk{rB}{\\text{B 的泻流速率}}} = \\dfrac{\\mk{uA}{\\sqrt{\\dfrac{3R\\kT}{\\kMMA}}}}{\\mk{uB}{\\sqrt{\\dfrac{3R\\kT}{\\kMMB}}}}",
               "uses": [
                 1
               ]
             },
             {
-              "tex": "\\dfrac{\\mk{rA}{\\text{effusion rate A}}}{\\mk{rB}{\\text{effusion rate B}}} = \\mk{q}{\\sqrt{\\dfrac{\\kMMB}{\\kMMA}}}",
+              "tex": "\\dfrac{\\mk{rA}{\\text{A 的泻流速率}}}{\\mk{rB}{\\text{B 的泻流速率}}} = \\mk{q}{\\sqrt{\\dfrac{\\kMMB}{\\kMMA}}}",
               "uses": [
                 2
               ],
@@ -328,7 +593,7 @@
                 "uA": "q",
                 "uB": "q"
               },
-              "cap": "A quotient of square roots is the square root of the quotient, and $3R\\kT$, the same for both gases, cancels."
+              "cap": "平方根之商就是商的平方根，而 $3R\\kT$ 对两种气体相同，因而约去。"
             }
           ],
           "src": "9.5"

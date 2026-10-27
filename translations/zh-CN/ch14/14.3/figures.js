@@ -27,23 +27,23 @@ const sup = (t) => t.replace(/[0-9−+-]/g, (ch) => '⁰¹²³⁴⁵⁶⁷⁸⁹
 ===================================================================== */
 (function () {
   const d = F.sim(root, 'sim-acid-water');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [-1.22, 1.22], views: [{ label: 'front', yaw: 0, pitch: 0.12 }, { label: 'corner', yaw: 0.65, pitch: 0.45 }], h: 400, dist: 6.6, tilt: 0.3 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [-1.22, 1.22], views: [{ label: '正面', yaw: 0, pitch: 0.12 }, { label: '斜角', yaw: 0.65, pitch: 0.45 }], h: 400, dist: 6.6, tilt: 0.3 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 290);
   const ACIDS = {
-    HCl: { name: 'hydrochloric acid', unit: 'molecules', K: Infinity, a: 'HCl', b: 'Cl⁻', an: 'a molecule of hydrogen chloride, HCl', bn: 'a chloride ion, Cl⁻',
+    HCl: { name: '盐酸', unit: '分子', K: Infinity, a: 'HCl', b: 'Cl⁻', an: '氯化氢分子，HCl', bn: '氯离子，Cl⁻',
       atoms: [['Cl', 0, 0, 0], ['H', 0.15, 0, 0, 1]] },
-    HSO4: { name: 'hydrogen sulfate ion', unit: 'ions', K: 1.2e-2, a: 'HSO₄⁻', b: 'SO₄²⁻', an: 'a hydrogen sulfate ion, HSO₄⁻', bn: 'a sulfate ion, SO₄²⁻',
+    HSO4: { name: '硫酸氢根离子', unit: '离子', K: 1.2e-2, a: 'HSO₄⁻', b: 'SO₄²⁻', an: '硫酸氢根离子，HSO₄⁻', bn: '硫酸根离子，SO₄²⁻',
       atoms: [['S', 0, 0, 0], ['O', 0.087, 0.087, 0.087], ['O', 0.087, -0.087, -0.087], ['O', -0.087, 0.087, -0.087], ['O', -0.087, -0.087, 0.087], ['H', 0.15, 0.15, 0.15, 1]] },
-    HNO2: { name: 'nitrous acid', unit: 'molecules', K: 4.6e-4, a: 'HNO₂', b: 'NO₂⁻', an: 'a molecule of nitrous acid, HNO₂', bn: 'a nitrite ion, NO₂⁻',
+    HNO2: { name: '亚硝酸', unit: '分子', K: 4.6e-4, a: 'HNO₂', b: 'NO₂⁻', an: '亚硝酸分子，HNO₂', bn: '亚硝酸根离子，NO₂⁻',
       atoms: [['O', -0.07, -0.03, 0], ['N', 0.05, 0.04, 0], ['O', 0.16, -0.02, 0], ['H', -0.15, 0.03, 0, 1]] },
-    CH3CO2H: { name: 'acetic acid', unit: 'molecules', K: 1.8e-5, a: 'CH₃CO₂H', b: 'CH₃CO₂⁻', an: 'a molecule of acetic acid, CH₃CO₂H', bn: 'an acetate ion, CH₃CO₂⁻',
+    CH3CO2H: { name: '乙酸', unit: '分子', K: 1.8e-5, a: 'CH₃CO₂H', b: 'CH₃CO₂⁻', an: '乙酸分子，CH₃CO₂H', bn: '乙酸根离子，CH₃CO₂⁻',
       atoms: [['C', -0.12, 0, 0], ['C', 0.03, 0, 0], ['O', 0.1, 0.11, 0], ['O', 0.1, -0.11, 0], ['H', -0.18, 0.09, 0], ['H', -0.18, -0.05, 0.08], ['H', -0.18, -0.05, -0.08], ['H', 0.2, -0.12, 0, 1]] },
   };
   const R_AT = { H: 0.045, C: 0.07, N: 0.068, O: 0.066, S: 0.09, Cl: 0.095 };
-  const pick = F.choice(d.controls, { label: '\\text{acid}', options: [{ value: 'HCl', label: 'HCl' }, { value: 'HSO4', label: 'HSO₄⁻' }, { value: 'HNO2', label: 'HNO₂' }, { value: 'CH3CO2H', label: 'CH₃CO₂H' }], value: 'CH3CO2H', aria: 'acid dissolved in the water' });
-  const c0 = ctl(d.controls, { label: '\\kconcHAz', cls: 'concentration', min: 0.01, max: 1, step: 0.005, value: 0.1, unit: 'M', dec: 3, detents: [0.125, 0.5], snap: true, aria: 'initial concentration of the acid, in moles per liter' });
+  const pick = F.choice(d.controls, { label: '\\text{酸}', options: [{ value: 'HCl', label: 'HCl' }, { value: 'HSO4', label: 'HSO₄⁻' }, { value: 'HNO2', label: 'HNO₂' }, { value: 'CH3CO2H', label: 'CH₃CO₂H' }], value: 'CH3CO2H', aria: '溶于水中的酸' });
+  const c0 = ctl(d.controls, { label: '\\kconcHAz', cls: 'concentration', min: 0.01, max: 1, step: 0.005, value: 0.1, unit: 'M', dec: 3, detents: [0.125, 0.5], snap: true, aria: '酸的初始浓度，单位为摩尔每升' });
   const fx = el('div'), nt = el('small'); d.readout.append(fx, nt);
-  nt.textContent = 'Each molecule drawn stands for one hundredth of the acid dissolved.';
+  nt.textContent = '所画的每个分子代表所溶解的酸的百分之一。';
   const N = 100, HALF = 1.3, R = rng(29);
   /* slot centres kept apart, and a fixed order in which slots ionize */
   const slots = [];
@@ -88,7 +88,7 @@ const sup = (t) => t.replace(/[0-9−+-]/g, (ch) => '⁰¹²³⁴⁵⁶⁷⁸⁹
       const ion = new T3D.Group(); grp.add(ion);
       molecule(ion, base, s.p, s.rot, A.bn);
       const h = s.p.map((c, k) => Math.max(-HALF + 0.12, Math.min(HALF - 0.12, c + s.away[k] * 0.3)));
-      molecule(ion, H3O, h, s.rot, 'a hydronium ion, H₃O⁺');
+      molecule(ion, H3O, h, s.rot, '水合氢离子，H₃O⁺');
       return { whole, ion, h };
     });
     const first = order[0], gap = (i) => Math.hypot(...slots[i].p.map((q, k) => q - slots[first].p[k]));
@@ -114,8 +114,8 @@ const sup = (t) => t.replace(/[0-9−+-]/g, (ch) => '⁰¹²³⁴⁵⁶⁷⁸⁹
 
     const { ctx } = begin(cnv);
     const ph = -Math.log10(s.x), cs = fmt(c, 3);
-    const one = A.unit.slice(0, -1), who = s.n >= N ? `every ${one} has` : s.n === 0 ? `fewer than 1 of every 100 ${A.unit} has` : `${s.n} of every 100 ${A.unit} ${s.n === 1 ? 'has' : 'have'}`;
-    topline(ctx, `In a ${cs} M solution of ${A.name}, ${who} given ${s.n > 1 && s.n < N ? 'their protons' : 'its proton'} to water, and the pH is ${fmt(ph, 2)}.`);
+    const who = s.n >= N ? `每个${A.unit}都` : s.n === 0 ? `每 100 个${A.unit}中不到 1 个` : `每 100 个${A.unit}中有 ${s.n} 个`;
+    topline(ctx, `在 ${cs} M 的${A.name}溶液中，${who}已把质子转移给水，pH 为 ${fmt(ph, 2)}。`);
     const box = { l: X(1e-4), r: X(1), t: AY - 12, b: AY + 12 };
     line(ctx, box.l, AY, box.r, AY, C('concentration'), 3);
     for (let e = -4; e <= 0; e++) {
@@ -123,7 +123,7 @@ const sup = (t) => t.replace(/[0-9−+-]/g, (ch) => '⁰¹²³⁴⁵⁶⁷⁸⁹
       text(ctx, e === 0 ? '1' : '10' + sup(String(e)), X(10 ** e), AY + 30, C('concentration'), { size: 17, align: 'center' });
       text(ctx, String(-e), X(10 ** e), AY + 62, C('concentration'), { size: 17, align: 'center' });
     }
-    text(ctx, 'concentration (M)', box.r + 24, AY + 30, C('concentration'), { size: 17 });
+    text(ctx, '浓度（M）', box.r + 24, AY + 30, C('concentration'), { size: 17 });
     text(ctx, 'pH', box.r + 24, AY + 62, C('concentration'), { size: 17 });
     const lab = F.labeller(ctx, 290);
     lab.block(box.l - 20, AY + 14, box.r + 200, AY + 76); lab.block(0, 0, 1400, 100);
@@ -136,7 +136,7 @@ const sup = (t) => t.replace(/[0-9−+-]/g, (ch) => '⁰¹²³⁴⁵⁶⁷⁸⁹
     lab.flush();
 
     const conc = (q) => (q < 0.0095 ? sci(q) : fmt(q, 3)) + '\\ M';
-    tex(fx, `\\text{\\% ionization} = \\frac{\\kconcHydeq}{\\kconcHAz}\\times 100 = \\frac{${hue('concentration', conc(s.x))}}{${hue('concentration', conc(c))}}\\times 100 = ${fmt((100 * s.x) / c, (100 * s.x) / c >= 10 ? 0 : 1)}\\%`);
+    tex(fx, `\\text{电离百分数} = \\frac{\\kconcHydeq}{\\kconcHAz}\\times 100 = \\frac{${hue('concentration', conc(s.x))}}{${hue('concentration', conc(c))}}\\times 100 = ${fmt((100 * s.x) / c, (100 * s.x) / c >= 10 ? 0 : 1)}\\%`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -156,32 +156,32 @@ const sup = (t) => t.replace(/[0-9−+-]/g, (ch) => '⁰¹²³⁴⁵⁶⁷⁸⁹
   const d = F.sim(root, 'sim-conjugate-ladder', H);
   const P = (id, a, an, b, bn, band, K, Kb) => ({ id, a, an, b, bn, band, K, Kb });
   const PAIRS = [
-    P('HClO4', 'HClO_{4}', 'perchloric acid', 'ClO_{4}⁻', 'perchlorate ion', 'top'),
-    P('H2SO4', 'H_{2}SO_{4}', 'sulfuric acid', 'HSO_{4}⁻', 'hydrogen sulfate ion', 'top'),
-    P('HI', 'HI', 'hydrogen iodide', 'I⁻', 'iodide ion', 'top'),
-    P('HBr', 'HBr', 'hydrogen bromide', 'Br⁻', 'bromide ion', 'top'),
-    P('HCl', 'HCl', 'hydrogen chloride', 'Cl⁻', 'chloride ion', 'top'),
-    P('HNO3', 'HNO_{3}', 'nitric acid', 'NO_{3}⁻', 'nitrate ion', 'top'),
-    P('H3O', 'H_{3}O⁺', 'hydronium ion', 'H_{2}O', 'water', 'hyd', 1.0),
-    P('HSO4', 'HSO_{4}⁻', 'hydrogen sulfate ion', 'SO_{4}²⁻', 'sulfate ion', 'weak', 1.2e-2),
-    P('HClO2', 'HClO_{2}', 'chlorous acid', 'ClO_{2}⁻', 'chlorite ion', 'weak', 1.0e-2),
-    P('H3PO4', 'H_{3}PO_{4}', 'phosphoric acid', 'H_{2}PO_{4}⁻', 'dihydrogen phosphate ion', 'weak', 7.5e-3),
-    P('HF', 'HF', 'hydrogen fluoride', 'F⁻', 'fluoride ion', 'weak', 6.4e-4),
-    P('HNO2', 'HNO_{2}', 'nitrous acid', 'NO_{2}⁻', 'nitrite ion', 'weak', 4.6e-4),
-    P('CH3CO2H', 'CH_{3}CO_{2}H', 'acetic acid', 'CH_{3}CO_{2}⁻', 'acetate ion', 'weak', 1.8e-5),
-    P('H2CO3', 'H_{2}CO_{3}', 'carbonic acid', 'HCO_{3}⁻', 'hydrogen carbonate ion', 'weak', 4.3e-7),
-    P('H2S', 'H_{2}S', 'hydrogen sulfide', 'HS⁻', 'hydrogen sulfide ion', 'weak', 8.9e-8),
-    P('HClO', 'HClO', 'hypochlorous acid', 'ClO⁻', 'hypochlorite ion', 'weak', 2.9e-8),
-    P('NH4', 'NH_{4}⁺', 'ammonium ion', 'NH_{3}', 'ammonia', 'weak', null, 1.8e-5),
-    P('HCN', 'HCN', 'hydrogen cyanide', 'CN⁻', 'cyanide ion', 'weak', 4.9e-10),
-    P('HCO3', 'HCO_{3}⁻', 'hydrogen carbonate ion', 'CO_{3}²⁻', 'carbonate ion', 'weak', 4.7e-11),
-    P('HPO4', 'HPO_{4}²⁻', 'hydrogen phosphate ion', 'PO_{4}³⁻', 'phosphate ion', 'weak', 4.2e-13),
-    P('H2O', 'H_{2}O', 'water', 'OH⁻', 'hydroxide ion', 'water', 1.0e-14),
-    P('HS', 'HS⁻', 'hydrogen sulfide ion', 'S²⁻', 'sulfide ion', 'low'),
-    P('C2H5OH', 'C_{2}H_{5}OH', 'ethanol', 'C_{2}H_{5}O⁻', 'ethoxide ion', 'low'),
-    P('NH3', 'NH_{3}', 'ammonia', 'NH_{2}⁻', 'amide ion', 'low'),
-    P('H2', 'H_{2}', 'hydrogen', 'H⁻', 'hydride ion', 'low'),
-    P('CH4', 'CH_{4}', 'methane', 'CH_{3}⁻', 'methide ion', 'low'),
+    P('HClO4', 'HClO_{4}', '高氯酸', 'ClO_{4}⁻', '高氯酸根离子', 'top'),
+    P('H2SO4', 'H_{2}SO_{4}', '硫酸', 'HSO_{4}⁻', '硫酸氢根离子', 'top'),
+    P('HI', 'HI', '碘化氢', 'I⁻', '碘离子', 'top'),
+    P('HBr', 'HBr', '溴化氢', 'Br⁻', '溴离子', 'top'),
+    P('HCl', 'HCl', '氯化氢', 'Cl⁻', '氯离子', 'top'),
+    P('HNO3', 'HNO_{3}', '硝酸', 'NO_{3}⁻', '硝酸根离子', 'top'),
+    P('H3O', 'H_{3}O⁺', '水合氢离子', 'H_{2}O', '水', 'hyd', 1.0),
+    P('HSO4', 'HSO_{4}⁻', '硫酸氢根离子', 'SO_{4}²⁻', '硫酸根离子', 'weak', 1.2e-2),
+    P('HClO2', 'HClO_{2}', '亚氯酸', 'ClO_{2}⁻', '亚氯酸根离子', 'weak', 1.0e-2),
+    P('H3PO4', 'H_{3}PO_{4}', '磷酸', 'H_{2}PO_{4}⁻', '磷酸二氢根离子', 'weak', 7.5e-3),
+    P('HF', 'HF', '氟化氢', 'F⁻', '氟离子', 'weak', 6.4e-4),
+    P('HNO2', 'HNO_{2}', '亚硝酸', 'NO_{2}⁻', '亚硝酸根离子', 'weak', 4.6e-4),
+    P('CH3CO2H', 'CH_{3}CO_{2}H', '乙酸', 'CH_{3}CO_{2}⁻', '乙酸根离子', 'weak', 1.8e-5),
+    P('H2CO3', 'H_{2}CO_{3}', '碳酸', 'HCO_{3}⁻', '碳酸氢根离子', 'weak', 4.3e-7),
+    P('H2S', 'H_{2}S', '硫化氢', 'HS⁻', '硫氢根离子', 'weak', 8.9e-8),
+    P('HClO', 'HClO', '次氯酸', 'ClO⁻', '次氯酸根离子', 'weak', 2.9e-8),
+    P('NH4', 'NH_{4}⁺', '铵根离子', 'NH_{3}', '氨', 'weak', null, 1.8e-5),
+    P('HCN', 'HCN', '氰化氢', 'CN⁻', '氰根离子', 'weak', 4.9e-10),
+    P('HCO3', 'HCO_{3}⁻', '碳酸氢根离子', 'CO_{3}²⁻', '碳酸根离子', 'weak', 4.7e-11),
+    P('HPO4', 'HPO_{4}²⁻', '磷酸氢根离子', 'PO_{4}³⁻', '磷酸根离子', 'weak', 4.2e-13),
+    P('H2O', 'H_{2}O', '水', 'OH⁻', '氢氧根离子', 'water', 1.0e-14),
+    P('HS', 'HS⁻', '硫氢根离子', 'S²⁻', '硫离子', 'low'),
+    P('C2H5OH', 'C_{2}H_{5}OH', '乙醇', 'C_{2}H_{5}O⁻', '乙氧基负离子', 'low'),
+    P('NH3', 'NH_{3}', '氨', 'NH_{2}⁻', '氨基负离子', 'low'),
+    P('H2', 'H_{2}', '氢气', 'H⁻', '氢负离子', 'low'),
+    P('CH4', 'CH_{4}', '甲烷', 'CH_{3}⁻', '甲基负离子', 'low'),
   ];
   PAIRS.forEach((p) => { if (p.K == null && p.Kb) p.K = KW / p.Kb; if (p.K && !p.Kb) p.Kb = KW / p.K; });
   const Y0 = 330, DEC = 31, ROW = 27, TOP0 = 150, LOW0 = 820;
@@ -207,15 +207,15 @@ const sup = (t) => t.replace(/[0-9−+-]/g, (ch) => '⁰¹²³⁴⁵⁶⁷⁸⁹
   PAIRS.filter((p) => p.band === 'low').forEach((p, i) => { p.y = LOW0 + i * ROW; });
   const YEND = Y0 + 14 * DEC;
 
-  const pick = F.select(d.controls, { label: '\\text{pair}', options: PAIRS.map((p) => ({ value: p.id, label: `${p.an} / ${p.bn}` })), value: 'HNO2', aria: 'conjugate acid-base pair' });
+  const pick = F.select(d.controls, { label: '\\text{酸碱对}', options: PAIRS.map((p) => ({ value: p.id, label: `${p.an} / ${p.bn}` })), value: 'HNO2', aria: '共轭酸碱对' });
   const byId = Object.fromEntries(PAIRS.map((p) => [p.id, p]));
-  const cap = (s) => s[0].toUpperCase() + s.slice(1);
+  const cap = (s) => s;
   function headline(p) {
-    if (p.band === 'top') return `${cap(p.an)} is a strong acid, and its conjugate base, ${p.bn}, is of negligible strength.`;
-    if (p.band === 'hyd') return 'Hydronium ion is the strongest acid that can exist in water, and its conjugate base is water.';
-    if (p.band === 'water') return 'Water is the weakest acid on the scale, and its conjugate base, hydroxide ion, is the strongest base that can exist in water.';
-    if (p.band === 'low') return `${cap(p.an)} does not ionize as an acid in water, and its conjugate base, ${p.bn}, is a strong base.`;
-    return `${cap(p.an)} is a weak acid, and its conjugate base, ${p.bn}, is a weak base.`;
+    if (p.band === 'top') return `${cap(p.an)}是强酸，其共轭碱${p.bn}的强度可以忽略不计。`;
+    if (p.band === 'hyd') return '水合氢离子是能够存在于水中的最强酸，其共轭碱是水。';
+    if (p.band === 'water') return '水是此标度上最弱的酸，其共轭碱氢氧根离子是能够存在于水中的最强碱。';
+    if (p.band === 'low') return `${cap(p.an)}在水中不作为酸电离，其共轭碱${p.bn}是强碱。`;
+    return `${cap(p.an)}是弱酸，其共轭碱${p.bn}是弱碱。`;
   }
   let hits = [];
   F.hover(d.stage, () => hits);
@@ -223,16 +223,16 @@ const sup = (t) => t.replace(/[0-9−+-]/g, (ch) => '⁰¹²³⁴⁵⁶⁷⁸⁹
     const { ctx } = begin(d.c);
     const sel = byId[pick.value], hc = C('equilibrium-constant'), bandBg = F.mixColor(PAL.panel, PAL.ink, 0.05);
     topline(ctx, headline(sel));
-    text(ctx, 'acid', 400, 112, PAL.ink, { size: 22, weight: 600, align: 'right' });
-    text(ctx, 'conjugate base', 1000, 112, PAL.ink, { size: 22, weight: 600 });
+    text(ctx, '酸', 400, 112, PAL.ink, { size: 22, weight: 600, align: 'right' });
+    text(ctx, '共轭碱', 1000, 112, PAL.ink, { size: 22, weight: 600 });
     /* bands */
     ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.05);
     ctx.fillRect(60, TOP0 - ROW / 2, 1280, 6 * ROW); ctx.fillRect(60, LOW0 - ROW / 2, 1280, 5 * ROW); ctx.restore();
     /* the symbolic arrows of increasing strength */
     arrow(ctx, 40, LOW0 + 4 * ROW, 40, TOP0 - 6, PAL.ink, 4);
-    text(ctx, 'stronger acids', 24, TOP0 - 34, PAL.ink, { size: 17 });
+    text(ctx, '更强的酸', 24, TOP0 - 34, PAL.ink, { size: 17 });
     arrow(ctx, 1360, TOP0, 1360, LOW0 + 4 * ROW + 6, PAL.ink, 4);
-    text(ctx, 'stronger bases', 1376, LOW0 + 4 * ROW + 32, PAL.ink, { size: 17, align: 'right' });
+    text(ctx, '更强的碱', 1376, LOW0 + 4 * ROW + 32, PAL.ink, { size: 17, align: 'right' });
     /* the chosen rung, bending from the last pair's place to this one's */
     const ry = pick.mix((id) => byId[id].ty ?? byId[id].y), ly = pick.mix((id) => byId[id].y);
     const onAxis = sel.ty != null;
@@ -253,10 +253,10 @@ const sup = (t) => t.replace(/[0-9−+-]/g, (ch) => '⁰¹²³⁴⁵⁶⁷⁸⁹
     if (onAxis) { dot(ctx, XA, ry, F.ref('acid'), true, 8); dot(ctx, XB, ry, F.ref('base'), true, 8); }
     text(ctx, '$\\kKa$', XA, YEND + 30, PAL.ink, { size: 24, align: 'center', tex: true });
     text(ctx, '$\\kKbion$', XB, YEND + 30, PAL.ink, { size: 24, align: 'center', tex: true });
-    text(ctx, 'acids ionize completely in water;', 700, TOP0 + 2.5 * ROW - 14, PAL.muted, { size: 17, align: 'center', bg: bandBg });
-    text(ctx, 'their bases do not ionize', 700, TOP0 + 2.5 * ROW + 14, PAL.muted, { size: 17, align: 'center', bg: bandBg });
-    text(ctx, 'acids do not ionize in water;', 700, LOW0 + 2 * ROW - 14, PAL.muted, { size: 17, align: 'center', bg: bandBg });
-    text(ctx, 'their bases ionize completely', 700, LOW0 + 2 * ROW + 14, PAL.muted, { size: 17, align: 'center', bg: bandBg });
+    text(ctx, '酸在水中完全电离；', 700, TOP0 + 2.5 * ROW - 14, PAL.muted, { size: 17, align: 'center', bg: bandBg });
+    text(ctx, '它们的碱不电离', 700, TOP0 + 2.5 * ROW + 14, PAL.muted, { size: 17, align: 'center', bg: bandBg });
+    text(ctx, '酸在水中不电离；', 700, LOW0 + 2 * ROW - 14, PAL.muted, { size: 17, align: 'center', bg: bandBg });
+    text(ctx, '它们的碱完全电离', 700, LOW0 + 2 * ROW + 14, PAL.muted, { size: 17, align: 'center', bg: bandBg });
     hits = [];
     PAIRS.forEach((p) => {
       const w = pick.a(p.id), ca = F.mixColor(PAL.ink, F.ref('acid'), w), cb = F.mixColor(PAL.ink, F.ref('base'), w);
@@ -275,9 +275,9 @@ const sup = (t) => t.replace(/[0-9−+-]/g, (ch) => '⁰¹²³⁴⁵⁶⁷⁸⁹
       text(ctx, p.b, 938, p.y, cb, { size: 22, weight: wt });
       text(ctx, p.bn, 1080, p.y, alpha(PAL.ink, 0.62), { size: 17 });
       const plain = (q) => sci(q).replace(/ \\times 10\^\{(-?\d+)\}/, (_, e) => ' × 10' + sup(e));
-      const ka = p.K ? 'Ka = ' + plain(p.K) : (p.band === 'top' ? 'a strong acid' : 'not an acid in water');
-      const kb = p.Kb ? 'Kb = ' + plain(p.Kb) : (p.band === 'low' ? 'a strong base' : 'not a base in water');
-      hits.push({ x: 400, y: p.y, r: 14, name: `${p.an}, ${ka}` }, { x: 1000, y: p.y, r: 14, name: `${p.bn}, ${kb}` });
+      const ka = p.K ? 'Ka = ' + plain(p.K) : (p.band === 'top' ? '强酸' : '在水中不是酸');
+      const kb = p.Kb ? 'Kb = ' + plain(p.Kb) : (p.band === 'low' ? '强碱' : '在水中不是碱');
+      hits.push({ x: 400, y: p.y, r: 14, name: `${p.an}，${ka}` }, { x: 1000, y: p.y, r: 14, name: `${p.bn}，${kb}` });
     });
     const kv = (s) => hue('equilibrium-constant', s);
     if (sel.band === 'top') tex(d.readout, `\\kKa \\approx \\infty, \\qquad \\kKbion = \\kKw/\\kKa \\approx 0`);

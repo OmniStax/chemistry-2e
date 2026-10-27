@@ -13,7 +13,7 @@ function readout(host, main, small) { tex(host, main); if (small) host.appendChi
 ===================================================================== */
 (function () {
   const H = 440, CX = 700, CY = 250;
-  const NAMES = { H: 'hydrogen', C: 'carbon', N: 'nitrogen', O: 'oxygen', F: 'fluorine', Si: 'silicon' };
+  const NAMES = { H: '氢', C: '碳', N: '氮', O: '氧', F: '氟', Si: '硅' };
   /* v: valence electrons; lp3, lp4, lp5: lone pairs per atom after steps 3, 4, 5; order5: bond orders after step 5 */
   const MOLS = [
     { label: 'SiH₄', name: 'SiH_{4}', tex: '\\text{SiH}_4', charge: 0,
@@ -35,8 +35,8 @@ function readout(host, main, small) { tex(host, main); if (small) host.appendChi
       atoms: [{ s: 'H', x: -205, y: 0, v: 1 }, { s: 'C', x: -70, y: 0, v: 4 }, { s: 'C', x: 70, y: 0, v: 4 }, { s: 'H', x: 205, y: 0, v: 1 }],
       bonds: [[1, 0], [1, 2], [2, 3]], lp3: [0, 0, 0, 0], lp4: [0, 1, 1, 0], order5: [1, 3, 1], lp5: [0, 0, 0, 0] },
   ];
-  const WORD = ['no', 'one', 'two', 'three', 'four', 'five', 'six'];
-  const BONDNAME = ['', 'single', 'double', 'triple'];
+  const WORD = ['无', '一', '两', '三', '四', '五', '六'];
+  const BONDNAME = ['', '单', '双', '三'];
   const sum = (a) => a.reduce((t, x) => t + x, 0);
   const total = (m) => sum(m.atoms.map((a) => a.v)) - m.charge;
 
@@ -84,8 +84,8 @@ function readout(host, main, small) { tex(host, main); if (small) host.appendChi
   }
 
   const d = F.sim(root, 'sim-lewis-steps', H);
-  const pickM = F.select(d.controls, { label: '\\text{molecule or ion}', options: MOLS.map((m, i) => ({ value: String(i), label: m.label })), value: '1' });
-  const pickS = F.choice(d.controls, { label: '\\text{step}', options: [1, 2, 3, 4, 5].map((s) => ({ value: String(s), label: String(s) })), value: '1' });
+  const pickM = F.select(d.controls, { label: '\\text{分子或离子}', options: MOLS.map((m, i) => ({ value: String(i), label: m.label })), value: '1' });
+  const pickS = F.choice(d.controls, { label: '\\text{步骤}', options: [1, 2, 3, 4, 5].map((s) => ({ value: String(s), label: String(s) })), value: '1' });
   let hits = [];
   F.hover(d.stage, () => hits);
 
@@ -113,25 +113,25 @@ function readout(host, main, small) { tex(host, main); if (small) host.appendChi
     const short = m.atoms.map((a, i) => i).filter((i) => st.count[i] < (m.atoms[i].s === 'H' ? 2 : 8));
     const prev = state(+pickM.value, st.s - 1 || 1);
     switch (st.s) {
-      case 1: return `${m.name} has ${T} valence electrons to place${m.charge < 0 ? ', one of them for the negative charge' : m.charge > 0 ? ', one fewer for the positive charge' : ''}.`;
-      case 2: return `${WORD[nb][0].toUpperCase() + WORD[nb].slice(1)} single bond${nb > 1 ? 's' : ''} use${nb > 1 ? '' : 's'} ${st.inBonds} electrons, and ${left} remain.`;
-      case 3: return st.inPairs ? `Lone pairs on the terminal atoms use ${st.inPairs} electrons, and ${left} remain.` : `No terminal atom other than hydrogen takes electrons, and ${left} remain.`;
-      case 4: { const put = st.inPairs - prev.inPairs; return put ? `The ${put} remaining electrons go to the central atom${central.length > 1 ? 's' : ''} as lone pairs.` : 'No electrons remain to place on the central atom.'; }
+      case 1: return `${m.name} 有 ${T} 个价电子需要放置${m.charge < 0 ? '，其中一个对应负电荷' : m.charge > 0 ? '，因正电荷而少一个' : ''}。`;
+      case 2: return `${WORD[nb]}个单键用去 ${st.inBonds} 个电子，还剩 ${left} 个。`;
+      case 3: return st.inPairs ? `端位原子上的孤电子对用去 ${st.inPairs} 个电子，还剩 ${left} 个。` : `除氢以外没有端位原子接受电子，还剩 ${left} 个。`;
+      case 4: { const put = st.inPairs - prev.inPairs; return put ? `其余 ${put} 个电子作为孤电子对放在中心原子上。` : '没有剩余的电子可放在中心原子上。'; }
       default: {
         const moved = sum(st.orders) - nb, j = st.orders.findIndex((o) => o > 1);
-        if (!moved) return `Every atom has ${short.length ? 'as many electrons as it can' : 'a filled valence shell'}, so nothing needs to change.`;
+        if (!moved) return `每个原子${short.length ? '都已有尽可能多的电子' : '的价层都已充满'}，所以无需改变。`;
         const [p, q] = m.bonds[j];
-        return `${WORD[moved][0].toUpperCase() + WORD[moved].slice(1)} lone pair${moved > 1 ? 's move' : ' moves'} into the bond, making a ${m.atoms[p].s}–${m.atoms[q].s} ${BONDNAME[st.orders[j]]} bond.`;
+        return `${WORD[moved]}对孤电子对移入键中，形成 ${m.atoms[p].s}–${m.atoms[q].s} ${BONDNAME[st.orders[j]]}键。`;
       }
     }
   }
   function note(st) {
     const m = st.m, short = m.atoms.map((a, i) => i).filter((i) => st.count[i] < (m.atoms[i].s === 'H' ? 2 : 8));
-    if (st.s === 1) return 'Each atom is shown with its own valence electrons, as in its Lewis symbol.';
-    if (!short.length) return st.s === 5 && sum(st.orders) === m.bonds.length ? '' : 'Every atom has a filled valence shell: eight electrons, or two for hydrogen.';
+    if (st.s === 1) return '每个原子都画出各自的价电子，如其路易斯符号所示。';
+    if (!short.length) return st.s === 5 && sum(st.orders) === m.bonds.length ? '' : '每个原子的价层都已充满：八个电子，氢为两个。';
     const names = [...new Set(short.map((i) => NAMES[m.atoms[i].s]))];
     const each = short.map((i) => st.count[i]);
-    return `The ${names.join(' and ')} atom${short.length > 1 ? 's' : ''} ${short.length > 1 ? 'have' : 'has'} ${[...new Set(each)].join(' and ')} electrons and ${short.length > 1 ? 'lack octets' : 'lacks an octet'}.`;
+    return `${names.join('和')}原子有 ${[...new Set(each)].join(' 和 ')} 个电子，未达到八隅体。`;
   }
 
   function draw() {
@@ -149,12 +149,12 @@ function readout(host, main, small) { tex(host, main); if (small) host.appendChi
       drawPart(ctx, p, color, beforeKeys.has(p.key) ? 1 : k);
     });
     const st = state(mi, s);
-    headline(ctx, `Step ${s}: ${words(st)}`);
-    hits = now.filter((p) => p.kind === 'atom').map((p, i) => ({ x: p.x, y: p.y, r: 36, name: `${NAMES[p.sym]} (${p.sym}): ${st.count[i]} electrons` }));
+    headline(ctx, `第 ${s} 步：${words(st)}`);
+    hits = now.filter((p) => p.kind === 'atom').map((p, i) => ({ x: p.x, y: p.y, r: 36, name: `${NAMES[p.sym]}原子（${p.sym}）：${st.count[i]} 个电子` }));
     const m = st.m, T = total(m);
     const main = s === 1
-      ? `\\text{valence electrons in }${m.tex} = ${m.atoms.map((a) => a.v).join(' + ')}${m.charge ? (m.charge < 0 ? ' + 1' : ' - 1') : ''} = ${T}`
-      : `\\underbrace{${st.inBonds}}_{\\text{in bonds}} + \\underbrace{${st.inPairs}}_{\\text{in lone pairs}} + \\underbrace{${T - st.inBonds - st.inPairs}}_{\\text{still to place}} = ${T}`;
+      ? `${m.tex}\\text{ 的价电子数} = ${m.atoms.map((a) => a.v).join(' + ')}${m.charge ? (m.charge < 0 ? ' + 1' : ' - 1') : ''} = ${T}`
+      : `\\underbrace{${st.inBonds}}_{\\text{键中}} + \\underbrace{${st.inPairs}}_{\\text{孤电子对中}} + \\underbrace{${T - st.inBonds - st.inPairs}}_{\\text{待放置}} = ${T}`;
     readout(d.readout, main, note(st));
   }
   register(d.fig, { update: () => {}, draw });

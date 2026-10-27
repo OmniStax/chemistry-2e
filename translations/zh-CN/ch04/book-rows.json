@@ -1,0 +1,1148 @@
+{
+ "types": [],
+ "symbols": [],
+ "concepts": [
+  {
+   "id": "chemical-equation",
+   "kind": "definition",
+   "section": "4.1",
+   "name": "化学方程式",
+   "terms": [
+    "化学方程式"
+   ],
+   "statement": "化学方程式用符号表示一个反应：左边写反应物的化学式，右边写产物的化学式，化学式之间用加号相连，两边之间用一个箭头隔开。括号中的缩写给出每种物质的物态（s、l、g、aq），箭头上方的一个词或符号，例如表示加热的 Δ，则标明某种特殊条件。"
+  },
+  {
+   "id": "coefficients-as-ratios",
+   "kind": "idea",
+   "section": "4.1",
+   "name": "系数给出相对数目",
+   "statement": "配平的方程式中的系数，表示反应物和产物各物种的相对数目，所以可以把它们当作以任何数量单位计的比值来读：一个甲烷分子对两个氧分子，一打对两打，或者一摩尔对两摩尔。要注意，习惯上使用最小的整数系数，而这种读法正是使方程式成为关于量、而不仅仅是关于物质种类的陈述的原因。"
+  },
+  {
+   "id": "balanced-equation",
+   "kind": "definition",
+   "section": "4.1",
+   "name": "配平的方程式保持原子守恒",
+   "terms": [
+    "配平的化学方程式"
+   ],
+   "statement": "当方程式反应物一侧和产物一侧所表示的每种元素的原子数相等时，方程式就是配平的，这正是物质守恒定律的要求。一种元素的原子数，是含该元素的每个化学式的系数乘以该元素在此化学式中的下标，再对这一侧的所有化学式求和。"
+  },
+  {
+   "id": "balance-by-inspection",
+   "kind": "skill",
+   "section": "4.1",
+   "name": "用观察法配平方程式",
+   "statement": "用观察法配平，是每次针对一种元素改变系数而绝不改变下标，直到每种元素都配平；改变下标就会改变物质本身，就像把 H2O 变成 H2O2 就把水变成了过氧化氢。过程中可以暂时使用分数系数，最后再乘以一个整数把它消去。"
+  },
+  {
+   "id": "ionic-equations",
+   "kind": "definition",
+   "section": "4.1",
+   "name": "离子方程式",
+   "statement": "水中离子化合物之间的反应可以写成不同详细程度的方程式。分子方程式把每种物质都写成中性的化学式；完全离子方程式把溶解的离子化合物写成它们解离后的离子；净离子方程式则略去在两边都原样出现的旁观离子，从而只显示真正发生变化的物种。"
+  },
+  {
+   "id": "write-net-ionic-equation",
+   "kind": "skill",
+   "section": "4.1",
+   "name": "写出净离子方程式",
+   "statement": "从配平的分子方程式出发。把每种溶解的离子化合物解离为离子，找出两边都以相同形式出现的旁观离子并将其消去，再把系数约简为最小的整数。结果说明，例如，固体氯化银是由溶解的银离子和氯离子生成的，而不论这些离子来自何处。"
+  },
+  {
+   "id": "reactant",
+   "kind": "definition",
+   "section": "4.1",
+   "name": "反应物",
+   "terms": [
+    "反应物"
+   ],
+   "statement": "反应物是发生化学变化或物理变化的物质，在化学方程式中写在箭头的左边。"
+  },
+  {
+   "id": "product",
+   "kind": "definition",
+   "section": "4.1",
+   "name": "产物",
+   "terms": [
+    "产物"
+   ],
+   "statement": "产物是由化学变化或物理变化生成的物质，在化学方程式中写在箭头的右边。"
+  },
+  {
+   "id": "coefficient",
+   "kind": "definition",
+   "section": "4.1",
+   "name": "系数",
+   "terms": [
+    "系数"
+   ],
+   "statement": "系数是写在化学方程式中某个符号或化学式前面的数，用来表示它的相对量。"
+  },
+  {
+   "id": "molecular-equation",
+   "kind": "definition",
+   "section": "4.1",
+   "name": "分子方程式",
+   "terms": [
+    "分子方程式"
+   ],
+   "statement": "分子方程式是所有反应物和产物都表示为中性物质的化学方程式。"
+  },
+  {
+   "id": "complete-ionic-equation",
+   "kind": "definition",
+   "section": "4.1",
+   "name": "完全离子方程式",
+   "terms": [
+    "完全离子方程式"
+   ],
+   "statement": "完全离子方程式是把所有溶解的离子型反应物和产物（包括旁观离子）都明确地用其解离后的离子的化学式表示的化学方程式。"
+  },
+  {
+   "id": "net-ionic-equation",
+   "kind": "definition",
+   "section": "4.1",
+   "name": "净离子方程式",
+   "terms": [
+    "净离子方程式"
+   ],
+   "statement": "净离子方程式是只表示那些发生化学变化或物理变化的溶解的离子型反应物和产物的化学方程式，因此不含旁观离子。"
+  },
+  {
+   "id": "spectator-ion",
+   "kind": "definition",
+   "section": "4.1",
+   "name": "旁观离子",
+   "terms": [
+    "旁观离子"
+   ],
+   "statement": "旁观离子是在反应过程中不发生化学变化或物理变化的离子，但为了保持电中性，它的存在是必需的。"
+  },
+  {
+   "id": "precipitation-reaction",
+   "kind": "definition",
+   "section": "4.2",
+   "name": "沉淀反应与溶解度",
+   "terms": [
+    "沉淀反应"
+   ],
+   "statement": "沉淀反应是溶解的物质相互反应、生成一种或多种固体产物的反应，常常通过离子化合物之间交换离子而发生。当一种物质的浓度超过它的溶解度时，它就会沉淀出来；溶解度是在指定条件下所能达到的最大浓度，所以不溶的化合物就是会从溶液中析出的化合物。"
+  },
+  {
+   "id": "predict-precipitation",
+   "kind": "skill",
+   "section": "4.2",
+   "name": "根据溶解性规则预测沉淀",
+   "statement": "要预测两种溶液混合后是否会得到沉淀，先确定存在的所有离子，考虑每一种新的阳离子与阴离子的配对，并在溶解性规则中逐一查对。如果有一种配对是不溶的，就可预期发生沉淀反应，并可写出它的净离子方程式。"
+  },
+  {
+   "id": "acids-and-bases",
+   "kind": "definition",
+   "section": "4.2",
+   "name": "酸和碱",
+   "statement": "酸碱反应是氢离子从一个物种转移到另一个物种的反应。在水中，酸是产生水合氢离子的物质，例如氯化氢把 H+ 转移给水分子；碱是产生氢氧根离子的物质，它或者通过解离来产生，如离子型氢氧化物，或者通过与水反应来产生，如氨。"
+  },
+  {
+   "id": "strong-and-weak-acids-bases",
+   "kind": "definition",
+   "section": "4.2",
+   "name": "强酸、弱酸与强碱、弱碱",
+   "statement": "强酸与水完全反应，因此几乎每个溶解的分子都生成一个水合氢离子；强碱，例如离子型氢氧化物，则完全解离。弱酸或弱碱只部分反应，使大多数分子仍保持原来的形式，所以它的方程式带有双箭头。在一般条件下，乙酸或氨只有约 1% 发生电离。"
+  },
+  {
+   "id": "neutralization-reaction",
+   "kind": "definition",
+   "section": "4.2",
+   "name": "中和反应",
+   "terms": [
+    "中和反应"
+   ],
+   "statement": "中和反应是反应物为一种酸和一种碱（但不是水）的酸碱反应，产物通常是一种盐和水。任何强酸被离子型氢氧化物中和的净离子方程式都是相同的，即水合氢离子和氢氧根离子生成水。"
+  },
+  {
+   "id": "oxidation-numbers",
+   "kind": "skill",
+   "section": "4.2",
+   "name": "确定氧化数",
+   "statement": "化合物中某元素的氧化数，是假定该化合物为离子型时其原子所带的电荷。有四条规则可用来确定氧化数：单质中为零；单原子离子等于该离子的电荷；氢、氧和卤素取通常的值；各原子氧化数之和等于分子或离子的电荷，由此可定出那个唯一的未知数。氧化数先写符号（+2），而电荷先写数字（2+）。"
+  },
+  {
+   "id": "redox-reaction",
+   "kind": "definition",
+   "section": "4.2",
+   "name": "氧化还原反应",
+   "terms": [
+    "氧化还原反应"
+   ],
+   "statement": "氧化还原反应是一种或多种元素的氧化数发生变化的反应。氧化是氧化数的升高，即失去电子；还原是氧化数的降低，即得到电子；还原剂是被氧化的物种，氧化剂是被还原的物种。按此定义，这一类反应也包括氢与氯反应这类并没有真正发生电子转移的反应。"
+  },
+  {
+   "id": "classify-reaction",
+   "kind": "skill",
+   "section": "4.2",
+   "name": "反应的分类",
+   "statement": "根据方程式或描述，说明一个反应是沉淀反应、酸碱反应还是氧化还原反应，或者属于不止一类。若符合某个氧化还原的子类，就指明它。在燃烧中，燃料和氧化剂剧烈反应，放出热，并常常发光。在置换反应中，金属的氧化使溶液中的一种离子被取代。在歧化反应中，同一种元素既被氧化又被还原。"
+  },
+  {
+   "id": "half-reaction-method",
+   "kind": "skill",
+   "section": "4.2",
+   "name": "用半反应法配平氧化还原方程式",
+   "statement": "水溶液中的氧化还原方程式，由于水、水合氢离子和氢氧根离子都参与反应，用观察法可能很难配平。半反应法把氧化和还原分开来写，先各自配平原子（氧用水，氢用 H+），再用电子配平电荷，把两者乘以相同的电子数后相加；在碱性溶液中还要增加几步，把 H+ 转化为水。最后原子和电荷必须都配平。"
+  },
+  {
+   "id": "solubility",
+   "kind": "definition",
+   "section": "4.2",
+   "name": "溶解度",
+   "symbol": "C_g",
+   "terms": [
+    "溶解度"
+   ],
+   "type": "concentration",
+   "statement": "物质的溶解度是它在水或任何其他溶剂中溶解的程度。溶解度相对较大的物质是可溶的，只溶解很少一点的则是不溶的。"
+  },
+  {
+   "id": "salt",
+   "kind": "definition",
+   "section": "4.2",
+   "name": "盐",
+   "terms": [
+    "盐"
+   ],
+   "statement": "盐是可由酸与碱反应生成的离子化合物，含有一种阳离子和一种除氢氧根或氧化物离子以外的阴离子。"
+  },
+  {
+   "id": "combustion-reaction",
+   "kind": "definition",
+   "section": "4.2",
+   "name": "燃烧反应",
+   "terms": [
+    "燃烧反应"
+   ],
+   "statement": "燃烧反应是一种剧烈的氧化还原反应，以热的形式、有时还以光的形式放出大量的能量。"
+  },
+  {
+   "id": "single-displacement-reaction",
+   "kind": "definition",
+   "section": "4.2",
+   "name": "置换反应",
+   "terms": [
+    "置换反应"
+   ],
+   "statement": "置换反应是一种氧化还原反应，其中一种单质被一种离子型物种氧化。"
+  },
+  {
+   "id": "half-reaction",
+   "kind": "definition",
+   "section": "4.2",
+   "name": "半反应",
+   "terms": [
+    "半反应"
+   ],
+   "statement": "半反应是单独表示氧化还原反应中氧化或还原的方程式，其中标出了各反应物失去或得到的电子。"
+  },
+  {
+   "id": "soluble",
+   "kind": "definition",
+   "section": "4.2",
+   "name": "可溶的",
+   "terms": [
+    "可溶的"
+   ],
+   "statement": "可溶的物质是溶解度相对较大、溶解程度相对较高的物质。"
+  },
+  {
+   "id": "insoluble",
+   "kind": "definition",
+   "section": "4.2",
+   "name": "不溶的",
+   "terms": [
+    "不溶的"
+   ],
+   "statement": "不溶的物质是溶解度相对较小、只溶解很少一点的物质。"
+  },
+  {
+   "id": "precipitate",
+   "kind": "definition",
+   "section": "4.2",
+   "name": "沉淀",
+   "terms": [
+    "沉淀"
+   ],
+   "statement": "沉淀是由可溶的反应物反应生成的不溶性产物。"
+  },
+  {
+   "id": "acid",
+   "kind": "definition",
+   "section": "4.2",
+   "name": "酸",
+   "terms": [
+    "酸"
+   ],
+   "statement": "酸是溶于水时产生 H₃O⁺ 的物质。"
+  },
+  {
+   "id": "base",
+   "kind": "definition",
+   "section": "4.2",
+   "name": "碱",
+   "terms": [
+    "碱"
+   ],
+   "statement": "碱是溶于水时产生 OH⁻ 的物质。"
+  },
+  {
+   "id": "acid-base-reaction",
+   "kind": "definition",
+   "section": "4.2",
+   "name": "酸碱反应",
+   "terms": [
+    "酸碱反应"
+   ],
+   "statement": "酸碱反应是在反应物物种之间转移氢离子的反应。"
+  },
+  {
+   "id": "strong-acid",
+   "kind": "definition",
+   "section": "4.2",
+   "name": "强酸",
+   "terms": [
+    "强酸"
+   ],
+   "statement": "强酸是溶于水时完全反应、生成水合氢离子的酸。"
+  },
+  {
+   "id": "weak-acid",
+   "kind": "definition",
+   "section": "4.2",
+   "name": "弱酸",
+   "terms": [
+    "弱酸"
+   ],
+   "statement": "弱酸是溶于水时只有很少一点反应、生成水合氢离子的酸。"
+  },
+  {
+   "id": "strong-base",
+   "kind": "definition",
+   "section": "4.2",
+   "name": "强碱",
+   "terms": [
+    "强碱"
+   ],
+   "statement": "强碱是溶于水时完全反应、生成氢氧根离子的碱。"
+  },
+  {
+   "id": "weak-base",
+   "kind": "definition",
+   "section": "4.2",
+   "name": "弱碱",
+   "terms": [
+    "弱碱"
+   ],
+   "statement": "弱碱是溶于水时只有很少一点反应、生成氢氧根离子的碱。"
+  },
+  {
+   "id": "oxidation-number",
+   "kind": "definition",
+   "section": "4.2",
+   "name": "氧化数",
+   "terms": [
+    "氧化数",
+    "氧化态"
+   ],
+   "statement": "化合物中某元素的氧化数，或称氧化态，是假定该化合物为离子型时它的每个原子所带的电荷。"
+  },
+  {
+   "id": "oxidation",
+   "kind": "definition",
+   "section": "4.2",
+   "name": "氧化",
+   "terms": [
+    "氧化"
+   ],
+   "statement": "氧化是元素因失去电子而使其氧化数升高的过程。"
+  },
+  {
+   "id": "reduction",
+   "kind": "definition",
+   "section": "4.2",
+   "name": "还原",
+   "terms": [
+    "还原"
+   ],
+   "statement": "还原是元素因得到电子而使其氧化数降低的过程。"
+  },
+  {
+   "id": "oxidizing-agent",
+   "kind": "definition",
+   "section": "4.2",
+   "name": "氧化剂",
+   "terms": [
+    "氧化剂"
+   ],
+   "statement": "氧化剂是使另一种物质氧化、而自身在此过程中被还原的物质。"
+  },
+  {
+   "id": "reducing-agent",
+   "kind": "definition",
+   "section": "4.2",
+   "name": "还原剂",
+   "terms": [
+    "还原剂"
+   ],
+   "statement": "还原剂是使另一种物质还原、而自身在此过程中被氧化的物质。"
+  },
+  {
+   "id": "stoichiometry",
+   "kind": "definition",
+   "section": "4.3",
+   "name": "化学计量关系",
+   "terms": [
+    "化学计量"
+   ],
+   "statement": "一个反应的化学计量，是它所消耗和生成的各物质的量之间的一组定量关系，由配平的方程式给出。就像八块薄煎饼的食谱可以放大到二十四块一样，系数可以放大到任何一种反应物或产物的任何量。"
+  },
+  {
+   "id": "stoichiometric-factor",
+   "kind": "definition",
+   "section": "4.3",
+   "name": "化学计量因子",
+   "terms": [
+    "化学计量因子"
+   ],
+   "statement": "化学计量因子是配平的方程式中两个系数之比，例如合成氨中的 2 mol NH3 比 3 mol H2，并且可以用任何量的单位来写。无论从什么量出发、求什么量，它都是所有反应化学计量计算共有的一步。"
+  },
+  {
+   "id": "mole-stoichiometry",
+   "kind": "skill",
+   "section": "4.3",
+   "name": "物质的量化学计量",
+   "statement": "把某物质给定的物质的量乘以化学计量因子，就得到另一种物质的物质的量，再用阿伏加德罗常数就能把这个物质的量变成分子数。这是最短的化学计量计算，更长的计算都是这一模式的扩展。"
+  },
+  {
+   "id": "mass-stoichiometry",
+   "kind": "skill",
+   "section": "4.3",
+   "name": "质量化学计量",
+   "statement": "因为能测量的是质量而不是分子数，所以实际的化学计量计算要把给定的质量（或已知物质的量浓度的溶液的体积）换算成物质的量，应用化学计量因子，再把结果换算回质量或体积。无论这两种物质是一种反应物和一种产物，还是两种反应物，路线都是一样的。"
+  },
+  {
+   "id": "limiting-reactant",
+   "kind": "definition",
+   "section": "4.4",
+   "name": "限量反应物与过量反应物",
+   "terms": [
+    "限量反应物"
+   ],
+   "statement": "当各反应物不是按化学计量的量存在时，有一种先被用完，从而限制了产物的量。其他反应物则过量，每种都会有一些剩下。十一片奶酪和二十八片面包可做成十一份三明治，还剩下六片面包；三摩尔氢与两摩尔氯可生成四摩尔氯化氢，还剩下一摩尔氢。"
+  },
+  {
+   "id": "identify-limiting-reactant",
+   "kind": "skill",
+   "section": "4.4",
+   "name": "确定限量反应物",
+   "statement": "有两种方法。一是把所提供反应物的物质的量之比与方程式的化学计量比相比较；二是分别算出每种反应物单独能生成的产物的量，生成量较少的那种反应物就是限量反应物。"
+  },
+  {
+   "id": "theoretical-and-actual-yield",
+   "kind": "definition",
+   "section": "4.4",
+   "name": "理论产量与实际产量",
+   "statement": "理论产量是配平的方程式的化学计量根据限量反应物所预测的产物的量；实际产量是实际得到的量，由于副反应、反应不完全以及收集产物时的损失，它通常较少。"
+  },
+  {
+   "id": "percent-yield",
+   "kind": "definition",
+   "section": "4.4",
+   "name": "产率",
+   "terms": [
+    "产率"
+   ],
+   "statement": "产率是实际产量除以理论产量再乘以 100%，它度量一个反应把化学计量所允许的产物转化出来的效率有多高。两种产量可以是质量、物质的量或任何其他量度，只要单位相同，单位就会约去。",
+   "forms": [
+    {
+     "id": "eq-percent-yield",
+     "latex": "\\text{percent yield}=\\left(\\frac{\\text{actual yield}}{\\text{theoretical yield}}\\right)\\times 100\\%",
+     "anchor": "4.4-percent-yield"
+    }
+   ]
+  },
+  {
+   "id": "atom-economy",
+   "kind": "definition",
+   "section": "4.4",
+   "name": "原子经济性",
+   "statement": "一个过程的原子经济性，是所需产物的质量占所用全部反应物质量的百分数，它度量投入的物质中有多少最终进入了产物。它看上去与产率相似，但比较的是不同过程的理论效率，而产率比较的是某一过程实际得到的量与它可能得到的量。",
+   "forms": [
+    {
+     "id": "eq-atom-economy",
+     "latex": "\\text{atom economy}=\\frac{\\text{mass of product}}{\\text{mass of reactants}}\\times 100\\%",
+     "condition": "the theoretical efficiency of a synthesis, the mass of the desired product as a percentage of the mass of all the reactants used",
+     "anchor": "4.4-atom-economy"
+    }
+   ]
+  },
+  {
+   "id": "theoretical-yield",
+   "kind": "definition",
+   "section": "4.4",
+   "name": "理论产量",
+   "terms": [
+    "理论产量"
+   ],
+   "statement": "理论产量是按反应的化学计量，由给定量的反应物所能生成的产物的量。"
+  },
+  {
+   "id": "actual-yield",
+   "kind": "definition",
+   "section": "4.4",
+   "name": "实际产量",
+   "terms": [
+    "实际产量"
+   ],
+   "statement": "实际产量是反应中实际生成的产物的量。"
+  },
+  {
+   "id": "excess-reactant",
+   "kind": "definition",
+   "section": "4.4",
+   "name": "过量反应物",
+   "terms": [
+    "过量反应物"
+   ],
+   "statement": "过量反应物是其存在量大于反应的化学计量所需量的反应物。"
+  },
+  {
+   "id": "quantitative-analysis",
+   "kind": "definition",
+   "section": "4.5",
+   "name": "化学定量分析",
+   "terms": [
+    "定量分析"
+   ],
+   "statement": "定量分析是测定样品中某种物质的量或浓度，反应化学计量是它的基础之一：与待测物化合的反应物的量，或待测物所生成的产物的量，度量了原来有多少待测物。"
+  },
+  {
+   "id": "titration",
+   "kind": "idea",
+   "section": "4.5",
+   "name": "滴定分析",
+   "terms": [
+    "滴定分析"
+   ],
+   "statement": "在滴定中，用滴定管把已知浓度的滴定剂加到待测物样品中，直到两者之间的反应完成。到达这一化学计量点所需的滴定剂体积，通过指示剂颜色变化等现象检测出来，成为滴定终点，再借助反应的化学计量度量出待测物的量。"
+  },
+  {
+   "id": "titration-calculation",
+   "kind": "skill",
+   "section": "4.5",
+   "name": "由滴定数据计算浓度",
+   "statement": "滴定剂的体积和物质的量浓度给出它的物质的量，化学计量因子给出待测物的物质的量，再除以样品体积就得到待测物的物质的量浓度。因为物质的量浓度也等于每毫升中的毫摩尔数，所以整个计算可以始终用毫升进行。"
+  },
+  {
+   "id": "gravimetric-analysis",
+   "kind": "skill",
+   "section": "4.5",
+   "name": "重量分析法",
+   "terms": [
+    "重量分析法"
+   ],
+   "statement": "在重量分析法中，通过状态的变化（常常是沉淀和过滤）把待测物从样品中分离出来并称量；把分离所得物质的质量代入化学计量，就得到待测物的质量及其占样品的百分数。"
+  },
+  {
+   "id": "combustion-analysis",
+   "kind": "skill",
+   "section": "4.5",
+   "name": "燃烧分析",
+   "terms": [
+    "燃烧分析"
+   ],
+   "statement": "把称量过的碳氢化合物样品在氧气中完全燃烧，生成的二氧化碳和水分别收集在事先称量过的吸收器中。每种产物的质量给出样品中碳和氢的物质的量，它们的最简整数比就给出实验式。"
+  },
+  {
+   "id": "analyte",
+   "kind": "definition",
+   "section": "4.5",
+   "name": "待测物",
+   "terms": [
+    "待测物"
+   ],
+   "statement": "待测物是分析中所关注的化学物种。"
+  },
+  {
+   "id": "titrant",
+   "kind": "definition",
+   "section": "4.5",
+   "name": "滴定剂",
+   "terms": [
+    "滴定剂"
+   ],
+   "statement": "滴定剂是滴定分析中含有已知浓度的、将与待测物反应的物质的溶液。"
+  },
+  {
+   "id": "buret",
+   "kind": "definition",
+   "section": "4.5",
+   "name": "滴定管",
+   "terms": [
+    "滴定管"
+   ],
+   "statement": "滴定管是用来精确放出可变体积液体的仪器，如用于滴定分析。"
+  },
+  {
+   "id": "equivalence-point",
+   "kind": "definition",
+   "section": "4.5",
+   "name": "化学计量点",
+   "terms": [
+    "化学计量点"
+   ],
+   "statement": "化学计量点是在滴定分析中与待测物完全反应所需的滴定剂溶液的体积，即相对于样品中的待测物恰好符合化学计量的滴定剂的量。"
+  },
+  {
+   "id": "end-point",
+   "kind": "definition",
+   "section": "4.5",
+   "name": "滴定终点",
+   "terms": [
+    "滴定终点"
+   ],
+   "statement": "滴定终点是所测得的滴定剂溶液的体积，在这一体积时样品的外观或其他性质出现与化学计量相当所预期的变化。"
+  },
+  {
+   "id": "indicator",
+   "kind": "definition",
+   "section": "4.5",
+   "name": "指示剂",
+   "terms": [
+    "指示剂"
+   ],
+   "statement": "指示剂是在滴定分析中加到样品里、用来目测滴定终点的物质。"
+  }
+ ],
+ "concept_prereqs": [
+  {
+   "concept": "chemical-equation",
+   "prereq": "physical-and-chemical-change"
+  },
+  {
+   "concept": "coefficients-as-ratios",
+   "prereq": "chemical-equation"
+  },
+  {
+   "concept": "balanced-equation",
+   "prereq": "chemical-equation"
+  },
+  {
+   "concept": "balanced-equation",
+   "prereq": "conservation-of-matter"
+  },
+  {
+   "concept": "balance-by-inspection",
+   "prereq": "balanced-equation"
+  },
+  {
+   "concept": "balance-by-inspection",
+   "prereq": "coefficients-as-ratios"
+  },
+  {
+   "concept": "ionic-equations",
+   "prereq": "balanced-equation"
+  },
+  {
+   "concept": "write-net-ionic-equation",
+   "prereq": "ionic-equations"
+  },
+  {
+   "concept": "write-net-ionic-equation",
+   "prereq": "balance-by-inspection"
+  },
+  {
+   "concept": "precipitation-reaction",
+   "prereq": "ionic-equations"
+  },
+  {
+   "concept": "predict-precipitation",
+   "prereq": "precipitation-reaction"
+  },
+  {
+   "concept": "predict-precipitation",
+   "prereq": "write-net-ionic-equation"
+  },
+  {
+   "concept": "acids-and-bases",
+   "prereq": "chemical-equation"
+  },
+  {
+   "concept": "strong-and-weak-acids-bases",
+   "prereq": "acids-and-bases"
+  },
+  {
+   "concept": "neutralization-reaction",
+   "prereq": "acids-and-bases"
+  },
+  {
+   "concept": "neutralization-reaction",
+   "prereq": "write-net-ionic-equation"
+  },
+  {
+   "concept": "redox-reaction",
+   "prereq": "oxidation-numbers"
+  },
+  {
+   "concept": "classify-reaction",
+   "prereq": "precipitation-reaction"
+  },
+  {
+   "concept": "classify-reaction",
+   "prereq": "neutralization-reaction"
+  },
+  {
+   "concept": "classify-reaction",
+   "prereq": "redox-reaction"
+  },
+  {
+   "concept": "half-reaction-method",
+   "prereq": "redox-reaction"
+  },
+  {
+   "concept": "half-reaction-method",
+   "prereq": "balance-by-inspection"
+  },
+  {
+   "concept": "stoichiometry",
+   "prereq": "coefficients-as-ratios"
+  },
+  {
+   "concept": "stoichiometric-factor",
+   "prereq": "stoichiometry"
+  },
+  {
+   "concept": "stoichiometric-factor",
+   "prereq": "unit-conversion-factor"
+  },
+  {
+   "concept": "mole-stoichiometry",
+   "prereq": "stoichiometric-factor"
+  },
+  {
+   "concept": "mass-stoichiometry",
+   "prereq": "mole-stoichiometry"
+  },
+  {
+   "concept": "mass-stoichiometry",
+   "prereq": "dimensional-analysis"
+  },
+  {
+   "concept": "limiting-reactant",
+   "prereq": "stoichiometry"
+  },
+  {
+   "concept": "identify-limiting-reactant",
+   "prereq": "limiting-reactant"
+  },
+  {
+   "concept": "identify-limiting-reactant",
+   "prereq": "mass-stoichiometry"
+  },
+  {
+   "concept": "theoretical-and-actual-yield",
+   "prereq": "identify-limiting-reactant"
+  },
+  {
+   "concept": "percent-yield",
+   "prereq": "theoretical-and-actual-yield"
+  },
+  {
+   "concept": "atom-economy",
+   "prereq": "percent-yield"
+  },
+  {
+   "concept": "quantitative-analysis",
+   "prereq": "stoichiometry"
+  },
+  {
+   "concept": "titration",
+   "prereq": "quantitative-analysis"
+  },
+  {
+   "concept": "titration-calculation",
+   "prereq": "titration"
+  },
+  {
+   "concept": "titration-calculation",
+   "prereq": "mass-stoichiometry"
+  },
+  {
+   "concept": "gravimetric-analysis",
+   "prereq": "quantitative-analysis"
+  },
+  {
+   "concept": "gravimetric-analysis",
+   "prereq": "precipitation-reaction"
+  },
+  {
+   "concept": "gravimetric-analysis",
+   "prereq": "mass-stoichiometry"
+  },
+  {
+   "concept": "combustion-analysis",
+   "prereq": "gravimetric-analysis"
+  },
+  {
+   "concept": "combustion-analysis",
+   "prereq": "classify-reaction"
+  },
+  {
+   "concept": "chemical-equation",
+   "prereq": "molecular-formula"
+  },
+  {
+   "concept": "ionic-equations",
+   "prereq": "ionic-compounds"
+  },
+  {
+   "concept": "oxidation-numbers",
+   "prereq": "ions-and-atomic-charge"
+  },
+  {
+   "concept": "mole-stoichiometry",
+   "prereq": "mole"
+  },
+  {
+   "concept": "mole-stoichiometry",
+   "prereq": "avogadro-number"
+  },
+  {
+   "concept": "mass-stoichiometry",
+   "prereq": "molar-mass"
+  },
+  {
+   "concept": "mass-stoichiometry",
+   "prereq": "mass-mole-conversion"
+  },
+  {
+   "concept": "mass-stoichiometry",
+   "prereq": "molarity"
+  },
+  {
+   "concept": "titration-calculation",
+   "prereq": "molarity"
+  },
+  {
+   "concept": "combustion-analysis",
+   "prereq": "empirical-formula"
+  },
+  {
+   "concept": "gravimetric-analysis",
+   "prereq": "percent-composition"
+  },
+  {
+   "concept": "theoretical-and-actual-yield",
+   "prereq": "daltons-atomic-theory"
+  },
+  {
+   "concept": "identify-limiting-reactant",
+   "prereq": "mass-mole-conversion"
+  },
+  {
+   "concept": "limiting-reactant",
+   "prereq": "coefficients-as-ratios"
+  },
+  {
+   "concept": "solubility",
+   "prereq": "solution-components"
+  },
+  {
+   "concept": "solubility",
+   "prereq": "concentration"
+  },
+  {
+   "concept": "salt",
+   "prereq": "ionic-compounds"
+  },
+  {
+   "concept": "salt",
+   "prereq": "acids-and-bases"
+  },
+  {
+   "concept": "combustion-reaction",
+   "prereq": "redox-reaction"
+  },
+  {
+   "concept": "single-displacement-reaction",
+   "prereq": "redox-reaction"
+  },
+  {
+   "concept": "half-reaction",
+   "prereq": "redox-reaction"
+  },
+  {
+   "concept": "reactant",
+   "prereq": "chemical-equation"
+  },
+  {
+   "concept": "product",
+   "prereq": "chemical-equation"
+  },
+  {
+   "concept": "coefficient",
+   "prereq": "chemical-equation"
+  },
+  {
+   "concept": "molecular-equation",
+   "prereq": "ionic-equations"
+  },
+  {
+   "concept": "complete-ionic-equation",
+   "prereq": "ionic-equations"
+  },
+  {
+   "concept": "complete-ionic-equation",
+   "prereq": "spectator-ion"
+  },
+  {
+   "concept": "net-ionic-equation",
+   "prereq": "ionic-equations"
+  },
+  {
+   "concept": "net-ionic-equation",
+   "prereq": "spectator-ion"
+  },
+  {
+   "concept": "spectator-ion",
+   "prereq": "ionic-equations"
+  },
+  {
+   "concept": "spectator-ion",
+   "prereq": "ion"
+  },
+  {
+   "concept": "soluble",
+   "prereq": "solubility"
+  },
+  {
+   "concept": "insoluble",
+   "prereq": "solubility"
+  },
+  {
+   "concept": "precipitate",
+   "prereq": "precipitation-reaction"
+  },
+  {
+   "concept": "precipitate",
+   "prereq": "insoluble"
+  },
+  {
+   "concept": "acid",
+   "prereq": "acids-and-bases"
+  },
+  {
+   "concept": "base",
+   "prereq": "acids-and-bases"
+  },
+  {
+   "concept": "acid-base-reaction",
+   "prereq": "acids-and-bases"
+  },
+  {
+   "concept": "strong-acid",
+   "prereq": "strong-and-weak-acids-bases"
+  },
+  {
+   "concept": "strong-acid",
+   "prereq": "acid"
+  },
+  {
+   "concept": "weak-acid",
+   "prereq": "strong-and-weak-acids-bases"
+  },
+  {
+   "concept": "weak-acid",
+   "prereq": "acid"
+  },
+  {
+   "concept": "strong-base",
+   "prereq": "strong-and-weak-acids-bases"
+  },
+  {
+   "concept": "strong-base",
+   "prereq": "base"
+  },
+  {
+   "concept": "weak-base",
+   "prereq": "strong-and-weak-acids-bases"
+  },
+  {
+   "concept": "weak-base",
+   "prereq": "base"
+  },
+  {
+   "concept": "oxidation-number",
+   "prereq": "ions-and-atomic-charge"
+  },
+  {
+   "concept": "oxidation",
+   "prereq": "redox-reaction"
+  },
+  {
+   "concept": "oxidation",
+   "prereq": "oxidation-number"
+  },
+  {
+   "concept": "reduction",
+   "prereq": "redox-reaction"
+  },
+  {
+   "concept": "reduction",
+   "prereq": "oxidation-number"
+  },
+  {
+   "concept": "oxidizing-agent",
+   "prereq": "oxidation"
+  },
+  {
+   "concept": "oxidizing-agent",
+   "prereq": "reduction"
+  },
+  {
+   "concept": "reducing-agent",
+   "prereq": "oxidation"
+  },
+  {
+   "concept": "reducing-agent",
+   "prereq": "reduction"
+  },
+  {
+   "concept": "theoretical-yield",
+   "prereq": "theoretical-and-actual-yield"
+  },
+  {
+   "concept": "theoretical-yield",
+   "prereq": "limiting-reactant"
+  },
+  {
+   "concept": "actual-yield",
+   "prereq": "theoretical-and-actual-yield"
+  },
+  {
+   "concept": "excess-reactant",
+   "prereq": "limiting-reactant"
+  },
+  {
+   "concept": "analyte",
+   "prereq": "quantitative-analysis"
+  },
+  {
+   "concept": "titrant",
+   "prereq": "titration"
+  },
+  {
+   "concept": "titrant",
+   "prereq": "molarity"
+  },
+  {
+   "concept": "buret",
+   "prereq": "titration"
+  },
+  {
+   "concept": "equivalence-point",
+   "prereq": "titration"
+  },
+  {
+   "concept": "equivalence-point",
+   "prereq": "titrant"
+  },
+  {
+   "concept": "equivalence-point",
+   "prereq": "analyte"
+  },
+  {
+   "concept": "end-point",
+   "prereq": "equivalence-point"
+  },
+  {
+   "concept": "indicator",
+   "prereq": "end-point"
+  },
+  {
+   "concept": "predict-precipitation",
+   "prereq": "soluble"
+  },
+  {
+   "concept": "predict-precipitation",
+   "prereq": "insoluble"
+  },
+  {
+   "concept": "predict-precipitation",
+   "prereq": "precipitate"
+  },
+  {
+   "concept": "write-net-ionic-equation",
+   "prereq": "net-ionic-equation"
+  },
+  {
+   "concept": "write-net-ionic-equation",
+   "prereq": "spectator-ion"
+  },
+  {
+   "concept": "write-net-ionic-equation",
+   "prereq": "complete-ionic-equation"
+  },
+  {
+   "concept": "balance-by-inspection",
+   "prereq": "coefficient"
+  },
+  {
+   "concept": "oxidation-numbers",
+   "prereq": "oxidation-number"
+  },
+  {
+   "concept": "half-reaction-method",
+   "prereq": "half-reaction"
+  },
+  {
+   "concept": "classify-reaction",
+   "prereq": "combustion-reaction"
+  },
+  {
+   "concept": "classify-reaction",
+   "prereq": "single-displacement-reaction"
+  },
+  {
+   "concept": "classify-reaction",
+   "prereq": "acid-base-reaction"
+  },
+  {
+   "concept": "neutralization-reaction",
+   "prereq": "salt"
+  },
+  {
+   "concept": "percent-yield",
+   "prereq": "theoretical-yield"
+  },
+  {
+   "concept": "percent-yield",
+   "prereq": "actual-yield"
+  },
+  {
+   "concept": "identify-limiting-reactant",
+   "prereq": "excess-reactant"
+  },
+  {
+   "concept": "titration-calculation",
+   "prereq": "equivalence-point"
+  },
+  {
+   "concept": "titration-calculation",
+   "prereq": "titrant"
+  },
+  {
+   "concept": "titration-calculation",
+   "prereq": "analyte"
+  }
+ ]
+}

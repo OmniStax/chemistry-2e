@@ -2,19 +2,23 @@
  "id": "18.6",
  "module": "m68834",
  "chapter": "18",
- "title": "Occurrence, Preparation, and Properties of Carbonates",
- "short": "Carbonates",
- "lead": "The <span data-concept=\"carbonate\">carbonates</span> and <span data-concept=\"hydrogen-carbonate\">hydrogen carbonates</span> of the representative metals are prepared from carbon dioxide and an oxide or hydroxide, or by precipitation. Limestone that dissolves in water holding carbon dioxide shapes caves, stalactites and stalagmites, and carbonates and hydrogen carbonates react with acids in antacids and in baking powder.",
+ "title": "碳酸盐的存在、制备与性质",
+ "short": "碳酸盐",
+ "lead": "主族金属的<span data-concept=\"carbonate\">碳酸盐</span>和<span data-concept=\"hydrogen-carbonate\">碳酸氢盐</span>由二氧化碳与氧化物或氢氧化物制备，或经沉淀制得。溶于含二氧化碳的水的石灰石塑造出溶洞、钟乳石和石笋，碳酸盐和碳酸氢盐则在抗酸剂和发酵粉中与酸反应。",
  "objectives": [
-  "Describe the preparation, properties, and uses of some representative metal carbonates"
+  "描述一些主族金属碳酸盐的制备、性质和用途"
  ],
- "summary_html": "<p>The usual method for the preparation of the <span data-concept=\"carbonate\">carbonates</span> of the <span data-concept=\"alkali-metal\">alkali</span> and <span data-concept=\"alkaline-earth-metal\">alkaline earth metals</span> is by reaction of an oxide or hydroxide with carbon dioxide. Other carbonates form by <span data-concept=\"precipitation-reaction\">precipitation</span>. Metal carbonates or <span data-concept=\"hydrogen-carbonate\">hydrogen carbonates</span> such as limestone (CaCO<sub>3</sub>), the antacid Tums (CaCO<sub>3</sub>), and baking soda (NaHCO<sub>3</sub>) are common examples. Carbonates and hydrogen carbonates decompose in the presence of <span data-concept=\"acid\">acids</span> and most decompose on heating.</p>",
- "notes": "The section keeps as printed “The carbonates of the alkaline earth metals of group 12 and lead(II)” and “Tin(II) or one of the trivalent or tetravalent ions such as Al³⁺ or Sn⁴⁺ behave”.",
+ "summary_html": "<p>制备<span data-concept=\"alkali-metal\">碱金属</span>和<span data-concept=\"alkaline-earth-metal\">碱土金属</span>的<span data-concept=\"carbonate\">碳酸盐</span>，通常的方法是让氧化物或氢氧化物与二氧化碳反应。其他碳酸盐则通过<span data-concept=\"precipitation-reaction\">沉淀</span>形成。金属碳酸盐或<span data-concept=\"hydrogen-carbonate\">碳酸氢盐</span>，如石灰石（CaCO<sub>3</sub>）、抗酸剂 Tums（CaCO<sub>3</sub>）和小苏打（NaHCO<sub>3</sub>），都是常见的例子。碳酸盐和碳酸氢盐遇<span data-concept=\"acid\">酸</span>分解，且大多数受热分解。</p>",
+ "notes": "本节保留印刷原文：“第 12 族的碱土金属和铅(II)的碳酸盐”以及“锡(II)或三价、四价离子（如 Al³⁺ 或 Sn⁴⁺）在这一反应中的行为不同”。",
  "ai": {
   "text": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
@@ -24,9 +28,9 @@
    }
   ]
  },
- "built": "2026-10-05",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels, concept tags and suggested approaches are AI-generated. Answers come from the book’s answer key. The unkeyed exercise fs-idp91885920 (the formula of a sodium carbonate hydrate from the masses before and after heating) is left out, and no answer is computed for it. The unkeyed conceptual exercise fs-idp142161216 carries a suggested approach marked as OmniStax’s own. Nothing is moved.",
+ "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案取自本书的答案册。没有答案的习题 fs-idp91885920（由加热前后的质量求碳酸钠水合物的化学式）未收入，也没有为它计算答案。没有答案的概念题 fs-idp142161216 附有一份建议思路，并标明为 OmniStax 自己撰写。没有任何内容被移动。",
  "figures": [
   {
    "id": "fig-cave",
@@ -189,11 +193,11 @@
     "at": "end"
    },
    "cite": "preparation",
-   "prompt": "Carbon forms the ${\\text{CO}}_{3}{}^{2−}$ ion, yet silicon does not form an analogous ${\\text{SiO}}_{3}{}^{2−}$ ion. Why?",
+   "prompt": "碳形成 ${\\text{CO}}_{3}{}^{2−}$ 离子，而硅却不形成类似的 ${\\text{SiO}}_{3}{}^{2−}$ 离子。为什么？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "A carbonate-like ${\\text{SiO}}_{3}{}^{2−}$ ion would need a silicon–oxygen π bond, and silicon does not form stable π bonds to oxygen. In the ${\\text{CO}}_{3}{}^{2−}$ ion, carbon is <em>sp</em><sup>2</sup> hybridized and σ bonded to three oxygen atoms in a plane; its remaining <em>p</em> orbital overlaps side by side with an oxygen <em>p</em> orbital to form a C=O π bond, spread over three resonance forms. Carbon, the small first member of group 14, gives good overlap. A silicon atom is much larger, so its 3<em>p</em> orbital overlaps poorly with an oxygen 2<em>p</em> orbital and an Si=O π bond is weak. Silicon therefore bonds to oxygen only through single σ bonds, using four of them in tetrahedral SiO<sub>4</sub> units that share oxygen atoms with one another. The same difference makes carbon dioxide a gas of discrete O=C=O molecules while silicon dioxide is a network solid of linked SiO<sub>4</sub> tetrahedra, and it rules out a discrete planar ${\\text{SiO}}_{3}{}^{2−}$ ion."
+    "solution": "类似碳酸根的 ${\\text{SiO}}_{3}{}^{2−}$ 离子需要一个硅—氧 π 键，而硅与氧不形成稳定的 π 键。在 ${\\text{CO}}_{3}{}^{2−}$ 离子中，碳为 <em>sp</em><sup>2</sup> 杂化，以 σ 键与同一平面内的三个氧原子相连；它余下的 <em>p</em> 轨道与氧的 <em>p</em> 轨道并肩重叠，形成 C=O π 键，并分布在三个共振式上。碳是第 14 族中体积较小的第一个成员，轨道重叠良好。硅原子要大得多，所以它的 3<em>p</em> 轨道与氧的 2<em>p</em> 轨道重叠很差，Si=O π 键很弱。因此硅只通过单个 σ 键与氧成键，以四个 σ 键构成四面体形的 SiO<sub>4</sub> 单元，这些单元彼此共用氧原子。同样的差异使二氧化碳成为由离散的 O=C=O 分子构成的气体，而二氧化硅则是由 SiO<sub>4</sub> 四面体连接而成的网状固体，也使得不可能存在离散的平面 ${\\text{SiO}}_{3}{}^{2−}$ 离子。"
    }
   },
   {
@@ -206,11 +210,11 @@
     "at": "end"
    },
    "cite": "preparation",
-   "prompt": "Complete and balance the following chemical equations:<br>(a) hardening of plaster containing slaked lime<br>$\\text{Ca}{(\\text{OH})}_{2}+{\\text{CO}}_{2}\\;\\longrightarrow$<br>(b) removal of sulfur dioxide from the flue gas of power plants<br>$\\text{CaO}+{\\text{SO}}_{2}\\;\\longrightarrow$<br>(c) the reaction of baking powder that produces carbon dioxide gas and causes bread to rise<br>${\\text{NaHCO}}_{3}+{\\text{NaH}}_{2}{\\text{PO}}_{4}\\;\\longrightarrow$",
+   "prompt": "完成并配平下列化学方程式：<br>（a）含熟石灰的灰泥的硬化<br>$\\text{Ca}{(\\text{OH})}_{2}+{\\text{CO}}_{2}\\;\\longrightarrow$<br>（b）从发电厂的烟道气中除去二氧化硫<br>$\\text{CaO}+{\\text{SO}}_{2}\\;\\longrightarrow$<br>（c）发酵粉中产生二氧化碳气体、使面包膨起的反应<br>${\\text{NaHCO}}_{3}+{\\text{NaH}}_{2}{\\text{PO}}_{4}\\;\\longrightarrow$",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) $\\text{Ca}{(\\text{OH})}_{2}(aq)+{\\text{CO}}_{2}(g)\\;\\longrightarrow \\;{\\text{CaCO}}_{3}(s)+{\\text{H}}_{2}\\text{O}(l);$ (b) $\\text{CaO}(s)+{\\text{SO}}_{2}(g)\\;\\longrightarrow \\;{\\text{CaSO}}_{3}(s);$<br>(c) ${\\text{2NaHCO}}_{3}(s)+{\\text{NaH}}_{2}{\\text{PO}}_{4}(aq)\\;\\longrightarrow \\;{\\text{Na}}_{3}{\\text{PO}}_{4}(aq)+{\\text{2CO}}_{2}(g)+{\\text{2H}}_{2}\\text{O}(l)$"
+    "solution": "（a）$\\text{Ca}{(\\text{OH})}_{2}(aq)+{\\text{CO}}_{2}(g)\\;\\longrightarrow \\;{\\text{CaCO}}_{3}(s)+{\\text{H}}_{2}\\text{O}(l);$ （b）$\\text{CaO}(s)+{\\text{SO}}_{2}(g)\\;\\longrightarrow \\;{\\text{CaSO}}_{3}(s);$<br>（c）${\\text{2NaHCO}}_{3}(s)+{\\text{NaH}}_{2}{\\text{PO}}_{4}(aq)\\;\\longrightarrow \\;{\\text{Na}}_{3}{\\text{PO}}_{4}(aq)+{\\text{2CO}}_{2}(g)+{\\text{2H}}_{2}\\text{O}(l)$"
    }
   }
  ],

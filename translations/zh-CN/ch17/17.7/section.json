@@ -2,33 +2,41 @@
   "id": "17.7",
   "module": "m68827",
   "chapter": "17",
-  "title": "Electrolysis",
-  "short": "Electrolysis",
-  "lead": "An external power source can impose a voltage on a redox system and drive a reaction that would not take place on its own. This section follows <span data-concept=\"electrolysis\">electrolysis</span> through molten sodium chloride, water and aqueous sodium chloride, shows it at work in <span data-concept=\"electroplating\">electroplating</span>, and counts the electrons it moves from the <span data-concept=\"electric-current\">current</span> and the time.",
+  "title": "电解",
+  "short": "电解",
+  "lead": "外部电源可以对氧化还原体系施加电压，驱动一个自身不会发生的反应。本节依次讲述熔融氯化钠、水和氯化钠水溶液的<span data-concept=\"electrolysis\">电解</span>，说明它在<span data-concept=\"electroplating\">电镀</span>中的应用，并根据<span data-concept=\"electric-current\">电流</span>和时间计算它所转移的电子的物质的量。",
   "objectives": [
-    "Describe the process of electrolysis",
-    "Compare the operation of electrolytic cells with that of galvanic cells",
-    "Perform stoichiometric calculations for electrolytic processes"
+    "描述电解的过程",
+    "比较电解池与原电池的工作原理",
+    "对电解过程进行化学计量计算"
   ],
-  "summary_html": "<p>Nonspontaneous redox processes may be forced to occur in <span data-concept=\"electrochemical-cell\">electrochemical cells</span> by the application of an appropriate potential using an external power source—a process known as <span data-concept=\"electrolysis\">electrolysis</span>. <span data-concept=\"electrolysis\">Electrolysis</span> is the basis for certain ore refining processes, the industrial production of many chemical commodities, and the <span data-concept=\"electroplating\">electroplating</span> of metal coatings on various products. Measurement of the <span data-concept=\"electric-current\">current</span> flow during <span data-concept=\"electrolysis\">electrolysis</span> permits <span data-concept=\"electrolysis-stoichiometry\">stoichiometric calculations</span>.</p>",
-  "notes": "Nothing of the section is left out. The untitled opening carries a header of our own, Electrolytic cells. Example 17.10’s “from a solution of containing”, the quantitative passage’s “n mole of electrons”, the hyphen of “OH-” among the water species and the opening’s italic “electroplating”, whose glossary term the note defines, are kept as printed.",
+  "summary_html": "<p>利用外部电源施加适当的电势，可以迫使非自发的氧化还原过程在<span data-concept=\"electrochemical-cell\">电化学池</span>中发生，这一过程称为<span data-concept=\"electrolysis\">电解</span>。<span data-concept=\"electrolysis\">电解</span>是某些矿石精炼过程、许多大宗化学品的工业生产，以及在各种产品上<span data-concept=\"electroplating\">电镀</span>金属镀层的基础。通过测量<span data-concept=\"electrolysis\">电解</span>过程中的<span data-concept=\"electric-current\">电流</span>，可以进行<span data-concept=\"electrolysis-stoichiometry\">化学计量计算</span>。</p>",
+  "notes": "本节没有任何内容被省略。无标题的开头部分带有我们自己加的标题“电解池”。例 17.10 中原文的“from a solution of containing”缺了一个词，无法在中文里照样保留，所以译为通顺的“由含有铬(III)离子的溶液”；定量部分中的“n mole of electrons”（单数）译为 n 摩尔电子，水中物种里“OH-”的连字符按印刷原样保留，开头部分中那个斜体的“electroplating”（其术语的注释对它作了定义）也按原样保留斜体。",
   "ai": {
     "text": [
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ],
     "figures": [
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ]
   },
-  "built": "2026-10-05",
+  "built": "2026-10-26",
   "exercises_lead": "",
-  "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. Five unkeyed exercises whose answers would have to be worked out are left out: fs-idm330221280 (the coulombs of a 2.5 A current over 35 minutes), fs-idm324128112 (the electrons of the same scenario), fs-idm27929184 (the half-reactions and cell reactions for the electrolysis of four molten salts), fs-idp30601424 (the times to reduce one mole of four ions) and fs-idm13758224 (the surface area of a galvanized part). fs-idp30833248 points at the left-out fs-idm27929184, so its prompt restates the four molten salts. Nothing is moved.",
+  "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案来自书后答案和“学习检测”的答案。有五道没有给出答案的习题被略去，因为它们的答案需要自行算出：fs-idm330221280（2.5 A 电流通过 35 分钟的库仑数）、fs-idm324128112（同一情形下的电子数）、fs-idm27929184（四种熔融盐电解的半反应和电池反应）、fs-idp30601424（还原一摩尔四种离子所需的时间）和 fs-idm13758224（镀锌零件的表面积）。fs-idp30833248 指向被略去的 fs-idm27929184，所以它的题干重述了这四种熔融盐。没有任何内容被移动。",
   "figures": [
     {
       "id": "sim-downs-cell",
@@ -37,7 +45,7 @@
       "originals": [
         "/media/ch17/CNX_Chem_17_07_NaCl.jpg"
       ],
-      "original_caption": "Cells of this sort (a cell for the electrolysis of molten sodium chloride) are used in the Downs process for production of sodium and chlorine, and they typically use iron cathodes and carbon anodes.",
+      "original_caption": "这类电解槽（用于电解熔融氯化钠的电解槽）用于生产钠和氯的唐斯法，通常使用铁阴极和碳阳极。",
       "draws": [],
       "conventions": [
         "Na",
@@ -51,6 +59,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -61,7 +74,7 @@
       "originals": [
         "/media/ch17/CNX_Chem_17_07_Water.jpg"
       ],
-      "original_caption": "The electrolysis of water produces stoichiometric amounts of oxygen gas at the anode and hydrogen at the cathode.",
+      "original_caption": "水的电解在阳极按化学计量的量产生氧气，在阴极产生氢气。",
       "draws": [
         "potential"
       ],
@@ -76,6 +89,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -86,7 +104,7 @@
       "originals": [
         "/media/ch17/CNX_Chem_17_07_Electroplate.jpg"
       ],
-      "original_caption": "This schematic shows an electrolytic cell for silver plating eating utensils.",
+      "original_caption": "此示意图显示了用于给餐具镀银的电解池。",
       "draws": [
         "amount",
         "current",
@@ -103,6 +121,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     }
@@ -336,15 +359,15 @@
         "after": "ex-current-moles"
       },
       "cite": "ex-current-moles",
-      "prompt": "Aluminum metal can be made from aluminum(III) ions by electrolysis. What is the half-reaction at the cathode? What mass of aluminum metal would be recovered if a current of 25.0 A passed through the solution for 15.0 minutes?",
+      "prompt": "金属铝可以由铝(III)离子经电解制得。阴极上的半反应是什么？如果 25.0 A 的电流通过溶液 15.0 分钟，可回收多少质量的金属铝？",
       "answer": {
         "type": "number",
         "part": "mass of aluminum metal recovered",
         "value": 2.1,
         "unit": "g",
-        "hint": "Each Al<sup>3+</sup> ion takes three electrons, so the moles of aluminum are one third of <em>It</em>/<em>F</em>.",
+        "hint": "每个 Al<sup>3+</sup> 离子得到三个电子，所以铝的物质的量是 <em>It</em>/<em>F</em> 的三分之一。",
         "generated_by": "source",
-        "solution": "${\\text{Al}}^{3+}(aq)+3\\;{\\text{e}}^{\\text{−}}\\;\\longrightarrow \\;\\text{Al}(s)$; 0.0777 mol Al = 2.10 g Al."
+        "solution": "${\\text{Al}}^{3+}(aq)+3\\;{\\text{e}}^{\\text{−}}\\;\\longrightarrow \\;\\text{Al}(s)$；0.0777 mol Al = 2.10 g Al。"
       }
     },
     {
@@ -357,7 +380,7 @@
         "after": "ex-deposition-time"
       },
       "cite": "ex-deposition-time",
-      "prompt": "What mass of zinc is required to galvanize the top of a 3.00 m × 5.50 m sheet of iron to a thickness of 0.100 mm of zinc? If the zinc comes from a solution of Zn(NO<sub>3</sub>)<sub>2</sub> and the current is 25.5 A, how long will it take to galvanize the top of the iron? The density of zinc is 7.140 g/cm<sup>3</sup>.",
+      "prompt": "给一块 3.00 m × 5.50 m 铁板的上表面镀锌，锌层厚 0.100 mm，需要多少质量的锌？如果锌来自 Zn(NO<sub>3</sub>)<sub>2</sub> 溶液，电流为 25.5 A，那么给这块铁板的上表面镀锌需要多长时间？锌的密度为 7.140 g/cm<sup>3</sup>。",
       "answer": {
         "type": "multi",
         "parts": [
@@ -365,17 +388,17 @@
             "part": "mass of zinc",
             "value": 11.8,
             "unit": "kg",
-            "hint": "The volume of zinc is the area of the top times the thickness; its density gives the mass."
+            "hint": "锌的体积等于上表面的面积乘以厚度；再由其密度求出质量。"
           },
           {
             "part": "time",
             "value": 379,
             "unit": "hr",
-            "hint": "Each Zn<sup>2+</sup> ion takes two electrons; <em>t</em> = <em>Q</em>/<em>I</em>."
+            "hint": "每个 Zn<sup>2+</sup> 离子得到两个电子；<em>t</em> = <em>Q</em>/<em>I</em>。"
           }
         ],
         "generated_by": "source",
-        "solution": "11.8 kg Zn requires 379 hours."
+        "solution": "11.8 kg Zn 需要 379 小时。"
       }
     },
     {
@@ -388,7 +411,7 @@
         "at": "end"
       },
       "cite": "quantitative",
-      "prompt": "What mass of each product is produced in each of the electrolytic cells of the previous problem if a total charge of 3.33 × 10<sup>5</sup> C passes through each cell? The previous problem electrolyzes each of these molten salts: (a) CaCl<sub>2</sub>, (b) LiH, (c) AlCl<sub>3</sub>, (d) CrBr<sub>3</sub>.",
+      "prompt": "如果总电荷 3.33 × 10<sup>5</sup> C 通过上一题中的每个电解池，每个电解池中各生成多少质量的每种产物？上一题电解的熔融盐是：（a）CaCl<sub>2</sub>，（b）LiH，（c）AlCl<sub>3</sub>，（d）CrBr<sub>3</sub>。",
       "answer": {
         "type": "multi",
         "parts": [
@@ -434,7 +457,7 @@
           }
         ],
         "generated_by": "source",
-        "solution": "(a) mass Ca = 69.1 g, mass Cl<sub>2</sub> = 122 g; (b) mass Li = 23.9 g, mass H<sub>2</sub> = 3.48 g; (c) mass Al = 31.0 g, mass Cl<sub>2</sub> = 122 g; (d) mass Cr = 59.8 g, mass Br<sub>2</sub> = 276 g"
+        "solution": "（a）Ca 的质量 = 69.1 g，Cl<sub>2</sub> 的质量 = 122 g；（b）Li 的质量 = 23.9 g，H<sub>2</sub> 的质量 = 3.48 g；（c）Al 的质量 = 31.0 g，Cl<sub>2</sub> 的质量 = 122 g；（d）Cr 的质量 = 59.8 g，Br<sub>2</sub> 的质量 = 276 g"
       }
     },
     {
@@ -449,10 +472,10 @@
       "cite": "quantitative",
       "figure": {
         "src": "/media/ch17/CNX_Chem_17_07_Water.jpg",
-        "alt": "This figure shows an apparatus used for electrolysis. A central chamber with an open top has a vertical column extending below that is nearly full of a clear, colorless liquid, which is labeled “H subscript 2 O plus H subscript 2 S O subscript 4.” A horizontal tube in the apparatus connects the central region to vertical columns to the left and right, each of which has a valve or stopcock at the top and a stoppered bottom. Bubbles are present near the surface of the liquid on each side of the apparatus, with the bubbles labeled as “O subscript 2 ( g )” on the left and “H subscript 2 ( g )” on the right.",
-        "caption": "Figure 17.19 The electrolysis of water produces stoichiometric amounts of oxygen gas at the anode and hydrogen at the cathode."
+        "alt": "该图显示了一种用于电解的装置。中央是一个顶部开口的腔室，下方延伸出一根竖直的柱，柱中几乎充满无色透明的液体，标注为“H₂O + H₂SO₄”。装置中的一根水平管把中央区域与左右两侧的竖直柱连通，每根竖直柱顶部有一个阀门或旋塞，底部有塞子。装置两侧液体表面附近都有气泡，左侧气泡标注为“O₂(g)”，右侧气泡标注为“H₂(g)”。",
+        "caption": "Figure 17.19 水的电解在阳极按化学计量的量产生氧气，在阴极产生氢气。"
       },
-      "prompt": "A current of 2.345 A passes through the cell shown in Figure 17.19 for 45 minutes. What is the volume of the hydrogen collected at room temperature if the pressure is exactly 1 atm? (Hint: Is hydrogen the only gas present above the water?)",
+      "prompt": "45 分钟内有 2.345 A 的电流通过图 17.19 所示的电解池。如果压强恰好为 1 atm，在室温下收集到的氢气体积是多少？（提示：水面上方的气体只有氢气吗？）",
       "answer": {
         "type": "number",
         "value": 0.79,

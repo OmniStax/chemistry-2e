@@ -47,11 +47,11 @@ const cyl = (g, x, y0, y1, rTop, rBot, color, extra, open = true, z = 0) => {
    electrons on the wire, hidden inside the source. place(k) sets them k spacings along. */
 function circuit(v, g, corners, src, nE, rc = 0.3) {
   const path = rounded(corners, rc);
-  v.pickable(tube(g, path, 0.025, PAL.ink), 'the wire of the external circuit');
-  v.pickable(F.mesh.box(g, src, [1.1, 0.46, 0.3], PAL.panel), 'the voltage source');
+  v.pickable(tube(g, path, 0.025, PAL.ink), '外电路的导线');
+  v.pickable(F.mesh.box(g, src, [1.1, 0.46, 0.3], PAL.panel), '电压源');
   F.mesh.box(g, src, [1.14, 0.5, 0.26], PAL.muted);
   const w = along(path), sp = w.L / nE;
-  const es = Array.from({ length: nE }, () => v.pickable(F.mesh.sphere(g, OFF, 0.05, F.el('e-')), 'an electron, e⁻, pushed through the wire by the source'));
+  const es = Array.from({ length: nE }, () => v.pickable(F.mesh.sphere(g, OFF, 0.05, F.el('e-')), '电子 e⁻，被电源推动着通过导线'));
   return (k) => es.forEach((m, i) => {
     const p = w.at((((i + k) * sp) % w.L + w.L) % w.L);
     put(m, Math.abs(p[0] - src[0]) < 0.58 && Math.abs(p[1] - src[1]) < 0.28 ? OFF : p);
@@ -86,7 +86,7 @@ function legend(cnv, items, gap) {
 ===================================================================== */
 (function () {
   const d = sim('sim-downs-cell');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: 'front', yaw: 0, pitch: 0.16 }, { label: 'above', yaw: 0, pitch: 1.1 }], h: 640, dist: 7.6, tilt: 0.16 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: '正视', yaw: 0, pitch: 0.16 }, { label: '俯视', yaw: 0, pitch: 1.1 }], h: 640, dist: 7.6, tilt: 0.16 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 100);
   grp.position.y = -0.45;
   const T = 6, NEV = 10, LIFE = 1.2, RISE = 0.9, T0 = 1.2, DT = 0.42;
@@ -110,25 +110,25 @@ function legend(cnv, items, gap) {
   function build() {
     if (!v.scene || palSig() === sig) return; sig = palSig();
     v.clear();
-    v.pickable(F.mesh.box(grp, [0, YB - 0.06, 0], [6.4, 0.1, 2.4], PAL.soft), 'bench');
-    v.pickable(F.mesh.box(grp, [0, (YB + YTOP) / 2, 0], [4.4, YTOP - YB, 1.6], PAL.ink, glass()), 'the tank');
-    v.pickable(F.mesh.box(grp, [0, (YB + YL) / 2, 0], [4.34, YL - YB - 0.02, 1.54], PAL.muted, LIQ), 'molten sodium chloride, Na⁺ and Cl⁻ ions in a liquid');
-    v.pickable(F.mesh.box(grp, [0, (YB + 0.22) / 2, 0], [0.04, 0.22 - YB, 1.56], PAL.ink, { transparent: true, opacity: 0.32, depthWrite: false }), 'the porous screen, which keeps the sodium and the chlorine apart');
-    v.pickable(F.mesh.box(grp, [XA, (EY0 + EY1) / 2, 0], [EW, EY1 - EY0, EW], F.el('C')), 'the carbon anode, where chloride ions are oxidized');
-    v.pickable(F.mesh.box(grp, [XC, (EY0 + EY1) / 2, 0], [EW, EY1 - EY0, EW], F.el('Fe')), 'the iron cathode, where sodium ions are reduced');
+    v.pickable(F.mesh.box(grp, [0, YB - 0.06, 0], [6.4, 0.1, 2.4], PAL.soft), '实验台');
+    v.pickable(F.mesh.box(grp, [0, (YB + YTOP) / 2, 0], [4.4, YTOP - YB, 1.6], PAL.ink, glass()), '容器');
+    v.pickable(F.mesh.box(grp, [0, (YB + YL) / 2, 0], [4.34, YL - YB - 0.02, 1.54], PAL.muted, LIQ), '熔融氯化钠，液体中的 Na⁺ 和 Cl⁻ 离子');
+    v.pickable(F.mesh.box(grp, [0, (YB + 0.22) / 2, 0], [0.04, 0.22 - YB, 1.56], PAL.ink, { transparent: true, opacity: 0.32, depthWrite: false }), '多孔隔板，使钠和氯保持分开');
+    v.pickable(F.mesh.box(grp, [XA, (EY0 + EY1) / 2, 0], [EW, EY1 - EY0, EW], F.el('C')), '碳阳极，氯离子在此被氧化');
+    v.pickable(F.mesh.box(grp, [XC, (EY0 + EY1) / 2, 0], [EW, EY1 - EY0, EW], F.el('Fe')), '铁阴极，钠离子在此被还原');
     wire = circuit(v, grp, [[XA, EY1, 0], [XA, YW, 0], [XC, YW, 0], [XC, EY1, 0]], [0, YW, 0], 16);
     const ion = (el, r, name) => { const m = v.pickable(F.mesh.sphere(grp, OFF, r, F.el(el), { transparent: true }), name); return m; };
-    const drop = () => { const m = v.pickable(F.mesh.sphere(grp, OFF, 0.07, F.el('Na'), { transparent: true }), 'a drop of liquid sodium, Na(l), rising from the cathode'); return m; };
+    const drop = () => { const m = v.pickable(F.mesh.sphere(grp, OFF, 0.07, F.el('Na'), { transparent: true }), '一滴液态钠 Na(l)，从阴极上升'); return m; };
     pools = {
-      cl: Array.from({ length: 8 }, () => ion('Cl', R_CL, 'a chloride ion, Cl⁻, drifting to the anode')),
-      na: Array.from({ length: 8 }, () => ion('Na', R_NA, 'a sodium ion, Na⁺, drifting to the cathode')),
-      cl2: Array.from({ length: 4 }, () => diatomic(v, grp, 'Cl', 0.075, 'a bubble of chlorine gas, Cl₂, rising from the anode')),
+      cl: Array.from({ length: 8 }, () => ion('Cl', R_CL, '氯离子 Cl⁻，向阳极漂移')),
+      na: Array.from({ length: 8 }, () => ion('Na', R_NA, '钠离子 Na⁺，向阴极漂移')),
+      cl2: Array.from({ length: 4 }, () => diatomic(v, grp, 'Cl', 0.075, '氯气气泡 Cl₂，从阳极上升')),
       drops: Array.from({ length: 8 }, drop),
     };
-    naPool = v.pickable(F.mesh.box(grp, [1.1, YL, 0], [1.98, 1, 1.5], F.el('Na'), { transparent: true, opacity: 0.4 }), 'liquid sodium gathered on the melt');
-    [['anode (+)', [XA - 1.5, 0.55, 0]], ['cathode (−)', [XC + 1.5, 0.55, 0]], ['porous screen', [0, -1.0, 0.82]], ['molten NaCl', [-3.05, -0.65, 0]], ['voltage source', [0, YW - 0.45, 0]]]
+    naPool = v.pickable(F.mesh.box(grp, [1.1, YL, 0], [1.98, 1, 1.5], F.el('Na'), { transparent: true, opacity: 0.4 }), '聚集在熔体上的液态钠');
+    [['阳极（+）', [XA - 1.5, 0.55, 0]], ['阴极（−）', [XC + 1.5, 0.55, 0]], ['多孔隔板', [0, -1.0, 0.82]], ['熔融 NaCl', [-3.05, -0.65, 0]], ['电压源', [0, YW - 0.45, 0]]]
       .forEach(([s, p]) => v.label(s, p, grp, 0));
-    v.headline('Chloride ions give up electrons at the anode, and sodium ions take them at the cathode.');
+    v.headline('氯离子在阳极失去电子，钠离子在阴极得到电子。');
   }
   function place(t) {
     Object.values(pools).flat().forEach((m) => put(m, OFF));
@@ -167,7 +167,7 @@ function legend(cnv, items, gap) {
     }
     const tex = `N_{\\text{e}^{-}} = N_{\\text{Na}} = 2\\,N_{\\text{Cl}_2}:\\quad ${2 * done} = ${2 * done} = 2 \\times ${done}`;
     if (tex !== lastTex) { lastTex = tex; ro.set(tex, undefined, { values: false }); }
-    legend(cnv, [['e-', 'electron, e⁻', 8], ['Cl', 'Cl⁻', 15], ['Cl2', 'Cl₂', 11], ['Na', 'Na⁺', 11], ['Na', 'Na(l)', 11]], 250);
+    legend(cnv, [['e-', '电子 e⁻', 8], ['Cl', 'Cl⁻', 15], ['Cl2', 'Cl₂', 11], ['Na', 'Na⁺', 11], ['Na', 'Na(l)', 11]], 250);
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
@@ -189,14 +189,14 @@ function legend(cnv, items, gap) {
 ===================================================================== */
 (function () {
   const d = sim('sim-water-electrolysis');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: 'front', yaw: 0, pitch: 0.12 }, { label: 'above', yaw: 0, pitch: 1.1 }], h: 760, dist: 9.8, tilt: 0.12 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: '正视', yaw: 0, pitch: 0.12 }, { label: '俯视', yaw: 0, pitch: 1.1 }], h: 760, dist: 9.8, tilt: 0.12 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 100);
   grp.position.y = -0.2;
   const T = 6, NEVMAX = 12, RISE = 0.9, VT = 1.229, VMAX = 3;
   const XA = -1.1, XC = 1.1, RA = 0.2, A0 = -1.2, A1 = 0.8, FULL = 0.78, YB = -2.0, YS = -1.77, YX = -0.65, YPT = -1.0;
   const PROF = [[0.09, 0.95], [0.2, 1.15], [0.42, 1.38], [0.52, 1.62], [0.48, 1.88], [0.3, 2.04], [0.13, 2.1], [0.13, 2.2]];
   const cy = cycle(() => T, 1.2);
-  const volt = F.ctl(d.controls, { label: '\\text{applied voltage}', cls: 'potential', min: 0, max: VMAX, step: 0.01, value: 2, unit: 'V', dec: 3, specials: [{ at: VT, label: '−E°cell' }], onInput: () => cy.reset() });
+  const volt = F.ctl(d.controls, { label: '\\text{所加电压}', cls: 'potential', min: 0, max: VMAX, step: 0.01, value: 2, unit: 'V', dec: 3, specials: [{ at: VT, label: '−E°cell' }], onInput: () => cy.reset() });
   const ro = F.readout(d);
   const rate = () => Math.max(0, (volt.v - VT) / (VMAX - VT));
   let sig = '', wire = null, liqA = null, liqC = null, resLiq = null, resAt = -1, oB = [], hB = [];
@@ -215,33 +215,33 @@ function legend(cnv, items, gap) {
   function build() {
     if (!v.scene || palSig() === sig) return; sig = palSig();
     v.clear(); resAt = -1;
-    v.pickable(F.mesh.box(grp, [0, YB - 0.06, 0], [6, 0.1, 2.2], PAL.soft), 'bench');
-    for (const [x, who] of [[XA, 'anode'], [XC, 'cathode']]) {
-      v.pickable(cyl(grp, x, A0, A1, RA, RA, PAL.ink, glass(0.05)), `the ${who} arm`);
+    v.pickable(F.mesh.box(grp, [0, YB - 0.06, 0], [6, 0.1, 2.2], PAL.soft), '实验台');
+    for (const [x, who] of [[XA, '阳极'], [XC, '阴极']]) {
+      v.pickable(cyl(grp, x, A0, A1, RA, RA, PAL.ink, glass(0.05)), `${who}一侧的玻璃管`);
       cyl(grp, x, A1, A1 + 0.2, 0.05, RA, PAL.ink, glass(0.05));
       cyl(grp, x, A1 + 0.2, 1.62, 0.04, 0.05, PAL.ink, glass(0.05));
-      v.pickable(F.mesh.box(grp, [x, 1.22, 0], [0.28, 0.07, 0.07], PAL.ink), 'a stopcock, closed');
-      v.pickable(F.mesh.sphere(grp, [x, 1.22, 0], 0.06, PAL.ink), 'a stopcock, closed');
-      v.pickable(cyl(grp, x, A0 - 0.22, A0, RA + 0.01, RA - 0.03, PAL.muted, {}, false), 'a rubber stopper');
-      v.pickable(F.mesh.stick(grp, [x, A0, 0], [x, YPT - 0.1, 0], 0.012, F.el('Pt')), who === 'anode' ? 'the platinum anode, where water is oxidized to oxygen' : 'the platinum cathode, where hydrogen ions are reduced to hydrogen');
-      v.pickable(F.mesh.box(grp, [x, YPT, 0], [0.2, 0.2, 0.02], F.el('Pt')), who === 'anode' ? 'the platinum anode, where water is oxidized to oxygen' : 'the platinum cathode, where hydrogen ions are reduced to hydrogen');
+      v.pickable(F.mesh.box(grp, [x, 1.22, 0], [0.28, 0.07, 0.07], PAL.ink), '旋塞，关闭');
+      v.pickable(F.mesh.sphere(grp, [x, 1.22, 0], 0.06, PAL.ink), '旋塞，关闭');
+      v.pickable(cyl(grp, x, A0 - 0.22, A0, RA + 0.01, RA - 0.03, PAL.muted, {}, false), '橡胶塞');
+      v.pickable(F.mesh.stick(grp, [x, A0, 0], [x, YPT - 0.1, 0], 0.012, F.el('Pt')), who === '阳极' ? '铂阳极，水在此被氧化为氧气' : '铂阴极，氢离子在此被还原为氢气');
+      v.pickable(F.mesh.box(grp, [x, YPT, 0], [0.2, 0.2, 0.02], F.el('Pt')), who === '阳极' ? '铂阳极，水在此被氧化为氧气' : '铂阴极，氢离子在此被还原为氢气');
     }
-    const name = 'water with sulfuric acid, H₂O + H₂SO₄';
+    const name = '含硫酸的水，H₂O + H₂SO₄';
     liqA = v.pickable(cyl(grp, XA, A0, A0 + 1, RA - 0.02, RA - 0.02, PAL.muted, LIQ_DEEP, false), name);
     liqC = v.pickable(cyl(grp, XC, A0, A0 + 1, RA - 0.02, RA - 0.02, PAL.muted, LIQ_DEEP, false), name);
     const cross = [[XA, YX, 0], [XC, YX, 0]];
-    v.pickable(tube(grp, cross, 0.09, PAL.ink, glass(0.05)), 'the cross tube');
+    v.pickable(tube(grp, cross, 0.09, PAL.ink, glass(0.05)), '横管');
     tube(grp, cross, 0.075, PAL.muted, LIQ_DEEP);
-    v.pickable(cyl(grp, 0, YX, PROF[0][1], 0.09, 0.09, PAL.ink, glass(0.05)), 'the central column');
+    v.pickable(cyl(grp, 0, YX, PROF[0][1], 0.09, 0.09, PAL.ink, glass(0.05)), '中央竖管');
     cyl(grp, 0, YX, PROF[0][1], 0.075, 0.075, PAL.muted, LIQ_DEEP, false);
     const bulb = new T3D.Mesh(new T3D.LatheGeometry(PROF.map(([r, h]) => new T3D.Vector2(r, h)), 40), F.mesh.mat(PAL.ink, glass(0.05)));
-    grp.add(bulb); v.pickable(bulb, 'the reservoir');
+    grp.add(bulb); v.pickable(bulb, '储液器');
     resLiq = new T3D.Mesh(upTo(1.4), F.mesh.mat(PAL.muted, LIQ_DEEP)); grp.add(resLiq); v.pickable(resLiq, name);
     wire = circuit(v, grp, [[XA, YPT - 0.1, 0], [XA, YS, 0], [XC, YS, 0], [XC, YPT - 0.1, 0]], [0, YS, 0.15], 18, 0.15);
-    oB = Array.from({ length: 4 }, () => diatomic(v, grp, 'O', 0.05, 'a bubble of oxygen gas, O₂, rising from the anode'));
-    hB = Array.from({ length: 8 }, () => diatomic(v, grp, 'H', 0.04, 'a bubble of hydrogen gas, H₂, rising from the cathode'));
-    [['anode (+)', [XA - 0.75, YPT, 0]], ['cathode (−)', [XC + 0.8, YPT, 0]], ['O<sub>2</sub>(<em>g</em>)', [XA - 0.65, 0.62, 0]], ['H<sub>2</sub>(<em>g</em>)', [XC + 0.65, 0.62, 0]],
-      ['H<sub>2</sub>O + H<sub>2</sub>SO<sub>4</sub>', [1.45, 1.5, 0]], ['voltage source', [0, YS - 0.42, 0.3]]].forEach(([s, p]) => v.label(s, p, grp, 0));
+    oB = Array.from({ length: 4 }, () => diatomic(v, grp, 'O', 0.05, '氧气气泡 O₂，从阳极上升'));
+    hB = Array.from({ length: 8 }, () => diatomic(v, grp, 'H', 0.04, '氢气气泡 H₂，从阴极上升'));
+    [['阳极（+）', [XA - 0.75, YPT, 0]], ['阴极（−）', [XC + 0.8, YPT, 0]], ['O<sub>2</sub>(<em>g</em>)', [XA - 0.65, 0.62, 0]], ['H<sub>2</sub>(<em>g</em>)', [XC + 0.65, 0.62, 0]],
+      ['H<sub>2</sub>O + H<sub>2</sub>SO<sub>4</sub>', [1.45, 1.5, 0]], ['电压源', [0, YS - 0.42, 0.3]]].forEach(([s, p]) => v.label(s, p, grp, 0));
   }
   function bubbles(list, x, per, k0, t, tk, level, seed) {
     for (let j = 0; j < per; j++) {
@@ -267,16 +267,16 @@ function legend(cnv, items, gap) {
         bubbles(hB, XC, 2, k, t, t1, LC, 5);
       }
       wire(4 * NEVMAX * xi);
-      const head = V > VT + 1e-9 ? 'Above 1.229 V, oxygen forms at the anode and twice its volume of hydrogen at the cathode.'
-        : V > VT - 1e-9 ? 'At 1.229 V, the applied voltage only balances the cell potential, and no gas forms.'
-          : 'Below 1.229 V, the source cannot decompose water.';
+      const head = V > VT + 1e-9 ? '高于 1.229 V 时，阳极生成氧气，阴极生成体积为其两倍的氢气。'
+        : V > VT - 1e-9 ? '在 1.229 V 时，所加电压只是与电池电势相抵，不生成气体。'
+          : '低于 1.229 V 时，电源不能分解水。';
       if (head !== lastHead) { lastHead = head; v.headline(head); }
       v.invalidate();
     }
     const rel = V > VT + 1e-9 ? '>' : V > VT - 1e-9 ? '=' : '<';
-    const tex = `\\text{applied voltage} = ${hue('potential', V.toFixed(3) + '\\ \\text{V}')} ${rel} ${hue('potential', '1.229\\ \\text{V}')} = -\\kEocell`;
-    if (tex !== lastTex) { lastTex = tex; ro.set(tex, 'Four electrons pass through the source for every O₂ and every two H₂, so the hydrogen arm fills twice as fast.'); }
-    legend(cnv, [['e-', 'electron, e⁻', 8], ['O2', 'O₂', 10], ['H2', 'H₂', 8]], 300);
+    const tex = `\\text{所加电压} = ${hue('potential', V.toFixed(3) + '\\ \\text{V}')} ${rel} ${hue('potential', '1.229\\ \\text{V}')} = -\\kEocell`;
+    if (tex !== lastTex) { lastTex = tex; ro.set(tex, '每生成一个 O₂ 和两个 H₂，就有四个电子通过电源，所以氢气一侧的管充满得快一倍。'); }
+    legend(cnv, [['e-', '电子 e⁻', 8], ['O2', 'O₂', 10], ['H2', 'H₂', 8]], 300);
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
@@ -297,7 +297,7 @@ function legend(cnv, items, gap) {
 ===================================================================== */
 (function () {
   const d = sim('sim-silver-plating');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: 'front', yaw: 0, pitch: 0.16 }, { label: 'above', yaw: 0, pitch: 1.1 }], h: 620, dist: 7.2, tilt: 0.16 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: '正视', yaw: 0, pitch: 0.16 }, { label: '俯视', yaw: 0, pitch: 1.1 }], h: 620, dist: 7.2, tilt: 0.16 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 100);
   grp.position.y = -0.4;
   const T = 6, LIFE = 1.0, FARADAY = 96485, M_AG = 107.9, M_MAX = 20 * 7200 / FARADAY * M_AG;
@@ -317,25 +317,25 @@ function legend(cnv, items, gap) {
   function build() {
     if (!v.scene || palSig() === sig) return; sig = palSig();
     v.clear();
-    v.pickable(F.mesh.box(grp, [0, YB - 0.06, 0], [5.4, 0.1, 2.6], PAL.soft), 'bench');
-    v.pickable(cyl(grp, 0, YB, YT, RB, RB, PAL.ink, glass()), 'the beaker');
+    v.pickable(F.mesh.box(grp, [0, YB - 0.06, 0], [5.4, 0.1, 2.6], PAL.soft), '实验台');
+    v.pickable(cyl(grp, 0, YB, YT, RB, RB, PAL.ink, glass()), '烧杯');
     const floor = new T3D.Mesh(new T3D.CircleGeometry(RB, 40), F.mesh.mat(PAL.ink, glass())); floor.rotation.x = -Math.PI / 2; floor.position.set(0, YB + 0.005, 0); grp.add(floor);
-    v.pickable(cyl(grp, 0, YB, YL, RB - 0.02, RB - 0.02, PAL.muted, LIQ, false), 'silver nitrate solution, AgNO₃(aq)');
-    const anode = 'the silver anode, which dissolves as Ag⁺';
+    v.pickable(cyl(grp, 0, YB, YL, RB - 0.02, RB - 0.02, PAL.muted, LIQ, false), '硝酸银溶液 AgNO₃(aq)');
+    const anode = '银阳极，以 Ag⁺ 的形式溶解';
     v.pickable(F.mesh.box(grp, [XA, (YL + SY1) / 2, 0], [SW, SY1 - YL, SD], F.el('Ag')), anode);
     strip = v.pickable(F.mesh.box(grp, [XA, (YL + SY0) / 2, 0], [SW, YL - SY0, SD], F.el('Ag')), anode);
-    const spoon = 'the spoon, of an inexpensive metal, the cathode';
+    const spoon = '汤匙，由廉价金属制成，是阴极';
     v.pickable(F.mesh.stick(grp, [XC, HY0, 0], [XC, HY1, 0], HR, PAL.muted), spoon);
     v.pickable(F.mesh.sphere(grp, [XC, HY1, 0], 0.06, PAL.muted), spoon);
     bowl(PAL.muted, {}, 0, spoon);
-    const coatName = 'silver plated onto the spoon';
+    const coatName = '镀到汤匙上的银';
     coat = [v.pickable(F.mesh.stick(grp, [XC, HY0 + 0.05, 0], [XC, YL, 0], HR + 0.008, F.el('Ag'), { transparent: true }), coatName), bowl(F.el('Ag'), { transparent: true }, 0.012, coatName)];
     coatR = coat[0].scale.x;
     wire = circuit(v, grp, [[XA, SY1, 0], [XA, YW, 0], [XC, YW, 0], [XC, HY1, 0]], [0, YW, 0], 14);
-    ions = Array.from({ length: 12 }, () => v.pickable(F.mesh.sphere(grp, OFF, 0.078, F.el('Ag'), { transparent: true }), 'a silver ion, Ag⁺, moving from the anode to the spoon'));
-    [['silver (anode, +)', [-RB - 0.75, 0.45, 0]], ['spoon (cathode, −)', [RB + 0.8, 0.45, 0]], ['AgNO<sub>3</sub>(<em>aq</em>)', [0, YB - 0.28, RB + 0.1]], ['voltage source', [1.35, YW, 0]]]
+    ions = Array.from({ length: 12 }, () => v.pickable(F.mesh.sphere(grp, OFF, 0.078, F.el('Ag'), { transparent: true }), '银离子 Ag⁺，从阳极移向汤匙'));
+    [['银（阳极，+）', [-RB - 0.75, 0.45, 0]], ['汤匙（阴极，−）', [RB + 0.8, 0.45, 0]], ['AgNO<sub>3</sub>(<em>aq</em>)', [0, YB - 0.28, RB + 0.1]], ['电压源', [1.35, YW, 0]]]
       .forEach(([s, p]) => v.label(s, p, grp, 0));
-    v.headline('Silver leaves the anode as Ag<sup>+</sup> and plates onto the spoon at the cathode.');
+    v.headline('银以 Ag<sup>+</sup> 的形式离开阳极，并在阴极处镀到汤匙上。');
   }
   /* where the ion of event k leaves the strip's right face and where it lands on the spoon */
   function ends(k) {
@@ -368,9 +368,9 @@ function legend(cnv, items, gap) {
       v.invalidate();
     }
     const tex = `\\kn = \\frac{\\kI\\,\\kt}{\\kFaraday} = \\frac{(${hue('current', I.toFixed(2) + '\\ \\text{A}')})(${hue('time', Math.round(tm) + '\\ \\text{s}')})}{${hue('charge', '96\\,485\\ \\text{C/mol}')}} = ${hue('amount', sig4(n) + '\\ \\text{mol}')}`;
-    const note = `One mole of silver plates onto the spoon for each mole of electrons, so the spoon has gained $${hue('mass', sig4(m) + '\\ \\text{g}')}$.`;
+    const note = `每摩尔电子使一摩尔银镀到汤匙上，所以汤匙增加了 $${hue('mass', sig4(m) + '\\ \\text{g}')}$。`;
     if (tex !== lastTex) { lastTex = tex; ro.set(tex, note, { values: false }); }
-    legend(cnv, [['e-', 'electron, e⁻', 8], ['Ag', 'Ag⁺', 12]], 300);
+    legend(cnv, [['e-', '电子 e⁻', 8], ['Ag', 'Ag⁺', 12]], 300);
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();

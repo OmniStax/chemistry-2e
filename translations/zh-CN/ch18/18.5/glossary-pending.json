@@ -1,0 +1,136 @@
+{
+ "terms": [
+  {
+   "source": "water gas shift reaction",
+   "target": "水煤气变换反应",
+   "authority": "textbook",
+   "note": "Textbook usage (the book names the CO + H₂O reaction).",
+   "section": "18.5"
+  },
+  {
+   "source": "chloramine",
+   "target": "氯胺",
+   "authority": "cnterm-chemistry",
+   "note": "化学名词: 氯胺 (NH₂Cl).",
+   "section": "18.5",
+   "confirm": "termonline"
+  },
+  {
+   "source": "phosphonium",
+   "target": "鏻",
+   "authority": "cnterm-chemistry",
+   "note": "化学名词: 鏻 (PH₄⁺); written 鏻化合物 for phosphonium compounds.",
+   "section": "18.5",
+   "confirm": "termonline"
+  },
+  {
+   "source": "fumigant",
+   "target": "熏蒸剂",
+   "authority": "textbook",
+   "note": "Textbook usage.",
+   "section": "18.5"
+  },
+  {
+   "source": "hydrochlorofluorocarbon",
+   "target": "氢氯氟烃",
+   "authority": "cnterm-chemistry",
+   "note": "化学名词: 氢氯氟烃 (HCFC).",
+   "section": "18.5",
+   "confirm": "termonline"
+  },
+  {
+   "source": "hydrogen phosphite ion",
+   "target": "亚磷酸氢根离子",
+   "authority": "cnterm-chemistry",
+   "note": "HPO₃²⁻; phosphite is 亚磷酸盐 in the shared glossary.",
+   "section": "18.5",
+   "confirm": "termonline"
+  },
+  {
+   "source": "pickle liquor",
+   "target": "酸洗液",
+   "authority": "textbook",
+   "note": "Textbook usage (an acid used to remove oxide coating).",
+   "section": "18.5"
+  },
+  {
+   "source": "oxygen-hydrogen torch",
+   "target": "氢氧焰炬",
+   "authority": "textbook",
+   "note": "Textbook usage.",
+   "section": "18.5"
+  },
+  {
+   "source": "smelling salts",
+   "target": "嗅盐",
+   "authority": "textbook",
+   "note": "Textbook usage.",
+   "section": "18.5"
+  },
+  {
+   "source": "heavy water",
+   "target": "重水",
+   "authority": "cnterm-chemistry",
+   "note": "化学名词: 重水 (D₂O).",
+   "section": "18.5",
+   "confirm": "termonline"
+  },
+  {
+   "source": "elemental",
+   "target": "单质",
+   "authority": "cnterm-chemistry",
+   "note": "化学名词: 单质; elemental hydrogen is 单质氢.",
+   "section": "18.5",
+   "confirm": "termonline"
+  },
+  {
+   "source": "free energy of formation",
+   "target": "生成自由能",
+   "authority": "cnterm-chemistry",
+   "note": "The span of standard-free-energy-of-formation; the source omits 'standard', the shard row standard free energy of formation is 标准生成自由能.",
+   "section": "18.5"
+  },
+  {
+   "source": "reduction potential",
+   "target": "还原电势",
+   "authority": "cnterm-chemistry",
+   "note": "Same target as the ch18.1 pending row; the concept standard-electrode-potential is 标准电极电势.",
+   "section": "18.5"
+  },
+  {
+   "source": "phosphate fertilizer",
+   "target": "磷肥",
+   "authority": "textbook",
+   "note": "Textbook usage.",
+   "section": "18.5"
+  },
+  {
+   "source": "olfactory nerve",
+   "target": "嗅神经",
+   "authority": "cnterm-chemistry",
+   "note": "Anatomical term, standard usage.",
+   "section": "18.5"
+  },
+  {
+   "source": "sulfide ion",
+   "target": "硫离子",
+   "authority": "textbook",
+   "note": "S²⁻; sulfide is 硫化物 in the shared glossary, the ion is 硫离子 in textbook usage.",
+   "section": "18.5"
+  },
+  {
+   "source": "ionic phosphide",
+   "target": "离子型磷化物",
+   "authority": "textbook",
+   "note": "Built from 离子型氢化物 (ch18 shard) and 磷化物 (shared glossary).",
+   "section": "18.5"
+  },
+  {
+   "source": "hydride ion",
+   "target": "氢化物离子",
+   "authority": "textbook",
+   "note": "H⁻; follows 氢化物 (ch18 shard).",
+   "section": "18.5"
+  }
+ ]
+}

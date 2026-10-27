@@ -23,22 +23,22 @@ const clamp01 = (x) => Math.max(0, Math.min(1, x));
   const G = { l: 120, r: 1010, t: 140, b: 600 };
   const MO_RED = '#d9342b', MO_YELLOW = '#f2c12e', LITMUS_RED = '#c8323c', LITMUS_BLUE = '#3a56b8', PHPH_PINK = '#e0479e';
   const IND = {
-    mo: { name: 'methyl orange', lo: 3.0, hi: 4.2, acid: () => F.fact(MO_RED), base: () => F.fact(MO_YELLOW), words: ['red', 'orange', 'yellow'] },
-    litmus: { name: 'litmus', lo: 4.6, hi: 8.0, acid: () => F.fact(LITMUS_RED), base: () => F.fact(LITMUS_BLUE), words: ['red', 'purple', 'blue'] },
-    php: { name: 'phenolphthalein', lo: 8.4, hi: 10.0, acid: () => alpha(F.fact(PHPH_PINK), 0), base: () => F.fact(PHPH_PINK), words: ['colorless', 'pale pink', 'pink'] },
+    mo: { name: '甲基橙', lo: 3.0, hi: 4.2, acid: () => F.fact(MO_RED), base: () => F.fact(MO_YELLOW), words: ['红色', '橙色', '黄色'] },
+    litmus: { name: '石蕊', lo: 4.6, hi: 8.0, acid: () => F.fact(LITMUS_RED), base: () => F.fact(LITMUS_BLUE), words: ['红色', '紫色', '蓝色'] },
+    php: { name: '酚酞', lo: 8.4, hi: 10.0, acid: () => alpha(F.fact(PHPH_PINK), 0), base: () => F.fact(PHPH_PINK), words: ['无色', '淡粉红色', '粉红色'] },
   };
   const REF = { strong: 'strong-titration', weak: 'weak-titration' };
   const V = F.ctl(d.controls, {
     label: '\\kV', cls: 'volume', min: 0, max: 50, step: 0.05, value: 25, unit: 'mL', dec: 2, detents: [0, 37.5],
-    aria: 'volume of 0.100 M NaOH added, in milliliters',
-    specials: [{ at: VEQ / 2, label: 'half-equivalence' }, { at: VEQ, label: 'equivalence' }],
+    aria: '加入的 0.100 M NaOH 的体积，单位为毫升',
+    specials: [{ at: VEQ / 2, label: '半化学计量点' }, { at: VEQ, label: '化学计量点' }],
   });
   const PK = F.ctl(d.controls, {
     label: '\\kpKa', cls: 'equilibrium-constant', min: 3, max: 9, step: 0.01, value: 4.74, unit: '', dec: 2,
-    detents: [{ v: 4.74, label: 'CH₃CO₂H' }], aria: 'pKa of the weak acid',
+    detents: [{ v: 4.74, label: 'CH₃CO₂H' }], aria: '弱酸的 pKa',
   });
-  const acid = F.choice(d.controls, { label: '\\text{acid}', options: [{ value: 'strong', label: 'strong acid' }, { value: 'weak', label: 'weak acid' }], value: 'strong', aria: 'the acid titrated' });
-  const ind = F.select(d.controls, { label: '\\text{indicator}', options: Object.keys(IND).map((k) => ({ value: k, label: IND[k].name })), value: 'mo', aria: 'the indicator in the flask' });
+  const acid = F.choice(d.controls, { label: '\\text{酸}', options: [{ value: 'strong', label: '强酸' }, { value: 'weak', label: '弱酸' }], value: 'strong', aria: '被滴定的酸' });
+  const ind = F.select(d.controls, { label: '\\text{指示剂}', options: Object.keys(IND).map((k) => ({ value: k, label: IND[k].name })), value: 'mo', aria: '烧瓶中的指示剂' });
   const ro = F.readout(d);
   let hits = [];
   F.hover(d.stage, () => hits);
@@ -81,7 +81,7 @@ const clamp01 = (x) => Math.max(0, Math.min(1, x));
   function draw() {
     const { ctx, H } = begin(d.c), v = V.v, pKa = PK.v, which = acid.value, ic = IND[ind.value];
     const cV = C('volume'), cP = C('concentration');
-    const g = F.axes(ctx, G, [0, 50], [0, 14], { nx: 10, ny: 14, xl: 'volume of 0.100 M NaOH added (mL)', xc: cV, yl: 'pH', yc: cP });
+    const g = F.axes(ctx, G, [0, 50], [0, 14], { nx: 10, ny: 14, xl: '加入的 0.100 M NaOH 的体积（mL）', xc: cV, yl: 'pH', yc: cP });
     const { X, Y } = g;
     hits = [];
     /* each indicator's color-change interval, shaded from its acid color to its base color */
@@ -90,7 +90,7 @@ const clamp01 = (x) => Math.max(0, Math.min(1, x));
         const s = IND[key], grad = ctx.createLinearGradient(0, Y(s.lo), 0, Y(s.hi));
         grad.addColorStop(0, alpha(s.acid(), 0.38)); grad.addColorStop(1, alpha(s.base(), 0.38));
         ctx.save(); ctx.fillStyle = grad; ctx.fillRect(G.l + 1, Y(s.hi), G.r - G.l - 1, Y(s.lo) - Y(s.hi)); ctx.restore();
-        text(ctx, `${s.name} range`, G.r - 14, (Y(s.lo) + Y(s.hi)) / 2, PAL.ink, { size: 20, align: 'right', bg: PAL.panel });
+        text(ctx, `${s.name}变色区间`, G.r - 14, (Y(s.lo) + Y(s.hi)) / 2, PAL.ink, { size: 20, align: 'right', bg: PAL.panel });
       }, [0, 0]);
     }
     /* the titrant volumes over which the chosen sample turns the indicator, on the volume axis */
@@ -99,9 +99,9 @@ const clamp01 = (x) => Math.max(0, Math.min(1, x));
       const x0 = X(v0), x1 = Math.max(X(v1), x0 + 4), grad = ctx.createLinearGradient(x0, 0, x1, 0);
       grad.addColorStop(0, ic.acid()); grad.addColorStop(1, ic.base());
       ctx.save(); ctx.fillStyle = grad; ctx.fillRect(x0, G.b - 14, x1 - x0, 11); ctx.strokeStyle = alpha(PAL.ink, 0.5); ctx.lineWidth = 1.5; ctx.strokeRect(x0, G.b - 14, x1 - x0, 11); ctx.restore();
-      hits.push({ x: (x0 + x1) / 2, y: G.b - 9, r: Math.max(14, (x1 - x0) / 2), name: `${ic.name} changes color from ${v0.toFixed(2)} to ${v1.toFixed(2)} mL` });
+      hits.push({ x: (x0 + x1) / 2, y: G.b - 9, r: Math.max(14, (x1 - x0) / 2), name: `${ic.name}在 ${v0.toFixed(2)} 至 ${v1.toFixed(2)} mL 之间变色` });
     }
-    const ph = Math.abs(pKa - 4.74) < 0.005 ? 'acetic acid' : 'weak acid';
+    const ph = Math.abs(pKa - 4.74) < 0.005 ? '乙酸' : '弱酸';
     const pExact = pHof(v, which, pKa), shade = clamp01((pExact - ic.lo) / (ic.hi - ic.lo)), word = ic.words[shade <= 0.15 ? 0 : shade >= 0.85 ? 2 : 1];
     /* the readout: the acid's own equation before the equivalence point, the excess hydroxide's from it on */
     const st = state(v, which, pKa), past = v >= VEQ - 1e-9;
@@ -120,29 +120,29 @@ const clamp01 = (x) => Math.max(0, Math.min(1, x));
       tex = `\\kpH = \\kpKa + \\log\\frac{\\kconcAm}{\\kconcHA} = \\mk{pk}{${hue('equilibrium-constant', pk)}} + \\log\\frac{\\mk{a}{${hue('concentration', a.tex)}}}{\\mk{ha}{${hue('concentration', ha.tex)}}} = \\mk{p}{${hue('concentration', p.toFixed(2))}}`;
     }
     const to = (x) => x.toFixed(2);
-    ro.set(tex, `${ic.name[0].toUpperCase() + ic.name.slice(1)} changes from ${ic.words[0]} to ${ic.words[2]} between ${to(v0)} and ${to(v1)} mL of NaOH.`, { form: `${which}-${past}` });
-    const stage = v <= 1e-9 ? 'the initial state' : Math.abs(v - VEQ / 2) < 1e-9 ? 'halfway to the equivalence point' : v < VEQ - 1e-9 ? 'before the equivalence point' : past && v <= VEQ + 1e-9 ? 'the equivalence point' : 'past the equivalence point';
-    const sample = which === 'strong' ? 'HCl' : ph;
-    const lines = topline(ctx, `At ${to(v)} mL of NaOH, ${stage}, the ${sample} solution is at pH ${to(p)} and ${ic.name} is ${word}.`);
+    ro.set(tex, `${ic.name}在加入 ${to(v0)} 至 ${to(v1)} mL NaOH 之间由${ic.words[0]}变为${ic.words[2]}。`, { form: `${which}-${past}` });
+    const stage = v <= 1e-9 ? '初始状态' : Math.abs(v - VEQ / 2) < 1e-9 ? '半化学计量点' : v < VEQ - 1e-9 ? '化学计量点之前' : past && v <= VEQ + 1e-9 ? '化学计量点' : '化学计量点之后';
+    const sample = which === 'strong' ? 'HCl ' : ph;
+    const lines = topline(ctx, `加入 ${to(v)} mL NaOH，${stage}，${sample}溶液的 pH 为 ${to(p)}，${ic.name}呈${word}。`);
     const lab = F.labeller(ctx, H, { headline: lines });
-    const bandW = F.measure(ctx, `${ic.name} range`, { size: 20 }), bandY = (Y(ic.lo) + Y(ic.hi)) / 2;
+    const bandW = F.measure(ctx, `${ic.name}变色区间`, { size: 20 }), bandY = (Y(ic.lo) + Y(ic.hi)) / 2;
     lab.block(G.r - 24 - bandW, bandY - 16, G.r, bandY + 16);
-    const weakName = Math.abs(pKa - 4.74) < 0.005 ? 'CH_{3}CO_{2}H' : 'weak acid HA';
+    const weakName = Math.abs(pKa - 4.74) < 0.005 ? 'CH_{3}CO_{2}H' : '弱酸 HA';
     for (const key of ['weak', 'strong']) {
       const w = acid.mix((s) => (s === key ? 1 : 0)), col = F.ref(REF[key]);
       F.faded(ctx, 0.4 + 0.6 * w, [0, 0], () => F.curve(ctx, (t) => pHof(warp(t), key, pKa), -1, 1, (t) => X(warp(t)), Y, col, 3 + 2 * w, 420));
       const pe = pHof(VEQ, key, pKa);
       dot(ctx, X(VEQ), Y(pe), col, true, 7);
-      lab.add(`equivalence point pH, ${pe.toFixed(2)}`, X(VEQ), Y(pe), key === 'weak' ? -0.9 : -1, key === 'weak' ? -0.44 : 0, PAL.ink, 20, 40);
+      lab.add(`化学计量点 pH，${pe.toFixed(2)}`, X(VEQ), Y(pe), key === 'weak' ? -0.9 : -1, key === 'weak' ? -0.44 : 0, PAL.ink, 20, 40);
       lab.add(key === 'weak' ? weakName : 'HCl', X(15), Y(pHof(15, key, pKa)), 0, -1, col, 22, 26);
-      hits.push({ x: X(VEQ), y: Y(pe), r: 16, name: `equivalence point of the ${key === 'weak' ? 'weak' : 'strong'} acid titration, pH ${pe.toFixed(2)}` });
+      hits.push({ x: X(VEQ), y: Y(pe), r: 16, name: `${key === 'weak' ? '弱酸' : '强酸'}滴定的化学计量点，pH ${pe.toFixed(2)}` });
     }
-    hits.push({ x: X(VEQ / 2), y: Y(pHof(VEQ / 2, 'weak', pKa)), r: 14, name: `half-equivalence point of the ${ph} titration, where pH = pKa = ${pKa.toFixed(2)}` });
+    hits.push({ x: X(VEQ / 2), y: Y(pHof(VEQ / 2, 'weak', pKa)), r: 14, name: `${ph}滴定的半化学计量点，此处 pH = pKa = ${pKa.toFixed(2)}` });
     /* the chosen sample now */
     const pNow = acid.mix((s) => pHof(v, s, pKa)), mx = X(v), my = Y(pNow), mc = acid.mixColor((s) => F.ref(REF[s]));
     line(ctx, mx, my + 10, mx, G.b, alpha(cV, 0.7), 2, [4, 8]);
     dot(ctx, mx, my, mc, true, 9);
-    hits.push({ x: mx, y: my, r: 16, name: `the ${which === 'strong' ? 'HCl' : ph} solution after ${v.toFixed(2)} mL of NaOH` });
+    hits.push({ x: mx, y: my, r: 16, name: `加入 ${v.toFixed(2)} mL NaOH 后的${sample}溶液` });
     lab.flush();
 
     /* the buret over the flask, flat: the titrant level falls as the flask fills */
@@ -153,7 +153,7 @@ const clamp01 = (x) => Math.max(0, Math.min(1, x));
     ctx.moveTo(cx + bw, top); ctx.lineTo(cx + bw, bt - 40); ctx.lineTo(cx + 4, bt); ctx.lineTo(cx + 4, bt + 30); ctx.stroke(); ctx.restore();
     line(ctx, cx - 30, bt - 18, cx + 30, bt - 18, PAL.ink, 5);
     for (let m = 0; m <= 50; m += 10) { const yy = top + (m / 50) * (bt - 40 - top); line(ctx, cx - bw, yy, cx - bw + 9, yy, PAL.ink, 2); }
-    hits.push({ x: cx, y: (top + bt) / 2, r: 40, name: `buret of 0.100 M NaOH, ${v.toFixed(2)} mL delivered` });
+    hits.push({ x: cx, y: (top + bt) / 2, r: 40, name: `0.100 M NaOH 滴定管，已放出 ${v.toFixed(2)} mL` });
     const half = (y) => (y <= ys ? wn : wn + (wb - wn) * (y - ys) / (yb - ys));
     const level = yb - 44 - (v / 50) * 120;
     const liquid = (fill, a) => { ctx.save(); ctx.globalAlpha *= a; ctx.fillStyle = fill; ctx.beginPath(); ctx.moveTo(cx - half(level), level); ctx.lineTo(cx + half(level), level); ctx.lineTo(cx + wb, yb); ctx.lineTo(cx - wb, yb); ctx.closePath(); ctx.fill(); ctx.restore(); };
@@ -161,7 +161,7 @@ const clamp01 = (x) => Math.max(0, Math.min(1, x));
     liquid(ind.mixColor((k) => tint(k, pExact)), 0.7);
     ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.lineJoin = 'round'; ctx.beginPath();
     ctx.moveTo(cx - wn - 8, yl); ctx.lineTo(cx - wn, yl + 8); ctx.lineTo(cx - wn, ys); ctx.lineTo(cx - wb, yb); ctx.lineTo(cx + wb, yb); ctx.lineTo(cx + wn, ys); ctx.lineTo(cx + wn, yl + 8); ctx.lineTo(cx + wn + 8, yl); ctx.stroke(); ctx.restore();
-    hits.push({ x: cx, y: (ys + yb) / 2, r: 80, name: `flask of 25.00 mL of 0.100 M ${which === 'strong' ? 'HCl' : ph} with ${ic.name}, ${word}, ${(VA + v).toFixed(2)} mL in all` });
+    hits.push({ x: cx, y: (ys + yb) / 2, r: 80, name: `烧瓶中 25.00 mL 0.100 M ${sample}溶液加${ic.name}，呈${word}，共 ${(VA + v).toFixed(2)} mL` });
 
   }
   register(d.fig, { update: () => {}, draw });

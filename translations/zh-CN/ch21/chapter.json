@@ -1,7 +1,7 @@
 {
  "id": "21",
  "dir": "ch21",
- "title": "Nuclear Chemistry",
+ "title": "核化学",
  "intro": {
   "module": "m68850",
   "slug": "21-introduction"
@@ -10,37 +10,37 @@
   {
    "id": "21.1",
    "module": "m68851",
-   "title": "Nuclear Structure and Stability",
+   "title": "核结构与稳定性",
    "slug": "21-1-nuclear-structure-and-stability"
   },
   {
    "id": "21.2",
    "module": "m68852",
-   "title": "Nuclear Equations",
+   "title": "核反应方程",
    "slug": "21-2-nuclear-equations"
   },
   {
    "id": "21.3",
    "module": "m68854",
-   "title": "Radioactive Decay",
+   "title": "放射性衰变",
    "slug": "21-3-radioactive-decay"
   },
   {
    "id": "21.4",
    "module": "m68856",
-   "title": "Transmutation and Nuclear Energy",
+   "title": "嬗变与核能",
    "slug": "21-4-transmutation-and-nuclear-energy"
   },
   {
    "id": "21.5",
    "module": "m68857",
-   "title": "Uses of Radioisotopes",
+   "title": "放射性同位素的用途",
    "slug": "21-5-uses-of-radioisotopes"
   },
   {
    "id": "21.6",
    "module": "m68858",
-   "title": "Biological Effects of Radiation",
+   "title": "辐射的生物效应",
    "slug": "21-6-biological-effects-of-radiation"
   }
  ],
@@ -48,7 +48,7 @@
   {
    "sym": "d",
    "concept": "density",
-   "meaning": "the density of a neutron star or a nucleus, its mass divided by its volume",
+   "meaning": "中子星或原子核的密度，即其质量除以体积",
    "unit": "kg/m³",
    "section": "21.1",
    "anchor": "21.1-ex-neutron-star"
@@ -56,7 +56,7 @@
   {
    "sym": "m",
    "concept": "mass",
-   "meaning": "the mass of the matter converted into energy, such as the mass defect of a nucleus",
+   "meaning": "转化为能量的物质的质量，如原子核的质量亏损",
    "unit": "kg",
    "section": "21.1",
    "anchor": "21.1-binding"
@@ -64,7 +64,7 @@
   {
    "sym": "V",
    "concept": "volume",
-   "meaning": "the volume of a sphere, four-thirds of π times the cube of its radius",
+   "meaning": "球的体积，等于三分之四乘以 π 再乘以半径的立方",
    "unit": "m³",
    "section": "21.1",
    "anchor": "21.1-ex-neutron-star"
@@ -72,7 +72,7 @@
   {
    "sym": "r",
    "type": "length",
-   "meaning": "the radius of a neutron star or a nucleus treated as a sphere",
+   "meaning": "视为球体的中子星或原子核的半径",
    "unit": "m",
    "section": "21.1",
    "anchor": "21.1-ex-neutron-star"
@@ -80,7 +80,7 @@
   {
    "sym": "E",
    "concept": "energy-and-work",
-   "meaning": "the energy that results when matter is converted into energy, such as the binding energy of a nucleus",
+   "meaning": "物质转化为能量时产生的能量，如原子核的结合能",
    "unit": "J or MeV",
    "section": "21.1",
    "anchor": "21.1-binding"
@@ -88,7 +88,7 @@
   {
    "sym": "c",
    "type": "velocity",
-   "meaning": "the speed of light in a vacuum, 2.998 × 10⁸ m/s",
+   "meaning": "真空中的光速，2.998 × 10⁸ m/s",
    "unit": "m/s",
    "section": "21.1",
    "anchor": "21.1-binding"
@@ -96,7 +96,7 @@
   {
    "sym": "t_half",
    "concept": "radioactive-half-life",
-   "meaning": "the half-life of a radioisotope, the time required for half of the atoms in a sample to decay",
+   "meaning": "放射性同位素的半衰期，即样品中一半原子发生衰变所需的时间",
    "unit": "y",
    "section": "21.3",
    "anchor": "21.3-half-lives"
@@ -104,7 +104,7 @@
   {
    "sym": "λ_decay",
    "concept": "decay-constant",
-   "meaning": "the decay constant of a radioisotope, its first-order rate constant",
+   "meaning": "放射性同位素的衰变常数，即其一级速率常数",
    "unit": "y⁻¹",
    "section": "21.3",
    "anchor": "21.3-half-lives"
@@ -112,28 +112,28 @@
   {
    "sym": "rate",
    "concept": "radioactive-decay-rate",
-   "meaning": "the decay rate of a radioactive sample, called its activity when stated in nuclear decays per second",
+   "meaning": "放射性样品的衰变速率，以每秒核衰变次数表示时称为活度",
    "unit": "decays/s",
    "section": "21.3",
    "anchor": "21.3-half-lives"
   },
   {
    "sym": "N_particles",
-   "meaning": "the number of nuclei of the radioisotope in the sample",
+   "meaning": "样品中该放射性同位素的原子核数",
    "unit": "none",
    "section": "21.3",
    "anchor": "21.3-half-lives"
   },
   {
    "sym": "N_0",
-   "meaning": "the initial number of nuclei or moles of the isotope",
+   "meaning": "同位素的原子核数或物质的量的初始值",
    "unit": "none",
    "section": "21.3",
    "anchor": "21.3-half-lives"
   },
   {
    "sym": "N_t",
-   "meaning": "the number of nuclei or moles of the isotope remaining at time t",
+   "meaning": "时刻 t 剩余的同位素的原子核数或物质的量",
    "unit": "none",
    "section": "21.3",
    "anchor": "21.3-half-lives"
@@ -141,7 +141,7 @@
   {
    "sym": "t",
    "concept": "time",
-   "meaning": "the time elapsed since the decay began, such as the age of an object found by radiometric dating",
+   "meaning": "衰变开始以来经过的时间，如用放射性测年法测得的物体的年龄",
    "unit": "y",
    "section": "21.3",
    "anchor": "21.3-half-lives"
@@ -149,7 +149,7 @@
   {
    "sym": "activity",
    "concept": "radioactive-decay-rate",
-   "meaning": "the activity of a radioactive sample, its number of decays per second",
+   "meaning": "放射性样品的活度，即其每秒衰变的次数",
    "unit": "Bq or Ci",
    "section": "21.6",
    "anchor": "21.6-ex-activity"
@@ -157,7 +157,7 @@
   {
    "sym": "λ_decay",
    "concept": "decay-constant",
-   "meaning": "the decay constant of a radioisotope, ln 2 divided by its half-life",
+   "meaning": "放射性同位素的衰变常数，等于 ln 2 除以其半衰期",
    "unit": "y⁻¹",
    "section": "21.6",
    "anchor": "21.6-ex-activity"
@@ -165,14 +165,14 @@
   {
    "sym": "t_half",
    "concept": "radioactive-half-life",
-   "meaning": "the half-life of a radioisotope, the time required for half of the atoms in a sample to decay",
+   "meaning": "放射性同位素的半衰期，即样品中一半原子发生衰变所需的时间",
    "unit": "y",
    "section": "21.6",
    "anchor": "21.6-ex-activity"
   },
   {
    "sym": "N_particles",
-   "meaning": "the number of nuclei of the radioisotope in the sample",
+   "meaning": "样品中该放射性同位素的原子核数",
    "unit": "none",
    "section": "21.6",
    "anchor": "21.6-ex-activity"
@@ -180,7 +180,7 @@
   {
    "sym": "t",
    "concept": "time",
-   "meaning": "a time: the time a part of the head spends in the beam of a cobalt-60 machine, or the time over which charge reaches a plate of a smoke detector",
+   "meaning": "一段时间：头部某部位处于钴-60 机器射束中的时间，或电荷到达烟雾探测器极板所经历的时间",
    "unit": "min or s",
    "section": "21.5",
    "redefines": true,
@@ -189,7 +189,7 @@
   {
    "sym": "I",
    "concept": "electric-current",
-   "meaning": "the current through the ionization chamber of a smoke detector",
+   "meaning": "烟雾探测器电离室中的电流",
    "unit": "A",
    "section": "21.5",
    "anchor": "21.5-other-uses"
@@ -197,7 +197,7 @@
   {
    "sym": "Q_charge",
    "type": "charge",
-   "meaning": "the charge the positive ions carry to the negative plate of the chamber in a time t",
+   "meaning": "正离子在时间 t 内带到电离室负极板上的电荷",
    "unit": "C",
    "section": "21.5",
    "anchor": "21.5-other-uses"
@@ -205,7 +205,7 @@
   {
    "sym": "E",
    "concept": "energy-and-work",
-   "meaning": "the energy that results when matter is converted into energy, such as the binding energy of a nucleus",
+   "meaning": "物质转化为能量时产生的能量，如原子核的结合能",
    "unit": "J or MeV",
    "section": "21.2",
    "anchor": "21.2-particles"
@@ -213,7 +213,7 @@
   {
    "sym": "m",
    "concept": "mass",
-   "meaning": "the mass of the matter converted into energy, such as the mass defect of a nucleus",
+   "meaning": "转化为能量的物质的质量，如原子核的质量亏损",
    "unit": "kg",
    "section": "21.2",
    "anchor": "21.2-particles"
@@ -221,7 +221,7 @@
   {
    "sym": "c",
    "type": "velocity",
-   "meaning": "the speed of light in a vacuum, 2.998 × 10⁸ m/s",
+   "meaning": "真空中的光速，2.998 × 10⁸ m/s",
    "unit": "m/s",
    "section": "21.2",
    "anchor": "21.2-particles"
@@ -230,7 +230,7 @@
    "sym": "E",
    "concept": "photon-energy",
    "type": "energy",
-   "meaning": "the energy of one photon of electromagnetic radiation, Planck’s constant times its frequency",
+   "meaning": "一个电磁辐射光子的能量，等于普朗克常数乘以其频率",
    "unit": "J",
    "section": "21.6",
    "redefines": true,
@@ -239,7 +239,7 @@
   {
    "sym": "ν",
    "concept": "frequency",
-   "meaning": "the frequency of the electromagnetic radiation, to which the energy of its photons is proportional",
+   "meaning": "电磁辐射的频率，其光子的能量与之成正比",
    "unit": "Hz",
    "section": "21.6",
    "anchor": "21.6-ionizing"

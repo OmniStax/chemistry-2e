@@ -31,7 +31,7 @@ function turn(p, yaw, pitch) {
   const x = p[0] * Math.cos(yaw) + p[2] * Math.sin(yaw), z1 = -p[0] * Math.sin(yaw) + p[2] * Math.cos(yaw);
   return [x, p[1] * Math.cos(pitch) - z1 * Math.sin(pitch), p[1] * Math.sin(pitch) + z1 * Math.cos(pitch)];
 }
-const NAME = { H: 'hydrogen', C: 'carbon', O: 'oxygen', N: 'nitrogen', F: 'fluorine', Cl: 'chlorine', Br: 'bromine', I: 'iodine', At: 'astatine', Ne: 'neon', Ar: 'argon', Kr: 'krypton' };
+const NAME = { H: '氢', C: '碳', O: '氧', N: '氮', F: '氟', Cl: '氯', Br: '溴', I: '碘', At: '砹', Ne: '氖', Ar: '氩', Kr: '氪' };
 
 /* ---------- a molecular scene drawn both ways (book rule: intermolecular forces carry the 2D/3D view choice) ----------
    A scene is atoms {el, p, r, name}, bonds [i, j] drawn as sticks, and dots [a, b], an intermolecular attraction drawn as a
@@ -56,7 +56,7 @@ function buildScene(v, g, sc, o = {}) {
 }
 /* the view choice of such a figure: the flat canvas, or the stage with its buttons and a strip for the headline */
 function twoWays(d, H, opts, onShow) {
-  const VIEW = F.choice(d.controls, { label: '\\text{view}', options: [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }], value: '2d', aria: 'a flat drawing or a scene to turn', onInput: () => show() });
+  const VIEW = F.choice(d.controls, { label: '\\text{视图}', options: [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }], value: '2d', aria: '平面图或可转动的场景', onInput: () => show() });
   const s = { v: null, g: null, get three() { return VIEW.value === '3d'; } };
   function show() {
     if (s.three && !s.v) { s.v = F.view3d(d.stage, { spin: 'idle', pitch: [-1.2, 1.2], ...opts }); s.g = s.v.part(0); }
@@ -81,20 +81,20 @@ function twoWays(d, H, opts, onShow) {
 ===================================================================== */
 (function () {
   const d = sim('sim-phases');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.02, 1.2], tilt: 0.3, views: [{ label: 'front', yaw: 0, pitch: 0.12 }, { label: 'corner', yaw: 0.7, pitch: 0.45 }], h: 400, dist: 4.8 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.02, 1.2], tilt: 0.3, views: [{ label: '正面', yaw: 0, pitch: 0.12 }, { label: '斜视', yaw: 0.7, pitch: 0.45 }], h: 400, dist: 4.8 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 230);
   /* the book's halogens from Table 10.1 and three noble gases, each with its normal melting and boiling points in kelvin */
   const SUBS = {
-    Ne: { name: 'neon', f: 'Ne', el: 'Ne', two: false, mp: 25, bp: 27 },
-    Ar: { name: 'argon', f: 'Ar', el: 'Ar', two: false, mp: 84, bp: 87 },
-    Kr: { name: 'krypton', f: 'Kr', el: 'Kr', two: false, mp: 116, bp: 120 },
-    F2: { name: 'fluorine', f: 'F_{2}', el: 'F', two: true, mp: 53, bp: 85 },
-    Cl2: { name: 'chlorine', f: 'Cl_{2}', el: 'Cl', two: true, mp: 172, bp: 238 },
+    Ne: { name: '氖', f: 'Ne', el: 'Ne', two: false, mp: 25, bp: 27 },
+    Ar: { name: '氩', f: 'Ar', el: 'Ar', two: false, mp: 84, bp: 87 },
+    Kr: { name: '氪', f: 'Kr', el: 'Kr', two: false, mp: 116, bp: 120 },
+    F2: { name: '氟', f: 'F_{2}', el: 'F', two: true, mp: 53, bp: 85 },
+    Cl2: { name: '氯', f: 'Cl_{2}', el: 'Cl', two: true, mp: 172, bp: 238 },
   };
-  const S = F.choice(d.controls, { label: '\\text{substance}', options: Object.keys(SUBS).map((k) => ({ value: k, label: SUBS[k].f.replace('_{2}', '₂') })), value: 'Cl2', aria: 'the substance in the flask', onInput: () => { T.refresh(); } });
+  const S = F.choice(d.controls, { label: '\\text{物质}', options: Object.keys(SUBS).map((k) => ({ value: k, label: SUBS[k].f.replace('_{2}', '₂') })), value: 'Cl2', aria: '烧瓶中的物质', onInput: () => { T.refresh(); } });
   const sub_ = () => SUBS[S.value];
-  const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 10, max: 260, step: 1, value: 200, unit: 'K', dec: 0, aria: 'temperature in kelvin',
-    specials: [{ at: () => sub_().mp, label: 'melting point' }, { at: () => sub_().bp, label: 'boiling point' }] });
+  const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 10, max: 260, step: 1, value: 200, unit: 'K', dec: 0, aria: '以开尔文表示的温度',
+    specials: [{ at: () => sub_().mp, label: '熔点' }, { at: () => sub_().bp, label: '沸点' }] });
   const W = 0.62, FLOOR = -0.9, TOP = 0.9, R = 0.1, A = 0.23, SLAB = FLOOR + 0.5;
   const N = 27;
   const LAT = [], LIQ = [];
@@ -135,14 +135,14 @@ function twoWays(d, H, opts, onShow) {
     glass.position.set(0, (TOP + FLOOR) / 2, 0); grp.add(glass);
     const e = new T3D.LineSegments(new T3D.EdgesGeometry(new T3D.BoxGeometry(2 * W, TOP - FLOOR, 2 * W)), new T3D.LineBasicMaterial({ color: new T3D.Color(PAL.ink) }));
     e.position.copy(glass.position); grp.add(e);
-    const nm = s.two ? 'a ' + s.name + ' molecule, ' + s.f.replace('_{2}', '₂') : 'a ' + s.name + ' atom, ' + s.f;
+    const nm = s.two ? s.name + '分子，' + s.f.replace('_{2}', '₂') : s.name + '原子，' + s.f;
     ps.forEach(() => {
       const m = new T3D.Group(); grp.add(m);
       if (s.two) { v.pickable(sphere3(m, [-0.07, 0, 0], 0.085, F.el(s.el)), nm); v.pickable(sphere3(m, [0.07, 0, 0], 0.085, F.el(s.el)), nm); }
       else v.pickable(sphere3(m, [0, 0, 0], R, F.el(s.el)), nm);
       ms.push(m);
     });
-    v.label('sealed flask', [W, TOP, 0], grp, 6);
+    v.label('密封烧瓶', [W, TOP, 0], grp, 6);
   }
   const X1 = new T3D.Vector3(1, 0, 0), tmp = new T3D.Vector3();
   function draw() {
@@ -157,18 +157,18 @@ function twoWays(d, H, opts, onShow) {
     text(ctx, 'K', X(260) + 22, y + 26, ct, { size: 16 });
     line(ctx, X(s.mp), y - 34, X(s.mp), y, PAL.ink, 3); line(ctx, X(s.bp), y - 34, X(s.bp), y, PAL.ink, 3);
     const close = s.bp - s.mp < 25;
-    text(ctx, 'melts ' + s.mp + ' K', X(s.mp) - 8, y - 48, PAL.ink, { size: 16, align: 'right' });
-    text(ctx, 'boils ' + s.bp + ' K', X(s.bp) + 8, y - 48, PAL.ink, { size: 16, align: 'left' });
-    text(ctx, 'solid', (X(10) + X(s.mp)) / 2, y - 16, PAL.muted, { size: 17, align: 'center' });
-    if (!close) text(ctx, 'liquid', (X(s.mp) + X(s.bp)) / 2, y - 16, PAL.muted, { size: 17, align: 'center' });
-    if (X(260) - X(s.bp) > 60) text(ctx, 'gas', (X(s.bp) + X(260)) / 2, y - 16, PAL.muted, { size: 17, align: 'center' });
+    text(ctx, '熔点 ' + s.mp + ' K', X(s.mp) - 8, y - 48, PAL.ink, { size: 16, align: 'right' });
+    text(ctx, '沸点 ' + s.bp + ' K', X(s.bp) + 8, y - 48, PAL.ink, { size: 16, align: 'left' });
+    text(ctx, '固态', (X(10) + X(s.mp)) / 2, y - 16, PAL.muted, { size: 17, align: 'center' });
+    if (!close) text(ctx, '液态', (X(s.mp) + X(s.bp)) / 2, y - 16, PAL.muted, { size: 17, align: 'center' });
+    if (X(260) - X(s.bp) > 60) text(ctx, '气态', (X(s.bp) + X(260)) / 2, y - 16, PAL.muted, { size: 17, align: 'center' });
     ctx.save(); ctx.fillStyle = ct; ctx.beginPath(); ctx.moveTo(X(T0), y + 4); ctx.lineTo(X(T0) - 11, y + 44); ctx.lineTo(X(T0) + 11, y + 44); ctx.closePath(); ctx.fill(); ctx.restore();
     text(ctx, 'T = ' + T0 + ' K', Math.min(Math.max(X(T0), 80), 1320), y + 62, ct, { size: 20, weight: 600, align: 'center' });
-    const WHAT = { solid: 'a solid: the particles vibrate about fixed positions', liquid: 'a liquid: the particles move past each other but stay in contact', gas: 'a gas: the particles move independently and fill the flask' };
-    topline(ctx, 'At ' + T0 + ' K ' + s.name + ' is ' + WHAT[ph] + '.');
+    const WHAT = { solid: '固态：粒子在固定位置附近振动', liquid: '液态：粒子相互滑过，但保持接触', gas: '气态：粒子独立运动，充满整个烧瓶' };
+    topline(ctx, '在 ' + T0 + ' K 时，' + s.name + '处于' + WHAT[ph] + '。');
     const mp = hue('temperature', s.mp + '\\ \\text{K}'), bp = hue('temperature', s.bp + '\\ \\text{K}'), tt = `\\kT = ${hue('temperature', T0 + '\\ \\text{K}')}`;
-    const main = ph === 'solid' ? `${tt} < ${mp}\\ \\text{(melting point)}` : ph === 'liquid' ? `\\text{melting point } ${mp} \\le ${tt} < ${bp}\\ \\text{(boiling point)}` : `${tt} \\ge ${bp}\\ \\text{(boiling point)}`;
-    readout(d.readout, main, 'The stronger the attractions between the particles of a substance, the higher the temperature, and so the greater the average kinetic energy, needed to melt it and to boil it.');
+    const main = ph === 'solid' ? `${tt} < ${mp}\\ \\text{（熔点）}` : ph === 'liquid' ? `\\text{熔点 } ${mp} \\le ${tt} < ${bp}\\ \\text{（沸点）}` : `${tt} \\ge ${bp}\\ \\text{（沸点）}`;
+    readout(d.readout, main, '物质的粒子之间的吸引越强，使它熔化和沸腾所需的温度就越高，因而所需的平均动能也越大。');
   }
   const clk = cycle(() => Infinity, 0);
   register(d.fig, { update: (dt) => { clk.step(dt, () => 1); step(dt); }, draw });
@@ -184,36 +184,36 @@ function twoWays(d, H, opts, onShow) {
   const d = sim('sim-intra-inter', 420);
   const sc = {
     atoms: [
-      { el: 'Cl', p: [-2.6, 0, 0], r: 0.62, name: 'a chlorine atom, Cl' }, { el: 'H', p: [-1.33, 0, 0], r: 0.36, name: 'a hydrogen atom, H' },
-      { el: 'Cl', p: [1.07, 0, 0], r: 0.62, name: 'a chlorine atom, Cl' }, { el: 'H', p: [2.34, 0, 0], r: 0.36, name: 'a hydrogen atom, H' },
+      { el: 'Cl', p: [-2.6, 0, 0], r: 0.62, name: '氯原子，Cl' }, { el: 'H', p: [-1.33, 0, 0], r: 0.36, name: '氢原子，H' },
+      { el: 'Cl', p: [1.07, 0, 0], r: 0.62, name: '氯原子，Cl' }, { el: 'H', p: [2.34, 0, 0], r: 0.36, name: '氢原子，H' },
     ],
     bonds: [[0, 1], [2, 3]], dots: [[[-0.93, 0, 0], [0.41, 0, 0]]],
   };
   sc.atoms.forEach((a) => { a.p[0] += 0.13; });
   sc.dots[0] = sc.dots[0].map((p) => [p[0] + 0.13, p[1], p[2]]);
   const hits = []; F.hover(d.stage, () => hits);
-  const HEAD = 'Each HCl molecule is held together by a strong covalent bond; the two molecules attract each other only weakly.';
-  const two = twoWays(d, 420, { h: 380, dist: 8, views: [{ label: 'side', yaw: 0, pitch: 0 }, { label: 'end on', yaw: Math.PI / 2, pitch: 0 }] }, () => draw());
+  const HEAD = '每个 HCl 分子由一个强共价键结合在一起；两个分子之间只有微弱的相互吸引。';
+  const two = twoWays(d, 420, { h: 380, dist: 8, views: [{ label: '侧视', yaw: 0, pitch: 0 }, { label: '端视', yaw: Math.PI / 2, pitch: 0 }] }, () => draw());
   let sig = '';
   function draw() {
     if (two.three) {
       const key = palSig(); if (key !== sig && two.g) { sig = key; two.v.clear(); buildScene(two.v, two.g, sc);
-        two.v.label('intramolecular force (strong)', [-1.84, -0.7, 0], two.g, -30); two.v.label('intermolecular force (weak)', [-0.1, -0.5, 0], two.g, -30); two.v.headline(HEAD); }
+        two.v.label('分子内作用力（强）', [-1.84, -0.7, 0], two.g, -30); two.v.label('分子间作用力（弱）', [-0.1, -0.5, 0], two.g, -30); two.v.headline(HEAD); }
       two.v?.invalidate();
     } else {
       const { ctx } = begin(d.c); hits.length = 0;
       const o = { yaw: 0, pitch: 0, cx: 700, cy: 230, s: 130 };
       const P = drawScene(ctx, sc, o, hits);
       const [bx, by] = P([-1.84, 0, 0]), [ix, iy] = P([-0.1, 0, 0]);
-      label(ctx, 'intramolecular force (strong)', bx, by + 8, { side: 'below', leader: true, size: 20, gap: 0.62 * o.s + 30 });
-      label(ctx, 'intermolecular force (weak)', ix, iy - 8, { side: 'above', leader: true, size: 20, gap: 0.62 * o.s + 10 });
+      label(ctx, '分子内作用力（强）', bx, by + 8, { side: 'below', leader: true, size: 20, gap: 0.62 * o.s + 30 });
+      label(ctx, '分子间作用力（弱）', ix, iy - 8, { side: 'above', leader: true, size: 20, gap: 0.62 * o.s + 10 });
       text(ctx, 'H', P([2.47, 0, 0])[0], iy, PAL.ink, { size: 20, weight: 600, align: 'center' });
       text(ctx, 'Cl', P([1.2, 0, 0])[0], iy, PAL.panel, { size: 22, weight: 600, align: 'center' });
       text(ctx, 'H', P([-1.2, 0, 0])[0], iy, PAL.ink, { size: 20, weight: 600, align: 'center' });
       text(ctx, 'Cl', P([-2.47, 0, 0])[0], iy, PAL.panel, { size: 22, weight: 600, align: 'center' });
       topline(ctx, HEAD);
     }
-    readout(d.readout, '17\\ \\text{kJ} \\ll 430\\ \\text{kJ}\\quad (\\text{about 25 times more})', 'About 17 kJ overcomes the intermolecular forces in one mole of liquid HCl, but breaking the covalent bonds in one mole of HCl takes about 430 kJ.');
+    readout(d.readout, '17\\ \\text{kJ} \\ll 430\\ \\text{kJ}\\quad (\\text{约为 25 倍})', '克服 1 摩尔液态 HCl 中的分子间作用力约需 17 kJ，而打断 1 摩尔 HCl 中的共价键则约需 430 kJ。');
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -231,11 +231,11 @@ function twoWays(d, H, opts, onShow) {
 (function () {
   const d = sim('sim-dispersion', 470);
   const HAL = [
-    { v: 'F', f: 'F_{2}', name: 'fluorine', r: 72, mp: 53, bp: 85 }, { v: 'Cl', f: 'Cl_{2}', name: 'chlorine', r: 99, mp: 172, bp: 238 },
-    { v: 'Br', f: 'Br_{2}', name: 'bromine', r: 114, mp: 266, bp: 332 }, { v: 'I', f: 'I_{2}', name: 'iodine', r: 133, mp: 387, bp: 457 },
-    { v: 'At', f: 'At_{2}', name: 'astatine', r: 150, mp: 575, bp: 610 },
+    { v: 'F', f: 'F_{2}', name: '氟', r: 72, mp: 53, bp: 85 }, { v: 'Cl', f: 'Cl_{2}', name: '氯', r: 99, mp: 172, bp: 238 },
+    { v: 'Br', f: 'Br_{2}', name: '溴', r: 114, mp: 266, bp: 332 }, { v: 'I', f: 'I_{2}', name: '碘', r: 133, mp: 387, bp: 457 },
+    { v: 'At', f: 'At_{2}', name: '砹', r: 150, mp: 575, bp: 610 },
   ];
-  const X = F.choice(d.controls, { label: '\\text{halogen}', options: HAL.map((h) => ({ value: h.v, label: h.f.replace('_{2}', '₂') })), value: 'Cl', aria: 'the halogen' });
+  const X = F.choice(d.controls, { label: '\\text{卤素}', options: HAL.map((h) => ({ value: h.v, label: h.f.replace('_{2}', '₂') })), value: 'Cl', aria: '卤素' });
   const hal = () => HAL.find((h) => h.v === X.value);
   const hits = []; F.hover(d.stage, () => hits);
   let t = 0;
@@ -252,7 +252,7 @@ function twoWays(d, H, opts, onShow) {
     ctx.fillStyle = s >= 0 ? F.cat(1) : F.cat(0); ctx.fillRect(xb, cy - ra - 2, x1 - xb + 2, 2 * ra + 4);
     ctx.restore();
     dot(ctx, cx - dx, cy, PAL.ink, true, 7); dot(ctx, cx + dx, cy, PAL.ink, true, 7);
-    hits.push({ x: cx - dx, y: cy, r: ra, name: 'a ' + h.name + ' atom, ' + h.v }, { x: cx + dx, y: cy, r: ra, name: 'a ' + h.name + ' atom, ' + h.v });
+    hits.push({ x: cx - dx, y: cy, r: ra, name: h.name + '原子，' + h.v }, { x: cx + dx, y: cy, r: ra, name: h.name + '原子，' + h.v });
     if (Math.abs(s) > 0.2) {
       text(ctx, s > 0 ? 'δ+' : 'δ−', x0 + 30, cy, PAL.ink, { size: 24, weight: 600, align: 'center' });
       text(ctx, s > 0 ? 'δ−' : 'δ+', x1 - 30, cy, PAL.ink, { size: 24, weight: 600, align: 'center' });
@@ -267,15 +267,15 @@ function twoWays(d, H, opts, onShow) {
     const A = molecule(ctx, cxA, cy, ra, s1, h), B = molecule(ctx, cxB, cy, ra, s2, h);
     const k = Math.min(1, Math.abs(s1 * s2) / (0.25 * amp * amp + 0.02));
     F.faded(ctx, 0.15 + 0.85 * k, [0, 0], () => { line(ctx, A.x1 + 16, cy, B.x0 - 16, cy, PAL.ink, 7, [1, 16]); });
-    label(ctx, 'attractive force', (A.x1 + B.x0) / 2, cy - 10, { side: 'above', leader: true, size: 20, gap: ra + 6 });
+    label(ctx, '吸引力', (A.x1 + B.x0) / 2, cy - 10, { side: 'above', leader: true, size: 20, gap: ra + 6 });
     const yb = cy + ra + 30;
     hbracket(ctx, A.x0, A.x1, yb, PAL.ink); hbracket(ctx, B.x0, B.x1, yb, PAL.ink);
-    text(ctx, 'temporary dipoles', 700, yb + 34, PAL.ink, { size: 20, align: 'center' });
+    text(ctx, '暂时偶极', 700, yb + 34, PAL.ink, { size: 20, align: 'center' });
     const ly = 440;
-    dot(ctx, 440, ly, F.cat(0), true, 11); text(ctx, 'δ+, fewer electrons', 460, ly, PAL.ink, { size: 18 });
-    dot(ctx, 760, ly, F.cat(1), true, 11); text(ctx, 'δ−, more electrons', 780, ly, PAL.ink, { size: 18 });
-    topline(ctx, 'Two ' + h.name + ' molecules, ' + h.f + ': the larger the atoms, the farther their electrons shift and the stronger the attraction.');
-    readout(d.readout, `\\text{${h.f.replace('_{2}', '}_2\\text{')}}:\\ \\text{atomic radius } ${h.r}\\ \\text{pm},\\ \\text{melting point } ${hue('temperature', h.mp + '\\ \\text{K}')},\\ \\text{boiling point } ${hue('temperature', h.bp + '\\ \\text{K}')}`);
+    dot(ctx, 440, ly, F.cat(0), true, 11); text(ctx, 'δ+，电子较少', 460, ly, PAL.ink, { size: 18 });
+    dot(ctx, 760, ly, F.cat(1), true, 11); text(ctx, 'δ−，电子较多', 780, ly, PAL.ink, { size: 18 });
+    topline(ctx, '两个' + h.name + '分子，' + h.f + '：原子越大，其电子移动得越远，吸引越强。');
+    readout(d.readout, `\\text{${h.f.replace('_{2}', '}_2\\text{')}}:\\ \\text{原子半径 } ${h.r}\\ \\text{pm},\\ \\text{熔点 } ${hue('temperature', h.mp + '\\ \\text{K}')},\\ \\text{沸点 } ${hue('temperature', h.bp + '\\ \\text{K}')}`);
   }
   const clk = cycle(() => Infinity, 0);
   register(d.fig, { update: (dt) => { clk.step(dt, () => 1); t += dt; }, draw });
@@ -321,16 +321,16 @@ function twoWays(d, H, opts, onShow) {
     return pts.map((p) => [p[0] - cx, p[1] - low + 0.1, p[2] - cz]);
   }
   const ISOS = {
-    neo: { name: 'neopentane', f: 'neopentane', bp: 9.5, head: 'small contact area, weakest attraction', pts: stand(NEO) },
-    iso: { name: 'isopentane', f: 'isopentane', bp: 27, head: 'less surface area, less attraction', pts: stand(ISO) },
-    n: { name: 'n-pentane', f: 'n-pentane', bp: 36, head: 'large contact area, strong attraction', pts: stand(N_PENT) },
+    neo: { name: '新戊烷', f: '新戊烷', bp: 9.5, head: '接触面积小，吸引最弱', pts: stand(NEO) },
+    iso: { name: '异戊烷', f: '异戊烷', bp: 27, head: '表面积较小，吸引较弱', pts: stand(ISO) },
+    n: { name: '正戊烷', f: '正戊烷', bp: 36, head: '接触面积大，吸引强', pts: stand(N_PENT) },
   };
   /* one scale for the flat drawing, from the tallest isomer: its molecule and its image span 2 × TALL Å, 470 units of the canvas */
   const TALL = Math.max(...Object.values(ISOS).map((q) => Math.max(...q.pts.map((p, i) => p[1] + (i < 5 ? RC : RH) + 0.1 * Math.abs(p[2])))));
-  const K = F.choice(d.controls, { label: '\\text{isomer}', options: [{ value: 'neo', label: 'neopentane' }, { value: 'iso', label: 'isopentane' }, { value: 'n', label: 'n-pentane' }], value: 'n', aria: 'the pentane isomer', onInput: () => draw() });
+  const K = F.choice(d.controls, { label: '\\text{异构体}', options: [{ value: 'neo', label: '新戊烷' }, { value: 'iso', label: '异戊烷' }, { value: 'n', label: '正戊烷' }], value: 'n', aria: '戊烷异构体', onInput: () => draw() });
   const hits = []; F.hover(d.stage, () => hits);
-  const two = twoWays(d, 600, { h: 520, dist: 26, spin: 'off', views: [{ label: 'side', yaw: 0, pitch: 0 }, { label: 'end on', yaw: Math.PI / 2, pitch: 0 }] }, () => draw());
-  const atomName = (i, m) => (i < 5 ? 'a carbon atom of ' : 'a hydrogen atom of ') + m;
+  const two = twoWays(d, 600, { h: 520, dist: 26, spin: 'off', views: [{ label: '侧视', yaw: 0, pitch: 0 }, { label: '端视', yaw: Math.PI / 2, pitch: 0 }] }, () => draw());
+  const atomName = (i, m) => m + (i < 5 ? '的碳原子' : '的氢原子');
   function sceneOf(pts, m) {
     const atoms = [];
     pts.forEach((p, i) => atoms.push({ el: i < 5 ? 'C' : 'H', p, r: i < 5 ? RC : RH, name: atomName(i, m) }));
@@ -352,14 +352,14 @@ function twoWays(d, H, opts, onShow) {
   function draw() {
     const iso = ISOS[K.value], flat = K.mix((v) => ISOS[v].pts.flat()), pts = [];
     for (let i = 0; i < flat.length; i += 3) pts.push([flat[i], flat[i + 1], flat[i + 2]]);
-    const [c0, c1] = contact(pts), head = iso.name + ': ' + iso.head + ', boiling point ' + fmt(iso.bp, iso.bp % 1 ? 1 : 0) + ' °C.';
+    const [c0, c1] = contact(pts), head = iso.name + '：' + iso.head + '，沸点 ' + fmt(iso.bp, iso.bp % 1 ? 1 : 0) + ' °C。';
     if (two.three) {
       const key = K.value + palSig() + C('area');
       if (key !== sig && two.g) {
         sig = key; two.v.clear(); buildScene(two.v, two.g, sceneOf(iso.pts, iso.name));
         const cc = contact(iso.pts);
         F.mesh.box(two.g, [(cc[0] + cc[1]) / 2, 0, 0], [cc[1] - cc[0], 0.04, 3.2], C('area'), { transparent: true, opacity: 0.5 });
-        two.v.label('contact', [Math.max(...iso.pts.map((p, i) => p[0] + (i < 5 ? RC : RH))) + 0.4, 0, 0], two.g, -12); two.v.headline(/^n-/.test(head) ? head : head.charAt(0).toUpperCase() + head.slice(1));
+        two.v.label('接触', [Math.max(...iso.pts.map((p, i) => p[0] + (i < 5 ? RC : RH))) + 0.4, 0, 0], two.g, -12); two.v.headline(head);
       }
       two.v?.invalidate();
     } else {
@@ -368,11 +368,11 @@ function twoWays(d, H, opts, onShow) {
       drawScene(ctx, sceneOf(pts, iso.name), o, hits);
       const Pc0 = turn([c0, 0, 0], o.yaw, o.pitch), Pc1 = turn([c1, 0, 0], o.yaw, o.pitch);
       band(ctx, o.cx + Pc0[0] * o.s, o.cx + Pc1[0] * o.s, o.cy - Pc0[1] * o.s);
-      label(ctx, 'contact', o.cx + Pc1[0] * o.s + 6, o.cy, { side: 'right', size: 20 });
-      topline(ctx, /^n-/.test(head) ? head : head.charAt(0).toUpperCase() + head.slice(1));
+      label(ctx, '接触', o.cx + Pc1[0] * o.s + 6, o.cy, { side: 'right', size: 20 });
+      topline(ctx, head);
     }
-    readout(d.readout, `\\text{boiling point of ${iso.name.replace('n-', '\\textit{n}-')}} = ${hue('temperature', fmt(iso.bp, iso.bp % 1 ? 1 : 0) + '\\ ^\\circ\\text{C}')}`,
-      'All three isomers are C₅H₁₂, so their molecules have the same mass; the longer the contact between neighboring molecules, the stronger the dispersion forces and the higher the boiling point.');
+    readout(d.readout, `\\text{${iso.name}的沸点} = ${hue('temperature', fmt(iso.bp, iso.bp % 1 ? 1 : 0) + '\\ ^\\circ\\text{C}')}`,
+      '三种异构体都是 C₅H₁₂，因此它们的分子质量相同；相邻分子之间的接触越长，色散力越强，沸点越高。');
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -396,7 +396,7 @@ function twoWays(d, H, opts, onShow) {
     ctx.restore();
     text(ctx, 'δ+', xp - sgn * 4, cy, PAL.panel, { size: 24, weight: 600, align: 'center' });
     text(ctx, 'δ−', xn + sgn * 8, cy, PAL.panel, { size: 24, weight: 600, align: 'center' });
-    hits.push({ x: xp, y: cy, r: rp, name: 'the hydrogen end of an HCl molecule, δ+' }, { x: xn, y: cy, r: rn, name: 'the chlorine end of an HCl molecule, δ−' });
+    hits.push({ x: xp, y: cy, r: rp, name: 'HCl 分子的氢端，δ+' }, { x: xn, y: cy, r: rn, name: 'HCl 分子的氯端，δ−' });
     return { l: cx - dx - (flip ? rn : rp), r: cx + dx + (flip ? rp : rn), xp, xn };
   }
   function draw() {
@@ -406,12 +406,12 @@ function twoWays(d, H, opts, onShow) {
     const u = dipole(ctx, 1000, 150, false), w = dipole(ctx, 1000, 290, true);
     line(ctx, u.xp, 150 + 40, w.xn, 290 - 56, PAL.ink, 6, [1, 14]);
     line(ctx, u.xn, 150 + 56, w.xp, 290 - 40, PAL.ink, 6, [1, 14]);
-    label(ctx, 'attraction', (a.r + b.l) / 2, cy - 8, { side: 'above', leader: true, size: 20 });
-    text(ctx, 'in a line', 330, 320, PAL.muted, { size: 18, align: 'center' });
-    text(ctx, 'side by side', 1000, 390, PAL.muted, { size: 18, align: 'center' });
-    dot(ctx, 470, 415, F.cat(0), true, 11); text(ctx, 'δ+ end (H)', 490, 415, PAL.ink, { size: 18 });
-    dot(ctx, 700, 415, F.cat(1), true, 11); text(ctx, 'δ− end (Cl)', 720, 415, PAL.ink, { size: 18 });
-    topline(ctx, 'Polar HCl molecules attract where the δ− end of one molecule meets the δ+ end of another.');
+    label(ctx, '吸引', (a.r + b.l) / 2, cy - 8, { side: 'above', leader: true, size: 20 });
+    text(ctx, '排成一行', 330, 320, PAL.muted, { size: 18, align: 'center' });
+    text(ctx, '并排', 1000, 390, PAL.muted, { size: 18, align: 'center' });
+    dot(ctx, 470, 415, F.cat(0), true, 11); text(ctx, 'δ+ 端（H）', 490, 415, PAL.ink, { size: 18 });
+    dot(ctx, 700, 415, F.cat(1), true, 11); text(ctx, 'δ− 端（Cl）', 720, 415, PAL.ink, { size: 18 });
+    topline(ctx, '极性 HCl 分子在一个分子的 δ− 端与另一个分子的 δ+ 端相遇之处相互吸引。');
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -430,7 +430,7 @@ function twoWays(d, H, opts, onShow) {
   const OH = 0.96, OO = 2.8;
   const t = [[1, 1, 1], [-1, -1, 1], [1, -1, -1], [-1, 1, -1]].map(unit);
   const atoms = [], bonds = [], dots = [];
-  const water = (o, h1, h2) => { const i = atoms.length; atoms.push({ el: 'O', p: o, r: 0.42, name: 'an oxygen atom of a water molecule' }, { el: 'H', p: h1, r: 0.28, name: 'a hydrogen atom of a water molecule' }, { el: 'H', p: h2, r: 0.28, name: 'a hydrogen atom of a water molecule' }); bonds.push([i, i + 1], [i, i + 2]); return i; };
+  const water = (o, h1, h2) => { const i = atoms.length; atoms.push({ el: 'O', p: o, r: 0.42, name: '水分子的氧原子' }, { el: 'H', p: h1, r: 0.28, name: '水分子的氢原子' }, { el: 'H', p: h2, r: 0.28, name: '水分子的氢原子' }); bonds.push([i, i + 1], [i, i + 2]); return i; };
   water([0, 0, 0], mul(t[0], OH), mul(t[1], OH));
   [0, 1].forEach((k) => {
     const o = mul(t[k], OO), hs = tetraOthers(mul(t[k], -1), Math.abs(t[k][1]) > 0.9 ? [1, 0, 0] : [0, 1, 0], 0.4).slice(0, 2).map((u) => add(o, mul(u, OH)));
@@ -444,8 +444,8 @@ function twoWays(d, H, opts, onShow) {
   });
   const sc = { atoms, bonds, dots };
   const hits = []; F.hover(d.stage, () => hits);
-  const HEAD = 'Hydrogen bonds join each hydrogen atom of one water molecule to an oxygen atom of another.';
-  const two = twoWays(d, 560, { h: 480, dist: 20, views: [{ label: 'front', yaw: 0.5, pitch: 0.3 }, { label: 'down a bond', yaw: Math.PI / 4, pitch: Math.atan(1 / Math.SQRT2) }] }, () => draw());
+  const HEAD = '氢键把一个水分子的每个氢原子与另一个水分子的氧原子连接起来。';
+  const two = twoWays(d, 560, { h: 480, dist: 20, views: [{ label: '正面', yaw: 0.5, pitch: 0.3 }, { label: '沿键方向', yaw: Math.PI / 4, pitch: Math.atan(1 / Math.SQRT2) }] }, () => draw());
   let sig = '';
   function draw() {
     if (two.three) {
@@ -456,12 +456,12 @@ function twoWays(d, H, opts, onShow) {
       const o = { yaw: 0.5, pitch: 0.3, cx: 640, cy: 345, s: 66 };
       const P = drawScene(ctx, sc, o, hits);
       const [hx, hy] = P(dots[0][0].map((c, i) => (c + dots[0][1][i]) / 2));
-      label(ctx, 'hydrogen bond', hx, hy, { side: 'right', leader: true, size: 20, gap: 90 });
+      label(ctx, '氢键', hx, hy, { side: 'right', leader: true, size: 20, gap: 90 });
       const [bx, by] = P(mul(add(atoms[0].p, atoms[2].p), 0.5));
-      label(ctx, 'covalent bond', bx, by, { side: 'left', leader: true, size: 20, gap: 110 });
+      label(ctx, '共价键', bx, by, { side: 'left', leader: true, size: 20, gap: 110 });
       topline(ctx, HEAD);
     }
-    readout(d.readout, '\\text{H}_2\\text{O}\\cdots\\text{HOH}', 'The central molecule forms four hydrogen bonds, two through its own hydrogen atoms and two through the lone pairs of its oxygen atom.');
+    readout(d.readout, '\\text{H}_2\\text{O}\\cdots\\text{HOH}', '中央分子形成四个氢键，两个通过它自己的氢原子，两个通过其氧原子的孤电子对。');
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -479,18 +479,18 @@ function twoWays(d, H, opts, onShow) {
   const d = sim('sim-hydrides', 560);
   /* measured normal boiling points, °C, periods 2 to 5; pred is the text's prediction for period 2 */
   const FAM = [
-    { id: 'group-14', name: 'carbon family (group 14)', f: ['CH_{4}', 'SiH_{4}', 'GeH_{4}', 'SnH_{4}'], bp: [-161, -112, -88, -52], pred: -161 },
-    { id: 'group-15', name: 'nitrogen family (group 15)', f: ['NH_{3}', 'PH_{3}', 'AsH_{3}', 'SbH_{3}'], bp: [-33, -88, -62, -17], pred: -120 },
-    { id: 'group-16', name: 'oxygen family (group 16)', f: ['H_{2}O', 'H_{2}S', 'H_{2}Se', 'H_{2}Te'], bp: [100, -60, -41, -2], pred: -80 },
-    { id: 'group-17', name: 'halogen family (group 17)', f: ['HF', 'HCl', 'HBr', 'HI'], bp: [20, -85, -67, -35], pred: -110 },
+    { id: 'group-14', name: '碳族（第 14 族）', f: ['CH_{4}', 'SiH_{4}', 'GeH_{4}', 'SnH_{4}'], bp: [-161, -112, -88, -52], pred: -161 },
+    { id: 'group-15', name: '氮族（第 15 族）', f: ['NH_{3}', 'PH_{3}', 'AsH_{3}', 'SbH_{3}'], bp: [-33, -88, -62, -17], pred: -120 },
+    { id: 'group-16', name: '氧族（第 16 族）', f: ['H_{2}O', 'H_{2}S', 'H_{2}Se', 'H_{2}Te'], bp: [100, -60, -41, -2], pred: -80 },
+    { id: 'group-17', name: '卤族（第 17 族）', f: ['HF', 'HCl', 'HBr', 'HI'], bp: [20, -85, -67, -35], pred: -110 },
   ];
-  const M = F.choice(d.controls, { label: '\\text{period 2}', options: [{ value: 'trend', label: 'predicted from the trend' }, { value: 'measured', label: 'measured' }], value: 'trend', aria: 'predicted or measured boiling points of the period 2 hydrides' });
+  const M = F.choice(d.controls, { label: '\\text{第 2 周期}', options: [{ value: 'trend', label: '由趋势预测' }, { value: 'measured', label: '实测' }], value: 'trend', aria: '第 2 周期氢化物沸点的预测值或实测值' });
   const hits = []; F.hover(d.stage, () => hits);
   function draw() {
     const { ctx } = begin(d.c); hits.length = 0;
     const ct = C('temperature'), box = { l: 170, r: 1000, t: 100, b: 490 };
     /* fixed axes: periods 1 to 6, −200 °C to 150 °C by 50 */
-    const g = axes(ctx, box, [1, 6], [-200, 150], { xl: 'Period', yl: 'Boiling point (°C)', yc: ct, nx: 5, ny: 7 });
+    const g = axes(ctx, box, [1, 6], [-200, 150], { xl: '周期', yl: '沸点 (°C)', yc: ct, nx: 5, ny: 7 });
     const p2 = M.mix((v) => FAM.map((fm) => (v === 'trend' ? fm.pred : fm.bp[0])));
     const meas = M.value === 'measured';
     FAM.forEach((fm, i) => {
@@ -499,18 +499,18 @@ function twoWays(d, H, opts, onShow) {
       ys.forEach((y, k) => {
         const hollow = k === 0 && !meas && i > 0;
         dot(ctx, g.X(k + 2), g.Y(y), col, !hollow, 9);
-        hits.push({ x: g.X(k + 2), y: g.Y(y), r: 14, name: fm.f[k].replace(/_\{(\d)\}/g, (m, n) => '₀₁₂₃₄₅'[n]) + (hollow ? ', predicted about ' : ', boils at ') + neg(y) + ' °C' });
+        hits.push({ x: g.X(k + 2), y: g.Y(y), r: 14, name: fm.f[k].replace(/_\{(\d)\}/g, (m, n) => '₀₁₂₃₄₅'[n]) + (hollow ? '，预测约为 ' : '，沸点为 ') + neg(y) + ' °C' });
       });
     });
     /* the period-2 names beside their points, spread apart where two points lie close (HF and NH₃ as predicted) */
     const p2names = FAM.map((fm, i) => ({ s: i && !meas ? fm.f[0] + ' ?' : fm.f[0], y: g.Y(p2[i]), col: F.ref(fm.id) })).sort((a, b) => a.y - b.y);
     p2names.forEach((q, i) => { if (i && q.y < p2names[i - 1].y + 26) q.y = p2names[i - 1].y + 26; text(ctx, q.s, g.X(2) - 18, q.y, q.col, { size: 18, weight: 600, align: 'right', bg: PAL.panel }); });
     FAM.forEach((fm, i) => { const y = 150 + i * 40; dot(ctx, 1060, y, F.ref(fm.id), true, 9); text(ctx, fm.name, 1080, y, PAL.ink, { size: 17 }); });
-    topline(ctx, meas ? 'Measured, H_{2}O boils at 100 °C, HF at 20 °C and NH_{3} at −33 °C, far above the trends of the heavier hydrides.'
-      : 'The trends of the heavier hydrides predict that H_{2}O boils near −80 °C, HF near −110 °C and NH_{3} near −120 °C.');
-    readout(d.readout, meas ? `\\text{boiling point of H}_2\\text{O} = ${hue('temperature', '100\\ ^\\circ\\text{C}')}` : `\\text{boiling point of H}_2\\text{O} \\approx ${hue('temperature', texNum(-80) + '\\ ^\\circ\\text{C}')}`,
-      meas ? 'Hydrogen bonding lifts the boiling points of NH₃, H₂O and HF far above the trends; CH₄, which cannot form hydrogen bonds, stays on its trend.'
-        : 'Down each group the molecules grow larger and their dispersion forces stronger, so the boiling points of periods 3 to 5 rise steadily.');
+    topline(ctx, meas ? '实测时，H_{2}O 在 100 °C 沸腾，HF 在 20 °C，NH_{3} 在 −33 °C，远高于较重氢化物的趋势。'
+      : '较重氢化物的趋势预测，H_{2}O 在 −80 °C 附近沸腾，HF 在 −110 °C 附近，NH_{3} 在 −120 °C 附近。');
+    readout(d.readout, meas ? `\\text{H}_2\\text{O 的沸点} = ${hue('temperature', '100\\ ^\\circ\\text{C}')}` : `\\text{H}_2\\text{O 的沸点} \\approx ${hue('temperature', texNum(-80) + '\\ ^\\circ\\text{C}')}`,
+      meas ? '氢键使 NH₃、H₂O 和 HF 的沸点远高于趋势；不能形成氢键的 CH₄ 仍落在其趋势上。'
+        : '沿每一族向下，分子变大，色散力变强，因此第 3 至第 5 周期的沸点稳步升高。');
   }
   register(d.fig, { update: () => {}, draw });
 })();

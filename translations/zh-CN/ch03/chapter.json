@@ -1,7 +1,7 @@
 {
  "id": "3",
  "dir": "ch03",
- "title": "Composition of Substances and Solutions",
+ "title": "物质与溶液的组成",
  "intro": {
   "module": "m68699",
   "slug": "3-introduction"
@@ -10,25 +10,25 @@
   {
    "id": "3.1",
    "module": "m68700",
-   "title": "Formula Mass and the Mole Concept",
+   "title": "式量与摩尔概念",
    "slug": "3-1-formula-mass-and-the-mole-concept"
   },
   {
    "id": "3.2",
    "module": "m68702",
-   "title": "Determining Empirical and Molecular Formulas",
+   "title": "实验式和分子式的确定",
    "slug": "3-2-determining-empirical-and-molecular-formulas"
   },
   {
    "id": "3.3",
    "module": "m68703",
-   "title": "Molarity",
+   "title": "物质的量浓度",
    "slug": "3-3-molarity"
   },
   {
    "id": "3.4",
    "module": "m68704",
-   "title": "Other Units for Solution Concentrations",
+   "title": "溶液浓度的其他单位",
    "slug": "3-4-other-units-for-solution-concentrations"
   }
  ],
@@ -36,7 +36,7 @@
   {
    "sym": "m",
    "concept": "mass",
-   "meaning": "the mass of a sample, weighed on a balance",
+   "meaning": "样品的质量，在天平上称量得到",
    "unit": "g",
    "section": "3.1",
    "anchor": "3.1-conversions"
@@ -44,7 +44,7 @@
   {
    "sym": "MM",
    "concept": "molar-mass",
-   "meaning": "the molar mass of a substance, the mass in grams of 1 mole of it",
+   "meaning": "物质的摩尔质量，即 1 摩尔该物质以克计的质量",
    "unit": "g/mol",
    "section": "3.1",
    "anchor": "3.1-molar-mass"
@@ -52,7 +52,7 @@
   {
    "sym": "n",
    "concept": "mole",
-   "meaning": "the amount of a substance, counted in moles",
+   "meaning": "物质的量，以摩尔计",
    "unit": "mol",
    "section": "3.1",
    "anchor": "3.1-mole"
@@ -60,7 +60,7 @@
   {
    "sym": "N_A",
    "concept": "avogadro-number",
-   "meaning": "Avogadro’s number, the number of entities in 1 mole of substance",
+   "meaning": "阿伏加德罗常数，即 1 摩尔物质中基本单元的数目",
    "unit": "mol⁻¹",
    "section": "3.1",
    "anchor": "3.1-mole"
@@ -68,7 +68,7 @@
   {
    "sym": "n_fu",
    "concept": "molecular-formula-from-empirical",
-   "meaning": "the number of empirical formula units in one molecule of a compound",
+   "meaning": "一个化合物分子中所含实验式单元的个数",
    "unit": "formula units/molecule",
    "section": "3.2",
    "anchor": "3.2-molecular"
@@ -76,7 +76,7 @@
   {
    "sym": "M",
    "concept": "molarity",
-   "meaning": "the molarity of a solution, the moles of solute per liter of solution",
+   "meaning": "溶液的物质的量浓度，即每升溶液中所含溶质的物质的量",
    "unit": "M (mol/L)",
    "section": "3.3",
    "anchor": "3.3-molarity"
@@ -84,7 +84,7 @@
   {
    "sym": "L",
    "concept": "volume",
-   "meaning": "the volume of a solution in liters, as the book writes it in n = ML",
+   "meaning": "以升计的溶液体积，本书在 n = ML 中即这样写",
    "unit": "L",
    "section": "3.3",
    "anchor": "3.3-dilution-equation"
@@ -92,7 +92,7 @@
   {
    "sym": "M_1",
    "concept": "molarity",
-   "meaning": "the molarity of a solution before it is diluted",
+   "meaning": "溶液稀释前的物质的量浓度",
    "unit": "M",
    "section": "3.3",
    "anchor": "3.3-dilution-equation",
@@ -101,7 +101,7 @@
   {
    "sym": "M_2",
    "concept": "molarity",
-   "meaning": "the molarity of the solution after it is diluted",
+   "meaning": "溶液稀释后的物质的量浓度",
    "unit": "M",
    "section": "3.3",
    "anchor": "3.3-dilution-equation",
@@ -110,7 +110,7 @@
   {
    "sym": "L_1",
    "concept": "volume",
-   "meaning": "the volume of a solution in liters before it is diluted",
+   "meaning": "溶液稀释前以升计的体积",
    "unit": "L",
    "section": "3.3",
    "anchor": "3.3-dilution-equation",
@@ -119,7 +119,7 @@
   {
    "sym": "L_2",
    "concept": "volume",
-   "meaning": "the volume of the solution in liters after it is diluted",
+   "meaning": "溶液稀释后以升计的体积",
    "unit": "L",
    "section": "3.3",
    "anchor": "3.3-dilution-equation",
@@ -128,7 +128,7 @@
   {
    "sym": "C_1",
    "concept": "concentration",
-   "meaning": "the concentration of a solution before it is diluted, in any unit",
+   "meaning": "溶液稀释前的浓度，可用任何单位",
    "unit": "M, or any concentration unit",
    "section": "3.3",
    "anchor": "3.3-dilution-equation",
@@ -137,7 +137,7 @@
   {
    "sym": "C_2",
    "concept": "concentration",
-   "meaning": "the concentration of the solution after it is diluted, in any unit",
+   "meaning": "溶液稀释后的浓度，可用任何单位",
    "unit": "M, or any concentration unit",
    "section": "3.3",
    "anchor": "3.3-dilution-equation",
@@ -146,7 +146,7 @@
   {
    "sym": "V_1",
    "concept": "volume",
-   "meaning": "the volume of a solution before it is diluted",
+   "meaning": "溶液稀释前的体积",
    "unit": "L, or any volume unit",
    "section": "3.3",
    "anchor": "3.3-dilution-equation",
@@ -155,7 +155,7 @@
   {
    "sym": "V_2",
    "concept": "volume",
-   "meaning": "the volume of the solution after it is diluted",
+   "meaning": "溶液稀释后的体积",
    "unit": "L, or any volume unit",
    "section": "3.3",
    "anchor": "3.3-dilution-equation",
@@ -164,7 +164,7 @@
   {
    "sym": "n_1",
    "concept": "mole",
-   "meaning": "the amount of solute in the solution before it is diluted",
+   "meaning": "溶液稀释前所含溶质的物质的量",
    "unit": "mol",
    "section": "3.3",
    "anchor": "3.3-dilution-equation",
@@ -173,7 +173,7 @@
   {
    "sym": "n_2",
    "concept": "mole",
-   "meaning": "the amount of solute in the solution after it is diluted, equal to n₁",
+   "meaning": "溶液稀释后所含溶质的物质的量，等于 n₁",
    "unit": "mol",
    "section": "3.3",
    "anchor": "3.3-dilution-equation",
@@ -182,7 +182,7 @@
   {
    "sym": "m",
    "concept": "mass",
-   "meaning": "the mass of one element in the sample analysed",
+   "meaning": "所分析样品中某一元素的质量",
    "unit": "g",
    "section": "3.2",
    "anchor": "3.2-empirical"
@@ -190,7 +190,7 @@
   {
    "sym": "n",
    "concept": "mole",
-   "meaning": "the amount of one element in the sample, in moles",
+   "meaning": "样品中某一元素的物质的量，以摩尔计",
    "unit": "mol",
    "section": "3.2",
    "anchor": "3.2-empirical"
@@ -198,7 +198,7 @@
   {
    "sym": "MM",
    "concept": "molar-mass",
-   "meaning": "the molar mass of an element, the mass in grams of 1 mole of its atoms",
+   "meaning": "某一元素的摩尔质量，即 1 摩尔其原子以克计的质量",
    "unit": "g/mol",
    "section": "3.2",
    "anchor": "3.2-empirical"
@@ -206,7 +206,7 @@
   {
    "sym": "V",
    "concept": "volume",
-   "meaning": "the volume of a solution, in any volume unit",
+   "meaning": "溶液的体积，可用任何体积单位",
    "unit": "L",
    "section": "3.3",
    "anchor": "3.3-dilution-equation"
@@ -214,7 +214,7 @@
   {
    "sym": "C_conc",
    "concept": "concentration",
-   "meaning": "the concentration of a solution, in any concentration unit",
+   "meaning": "溶液的浓度，可用任何浓度单位",
    "unit": "M, or any concentration unit",
    "section": "3.3",
    "anchor": "3.3-dilution-equation"
@@ -222,7 +222,7 @@
   {
    "sym": "m",
    "concept": "mass",
-   "meaning": "the mass of a solute or of the solution it is in",
+   "meaning": "溶质或含有该溶质的溶液的质量",
    "unit": "g",
    "section": "3.4",
    "anchor": "3.4-ppm-ppb"

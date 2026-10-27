@@ -1,1064 +1,1077 @@
 {
- "id": "7.3",
- "module": "m68739",
- "chapter": "7",
- "title": "Lewis Symbols and Structures",
- "short": "Lewis Symbols and Structures",
- "lead": "A Lewis symbol shows the valence electrons of an atom or a monatomic ion as dots around its symbol, and a Lewis structure shows how the valence electrons of a molecule or polyatomic ion are shared in bonds or held as lone pairs. The octet rule guides how these structures are written, with single, double and triple bonds, and some central atoms break it.",
- "objectives": [
-  "Write Lewis symbols for neutral atoms and ions",
-  "Draw Lewis structures depicting the bonding in simple molecules"
- ],
- "summary_html": "<p>Valence electronic structures can be visualized by drawing Lewis symbols (for atoms and monatomic ions) and Lewis structures (for molecules and polyatomic ions). Lone pairs, unpaired electrons, and single, double, or triple bonds are used to indicate where the valence electrons are located around each atom in a Lewis structure. Most structures—especially those containing second row elements—obey the octet rule, in which every atom (except H) is surrounded by eight electrons. Exceptions to the octet rule occur for odd-electron molecules (free radicals), electron-deficient molecules, and hypervalent molecules.</p>",
- "notes": "Nothing of the book’s section is left out. The Fullerene Chemistry note keeps the book’s stray “since prehistoric times, .” and the period inside “C<sub>60.</sub>”, and Example 7.5 keeps the book’s “six steps discussed earlier” for the five-step procedure.",
- "ai": {
-  "text": [
-   {
-    "model": "claude-opus-5-5",
-    "effort": "low"
-   },
-   {
-    "model": "claude-opus-5-5",
-    "effort": "high"
-   }
+  "id": "7.3",
+  "module": "m68739",
+  "chapter": "7",
+  "title": "路易斯符号与路易斯结构式",
+  "short": "路易斯符号与路易斯结构式",
+  "lead": "路易斯符号用元素符号周围的点表示原子或单原子离子的价电子，路易斯结构式则表示分子或多原子离子的价电子如何在键中共用或作为孤电子对保留。八隅体规则指导这些结构的书写，其中有单键、双键和三键，有些中心原子会打破这一规则。",
+  "objectives": [
+    "写出电中性原子和离子的路易斯符号",
+    "画出表示简单分子中成键情况的路易斯结构式"
   ],
+  "summary_html": "<p>价电子结构可以通过画路易斯符号（用于原子和单原子离子）和路易斯结构式（用于分子和多原子离子）来形象化地表示。在路易斯结构式中，用孤电子对、未成对电子以及单键、双键或三键来表明价电子在每个原子周围的位置。大多数结构——尤其是含有第二周期元素的结构——都服从八隅体规则，即每个原子（H 除外）周围都有八个电子。八隅体规则的例外出现在奇电子分子（自由基）、缺电子分子和超价分子中。</p>",
+  "notes": "本节没有任何内容被略去。“富勒烯化学”框中保留了书中多余的“自史前时代起就为人所知，。”以及“C<sub>60.</sub>”中句点位于下标之内的写法，例 7.5 保留了书中把五步程序称为“前面讨论的六个步骤”的说法。",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      },
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ]
+  },
+  "built": "2026-10-26",
+  "exercises_lead": "",
+  "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案取自书后答案以及“学习检测”的答案。两道没有答案的习题 fs-idm40885728 和 fs-idp157470896 都要求由书中没有标明答案的质量百分组成推出结构，因此被略去；没有答案的习题 fs-idm53812240、fs-idp153695200、fs-idm60487856、fs-idm78195216、fs-idm66409936、fs-idm35503888、fs-idm25571216 和 fs-idp86013824 附有一个标明为 OmniStax 自拟的建议思路。",
   "figures": [
-   {
-    "model": "claude-opus-5-5",
-    "effort": "low"
-   }
-  ]
- },
- "built": "2026-09-28",
- "exercises_lead": "",
- "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The unkeyed items fs-idm40885728 and fs-idp157470896, each of which asks for a structure worked out from a percent composition the book does not key, are left out, and the unkeyed items fs-idm53812240, fs-idp153695200, fs-idm60487856, fs-idm78195216, fs-idm66409936, fs-idm35503888, fs-idm25571216 and fs-idp86013824 carry a suggested approach marked as OmniStax’s own.",
- "figures": [
-  {
-   "id": "fig-calcium",
-   "kind": "figure",
-   "draws": [],
-   "ai": [
     {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
-  },
-  {
-   "id": "fig-period3-symbols",
-   "kind": "photo",
-   "number": "7.9",
-   "draws": []
-  },
-  {
-   "id": "fig-cations",
-   "kind": "figure",
-   "draws": [],
-   "ai": [
-    {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
-  },
-  {
-   "id": "fig-anions",
-   "kind": "figure",
-   "draws": [],
-   "ai": [
-    {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
-  },
-  {
-   "id": "fig-ionic-lewis",
-   "kind": "photo",
-   "number": "7.10",
-   "draws": []
-  },
-  {
-   "id": "fig-cl2-dots",
-   "kind": "figure",
-   "draws": [],
-   "ai": [
-    {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
-  },
-  {
-   "id": "fig-cl2-dash",
-   "kind": "figure",
-   "draws": [],
-   "ai": [
-    {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
-  },
-  {
-   "id": "fig-ccl4-sih4",
-   "kind": "figure",
-   "draws": [],
-   "ai": [
-    {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
-  },
-  {
-   "id": "fig-nh3-h2o-hf",
-   "kind": "figure",
-   "draws": [],
-   "ai": [
-    {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
-  },
-  {
-   "id": "fig-double-bonds",
-   "kind": "figure",
-   "draws": [],
-   "ai": [
-    {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
-  },
-  {
-   "id": "fig-triple-bonds",
-   "kind": "figure",
-   "draws": [],
-   "ai": [
-    {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
-  },
-  {
-   "id": "fig-pairing",
-   "kind": "figure",
-   "draws": [],
-   "ai": [
-    {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
-  },
-  {
-   "id": "fig-skeletons",
-   "kind": "figure",
-   "draws": [],
-   "ai": [
-    {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
-  },
-  {
-   "id": "fig-terminal-pairs",
-   "kind": "figure",
-   "draws": [],
-   "ai": [
-    {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
-  },
-  {
-   "id": "fig-of2",
-   "kind": "figure",
-   "draws": [],
-   "ai": [
-    {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
-  },
-  {
-   "id": "fig-formate",
-   "kind": "figure",
-   "draws": [],
-   "ai": [
-    {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
-  },
-  {
-   "id": "fig-no-plus-double",
-   "kind": "figure",
-   "draws": [],
-   "ai": [
-    {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
-  },
-  {
-   "id": "fig-no-plus-triple",
-   "kind": "figure",
-   "draws": [],
-   "ai": [
-    {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
-  },
-  {
-   "id": "sim-lewis-steps",
-   "kind": "sim",
-   "draws": [],
-   "ai": [
-    {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
+      "id": "fig-calcium",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
     },
     {
-     "model": "claude-opus-5-5",
-     "effort": "high",
-     "part": "review: caption color wording, step-5 note that repeated the headline"
-    }
-   ]
-  },
-  {
-   "id": "fig-titan-1",
-   "kind": "figure",
-   "draws": [],
-   "ai": [
+      "id": "fig-period3-symbols",
+      "kind": "photo",
+      "number": "7.9",
+      "draws": []
+    },
     {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
-  },
-  {
-   "id": "fig-titan-2",
-   "kind": "figure",
-   "draws": [],
-   "ai": [
+      "id": "fig-cations",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
     {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
-  },
-  {
-   "id": "fig-titan-3",
-   "kind": "figure",
-   "draws": [],
-   "ai": [
+      "id": "fig-anions",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
     {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
-  },
-  {
-   "id": "fig-titan-4",
-   "kind": "figure",
-   "draws": [],
-   "ai": [
+      "id": "fig-ionic-lewis",
+      "kind": "photo",
+      "number": "7.10",
+      "draws": []
+    },
     {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
-  },
-  {
-   "id": "fig-smalley",
-   "kind": "photo",
-   "number": "7.11",
-   "draws": []
-  },
-  {
-   "id": "fig-no-single",
-   "kind": "figure",
-   "draws": [],
-   "ai": [
+      "id": "fig-cl2-dots",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
     {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
-  },
-  {
-   "id": "fig-no-double",
-   "kind": "figure",
-   "draws": [],
-   "ai": [
+      "id": "fig-cl2-dash",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
     {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
-  },
-  {
-   "id": "fig-deficient",
-   "kind": "figure",
-   "draws": [],
-   "ai": [
+      "id": "fig-ccl4-sih4",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
     {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
-  },
-  {
-   "id": "fig-dative",
-   "kind": "figure",
-   "draws": [],
-   "ai": [
+      "id": "fig-nh3-h2o-hf",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
     {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
-  },
-  {
-   "id": "fig-hypervalent",
-   "kind": "photo",
-   "number": "7.12",
-   "draws": []
-  },
-  {
-   "id": "fig-if5-xef4",
-   "kind": "figure",
-   "draws": [],
-   "ai": [
+      "id": "fig-double-bonds",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
     {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
-  },
-  {
-   "id": "fig-xe-skeletons",
-   "kind": "figure",
-   "draws": [],
-   "ai": [
+      "id": "fig-triple-bonds",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
     {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
-  },
-  {
-   "id": "fig-xef2",
-   "kind": "figure",
-   "draws": [],
-   "ai": [
+      "id": "fig-pairing",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
     {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
-  },
-  {
-   "id": "fig-xef6",
-   "kind": "figure",
-   "draws": [],
-   "ai": [
+      "id": "fig-skeletons",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
     {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
+      "id": "fig-terminal-pairs",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-of2",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-formate",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-no-plus-double",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-no-plus-triple",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-lewis-steps",
+      "kind": "sim",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "review: caption color wording, step-5 note that repeated the headline"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-titan-1",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-titan-2",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-titan-3",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-titan-4",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-smalley",
+      "kind": "photo",
+      "number": "7.11",
+      "draws": []
+    },
+    {
+      "id": "fig-no-single",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-no-double",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-deficient",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-dative",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-hypervalent",
+      "kind": "photo",
+      "number": "7.12",
+      "draws": []
+    },
+    {
+      "id": "fig-if5-xef4",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-xe-skeletons",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-xef2",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-xef6",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
     }
-   ]
-  }
- ],
- "coverage": [
-  {
-   "span": "lewis-symbols",
-   "concept": "lewis-symbol",
-   "verb": "introduces"
-  },
-  {
-   "span": "lewis-symbols",
-   "concept": "valence-and-core-electrons",
-   "verb": "uses"
-  },
-  {
-   "span": "lewis-symbols",
-   "concept": "ion-configurations",
-   "verb": "uses"
-  },
-  {
-   "span": "lewis-symbols",
-   "concept": "predict-ion-charge",
-   "verb": "uses"
-  },
-  {
-   "span": "lewis-symbols",
-   "concept": "ionic-bond",
-   "verb": "uses"
-  },
-  {
-   "span": "lewis-symbols",
-   "concept": "lewis-dot-symbol",
-   "verb": "introduces"
-  },
-  {
-   "span": "lewis-structures",
-   "concept": "lewis-structure",
-   "verb": "introduces"
-  },
-  {
-   "span": "lewis-structures",
-   "concept": "lewis-symbol",
-   "verb": "uses"
-  },
-  {
-   "span": "lewis-structures",
-   "concept": "covalent-bond-formation",
-   "verb": "uses"
-  },
-  {
-   "span": "lewis-structures",
-   "concept": "lewis-structure-diagram",
-   "verb": "introduces"
-  },
-  {
-   "span": "lewis-structures",
-   "concept": "lone-pair",
-   "verb": "introduces"
-  },
-  {
-   "span": "lewis-structures",
-   "concept": "single-bond",
-   "verb": "introduces"
-  },
-  {
-   "span": "octet-rule",
-   "concept": "octet-rule",
-   "verb": "introduces"
-  },
-  {
-   "span": "octet-rule",
-   "concept": "lewis-structure",
-   "verb": "uses"
-  },
-  {
-   "span": "multiple-bonds",
-   "concept": "multiple-bonds",
-   "verb": "introduces"
-  },
-  {
-   "span": "multiple-bonds",
-   "concept": "octet-rule",
-   "verb": "uses"
-  },
-  {
-   "span": "multiple-bonds",
-   "concept": "double-bond",
-   "verb": "introduces"
-  },
-  {
-   "span": "multiple-bonds",
-   "concept": "triple-bond",
-   "verb": "introduces"
-  },
-  {
-   "span": "writing-lewis",
-   "concept": "lewis-structure",
-   "verb": "reinforces"
-  },
-  {
-   "span": "writing-lewis",
-   "concept": "octet-rule",
-   "verb": "uses"
-  },
-  {
-   "span": "writing-lewis",
-   "concept": "multiple-bonds",
-   "verb": "uses"
-  },
-  {
-   "span": "writing-lewis",
-   "concept": "electronegativity",
-   "verb": "uses"
-  },
-  {
-   "span": "octet-exceptions",
-   "concept": "octet-rule-exceptions",
-   "verb": "introduces"
-  },
-  {
-   "span": "octet-exceptions",
-   "concept": "lewis-structure",
-   "verb": "uses"
-  },
-  {
-   "span": "octet-exceptions",
-   "concept": "octet-rule",
-   "verb": "uses"
-  },
-  {
-   "span": "octet-exceptions",
-   "concept": "free-radical",
-   "verb": "introduces"
-  },
-  {
-   "span": "octet-exceptions",
-   "concept": "hypervalent-molecule",
-   "verb": "introduces"
-  }
- ],
- "exercises": [
-  {
-   "id": "cyl1",
-   "source_id": "fs-idm36798944",
-   "kind": "check-your-learning",
-   "bloom": "Apply",
-   "place": {
-    "at": "inline",
-    "after": "ex-titan"
-   },
-   "cite": "writing-lewis",
-   "prompt": "Both carbon monoxide, CO, and carbon dioxide, CO<sub>2</sub>, are products of the combustion of fossil fuels. Both of these gases also cause problems: CO is toxic and CO<sub>2</sub> has been implicated in global climate change. What are the Lewis structures of these two molecules?",
-   "answer": {
-    "type": "open",
-    "generated_by": "source",
-    "solution": "<img src=\"/media/ch07/CNX_Chem_07_03_COCO2_img.jpg\" alt=\"Two Lewis structures are shown. The left shows a carbon triple bonded to an oxygen, each with a lone electron pair. The right structure shows a carbon double bonded to an oxygen on each side. Each oxygen has two lone pairs of electrons.\">"
-   }
-  },
-  {
-   "id": "cyl2",
-   "source_id": "fs-idp822144",
-   "kind": "check-your-learning",
-   "bloom": "Apply",
-   "place": {
-    "at": "inline",
-    "after": "ex-xenon"
-   },
-   "cite": "octet-exceptions",
-   "prompt": "The halogens form a class of compounds called the interhalogens, in which halogen atoms covalently bond to each other. Write the Lewis structures for the interhalogens BrCl<sub>3</sub> and ${\\text{ICl}}_{4}{}^{\\text{−}}.$",
-   "answer": {
-    "type": "open",
-    "generated_by": "source",
-    "solution": "<img src=\"/media/ch07/CNX_Chem_07_03_Interhal_img.jpg\" alt=\"Two Lewis structures are shown. The left depicts a bromine atom with two lone pairs of electrons single bonded to three chlorine atoms, each with three lone pairs of electrons. The right shows an iodine atom, with two lone pairs of electrons, single boned to four chlorine atoms, each with three lone pairs of electrons. This structure is surrounded by brackets and has a superscripted negative sign.\">"
-   }
-  },
-  {
-   "id": "e1",
-   "source_id": "fs-idp52580272",
-   "kind": "exercise",
-   "bloom": "Apply",
-   "place": {
-    "at": "end"
-   },
-   "cite": "lewis-symbols",
-   "prompt": "Write the Lewis symbols for each of the following ions:<br>(a) As<sup>3–</sup><br>(b) I<sup>–</sup><br>(c) Be<sup>2+</sup><br>(d) O<sup>2–</sup><br>(e) Ga<sup>3+</sup><br>(f) Li<sup>+</sup><br>(g) N<sup>3–</sup>",
-   "answer": {
-    "type": "open",
-    "generated_by": "source",
-    "solution": "(a) eight electrons:<br><img src=\"/media/ch07/CNX_Chem_07_03_Question1a_img.jpg\" alt=\"A Lewis dot diagram shows the symbol for arsenic, A s, surrounded by eight dots and a superscripted three negative sign.\"><br>(b) eight electrons:<br><img src=\"/media/ch07/CNX_Chem_07_03_Question1b_img.jpg\" alt=\"A Lewis dot diagram shows the symbol for iodine, I, surrounded by eight dots and a superscripted negative sign.\"><br>(c) no electrons Be<sup>2+</sup><br>(d) eight electrons:<br><img src=\"/media/ch07/CNX_Chem_07_03_Question1d_img.jpg\" alt=\"A Lewis dot diagram shows the symbol for oxygen, O, surrounded by eight dots and a superscripted two negative sign.\"><br>(e) no electrons Ga<sup>3+</sup><br>(f) no electrons Li<sup>+</sup><br>(g) eight electrons:<br><img src=\"/media/ch07/CNX_Chem_07_03_Question1g_img.jpg\" alt=\"A Lewis dot diagram shows the symbol for nitrogen, N, surrounded by eight dots and a superscripted three negative sign.\">"
-   }
-  },
-  {
-   "id": "e2",
-   "source_id": "fs-idm53812240",
-   "kind": "exercise",
-   "bloom": "Apply",
-   "place": {
-    "at": "end"
-   },
-   "cite": "lewis-symbols",
-   "prompt": "Many monatomic ions are found in seawater, including the ions formed from the following list of elements. Write the Lewis symbols for the monatomic ions formed from the following elements:<br>(a) Cl<br>(b) Na<br>(c) Mg<br>(d) Ca<br>(e) K<br>(f) Br<br>(g) Sr<br>(h) F",
-   "answer": {
-    "type": "open",
-    "generated_by": "ai",
-    "solution": "Metal atoms lose all their valence electrons, so their cations are drawn with no dots; nonmetal atoms gain electrons until they have eight, so their anions are drawn with eight dots in brackets, with the charge outside.<br>(a) Cl<sup>–</sup>: Cl with eight dots (four pairs) in brackets, charge –. A chlorine atom has seven valence electrons and gains one.<br>(b) Na<sup>+</sup>: Na with no dots. The atom loses its one valence electron.<br>(c) Mg<sup>2+</sup>: Mg with no dots. The atom loses its two valence electrons.<br>(d) Ca<sup>2+</sup>: Ca with no dots. The atom loses its two valence electrons.<br>(e) K<sup>+</sup>: K with no dots. The atom loses its one valence electron.<br>(f) Br<sup>–</sup>: Br with eight dots in brackets, charge –. A bromine atom has seven valence electrons and gains one.<br>(g) Sr<sup>2+</sup>: Sr with no dots. The atom loses its two valence electrons.<br>(h) F<sup>–</sup>: F with eight dots in brackets, charge –. A fluorine atom has seven valence electrons and gains one."
-   }
-  },
-  {
-   "id": "e3",
-   "source_id": "fs-idm49800144",
-   "kind": "exercise",
-   "bloom": "Apply",
-   "place": {
-    "at": "end"
-   },
-   "cite": "lewis-symbols",
-   "prompt": "Write the Lewis symbols of the ions in each of the following ionic compounds and the Lewis symbols of the atom from which they are formed:<br>(a) MgS<br>(b) Al<sub>2</sub>O<sub>3</sub><br>(c) GaCl<sub>3</sub><br>(d) K<sub>2</sub>O<br>(e) Li<sub>3</sub>N<br>(f) KF",
-   "answer": {
-    "type": "open",
-    "generated_by": "source",
-    "solution": "(a)<br><img src=\"/media/ch07/CNX_Chem_07_03_Exercise3a_img.jpg\" alt=\"Two Lewis structures are shown. The left shows the symbol M g with a superscripted two positive sign while the right shows the symbol S surrounded by eight dots and a superscripted two negative sign.\"><br>(b)<br><img src=\"/media/ch07/CNX_Chem_07_03_Exercise3b_img.jpg\" alt=\"Two Lewis structures are shown. The left shows the symbol A l with a superscripted three positive sign while the right shows the symbol O surrounded by eight dots and a superscripted two negative sign.\"><br>(c)<br><img src=\"/media/ch07/CNX_Chem_07_03_Exercise3c_img.jpg\" alt=\"Two Lewis structures are shown. The left shows the symbol G a with a superscripted three positive sign while the right shows the symbol C l surrounded by eight dots and a superscripted negative sign.\"><br>(d)<br><img src=\"/media/ch07/CNX_Chem_07_03_Exercise3d_img.jpg\" alt=\"Two Lewis structures are shown. The left shows the symbol K with a superscripted positive sign while the right shows the symbol O surrounded by eight dots and a superscripted two negative sign.\"><br>(e)<br><img src=\"/media/ch07/CNX_Chem_07_03_Exercise3e_img.jpg\" alt=\"Two Lewis structures are shown. The left shows the symbol L i with a superscripted positive sign while the right shows the symbol N surrounded by eight dots and a superscripted three negative sign.\"><br>(f)<br><img src=\"/media/ch07/CNX_Chem_07_03_Exercise3f_img.jpg\" alt=\"Two Lewis structures are shown. The left shows the symbol K with a superscripted positive sign while the right shows the symbol F surrounded by eight dots and a superscripted negative sign.\">"
-   }
-  },
-  {
-   "id": "e4",
-   "source_id": "fs-idp153695200",
-   "kind": "exercise",
-   "bloom": "Analyze",
-   "place": {
-    "at": "end"
-   },
-   "cite": "lewis-symbols",
-   "prompt": "In the Lewis structures listed here, M and X represent various elements in the third period of the periodic table. Write the formula of each compound using the chemical symbols of each element:<br>(a)<br><img src=\"/media/ch07/CNX_Chem_07_03_MXLewisa_img.jpg\" alt=\"Two Lewis structures are shown side-by-side, each surrounded by brackets. The left structure shows the symbol M with a superscripted two positive sign. The right shows the symbol X surrounded by four lone pairs of electrons with a superscripted two negative sign outside of the brackets.\"><br>(b)<br><img src=\"/media/ch07/CNX_Chem_07_03_MXLewisb_img.jpg\" alt=\"Two Lewis structures are shown side-by-side, each surrounded by brackets. The left structure shows the symbol M with a superscripted three positive sign. The right structure shows the symbol X surrounded by four lone pairs of electrons with a superscripted negative sign and a subscripted three both outside of the brackets.\"><br>(c)<br><img src=\"/media/ch07/CNX_Chem_07_03_MXLewisc_img.jpg\" alt=\"Two Lewis structures are shown side-by-side, each surrounded by brackets. The left structure shows the symbol M with a superscripted positive sign and a subscripted two outside of the brackets. The right structure shows the symbol X surrounded by four lone pairs of electrons with a superscripted two negative sign outside of the brackets.\"><br>(d)<br><img src=\"/media/ch07/CNX_Chem_07_03_MXLewisd_img.jpg\" alt=\"Two Lewis structures are shown side-by-side, each surrounded by brackets. The left structure shows the symbol M with a superscripted three positive sign and a subscripted two outside of the brackets. The right structure shows the symbol X surrounded by four lone pairs of electrons with a superscripted two negative sign and subscripted three both outside of the brackets.\">",
-   "answer": {
-    "type": "open",
-    "generated_by": "ai",
-    "solution": "(a) MgS. (b) AlCl<sub>3</sub>. (c) Na<sub>2</sub>S. (d) Al<sub>2</sub>S<sub>3</sub>. In the third period, a cation with no dots and charge 1+, 2+ or 3+ comes from Na, Mg or Al, whose atoms lose one, two or three valence electrons. An anion with eight dots and charge 1– or 2– comes from Cl or S, whose atoms gain one or two electrons to reach eight. A subscript outside the brackets gives the number of that ion.<br>(a) One M<sup>2+</sup> is Mg<sup>2+</sup> and one X<sup>2–</sup> is S<sup>2–</sup>, so the compound is MgS.<br>(b) One M<sup>3+</sup> is Al<sup>3+</sup> and three X<sup>–</sup> are three Cl<sup>–</sup>, so it is AlCl<sub>3</sub>.<br>(c) Two M<sup>+</sup> are two Na<sup>+</sup> and one X<sup>2–</sup> is S<sup>2–</sup>, so it is Na<sub>2</sub>S.<br>(d) Two M<sup>3+</sup> are two Al<sup>3+</sup> and three X<sup>2–</sup> are three S<sup>2–</sup>, so it is Al<sub>2</sub>S<sub>3</sub>. In each, the positive and negative charges cancel."
-   }
-  },
-  {
-   "id": "e5",
-   "source_id": "fs-idm764384",
-   "kind": "exercise",
-   "bloom": "Apply",
-   "place": {
-    "at": "end"
-   },
-   "cite": "writing-lewis",
-   "prompt": "Write the Lewis structure for the diatomic molecule P<sub>2</sub>, an unstable form of phosphorus found in high-temperature phosphorus vapor.",
-   "answer": {
-    "type": "open",
-    "generated_by": "source",
-    "solution": "<img src=\"/media/ch07/CNX_Chem_07_03_Question5_img.jpg\" alt=\"A Lewis diagram shows two phosphorus atoms triple bonded together each with one lone electron pair.\">"
-   }
-  },
-  {
-   "id": "e6",
-   "source_id": "fs-idm60487856",
-   "kind": "exercise",
-   "bloom": "Apply",
-   "place": {
-    "at": "end"
-   },
-   "cite": "writing-lewis",
-   "prompt": "Write Lewis structures for the following:<br>(a) H<sub>2</sub><br>(b) HBr<br>(c) PCl<sub>3</sub><br>(d) SF<sub>2</sub><br>(e) H<sub>2</sub>CCH<sub>2</sub><br>(f) HNNH<br>(g) H<sub>2</sub>CNH<br>(h) NO<sup>–</sup><br>(i) N<sub>2</sub><br>(j) CO<br>(k) CN<sup>–</sup>",
-   "answer": {
-    "type": "open",
-    "generated_by": "ai",
-    "solution": "Each structure uses exactly the valence electrons counted for it and gives every atom an octet, or two electrons for hydrogen.<br>(a) H<sub>2</sub>, 2 electrons: H–H, one single bond and no lone pairs.<br>(b) HBr, 1 + 7 = 8 electrons: H–Br, with three lone pairs on Br.<br>(c) PCl<sub>3</sub>, 5 + 3(7) = 26 electrons: P in the center joined to three Cl atoms by single bonds, three lone pairs on each Cl and one lone pair on P.<br>(d) SF<sub>2</sub>, 6 + 2(7) = 20 electrons: F–S–F with single bonds, three lone pairs on each F and two lone pairs on S.<br>(e) H<sub>2</sub>CCH<sub>2</sub>, 2(4) + 4(1) = 12 electrons: a C=C double bond, each carbon also bonded to two H atoms, no lone pairs.<br>(f) HNNH, 2(1) + 2(5) = 12 electrons: H–N=N–H, with one lone pair on each N.<br>(g) H<sub>2</sub>CNH, 4 + 5 + 3(1) = 12 electrons: a C=N double bond, carbon bonded to two H atoms, nitrogen bonded to one H atom and carrying one lone pair.<br>(h) NO<sup>–</sup>, 5 + 6 + 1 = 12 electrons: N=O, with two lone pairs on N and two on O, in brackets with charge –.<br>(i) N<sub>2</sub>, 2(5) = 10 electrons: N≡N, with one lone pair on each N.<br>(j) CO, 4 + 6 = 10 electrons: C≡O, with one lone pair on each atom.<br>(k) CN<sup>–</sup>, 4 + 5 + 1 = 10 electrons: C≡N, with one lone pair on each atom, in brackets with charge –.<br>In (e) through (k), single bonds left an atom short of an octet, so lone pairs of a neighbor were moved into double or triple bonds, as for NO<sup>+</sup> and HCN."
-   }
-  },
-  {
-   "id": "e7",
-   "source_id": "fs-idp15556576",
-   "kind": "exercise",
-   "bloom": "Apply",
-   "place": {
-    "at": "end"
-   },
-   "cite": "writing-lewis",
-   "prompt": "Write Lewis structures for the following:<br>(a) O<sub>2</sub><br>(b) H<sub>2</sub>CO<br>(c) AsF<sub>3</sub><br>(d) ClNO<br>(e) SiCl<sub>4</sub><br>(f) H<sub>3</sub>O<sup>+</sup><br>(g) ${\\text{NH}}_{4}{}^{+}$<br>(h) ${\\text{BF}}_{4}{}^{\\text{−}}$<br>(i) HCCH<br>(j) ClCN<br>(k) ${\\text{C}}_{2}{}^{\\text{2+}}$",
-   "answer": {
-    "type": "open",
-    "generated_by": "source",
-    "solution": "(a)<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7a_img.jpg\" alt=\"A Lewis structure shows two oxygen atoms double bonded together, and each has two lone pairs of electrons.\"><br>In this case, the Lewis structure is inadequate to depict the fact that experimental studies have shown two unpaired electrons in each oxygen molecule.<br>(b)<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7b_img.jpg\" alt=\"A Lewis structure shows a carbon atom that is single bonded to two hydrogen atoms and double bonded to an oxygen atom. The oxygen atom has two lone pairs of electrons.\"><br>(c)<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7c_img.jpg\" alt=\"A Lewis structure shows an arsenic atom single bonded to three fluorine atoms. Each fluorine atom has a lone pair of electrons.\"><br>(d)<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7d_img.jpg\" alt=\"A Lewis structure shows a nitrogen atom with a lone pair of electrons single bonded to a chlorine atom that has three lone pairs of electrons. The nitrogen is also double bonded to an oxygen which has two lone pairs of electrons.\"><br>(e)<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7e_img.jpg\" alt=\"A Lewis structure shows a silicon atom that is single bonded to four chlorine atoms. Each chlorine atom has three lone pairs of electrons.\"><br>(f)<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7f_img.jpg\" alt=\"A Lewis structure shows an oxygen atom with a lone pair of electrons single bonded to three hydrogen atoms. The structure is surrounded by brackets with a superscripted positive sign.\"><br>(g)<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7g_img.jpg\" alt=\"A Lewis structure shows a nitrogen atom single bonded to four hydrogen atoms. The structure is surrounded by brackets with a superscripted positive sign.\"><br>(h)<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7h_img.jpg\" alt=\"A Lewis structure shows a boron atom single bonded to four fluorine atoms. Each fluorine atom has three lone pairs of electrons. The structure is surrounded by brackets with a superscripted negative sign.\"><br>(i)<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7i_img.jpg\" alt=\"A Lewis structure shows two carbon atoms that are triple bonded together. Each carbon is also single bonded to a hydrogen atom.\"><br>(j)<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7j_img.jpg\" alt=\"A Lewis structure shows a carbon atom that is triple bonded to a nitrogen atom that has one lone pair of electrons. The carbon is also single bonded to a chlorine atom that has three lone pairs of electrons.\"><br>(k)<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7k_img.jpg\" alt=\"A Lewis structure shows two carbon atoms joined with a triple bond. A superscripted 2 positive sign lies to the right of the second carbon.\">"
-   }
-  },
-  {
-   "id": "e8",
-   "source_id": "fs-idm78195216",
-   "kind": "exercise",
-   "bloom": "Apply",
-   "place": {
-    "at": "end"
-   },
-   "cite": "octet-exceptions",
-   "prompt": "Write Lewis structures for the following:<br>(a) ClF<sub>3</sub><br>(b) PCl<sub>5</sub><br>(c) BF<sub>3</sub><br>(d) ${\\text{PF}}_{6}{}^{\\text{−}}$",
-   "answer": {
-    "type": "open",
-    "generated_by": "ai",
-    "solution": "(a) ClF<sub>3</sub>, 7 + 3(7) = 28 electrons: Cl in the center with three Cl–F single bonds, three lone pairs on each F, and the 4 electrons left over as two lone pairs on Cl. Chlorine has 10 electrons, which a third-period atom can hold.<br>(b) PCl<sub>5</sub>, 5 + 5(7) = 40 electrons: P in the center with five P–Cl single bonds and three lone pairs on each Cl. No electrons remain, and phosphorus shares five pairs, 10 electrons, as in Figure 7.12.<br>(c) BF<sub>3</sub>, 3 + 3(7) = 24 electrons: B in the center with three B–F single bonds and three lone pairs on each F. Boron has only 6 electrons; it is electron deficient, and the structure with three single bonds is the best one, as the measured bond lengths show.<br>(d) ${\\text{PF}}_{6}{}^{\\text{−}}$, 5 + 6(7) + 1 = 48 electrons: P in the center with six P–F single bonds and three lone pairs on each F, all in brackets with charge –. No electrons remain, and phosphorus has 12 electrons, like sulfur in SF<sub>6</sub>."
-   }
-  },
-  {
-   "id": "e9",
-   "source_id": "fs-idp37438640",
-   "kind": "exercise",
-   "bloom": "Apply",
-   "place": {
-    "at": "end"
-   },
-   "cite": "octet-exceptions",
-   "prompt": "Write Lewis structures for the following:<br>(a) SeF<sub>6</sub><br>(b) XeF<sub>4</sub><br>(c) ${\\text{SeCl}}_{3}{}^{+}$<br>(d) Cl<sub>2</sub>BBCl<sub>2</sub> (contains a B–B bond)",
-   "answer": {
-    "type": "open",
-    "generated_by": "source",
-    "solution": "(a) SeF<sub>6</sub>:<br><img src=\"/media/ch07/CNX_Chem_07_03_Question9a_img.jpg\" alt=\"A Lewis structure shows a selenium atom single bonded to six fluorine atoms, each with three lone pairs of electrons.\"><br>(b) XeF<sub>4</sub>:<br><img src=\"/media/ch07/CNX_Chem_07_03_Question9b_img.jpg\" alt=\"A Lewis structure shows a xenon atom with two lone pairs of electrons. It is single bonded to four fluorine atoms each with three lone pairs of electrons.\"><br>(c) ${\\text{SeCl}}_{3}{}^{\\text{+}}\\text{:}$<br><img src=\"/media/ch07/CNX_Chem_07_03_Question9c_img.jpg\" alt=\"A Lewis structure shows a selenium atom with one lone pair of electrons single bonded to three chlorine atoms each with three lone pairs of electrons. The whole structure is surrounded by brackets.\"><br>(d) Cl<sub>2</sub>BBCl<sub>2</sub>:<br><img src=\"/media/ch07/CNX_Chem_07_03_Question9d_img.jpg\" alt=\"A Lewis structure shows two boron atoms that are single bonded together. Each is also single bonded to two chlorine atoms that both have three lone pairs of electrons.\">"
-   }
-  },
-  {
-   "id": "e10",
-   "source_id": "fs-idm66409936",
-   "kind": "exercise",
-   "bloom": "Apply",
-   "place": {
-    "at": "end"
-   },
-   "cite": "writing-lewis",
-   "prompt": "Write Lewis structures for:<br>(a) ${\\text{PO}}_{4}{}^{\\text{3−}}$<br>(b) ${\\text{ICl}}_{4}{}^{\\text{−}}$<br>(c) ${\\text{SO}}_{3}{}^{\\text{2−}}$<br>(d) HONO",
-   "answer": {
-    "type": "open",
-    "generated_by": "ai",
-    "solution": "(a) ${\\text{PO}}_{4}{}^{\\text{3−}}$, 5 + 4(6) + 3 = 32 electrons: P in the center with four P–O single bonds and three lone pairs on each O, in brackets with charge 3–. Every atom has an octet.<br>(b) ${\\text{ICl}}_{4}{}^{\\text{−}}$, 7 + 4(7) + 1 = 36 electrons: I in the center with four I–Cl single bonds and three lone pairs on each Cl, using 32 electrons. The other 4 go on iodine as two lone pairs, so iodine holds 12 electrons, as xenon does in XeF<sub>4</sub>. The structure is in brackets with charge –.<br>(c) ${\\text{SO}}_{3}{}^{\\text{2−}}$, 6 + 3(6) + 2 = 26 electrons: S in the center with three S–O single bonds and three lone pairs on each O, using 24 electrons. The last 2 go on sulfur as one lone pair, completing its octet. The structure is in brackets with charge 2–.<br>(d) HONO, 1 + 2(6) + 5 = 18 electrons: H–O–N=O. The middle oxygen carries two lone pairs, nitrogen one lone pair and the terminal oxygen two lone pairs. With single bonds only, nitrogen had just 6 electrons, so one lone pair of the terminal oxygen became the N=O double bond."
-   }
-  },
-  {
-   "id": "e11",
-   "source_id": "fs-idm12035200",
-   "kind": "exercise",
-   "bloom": "Understand",
-   "place": {
-    "at": "end"
-   },
-   "cite": "lewis-structures",
-   "prompt": "Correct the following statement: “The bonds in solid PbCl<sub>2</sub> are ionic; the bond in a HCl molecule is covalent. Thus, all of the valence electrons in PbCl<sub>2</sub> are located on the Cl<sup>–</sup> ions, and all of the valence electrons in a HCl molecule are shared between the H and Cl atoms.”",
-   "answer": {
-    "type": "open",
-    "generated_by": "source",
-    "solution": "Two valence electrons per Pb atom are transferred to Cl atoms; the resulting Pb<sup>2+</sup> ion has a 6<em>s</em><sup>2</sup> valence shell configuration. Two of the valence electrons in the HCl molecule are shared, and the other six are located on the Cl atom as lone pairs of electrons."
-   }
-  },
-  {
-   "id": "e12",
-   "source_id": "fs-idm35503888",
-   "kind": "exercise",
-   "bloom": "Apply",
-   "place": {
-    "at": "end"
-   },
-   "cite": "octet-exceptions",
-   "prompt": "Write Lewis structures for the following molecules or ions:<br>(a) SbH<sub>3</sub><br>(b) XeF<sub>2</sub><br>(c) Se<sub>8</sub> (a cyclic molecule with a ring of eight Se atoms)",
-   "answer": {
-    "type": "open",
-    "generated_by": "ai",
-    "solution": "(a) SbH<sub>3</sub>, 5 + 3(1) = 8 electrons: Sb in the center with three Sb–H single bonds and one lone pair on Sb, the same pattern as NH<sub>3</sub>, since antimony is in group 15.<br>(b) XeF<sub>2</sub>, 8 + 2(7) = 22 electrons: F–Xe–F with single bonds, three lone pairs on each F and the remaining 6 electrons as three lone pairs on Xe. Xenon holds 10 electrons, as in Example 7.5.<br>(c) Se<sub>8</sub>, 8(6) = 48 electrons: eight Se atoms in a ring joined by eight Se–Se single bonds, which use 16 electrons. The other 32 electrons are two lone pairs on each Se atom, so every atom has two bonds and two lone pairs, an octet, as an oxygen atom does in water."
-   }
-  },
-  {
-   "id": "e13",
-   "source_id": "fs-idp145119536",
-   "kind": "exercise",
-   "bloom": "Apply",
-   "place": {
-    "at": "end"
-   },
-   "cite": "writing-lewis",
-   "prompt": "Methanol, H<sub>3</sub>COH, is used as the fuel in some race cars. Ethanol, C<sub>2</sub>H<sub>5</sub>OH, is used extensively as motor fuel in Brazil. Both methanol and ethanol produce CO<sub>2</sub> and H<sub>2</sub>O when they burn. Write the chemical equations for these combustion reactions using Lewis structures instead of chemical formulas.",
-   "answer": {
-    "type": "open",
-    "generated_by": "source",
-    "solution": "<img src=\"/media/ch07/CNX_Chem_07_03_Question18_img.jpg\" alt=\"Two reactions are shown using Lewis structures. The top reaction shows a carbon atom, single bonded to three hydrogen atoms and single bonded to an oxygen atom with two lone pairs of electrons. The oxygen atom is also bonded to a hydrogen atom. This is followed by a plus sign and the number one point five, followed by two oxygen atoms bonded together with a double bond and each with two lone pairs of electrons. A right-facing arrow leads to a carbon atom that is double bonded to two oxygen atoms, each of which has two lone pairs of electrons. This structure is followed by a plus sign, a number two, and a structure made up of an oxygen with two lone pairs of electrons single bonded to two hydrogen atoms. The bottom reaction shows a carbon atom, single bonded to three hydrogen atoms and single bonded to another carbon atom. The second carbon atom is single bonded to two hydrogen atoms and one oxygen atom with two lone pairs of electrons. The oxygen atom is also bonded to a hydrogen atom. This is followed by a plus sign and the number three, followed by two oxygen atoms bonded together with a double bond. Each oxygen atom has two lone pairs of electrons. A right-facing arrow leads to a number two and a carbon atom that is double bonded to two oxygen atoms, each of which has two lone pairs of electrons. This structure is followed by a plus sign, a number three, and a structure made up of an oxygen with two lone pairs of electrons single bonded to two hydrogen atoms.\">"
-   }
-  },
-  {
-   "id": "e14",
-   "source_id": "fs-idm25571216",
-   "kind": "exercise",
-   "bloom": "Apply",
-   "place": {
-    "at": "end"
-   },
-   "cite": "writing-lewis",
-   "prompt": "Many planets in our solar system contain organic chemicals including methane (CH<sub>4</sub>) and traces of ethylene (C<sub>2</sub>H<sub>4</sub>), ethane (C<sub>2</sub>H<sub>6</sub>), propyne (H<sub>3</sub>CCCH), and diacetylene (HCCCCH). Write the Lewis structures for each of these molecules.",
-   "answer": {
-    "type": "open",
-    "generated_by": "ai",
-    "solution": "Carbon forms four bonds and hydrogen one, and each structure uses all the valence electrons.<br>Methane, CH<sub>4</sub>, 4 + 4(1) = 8 electrons: C in the center with four C–H single bonds.<br>Ethylene, C<sub>2</sub>H<sub>4</sub>, 2(4) + 4(1) = 12 electrons: H<sub>2</sub>C=CH<sub>2</sub>, a carbon-carbon double bond with two H atoms on each carbon.<br>Ethane, C<sub>2</sub>H<sub>6</sub>, 2(4) + 6(1) = 14 electrons: H<sub>3</sub>C–CH<sub>3</sub>, all single bonds, three H atoms on each carbon.<br>Propyne, H<sub>3</sub>CCCH, 3(4) + 4(1) = 16 electrons: H<sub>3</sub>C–C≡C–H, a CH<sub>3</sub> group joined by a single bond to a carbon that is triple bonded to a carbon carrying one H.<br>Diacetylene, HCCCCH, 4(4) + 2(1) = 18 electrons: H–C≡C–C≡C–H, two triple bonds joined by a single bond.<br>None of the structures has lone pairs. In ethylene, propyne and diacetylene, single bonds alone leave carbon atoms short of an octet, so their electrons form double or triple bonds, as in acetylene in Example 7.4."
-   }
-  },
-  {
-   "id": "e15",
-   "source_id": "fs-idm75285152",
-   "kind": "exercise",
-   "bloom": "Apply",
-   "place": {
-    "at": "end"
-   },
-   "cite": "writing-lewis",
-   "prompt": "Carbon tetrachloride was formerly used in fire extinguishers for electrical fires. It is no longer used for this purpose because of the formation of the toxic gas phosgene, Cl<sub>2</sub>CO. Write the Lewis structures for carbon tetrachloride and phosgene.",
-   "answer": {
-    "type": "open",
-    "generated_by": "source",
-    "solution": "<img src=\"/media/ch07/CNX_Chem_07_03_Carbtet_img.jpg\" alt=\"Two Lewis structures are shown. The left depicts a carbon atom single bonded to four chlorine atoms, each with three lone pairs of electrons. The right shows a carbon atom double bonded to an oxygen atom that has two lone pairs of electrons. The carbon atom is also single bonded to two chlorine atoms, each of which has three lone pairs of electrons.\">"
-   }
-  },
-  {
-   "id": "e16",
-   "source_id": "fs-idp86013824",
-   "kind": "exercise",
-   "bloom": "Apply",
-   "place": {
-    "at": "end"
-   },
-   "cite": "lewis-symbols",
-   "prompt": "Identify the atoms that correspond to each of the following electron configurations. Then, write the Lewis symbol for the common ion formed from each atom:<br>(a) 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>5</sup><br>(b) 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup><br>(c) 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup><br>(d) 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>4</sup><br>(e) 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>1</sup>",
-   "answer": {
-    "type": "open",
-    "generated_by": "ai",
-    "solution": "The number of electrons in each configuration is the atomic number of the atom. A metal atom loses its valence electrons, giving a cation drawn with no dots, and a nonmetal atom gains enough electrons to reach eight, giving an anion drawn with eight dots in brackets.<br>(a) 9 electrons: fluorine. A fluorine atom has seven valence electrons and gains one, so its ion is F<sup>–</sup>, drawn with eight dots in brackets and the charge –.<br>(b) 12 electrons: magnesium. The atom loses its two 3<em>s</em> electrons, so its ion is Mg<sup>2+</sup>, drawn with no dots.<br>(c) 30 electrons: zinc. The atom loses its two 4<em>s</em> electrons, so its ion is Zn<sup>2+</sup>, drawn with no dots.<br>(d) 34 electrons: selenium. Its six valence electrons, 4<em>s</em><sup>2</sup>4<em>p</em><sup>4</sup>, become eight when it gains two, so its ion is Se<sup>2–</sup>, drawn with eight dots in brackets and the charge 2–.<br>(e) 31 electrons: gallium. The atom loses its three valence electrons, 4<em>s</em><sup>2</sup>4<em>p</em><sup>1</sup>, so its ion is Ga<sup>3+</sup>, drawn with no dots."
-   }
-  },
-  {
-   "id": "e17",
-   "source_id": "fs-idm8464272",
-   "kind": "exercise",
-   "bloom": "Apply",
-   "place": {
-    "at": "end"
-   },
-   "cite": "writing-lewis",
-   "prompt": "The arrangement of atoms in several biologically important molecules is given here. Complete the Lewis structures of these molecules by adding multiple bonds and lone pairs. Do not add any more atoms.<br>(a) the amino acid serine:<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioa_img.jpg\" alt=\"A Lewis structure is shown. A nitrogen atom is single bonded to two hydrogen atoms and a carbon atom. The carbon atom is single bonded to a hydrogen atom and two other carbon atoms. One of these carbon atoms is single bonded to two hydrogen atoms and an oxygen atom. The oxygen atom is bonded to a hydrogen atom. The other carbon atom is single bonded to two oxygen atoms, one of which is bonded to a hydrogen atom.\"><br>(b) urea:<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbiob_img.jpg\" alt=\"A Lewis structure is shown. A nitrogen atom is single bonded to two hydrogen atoms and a carbon atom. The carbon atom is single bonded to an oxygen atom and another nitrogen atom. That nitrogen atom is then single bonded to two hydrogen atoms.\"><br>(c) pyruvic acid:<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioc_img.jpg\" alt=\"A Lewis structure is shown. A carbon atom is single bonded to three hydrogen atoms and another carbon atom. The second carbon atom is single bonded to an oxygen atom and a third carbon atom. This carbon is then single bonded to two oxygen atoms, one of which is single bonded to a hydrogen atom.\"><br>(d) uracil:<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbiod_img.jpg\" alt=\"A Lewis hexagonal ring structure is shown. From the top of the ring (moving clockwise), three carbon atoms, one nitrogen atom, a carbon atom, and a nitrogen atom are single bonded to each another. The top carbon atom is single bonded to an oxygen atom. The second and third carbons and the nitrogen atom are each single bonded to a hydrogen atom. The next carbon atom is single bonded to an oxygen atom, and the last nitrogen atom is single bonded to a hydrogen atom.\"><br>(e) carbonic acid:<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioe_img.jpg\" alt=\"A Lewis structure is shown. A carbon atom is single bonded to three oxygen atoms. Two of those oxygen atoms are each single bonded to a hydrogen atom.\">",
-   "answer": {
-    "type": "open",
-    "generated_by": "source",
-    "solution": "(a)<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioansa_img.jpg\" alt=\"A Lewis structure is shown. A nitrogen atom is single bonded to two hydrogen atoms and a carbon atom. The carbon atom is single bonded to a hydrogen atom and two other carbon atoms. One of these carbon atoms is single bonded to two hydrogen atoms and an oxygen atom. The oxygen atom is bonded to a hydrogen atom. The other carbon is single bonded to two oxygen atoms, one of which is bonded to a hydrogen atom. The oxygen atoms have two lone pairs of electron dots, and the nitrogen atom has one lone pair of electron dots.\"><br>(b)<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioansb_img.jpg\" alt=\"A Lewis structure is shown. A nitrogen atom is single bonded to two hydrogen atoms and a carbon atom. The carbon atom is single bonded to an oxygen atom and one nitrogen atom. That nitrogen atom is then single bonded to two hydrogen atoms. The oxygen atom has two lone pairs of electron dots, and the nitrogen atoms have one lone pair of electron dots each.\"><br>(c)<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioansc_img.jpg\" alt=\"A Lewis structure is shown. A carbon atom is single bonded to three hydrogen atoms and a carbon atom. The carbon atom is single bonded to an oxygen atom and a third carbon atom. This carbon is then single bonded to two oxygen atoms, one of which is single bonded to a hydrogen atom. Each oxygen atom has two lone pairs of electron dots.\"><br>(d)<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioansd_img.jpg\" alt=\"A Lewis hexagonal ring structure is shown. From the top of the ring, three carbon atoms, one nitrogen atom, a carbon atom and a nitrogen atom are single bonded to one another. The top carbon is single bonded to an oxygen, the second and third carbons and the nitrogen atom are each single bonded to a hydrogen atom. The next carbon is single bonded to an oxygen atom and the last nitrogen is single bonded to a hydrogen atom. The oxygen atoms have two lone pairs of electron dots, and the nitrogen atoms have one lone pair of electron dots.\"><br>(e)<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioanse_img.jpg\" alt=\"A Lewis structure is shown. A carbon atom is single bonded to three oxygen atoms. Two of those oxygen atoms are each single bonded to a hydrogen atom. Each oxygen atom has two lone pairs of electron dots.\">"
-   }
-  },
-  {
-   "id": "e18",
-   "source_id": "fs-idm74511072",
-   "kind": "exercise",
-   "bloom": "Apply",
-   "place": {
-    "at": "end"
-   },
-   "cite": "writing-lewis",
-   "prompt": "A compound with a molar mass of about 42 g/mol contains 85.7% carbon and 14.3% hydrogen by mass. Write the Lewis structure for a molecule of the compound.",
-   "answer": {
-    "type": "open",
-    "generated_by": "source",
-    "solution": "<img src=\"/media/ch07/CNX_Chem_07_03_Exercise25_img.jpg\" alt=\"A Lewis structure is shown. A carbon atom is single bonded to three hydrogen atoms and another carbon atom. The second carbon atom is double bonded to another carbon atom and single bonded to a hydrogen atom. The last carbon is single bonded to two hydrogen atoms.\">"
-   }
-  },
-  {
-   "id": "e19",
-   "source_id": "fs-idm70503056",
-   "kind": "exercise",
-   "bloom": "Understand",
-   "place": {
-    "at": "end"
-   },
-   "cite": "multiple-bonds",
-   "prompt": "How are single, double, and triple bonds similar? How do they differ?",
-   "answer": {
-    "type": "open",
-    "generated_by": "source",
-    "solution": "Each bond includes a sharing of electrons between atoms. Two electrons are shared in a single bond; four electrons are shared in a double bond; and six electrons are shared in a triple bond."
-   }
-  }
- ],
- "exercise_concepts": [
-  {
-   "exercise": "cyl1",
-   "concept": "lewis-structure"
-  },
-  {
-   "exercise": "cyl1",
-   "concept": "multiple-bonds"
-  },
-  {
-   "exercise": "cyl2",
-   "concept": "lewis-structure"
-  },
-  {
-   "exercise": "cyl2",
-   "concept": "octet-rule-exceptions"
-  },
-  {
-   "exercise": "e1",
-   "concept": "lewis-symbol"
-  },
-  {
-   "exercise": "e2",
-   "concept": "lewis-symbol"
-  },
-  {
-   "exercise": "e2",
-   "concept": "predict-ion-charge"
-  },
-  {
-   "exercise": "e3",
-   "concept": "lewis-symbol"
-  },
-  {
-   "exercise": "e3",
-   "concept": "predict-ion-charge"
-  },
-  {
-   "exercise": "e4",
-   "concept": "lewis-symbol"
-  },
-  {
-   "exercise": "e4",
-   "concept": "predict-ion-charge"
-  },
-  {
-   "exercise": "e5",
-   "concept": "lewis-structure"
-  },
-  {
-   "exercise": "e5",
-   "concept": "multiple-bonds"
-  },
-  {
-   "exercise": "e6",
-   "concept": "lewis-structure"
-  },
-  {
-   "exercise": "e6",
-   "concept": "multiple-bonds"
-  },
-  {
-   "exercise": "e7",
-   "concept": "lewis-structure"
-  },
-  {
-   "exercise": "e7",
-   "concept": "multiple-bonds"
-  },
-  {
-   "exercise": "e8",
-   "concept": "lewis-structure"
-  },
-  {
-   "exercise": "e8",
-   "concept": "octet-rule-exceptions"
-  },
-  {
-   "exercise": "e9",
-   "concept": "lewis-structure"
-  },
-  {
-   "exercise": "e9",
-   "concept": "octet-rule-exceptions"
-  },
-  {
-   "exercise": "e10",
-   "concept": "lewis-structure"
-  },
-  {
-   "exercise": "e10",
-   "concept": "octet-rule-exceptions"
-  },
-  {
-   "exercise": "e11",
-   "concept": "lewis-structure"
-  },
-  {
-   "exercise": "e11",
-   "concept": "ionic-bond"
-  },
-  {
-   "exercise": "e12",
-   "concept": "lewis-structure"
-  },
-  {
-   "exercise": "e12",
-   "concept": "octet-rule-exceptions"
-  },
-  {
-   "exercise": "e13",
-   "concept": "lewis-structure"
-  },
-  {
-   "exercise": "e13",
-   "concept": "multiple-bonds"
-  },
-  {
-   "exercise": "e14",
-   "concept": "lewis-structure"
-  },
-  {
-   "exercise": "e14",
-   "concept": "multiple-bonds"
-  },
-  {
-   "exercise": "e15",
-   "concept": "lewis-structure"
-  },
-  {
-   "exercise": "e15",
-   "concept": "multiple-bonds"
-  },
-  {
-   "exercise": "e16",
-   "concept": "lewis-symbol"
-  },
-  {
-   "exercise": "e16",
-   "concept": "ion-electron-configuration"
-  },
-  {
-   "exercise": "e17",
-   "concept": "lewis-structure"
-  },
-  {
-   "exercise": "e17",
-   "concept": "multiple-bonds"
-  },
-  {
-   "exercise": "e17",
-   "concept": "octet-rule"
-  },
-  {
-   "exercise": "e18",
-   "concept": "lewis-structure"
-  },
-  {
-   "exercise": "e18",
-   "concept": "multiple-bonds"
-  },
-  {
-   "exercise": "e19",
-   "concept": "multiple-bonds"
-  }
- ],
- "footnotes": [
-  {
-   "id": "c-six-steps",
-   "kind": "correction",
-   "html": "The book says six steps. The procedure for drawing Lewis structures given earlier in this section has five steps."
-  }
- ]
+  ],
+  "coverage": [
+    {
+      "span": "lewis-symbols",
+      "concept": "lewis-symbol",
+      "verb": "introduces"
+    },
+    {
+      "span": "lewis-symbols",
+      "concept": "valence-and-core-electrons",
+      "verb": "uses"
+    },
+    {
+      "span": "lewis-symbols",
+      "concept": "ion-configurations",
+      "verb": "uses"
+    },
+    {
+      "span": "lewis-symbols",
+      "concept": "predict-ion-charge",
+      "verb": "uses"
+    },
+    {
+      "span": "lewis-symbols",
+      "concept": "ionic-bond",
+      "verb": "uses"
+    },
+    {
+      "span": "lewis-symbols",
+      "concept": "lewis-dot-symbol",
+      "verb": "introduces"
+    },
+    {
+      "span": "lewis-structures",
+      "concept": "lewis-structure",
+      "verb": "introduces"
+    },
+    {
+      "span": "lewis-structures",
+      "concept": "lewis-symbol",
+      "verb": "uses"
+    },
+    {
+      "span": "lewis-structures",
+      "concept": "covalent-bond-formation",
+      "verb": "uses"
+    },
+    {
+      "span": "lewis-structures",
+      "concept": "lewis-structure-diagram",
+      "verb": "introduces"
+    },
+    {
+      "span": "lewis-structures",
+      "concept": "lone-pair",
+      "verb": "introduces"
+    },
+    {
+      "span": "lewis-structures",
+      "concept": "single-bond",
+      "verb": "introduces"
+    },
+    {
+      "span": "octet-rule",
+      "concept": "octet-rule",
+      "verb": "introduces"
+    },
+    {
+      "span": "octet-rule",
+      "concept": "lewis-structure",
+      "verb": "uses"
+    },
+    {
+      "span": "multiple-bonds",
+      "concept": "multiple-bonds",
+      "verb": "introduces"
+    },
+    {
+      "span": "multiple-bonds",
+      "concept": "octet-rule",
+      "verb": "uses"
+    },
+    {
+      "span": "multiple-bonds",
+      "concept": "double-bond",
+      "verb": "introduces"
+    },
+    {
+      "span": "multiple-bonds",
+      "concept": "triple-bond",
+      "verb": "introduces"
+    },
+    {
+      "span": "writing-lewis",
+      "concept": "lewis-structure",
+      "verb": "reinforces"
+    },
+    {
+      "span": "writing-lewis",
+      "concept": "octet-rule",
+      "verb": "uses"
+    },
+    {
+      "span": "writing-lewis",
+      "concept": "multiple-bonds",
+      "verb": "uses"
+    },
+    {
+      "span": "writing-lewis",
+      "concept": "electronegativity",
+      "verb": "uses"
+    },
+    {
+      "span": "octet-exceptions",
+      "concept": "octet-rule-exceptions",
+      "verb": "introduces"
+    },
+    {
+      "span": "octet-exceptions",
+      "concept": "lewis-structure",
+      "verb": "uses"
+    },
+    {
+      "span": "octet-exceptions",
+      "concept": "octet-rule",
+      "verb": "uses"
+    },
+    {
+      "span": "octet-exceptions",
+      "concept": "free-radical",
+      "verb": "introduces"
+    },
+    {
+      "span": "octet-exceptions",
+      "concept": "hypervalent-molecule",
+      "verb": "introduces"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idm36798944",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-titan"
+      },
+      "cite": "writing-lewis",
+      "prompt": "一氧化碳 CO 和二氧化碳 CO<sub>2</sub> 都是化石燃料燃烧的产物。这两种气体也都会带来问题：CO 有毒，CO<sub>2</sub> 被认为与全球气候变化有关。这两种分子的路易斯结构式是什么？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "<img src=\"/media/ch07/CNX_Chem_07_03_COCO2_img.jpg\" alt=\"图中有两个路易斯结构式。左边是一个碳与一个氧以三键相连，各带一对孤电子对。右边的结构是一个碳在两侧各与一个氧以双键相连。每个氧带两对孤电子对。\">"
+      }
+    },
+    {
+      "id": "cyl2",
+      "source_id": "fs-idp822144",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-xenon"
+      },
+      "cite": "octet-exceptions",
+      "prompt": "卤素形成一类称为卤素互化物的化合物，其中卤素原子彼此以共价键结合。写出卤素互化物 BrCl<sub>3</sub> 和 ${\\text{ICl}}_{4}{}^{\\text{−}}$ 的路易斯结构式。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "<img src=\"/media/ch07/CNX_Chem_07_03_Interhal_img.jpg\" alt=\"图中有两个路易斯结构式。左边是一个带两对孤电子对的溴原子，与三个各带三对孤电子对的氯原子以单键相连。右边是一个带两对孤电子对的碘原子，与四个各带三对孤电子对的氯原子以单键相连。这个结构外面套着方括号，带上标负号。\">"
+      }
+    },
+    {
+      "id": "e1",
+      "source_id": "fs-idp52580272",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "lewis-symbols",
+      "prompt": "写出下列每种离子的路易斯符号：<br>（a）As<sup>3–</sup><br>（b）I<sup>–</sup><br>（c）Be<sup>2+</sup><br>（d）O<sup>2–</sup><br>（e）Ga<sup>3+</sup><br>（f）Li<sup>+</sup><br>（g）N<sup>3–</sup>",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）八个电子：<br><img src=\"/media/ch07/CNX_Chem_07_03_Question1a_img.jpg\" alt=\"图中的路易斯点图是砷的符号 A s，被八个点围绕，带上标 3 和负号。\"><br>（b）八个电子：<br><img src=\"/media/ch07/CNX_Chem_07_03_Question1b_img.jpg\" alt=\"图中的路易斯点图是碘的符号 I，被八个点围绕，带上标负号。\"><br>（c）没有电子 Be<sup>2+</sup><br>（d）八个电子：<br><img src=\"/media/ch07/CNX_Chem_07_03_Question1d_img.jpg\" alt=\"图中的路易斯点图是氧的符号 O，被八个点围绕，带上标 2 和负号。\"><br>（e）没有电子 Ga<sup>3+</sup><br>（f）没有电子 Li<sup>+</sup><br>（g）八个电子：<br><img src=\"/media/ch07/CNX_Chem_07_03_Question1g_img.jpg\" alt=\"图中的路易斯点图是氮的符号 N，被八个点围绕，带上标 3 和负号。\">"
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idm53812240",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "lewis-symbols",
+      "prompt": "海水中有许多单原子离子，包括由下列元素形成的离子。写出由下列元素形成的单原子离子的路易斯符号：<br>（a）Cl<br>（b）Na<br>（c）Mg<br>（d）Ca<br>（e）K<br>（f）Br<br>（g）Sr<br>（h）F",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "金属原子失去全部价电子，所以它们的阳离子画成不带点；非金属原子得到电子直到有八个，所以它们的阴离子画成方括号内带八个点，电荷标在括号外。<br>（a）Cl<sup>–</sup>：Cl 带八个点（四对），在方括号内，电荷为 –。氯原子有七个价电子，得到一个电子。<br>（b）Na<sup>+</sup>：Na 不带点。该原子失去它的一个价电子。<br>（c）Mg<sup>2+</sup>：Mg 不带点。该原子失去它的两个价电子。<br>（d）Ca<sup>2+</sup>：Ca 不带点。该原子失去它的两个价电子。<br>（e）K<sup>+</sup>：K 不带点。该原子失去它的一个价电子。<br>（f）Br<sup>–</sup>：Br 带八个点，在方括号内，电荷为 –。溴原子有七个价电子，得到一个电子。<br>（g）Sr<sup>2+</sup>：Sr 不带点。该原子失去它的两个价电子。<br>（h）F<sup>–</sup>：F 带八个点，在方括号内，电荷为 –。氟原子有七个价电子，得到一个电子。"
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idm49800144",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "lewis-symbols",
+      "prompt": "写出下列每种离子化合物中的离子的路易斯符号，以及形成这些离子的原子的路易斯符号：<br>（a）MgS<br>（b）Al<sub>2</sub>O<sub>3</sub><br>（c）GaCl<sub>3</sub><br>（d）K<sub>2</sub>O<br>（e）Li<sub>3</sub>N<br>（f）KF",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）<br><img src=\"/media/ch07/CNX_Chem_07_03_Exercise3a_img.jpg\" alt=\"图中有两个路易斯结构式。左边是带上标 2 和加号的符号 M g，右边是被八个点围绕、带上标 2 和负号的符号 S。\"><br>（b）<br><img src=\"/media/ch07/CNX_Chem_07_03_Exercise3b_img.jpg\" alt=\"图中有两个路易斯结构式。左边是带上标 3 和加号的符号 A l，右边是被八个点围绕、带上标 2 和负号的符号 O。\"><br>（c）<br><img src=\"/media/ch07/CNX_Chem_07_03_Exercise3c_img.jpg\" alt=\"图中有两个路易斯结构式。左边是带上标 3 和加号的符号 G a，右边是被八个点围绕、带上标负号的符号 C l。\"><br>（d）<br><img src=\"/media/ch07/CNX_Chem_07_03_Exercise3d_img.jpg\" alt=\"图中有两个路易斯结构式。左边是带上标加号的符号 K，右边是被八个点围绕、带上标 2 和负号的符号 O。\"><br>（e）<br><img src=\"/media/ch07/CNX_Chem_07_03_Exercise3e_img.jpg\" alt=\"图中有两个路易斯结构式。左边是带上标加号的符号 L i，右边是被八个点围绕、带上标 3 和负号的符号 N。\"><br>（f）<br><img src=\"/media/ch07/CNX_Chem_07_03_Exercise3f_img.jpg\" alt=\"图中有两个路易斯结构式。左边是带上标加号的符号 K，右边是被八个点围绕、带上标负号的符号 F。\">"
+      }
+    },
+    {
+      "id": "e4",
+      "source_id": "fs-idp153695200",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "lewis-symbols",
+      "prompt": "在下列路易斯结构式中，M 和 X 代表元素周期表第三周期的各种元素。用各元素的元素符号写出每种化合物的化学式：<br>（a）<br><img src=\"/media/ch07/CNX_Chem_07_03_MXLewisa_img.jpg\" alt=\"图中并排画有两个路易斯结构式，各自套着方括号。左边的结构是带上标 2 和加号的符号 M。右边是被四对孤电子对围绕的符号 X，括号外有上标 2 和负号。\"><br>（b）<br><img src=\"/media/ch07/CNX_Chem_07_03_MXLewisb_img.jpg\" alt=\"图中并排画有两个路易斯结构式，各自套着方括号。左边的结构是带上标 3 和加号的符号 M。右边的结构是被四对孤电子对围绕的符号 X，括号外有上标负号和下标 3。\"><br>（c）<br><img src=\"/media/ch07/CNX_Chem_07_03_MXLewisc_img.jpg\" alt=\"图中并排画有两个路易斯结构式，各自套着方括号。左边的结构是符号 M，括号外有上标加号和下标 2。右边的结构是被四对孤电子对围绕的符号 X，括号外有上标 2 和负号。\"><br>（d）<br><img src=\"/media/ch07/CNX_Chem_07_03_MXLewisd_img.jpg\" alt=\"图中并排画有两个路易斯结构式，各自套着方括号。左边的结构是符号 M，括号外有上标 3 和加号以及下标 2。右边的结构是被四对孤电子对围绕的符号 X，括号外有上标 2 和负号以及下标 3。\">",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "（a）MgS。（b）AlCl<sub>3</sub>。（c）Na<sub>2</sub>S。（d）Al<sub>2</sub>S<sub>3</sub>。在第三周期中，不带点、电荷为 1+、2+ 或 3+ 的阳离子分别来自 Na、Mg 或 Al，这些原子分别失去一个、两个或三个价电子。带八个点、电荷为 1– 或 2– 的阴离子来自 Cl 或 S，这些原子分别得到一个或两个电子而达到八个。方括号外的下标给出该离子的个数。<br>（a）一个 M<sup>2+</sup> 是 Mg<sup>2+</sup>，一个 X<sup>2–</sup> 是 S<sup>2–</sup>，所以化合物是 MgS。<br>（b）一个 M<sup>3+</sup> 是 Al<sup>3+</sup>，三个 X<sup>–</sup> 是三个 Cl<sup>–</sup>，所以是 AlCl<sub>3</sub>。<br>（c）两个 M<sup>+</sup> 是两个 Na<sup>+</sup>，一个 X<sup>2–</sup> 是 S<sup>2–</sup>，所以是 Na<sub>2</sub>S。<br>（d）两个 M<sup>3+</sup> 是两个 Al<sup>3+</sup>，三个 X<sup>2–</sup> 是三个 S<sup>2–</sup>，所以是 Al<sub>2</sub>S<sub>3</sub>。在每种化合物中，正电荷和负电荷相互抵消。"
+      }
+    },
+    {
+      "id": "e5",
+      "source_id": "fs-idm764384",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "writing-lewis",
+      "prompt": "写出双原子分子 P<sub>2</sub> 的路易斯结构式，P<sub>2</sub> 是高温磷蒸气中存在的一种不稳定的磷的形式。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "<img src=\"/media/ch07/CNX_Chem_07_03_Question5_img.jpg\" alt=\"图中的路易斯图是两个磷原子以三键相连，各带一对孤电子对。\">"
+      }
+    },
+    {
+      "id": "e6",
+      "source_id": "fs-idm60487856",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "writing-lewis",
+      "prompt": "写出下列各物质的路易斯结构式：<br>（a）H<sub>2</sub><br>（b）HBr<br>（c）PCl<sub>3</sub><br>（d）SF<sub>2</sub><br>（e）H<sub>2</sub>CCH<sub>2</sub><br>（f）HNNH<br>（g）H<sub>2</sub>CNH<br>（h）NO<sup>–</sup><br>（i）N<sub>2</sub><br>（j）CO<br>（k）CN<sup>–</sup>",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "每个结构恰好用掉为其数出的价电子，并使每个原子达到八隅体，氢为两个电子。<br>（a）H<sub>2</sub>，2 个电子：H–H，一个单键，没有孤电子对。<br>（b）HBr，1 + 7 = 8 个电子：H–Br，Br 上有三对孤电子对。<br>（c）PCl<sub>3</sub>，5 + 3(7) = 26 个电子：P 在中心，以单键与三个 Cl 原子相连，每个 Cl 上有三对孤电子对，P 上有一对孤电子对。<br>（d）SF<sub>2</sub>，6 + 2(7) = 20 个电子：F–S–F，均为单键，每个 F 上有三对孤电子对，S 上有两对孤电子对。<br>（e）H<sub>2</sub>CCH<sub>2</sub>，2(4) + 4(1) = 12 个电子：一个 C=C 双键，每个碳还与两个 H 原子相连，没有孤电子对。<br>（f）HNNH，2(1) + 2(5) = 12 个电子：H–N=N–H，每个 N 上有一对孤电子对。<br>（g）H<sub>2</sub>CNH，4 + 5 + 3(1) = 12 个电子：一个 C=N 双键，碳与两个 H 原子相连，氮与一个 H 原子相连并带有一对孤电子对。<br>（h）NO<sup>–</sup>，5 + 6 + 1 = 12 个电子：N=O，N 上有两对孤电子对，O 上也有两对，置于方括号内，电荷为 –。<br>（i）N<sub>2</sub>，2(5) = 10 个电子：N≡N，每个 N 上有一对孤电子对。<br>（j）CO，4 + 6 = 10 个电子：C≡O，每个原子上有一对孤电子对。<br>（k）CN<sup>–</sup>，4 + 5 + 1 = 10 个电子：C≡N，每个原子上有一对孤电子对，置于方括号内，电荷为 –。<br>在（e）到（k）中，只用单键会使某个原子达不到八隅体，所以把相邻原子的孤电子对移入双键或三键，就像 NO<sup>+</sup> 和 HCN 那样。"
+      }
+    },
+    {
+      "id": "e7",
+      "source_id": "fs-idp15556576",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "writing-lewis",
+      "prompt": "写出下列各物质的路易斯结构式：<br>（a）O<sub>2</sub><br>（b）H<sub>2</sub>CO<br>（c）AsF<sub>3</sub><br>（d）ClNO<br>（e）SiCl<sub>4</sub><br>（f）H<sub>3</sub>O<sup>+</sup><br>（g）${\\text{NH}}_{4}{}^{+}$<br>（h）${\\text{BF}}_{4}{}^{\\text{−}}$<br>（i）HCCH<br>（j）ClCN<br>（k）${\\text{C}}_{2}{}^{\\text{2+}}$",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7a_img.jpg\" alt=\"图中的路易斯结构式是两个氧原子以双键相连，各带两对孤电子对。\"><br>在这种情况下，路易斯结构式不足以表示实验研究所表明的事实，即每个氧分子中有两个未成对电子。<br>（b）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7b_img.jpg\" alt=\"图中的路易斯结构式是一个碳原子，与两个氢原子以单键相连，与一个氧原子以双键相连。氧原子带两对孤电子对。\"><br>（c）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7c_img.jpg\" alt=\"图中的路易斯结构式是一个砷原子与三个氟原子以单键相连。每个氟原子带一对孤电子对。\"><br>（d）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7d_img.jpg\" alt=\"图中的路易斯结构式是一个带一对孤电子对的氮原子，与一个带三对孤电子对的氯原子以单键相连。氮还与一个带两对孤电子对的氧以双键相连。\"><br>（e）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7e_img.jpg\" alt=\"图中的路易斯结构式是一个硅原子与四个氯原子以单键相连。每个氯原子带三对孤电子对。\"><br>（f）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7f_img.jpg\" alt=\"图中的路易斯结构式是一个带一对孤电子对的氧原子，与三个氢原子以单键相连。这个结构外面套着方括号，带上标加号。\"><br>（g）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7g_img.jpg\" alt=\"图中的路易斯结构式是一个氮原子与四个氢原子以单键相连。这个结构外面套着方括号，带上标加号。\"><br>（h）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7h_img.jpg\" alt=\"图中的路易斯结构式是一个硼原子与四个氟原子以单键相连。每个氟原子带三对孤电子对。这个结构外面套着方括号，带上标负号。\"><br>（i）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7i_img.jpg\" alt=\"图中的路易斯结构式是两个碳原子以三键相连。每个碳还与一个氢原子以单键相连。\"><br>（j）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7j_img.jpg\" alt=\"图中的路易斯结构式是一个碳原子，与一个带一对孤电子对的氮原子以三键相连。碳还与一个带三对孤电子对的氯原子以单键相连。\"><br>（k）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7k_img.jpg\" alt=\"图中的路易斯结构式是两个碳原子以三键相连。第二个碳的右侧有一个上标 2 和加号。\">"
+      }
+    },
+    {
+      "id": "e8",
+      "source_id": "fs-idm78195216",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "octet-exceptions",
+      "prompt": "写出下列各物质的路易斯结构式：<br>（a）ClF<sub>3</sub><br>（b）PCl<sub>5</sub><br>（c）BF<sub>3</sub><br>（d）${\\text{PF}}_{6}{}^{\\text{−}}$",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "（a）ClF<sub>3</sub>，7 + 3(7) = 28 个电子：Cl 在中心，有三个 Cl–F 单键，每个 F 上有三对孤电子对，剩下的 4 个电子作为两对孤电子对放在 Cl 上。氯有 10 个电子，第三周期原子可以容纳这么多。<br>（b）PCl<sub>5</sub>，5 + 5(7) = 40 个电子：P 在中心，有五个 P–Cl 单键，每个 Cl 上有三对孤电子对。没有电子剩余，磷共用五对电子，即 10 个电子，如图 7.12 所示。<br>（c）BF<sub>3</sub>，3 + 3(7) = 24 个电子：B 在中心，有三个 B–F 单键，每个 F 上有三对孤电子对。硼只有 6 个电子；它是缺电子的，而有三个单键的结构是最好的结构，实测的键长也说明了这一点。<br>（d）${\\text{PF}}_{6}{}^{\\text{−}}$，5 + 6(7) + 1 = 48 个电子：P 在中心，有六个 P–F 单键，每个 F 上有三对孤电子对，全部置于方括号内，电荷为 –。没有电子剩余，磷有 12 个电子，与 SF<sub>6</sub> 中的硫相同。"
+      }
+    },
+    {
+      "id": "e9",
+      "source_id": "fs-idp37438640",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "octet-exceptions",
+      "prompt": "写出下列各物质的路易斯结构式：<br>（a）SeF<sub>6</sub><br>（b）XeF<sub>4</sub><br>（c）${\\text{SeCl}}_{3}{}^{+}$<br>（d）Cl<sub>2</sub>BBCl<sub>2</sub>（含有一个 B–B 键）",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）SeF<sub>6</sub>：<br><img src=\"/media/ch07/CNX_Chem_07_03_Question9a_img.jpg\" alt=\"图中的路易斯结构式是一个硒原子与六个氟原子以单键相连，每个氟原子带三对孤电子对。\"><br>（b）XeF<sub>4</sub>：<br><img src=\"/media/ch07/CNX_Chem_07_03_Question9b_img.jpg\" alt=\"图中的路易斯结构式是一个带两对孤电子对的氙原子。它与四个氟原子以单键相连，每个氟原子带三对孤电子对。\"><br>（c）${\\text{SeCl}}_{3}{}^{\\text{+}}\\text{:}$<br><img src=\"/media/ch07/CNX_Chem_07_03_Question9c_img.jpg\" alt=\"图中的路易斯结构式是一个带一对孤电子对的硒原子，与三个各带三对孤电子对的氯原子以单键相连。整个结构外面套着方括号。\"><br>（d）Cl<sub>2</sub>BBCl<sub>2</sub>：<br><img src=\"/media/ch07/CNX_Chem_07_03_Question9d_img.jpg\" alt=\"图中的路易斯结构式是两个硼原子以单键相连。每个硼还与两个氯原子以单键相连，这两个氯原子都带三对孤电子对。\">"
+      }
+    },
+    {
+      "id": "e10",
+      "source_id": "fs-idm66409936",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "writing-lewis",
+      "prompt": "写出下列各物质的路易斯结构式：<br>（a）${\\text{PO}}_{4}{}^{\\text{3−}}$<br>（b）${\\text{ICl}}_{4}{}^{\\text{−}}$<br>（c）${\\text{SO}}_{3}{}^{\\text{2−}}$<br>（d）HONO",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "（a）${\\text{PO}}_{4}{}^{\\text{3−}}$，5 + 4(6) + 3 = 32 个电子：P 在中心，有四个 P–O 单键，每个 O 上有三对孤电子对，置于方括号内，电荷为 3–。每个原子都有八隅体。<br>（b）${\\text{ICl}}_{4}{}^{\\text{−}}$，7 + 4(7) + 1 = 36 个电子：I 在中心，有四个 I–Cl 单键，每个 Cl 上有三对孤电子对，用去 32 个电子。其余 4 个作为两对孤电子对放在碘上，所以碘有 12 个电子，与 XeF<sub>4</sub> 中的氙相同。该结构置于方括号内，电荷为 –。<br>（c）${\\text{SO}}_{3}{}^{\\text{2−}}$，6 + 3(6) + 2 = 26 个电子：S 在中心，有三个 S–O 单键，每个 O 上有三对孤电子对，用去 24 个电子。最后 2 个作为一对孤电子对放在硫上，使它达到八隅体。该结构置于方括号内，电荷为 2–。<br>（d）HONO，1 + 2(6) + 5 = 18 个电子：H–O–N=O。中间的氧有两对孤电子对，氮有一对孤电子对，端位的氧有两对孤电子对。只有单键时，氮只有 6 个电子，所以端位氧的一对孤电子对变成了 N=O 双键。"
+      }
+    },
+    {
+      "id": "e11",
+      "source_id": "fs-idm12035200",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "lewis-structures",
+      "prompt": "更正下面的陈述：“固体 PbCl<sub>2</sub> 中的键是离子键；HCl 分子中的键是共价键。因此，PbCl<sub>2</sub> 中所有的价电子都位于 Cl<sup>–</sup> 离子上，而 HCl 分子中所有的价电子都由 H 和 Cl 原子共用。”",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "每个 Pb 原子有两个价电子转移给 Cl 原子；生成的 Pb<sup>2+</sup> 离子的价层电子构型为 6<em>s</em><sup>2</sup>。HCl 分子中有两个价电子是共用的，其余六个作为孤电子对位于 Cl 原子上。"
+      }
+    },
+    {
+      "id": "e12",
+      "source_id": "fs-idm35503888",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "octet-exceptions",
+      "prompt": "写出下列分子或离子的路易斯结构式：<br>（a）SbH<sub>3</sub><br>（b）XeF<sub>2</sub><br>（c）Se<sub>8</sub>（一种环状分子，由八个 Se 原子组成一个环）",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "（a）SbH<sub>3</sub>，5 + 3(1) = 8 个电子：Sb 在中心，有三个 Sb–H 单键，Sb 上有一对孤电子对，与 NH<sub>3</sub> 的模式相同，因为锑在第 15 族。<br>（b）XeF<sub>2</sub>，8 + 2(7) = 22 个电子：F–Xe–F，均为单键，每个 F 上有三对孤电子对，其余 6 个电子作为三对孤电子对放在 Xe 上。氙有 10 个电子，如例 7.5 所示。<br>（c）Se<sub>8</sub>，8(6) = 48 个电子：八个 Se 原子成环，由八个 Se–Se 单键相连，用去 16 个电子。其余 32 个电子是每个 Se 原子上的两对孤电子对，所以每个原子都有两个键和两对孤电子对，即八隅体，就像水中的氧原子一样。"
+      }
+    },
+    {
+      "id": "e13",
+      "source_id": "fs-idp145119536",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "writing-lewis",
+      "prompt": "甲醇 H<sub>3</sub>COH 被用作某些赛车的燃料。乙醇 C<sub>2</sub>H<sub>5</sub>OH 在巴西被广泛用作车用燃料。甲醇和乙醇燃烧时都生成 CO<sub>2</sub> 和 H<sub>2</sub>O。用路易斯结构式代替化学式，写出这些燃烧反应的化学方程式。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "<img src=\"/media/ch07/CNX_Chem_07_03_Question18_img.jpg\" alt=\"图中用路易斯结构式表示两个反应。上面的反应是一个碳原子，与三个氢原子以单键相连，并与一个带两对孤电子对的氧原子以单键相连。该氧原子还与一个氢原子相连。后面是一个加号和数字一点五，再后面是两个以双键相连的氧原子，各带两对孤电子对。一个向右的箭头指向一个碳原子，它与两个氧原子以双键相连，每个氧原子带两对孤电子对。这个结构后面是一个加号、数字二，以及由一个带两对孤电子对的氧与两个氢原子以单键相连构成的结构。下面的反应是一个碳原子，与三个氢原子以单键相连，并与另一个碳原子以单键相连。第二个碳原子与两个氢原子以及一个带两对孤电子对的氧原子以单键相连。该氧原子还与一个氢原子相连。后面是一个加号和数字三，再后面是两个以双键相连的氧原子。每个氧原子带两对孤电子对。一个向右的箭头指向数字二 和一个碳原子，它与两个氧原子以双键相连，每个氧原子带两对孤电子对。这个结构后面是一个加号、数字三，以及由一个带两对孤电子对的氧与两个氢原子以单键相连构成的结构。\">"
+      }
+    },
+    {
+      "id": "e14",
+      "source_id": "fs-idm25571216",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "writing-lewis",
+      "prompt": "我们太阳系中的许多行星含有有机化学物质，包括甲烷（CH<sub>4</sub>）以及微量的乙烯（C<sub>2</sub>H<sub>4</sub>）、乙烷（C<sub>2</sub>H<sub>6</sub>）、丙炔（H<sub>3</sub>CCCH）和丁二炔（HCCCCH）。写出这些分子各自的路易斯结构式。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "碳形成四个键，氢形成一个键，每个结构都用上了全部价电子。<br>甲烷 CH<sub>4</sub>，4 + 4(1) = 8 个电子：C 在中心，有四个 C–H 单键。<br>乙烯 C<sub>2</sub>H<sub>4</sub>，2(4) + 4(1) = 12 个电子：H<sub>2</sub>C=CH<sub>2</sub>，一个碳碳双键，每个碳上有两个 H 原子。<br>乙烷 C<sub>2</sub>H<sub>6</sub>，2(4) + 6(1) = 14 个电子：H<sub>3</sub>C–CH<sub>3</sub>，全是单键，每个碳上有三个 H 原子。<br>丙炔 H<sub>3</sub>CCCH，3(4) + 4(1) = 16 个电子：H<sub>3</sub>C–C≡C–H，一个 CH<sub>3</sub> 基团以单键与一个碳相连，这个碳与另一个带一个 H 的碳以三键相连。<br>丁二炔 HCCCCH，4(4) + 2(1) = 18 个电子：H–C≡C–C≡C–H，两个三键由一个单键相连。<br>这些结构都没有孤电子对。在乙烯、丙炔和丁二炔中，只用单键会使碳原子达不到八隅体，所以它们的电子形成了双键或三键，就像例 7.4 中的乙炔那样。"
+      }
+    },
+    {
+      "id": "e15",
+      "source_id": "fs-idm75285152",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "writing-lewis",
+      "prompt": "四氯化碳以前用于扑灭电气火灾的灭火器。由于会生成有毒气体光气 Cl<sub>2</sub>CO，它不再用于这一目的。写出四氯化碳和光气的路易斯结构式。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "<img src=\"/media/ch07/CNX_Chem_07_03_Carbtet_img.jpg\" alt=\"图中有两个路易斯结构式。左边是一个碳原子与四个氯原子以单键相连，每个氯原子带三对孤电子对。右边是一个碳原子，与一个带两对孤电子对的氧原子以双键相连。该碳原子还与两个氯原子以单键相连，每个氯原子带三对孤电子对。\">"
+      }
+    },
+    {
+      "id": "e16",
+      "source_id": "fs-idp86013824",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "lewis-symbols",
+      "prompt": "确定下列每种电子构型所对应的原子。然后写出每种原子所形成的常见离子的路易斯符号：<br>（a）1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>5</sup><br>（b）1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup><br>（c）1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup><br>（d）1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>4</sup><br>（e）1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>1</sup>",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "每种构型中的电子数就是该原子的原子序数。金属原子失去其价电子，形成画成不带点的阳离子；非金属原子得到足够的电子而达到八个，形成画成方括号内带八个点的阴离子。<br>（a）9 个电子：氟。氟原子有七个价电子，得到一个，所以它的离子是 F<sup>–</sup>，画成方括号内带八个点，电荷为 –。<br>（b）12 个电子：镁。该原子失去它的两个 3<em>s</em> 电子，所以它的离子是 Mg<sup>2+</sup>，画成不带点。<br>（c）30 个电子：锌。该原子失去它的两个 4<em>s</em> 电子，所以它的离子是 Zn<sup>2+</sup>，画成不带点。<br>（d）34 个电子：硒。它的六个价电子 4<em>s</em><sup>2</sup>4<em>p</em><sup>4</sup> 在得到两个电子后变成八个，所以它的离子是 Se<sup>2–</sup>，画成方括号内带八个点，电荷为 2–。<br>（e）31 个电子：镓。该原子失去它的三个价电子 4<em>s</em><sup>2</sup>4<em>p</em><sup>1</sup>，所以它的离子是 Ga<sup>3+</sup>，画成不带点。"
+      }
+    },
+    {
+      "id": "e17",
+      "source_id": "fs-idm8464272",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "writing-lewis",
+      "prompt": "下面给出了几种生物学上重要的分子中原子的排列。通过添加多重键和孤电子对来完成这些分子的路易斯结构式。不要再添加任何原子。<br>（a）氨基酸丝氨酸：<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioa_img.jpg\" alt=\"图中是一个路易斯结构式。一个氮原子与两个氢原子和一个碳原子以单键相连。该碳原子与一个氢原子和另外两个碳原子以单键相连。其中一个碳原子与两个氢原子和一个氧原子以单键相连。该氧原子与一个氢原子相连。另一个碳原子与两个氧原子以单键相连，其中一个氧原子与一个氢原子相连。\"><br>（b）尿素：<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbiob_img.jpg\" alt=\"图中是一个路易斯结构式。一个氮原子与两个氢原子和一个碳原子以单键相连。该碳原子与一个氧原子和另一个氮原子以单键相连。那个氮原子再与两个氢原子以单键相连。\"><br>（c）丙酮酸：<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioc_img.jpg\" alt=\"图中是一个路易斯结构式。一个碳原子与三个氢原子和另一个碳原子以单键相连。第二个碳原子与一个氧原子和第三个碳原子以单键相连。这个碳再与两个氧原子以单键相连，其中一个氧原子与一个氢原子以单键相连。\"><br>（d）尿嘧啶：<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbiod_img.jpg\" alt=\"图中是一个六边形环的路易斯结构式。从环的顶部开始（顺时针方向），三个碳原子、一个氮原子、一个碳原子和一个氮原子彼此以单键相连。顶部的碳原子与一个氧原子以单键相连。第二个和第三个碳以及那个氮原子各与一个氢原子以单键相连。下一个碳原子与一个氧原子以单键相连，最后一个氮原子与一个氢原子以单键相连。\"><br>（e）碳酸：<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioe_img.jpg\" alt=\"图中是一个路易斯结构式。一个碳原子与三个氧原子以单键相连。其中两个氧原子各与一个氢原子以单键相连。\">",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioansa_img.jpg\" alt=\"图中是一个路易斯结构式。一个氮原子与两个氢原子和一个碳原子以单键相连。该碳原子与一个氢原子和另外两个碳原子以单键相连。其中一个碳原子与两个氢原子和一个氧原子以单键相连。该氧原子与一个氢原子相连。另一个碳与两个氧原子以单键相连，其中一个氧原子与一个氢原子相连。氧原子各有两对孤电子对的电子点，氮原子有一对孤电子对的电子点。\"><br>（b）<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioansb_img.jpg\" alt=\"图中是一个路易斯结构式。一个氮原子与两个氢原子和一个碳原子以单键相连。该碳原子与一个氧原子和一个氮原子以单键相连。那个氮原子再与两个氢原子以单键相连。氧原子有两对孤电子对的电子点，每个氮原子有一对孤电子对的电子点。\"><br>（c）<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioansc_img.jpg\" alt=\"图中是一个路易斯结构式。一个碳原子与三个氢原子和一个碳原子以单键相连。该碳原子与一个氧原子和第三个碳原子以单键相连。这个碳再与两个氧原子以单键相连，其中一个氧原子与一个氢原子以单键相连。每个氧原子有两对孤电子对的电子点。\"><br>（d）<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioansd_img.jpg\" alt=\"图中是一个六边形环的路易斯结构式。从环的顶部开始，三个碳原子、一个氮原子、一个碳原子和一个氮原子彼此以单键相连。顶部的碳与一个氧以单键相连，第二个和第三个碳以及那个氮原子各与一个氢原子以单键相连。下一个碳与一个氧原子以单键相连，最后一个氮与一个氢原子以单键相连。氧原子有两对孤电子对的电子点，氮原子有一对孤电子对的电子点。\"><br>（e）<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioanse_img.jpg\" alt=\"图中是一个路易斯结构式。一个碳原子与三个氧原子以单键相连。其中两个氧原子各与一个氢原子以单键相连。每个氧原子有两对孤电子对的电子点。\">"
+      }
+    },
+    {
+      "id": "e18",
+      "source_id": "fs-idm74511072",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "writing-lewis",
+      "prompt": "一种摩尔质量约为 42 g/mol 的化合物，按质量计含有 85.7% 的碳和 14.3% 的氢。写出该化合物分子的路易斯结构式。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "<img src=\"/media/ch07/CNX_Chem_07_03_Exercise25_img.jpg\" alt=\"图中是一个路易斯结构式。一个碳原子与三个氢原子和另一个碳原子以单键相连。第二个碳原子与另一个碳原子以双键相连，并与一个氢原子以单键相连。最后一个碳与两个氢原子以单键相连。\">"
+      }
+    },
+    {
+      "id": "e19",
+      "source_id": "fs-idm70503056",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "multiple-bonds",
+      "prompt": "单键、双键和三键有何相似之处？又有何不同？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "每个键都包含原子之间电子的共用。单键共用两个电子；双键共用四个电子；三键共用六个电子。"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "lewis-structure"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "multiple-bonds"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "lewis-structure"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "octet-rule-exceptions"
+    },
+    {
+      "exercise": "e1",
+      "concept": "lewis-symbol"
+    },
+    {
+      "exercise": "e2",
+      "concept": "lewis-symbol"
+    },
+    {
+      "exercise": "e2",
+      "concept": "predict-ion-charge"
+    },
+    {
+      "exercise": "e3",
+      "concept": "lewis-symbol"
+    },
+    {
+      "exercise": "e3",
+      "concept": "predict-ion-charge"
+    },
+    {
+      "exercise": "e4",
+      "concept": "lewis-symbol"
+    },
+    {
+      "exercise": "e4",
+      "concept": "predict-ion-charge"
+    },
+    {
+      "exercise": "e5",
+      "concept": "lewis-structure"
+    },
+    {
+      "exercise": "e5",
+      "concept": "multiple-bonds"
+    },
+    {
+      "exercise": "e6",
+      "concept": "lewis-structure"
+    },
+    {
+      "exercise": "e6",
+      "concept": "multiple-bonds"
+    },
+    {
+      "exercise": "e7",
+      "concept": "lewis-structure"
+    },
+    {
+      "exercise": "e7",
+      "concept": "multiple-bonds"
+    },
+    {
+      "exercise": "e8",
+      "concept": "lewis-structure"
+    },
+    {
+      "exercise": "e8",
+      "concept": "octet-rule-exceptions"
+    },
+    {
+      "exercise": "e9",
+      "concept": "lewis-structure"
+    },
+    {
+      "exercise": "e9",
+      "concept": "octet-rule-exceptions"
+    },
+    {
+      "exercise": "e10",
+      "concept": "lewis-structure"
+    },
+    {
+      "exercise": "e10",
+      "concept": "octet-rule-exceptions"
+    },
+    {
+      "exercise": "e11",
+      "concept": "lewis-structure"
+    },
+    {
+      "exercise": "e11",
+      "concept": "ionic-bond"
+    },
+    {
+      "exercise": "e12",
+      "concept": "lewis-structure"
+    },
+    {
+      "exercise": "e12",
+      "concept": "octet-rule-exceptions"
+    },
+    {
+      "exercise": "e13",
+      "concept": "lewis-structure"
+    },
+    {
+      "exercise": "e13",
+      "concept": "multiple-bonds"
+    },
+    {
+      "exercise": "e14",
+      "concept": "lewis-structure"
+    },
+    {
+      "exercise": "e14",
+      "concept": "multiple-bonds"
+    },
+    {
+      "exercise": "e15",
+      "concept": "lewis-structure"
+    },
+    {
+      "exercise": "e15",
+      "concept": "multiple-bonds"
+    },
+    {
+      "exercise": "e16",
+      "concept": "lewis-symbol"
+    },
+    {
+      "exercise": "e16",
+      "concept": "ion-electron-configuration"
+    },
+    {
+      "exercise": "e17",
+      "concept": "lewis-structure"
+    },
+    {
+      "exercise": "e17",
+      "concept": "multiple-bonds"
+    },
+    {
+      "exercise": "e17",
+      "concept": "octet-rule"
+    },
+    {
+      "exercise": "e18",
+      "concept": "lewis-structure"
+    },
+    {
+      "exercise": "e18",
+      "concept": "multiple-bonds"
+    },
+    {
+      "exercise": "e19",
+      "concept": "multiple-bonds"
+    }
+  ],
+  "footnotes": [
+    {
+      "id": "c-six-steps",
+      "kind": "correction",
+      "html": "书中说的是六个步骤。本节前面给出的画路易斯结构式的程序只有五个步骤。"
+    }
+  ]
 }

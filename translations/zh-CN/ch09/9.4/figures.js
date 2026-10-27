@@ -12,15 +12,15 @@ const glass = (extra = {}) => ({ transparent: true, opacity: 0.1, depthWrite: fa
 
 /* the gases, each molecule as [element, dx, dy, radius] about its center, and the molar mass the book uses for it */
 const MOLS = {
-  'H₂': { m: 2, word: 'hydrogen', atoms: [['H', -5, 0, 5], ['H', 5, 0, 5]] },
-  'O₂': { m: 32, word: 'oxygen', atoms: [['O', -6, 0, 7], ['O', 6, 0, 7]] },
-  'Ne': { m: 20.2, word: 'neon', atoms: [['Ne', 0, 0, 6]] },
-  'Xe': { m: 131.3, word: 'xenon', atoms: [['Xe', 0, 0, 11]] },
-  'CH₄': { m: 16.0, word: 'methane', atoms: [['H', -9, -8, 4.5], ['H', 9, -8, 4.5], ['H', -9, 8, 4.5], ['H', 9, 8, 4.5], ['C', 0, 0, 7]] },
-  'CO₂': { m: 44.0, word: 'carbon dioxide', atoms: [['O', -13, 0, 7], ['O', 13, 0, 7], ['C', 0, 0, 6.5]] },
+  'H₂': { m: 2, word: '氢', atoms: [['H', -5, 0, 5], ['H', 5, 0, 5]] },
+  'O₂': { m: 32, word: '氧', atoms: [['O', -6, 0, 7], ['O', 6, 0, 7]] },
+  'Ne': { m: 20.2, word: '氖', atoms: [['Ne', 0, 0, 6]] },
+  'Xe': { m: 131.3, word: '氙', atoms: [['Xe', 0, 0, 11]] },
+  'CH₄': { m: 16.0, word: '甲烷', atoms: [['H', -9, -8, 4.5], ['H', 9, -8, 4.5], ['H', -9, 8, 4.5], ['H', 9, 8, 4.5], ['C', 0, 0, 7]] },
+  'CO₂': { m: 44.0, word: '二氧化碳', atoms: [['O', -13, 0, 7], ['O', 13, 0, 7], ['C', 0, 0, 6.5]] },
 };
 const TEXF = { 'H₂': '\\text{H}_2', 'O₂': '\\text{O}_2', 'Ne': '\\text{Ne}', 'Xe': '\\text{Xe}', 'CH₄': '\\text{CH}_4', 'CO₂': '\\text{CO}_2' };
-const molName = (f) => (MOLS[f].atoms.length === 1 ? 'an atom of ' + MOLS[f].word + ', ' + f : 'a molecule of ' + MOLS[f].word + ', ' + f);
+const molName = (f) => (MOLS[f].atoms.length === 1 ? MOLS[f].word + '原子，' + f : MOLS[f].word + '分子，' + f);
 const heading3 = () => { const z = 2 * Math.random() - 1, a = Math.random() * TAU, r = Math.sqrt(1 - z * z); return [r * Math.cos(a), r * Math.sin(a), z]; };
 
 /* =====================================================================
@@ -38,12 +38,12 @@ const heading3 = () => { const z = 2 * Math.random() - 1, a = Math.random() * TA
 ===================================================================== */
 (function () {
   const d = sim('sim-bulbs');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [-1.22, 1.22], views: [{ label: 'front', yaw: 0, pitch: 0.12 }, { label: 'above', yaw: 0, pitch: 1.15 }], h: 380, dist: 6.6, tilt: 0.12 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [-1.22, 1.22], views: [{ label: '正视', yaw: 0, pitch: 0.12 }, { label: '俯视', yaw: 0, pitch: 1.15 }], h: 380, dist: 6.6, tilt: 0.12 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 250);
   const PAIRS = [['H₂', 'O₂'], ['Ne', 'Xe'], ['CH₄', 'CO₂']];
-  const mode = F.choice(d.controls, { label: '\\text{process}', aria: 'diffusion or effusion', options: [{ value: 'diff', label: 'diffusion' }, { value: 'eff', label: 'effusion' }], value: 'diff', ms: 0, onInput: restart });
-  const cock = F.choice(d.controls, { label: '\\text{stopcock}', aria: 'the stopcock closed or open', options: [{ value: 'closed', label: 'closed' }, { value: 'open', label: 'open' }], value: 'open', ms: 0, onInput: restart });
-  const pair = F.choice(d.controls, { label: '\\text{gases}', aria: 'the two gases', options: PAIRS.map((p, i) => ({ value: String(i), label: p[0] + ' and ' + p[1] })), value: '0', ms: 0, onInput: restart });
+  const mode = F.choice(d.controls, { label: '\\text{过程}', aria: '扩散或泻流', options: [{ value: 'diff', label: '扩散' }, { value: 'eff', label: '泻流' }], value: 'diff', ms: 0, onInput: restart });
+  const cock = F.choice(d.controls, { label: '\\text{旋塞}', aria: '旋塞关闭或打开', options: [{ value: 'closed', label: '关闭' }, { value: 'open', label: '打开' }], value: 'open', ms: 0, onInput: restart });
+  const pair = F.choice(d.controls, { label: '\\text{气体}', aria: '两种气体', options: PAIRS.map((p, i) => ({ value: String(i), label: p[0] + ' 和 ' + p[1] })), value: '0', ms: 0, onInput: restart });
   const CX = 1.35, RB = 0.95, RT = 0.4, RH = 0.17, RM = 0.08, K = 0.011, N = 24;
   const speed = (f) => 2.0 * Math.sqrt(32 / MOLS[f].m);
   const gases = () => PAIRS[+pair.value];
@@ -81,23 +81,23 @@ const heading3 = () => { const z = 2 * Math.random() - 1, a = Math.random() * TA
     v.clear(); ms = [];
     for (const s of [-1, 1]) {
       const b = new T3D.Mesh(new T3D.SphereGeometry(RB, 36, 24), mat3(F.ref(s < 0 ? 'left-bulb' : 'right-bulb'), glass({ opacity: 0.16 }))); b.position.set(s * CX, 0, 0); b.renderOrder = 2; grp.add(b);
-      v.pickable(b, s < 0 ? 'the left bulb' : 'the right bulb');
+      v.pickable(b, s < 0 ? '左侧玻璃泡' : '右侧玻璃泡');
     }
     const tube = new T3D.Mesh(new T3D.CylinderGeometry(RT, RT, 2 * CX - 1.6, 24, 1, true), mat3(PAL.ink, glass())); tube.rotation.z = Math.PI / 2; grp.add(tube);
     if (eff()) {
       const g = open() ? new T3D.RingGeometry(RH, RT, 32) : new T3D.CircleGeometry(RT, 32);
       const bar = new T3D.Mesh(g, mat3(PAL.muted, { transparent: true, opacity: 0.55, side: T3D.DoubleSide, depthWrite: false })); bar.rotation.y = Math.PI / 2; grp.add(bar);
-      v.pickable(bar, open() ? 'a barrier with a pinhole' : 'a barrier with its pinhole plugged');
-      v.label(open() ? 'pinhole' : 'plugged', [0, -RT - 0.45, 0], grp, 0);
+      v.pickable(bar, open() ? '带针孔的隔板' : '针孔被堵住的隔板');
+      v.label(open() ? '针孔' : '已堵住', [0, -RT - 0.45, 0], grp, 0);
     } else {
       const key3 = new T3D.Mesh(new T3D.CylinderGeometry(RT + 0.06, RT + 0.06, 2 * RT + 0.2, 24), mat3(PAL.muted, glass({ opacity: open() ? 0.12 : 0.6 }))); grp.add(key3);
-      v.pickable(key3, open() ? 'the stopcock, open' : 'the stopcock, closed');
+      v.pickable(key3, open() ? '旋塞，已打开' : '旋塞，已关闭');
       const hy = RT + 0.2;
       stick3(grp, open() ? [-0.45, hy, 0] : [0, hy, -0.45], open() ? [0.45, hy, 0] : [0, hy, 0.45], 0.05, PAL.ink);
-      v.label('stopcock', [0, hy + 0.12, 0], grp, 6);
+      v.label('旋塞', [0, hy + 0.12, 0], grp, 6);
     }
-    v.label(eff() ? 'vacuum at the start' : gases()[1], [CX, RB + 0.12, 0], grp, 6);
-    v.label(eff() ? gases().join(' and ') : gases()[0], [-CX, RB + 0.12, 0], grp, 6);
+    v.label(eff() ? '起初为真空' : gases()[1], [CX, RB + 0.12, 0], grp, 6);
+    v.label(eff() ? gases().join(' 和 ') : gases()[0], [-CX, RB + 0.12, 0], grp, 6);
     ms = P.map((q) => {
       const m = new T3D.Group(); grp.add(m);
       MOLS[q.f].atoms.forEach(([elm, dx, dy, rr]) => v.pickable(sphere3(m, [dx * K, dy * K, 0], rr * K * 1.15, F.el(elm)), molName(q.f)));
@@ -112,9 +112,9 @@ const heading3 = () => { const z = 2 * Math.random() - 1, a = Math.random() * TA
     const [a, b] = gases(), cnt = (f, side) => P.filter((q) => q.f === f && Math.sign(q.x[0]) === side).length;
     const crossedA = cnt(a, 1), crossedB = eff() ? cnt(b, 1) : cnt(b, -1);
     const { ctx } = begin(cnv);
-    topline(ctx, !open() ? (eff() ? 'The pinhole is plugged, so no molecule of either gas can leave the left bulb.' : 'The stopcock is closed, so each gas stays in its own bulb.')
-      : eff() ? 'So far ' + crossedA + (crossedA === 1 ? ' molecule of ' : ' molecules of ') + a + ' and ' + crossedB + ' of ' + b + ' have effused through the pinhole into the right bulb.'
-      : 'So far ' + crossedA + (crossedA === 1 ? ' molecule of ' : ' molecules of ') + a + ' have crossed to the right and ' + crossedB + ' of ' + b + ' to the left.');
+    topline(ctx, !open() ? (eff() ? '针孔被堵住，所以两种气体的分子都无法离开左侧玻璃泡。' : '旋塞关闭，所以每种气体都留在各自的玻璃泡中。')
+      : eff() ? '到目前为止，已有 ' + crossedA + ' 个 ' + a + ' 分子和 ' + crossedB + ' 个 ' + b + ' 分子通过针孔泻流到右侧玻璃泡中。'
+      : '到目前为止，已有 ' + crossedA + ' 个 ' + a + ' 分子穿过到达右侧，' + crossedB + ' 个 ' + b + ' 分子穿过到达左侧。');
     const GAS = ['lighter-gas', 'heavier-gas'];
     const bars = (x0, side, name) => {
       text(ctx, name, x0, 108, F.ref(side < 0 ? 'left-bulb' : 'right-bulb'), { size: 20, weight: 600 });
@@ -126,11 +126,11 @@ const heading3 = () => { const z = 2 * Math.random() - 1, a = Math.random() * TA
         text(ctx, String(n), x0 + 100 + w, y + 7, PAL.ink, { size: 18 });
       });
     };
-    bars(80, -1, 'left bulb');
-    bars(740, 1, 'right bulb');
-    text(ctx, 'molecules drawn: ' + N + ' of each gas; each moves at a speed proportional to 1/√ℳ', 80, 232, PAL.muted, { size: 16 });
+    bars(80, -1, '左侧玻璃泡');
+    bars(740, 1, '右侧玻璃泡');
+    text(ctx, '所画分子数：每种气体 ' + N + ' 个；每个分子的速率与 1/√ℳ 成正比', 80, 232, PAL.muted, { size: 16 });
     const MA = MOLS[a].m, MB = MOLS[b].m, mm = (x) => hue('mass', fmt(x, x < 10 ? 0 : 1) + '\\ \\text{g/mol}');
-    tex(d.readout, `\\frac{\\text{rate of effusion of }${TEXF[a]}}{\\text{rate of effusion of }${TEXF[b]}} = \\frac{\\sqrt{\\kMMB}}{\\sqrt{\\kMMA}} = \\frac{\\sqrt{${mm(MB)}}}{\\sqrt{${mm(MA)}}} = ${fmt(Math.sqrt(MB / MA), 2)}`);
+    tex(d.readout, `\\frac{${TEXF[a]}\\text{ 的泻流速率}}{${TEXF[b]}\\text{ 的泻流速率}} = \\frac{\\sqrt{\\kMMB}}{\\sqrt{\\kMMA}} = \\frac{\\sqrt{${mm(MB)}}}{\\sqrt{${mm(MA)}}} = ${fmt(Math.sqrt(MB / MA), 2)}`);
   }
   register(d.fig, { update: (dt) => { cy.step(dt, () => 1); step(Math.min(dt, 0.05)); }, draw });
 })();
@@ -159,7 +159,7 @@ const heading3 = () => { const z = 2 * Math.random() - 1, a = Math.random() * TA
   let seed = 7;
   const rnd = () => { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; };
   const between = (a, b) => a + rnd() * (b - a);
-  const ISO = { 235: { ref: 'uf6-235', name: 'a molecule of ²³⁵UF₆' }, 238: { ref: 'uf6-238', name: 'a molecule of ²³⁸UF₆' } };
+  const ISO = { 235: { ref: 'uf6-235', name: '²³⁵UF₆ 分子' }, 238: { ref: 'uf6-238', name: '²³⁸UF₆ 分子' } };
   /* a path is keyframes [x, y, t, behind]: straight runs, `behind` true while the run is drawn under the tube */
   function through(ly, xc) {
     const top = rnd() < 0.5, band = () => [between(L + 60, R - 60), top ? between(TOP + 18, TY - 18) : between(TY + TH + 18, BOT - 18)];
@@ -215,12 +215,12 @@ const heading3 = () => { const z = 2 * Math.random() - 1, a = Math.random() * TA
       arrow(ctx, 1270, PIPE, 1380, PIPE, faint, 4);
     }
     for (const m of live) if (!m.behind) mol(ctx, m.x, m.y, m.iso);
-    text(ctx, 'uranium hexafluoride (UF_{6})', 20, TY + TH / 2 + 44, PAL.ink, { size: 20 });
-    label(ctx, 'high pressure feed tube', 190, TY - 4, { side: 'above', size: 20, color: PAL.ink, gap: 60 });
-    label(ctx, 'porous barrier', 600, TY, { side: 'above', size: 20, color: PAL.ink, gap: 112 });
-    text(ctx, 'depleted ²³⁸UF_{6}', 1210, TY - 16, PAL.ink, { size: 20 });
-    text(ctx, 'enriched ²³⁵UF_{6}', 1160, 385, PAL.ink, { size: 20 });
-    text(ctx, 'higher speed ²³⁵UF_{6} diffuses through the barrier faster than ²³⁸UF_{6}', 640, 60, PAL.ink, { size: 20, align: 'center' });
+    text(ctx, '六氟化铀（UF_{6}）', 20, TY + TH / 2 + 44, PAL.ink, { size: 20 });
+    label(ctx, '高压进料管', 190, TY - 4, { side: 'above', size: 20, color: PAL.ink, gap: 60 });
+    label(ctx, '多孔隔板', 600, TY, { side: 'above', size: 20, color: PAL.ink, gap: 112 });
+    text(ctx, '贫化的 ²³⁸UF_{6}', 1210, TY - 16, PAL.ink, { size: 20 });
+    text(ctx, '浓缩的 ²³⁵UF_{6}', 1160, 385, PAL.ink, { size: 20 });
+    text(ctx, '速率较高的 ²³⁵UF_{6} 比 ²³⁸UF_{6} 更快地扩散通过隔板', 640, 60, PAL.ink, { size: 20, align: 'center' });
     [['uf6-235', 235, '²³⁵UF_{6}'], ['uf6-238', 238, '²³⁸UF_{6}']].forEach(([c, iso, s], i) => {
       const x = 330 + i * 200;
       mol(ctx, x, 440, iso);
@@ -228,7 +228,7 @@ const heading3 = () => { const z = 2 * Math.random() - 1, a = Math.random() * TA
     });
     if (said) return; said = true;
     const mm = (x) => hue('mass', x + '\\ \\text{g/mol}');
-    tex(d.readout, `\\frac{\\text{rate of diffusion of }{}^{235}\\text{UF}_6}{\\text{rate of diffusion of }{}^{238}\\text{UF}_6} = \\frac{\\sqrt{\\kMMB}}{\\sqrt{\\kMMA}} = \\frac{\\sqrt{${mm('352.04')}}}{\\sqrt{${mm('349.03')}}} = 1.0043`);
+    tex(d.readout, `\\frac{{}^{235}\\text{UF}_6\\text{ 的扩散速率}}{{}^{238}\\text{UF}_6\\text{ 的扩散速率}} = \\frac{\\sqrt{\\kMMB}}{\\sqrt{\\kMMA}} = \\frac{\\sqrt{${mm('352.04')}}}{\\sqrt{${mm('349.03')}}} = 1.0043`);
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();

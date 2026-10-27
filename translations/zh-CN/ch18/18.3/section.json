@@ -2,32 +2,40 @@
  "id": "18.3",
  "module": "m68831",
  "chapter": "18",
- "title": "Structure and General Properties of the Metalloids",
- "short": "The Metalloids",
- "lead": "The six <span data-concept=\"metalloid\">metalloids</span>, boron, silicon, germanium, arsenic, antimony and tellurium, stand between the metals and the <span data-concept=\"nonmetal\">nonmetals</span>. The section looks at the covalent crystals they form, then at boron and silicon in detail: how each is found and purified, their halides as <span data-concept=\"lewis-acid\">Lewis acids</span>, boric acid and the <span data-concept=\"borate\">borates</span>, and silica and the <span data-concept=\"silicate\">silicates</span>.",
+ "title": "半金属的结构与一般性质",
+ "short": "半金属",
+ "lead": "六种<span data-concept=\"metalloid\">半金属</span>——硼、硅、锗、砷、锑和碲——位于金属与<span data-concept=\"nonmetal\">非金属</span>之间。本节先考察它们形成的共价晶体，然后较详细地讨论硼和硅：它们各自是如何被发现和提纯的，它们的卤化物如何充当<span data-concept=\"lewis-acid\">路易斯酸</span>，以及硼酸和<span data-concept=\"borate\">硼酸盐</span>、二氧化硅和<span data-concept=\"silicate\">硅酸盐</span>。",
  "objectives": [
-  "Describe the general preparation, properties, and uses of the metalloids",
-  "Describe the preparation, properties, and compounds of boron and silicon"
+  "描述半金属的一般制备方法、性质和用途",
+  "描述硼和硅的制备、性质和化合物"
  ],
- "summary_html": "<p>The elements boron, silicon, germanium, arsenic, antimony, and tellurium separate the metals from the <span data-concept=\"nonmetal\">nonmetals</span> in the periodic table. These elements, called <span data-concept=\"metalloid\">metalloids</span> or sometimes semimetals, exhibit properties characteristic of both metals and nonmetals. The structures of these elements are similar in many ways to those of nonmetals, but the elements are electrical semiconductors.</p>",
- "notes": "The Link to Learning on the cubic diamond structure is left out; Figure 18.12 carries the diamond structure of silicon and germanium. The section keeps as printed the antimony paragraph printed twice (the second time without “Sb₂S₅”), “passivation of silicon occurs due the formation”, “silicon is” run into “sp³d²” without a space, “colorless gasses”, “The volatility of dry ice reflect”, and the two empty rows that open the array of the silicon dioxide reductions.",
+ "summary_html": "<p>硼、硅、锗、砷、锑和碲这些元素在元素周期表中把金属与<span data-concept=\"nonmetal\">非金属</span>隔开。这些元素称为<span data-concept=\"metalloid\">半金属</span>，有时也称准金属，兼有金属和非金属的特征性质。这些元素的结构在许多方面与非金属相似，但它们是电的半导体。</p>",
+ "notes": "关于立方金刚石结构的“Link to Learning”被略去；图 18.12 已给出硅和锗的金刚石结构。本节按原样保留印刷了两次的锑段落（第二次没有“Sb₂S₅”），以及二氧化硅还原反应数组开头的两个空行。“passivation of silicon occurs due the formation”“colorless gasses”“The volatility of dry ice reflect”等英文拼写和语法错误无法在中文中保留，已按其本意翻译；“silicon is”与“sp³d²”之间缺少空格的排印问题同理，中文按中英文之间留空格的规则排版。",
  "ai": {
   "text": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-10-05",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels, concept tags, hints and suggested approaches are AI-generated. Answers come from the book’s answer key. The seven unkeyed exercises fs-idp16930624 and fs-idp53586384 (hybridization and molecular geometry), fs-idp20024944 (Lewis structures), fs-idm40238272 (balanced equations), fs-idm26980560 (formulas), fs-idp26638608 (the empirical formula of silicon sulfide) and fs-idp421376 (the molecular formula of a silicon hydride) are left out, and no answer is computed for them. The unkeyed conceptual exercise fs-idp46618224 carries a suggested approach marked as OmniStax’s own. Nothing is moved.",
+ "exercise_notes": "布鲁姆层级、概念标签、提示和建议解法由 AI 生成。答案来自本书的答案册。七道没有答案的习题——fs-idp16930624 和 fs-idp53586384（杂化与分子几何构型）、fs-idp20024944（路易斯结构式）、fs-idm40238272（配平方程式）、fs-idm26980560（化学式）、fs-idp26638608（硫化硅的实验式）和 fs-idp421376（硅氢化物的分子式）——被略去，也没有为它们计算答案。没有答案的概念性习题 fs-idp46618224 附有标明为 OmniStax 自己所写的建议解法。没有任何内容被移动。",
  "figures": [
   {
    "id": "sim-structures",
@@ -40,7 +48,7 @@
     "/media/ch18/CNX_Chem_18_03_Structures.jpg",
     "/media/ch18/CNX_Chem_18_03_BIcosahed.jpg"
    ],
-   "original_caption": "(Figure 18.12) (a) Arsenic and (b) antimony have a layered structure similar to that of (c) graphite, except that the layers are puckered rather than planar. (d) Elemental tellurium forms spiral chains. (Figure 18.13) An icosahedron is a symmetrical, solid shape with 20 faces, each of which is an equilateral triangle. The faces meet at 12 corners.",
+   "original_caption": "（图 18.12）（a）砷和（b）锑具有层状结构，与（c）石墨的结构相似，只是层是起伏的而不是平面的。（d）单质碲形成螺旋链。（图 18.13）二十面体是一种对称的立体形状，有 20 个面，每个面都是等边三角形。这些面相交于 12 个顶点。",
    "draws": [
     "length"
    ],
@@ -56,6 +64,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -66,7 +79,7 @@
    "originals": [
     "/media/ch18/CNX_Chem_18_03_SiPurif.jpg"
    ],
-   "original_caption": "A zone-refining apparatus used to purify silicon.",
+   "original_caption": "用于提纯硅的区域精炼装置。",
    "draws": [],
    "facts": [
     "#ffb347"
@@ -76,6 +89,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -88,6 +106,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -101,6 +124,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -114,6 +142,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -127,6 +160,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -137,7 +175,7 @@
    "originals": [
     "/media/ch18/CNX_Chem_18_03_CO2vsSiO2.jpg"
    ],
-   "original_caption": "Because carbon tends to form double and triple bonds and silicon does not, (a) carbon dioxide is a discrete molecule with two C=O double bonds and (b) silicon dioxide is an infinite network of oxygen atoms bridging between silicon atoms with each silicon atom possessing four Si-O single bonds. (credit a photo: modification of work by Erica Gerdes; credit b photo: modification of work by Didier Descouens)",
+   "original_caption": "由于碳倾向于形成双键和三键而硅不然，（a）二氧化碳是含有两个 C=O 双键的离散分子，（b）二氧化硅是氧原子在硅原子之间架桥而成的无限网络，每个硅原子有四个 Si-O 单键。（来源 a：改编自 Erica Gerdes 的作品；b：改编自 Didier Descouens 的作品）",
    "draws": [],
    "conventions": [
     "C",
@@ -149,6 +187,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   }
@@ -392,11 +435,11 @@
     "at": "end"
    },
    "cite": "boron-silicon",
-   "prompt": "Write a Lewis structure for each of the following molecules or ions. You may wish to review the chapter on chemical bonding.<br>(a) H<sub>3</sub>BPH<sub>3</sub><br>(b) $\\text{BF}_{4}{}^{-}$<br>(c) BBr<sub>3</sub><br>(d) B(CH<sub>3</sub>)<sub>3</sub><br>(e) B(OH)<sub>3</sub>",
+   "prompt": "为下列每个分子或离子写出路易斯结构式。不妨复习化学键一章。<br>(a) H<sub>3</sub>BPH<sub>3</sub><br>(b) $\\text{BF}_{4}{}^{-}$<br>(c) BBr<sub>3</sub><br>(d) B(CH<sub>3</sub>)<sub>3</sub><br>(e) B(OH)<sub>3</sub>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) H<sub>3</sub>BPH<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2a_img.jpg\" alt=\"This Lewis structure is composed of a boron atom single bonded to a phosphorus atom. Each of these atoms is single bonded to three hydrogen atoms.\"><br>(b) $\\text{BF}_{4}{}^{\\text{−}}$:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2b_img.jpg\" alt=\"This Lewis structure is composed of a boron atom single bonded to four fluorine atoms, each of which has three lone pairs of electrons. The structure is surrounded by brackets, and a negative sign appears as a superscript outside the brackets.\"><br>(c) BBr<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2c_img.jpg\" alt=\"This Lewis structure is composed of a boron atom single bonded to three bromine atoms, each of which has three lone pairs of electrons.\"><br>(d) B(CH<sub>3</sub>)<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2d_img.jpg\" alt=\"This Lewis structure is composed of a boron atom that is single bonded to three carbon atoms, each of which is single bonded to three hydrogen atoms.\"><br>(e) B(OH)<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2e_img.jpg\" alt=\"This Lewis structure is composed of a boron atom that is single bonded to three oxygen atoms, each of which has two lone pairs of electrons. Each oxygen atom is single bonded to a hydrogen atom.\">"
+    "solution": "(a) H<sub>3</sub>BPH<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2a_img.jpg\" alt=\"这个路易斯结构式由一个硼原子与一个磷原子以单键相连组成。这两个原子各自与三个氢原子以单键相连。\"><br>(b) $\\text{BF}_{4}{}^{\\text{−}}$:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2b_img.jpg\" alt=\"这个路易斯结构式由一个硼原子与四个氟原子以单键相连组成，每个氟原子都有三对孤电子对。结构被方括号包围，方括号外的右上角有一个负号。\"><br>(c) BBr<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2c_img.jpg\" alt=\"这个路易斯结构式由一个硼原子与三个溴原子以单键相连组成，每个溴原子都有三对孤电子对。\"><br>(d) B(CH<sub>3</sub>)<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2d_img.jpg\" alt=\"这个路易斯结构式由一个硼原子与三个碳原子以单键相连组成，每个碳原子又与三个氢原子以单键相连。\"><br>(e) B(OH)<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2e_img.jpg\" alt=\"这个路易斯结构式由一个硼原子与三个氧原子以单键相连组成，每个氧原子都有两对孤电子对。每个氧原子与一个氢原子以单键相连。\">"
    }
   },
   {
@@ -409,7 +452,7 @@
     "at": "end"
    },
    "cite": "metalloids",
-   "prompt": "Using only the periodic table, write the complete electron configuration for silicon, including any empty orbitals in the valence shell. You may wish to review the chapter on electronic structure.",
+   "prompt": "仅利用元素周期表，写出硅的完整电子构型，包括价层中的所有空轨道。不妨复习电子结构一章。",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -426,11 +469,11 @@
     "at": "end"
    },
    "cite": "boron-silicon",
-   "prompt": "Describe the hybridization of silicon and the molecular structure of the following molecules and ions:<br>(a) (CH<sub>3</sub>)<sub>3</sub>SiH<br>(b) $\\text{SiO}_{4}{}^{4−}$<br>(c) Si<sub>2</sub>H<sub>6</sub><br>(d) Si(OH)<sub>4</sub><br>(e) $\\text{SiF}_{6}{}^{2−}$",
+   "prompt": "描述硅的杂化方式，以及下列分子和离子的分子构型：<br>(a) (CH<sub>3</sub>)<sub>3</sub>SiH<br>(b) $\\text{SiO}_{4}{}^{4−}$<br>(c) Si<sub>2</sub>H<sub>6</sub><br>(d) Si(OH)<sub>4</sub><br>(e) $\\text{SiF}_{6}{}^{2−}$",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) (CH<sub>3</sub>)<sub>3</sub>SiH: <em>sp</em><sup>3</sup> bonding about Si; the structure is tetrahedral; (b) $\\text{SiO}_{4}{}^{\\text{4−}}$: <em>sp</em><sup>3</sup> bonding about Si; the structure is tetrahedral; (c) Si<sub>2</sub>H<sub>6</sub>: <em>sp</em><sup>3</sup> bonding about each Si; the structure is linear along the Si-Si bond; (d) Si(OH)<sub>4</sub>: <em>sp</em><sup>3</sup> bonding about Si; the structure is tetrahedral; (e) $\\text{SiF}_{6}{}^{\\text{2−}}$: <em>sp</em><sup>3</sup><em>d</em><sup>2</sup> bonding about Si; the structure is octahedral"
+    "solution": "(a) (CH<sub>3</sub>)<sub>3</sub>SiH：Si 周围为 <em>sp</em><sup>3</sup> 成键；结构为四面体形；(b) $\\text{SiO}_{4}{}^{\\text{4−}}$：Si 周围为 <em>sp</em><sup>3</sup> 成键；结构为四面体形；(c) Si<sub>2</sub>H<sub>6</sub>：每个 Si 周围为 <em>sp</em><sup>3</sup> 成键；结构沿 Si-Si 键为直线形；(d) Si(OH)<sub>4</sub>：Si 周围为 <em>sp</em><sup>3</sup> 成键；结构为四面体形；(e) $\\text{SiF}_{6}{}^{\\text{2−}}$：Si 周围为 <em>sp</em><sup>3</sup><em>d</em><sup>2</sup> 成键；结构为八面体形"
    }
   },
   {
@@ -443,11 +486,11 @@
     "at": "end"
    },
    "cite": "structures",
-   "prompt": "Describe the hybridization and the bonding of a silicon atom in elemental silicon.",
+   "prompt": "描述单质硅中硅原子的杂化方式和成键情况。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Each silicon atom in elemental silicon is <em>sp</em><sup>3</sup> hybridized and forms four single covalent σ bonds to four neighboring silicon atoms. Silicon crystallizes with a diamond structure, in which every atom is bonded to four neighbors at the corners of a regular tetrahedron. Silicon has the valence configuration 3<em>s</em><sup>2</sup>3<em>p</em><sup>2</sup>; mixing the 3<em>s</em> orbital with the three 3<em>p</em> orbitals gives four equivalent <em>sp</em><sup>3</sup> hybrid orbitals that point to the corners of a tetrahedron, 109.5° apart, each holding one electron. Each hybrid orbital overlaps end to end with an <em>sp</em><sup>3</sup> hybrid orbital of a neighboring atom to form a Si–Si σ bond containing one shared pair of electrons. Every atom uses all four valence electrons in this way, so the crystal is a giant three-dimensional molecule held together by single bonds, with no π bonding."
+    "solution": "单质硅中的每个硅原子都是 <em>sp</em><sup>3</sup> 杂化，并与四个相邻的硅原子形成四条共价 σ 单键。硅以金刚石结构结晶，其中每个原子与位于正四面体顶点的四个相邻原子成键。硅的价层构型为 3<em>s</em><sup>2</sup>3<em>p</em><sup>2</sup>；3<em>s</em> 轨道与三个 3<em>p</em> 轨道混合，得到四个等价的 <em>sp</em><sup>3</sup> 杂化轨道，它们指向四面体的顶点，彼此相隔 109.5°，每个杂化轨道容纳一个电子。每个杂化轨道与相邻原子的一个 <em>sp</em><sup>3</sup> 杂化轨道头碰头重叠，形成含有一对共用电子的 Si–Si σ 键。每个原子都以这种方式用掉全部四个价电子，因此晶体是由单键结合在一起的三维巨型分子，没有 π 键。"
    }
   },
   {
@@ -460,11 +503,11 @@
     "at": "end"
    },
    "cite": "boron-silicon",
-   "prompt": "Classify each of the following molecules as polar or nonpolar. You may wish to review the chapter on chemical bonding.<br>(a) SiH<sub>4</sub><br>(b) Si<sub>2</sub>H<sub>6</sub><br>(c) SiCl<sub>3</sub>H<br>(d) SiF<sub>4</sub><br>(e) SiCl<sub>2</sub>F<sub>2</sub>",
+   "prompt": "把下列每个分子分类为极性分子或非极性分子。不妨复习化学键一章。<br>(a) SiH<sub>4</sub><br>(b) Si<sub>2</sub>H<sub>6</sub><br>(c) SiCl<sub>3</sub>H<br>(d) SiF<sub>4</sub><br>(e) SiCl<sub>2</sub>F<sub>2</sub>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) nonpolar; (b) nonpolar; (c) polar; (d) nonpolar; (e) polar"
+    "solution": "(a) 非极性；(b) 非极性；(c) 极性；(d) 非极性；(e) 极性"
    }
   },
   {
@@ -477,11 +520,11 @@
     "at": "end"
    },
    "cite": "metalloids",
-   "prompt": "Name each of the following compounds:<br>(a) TeO<sub>2</sub><br>(b) Sb<sub>2</sub>S<sub>3</sub><br>(c) GeF<sub>4</sub><br>(d) SiH<sub>4</sub><br>(e) GeH<sub>4</sub>",
+   "prompt": "写出下列每个化合物的名称：<br>(a) TeO<sub>2</sub><br>(b) Sb<sub>2</sub>S<sub>3</sub><br>(c) GeF<sub>4</sub><br>(d) SiH<sub>4</sub><br>(e) GeH<sub>4</sub>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) tellurium dioxide or tellurium(IV) oxide; (b) antimony(III) sulfide; (c) germanium(IV) fluoride; (d) silane or silicon(IV) hydride; (e) germanium(IV) hydride"
+    "solution": "(a) 二氧化碲或氧化碲(IV)；(b) 硫化锑(III)；(c) 氟化锗(IV)；(d) 硅烷或氢化硅(IV)；(e) 氢化锗(IV)"
    }
   },
   {
@@ -494,11 +537,11 @@
     "at": "end"
    },
    "cite": "metalloids",
-   "prompt": "Why is boron limited to a maximum coordination number of four in its compounds?",
+   "prompt": "为什么硼在其化合物中的最大配位数限于四？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Boron has only <em>s</em> and <em>p</em> orbitals available, which can accommodate a maximum of four electron pairs. Unlike silicon, no <em>d</em> orbitals are available in boron."
+    "solution": "硼只有 <em>s</em> 和 <em>p</em> 轨道可用，这些轨道最多可容纳四对电子。与硅不同，硼没有可用的 <em>d</em> 轨道。"
    }
   },
   {
@@ -511,7 +554,7 @@
     "at": "end"
    },
    "cite": "boron-silicon",
-   "prompt": "From the data given in <a href=\"/chemistry-2e/sheets/thermo/\">Appendix G</a>, determine the standard enthalpy change and the standard free energy change for each of the following reactions:<br>(a) ${\\text{BF}}_{3}(g)+{\\text{3H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{B}{(\\text{OH})}_{3}(s)+\\text{3HF}(g)$<br>(b) ${\\text{BCl}}_{3}(g)+{\\text{3H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{B}{(\\text{OH})}_{3}(s)+\\text{3HCl}(g)$<br>(c) ${\\text{B}}_{2}{\\text{H}}_{6}(g)+{\\text{6H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{2B}{(\\text{OH})}_{3}(s)+{\\text{6H}}_{2}(g)$",
+   "prompt": "根据<a href=\"/chemistry-2e/sheets/thermo/\">附录 G</a>中给出的数据，确定下列每个反应的标准焓变和标准自由能变：<br>(a) ${\\text{BF}}_{3}(g)+{\\text{3H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{B}{(\\text{OH})}_{3}(s)+\\text{3HF}(g)$<br>(b) ${\\text{BCl}}_{3}(g)+{\\text{3H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{B}{(\\text{OH})}_{3}(s)+\\text{3HCl}(g)$<br>(c) ${\\text{B}}_{2}{\\text{H}}_{6}(g)+{\\text{6H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{2B}{(\\text{OH})}_{3}(s)+{\\text{6H}}_{2}(g)$",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -520,7 +563,7 @@
       "part": "(a) ΔH°",
       "value": 87,
       "unit": "kJ",
-      "hint": "Subtract the sum of the reactants’ standard enthalpies of formation, each times its coefficient, from the products’ sum; do the same with the standard free energies of formation for ΔG°."
+      "hint": "用产物的标准生成焓之和（每项乘以其系数）减去反应物的标准生成焓之和；用标准生成自由能做同样的计算，即得 ΔG°。"
      },
      {
       "part": "(a) ΔG°",
@@ -561,11 +604,11 @@
     "at": "end"
    },
    "cite": "boron-silicon",
-   "prompt": "Suppose you discovered a diamond completely encased in a silicate rock. How would you chemically free the diamond without harming it?",
+   "prompt": "假设你发现一块金刚石完全包埋在硅酸盐岩石中。你将如何用化学方法在不损伤金刚石的情况下把它取出来？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "A mild solution of hydrofluoric acid would dissolve the silicate and would not harm the diamond."
+    "solution": "温和的氢氟酸溶液可以溶解硅酸盐，而不会损伤金刚石。"
    }
   }
  ],

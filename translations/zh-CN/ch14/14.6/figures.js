@@ -37,19 +37,19 @@ const amt = (x) => (x <= 0 ? '0' : x >= 100 ? x.toFixed(0) : x.toPrecision(3));
   const capOf = (c) => c * V0 * (0.89 / 1.11);
   let add = null, buf = null, n = null;
   add = F.choice(d.controls, {
-    label: '\\text{add}', aria: 'the strong acid or base added', value: 'base',
+    label: '\\text{加入}', aria: '加入的强酸或强碱', value: 'base',
     options: [{ value: 'acid', label: 'HCl' }, { value: 'base', label: 'NaOH' }],
     onInput: () => n && n.refresh(),
   });
   buf = F.choice(d.controls, {
-    label: '\\text{buffer}', aria: 'the concentration of each buffer partner', value: '0.1',
+    label: '\\text{缓冲溶液}', aria: '缓冲溶液中每种组分的浓度', value: '0.1',
     options: [{ value: '0.1', label: '0.10 M' }, { value: '1', label: '1.0 M' }],
     onInput: () => n && n.refresh(),
   });
   n = ctl(d.controls, {
     label: '\\kn', cls: 'amount', min: 0, max: NMAX, step: 0.01, value: 0.1, unit: 'mmol', dec: 2,
-    aria: 'amount of strong acid or base added, in millimoles',
-    specials: [{ at: () => { const x = capOf(+buf.value); return x <= NMAX ? x : null; }, label: 'capacity' }],
+    aria: '加入的强酸或强碱的物质的量，单位为毫摩尔',
+    specials: [{ at: () => { const x = capOf(+buf.value); return x <= NMAX ? x : null; }, label: '缓冲容量' }],
   });
   const ro = F.readout(d);
   let hits = [];
@@ -118,19 +118,19 @@ const amt = (x) => (x <= 0 ? '0' : x >= 100 ? x.toFixed(0) : x.toPrecision(3));
       }
       form = dir;
       if (spent) note = dir === 'base'
-        ? `All ${amt(a0)} mmol of CH₃CO₂H is used up; the excess OH⁻ sets the pH.`
-        : `All ${amt(a0)} mmol of CH₃CO₂⁻ is used up; the excess H₃O⁺ sets the pH.`;
+        ? `全部 ${amt(a0)} mmol 的 CH₃CO₂H 已耗尽；过量的 OH⁻ 决定了 pH。`
+        : `全部 ${amt(a0)} mmol 的 CH₃CO₂⁻ 已耗尽；过量的 H₃O⁺ 决定了 pH。`;
     }
     const pU = (-Math.log10(hUn(dir, x))).toFixed(2), what = dir === 'base' ? 'NaOH' : 'HCl';
     const lines = topline(ctx, x < 0.005
-      ? 'With nothing added, the buffer and the unbuffered solution both have pH 4.74.'
-      : `Adding ${x.toFixed(2)} mmol of ${what} moves the buffer from pH 4.74 to ${pH} and the unbuffered solution from pH 4.74 to ${pU}.`);
+      ? '未加入任何物质时，缓冲溶液和非缓冲溶液的 pH 都是 4.74。'
+      : `加入 ${x.toFixed(2)} mmol ${what}，使缓冲溶液的 pH 从 4.74 变为 ${pH}，使非缓冲溶液的 pH 从 4.74 变为 ${pU}。`);
     const lab = F.labeller(ctx, H, { headline: lines });
 
     /* the two partners, as the book's bars: heights relative to the start, which the dashed line marks */
     const yS = BAR.base - BAR.h, names = ['CH_{3}CO_{2}H', 'CH_{3}CO_{2}⁻'];
     line(ctx, BAR.x[0] - 30, yS, BAR.x[1] + BAR.w + 30, yS, alpha(PAL.ink, 0.45), 2, [10, 10]);
-    text(ctx, 'start', BAR.x[0] - 38, yS, PAL.muted, { size: 17, align: 'right' });
+    text(ctx, '起点', BAR.x[0] - 38, yS, PAL.muted, { size: 17, align: 'right' });
     [ha, ab].forEach((m, i) => {
       const col = F.cat(i), hgt = (Math.max(0, m) / a0) * BAR.h, x0 = BAR.x[i];
       ctx.save(); ctx.fillStyle = alpha(col, 0.35); ctx.fillRect(x0, BAR.base - hgt, BAR.w, hgt); ctx.restore();
@@ -143,8 +143,8 @@ const amt = (x) => (x <= 0 ? '0' : x >= 100 ? x.toFixed(0) : x.toPrecision(3));
 
     /* pH against the strong acid or base added */
     const a = F.axes(ctx, B, [0, NMAX], [0, 14], { nx: 11, ny: 7, yl: 'pH', yc: cC });
-    add.only(ctx, 'base', () => text(ctx, 'NaOH added (mmol)', B.r, B.b + 58, cA, { align: 'right', weight: 600, size: 20 }));
-    add.only(ctx, 'acid', () => text(ctx, 'HCl added (mmol)', B.r, B.b + 58, cA, { align: 'right', weight: 600, size: 20 }));
+    add.only(ctx, 'base', () => text(ctx, '加入的 NaOH（mmol）', B.r, B.b + 58, cA, { align: 'right', weight: 600, size: 20 }));
+    add.only(ctx, 'acid', () => text(ctx, '加入的 HCl（mmol）', B.r, B.b + 58, cA, { align: 'right', weight: 600, size: 20 }));
     lab.block(B.l - 60, B.t - 44, B.l + 40, B.t - 6); lab.block(B.l - 60, B.t, B.l - 4, B.b + 40); lab.block(B.l, B.b + 4, B.r + 10, B.b + 76);
     const fB = blended(pBufOf), fU = blended((dd) => pUnOf(dd));
     ctx.save(); ctx.beginPath(); ctx.rect(B.l, B.t - 6, B.r - B.l, B.b - B.t + 12); ctx.clip();
@@ -158,17 +158,17 @@ const amt = (x) => (x <= 0 ? '0' : x >= 100 ? x.toFixed(0) : x.toPrecision(3));
       const pc = { x: a.X(cap), y: a.Y(fB(cap)) };
       dot(ctx, pc.x, pc.y, cB, false, 10);
       lab.block(pc.x - 12, pc.y - 12, pc.x + 12, pc.y + 12);
-      lab.add(dir === 'base' ? '[CH_{3}CO_{2}H] is 11% of [CH_{3}CO_{2}⁻]' : '[CH_{3}CO_{2}⁻] is 11% of [CH_{3}CO_{2}H]', pc.x, pc.y, -0.5, -0.87, PAL.ink, 20, 60);
-      hits.push({ x: pc.x, y: pc.y, r: 14, name: `the buffer capacity: ${cap.toFixed(2)} mmol, pH ${fB(cap).toFixed(2)}` });
+      lab.add(dir === 'base' ? '[CH_{3}CO_{2}H] 为 [CH_{3}CO_{2}⁻] 的 11%' : '[CH_{3}CO_{2}⁻] 为 [CH_{3}CO_{2}H] 的 11%', pc.x, pc.y, -0.5, -0.87, PAL.ink, 20, 60);
+      hits.push({ x: pc.x, y: pc.y, r: 14, name: `缓冲容量：${cap.toFixed(2)} mmol，pH ${fB(cap).toFixed(2)}` });
     }
     dot(ctx, pu.x, pu.y, cU, true, 9);
     dot(ctx, pb.x, pb.y, cB, true, 9);
     lab.block(pb.x - 14, pb.y - 14, pb.x + 14, pb.y + 14); lab.block(pu.x - 14, pu.y - 14, pu.x + 14, pu.y + 14);
     const s = dir === 'base' ? 1 : -1;
-    lab.add('buffer', a.X(2), a.Y(fB(2)), 0, -s, cB, 20, 26);
-    lab.add('unbuffered', a.X(6), a.Y(fU(6)), 0, s, cU, 20, 26);
+    lab.add('缓冲溶液', a.X(2), a.Y(fB(2)), 0, -s, cB, 20, 26);
+    lab.add('非缓冲溶液', a.X(6), a.Y(fU(6)), 0, s, cU, 20, 26);
     lab.flush();
-    hits.push({ x: pb.x, y: pb.y, r: 14, name: `the buffer: pH ${fB(x).toFixed(2)}` }, { x: pu.x, y: pu.y, r: 14, name: `the unbuffered solution: pH ${pU}` });
+    hits.push({ x: pb.x, y: pb.y, r: 14, name: `缓冲溶液：pH ${fB(x).toFixed(2)}` }, { x: pu.x, y: pu.y, r: 14, name: `非缓冲溶液：pH ${pU}` });
     ro.set(tex, note, { form });
   }
   register(d.fig, { update: () => {}, draw });

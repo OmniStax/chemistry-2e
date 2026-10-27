@@ -2,32 +2,40 @@
   "id": "12.7",
   "module": "m68795",
   "chapter": "12",
-  "title": "Catalysis",
-  "short": "Catalysis",
-  "lead": "A <span data-concept=\"catalyst\">catalyst</span> increases the rate of a reaction without being consumed by it. Some catalysts act in the same phase as the reactants, as in the destruction of ozone in the upper atmosphere; others are solids whose surfaces the reactants meet, as in hydrogenation and the catalytic converters of automobiles; and enzymes are the catalysts of living cells.",
+  "title": "催化作用",
+  "short": "催化作用",
+  "lead": "<span data-concept=\"catalyst\">催化剂</span>能提高反应速率而自身不被反应消耗。有些催化剂与反应物处于同一相中起作用，如高层大气中臭氧的破坏；另一些是固体，反应物在其表面上相遇，如氢化反应和汽车的催化转化器；而酶则是活细胞的催化剂。",
   "objectives": [
-    "Explain the function of a catalyst in terms of reaction mechanisms and potential energy diagrams",
-    "List examples of catalysis in natural and industrial processes"
+    "用反应机理和势能图解释催化剂的作用",
+    "列举自然过程和工业过程中催化作用的实例"
   ],
-  "summary_html": "<p><span data-concept=\"catalyst\">Catalysts</span> affect the rate of a chemical reaction by altering its <span data-concept=\"reaction-mechanism\">mechanism</span> to provide a lower <span data-concept=\"activation-energy\">activation energy</span>. Catalysts can be homogenous (in the same phase as the reactants) or heterogeneous (a different phase than the reactants).</p>",
-  "notes": "The two Link to Learning notes are left out, the ChemWiki page on catalytic converters and the Royal Society of Chemistry’s introduction to enzymes; Figure 12.19’s “two transitions states” and the converter note’s NO₂ where the text says nitric oxide are kept as printed.",
+  "summary_html": "<p><span data-concept=\"catalyst\">催化剂</span>通过改变化学反应的<span data-concept=\"reaction-mechanism\">机理</span>来提供更低的<span data-concept=\"activation-energy\">活化能</span>，从而影响反应的速率。催化剂可以是均相的（与反应物处于同一相）或多相的（与反应物处于不同相）。</p>",
+  "notes": "两个“学习链接”（Link to Learning）提示被略去，即 ChemWiki 上关于催化转化器的页面和英国皇家化学会对酶的介绍；图 12.19 的图题中的“two transitions states”（原文如此）以及转化器提示框中正文说的是一氧化氮而方程式写的却是 NO₂，均照原书保留。",
   "ai": {
     "text": [
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ],
     "figures": [
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ]
   },
-  "built": "2026-10-05",
+  "built": "2026-10-26",
   "exercises_lead": "",
-  "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answer. The unkeyed numerical exercise fs-idm260004768 (12.81) is left out, and no answer is computed for it; its two diagrams are carried into the prompt of fs-idm189363504 (12.83), which asks about them. The unkeyed fs-idm119808848, fs-idm194307024 and fs-idm189363504 are kept with a suggested approach marked as AI-generated. The estimates read off the diagrams of fs-idm218836096 and of the Check Your Learning are checked with a tolerance.",
+  "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案来自书中的答案表和“学习检测”的答案。没有答案的数值习题 fs-idm260004768（12.81）被略去，也没有为它计算答案；它的两幅图被并入习题 fs-idm189363504（12.83）的题干，该题问的就是这两幅图。没有答案的 fs-idm119808848、fs-idm194307024 和 fs-idm189363504 带有一个建议的解题思路，标明为 AI 生成。习题 fs-idm218836096 和“学习检测”中从图上读出的估计值按一定的容差核对。",
   "figures": [
     {
       "id": "sim-catalysis",
@@ -36,7 +44,7 @@
       "originals": [
         "/media/ch12/CNX_Chem_12_07_CatReCoDig.jpg"
       ],
-      "original_caption": "Reaction diagrams for an endothermic process in the absence (red curve) and presence (blue curve) of a catalyst. The catalyzed pathway involves a two-step mechanism (note the presence of two transition states) and an intermediate species (represented by the valley between the two transitions states).",
+      "original_caption": "某一吸热过程在没有（红色曲线）和有（蓝色曲线）催化剂时的反应图。催化路径涉及两步机理（注意存在两个过渡态）和一种中间体（由两个过渡态之间的谷表示）。",
       "draws": [
         "energy",
         "rate-constant",
@@ -47,6 +55,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -59,6 +72,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -72,6 +90,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -85,6 +108,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -98,6 +126,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -108,7 +141,7 @@
       "originals": [
         "/media/ch12/CNX_Chem_12_07_HetCats-230a.jpg"
       ],
-      "original_caption": "Mechanism for the Ni-catalyzed reaction C₂H₄ + H₂ ⟶ C₂H₆. (a) Hydrogen is adsorbed on the surface, breaking the H–H bonds and forming Ni–H bonds. (b) Ethylene is adsorbed on the surface, breaking the C–C π-bond and forming Ni–C bonds. (c) Atoms diffuse across the surface and form new C–H bonds when they collide. (d) C₂H₆ molecules desorb from the Ni surface.",
+      "original_caption": "Ni 催化的反应 C₂H₄ + H₂ ⟶ C₂H₆ 的机理。（a）氢气吸附在表面上，H–H 键断裂，形成 Ni–H 键。（b）乙烯吸附在表面上，C–C π 键断裂，形成 Ni–C 键。（c）原子在表面上扩散，碰撞时形成新的 C–H 键。（d）C₂H₆ 分子从 Ni 表面脱附。",
       "draws": [],
       "conventions": [
         "Ni",
@@ -120,6 +153,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -133,6 +171,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -143,13 +186,18 @@
       "originals": [
         "/media/ch12/CNX_Chem_12_07_Enzyme.jpg"
       ],
-      "original_caption": "(a) According to the lock-and-key model, the shape of an enzyme’s active site is a perfect fit for the substrate. (b) According to the induced fit model, the active site is somewhat flexible, and can change shape in order to bond with the substrate.",
+      "original_caption": "（a）按照锁钥模型，酶的活性部位的形状与底物完全吻合。（b）按照诱导契合模型，活性部位有一定的柔性，可以改变形状以便与底物结合。",
       "draws": [],
       "ai": [
         {
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     }
@@ -157,28 +205,28 @@
   "referents": [
     {
       "id": "uncatalyzed",
-      "label": "the uncatalyzed reaction",
+      "label": "未催化的反应",
       "figures": [
         "sim-catalysis"
       ]
     },
     {
       "id": "catalyzed",
-      "label": "the catalyzed reaction",
+      "label": "催化的反应",
       "figures": [
         "sim-catalysis"
       ]
     },
     {
       "id": "enzyme",
-      "label": "the enzyme",
+      "label": "酶",
       "figures": [
         "sim-enzyme"
       ]
     },
     {
       "id": "substrates",
-      "label": "the substrates",
+      "label": "底物",
       "figures": [
         "sim-enzyme"
       ]
@@ -314,9 +362,9 @@
       "cite": "catalysts",
       "figure": {
         "src": "/media/ch12/CNX_Chem_12_07_Rxndiagramcyl_img.jpg",
-        "alt": "In this figure, two graphs are shown. The x-axes are labeled, “Extent of reaction,” and the y-axes are labeledc “Energy (k J).” The y-axes are marked off from 0 to 100 at intervals of 10. In a, a blue curve is shown. It begins with a horizontal segment at about 10. The curve then rises sharply near the middle to reach a maximum of about 91, then sharply falls to about 52, again rises sharply to about 73 and falls to another horizontal segment at about 5. In b, the curve begins and ends similarly, but the first peak reaches about 81, drops to about 55, then rises to about 77 before falling to the horizontal region at about 5."
+        "alt": "此图中给出了两幅图。横轴标注为“反应进程”，纵轴标注为“能量（kJ）”。纵轴从 0 到 100，间隔为 10。在 a 图中给出一条蓝色曲线。它从约 10 处的一段水平线开始，在中部附近急剧上升，达到约 91 的最大值，然后急剧下降到约 52，再次急剧上升到约 73，并下降到约 5 处的另一段水平线。在 b 图中，曲线的起止与之相似，但第一个峰达到约 81，下降到约 55，然后上升到约 77，再下降到约 5 处的水平区域。"
       },
-      "prompt": "Reaction diagrams for a chemical process with and without a catalyst are shown below. Both reactions involve a two-step mechanism with a rate-determining first step. Compute activation energies for the first step of each mechanism, and identify which corresponds to the catalyzed reaction. How do the second steps of these two mechanisms compare?",
+      "prompt": "下面给出了某一化学过程在有催化剂和没有催化剂时的反应图。两个反应都涉及两步机理，且第一步是速率控制步骤。计算每个机理第一步的活化能，并指出哪一个对应于催化的反应。这两个机理的第二步相比如何？",
       "answer": {
         "type": "multi",
         "generated_by": "source",
@@ -326,7 +374,7 @@
             "value": 80,
             "unit": "kJ",
             "tol": 0.1,
-            "hint": "Subtract the energy of the reactants from the energy at the top of the first peak."
+            "hint": "用第一个峰顶的能量减去反应物的能量。"
           },
           {
             "part": "$\\kEa$ of the first step, diagram (b)",
@@ -339,10 +387,10 @@
             "value": 20,
             "unit": "kJ",
             "tol": 0.15,
-            "hint": "Measure the second barrier from the bottom of the valley, where the intermediate sits, to the top of the second peak."
+            "hint": "第二个能垒要从中间体所在的谷底量到第二个峰顶。"
           }
         ],
-        "solution": "For the first step, <em>E</em><sub>a</sub> = 80 kJ for (a) and 70 kJ for (b), so diagram (b) depicts the catalyzed reaction. Activation energies for the second steps of both mechanisms are the same, 20 kJ."
+        "solution": "对于第一步，（a）的 <em>E</em><sub>a</sub> = 80 kJ，（b）的为 70 kJ，所以图（b）表示催化的反应。两个机理的第二步的活化能相同，都是 20 kJ。"
       }
     },
     {
@@ -355,11 +403,11 @@
         "at": "end"
       },
       "cite": "catalysts",
-      "prompt": "Account for the increase in reaction rate brought about by a catalyst.",
+      "prompt": "解释催化剂使反应速率增大的原因。",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "The general mode of action for a catalyst is to provide a mechanism by which the reactants can unite more readily by taking a path with a lower reaction energy. The rates of both the forward and the reverse reactions are increased, leading to a faster achievement of equilibrium."
+        "solution": "催化剂的一般作用方式是提供一种机理，使反应物沿着反应能量更低的路径更容易地结合在一起。正反应和逆反应的速率都增大，从而更快地达到平衡。"
       }
     },
     {
@@ -372,11 +420,11 @@
         "at": "end"
       },
       "cite": "heterogeneous",
-      "prompt": "Compare the functions of homogeneous and heterogeneous catalysts.",
+      "prompt": "比较均相催化剂和多相催化剂的作用。",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Both kinds of catalyst speed up a reaction in the same way, by providing an alternative mechanism with a lower activation energy, and neither is consumed; they differ in phase and in where the reaction takes place. A homogeneous catalyst is in the same phase as the reactants and acts throughout that phase: it reacts with a reactant to form an intermediate, which then reacts further to form product and regenerate the catalyst. In the nitric oxide–catalyzed decomposition of ozone, gaseous NO reacts with O<sub>3</sub> to form NO<sub>2</sub>, and NO<sub>2</sub> reacts with an oxygen atom to give back NO, so NO is a reactant in the first step and a product in the last. A heterogeneous catalyst is in a different phase, usually a solid, and the reaction occurs on its surface: the reactants are adsorbed, activated and react there, and the products desorb. In the hydrogenation of ethylene on nickel, H<sub>2</sub> and C<sub>2</sub>H<sub>4</sub> bond to the Ni surface, the H–H bonds and the C–C π-bond break, new C–H bonds form, and C<sub>2</sub>H<sub>6</sub> leaves the surface."
+        "solution": "两种催化剂加快反应的方式相同，都是提供一种活化能更低的替代机理，而且都不被消耗；它们的区别在于所处的相以及反应发生的地点。均相催化剂与反应物处于同一相，在整个这一相中起作用：它与一种反应物反应，形成中间体，中间体再进一步反应，生成产物并使催化剂再生。在一氧化氮催化的臭氧分解中，气态 NO 与 O<sub>3</sub> 反应生成 NO<sub>2</sub>，NO<sub>2</sub> 又与氧原子反应重新生成 NO，所以 NO 是第一步中的反应物，也是最后一步中的产物。多相催化剂处于不同的相，通常是固体，反应发生在它的表面上：反应物在那里被吸附、活化并发生反应，产物则脱附。在镍上乙烯的氢化反应中，H<sub>2</sub> 和 C<sub>2</sub>H<sub>4</sub> 与 Ni 表面结合，H–H 键和 C–C π 键断裂，形成新的 C–H 键，C<sub>2</sub>H<sub>6</sub> 离开表面。"
       }
     },
     {
@@ -389,11 +437,11 @@
         "at": "end"
       },
       "cite": "homogeneous",
-      "prompt": "Consider this scenario and answer the following questions: Chlorine atoms resulting from decomposition of chlorofluoromethanes, such as CCl<sub>2</sub>F<sub>2</sub>, catalyze the decomposition of ozone in the atmosphere. One simplified mechanism for the decomposition is:<br>$\\begin{array}{l}{\\text{O}}_{3}\\overset{\\;\\text{sunlight}\\;}{\\to}{\\text{O}}_{2}+\\text{O} \\\\ {\\text{O}}_{3}+\\text{Cl}\\;\\longrightarrow \\;{\\text{O}}_{2}+\\text{ClO} \\\\ \\text{ClO}+\\text{O}\\;\\longrightarrow \\;\\text{Cl}+{\\text{O}}_{2}\\end{array}$<br>(a) Explain why chlorine atoms are catalysts in the gas-phase transformation:<br>$2{\\text{O}}_{3}\\;\\longrightarrow \\;3{\\text{O}}_{2}$<br>(b) Nitric oxide is also involved in the decomposition of ozone by the mechanism:<br>$\\begin{array}{l}{\\text{O}}_{3}\\overset{\\;\\text{sunlight}\\;}{\\to}{\\text{O}}_{2}+\\text{O} \\\\ {\\text{O}}_{3}+\\text{NO}\\;\\longrightarrow \\;{\\text{NO}}_{2}+{\\text{O}}_{2} \\\\ {\\text{NO}}_{2}+\\text{O}\\;\\longrightarrow \\;\\text{NO}+{\\text{O}}_{2}\\end{array}$<br>Is NO a catalyst for the decomposition? Explain your answer.",
+      "prompt": "考虑下面的情形并回答问题：氯氟甲烷（如 CCl<sub>2</sub>F<sub>2</sub>）分解产生的氯原子会催化大气中臭氧的分解。该分解的一种简化机理为：<br>$\\begin{array}{l}{\\text{O}}_{3}\\overset{\\;\\text{日光}\\;}{\\to}{\\text{O}}_{2}+\\text{O} \\\\ {\\text{O}}_{3}+\\text{Cl}\\;\\longrightarrow \\;{\\text{O}}_{2}+\\text{ClO} \\\\ \\text{ClO}+\\text{O}\\;\\longrightarrow \\;\\text{Cl}+{\\text{O}}_{2}\\end{array}$<br>（a）解释为什么氯原子是下列气相转变的催化剂：<br>$2{\\text{O}}_{3}\\;\\longrightarrow \\;3{\\text{O}}_{2}$<br>（b）一氧化氮也按下列机理参与臭氧的分解：<br>$\\begin{array}{l}{\\text{O}}_{3}\\overset{\\;\\text{日光}\\;}{\\to}{\\text{O}}_{2}+\\text{O} \\\\ {\\text{O}}_{3}+\\text{NO}\\;\\longrightarrow \\;{\\text{NO}}_{2}+{\\text{O}}_{2} \\\\ {\\text{NO}}_{2}+\\text{O}\\;\\longrightarrow \\;\\text{NO}+{\\text{O}}_{2}\\end{array}$<br>NO 是该分解反应的催化剂吗？请解释你的答案。",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "(a) Chlorine atoms are a catalyst because they react in the second step but are regenerated in the third step. Thus, they are not used up, which is a characteristic of catalysts. (b) NO is a catalyst for the same reason as in part (a)."
+        "solution": "（a）氯原子是催化剂，因为它们在第二步中反应，又在第三步中再生。因此它们不会被用完，这正是催化剂的特征。（b）NO 是催化剂，理由与（a）相同。"
       }
     },
     {
@@ -406,11 +454,11 @@
         "at": "end"
       },
       "cite": "catalysts",
-      "prompt": "For each of the following pairs of reaction diagrams, identify which of the pair is catalyzed:<br>(a)<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise4a_img.jpg\" alt=\"In this figure, two graphs are shown. The x-axes are labeled, “Extent of reaction,” and the y-axes are labeled, “Energy (k J).” The y-axis of the first graph is marked off from 0 to 30 in intervals of 5. The y-axis of the second graph is marked off from 0 to 25 by intervals of 5. In a, a blue curve is shown. It begins with a horizontal region at about 12. The curve then rises sharply near the middle to reach a maximum of about 24 and similarly falls to another horizontal segment at 5. In b, the curve begins and ends similarly, but the maximum reached near the center of the graph is only 20.\"><br>(b)<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise4b_img.jpg\" alt=\"In this figure, two graphs are shown. The x-axes are labeled, “Extent of reaction,” and the y-axes are labeled, “Energy.” The y-axes are marked off from 0 to 50 in intervals of 5. In a, a blue curve is shown. It begins with a horizontal region at about 2. The curve then rises sharply near the middle to reach a maximum of about 43 and similarly falls to another horizontal segment at 15. In b, the curve begins and ends similarly, but the maximum reached near the center of the graph is only about 32.\">",
+      "prompt": "对于下列每一对反应图，指出其中哪一幅表示催化的反应：<br>（a）<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise4a_img.jpg\" alt=\"此图中给出了两幅图。横轴标注为“反应进程”，纵轴标注为“能量（kJ）”。第一幅图的纵轴从 0 到 30，间隔为 5。第二幅图的纵轴从 0 到 25，间隔为 5。在 a 图中给出一条蓝色曲线。它从约 12 处的一段水平区域开始，在中部附近急剧上升，达到约 24 的最大值，并同样下降到 5 处的另一段水平线。在 b 图中，曲线的起止与之相似，但在图中部附近达到的最大值只有 20。\"><br>（b）<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise4b_img.jpg\" alt=\"此图中给出了两幅图。横轴标注为“反应进程”，纵轴标注为“能量”。纵轴从 0 到 50，间隔为 5。在 a 图中给出一条蓝色曲线。它从约 2 处的一段水平区域开始，在中部附近急剧上升，达到约 43 的最大值，并同样下降到 15 处的另一段水平线。在 b 图中，曲线的起止与之相似，但在图中部附近达到的最大值只有约 32。\">",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "In both pairs, diagram (b) is the catalyzed reaction. The two diagrams of each pair start and end at the same energies, because a catalyst does not change the reactants, the products or the energy change between them; it provides a path with a lower activation energy. The activation energy is the height of the peak above the reactants. (a) The reactants are at about 12 kJ; diagram (a) peaks at about 24 kJ, so $\\kEa$ ≈ 12 kJ, and diagram (b) peaks at about 20 kJ, so $\\kEa$ ≈ 8 kJ. Diagram (b), with the lower barrier, is catalyzed. (b) The reactants are at about 2 kJ; diagram (a) peaks at about 43 kJ, so $\\kEa$ ≈ 41 kJ, and diagram (b) peaks at about 32 kJ, so $\\kEa$ ≈ 30 kJ. Again diagram (b) is catalyzed."
+        "solution": "在两对图中，图（b）都是催化的反应。每对中的两幅图起点和终点的能量相同，因为催化剂不改变反应物、产物，也不改变二者之间的能量变化；它提供的是一条活化能更低的路径。活化能是峰顶高出反应物的高度。（a）反应物约在 12 kJ；图（a）的峰在约 24 kJ，所以 $\\kEa$ ≈ 12 kJ，图（b）的峰在约 20 kJ，所以 $\\kEa$ ≈ 8 kJ。能垒更低的图（b）是催化的。（b）反应物约在 2 kJ；图（a）的峰在约 43 kJ，所以 $\\kEa$ ≈ 41 kJ，图（b）的峰在约 32 kJ，所以 $\\kEa$ ≈ 30 kJ。图（b）同样是催化的。"
       }
     },
     {
@@ -423,11 +471,11 @@
         "at": "end"
       },
       "cite": "catalysts",
-      "prompt": "For each of the following pairs of reaction diagrams, identify which of the pairs is catalyzed:<br>(a)<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise5a_img.jpg\" alt=\"In this figure, two graphs are shown. The x-axes are labeled, “Extent of reaction” and the y-axes are labeled, “Energy (k J).” The y-axes are marked off from 0 to 50 at intervals of 5. In a, a blue curve is shown. It begins with a horizontal segment at about 2J. The curve then rises sharply near the middle to reach a maximum of about 46, then sharply falls to about 35, again rises to about 38 and falls to another horizontal segment at about 15. In b, the curve begins and ends similarly, but the first peak reaches about 46, drops to about 35, then rises to about 43 before falling to the horizontal region at about 15.\"><br>(b)<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise5b_img.jpg\" alt=\"In this figure, two graphs are shown. The x-axes are labeled, “Extent of reaction,” and the y-axes are labeled, “Energy (k J).” The y-axes are marked off from 0 to 50 at intervals of 5. In a, a blue curve is shown. It begins with a horizontal segment at about 34. The curve then rises sharply near the middle to reach a maximum of about 45, then sharply falls to about 25, again rises sharply to about 35 and falls to another horizontal segment at about 15. In b, the curve begins and ends similarly, but the first peak reaches about 40, drops to 25, then rises to 35 before falling to the horizontal region at about 15.\">",
+      "prompt": "对于下列每一对反应图，指出每对中哪一幅表示催化的反应：<br>（a）<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise5a_img.jpg\" alt=\"此图中给出了两幅图。横轴标注为“反应进程”，纵轴标注为“能量（kJ）”。纵轴从 0 到 50，间隔为 5。在 a 图中给出一条蓝色曲线。它从约 2 J 处的一段水平线开始，在中部附近急剧上升，达到约 46 的最大值，然后急剧下降到约 35，再次上升到约 38，并下降到约 15 处的另一段水平线。在 b 图中，曲线的起止与之相似，但第一个峰达到约 46，下降到约 35，然后上升到约 43，再下降到约 15 处的水平区域。\"><br>（b）<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise5b_img.jpg\" alt=\"此图中给出了两幅图。横轴标注为“反应进程”，纵轴标注为“能量（kJ）”。纵轴从 0 到 50，间隔为 5。在 a 图中给出一条蓝色曲线。它从约 34 处的一段水平线开始，在中部附近急剧上升，达到约 45 的最大值，然后急剧下降到约 25，再次急剧上升到约 35，并下降到约 15 处的另一段水平线。在 b 图中，曲线的起止与之相似，但第一个峰达到约 40，下降到 25，然后上升到 35，再下降到约 15 处的水平区域。\">",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "The lowering of the transition state energy indicates the effect of a catalyst. (a) B; (b) B"
+        "solution": "过渡态能量的降低表明了催化剂的作用。（a）B；（b）B"
       }
     },
     {
@@ -440,7 +488,7 @@
         "at": "end"
       },
       "cite": "catalysts",
-      "prompt": "For each of the following reaction diagrams, estimate the activation energy ($\\kEa$) of the reaction:<br>(a)<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise7a_img.jpg\" alt=\"In this figure, a graph is shown. The x-axis is labeled, “Extent of reaction,” and the y-axis is labeled, “Energy (k J).” A blue curve is shown. It begins with a horizontal segment at about 35. The curve then rises sharply near the middle to reach a maximum of about 45, then sharply falls to about 24, again rises to about 30 and falls to another horizontal segment at about 15.\"><br>(b)<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise7b_img.jpg\" alt=\"In this figure, a graph is shown. The x-axis is labeled, “Extent of reaction,” and the y-axis is labeled, “Energy (k J).” A blue curve is shown. It begins with a horizontal segment at about 35. The curve then rises sharply near the middle to reach a maximum of about 45, then sharply falls to about 40, again rises to about 45 and falls to another horizontal segment at about 20.\">",
+      "prompt": "对于下列每幅反应图，估算该反应的活化能（$\\kEa$）：<br>（a）<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise7a_img.jpg\" alt=\"此图中给出了一幅图。横轴标注为“反应进程”，纵轴标注为“能量（kJ）”。给出一条蓝色曲线。它从约 35 处的一段水平线开始，在中部附近急剧上升，达到约 45 的最大值，然后急剧下降到约 24，再次上升到约 30，并下降到约 15 处的另一段水平线。\"><br>（b）<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise7b_img.jpg\" alt=\"此图中给出了一幅图。横轴标注为“反应进程”，纵轴标注为“能量（kJ）”。给出一条蓝色曲线。它从约 35 处的一段水平线开始，在中部附近急剧上升，达到约 45 的最大值，然后急剧下降到约 40，再次上升到约 45，并下降到约 20 处的另一段水平线。\">",
       "answer": {
         "type": "multi",
         "generated_by": "source",
@@ -450,7 +498,7 @@
             "value": 10,
             "unit": "kJ",
             "tol": 0.2,
-            "hint": "Take the energy of the reactants from the level at the left and subtract it from the energy at the top of the first peak."
+            "hint": "取左侧水平线的能量作为反应物的能量，用第一个峰顶的能量减去它。"
           },
           {
             "part": "(b)",
@@ -459,7 +507,7 @@
             "tol": 0.2
           }
         ],
-        "solution": "The energy needed to go from the initial state to the transition state is (a) 10 kJ; (b) 10 kJ."
+        "solution": "从初始状态到过渡态所需的能量为：（a）10 kJ；（b）10 kJ。"
       }
     },
     {
@@ -472,11 +520,11 @@
         "at": "end"
       },
       "cite": "catalysts",
-      "prompt": "Assuming the diagrams in Exercise 12.81 represent different mechanisms for the same reaction, which of the reactions has the faster rate?<br>(a)<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise6a_img.jpg\" alt=\"This figure shows a graph. The x-axis is labeled, “Extent of reaction,” and the y-axis is labeled, “Energy (k J).” The y-axis is marked off from 0 to 40 at intervals of 5. A blue curve is shown. It begins with a horizontal region at 10. The curve then rises sharply near the middle to reach a maximum of 35 and similarly falls to another horizontal segment at 5.\"><br>(b)<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise6b_img.jpg\" alt=\"This figure shows a graph. The x-axis is labeled, “Extent of reaction,” and the y-axis is labeled, “Energy (k J).” The y-axis is marked off from 0 to 40 at intervals of 5. A blue curve is shown. It begins with a horizontal region at 10. The curve then rises sharply near the middle to reach a maximum of 20 and similarly falls to another horizontal segment at 5.\">",
+      "prompt": "假定习题 12.81 中的图表示同一反应的不同机理，哪一个反应的速率更快？<br>（a）<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise6a_img.jpg\" alt=\"此图中给出了一幅图。横轴标注为“反应进程”，纵轴标注为“能量（kJ）”。纵轴从 0 到 40，间隔为 5。给出一条蓝色曲线。它从 10 处的一段水平区域开始，在中部附近急剧上升，达到 35 的最大值，并同样下降到 5 处的另一段水平线。\"><br>（b）<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise6b_img.jpg\" alt=\"此图中给出了一幅图。横轴标注为“反应进程”，纵轴标注为“能量（kJ）”。纵轴从 0 到 40，间隔为 5。给出一条蓝色曲线。它从 10 处的一段水平区域开始，在中部附近急剧上升，达到 20 的最大值，并同样下降到 5 处的另一段水平线。\">",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Reaction (b) has the faster rate. The activation energy is the height of the barrier above the reactants, which both diagrams place at 10 kJ. Diagram (a) peaks at 35 kJ, so $\\kEa$ = 35 kJ − 10 kJ = 25 kJ; diagram (b) peaks at 20 kJ, so $\\kEa$ = 20 kJ − 10 kJ = 10 kJ. For the same reaction at the same temperature, a lower activation energy means a greater fraction of molecules have enough energy to cross the barrier, so more collisions lead to reaction. The mechanism of diagram (b), with its barrier 15 kJ lower, is therefore faster, as a catalyzed path is faster than an uncatalyzed one."
+        "solution": "反应（b）的速率更快。活化能是能垒高出反应物的高度，两幅图都把反应物放在 10 kJ。图（a）的峰在 35 kJ，所以 $\\kEa$ = 35 kJ − 10 kJ = 25 kJ；图（b）的峰在 20 kJ，所以 $\\kEa$ = 20 kJ − 10 kJ = 10 kJ。对于同一反应在相同温度下，活化能越低，有足够能量越过能垒的分子所占的比例越大，因此更多的碰撞会导致反应。所以，图（b）的机理的能垒低 15 kJ，速率更快，正如催化的路径比未催化的路径更快。"
       }
     },
     {
@@ -489,11 +537,11 @@
         "at": "end"
       },
       "cite": "catalysts",
-      "prompt": "Consider the similarities and differences in the two reaction diagrams shown in Exercise 12.82. Do these diagrams represent two different overall reactions, or do they represent the same overall reaction taking place by two different mechanisms? Explain your answer.",
+      "prompt": "考虑习题 12.82 中所示的两幅反应图的异同。这些图表示的是两个不同的总反应，还是同一总反应通过两种不同的机理进行？请解释你的答案。",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "Both diagrams describe two-step, exothermic reactions, but with different changes in enthalpy, suggesting the diagrams depict two different overall reactions."
+        "solution": "两幅图都描述两步的放热反应，但焓变不同，这表明这两幅图描绘的是两个不同的总反应。"
       }
     }
   ],
@@ -567,7 +615,7 @@
     {
       "id": "c-nitric-oxide",
       "kind": "correction",
-      "html": "The book's first equation decomposes NO<sub>2</sub>, where the text speaks of nitric oxide. The decomposition of nitric oxide is 2NO(<em>g</em>) ⟶ N<sub>2</sub>(<em>g</em>) + O<sub>2</sub>(<em>g</em>)."
+      "html": "书中的第一个方程式分解的是 NO<sub>2</sub>，而正文说的是一氧化氮。一氧化氮的分解是 2NO(<em>g</em>) ⟶ N<sub>2</sub>(<em>g</em>) + O<sub>2</sub>(<em>g</em>)。"
     }
   ]
 }

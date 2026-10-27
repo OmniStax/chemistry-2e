@@ -32,8 +32,8 @@ const MOLS = {
   'HCl': { m: 36.46, atoms: [['H', -8, 0, 5], ['Cl', 5, 0, 8.5]] },
   'CF₂Cl₂': { m: 120.91, atoms: [['F', -10, -9, 6], ['F', 10, -9, 6], ['Cl', -11, 9, 8], ['Cl', 11, 9, 8], ['C', 0, 0, 7]] },
 };
-const WORD = { 'H₂': 'hydrogen', 'He': 'helium', 'Ne': 'neon', 'Ar': 'argon', 'N₂': 'nitrogen', 'O₂': 'oxygen', 'Cl₂': 'chlorine', 'CH₄': 'methane', 'NH₃': 'ammonia', 'H₂O': 'water', 'CO₂': 'carbon dioxide', 'NO': 'nitrogen monoxide', 'NO₂': 'nitrogen dioxide', 'HCl': 'hydrogen chloride', 'CF₂Cl₂': 'Freon 12' };
-const molName = (f) => (MOLS[f].atoms.length === 1 ? 'a ' + WORD[f] + ' atom, ' + f : 'a molecule of ' + WORD[f] + ', ' + f);
+const WORD = { 'H₂': '氢气', 'He': '氦气', 'Ne': '氖气', 'Ar': '氩气', 'N₂': '氮气', 'O₂': '氧气', 'Cl₂': '氯气', 'CH₄': '甲烷', 'NH₃': '氨', 'H₂O': '水', 'CO₂': '二氧化碳', 'NO': '一氧化氮', 'NO₂': '二氧化氮', 'HCl': '氯化氢', 'CF₂Cl₂': '氟利昂-12' };
+const molName = (f) => WORD[f].replace(/气$/, '') + (MOLS[f].atoms.length === 1 ? '原子，' : '分子，') + f;
 /* one molecule of the gas f centred on (x, y), scaled by k and turned by a; hydrogen takes an ink outline so that its light disc reads on a light page */
 function molecule(ctx, f, x, y, k = 1, a = 0) {
   const c = Math.cos(a), s = Math.sin(a); let reach = 0;
@@ -90,9 +90,9 @@ function flock(v, grp, g, k) {
 (function () {
   const d = sim('sim-gas-density', 560);
   const GASES = ['H₂', 'CH₄', 'N₂', 'Ar', 'CO₂', 'Cl₂', 'CF₂Cl₂'];
-  const G = pick(d.controls, { label: '\\text{gas}', value: 2, aria: 'the gas whose density is read' }, GASES);
-  const P = ctl(d.controls, { label: '\\kP', cls: 'pressure', min: 0.5, max: 2, step: 0.01, value: 1, unit: 'atm', dec: 2, aria: 'pressure in atmospheres', specials: [{ at: 1, label: '1 atm' }] });
-  const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 200, max: 600, step: 1, value: 273, unit: 'K', dec: 0, aria: 'temperature in kelvin', specials: [{ at: 273, label: '273 K' }] });
+  const G = pick(d.controls, { label: '\\text{气体}', value: 2, aria: '读取其密度的气体' }, GASES);
+  const P = ctl(d.controls, { label: '\\kP', cls: 'pressure', min: 0.5, max: 2, step: 0.01, value: 1, unit: 'atm', dec: 2, aria: '以标准大气压为单位的压强', specials: [{ at: 1, label: '1 atm' }] });
+  const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 200, max: 600, step: 1, value: 273, unit: 'K', dec: 0, aria: '以开尔文为单位的温度', specials: [{ at: 273, label: '273 K' }] });
   const hits = []; F.hover(d.stage, () => hits);
   function draw() {
     const { ctx } = begin(d.c);
@@ -108,13 +108,13 @@ function flock(v, grp, g, k) {
       const m = MOLS[f].m, q = pinned(ctx, box, X, Y, m, m * slope, f === sel ? PAL.ink : alpha(PAL.ink, 0.35));
       if (q.out) return;
       const reach = molecule(ctx, f, q.x, q.y - 26, f === sel ? 1.2 : 0.8, 0);
-      hits.push({ x: q.x, y: q.y - 26, r: reach + 4, name: molName(f) + ', ' + fmt(m, 2) + ' g/mol, ' + fmt(m * slope, 2) + ' g/L' });
+      hits.push({ x: q.x, y: q.y - 26, r: reach + 4, name: molName(f) + '，' + fmt(m, 2) + ' g/mol，' + fmt(m * slope, 2) + ' g/L' });
     });
     const m = MOLS[sel].m, dd = m * slope, q = { x: X(m), y: Y(Math.min(dd, 15)) };
     F.label(ctx, sel + ': ' + fmt(dd, dd < 1 ? 3 : 2) + ' g/L', q.x, q.y - 26, { side: dd > 11 ? 'right' : 'above', color: cd, gap: 22 });
-    topline(ctx, 'At ' + fmt(p, 2) + ' atm and ' + t + ' K, a liter of ' + WORD[sel] + ' has a mass of ' + fmt(dd, dd < 1 ? 3 : 2) + ' g, and every other gas lies on the same line.');
+    topline(ctx, '在 ' + fmt(p, 2) + ' atm、' + t + ' K 下，1 L ' + WORD[sel] + '的质量为 ' + fmt(dd, dd < 1 ? 3 : 2) + ' g，其余每种气体也都落在同一条直线上。');
     readout(d.readout, `${hue('density', 'd')} = \\frac{\\kMM\\kP}{R\\kT} = \\frac{(${hue('mass', fmt(m, 2) + '\\ \\text{g/mol}')})(${hue('pressure', fmt(p, 2) + '\\ \\text{atm}')})}{(${RTEX})(${hue('temperature', t + '\\ \\text{K}')})} = ${hue('density', fmt(dd, dd < 1 ? 3 : 2) + '\\ \\text{g/L}')}`,
-      'The slope of the line is P/RT, the number of moles in one liter, which is the same for every gas; a gas of greater molar mass packs more grams into those moles and so lies higher on the line.');
+      '这条直线的斜率为 P/RT，即每升中的物质的量（以摩尔计），对每种气体都相同；摩尔质量越大的气体，在这些物质的量中含有的克数越多，因而在直线上的位置越高。');
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -129,10 +129,10 @@ function flock(v, grp, g, k) {
 ===================================================================== */
 (function () {
   const d = sim('sim-dalton');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 0.9], views: [{ label: 'front', yaw: 0, pitch: 0.2 }, { label: 'above', yaw: 0, pitch: 0.75 }], h: 330, dist: 8.4, tilt: 0.2 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 0.9], views: [{ label: '正视', yaw: 0, pitch: 0.2 }, { label: '俯视', yaw: 0, pitch: 0.75 }], h: 330, dist: 8.4, tilt: 0.2 });
   const grp = v.part(0), cnv = strip(d, 300);
   const GAS = ['H₂', 'He', 'Ne'], WHO = ['hydrogen', 'helium', 'neon'], SYM = ['\\kPA', '\\kPB', '\\kPC'], NAME = ['P_{A}', 'P_{B}', 'P_{C}'];
-  const Ps = [300, 450, 600].map((val, i) => ctl(d.controls, { label: SYM[i], cls: 'pressure', min: 0, max: 900, step: 10, value: val, unit: 'kPa', dec: 0, aria: 'partial pressure of ' + WORD[GAS[i]] + ' in kilopascals', onInput: refill }));
+  const Ps = [300, 450, 600].map((val, i) => ctl(d.controls, { label: SYM[i], cls: 'pressure', min: 0, max: 900, step: 10, value: val, unit: 'kPa', dec: 0, aria: '以千帕为单位的' + WORD[GAS[i]] + '分压', onInput: refill }));
   const RC = 0.55, HC = 1.7, XS = [-3.3, -1.6, 0.1, 2.9], RM = 0.1, LIM = RC - RM - 0.02;
   const g = gas3();
   const count = (p) => Math.round(p / 50);
@@ -153,18 +153,18 @@ function flock(v, grp, g, k) {
   function build() {
     const key = [Ps.map((p) => p.v).join(), palSig(), WHO.map((w) => F.ref(w)).join()].join('|'); if (key === sig) return; sig = key;
     v.clear(); birds.drop();
-    v.pickable(box3(grp, [-0.2, -HC / 2 - 0.08, 0], [8.2, 0.12, 1.8], PAL.soft), 'bench');
+    v.pickable(box3(grp, [-0.2, -HC / 2 - 0.08, 0], [8.2, 0.12, 1.8], PAL.soft), '台面');
     XS.forEach((x, i) => {
       const wall = i < 3 ? F.ref(WHO[i]) : PAL.ink, op = i < 3 ? 0.16 : 0.1;
       const body = new T3D.Mesh(new T3D.CylinderGeometry(RC, RC, HC, 36, 1, true), mat3(wall, glass({ opacity: op }))); body.position.set(x, 0, 0); grp.add(body);
       const cap = new T3D.Mesh(new T3D.SphereGeometry(RC, 36, 12, 0, TAU, 0, Math.PI / 2), mat3(wall, glass({ opacity: op }))); cap.position.set(x, HC / 2, 0); grp.add(cap);
-      v.pickable(body, i < 3 ? 'a cylinder of ' + WORD[GAS[i]] + ' alone' : 'the same-size cylinder holding all three gases');
+      v.pickable(body, i < 3 ? '只装' + WORD[GAS[i]] + '的气瓶' : '同样大小、装有三种气体的气瓶');
       stick3(grp, [x, HC / 2 + RC - 0.05, 0], [x, HC / 2 + RC + 0.22, 0], 0.06, PAL.muted);
-      v.pickable(box3(grp, [x, HC / 2 + RC + 0.26, 0], [0.34, 0.1, 0.1], PAL.muted), 'valve');
-      v.label(i < 3 ? GAS[i] : 'mixture', [x, -HC / 2 - 0.2, 0.9], grp, 16).style.color = wall;
+      v.pickable(box3(grp, [x, HC / 2 + RC + 0.26, 0], [0.34, 0.1, 0.1], PAL.muted), '阀门');
+      v.label(i < 3 ? GAS[i] : '混合气体', [x, -HC / 2 - 0.2, 0.9], grp, 16).style.color = wall;
     });
     F.mesh.arrow(grp, [XS[2] + 0.75, 0, 0], [XS[3] - 0.75, 0, 0], 0.035, PAL.ink);
-    v.label('combined', [(XS[2] + XS[3]) / 2, 0.22, 0], grp, 0);
+    v.label('合并', [(XS[2] + XS[3]) / 2, 0.22, 0], grp, 0);
   }
   function draw() {
     build();
@@ -176,21 +176,21 @@ function flock(v, grp, g, k) {
     const x0 = 300, x1 = 1320, X = (kpa) => x0 + ((x1 - x0) * kpa) / 3000;
     const rows = [0, 1, 2, 3].map((i) => 110 + i * 38);
     for (let k = 0; k <= 6; k++) { const xv = X(k * 500); line(ctx, xv, rows[0] - 16, xv, rows[3] + 16, PAL.rule, 1.5); text(ctx, String(k * 500), xv, rows[3] + 40, PAL.muted, { size: 17, align: 'center' }); }
-    text(ctx, 'pressure (kPa)', x1, rows[3] + 70, cp, { size: 20, weight: 600, align: 'right' });
+    text(ctx, '压强（kPa）', x1, rows[3] + 70, cp, { size: 20, weight: 600, align: 'right' });
     const bar = (y, a, b, i) => { ctx.save(); ctx.fillStyle = F.ref(WHO[i]); ctx.fillRect(X(a), y - 12, X(b) - X(a), 24); ctx.restore(); };
     GAS.forEach((f, i) => {
-      text(ctx, WORD[GAS[i]] + ' alone, ' + NAME[i], x0 - 16, rows[i], F.ref(WHO[i]), { size: 18, align: 'right' });
+      text(ctx, WORD[GAS[i]] + '单独，' + NAME[i], x0 - 16, rows[i], F.ref(WHO[i]), { size: 18, align: 'right' });
       bar(rows[i], 0, p[i], i);
       text(ctx, p[i] + ' kPa', X(p[i]) + 10, rows[i], cp, { size: 17, weight: 600 });
     });
-    text(ctx, 'the mixture', x0 - 16, rows[3], PAL.ink, { size: 18, align: 'right', weight: 600 });
+    text(ctx, '混合气体', x0 - 16, rows[3], PAL.ink, { size: 18, align: 'right', weight: 600 });
     let acc = 0; GAS.forEach((f, i) => { bar(rows[3], acc, acc + p[i], i); acc += p[i]; });
     text(ctx, tot + ' kPa', X(tot) + 10, rows[3], cp, { size: 17, weight: 600 });
     const X_ = (i) => (tot ? fmt(p[i] / tot, 3) : '0');
-    text(ctx, 'mole fractions in the mixture: hydrogen ' + X_(0) + ', helium ' + X_(1) + ', neon ' + X_(2), 700, 286, PAL.muted, { size: 17, align: 'center' });
-    topline(ctx, p[0] + ' kPa of hydrogen, ' + p[1] + ' kPa of helium and ' + p[2] + ' kPa of neon, put together in one cylinder of the same size, press at ' + tot + ' kPa.');
+    text(ctx, '混合气体中的摩尔分数：氢气 ' + X_(0) + '，氦气 ' + X_(1) + '，氖气 ' + X_(2), 700, 286, PAL.muted, { size: 17, align: 'center' });
+    topline(ctx, p[0] + ' kPa 的氢气、' + p[1] + ' kPa 的氦气和 ' + p[2] + ' kPa 的氖气，放在同样大小的同一个气瓶中，产生的压强为 ' + tot + ' kPa。');
     readout(d.readout, `\\kPtot = \\kPA + \\kPB + \\kPC = ${hue('pressure', p[0] + '\\ \\text{kPa}')} + ${hue('pressure', p[1] + '\\ \\text{kPa}')} + ${hue('pressure', p[2] + '\\ \\text{kPa}')} = ${hue('pressure', tot + '\\ \\text{kPa}')}`,
-      'One molecule is drawn for every 50 kPa, and each partial pressure is its gas’s mole fraction times the total.');
+      '每 50 kPa 画出一个分子，各气体的分压等于其摩尔分数乘以总压。');
   }
   register(d.fig, { update: (dt) => { cy.step(dt, () => 1); g.step(dt, 0.78, inside); }, draw });
 })();
@@ -205,8 +205,8 @@ function flock(v, grp, g, k) {
 ===================================================================== */
 (function () {
   const d = sim('sim-over-water', 600);
-  const Tc = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 0, max: 90, step: 1, value: 26, unit: '°C', dec: 0, aria: 'temperature of the water in degrees Celsius' });
-  const Pt = ctl(d.controls, { label: '\\kP_{\\text{T}}', cls: 'pressure', min: 700, max: 800, step: 1, value: 750, unit: 'torr', dec: 0, aria: 'total pressure, read on a barometer, in torr' });
+  const Tc = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 0, max: 90, step: 1, value: 26, unit: '°C', dec: 0, aria: '水的温度，单位为摄氏度' });
+  const Pt = ctl(d.controls, { label: '\\kP_{\\text{T}}', cls: 'pressure', min: 700, max: 800, step: 1, value: 750, unit: 'torr', dec: 0, aria: '总压，由气压计读出，单位为托' });
   /* Table 9.2 from 0 °C up; between two rows the logarithm of the pressure is taken as linear */
   const TAB = [[0, 4.6], [2, 5.3], [4, 6.1], [6, 7.0], [8, 8.0], [10, 9.2], [12, 10.5], [14, 12.0], [16, 13.6], [18, 15.5], [19, 16.5], [20, 17.5], [21, 18.7], [22, 19.8], [23, 21.1], [24, 22.4], [25, 23.8], [26, 25.2], [27, 26.7], [28, 28.3], [29, 30.0], [30, 31.8], [35, 42.2], [40, 55.3], [50, 92.5], [60, 149.4], [70, 233.7], [80, 355.1], [90, 525.8], [95, 633.9], [99, 733.2], [100, 760.0]];
   const vp = (t) => { for (let i = 1; i < TAB.length; i++) if (t <= TAB[i][0]) { const [t0, p0] = TAB[i - 1], [t1, p1] = TAB[i]; return Math.exp(Math.log(p0) + ((t - t0) / (t1 - t0)) * (Math.log(p1) - Math.log(p0))); } return 760; };
@@ -239,24 +239,24 @@ function flock(v, grp, g, k) {
     SPOTS.forEach(([x, y], i) => {
       const f = (i * 7) % SPOTS.length < nw ? 'H₂O' : 'Ar';
       const reach = molecule(ctx, f, x, y, 0.95, (i * 1.3) % TAU);
-      hits.push({ x, y, r: reach + 3, name: f === 'Ar' ? 'an argon atom, Ar' : 'a water molecule, H₂O, in the vapor' });
+      hits.push({ x, y, r: reach + 3, name: f === 'Ar' ? '氩原子，Ar' : '蒸气中的水分子，H₂O' });
     });
-    text(ctx, 'reaction producing gas', 140, 548, rf, { size: 18, align: 'center' });
-    text(ctx, 'collection flask', 500, 150, cf, { size: 18, align: 'center' });
-    text(ctx, 'levels equal', 636, LEVEL - 14, PAL.muted, { size: 16 });
+    text(ctx, '反应产生气体', 140, 548, rf, { size: 18, align: 'center' });
+    text(ctx, '收集瓶', 500, 150, cf, { size: 18, align: 'center' });
+    text(ctx, '液面相平', 636, LEVEL - 14, PAL.muted, { size: 16 });
     /* the vapor pressure of water against temperature */
     const box = { l: 800, r: 1320, t: 130, b: 500 };
-    const { X, Y } = axes(ctx, box, [0, 100], [0, 800], { xl: 'T (°C)', xc: ct, yl: 'vapor pressure of water (torr)', yc: cp, nx: 5, ny: 4 });
+    const { X, Y } = axes(ctx, box, [0, 100], [0, 800], { xl: 'T (°C)', xc: ct, yl: '水的蒸气压（torr）', yc: cp, nx: 5, ny: 4 });
     F.curve(ctx, vp, 0, 100, X, Y, cp, 5, 120);
     line(ctx, box.l, Y(PT), box.r, Y(PT), cp, 3, [10, 10]);
-    text(ctx, 'total, ' + PT + ' torr', box.l + 10, Y(PT) + 22, cp, { size: 16 });
-    dot(ctx, X(100), Y(760), PAL.muted, true, 6); hits.push({ x: X(100), y: Y(760), r: 12, name: 'the vapor pressure of water at 100 °C, 760 torr' });
+    text(ctx, '总压，' + PT + ' torr', box.l + 10, Y(PT) + 22, cp, { size: 16 });
+    dot(ctx, X(100), Y(760), PAL.muted, true, 6); hits.push({ x: X(100), y: Y(760), r: 12, name: '100 °C 时水的蒸气压，760 torr' });
     line(ctx, X(t), box.b, X(t), Y(pw), alpha(PAL.ink, 0.4), 2, [4, 8]);
     pinned(ctx, box, X, Y, t, pw, cp);
-    vbracket(ctx, X(t) + 14, Y(PT), Y(pw), cp, 'argon, ' + fmt(par, 0) + ' torr', 1, { size: 18 });
-    topline(ctx, 'At ' + t + ' °C the trapped gas is ' + fmt(par, 0) + ' torr of argon and ' + fmt(pw, 1) + ' torr of water vapor, ' + PT + ' torr in all.');
+    vbracket(ctx, X(t) + 14, Y(PT), Y(pw), cp, '氩气，' + fmt(par, 0) + ' torr', 1, { size: 18 });
+    topline(ctx, '在 ' + t + ' °C 时，被收集的气体含 ' + fmt(par, 0) + ' torr 的氩气和 ' + fmt(pw, 1) + ' torr 的水蒸气，共 ' + PT + ' torr。');
     readout(d.readout, `\\kP_{\\text{Ar}} = \\kP_{\\text{T}} - \\kP_{\\text{H}_2\\text{O}} = ${hue('pressure', PT + '\\ \\text{torr}')} - ${hue('pressure', fmt(pw, 1) + '\\ \\text{torr}')} = ${hue('pressure', fmt(par, 0) + '\\ \\text{torr}')}`,
-      'The vapor pressure depends on the temperature of the water alone, so the warmer the water, the larger the share of the trapped gas that is water vapor and the less of the total that belongs to the argon.');
+      '蒸气压只取决于水的温度，所以水越暖，被收集气体中水蒸气所占的份额越大，总压中属于氩气的部分就越少。');
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -274,9 +274,9 @@ function flock(v, grp, g, k) {
     no2: { label: '2NO + O₂ → 2NO₂', left: [['NO', 2], ['O₂', 1]], right: [['NO₂', 2]] },
     hcl: { label: 'H₂ + Cl₂ → 2HCl', left: [['H₂', 1], ['Cl₂', 1]], right: [['HCl', 2]] },
   };
-  const VIEW = F.choice(d.controls, { label: '\\text{view}', options: [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }], value: '2d', aria: 'a flat drawing or a scene to turn', onInput: show });
-  const Rc = F.choice(d.controls, { label: '\\text{reaction}', options: Object.keys(RX).map((k) => ({ value: k, label: RX[k].label })), value: 'nh3', aria: 'the reaction of gases' });
-  const Vc = ctl(d.controls, { label: '\\kV', cls: 'volume', min: 0.25, max: 3, step: 0.05, value: 1, unit: 'L', dec: 2, aria: 'volume of one balloon in liters', specials: [{ at: 1, label: '1 L' }] });
+  const VIEW = F.choice(d.controls, { label: '\\text{视图}', options: [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }], value: '2d', aria: '平面图或可旋转的场景', onInput: show });
+  const Rc = F.choice(d.controls, { label: '\\text{反应}', options: Object.keys(RX).map((k) => ({ value: k, label: RX[k].label })), value: 'nh3', aria: '气体的反应' });
+  const Vc = ctl(d.controls, { label: '\\kV', cls: 'volume', min: 0.25, max: 3, step: 0.05, value: 1, unit: 'L', dec: 2, aria: '一个气球的体积，单位为升', specials: [{ at: 1, label: '1 L' }] });
   const hits = []; F.hover(d.stage, () => hits);
   /* the row of balloons and signs for a reaction, in order */
   const row = (k) => { const out = []; const side = (list) => list.forEach(([f, n], j) => { if (j) out.push('+'); for (let i = 0; i < n; i++) out.push(f); }); side(RX[k].left); out.push('→'); side(RX[k].right); return out; };
@@ -288,7 +288,7 @@ function flock(v, grp, g, k) {
     ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.moveTo(x, y + r * 1.15); ctx.quadraticCurveTo(x + 12, y + r * 1.15 + 16, x, y + r * 1.15 + 30); ctx.stroke(); ctx.restore();
     const reach = molecule(ctx, f, x, y, 1.5, 0);
     hits.push({ x, y, r: reach + 3, name: molName(f) });
-    hits.push({ x, y, r: r * 1.05, name: 'a balloon of ' + WORD[f] + ', ' + fmt(Vc.v, 2) + ' L' });
+    hits.push({ x, y, r: r * 1.05, name: '装有' + WORD[f] + '的气球，' + fmt(Vc.v, 2) + ' L' });
   }
   function drawRow(ctx, k) {
     const items = row(k), V = Vc.v, r = 56 * Math.cbrt(V), slot = 2 * r + 34, gap = 56;
@@ -304,8 +304,8 @@ function flock(v, grp, g, k) {
   }
   function head() {
     const c = coef(Rc.value), V = Vc.v;
-    const part = (list) => list.map(([f, n]) => fmt(n * V, 2) + ' L of ' + f).join(' and ');
-    return part(c.slice(0, RX[Rc.value].left.length)) + ' give ' + part(c.slice(RX[Rc.value].left.length)) + ' at the same temperature and pressure.';
+    const part = (list) => list.map(([f, n]) => fmt(n * V, 2) + ' L ' + f).join(' 和 ');
+    return '在相同的温度和压强下，' + part(c.slice(0, RX[Rc.value].left.length)) + ' 反应生成 ' + part(c.slice(RX[Rc.value].left.length)) + '。';
   }
   function draw2d() {
     const { ctx } = begin(d.c);
@@ -314,7 +314,7 @@ function flock(v, grp, g, k) {
     topline(ctx, head());
   }
   let v = null, grp = null, cnv = null, sig = '';
-  function mount() { v = F.view3d(d.stage, { spin: 'off', views: [{ label: 'front', yaw: 0, pitch: 0.15 }, { label: 'corner', yaw: 0.6, pitch: 0.4 }], h: 420, dist: 9 }); grp = v.part(0); cnv = strip(d, 100); }
+  function mount() { v = F.view3d(d.stage, { spin: 'off', views: [{ label: '正视', yaw: 0, pitch: 0.15 }, { label: '斜视', yaw: 0.6, pitch: 0.4 }], h: 420, dist: 9 }); grp = v.part(0); cnv = strip(d, 100); }
   function build() {
     const key = [Vc.v, Rc.value, palSig()].join('|'); if (key === sig) return; sig = key;
     v.clear();
@@ -327,7 +327,7 @@ function flock(v, grp, g, k) {
       const skin = new T3D.Mesh(new T3D.SphereGeometry(r, 36, 24), mat3(C('volume'), { transparent: true, opacity: 0.22, depthWrite: false, side: T3D.DoubleSide })); skin.position.set(cx, y, 0); skin.renderOrder = 2; grp.add(skin);
       polyline3(grp, [[cx, y - r, 0], [cx + 0.08, y - r - 0.3, 0], [cx - 0.04, y - r - 0.6, 0]], PAL.ink);
       const m = molecule3(v, grp, it, 0.018); m.position.set(cx, y, 0);
-      v.pickable(skin, 'a balloon of ' + WORD[it] + ', ' + fmt(Vc.v, 2) + ' L');
+      v.pickable(skin, '装有' + WORD[it] + '的气球，' + fmt(Vc.v, 2) + ' L');
       v.label(it, [cx, y - r - 0.7, 0], grp, 0);
       x += slot;
     });

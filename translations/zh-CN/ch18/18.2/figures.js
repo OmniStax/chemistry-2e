@@ -99,7 +99,7 @@ const atomMark = (ctx, x, y, els, r = 9) => els.forEach(([e, dx, rr]) => dot(ctx
 ===================================================================== */
 (function () {
   const d = sim('sim-downs-cell');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.05, 1.13], yaw: [-1.2, 1.2], views: [{ label: 'front', yaw: 0, pitch: 0.2 }, { label: 'above', yaw: 0, pitch: 1.05 }], h: 900, dist: 10.4, tilt: 0.2 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.05, 1.13], yaw: [-1.2, 1.2], views: [{ label: '正面', yaw: 0, pitch: 0.2 }, { label: '上方', yaw: 0, pitch: 1.05 }], h: 900, dist: 10.4, tilt: 0.2 });
   const grp = v.part(-0.65);
   grp.position.y = -0.15;
   const legendCanvas = F.makeCanvas(d.stage, 60);
@@ -112,8 +112,8 @@ const atomMark = (ctx, x, y, els, r = 9) => els.forEach(([e, dx, rr]) => dot(ctx
   const WIRE = path([[0, -1.95, -0.06], [0, -2.3, -0.06], [2.9, -2.3, -0.06], [2.9, -0.7, -0.06], [2.0, -0.7, -0.06]]);
   const SRC = [2.9, -1.6, -0.06];
   const pick = F.choice(d.controls, {
-    label: '\\text{electrolyte}', options: [{ value: 'molten', label: 'molten NaCl' }, { value: 'aqueous', label: 'aqueous NaCl' }],
-    value: 'molten', aria: 'the electrolyte in the cell', onInput: () => cy.reset(),
+    label: '\\text{电解质}', options: [{ value: 'molten', label: '熔融 NaCl' }, { value: 'aqueous', label: 'NaCl 水溶液' }],
+    value: 'molten', aria: '电解槽中的电解质', onInput: () => cy.reset(),
   });
   const cy = F.cycle(() => T, 1.2);
   const ro = F.readout(d);
@@ -133,47 +133,47 @@ const atomMark = (ctx, x, y, els, r = 9) => els.forEach(([e, dx, rr]) => dot(ctx
     if (!v.scene || palSig(els) === sig) return; sig = palSig(els);
     v.clear(); M = {};
     const K = kit(v, grp), steel = grey(0.5), carbon = F.fact(GRAPHITE), metal = F.fact(MOLTEN_METAL);
-    K.lathe([[0, -1.5], [2.0, -1.5], [2.0, 0.95], [1.82, 0.95], [1.82, YF], [0, YF]], steel, {}, 'the steel shell of the cell, lined with brick');
+    K.lathe([[0, -1.5], [2.0, -1.5], [2.0, 0.95], [1.82, 0.95], [1.82, YF], [0, YF]], steel, {}, '电解槽的钢壳，内衬耐火砖');
     M.melt = K.lathe([[0, YF], [1.82, YF], [1.82, YL], [0, YL]], PAL.muted, { transparent: true, opacity: 0.22, depthWrite: false }, '');
-    M.melt.forEach((m) => v.pickable(m, 'the electrolyte'));
-    K.lathe([[0, -1.95], [0.16, -1.95], [0.16, -0.95], [0.5, -0.95], [0.5, -0.35], [0, -0.35]], carbon, {}, 'the anode (+), where Cl⁻ ions are oxidized to Cl₂');
-    K.lathe([[1.22, -1.05], [1.4, -1.05], [1.4, -0.35], [1.22, -0.35]], steel, {}, 'the ring-shaped cathode (−), where Na⁺ ions are reduced');
-    K.stick([1.4, -0.7, -0.06], [2.1, -0.7, -0.06], 0.06, steel, 'the cathode’s connection through the wall');
-    K.lathe([[0.9, 0.05], [0.95, 0.05], [0.37, 0.72], [0.37, 1.55], [0.32, 1.55], [0.32, 0.7]], steel, {}, 'the hood, which carries chlorine to its outlet');
-    K.lathe([[1.06, -0.3], [1.1, -0.3], [1.1, 0.21], [1.56, 0.21], [1.56, -0.3], [1.6, -0.3], [1.6, 0.25], [1.06, 0.25]], steel, {}, 'the collector, under which liquid sodium gathers');
-    M.pool = K.lathe([[1.1, 0.05], [1.56, 0.05], [1.56, 0.21], [1.1, 0.21]], metal, { transparent: true, shininess: 90 }, 'liquid sodium, floating on the melt');
+    M.melt.forEach((m) => v.pickable(m, '电解质'));
+    K.lathe([[0, -1.95], [0.16, -1.95], [0.16, -0.95], [0.5, -0.95], [0.5, -0.35], [0, -0.35]], carbon, {}, '阳极（+），Cl⁻ 离子在此被氧化为 Cl₂');
+    K.lathe([[1.22, -1.05], [1.4, -1.05], [1.4, -0.35], [1.22, -0.35]], steel, {}, '环形阴极（−），Na⁺ 离子在此被还原');
+    K.stick([1.4, -0.7, -0.06], [2.1, -0.7, -0.06], 0.06, steel, '阴极穿过槽壁的连接');
+    K.lathe([[0.9, 0.05], [0.95, 0.05], [0.37, 0.72], [0.37, 1.55], [0.32, 1.55], [0.32, 0.7]], steel, {}, '集气罩，将氯气导向其出口');
+    K.lathe([[1.06, -0.3], [1.1, -0.3], [1.1, 0.21], [1.56, 0.21], [1.56, -0.3], [1.6, -0.3], [1.6, 0.25], [1.06, 0.25]], steel, {}, '收集器，液态钠聚集在其下方');
+    M.pool = K.lathe([[1.1, 0.05], [1.56, 0.05], [1.56, 0.21], [1.1, 0.21]], metal, { transparent: true, shininess: 90 }, '液态钠，浮在熔体上');
     /* the iron screen, a mesh of wires round the anode */
     const T3 = window.THREE, seg = [];
     for (let i = 0; i <= 16; i++) { const a = Math.PI * i / 16; seg.push(polar(RS, -1.15, a), polar(RS, 0.05, a)); }
     for (let y = -1.15; y <= 0.06; y += 0.12) for (let i = 0; i < 32; i++) seg.push(polar(RS, y, Math.PI * i / 32), polar(RS, y, Math.PI * (i + 1) / 32));
     const screen = new T3.LineSegments(new T3.BufferGeometry().setFromPoints(seg.map((p) => new T3.Vector3(...p))), new T3.LineBasicMaterial({ color: new T3.Color(PAL.ink), transparent: true, opacity: 0.55 }));
     grp.add(screen);
-    v.pickable(K.lathe([[RS - 0.01, -1.15], [RS + 0.01, -1.15], [RS + 0.01, 0.05], [RS - 0.01, 0.05]], PAL.ink, { transparent: true, opacity: 0.04, depthWrite: false })[0], 'the iron screen, which lets ions through but keeps sodium and chlorine apart');
+    v.pickable(K.lathe([[RS - 0.01, -1.15], [RS + 0.01, -1.15], [RS + 0.01, 0.05], [RS - 0.01, 0.05]], PAL.ink, { transparent: true, opacity: 0.04, depthWrite: false })[0], '铁网，它让离子通过，但使钠和氯分开');
     /* the outlets */
-    K.tube([[0, 1.5, 0], [0, 1.9, 0], [0.45, 1.95, 0], [2.1, 1.95, 0]], 0.3, PAL.ink, K.glass, 'the chlorine outlet');
-    K.tube(RISER, 0.12, PAL.ink, K.glass, 'the pipe that carries liquid sodium to the reservoir');
+    K.tube([[0, 1.5, 0], [0, 1.9, 0], [0.45, 1.95, 0], [2.1, 1.95, 0]], 0.3, PAL.ink, K.glass, '氯气出口');
+    K.tube(RISER, 0.12, PAL.ink, K.glass, '将液态钠输送到储槽的管道');
     const res = new T3.Mesh(new T3.CylinderGeometry(RES.r, RES.r, RES.y1 - RES.y0, 32, 1, false), K.mat(PAL.ink, K.glass));
-    res.position.set(RES.x, (RES.y0 + RES.y1) / 2, RES.z); grp.add(res); v.pickable(res, 'the reservoir of liquid sodium');
+    res.position.set(RES.x, (RES.y0 + RES.y1) / 2, RES.z); grp.add(res); v.pickable(res, '液态钠储槽');
     M.resNa = new T3.Mesh(new T3.CylinderGeometry(RES.r - 0.03, RES.r - 0.03, 1, 32), K.mat(metal, { shininess: 90 }));
-    grp.add(M.resNa); v.pickable(M.resNa, 'liquid sodium');
-    K.tube([[RES.x + 0.1, RES.y0 + 0.12, RES.z], [3.35, RES.y0 + 0.12, RES.z]], 0.07, PAL.ink, K.glass, 'the sodium outlet');
+    grp.add(M.resNa); v.pickable(M.resNa, '液态钠');
+    K.tube([[RES.x + 0.1, RES.y0 + 0.12, RES.z], [3.35, RES.y0 + 0.12, RES.z]], 0.07, PAL.ink, K.glass, '钠出口');
     /* the external circuit */
-    K.tube([[0, -1.95, -0.06], [0, -2.3, -0.06], [2.9, -2.3, -0.06], [2.9, -0.7, -0.06], [2.05, -0.7, -0.06]], 0.025, PAL.ink, {}, 'the wire of the external circuit');
-    K.box(SRC, [0.8, 0.5, 0.36], PAL.panel, {}, 'the voltage source');
+    K.tube([[0, -1.95, -0.06], [0, -2.3, -0.06], [2.9, -2.3, -0.06], [2.9, -0.7, -0.06], [2.05, -0.7, -0.06]], 0.025, PAL.ink, {}, '外电路的导线');
+    K.box(SRC, [0.8, 0.5, 0.36], PAL.panel, {}, '电压源');
     K.box(SRC, [0.84, 0.54, 0.32], PAL.muted);
     /* the particles */
-    M.na = EV.flatMap(() => [0, 1].map(() => K.ball(rad(102), F.el('Na'), 'a sodium ion, Na⁺')));
-    M.naAtom = EV.flatMap(() => [0, 1].map(() => K.ball(rad(186), F.el('Na'), 'a sodium atom, Na, in a droplet of liquid sodium')));
-    M.cl = EV.flatMap(() => [0, 1].map(() => K.ball(rad(181), F.el('Cl'), 'a chloride ion, Cl⁻')));
-    M.cl2 = EV.map(() => K.molecule([['Cl', rad(99) + 0.03, -0.08], ['Cl', rad(99) + 0.03, 0.08]], 'a chlorine molecule, Cl₂'));
-    M.h2 = EV.map(() => K.molecule([['H', 0.075, -0.06], ['H', 0.075, 0.06]], 'a hydrogen molecule, H₂'));
-    M.e = Array.from({ length: 16 }, () => K.ball(0.05, F.el('e-'), 'an electron, e⁻, in the wire'));
-    v.label('anode (+)', [0.62, -1.68, 0], grp, 0);
-    v.label('cathode (−)', [-1.31, -1.68, 0], grp, 0);
-    v.label('iron screen', [-0.85, 0.12, 0], grp, 0);
+    M.na = EV.flatMap(() => [0, 1].map(() => K.ball(rad(102), F.el('Na'), '钠离子 Na⁺')));
+    M.naAtom = EV.flatMap(() => [0, 1].map(() => K.ball(rad(186), F.el('Na'), '液态钠液滴中的钠原子 Na')));
+    M.cl = EV.flatMap(() => [0, 1].map(() => K.ball(rad(181), F.el('Cl'), '氯离子 Cl⁻')));
+    M.cl2 = EV.map(() => K.molecule([['Cl', rad(99) + 0.03, -0.08], ['Cl', rad(99) + 0.03, 0.08]], '氯分子 Cl₂'));
+    M.h2 = EV.map(() => K.molecule([['H', 0.075, -0.06], ['H', 0.075, 0.06]], '氢分子 H₂'));
+    M.e = Array.from({ length: 16 }, () => K.ball(0.05, F.el('e-'), '导线中的电子 e⁻'));
+    v.label('阳极（+）', [0.62, -1.68, 0], grp, 0);
+    v.label('阴极（−）', [-1.31, -1.68, 0], grp, 0);
+    v.label('铁网', [-0.85, 0.12, 0], grp, 0);
     M.lab = v.label('', [-1.45, 0.62, 0], grp, 0);
-    v.label('Cl<sub>2</sub> outlet', [2.75, 1.5, 0], grp, 0);
-    v.label('Na outlet', [3.6, RES.y0 + 0.3, RES.z], grp, 0);
+    v.label('Cl<sub>2</sub> 出口', [2.75, 1.5, 0], grp, 0);
+    v.label('Na 出口', [3.6, RES.y0 + 0.3, RES.z], grp, 0);
     lastLab = '';
   }
 
@@ -217,11 +217,11 @@ const atomMark = (ctx, x, y, els, r = 9) => els.forEach(([e, dx, rr]) => dot(ctx
         const p = WIRE.at(((i * sp + 0.55 * t) % WIRE.L) / WIRE.L);
         place(m, Math.abs(p[0] - SRC[0]) < 0.42 && Math.abs(p[1] - SRC[1]) < 0.3 ? null : p);
       });
-      const lab = aq ? 'aqueous NaCl' : 'molten NaCl';
+      const lab = aq ? 'NaCl 水溶液' : '熔融 NaCl';
       if (lab !== lastLab) { lastLab = lab; M.lab.textContent = lab; }
       v.headline(aq
-        ? 'In aqueous solution water is reduced at the cathode instead of Na<sup>+</sup>, so hydrogen forms in place of sodium.'
-        : 'Na<sup>+</sup> is reduced at the cathode and Cl<sup>−</sup> oxidized at the anode, and the iron screen keeps sodium and chlorine apart.');
+        ? '在水溶液中，阴极上被还原的是水而不是 Na<sup>+</sup>，因此生成的是氢气而不是钠。'
+        : 'Na<sup>+</sup> 在阴极被还原，Cl<sup>−</sup> 在阳极被氧化，铁网使钠和氯分开。');
       v.invalidate();
     }
     const co = (x) => (x === 1 ? '' : String(x));
@@ -250,7 +250,7 @@ const atomMark = (ctx, x, y, els, r = 9) => els.forEach(([e, dx, rr]) => dot(ctx
 ===================================================================== */
 (function () {
   const d = sim('sim-hall-heroult');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.05, 0.6], yaw: [-0.8, 0.8], views: [{ label: 'front', yaw: 0, pitch: 0.2 }], h: 900, dist: 11.6, tilt: 0.2 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.05, 0.6], yaw: [-0.8, 0.8], views: [{ label: '正面', yaw: 0, pitch: 0.2 }], h: 900, dist: 11.6, tilt: 0.2 });
   const grp = v.part(0);
   grp.position.y = -0.55;
   const legendCanvas = F.makeCanvas(d.stage, 60);
@@ -261,9 +261,9 @@ const atomMark = (ctx, x, y, els, r = 9) => els.forEach(([e, dx, rr]) => dot(ctx
   const DUCT = -1.45;
   const yAl = (t) => YA0 + (YA1 - YA0) * clamp01((t - ta(0)) / (ta(NA - 1) - ta(0)));
   const KINDS = [
-    ['O₂', [['O', rad(66), -0.07], ['O', rad(66), 0.07]], 'an oxygen molecule, O₂'],
-    ['CO', [['C', rad(70), -0.07], ['O', rad(66), 0.07]], 'a carbon monoxide molecule, CO'],
-    ['CO₂', [['O', rad(66), -0.13], ['C', rad(70), 0], ['O', rad(66), 0.13]], 'a carbon dioxide molecule, CO₂'],
+    ['O₂', [['O', rad(66), -0.07], ['O', rad(66), 0.07]], '氧分子 O₂'],
+    ['CO', [['C', rad(70), -0.07], ['O', rad(66), 0.07]], '一氧化碳分子 CO'],
+    ['CO₂', [['O', rad(66), -0.13], ['C', rad(70), 0], ['O', rad(66), 0.13]], '二氧化碳分子 CO₂'],
   ];
   const ro = F.readout(d);
   const cy = F.cycle(() => T, 1.2);
@@ -285,7 +285,7 @@ const atomMark = (ctx, x, y, els, r = 9) => els.forEach(([e, dx, rr]) => dot(ctx
     if (!v.scene || palSig(els) === sig) return; sig = palSig(els);
     v.clear(); M = {};
     const K = kit(v, grp), steel = grey(0.5), ceramic = grey(0.75), carbon = F.fact(GRAPHITE), metal = F.fact(MOLTEN_METAL);
-    const shell = 'the steel shell', lining = 'the ceramic lining';
+    const shell = '钢壳', lining = '陶瓷内衬';
     K.box([0, -1.525, -0.8], [6.0, 0.15, 1.6], steel, {}, shell);
     K.box([-2.925, -0.55, -0.8], [0.15, 2.1, 1.6], steel, {}, shell);
     K.box([2.925, -0.55, -0.8], [0.15, 2.1, 1.6], steel, {}, shell);
@@ -294,31 +294,31 @@ const atomMark = (ctx, x, y, els, r = 9) => els.forEach(([e, dx, rr]) => dot(ctx
     K.box([-2.7, -0.325, -0.725], [0.3, 1.65, 1.45], ceramic, {}, lining);
     K.box([2.7, -0.325, -0.725], [0.3, 1.65, 1.45], ceramic, {}, lining);
     K.box([0, -0.325, -1.3], [5.1, 1.65, 0.3], ceramic, {}, lining);
-    K.box([0, (YC - 1.15) / 2, ZI / 2], [2 * XI, YC + 1.15, -ZI], carbon, {}, 'the carbon cathode (−), on which aluminum ions are reduced');
-    K.stick([-1.6, -1.0, -0.3], [-3.5, -1.0, -0.3], 0.07, steel, 'the cathode’s collector bar, the negative terminal');
-    M.al = K.box([0, 0, ZI / 2], [2 * XI, 1, -ZI], metal, { shininess: 90 }, 'molten aluminum');
-    M.bath = K.box([0, 0, ZI / 2], [2 * XI, 1, -ZI], PAL.muted, { transparent: true, opacity: 0.16, depthWrite: false }, 'aluminum oxide, Al₂O₃, dissolved in molten cryolite, Na₃AlF₆, with calcium fluoride');
-    [[-XI, AN[0] - AW / 2 - 0.12], [AN[0] + AW / 2 + 0.12, AN[1] - AW / 2 - 0.12], [AN[1] + AW / 2 + 0.12, XI]].forEach(([a, b]) => K.box([(a + b) / 2, YE + 0.04, ZI / 2], [b - a, 0.08, -ZI], ceramic, { transparent: true, opacity: 0.55 }, 'the crust over the molten electrolyte'));
+    K.box([0, (YC - 1.15) / 2, ZI / 2], [2 * XI, YC + 1.15, -ZI], carbon, {}, '碳阴极（−），铝离子在其上被还原');
+    K.stick([-1.6, -1.0, -0.3], [-3.5, -1.0, -0.3], 0.07, steel, '阴极的集电棒，即负极端子');
+    M.al = K.box([0, 0, ZI / 2], [2 * XI, 1, -ZI], metal, { shininess: 90 }, '熔融铝');
+    M.bath = K.box([0, 0, ZI / 2], [2 * XI, 1, -ZI], PAL.muted, { transparent: true, opacity: 0.16, depthWrite: false }, '溶于熔融冰晶石 Na₃AlF₆ 的氧化铝 Al₂O₃，并含有氟化钙');
+    [[-XI, AN[0] - AW / 2 - 0.12], [AN[0] + AW / 2 + 0.12, AN[1] - AW / 2 - 0.12], [AN[1] + AW / 2 + 0.12, XI]].forEach(([a, b]) => K.box([(a + b) / 2, YE + 0.04, ZI / 2], [b - a, 0.08, -ZI], ceramic, { transparent: true, opacity: 0.55 }, '熔融电解质上方的硬壳'));
     AN.forEach((c) => {
-      K.box([c, 0.25, -0.5], [AW, 1.1, 1.0], carbon, {}, 'a carbon anode (+), at which O₂, CO and CO₂ form');
-      [-0.38, 0, 0.38].forEach((dx) => K.stick([c + dx, 0.78, -0.5], [c + dx, 1.08, -0.5], 0.07, steel, 'the anode’s rod'));
-      K.stick([c - 0.42, 1.08, -0.5], [c + 0.42, 1.08, -0.5], 0.07, steel, 'the anode’s rod');
-      K.stick([c, 1.08, -0.5], [c, 1.42, -0.5], 0.08, steel, 'the anode’s rod');
+      K.box([c, 0.25, -0.5], [AW, 1.1, 1.0], carbon, {}, '碳阳极（+），O₂、CO 和 CO₂ 在此生成');
+      [-0.38, 0, 0.38].forEach((dx) => K.stick([c + dx, 0.78, -0.5], [c + dx, 1.08, -0.5], 0.07, steel, '阳极的导杆'));
+      K.stick([c - 0.42, 1.08, -0.5], [c + 0.42, 1.08, -0.5], 0.07, steel, '阳极的导杆');
+      K.stick([c, 1.08, -0.5], [c, 1.42, -0.5], 0.08, steel, '阳极的导杆');
     });
-    K.stick([AN[0] - 0.08, 1.42, -0.5], [3.5, 1.42, -0.5], 0.07, steel, 'the bus bar to the positive terminal');
+    K.stick([AN[0] - 0.08, 1.42, -0.5], [3.5, 1.42, -0.5], 0.07, steel, '通往正极端子的母线');
     /* the hood and its exhaust duct, drawn as the book draws them, in outline */
     const hood = [[[-2.85, 0.5], [-2.85, 2.05], [DUCT - 0.32, 2.05], [DUCT - 0.32, 2.6]], [[DUCT + 0.32, 2.6], [DUCT + 0.32, 2.05], [2.85, 2.05], [2.85, 0.5]]];
-    hood.forEach((ln) => ln.slice(1).forEach((p, i) => K.stick([ln[i][0], ln[i][1], 0], [p[0], p[1], 0], 0.025, PAL.muted, 'the hood, which carries HF and particulates to the exhaust and the filter plant')));
-    M.al3 = ALS.map(() => K.ball(rad(54), F.el('Al'), 'an aluminum ion, Al³⁺'));
-    M.o2m = OS.map(() => K.ball(rad(140), F.el('O'), 'an oxide ion, O²⁻'));
+    hood.forEach((ln) => ln.slice(1).forEach((p, i) => K.stick([ln[i][0], ln[i][1], 0], [p[0], p[1], 0], 0.025, PAL.muted, '集气罩，将 HF 和颗粒物导向排气口和过滤装置')));
+    M.al3 = ALS.map(() => K.ball(rad(54), F.el('Al'), '铝离子 Al³⁺'));
+    M.o2m = OS.map(() => K.ball(rad(140), F.el('O'), '氧离子 O²⁻'));
     M.gas = OS.map((_, k) => K.molecule(KINDS[k % 3][1], KINDS[k % 3][2]));
-    v.label('carbon anode (+)', [AN[1] + 1.1, 0.98, 0], grp, 0);
-    v.label('carbon cathode (−)', [-2.3, -1.95, 0], grp, 0);
-    v.label('molten<br>aluminum', [3.6, -1.15, 0], grp, 0);
-    v.label('Al<sub>2</sub>O<sub>3</sub> in<br>molten Na<sub>3</sub>AlF<sub>6</sub>', [3.8, -0.15, 0], grp, 0);
-    v.label('ceramic', [-2.7, 0.62, 0], grp, 0);
-    v.label('steel shell', [-3.6, -0.3, 0], grp, 0);
-    v.headline('Al<sup>3+</sup> is reduced to molten aluminum at the carbon cathode while O<sub>2</sub>, CO and CO<sub>2</sub> bubble off the carbon anodes.');
+    v.label('碳阳极（+）', [AN[1] + 1.1, 0.98, 0], grp, 0);
+    v.label('碳阴极（−）', [-2.3, -1.95, 0], grp, 0);
+    v.label('熔融<br>铝', [3.6, -1.15, 0], grp, 0);
+    v.label('Al<sub>2</sub>O<sub>3</sub> 溶于<br>熔融 Na<sub>3</sub>AlF<sub>6</sub>', [3.8, -0.15, 0], grp, 0);
+    v.label('陶瓷', [-2.7, 0.62, 0], grp, 0);
+    v.label('钢壳', [-3.6, -0.3, 0], grp, 0);
+    v.headline('Al<sup>3+</sup> 在碳阴极被还原为熔融铝，同时 O<sub>2</sub>、CO 和 CO<sub>2</sub> 从碳阳极冒出。');
   }
 
   let lastTex = '';

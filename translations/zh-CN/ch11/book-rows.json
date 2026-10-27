@@ -1,0 +1,1277 @@
+{
+ "types": [
+  {
+   "id": "colligative-constant",
+   "label": "依数性常数",
+   "dimension": "°C/m"
+  }
+ ],
+ "symbols": [
+  {
+   "sym": "C_g",
+   "latex": "C_{\\text{g}}",
+   "macro": "\\kCg"
+  },
+  {
+   "sym": "k_H",
+   "latex": "k",
+   "macro": "\\kkH"
+  },
+  {
+   "sym": "P_g",
+   "latex": "P_{\\text{g}}",
+   "macro": "\\kPg"
+  },
+  {
+   "sym": "m_molal",
+   "latex": "m",
+   "macro": "\\kmolal"
+  },
+  {
+   "sym": "P_A*",
+   "latex": "P_{\\text{A}}^{*}",
+   "macro": "\\kPAstar"
+  },
+  {
+   "sym": "P_i",
+   "latex": "P_{i}",
+   "macro": "\\kPcomp"
+  },
+  {
+   "sym": "P_i*",
+   "latex": "P_{i}^{*}",
+   "macro": "\\kPcompstar"
+  },
+  {
+   "sym": "X_i",
+   "latex": "X_{i}"
+  },
+  {
+   "sym": "P_solution",
+   "latex": "P_{\\text{solution}}",
+   "macro": "\\kPsoln"
+  },
+  {
+   "sym": "P_solvent*",
+   "latex": "P_{\\text{solvent}}^{*}",
+   "macro": "\\kPsolvstar"
+  },
+  {
+   "sym": "X_solvent",
+   "latex": "X_{\\text{solvent}}"
+  },
+  {
+   "sym": "ΔP_vp",
+   "latex": "\\Delta P",
+   "macro": "\\kdPvp"
+  },
+  {
+   "sym": "ΔT_b",
+   "latex": "\\Delta T_{\\text{b}}",
+   "macro": "\\kdTb"
+  },
+  {
+   "sym": "K_b",
+   "latex": "K_{\\text{b}}",
+   "macro": "\\kKb"
+  },
+  {
+   "sym": "ΔT_f",
+   "latex": "\\Delta T_{\\text{f}}",
+   "macro": "\\kdTf"
+  },
+  {
+   "sym": "K_f",
+   "latex": "K_{\\text{f}}",
+   "macro": "\\kKf"
+  },
+  {
+   "sym": "Π",
+   "latex": "\\Pi",
+   "macro": "\\kosm"
+  },
+  {
+   "sym": "i_vh",
+   "latex": "i"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "properties-of-solutions",
+   "kind": "definition",
+   "section": "11.1",
+   "name": "溶液及其基本特征",
+   "statement": "溶液是一种均匀混合物，其中的溶质粒子单个地分散在溶剂粒子之间，因此溶液的组成是均匀的，其物态通常与溶剂相同，溶质也不会沉降析出。几乎任何气体、液体或固体都可以充当溶剂，所以空气和黄铜与盐水一样都是溶液。"
+  },
+  {
+   "id": "ideal-solution",
+   "kind": "definition",
+   "section": "11.1",
+   "name": "理想溶液与物质的分散",
+   "terms": [
+    "理想溶液"
+   ],
+   "statement": "当不同种类粒子之间的吸引力与同种粒子之间的吸引力没有差别时，形成溶液不伴随能量变化，而溶液依然会形成，仅由物质分散程度的增加所驱动。"
+  },
+  {
+   "id": "dissolution-energy-steps",
+   "kind": "idea",
+   "section": "11.1",
+   "name": "溶解的三个步骤",
+   "statement": "溶液的形成可以看作先把溶质粒子彼此分开、把溶剂粒子彼此分开，这两步都是吸热的，然后让溶质和溶剂相互吸引（溶剂化），这一步是放热的。三步能量的相对大小决定了溶解是放出热量还是吸收热量。"
+  },
+  {
+   "id": "endothermic-and-exothermic-dissolution",
+   "kind": "result",
+   "section": "11.1",
+   "name": "溶解时放出或吸收的热量",
+   "statement": "溶剂化放出的能量多于分离所需能量的溶质，其溶解是放热的，氢氧化钠就是如此；分离所需能量更多的溶质，其溶解是吸热的，硝酸铵就是如此，它仍能溶解，是因为分散程度增加了。"
+  },
+  {
+   "id": "predict-solution-formation",
+   "kind": "skill",
+   "section": "11.1",
+   "name": "预测溶液的形成",
+   "statement": "指出溶质内部、溶剂内部以及两者之间最强的吸引力，就能预测它们是否会混合，以及哪种溶剂适合某种溶质。"
+  },
+  {
+   "id": "alloy",
+   "kind": "definition",
+   "section": "11.1",
+   "name": "合金",
+   "terms": [
+    "合金"
+   ],
+   "statement": "合金是由一种金属元素与一种或多种其他元素组成的固体混合物。"
+  },
+  {
+   "id": "spontaneous-process",
+   "kind": "definition",
+   "section": "11.1",
+   "name": "自发过程",
+   "terms": [
+    "自发过程",
+    "自发变化"
+   ],
+   "statement": "自发过程是不需要从外界输入能量就能发生的物理变化或化学变化。"
+  },
+  {
+   "id": "solvation",
+   "kind": "definition",
+   "section": "11.1",
+   "name": "溶剂化",
+   "terms": [
+    "溶剂化"
+   ],
+   "statement": "溶剂化是放热过程，溶质粒子被溶剂粒子包围，溶质与溶剂之间形成分子间吸引力。"
+  },
+  {
+   "id": "electrolytes-and-nonelectrolytes",
+   "kind": "definition",
+   "section": "11.2",
+   "name": "电解质与非电解质",
+   "statement": "电解质溶解时生成离子，因此其溶液能导电；非电解质则不生成离子。强电解质几乎完全生成离子，弱电解质只有一小部分生成离子。"
+  },
+  {
+   "id": "ion-dipole-attraction",
+   "kind": "definition",
+   "section": "11.2",
+   "name": "离子–偶极吸引力",
+   "terms": [
+    "离子–偶极吸引力"
+   ],
+   "statement": "离子与极性分子之间的静电吸引，使水分子带负电的氧端朝向阳离子，带正电的氢端朝向阴离子，水正是靠它把离子从固体中拉出来。"
+  },
+  {
+   "id": "dissociation-of-ionic-compounds",
+   "kind": "definition",
+   "section": "11.2",
+   "name": "离子化合物的解离",
+   "terms": [
+    "解离"
+   ],
+   "statement": "离子化合物溶解时，水包围并溶剂化其离子，离子在溶液中分散开来，这一物理变化称为解离。离子化合物几乎完全解离，所以即使是微溶的离子化合物也是强电解质。"
+  },
+  {
+   "id": "covalent-electrolytes",
+   "kind": "idea",
+   "section": "11.2",
+   "name": "共价型电解质与水反应",
+   "statement": "一些共价化合物溶解后能导电，因为它们的分子与水发生化学反应生成离子：HCl 这样的强酸完全电离，是强电解质，而弱酸和弱碱只部分电离，是弱电解质。"
+  },
+  {
+   "id": "classify-electrolyte-strength",
+   "kind": "skill",
+   "section": "11.2",
+   "name": "电解质的分类",
+   "statement": "溶质是离子化合物、强酸、弱酸或弱碱，还是不发生反应的共价化合物，就决定了其溶液导电能力的强弱。"
+  },
+  {
+   "id": "electrolyte",
+   "kind": "definition",
+   "section": "11.2",
+   "name": "电解质",
+   "terms": [
+    "电解质"
+   ],
+   "statement": "电解质是溶于水时产生离子、使其溶液能够导电的物质。"
+  },
+  {
+   "id": "nonelectrolyte",
+   "kind": "definition",
+   "section": "11.2",
+   "name": "非电解质",
+   "terms": [
+    "非电解质"
+   ],
+   "statement": "非电解质是溶于水时不产生离子的物质。"
+  },
+  {
+   "id": "strong-electrolyte",
+   "kind": "definition",
+   "section": "11.2",
+   "name": "强电解质",
+   "terms": [
+    "强电解质"
+   ],
+   "statement": "强电解质是溶于水时完全解离或电离的物质。"
+  },
+  {
+   "id": "weak-electrolyte",
+   "kind": "definition",
+   "section": "11.2",
+   "name": "弱电解质",
+   "terms": [
+    "弱电解质"
+   ],
+   "statement": "弱电解质是溶于水时只部分电离的物质。"
+  },
+  {
+   "id": "solubility-and-saturation",
+   "kind": "definition",
+   "section": "11.3",
+   "name": "溶解度与饱和",
+   "statement": "在给定条件下，溶质的溶解度是溶解过程达到平衡时它在溶剂中所能达到的最大浓度。浓度达到该值的溶液是饱和的，低于该值的溶液是不饱和的。"
+  },
+  {
+   "id": "supersaturated-solutions",
+   "kind": "definition",
+   "section": "11.3",
+   "name": "过饱和溶液",
+   "terms": [
+    "过饱和"
+   ],
+   "statement": "溶液中所含溶质可以超过其溶解度，这是一种非平衡态，一旦受到扰动，就会析出沉淀或逸出气体而结束。冷却固体的饱和溶液，或加热气体溶液、使气体溶液减压，都可以制得过饱和溶液。"
+  },
+  {
+   "id": "gas-solubility-and-temperature",
+   "kind": "result",
+   "section": "11.3",
+   "name": "气体溶解度与温度",
+   "statement": "气态溶质没有溶质–溶质吸引力需要克服，其溶解度只取决于它与溶剂之间的吸引力，并且通常随温度升高而降低，这就是热污染使天然水体缺氧的原因。"
+  },
+  {
+   "id": "henrys-law",
+   "kind": "axiom",
+   "section": "11.3",
+   "name": "亨利定律",
+   "terms": [
+    "亨利定律"
+   ],
+   "statement": "溶解在一定体积液体中的理想气体的量与该气体的压强成正比，$C_{\\text{g}} = kP_{\\text{g}}$，其中 k 由气体、溶剂和温度决定。与溶剂发生反应的气体，如氨与水，溶解的量多于该定律的预测。",
+   "forms": [
+    {
+     "id": "eq-henrys-law",
+     "latex": "C_{\\text{g}}=kP_{\\text{g}}",
+     "ktex": "\\kCg=k\\kPg",
+     "condition": "a gas that does not react with the solvent, at a fixed temperature",
+     "anchor": "11.3-henry"
+    }
+   ]
+  },
+  {
+   "id": "henrys-law-calculations",
+   "kind": "skill",
+   "section": "11.3",
+   "name": "亨利定律的应用",
+   "statement": "由一个已知的溶解度和压强求出 k，就能得到任意其他压强下的溶解度；而由溶解度图读出的常数，可以回答一条溪流中的溶解氧是否足以让鱼类生存。"
+  },
+  {
+   "id": "miscibility",
+   "kind": "definition",
+   "section": "11.3",
+   "name": "互溶性",
+   "statement": "极性相近的液体可以按任意比例混合，因为不同分子之间的吸引力与同种分子之间的一样强，这体现了“相似相溶”；非极性液体与水分层，有些液体对则只是部分互溶。"
+  },
+  {
+   "id": "solid-solubility-and-temperature",
+   "kind": "idea",
+   "section": "11.3",
+   "name": "固体的溶解度曲线",
+   "statement": "大多数固体在水中的溶解度随温度升高而增大，但也有例外，如硫酸铈，其溶解度减小；溶解度曲线可以读出在任一温度下 100 g 水中能溶解多少固体。"
+  },
+  {
+   "id": "saturated-solution",
+   "kind": "definition",
+   "section": "11.3",
+   "name": "饱和溶液",
+   "terms": [
+    "饱和"
+   ],
+   "statement": "饱和溶液的浓度等于其溶质的溶解度，即该温度和压强下可能达到的最大浓度。"
+  },
+  {
+   "id": "unsaturated-solution",
+   "kind": "definition",
+   "section": "11.3",
+   "name": "不饱和溶液",
+   "terms": [
+    "不饱和"
+   ],
+   "statement": "不饱和溶液的浓度低于其溶质的溶解度。"
+  },
+  {
+   "id": "miscible",
+   "kind": "definition",
+   "section": "11.3",
+   "name": "互溶的",
+   "terms": [
+    "互溶的"
+   ],
+   "statement": "液体能以任意比例相互溶解时，它们是互溶的。"
+  },
+  {
+   "id": "immiscible",
+   "kind": "definition",
+   "section": "11.3",
+   "name": "不互溶的",
+   "terms": [
+    "不互溶的"
+   ],
+   "statement": "液体之间的互溶度可以忽略时，它们是不互溶的。"
+  },
+  {
+   "id": "partially-miscible",
+   "kind": "definition",
+   "section": "11.3",
+   "name": "部分互溶的",
+   "terms": [
+    "部分互溶的"
+   ],
+   "statement": "液体之间的互溶度居中时，它们是部分互溶的。"
+  },
+  {
+   "id": "colligative-properties",
+   "kind": "definition",
+   "section": "11.4",
+   "name": "依数性质",
+   "terms": [
+    "依数性质"
+   ],
+   "statement": "蒸气压下降、沸点升高、凝固点降低和渗透压只取决于溶质粒子的总浓度，而与它们的种类、质量或大小无关。"
+  },
+  {
+   "id": "molality-and-mole-fraction",
+   "kind": "skill",
+   "section": "11.4",
+   "name": "质量摩尔浓度与摩尔分数",
+   "statement": "摩尔分数和质量摩尔浓度都由质量和物质的量构成，因此两者可以相互换算，也可以借助各组分的摩尔质量换算为物质的量浓度或质量分数，换算为物质的量浓度时还需要溶液的密度。与物质的量浓度不同，两者都不随温度变化。"
+  },
+  {
+   "id": "raoults-law",
+   "kind": "axiom",
+   "section": "11.4",
+   "name": "拉乌尔定律与蒸气压下降",
+   "terms": [
+    "拉乌尔定律"
+   ],
+   "statement": "理想溶液中某一组分的分压等于该纯组分的蒸气压乘以其摩尔分数，因此不挥发的溶质使溶剂的蒸气压下降，下降的多少与它对溶剂的稀释程度成正比。",
+   "forms": [
+    {
+     "id": "eq-raoults-law",
+     "latex": "P_{\\text{A}}=X_{\\text{A}}P_{\\text{A}}^{*}",
+     "ktex": "\\kPA=X_{\\text{A}}\\kPAstar",
+     "condition": "component A of an ideal solution",
+     "anchor": "11.4-vapor"
+    },
+    {
+     "id": "eq-raoult-total",
+     "latex": "P_{\\text{solution}}=\\sum_{i}P_{i}=\\sum_{i}X_{i}P_{i}^{*}",
+     "ktex": "\\kPsoln=\\sum_{i}\\kPcomp=\\sum_{i}X_{i}\\kPcompstar",
+     "condition": "an ideal solution of i components",
+     "anchor": "11.4-vapor"
+    },
+    {
+     "id": "eq-raoult-nonvolatile",
+     "latex": "P_{\\text{solution}}=X_{\\text{solvent}}P_{\\text{solvent}}^{*}",
+     "ktex": "\\kPsoln=X_{\\text{solvent}}\\kPsolvstar",
+     "condition": "a solution whose solutes are all nonvolatile",
+     "anchor": "11.4-vapor"
+    }
+   ]
+  },
+  {
+   "id": "distillation",
+   "kind": "idea",
+   "section": "11.4",
+   "name": "蒸馏",
+   "statement": "两种易挥发液体的混合物上方的蒸气中，较易挥发的那种含量更高，因此把混合物加热、再把蒸气冷凝就能将两者分开；分馏塔则把这种分离重复许多次。"
+  },
+  {
+   "id": "boiling-point-elevation",
+   "kind": "result",
+   "section": "11.4",
+   "name": "沸点升高",
+   "symbol": "ΔT_b",
+   "terms": [
+    "沸点升高"
+   ],
+   "type": "temperature",
+   "statement": "不挥发的溶质使蒸气压下降，所以溶液必须比纯溶剂更热，其蒸气压才能达到大气压强，沸点升高值与所有溶质物种的质量摩尔浓度成正比，$\\Delta T_{\\text{b}} = K_{\\text{b}}m$。",
+   "forms": [
+    {
+     "id": "eq-boiling-point-elevation",
+     "latex": "\\Delta T_{\\text{b}}=K_{\\text{b}}m",
+     "ktex": "\\kdTb=K_{\\text{b}}\\kmolal",
+     "condition": "a dilute solution of nonvolatile solute, m counting all solute species",
+     "anchor": "11.4-boiling"
+    }
+   ]
+  },
+  {
+   "id": "freezing-point-depression",
+   "kind": "result",
+   "section": "11.4",
+   "name": "凝固点降低",
+   "symbol": "ΔT_f",
+   "terms": [
+    "凝固点降低"
+   ],
+   "type": "temperature",
+   "statement": "溶液的凝固点低于其纯溶剂，降低值与所有溶质物种的质量摩尔浓度成正比，$\\Delta T_{\\text{f}} = K_{\\text{f}}m$，因为只有溶剂凝固析出；撒盐除冰和防冻液都利用了这一点。",
+   "forms": [
+    {
+     "id": "eq-freezing-point-depression",
+     "latex": "\\Delta T_{\\text{f}}=K_{\\text{f}}m",
+     "ktex": "\\kdTf=K_{\\text{f}}\\kmolal",
+     "condition": "a dilute solution, m counting all solute species",
+     "anchor": "11.4-freezing"
+    }
+   ]
+  },
+  {
+   "id": "osmotic-pressure",
+   "kind": "result",
+   "section": "11.4",
+   "name": "渗透与渗透压",
+   "terms": [
+    "渗透压"
+   ],
+   "type": "pressure",
+   "statement": "溶剂穿过半透膜进入溶液的速率大于返回的速率，直到溶液不断升高的压强使两个速率相等；这个压强就是渗透压，$\\Pi = MRT$。施加更大的压强会使渗透反向进行，细胞在低渗溶液或高渗溶液中会膨胀或皱缩。",
+   "forms": [
+    {
+     "id": "eq-osmotic-pressure",
+     "latex": "\\Pi=MRT",
+     "ktex": "\\kosm=\\kM R\\kT",
+     "condition": "a dilute solution, with T in kelvin",
+     "anchor": "11.4-osmosis"
+    }
+   ]
+  },
+  {
+   "id": "molar-mass-from-colligative-properties",
+   "kind": "skill",
+   "section": "11.4",
+   "name": "由依数性质求摩尔质量",
+   "statement": "测得凝固点降低值、沸点升高值或渗透压，就能得到已知质量的溶质的物质的量，从而得到溶质的摩尔质量。"
+  },
+  {
+   "id": "vant-hoff-factor",
+   "kind": "result",
+   "section": "11.4",
+   "name": "范托夫因子",
+   "symbol": "i_vh",
+   "terms": [
+    "范托夫因子"
+   ],
+   "statement": "电解质每个化学式单元产生不止一个粒子，因此其依数效应要乘以范托夫因子 i，即粒子的物质的量与化学式单元的物质的量之比；离子之间残余的吸引力，乃至离子对的形成，使 i 的测量值小于预测值。",
+   "forms": [
+    {
+     "id": "eq-vant-hoff-factor",
+     "latex": "i=\\frac{\\text{moles of particles in solution}}{\\text{moles of formula units dissolved}}",
+     "condition": "a dissolved electrolyte or nonelectrolyte",
+     "anchor": "11.4-electrolytes"
+    }
+   ]
+  },
+  {
+   "id": "molality",
+   "kind": "definition",
+   "section": "11.4",
+   "name": "质量摩尔浓度",
+   "symbol": "m_molal",
+   "terms": [
+    "质量摩尔浓度"
+   ],
+   "type": "concentration",
+   "statement": "质量摩尔浓度是一种浓度单位，定义为溶质的物质的量除以溶剂的质量（以千克计）。由于它由物质的量和质量构成，因此不随温度变化。",
+   "forms": [
+    {
+     "id": "eq-molality",
+     "latex": "m=\\frac{\\text{mol solute}}{\\text{kg solvent}}",
+     "ktex": "\\kmolal=\\frac{\\text{mol solute}}{\\text{kg solvent}}",
+     "condition": "the molal concentration of a solute",
+     "anchor": "11.4-molality"
+    }
+   ]
+  },
+  {
+   "id": "boiling-point-elevation-constant",
+   "kind": "definition",
+   "section": "11.4",
+   "name": "沸点升高常数",
+   "symbol": "K_b",
+   "terms": [
+    "沸点升高常数"
+   ],
+   "type": "colligative-constant",
+   "statement": "溶剂的沸点升高常数，又称摩尔沸点升高常数，是联系其溶液的沸点升高值与溶质质量摩尔浓度的比例常数。"
+  },
+  {
+   "id": "freezing-point-depression-constant",
+   "kind": "definition",
+   "section": "11.4",
+   "name": "凝固点降低常数",
+   "symbol": "K_f",
+   "terms": [
+    "凝固点降低常数"
+   ],
+   "type": "colligative-constant",
+   "statement": "溶剂的凝固点降低常数，又称摩尔凝固点降低常数，是联系其溶液的凝固点降低值与溶质质量摩尔浓度的比例常数。"
+  },
+  {
+   "id": "semipermeable-membrane",
+   "kind": "definition",
+   "section": "11.4",
+   "name": "半透膜",
+   "terms": [
+    "半透膜"
+   ],
+   "statement": "半透膜是选择性地允许某些离子或分子通过的膜。"
+  },
+  {
+   "id": "osmosis",
+   "kind": "definition",
+   "section": "11.4",
+   "name": "渗透",
+   "terms": [
+    "渗透"
+   ],
+   "statement": "渗透是溶剂分子穿过半透膜的扩散。"
+  },
+  {
+   "id": "isotonic",
+   "kind": "definition",
+   "section": "11.4",
+   "name": "等渗",
+   "terms": [
+    "等渗"
+   ],
+   "statement": "两种溶液的渗透压相等时，它们是等渗的。"
+  },
+  {
+   "id": "hypertonic",
+   "kind": "definition",
+   "section": "11.4",
+   "name": "高渗",
+   "terms": [
+    "高渗"
+   ],
+   "statement": "一种溶液的渗透压高于另一种溶液时，它相对于后者是高渗的。"
+  },
+  {
+   "id": "hypotonic",
+   "kind": "definition",
+   "section": "11.4",
+   "name": "低渗",
+   "terms": [
+    "低渗"
+   ],
+   "statement": "一种溶液的渗透压低于另一种溶液时，它相对于后者是低渗的。"
+  },
+  {
+   "id": "crenation",
+   "kind": "definition",
+   "section": "11.4",
+   "name": "皱缩",
+   "terms": [
+    "皱缩"
+   ],
+   "statement": "皱缩是生物细胞因渗透作用失水而干瘪，红细胞在高渗溶液中就是如此。"
+  },
+  {
+   "id": "hemolysis",
+   "kind": "definition",
+   "section": "11.4",
+   "name": "溶血",
+   "terms": [
+    "溶血"
+   ],
+   "statement": "溶血是红细胞因渗透作用吸入过量的水而破裂，红细胞在低渗溶液中就是如此。"
+  },
+  {
+   "id": "ion-pair",
+   "kind": "definition",
+   "section": "11.4",
+   "name": "离子对",
+   "terms": [
+    "离子对"
+   ],
+   "statement": "离子对是由中等强度的静电吸引结合在一起的一个溶剂化阳离子和一个溶剂化阴离子，它使电解质溶液中独立粒子的数目减少。"
+  },
+  {
+   "id": "colloids-solutions-and-suspensions",
+   "kind": "idea",
+   "section": "11.5",
+   "name": "介于溶液与悬浮液之间的胶体",
+   "statement": "胶体粒子比大多数分子大，但又小到不会沉降，因此胶体介于溶液与悬浮液之间：溶液中的粒子是分子或离子，悬浮液中的粒子会沉降；胶体粒子能散射光，这就是丁达尔效应。"
+  },
+  {
+   "id": "dispersed-phase-and-medium",
+   "kind": "definition",
+   "section": "11.5",
+   "name": "分散相与分散介质",
+   "statement": "胶体中含量较少的颗粒状组分是分散相，它分散于其中的物质是分散介质，物态的几乎每一种组合都会出现：溶胶、气溶胶、乳状液、泡沫和凝胶。"
+  },
+  {
+   "id": "colloid-preparation",
+   "kind": "idea",
+   "section": "11.5",
+   "name": "胶体与乳状液的制备",
+   "statement": "胶体粒子可以由分散法制得，即把较大的颗粒磨碎，也可以由凝聚法制得，即让分子或离子长大；由两种不互溶的液体形成的乳状液，靠乳化剂防止其分层。"
+  },
+  {
+   "id": "soaps-and-detergents",
+   "kind": "idea",
+   "section": "11.5",
+   "name": "肥皂和洗涤剂如何去污",
+   "statement": "肥皂和洗涤剂分子是两亲的，一端是非极性的烃基，另一端是离子型基团，所以它们聚集在油脂与水的界面上，把油脂以胶体粒子的形式悬浮起来，随水冲走。"
+  },
+  {
+   "id": "charged-colloidal-particles",
+   "kind": "idea",
+   "section": "11.5",
+   "name": "胶体粒子带电",
+   "statement": "同一种胶体的粒子带同种电荷，靠相互排斥而保持分散；高压电极会吸引这些粒子，使其电荷中和并沉积下来，清除烟气的科特雷尔除尘器就是如此。"
+  },
+  {
+   "id": "colloid",
+   "kind": "definition",
+   "section": "11.5",
+   "name": "胶体",
+   "terms": [
+    "胶体"
+   ],
+   "statement": "胶体，又称胶体分散系，是一种混合物，其中相对较大的固体或液体粒子均匀地分散在气体、液体或固体中而不沉降。"
+  },
+  {
+   "id": "suspension",
+   "kind": "definition",
+   "section": "11.5",
+   "name": "悬浮液",
+   "terms": [
+    "悬浮液"
+   ],
+   "statement": "悬浮液是一种非均匀混合物，其中相对较大的粒子只是暂时分散，随时间推移会沉降析出。"
+  },
+  {
+   "id": "tyndall-effect",
+   "kind": "idea",
+   "section": "11.5",
+   "name": "丁达尔效应",
+   "terms": [
+    "丁达尔效应"
+   ],
+   "statement": "丁达尔效应是胶体分散系对可见光的散射，它使光束穿过胶体的路径变得可见。"
+  },
+  {
+   "id": "dispersed-phase",
+   "kind": "definition",
+   "section": "11.5",
+   "name": "分散相",
+   "terms": [
+    "分散相"
+   ],
+   "statement": "胶体的分散相是以相对较大的固体或液体粒子形式存在的物质。"
+  },
+  {
+   "id": "dispersion-medium",
+   "kind": "definition",
+   "section": "11.5",
+   "name": "分散介质",
+   "terms": [
+    "分散介质"
+   ],
+   "statement": "胶体的分散介质是胶体粒子分散于其中的固体、液体或气体。"
+  },
+  {
+   "id": "emulsion",
+   "kind": "definition",
+   "section": "11.5",
+   "name": "乳状液",
+   "terms": [
+    "乳状液"
+   ],
+   "statement": "乳状液是由不互溶的液体形成的胶体。"
+  },
+  {
+   "id": "gel",
+   "kind": "definition",
+   "section": "11.5",
+   "name": "凝胶",
+   "terms": [
+    "凝胶"
+   ],
+   "statement": "凝胶是液体分散在固体中形成的胶体分散系。"
+  },
+  {
+   "id": "amphiphilic",
+   "kind": "definition",
+   "section": "11.5",
+   "name": "两亲的",
+   "terms": [
+    "两亲的"
+   ],
+   "statement": "分子同时具有疏水的非极性部分和亲水的极性部分时，它是两亲的。"
+  },
+  {
+   "id": "emulsifying-agent",
+   "kind": "definition",
+   "section": "11.5",
+   "name": "乳化剂",
+   "terms": [
+    "乳化剂"
+   ],
+   "statement": "乳化剂是用来稳定乳状液中粒子的两亲物质。"
+  }
+ ],
+ "concept_prereqs": [
+  {
+   "concept": "properties-of-solutions",
+   "prereq": "solution-components"
+  },
+  {
+   "concept": "ideal-solution",
+   "prereq": "properties-of-solutions"
+  },
+  {
+   "concept": "ideal-solution",
+   "prereq": "ideal-gas"
+  },
+  {
+   "concept": "ideal-solution",
+   "prereq": "diffusion-and-effusion"
+  },
+  {
+   "concept": "dissolution-energy-steps",
+   "prereq": "properties-of-solutions"
+  },
+  {
+   "concept": "dissolution-energy-steps",
+   "prereq": "intermolecular-versus-intramolecular-forces"
+  },
+  {
+   "concept": "dissolution-energy-steps",
+   "prereq": "exothermic-and-endothermic"
+  },
+  {
+   "concept": "endothermic-and-exothermic-dissolution",
+   "prereq": "dissolution-energy-steps"
+  },
+  {
+   "concept": "endothermic-and-exothermic-dissolution",
+   "prereq": "ideal-solution"
+  },
+  {
+   "concept": "predict-solution-formation",
+   "prereq": "dissolution-energy-steps"
+  },
+  {
+   "concept": "predict-solution-formation",
+   "prereq": "rank-by-intermolecular-forces"
+  },
+  {
+   "concept": "electrolytes-and-nonelectrolytes",
+   "prereq": "properties-of-solutions"
+  },
+  {
+   "concept": "electrolytes-and-nonelectrolytes",
+   "prereq": "ionic-compounds"
+  },
+  {
+   "concept": "ion-dipole-attraction",
+   "prereq": "molecular-polarity"
+  },
+  {
+   "concept": "ion-dipole-attraction",
+   "prereq": "dissolution-energy-steps"
+  },
+  {
+   "concept": "dissociation-of-ionic-compounds",
+   "prereq": "ion-dipole-attraction"
+  },
+  {
+   "concept": "dissociation-of-ionic-compounds",
+   "prereq": "ionic-lattice"
+  },
+  {
+   "concept": "dissociation-of-ionic-compounds",
+   "prereq": "electrolytes-and-nonelectrolytes"
+  },
+  {
+   "concept": "covalent-electrolytes",
+   "prereq": "electrolytes-and-nonelectrolytes"
+  },
+  {
+   "concept": "covalent-electrolytes",
+   "prereq": "strong-and-weak-acids-bases"
+  },
+  {
+   "concept": "classify-electrolyte-strength",
+   "prereq": "dissociation-of-ionic-compounds"
+  },
+  {
+   "concept": "classify-electrolyte-strength",
+   "prereq": "covalent-electrolytes"
+  },
+  {
+   "concept": "solubility-and-saturation",
+   "prereq": "properties-of-solutions"
+  },
+  {
+   "concept": "solubility-and-saturation",
+   "prereq": "vapor-pressure-dynamic-equilibrium"
+  },
+  {
+   "concept": "supersaturated-solutions",
+   "prereq": "solubility-and-saturation"
+  },
+  {
+   "concept": "gas-solubility-and-temperature",
+   "prereq": "solubility-and-saturation"
+  },
+  {
+   "concept": "gas-solubility-and-temperature",
+   "prereq": "dissolution-energy-steps"
+  },
+  {
+   "concept": "henrys-law",
+   "prereq": "solubility-and-saturation"
+  },
+  {
+   "concept": "henrys-law",
+   "prereq": "daltons-law-of-partial-pressures"
+  },
+  {
+   "concept": "henrys-law",
+   "prereq": "molarity"
+  },
+  {
+   "concept": "henrys-law-calculations",
+   "prereq": "henrys-law"
+  },
+  {
+   "concept": "henrys-law-calculations",
+   "prereq": "mass-mole-conversion"
+  },
+  {
+   "concept": "miscibility",
+   "prereq": "predict-solution-formation"
+  },
+  {
+   "concept": "solid-solubility-and-temperature",
+   "prereq": "solubility-and-saturation"
+  },
+  {
+   "concept": "solid-solubility-and-temperature",
+   "prereq": "mass-percentage"
+  },
+  {
+   "concept": "colligative-properties",
+   "prereq": "properties-of-solutions"
+  },
+  {
+   "concept": "colligative-properties",
+   "prereq": "concentration"
+  },
+  {
+   "concept": "molality-and-mole-fraction",
+   "prereq": "mole-fraction-and-partial-pressure"
+  },
+  {
+   "concept": "molality-and-mole-fraction",
+   "prereq": "concentration-unit-conversions"
+  },
+  {
+   "concept": "raoults-law",
+   "prereq": "colligative-properties"
+  },
+  {
+   "concept": "raoults-law",
+   "prereq": "molality-and-mole-fraction"
+  },
+  {
+   "concept": "raoults-law",
+   "prereq": "vapor-pressure-dynamic-equilibrium"
+  },
+  {
+   "concept": "distillation",
+   "prereq": "raoults-law"
+  },
+  {
+   "concept": "distillation",
+   "prereq": "vapor-pressure-and-imf"
+  },
+  {
+   "concept": "boiling-point-elevation",
+   "prereq": "raoults-law"
+  },
+  {
+   "concept": "boiling-point-elevation",
+   "prereq": "boiling-point"
+  },
+  {
+   "concept": "freezing-point-depression",
+   "prereq": "colligative-properties"
+  },
+  {
+   "concept": "freezing-point-depression",
+   "prereq": "molality-and-mole-fraction"
+  },
+  {
+   "concept": "freezing-point-depression",
+   "prereq": "phase-diagram"
+  },
+  {
+   "concept": "osmotic-pressure",
+   "prereq": "colligative-properties"
+  },
+  {
+   "concept": "osmotic-pressure",
+   "prereq": "molarity"
+  },
+  {
+   "concept": "osmotic-pressure",
+   "prereq": "ideal-gas-law"
+  },
+  {
+   "concept": "osmotic-pressure",
+   "prereq": "hydrostatic-pressure"
+  },
+  {
+   "concept": "molar-mass-from-colligative-properties",
+   "prereq": "freezing-point-depression"
+  },
+  {
+   "concept": "molar-mass-from-colligative-properties",
+   "prereq": "boiling-point-elevation"
+  },
+  {
+   "concept": "molar-mass-from-colligative-properties",
+   "prereq": "osmotic-pressure"
+  },
+  {
+   "concept": "vant-hoff-factor",
+   "prereq": "dissociation-of-ionic-compounds"
+  },
+  {
+   "concept": "vant-hoff-factor",
+   "prereq": "freezing-point-depression"
+  },
+  {
+   "concept": "dispersed-phase-and-medium",
+   "prereq": "colloids-solutions-and-suspensions"
+  },
+  {
+   "concept": "dispersed-phase-and-medium",
+   "prereq": "states-of-matter"
+  },
+  {
+   "concept": "colloid-preparation",
+   "prereq": "dispersed-phase-and-medium"
+  },
+  {
+   "concept": "colloid-preparation",
+   "prereq": "miscibility"
+  },
+  {
+   "concept": "soaps-and-detergents",
+   "prereq": "colloid-preparation"
+  },
+  {
+   "concept": "soaps-and-detergents",
+   "prereq": "polyatomic-ions"
+  },
+  {
+   "concept": "charged-colloidal-particles",
+   "prereq": "colloids-solutions-and-suspensions"
+  },
+  {
+   "concept": "charged-colloidal-particles",
+   "prereq": "ions-and-atomic-charge"
+  },
+  {
+   "concept": "alloy",
+   "prereq": "mixture"
+  },
+  {
+   "concept": "alloy",
+   "prereq": "metal"
+  },
+  {
+   "concept": "spontaneous-process",
+   "prereq": "physical-change"
+  },
+  {
+   "concept": "spontaneous-process",
+   "prereq": "chemical-change"
+  },
+  {
+   "concept": "solvation",
+   "prereq": "solute"
+  },
+  {
+   "concept": "solvation",
+   "prereq": "intermolecular-force"
+  },
+  {
+   "concept": "solvation",
+   "prereq": "exothermic-process"
+  },
+  {
+   "concept": "electrolyte",
+   "prereq": "ion"
+  },
+  {
+   "concept": "electrolyte",
+   "prereq": "aqueous-solution"
+  },
+  {
+   "concept": "nonelectrolyte",
+   "prereq": "electrolyte"
+  },
+  {
+   "concept": "strong-electrolyte",
+   "prereq": "electrolyte"
+  },
+  {
+   "concept": "weak-electrolyte",
+   "prereq": "electrolyte"
+  },
+  {
+   "concept": "saturated-solution",
+   "prereq": "solubility"
+  },
+  {
+   "concept": "unsaturated-solution",
+   "prereq": "saturated-solution"
+  },
+  {
+   "concept": "miscible",
+   "prereq": "solubility"
+  },
+  {
+   "concept": "immiscible",
+   "prereq": "solubility"
+  },
+  {
+   "concept": "partially-miscible",
+   "prereq": "solubility"
+  },
+  {
+   "concept": "molality",
+   "prereq": "concentration"
+  },
+  {
+   "concept": "molality",
+   "prereq": "mole"
+  },
+  {
+   "concept": "molality",
+   "prereq": "kilogram"
+  },
+  {
+   "concept": "boiling-point-elevation-constant",
+   "prereq": "boiling-point-elevation"
+  },
+  {
+   "concept": "freezing-point-depression-constant",
+   "prereq": "freezing-point-depression"
+  },
+  {
+   "concept": "semipermeable-membrane",
+   "prereq": "ion"
+  },
+  {
+   "concept": "semipermeable-membrane",
+   "prereq": "molecule"
+  },
+  {
+   "concept": "osmosis",
+   "prereq": "diffusion"
+  },
+  {
+   "concept": "osmosis",
+   "prereq": "semipermeable-membrane"
+  },
+  {
+   "concept": "isotonic",
+   "prereq": "osmotic-pressure"
+  },
+  {
+   "concept": "hypertonic",
+   "prereq": "osmotic-pressure"
+  },
+  {
+   "concept": "hypotonic",
+   "prereq": "osmotic-pressure"
+  },
+  {
+   "concept": "crenation",
+   "prereq": "hypertonic"
+  },
+  {
+   "concept": "hemolysis",
+   "prereq": "hypotonic"
+  },
+  {
+   "concept": "ion-pair",
+   "prereq": "cation"
+  },
+  {
+   "concept": "ion-pair",
+   "prereq": "anion"
+  },
+  {
+   "concept": "ion-pair",
+   "prereq": "solvation"
+  },
+  {
+   "concept": "colloid",
+   "prereq": "mixture"
+  },
+  {
+   "concept": "colloid",
+   "prereq": "properties-of-solutions"
+  },
+  {
+   "concept": "suspension",
+   "prereq": "heterogeneous-mixture"
+  },
+  {
+   "concept": "tyndall-effect",
+   "prereq": "colloid"
+  },
+  {
+   "concept": "dispersed-phase",
+   "prereq": "colloid"
+  },
+  {
+   "concept": "dispersion-medium",
+   "prereq": "colloid"
+  },
+  {
+   "concept": "emulsion",
+   "prereq": "colloid"
+  },
+  {
+   "concept": "emulsion",
+   "prereq": "immiscible"
+  },
+  {
+   "concept": "gel",
+   "prereq": "dispersed-phase"
+  },
+  {
+   "concept": "gel",
+   "prereq": "dispersion-medium"
+  },
+  {
+   "concept": "amphiphilic",
+   "prereq": "polar-molecule"
+  },
+  {
+   "concept": "emulsifying-agent",
+   "prereq": "amphiphilic"
+  },
+  {
+   "concept": "emulsifying-agent",
+   "prereq": "emulsion"
+  },
+  {
+   "concept": "dissolution-energy-steps",
+   "prereq": "solvation"
+  },
+  {
+   "concept": "electrolytes-and-nonelectrolytes",
+   "prereq": "nonelectrolyte"
+  },
+  {
+   "concept": "electrolytes-and-nonelectrolytes",
+   "prereq": "strong-electrolyte"
+  },
+  {
+   "concept": "electrolytes-and-nonelectrolytes",
+   "prereq": "weak-electrolyte"
+  },
+  {
+   "concept": "solubility-and-saturation",
+   "prereq": "unsaturated-solution"
+  },
+  {
+   "concept": "miscibility",
+   "prereq": "miscible"
+  },
+  {
+   "concept": "miscibility",
+   "prereq": "immiscible"
+  },
+  {
+   "concept": "miscibility",
+   "prereq": "partially-miscible"
+  },
+  {
+   "concept": "molality-and-mole-fraction",
+   "prereq": "molality"
+  },
+  {
+   "concept": "osmotic-pressure",
+   "prereq": "osmosis"
+  },
+  {
+   "concept": "vant-hoff-factor",
+   "prereq": "ion-pair"
+  },
+  {
+   "concept": "colloids-solutions-and-suspensions",
+   "prereq": "colloid"
+  },
+  {
+   "concept": "colloids-solutions-and-suspensions",
+   "prereq": "suspension"
+  },
+  {
+   "concept": "dispersed-phase-and-medium",
+   "prereq": "dispersed-phase"
+  },
+  {
+   "concept": "dispersed-phase-and-medium",
+   "prereq": "dispersion-medium"
+  },
+  {
+   "concept": "colloid-preparation",
+   "prereq": "emulsifying-agent"
+  }
+ ]
+}

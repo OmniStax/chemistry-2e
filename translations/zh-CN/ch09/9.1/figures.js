@@ -18,8 +18,8 @@ const commas = (x) => Math.round(x).toLocaleString('en-US');
 ===================================================================== */
 (function () {
   const d = sim('sim-force-area', 540);
-  const Fs = ctl(d.controls, { label: '\\kforce', cls: 'force', min: 1, max: 150, step: 0.1, value: 14.7, unit: 'lb', dec: 1, aria: 'force in pounds', detents: [{ v: 14.7, label: 'air' }, { v: 60, label: 'skater' }] });
-  const As = ctl(d.controls, { label: '\\karea', cls: 'area', min: 0.5, max: 30, step: 0.5, value: 1, unit: 'in²', dec: 1, aria: 'area in square inches', detents: [{ v: 1, label: 'thumbnail' }, 2, { v: 30, label: 'foot' }] });
+  const Fs = ctl(d.controls, { label: '\\kforce', cls: 'force', min: 1, max: 150, step: 0.1, value: 14.7, unit: 'lb', dec: 1, aria: '以磅为单位的力', detents: [{ v: 14.7, label: '空气' }, { v: 60, label: '运动员' }] });
+  const As = ctl(d.controls, { label: '\\karea', cls: 'area', min: 0.5, max: 30, step: 0.5, value: 1, unit: 'in²', dec: 1, aria: '以平方英寸为单位的面积', detents: [{ v: 1, label: '拇指指甲盖' }, 2, { v: 30, label: '光脚' }] });
   const PMAX = 100, GROUND = 420;
   /* a sole about 10 in long, heel at the origin, toes along +x, lateral side up; scaled to the area set */
   const SOLE = [[0, 0], [0.2, -0.7], [1, -1.2], [2.5, -1.3], [5, -1.35], [7, -1.6], [8.5, -1.7], [9.6, -1.2], [10.1, -0.4], [10.2, 0.4], [9.9, 1.2], [9, 1.7], [7.5, 1.8], [6.5, 1.2], [5, 0.5], [3.5, 0.5], [2, 0.9], [1, 1.1], [0.2, 0.7]];
@@ -31,7 +31,7 @@ const commas = (x) => Math.round(x).toLocaleString('en-US');
     ctx.closePath();
   };
   const kindOf = (a) => (a < 1.5 ? 'nail' : a < 6 ? 'blade' : 'foot');
-  const NAME = { nail: 'thumbnail', blade: 'skate blade', foot: 'bare foot' };
+  const NAME = { nail: '拇指指甲盖', blade: '冰刀', foot: '光脚' };
   /* the footprint, seen from below on a 12 in by 5 in grid of square inches */
   const G = { l: 690, t: 230, u: 28, nx: 12, ny: 5 };
   function footprint(ctx, kind, a, ca, lab) {
@@ -51,7 +51,7 @@ const commas = (x) => Math.round(x).toLocaleString('en-US');
     }
     ctx.fill(); ctx.stroke(); ctx.restore();
     lab.place({ l, t, r, b });
-    text(ctx, 'footprint, 1 in² squares', cx, t - 22, PAL.muted, { size: 17, align: 'center' });
+    text(ctx, '接触面，每格 1 in²', cx, t - 22, PAL.muted, { size: 17, align: 'center' });
     text(ctx, NAME[kind] + ', A = ' + fmt(a, 1) + ' in²', cx, b + 26, ca, { size: 22, weight: 600, align: 'center' });
   }
   /* pressure arrows under the patch that bears the load, each as long as the pressure */
@@ -75,9 +75,9 @@ const commas = (x) => Math.round(x).toLocaleString('en-US');
       arrow(ctx, NX, by - R - 10 - fl, NX, by - R - 8, cf, 5);
       pressArrows(ctx, NX - 14, NX + 14, NY, p, cp, 3);
       lab.add('F = ' + fmt(f, 1) + ' lb', NX + 6, by - R - 10 - fl / 2, 1, 0, cf, 22, 24);
-      lab.add('column of air', NX - 20, 150, -1, 0, PAL.muted, 20, 16);
-      lab.add('bowling ball', NX + R * 0.7, by - R * 0.7, 1, -0.4, PAL.ink, 20, 16);
-      lab.add('thumbnail', NX + 22, NY + 6, 1, 0.3, ca, 20, 30);
+      lab.add('空气柱', NX - 20, 150, -1, 0, PAL.muted, 20, 16);
+      lab.add('保龄球', NX + R * 0.7, by - R * 0.7, 1, -0.4, PAL.ink, 20, 16);
+      lab.add('拇指指甲盖', NX + 22, NY + 6, 1, 0.3, ca, 20, 30);
     } else {
       /* the skater stands on the ice; the near foot's patch is the one the load is on */
       const SX = 300, s = 2, fx = SX + 9 * s, lift = kind === 'blade' ? 26 : 6, fy = GROUND - lift, half = 30;
@@ -98,8 +98,8 @@ const commas = (x) => Math.round(x).toLocaleString('en-US');
       pressArrows(ctx, x0, x1, GROUND, p, cp, 4);
       lab.add('F = ' + fmt(f, 1) + ' lb', ax + 6, fy - 2 - fl / 2, 1, 0, cf, 22, 20);
       lab.add(NAME[kind], x0, GROUND + 10, -1, 0.2, ca, 20, 26);
-      lab.add('skater', SX + 6 * s, fy - 140 * s, 1, 0, PAL.muted, 20, 24);
-      lab.add('ice', 600, GROUND + 60, 0, 0, PAL.muted, 20, 0);
+      lab.add('滑冰运动员', SX + 6 * s, fy - 140 * s, 1, 0, PAL.muted, 20, 24);
+      lab.add('冰面', 600, GROUND + 60, 0, 0, PAL.muted, 20, 0);
     }
     footprint(ctx, kind, a, ca, lab);
     /* the pressure bar, 0 to 100 lb/in² */
@@ -111,7 +111,7 @@ const commas = (x) => Math.round(x).toLocaleString('en-US');
     text(ctx, 'P (lb/in²)', bx + 35, bb + 34, cp, { size: 20, weight: 600, align: 'center' });
     text(ctx, (p > PMAX ? '▲ ' : '') + fmt(p, p < 10 ? 2 : 1), bx + 84, yOf(p), cp, { size: 20, weight: 600, base: 'middle' });
     lab.flush();
-    topline(ctx, 'A load of ' + fmt(f, 1) + ' lb on a ' + fmt(a, 1) + ' in² ' + NAME[kind] + ' presses with $\\kP$ = ' + fmt(p, p < 10 ? 2 : 1) + ' lb/in².');
+    topline(ctx, fmt(f, 1) + ' lb 的载荷压在 ' + fmt(a, 1) + ' in² 的' + NAME[kind] + '上，压强 $\\kP$ = ' + fmt(p, p < 10 ? 2 : 1) + ' lb/in²。');
     readout(d.readout, `\\kP = \\frac{\\kforce}{\\karea} = \\frac{${hue('force', fmt(f, 1) + '\\ \\text{lb}')}}{${hue('area', fmt(a, 1) + '\\ \\text{in}^2')}} = ${hue('pressure', fmt(p, p < 10 ? 2 : 1) + '\\ \\text{lb/in}^2')}`);
   }
   register(d.fig, { update: () => {}, draw });
@@ -124,7 +124,7 @@ const commas = (x) => Math.round(x).toLocaleString('en-US');
 ===================================================================== */
 (function () {
   const d = sim('sim-barometer', 630);
-  const Ps = ctl(d.controls, { label: '\\kPatm', cls: 'pressure', min: 60, max: 110, step: 0.1, value: 101.3, unit: 'kPa', dec: 1, aria: 'atmospheric pressure in kilopascals', detents: [{ v: 101.325, label: '1 atm' }] });
+  const Ps = ctl(d.controls, { label: '\\kPatm', cls: 'pressure', min: 60, max: 110, step: 0.1, value: 101.3, unit: 'kPa', dec: 1, aria: '以千帕为单位的大气压强', detents: [{ v: 101.325, label: '1 atm' }] });
   const G = 9.81, RHO = { Hg: 13600, water: 1000 };
   const top = 70, base = 520, perM = (base - top) / 12;
   const Y = (m) => base - m * perM;
@@ -137,7 +137,7 @@ const commas = (x) => Math.round(x).toLocaleString('en-US');
     line(ctx, x + tw / 2 + 8, Y(hM), x + 150, Y(hM), alpha(PAL.ink, 0.35), 2, [4, 8]);
     vbracket(ctx, x + 130, Y(hM), base, ch, hLabel, 1);
     text(ctx, name, x, base + dishH + 30, wall, { size: 20, weight: 600, align: 'center' });
-    text(ctx, 'vacuum', x - tw / 2 - 10, Y(11.3), PAL.muted, { size: 17, align: 'right' });
+    text(ctx, '真空', x - tw / 2 - 10, Y(11.3), PAL.muted, { size: 17, align: 'right' });
   }
   function draw() {
     const { ctx } = begin(d.c);
@@ -145,12 +145,12 @@ const commas = (x) => Math.round(x).toLocaleString('en-US');
     const hHg = p / (RHO.Hg * G), hW = p / (RHO.water * G);
     for (let m = 0; m <= 12; m += 2) { line(ctx, 110, Y(m), 122, Y(m), PAL.muted, 2); text(ctx, m + ' m', 100, Y(m), PAL.muted, { size: 17, align: 'right', base: 'middle' }); }
     line(ctx, 122, Y(0), 122, Y(12), PAL.muted, 2);
-    tube(ctx, 380, hHg, F.el('Hg'), 'mercury', 'h = ' + fmt(hHg * 1000, 0) + ' mm', 'mercury-barometer');
-    tube(ctx, 850, hW, alpha(PAL.ink, 0.16), 'water', 'h = ' + fmt(hW, 2) + ' m', 'water-barometer');
+    tube(ctx, 380, hHg, F.el('Hg'), '汞', 'h = ' + fmt(hHg * 1000, 0) + ' mm', 'mercury-barometer');
+    tube(ctx, 850, hW, alpha(PAL.ink, 0.16), '水', 'h = ' + fmt(hW, 2) + ' m', 'water-barometer');
     for (const x of [380, 850]) for (const dx of [-70, 70]) arrow(ctx, x + dx, base - 70, x + dx, base - 6, cp, 4);
-    text(ctx, 'atmosphere', 1180, base - 50, cp, { size: 20, weight: 600, align: 'center' });
+    text(ctx, '大气', 1180, base - 50, cp, { size: 20, weight: 600, align: 'center' });
     arrow(ctx, 1180, base - 36, 1180, base - 4, cp, 4);
-    topline(ctx, 'An atmospheric pressure of ' + fmt(Ps.v, 1) + ' kPa holds up ' + fmt(hHg * 1000, 0) + ' mm of mercury or ' + fmt(hW, 2) + ' m of water.');
+    topline(ctx, fmt(Ps.v, 1) + ' kPa 的大气压强可支撑 ' + fmt(hHg * 1000, 0) + ' mm 的汞柱或 ' + fmt(hW, 2) + ' m 的水柱。');
     readout(d.readout, `\\kphyd = \\khcol\\krho\\kgrav = (${hue('length', fmt(hHg, 3) + '\\ \\text{m}')})(${hue('density', '13{,}600\\ \\text{kg/m}^3')})(${hue('acceleration', '9.81\\ \\text{m/s}^2')}) = ${hue('pressure', commas(p).replace(',', '{,}') + '\\ \\text{Pa}')}`);
   }
   register(d.fig, { update: () => {}, draw });
@@ -185,9 +185,9 @@ function manometer(ctx, o) {
   line(ctx, R - tw / 2, armTop, R - tw / 2, bottom, PAL.ink, 3); line(ctx, R + tw / 2, armTop, R + tw / 2, bottom, PAL.ink, 3);
   ctx.beginPath(); ctx.arc(x, bottom, 90 + tw / 2, 0, Math.PI); ctx.stroke(); ctx.beginPath(); ctx.arc(x, bottom, 90 - tw / 2, 0, Math.PI); ctx.stroke();
   line(ctx, L - tw / 2, by - tw / 2, L - tw / 2, armTop, PAL.ink, 3); line(ctx, L + tw / 2, armTop, L + tw / 2, by - tw / 2, PAL.ink, 3); line(ctx, L - tw / 2, armTop, L + tw / 2, armTop, PAL.ink, 3);
-  if (closed) { line(ctx, R - tw / 2, armTop, R + tw / 2, armTop, PAL.ink, 3); text(ctx, 'closed end (vacuum)', R + tw / 2 + 14, armTop + 4, PAL.muted, { size: 17, base: 'middle' }); }
-  else text(ctx, 'open end', R + tw / 2 + 14, armTop + 4, PAL.muted, { size: 17, base: 'middle' });
-  text(ctx, 'gas', bx, by, PAL.ink, { size: 22, weight: 600, align: 'center', base: 'middle' });
+  if (closed) { line(ctx, R - tw / 2, armTop, R + tw / 2, armTop, PAL.ink, 3); text(ctx, '闭端（真空）', R + tw / 2 + 14, armTop + 4, PAL.muted, { size: 17, base: 'middle' }); }
+  else text(ctx, '开端', R + tw / 2 + 14, armTop + 4, PAL.muted, { size: 17, base: 'middle' });
+  text(ctx, '气体', bx, by, PAL.ink, { size: 22, weight: 600, align: 'center', base: 'middle' });
   /* the two levels and h between them */
   const hi = Math.min(yL, yR), lo = Math.max(yL, yR);
   line(ctx, L - tw / 2 - 30, yL, L + tw / 2, yL, alpha(PAL.ink, 0.4), 2, [4, 8]);
@@ -195,7 +195,7 @@ function manometer(ctx, o) {
   if (Math.abs(yL - yR) > 3) {
     line(ctx, L + tw / 2, hi, R + tw / 2 + 60, hi, alpha(PAL.ink, 0.4), 2, [4, 8]); line(ctx, L - tw / 2 - 30, lo, R + tw / 2 + 60, lo, alpha(PAL.ink, 0.4), 2, [4, 8]);
     vbracket(ctx, R + tw / 2 + 50, hi, lo, C('length'), hLabel, 1);
-  } else text(ctx, 'level', R + tw / 2 + 64, yR, PAL.ink, { size: 18, weight: 600, base: 'middle' });
+  } else text(ctx, '相平', R + tw / 2 + 64, yR, PAL.ink, { size: 18, weight: 600, base: 'middle' });
 }
 
 /* =====================================================================
@@ -206,19 +206,19 @@ function manometer(ctx, o) {
 ===================================================================== */
 (function () {
   const d = sim('sim-manometer', 580);
-  const end = F.choice(d.controls, { label: 'end', options: [{ value: 'closed', label: 'closed' }, { value: 'open', label: 'open' }], value: 'open', aria: 'the far end of the manometer', onInput: () => { atm.disable(end.value === 'closed'); gas.refresh(); } });
-  const gas = ctl(d.controls, { label: '\\kPgas', cls: 'pressure', min: 0, max: 1200, step: 1, value: 897, unit: 'torr', dec: 0, aria: 'pressure of the gas in torr', specials: [{ at: () => (end.value === 'open' ? atm.v : null), label: 'equal' }] });
-  const atm = ctl(d.controls, { label: '\\kPatm', cls: 'pressure', min: 600, max: 800, step: 1, value: 760, unit: 'torr', dec: 0, aria: 'atmospheric pressure in torr', onInput: () => gas.refresh() });
+  const end = F.choice(d.controls, { label: '端', options: [{ value: 'closed', label: '闭端' }, { value: 'open', label: '开端' }], value: 'open', aria: '压强计的远端', onInput: () => { atm.disable(end.value === 'closed'); gas.refresh(); } });
+  const gas = ctl(d.controls, { label: '\\kPgas', cls: 'pressure', min: 0, max: 1200, step: 1, value: 897, unit: 'torr', dec: 0, aria: '以托为单位的气体压强', specials: [{ at: () => (end.value === 'open' ? atm.v : null), label: '相等' }] });
+  const atm = ctl(d.controls, { label: '\\kPatm', cls: 'pressure', min: 600, max: 800, step: 1, value: 760, unit: 'torr', dec: 0, aria: '以托为单位的大气压强', onInput: () => gas.refresh() });
   function draw() {
     const { ctx } = begin(d.c);
     const closed = end.value === 'closed', pg = gas.v, pa = atm.v;
     const dMm = closed ? pg : pg - pa, h = Math.abs(dMm);
     manometer(ctx, { x: 760, y0: 270, s: 0.3, dMm, closed, hLabel: 'h = ' + h + ' mm', gasTop: 110, bottom: 450 });
     if (!closed) { const cp = C('pressure'); arrow(ctx, 850, 96, 850, 128, cp, 4); text(ctx, 'P_{atm} = ' + pa + ' torr', 950, 150, cp, { size: 20, weight: 600, base: 'middle' }); }
-    const side = dMm > 0 ? 'the far arm' : 'the gas arm';
-    topline(ctx, closed ? 'With a closed end the mercury stands ' + h + ' mm higher in the far arm, so the gas pressure is ' + pg + ' torr.'
-      : dMm === 0 ? 'The gas and the atmosphere press equally, so the mercury is level in both arms.'
-      : 'The mercury stands ' + h + ' mm higher in ' + side + ', so the gas is ' + h + ' torr ' + (dMm > 0 ? 'above' : 'below') + ' the atmosphere.');
+    const side = dMm > 0 ? '远端一臂' : '气体一臂';
+    topline(ctx, closed ? '闭端时，汞在远端一臂中高出 ' + h + ' mm，所以气体压强为 ' + pg + ' torr。'
+      : dMm === 0 ? '气体与大气的压强相等，所以两臂中的汞面相平。'
+      : '汞在' + side + '中高出 ' + h + ' mm，所以气体比大气' + (dMm > 0 ? '高' : '低') + ' ' + h + ' torr。');
     const G = '\\kPgas', A = '\\kPatm', hv = hue('pressure', pg + '\\ \\text{torr}');
     const main = closed ? `${G} = \\khcol\\krho\\kgrav = ${h}\\ \\text{mm Hg} = ${hv}`
       : dMm >= 0 ? `${G} = ${A} + \\khcol\\krho\\kgrav = ${hue('pressure', pa + '\\ \\text{torr}')} + ${h}\\ \\text{mm Hg} = ${hv}`

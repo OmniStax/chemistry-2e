@@ -25,7 +25,7 @@ const dirOf = (th, az) => [Math.sin(th * RAD) * Math.cos(az * RAD), Math.cos(th 
 /* ---------- atoms in the book's palette, each bond two half sticks in its atoms' colours ---------- */
 const K = 0.62;                                  /* scene units per ångström */
 const RADIUS = { P: 0.36, S: 0.34, O: 0.27, Cl: 0.34 };
-const NAMES = { P: 'phosphorus (P)', S: 'sulfur (S)', O: 'oxygen (O)', Cl: 'chlorine (Cl)' };
+const NAMES = { P: '磷 (P)', S: '硫 (S)', O: '氧 (O)', Cl: '氯 (Cl)' };
 const FREE = { spin: 'idle', views: [{ label: 'side', yaw: 0.35, pitch: 0.22 }, { label: 'down the axis', yaw: 0, pitch: Math.PI / 2 }] };
 const fade = (a) => (a < 0.999 ? { transparent: true, opacity: a } : undefined);
 /* atoms [{sym, from, p, a}] (p in ångströms, a its presence 0..1, from the element it is turning from) and bonds [{i, j, a}] */
@@ -77,25 +77,25 @@ const plain = (e, a) => { e.style.opacity = String(Math.max(0, Math.min(1, a)));
     P4: {
       atoms: [...P4.map((p) => site('P', p, 1)), ...EDGES.map(([i, j]) => site('O', V.mid(P4[i], P4[j]), 0)), ...P4.map((p) => site('O', p, 0))],
       pp: [1, 1, 1, 1, 1, 1], term: 0,
-      head: 'White phosphorus, P₄, is four phosphorus atoms at the corners of a tetrahedron, joined by six P–P bonds.',
+      head: '白磷 P₄ 是四个磷原子位于四面体的顶点，由六个 P–P 键相连。',
       tex: '\\mk{a}{\\text{P}_4(s)}',
     },
     P4S3: {
       atoms: [...S3.P.map((p) => site('P', p, 1)), ...EDGES.map(([i, j], e) => (e < 3 ? site('S', S3.S[e], 1) : site('S', V.mid(S3.P[i], S3.P[j]), 0))), ...S3.P.map((p) => site('O', p, 0))],
       pp: [0, 0, 0, 1, 1, 1], term: 0,
-      head: 'In P₄S₃ a sulfur atom sits in three of the six edges of the P₄ tetrahedron, and the three P–P bonds of its base remain.',
+      head: '在 P₄S₃ 中，P₄ 四面体六条棱中的三条上各有一个硫原子，底面的三个 P–P 键仍然保留。',
       tex: '\\mk{s}{\\text{P}_4\\text{S}_3(s)}',
     },
     P4O6: {
       atoms: [...P6.map((p) => site('P', p, 1)), ...edgeO.map((p) => site('O', p, 1)), ...P6.map((p) => site('O', p, 0))],
       pp: [0, 0, 0, 0, 0, 0], term: 0,
-      head: 'In P₄O₆ an oxygen atom sits in every one of the six edges of the P₄ tetrahedron, so no P–P bond remains.',
+      head: '在 P₄O₆ 中，P₄ 四面体的六条棱上各有一个氧原子，因此没有 P–P 键保留。',
       tex: '\\mk{a}{\\text{P}_4(s)} + \\mk{o}{3\\text{O}_2(g)} \\longrightarrow \\mk{b}{\\text{P}_4\\text{O}_6(s)}',
     },
     P4O10: {
       atoms: [...P6.map((p) => site('P', p, 1)), ...edgeO.map((p) => site('O', p, 1)), ...P6.map((p) => site('O', V.add(p, V.mul(V.unit(p), 1.43)), 1))],
       pp: [0, 0, 0, 0, 0, 0], term: 1,
-      head: 'P₄O₁₀ is the cage of P₄O₆ with one more oxygen atom on each phosphorus atom.',
+      head: 'P₄O₁₀ 是 P₄O₆ 的笼状结构，每个磷原子上再多一个氧原子。',
       tex: '\\mk{b}{\\text{P}_4\\text{O}_6(s)} + \\mk{o}{2\\text{O}_2(g)} \\longrightarrow \\mk{c}{\\text{P}_4\\text{O}_{10}(s)}',
     },
   };
@@ -109,7 +109,7 @@ const plain = (e, a) => { e.style.opacity = String(Math.max(0, Math.min(1, a)));
     [0, 1, 2, 3].forEach((i) => out.push({ i, j: 10 + i, a: s.term }));
     return out;
   }
-  const pick = F.choice(d.controls, { label: '\\text{molecule}', aria: 'the molecule', options: [{ value: 'P4', label: 'P₄' }, { value: 'P4S3', label: 'P₄S₃' }, { value: 'P4O6', label: 'P₄O₆' }, { value: 'P4O10', label: 'P₄O₁₀' }], value: 'P4S3' });
+  const pick = F.choice(d.controls, { label: '\\text{分子}', aria: '分子', options: [{ value: 'P4', label: 'P₄' }, { value: 'P4S3', label: 'P₄S₃' }, { value: 'P4O6', label: 'P₄O₆' }, { value: 'P4O10', label: 'P₄O₁₀' }], value: 'P4S3' });
   const { formula: fx } = F.readout(d);
   function draw() {
     const k = pick.k, A = STATES[pick.from], B = STATES[pick.value];
@@ -147,26 +147,26 @@ const plain = (e, a) => { e.style.opacity = String(Math.max(0, Math.min(1, a)));
   const STATES = {
     PCl3: {
       dirs: [UP, DOWN, ...three(117.6), dirOf(90, 270)], on: [0, 0, 1, 1, 1, 0], len: 2.04, lone: 1,
-      head: 'PCl₃ is a trigonal pyramid: three chlorine atoms below the phosphorus atom, with its lone pair above.',
+      head: 'PCl₃ 是三角锥形：三个氯原子在磷原子下方，孤电子对在其上方。',
       tex: '\\mk{p}{\\text{P}_4} + \\mk{c}{6\\text{Cl}_2} \\longrightarrow \\mk{a}{4\\text{PCl}_3}',
     },
     PCl4: {
       dirs: [UP, DOWN, ...three(109.47), dirOf(90, 270)], on: [1, 0, 1, 1, 1, 0], len: 1.97, lone: 0,
-      head: 'PCl₄⁺, the cation of solid phosphorus pentachloride, is tetrahedral.',
+      head: 'PCl₄⁺ 是固态五氯化磷的阳离子，呈四面体形。',
       tex: '\\mk{s}{\\text{PCl}_5(s)}:\\ [\\mk{x}{\\text{PCl}_4{}^{+}}][\\mk{y}{\\text{PCl}_6{}^{-}}]',
     },
     PCl5: {
       dirs: [UP, DOWN, ...three(90), dirOf(90, 270)], on: [1, 1, 1, 1, 1, 0], len: 2.07, lone: 0,
-      head: 'PCl₅ in the gas phase is a trigonal bipyramid, with two axial and three equatorial chlorine atoms.',
+      head: 'PCl₅ 在气相中为三角双锥形，有两个轴向氯原子和三个赤道氯原子。',
       tex: '\\mk{a}{\\text{PCl}_3} + \\mk{c}{\\text{Cl}_2} \\longrightarrow \\mk{b}{\\text{PCl}_5}',
     },
     PCl6: {
       dirs: [UP, DOWN, ...three(90, [90, 180, 360]), dirOf(90, 270)], on: [1, 1, 1, 1, 1, 1], len: 2.14, lone: 0,
-      head: 'PCl₆⁻, formed when PCl₅ accepts a chloride ion, is octahedral.',
+      head: 'PCl₆⁻ 由 PCl₅ 接受一个氯离子形成，呈八面体形。',
       tex: '\\mk{b}{\\text{PCl}_5} + \\mk{c}{\\text{Cl}^{-}} \\longrightarrow \\mk{y}{\\text{PCl}_6{}^{-}}',
     },
   };
-  const pick = F.choice(d.controls, { label: '\\text{species}', aria: 'the phosphorus chloride', options: [{ value: 'PCl3', label: 'PCl₃' }, { value: 'PCl4', label: 'PCl₄⁺' }, { value: 'PCl5', label: 'PCl₅' }, { value: 'PCl6', label: 'PCl₆⁻' }], value: 'PCl3' });
+  const pick = F.choice(d.controls, { label: '\\text{物种}', aria: '磷的氯化物', options: [{ value: 'PCl3', label: 'PCl₃' }, { value: 'PCl4', label: 'PCl₄⁺' }, { value: 'PCl5', label: 'PCl₅' }, { value: 'PCl6', label: 'PCl₆⁻' }], value: 'PCl3' });
   const { formula: fx } = F.readout(d);
   function draw() {
     const k = pick.k, A = STATES[pick.from], B = STATES[pick.value], len = A.len + (B.len - A.len) * k;
@@ -184,8 +184,8 @@ const plain = (e, a) => { e.style.opacity = String(Math.max(0, Math.min(1, a)));
     const lone = A.lone + (B.lone - A.lone) * k;
     if (lone > 0.01) {
       const m = lobe(g, [0, 0, 0], UP, 1.0, PAL.ink); m.material.opacity = 0.35 * lone;
-      v.pickable(m, 'a lone pair');
-      plain(v.label('lone pair', [0, 1.05, 0], g, 14), lone);
+      v.pickable(m, '孤电子对');
+      plain(v.label('孤电子对', [0, 1.05, 0], g, 14), lone);
     }
     v.label('P', [0, 0, 0], g, -44);
     v.label('Cl', V.mul(atoms[3].p, K), g, 30);

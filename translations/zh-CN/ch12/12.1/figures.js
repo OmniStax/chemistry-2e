@@ -24,8 +24,8 @@ function band(ctx, l, t, r, b, color) { ctx.save(); ctx.fillStyle = color; ctx.f
   const K = Math.LN2 / 6, A = (t) => Math.pow(2, -t / 6), R = (t) => K * A(t);
   const DET = [0, 6, 12, 18, 24];
   const hold = () => { if (t2.v < t1.v) t2.set(t1.v); };
-  const t1 = ctl(d.controls, { label: '\\kt_{1}', cls: 'time', key: 't1', min: 0, max: 24, step: 0.1, value: 0, unit: 'h', dec: 2, detents: DET, aria: 'the earlier time, t1, in hours', onInput: hold });
-  const t2 = ctl(d.controls, { label: '\\kt_{2}', cls: 'time', key: 't2', min: 0, max: 24, step: 0.1, value: 6, unit: 'h', dec: 2, detents: DET, specials: [{ at: () => t1.v, label: 't₁' }], aria: 'the later time, t2, in hours', onInput: hold });
+  const t1 = ctl(d.controls, { label: '\\kt_{1}', cls: 'time', key: 't1', min: 0, max: 24, step: 0.1, value: 0, unit: 'h', dec: 2, detents: DET, aria: '较早的时刻 t1，单位为小时', onInput: hold });
+  const t2 = ctl(d.controls, { label: '\\kt_{2}', cls: 'time', key: 't2', min: 0, max: 24, step: 0.1, value: 6, unit: 'h', dec: 2, detents: DET, specials: [{ at: () => t1.v, label: 't₁' }], aria: '较晚的时刻 t2，单位为小时', onInput: hold });
   const ro = F.readout(d);
   const G = { l: 130, r: 770, t: 120, b: 470 };
   const ROWS = [['0.00', '1.000'], ['6.00', '0.500'], ['12.00', '0.250'], ['18.00', '0.125'], ['24.00', '0.0625']];
@@ -37,7 +37,7 @@ function band(ctx, l, t, r, b, color) { ctx.save(); ctx.fillStyle = color; ctx.f
   const H2O2 = '[\\text{H}_{2}\\text{O}_{2}]', UNIT = '\\ \\text{mol L}^{-1}\\,\\text{h}^{-1}';
   function table(ctx, a, b) {
     const ct = C('time'), cc = C('concentration'), cr = C('rate');
-    const heads = [['t', '(h)', ct], ['[H_{2}O_{2}]', '(mol L⁻¹)', cc], ['Δ[H_{2}O_{2}]', '(mol L⁻¹)', cc], ['Δt', '(h)', ct], ['rate', '(mol L⁻¹ h⁻¹)', cr]];
+    const heads = [['t', '(h)', ct], ['[H_{2}O_{2}]', '(mol L⁻¹)', cc], ['Δ[H_{2}O_{2}]', '(mol L⁻¹)', cc], ['Δt', '(h)', ct], ['速率', '(mol L⁻¹ h⁻¹)', cr]];
     heads.forEach(([h, u, c], i) => { text(ctx, h, COLX[i], 132, c, { size: 19, weight: 600, align: 'center' }); text(ctx, u, COLX[i], 158, PAL.muted, { size: 16, align: 'center' }); });
     line(ctx, 845, 176, 1385, 176, PAL.rule, 1.5);
     ROWS.forEach(([t, c], i) => {
@@ -59,7 +59,7 @@ function band(ctx, l, t, r, b, color) { ctx.save(); ctx.fillStyle = color; ctx.f
     const { ctx, H } = begin(d.c), lab = F.labeller(ctx, H, { headline: true });
     const a = t1.v, b = t2.v, same = b - a < 1e-9, ca = A(a), cb = A(b);
     const cc = C('concentration'), ct = C('time'), cr = C('rate'), guide = alpha(PAL.ink, 0.35);
-    const g = F.axes(ctx, G, [0, 24], [0, 1], { nx: 4, ny: 5, fx: (v) => fmt(v, 2), fy: (v) => fmt(v, 3), xl: 'time (h)', xc: ct, yl: '[H_{2}O_{2}] (mol/L)', yc: cc });
+    const g = F.axes(ctx, G, [0, 24], [0, 1], { nx: 4, ny: 5, fx: (v) => fmt(v, 2), fy: (v) => fmt(v, 3), xl: '时间（h）', xc: ct, yl: '[H_{2}O_{2}] (mol/L)', yc: cc });
     clipTo(ctx, G, () => {
       F.curve(ctx, A, 0, 24, g.X, g.Y, cc, 5, 160);
       const m = -R(a);
@@ -80,20 +80,20 @@ function band(ctx, l, t, r, b, color) { ctx.save(); ctx.fillStyle = color; ctx.f
       if (g.X(b) - g.X(a) > 40) lab.add('Δt', (g.X(a) + g.X(b)) / 2, g.Y(cb) + 6, 0, 1, ct, 18, 16);
     }
     const lx = G.r - 250, ly = G.t + 30;
-    line(ctx, lx, ly, lx + 44, ly, cr, 4); text(ctx, 'tangent at t_{1}', lx + 56, ly, PAL.ink, { size: 18 });
-    line(ctx, lx, ly + 30, lx + 44, ly + 30, cr, 4, [10, 10]); text(ctx, 'secant, t_{1} to t_{2}', lx + 56, ly + 30, PAL.ink, { size: 18 });
+    line(ctx, lx, ly, lx + 44, ly, cr, 4); text(ctx, '在 t_{1} 处的切线', lx + 56, ly, PAL.ink, { size: 18 });
+    line(ctx, lx, ly + 30, lx + 44, ly + 30, cr, 4, [10, 10]); text(ctx, '割线，t_{1} 到 t_{2}', lx + 56, ly + 30, PAL.ink, { size: 18 });
     lab.block(lx - 8, ly - 16, G.r, ly + 46);
     lab.flush();
     table(ctx, a, b);
-    topline(ctx, same ? 'At $\\kt_{2} = \\kt_{1}$ the secant has become the tangent, and its slope gives the instantaneous rate.' : 'Bring $\\kt_{2}$ to $\\kt_{1}$ and the secant turns into the tangent at $\\kt_{1}$.');
+    topline(ctx, same ? '当 $\\kt_{2} = \\kt_{1}$ 时，割线已变成切线，其斜率给出瞬时速率。' : '让 $\\kt_{2}$ 趋近 $\\kt_{1}$，割线就变成 $\\kt_{1}$ 处的切线。');
     if (same) {
       ro.set(`\\mk{rate}{\\krate} = \\mk{frac}{-\\frac{\\Delta${conc(H2O2)}}{\\kdt}} = \\mk{val}{${rt(sig(R(a)) + UNIT)}}`,
-        a < 1e-9 ? 'At $\\kt_{1} = 0$ this is the initial rate.' : `This is the instantaneous rate at $\\kt_{1}$ = ${fmt(a, 2)} h.`, { form: 'tangent' });
+        a < 1e-9 ? '当 $\\kt_{1} = 0$ 时，这就是初始速率。' : `这是 $\\kt_{1}$ = ${fmt(a, 2)} h 时的瞬时速率。`, { form: 'tangent' });
       return;
     }
     const r = -(cb - ca) / (b - a);
     ro.set(`\\mk{rate}{\\krate} = \\mk{frac}{-\\frac{${conc(H2O2 + '_{t_{2}}')} - ${conc(H2O2 + '_{t_{1}}')}}{\\kt_{2} - \\kt_{1}}} = \\mk{num}{-\\frac{${conc(fc(cb))} - ${conc(fc(ca))}}{${tim(fmt(b, 2))} - ${tim(fmt(a, 2))}}} = \\mk{val}{${rt(sig(r) + UNIT)}}`,
-      `The tangent at $\\kt_{1}$ gives the instantaneous rate there, $${rt(sig(R(a)))}$ mol L⁻¹ h⁻¹.`, { form: 'secant' });
+      `$\\kt_{1}$ 处的切线给出该处的瞬时速率，$${rt(sig(R(a)))}$ mol L⁻¹ h⁻¹。`, { form: 'secant' });
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -115,7 +115,7 @@ function band(ctx, l, t, r, b, color) { ctx.save(); ctx.fillStyle = color; ctx.f
     h2: { f: (t) => 1.5 * (C0 - C0 * Math.exp(-KS * t)), name: '[H_{2}]', tex: '\\text{H}_{2}', at: 1500, u: [0.35, -1] },
   };
   const slope = { nh3: (t) => -KS * SP.nh3.f(t), n2: (t) => KS * SP.nh3.f(t) / 2, h2: (t) => 1.5 * KS * SP.nh3.f(t) };
-  const tS = ctl(d.controls, { label: '\\kt', cls: 'time', min: 0, max: 2000, step: 10, value: 500, unit: 's', dec: 0, aria: 'the time at which the tangents are drawn, in seconds' });
+  const tS = ctl(d.controls, { label: '\\kt', cls: 'time', min: 0, max: 2000, step: 10, value: 500, unit: 's', dec: 0, aria: '作切线的时刻，单位为秒' });
   const ro = F.readout(d);
   const G = { l: 190, r: 1250, t: 120, b: 450 };
   const sci = (v) => { const e = Math.floor(Math.log10(Math.abs(v))), m = v / 10 ** e; return `${minus(m.toFixed(2))} \\times 10^{${e}}`; };
@@ -124,7 +124,7 @@ function band(ctx, l, t, r, b, color) { ctx.save(); ctx.fillStyle = color; ctx.f
   function draw() {
     const { ctx, H } = begin(d.c), lab = F.labeller(ctx, H, { headline: true });
     const t = tS.v, ct = C('time'), guide = alpha(PAL.ink, 0.35);
-    const g = F.axes(ctx, G, [0, 2000], [0, 5], { nx: 4, ny: 5, fy: (v) => (v ? fmt(v, 1) + ' × 10⁻³' : '0'), xl: 'time (s)', xc: ct, yl: 'concentration (M)', yc: C('concentration') });
+    const g = F.axes(ctx, G, [0, 2000], [0, 5], { nx: 4, ny: 5, fy: (v) => (v ? fmt(v, 1) + ' × 10⁻³' : '0'), xl: '时间（s）', xc: ct, yl: '浓度（M）', yc: C('concentration') });
     clipTo(ctx, G, () => line(ctx, g.X(t), G.t, g.X(t), G.b, guide, 2, [10, 10]));
     for (const k of ['nh3', 'n2', 'h2']) {
       const s = SP[k], c = F.ref(k), y = s.f(t), m = slope[k](t);
@@ -137,10 +137,10 @@ function band(ctx, l, t, r, b, color) { ctx.save(); ctx.fillStyle = color; ctx.f
       lab.add(s.name, g.X(s.at), g.Y(s.f(s.at)), s.u[0], s.u[1], F.ref(k), 20, 26);
     }
     lab.flush();
-    topline(ctx, 'The three tangents at $\\kt$ flatten together and keep the ratio 2 : 1 : 3 of the coefficients.');
+    topline(ctx, '在 $\\kt$ 处的三条切线一起变平，并保持系数的比 2 : 1 : 3。');
     const v = slope.n2(t) * 1e-3;
     ro.set(`\\krate = -\\frac{1}{2}\\,${frac('nh3')} = ${frac('n2')} = \\frac{1}{3}\\,${frac('h2')} = ${rt(sci(v) + '\\ M\\text{/s}')}`,
-      `The tangents' slopes are $${frac('nh3')} = ${rt(sci(slope.nh3(t) * 1e-3))}$, $${frac('n2')} = ${rt(sci(v))}$ and $${frac('h2')} = ${rt(sci(slope.h2(t) * 1e-3))}$ M/s.`);
+      `切线的斜率分别为 $${frac('nh3')} = ${rt(sci(slope.nh3(t) * 1e-3))}$、$${frac('n2')} = ${rt(sci(v))}$ 和 $${frac('h2')} = ${rt(sci(slope.h2(t) * 1e-3))}$ M/s。`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

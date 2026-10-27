@@ -16,7 +16,7 @@ const RAD = Math.PI / 180;
 (function () {
   const H = 580, d = sim('sim-polarization', H);
   const R = { O: 38, H: 27, C: 38, Cl: 44, N: 38 }, GAP = 15, ER = 7.5;
-  const NAME = { O: 'an oxygen atom, O', H: 'a hydrogen atom, H', C: 'the carbon atom, C', Cl: 'a chlorine atom, Cl', N: 'the nitrogen atom, N' };
+  const NAME = { O: '氧原子 O', H: '氢原子 H', C: '碳原子 C', Cl: '氯原子 Cl', N: '氮原子 N' };
   const at = (x, y, a, L) => [x + L * Math.cos(a * RAD), y + L * Math.sin(a * RAD)];
   /* atoms [element, x, y, formal charge, lone-pair angles, label direction]; bonds [giver, taker, order] */
   const MOL = {
@@ -45,10 +45,10 @@ const RAD = Math.PI / 180;
   const sgn = (x, dec) => { const v = +x.toFixed(dec); return v === 0 ? '0' : (v > 0 ? '+' : '-') + Math.abs(v).toFixed(dec); };
   const shown = (x, dec) => sgn(x, dec).replace('-', '−');
 
-  const mol = F.choice(d.controls, { label: '\\text{species}', aria: 'the covalent species', value: 'H2O',
+  const mol = F.choice(d.controls, { label: '\\text{物种}', aria: '共价物种', value: 'H2O',
     options: [{ value: 'H2O', label: 'H₂O' }, { value: 'CCl4', label: 'CCl₄' }, { value: 'NO3', label: 'NO₃⁻' }], });
-  const pol = ctl(d.controls, { label: '\\text{polarization}', cls: '', key: 'polarization', min: 0, max: 100, step: 1, value: 100, unit: '%', dec: 0,
-    aria: 'polarization of each bond toward the more electronegative atom', specials: [{ at: 100, label: 'complete transfer' }] });
+  const pol = ctl(d.controls, { label: '\\text{极化}', cls: '', key: 'polarization', min: 0, max: 100, step: 1, value: 100, unit: '%', dec: 0,
+    aria: '每个键向电负性更大的原子的极化', specials: [{ at: 100, label: '完全转移' }] });
   const ro = F.readout(d);
   let hits = []; F.hover(d.stage, () => hits);
 
@@ -80,11 +80,11 @@ const RAD = Math.PI / 180;
       line(ctx, ax + ux * ga, ay + uy * ga, bx - ux * gb, by - uy * gb, alpha(PAL.ink, 0.35), 2, [4, 8]);
       const mx = (ax + ux * ga + bx - ux * gb) / 2, my = (ay + uy * ga + by - uy * gb) / 2;
       const ex = bx - ux * (gb + GAP), ey = by - uy * (gb + GAP);
-      pair(mx + p * (ex - mx), my + p * (ey - my), -uy, ux, n === 2 ? [-26, -10, 10, 26] : [-8, 8], n === 2 ? 'two bonding pairs of electrons' : 'a bonding pair of electrons');
+      pair(mx + p * (ex - mx), my + p * (ey - my), -uy, ux, n === 2 ? [-26, -10, 10, 26] : [-8, 8], n === 2 ? '两个成键电子对' : '成键电子对');
     });
     m.atoms.forEach(([el, x, y, , lone]) => lone.forEach((a) => {
       const [cx, cy] = at(x, y, a, R[el] + GAP);
-      pair(cx, cy, -Math.sin(a * RAD), Math.cos(a * RAD), [-8, 8], 'a lone pair of electrons');
+      pair(cx, cy, -Math.sin(a * RAD), Math.cos(a * RAD), [-8, 8], '孤电子对');
     }));
     m.atoms.forEach(([el, x, y, , , la], i) => {
       ctx.save(); ctx.fillStyle = F.el(el); ctx.strokeStyle = alpha(PAL.ink, 0.5); ctx.lineWidth = 1.5;
@@ -97,9 +97,9 @@ const RAD = Math.PI / 180;
   function draw() {
     const { ctx } = begin(d.c), p = pol.v / 100, key = mol.value, X = MOL[key].to;
     hits = [];
-    const lines = topline(ctx, p === 1 ? `Every bonding pair now belongs to ${X}, and each charge is an oxidation number.`
-      : p === 0 ? 'Each bonding pair is shared equally, as between two atoms of the same element.'
-      : `The bonding pairs lean toward ${X}, the more electronegative atom; at 100% each one belongs to ${X}.`);
+    const lines = topline(ctx, p === 1 ? `每个成键电子对现在都属于 ${X}，每个电荷就是氧化数。`
+      : p === 0 ? '每个成键电子对被平均共用，就像在同一种元素的两个原子之间一样。'
+      : `成键电子对偏向电负性更大的原子 ${X}；到 100% 时，每一对都属于 ${X}。`);
     const lab = F.labeller(ctx, H, { headline: lines });
     for (const o of Object.keys(MOL)) {
       if (o === key) continue;
@@ -107,7 +107,7 @@ const RAD = Math.PI / 180;
     }
     mol.only(ctx, key, () => { scene(ctx, key, p, lab, true); lab.flush(); });
     dot(ctx, 80, H - 30, F.el('e-'), true, ER);
-    text(ctx, 'electron', 98, H - 30, PAL.ink, { size: 18, align: 'left' });
+    text(ctx, '电子', 98, H - 30, PAL.ink, { size: 18, align: 'left' });
     setReadout();
   }
   register(d.fig, { update: () => {}, draw });

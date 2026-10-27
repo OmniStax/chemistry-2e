@@ -1,7 +1,7 @@
 {
  "id": "14",
  "dir": "ch14",
- "title": "Acid-Base Equilibria",
+ "title": "酸碱平衡",
  "intro": {
   "module": "m68802",
   "slug": "14-introduction"
@@ -10,43 +10,43 @@
   {
    "id": "14.1",
    "module": "m68803",
-   "title": "Brønsted-Lowry Acids and Bases",
+   "title": "布朗斯特–劳里酸和碱",
    "slug": "14-1-br-nsted-lowry-acids-and-bases"
   },
   {
    "id": "14.2",
    "module": "m68804",
-   "title": "pH and pOH",
+   "title": "pH 和 pOH",
    "slug": "14-2-ph-and-poh"
   },
   {
    "id": "14.3",
    "module": "m68805",
-   "title": "Relative Strengths of Acids and Bases",
+   "title": "酸和碱的相对强度",
    "slug": "14-3-relative-strengths-of-acids-and-bases"
   },
   {
    "id": "14.4",
    "module": "m68806",
-   "title": "Hydrolysis of Salts",
+   "title": "盐的水解",
    "slug": "14-4-hydrolysis-of-salts"
   },
   {
    "id": "14.5",
    "module": "m68807",
-   "title": "Polyprotic Acids",
+   "title": "多元酸",
    "slug": "14-5-polyprotic-acids"
   },
   {
    "id": "14.6",
    "module": "m68808",
-   "title": "Buffers",
+   "title": "缓冲溶液",
    "slug": "14-6-buffers"
   },
   {
    "id": "14.7",
    "module": "m68809",
-   "title": "Acid-Base Titrations",
+   "title": "酸碱滴定",
    "slug": "14-7-acid-base-titrations"
   }
  ],
@@ -54,7 +54,7 @@
   {
    "sym": "[H3O+]",
    "concept": "molarity",
-   "meaning": "the molar concentration of hydronium ion",
+   "meaning": "水合氢离子的物质的量浓度",
    "unit": "mol/L (M)",
    "section": "14.1",
    "anchor": "14.1-autoionization"
@@ -62,7 +62,7 @@
   {
    "sym": "[OH-]",
    "concept": "molarity",
-   "meaning": "the molar concentration of hydroxide ion",
+   "meaning": "氢氧根离子的物质的量浓度",
    "unit": "mol/L (M)",
    "section": "14.1",
    "anchor": "14.1-autoionization"
@@ -70,7 +70,7 @@
   {
    "sym": "K_w",
    "concept": "ion-product-constant-for-water",
-   "meaning": "the ion-product constant for water, 1.0 × 10⁻¹⁴ at 25 °C",
+   "meaning": "水的离子积常数，25 °C 时为 1.0 × 10⁻¹⁴",
    "unit": "none (concentrations in M)",
    "section": "14.1",
    "anchor": "14.1-autoionization"
@@ -78,7 +78,7 @@
   {
    "sym": "x_ice",
    "concept": "ice-change-terms",
-   "meaning": "the change in concentration defined by the ICE table, equal to [H₃O⁺] = [OH⁻] in pure water",
+   "meaning": "ICE 表中定义的浓度变化量，在纯水中等于 [H₃O⁺] = [OH⁻]",
    "unit": "mol/L (M)",
    "section": "14.1",
    "anchor": "14.1-ex-pure-water"
@@ -86,7 +86,7 @@
   {
    "sym": "pH",
    "concept": "ph",
-   "meaning": "the negative base-10 logarithm of the hydronium ion molarity",
+   "meaning": "水合氢离子的物质的量浓度以 10 为底的负对数",
    "unit": "none",
    "section": "14.2",
    "anchor": "14.2-p-functions"
@@ -94,7 +94,7 @@
   {
    "sym": "pOH",
    "concept": "poh",
-   "meaning": "the negative base-10 logarithm of the hydroxide ion molarity",
+   "meaning": "氢氧根离子的物质的量浓度以 10 为底的负对数",
    "unit": "none",
    "section": "14.2",
    "anchor": "14.2-p-functions"
@@ -102,7 +102,7 @@
   {
    "sym": "pK_w",
    "concept": "ion-product-constant-for-water",
-   "meaning": "the negative logarithm of K_w, 14.00 at 25 °C",
+   "meaning": "K_w 的负对数，25 °C 时为 14.00",
    "unit": "none",
    "section": "14.2",
    "anchor": "14.2-p-functions"
@@ -110,7 +110,7 @@
   {
    "sym": "K_a",
    "concept": "acid-ionization-constant",
-   "meaning": "the acid ionization constant of a weak acid HA",
+   "meaning": "弱酸 HA 的酸电离常数",
    "unit": "none (concentrations in M)",
    "section": "14.3",
    "anchor": "14.3-ionization",
@@ -119,7 +119,7 @@
   {
    "sym": "K_b_ion",
    "concept": "base-ionization-constant",
-   "meaning": "the base ionization constant of a weak base B",
+   "meaning": "弱碱 B 的碱电离常数",
    "unit": "none (concentrations in M)",
    "section": "14.3",
    "anchor": "14.3-ionization",
@@ -128,7 +128,7 @@
   {
    "sym": "[HA]",
    "concept": "molarity",
-   "meaning": "the equilibrium molar concentration of the un-ionized acid HA",
+   "meaning": "未电离的酸 HA 的平衡物质的量浓度",
    "unit": "mol/L (M)",
    "section": "14.3",
    "anchor": "14.3-ionization"
@@ -136,7 +136,7 @@
   {
    "sym": "[A-]",
    "concept": "molarity",
-   "meaning": "the equilibrium molar concentration of the conjugate base A⁻",
+   "meaning": "共轭碱 A⁻ 的平衡物质的量浓度",
    "unit": "mol/L (M)",
    "section": "14.3",
    "anchor": "14.3-ionization"
@@ -144,7 +144,7 @@
   {
    "sym": "[B]",
    "concept": "molarity",
-   "meaning": "the equilibrium molar concentration of the un-ionized base B",
+   "meaning": "未电离的碱 B 的平衡物质的量浓度",
    "unit": "mol/L (M)",
    "section": "14.3",
    "anchor": "14.3-ionization"
@@ -152,7 +152,7 @@
   {
    "sym": "[HB+]",
    "concept": "molarity",
-   "meaning": "the equilibrium molar concentration of the conjugate acid HB⁺",
+   "meaning": "共轭酸 HB⁺ 的平衡物质的量浓度",
    "unit": "mol/L (M)",
    "section": "14.3",
    "anchor": "14.3-ionization"
@@ -160,7 +160,7 @@
   {
    "sym": "[HA]_0",
    "concept": "molarity",
-   "meaning": "the initial (formal) molar concentration of the acid",
+   "meaning": "酸的初始（形式）物质的量浓度",
    "unit": "mol/L (M)",
    "section": "14.3",
    "anchor": "14.3-ionization"
@@ -168,7 +168,7 @@
   {
    "sym": "[H3O+]_eq",
    "concept": "molarity",
-   "meaning": "the equilibrium molar concentration of hydronium ion",
+   "meaning": "水合氢离子的平衡物质的量浓度",
    "unit": "mol/L (M)",
    "section": "14.3",
    "anchor": "14.3-ionization"
@@ -176,7 +176,7 @@
   {
    "sym": "x_ice",
    "concept": "ice-change-terms",
-   "meaning": "the change in concentration defined by the ICE table, equal to the equilibrium [H₃O⁺] or [OH⁻]",
+   "meaning": "ICE 表中定义的浓度变化量，等于平衡时的 [H₃O⁺] 或 [OH⁻]",
    "unit": "mol/L (M)",
    "section": "14.3",
    "anchor": "14.3-calculations"
@@ -184,7 +184,7 @@
   {
    "sym": "K_a1",
    "concept": "acid-ionization-constant",
-   "meaning": "the ionization constant for the first step of a polyprotic acid",
+   "meaning": "多元酸第一步的电离常数",
    "unit": "none (concentrations in M)",
    "section": "14.5",
    "anchor": "14.5-diprotic"
@@ -192,7 +192,7 @@
   {
    "sym": "K_a2",
    "concept": "acid-ionization-constant",
-   "meaning": "the ionization constant for the second step of a polyprotic acid",
+   "meaning": "多元酸第二步的电离常数",
    "unit": "none (concentrations in M)",
    "section": "14.5",
    "anchor": "14.5-diprotic"
@@ -200,7 +200,7 @@
   {
    "sym": "K_a3",
    "concept": "acid-ionization-constant",
-   "meaning": "the ionization constant for the third step of a triprotic acid",
+   "meaning": "三元酸第三步的电离常数",
    "unit": "none (concentrations in M)",
    "section": "14.5",
    "anchor": "14.5-triprotic"
@@ -208,7 +208,7 @@
   {
    "sym": "K_b1",
    "concept": "base-ionization-constant",
-   "meaning": "the ionization constant for the first step of a diprotic base",
+   "meaning": "二元碱第一步的电离常数",
    "unit": "none (concentrations in M)",
    "section": "14.5",
    "anchor": "14.5-bases"
@@ -216,7 +216,7 @@
   {
    "sym": "K_b2",
    "concept": "base-ionization-constant",
-   "meaning": "the ionization constant for the second step of a diprotic base",
+   "meaning": "二元碱第二步的电离常数",
    "unit": "none (concentrations in M)",
    "section": "14.5",
    "anchor": "14.5-bases"
@@ -224,7 +224,7 @@
   {
    "sym": "pK_a",
    "concept": "acid-ionization-constant",
-   "meaning": "the negative logarithm of the acid ionization constant",
+   "meaning": "酸电离常数的负对数",
    "unit": "none",
    "section": "14.6",
    "anchor": "14.6-henderson-hasselbalch"
@@ -232,7 +232,7 @@
   {
    "sym": "pK_b",
    "concept": "base-ionization-constant",
-   "meaning": "the negative logarithm of the base ionization constant",
+   "meaning": "碱电离常数的负对数",
    "unit": "none",
    "section": "14.6",
    "anchor": "14.6-henderson-hasselbalch"
@@ -240,7 +240,7 @@
   {
    "sym": "pH",
    "concept": "ph",
-   "meaning": "the pH of the buffer solution, the negative base-10 logarithm of its hydronium ion molarity",
+   "meaning": "缓冲溶液的 pH，即其水合氢离子的物质的量浓度以 10 为底的负对数",
    "unit": "none",
    "section": "14.6",
    "anchor": "14.6-how-buffers-work"
@@ -248,7 +248,7 @@
   {
    "sym": "[HA]",
    "concept": "molarity",
-   "meaning": "the molar concentration of the weak acid of the buffer pair",
+   "meaning": "缓冲对中弱酸的物质的量浓度",
    "unit": "mol/L (M)",
    "section": "14.6",
    "anchor": "14.6-henderson-hasselbalch"
@@ -256,7 +256,7 @@
   {
    "sym": "[A-]",
    "concept": "molarity",
-   "meaning": "the molar concentration of the conjugate base of the buffer pair",
+   "meaning": "缓冲对中共轭碱的物质的量浓度",
    "unit": "mol/L (M)",
    "section": "14.6",
    "anchor": "14.6-henderson-hasselbalch"
@@ -264,7 +264,7 @@
   {
    "sym": "V",
    "concept": "volume",
-   "meaning": "the volume of titrant added, or of the whole titration solution where an amount is divided by it",
+   "meaning": "所加滴定剂的体积；在用物质的量除以体积时，则为整个滴定溶液的体积",
    "unit": "mL",
    "section": "14.7",
    "anchor": "14.7-titration-curves"
@@ -272,7 +272,7 @@
   {
    "sym": "n",
    "concept": "mole",
-   "meaning": "the amount of acid or base in the titration solution, in moles",
+   "meaning": "滴定溶液中酸或碱的物质的量，以摩尔为单位",
    "unit": "mol",
    "section": "14.7",
    "anchor": "14.7-titration-curves"
@@ -280,7 +280,7 @@
   {
    "sym": "pH",
    "concept": "ph",
-   "meaning": "the pH of the titration solution, the negative base-10 logarithm of its hydronium ion molarity",
+   "meaning": "滴定溶液的 pH，即其水合氢离子的物质的量浓度以 10 为底的负对数",
    "unit": "none",
    "section": "14.7",
    "anchor": "14.7-titration-curves"
@@ -288,7 +288,7 @@
   {
    "sym": "pK_a",
    "concept": "acid-ionization-constant",
-   "meaning": "the negative logarithm of the acid ionization constant, equal to the pH at the half-equivalence point",
+   "meaning": "酸电离常数的负对数，等于半化学计量点处的 pH",
    "unit": "none",
    "section": "14.7",
    "anchor": "14.7-titration-curves"
@@ -296,7 +296,7 @@
   {
    "sym": "T",
    "concept": "temperature",
-   "meaning": "the temperature",
+   "meaning": "温度",
    "unit": "°C",
    "section": "14.1",
    "anchor": "14.1-autoionization"
@@ -304,7 +304,7 @@
   {
    "sym": "K_a",
    "concept": "acid-ionization-constant",
-   "meaning": "the acid ionization constant of a weak acid HA",
+   "meaning": "弱酸 HA 的酸电离常数",
    "unit": "none (concentrations in M)",
    "section": "14.4",
    "anchor": "14.4-acidic-ions"
@@ -312,7 +312,7 @@
   {
    "sym": "K_b_ion",
    "concept": "base-ionization-constant",
-   "meaning": "the base ionization constant of a weak base B",
+   "meaning": "弱碱 B 的碱电离常数",
    "unit": "none (concentrations in M)",
    "section": "14.4",
    "anchor": "14.4-acidic-ions"
@@ -320,7 +320,7 @@
   {
    "sym": "K_w",
    "concept": "ion-product-constant-for-water",
-   "meaning": "the ion-product constant for water, 1.0 × 10⁻¹⁴ at 25 °C",
+   "meaning": "水的离子积常数，25 °C 时为 1.0 × 10⁻¹⁴",
    "unit": "none (concentrations in M)",
    "section": "14.4",
    "anchor": "14.4-acidic-ions"
@@ -328,7 +328,7 @@
   {
    "sym": "[H3O+]",
    "concept": "molarity",
-   "meaning": "the molar concentration of hydronium ion",
+   "meaning": "水合氢离子的物质的量浓度",
    "unit": "mol/L (M)",
    "section": "14.4",
    "anchor": "14.4-ex-anilinium"
@@ -336,7 +336,7 @@
   {
    "sym": "pH",
    "concept": "ph",
-   "meaning": "the negative base-10 logarithm of the hydronium ion molarity",
+   "meaning": "水合氢离子的物质的量浓度以 10 为底的负对数",
    "unit": "none",
    "section": "14.4",
    "anchor": "14.4-ex-anilinium"
@@ -344,7 +344,7 @@
   {
    "sym": "x_ice",
    "concept": "ice-change-terms",
-   "meaning": "the change in concentration defined by the ICE table, equal to the equilibrium [H₃O⁺] or [OH⁻]",
+   "meaning": "ICE 表中定义的浓度变化量，等于平衡时的 [H₃O⁺] 或 [OH⁻]",
    "unit": "mol/L (M)",
    "section": "14.4",
    "anchor": "14.4-ex-anilinium"
@@ -352,7 +352,7 @@
   {
    "sym": "[OH-]",
    "concept": "molarity",
-   "meaning": "the molar concentration of hydroxide ion",
+   "meaning": "氢氧根离子的物质的量浓度",
    "unit": "mol/L (M)",
    "section": "14.4",
    "anchor": "14.4-ex-acetate"
@@ -360,7 +360,7 @@
   {
    "sym": "pK_a",
    "concept": "acid-ionization-constant",
-   "meaning": "the negative logarithm of the acid ionization constant",
+   "meaning": "酸电离常数的负对数",
    "unit": "none",
    "section": "14.4",
    "anchor": "14.4-metal-ions"
@@ -368,7 +368,7 @@
   {
    "sym": "n",
    "concept": "mole",
-   "meaning": "the amount of strong acid or base added to the buffer",
+   "meaning": "加入缓冲溶液的强酸或强碱的物质的量",
    "unit": "mol",
    "section": "14.6",
    "anchor": "14.6-how-buffers-work"
@@ -376,7 +376,7 @@
   {
    "sym": "[H3O+]",
    "concept": "molarity",
-   "meaning": "the molar concentration of hydronium ion",
+   "meaning": "水合氢离子的物质的量浓度",
    "unit": "mol/L (M)",
    "section": "14.6",
    "anchor": "14.6-how-buffers-work"
@@ -384,7 +384,7 @@
   {
    "sym": "[OH-]",
    "concept": "molarity",
-   "meaning": "the molar concentration of hydroxide ion",
+   "meaning": "氢氧根离子的物质的量浓度",
    "unit": "mol/L (M)",
    "section": "14.6",
    "anchor": "14.6-how-buffers-work"
@@ -392,7 +392,7 @@
   {
    "sym": "K_a",
    "concept": "acid-ionization-constant",
-   "meaning": "the acid ionization constant of a weak acid HA",
+   "meaning": "弱酸 HA 的酸电离常数",
    "unit": "none (concentrations in M)",
    "section": "14.6",
    "anchor": "14.6-how-buffers-work"
@@ -400,7 +400,7 @@
   {
    "sym": "pOH",
    "concept": "poh",
-   "meaning": "the negative base-10 logarithm of the hydroxide ion molarity",
+   "meaning": "氢氧根离子的物质的量浓度以 10 为底的负对数",
    "unit": "none",
    "section": "14.6",
    "anchor": "14.6-how-buffers-work"
@@ -408,7 +408,7 @@
   {
    "sym": "[H3O+]",
    "concept": "molarity",
-   "meaning": "the molar concentration of hydronium ion",
+   "meaning": "水合氢离子的物质的量浓度",
    "unit": "mol/L (M)",
    "section": "14.7",
    "anchor": "14.7-titration-curves"
@@ -416,7 +416,7 @@
   {
    "sym": "[OH-]",
    "concept": "molarity",
-   "meaning": "the molar concentration of hydroxide ion",
+   "meaning": "氢氧根离子的物质的量浓度",
    "unit": "mol/L (M)",
    "section": "14.7",
    "anchor": "14.7-titration-curves"
@@ -424,7 +424,7 @@
   {
    "sym": "[A-]",
    "concept": "molarity",
-   "meaning": "the equilibrium molar concentration of the conjugate base A⁻",
+   "meaning": "共轭碱 A⁻ 的平衡物质的量浓度",
    "unit": "mol/L (M)",
    "section": "14.7",
    "anchor": "14.7-titration-curves"
@@ -432,7 +432,7 @@
   {
    "sym": "[HA]",
    "concept": "molarity",
-   "meaning": "the equilibrium molar concentration of the un-ionized acid HA",
+   "meaning": "未电离的酸 HA 的平衡物质的量浓度",
    "unit": "mol/L (M)",
    "section": "14.7",
    "anchor": "14.7-titration-curves"
@@ -440,7 +440,7 @@
   {
    "sym": "pOH",
    "concept": "poh",
-   "meaning": "the negative base-10 logarithm of the hydroxide ion molarity",
+   "meaning": "氢氧根离子的物质的量浓度以 10 为底的负对数",
    "unit": "none",
    "section": "14.7",
    "anchor": "14.7-titration-curves"
@@ -448,7 +448,7 @@
   {
    "sym": "K_a",
    "concept": "acid-ionization-constant",
-   "meaning": "the acid ionization constant of a weak acid HA",
+   "meaning": "弱酸 HA 的酸电离常数",
    "unit": "none (concentrations in M)",
    "section": "14.7",
    "anchor": "14.7-titration-curves"
@@ -456,7 +456,7 @@
   {
    "sym": "K_b_ion",
    "concept": "base-ionization-constant",
-   "meaning": "the base ionization constant of a weak base B",
+   "meaning": "弱碱 B 的碱电离常数",
    "unit": "none (concentrations in M)",
    "section": "14.7",
    "anchor": "14.7-titration-curves"
@@ -464,7 +464,7 @@
   {
    "sym": "K_w",
    "concept": "ion-product-constant-for-water",
-   "meaning": "the ion-product constant for water, 1.0 × 10⁻¹⁴ at 25 °C",
+   "meaning": "水的离子积常数，25 °C 时为 1.0 × 10⁻¹⁴",
    "unit": "none (concentrations in M)",
    "section": "14.7",
    "anchor": "14.7-titration-curves"
@@ -472,7 +472,7 @@
   {
    "sym": "pK_w",
    "concept": "ion-product-constant-for-water",
-   "meaning": "the negative logarithm of K_w, 14.00 at 25 °C",
+   "meaning": "K_w 的负对数，25 °C 时为 14.00",
    "unit": "none",
    "section": "14.7",
    "anchor": "14.7-titration-curves"
@@ -480,7 +480,7 @@
   {
    "sym": "K_w",
    "concept": "ion-product-constant-for-water",
-   "meaning": "the ion-product constant for water, 1.0 × 10⁻¹⁴ at 25 °C",
+   "meaning": "水的离子积常数，25 °C 时为 1.0 × 10⁻¹⁴",
    "unit": "none (concentrations in M)",
    "section": "14.2",
    "anchor": "14.2-acidic-basic"
@@ -488,7 +488,7 @@
   {
    "sym": "[H3O+]",
    "concept": "molarity",
-   "meaning": "the molar concentration of hydronium ion",
+   "meaning": "水合氢离子的物质的量浓度",
    "unit": "mol/L (M)",
    "section": "14.2",
    "anchor": "14.2-p-functions"
@@ -496,7 +496,7 @@
   {
    "sym": "[OH-]",
    "concept": "molarity",
-   "meaning": "the molar concentration of hydroxide ion",
+   "meaning": "氢氧根离子的物质的量浓度",
    "unit": "mol/L (M)",
    "section": "14.2",
    "anchor": "14.2-p-functions"
@@ -504,7 +504,7 @@
   {
    "sym": "T",
    "concept": "temperature",
-   "meaning": "the temperature",
+   "meaning": "温度",
    "unit": "°C",
    "section": "14.2",
    "anchor": "14.2-neutral-ph"
@@ -512,7 +512,7 @@
   {
    "sym": "K_w",
    "concept": "ion-product-constant-for-water",
-   "meaning": "the ion-product constant for water, 1.0 × 10⁻¹⁴ at 25 °C",
+   "meaning": "水的离子积常数，25 °C 时为 1.0 × 10⁻¹⁴",
    "unit": "none (concentrations in M)",
    "section": "14.3",
    "anchor": "14.3-conjugate"
@@ -520,7 +520,7 @@
   {
    "sym": "[H3O+]",
    "concept": "molarity",
-   "meaning": "the molar concentration of hydronium ion",
+   "meaning": "水合氢离子的物质的量浓度",
    "unit": "mol/L (M)",
    "section": "14.3",
    "anchor": "14.3-ionization"
@@ -528,7 +528,7 @@
   {
    "sym": "[OH-]",
    "concept": "molarity",
-   "meaning": "the molar concentration of hydroxide ion",
+   "meaning": "氢氧根离子的物质的量浓度",
    "unit": "mol/L (M)",
    "section": "14.3",
    "anchor": "14.3-ionization"
@@ -536,7 +536,7 @@
   {
    "sym": "pH",
    "concept": "ph",
-   "meaning": "the negative base-10 logarithm of the hydronium ion molarity",
+   "meaning": "水合氢离子的物质的量浓度以 10 为底的负对数",
    "unit": "none",
    "section": "14.3",
    "anchor": "14.3-calculations"
@@ -544,7 +544,7 @@
   {
    "sym": "pK_w",
    "concept": "ion-product-constant-for-water",
-   "meaning": "the negative logarithm of K_w, 14.00 at 25 °C",
+   "meaning": "K_w 的负对数，25 °C 时为 14.00",
    "unit": "none",
    "section": "14.3",
    "anchor": "14.3-calculations"
@@ -552,7 +552,7 @@
   {
    "sym": "pOH",
    "concept": "poh",
-   "meaning": "the negative base-10 logarithm of the hydroxide ion molarity",
+   "meaning": "氢氧根离子的物质的量浓度以 10 为底的负对数",
    "unit": "none",
    "section": "14.3",
    "anchor": "14.3-calculations"
@@ -560,7 +560,7 @@
   {
    "sym": "[H3O+]",
    "concept": "molarity",
-   "meaning": "the molar concentration of hydronium ion",
+   "meaning": "水合氢离子的物质的量浓度",
    "unit": "mol/L (M)",
    "section": "14.5",
    "anchor": "14.5-diprotic"

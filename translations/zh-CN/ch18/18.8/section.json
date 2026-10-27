@@ -2,31 +2,39 @@
  "id": "18.8",
  "module": "m68836",
  "chapter": "18",
- "title": "Occurrence, Preparation, and Properties of Phosphorus",
- "short": "Phosphorus",
- "lead": "Phosphorus is prepared industrially from calcium phosphate, and the preparation of many of its compounds begins with its oxide P<sub>4</sub>O<sub>10</sub>. It forms two common oxides, P<sub>4</sub>O<sub>6</sub> and P<sub>4</sub>O<sub>10</sub>, and halides with the halogens, the most important of them the chlorides PCl<sub>3</sub> and PCl<sub>5</sub>.",
+ "title": "磷的存在、制备与性质",
+ "short": "磷",
+ "lead": "磷在工业上由磷酸钙制得，它的许多化合物的制备都从其氧化物 P<sub>4</sub>O<sub>10</sub> 开始。它形成两种常见的氧化物 P<sub>4</sub>O<sub>6</sub> 和 P<sub>4</sub>O<sub>10</sub>，并与卤素形成卤化物，其中最重要的是氯化物 PCl<sub>3</sub> 和 PCl<sub>5</sub>。",
  "objectives": [
-  "Describe the properties, preparation, and uses of phosphorus"
+  "描述磷的性质、制备方法和用途"
  ],
- "summary_html": "<p>Phosphorus (group 15) commonly exhibits <span data-concept=\"oxidation-number\">oxidation states</span> of 3− with active metals and of 3+ and 5+ with more electronegative nonmetals. The <span data-concept=\"halogen\">halogens</span> and oxygen will oxidize phosphorus. The oxides are phosphorus(V) oxide, P<sub>4</sub>O<sub>10</sub>, and phosphorus(III) oxide, P<sub>4</sub>O<sub>6</sub>. The two common methods for preparing orthophosphoric acid, H<sub>3</sub>PO<sub>4</sub>, are either the reaction of a phosphate with sulfuric acid or the reaction of water with phosphorus(V) oxide. Orthophosphoric acid is a <span data-concept=\"triprotic-acid\">triprotic acid</span> that forms three types of salts.</p>",
- "notes": "The section keeps as printed “2.00 g of PCl₃ is an excess of water” in exercise 71, and a summary that names the preparations and salts of orthophosphoric acid, which Section 18.9 describes.",
+ "summary_html": "<p>磷（15 族）与活泼金属化合时通常表现出 3− 的<span data-concept=\"oxidation-number\">氧化态</span>，与电负性更大的非金属化合时表现出 3+ 和 5+ 的氧化态。<span data-concept=\"halogen\">卤素</span>和氧能够氧化磷。其氧化物是氧化磷(V) P<sub>4</sub>O<sub>10</sub> 和氧化磷(III) P<sub>4</sub>O<sub>6</sub>。制备正磷酸 H<sub>3</sub>PO<sub>4</sub> 的两种常用方法，一是磷酸盐与硫酸反应，二是水与氧化磷(V) 反应。正磷酸是<span data-concept=\"triprotic-acid\">三元酸</span>，能形成三类盐。</p>",
+ "notes": "本节在习题 71 中按原文保留“2.00 g of PCl₃ is an excess of water”这一印刷错误，并保留一份小结，其中列出正磷酸的制备方法和盐类，这些内容在第 18.9 节中讲述。",
  "ai": {
   "text": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-10-05",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels, concept tags, hints and suggested approaches are AI-generated. Answers come from the book’s answer key; the keys of exercises 67 and 75 are the book’s Lewis-structure images. The unkeyed exercises whose answers would be computed are left out, and no answer is computed for them: 68 (fs-idp101864208, molecular structures), 70 (fs-idm43491296, hybridization), 72 (fs-idm123772752, numerical), 74 (fs-idp208490096, equations) and 78 (fs-idp126473504, numerical). The unkeyed conceptual exercise 76 (fs-idm55936272) carries a suggested approach marked as OmniStax’s own. Nothing is moved.",
+ "exercise_notes": "布鲁姆层级、概念标签、提示和建议的解题思路均由 AI 生成。答案取自本书的答案库；习题 67 和 75 的答案是本书的路易斯结构式图像。答案需要计算而书中未给出的无答案习题被略去，也没有为它们计算答案：68（fs-idp101864208，分子结构）、70（fs-idm43491296，杂化）、72（fs-idm123772752，数值）、74（fs-idp208490096，方程式）和 78（fs-idp126473504，数值）。无答案的概念性习题 76（fs-idm55936272）附有一条建议的解题思路，标明为 OmniStax 自己所写。没有移动任何内容。",
  "figures": [
   {
    "id": "sim-phosphorus-cage",
@@ -39,7 +47,7 @@
     "/media/ch18/CNX_Chem_18_08_P4S3.jpg",
     "/media/ch18/CNX_Chem_18_08_P4O6P4O10.jpg"
    ],
-   "original_caption": "(Figure 18.39) P₄S₃ is a component of the heads of strike-anywhere matches. (Figure 18.40) This image shows the molecular structures of P₄O₆ (left) and P₄O₁₀ (right).",
+   "original_caption": "（图 18.39）P₄S₃ 是擦燃火柴火柴头的成分。（图 18.40）此图显示 P₄O₆（左）和 P₄O₁₀（右）的分子结构。",
    "draws": [],
    "conventions": [
     "P",
@@ -51,6 +59,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -61,7 +74,7 @@
    "originals": [
     "/media/ch18/CNX_Chem_18_08_PCl3PCl5.jpg"
    ],
-   "original_caption": "This image shows the molecular structure of PCl₃ (left) and PCl₅ (right) in the gas phase.",
+   "original_caption": "此图显示气相中 PCl₃（左）和 PCl₅（右）的分子结构。",
    "draws": [],
    "conventions": [
     "P",
@@ -72,6 +85,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   }
@@ -180,11 +198,11 @@
     "at": "end"
    },
    "cite": "preparation",
-   "prompt": "Write the Lewis structure for each of the following. You may wish to review the chapter on chemical bonding and molecular geometry.<br>(a) PH<sub>3</sub><br>(b) ${\\text{PH}}_{4}{}^{+}$<br>(c) P<sub>2</sub>H<sub>4</sub><br>(d) ${\\text{PO}}_{4}{}^{3−}$<br>(e) PF<sub>5</sub>",
+   "prompt": "写出下列各物质的路易斯结构式。你可能需要复习化学键与分子几何构型一章。<br>(a) PH<sub>3</sub><br>(b) ${\\text{PH}}_{4}{}^{+}$<br>(c) P<sub>2</sub>H<sub>4</sub><br>(d) ${\\text{PO}}_{4}{}^{3−}$<br>(e) PF<sub>5</sub>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1a_img.jpg\" alt=\"This Lewis structure shows a phosphorus atom with a lone pair of electrons single bonded to three hydrogen atoms.\"><br>(b)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1b_img.jpg\" alt=\"This Lewis structure shows a phosphorus atom single bonded to four hydrogen atoms. The structure is surrounded by brackets and has a superscript positive sign outside the brackets.\"><br>(c)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1c_img.jpg\" alt=\"This Lewis structure shows two phosphorus atoms, each with a lone pair of electrons, single bonded to one another. Each phosphorus atom is also single bonded to two hydrogen atoms.\"><br>(d)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1d_img.jpg\" alt=\"This Lewis structure shows a phosphorus atom single bonded to four oxygen atoms, each with three lone pairs of electrons. The structure is surrounded by brackets and has a superscript 3 negative sign outside the brackets.\"><br>(e)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1e_img.jpg\" alt=\"This Lewis structure shows a phosphorus atom single bonded to five fluorine atoms, each with three lone pairs of electrons.\">"
+    "solution": "(a)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1a_img.jpg\" alt=\"此路易斯结构式显示一个带一对孤电子对的磷原子，与三个氢原子以单键相连。\"><br>(b)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1b_img.jpg\" alt=\"此路易斯结构式显示一个磷原子与四个氢原子以单键相连。结构外有方括号，括号外右上角为正号。\"><br>(c)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1c_img.jpg\" alt=\"此路易斯结构式显示两个磷原子，各带一对孤电子对，彼此以单键相连。每个磷原子还与两个氢原子以单键相连。\"><br>(d)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1d_img.jpg\" alt=\"此路易斯结构式显示一个磷原子与四个氧原子以单键相连，每个氧原子各带三对孤电子对。结构外有方括号，括号外右上角为 3 和负号。\"><br>(e)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1e_img.jpg\" alt=\"此路易斯结构式显示一个磷原子与五个氟原子以单键相连，每个氟原子各带三对孤电子对。\">"
    }
   },
   {
@@ -197,11 +215,11 @@
     "at": "end"
    },
    "cite": "halides",
-   "prompt": "Complete and balance each of the following chemical equations. (In some cases, there may be more than one correct answer.)<br>(a) ${\\text{P}}_{4}+\\text{Al}\\;\\longrightarrow$<br>(b) ${\\text{P}}_{4}+\\text{Na}\\;\\longrightarrow$<br>(c) ${\\text{P}}_{4}+{\\text{F}}_{2}\\;\\longrightarrow$<br>(d) ${\\text{P}}_{4}+{\\text{Cl}}_{2}\\;\\longrightarrow$<br>(e) ${\\text{P}}_{4}+{\\text{O}}_{2}\\;\\longrightarrow$<br>(f) ${\\text{P}}_{4}{\\text{O}}_{6}+{\\text{O}}_{2}\\;\\longrightarrow$",
+   "prompt": "完成并配平下列各化学方程式。（有些情况下，正确答案可能不止一个。）<br>(a) ${\\text{P}}_{4}+\\text{Al}\\;\\longrightarrow$<br>(b) ${\\text{P}}_{4}+\\text{Na}\\;\\longrightarrow$<br>(c) ${\\text{P}}_{4}+{\\text{F}}_{2}\\;\\longrightarrow$<br>(d) ${\\text{P}}_{4}+{\\text{Cl}}_{2}\\;\\longrightarrow$<br>(e) ${\\text{P}}_{4}+{\\text{O}}_{2}\\;\\longrightarrow$<br>(f) ${\\text{P}}_{4}{\\text{O}}_{6}+{\\text{O}}_{2}\\;\\longrightarrow$",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) ${\\text{P}}_{4}(s)+\\text{4Al}(s)\\;\\longrightarrow \\;\\text{4AlP}(s);$ (b) ${\\text{P}}_{4}(s)+\\text{12Na}(s)\\;\\longrightarrow \\;{\\text{4Na}}_{3}\\text{P}(s);$ (c) ${\\text{P}}_{4}(s)+{\\text{10F}}_{2}(g)\\;\\longrightarrow \\;{\\text{4PF}}_{5}(l);$ (d) ${\\text{P}}_{4}(s)+{\\text{6Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{4PCl}}_{3}(l)$ or ${\\text{P}}_{4}(s)+{\\text{10Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{4PCl}}_{5}(l);$ (e) ${\\text{P}}_{4}(s)+{\\text{3O}}_{2}(g)\\;\\longrightarrow \\;{\\text{P}}_{4}{\\text{O}}_{6}(s)$ or ${\\text{P}}_{4}(s)+{\\text{5O}}_{2}(g)\\;\\longrightarrow \\;{\\text{P}}_{4}{\\text{O}}_{10}(s);$ (f) ${\\text{P}}_{4}{\\text{O}}_{6}(s)+{\\text{2O}}_{2}(g)\\;\\longrightarrow \\;{\\text{P}}_{4}{\\text{O}}_{10}(s)$"
+    "solution": "(a) ${\\text{P}}_{4}(s)+\\text{4Al}(s)\\;\\longrightarrow \\;\\text{4AlP}(s);$ (b) ${\\text{P}}_{4}(s)+\\text{12Na}(s)\\;\\longrightarrow \\;{\\text{4Na}}_{3}\\text{P}(s);$ (c) ${\\text{P}}_{4}(s)+{\\text{10F}}_{2}(g)\\;\\longrightarrow \\;{\\text{4PF}}_{5}(l);$ (d) ${\\text{P}}_{4}(s)+{\\text{6Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{4PCl}}_{3}(l)$ 或 ${\\text{P}}_{4}(s)+{\\text{10Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{4PCl}}_{5}(l);$ (e) ${\\text{P}}_{4}(s)+{\\text{3O}}_{2}(g)\\;\\longrightarrow \\;{\\text{P}}_{4}{\\text{O}}_{6}(s)$ 或 ${\\text{P}}_{4}(s)+{\\text{5O}}_{2}(g)\\;\\longrightarrow \\;{\\text{P}}_{4}{\\text{O}}_{10}(s);$ (f) ${\\text{P}}_{4}{\\text{O}}_{6}(s)+{\\text{2O}}_{2}(g)\\;\\longrightarrow \\;{\\text{P}}_{4}{\\text{O}}_{10}(s)$"
    }
   },
   {
@@ -214,14 +232,14 @@
     "at": "end"
    },
    "cite": "halides",
-   "prompt": "What volume of 0.200 <em>M</em> NaOH is necessary to neutralize the solution produced by dissolving 2.00 g of PCl<sub>3</sub> is an excess of water? Note that when H<sub>3</sub>PO<sub>3</sub> is titrated under these conditions, only one proton of the acid molecule reacts.",
+   "prompt": "需要多少体积的 0.200 <em>M</em> NaOH，才能中和将 2.00 g PCl<sub>3</sub> 溶于过量水中所得的溶液？注意，在这些条件下滴定 H<sub>3</sub>PO<sub>3</sub> 时，酸分子中只有一个质子发生反应。",
    "answer": {
     "type": "number",
     "value": 291,
     "unit": "mL",
     "tol": 0.02,
     "part": "the volume of NaOH solution",
-    "hint": "Water turns each PCl<sub>3</sub> into H<sub>3</sub>PO<sub>3</sub> and three HCl; count the moles of acid that react with NaOH, one proton from each H<sub>3</sub>PO<sub>3</sub> and one from each HCl.",
+    "hint": "水使每个 PCl<sub>3</sub> 变成 H<sub>3</sub>PO<sub>3</sub> 和三个 HCl；计算与 NaOH 反应的酸的物质的量，每个 H<sub>3</sub>PO<sub>3</sub> 贡献一个质子，每个 HCl 贡献一个质子。",
     "solution": "291 mL",
     "generated_by": "source"
    }
@@ -236,15 +254,15 @@
     "at": "end"
    },
    "cite": "preparation",
-   "prompt": "How many tons of Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub> are necessary to prepare 5.0 tons of phosphorus if the yield is 90%?",
+   "prompt": "若产率为 90%，制备 5.0 短吨（美吨）磷需要多少短吨（美吨）Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub>？",
    "answer": {
     "type": "number",
     "value": 28,
     "unit": "tons",
     "tol": 0.03,
     "part": "the mass of Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub>",
-    "hint": "Each Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub> holds two phosphorus atoms; find the mass of phosphate that holds 5.0 tons of phosphorus, then divide by the 90% yield.",
-    "solution": "28 tons",
+    "hint": "每个 Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub> 含两个磷原子；先求含 5.0 短吨（美吨）磷的磷酸盐的质量，再除以 90% 的产率。",
+    "solution": "28 短吨（美吨）",
     "generated_by": "source"
    }
   },
@@ -258,11 +276,11 @@
     "at": "end"
    },
    "cite": "halides",
-   "prompt": "Draw the Lewis structures and describe the geometry for the following:<br>(a) ${\\text{PF}}_{4}{}^{+}$<br>(b) PF<sub>5</sub><br>(c) ${\\text{PF}}_{6}{}^{-}$<br>(d) POF<sub>3</sub>",
+   "prompt": "画出下列各物质的路易斯结构式，并描述其几何构型：<br>(a) ${\\text{PF}}_{4}{}^{+}$<br>(b) PF<sub>5</sub><br>(c) ${\\text{PF}}_{6}{}^{-}$<br>(d) POF<sub>3</sub>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8a_img.jpg\" alt=\"This Lewis structure shows a phosphorus atom single bonded to four fluorine atoms, each with three lone pairs of electrons. The structure is surrounded by brackets and has a superscript positive sign outside the brackets. The label, “Tetrahedral,” is written under the structure.\"><br>(b)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8b_img.jpg\" alt=\"This Lewis structure shows a phosphorus atom single bonded to five fluorine atoms, each with three lone pairs of electrons. The label, “Trigonal bipyramidal,” is written under the structure.\"><br>(c)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8c_img.jpg\" alt=\"A Lewis structure shows a phosphorus atom single bonded to six fluorine atoms, each with three lone pairs of electrons. The structure is surrounded by brackets and has a superscript negative sign outside the brackets. The label, “Octahedral,” is written under the structure.\"><br>(d)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8d_img.jpg\" alt=\"This Lewis structure shows a phosphorus atom single bonded to three fluorine atoms, each with three lone pairs of electrons. The phosphorus atom is also double bonded to an oxygen atom with two lone pairs of electrons. The label, “Tetrahedral,” is written under the structure.\">"
+    "solution": "(a)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8a_img.jpg\" alt=\"此路易斯结构式显示一个磷原子与四个氟原子以单键相连，每个氟原子各带三对孤电子对。结构外有方括号，括号外右上角为正号。结构下方标有“四面体形”。\"><br>(b)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8b_img.jpg\" alt=\"此路易斯结构式显示一个磷原子与五个氟原子以单键相连，每个氟原子各带三对孤电子对。结构下方标有“三角双锥形”。\"><br>(c)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8c_img.jpg\" alt=\"此路易斯结构式显示一个磷原子与六个氟原子以单键相连，每个氟原子各带三对孤电子对。结构外有方括号，括号外右上角为负号。结构下方标有“八面体形”。\"><br>(d)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8d_img.jpg\" alt=\"此路易斯结构式显示一个磷原子与三个氟原子以单键相连，每个氟原子各带三对孤电子对。该磷原子还与一个带两对孤电子对的氧原子以双键相连。结构下方标有“四面体形”。\">"
    }
   },
   {
@@ -275,11 +293,11 @@
     "at": "end"
    },
    "cite": "halides",
-   "prompt": "Why does phosphorous acid form only two series of salts, even though the molecule contains three hydrogen atoms?",
+   "prompt": "为什么亚磷酸分子中虽然含有三个氢原子，却只形成两个系列的盐？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Phosphorous acid forms only two series of salts because only two of its three hydrogen atoms are acidic. Its structure is HPO(OH)<sub>2</sub>: the phosphorus atom is bonded to one hydrogen atom directly, to one oxygen atom by a double bond and to two OH groups. In an oxyacid the ionizable hydrogen atoms are those bonded to oxygen, where the highly polar O–H bond lets a base remove the proton. The P–H bond is nearly nonpolar, so that hydrogen atom does not ionize. H<sub>3</sub>PO<sub>3</sub> is therefore a diprotic acid. Neutralizing one O–H hydrogen with a base such as sodium hydroxide gives the dihydrogen phosphite salts, such as NaH<sub>2</sub>PO<sub>3</sub>, and neutralizing both gives the hydrogen phosphite salts, such as Na<sub>2</sub>HPO<sub>3</sub>; no salt with the formula Na<sub>3</sub>PO<sub>3</sub> forms."
+    "solution": "亚磷酸只形成两个系列的盐，是因为它的三个氢原子中只有两个具有酸性。其结构为 HPO(OH)<sub>2</sub>：磷原子直接与一个氢原子相连，以双键与一个氧原子相连，并与两个 OH 基团相连。在含氧酸中，可电离的氢原子是与氧相连的那些，高度极性的 O–H 键使碱能够夺去质子。P–H 键几乎没有极性，所以那个氢原子不发生电离。因此 H<sub>3</sub>PO<sub>3</sub> 是二元酸。用氢氧化钠等碱中和一个 O–H 氢，得到亚磷酸二氢盐，如 NaH<sub>2</sub>PO<sub>3</sub>；两个都中和，得到亚磷酸氢盐，如 Na<sub>2</sub>HPO<sub>3</sub>；不形成化学式为 Na<sub>3</sub>PO<sub>3</sub> 的盐。"
    }
   },
   {
@@ -292,7 +310,7 @@
     "at": "end"
    },
    "cite": "preparation",
-   "prompt": "Assign an oxidation state to phosphorus in each of the following:<br>(a) NaH<sub>2</sub>PO<sub>3</sub><br>(b) PF<sub>5</sub><br>(c) P<sub>4</sub>O<sub>6</sub><br>(d) K<sub>3</sub>PO<sub>4</sub><br>(e) Na<sub>3</sub>P<br>(f) Na<sub>4</sub>P<sub>2</sub>O<sub>7</sub>",
+   "prompt": "指出下列各物质中磷的氧化态：<br>(a) NaH<sub>2</sub>PO<sub>3</sub><br>(b) PF<sub>5</sub><br>(c) P<sub>4</sub>O<sub>6</sub><br>(d) K<sub>3</sub>PO<sub>4</sub><br>(e) Na<sub>3</sub>P<br>(f) Na<sub>4</sub>P<sub>2</sub>O<sub>7</sub>",
    "answer": {
     "type": "open",
     "generated_by": "source",

@@ -1,0 +1,2760 @@
+{
+  "terms": [
+    {
+      "source": "above",
+      "target": "俯视",
+      "authority": "book",
+      "url": "",
+      "note": "view-button label of a 3D scene (looking down on it).",
+      "section": "9.4"
+    },
+    {
+      "source": "absolute temperature",
+      "target": "热力学温度",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "物理学名词 热力学温度 (the temperature on the kelvin scale); the book writes 'absolute temperature' in the summary. 'kelvin temperature' is written 开尔文温度 as in ch01.",
+      "section": "9.2"
+    },
+    {
+      "source": "acceleration due to gravity",
+      "target": "重力加速度",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "物理学名词 重力加速度.",
+      "concept": "acceleration-due-to-gravity",
+      "section": "9.1"
+    },
+    {
+      "source": "aerosol can",
+      "target": "喷雾罐",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "african elephant",
+      "target": "非洲象",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.1"
+    },
+    {
+      "source": "airtight",
+      "target": "不漏气的",
+      "authority": "book",
+      "url": "",
+      "note": "airtight syringe 不漏气的注射器; common usage.",
+      "section": "9.2"
+    },
+    {
+      "source": "altitude",
+      "target": "海拔",
+      "authority": "book",
+      "url": "",
+      "note": "height above sea level.",
+      "section": "9.1"
+    },
+    {
+      "source": "ambient pressure",
+      "target": "环境压强",
+      "authority": "book",
+      "url": "",
+      "note": "Example 9.13 step 2; the pressure of the surroundings.",
+      "section": "9.3"
+    },
+    {
+      "source": "amedeo avogadro",
+      "target": "阿梅代奥·阿伏加德罗",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "amontons’s law",
+      "target": "阿蒙顿定律",
+      "authority": "book",
+      "url": "",
+      "note": "the book's name for P-T proportionality at constant V and n. Chinese textbooks call that 查理定律 or 盖-吕萨克定律; the book's own name (阿蒙顿) is kept. Owner item.",
+      "confirm": "owner",
+      "concept": "amontons-law",
+      "section": "9.2"
+    },
+    {
+      "source": "amount of gas",
+      "target": "气体的物质的量",
+      "authority": "book",
+      "url": "",
+      "note": "the amount in mol (物质的量), not 'how much gas' in general.",
+      "section": "9.2"
+    },
+    {
+      "source": "antarctica",
+      "target": "南极洲",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.3"
+    },
+    {
+      "source": "antoine lavoisier",
+      "target": "安托万·拉瓦锡",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "argon gas",
+      "target": "氩气",
+      "authority": "gb3100",
+      "url": "",
+      "note": "element name 氩 (化学元素名称) + 气, as the shared rows 氦气, 氖气, 氮气, 氧气; used in figures.js (word + '气').",
+      "section": "9.5"
+    },
+    {
+      "source": "artery",
+      "target": "动脉",
+      "authority": "book",
+      "url": "",
+      "note": "standard medical term.",
+      "section": "9.1"
+    },
+    {
+      "source": "atmosphere (atm)",
+      "target": "标准大气压（atm）",
+      "authority": "gb3100",
+      "url": "",
+      "note": "the unit 'standard atmosphere' 标准大气压 (101,325 Pa); the shared row 'atmosphere' 大气 is the planet's gas layer and is kept apart.",
+      "confirm": "termonline",
+      "concept": "atmosphere-unit",
+      "section": "9.1"
+    },
+    {
+      "source": "atmospheres absolute (ata)",
+      "target": "绝对大气压（ATA）",
+      "authority": "book",
+      "url": "",
+      "note": "the diving unit ATA. The concept span atmosphere-unit wraps 大气压 inside 绝对大气压 and 标准大气压 elsewhere; recorded in forced-scenarios.md.",
+      "confirm": "owner",
+      "section": "9.2"
+    },
+    {
+      "source": "atmospheric pressure",
+      "target": "大气压强",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "物理学名词 大气压强 (大气压 as short form).",
+      "confirm": "termonline",
+      "section": "9.1"
+    },
+    {
+      "source": "atmospheric pressure and the barometer",
+      "target": "大气压强与气压计",
+      "authority": "book",
+      "url": "",
+      "note": "concept atmospheric-pressure-and-barometer.",
+      "concept": "atmospheric-pressure-and-barometer",
+      "section": "9.1"
+    },
+    {
+      "source": "atmospheric science",
+      "target": "大气科学",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.1"
+    },
+    {
+      "source": "average kinetic energy",
+      "target": "平均动能",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.5"
+    },
+    {
+      "source": "average kinetic energy and temperature",
+      "target": "平均动能与温度",
+      "authority": "book",
+      "url": "",
+      "note": "concept average-kinetic-energy-and-temperature.",
+      "concept": "average-kinetic-energy-and-temperature",
+      "section": "9.5"
+    },
+    {
+      "source": "avogadro’s law",
+      "target": "阿伏加德罗定律",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "阿伏加德罗 as in 阿伏加德罗常数 (化学名词).",
+      "confirm": "termonline",
+      "concept": "avogadro-law",
+      "section": "9.2"
+    },
+    {
+      "source": "balanced equation",
+      "target": "配平的化学方程式",
+      "authority": "book",
+      "url": "",
+      "note": "glossary 化学方程式 with 配平的; concept balanced-equation, span wraps the whole phrase.",
+      "section": "9.3"
+    },
+    {
+      "source": "balloon",
+      "target": "气球",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "ballpark estimate",
+      "target": "大致估计",
+      "authority": "book",
+      "url": "",
+      "note": "an idiom translated for meaning.",
+      "section": "9.2"
+    },
+    {
+      "source": "bar",
+      "target": "巴",
+      "authority": "gb3100",
+      "url": "",
+      "note": "GB 3100 non-SI unit 巴; symbol bar kept.",
+      "concept": "bar-unit",
+      "section": "9.1"
+    },
+    {
+      "source": "barometer",
+      "target": "气压计",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=de81bde926ac11eeb870b068e6519520",
+      "note": "termonline 2026-10-26: confirmed (物理学名词, 力学名词); 气压表 is the 大气科学/计量学 form.",
+      "concept": "barometer",
+      "section": "9.1"
+    },
+    {
+      "source": "baseline",
+      "target": "基准",
+      "authority": "book",
+      "url": "",
+      "note": "the reference sample the changed one is compared with (referent baseline, 基准气缸). Plain usage.",
+      "section": "9.5"
+    },
+    {
+      "source": "bench",
+      "target": "工作台",
+      "authority": "book",
+      "url": "",
+      "note": "the bench the two cylinders stand on in Figure 9.31 (hover name). Plain usage.",
+      "section": "9.5"
+    },
+    {
+      "source": "bicycle tire",
+      "target": "自行车轮胎",
+      "authority": "book",
+      "url": "",
+      "note": "common usage; 'blowout' written 爆胎.",
+      "section": "9.2"
+    },
+    {
+      "source": "billion",
+      "target": "十亿",
+      "authority": "book",
+      "url": "",
+      "note": "Example 9.18, 683 billion ft³ written 683 十亿 ft³ (1 billion = 10^9, so 万亿 and 亿 would change the number as printed); recorded scenario.",
+      "section": "9.3"
+    },
+    {
+      "source": "blood pressure",
+      "target": "血压",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.1"
+    },
+    {
+      "source": "bowling ball",
+      "target": "保龄球",
+      "authority": "book",
+      "url": "",
+      "note": "figure sim-force-area.",
+      "section": "9.1"
+    },
+    {
+      "source": "boyle’s law",
+      "target": "玻意耳定律",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=d6cc1b6a26ac11ee9356b068e6519520",
+      "note": "termonline 2026-10-26: confirmed (物理学名词).",
+      "concept": "boyles-law",
+      "section": "9.2"
+    },
+    {
+      "source": "breathing",
+      "target": "呼吸",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "british columbia",
+      "target": "不列颠哥伦比亚省",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "bulb",
+      "target": "玻璃泡",
+      "authority": "book",
+      "url": "",
+      "note": "figure sim-bulbs: the two glass bulbs joined by a stopcock.",
+      "section": "9.4"
+    },
+    {
+      "source": "buoyancy compensator (bcd)",
+      "target": "浮力调节器（BCD）",
+      "authority": "book",
+      "url": "",
+      "note": "diving term 浮力调节器 (also 浮力调整背心); BCD kept. Buoyancy reuses 浮力.",
+      "confirm": "owner",
+      "section": "9.2"
+    },
+    {
+      "source": "calcium carbonate",
+      "target": "碳酸钙",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "exercise e13.",
+      "section": "9.3"
+    },
+    {
+      "source": "cardiac cycle",
+      "target": "心动周期",
+      "authority": "book",
+      "url": "",
+      "note": "standard medical term.",
+      "section": "9.1"
+    },
+    {
+      "source": "cascade",
+      "target": "级联",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.4"
+    },
+    {
+      "source": "chain reaction",
+      "target": "链式反应",
+      "authority": "termonline",
+      "url": "",
+      "note": "物理学名词 链式反应; concept chain-reaction untranslated in book.json; span on 链式反应.",
+      "confirm": "termonline",
+      "section": "9.4"
+    },
+    {
+      "source": "charles’s law",
+      "target": "查理定律",
+      "authority": "book",
+      "url": "",
+      "note": "the book's name for V-T proportionality at constant P and n; in Chinese textbooks V-T is usually 盖-吕萨克定律 and P-T is 查理定律. The book's attribution is kept; owner item.",
+      "confirm": "owner",
+      "concept": "charles-law",
+      "section": "9.2"
+    },
+    {
+      "source": "chest cavity",
+      "target": "胸腔",
+      "authority": "book",
+      "url": "",
+      "note": "medical term.",
+      "section": "9.2"
+    },
+    {
+      "source": "chloroform",
+      "target": "氯仿",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "化学名词 三氯甲烷, 氯仿 is the 又称 and the form every textbook uses.",
+      "confirm": "termonline",
+      "section": "9.3"
+    },
+    {
+      "source": "climate",
+      "target": "气候",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.1"
+    },
+    {
+      "source": "climate change",
+      "target": "气候变化",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.3"
+    },
+    {
+      "source": "climatology",
+      "target": "气候学",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.1"
+    },
+    {
+      "source": "closed end",
+      "target": "闭端",
+      "authority": "book",
+      "url": "",
+      "note": "figure label of a manometer.",
+      "section": "9.1"
+    },
+    {
+      "source": "closed-end manometer",
+      "target": "闭端压强计",
+      "authority": "book",
+      "url": "",
+      "note": "closed at one end, the other end connected to the gas.",
+      "section": "9.1"
+    },
+    {
+      "source": "collection flask",
+      "target": "收集瓶",
+      "authority": "book",
+      "url": "",
+      "note": "the inverted bottle over water of Figure 9.21; one form in the caption, the sim-head, the referent label and the figure labels (review pass).",
+      "section": "9.3"
+    },
+    {
+      "source": "collection of gases over water",
+      "target": "排水法收集气体",
+      "authority": "book",
+      "url": "",
+      "note": "section heading.",
+      "section": "9.3"
+    },
+    {
+      "source": "colorado",
+      "target": "科罗拉多州",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.1"
+    },
+    {
+      "source": "column of air",
+      "target": "空气柱",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.1"
+    },
+    {
+      "source": "column of fluid",
+      "target": "流体柱",
+      "authority": "book",
+      "url": "",
+      "note": "the fluid whose weight gives the hydrostatic pressure; 液柱 for a column of liquid.",
+      "section": "9.1"
+    },
+    {
+      "source": "combined gas law",
+      "target": "联合气体定律",
+      "authority": "book",
+      "url": "",
+      "note": "no established 化学名词 entry found; 联合气体定律 (also 综合气体定律) is the common textbook name.",
+      "confirm": "termonline",
+      "concept": "combined-gas-law",
+      "section": "9.2"
+    },
+    {
+      "source": "combining volumes of gases",
+      "target": "气体的化合体积",
+      "authority": "book",
+      "url": "",
+      "note": "concept combining-volumes-of-gases: gases react in simple volume ratios.",
+      "concept": "combining-volumes-of-gases",
+      "section": "9.3"
+    },
+    {
+      "source": "compressed air",
+      "target": "压缩空气",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "compressibility factor",
+      "target": "压缩因子",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=bca844d226a711ee9e14b068e6519520",
+      "note": "termonline 2026-10-26: confirmed (化学名词, 物理学名词).",
+      "concept": "compressibility-factor",
+      "section": "9.6"
+    },
+    {
+      "source": "compressibility factor (z)",
+      "target": "压缩因子（Z）",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "symbol kept.",
+      "concept": "compressibility-factor",
+      "section": "9.6"
+    },
+    {
+      "source": "confined gas",
+      "target": "封闭气体",
+      "authority": "book",
+      "url": "",
+      "note": "a gas in a closed container.",
+      "section": "9.2"
+    },
+    {
+      "source": "container",
+      "target": "容器",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.1"
+    },
+    {
+      "source": "converting among units of pressure",
+      "target": "压强单位的换算",
+      "authority": "book",
+      "url": "",
+      "note": "concept pressure-unit-conversion.",
+      "concept": "pressure-unit-conversion",
+      "section": "9.1"
+    },
+    {
+      "source": "corner",
+      "target": "斜视",
+      "authority": "book",
+      "url": "",
+      "note": "view-button label of a 3D scene (oblique view); not the corner of a unit cell (ch10 顶角).",
+      "section": "9.5"
+    },
+    {
+      "source": "cuff",
+      "target": "袖带",
+      "authority": "book",
+      "url": "",
+      "note": "the inflatable band of the sphygmomanometer.",
+      "section": "9.1"
+    },
+    {
+      "source": "cylinder (gas)",
+      "target": "气瓶",
+      "authority": "book",
+      "url": "",
+      "note": "a gas cylinder (Figure 9.20, exercises cyl7, e7); 钢瓶 is the steel kind, 气瓶 is the general term. 'tank' of exercise cyl7 is written 气瓶 too (unit 个).",
+      "section": "9.3"
+    },
+    {
+      "source": "cylinder (piston)",
+      "target": "气缸",
+      "authority": "book",
+      "url": "",
+      "note": "a cylinder closed by a movable piston (Figure 9.31); 气缸 is the standard word for an engine/piston cylinder, kept apart from 气瓶 (gas storage cylinder, 9.2/9.3) and 钢瓶 (10.4). Plain usage, no authority entry.",
+      "section": "9.5"
+    },
+    {
+      "source": "dalton’s law",
+      "target": "道尔顿定律",
+      "authority": "book",
+      "url": "",
+      "note": "short form of 'Dalton’s law of partial pressures'; 9.5 lists the law among those the theory explains.",
+      "section": "9.5"
+    },
+    {
+      "source": "dalton’s law of partial pressures",
+      "target": "道尔顿分压定律",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "化学名词 道尔顿分压定律 (道尔顿 as the shared row 'dalton').",
+      "confirm": "termonline",
+      "concept": "daltons-law-of-partial-pressures",
+      "section": "9.3"
+    },
+    {
+      "source": "denver",
+      "target": "丹佛",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.1"
+    },
+    {
+      "source": "depleted",
+      "target": "贫化的",
+      "authority": "book",
+      "url": "",
+      "note": "'depleted ²³⁸UF₆'.",
+      "section": "9.4"
+    },
+    {
+      "source": "depth",
+      "target": "深度",
+      "authority": "book",
+      "url": "",
+      "note": "depth under water.",
+      "section": "9.2"
+    },
+    {
+      "source": "diaphragm",
+      "target": "膈",
+      "authority": "book",
+      "url": "",
+      "note": "the muscle under the lungs; 膈肌 in prose is the same word.",
+      "section": "9.2"
+    },
+    {
+      "source": "diaphragm gauge",
+      "target": "膜片式压力计",
+      "authority": "book",
+      "url": "",
+      "note": "a gauge that reads pressure from the movement of a diaphragm; 压力计 for the gauge, as 压强计 is the liquid manometer.",
+      "section": "9.1"
+    },
+    {
+      "source": "diastolic pressure",
+      "target": "舒张压",
+      "authority": "book",
+      "url": "",
+      "note": "medical term.",
+      "section": "9.1"
+    },
+    {
+      "source": "dichlorodifluoromethane",
+      "target": "二氯二氟甲烷",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "CF₂Cl₂.",
+      "section": "9.3"
+    },
+    {
+      "source": "diffuser",
+      "target": "扩散器",
+      "authority": "book",
+      "url": "",
+      "note": "the large cylindrical vessel with a porous barrier in the gaseous diffusion plant; figure sim-diffuser. No authority entry sought.",
+      "section": "9.4"
+    },
+    {
+      "source": "diffusion",
+      "target": "扩散",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "化学名词 / 物理学名词 扩散.",
+      "concept": "diffusion",
+      "section": "9.4"
+    },
+    {
+      "source": "diffusion and effusion",
+      "target": "扩散与泻流",
+      "authority": "book",
+      "url": "",
+      "note": "concept diffusion-and-effusion.",
+      "concept": "diffusion-and-effusion",
+      "section": "9.4"
+    },
+    {
+      "source": "directly proportional",
+      "target": "成正比",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "distribution of molecular speeds",
+      "target": "分子速率分布",
+      "authority": "book",
+      "url": "",
+      "note": "concept maxwell-boltzmann-distribution.",
+      "concept": "maxwell-boltzmann-distribution",
+      "section": "9.5"
+    },
+    {
+      "source": "doormat",
+      "target": "门垫",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.1"
+    },
+    {
+      "source": "dry air",
+      "target": "干燥空气",
+      "authority": "book",
+      "url": "",
+      "note": "exercise e2; glossary dry gas 干燥气体.",
+      "section": "9.3"
+    },
+    {
+      "source": "dry gas",
+      "target": "干燥气体",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.3"
+    },
+    {
+      "source": "dutch",
+      "target": "荷兰",
+      "authority": "book",
+      "url": "",
+      "note": "荷兰科学家",
+      "section": "9.6"
+    },
+    {
+      "source": "eardrum",
+      "target": "耳膜",
+      "authority": "book",
+      "url": "",
+      "note": "鼓膜 is the anatomical term; 耳膜 is the plain word a diving text uses. Doubt: owner may prefer 鼓膜.",
+      "confirm": "owner",
+      "section": "9.2"
+    },
+    {
+      "source": "earth’s atmosphere",
+      "target": "地球大气",
+      "authority": "book",
+      "url": "",
+      "note": "concept earth-atmosphere is named with the shared 大气.",
+      "concept": "earth-atmosphere",
+      "section": "9.1"
+    },
+    {
+      "source": "effusion",
+      "target": "泻流",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=c7f7584026ac11ee85d4b068e6519520",
+      "note": "termonline 2026-10-26: confirmed (物理学名词); 隙流 is a physical chemistry textbook alias.",
+      "concept": "effusion",
+      "section": "9.4"
+    },
+    {
+      "source": "effusion and diffusion of gases",
+      "target": "气体的泻流与扩散",
+      "authority": "book",
+      "url": "",
+      "note": "section title.",
+      "section": "9.4"
+    },
+    {
+      "source": "effusion time",
+      "target": "泻流时间",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.4"
+    },
+    {
+      "source": "elastic",
+      "target": "弹性的",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.5"
+    },
+    {
+      "source": "elastic collision",
+      "target": "弹性碰撞",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "物理学名词 弹性碰撞.",
+      "section": "9.5"
+    },
+    {
+      "source": "elephant",
+      "target": "大象",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.1"
+    },
+    {
+      "source": "emphysema",
+      "target": "肺气肿",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "medical term, standard usage.",
+      "confirm": "termonline",
+      "section": "9.3"
+    },
+    {
+      "source": "empirical",
+      "target": "经验性的",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "物理学名词 经验公式/经验定律 use 经验; the adjective 经验性的 as in the ch09 concept statements; plain usage.",
+      "section": "9.5"
+    },
+    {
+      "source": "empirical formula",
+      "target": "实验式",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "same target as ch02's row.",
+      "section": "9.3"
+    },
+    {
+      "source": "empirical formula mass",
+      "target": "实验式量",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "concept empirical-formula-mass; glossary 实验式 with 量.",
+      "confirm": "termonline",
+      "section": "9.3"
+    },
+    {
+      "source": "enriched",
+      "target": "浓缩的",
+      "authority": "book",
+      "url": "",
+      "note": "'enriched ²³⁵UF₆'.",
+      "section": "9.4"
+    },
+    {
+      "source": "equalization",
+      "target": "压力平衡",
+      "authority": "book",
+      "url": "",
+      "note": "diving term (equalizing the pressure in ears and mask).",
+      "section": "9.2"
+    },
+    {
+      "source": "equilibrium",
+      "target": "平衡",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "concept chemical-equilibrium ('equilibrium' with liquid water); ch10 has 动态平衡 for dynamic equilibrium.",
+      "section": "9.3"
+    },
+    {
+      "source": "european academy of sciences",
+      "target": "欧洲科学院",
+      "authority": "book",
+      "url": "",
+      "note": "standard rendering.",
+      "section": "9.3"
+    },
+    {
+      "source": "evangelista torricelli",
+      "target": "埃万杰利斯塔·托里拆利",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.1"
+    },
+    {
+      "source": "exhale",
+      "target": "呼气",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "exosphere",
+      "target": "外逸层",
+      "authority": "book",
+      "url": "",
+      "note": "大气科学名词 外逸层 (散逸层).",
+      "confirm": "termonline",
+      "section": "9.1"
+    },
+    {
+      "source": "extrapolation",
+      "target": "外推",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "figure skater",
+      "target": "花样滑冰运动员",
+      "authority": "book",
+      "url": "",
+      "note": "glossary 'skater' 滑冰运动员 with 花样 for 'figure'.",
+      "section": "9.1"
+    },
+    {
+      "source": "finding the molar mass of a gas",
+      "target": "求气体的摩尔质量",
+      "authority": "book",
+      "url": "",
+      "note": "concept molar-mass-of-a-gas.",
+      "concept": "molar-mass-of-a-gas",
+      "section": "9.3"
+    },
+    {
+      "source": "finding the pressure of a gas collected over water",
+      "target": "求排水集气的压强",
+      "authority": "book",
+      "url": "",
+      "note": "concept gas-collected-over-water.",
+      "concept": "gas-collected-over-water",
+      "section": "9.3"
+    },
+    {
+      "source": "fissile",
+      "target": "易裂变的",
+      "authority": "termonline",
+      "url": "",
+      "note": "物理学名词 易裂变 (易裂变核素); concept fissile-material is still untranslated in book.json (another chapter); the page writes “易裂变的”, the span on the whole phrase 易裂变的 as the quoted adjective.",
+      "confirm": "termonline",
+      "section": "9.4"
+    },
+    {
+      "source": "footprint",
+      "target": "接触面",
+      "authority": "book",
+      "url": "",
+      "note": "the patch of the surface a load bears on (Figure 9.2); 接触面积 for 'footprint area'.",
+      "section": "9.1"
+    },
+    {
+      "source": "fossil fuel",
+      "target": "化石燃料",
+      "authority": "book",
+      "url": "",
+      "note": "greenhouse note; standard usage.",
+      "section": "9.3"
+    },
+    {
+      "source": "four gas laws",
+      "target": "四个气体定律",
+      "authority": "book",
+      "url": "",
+      "note": "Boyle, Charles, Amontons, Avogadro.",
+      "section": "9.2"
+    },
+    {
+      "source": "french academy of sciences",
+      "target": "法国科学院",
+      "authority": "book",
+      "url": "",
+      "note": "standard rendering.",
+      "section": "9.3"
+    },
+    {
+      "source": "freon 12",
+      "target": "氟利昂-12",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.3"
+    },
+    {
+      "source": "front",
+      "target": "正视",
+      "authority": "book",
+      "url": "",
+      "note": "view-button label of a 3D scene; one set of labels in the chapter: 正视, 俯视, 斜视.",
+      "section": "9.4"
+    },
+    {
+      "source": "gas centrifuge",
+      "target": "气体离心机",
+      "authority": "termonline",
+      "url": "",
+      "note": "气体离心机 as the usual name of the enrichment technology; span on 气体 (gas).",
+      "confirm": "termonline",
+      "section": "9.4"
+    },
+    {
+      "source": "gas collected over water",
+      "target": "排水法收集的气体",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.3"
+    },
+    {
+      "source": "gas cylinder",
+      "target": "气瓶",
+      "authority": "book",
+      "url": "",
+      "note": "the 20.0-L butane cylinder, the medical oxygen cylinder (医用氧气瓶) and the scuba tank (水肺气瓶); 气瓶 is the standard word for a steel gas cylinder.",
+      "section": "9.2"
+    },
+    {
+      "source": "gas density",
+      "target": "气体密度",
+      "authority": "book",
+      "url": "",
+      "note": "concept gas-density; 密度 is shared.",
+      "concept": "gas-density",
+      "section": "9.3"
+    },
+    {
+      "source": "gas grill",
+      "target": "燃气烤架",
+      "authority": "book",
+      "url": "",
+      "note": "Example 9.17; the span of 'gas' wraps 燃气 (recorded scenario).",
+      "section": "9.3"
+    },
+    {
+      "source": "gas laws from the kinetic-molecular theory",
+      "target": "由分子运动论推出气体定律",
+      "authority": "book",
+      "url": "",
+      "note": "concept kmt-explains-gas-laws.",
+      "concept": "kmt-explains-gas-laws",
+      "section": "9.5"
+    },
+    {
+      "source": "gas pressure",
+      "target": "气体压强",
+      "authority": "book",
+      "url": "",
+      "note": "section title; also the concept 'Pressure' (shared 压强).",
+      "section": "9.1"
+    },
+    {
+      "source": "gas stoichiometry",
+      "target": "气体化学计量",
+      "authority": "book",
+      "url": "",
+      "note": "concept gas-stoichiometry. The ch17 row 'stoichiometry' is 化学计量学 (discipline); the chapter uses 化学计量 for the calculation, as Chinese textbooks do. Doubt.",
+      "confirm": "owner",
+      "concept": "gas-stoichiometry",
+      "section": "9.3"
+    },
+    {
+      "source": "gas thermometer",
+      "target": "气体温度计",
+      "authority": "book",
+      "url": "",
+      "note": "shared 'thermometer' 温度计.",
+      "section": "9.2"
+    },
+    {
+      "source": "gaseous diffusion",
+      "target": "气体扩散",
+      "authority": "book",
+      "url": "",
+      "note": "the process of the diffuser.",
+      "section": "9.4"
+    },
+    {
+      "source": "gases",
+      "target": "气体",
+      "authority": "book",
+      "url": "",
+      "note": "chapter title; the shared row 气体 is for 'gas', the plural title is the same word.",
+      "section": "9"
+    },
+    {
+      "source": "gay-lussac’s law",
+      "target": "盖-吕萨克定律",
+      "authority": "book",
+      "url": "",
+      "note": "the book gives it as another name of Amontons's law (P-T); see 'charles’s law' for the Chinese convention. Owner item.",
+      "confirm": "owner",
+      "section": "9.2"
+    },
+    {
+      "source": "general anesthetic",
+      "target": "全身麻醉剂",
+      "authority": "book",
+      "url": "",
+      "note": "Example 9.12; anesthesia 麻醉.",
+      "section": "9.3"
+    },
+    {
+      "source": "gonesse",
+      "target": "戈内斯",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "graham’s law",
+      "target": "格雷厄姆定律",
+      "authority": "book",
+      "url": "",
+      "note": "short form of 'Graham’s law of effusion'.",
+      "section": "9.4"
+    },
+    {
+      "source": "graham’s law from the kinetic-molecular theory",
+      "target": "由分子运动论推出格雷厄姆定律",
+      "authority": "book",
+      "url": "",
+      "note": "concept grahams-law-from-kmt.",
+      "concept": "grahams-law-from-kmt",
+      "section": "9.5"
+    },
+    {
+      "source": "graham’s law of effusion",
+      "target": "格雷厄姆泻流定律",
+      "authority": "book",
+      "url": "",
+      "note": "格雷厄姆 as the usual transliteration of Graham; 泻流 is the 物理学名词 term for effusion.",
+      "confirm": "termonline",
+      "concept": "grahams-law",
+      "section": "9.4"
+    },
+    {
+      "source": "grande medaille",
+      "target": "大奖章 Grande Medaille",
+      "authority": "book",
+      "url": "",
+      "note": "the French Academy of Sciences' Grande Médaille; the book prints Grande Medaille, kept in Latin letters after 大奖章.",
+      "section": "9.3"
+    },
+    {
+      "source": "great barrier reef",
+      "target": "大堡礁",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "greenhouse effect",
+      "target": "温室效应",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.3"
+    },
+    {
+      "source": "greenhouse gas",
+      "target": "温室气体",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.3"
+    },
+    {
+      "source": "guillaume amontons",
+      "target": "纪尧姆·阿蒙顿",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "hair spray",
+      "target": "发胶",
+      "authority": "book",
+      "url": "",
+      "note": "exercise on an aerosol can.",
+      "section": "9.2"
+    },
+    {
+      "source": "high pressure",
+      "target": "高压",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.1"
+    },
+    {
+      "source": "hot air balloon",
+      "target": "热气球",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "hydrogen-filled balloon",
+      "target": "氢气球",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "hydrogen-powered car",
+      "target": "氢动力汽车",
+      "authority": "book",
+      "url": "",
+      "note": "common usage; 氢燃料电池汽车 would add 'fuel cell', which the book does not say.",
+      "section": "9.2"
+    },
+    {
+      "source": "hydrostatic pressure",
+      "target": "流体静压强",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=bf0af63526ac11eea828b068e6519520",
+      "note": "termonline 2026-10-26: 流体静压[强] (物理学名词); 液体静压强 (力学名词) and 静水压力 (engineering) are the aliases.",
+      "concept": "hydrostatic-pressure",
+      "section": "9.1"
+    },
+    {
+      "source": "hyperbola",
+      "target": "双曲线",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "ice core",
+      "target": "冰芯",
+      "authority": "book",
+      "url": "",
+      "note": "greenhouse note; standard usage.",
+      "section": "9.3"
+    },
+    {
+      "source": "ideal behavior",
+      "target": "理想行为",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.6"
+    },
+    {
+      "source": "ideal gas",
+      "target": "理想气体",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=f4d5869d26ac11eeb903b068e6519520",
+      "note": "termonline 2026-10-26: confirmed (物理学名词).",
+      "concept": "ideal-gas",
+      "section": "9.2"
+    },
+    {
+      "source": "ideal gas constant",
+      "target": "理想气体常数",
+      "authority": "book",
+      "url": "",
+      "note": "reuses the target of the shared row 'gas constant'; 摩尔气体常数 (化学名词) is the formal name.",
+      "confirm": "termonline",
+      "concept": "ideal-gas-constant",
+      "section": "9.2"
+    },
+    {
+      "source": "ideal gas constant (r)",
+      "target": "理想气体常数（R）",
+      "authority": "book",
+      "url": "",
+      "note": "see 'ideal gas constant'.",
+      "concept": "ideal-gas-constant",
+      "section": "9.2"
+    },
+    {
+      "source": "ideal gas law",
+      "target": "理想气体状态方程",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "化学名词 理想气体状态方程 (the Chinese textbook name); 理想气体定律 is the alias the book's 'law' invites. The prose says 'law' and 'equation' for the same relation; both map here.",
+      "confirm": "termonline",
+      "concept": "ideal-gas-law",
+      "section": "9.2"
+    },
+    {
+      "source": "inches of mercury",
+      "target": "英寸汞柱",
+      "authority": "book",
+      "url": "",
+      "note": "unit in. Hg; same pattern as 毫米汞柱 in the glossary.",
+      "section": "9.1"
+    },
+    {
+      "source": "incompressible",
+      "target": "不可压缩",
+      "authority": "book",
+      "url": "",
+      "note": "the molecules themselves are incompressible; compressible 可压缩, more compressible 更易压缩",
+      "section": "9.6"
+    },
+    {
+      "source": "infrared radiation",
+      "target": "红外辐射",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "物理学名词 红外辐射.",
+      "confirm": "termonline",
+      "section": "9.3"
+    },
+    {
+      "source": "inhale",
+      "target": "吸气",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "intercostal muscles",
+      "target": "肋间肌",
+      "authority": "book",
+      "url": "",
+      "note": "medical term 肋间肌.",
+      "section": "9.2"
+    },
+    {
+      "source": "intergovernmental panel on climate change",
+      "target": "政府间气候变化专门委员会",
+      "authority": "book",
+      "url": "",
+      "note": "standard Chinese name of the IPCC; Susan Solomon portrait.",
+      "section": "9.3"
+    },
+    {
+      "source": "intermolecular attraction",
+      "target": "分子间吸引力",
+      "authority": "book",
+      "url": "",
+      "note": "shared by ch18 'intermolecular force' 分子间作用力; the attraction part is 吸引力.",
+      "section": "9.6"
+    },
+    {
+      "source": "inversely proportional",
+      "target": "成反比",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "iran",
+      "target": "伊朗",
+      "authority": "book",
+      "url": "",
+      "note": "country name.",
+      "section": "9.4"
+    },
+    {
+      "source": "isobar",
+      "target": "等压线",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "大气科学 / 物理学名词 等压线; the gray lines of the weather map.",
+      "section": "9.1"
+    },
+    {
+      "source": "isobutane",
+      "target": "异丁烷",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "化学名词 异丁烷; the propellant of the hair-spray can.",
+      "confirm": "termonline",
+      "section": "9.2"
+    },
+    {
+      "source": "jacques alexandre césar charles",
+      "target": "雅克·亚历山大·塞萨尔·查理",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "jacques charles",
+      "target": "雅克·查理",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "james clerk maxwell",
+      "target": "詹姆斯·克拉克·麦克斯韦",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.5"
+    },
+    {
+      "source": "johannes diderik van der waals",
+      "target": "约翰内斯·迪德里克·范德华",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.6"
+    },
+    {
+      "source": "johannes van der waals",
+      "target": "约翰内斯·范德华",
+      "authority": "book",
+      "url": "",
+      "note": "short form of the shared row johannes diderik van der waals (约翰内斯·迪德里克·范德华), as the text names him without the middle name",
+      "section": "9.6"
+    },
+    {
+      "source": "joseph louis gay-lussac",
+      "target": "约瑟夫·路易·盖-吕萨克",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "joseph priestley",
+      "target": "约瑟夫·普利斯特里",
+      "authority": "book",
+      "url": "",
+      "note": "standard rendering (also 普里斯特利); exercise e11.",
+      "section": "9.3"
+    },
+    {
+      "source": "joseph-louis lagrange",
+      "target": "约瑟夫-路易·拉格朗日",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "joule",
+      "target": "焦耳",
+      "authority": "gb3100",
+      "url": "",
+      "note": "same target as ch17's row.",
+      "section": "9.5"
+    },
+    {
+      "source": "kansas city",
+      "target": "堪萨斯城",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.1"
+    },
+    {
+      "source": "kilograms per mole",
+      "target": "千克每摩尔",
+      "authority": "gb3100",
+      "url": "",
+      "note": "kg/mol, the unit of molar mass in the speed equation.",
+      "section": "9.5"
+    },
+    {
+      "source": "kilopascal",
+      "target": "千帕",
+      "authority": "gb3100",
+      "url": "",
+      "note": "GB 3100 prefix 千; symbol kPa kept.",
+      "section": "9.1"
+    },
+    {
+      "source": "kinetic energy",
+      "target": "动能",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "物理学名词 动能.",
+      "section": "9.5"
+    },
+    {
+      "source": "kinetic molecular theory",
+      "target": "分子运动论",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the same term without hyphen, as printed in the concept's term.",
+      "confirm": "termonline",
+      "concept": "kinetic-molecular-theory",
+      "section": "9.5"
+    },
+    {
+      "source": "kinetic-molecular theory",
+      "target": "分子运动论",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "气体分子运动论 is the gas-specific textbook form; 分子运动论 is kept so that later chapters on liquids and solids can reuse it. Doubt.",
+      "confirm": "termonline",
+      "concept": "kinetic-molecular-theory",
+      "section": "9.5"
+    },
+    {
+      "source": "law of combining volumes",
+      "target": "气体化合体积定律",
+      "authority": "book",
+      "url": "",
+      "note": "Gay-Lussac's law of combining volumes.",
+      "section": "9.3"
+    },
+    {
+      "source": "lifting power",
+      "target": "升力",
+      "authority": "book",
+      "url": "",
+      "note": "exercise e6 (f): lifting power / lifting capacity of a balloon (the difference of the masses of displaced cool air and hot gas); 升力 for lifting power, 载人和载货的能力 for capacity. Plain usage, not the aerodynamic lift of 物理学名词.",
+      "section": "9.5"
+    },
+    {
+      "source": "limiting reactant",
+      "target": "限量反应物",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "concept limiting-reactant; 限量试剂 is the analytical-chemistry form, 限量反应物 the textbook form for reactions.",
+      "confirm": "termonline",
+      "section": "9.3"
+    },
+    {
+      "source": "linearize",
+      "target": "线性化",
+      "authority": "book",
+      "url": "",
+      "note": "make a plot linear; common usage.",
+      "section": "9.2"
+    },
+    {
+      "source": "low pressure",
+      "target": "低压",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.1"
+    },
+    {
+      "source": "ludwig boltzmann",
+      "target": "路德维希·玻尔兹曼",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.5"
+    },
+    {
+      "source": "lung",
+      "target": "肺",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "lungs",
+      "target": "肺",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "manhattan project",
+      "target": "曼哈顿计划",
+      "authority": "book",
+      "url": "",
+      "note": "standard rendering.",
+      "section": "9.4"
+    },
+    {
+      "source": "manometer",
+      "target": "压强计",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=934422a826a711eea702b068e6519520",
+      "note": "termonline 2026-10-26: 压强计 (力学名词, 土木工程名词); 物理学名词 has 流体压强计, 化学工程名词 液柱压力计. 压强计 matches the shared 压强.",
+      "concept": "manometer",
+      "section": "9.1"
+    },
+    {
+      "source": "marie anne paulze lavoisier",
+      "target": "玛丽·安妮·波尔兹·拉瓦锡",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "mars",
+      "target": "火星",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.1"
+    },
+    {
+      "source": "maxwell-boltzmann distribution",
+      "target": "麦克斯韦–玻尔兹曼分布",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.5"
+    },
+    {
+      "source": "mean free path",
+      "target": "平均自由程",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=7b6c20bf26ac11eebfd0b068e6519520",
+      "note": "termonline 2026-10-26: confirmed (物理学名词).",
+      "concept": "mean-free-path",
+      "section": "9.4"
+    },
+    {
+      "source": "mercury barometer",
+      "target": "汞气压计",
+      "authority": "book",
+      "url": "",
+      "note": "汞 is the glossary's mercury; used for the referent 'the mercury barometer'.",
+      "section": "9.1"
+    },
+    {
+      "source": "mesosphere",
+      "target": "中间层",
+      "authority": "book",
+      "url": "",
+      "note": "大气科学名词 中间层.",
+      "confirm": "termonline",
+      "section": "9.1"
+    },
+    {
+      "source": "meteorologist",
+      "target": "气象学家",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.1"
+    },
+    {
+      "source": "meteorology",
+      "target": "气象学",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.1"
+    },
+    {
+      "source": "metric ton",
+      "target": "公吨",
+      "authority": "gb3100",
+      "url": "",
+      "note": "exercise e17, 1000 kg; plain 吨 is also the metric tonne but the book contrasts it with the short ton of exercise e12 and e13 ('1 ton').",
+      "section": "9.3"
+    },
+    {
+      "source": "millibar",
+      "target": "毫巴",
+      "authority": "gb3100",
+      "url": "",
+      "note": "milli- prefix 毫 on 巴; symbol mbar kept.",
+      "section": "9.1"
+    },
+    {
+      "source": "millimeter of mercury",
+      "target": "毫米汞柱",
+      "authority": "gb3100",
+      "url": "",
+      "note": "GB 3100 non-SI unit 毫米汞柱; the symbol mm Hg is kept.",
+      "section": "9.1"
+    },
+    {
+      "source": "mit",
+      "target": "麻省理工学院",
+      "authority": "book",
+      "url": "",
+      "note": "standard rendering.",
+      "section": "9.3"
+    },
+    {
+      "source": "mm hg",
+      "target": "毫米汞柱",
+      "authority": "gb3100",
+      "url": "",
+      "note": "symbol mm Hg is kept; the unit name is 毫米汞柱.",
+      "section": "9.1"
+    },
+    {
+      "source": "molar mass",
+      "target": "摩尔质量",
+      "authority": "gb3100",
+      "url": "",
+      "note": "GB 3102 摩尔质量.",
+      "section": "9.3"
+    },
+    {
+      "source": "molar volume",
+      "target": "摩尔体积",
+      "authority": "gb3100",
+      "url": "",
+      "note": "GB 3102 摩尔体积.",
+      "concept": "molar-volume",
+      "section": "9.2"
+    },
+    {
+      "source": "mole fraction",
+      "target": "摩尔分数",
+      "authority": "gb3100",
+      "url": "https://www.termonline.cn/detail?id=d96a864926b011eeb31cb068e6519520",
+      "note": "termonline 2026-10-26: 摩尔分数 (计量学名词, GB 3102); 物质的量分数 is the 冶金学名词 form.",
+      "concept": "mole-fraction",
+      "section": "9.3"
+    },
+    {
+      "source": "mole fraction (x)",
+      "target": "摩尔分数（X）",
+      "authority": "gb3100",
+      "url": "",
+      "note": "GB 3102.",
+      "concept": "mole-fraction",
+      "section": "9.3"
+    },
+    {
+      "source": "molecular formula",
+      "target": "分子式",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "same target as ch02's row.",
+      "section": "9.3"
+    },
+    {
+      "source": "molecular mass",
+      "target": "分子质量",
+      "authority": "termonline",
+      "url": "",
+      "note": "the mass of one molecule (m in the derivation of Graham's law, exercise e3), distinct from the relative molecular mass 相对分子质量 above; ch03 may decide its own form for 'molecular mass' of Example 3.1, which would then override this row.",
+      "confirm": "termonline",
+      "section": "9.4"
+    },
+    {
+      "source": "molecular speed",
+      "target": "分子速率",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.5"
+    },
+    {
+      "source": "molecular volume",
+      "target": "分子体积",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.6"
+    },
+    {
+      "source": "molecular weight",
+      "target": "相对分子质量",
+      "authority": "termonline",
+      "url": "",
+      "note": "化学名词 相对分子质量 (分子量 is the deprecated form); the book writes 'molecular weights' of 235UF6 and 238UF6.",
+      "confirm": "termonline",
+      "section": "9.4"
+    },
+    {
+      "source": "most probable speed",
+      "target": "最概然速率",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "化学名词 最概然速率.",
+      "section": "9.5"
+    },
+    {
+      "source": "mount crumpit",
+      "target": "Crumpit 山",
+      "authority": "book",
+      "url": "",
+      "note": "a place name with no standard rendering, kept in Latin letters with 山 (translate.md 2.7); in British Columbia.",
+      "section": "9.2"
+    },
+    {
+      "source": "national academy of sciences",
+      "target": "美国国家科学院",
+      "authority": "book",
+      "url": "",
+      "note": "Susan Solomon portrait.",
+      "section": "9.3"
+    },
+    {
+      "source": "national medal of science",
+      "target": "国家科学奖章",
+      "authority": "book",
+      "url": "",
+      "note": "Susan Solomon portrait.",
+      "section": "9.3"
+    },
+    {
+      "source": "national oceanic and atmospheric administration",
+      "target": "美国国家海洋和大气管理局",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.1"
+    },
+    {
+      "source": "natural philosopher",
+      "target": "自然哲学家",
+      "authority": "book",
+      "url": "",
+      "note": "Robert Boyle.",
+      "section": "9.2"
+    },
+    {
+      "source": "newton",
+      "target": "牛顿",
+      "authority": "gb3100",
+      "url": "",
+      "note": "GB 3100 牛[顿]; symbol N kept.",
+      "section": "9.1"
+    },
+    {
+      "source": "nitrogen monoxide",
+      "target": "一氧化氮",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "NO.",
+      "section": "9.3"
+    },
+    {
+      "source": "non-ideal behavior",
+      "target": "非理想行为",
+      "authority": "book",
+      "url": "",
+      "note": "concept causes-of-non-ideal-behavior is named 非理想行为.",
+      "concept": "causes-of-non-ideal-behavior",
+      "section": "9.6"
+    },
+    {
+      "source": "non-ideal gas",
+      "target": "非理想气体",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.6"
+    },
+    {
+      "source": "non-ideal gas behavior",
+      "target": "非理想气体的行为",
+      "authority": "book",
+      "url": "",
+      "note": "section title.",
+      "section": "9.6"
+    },
+    {
+      "source": "nonvolatile",
+      "target": "不挥发的",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "opposite of the shared row 'volatile liquid' 易挥发液体; 不挥发 as in 不挥发性.",
+      "section": "9.1"
+    },
+    {
+      "source": "nuclear energy",
+      "target": "核能",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.4"
+    },
+    {
+      "source": "nuclear reactor",
+      "target": "核反应堆",
+      "authority": "termonline",
+      "url": "",
+      "note": "物理学名词 反应堆 / 核反应堆; concept nuclear-reactor untranslated in book.json; span on 核反应堆.",
+      "confirm": "termonline",
+      "section": "9.4"
+    },
+    {
+      "source": "nuclear weapon",
+      "target": "核武器",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.4"
+    },
+    {
+      "source": "number of moles",
+      "target": "物质的量",
+      "authority": "book",
+      "url": "",
+      "note": "'moles of gas' is counted in 摩尔; the quantity is 物质的量.",
+      "section": "9.2"
+    },
+    {
+      "source": "oak ridge",
+      "target": "橡树岭",
+      "authority": "book",
+      "url": "",
+      "note": "Oak Ridge, Tennessee; standard rendering of the place name.",
+      "section": "9.4"
+    },
+    {
+      "source": "open dish",
+      "target": "敞口液槽",
+      "authority": "book",
+      "url": "",
+      "note": "the open vessel of Figure 9.4 the mercury or water stands in; written 敞口液槽 in the figure caption.",
+      "section": "9.1"
+    },
+    {
+      "source": "open end",
+      "target": "开端",
+      "authority": "book",
+      "url": "",
+      "note": "figure label of a manometer.",
+      "section": "9.1"
+    },
+    {
+      "source": "open-end manometer",
+      "target": "开端压强计",
+      "authority": "book",
+      "url": "",
+      "note": "the other end is open to the atmosphere.",
+      "section": "9.1"
+    },
+    {
+      "source": "overall yield",
+      "target": "总产率",
+      "authority": "book",
+      "url": "",
+      "note": "exercise e17, yield of the sequence of reactions.",
+      "section": "9.3"
+    },
+    {
+      "source": "ozone hole",
+      "target": "臭氧空洞",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.3"
+    },
+    {
+      "source": "paris",
+      "target": "巴黎",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "partial pressure",
+      "target": "分压",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "same target as ch18's row.",
+      "confirm": "termonline",
+      "concept": "partial-pressure",
+      "section": "9.3"
+    },
+    {
+      "source": "partial pressure from mole fraction",
+      "target": "由摩尔分数求分压",
+      "authority": "book",
+      "url": "",
+      "note": "concept mole-fraction-and-partial-pressure.",
+      "concept": "mole-fraction-and-partial-pressure",
+      "section": "9.3"
+    },
+    {
+      "source": "parts per million (ppm)",
+      "target": "百万分率（ppm）",
+      "authority": "book",
+      "url": "",
+      "note": "figure alt of Figure 9.25 (the text keeps ppm).",
+      "section": "9.3"
+    },
+    {
+      "source": "party balloon",
+      "target": "派对气球",
+      "authority": "book",
+      "url": "",
+      "note": "exercise cyl2.",
+      "section": "9.4"
+    },
+    {
+      "source": "pascal",
+      "target": "帕斯卡",
+      "authority": "gb3100",
+      "url": "",
+      "note": "GB 3100 帕[斯卡]; the symbol Pa is kept.",
+      "concept": "pascal",
+      "section": "9.1"
+    },
+    {
+      "source": "pascal (pa)",
+      "target": "帕斯卡（Pa）",
+      "authority": "gb3100",
+      "url": "",
+      "note": "GB 3100.",
+      "concept": "pascal",
+      "section": "9.1"
+    },
+    {
+      "source": "pinhole",
+      "target": "针孔",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.4"
+    },
+    {
+      "source": "piston",
+      "target": "活塞",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "plunger",
+      "target": "活塞杆",
+      "authority": "book",
+      "url": "",
+      "note": "the pushed part of a syringe.",
+      "section": "9.2"
+    },
+    {
+      "source": "porous barrier",
+      "target": "多孔隔板",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.4"
+    },
+    {
+      "source": "pounds per square inch",
+      "target": "磅每平方英寸",
+      "authority": "book",
+      "url": "",
+      "note": "see 'pounds per square inch (psi)'.",
+      "section": "9.1"
+    },
+    {
+      "source": "pounds per square inch (psi)",
+      "target": "磅每平方英寸（psi）",
+      "authority": "book",
+      "url": "",
+      "note": "英制 unit; 磅 is the shared row for 'pound' (force use), psi is kept.",
+      "concept": "pounds-per-square-inch",
+      "section": "9.1"
+    },
+    {
+      "source": "pressure gauge",
+      "target": "压力计",
+      "authority": "book",
+      "url": "",
+      "note": "the dial or electronic instrument; 压强计 is reserved for the liquid manometer.",
+      "section": "9.2"
+    },
+    {
+      "source": "product",
+      "target": "产物",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "产物 (化学名词); concept product. ch02 already writes 产物.",
+      "section": "9.3"
+    },
+    {
+      "source": "propellant",
+      "target": "推进剂",
+      "authority": "book",
+      "url": "",
+      "note": "the gas that drives the spray.",
+      "section": "9.2"
+    },
+    {
+      "source": "propene",
+      "target": "丙烯",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "exercise e5.",
+      "section": "9.3"
+    },
+    {
+      "source": "proportionality constant",
+      "target": "比例常数",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "random motion",
+      "target": "无规则运动",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.4"
+    },
+    {
+      "source": "rate of diffusion",
+      "target": "扩散速率",
+      "authority": "book",
+      "url": "",
+      "note": "shared 'rate'-family 速率.",
+      "concept": "rate-of-diffusion",
+      "section": "9.4"
+    },
+    {
+      "source": "rate of effusion",
+      "target": "泻流速率",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.4"
+    },
+    {
+      "source": "reactant",
+      "target": "反应物",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "反应物 (化学名词); concept reactant, text spans.",
+      "section": "9.3"
+    },
+    {
+      "source": "reading a manometer",
+      "target": "读取压强计",
+      "authority": "book",
+      "url": "",
+      "note": "concept manometer-pressure.",
+      "concept": "manometer-pressure",
+      "section": "9.1"
+    },
+    {
+      "source": "real gas",
+      "target": "实际气体",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "化学名词 实际气体.",
+      "confirm": "termonline",
+      "section": "9.6"
+    },
+    {
+      "source": "real gas, ideal gas (referent labels)",
+      "target": "实际气体、理想气体",
+      "authority": "book",
+      "url": "",
+      "note": "reuses shared rows real gas and ideal gas",
+      "section": "9.6"
+    },
+    {
+      "source": "relating pressure, volume, amount, and temperature: the ideal gas law",
+      "target": "压强、体积、物质的量与温度的关系：理想气体状态方程",
+      "authority": "book",
+      "url": "",
+      "note": "section title; 'amount' is the amount of gas in mol, hence 物质的量 (ch01 decision); 理想气体定律 is the alias.",
+      "section": "9.2"
+    },
+    {
+      "source": "rigging",
+      "target": "索具",
+      "authority": "book",
+      "url": "",
+      "note": "the ropes and fittings of a hot-air balloon (exercise e6 f). Plain usage.",
+      "section": "9.5"
+    },
+    {
+      "source": "rigid container",
+      "target": "刚性容器",
+      "authority": "book",
+      "url": "",
+      "note": "a container whose volume cannot change; common usage.",
+      "section": "9.2"
+    },
+    {
+      "source": "robert boyle",
+      "target": "罗伯特·玻意耳",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "root mean square speed",
+      "target": "方均根速率",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "termonline 2026-10-26: 方均根速率 (物理学名词, listed as unlisted-near-match; the exact entry reads root-mean-square speed).",
+      "concept": "root-mean-square-speed",
+      "section": "9.5"
+    },
+    {
+      "source": "root mean square speed (u_rms)",
+      "target": "方均根速率（u_rms）",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "symbol kept.",
+      "concept": "root-mean-square-speed",
+      "section": "9.5"
+    },
+    {
+      "source": "royal society",
+      "target": "英国皇家学会",
+      "authority": "book",
+      "url": "",
+      "note": "standard rendering; 英国皇家学会 is the usual full name (review pass).",
+      "section": "9.3"
+    },
+    {
+      "source": "saturated",
+      "target": "饱和",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "concept saturated-solution; used as 被水蒸气饱和 (glossary row saturated with water vapor).",
+      "section": "9.3"
+    },
+    {
+      "source": "saturated with water vapor",
+      "target": "被水蒸气饱和",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.3"
+    },
+    {
+      "source": "scuba diver",
+      "target": "潜水员",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "scuba diving",
+      "target": "水肺潜水",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "sea level",
+      "target": "海平面",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.1"
+    },
+    {
+      "source": "sealed container",
+      "target": "密封容器",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "sinuses",
+      "target": "鼻窦",
+      "authority": "book",
+      "url": "",
+      "note": "medical term 鼻窦.",
+      "section": "9.2"
+    },
+    {
+      "source": "skate blade",
+      "target": "冰刀",
+      "authority": "book",
+      "url": "",
+      "note": "the blade of an ice skate; common usage.",
+      "section": "9.1"
+    },
+    {
+      "source": "skater",
+      "target": "滑冰运动员",
+      "authority": "book",
+      "url": "",
+      "note": "figure sim-force-area (figure skater 花样滑冰运动员).",
+      "section": "9.1"
+    },
+    {
+      "source": "sodium azide",
+      "target": "叠氮化钠",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "9.3"
+    },
+    {
+      "source": "sphygmomanometer",
+      "target": "血压计",
+      "authority": "book",
+      "url": "",
+      "note": "the medical instrument; the Greek root note is the section agents'.",
+      "section": "9.1"
+    },
+    {
+      "source": "stage",
+      "target": "级",
+      "authority": "book",
+      "url": "",
+      "note": "one diffuser of the cascade; 级联 (cascade) is in the chapter shard.",
+      "section": "9.4"
+    },
+    {
+      "source": "standard conditions of temperature and pressure",
+      "target": "标准温度和压强条件",
+      "authority": "book",
+      "url": "",
+      "note": "term of the concept; STP kept.",
+      "concept": "standard-temperature-and-pressure",
+      "section": "9.2"
+    },
+    {
+      "source": "standard conditions of temperature and pressure (stp)",
+      "target": "标准温度和压强条件（STP）",
+      "authority": "book",
+      "url": "",
+      "note": "STP kept, as 273.15 K and 1 atm in the source.",
+      "confirm": "termonline",
+      "concept": "standard-temperature-and-pressure",
+      "section": "9.2"
+    },
+    {
+      "source": "standard molar volume",
+      "target": "标准摩尔体积",
+      "authority": "gb3100",
+      "url": "",
+      "note": "GB 3102 / 化学名词 标准摩尔体积.",
+      "concept": "standard-molar-volume",
+      "section": "9.2"
+    },
+    {
+      "source": "standard temperature and pressure",
+      "target": "标准温度和压强",
+      "authority": "book",
+      "url": "",
+      "note": "the shared 'standard conditions' is 标准条件; this row names the pair.",
+      "section": "9.2"
+    },
+    {
+      "source": "standard temperature and pressure (stp)",
+      "target": "标准温度和压强（STP）",
+      "authority": "book",
+      "url": "",
+      "note": "STP kept; same quantity as the row above.",
+      "section": "9.2"
+    },
+    {
+      "source": "stethoscope",
+      "target": "听诊器",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.1"
+    },
+    {
+      "source": "stoichiometry",
+      "target": "化学计量",
+      "authority": "book",
+      "url": "",
+      "note": "heading use; the discipline name is 化学计量学 (ch17 row). Doubt: reconciled by the orchestrator.",
+      "confirm": "owner",
+      "section": "9.3"
+    },
+    {
+      "source": "stoichiometry of gaseous substances, mixtures, and reactions",
+      "target": "气态物质、混合物与反应的化学计量",
+      "authority": "book",
+      "url": "",
+      "note": "section title; 化学计量 is the shorter form Chinese textbooks use in headings (ch17 row 'stoichiometry' has 化学计量学, the discipline name).",
+      "section": "9.3"
+    },
+    {
+      "source": "stopcock",
+      "target": "旋塞",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.4"
+    },
+    {
+      "source": "storage tank",
+      "target": "储罐",
+      "authority": "book",
+      "url": "",
+      "note": "the hydrogen tank of a car, written 储氢罐.",
+      "section": "9.2"
+    },
+    {
+      "source": "stratosphere",
+      "target": "平流层",
+      "authority": "book",
+      "url": "",
+      "note": "大气科学名词 平流层.",
+      "confirm": "termonline",
+      "section": "9.1"
+    },
+    {
+      "source": "surface area",
+      "target": "表面积",
+      "authority": "termonline",
+      "url": "",
+      "note": "span 'area' wraps the whole 表面积 (see forced scenarios).",
+      "confirm": "termonline",
+      "section": "9.4"
+    },
+    {
+      "source": "susan solomon",
+      "target": "苏珊·所罗门",
+      "authority": "book",
+      "url": "",
+      "note": "atmospheric chemist; her book title 'The Coldest March' is left to the section agent.",
+      "section": "9.3"
+    },
+    {
+      "source": "syringe",
+      "target": "注射器",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.2"
+    },
+    {
+      "source": "systolic pressure",
+      "target": "收缩压",
+      "authority": "book",
+      "url": "",
+      "note": "medical term.",
+      "section": "9.1"
+    },
+    {
+      "source": "tank",
+      "target": "气瓶",
+      "authority": "book",
+      "url": "",
+      "note": "acetylene tank, oxygen tank of exercise cyl7; same word as cylinder (gas).",
+      "section": "9.3"
+    },
+    {
+      "source": "tanker car",
+      "target": "罐车",
+      "authority": "book",
+      "url": "",
+      "note": "railway tank wagon; common usage (the book's lead image).",
+      "section": "9.1"
+    },
+    {
+      "source": "tennessee",
+      "target": "田纳西州",
+      "authority": "book",
+      "url": "",
+      "note": "US state name.",
+      "section": "9.4"
+    },
+    {
+      "source": "the kinetic-molecular theory",
+      "target": "分子运动论",
+      "authority": "book",
+      "url": "",
+      "note": "section title; see row 'kinetic-molecular theory'.",
+      "section": "9.5"
+    },
+    {
+      "source": "the new york times",
+      "target": "《纽约时报》",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.3"
+    },
+    {
+      "source": "thermosphere",
+      "target": "热层",
+      "authority": "book",
+      "url": "",
+      "note": "大气科学名词 热层 (增温层).",
+      "confirm": "termonline",
+      "section": "9.1"
+    },
+    {
+      "source": "thomas graham",
+      "target": "托马斯·格雷厄姆",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.4"
+    },
+    {
+      "source": "thumbnail",
+      "target": "拇指指甲盖",
+      "authority": "book",
+      "url": "",
+      "note": "the nail of the thumb; the book's size comparison. Plain usage, no authority entry.",
+      "section": "9.1"
+    },
+    {
+      "source": "time magazine",
+      "target": "《时代》周刊",
+      "authority": "book",
+      "url": "",
+      "note": "standard rendering.",
+      "section": "9.3"
+    },
+    {
+      "source": "torr",
+      "target": "托",
+      "authority": "gb3100",
+      "url": "",
+      "note": "GB 3100 non-SI unit 托 (1/760 atm); the symbol torr is kept in formulas and tables.",
+      "confirm": "termonline",
+      "concept": "torr",
+      "section": "9.1"
+    },
+    {
+      "source": "total pressure",
+      "target": "总压",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "化学名词 总压.",
+      "section": "9.3"
+    },
+    {
+      "source": "troposphere",
+      "target": "对流层",
+      "authority": "book",
+      "url": "",
+      "note": "大气科学名词 对流层.",
+      "confirm": "termonline",
+      "section": "9.1"
+    },
+    {
+      "source": "u-shaped tube",
+      "target": "U 形管",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.1"
+    },
+    {
+      "source": "united states national weather service",
+      "target": "美国国家气象局",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.1"
+    },
+    {
+      "source": "universal gas constant",
+      "target": "普适气体常数",
+      "authority": "book",
+      "url": "",
+      "note": "variable R's meaning 'also called the universal gas constant'; the same quantity as 理想气体常数.",
+      "section": "9.2"
+    },
+    {
+      "source": "university of colorado",
+      "target": "科罗拉多大学",
+      "authority": "book",
+      "url": "",
+      "note": "glossary colorado 科罗拉多州.",
+      "section": "9.3"
+    },
+    {
+      "source": "unrefined petroleum",
+      "target": "未精炼石油",
+      "authority": "book",
+      "url": "",
+      "note": "exercise e8; 原油 is the usual word for crude oil, the book's wording kept.",
+      "section": "9.3"
+    },
+    {
+      "source": "uranium enrichment",
+      "target": "铀浓缩",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.4"
+    },
+    {
+      "source": "uranium hexafluoride",
+      "target": "六氟化铀",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "UF₆.",
+      "section": "9.4"
+    },
+    {
+      "source": "using graham’s law",
+      "target": "格雷厄姆定律的应用",
+      "authority": "book",
+      "url": "",
+      "note": "concept grahams-law-calculations.",
+      "concept": "grahams-law-calculations",
+      "section": "9.4"
+    },
+    {
+      "source": "vacuum",
+      "target": "真空",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "物理学名词 真空.",
+      "section": "9.1"
+    },
+    {
+      "source": "valve",
+      "target": "阀门",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.1"
+    },
+    {
+      "source": "van der waals constant",
+      "target": "范德华常数",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the constants a and b.",
+      "section": "9.6"
+    },
+    {
+      "source": "van der waals equation",
+      "target": "范德华方程",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "化学名词 范德华方程.",
+      "confirm": "termonline",
+      "concept": "van-der-waals-equation",
+      "section": "9.6"
+    },
+    {
+      "source": "vapor pressure of water",
+      "target": "水的蒸气压",
+      "authority": "book",
+      "url": "",
+      "note": "shared 'vapor pressure' (蒸气压, ch18) + 水.",
+      "concept": "vapor-pressure-of-water",
+      "section": "9.3"
+    },
+    {
+      "source": "ventricle",
+      "target": "心室",
+      "authority": "book",
+      "url": "",
+      "note": "standard medical term.",
+      "section": "9.1"
+    },
+    {
+      "source": "venus",
+      "target": "金星",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.1"
+    },
+    {
+      "source": "volatile liquid",
+      "target": "易挥发液体",
+      "authority": "book",
+      "url": "",
+      "note": "shared: ch18 row 'volatile' 易挥发的.",
+      "section": "9.3"
+    },
+    {
+      "source": "wall",
+      "target": "器壁",
+      "authority": "book",
+      "url": "",
+      "note": "the wall of the container.",
+      "section": "9.5"
+    },
+    {
+      "source": "waste gas",
+      "target": "废气",
+      "authority": "book",
+      "url": "",
+      "note": "the gas breathed out (carbon dioxide); 废气 as in 燃气, 天然气 (the span wraps the whole word).",
+      "section": "9.2"
+    },
+    {
+      "source": "water barometer",
+      "target": "水气压计",
+      "authority": "book",
+      "url": "",
+      "note": "referent 'the water barometer'.",
+      "section": "9.1"
+    },
+    {
+      "source": "water bath",
+      "target": "水浴",
+      "authority": "book",
+      "url": "",
+      "note": "the beaker of water on the hot plate; 化学 laboratory usage. Hot plate reuses 电热板 (ch12).",
+      "section": "9.2"
+    },
+    {
+      "source": "water vapor",
+      "target": "水蒸气",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.3"
+    },
+    {
+      "source": "weather",
+      "target": "天气",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.1"
+    },
+    {
+      "source": "weather balloon",
+      "target": "气象气球",
+      "authority": "book",
+      "url": "",
+      "note": "common usage (exercise 14).",
+      "section": "9.2"
+    },
+    {
+      "source": "weather front",
+      "target": "天气锋面",
+      "authority": "book",
+      "url": "",
+      "note": "锋面 is the standard meteorological term; 天气锋面 for the book's 'weather fronts'.",
+      "section": "9.1"
+    },
+    {
+      "source": "weather map",
+      "target": "天气图",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "9.1"
+    },
+    {
+      "source": "welding torch",
+      "target": "焊炬",
+      "authority": "book",
+      "url": "",
+      "note": "exercise cyl2, cyl7 (oxyacetylene welding torch 氧乙炔焊炬); standard usage.",
+      "confirm": "termonline",
+      "section": "9.3"
+    },
+    {
+      "source": "when a gas behaves ideally",
+      "target": "气体何时表现为理想气体",
+      "authority": "book",
+      "url": "",
+      "note": "concept conditions-for-ideal-behavior.",
+      "concept": "conditions-for-ideal-behavior",
+      "section": "9.6"
+    },
+    {
+      "source": "world war ii",
+      "target": "第二次世界大战",
+      "authority": "book",
+      "url": "",
+      "note": "standard rendering.",
+      "section": "9.4"
+    },
+    {
+      "source": "xenon fluoride",
+      "target": "氟化氙",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "exercise e18; ch18 has 三氧化氙.",
+      "section": "9.3"
+    },
+    {
+      "source": "xenon gas",
+      "target": "氙气",
+      "authority": "gb3100",
+      "url": "",
+      "note": "element name 氙 + 气, as 氩气; used in figures.js (word + '气').",
+      "section": "9.5"
+    }
+  ]
+}

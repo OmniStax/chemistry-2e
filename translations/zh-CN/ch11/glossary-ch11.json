@@ -1,0 +1,1964 @@
+{
+  "terms": [
+    {
+      "source": "2-propanol",
+      "target": "2-丙醇",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "compound name; the solute of the rubbing alcohol in Table 11.1.",
+      "section": "11.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "aggregate (of molecules)",
+      "target": "聚集体",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.5",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Amphiphilic",
+      "target": "两亲的",
+      "authority": "book",
+      "url": "",
+      "note": "concept name.",
+      "section": "11.5"
+    },
+    {
+      "source": "atomizer",
+      "target": "雾化器",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.5"
+    },
+    {
+      "source": "blood serum",
+      "target": "血清",
+      "authority": "termonline",
+      "url": "https://www.termonline.cn/detail?id=67a5e46a26ad11ee9b52b068e6519520",
+      "note": "termonline 2026-10-27: 血清 (生理学名词).",
+      "section": "11.4"
+    },
+    {
+      "source": "Boiling point elevation",
+      "target": "沸点升高",
+      "authority": "book",
+      "url": "",
+      "note": "concept name.",
+      "section": "11.4"
+    },
+    {
+      "source": "Boiling point elevation constant",
+      "target": "沸点升高常数",
+      "authority": "book",
+      "url": "",
+      "note": "concept name.",
+      "section": "11.4"
+    },
+    {
+      "source": "butterfat",
+      "target": "乳脂",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.5",
+      "confirm": "termonline"
+    },
+    {
+      "source": "cadmium iodide",
+      "target": "碘化镉",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "compound name.",
+      "section": "11.4"
+    },
+    {
+      "source": "Cameroon",
+      "target": "喀麦隆",
+      "authority": "book",
+      "url": "",
+      "note": "place name, standard rendering.",
+      "section": "11.3"
+    },
+    {
+      "source": "canned heat",
+      "target": "固体酒精",
+      "authority": "book",
+      "url": "",
+      "note": "'Canned Heat', a flammable gel of alcohol and calcium acetate (11.5); named by what it is, the product name is not a Chinese brand.",
+      "section": "11.5",
+      "confirm": "owner"
+    },
+    {
+      "source": "carbon dioxide vent",
+      "target": "二氧化碳排气管",
+      "authority": "book",
+      "url": "",
+      "note": "the CO₂ vent installed at Lake Nyos.",
+      "section": "11.3",
+      "confirm": "owner"
+    },
+    {
+      "source": "carbonated beverage",
+      "target": "碳酸饮料",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.3"
+    },
+    {
+      "source": "carboxylate group",
+      "target": "羧酸根基团",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the –CO₂⁻ group of a soap.",
+      "section": "11.5",
+      "confirm": "termonline"
+    },
+    {
+      "source": "carboxylic acid",
+      "target": "羧酸",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.5"
+    },
+    {
+      "source": "casein",
+      "target": "酪蛋白",
+      "authority": "termonline",
+      "url": "https://www.termonline.cn/detail?id=b32c06221e4311efbb160242ac110002",
+      "note": "termonline 2026-10-27: 酪蛋白.",
+      "section": "11.5"
+    },
+    {
+      "source": "cell membrane",
+      "target": "细胞膜",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.4",
+      "confirm": "termonline"
+    },
+    {
+      "source": "cerium sulfate",
+      "target": "硫酸铈",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the book's Ce₂(SO₄)₃ is cerium(III) sulfate; 硫酸铈 is the name as the book writes it.",
+      "section": "11.3",
+      "confirm": "termonline"
+    },
+    {
+      "source": "chainsaw",
+      "target": "链锯",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.3"
+    },
+    {
+      "source": "chemical thermodynamics",
+      "target": "化学热力学",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Classifying electrolytes",
+      "target": "电解质的分类",
+      "authority": "book",
+      "url": "",
+      "note": "concept name.",
+      "section": "11.2"
+    },
+    {
+      "source": "coalesce",
+      "target": "聚结",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "colloid term 聚结.",
+      "section": "11.5",
+      "confirm": "termonline"
+    },
+    {
+      "source": "cold compress",
+      "target": "冷敷",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.1"
+    },
+    {
+      "source": "Colligative properties",
+      "target": "依数性质",
+      "authority": "book",
+      "url": "",
+      "note": "concept name.",
+      "section": "11.4"
+    },
+    {
+      "source": "colligative property",
+      "target": "依数性质",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "termonline 2026-10-27: unlisted as such; 依数性 (化学名词 依数性质) is the standard textbook term.",
+      "section": "11.4",
+      "confirm": "termonline"
+    },
+    {
+      "source": "colloid",
+      "target": "胶体",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=c8ab3e0526a711ee93d2b068e6519520",
+      "note": "termonline 2026-10-27: confirmed (化学名词, 物理学名词).",
+      "section": "11.5"
+    },
+    {
+      "source": "colloidal dispersion",
+      "target": "胶体分散系",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the book's alias of colloid.",
+      "section": "11.5",
+      "confirm": "termonline"
+    },
+    {
+      "source": "colloidal particle",
+      "target": "胶体粒子",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.5",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Colloidal particles are charged",
+      "target": "胶体粒子带电",
+      "authority": "book",
+      "url": "",
+      "note": "concept name.",
+      "section": "11.5"
+    },
+    {
+      "source": "colloidal system",
+      "target": "胶体体系",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.5",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Colloids between solutions and suspensions",
+      "target": "介于溶液与悬浮液之间的胶体",
+      "authority": "book",
+      "url": "",
+      "note": "concept name.",
+      "section": "11.5"
+    },
+    {
+      "source": "condensation method",
+      "target": "凝聚法",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "colloid preparation by growth from molecules or ions (counterpart of the dispersion method); not the physical condensation 凝结.",
+      "section": "11.5",
+      "confirm": "termonline"
+    },
+    {
+      "source": "controlled burn",
+      "target": "可控燃烧",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.5"
+    },
+    {
+      "source": "Corexit 9527",
+      "target": "Corexit 9527",
+      "authority": "book",
+      "url": "",
+      "note": "product name kept as printed.",
+      "section": "11.5"
+    },
+    {
+      "source": "Cottrell precipitator",
+      "target": "科特雷尔除尘器",
+      "authority": "book",
+      "url": "",
+      "note": "Cottrell 科特雷尔; the device is the 静电除尘器 (row electrostatic precipitator).",
+      "section": "11.5",
+      "confirm": "owner"
+    },
+    {
+      "source": "covalent electrolyte",
+      "target": "共价型电解质",
+      "authority": "book",
+      "url": "",
+      "note": "an electrolyte whose molecules react with water to give ions; counterpart of the ionic electrolyte.",
+      "section": "11.2",
+      "confirm": "owner"
+    },
+    {
+      "source": "Covalent electrolytes react with water",
+      "target": "共价型电解质与水反应",
+      "authority": "book",
+      "url": "",
+      "note": "concept name.",
+      "section": "11.2"
+    },
+    {
+      "source": "crater lake",
+      "target": "火山口湖",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.3",
+      "confirm": "termonline"
+    },
+    {
+      "source": "crenation",
+      "target": "皱缩",
+      "authority": "book",
+      "url": "",
+      "note": "the shriveling of cells in a hypertonic solution; 化学 texts also say 锯齿状 (crenated). Not a standard entry.",
+      "section": "11.4",
+      "confirm": "owner"
+    },
+    {
+      "source": "crude oil",
+      "target": "原油",
+      "authority": "termonline",
+      "url": "https://www.termonline.cn/detail?id=5fd4910726ae11ee97bab068e6519520",
+      "note": "termonline 2026-10-27: 原油 (石油名词).",
+      "section": "11.4"
+    },
+    {
+      "source": "cryoscopic constant",
+      "target": "摩尔凝固点降低常数",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the book's alias of the freezing point depression constant; Chinese texts write 摩尔凝固点降低常数.",
+      "section": "11.4",
+      "confirm": "termonline"
+    },
+    {
+      "source": "de-icing",
+      "target": "除冰",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.4",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Debye–Hückel theory",
+      "target": "德拜-休克尔理论",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "德拜 as in the ch07 row debye; 休克尔 is the standard transliteration of Hückel.",
+      "section": "11.4",
+      "confirm": "termonline"
+    },
+    {
+      "source": "decompression chamber",
+      "target": "减压舱",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.3",
+      "confirm": "termonline"
+    },
+    {
+      "source": "decompression sickness",
+      "target": "减压病",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "DCS; the 'bends' is 潜水病.",
+      "section": "11.3",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Deepwater Horizon",
+      "target": "深水地平线",
+      "authority": "book",
+      "url": "",
+      "note": "name of the drilling rig and the 2010 spill.",
+      "section": "11.5",
+      "confirm": "owner"
+    },
+    {
+      "source": "desalination",
+      "target": "海水淡化",
+      "authority": "book",
+      "url": "",
+      "note": "termonline 2026-10-27: unlisted; the book's desalination of seawater.",
+      "section": "11.4",
+      "confirm": "termonline"
+    },
+    {
+      "source": "detergent",
+      "target": "洗涤剂",
+      "authority": "termonline",
+      "url": "https://www.termonline.cn/detail?id=55e8482626b011eeb1f3b068e6519520",
+      "note": "termonline 2026-10-27: 洗涤剂 (药学名词, 石油名词, 精细化工名词).",
+      "section": "11.5"
+    },
+    {
+      "source": "dialysis tubing",
+      "target": "透析管",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "dialysis is 透析 (化学名词).",
+      "section": "11.4",
+      "confirm": "termonline"
+    },
+    {
+      "source": "diesel fuel",
+      "target": "柴油",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.4",
+      "confirm": "termonline"
+    },
+    {
+      "source": "dispersed phase",
+      "target": "分散相",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=9a6efb4426a711ee9fe3b068e6519520",
+      "note": "termonline 2026-10-27: 分散相 (化学工程名词); 弥散相 is the physics and materials form.",
+      "section": "11.5"
+    },
+    {
+      "source": "Dispersed phase and dispersion medium",
+      "target": "分散相与分散介质",
+      "authority": "book",
+      "url": "",
+      "note": "concept name.",
+      "section": "11.5"
+    },
+    {
+      "source": "dispersion medium",
+      "target": "分散介质",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "termonline 2026-10-27: unlisted; 分散介质 is the textbook term (色散介质 is the optical dispersive medium).",
+      "section": "11.5",
+      "confirm": "termonline"
+    },
+    {
+      "source": "dispersion method",
+      "target": "分散法",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "colloid preparation by breaking down larger particles.",
+      "section": "11.5",
+      "confirm": "termonline"
+    },
+    {
+      "source": "dissolution",
+      "target": "溶解",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=ee2ab0de26b011ee8eb8b068e6519520",
+      "note": "the process of dissolving; 溶解 is also the verb 'dissolve'. termonline 2026-10-27: 溶解 (计量学名词, 化学工程名词).",
+      "section": "11.1"
+    },
+    {
+      "source": "Dissolution as three steps",
+      "target": "溶解的三个步骤",
+      "authority": "book",
+      "url": "",
+      "note": "concept name.",
+      "section": "11.1"
+    },
+    {
+      "source": "dissolved oxygen",
+      "target": "溶解氧",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.3",
+      "confirm": "termonline"
+    },
+    {
+      "source": "dust",
+      "target": "粉尘",
+      "authority": "termonline",
+      "url": "https://www.termonline.cn/detail?id=9868cfb526a711eeb6d2b068e6519520",
+      "note": "termonline 2026-10-27: 粉尘 (化学工程名词).",
+      "section": "11.5"
+    },
+    {
+      "source": "ebullioscopic constant",
+      "target": "摩尔沸点升高常数",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the book's alias of the boiling point elevation constant; Chinese texts write 摩尔沸点升高常数.",
+      "section": "11.4",
+      "confirm": "termonline"
+    },
+    {
+      "source": "effective concentration",
+      "target": "有效浓度",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the activity of an ion (shared row activity 活度).",
+      "section": "11.4",
+      "confirm": "termonline"
+    },
+    {
+      "source": "egg yolk",
+      "target": "蛋黄",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.5"
+    },
+    {
+      "source": "electrical conductance",
+      "target": "电导",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "GB 3102.5 电导 (G); the property is also called conductivity (shared row 电导率, which is the material quantity).",
+      "section": "11.2",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Electrolytes and nonelectrolytes",
+      "target": "电解质与非电解质",
+      "authority": "book",
+      "url": "",
+      "note": "concept name.",
+      "section": "11.2"
+    },
+    {
+      "source": "electrostatic precipitator",
+      "target": "静电除尘器",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=7b1396bf26a711eea6dbb068e6519520",
+      "note": "termonline 2026-10-27: 静电除尘器 (冶金学名词, 电力名词); 电除尘器 is the chemical-engineering form.",
+      "section": "11.5"
+    },
+    {
+      "source": "emulsify",
+      "target": "乳化",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.5",
+      "confirm": "termonline"
+    },
+    {
+      "source": "emulsifying agent",
+      "target": "乳化剂",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=b1dfdbd726a711eea1efb068e6519520",
+      "note": "termonline 2026-10-27: confirmed (化学名词).",
+      "section": "11.5"
+    },
+    {
+      "source": "emulsion",
+      "target": "乳状液",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=b900357326a711ee8eceb068e6519520",
+      "note": "termonline 2026-10-27: confirmed (化学名词, 物理学名词).",
+      "section": "11.5"
+    },
+    {
+      "source": "Erich Hückel",
+      "target": "埃里希·休克尔",
+      "authority": "book",
+      "url": "",
+      "note": "person name, standard transliteration.",
+      "section": "11.4"
+    },
+    {
+      "source": "ethanethiol",
+      "target": "乙硫醇",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "compound name.",
+      "section": "11.3"
+    },
+    {
+      "source": "fatty acid",
+      "target": "脂肪酸",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.5",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Finding molar mass from a colligative property",
+      "target": "由依数性质求摩尔质量",
+      "authority": "book",
+      "url": "",
+      "note": "concept name.",
+      "section": "11.4"
+    },
+    {
+      "source": "fish kill",
+      "target": "鱼类大量死亡",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.3"
+    },
+    {
+      "source": "five-cent coin",
+      "target": "5 美分硬币",
+      "authority": "book",
+      "url": "",
+      "note": "US five-cent coin (nickel), named by its value as the 10 美分硬币 of ch01.",
+      "section": "11.1"
+    },
+    {
+      "source": "floating boom",
+      "target": "浮式围油栏",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.5"
+    },
+    {
+      "source": "flue dust",
+      "target": "烟道灰",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.5"
+    },
+    {
+      "source": "food chain",
+      "target": "食物链",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.5"
+    },
+    {
+      "source": "fractionating column",
+      "target": "分馏塔",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=82e2b7f326ae11eeb80cb068e6519520",
+      "note": "the tall column of an oil refinery; termonline 2026-10-27: 分馏塔 (石油名词, 冶金学名词). The glass column of a laboratory is 分馏柱.",
+      "section": "11.4"
+    },
+    {
+      "source": "Frederick Gardner Cottrell",
+      "target": "弗雷德里克·加德纳·科特雷尔",
+      "authority": "book",
+      "url": "",
+      "note": "person name.",
+      "section": "11.5"
+    },
+    {
+      "source": "freezing point depression",
+      "target": "凝固点降低",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=c5ab06f726a711ee8f79b068e6519520",
+      "note": "termonline 2026-10-27: confirmed (化学名词).",
+      "section": "11.4"
+    },
+    {
+      "source": "freezing point depression constant",
+      "target": "凝固点降低常数",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Kf of a solvent; the alias 'cryoscopic constant' is 摩尔凝固点降低常数.",
+      "section": "11.4",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Gas solubility and temperature",
+      "target": "气体溶解度与温度",
+      "authority": "book",
+      "url": "",
+      "note": "concept name.",
+      "section": "11.3"
+    },
+    {
+      "source": "gaseous solution",
+      "target": "气态溶液",
+      "authority": "book",
+      "url": "",
+      "note": "a solution whose solvent is a gas; 态 for the state, as 固态/液态 in ch01.",
+      "section": "11.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "gel",
+      "target": "凝胶",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=a774620926a711ee8516b068e6519520",
+      "note": "termonline 2026-10-27: confirmed (化学名词, 物理学名词).",
+      "section": "11.5"
+    },
+    {
+      "source": "gelatin",
+      "target": "明胶",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=cddfdf4426ac11ee8e95b068e6519520",
+      "note": "termonline 2026-10-27: 明胶 (物理学名词).",
+      "section": "11.5"
+    },
+    {
+      "source": "glacial acetic acid",
+      "target": "冰醋酸",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Table 11.2 writes 'hydrogen acetate (glacial acetic acid)'; the shared row acetic acid is 乙酸.",
+      "section": "11.4",
+      "confirm": "termonline"
+    },
+    {
+      "source": "gold sol",
+      "target": "金溶胶",
+      "authority": "book",
+      "url": "",
+      "note": "built from sol and 金.",
+      "section": "11.5"
+    },
+    {
+      "source": "gold(III) chloride",
+      "target": "氯化金(III)",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Stock form.",
+      "section": "11.5"
+    },
+    {
+      "source": "guard digits",
+      "target": "保留位",
+      "authority": "book",
+      "url": "",
+      "note": "the extra digits kept in intermediate results (ch01 writes 多保留几位数字); no standard entry.",
+      "section": "11.4",
+      "confirm": "owner"
+    },
+    {
+      "source": "Gulf of Mexico",
+      "target": "墨西哥湾",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.5"
+    },
+    {
+      "source": "hand warmer",
+      "target": "暖手袋",
+      "authority": "book",
+      "url": "",
+      "note": "the reusable sodium acetate pack of Figure 11.17.",
+      "section": "11.3",
+      "confirm": "owner"
+    },
+    {
+      "source": "hard water",
+      "target": "硬水",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=c741cffe26a711ee8507b068e6519520",
+      "note": "termonline 2026-10-27: confirmed (化学名词).",
+      "section": "11.5"
+    },
+    {
+      "source": "Heat released or absorbed on dissolving",
+      "target": "溶解时放出或吸收的热量",
+      "authority": "book",
+      "url": "",
+      "note": "concept name.",
+      "section": "11.1"
+    },
+    {
+      "source": "hemolysis",
+      "target": "溶血",
+      "authority": "termonline",
+      "url": "https://www.termonline.cn/detail?id=679e965126ad11ee971eb068e6519520",
+      "note": "termonline 2026-10-27: 溶血 (生理学名词).",
+      "section": "11.4"
+    },
+    {
+      "source": "Henry’s law",
+      "target": "亨利定律",
+      "authority": "termonline",
+      "url": "https://www.termonline.cn/detail?id=99fb04ea26a711ee89dbb068e6519520",
+      "note": "termonline 2026-10-27: 亨利定律 (化学工程名词).",
+      "section": "11.3"
+    },
+    {
+      "source": "Henry’s law constant",
+      "target": "亨利常数",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "k_H of Henry's law; the book's constant of proportionality.",
+      "section": "11.3",
+      "confirm": "termonline"
+    },
+    {
+      "source": "heptane",
+      "target": "庚烷",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.1"
+    },
+    {
+      "source": "hopper",
+      "target": "集尘斗",
+      "authority": "book",
+      "url": "",
+      "note": "the bin under the precipitator.",
+      "section": "11.5"
+    },
+    {
+      "source": "How soaps and detergents clean",
+      "target": "肥皂和洗涤剂如何去污",
+      "authority": "book",
+      "url": "",
+      "note": "concept name.",
+      "section": "11.5"
+    },
+    {
+      "source": "hydrated",
+      "target": "水合的",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "adjective for 'hydrated ions'; the shard row hydration (ch18) is 水合.",
+      "section": "11.2",
+      "confirm": "termonline"
+    },
+    {
+      "source": "hydration shell",
+      "target": "水合壳层",
+      "authority": "book",
+      "url": "",
+      "note": "the layer of water molecules round an ion in the Figure 11.18 and 11.28 sims.",
+      "section": "11.4",
+      "confirm": "owner"
+    },
+    {
+      "source": "hydrocarbon end",
+      "target": "烃基端",
+      "authority": "book",
+      "url": "",
+      "note": "the nonpolar end of a soap or detergent molecule.",
+      "section": "11.5",
+      "confirm": "owner"
+    },
+    {
+      "source": "hydrophilic",
+      "target": "亲水的",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=c434840626a711eeac32b068e6519520",
+      "note": "termonline 2026-10-27: 亲水[的] (化学名词).",
+      "section": "11.5"
+    },
+    {
+      "source": "hyperbaric oxygen therapy",
+      "target": "高压氧疗法",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.3",
+      "confirm": "termonline"
+    },
+    {
+      "source": "hypertonic",
+      "target": "高渗",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "adjective; the 的 stays outside the span.",
+      "section": "11.4",
+      "confirm": "termonline"
+    },
+    {
+      "source": "hypotonic",
+      "target": "低渗",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "adjective; the 的 stays outside the span.",
+      "section": "11.4",
+      "confirm": "termonline"
+    },
+    {
+      "source": "ideal solution",
+      "target": "理想溶液",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "not listed under this English term at termonline 2026-10-27; target taken from standard physical-chemistry usage.",
+      "section": "11.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Ideal solutions and matter dispersal",
+      "target": "理想溶液与物质的分散",
+      "authority": "book",
+      "url": "",
+      "note": "concept name.",
+      "section": "11.1"
+    },
+    {
+      "source": "Ingrid Eftedal",
+      "target": "Ingrid Eftedal",
+      "authority": "book",
+      "url": "",
+      "note": "name without a standard rendering, kept in Latin letters.",
+      "section": "11.3"
+    },
+    {
+      "source": "instant cold pack",
+      "target": "速冷袋",
+      "authority": "book",
+      "url": "",
+      "note": "the ammonium nitrate pack of Figure 11.5; also 'instant ice pack' in the exercises.",
+      "section": "11.1",
+      "confirm": "owner"
+    },
+    {
+      "source": "instant ice pack",
+      "target": "速冷袋",
+      "authority": "book",
+      "url": "",
+      "note": "same as instant cold pack.",
+      "section": "11.4",
+      "confirm": "owner"
+    },
+    {
+      "source": "interionic attraction",
+      "target": "离子间吸引力",
+      "authority": "book",
+      "url": "",
+      "note": "the attraction between ions in solution; 离子间 as in 分子间.",
+      "section": "11.4",
+      "confirm": "owner"
+    },
+    {
+      "source": "internal energy",
+      "target": "内能",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=b8b223fb26a711eeb894b068e6519520",
+      "note": "termonline 2026-10-27: 内能 (物理学名词, 化学名词); GB 3102.8 writes 热力学能, which is the same quantity.",
+      "section": "11.1"
+    },
+    {
+      "source": "intravenous infusion",
+      "target": "静脉输液",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.4",
+      "confirm": "termonline"
+    },
+    {
+      "source": "ion pair",
+      "target": "离子对",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=b3d76ce726a711eeb267b068e6519520",
+      "note": "termonline 2026-10-27: confirmed (化学名词).",
+      "section": "11.4"
+    },
+    {
+      "source": "ion-dipole attraction",
+      "target": "离子–偶极吸引力",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "en dash as in the shared row dipole-dipole attraction (偶极–偶极吸引力); not looked up at termonline.",
+      "section": "11.2",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Ionic compounds dissociate",
+      "target": "离子化合物的解离",
+      "authority": "book",
+      "url": "",
+      "note": "concept name.",
+      "section": "11.2"
+    },
+    {
+      "source": "ionic electrolyte",
+      "target": "离子型电解质",
+      "authority": "book",
+      "url": "",
+      "note": "an ionic compound whose solution conducts (section heading 'Ionic electrolytes').",
+      "section": "11.2",
+      "confirm": "owner"
+    },
+    {
+      "source": "iron(II) sulfate",
+      "target": "硫酸铁(II)",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Stock form as the ch02 row iron(II) chloride.",
+      "section": "11.5"
+    },
+    {
+      "source": "iron(III) hydroxide",
+      "target": "氢氧化铁(III)",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Stock form.",
+      "section": "11.5"
+    },
+    {
+      "source": "isotonic",
+      "target": "等渗",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "adjective; the 的 stays outside the span.",
+      "section": "11.4",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Jacobus Henricus van’t Hoff",
+      "target": "雅各布斯·亨里克斯·范托夫",
+      "authority": "book",
+      "url": "",
+      "note": "person name; Nobel Prize in Chemistry 1901.",
+      "section": "11.4"
+    },
+    {
+      "source": "Jell-O",
+      "target": "Jell-O",
+      "authority": "book",
+      "url": "",
+      "note": "brand name kept as printed.",
+      "section": "11.5"
+    },
+    {
+      "source": "jelly",
+      "target": "果冻",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.5"
+    },
+    {
+      "source": "kerosene",
+      "target": "煤油",
+      "authority": "termonline",
+      "url": "https://www.termonline.cn/detail?id=7cb3e28026ae11eea8bfb068e6519520",
+      "note": "termonline 2026-10-27: 煤油 (石油名词).",
+      "section": "11.4"
+    },
+    {
+      "source": "kiln",
+      "target": "窑",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.5"
+    },
+    {
+      "source": "Lake Nyos",
+      "target": "尼奥斯湖",
+      "authority": "book",
+      "url": "",
+      "note": "place name; standard rendering.",
+      "section": "11.3",
+      "confirm": "owner"
+    },
+    {
+      "source": "leaching",
+      "target": "浸取",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.5",
+      "confirm": "termonline"
+    },
+    {
+      "source": "leaf blower",
+      "target": "吹叶机",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.3"
+    },
+    {
+      "source": "lemon-lime soda",
+      "target": "柠檬青柠味汽水",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.3"
+    },
+    {
+      "source": "light bulb",
+      "target": "灯泡",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.2"
+    },
+    {
+      "source": "like dissolves like",
+      "target": "相似相溶",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the chemical axiom.",
+      "section": "11.3",
+      "confirm": "termonline"
+    },
+    {
+      "source": "liquid solution",
+      "target": "液态溶液",
+      "authority": "book",
+      "url": "",
+      "note": "a solution whose solvent is a liquid; 态 for the state.",
+      "section": "11.1"
+    },
+    {
+      "source": "liquid-vapor curve",
+      "target": "液–气曲线",
+      "authority": "book",
+      "url": "",
+      "note": "same target as the ch10 row liquid-gas curve.",
+      "section": "11.4"
+    },
+    {
+      "source": "lysozyme",
+      "target": "溶菌酶",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.4",
+      "confirm": "termonline"
+    },
+    {
+      "source": "marine bacteria",
+      "target": "海洋细菌",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.5"
+    },
+    {
+      "source": "mass percentage",
+      "target": "质量分数",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "same target as the shared row percent by mass.",
+      "section": "11.4"
+    },
+    {
+      "source": "matter dispersal",
+      "target": "物质的分散",
+      "authority": "book",
+      "url": "",
+      "note": "the book's 'dispersal of matter' (the entropy increase of mixing); 物质的分散, never 物质的量.",
+      "section": "11.1",
+      "confirm": "owner"
+    },
+    {
+      "source": "mayonnaise",
+      "target": "蛋黄酱",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.5"
+    },
+    {
+      "source": "mercury(II) chloride",
+      "target": "氯化汞(II)",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Stock form as the ch01 row 氧化汞(II).",
+      "section": "11.4"
+    },
+    {
+      "source": "milk powder",
+      "target": "奶粉",
+      "authority": "book",
+      "url": "",
+      "note": "'dehydrated milk powder' is 脱水奶粉.",
+      "section": "11.5"
+    },
+    {
+      "source": "Miscibility",
+      "target": "互溶性",
+      "authority": "book",
+      "url": "",
+      "note": "concept name.",
+      "section": "11.3"
+    },
+    {
+      "source": "molal concentration",
+      "target": "质量摩尔浓度",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "same as molality.",
+      "section": "11.4",
+      "confirm": "termonline"
+    },
+    {
+      "source": "molality",
+      "target": "质量摩尔浓度",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=be5433ad26a711eeb778b068e6519520",
+      "note": "termonline 2026-10-27: confirmed (计量学名词, 化学名词); symbol m (shared, written m in prose, mol/kg).",
+      "section": "11.4"
+    },
+    {
+      "source": "Molality and mole fraction",
+      "target": "质量摩尔浓度与摩尔分数",
+      "authority": "book",
+      "url": "",
+      "note": "concept name.",
+      "section": "11.4"
+    },
+    {
+      "source": "mud",
+      "target": "泥浆",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.5"
+    },
+    {
+      "source": "mutual solubility",
+      "target": "互溶度",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.3",
+      "confirm": "termonline"
+    },
+    {
+      "source": "nitrobenzene",
+      "target": "硝基苯",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "compound name.",
+      "section": "11.4"
+    },
+    {
+      "source": "nonconductive",
+      "target": "不导电的",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.2"
+    },
+    {
+      "source": "nonelectrolyte",
+      "target": "非电解质",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "termonline 2026-10-27: no exact entry; standard textbook term (化学名词 lists 电解质 and the pair).",
+      "section": "11.2",
+      "confirm": "termonline"
+    },
+    {
+      "source": "nonequilibrium state",
+      "target": "非平衡态",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.3",
+      "confirm": "termonline"
+    },
+    {
+      "source": "nonstoichiometric compound",
+      "target": "非化学计量化合物",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.4",
+      "confirm": "termonline"
+    },
+    {
+      "source": "oil dispersant",
+      "target": "油污分散剂",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.5",
+      "confirm": "owner"
+    },
+    {
+      "source": "oil slick",
+      "target": "浮油带",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.5"
+    },
+    {
+      "source": "oil spill",
+      "target": "漏油事故",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.5"
+    },
+    {
+      "source": "oleic acid",
+      "target": "油酸",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.5"
+    },
+    {
+      "source": "opal",
+      "target": "蛋白石",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.5"
+    },
+    {
+      "source": "osmosis",
+      "target": "渗透",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=ba9aa2bb26a711ee8758b068e6519520",
+      "note": "termonline 2026-10-27: 渗透 (物理学名词), 渗透[作用] (化学名词).",
+      "section": "11.4"
+    },
+    {
+      "source": "Osmosis and osmotic pressure",
+      "target": "渗透与渗透压",
+      "authority": "book",
+      "url": "",
+      "note": "concept name.",
+      "section": "11.4"
+    },
+    {
+      "source": "osmotic pressure",
+      "target": "渗透压",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=c112845126a711ee9dafb068e6519520",
+      "note": "termonline 2026-10-27: confirmed (化学名词, 物理学名词).",
+      "section": "11.4"
+    },
+    {
+      "source": "palmitic acid",
+      "target": "棕榈酸",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.5"
+    },
+    {
+      "source": "parcel of water",
+      "target": "水团",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the body of lake water of the Lake Nyos sim; 海洋学 水团.",
+      "section": "11.3",
+      "confirm": "termonline"
+    },
+    {
+      "source": "partially miscible",
+      "target": "部分互溶的",
+      "authority": "book",
+      "url": "",
+      "note": "built from the shared rows miscible 互溶的 and immiscible 不互溶的.",
+      "section": "11.3"
+    },
+    {
+      "source": "pearl",
+      "target": "珍珠",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.5"
+    },
+    {
+      "source": "pectin",
+      "target": "果胶",
+      "authority": "termonline",
+      "url": "https://www.termonline.cn/detail?id=f674bdac1e4311efbb160242ac110002",
+      "note": "termonline 2026-10-27: 果胶.",
+      "section": "11.5"
+    },
+    {
+      "source": "Peter Debye",
+      "target": "彼得·德拜",
+      "authority": "book",
+      "url": "",
+      "note": "person name, standard transliteration.",
+      "section": "11.4"
+    },
+    {
+      "source": "petroleum",
+      "target": "石油",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.4"
+    },
+    {
+      "source": "plate electrode",
+      "target": "板电极",
+      "authority": "book",
+      "url": "",
+      "note": "the grounded plate of the precipitator.",
+      "section": "11.5"
+    },
+    {
+      "source": "point electrode",
+      "target": "尖端电极",
+      "authority": "book",
+      "url": "",
+      "note": "the high-voltage electrode of the Cottrell precipitator.",
+      "section": "11.5"
+    },
+    {
+      "source": "polymer",
+      "target": "聚合物",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=bcfae73b26a711ee8d78b068e6519520",
+      "note": "termonline 2026-10-27: confirmed (化学名词, 物理学名词).",
+      "section": "11.5"
+    },
+    {
+      "source": "potassium dichromate",
+      "target": "重铬酸钾",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "compound name.",
+      "section": "11.1"
+    },
+    {
+      "source": "potassium nitrate",
+      "target": "硝酸钾",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "compound name.",
+      "section": "11.4"
+    },
+    {
+      "source": "power supply",
+      "target": "电源",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.2"
+    },
+    {
+      "source": "precipitation (of a solute)",
+      "target": "析出",
+      "authority": "book",
+      "url": "",
+      "note": "a solute coming out of solution; the shared row precipitation 降水 is the weather word, and the precipitate itself is 沉淀.",
+      "section": "11.3",
+      "confirm": "owner"
+    },
+    {
+      "source": "Predicting solution formation",
+      "target": "预测溶液的形成",
+      "authority": "book",
+      "url": "",
+      "note": "concept name.",
+      "section": "11.1"
+    },
+    {
+      "source": "Preparing colloids and emulsions",
+      "target": "胶体与乳状液的制备",
+      "authority": "book",
+      "url": "",
+      "note": "concept name.",
+      "section": "11.5"
+    },
+    {
+      "source": "propylene glycol",
+      "target": "丙二醇",
+      "authority": "termonline",
+      "url": "https://www.termonline.cn/detail?id=7fd592ef26ae11ee8cd0b068e6519520",
+      "note": "termonline 2026-10-27: 丙二醇 (石油名词).",
+      "section": "11.4"
+    },
+    {
+      "source": "pumice",
+      "target": "浮石",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.5",
+      "confirm": "termonline"
+    },
+    {
+      "source": "radiator",
+      "target": "散热器",
+      "authority": "book",
+      "url": "",
+      "note": "the radiator of a car.",
+      "section": "11.4"
+    },
+    {
+      "source": "Raoult’s law",
+      "target": "拉乌尔定律",
+      "authority": "termonline",
+      "url": "https://www.termonline.cn/detail?id=ef2e279e26b011ee8fbeb068e6519520",
+      "note": "termonline 2026-10-27: 拉乌尔定律 (计量学名词, 化学工程名词).",
+      "section": "11.4"
+    },
+    {
+      "source": "Raoult’s law and vapor pressure lowering",
+      "target": "拉乌尔定律与蒸气压下降",
+      "authority": "book",
+      "url": "",
+      "note": "concept name.",
+      "section": "11.4"
+    },
+    {
+      "source": "recompression chamber",
+      "target": "再加压舱",
+      "authority": "book",
+      "url": "",
+      "note": "the book's 'decompression (or recompression) chamber'.",
+      "section": "11.3",
+      "confirm": "termonline"
+    },
+    {
+      "source": "reverse osmosis",
+      "target": "反渗透",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=b7fd7f0a26a711eeb382b068e6519520",
+      "note": "termonline 2026-10-27: confirmed (化学名词).",
+      "section": "11.4"
+    },
+    {
+      "source": "rubbing alcohol",
+      "target": "外用酒精",
+      "authority": "book",
+      "url": "",
+      "note": "see row 'alcohol, rubbing'.",
+      "section": "11.1",
+      "confirm": "owner"
+    },
+    {
+      "source": "saltwater",
+      "target": "盐水",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.1"
+    },
+    {
+      "source": "searchlight",
+      "target": "探照灯",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.5"
+    },
+    {
+      "source": "seed crystal",
+      "target": "晶种",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.3",
+      "confirm": "termonline"
+    },
+    {
+      "source": "selective permeation",
+      "target": "选择透过性",
+      "authority": "book",
+      "url": "",
+      "note": "the property of a membrane; termonline 2026-10-27: unlisted under this English term (选择透过性 is the biology word).",
+      "section": "11.4",
+      "confirm": "termonline"
+    },
+    {
+      "source": "semipermeable membrane",
+      "target": "半透膜",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=a953583126a711ee8c80b068e6519520",
+      "note": "termonline 2026-10-27: confirmed (化学名词).",
+      "section": "11.4"
+    },
+    {
+      "source": "silica gel",
+      "target": "硅胶",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.5",
+      "confirm": "termonline"
+    },
+    {
+      "source": "skimmer ship",
+      "target": "撇油船",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.5"
+    },
+    {
+      "source": "smelter",
+      "target": "冶炼厂",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.5"
+    },
+    {
+      "source": "soap",
+      "target": "肥皂",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "termonline 2026-10-27: unlisted; the standard word.",
+      "section": "11.5",
+      "confirm": "termonline"
+    },
+    {
+      "source": "sodium lauryl sulfate",
+      "target": "十二烷基硫酸钠",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "lauryl is dodecyl (C₁₂H₂₅–).",
+      "section": "11.5",
+      "confirm": "termonline"
+    },
+    {
+      "source": "sodium phosphate",
+      "target": "磷酸钠",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "compound name.",
+      "section": "11.4"
+    },
+    {
+      "source": "sodium silicate",
+      "target": "硅酸钠",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "compound name.",
+      "section": "11.5"
+    },
+    {
+      "source": "sodium stearate",
+      "target": "硬脂酸钠",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "compound name.",
+      "section": "11.5"
+    },
+    {
+      "source": "sodium thiosulfate",
+      "target": "硫代硫酸钠",
+      "authority": "termonline",
+      "url": "https://www.termonline.cn/detail?id=bb70e63acef811eeaadc0242ac110002",
+      "note": "termonline 2026-10-27: 硫代硫酸钠.",
+      "section": "11.3"
+    },
+    {
+      "source": "soft drink",
+      "target": "软饮料",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.1"
+    },
+    {
+      "source": "sol",
+      "target": "溶胶",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=a886500726a711ee804ab068e6519520",
+      "note": "termonline 2026-10-27: confirmed (化学名词, 物理学名词).",
+      "section": "11.5"
+    },
+    {
+      "source": "solid solution",
+      "target": "固溶体",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "a solution of one solid in another (alloys); 化学名词/材料科学名词 固溶体.",
+      "section": "11.1",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Solubility and saturation",
+      "target": "溶解度与饱和",
+      "authority": "book",
+      "url": "",
+      "note": "concept name.",
+      "section": "11.3"
+    },
+    {
+      "source": "solubility curve",
+      "target": "溶解度曲线",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=beb8ee5826ac11eebe4fb068e6519520",
+      "note": "termonline 2026-10-27: 溶[解度曲]线 (物理学名词), written out in full.",
+      "section": "11.3"
+    },
+    {
+      "source": "Solubility curves of solids",
+      "target": "固体的溶解度曲线",
+      "authority": "book",
+      "url": "",
+      "note": "concept name.",
+      "section": "11.3"
+    },
+    {
+      "source": "Solutions and Colloids",
+      "target": "溶液与胶体",
+      "authority": "book",
+      "url": "",
+      "note": "chapter title.",
+      "section": "11"
+    },
+    {
+      "source": "Solutions and their defining traits",
+      "target": "溶液及其基本特征",
+      "authority": "book",
+      "url": "",
+      "note": "concept name.",
+      "section": "11.1"
+    },
+    {
+      "source": "solvated ion",
+      "target": "溶剂化离子",
+      "authority": "book",
+      "url": "",
+      "note": "built from the shared row solvated 溶剂化; in water the ion is also hydrated (水合离子).",
+      "section": "11.2"
+    },
+    {
+      "source": "solvation",
+      "target": "溶剂化",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=c9ab0dcb26a711ee83e4b068e6519520",
+      "note": "termonline 2026-10-27: confirmed (化学名词); same stem as the shared row solvated.",
+      "section": "11.1"
+    },
+    {
+      "source": "sparingly soluble",
+      "target": "微溶的",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.2",
+      "confirm": "termonline"
+    },
+    {
+      "source": "starch",
+      "target": "淀粉",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.5"
+    },
+    {
+      "source": "stearic acid",
+      "target": "硬脂酸",
+      "authority": "termonline",
+      "url": "https://www.termonline.cn/detail?id=fc4719281e4311efbb160242ac110002",
+      "note": "termonline 2026-10-27: 硬脂酸.",
+      "section": "11.5"
+    },
+    {
+      "source": "strong electrolyte",
+      "target": "强电解质",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=ade9b99326a711ee982db068e6519520",
+      "note": "termonline 2026-10-27: confirmed (化学名词).",
+      "section": "11.2"
+    },
+    {
+      "source": "sulfate group",
+      "target": "硫酸酯基",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the –OSO₃⁻ group of a detergent; the shared row sulfate is 硫酸盐.",
+      "section": "11.5",
+      "confirm": "termonline"
+    },
+    {
+      "source": "sulfonate group",
+      "target": "磺酸根基团",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "the –SO₃⁻ group of a detergent.",
+      "section": "11.5",
+      "confirm": "termonline"
+    },
+    {
+      "source": "supersaturated",
+      "target": "过饱和",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "termonline 2026-10-27: lists 过饱和 (supersaturation, 物理学名词); used as the bare word like the shared row saturated 饱和.",
+      "section": "11.3",
+      "confirm": "termonline"
+    },
+    {
+      "source": "supersaturated solution",
+      "target": "过饱和溶液",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "built from supersaturated and the ch14 row saturated solution.",
+      "section": "11.3"
+    },
+    {
+      "source": "Supersaturated solutions",
+      "target": "过饱和溶液",
+      "authority": "book",
+      "url": "",
+      "note": "concept name.",
+      "section": "11.3"
+    },
+    {
+      "source": "tempera paint",
+      "target": "蛋彩颜料",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.5"
+    },
+    {
+      "source": "the bends",
+      "target": "潜水病",
+      "authority": "book",
+      "url": "",
+      "note": "everyday name of decompression sickness.",
+      "section": "11.3",
+      "confirm": "owner"
+    },
+    {
+      "source": "The Dissolution Process",
+      "target": "溶解过程",
+      "authority": "book",
+      "url": "",
+      "note": "section title; dissolution is 溶解.",
+      "section": "11.1"
+    },
+    {
+      "source": "thermal pollution",
+      "target": "热污染",
+      "authority": "termonline",
+      "url": "https://www.termonline.cn/detail?id=0aeea4d826ad11eea456b068e6519520",
+      "note": "termonline 2026-10-27: 热污染 (生态学名词, 大气科学名词).",
+      "section": "11.3"
+    },
+    {
+      "source": "tin(II) chloride",
+      "target": "氯化锡(II)",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Stock form as the ch02 rows.",
+      "section": "11.5"
+    },
+    {
+      "source": "turnover (of a lake)",
+      "target": "湖水翻转",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.3",
+      "confirm": "owner"
+    },
+    {
+      "source": "two-cycle motor oil",
+      "target": "二冲程机油",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.3"
+    },
+    {
+      "source": "Tyndall effect",
+      "target": "丁达尔效应",
+      "authority": "book",
+      "url": "",
+      "note": "termonline 2026-10-27: no entry under this English term; it lists 丁铎尔现象 (Tyndall phenomenon, 化学名词) and 廷德尔散射 (物理学名词, 光学名词). 丁达尔效应 is the form every Chinese chemistry textbook uses.",
+      "section": "11.5",
+      "confirm": "owner"
+    },
+    {
+      "source": "unsaturated",
+      "target": "不饱和",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "bare word, counterpart of saturated 饱和.",
+      "section": "11.3",
+      "confirm": "termonline"
+    },
+    {
+      "source": "unsaturated solution",
+      "target": "不饱和溶液",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "built from unsaturated and the ch14 row saturated solution.",
+      "section": "11.3"
+    },
+    {
+      "source": "Using Henry’s law",
+      "target": "亨利定律的应用",
+      "authority": "book",
+      "url": "",
+      "note": "concept name.",
+      "section": "11.3"
+    },
+    {
+      "source": "van’t Hoff factor",
+      "target": "范托夫因子",
+      "authority": "book",
+      "url": "",
+      "note": "termonline 2026-10-27: no entry. The chemist is 范托夫 (the standard transliteration of van 't Hoff); 范特霍夫 is the other common spelling in physical-chemistry texts.",
+      "section": "11.4",
+      "confirm": "owner"
+    },
+    {
+      "source": "vapor pressure lowering",
+      "target": "蒸气压下降",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=c64973ea26a711eeb606b068e6519520",
+      "note": "termonline 2026-10-27: confirmed (化学名词).",
+      "section": "11.4"
+    },
+    {
+      "source": "volcanic crater",
+      "target": "火山口",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "11.3"
+    },
+    {
+      "source": "weak electrolyte",
+      "target": "弱电解质",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "counterpart of strong electrolyte.",
+      "section": "11.2",
+      "confirm": "termonline"
+    },
+    {
+      "source": "whipped cream",
+      "target": "掼奶油",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.5"
+    },
+    {
+      "source": "Wilhelm Ostwald",
+      "target": "威廉·奥斯特瓦尔德",
+      "authority": "book",
+      "url": "",
+      "note": "Ostwald as in the ch18 row Ostwald process.",
+      "section": "11.5"
+    },
+    {
+      "source": "wood ash",
+      "target": "木灰",
+      "authority": "book",
+      "url": "",
+      "note": "",
+      "section": "11.5"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
  "id": "12",
  "dir": "ch12",
- "title": "Kinetics",
+ "title": "化学动力学",
  "intro": {
   "module": "m68785",
   "slug": "12-introduction"
@@ -10,43 +10,43 @@
   {
    "id": "12.1",
    "module": "m68786",
-   "title": "Chemical Reaction Rates",
+   "title": "化学反应速率",
    "slug": "12-1-chemical-reaction-rates"
   },
   {
    "id": "12.2",
    "module": "m68787",
-   "title": "Factors Affecting Reaction Rates",
+   "title": "影响反应速率的因素",
    "slug": "12-2-factors-affecting-reaction-rates"
   },
   {
    "id": "12.3",
    "module": "m68789",
-   "title": "Rate Laws",
+   "title": "速率定律",
    "slug": "12-3-rate-laws"
   },
   {
    "id": "12.4",
    "module": "m68791",
-   "title": "Integrated Rate Laws",
+   "title": "积分速率定律",
    "slug": "12-4-integrated-rate-laws"
   },
   {
    "id": "12.5",
    "module": "m68793",
-   "title": "Collision Theory",
+   "title": "碰撞理论",
    "slug": "12-5-collision-theory"
   },
   {
    "id": "12.6",
    "module": "m68794",
-   "title": "Reaction Mechanisms",
+   "title": "反应机理",
    "slug": "12-6-reaction-mechanisms"
   },
   {
    "id": "12.7",
    "module": "m68795",
-   "title": "Catalysis",
+   "title": "催化作用",
    "slug": "12-7-catalysis"
   }
  ],
@@ -54,7 +54,7 @@
   {
    "sym": "rate",
    "concept": "reaction-rate",
-   "meaning": "the rate of the reaction, the change in concentration of a reactant or product per unit time, taken as positive",
+   "meaning": "反应速率，即单位时间内反应物或产物浓度的变化量，取正值",
    "unit": "mol L⁻¹ s⁻¹ (M/s)",
    "section": "12.1",
    "anchor": "12.1-relative"
@@ -62,7 +62,7 @@
   {
    "sym": "[A]",
    "concept": "molarity",
-   "meaning": "the molar concentration of reactant A",
+   "meaning": "反应物 A 的物质的量浓度",
    "unit": "mol/L (M)",
    "section": "12.1",
    "anchor": "12.1-relative"
@@ -70,7 +70,7 @@
   {
    "sym": "[B]",
    "concept": "molarity",
-   "meaning": "the molar concentration of product B (a second reactant in a rate law)",
+   "meaning": "产物 B 的物质的量浓度（在速率定律中也可以是第二种反应物）",
    "unit": "mol/L (M)",
    "section": "12.1",
    "anchor": "12.1-relative"
@@ -78,7 +78,7 @@
   {
    "sym": "Δ[A]",
    "concept": "molarity",
-   "meaning": "the change in the molar concentration of A over a time interval",
+   "meaning": "A 的物质的量浓度在一段时间间隔内的变化量",
    "unit": "mol/L (M)",
    "section": "12.1",
    "anchor": "12.1-relative"
@@ -86,7 +86,7 @@
   {
    "sym": "Δ[B]",
    "concept": "molarity",
-   "meaning": "the change in the molar concentration of B over a time interval",
+   "meaning": "B 的物质的量浓度在一段时间间隔内的变化量",
    "unit": "mol/L (M)",
    "section": "12.1",
    "anchor": "12.1-relative"
@@ -94,7 +94,7 @@
   {
    "sym": "Δt",
    "concept": "time",
-   "meaning": "the time interval over which the concentration changes",
+   "meaning": "浓度发生变化所经历的时间间隔",
    "unit": "s",
    "section": "12.1",
    "anchor": "12.1-expression"
@@ -102,7 +102,7 @@
   {
    "sym": "k",
    "concept": "rate-constant",
-   "meaning": "the rate constant, specific to a reaction at a particular temperature",
+   "meaning": "速率常数，因反应和温度而异",
    "unit": "depends on the overall order, L^(x−1) mol^(1−x) s⁻¹",
    "section": "12.3",
    "anchor": "12.3-rate-laws"
@@ -110,7 +110,7 @@
   {
    "sym": "m_rxorder",
    "concept": "reaction-order",
-   "meaning": "the reaction order with respect to reactant A",
+   "meaning": "反应对反应物 A 的级数",
    "unit": "none",
    "section": "12.3",
    "anchor": "12.3-rate-laws"
@@ -118,7 +118,7 @@
   {
    "sym": "n_rxorder",
    "concept": "reaction-order",
-   "meaning": "the reaction order with respect to reactant B",
+   "meaning": "反应对反应物 B 的级数",
    "unit": "none",
    "section": "12.3",
    "anchor": "12.3-rate-laws"
@@ -126,7 +126,7 @@
   {
    "sym": "[A]_0",
    "concept": "molarity",
-   "meaning": "the initial concentration of A",
+   "meaning": "A 的初始浓度",
    "unit": "mol/L (M)",
    "section": "12.4",
    "anchor": "12.4-first-order"
@@ -134,7 +134,7 @@
   {
    "sym": "[A]_t",
    "concept": "molarity",
-   "meaning": "the concentration of A at time t",
+   "meaning": "t 时刻 A 的浓度",
    "unit": "mol/L (M)",
    "section": "12.4",
    "anchor": "12.4-first-order"
@@ -142,7 +142,7 @@
   {
    "sym": "t",
    "concept": "time",
-   "meaning": "the time elapsed since the reaction began",
+   "meaning": "自反应开始起经过的时间",
    "unit": "s",
    "section": "12.4",
    "anchor": "12.4-first-order"
@@ -150,7 +150,7 @@
   {
    "sym": "t_half",
    "concept": "half-life",
-   "meaning": "the half-life, the time for half of the reactant to be consumed",
+   "meaning": "半衰期，即消耗掉一半反应物所需的时间",
    "unit": "s",
    "section": "12.4",
    "anchor": "12.4-half-life"
@@ -158,7 +158,7 @@
   {
    "sym": "E_a",
    "concept": "activation-energy",
-   "meaning": "the activation energy, the minimum energy needed to form products in a collision",
+   "meaning": "活化能，即一次碰撞生成产物所需的最低能量",
    "unit": "J/mol or kJ/mol",
    "section": "12.5",
    "anchor": "12.5-activation"
@@ -166,7 +166,7 @@
   {
    "sym": "A_freq",
    "concept": "frequency-factor",
-   "meaning": "the frequency factor, related to the frequency of collisions and the orientation of the reacting molecules",
+   "meaning": "频率因子，与分子碰撞的频率以及反应分子的取向有关",
    "unit": "the units of k",
    "section": "12.5",
    "anchor": "12.5-arrhenius"
@@ -174,7 +174,7 @@
   {
    "sym": "R",
    "concept": "ideal-gas-constant",
-   "meaning": "the ideal gas constant, 8.314 J/mol/K",
+   "meaning": "理想气体常数，8.314 J/mol/K",
    "unit": "J mol⁻¹ K⁻¹",
    "section": "12.5",
    "anchor": "12.5-arrhenius"
@@ -182,7 +182,7 @@
   {
    "sym": "T",
    "concept": "temperature",
-   "meaning": "the temperature on the kelvin scale",
+   "meaning": "开尔文温标上的温度",
    "unit": "K",
    "section": "12.5",
    "anchor": "12.5-arrhenius"
@@ -190,7 +190,7 @@
   {
    "sym": "T_1",
    "concept": "temperature",
-   "meaning": "the first of two temperatures",
+   "meaning": "两个温度中的第一个",
    "unit": "K",
    "section": "12.5",
    "anchor": "12.5-ex-ea"
@@ -198,7 +198,7 @@
   {
    "sym": "T_2",
    "concept": "temperature",
-   "meaning": "the second of two temperatures",
+   "meaning": "两个温度中的第二个",
    "unit": "K",
    "section": "12.5",
    "anchor": "12.5-ex-ea"
@@ -206,7 +206,7 @@
   {
    "sym": "k_1",
    "concept": "rate-constant",
-   "meaning": "a rate constant labeled 1: at the first temperature, or of the forward reaction of a mechanism’s first step",
+   "meaning": "标为 1 的速率常数：在第一个温度下的速率常数，或机理第一步的正反应的速率常数",
    "unit": "depends on the order",
    "section": "12.5",
    "anchor": "12.5-ex-ea"
@@ -214,7 +214,7 @@
   {
    "sym": "k_2",
    "concept": "rate-constant",
-   "meaning": "a rate constant labeled 2: at the second temperature, or of a mechanism’s second step",
+   "meaning": "标为 2 的速率常数：在第二个温度下的速率常数，或机理第二步的速率常数",
    "unit": "depends on the order",
    "section": "12.5",
    "anchor": "12.5-ex-ea"
@@ -222,7 +222,7 @@
   {
    "sym": "k_m1",
    "concept": "rate-constant",
-   "meaning": "the rate constant of the reverse reaction of a mechanism’s first step",
+   "meaning": "机理第一步的逆反应的速率常数",
    "unit": "depends on the order",
    "section": "12.6",
    "anchor": "12.6-fast-equilibrium"
@@ -230,7 +230,7 @@
   {
    "sym": "ΔH",
    "concept": "enthalpy-change",
-   "meaning": "the enthalpy change of the reaction, the energy difference between reactants and products on a reaction diagram",
+   "meaning": "反应的焓变，即反应图上反应物与产物之间的能量差",
    "unit": "kJ/mol",
    "section": "12.5",
    "anchor": "12.5-activation"

@@ -1,7 +1,7 @@
 {
  "id": "11",
  "dir": "ch11",
- "title": "Solutions and Colloids",
+ "title": "溶液与胶体",
  "intro": {
   "module": "m68776",
   "slug": "11-introduction"
@@ -10,31 +10,31 @@
   {
    "id": "11.1",
    "module": "m68778",
-   "title": "The Dissolution Process",
+   "title": "溶解过程",
    "slug": "11-1-the-dissolution-process"
   },
   {
    "id": "11.2",
    "module": "m68781",
-   "title": "Electrolytes",
+   "title": "电解质",
    "slug": "11-2-electrolytes"
   },
   {
    "id": "11.3",
    "module": "m68782",
-   "title": "Solubility",
+   "title": "溶解度",
    "slug": "11-3-solubility"
   },
   {
    "id": "11.4",
    "module": "m68783",
-   "title": "Colligative Properties",
+   "title": "依数性质",
    "slug": "11-4-colligative-properties"
   },
   {
    "id": "11.5",
    "module": "m68784",
-   "title": "Colloids",
+   "title": "胶体",
    "slug": "11-5-colloids"
   }
  ],
@@ -42,7 +42,7 @@
   {
    "sym": "C_g",
    "concept": "solubility",
-   "meaning": "the solubility of a gas, its concentration in the solution",
+   "meaning": "气体的溶解度，即它在溶液中的浓度",
    "unit": "mol/L",
    "section": "11.3",
    "anchor": "11.3-henry"
@@ -51,7 +51,7 @@
    "sym": "k_H",
    "concept": "henrys-law",
    "type": "equilibrium-constant",
-   "meaning": "the Henry’s law constant, which depends on the gaseous solute, the solvent and the temperature",
+   "meaning": "亨利常数，取决于气态溶质、溶剂和温度",
    "unit": "mol L⁻¹ kPa⁻¹ or M/atm",
    "section": "11.3",
    "anchor": "11.3-henry"
@@ -59,7 +59,7 @@
   {
    "sym": "P_g",
    "concept": "partial-pressure",
-   "meaning": "the partial pressure of the gas above the solution",
+   "meaning": "溶液上方气体的分压",
    "unit": "kPa or atm",
    "section": "11.3",
    "anchor": "11.3-henry"
@@ -67,7 +67,7 @@
   {
    "sym": "M",
    "concept": "molarity",
-   "meaning": "the molarity of the solution, moles of solute per liter of solution",
+   "meaning": "溶液的物质的量浓度，即每升溶液中所含溶质的物质的量",
    "unit": "mol/L",
    "section": "11.4",
    "anchor": "11.4-molality"
@@ -75,7 +75,7 @@
   {
    "sym": "X_A",
    "concept": "mole-fraction",
-   "meaning": "the mole fraction of component A, its moles divided by the total moles of all components",
+   "meaning": "组分 A 的摩尔分数，即其物质的量除以所有组分的物质的量之和",
    "unit": "none",
    "section": "11.4",
    "anchor": "11.4-molality"
@@ -83,7 +83,7 @@
   {
    "sym": "m_molal",
    "concept": "molality",
-   "meaning": "the molality of the solution, moles of solute per kilogram of solvent",
+   "meaning": "溶液的质量摩尔浓度，即每千克溶剂中所含溶质的物质的量",
    "unit": "mol/kg (m)",
    "section": "11.4",
    "anchor": "11.4-molality"
@@ -91,7 +91,7 @@
   {
    "sym": "P_A",
    "concept": "partial-pressure",
-   "meaning": "the partial pressure exerted by component A of the solution",
+   "meaning": "溶液中组分 A 所产生的分压",
    "unit": "atm or torr",
    "section": "11.4",
    "anchor": "11.4-vapor"
@@ -99,7 +99,7 @@
   {
    "sym": "P_A*",
    "concept": "vapor-pressure",
-   "meaning": "the vapor pressure of pure A",
+   "meaning": "纯 A 的蒸气压",
    "unit": "atm or torr",
    "section": "11.4",
    "anchor": "11.4-vapor"
@@ -107,7 +107,7 @@
   {
    "sym": "P_i",
    "concept": "partial-pressure",
-   "meaning": "the partial pressure of component i of the solution",
+   "meaning": "溶液中组分 i 的分压",
    "unit": "atm or torr",
    "section": "11.4",
    "anchor": "11.4-vapor"
@@ -115,7 +115,7 @@
   {
    "sym": "P_i*",
    "concept": "vapor-pressure",
-   "meaning": "the vapor pressure of pure component i",
+   "meaning": "纯组分 i 的蒸气压",
    "unit": "atm or torr",
    "section": "11.4",
    "anchor": "11.4-vapor"
@@ -123,7 +123,7 @@
   {
    "sym": "X_i",
    "concept": "mole-fraction",
-   "meaning": "the mole fraction of component i",
+   "meaning": "组分 i 的摩尔分数",
    "unit": "none",
    "section": "11.4",
    "anchor": "11.4-vapor"
@@ -131,7 +131,7 @@
   {
    "sym": "P_solution",
    "concept": "vapor-pressure",
-   "meaning": "the total vapor pressure above the solution",
+   "meaning": "溶液上方的总蒸气压",
    "unit": "atm or torr",
    "section": "11.4",
    "anchor": "11.4-vapor"
@@ -139,7 +139,7 @@
   {
    "sym": "P_solvent*",
    "concept": "vapor-pressure",
-   "meaning": "the vapor pressure of the pure solvent",
+   "meaning": "纯溶剂的蒸气压",
    "unit": "atm or torr",
    "section": "11.4",
    "anchor": "11.4-vapor"
@@ -147,7 +147,7 @@
   {
    "sym": "X_solvent",
    "concept": "mole-fraction",
-   "meaning": "the mole fraction of the solvent",
+   "meaning": "溶剂的摩尔分数",
    "unit": "none",
    "section": "11.4",
    "anchor": "11.4-vapor"
@@ -156,7 +156,7 @@
    "sym": "ΔP_vp",
    "concept": "raoults-law",
    "type": "pressure",
-   "meaning": "the vapor pressure lowering, the pure solvent’s vapor pressure less the solution’s",
+   "meaning": "蒸气压下降值，即纯溶剂的蒸气压减去溶液的蒸气压",
    "unit": "atm",
    "section": "11.4",
    "anchor": "11.4-phase"
@@ -164,7 +164,7 @@
   {
    "sym": "ΔT_b",
    "concept": "boiling-point-elevation",
-   "meaning": "the boiling point elevation",
+   "meaning": "沸点升高值",
    "unit": "°C",
    "section": "11.4",
    "anchor": "11.4-boiling"
@@ -172,7 +172,7 @@
   {
    "sym": "K_b",
    "concept": "boiling-point-elevation-constant",
-   "meaning": "the boiling point elevation (ebullioscopic) constant of the solvent",
+   "meaning": "溶剂的沸点升高常数（摩尔沸点升高常数）",
    "unit": "°C/m",
    "section": "11.4",
    "anchor": "11.4-boiling"
@@ -180,7 +180,7 @@
   {
    "sym": "ΔT_f",
    "concept": "freezing-point-depression",
-   "meaning": "the freezing point depression",
+   "meaning": "凝固点降低值",
    "unit": "°C",
    "section": "11.4",
    "anchor": "11.4-freezing"
@@ -188,7 +188,7 @@
   {
    "sym": "K_f",
    "concept": "freezing-point-depression-constant",
-   "meaning": "the freezing point depression (cryoscopic) constant of the solvent",
+   "meaning": "溶剂的凝固点降低常数（摩尔凝固点降低常数）",
    "unit": "°C/m",
    "section": "11.4",
    "anchor": "11.4-freezing"
@@ -196,7 +196,7 @@
   {
    "sym": "Π",
    "concept": "osmotic-pressure",
-   "meaning": "the osmotic pressure of the solution",
+   "meaning": "溶液的渗透压",
    "unit": "atm",
    "section": "11.4",
    "anchor": "11.4-osmosis"
@@ -204,7 +204,7 @@
   {
    "sym": "R",
    "concept": "ideal-gas-constant",
-   "meaning": "the gas constant, 0.08206 L atm/mol K",
+   "meaning": "气体常数，0.08206 L atm/mol K",
    "unit": "L atm/mol K",
    "section": "11.4",
    "anchor": "11.4-osmosis"
@@ -212,7 +212,7 @@
   {
    "sym": "T",
    "concept": "temperature",
-   "meaning": "the absolute temperature",
+   "meaning": "热力学温度",
    "unit": "K",
    "section": "11.4",
    "anchor": "11.4-osmosis"
@@ -220,7 +220,7 @@
   {
    "sym": "i_vh",
    "concept": "vant-hoff-factor",
-   "meaning": "the van’t Hoff factor, moles of particles in solution per mole of formula units dissolved",
+   "meaning": "范托夫因子，即溶液中粒子的物质的量与所溶解化学式单元的物质的量之比",
    "unit": "none",
    "section": "11.4",
    "anchor": "11.4-electrolytes"

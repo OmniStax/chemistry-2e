@@ -1,0 +1,705 @@
+{
+ "types": [],
+ "symbols": [
+  {
+   "sym": "N_A",
+   "latex": "N_A"
+  },
+  {
+   "sym": "n_fu",
+   "latex": "n"
+  },
+  {
+   "sym": "L",
+   "latex": "L",
+   "macro": "\\kL"
+  },
+  {
+   "sym": "L_1",
+   "latex": "L_1",
+   "macro": "\\kLone"
+  },
+  {
+   "sym": "L_2",
+   "latex": "L_2",
+   "macro": "\\kLtwo"
+  },
+  {
+   "sym": "M_1",
+   "latex": "M_1",
+   "macro": "\\kMone"
+  },
+  {
+   "sym": "M_2",
+   "latex": "M_2",
+   "macro": "\\kMtwo"
+  },
+  {
+   "sym": "C_1",
+   "latex": "C_1",
+   "macro": "\\kCone"
+  },
+  {
+   "sym": "C_2",
+   "latex": "C_2",
+   "macro": "\\kCtwo"
+  },
+  {
+   "sym": "C_conc",
+   "latex": "C",
+   "macro": "\\kCconc"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "formula-mass",
+   "kind": "skill",
+   "section": "3.1",
+   "name": "计算式量",
+   "statement": "计算一种物质的式量，方法是把各元素的平均原子质量乘以它的下标，再把乘积相加。"
+  },
+  {
+   "id": "molecular-versus-formula-mass",
+   "kind": "idea",
+   "section": "3.1",
+   "name": "分子质量与式量",
+   "statement": "对共价物质而言，化学式表示一个分子，所以它的式量可以称为分子质量；离子化合物不存在分立的分子，所以它的式量不可以这样称呼。离子的质量也用中性原子的质量来计算，因为电子的质量相对于原子的质量可以忽略不计。"
+  },
+  {
+   "id": "mole",
+   "kind": "definition",
+   "section": "3.1",
+   "name": "摩尔",
+   "symbol": "n",
+   "terms": [
+    "摩尔"
+   ],
+   "type": "amount",
+   "statement": "摩尔是一种物质的量单位，如同一对、一打。它把一个容易测量的性质，即宏观质量，与一个基本性质，即原子或分子的数目，联系起来。化学家通过称量来计数看不见的粒子，使这件事成为可能的单位就是摩尔。"
+  },
+  {
+   "id": "avogadro-number",
+   "kind": "axiom",
+   "section": "3.1",
+   "name": "阿伏加德罗常数",
+   "symbol": "N_A",
+   "terms": [
+    "阿伏加德罗常数"
+   ],
+   "statement": "1 摩尔的任何物质都含有同样多的基本单元，即 6.022 × 10<sup>23</sup> 个，所以样品中原子或分子的数目可以由它以摩尔计的物质的量得出。正是这个数的巨大，使一滴水所含的分子数多到难以清楚想象。",
+   "forms": [
+    {
+     "id": "eq-avogadro-number",
+     "latex": "N_A = 6.022 \\times 10^{23}"
+    }
+   ]
+  },
+  {
+   "id": "molar-mass",
+   "kind": "definition",
+   "section": "3.1",
+   "name": "摩尔质量",
+   "symbol": "MM",
+   "terms": [
+    "摩尔质量"
+   ],
+   "type": "mass",
+   "statement": "一种物质的摩尔质量是 1 摩尔该物质以克计的质量，在数值上等于以 amu 计的式量，因为原子质量单位和摩尔都是由同一个基准碳-12 定义的。这一等式使得从元素周期表读出的式量成为克与摩尔之间的换算因子。"
+  },
+  {
+   "id": "mass-mole-conversion",
+   "kind": "skill",
+   "section": "3.1",
+   "name": "质量与物质的量之间的换算",
+   "statement": "质量除以摩尔质量，得到以摩尔计的物质的量；物质的量乘以摩尔质量，得到质量。每当天平上称出的量必须换算成粒子数，或者反过来时，本书其余各章都要用到这种换算。"
+  },
+  {
+   "id": "count-atoms-and-molecules",
+   "kind": "skill",
+   "section": "3.1",
+   "name": "计算原子数和分子数",
+   "statement": "先用摩尔质量把质量换算成摩尔，再用阿伏加德罗常数换算成基本单元的数目，然后由化学式得出每种原子的数目。这个两步的换算链能回答天平无法直接回答的问题，例如一包甜味剂含有多少个碳原子。"
+  },
+  {
+   "id": "formula-mass-of-a-substance",
+   "kind": "definition",
+   "section": "3.1",
+   "name": "式量",
+   "terms": [
+    "式量"
+   ],
+   "statement": "一种物质的式量是其化学式所表示的所有原子的平均质量之和；对共价化合物来说，它也是分子质量。"
+  },
+  {
+   "id": "percent-composition",
+   "kind": "definition",
+   "section": "3.2",
+   "name": "百分组成",
+   "terms": [
+    "百分组成"
+   ],
+   "statement": "一种化合物的百分组成是其中各元素的质量百分数。测定各元素的质量，常常是求一种未知化合物的化学式的第一步，而百分数就是报告这种测定结果的方式。",
+   "forms": [
+    {
+     "id": "eq-percent-composition",
+     "latex": "\\%\\;\\text{X}=\\frac{\\text{X 的质量}}{\\text{化合物的质量}}\\times 100\\%",
+     "condition": "X 为该化合物中的任一元素",
+     "anchor": "3.2-percent"
+    }
+   ]
+  },
+  {
+   "id": "percent-composition-from-formula",
+   "kind": "skill",
+   "section": "3.2",
+   "name": "由化学式求百分组成",
+   "statement": "化学式已知时，取 1 摩尔该化合物作为样品，仅凭原子质量或摩尔质量就能得出百分组成。化肥的买家就是这样比较氨、硝酸铵和尿素中的氮含量的。"
+  },
+  {
+   "id": "empirical-formula",
+   "kind": "skill",
+   "section": "3.2",
+   "name": "推导实验式",
+   "statement": "化学式表示的是原子的相对数目，而不是质量。所以先把各元素的质量换算成物质的量，再把这些物质的量除以其中最小的一个，必要时再乘以一个整数，使结果都成为整数。这一方法把天平上的分析结果变成了化学式。"
+  },
+  {
+   "id": "empirical-formula-from-percent",
+   "kind": "skill",
+   "section": "3.2",
+   "name": "由百分组成推导实验式",
+   "statement": "只知道百分数时，假定取 100 g 样品，这样每种元素以克计的质量在数值上就等于它的质量百分数，接下来按通常的步骤进行。"
+  },
+  {
+   "id": "molecular-formula-from-empirical",
+   "kind": "skill",
+   "section": "3.2",
+   "name": "推导分子式",
+   "statement": "实验式只给出原子的相对数目。用分子质量或摩尔质量除以实验式量，得到每个分子中化学式单元的个数，再把每个下标都乘以这个数，就得到分子式。",
+   "forms": [
+    {
+     "id": "eq-formula-units-per-molecule",
+     "latex": "\\frac{\\text{分子质量或摩尔质量}}{\\text{实验式量}}=n\\;\\text{化学式单元/分子}",
+     "condition": "两个质量同用 amu 为单位，或同用 g/mol 为单位",
+     "anchor": "3.2-molecular"
+    },
+    {
+     "id": "eq-molecular-formula",
+     "latex": "(\\text{A}_x\\text{B}_y)_n=\\text{A}_{nx}\\text{B}_{ny}",
+     "condition": "实验式为 A<sub>x</sub>B<sub>y</sub> 的化合物，每个分子含有 n 个实验式单元",
+     "anchor": "3.2-molecular"
+    }
+   ]
+  },
+  {
+   "id": "empirical-formula-mass",
+   "kind": "definition",
+   "section": "3.2",
+   "name": "实验式量",
+   "terms": [
+    "实验式量"
+   ],
+   "statement": "一种化合物的实验式量，是其实验式所表示的所有原子的平均原子质量之和。"
+  },
+  {
+   "id": "solution-components",
+   "kind": "definition",
+   "section": "3.3",
+   "name": "溶液的组分",
+   "statement": "溶液是均匀混合物，通常有一种组分的浓度远高于其他组分，这种组分是溶剂，其他组分是溶解在其中的溶质。以水为溶剂的溶液是水溶液，是本书最常遇到的一类溶液。"
+  },
+  {
+   "id": "concentration",
+   "kind": "definition",
+   "section": "3.3",
+   "name": "浓度",
+   "symbol": "C_1",
+   "terms": [
+    "浓度"
+   ],
+   "type": "concentration",
+   "statement": "溶液中某一组分的相对含量称为它的浓度，混合物的性质取决于浓度，就像咖啡的甜度取决于其中的糖。在任何单位给浓度一个数值之前，人们先用文字把溶液说成是稀的或浓的。"
+  },
+  {
+   "id": "molarity",
+   "kind": "definition",
+   "section": "3.3",
+   "name": "物质的量浓度",
+   "symbol": "M",
+   "terms": [
+    "物质的量浓度（M）"
+   ],
+   "type": "concentration",
+   "statement": "物质的量浓度是 1 升溶液中所含溶质的物质的量，是化学中大多数场合使用的浓度单位。这里的 1 升指的是整个溶液的体积，而不是所加溶剂的体积。",
+   "forms": [
+    {
+     "id": "eq-molarity",
+     "latex": "M=\\frac{\\text{溶质的物质的量（mol）}}{\\text{溶液的体积（L）}}",
+     "ktex": "\\kM=\\frac{\\text{溶质的物质的量（mol）}}{\\text{溶液的体积（L）}}",
+     "condition": "体积是整个溶液的体积，而不是溶剂的体积",
+     "anchor": "3.3-molarity"
+    },
+    {
+     "id": "eq-moles-from-molarity",
+     "latex": "n=ML",
+     "ktex": "\\kn=\\kM\\kL",
+     "condition": "体积以升为单位",
+     "anchor": "3.3-dilution-equation"
+    },
+    {
+     "id": "eq-molarity-mmol",
+     "latex": "M=\\frac{\\text{溶质的物质的量（mol）}}{\\text{溶液的体积（L）}}=\\frac{\\text{溶质的物质的量（mmol）}}{\\text{溶液的体积（mL）}}",
+     "ktex": "\\kM=\\frac{\\text{溶质的物质的量（mol）}}{\\text{溶液的体积（L）}}=\\frac{\\text{溶质的物质的量（mmol）}}{\\text{溶液的体积（mL）}}",
+     "condition": "溶液的物质的量浓度，用毫摩尔和毫升表示，以简化滴定计算",
+     "section": "4.5",
+     "anchor": "4.5-titration-calc"
+    }
+   ]
+  },
+  {
+   "id": "molarity-calculations",
+   "kind": "skill",
+   "section": "3.3",
+   "name": "物质的量浓度的计算",
+   "statement": "物质的量浓度的定义把三个量联系在一起，所以溶质的物质的量、溶液的体积和物质的量浓度，三者中任何一个都可以由另外两个得出；再借助摩尔质量，还可以求出溶质的质量。多保留一位保护位，或者一步算完全部计算，就能避免修约误差进入答案。"
+  },
+  {
+   "id": "dilution",
+   "kind": "definition",
+   "section": "3.3",
+   "name": "稀释",
+   "terms": [
+    "稀释"
+   ],
+   "statement": "稀释是通过加入溶剂来降低溶液浓度，而溶质的物质的量保持不变。冰块融化使冰茶变淡就是稀释，实验室用浓的储备液配制工作溶液也是稀释。"
+  },
+  {
+   "id": "dilution-equation",
+   "kind": "result",
+   "section": "3.3",
+   "name": "稀释公式",
+   "statement": "由于 n = ML，而且稀释时溶质的物质的量不变，所以稀释前后浓度与体积的乘积相同。只要浓度和体积的单位能够约去，这一关系对任何单位都成立，因此写成 C<sub>1</sub>V<sub>1</sub> = C<sub>2</sub>V<sub>2</sub>。",
+   "forms": [
+    {
+     "id": "eq-dilution",
+     "latex": "C_1V_1=C_2V_2",
+     "ktex": "\\kCone\\kVone=\\kCtwo\\kVtwo",
+     "condition": "加入溶剂稀释的溶液；浓度和体积可用任何能够约去的单位",
+     "anchor": "3.3-dilution-equation"
+    },
+    {
+     "id": "eq-dilution-molarity",
+     "latex": "M_1L_1=M_2L_2",
+     "ktex": "\\kMone\\kLone=\\kMtwo\\kLtwo",
+     "condition": "加入溶剂稀释的溶液，因此溶质的物质的量不变",
+     "anchor": "3.3-dilution-equation"
+    }
+   ]
+  },
+  {
+   "id": "solvent",
+   "kind": "definition",
+   "section": "3.3",
+   "name": "溶剂",
+   "terms": [
+    "溶剂"
+   ],
+   "statement": "溶剂是溶液中浓度高于其他组分的那一组分。"
+  },
+  {
+   "id": "solute",
+   "kind": "definition",
+   "section": "3.3",
+   "name": "溶质",
+   "terms": [
+    "溶质"
+   ],
+   "statement": "溶质是溶液中浓度低于溶剂的组分。"
+  },
+  {
+   "id": "aqueous-solution",
+   "kind": "definition",
+   "section": "3.3",
+   "name": "水溶液",
+   "terms": [
+    "水溶液"
+   ],
+   "statement": "水溶液是以水为溶剂的溶液。"
+  },
+  {
+   "id": "dissolved",
+   "kind": "definition",
+   "section": "3.3",
+   "name": "溶解的",
+   "terms": [
+    "溶解的"
+   ],
+   "statement": "溶质的各组成部分分散在溶剂中时，称这种溶质是溶解的。"
+  },
+  {
+   "id": "concentrated",
+   "kind": "definition",
+   "section": "3.3",
+   "name": "浓的",
+   "terms": [
+    "浓的"
+   ],
+   "statement": "浓溶液是含有相对较高浓度溶质的溶液；这个词只是定性的说法。"
+  },
+  {
+   "id": "dilute",
+   "kind": "definition",
+   "section": "3.3",
+   "name": "稀的",
+   "terms": [
+    "稀的"
+   ],
+   "statement": "稀溶液是含有相对较低浓度溶质的溶液；这个词只是定性的说法。"
+  },
+  {
+   "id": "mass-percentage",
+   "kind": "definition",
+   "section": "3.4",
+   "name": "质量分数",
+   "terms": [
+    "质量分数"
+   ],
+   "statement": "某一组分的质量分数是该组分的质量与溶液的质量之比，以百分数表示。它是消费品标签上使用的单位，只要求两个质量用同一单位。",
+   "forms": [
+    {
+     "id": "eq-mass-percentage",
+     "latex": "\\text{质量分数}=\\frac{\\text{组分的质量}}{\\text{溶液的质量}}\\times 100\\%",
+     "condition": "两个质量用同一单位",
+     "anchor": "3.4-mass-percentage"
+    }
+   ]
+  },
+  {
+   "id": "volume-percentage",
+   "kind": "definition",
+   "section": "3.4",
+   "name": "体积分数",
+   "terms": [
+    "体积分数"
+   ],
+   "statement": "液体溶于液体时，用溶质体积与溶液体积之比的百分数来描述很方便，因为液体的体积容易测量。",
+   "forms": [
+    {
+     "id": "eq-volume-percentage",
+     "latex": "\\text{体积分数}=\\frac{\\text{溶质的体积}}{\\text{溶液的体积}}\\times 100\\%",
+     "condition": "两个体积用同一单位",
+     "anchor": "3.4-volume-percentage"
+    }
+   ]
+  },
+  {
+   "id": "mass-volume-percent",
+   "kind": "definition",
+   "section": "3.4",
+   "name": "质量体积百分数",
+   "terms": [
+    "质量体积百分数"
+   ],
+   "statement": "混合单位取溶质的质量和溶液的体积，例如生理盐水每 100 mL 含 0.9 g 溶质，血糖以每分升多少毫克来报告。这类单位在生物化学和医学场合很常见。"
+  },
+  {
+   "id": "ppm-and-ppb",
+   "kind": "definition",
+   "section": "3.4",
+   "name": "百万分率和十亿分率",
+   "statement": "很低的浓度用百万分率或十亿分率表示，即质量之比乘以 10<sup>6</sup> 或 10<sup>9</sup>，正如百分数是百分之几一样。它们是水中痕量污染物所用的单位。"
+  },
+  {
+   "id": "concentration-unit-conversions",
+   "kind": "skill",
+   "section": "3.4",
+   "name": "浓度单位的换算",
+   "statement": "溶液的密度把体积换算成质量，摩尔质量把溶质的质量换算成物质的量，所以用一种单位给出的浓度可以用另一种单位表示，例如由质量分数换算成溶质的质量或物质的量浓度。"
+  },
+  {
+   "id": "parts-per-million",
+   "kind": "definition",
+   "section": "3.4",
+   "name": "百万分率",
+   "terms": [
+    "百万分率（ppm）"
+   ],
+   "statement": "百万分率（ppm）是溶质与溶液的质量之比乘以 10⁶。",
+   "forms": [
+    {
+     "id": "eq-ppm",
+     "latex": "\\text{ppm}=\\frac{\\text{溶质的质量}}{\\text{溶液的质量}}\\times 10^{6}\\;\\text{ppm}",
+     "condition": "以质量为基础的定义",
+     "anchor": "3.4-ppm-ppb"
+    }
+   ]
+  },
+  {
+   "id": "parts-per-billion",
+   "kind": "definition",
+   "section": "3.4",
+   "name": "十亿分率",
+   "terms": [
+    "十亿分率（ppb）"
+   ],
+   "statement": "十亿分率（ppb）是溶质与溶液的质量之比乘以 10⁹。",
+   "forms": [
+    {
+     "id": "eq-ppb",
+     "latex": "\\text{ppb}=\\frac{\\text{溶质的质量}}{\\text{溶液的质量}}\\times 10^{9}\\;\\text{ppb}",
+     "condition": "以质量为基础的定义",
+     "anchor": "3.4-ppm-ppb"
+    }
+   ]
+  }
+ ],
+ "concept_prereqs": [
+  {
+   "concept": "molecular-versus-formula-mass",
+   "prereq": "formula-mass"
+  },
+  {
+   "concept": "mole",
+   "prereq": "scientific-notation"
+  },
+  {
+   "concept": "avogadro-number",
+   "prereq": "mole"
+  },
+  {
+   "concept": "molar-mass",
+   "prereq": "mole"
+  },
+  {
+   "concept": "molar-mass",
+   "prereq": "formula-mass"
+  },
+  {
+   "concept": "mass-mole-conversion",
+   "prereq": "molar-mass"
+  },
+  {
+   "concept": "mass-mole-conversion",
+   "prereq": "unit-conversion-factor"
+  },
+  {
+   "concept": "count-atoms-and-molecules",
+   "prereq": "mass-mole-conversion"
+  },
+  {
+   "concept": "count-atoms-and-molecules",
+   "prereq": "avogadro-number"
+  },
+  {
+   "concept": "percent-composition",
+   "prereq": "formula-mass"
+  },
+  {
+   "concept": "percent-composition-from-formula",
+   "prereq": "percent-composition"
+  },
+  {
+   "concept": "percent-composition-from-formula",
+   "prereq": "molar-mass"
+  },
+  {
+   "concept": "empirical-formula",
+   "prereq": "mass-mole-conversion"
+  },
+  {
+   "concept": "empirical-formula-from-percent",
+   "prereq": "empirical-formula"
+  },
+  {
+   "concept": "empirical-formula-from-percent",
+   "prereq": "percent-composition"
+  },
+  {
+   "concept": "molecular-formula-from-empirical",
+   "prereq": "empirical-formula"
+  },
+  {
+   "concept": "molecular-formula-from-empirical",
+   "prereq": "molar-mass"
+  },
+  {
+   "concept": "solution-components",
+   "prereq": "mixtures"
+  },
+  {
+   "concept": "concentration",
+   "prereq": "solution-components"
+  },
+  {
+   "concept": "molarity",
+   "prereq": "concentration"
+  },
+  {
+   "concept": "molarity",
+   "prereq": "mole"
+  },
+  {
+   "concept": "molarity",
+   "prereq": "volume"
+  },
+  {
+   "concept": "molarity-calculations",
+   "prereq": "molarity"
+  },
+  {
+   "concept": "molarity-calculations",
+   "prereq": "mass-mole-conversion"
+  },
+  {
+   "concept": "molarity-calculations",
+   "prereq": "significant-figures-in-calculations"
+  },
+  {
+   "concept": "dilution",
+   "prereq": "concentration"
+  },
+  {
+   "concept": "dilution-equation",
+   "prereq": "dilution"
+  },
+  {
+   "concept": "dilution-equation",
+   "prereq": "molarity"
+  },
+  {
+   "concept": "mass-percentage",
+   "prereq": "concentration"
+  },
+  {
+   "concept": "mass-percentage",
+   "prereq": "percent-composition"
+  },
+  {
+   "concept": "volume-percentage",
+   "prereq": "concentration"
+  },
+  {
+   "concept": "volume-percentage",
+   "prereq": "volume"
+  },
+  {
+   "concept": "mass-volume-percent",
+   "prereq": "mass-percentage"
+  },
+  {
+   "concept": "mass-volume-percent",
+   "prereq": "volume-percentage"
+  },
+  {
+   "concept": "ppm-and-ppb",
+   "prereq": "mass-percentage"
+  },
+  {
+   "concept": "ppm-and-ppb",
+   "prereq": "scientific-notation"
+  },
+  {
+   "concept": "concentration-unit-conversions",
+   "prereq": "mass-percentage"
+  },
+  {
+   "concept": "concentration-unit-conversions",
+   "prereq": "density"
+  },
+  {
+   "concept": "concentration-unit-conversions",
+   "prereq": "molarity-calculations"
+  },
+  {
+   "concept": "empirical-formula",
+   "prereq": "empirical-formula-from-molecular-formula"
+  },
+  {
+   "concept": "formula-mass",
+   "prereq": "average-atomic-mass"
+  },
+  {
+   "concept": "formula-mass",
+   "prereq": "molecular-formula"
+  },
+  {
+   "concept": "molecular-versus-formula-mass",
+   "prereq": "ionic-compounds"
+  },
+  {
+   "concept": "empirical-formula-mass",
+   "prereq": "formula-mass-of-a-substance"
+  },
+  {
+   "concept": "empirical-formula-mass",
+   "prereq": "empirical-formula-of-a-compound"
+  },
+  {
+   "concept": "formula-mass-of-a-substance",
+   "prereq": "average-atomic-mass"
+  },
+  {
+   "concept": "formula-mass-of-a-substance",
+   "prereq": "molecular-formula"
+  },
+  {
+   "concept": "solvent",
+   "prereq": "solution-components"
+  },
+  {
+   "concept": "solvent",
+   "prereq": "homogeneous-mixture"
+  },
+  {
+   "concept": "solute",
+   "prereq": "solvent"
+  },
+  {
+   "concept": "aqueous-solution",
+   "prereq": "solvent"
+  },
+  {
+   "concept": "dissolved",
+   "prereq": "solute"
+  },
+  {
+   "concept": "dissolved",
+   "prereq": "solvent"
+  },
+  {
+   "concept": "concentrated",
+   "prereq": "concentration"
+  },
+  {
+   "concept": "dilute",
+   "prereq": "concentration"
+  },
+  {
+   "concept": "parts-per-million",
+   "prereq": "ppm-and-ppb"
+  },
+  {
+   "concept": "parts-per-billion",
+   "prereq": "ppm-and-ppb"
+  },
+  {
+   "concept": "formula-mass",
+   "prereq": "formula-mass-of-a-substance"
+  },
+  {
+   "concept": "molecular-versus-formula-mass",
+   "prereq": "formula-mass-of-a-substance"
+  },
+  {
+   "concept": "molecular-formula-from-empirical",
+   "prereq": "empirical-formula-mass"
+  },
+  {
+   "concept": "molarity",
+   "prereq": "solute"
+  },
+  {
+   "concept": "concentration",
+   "prereq": "solute"
+  }
+ ]
+}

@@ -2,31 +2,39 @@
  "id": "18.4",
  "module": "m68832",
  "chapter": "18",
- "title": "Structure and General Properties of the Nonmetals",
- "short": "Nonmetals",
- "lead": "The <span data-concept=\"nonmetal\">nonmetals</span> are taken together: how they bond with metals and with one another, the <span data-concept=\"oxidation-number\">oxidation states</span> they show and the patterns of their oxidation-reduction chemistry and their oxides, and then the structures of the elements themselves, with the <span data-concept=\"allotropes\">allotropes</span> of carbon, phosphorus and sulfur.",
+ "title": "非金属的结构与一般性质",
+ "short": "非金属",
+ "lead": "<span data-concept=\"nonmetal\">非金属</span>放在一起讨论：它们如何与金属以及彼此成键，它们表现出的<span data-concept=\"oxidation-number\">氧化态</span>，它们的氧化还原化学和氧化物的规律，然后是元素单质本身的结构，包括碳、磷和硫的<span data-concept=\"allotropes\">同素异形体</span>。",
  "objectives": [
-  "Describe structure and properties of nonmetals"
+  "描述非金属的结构和性质"
  ],
- "summary_html": "<p><span data-concept=\"nonmetal\">Nonmetals</span> have structures that are very different from those of the <span data-concept=\"metal\">metals</span>, primarily because they have greater <span data-concept=\"electronegativity\">electronegativity</span> and electrons that are more tightly bound to individual atoms. Most nonmetal oxides are <span data-concept=\"acid-anhydride\">acid anhydrides</span>, meaning that they react with water to form acidic solutions. Molecular structures are common for most of the nonmetals, and several have multiple <span data-concept=\"allotropes\">allotropes</span> with varying physical properties.</p>",
- "notes": "The section keeps as printed the equation S(s) + O₂(g) ⟶ 2SO₂(s), the commas set as subscripts after NF₃, H₂ and H₂S, “the electron required necessary” and the note’s two citations of Figure 18.23; the photographs of diamond, graphite and the two allotropes of phosphorus are shown with the book’s originals of Figures 18.20 and 18.24, and red phosphorus is drawn with one bond of each tetrahedron opened to join its neighbors, so that every atom keeps three bonds.",
+ "summary_html": "<p><span data-concept=\"nonmetal\">非金属</span>的结构与<span data-concept=\"metal\">金属</span>的结构大不相同，主要是因为它们的<span data-concept=\"electronegativity\">电负性</span>更大，电子与单个原子结合得更紧。大多数非金属氧化物是<span data-concept=\"acid-anhydride\">酸酐</span>，也就是说，它们与水反应生成酸性溶液。分子结构在大多数非金属中很常见，其中几种有多种物理性质各异的<span data-concept=\"allotropes\">同素异形体</span>。</p>",
+ "notes": "本节按原书印刷保留方程 S(s) + O₂(g) ⟶ 2SO₂(s)、NF₃、H₂ 和 H₂S 之后作为下标的逗号、“所需必要的电子”（原文为“the electron required necessary”）以及注释中对图 18.23 的两处引用；金刚石、石墨和磷的两种同素异形体的照片与图 18.20 和图 18.24 的书中原图一并给出，红磷的画法是每个四面体的一个键断开并与其邻居相连，使每个原子都保持三个键。",
  "ai": {
   "text": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-10-05",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels, concept tags and suggested approaches are AI-generated. Answers come from the book’s answer key. The two unkeyed exercises fs-idm173324096 (balanced equations for five acid anhydrides with water) and fs-idm207037584 (the oxidation state of sulfur in three species) are left out, and no answer is computed for them. The unkeyed conceptual exercises fs-idp44423136 and fs-idp14134080 carry a suggested approach marked as OmniStax’s own. The key to fs-idm146332464 writes “an σ bond” as printed. Nothing is moved.",
+ "exercise_notes": "布鲁姆层级、概念标签和建议解法由 AI 生成。答案来自书中的答案表。两道没有答案的习题 fs-idm173324096（五种酸酐与水反应的配平方程式）和 fs-idm207037584（三种物种中硫的氧化态）被略去，也未计算它们的答案。没有答案的概念性习题 fs-idp44423136 和 fs-idp14134080 带有标明为 OmniStax 自拟的建议解法。fs-idm146332464 的答案按原样写作“an σ bond”（译文中英文冠词归并为“一个 σ 键”）。没有任何内容被移动。",
  "figures": [
   {
    "id": "fig-oxidation-states",
@@ -35,13 +43,18 @@
    "originals": [
     "/media/ch18/CNX_Chem_18_04_OxStNonmts.jpg"
    ],
-   "original_caption": "Nonmetals exhibit these common oxidation states in ionic and covalent compounds.",
+   "original_caption": "非金属在离子型和共价化合物中表现出这些常见的氧化态。",
    "draws": [],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -58,7 +71,7 @@
     "/media/ch18/CNX_Chem_18_04_Buckyball.jpg",
     "/media/ch18/CNX_Chem_18_04_Nanotube.jpg"
    ],
-   "original_caption": "(Figure 18.20) (a) Diamond and (b) graphite are two forms of carbon. (c) In the crystal structure of diamond, the covalent bonds form three-dimensional tetrahedrons. (d) In the crystal structure of graphite, each planar layer is composed of six-membered rings. (credit a: modification of work by “Fancy Diamonds”/Flickr; credit b: modification of work from http://images-of-elements.com/carbon.php) (Figure 18.22) The molecular structure of C₆₀, buckminsterfullerene, is icosahedral. (Figure 18.23) (a) Graphene and (b) carbon nanotubes are both allotropes of carbon.",
+   "original_caption": "（图 18.20）（a）金刚石和（b）石墨是碳的两种形态。（c）在金刚石的晶体结构中，共价键形成三维的四面体。（d）在石墨的晶体结构中，每个平面层由六元环组成。（来源 a：改编自 “Fancy Diamonds”/Flickr 的作品；b：改编自 http://images-of-elements.com/carbon.php 的作品）（图 18.22）C₆₀ 即巴克敏斯特富勒烯的分子结构是二十面体。（图 18.23）（a）石墨烯和（b）碳纳米管都是碳的同素异形体。",
    "draws": [
     "temperature"
    ],
@@ -70,6 +83,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -80,13 +98,18 @@
    "originals": [
     "/media/ch18/CNX_Chem_18_04_unhyporbC.jpg"
    ],
-   "original_caption": "(a) Carbon atoms in graphite have unhybridized p orbitals. Each p orbital is perpendicular to the plane of carbon atoms. (b) These are two of the many resonance forms of graphite necessary to describe its electronic structure as a resonance hybrid.",
+   "original_caption": "（a）石墨中的碳原子具有未杂化的 p 轨道。每个 p 轨道都垂直于碳原子所在的平面。（b）这是描述石墨的电子结构（作为共振杂化体）所必需的众多共振式中的两种。",
    "draws": [],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -97,7 +120,7 @@
    "originals": [
     "/media/ch18/CNX_Chem_18_04_Phosphorus.jpg"
    ],
-   "original_caption": "(a) Because white phosphorus bursts into flame in air, it is stored in water. (b) The structure of white phosphorus consists of P4 molecules arranged in a tetrahedron. (c) Red phosphorus is much less reactive than is white phosphorus. (d) The structure of red phosphorus consists of networks of P4 tetrahedra joined by P-P single bonds. (credit a: modification of work from http://images-of-elements.com/phosphorus.php)",
+   "original_caption": "（a）白磷在空气中会自燃，因此保存在水中。（b）白磷的结构由排列成四面体的 P4 分子组成。（c）红磷的反应性比白磷低得多。（d）红磷的结构由通过 P-P 单键连接的 P4 四面体网络组成。（来源 a：改编自 http://images-of-elements.com/phosphorus.php 的作品）",
    "draws": [
     "temperature"
    ],
@@ -109,6 +132,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -119,7 +147,7 @@
    "originals": [
     "/media/ch18/CNX_Chem_18_04_Sulfrchain.jpg"
    ],
-   "original_caption": "These four sulfur allotropes show eight-membered, puckered rings. Each sulfur atom bonds to each of its two neighbors in the ring by covalent S-S single bonds. Here are (a) individual S8 rings, (b) S8 chains formed when the rings open, (c) longer chains formed by adding sulfur atoms to S8 chains, and (d) part of the very long sulfur chains formed at higher temperatures.",
+   "original_caption": "这四种硫的同素异形体显示出八元皱折环。每个硫原子通过共价 S-S 单键与环中的两个邻居相连。这里是（a）单个 S8 环，（b）环打开时形成的 S8 链，（c）硫原子加到 S8 链上形成的更长的链，以及（d）在较高温度下形成的很长的硫链的一部分。",
    "draws": [
     "temperature"
    ],
@@ -136,6 +164,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   }
@@ -439,11 +472,11 @@
     "at": "end"
    },
    "cite": "carbon",
-   "prompt": "Carbon forms a number of allotropes, two of which are graphite and diamond. Silicon has a diamond structure. Why is there no allotrope of silicon with a graphite structure?",
+   "prompt": "碳形成多种同素异形体，其中两种是石墨和金刚石。硅具有金刚石结构。为什么没有具有石墨结构的硅的同素异形体？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Silicon has no graphite allotrope because silicon atoms do not form stable π bonds to one another. A graphite layer needs more than σ bonds: each carbon atom uses <em>sp</em><sup>2</sup> hybrid orbitals for σ bonds to three neighbors in a plane, and its unhybridized <em>p</em> orbital, perpendicular to the layer, overlaps side by side with those on adjacent atoms to form π bonds. Good side-by-side overlap requires small atoms, and the first member of each group forms π bonds far more readily than the heavier members. Carbon, the first member of group 14, is small enough, but silicon is much larger, so its 3<em>p</em> orbitals overlap poorly and Si–Si π bonds are weak. Silicon instead uses all four valence electrons in σ bonds, each atom <em>sp</em><sup>3</sup> hybridized and bonded to four neighbors at the corners of a tetrahedron, which is the diamond structure."
+    "solution": "硅没有石墨同素异形体，是因为硅原子彼此之间不形成稳定的 π 键。石墨层所需要的不止是 σ 键：每个碳原子用 <em>sp</em><sup>2</sup> 杂化轨道与同一平面内的三个邻居形成 σ 键，而它垂直于层的未杂化 <em>p</em> 轨道与相邻原子上的 <em>p</em> 轨道并排重叠，形成 π 键。良好的并排重叠要求原子较小，每个族的第一个成员比较重的成员更容易形成 π 键。碳是 14 族的第一个成员，原子足够小，而硅要大得多，所以它的 3<em>p</em> 轨道重叠很差，Si–Si π 键很弱。硅转而把全部四个价电子用于形成 σ 键，每个原子都是 <em>sp</em><sup>3</sup> 杂化，并与位于四面体顶点的四个邻居成键，这就是金刚石结构。"
    }
   },
   {
@@ -456,11 +489,11 @@
     "at": "end"
    },
    "cite": "nonmetals",
-   "prompt": "Nitrogen in the atmosphere exists as very stable diatomic molecules. Why does phosphorus form less stable P<sub>4</sub> molecules instead of P<sub>2</sub> molecules?",
+   "prompt": "大气中的氮以非常稳定的双原子分子形式存在。为什么磷形成的是不太稳定的 P<sub>4</sub> 分子，而不是 P<sub>2</sub> 分子？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "In the N<sub>2</sub> molecule, the nitrogen atoms have an σ bond and two π bonds holding the two atoms together. The presence of three strong bonds makes N<sub>2</sub> a very stable molecule. Phosphorus is a third-period element, and as such, does not form π bonds efficiently; therefore, it must fulfill its bonding requirement by forming three σ bonds."
+    "solution": "在 N<sub>2</sub> 分子中，氮原子之间有一个 σ 键和两个 π 键把两个原子结合在一起。三个强键的存在使 N<sub>2</sub> 成为非常稳定的分子。磷是第三周期元素，因此不能有效地形成 π 键；所以它必须通过形成三个 σ 键来满足其成键需求。"
    }
   },
   {
@@ -473,11 +506,11 @@
     "at": "end"
    },
    "cite": "nonmetals",
-   "prompt": "Determine the oxidation number of each element in each of the following compounds:<br>(a) HCN<br>(b) OF<sub>2</sub><br>(c) AsCl<sub>3</sub>",
+   "prompt": "确定下列每种化合物中各元素的氧化数：<br>（a）HCN<br>（b）OF<sub>2</sub><br>（c）AsCl<sub>3</sub>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) H = 1+, C = 2+, and N = 3−; (b) O = 2+ and F = 1−; (c) As = 3+ and Cl = 1−"
+    "solution": "（a）H = 1+，C = 2+，N = 3−；（b）O = 2+，F = 1−；（c）As = 3+，Cl = 1−"
    }
   },
   {
@@ -490,7 +523,7 @@
     "at": "end"
    },
    "cite": "nonmetals",
-   "prompt": "Arrange the following in order of increasing electronegativity: F; Cl; O; and S.",
+   "prompt": "按电负性增大的顺序排列下列各项：F；Cl；O；S。",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -507,11 +540,11 @@
     "at": "end"
    },
    "cite": "phosphorus",
-   "prompt": "Why does white phosphorus consist of tetrahedral P<sub>4</sub> molecules while nitrogen consists of diatomic N<sub>2</sub> molecules?",
+   "prompt": "为什么白磷由四面体形的 P<sub>4</sub> 分子组成，而氮由双原子的 N<sub>2</sub> 分子组成？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Each group 15 atom has five valence electrons and needs three bonds to complete its octet; nitrogen can make all three to one partner, while phosphorus cannot. Nitrogen, the small first member of the group, forms strong π bonds, so two nitrogen atoms share three pairs of electrons in a triple bond, one σ bond and two π bonds, and the small molecule N<sub>2</sub>, with one lone pair on each atom, satisfies both atoms. Phosphorus is a larger third-period atom whose 3<em>p</em> orbitals overlap poorly side by side, so P–P π bonds are weak and a P≡P triple bond is not stable. A phosphorus atom must make its three bonds as σ bonds to three different phosphorus atoms. In the P<sub>4</sub> tetrahedron each atom sits at a corner, bonded by single bonds to the other three and keeping one lone pair, so every atom has an octet without any π bonding."
+    "solution": "15 族的每个原子都有五个价电子，需要三个键才能完成八隅体；氮可以把三个键都形成在同一个伙伴上，而磷不能。氮是该族体积小的第一个成员，能形成强的 π 键，所以两个氮原子共用三对电子，形成一个三键，即一个 σ 键和两个 π 键，小分子 N<sub>2</sub> 的每个原子上各有一对孤电子对，使两个原子都得到满足。磷是体积较大的第三周期原子，其 3<em>p</em> 轨道并排重叠很差，所以 P–P π 键很弱，P≡P 三键不稳定。磷原子必须以 σ 键的形式与三个不同的磷原子形成三个键。在 P<sub>4</sub> 四面体中，每个原子位于一个顶点，以单键与其他三个原子成键，并保留一对孤电子对，因此每个原子都有八隅体，而不需要任何 π 键。"
    }
   }
  ],
@@ -569,7 +602,7 @@
   {
    "id": "c-so2-equation",
    "kind": "correction",
-   "html": "The book writes S(<em>s</em>) + O<sub>2</sub>(<em>g</em>) ⟶ 2SO<sub>2</sub>(<em>s</em>). The balanced equation gives one sulfur dioxide, a gas: S(<em>s</em>) + O<sub>2</sub>(<em>g</em>) ⟶ SO<sub>2</sub>(<em>g</em>)."
+   "html": "书中写作 S(<em>s</em>) + O<sub>2</sub>(<em>g</em>) ⟶ 2SO<sub>2</sub>(<em>s</em>)。配平的方程式给出的是一个二氧化硫，它是气体：S(<em>s</em>) + O<sub>2</sub>(<em>g</em>) ⟶ SO<sub>2</sub>(<em>g</em>)。"
   }
  ]
 }

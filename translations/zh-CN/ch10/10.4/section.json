@@ -2,16 +2,16 @@
  "id": "10.4",
  "module": "m68769",
  "chapter": "10",
- "title": "Phase Diagrams",
- "short": "Phase Diagrams",
- "lead": "The melting points, boiling points and <span data-concept=\"vapor-pressure\">vapor pressures</span> of a substance, measured over a wide range of <span data-concept=\"gas-pressure\">pressures</span>, can be gathered into one graph. A phase diagram maps the solid, liquid and gaseous states of a substance on a plane of <span data-concept=\"gas-pressure\">pressure</span> and <span data-concept=\"temperature\">temperature</span>, and its curves, its triple point and its critical point tell us which state a sample takes under any conditions.",
+ "title": "相图",
+ "short": "相图",
+ "lead": "一种物质的熔点、沸点和<span data-concept=\"vapor-pressure\">蒸气压</span>，在很宽的<span data-concept=\"gas-pressure\">压强</span>范围内测定后，可以汇集在一张图上。相图在<span data-concept=\"gas-pressure\">压强</span>与<span data-concept=\"temperature\">温度</span>构成的平面上标出物质的固态、液态和气态，由它的曲线、三相点和临界点就可以知道样品在任何条件下处于哪种状态。",
  "objectives": [
-  "Explain the construction and use of a typical phase diagram",
-  "Use phase diagrams to identify stable phases at given temperatures and pressures, and to describe phase transitions resulting from changes in these properties",
-  "Describe the supercritical fluid phase of matter"
+  "解释典型相图的构成和用法",
+  "利用相图确定给定温度和压强下的稳定相，并描述这些条件变化所引起的相变",
+  "描述物质的超临界流体相"
  ],
- "summary_html": "<p>The <span data-concept=\"temperature\">temperature</span> and <span data-concept=\"gas-pressure\">pressure</span> conditions at which a substance exists in solid, liquid, and gaseous states are summarized in a phase diagram for that substance. Phase diagrams are combined plots of pressure-temperature equilibrium curves representing the relationships between phase transition <span data-concept=\"temperature\">temperatures</span> and <span data-concept=\"gas-pressure\">pressures</span>. The point of intersection of any three curves in a phase diagram represents a substance’s triple point—the <span data-concept=\"temperature\">temperature</span> and <span data-concept=\"gas-pressure\">pressure</span> at which three different phases are in equilibrium. At <span data-concept=\"gas-pressure\">pressures</span> below a solid-liquid-gas triple point, a substance cannot exist in the liquid state, regardless of its <span data-concept=\"temperature\">temperature</span>. The terminus of the liquid-gas curve represents the substance’s critical point, the <span data-concept=\"gas-pressure\">pressure</span> and <span data-concept=\"temperature\">temperature</span> above which a liquid phase cannot exist.</p>",
- "notes": "The Link to Learning video of carbon dioxide passing into a supercritical fluid is left out. Figures 10.30, 10.31 and 10.34 are one live phase diagram drawn to scale from measured vapor pressures, so the temperatures it gives for the paths of the first two Check Your Learning items differ from the book’s answers, which are printed as the book has them. The critical-point table is printed with its cells in °C and kPa, although the book’s description of it gives K and atm, and the answer images of the carbon exercise label its regions “Water” as the book prints them.",
+ "summary_html": "<p>物质以固态、液态和气态存在的<span data-concept=\"temperature\">温度</span>和<span data-concept=\"gas-pressure\">压强</span>条件，概括在该物质的相图中。相图是压强–温度平衡曲线的组合图，表示相变<span data-concept=\"temperature\">温度</span>与<span data-concept=\"gas-pressure\">压强</span>之间的关系。相图中任意三条曲线的交点代表物质的三相点，即三个不同的相处于平衡时的<span data-concept=\"temperature\">温度</span>和<span data-concept=\"gas-pressure\">压强</span>。在低于固–液–气三相点的<span data-concept=\"gas-pressure\">压强</span>下，无论<span data-concept=\"temperature\">温度</span>如何，物质都不能以液态存在。液–气曲线的终点代表物质的临界点，高于该<span data-concept=\"gas-pressure\">压强</span>和<span data-concept=\"temperature\">温度</span>，液相就不能存在。</p>",
+ "notes": "关于二氧化碳变为超临界流体的“学习链接”视频，已略去。图 10.30、图 10.31 和图 10.34 是同一张按比例根据实测蒸气压绘制的动态相图，所以它给出的前两道“学习检测”题所涉路径的温度，与书中的答案不同；书中的答案按书中原样印出。临界点表中各单元格以 °C 和 kPa 表示，尽管书中对该表的描述给出的是 K 和 atm；碳习题的答案图中把各区域标为“水”，也按书中原样印出。",
  "ai": {
   "text": [
    {
@@ -21,18 +21,26 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-09-28",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The unkeyed numerical exercises fs-idm134300544 (exercise 56, the highest temperature in a pressure cooker) and fs-idm180256816 (exercise 60, the lowest pressure at which solid carbon dioxide melts) are left out, and no answer is computed for them. The three unkeyed conceptual exercises (54, 58 and 62) are kept with a suggested approach marked as OmniStax’s own.",
+ "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案取自书后答案和“学习检测”的答案。两道没有答案的数值习题 fs-idm134300544（习题 56，压力锅中的最高温度）和 fs-idm180256816（习题 60，固态二氧化碳熔化的最低压强）已略去，也没有为它们计算答案。三道没有答案的概念题（54、58 和 62）保留，并附有标明为 OmniStax 自拟的建议思路。",
  "figures": [
   {
    "id": "sim-phase",
@@ -47,8 +55,11 @@
     "/media/ch10/CNX_Chem_10_04_H2OPhasDi2.jpg",
     "/media/ch10/CNX_Chem_10_04_CO2PhasDi.jpg"
    ],
-   "original_caption": "(Figure 10.30) The physical state of a substance and its phase-transition temperatures are represented graphically in a phase diagram. (Figure 10.31) The pressure and temperature axes on this phase diagram of water are not drawn to constant scale in order to illustrate several important properties. (Figure 10.34) A phase diagram for carbon dioxide is shown. The pressure axis is plotted on a logarithmic scale to accommodate the large range of values.",
-   "draws": ["pressure", "temperature"],
+   "original_caption": "（图 10.30）物质的物态及其相变温度用相图以图形表示。（图 10.31）为了说明几个重要的性质，水的这张相图上的压强轴和温度轴没有按统一的比例绘制。（图 10.34）图中给出二氧化碳的相图。压强轴按对数标度绘制，以容纳很大的数值范围。",
+   "draws": [
+    "pressure",
+    "temperature"
+   ],
    "conventions": [
     "H",
     "O",
@@ -64,6 +75,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "pressure slider bound to each diagram's axis, label off the ticks"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -185,11 +201,11 @@
     "after": "ex-water-state"
    },
    "cite": "ex-water-state",
-   "prompt": "What phase changes can water undergo as the temperature changes if the pressure is held at 0.3 kPa? If the pressure is held at 50 kPa?",
+   "prompt": "如果压强保持在 0.3 kPa，水随温度变化会发生哪些相变？如果压强保持在 50 kPa 呢？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "At 0.3 kPa: s ⟶ g at −58 °C. At 50 kPa: s ⟶ l at 0 °C, l ⟶ g at 78 °C"
+    "solution": "在 0.3 kPa 时：s ⟶ g，在 −58 °C。在 50 kPa 时：s ⟶ l，在 0 °C；l ⟶ g，在 78 °C"
    }
   },
   {
@@ -202,11 +218,11 @@
     "after": "ex-co2-state"
    },
    "cite": "ex-co2-state",
-   "prompt": "Identify the phase changes that carbon dioxide will undergo as its temperature is increased from −100 °C while holding its pressure constant at 1500 kPa. At 50 kPa. At what approximate temperatures do these phase changes occur?",
+   "prompt": "指出二氧化碳在压强保持恒定为 1500 kPa、温度从 −100 °C 升高的过程中将发生的相变。在 50 kPa 时呢？这些相变大约发生在什么温度？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "at 1500 kPa: s ⟶ l at −55 °C, l ⟶ g at −10 °C; at 50 kPa: s ⟶ g at −60 °C"
+    "solution": "在 1500 kPa 时：s ⟶ l，在 −55 °C；l ⟶ g，在 −10 °C；在 50 kPa 时：s ⟶ g，在 −60 °C"
    }
   },
   {
@@ -219,11 +235,11 @@
     "after": "ex-critical-co2"
    },
    "cite": "ex-critical-co2",
-   "prompt": "Ammonia can be liquefied by compression at room temperature; oxygen cannot be liquefied under these conditions. Why do the two gases exhibit different behavior?",
+   "prompt": "氨可以在室温下通过压缩而液化；氧在这种条件下不能液化。为什么这两种气体表现出不同的行为？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "The critical temperature of ammonia is 405.5 K, which is higher than room temperature. The critical temperature of oxygen is below room temperature; thus oxygen cannot be liquefied at room temperature."
+    "solution": "氨的临界温度是 405.5 K，高于室温。氧的临界温度低于室温；因此氧在室温下不能液化。"
    }
   },
   {
@@ -235,11 +251,11 @@
     "at": "end"
    },
    "cite": "water-diagram",
-   "prompt": "From the phase diagram for water (Figure 10.31), determine the state of water at:<br>(a) 35 °C and 85 kPa<br>(b) −15 °C and 40 kPa<br>(c) −15 °C and 0.1 kPa<br>(d) 75 °C and 3 kPa<br>(e) 40 °C and 0.1 kPa<br>(f) 60 °C and 50 kPa",
+   "prompt": "根据水的相图（图 10.31），确定水在以下条件下的状态：<br>（a）35 °C 和 85 kPa<br>（b）−15 °C 和 40 kPa<br>（c）−15 °C 和 0.1 kPa<br>（d）75 °C 和 3 kPa<br>（e）40 °C 和 0.1 kPa<br>（f）60 °C 和 50 kPa",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "(a) liquid; (b) solid; (c) gas; (d) gas; (e) gas; (f) liquid. Each point is placed by its temperature on the horizontal axis and its pressure on the vertical axis. (a) At 35 °C the vapor pressure of liquid water, read from the liquid-gas curve, is only about 5.6 kPa, and 35 °C lies to the right of the solid-liquid curve, so at 85 kPa the point falls in the liquid region. (b) At −15 °C, to the left of the solid-liquid curve, the vapor pressure of ice is about 0.17 kPa; 40 kPa lies well above the solid-gas curve, so the water is solid. (c) At −15 °C and 0.1 kPa the pressure is below the vapor pressure of ice, so the point lies below the solid-gas curve and the water is a gas. (d) At 75 °C the vapor pressure of liquid water is about 39 kPa; 3 kPa is below the liquid-gas curve, so the water is a gas. (e) At 40 °C and 0.1 kPa the pressure is below the vapor pressure of the liquid, 7.4 kPa, and also below the triple-point pressure of 0.61 kPa, so the water is a gas. (f) At 60 °C the vapor pressure of liquid water is about 20 kPa; 50 kPa lies above the liquid-gas curve, so the water is a liquid."
+    "solution": "（a）液体；（b）固体；（c）气体；（d）气体；（e）气体；（f）液体。每个点都由其温度（横轴）和压强（纵轴）定位。（a）在 35 °C 时，从液–气曲线上读得液态水的蒸气压只有约 5.6 kPa，而且 35 °C 位于固–液曲线的右侧，所以在 85 kPa 时该点落在液体区域。（b）在 −15 °C 时，位于固–液曲线的左侧，冰的蒸气压约为 0.17 kPa；40 kPa 远高于固–气曲线，所以水是固体。（c）在 −15 °C 和 0.1 kPa 时，压强低于冰的蒸气压，所以该点位于固–气曲线下方，水是气体。（d）在 75 °C 时，液态水的蒸气压约为 39 kPa；3 kPa 低于液–气曲线，所以水是气体。（e）在 40 °C 和 0.1 kPa 时，压强低于液体的蒸气压 7.4 kPa，也低于三相点压强 0.61 kPa，所以水是气体。（f）在 60 °C 时，液态水的蒸气压约为 20 kPa；50 kPa 高于液–气曲线，所以水是液体。"
    }
   },
   {
@@ -251,11 +267,11 @@
     "at": "end"
    },
    "cite": "triple-point",
-   "prompt": "What phase changes will take place when water is subjected to varying pressure at a constant temperature of 0.005 °C? At 40 °C? At −40 °C?",
+   "prompt": "当水在 0.005 °C 的恒定温度下承受变化的压强时，会发生哪些相变？在 40 °C 时呢？在 −40 °C 时呢？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "At low pressures and 0.005 °C, the water is a gas. As the pressure increases to 4.6 torr, the water becomes a solid; as the pressure increases still more, it becomes a liquid. At 40 °C, water at low pressure is a vapor; at pressures higher than about 75 torr, it converts into a liquid. At −40 °C, water goes from a gas to a solid as the pressure increases above very low values."
+    "solution": "在低压和 0.005 °C 时，水是气体。随着压强增大到 4.6 torr，水变为固体；压强再增大，它就变为液体。在 40 °C 时，低压下的水是蒸气；压强高于约 75 torr 时，它转变为液体。在 −40 °C 时，随着压强从很低的值升高，水由气体变为固体。"
    }
   },
   {
@@ -267,11 +283,11 @@
     "at": "end"
    },
    "cite": "carbon-dioxide",
-   "prompt": "From the phase diagram for carbon dioxide in Figure 10.34, determine the state of CO<sub>2</sub> at:<br>(a) 20 °C and 1000 kPa<br>(b) 10 °C and 2000 kPa<br>(c) 10 °C and 100 kPa<br>(d) −40 °C and 500 kPa<br>(e) −80 °C and 1500 kPa<br>(f) −80 °C and 10 kPa",
+   "prompt": "根据二氧化碳的相图（图 10.34），确定 CO<sub>2</sub> 在以下条件下的状态：<br>（a）20 °C 和 1000 kPa<br>（b）10 °C 和 2000 kPa<br>（c）10 °C 和 100 kPa<br>（d）−40 °C 和 500 kPa<br>（e）−80 °C 和 1500 kPa<br>（f）−80 °C 和 10 kPa",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) gas; (b) gas; (c) gas; (d) gas; (e) solid; (f) gas"
+    "solution": "（a）气体；（b）气体；（c）气体；（d）气体；（e）固体；（f）气体"
    }
   },
   {
@@ -283,11 +299,11 @@
     "at": "end"
    },
    "cite": "carbon-dioxide",
-   "prompt": "Determine the phase changes that carbon dioxide undergoes as pressure is increased at a constant temperature of (a) −50 °C and (b) 50 °C. If the temperature is held at −40 °C? At 20 °C? (See the phase diagram in Figure 10.34.)",
+   "prompt": "确定二氧化碳在以下恒定温度下随压强增大所经历的相变：（a）−50 °C 和（b）50 °C。如果温度保持在 −40 °C 呢？在 20 °C 呢？（见图 10.34 中的相图。）",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "(a) At −50 °C, carbon dioxide is a gas at low pressure, condenses to a liquid at about 680 kPa, and at a much higher pressure freezes to a solid. (b) At 50 °C it never becomes a liquid: it stays a gas and, above the critical pressure of 7400 kPa, becomes a supercritical fluid. At −40 °C the sequence is the same as at −50 °C, gas to liquid at about 1000 kPa and then liquid to solid at a much higher pressure. At 20 °C the gas condenses to a liquid at about 5700 kPa, and the liquid freezes only at a far higher pressure still. Each case follows a vertical line upward on Figure 10.34. The triple point of carbon dioxide lies at −56.6 °C and the critical point at 31.1 °C, so −50 °C, −40 °C, and 20 °C are all between the two. A line at any of these temperatures first crosses the liquid-gas curve, where the gas condenses, and then the solid-liquid curve, which leans to the right because the melting point of CO<sub>2</sub> increases with pressure, where the liquid freezes; the higher the temperature, the higher both pressures are. At 50 °C the line passes to the right of the critical point, where no amount of pressure can liquefy the gas."
+    "solution": "（a）在 −50 °C 时，二氧化碳在低压下是气体，在约 680 kPa 时凝结为液体，在高得多的压强下凝固为固体。（b）在 50 °C 时它始终不会变成液体：它保持为气体，高于临界压强 7400 kPa 后变成超临界流体。在 −40 °C 时，顺序与 −50 °C 时相同，在约 1000 kPa 时由气体变为液体，然后在高得多的压强下由液体变为固体。在 20 °C 时，气体在约 5700 kPa 时凝结为液体，液体要在高得多的压强下才会凝固。每种情况都沿图 10.34 上的一条竖直线向上。二氧化碳的三相点在 −56.6 °C，临界点在 31.1 °C，所以 −50 °C、−40 °C 和 20 °C 都在这两者之间。这些温度下的竖直线先穿过液–气曲线，气体在此凝结，然后穿过向右倾斜的固–液曲线，液体在此凝固，该曲线向右倾斜是因为 CO<sub>2</sub> 的熔点随压强增大而升高；温度越高，这两个压强也越高。在 50 °C 时，这条线从临界点的右侧穿过，在那里无论施加多大的压强都不能使气体液化。"
    }
   },
   {
@@ -299,11 +315,11 @@
     "at": "end"
    },
    "cite": "carbon-dioxide",
-   "prompt": "Consider a cylinder containing a mixture of liquid carbon dioxide in equilibrium with gaseous carbon dioxide at an initial pressure of 65 atm and a temperature of 20 °C. Sketch a plot depicting the change in the cylinder pressure with time as gaseous carbon dioxide is released at constant temperature.",
+   "prompt": "考虑一个钢瓶，其中装有与气态二氧化碳处于平衡的液态二氧化碳的混合物，初始压强为 65 atm，温度为 20 °C。在恒温下放出气态二氧化碳时，画出钢瓶压强随时间变化的示意图。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "<br><img src=\"/media/ch10/CNX_Chem_10_04_Ex06answer_img.jpg\" alt=\"A plot of pressure P against the amount released, from full to empty. A horizontal line at 65 atm runs about two-thirds of the way across and then slopes downward in a straight line to the empty end.\"><br>"
+    "solution": "<br><img src=\"/media/ch10/CNX_Chem_10_04_Ex06answer_img.jpg\" alt=\"压强 P 对放出量的图，横轴从满到空。65 atm 处的一条水平线延伸到约三分之二处，然后沿一条直线向下倾斜，直到空的一端。\"><br>"
    }
   },
   {
@@ -315,11 +331,11 @@
     "at": "end"
    },
    "cite": "water-diagram",
-   "prompt": "If a severe storm results in the loss of electricity, it may be necessary to use a clothesline to dry laundry. In many parts of the country in the dead of winter, the clothes will quickly freeze when they are hung on the line. If it does not snow, will they dry anyway? Explain your answer.",
+   "prompt": "如果严重的风暴造成停电，可能需要用晾衣绳晾干衣物。在许多地区的隆冬时节，衣服挂在绳子上会很快冻住。如果不下雪，衣服还会干吗？请解释你的回答。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Yes, ice will sublime, although it may take it several days. Ice has a small vapor pressure, and some ice molecules form gas and escape from the ice crystals. As time passes, more and more solid converts to gas until eventually the clothes are dry."
+    "solution": "会干，冰会升华，尽管可能需要几天时间。冰有很小的蒸气压，一些冰分子形成气体并从冰晶中逸出。随着时间推移，越来越多的固体转变为气体，最终衣服就干了。"
    }
   },
   {
@@ -331,11 +347,11 @@
     "at": "end"
    },
    "cite": "supercritical",
-   "prompt": "Is it possible to liquefy nitrogen at room temperature (about 25 °C)? Is it possible to liquefy sulfur dioxide at room temperature? Explain your answers.",
+   "prompt": "在室温（约 25 °C）下能使氮液化吗？在室温下能使二氧化硫液化吗？请解释你的回答。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Nitrogen cannot be liquefied at room temperature, and sulfur dioxide can. A gas can be liquefied by pressure only below its critical temperature; above it, no amount of pressure produces a liquid. The critical temperature of nitrogen is −147.2 °C, far below 25 °C, so at room temperature compressing nitrogen only makes it a denser gas and, above its critical pressure, a supercritical fluid. The critical temperature of sulfur dioxide is 157.2 °C, well above 25 °C, so at room temperature sulfur dioxide condenses to a liquid once it is compressed to its vapor pressure at that temperature, which is less than its critical pressure of 7800 kPa."
+    "solution": "氮在室温下不能液化，二氧化硫可以。气体只有在低于其临界温度时才能通过加压液化；高于临界温度，无论施加多大的压强都不能得到液体。氮的临界温度是 −147.2 °C，远低于 25 °C，所以在室温下压缩氮只会使它成为密度更大的气体，高于其临界压强后成为超临界流体。二氧化硫的临界温度是 157.2 °C，远高于 25 °C，所以在室温下，二氧化硫被压缩到该温度下的蒸气压时就会凝结为液体，这个压强小于其临界压强 7800 kPa。"
    }
   },
   {
@@ -347,11 +363,11 @@
     "at": "end"
    },
    "cite": "triple-point",
-   "prompt": "Elemental carbon has one gas phase, one liquid phase, and two different solid phases, as shown in the phase diagram:<br><img src=\"/media/ch10/CNX_Chem_10_04_CPhaseDi_img.jpg\" alt=\"A phase diagram of carbon with temperature in K on the x-axis, marked every 2000 K from 0, and pressure in Pa on a logarithmic y-axis marked at 10 to the 7, 10 to the 9 and 10 to the 11. A slightly negatively sloped line crosses the x-axis near 3800 K; from it a line curves up and then down to the left to meet the y-axis near 10 to the 9, and another line runs up and to the right.\"><br>(a) On the phase diagram, label the gas and liquid regions.<br>(b) Graphite is the most stable phase of carbon at normal conditions. On the phase diagram, label the graphite phase.<br>(c) If graphite at normal conditions is heated to 2500 K while the pressure is increased to 10<sup>10</sup> Pa, it is converted into diamond. Label the diamond phase.<br>(d) Circle each triple point on the phase diagram.<br>(e) In what phase does carbon exist at 5000 K and 10<sup>8</sup> Pa?<br>(f) If the temperature of a sample of carbon increases from 3000 K to 5000 K at a constant pressure of 10<sup>6</sup> Pa, which phase transition occurs, if any?",
+   "prompt": "单质碳有一个气相、一个液相和两个不同的固相，如相图所示：<br><img src=\"/media/ch10/CNX_Chem_10_04_CPhaseDi_img.jpg\" alt=\"碳的相图，横轴为温度，单位 K，从 0 起每 2000 K 标一个刻度；纵轴为压强，单位 Pa，按对数标度，标在 10 的 7 次方、10 的 9 次方和 10 的 11 次方处。一条略带负斜率的线在 3800 K 附近穿过横轴；从该线上伸出一条线，先向上弯再向左下弯，在 10 的 9 次方附近与纵轴相交，另一条线向右上延伸。\"><br>（a）在相图上标出气体区域和液体区域。<br>（b）石墨是碳在常规条件下最稳定的相。在相图上标出石墨相。<br>（c）如果把常规条件下的石墨加热到 2500 K，同时把压强增大到 10<sup>10</sup> Pa，它就转变为金刚石。标出金刚石相。<br>（d）在相图上圈出每个三相点。<br>（e）碳在 5000 K 和 10<sup>8</sup> Pa 时处于什么相？<br>（f）如果碳样品的温度在 10<sup>6</sup> Pa 的恒定压强下从 3000 K 升高到 5000 K，会发生哪种相变（如果有的话）？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a)<br><img src=\"/media/ch10/CNX_Chem_10_04_Exercise10a_img.jpg\" alt=\"The carbon phase diagram with the two regions to the right labeled Water (liquid) and Water vapor (gas).\"><sup class=\"fn\" data-note=\"c-e8-carbon\"></sup><br>(b)<br><img src=\"/media/ch10/CNX_Chem_10_04_Exercise10b_img.jpg\" alt=\"The carbon phase diagram with the region to the left labeled Graphite.\"><br>(c)<br><img src=\"/media/ch10/CNX_Chem_10_04_Exercise10c_img.jpg\" alt=\"The carbon phase diagram with the top region labeled Diamond.\"><br>(d)<br><img src=\"/media/ch10/CNX_Chem_10_04_Exercise10d_img.jpg\" alt=\"The carbon phase diagram with its four regions labeled Diamond, Graphite, Water (liquid) and Water vapor (gas), and a red circle where the liquid, gas and graphite lines meet.\"><br>(e) liquid phase (f) sublimation"
+    "solution": "（a）<br><img src=\"/media/ch10/CNX_Chem_10_04_Exercise10a_img.jpg\" alt=\"碳的相图，右侧的两个区域分别标为水（液体）和水蒸气（气体）。\"><sup class=\"fn\" data-note=\"c-e8-carbon\"></sup><br>（b）<br><img src=\"/media/ch10/CNX_Chem_10_04_Exercise10b_img.jpg\" alt=\"碳的相图，左侧的区域标为石墨。\"><br>（c）<br><img src=\"/media/ch10/CNX_Chem_10_04_Exercise10c_img.jpg\" alt=\"碳的相图，顶部的区域标为金刚石。\"><br>（d）<br><img src=\"/media/ch10/CNX_Chem_10_04_Exercise10d_img.jpg\" alt=\"碳的相图，四个区域分别标为金刚石、石墨、水（液体）和水蒸气（气体），液体、气体和石墨的分界线交汇处有一个红圈。\"><br>（e）液相（f）升华"
    }
   }
  ],
@@ -432,35 +448,35 @@
  "referents": [
   {
    "id": "sub-curve",
-   "label": "the solid-gas curve (AB)",
+   "label": "固–气曲线（AB）",
    "figures": [
     "sim-phase"
    ]
   },
   {
    "id": "vap-curve",
-   "label": "the liquid-gas curve (BC)",
+   "label": "液–气曲线（BC）",
    "figures": [
     "sim-phase"
    ]
   },
   {
    "id": "melt-curve",
-   "label": "the solid-liquid curve (BD)",
+   "label": "固–液曲线（BD）",
    "figures": [
     "sim-phase"
    ]
   },
   {
    "id": "triple-point",
-   "label": "the triple point (B)",
+   "label": "三相点（B）",
    "figures": [
     "sim-phase"
    ]
   },
   {
    "id": "critical-point",
-   "label": "the critical point (C)",
+   "label": "临界点（C）",
    "figures": [
     "sim-phase"
    ]
@@ -470,7 +486,7 @@
   {
    "id": "c-e8-carbon",
    "kind": "correction",
-   "html": "The key’s drawings label the liquid and gas regions of the carbon diagram “Water (liquid)” and “Water vapor (gas)”; they are liquid carbon and carbon vapor."
+   "html": "答案中的图把碳相图的液体区域和气体区域标为“水（液体）”和“水蒸气（气体）”；它们实际上是液态碳和碳蒸气。"
   }
  ]
 }

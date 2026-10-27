@@ -18,10 +18,10 @@ const minus = (s) => s.replace(/^-/, '−');
    the rest handbook values. Every vapor pressure on the page comes from the
    Clausius-Clapeyron equation through the normal boiling point, so the figures agree. */
 const LIQ = {
-  ether: { name: 'diethyl ether', ref: 'diethyl-ether', bp: 34.6, dH: 26.5 },
-  ethanol: { name: 'ethanol', ref: 'ethanol', bp: 78.4, dH: 41.4 },
-  water: { name: 'water', ref: 'water', bp: 100.0, dH: 40.67 },
-  glycol: { name: 'ethylene glycol', ref: 'ethylene-glycol', bp: 197.3, dH: 50.5 },
+  ether: { name: '乙醚', ref: 'diethyl-ether', bp: 34.6, dH: 26.5 },
+  ethanol: { name: '乙醇', ref: 'ethanol', bp: 78.4, dH: 41.4 },
+  water: { name: '水', ref: 'water', bp: 100.0, dH: 40.67 },
+  glycol: { name: '乙二醇', ref: 'ethylene-glycol', bp: 197.3, dH: 50.5 },
 };
 const KEYS = Object.keys(LIQ);
 const pOf = (k, tc) => { const q = LIQ[k]; return 101.3 * Math.exp((-q.dH * 1000 / R) * (1 / (tc + 273.15) - 1 / (q.bp + 273.15))); };
@@ -41,7 +41,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
 ===================================================================== */
 (function () {
   const d = sim('sim-vapor');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.02, 1.2], tilt: 0.3, views: [{ label: 'front', yaw: 0, pitch: 0.12 }, { label: 'corner', yaw: 0.7, pitch: 0.45 }], h: 380, dist: 4.8 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.02, 1.2], tilt: 0.3, views: [{ label: '正面', yaw: 0, pitch: 0.12 }, { label: '斜视', yaw: 0.7, pitch: 0.45 }], h: 380, dist: 4.8 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 340);
   /* each molecule by its carbon and oxygen atoms and the hydrogen atoms of its O–H groups, in box units */
   const SHAPES = {
@@ -50,7 +50,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     water: { f: 'H₂O', atoms: [['O', 0, 0], ['H', -0.05, 0.035], ['H', 0.05, 0.035]] },
     glycol: { f: 'C₂H₄(OH)₂', atoms: [['H', -0.17, 0.05], ['O', -0.12, 0.02], ['C', -0.04, -0.02], ['C', 0.04, 0.03], ['O', 0.12, -0.01], ['H', 0.17, -0.05]] },
   };
-  const L = F.choice(d.controls, { label: '\\text{liquid}', options: KEYS.map((k) => ({ value: k, label: LIQ[k].name })), value: 'ether', aria: 'the liquid in the flask', onInput: () => cy.reset() });
+  const L = F.choice(d.controls, { label: '\\text{液体}', options: KEYS.map((k) => ({ value: k, label: LIQ[k].name })), value: 'ether', aria: '烧瓶中的液体', onInput: () => cy.reset() });
   const TC = 20, PER = 2, TAU = 1.6, TT = 8, NMAX = 32;
   const W = 0.62, FLOOR = -0.9, TOP = 0.9, SURF = FLOOR + 0.42;
   const cy = cycle(() => TT, 2.5);
@@ -74,14 +74,14 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     e.position.copy(glass.position); grp.add(e);
     const liq = new T3D.Mesh(new T3D.BoxGeometry(2 * W - 0.02, SURF - FLOOR, 2 * W - 0.02), F.mesh.mat(PAL.ink, { transparent: true, opacity: 0.16, depthWrite: false }));
     liq.position.set(0, (SURF + FLOOR) / 2, 0); grp.add(liq);
-    const sh = SHAPES[L.value], nm = LIQ[L.value].name + ' molecule, ' + sh.f;
+    const sh = SHAPES[L.value], nm = LIQ[L.value].name + '分子，' + sh.f;
     slots.forEach(() => {
       const m = new T3D.Group(); grp.add(m);
-      sh.atoms.forEach(([s, x, y]) => v.pickable(F.mesh.sphere(m, [x, y, 0], s === 'H' ? 0.026 : 0.042, F.el(s)), 'a ' + nm));
+      sh.atoms.forEach(([s, x, y]) => v.pickable(F.mesh.sphere(m, [x, y, 0], s === 'H' ? 0.026 : 0.042, F.el(s)), nm));
       ms.push(m);
     });
-    v.label('liquid', [W, SURF - 0.2, W], grp, 0);
-    v.label('vapor', [W, TOP - 0.2, W], grp, 0);
+    v.label('液体', [W, SURF - 0.2, W], grp, 0);
+    v.label('蒸气', [W, TOP - 0.2, W], grp, 0);
   }
   function draw() {
     build();
@@ -106,8 +106,8 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.25);
     ctx.fillRect(MX - arm - 12, yl, 24, MB - yl); ctx.fillRect(MX + arm - 12, yr, 24, MB - yr);
     ctx.beginPath(); ctx.arc(MX, MB, arm + 12, Math.PI, 0, true); ctx.arc(MX, MB, arm - 12, 0, Math.PI, false); ctx.closePath(); ctx.fill(); ctx.restore();
-    text(ctx, 'to the flask', MX - arm, 100, PAL.muted, { size: 16, align: 'center' });
-    text(ctx, 'sealed', MX + arm, 100, PAL.muted, { size: 16, align: 'center' });
+    text(ctx, '通向烧瓶', MX - arm, 100, PAL.muted, { size: 16, align: 'center' });
+    text(ctx, '密封', MX + arm, 100, PAL.muted, { size: 16, align: 'center' });
     if (lift > 4) { F.vbracket(ctx, MX + arm + 34, yr, yl, cp, 'P', 1, { side: 'right' }); }
 
     /* pressure against time, 0 to 8 s and 0 to 80 kPa, fixed: ether's 60 kPa is the highest */
@@ -117,16 +117,16 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     ctx.save(); ctx.beginPath(); ctx.rect(box.l, box.t - 6, box.r - box.l, box.b - box.t + 6); ctx.clip();
     F.curve(ctx, pAt, 0, t, X, Y, cp, 4, 60); ctx.restore();
     dot(ctx, X(t), Y(Math.min(p, 80)), cp, true, 8);
-    label(ctx, 'vapor pressure ' + (pe < 0.1 ? pe.toFixed(2) : fmt(pe, 1)) + ' kPa', box.r - 10, Y(pe), { side: 'above', size: 17, color: cp, gap: 16 });
+    label(ctx, '蒸气压 ' + (pe < 0.1 ? pe.toFixed(2) : fmt(pe, 1)) + ' kPa', box.r - 10, Y(pe), { side: 'above', size: 17, color: cp, gap: 16 });
 
     const eq = t >= TT - 0.4, name = cap(q.name);
     topline(ctx, n === 0
-      ? `${name} at 20 °C has a vapor pressure of only ${pe.toFixed(2)} kPa, too little for one molecule of the drawing.`
-      : eq ? `${name}: molecules leave and return at equal rates, and the vapor pressure holds at ${fmt(pe, 1)} kPa.`
-        : `${name}: more molecules leave the liquid than return, and the vapor pressure is still rising (${fmt(p, 1)} kPa).`);
+      ? `${name}在 20 °C 时的蒸气压只有 ${pe.toFixed(2)} kPa，不足以在图中画出一个分子。`
+      : eq ? `${name}：分子离开和返回的速率相等，蒸气压保持在 ${fmt(pe, 1)} kPa。`
+        : `${name}：离开液体的分子多于返回的分子，蒸气压仍在上升（${fmt(p, 1)} kPa）。`);
     const pv = hue('pressure', (p < 0.1 ? p.toFixed(2) : fmt(p, 1)) + '\\ \\text{kPa}');
-    readout(d.readout, `\\text{rate of vaporization} ${eq ? '=' : '>'} \\text{rate of condensation},\\quad \\kP_{\\text{vap}} = ${pv}`,
-      'The weaker the intermolecular attractions, the more molecules escape before the returning ones balance them, and the higher the vapor pressure.', { values: false });
+    readout(d.readout, `\\text{汽化速率} ${eq ? '=' : '>'} \\text{凝结速率},\\quad \\kP_{\\text{vap}} = ${pv}`,
+      '分子间吸引力越弱，在返回的分子与逸出的分子达到平衡之前，逸出的分子就越多，蒸气压也就越高。', { values: false });
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
@@ -139,8 +139,8 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
 ===================================================================== */
 (function () {
   const d = sim('sim-ke', 520);
-  const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 250, max: 400, step: 1, value: 350, unit: 'K', dec: 0, aria: 'temperature in kelvin', specials: [{ at: 300, label: '300 K' }] });
-  const E = ctl(d.controls, { label: 'KE_{\\min}', cls: 'energy', min: 4, max: 18, step: 0.5, value: 10, unit: 'kJ/mol', dec: 1, aria: 'minimum kinetic energy needed to escape, in kilojoules per mole' });
+  const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 250, max: 400, step: 1, value: 350, unit: 'K', dec: 0, aria: '以开尔文表示的温度', specials: [{ at: 300, label: '300 K' }] });
+  const E = ctl(d.controls, { label: 'KE_{\\min}', cls: 'energy', min: 4, max: 18, step: 0.5, value: 10, unit: 'kJ/mol', dec: 1, aria: '逸出所需的最小动能，单位为千焦每摩尔' });
   const T0 = 300;
   const f = (tk) => (e) => { const rt = R * tk / 1000; return (2 / Math.sqrt(Math.PI)) * Math.sqrt(Math.max(e, 0)) / rt ** 1.5 * Math.exp(-e / rt); };
   /* erfc by Abramowitz and Stegun 7.1.26 */
@@ -166,7 +166,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     const tk = T.v, em = E.v, ct = C('temperature'), ce = C('energy');
     /* 0 to 20 kJ/mol; the height fixed from the tallest curve, 250 K */
     const box = { l: 150, r: 1300, t: 110, b: 440 };
-    const { X, Y } = axes(ctx, box, [0, 20], [0, 0.25], { nx: 4, ny: 4, fy: () => '', xl: 'kinetic energy (kJ/mol)', xc: ce, yl: 'number of molecules' });
+    const { X, Y } = axes(ctx, box, [0, 20], [0, 0.25], { nx: 4, ny: 4, fy: () => '', xl: '动能 (kJ/mol)', xc: ce, yl: '分子数' });
     const lo = f(T0), hi = f(tk);
     fill(ctx, hi, em, X, Y, alpha(ct, 0.3));
     hatch(ctx, lo, em, X, Y, alpha(ct, 0.75));
@@ -174,11 +174,11 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     F.curve(ctx, hi, 0, 20, X, Y, ct, 5, 120);
     line(ctx, X(em), box.t + 20, X(em), box.b, PAL.ink, 3, [10, 10]);
     const fl = tail(T0, em), fh = tail(tk, em), r = fh / fl;
-    const lines = topline(ctx, tk === T0 ? `At 300 K, ${pct(fl)} of the molecules have at least ${fmt(em, 1)} kJ/mol of kinetic energy.`
-      : `At ${tk} K, ${pct(fh)} of the molecules have at least ${fmt(em, 1)} kJ/mol, ${fmt(r, r < 10 ? 2 : 1)} times the fraction at 300 K.`);
+    const lines = topline(ctx, tk === T0 ? `在 300 K 时，${pct(fl)} 的分子具有至少 ${fmt(em, 1)} kJ/mol 的动能。`
+      : `在 ${tk} K 时，${pct(fh)} 的分子具有至少 ${fmt(em, 1)} kJ/mol，是 300 K 时该比例的 ${fmt(r, r < 10 ? 2 : 1)} 倍。`);
     /* the curve names: the colder curve over its peak, the warmer over its tail, past the crossing and clear of the minimum line */
     const lab = F.labeller(ctx, H, { headline: lines });
-    lab.place(label(ctx, 'minimum KE needed to escape', X(em), box.t + 20, { side: em > 12 ? 'left' : 'right', size: 18, gap: 14 }));
+    lab.place(label(ctx, '逸出所需的最小 KE', X(em), box.t + 20, { side: em > 12 ? 'left' : 'right', size: 18, gap: 14 }));
     lab.block(X(em) - 6, box.t + 20, X(em) + 6, box.b);
     const name = (k) => (k === tk ? 'T = ' + tk + ' K' : '300 K');
     const [cold, warm] = tk < T0 ? [tk, T0] : [T0, tk], peak = (R * cold) / 2000;
@@ -189,7 +189,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
       lab.add(name(warm), X(e), Y(f(warm)(e)), 0.5, -0.87, ct, 18, 18);
     }
     lab.flush();
-    readout(d.readout, `\\text{fraction with } KE \\ge ${hue('energy', fmt(em, 1) + '\\ \\text{kJ/mol}')}:\\ ${pct(fh).replace('%', '\\%')}\\ \\text{at}\\ \\kT = ${hue('temperature', tk + '\\ \\text{K}')},\\ ${pct(fl).replace('%', '\\%')}\\ \\text{at}\\ ${hue('temperature', '300\\ \\text{K}')}`);
+    readout(d.readout, `\\text{具有 } KE \\ge ${hue('energy', fmt(em, 1) + '\\ \\text{kJ/mol}')}\\text{ 的分子所占比例：}\\ ${pct(fh).replace('%', '\\%')}\\ (\\kT = ${hue('temperature', tk + '\\ \\text{K}')}),\\ ${pct(fl).replace('%', '\\%')}\\ (${hue('temperature', '300\\ \\text{K}')})`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -203,9 +203,9 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
 ===================================================================== */
 (function () {
   const d = sim('sim-bp', 560);
-  const P = ctl(d.controls, { label: '\\kP', cls: 'pressure', min: 20, max: 120, step: 0.1, value: 101.3, unit: 'kPa', dec: 1, aria: 'pressure of the surroundings in kilopascals',
+  const P = ctl(d.controls, { label: '\\kP', cls: 'pressure', min: 20, max: 120, step: 0.1, value: 101.3, unit: 'kPa', dec: 1, aria: '周围压强，单位为千帕',
     detents: [40, 68], specials: [{ at: 101.3, label: '1 atm' }] });
-  const Lq = F.select(d.controls, { label: '\\text{liquid}', options: KEYS.map((k) => ({ value: k, label: LIQ[k].name })), value: 'water', aria: 'the liquid whose boiling point is worked out' });
+  const Lq = F.select(d.controls, { label: '\\text{液体}', options: KEYS.map((k) => ({ value: k, label: LIQ[k].name })), value: 'water', aria: '求其沸点的液体' });
   function draw() {
     const { ctx } = begin(d.c);
     const p = P.v, sel = Lq.value, cp = C('pressure'), ct = C('temperature');
@@ -226,7 +226,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     });
     const tb = bpAt(sel, p), q = LIQ[sel];
     if (tb >= 0 && tb <= 120) text(ctx, fmt(tb, 1) + ' °C', X(tb), box.b + 50, ct, { size: 18, weight: 600, align: 'center', bg: PAL.panel });
-    topline(ctx, `At ${fmt(p, 1)} kPa, ${q.name} boils at ${fmt(tb, 1)} °C${tb > 120 ? ', off the right of the graph' : tb < 0 ? ', off the left of the graph' : ''}.`);
+    topline(ctx, `在 ${fmt(p, 1)} kPa 时，${q.name}在 ${fmt(tb, 1)} °C 沸腾${tb > 120 ? '，位于图的右侧之外' : tb < 0 ? '，位于图的左侧之外' : ''}。`);
     const tk = tb + 273.15, t1 = q.bp + 273.15;
     tex(d.readout, `\\kTtwo={\\left(\\frac{-R\\cdot\\ln\\left(\\frac{\\kPtwo}{\\kPone}\\right)}{\\kdHvap}+\\frac{1}{\\kTone}\\right)}^{-1}={\\left(\\frac{-(8.3145\\ \\text{J/mol·K})\\ln\\left(\\frac{${hue('pressure', fmt(p, 1) + '\\ \\text{kPa}')}}{${hue('pressure', '101.3\\ \\text{kPa}')}}\\right)}{${hue('energy', fmt(q.dH * 1000, 0) + '\\ \\text{J/mol}')}}+\\frac{1}{${hue('temperature', fmt(t1, 1) + '\\ \\text{K}')}}\\right)}^{-1}=${hue('temperature', fmt(tk, 1) + '\\ \\text{K}')}=${hue('temperature', fmt(tb, 1) + '^{\\circ}\\text{C}')}`);
   }
@@ -245,16 +245,16 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     const { ctx } = begin(d.c), ce = C('energy'), k = F.ease.smooth(F.arrival(d));
     const ys = Y0, yl = Y0 - FUS * S, yg = Y0 - (FUS + VAP) * S;
     arrow(ctx, 150, Y0 + 20, 150, yg - 20, ce, 4);
-    text(ctx, 'Energy', 150, yg - 40, ce, { size: 20, weight: 600, align: 'center' });
-    [[ys, 'solid'], [yl, 'liquid'], [yg, 'gas']].forEach(([y, s]) => { line(ctx, 260, y, 1100, y, PAL.ink, 3); text(ctx, s, 1120, y, PAL.ink, { size: 20 }); });
+    text(ctx, '能量', 150, yg - 40, ce, { size: 20, weight: 600, align: 'center' });
+    [[ys, '固态'], [yl, '液态'], [yg, '气态']].forEach(([y, s]) => { line(ctx, 260, y, 1100, y, PAL.ink, 3); text(ctx, s, 1120, y, PAL.ink, { size: 20 }); });
     const grow = (x, y1, y2, i) => { const g = F.stagger(k, i, 3); if (g > 0) arrow(ctx, x, y1, x, y1 + (y2 - y1) * g, ce, 4); };
     grow(600, ys, yg, 0); grow(760, ys, yl, 1); grow(760, yl, yg, 2);
-    text(ctx, 'sublimation', 580, (ys + yg) / 2 - 14, ce, { size: 20, weight: 600, align: 'right', bg: PAL.panel });
+    text(ctx, '升华', 580, (ys + yg) / 2 - 14, ce, { size: 20, weight: 600, align: 'right', bg: PAL.panel });
     text(ctx, 'ΔH_{sub} = 50.02 kJ/mol', 580, (ys + yg) / 2 + 14, ce, { size: 20, weight: 600, align: 'right', bg: PAL.panel });
-    text(ctx, 'fusion, ΔH_{fus} = 6.01 kJ/mol', 780, (ys + yl) / 2, ce, { size: 17, weight: 600, bg: PAL.panel });
-    text(ctx, 'vaporization', 780, (yl + yg) / 2 - 14, ce, { size: 20, weight: 600, bg: PAL.panel });
+    text(ctx, '熔化，ΔH_{fus} = 6.01 kJ/mol', 780, (ys + yl) / 2, ce, { size: 17, weight: 600, bg: PAL.panel });
+    text(ctx, '汽化', 780, (yl + yg) / 2 - 14, ce, { size: 20, weight: 600, bg: PAL.panel });
     text(ctx, 'ΔH_{vap} = 44.01 kJ/mol', 780, (yl + yg) / 2 + 14, ce, { size: 20, weight: 600, bg: PAL.panel });
-    topline(ctx, 'For water, melting (6.01 kJ/mol) and then vaporizing (44.01 kJ/mol) add to an estimate of 50.02 kJ/mol for sublimation.');
+    topline(ctx, '对水来说，先熔化（6.01 kJ/mol）再汽化（44.01 kJ/mol），相加得到升华的估算值 50.02 kJ/mol。');
     tex(d.readout, `\\kdHsub\\approx\\kdHfus+\\kdHvap=${hue('energy', '6.01\\ \\text{kJ/mol}')}+${hue('energy', '44.01\\ \\text{kJ/mol}')}=${hue('energy', '50.02\\ \\text{kJ/mol}')}`);
   }
   register(d.fig, { update: () => {}, draw });
@@ -272,11 +272,11 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
 (function () {
   const d = sim('sim-heat', 560);
   const reset = () => cy.reset();
-  const M = ctl(d.controls, { label: '\\km', cls: 'mass', min: 10, max: 200, step: 1, value: 135, unit: 'g', dec: 0, aria: 'mass of water in grams', onInput: reset });
-  const TA = ctl(d.controls, { label: '\\kTone', cls: 'temperature', min: -40, max: 140, step: 1, value: -15, unit: '°C', dec: 0, aria: 'starting temperature in degrees Celsius', onInput: reset });
-  const TB = ctl(d.controls, { label: '\\kTtwo', cls: 'temperature', min: -40, max: 140, step: 1, value: 120, unit: '°C', dec: 0, aria: 'final temperature in degrees Celsius', onInput: reset });
+  const M = ctl(d.controls, { label: '\\km', cls: 'mass', min: 10, max: 200, step: 1, value: 135, unit: 'g', dec: 0, aria: '水的质量，单位为克', onInput: reset });
+  const TA = ctl(d.controls, { label: '\\kTone', cls: 'temperature', min: -40, max: 140, step: 1, value: -15, unit: '°C', dec: 0, aria: '起始温度，单位为摄氏度', onInput: reset });
+  const TB = ctl(d.controls, { label: '\\kTtwo', cls: 'temperature', min: -40, max: 140, step: 1, value: 120, unit: '°C', dec: 0, aria: '最终温度，单位为摄氏度', onInput: reset });
   const cy = cycle(() => 6, 1.5);
-  const CS = { s: 2.09, l: 4.18, g: 1.86 }, NAME = { s: 'ice', l: 'water', g: 'steam' }, FORM = { s: 'H_{2}O(s)', l: 'H_{2}O(l)', g: 'H_{2}O(g)' };
+  const CS = { s: 2.09, l: 4.18, g: 1.86 }, NAME = { s: '冰', l: '水', g: '水蒸气' }, FORM = { s: 'H_{2}O(s)', l: 'H_{2}O(l)', g: 'H_{2}O(g)' };
   const MM = 18.02, FUS = 6.01, VAP = 40.67;
   /* the steps from ta to tb: warming or cooling within a phase (q = mcΔT) and the transitions (q = nΔH), each in kJ */
   function path(m, ta, tb) {
@@ -294,12 +294,12 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     }
     return steps;
   }
-  const WORD = (s, up) => (s.kind === 'warm' ? `the ${NAME[s.ph]} is ${up ? 'warming' : 'cooling'}` : s.melt ? (up ? 'the ice is melting at 0 °C' : 'the water is freezing at 0 °C') : (up ? 'the water is boiling at 100 °C' : 'the steam is condensing at 100 °C'));
+  const WORD = (s, up) => (s.kind === 'warm' ? `${NAME[s.ph]}正在${up ? '升温' : '降温'}` : s.melt ? (up ? '冰在 0 °C 熔化' : '水在 0 °C 凝固') : (up ? '水在 100 °C 沸腾' : '水蒸气在 100 °C 凝结'));
   function draw() {
     const { ctx } = begin(d.c);
     const m = M.v, ta = TA.v, tb = TB.v, up = tb >= ta, steps = path(m, ta, tb), ct = C('temperature'), ce = C('energy');
     const box = { l: 150, r: 1290, t: 110, b: 470 };
-    const { X, Y } = axes(ctx, box, [0, 700], [-40, 140], { nx: 7, ny: 9, xl: up ? 'heat added (kJ)' : 'heat removed (kJ)', xc: ce, yl: 'T (°C)', yc: ct });
+    const { X, Y } = axes(ctx, box, [0, 700], [-40, 140], { nx: 7, ny: 9, xl: up ? '加入的热量 (kJ)' : '移出的热量 (kJ)', xc: ce, yl: 'T (°C)', yc: ct });
     const pts = [[0, ta]]; let acc = 0;
     steps.forEach((s) => { acc += Math.abs(s.q); s.x0 = acc - Math.abs(s.q); s.x1 = acc; pts.push([acc, s.t1]); });
     const total = acc, k = total > 0 ? clamp(cy.now() / 6, 0, 1) : 1, qNow = k * total;
@@ -316,20 +316,20 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     steps.forEach((s) => {
       const xm = X((s.x0 + s.x1) / 2), ym = Y((s.t0 + s.t1) / 2), wide = X(s.x1) - X(s.x0);
       if (s.kind === 'warm' && (wide > 30 || Math.abs(Y(s.t1) - Y(s.t0)) > 40)) label(ctx, FORM[s.ph], xm, ym, { side: xm - box.l < 110 ? 'right' : 'left', size: 18, gap: 18, weight: 400 });
-      if (s.kind === 'change' && wide > 110) label(ctx, s.melt ? (up ? 'melting' : 'freezing') : (up ? 'boiling' : 'condensing'), xm, ym, { side: 'below', size: 18, gap: 18, weight: 400 });
+      if (s.kind === 'change' && wide > 110) label(ctx, s.melt ? (up ? '熔化' : '凝固') : (up ? '沸腾' : '凝结'), xm, ym, { side: 'below', size: 18, gap: 18, weight: 400 });
     });
     const xq = Math.min(qNow, 700);
     if (steps.length) dot(ctx, X(xq), Y(at(qNow)), ct, true, 10);
     const terms = steps.map((s) => sig3(s.q)), sum = terms.reduce((a, b) => a + b, 0);
     /* the total the headline names is the readout's rounded sum, so the two agree */
-    const done = k >= 1, verb = up ? 'added' : 'removed', word = (x) => show3(sig3(x)), all = word(Math.abs(sum));
-    topline(ctx, !steps.length ? 'The starting and final temperatures are the same, so no heat flows.'
-      : done ? `All ${all} kJ ${verb}: ${fmt(m, 0)} g of ${NAME[steps[steps.length - 1].ph]} at ${minus(String(tb))} °C.`
-        : `${word(k * Math.abs(sum))} kJ of ${all} kJ ${verb}: ${WORD(cur, up)}.`);
+    const done = k >= 1, verb = up ? '加入' : '移出', word = (x) => show3(sig3(x)), all = word(Math.abs(sum));
+    topline(ctx, !steps.length ? '起始温度和最终温度相同，所以没有热量流动。'
+      : done ? `共${verb}热量 ${all} kJ：${fmt(m, 0)} g ${NAME[steps[steps.length - 1].ph]}，温度为 ${minus(String(tb))} °C。`
+        : `已${verb}热量 ${word(k * Math.abs(sum))} kJ，共 ${all} kJ：${WORD(cur, up)}。`);
     const kj = (x) => hue('energy', (x < 0 ? '-' : '') + show3(Math.abs(x)) + '\\ \\text{kJ}');
     const body = terms.length ? terms.map((x, i) => (i && x >= 0 ? '+' : i ? '+(' : x < 0 ? '(' : '') + kj(x) + (x < 0 ? ')' : '')).join('') + '=' + kj(sig3(sum)) : hue('energy', '0\\ \\text{kJ}');
-    const kinds = steps.map((s) => (s.kind === 'warm' ? `${up ? 'warming' : 'cooling'} the ${NAME[s.ph]}` : s.melt ? (up ? 'melting' : 'freezing') : (up ? 'boiling' : 'condensing'))).join(', ');
-    readout(d.readout, `\\kq_{\\text{total}}=${body}`, steps.length ? `The steps are ${kinds}, in that order; each is rounded to three figures before the sum.` : '');
+    const kinds = steps.map((s) => (s.kind === 'warm' ? `${up ? '加热' : '冷却'}${NAME[s.ph]}` : s.melt ? (up ? '熔化' : '凝固') : (up ? '沸腾' : '凝结'))).join('、');
+    readout(d.readout, `\\kq_{\\text{总}}=${body}`, steps.length ? `各步骤依次为：${kinds}；求和之前，每一步都先修约为三位有效数字。` : '');
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();

@@ -24,7 +24,7 @@ const rnd = (k, j) => { const s = Math.sin(k * 127.1 + j * 311.7) * 43758.5453; 
 (function () {
   const T3D = window.THREE;
   const d = sim('sim-galvanic-cell');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: 'front', yaw: 0, pitch: 0.16 }, { label: 'above', yaw: 0, pitch: 1.1 }], h: 660, dist: 8.4, tilt: 0.16 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: '正视', yaw: 0, pitch: 0.16 }, { label: '俯视', yaw: 0, pitch: 1.1 }], h: 660, dist: 8.4, tilt: 0.16 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 100);
   grp.position.y = -0.35;
   const CU_BLUE = '#3b8fd9';                    /* the blue of Cu²⁺(aq) */
@@ -33,36 +33,36 @@ const rnd = (k, j) => { const s = Math.sin(k * 127.1 + j * 311.7) * 43758.5453; 
   const CELLS = {
     cu: {
       xmax: 0.25, dec: 2,
-      head: 'Electrons flow from the copper anode to the silver cathode.',
-      labels: ['Cu anode (−)', 'Ag cathode (+)', 'salt bridge (NaNO<sub>3</sub>)', 'Cu(NO<sub>3</sub>)<sub>2</sub>(<em>aq</em>)', 'AgNO<sub>3</sub>(<em>aq</em>)'],
+      head: '电子从铜阳极流向银阴极。',
+      labels: ['Cu 阳极（−）', 'Ag 阴极（+）', '盐桥（NaNO<sub>3</sub>）', 'Cu(NO<sub>3</sub>)<sub>2</sub>(<em>aq</em>)', 'AgNO<sub>3</sub>(<em>aq</em>)'],
       kinds: [
-        { el: 'Cu', role: 'out', at: 'anode', m: 1, name: 'a copper(II) ion, Cu²⁺, entering the solution from the anode' },
-        { el: 'Ag', role: 'in', at: 'cathode', m: 2, name: 'a silver(I) ion, Ag⁺, about to plate onto the cathode as silver' },
-        { el: 'NO3', role: 'out', at: 'left plug', m: 2, name: 'a nitrate ion, NO₃⁻, leaving the salt bridge' },
-        { el: 'Na', role: 'out', at: 'right plug', m: 2, name: 'a sodium ion, Na⁺, leaving the salt bridge' },
+        { el: 'Cu', role: 'out', at: 'anode', m: 1, name: '铜(II)离子 Cu²⁺，从阳极进入溶液' },
+        { el: 'Ag', role: 'in', at: 'cathode', m: 2, name: '银(I)离子 Ag⁺，即将作为银镀到阴极上' },
+        { el: 'NO3', role: 'out', at: 'left plug', m: 2, name: '硝酸根离子 NO₃⁻，离开盐桥' },
+        { el: 'Na', role: 'out', at: 'right plug', m: 2, name: '钠离子 Na⁺，离开盐桥' },
       ],
-      legend: [['e-', 'electron, e⁻'], ['Cu', 'Cu²⁺'], ['Ag', 'Ag⁺'], ['NO3', 'NO₃⁻'], ['Na', 'Na⁺']],
+      legend: [['e-', '电子 e⁻'], ['Cu', 'Cu²⁺'], ['Ag', 'Ag⁺'], ['NO3', 'NO₃⁻'], ['Na', 'Na⁺']],
       tex: (x, f) => `\\mk{an}{\\text{Cu}(s)}\\,|\\,\\mk{as}{${hue('concentration', f(1 + x) + '\\;M')}\\;\\text{Cu}^{2+}(aq)}\\,\\|\\,\\mk{cs}{${hue('concentration', f(1 - 2 * x) + '\\;M')}\\;\\text{Ag}^{+}(aq)}\\,|\\,\\mk{ca}{\\text{Ag}(s)}`,
-      note: 'For every two electrons through the wire, one Cu²⁺ ion enters the anode solution, two Ag⁺ ions plate onto the cathode, and two NO₃⁻ and two Na⁺ ions leave the salt bridge.',
+      note: '导线中每通过两个电子，就有一个 Cu²⁺ 离子进入阳极溶液，两个 Ag⁺ 离子镀到阴极上，两个 NO₃⁻ 离子和两个 Na⁺ 离子离开盐桥。',
     },
     mg: {
       xmax: 0.075, dec: 3,
-      head: 'Electrons flow from the magnesium anode to the platinum.',
-      labels: ['Mg anode (−)', 'Pt cathode (+)', 'salt bridge', 'MgCl<sub>2</sub>(<em>aq</em>)', 'FeCl<sub>3</sub>(<em>aq</em>), FeCl<sub>2</sub>(<em>aq</em>)'],
+      head: '电子从镁阳极流向铂。',
+      labels: ['Mg 阳极（−）', 'Pt 阴极（+）', '盐桥', 'MgCl<sub>2</sub>(<em>aq</em>)', 'FeCl<sub>3</sub>(<em>aq</em>), FeCl<sub>2</sub>(<em>aq</em>)'],
       kinds: [
-        { el: 'Mg', role: 'out', at: 'anode', m: 1, name: 'a magnesium ion, Mg²⁺, entering the solution from the anode' },
-        { el: 'Fe', role: 'in', at: 'cathode', m: 2, name: 'an iron(III) ion, Fe³⁺, about to take an electron at the platinum' },
-        { el: 'Fe', role: 'out', at: 'cathode', m: 2, name: 'an iron(II) ion, Fe²⁺, leaving the platinum' },
-        { el: 'Cl', role: 'out', at: 'left plug', m: 2, name: 'a chloride ion, Cl⁻, leaving the salt bridge' },
-        { el: 'Na', role: 'out', at: 'right plug', m: 2, name: 'a sodium ion, Na⁺, leaving the salt bridge' },
+        { el: 'Mg', role: 'out', at: 'anode', m: 1, name: '镁离子 Mg²⁺，从阳极进入溶液' },
+        { el: 'Fe', role: 'in', at: 'cathode', m: 2, name: '铁(III)离子 Fe³⁺，即将在铂上得到一个电子' },
+        { el: 'Fe', role: 'out', at: 'cathode', m: 2, name: '铁(II)离子 Fe²⁺，离开铂' },
+        { el: 'Cl', role: 'out', at: 'left plug', m: 2, name: '氯离子 Cl⁻，离开盐桥' },
+        { el: 'Na', role: 'out', at: 'right plug', m: 2, name: '钠离子 Na⁺，离开盐桥' },
       ],
-      legend: [['e-', 'electron, e⁻'], ['Mg', 'Mg²⁺'], ['Fe', 'Fe³⁺ in, Fe²⁺ out'], ['Cl', 'Cl⁻'], ['Na', 'Na⁺']],
+      legend: [['e-', '电子 e⁻'], ['Mg', 'Mg²⁺'], ['Fe', 'Fe³⁺ 进，Fe²⁺ 出'], ['Cl', 'Cl⁻'], ['Na', 'Na⁺']],
       tex: (x, f) => `\\mk{an}{\\text{Mg}(s)}\\,|\\,\\mk{as}{${hue('concentration', f(0.1 + x) + '\\;M')}\\;\\text{Mg}^{2+}(aq)}\\,\\|\\,\\mk{cs}{${hue('concentration', f(0.2 - 2 * x) + '\\;M')}\\;\\text{Fe}^{3+}(aq),\\,${hue('concentration', f(0.3 + 2 * x) + '\\;M')}\\;\\text{Fe}^{2+}(aq)}\\,|\\,\\mk{ca}{\\text{Pt}(s)}`,
-      note: 'For every two electrons through the wire, one Mg²⁺ ion enters the anode solution, two Fe³⁺ ions become Fe²⁺ at the platinum, which does not change, and two Cl⁻ and two Na⁺ ions leave the salt bridge.',
+      note: '导线中每通过两个电子，就有一个 Mg²⁺ 离子进入阳极溶液，两个 Fe³⁺ 离子在铂上变为 Fe²⁺，而铂本身不变，两个 Cl⁻ 离子和两个 Na⁺ 离子离开盐桥。',
     },
   };
   const cy = cycle(() => T, 1.2);
-  const cell = F.choice(d.controls, { label: '\\text{cell}', options: [{ value: 'cu', label: 'copper and silver(I)' }, { value: 'mg', label: 'magnesium and iron(III)' }], value: 'cu', ms: 0, aria: 'the galvanic cell', onInput: () => cy.reset() });
+  const cell = F.choice(d.controls, { label: '\\text{电池}', options: [{ value: 'cu', label: '铜与银(I)' }, { value: 'mg', label: '镁与铁(III)' }], value: 'cu', ms: 0, aria: '原电池', onInput: () => cy.reset() });
   const ro = F.readout(d);
 
   /* the electrodes: where each one's top meets the wire, and the points ions leave from or arrive at */
@@ -131,46 +131,46 @@ const rnd = (k, j) => { const s = Math.sin(k * 127.1 + j * 311.7) * 43758.5453; 
   /* the magnesium ribbon at nine thicknesses, one shown at a time, the rest kept out of sight */
   const mgCoil = (lv) => {
     const r = 0.042 * (1 - 0.4 * lv / 8), pts = [[MG.x, 0.75, 0], [MG.x, MG.c[1] + 0.12, 0], ...Array.from({ length: 80 }, (_, i) => spiral(i / 79))];
-    return v.pickable(tube(pts, r, F.el('Mg')), 'the magnesium anode, an active electrode');
+    return v.pickable(tube(pts, r, F.el('Mg')), '镁阳极，一种活性电极');
   };
   function build() {
     if (!v.scene || palSig() === sig) return; sig = palSig();
     v.clear(); parts = {}; coils = [];
     const c = cell.value, C0 = CELLS[c];
     const glass = { transparent: true, opacity: 0.1, depthWrite: false, side: T3D.DoubleSide };
-    v.pickable(F.mesh.box(grp, [0, YB - 0.06, 0], [6.4, 0.1, 2.2], PAL.soft), 'bench');
+    v.pickable(F.mesh.box(grp, [0, YB - 0.06, 0], [6.4, 0.1, 2.2], PAL.soft), '实验台');
     for (const [x, who] of [[XA, 'anode'], [XC, 'cathode']]) {
       const b = new T3D.Mesh(new T3D.CylinderGeometry(RB, RB, YT - YB, 40, 1, true), F.mesh.mat(PAL.ink, glass)); b.position.set(x, (YT + YB) / 2, 0); grp.add(b);
       const floor = new T3D.Mesh(new T3D.CircleGeometry(RB, 40), F.mesh.mat(PAL.ink, glass)); floor.rotation.x = -Math.PI / 2; floor.position.set(x, YB + 0.005, 0); grp.add(floor);
       const liq = new T3D.Mesh(new T3D.CylinderGeometry(RB - 0.02, RB - 0.02, YL - YB - 0.01, 40), F.mesh.mat(PAL.muted, { transparent: true, opacity: 0.14, depthWrite: false })); liq.position.set(x, (YL + YB) / 2, 0); grp.add(liq);
-      v.pickable(liq, who === 'anode' ? 'the anode half-cell’s solution' : 'the cathode half-cell’s solution');
+      v.pickable(liq, who === 'anode' ? '阳极半电池的溶液' : '阴极半电池的溶液');
       parts[who + 'Liq'] = liq;
     }
     /* the salt bridge, an inverted U of glass with a porous plug at each end */
     const bridge = rounded([[-XS, YP, 0], [-XS, 0.9, 0], [XS, 0.9, 0], [XS, YP, 0]], 0.3);
-    v.pickable(tube(bridge, 0.13, PAL.ink, glass), 'the salt bridge');
+    v.pickable(tube(bridge, 0.13, PAL.ink, glass), '盐桥');
     tube(bridge, 0.105, PAL.muted, { transparent: true, opacity: 0.16, depthWrite: false });
-    for (const s of [-1, 1]) v.pickable(F.mesh.stick(grp, [s * XS, YP - 0.04, 0], [s * XS, YP + 0.08, 0], 0.12, PAL.muted), 'a porous plug');
+    for (const s of [-1, 1]) v.pickable(F.mesh.stick(grp, [s * XS, YP - 0.04, 0], [s * XS, YP + 0.08, 0], 0.12, PAL.muted), '多孔塞');
     /* the wire through the external circuit, and the path the electrons follow */
     const [ta, tc] = top(c);
     const path = [ta, [ta[0], YW, 0], [tc[0], YW, 0], tc];
     const smooth = rounded(path, 0.35);
-    v.pickable(tube(smooth, 0.025, PAL.ink), 'the wire of the external circuit');
-    v.pickable(F.mesh.box(grp, [0, YW, 0], [1.1, 0.46, 0.3], PAL.panel), 'the external circuit');
+    v.pickable(tube(smooth, 0.025, PAL.ink), '外电路的导线');
+    v.pickable(F.mesh.box(grp, [0, YW, 0], [1.1, 0.46, 0.3], PAL.panel), '外电路');
     F.mesh.box(grp, [0, YW, 0], [1.14, 0.5, 0.26], PAL.muted);
     wire = along(smooth.map((p) => [p[0], p[1], 0]), 200);
-    electrons = Array.from({ length: NE }, () => v.pickable(F.mesh.sphere(grp, [0, -50, 0], 0.05, F.el('e-')), 'an electron, e⁻, in the wire'));
+    electrons = Array.from({ length: NE }, () => v.pickable(F.mesh.sphere(grp, [0, -50, 0], 0.05, F.el('e-')), '导线中的电子 e⁻'));
     /* the electrodes */
     if (c === 'cu') {
       for (const [x, el, who] of [[AX, 'Cu', 'anode'], [CX, 'Ag', 'cathode']]) {
-        const name = who === 'anode' ? 'the copper anode, an active electrode' : 'the silver cathode, an active electrode';
+        const name = who === 'anode' ? '铜阳极，一种活性电极' : '银阴极，一种活性电极';
         v.pickable(F.mesh.box(grp, [x, (YL + PLATE.y1) / 2, 0], [PLATE.w, PLATE.y1 - YL, PLATE.d], F.el(el)), name);
         parts[who] = v.pickable(F.mesh.box(grp, [x, (YL + PLATE.y0) / 2, 0], [PLATE.w, YL - PLATE.y0, PLATE.d], F.el(el)), name);
       }
     } else {
       coils = Array.from({ length: 9 }, (_, lv) => mgCoil(lv));
       const pt = [[PT.x, 0.75, 0], [PT.x, PT.yc + PT.r + 0.1, 0], ...Array.from({ length: 160 }, (_, i) => helix(i / 159))];
-      v.pickable(tube(pt, 0.022, F.el('Pt')), 'the platinum cathode, an inert electrode');
+      v.pickable(tube(pt, 0.022, F.el('Pt')), '铂阴极，一种惰性电极');
     }
     pools = C0.kinds.map((k) => {
       const n = k.m * (Math.ceil(LIFE / TAU_E) + 1);
@@ -178,7 +178,7 @@ const rnd = (k, j) => { const s = Math.sin(k * 127.1 + j * 311.7) * 43758.5453; 
     });
     const spots = [[XA - 1.35, 0.55, 0], [XC + 1.35, 0.55, 0], [0, 0.4, 0], [XA, YB - 0.3, 1.0], [XC, YB - 0.3, 1.0]];
     C0.labels.forEach((s, i) => v.label(s, spots[i], grp, 0));
-    v.label('external circuit', [0, YW + 0.4, 0], grp, 0);
+    v.label('外电路', [0, YW + 0.4, 0], grp, 0);
     v.headline(C0.head);
   }
   function placeIons(t) {

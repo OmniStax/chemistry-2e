@@ -28,8 +28,8 @@ function ball(ctx, x, y, r, fill, stroke = alpha(PAL.ink, 0.5), w = 1.4) {
 (function () {
   const d = sim('sim-order', 660);
   const MP = 1713, SOFT = 1100;
-  const FORM = F.choice(d.controls, { label: '\\text{form}', options: [{ value: 'crystal', label: 'crystalline (quartz)' }, { value: 'glass', label: 'amorphous (fused silica)' }], value: 'crystal', aria: 'crystalline or amorphous silicon dioxide' });
-  const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 1000, max: 1800, step: 10, value: 1400, unit: '°C', dec: 0, aria: 'temperature in degrees Celsius', specials: [{ at: MP, label: 'melting point' }] });
+  const FORM = F.choice(d.controls, { label: '\\text{形态}', options: [{ value: 'crystal', label: '晶态（石英）' }, { value: 'glass', label: '无定形（熔融石英）' }], value: 'crystal', aria: '晶态或无定形二氧化硅' });
+  const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 1000, max: 1800, step: 10, value: 1400, unit: '°C', dec: 0, aria: '以摄氏度表示的温度', specials: [{ at: MP, label: '熔点' }] });
   const L = 74, CX = 700, CY = 215, HW = 430, HH = 128;
   const si = [];
   for (let j = -4; j <= 4; j++) for (let i = -8; i <= 8; i++) for (const b of [0, 1]) {
@@ -83,29 +83,29 @@ function ball(ctx, x, y, r, fill, stroke = alpha(PAL.ink, 0.5), w = 1.4) {
       const u = th + termTurn[i] * k, O = [P[a][0] + Math.cos(u) * L * 0.5, P[a][1] + Math.sin(u) * L * 0.5];
       line(ctx, P[a][0], P[a][1], O[0], O[1], PAL.muted, 7); oxy.push(O);
     });
-    oxy.forEach((o) => { ball(ctx, o[0], o[1], 11, F.el('O')); hits.push({ x: o[0], y: o[1], r: 11, name: 'an oxygen atom, O' }); });
-    P.forEach((p) => { ball(ctx, p[0], p[1], 16, F.el('Si')); hits.push({ x: p[0], y: p[1], r: 16, name: 'a silicon atom, Si' }); });
+    oxy.forEach((o) => { ball(ctx, o[0], o[1], 11, F.el('O')); hits.push({ x: o[0], y: o[1], r: 11, name: '氧原子，O' }); });
+    P.forEach((p) => { ball(ctx, p[0], p[1], 16, F.el('Si')); hits.push({ x: p[0], y: p[1], r: 16, name: '硅原子，Si' }); });
     const ly = 386;
-    ball(ctx, 230, ly, 14, F.el('Si')); text(ctx, 'silicon', 252, ly, PAL.ink, { size: 18 });
-    ball(ctx, 360, ly, 10, F.el('O')); text(ctx, 'oxygen', 378, ly, PAL.ink, { size: 18 });
-    line(ctx, 496, ly, 524, ly, alpha(PAL.ink, 0.45), 3, [4, 5]); text(ctx, 'broken link', 552, ly, PAL.ink, { size: 18 });
+    ball(ctx, 230, ly, 14, F.el('Si')); text(ctx, '硅', 252, ly, PAL.ink, { size: 18 });
+    ball(ctx, 360, ly, 10, F.el('O')); text(ctx, '氧', 378, ly, PAL.ink, { size: 18 });
+    line(ctx, 496, ly, 524, ly, alpha(PAL.ink, 0.45), 3, [4, 5]); text(ctx, '断开的键', 552, ly, PAL.ink, { size: 18 });
     /* graph: share of links broken, 1000 to 1800 °C by 200, 0 to 100 % by 50 */
     const box = { l: 230, r: 1180, t: 450, b: 580 };
-    const { X, Y } = axes(ctx, box, [1000, 1800], [0, 100], { nx: 4, ny: 2, xl: 'T (°C)', xc: C('temperature'), yl: 'links broken (%)', fy: (v) => fmt(v, 0) });
+    const { X, Y } = axes(ctx, box, [1000, 1800], [0, 100], { nx: 4, ny: 2, xl: 'T (°C)', xc: C('temperature'), yl: '断开的键 (%)', fy: (v) => fmt(v, 0) });
     line(ctx, X(MP), box.t, X(MP), box.b, alpha(PAL.ink, 0.35), 2, [4, 8]);
-    text(ctx, 'melting point, 1713 °C', X(MP) - 8, box.t - 22, PAL.muted, { size: 16, align: 'right' });
+    text(ctx, '熔点，1713 °C', X(MP) - 8, box.t - 22, PAL.muted, { size: 16, align: 'right' });
     FORM.curve(ctx, (v) => (s) => (100 * brokenAt(v, s)) / N, 1000, 1800, X, Y, PAL.ink, 4, 400);
     const n = brokenAt(form, t);
     F.pinned(ctx, box, X, Y, t, (100 * n) / N, C('temperature'));
-    const name = form === 'crystal' ? 'crystalline SiO₂' : 'fused silica';
+    const name = form === 'crystal' ? '晶态 SiO₂' : '熔融石英';
     topline(ctx, form === 'crystal'
-      ? (t < MP ? `At ${t} °C none of the ${N} Si–O–Si links of ${name} is broken.` : `At ${t} °C all ${N} Si–O–Si links of ${name} break at once, and the crystal melts.`)
-      : (n === 0 ? `At ${t} °C none of the ${N} Si–O–Si links of ${name} is broken yet.` : n === N ? `At ${t} °C all ${N} Si–O–Si links of ${name} are broken, and the glass has melted.` : `At ${t} °C, ${n} of the ${N} Si–O–Si links of ${name} are broken, the most strained ones first.`));
+      ? (t < MP ? `${t} °C 时，${name}的 ${N} 个 Si–O–Si 键均未断开。` : `${t} °C 时，${name}的全部 ${N} 个 Si–O–Si 键同时断开，晶体熔化。`)
+      : (n === 0 ? `${t} °C 时，${name}的 ${N} 个 Si–O–Si 键尚未有断开的。` : n === N ? `${t} °C 时，${name}的全部 ${N} 个 Si–O–Si 键均已断开，玻璃已熔化。` : `${t} °C 时，${name}的 ${N} 个 Si–O–Si 键中有 ${n} 个已断开，应变最大的先断开。`));
     const tt = `\\kT = ${degC(t)}`;
     const main = form === 'crystal'
-      ? `${tt} ${t < MP ? '<' : '\\ge'} ${degC(MP)}\\ (\\text{melting point}):\\ ${n}\\ \\text{of}\\ ${N}\\ \\text{links broken}`
-      : `${tt}:\\ ${n}\\ \\text{of}\\ ${N}\\ \\text{links broken}`;
-    readout(d.readout, main, form === 'crystal' ? 'Every link of the crystal is alike, so all of them take the same energy to break.' : 'The links of the glass are strained by different amounts, so the glass softens over a range of temperatures.');
+      ? `${tt} ${t < MP ? '<' : '\\ge'} ${degC(MP)}\\ (\\text{熔点}):\\ ${N}\\ \\text{个键中断开}\\ ${n}\\ \\text{个}`
+      : `${tt}:\\ ${N}\\ \\text{个键中断开}\\ ${n}\\ \\text{个}`;
+    readout(d.readout, main, form === 'crystal' ? '晶体中的每个键都相同，所以使它们断开所需的能量都相同。' : '玻璃中各键所受的应变不同，所以玻璃在一定温度范围内逐渐软化。');
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -119,9 +119,9 @@ function ball(ctx, x, y, r, fill, stroke = alpha(PAL.ink, 0.5), w = 1.4) {
 ===================================================================== */
 (function () {
   const d = sim('sim-solids');
-  const v = F.view3d(d.stage, { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.35, h: 460, dist: 9.4, views: [{ label: 'along an axis', yaw: 0, pitch: 0 }, { label: 'along a diagonal', yaw: Math.PI / 4, pitch: 0.6155 }] });
+  const v = F.view3d(d.stage, { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.35, h: 460, dist: 9.4, views: [{ label: '沿轴向', yaw: 0, pitch: 0 }, { label: '沿对角线方向', yaw: Math.PI / 4, pitch: 0.6155 }] });
   const grp = v.part(0); if (grp) grp.position.y = -0.35;
-  const NM = { Na: 'a sodium ion, Na⁺', Cl: 'a chloride ion, Cl⁻', Cu: 'a copper atom, Cu', C: 'a carbon atom, C', Si: 'a silicon atom, Si', O: 'an oxygen atom, O', I: 'an iodine atom, I' };
+  const NM = { Na: '钠离子，Na⁺', Cl: '氯离子，Cl⁻', Cu: '铜原子，Cu', C: '碳原子，C', Si: '硅原子，Si', O: '氧原子，O', I: '碘原子，I' };
   const cube = (n) => { const out = []; for (let i = 0; i <= n; i++) for (let j = 0; j <= n; j++) for (let k = 0; k <= n; k++) out.push([i, j, k]); return out; };
   const centre = (atoms) => { const c = [0, 1, 2].map((q) => (Math.min(...atoms.map((a) => a.p[q])) + Math.max(...atoms.map((a) => a.p[q]))) / 2); atoms.forEach((a) => { a.p = a.p.map((x, q) => x - c[q]); }); return atoms; };
   const bondsBy = (atoms, len, ok = () => true) => { const b = []; for (let i = 0; i < atoms.length; i++) for (let j = i + 1; j < atoms.length; j++) if (Math.abs(dist3(atoms[i].p, atoms[j].p) - len) < 0.02 && ok(atoms[i], atoms[j])) b.push([i, j]); return b; };
@@ -178,16 +178,16 @@ function ball(ctx, x, y, r, fill, stroke = alpha(PAL.ink, 0.5), w = 1.4) {
     },
   };
   const INFO = {
-    NaCl: { f: 'NaCl', head: 'Sodium chloride is an ionic solid: Na⁺ and Cl⁻ ions are held together by electrostatic attractions.', ro: '\\text{ions} \\;\\to\\; \\text{ionic bonds} \\;\\to\\; \\text{hard, brittle, high melting point}' },
-    Cu: { f: 'Cu', head: 'Copper is a metallic solid: copper atoms are held together by metallic bonding.', ro: '\\text{metal atoms} \\;\\to\\; \\text{metallic bonds} \\;\\to\\; \\text{malleable, conducts heat and electricity}' },
-    diamond: { f: 'C (diamond)', head: 'Diamond is a covalent network solid: every carbon atom is bonded to four others.', ro: `\\text{C atoms} \\;\\to\\; \\text{covalent bonds} \\;\\to\\; \\text{very hard, melts above } ${degC(3500)}` },
-    SiO2: { f: 'SiO₂', head: 'Silicon dioxide is a covalent network solid: each silicon atom is bonded to four oxygen atoms.', ro: '\\text{Si and O atoms} \\;\\to\\; \\text{covalent bonds} \\;\\to\\; \\text{very hard, very high melting point}' },
-    SiC: { f: 'SiC', head: 'Silicon carbide is a covalent network solid: each silicon atom is bonded to four carbon atoms.', ro: '\\text{Si and C atoms} \\;\\to\\; \\text{covalent bonds} \\;\\to\\; \\text{very hard, very high melting point}' },
-    graphite: { f: 'C (graphite)', head: 'Graphite is built of planar sheets of covalently bonded carbon atoms, held together in layers by noncovalent forces.', ro: '\\text{C atoms} \\;\\to\\; \\text{covalent bonds in each sheet, weak forces between sheets} \\;\\to\\; \\text{soft, conductive}' },
-    CO2: { f: 'CO₂', head: 'Carbon dioxide is a molecular solid of small, nonpolar CO₂ molecules.', ro: `\\text{CO}_{2}\\ \\text{molecules} \\;\\to\\; \\text{IMFs} \\;\\to\\; \\text{melts at } ${degC(-78)}` },
-    I2: { f: 'I₂', head: 'Iodine is a molecular solid of larger, nonpolar I₂ molecules.', ro: `\\text{I}_{2}\\ \\text{molecules} \\;\\to\\; \\text{IMFs} \\;\\to\\; \\text{melts at } ${degC(114)}` },
+    NaCl: { f: 'NaCl', head: '氯化钠是一种离子固体：Na⁺ 和 Cl⁻ 离子靠静电吸引结合在一起。', ro: '\\text{离子} \\;\\to\\; \\text{离子键} \\;\\to\\; \\text{硬而脆，熔点高}' },
+    Cu: { f: 'Cu', head: '铜是一种金属固体：铜原子靠金属键结合在一起。', ro: '\\text{金属原子} \\;\\to\\; \\text{金属键} \\;\\to\\; \\text{有延展性，能传导热量和电}' },
+    diamond: { f: 'C（金刚石）', head: '金刚石是一种共价网状固体：每个碳原子与另外四个碳原子成键。', ro: `\\text{C 原子} \\;\\to\\; \\text{共价键} \\;\\to\\; \\text{非常硬，在 } ${degC(3500)}\\text{ 以上才熔化}` },
+    SiO2: { f: 'SiO₂', head: '二氧化硅是一种共价网状固体：每个硅原子与四个氧原子成键。', ro: '\\text{Si 和 O 原子} \\;\\to\\; \\text{共价键} \\;\\to\\; \\text{非常硬，熔点很高}' },
+    SiC: { f: 'SiC', head: '碳化硅是一种共价网状固体：每个硅原子与四个碳原子成键。', ro: '\\text{Si 和 C 原子} \\;\\to\\; \\text{共价键} \\;\\to\\; \\text{非常硬，熔点很高}' },
+    graphite: { f: 'C（石墨）', head: '石墨由共价键合的碳原子平面片层构成，层与层之间靠非共价作用力结合在一起。', ro: '\\text{C 原子} \\;\\to\\; \\text{每个片层内为共价键，片层之间为弱作用力} \\;\\to\\; \\text{软，能导电}' },
+    CO2: { f: 'CO₂', head: '二氧化碳是由小的非极性 CO₂ 分子构成的分子固体。', ro: `\\text{CO}_{2}\\ \\text{分子} \\;\\to\\; \\text{分子间作用力} \\;\\to\\; \\text{在 } ${degC(-78)}\\text{ 熔化}` },
+    I2: { f: 'I₂', head: '碘是由较大的非极性 I₂ 分子构成的分子固体。', ro: `\\text{I}_{2}\\ \\text{分子} \\;\\to\\; \\text{分子间作用力} \\;\\to\\; \\text{在 } ${degC(114)}\\text{ 熔化}` },
   };
-  const S = F.select(d.controls, { label: '\\text{solid}', options: Object.keys(INFO).map((k) => ({ value: k, label: INFO[k].f })), value: 'NaCl', aria: 'the crystalline solid' });
+  const S = F.select(d.controls, { label: '\\text{固体}', options: Object.keys(INFO).map((k) => ({ value: k, label: INFO[k].f })), value: 'NaCl', aria: '晶态固体' });
   let sig = '';
   function draw() {
     const key = S.value + '|' + palSig();
@@ -213,7 +213,7 @@ function ball(ctx, x, y, r, fill, stroke = alpha(PAL.ink, 0.5), w = 1.4) {
 ===================================================================== */
 (function () {
   const d = sim('sim-graphene');
-  const v = F.view3d(d.stage, { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3, h: 460, dist: 9.5, views: [{ label: 'face on', yaw: 0, pitch: 0 }, { label: 'edge on', yaw: Math.PI / 2, pitch: 0 }] });
+  const v = F.view3d(d.stage, { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3, h: 460, dist: 9.5, views: [{ label: '正面', yaw: 0, pitch: 0 }, { label: '侧面', yaw: Math.PI / 2, pitch: 0 }] });
   const grp = v.part(0);
   const A = 0.2, NC = 10, NR = 9, PER = R3 * A, W = NC * PER, RT = W / TAU, GAP = 0.47;
   const flat = [];
@@ -238,8 +238,8 @@ function ball(ctx, x, y, r, fill, stroke = alpha(PAL.ink, 0.5), w = 1.4) {
     for (let m = 0; m < 8; m++) { const p = q.map((x, n) => (m >> n) & 1 ? -x : x); if (!bucky.some((r) => dist3(r, p) < 1e-6)) bucky.push(p); } }));
   const bp = bucky.map((p) => p.map((x) => (x * A) / 2));
   const bb = []; for (let i = 0; i < bp.length; i++) for (let j = i + 1; j < bp.length; j++) if (Math.abs(dist3(bp[i], bp[j]) - A) < 0.01) bb.push([i, j]);
-  const FORM = F.choice(d.controls, { label: '\\text{form}', options: [{ value: 'sheet', label: 'sheet' }, { value: 'ball', label: 'buckyball' }, { value: 'tube', label: 'nanotube' }, { value: 'stack', label: 'stacked sheets' }], value: 'sheet', aria: 'the form of graphene' });
-  const NAME = 'a carbon atom, C';
+  const FORM = F.choice(d.controls, { label: '\\text{形态}', options: [{ value: 'sheet', label: '片' }, { value: 'ball', label: '巴基球' }, { value: 'tube', label: '纳米管' }, { value: 'stack', label: '堆叠片层' }], value: 'sheet', aria: '石墨烯的形态' });
+  const NAME = '碳原子，C';
   let sig = '', sheet = null, layers = null, ballG = null, sMesh = [], sBond = [], layerN = 0;
   function build() {
     const key = palSig(); if (key === sig || !grp) return; sig = key;
@@ -256,10 +256,10 @@ function ball(ctx, x, y, r, fill, stroke = alpha(PAL.ink, 0.5), w = 1.4) {
     bb.forEach(([i, j]) => F.mesh.stick(ballG, bp[i], bp[j], 0.025, PAL.muted));
   }
   const HEAD = {
-    sheet: 'A graphene sheet is a single layer of carbon atoms, each bonded to three others in hexagonal rings.',
-    ball: 'In a buckyball, sixty carbon atoms close into a hollow sphere.',
-    tube: 'Rolled into a cylinder, the same sheet becomes a carbon nanotube.',
-    stack: 'Stacked sheets are held together in layers by noncovalent forces, as in graphite.',
+    sheet: '石墨烯片是单层碳原子，每个碳原子与另外三个碳原子成键，构成六元环。',
+    ball: '在巴基球中，六十个碳原子闭合成中空的球。',
+    tube: '同样的片层卷成圆筒，就成为碳纳米管。',
+    stack: '堆叠的片层靠非共价作用力结合成层，如同石墨。',
   };
   const COUNT = { sheet: flat.length, ball: bp.length, tube: flat.length, stack: 0 };
   function draw() {
@@ -274,7 +274,7 @@ function ball(ctx, x, y, r, fill, stroke = alpha(PAL.ink, 0.5), w = 1.4) {
     v.headline(HEAD[FORM.value]);
     v.invalidate();
     const n = FORM.value === 'stack' ? flat.length + layerN : COUNT[FORM.value];
-    readout(d.readout, `\\text{${n} carbon atoms, each bonded to three others about }${hue('length', '1.4 \\times 10^{-10}\\ \\text{m}')}\\text{ away}`);
+    readout(d.readout, `\\text{${n} 个碳原子，每个与另外三个碳原子成键，相距约 }${hue('length', '1.4 \\times 10^{-10}\\ \\text{m}')}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -300,17 +300,17 @@ function ball(ctx, x, y, r, fill, stroke = alpha(PAL.ink, 0.5), w = 1.4) {
       if (dd < 20) continue;
       if (dd < 3 * S) { const push = (3 * S - dd) * 0.28; x += (dx / dd) * push; y += (dy / dd) * push; }
       ball(ctx, x, y, R0, PAL.soft, PAL.ink, 1.6);
-      hits.push({ x, y, r: R0, name: 'an atom of the crystal' });
+      hits.push({ x, y, r: R0, name: '晶体的一个原子' });
     }
-    ball(ctx, SMALL[0], SMALL[1], 13, F.cat(0), PAL.ink, 1.6); hits.push({ x: SMALL[0], y: SMALL[1], r: 15, name: 'a substitution impurity atom' });
-    ball(ctx, BIG[0], BIG[1], 24, F.cat(1), PAL.ink, 1.6); hits.push({ x: BIG[0], y: BIG[1], r: 27, name: 'a larger substitution impurity atom' });
-    ball(ctx, INT[0], INT[1], 7, F.cat(2), PAL.ink, 1.4); hits.push({ x: INT[0], y: INT[1], r: 8, name: 'an interstitial impurity atom' });
+    ball(ctx, SMALL[0], SMALL[1], 13, F.cat(0), PAL.ink, 1.6); hits.push({ x: SMALL[0], y: SMALL[1], r: 15, name: '置换杂质原子' });
+    ball(ctx, BIG[0], BIG[1], 24, F.cat(1), PAL.ink, 1.6); hits.push({ x: BIG[0], y: BIG[1], r: 27, name: '较大的置换杂质原子' });
+    ball(ctx, INT[0], INT[1], 7, F.cat(2), PAL.ink, 1.4); hits.push({ x: INT[0], y: INT[1], r: 8, name: '间隙杂质原子' });
     const vac = [X0 + 3 * S, Y0 + 8 * S];
-    label(ctx, 'substitution impurity atom', SMALL[0] - 26, SMALL[1] - 10, { side: 'left', leader: true, gap: 250 - 3 * S, size: 20 });
-    label(ctx, 'substitution impurity atom', BIG[0] + 40, BIG[1] - 40, { side: 'right', leader: true, gap: 60, size: 20 });
-    label(ctx, 'vacancy', vac[0] - 4, vac[1], { side: 'left', leader: true, gap: 3 * S + 60, size: 20 });
-    label(ctx, 'interstitial impurity', INT[0] + 10, INT[1], { side: 'right', leader: true, gap: 2.5 * S + 60, size: 20 });
-    topline(ctx, 'A vacancy, two substitution impurity atoms, and an interstitial impurity interrupt the repeating pattern of a crystal.');
+    label(ctx, '置换杂质原子', SMALL[0] - 26, SMALL[1] - 10, { side: 'left', leader: true, gap: 250 - 3 * S, size: 20 });
+    label(ctx, '置换杂质原子', BIG[0] + 40, BIG[1] - 40, { side: 'right', leader: true, gap: 60, size: 20 });
+    label(ctx, '空位', vac[0] - 4, vac[1], { side: 'left', leader: true, gap: 3 * S + 60, size: 20 });
+    label(ctx, '间隙杂质', INT[0] + 10, INT[1], { side: 'right', leader: true, gap: 2.5 * S + 60, size: 20 });
+    topline(ctx, '一个空位、两个置换杂质原子和一个间隙杂质打断了晶体的重复图案。');
   }
   register(d.fig, { update: () => {}, draw });
 })();

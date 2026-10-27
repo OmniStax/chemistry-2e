@@ -24,18 +24,18 @@ const lerp = (a, b, k) => a + (b - a) * k;
   const UP = { x: 400, l: 240, r: 560, h: 110 }, DN = { x: 940, l: 760, r: 1120, h: 105 };
   const MG = { x: 1125, y: 520, w: 130, h: 100 };
   const OPT = {
-    paint: { label: 'scratched paint', el: 'Fe', ion: 'Fe²⁺', E: '-0.44', couple: '\\text{Fe}^{2+}/\\text{Fe}', cell: '+1.67',
-      head: 'Iron dissolves at the anodic site, and its electrons reduce oxygen at the scratch.',
-      note: 'No metal with a potential below $\\kEo{}_{\\text{Fe}^{2+}/\\text{Fe}} = -0.44\\ \\text{V}$ touches the iron, so the iron itself is oxidized.' },
-    zinc: { label: 'zinc coating', el: 'Zn', ion: 'Zn²⁺', E: '-0.7618', couple: '\\text{Zn}^{2+}/\\text{Zn}', cell: '+1.99',
-      head: 'Zinc dissolves in place of the iron, and the scratch only passes electrons to oxygen.',
-      note: 'Zinc’s $\\kEo$ lies below $\\kEo{}_{\\text{Fe}^{2+}/\\text{Fe}} = -0.44\\ \\text{V}$, so zinc is oxidized and the iron is not.' },
-    mg: { label: 'magnesium anode', el: 'Mg', ion: 'Mg²⁺', E: '-2.372', couple: '\\text{Mg}^{2+}/\\text{Mg}', cell: '+3.60',
-      head: 'The magnesium anode dissolves, and its electrons reach the iron through the wire.',
-      note: 'Magnesium’s $\\kEo$ lies below $\\kEo{}_{\\text{Fe}^{2+}/\\text{Fe}} = -0.44\\ \\text{V}$, so magnesium is oxidized and the iron is not.' },
+    paint: { label: '划伤的油漆', el: 'Fe', ion: 'Fe²⁺', E: '-0.44', couple: '\\text{Fe}^{2+}/\\text{Fe}', cell: '+1.67',
+      head: '铁在阳极部位溶解，其电子在划痕处使氧还原。',
+      note: '没有任何电势低于 $\\kEo{}_{\\text{Fe}^{2+}/\\text{Fe}} = -0.44\\ \\text{V}$ 的金属与铁接触，所以铁自身被氧化。' },
+    zinc: { label: '锌涂层', el: 'Zn', ion: 'Zn²⁺', E: '-0.7618', couple: '\\text{Zn}^{2+}/\\text{Zn}', cell: '+1.99',
+      head: '锌代替铁溶解，划痕处只是把电子传给氧。',
+      note: '锌的 $\\kEo$ 低于 $\\kEo{}_{\\text{Fe}^{2+}/\\text{Fe}} = -0.44\\ \\text{V}$，所以锌被氧化，而铁不被氧化。' },
+    mg: { label: '镁阳极', el: 'Mg', ion: 'Mg²⁺', E: '-2.372', couple: '\\text{Mg}^{2+}/\\text{Mg}', cell: '+3.60',
+      head: '镁阳极溶解，其电子经导线到达铁。',
+      note: '镁的 $\\kEo$ 低于 $\\kEo{}_{\\text{Fe}^{2+}/\\text{Fe}} = -0.44\\ \\text{V}$，所以镁被氧化，而铁不被氧化。' },
   };
   const cy = F.cycle(() => T, 1.2);
-  const pick = F.choice(d.controls, { label: '\\text{protection}', options: Object.keys(OPT).map((k) => ({ value: k, label: OPT[k].label })), value: 'paint', aria: 'how the iron is protected', onInput: () => cy.reset() });
+  const pick = F.choice(d.controls, { label: '\\text{保护方式}', options: Object.keys(OPT).map((k) => ({ value: k, label: OPT[k].label })), value: 'paint', aria: '铁的保护方式', onInput: () => cy.reset() });
   const ro = F.readout(d);
   let hits = [];
   F.hover(d.stage, () => hits);
@@ -134,14 +134,14 @@ const lerp = (a, b, k) => a + (b - a) * k;
     const NE = 10, len = lenOf(path), eA = clamp01(pick.k * 2 - 1);
     for (let i = 0; i < NE; i++) {
       const [x, y] = along(path, frac(i / NE + t * 130 / len));
-      ball(ctx, x, y, 6, F.el('e-'), eA); hits.push({ x, y, r: 10, name: 'an electron, e⁻' });
+      ball(ctx, x, y, 6, F.el('e-'), eA); hits.push({ x, y, r: 10, name: '一个电子 e⁻' });
     }
 
     /* O₂ reaching the iron at the scratch and leaving as water */
     for (let i = 0; i < 4; i++) {
       const u = frac(t / 2.4 + i / 4), x0 = 200 + 22 * i, y0 = 205 + 14 * (i % 2), x1 = SC[0] + 18 + 22 * i;
-      if (u < 0.65) { const k = u / 0.65, x = lerp(x0, x1, k), y = lerp(y0, FT - 9, k); o2(ctx, x, y, clamp01(u / 0.08)); hits.push({ x, y, r: 14, name: 'an oxygen molecule, O₂' }); }
-      else { const k = (u - 0.65) / 0.35, x = x1 + 50 * k, y = FT - 12 - 70 * k; h2o(ctx, x, y, 1 - clamp01((k - 0.6) / 0.4)); hits.push({ x, y, r: 14, name: 'a water molecule, H₂O' }); }
+      if (u < 0.65) { const k = u / 0.65, x = lerp(x0, x1, k), y = lerp(y0, FT - 9, k); o2(ctx, x, y, clamp01(u / 0.08)); hits.push({ x, y, r: 14, name: '一个氧分子 O₂' }); }
+      else { const k = (u - 0.65) / 0.35, x = x1 + 50 * k, y = FT - 12 - 70 * k; h2o(ctx, x, y, 1 - clamp01((k - 0.6) / 0.4)); hits.push({ x, y, r: 14, name: '一个水分子 H₂O' }); }
     }
 
     /* the anode metal's ions leaving it */
@@ -151,47 +151,47 @@ const lerp = (a, b, k) => a + (b - a) * k;
         let x, y;
         if (u < 0.35) { const k = u / 0.35; x = DN.x + dx; y = lerp(FB - pitD + 10, CB + 34, k); }
         else { const k = (u - 0.35) / 0.65; x = lerp(DN.x + dx, 1070, k); y = lerp(CB + 34, CB + 22, k) + 18 * Math.sin(Math.PI * k); }
-        ball(ctx, x, y, 9, F.el('Fe'), clamp01(u / 0.06) * (1 - clamp01((u - 0.9) / 0.1)), true); hits.push({ x, y, r: 12, name: 'an iron(II) ion, Fe²⁺' });
+        ball(ctx, x, y, 9, F.el('Fe'), clamp01(u / 0.06) * (1 - clamp01((u - 0.9) / 0.1)), true); hits.push({ x, y, r: 12, name: '一个铁(II)离子 Fe²⁺' });
       }
       for (let i = 0; i < 2; i++) {
         const u = frac(t / 2.4 + i / 2 + 0.2), k = clamp01(u / 0.9), x = lerp(1200, 1100, k), y = lerp(560, CB + 26, k);
-        o2(ctx, x, y, clamp01(u / 0.08) * (1 - clamp01((u - 0.85) / 0.15))); hits.push({ x, y, r: 14, name: 'an oxygen molecule, O₂' });
+        o2(ctx, x, y, clamp01(u / 0.08) * (1 - clamp01((u - 0.85) / 0.15))); hits.push({ x, y, r: 14, name: '一个氧分子 O₂' });
       }
     }, [0, 0]);
     pick.only(ctx, 'zinc', () => {
       for (let i = 0; i < 5; i++) {
         const u = frac(t / 2 + i / 5), x0 = DN.x + (i - 2) * 46, k = u, x = x0 + (i - 2) * 10 * k, y = lerp(CB + 2, CB + 80, k);
-        ball(ctx, x, y, 9, zinc, clamp01(u / 0.06) * (1 - clamp01((u - 0.7) / 0.3)), true); hits.push({ x, y, r: 12, name: 'a zinc ion, Zn²⁺' });
+        ball(ctx, x, y, 9, zinc, clamp01(u / 0.06) * (1 - clamp01((u - 0.7) / 0.3)), true); hits.push({ x, y, r: 12, name: '一个锌离子 Zn²⁺' });
       }
     }, [0, 0]);
     pick.only(ctx, 'mg', () => {
       for (let i = 0; i < 5; i++) {
         const u = frac(t / 2 + i / 5), k = u, y = MG.y - 36 + 18 * i, x = lerp(MG.x - mgW / 2 - 4, MG.x - mgW / 2 - 110, k);
-        ball(ctx, x, y, 9, mag, clamp01(u / 0.06) * (1 - clamp01((u - 0.7) / 0.3)), true); hits.push({ x, y, r: 12, name: 'a magnesium ion, Mg²⁺' });
+        ball(ctx, x, y, 9, mag, clamp01(u / 0.06) * (1 - clamp01((u - 0.7) / 0.3)), true); hits.push({ x, y, r: 12, name: '一个镁离子 Mg²⁺' });
       }
     }, [0, 0]);
 
     /* names of the parts, for the pointer */
-    hits.push({ x: 700, y: (FT + FB) / 2, r: 40, name: 'iron' }, { x: 200, y: (FT + FB) / 2, r: 40, name: 'iron' }, { x: 1250, y: (FT + FB) / 2, r: 40, name: 'iron' });
-    if (v === 'paint') hits.push({ x: 650, y: CT + 7, r: 10, name: 'paint layer' }, { x: 1078, y: CB + 14, r: 26, name: 'rust, Fe₂O₃·xH₂O' }, { x: DN.x, y: FB - pitD / 2, r: 30, name: 'the pit at the anodic site' });
-    if (v === 'zinc') hits.push({ x: 650, y: CT + 7, r: 10, name: 'zinc coating' }, { x: 650, y: FB + 7, r: 10, name: 'zinc coating' });
-    if (v === 'mg') hits.push({ x: MG.x, y: MG.y, r: 50, name: 'magnesium anode' }, { x: 1040, y: 455, r: 12, name: 'the wire' }, { x: 700, y: 200, r: 60, name: 'moist soil' });
-    else hits.push({ x: UP.x, y: CT - 40, r: 60, name: 'a drop of water' }, { x: DN.x + 80, y: CB + 50, r: 50, name: 'a drop of water' });
+    hits.push({ x: 700, y: (FT + FB) / 2, r: 40, name: '铁' }, { x: 200, y: (FT + FB) / 2, r: 40, name: '铁' }, { x: 1250, y: (FT + FB) / 2, r: 40, name: '铁' });
+    if (v === 'paint') hits.push({ x: 650, y: CT + 7, r: 10, name: '油漆层' }, { x: 1078, y: CB + 14, r: 26, name: '铁锈 Fe₂O₃·xH₂O' }, { x: DN.x, y: FB - pitD / 2, r: 30, name: '阳极部位的蚀坑' });
+    if (v === 'zinc') hits.push({ x: 650, y: CT + 7, r: 10, name: '锌涂层' }, { x: 650, y: FB + 7, r: 10, name: '锌涂层' });
+    if (v === 'mg') hits.push({ x: MG.x, y: MG.y, r: 50, name: '镁阳极' }, { x: 1040, y: 455, r: 12, name: '导线' }, { x: 700, y: 200, r: 60, name: '潮湿的土壤' });
+    else hits.push({ x: UP.x, y: CT - 40, r: 60, name: '一滴水' }, { x: DN.x + 80, y: CB + 50, r: 50, name: '一滴水' });
 
     /* labels: the surroundings, the coat or anode, the iron, and the two sites */
-    pick.only(ctx, 'mg', () => text(ctx, 'moist soil', 700, 205, PAL.ink, { size: 20, weight: 600, align: 'center', bg: PAL.panel }), [0, 0]);
-    F.faded(ctx, aDrop, [0, 0], () => F.label(ctx, 'water', 535, 250, { side: 'right', gap: 90, size: 20 }));
-    pick.only(ctx, 'paint', () => F.label(ctx, 'paint layer', 760, CT + 4, { side: 'above', gap: 50, size: 20 }), [0, 0]);
-    pick.only(ctx, 'zinc', () => F.label(ctx, 'zinc coating', 760, CT + 4, { side: 'above', gap: 50, size: 20 }), [0, 0]);
-    pick.only(ctx, 'mg', () => text(ctx, 'magnesium anode', MG.x + MG.w / 2 + 14, MG.y, PAL.ink, { size: 20, weight: 600, bg: PAL.panel }), [0, 0]);
-    pick.only(ctx, 'paint', () => F.label(ctx, 'rust', 1100, CB + 30, { side: 'right', gap: 70, size: 20 }), [0, 0]);
-    F.label(ctx, 'iron', 1240, FT + 20, { side: 'above', gap: 70, size: 20 });
-    text(ctx, 'cathodic site:  O_2 + 4H⁺ + 4e⁻ ⟶ 2H_2O', UP.x, 158, PAL.ink, { size: 20, align: 'center', bg: PAL.panel });
+    pick.only(ctx, 'mg', () => text(ctx, '潮湿的土壤', 700, 205, PAL.ink, { size: 20, weight: 600, align: 'center', bg: PAL.panel }), [0, 0]);
+    F.faded(ctx, aDrop, [0, 0], () => F.label(ctx, '水', 535, 250, { side: 'right', gap: 90, size: 20 }));
+    pick.only(ctx, 'paint', () => F.label(ctx, '油漆层', 760, CT + 4, { side: 'above', gap: 50, size: 20 }), [0, 0]);
+    pick.only(ctx, 'zinc', () => F.label(ctx, '锌涂层', 760, CT + 4, { side: 'above', gap: 50, size: 20 }), [0, 0]);
+    pick.only(ctx, 'mg', () => text(ctx, '镁阳极', MG.x + MG.w / 2 + 14, MG.y, PAL.ink, { size: 20, weight: 600, bg: PAL.panel }), [0, 0]);
+    pick.only(ctx, 'paint', () => F.label(ctx, '铁锈', 1100, CB + 30, { side: 'right', gap: 70, size: 20 }), [0, 0]);
+    F.label(ctx, '铁', 1240, FT + 20, { side: 'above', gap: 70, size: 20 });
+    text(ctx, '阴极部位：O_2 + 4H⁺ + 4e⁻ ⟶ 2H_2O', UP.x, 158, PAL.ink, { size: 20, align: 'center', bg: PAL.panel });
     const ax = pick.mix((q) => (q === 'mg' ? MG.x - 40 : DN.x));
-    text(ctx, `anodic site:  ${o.el} ⟶ ${o.ion} + 2e⁻`, ax, 604, PAL.ink, { size: 20, align: 'center', bg: PAL.panel });
+    text(ctx, `阳极部位：${o.el} ⟶ ${o.ion} + 2e⁻`, ax, 604, PAL.ink, { size: 20, align: 'center', bg: PAL.panel });
 
     /* the particles, once each */
-    const items = [['electron, e⁻', (x, y) => ball(ctx, x, y, 6, F.el('e-'))], ['O₂', (x, y) => o2(ctx, x, y)], ['H₂O', (x, y) => h2o(ctx, x, y)], [`${o.ion} ion`, (x, y) => ball(ctx, x, y, 9, F.el(o.el), 1, true)]];
+    const items = [['电子 e⁻', (x, y) => ball(ctx, x, y, 6, F.el('e-'))], ['O₂', (x, y) => o2(ctx, x, y)], ['H₂O', (x, y) => h2o(ctx, x, y)], [`${o.ion} 离子`, (x, y) => ball(ctx, x, y, 9, F.el(o.el), 1, true)]];
     const w = items.map(([str]) => F.measure(ctx, str, { size: 17 }) + 56);
     let lx = 700 - w.reduce((a, b) => a + b, 0) / 2;
     items.forEach(([str, mark], i) => { mark(lx + 14, 652); text(ctx, str, lx + 34, 652, PAL.ink, { size: 17 }); lx += w[i]; });

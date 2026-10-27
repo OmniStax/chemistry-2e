@@ -1,7 +1,7 @@
 {
   "id": "4",
   "dir": "ch04",
-  "title": "Stoichiometry of Chemical Reactions",
+  "title": "化学反应的化学计量",
   "intro": {
     "module": "m68730",
     "slug": "4-introduction"
@@ -10,31 +10,31 @@
     {
       "id": "4.1",
       "module": "m68709",
-      "title": "Writing and Balancing Chemical Equations",
+      "title": "化学方程式的书写与配平",
       "slug": "4-1-writing-and-balancing-chemical-equations"
     },
     {
       "id": "4.2",
       "module": "m68710",
-      "title": "Classifying Chemical Reactions",
+      "title": "化学反应的分类",
       "slug": "4-2-classifying-chemical-reactions"
     },
     {
       "id": "4.3",
       "module": "m68713",
-      "title": "Reaction Stoichiometry",
+      "title": "化学计量关系",
       "slug": "4-3-reaction-stoichiometry"
     },
     {
       "id": "4.4",
       "module": "m68714",
-      "title": "Reaction Yields",
+      "title": "反应的产率",
       "slug": "4-4-reaction-yields"
     },
     {
       "id": "4.5",
       "module": "m68716",
-      "title": "Quantitative Chemical Analysis",
+      "title": "化学定量分析",
       "slug": "4-5-quantitative-chemical-analysis"
     }
   ],
@@ -42,7 +42,7 @@
     {
       "sym": "M",
       "concept": "molarity",
-      "meaning": "the molarity of a solution, the moles of solute per liter of solution (equally, millimoles per milliliter)",
+      "meaning": "溶液的物质的量浓度，即每升溶液中溶质的物质的量（等价地，也是每毫升溶液中溶质的毫摩尔数）",
       "unit": "M (mol/L)",
       "section": "4.5",
       "anchor": "4.5-titration-calc"

@@ -2,15 +2,15 @@
  "id": "7.1",
  "module": "m68737",
  "chapter": "7",
- "title": "Ionic Bonding",
- "short": "Ionic Bonding",
- "lead": "Sodium, a soft metal, and chlorine, a poisonous gas, combine to form table salt, a compound of ions with properties entirely its own. Metal atoms give up electrons and nonmetal atoms take them up, and the cations and anions that result hold one another in a lattice whose formula balances their charges.",
+ "title": "离子键",
+ "short": "离子键",
+ "lead": "钠是一种柔软的金属，氯是一种有毒的气体，二者结合生成食盐——一种由离子组成、性质完全独特的化合物。金属原子失去电子，非金属原子得到电子，由此产生的阳离子和阴离子在晶格中相互结合，晶格的化学式使它们的电荷达到平衡。",
  "objectives": [
-  "Explain the formation of cations, anions, and ionic compounds",
-  "Predict the charge of common metallic and nonmetallic elements, and write their electron configurations"
+  "解释阳离子、阴离子和离子化合物的形成",
+  "预测常见金属元素和非金属元素的电荷，并写出它们的电子构型"
  ],
- "summary_html": "<p>Atoms gain or lose electrons to form ions with particularly stable electron configurations. The charges of cations formed by the representative metals may be determined readily because, with few exceptions, the electronic structures of these ions have either a noble gas configuration or a completely filled electron shell. The charges of anions formed by the nonmetals may also be readily determined because these ions form when nonmetal atoms gain enough electrons to fill their valence shells.</p>",
- "notes": "Nothing of the book’s section is left out.",
+ "summary_html": "<p>原子得到或失去电子，形成具有特别稳定的电子构型的离子。主族金属形成的阳离子的电荷很容易确定，因为除少数例外，这些离子的电子结构要么是稀有气体构型，要么是完全充满的电子层。非金属形成的阴离子的电荷也很容易确定，因为这些离子是非金属原子得到足够多的电子以充满其价层而形成的。</p>",
+ "notes": "本节没有任何内容被略去。",
  "ai": {
   "text": [
    {
@@ -20,18 +20,26 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-09-28",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The unkeyed items fs-idm89581104, fs-idm143212928 and fs-idm58592256, each of which asks for a definite prediction the book does not key, are left out, and the unkeyed conceptual items fs-idp12729440 and fs-idm677136 carry a suggested approach marked as OmniStax’s own. The exercise on a molecule of solid NaCl (fs-idp49074848) is printed in Section 7.2 and is set here, where the lattice it asks about is introduced.",
+ "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案取自书后答案以及“学习检测”的答案。没有答案的习题 fs-idm89581104、fs-idm143212928 和 fs-idm58592256 都要求给出书中没有标明的确定预测，因此被略去；没有答案的概念性习题 fs-idp12729440 和 fs-idm677136 附有一个标明为 OmniStax 自拟的建议思路。关于固体 NaCl 分子的习题（fs-idp49074848）在书中印在 7.2 节，这里把它放在介绍它所问的晶格的地方。",
  "figures": [
   {
    "id": "fig-nacl-photos",
@@ -65,6 +73,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: note that repeated the caption dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -75,7 +88,7 @@
    "originals": [
     "/media/ch07/CNX_Chem_07_01_NaClStruc-1938.jpg"
    ],
-   "original_caption": "The atoms in sodium chloride (common table salt) are arranged to (a) maximize opposite charges interacting. The smaller spheres represent sodium ions, the larger ones represent chloride ions. In the expanded view (b), the geometry can be seen more clearly. Note that each ion is “bonded” to all of the surrounding ions—six in this case.",
+   "original_caption": "氯化钠（常见的食盐）中的原子这样排列，是为了使带相反电荷的粒子之间的相互作用最大化（a）。较小的球代表钠离子，较大的球代表氯离子。在展开图（b）中，可以更清楚地看出其几何构型。注意，每个离子都与周围所有的离子“成键”——这里是六个。",
    "draws": [],
    "conventions": [
     "Na",
@@ -91,6 +104,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: camera pulled back so the packed crystal fits the stage"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   }
@@ -173,7 +191,7 @@
     "after": "ex-cations"
    },
    "cite": "cations",
-   "prompt": "Potassium and magnesium are required in our diet. Write the electron configurations of the ions expected from these elements.",
+   "prompt": "钾和镁是我们饮食中所必需的。写出由这两种元素预期形成的离子的电子构型。",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -190,7 +208,7 @@
     "after": "ex-anions"
    },
    "cite": "anions",
-   "prompt": "Write the electron configurations of a phosphorus atom and its negative ion. Give the charge on the anion.",
+   "prompt": "写出磷原子及其负离子的电子构型。给出该阴离子的电荷。",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -206,11 +224,11 @@
     "at": "end"
    },
    "cite": "ionic-compounds",
-   "prompt": "Does a cation gain protons to form a positive charge or does it lose electrons?",
+   "prompt": "阳离子是通过得到质子而带正电，还是通过失去电子而带正电？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "The protons in the nucleus do not change during normal chemical reactions. Only the outer electrons move. Positive charges form when electrons are lost."
+    "solution": "在通常的化学反应中，原子核中的质子不会改变。只有外层电子发生移动。失去电子时形成正电荷。"
    }
   },
   {
@@ -222,11 +240,11 @@
     "at": "end"
    },
    "cite": "formation",
-   "prompt": "Iron(III) sulfate [Fe<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>] is composed of Fe<sup>3+</sup> and ${\\text{SO}}_{4}{}^{\\text{2−}}$ ions. Explain why a sample of iron(III) sulfate is uncharged.",
+   "prompt": "硫酸铁(III) [Fe<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>] 由 Fe<sup>3+</sup> 和 ${\\text{SO}}_{4}{}^{\\text{2−}}$ 离子组成。解释为什么一份硫酸铁(III)样品是不带电的。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The positive and negative charges in iron(III) sulfate are equal, so they cancel. Each formula unit of Fe<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> contains two Fe<sup>3+</sup> ions and three ${\\text{SO}}_{4}{}^{\\text{2−}}$ ions. The two iron ions carry a total charge of 2 × (3+) = 6+, and the three sulfate ions carry 3 × (2−) = 6−, so the formula unit has a net charge of 6+ + 6− = 0. A sample is made of a very large number of these formula units, each one neutral, so the whole sample is uncharged. This is why the ions combine in the ratio 2:3: all substances must be electrically neutral, and 2:3 is the simplest ratio of Fe<sup>3+</sup> to ${\\text{SO}}_{4}{}^{\\text{2−}}$ in which the total positive and negative charges are equal."
+    "solution": "硫酸铁(III)中的正电荷与负电荷相等，所以相互抵消。每个 Fe<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> 化学式单元含有两个 Fe<sup>3+</sup> 离子和三个 ${\\text{SO}}_{4}{}^{\\text{2−}}$ 离子。两个铁离子所带的总电荷为 2 × (3+) = 6+，三个硫酸根离子所带的总电荷为 3 × (2−) = 6−，所以该化学式单元的净电荷为 6+ + 6− = 0。一份样品由极大量的这种化学式单元构成，每一个都是电中性的，所以整份样品不带电。这就是离子按 2:3 的比例结合的原因：所有物质都必须呈电中性，而 2:3 是 Fe<sup>3+</sup> 与 ${\\text{SO}}_{4}{}^{\\text{2−}}$ 之间使正、负电荷总数相等的最简比。"
    }
   },
   {
@@ -238,11 +256,11 @@
     "at": "end"
    },
    "cite": "formation",
-   "prompt": "Which of the following atoms would be expected to form negative ions in binary ionic compounds and which would be expected to form positive ions: P, I, Mg, Cl, In, Cs, O, Pb, Co?",
+   "prompt": "下列原子中，哪些预期在二元离子化合物中形成负离子，哪些预期形成正离子：P、I、Mg、Cl、In、Cs、O、Pb、Co？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "P, I, Cl, and O would form anions because they are nonmetals. Mg, In, Cs, Pb, and Co would form cations because they are metals."
+    "solution": "P、I、Cl 和 O 是非金属，会形成阴离子。Mg、In、Cs、Pb 和 Co 是金属，会形成阳离子。"
    }
   },
   {
@@ -254,11 +272,11 @@
     "at": "end"
    },
    "cite": "cations",
-   "prompt": "Predict the charge on the monatomic ions formed from the following atoms in binary ionic compounds:<br>(a) P<br>(b) Mg<br>(c) Al<br>(d) O<br>(e) Cl<br>(f) Cs",
+   "prompt": "预测下列原子在二元离子化合物中所形成的单原子离子的电荷：<br>（a）P<br>（b）Mg<br>（c）Al<br>（d）O<br>（e）Cl<br>（f）Cs",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) P<sup>3–</sup>; (b) Mg<sup>2+</sup>; (c) Al<sup>3+</sup>; (d) O<sup>2–</sup>; (e) Cl<sup>–</sup>; (f) Cs<sup>+</sup>"
+    "solution": "（a）P<sup>3–</sup>；（b）Mg<sup>2+</sup>；（c）Al<sup>3+</sup>；（d）O<sup>2–</sup>；（e）Cl<sup>–</sup>；（f）Cs<sup>+</sup>"
    }
   },
   {
@@ -270,11 +288,11 @@
     "at": "end"
    },
    "cite": "cations",
-   "prompt": "Write the electron configuration for each of the following ions:<br>(a) As<sup>3–</sup><br>(b) I<sup>–</sup><br>(c) Be<sup>2+</sup><br>(d) Cd<sup>2+</sup><br>(e) O<sup>2–</sup><br>(f) Ga<sup>3+</sup><br>(g) Li<sup>+</sup><br>(h) N<sup>3–</sup><br>(i) Sn<sup>2+</sup><br>(j) Co<sup>2+</sup><br>(k) Fe<sup>2+</sup><br>(l) As<sup>3+</sup>",
+   "prompt": "写出下列每种离子的电子构型：<br>（a）As<sup>3–</sup><br>（b）I<sup>–</sup><br>（c）Be<sup>2+</sup><br>（d）Cd<sup>2+</sup><br>（e）O<sup>2–</sup><br>（f）Ga<sup>3+</sup><br>（g）Li<sup>+</sup><br>（h）N<sup>3–</sup><br>（i）Sn<sup>2+</sup><br>（j）Co<sup>2+</sup><br>（k）Fe<sup>2+</sup><br>（l）As<sup>3+</sup>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) [Ar]4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>; (b) [Kr]4<em>d</em><sup>10</sup>5<em>s</em><sup>2</sup>5<em>p</em><sup>6</sup> (c) 1<em>s</em><sup>2</sup> (d) [Kr]4<em>d</em><sup>10</sup>; (e) [He]2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>; (f) [Ar]3<em>d</em><sup>10</sup>; (g) 1<em>s</em><sup>2</sup> (h) [He]2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup> (i) [Kr]4<em>d</em><sup>10</sup>5<em>s</em><sup>2</sup> (j) [Ar]3<em>d</em><sup>7</sup> (k) [Ar]3<em>d</em><sup>6</sup>, (l) [Ar]3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>"
+    "solution": "（a）[Ar]4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>；（b）[Kr]4<em>d</em><sup>10</sup>5<em>s</em><sup>2</sup>5<em>p</em><sup>6</sup>；（c）1<em>s</em><sup>2</sup>；（d）[Kr]4<em>d</em><sup>10</sup>；（e）[He]2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>；（f）[Ar]3<em>d</em><sup>10</sup>；（g）1<em>s</em><sup>2</sup>；（h）[He]2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>；（i）[Kr]4<em>d</em><sup>10</sup>5<em>s</em><sup>2</sup>；（j）[Ar]3<em>d</em><sup>7</sup>；（k）[Ar]3<em>d</em><sup>6</sup>，（l）[Ar]3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>"
    }
   },
   {
@@ -286,11 +304,11 @@
     "at": "end"
    },
    "cite": "cations",
-   "prompt": "Write out the full electron configuration for each of the following atoms and for the monatomic ion found in binary ionic compounds containing the element:<br>(a) Al<br>(b) Br<br>(c) Sr<br>(d) Li<br>(e) As<br>(f) S",
+   "prompt": "写出下列每种原子的完整电子构型，以及含有该元素的二元离子化合物中所含单原子离子的完整电子构型：<br>（a）Al<br>（b）Br<br>（c）Sr<br>（d）Li<br>（e）As<br>（f）S",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>1</sup>; Al<sup>3+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>; (b) 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>5</sup>; 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>6</sup>; (c) 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>; Sr<sup>2+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>6</sup>; (d) 1<em>s</em><sup>2</sup>2<em>s</em><sup>1</sup>; Li<sup>+</sup>: 1<em>s</em><sup>2</sup>; (e) 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>3</sup>; 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>6</sup>; (f) 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>4</sup>; 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>"
+    "solution": "（a）1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>1</sup>；Al<sup>3+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>；（b）1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>5</sup>；1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>6</sup>；（c）1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>；Sr<sup>2+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>6</sup>；（d）1<em>s</em><sup>2</sup>2<em>s</em><sup>1</sup>；Li<sup>+</sup>: 1<em>s</em><sup>2</sup>；（e）1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>3</sup>；1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>6</sup>；（f）1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>4</sup>；1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>"
    }
   },
   {
@@ -302,11 +320,11 @@
     "at": "end"
    },
    "cite": "formation",
-   "prompt": "From the labels of several commercial products, prepare a list of six ionic compounds in the products. For each compound, write the formula. (You may need to look up some formulas in a suitable reference.)",
+   "prompt": "从几种商品的标签上，列出其中所含的六种离子化合物。对每种化合物，写出其化学式。（你可能需要在合适的参考资料中查找一些化学式。）",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Six ionic compounds found on common product labels are sodium chloride, NaCl (table salt); sodium fluoride, NaF (toothpaste); potassium iodide, KI (iodized salt); calcium carbonate, CaCO<sub>3</sub> (antacid tablets); sodium hydrogen carbonate, NaHCO<sub>3</sub> (baking soda); and magnesium hydroxide, Mg(OH)<sub>2</sub> (milk of magnesia). Each pairs a metal cation with a nonmetal anion or a polyatomic anion, and each formula is the simplest ratio of ions whose charges cancel. Na<sup>+</sup> with Cl<sup>−</sup>, Na<sup>+</sup> with F<sup>−</sup> and K<sup>+</sup> with I<sup>−</sup> balance one to one. Ca<sup>2+</sup> with ${\\text{CO}}_{3}{}^{\\text{2−}}$ also balances one to one, and Na<sup>+</sup> with ${\\text{HCO}}_{3}{}^{\\text{−}}$ likewise. Mg<sup>2+</sup> needs two OH<sup>−</sup> ions, 2+ + 2(1−) = 0, so the hydroxide is written in parentheses with the subscript 2."
+    "solution": "商品标签上常见的六种离子化合物是氯化钠 NaCl（食盐）、氟化钠 NaF（牙膏）、碘化钾 KI（加碘盐）、碳酸钙 CaCO<sub>3</sub>（抗酸药片）、碳酸氢钠 NaHCO<sub>3</sub>（小苏打）和氢氧化镁 Mg(OH)<sub>2</sub>（镁乳）。每一种都是由金属阳离子与非金属阴离子或多原子阴离子结合而成，每个化学式都是使电荷相互抵消的离子的最简比。Na<sup>+</sup> 与 Cl<sup>−</sup>、Na<sup>+</sup> 与 F<sup>−</sup>、K<sup>+</sup> 与 I<sup>−</sup> 都是一比一平衡。Ca<sup>2+</sup> 与 ${\\text{CO}}_{3}{}^{\\text{2−}}$ 也是一比一平衡，Na<sup>+</sup> 与 ${\\text{HCO}}_{3}{}^{\\text{−}}$ 同样如此。Mg<sup>2+</sup> 需要两个 OH<sup>−</sup> 离子，2+ + 2(1−) = 0，所以氢氧化物写在括号里，下标为 2。"
    }
   },
   {
@@ -319,11 +337,11 @@
     "at": "end"
    },
    "cite": "formation",
-   "prompt": "Why is it incorrect to speak of a molecule of solid NaCl?",
+   "prompt": "为什么说“一个固体 NaCl 分子”是不正确的？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "NaCl consists of discrete ions arranged in a crystal lattice, not covalently bonded molecules."
+    "solution": "NaCl 由排列成晶格的分立离子组成，而不是由共价键结合的分子。"
    }
   }
  ],

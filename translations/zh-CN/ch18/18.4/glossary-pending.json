@@ -1,0 +1,130 @@
+{
+ "terms": [
+  {
+   "source": "acid strength",
+   "target": "酸强度",
+   "authority": "textbook",
+   "note": "Textbook usage; 强度 as in the shard's Structure and strength of nonmetal oxyacids (非金属含氧酸的结构与强度).",
+   "section": "18.4"
+  },
+  {
+   "source": "hydrogen selenide",
+   "target": "硒化氢",
+   "authority": "cnterm-chemistry",
+   "note": "Follows the glossary rows 硒 and 硒化物 and the pattern of 硫化氢.",
+   "section": "18.4"
+  },
+  {
+   "source": "nitride ion",
+   "target": "氮化物离子",
+   "authority": "textbook",
+   "note": "Follows the glossary row 氮化物; chloride ion is 氯离子 (ch02) and selenide ion 硒化物离子 on the same pattern.",
+   "section": "18.4"
+  },
+  {
+   "source": "selenide ion",
+   "target": "硒化物离子",
+   "authority": "textbook",
+   "note": "Follows the glossary row 硒化物.",
+   "section": "18.4"
+  },
+  {
+   "source": "brimstone",
+   "target": "硫磺",
+   "authority": "textbook",
+   "note": "The old name of sulfur in the Bible; 硫磺 as the Chinese Bible and textbooks write it.",
+   "section": "18.4"
+  },
+  {
+   "source": "Io",
+   "target": "木卫一",
+   "authority": "textbook",
+   "note": "Jupiter's moon Io, standard astronomical name.",
+   "section": "18.4"
+  },
+  {
+   "source": "Andre Geim",
+   "target": "安德烈·海姆（Andre Geim）",
+   "authority": "textbook",
+   "note": "Standard transliteration with the original in parentheses, as ch07 does for Smalley.",
+   "section": "18.4"
+  },
+  {
+   "source": "Kostya Novoselov",
+   "target": "康斯坦丁·诺沃肖洛夫（Kostya Novoselov）",
+   "authority": "textbook",
+   "note": "Standard transliteration with the original in parentheses.",
+   "section": "18.4"
+  },
+  {
+   "source": "Buckminster Fuller",
+   "target": "巴克敏斯特·富勒（Buckminster Fuller）",
+   "authority": "textbook",
+   "note": "Transliteration agreeing with 巴克敏斯特富勒烯 (glossary); original in parentheses.",
+   "section": "18.4"
+  },
+  {
+   "source": "University of Manchester",
+   "target": "曼彻斯特大学",
+   "authority": "textbook",
+   "note": "Standard name.",
+   "section": "18.4"
+  },
+  {
+   "source": "Nobel Prize in Physics",
+   "target": "诺贝尔物理学奖",
+   "authority": "textbook",
+   "note": "Standard name; ch02 has 诺贝尔奖.",
+   "section": "18.4"
+  },
+  {
+   "source": "polymer",
+   "target": "聚合物",
+   "authority": "cnterm-chemistry",
+   "note": "高分子名词/化学名词: 聚合物.",
+   "section": "18.4"
+  },
+  {
+   "source": "adhesive tape",
+   "target": "胶带",
+   "authority": "textbook",
+   "note": "Textbook usage.",
+   "section": "18.4"
+  },
+  {
+   "source": "electron mobility",
+   "target": "电子迁移率",
+   "authority": "cnterm-physics",
+   "note": "物理学名词: 迁移率.",
+   "section": "18.4"
+  },
+  {
+   "source": "lubricant",
+   "target": "润滑剂",
+   "authority": "textbook",
+   "note": "Textbook usage.",
+   "section": "18.4"
+  },
+  {
+   "source": "unhybridized",
+   "target": "未杂化的",
+   "authority": "textbook",
+   "note": "Follows 杂化 in the glossary.",
+   "section": "18.4"
+  },
+  {
+   "source": "puckered ring",
+   "target": "皱折环",
+   "authority": "textbook",
+   "note": "Textbook usage for the folded eight-membered S8 ring; the book likens it to a crown (皇冠).",
+   "section": "18.4"
+  },
+  {
+   "source": "London forces",
+   "target": "伦敦色散力",
+   "authority": "cnterm-chemistry",
+   "note": "Same as London dispersion forces in the shard; the concept dispersion-forces is named 伦敦色散力.",
+   "section": "18.4"
+  }
+ ]
+}

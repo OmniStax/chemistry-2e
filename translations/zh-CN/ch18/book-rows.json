@@ -1,0 +1,1297 @@
+{
+ "types": [],
+ "symbols": [],
+ "concepts": [
+  {
+   "id": "representative-metal",
+   "kind": "definition",
+   "section": "18.1",
+   "name": "主族金属",
+   "terms": [
+    "主族金属"
+   ],
+   "statement": "主族金属是主族元素（s 轨道和 p 轨道正在被填充的元素）中的金属，位于 1、2、12、13、14 和 15 族。金属性来自元素失去外层价电子的能力，这些金属通过失去外层 s 或 p 轨道上的电子形成离子化合物。"
+  },
+  {
+   "id": "alkali-metal-properties",
+   "kind": "idea",
+   "section": "18.1",
+   "name": "碱金属的性质",
+   "statement": "碱金属在各自所在周期中原子半径最大、第一电离能最低，因此容易失去仅有的一个价电子形成 1+ 阳离子，其反应性随原子序数增大而增强。它们与水剧烈反应，生成氢气和金属氢氧化物的碱性溶液；自然界中从不以游离态存在，须保存在油中，并通过电解其化合物来制备。"
+  },
+  {
+   "id": "alkaline-earth-metal-properties",
+   "kind": "idea",
+   "section": "18.1",
+   "name": "碱土金属的性质",
+   "statement": "由于核电荷从 1 族到 2 族增加，碱土金属比同周期的碱金属更小、第一电离能更高，因此反应性较低，但仍然很活泼。它们失去两个价电子，形成氧化态为 2+ 的化合物，反应性沿族向下增强；由于二价离子化合物的晶格能很高，它们的许多常见盐难溶于水。"
+  },
+  {
+   "id": "group-12-metals",
+   "kind": "idea",
+   "section": "18.1",
+   "name": "12 族金属",
+   "statement": "锌、镉和汞的最后一个电子填入 s 轨道，所以它们是主族金属，性质更像碱土金属而不像过渡金属；失去两个 ns 电子后得到具有类稀有气体构型的 2+ 阳离子，汞还能形成 Hg₂²⁺ 离子。反应性沿族向下减弱：锌和镉的还原电势低于氢，与酸反应放出氢气，而汞不能从酸中置换出氢。"
+  },
+  {
+   "id": "amalgam",
+   "kind": "definition",
+   "section": "18.1",
+   "name": "汞齐",
+   "statement": "汞齐是汞与一种或多种其他金属形成的合金。大多数金属都能形成汞齐，主要的例外是铁、铂、钨和钽；碱金属的汞齐是强还原剂，比纯金属更易操作。"
+  },
+  {
+   "id": "group-13-metals",
+   "kind": "idea",
+   "section": "18.1",
+   "name": "13 族金属",
+   "statement": "铝、镓、铟和铊的价层电子构型为 ns²np¹，形成氧化态为 3+ 的化合物；镓、铟和铊还表现出惰性电子对效应所致的 1+ 态，其中铊的 1+ 态更稳定。铝和镓的氧化物和氢氧化物是两性的，铟和铊的则只呈碱性。一层薄而硬的氧化膜使这些活泼金属钝化，而汞齐之类的物质破坏这层膜后，金属就会与空气和水反应。"
+  },
+  {
+   "id": "allotropes",
+   "kind": "definition",
+   "section": "18.1",
+   "name": "同素异形体",
+   "terms": [
+    "同素异形体"
+   ],
+   "statement": "同素异形体是同一元素处于相同物态、化学性质和物理性质各不相同的两种或多种形态，其差别在于原子的排列方式。白锡在 13.2 °C 以上稳定，像其他金属一样有延展性；灰锡在低温下稳定，质脆，会碎裂成粉末，因此锡制品在漫长的寒冷天气中会崩解（锡疫）。"
+  },
+  {
+   "id": "tin-and-lead",
+   "kind": "idea",
+   "section": "18.1",
+   "name": "锡和铅",
+   "statement": "由于惰性电子对效应，锡和铅形成稳定的二价阳离子 Sn²⁺ 和 Pb²⁺，比族氧化态 4+ 低两价；它们也形成形式氧化态为 4+ 的共价化合物，例如低沸点液体 SnCl₄ 和 PbCl₄。锡比氢更容易被氧化，而铅只比氢略微容易被氧化。"
+  },
+  {
+   "id": "bismuth",
+   "kind": "definition",
+   "section": "18.1",
+   "name": "铋",
+   "terms": [
+    "铋"
+   ],
+   "statement": "铋是 15 族中最重的成员，是比其他主族金属反应性更低的金属。它很容易给出五个价电子中的三个，形成 Bi³⁺，只有遇到强氧化剂才形成族氧化态为 5+ 的化合物，这是惰性电子对效应的又一例证。"
+  },
+  {
+   "id": "metal-isolation-by-electrolysis",
+   "kind": "idea",
+   "section": "18.2",
+   "name": "电解法提取活泼金属",
+   "statement": "1 族和 2 族金属以及铝的离子很难被还原，所以这些金属用电解法制备，即利用电能把不利的还原反应推进到完全。例如，镁以 Mg(OH)₂ 的形式从海水中沉淀出来，用盐酸转化为 MgCl₂，再电解熔融的氯化物得到。"
+  },
+  {
+   "id": "downs-cell",
+   "kind": "definition",
+   "section": "18.2",
+   "name": "唐斯电解槽",
+   "terms": [
+    "唐斯电解槽"
+   ],
+   "statement": "唐斯电解槽是以熔融氯化钠为原料，工业上制备金属钠和氯气的电解槽，其中加入氯化钙，把熔点降到 600 °C。钠离子在阴极被还原为液态钠，氯离子在阳极被氧化为氯气，两种产物被隔开以防止重新化合。"
+  },
+  {
+   "id": "hall-heroult-cell",
+   "kind": "definition",
+   "section": "18.2",
+   "name": "霍尔–埃鲁电解槽",
+   "terms": [
+    "霍尔–埃鲁电解槽"
+   ],
+   "statement": "霍尔–埃鲁电解槽是生产铝的电解槽。铝土矿先溶于热的氢氧化钠成为铝酸盐，再用酸使氢氧化铝重新沉淀而提纯；加热得到 Al₂O₃，将其溶于熔融的冰晶石和氟化钙中电解，阴极得到铝，阳极得到氧气、一氧化碳和二氧化碳。"
+  },
+  {
+   "id": "chemical-reduction",
+   "kind": "definition",
+   "section": "18.2",
+   "name": "化学还原",
+   "terms": [
+    "化学还原"
+   ],
+   "statement": "化学还原是用另一种元素作还原剂来制备主族金属；它比电解便宜得多，凡能用之处都是首选方法。钾、铷和铯是用钠还原其熔融氯化物得到的，因为生成的金属比钠更易挥发，以蒸气形式移出后使平衡向生成更多金属的方向移动。"
+  },
+  {
+   "id": "pidgeon-process",
+   "kind": "definition",
+   "section": "18.2",
+   "name": "皮江法",
+   "terms": [
+    "皮江法"
+   ],
+   "statement": "皮江法在高温下用单质硅与氧化镁反应来生产镁。该反应在热力学上是不利的，但镁蒸气被移出后，依据勒夏特列原理反应得以向前进行。"
+  },
+  {
+   "id": "carbon-reduction-of-zinc-and-tin",
+   "kind": "idea",
+   "section": "18.2",
+   "name": "锌和锡的碳还原",
+   "statement": "硫化锌或碳酸锌矿石在空气中焙烧成氧化锌，再被煤还原成锌蒸气；锌经蒸馏提纯，砷和镉在较低温度下被除去，铅和铁则留在残渣中。矿石经焙烧和酸处理后得到的氧化锡(IV)，在 1000 °C 以上被碳还原成熔融的锡。"
+  },
+  {
+   "id": "metalloid-properties",
+   "kind": "idea",
+   "section": "18.3",
+   "name": "半金属的性质",
+   "statement": "半金属硼、硅、锗、砷、锑和碲看起来像金属，但导电性不如金属，因为它们的电子与原子核结合得更紧：它们是半导体。它们的化学行为介于金属与非金属之间，部分原因是电负性居中；像非金属一样，它们形成共价晶体，像金属一样，它们一般不形成单原子阴离子。"
+  },
+  {
+   "id": "metalloid-structures",
+   "kind": "idea",
+   "section": "18.3",
+   "name": "半金属的结构",
+   "statement": "共价键是半金属晶体结构的关键。硅和锗以金刚石结构结晶，每个原子与位于正四面体顶点的四个近邻成键；砷和锑形成褶皱片层，每个原子有三个键；碲形成无限的螺旋链，每个原子有两个键；硼晶体由 B₁₂ 二十面体组成。"
+  },
+  {
+   "id": "boron-and-silicon-lewis-acids",
+   "kind": "idea",
+   "section": "18.3",
+   "name": "作为路易斯酸的硼和硅化合物",
+   "statement": "硼的 2s²2p¹ 构型使它的价电子比价轨道少一个，硅则有空的 3d 轨道，所以平面三角形的硼化合物和四面体形的硅化合物可以作路易斯酸：BF₃ 接受一个氟离子形成 BF₄⁻，SiF₄ 接受两个氟离子形成八面体形的 [SiF₆]²⁻，硼酸对氢氧根离子是路易斯酸，而不是质子给体。由于没有 d 轨道，硼的配位数最多为四。"
+  },
+  {
+   "id": "boron-preparation",
+   "kind": "idea",
+   "section": "18.3",
+   "name": "硼的存在与制备",
+   "statement": "硼在自然界中只以与氧的化合物存在，即硼酸和硼酸盐（如硼砂）。用镁还原氧化硼，得到不纯的棕色无定形粉末；较纯的硼则是先转化为三氯化硼，再用氢气加热三氯化硼得到。单质硼在室温下是惰性的，只与氟和氧反应。"
+  },
+  {
+   "id": "silicon-preparation",
+   "kind": "idea",
+   "section": "18.3",
+   "name": "硅的制备与提纯",
+   "statement": "硅约占地壳质量的四分之一，通过用碳或镁在高温下还原二氧化硅制得。半导体级硅的制法是先把它转化为四卤化物或硅烷，再使之分解，然后进行区域精炼：一条薄的熔融区沿棒移动，把溶于液体中的杂质带到一端，再将这一端切掉。"
+  },
+  {
+   "id": "borate",
+   "kind": "definition",
+   "section": "18.3",
+   "name": "硼酸盐",
+   "terms": [
+    "硼酸盐"
+   ],
+   "statement": "硼酸盐是硼的含氧酸的盐，是含硼–氧键的化合物，通常带有簇或链，从简单的平面三角形 BO₃³⁻ 离子，到由三配位和四配位的硼形成的链和环。商业上最重要的是硼砂 Na₂[B₄O₅(OH)₄]⋅8H₂O。"
+  },
+  {
+   "id": "silicon-dioxide-structure",
+   "kind": "idea",
+   "section": "18.3",
+   "name": "二氧化硅与二氧化碳",
+   "statement": "固态二氧化碳由分立的 CO₂ 分子组成，分子中有两个 C=O 双键，靠微弱的分子间作用力结合；而二氧化硅是共价网状固体，每个硅原子与四个氧原子以单键相连，SiO₄ 四面体共用氧原子。差别在于 π 键：碳等第二周期元素形成强的 π 键，而硅形成 π 键较困难，也较弱，所以二氧化硅中只有 σ 键。"
+  },
+  {
+   "id": "polymorph",
+   "kind": "definition",
+   "section": "18.3",
+   "name": "多晶型物",
+   "terms": [
+    "多晶型物"
+   ],
+   "statement": "多晶型物是某一化合物晶体结构的不同形式，使它具有不同的物理性质。二氧化硅在自然界中有多种晶形，即多晶型物，常见的是石英；熔融的石英过冷后成为无定形的玻璃态二氧化硅。"
+  },
+  {
+   "id": "silicate",
+   "kind": "definition",
+   "section": "18.3",
+   "name": "硅酸盐",
+   "terms": [
+    "硅酸盐"
+   ],
+   "statement": "硅酸盐是含有硅和氧的阴离子的盐，其中 sp³ 杂化的硅原子位于 SiO₄ 四面体的中心，四面体连接成环、片层或三维网络。由于四面体可以独立存在，也可以在顶角处共用氧原子，硅氧比是变化的；再加上阳离子种类繁多，就产生了许多硅酸盐矿物和陶瓷。"
+  },
+  {
+   "id": "nonmetal-bonding-and-ions",
+   "kind": "idea",
+   "section": "18.4",
+   "name": "非金属的成键",
+   "statement": "非金属的电负性比金属高，所以金属与非金属的化合物一般是离子固体，而两种或多种非金属的化合物以共价键共用电子，是分子型的气体、液体或易挥发的固体。由于电离能太高，非金属在通常的化学过程中不形成单原子阳离子：所有单原子的非金属离子都是阴离子。"
+  },
+  {
+   "id": "first-member-anomaly",
+   "kind": "idea",
+   "section": "18.4",
+   "name": "每个非金属族的第一个成员",
+   "statement": "每个非金属族的第一个成员的行为与其余成员不同：它更小，电离能更大，只有四个价轨道（一个 2s 和三个 2p），而较重的成员有空的 d 轨道，使中心原子周围可以有五个、六个或更多的键，所以氮只形成 NF₃，而磷形成 PF₃ 和 PF₅。它体积小，也使它更容易形成 π 键。"
+  },
+  {
+   "id": "nonmetal-redox-patterns",
+   "kind": "idea",
+   "section": "18.4",
+   "name": "非金属的氧化还原化学",
+   "statement": "非金属能氧化大多数金属；除氮和碳外，电负性较大的非金属能氧化电负性较小的非金属或其阴离子；氟和氧是最强的氧化性元素，能氧化其所在族中排在它们下面的所有元素，在同一周期中，最强的氧化剂在 17 族；非金属作氧化剂越强，其阴离子越难被氧化；氟从不显正氧化态，氧只有与氟结合时才显正氧化态。"
+  },
+  {
+   "id": "acid-anhydride",
+   "kind": "definition",
+   "section": "18.4",
+   "name": "酸酐",
+   "terms": [
+    "酸酐"
+   ],
+   "statement": "酸酐是与水反应生成酸或酸性溶液的化合物。SO₂ 和 N₂O₅ 等非金属氧化物（其中的非金属显一种常见氧化态）与水反应生成含氧酸，氧化态不变。"
+  },
+  {
+   "id": "disproportionation-reaction",
+   "kind": "definition",
+   "section": "18.4",
+   "name": "歧化反应",
+   "terms": [
+    "歧化反应"
+   ],
+   "statement": "歧化反应是单一反应物同时被氧化和还原的反应，所以它既是还原剂又是氧化剂：NO₂ 中的氮不显常见氧化态，它与水反应生成 HNO₃（+5）和 NO（+2）。"
+  },
+  {
+   "id": "nonmetal-structures",
+   "kind": "idea",
+   "section": "18.4",
+   "name": "非金属的结构",
+   "statement": "非金属的结构含有定域的共价键，许多非金属由单个分子组成：稀有气体是单原子的，氢、氮、氧和卤素是双原子的，随着伦敦力因分子质量增大而增强，卤素沿族向下由气体变为液体再变为固体。这些元素通常达到八隅体：15 族形成三个键，16 族形成两个键，卤素形成一个键。"
+  },
+  {
+   "id": "carbon-allotropes",
+   "kind": "idea",
+   "section": "18.4",
+   "name": "碳的同素异形体",
+   "statement": "金刚石中每个碳原子与位于四面体顶点的原子形成四个单键（sp³），构成坚硬、高熔点的三维网络。石墨是由 sp² 杂化的碳原子通过 σ 键和离域 π 键结合而成的层，所以能导电，而层间微弱的伦敦力使它柔软而滑。C₆₀ 等富勒烯是封闭的笼，石墨烯是单层石墨，纳米管是卷成管状的这样一层。"
+  },
+  {
+   "id": "phosphorus-allotropes",
+   "kind": "idea",
+   "section": "18.4",
+   "name": "磷的同素异形体",
+   "statement": "白磷由 P₄ 分子组成，四个原子位于正四面体的顶点，每个原子与其他三个原子以单键相连；它像蜡一样，有毒，在空气中会自燃，须保存在水下。在隔绝空气的条件下加热到 270–300 °C，得到红磷，它是由 P–P 键连接 P₄ 四面体而成的聚合网络，密度更大，熔点更高，反应性低得多，基本无毒。"
+  },
+  {
+   "id": "sulfur-allotropes",
+   "kind": "idea",
+   "section": "18.4",
+   "name": "硫的同素异形体",
+   "statement": "斜方硫和单斜硫都含有 S₈ 分子，即像王冠一样的褶皱八元环；斜方硫是室温下的稳定形态。熔融的硫起初流动性好，但随着温度升高，环断开成链，链相互结合、缠绕，所以液体颜色变深，在约 230 °C 时变得非常黏稠，倒不出来；快速冷却得到塑性硫，约 1000 °C 的蒸气是 S₂。"
+  },
+  {
+   "id": "hydrogen-isotopes",
+   "kind": "idea",
+   "section": "18.5",
+   "name": "氢的同位素",
+   "statement": "氢有三种同位素，各有自己的名称和符号：氕（¹H）、氘（²H 或 D）和氚（³H 或 T）。由于电子结构相同，它们的化学性质非常相似，但原子质量不同，使物理性质不同，例如氘和氚的蒸气压较低。"
+  },
+  {
+   "id": "hydrogen-preparation",
+   "kind": "idea",
+   "section": "18.5",
+   "name": "氢的制备",
+   "statement": "单质氢是通过打断化学键从化合物中制得的：水蒸气通过焦炭得到水煤气，即 CO 和 H₂，水蒸气与烃在镍催化剂上反应得到同样的混合物；电解水时阴极得到氢气，体积是阳极所得氧气的两倍；还原电势较低的金属能还原稀酸中的氢离子；离子型金属氢化物与水反应也能得到氢。"
+  },
+  {
+   "id": "hydrogen-place-in-periodic-table",
+   "kind": "idea",
+   "section": "18.5",
+   "name": "氢在元素周期表中的位置",
+   "statement": "未化合的氢原子在 1s 轨道上有一个价电子。氢可以看作 1 族元素，因为它能失去这个电子形成 H⁺；也可以看作 17 族元素，因为它只需要一个电子就能填满价轨道，形成氢负离子 H⁻ 或一个共价单键；它是一种独特的元素，几乎应该在表中单独占一个位置。"
+  },
+  {
+   "id": "hydrogen-reactions",
+   "kind": "idea",
+   "section": "18.5",
+   "name": "氢的反应",
+   "statement": "氢在常温常压下相对不活泼，但加热时能发生反应。它与 1 族金属以及 Ca、Sr 和 Ba 形成含 H⁻ 的离子型氢化物，H⁻ 是强还原剂和强碱；它与非金属形成氢为 1+ 态的酸性氢化合物，非金属的电负性越大，反应放热越多。它能把许多金属的受热氧化物还原成金属和水。"
+  },
+  {
+   "id": "haber-process",
+   "kind": "definition",
+   "section": "18.5",
+   "name": "哈伯法",
+   "terms": [
+    "哈伯法"
+   ],
+   "statement": "哈伯法是工业上由氮和氢直接化合生产氨的主要方法，N₂ + 3H₂ ⇌ 2NH₃，在较高温度和压强下使用铁催化剂。"
+  },
+  {
+   "id": "ammonia-chemistry",
+   "kind": "idea",
+   "section": "18.5",
+   "name": "氨的化学性质",
+   "statement": "氨可以作布朗斯特碱，也可以作很弱的酸，在高温下与金属反应生成氨基化物、亚氨基化物或氮化物。它的氮处于可能的最低氧化态 3−，所以只能被氧化而不能被还原，取代其氢原子可得到氯胺 NH₂Cl 和肼 N₂H₄ 等衍生物。"
+  },
+  {
+   "id": "hydrogenation",
+   "kind": "definition",
+   "section": "18.5",
+   "name": "氢化",
+   "terms": [
+    "氢化"
+   ],
+   "statement": "氢化是加入氢（H₂）使化合物还原的过程，该过程要用到大量的氢。"
+  },
+  {
+   "id": "hydrogen-halide",
+   "kind": "definition",
+   "section": "18.5",
+   "name": "卤化氢",
+   "terms": [
+    "卤化氢"
+   ],
+   "statement": "卤化氢是氢与卤素形成的二元化合物 HF、HCl、HBr 和 HI，室温下都是气体。它们由单质直接化合，或由不挥发性酸作用于金属卤化物制得，都溶于水生成氢卤酸，除氟化氢外均为强酸；较重的卤离子是还原剂，可被较轻的卤素氧化。"
+  },
+  {
+   "id": "carbonate",
+   "kind": "definition",
+   "section": "18.6",
+   "name": "碳酸盐",
+   "terms": [
+    "碳酸盐"
+   ],
+   "statement": "碳酸盐是含碳酸根阴离子 CO₃²⁻ 的化合物，常由二氧化碳与氧化物或氢氧化物反应生成；把可溶的碱金属碳酸盐与这些金属的盐混合，难溶的碳酸盐就会沉淀出来。碳酸盐是中等强度的碱，与酸反应生成盐、二氧化碳和水。"
+  },
+  {
+   "id": "hydrogen-carbonate",
+   "kind": "definition",
+   "section": "18.6",
+   "name": "碳酸氢盐",
+   "terms": [
+    "碳酸氢盐",
+    "碳酸氢根"
+   ],
+   "statement": "碳酸氢盐，即酸式碳酸盐，是碳酸氢根阴离子 HCO₃⁻ 的盐，由二氧化碳使氢氧化物溶液饱和而生成。它们是两性的，与氢氧化物反应生成碳酸盐，与酸反应生成盐、二氧化碳和水，发酵粉中的小苏打在烘焙中就是这样起作用的。"
+  },
+  {
+   "id": "limestone-dissolution",
+   "kind": "idea",
+   "section": "18.6",
+   "name": "石灰石、溶洞与钟乳石",
+   "statement": "碱土金属的碳酸盐不溶于纯水，但溶于含二氧化碳的水，因为生成了碳酸氢盐，所以石灰石中会形成溶洞和落水洞。这些碳酸氢盐只在溶液中稳定：蒸发后又留下碳酸盐，从而形成钟乳石和石笋。"
+  },
+  {
+   "id": "nitrogen-inertness",
+   "kind": "idea",
+   "section": "18.7",
+   "name": "氮的惰性",
+   "statement": "氮占大气体积的 78%，通过分馏液态空气得到，由于原子间的三键非常强，它极不活泼；在室温下它仅有的常见反应是与锂、某些过渡金属配合物，以及在固氮细菌中与氢或氧的反应。它的化合物涵盖从 3− 到 5+ 的每一种氧化态。"
+  },
+  {
+   "id": "nitrogen-fixation",
+   "kind": "definition",
+   "section": "18.7",
+   "name": "固氮",
+   "terms": [
+    "固氮"
+   ],
+   "statement": "固氮是由分子氮形成氮化合物的过程，生物借此把大气中的氮转化为对生物有用的化学物质；它由使用固氮酶的微生物完成，闪电使空气中的氮与氧反应时也会发生。"
+  },
+  {
+   "id": "nitrogen-oxides",
+   "kind": "idea",
+   "section": "18.7",
+   "name": "氮的氧化物",
+   "statement": "氮在 1+ 到 5+ 的每一个正氧化态都形成氧化物：小心加热硝酸铵得到一氧化二氮 N₂O；一氧化氮 NO 是无色分子，有一个未成对电子，会二聚成 N₂O₂；蓝色液体 N₂O₃；棕色的顺磁性 NO₂；以及白色固体 N₂O₅。它们表现出广泛的氧化还原行为：N₂O 助燃，NO 既是氧化剂又是还原剂，NO₂ 是良好的氧化剂。"
+  },
+  {
+   "id": "no2-n2o4-equilibrium",
+   "kind": "idea",
+   "section": "18.7",
+   "name": "二氧化氮与四氧化二氮",
+   "statement": "NO₂ 的未成对电子使它二聚成无色的 N₂O₄。在低压或高温下，NO₂ 的深棕色占优势；在低温下，随着 N₂O₄ 的生成，颜色几乎消失；在室温下两者处于平衡，2NO₂(g) ⇌ N₂O₄(g)，K_P = 6.86。"
+  },
+  {
+   "id": "nitrogen-oxides-with-water",
+   "kind": "idea",
+   "section": "18.7",
+   "name": "氮的氧化物与水",
+   "statement": "N₂O₃ 是亚硝酸的酸酐，N₂O₅ 是硝酸的酸酐。氮在 4+ 态没有稳定的含氧酸，所以 NO₂ 在水中歧化，在冷水中生成 HNO₂ 和 HNO₃，在较高温度下生成 HNO₃ 和 NO。"
+  },
+  {
+   "id": "phosphorus-preparation",
+   "kind": "idea",
+   "section": "18.8",
+   "name": "磷的制备与用途",
+   "statement": "工业上制磷，是把磷矿石中的磷酸钙与砂和焦炭一起加热；P₄ 蒸馏出来，冷凝或燃烧成 P₄O₁₀，后者是许多其他磷化合物的起点。磷在化合物中通常显 3−、3+ 和 5+ 氧化态，在含 P–P 键的化合物中则有不寻常的值，例如安全火柴头中的 P₄S₃。"
+  },
+  {
+   "id": "phosphorus-oxides",
+   "kind": "idea",
+   "section": "18.8",
+   "name": "磷的氧化物",
+   "statement": "氧化磷(III) P₄O₆ 是有毒的白色固体，氧化为 P₄O₁₀，缓慢溶于冷水生成亚磷酸 H₃PO₃。氧化磷(V) P₄O₁₀ 由磷在过量氧中燃烧制得，生成焓极大，是很差的氧化剂；它对水的亲和力很强，生成正磷酸，因而是极好的干燥剂。"
+  },
+  {
+   "id": "phosphorus-halides",
+   "kind": "idea",
+   "section": "18.8",
+   "name": "磷的卤化物",
+   "statement": "磷与卤素直接反应，生成比氮的三卤化物稳定得多的三卤化物 PX₃，以及氮不能形成的五卤化物 PX₅。两种氯化物都水解生成氯化氢和一种含氧酸，五卤化物是路易斯酸，加合一个卤离子形成 PX₆⁻；固态五氯化磷是离子化合物 [PCl₄⁺][PCl₆⁻]。"
+  },
+  {
+   "id": "oxygen-occurrence-and-reactivity",
+   "kind": "idea",
+   "section": "18.9",
+   "name": "氧的存在、制备与反应性",
+   "statement": "氧是地壳中含量最多的元素，约占空气质量的 20%。大多数工业用氧是从液态空气中分离出来的：氮（77 K）沸腾逸出后，剩下氧（沸点 90 K）。它是强氧化剂，与除稀有气体、卤素和少数低反应性金属之外的所有其他元素反应，也与含有未达最高氧化态的元素的化合物反应。"
+  },
+  {
+   "id": "photosynthesis",
+   "kind": "definition",
+   "section": "18.9",
+   "name": "光合作用",
+   "terms": [
+    "光合作用"
+   ],
+   "statement": "光合作用是光能促使水和二氧化碳反应，生成葡萄糖等碳水化合物和氧气的过程，使绿色植物得以储存能量并补充大气中的氧。"
+  },
+  {
+   "id": "ozone",
+   "kind": "definition",
+   "section": "18.9",
+   "name": "臭氧",
+   "terms": [
+    "臭氧"
+   ],
+   "statement": "臭氧 O₃ 是氧的同素异形体，有特殊的气味，由氧在放电、加热或紫外线作用下吸热生成。平流层臭氧分解为 O 和 O₂，吸收有害的紫外线；来自氯氟烃的氯原子会消耗臭氧，而对流层中的臭氧是烟雾中的有毒成分。"
+  },
+  {
+   "id": "oxide",
+   "kind": "definition",
+   "section": "18.9",
+   "name": "氧化物",
+   "terms": [
+    "氧化物"
+   ],
+   "statement": "氧化物是氧与另一种元素或基团形成的二元化合物，通常含有 O²⁻ 离子或基团 –O– 或 =O。大多数主族金属的氧化物是加热氢氧化物或碳酸盐，或燃烧金属时生成的，每族最重的成员给出比族氧化态低两价的氧化物；离子型氧化物是强的氢离子受体，与酸反应生成盐。"
+  },
+  {
+   "id": "base-anhydride",
+   "kind": "definition",
+   "section": "18.9",
+   "name": "碱酐",
+   "terms": [
+    "碱酐"
+   ],
+   "statement": "碱酐是对酸表现为碱的金属氧化物。大多数金属氧化物都是碱酐：可溶的与水生成金属氢氧化物，不溶的仍与酸反应。"
+  },
+  {
+   "id": "peroxide",
+   "kind": "definition",
+   "section": "18.9",
+   "name": "过氧化物",
+   "terms": [
+    "过氧化物"
+   ],
+   "statement": "过氧化物含有两个相互成键的氧原子，如过氧根离子 O₂²⁻，其中有氧–氧单键。过氧化钠以及钙、锶、钡的过氧化物，由金属或其氧化物在纯氧中加热生成；过氧化物是强氧化剂，由它们制得的过氧化氢是漂白剂和消毒剂。"
+  },
+  {
+   "id": "superoxide",
+   "kind": "definition",
+   "section": "18.9",
+   "name": "超氧化物",
+   "terms": [
+    "超氧化物"
+   ],
+   "statement": "超氧化物是含阴离子 O₂⁻ 的氧化物，其氧–氧键的键级为 1½。钾、铷和铯在过量氧中形成超氧化物 KO₂、RbO₂ 和 CsO₂，碱金属过氧化物和超氧化物的稳定性随阳离子增大而增强。"
+  },
+  {
+   "id": "hydroxide",
+   "kind": "definition",
+   "section": "18.9",
+   "name": "氢氧化物",
+   "terms": [
+    "氢氧化物"
+   ],
+   "statement": "氢氧化物是金属与氢氧根离子 OH⁻ 或基团 –OH 形成的化合物。可溶的金属氢氧化物由金属，或更安全地由其氧化物与水制得；难溶的则是在金属的可溶盐中混入氢氧根离子而沉淀出来的，铝、镓、锌和锡(II) 的氢氧化物会在过量氢氧根中溶解，形成配离子。"
+  },
+  {
+   "id": "chlor-alkali-process",
+   "kind": "definition",
+   "section": "18.9",
+   "name": "氯碱工艺",
+   "terms": [
+    "氯碱工艺"
+   ],
+   "statement": "氯碱工艺是电解氯化钠水溶液，同时制得氯气和氢氧化钠：氯离子在正极被氧化为氯气，而在负极被还原成氢气和氢氧根离子的是水，不是钠离子。"
+  },
+  {
+   "id": "sulfite",
+   "kind": "definition",
+   "section": "18.9",
+   "name": "亚硫酸盐和亚硫酸氢盐",
+   "terms": [
+    "亚硫酸盐",
+    "亚硫酸氢盐"
+   ],
+   "statement": "亚硫酸盐含有 SO₃²⁻ 离子，亚硫酸氢盐含有 HSO₃⁻ 离子；它们是亚硫酸的盐，亚硫酸是二氧化硫溶于水时形成的不稳定的中强二元酸，SO₂ 作为路易斯酸与氧化物和氢氧化物反应时也生成它们。亚硫酸盐溶液容易被空气氧化为硫酸盐。"
+  },
+  {
+   "id": "sulfate",
+   "kind": "definition",
+   "section": "18.9",
+   "name": "硫酸盐和硫酸氢盐",
+   "terms": [
+    "硫酸盐",
+    "硫酸氢盐"
+   ],
+   "statement": "硫酸盐含有 SO₄²⁻ 离子，硫酸氢盐含有 HSO₄⁻ 离子；它们是硫酸的盐，由硫经三氧化硫制得。硫酸是强二元酸，第一步电离基本完全；HSO₄⁻ 是中强酸，所以硫酸氢盐呈酸性。浓硫酸还是脱水剂，热的浓硫酸还是氧化剂。"
+  },
+  {
+   "id": "ostwald-process",
+   "kind": "definition",
+   "section": "18.9",
+   "name": "奥斯特瓦尔德法",
+   "terms": [
+    "奥斯特瓦尔德法"
+   ],
+   "statement": "奥斯特瓦尔德法是工业上把氨转化为硝酸的方法：氨被氧化为一氧化氮，一氧化氮被氧化为二氧化氮，二氧化氮再被进一步氧化并水合成硝酸。"
+  },
+  {
+   "id": "nitrate",
+   "kind": "definition",
+   "section": "18.9",
+   "name": "硝酸盐",
+   "terms": [
+    "硝酸盐"
+   ],
+   "statement": "硝酸盐是含 NO₃⁻ 离子的硝酸的盐，由金属、氧化物、氢氧化物或碳酸盐与硝酸反应生成；大多数硝酸盐可溶于水。硝酸既是强酸又是强氧化剂，与金属反应时被还原为氮的氧化物，而不放出氢。"
+  },
+  {
+   "id": "oxyacid-structure-and-strength",
+   "kind": "idea",
+   "section": "18.9",
+   "name": "非金属含氧酸的结构与强度",
+   "statement": "在含氧酸中，只有与氧相连的氢原子才显酸性，所以含一个 P–H 键的亚磷酸 H₃PO₃ 只形成两个系列的盐。含氧酸的强度一般随与非金属相连（而不与氢相连）的氧原子数增加而增强：卤素含氧酸从很弱的次卤酸 HXO，经亚卤酸和卤酸，到很强的高卤酸 HXO₄。"
+  },
+  {
+   "id": "frasch-process",
+   "kind": "definition",
+   "section": "18.10",
+   "name": "弗拉施法",
+   "terms": [
+    "弗拉施法"
+   ],
+   "statement": "弗拉施法开采地下矿床中的游离硫：过热水从三根同心管的最外层压入，使硫熔化；压缩空气从最内层管送入，把液态硫沿出口管压上来；硫冷却后分离出来，纯度为 99.5% 至 99.9%。"
+  },
+  {
+   "id": "sulfur-chemistry",
+   "kind": "idea",
+   "section": "18.10",
+   "name": "硫的化学行为",
+   "statement": "与氧一样，硫有明显的非金属性：它把金属氧化成二元硫化物，其中硫显 2− 氧化态，也氧化电负性较小的非金属，而自己被氧、卤素和浓硝酸等强氧化剂氧化。与氧不同的是，它形成许多硫显正氧化态的化合物。"
+  },
+  {
+   "id": "halogen-preparation",
+   "kind": "idea",
+   "section": "18.11",
+   "name": "卤素的存在与制备",
+   "statement": "卤素太活泼，不能以游离态存在，但以卤离子的形式广泛分布，其中氯离子最多。每种卤素都是通过氧化其卤离子制得的，氟离子最难，碘离子最易：氟由 KHF₂ 在无水 HF 中电解制得，氯由氯碱工艺或用 MnO₂ 氧化制得，溴由氯氧化溴离子制得；碘则由亚硫酸氢盐还原碘酸盐得到。"
+  },
+  {
+   "id": "halogen-properties",
+   "kind": "idea",
+   "section": "18.11",
+   "name": "卤素的性质",
+   "statement": "氟是淡黄色气体，氯是黄绿色气体，溴是深红棕色液体，碘是灰黑色固体，升华成紫色蒸气。卤离子越容易被氧化，卤素作氧化剂就越弱：氟是所有元素中最强的氧化剂，能把元素氧化到最高氧化态，而碘最弱，不能氧化其他卤离子。碘溶于碘离子溶液，形成三碘离子 I₃⁻。"
+  },
+  {
+   "id": "chlorine-water",
+   "kind": "idea",
+   "section": "18.11",
+   "name": "氯在水中",
+   "statement": "在冷水中，氯发生歧化，一半的氯原子被氧化为次氯酸（1+），另一半被还原为氯离子（1−）。该反应不完全，所以氯水是平衡混合物；在光照下次氯酸分解放出氧；次氯酸的氧化作用使它具有漂白和消毒作用。"
+  },
+  {
+   "id": "halide",
+   "kind": "definition",
+   "section": "18.11",
+   "name": "卤化物",
+   "terms": [
+    "卤化物"
+   ],
+   "statement": "卤化物是含有 17 族元素处于 1− 氧化态的阴离子的化合物：氟离子 F⁻、氯离子 Cl⁻、溴离子 Br⁻ 和碘离子 I⁻。金属的大多数二元卤化物是离子型的，但汞、处于 3+ 态的 13 族元素、锡(IV) 和铅(IV) 的卤化物是共价的。"
+  },
+  {
+   "id": "preparing-metal-halides",
+   "kind": "idea",
+   "section": "18.11",
+   "name": "主族金属卤化物的制备",
+   "statement": "金属卤化物的制法有：金属与卤素直接反应，金属有两种氧化态时要控制化学计量关系；活泼金属与气态或溶液中的卤化氢反应；氢氧化物、碳酸盐和某些氧化物与氢卤酸反应；对难溶的卤化物，则用可溶盐溶液之间的复分解反应。"
+  },
+  {
+   "id": "interhalogen",
+   "kind": "definition",
+   "section": "18.11",
+   "name": "卤素互化物",
+   "terms": [
+    "卤素互化物"
+   ],
+   "statement": "卤素互化物是由两种或多种不同的卤素形成的化合物：一个较重卤素的原子，以单键与奇数个较轻卤素的原子相连，最高可达 IF₇ 的 7+ 氧化态，可能的数目随中心原子半径增大而增多。碱金属的离子型多卤化物（如 KI₃）与之密切相关。"
+  },
+  {
+   "id": "noble-gas-properties",
+   "kind": "idea",
+   "section": "18.12",
+   "name": "稀有气体的性质与来源",
+   "statement": "稀有气体在大气中含量很少；氦从天然气中分离得到，氩、氖、氪和氙来自液态空气的分馏。它们的原子之间只有微弱的伦敦色散力，所以沸点和熔点极低，氦在常压下冷却也不凝固。"
+  },
+  {
+   "id": "noble-gas-uses",
+   "kind": "idea",
+   "section": "18.12",
+   "name": "稀有气体的用途",
+   "statement": "稀有气体用作惰性气氛，用于充氦气球和供潜水员呼吸的氦氧混合气，用作冷却剂（如沸点为 4.2 K 的液氦，用于超导磁体），也用作光源：霓虹灯中氖的红色辉光，灯泡和荧光灯管中的氩，以及氪–氙闪光管。"
+  },
+  {
+   "id": "noble-gas-compounds",
+   "kind": "idea",
+   "section": "18.12",
+   "name": "稀有气体的化合物",
+   "statement": "稀有气体不活泼的假设在 1962 年被证明是错误的。氙与氟反应，依比例不同生成 XeF₂、XeF₄ 和 XeF₆；XeF₆ 与水反应生成易爆的 XeO₃，在碱性溶液中，高氙酸根离子 XeO₆⁴⁻ 使氙达到最高氧化态 8+。氪形成 KrF₂，氡显然形成 RnF₂，但氦和氖的稳定化合物尚未发现。"
+  }
+ ],
+ "concept_prereqs": [
+  {
+   "concept": "representative-metal",
+   "prereq": "main-group-element"
+  },
+  {
+   "concept": "representative-metal",
+   "prereq": "metal"
+  },
+  {
+   "concept": "alkali-metal-properties",
+   "prereq": "alkali-metal"
+  },
+  {
+   "concept": "alkali-metal-properties",
+   "prereq": "representative-metal"
+  },
+  {
+   "concept": "alkali-metal-properties",
+   "prereq": "ionization-energy-trend"
+  },
+  {
+   "concept": "alkaline-earth-metal-properties",
+   "prereq": "alkaline-earth-metal"
+  },
+  {
+   "concept": "alkaline-earth-metal-properties",
+   "prereq": "alkali-metal-properties"
+  },
+  {
+   "concept": "alkaline-earth-metal-properties",
+   "prereq": "lattice-energy-trends"
+  },
+  {
+   "concept": "group-12-metals",
+   "prereq": "representative-metal"
+  },
+  {
+   "concept": "group-12-metals",
+   "prereq": "electron-configuration"
+  },
+  {
+   "concept": "group-12-metals",
+   "prereq": "electrode-potential-and-oxidant-strength"
+  },
+  {
+   "concept": "amalgam",
+   "prereq": "alloy"
+  },
+  {
+   "concept": "amalgam",
+   "prereq": "group-12-metals"
+  },
+  {
+   "concept": "group-13-metals",
+   "prereq": "representative-metal"
+  },
+  {
+   "concept": "group-13-metals",
+   "prereq": "amphoteric"
+  },
+  {
+   "concept": "group-13-metals",
+   "prereq": "inert-pair-effect"
+  },
+  {
+   "concept": "group-13-metals",
+   "prereq": "passivation"
+  },
+  {
+   "concept": "allotropes",
+   "prereq": "elements-and-compounds"
+  },
+  {
+   "concept": "tin-and-lead",
+   "prereq": "representative-metal"
+  },
+  {
+   "concept": "tin-and-lead",
+   "prereq": "inert-pair-effect"
+  },
+  {
+   "concept": "tin-and-lead",
+   "prereq": "ionic-and-covalent-bonds"
+  },
+  {
+   "concept": "bismuth",
+   "prereq": "representative-metal"
+  },
+  {
+   "concept": "bismuth",
+   "prereq": "inert-pair-effect"
+  },
+  {
+   "concept": "metal-isolation-by-electrolysis",
+   "prereq": "electrolysis"
+  },
+  {
+   "concept": "metal-isolation-by-electrolysis",
+   "prereq": "alkali-metal-properties"
+  },
+  {
+   "concept": "downs-cell",
+   "prereq": "metal-isolation-by-electrolysis"
+  },
+  {
+   "concept": "downs-cell",
+   "prereq": "freezing-point-depression"
+  },
+  {
+   "concept": "hall-heroult-cell",
+   "prereq": "metal-isolation-by-electrolysis"
+  },
+  {
+   "concept": "hall-heroult-cell",
+   "prereq": "amphoteric"
+  },
+  {
+   "concept": "chemical-reduction",
+   "prereq": "reducing-agent"
+  },
+  {
+   "concept": "chemical-reduction",
+   "prereq": "le-chateliers-principle"
+  },
+  {
+   "concept": "pidgeon-process",
+   "prereq": "chemical-reduction"
+  },
+  {
+   "concept": "carbon-reduction-of-zinc-and-tin",
+   "prereq": "chemical-reduction"
+  },
+  {
+   "concept": "carbon-reduction-of-zinc-and-tin",
+   "prereq": "distillation"
+  },
+  {
+   "concept": "metalloid-properties",
+   "prereq": "metalloid"
+  },
+  {
+   "concept": "metalloid-properties",
+   "prereq": "electronegativity"
+  },
+  {
+   "concept": "metalloid-structures",
+   "prereq": "metalloid-properties"
+  },
+  {
+   "concept": "metalloid-structures",
+   "prereq": "covalent-network-solid"
+  },
+  {
+   "concept": "boron-and-silicon-lewis-acids",
+   "prereq": "lewis-acid"
+  },
+  {
+   "concept": "boron-and-silicon-lewis-acids",
+   "prereq": "hybridization"
+  },
+  {
+   "concept": "boron-and-silicon-lewis-acids",
+   "prereq": "metalloid-properties"
+  },
+  {
+   "concept": "boron-preparation",
+   "prereq": "chemical-reduction"
+  },
+  {
+   "concept": "boron-preparation",
+   "prereq": "amorphous-solid"
+  },
+  {
+   "concept": "silicon-preparation",
+   "prereq": "chemical-reduction"
+  },
+  {
+   "concept": "silicon-preparation",
+   "prereq": "metalloid-properties"
+  },
+  {
+   "concept": "borate",
+   "prereq": "boron-and-silicon-lewis-acids"
+  },
+  {
+   "concept": "borate",
+   "prereq": "oxyanion"
+  },
+  {
+   "concept": "silicon-dioxide-structure",
+   "prereq": "covalent-network-solid"
+  },
+  {
+   "concept": "silicon-dioxide-structure",
+   "prereq": "sigma-and-pi-bonds"
+  },
+  {
+   "concept": "polymorph",
+   "prereq": "silicon-dioxide-structure"
+  },
+  {
+   "concept": "polymorph",
+   "prereq": "crystalline-and-amorphous-solids"
+  },
+  {
+   "concept": "silicate",
+   "prereq": "silicon-dioxide-structure"
+  },
+  {
+   "concept": "silicate",
+   "prereq": "oxyanion"
+  },
+  {
+   "concept": "nonmetal-bonding-and-ions",
+   "prereq": "nonmetal"
+  },
+  {
+   "concept": "nonmetal-bonding-and-ions",
+   "prereq": "bond-type-from-electronegativity"
+  },
+  {
+   "concept": "first-member-anomaly",
+   "prereq": "nonmetal-bonding-and-ions"
+  },
+  {
+   "concept": "first-member-anomaly",
+   "prereq": "octet-rule-exceptions"
+  },
+  {
+   "concept": "first-member-anomaly",
+   "prereq": "sigma-and-pi-bonds"
+  },
+  {
+   "concept": "nonmetal-redox-patterns",
+   "prereq": "nonmetal-bonding-and-ions"
+  },
+  {
+   "concept": "nonmetal-redox-patterns",
+   "prereq": "oxidizing-agent"
+  },
+  {
+   "concept": "nonmetal-redox-patterns",
+   "prereq": "oxidation-number"
+  },
+  {
+   "concept": "acid-anhydride",
+   "prereq": "oxyacid"
+  },
+  {
+   "concept": "acid-anhydride",
+   "prereq": "nonmetal-bonding-and-ions"
+  },
+  {
+   "concept": "disproportionation-reaction",
+   "prereq": "redox-reaction"
+  },
+  {
+   "concept": "nonmetal-structures",
+   "prereq": "nonmetal-bonding-and-ions"
+  },
+  {
+   "concept": "nonmetal-structures",
+   "prereq": "octet-rule"
+  },
+  {
+   "concept": "nonmetal-structures",
+   "prereq": "polarizability-and-dispersion-strength"
+  },
+  {
+   "concept": "carbon-allotropes",
+   "prereq": "allotropes"
+  },
+  {
+   "concept": "carbon-allotropes",
+   "prereq": "covalent-network-solid"
+  },
+  {
+   "concept": "carbon-allotropes",
+   "prereq": "resonance-and-delocalization"
+  },
+  {
+   "concept": "phosphorus-allotropes",
+   "prereq": "allotropes"
+  },
+  {
+   "concept": "phosphorus-allotropes",
+   "prereq": "molecular-structure"
+  },
+  {
+   "concept": "sulfur-allotropes",
+   "prereq": "allotropes"
+  },
+  {
+   "concept": "sulfur-allotropes",
+   "prereq": "molecular-structure"
+  },
+  {
+   "concept": "hydrogen-isotopes",
+   "prereq": "isotopes"
+  },
+  {
+   "concept": "hydrogen-preparation",
+   "prereq": "electrolysis"
+  },
+  {
+   "concept": "hydrogen-preparation",
+   "prereq": "single-displacement-reaction"
+  },
+  {
+   "concept": "hydrogen-place-in-periodic-table",
+   "prereq": "valence-and-core-electrons"
+  },
+  {
+   "concept": "hydrogen-place-in-periodic-table",
+   "prereq": "periods-and-groups"
+  },
+  {
+   "concept": "hydrogen-reactions",
+   "prereq": "hydrogen-place-in-periodic-table"
+  },
+  {
+   "concept": "hydrogen-reactions",
+   "prereq": "electronegativity"
+  },
+  {
+   "concept": "hydrogen-reactions",
+   "prereq": "reducing-agent"
+  },
+  {
+   "concept": "haber-process",
+   "prereq": "reversible-reaction"
+  },
+  {
+   "concept": "haber-process",
+   "prereq": "catalyst"
+  },
+  {
+   "concept": "ammonia-chemistry",
+   "prereq": "bronsted-lowry-base"
+  },
+  {
+   "concept": "ammonia-chemistry",
+   "prereq": "oxidation-number"
+  },
+  {
+   "concept": "hydrogenation",
+   "prereq": "reduction"
+  },
+  {
+   "concept": "hydrogen-halide",
+   "prereq": "binary-acid"
+  },
+  {
+   "concept": "hydrogen-halide",
+   "prereq": "halogen"
+  },
+  {
+   "concept": "carbonate",
+   "prereq": "polyatomic-ions"
+  },
+  {
+   "concept": "carbonate",
+   "prereq": "precipitation-reaction"
+  },
+  {
+   "concept": "hydrogen-carbonate",
+   "prereq": "carbonate"
+  },
+  {
+   "concept": "hydrogen-carbonate",
+   "prereq": "amphoteric"
+  },
+  {
+   "concept": "limestone-dissolution",
+   "prereq": "hydrogen-carbonate"
+  },
+  {
+   "concept": "limestone-dissolution",
+   "prereq": "reversible-reaction"
+  },
+  {
+   "concept": "nitrogen-inertness",
+   "prereq": "multiple-bonds"
+  },
+  {
+   "concept": "nitrogen-inertness",
+   "prereq": "oxidation-number"
+  },
+  {
+   "concept": "nitrogen-fixation",
+   "prereq": "nitrogen-inertness"
+  },
+  {
+   "concept": "nitrogen-oxides",
+   "prereq": "nitrogen-inertness"
+  },
+  {
+   "concept": "nitrogen-oxides",
+   "prereq": "paramagnetism-and-diamagnetism"
+  },
+  {
+   "concept": "no2-n2o4-equilibrium",
+   "prereq": "nitrogen-oxides"
+  },
+  {
+   "concept": "no2-n2o4-equilibrium",
+   "prereq": "equilibrium-constant"
+  },
+  {
+   "concept": "no2-n2o4-equilibrium",
+   "prereq": "le-chateliers-principle"
+  },
+  {
+   "concept": "nitrogen-oxides-with-water",
+   "prereq": "nitrogen-oxides"
+  },
+  {
+   "concept": "nitrogen-oxides-with-water",
+   "prereq": "acid-anhydride"
+  },
+  {
+   "concept": "nitrogen-oxides-with-water",
+   "prereq": "disproportionation-reaction"
+  },
+  {
+   "concept": "phosphorus-preparation",
+   "prereq": "phosphorus-allotropes"
+  },
+  {
+   "concept": "phosphorus-preparation",
+   "prereq": "chemical-reduction"
+  },
+  {
+   "concept": "phosphorus-oxides",
+   "prereq": "phosphorus-preparation"
+  },
+  {
+   "concept": "phosphorus-oxides",
+   "prereq": "acid-anhydride"
+  },
+  {
+   "concept": "phosphorus-halides",
+   "prereq": "phosphorus-preparation"
+  },
+  {
+   "concept": "phosphorus-halides",
+   "prereq": "first-member-anomaly"
+  },
+  {
+   "concept": "phosphorus-halides",
+   "prereq": "lewis-acid"
+  },
+  {
+   "concept": "oxygen-occurrence-and-reactivity",
+   "prereq": "oxidizing-agent"
+  },
+  {
+   "concept": "oxygen-occurrence-and-reactivity",
+   "prereq": "distillation"
+  },
+  {
+   "concept": "photosynthesis",
+   "prereq": "oxygen-occurrence-and-reactivity"
+  },
+  {
+   "concept": "ozone",
+   "prereq": "allotropes"
+  },
+  {
+   "concept": "ozone",
+   "prereq": "exothermic-and-endothermic"
+  },
+  {
+   "concept": "oxide",
+   "prereq": "oxygen-occurrence-and-reactivity"
+  },
+  {
+   "concept": "oxide",
+   "prereq": "inert-pair-effect"
+  },
+  {
+   "concept": "base-anhydride",
+   "prereq": "oxide"
+  },
+  {
+   "concept": "base-anhydride",
+   "prereq": "acid-base-reaction"
+  },
+  {
+   "concept": "peroxide",
+   "prereq": "oxide"
+  },
+  {
+   "concept": "superoxide",
+   "prereq": "peroxide"
+  },
+  {
+   "concept": "superoxide",
+   "prereq": "bond-order"
+  },
+  {
+   "concept": "hydroxide",
+   "prereq": "base-anhydride"
+  },
+  {
+   "concept": "hydroxide",
+   "prereq": "precipitation-reaction"
+  },
+  {
+   "concept": "hydroxide",
+   "prereq": "complex-ion"
+  },
+  {
+   "concept": "chlor-alkali-process",
+   "prereq": "electrolysis-of-aqueous-solutions"
+  },
+  {
+   "concept": "chlor-alkali-process",
+   "prereq": "hydroxide"
+  },
+  {
+   "concept": "sulfite",
+   "prereq": "acid-anhydride"
+  },
+  {
+   "concept": "sulfite",
+   "prereq": "diprotic-acid"
+  },
+  {
+   "concept": "sulfate",
+   "prereq": "acid-anhydride"
+  },
+  {
+   "concept": "sulfate",
+   "prereq": "diprotic-acid"
+  },
+  {
+   "concept": "sulfate",
+   "prereq": "strong-acid"
+  },
+  {
+   "concept": "ostwald-process",
+   "prereq": "nitrogen-oxides-with-water"
+  },
+  {
+   "concept": "nitrate",
+   "prereq": "ostwald-process"
+  },
+  {
+   "concept": "nitrate",
+   "prereq": "strong-acid"
+  },
+  {
+   "concept": "nitrate",
+   "prereq": "oxidizing-agent"
+  },
+  {
+   "concept": "oxyacid-structure-and-strength",
+   "prereq": "oxyacid-strength"
+  },
+  {
+   "concept": "oxyacid-structure-and-strength",
+   "prereq": "acid-anhydride"
+  },
+  {
+   "concept": "frasch-process",
+   "prereq": "sulfur-allotropes"
+  },
+  {
+   "concept": "sulfur-chemistry",
+   "prereq": "nonmetal-redox-patterns"
+  },
+  {
+   "concept": "sulfur-chemistry",
+   "prereq": "sulfur-allotropes"
+  },
+  {
+   "concept": "halogen-preparation",
+   "prereq": "halogen"
+  },
+  {
+   "concept": "halogen-preparation",
+   "prereq": "chlor-alkali-process"
+  },
+  {
+   "concept": "halogen-properties",
+   "prereq": "halogen"
+  },
+  {
+   "concept": "halogen-properties",
+   "prereq": "nonmetal-redox-patterns"
+  },
+  {
+   "concept": "chlorine-water",
+   "prereq": "disproportionation-reaction"
+  },
+  {
+   "concept": "chlorine-water",
+   "prereq": "halogen-properties"
+  },
+  {
+   "concept": "halide",
+   "prereq": "halogen"
+  },
+  {
+   "concept": "halide",
+   "prereq": "ionic-and-covalent-bonds"
+  },
+  {
+   "concept": "preparing-metal-halides",
+   "prereq": "halide"
+  },
+  {
+   "concept": "preparing-metal-halides",
+   "prereq": "hydrogen-halide"
+  },
+  {
+   "concept": "preparing-metal-halides",
+   "prereq": "precipitation-reaction"
+  },
+  {
+   "concept": "interhalogen",
+   "prereq": "halogen-properties"
+  },
+  {
+   "concept": "interhalogen",
+   "prereq": "vsepr-theory"
+  },
+  {
+   "concept": "noble-gas-properties",
+   "prereq": "noble-gas"
+  },
+  {
+   "concept": "noble-gas-properties",
+   "prereq": "dispersion-forces"
+  },
+  {
+   "concept": "noble-gas-uses",
+   "prereq": "noble-gas-properties"
+  },
+  {
+   "concept": "noble-gas-compounds",
+   "prereq": "noble-gas-properties"
+  },
+  {
+   "concept": "noble-gas-compounds",
+   "prereq": "halogen-properties"
+  }
+ ]
+}

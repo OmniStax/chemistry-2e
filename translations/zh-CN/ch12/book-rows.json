@@ -1,0 +1,1067 @@
+{
+ "types": [
+  {
+   "id": "rate-constant",
+   "label": "速率常数",
+   "dimension": "M¹⁻ⁿ/s"
+  }
+ ],
+ "symbols": [
+  {
+   "sym": "[A]",
+   "latex": "[\\text{A}]",
+   "macro": "\\kconcA"
+  },
+  {
+   "sym": "[A]_0",
+   "latex": "[\\text{A}]_{0}",
+   "macro": "\\kconcAz"
+  },
+  {
+   "sym": "[A]_t",
+   "latex": "[\\text{A}]_{t}",
+   "macro": "\\kconcAt"
+  },
+  {
+   "sym": "[B]",
+   "latex": "[\\text{B}]",
+   "macro": "\\kconcB"
+  },
+  {
+   "sym": "Δ[A]",
+   "latex": "\\Delta[\\text{A}]",
+   "macro": "\\kdconcA"
+  },
+  {
+   "sym": "Δ[B]",
+   "latex": "\\Delta[\\text{B}]",
+   "macro": "\\kdconcB"
+  },
+  {
+   "sym": "E_a",
+   "latex": "E_{\\text{a}}",
+   "macro": "\\kEa"
+  },
+  {
+   "sym": "A_freq",
+   "latex": "A",
+   "macro": "\\kAfreq"
+  },
+  {
+   "sym": "m_rxorder",
+   "latex": "m"
+  },
+  {
+   "sym": "n_rxorder",
+   "latex": "n"
+  },
+  {
+   "sym": "k_1",
+   "latex": "k_{1}",
+   "macro": "\\kkone"
+  },
+  {
+   "sym": "k_2",
+   "latex": "k_{2}",
+   "macro": "\\kktwo"
+  },
+  {
+   "sym": "k_m1",
+   "latex": "k_{-1}",
+   "macro": "\\kkmone"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "reaction-rate",
+   "kind": "definition",
+   "section": "12.1",
+   "name": "反应速率",
+   "symbol": "rate",
+   "terms": [
+    "反应速率"
+   ],
+   "type": "rate",
+   "statement": "反应速率是单位时间内反应物或产物的物质的量或浓度的变化。由于反应物的浓度随反应进行而下降，其变化量要乘以 −1，使速率按惯例为正值。"
+  },
+  {
+   "id": "average-instantaneous-initial-rate",
+   "kind": "definition",
+   "section": "12.1",
+   "name": "平均速率、瞬时速率和初始速率",
+   "statement": "在一段时间间隔内算出的速率是平均速率；某一时刻的速率是瞬时速率，即浓度曲线在该时刻的切线斜率；时间为零时的瞬时速率是初始速率。就像汽车驶向停车标志时不断减速，反应的平均速率介于其初始速率和最终速率之间。"
+  },
+  {
+   "id": "rate-from-concentration-data",
+   "kind": "skill",
+   "section": "12.1",
+   "name": "计算平均速率",
+   "statement": "用浓度的变化量除以发生这一变化所经历的时间间隔，对反应物再改变符号，就得到该时间间隔内的平均速率。"
+  },
+  {
+   "id": "relative-reaction-rates",
+   "kind": "result",
+   "section": "12.1",
+   "name": "相对反应速率",
+   "statement": "对于 aA ⟶ bB，速率既可以由其中任一物种写出，只要把各自的变化量除以其系数，两个表达式就相等：$\\text{rate}=-\\frac{1}{a}\\frac{\\Delta[\\text{A}]}{\\Delta t}=\\frac{1}{b}\\frac{\\Delta[\\text{B}]}{\\Delta t}$。",
+   "forms": [
+    {
+     "id": "eq-relative-rates",
+     "latex": "\\text{rate}=-\\frac{1}{a}\\frac{\\Delta[\\text{A}]}{\\Delta t}=\\frac{1}{b}\\frac{\\Delta[\\text{B}]}{\\Delta t}",
+     "ktex": "\\krate=-\\frac{1}{a}\\frac{\\kdconcA}{\\kdt}=\\frac{1}{b}\\frac{\\kdconcB}{\\kdt}",
+     "condition": "反应 aA ⟶ bB",
+     "anchor": "12.1-relative"
+    }
+   ]
+  },
+  {
+   "id": "write-relative-rate-expressions",
+   "kind": "skill",
+   "section": "12.1",
+   "name": "写出相关的速率表达式",
+   "statement": "由配平的方程式出发，把各反应物的消耗速率和各产物的生成速率分别除以各自的系数，所得的值相等，因此测得其中一个物种的速率，就能得到其他所有物种的速率。"
+  },
+  {
+   "id": "average-rate",
+   "kind": "definition",
+   "section": "12.1",
+   "name": "平均速率",
+   "terms": [
+    "平均速率"
+   ],
+   "statement": "反应的平均速率是反应物或产物的物质的量或浓度的变化量除以测量所经历的时间间隔。"
+  },
+  {
+   "id": "instantaneous-rate",
+   "kind": "definition",
+   "section": "12.1",
+   "name": "瞬时速率",
+   "terms": [
+    "瞬时速率"
+   ],
+   "statement": "反应的瞬时速率是反应在某一时刻的速率，即浓度对时间的图像在该时刻的切线的斜率。"
+  },
+  {
+   "id": "initial-rate",
+   "kind": "definition",
+   "section": "12.1",
+   "name": "初始速率",
+   "terms": [
+    "初始速率"
+   ],
+   "statement": "反应的初始速率是其在 t = 0 s 时的瞬时速率，即反应刚刚开始的那一刻的速率。"
+  },
+  {
+   "id": "rate-expression",
+   "kind": "definition",
+   "section": "12.1",
+   "name": "速率表达式",
+   "terms": [
+    "速率表达式"
+   ],
+   "statement": "速率表达式是一种数学表示，它把反应的速率定义为单位时间内反应物或产物的物质的量、浓度或压强的变化。"
+  },
+  {
+   "id": "chemical-nature-and-rate",
+   "kind": "idea",
+   "section": "12.2",
+   "name": "化学性质与速率",
+   "statement": "看起来相似的反应，在相同条件下可能以非常不同的速率进行，这取决于反应物的种类。"
+  },
+  {
+   "id": "surface-area-and-rate",
+   "kind": "idea",
+   "section": "12.2",
+   "name": "细分与速率",
+   "statement": "处于不同相的反应物之间的反应只发生在它们的界面上，因此细碎的固体表面积较大，反应比一整块固体更快。"
+  },
+  {
+   "id": "temperature-and-rate",
+   "kind": "idea",
+   "section": "12.2",
+   "name": "温度越高，反应越快",
+   "statement": "化学反应通常在较高温度下进行得更快，对许多过程来说，温度每升高 10 °C，速率大致增加一倍。"
+  },
+  {
+   "id": "concentration-and-rate",
+   "kind": "idea",
+   "section": "12.2",
+   "name": "浓度越高，反应通常越快",
+   "statement": "许多反应的速率会随一种或多种反应物浓度的增大而增大。"
+  },
+  {
+   "id": "catalyst",
+   "kind": "definition",
+   "section": "12.2",
+   "name": "催化剂",
+   "terms": [
+    "催化剂"
+   ],
+   "statement": "催化剂是能提高反应速率而本身不被反应消耗的物质。"
+  },
+  {
+   "id": "rate-law",
+   "kind": "definition",
+   "section": "12.3",
+   "name": "速率定律",
+   "terms": [
+    "速率定律"
+   ],
+   "statement": "速率定律把反应的速率与各反应物的浓度联系起来：每个浓度都取一个幂，这个幂称为级数，再乘以速率常数。级数为零的反应物，其浓度不出现在式中，因为任何数的零次幂都是 1。",
+   "forms": [
+    {
+     "id": "eq-rate-law",
+     "latex": "\\text{rate}=k[\\text{A}]^{m}[\\text{B}]^{n}",
+     "ktex": "\\krate=\\kk\\kconcA^{m}\\kconcB^{n}",
+     "condition": "反应 aA + bB ⟶ 产物，级数 m 和 n 由实验测定",
+     "anchor": "12.3-rate-laws"
+    }
+   ]
+  },
+  {
+   "id": "reaction-order",
+   "kind": "definition",
+   "section": "12.3",
+   "name": "反应级数和总级数",
+   "symbol": "m_rxorder",
+   "terms": [
+    "反应级数"
+   ],
+   "statement": "速率定律中某反应物浓度的指数，是反应对该反应物的级数，各级数之和是总级数。级数通常为 0、1 或 2，但也可以是分数或负数。"
+  },
+  {
+   "id": "rate-constant",
+   "kind": "definition",
+   "section": "12.3",
+   "name": "速率常数",
+   "symbol": "k",
+   "terms": [
+    "速率常数"
+   ],
+   "type": "rate-constant",
+   "statement": "速率常数 k 因反应和温度而异；它与反应物浓度无关，但随温度变化。"
+  },
+  {
+   "id": "rate-laws-are-experimental",
+   "kind": "idea",
+   "section": "12.3",
+   "name": "速率定律来自实验",
+   "statement": "速率定律中的级数必须通过观察速率如何随浓度变化来确定；它们有时与配平方程式的系数一致，但那只是巧合。"
+  },
+  {
+   "id": "method-of-initial-rates",
+   "kind": "skill",
+   "section": "12.3",
+   "name": "用初始速率求速率定律",
+   "statement": "比较各次试验的初始速率，每次只改变一种反应物的浓度而保持其他不变，就可以由速率之比或借助对数得到各个级数；再由某一次试验的数据算出速率常数。"
+  },
+  {
+   "id": "rate-constant-units",
+   "kind": "result",
+   "section": "12.3",
+   "name": "速率常数的单位",
+   "statement": "k 的单位要使速率的单位为 mol L⁻¹ s⁻¹，所以它取决于总级数 x，为 L^(x−1) mol^(1−x) s⁻¹。"
+  },
+  {
+   "id": "rate-from-rate-law",
+   "kind": "skill",
+   "section": "12.3",
+   "name": "由速率定律预测速率",
+   "statement": "有了速率定律及其速率常数，就可以算出任意一组浓度下的速率，改变某一浓度所产生的影响也可由它的级数得出。"
+  },
+  {
+   "id": "overall-reaction-order",
+   "kind": "definition",
+   "section": "12.3",
+   "name": "总反应级数",
+   "terms": [
+    "总反应级数"
+   ],
+   "statement": "总反应级数是速率定律中出现的所有物质的反应级数之和。"
+  },
+  {
+   "id": "initial-rates-method",
+   "kind": "idea",
+   "section": "12.3",
+   "name": "初始速率法",
+   "terms": [
+    "初始速率法"
+   ],
+   "statement": "初始速率法是测定速率定律的一种常用实验方法：在反应物初始浓度各不相同的几次试验中，测量反应的初始速率。"
+  },
+  {
+   "id": "integrated-rate-laws",
+   "kind": "definition",
+   "section": "12.4",
+   "name": "积分速率定律",
+   "terms": [
+    "积分速率定律"
+   ],
+   "statement": "对微分速率定律积分，得到一个把反应物浓度与经过的时间联系起来的方程，由它可知经过一段时间后还剩下多少反应物，或反应需要多长时间才能达到给定的程度。"
+  },
+  {
+   "id": "first-order-integrated-rate-law",
+   "kind": "result",
+   "section": "12.4",
+   "name": "一级积分速率定律",
+   "statement": "对于 rate = k[A]，浓度按指数下降，$[\\text{A}]_{t}=[\\text{A}]_{0}e^{-kt}$，因此 $\\ln[\\text{A}]_{t}=-kt+\\ln[\\text{A}]_{0}$，ln[A] 对 t 的图像是斜率为 −k 的直线。",
+   "forms": [
+    {
+     "id": "eq-first-order-integrated",
+     "latex": "\\ln[\\text{A}]_{t}=-kt+\\ln[\\text{A}]_{0}",
+     "ktex": "\\ln\\kconcAt=-\\kk\\kt+\\ln\\kconcAz",
+     "condition": "对 A 为一级的反应",
+     "anchor": "12.4-first-order"
+    },
+    {
+     "id": "eq-first-order-exponential",
+     "latex": "[\\text{A}]_{t}=[\\text{A}]_{0}e^{-kt}",
+     "ktex": "\\kconcAt=\\kconcAz e^{-\\kk\\kt}",
+     "condition": "对 A 为一级的反应",
+     "anchor": "12.4-first-order"
+    }
+   ]
+  },
+  {
+   "id": "second-order-integrated-rate-law",
+   "kind": "result",
+   "section": "12.4",
+   "name": "二级积分速率定律",
+   "statement": "对于 rate = k[A]²，$\\frac{1}{[\\text{A}]_{t}}=kt+\\frac{1}{[\\text{A}]_{0}}$，因此 1/[A] 对 t 的图像是斜率为 k 的直线。",
+   "forms": [
+    {
+     "id": "eq-second-order-integrated",
+     "latex": "\\frac{1}{[\\text{A}]_{t}}=kt+\\frac{1}{[\\text{A}]_{0}}",
+     "ktex": "\\frac{1}{\\kconcAt}=\\kk\\kt+\\frac{1}{\\kconcAz}",
+     "condition": "对单一反应物 A 为二级的反应",
+     "anchor": "12.4-second-order"
+    }
+   ]
+  },
+  {
+   "id": "zero-order-integrated-rate-law",
+   "kind": "result",
+   "section": "12.4",
+   "name": "零级积分速率定律",
+   "statement": "对于 rate = k，浓度呈线性下降，$[\\text{A}]_{t}=-kt+[\\text{A}]_{0}$，[A] 对 t 的图像是斜率为 −k 的直线。零级行为只在某些条件下才会出现。",
+   "forms": [
+    {
+     "id": "eq-zero-order-integrated",
+     "latex": "[\\text{A}]_{t}=-kt+[\\text{A}]_{0}",
+     "ktex": "\\kconcAt=-\\kk\\kt+\\kconcAz",
+     "condition": "零级反应，在其表现为零级的条件下",
+     "anchor": "12.4-zero-order"
+    }
+   ]
+  },
+  {
+   "id": "order-from-linear-plots",
+   "kind": "skill",
+   "section": "12.4",
+   "name": "由线性图确定级数",
+   "statement": "把 [A]、ln[A] 和 1/[A] 分别对时间作图，看哪一个是直线，就得到级数；速率常数则是该直线的斜率或其相反数。"
+  },
+  {
+   "id": "half-life",
+   "kind": "definition",
+   "section": "12.4",
+   "name": "半衰期",
+   "symbol": "t_half",
+   "terms": [
+    "反应的半衰期"
+   ],
+   "type": "time",
+   "statement": "半衰期是消耗掉给定量反应物的一半所需的时间；在其后的每一个半衰期里，剩余反应物的一半被消耗。"
+  },
+  {
+   "id": "half-life-by-order",
+   "kind": "result",
+   "section": "12.4",
+   "name": "按反应级数区分的半衰期",
+   "statement": "一级反应的半衰期 $t_{1/2}=0.693/k$ 与浓度无关；二级反应的半衰期 $1/k[\\text{A}]_{0}$ 随反应物的消耗而变长；零级反应的半衰期 $[\\text{A}]_{0}/2k$ 则变短。",
+   "forms": [
+    {
+     "id": "eq-half-life-first",
+     "latex": "t_{1/2}=\\frac{0.693}{k}",
+     "ktex": "\\kthalf=\\frac{0.693}{\\kk}",
+     "condition": "一级反应",
+     "anchor": "12.4-half-life-first"
+    },
+    {
+     "id": "eq-half-life-second",
+     "latex": "t_{1/2}=\\frac{1}{[\\text{A}]_{0}k}",
+     "ktex": "\\kthalf=\\frac{1}{\\kconcAz\\kk}",
+     "condition": "二级反应",
+     "anchor": "12.4-half-life-second"
+    },
+    {
+     "id": "eq-half-life-zero",
+     "latex": "t_{1/2}=\\frac{[\\text{A}]_{0}}{2k}",
+     "ktex": "\\kthalf=\\frac{\\kconcAz}{2\\kk}",
+     "condition": "零级反应",
+     "anchor": "12.4-half-life-zero"
+    }
+   ]
+  },
+  {
+   "id": "integrated-rate-law-calculations",
+   "kind": "skill",
+   "section": "12.4",
+   "name": "用积分速率定律计算",
+   "statement": "选用与反应级数相应的积分速率定律，对未知量求解，就能得到经过一段时间后剩余的浓度、达到某一浓度所需的时间，或半衰期。"
+  },
+  {
+   "id": "collision-theory",
+   "kind": "idea",
+   "section": "12.5",
+   "name": "碰撞理论",
+   "terms": [
+    "碰撞理论"
+   ],
+   "statement": "反应物种必须相互碰撞才能反应，所以反应速率与碰撞速率成正比，而碰撞只有在取向合适且能量足够时才会导致反应。单位体积内的分子越多，碰撞就越多，这就是速率随浓度升高的原因。"
+  },
+  {
+   "id": "collision-orientation",
+   "kind": "idea",
+   "section": "12.5",
+   "name": "碰撞的取向",
+   "statement": "相互碰撞的物种必须以一定的取向相遇，使将在产物中成键的那些原子彼此靠近。"
+  },
+  {
+   "id": "activation-energy",
+   "kind": "definition",
+   "section": "12.5",
+   "name": "活化能与过渡态",
+   "symbol": "E_a",
+   "terms": [
+    "活化能"
+   ],
+   "type": "energy",
+   "statement": "活化能是一次碰撞生成产物所需的最低能量；能量足够且取向合适的碰撞会形成不稳定、寿命很短的活化络合物，即过渡态。当反应的活化能远大于分子的平均动能时，反应就很慢。"
+  },
+  {
+   "id": "reaction-diagram",
+   "kind": "skill",
+   "section": "12.5",
+   "name": "读懂反应图",
+   "statement": "反应图描绘体系的能量从反应物经过渡态到产物的变化；活化能是峰顶高出反应物的高度，ΔH 是产物与反应物之差。"
+  },
+  {
+   "id": "energy-distribution-and-rate",
+   "kind": "idea",
+   "section": "12.5",
+   "name": "具有足够能量的分子所占的比例",
+   "statement": "在分子的能量分布中，只有能量高于活化能的那些分子才能发生反应；活化能越低或温度越高，这一比例就越大，速率也就越大。"
+  },
+  {
+   "id": "arrhenius-equation",
+   "kind": "axiom",
+   "section": "12.5",
+   "name": "阿伦尼乌斯方程",
+   "terms": [
+    "阿伦尼乌斯方程"
+   ],
+   "statement": "速率常数取决于频率因子 A 和指数项：前者反映分子以有利取向碰撞的频繁程度，后者体现活化能和温度的影响。",
+   "forms": [
+    {
+     "id": "eq-arrhenius",
+     "latex": "k=Ae^{-E_{\\text{a}}/RT}",
+     "ktex": "\\kk=\\kAfreq e^{-\\kEa/R\\kT}",
+     "condition": "动力学遵循阿伦尼乌斯方程的反应，T 以开尔文为单位",
+     "anchor": "12.5-arrhenius"
+    },
+    {
+     "id": "eq-arrhenius-linear",
+     "latex": "\\ln k=\\left(\\frac{-E_{\\text{a}}}{R}\\right)\\left(\\frac{1}{T}\\right)+\\ln A",
+     "ktex": "\\ln\\kk=\\left(\\frac{-\\kEa}{R}\\right)\\left(\\frac{1}{\\kT}\\right)+\\ln\\kAfreq",
+     "condition": "在多个温度下测得的速率常数",
+     "anchor": "12.5-graphical"
+    }
+   ]
+  },
+  {
+   "id": "activation-energy-from-rate-constants",
+   "kind": "skill",
+   "section": "12.5",
+   "name": "求活化能",
+   "statement": "ln k 对 1/T 的图像是斜率为 −E_a/R 的直线；只要有两个温度下的速率常数，就可以通过阿伦尼乌斯方程的两点形式求出 E_a。",
+   "forms": [
+    {
+     "id": "eq-arrhenius-two-point",
+     "latex": "\\ln\\frac{k_{1}}{k_{2}}=\\frac{E_{\\text{a}}}{R}\\left(\\frac{1}{T_{2}}-\\frac{1}{T_{1}}\\right)",
+     "ktex": "\\ln\\frac{\\kkone}{\\kktwo}=\\frac{\\kEa}{R}\\left(\\frac{1}{\\kTtwo}-\\frac{1}{\\kTone}\\right)",
+     "condition": "在两个温度 T₁ 和 T₂ 下测得的速率常数 k₁ 和 k₂",
+     "anchor": "12.5-ex-ea"
+    }
+   ]
+  },
+  {
+   "id": "activated-complex",
+   "kind": "definition",
+   "section": "12.5",
+   "name": "活化络合物",
+   "terms": [
+    "活化络合物"
+   ],
+   "statement": "活化络合物，即过渡态，是反应过程中沿反应路径能量最高处所形成的、由反应物种组成的不稳定组合。"
+  },
+  {
+   "id": "frequency-factor",
+   "kind": "definition",
+   "section": "12.5",
+   "name": "频率因子",
+   "symbol": "A_freq",
+   "terms": [
+    "频率因子"
+   ],
+   "type": "rate-constant",
+   "statement": "频率因子是阿伦尼乌斯方程中的比例常数，与取向能够导致产物生成的碰撞所占的相对数目有关。"
+  },
+  {
+   "id": "reaction-energy-diagram",
+   "kind": "definition",
+   "section": "12.5",
+   "name": "反应图",
+   "terms": [
+    "反应图"
+   ],
+   "statement": "反应图是化学动力学中使用的一种图，用来表示反应体系的能量在反应从反应物进行到产物的过程中如何变化。"
+  },
+  {
+   "id": "reaction-mechanism",
+   "kind": "definition",
+   "section": "12.6",
+   "name": "反应机理",
+   "terms": [
+    "反应机理"
+   ],
+   "statement": "反应机理是反应发生时逐步进行的一系列基元反应；各步相加得到总方程式，中间体在某一步中生成，又在后面的一步中被消耗。"
+  },
+  {
+   "id": "molecularity",
+   "kind": "definition",
+   "section": "12.6",
+   "name": "反应分子数",
+   "terms": [
+    "反应分子数"
+   ],
+   "statement": "基元反应的反应分子数是其中反应物粒子的数目；三分子步骤并不常见，因为三个粒子很少同时碰撞。"
+  },
+  {
+   "id": "elementary-rate-laws",
+   "kind": "result",
+   "section": "12.6",
+   "name": "基元反应的速率定律",
+   "statement": "基元反应恰如方程式所写的那样发生，所以它的速率定律可以直接由方程式写出：单分子步骤为一级，双分子步骤为 rate = k[A][B] 或 k[A]²。"
+  },
+  {
+   "id": "rate-determining-step",
+   "kind": "definition",
+   "section": "12.6",
+   "name": "速率控制步骤",
+   "terms": [
+    "速率控制步骤"
+   ],
+   "statement": "反应不可能比其最慢的一步进行得更快，所以这一步限制了总速率；当它是第一步时，总速率定律就是它的速率定律。"
+  },
+  {
+   "id": "mechanism-consistent-with-rate-law",
+   "kind": "idea",
+   "section": "12.6",
+   "name": "检验反应机理",
+   "statement": "速率定律由实验测定，反应机理则由它推断；若某机理预测的速率定律与测得的不符，该机理就是错误的，若相符，则是合理的。"
+  },
+  {
+   "id": "rate-law-from-mechanism",
+   "kind": "skill",
+   "section": "12.6",
+   "name": "由反应机理推导速率定律",
+   "statement": "速率控制步骤的速率定律就是总速率定律；当它含有中间体时，位于其前的快速可逆步骤处于平衡，由此可把中间体的浓度用反应物表示出来。"
+  },
+  {
+   "id": "elementary-reaction",
+   "kind": "definition",
+   "section": "12.6",
+   "name": "基元反应",
+   "terms": [
+    "基元反应"
+   ],
+   "statement": "基元反应是一步完成的反应，恰如其化学方程式所示。"
+  },
+  {
+   "id": "reaction-intermediate",
+   "kind": "definition",
+   "section": "12.6",
+   "name": "中间体",
+   "terms": [
+    "中间体"
+   ],
+   "statement": "中间体是在反应机理的某一步中生成、又在后面的一步中被消耗的物种。"
+  },
+  {
+   "id": "unimolecular-reaction",
+   "kind": "definition",
+   "section": "12.6",
+   "name": "单分子反应",
+   "terms": [
+    "单分子反应"
+   ],
+   "statement": "单分子反应是只涉及一个反应物粒子的基元反应。"
+  },
+  {
+   "id": "bimolecular-reaction",
+   "kind": "definition",
+   "section": "12.6",
+   "name": "双分子反应",
+   "terms": [
+    "双分子反应"
+   ],
+   "statement": "双分子反应是涉及两个反应物粒子的基元反应。"
+  },
+  {
+   "id": "termolecular-reaction",
+   "kind": "definition",
+   "section": "12.6",
+   "name": "三分子反应",
+   "terms": [
+    "三分子反应"
+   ],
+   "statement": "三分子反应是涉及三个反应物粒子的基元反应。"
+  },
+  {
+   "id": "catalysis-lowers-activation-energy",
+   "kind": "idea",
+   "section": "12.7",
+   "name": "催化作用与活化能",
+   "statement": "催化剂通过提供另一种机理来加快反应，这种机理的速率控制步骤具有较低的活化能；催化剂参与反应，但会再生，所以总反应以及反应物和产物的能量都不变。"
+  },
+  {
+   "id": "catalyzed-reaction-diagrams",
+   "kind": "skill",
+   "section": "12.7",
+   "name": "辨认催化路径",
+   "statement": "同一反应的两张反应图中，速率控制步骤活化能较低的那一张是催化反应。"
+  },
+  {
+   "id": "homogeneous-catalysis",
+   "kind": "definition",
+   "section": "12.7",
+   "name": "均相催化剂",
+   "terms": [
+    "均相催化剂"
+   ],
+   "statement": "均相催化剂与反应物处于同一相；它先形成一种中间体，该中间体进一步反应，生成产物并使催化剂再生。"
+  },
+  {
+   "id": "heterogeneous-catalysis",
+   "kind": "definition",
+   "section": "12.7",
+   "name": "多相催化剂",
+   "terms": [
+    "多相催化剂"
+   ],
+   "statement": "多相催化剂处于不同的相，通常是固体，它提供一个表面，反应物在表面上被吸附、活化并发生反应，然后产物脱附。"
+  },
+  {
+   "id": "enzymes",
+   "kind": "idea",
+   "section": "12.7",
+   "name": "酶：生物催化剂",
+   "statement": "酶通常是蛋白质，它们通过在活性部位结合底物，按锁钥模型或诱导契合模型催化细胞代谢中的特定反应。"
+  }
+ ],
+ "concept_prereqs": [
+  {
+   "concept": "reaction-rate",
+   "prereq": "molarity"
+  },
+  {
+   "concept": "rate-from-concentration-data",
+   "prereq": "average-instantaneous-initial-rate"
+  },
+  {
+   "concept": "relative-reaction-rates",
+   "prereq": "stoichiometric-factor"
+  },
+  {
+   "concept": "write-relative-rate-expressions",
+   "prereq": "relative-reaction-rates"
+  },
+  {
+   "concept": "write-relative-rate-expressions",
+   "prereq": "balanced-equation"
+  },
+  {
+   "concept": "chemical-nature-and-rate",
+   "prereq": "reaction-rate"
+  },
+  {
+   "concept": "surface-area-and-rate",
+   "prereq": "reaction-rate"
+  },
+  {
+   "concept": "surface-area-and-rate",
+   "prereq": "states-of-matter"
+  },
+  {
+   "concept": "temperature-and-rate",
+   "prereq": "reaction-rate"
+  },
+  {
+   "concept": "temperature-and-rate",
+   "prereq": "thermal-energy-and-temperature"
+  },
+  {
+   "concept": "concentration-and-rate",
+   "prereq": "reaction-rate"
+  },
+  {
+   "concept": "catalyst",
+   "prereq": "reaction-rate"
+  },
+  {
+   "concept": "rate-law",
+   "prereq": "concentration-and-rate"
+  },
+  {
+   "concept": "reaction-order",
+   "prereq": "rate-law"
+  },
+  {
+   "concept": "rate-constant",
+   "prereq": "rate-law"
+  },
+  {
+   "concept": "rate-constant",
+   "prereq": "temperature-and-rate"
+  },
+  {
+   "concept": "rate-laws-are-experimental",
+   "prereq": "rate-law"
+  },
+  {
+   "concept": "rate-laws-are-experimental",
+   "prereq": "coefficients-as-ratios"
+  },
+  {
+   "concept": "method-of-initial-rates",
+   "prereq": "reaction-order"
+  },
+  {
+   "concept": "method-of-initial-rates",
+   "prereq": "rate-constant"
+  },
+  {
+   "concept": "method-of-initial-rates",
+   "prereq": "average-instantaneous-initial-rate"
+  },
+  {
+   "concept": "rate-constant-units",
+   "prereq": "rate-constant"
+  },
+  {
+   "concept": "rate-constant-units",
+   "prereq": "reaction-order"
+  },
+  {
+   "concept": "rate-from-rate-law",
+   "prereq": "reaction-order"
+  },
+  {
+   "concept": "rate-from-rate-law",
+   "prereq": "relative-reaction-rates"
+  },
+  {
+   "concept": "integrated-rate-laws",
+   "prereq": "rate-law"
+  },
+  {
+   "concept": "first-order-integrated-rate-law",
+   "prereq": "integrated-rate-laws"
+  },
+  {
+   "concept": "first-order-integrated-rate-law",
+   "prereq": "reaction-order"
+  },
+  {
+   "concept": "second-order-integrated-rate-law",
+   "prereq": "integrated-rate-laws"
+  },
+  {
+   "concept": "second-order-integrated-rate-law",
+   "prereq": "reaction-order"
+  },
+  {
+   "concept": "zero-order-integrated-rate-law",
+   "prereq": "integrated-rate-laws"
+  },
+  {
+   "concept": "zero-order-integrated-rate-law",
+   "prereq": "reaction-order"
+  },
+  {
+   "concept": "order-from-linear-plots",
+   "prereq": "first-order-integrated-rate-law"
+  },
+  {
+   "concept": "order-from-linear-plots",
+   "prereq": "second-order-integrated-rate-law"
+  },
+  {
+   "concept": "order-from-linear-plots",
+   "prereq": "zero-order-integrated-rate-law"
+  },
+  {
+   "concept": "half-life",
+   "prereq": "integrated-rate-laws"
+  },
+  {
+   "concept": "half-life-by-order",
+   "prereq": "half-life"
+  },
+  {
+   "concept": "half-life-by-order",
+   "prereq": "first-order-integrated-rate-law"
+  },
+  {
+   "concept": "half-life-by-order",
+   "prereq": "second-order-integrated-rate-law"
+  },
+  {
+   "concept": "half-life-by-order",
+   "prereq": "zero-order-integrated-rate-law"
+  },
+  {
+   "concept": "integrated-rate-law-calculations",
+   "prereq": "half-life-by-order"
+  },
+  {
+   "concept": "collision-theory",
+   "prereq": "kinetic-molecular-theory"
+  },
+  {
+   "concept": "collision-theory",
+   "prereq": "concentration-and-rate"
+  },
+  {
+   "concept": "collision-orientation",
+   "prereq": "collision-theory"
+  },
+  {
+   "concept": "collision-orientation",
+   "prereq": "structural-formulas-and-models"
+  },
+  {
+   "concept": "activation-energy",
+   "prereq": "average-kinetic-energy-and-temperature"
+  },
+  {
+   "concept": "reaction-diagram",
+   "prereq": "exothermic-and-endothermic"
+  },
+  {
+   "concept": "reaction-diagram",
+   "prereq": "enthalpy-change-at-constant-pressure"
+  },
+  {
+   "concept": "energy-distribution-and-rate",
+   "prereq": "activation-energy"
+  },
+  {
+   "concept": "energy-distribution-and-rate",
+   "prereq": "maxwell-boltzmann-distribution"
+  },
+  {
+   "concept": "energy-distribution-and-rate",
+   "prereq": "temperature-and-rate"
+  },
+  {
+   "concept": "arrhenius-equation",
+   "prereq": "rate-constant"
+  },
+  {
+   "concept": "arrhenius-equation",
+   "prereq": "energy-distribution-and-rate"
+  },
+  {
+   "concept": "arrhenius-equation",
+   "prereq": "celsius-kelvin-conversion"
+  },
+  {
+   "concept": "activation-energy-from-rate-constants",
+   "prereq": "arrhenius-equation"
+  },
+  {
+   "concept": "activation-energy-from-rate-constants",
+   "prereq": "order-from-linear-plots"
+  },
+  {
+   "concept": "reaction-mechanism",
+   "prereq": "collision-theory"
+  },
+  {
+   "concept": "molecularity",
+   "prereq": "reaction-mechanism"
+  },
+  {
+   "concept": "elementary-rate-laws",
+   "prereq": "molecularity"
+  },
+  {
+   "concept": "elementary-rate-laws",
+   "prereq": "rate-laws-are-experimental"
+  },
+  {
+   "concept": "rate-determining-step",
+   "prereq": "elementary-rate-laws"
+  },
+  {
+   "concept": "mechanism-consistent-with-rate-law",
+   "prereq": "rate-determining-step"
+  },
+  {
+   "concept": "rate-law-from-mechanism",
+   "prereq": "rate-determining-step"
+  },
+  {
+   "concept": "rate-law-from-mechanism",
+   "prereq": "reaction-order"
+  },
+  {
+   "concept": "catalysis-lowers-activation-energy",
+   "prereq": "catalyst"
+  },
+  {
+   "concept": "catalysis-lowers-activation-energy",
+   "prereq": "reaction-diagram"
+  },
+  {
+   "concept": "catalysis-lowers-activation-energy",
+   "prereq": "rate-determining-step"
+  },
+  {
+   "concept": "catalyzed-reaction-diagrams",
+   "prereq": "catalysis-lowers-activation-energy"
+  },
+  {
+   "concept": "homogeneous-catalysis",
+   "prereq": "catalysis-lowers-activation-energy"
+  },
+  {
+   "concept": "heterogeneous-catalysis",
+   "prereq": "catalysis-lowers-activation-energy"
+  },
+  {
+   "concept": "heterogeneous-catalysis",
+   "prereq": "surface-area-and-rate"
+  },
+  {
+   "concept": "heterogeneous-catalysis",
+   "prereq": "sigma-and-pi-bonds"
+  },
+  {
+   "concept": "enzymes",
+   "prereq": "catalysis-lowers-activation-energy"
+  },
+  {
+   "concept": "average-rate",
+   "prereq": "reaction-rate"
+  },
+  {
+   "concept": "average-rate",
+   "prereq": "time"
+  },
+  {
+   "concept": "instantaneous-rate",
+   "prereq": "average-rate"
+  },
+  {
+   "concept": "initial-rate",
+   "prereq": "instantaneous-rate"
+  },
+  {
+   "concept": "rate-expression",
+   "prereq": "reaction-rate"
+  },
+  {
+   "concept": "overall-reaction-order",
+   "prereq": "reaction-order"
+  },
+  {
+   "concept": "initial-rates-method",
+   "prereq": "initial-rate"
+  },
+  {
+   "concept": "initial-rates-method",
+   "prereq": "rate-law"
+  },
+  {
+   "concept": "activated-complex",
+   "prereq": "collision-theory"
+  },
+  {
+   "concept": "frequency-factor",
+   "prereq": "collision-orientation"
+  },
+  {
+   "concept": "reaction-energy-diagram",
+   "prereq": "activation-energy"
+  },
+  {
+   "concept": "reaction-energy-diagram",
+   "prereq": "enthalpy-change"
+  },
+  {
+   "concept": "elementary-reaction",
+   "prereq": "chemical-equation"
+  },
+  {
+   "concept": "reaction-intermediate",
+   "prereq": "reaction-mechanism"
+  },
+  {
+   "concept": "unimolecular-reaction",
+   "prereq": "molecularity"
+  },
+  {
+   "concept": "bimolecular-reaction",
+   "prereq": "molecularity"
+  },
+  {
+   "concept": "termolecular-reaction",
+   "prereq": "molecularity"
+  },
+  {
+   "concept": "average-instantaneous-initial-rate",
+   "prereq": "initial-rate"
+  },
+  {
+   "concept": "relative-reaction-rates",
+   "prereq": "rate-expression"
+  },
+  {
+   "concept": "method-of-initial-rates",
+   "prereq": "initial-rates-method"
+  },
+  {
+   "concept": "activation-energy",
+   "prereq": "activated-complex"
+  },
+  {
+   "concept": "arrhenius-equation",
+   "prereq": "frequency-factor"
+  },
+  {
+   "concept": "reaction-diagram",
+   "prereq": "reaction-energy-diagram"
+  },
+  {
+   "concept": "reaction-mechanism",
+   "prereq": "elementary-reaction"
+  },
+  {
+   "concept": "rate-law-from-mechanism",
+   "prereq": "reaction-intermediate"
+  }
+ ]
+}

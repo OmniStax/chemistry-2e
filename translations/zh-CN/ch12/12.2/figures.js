@@ -21,20 +21,20 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
 ===================================================================== */
 (function () {
   const d = F.sim(root, 'sim-collisions');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [-1.22, 1.22], views: [{ label: 'front', yaw: 0, pitch: 0.15 }, { label: 'corner', yaw: 0.7, pitch: 0.42 }], h: 360, dist: 5.6, tilt: 0.18 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [-1.22, 1.22], views: [{ label: '正面', yaw: 0, pitch: 0.15 }, { label: '斜角', yaw: 0.7, pitch: 0.42 }], h: 360, dist: 5.6, tilt: 0.18 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 320);
-  const Tc = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 200, max: 600, step: 10, value: 300, unit: 'K', dec: 0, onInput: rerun, aria: 'temperature of the gases in kelvin' });
-  const cA = ctl(d.controls, { label: hue('concentration', '[\\text{NO}]_{0}'), cls: 'concentration', key: 'no', min: 0.5, max: 2, step: 0.1, value: 1, unit: 'M', dec: 2, onInput: rerun, aria: 'initial concentration of nitric oxide in mol per liter' });
-  const cB = ctl(d.controls, { label: hue('concentration', '[\\text{O}_{3}]_{0}'), cls: 'concentration', key: 'o3', min: 0.5, max: 2, step: 0.1, value: 1, unit: 'M', dec: 2, onInput: rerun, aria: 'initial concentration of ozone in mol per liter' });
+  const Tc = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 200, max: 600, step: 10, value: 300, unit: 'K', dec: 0, onInput: rerun, aria: '气体的温度，单位为开尔文' });
+  const cA = ctl(d.controls, { label: hue('concentration', '[\\text{NO}]_{0}'), cls: 'concentration', key: 'no', min: 0.5, max: 2, step: 0.1, value: 1, unit: 'M', dec: 2, onInput: rerun, aria: '一氧化氮的初始浓度，单位为摩尔每升' });
+  const cB = ctl(d.controls, { label: hue('concentration', '[\\text{O}_{3}]_{0}'), cls: 'concentration', key: 'o3', min: 0.5, max: 2, step: 0.1, value: 1, unit: 'M', dec: 2, onInput: rerun, aria: '臭氧的初始浓度，单位为摩尔每升' });
   const fx = el('div'), nt = el('small'); d.readout.append(fx, nt);
-  nt.textContent = 'Each molecule drawn stands for 0.10 M of its gas, and in the real gases the collisions come billions of times a second.';
+  nt.textContent = '图中每个分子代表其气体的 0.10 M，而在真实的气体中，碰撞每秒发生数十亿次。';
 
   /* each molecule as [element, x, y, radius] about its center, scene units */
   const MOLS = {
-    NO: { M: 30.01, name: 'nitric oxide, NO', atoms: [['N', -0.055, 0, 0.066], ['O', 0.055, 0, 0.062]] },
-    O3: { M: 48.00, name: 'ozone, O₃', atoms: [['O', 0, 0.035, 0.062], ['O', -0.1, -0.025, 0.062], ['O', 0.1, -0.025, 0.062]] },
-    NO2: { M: 46.01, name: 'nitrogen dioxide, NO₂', atoms: [['N', 0, 0.03, 0.066], ['O', -0.105, -0.015, 0.062], ['O', 0.105, -0.015, 0.062]] },
-    O2: { M: 32.00, name: 'oxygen, O₂', atoms: [['O', -0.055, 0, 0.062], ['O', 0.055, 0, 0.062]] },
+    NO: { M: 30.01, name: '一氧化氮，NO', atoms: [['N', -0.055, 0, 0.066], ['O', 0.055, 0, 0.062]] },
+    O3: { M: 48.00, name: '臭氧，O₃', atoms: [['O', 0, 0.035, 0.062], ['O', -0.1, -0.025, 0.062], ['O', 0.1, -0.025, 0.062]] },
+    NO2: { M: 46.01, name: '二氧化氮，NO₂', atoms: [['N', 0, 0.03, 0.066], ['O', -0.105, -0.015, 0.062], ['O', 0.105, -0.015, 0.062]] },
+    O2: { M: 32.00, name: '氧气，O₂', atoms: [['O', -0.055, 0, 0.062], ['O', 0.055, 0, 0.062]] },
   };
   const L = 1, RC = 0.13, LIM = L - RC, KS = 0.0035, TRUN = 5, DT = 1 / 120, NF = Math.round(TRUN / DT), EA = 3000, PER = 0.1, HALO = 0.6;
   const gauss = () => { let a = 0; while (!a) a = Math.random(); return Math.sqrt(-2 * Math.log(a)) * Math.cos(TAU * Math.random()); };
@@ -95,13 +95,13 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     const key = [run.id, palSig()].join('|'); if (key === sig) return; sig = key;
     v.clear(); grp.position.set(0, -0.22, 0);
     const box = new T3D.Mesh(new T3D.BoxGeometry(2 * L, 2 * L, 2 * L), mat3(PAL.ink, { transparent: true, opacity: 0.06, depthWrite: false, side: T3D.DoubleSide })); grp.add(box);
-    v.pickable(box, 'a box of nitric oxide and ozone');
+    v.pickable(box, '一个装有一氧化氮和臭氧的盒子');
     grp.add(new T3D.LineSegments(new T3D.EdgesGeometry(new T3D.BoxGeometry(2 * L, 2 * L, 2 * L)), new T3D.LineBasicMaterial({ color: new T3D.Color(PAL.ink) })));
     v.label('NO + O₃ ⟶ NO₂ + O₂', [0, L + 0.15, 0], grp, 6);
     ms = run.kind.map((k) => ({ before: molecule3(k), after: molecule3(k === 'NO' ? 'NO2' : 'O2') }));
     halos = run.events.filter((e) => e.react).map((e) => {
       const h = sphere3(grp, e.p, 2 * RC, PAL.ink, { transparent: true, opacity: 0, depthWrite: false });
-      v.pickable(h, 'a collision that reacted'); return { h, t: e.t };
+      v.pickable(h, '发生了反应的一次碰撞'); return { h, t: e.t };
     });
   }
 
@@ -121,9 +121,9 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     const seen = run.events.filter((e) => e.t <= t), hits = seen.length, reacted = seen.filter((e) => e.react).length;
     const c0 = run.nB * PER, conc = (s) => (run.nB - run.events.filter((e) => e.react && e.t <= s).length) * PER;
     const { ctx } = begin(cnv);
-    topline(ctx, hits + (hits === 1 ? ' collision' : ' collisions') + ' between NO and O_{3} so far, and ' + reacted + ' of them reacted.');
+    topline(ctx, 'NO 与 O_{3} 之间到目前为止共有 ' + hits + ' 次碰撞，其中 ' + reacted + ' 次发生了反应。');
     const box = { l: 150, r: 1300, t: 100, b: 250 };
-    const { X, Y } = axes(ctx, box, [0, TRUN], [0, 2.5], { nx: 5, ny: 5, fy: (q) => fmt(q, 1), xl: 'time t (s)', xc: C('time'), yl: '[O_{3}] (M)', yc: C('concentration') });
+    const { X, Y } = axes(ctx, box, [0, TRUN], [0, 2.5], { nx: 5, ny: 5, fy: (q) => fmt(q, 1), xl: '时间 t (s)', xc: C('time'), yl: '[O_{3}] (M)', yc: C('concentration') });
     const steps = run.events.filter((e) => e.react && e.t <= t).map((e) => e.t);
     let px = 0, py = c0;
     steps.forEach((s) => { line(ctx, X(px), Y(py), X(s), Y(py), C('concentration'), 5); line(ctx, X(s), Y(py), X(s), Y(py - PER), C('concentration'), 5); px = s; py -= PER; });
@@ -134,7 +134,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     dot(ctx, X(t), Y(ct), C('concentration'), true, 9);
     const lx = box.r - 300, ly = box.t + 8;
     line(ctx, lx, ly, lx + 40, ly, C('rate'), 3, [10, 10]);
-    text(ctx, 'secant, slope −rate', lx + 50, ly + 6, PAL.ink, { size: 17, bg: PAL.panel });
+    text(ctx, '割线，斜率 −速率', lx + 50, ly + 6, PAL.ink, { size: 17, bg: PAL.panel });
     const rate = (c0 - ct) / tt;
     tex(fx, `\\krate = -\\frac{${hue('concentration', '\\Delta[\\text{O}_{3}]')}}{\\kdt} = -\\frac{${hue('concentration', fmt(ct, 2) + '\\ \\text{M}')} - ${hue('concentration', fmt(c0, 2) + '\\ \\text{M}')}}{${hue('time', fmt(tt, 1) + '\\ \\text{s}')}} = ${hue('rate', fmt(rate, 3) + '\\ \\text{M/s}')}`);
   }

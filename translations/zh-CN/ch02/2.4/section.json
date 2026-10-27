@@ -2,15 +2,15 @@
  "id": "2.4",
  "module": "m68693",
  "chapter": "2",
- "title": "Chemical Formulas",
- "short": "Chemical formulas",
- "lead": "A chemical formula tells which atoms make up a substance and in what numbers, and chemists write and draw formulas in several ways, each showing something the others leave out.",
+ "title": "化学式",
+ "short": "化学式",
+ "lead": "化学式说明一种物质由哪些原子组成、各有多少个，化学家用几种方式书写和绘制化学式，每一种都显示出其他方式所没有的内容。",
  "objectives": [
-  "Symbolize the composition of molecules using molecular formulas and empirical formulas",
-  "Represent the bonding arrangement of atoms within molecules using structural formulas"
+  "用分子式和实验式表示分子的组成",
+  "用结构式表示分子内原子的成键排列"
  ],
- "summary_html": "<p>A molecular formula uses chemical symbols and subscripts to indicate the exact numbers of different atoms in a molecule or compound. An empirical formula gives the simplest, whole-number ratio of atoms in a compound. A structural formula indicates the bonding arrangement of the atoms in the molecule. Ball-and-stick and space-filling models show the geometric arrangement of atoms in a molecule. Isomers are compounds with the same molecular formula but different arrangements of atoms.</p>",
- "notes": "The two Link to Learning notes are left out: the PhET Build a Molecule simulation and a video on the mirror-image molecules of carvone, whose idea Figure 2.24 carries.",
+ "summary_html": "<p>分子式用化学符号和下标表示分子或化合物中各种原子的确切数目。实验式给出化合物中原子的最简整数比。结构式表示分子中原子的成键排列。球棍模型和空间填充模型显示分子中原子的几何排列。异构体是分子式相同但原子排列不同的化合物。</p>",
+ "notes": "两个“学习链接”注记被略去：一个是 PhET“构建分子”模拟，另一个是关于香芹酮镜像分子的视频，图 2.24 承载了它的思想。",
  "ai": {
   "text": [
    {
@@ -20,18 +20,26 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-09-28",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels and concept tags are AI-generated. The Check Your Learning of Example 2.6 carries the book’s own answer, and the end-of-chapter answers come from the book’s key, which covers the odd-numbered items. The unkeyed items fs-idp231487264 and fs-idp33519568, which ask for definite formulas the book does not key, are left out, and the unkeyed conceptual item fs-idm171756048 carries a suggested approach marked as OmniStax’s own. The three items that ask the reader to build molecules in the PhET Build a Molecule simulation (fs-idm75792016, fs-idm57514192 and fs-idm80750976) are held, since no figure of this page builds a molecule. The drawings the book prints inside fs-idm157365408 and fs-idp2601824 are kept in their prompts.",
+ "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。例 2.6 的学习检测附有书中自己的答案，章末习题的答案取自书后答案，其涵盖奇数编号的习题。没有答案、要求给出书中未给答案的确定化学式的习题 fs-idp231487264 和 fs-idp33519568 被略去，没有答案的概念题 fs-idm171756048 附有标明为 OmniStax 自己所写的建议思路。三道要求读者在 PhET“构建分子”模拟中搭建分子的习题（fs-idm75792016、fs-idm57514192 和 fs-idm80750976）暂缓，因为本页没有任何一幅图可以搭建分子。书中印在 fs-idm157365408 和 fs-idp2601824 里的图画保留在它们的题干中。",
  "figures": [
   {
    "id": "fig-methane",
@@ -40,7 +48,7 @@
    "originals": [
     "/media/ch02/CNX_Chem_02_04_MethaneRep.jpg"
    ],
-   "original_caption": "A methane molecule can be represented as (a) a molecular formula, (b) a structural formula, (c) a ball-and-stick model, and (d) a space-filling model. Carbon and hydrogen atoms are represented by black and white spheres, respectively.",
+   "original_caption": "甲烷分子可以表示为（a）分子式，（b）结构式，（c）球棍模型和（d）空间填充模型。碳原子和氢原子分别用黑球和白球表示。",
    "draws": [],
    "conventions": [
     "C",
@@ -51,6 +59,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -61,7 +74,7 @@
    "originals": [
     "/media/ch02/CNX_Chem_02_04_Sulfur.jpg"
    ],
-   "original_caption": "A molecule of sulfur is composed of eight sulfur atoms and is therefore written as S₈. It can be represented as (a) a structural formula, (b) a ball-and-stick model, and (c) a space-filling model. Sulfur atoms are represented by yellow spheres.",
+   "original_caption": "硫分子由八个硫原子组成，因此写作 S₈。它可以表示为（a）结构式，（b）球棍模型和（c）空间填充模型。硫原子用黄色球表示。",
    "draws": [],
    "conventions": [
     "S"
@@ -71,6 +84,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -81,7 +99,7 @@
    "originals": [
     "/media/ch02/CNX_Chem_02_04_Hydrogen.jpg"
    ],
-   "original_caption": "The symbols H, 2H, H₂, and 2H₂ represent very different entities.",
+   "original_caption": "符号 H、2H、H₂ 和 2H₂ 表示截然不同的实体。",
    "draws": [],
    "conventions": [
     "H"
@@ -96,6 +114,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "note dropped, it repeated the caption"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -112,7 +135,7 @@
    "originals": [
     "/media/ch02/CNX_Chem_02_04_Benzene.jpg"
    ],
-   "original_caption": "Benzene, C₆H₆, is produced during oil refining and has many industrial uses. A benzene molecule can be represented as (a) a structural formula, (b) a ball-and-stick model, and (c) a space-filling model. (d) Benzene is a clear liquid. (credit d: modification of work by Sahar Atwa)",
+   "original_caption": "苯 C₆H₆ 产生于石油精炼，有许多工业用途。苯分子可以表示为（a）结构式，（b）球棍模型和（c）空间填充模型。（d）苯是一种透明的液体。（来源 d：改编自 Sahar Atwa 的作品）",
    "draws": [],
    "conventions": [
     "C",
@@ -123,6 +146,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -133,7 +161,7 @@
    "originals": [
     "/media/ch02/CNX_Chem_02_04_AceticAcid.jpg"
    ],
-   "original_caption": "(a) Vinegar contains acetic acid, C₂H₄O₂, which has an empirical formula of CH₂O. It can be represented as (b) a structural formula and (c) as a ball-and-stick model. (credit a: modification of work by “HomeSpot HQ”/Flickr)",
+   "original_caption": "（a）食醋含有乙酸 C₂H₄O₂，其实验式为 CH₂O。它可以表示为（b）结构式和（c）球棍模型。（来源 a：改编自 “HomeSpot HQ”/Flickr 的作品）",
    "draws": [],
    "conventions": [
     "C",
@@ -145,6 +173,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -167,6 +200,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "formula subscripts braced so only the digits drop"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -183,7 +221,7 @@
    "originals": [
     "/media/ch02/CNX_Chem_02_04_Isomers.jpg"
    ],
-   "original_caption": "Molecules of (a) acetic acid and methyl formate (b) are structural isomers; they have the same formula (C₂H₄O₂) but different structures (and therefore different chemical properties).",
+   "original_caption": "（a）乙酸和甲酸甲酯（b）的分子是构造异构体；它们的化学式相同（C₂H₄O₂），结构却不同（因而化学性质也不同）。",
    "draws": [],
    "ai": [
     {
@@ -195,6 +233,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "swapping atoms pass on arcs; note dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -205,7 +248,7 @@
    "originals": [
     "/media/ch02/CNX_Chem_02_04_Isomers2.jpg"
    ],
-   "original_caption": "Molecules of carvone are spatial isomers; they only differ in the relative orientations of the atoms in space. (credit bottom left: modification of work by “Miansari66”/Wikimedia Commons; credit bottom right: modification of work by Forest & Kim Starr)",
+   "original_caption": "香芹酮分子是立体异构体；它们只是原子在空间中的相对取向不同。（来源 左下：改编自 “Miansari66”/Wikimedia Commons 的作品；右下：改编自 Forest & Kim Starr 的作品）",
    "draws": [],
    "conventions": [
     "C",
@@ -222,6 +265,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "names moved clear of the molecules; note dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   }
@@ -348,11 +396,11 @@
     "at": "inline",
     "after": "ex-glucose"
    },
-   "prompt": "A molecule of metaldehyde (a pesticide used for snails and slugs) contains 8 carbon atoms, 16 hydrogen atoms, and 4 oxygen atoms. What are the molecular and empirical formulas of metaldehyde?",
+   "prompt": "一个四聚乙醛（一种用于对付蜗牛和蛞蝓的农药）分子含有 8 个碳原子、16 个氢原子和 4 个氧原子。四聚乙醛的分子式和实验式是什么？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Molecular formula, C<sub>8</sub>H<sub>16</sub>O<sub>4</sub>; empirical formula, C<sub>2</sub>H<sub>4</sub>O"
+    "solution": "分子式，C<sub>8</sub>H<sub>16</sub>O<sub>4</sub>；实验式，C<sub>2</sub>H<sub>4</sub>O"
    }
   },
   {
@@ -365,11 +413,11 @@
     "at": "end"
    },
    "cite": "elemental-molecules",
-   "prompt": "Explain why the symbol for an atom of the element oxygen and the formula for a molecule of oxygen differ.",
+   "prompt": "解释为什么氧元素的一个原子的符号与氧分子的化学式不同。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "The symbol for the element oxygen, O, represents both the element and one atom of oxygen. A molecule of oxygen, O<sub>2</sub>, contains two oxygen atoms; the subscript 2 in the formula must be used to distinguish the diatomic molecule from two single oxygen atoms."
+    "solution": "氧元素的符号 O 既表示该元素，也表示一个氧原子。氧分子 O<sub>2</sub> 含有两个氧原子；化学式中必须使用下标 2，以便把双原子分子与两个单独的氧原子区分开。"
    }
   },
   {
@@ -382,11 +430,11 @@
     "at": "end"
    },
    "cite": "elemental-molecules",
-   "prompt": "Explain why the symbol for the element sulfur and the formula for a molecule of sulfur differ.",
+   "prompt": "解释为什么硫元素的符号与硫分子的化学式不同。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Ask what each piece of notation counts. The symbol S stands for the element sulfur and for a single atom of it. The most common form of sulfur, however, is made of molecules of eight sulfur atoms bonded together in a ring, so the formula of one molecule needs a subscript to say how many atoms it contains, S<sub>8</sub>. Writing 8S instead would mean eight separate atoms that are not bonded as a unit."
+    "solution": "先问一问每一部分记号计的是什么。符号 S 表示硫元素，也表示它的单个原子。然而硫最常见的形态由八个硫原子键合成环的分子构成，所以一个分子的化学式需要用下标说明它含有多少个原子，即 S<sub>8</sub>。若改写成 8S，则表示八个单独的、没有键合成一个整体的原子。"
    }
   },
   {
@@ -399,11 +447,11 @@
     "at": "end"
    },
    "cite": "empirical-from-molecular",
-   "prompt": "Write the molecular and empirical formulas of the following compounds:<br>(a) <img src=\"/media/ch02/CNX_Chem_02_04_Question3a_img.jpg\" alt=\"A carbon atom that forms two, separate double bonds with two oxygen atoms.\"><br>(b) <img src=\"/media/ch02/CNX_Chem_02_04_Question3b_img.jpg\" alt=\"A hydrogen atom which forms a single bond with a carbon atom. The carbon atom forms a triple bond with another carbon atom. The second carbon atom forms a single bond with a hydrogen atom.\"><br>(c) <img src=\"/media/ch02/CNX_Chem_02_04_Question3c_img.jpg\" alt=\"A carbon atom double bonded to another carbon atom. Each carbon atom is further single bonded to two hydrogen atoms.\"><br>(d) <img src=\"/media/ch02/CNX_Chem_02_04_Question3d_img.jpg\" alt=\"A sulfur atom forming double bonds with two oxygen atoms and single bonds with two oxygen atoms. Two of the oxygen atoms form a single bond with a hydrogen atom.\">",
+   "prompt": "写出下列化合物的分子式和实验式：<br>（a）<img src=\"/media/ch02/CNX_Chem_02_04_Question3a_img.jpg\" alt=\"一个碳原子与两个氧原子分别形成两个独立的双键。\"><br>（b）<img src=\"/media/ch02/CNX_Chem_02_04_Question3b_img.jpg\" alt=\"一个氢原子与一个碳原子形成单键。该碳原子与另一个碳原子形成三键。第二个碳原子与一个氢原子形成单键。\"><br>（c）<img src=\"/media/ch02/CNX_Chem_02_04_Question3c_img.jpg\" alt=\"一个碳原子与另一个碳原子形成双键。每个碳原子又与两个氢原子形成单键。\"><br>（d）<img src=\"/media/ch02/CNX_Chem_02_04_Question3d_img.jpg\" alt=\"一个硫原子与两个氧原子形成双键，与两个氧原子形成单键。其中两个氧原子与一个氢原子形成单键。\">",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) molecular CO<sub>2</sub>, empirical CO<sub>2</sub>; (b) molecular C<sub>2</sub>H<sub>2</sub>, empirical CH; (c) molecular C<sub>2</sub>H<sub>4</sub>, empirical CH<sub>2</sub>; (d) molecular H<sub>2</sub>SO<sub>4</sub>, empirical H<sub>2</sub>SO<sub>4</sub>"
+    "solution": "（a）分子式 CO<sub>2</sub>，实验式 CO<sub>2</sub>；（b）分子式 C<sub>2</sub>H<sub>2</sub>，实验式 CH；（c）分子式 C<sub>2</sub>H<sub>4</sub>，实验式 CH<sub>2</sub>；（d）分子式 H<sub>2</sub>SO<sub>4</sub>，实验式 H<sub>2</sub>SO<sub>4</sub>"
    }
   },
   {
@@ -416,11 +464,11 @@
     "at": "end"
    },
    "cite": "empirical-from-molecular",
-   "prompt": "Determine the empirical formulas for the following compounds:<br>(a) caffeine, C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub><br>(b) sucrose, C<sub>12</sub>H<sub>22</sub>O<sub>11</sub><br>(c) hydrogen peroxide, H<sub>2</sub>O<sub>2</sub><br>(d) glucose, C<sub>6</sub>H<sub>12</sub>O<sub>6</sub><br>(e) ascorbic acid (vitamin C), C<sub>6</sub>H<sub>8</sub>O<sub>6</sub>",
+   "prompt": "确定下列化合物的实验式：<br>（a）咖啡因，C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub><br>（b）蔗糖，C<sub>12</sub>H<sub>22</sub>O<sub>11</sub><br>（c）过氧化氢，H<sub>2</sub>O<sub>2</sub><br>（d）葡萄糖，C<sub>6</sub>H<sub>12</sub>O<sub>6</sub><br>（e）抗坏血酸（维生素 C），C<sub>6</sub>H<sub>8</sub>O<sub>6</sub>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) C<sub>4</sub>H<sub>5</sub>N<sub>2</sub>O; (b) C<sub>12</sub>H<sub>22</sub>O<sub>11</sub>; (c) HO; (d) CH<sub>2</sub>O; (e) C<sub>3</sub>H<sub>4</sub>O<sub>3</sub>"
+    "solution": "（a）C<sub>4</sub>H<sub>5</sub>N<sub>2</sub>O；（b）C<sub>12</sub>H<sub>22</sub>O<sub>11</sub>；（c）HO；（d）CH<sub>2</sub>O；（e）C<sub>3</sub>H<sub>4</sub>O<sub>3</sub>"
    }
   },
   {
@@ -433,11 +481,11 @@
     "at": "end"
    },
    "cite": "empirical-from-molecular",
-   "prompt": "Write the empirical formulas for the following compounds:<br>(a) <img src=\"/media/ch02/CNX_Chem_02_04_Question7a_img.jpg\" alt=\"Two carbon atoms that form a single bond with each other. The left carbon forms single bonds with three hydrogen atoms. The right carbon forms a double bond to an oxygen atom and a single bond to another oxygen atom. This second oxygen atom also forms a single bond to a hydrogen atom.\"><br>(b) <img src=\"/media/ch02/CNX_Chem_02_04_Question7b_img.jpg\" alt=\"A leftmost carbon that forms single bonds to three hydrogen atoms and to a second carbon atom. The second carbon atom forms a double bond with an oxygen atom and a single bond to a second oxygen atom, which is bonded to a third carbon atom. This third carbon atom forms single bonds with two hydrogen atoms and with a fourth carbon atom, which forms single bonds with three hydrogen atoms.\">",
+   "prompt": "写出下列化合物的实验式：<br>（a）<img src=\"/media/ch02/CNX_Chem_02_04_Question7a_img.jpg\" alt=\"两个碳原子彼此形成单键。左边的碳原子与三个氢原子形成单键。右边的碳原子与一个氧原子形成双键，与另一个氧原子形成单键。这第二个氧原子还与一个氢原子形成单键。\"><br>（b）<img src=\"/media/ch02/CNX_Chem_02_04_Question7b_img.jpg\" alt=\"最左边的碳原子与三个氢原子以及第二个碳原子形成单键。第二个碳原子与一个氧原子形成双键，与第二个氧原子形成单键，该氧原子与第三个碳原子成键。这第三个碳原子与两个氢原子以及第四个碳原子形成单键，第四个碳原子与三个氢原子形成单键。\">",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) CH<sub>2</sub>O; (b) C<sub>2</sub>H<sub>4</sub>O"
+    "solution": "（a）CH<sub>2</sub>O；（b）C<sub>2</sub>H<sub>4</sub>O"
    }
   }
  ],

@@ -2,17 +2,17 @@
  "id": "9.1",
  "module": "m68750",
  "chapter": "9",
- "title": "Gas Pressure",
- "short": "Gas Pressure",
- "lead": "A gas presses on every surface it touches, because its molecules strike that surface over and over, and the <span data-concept=\"gas-pressure\">pressure</span> is the <span data-concept=\"force\">force</span> of those collisions divided by the <span data-concept=\"area\">area</span> they act on. A barometer measures the <span data-concept=\"gas-pressure\">pressure</span> of the atmosphere and a manometer that of a gas in a container, both by the height of a column of liquid, and the result is reported in many units.",
+ "title": "气体压强",
+ "short": "气体压强",
+ "lead": "气体对它接触的每一个表面都有压迫作用，因为它的分子一次又一次地撞击该表面，而<span data-concept=\"gas-pressure\">压强</span>就是这些碰撞的<span data-concept=\"force\">力</span>除以它们所作用的<span data-concept=\"area\">面积</span>。气压计测量大气的<span data-concept=\"gas-pressure\">压强</span>，压强计测量容器中气体的压强，二者都是通过液体柱的高度来测量，结果可用多种单位来报告。",
  "objectives": [
-  "Define the property of pressure",
-  "Define and convert among the units of pressure measurements",
-  "Describe the operation of common tools for measuring gas pressure",
-  "Calculate pressure from manometer data"
+  "定义压强这一性质",
+  "定义压强测量中的各种单位并在它们之间换算",
+  "描述测量气体压强的常用工具的工作原理",
+  "根据压强计的数据计算压强"
  ],
- "summary_html": "<p>Gases exert <span data-concept=\"gas-pressure\">pressure</span>, which is <span data-concept=\"force\">force</span> per unit <span data-concept=\"area\">area</span>. The <span data-concept=\"gas-pressure\">pressure</span> of a gas may be expressed in the SI unit of pascal or kilopascal, as well as in many other units including torr, atmosphere, and bar. Atmospheric <span data-concept=\"gas-pressure\">pressure</span> is measured using a barometer; other <span data-concept=\"gas-pressure\">gas pressures</span> can be measured using one of several types of manometers.</p>",
- "notes": "The Link to Learning note is left out: a video of a railway tanker car imploding when its internal pressure is decreased, and a smaller demonstration of the same effect.",
+ "summary_html": "<p>气体会产生<span data-concept=\"gas-pressure\">压强</span>，它是单位<span data-concept=\"area\">面积</span>上的<span data-concept=\"force\">力</span>。气体的<span data-concept=\"gas-pressure\">压强</span>可以用 SI 单位帕斯卡或千帕来表示，也可以用许多其他单位来表示，包括托、标准大气压和巴。大气<span data-concept=\"gas-pressure\">压强</span>用气压计测量；其他<span data-concept=\"gas-pressure\">气体压强</span>可以用几种压强计之一来测量。</p>",
+ "notes": "“学习链接”提示框未收录：一段铁路罐车在内部压强降低时被压瘪的视频，以及同一效应的一个较小的演示。",
  "ai": {
   "text": [
    {
@@ -22,18 +22,26 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-09-28",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels, concept tags, hints and the suggested approaches marked as OmniStax’s own are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The four Check Your Learning items are set inline after their examples. The unkeyed numerical exercises fs-idp74012224 (Redding), fs-idp30544832 (Kansas City), fs-idp128422496 (Mars), fs-idm81032176 (the gas cylinder at 14.82 MPa), fs-idp27847856 (the open-end manometer at 6.00 in.) and fs-idm35876656 (the open-end manometer at 26.4 cm) are left out, and no answer is computed for them. The two unkeyed conceptual exercises are kept with a suggested approach. Numeric answers accept 2% tolerance.",
+ "exercise_notes": "布鲁姆层级、概念标签、提示，以及标明为 OmniStax 自拟的建议解法，均为 AI 生成。答案来自本书的答案册和“学习检测”的答案。四道“学习检测”题紧接在各自的例题之后。没有答案的数值习题 fs-idp74012224（雷丁）、fs-idp30544832（堪萨斯城）、fs-idp128422496（火星）、fs-idm81032176（14.82 MPa 的气瓶）、fs-idp27847856（6.00 in. 的开端压强计）和 fs-idm35876656（26.4 cm 的开端压强计）未收录，也没有为它们计算答案。两道没有答案的概念习题连同一个建议解法一并保留。数值答案接受 2% 的容差。",
  "figures": [
   {
    "id": "sim-force-area",
@@ -42,7 +50,7 @@
    "originals": [
     "/media/ch09/CNX_Chem_09_01_Pressure1.jpg"
    ],
-   "original_caption": "The atmosphere above us exerts a large pressure on objects at the surface of the earth, roughly equal to the weight of a bowling ball pressing on an area the size of a human thumbnail.",
+   "original_caption": "我们头顶上的大气对地球表面的物体施加很大的压强，大致相当于一个保龄球压在人的拇指指甲盖大小的面积上的重量。",
    "draws": [
     "pressure",
     "force",
@@ -58,6 +66,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "rewritten: thumbs-up hand under the ball, skater, footprint grid"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -74,7 +87,7 @@
    "originals": [
     "/media/ch09/CNX_Chem_09_01_Barometer.jpg"
    ],
-   "original_caption": "In a barometer, the height, h, of the column of liquid is used as a measurement of the air pressure. Using very dense liquid mercury (left) permits the construction of reasonably sized barometers, whereas using water (right) would require a barometer more than 30 feet tall.",
+   "original_caption": "在气压计中，液体柱的高度 h 用来衡量空气压强。使用密度很大的液态汞（左）可以制成大小合适的气压计，而使用水（右）则需要一个高度超过 30 英尺的气压计。",
    "draws": [
     "pressure",
     "length",
@@ -94,6 +107,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "names clear of the bottom edge; note that repeated the headline dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -104,7 +122,7 @@
    "originals": [
     "/media/ch09/CNX_Chem_09_01_Manometer.jpg"
    ],
-   "original_caption": "A manometer can be used to measure the pressure of a gas. The (difference in) height between the liquid levels (h) is a measure of the pressure. Mercury is usually used because of its large density.",
+   "original_caption": "压强计可用来测量气体的压强。两液面之间的高度（差）h 是压强的量度。通常使用汞，因为它的密度很大。",
    "draws": [
     "pressure",
     "length",
@@ -124,6 +142,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "atmosphere label clear of the level line; closed-end note dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -145,6 +168,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -166,6 +194,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -187,6 +220,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -208,6 +246,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -353,7 +396,7 @@
     "after": "ex-units"
    },
    "cite": "units",
-   "prompt": "A typical barometric pressure in Kansas City is 740 torr. What is this pressure in atmospheres, in millimeters of mercury, in kilopascals, and in bar?",
+   "prompt": "堪萨斯城的典型气压为 740 torr。这一压强分别是多少标准大气压、多少毫米汞柱、多少千帕、多少巴？",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -362,25 +405,25 @@
       "part": "atm",
       "value": 0.974,
       "unit": "atm",
-      "hint": "Divide by 760 torr per atm."
+      "hint": "除以 760 torr/atm。"
      },
      {
       "part": "mm Hg",
       "value": 740,
       "unit": "mm Hg",
-      "hint": "One torr is about one millimeter of mercury."
+      "hint": "1 torr 约等于 1 mm Hg。"
      },
      {
       "part": "kPa",
       "value": 98.7,
       "unit": "kPa",
-      "hint": "Use 101.325 kPa = 760 torr."
+      "hint": "用 101.325 kPa = 760 torr。"
      },
      {
       "part": "bar",
       "value": 0.987,
       "unit": "bar",
-      "hint": "1 bar = 100 kPa."
+      "hint": "1 bar = 100 kPa。"
      }
     ],
     "solution": "0.974 atm; 740 mm Hg; 98.7 kPa; 0.987 bar"
@@ -396,13 +439,13 @@
     "after": "ex-barometric"
    },
    "cite": "barometer",
-   "prompt": "Calculate the height of a column of water at 25 °C that corresponds to normal atmospheric pressure. The density of water at this temperature is 1.0 g/cm<sup>3</sup>.",
+   "prompt": "计算 25 °C 时与正常大气压强相对应的水柱高度。水在该温度下的密度为 1.0 g/cm<sup>3</sup>。",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 10.3,
     "unit": "m",
-    "hint": "Solve p = hρg for h with p = 101,325 Pa and ρ = 1000 kg/m³.",
+    "hint": "由 p = hρg 解出 h，取 p = 101,325 Pa、ρ = 1000 kg/m³。",
     "solution": "10.3 m"
    }
   },
@@ -416,7 +459,7 @@
     "after": "ex-closed-manometer"
    },
    "cite": "manometer",
-   "prompt": "The pressure of a sample of gas is measured with a closed-end manometer. The liquid in the manometer is mercury. Determine the pressure of the gas in:<br>(a) torr<br>(b) Pa<br>(c) bar",
+   "prompt": "用闭端压强计测量一份气体样品的压强。压强计中的液体是汞。求该气体的压强，分别以下列单位表示：<br>（a）torr<br>（b）Pa<br>（c）bar",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -425,22 +468,22 @@
       "part": "torr",
       "value": 150,
       "unit": "torr",
-      "hint": "Convert 6.0 in. to millimeters: 1 in. = 25.4 mm, and 1 mm Hg is about 1 torr."
+      "hint": "把 6.0 in. 换算成毫米：1 in. = 25.4 mm，而 1 mm Hg 约为 1 torr。"
      },
      {
       "part": "Pa",
       "value": 20000,
       "unit": "Pa",
-      "hint": "Use 101,325 Pa = 760 torr."
+      "hint": "用 101,325 Pa = 760 torr。"
      },
      {
       "part": "bar",
       "value": 0.2,
       "unit": "bar",
-      "hint": "1 bar = 100,000 Pa."
+      "hint": "1 bar = 100,000 Pa。"
      }
     ],
-    "solution": "(a) ~150 torr; (b) ~20,000 Pa; (c) ~0.20 bar"
+    "solution": "（a）~150 torr；（b）~20,000 Pa；（c）~0.20 bar"
    }
   },
   {
@@ -453,7 +496,7 @@
     "after": "ex-open-manometer"
    },
    "cite": "manometer",
-   "prompt": "The pressure of a sample of gas is measured at sea level with an open-end Hg manometer, as shown to the right. Determine the pressure of the gas in:<br>(a) mm Hg<br>(b) atm<br>(c) kPa",
+   "prompt": "在海平面处用开端 Hg 压强计测量一份气体样品的压强，如右图所示。求该气体的压强，分别以下列单位表示：<br>（a）mm Hg<br>（b）atm<br>（c）kPa",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -462,22 +505,22 @@
       "part": "mm Hg",
       "value": 642,
       "unit": "mm Hg",
-      "hint": "The gas side is higher, so the gas pressure is the atmosphere less the column: 760 mm Hg minus 4.63 in. in millimeters."
+      "hint": "气体一侧较高，所以气体压强是大气压强减去汞柱的压强：760 mm Hg 减去 4.63 in. 换算成的毫米数。"
      },
      {
       "part": "atm",
       "value": 0.845,
       "unit": "atm",
-      "hint": "Divide by 760 mm Hg per atm."
+      "hint": "除以 760 mm Hg/atm。"
      },
      {
       "part": "kPa",
       "value": 85.6,
       "unit": "kPa",
-      "hint": "Multiply by 101.325 kPa per atm."
+      "hint": "乘以 101.325 kPa/atm。"
      }
     ],
-    "solution": "(a) 642 mm Hg; (b) 0.845 atm; (c) 85.6 kPa"
+    "solution": "（a）642 mm Hg；（b）0.845 atm；（c）85.6 kPa"
    }
   },
   {
@@ -489,11 +532,11 @@
     "at": "end"
    },
    "cite": "pressure",
-   "prompt": "Why are sharp knives more effective than dull knives? (Hint: Think about the definition of pressure.)",
+   "prompt": "为什么锋利的刀比钝刀更有效？（提示：想一想压强的定义。）",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "The cutting edge of a knife that has been sharpened has a smaller surface area than a dull knife. Since pressure is force per unit area, a sharp knife will exert a higher pressure with the same amount of force and cut through material more effectively."
+    "solution": "磨过的刀的刃口表面积比钝刀的小。由于压强是单位面积上的力，在力相同的情况下，锋利的刀会施加更高的压强，因而更有效地切开材料。"
    }
   },
   {
@@ -505,11 +548,11 @@
     "at": "end"
    },
    "cite": "pressure",
-   "prompt": "Why do some small bridges have weight limits that depend on how many wheels or axles the crossing vehicle has?",
+   "prompt": "为什么有些小桥的重量限制取决于通过车辆有多少个车轮或车轴？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Because the deck feels the vehicle’s weight as a pressure, and pressure depends on the area the weight is spread over as well as on the weight itself. Pressure is the force exerted on a given area, $\\kP=\\frac{\\kforce}{\\karea}$. The same weight carried on more wheels or axles rests on a larger total area of tire and is shared among more places along the bridge, so the pressure under each wheel and the load on each span are smaller. Carried on fewer wheels, the same weight presses on a smaller area and gives a greater pressure, which a small bridge may not bear. A vehicle with many axles is therefore allowed a greater total weight than one with few, just as the elephant’s broad feet press on the ground less than a skater’s narrow blades."
+    "solution": "因为桥面把车辆的重量当作压强来承受，而压强既取决于重量本身，也取决于重量分散在多大的面积上。压强是作用在给定面积上的力，$\\kP=\\frac{\\kforce}{\\karea}$。同样的重量由更多的车轮或车轴承载时，落在更大的轮胎总面积上，并且分摊到桥上更多的位置，所以每个车轮下的压强和每一跨所受的载荷都更小。同样的重量若由较少的车轮承载，就压在较小的面积上，产生更大的压强，小桥可能承受不了。因此，车轴多的车辆被允许的总重量比车轴少的更大，就像大象宽大的脚比滑冰运动员窄小的冰刀对地面施加的压强更小一样。"
    }
   },
   {
@@ -521,11 +564,11 @@
     "at": "end"
    },
    "cite": "pressure",
-   "prompt": "Why should you roll or belly-crawl rather than walk across a thinly-frozen pond?",
+   "prompt": "为什么在薄冰覆盖的池塘上应该滚动或趴着爬行，而不是走过去？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Lying down distributes your weight over a larger surface area, exerting less pressure on the ice compared to standing up. If you exert less pressure, you are less likely to break through thin ice."
+    "solution": "躺下可以把你的重量分散到更大的表面积上，与站立相比对冰面施加的压强更小。你施加的压强越小，就越不容易压破薄冰。"
    }
   },
   {
@@ -537,7 +580,7 @@
     "at": "end"
    },
    "cite": "units",
-   "prompt": "A typical barometric pressure in Denver, Colorado, is 615 mm Hg. What is this pressure in atmospheres and kilopascals?",
+   "prompt": "美国科罗拉多州丹佛的典型气压为 615 mm Hg。这一压强是多少标准大气压、多少千帕？",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -546,13 +589,13 @@
       "part": "atm",
       "value": 0.809,
       "unit": "atm",
-      "hint": "760 mm Hg = 1 atm."
+      "hint": "760 mm Hg = 1 atm。"
      },
      {
       "part": "kPa",
       "value": 82.0,
       "unit": "kPa",
-      "hint": "1 atm = 101.325 kPa."
+      "hint": "1 atm = 101.325 kPa。"
      }
     ],
     "solution": "0.809 atm; 82.0 kPa"
@@ -567,13 +610,13 @@
     "at": "end"
    },
    "cite": "units",
-   "prompt": "Canadian tire pressure gauges are marked in units of kilopascals. What reading on such a gauge corresponds to 32 psi?",
+   "prompt": "加拿大的轮胎压力计以千帕为单位刻度。32 psi 对应于这种压力计上的什么读数？",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 220,
     "unit": "kPa",
-    "hint": "Go from psi to atm with 14.7 psi = 1 atm, then to kPa.",
+    "hint": "先用 14.7 psi = 1 atm 从 psi 换算为 atm，再换算为 kPa。",
     "solution": "2.2 $\\times$ 10<sup>2</sup> kPa"
    }
   },
@@ -586,7 +629,7 @@
     "at": "end"
    },
    "cite": "units",
-   "prompt": "The pressure of the atmosphere on the surface of the planet Venus is about 88.8 atm. Compare that pressure in psi to the normal pressure on earth at sea level in psi.",
+   "prompt": "金星表面的大气压强约为 88.8 atm。把这一压强以 psi 为单位，与地球海平面的正常压强（以 psi 为单位）作比较。",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -595,16 +638,16 @@
       "part": "Earth",
       "value": 14.7,
       "unit": "psi",
-      "hint": "Sea-level pressure is about 1 atm."
+      "hint": "海平面压强约为 1 atm。"
      },
      {
       "part": "Venus",
       "value": 1300,
       "unit": "psi",
-      "hint": "Multiply 88.8 atm by 14.7 psi per atm."
+      "hint": "用 88.8 atm 乘以 14.7 psi/atm。"
      }
     ],
-    "solution": "Earth: 14.7 lb in<sup>–2</sup>; Venus: 1.30 × 10<sup>3</sup> lb in<sup>−2</sup>"
+    "solution": "地球：14.7 lb in<sup>–2</sup>；金星：1.30 × 10<sup>3</sup> lb in<sup>−2</sup>"
    }
   },
   {
@@ -616,7 +659,7 @@
     "at": "end"
    },
    "cite": "units",
-   "prompt": "Consider this scenario and answer the following questions: On a mid-August day in the northeastern United States, the following information appeared in the local newspaper: atmospheric pressure at sea level 29.97 in. Hg, 1013.9 mbar.<br>(a) What was the pressure in kPa?<br>(b) The pressure near the seacoast in the northeastern United States is usually reported near 30.0 in. Hg. During a hurricane, the pressure may fall to near 28.0 in. Hg. Calculate the drop in pressure in torr.",
+   "prompt": "设想下面的情景并回答后面的问题：美国东北部某个八月中旬的一天，当地报纸上登出了下列信息：海平面大气压强 29.97 in. Hg，1013.9 mbar。<br>（a）以 kPa 表示，压强是多少？<br>（b）美国东北部海岸附近的压强通常报告为接近 30.0 in. Hg。在飓风期间，压强可能降到接近 28.0 in. Hg。计算压强的下降值，以 torr 表示。",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -625,16 +668,16 @@
       "part": "(a)",
       "value": 101.5,
       "unit": "kPa",
-      "hint": "1000 mbar = 1 bar = 100 kPa."
+      "hint": "1000 mbar = 1 bar = 100 kPa。"
      },
      {
       "part": "(b)",
       "value": 51,
       "unit": "torr",
-      "hint": "The drop is 2.0 in. Hg; 1 in. = 25.4 mm."
+      "hint": "下降值为 2.0 in. Hg；1 in. = 25.4 mm。"
      }
     ],
-    "solution": "(a) 101.5 kPa; (b) 51 torr drop"
+    "solution": "（a）101.5 kPa；（b）压强下降 51 torr"
    }
   },
   {
@@ -646,11 +689,11 @@
     "at": "end"
    },
    "cite": "barometer",
-   "prompt": "Why is it necessary to use a nonvolatile liquid in a barometer or manometer?",
+   "prompt": "为什么在气压计或压强计中必须使用不挥发的液体？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Because the space above the liquid column must stay empty for the height of the column to measure the pressure. In a barometer, and in a closed-end manometer, that space is a vacuum, so the column stands until its own pressure, $\\kphyd=\\khcol\\krho\\kgrav$, equals the pressure on the open surface, and the height reads that pressure alone. A volatile liquid evaporates into the space above the column, and its vapor exerts a pressure of its own that pushes the column down. The column then stands lower than the pressure on the open surface warrants, and since the vapor pressure changes with temperature, the error changes too. A nonvolatile liquid such as mercury puts almost no vapor above the column, so the height gives the true pressure."
+    "solution": "因为液柱上方的空间必须保持为空，液柱的高度才能衡量压强。在气压计和闭端压强计中，这个空间是真空，所以液柱会一直上升到它自身的压强 $\\kphyd=\\khcol\\krho\\kgrav$ 等于敞口液面上的压强为止，高度读出的就只是该压强。挥发性的液体会蒸发到液柱上方的空间中，其蒸气产生的压强会把液柱往下压。于是液柱停在比敞口液面上的压强所对应的位置更低的地方，而且由于蒸气压随温度变化，误差也随之变化。汞之类的不挥发液体在液柱上方几乎不产生蒸气，所以高度给出的是真实的压强。"
    }
   },
   {
@@ -662,7 +705,7 @@
     "at": "end"
    },
    "cite": "manometer",
-   "prompt": "The pressure of a sample of gas is measured at sea level with a closed-end manometer. The liquid in the manometer is mercury. Determine the pressure of the gas in:<br>(a) torr<br>(b) Pa<br>(c) bar<br><img src=\"/media/ch09/CNX_Chem_09_01_Manometer5_img.jpg\" alt=\"A diagram of a closed-end manometer is shown. The mercury is 26.4 cm higher in the closed arm than in the arm joined to the gas.\">",
+   "prompt": "在海平面处用闭端压强计测量一份气体样品的压强。压强计中的液体是汞。求该气体的压强，分别以下列单位表示：<br>（a）torr<br>（b）Pa<br>（c）bar<br><img src=\"/media/ch09/CNX_Chem_09_01_Manometer5_img.jpg\" alt=\"一幅闭端压强计的示意图。闭端一臂中的汞比与气体相连的一臂中的汞高 26.4 cm。\">",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -671,22 +714,22 @@
       "part": "torr",
       "value": 264,
       "unit": "torr",
-      "hint": "26.4 cm Hg is 264 mm Hg."
+      "hint": "26.4 cm Hg 就是 264 mm Hg。"
      },
      {
       "part": "Pa",
       "value": 35200,
       "unit": "Pa",
-      "hint": "760 torr = 101,325 Pa."
+      "hint": "760 torr = 101,325 Pa。"
      },
      {
       "part": "bar",
       "value": 0.352,
       "unit": "bar",
-      "hint": "1 bar = 100,000 Pa."
+      "hint": "1 bar = 100,000 Pa。"
      }
     ],
-    "solution": "(a) 264 torr; (b) 35,200 Pa; (c) 0.352 bar"
+    "solution": "（a）264 torr；（b）35,200 Pa；（c）0.352 bar"
    }
   },
   {
@@ -698,7 +741,7 @@
     "at": "end"
    },
    "cite": "manometer",
-   "prompt": "The pressure of a sample of gas is measured at sea level with an open-end mercury manometer. Assuming atmospheric pressure is 760.0 mm Hg, determine the pressure of the gas in:<br>(a) mm Hg<br>(b) atm<br>(c) kPa<br><img src=\"/media/ch09/CNX_Chem_09_01_Manometer7_img.jpg\" alt=\"A diagram of an open-end manometer is shown. The mercury is 13.7 cm higher in the arm joined to the gas than in the open arm.\">",
+   "prompt": "在海平面处用开端汞压强计测量一份气体样品的压强。假定大气压强为 760.0 mm Hg，求该气体的压强，分别以下列单位表示：<br>（a）mm Hg<br>（b）atm<br>（c）kPa<br><img src=\"/media/ch09/CNX_Chem_09_01_Manometer7_img.jpg\" alt=\"一幅开端压强计的示意图。与气体相连的一臂中的汞比开口一臂中的汞高 13.7 cm。\">",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -707,22 +750,22 @@
       "part": "mm Hg",
       "value": 623,
       "unit": "mm Hg",
-      "hint": "The gas side is higher, so subtract the column from the atmosphere."
+      "hint": "气体一侧较高，所以用大气压强减去汞柱的压强。"
      },
      {
       "part": "atm",
       "value": 0.82,
       "unit": "atm",
-      "hint": "760 mm Hg = 1 atm."
+      "hint": "760 mm Hg = 1 atm。"
      },
      {
       "part": "kPa",
       "value": 83.1,
       "unit": "kPa",
-      "hint": "1 atm = 101.325 kPa."
+      "hint": "1 atm = 101.325 kPa。"
      }
     ],
-    "solution": "(a) 623 mm Hg; (b) 0.820 atm; (c) 83.1 kPa"
+    "solution": "（a）623 mm Hg；（b）0.820 atm；（c）83.1 kPa"
    }
   },
   {
@@ -734,11 +777,11 @@
     "at": "end"
    },
    "cite": "manometer",
-   "prompt": "How would the use of a volatile liquid affect the measurement of a gas using open-ended manometers vs. closed-end manometers?",
+   "prompt": "使用易挥发的液体，对用开端压强计和用闭端压强计测量气体分别会有什么影响？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "With a closed-end manometer, no change would be observed, since the vaporized liquid would contribute equal, opposing pressures in both arms of the manometer tube. However, with an open-ended manometer, a higher pressure reading of the gas would be obtained than expected, since <em>P</em><sub>gas</sub> = <em>P</em><sub>atm</sub> + <em>P</em><sub>vol liquid</sub>."
+    "solution": "对于闭端压强计，不会观察到变化，因为汽化的液体在压强计管的两臂中产生相等而相反的压强。然而，对于开端压强计，会得到比预期更高的气体压强读数，因为 <em>P</em><sub>气体</sub> = <em>P</em><sub>atm</sub> + <em>P</em><sub>挥发性液体</sub>。"
    }
   }
  ],
@@ -827,14 +870,14 @@
  "referents": [
   {
    "id": "mercury-barometer",
-   "label": "the mercury barometer",
+   "label": "汞气压计",
    "figures": [
     "sim-barometer"
    ]
   },
   {
    "id": "water-barometer",
-   "label": "the water barometer",
+   "label": "水气压计",
    "figures": [
     "sim-barometer"
    ]

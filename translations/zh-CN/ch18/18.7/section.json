@@ -2,31 +2,39 @@
  "id": "18.7",
  "module": "m68835",
  "chapter": "18",
- "title": "Occurrence, Preparation, and Properties of Nitrogen",
- "short": "Nitrogen",
- "lead": "Nitrogen, the main gas of the atmosphere, is prepared from liquid air and used wherever an unreactive atmosphere is wanted. The section describes how organisms fix it and the oxides it forms with oxygen, from nitrous oxide to dinitrogen pentaoxide, with the equilibrium between nitrogen dioxide and its dimer and the reactions of the oxides with water.",
+ "title": "氮的存在、制备与性质",
+ "short": "氮",
+ "lead": "氮是大气的主要成分，由液态空气制得，用于需要不活泼气氛的各种场合。本节介绍生物如何固定氮，以及氮与氧形成的各种氧化物，从一氧化二氮到五氧化二氮，包括二氧化氮与其二聚体之间的平衡，以及这些氧化物与水的反应。",
  "objectives": [
-  "Describe the properties, preparation, and uses of nitrogen"
+  "描述氮的性质、制备和用途"
  ],
- "summary_html": "<p>Nitrogen exhibits <span data-concept=\"oxidation-number\">oxidation states</span> ranging from 3− to 5+. Because of the stability of the N≡N <span data-concept=\"triple-bond\">triple bond</span>, it requires a great deal of energy to make compounds from molecular nitrogen. Active metals such as the <span data-concept=\"alkali-metal\">alkali metals</span> and <span data-concept=\"alkaline-earth-metal\">alkaline earth metals</span> can reduce nitrogen to form metal nitrides. Nitrogen oxides and nitrogen hydrides are also important substances.</p>",
- "notes": "The section prints no header, so its four blocks carry headers of OmniStax’s own. It keeps as printed “tetraphosphorus decoxide”, “the only known kind of biological organisms” and the full stop inside the subscript of Figure 18.38’s caption. The Sim of the nitrogen dioxide equilibrium takes ΔH = 57.20 kJ for the decomposition of dinitrogen tetraoxide from the chapter on equilibrium.",
+ "summary_html": "<p>氮表现出从 3− 到 5+ 的<span data-concept=\"oxidation-number\">氧化态</span>。由于 N≡N <span data-concept=\"triple-bond\">三键</span>的稳定性，由分子氮制备化合物需要大量的能量。<span data-concept=\"alkali-metal\">碱金属</span>和<span data-concept=\"alkaline-earth-metal\">碱土金属</span>等活泼金属可以还原氮，生成金属氮化物。氮的氧化物和氮的氢化物也是重要的物质。</p>",
+ "notes": "本节没有印刷的标题，所以它的四个部分带有 OmniStax 自拟的标题。本节保留印刷原文：“十氧化四磷”、“已知能够进行固氮的生物只有微生物这一类”，以及图 18.38 图注中下标内的句点。二氧化氮平衡的 Sim 取平衡一章中四氧化二氮分解的 ΔH = 57.20 kJ。",
  "ai": {
   "text": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-10-05",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key, the Lewis structures of fs-idp29787040 and fs-idp9296992 as the key’s own images. The four unkeyed exercises fs-idm31681344 (the hybridization of nitrogen in four species), fs-idp2884576 (the oxidation state of nitrogen in ten species), fs-idp114788336 (the mass of ammonia from 3.0 g each of hydrogen and nitrogen) and fs-idp88710064 (the concentration of a CsOH solution from a titration) are left out, and no answer is computed for them. Exercise 59 prints its part (a) as NH<sup>2−</sup>, kept as printed. Nothing is moved.",
+ "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案取自本书的答案册，fs-idp29787040 和 fs-idp9296992 的路易斯结构式则取自答案册自己的图片。四道没有答案的习题 fs-idm31681344（四种物种中氮的杂化）、fs-idp2884576（十种物种中氮的氧化态）、fs-idp114788336（各 3.0 g 氢和氮所得氨的质量）和 fs-idp88710064（由滴定求 CsOH 溶液的浓度）未收入，也没有为它们计算答案。习题 59 把其（a）小题印作 NH<sup>2−</sup>，照印刷原样保留。没有任何内容被移动。",
  "figures": [
   {
    "id": "fig-nitrogen-cycle",
@@ -38,6 +46,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -51,6 +64,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -64,6 +82,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -77,6 +100,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -90,6 +118,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -103,6 +136,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -127,6 +165,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -140,6 +183,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   }
@@ -147,14 +195,14 @@
  "referents": [
   {
    "id": "n2o4",
-   "label": "dinitrogen tetraoxide, N₂O₄",
+   "label": "四氧化二氮，N₂O₄",
    "figures": [
     "sim-no2-dimer"
    ]
   },
   {
    "id": "no2",
-   "label": "nitrogen dioxide, NO₂",
+   "label": "二氧化氮，NO₂",
    "figures": [
     "sim-no2-dimer"
    ]
@@ -388,11 +436,11 @@
     "at": "end"
    },
    "cite": "occurrence",
-   "prompt": "Write the Lewis structures for each of the following:<br>(a) NH<sup>2−</sup><br>(b) N<sub>2</sub>F<sub>4</sub><br>(c) NH<sub>2</sub><sup>−</sup><br>(d) NF<sub>3</sub><br>(e) N<sub>3</sub><sup>−</sup>",
+   "prompt": "写出下列每一种物质的路易斯结构式：<br>（a）NH<sup>2−</sup><br>（b）N<sub>2</sub>F<sub>4</sub><br>（c）NH<sub>2</sub><sup>−</sup><br>（d）NF<sub>3</sub><br>（e）N<sub>3</sub><sup>−</sup>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) NH<sup>2−</sup>:<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise1a_img.jpg\" alt=\"This Lewis structure shows a nitrogen atom with three lone pairs of electrons single bonded to a hydrogen atom. The structure is surrounded by brackets. Outside and superscript to the brackets is a two negative sign.\"><br>(b) N<sub>2</sub>F<sub>4</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise1b_img.jpg\" alt=\"This Lewis structure shows two nitrogen atoms, each with one lone pair of electrons, single bonded to one another and each single bonded to two fluorine atoms. Each fluorine atom has three lone pairs of electrons.\"><br>(c) NH<sub>2</sub><sup>−</sup>:<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise1c_img.jpg\" alt=\"This Lewis structure shows a nitrogen atom with two lone pairs of electrons single bonded to two hydrogen atoms. The structure is surrounded by brackets. Outside and superscript to the brackets is a negative sign.\"><br>(d) NF<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise1d_img.jpg\" alt=\"This Lewis structure shows a nitrogen atom, with one lone pair of electrons, single bonded to three fluorine atoms. Each fluorine atom has three lone pairs of electrons.\"><br>(e) N<sub>3</sub><sup>−</sup>:<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise1e_img.jpg\" alt=\"Three Lewis structures are shown and connected by double-headed arrows in between. The left structure shows a nitrogen atom with a lone pair of electrons triple bonded to a second nitrogen which is single bonded to a third nitrogen. The third nitrogen has three lone pairs of electrons. The entire structure is surrounded by brackets, and outside and superscript to the brackets is a negative sign. The middle structure shows a nitrogen atom with three lone pair of electrons single bonded to a second nitrogen which is triple bonded to a third nitrogen. The third nitrogen which has one lone pair of electrons. The entire structure is surrounded by brackets, and outside and superscript to the brackets is a negative sign. The right structure shows a nitrogen atom with two lone pairs of electrons double bonded to a second nitrogen which is double bonded to a third nitrogen. The third nitrogen atom has two lone pairs of electrons. The entire structure is surrounded by brackets, and outside and superscript to the brackets is a negative sign.\">"
+    "solution": "（a）NH<sup>2−</sup>：<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise1a_img.jpg\" alt=\"此路易斯结构式显示一个带有三对孤电子对的氮原子与一个氢原子以单键相连。结构式外加方括号，括号外右上角标有二负号。\"><br>（b）N<sub>2</sub>F<sub>4</sub>：<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise1b_img.jpg\" alt=\"此路易斯结构式显示两个氮原子，各带一对孤电子对，彼此以单键相连，并且各与两个氟原子以单键相连。每个氟原子带有三对孤电子对。\"><br>（c）NH<sub>2</sub><sup>−</sup>：<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise1c_img.jpg\" alt=\"此路易斯结构式显示一个带有两对孤电子对的氮原子与两个氢原子以单键相连。结构式外加方括号，括号外右上角标有负号。\"><br>（d）NF<sub>3</sub>：<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise1d_img.jpg\" alt=\"此路易斯结构式显示一个带有一对孤电子对的氮原子与三个氟原子以单键相连。每个氟原子带有三对孤电子对。\"><br>（e）N<sub>3</sub><sup>−</sup>：<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise1e_img.jpg\" alt=\"图中有三个路易斯结构式，之间以双向箭头相连。左边的结构式显示一个带有一对孤电子对的氮原子与第二个氮原子以三键相连，第二个氮原子与第三个氮原子以单键相连。第三个氮原子带有三对孤电子对。整个结构式外加方括号，括号外右上角标有负号。中间的结构式显示一个带有三对孤电子对的氮原子与第二个氮原子以单键相连，第二个氮原子与第三个氮原子以三键相连。第三个氮原子带有一对孤电子对。整个结构式外加方括号，括号外右上角标有负号。右边的结构式显示一个带有两对孤电子对的氮原子与第二个氮原子以双键相连，第二个氮原子与第三个氮原子以双键相连。第三个氮原子带有两对孤电子对。整个结构式外加方括号，括号外右上角标有负号。\">"
    }
   },
   {
@@ -405,11 +453,11 @@
     "at": "end"
    },
    "cite": "occurrence",
-   "prompt": "Explain how ammonia can function both as a Brønsted base and as a Lewis base.",
+   "prompt": "解释氨如何既可以作布朗斯特碱，又可以作路易斯碱。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Ammonia acts as a Brønsted base because it readily accepts protons and as a Lewis base in that it has an electron pair to donate.<br>Brønsted base: ${\\text{NH}}_{3}+{\\text{H}}_{3}{\\text{O}}^{+}\\;\\longrightarrow \\;{\\text{NH}}_{4}{}^{+}+{\\text{H}}_{2}\\text{O}$<br>Lewis base: ${\\text{2NH}}_{3}+{\\text{Ag}}^{+}\\;\\longrightarrow \\;{{\\text{[H}}_{3}\\text{N}-\\text{Ag}-{\\text{NH}}_{3}]}^{+}$"
+    "solution": "氨可以作布朗斯特碱，因为它容易接受质子；也可以作路易斯碱，因为它有一对电子可以给出。<br>布朗斯特碱： ${\\text{NH}}_{3}+{\\text{H}}_{3}{\\text{O}}^{+}\\;\\longrightarrow \\;{\\text{NH}}_{4}{}^{+}+{\\text{H}}_{2}\\text{O}$<br>路易斯碱： ${\\text{2NH}}_{3}+{\\text{Ag}}^{+}\\;\\longrightarrow \\;{{\\text{[H}}_{3}\\text{N}-\\text{Ag}-{\\text{NH}}_{3}]}^{+}$"
    }
   },
   {
@@ -422,11 +470,11 @@
     "at": "end"
    },
    "cite": "dioxide",
-   "prompt": "For each of the following, draw the Lewis structure, predict the ONO bond angle, and give the hybridization of the nitrogen. You may wish to review the chapters on chemical bonding and advanced theories of covalent bonding for relevant examples.<br>(a) NO<sub>2</sub><br>(b) NO<sub>2</sub><sup>−</sup><br>(c) NO<sub>2</sub><sup>+</sup>",
+   "prompt": "对于下列每一种，画出路易斯结构式，预测 ONO 键角，并给出氮的杂化方式。你可以复习化学键与分子几何构型以及共价键的高级理论这两章，以获得相关的例子。<br>（a）NO<sub>2</sub><br>（b）NO<sub>2</sub><sup>−</sup><br>（c）NO<sub>2</sub><sup>+</sup>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) NO<sub>2</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise5a_img.jpg\" alt=\"Two Lewis structures are shown and connected by double-headed arrows in between. The left structure shows a nitrogen atom with a single electron double bonded to an oxygen atom which has two lone pairs of electrons. The nitrogen atom is also single bonded to an oxygen atom with three lone pairs of electrons. The right structure is a mirror image of the left structure.\"><br>Nitrogen is <em>sp</em><sup>2</sup> hybridized. The molecule has a bent geometry with an ONO bond angle of approximately 120°.<br>(b) NO<sub>2</sub><sup>−</sup>:<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise5b_img.jpg\" alt=\"Two Lewis structures are shown and connected by double-headed arrows in between. Each structure is surrounded by brackets, and outside and superscript to the brackets is a negative sign. The left structure shows a nitrogen atom with a lone pair of electrons double bonded to an oxygen atom which has two lone pairs of electrons. The nitrogen atom is also single bonded to an oxygen atom with three lone pair of electrons. The right structure is a mirror image of the left structure.\"><br>Nitrogen is <em>sp</em><sup>2</sup> hybridized. The molecule has a bent geometry with an ONO bond angle slightly less than 120°.<br>(c) NO<sub>2</sub><sup>+</sup>:<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise5c_img.jpg\" alt=\"This Lewis structure shows a nitrogen atom double bonded on both sides to an oxygen atom which has two lone pairs of electrons each. The structure is surrounded by brackets and outside and superscript to the brackets is a negative sign.\"><br>Nitrogen is <em>sp</em> hybridized. The molecule has a linear geometry with an ONO bond angle of 180°."
+    "solution": "（a）NO<sub>2</sub>：<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise5a_img.jpg\" alt=\"图中有两个路易斯结构式，之间以双向箭头相连。左边的结构式显示一个带有一个单电子的氮原子与一个带有两对孤电子对的氧原子以双键相连。该氮原子还与一个带有三对孤电子对的氧原子以单键相连。右边的结构式是左边结构式的镜像。\"><br>氮为 <em>sp</em><sup>2</sup> 杂化。分子呈 V 形，ONO 键角约为 120°。<br>（b）NO<sub>2</sub><sup>−</sup>：<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise5b_img.jpg\" alt=\"图中有两个路易斯结构式，之间以双向箭头相连。每个结构式外加方括号，括号外右上角标有负号。左边的结构式显示一个带有一对孤电子对的氮原子与一个带有两对孤电子对的氧原子以双键相连。该氮原子还与一个带有三对孤电子对的氧原子以单键相连。右边的结构式是左边结构式的镜像。\"><br>氮为 <em>sp</em><sup>2</sup> 杂化。分子呈 V 形，ONO 键角略小于 120°。<br>（c）NO<sub>2</sub><sup>+</sup>：<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise5c_img.jpg\" alt=\"此路易斯结构式显示一个氮原子，两侧各与一个带有两对孤电子对的氧原子以双键相连。结构式外加方括号，括号外右上角标有负号。\"><br>氮为 <em>sp</em> 杂化。分子呈直线形，ONO 键角为 180°。"
    }
   },
   {
@@ -439,11 +487,11 @@
     "at": "end"
    },
    "cite": "occurrence",
-   "prompt": "Although PF<sub>5</sub> and AsF<sub>5</sub> are stable, nitrogen does not form NF<sub>5</sub> molecules. Explain this difference among members of the same group.",
+   "prompt": "虽然 PF<sub>5</sub> 和 AsF<sub>5</sub> 是稳定的，氮却不形成 NF<sub>5</sub> 分子。解释同一族成员之间的这一差异。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Nitrogen cannot form a NF<sub>5</sub> molecule because it does not have <em>d</em> orbitals to bond with the additional two fluorine atoms."
+    "solution": "氮不能形成 NF<sub>5</sub> 分子，因为它没有可与另外两个氟原子成键的 <em>d</em> 轨道。"
    }
   }
  ],

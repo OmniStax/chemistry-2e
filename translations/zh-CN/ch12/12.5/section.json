@@ -2,33 +2,41 @@
  "id": "12.5",
  "module": "m68793",
  "chapter": "12",
- "title": "Collision Theory",
- "short": "Collision Theory",
- "lead": "Molecules react only when they collide, and only when they meet in the right orientation and with enough energy. The minimum energy, the activation energy, links the rate constant to the temperature through the Arrhenius equation.",
+ "title": "碰撞理论",
+ "short": "碰撞理论",
+ "lead": "分子只有在碰撞时才会反应，而且只有在取向正确、能量足够时才会反应。这个最小能量，即活化能，通过阿伦尼乌斯方程把速率常数与温度联系起来。",
  "objectives": [
-  "Use the postulates of collision theory to explain the effects of physical state, temperature, and concentration on reaction rates",
-  "Define the concepts of activation energy and transition state",
-  "Use the Arrhenius equation in calculations relating rate constants to temperature"
+  "用碰撞理论的基本假设解释物理状态、温度和浓度对反应速率的影响",
+  "定义活化能和过渡态的概念",
+  "在涉及速率常数与温度之间关系的计算中使用阿伦尼乌斯方程"
  ],
- "summary_html": "<p>Chemical reactions typically require collisions between reactant species. These reactant collisions must be of proper orientation and sufficient <span data-concept=\"energy-and-work\">energy</span> in order to result in product formation. <span data-concept=\"collision-theory\">Collision theory</span> provides a simple but effective explanation for the effect of many experimental parameters on <span data-concept=\"reaction-rate\">reaction rates</span>. The <span data-concept=\"arrhenius-equation\">Arrhenius equation</span> describes the relation between a reaction’s <span data-concept=\"rate-constant\">rate constant</span>, <span data-concept=\"activation-energy\">activation energy</span>, <span data-concept=\"temperature\">temperature</span>, and dependence on collision orientation.</p>",
- "notes": "Nothing of the section is left out; the stray bold markup after E<sub>a</sub> in Example 12.13’s result is written plainly.",
+ "summary_html": "<p>化学反应通常需要反应物物种之间发生碰撞。这些反应物的碰撞必须取向正确且<span data-concept=\"energy-and-work\">能量</span>足够，才能生成产物。<span data-concept=\"collision-theory\">碰撞理论</span>对许多实验参数如何影响<span data-concept=\"reaction-rate\">反应速率</span>做出了简单而有效的解释。<span data-concept=\"arrhenius-equation\">阿伦尼乌斯方程</span>描述了反应的<span data-concept=\"rate-constant\">速率常数</span>、<span data-concept=\"activation-energy\">活化能</span>、<span data-concept=\"temperature\">温度</span>以及对碰撞取向的依赖关系之间的联系。</p>",
+ "notes": "本节没有任何内容被略去；例 12.13 的结果中，E<sub>a</sub> 之后多余的粗体标记按普通文字写出。",
  "ai": {
   "text": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-10-05",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answer. The three unkeyed numerical exercises are left out, and no answer is computed for them: fs-idm67340288 (a decomposition heated 20 °C higher), fs-idm129065792 (the activation energy of acetaldehyde’s decomposition) and fs-idm166518032 (the reduction of a Co(III) complex). The unkeyed conceptual exercises fs-idm147445136, fs-idm190953584 and fs-idm122581792, and the unkeyed choice item fs-idm3600240, kept as an open item with its options and never graded, carry a suggested approach marked as OmniStax’s own. The two PhET items, fs-idp179196768 (unkeyed, with a suggested approach) and fs-idp11390128 (keyed), are asked of Figure 12.13 + 12.14 instead of the PhET simulation, the carbon monoxide molecule standing for A and the oxygen molecule for BC; the keyed answer is the book’s. The key to fs-idm167771040 gives the activation energy as “108 kJ”, as printed. Numeric answers accept 2% tolerance unless the book rounds more coarsely.",
+ "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案来自书中的答案表和“学习检测”的答案。三道没有答案的数值习题被略去，也没有为它们算出答案：fs-idm67340288（加热温度高 20 °C 的一个分解反应）、fs-idm129065792（乙醛分解的活化能）和 fs-idm166518032（一种 Co(III) 配合物的还原）。没有答案的概念性习题 fs-idm147445136、fs-idm190953584 和 fs-idm122581792，以及没有答案的选择题 fs-idm3600240（作为开放题保留，附带选项，不评分），都带有一个建议的解题思路，标明为 OmniStax 自己所加。两道 PhET 习题 fs-idp179196768（没有答案，带有建议的解题思路）和 fs-idp11390128（有答案）改为针对图 12.13 + 12.14 提问，而不是针对 PhET 模拟，其中一氧化碳分子代表 A，氧分子代表 BC；有答案的那道，答案是书中的。fs-idm167771040 的答案表把活化能写成“108 kJ”，按原样保留。数值答案接受 2% 的容差，除非书中的修约更粗。",
  "figures": [
   {
    "id": "sim-collision",
@@ -41,7 +49,7 @@
     "/media/ch12/CNX_Chem_12_05_COandO2.jpg",
     "/media/ch12/CNX_Chem_12_05_RCooDgm.jpg"
    ],
-   "original_caption": "(Figure 12.13) Illustrated are two collisions that might take place between carbon monoxide and oxygen molecules. The orientation of the colliding molecules partially determines whether a reaction between the two molecules will occur. (Figure 12.14) Reaction diagram for the exothermic reaction A + B ⟶ C + D.",
+   "original_caption": "（图 12.13）图示一氧化碳分子与氧分子之间可能发生的两种碰撞。碰撞分子的取向在一定程度上决定这两个分子之间是否会发生反应。（图 12.14）放热反应 A + B ⟶ C + D 的反应图。",
    "draws": [
     "energy"
    ],
@@ -54,6 +62,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -64,7 +77,7 @@
    "originals": [
     "/media/ch12/CNX_Chem_12_05_SuccessR.jpg"
    ],
-   "original_caption": "Molecular energy distributions showing numbers of molecules with energies exceeding (a) two different activation energies at a given temperature, and (b) a given activation energy at two different temperatures.",
+   "original_caption": "分子能量分布图，显示能量超过下列值的分子数：（a）在给定温度下的两个不同的活化能，（b）在两个不同温度下的给定活化能。",
    "draws": [
     "energy",
     "temperature",
@@ -75,6 +88,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -85,7 +103,7 @@
    "originals": [
     "/media/ch12/CNX_Chem_12_05_ArrhPlot.jpg"
    ],
-   "original_caption": "This graph shows the linear relationship between ln k and 1/T for the reaction 2HI ⟶ H2 + I2 according to the Arrhenius equation.",
+   "original_caption": "此图显示了根据阿伦尼乌斯方程，反应 2HI ⟶ H2 + I2 的 ln k 与 1/T 之间的线性关系。",
    "draws": [
     "energy",
     "rate-constant",
@@ -96,6 +114,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   }
@@ -223,14 +246,14 @@
     "after": "ex-ea"
    },
    "cite": "ex-ea",
-   "prompt": "The rate constant for the rate of decomposition of N<sub>2</sub>O<sub>5</sub> to NO and O<sub>2</sub> in the gas phase is 1.66 L/mol/s at 650 K and 7.39 L/mol/s at 700 K:<br>2N<sub>2</sub>O<sub>5</sub>(<em>g</em>) ⟶ 4NO(<em>g</em>) + 3O<sub>2</sub>(<em>g</em>)<br>Assuming the kinetics of this reaction are consistent with the Arrhenius equation, calculate the activation energy for this decomposition.",
+   "prompt": "N<sub>2</sub>O<sub>5</sub> 在气相中分解为 NO 和 O<sub>2</sub> 的速率常数，在 650 K 时为 1.66 L/mol/s，在 700 K 时为 7.39 L/mol/s：<br>2N<sub>2</sub>O<sub>5</sub>(<em>g</em>) ⟶ 4NO(<em>g</em>) + 3O<sub>2</sub>(<em>g</em>)<br>假设该反应的动力学与阿伦尼乌斯方程一致，计算这一分解反应的活化能。",
    "answer": {
     "type": "number",
     "value": 110000.0,
     "unit": "J/mol",
     "tol": 0.05,
-    "hint": "Put the two rate constants and their temperatures into the two-point form of the Arrhenius equation and solve for the activation energy.",
-    "solution": "1.1 × 10<sup>5</sup> J mol<sup>−1</sup> or 110 kJ mol<sup>−1</sup>",
+    "hint": "把两个速率常数及其温度代入阿伦尼乌斯方程的两点形式，解出活化能。",
+    "solution": "1.1 × 10<sup>5</sup> J mol<sup>−1</sup> 或 110 kJ mol<sup>−1</sup>",
     "generated_by": "source"
    }
   },
@@ -243,10 +266,10 @@
     "at": "end"
    },
    "cite": "orientation",
-   "prompt": "Chemical reactions occur when reactants collide. What are two factors that may prevent a collision from producing a chemical reaction?",
+   "prompt": "化学反应发生在反应物碰撞时。有哪两个因素可能使碰撞不能产生化学反应？",
    "answer": {
     "type": "open",
-    "solution": "The reactants either may be moving too slowly to have enough kinetic energy to exceed the activation energy for the reaction, or the orientation of the molecules when they collide may prevent the reaction from occurring.",
+    "solution": "反应物可能运动得太慢，动能不足以超过反应的活化能；或者分子碰撞时的取向可能妨碍反应发生。",
     "generated_by": "source"
    }
   },
@@ -259,11 +282,11 @@
     "at": "end"
    },
    "cite": "postulates",
-   "prompt": "When every collision between reactants leads to a reaction, what determines the rate at which the reaction occurs?",
+   "prompt": "当反应物之间的每一次碰撞都导致反应时，是什么决定反应发生的速率？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The rate is then set by the frequency of collisions, the number of collisions between reactant species per unit time. The first postulate of collision theory states that the reaction rate is proportional to the rate of reactant collisions, $\\text{reaction rate}\\;\\propto \\;\\frac{\\#\\;\\text{collisions}}{\\text{time}}$, and postulates 2 and 3, on orientation and energy, ordinarily turn many collisions away. If every collision reacts, those two factors no longer reduce the rate, and the rate equals the collision rate. That collision rate grows with the concentrations of the reactants, since more reactant molecules in a given volume meet more often, and with the temperature, since faster-moving molecules collide more often."
+    "solution": "此时速率由碰撞频率决定，即单位时间内反应物物种之间的碰撞次数。碰撞理论的第一个假设指出，反应速率与反应物的碰撞速率成正比，$\\text{反应速率}\\;\\propto \\;\\frac{\\#\\;\\text{碰撞}}{\\text{时间}}$，而关于取向和能量的假设 2 和假设 3，通常会使许多碰撞无功而返。如果每次碰撞都发生反应，这两个因素就不再降低速率，速率等于碰撞速率。碰撞速率随反应物浓度增大而增大，因为在给定体积内有更多的反应物分子，相遇得更频繁；也随温度升高而增大，因为运动更快的分子碰撞得更频繁。"
    }
   },
   {
@@ -275,10 +298,10 @@
     "at": "end"
    },
    "cite": "activation",
-   "prompt": "What is the activation energy of a reaction, and how is this energy related to the activated complex of the reaction?",
+   "prompt": "反应的活化能是什么？这一能量与反应的活化络合物有什么关系？",
    "answer": {
     "type": "open",
-    "solution": "The activation energy is the minimum amount of energy necessary to form the activated complex in a reaction. It is usually expressed as the energy necessary to form one mole of activated complex.",
+    "solution": "活化能是反应中形成活化络合物所需的最小能量。它通常表示为形成 1 摩尔活化络合物所需的能量。",
     "generated_by": "source"
    }
   },
@@ -291,11 +314,11 @@
     "at": "end"
    },
    "cite": "arrhenius",
-   "prompt": "Account for the relationship between the rate of a reaction and its activation energy.",
+   "prompt": "解释反应速率与其活化能之间的关系。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The higher the activation energy, the slower the reaction; the lower the activation energy, the faster the reaction. Only molecules whose collisions carry at least the activation energy, $\\kEa$, can react. In the distribution of molecular energies at a given temperature, the molecules with that much energy form the tail of the curve beyond $\\kEa$. A larger $\\kEa$ moves that boundary farther out, so a smaller fraction of molecules qualifies and fewer collisions succeed; a smaller $\\kEa$ leaves a larger fraction adequately energized. The Arrhenius equation, $\\kk=\\kAfreq{e}^{-\\kEa/R\\kT}$, expresses this: the exponential term ${e}^{-\\kEa/R\\kT}$ is the fraction of molecules with sufficient energy, and it falls steeply as $\\kEa$ rises, so the rate constant, and with it the rate, decreases."
+    "solution": "活化能越高，反应越慢；活化能越低，反应越快。只有碰撞所带能量至少等于活化能 $\\kEa$ 的分子才能发生反应。在给定温度下的分子能量分布中，具有这么多能量的分子构成曲线在 $\\kEa$ 之外的尾部。$\\kEa$ 越大，这个界限就移得越远，符合条件的分子所占的比例就越小，成功的碰撞也就越少；$\\kEa$ 越小，能量足够的分子所占的比例就越大。阿伦尼乌斯方程 $\\kk=\\kAfreq{e}^{-\\kEa/R\\kT}$ 表达了这一点：指数项 ${e}^{-\\kEa/R\\kT}$ 是能量足够的分子所占的比例，它随 $\\kEa$ 增大而急剧下降，所以速率常数以及速率随之减小。"
    }
   },
   {
@@ -307,10 +330,10 @@
     "at": "end"
    },
    "cite": "graphical",
-   "prompt": "Describe how graphical methods can be used to determine the activation energy of a reaction from a series of data that includes the rate of reaction at varying temperatures.",
+   "prompt": "说明如何用图解法，由包含不同温度下反应速率的一系列数据来确定反应的活化能。",
    "answer": {
     "type": "open",
-    "solution": "After finding <em>k</em> at several different temperatures, a plot of ln <em>k</em> versus 1/<em>T</em>, gives a straight line with the slope −<em>E</em><sub>a</sub>/<em>R</em> from which <em>E</em><sub>a</sub> may be determined.",
+    "solution": "在求出几个不同温度下的 <em>k</em> 之后，作 ln <em>k</em> 对 1/<em>T</em> 的图，得到斜率为 −<em>E</em><sub>a</sub>/<em>R</em> 的直线，由此可以确定 <em>E</em><sub>a</sub>。",
     "generated_by": "source"
    }
   },
@@ -323,11 +346,11 @@
     "at": "end"
    },
    "cite": "arrhenius",
-   "prompt": "How does an increase in temperature affect rate of reaction? Explain this effect in terms of the collision theory of the reaction rate.",
+   "prompt": "温度升高如何影响反应速率？请用反应速率的碰撞理论解释这一影响。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "An increase in temperature increases the rate of reaction. In terms of collision theory, it has two effects. The molecules move faster, so they collide more often, and a larger fraction of the molecules carry at least the activation energy, $\\kEa$, so a larger share of the collisions lead to reaction. The second effect is by far the larger: at a higher temperature the energy distribution flattens and spreads, and its tail beyond $\\kEa$ grows many times over. For a reaction with $\\kEa$ = 50 kJ/mol, raising the temperature from 300 K to 310 K raises the collision frequency by less than 2%, but the fraction of molecules with sufficient energy, ${e}^{-\\kEa/R\\kT}$, rises by a factor of about 1.9. In the Arrhenius equation this appears as a larger rate constant and a correspondingly faster reaction."
+    "solution": "温度升高使反应速率增大。按碰撞理论，这有两方面的作用。分子运动得更快，所以碰撞得更频繁；而且有更大比例的分子所带能量至少等于活化能 $\\kEa$，所以有更大份额的碰撞导致反应。第二方面的作用要大得多：温度较高时，能量分布变得更平、更宽，其在 $\\kEa$ 之外的尾部成倍增大。对于 $\\kEa$ = 50 kJ/mol 的反应，温度从 300 K 升高到 310 K，碰撞频率增大不到 2%，但能量足够的分子所占的比例 ${e}^{-\\kEa/R\\kT}$ 却变为原来的约 1.9 倍。在阿伦尼乌斯方程中，这表现为速率常数增大，反应相应加快。"
    }
   },
   {
@@ -339,7 +362,7 @@
     "at": "end"
    },
    "cite": "arrhenius",
-   "prompt": "The rate of a certain reaction doubles for every 10 °C rise in temperature.<br>(a) How much faster does the reaction proceed at 45 °C than at 25 °C?<br>(b) How much faster does the reaction proceed at 95 °C than at 25 °C?",
+   "prompt": "某个反应的速率，温度每升高 10 °C 就加倍。<br>（a）反应在 45 °C 时的速率是 25 °C 时的多少倍？<br>（b）反应在 95 °C 时的速率是 25 °C 时的多少倍？",
    "answer": {
     "type": "multi",
     "parts": [
@@ -347,16 +370,16 @@
       "part": "(a)",
       "value": 4,
       "unit": "times",
-      "hint": "Count the 10 °C steps from 25 °C to 45 °C, and double once for each."
+      "hint": "数一数从 25 °C 到 45 °C 有几个 10 °C 的台阶，每一个台阶加倍一次。"
      },
      {
       "part": "(b)",
       "value": 128,
       "unit": "times",
-      "hint": "Count the 10 °C steps from 25 °C to 95 °C, and double once for each."
+      "hint": "数一数从 25 °C 到 95 °C 有几个 10 °C 的台阶，每一个台阶加倍一次。"
      }
     ],
-    "solution": "(a) 4-times faster (b) 128-times faster",
+    "solution": "（a）是 25 °C 时的 4 倍（b）是 25 °C 时的 128 倍",
     "generated_by": "source"
    }
   },
@@ -369,13 +392,13 @@
     "at": "end"
    },
    "cite": "arrhenius",
-   "prompt": "The rate constant at 325 °C for the decomposition reaction C<sub>4</sub>H<sub>8</sub> ⟶ 2C<sub>2</sub>H<sub>4</sub> is 6.1 × 10<sup>−8</sup> s<sup>−1</sup>, and the activation energy is 261 kJ per mole of C<sub>4</sub>H<sub>8</sub>. Determine the frequency factor for the reaction.",
+   "prompt": "分解反应 C<sub>4</sub>H<sub>8</sub> ⟶ 2C<sub>2</sub>H<sub>4</sub> 在 325 °C 时的速率常数为 6.1 × 10<sup>−8</sup> s<sup>−1</sup>，活化能为每摩尔 C<sub>4</sub>H<sub>8</sub> 261 kJ。求该反应的频率因子。",
    "answer": {
     "type": "number",
     "value": 3900000000000000.0,
     "unit": "s⁻¹",
     "tol": 0.05,
-    "hint": "Convert the temperature to kelvin and the activation energy to joules per mole, then solve the Arrhenius equation for A.",
+    "hint": "把温度换算成开尔文，把活化能换算成焦耳每摩尔，然后对阿伦尼乌斯方程解出 A。",
     "solution": "3.9 × 10<sup>15</sup> s<sup>−1</sup>",
     "generated_by": "source"
    }
@@ -389,12 +412,12 @@
     "at": "end"
    },
    "cite": "ex-ea",
-   "prompt": "An elevated level of the enzyme alkaline phosphatase (ALP) in human serum is an indication of possible liver or bone disorder. The level of serum ALP is so low that it is very difficult to measure directly. However, ALP catalyzes a number of reactions, and its relative concentration can be determined by measuring the rate of one of these reactions under controlled conditions. One such reaction is the conversion of p-nitrophenyl phosphate (PNPP) to p-nitrophenoxide ion (PNP) and phosphate ion. Control of temperature during the test is very important; the rate of the reaction increases 1.47 times if the temperature changes from 30 °C to 37 °C. What is the activation energy for the ALP–catalyzed conversion of PNPP to PNP and phosphate?",
+   "prompt": "人血清中碱性磷酸酶（ALP）水平升高，表明可能有肝脏或骨骼疾病。血清 ALP 的水平非常低，很难直接测量。但是，ALP 催化许多反应，可以通过在受控条件下测量其中一个反应的速率来确定它的相对浓度。其中一个这样的反应，是磷酸对硝基苯酯（PNPP）转化为对硝基苯酚根离子（PNP）和磷酸根离子。测试过程中对温度的控制非常重要；温度从 30 °C 变为 37 °C 时，反应速率增大到 1.47 倍。ALP 催化的 PNPP 转化为 PNP 和磷酸根的反应，其活化能是多少？",
    "answer": {
     "type": "number",
     "value": 43.0,
     "unit": "kJ/mol",
-    "hint": "The ratio of the rate constants is the ratio of the rates, 1.47; put it and the two temperatures in kelvin into the two-point form of the Arrhenius equation.",
+    "hint": "速率常数之比就是速率之比，即 1.47；把它和以开尔文表示的两个温度代入阿伦尼乌斯方程的两点形式。",
     "solution": "43.0 kJ/mol",
     "generated_by": "source"
    }
@@ -408,11 +431,11 @@
     "at": "end"
    },
    "cite": "postulates",
-   "prompt": "In terms of collision theory, to which of the following is the rate of a chemical reaction proportional?<br>(a) the change in free energy per second<br>(b) the change in temperature per second<br>(c) the number of collisions per second<br>(d) the number of product molecules",
+   "prompt": "按碰撞理论，化学反应的速率与下列哪一项成正比？<br>（a）每秒自由能的变化<br>（b）每秒温度的变化<br>（c）每秒的碰撞次数<br>（d）产物分子的数目",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "(c) the number of collisions per second. The first postulate of collision theory states that the rate of a reaction is proportional to the rate of reactant collisions, $\\text{reaction rate}\\;\\propto \\;\\frac{\\#\\;\\text{collisions}}{\\text{time}}$, which is the number of collisions per second. The change in free energy and the change in temperature describe the thermodynamics and conditions of the reaction, not how often the reactants meet, and the number of product molecules is an amount, not a rate."
+    "solution": "（c）每秒的碰撞次数。碰撞理论的第一个假设指出，反应速率与反应物的碰撞速率成正比，$\\text{反应速率}\\;\\propto \\;\\frac{\\#\\;\\text{碰撞}}{\\text{时间}}$，也就是每秒的碰撞次数。自由能的变化和温度的变化描述的是反应的热力学和条件，而不是反应物相遇的频繁程度；产物分子的数目是一个量，不是速率。"
    }
   },
   {
@@ -424,13 +447,13 @@
     "at": "end"
    },
    "cite": "ex-ea",
-   "prompt": "Hydrogen iodide, HI, decomposes in the gas phase to produce hydrogen, H<sub>2</sub>, and iodine, I<sub>2</sub>. The value of the rate constant, <em>k</em>, for the reaction was measured at several different temperatures and the data are shown here:<br><table><thead><tr><th>Temperature (K)</th><th><em>k</em> (L mol<sup>−1</sup> s<sup>−1</sup>)</th></tr></thead><tbody><tr><td>555</td><td>6.23 × 10<sup>−7</sup></td></tr><tr><td>575</td><td>2.42 × 10<sup>−6</sup></td></tr><tr><td>645</td><td>1.44 × 10<sup>−4</sup></td></tr><tr><td>700</td><td>2.01 × 10<sup>−3</sup></td></tr></tbody></table>What is the value of the activation energy (in kJ/mol) for this reaction?",
+   "prompt": "碘化氢 HI 在气相中分解，生成氢气 H<sub>2</sub> 和碘 I<sub>2</sub>。在几个不同的温度下测定了该反应的速率常数 <em>k</em>，数据如下：<br><table><thead><tr><th>温度（K）</th><th><em>k</em> (L mol<sup>−1</sup> s<sup>−1</sup>)</th></tr></thead><tbody><tr><td>555</td><td>6.23 × 10<sup>−7</sup></td></tr><tr><td>575</td><td>2.42 × 10<sup>−6</sup></td></tr><tr><td>645</td><td>1.44 × 10<sup>−4</sup></td></tr><tr><td>700</td><td>2.01 × 10<sup>−3</sup></td></tr></tbody></table>该反应的活化能（以 kJ/mol 为单位）是多少？",
    "answer": {
     "type": "number",
     "value": 177,
     "unit": "kJ/mol",
     "tol": 0.03,
-    "hint": "Plot ln k against 1/T, or take the first and last rows, and multiply the negative of the slope by R.",
+    "hint": "作 ln k 对 1/T 的图，或取第一行和最后一行，把斜率的负值乘以 R。",
     "solution": "177 kJ/mol",
     "generated_by": "source"
    }
@@ -444,7 +467,7 @@
     "at": "end"
    },
    "cite": "ex-ea",
-   "prompt": "The hydrolysis of the sugar sucrose to the sugars glucose and fructose,<br>C<sub>12</sub>H<sub>22</sub>O<sub>11</sub> + H<sub>2</sub>O ⟶ C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + C<sub>6</sub>H<sub>12</sub>O<sub>6</sub><br>follows a first-order rate law for the disappearance of sucrose: rate = <em>k</em>[C<sub>12</sub>H<sub>22</sub>O<sub>11</sub>] (The products of the reaction, glucose and fructose, have the same molecular formulas but differ in the arrangement of the atoms in their molecules.)<br>(a) In neutral solution, <em>k</em> = 2.1 × 10<sup>−11</sup> s<sup>−1</sup> at 27 °C and 8.5 × 10<sup>−11</sup> s<sup>−1</sup> at 37 °C. Determine the activation energy, the frequency factor, and the rate constant for this equation at 47 °C (assuming the kinetics remain consistent with the Arrhenius equation at this temperature).<br>(b) When a solution of sucrose with an initial concentration of 0.150 <em>M</em> reaches equilibrium, the concentration of sucrose is 1.65 × 10<sup>−7</sup> <em>M</em>. How long will it take the solution to reach equilibrium at 27 °C in the absence of a catalyst? Because the concentration of sucrose at equilibrium is so low, assume that the reaction is irreversible.<br>(c) Why does assuming that the reaction is irreversible simplify the calculation in part (b)?",
+   "prompt": "蔗糖水解为葡萄糖和果糖，<br>C<sub>12</sub>H<sub>22</sub>O<sub>11</sub> + H<sub>2</sub>O ⟶ C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + C<sub>6</sub>H<sub>12</sub>O<sub>6</sub><br>蔗糖的消失遵循一级速率定律：速率 = <em>k</em>[C<sub>12</sub>H<sub>22</sub>O<sub>11</sub>]（反应的产物葡萄糖和果糖分子式相同，但分子中原子的排列不同。）<br>（a）在中性溶液中，27 °C 时 <em>k</em> = 2.1 × 10<sup>−11</sup> s<sup>−1</sup>，37 °C 时为 8.5 × 10<sup>−11</sup> s<sup>−1</sup>。求这个方程的活化能、频率因子，以及 47 °C 时的速率常数（假设在该温度下动力学仍与阿伦尼乌斯方程一致）。<br>（b）初始浓度为 0.150 <em>M</em> 的蔗糖溶液达到平衡时，蔗糖的浓度为 1.65 × 10<sup>−7</sup> <em>M</em>。在没有催化剂的情况下，溶液在 27 °C 达到平衡需要多长时间？由于平衡时蔗糖的浓度非常低，假设该反应是不可逆的。<br>（c）为什么假设反应不可逆会使（b）的计算变得简单？",
    "answer": {
     "type": "multi",
     "parts": [
@@ -453,31 +476,31 @@
       "value": 108,
       "unit": "kJ/mol",
       "tol": 0.03,
-      "hint": "Use the two-point form of the Arrhenius equation with both temperatures in kelvin."
+      "hint": "用阿伦尼乌斯方程的两点形式，两个温度都用开尔文。"
      },
      {
       "part": "(a) frequency factor",
       "value": 200000000.0,
       "unit": "s⁻¹",
       "tol": 0.06,
-      "hint": "Put the activation energy and either rate constant into the Arrhenius equation and solve for A."
+      "hint": "把活化能和任一速率常数代入阿伦尼乌斯方程，解出 A。"
      },
      {
       "part": "(a) rate constant at 47 °C",
       "value": 3.2e-10,
       "unit": "s⁻¹",
       "tol": 0.05,
-      "hint": "Use A and the activation energy in the Arrhenius equation at 320 K."
+      "hint": "在 320 K 时，把 A 和活化能代入阿伦尼乌斯方程。"
      },
      {
       "part": "(b)",
       "value": 181000000.0,
       "unit": "h",
       "tol": 0.03,
-      "hint": "Use the first-order integrated rate law with the rate constant at 27 °C."
+      "hint": "用一级积分速率定律和 27 °C 时的速率常数。"
      }
     ],
-    "solution": "<em>E</em><sub>a</sub> = 108 kJ<sup class=\"fn\" data-note=\"c-e12-ea\"></sup>; <em>A</em> = 2.0 × 10<sup>8</sup> s<sup>−1</sup>; <em>k</em> = 3.2 × 10<sup>−10</sup> s<sup>−1</sup>; (b) 1.81 × 10<sup>8</sup> h or 7.6 × 10<sup>6</sup> day; (c) Assuming that the reaction is irreversible simplifies the calculation because we do not have to account for any reactant that, having been converted to product, returns to the original state.",
+    "solution": "<em>E</em><sub>a</sub> = 108 kJ<sup class=\"fn\" data-note=\"c-e12-ea\"></sup>；<em>A</em> = 2.0 × 10<sup>8</sup> s<sup>−1</sup>；<em>k</em> = 3.2 × 10<sup>−10</sup> s<sup>−1</sup>；（b）1.81 × 10<sup>8</sup> h 或 7.6 × 10<sup>6</sup> 天；（c）假设反应不可逆会使计算变得简单，因为我们不必考虑任何已转化为产物后又回到原来状态的反应物。",
     "generated_by": "source"
    }
   },
@@ -490,11 +513,11 @@
     "at": "end"
    },
    "cite": "orientation",
-   "prompt": "Use Figure 12.13 + 12.14, where the carbon monoxide molecule plays <em>A</em> and the oxygen molecule plays <em>BC</em> in a reaction <em>A</em> + <em>BC</em> ⟶ <em>AB</em> + <em>C</em>, and the reaction diagram beneath the molecules is the energy view. With the carbon end first, try launching the collision with varying amounts of energy. What changes when the collision energy line is below the transition state of the energy curve? Why? What happens when it is above the transition state? Why?",
+   "prompt": "使用图 12.13 + 12.14，其中一氧化碳分子代表 <em>A</em>，氧分子代表 <em>BC</em>，反应为 <em>A</em> + <em>BC</em> ⟶ <em>AB</em> + <em>C</em>，分子下方的反应图是能量视图。让碳端先碰撞，尝试以不同的能量发起碰撞。当碰撞能量线低于能量曲线的过渡态时，什么发生了变化？为什么？当它高于过渡态时，又会发生什么？为什么？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "When the collision energy line is below the transition state, the reaction does not occur: the molecules bounce apart unchanged as CO and O<sub>2</sub>. As the molecules close in, their kinetic energy goes into climbing the barrier, so the dot rises only until its height equals the collision energy, where the curve meets the dashed line, and there it turns back. The collision brings less than the activation energy, about 200 kJ/mol for this reaction, so the pair never reaches the transition state and its valence shells cannot penetrate far enough for bonds to rearrange. When the collision energy line is above the transition state, the reaction occurs: the dot passes over the peak, the pair forms the activated complex, and it decays to products, CO<sub>2</sub> and an oxygen atom (<em>AB</em> + <em>C</em>), ending 34 kJ/mol lower than it began. A collision with the carbon end first and with at least the activation energy meets both the orientation and the energy requirements of collision theory, so it succeeds."
+    "solution": "当碰撞能量线低于过渡态时，反应不发生：分子相互弹开，仍是 CO 和 O<sub>2</sub>，没有变化。分子靠近时，它们的动能用于爬上能垒，所以圆点只上升到其高度等于碰撞能量为止，即曲线与虚线相交处，并在那里折回。这次碰撞所带的能量小于活化能（对这个反应约为 200 kJ/mol），所以这对分子始终达不到过渡态，其价层也无法穿透到足以让化学键重新排布的程度。当碰撞能量线高于过渡态时，反应发生：圆点越过峰顶，这对分子形成活化络合物，并分解为产物 CO<sub>2</sub> 和一个氧原子（<em>AB</em> + <em>C</em>），最终的能量比开始时低 34 kJ/mol。碳端先碰撞且能量至少等于活化能的碰撞，同时满足碰撞理论对取向和能量的要求，所以能够成功。"
    }
   },
   {
@@ -506,10 +529,10 @@
     "at": "end"
    },
    "cite": "orientation",
-   "prompt": "Use Figure 12.13 + 12.14, where the carbon monoxide molecule plays <em>A</em> and the oxygen molecule plays <em>BC</em> in a reaction <em>A</em> + <em>BC</em> ⟶ <em>AB</em> + <em>C</em>, and the reaction diagram beneath the molecules is the energy view. Give the collision more energy than the transition state, and launch <em>A</em> at <em>BC</em> first with its carbon end and then with its oxygen end. What happens when the <em>A</em> atom hits the <em>BC</em> molecule from different directions? Why?",
+   "prompt": "使用图 12.13 + 12.14，其中一氧化碳分子代表 <em>A</em>，氧分子代表 <em>BC</em>，反应为 <em>A</em> + <em>BC</em> ⟶ <em>AB</em> + <em>C</em>，分子下方的反应图是能量视图。让碰撞的能量高于过渡态，先以碳端、再以氧端让 <em>A</em> 撞向 <em>BC</em>。当 <em>A</em> 原子从不同方向撞上 <em>BC</em> 分子时，会发生什么？为什么？",
    "answer": {
     "type": "open",
-    "solution": "The <em>A</em> atom has enough energy to react with <em>BC</em>; however, the different angles at which it bounces off of <em>BC</em> without reacting indicate that the orientation of the molecule is an important part of the reaction kinetics and determines whether a reaction will occur.",
+    "solution": "<em>A</em> 原子具有足够的能量与 <em>BC</em> 反应；然而，它从 <em>BC</em> 上弹开而不发生反应时的角度各不相同，这表明分子的取向是反应动力学的重要组成部分，并决定反应是否会发生。",
     "generated_by": "source"
    }
   }
@@ -616,14 +639,14 @@
   {
    "id": "c-e12-ea",
    "kind": "correction",
-   "html": "The key gives the activation energy in kJ; it is a molar quantity, <em>E</em><sub>a</sub> = 108 kJ/mol."
+   "html": "答案表把活化能写成以 kJ 为单位；它是一个摩尔量，<em>E</em><sub>a</sub> = 108 kJ/mol。"
   }
  ],
  "derivations": [
   {
    "id": "arrhenius-two-point",
-   "what": "the two-point form of the Arrhenius equation",
-   "source": "Chemistry 2e, 12.5 Collision Theory, Example 12.13",
+   "what": "阿伦尼乌斯方程的两点形式",
+   "source": "化学（第2版），12.5 碰撞理论，例 12.13",
    "nodes": [
     {
      "assumes": [
@@ -633,13 +656,13 @@
       },
       {
        "tex": "\\ln x - \\ln y = \\ln\\frac{x}{y}",
-       "src": "Appendix B"
+       "src": "附录 B"
       }
      ],
      "then": {
       "tex": "\\mk{l1}{\\ln\\kkone} = \\mk{e1}{\\left(\\frac{-\\kEa}{R}\\right)}\\mk{t1}{\\left(\\frac{1}{\\kTone}\\right)}+\\mk{a1}{\\ln\\kAfreq}",
       "src": "12.5",
-      "why": "The linear form of the Arrhenius equation at the first temperature, $T_1$, where the rate constant is $k_1$."
+      "why": "阿伦尼乌斯方程在第一个温度 $T_1$ 下的线性形式，此时速率常数为 $k_1$。"
      },
      "steps": [
       {
@@ -673,7 +696,7 @@
        }
       }
      ],
-     "src": "Example 12.13"
+     "src": "例 12.13"
     },
     {
      "assumes": [
@@ -682,12 +705,12 @@
       },
       {
        "tex": "\\ln\\frac{x}{y} = \\ln x - \\ln y",
-       "src": "Appendix B"
+       "src": "附录 B"
       }
      ],
      "then": {
       "tex": "\\mk{l1}{\\ln\\frac{\\kkone}{\\kktwo}} = \\mk{e1}{\\frac{\\kEa}{R}}\\left(\\mk{t2}{\\frac{1}{\\kTtwo}} - \\mk{t1}{\\frac{1}{\\kTone}}\\right)",
-      "src": "Example 12.13"
+      "src": "例 12.13"
      },
      "steps": [
       {
@@ -711,7 +734,7 @@
        "uses": []
       }
      ],
-     "src": "Example 12.13"
+     "src": "例 12.13"
     }
    ]
   }

@@ -4,7 +4,7 @@ window.OMNISTAX_FIGURES['2.7'] = function (root, F) {
 const { el, tex, PAL, register, begin, line, text, headline } = F;
 const sim = (id, H) => F.sim(root, id, H);
 function readout(host, main, small) { tex(host, main); if (small) host.appendChild(el('small', null, small)); }
-const NAME = { Cr: 'chromium', O: 'oxygen' };
+const NAME = { Cr: '铬', O: '氧' };
 const T3 = () => window.THREE;
 const palSig = () => [PAL.ink, PAL.panel, PAL.muted, F.el('Cr'), F.el('O')].join('|');
 
@@ -41,19 +41,19 @@ const DICHROMATE_3D = (() => {
 })();
 const ION = {
   chromate: {
-    formula: '\\text{CrO}_4^{\\;2-}', uni: 'CrO₄²⁻', count: 'one chromium atom and four oxygen atoms',
+    formula: '\\text{CrO}_4^{\\;2-}', uni: 'CrO₄²⁻', count: '一个铬原子和四个氧原子',
     flat: [['Cr', 0, 0], ['O', 0, -1], ['O', 0, 1], ['O', -1, 0], ['O', 1, 0]], fb: [[0, 1, 2], [0, 2, 2], [0, 3, 1], [0, 4, 1]],
     ...CHROMATE_3D,
-    shows: { struct: 'The structural formula of chromate shows the chromium atom bonded to four oxygen atoms, two of them by double bonds.',
-      ball: 'The ball-and-stick model of chromate shows the four oxygen atoms at the corners of a tetrahedron around the chromium atom.' },
+    shows: { struct: '铬酸根离子的结构式显示铬原子与四个氧原子相连，其中两个以双键相连。',
+      ball: '铬酸根离子的球棍模型显示四个氧原子位于铬原子周围四面体的顶角。' },
   },
   dichromate: {
-    formula: '\\text{Cr}_2\\text{O}_7^{\\;2-}', uni: 'Cr₂O₇²⁻', count: 'two chromium atoms and seven oxygen atoms',
+    formula: '\\text{Cr}_2\\text{O}_7^{\\;2-}', uni: 'Cr₂O₇²⁻', count: '两个铬原子和七个氧原子',
     flat: [['O', 0, 0], ['Cr', -1, 0], ['Cr', 1, 0], ['O', -1, -1], ['O', -1, 1], ['O', -2, 0], ['O', 1, -1], ['O', 1, 1], ['O', 2, 0]],
     fb: [[0, 1, 1], [0, 2, 1], [1, 3, 2], [1, 4, 2], [1, 5, 1], [2, 6, 2], [2, 7, 2], [2, 8, 1]],
     ...DICHROMATE_3D,
-    shows: { struct: 'The structural formula of dichromate shows two chromium atoms joined through one shared oxygen atom.',
-      ball: 'The ball-and-stick model of dichromate shows two tetrahedra of oxygen atoms sharing one corner.' },
+    shows: { struct: '重铬酸根离子的结构式显示两个铬原子通过一个共用的氧原子相连。',
+      ball: '重铬酸根离子的球棍模型显示两个由氧原子构成的四面体共用一个顶角。' },
   },
 };
 const R_BALL = { Cr: 0.44, O: 0.34 };
@@ -66,8 +66,8 @@ const R_BALL = { Cr: 0.44, O: 0.34 };
    ===================================================================== */
 (function () {
   const d = sim('fig-chromate', 470);
-  const I = F.choice(d.controls, { label: '\\text{ion}', options: [{ value: 'chromate', label: 'chromate' }, { value: 'dichromate', label: 'dichromate' }], value: 'chromate', aria: 'which ion', onInput: show });
-  const M = F.choice(d.controls, { label: '\\text{model}', options: [{ value: 'struct', label: 'structural formula' }, { value: 'ball', label: 'ball-and-stick' }], value: 'struct', aria: 'how the ion is represented', onInput: show });
+  const I = F.choice(d.controls, { label: '\\text{离子}', options: [{ value: 'chromate', label: '铬酸根离子' }, { value: 'dichromate', label: '重铬酸根离子' }], value: 'chromate', aria: '选择哪种离子', onInput: show });
+  const M = F.choice(d.controls, { label: '\\text{模型}', options: [{ value: 'struct', label: '结构式' }, { value: 'ball', label: '球棍模型' }], value: 'struct', aria: '离子的表示方式', onInput: show });
   let hits = [];
   F.hover(d.stage, () => (M.value === 'struct' ? hits : []));
   function draw2d() {
@@ -76,7 +76,7 @@ const R_BALL = { Cr: 0.44, O: 0.34 };
     const L = 110, cx = 700, cy = 280;
     const P = m.flat.map((a) => [cx + a[1] * L, cy + a[2] * L]);
     m.fb.forEach(([i, j, o]) => bond2(ctx, P[i], P[j], o));
-    m.flat.forEach((a, i) => { text(ctx, a[0], P[i][0], P[i][1], PAL.ink, { size: 40, align: 'center' }); hits.push({ x: P[i][0], y: P[i][1], r: 26, name: NAME[a[0]] + ' atom' }); });
+    m.flat.forEach((a, i) => { text(ctx, a[0], P[i][0], P[i][1], PAL.ink, { size: 40, align: 'center' }); hits.push({ x: P[i][0], y: P[i][1], r: 26, name: NAME[a[0]] + '原子' }); });
     const xs = P.map((p) => p[0]), ys = P.map((p) => p[1]);
     const x0 = Math.min(...xs) - 50, x1 = Math.max(...xs) + 50, y0 = Math.min(...ys) - 40, y1 = Math.max(...ys) + 40;
     [[x0, 1], [x1, -1]].forEach(([x, s]) => { line(ctx, x + 14 * s, y0, x, y0, PAL.ink, 3); line(ctx, x, y0, x, y1, PAL.ink, 3); line(ctx, x, y1, x + 14 * s, y1, PAL.ink, 3); });
@@ -84,7 +84,7 @@ const R_BALL = { Cr: 0.44, O: 0.34 };
   }
   let v = null, grp = null, sig = '';
   function mount() {
-    v = F.view3d(d.stage, { spin: 'idle', views: [{ label: 'front', yaw: 0, pitch: 0 }, { label: 'above', yaw: 0, pitch: 1.4 }], h: 420, dist: 10, tilt: 0.3 });
+    v = F.view3d(d.stage, { spin: 'idle', views: [{ label: '正面', yaw: 0, pitch: 0 }, { label: '俯视', yaw: 0, pitch: 1.4 }], h: 420, dist: 10, tilt: 0.3 });
     grp = v.part(0);
   }
   function build() {
@@ -93,7 +93,7 @@ const R_BALL = { Cr: 0.44, O: 0.34 };
     v.clear();
     const sticks = new (T3().Group)(); grp.add(sticks);
     m.B.forEach(([i, j, o]) => F.mesh.bond(sticks, m.A[i].slice(1), m.A[j].slice(1), o, 0.07));
-    m.A.forEach((a) => v.pickable(F.mesh.sphere(grp, a.slice(1), R_BALL[a[0]], F.el(a[0])), NAME[a[0]] + ' atom'));
+    m.A.forEach((a) => v.pickable(F.mesh.sphere(grp, a.slice(1), R_BALL[a[0]], F.el(a[0])), NAME[a[0]] + '原子'));
   }
   function draw3d() {
     build();
@@ -110,7 +110,7 @@ const R_BALL = { Cr: 0.44, O: 0.34 };
   function draw() {
     const m = ION[I.value];
     if (M.value === 'struct') draw2d(); else draw3d();
-    readout(d.readout, m.formula, `The formula ${m.uni} counts ${m.count}, which together carry a charge of 2−; the ${M.value === 'struct' ? 'structural formula adds how they are connected' : 'ball-and-stick model adds how they are arranged in space'}.`);
+    readout(d.readout, m.formula, `化学式 ${m.uni} 含有${m.count}，它们合起来带有 2− 的电荷；${M.value === 'struct' ? '结构式还表明它们是如何连接的' : '球棍模型还表明它们在空间中是如何排列的'}。`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

@@ -29,8 +29,8 @@ function cloud(ctx, x, y, r, a) {
 ===================================================================== */
 (function () {
   const d = sim('sim-bond', 640);
-  const R = ctl(d.controls, { label: 'r', cls: 'length', min: 30, max: 300, step: 1, value: 74, unit: 'pm', dec: 0, aria: 'internuclear distance in picometers',
-    specials: [{ at: 74, label: 'bond length' }] });
+  const R = ctl(d.controls, { label: 'r', cls: 'length', min: 30, max: 300, step: 1, value: 74, unit: 'pm', dec: 0, aria: '以皮米为单位的核间距',
+    specials: [{ at: 74, label: '键长' }] });
   /* a Morse curve with the book's depth, 7.24 × 10⁻¹⁹ J at 74 pm; energies in units of 10⁻¹⁹ J */
   const DEPTH = 7.24, RE = 74, A = 0.0194, NA = 6.022e23;
   const E = (r) => DEPTH * ((1 - Math.exp(-A * (r - RE))) ** 2 - 1);
@@ -41,11 +41,11 @@ function cloud(ctx, x, y, r, a) {
   function draw() {
     const { ctx } = begin(d.c);
     const r = R.v, e = E(r), cE = C('energy'), cL = C('length');
-    const { X, Y } = axes(ctx, box, [0, 300], [-8, 6], { nx: 6, ny: 7, xl: 'internuclear distance (pm)', xc: cL, yl: 'energy (10⁻¹⁹ J)', yc: cE, fy: (v) => minus(fmt(v, 0)) });
+    const { X, Y } = axes(ctx, box, [0, 300], [-8, 6], { nx: 6, ny: 7, xl: '核间距（pm）', xc: cL, yl: '能量（10⁻¹⁹ J）', yc: cE, fy: (v) => minus(fmt(v, 0)) });
     line(ctx, box.l, Y(-DEPTH), X(RE), Y(-DEPTH), alpha(PAL.ink, 0.35), 2, [4, 8]);
     line(ctx, X(RE), Y(-DEPTH), X(RE), box.b, alpha(PAL.ink, 0.35), 2, [4, 8]);
     curve(ctx, E, 30, 300, X, Y, cE, 5, 160);
-    text(ctx, '−7.24 × 10⁻¹⁹ J at 74 pm', X(105), Y(-DEPTH) + 4, cE, { size: 18, weight: 600, bg: PAL.panel });
+    text(ctx, '74 pm 处 −7.24 × 10⁻¹⁹ J', X(105), Y(-DEPTH) + 4, cE, { size: 18, weight: 600, bg: PAL.panel });
     const p = pinned(ctx, box, X, Y, r, e, cE);
     /* the pair of atoms, centered over the point where the band allows, a leader down to the point */
     const half = (r * S) / 2, cx = Math.min(Math.max(X(r), box.l + half + RA + 10), 1340 - half - RA), cy = 140;
@@ -58,12 +58,12 @@ function cloud(ctx, x, y, r, a) {
     dot(ctx, cx - half, cy, PAL.ink, true, 4); dot(ctx, cx + half, cy, PAL.ink, true, 4);
     text(ctx, 'H', cx - half - RA - 14, cy, PAL.ink, { size: 22, weight: 600, align: 'right' });
     text(ctx, 'H', cx + half + RA + 14, cy, PAL.ink, { size: 22, weight: 600 });
-    hits = [{ x: cx - half, y: cy, r: RA, name: 'a hydrogen atom, its nucleus the dot' }, { x: cx + half, y: cy, r: RA, name: 'a hydrogen atom, its nucleus the dot' }];
+    hits = [{ x: cx - half, y: cy, r: RA, name: '一个氢原子，圆点是它的原子核' }, { x: cx + half, y: cy, r: RA, name: '一个氢原子，圆点是它的原子核' }];
     const eS = minus(fmt(e, 2)), kj = (e * 1e-19 * NA) / 1000;
     const at = r === RE, near = r < RE;
-    headline(ctx, at ? 'At 74 pm the energy of the pair is −7.24 × 10⁻¹⁹ J, the lowest it reaches, so 74 pm is the bond length of H₂.'
-      : near ? 'At ' + r + ' pm the nuclei repel each other and the energy has risen to ' + eS + ' × 10⁻¹⁹ J.'
-      : 'At ' + r + ' pm the shared electrons are drawn to both nuclei and the energy is ' + eS + ' × 10⁻¹⁹ J.');
+    headline(ctx, at ? '在 74 pm 处，这对原子的能量为 −7.24 × 10⁻¹⁹ J，是它能达到的最低值，所以 74 pm 就是 H₂ 的键长。'
+      : near ? '在 ' + r + ' pm 处，两个原子核相互排斥，能量已升高到 ' + eS + ' × 10⁻¹⁹ J。'
+      : '在 ' + r + ' pm 处，共用电子被两个原子核吸引，能量为 ' + eS + ' × 10⁻¹⁹ J。');
     F.tex(d.readout, `\\kE = ${eS}\\times 10^{-19}\\ \\text{J},\\quad \\kE\\times N_{\\text{A}} = ${minus(fmt(kj, 0))}\\ \\text{kJ/mol}`);
   }
   still(d, draw);
@@ -86,7 +86,7 @@ function cloud(ctx, x, y, r, a) {
     [['Cs', '0.7'], ['Ba', '0.9'], ['La–Lu', '1.0–1.2'], ['Hf', '1.3'], ['Ta', '1.5'], ['W', '1.7'], ['Re', '1.9'], ['Os', '2.2'], ['Ir', '2.2'], ['Pt', '2.2'], ['Au', '2.4'], ['Hg', '1.9'], ['Tl', '1.8'], ['Pb', '1.9'], ['Bi', '1.9'], ['Po', '2.0'], ['At', '2.2', 17, 2]],
     [['Fr', '0.7'], ['Ra', '0.9'], ['Ac', '1.1'], ['Th', '1.3'], ['Pa', '1.4'], ['U', '1.4'], ['Np–No', '1.4–1.3']],
   ];
-  const CLASS = ['metals', 'metalloids', 'nonmetals'];
+  const CLASS = ['金属', '半金属', '非金属'];
   const CW = 66, CH = 66, X0 = 190, Y0 = 118;
   function draw() {
     const { ctx } = begin(d.c);
@@ -104,11 +104,11 @@ function cloud(ctx, x, y, r, a) {
     });
     const xr = X0 + 17 * CW;
     arrow(ctx, X0, 62, xr, 62, PAL.ink, 3);
-    text(ctx, 'Increasing electronegativity', (X0 + xr) / 2, 44, PAL.ink, { size: 20, weight: 600, align: 'center', bg: PAL.panel });
+    text(ctx, '电负性增大', (X0 + xr) / 2, 44, PAL.ink, { size: 20, weight: 600, align: 'center', bg: PAL.panel });
     arrow(ctx, 150, Y0, 150, Y0 + 7 * CH, PAL.ink, 3);
-    text(ctx, 'Decreasing', 136, Y0 + 3.2 * CH, PAL.ink, { size: 17, weight: 600, align: 'right' });
-    text(ctx, 'electro-', 136, Y0 + 3.2 * CH + 22, PAL.ink, { size: 17, weight: 600, align: 'right' });
-    text(ctx, 'negativity', 136, Y0 + 3.2 * CH + 44, PAL.ink, { size: 17, weight: 600, align: 'right' });
+    text(ctx, '电负性', 136, Y0 + 3.2 * CH, PAL.ink, { size: 17, weight: 600, align: 'right' });
+    text(ctx, '减小', 136, Y0 + 3.2 * CH + 22, PAL.ink, { size: 17, weight: 600, align: 'right' });
+    text(ctx, '', 136, Y0 + 3.2 * CH + 44, PAL.ink, { size: 17, weight: 600, align: 'right' });
     /* the legend of the three kinds, in the empty block above the transition metals */
     CLASS.forEach((n, i) => {
       const x = X0 + 3 * CW + i * 200, y = Y0 + 28;
@@ -132,10 +132,10 @@ function cloud(ctx, x, y, r, a) {
     H: [2.1, 37], Li: [1.0, 134], Na: [0.9, 154], K: [0.8, 196], Cs: [0.7, 225], Mg: [1.2, 130], Ca: [1.0, 174], Ba: [0.9, 198], Mn: [1.5, 139],
     B: [2.0, 82], C: [2.5, 77], Si: [1.8, 111], N: [3.0, 75], P: [2.1, 106], O: [3.5, 73], S: [2.5, 102], Se: [2.4, 116], F: [4.0, 71], Cl: [3.0, 99], Br: [2.8, 114], I: [2.5, 133],
   };
-  const NAMES = { H: 'hydrogen', Li: 'lithium', Na: 'sodium', K: 'potassium', Cs: 'cesium', Mg: 'magnesium', Ca: 'calcium', Ba: 'barium', Mn: 'manganese', B: 'boron', C: 'carbon', Si: 'silicon', N: 'nitrogen', P: 'phosphorus', O: 'oxygen', S: 'sulfur', Se: 'selenium', F: 'fluorine', Cl: 'chlorine', Br: 'bromine', I: 'iodine' };
+  const NAMES = { H: '氢', Li: '锂', Na: '钠', K: '钾', Cs: '铯', Mg: '镁', Ca: '钙', Ba: '钡', Mn: '锰', B: '硼', C: '碳', Si: '硅', N: '氮', P: '磷', O: '氧', S: '硫', Se: '硒', F: '氟', Cl: '氯', Br: '溴', I: '碘' };
   const opts = Object.keys(EL).map((s) => ({ value: s, label: s }));
-  const SA = F.select(d.controls, { label: '\\text{atom A}', aria: 'first atom of the bond', options: opts, value: 'H' });
-  const SB = F.select(d.controls, { label: '\\text{atom B}', aria: 'second atom of the bond', options: opts, value: 'Cl' });
+  const SA = F.select(d.controls, { label: '\\text{原子 A}', aria: '键的第一个原子', options: opts, value: 'H' });
+  const SB = F.select(d.controls, { label: '\\text{原子 B}', aria: '键的第二个原子', options: opts, value: 'Cl' });
   const rad = (pm) => 18 + 0.2 * pm;
   let hits = []; F.hover(d.stage, () => hits);
   function draw() {
@@ -156,7 +156,7 @@ function cloud(ctx, x, y, r, a) {
     text(ctx, b, xB + 130, y, PAL.ink, { size: 26, weight: 600 });
     text(ctx, 'EN = ' + fmt(enA, 1), xA - 130, y + 34, PAL.muted, { size: 17, align: 'right' });
     text(ctx, 'EN = ' + fmt(enB, 1), xB + 130, y + 34, PAL.muted, { size: 17 });
-    hits = [{ x: xA, y, r: 60, name: NAMES[a] + ', electronegativity ' + fmt(enA, 1) }, { x: xB, y, r: 60, name: NAMES[b] + ', electronegativity ' + fmt(enB, 1) }];
+    hits = [{ x: xA, y, r: 60, name: NAMES[a] + '，电负性 ' + fmt(enA, 1) }, { x: xB, y, r: 60, name: NAMES[b] + '，电负性 ' + fmt(enB, 1) }];
     if (dEN > 0) {
       const negB = enB > enA, xn = negB ? xB : xA, xp = negB ? xA : xB, cQ = C('charge'), cMu = C('dipole-moment');
       text(ctx, 'δ–', xn, y - 92, cQ, { size: 26, weight: 600, align: 'center' });
@@ -168,7 +168,7 @@ function cloud(ctx, x, y, r, a) {
     }
     /* the scale of Figure 7.8: ΔEN from 0 to 3.5, cut at 0.4 and 1.8 */
     const l = 180, r = 1260, ys = 430, X = (v) => l + ((r - l) * v) / 3.5;
-    const BANDS = [[0, 0.4, 'pure covalent', 0.05], [0.4, 1.8, 'polar covalent', 0.12], [1.8, 3.5, 'ionic', 0.22]];
+    const BANDS = [[0, 0.4, '纯共价键', 0.05], [0.4, 1.8, '极性共价键', 0.12], [1.8, 3.5, '离子键', 0.22]];
     BANDS.forEach(([u, v, n, k]) => {
       ctx.save(); ctx.fillStyle = alpha(PAL.ink, k); ctx.fillRect(X(u), ys - 24, X(v) - X(u), 48); ctx.restore();
       text(ctx, n, (X(u) + X(v)) / 2, ys - 48, PAL.ink, { size: 18, weight: 600, align: 'center' });
@@ -178,11 +178,11 @@ function cloud(ctx, x, y, r, a) {
     const m = X(Math.abs(eB - eA));
     ctx.save(); ctx.fillStyle = PAL.ink; ctx.beginPath(); ctx.moveTo(m, ys + 22); ctx.lineTo(m - 11, ys + 40); ctx.lineTo(m + 11, ys + 40); ctx.closePath(); ctx.fill(); ctx.restore();
     line(ctx, m, ys - 24, m, ys + 22, PAL.ink, 4);
-    text(ctx, 'covalent character decreases, ionic character increases →', r, ys + 92, PAL.muted, { size: 16, align: 'right' });
-    const type = dEN < 0.4 ? 'pure covalent' : dEN <= 1.8 ? 'polar covalent' : 'ionic';
+    text(ctx, '共价性减弱，离子性增强 →', r, ys + 92, PAL.muted, { size: 16, align: 'right' });
+    const type = dEN < 0.4 ? '纯共价键' : dEN <= 1.8 ? '极性共价键' : '离子键';
     const bond = a + '–' + b;
-    headline(ctx, dEN === 0 ? 'The two ' + NAMES[a] + ' atoms have the same electronegativity, so the ' + bond + ' bond is pure covalent and its electrons are shared equally.'
-      : 'The ' + bond + ' bond has ΔEN = ' + fmt(dEN, 1) + ', so the scale reads ' + type + ', and ' + NAMES[enB > enA ? b : a] + ' carries the partial negative charge.');
+    headline(ctx, dEN === 0 ? '两个' + NAMES[a] + '原子的电负性相同，所以 ' + bond + ' 键是纯共价键，其电子被平均共用。'
+      : '该 ' + bond + ' 键的 ΔEN = ' + fmt(dEN, 1) + '，所以标尺读数为' + type + '，' + NAMES[enB > enA ? b : a] + '原子带部分负电荷。');
     const hi = enB >= enA ? [b, enB, a, enA] : [a, enA, b, enB];
     F.tex(d.readout, `\\Delta\\text{EN} = |\\text{EN}_{\\text{${hi[0]}}} - \\text{EN}_{\\text{${hi[2]}}}| = |${fmt(hi[1], 1)} - ${fmt(hi[3], 1)}| = ${fmt(dEN, 1)}`);
   }

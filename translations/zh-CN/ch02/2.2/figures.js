@@ -37,12 +37,12 @@ const E_CHARGE = 1.602e-19;
 (function () {
   const H = 520;
   const d = sim('sim-cathode-ray', H);
-  const plates = F.choice(d.controls, { label: '\\text{plates}', aria: 'charge on the plates', value: 'off',
-    options: [{ value: 'off', label: 'off' }, { value: 'up', label: '+ top' }, { value: 'down', label: '+ bottom' }] });
-  const magnets = F.choice(d.controls, { label: '\\text{magnets}', aria: 'the magnets', value: 'off',
-    options: [{ value: 'off', label: 'off' }, { value: 'on', label: 'on' }] });
-  const METALS = { Cu: 'copper', Fe: 'iron', Zn: 'zinc' };
-  const metal = F.choice(d.controls, { label: '\\text{cathode}', aria: 'metal of the cathode', value: 'Cu',
+  const plates = F.choice(d.controls, { label: '\\text{极板}', aria: '极板上的电荷', value: 'off',
+    options: [{ value: 'off', label: '关' }, { value: 'up', label: '+ 在上' }, { value: 'down', label: '+ 在下' }] });
+  const magnets = F.choice(d.controls, { label: '\\text{磁铁}', aria: '磁铁', value: 'off',
+    options: [{ value: 'off', label: '关' }, { value: 'on', label: '开' }] });
+  const METALS = { Cu: '铜', Fe: '铁', Zn: '锌' };
+  const metal = F.choice(d.controls, { label: '\\text{阴极}', aria: '阴极的金属', value: 'Cu',
     options: Object.entries(METALS).map(([s, n]) => ({ value: s, label: n })) });
   const ro = F.readout(d);
   const Y0 = 300, CX = 215, AX = 392, P0 = 640, P1 = 800, BX = 1120, BR = 135, TH = 0.1;
@@ -114,29 +114,29 @@ const E_CHARGE = 1.602e-19;
       disc(ctx, 712, Y0 + 14, 46, alpha(PAL.soft, 0.4), alpha(PAL.ink, 0.6), 2); text(ctx, 'N', 712, Y0 + 14, PAL.ink, { size: 24, weight: 600, align: 'center' });
     });
     /* labels, one per part */
-    label(ctx, 'cathode', CX, Y0 - 30, { side: 'above', gap: 70, color: F.ref('cathode') });
-    label(ctx, 'anode', AX, Y0 - 18, { side: 'above', gap: 70, color: ca });
-    label(ctx, 'cathode ray', 520, Y0 + 2, { side: 'below', gap: 90 });
-    label(ctx, 'charged plates', P1 - 40, Y0 + 36, { side: 'below', gap: 80 });
-    if (mA > 0.5) label(ctx, 'magnets', 760, Y0 - 90, { side: 'right', gap: 60 });
-    label(ctx, 'scale on the glass', BX + BR + 10, Y0 + 70, { side: 'below', gap: 70 });
-    text(ctx, 'high voltage', 110, 496, PAL.ink, { size: 20, align: 'center' });
+    label(ctx, '阴极', CX, Y0 - 30, { side: 'above', gap: 70, color: F.ref('cathode') });
+    label(ctx, '阳极', AX, Y0 - 18, { side: 'above', gap: 70, color: ca });
+    label(ctx, '阴极射线', 520, Y0 + 2, { side: 'below', gap: 90 });
+    label(ctx, '带电极板', P1 - 40, Y0 + 36, { side: 'below', gap: 80 });
+    if (mA > 0.5) label(ctx, '磁铁', 760, Y0 - 90, { side: 'right', gap: 60 });
+    label(ctx, '玻璃上的标度', BX + BR + 10, Y0 + 70, { side: 'below', gap: 70 });
+    text(ctx, '高压', 110, 496, PAL.ink, { size: 20, align: 'center' });
     /* where the spot lands, in degrees of the scale above or below its middle */
     const deg = Math.round((Math.atan2(Y0 - end[1], end[0] - BX) * 180) / Math.PI);
     const p = plates.value, m = magnets.value === 'on';
-    const head = p === 'off' && !m ? 'With the plates uncharged and the magnets off, the beam runs straight to the middle of the scale.'
-      : p === 'up' && m ? 'The pull toward the positive plate and the push of the magnets cancel, and the beam runs straight.'
-      : p === 'up' ? 'The beam bends toward the positive plate above it and strikes the scale ' + deg + '° above the middle.'
-      : p === 'down' && m ? 'The positive plate below and the magnets both bend the beam down, and it strikes the scale ' + -deg + '° below the middle.'
-      : p === 'down' ? 'The beam bends toward the positive plate below it and strikes the scale ' + -deg + '° below the middle.'
-      : 'The magnets alone bend the beam down, and it strikes the scale ' + -deg + '° below the middle.';
+    const head = p === 'off' && !m ? '极板不带电且磁铁关闭时，电子束沿直线射向标度的中点。'
+      : p === 'up' && m ? '指向正极板的吸引与磁铁的推动相互抵消，电子束沿直线前进。'
+      : p === 'up' ? '电子束向上方的正极板弯曲，射到标度中点上方 ' + deg + '° 处。'
+      : p === 'down' && m ? '下方的正极板和磁铁都使电子束向下弯曲，射到标度中点下方 ' + -deg + '° 处。'
+      : p === 'down' ? '电子束向下方的正极板弯曲，射到标度中点下方 ' + -deg + '° 处。'
+      : '仅磁铁使电子束向下弯曲，射到标度中点下方 ' + -deg + '° 处。';
     topline(ctx, head);
-    ro.set('\\text{charge-to-mass ratio} = 1.759\\times10^{11}\\ \\text{C/kg}');
+    ro.set('\\text{荷质比} = 1.759\\times10^{11}\\ \\text{C/kg}');
   }
   F.hover(d.stage, () => [
-    { x: 110, y: 392, r: 30, name: 'high-voltage supply' },
-    { x: CX, y: Y0, r: 22, name: METALS[metal.value] + ' cathode, the negative electrode' },
-    { x: AX, y: Y0, r: 20, name: 'anode, the positive electrode' },
+    { x: 110, y: 392, r: 30, name: '高压电源' },
+    { x: CX, y: Y0, r: 22, name: METALS[metal.value] + '阴极，即负电极' },
+    { x: AX, y: Y0, r: 20, name: '阳极，即正电极' },
   ]);
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
@@ -155,11 +155,11 @@ const E_CHARGE = 1.602e-19;
   const d = sim('sim-oil-drop', H);
   const DROPS = [['A', 3], ['B', 2], ['C', 4], ['D', 1], ['E', 3]];
   const EH = 30;                                              /* kN/C that holds a drop with one extra electron still */
-  const drop = F.choice(d.controls, { label: '\\text{drop}', aria: 'the oil drop', value: 'A', ms: 0,
+  const drop = F.choice(d.controls, { label: '\\text{油滴}', aria: '油滴', value: 'A', ms: 0,
     options: DROPS.map(([k]) => ({ value: k, label: k })), onInput: () => cy.reset() });
   const n = () => DROPS.find(([k]) => k === drop.value)[1];
-  const E = ctl(d.controls, { label: '\\text{field}', cls: '', min: 0, max: 40, step: 0.1, value: 10, unit: 'kN/C', dec: 1, aria: 'electric field strength between the plates in kilonewtons per coulomb',
-    specials: [{ at: () => EH / n(), label: 'hovers' }], onInput: () => cy.reset() });
+  const E = ctl(d.controls, { label: '\\text{电场}', cls: '', min: 0, max: 40, step: 0.1, value: 10, unit: 'kN/C', dec: 1, aria: '极板间的电场强度，单位为千牛每库仑',
+    specials: [{ at: () => EH / n(), label: '悬停' }], onInput: () => cy.reset() });
   const ro = F.readout(d);
   const T = 5, TOP = 214, BOT = 496, DX = 400, R = 17, V0 = 70;
   const cy = cycle(() => T, 1.2);
@@ -178,21 +178,21 @@ const E_CHARGE = 1.602e-19;
     text(ctx, '−', 676, BOT + 8, cq, { size: 28, weight: 600, align: 'center' });
     F.arrow(ctx, 135, 262, 250, 262, alpha(PAL.ink, 0.6), 3);
     shape(ctx, [[690, 330], [790, 322], [790, 358], [690, 350]], PAL.soft, PAL.ink, 2);
-    label(ctx, 'atomizer', 190, 130, { side: 'above', gap: 38 });
-    label(ctx, 'X-rays', 180, 262, { side: 'below', gap: 30 });
-    label(ctx, 'telescope', 760, 322, { side: 'above', gap: 40 });
-    label(ctx, 'brass plates', 560, BOT + 14, { side: 'below', gap: 34 });
+    label(ctx, '喷雾器', 190, 130, { side: 'above', gap: 38 });
+    label(ctx, 'X 射线', 180, 262, { side: 'below', gap: 30 });
+    label(ctx, '望远镜', 760, 322, { side: 'above', gap: 40 });
+    label(ctx, '黄铜极板', 560, BOT + 14, { side: 'below', gap: 34 });
     /* the drop and its extra electrons, the pull of gravity down and the field's pull up */
     const g = 64, up = Math.min(150, g * rel, yd - R - 6 - TOP);
     F.arrow(ctx, DX, yd + R + 2, DX, yd + R + 2 + g, alpha(PAL.ink, 0.7), 4);
     if (up > 6) F.arrow(ctx, DX, yd - R - 2, DX, yd - R - 2 - up, alpha(PAL.ink, 0.7), 4);
     disc(ctx, DX, yd, R, alpha(rd, 0.3), rd, 2.5);
     for (let i = 0; i < k; i++) { const a = (i / k) * TAU + 0.4; disc(ctx, DX + (k > 1 ? 8 * Math.cos(a) : 0), yd + (k > 1 ? 8 * Math.sin(a) : 0), 4, ce, null); }
-    text(ctx, 'gravity pulls down; the field pulls up', 405, 588, PAL.muted, { size: 17, align: 'center' });
+    text(ctx, '重力向下拉；电场向上拉', 405, 588, PAL.muted, { size: 17, align: 'center' });
     /* the book's table of the five drops */
     const tx = 860, ty = 150;
-    text(ctx, 'oil drop', tx, ty, PAL.ink, { size: 20, weight: 600 });
-    text(ctx, 'charge', tx + 330, ty, PAL.ink, { size: 20, weight: 600, align: 'right' });
+    text(ctx, '油滴', tx, ty, PAL.ink, { size: 20, weight: 600 });
+    text(ctx, '电荷', tx + 330, ty, PAL.ink, { size: 20, weight: 600, align: 'right' });
     line(ctx, tx, ty + 18, tx + 340, ty + 18, alpha(PAL.ink, 0.4), 1.5);
     DROPS.forEach(([name, m], i) => {
       const yy = ty + 48 + i * 32, on = name === drop.value;
@@ -208,19 +208,19 @@ const E_CHARGE = 1.602e-19;
       text(ctx, fmt(1.6 * m, 1), X(1.6 * m), ay + 26, PAL.muted, { size: 17, align: 'center' });
       if (m) text(ctx, m + 'e', X(1.6 * m), ay + 50, PAL.muted, { size: 17, align: 'center' });
     }
-    text(ctx, 'charge (10⁻¹⁹ C)', (ax0 + ax1) / 2, ay + 84, cq, { size: 20, weight: 600, align: 'center' });
+    text(ctx, '电荷（10⁻¹⁹ C）', (ax0 + ax1) / 2, ay + 84, cq, { size: 20, weight: 600, align: 'center' });
     const seen = {};
     DROPS.forEach(([name, m]) => {
       const lvl = seen[m] = (seen[m] ?? -1) + 1, on = name === drop.value, x = X(1.6 * m), yy = ay - 20 - lvl * 28;
       disc(ctx, x, yy, on ? 11 : 8, on ? cq : alpha(cq, 0.45), on ? PAL.ink : null, 2);
       text(ctx, name, x + 18, yy, rd, { size: 17, weight: on ? 600 : 400 });
     });
-    const q = 1.6 * k, fate = Math.abs(rel - 1) < 0.004 ? 'hovers' : rel < 1 ? 'falls' : 'rises';
-    topline(ctx, 'Drop ' + drop.value + ' carries ' + fmt(q, 1) + ' × 10⁻¹⁹ C, ' + ['', 'once', 'twice', 'three times', 'four times'][k] + ' 1.6 × 10⁻¹⁹ C; at ' + fmt(E.v, 1) + ' kN/C it ' + fate + '.');
+    const q = 1.6 * k, fate = Math.abs(rel - 1) < 0.004 ? '悬停' : rel < 1 ? '下落' : '上升';
+    topline(ctx, '油滴 ' + drop.value + ' 带电 ' + fmt(q, 1) + ' × 10⁻¹⁹ C，是 1.6 × 10⁻¹⁹ C 的' + ['', '1 倍', '2 倍', '3 倍', '4 倍'][k] + '；在 ' + fmt(E.v, 1) + ' kN/C 时它' + fate + '。');
     ro.set(`\\kQ = ${k}\\,\\ke = ${k} \\times ${hue('1.6\\times10^{-19}\\ \\text{C}')} = ${hue(fmt(q, 1) + '\\times10^{-19}\\ \\text{C}')}`,
-      fate === 'hovers' ? '' : 'Drop ' + drop.value + ' hovers at ' + fmt(eh, 1) + ' kN/C.');
+      fate === '悬停' ? '' : '油滴 ' + drop.value + ' 在 ' + fmt(eh, 1) + ' kN/C 时悬停。');
   }
-  F.hover(d.stage, () => [{ x: DX, y: y(), r: R + 6, name: 'oil drop ' + drop.value + ', with ' + n() + ' extra electron' + (n() > 1 ? 's' : '') }]);
+  F.hover(d.stage, () => [{ x: DX, y: y(), r: R + 6, name: '油滴 ' + drop.value + '，多出 ' + n() + ' 个电子' }]);
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
 
@@ -243,17 +243,17 @@ const E_CHARGE = 1.602e-19;
 (function () {
   const d = sim('sim-gold-foil');
   const v = F.view3d(d.stage, { h: 400, dist: 6.2, tilt: 0.5, spin: 'off', pitch: [0.15, 1.35],
-    views: [{ label: 'bench', yaw: 0.5, pitch: 0.5 }, { label: 'above', yaw: 0, pitch: 1.35 }] });
+    views: [{ label: '实验台', yaw: 0.5, pitch: 0.5 }, { label: '俯视', yaw: 0, pitch: 1.35 }] });
   const has3 = !!v.scene;
   if (!has3) v.wrap.style.display = 'none';
   const PH = 440, cnv = F.makeCanvas(d.stage, PH);
-  const model = F.choice(d.controls, { label: '\\text{atom}', aria: 'model of the atom', value: 'nuclear',
-    options: [{ value: 'nuclear', label: 'Rutherford atom' }, { value: 'pudding', label: 'plum pudding atom' }], onInput: changed });
-  const ELS = { Au: ['gold', 79], Ag: ['silver', 47], Zr: ['zirconium', 40], Ca: ['calcium', 20] };
-  const elc = F.choice(d.controls, { label: '\\text{element}', aria: 'element of the foil', value: 'Au',
+  const model = F.choice(d.controls, { label: '\\text{原子}', aria: '原子模型', value: 'nuclear',
+    options: [{ value: 'nuclear', label: '卢瑟福原子' }, { value: 'pudding', label: '葡萄干布丁原子' }], onInput: changed });
+  const ELS = { Au: ['金', 79], Ag: ['银', 47], Zr: ['锆', 40], Ca: ['钙', 20] };
+  const elc = F.choice(d.controls, { label: '\\text{元素}', aria: '箔的元素', value: 'Au',
     options: Object.entries(ELS).map(([s, [nm]]) => ({ value: s, label: nm })), onInput: changed });
-  const energy = F.choice(d.controls, { label: '\\alpha\\ \\text{energy}', aria: 'energy of the alpha particles', value: 'low',
-    options: [{ value: 'low', label: 'lower' }, { value: 'high', label: 'higher' }], onInput: changed });
+  const energy = F.choice(d.controls, { label: '\\alpha\\ \\text{能量}', aria: 'α 粒子的能量', value: 'low',
+    options: [{ value: 'low', label: '较低' }, { value: 'high', label: '较高' }], onInput: changed });
   const ro = F.readout(d);
   /* the screen's glow is zinc sulfide's green, a physical fact rather than a type or an element */
   const GLOW = '#39d353';
@@ -276,22 +276,22 @@ const E_CHARGE = 1.602e-19;
     const T3 = window.THREE, glow = F.fact(GLOW), cb = F.ref('lead-block'), cf = F.ref('foil'), cs = F.ref('screen');
     v.clear();
     F.mesh.box(grp, [0, -0.5, 0], [6.4, 0.08, 3.8], PAL.soft);
-    v.pickable(F.mesh.box(grp, [-2.62, -0.14, 0], [0.64, 0.64, 0.64], F.el('Pb')), 'lead block, which absorbs the radiation the beam does not use');
-    v.pickable(F.mesh.sphere(grp, SRC, 0.07, F.el('Ra')), 'radium, the source of the α particles');
+    v.pickable(F.mesh.box(grp, [-2.62, -0.14, 0], [0.64, 0.64, 0.64], F.el('Pb')), '铅块，吸收射线束用不上的辐射');
+    v.pickable(F.mesh.sphere(grp, SRC, 0.07, F.el('Ra')), '镭，α 粒子的来源');
     F.mesh.polyline(grp, [SRC, [0, 0, 0]], PAL.muted);
-    v.pickable(F.mesh.box(grp, [0, 0, 0], [0.02, 0.56, 0.56], F.el(elc.value)), 'thin ' + ELS[elc.value][0] + ' foil');
+    v.pickable(F.mesh.box(grp, [0, 0, 0], [0.02, 0.56, 0.56], F.el(elc.value)), '薄' + ELS[elc.value][0] + '箔');
     F.mesh.stick(grp, [0, -0.46, 0], [0, -0.28, 0], 0.03, PAL.muted);
     const ring = new T3.Mesh(new T3.CylinderGeometry(RING, RING, 0.5, 72, 1, true, 1.5 * Math.PI + 0.1, 2 * Math.PI - 0.2),
       F.mesh.mat(cs, { transparent: true, opacity: 0.3, depthWrite: false, side: T3.DoubleSide }));
-    grp.add(ring); v.pickable(ring, 'luminescent screen, which glows briefly where an α particle strikes it');
+    grp.add(ring); v.pickable(ring, '荧光屏，α 粒子撞击处会短暂发光');
     [-0.25, 0.25].forEach((yy) => F.mesh.polyline(grp, Array.from({ length: 73 }, (_, i) => { const a = 1.5 * Math.PI + 0.1 + ((2 * Math.PI - 0.2) * i) / 72; return [RING * Math.sin(a), yy, RING * Math.cos(a)]; }), cs));
     [0.5, 2.1, 3.6, 4.6].forEach((a) => F.mesh.stick(grp, [RING * Math.cos(a), -0.46, RING * Math.sin(a)], [RING * Math.cos(a), -0.25, RING * Math.sin(a)], 0.025, PAL.muted));
     pool = Array.from({ length: 90 }, () => { const m = F.mesh.sphere(grp, [0, -9, 0], 0.035, F.el('He')); m.visible = false; return m; });
     glows = Array.from({ length: 110 }, () => { const m = F.mesh.sphere(grp, [0, -9, 0], 0.045, glow, { transparent: true, opacity: 0, emissive: new T3.Color(glow), emissiveIntensity: 0.6 }); m.visible = false; return m; });
-    v.label('radium in a lead block', [-2.62, -0.46, 0.32], grp, -14).style.color = cb;
-    v.label(ELS[elc.value][0] + ' foil', [0, 0.28, 0], grp, 34).style.color = cf;
-    v.label('luminescent screen', [RING, 0.25, 0], grp, 16).style.color = cs;
-    v.label('α particles', [-1.4, 0, 0], grp, 16);
+    v.label('铅块中的镭', [-2.62, -0.46, 0.32], grp, -14).style.color = cb;
+    v.label(ELS[elc.value][0] + '箔', [0, 0.28, 0], grp, 34).style.color = cf;
+    v.label('荧光屏', [RING, 0.25, 0], grp, 16).style.color = cs;
+    v.label('α 粒子', [-1.4, 0, 0], grp, 16);
   }
   function fire() {
     const D = Dof(), b = Math.sqrt(Math.random()), th = Math.max(0, Math.min(Math.PI, theta(b, D))), side = Math.random() < 0.5 ? -1 : 1, yy = (Math.random() - 0.5) * 0.12;
@@ -381,19 +381,19 @@ const E_CHARGE = 1.602e-19;
     });
     ctx.restore();
     shape(ctx, [[BOX.l, BOX.t], [BOX.r, BOX.t], [BOX.r, BOX.b], [BOX.l, BOX.b]], null, F.ref('foil'), 2);
-    label(ctx, 'α particles', 110, IMPACTS[0], { side: 'above', gap: 24 });
-    label(ctx, pud < 0.5 ? ELS[elc.value][0] + ' nucleus' : 'sphere of positive charge', 760, 360 + (pud < 0.5 ? 5 : R), { side: 'below', gap: 34 });
-    label(ctx, 'electrons', 560 + EL[0][0].ring[0] * R, 160 + EL[0][0].ring[1] * R, { side: 'left', gap: 60 });
+    label(ctx, 'α 粒子', 110, IMPACTS[0], { side: 'above', gap: 24 });
+    label(ctx, pud < 0.5 ? ELS[elc.value][0] + '原子核' : '正电荷球体', 760, 360 + (pud < 0.5 ? 5 : R), { side: 'below', gap: 34 });
+    label(ctx, '电子', 560 + EL[0][0].ring[0] * R, 160 + EL[0][0].ring[1] * R, { side: 'left', gap: 60 });
     const ends = shown.map(angleOf), nT = ends.filter((a) => a < 10).length, nB = ends.filter((a) => a > 90).length, nA = ends.length - nT - nB;
-    const words = ['none', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
-    topline(ctx, 'Of nine α particles, ' + words[nT] + ' pass' + (nT === 1 ? 'es' : '') + ' straight through, ' + words[nA] + ' ' + (nA === 1 ? 'is' : 'are') + ' turned aside, and ' + words[nB] + ' ' + (nB === 1 ? 'bounces' : 'bounce') + ' back.');
+    const words = ['没有', '1 个', '2 个', '3 个', '4 个', '5 个', '6 个', '7 个', '8 个', '9 个'];
+    topline(ctx, '在 9 个 α 粒子中，' + words[nT] + '径直穿过，' + words[nA] + '被偏转到一侧，' + words[nB] + '被弹回。');
   }
   function draw() {
     build(); place(); panel();
     const [nm, Z] = ELS[elc.value], Q = Z * E_CHARGE, tot = tally.through + tally.aside + tally.back;
     ro.set(`\\kQ = ${Z}\\,\\ke = ${hue(sciTex(Q, 2) + '\\ \\text{C}')}`,
-      (model.value === 'nuclear' ? 'The ' + nm + ' nucleus carries all of this positive charge in a tiny volume. ' : 'The plum pudding atom spreads this positive charge through the whole ' + nm + ' atom. ')
-      + (tot ? 'Of ' + tot.toLocaleString('en-US') + ' α particles fired so far, ' + tally.through.toLocaleString('en-US') + ' went through within 10°, ' + tally.aside.toLocaleString('en-US') + ' were deflected further, and ' + tally.back.toLocaleString('en-US') + ' came back past 90°.' : ''),
+      (model.value === 'nuclear' ? nm + '原子核把全部这些正电荷集中在极小的体积内。' : '葡萄干布丁原子把这些正电荷分散在整个' + nm + '原子中。')
+      + (tot ? '到目前已发射的 ' + tot.toLocaleString('en-US') + ' 个 α 粒子中，' + tally.through.toLocaleString('en-US') + ' 个在 10° 以内穿过，' + tally.aside.toLocaleString('en-US') + ' 个偏转得更远，' + tally.back.toLocaleString('en-US') + ' 个偏转超过 90° 而返回。' : ''),
       { values: false });
   }
   register(d.fig, { update: (dt) => { cy.step(dt, () => 1); step(dt); }, draw });

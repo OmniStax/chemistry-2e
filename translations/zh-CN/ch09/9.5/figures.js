@@ -13,14 +13,14 @@ const glass = (extra = {}) => ({ transparent: true, opacity: 0.1, depthWrite: fa
 
 /* the gases, each molecule as [element, dx, dy, radius] about its center, and its molar mass in g/mol */
 const MOLS = {
-  'O₂': { m: 32.00, word: 'oxygen', atoms: [['O', -6, 0, 7], ['O', 6, 0, 7]] },
-  'N₂': { m: 28.01, word: 'nitrogen', atoms: [['N', -6, 0, 7], ['N', 6, 0, 7]] },
-  'He': { m: 4.003, word: 'helium', atoms: [['He', 0, 0, 6]] },
-  'Ne': { m: 20.18, word: 'neon', atoms: [['Ne', 0, 0, 7]] },
-  'Ar': { m: 39.95, word: 'argon', atoms: [['Ar', 0, 0, 8]] },
-  'Xe': { m: 131.29, word: 'xenon', atoms: [['Xe', 0, 0, 10]] },
+  'O₂': { m: 32.00, word: '氧', atoms: [['O', -6, 0, 7], ['O', 6, 0, 7]] },
+  'N₂': { m: 28.01, word: '氮', atoms: [['N', -6, 0, 7], ['N', 6, 0, 7]] },
+  'He': { m: 4.003, word: '氦', atoms: [['He', 0, 0, 6]] },
+  'Ne': { m: 20.18, word: '氖', atoms: [['Ne', 0, 0, 7]] },
+  'Ar': { m: 39.95, word: '氩', atoms: [['Ar', 0, 0, 8]] },
+  'Xe': { m: 131.29, word: '氙', atoms: [['Xe', 0, 0, 10]] },
 };
-const molName = (f) => (MOLS[f].atoms.length === 1 ? 'an atom of ' + MOLS[f].word + ', ' + f : 'a molecule of ' + MOLS[f].word + ', ' + f);
+const molName = (f) => (MOLS[f].atoms.length === 1 ? MOLS[f].word + '原子，' + f : MOLS[f].word + '分子，' + f);
 const heading3 = () => { const z = 2 * Math.random() - 1, a = Math.random() * TAU, r = Math.sqrt(1 - z * z); return [r * Math.cos(a), r * Math.sin(a), z]; };
 function molecule3(v, parent, f, k) {
   const m = new T3D.Group(); parent.add(m);
@@ -56,10 +56,10 @@ const draw3 = (M, T) => { const s = Math.sqrt((R8 * T) / kg(M)); return [gauss()
 ===================================================================== */
 (function () {
   const d = sim('sim-kmt');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0, 0.9], views: [{ label: 'front', yaw: 0, pitch: 0.2 }, { label: 'above', yaw: 0, pitch: 0.75 }], h: 420, dist: 9.4, tilt: 0.1 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0, 0.9], views: [{ label: '正视', yaw: 0, pitch: 0.2 }, { label: '俯视', yaw: 0, pitch: 0.75 }], h: 420, dist: 9.4, tilt: 0.1 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 250);
   grp.position.y = -0.25;                                   /* the names above the cylinders stay inside the stage */
-  const law = F.choice(d.controls, { label: '\\text{law}', aria: 'the gas law the kinetic-molecular theory explains', options: [{ value: 'amontons', label: 'Amontons’s law' }, { value: 'boyle', label: 'Boyle’s law' }, { value: 'avogadro', label: 'Avogadro’s law' }], value: 'amontons', ms: 0, onInput: restart });
+  const law = F.choice(d.controls, { label: '\\text{定律}', aria: '分子运动论所解释的气体定律', options: [{ value: 'amontons', label: '阿蒙顿定律' }, { value: 'boyle', label: '玻意耳定律' }, { value: 'avogadro', label: '阿伏加德罗定律' }], value: 'amontons', ms: 0, onInput: restart });
   const RC = 0.62, H0 = 1.1, YB = -1.25, RM = 0.08, K = 0.011, N0 = 10, XS = [-1.4, 1.4], U0 = 0.8;
   const SPEC = { amontons: { h: H0, n: N0, T: 600 }, boyle: { h: H0 / 2, n: N0, T: 300 }, avogadro: { h: 2 * H0, n: 2 * N0, T: 300 } };
   const area = (h) => TAU * RC * h + TAU * RC * RC;
@@ -95,14 +95,14 @@ const draw3 = (M, T) => { const s = Math.sqrt((R8 * T) / kg(M)); return [gauss()
   function build() {
     const key = [law.value, palSig()].join('|'); if (key === sig) return; sig = key;
     v.clear(); ms = [];
-    v.pickable(box3(grp, [0, YB - 0.08, 0], [5.4, 0.16, 2.0], PAL.soft), 'the bench');
+    v.pickable(box3(grp, [0, YB - 0.08, 0], [5.4, 0.16, 2.0], PAL.soft), '工作台');
     cyl.forEach((c, i) => {
       const wall = new T3D.Mesh(new T3D.CylinderGeometry(RC, RC, 2 * H0 + 0.5, 36, 1, true), mat3(F.ref(i ? 'changed' : 'baseline'), glass({ opacity: 0.16 }))); wall.position.set(c.cx, YB + H0 + 0.15, 0); wall.renderOrder = 2; grp.add(wall);
       const body = new T3D.Mesh(new T3D.CylinderGeometry(RC - 0.01, RC - 0.01, c.h, 36), mat3(C('volume'), { transparent: true, opacity: 0.12, depthWrite: false })); body.position.set(c.cx, YB + c.h / 2, 0); grp.add(body);
-      v.pickable(body, 'the gas, ' + (c.h === H0 ? '1.00 L' : fmt(c.h / H0, 2) + ' L'));
-      v.pickable(box3(grp, [c.cx, YB + c.h + 0.05, 0], [2 * RC - 0.02, 0.1, 2 * RC - 0.02], PAL.muted), 'the piston');
+      v.pickable(body, '气体，' + (c.h === H0 ? '1.00 L' : fmt(c.h / H0, 2) + ' L'));
+      v.pickable(box3(grp, [c.cx, YB + c.h + 0.05, 0], [2 * RC - 0.02, 0.1, 2 * RC - 0.02], PAL.muted), '活塞');
       stick3(grp, [c.cx, YB + c.h + 0.1, 0], [c.cx, YB + 2 * H0 + 0.7, 0], 0.04, PAL.ink);
-      const lab = v.label(i === 0 ? 'baseline' : law.value === 'amontons' ? 'heated' : law.value === 'boyle' ? 'volume decreased' : 'increased gas', [c.cx, YB + 2 * H0 + 0.85, 0], grp, 6);
+      const lab = v.label(i === 0 ? '基准' : law.value === 'amontons' ? '加热后' : law.value === 'boyle' ? '体积减小后' : '气体增加后', [c.cx, YB + 2 * H0 + 0.85, 0], grp, 6);
       lab.style.color = F.ref(i ? 'changed' : 'baseline');
       const vl = v.label(fmt(c.h / H0, 2) + ' L', [c.cx + RC + 0.1, YB + c.h / 2, 0], grp, 0); vl.style.color = C('volume');
       if (i === 1 && law.value === 'amontons') { const tl = v.label('600 K', [c.cx, YB - 0.3, 0.9], grp, 0); tl.style.color = C('temperature'); }
@@ -117,19 +117,19 @@ const draw3 = (M, T) => { const s = Math.sqrt((R8 * T) / kg(M)); return [gauss()
     v.invalidate();
     const { ctx } = begin(cnv), L = law.value, c1 = cyl[1];
     const rel = (c) => (100 * c.flux) / base;
-    topline(ctx, L === 'amontons' ? 'Heated from 300 K to 600 K at constant volume, the molecules move 1.41 times as fast, so each unit of wall is struck 1.41 times as often and each strike is 1.41 times as hard: the pressure doubles.'
-      : L === 'boyle' ? 'With the volume halved at constant temperature, the same molecules strike each unit of wall twice as often, and the pressure doubles.'
-      : 'With twice the gas at constant temperature and pressure, the volume doubles, and each unit of wall is struck as often as before.');
-    text(ctx, 'strikes on each unit of wall area in each second, the baseline’s set at 100', 80, 110, PAL.muted, { size: 17 });
+    topline(ctx, L === 'amontons' ? '体积不变，从 300 K 加热到 600 K，分子的运动速率变为 1.41 倍，所以器壁的每个单位面积受到撞击的次数是原来的 1.41 倍，每次撞击的力也是原来的 1.41 倍：压强加倍。'
+      : L === 'boyle' ? '温度不变，体积减半，同样的分子撞击器壁每个单位面积的次数变为两倍，压强加倍。'
+      : '温度和压强不变，气体增加到两倍，体积加倍，器壁的每个单位面积受到撞击的次数与原来相同。');
+    text(ctx, '每秒器壁每单位面积受到的撞击次数，以基准的为 100', 80, 110, PAL.muted, { size: 17 });
     const bmax = 260, x0 = 300, W = 820;
     cyl.forEach((c, i) => {
       const y = 150 + i * 50, w = (W * Math.min(rel(c), bmax)) / bmax;
-      text(ctx, i === 0 ? 'baseline' : L === 'amontons' ? 'heated' : L === 'boyle' ? 'volume decreased' : 'increased gas', 80, y + 7, F.ref(i ? 'changed' : 'baseline'), { size: 20, weight: 600 });
+      text(ctx, i === 0 ? '基准' : L === 'amontons' ? '加热后' : L === 'boyle' ? '体积减小后' : '气体增加后', 80, y + 7, F.ref(i ? 'changed' : 'baseline'), { size: 20, weight: 600 });
       ctx.save(); ctx.fillStyle = alpha(F.ref(i ? 'changed' : 'baseline'), 0.85); ctx.fillRect(x0, y - 14, w, 28); ctx.restore();
       line(ctx, x0, y - 20, x0, y + 20, PAL.ink, 2);
       text(ctx, fmt(rel(c), 0), x0 + w + 10, y + 7, PAL.ink, { size: 18 });
     });
-    text(ctx, 'molecules drawn: ' + N0 + ' in the baseline and ' + c1.n + ' in the changed cylinder', 80, 236, PAL.muted, { size: 16 });
+    text(ctx, '绘出的分子：基准气缸 ' + N0 + ' 个，变化后的气缸 ' + c1.n + ' 个', 80, 236, PAL.muted, { size: 16 });
     const T = (k, x) => hue('temperature', x + '\\ \\text{K}'), V = (x) => hue('volume', fmt(x, 2) + '\\ \\text{L}'), n = (x) => hue('amount', fmt(x, 4) + '\\ \\text{mol}');
     const n1 = 1 / (0.08206 * 300);
     tex(d.readout, L === 'amontons' ? `\\frac{\\kPtwo}{\\kPone} = \\frac{\\kTtwo}{\\kTone} = \\frac{${T(2, 600)}}{${T(1, 300)}} = 2`
@@ -153,9 +153,9 @@ const draw3 = (M, T) => { const s = Math.sqrt((R8 * T) / kg(M)); return [gauss()
 (function () {
   const d = sim('sim-speeds', 520);
   const GASES = ['O₂', 'N₂', 'He', 'Ne', 'Ar', 'Xe'], NOBLE = ['Xe', 'Ar', 'Ne', 'He'], TEMPS = [100, 200, 500, 1000];
-  const cmp = F.choice(d.controls, { label: '\\text{compare with}', aria: 'the curves drawn behind the live one', options: [{ value: 'one', label: 'none' }, { value: 'temps', label: 'temperatures' }, { value: 'gases', label: 'gases' }], value: 'one' });
-  const gas = F.select(d.controls, { label: '\\text{gas}', aria: 'the gas', options: GASES.map((g) => ({ value: g, label: g })), value: 'O₂' });
-  const Tc = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 100, max: 1000, step: 1, value: 300, unit: 'K', dec: 0, detents: [100, 200, 300, 500, 1000], aria: 'temperature of the gas in kelvin' });
+  const cmp = F.choice(d.controls, { label: '\\text{对比}', aria: '画在实时曲线之后的曲线', options: [{ value: 'one', label: '无' }, { value: 'temps', label: '温度' }, { value: 'gases', label: '气体' }], value: 'one' });
+  const gas = F.select(d.controls, { label: '\\text{气体}', aria: '气体', options: GASES.map((g) => ({ value: g, label: g })), value: 'O₂' });
+  const Tc = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 100, max: 1000, step: 1, value: 300, unit: 'K', dec: 0, detents: [100, 200, 300, 500, 1000], aria: '气体的开尔文温度' });
   const REF = { Xe: 'xenon', Ar: 'argon', Ne: 'neon', He: 'helium' };
   const r1 = el('div'), r2 = el('div'); d.readout.append(r1, r2);
   const box = { l: 130, r: 1300, t: 110, b: 420 };
@@ -163,7 +163,7 @@ const draw3 = (M, T) => { const s = Math.sqrt((R8 * T) / kg(M)); return [gauss()
     const { ctx } = begin(d.c);
     const g = gas.value, M = MOLS[g].m, T = Tc.v, mode = cmp.value;
     const xmax = mode === 'gases' ? 3000 : xmaxFor(M), ymax = mode === 'gases' ? 1.1 * peak(131.29, 300) : ymaxFor(M);
-    const { X, Y } = axes(ctx, box, [0, xmax], [0, ymax], { nx: xmax / 500, ny: 4, fy: () => '', xl: 'speed u (m/s)', xc: C('velocity'), yl: 'fraction of molecules' });
+    const { X, Y } = axes(ctx, box, [0, xmax], [0, ymax], { nx: xmax / 500, ny: 4, fy: () => '', xl: '速率 u（m/s）', xc: C('velocity'), yl: '分子所占比例' });
     const fam = mode === 'temps' ? TEMPS.map((t) => ({ M, T: t, name: t + ' K' })) : mode === 'gases' ? NOBLE.map((n) => ({ M: MOLS[n].m, T, name: n })) : [];
     const famC = (c, i) => (mode === 'gases' ? F.ref(REF[c.name]) : F.cat(i));
     ctx.save(); ctx.beginPath(); ctx.rect(box.l, box.t - 2, box.r - box.l, box.b - box.t + 2); ctx.clip();
@@ -181,14 +181,14 @@ const draw3 = (M, T) => { const s = Math.sqrt((R8 * T) / kg(M)); return [gauss()
     fam.forEach((c, i) => {
       const lx = box.r - 190, ly = box.t + 20 + i * 30;
       line(ctx, lx, ly - 6, lx + 36, ly - 6, famC(c, i), 4);
-      text(ctx, mode === 'temps' ? g + ' at ' + c.name : c.name + ' at ' + T + ' K', lx + 46, ly, PAL.ink, { size: 18 });
+      text(ctx, mode === 'temps' ? g + '，' + c.name : c.name + '，' + T + ' K', lx + 46, ly, PAL.ink, { size: 18 });
     });
     const ly = box.t + 20 + fam.length * 30;
     line(ctx, box.r - 190, ly - 6, box.r - 154, ly - 6, PAL.ink, 5);
-    text(ctx, g + ' at ' + T + ' K', box.r - 144, ly, PAL.ink, { size: 18, weight: 600 });
-    topline(ctx, 'For ' + MOLS[g].word + ' at ' + T + ' K the most probable speed is ' + fmt(p, 0) + ' m/s and the root mean square speed is ' + fmt(q, 0) + ' m/s.');
+    text(ctx, g + '，' + T + ' K', box.r - 144, ly, PAL.ink, { size: 18, weight: 600 });
+    topline(ctx, '在 ' + T + ' K 时，' + MOLS[g].word + '气的最概然速率为 ' + fmt(p, 0) + ' m/s，方均根速率为 ' + fmt(q, 0) + ' m/s。');
     tex(r1, `\\kurms = \\sqrt{\\frac{3R\\kT}{\\kMM}} = \\sqrt{\\frac{3(8.314\\ \\text{J/mol K})(${hue('temperature', T + '\\ \\text{K}')})}{${hue('mass', fmt(kg(M), 4) + '\\ \\text{kg/mol}')}}} = ${hue('velocity', fmt(q, 0) + '\\ \\text{m/s}')}`);
-    tex(r2, `\\kKEavg = \\frac{3}{2}R\\kT = \\frac{3}{2}(8.314\\ \\text{J/mol K})(${hue('temperature', T + '\\ \\text{K}')}) = ${hue('energy', fmt(1.5 * R8 * T, 0) + '\\ \\text{J/mol}')}\\ \\text{for every gas}`);
+    tex(r2, `\\kKEavg = \\frac{3}{2}R\\kT = \\frac{3}{2}(8.314\\ \\text{J/mol K})(${hue('temperature', T + '\\ \\text{K}')}) = ${hue('energy', fmt(1.5 * R8 * T, 0) + '\\ \\text{J/mol}')}\\ \\text{对每种气体都相同}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -205,11 +205,11 @@ const draw3 = (M, T) => { const s = Math.sqrt((R8 * T) / kg(M)); return [gauss()
 ===================================================================== */
 (function () {
   const d = sim('sim-gasbox');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [-1.22, 1.22], views: [{ label: 'front', yaw: 0, pitch: 0.15 }, { label: 'corner', yaw: 0.7, pitch: 0.42 }], h: 360, dist: 6.4, tilt: 0.18 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [-1.22, 1.22], views: [{ label: '正视', yaw: 0, pitch: 0.15 }, { label: '斜视', yaw: 0.7, pitch: 0.42 }], h: 360, dist: 6.4, tilt: 0.18 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 340);
   const GASES = ['He', 'N₂', 'Ar', 'Xe'];
-  const gas = F.choice(d.controls, { label: '\\text{gas}', aria: 'the gas in the box', options: GASES.map((g) => ({ value: g, label: g })), value: 'N₂', ms: 0, onInput: clear });
-  const Tc = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 100, max: 1000, step: 1, value: 300, unit: 'K', dec: 0, detents: [100, 300, 500, 1000], onInput: clear, aria: 'temperature of the gas in kelvin' });
+  const gas = F.choice(d.controls, { label: '\\text{气体}', aria: '盒中的气体', options: GASES.map((g) => ({ value: g, label: g })), value: 'N₂', ms: 0, onInput: clear });
+  const Tc = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 100, max: 1000, step: 1, value: 300, unit: 'K', dec: 0, detents: [100, 300, 500, 1000], onInput: clear, aria: '气体的开尔文温度' });
   const L = 1.0, RM = 0.1, N = 40, KS = 0.0016, RATE = 3, NB = 40, K = 0.012;
   let P = [], bins = [], total = 0, sumsq = 0, sig = '', ms = [], xmax = 1500;
   function clear() { bins = new Array(NB).fill(0); total = 0; sumsq = 0; xmax = xmaxFor(MOLS[gas.value].m); }
@@ -232,7 +232,7 @@ const draw3 = (M, T) => { const s = Math.sqrt((R8 * T) / kg(M)); return [gauss()
     v.clear();
     const b = new T3D.Mesh(new T3D.BoxGeometry(2 * L, 2 * L, 2 * L), mat3(PAL.ink, glass())); grp.add(b);
     const e = new T3D.LineSegments(new T3D.EdgesGeometry(new T3D.BoxGeometry(2 * L, 2 * L, 2 * L)), new T3D.LineBasicMaterial({ color: new T3D.Color(PAL.ink) })); grp.add(e);
-    v.label(MOLS[gas.value].word + ', ' + gas.value, [0, L + 0.15, 0], grp, 6);
+    v.label(MOLS[gas.value].word + '气，' + gas.value, [0, L + 0.15, 0], grp, 6);
     ms = P.map(() => molecule3(v, grp, gas.value, K));
   }
   function draw() {
@@ -241,7 +241,7 @@ const draw3 = (M, T) => { const s = Math.sqrt((R8 * T) / kg(M)); return [gauss()
     v.invalidate();
     const { ctx } = begin(cnv), g = gas.value, M = MOLS[g].m, T = Tc.v, q = urms(M, T);
     const box = { l: 130, r: 1300, t: 110, b: 270 }, ymax = ymaxFor(M), bw = xmax / NB;
-    const { X, Y } = axes(ctx, box, [0, xmax], [0, ymax], { nx: xmax / 500, ny: 2, fy: () => '', xl: 'speed u (m/s)', xc: C('velocity'), yl: 'fraction of molecules' });
+    const { X, Y } = axes(ctx, box, [0, xmax], [0, ymax], { nx: xmax / 500, ny: 2, fy: () => '', xl: '速率 u（m/s）', xc: C('velocity'), yl: '分子所占比例' });
     ctx.save(); ctx.beginPath(); ctx.rect(box.l, box.t, box.r - box.l, box.b - box.t); ctx.clip();
     ctx.fillStyle = alpha(F.ref('speed-count'), 0.7);
     if (total) bins.forEach((c, i) => { const h = c / (total * bw); ctx.fillRect(X(i * bw) + 1, Y(h), X(bw) - X(0) - 2, box.b - Y(h)); });
@@ -250,7 +250,7 @@ const draw3 = (M, T) => { const s = Math.sqrt((R8 * T) / kg(M)); return [gauss()
     line(ctx, X(q), box.t, X(q), box.b, C('velocity'), 2, [10, 10]);
     text(ctx, 'u_{rms}', X(q) + 8, box.t + 18, C('velocity'), { size: 18, weight: 600, bg: PAL.panel });
     const seen = total ? Math.sqrt(sumsq / total) : 0;
-    topline(ctx, total + ' speeds of ' + MOLS[g].word + ' at ' + T + ' K counted so far; their root mean square is ' + fmt(seen, 0) + ' m/s, and √(3RT/ℳ) gives ' + fmt(q, 0) + ' m/s.');
+    topline(ctx, '在 ' + T + ' K 时，已统计 ' + total + ' 个' + MOLS[g].word + '气分子的速率；其方均根值为 ' + fmt(seen, 0) + ' m/s，而 √(3RT/ℳ) 给出 ' + fmt(q, 0) + ' m/s。');
     tex(d.readout, `\\kKEavg = \\frac{3}{2}R\\kT = \\frac{3}{2}(8.314\\ \\text{J/mol K})(${hue('temperature', T + '\\ \\text{K}')}) = ${hue('energy', fmt(1.5 * R8 * T, 0) + '\\ \\text{J/mol}')}`);
   }
   register(d.fig, { update: (dt) => { cy.step(dt, () => 1); step(Math.min(dt, 0.05)); }, draw });

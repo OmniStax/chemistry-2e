@@ -35,8 +35,8 @@ const MOLS = {
   'CO₂': { m: 44.01, atoms: [['O', -13, 0, 7], ['O', 13, 0, 7], ['C', 0, 0, 6.5]] },
   'Ar': { m: 39.95, atoms: [['Ar', 0, 0, 8]] },
 };
-const WORD = { 'He': 'helium', 'H₂': 'hydrogen', 'N₂': 'nitrogen', 'O₂': 'oxygen', 'NH₃': 'ammonia', 'CH₄': 'methane', 'CO₂': 'carbon dioxide', 'Ar': 'argon' };
-const molName = (f) => (MOLS[f].atoms.length === 1 ? 'a ' + WORD[f] + ' atom, ' + f : 'a ' + WORD[f] + ' molecule, ' + f);
+const WORD = { 'He': '氦气', 'H₂': '氢气', 'N₂': '氮气', 'O₂': '氧气', 'NH₃': '氨', 'CH₄': '甲烷', 'CO₂': '二氧化碳', 'Ar': '氩气' };
+const molName = (f) => WORD[f].replace(/气$/, '') + (MOLS[f].atoms.length === 1 ? '原子，' : '分子，') + f;
 /* one molecule of the gas f centred on (x, y), scaled by k and turned by a; hydrogen takes an ink outline so that its light disc
    reads on a light page; returns the radius that covers it, for the hover tooltip */
 function molecule(ctx, f, x, y, k = 1, a = 0) {
@@ -127,8 +127,8 @@ function flock(v, grp, g, k) {
 }
 /* the view presets: a particle picture turns freely and does not spin on its own, since its particles already move; a vessel
    over a hot plate has a ground and is never seen from beneath */
-const PICTURE = { spin: 'off', views: [{ label: 'front', yaw: 0, pitch: 0.18 }, { label: 'corner', yaw: 0.7, pitch: 0.42 }] };
-const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', yaw: 0, pitch: 0.22 }, { label: 'above', yaw: 0, pitch: 1.1 }] };
+const PICTURE = { spin: 'off', views: [{ label: '正视', yaw: 0, pitch: 0.18 }, { label: '斜视', yaw: 0.7, pitch: 0.42 }] };
+const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: '正视', yaw: 0, pitch: 0.22 }, { label: '俯视', yaw: 0, pitch: 1.1 }] };
 
 /* =====================================================================
    FIGURE 9.10: the sealed sphere over a hot plate, in three dimensions.
@@ -146,8 +146,8 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
   const grp = v.part(0), cnv = strip(d, 250);
   grp.position.y = -0.32;                                   /* the plate to the label above the neck, centred on the camera's aim */
   /* the sphere stands in a water bath, so the temperature runs from the ice point to the boiling point and no further */
-  const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 273, max: 373, step: 1, value: 298, unit: 'K', dec: 0, aria: 'temperature of the gas in kelvin' });
-  const N = ctl(d.controls, { label: '\\kn', cls: 'amount', min: 0.25, max: 2, step: 0.05, value: 1, unit: 'mol', dec: 2, aria: 'amount of gas in moles' });
+  const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 273, max: 373, step: 1, value: 298, unit: 'K', dec: 0, aria: '气体的开尔文温度' });
+  const N = ctl(d.controls, { label: '\\kn', cls: 'amount', min: 0.25, max: 2, step: 0.05, value: 1, unit: 'mol', dec: 2, aria: '气体的物质的量，单位为摩尔' });
   const V = 1.0;                                            /* the sphere holds one litre and cannot change */
   const RS = 1.0, RM = 0.09, LIM = RS - RM - 0.02;           /* the sphere, a molecule's reach, and how far a centre may go */
   const g = gas3();
@@ -161,17 +161,17 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
   function build() {
     const glassC = F.ref('sphere'), key = palSig() + '|' + glassC; if (key === sig) return; sig = key;
     v.clear(); birds.drop();
-    v.pickable(box3(grp, [0, -1.42, 0], [3.8, 0.16, 3.8], PAL.muted), 'hot plate');                 /* the hot plate */
+    v.pickable(box3(grp, [0, -1.42, 0], [3.8, 0.16, 3.8], PAL.muted), '电热板');                 /* the hot plate */
     glow = box3(grp, [0, -1.33, 0], [3.0, 0.02, 3.0], PAL.soft, { transparent: true, opacity: 0.55 });   /* the plate's element, an apparatus in ink and never a body tinted by the temperature (rule 7) */
     const beaker = new T3D.Mesh(new T3D.CylinderGeometry(1.5, 1.5, 1.9, 36, 1, true), mat3(PAL.ink, glass())); beaker.position.set(0, -0.4, 0); grp.add(beaker);
     bath = new T3D.Mesh(new T3D.CylinderGeometry(1.48, 1.48, 1.5, 36), mat3(PAL.muted, { transparent: true, opacity: 0.16, depthWrite: false })); bath.position.set(0, -0.6, 0); grp.add(bath);   /* water, drawn as the beakers of Chapter 1 draw it; the temperature hue stays on the slider and the readout */
-    v.pickable(bath, 'water bath');
+    v.pickable(bath, '水浴');
     const ball = new T3D.Mesh(new T3D.SphereGeometry(RS, 36, 24), mat3(glassC, glass({ opacity: 0.16 }))); ball.renderOrder = 2; grp.add(ball);
     const neck = new T3D.Mesh(new T3D.CylinderGeometry(0.12, 0.12, 0.7, 18, 1, true), mat3(glassC, glass({ opacity: 0.16 }))); neck.position.set(0, RS + 0.3, 0); grp.add(neck);
-    v.pickable(box3(grp, [0, RS + 0.72, 0], [0.5, 0.16, 0.16], C('pressure')), 'pressure gauge, on the neck of the sphere; its reading is on the dial beneath');
-    v.label('sealed sphere, 1 L', [0, RS + 0.95, 0], grp, 6).style.color = glassC;
-    v.label('water bath', [1.5, -0.55, 0], grp, 0);
-    v.label('hot plate', [-1.9, -1.42, 0], grp, 0);
+    v.pickable(box3(grp, [0, RS + 0.72, 0], [0.5, 0.16, 0.16], C('pressure')), '压力计，位于球的颈部；其读数在下方的表盘上');
+    v.label('密封球，1 L', [0, RS + 0.95, 0], grp, 6).style.color = glassC;
+    v.label('水浴', [1.5, -0.55, 0], grp, 0);
+    v.label('电热板', [-1.9, -1.42, 0], grp, 0);
   }
   function draw() {
     build();
@@ -182,17 +182,17 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
     /* the strip beneath: the gauge, the readings and the ratio that does not change */
     const { ctx } = begin(cnv);
     gauge(ctx, 130, 130, 62, P, 100, 'atm');
-    text(ctx, 'pressure gauge', 130, 214, PAL.muted, { size: 16, align: 'center' });
+    text(ctx, '压力计', 130, 214, PAL.muted, { size: 16, align: 'center' });
     text(ctx, fmt(P, 1) + ' atm', 230, 118, cp, { size: 30, weight: 600 });
-    text(ctx, 'about ' + g.rate + ' strikes on the wall each second', 230, 156, PAL.muted, { size: 17 });
+    text(ctx, '每秒约撞击器壁 ' + g.rate + ' 次', 230, 156, PAL.muted, { size: 17 });
     const rx = 700;
-    text(ctx, 'V = ' + fmt(V, 2) + ' L, the sealed sphere', rx, 122, C('volume'), { size: 22, weight: 600 });
-    text(ctx, 'n = ' + fmt(n, 2) + ' mol of air, ' + g.p.length + ' molecules drawn', rx, 152, ca, { size: 22, weight: 600 });
-    text(ctx, 'T = ' + t + ' K, the water bath, which runs from 273 K to 373 K', rx, 182, ct, { size: 22, weight: 600 });
-    text(ctx, 'The molecules move ' + fmt(Math.sqrt(t / 298), 2) + ' times as fast as at 298 K.', rx, 218, PAL.ink, { size: 17, weight: 600 });
-    topline(ctx, 'At ' + t + ' K the gauge reads ' + fmt(P, 1) + ' atm; the ratio P/T stays at ' + fmt(P / t, 4) + ' atm/K for this filling of the sphere.');
+    text(ctx, 'V = ' + fmt(V, 2) + ' L，密封球', rx, 122, C('volume'), { size: 22, weight: 600 });
+    text(ctx, 'n = ' + fmt(n, 2) + ' mol 空气，画出 ' + g.p.length + ' 个分子', rx, 152, ca, { size: 22, weight: 600 });
+    text(ctx, 'T = ' + t + ' K，水浴，范围从 273 K 到 373 K', rx, 182, ct, { size: 22, weight: 600 });
+    text(ctx, '分子运动的速率是 298 K 时的 ' + fmt(Math.sqrt(t / 298), 2) + ' 倍。', rx, 218, PAL.ink, { size: 17, weight: 600 });
+    topline(ctx, '在 ' + t + ' K 时压力计读数为 ' + fmt(P, 1) + ' atm；对于球的这一次充气，比值 P/T 保持为 ' + fmt(P / t, 4) + ' atm/K。');
     readout(d.readout, `\\frac{\\kP}{\\kT} = \\frac{${hue('pressure', fmt(P, 1) + '\\ \\text{atm}')}}{${hue('temperature', t + '\\ \\text{K}')}} = ${fmt(P / t, 4)}\\ \\text{atm/K} = \\frac{\\kn R}{\\kV}`,
-      'Carrying the bath from the ice point at 273 K to the boiling point at 373 K raises the kelvin temperature by the factor ' + fmt(373 / 273, 2) + ', and the pressure rises by the same factor, from ' + fmt((n * R * 273) / V, 1) + ' atm to ' + fmt((n * R * 373) / V, 1) + ' atm.');
+      '把水浴从 273 K 的冰点升到 373 K 的沸点，开尔文温度增大为原来的 ' + fmt(373 / 273, 2) + ' 倍，压强也增大为原来的相同倍数，从 ' + fmt((n * R * 273) / V, 1) + ' atm 增到 ' + fmt((n * R * 373) / V, 1) + ' atm。');
   }
   register(d.fig, { update: (dt) => { cy.step(dt, () => 1); g.step(dt, speed3(T.v), inside); }, draw });
 })();
@@ -205,8 +205,8 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
 ===================================================================== */
 (function () {
   const d = sim('sim-amontons-graph', 560);
-  const T1 = ctl(d.controls, { label: '\\kTone', cls: 'temperature', min: 100, max: 500, step: 1, value: 273, unit: 'K', dec: 0, aria: 'first temperature in kelvin' });
-  const T2 = ctl(d.controls, { label: '\\kTtwo', cls: 'temperature', min: 100, max: 500, step: 1, value: 373, unit: 'K', dec: 0, aria: 'second temperature in kelvin' });
+  const T1 = ctl(d.controls, { label: '\\kTone', cls: 'temperature', min: 100, max: 500, step: 1, value: 273, unit: 'K', dec: 0, aria: '第一个温度，单位为开尔文' });
+  const T2 = ctl(d.controls, { label: '\\kTtwo', cls: 'temperature', min: 100, max: 500, step: 1, value: 373, unit: 'K', dec: 0, aria: '第二个温度，单位为开尔文' });
   const DATA = [[-100, 173, 36.0], [-50, 223, 46.4], [0, 273, 56.7], [50, 323, 67.1], [100, 373, 77.5], [150, 423, 88.0]];
   const K = DATA.reduce((s, r) => s + r[1] * r[2], 0) / DATA.reduce((s, r) => s + r[1] * r[1], 0);   /* the line through the origin that fits the data, 0.208 kPa/K */
   const P = (t) => K * t;
@@ -215,15 +215,15 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
     const t1 = T1.v, t2 = T2.v, p1 = P(t1), p2 = P(t2), cp = C('pressure'), ct = C('temperature');
     /* the book's table on the left */
     const tx = [110, 265, 415], ty = 130;
-    text(ctx, 'Temperature', tx[0], ty, PAL.ink, { size: 17, weight: 600, align: 'center' }); text(ctx, '(°C)', tx[0], ty + 22, PAL.ink, { size: 15, align: 'center' });
-    text(ctx, 'Temperature', tx[1], ty, ct, { size: 17, weight: 600, align: 'center' }); text(ctx, '(K)', tx[1], ty + 22, ct, { size: 15, align: 'center' });
-    text(ctx, 'Pressure', tx[2], ty, cp, { size: 17, weight: 600, align: 'center' }); text(ctx, '(kPa)', tx[2], ty + 22, cp, { size: 15, align: 'center' });
+    text(ctx, '温度', tx[0], ty, PAL.ink, { size: 17, weight: 600, align: 'center' }); text(ctx, '(°C)', tx[0], ty + 22, PAL.ink, { size: 15, align: 'center' });
+    text(ctx, '温度', tx[1], ty, ct, { size: 17, weight: 600, align: 'center' }); text(ctx, '(K)', tx[1], ty + 22, ct, { size: 15, align: 'center' });
+    text(ctx, '压强', tx[2], ty, cp, { size: 17, weight: 600, align: 'center' }); text(ctx, '(kPa)', tx[2], ty + 22, cp, { size: 15, align: 'center' });
     line(ctx, 50, ty + 40, 480, ty + 40, PAL.muted, 2);
     DATA.forEach((r, i) => { const y = ty + 76 + i * 40; text(ctx, String(r[0]).replace('-', '−'), tx[0], y, PAL.ink, { size: 18, align: 'center' }); text(ctx, String(r[1]), tx[1], y, ct, { size: 18, align: 'center' }); text(ctx, fmt(r[2], 1), tx[2], y, cp, { size: 18, align: 'center' }); });
-    text(ctx, 'air at constant volume', 265, ty + 76 + DATA.length * 40 + 4, PAL.muted, { size: 16, align: 'center' });
+    text(ctx, '体积恒定的空气', 265, ty + 76 + DATA.length * 40 + 4, PAL.muted, { size: 16, align: 'center' });
     /* the graph: 0 to 500 K by 100, 0 to 120 kPa by 20, fixed from the slider range (104 kPa at 500 K) and the data */
     const box = { l: 640, r: 1320, t: 110, b: 460 };
-    const g = axes(ctx, box, [0, 500], [0, 120], { xl: 'Temperature (K)', xc: ct, yl: 'Pressure (kPa)', yc: cp, nx: 5, ny: 6 });
+    const g = axes(ctx, box, [0, 500], [0, 120], { xl: '温度（K）', xc: ct, yl: '压强（kPa）', yc: cp, nx: 5, ny: 6 });
     line(ctx, g.X(0), g.Y(0), g.X(173), g.Y(P(173)), cp, 3, [10, 10]);
     line(ctx, g.X(423), g.Y(P(423)), g.X(480), g.Y(P(480)), cp, 3, [10, 10]);
     line(ctx, g.X(173), g.Y(P(173)), g.X(423), g.Y(P(423)), cp, 5);
@@ -237,11 +237,11 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
       const left = t > 420 || (lab === '1' && Math.abs(t2 - t1) < 60 && t2 >= t1) || (lab === '2' && Math.abs(t2 - t1) < 60 && t2 < t1);
       text(ctx, 'P_{' + lab + '} = ' + fmt(p, 1) + ' kPa', g.X(t) + (left ? -16 : 16), g.Y(p) - 20, cp, { size: 17, weight: 600, align: left ? 'right' : 'left', bg: PAL.panel });
     }
-    text(ctx, 'absolute zero, 0 K (−273 °C)', g.X(0) + 70, g.Y(0) - 16, PAL.ink, { size: 16, weight: 600, base: 'middle', bg: PAL.panel });
-    text(ctx, 'no measurements below 173 K: the air condenses', g.X(175), g.Y(14), PAL.muted, { size: 15, base: 'middle', bg: PAL.panel });
-    topline(ctx, 'At ' + t1 + ' K the line gives ' + fmt(p1, 1) + ' kPa and at ' + t2 + ' K ' + fmt(p2, 1) + ' kPa; P/T is ' + fmt(K, 3) + ' kPa/K at both.');
+    text(ctx, '绝对零度，0 K（−273 °C）', g.X(0) + 70, g.Y(0) - 16, PAL.ink, { size: 16, weight: 600, base: 'middle', bg: PAL.panel });
+    text(ctx, '173 K 以下没有测量值：空气凝结', g.X(175), g.Y(14), PAL.muted, { size: 15, base: 'middle', bg: PAL.panel });
+    topline(ctx, '在 ' + t1 + ' K 时直线给出 ' + fmt(p1, 1) + ' kPa，在 ' + t2 + ' K 时给出 ' + fmt(p2, 1) + ' kPa；两处的 P/T 均为 ' + fmt(K, 3) + ' kPa/K。');
     readout(d.readout, `\\frac{\\kPone}{\\kTone} = \\frac{${hue('pressure', fmt(p1, 1) + '\\ \\text{kPa}')}}{${hue('temperature', t1 + '\\ \\text{K}')}} = \\frac{\\kPtwo}{\\kTtwo} = \\frac{${hue('pressure', fmt(p2, 1) + '\\ \\text{kPa}')}}{${hue('temperature', t2 + '\\ \\text{K}')}} = ${fmt(K, 3)}\\ \\text{kPa/K}`,
-      t1 === t2 ? 'The two states are the same point on the line.' : 'The kelvin temperature is ' + fmt(t2 / t1, 2) + ' times as great in the second state, and so is the pressure; the same change written in degrees Celsius, from ' + String(t1 - 273).replace('-', '−') + ' °C to ' + String(t2 - 273).replace('-', '−') + ' °C, is no simple ratio at all.');
+      t1 === t2 ? '两个状态是直线上的同一个点。' : '第二个状态的开尔文温度是第一个状态的 ' + fmt(t2 / t1, 2) + ' 倍，压强也是 ' + fmt(t2 / t1, 2) + ' 倍；同一变化若用摄氏度表示，从 ' + String(t1 - 273).replace('-', '−') + ' °C 到 ' + String(t2 - 273).replace('-', '−') + ' °C，则根本不是简单的比值。');
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -254,8 +254,8 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
 ===================================================================== */
 (function () {
   const d = sim('sim-charles-graph', 560);
-  const T1 = ctl(d.controls, { label: '\\kTone', cls: 'temperature', min: 111, max: 500, step: 1, value: 283, unit: 'K', dec: 0, aria: 'first temperature in kelvin' });
-  const T2 = ctl(d.controls, { label: '\\kTtwo', cls: 'temperature', min: 111, max: 500, step: 1, value: 303, unit: 'K', dec: 0, aria: 'second temperature in kelvin' });
+  const T1 = ctl(d.controls, { label: '\\kTone', cls: 'temperature', min: 111, max: 500, step: 1, value: 283, unit: 'K', dec: 0, aria: '第一个温度，单位为开尔文' });
+  const T2 = ctl(d.controls, { label: '\\kTtwo', cls: 'temperature', min: 111, max: 500, step: 1, value: 303, unit: 'K', dec: 0, aria: '第二个温度，单位为开尔文' });
   const DATA = [[-100, 173, 14.10], [-50, 223, 18.26], [0, 273, 22.40], [100, 373, 30.65], [200, 473, 38.88]];
   const K = DATA.reduce((s, r) => s + r[1] * r[2], 0) / DATA.reduce((s, r) => s + r[1] * r[1], 0);   /* the line through the origin that fits the data, 0.0821 L/K */
   const Vof = (t) => K * t;
@@ -263,15 +263,15 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
     const { ctx } = begin(d.c);
     const t1 = T1.v, t2 = T2.v, v1 = Vof(t1), v2 = Vof(t2), cv = C('volume'), ct = C('temperature');
     const tx = [110, 265, 415], ty = 130;
-    text(ctx, 'Temperature', tx[0], ty, PAL.ink, { size: 17, weight: 600, align: 'center' }); text(ctx, '(°C)', tx[0], ty + 22, PAL.ink, { size: 15, align: 'center' });
-    text(ctx, 'Temperature', tx[1], ty, ct, { size: 17, weight: 600, align: 'center' }); text(ctx, '(K)', tx[1], ty + 22, ct, { size: 15, align: 'center' });
-    text(ctx, 'Volume', tx[2], ty, cv, { size: 17, weight: 600, align: 'center' }); text(ctx, '(L)', tx[2], ty + 22, cv, { size: 15, align: 'center' });
+    text(ctx, '温度', tx[0], ty, PAL.ink, { size: 17, weight: 600, align: 'center' }); text(ctx, '(°C)', tx[0], ty + 22, PAL.ink, { size: 15, align: 'center' });
+    text(ctx, '温度', tx[1], ty, ct, { size: 17, weight: 600, align: 'center' }); text(ctx, '(K)', tx[1], ty + 22, ct, { size: 15, align: 'center' });
+    text(ctx, '体积', tx[2], ty, cv, { size: 17, weight: 600, align: 'center' }); text(ctx, '(L)', tx[2], ty + 22, cv, { size: 15, align: 'center' });
     line(ctx, 50, ty + 40, 480, ty + 40, PAL.muted, 2);
     DATA.forEach((r, i) => { const y = ty + 76 + i * 40; text(ctx, String(r[0]).replace('-', '−'), tx[0], y, PAL.ink, { size: 18, align: 'center' }); text(ctx, String(r[1]), tx[1], y, ct, { size: 18, align: 'center' }); text(ctx, fmt(r[2], 2), tx[2], y, cv, { size: 18, align: 'center' }); });
-    text(ctx, '1 mol of methane at 1 atm', 265, ty + 76 + DATA.length * 40 + 4, PAL.muted, { size: 16, align: 'center' });
+    text(ctx, '1 atm 下 1 mol 甲烷', 265, ty + 76 + DATA.length * 40 + 4, PAL.muted, { size: 16, align: 'center' });
     /* the graph: 0 to 500 K by 100, 0 to 50 L by 10, fixed from the slider range and the data */
     const box = { l: 640, r: 1320, t: 110, b: 460 };
-    const g = axes(ctx, box, [0, 500], [0, 50], { xl: 'Temperature (K)', xc: ct, yl: 'Volume (L)', yc: cv, nx: 5, ny: 5 });
+    const g = axes(ctx, box, [0, 500], [0, 50], { xl: '温度（K）', xc: ct, yl: '体积（L）', yc: cv, nx: 5, ny: 5 });
     line(ctx, g.X(0), g.Y(0), g.X(111), g.Y(Vof(111)), cv, 3, [10, 10]);
     line(ctx, g.X(473), g.Y(Vof(473)), g.X(500), g.Y(Vof(500)), cv, 3, [10, 10]);
     line(ctx, g.X(111), g.Y(Vof(111)), g.X(473), g.Y(Vof(473)), cv, 5);
@@ -284,11 +284,11 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
       const left = t > 420 || (lab === '1' && Math.abs(t2 - t1) < 50 && t2 >= t1) || (lab === '2' && Math.abs(t2 - t1) < 50 && t2 < t1);
       text(ctx, 'V_{' + lab + '} = ' + fmt(v, 1) + ' L', g.X(t) + (left ? -16 : 16), g.Y(v) - 20, cv, { size: 17, weight: 600, align: left ? 'right' : 'left', bg: PAL.panel });
     }
-    text(ctx, 'absolute zero, 0 K', g.X(0) + 70, g.Y(0) - 16, PAL.ink, { size: 16, weight: 600, base: 'middle', bg: PAL.panel });
-    text(ctx, 'the line stops at 111 K, where methane liquefies', g.X(170), g.Y(6), PAL.muted, { size: 15, base: 'middle', bg: PAL.panel });
-    topline(ctx, 'At ' + t1 + ' K the line gives ' + fmt(v1, 1) + ' L and at ' + t2 + ' K ' + fmt(v2, 1) + ' L; V/T is ' + fmt(K, 4) + ' L/K at both.');
+    text(ctx, '绝对零度，0 K', g.X(0) + 70, g.Y(0) - 16, PAL.ink, { size: 16, weight: 600, base: 'middle', bg: PAL.panel });
+    text(ctx, '直线止于 111 K，甲烷在此液化', g.X(170), g.Y(6), PAL.muted, { size: 15, base: 'middle', bg: PAL.panel });
+    topline(ctx, '在 ' + t1 + ' K 时直线给出 ' + fmt(v1, 1) + ' L，在 ' + t2 + ' K 时给出 ' + fmt(v2, 1) + ' L；两处的 V/T 均为 ' + fmt(K, 4) + ' L/K。');
     readout(d.readout, `\\frac{\\kVone}{\\kTone} = \\frac{${hue('volume', fmt(v1, 2) + '\\ \\text{L}')}}{${hue('temperature', t1 + '\\ \\text{K}')}} = \\frac{\\kVtwo}{\\kTtwo} = \\frac{${hue('volume', fmt(v2, 2) + '\\ \\text{L}')}}{${hue('temperature', t2 + '\\ \\text{K}')}} = ${fmt(K, 4)}\\ \\text{L/K}`,
-      'Warming the mole of methane from ' + t1 + ' K to ' + t2 + ' K at 1 atm changes its volume by the factor ' + fmt(t2 / t1, 3) + ', the same factor as the kelvin temperature; extrapolated below 111 K, the line reaches zero volume at absolute zero.');
+      '在 1 atm 下把这 1 摩尔甲烷从 ' + t1 + ' K 加热到 ' + t2 + ' K，其体积变为原来的 ' + fmt(t2 / t1, 3) + ' 倍，与开尔文温度的倍数相同；外推到 111 K 以下，直线在绝对零度时达到零体积。');
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -301,8 +301,8 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
 ===================================================================== */
 (function () {
   const d = sim('sim-boyle', 800);
-  const V1 = ctl(d.controls, { label: '\\kVone', cls: 'volume', min: 5, max: 30, step: 0.1, value: 15, unit: 'mL', dec: 1, aria: 'volume before the plunger is moved' });
-  const V2 = ctl(d.controls, { label: '\\kVtwo', cls: 'volume', min: 5, max: 30, step: 0.1, value: 7.5, unit: 'mL', dec: 1, aria: 'volume after the plunger is moved' });
+  const V1 = ctl(d.controls, { label: '\\kVone', cls: 'volume', min: 5, max: 30, step: 0.1, value: 15, unit: 'mL', dec: 1, aria: '活塞杆移动前的体积' });
+  const V2 = ctl(d.controls, { label: '\\kVtwo', cls: 'volume', min: 5, max: 30, step: 0.1, value: 7.5, unit: 'mL', dec: 1, aria: '活塞杆移动后的体积' });
   const K = 13.0 * 15.0;                                     /* psi·mL, the product the book's sample keeps: 13.0 psi at 15.0 mL */
   const DATA = [[5, 39.0], [10, 19.5], [15, 13.0], [20, 9.8], [25, 7.8], [30, 6.5]];
   const P = (v) => K / v;
@@ -323,19 +323,19 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
     line(ctx, X(v1), yc - hh + 4, X(v1), yc + hh - 4, cv, 3, [6, 6]);
     text(ctx, 'V₁ = ' + fmt(v1, 1) + ' mL', X(v1), yc - hh - 20, cv, { size: 18, weight: 600, align: 'center', bg: PAL.panel });
     text(ctx, 'V₂ = ' + fmt(v2, 1) + ' mL', X(v2), yc - hh - (Math.abs(v2 - v1) < 4.5 ? 48 : 20), cv, { size: 18, weight: 600, align: 'center', bg: PAL.panel });
-    text(ctx, 'gas', X(v2 / 2), yc, PAL.ink, { size: 16, align: 'center' });
+    text(ctx, '气体', X(v2 / 2), yc, PAL.ink, { size: 16, align: 'center' });
     /* P against V: 0 to 35 mL by 5, 0 to 40 psi by 10, fixed from the slider range and the data */
     const bl = { l: 150, r: 630, t: 380, b: 700 };
     const gl = axes(ctx, bl, [0, 35], [0, 40], { xl: 'V (mL)', xc: cv, yl: 'P (psi)', yc: cp, nx: 7, ny: 4 });
     ctx.save(); ctx.strokeStyle = cp; ctx.lineWidth = 4; ctx.beginPath(); for (let i = 0; i <= 100; i++) { const v = 4.9 + (30.1 * i) / 100; const x = gl.X(v), y = gl.Y(P(v)); if (i) ctx.lineTo(x, y); else ctx.moveTo(x, y); } ctx.stroke(); ctx.restore();
     DATA.forEach(([v, p]) => dot(ctx, gl.X(v), gl.Y(p), cp, true, 7));
-    text(ctx, 'a hyperbola: PV = ' + fmt(K, 0) + ' psi·mL', gl.X(20), gl.Y(36), PAL.muted, { size: 16 });
+    text(ctx, '双曲线：PV = ' + fmt(K, 0) + ' psi·mL', gl.X(20), gl.Y(36), PAL.muted, { size: 16 });
     /* 1/P against V: 0 to 35 mL by 5, 0 to 0.18 psi⁻¹ by 0.06 */
     const br = { l: 860, r: 1330, t: 380, b: 700 };
     const gr = axes(ctx, br, [0, 35], [0, 0.18], { xl: 'V (mL)', xc: cv, yl: '1/P (psi⁻¹)', yc: cp, nx: 7, ny: 3, fy: (v) => fmt(v, 2) });
     line(ctx, gr.X(0), gr.Y(0), gr.X(34), gr.Y(34 / K), cp, 4);
     DATA.forEach(([v, p]) => dot(ctx, gr.X(v), gr.Y(1 / p), cp, true, 7));
-    text(ctx, 'a straight line through the origin', gr.X(3), gr.Y(0.165), PAL.muted, { size: 16 });
+    text(ctx, '过原点的直线', gr.X(3), gr.Y(0.165), PAL.muted, { size: 16 });
     for (const [v, p, filled] of [[v1, p1, false], [v2, p2, true]]) {
       line(ctx, gl.X(v), bl.b, gl.X(v), gl.Y(p), cv, 2, [4, 8]); line(ctx, bl.l, gl.Y(p), gl.X(v), gl.Y(p), cp, 2, [4, 8]); dot(ctx, gl.X(v), gl.Y(p), cp, filled, 10);
       line(ctx, gr.X(v), br.b, gr.X(v), gr.Y(1 / p), cv, 2, [4, 8]); line(ctx, br.l, gr.Y(1 / p), gr.X(v), gr.Y(1 / p), cp, 2, [4, 8]); dot(ctx, gr.X(v), gr.Y(1 / p), cp, filled, 10);
@@ -343,9 +343,9 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
     text(ctx, 'P₁ = ' + fmt(p1, 1) + ' psi', gl.X(v1) + 14, gl.Y(p1) + (p1 > 30 ? 26 : -22), cp, { size: 16, weight: 600, bg: PAL.panel });
     text(ctx, 'P₂ = ' + fmt(p2, 1) + ' psi', gl.X(v2) + 14, gl.Y(p2) + (Math.abs(v2 - v1) < 3 || p2 > 30 ? 26 : -22), cp, { size: 16, weight: 600, bg: PAL.panel });
     const ratio = v1 / v2;
-    topline(ctx, 'At ' + fmt(v2, 1) + ' mL the gauge reads ' + fmt(p2, 1) + ' psi; ' + (Math.abs(ratio - 1) < 0.005 ? 'the plunger has not moved, so the pressure is unchanged' : (ratio > 1 ? 'compressing' : 'expanding') + ' the gas from ' + fmt(v1, 1) + ' mL by the factor ' + fmt(Math.max(ratio, 1 / ratio), 2) + ' has ' + (ratio > 1 ? 'raised' : 'lowered') + ' the pressure by the same factor') + '.');
+    topline(ctx, '在 ' + fmt(v2, 1) + ' mL 时压力计读数为 ' + fmt(p2, 1) + ' psi；' + (Math.abs(ratio - 1) < 0.005 ? '活塞杆没有移动，所以压强不变' : '把气体从 ' + fmt(v1, 1) + ' mL ' + (ratio > 1 ? '压缩' : '膨胀') + '，体积变化的倍数为 ' + fmt(Math.max(ratio, 1 / ratio), 2) + '，压强' + (ratio > 1 ? '升高' : '降低') + '了相同的倍数') + '。');
     readout(d.readout, `\\kPone\\kVone = (${hue('pressure', fmt(p1, 1) + '\\ \\text{psi}')})(${hue('volume', fmt(v1, 1) + '\\ \\text{mL}')}) = \\kPtwo\\kVtwo = (${hue('pressure', fmt(p2, 1) + '\\ \\text{psi}')})(${hue('volume', fmt(v2, 1) + '\\ \\text{mL}')}) = ${fmt(K, 0)}\\ \\text{psi·mL}`,
-      'The temperature and the amount of air are held constant throughout.');
+      '温度和空气的物质的量始终保持不变。');
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -366,8 +366,8 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
 ===================================================================== */
 (function () {
   const H = 740, d = sim('sim-breathing', H);
-  const TV = ctl(d.controls, { label: '\\text{air per breath}', cls: 'volume', min: 0.3, max: 3, step: 0.1, value: 0.5, unit: 'L', dec: 1, onInput: reset, aria: 'volume of air moved in one breath' });
-  const BPM = ctl(d.controls, { label: '\\text{breaths per minute}', cls: '', min: 8, max: 30, step: 1, value: 20, unit: '/min', dec: 0, onInput: reset, aria: 'breaths per minute' });
+  const TV = ctl(d.controls, { label: '\\text{每次呼吸的空气量}', cls: 'volume', min: 0.3, max: 3, step: 0.1, value: 0.5, unit: 'L', dec: 1, onInput: reset, aria: '一次呼吸移动的空气体积' });
+  const BPM = ctl(d.controls, { label: '\\text{每分钟呼吸次数}', cls: '', min: 8, max: 30, step: 1, value: 20, unit: '/min', dec: 0, onInput: reset, aria: '每分钟呼吸次数' });
   const REST = 2.4, PAUSE = 0.6;                            /* litres left in the lungs after a quiet breath out; seconds of pause after it */
   const cy = cycle(() => 60 / BPM.v - PAUSE, PAUSE);
   function reset() { cy.reset(); }
@@ -422,9 +422,9 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
     ctx.save(); ctx.beginPath(); ctx.arc(C2.x, C2.y, R2, 0, TAU); ctx.fillStyle = PAL.panel; ctx.fill(); ctx.clip(); body(ctx, O2, K2, g, cv, cl, cd); ctx.restore();
     ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.5); ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(C2.x, C2.y, R2, 0, TAU); ctx.stroke(); ctx.restore();
     const lab = F.labeller(ctx, H, { headline: topline(ctx, inhaling
-      ? `The diaphragm contracts and the lungs swell to $\\kV = ${fmt(REST + TV.v, 1)}\\ \\text{L}$, so the pressure in them falls 1 to 3 torr below the air outside and air flows in.`
-      : exhaling ? `The diaphragm relaxes and the lungs shrink to $\\kV = ${fmt(REST, 1)}\\ \\text{L}$, so the pressure in them rises 1 to 3 torr above the air outside and air flows out.`
-      : `Between breaths the lungs hold $\\kV = ${fmt(V, 1)}\\ \\text{L}$ at the pressure of the air outside, and no air flows.`) });
+      ? `膈收缩，肺膨胀到 $\\kV = ${fmt(REST + TV.v, 1)}\\ \\text{L}$，所以肺内的压强比外界空气低 1 到 3 torr，空气流入。`
+      : exhaling ? `膈放松，肺缩小到 $\\kV = ${fmt(REST, 1)}\\ \\text{L}$，所以肺内的压强比外界空气高 1 到 3 torr，空气流出。`
+      : `两次呼吸之间，肺内含有 $\\kV = ${fmt(V, 1)}\\ \\text{L}$ 的空气，压强与外界空气相同，没有空气流动。`) });
     /* the air at the nose and mouth and the diaphragm's way, drawn while they move and fading as the flow stops */
     const k = Math.min(1, Math.abs(flow) * 1.6), dm = m2({ x: g.dc, y: Math.max(g.YD, YE - 6) }), nose = m2(NOSE), mouth = m2(MOUTH);
     if (k > 0.02) F.faded(ctx, k, [0, 0], () => {
@@ -433,14 +433,14 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
     });
     /* three labels: the pressure in the book's words, the lungs once, the diaphragm with what it is doing */
     const nf = m2({ x: g.near.x + g.RX, y: g.near.y - 2 }), bk = m2({ x: g.far.x - g.RX, y: YA + 0.7 * g.RY }), de = m2({ x: g.dr, y: YE });
-    lab.add(inhaling ? 'P_{lungs} = 1–3 torr lower' : exhaling ? 'P_{lungs} = 1–3 torr higher' : 'P_{lungs} = P_{outside}', nf.x, nf.y, -1, 0, cp, 20, 40);
-    lab.add('lungs', bk.x, bk.y, 1, 0, cl, 20, 34);
-    lab.add(inhaling ? 'diaphragm contracts' : exhaling ? 'diaphragm relaxes' : 'diaphragm', de.x, de.y, -0.9, 0.44, cd, 20, 30);
+    lab.add(inhaling ? 'P_{肺} 低 1–3 torr' : exhaling ? 'P_{肺} 高 1–3 torr' : 'P_{肺} = P_{外界}', nf.x, nf.y, -1, 0, cp, 20, 40);
+    lab.add('肺', bk.x, bk.y, 1, 0, cl, 20, 34);
+    lab.add(inhaling ? '膈收缩' : exhaling ? '膈放松' : '膈', de.x, de.y, -0.9, 0.44, cd, 20, 30);
     lab.flush();
     const nl = m2(g.near), fl = m2({ x: g.far.x - g.RX + 1.5, y: g.far.y - 4 });
-    hits = [{ x: nl.x, y: nl.y, r: 50, name: 'left lung' }, { x: fl.x, y: fl.y, r: 14, name: 'right lung' }, { x: m2({ x: g.dc, y: g.YD }).x, y: m2({ x: g.dc, y: g.YD }).y, r: 18, name: 'diaphragm' },
-      { ...m2({ x: 4.5, y: -124 }), r: 16, name: 'windpipe' }, { ...C1, r: R1, name: 'the chest, magnified at the left' }];
-    readout(d.readout, `\\kV_{\\text{lungs}} = ${V - REST < 0.005 ? '' : `${hue('volume', fmt(REST, 1) + '\\ \\text{L}')} + ${hue('volume', fmt(V - REST, 2) + '\\ \\text{L}')} = `}${hue('volume', fmt(V, 2) + '\\ \\text{L}')}\\qquad \\text{swelling drawn } ${fmt(EX, 1)}\\times`);
+    hits = [{ x: nl.x, y: nl.y, r: 50, name: '左肺' }, { x: fl.x, y: fl.y, r: 14, name: '右肺' }, { x: m2({ x: g.dc, y: g.YD }).x, y: m2({ x: g.dc, y: g.YD }).y, r: 18, name: '膈' },
+      { ...m2({ x: 4.5, y: -124 }), r: 16, name: '气管' }, { ...C1, r: R1, name: '胸部，在左侧放大' }];
+    readout(d.readout, `\\kV_{\\text{肺}} = ${V - REST < 0.005 ? '' : `${hue('volume', fmt(REST, 1) + '\\ \\text{L}')} + ${hue('volume', fmt(V - REST, 2) + '\\ \\text{L}')} = `}${hue('volume', fmt(V, 2) + '\\ \\text{L}')}\\qquad \\text{膨胀画成 } ${fmt(EX, 1)}\\times`);
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });   /* one breath takes the time the rate says it takes */
 })();
@@ -466,22 +466,22 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
   const d = sim('sim-gas-box');
   const v = F.view3d(d.stage, { ...PICTURE, h: 440, dist: 7.6, tilt: 0.18 });
   const grp = v.part(0), cnv = strip(d, 250);
-  const LAWS = ['free', 'Amontons: V and n held', 'Charles: P and n held', 'Boyle: T and n held', 'Avogadro: P and T held'];
+  const LAWS = ['自由', '阿蒙顿: V 和 n 固定', '查理: P 和 n 固定', '玻意耳: T 和 n 固定', '阿伏加德罗: P 和 T 固定'];
   const GASES = ['He', 'N₂', 'O₂', 'Ar', 'CO₂'];
   /* the gas is chosen by name (rule 7.2): every molecule in the box is a molecule of that gas in its element's colours */
-  const Gc = pick(d.controls, { label: '\\text{gas}', value: 1, aria: 'the gas in the box', onInput: () => g.retag(() => GASES[Gc.v]) }, GASES);
+  const Gc = pick(d.controls, { label: '\\text{气体}', value: 1, aria: '盒中的气体', onInput: () => g.retag(() => GASES[Gc.v]) }, GASES);
   const held = [];
-  const Vc = ctl(d.controls, { label: '\\kV', cls: 'volume', min: 1, max: 30, step: 0.1, value: 22.4, unit: 'L', dec: 1, onInput: () => apply('V'), aria: 'volume of the gas in liters',
+  const Vc = ctl(d.controls, { label: '\\kV', cls: 'volume', min: 1, max: 30, step: 0.1, value: 22.4, unit: 'L', dec: 1, onInput: () => apply('V'), aria: '气体的体积，单位为升',
     specials: [{ at: () => (Nc.v * R * 273) / 1, label: 'STP' }] });
   held.push(d.controls.lastElementChild);
-  const Tc = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 100, max: 600, step: 1, value: 273, unit: 'K', dec: 0, onInput: () => apply('T'), aria: 'temperature of the gas in kelvin',
+  const Tc = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 100, max: 600, step: 1, value: 273, unit: 'K', dec: 0, onInput: () => apply('T'), aria: '气体的开尔文温度',
     specials: [{ at: 273, label: '273 K' }] });
   held.push(d.controls.lastElementChild);
-  const Nc = ctl(d.controls, { label: '\\kn', cls: 'amount', min: 0.2, max: 4, step: 0.05, value: 1, unit: 'mol', dec: 2, onInput: () => apply('n'), aria: 'amount of gas in moles' });
+  const Nc = ctl(d.controls, { label: '\\kn', cls: 'amount', min: 0.2, max: 4, step: 0.05, value: 1, unit: 'mol', dec: 2, onInput: () => apply('n'), aria: '气体的物质的量，单位为摩尔' });
   held.push(d.controls.lastElementChild);
   held.forEach((l) => { l.style.transition = 'opacity 0.6s cubic-bezier(0.45, 0, 0.55, 1)'; });
   /* the four laws are states, not a quantity (rule 26.1): a row of buttons, the one held marked */
-  const Lc = pick(d.controls, { label: '\\text{law held}', value: 0, aria: 'the gas law being held', onInput: hold }, LAWS.map((l) => l.split(':')[0]));
+  const Lc = pick(d.controls, { label: '\\text{所选定律}', value: 0, aria: '所选的气体定律', onInput: hold }, LAWS.map((l) => l.split(':')[0]));
   const pressure = () => (Nc.v * R * Tc.v) / Vc.v;
   let snap = { V: Vc.v, T: Tc.v, n: Nc.v, P: pressure() };
   function snapshot() { snap = { V: Vc.v, T: Tc.v, n: Nc.v, P: pressure() }; }
@@ -532,11 +532,11 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
     v.clear(); birds.drop();
     const w = width(Vc.v), cx = X0 + w / 2;
     const body = box3(grp, [cx, 0, 0], [w, HB, DB], C('volume'), { transparent: true, opacity: 0.12, depthWrite: false, side: T3D.DoubleSide });
-    v.pickable(body, 'the gas, ' + fmt(Vc.v, 1) + ' L');
+    v.pickable(body, '气体，' + fmt(Vc.v, 1) + ' L');
     edges3(grp, [w, HB, DB], [cx, 0, 0]);
-    v.pickable(box3(grp, [X0 + w + 0.05, 0, 0], [0.1, HB + 0.08, DB + 0.08], PAL.muted), 'piston');
+    v.pickable(box3(grp, [X0 + w + 0.05, 0, 0], [0.1, HB + 0.08, DB + 0.08], PAL.muted), '活塞');
     stick3(grp, [X0 + w + 0.1, 0, 0], [X0 + w + 1.1, 0, 0], 0.05, PAL.ink);
-    v.label('piston', [X0 + w + 0.6, 0.1, 0], grp, 6);
+    v.label('活塞', [X0 + w + 0.6, 0.1, 0], grp, 6);
     const lab = v.label('V = ' + fmt(Vc.v, 1) + ' L', [cx, -HB / 2 - 0.12, DB / 2], grp, -8); lab.style.color = C('volume');
   }
   function draw() {
@@ -548,20 +548,20 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
     /* the strip beneath: the gauge, the readings and what is being held */
     const { ctx } = begin(cnv);
     gauge(ctx, 130, 130, 62, P, 10, 'atm');
-    text(ctx, 'pressure gauge', 130, 214, PAL.muted, { size: 16, align: 'center' });
-    text(ctx, 'P = ' + fmt(P, 2) + ' atm' + (P > 10 ? ', off the dial' : ''), 230, 118, cp, { size: 30, weight: 600 });
-    text(ctx, 'about ' + g.rate + ' strikes on the walls each second', 230, 156, PAL.muted, { size: 17 });
+    text(ctx, '压力计', 130, 214, PAL.muted, { size: 16, align: 'center' });
+    text(ctx, 'P = ' + fmt(P, 2) + ' atm' + (P > 10 ? '，超出表盘' : ''), 230, 118, cp, { size: 30, weight: 600 });
+    text(ctx, '每秒约撞击器壁 ' + g.rate + ' 次', 230, 156, PAL.muted, { size: 17 });
     const rx = 700;
     text(ctx, 'V = ' + fmt(V, 1) + ' L', rx, 112, cv, { size: 22, weight: 600 });
     text(ctx, 'T = ' + T + ' K', rx, 140, ct, { size: 22, weight: 600 });
-    text(ctx, 'n = ' + fmt(n, 2) + ' mol of ' + WORD[GASES[Gc.v]] + ', ' + g.p.length + ' molecules drawn', rx, 168, ca, { size: 22, weight: 600 });
+    text(ctx, 'n = ' + fmt(n, 2) + ' mol ' + WORD[GASES[Gc.v]] + '，画出 ' + g.p.length + ' 个分子', rx, 168, ca, { size: 22, weight: 600 });
     if (law) {
-      text(ctx, 'Under ' + LAWS[law].split(':')[0] + '’s law, ' + LAWS[law].split(': ')[1].replace(' held', ' are held') + '.', rx, 200, PAL.ink, { size: 18, weight: 600 });
+      text(ctx, '在' + LAWS[law].split(':')[0] + '定律下，' + LAWS[law].split(': ')[1] + '。', rx, 200, PAL.ink, { size: 18, weight: 600 });
       const ratio = law === 1 ? 'P/T = ' + fmt(P / T, 4) + ' atm/K' : law === 2 ? 'V/T = ' + fmt(V / T, 4) + ' L/K' : law === 3 ? 'PV = ' + fmt(P * V, 1) + ' L atm' : 'V/n = ' + fmt(V / n, 1) + ' L/mol';
-      text(ctx, 'What stays constant is ' + ratio + '.', rx, 226, PAL.muted, { size: 17 });
+      text(ctx, '保持不变的是 ' + ratio + '。', rx, 226, PAL.muted, { size: 17 });
     }
     const stp = Math.abs(V - 22.4) < 0.05 && T === 273 && Math.abs(n - 1) < 0.001;
-    topline(ctx, 'A sample of ' + fmt(n, 2) + ' mol of ' + WORD[GASES[Gc.v]] + ' at ' + T + ' K in ' + fmt(V, 1) + ' L presses at ' + fmt(P, 2) + ' atm' + (stp ? '; this is the standard molar volume, one mole at STP, whichever gas it is.' : law === 2 || law === 4 ? '; the piston has moved so that the pressure stays at ' + fmt(snap.P, 2) + ' atm.' : '.'));
+    topline(ctx, '一份 ' + fmt(n, 2) + ' mol ' + WORD[GASES[Gc.v]] + ' 的样品，在 ' + T + ' K 下、体积为 ' + fmt(V, 1) + ' L 时，压强为 ' + fmt(P, 2) + ' atm' + (stp ? '；这就是标准摩尔体积，即 STP 下的 1 摩尔，无论是哪种气体。' : law === 2 || law === 4 ? '；活塞已移动，使压强保持在 ' + fmt(snap.P, 2) + ' atm。' : '。'));
     const tag = law === 3 ? 'Boyle' : law === 1 ? 'Amontons' : '', late = tag && performance.now() - since > 1600;
     const mk = (k, x) => `\\mk{${k}}{${x}}`;
     const Pn = (k, x) => mk(k, hue('pressure', fmt(x, 2) + '\\ \\text{atm}')), Vn = (k, x) => mk(k, hue('volume', fmt(x, 1) + '\\ \\text{L}'));
@@ -575,11 +575,11 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
       : next === 'C' ? `\\frac{${mk('V', '\\kV')}}{${mk('T', '\\kT')}} = ${mk('kC', 'k')} = \\frac{${Vn('Vval', V)}}{${Tn('Tval', T)}} = ${mk('kCval', fmt(V / T, 4) + '\\ \\text{L/K}')}`
       : `\\frac{${mk('V', '\\kV')}}{${mk('n', '\\kn')}} = ${mk('kAv', 'k')} = \\frac{${Vn('Vval', V)}}{${Nn('nval', n)}} = ${mk('kAvval', fmt(V / n, 1) + '\\ \\text{L/mol}')}`;
     if (f !== shown) { shown = f; F.morph(fx, f, next === form ? {} : { keyMap: keyMap(form, next) }); form = next; }
-    note.textContent = law === 1 ? 'With the volume and the amount held, the pressure and the kelvin temperature rise and fall together, which is Amontons’s law.'
-      : law === 2 ? 'With the pressure and the amount held, the volume and the kelvin temperature rise and fall together, which is Charles’s law: the piston moves out as the gas warms.'
-      : law === 3 ? 'With the temperature and the amount held, the product of pressure and volume does not change, which is Boyle’s law: pushing the piston in raises the gauge.'
-      : law === 4 ? 'With the pressure and the temperature held, the volume follows the amount of gas, which is Avogadro’s law: more particles need more room at the same pressure.'
-      : 'The particles move faster as the temperature rises and there are more of them as the amount rises, so they strike the walls more often; a wider box spreads the same strikes over more wall. That is what the gauge reads.';
+    note.textContent = law === 1 ? '体积和物质的量保持不变时，压强和开尔文温度一起升降，这就是阿蒙顿定律。'
+      : law === 2 ? '压强和物质的量保持不变时，体积和开尔文温度一起升降，这就是查理定律：气体变热时，活塞向外移动。'
+      : law === 3 ? '温度和物质的量保持不变时，压强与体积的乘积不变，这就是玻意耳定律：把活塞推进去，压力计的读数就升高。'
+      : law === 4 ? '压强和温度保持不变时，体积随气体的物质的量而变，这就是阿伏加德罗定律：在相同压强下，粒子越多，需要的空间越大。'
+      : '温度升高时粒子运动得更快，物质的量增大时粒子更多，所以它们撞击器壁更频繁；盒子更宽，则把同样的撞击分散到更多的器壁上。这就是压力计所读出的。';
   }
   register(d.fig, { update: (dt) => { cy.step(dt, () => 1); g.step(dt, speed3(Tc.v), inside); }, draw });
 })();
@@ -592,9 +592,9 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
 ===================================================================== */
 (function () {
   const d = sim('sim-four-graphs', 720);
-  const Vc = ctl(d.controls, { label: '\\kV', cls: 'volume', min: 1, max: 30, step: 0.1, value: 22.4, unit: 'L', dec: 1, aria: 'volume of the gas in liters' });
-  const Tc = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 100, max: 600, step: 1, value: 273, unit: 'K', dec: 0, aria: 'temperature of the gas in kelvin' });
-  const Nc = ctl(d.controls, { label: '\\kn', cls: 'amount', min: 0.2, max: 4, step: 0.05, value: 1, unit: 'mol', dec: 2, aria: 'amount of gas in moles' });
+  const Vc = ctl(d.controls, { label: '\\kV', cls: 'volume', min: 1, max: 30, step: 0.1, value: 22.4, unit: 'L', dec: 1, aria: '气体的体积，单位为升' });
+  const Tc = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 100, max: 600, step: 1, value: 273, unit: 'K', dec: 0, aria: '气体的开尔文温度' });
+  const Nc = ctl(d.controls, { label: '\\kn', cls: 'amount', min: 0.2, max: 4, step: 0.05, value: 1, unit: 'mol', dec: 2, aria: '气体的物质的量，单位为摩尔' });
   /* a curve clipped to its box, so a value the axis cannot hold leaves the frame rather than stretching it */
   function clipped(ctx, box, f, t0, t1, X, Y, color) {
     ctx.save(); ctx.beginPath(); ctx.rect(box.l, box.t, box.r - box.l, box.b - box.t); ctx.clip();
@@ -609,20 +609,20 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
     /* P against V, at this T and n */
     let g = axes(ctx, boxes[0], [0, 30], [0, 10], { xl: 'V (L)', xc: cv, yl: 'P (atm)', yc: cp, nx: 3, ny: 2 });
     clipped(ctx, boxes[0], (v) => (n * R * T) / v, 0.5, 30, g.X, g.Y, cp);
-    pinned(ctx, boxes[0], g.X, g.Y, V, P, cp, fmt(P, 2) + ' atm'); note(boxes[0], 'T and n held: Boyle’s law');
+    pinned(ctx, boxes[0], g.X, g.Y, V, P, cp, fmt(P, 2) + ' atm'); note(boxes[0], 'T 和 n 固定：玻意耳定律');
     /* V against T, at this P and n */
     g = axes(ctx, boxes[1], [0, 600], [0, 30], { xl: 'T (K)', xc: ct, yl: 'V (L)', yc: cv, nx: 3, ny: 3 });
     clipped(ctx, boxes[1], (t) => (n * R * t) / P, 0, 600, g.X, g.Y, cv);
-    pinned(ctx, boxes[1], g.X, g.Y, T, V, cv, fmt(V, 1) + ' L'); note(boxes[1], 'P and n held: Charles’s law');
+    pinned(ctx, boxes[1], g.X, g.Y, T, V, cv, fmt(V, 1) + ' L'); note(boxes[1], 'P 和 n 固定：查理定律');
     /* P against T, at this V and n */
     g = axes(ctx, boxes[2], [0, 600], [0, 10], { xl: 'T (K)', xc: ct, yl: 'P (atm)', yc: cp, nx: 3, ny: 2 });
     clipped(ctx, boxes[2], (t) => (n * R * t) / V, 0, 600, g.X, g.Y, cp);
-    pinned(ctx, boxes[2], g.X, g.Y, T, P, cp, fmt(P, 2) + ' atm'); note(boxes[2], 'V and n held: Amontons’s law');
+    pinned(ctx, boxes[2], g.X, g.Y, T, P, cp, fmt(P, 2) + ' atm'); note(boxes[2], 'V 和 n 固定：阿蒙顿定律');
     /* 1/P against V, at this T and n */
     g = axes(ctx, boxes[3], [0, 30], [0, 2], { xl: 'V (L)', xc: cv, yl: '1/P (atm⁻¹)', yc: cp, nx: 3, ny: 2, fy: (v) => fmt(v, 1) });
     clipped(ctx, boxes[3], (v) => v / (n * R * T), 0, 30, g.X, g.Y, cp);
-    pinned(ctx, boxes[3], g.X, g.Y, V, 1 / P, cp, fmt(1 / P, 2) + ' atm⁻¹'); note(boxes[3], 'T and n held: Boyle’s law, linearized');
-    topline(ctx, 'At V = ' + fmt(V, 1) + ' L, T = ' + T + ' K and n = ' + fmt(n, 2) + ' mol, the same state is one point on each of the four graphs, and the pressure is ' + fmt(P, 2) + ' atm on all of them.');
+    pinned(ctx, boxes[3], g.X, g.Y, V, 1 / P, cp, fmt(1 / P, 2) + ' atm⁻¹'); note(boxes[3], 'T 和 n 固定：玻意耳定律，线性化');
+    topline(ctx, '在 V = ' + fmt(V, 1) + ' L、T = ' + T + ' K、n = ' + fmt(n, 2) + ' mol 时，同一个状态是四幅图上各自的一个点，压强在所有图上都是 ' + fmt(P, 2) + ' atm。');
     readout(d.readout, `\\kP = \\frac{\\kn R\\kT}{\\kV} = \\frac{(${hue('amount', fmt(n, 2) + '\\ \\text{mol}')})(${RTEX})(${hue('temperature', T + '\\ \\text{K}')})}{${hue('volume', fmt(V, 1) + '\\ \\text{L}')}} = ${hue('pressure', fmt(P, 2) + '\\ \\text{atm}')}`);
   }
   register(d.fig, { update: () => {}, draw });
@@ -641,15 +641,15 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
 (function () {
   const d = sim('sim-balloons', 560);
   /* the view is a state (rule 26.1): the flat drawing, which the book teaches, or the same balloons turned in three dimensions */
-  const VIEW = F.choice(d.controls, { label: '\\text{view}', options: [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }], value: '2d', aria: 'a flat drawing or a scene to turn', onInput: show });
+  const VIEW = F.choice(d.controls, { label: '\\text{视图}', options: [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }], value: '2d', aria: '平面图或可旋转的场景', onInput: show });
   /* the eight gases of the dropdowns: each balloon's gas is a state the reader picks (rule 26.1), a dropdown since a row of eight
      would wrap, and the molecules drawn inside are the gas in its element's colours (rule 7.2) */
   const GASES = Object.keys(MOLS).map((f) => [f, MOLS[f].m]);
   const names = GASES.map((g) => g[0]);
-  const A = pick(d.controls, { label: '\\text{first balloon}', value: 0, aria: 'gas in the first balloon' }, names);
-  const B = pick(d.controls, { label: '\\text{second balloon}', value: 4, aria: 'gas in the second balloon' }, names);
-  const Cc = pick(d.controls, { label: '\\text{third balloon}', value: 3, aria: 'gas in the third balloon' }, names);
-  const N = ctl(d.controls, { label: '\\kn', cls: 'amount', min: 0.25, max: 2, step: 0.05, value: 1, unit: 'mol', dec: 2, aria: 'amount of gas in each balloon',
+  const A = pick(d.controls, { label: '\\text{第一个气球}', value: 0, aria: '第一个气球中的气体' }, names);
+  const B = pick(d.controls, { label: '\\text{第二个气球}', value: 4, aria: '第二个气球中的气体' }, names);
+  const Cc = pick(d.controls, { label: '\\text{第三个气球}', value: 3, aria: '第三个气球中的气体' }, names);
+  const N = ctl(d.controls, { label: '\\kn', cls: 'amount', min: 0.25, max: 2, step: 0.05, value: 1, unit: 'mol', dec: 2, aria: '每个气球中气体的物质的量',
     specials: [{ at: 1, label: '1 mol' }] });
   const TSTP = 273.15, PSTP = 1;
   /* eight fixed places inside a unit balloon for the molecules, so nothing jumps when a gas is changed; the third coordinate is for the scene */
@@ -669,7 +669,7 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
       const mx = x + sx * r * 0.72, my = y + sy * r * 0.8, reach = molecule(ctx, gas[0], mx, my, k, (i * 0.7) % TAU);
       hits.push({ x: mx, y: my, r: reach + 3, name: molName(gas[0]) });
     });
-    hits.push({ x, y, r: r * 1.05, name: 'a balloon of ' + WORD[gas[0]] + ', ' + fmt(n, 2) + ' mol' });   /* after its molecules, which the tooltip finds first */
+    hits.push({ x, y, r: r * 1.05, name: '装有' + WORD[gas[0]] + '的气球，' + fmt(n, 2) + ' mol' });   /* after its molecules, which the tooltip finds first */
   }
   /* the flat drawing */
   function draw2d() {
@@ -684,7 +684,7 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
       text(ctx, fmt(n, 2) + ' mol,', x - 4, 520, C('amount'), { size: 17, align: 'right' });
       text(ctx, fmt(V, 1) + ' L', x + 4, 520, C('volume'), { size: 17 });
     });
-    text(ctx, 'at STP: 273.15 K and 1 atm', 1330, 548, PAL.muted, { size: 16, align: 'right' });
+    text(ctx, 'STP：273.15 K 和 1 atm', 1330, 548, PAL.muted, { size: 16, align: 'right' });
     topline(ctx, head());
   }
   /* the scene: three translucent spheres in the volume hue, each with its knot and string and its molecules inside, mounted on the first switch to 3D */
@@ -703,7 +703,7 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
       const knot = new T3D.Mesh(new T3D.ConeGeometry(0.09, 0.16, 12), mat3(PAL.ink)); knot.position.set(x, y - r - 0.06, 0); grp.add(knot);
       polyline3(grp, [[x, y - r - 0.14, 0], [x + 0.12, y - r - 0.5, 0], [x - 0.05, y - r - 0.9, 0], [x + 0.08, y - r - 1.3, 0]], PAL.ink);
       SPOTS.forEach(([sx, sy, sz], j) => { const m = molecule3(v, grp, gas[0], k); m.position.set(x + sx * r * 0.72, y + sy * r * 0.72, sz * r * 0.72); m.rotation.set(j * 0.7, j * 1.1, 0); });
-      v.pickable(skin, 'a balloon of ' + WORD[gas[0]] + ', ' + fmt(n, 2) + ' mol');
+      v.pickable(skin, '装有' + WORD[gas[0]] + '的气球，' + fmt(n, 2) + ' mol');
       v.label(label(gas, n), [x, y + r + 0.1, 0], grp, -6);
     });
   }
@@ -714,7 +714,7 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
   }
   function head() {
     const n = N.v, V = (n * R * TSTP) / PSTP, ps = picks(), same = ps[0] === ps[1] && ps[1] === ps[2];
-    return (same ? 'Three balloons of ' + ps[0][0] : 'Balloons of ' + ps.map((g) => g[0]).join(', ')) + ', ' + fmt(n, 2) + ' mol each at STP: ' + ps.map((g) => fmt(n * g[1], 1) + ' g').join(', ') + ', and every balloon holds ' + fmt(V, 1) + ' L.';
+    return (same ? '三个 ' + ps[0][0] + ' 气球' : ps.map((g) => g[0]).join('、') + ' 气球') + '，STP 下每个 ' + fmt(n, 2) + ' mol：' + ps.map((g) => fmt(n * g[1], 1) + ' g').join('、') + '，每个气球都装有 ' + fmt(V, 1) + ' L。';
   }
   /* one stage shows at a time: the canvas, or the scene with its button row and its strip */
   function show() {
@@ -728,7 +728,7 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
     const n = N.v, V = (n * R * TSTP) / PSTP;
     if (VIEW.value === '3d') draw3d(); else draw2d();
     readout(d.readout, `\\kV = \\frac{\\kn R\\kT}{\\kP} = \\frac{(${hue('amount', fmt(n, 2) + '\\ \\text{mol}')})(${RTEX})(${hue('temperature', '273.15\\ \\text{K}')})}{${hue('pressure', '1\\ \\text{atm}')}} = ${hue('volume', fmt(V, 1) + '\\ \\text{L}')}`,
-      'Equal volumes of the three gases hold equal numbers of molecules, as Avogadro proposed.');
+      '三种气体的相同体积含有相同数目的分子，正如阿伏加德罗所提出的。');
   }
   register(d.fig, { update: () => {}, draw });
 })();

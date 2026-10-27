@@ -44,7 +44,7 @@ function hub(s, deg) {
 ===================================================================== */
 (function () {
   const d = sim('sim-structures');
-  const v = F.view3d(d.stage, { spin: 'idle', pitch: [-1.45, 1.45], tilt: 0.3, h: 500, dist: 11, views: [{ label: 'side', yaw: 0, pitch: 0 }, { label: 'top', yaw: 0, pitch: 1.45 }] });
+  const v = F.view3d(d.stage, { spin: 'idle', pitch: [-1.45, 1.45], tilt: 0.3, h: 500, dist: 11, views: [{ label: '侧视', yaw: 0, pitch: 0 }, { label: '俯视', yaw: 0, pitch: 1.45 }] });
   const grp = v.part(0); if (grp) grp.position.y = -0.3;
   const B = 0.6;
   /* a honeycomb sheet in the x–z plane, the two sublattices lifted ±h out of it */
@@ -95,13 +95,13 @@ function hub(s, deg) {
     },
   };
   const INFO = {
-    B: { label: 'boron', name: 'a boron atom, B', head: 'Boron crystals are built of icosahedra, with a boron atom at each of the 12 corners.', ro: `12\\ \\text{B atoms},\\ 20\\ \\text{faces},\\ 30\\ \\text{B–B bonds of about}\\ ${hue('length', '176\\ \\text{pm}')}` },
-    Si: { label: 'silicon, germanium', name: 'a silicon atom, Si', deg: 4, head: 'Silicon and germanium crystallize with a diamond structure: each atom bonds to four neighbors at the corners of a regular tetrahedron.', ro: '\\text{bonds per atom} = 4\\ \\text{(to the corners of a regular tetrahedron)}' },
-    As: { label: 'arsenic, antimony', name: 'an arsenic atom, As', deg: 3, head: 'Arsenic and antimony form puckered sheets in which each atom bonds to three others.', ro: '\\text{bonds per atom} = 3\\ \\text{(within a puckered sheet)}' },
-    C: { label: 'graphite', name: 'a carbon atom, C', deg: 3, head: 'In graphite each carbon atom bonds to three others, and the sheets are planar.', ro: '\\text{bonds per atom} = 3\\ \\text{(within a planar sheet)}' },
-    Te: { label: 'tellurium', name: 'a tellurium atom, Te', deg: 2, head: 'Tellurium forms infinite spiral chains in which each atom bonds to two others.', ro: '\\text{bonds per atom} = 2\\ \\text{(along a spiral chain)}' },
+    B: { label: '硼', name: '硼原子，B', head: '硼晶体由二十面体构成，12 个顶点上各有一个硼原子。', ro: `12\\ \\text{个 B 原子},\\ 20\\ \\text{个面},\\ 30\\ \\text{条 B–B 键,长度约为}\\ ${hue('length', '176\\ \\text{pm}')}` },
+    Si: { label: '硅、锗', name: '硅原子，Si', deg: 4, head: '硅和锗以金刚石结构结晶：每个原子与位于正四面体顶点的四个相邻原子成键。', ro: '\\text{每个原子的键数} = 4\\ \\text{(指向正四面体的顶点)}' },
+    As: { label: '砷、锑', name: '砷原子，As', deg: 3, head: '砷和锑形成起伏的片层，其中每个原子与另外三个原子成键。', ro: '\\text{每个原子的键数} = 3\\ \\text{(在起伏的片层内)}' },
+    C: { label: '石墨', name: '碳原子，C', deg: 3, head: '在石墨中，每个碳原子与另外三个原子成键，片层是平面的。', ro: '\\text{每个原子的键数} = 3\\ \\text{(在平面片层内)}' },
+    Te: { label: '碲', name: '碲原子，Te', deg: 2, head: '碲形成无限的螺旋链，链中每个原子与另外两个原子成键。', ro: '\\text{每个原子的键数} = 2\\ \\text{(沿螺旋链)}' },
   };
-  const S = F.select(d.controls, { label: '\\text{solid}', options: Object.keys(INFO).map((k) => ({ value: k, label: INFO[k].label })), value: 'As', aria: 'the solid whose structure is shown' });
+  const S = F.select(d.controls, { label: '\\text{固体}', options: Object.keys(INFO).map((k) => ({ value: k, label: INFO[k].label })), value: 'As', aria: '所显示结构对应的固体' });
   let sig = '';
   const palSig = () => [PAL.ink, PAL.muted, ...['B', 'Si', 'As', 'C', 'Te'].map((e) => F.el(e))].join('|');
   function draw() {
@@ -155,7 +155,7 @@ function hub(s, deg) {
     const body = (y1, y2, ox, oy) => { ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.beginPath(); ctx.rect(CX - RW / 2 + ox, y1 + oy, RW, y2 - y1); ctx.fill(); ctx.stroke(); ctx.restore(); };
     if (cut > 0) { body(yOf(UC), yB, 0, 0); body(yT, yOf(UC), dx, dy); }
     else body(yT, yB, 0, 0);
-    hits.push({ x: CX, y: (yT + yB) / 2, r: RW / 2, name: 'the silicon rod' });
+    hits.push({ x: CX, y: (yT + yB) / 2, r: RW / 2, name: '硅棒' });
     /* the molten zone at the heat source, glowing; it freezes as the cut is made */
     const zt = Math.max(HY - ZH / 2, yT), zb = Math.min(HY + ZH / 2, yB), glow = 1 - k;
     if (zb > zt && glow > 0) F.faded(ctx, glow, [0, 0], () => {
@@ -171,25 +171,25 @@ function hub(s, deg) {
       const piece = u > UC && cut > 0;
       const x = CX + (m.w + sway) * RW + (piece ? dx : 0), y = yOf(u) + (piece ? dy : 0);
       dot(ctx, x, y, F.cat(0), true, 5);
-      hits.push({ x, y, r: 7, name: 'an impurity atom' });
+      hits.push({ x, y, r: 7, name: '杂质原子' });
     });
     /* the heat source, a coil round the tube */
     [-12, 0, 12].forEach((o) => { ctx.save(); ctx.strokeStyle = PAL.muted; ctx.lineWidth = 4; ctx.beginPath(); ctx.ellipse(CX, HY + o, 74, 9, 0, 0, TAU); ctx.stroke(); ctx.restore(); });
-    hits.push({ x: CX - 70, y: HY, r: 14, name: 'the heat source' });
+    hits.push({ x: CX - 70, y: HY, r: 14, name: '热源' });
     /* the rod's motion while it is lowered */
     if (cut === 0 && s < 1) arrow(ctx, CX, yB + 12, CX, yB + 56, PAL.ink, 4);
     /* region names at fixed places in the frame, shown where the rod is there */
     const at = (y) => (yT < y && y < yB ? 1 : 0);
-    label(ctx, 'heat source', CX - 76, HY, { side: 'left', leader: true, gap: 70, size: 20 });
-    F.faded(ctx, at(HY - 90) * (1 - k), [0, 0], () => label(ctx, 'impure silicon', CX + RW / 2, HY - 90, { side: 'right', leader: true, gap: 110, size: 20 }));
-    F.faded(ctx, at(HY) * (1 - k), [0, 0], () => label(ctx, 'molten silicon', CX + RW / 2, HY, { side: 'right', leader: true, gap: 110, size: 20 }));
-    F.faded(ctx, at(HY + 90), [0, 0], () => label(ctx, 'pure silicon', CX + RW / 2, HY + 90, { side: 'right', leader: true, gap: 110, size: 20 }));
-    if (cut > 0) F.faded(ctx, k, [0, 0], () => label(ctx, 'impure end, cut off', CX + RW / 2 + dx, (yT + yOf(UC)) / 2 + dy, { side: 'right', leader: true, gap: 40, size: 20 }));
-    dot(ctx, 860, 620, F.cat(0), true, 5); text(ctx, 'impurity atom', 876, 620, PAL.ink, { size: 18, base: 'middle' });
-    topline(ctx, cut > 0 ? 'The impure top end of the rod is cut off, leaving pure silicon.' : 'As the rod is lowered through the heat source, the molten zone moves up the rod and carries the impurities with it.');
+    label(ctx, '热源', CX - 76, HY, { side: 'left', leader: true, gap: 70, size: 20 });
+    F.faded(ctx, at(HY - 90) * (1 - k), [0, 0], () => label(ctx, '不纯的硅', CX + RW / 2, HY - 90, { side: 'right', leader: true, gap: 110, size: 20 }));
+    F.faded(ctx, at(HY) * (1 - k), [0, 0], () => label(ctx, '熔融硅', CX + RW / 2, HY, { side: 'right', leader: true, gap: 110, size: 20 }));
+    F.faded(ctx, at(HY + 90), [0, 0], () => label(ctx, '纯硅', CX + RW / 2, HY + 90, { side: 'right', leader: true, gap: 110, size: 20 }));
+    if (cut > 0) F.faded(ctx, k, [0, 0], () => label(ctx, '被切掉的不纯端', CX + RW / 2 + dx, (yT + yOf(UC)) / 2 + dy, { side: 'right', leader: true, gap: 40, size: 20 }));
+    dot(ctx, 860, 620, F.cat(0), true, 5); text(ctx, '杂质原子', 876, 620, PAL.ink, { size: 18, base: 'middle' });
+    topline(ctx, cut > 0 ? '棒的不纯上端被切掉，留下纯硅。' : '随着棒穿过热源下降，熔融区沿棒向上移动，并带着杂质一起移动。');
     const main = cut > 0
-      ? `\\text{impure end cut off:}\\ ${N}\\ \\text{of}\\ ${N}\\ \\text{impurity atoms removed},\\ 0\\ \\text{left in the pure silicon}`
-      : `\\text{zone at}\\ ${Math.round(100 * s)}\\%\\ \\text{of the rod:}\\ ${inMelt}\\ \\text{of}\\ ${N}\\ \\text{impurity atoms in the melt},\\ 0\\ \\text{left in the pure silicon}`;
+      ? `\\text{不纯端已切掉:}\\ \\text{已除去}\\ ${N}\\ \\text{个杂质原子(共}\\ ${N}\\ \\text{个)},\\ \\text{纯硅中剩余}\\ 0\\ \\text{个}`
+      : `\\text{熔融区位于棒的}\\ ${Math.round(100 * s)}\\%\\ \\text{处:}\\ \\text{熔体中有}\\ ${inMelt}\\ \\text{个杂质原子(共}\\ ${N}\\ \\text{个)},\\ \\text{纯硅中剩余}\\ 0\\ \\text{个}`;
     tex(ro, main, false, { values: false });
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
@@ -204,12 +204,12 @@ function hub(s, deg) {
 ===================================================================== */
 (function () {
   const d = sim('sim-co2-sio2');
-  const v = F.view3d(d.stage, { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.35, h: 500, dist: 10.5, views: [{ label: 'along an axis', yaw: 0, pitch: 0 }, { label: 'along a diagonal', yaw: Math.PI / 4, pitch: 0.6155 }] });
+  const v = F.view3d(d.stage, { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.35, h: 500, dist: 10.5, views: [{ label: '沿轴向', yaw: 0, pitch: 0 }, { label: '沿对角线', yaw: Math.PI / 4, pitch: 0.6155 }] });
   const grp = v.part(0); if (grp) grp.position.y = -0.3;
   const FCC = [[0, 0, 0], [0.5, 0.5, 0], [0.5, 0, 0.5], [0, 0.5, 0.5]];
   const inCell = (p) => p.every((x) => x > -1e-6 && x < 1 + 1e-6);
   function fccCell() { const s = []; [0, 1].forEach((i) => [0, 1].forEach((j) => [0, 1].forEach((k) => FCC.forEach((f) => { const p = [f[0] + i, f[1] + j, f[2] + k]; if (inCell(p) && !s.some((q) => dist3(q, p) < 1e-6)) s.push(p); })))); return s; }
-  const NM = { C: 'a carbon atom, C', O: 'an oxygen atom, O', Si: 'a silicon atom, Si' };
+  const NM = { C: '碳原子，C', O: '氧原子，O', Si: '硅原子，Si' };
   const BUILD = {
     CO2() {
       const a = 2.3, dir = [[1, 1, 1], [1, -1, -1], [-1, -1, 1], [-1, 1, -1]].map((u) => u.map((x) => x / R3)), atoms = [], bonds = [];
@@ -232,10 +232,10 @@ function hub(s, deg) {
     },
   };
   const INFO = {
-    CO2: { label: 'carbon dioxide', head: 'Solid carbon dioxide is built of separate CO₂ molecules, each with two C=O double bonds.', ro: '\\text{O=C=O:}\\ 2\\ \\sigma + 2\\ \\pi\\ \\text{bonds},\\quad 2\\ \\text{O per C} \\quad\\Rightarrow\\quad \\text{CO}_{2}' },
-    SiO2: { label: 'silicon dioxide', head: 'In silicon dioxide every silicon atom bonds to four oxygen atoms, and every oxygen atom bridges two silicon atoms.', ro: '\\text{Si:}\\ 4\\ \\sigma\\ \\text{bonds},\\ 0\\ \\pi,\\quad 4 \\times \\tfrac{1}{2}\\ \\text{O} = 2\\ \\text{O per Si} \\quad\\Rightarrow\\quad \\text{SiO}_{2}' },
+    CO2: { label: '二氧化碳', head: '固态二氧化碳由分离的 CO₂ 分子构成，每个分子有两个 C=O 双键。', ro: '\\text{O=C=O:}\\ 2\\ \\sigma + 2\\ \\pi\\ \\text{键},\\quad \\text{每个 C 对应}\\ 2\\ \\text{个 O} \\quad\\Rightarrow\\quad \\text{CO}_{2}' },
+    SiO2: { label: '二氧化硅', head: '在二氧化硅中，每个硅原子与四个氧原子成键，每个氧原子在两个硅原子之间架桥。', ro: '\\text{Si:}\\ 4\\ \\sigma\\ \\text{键},\\ 0\\ \\pi,\\quad 4 \\times \\tfrac{1}{2}\\ \\text{O} = \\text{每个 Si 对应}\\ 2\\ \\text{个 O} \\quad\\Rightarrow\\quad \\text{SiO}_{2}' },
   };
-  const S = F.choice(d.controls, { label: '\\text{solid}', options: Object.keys(INFO).map((k) => ({ value: k, label: INFO[k].label })), value: 'CO2', aria: 'carbon dioxide or silicon dioxide' });
+  const S = F.choice(d.controls, { label: '\\text{固体}', options: Object.keys(INFO).map((k) => ({ value: k, label: INFO[k].label })), value: 'CO2', aria: '二氧化碳或二氧化硅' });
   let sig = '';
   const palSig = () => [PAL.ink, PAL.muted, ...['C', 'O', 'Si'].map((e) => F.el(e))].join('|');
   function draw() {

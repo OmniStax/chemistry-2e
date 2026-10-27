@@ -5,7 +5,7 @@ const { el, fmt, tex, C, PAL, alpha, ctl, register, begin, line, arrow, text, he
 const sim = (id, H) => F.sim(root, id, H);
 function readout(host, main, small) { tex(host, main); if (small) host.appendChild(el('small', null, small)); }
 const TAU = 2 * Math.PI;
-const NAME = { Cu: 'copper', O: 'oxygen', Cl: 'chlorine', C: 'carbon', H: 'hydrogen' };
+const NAME = { Cu: '铜', O: '氧', Cl: '氯', C: '碳', H: '氢' };
 
 /* an atom as a filled disc in its element's colour (rule 7.2); hydrogen is light and takes an ink outline */
 function disc(ctx, x, y, r, fill, strong) {
@@ -27,8 +27,8 @@ const SPHERE = { green: '#3c9a4a', blue: '#3a72d0' };
 ===================================================================== */
 (function () {
   const d = sim('sim-copper-oxygen', 500);
-  const S = F.choice(d.controls, { label: '\\text{sample}', aria: 'the elements or the compound', value: 'before',
-    options: [{ value: 'before', label: 'copper and oxygen' }, { value: 'after', label: 'copper(II) oxide' }] });
+  const S = F.choice(d.controls, { label: '\\text{样品}', aria: '各元素或化合物', value: 'before',
+    options: [{ value: 'before', label: '铜和氧' }, { value: 'after', label: '氧化铜(II)' }] });
   const R = 19, G = 40;
   /* the copper block, 4 by 4, and eight O2 molecules scattered through the gas at fixed places and angles */
   const CU0 = [], O0 = [];
@@ -47,20 +47,20 @@ const SPHERE = { green: '#3c9a4a', blue: '#3a72d0' };
     hits = [];
     /* O2 bonds while the oxygen is a gas; the pairs part as the atoms leave */
     F.faded(ctx, aB, [0, 0], () => { for (let k = 0; k < 8; k++) bond(ctx, [p.o[4 * k], p.o[4 * k + 1]], [p.o[4 * k + 2], p.o[4 * k + 3]]); });
-    for (let k = 0; k < 16; k++) { atom(ctx, p.cu[2 * k], p.cu[2 * k + 1], 'Cu', R); hits.push({ x: p.cu[2 * k], y: p.cu[2 * k + 1], r: R, name: 'copper atom' }); }
-    for (let k = 0; k < 16; k++) { atom(ctx, p.o[2 * k], p.o[2 * k + 1], 'O', R * 0.8); hits.push({ x: p.o[2 * k], y: p.o[2 * k + 1], r: R, name: S.value === 'before' ? 'oxygen atom of an O₂ molecule' : 'oxygen atom' }); }
+    for (let k = 0; k < 16; k++) { atom(ctx, p.cu[2 * k], p.cu[2 * k + 1], 'Cu', R); hits.push({ x: p.cu[2 * k], y: p.cu[2 * k + 1], r: R, name: '铜原子' }); }
+    for (let k = 0; k < 16; k++) { atom(ctx, p.o[2 * k], p.o[2 * k + 1], 'O', R * 0.8); hits.push({ x: p.o[2 * k], y: p.o[2 * k + 1], r: R, name: S.value === 'before' ? 'O₂ 分子中的氧原子' : '氧原子' }); }
     F.faded(ctx, aB, [0, 0], () => {
-      text(ctx, 'copper, a shiny, red-brown solid', 290, 390, PAL.ink, { size: 20, align: 'center' });
-      text(ctx, 'oxygen, a clear and colorless gas', 950, 410, PAL.ink, { size: 20, align: 'center' });
+      text(ctx, '铜，有光泽的红棕色固体', 290, 390, PAL.ink, { size: 20, align: 'center' });
+      text(ctx, '氧，无色透明的气体', 950, 410, PAL.ink, { size: 20, align: 'center' });
     });
-    F.faded(ctx, aA, [0, 0], () => text(ctx, 'copper(II) oxide, a powdery, black solid', 700, 390, PAL.ink, { size: 20, align: 'center' }));
+    F.faded(ctx, aA, [0, 0], () => text(ctx, '氧化铜(II)，粉末状的黑色固体', 700, 390, PAL.ink, { size: 20, align: 'center' }));
     /* the legend */
-    atom(ctx, 90, 458, 'Cu', 12); text(ctx, 'copper atom', 110, 458, PAL.ink, { size: 18 });
-    atom(ctx, 270, 458, 'O', 10); text(ctx, 'oxygen atom', 290, 458, PAL.ink, { size: 18 });
+    atom(ctx, 90, 458, 'Cu', 12); text(ctx, '铜原子', 110, 458, PAL.ink, { size: 18 });
+    atom(ctx, 270, 458, 'O', 10); text(ctx, '氧原子', 290, 458, PAL.ink, { size: 18 });
     const after = S.value === 'after';
-    headline(ctx, after ? 'The same 16 copper atoms and 16 oxygen atoms are now combined in a 1:1 ratio as copper(II) oxide.'
-      : 'Sixteen copper atoms in the metal and 16 oxygen atoms in eight O₂ molecules, before the change.');
-    readout(d.readout, '\\text{copper atoms: } 16 \\text{ before} = 16 \\text{ after} \\qquad \\text{oxygen atoms: } 16 \\text{ before} = 16 \\text{ after}');
+    headline(ctx, after ? '同样的 16 个铜原子和 16 个氧原子，现在以 1:1 的比例结合成氧化铜(II)。'
+      : '变化之前：金属中有 16 个铜原子，8 个 O₂ 分子中有 16 个氧原子。');
+    readout(d.readout, '\\text{铜原子：} 16 \\text{（变化前）} = 16 \\text{（变化后）} \\qquad \\text{氧原子：} 16 \\text{（变化前）} = 16 \\text{（变化后）}');
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -76,7 +76,7 @@ const SPHERE = { green: '#3c9a4a', blue: '#3a72d0' };
   const SAMPLES = [['A', 17.60], ['C', 23.04], ['B', 26.52]];
   /* each notched sample is a referent of Table 2.1, named in its colour while the slider rests on it */
   const WHO = { A: 'sample-a', B: 'sample-b', C: 'sample-c' };
-  const M = ctl(d.controls, { label: '\\km', cls: 'mass', min: 5, max: 30, step: 0.01, value: 17.60, unit: 'g', dec: 2, aria: 'mass of the sample of isooctane',
+  const M = ctl(d.controls, { label: '\\km', cls: 'mass', min: 5, max: 30, step: 0.01, value: 17.60, unit: 'g', dec: 2, aria: '异辛烷样品的质量',
     detents: SAMPLES.map(([n, v]) => ({ v, label: n })), snap: true });
   /* sample A's carbon and hydrogen fix the composition: 14.82 g of carbon in 17.60 g */
   const FC = 14.82 / 17.60, FH = 2.78 / 17.60, RATIO = 14.82 / 2.78;
@@ -93,10 +93,10 @@ const SPHERE = { green: '#3c9a4a', blue: '#3a72d0' };
     const at = SAMPLES.find(([, v]) => Math.abs(v - m) < 0.005);
     /* the scale in grams, 0 to 30 */
     for (let g = 0; g <= 30; g += 5) { line(ctx, X(g), 110, X(g), 262, PAL.rule, 1.5); text(ctx, String(g), X(g), 280, PAL.muted, { size: 17, align: 'center' }); }
-    text(ctx, 'mass (g)', RT, 304, PAL.muted, { size: 17, align: 'right' });
-    if (at) text(ctx, 'sample ' + at[0], 56, 100, F.ref(WHO[at[0]]), { size: 20, weight: 600 });
-    atom(ctx, 70, 150, 'C', 14); text(ctx, 'carbon', 92, 150, PAL.ink, { size: 20 });
-    atom(ctx, 70, 222, 'H', 10); text(ctx, 'hydrogen', 92, 222, PAL.ink, { size: 20 });
+    text(ctx, '质量（g）', RT, 304, PAL.muted, { size: 17, align: 'right' });
+    if (at) text(ctx, '样品 ' + at[0], 56, 100, F.ref(WHO[at[0]]), { size: 20, weight: 600 });
+    atom(ctx, 70, 150, 'C', 14); text(ctx, '碳', 92, 150, PAL.ink, { size: 20 });
+    atom(ctx, 70, 222, 'H', 10); text(ctx, '氢', 92, 222, PAL.ink, { size: 20 });
     bar(ctx, 150, 46, c, true); bar(ctx, 222, 46, h, false);
     text(ctx, fmt(c, 2) + ' g', X(c) + 12, 150, cm, { size: 20, weight: 600 });
     text(ctx, fmt(h, 2) + ' g', X(h) + 12, 222, cm, { size: 20, weight: 600 });
@@ -105,12 +105,12 @@ const SPHERE = { green: '#3c9a4a', blue: '#3a72d0' };
     line(ctx, L, y + 30, RT, y + 30, PAL.muted, 2);
     for (let g = 0; g <= 6; g++) text(ctx, String(g), XS(g), y + 48, PAL.muted, { size: 15, align: 'center' });
     ctx.save(); ctx.fillStyle = cm; ctx.fillRect(L, y - 20, XS(RATIO) - L, 18); ctx.fillStyle = alpha(cm, 0.35); ctx.fillRect(L, y + 2, XS(1) - L, 18); ctx.restore();
-    text(ctx, fmt(RATIO, 2) + ' g carbon', XS(RATIO) + 12, y - 11, cm, { size: 18, weight: 600 });
-    text(ctx, '1.00 g hydrogen', XS(1) + 12, y + 11, cm, { size: 18, weight: 600 });
-    text(ctx, 'per 1.00 g', 70, y - 11, PAL.ink, { size: 18 }); text(ctx, 'of hydrogen', 70, y + 13, PAL.ink, { size: 18 });
-    hits = [{ x: (L + X(c)) / 2, y: 150, r: 26, name: fmt(c, 2) + ' g of carbon' }, { x: (L + X(h)) / 2, y: 222, r: 26, name: fmt(h, 2) + ' g of hydrogen' }];
-    headline(ctx, (at ? 'Sample ' + at[0] + ', ' : 'A sample of ') + fmt(m, 2) + ' g of isooctane holds ' + fmt(c, 2) + ' g of carbon and ' + fmt(h, 2) + ' g of hydrogen, or 5.33 g of carbon for every 1.00 g of hydrogen.');
-    readout(d.readout, `\\frac{\\htmlClass{kv-mass}{${fmt(c, 2)}\\ \\text{g carbon}}}{\\htmlClass{kv-mass}{${fmt(h, 2)}\\ \\text{g hydrogen}}}=\\frac{\\htmlClass{kv-mass}{5.33\\ \\text{g carbon}}}{\\htmlClass{kv-mass}{1.00\\ \\text{g hydrogen}}}`);
+    text(ctx, fmt(RATIO, 2) + ' g 碳', XS(RATIO) + 12, y - 11, cm, { size: 18, weight: 600 });
+    text(ctx, '1.00 g 氢', XS(1) + 12, y + 11, cm, { size: 18, weight: 600 });
+    text(ctx, '每 1.00 g', 70, y - 11, PAL.ink, { size: 18 }); text(ctx, '氢', 70, y + 13, PAL.ink, { size: 18 });
+    hits = [{ x: (L + X(c)) / 2, y: 150, r: 26, name: fmt(c, 2) + ' g 碳' }, { x: (L + X(h)) / 2, y: 222, r: 26, name: fmt(h, 2) + ' g 氢' }];
+    headline(ctx, (at ? '样品 ' + at[0] + '，' + fmt(m, 2) + ' g 异辛烷' : '一份 ' + fmt(m, 2) + ' g 的异辛烷样品') + '含有 ' + fmt(c, 2) + ' g 碳和 ' + fmt(h, 2) + ' g 氢，即每 1.00 g 氢对应 5.33 g 碳。');
+    readout(d.readout, `\\frac{\\htmlClass{kv-mass}{${fmt(c, 2)}\\ \\text{g 碳}}}{\\htmlClass{kv-mass}{${fmt(h, 2)}\\ \\text{g 氢}}}=\\frac{\\htmlClass{kv-mass}{5.33\\ \\text{g 碳}}}{\\htmlClass{kv-mass}{1.00\\ \\text{g 氢}}}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -122,7 +122,7 @@ const SPHERE = { green: '#3c9a4a', blue: '#3a72d0' };
 ===================================================================== */
 (function () {
   const d = sim('sim-copper-chlorides', 600);
-  const M = ctl(d.controls, { label: '\\km_{\\text{Cu}}', cls: 'mass', min: 0.5, max: 5, step: 0.01, value: 1, unit: 'g', dec: 2, aria: 'mass of copper in each sample' });
+  const M = ctl(d.controls, { label: '\\km_{\\text{Cu}}', cls: 'mass', min: 0.5, max: 5, step: 0.01, value: 1, unit: 'g', dec: 2, aria: '每份样品中铜的质量' });
   const GREEN = 0.558, BROWN = 1.116;
   const R = 17;
   /* (a) one chlorine atom per copper atom: a 6 by 4 lattice, copper and chlorine alternating */
@@ -134,7 +134,7 @@ const SPHERE = { green: '#3c9a4a', blue: '#3a72d0' };
   let hits = []; F.hover(d.stage, () => hits);
   function drawSet(ctx, set, links) {
     for (const [a, b] of links) bond(ctx, [set[a].x, set[a].y], [set[b].x, set[b].y]);
-    for (const q of set) { atom(ctx, q.x, q.y, q.s, q.s === 'Cu' ? R : R * 0.85); hits.push({ x: q.x, y: q.y, r: R, name: NAME[q.s] + ' atom' }); }
+    for (const q of set) { atom(ctx, q.x, q.y, q.s, q.s === 'Cu' ? R : R * 0.85); hits.push({ x: q.x, y: q.y, r: R, name: NAME[q.s] + '原子' }); }
   }
   const LA = [];
   for (let i = 0; i < 4; i++) for (let j = 0; j < 6; j++) { const k = 6 * i + j; if (j < 5) LA.push([k, k + 1]); if (i < 3) LA.push([k, k + 6]); }
@@ -145,23 +145,23 @@ const SPHERE = { green: '#3c9a4a', blue: '#3a72d0' };
     const cm = C('mass'), Xg = (g) => x0 + (w * g) / 6;
     for (let g = 0; g <= 6; g++) text(ctx, String(g), Xg(g), 530, PAL.muted, { size: 15, align: 'center' });
     line(ctx, x0, 512, x0 + w, 512, PAL.muted, 2);
-    text(ctx, 'mass (g)', x0 + w, 556, PAL.muted, { size: 15, align: 'right' });
+    text(ctx, '质量（g）', x0 + w, 556, PAL.muted, { size: 15, align: 'right' });
     ctx.save(); ctx.fillStyle = cm; ctx.fillRect(x0, 420, Xg(cu) - x0, 30); ctx.fillStyle = alpha(cm, 0.35); ctx.fillRect(x0, 462, Xg(cl) - x0, 30);
     ctx.strokeStyle = cm; ctx.lineWidth = 2; ctx.strokeRect(x0, 462, Xg(cl) - x0, 30); ctx.restore();
-    text(ctx, fmt(cu, 2) + ' g copper', Xg(cu) + 10, 435, cm, { size: 18, weight: 600 });
-    text(ctx, fmt(cl, 3) + ' g chlorine', Xg(cl) + 10, 477, cm, { size: 18, weight: 600 });
+    text(ctx, fmt(cu, 2) + ' g 铜', Xg(cu) + 10, 435, cm, { size: 18, weight: 600 });
+    text(ctx, fmt(cl, 3) + ' g 氯', Xg(cl) + 10, 477, cm, { size: 18, weight: 600 });
   }
   function draw() {
     const { ctx } = begin(d.c);
     const cu = M.v, g = GREEN * cu, b = BROWN * cu;
     hits = [];
     drawSet(ctx, A, LA); drawSet(ctx, B, LB);
-    text(ctx, '(a) green solid, 1 Cl per Cu', 350, 370, PAL.ink, { size: 20, align: 'center', weight: 600 });
-    text(ctx, '(b) brown solid, 2 Cl per Cu', 1060, 370, PAL.ink, { size: 20, align: 'center', weight: 600 });
-    atom(ctx, 560, 580, 'Cu', 12); text(ctx, 'copper atom', 580, 580, PAL.ink, { size: 17 });
-    atom(ctx, 730, 580, 'Cl', 10); text(ctx, 'chlorine atom', 750, 580, PAL.ink, { size: 17 });
+    text(ctx, '（a）绿色固体，每个 Cu 对应 1 个 Cl', 350, 370, PAL.ink, { size: 20, align: 'center', weight: 600 });
+    text(ctx, '（b）棕色固体，每个 Cu 对应 2 个 Cl', 1060, 370, PAL.ink, { size: 20, align: 'center', weight: 600 });
+    atom(ctx, 560, 580, 'Cu', 12); text(ctx, '铜原子', 580, 580, PAL.ink, { size: 17 });
+    atom(ctx, 730, 580, 'Cl', 10); text(ctx, '氯原子', 750, 580, PAL.ink, { size: 17 });
     bars(ctx, 110, 440, cu, g); bars(ctx, 800, 440, cu, b);
-    headline(ctx, 'With ' + fmt(cu, 2) + ' g of copper, the green compound holds ' + fmt(g, 3) + ' g of chlorine and the brown compound ' + fmt(b, 3) + ' g, twice as much.');
+    headline(ctx, '取 ' + fmt(cu, 2) + ' g 铜，绿色化合物含有 ' + fmt(g, 3) + ' g 氯，棕色化合物含有 ' + fmt(b, 3) + ' g，是前者的两倍。');
     const cuT = `\\htmlClass{kv-mass}{${fmt(cu, 2)}\\ \\text{g Cu}}`;
     readout(d.readout, `\\dfrac{\\dfrac{\\htmlClass{kv-mass}{${fmt(b, 3)}\\ \\text{g Cl}}}{${cuT}}}{\\dfrac{\\htmlClass{kv-mass}{${fmt(g, 3)}\\ \\text{g Cl}}}{${cuT}}}=\\dfrac{2}{1}`);
   }
@@ -181,15 +181,15 @@ const SPHERE = { green: '#3c9a4a', blue: '#3a72d0' };
     hits = [];
     const put = (x, y, r, fill, name) => { disc(ctx, x, y, r, fill, false); hits.push({ x, y, r, name }); };
     const y = 120;
-    put(200, y, RG, gr, 'atom of one element (green)'); put(258, y, RG, gr, 'atom of one element (green)');
+    put(200, y, RG, gr, '某种元素的原子（绿色）'); put(258, y, RG, gr, '某种元素的原子（绿色）');
     text(ctx, '+', 350, y, PAL.ink, { size: 34, align: 'center' });
-    put(430, y, RB, bl, 'atom of another element (blue)'); put(474, y, RB, bl, 'atom of another element (blue)');
+    put(430, y, RB, bl, '另一种元素的原子（蓝色）'); put(474, y, RB, bl, '另一种元素的原子（蓝色）');
     arrow(ctx, 600, y, 760, y, PAL.ink, 4);
-    put(900, y, RG, gr, 'atom of one element (green)'); put(952, y, RB, bl, 'atom of another element (blue)');
-    text(ctx, 'Starting materials', 337, 196, PAL.ink, { size: 22, align: 'center' });
-    text(ctx, 'Products of the change', 926, 196, PAL.ink, { size: 22, align: 'center' });
-    headline(ctx, 'Green spheres are atoms of one element, and blue spheres are atoms of another.');
-    readout(d.readout, '\\text{starting materials: 2 green, 2 blue} \\qquad \\text{products: 1 green, 1 blue}');
+    put(900, y, RG, gr, '某种元素的原子（绿色）'); put(952, y, RB, bl, '另一种元素的原子（蓝色）');
+    text(ctx, '起始物质', 337, 196, PAL.ink, { size: 22, align: 'center' });
+    text(ctx, '变化的产物', 926, 196, PAL.ink, { size: 22, align: 'center' });
+    headline(ctx, '绿色球是某种元素的原子，蓝色球是另一种元素的原子。');
+    readout(d.readout, '\\text{起始物质：2 个绿色，2 个蓝色} \\qquad \\text{产物：1 个绿色，1 个蓝色}');
   }
   register(d.fig, { update: () => {}, draw });
 })();

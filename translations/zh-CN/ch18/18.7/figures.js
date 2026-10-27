@@ -21,13 +21,13 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
 ===================================================================== */
 (function () {
   const d = F.sim(root, 'sim-no2-dimer');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: 'front', yaw: 0, pitch: 0.12 }, { label: 'above', yaw: 0.5, pitch: 1.0 }], h: 600, dist: 6.4, tilt: 0.2 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: '前视', yaw: 0, pitch: 0.12 }, { label: '俯视', yaw: 0.5, pitch: 1.0 }], h: 600, dist: 6.4, tilt: 0.2 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 300);
   const R = 0.082057, R8 = 8.314, DH = 57200, K0 = 6.86, T0 = 298, VMAX = 2, NS = 16;
   const x0 = (-1 + Math.sqrt(1 + 4 * K0)) / (2 * K0), A0 = (1 - x0 / 2) / (R * T0);
   const KP = (t) => K0 * Math.exp((DH / R8) * (1 / t - 1 / T0));
-  const tS = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 273, max: 373, step: 1, value: 298, unit: 'K', dec: 0, specials: [{ at: 298, label: 'room temperature' }], onInput: settle, aria: 'temperature in kelvins' });
-  const vS = ctl(d.controls, { label: '\\kV', cls: 'volume', min: 0.5, max: 2, step: 0.01, value: 1, unit: 'L', dec: 2, onInput: settle, aria: 'volume of the vessel in liters' });
+  const tS = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 273, max: 373, step: 1, value: 298, unit: 'K', dec: 0, specials: [{ at: 298, label: '室温' }], onInput: settle, aria: '以开尔文为单位的温度' });
+  const vS = ctl(d.controls, { label: '\\kV', cls: 'volume', min: 0.5, max: 2, step: 0.01, value: 1, unit: 'L', dec: 2, onInput: settle, aria: '容器的体积，单位为升' });
 
   function state() {
     const t = tS.v, k = KP(t), S = (A0 * R * t) / vS.v;
@@ -53,8 +53,8 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
   for (let i = NS - 1; i > 0; i--) { const j = Math.floor(rand() * (i + 1)); [order[i], order[j]] = [order[j], order[i]]; }
 
   const MOLS = {
-    N2O4: { name: 'dinitrogen tetraoxide, N₂O₄', atoms: [['N', -0.085, 0, 0, 0.075], ['N', 0.085, 0, 0, 0.075], ['O', -0.155, 0.105, 0, 0.07], ['O', -0.155, -0.105, 0, 0.07], ['O', 0.155, 0.105, 0, 0.07], ['O', 0.155, -0.105, 0, 0.07]] },
-    NO2: { name: 'nitrogen dioxide, NO₂', atoms: [['N', 0, 0.035, 0, 0.075], ['O', -0.11, -0.035, 0, 0.07], ['O', 0.11, -0.035, 0, 0.07]] },
+    N2O4: { name: '四氧化二氮，N₂O₄', atoms: [['N', -0.085, 0, 0, 0.075], ['N', 0.085, 0, 0, 0.075], ['O', -0.155, 0.105, 0, 0.07], ['O', -0.155, -0.105, 0, 0.07], ['O', 0.155, 0.105, 0, 0.07], ['O', 0.155, -0.105, 0, 0.07]] },
+    NO2: { name: '二氧化氮，NO₂', atoms: [['N', 0, 0.035, 0, 0.075], ['O', -0.11, -0.035, 0, 0.07], ['O', 0.11, -0.035, 0, 0.07]] },
   };
   const T3 = () => window.THREE;
   let sig = '', box = null, edges = null, piston = null, rod = null, meshes = [];
@@ -70,12 +70,12 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
     const T = T3();
     v.clear(); grp.position.set(0, -0.05, 0);
     box = new T.Mesh(new T.BoxGeometry(1, 1, 1), F.mesh.mat(F.fact(NO2_BROWN), { transparent: true, opacity: 0.05, depthWrite: false, side: T.DoubleSide })); grp.add(box);
-    v.pickable(box, 'the gas in the sealed vessel');
+    v.pickable(box, '密闭容器中的气体');
     edges = new T.LineSegments(new T.EdgesGeometry(new T.BoxGeometry(1, 1, 1)), new T.LineBasicMaterial({ color: new T.Color(PAL.ink) })); grp.add(edges);
     piston = F.mesh.box(grp, [0, 0, 0], [2 * L - 0.02, 0.06, 2 * L - 0.02], PAL.muted, { transparent: true, opacity: 0.55 });
-    v.pickable(piston, 'the piston');
+    v.pickable(piston, '活塞');
     rod = F.mesh.stick(grp, [0, 0, 0], [0, TOP, 0], 0.05, PAL.muted);
-    v.pickable(rod, 'the piston rod');
+    v.pickable(rod, '活塞杆');
     v.label('2NO₂ ⇌ N₂O₄', [0, TOP + 0.12, 0], grp, 6);
     meshes = slots.map(() => ({ A: molecule3('N2O4'), B: [molecule3('NO2'), molecule3('NO2')] }));
   }
@@ -107,7 +107,7 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
 
     const { ctx } = begin(cnv);
     const share = Math.round((100 * s.no2) / (s.no2 + s.n2o4));
-    topline(ctx, `At ${s.t} K, ${share}% of the molecules are brown NO_{2} and ${100 - share}% colorless N_{2}O_{4}.`);
+    topline(ctx, `在 ${s.t} K 时，${share}% 的分子是棕色的 NO_{2}，${100 - share}% 是无色的 N_{2}O_{4}。`);
     const l = 300, r = 1240, X = (p) => l + ((r - l) * p) / 4, ay = 236;
     [[s.n2o4, 'n2o4', 'N_{2}O_{4}', 118], [s.no2, 'no2', 'NO_{2}', 182]].forEach(([p, id, name, y]) => {
       ctx.save(); ctx.fillStyle = F.ref(id); ctx.fillRect(l, y - 18, X(p) - l, 36); ctx.restore();
@@ -117,7 +117,7 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
     line(ctx, l, ay, r, ay, PAL.muted, 2);
     for (let q = 0; q <= 4; q++) { line(ctx, X(q), ay, X(q), ay + 8, PAL.muted, 2); text(ctx, String(q), X(q), ay + 24, PAL.muted, { size: 17, align: 'center' }); }
     for (let q = 1; q <= 4; q++) line(ctx, X(q), 92, X(q), ay, alpha(PAL.ink, 0.12), 2);
-    text(ctx, 'partial pressure (atm)', (l + r) / 2, ay + 52, C('pressure'), { size: 20, align: 'center' });
+    text(ctx, '分压 (atm)', (l + r) / 2, ay + 52, C('pressure'), { size: 20, align: 'center' });
 
     const f4 = (q) => q.toPrecision(4);
     tex(d.readout, `\\kKP = \\dfrac{\\kP_{\\text{N}_2\\text{O}_4}}{\\kP_{\\text{NO}_2}^{2}} = \\dfrac{${hue('pressure', f4(s.n2o4))}}{(${hue('pressure', f4(s.no2))})^{2}} = ${hue('equilibrium-constant', s.k.toPrecision(3))}`);

@@ -2,16 +2,16 @@
  "id": "2.6",
  "module": "m68696",
  "chapter": "2",
- "title": "Ionic and Molecular Compounds",
- "short": "Ionic and Molecular Compounds",
- "lead": "Atoms can gain or lose electrons to become ions, and compounds divide into ionic compounds built of ions and molecular compounds built of discrete molecules.",
+ "title": "离子化合物与分子化合物",
+ "short": "离子化合物与分子化合物",
+ "lead": "原子可以得到或失去电子而成为离子，化合物则分为由离子构成的离子化合物和由独立分子构成的分子化合物。",
  "objectives": [
-  "Define ionic and molecular (covalent) compounds",
-  "Predict the type of compound formed from elements based on their location within the periodic table",
-  "Determine formulas for simple ionic compounds"
+  "给出离子化合物和分子（共价）化合物的定义",
+  "根据元素在元素周期表中的位置，预测它们形成的化合物的类型",
+  "确定简单离子化合物的化学式"
  ],
- "summary_html": "<p>Metals (particularly those in groups 1 and 2) tend to lose the number of electrons that would leave them with the same number of electrons as in the preceding noble gas in the periodic table. By this means, a positively charged ion is formed. Similarly, nonmetals (especially those in groups 16 and 17, and, to a lesser extent, those in Group 15) can gain the number of electrons needed to provide atoms with the same number of electrons as in the next noble gas in the periodic table. Thus, nonmetals tend to form negative ions. Positively charged ions are called cations, and negatively charged ions are called anions. Ions can be either monatomic (containing only one atom) or polyatomic (containing more than one atom).</p><p>Compounds that contain ions are called ionic compounds. Ionic compounds generally form from metals and nonmetals. Compounds that do not contain ions, but instead consist of atoms bonded tightly together in molecules (uncharged groups of atoms that behave as a single unit), are called covalent compounds. Covalent compounds usually form from two nonmetals.</p>",
- "notes": "The Link to Learning note with a video of a mixture of salts melting and conducting electricity is left out. Table 2.5 is printed with the four columns of its cells, which differ from the three columns of the book’s summary of the table.",
+ "summary_html": "<p>金属（尤其是第 1 族和第 2 族的金属）倾向于失去一定数目的电子，使其电子数与元素周期表中前一个稀有气体相同。由此形成带正电荷的离子。同样，非金属（尤其是第 16 族和第 17 族的非金属，以及在较小程度上第 15 族的非金属）可以得到所需数目的电子，使原子的电子数与元素周期表中后一个稀有气体相同。因此，非金属倾向于形成负离子。带正电荷的离子称为阳离子，带负电荷的离子称为阴离子。离子可以是单原子的（只含一个原子），也可以是多原子的（含有多于一个原子）。</p><p>含有离子的化合物称为离子化合物。离子化合物一般由金属和非金属形成。不含离子，而是由紧密键合在分子（作为一个单元发挥作用的不带电原子团）中的原子构成的化合物，称为共价化合物。共价化合物通常由两种非金属形成。</p>",
+ "notes": "“学习链接”注记被略去，其中有一段盐的混合物熔化并导电的视频。表 2.5 按其单元格的四列印出，这与书中对该表所作概述的三列不同。",
  "ai": {
   "text": [
    {
@@ -21,26 +21,38 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-09-28",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The unkeyed exercises fs-idp44267360 (whether six chlorides are ionic or covalent), fs-idp4856416 (whether six compounds are ionic or covalent, and their ions) and fs-idp286976176 (the formulas of five compounds from pairs of ions) are left out.",
+ "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案取自书后答案以及“学习检测”的答案。没有答案的习题 fs-idp44267360（六种氯化物是离子型还是共价型）、fs-idp4856416（六种化合物是离子型还是共价型，以及它们的离子）和 fs-idp286976176（由五对离子写出五种化合物的化学式）被略去。",
  "figures": [
   {
    "id": "sim-na-cation",
    "kind": "sim",
    "number": "2.28",
-   "originals": ["/media/ch02/CNX_Chem_02_06_NaCation.jpg"],
-   "original_caption": "(a) A sodium atom (Na) has equal numbers of protons and electrons (11) and is uncharged. (b) A sodium cation (Na<sup>+</sup>) has lost an electron, so it has one more proton (11) than electrons (10), giving it an overall positive charge, signified by a superscripted plus sign.",
-   "draws": ["charge"],
+   "originals": [
+    "/media/ch02/CNX_Chem_02_06_NaCation.jpg"
+   ],
+   "original_caption": "（a）钠原子（Na）的质子数和电子数相等（均为 11），不带电。（b）钠阳离子（Na<sup>+</sup>）失去了一个电子，因此质子数（11）比电子数（10）多一个，整体带正电，用上标的加号表示。",
+   "draws": [
+    "charge"
+   ],
    "conventions": [
     "Na",
     "Mg",
@@ -59,15 +71,32 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
-  { "id": "fig-ion-charges", "kind": "photo", "number": "2.29", "draws": [] },
-  { "id": "fig-nacl-molten", "kind": "photo", "number": "2.30", "draws": [] },
+  {
+   "id": "fig-ion-charges",
+   "kind": "photo",
+   "number": "2.29",
+   "draws": []
+  },
+  {
+   "id": "fig-nacl-molten",
+   "kind": "photo",
+   "number": "2.30",
+   "draws": []
+  },
   {
    "id": "sim-ionic-formula",
    "kind": "sim",
-   "draws": ["charge"],
+   "draws": [
+    "charge"
+   ],
    "conventions": [
     "Na",
     "K",
@@ -93,34 +122,132 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
-  { "id": "fig-sapphire", "kind": "photo", "number": "2.31", "draws": [] }
+  {
+   "id": "fig-sapphire",
+   "kind": "photo",
+   "number": "2.31",
+   "draws": []
+  }
  ],
  "coverage": [
-  { "span": "ions", "concept": "predict-ion-charge-from-group", "verb": "introduces" },
-  { "span": "ions", "concept": "ions-and-atomic-charge", "verb": "uses" },
-  { "span": "ions", "concept": "periods-and-groups", "verb": "uses" },
-  { "span": "ions", "concept": "monatomic-ion", "verb": "introduces" },
-  { "span": "ex-ion-composition", "concept": "composition-of-an-atom", "verb": "uses" },
-  { "span": "ex-ion-formation", "concept": "predict-ion-charge-from-group", "verb": "reinforces" },
-  { "span": "ex-ion-formation", "concept": "metals-nonmetals-metalloids", "verb": "uses" },
-  { "span": "polyatomic-ions", "concept": "polyatomic-ions", "verb": "introduces" },
-  { "span": "polyatomic-ions", "concept": "oxyanion", "verb": "introduces" },
-  { "span": "bonds", "concept": "ionic-and-covalent-bonds", "verb": "introduces" },
-  { "span": "bonds", "concept": "covalent-bond", "verb": "introduces" },
-  { "span": "ionic-compounds", "concept": "ionic-compounds", "verb": "introduces" },
-  { "span": "ionic-compounds", "concept": "ionic-compound-formula", "verb": "introduces" },
-  { "span": "ionic-compounds", "concept": "ionic-and-covalent-bonds", "verb": "uses" },
-  { "span": "ex-sapphire", "concept": "ionic-compound-formula", "verb": "reinforces" },
-  { "span": "ex-polyatomic-formula", "concept": "ionic-compound-formula", "verb": "reinforces" },
-  { "span": "ex-polyatomic-formula", "concept": "polyatomic-ions", "verb": "uses" },
-  { "span": "molecular-compounds", "concept": "molecular-compounds", "verb": "introduces" },
-  { "span": "molecular-compounds", "concept": "metals-nonmetals-metalloids", "verb": "uses" },
-  { "span": "ex-bond-type", "concept": "predict-bond-type", "verb": "introduces" },
-  { "span": "ex-bond-type", "concept": "ionic-compounds", "verb": "uses" },
-  { "span": "bonds", "concept": "ionic-bond", "verb": "introduces" }
+  {
+   "span": "ions",
+   "concept": "predict-ion-charge-from-group",
+   "verb": "introduces"
+  },
+  {
+   "span": "ions",
+   "concept": "ions-and-atomic-charge",
+   "verb": "uses"
+  },
+  {
+   "span": "ions",
+   "concept": "periods-and-groups",
+   "verb": "uses"
+  },
+  {
+   "span": "ions",
+   "concept": "monatomic-ion",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-ion-composition",
+   "concept": "composition-of-an-atom",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-ion-formation",
+   "concept": "predict-ion-charge-from-group",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ex-ion-formation",
+   "concept": "metals-nonmetals-metalloids",
+   "verb": "uses"
+  },
+  {
+   "span": "polyatomic-ions",
+   "concept": "polyatomic-ions",
+   "verb": "introduces"
+  },
+  {
+   "span": "polyatomic-ions",
+   "concept": "oxyanion",
+   "verb": "introduces"
+  },
+  {
+   "span": "bonds",
+   "concept": "ionic-and-covalent-bonds",
+   "verb": "introduces"
+  },
+  {
+   "span": "bonds",
+   "concept": "covalent-bond",
+   "verb": "introduces"
+  },
+  {
+   "span": "ionic-compounds",
+   "concept": "ionic-compounds",
+   "verb": "introduces"
+  },
+  {
+   "span": "ionic-compounds",
+   "concept": "ionic-compound-formula",
+   "verb": "introduces"
+  },
+  {
+   "span": "ionic-compounds",
+   "concept": "ionic-and-covalent-bonds",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-sapphire",
+   "concept": "ionic-compound-formula",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ex-polyatomic-formula",
+   "concept": "ionic-compound-formula",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ex-polyatomic-formula",
+   "concept": "polyatomic-ions",
+   "verb": "uses"
+  },
+  {
+   "span": "molecular-compounds",
+   "concept": "molecular-compounds",
+   "verb": "introduces"
+  },
+  {
+   "span": "molecular-compounds",
+   "concept": "metals-nonmetals-metalloids",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-bond-type",
+   "concept": "predict-bond-type",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-bond-type",
+   "concept": "ionic-compounds",
+   "verb": "uses"
+  },
+  {
+   "span": "bonds",
+   "concept": "ionic-bond",
+   "verb": "introduces"
+  }
  ],
  "exercises": [
   {
@@ -128,95 +255,187 @@
    "source_id": "fs-idm11079584",
    "kind": "check-your-learning",
    "bloom": "Apply",
-   "place": { "at": "inline", "after": "ex-ion-composition" },
+   "place": {
+    "at": "inline",
+    "after": "ex-ion-composition"
+   },
    "cite": "ex-ion-composition",
-   "prompt": "Give the symbol and name for the ion with 34 protons and 36 electrons.",
-   "answer": { "type": "open", "generated_by": "source", "solution": "Se<sup>2−</sup>, the selenide ion" }
+   "prompt": "给出含有 34 个质子和 36 个电子的离子的符号和名称。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Se<sup>2−</sup>，硒离子"
+   }
   },
   {
    "id": "cyl2",
    "source_id": "fs-idp51588352",
    "kind": "check-your-learning",
    "bloom": "Apply",
-   "place": { "at": "inline", "after": "ex-ion-formation" },
+   "place": {
+    "at": "inline",
+    "after": "ex-ion-formation"
+   },
    "cite": "ex-ion-formation",
-   "prompt": "Aluminum and carbon react to form an ionic compound. Predict which forms an anion, which forms a cation, and the charges of each ion. Write the symbol for each ion and name them.",
-   "answer": { "type": "open", "generated_by": "source", "solution": "Al will form a cation with a charge of 3+: Al<sup>3+</sup>, an aluminum ion. Carbon will form an anion with a charge of 4−: C<sup>4−</sup>, a carbide ion." }
+   "prompt": "铝和碳反应生成一种离子化合物。预测哪一种形成阴离子，哪一种形成阳离子，以及每种离子的电荷。写出每种离子的符号并给它们命名。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Al 将形成电荷为 3+ 的阳离子：Al<sup>3+</sup>，铝离子。碳将形成电荷为 4− 的阴离子：C<sup>4−</sup>，碳离子。"
+   }
   },
   {
    "id": "cyl3",
    "source_id": "fs-idp75448432",
    "kind": "check-your-learning",
    "bloom": "Apply",
-   "place": { "at": "inline", "after": "ex-sapphire" },
+   "place": {
+    "at": "inline",
+    "after": "ex-sapphire"
+   },
    "cite": "ex-sapphire",
-   "prompt": "Predict the formula of the ionic compound formed between the sodium cation, Na<sup>+</sup>, and the sulfide anion, S<sup>2−</sup>.",
-   "answer": { "type": "open", "generated_by": "source", "solution": "Na<sub>2</sub>S" }
+   "prompt": "预测钠阳离子 Na<sup>+</sup> 与硫离子 S<sup>2−</sup> 之间形成的离子化合物的化学式。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Na<sub>2</sub>S"
+   }
   },
   {
    "id": "cyl4",
    "source_id": "fs-idp2219712",
    "kind": "check-your-learning",
    "bloom": "Apply",
-   "place": { "at": "inline", "after": "ex-polyatomic-formula" },
+   "place": {
+    "at": "inline",
+    "after": "ex-polyatomic-formula"
+   },
    "cite": "ex-polyatomic-formula",
-   "prompt": "Predict the formula of the ionic compound formed between the lithium ion and the peroxide ion, ${\\text{O}}_{2}{}^{2-}$ (Hint: Use the periodic table to predict the sign and the charge on the lithium ion.)",
-   "answer": { "type": "open", "generated_by": "source", "solution": "Li<sub>2</sub>O<sub>2</sub>" }
+   "prompt": "预测锂离子与过氧根离子 ${\\text{O}}_{2}{}^{2-}$ 之间形成的离子化合物的化学式。（提示：利用元素周期表预测锂离子的电荷符号和电荷数。）",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Li<sub>2</sub>O<sub>2</sub>"
+   }
   },
   {
    "id": "cyl5",
    "source_id": "fs-idp411086368",
    "kind": "check-your-learning",
    "bloom": "Apply",
-   "place": { "at": "inline", "after": "ex-bond-type" },
+   "place": {
+    "at": "inline",
+    "after": "ex-bond-type"
+   },
    "cite": "ex-bond-type",
-   "prompt": "Using the periodic table, predict whether the following compounds are ionic or covalent: (a) SO<sub>2</sub> (b) CaF<sub>2</sub> (c) N<sub>2</sub>H<sub>4</sub> (d) Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>",
-   "answer": { "type": "open", "generated_by": "source", "solution": "(a) molecular; (b) ionic; (c) molecular; (d) ionic" }
+   "prompt": "利用元素周期表，预测下列化合物是离子型的还是共价型的：（a）SO<sub>2</sub>（b）CaF<sub>2</sub>（c）N<sub>2</sub>H<sub>4</sub>（d）Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）分子型；（b）离子型；（c）分子型；（d）离子型"
+   }
   },
   {
    "id": "e1",
    "source_id": "fs-idp298677568",
    "kind": "exercise",
    "bloom": "Apply",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "molecular-compounds",
-   "prompt": "Using the periodic table, predict whether the following chlorides are ionic or covalent: KCl, NCl<sub>3</sub>, ICl, MgCl<sub>2</sub>, PCl<sub>5</sub>, and CCl<sub>4</sub>.",
-   "answer": { "type": "open", "generated_by": "source", "solution": "Ionic: KCl, MgCl<sub>2</sub>; Covalent: NCl<sub>3</sub>, ICl, PCl<sub>5</sub>, CCl<sub>4</sub>" }
+   "prompt": "利用元素周期表，预测下列氯化物是离子型的还是共价型的：KCl、NCl<sub>3</sub>、ICl、MgCl<sub>2</sub>、PCl<sub>5</sub> 和 CCl<sub>4</sub>。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "离子型：KCl、MgCl<sub>2</sub>；共价型：NCl<sub>3</sub>、ICl、PCl<sub>5</sub>、CCl<sub>4</sub>"
+   }
   },
   {
    "id": "e2",
    "source_id": "fs-idp221295264",
    "kind": "exercise",
    "bloom": "Apply",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "ionic-compounds",
-   "prompt": "For each of the following compounds, state whether it is ionic or covalent. If it is ionic, write the symbols for the ions involved: (a) NF<sub>3</sub> (b) BaO (c) (NH<sub>4</sub>)<sub>2</sub>CO<sub>3</sub> (d) Sr(H<sub>2</sub>PO<sub>4</sub>)<sub>2</sub> (e) IBr (f) Na<sub>2</sub>O",
-   "answer": { "type": "open", "generated_by": "source", "solution": "(a) covalent; (b) ionic, Ba<sup>2+</sup>, O<sup>2−</sup>; (c) ionic, ${\\text{NH}}_{4}{}^{+}\\text{,}$ ${\\text{CO}}_{3}{}^{2-};$ (d) ionic, Sr<sup>2+</sup>, ${\\text{H}}_{2}{\\text{PO}}_{4}{}^{-};$ (e) covalent; (f) ionic, Na<sup>+</sup>, O<sup>2−</sup>" }
+   "prompt": "对下列每种化合物，说明它是离子型的还是共价型的。如果是离子型的，写出所含离子的符号：（a）NF<sub>3</sub>（b）BaO（c）(NH<sub>4</sub>)<sub>2</sub>CO<sub>3</sub>（d）Sr(H<sub>2</sub>PO<sub>4</sub>)<sub>2</sub>（e）IBr（f）Na<sub>2</sub>O",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）共价型；（b）离子型，Ba<sup>2+</sup>、O<sup>2−</sup>；（c）离子型，${\\text{NH}}_{4}{}^{+}\\text{,}$ ${\\text{CO}}_{3}{}^{2-};$（d）离子型，Sr<sup>2+</sup>、${\\text{H}}_{2}{\\text{PO}}_{4}{}^{-};$（e）共价型；（f）离子型，Na<sup>+</sup>、O<sup>2−</sup>"
+   }
   },
   {
    "id": "e3",
    "source_id": "fs-idp178456496",
    "kind": "exercise",
    "bloom": "Apply",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "ionic-compounds",
-   "prompt": "For each of the following pairs of ions, write the formula of the compound they will form: (a) Ca<sup>2+</sup>, S<sup>2−</sup> (b) ${\\text{NH}}_{4}{}^{+}\\text{,}$ ${\\text{SO}}_{4}{}^{2-}$ (c) Al<sup>3+</sup>, Br<sup>−</sup> (d) Na<sup>+</sup>, ${\\text{HPO}}_{4}{}^{2-}$ (e) Mg<sup>2+</sup>, ${\\text{PO}}_{4}{}^{3-}$",
-   "answer": { "type": "open", "generated_by": "source", "solution": "(a) CaS; (b) (NH<sub>4</sub>)<sub>2</sub>SO<sub>4</sub>; (c) AlBr<sub>3</sub>; (d) Na<sub>2</sub>HPO<sub>4</sub>; (e) Mg<sub>3</sub> (PO<sub>4</sub>)<sub>2</sub>" }
+   "prompt": "对下列每对离子，写出它们将形成的化合物的化学式：（a）Ca<sup>2+</sup>、S<sup>2−</sup>（b）${\\text{NH}}_{4}{}^{+}\\text{,}$ ${\\text{SO}}_{4}{}^{2-}$（c）Al<sup>3+</sup>、Br<sup>−</sup>（d）Na<sup>+</sup>、${\\text{HPO}}_{4}{}^{2-}$（e）Mg<sup>2+</sup>、${\\text{PO}}_{4}{}^{3-}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）CaS；（b）(NH<sub>4</sub>)<sub>2</sub>SO<sub>4</sub>；（c）AlBr<sub>3</sub>；（d）Na<sub>2</sub>HPO<sub>4</sub>；（e）Mg<sub>3</sub> (PO<sub>4</sub>)<sub>2</sub>"
+   }
   }
  ],
  "exercise_concepts": [
-  { "exercise": "cyl1", "concept": "composition-of-an-atom" },
-  { "exercise": "cyl1", "concept": "predict-ion-charge-from-group" },
-  { "exercise": "cyl2", "concept": "predict-ion-charge-from-group" },
-  { "exercise": "cyl3", "concept": "ionic-compound-formula" },
-  { "exercise": "cyl4", "concept": "ionic-compound-formula" },
-  { "exercise": "cyl4", "concept": "polyatomic-ions" },
-  { "exercise": "cyl5", "concept": "predict-bond-type" },
-  { "exercise": "e1", "concept": "predict-bond-type" },
-  { "exercise": "e2", "concept": "predict-bond-type" },
-  { "exercise": "e2", "concept": "polyatomic-ions" },
-  { "exercise": "e2", "concept": "predict-ion-charge-from-group" },
-  { "exercise": "e3", "concept": "ionic-compound-formula" },
-  { "exercise": "e3", "concept": "polyatomic-ions" }
+  {
+   "exercise": "cyl1",
+   "concept": "composition-of-an-atom"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "predict-ion-charge-from-group"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "predict-ion-charge-from-group"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "ionic-compound-formula"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "ionic-compound-formula"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "polyatomic-ions"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "predict-bond-type"
+  },
+  {
+   "exercise": "e1",
+   "concept": "predict-bond-type"
+  },
+  {
+   "exercise": "e2",
+   "concept": "predict-bond-type"
+  },
+  {
+   "exercise": "e2",
+   "concept": "polyatomic-ions"
+  },
+  {
+   "exercise": "e2",
+   "concept": "predict-ion-charge-from-group"
+  },
+  {
+   "exercise": "e3",
+   "concept": "ionic-compound-formula"
+  },
+  {
+   "exercise": "e3",
+   "concept": "polyatomic-ions"
+  }
  ]
 }

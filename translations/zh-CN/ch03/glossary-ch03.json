@@ -1,0 +1,904 @@
+{
+ "terms": [
+  {
+   "source": "aluminum sulfate",
+   "target": "硫酸铝",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "compound name",
+   "section": "3.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "Amedeo Avogadro",
+   "target": "阿梅代奥·阿伏加德罗",
+   "authority": "book",
+   "url": "",
+   "note": "Italian scientist; same target as the ch09 shard (reused, not re-decided). (ch09 source is lower-case).",
+   "section": "3.1"
+  },
+  {
+   "source": "ammonium nitrate",
+   "target": "硝酸铵",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "compound name",
+   "section": "3.2",
+   "confirm": "termonline"
+  },
+  {
+   "source": "aqueous solution",
+   "target": "水溶液",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "same target as the ch12 shard (reused, not re-decided).",
+   "section": "3.3"
+  },
+  {
+   "source": "aspirin",
+   "target": "阿司匹林",
+   "authority": "termonline",
+   "url": "",
+   "note": "drug name; the example is C₉H₈O₄ 阿司匹林.",
+   "section": "3.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "Avogadro constant",
+   "target": "阿伏加德罗常数",
+   "authority": "gb3100",
+   "url": "",
+   "note": "the book's second name for Avogadro’s number; one target for both.",
+   "section": "3.1"
+  },
+  {
+   "source": "Avogadro’s number",
+   "target": "阿伏加德罗常数",
+   "authority": "gb3100",
+   "url": "",
+   "note": "target of the ch04 shard (straight apostrophe), written with the curly apostrophe of this chapter's concept. ch21's shard has 阿伏伽德罗常数 for the same source; the GB 3102 form is 阿伏加德罗常数 (加).",
+   "section": "3.1"
+  },
+  {
+   "source": "ballpark estimate",
+   "target": "粗略估算",
+   "authority": "book",
+   "url": "",
+   "note": "the book's check of an answer before computing it.",
+   "section": "3.1"
+  },
+  {
+   "source": "blood sugar",
+   "target": "血糖",
+   "authority": "termonline",
+   "url": "",
+   "note": "",
+   "section": "3.4",
+   "confirm": "termonline"
+  },
+  {
+   "source": "bulk mass",
+   "target": "宏观质量",
+   "authority": "book",
+   "url": "",
+   "note": "mass of a macroscopic sample as against one atom; see 'bulk matter' 宏观物质 (ch21).",
+   "section": "3.1"
+  },
+  {
+   "source": "bulk quantities of matter",
+   "target": "宏观量的物质",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "3.1"
+  },
+  {
+   "source": "Calculating formula mass",
+   "target": "计算式量",
+   "authority": "book",
+   "url": "",
+   "note": "concept name (skill).",
+   "section": "3.1"
+  },
+  {
+   "source": "Calculating with molarity",
+   "target": "物质的量浓度的计算",
+   "authority": "book",
+   "url": "",
+   "note": "concept name (skill).",
+   "section": "3.3"
+  },
+  {
+   "source": "central nervous system",
+   "target": "中枢神经系统",
+   "authority": "termonline",
+   "url": "",
+   "note": "",
+   "section": "3.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "chloroform",
+   "target": "三氯甲烷",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "规范名 三氯甲烷; 氯仿 is the 俗称, written once in parentheses on first mention if a page wants it.",
+   "section": "3.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "concentrated",
+   "target": "浓的",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "same target as the ch18 shard (reused, not re-decided). The concept Concentrated.",
+   "section": "3.3"
+  },
+  {
+   "source": "constituent elements",
+   "target": "组成元素",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "3.2"
+  },
+  {
+   "source": "contaminant",
+   "target": "污染物",
+   "authority": "termonline",
+   "url": "",
+   "note": "trace contaminant 痕量污染物; pollutants are the same word 污染物.",
+   "section": "3.4",
+   "confirm": "termonline"
+  },
+  {
+   "source": "Converting between mass and moles",
+   "target": "质量与物质的量之间的换算",
+   "authority": "book",
+   "url": "",
+   "note": "concept name (skill); 物质的量 is the SI quantity here.",
+   "section": "3.1"
+  },
+  {
+   "source": "Converting concentration units",
+   "target": "浓度单位的换算",
+   "authority": "book",
+   "url": "",
+   "note": "concept name (skill).",
+   "section": "3.4"
+  },
+  {
+   "source": "copper nitrate",
+   "target": "硝酸铜",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "compound name",
+   "section": "3.3",
+   "confirm": "termonline"
+  },
+  {
+   "source": "Counting atoms and molecules",
+   "target": "计算原子数和分子数",
+   "authority": "book",
+   "url": "",
+   "note": "concept name (skill).",
+   "section": "3.1"
+  },
+  {
+   "source": "deciliter",
+   "target": "分升",
+   "authority": "gb3100",
+   "url": "",
+   "note": "SI prefix deci- 分; unit symbol dL kept.",
+   "section": "3.4"
+  },
+  {
+   "source": "Deriving a molecular formula",
+   "target": "推导分子式",
+   "authority": "book",
+   "url": "",
+   "note": "concept name (skill); 推导 for deriving throughout 3.2.",
+   "section": "3.2"
+  },
+  {
+   "source": "Deriving an empirical formula",
+   "target": "推导实验式",
+   "authority": "book",
+   "url": "",
+   "note": "concept name (skill).",
+   "section": "3.2"
+  },
+  {
+   "source": "Deriving an empirical formula from percent composition",
+   "target": "由百分组成推导实验式",
+   "authority": "book",
+   "url": "",
+   "note": "concept name (skill).",
+   "section": "3.2"
+  },
+  {
+   "source": "dilute",
+   "target": "稀的",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "same target as the ch18 shard (reused, not re-decided). The concept Dilute; qualitative.",
+   "section": "3.3"
+  },
+  {
+   "source": "diluted solution",
+   "target": "稀释后的溶液",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "3.3"
+  },
+  {
+   "source": "dilution",
+   "target": "稀释",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "",
+   "section": "3.3",
+   "confirm": "termonline"
+  },
+  {
+   "source": "Dilution equation",
+   "target": "稀释公式",
+   "authority": "book",
+   "url": "",
+   "note": "concept name (result); 稀释公式 is the textbook usage for C₁V₁ = C₂V₂.",
+   "section": "3.3",
+   "confirm": "termonline"
+  },
+  {
+   "source": "discrete entity",
+   "target": "分立的基本单元",
+   "authority": "book",
+   "url": "",
+   "note": "entity 基本单元 (GB 3102.8, elementary entity) for what a mole counts; 分立的 as in the ch02 shard's 'discrete molecule'.",
+   "section": "3.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "dissolved",
+   "target": "溶解的",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "same target as the ch18 shard (reused, not re-decided). The concept Dissolved.",
+   "section": "3.3"
+  },
+  {
+   "source": "dopamine",
+   "target": "多巴胺",
+   "authority": "termonline",
+   "url": "",
+   "note": "",
+   "section": "3.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "dozen",
+   "target": "打",
+   "authority": "book",
+   "url": "",
+   "note": "the book's example of a counting unit with pair (对) and gross (罗): 一对、一打、一罗.",
+   "section": "3.1"
+  },
+  {
+   "source": "empirical formula",
+   "target": "实验式",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "same target as the ch02 shard (reused, not re-decided). Both ch02 and ch09 use 实验式.",
+   "section": "3.2"
+  },
+  {
+   "source": "empirical formula mass",
+   "target": "实验式量",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "same target as the ch09 shard (reused, not re-decided).",
+   "section": "3.2"
+  },
+  {
+   "source": "empirical formula unit",
+   "target": "实验式单元",
+   "authority": "book",
+   "url": "",
+   "note": "after 化学式单元 (formula unit, ch02); the unit of n in n = molecular mass / empirical formula mass.",
+   "section": "3.2"
+  },
+  {
+   "source": "EPA",
+   "target": "美国环境保护署（EPA）",
+   "authority": "book",
+   "url": "",
+   "note": "US Environmental Protection Agency; acronym kept in parentheses.",
+   "section": "3.4"
+  },
+  {
+   "source": "estimated average requirement",
+   "target": "平均需要量",
+   "authority": "termonline",
+   "url": "",
+   "note": "Chinese dietary reference intakes term (EAR); the book's example is potassium.",
+   "section": "3.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "exocytosis",
+   "target": "胞吐",
+   "authority": "termonline",
+   "url": "",
+   "note": "",
+   "section": "3.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "fertilizer",
+   "target": "肥料",
+   "authority": "termonline",
+   "url": "",
+   "note": "nitrogen-containing fertilizers 含氮肥料.",
+   "section": "3.2"
+  },
+  {
+   "source": "fluoride ion",
+   "target": "氟离子",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "",
+   "section": "3.4"
+  },
+  {
+   "source": "Formula mass",
+   "target": "式量",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "the concept Formula mass (definition); same target as 'formula mass'.",
+   "section": "3.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "formula mass",
+   "target": "式量",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "the book's formula mass of a substance; 'molecular mass' 分子质量 for a covalent compound. 化学名词 lists 式量; termonline's search shows no separate entry.",
+   "section": "3.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "formula weight",
+   "target": "式量",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "'atomic or formula weight' 原子量或式量; same target as 'formula mass' (the book treats them as one).",
+   "section": "3.1"
+  },
+  {
+   "source": "glycine",
+   "target": "甘氨酸",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "compound name",
+   "section": "3.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "guard digit",
+   "target": "保护位",
+   "authority": "book",
+   "url": "",
+   "note": "a digit kept in an intermediate result beyond the significant figures; no authority form found (保留位 is the alternative).",
+   "section": "3.3",
+   "confirm": "termonline"
+  },
+  {
+   "source": "hematite",
+   "target": "赤铁矿",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "mineral name",
+   "section": "3.2",
+   "confirm": "termonline"
+  },
+  {
+   "source": "How Sciences Interconnect",
+   "target": "各门科学如何相互联系",
+   "authority": "book",
+   "url": "",
+   "note": "same target as the ch12 shard (reused, not re-decided). Boxed note eyebrow.",
+   "section": "3.1"
+  },
+  {
+   "source": "ibuprofen",
+   "target": "布洛芬",
+   "authority": "termonline",
+   "url": "",
+   "note": "drug name",
+   "section": "3.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "iced tea",
+   "target": "冰茶",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "3.3"
+  },
+  {
+   "source": "intermediate result",
+   "target": "中间结果",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "3.3"
+  },
+  {
+   "source": "intravenous fluids",
+   "target": "静脉输液",
+   "authority": "termonline",
+   "url": "",
+   "note": "",
+   "section": "3.4"
+  },
+  {
+   "source": "ionic compound",
+   "target": "离子化合物",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "same target as the ch18 shard (reused, not re-decided).",
+   "section": "3.1"
+  },
+  {
+   "source": "isopropanol",
+   "target": "异丙醇",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "isopropyl alcohol is the same compound and takes the same target.",
+   "section": "3.4",
+   "confirm": "termonline"
+  },
+  {
+   "source": "isopropyl alcohol",
+   "target": "异丙醇",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "same compound as isopropanol.",
+   "section": "3.4",
+   "confirm": "termonline"
+  },
+  {
+   "source": "Mass percentage",
+   "target": "质量分数",
+   "authority": "gb3100",
+   "url": "",
+   "note": "the concept Mass percentage; same as 'mass percentage'.",
+   "section": "3.4"
+  },
+  {
+   "source": "mass percentage",
+   "target": "质量分数",
+   "authority": "gb3100",
+   "url": "",
+   "note": "same target as the ch11 shard (reused, not re-decided). GB 3102.8 names the quantity 质量分数 (w); the book's mass percentage is that fraction written as a percentage.",
+   "section": "3.4"
+  },
+  {
+   "source": "mass-volume percent",
+   "target": "质量体积百分数",
+   "authority": "book",
+   "url": "",
+   "note": "no GB quantity name for (m/v)%; 质量体积百分数 follows 质量分数 / 体积分数 and the Chinese pharmacopoeia's 质量体积百分比.",
+   "section": "3.4",
+   "confirm": "termonline"
+  },
+  {
+   "source": "mass-volume percentage",
+   "target": "质量体积百分数",
+   "authority": "book",
+   "url": "",
+   "note": "same as 'mass-volume percent'.",
+   "section": "3.4",
+   "confirm": "termonline"
+  },
+  {
+   "source": "mass-volume ratio",
+   "target": "质量体积比",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "3.4"
+  },
+  {
+   "source": "molar amount",
+   "target": "物质的量",
+   "authority": "gb3100",
+   "url": "",
+   "note": "same target as the ch04 shard (reused, not re-decided). The amount of substance in mol.",
+   "section": "3.1"
+  },
+  {
+   "source": "molar concentration",
+   "target": "物质的量浓度",
+   "authority": "gb3100",
+   "url": "",
+   "note": "same target as the ch14 shard (reused, not re-decided).",
+   "section": "3.3"
+  },
+  {
+   "source": "Molar mass",
+   "target": "摩尔质量",
+   "authority": "gb3100",
+   "url": "",
+   "note": "the concept Molar mass.",
+   "section": "3.1"
+  },
+  {
+   "source": "molar mass",
+   "target": "摩尔质量",
+   "authority": "gb3100",
+   "url": "",
+   "note": "same target as the ch09 shard (reused, not re-decided).",
+   "section": "3.1"
+  },
+  {
+   "source": "molarity",
+   "target": "物质的量浓度",
+   "authority": "gb3100",
+   "url": "",
+   "note": "same target as the ch14 shard (reused, not re-decided). GB 3102.8 name of the quantity c (B); the symbol M and the unit mol/L are kept as printed.",
+   "section": "3.3"
+  },
+  {
+   "source": "molarity (M)",
+   "target": "物质的量浓度（M）",
+   "authority": "gb3100",
+   "url": "",
+   "note": "concept term as printed, the letter M kept.",
+   "section": "3.3"
+  },
+  {
+   "source": "molecular formula",
+   "target": "分子式",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "same target as the ch02 shard (reused, not re-decided).",
+   "section": "3.2"
+  },
+  {
+   "source": "molecular mass",
+   "target": "分子质量",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "same target as the ch09 shard (reused, not re-decided). The book's molecular mass in amu; ch09 also has molecular weight 相对分子质量.",
+   "section": "3.1"
+  },
+  {
+   "source": "Molecular mass versus formula mass",
+   "target": "分子质量与式量",
+   "authority": "book",
+   "url": "",
+   "note": "concept name (idea).",
+   "section": "3.1"
+  },
+  {
+   "source": "neuron",
+   "target": "神经元",
+   "authority": "termonline",
+   "url": "",
+   "note": "",
+   "section": "3.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "neurotransmitter",
+   "target": "神经递质",
+   "authority": "termonline",
+   "url": "",
+   "note": "",
+   "section": "3.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "nicotine",
+   "target": "尼古丁",
+   "authority": "termonline",
+   "url": "",
+   "note": "the textbook and everyday name; 化学名词 lists 烟碱 (alkaloid). Doubt: confirm which form the authority marks as preferred.",
+   "section": "3.2",
+   "confirm": "termonline"
+  },
+  {
+   "source": "number of empirical formula units per molecule",
+   "target": "每个分子中的实验式单元数",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "3.2"
+  },
+  {
+   "source": "parts per billion",
+   "target": "十亿分率",
+   "authority": "gb3100",
+   "url": "",
+   "note": "",
+   "section": "3.4"
+  },
+  {
+   "source": "parts per billion (ppb)",
+   "target": "十亿分率（ppb）",
+   "authority": "gb3100",
+   "url": "",
+   "note": "after ch09's 百万分率（ppm）; the abbreviation kept in the full-width parentheses.",
+   "section": "3.4"
+  },
+  {
+   "source": "parts per million",
+   "target": "百万分率",
+   "authority": "gb3100",
+   "url": "",
+   "note": "",
+   "section": "3.4"
+  },
+  {
+   "source": "parts per million (ppm)",
+   "target": "百万分率（ppm）",
+   "authority": "gb3100",
+   "url": "",
+   "note": "same target as the ch09 shard (reused, not re-decided).",
+   "section": "3.4"
+  },
+  {
+   "source": "Parts per million and parts per billion",
+   "target": "百万分率和十亿分率",
+   "authority": "book",
+   "url": "",
+   "note": "concept name (definition).",
+   "section": "3.4"
+  },
+  {
+   "source": "percent by mass",
+   "target": "质量分数",
+   "authority": "gb3100",
+   "url": "",
+   "note": "same target as the ch10 shard (reused, not re-decided). Used in the titles of Example 3.22.",
+   "section": "3.4"
+  },
+  {
+   "source": "percent composition",
+   "target": "百分组成",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "same target as the ch02 shard (reused, not re-decided).",
+   "section": "3.2"
+  },
+  {
+   "source": "Percent composition from a formula",
+   "target": "由化学式求百分组成",
+   "authority": "book",
+   "url": "",
+   "note": "concept name (skill).",
+   "section": "3.2"
+  },
+  {
+   "source": "percent mass",
+   "target": "质量百分数",
+   "authority": "book",
+   "url": "",
+   "note": "one of the book's alternative names of mass percentage; kept distinct from 质量分数 only as a name for the same quantity.",
+   "section": "3.4"
+  },
+  {
+   "source": "percent weight",
+   "target": "重量百分数",
+   "authority": "book",
+   "url": "",
+   "note": "alternative name; 重量 as in ch01 (weight, not 质量).",
+   "section": "3.4"
+  },
+  {
+   "source": "percentage",
+   "target": "百分数",
+   "authority": "book",
+   "url": "",
+   "note": "'percentage' as a unit; per centum (Latin, 'by the hundred') kept in Latin in parentheses where the passage turns on it.",
+   "section": "3.2"
+  },
+  {
+   "source": "physiological saline",
+   "target": "生理盐水",
+   "authority": "termonline",
+   "url": "",
+   "note": "0.9% (m/v) NaCl.",
+   "section": "3.4",
+   "confirm": "termonline"
+  },
+  {
+   "source": "rounding error",
+   "target": "修约误差",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "3.3"
+  },
+  {
+   "source": "rubbing alcohol",
+   "target": "外用消毒酒精",
+   "authority": "book",
+   "url": "",
+   "note": "isopropanol, 70% by volume; no standard Chinese name found, described rather than coined.",
+   "section": "3.4",
+   "confirm": "termonline"
+  },
+  {
+   "source": "saccharin",
+   "target": "糖精",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "compound name",
+   "section": "3.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "sodium hypochlorite",
+   "target": "次氯酸钠",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "same target as the ch02 shard (reused, not re-decided).",
+   "section": "3.4"
+  },
+  {
+   "source": "solute",
+   "target": "溶质",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "same target as the ch14 shard (reused, not re-decided).",
+   "section": "3.3"
+  },
+  {
+   "source": "Solution components",
+   "target": "溶液的组分",
+   "authority": "book",
+   "url": "",
+   "note": "concept name (definition); 组分 for a component of a solution.",
+   "section": "3.3"
+  },
+  {
+   "source": "solvent",
+   "target": "溶剂",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "same target as the ch18 shard (reused, not re-decided).",
+   "section": "3.3"
+  },
+  {
+   "source": "spinal fluid",
+   "target": "脑脊液",
+   "authority": "termonline",
+   "url": "",
+   "note": "",
+   "section": "3.4",
+   "confirm": "termonline"
+  },
+  {
+   "source": "stock concentration",
+   "target": "储备液浓度",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "3.3"
+  },
+  {
+   "source": "stock solution",
+   "target": "储备液",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "the solution to be diluted; 原液 is the informal alternative.",
+   "section": "3.3",
+   "confirm": "termonline"
+  },
+  {
+   "source": "sweetener",
+   "target": "甜味剂",
+   "authority": "termonline",
+   "url": "",
+   "note": "artificial sweetener 人工甜味剂.",
+   "section": "3.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "synapse",
+   "target": "突触",
+   "authority": "termonline",
+   "url": "",
+   "note": "",
+   "section": "3.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "tentative empirical formula",
+   "target": "初步的实验式",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "3.2"
+  },
+  {
+   "source": "trace contaminant",
+   "target": "痕量污染物",
+   "authority": "book",
+   "url": "",
+   "note": "痕量 for trace-level.",
+   "section": "3.4"
+  },
+  {
+   "source": "urea",
+   "target": "尿素",
+   "authority": "cnterm-chemistry",
+   "url": "",
+   "note": "same target as the ch07 shard (reused, not re-decided).",
+   "section": "3.2"
+  },
+  {
+   "source": "vesicle",
+   "target": "囊泡",
+   "authority": "termonline",
+   "url": "",
+   "note": "",
+   "section": "3.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "vitamin C",
+   "target": "维生素 C",
+   "authority": "termonline",
+   "url": "",
+   "note": "",
+   "section": "3.1",
+   "confirm": "termonline"
+  },
+  {
+   "source": "Volume percentage",
+   "target": "体积分数",
+   "authority": "gb3100",
+   "url": "",
+   "note": "the concept Volume percentage.",
+   "section": "3.4"
+  },
+  {
+   "source": "volume percentage",
+   "target": "体积分数",
+   "authority": "gb3100",
+   "url": "",
+   "note": "GB 3102.8 name of φ; the book's volume percentage is that fraction written as a percentage. Companion of 质量分数.",
+   "section": "3.4"
+  },
+  {
+   "source": "volumetric glassware",
+   "target": "容量玻璃仪器",
+   "authority": "book",
+   "url": "",
+   "note": "",
+   "section": "3.1"
+  },
+  {
+   "source": "weight/weight percent",
+   "target": "重量/重量百分数",
+   "authority": "book",
+   "url": "",
+   "note": "alternative name of mass percentage; symbol (w/w)% kept.",
+   "section": "3.4"
+  },
+  {
+   "source": "whole-number subscripts",
+   "target": "整数下标",
+   "authority": "book",
+   "url": "",
+   "note": "after ch02's 下标 and 整数.",
+   "section": "3.2"
+  }
+ ]
+}

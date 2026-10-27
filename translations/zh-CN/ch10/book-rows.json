@@ -1,0 +1,1467 @@
+{
+ "types": [
+  {
+   "id": "angle",
+   "label": "角",
+   "dimension": "°"
+  },
+  {
+   "id": "surface-tension",
+   "label": "表面张力",
+   "dimension": "N/m"
+  }
+ ],
+ "symbols": [
+  {
+   "sym": "h_cap",
+   "latex": "h",
+   "macro": "\\khcap"
+  },
+  {
+   "sym": "T_surf",
+   "latex": "T",
+   "macro": "\\kTsurf"
+  },
+  {
+   "sym": "θ_contact",
+   "latex": "\\theta",
+   "macro": "\\kthetacont"
+  },
+  {
+   "sym": "r_tube",
+   "latex": "r",
+   "macro": "\\krtube"
+  },
+  {
+   "sym": "ΔH_vap",
+   "latex": "\\Delta H_{\\text{vap}}",
+   "macro": "\\kdHvap"
+  },
+  {
+   "sym": "ΔH_fus",
+   "latex": "\\Delta H_{\\text{fus}}",
+   "macro": "\\kdHfus"
+  },
+  {
+   "sym": "ΔH_sub",
+   "latex": "\\Delta H_{\\text{sub}}",
+   "macro": "\\kdHsub"
+  },
+  {
+   "sym": "A_cc",
+   "latex": "A"
+  },
+  {
+   "sym": "a_cell",
+   "latex": "a",
+   "macro": "\\kacell"
+  },
+  {
+   "sym": "r_atom",
+   "latex": "r",
+   "macro": "\\kratom"
+  },
+  {
+   "sym": "n_order",
+   "latex": "n"
+  },
+  {
+   "sym": "d_plane",
+   "latex": "d",
+   "macro": "\\kdplane"
+  },
+  {
+   "sym": "θ_bragg",
+   "latex": "\\theta",
+   "macro": "\\kthetabragg"
+  },
+  {
+   "sym": "l_edge",
+   "latex": "l",
+   "macro": "\\kledge"
+  },
+  {
+   "sym": "d_diag",
+   "latex": "d",
+   "macro": "\\kddiag"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "intermolecular-versus-intramolecular-forces",
+   "kind": "definition",
+   "section": "10.1",
+   "name": "分子间作用力与分子内作用力",
+   "statement": "分子内作用力是把分子内部各原子维系在一起的化学键；分子间作用力是分子之间的吸引作用，它们决定着物质的许多物理性质。小分子之间的分子间作用力通常比分子内的化学键弱得多。"
+  },
+  {
+   "id": "phase-from-imf-and-kinetic-energy",
+   "kind": "idea",
+   "section": "10.1",
+   "name": "相与分子间作用力",
+   "statement": "分子间作用力使粒子彼此靠近，而粒子的动能则使它们分开，所以物质处于哪一相，取决于二者的平衡。冷却气体或压缩气体，可以让吸引作用占上风，气体就凝结；把液体冷却到足够低的温度，液体就凝固。"
+  },
+  {
+   "id": "dispersion-forces",
+   "kind": "definition",
+   "section": "10.1",
+   "name": "伦敦色散力",
+   "terms": [
+    "色散力"
+   ],
+   "statement": "原子或分子中的电子在不断运动，因此它可能出现瞬时偶极，瞬时偶极又使相邻粒子产生诱导偶极；这两个暂时的偶极相互吸引。这种色散力存在于所有凝聚相中，与原子或分子的种类无关。"
+  },
+  {
+   "id": "polarizability-and-dispersion-strength",
+   "kind": "result",
+   "section": "10.1",
+   "name": "极化率与色散力",
+   "statement": "原子越大，价电子离原子核越远，所受束缚越松，电子云就越容易变形；极化率越大的粒子，色散力越大，熔点和沸点也越高。"
+  },
+  {
+   "id": "shape-and-dispersion-strength",
+   "kind": "result",
+   "section": "10.1",
+   "name": "分子形状与色散力",
+   "statement": "分子式相同的分子，色散力也可能不同：细长的分子与相邻分子的接触面积比紧凑的分子大，因而所受的吸引更强。"
+  },
+  {
+   "id": "dipole-dipole-attraction",
+   "kind": "definition",
+   "section": "10.1",
+   "name": "偶极–偶极吸引力",
+   "terms": [
+    "偶极–偶极吸引力"
+   ],
+   "statement": "极性分子一端带部分正电荷，另一端带部分负电荷，一个极性分子的正端会吸引另一个极性分子的负端。这些吸引作用叠加在色散力之上，所以极性物质的沸点高于质量相近的非极性物质。"
+  },
+  {
+   "id": "hydrogen-bonding",
+   "kind": "definition",
+   "section": "10.1",
+   "name": "氢键",
+   "terms": [
+    "氢键"
+   ],
+   "statement": "当氢与氟、氧或氮成键时，电负性的巨大差异和原子的小尺寸使部分电荷高度集中，它与邻近分子中类似基团之间的吸引，是一种特别强的偶极–偶极吸引力，称为氢键。氢键比共价键弱得多，但比其他分子间吸引作用强。"
+  },
+  {
+   "id": "rank-by-intermolecular-forces",
+   "kind": "skill",
+   "section": "10.1",
+   "name": "沸点高低的排序",
+   "statement": "比较物质时，先由其结构判断各自可能存在的作用力：色散力总是存在，分子有极性则有偶极–偶极吸引力，含 H–F、H–O 或 H–N 基团则有氢键。大小相近时，作用力较强的物质沸点较高；作用力类型相同时，分子较大的沸点较高。"
+  },
+  {
+   "id": "intermolecular-force",
+   "kind": "definition",
+   "section": "10.1",
+   "name": "分子间作用力",
+   "terms": [
+    "分子间作用力"
+   ],
+   "statement": "分子间作用力是原子、分子或离子之间的非共价吸引力。分子间作用力远比分子内的化学键弱，但它们决定着许多物理性质。"
+  },
+  {
+   "id": "van-der-waals-force",
+   "kind": "definition",
+   "section": "10.1",
+   "name": "范德华力",
+   "terms": [
+    "范德华力"
+   ],
+   "statement": "范德华力是分子之间的吸引力或排斥力，这个名称涵盖偶极–偶极吸引力、偶极–诱导偶极吸引力和伦敦色散力。"
+  },
+  {
+   "id": "instantaneous-dipole",
+   "kind": "definition",
+   "section": "10.1",
+   "name": "瞬时偶极",
+   "terms": [
+    "瞬时偶极"
+   ],
+   "statement": "瞬时偶极是原子或分子中的电子恰好分布不均匀时，在极短时间内存在的暂时偶极。"
+  },
+  {
+   "id": "induced-dipole",
+   "kind": "definition",
+   "section": "10.1",
+   "name": "诱导偶极",
+   "terms": [
+    "诱导偶极"
+   ],
+   "statement": "诱导偶极是原子或分子的电子受到相邻原子或分子的瞬时偶极扭曲而形成的暂时偶极。"
+  },
+  {
+   "id": "polarizability",
+   "kind": "definition",
+   "section": "10.1",
+   "name": "极化率",
+   "terms": [
+    "极化率"
+   ],
+   "statement": "极化率衡量电荷使原子或分子的电子云发生变形的难易程度。价电子束缚较松的较大原子和分子，极化率较大。"
+  },
+  {
+   "id": "viscosity",
+   "kind": "definition",
+   "section": "10.2",
+   "name": "黏度",
+   "terms": [
+    "黏度"
+   ],
+   "statement": "液体的黏度是它对流动的阻力。分子结构复杂、分子间作用力强的液体黏度较大；温度升高、分子运动加快时，黏度减小。"
+  },
+  {
+   "id": "cohesive-and-adhesive-forces",
+   "kind": "idea",
+   "section": "10.2",
+   "name": "内聚力与黏附力",
+   "statement": "内聚力是液体中相同分子之间的吸引力；黏附力是液体与不同分子（例如固体表面的分子）之间的吸引力。二者的相对强弱决定液体能否润湿某个表面，以及弯月面向哪个方向弯曲。"
+  },
+  {
+   "id": "surface-tension",
+   "kind": "definition",
+   "section": "10.2",
+   "name": "表面张力",
+   "symbol": "T_surf",
+   "terms": [
+    "表面张力"
+   ],
+   "type": "surface-tension",
+   "statement": "液体表面的分子受到的相邻分子的吸引，只有液体内部分子的大约一半，所以液体总是收缩成最小的表面。表面张力是增大液体表面积所需的能量；它使小液滴呈球形，也使水黾能站在水面上。"
+  },
+  {
+   "id": "capillary-action",
+   "kind": "definition",
+   "section": "10.2",
+   "name": "毛细现象",
+   "terms": [
+    "毛细现象"
+   ],
+   "statement": "当液体与细管或多孔材料之间的黏附力很强，并与液体内部的内聚力相配合时，液体会克服重力向上流动，直到液体的重量与吸引力平衡为止。管越细，液体上升得越高。"
+  },
+  {
+   "id": "capillary-rise-equation",
+   "kind": "result",
+   "section": "10.2",
+   "name": "毛细上升",
+   "statement": "液体在毛细管中上升的高度，与表面张力及接触角的余弦成正比，与毛细管的半径及液体的密度成反比。水在玻璃管中的接触角为 0°。",
+   "forms": [
+    {
+     "id": "eq-capillary-rise",
+     "latex": "h=\\frac{2T\\cos\\theta}{r\\rho g}",
+     "condition": "a liquid in a capillary tube of radius r",
+     "anchor": "10.2-capillary-rise"
+    }
+   ]
+  },
+  {
+   "id": "cohesive-force",
+   "kind": "definition",
+   "section": "10.2",
+   "name": "内聚力",
+   "terms": [
+    "内聚力"
+   ],
+   "statement": "内聚力是相同分子之间的吸引力，例如液体分子之间的吸引力。"
+  },
+  {
+   "id": "adhesive-force",
+   "kind": "definition",
+   "section": "10.2",
+   "name": "黏附力",
+   "terms": [
+    "黏附力"
+   ],
+   "statement": "黏附力是本性不同的分子之间的吸引力，例如液体与其所接触的表面之间的吸引力。"
+  },
+  {
+   "id": "vapor-pressure-dynamic-equilibrium",
+   "kind": "idea",
+   "section": "10.3",
+   "name": "蒸气压与动态平衡",
+   "statement": "在密闭容器中，液体不断汽化，直到凝结速率等于汽化速率；此后液体和蒸气的量不再变化，但分子仍在相互交换。处于这种动态平衡时蒸气的压强就是该液体的蒸气压，它与表面积和容器大小无关。"
+  },
+  {
+   "id": "vapor-pressure-and-imf",
+   "kind": "result",
+   "section": "10.3",
+   "name": "蒸气压与分子间作用力",
+   "statement": "较强的分子间吸引作用阻碍汽化，并有利于气体分子被重新捕获，所以分子间作用力较强的液体，蒸气压较低。"
+  },
+  {
+   "id": "vapor-pressure-and-temperature",
+   "kind": "result",
+   "section": "10.3",
+   "name": "蒸气压随温度升高而增大",
+   "statement": "温度越高，具有足够动能逸出液体的分子所占的比例越大，逸出的分子运动也越快，所以蒸气压增大。"
+  },
+  {
+   "id": "boiling-point",
+   "kind": "definition",
+   "section": "10.3",
+   "name": "沸点与正常沸点",
+   "terms": [
+    "沸点"
+   ],
+   "statement": "当液体的蒸气压等于其上方气体的压强时，液体沸腾，所以沸点取决于周围的压强；正常沸点是 1 atm（101.3 kPa）下的沸点。蒸气压曲线可以看作各压强下的沸点曲线。"
+  },
+  {
+   "id": "clausius-clapeyron-equation",
+   "kind": "result",
+   "section": "10.3",
+   "name": "克劳修斯–克拉珀龙方程",
+   "terms": [
+    "克劳修斯–克拉珀龙方程"
+   ],
+   "statement": "液体的蒸气压随温度呈指数变化，$P = Ae^{-\\Delta H_{\\text{vap}}/RT}$，所以 ln P 对 1/T 作图是一条直线，斜率为 −ΔH<sub>vap</sub>/R。温度必须用开尔文表示。",
+   "forms": [
+    {
+     "id": "eq-clausius-clapeyron",
+     "latex": "P=Ae^{-\\Delta H_{\\text{vap}}/RT}",
+     "ktex": "\\kP=Ae^{-\\kdHvap/R\\kT}",
+     "condition": "the vapor pressure of a liquid, with T in kelvin",
+     "anchor": "10.3-clausius"
+    },
+    {
+     "id": "eq-clausius-clapeyron-log",
+     "latex": "\\ln P=-\\frac{\\Delta H_{\\text{vap}}}{RT}+\\ln A",
+     "ktex": "\\ln \\kP=-\\frac{\\kdHvap}{R\\kT}+\\ln A",
+     "condition": "the logarithmic, linear form",
+     "anchor": "10.3-clausius"
+    }
+   ]
+  },
+  {
+   "id": "clausius-clapeyron-calculations",
+   "kind": "skill",
+   "section": "10.3",
+   "name": "使用两点形式的克劳修斯–克拉珀龙方程",
+   "statement": "已知两个温度下的蒸气压，可以由两点形式解出汽化焓；已知一组数据和汽化焓，可以求出另一温度下的蒸气压，或另一压强下的沸点。",
+   "forms": [
+    {
+     "id": "eq-clausius-clapeyron-two-point",
+     "latex": "\\ln\\left(\\frac{P_2}{P_1}\\right)=\\frac{\\Delta H_{\\text{vap}}}{R}\\left(\\frac{1}{T_1}-\\frac{1}{T_2}\\right)",
+     "ktex": "\\ln\\left(\\frac{\\kPtwo}{\\kPone}\\right)=\\frac{\\kdHvap}{R}\\left(\\frac{1}{\\kTone}-\\frac{1}{\\kTtwo}\\right)",
+     "condition": "two vapor pressure-temperature pairs of one liquid",
+     "anchor": "10.3-clausius"
+    }
+   ]
+  },
+  {
+   "id": "enthalpies-of-phase-change",
+   "kind": "definition",
+   "section": "10.3",
+   "name": "相变焓",
+   "symbol": "ΔH_vap",
+   "type": "energy",
+   "statement": "熔化、汽化和升华是吸热过程，凝固、凝结和凝华则放出数值相同、符号相反的热量。熔化只是部分克服分子间的吸引作用，而汽化则完全克服，所以 ΔH<sub>fus</sub> 小于 ΔH<sub>vap</sub>，并且由盖斯定律，ΔH<sub>sub</sub> 约等于二者之和。",
+   "forms": [
+    {
+     "id": "eq-sublimation-sum",
+     "latex": "\\Delta H_{\\text{sub}}=\\Delta H_{\\text{fus}}+\\Delta H_{\\text{vap}}",
+     "ktex": "\\kdHsub=\\kdHfus+\\kdHvap",
+     "condition": "sublimation modeled as melting followed by vaporization (Hess's law)",
+     "anchor": "10.3-sublimation"
+    }
+   ]
+  },
+  {
+   "id": "heating-curve",
+   "kind": "idea",
+   "section": "10.3",
+   "name": "加热曲线与冷却曲线",
+   "statement": "以恒定速率加热一种物质时，其温度在每一相内上升，如 q = mcΔT 所描述；在每次相变时温度保持不变，此时热量用于克服分子间的吸引作用。加热曲线上的平台就是它的相变。"
+  },
+  {
+   "id": "heating-curve-calculations",
+   "kind": "skill",
+   "section": "10.3",
+   "name": "由加热曲线计算热量",
+   "statement": "物质经过若干相的变化所需的热量，是各步热量之和：相内每一段升温或降温用 q = mcΔT，其中 c 为该相的比热容；每一次相变用 q = nΔH。"
+  },
+  {
+   "id": "vaporization",
+   "kind": "definition",
+   "section": "10.3",
+   "name": "汽化",
+   "terms": [
+    "汽化"
+   ],
+   "statement": "汽化是由液态变为气态的变化。"
+  },
+  {
+   "id": "condensation",
+   "kind": "definition",
+   "section": "10.3",
+   "name": "凝结",
+   "terms": [
+    "凝结"
+   ],
+   "statement": "凝结是由气态变为液态的变化。"
+  },
+  {
+   "id": "melting",
+   "kind": "definition",
+   "section": "10.3",
+   "name": "熔化",
+   "terms": [
+    "熔化"
+   ],
+   "statement": "熔化是由固态变为液态的变化。"
+  },
+  {
+   "id": "freezing",
+   "kind": "definition",
+   "section": "10.3",
+   "name": "凝固",
+   "terms": [
+    "凝固"
+   ],
+   "statement": "凝固是由液态变为固态的变化。"
+  },
+  {
+   "id": "sublimation",
+   "kind": "definition",
+   "section": "10.3",
+   "name": "升华",
+   "terms": [
+    "升华"
+   ],
+   "statement": "升华是由固态直接变为气态的变化。"
+  },
+  {
+   "id": "deposition",
+   "kind": "definition",
+   "section": "10.3",
+   "name": "凝华",
+   "terms": [
+    "凝华"
+   ],
+   "statement": "凝华是由气态直接变为固态的变化。"
+  },
+  {
+   "id": "dynamic-equilibrium",
+   "kind": "definition",
+   "section": "10.3",
+   "name": "动态平衡",
+   "terms": [
+    "动态平衡"
+   ],
+   "statement": "动态平衡是体系中相反的过程以相同速率进行的状态，两个过程都在持续，但整体上没有任何变化。"
+  },
+  {
+   "id": "vapor-pressure",
+   "kind": "definition",
+   "section": "10.3",
+   "name": "蒸气压",
+   "symbol": "P",
+   "terms": [
+    "蒸气压"
+   ],
+   "type": "pressure",
+   "statement": "液体或固体的蒸气压，又称平衡蒸气压，是在给定温度下，其蒸气与它处于平衡时所产生的压强。"
+  },
+  {
+   "id": "normal-boiling-point",
+   "kind": "definition",
+   "section": "10.3",
+   "name": "正常沸点",
+   "terms": [
+    "正常沸点"
+   ],
+   "statement": "液体的正常沸点是其蒸气压等于 1 atm（760 torr）时的温度。"
+  },
+  {
+   "id": "melting-point",
+   "kind": "definition",
+   "section": "10.3",
+   "name": "熔点与凝固点",
+   "terms": [
+    "凝固点",
+    "熔点"
+   ],
+   "statement": "物质的熔点是其固相与液相处于平衡时的温度。同一温度，在冷却液体时达到，就称为凝固点。"
+  },
+  {
+   "id": "phase-diagram",
+   "kind": "definition",
+   "section": "10.4",
+   "name": "相图",
+   "terms": [
+    "相图"
+   ],
+   "statement": "相图把物质的液–气、固–液和固–气平衡的压强–温度曲线合在一起。每个区域是在该条件下稳定存在的相，每条曲线给出转变温度随压强的变化。"
+  },
+  {
+   "id": "read-phase-diagram",
+   "kind": "skill",
+   "section": "10.4",
+   "name": "读相图",
+   "statement": "要确定物质的状态，就在相图上找到该温度和压强，读出所在的区域；要找出在恒压下加热或在恒温下加压时发生的相变，就沿水平线或竖直线移动，并记下它所穿过的曲线。"
+  },
+  {
+   "id": "triple-point",
+   "kind": "definition",
+   "section": "10.4",
+   "name": "三相点",
+   "terms": [
+    "三相点"
+   ],
+   "statement": "三相点是固、液、气三相处于平衡时的温度和压强。压强低于三相点压强时，物质不能以液体存在，所以会升华；冷冻干燥和干冰都依赖于此。"
+  },
+  {
+   "id": "solid-liquid-curve-slope",
+   "kind": "idea",
+   "section": "10.4",
+   "name": "固–液曲线的斜率",
+   "statement": "大多数物质的固–液曲线斜率为正，所以熔点随压强升高而升高；水的这条曲线斜率略为负，所以压强会降低冰的熔点。"
+  },
+  {
+   "id": "critical-point-and-supercritical-fluid",
+   "kind": "idea",
+   "section": "10.4",
+   "name": "临界点与超临界流体",
+   "statement": "液–气曲线终止于临界点。温度高于临界温度时，无论施加多大压强都不能使气体液化，此时物质是超临界流体，其性质介于液体和气体之间。"
+  },
+  {
+   "id": "critical-point",
+   "kind": "definition",
+   "section": "10.4",
+   "name": "临界点",
+   "terms": [
+    "临界点"
+   ],
+   "statement": "物质的临界点是这样的温度和压强：高于它，气体就不能凝结为液体；它是该物质液–气曲线的终点。"
+  },
+  {
+   "id": "supercritical-fluid",
+   "kind": "definition",
+   "section": "10.4",
+   "name": "超临界流体",
+   "terms": [
+    "超临界流体"
+   ],
+   "statement": "超临界流体是温度和压强高于其临界点的物质，其性质介于气体和液体之间。"
+  },
+  {
+   "id": "crystalline-and-amorphous-solids",
+   "kind": "idea",
+   "section": "10.5",
+   "name": "晶态固体与无定形固体",
+   "statement": "在晶态固体中，粒子按确定的重复图案排列。每个粒子所受的作用力相同，所以固体在精确的温度下熔化。在无定形固体中，粒子无规则排列，吸引作用各不相同，所以固体在一定温度范围内逐渐软化。"
+  },
+  {
+   "id": "types-of-crystalline-solids",
+   "kind": "idea",
+   "section": "10.5",
+   "name": "晶态固体的类型",
+   "statement": "晶态固体按粒子之间的作用力分类，这些作用力也解释了它们的性质：离子固体硬而脆，只有熔融时才导电；金属固体是有延展性的导体；共价网状固体非常硬，熔点极高；分子固体较软，熔点较低。"
+  },
+  {
+   "id": "classify-crystalline-solid",
+   "kind": "skill",
+   "section": "10.5",
+   "name": "晶态固体的分类",
+   "statement": "由化学式可以确定粒子的种类（离子、金属原子、构成网状结构的原子或分子），从而确定固体的类型；由硬度、导电性和熔点等观测到的性质，也可以反推固体的类型。"
+  },
+  {
+   "id": "crystal-defects",
+   "kind": "idea",
+   "section": "10.5",
+   "name": "晶体缺陷",
+   "statement": "晶体的重复图案中可能含有缺陷：粒子缺失造成的空位，位于间隙位置的粒子，以及替代晶格中原有粒子的杂质。缺陷会改变物理性质，在硅中掺杂以制造半导体，就是有意引入缺陷。"
+  },
+  {
+   "id": "crystalline-solid",
+   "kind": "definition",
+   "section": "10.5",
+   "name": "晶态固体",
+   "terms": [
+    "晶态固体"
+   ],
+   "statement": "晶态固体是粒子按确定的重复图案排列的固体。"
+  },
+  {
+   "id": "amorphous-solid",
+   "kind": "definition",
+   "section": "10.5",
+   "name": "无定形固体",
+   "terms": [
+    "无定形固体",
+    "无定形的"
+   ],
+   "statement": "无定形固体，又称非晶态固体，是粒子缺乏有序内部结构的固体。"
+  },
+  {
+   "id": "ionic-solid",
+   "kind": "definition",
+   "section": "10.5",
+   "name": "离子固体",
+   "terms": [
+    "离子固体"
+   ],
+   "statement": "离子固体是由正离子和负离子通过强静电吸引结合而成的晶态固体。"
+  },
+  {
+   "id": "metallic-solid",
+   "kind": "definition",
+   "section": "10.5",
+   "name": "金属固体",
+   "terms": [
+    "金属固体"
+   ],
+   "statement": "金属固体是由金属原子构成的晶态固体。"
+  },
+  {
+   "id": "covalent-network-solid",
+   "kind": "definition",
+   "section": "10.5",
+   "name": "共价网状固体",
+   "terms": [
+    "共价网状固体"
+   ],
+   "statement": "共价网状固体是粒子由共价键结合在一起的晶态固体。"
+  },
+  {
+   "id": "molecular-solid",
+   "kind": "definition",
+   "section": "10.5",
+   "name": "分子固体",
+   "terms": [
+    "分子固体"
+   ],
+   "statement": "分子固体是由中性分子通过分子间吸引作用力结合而成的晶态固体。"
+  },
+  {
+   "id": "vacancy",
+   "kind": "definition",
+   "section": "10.5",
+   "name": "空位",
+   "terms": [
+    "空位"
+   ],
+   "statement": "空位是晶体中的一种缺陷，即本应含有原子或离子的位置是空的。"
+  },
+  {
+   "id": "interstitial-sites",
+   "kind": "definition",
+   "section": "10.5",
+   "name": "间隙位置",
+   "terms": [
+    "间隙位置"
+   ],
+   "statement": "间隙位置是原子或离子排列中规则粒子位置之间的空间。"
+  },
+  {
+   "id": "unit-cell",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "晶胞",
+   "terms": [
+    "晶胞"
+   ],
+   "statement": "晶体的结构用晶胞来描述，晶胞是它最简单的重复单元，其格点标出原子或离子的位置，并在三维空间中重复。晶胞由三个棱长和三个夹角来确定，共有七个晶系、十四种晶胞。"
+  },
+  {
+   "id": "cubic-unit-cells",
+   "kind": "result",
+   "section": "10.6",
+   "name": "立方晶胞",
+   "statement": "计入每个顶角原子的八分之一、每个面上原子的二分之一和体心原子的全部，简单立方晶胞含 1 个原子，体心立方晶胞含 2 个，面心立方晶胞含 4 个。它们的配位数分别为 6、8 和 12，占据空间的比例分别约为 52%、68% 和 74%。"
+  },
+  {
+   "id": "closest-packing",
+   "kind": "idea",
+   "section": "10.6",
+   "name": "六方最密堆积与立方最密堆积",
+   "statement": "等径球体按六方层最紧密地堆积，每一层都落在下一层的凹陷处。按 ABAB… 堆叠得到六方最密堆积，按 ABCABC… 堆叠得到立方最密堆积，即面心立方结构；二者的配位数都是 12，约三分之二的金属以这种方式结晶。"
+  },
+  {
+   "id": "unit-cell-radius-and-density",
+   "kind": "skill",
+   "section": "10.6",
+   "name": "由晶胞求半径和密度",
+   "statement": "原子相互接触之处（简单立方晶胞沿棱，面心立方晶胞沿面对角线，体心立方晶胞沿体对角线），由棱长可以求出半径；每个晶胞中的原子数乘以一个原子的质量，再除以晶胞的体积，就得到密度。同样的几何关系，也可以由离子晶体的棱长求出离子半径。"
+  },
+  {
+   "id": "holes-in-closest-packed-arrays",
+   "kind": "idea",
+   "section": "10.6",
+   "name": "最密堆积中的空隙",
+   "statement": "在简单的离子结构中，较大的阴离子通常形成最密堆积，较小的阳离子占据它们之间的空隙：小阳离子占据四面体空隙，每个阴离子对应两个；较大的阳离子占据八面体空隙，每个阴离子对应一个；最大的阳离子占据简单立方堆积中的立方空隙。"
+  },
+  {
+   "id": "formula-from-hole-occupancy",
+   "kind": "skill",
+   "section": "10.6",
+   "name": "由空隙的占据情况求化学式",
+   "statement": "已知每个阴离子对应的各类空隙的数目，再由阳离子占据其中的比例，就能得出阳离子与阴离子的比，从而得出化合物的化学式。"
+  },
+  {
+   "id": "ionic-unit-cells",
+   "kind": "idea",
+   "section": "10.6",
+   "name": "离子化合物的晶胞",
+   "statement": "离子大小相近、比例为 1:1 的离子化合物，例如 CsCl，形成简单立方结构；离子大小相差较大的，例如 NaCl 和 ZnS，形成面心立方晶胞，阳离子位于八面体空隙或四面体空隙；CaF₂ 是面心立方，氟离子占据全部四面体空隙。由晶胞的内容可以得出化学式。"
+  },
+  {
+   "id": "bragg-equation",
+   "kind": "result",
+   "section": "10.6",
+   "name": "布拉格方程",
+   "terms": [
+    "布拉格方程"
+   ],
+   "statement": "被相邻晶面上的原子散射的 X 射线，只有当多走的路程是波长的整数倍时才发生相长干涉，这发生在由布拉格方程给出的角度上；测量衍射角就能得到晶面的间距。",
+   "forms": [
+    {
+     "id": "eq-bragg",
+     "latex": "n\\lambda=2d\\sin\\theta",
+     "ktex": "n\\klam=2d\\sin\\theta",
+     "condition": "constructive interference of X-rays scattered by planes a distance d apart",
+     "anchor": "10.6-xray"
+    }
+   ]
+  },
+  {
+   "id": "space-lattice",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "空间点阵",
+   "terms": [
+    "空间点阵"
+   ],
+   "statement": "晶体的空间点阵是晶体内所有环境完全相同的点的集合。"
+  },
+  {
+   "id": "coordination-number",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "配位数",
+   "terms": [
+    "配位数"
+   ],
+   "statement": "晶体中一个原子的配位数是与它最近的原子的数目；在配合物中，配位数是与中心金属原子成键的原子的数目。"
+  },
+  {
+   "id": "simple-cubic-unit-cell",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "简单立方晶胞",
+   "terms": [
+    "简单立方晶胞"
+   ],
+   "statement": "简单立方晶胞，又称素立方晶胞，是只在顶角上有格点的立方体，是简单立方结构的晶胞。"
+  },
+  {
+   "id": "simple-cubic-structure",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "简单立方结构",
+   "terms": [
+    "简单立方结构"
+   ],
+   "statement": "简单立方结构是一种晶体结构，其立方晶胞只在顶角上有格点。"
+  },
+  {
+   "id": "body-centered-cubic-unit-cell",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "体心立方晶胞",
+   "terms": [
+    "体心立方晶胞"
+   ],
+   "statement": "体心立方晶胞是体心立方晶体最简单的重复单元，是在每个顶角和体心处都有格点的立方体。"
+  },
+  {
+   "id": "body-centered-cubic-solid",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "体心立方固体",
+   "terms": [
+    "体心立方（BCC）固体"
+   ],
+   "statement": "体心立方固体是一种晶体结构，其立方晶胞在顶角和晶胞中心有格点。"
+  },
+  {
+   "id": "face-centered-cubic-unit-cell",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "面心立方晶胞",
+   "terms": [
+    "面心立方晶胞"
+   ],
+   "statement": "面心立方晶胞是面心立方晶体最简单的重复单元，是在每个顶角和每个面的中心都有格点的立方体。"
+  },
+  {
+   "id": "face-centered-cubic-solid",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "面心立方固体",
+   "terms": [
+    "面心立方（FCC）固体"
+   ],
+   "statement": "面心立方固体是一种晶体结构，其立方晶胞在顶角和每个面的中心有格点。"
+  },
+  {
+   "id": "isomorphous",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "同晶型的",
+   "terms": [
+    "同晶型的"
+   ],
+   "statement": "具有相同晶体结构的物质称为同晶型的。"
+  },
+  {
+   "id": "hexagonal-closest-packing",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "六方最密堆积",
+   "terms": [
+    "六方最密堆积（HCP）"
+   ],
+   "statement": "六方最密堆积是一种晶体结构，其中紧密堆积的原子层或离子层按两层交替堆叠，即 ABAB…。"
+  },
+  {
+   "id": "cubic-closest-packing",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "立方最密堆积",
+   "terms": [
+    "立方最密堆积（CCP）"
+   ],
+   "statement": "立方最密堆积是一种晶体结构，其中紧密堆积的原子层或离子层按三层交替堆叠，即 ABCABC…；它的晶胞是面心立方。"
+  },
+  {
+   "id": "crystal-hole",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "空隙",
+   "terms": [
+    "空隙"
+   ],
+   "statement": "空隙，又称间隙，是晶体中原子或离子之间的空间。"
+  },
+  {
+   "id": "tetrahedral-hole",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "四面体空隙",
+   "terms": [
+    "四面体空隙"
+   ],
+   "statement": "四面体空隙是晶体中由位于四面体顶点的四个原子或离子围成的空间。"
+  },
+  {
+   "id": "octahedral-hole",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "八面体空隙",
+   "terms": [
+    "八面体空隙"
+   ],
+   "statement": "八面体空隙是晶体中位于八面体顶点的六个粒子中心的开放空间。"
+  },
+  {
+   "id": "diffraction",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "衍射",
+   "terms": [
+    "衍射"
+   ],
+   "statement": "衍射是电磁辐射遇到尺寸与其波长相近的障碍物时发生的方向改变。"
+  },
+  {
+   "id": "x-ray-crystallography",
+   "kind": "idea",
+   "section": "10.6",
+   "name": "X 射线晶体学",
+   "terms": [
+    "X 射线晶体学"
+   ],
+   "statement": "X 射线晶体学是一种实验技术，通过测量 X 射线穿过晶体时的衍射角，求出晶体中原子之间的距离。"
+  }
+ ],
+ "concept_prereqs": [
+  {
+   "concept": "intermolecular-versus-intramolecular-forces",
+   "prereq": "covalent-bond-formation"
+  },
+  {
+   "concept": "phase-from-imf-and-kinetic-energy",
+   "prereq": "intermolecular-versus-intramolecular-forces"
+  },
+  {
+   "concept": "phase-from-imf-and-kinetic-energy",
+   "prereq": "average-kinetic-energy-and-temperature"
+  },
+  {
+   "concept": "dispersion-forces",
+   "prereq": "intermolecular-versus-intramolecular-forces"
+  },
+  {
+   "concept": "polarizability-and-dispersion-strength",
+   "prereq": "dispersion-forces"
+  },
+  {
+   "concept": "shape-and-dispersion-strength",
+   "prereq": "dispersion-forces"
+  },
+  {
+   "concept": "dipole-dipole-attraction",
+   "prereq": "intermolecular-versus-intramolecular-forces"
+  },
+  {
+   "concept": "dipole-dipole-attraction",
+   "prereq": "molecular-polarity"
+  },
+  {
+   "concept": "hydrogen-bonding",
+   "prereq": "dipole-dipole-attraction"
+  },
+  {
+   "concept": "rank-by-intermolecular-forces",
+   "prereq": "polarizability-and-dispersion-strength"
+  },
+  {
+   "concept": "rank-by-intermolecular-forces",
+   "prereq": "shape-and-dispersion-strength"
+  },
+  {
+   "concept": "rank-by-intermolecular-forces",
+   "prereq": "hydrogen-bonding"
+  },
+  {
+   "concept": "viscosity",
+   "prereq": "rank-by-intermolecular-forces"
+  },
+  {
+   "concept": "viscosity",
+   "prereq": "phase-from-imf-and-kinetic-energy"
+  },
+  {
+   "concept": "cohesive-and-adhesive-forces",
+   "prereq": "intermolecular-versus-intramolecular-forces"
+  },
+  {
+   "concept": "surface-tension",
+   "prereq": "cohesive-and-adhesive-forces"
+  },
+  {
+   "concept": "surface-tension",
+   "prereq": "hydrogen-bonding"
+  },
+  {
+   "concept": "capillary-action",
+   "prereq": "surface-tension"
+  },
+  {
+   "concept": "capillary-rise-equation",
+   "prereq": "capillary-action"
+  },
+  {
+   "concept": "capillary-rise-equation",
+   "prereq": "density"
+  },
+  {
+   "concept": "vapor-pressure-dynamic-equilibrium",
+   "prereq": "phase-from-imf-and-kinetic-energy"
+  },
+  {
+   "concept": "vapor-pressure-dynamic-equilibrium",
+   "prereq": "manometer-pressure"
+  },
+  {
+   "concept": "vapor-pressure-and-imf",
+   "prereq": "vapor-pressure-dynamic-equilibrium"
+  },
+  {
+   "concept": "vapor-pressure-and-imf",
+   "prereq": "rank-by-intermolecular-forces"
+  },
+  {
+   "concept": "vapor-pressure-and-temperature",
+   "prereq": "vapor-pressure-dynamic-equilibrium"
+  },
+  {
+   "concept": "vapor-pressure-and-temperature",
+   "prereq": "maxwell-boltzmann-distribution"
+  },
+  {
+   "concept": "boiling-point",
+   "prereq": "vapor-pressure-and-temperature"
+  },
+  {
+   "concept": "enthalpies-of-phase-change",
+   "prereq": "hess-law"
+  },
+  {
+   "concept": "enthalpies-of-phase-change",
+   "prereq": "phase-from-imf-and-kinetic-energy"
+  },
+  {
+   "concept": "clausius-clapeyron-equation",
+   "prereq": "vapor-pressure-and-temperature"
+  },
+  {
+   "concept": "clausius-clapeyron-equation",
+   "prereq": "enthalpies-of-phase-change"
+  },
+  {
+   "concept": "clausius-clapeyron-calculations",
+   "prereq": "clausius-clapeyron-equation"
+  },
+  {
+   "concept": "clausius-clapeyron-calculations",
+   "prereq": "boiling-point"
+  },
+  {
+   "concept": "heating-curve",
+   "prereq": "enthalpies-of-phase-change"
+  },
+  {
+   "concept": "heating-curve-calculations",
+   "prereq": "heating-curve"
+  },
+  {
+   "concept": "phase-diagram",
+   "prereq": "boiling-point"
+  },
+  {
+   "concept": "phase-diagram",
+   "prereq": "heating-curve"
+  },
+  {
+   "concept": "read-phase-diagram",
+   "prereq": "phase-diagram"
+  },
+  {
+   "concept": "triple-point",
+   "prereq": "phase-diagram"
+  },
+  {
+   "concept": "solid-liquid-curve-slope",
+   "prereq": "phase-diagram"
+  },
+  {
+   "concept": "crystalline-and-amorphous-solids",
+   "prereq": "phase-from-imf-and-kinetic-energy"
+  },
+  {
+   "concept": "types-of-crystalline-solids",
+   "prereq": "crystalline-and-amorphous-solids"
+  },
+  {
+   "concept": "types-of-crystalline-solids",
+   "prereq": "rank-by-intermolecular-forces"
+  },
+  {
+   "concept": "classify-crystalline-solid",
+   "prereq": "types-of-crystalline-solids"
+  },
+  {
+   "concept": "crystal-defects",
+   "prereq": "crystalline-and-amorphous-solids"
+  },
+  {
+   "concept": "unit-cell",
+   "prereq": "crystalline-and-amorphous-solids"
+  },
+  {
+   "concept": "closest-packing",
+   "prereq": "cubic-unit-cells"
+  },
+  {
+   "concept": "unit-cell-radius-and-density",
+   "prereq": "cubic-unit-cells"
+  },
+  {
+   "concept": "unit-cell-radius-and-density",
+   "prereq": "density"
+  },
+  {
+   "concept": "unit-cell-radius-and-density",
+   "prereq": "count-atoms-and-molecules"
+  },
+  {
+   "concept": "holes-in-closest-packed-arrays",
+   "prereq": "closest-packing"
+  },
+  {
+   "concept": "holes-in-closest-packed-arrays",
+   "prereq": "ionic-lattice"
+  },
+  {
+   "concept": "holes-in-closest-packed-arrays",
+   "prereq": "ionic-radius-trend"
+  },
+  {
+   "concept": "formula-from-hole-occupancy",
+   "prereq": "holes-in-closest-packed-arrays"
+  },
+  {
+   "concept": "formula-from-hole-occupancy",
+   "prereq": "empirical-formula"
+  },
+  {
+   "concept": "ionic-unit-cells",
+   "prereq": "holes-in-closest-packed-arrays"
+  },
+  {
+   "concept": "bragg-equation",
+   "prereq": "wave-properties"
+  },
+  {
+   "concept": "bragg-equation",
+   "prereq": "unit-cell"
+  },
+  {
+   "concept": "intermolecular-force",
+   "prereq": "covalent-bond"
+  },
+  {
+   "concept": "van-der-waals-force",
+   "prereq": "intermolecular-force"
+  },
+  {
+   "concept": "instantaneous-dipole",
+   "prereq": "intermolecular-force"
+  },
+  {
+   "concept": "instantaneous-dipole",
+   "prereq": "dipole-moment"
+  },
+  {
+   "concept": "induced-dipole",
+   "prereq": "instantaneous-dipole"
+  },
+  {
+   "concept": "polarizability",
+   "prereq": "induced-dipole"
+  },
+  {
+   "concept": "cohesive-force",
+   "prereq": "intermolecular-force"
+  },
+  {
+   "concept": "adhesive-force",
+   "prereq": "intermolecular-force"
+  },
+  {
+   "concept": "vaporization",
+   "prereq": "liquid"
+  },
+  {
+   "concept": "vaporization",
+   "prereq": "gas"
+  },
+  {
+   "concept": "condensation",
+   "prereq": "gas"
+  },
+  {
+   "concept": "condensation",
+   "prereq": "liquid"
+  },
+  {
+   "concept": "melting",
+   "prereq": "solid"
+  },
+  {
+   "concept": "melting",
+   "prereq": "liquid"
+  },
+  {
+   "concept": "freezing",
+   "prereq": "liquid"
+  },
+  {
+   "concept": "freezing",
+   "prereq": "solid"
+  },
+  {
+   "concept": "sublimation",
+   "prereq": "solid"
+  },
+  {
+   "concept": "sublimation",
+   "prereq": "gas"
+  },
+  {
+   "concept": "deposition",
+   "prereq": "gas"
+  },
+  {
+   "concept": "deposition",
+   "prereq": "solid"
+  },
+  {
+   "concept": "dynamic-equilibrium",
+   "prereq": "vaporization"
+  },
+  {
+   "concept": "dynamic-equilibrium",
+   "prereq": "condensation"
+  },
+  {
+   "concept": "vapor-pressure",
+   "prereq": "dynamic-equilibrium"
+  },
+  {
+   "concept": "vapor-pressure",
+   "prereq": "gas-pressure"
+  },
+  {
+   "concept": "normal-boiling-point",
+   "prereq": "boiling-point"
+  },
+  {
+   "concept": "melting-point",
+   "prereq": "melting"
+  },
+  {
+   "concept": "melting-point",
+   "prereq": "freezing"
+  },
+  {
+   "concept": "melting-point",
+   "prereq": "dynamic-equilibrium"
+  },
+  {
+   "concept": "critical-point",
+   "prereq": "phase-diagram"
+  },
+  {
+   "concept": "supercritical-fluid",
+   "prereq": "critical-point"
+  },
+  {
+   "concept": "crystalline-solid",
+   "prereq": "solid"
+  },
+  {
+   "concept": "amorphous-solid",
+   "prereq": "solid"
+  },
+  {
+   "concept": "ionic-solid",
+   "prereq": "crystalline-solid"
+  },
+  {
+   "concept": "ionic-solid",
+   "prereq": "ion"
+  },
+  {
+   "concept": "ionic-solid",
+   "prereq": "ionic-bond"
+  },
+  {
+   "concept": "metallic-solid",
+   "prereq": "crystalline-solid"
+  },
+  {
+   "concept": "metallic-solid",
+   "prereq": "metals-nonmetals-metalloids"
+  },
+  {
+   "concept": "covalent-network-solid",
+   "prereq": "crystalline-solid"
+  },
+  {
+   "concept": "covalent-network-solid",
+   "prereq": "covalent-bond"
+  },
+  {
+   "concept": "molecular-solid",
+   "prereq": "crystalline-solid"
+  },
+  {
+   "concept": "molecular-solid",
+   "prereq": "intermolecular-force"
+  },
+  {
+   "concept": "vacancy",
+   "prereq": "crystalline-solid"
+  },
+  {
+   "concept": "interstitial-sites",
+   "prereq": "crystalline-solid"
+  },
+  {
+   "concept": "space-lattice",
+   "prereq": "crystalline-solid"
+  },
+  {
+   "concept": "coordination-number",
+   "prereq": "unit-cell"
+  },
+  {
+   "concept": "simple-cubic-unit-cell",
+   "prereq": "unit-cell"
+  },
+  {
+   "concept": "simple-cubic-structure",
+   "prereq": "simple-cubic-unit-cell"
+  },
+  {
+   "concept": "body-centered-cubic-unit-cell",
+   "prereq": "unit-cell"
+  },
+  {
+   "concept": "body-centered-cubic-solid",
+   "prereq": "body-centered-cubic-unit-cell"
+  },
+  {
+   "concept": "face-centered-cubic-unit-cell",
+   "prereq": "unit-cell"
+  },
+  {
+   "concept": "face-centered-cubic-solid",
+   "prereq": "face-centered-cubic-unit-cell"
+  },
+  {
+   "concept": "isomorphous",
+   "prereq": "unit-cell"
+  },
+  {
+   "concept": "hexagonal-closest-packing",
+   "prereq": "closest-packing"
+  },
+  {
+   "concept": "cubic-closest-packing",
+   "prereq": "closest-packing"
+  },
+  {
+   "concept": "crystal-hole",
+   "prereq": "crystalline-solid"
+  },
+  {
+   "concept": "tetrahedral-hole",
+   "prereq": "crystal-hole"
+  },
+  {
+   "concept": "octahedral-hole",
+   "prereq": "crystal-hole"
+  },
+  {
+   "concept": "diffraction",
+   "prereq": "wavelength"
+  },
+  {
+   "concept": "diffraction",
+   "prereq": "electromagnetic-radiation"
+  },
+  {
+   "concept": "x-ray-crystallography",
+   "prereq": "bragg-equation"
+  },
+  {
+   "concept": "intermolecular-versus-intramolecular-forces",
+   "prereq": "intermolecular-force"
+  },
+  {
+   "concept": "dispersion-forces",
+   "prereq": "induced-dipole"
+  },
+  {
+   "concept": "polarizability-and-dispersion-strength",
+   "prereq": "polarizability"
+  },
+  {
+   "concept": "cohesive-and-adhesive-forces",
+   "prereq": "cohesive-force"
+  },
+  {
+   "concept": "cohesive-and-adhesive-forces",
+   "prereq": "adhesive-force"
+  },
+  {
+   "concept": "vapor-pressure-dynamic-equilibrium",
+   "prereq": "vapor-pressure"
+  },
+  {
+   "concept": "enthalpies-of-phase-change",
+   "prereq": "vaporization"
+  },
+  {
+   "concept": "enthalpies-of-phase-change",
+   "prereq": "melting"
+  },
+  {
+   "concept": "enthalpies-of-phase-change",
+   "prereq": "sublimation"
+  },
+  {
+   "concept": "heating-curve",
+   "prereq": "melting-point"
+  },
+  {
+   "concept": "critical-point-and-supercritical-fluid",
+   "prereq": "supercritical-fluid"
+  },
+  {
+   "concept": "crystalline-and-amorphous-solids",
+   "prereq": "crystalline-solid"
+  },
+  {
+   "concept": "crystalline-and-amorphous-solids",
+   "prereq": "amorphous-solid"
+  },
+  {
+   "concept": "types-of-crystalline-solids",
+   "prereq": "ionic-solid"
+  },
+  {
+   "concept": "types-of-crystalline-solids",
+   "prereq": "metallic-solid"
+  },
+  {
+   "concept": "types-of-crystalline-solids",
+   "prereq": "covalent-network-solid"
+  },
+  {
+   "concept": "types-of-crystalline-solids",
+   "prereq": "molecular-solid"
+  },
+  {
+   "concept": "crystal-defects",
+   "prereq": "vacancy"
+  },
+  {
+   "concept": "crystal-defects",
+   "prereq": "interstitial-sites"
+  },
+  {
+   "concept": "unit-cell",
+   "prereq": "space-lattice"
+  },
+  {
+   "concept": "cubic-unit-cells",
+   "prereq": "simple-cubic-unit-cell"
+  },
+  {
+   "concept": "cubic-unit-cells",
+   "prereq": "body-centered-cubic-unit-cell"
+  },
+  {
+   "concept": "cubic-unit-cells",
+   "prereq": "face-centered-cubic-unit-cell"
+  },
+  {
+   "concept": "holes-in-closest-packed-arrays",
+   "prereq": "tetrahedral-hole"
+  },
+  {
+   "concept": "holes-in-closest-packed-arrays",
+   "prereq": "octahedral-hole"
+  },
+  {
+   "concept": "bragg-equation",
+   "prereq": "diffraction"
+  }
+ ]
+}

@@ -2,15 +2,15 @@
  "id": "7.2",
  "module": "m68738",
  "chapter": "7",
- "title": "Covalent Bonding",
- "short": "Covalent Bonding",
- "lead": "Atoms that attract electrons about equally do not transfer them but share them, and a pair of electrons held by both nuclei is a covalent bond. How evenly the pair is shared depends on electronegativity, the tendency of a bonded atom to draw the shared electrons toward itself.",
+ "title": "共价键",
+ "short": "共价键",
+ "lead": "吸引电子的能力大致相等的原子不转移电子，而是共用电子，被两个原子核共同束缚的一对电子就是共价键。这对电子被共用得有多均匀，取决于电负性，即成键原子将共用电子吸引向自身的倾向。",
  "objectives": [
-  "Describe the formation of covalent bonds",
-  "Define electronegativity and assess the polarity of covalent bonds"
+  "描述共价键的形成",
+  "定义电负性，并判断共价键的极性"
  ],
- "summary_html": "<p>Covalent bonds form when electrons are shared between atoms and are attracted by the nuclei of both atoms. In pure covalent bonds, the electrons are shared equally. In polar covalent bonds, the electrons are shared unequally, as one atom exerts a stronger <span data-concept=\"force\">force</span> of attraction on the electrons than the other. The ability of an atom to attract a pair of electrons in a chemical bond is called its electronegativity. The difference in electronegativity between two atoms determines how polar a bond will be. In a diatomic molecule with two identical atoms, there is no difference in electronegativity, so the bond is nonpolar or pure covalent. When the electronegativity difference is very large, as is the case between metals and nonmetals, the bonding is characterized as ionic.</p>",
- "notes": "Nothing of the section is left out.",
+ "summary_html": "<p>共价键是在原子之间共用电子、且这些电子被两个原子的原子核共同吸引时形成的。在纯共价键中，电子被平均共用。在极性共价键中，电子被不平均地共用，因为一个原子对电子施加的吸引<span data-concept=\"force\">力</span>比另一个更强。原子吸引化学键中一对电子的能力称为其电负性。两个原子之间的电负性差决定键的极性有多大。在由两个相同原子构成的双原子分子中，电负性没有差别，因此键是非极性的，即纯共价键。当电负性差非常大时（金属与非金属之间就是如此），这种键合被称为离子键。</p>",
+ "notes": "本节没有任何内容被略去。",
  "ai": {
   "text": [
    {
@@ -20,26 +20,39 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-09-28",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels, concept tags and weights are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answer. The first exercise of this section in the book, fs-idp49074848 on why it is incorrect to speak of a molecule of solid NaCl, tests the ionic lattice of section 7.1 and is set there. The unkeyed items fs-idm13014880, fs-idp18335616, fs-idp43172032, fs-idp49532528 and fs-idp51035456 carry a suggested approach marked as OmniStax’s own, and the unkeyed choice item fs-idp9464672 is kept as an open question with the book’s five options.",
+ "exercise_notes": "布鲁姆层级、概念标签和权重由 AI 生成。答案来自本书的答案册和“学习检测”的答案。本节在书中的第一道习题 fs-idp49074848（为什么说固态 NaCl 的“分子”是不正确的）考查的是 7.1 节的离子晶格，已放在该节。无标准答案的习题 fs-idm13014880、fs-idp18335616、fs-idp43172032、fs-idp49532528 和 fs-idp51035456 附有标明为 OmniStax 自拟的建议解法，无标准答案的选择题 fs-idp9464672 保留为开放题，附书中的五个选项。",
  "figures": [
   {
    "id": "sim-bond",
    "kind": "sim",
    "number": "7.4",
-   "originals": ["/media/ch07/CNX_Chem_07_02_Morse.jpg"],
-   "original_caption": "The potential energy of two separate hydrogen atoms (right) decreases as they approach each other, and the single electrons on each atom are shared to form a covalent bond. The bond length is the internuclear distance at which the lowest potential energy is achieved.",
-   "draws": ["energy", "length"],
+   "originals": [
+    "/media/ch07/CNX_Chem_07_02_Morse.jpg"
+   ],
+   "original_caption": "两个分开的氢原子（右）的势能随着它们相互靠近而降低，每个原子上的单个电子被共用而形成共价键。键长是势能达到最低时的核间距。",
+   "draws": [
+    "energy",
+    "length"
+   ],
    "conventions": [
     "H"
    ],
@@ -53,6 +66,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: H label kept on stage, shared cloud only on overlap, minimum label"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -60,8 +78,10 @@
    "id": "fig-en",
    "kind": "figure",
    "number": "7.6",
-   "originals": ["/media/ch07/CNX_Chem_07_02_ENTable.jpg"],
-   "original_caption": "The electronegativity values derived by Pauling follow predictable periodic trends, with the higher electronegativities toward the upper right of the periodic table.",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_02_ENTable.jpg"
+   ],
+   "original_caption": "鲍林导出的电负性数值遵循可预测的周期性规律，电负性较高者位于元素周期表的右上方。",
    "draws": [],
    "ai": [
     {
@@ -73,6 +93,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: class tints strengthened, table moved clear of the left edge"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -86,10 +111,18 @@
    "id": "sim-polarity",
    "kind": "sim",
    "number": "7.5",
-   "folds": ["7.8"],
-   "originals": ["/media/ch07/CNX_Chem_07_02_HClBond.jpg", "/media/ch07/CNX_Chem_07_02_DeltaEN.jpg"],
-   "original_caption": "(Figure 7.5) (a) The distribution of electron density in the HCl molecule is uneven. The electron density is greater around the chlorine nucleus. The small, black dots indicate the location of the hydrogen and chlorine nuclei in the molecule. (b) Symbols δ+ and δ– indicate the polarity of the H–Cl bond. (Figure 7.8) As the electronegativity difference increases between two atoms, the bond becomes more ionic.",
-   "draws": ["charge", "dipole-moment"],
+   "folds": [
+    "7.8"
+   ],
+   "originals": [
+    "/media/ch07/CNX_Chem_07_02_HClBond.jpg",
+    "/media/ch07/CNX_Chem_07_02_DeltaEN.jpg"
+   ],
+   "original_caption": "（图 7.5）（a）HCl 分子中的电子密度分布是不均匀的。氯原子核周围的电子密度更大。小黑点标出分子中氢原子核和氯原子核的位置。（b）符号 δ+ 和 δ– 表示 H–Cl 键的极性。（图 7.8）两个原子之间的电负性差增大时，键的离子性随之增强。",
+   "draws": [
+    "charge",
+    "dipole-moment"
+   ],
    "conventions": [
     "H",
     "Li",
@@ -118,25 +151,86 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   }
  ],
  "coverage": [
-  { "span": "covalent", "concept": "covalent-bond-formation", "verb": "introduces" },
-  { "span": "formation", "concept": "covalent-bond-formation", "verb": "reinforces" },
-  { "span": "formation", "concept": "bond-length", "verb": "introduces" },
-  { "span": "pure-polar", "concept": "bond-polarity", "verb": "introduces" },
-  { "span": "pure-polar", "concept": "covalent-bond-formation", "verb": "uses" },
-  { "span": "pure-polar", "concept": "pure-covalent-bond", "verb": "introduces" },
-  { "span": "pure-polar", "concept": "polar-covalent-bond", "verb": "introduces" },
-  { "span": "electronegativity", "concept": "electronegativity", "verb": "introduces" },
-  { "span": "electronegativity", "concept": "bond-polarity", "verb": "uses" },
-  { "span": "bond-type", "concept": "bond-type-from-electronegativity", "verb": "introduces" },
-  { "span": "bond-type", "concept": "electronegativity", "verb": "uses" },
-  { "span": "bond-type", "concept": "bond-polarity", "verb": "reinforces" },
-  { "span": "ex-polarity", "concept": "bond-polarity", "verb": "uses" },
-  { "span": "ex-polarity", "concept": "electronegativity", "verb": "uses" }
+  {
+   "span": "covalent",
+   "concept": "covalent-bond-formation",
+   "verb": "introduces"
+  },
+  {
+   "span": "formation",
+   "concept": "covalent-bond-formation",
+   "verb": "reinforces"
+  },
+  {
+   "span": "formation",
+   "concept": "bond-length",
+   "verb": "introduces"
+  },
+  {
+   "span": "pure-polar",
+   "concept": "bond-polarity",
+   "verb": "introduces"
+  },
+  {
+   "span": "pure-polar",
+   "concept": "covalent-bond-formation",
+   "verb": "uses"
+  },
+  {
+   "span": "pure-polar",
+   "concept": "pure-covalent-bond",
+   "verb": "introduces"
+  },
+  {
+   "span": "pure-polar",
+   "concept": "polar-covalent-bond",
+   "verb": "introduces"
+  },
+  {
+   "span": "electronegativity",
+   "concept": "electronegativity",
+   "verb": "introduces"
+  },
+  {
+   "span": "electronegativity",
+   "concept": "bond-polarity",
+   "verb": "uses"
+  },
+  {
+   "span": "bond-type",
+   "concept": "bond-type-from-electronegativity",
+   "verb": "introduces"
+  },
+  {
+   "span": "bond-type",
+   "concept": "electronegativity",
+   "verb": "uses"
+  },
+  {
+   "span": "bond-type",
+   "concept": "bond-polarity",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ex-polarity",
+   "concept": "bond-polarity",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-polarity",
+   "concept": "electronegativity",
+   "verb": "uses"
+  }
  ],
  "exercises": [
   {
@@ -144,13 +238,16 @@
    "source_id": "fs-idm8119280",
    "kind": "check-your-learning",
    "bloom": "Apply",
-   "place": { "at": "inline", "after": "ex-polarity" },
+   "place": {
+    "at": "inline",
+    "after": "ex-polarity"
+   },
    "cite": "bond-type",
-   "prompt": "Silicones are polymeric compounds containing, among others, the following types of covalent bonds: Si–O, Si–C, C–H, and C–C. Using the electronegativity values in Figure 7.6, arrange the bonds in order of increasing polarity and designate the positive and negative atoms using the symbols δ+ and δ–.",
+   "prompt": "硅酮是聚合物化合物，其中含有下列类型的共价键等：Si–O、Si–C、C–H 和 C–C。利用图 7.6 中的电负性数值，将这些键按极性增大的顺序排列，并用符号 δ+ 和 δ– 标出正、负原子。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "<table><thead><tr><th>Bond</th><th>Electronegativity Difference</th><th>Polarity</th></tr></thead><tbody><tr><td>C–C</td><td>0.0</td><td>nonpolar</td></tr><tr><td>C–H</td><td>0.4</td><td><sup>δ–</sup>C–H<sup>δ+</sup></td></tr><tr><td>Si–C</td><td>0.7</td><td><sup>δ+</sup>Si–C<sup>δ–</sup></td></tr><tr><td>Si–O</td><td>1.7</td><td><sup>δ+</sup>Si–O<sup>δ–</sup></td></tr></tbody></table>"
+    "solution": "<table><thead><tr><th>键</th><th>电负性差</th><th>极性</th></tr></thead><tbody><tr><td>C–C</td><td>0.0</td><td>非极性</td></tr><tr><td>C–H</td><td>0.4</td><td><sup>δ–</sup>C–H<sup>δ+</sup></td></tr><tr><td>Si–C</td><td>0.7</td><td><sup>δ+</sup>Si–C<sup>δ–</sup></td></tr><tr><td>Si–O</td><td>1.7</td><td><sup>δ+</sup>Si–O<sup>δ–</sup></td></tr></tbody></table>"
    }
   },
   {
@@ -158,13 +255,15 @@
    "source_id": "fs-idm13014880",
    "kind": "exercise",
    "bloom": "Understand",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "bond-type",
-   "prompt": "What information can you use to predict whether a bond between two atoms is covalent or ionic?",
+   "prompt": "可以用哪些信息来预测两个原子之间的键是共价键还是离子键？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Two pieces of information predict the bond type: the electronegativity difference between the two atoms, and the kinds of atoms involved, metal or nonmetal, read from their positions in the periodic table. On the rough scale of Figure 7.8, a difference below about 0.4 gives a pure (nonpolar) covalent bond, a difference from about 0.4 to 1.8 a polar covalent bond, and a larger difference an ionic bond; H–Cl, at 0.9, is polar covalent, and Na–Cl, at 2.1, is ionic. That scale has many exceptions: HF, with a difference of 1.9, is polar covalent, while MnI<sub>2</sub>, with a difference of only 1.0, is ionic. The better guide is therefore the types of atoms. A bond between two nonmetals is generally covalent, as in HF and NH<sub>3</sub>, and a bond between a metal and a nonmetal is often ionic, as in NaCl and MnI<sub>2</sub>."
+    "solution": "有两方面的信息可以预测键型：一是两个原子之间的电负性差，二是所涉原子的种类，即金属还是非金属，可由它们在元素周期表中的位置看出。按图 7.8 的粗略标度，差值低于约 0.4 时为纯（非极性）共价键，差值在约 0.4 至 1.8 之间时为极性共价键，差值更大时为离子键；H–Cl 的差值为 0.9，是极性共价键，Na–Cl 的差值为 2.1，是离子键。该标度有许多例外：HF 的差值为 1.9，却是极性共价键，而 MnI<sub>2</sub> 的差值仅为 1.0，却是离子键。因此更好的依据是原子的类型。两个非金属之间的键通常是共价键，如 HF 和 NH<sub>3</sub>；金属与非金属之间的键往往是离子键，如 NaCl 和 MnI<sub>2</sub>。"
    }
   },
   {
@@ -172,13 +271,15 @@
    "source_id": "fs-idp119456432",
    "kind": "exercise",
    "bloom": "Apply",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "bond-type",
-   "prompt": "Predict which of the following compounds are ionic and which are covalent, based on the location of their constituent atoms in the <a href=\"/chemistry-2e/sheets/elements/\">periodic table</a>:<br>(a) Cl<sub>2</sub>CO<br>(b) MnO<br>(c) NCl<sub>3</sub><br>(d) CoBr<sub>2</sub><br>(e) K<sub>2</sub>S<br>(f) CO<br>(g) CaF<sub>2</sub><br>(h) HI<br>(i) CaO<br>(j) IBr<br>(k) CO<sub>2</sub>",
+   "prompt": "根据下列化合物中各组成原子在<a href=\"/chemistry-2e/sheets/elements/\">元素周期表</a>中的位置，预测哪些是离子化合物，哪些是共价化合物：<br>（a）Cl<sub>2</sub>CO<br>（b）MnO<br>（c）NCl<sub>3</sub><br>（d）CoBr<sub>2</sub><br>（e）K<sub>2</sub>S<br>（f）CO<br>（g）CaF<sub>2</sub><br>（h）HI<br>（i）CaO<br>（j）IBr<br>（k）CO<sub>2</sub>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "ionic: (b), (d), (e), (g), and (i); covalent: (a), (c), (f), (h), (j), and (k)"
+    "solution": "离子化合物：（b）、（d）、（e）、（g）和（i）；共价化合物：（a）、（c）、（f）、（h）、（j）和（k）"
    }
   },
   {
@@ -186,13 +287,15 @@
    "source_id": "fs-idp18335616",
    "kind": "exercise",
    "bloom": "Understand",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "pure-polar",
-   "prompt": "Explain the difference between a nonpolar covalent bond, a polar covalent bond, and an ionic bond.",
+   "prompt": "解释非极性共价键、极性共价键和离子键之间的区别。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The three differ in how the bonding electrons are shared. In a nonpolar (pure) covalent bond the electrons are shared equally, because the two atoms attract them equally; this happens when the atoms are identical, as in H<sub>2</sub> and Cl<sub>2</sub>, where the electronegativity difference is 0. In a polar covalent bond the electrons are still shared, but unequally: they shift toward the more electronegative atom, which takes a partial negative charge δ–, while the other atom takes a partial positive charge δ+. H–Cl, with an electronegativity difference of 0.9, is an example. In an ionic bond the electrons are not shared at all. One atom has given its electrons to the other, forming a cation and an anion held together by electrostatic attraction, as in NaCl, where the difference is 2.1. Along Figure 7.8 the bond type passes from nonpolar covalent through polar covalent to ionic as the electronegativity difference grows."
+    "solution": "三者的区别在于成键电子是如何被共用的。在非极性（纯）共价键中，电子被平均共用，因为两个原子对电子的吸引相等；当原子相同时就是这样，如 H<sub>2</sub> 和 Cl<sub>2</sub>，其电负性差为 0。在极性共价键中，电子仍被共用，但不平均：电子偏向电负性较大的原子，该原子带部分负电荷 δ–，而另一个原子带部分正电荷 δ+。H–Cl 就是一例，其电负性差为 0.9。在离子键中，电子根本没有被共用。一个原子把电子给了另一个原子，形成由静电吸引结合在一起的阳离子和阴离子，如 NaCl，其差值为 2.1。沿着图 7.8，随着电负性差增大，键型由非极性共价键经极性共价键过渡到离子键。"
    }
   },
   {
@@ -200,13 +303,15 @@
    "source_id": "fs-idm121789856",
    "kind": "exercise",
    "bloom": "Apply",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "electronegativity",
-   "prompt": "From its position in the <a href=\"/chemistry-2e/sheets/elements/\">periodic table</a>, determine which atom in each pair is more electronegative:<br>(a) Br or Cl<br>(b) N or O<br>(c) S or O<br>(d) P or S<br>(e) Si or N<br>(f) Ba or P<br>(g) N or K",
+   "prompt": "根据各原子在<a href=\"/chemistry-2e/sheets/elements/\">元素周期表</a>中的位置，判断每对原子中哪个原子的电负性更大：<br>（a）Br 或 Cl<br>（b）N 或 O<br>（c）S 或 O<br>（d）P 或 S<br>（e）Si 或 N<br>（f）Ba 或 P<br>（g）N 或 K",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) Cl; (b) O; (c) O; (d) S; (e) N; (f) P; (g) N"
+    "solution": "（a）Cl；（b）O；（c）O；（d）S；（e）N；（f）P；（g）N"
    }
   },
   {
@@ -214,13 +319,15 @@
    "source_id": "fs-idp43172032",
    "kind": "exercise",
    "bloom": "Apply",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "electronegativity",
-   "prompt": "From its position in the <a href=\"/chemistry-2e/sheets/elements/\">periodic table</a>, determine which atom in each pair is more electronegative:<br>(a) N or P<br>(b) N or Ge<br>(c) S or F<br>(d) Cl or S<br>(e) H or C<br>(f) Se or P<br>(g) C or Si",
+   "prompt": "根据各原子在<a href=\"/chemistry-2e/sheets/elements/\">元素周期表</a>中的位置，判断每对原子中哪个原子的电负性更大：<br>（a）N 或 P<br>（b）N 或 Ge<br>（c）S 或 F<br>（d）Cl 或 S<br>（e）H 或 C<br>（f）Se 或 P<br>（g）C 或 Si",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Electronegativity increases from left to right across a period and decreases down a group, and the values of Figure 7.6 confirm each choice.<br>(a) N. Both are in group 15, and N lies above P (3.0 against 2.1).<br>(b) N. N lies higher and farther to the right than Ge (3.0 against 1.8).<br>(c) F. F lies higher and farther to the right than S, and it is the most electronegative element (4.0 against 2.5).<br>(d) Cl. Both are in period 3, and Cl lies to the right of S (3.0 against 2.5).<br>(e) C. Carbon’s value is larger than hydrogen’s (2.5 against 2.1).<br>(f) Se. Se lies farther to the right than P, which outweighs its lower row (2.4 against 2.1).<br>(g) C. Both are in group 14, and C lies above Si (2.5 against 1.8)."
+    "solution": "电负性沿周期从左到右增大，沿族向下减小，图 7.6 中的数值证实了每一项选择。<br>（a）N。二者都在第 15 族，N 位于 P 的上方（3.0 对 2.1）。<br>（b）N。N 比 Ge 更靠上、更靠右（3.0 对 1.8）。<br>（c）F。F 比 S 更靠上、更靠右，它是电负性最大的元素（4.0 对 2.5）。<br>（d）Cl。二者都在第 3 周期，Cl 位于 S 的右侧（3.0 对 2.5）。<br>（e）C。碳的数值比氢的大（2.5 对 2.1）。<br>（f）Se。Se 比 P 更靠右，这抵消了它所在周期较靠下的影响（2.4 对 2.1）。<br>（g）C。二者都在第 14 族，C 位于 Si 的上方（2.5 对 1.8）。"
    }
   },
   {
@@ -228,13 +335,15 @@
    "source_id": "fs-idm28148800",
    "kind": "exercise",
    "bloom": "Apply",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "electronegativity",
-   "prompt": "From their positions in the <a href=\"/chemistry-2e/sheets/elements/\">periodic table</a>, arrange the atoms in each of the following series in order of increasing electronegativity:<br>(a) C, F, H, N, O<br>(b) Br, Cl, F, H, I<br>(c) F, H, O, P, S<br>(d) Al, H, Na, O, P<br>(e) Ba, H, N, O, As",
+   "prompt": "根据各原子在<a href=\"/chemistry-2e/sheets/elements/\">元素周期表</a>中的位置，将下列每个系列中的原子按电负性增大的顺序排列：<br>（a）C、F、H、N、O<br>（b）Br、Cl、F、H、I<br>（c）F、H、O、P、S<br>（d）Al、H、Na、O、P<br>（e）Ba、H、N、O、As",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) H, C, N, O, F; (b) H, I, Br, Cl, F; (c) H, P, S, O, F; (d) Na, Al, H, P, O; (e) Ba, H, As, N, O"
+    "solution": "（a）H、C、N、O、F；（b）H、I、Br、Cl、F；（c）H、P、S、O、F；（d）Na、Al、H、P、O；（e）Ba、H、As、N、O"
    }
   },
   {
@@ -242,13 +351,15 @@
    "source_id": "fs-idp49532528",
    "kind": "exercise",
    "bloom": "Apply",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "electronegativity",
-   "prompt": "From their positions in the <a href=\"/chemistry-2e/sheets/elements/\">periodic table</a>, arrange the atoms in each of the following series in order of increasing electronegativity:<br>(a) As, H, N, P, Sb<br>(b) Cl, H, P, S, Si<br>(c) Br, Cl, Ge, H, Sr<br>(d) Ca, H, K, N, Si<br>(e) Cl, Cs, Ge, H, Sr",
+   "prompt": "根据各原子在<a href=\"/chemistry-2e/sheets/elements/\">元素周期表</a>中的位置，将下列每个系列中的原子按电负性增大的顺序排列：<br>（a）As、H、N、P、Sb<br>（b）Cl、H、P、S、Si<br>（c）Br、Cl、Ge、H、Sr<br>（d）Ca、H、K、N、Si<br>（e）Cl、Cs、Ge、H、Sr",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Electronegativity rises across a period and falls down a group; hydrogen, which fits neither trend, is placed by its value of 2.1 in Figure 7.6.<br>(a) Sb (1.9) &lt; As (2.0) &lt; P (2.1) = H (2.1) &lt; N (3.0). N, P, As and Sb lie in group 15 and fall in order down it, and hydrogen has the same value as phosphorus.<br>(b) Si (1.8) &lt; H (2.1) = P (2.1) &lt; S (2.5) &lt; Cl (3.0). Si, P, S and Cl lie in period 3 and rise in order across it.<br>(c) Sr (1.0) &lt; Ge (1.8) &lt; H (2.1) &lt; Br (2.8) &lt; Cl (3.0). Sr is a metal of group 2, Ge and Br lie in period 4 with Br to the right, and Cl lies above Br in group 17.<br>(d) K (0.8) &lt; Ca (1.0) &lt; Si (1.8) &lt; H (2.1) &lt; N (3.0). K and Ca are the metals at the left of period 4, Si lies farther right, and N lies farther right and higher still.<br>(e) Cs (0.7) &lt; Sr (1.0) &lt; Ge (1.8) &lt; H (2.1) &lt; Cl (3.0). Cs lies lowest at the far left, Sr is in group 2, and Ge and Cl lie farther right."
+    "solution": "电负性沿周期升高，沿族向下降低；氢不符合这两种趋势，按其在图 7.6 中的数值 2.1 排位。<br>（a）Sb (1.9) &lt; As (2.0) &lt; P (2.1) = H (2.1) &lt; N (3.0)。N、P、As 和 Sb 在第 15 族，沿族向下依次降低，氢的数值与磷相同。<br>（b）Si (1.8) &lt; H (2.1) = P (2.1) &lt; S (2.5) &lt; Cl (3.0)。Si、P、S 和 Cl 在第 3 周期，沿周期依次升高。<br>（c）Sr (1.0) &lt; Ge (1.8) &lt; H (2.1) &lt; Br (2.8) &lt; Cl (3.0)。Sr 是第 2 族的金属，Ge 和 Br 在第 4 周期且 Br 在右侧，Cl 在第 17 族中位于 Br 的上方。<br>（d）K (0.8) &lt; Ca (1.0) &lt; Si (1.8) &lt; H (2.1) &lt; N (3.0)。K 和 Ca 是第 4 周期左侧的金属，Si 更靠右，N 则更靠右且更靠上。<br>（e）Cs (0.7) &lt; Sr (1.0) &lt; Ge (1.8) &lt; H (2.1) &lt; Cl (3.0)。Cs 位于最左端的最下方，Sr 在第 2 族，Ge 和 Cl 更靠右。"
    }
   },
   {
@@ -256,13 +367,15 @@
    "source_id": "fs-idp31566784",
    "kind": "exercise",
    "bloom": "Analyze",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "electronegativity",
-   "prompt": "Which atoms can bond to sulfur so as to produce a positive partial charge on the sulfur atom?",
+   "prompt": "哪些原子与硫成键时，可使硫原子带部分正电荷？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "N, O, F, and Cl"
+    "solution": "N、O、F 和 Cl"
    }
   },
   {
@@ -270,13 +383,15 @@
    "source_id": "fs-idp9464672",
    "kind": "exercise",
    "bloom": "Apply",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "bond-type",
-   "prompt": "Which is the most polar bond?<br>(a) C–C<br>(b) C–H<br>(c) N–H<br>(d) O–H<br>(e) Se–H",
+   "prompt": "哪个键的极性最大？<br>（a）C–C<br>（b）C–H<br>（c）N–H<br>（d）O–H<br>（e）Se–H",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "(d) O–H is the most polar bond, with an electronegativity difference of 1.4. Bond polarity grows with the absolute value of the electronegativity difference, which the values of Figure 7.6 give for each bond: C–C, |2.5 – 2.5| = 0; C–H, |2.5 – 2.1| = 0.4; N–H, |3.0 – 2.1| = 0.9; O–H, |3.5 – 2.1| = 1.4; and Se–H, |2.4 – 2.1| = 0.3. The O–H difference is the largest, so its electrons are shifted most strongly, toward the oxygen atom, which carries the partial negative charge δ–."
+    "solution": "（d）O–H 是极性最大的键，其电负性差为 1.4。键的极性随电负性差的绝对值增大而增强，由图 7.6 中的数值可得各键的差值：C–C，|2.5 – 2.5| = 0；C–H，|2.5 – 2.1| = 0.4；N–H，|3.0 – 2.1| = 0.9；O–H，|3.5 – 2.1| = 1.4；Se–H，|2.4 – 2.1| = 0.3。O–H 的差值最大，因此其电子偏移得最厉害，偏向带部分负电荷 δ– 的氧原子。"
    }
   },
   {
@@ -284,13 +399,15 @@
    "source_id": "fs-idp173506592",
    "kind": "exercise",
    "bloom": "Apply",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "bond-type",
-   "prompt": "Identify the more polar bond in each of the following pairs of bonds:<br>(a) HF or HCl<br>(b) NO or CO<br>(c) SH or OH<br>(d) PCl or SCl<br>(e) CH or NH<br>(f) SO or PO<br>(g) CN or NN",
+   "prompt": "指出下列各对键中极性更大的键：<br>（a）HF 或 HCl<br>（b）NO 或 CO<br>（c）SH 或 OH<br>（d）PCl 或 SCl<br>（e）CH 或 NH<br>（f）SO 或 PO<br>（g）CN 或 NN",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) HF; (b) CO; (c) OH; (d) PCl; (e) NH; (f) PO; (g) CN"
+    "solution": "（a）HF；（b）CO；（c）OH；（d）PCl；（e）NH；（f）PO；（g）CN"
    }
   },
   {
@@ -298,33 +415,103 @@
    "source_id": "fs-idp51035456",
    "kind": "exercise",
    "bloom": "Analyze",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "pure-polar",
-   "prompt": "Which of the following molecules or ions contain polar bonds?<br>(a) O<sub>3</sub><br>(b) S<sub>8</sub><br>(c) O<sub>2</sub><sup>2−</sup><br>(d) NO<sub>3</sub><sup>−</sup><br>(e) CO<sub>2</sub><br>(f) H<sub>2</sub>S<br>(g) BH<sub>4</sub><sup>−</sup>",
+   "prompt": "下列哪些分子或离子含有极性键？<br>（a）O<sub>3</sub><br>（b）S<sub>8</sub><br>（c）O<sub>2</sub><sup>2−</sup><br>（d）NO<sub>3</sub><sup>−</sup><br>（e）CO<sub>2</sub><br>（f）H<sub>2</sub>S<br>（g）BH<sub>4</sub><sup>−</sup>",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Species (d) ${\\text{NO}}_{3}{}^{\\text{−}}$, (e) CO<sub>2</sub>, (f) H<sub>2</sub>S and (g) ${\\text{BH}}_{4}{}^{\\text{−}}$ contain polar bonds. When the atoms joined by a covalent bond are different, the bonding electrons are shared unequally, and the bond is polar; when the atoms are identical, they are shared equally, and the bond is pure covalent. O<sub>3</sub>, S<sub>8</sub> and ${\\text{O}}_{2}{}^{\\text{2−}}$ contain only O–O or S–S bonds, so all their bonds are pure covalent. The other four each join atoms of two different elements, with electronegativity differences from Figure 7.6 of 0.5 for N–O (3.5 – 3.0), 1.0 for C–O (3.5 – 2.5), 0.4 for S–H (2.5 – 2.1) and 0.1 for B–H (2.1 – 2.0). The B–H bonds are therefore only slightly polar, while the C–O bonds of CO<sub>2</sub> are the most polar of the set."
+    "solution": "（d）${\\text{NO}}_{3}{}^{\\text{−}}$、（e）CO<sub>2</sub>、（f）H<sub>2</sub>S 和（g）${\\text{BH}}_{4}{}^{\\text{−}}$ 含有极性键。当共价键所连接的原子不同时，成键电子被不平均地共用，键是极性的；当原子相同时，电子被平均共用，键是纯共价键。O<sub>3</sub>、S<sub>8</sub> 和 ${\\text{O}}_{2}{}^{\\text{2−}}$ 只含 O–O 或 S–S 键，所以它们的键都是纯共价键。另外四种各连接两种不同元素的原子，由图 7.6 得到的电负性差分别为：N–O 为 0.5（3.5 – 3.0），C–O 为 1.0（3.5 – 2.5），S–H 为 0.4（2.5 – 2.1），B–H 为 0.1（2.1 – 2.0）。因此 B–H 键只有轻微的极性，而 CO<sub>2</sub> 的 C–O 键是这一组中极性最大的。"
    }
   }
  ],
  "exercise_concepts": [
-  { "exercise": "cyl1", "concept": "bond-polarity", "weights_by": "ai" },
-  { "exercise": "cyl1", "concept": "electronegativity", "weights_by": "ai" },
-  { "exercise": "e1", "concept": "bond-type-from-electronegativity", "weights_by": "ai" },
-  { "exercise": "e2", "concept": "bond-type-from-electronegativity", "weights_by": "ai" },
-  { "exercise": "e3", "concept": "bond-polarity", "weights_by": "ai" },
-  { "exercise": "e3", "concept": "bond-type-from-electronegativity", "weights_by": "ai" },
-  { "exercise": "e4", "concept": "electronegativity", "weights_by": "ai" },
-  { "exercise": "e5", "concept": "electronegativity", "weights_by": "ai" },
-  { "exercise": "e6", "concept": "electronegativity", "weights_by": "ai" },
-  { "exercise": "e7", "concept": "electronegativity", "weights_by": "ai" },
-  { "exercise": "e8", "concept": "bond-polarity", "weights_by": "ai" },
-  { "exercise": "e8", "concept": "electronegativity", "weights_by": "ai" },
-  { "exercise": "e9", "concept": "bond-polarity", "weights_by": "ai" },
-  { "exercise": "e9", "concept": "electronegativity", "weights_by": "ai" },
-  { "exercise": "e10", "concept": "bond-polarity", "weights_by": "ai" },
-  { "exercise": "e10", "concept": "electronegativity", "weights_by": "ai" },
-  { "exercise": "e11", "concept": "bond-polarity", "weights_by": "ai" }
+  {
+   "exercise": "cyl1",
+   "concept": "bond-polarity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "electronegativity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e1",
+   "concept": "bond-type-from-electronegativity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e2",
+   "concept": "bond-type-from-electronegativity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "bond-polarity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "bond-type-from-electronegativity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e4",
+   "concept": "electronegativity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e5",
+   "concept": "electronegativity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e6",
+   "concept": "electronegativity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e7",
+   "concept": "electronegativity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e8",
+   "concept": "bond-polarity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e8",
+   "concept": "electronegativity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "bond-polarity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "electronegativity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e10",
+   "concept": "bond-polarity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e10",
+   "concept": "electronegativity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e11",
+   "concept": "bond-polarity",
+   "weights_by": "ai"
+  }
  ]
 }

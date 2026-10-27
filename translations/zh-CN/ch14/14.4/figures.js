@@ -30,7 +30,7 @@ const still = (d, draw) => register(d.fig, { update: () => {}, draw });
     nahco3: { name: 'NaHCO₃', eq: 'NaHCO₃(s) ⇌ Na⁺(aq) + HCO₃⁻(aq)', inert: 'Na⁺', a: ion('HCO₃⁻', '\\text{HCO}_{3}^{-}', 4.7e-11), b: ion('HCO₃⁻', '\\text{HCO}_{3}^{-}', 2.3e-8) },
     na2hpo4: { name: 'Na₂HPO₄', eq: 'Na₂HPO₄(s) ⇌ 2Na⁺(aq) + HPO₄²⁻(aq)', inert: 'Na⁺', a: ion('HPO₄²⁻', '\\text{HPO}_{4}^{2-}', 4.2e-13), b: ion('HPO₄²⁻', '\\text{HPO}_{4}^{2-}', 1.6e-7) },
   };
-  const salt = F.select(d.controls, { label: '\\text{salt}', key: 'salt', options: Object.keys(SALTS).map((k) => ({ value: k, label: SALTS[k].name })), value: 'nh4f', aria: 'the salt dissolved' });
+  const salt = F.select(d.controls, { label: '\\text{盐}', key: 'salt', options: Object.keys(SALTS).map((k) => ({ value: k, label: SALTS[k].name })), value: 'nh4f', aria: '所溶解的盐' });
   const LO = -14, HI = -2, X0 = 380, X1 = 1300, AY = 360, ROWS = [205, 285], BH = 44;
   const X = (lg) => X0 + ((lg - LO) / (HI - LO)) * (X1 - X0);
   const lg = (K) => (K > 0 ? Math.log10(K) : LO);
@@ -38,12 +38,12 @@ const still = (d, draw) => register(d.fig, { update: () => {}, draw });
   const inertOf = (s) => [s.a, s.b].filter((x) => !(x.K > 0)).map((x) => x.s).concat(s.inert ? [s.inert] : []);
   function verdict(s) {
     const { a, b } = s;
-    if (!(a.K > 0) && !(b.K > 0)) return `In ${s.name}, both ions are inert, so the solution is neutral.`;
-    if (!(b.K > 0)) return `In ${s.name}, ${a.s} is a weak acid and ${b.s} is inert, so the solution is acidic.`;
-    if (!(a.K > 0)) return `In ${s.name}, ${a.s} is inert and ${b.s} is a weak base, so the solution is basic.`;
+    if (!(a.K > 0) && !(b.K > 0)) return `${s.name} 中的两种离子都不与水反应，所以溶液呈中性。`;
+    if (!(b.K > 0)) return `${s.name} 中，${a.s} 是弱酸，${b.s} 不与水反应，所以溶液呈酸性。`;
+    if (!(a.K > 0)) return `${s.name} 中，${a.s} 不与水反应，${b.s} 是弱碱，所以溶液呈碱性。`;
     const acid = a.K > b.K;
-    if (a.s === b.s) return `In ${s.name}, ${a.s} is amphiprotic and its $${acid ? '\\kKa' : '\\kKbion'}$ is the larger, so the solution is ${acid ? 'acidic' : 'basic'}.`;
-    return `In ${s.name}, $\\kKa$ of ${a.s} is ${acid ? 'larger' : 'smaller'} than $\\kKbion$ of ${b.s}, so the solution is ${acid ? 'acidic' : 'basic'}.`;
+    if (a.s === b.s) return `${s.name} 中，${a.s} 是质子两性的，其 $${acid ? '\\kKa' : '\\kKbion'}$ 较大，所以溶液呈${acid ? '酸性' : '碱性'}。`;
+    return `${s.name} 中，${a.s} 的 $\\kKa$ ${acid ? '大于' : '小于'} ${b.s} 的 $\\kKbion$，所以溶液呈${acid ? '酸性' : '碱性'}。`;
   }
   function readout(s) {
     const { a, b } = s, A = `\\kKa(${a.t})`, B = `\\kKbion(${b.t})`;
@@ -56,9 +56,9 @@ const still = (d, draw) => register(d.fig, { update: () => {}, draw });
     topline(ctx, verdict(s));
     text(ctx, s.eq, 700, 112, PAL.ink, { size: 24, align: 'center' });
     const inert = inertOf(s);
-    if (inert.length) text(ctx, `inert: ${inert.join(', ')}`, 700, 148, PAL.muted, { size: 20, align: 'center' });
+    if (inert.length) text(ctx, `不水解：${inert.join('、')}`, 700, 148, PAL.muted, { size: 20, align: 'center' });
     const L = salt.mix((v) => [lg(SALTS[v].a.K), lg(SALTS[v].b.K)]);
-    [[s.a, 'acid ionization', '\\kKa'], [s.b, 'base ionization', '\\kKbion']].forEach(([io, role, sym], i) => {
+    [[s.a, '酸电离', '\\kKa'], [s.b, '碱电离', '\\kKbion']].forEach(([io, role, sym], i) => {
       const y = ROWS[i], xe = X(L[i]);
       text(ctx, io.s, X0 - 24, y - 11, PAL.ink, { size: 24, weight: 600, align: 'right' });
       text(ctx, role, X0 - 24, y + 15, PAL.muted, { size: 18, align: 'right' });
@@ -96,10 +96,10 @@ const still = (d, draw) => register(d.fig, { update: () => {}, draw });
 ===================================================================== */
 (function () {
   const d = sim('fig-hydrated-al');
-  const side = F.choice(d.controls, { label: '\\text{side}', key: 'side', options: [{ value: 'before', label: 'Al(H₂O)₆³⁺ + H₂O' }, { value: 'after', label: 'Al(H₂O)₅(OH)²⁺ + H₃O⁺' }], value: 'before', aria: 'the side of the equilibrium shown' });
-  const FRONT = { label: 'front', yaw: 0.7, pitch: 0.25 };
+  const side = F.choice(d.controls, { label: '\\text{一侧}', key: 'side', options: [{ value: 'before', label: 'Al(H₂O)₆³⁺ + H₂O' }, { value: 'after', label: 'Al(H₂O)₅(OH)²⁺ + H₃O⁺' }], value: 'before', aria: '所示平衡的一侧' });
+  const FRONT = { label: '正面', yaw: 0.7, pitch: 0.25 };
   const v = F.view3d(d.stage, { h: 500, dist: 14.5, tilt: FRONT.pitch, spin: 'off', pitch: [-1.2, 1.2], yaw: [-1.4, 1.4],
-    views: [FRONT, { label: 'above', yaw: 0.7, pitch: 1.2 }] });
+    views: [FRONT, { label: '上方', yaw: 0.7, pitch: 1.2 }] });
   v.setView(FRONT.yaw, FRONT.pitch);
   const has3 = !!v.scene;
   if (!has3) d.stage.querySelectorAll('.three-wrap').forEach((w) => { w.style.display = 'none'; });
@@ -108,23 +108,23 @@ const still = (d, draw) => register(d.fig, { update: () => {}, draw });
   const AXES = [[[1, 0, 0], [0, 0, 1]], [[-1, 0, 0], [0, 0, 1]], [[0, 1, 0], [1, 0, 0]], [[0, -1, 0], [0, 0, 1]], [[0, 0, 1], [0, 1, 0]], [[0, 0, -1], [1, 0, 0]]];
   const AO = 1.9, OH = 0.96, CA = Math.cos(52.25 * Math.PI / 180), SA = Math.sin(52.25 * Math.PI / 180);
   const SHIFT = [-1.3, -0.35, 0];
-  const atoms = [{ el: 'Al', p: [0, 0, 0], name: 'the aluminum atom, Al' }], bonds = [];
+  const atoms = [{ el: 'Al', p: [0, 0, 0], name: '铝原子，Al' }], bonds = [];
   let OB = 0, HT = 0;                            /* the donating oxygen and the hydrogen it gives */
   AXES.forEach(([u, w], i) => {
     const o = add([0, 0, 0], u, AO), io = atoms.length;
     if (i === 0) { OB = io; HT = io + 1; }
-    atoms.push({ el: 'O', p: o, name: i === 0 ? 'the oxygen atom of the bonded water molecule that donates a hydrogen ion' : 'an oxygen atom of a bonded water molecule' });
+    atoms.push({ el: 'O', p: o, name: i === 0 ? '给出氢离子的键合水分子的氧原子' : '键合水分子的氧原子' });
     bonds.push({ a: 0, b: io, metal: true });
     [1, -1].forEach((sg) => {
       const ih = atoms.length;
-      atoms.push({ el: 'H', p: add(o, add(u, w, sg * SA / CA), OH * CA), name: i === 0 && sg === 1 ? 'the hydrogen atom that moves to the free water molecule' : 'a hydrogen atom of a bonded water molecule' });
+      atoms.push({ el: 'H', p: add(o, add(u, w, sg * SA / CA), OH * CA), name: i === 0 && sg === 1 ? '转移到游离水分子上的氢原子' : '键合水分子的氢原子' });
       bonds.push({ a: io, b: ih });
     });
   });
   const D = (() => { const q = add(atoms[HT].p, atoms[OB].p, -1), l = Math.hypot(...q); return q.map((x) => x / l); })();
   const OF = add(atoms[OB].p, D, 2.75), IOF = atoms.length;
-  atoms.push({ el: 'O', p: OF, name: 'the oxygen atom of the free water molecule', free: true });
-  [1, -1].forEach((sg) => { atoms.push({ el: 'H', p: add(OF, add(D, [0, 1, 0], sg * SA / CA), OH * CA), name: 'a hydrogen atom of the free water molecule', free: true }); bonds.push({ a: IOF, b: atoms.length - 1 }); });
+  atoms.push({ el: 'O', p: OF, name: '游离水分子的氧原子', free: true });
+  [1, -1].forEach((sg) => { atoms.push({ el: 'H', p: add(OF, add(D, [0, 1, 0], sg * SA / CA), OH * CA), name: '游离水分子的氢原子', free: true }); bonds.push({ a: IOF, b: atoms.length - 1 }); });
   const STATE = {
     before: atoms.flatMap((a) => a.p),
     after: atoms.flatMap((a, i) => (i === HT ? add(add(OF, D, 1.2), D, -0.98) : a.free ? add(a.p, D, 1.2) : a.p)),
@@ -138,8 +138,8 @@ const still = (d, draw) => register(d.fig, { update: () => {}, draw });
   };
   const FLAT = { before: ['[Al(H₂O)₆]³⁺', 'H₂O'], after: ['[Al(H₂O)₅OH]²⁺', 'H₃O⁺'] };
   const HEAD = {
-    before: 'Six water molecules are bonded to Al through their O atoms; a seventh water molecule stands free beside them.',
-    after: 'One bonded water molecule has given a hydrogen ion to the free one, leaving OH bonded to Al and forming H₃O⁺.',
+    before: '六个水分子通过其 O 原子与 Al 键合；第七个水分子游离在它们旁边。',
+    after: '一个键合水分子已把一个氢离子给了游离的水分子，留下与 Al 键合的 OH，并生成 H₃O⁺。',
   };
   const g = has3 ? v.part(0) : null;
   let sig = '', meshes = [], sticks = [];

@@ -67,10 +67,10 @@ const SITES = {
 /* which sites the lone pairs take: equatorial in a trigonal bipyramid, opposite one another in an octahedron */
 const LONE_AT = { 2: [[]], 3: [[], [0]], 4: [[], [0], [0, 1]], 5: [[], [2], [2, 3], [2, 3, 4]], 6: [[], [0], [0, 1], [0, 1, 2], [0, 1, 2, 3]] };
 const MAX_LONE = { 2: 0, 3: 1, 4: 2, 5: 3, 6: 4 };
-const GEOM = { 2: 'linear', 3: 'trigonal planar', 4: 'tetrahedral', 5: 'trigonal bipyramidal', 6: 'octahedral' };
-const STRUCT = { 2: ['linear'], 3: ['trigonal planar', 'bent'], 4: ['tetrahedral', 'trigonal pyramidal', 'bent'], 5: ['trigonal bipyramidal', 'seesaw', 'T-shaped', 'linear'], 6: ['octahedral', 'square pyramidal', 'square planar', 'T-shaped', 'linear'] };
-const IDEAL = { 2: '180°', 3: '120°', 4: '109.5°', 5: '90° and 120°', 6: '90° and 180°' };
-const EXAMPLE = { 2: ['BeF₂ and CO₂'], 3: ['BCl₃', 'SO₂'], 4: ['CH₄', 'NH₃', 'H₂O'], 5: ['PF₅', 'SF₄', 'ClF₃', 'XeF₂'], 6: ['SF₆', 'BrF₅', 'XeF₄', '', ''] };
+const GEOM = { 2: '直线形', 3: '平面三角形', 4: '四面体形', 5: '三角双锥形', 6: '八面体形' };
+const STRUCT = { 2: ['直线形'], 3: ['平面三角形', 'V 形'], 4: ['四面体形', '三角锥形', 'V 形'], 5: ['三角双锥形', '跷跷板形', 'T 形', '直线形'], 6: ['八面体形', '四方锥形', '平面正方形', 'T 形', '直线形'] };
+const IDEAL = { 2: '180°', 3: '120°', 4: '109.5°', 5: '90° 和 120°', 6: '90° 和 180°' };
+const EXAMPLE = { 2: ['BeF₂ 和 CO₂'], 3: ['BCl₃', 'SO₂'], 4: ['CH₄', 'NH₃', 'H₂O'], 5: ['PF₅', 'SF₄', 'ClF₃', 'XeF₂'], 6: ['SF₆', 'BrF₅', 'XeF₄', '', ''] };
 /* the arcs the bench marks: pairs of site indices and the ideal angle between them */
 const ARCS = { 2: [[0, 1, '180°']], 3: [[1, 2, '120°']], 4: [[1, 2, '109.5°']], 5: [[0, 2, '90°'], [2, 3, '120°']], 6: [[2, 4, '90°']] };
 /* the molecule of a central atom E with n regions, `lone` of them lone pairs, at bond length L */
@@ -168,7 +168,7 @@ function moment(ctx, x1, y1, x2, y2, w = 4) {
    dimensions: which colour an atom takes and how a molecule record is built. */
 const { vec, sphere, stick, setStick, setLobe, lobe: lobe3, bond: bond3, arrow: arrow3, polyline, arc: arc3d } = F.mesh;
 /* every molecule turns freely and spins until the reader takes hold of it */
-const FREE = { spin: 'idle', views: [{ label: 'axis', yaw: 0, pitch: 0 }, { label: 'face-on', yaw: Math.PI / 2, pitch: 0.32 }] };
+const FREE = { spin: 'idle', views: [{ label: '沿轴', yaw: 0, pitch: 0 }, { label: '正对', yaw: Math.PI / 2, pitch: 0.32 }] };
 
 /* atoms as spheres in the element palette, bonds as cylinders and lone pairs as lobes in ink;
    `mol` is the same record the sketches read, with p in logical units (a bond about 150) */
@@ -176,14 +176,14 @@ const SCALE = 1 / 150;
 const darkPanel = () => parseInt(PAL.panel.slice(1, 3), 16) < 128;
 const atomColor = (sym) => (sym === 'E' || sym === 'X' ? (darkPanel() ? PAL.muted : PAL.soft2) : F.el(sym));
 /* the name of every symbol these figures draw, so no atom is an unnamed coloured ball */
-const NAMES = { H: 'hydrogen', C: 'carbon', N: 'nitrogen', O: 'oxygen', F: 'fluorine', Cl: 'chlorine', S: 'sulfur', B: 'boron', P: 'phosphorus', Be: 'beryllium', Xe: 'xenon', E: 'the central atom', X: 'a bonded atom' };
-const nameOf = (sym) => (NAMES[sym] ? `${NAMES[sym]} (${sym})` : sym);
+const NAMES = { H: '氢', C: '碳', N: '氮', O: '氧', F: '氟', Cl: '氯', S: '硫', B: '硼', P: '磷', Be: '铍', Xe: '氙', E: '中心原子', X: '成键原子' };
+const nameOf = (sym) => (NAMES[sym] ? `${NAMES[sym]}（${sym}）` : sym);
 function molecule3(g, mol, k = SCALE, v = null) {
   const P = (p) => V.mul(p, k);
   const out = { atoms: [], bonds: [], lones: [] };
   mol.atoms.forEach((a) => { const m = sphere(g, P(a.p), rOf(a.sym) / 62, atomColor(a.sym)); v?.pickable(m, nameOf(a.sym)); out.atoms.push(m); });
   mol.bonds.forEach(([i, j, order]) => out.bonds.push(bond3(g, P(mol.atoms[i].p), P(mol.atoms[j].p), order ?? 1)));
-  (mol.lones ?? []).forEach((l) => { const m = lobe3(g, P(mol.atoms[l.a].p), l.dir, (l.len ?? 150) * k); v?.pickable(m, 'a lone pair'); out.lones.push(m); });
+  (mol.lones ?? []).forEach((l) => { const m = lobe3(g, P(mol.atoms[l.a].p), l.dir, (l.len ?? 150) * k); v?.pickable(m, '孤电子对'); out.lones.push(m); });
   return out;
 }
 /* a figlib canvas beneath the viewer for the headline, the names and any graph */
@@ -199,7 +199,7 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
   const d = sim('sim-formaldehyde');
   let shown = 118;
   /* formaldehyde is planar, so the two viewpoints worth a button are the plane of the molecule and its edge (rule 26.2) */
-  const v = F.view3d(d.stage, { spin: 'idle', views: [{ label: 'in plane', yaw: 0, pitch: 0 }, { label: 'edge on', yaw: Math.PI / 2, pitch: 0 }], h: 440, dist: 5.8, onRender: () => { if (Math.round(flat()) !== shown) draw2d(); } });
+  const v = F.view3d(d.stage, { spin: 'idle', views: [{ label: '平面内', yaw: 0, pitch: 0 }, { label: '侧向', yaw: Math.PI / 2, pitch: 0 }], h: 440, dist: 5.8, onRender: () => { if (Math.round(flat()) !== shown) draw2d(); } });
   const g = v.part(0), c2 = strip(d, 190);
   const A = 1.15;   /* scene units per Ångstrom */
   const dirH1 = [Math.cos(121 * RAD), Math.sin(121 * RAD), 0], dirH2 = [Math.cos(-121 * RAD), Math.sin(-121 * RAD), 0];
@@ -217,14 +217,14 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
     /* the bracket beside the C=O bond, in the molecule's own plane */
     const y = -0.5 * A, b1 = [P.C[0], y, 0], b2 = [P.O[0], y, 0];
     polyline(g, [[P.C[0], y + 0.14 * A, 0], b1, b2, [P.O[0], y + 0.14 * A, 0]], F.C('length'));
-    hued(v.label('1.21 Å, center to center', [(P.C[0] + P.O[0]) / 2, y - 0.16 * A, 0], g, -14), 'length');
+    hued(v.label('1.21 Å，中心到中心', [(P.C[0] + P.O[0]) / 2, y - 0.16 * A, 0], g, -14), 'length');
     v.label('C', P.C, g, 44); v.label('O', P.O, g, 44); v.label('H', V.mul(dirH1, 1.3 * A), g, -14); v.label('H', V.mul(dirH2, 1.3 * A), g, -14);
   }
   function draw2d() {
     const { ctx } = begin(c2);
     shown = Math.round(flat());
-    topline(ctx, 'The H–C–H bond angle is 118° and the C=O bond distance is 1.21 Å; from this viewpoint a flat drawing would show the angle as ' + shown + '°.');
-    text(ctx, 'The C–H bonds are 1.11 Å and the H–C=O angles 121°.', 700, 130, PAL.muted, { size: 17, align: 'center' });
+    topline(ctx, 'H–C–H 键角为 118°，C=O 键长为 1.21 Å；从这个视点看，平面图会把这个角显示为 ' + shown + '°。');
+    text(ctx, 'C–H 键长为 1.11 Å，H–C=O 角为 121°。', 700, 130, PAL.muted, { size: 17, align: 'center' });
     readout(d.readout, `\\htmlClass{kv-angle}{\\angle\\text{HCH}} = 118^\\circ`);
   }
   function draw() { build(); draw2d(); }
@@ -260,16 +260,16 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
   const d = sim('sim-vsepr');
   const v = F.view3d(d.stage, { ...FREE, h: 460, dist: 7.2 });
   const g = v.part(0), c2 = strip(d, 350);
-  const N = ctl(d.controls, { label: '\\text{regions}', cls: '', min: 2, max: 6, step: 1, value: 4, unit: '', dec: 0, aria: 'regions of electron density', onInput: () => { fitLone(); shift(); } });
-  const LP = ctl(d.controls, { label: '\\text{lone pairs}', cls: '', min: 0, max: 4, step: 1, value: 1, unit: '', dec: 0, aria: 'lone pairs among the regions', detents: [0, 1, 2, 3, 4], onInput: () => shift() });
+  const N = ctl(d.controls, { label: '\\text{区域数}', cls: '', min: 2, max: 6, step: 1, value: 4, unit: '', dec: 0, aria: '电子密度区域的数目', onInput: () => { fitLone(); shift(); } });
+  const LP = ctl(d.controls, { label: '\\text{孤电子对数}', cls: '', min: 0, max: 4, step: 1, value: 1, unit: '', dec: 0, aria: '区域中孤电子对的数目', detents: [0, 1, 2, 3, 4], onInput: () => shift() });
   /* Figure 7.20: the three ways two lone pairs could be placed in a trigonal bipyramid, which only ClF3 needs, so the
      control appears only in that case rather than standing there doing nothing (rule 24.6) */
   const CLF = {
-    eq: { label: 'both equatorial', at: [2, 3], struct: 'T-shaped', why: 'This is the arrangement ClF₃ actually takes. Both lone pairs sit in equatorial positions, where the 120° angles give them the most room, and the three fluorine atoms make a T.' },
-    one: { label: 'one axial', at: [0, 2], struct: 'neither of the named structures', why: 'One lone pair has been moved to an axial position, where three neighbors stand at 90° to it rather than two, so this arrangement is less stable than the one ClF₃ takes.' },
-    both: { label: 'both axial', at: [0, 1], struct: 'trigonal planar', why: 'Both lone pairs have been moved to axial positions, where each is crowded by three neighbors at 90°, so this is the least stable of the three and is not what ClF₃ does.' },
+    eq: { label: '两个都在赤道位置', at: [2, 3], struct: 'T 形', why: 'ClF₃ 实际采取的就是这种排布。两对孤电子对都位于赤道位置，那里 120° 的角给了它们最大的空间，三个氟原子构成 T 形。' },
+    one: { label: '一个在轴向位置', at: [0, 2], struct: '以上两种构型都不是', why: '一对孤电子对被移到了轴向位置，那里有三个相邻区域与它成 90° 角，而不是两个，所以这种排布不如 ClF₃ 实际采取的那种稳定。' },
+    both: { label: '两个都在轴向位置', at: [0, 1], struct: '平面三角形', why: '两对孤电子对都被移到了轴向位置，在那里每一对都被三个与它成 90° 的相邻区域挤着，所以这是三种排布中最不稳定的一种，并不是 ClF₃ 的实际情形。' },
   };
-  const PL = F.select(d.controls, { label: '\\text{ClF}_3', options: Object.keys(CLF).map((k) => ({ value: k, label: CLF[k].label })), value: 'eq', aria: 'where the two lone pairs of ClF3 are placed', onInput: () => shift() });
+  const PL = F.select(d.controls, { label: '\\text{ClF}_3', options: Object.keys(CLF).map((k) => ({ value: k, label: CLF[k].label })), value: 'eq', aria: 'ClF3 的两对孤电子对所在的位置', onInput: () => shift() });
   const PLBOX = d.controls.lastElementChild;
   function fitLone() { const m = MAX_LONE[N.v]; if (LP.v > m) LP.set(m); }
   const { formula: fx, note } = F.readout(d);
@@ -349,7 +349,7 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
       const len = L * r.p, tip = V.mul(r.dir, len), bond = 1 - r.w;
       rod([0, 0, 0], V.mul(r.dir, len * (0.25 + 0.75 * bond)), 0.05, PAL.ink, bond);
       if (bond > 0.01) { const m = sphere(g, tip, rX * Math.min(1, r.p * 1.4), atomColor('X'), bond < 1 ? { transparent: true, opacity: bond } : undefined); v.pickable(m, nameOf('X')); }
-      if (r.w > 0.01) { const lb = lobe3(g, [0, 0, 0], r.dir, len * 0.8 * (0.35 + 0.65 * r.w)); lb.material.transparent = true; lb.material.opacity = 0.5 * r.w; v.pickable(lb, 'a lone pair'); }
+      if (r.w > 0.01) { const lb = lobe3(g, [0, 0, 0], r.dir, len * 0.8 * (0.35 + 0.65 * r.w)); lb.material.transparent = true; lb.material.opacity = 0.5 * r.w; v.pickable(lb, '孤电子对'); }
     });
     v.label('E', [0, 0, 0], g, -54);
     /* one bonded atom is named, since the rest are of the same kind (rule 26.7): a lower axial one at five regions, where
@@ -359,23 +359,23 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
     if (from.n === to.n || q > 0.5) ARCS[to.n].forEach(([i, j, lab]) => { const mid = arcRods(to.regions[i].dir, to.regions[j].dir, L * 0.5); plain(hued(v.label(lab, mid, g, 0), 'angle'), from.n === to.n ? 1 : 2 * q - 1); });
     if (to.n === 5) {
       const a = from.n === 5 ? 1 : q;
-      plain(v.label('axial', V.mul(to.regions[0].dir, L + 0.4), g, 0), a);
+      plain(v.label('轴向', V.mul(to.regions[0].dir, L + 0.4), g, 0), a);
       const eq = to.regions.slice(2).find((r) => r.w < 0.5) ?? to.regions[2];
-      plain(v.label('equatorial', V.mul(eq.dir, L + 0.55), g, 0), a);
+      plain(v.label('赤道', V.mul(eq.dir, L + 0.55), g, 0), a);
     }
     /* beneath: the sketch, straight on as the book draws it, and the two names */
     flat(ctx, from, 1 - q); flat(ctx, to, q);
-    text(ctx, 'in wedge and dash notation', 300, 336, PAL.muted, { size: 17, align: 'center' });
-    words(ctx, 620, 205, 'The ideal angles are ' + IDEAL[from.n] + '.', 'The ideal angles are ' + IDEAL[to.n] + '.', q, { size: 22, weight: 600 });
+    text(ctx, '楔形线与虚线表示法', 300, 336, PAL.muted, { size: 17, align: 'center' });
+    words(ctx, 620, 205, '理想角度为 ' + IDEAL[from.n] + '。', '理想角度为 ' + IDEAL[to.n] + '。', q, { size: 22, weight: 600 });
     const t = to, example = t.clf && t.place !== 'eq' ? '' : EXAMPLE[t.n][t.lone];
-    const lone = t.lone, bonds = t.n - lone, lp = lone === 0 ? 'no lone pair' : lone === 1 ? 'one lone pair' : lone + ' lone pairs';
-    topline(ctx, 'With ' + t.n + ' regions of electron density and ' + lp + ', the electron-pair geometry is ' + GEOM[t.n] + ' and the molecular structure is ' + t.struct + (example ? ', as in ' + example : '') + '.');
-    F.morph(fx, `\\mk{n}{${t.n}\\ \\text{regions}} = \\mk{b}{${bonds}\\ \\text{bond${bonds === 1 ? '' : 's'}}}` + (lone ? ` + \\mk{lp}{${lone}\\ \\text{lone pair${lone === 1 ? '' : 's'}}}` : ''));
+    const lone = t.lone, bonds = t.n - lone, lp = lone === 0 ? '无孤电子对' : lone + ' 对孤电子对';
+    topline(ctx, '有 ' + t.n + ' 个电子密度区域、' + lp + '时，电子对构型为' + GEOM[t.n] + '，分子构型为' + t.struct + (example ? '，例如 ' + example : '') + '。');
+    F.morph(fx, `\\mk{n}{${t.n}\\ \\text{个区域}} = \\mk{b}{${bonds}\\ \\text{个键}}` + (lone ? ` + \\mk{lp}{${lone}\\ \\text{对孤电子对}}` : ''));
     note.textContent = t.clf ? CLF[t.place].why
-      : lone === 0 ? 'With no lone pair on the central atom, the molecular structure is the electron-pair geometry itself.'
-      : t.n === 5 ? 'A lone pair takes an equatorial position, where the 120° angles leave it more room than the 90° angles of an axial position.'
-      : t.n === 6 && lone === 2 ? 'The two lone pairs sit on opposite sides of the octahedron, 180° apart, which keeps them as far from each other as possible.'
-      : 'The lone pair is a region of electron density but not an atom, so it shapes the molecule without appearing in its structure; the real angles are slightly smaller than the ideal ones.';
+      : lone === 0 ? '中心原子上没有孤电子对时，分子构型就是电子对构型本身。'
+      : t.n === 5 ? '孤电子对占据赤道位置，那里 120° 的角比轴向位置 90° 的角给它留出更多空间。'
+      : t.n === 6 && lone === 2 ? '两对孤电子对位于八面体的相对两侧，相隔 180°，这使它们彼此尽可能远。'
+      : '孤电子对是电子密度区域而不是原子，所以它塑造了分子，却不出现在分子构型中；实际角度比理想角度略小。';
   }
   still(d, draw);
 })();
@@ -392,8 +392,8 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
   const d = sim('sim-domains');
   const v = F.view3d(d.stage, { ...FREE, h: 420, dist: 5.8 });
   const g = v.part(0), c2 = strip(d, 400);
-  const N = ctl(d.controls, { label: '\\text{regions}', cls: '', min: 2, max: 6, step: 1, value: 4, unit: '', dec: 0, aria: 'regions of electron density', onInput: onRegions });
-  const LP = ctl(d.controls, { label: '\\text{lone pairs}', cls: '', min: 0, max: 2, step: 1, value: 0, unit: '', dec: 0, aria: 'lone pairs among the regions', detents: [0, 1, 2], onInput: reset });
+  const N = ctl(d.controls, { label: '\\text{区域数}', cls: '', min: 2, max: 6, step: 1, value: 4, unit: '', dec: 0, aria: '电子密度区域的数目', onInput: onRegions });
+  const LP = ctl(d.controls, { label: '\\text{孤电子对数}', cls: '', min: 0, max: 2, step: 1, value: 0, unit: '', dec: 0, aria: '区域中孤电子对的数目', detents: [0, 1, 2], onInput: reset });
   /* a repulsion alone cannot tell an axial site from an equatorial one, so at five and six regions the slider has nothing
      to say: it is set to none and disabled rather than moved and snapped back (rule 24.6) */
   function onRegions() { const n = N.v, max = n >= 5 ? 0 : Math.min(2, n - 2); if (LP.v > max) LP.set(max); LP.disable(n >= 5); reset(); }
@@ -440,7 +440,7 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
     v.clear();
     v.pickable(sphere(g, [0, 0, 0], rOf('E') / 62, atomColor('E')), nameOf('E')); v.label('E', [0, 0, 0], g, -54);
     sphere(g, [0, 0, 0], L, PAL.ink, { transparent: true, opacity: 0.07, depthWrite: false });
-    st.meshes = st.p.map((u, i) => (st.q[i] > 1 ? { lobe: v.pickable(lobe3(g, [0, 0, 0], u, L * 0.8), 'a lone pair') } : { atom: v.pickable(sphere(g, V.mul(u, L), rOf('X') / 62, atomColor('X')), nameOf('X')), bond: stick(g, [0, 0, 0], V.mul(u, L), 0.07, PAL.ink) }));
+    st.meshes = st.p.map((u, i) => (st.q[i] > 1 ? { lobe: v.pickable(lobe3(g, [0, 0, 0], u, L * 0.8), '孤电子对') } : { atom: v.pickable(sphere(g, V.mul(u, L), rOf('X') / 62, atomColor('X')), nameOf('X')), bond: stick(g, [0, 0, 0], V.mul(u, L), 0.07, PAL.ink) }));
     st.arc = null; st.arcLabel = null; st.built = true;
   }
   function draw() {
@@ -462,17 +462,17 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
     /* the trace of the smallest angle against time, on a fixed frame: 0 to 180°, 0 to 5 s */
     const box = { l: 400, r: 1040, t: 150, b: 320 };
     const cA = F.C('angle');
-    const { X, Y } = F.axes(ctx, box, [0, T], [0, 180], { xl: 'time (s)', xc: F.C('time'), yl: 'smallest angle between two regions', yc: cA, nx: 5, ny: 3, fy: (q) => fmt(q, 0) + '°' });
+    const { X, Y } = F.axes(ctx, box, [0, T], [0, 180], { xl: '时间（s）', xc: F.C('time'), yl: '两个区域之间的最小角', yc: cA, nx: 5, ny: 3, fy: (q) => fmt(q, 0) + '°' });
     ctx.save(); ctx.strokeStyle = cA; ctx.lineWidth = 4; ctx.beginPath(); st.trace.forEach(([tt, a], i) => { if (i) ctx.lineTo(X(tt), Y(a)); else ctx.moveTo(X(tt), Y(a)); }); ctx.stroke(); ctx.restore();
     F.dot(ctx, X(Math.min(tau, T)), Y(ang), cA, true, 8);
     const ideal = { 2: 180, 3: 120, 4: 109.5, 5: 90, 6: 90 }[n];
     line(ctx, box.l, Y(ideal), box.r, Y(ideal), alpha(PAL.ink, 0.4), 2, [10, 10]);
-    text(ctx, 'ideal ' + ideal + '°', box.r - 6, Y(ideal) - 16, PAL.muted, { size: 17, align: 'right' });
-    const found = lone ? GEOM[n] + ' electron-pair geometry, ' + STRUCT[n][Math.min(lone, MAX_LONE[n])] + ' molecular structure' : 'a ' + GEOM[n] + ' arrangement';
-    topline(ctx, settled ? 'The ' + n + ' regions have settled into ' + found + ', and the smallest angle between two of them is ' + fmt(ang, 0) + '°.'
-      : 'At t = ' + fmt(tau, 1) + ' s the regions are still pushing apart, and the smallest angle between two of them has grown to ' + fmt(ang, 0) + '°.');
-    readout(d.readout, `\\htmlClass{kv-angle}{\\text{smallest angle}} = ${fmt(ang, 1)}^\\circ`,
-      n >= 5 ? 'A repulsion alone cannot say which of two unlike positions a lone pair takes; that is decided by the size order, which the bench above applies.' : '');
+    text(ctx, '理想值 ' + ideal + '°', box.r - 6, Y(ideal) - 16, PAL.muted, { size: 17, align: 'right' });
+    const found = lone ? '电子对构型为' + GEOM[n] + '、分子构型为' + STRUCT[n][Math.min(lone, MAX_LONE[n])] : '排成' + GEOM[n];
+    topline(ctx, settled ? '这 ' + n + ' 个区域已稳定下来，' + found + '，其中两个区域之间的最小角为 ' + fmt(ang, 0) + '°。'
+      : '在 t = ' + fmt(tau, 1) + ' s 时，这些区域仍在相互推开，其中两个区域之间的最小角已增大到 ' + fmt(ang, 0) + '°。');
+    readout(d.readout, `\\htmlClass{kv-angle}{\\text{最小角}} = ${fmt(ang, 1)}^\\circ`,
+      n >= 5 ? '仅凭排斥作用无法判定孤电子对占据两种不同位置中的哪一种；这由大小顺序决定，上方的演示台应用的就是这个顺序。' : '');
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
@@ -486,7 +486,7 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
   function draw() {
     const { ctx } = begin(d.c);
     sketch(ctx, 700, 205, mol, 1);
-    readout(d.readout, '\\text{CH}_4', 'Four bonding pairs and no lone pair: the electron-pair geometry and the molecular structure are both tetrahedral, with 109.5° between every pair of bonds.');
+    readout(d.readout, '\\text{CH}_4', '四对成键电子对，没有孤电子对：电子对构型和分子构型都是四面体形，每两个键之间的夹角为 109.5°。');
   }
   still(d, draw);
 })();
@@ -509,10 +509,10 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
   function draw() {
     const { ctx } = begin(c2);
     v.clear();
-    [[nh3, '(a)'], [noLone, '(b)'], [noLone, '(c)']].forEach(([mol, cap], k) => {
+    [[nh3, '（a）'], [noLone, '（b）'], [noLone, '（c）']].forEach(([mol, cap], k) => {
       const g = parts[k];
       molecule3(g, mol, SCALE, v);
-      if (k === 0) { v.label('N', [0, 0, 0], g, -52); v.label('lone pair', [0, L * 0.85 * SCALE + 0.25, 0], g, 0); }
+      if (k === 0) { v.label('N', [0, 0, 0], g, -52); v.label('孤电子对', [0, L * 0.85 * SCALE + 0.25, 0], g, 0); }
       if (k === 2) { const cA = F.C('angle'); [[0, 1], [1, 2], [0, 2]].forEach(([i, j]) => arc3d(g, hs[i], hs[j], 0.5, [0, 0, 0], cA)); hued(v.label('106.8°', arc3d(g, hs[0], hs[1], 0.5, [0, 0, 0], cA), g, -18), 'angle'); }
       text(ctx, cap, 700 + (k - 1) * 300, 36, PAL.ink, { size: 19, weight: 600, align: 'center' });
     });
@@ -574,11 +574,11 @@ function twoPanels(id, molA, molB, capA, capB, small, formula) {
 }
 /* every region drawn as a lobe: the electron-pair geometry alone */
 const allLobes = (n, sym, L = 150) => ({ atoms: [{ sym, p: [0, 0, 0] }], bonds: [], lones: SITES[n].map((s) => ({ a: 0, dir: s, len: L * 0.85 })) });
-twoPanels('fig-water', allLobes(4, 'O'), generic(4, 2, 150, { c: 'O', x: 'H' }), '(a)', '(b)',
-  'The H–O–H angle is 104.5°, slightly less than the 109.5° of a regular tetrahedron.', '\\text{H}_2\\text{O}');
-twoPanels('fig-sf4', allLobes(5, 'S'), generic(5, 1, 150, { c: 'S', x: 'F' }), '(a)', '(b)',
-  'The lone pair takes one of the three equatorial positions, where it has the most room, and the four fluorine atoms make a seesaw.', '\\text{SF}_4');
-twoPanels('fig-xef4', allLobes(6, 'Xe'), generic(6, 2, 150, { c: 'Xe', x: 'F' }), '(a)', '(b)',
+twoPanels('fig-water', allLobes(4, 'O'), generic(4, 2, 150, { c: 'O', x: 'H' }), '（a）', '（b）',
+  'H–O–H 角为 104.5°，略小于正四面体的 109.5°。', '\\text{H}_2\\text{O}');
+twoPanels('fig-sf4', allLobes(5, 'S'), generic(5, 1, 150, { c: 'S', x: 'F' }), '（a）', '（b）',
+  '孤电子对占据三个赤道位置之一，那里它的空间最大，四个氟原子构成跷跷板形。', '\\text{SF}_4');
+twoPanels('fig-xef4', allLobes(6, 'Xe'), generic(6, 2, 150, { c: 'Xe', x: 'F' }), '（a）', '（b）',
   '', '\\text{XeF}_4');
 
 /* =====================================================================
@@ -590,22 +590,22 @@ function lewisFigure(id, H, atoms, bonds, main, small, extra) {
   still(d, draw);
 }
 lewisFigure('fig-lewis-co2', 220, [{ sym: 'O', x: -190, y: 0, lp: [90, 270] }, { sym: 'C', x: 0, y: 0 }, { sym: 'O', x: 190, y: 0, lp: [90, 270] }], [[0, 1, 2], [1, 2, 2]],
-  '\\text{O=C=O}', 'Each double bond counts as one region of electron density, and there is no lone pair on the carbon atom: two regions.');
+  '\\text{O=C=O}', '每个双键算作一个电子密度区域，碳原子上没有孤电子对：共两个区域。');
 lewisFigure('fig-lewis-bcl3', 340, [{ sym: 'B', x: 0, y: 20 }, { sym: 'Cl', x: 0, y: -130, lp: [90, 0, 180] }, { sym: 'Cl', x: -150, y: 105, lp: [180, 270, 135] }, { sym: 'Cl', x: 150, y: 105, lp: [0, 270, 45] }], [[0, 1, 1], [0, 2, 1], [0, 3, 1]],
-  '\\text{BCl}_3', 'Three bonds and no lone pair on the boron atom: three regions of electron density.');
+  '\\text{BCl}_3', '三个键，硼原子上没有孤电子对：共三个电子密度区域。');
 lewisFigure('fig-lewis-nh4', 320, [{ sym: 'N', x: 0, y: 0 }, { sym: 'H', x: 0, y: -110 }, { sym: 'H', x: 0, y: 110 }, { sym: 'H', x: -120, y: 0 }, { sym: 'H', x: 120, y: 0 }], [[0, 1, 1], [0, 2, 1], [0, 3, 1], [0, 4, 1]],
-  '\\text{NH}_4{}^{+}', 'Four bonds and no lone pair on the nitrogen atom: four regions of electron density.', (ctx) => ionBrackets(ctx, 540, 860, 30, 290, '+'));
+  '\\text{NH}_4{}^{+}', '四个键，氮原子上没有孤电子对：共四个电子密度区域。', (ctx) => ionBrackets(ctx, 540, 860, 30, 290, '+'));
 lewisFigure('fig-lewis-h2o', 260, [{ sym: 'O', x: 0, y: 0, lp: [90, 0] }, { sym: 'H', x: -120, y: 0 }, { sym: 'H', x: 0, y: 100 }], [[0, 1, 1], [0, 2, 1]],
-  '\\text{H}_2\\text{O}', 'Two bonds and two lone pairs on the oxygen atom: four regions of electron density.');
+  '\\text{H}_2\\text{O}', '氧原子上有两个键和两对孤电子对：共四个电子密度区域。');
 lewisFigure('fig-lewis-sf4', 360, [{ sym: 'S', x: 0, y: 0, lp: [180] }, { sym: 'F', x: 0, y: -130, lp: [90, 0, 180] }, { sym: 'F', x: 0, y: 130, lp: [270, 0, 180] }, { sym: 'F', x: 150, y: -70, lp: [90, 0, 270] }, { sym: 'F', x: 150, y: 70, lp: [90, 0, 270] }], [[0, 1, 1], [0, 2, 1], [0, 3, 1], [0, 4, 1]],
-  '\\text{SF}_4', 'Four bonds and one lone pair on the sulfur atom: five regions of electron density.');
+  '\\text{SF}_4', '硫原子上有四个键和一对孤电子对：共五个电子密度区域。');
 lewisFigure('fig-lewis-xef4', 360, [{ sym: 'Xe', x: 0, y: 0, lp: [90, 270] }, { sym: 'F', x: -160, y: -80, lp: [90, 180, 270] }, { sym: 'F', x: 160, y: -80, lp: [90, 0, 270] }, { sym: 'F', x: -160, y: 80, lp: [90, 180, 270] }, { sym: 'F', x: 160, y: 80, lp: [90, 0, 270] }], [[0, 1, 1], [0, 2, 1], [0, 3, 1], [0, 4, 1]],
-  '\\text{XeF}_4', 'Four bonds and two lone pairs on the xenon atom: six regions of electron density.');
+  '\\text{XeF}_4', '氙原子上有四个键和两对孤电子对：共六个电子密度区域。');
 /* glycine: H2N–CH2–C(=O)–OH, laid out as the book prints it */
 const GLY = [{ sym: 'N', x: -300, y: 0, lp: [90] }, { sym: 'H', x: -400, y: -70 }, { sym: 'H', x: -400, y: 70 }, { sym: 'C', x: -140, y: 0 }, { sym: 'H', x: -140, y: -110 }, { sym: 'H', x: -140, y: 110 },
   { sym: 'C', x: 20, y: 0 }, { sym: 'O', x: 120, y: -100, lp: [90, 0] }, { sym: 'O', x: 120, y: 100, lp: [180, 270] }, { sym: 'H', x: 250, y: 100 }];
 const GLY_BONDS = [[0, 1, 1], [0, 2, 1], [0, 3, 1], [3, 4, 1], [3, 5, 1], [3, 6, 1], [6, 7, 2], [6, 8, 1], [8, 9, 1]];
-lewisFigure('fig-lewis-glycine', 340, GLY, GLY_BONDS, '\\text{H}_2\\text{NCH}_2\\text{CO}_2\\text{H}', 'Four interior atoms, each with a local geometry of its own: the nitrogen, the two carbons and the oxygen that carries a hydrogen.');
+lewisFigure('fig-lewis-glycine', 340, GLY, GLY_BONDS, '\\text{H}_2\\text{NCH}_2\\text{CO}_2\\text{H}', '四个内部原子，各有各的局部构型：氮、两个碳，以及连有氢的氧。');
 (function () {
   const d = sim('fig-glycine-3d', 360);
   /* the same molecule with the bonds about N and the first C in wedge and dash notation */
@@ -640,9 +640,9 @@ lewisFigure('fig-lewis-glycine', 340, GLY, GLY_BONDS, '\\text{H}_2\\text{NCH}_2\
     atom(ctx, xo, y, 'O'); atom(ctx, xc, y, 'C'); atom(ctx, xs, y, 'S');
     lab.add('O', xo, y, -1, -0.5, PAL.ink, 20, 34); lab.add('C', xc, y, 0, -1, PAL.ink, 20, 34); lab.add('S', xs, y, 1, -0.5, PAL.ink, 20, 34);
     moment(ctx, xc - 30, y + 60, xo + 10, y + 60); moment(ctx, xc + 30, y + 60, xs - 60, y + 60);
-    text(ctx, 'bond moments', xc, y + 92, F.C('dipole-moment'), { size: 18, align: 'center' });
+    text(ctx, '键矩', xc, y + 92, F.C('dipole-moment'), { size: 18, align: 'center' });
     moment(ctx, xc + 40, y + 150, xc - 130, y + 150, 5);
-    text(ctx, 'overall dipole moment', xc, y + 182, F.C('dipole-moment'), { size: 18, align: 'center' });
+    text(ctx, '总偶极矩', xc, y + 182, F.C('dipole-moment'), { size: 18, align: 'center' });
     lab.flush();
     readout(d.readout, '\\text{O=C=S}');
   }
@@ -661,9 +661,9 @@ lewisFigure('fig-lewis-glycine', 340, GLY, GLY_BONDS, '\\text{H}_2\\text{NCH}_2\
       if (a.sym === 'Cl') moment(ctx, c[0] + ux * 30 + px, c[1] + uy * 30 + py, q[0] - ux * 30 + px, q[1] - uy * 30 + py, 4);
       else moment(ctx, q[0] - ux * 26 + px, q[1] - uy * 26 + py, c[0] + ux * 50 + px, c[1] + uy * 50 + py, 3);
     });
-    text(ctx, 'H < C < Cl in electronegativity', 1060, 230, PAL.muted, { size: 18, align: 'center' });
+    text(ctx, '电负性 H < C < Cl', 1060, 230, PAL.muted, { size: 18, align: 'center' });
     lab.flush();
-    readout(d.readout, '\\text{CH}_3\\text{Cl}', 'All four bond moments point toward the chlorine end of the molecule, so they add rather than cancel, and the molecule is polar.');
+    readout(d.readout, '\\text{CH}_3\\text{Cl}', '四个键矩都指向分子的氯端，因此它们相加而不是抵消，分子是极性的。');
   }
   still(d, draw);
 })();
@@ -676,7 +676,7 @@ lewisFigure('fig-lewis-glycine', 340, GLY, GLY_BONDS, '\\text{H}_2\\text{NCH}_2\
     text(ctx, 'δ−', 420 + 60, 150 - 60, cQ, { size: 20, weight: 600 }); text(ctx, 'δ+', 420 - 175, 150, cQ, { size: 20, weight: 600, align: 'right' }); text(ctx, 'δ+', 420 + 30, 150 + 118, cQ, { size: 20, weight: 600 });
     lewis(ctx, 980, 150, [{ sym: 'N', x: 0, y: 0, lp: [90] }, { sym: 'H', x: -120, y: 0 }, { sym: 'H', x: 120, y: 0 }, { sym: 'H', x: 0, y: 100 }], [[0, 1, 1], [0, 2, 1], [0, 3, 1]]);
     text(ctx, 'δ−', 980 + 40, 150 - 60, cQ, { size: 20, weight: 600 }); text(ctx, 'δ+', 980 - 175, 150, cQ, { size: 20, weight: 600, align: 'right' }); text(ctx, 'δ+', 980 + 175, 150, cQ, { size: 20, weight: 600 }); text(ctx, 'δ+', 980 + 30, 150 + 118, cQ, { size: 20, weight: 600 });
-    readout(d.readout, '\\text{H}_2\\text{S} \\qquad \\text{NH}_3', 'Every bond moment in each molecule is the same, but the bent and the trigonal pyramidal structures do not let them cancel.');
+    readout(d.readout, '\\text{H}_2\\text{S} \\qquad \\text{NH}_3', '每个分子中的各个键矩都相同，但 V 形和三角锥形的构型使它们不能抵消。');
   }
   still(d, draw);
 })();
@@ -691,7 +691,7 @@ lewisFigure('fig-lewis-glycine', 340, GLY, GLY_BONDS, '\\text{H}_2\\text{NCH}_2\
 (function () {
   const d = sim('sim-bond-moments');
   /* the list holds molecules of every shape, so the two viewpoints worth a button are the plain ones (rule 26.2) */
-  const v = F.view3d(d.stage, { spin: 'idle', views: [{ label: 'front', yaw: 0, pitch: 0.18 }, { label: 'above', yaw: 0, pitch: 1.2 }], h: 440, dist: 6 });
+  const v = F.view3d(d.stage, { spin: 'idle', views: [{ label: '正面', yaw: 0, pitch: 0.18 }, { label: '上方', yaw: 0, pitch: 1.2 }], h: 440, dist: 6 });
   const g = v.part(0), c2 = strip(d, 250);
   /* the electronegativities the book prints in Figure 7.6, which is the table this figure cites (rule 25) */
   const EN = { H: 2.1, B: 2.0, C: 2.5, N: 3.0, O: 3.5, F: 4.0, P: 2.1, S: 2.5, Cl: 3.0 };
@@ -701,21 +701,21 @@ lewisFigure('fig-lewis-glycine', 340, GLY, GLY_BONDS, '\\text{H}_2\\text{NCH}_2\
   const bent = (angle) => [[Math.cos((-90 - angle / 2) * RAD), Math.sin((-90 - angle / 2) * RAD), 0], [Math.cos((-90 + angle / 2) * RAD), Math.sin((-90 + angle / 2) * RAD), 0]];
   const mk = (name, formula, c, terms, structure, order = 1) => ({ name, formula, structure, atoms: [{ sym: c, p: [0, 0, 0] }, ...terms.map(([s, dir]) => ({ sym: s, p: V.mul(dir, L) }))], bonds: terms.map((_, i) => [0, i + 1, Array.isArray(order) ? order[i] : order]) });
   /* HF and CO are molecules of two atoms; C–H and B–F are single bonds the book draws on their own in Figure 7.26 */
-  const pair = (name, a, b, whole = true) => ({ name, formula: name, structure: whole ? 'a molecule of two atoms' : 'a single bond', atoms: [{ sym: a, p: [-L / 2, 0, 0] }, { sym: b, p: [L / 2, 0, 0] }], bonds: [[0, 1, 1]], diatomic: true, whole });
+  const pair = (name, a, b, whole = true) => ({ name, formula: name, structure: whole ? '双原子分子' : '单键', atoms: [{ sym: a, p: [-L / 2, 0, 0] }, { sym: b, p: [L / 2, 0, 0] }], bonds: [[0, 1, 1]], diatomic: true, whole });
   const MOLS = [
     pair('HF', 'H', 'F'), pair('CO', 'C', 'O'), pair('C–H', 'C', 'H', false), pair('B–F', 'B', 'F', false),
-    mk('CO₂', '\\text{CO}_2', 'C', [['O', [1, 0, 0]], ['O', [-1, 0, 0]]], 'linear', 2),
-    mk('OCS', '\\text{OCS}', 'C', [['O', [-1, 0, 0]], ['S', [1, 0, 0]]], 'linear', 2),
-    mk('H₂O', '\\text{H}_2\\text{O}', 'O', bent(104.5).map((q) => ['H', q]), 'bent, 104.5°'),
-    mk('H₂S', '\\text{H}_2\\text{S}', 'S', bent(92.1).map((q) => ['H', q]), 'bent, 92°'),
-    mk('BF₃', '\\text{BF}_3', 'B', SITES[3].map((q) => ['F', q]), 'trigonal planar'),
-    mk('NH₃', '\\text{NH}_3', 'N', pyramid(107).map((q) => ['H', q]), 'trigonal pyramidal, 107°'),
-    mk('CH₄', '\\text{CH}_4', 'C', SITES[4].map((q) => ['H', q]), 'tetrahedral'),
-    mk('CH₃Cl', '\\text{CH}_3\\text{Cl}', 'C', SITES[4].map((q, i) => [i === 0 ? 'Cl' : 'H', q]), 'tetrahedral'),
-    mk('PF₅', '\\text{PF}_5', 'P', SITES[5].map((q) => ['F', q]), 'trigonal bipyramidal'),
-    mk('SF₆', '\\text{SF}_6', 'S', SITES[6].map((q) => ['F', q]), 'octahedral'),
+    mk('CO₂', '\\text{CO}_2', 'C', [['O', [1, 0, 0]], ['O', [-1, 0, 0]]], '直线形', 2),
+    mk('OCS', '\\text{OCS}', 'C', [['O', [-1, 0, 0]], ['S', [1, 0, 0]]], '直线形', 2),
+    mk('H₂O', '\\text{H}_2\\text{O}', 'O', bent(104.5).map((q) => ['H', q]), 'V 形,104.5°'),
+    mk('H₂S', '\\text{H}_2\\text{S}', 'S', bent(92.1).map((q) => ['H', q]), 'V 形,92°'),
+    mk('BF₃', '\\text{BF}_3', 'B', SITES[3].map((q) => ['F', q]), '平面三角形'),
+    mk('NH₃', '\\text{NH}_3', 'N', pyramid(107).map((q) => ['H', q]), '三角锥形,107°'),
+    mk('CH₄', '\\text{CH}_4', 'C', SITES[4].map((q) => ['H', q]), '四面体形'),
+    mk('CH₃Cl', '\\text{CH}_3\\text{Cl}', 'C', SITES[4].map((q, i) => [i === 0 ? 'Cl' : 'H', q]), '四面体形'),
+    mk('PF₅', '\\text{PF}_5', 'P', SITES[5].map((q) => ['F', q]), '三角双锥形'),
+    mk('SF₆', '\\text{SF}_6', 'S', SITES[6].map((q) => ['F', q]), '八面体形'),
   ];
-  const M = pick(d.controls, { label: '\\text{molecule or bond}', value: 6, aria: 'the molecule or the single bond' }, MOLS.map((m) => m.name));
+  const M = pick(d.controls, { label: '\\text{分子或键}', value: 6, aria: '分子或单键' }, MOLS.map((m) => m.name));
   /* the labels are tiered (rule 26.7): the central atom and one bonded atom are named, since the rest are of the same kind;
      every atom answers the pointer */
   const K = 0.62;   /* scene units of arrow per unit of electronegativity difference */
@@ -742,15 +742,15 @@ lewisFigure('fig-lewis-glycine', 340, GLY, GLY_BONDS, '\\text{H}_2\\text{NCH}_2\
     mol.atoms.forEach((a, i) => { if (i > 1) return; v.label(a.sym, V.mul(a.p, SCALE), g, i === 0 && !mol.diatomic ? -52 : 0); });
     /* the electronegativities the arrows are drawn from */
     const seen = new Set(); let y = 130;
-    rows.forEach(({ a, b, dEN }) => { const key = a.sym + b.sym; if (seen.has(key)) return; seen.add(key); text(ctx, a.sym + '–' + b.sym + ': ' + fmt(EN[a.sym], 1) + ' and ' + fmt(EN[b.sym], 1) + ', a difference of ' + fmt(Math.abs(dEN), 1), 1360, y, PAL.ink, { size: 18, align: 'right' }); y += 30; });
-    text(ctx, 'electronegativities from Figure 7.6', 1360, y + 4, PAL.muted, { size: 16, align: 'right' });
-    if (polar && !mol.diatomic) text(ctx, 'The heavier arrow is the dipole moment of the molecule.', 40, 130, F.C('dipole-moment'), { size: 19 });
+    rows.forEach(({ a, b, dEN }) => { const key = a.sym + b.sym; if (seen.has(key)) return; seen.add(key); text(ctx, a.sym + '–' + b.sym + '：' + fmt(EN[a.sym], 1) + ' 和 ' + fmt(EN[b.sym], 1) + '，差值为 ' + fmt(Math.abs(dEN), 1), 1360, y, PAL.ink, { size: 18, align: 'right' }); y += 30; });
+    text(ctx, '电负性取自图 7.6', 1360, y + 4, PAL.muted, { size: 16, align: 'right' });
+    if (polar && !mol.diatomic) text(ctx, '较粗的箭头是分子的偶极矩。', 40, 130, F.C('dipole-moment'), { size: 19 });
     const one = rows[0];
-    topline(ctx, mol.diatomic ? 'In ' + (mol.whole ? 'the ' + mol.name + ' molecule' : 'the ' + mol.name + ' bond') + ' the electronegativity difference is ' + fmt(Math.abs(one.dEN), 1) + ', so its bond moment is ' + (Math.abs(one.dEN) > 1 ? 'a long' : Math.abs(one.dEN) > 0.5 ? 'a moderate' : 'a short') + ' vector pointing toward the ' + (one.dEN >= 0 ? one.b.sym : one.a.sym) + ' atom.'
-      : mol.name + ' is ' + mol.structure.split(',')[0] + ', so its ' + mol.bonds.length + ' bond moments ' + (polar ? 'do not cancel and the molecule is polar' : 'cancel and the molecule is nonpolar') + '.');
-    readout(d.readout, mol.diatomic ? `\\kmu \\propto |\\Delta\\text{EN}| = ${fmt(Math.abs(one.dEN), 2)}` : `\\left|\\sum \\vec{\\kmu}_{\\text{bond}}\\right| \\propto ${fmt(net, 2)}`,
-      mol.diatomic ? (mol.whole ? 'For a molecule of two atoms there is only one bond, so its bond dipole moment is the dipole moment of the molecule.' : 'For a single bond there is nothing to add, so the bond moment stands on its own.')
-        : rows.some((r) => Math.abs(r.dEN) < 0.02) ? 'Figure 7.6 gives carbon and sulfur the same electronegativity, so the C–S bond has no bond moment on that scale, and the whole of this dipole moment comes from the C=O bond. The text notes that sulfur is in fact very slightly the more electronegative of the two.'
+    topline(ctx, mol.diatomic ? '在 ' + mol.name + (mol.whole ? ' 分子' : ' 键') + '中，电负性之差为 ' + fmt(Math.abs(one.dEN), 1) + '，所以它的键矩是一个' + (Math.abs(one.dEN) > 1 ? '长' : Math.abs(one.dEN) > 0.5 ? '中等长度' : '短') + '的矢量，指向 ' + (one.dEN >= 0 ? one.b.sym : one.a.sym) + ' 原子。'
+      : mol.name + ' 的分子构型是' + (/^[A-Za-z]/.test(mol.structure) ? ' ' : '') + mol.structure.split(',')[0] + '，所以它的 ' + mol.bonds.length + ' 个键矩' + (polar ? '不能抵消，分子是极性的' : '相互抵消，分子是非极性的') + '。');
+    readout(d.readout, mol.diatomic ? `\\kmu \\propto |\\Delta\\text{EN}| = ${fmt(Math.abs(one.dEN), 2)}` : `\\left|\\sum \\vec{\\kmu}_{\\text{键}}\\right| \\propto ${fmt(net, 2)}`,
+      mol.diatomic ? (mol.whole ? '双原子分子只有一个键，所以它的键偶极矩就是分子的偶极矩。' : '单个键没有可以相加的键矩，所以这一个键矩就是全部。')
+        : rows.some((r) => Math.abs(r.dEN) < 0.02) ? '图 7.6 给碳和硫的电负性相同，所以在该标度上 C–S 键没有键矩，这个偶极矩全部来自 C=O 键。正文指出，硫实际上比碳的电负性略大一点。'
         : '');
   }
   still(d, draw);
@@ -765,8 +765,8 @@ lewisFigure('fig-lewis-glycine', 340, GLY, GLY_BONDS, '\\text{H}_2\\text{NCH}_2\
 (function () {
   const d = sim('sim-field', 560);
   const MOLS = [['HF', 'H', 'F', true], ['F₂', 'F', 'F', false]];
-  const M = pick(d.controls, { label: '\\text{molecule}', value: 0, aria: 'the molecule between the plates', onInput: reset }, MOLS.map((m) => m[0]));
-  const N = ctl(d.controls, { label: '\\text{molecules}', cls: '', min: 6, max: 20, step: 1, value: 12, unit: '', dec: 0, aria: 'number of molecules', onInput: reset });
+  const M = pick(d.controls, { label: '\\text{分子}', value: 0, aria: '极板之间的分子', onInput: reset }, MOLS.map((m) => m[0]));
+  const N = ctl(d.controls, { label: '\\text{分子数}', cls: '', min: 6, max: 20, step: 1, value: 12, unit: '', dec: 0, aria: '分子的数目', onInput: reset });
   const T = 6, ON = 3, cy = cycle(() => T, 1.5);
   function reset() { cy.reset(); }
   let hits = []; F.hover(d.stage, () => hits);
@@ -789,7 +789,7 @@ lewisFigure('fig-lewis-glycine', 340, GLY, GLY_BONDS, '\\text{H}_2\\text{NCH}_2\
     const cNeg = F.ref('negative-plate'), cPos = F.ref('positive-plate'), cQ = F.C('charge');
     [[300, cNeg], [1066, cPos]].forEach(([x, c]) => { ctx.save(); ctx.fillStyle = alpha(c, 0.3); ctx.strokeStyle = c; ctx.lineWidth = 3; ctx.fillRect(x, 110, 34, 360); ctx.strokeRect(x, 110, 34, 360); ctx.restore(); });
     text(ctx, on ? '−' : '', 317, 96, cNeg, { size: 30, weight: 600, align: 'center' }); text(ctx, on ? '+' : '', 1083, 96, cPos, { size: 30, weight: 600, align: 'center' });
-    text(ctx, on ? 'negative plate' : 'plate', 317, 496, cNeg, { size: 17, align: 'center' }); text(ctx, on ? 'positive plate' : 'plate', 1083, 496, cPos, { size: 17, align: 'center' });
+    text(ctx, on ? '负极板' : '极板', 317, 496, cNeg, { size: 17, align: 'center' }); text(ctx, on ? '正极板' : '极板', 1083, 496, cPos, { size: 17, align: 'center' });
     if (on) for (let k = 0; k < 6; k++) { const y = 140 + k * 60; arrow(ctx, 1060, y, 342, y, alpha(PAL.ink, 0.22), 2); }
     /* the molecules: A at the tail end, B at the head end, along the angle th; when the field is on a polar one turns its A end to the negative plate */
     hits = [];
@@ -801,19 +801,19 @@ lewisFigure('fig-lewis-glycine', 340, GLY, GLY_BONDS, '\\text{H}_2\\text{NCH}_2\
       const half = 26, ax = m.x - Math.cos(th) * half, ay = m.y - Math.sin(th) * half, bx = m.x + Math.cos(th) * half, by = m.y + Math.sin(th) * half;
       line(ctx, ax, ay, bx, by, PAL.ink, 4);
       atom(ctx, bx, by, B, 15); atom(ctx, ax, ay, A, A === 'H' ? 11 : 15);
-      const nm = { H: 'hydrogen', F: 'fluorine' }, q = (s, end) => (polar ? `, the ${end} end` : '');
-      hits.push({ x: ax, y: ay, r: 16, name: `a ${nm[A]} atom${q(A, 'δ+')}` }, { x: bx, y: by, r: 16, name: `a ${nm[B]} atom${q(B, 'δ−')}` });
+      const nm = { H: '氢', F: '氟' }, q = (s, end) => (polar ? `，${end} 端` : '');
+      hits.push({ x: ax, y: ay, r: 16, name: `${nm[A]}原子${q(A, 'δ+')}` }, { x: bx, y: by, r: 16, name: `${nm[B]}原子${q(B, 'δ−')}` });
       /* the partial charges are named on one molecule, a representative of the kind (rule 26.7) */
       if (polar && i === 0) { text(ctx, 'δ+', ax - Math.cos(th) * 22, ay - Math.sin(th) * 22, cQ, { size: 14, weight: 600, align: 'center' }); text(ctx, 'δ−', bx + Math.cos(th) * 22, by + Math.sin(th) * 22, cQ, { size: 14, weight: 600, align: 'center' }); }
     });
-    text(ctx, on ? 'electric field on' : 'no electric field', 700, 496, PAL.ink, { size: 19, weight: 600, align: 'center' });
-    text(ctx, name + (polar ? ': the fluorine end carries δ− and the hydrogen end δ+' : ': two fluorine atoms, no difference in electronegativity, no dipole moment'), 700, 526, PAL.muted, { size: 17, align: 'center' });
+    text(ctx, on ? '电场接通' : '无电场', 700, 496, PAL.ink, { size: 19, weight: 600, align: 'center' });
+    text(ctx, name + (polar ? '：氟端带 δ−，氢端带 δ+' : '：两个氟原子，电负性没有差别，没有偶极矩'), 700, 526, PAL.muted, { size: 17, align: 'center' });
     const aligned = on && polar && tau - ON > 1.2;
-    topline(ctx, !on ? 'At t = ' + fmt(tau, 1) + ' s the field is off and the ' + name + ' molecules lie at random, as they always do in the liquid.'
-      : polar ? (aligned ? 'The field is on, and every HF molecule has turned its hydrogen end toward the negative plate and its fluorine end toward the positive one.' : 'At t = ' + fmt(tau, 1) + ' s the field is on and the HF molecules are turning to align with it.')
-      : 'The field is on, but F₂ has no dipole moment, so the molecules go on tumbling as before.');
+    topline(ctx, !on ? '在 t = ' + fmt(tau, 1) + ' s 时电场关闭，' + name + ' 分子随机排列，在液体中它们总是这样。'
+      : polar ? (aligned ? '电场已接通，每个 HF 分子都已使氢端朝向负极板、氟端朝向正极板。' : '在 t = ' + fmt(tau, 1) + ' s 时电场已接通，HF 分子正在转动以与电场取向一致。')
+      : '电场已接通，但 F₂ 没有偶极矩，所以分子仍像以前一样翻滚。');
     readout(d.readout, polar ? '\\text{H}^{\\delta+}\\text{–F}^{\\delta-}' : '\\text{F–F}',
-      polar ? '' : 'A nonpolar molecule has no positive and negative ends for the field to pull on, so it is not aligned and not attracted.');
+      polar ? '' : '非极性分子没有可供电场拉动的正端和负端，所以它既不取向排列，也不被吸引。');
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();

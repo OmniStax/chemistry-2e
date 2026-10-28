@@ -1,6 +1,6 @@
 {
  "id": "kb",
- "title": "Ionization Constants of Weak Bases",
+ "title": "弱碱的电离常数",
  "kind": "table",
  "source": {
   "module": "m68867",
@@ -10,38 +10,38 @@
  "tables": [
   {
    "id": "ionization-constants-of-weak-bases",
-   "title": "Ionization Constants of Weak Bases",
+   "title": "弱碱的电离常数",
    "columns": [
     {
      "id": "base",
-     "label": "Base",
+     "label": "碱",
      "kind": "text"
     },
     {
      "id": "kb-at-25-c",
-     "label": "<em>K</em><sub>b</sub> at 25 °C",
+     "label": "25 °C 时的 <em>K</em><sub>b</sub>",
      "kind": "number"
     }
    ],
    "rows": [
     [
-     "ammonia",
+     "氨",
      "1.8 × 10<sup>−5</sup>"
     ],
     [
-     "dimethylamine",
+     "二甲胺",
      "5.9 × 10<sup>−4</sup>"
     ],
     [
-     "methylamine",
+     "甲胺",
      "4.4 × 10<sup>−4</sup>"
     ],
     [
-     "phenylamine (aniline)",
+     "苯胺",
      "4.3 × 10<sup>−10</sup>"
     ],
     [
-     "trimethylamine",
+     "三甲胺",
      "6.3 × 10<sup>−5</sup>"
     ]
    ]

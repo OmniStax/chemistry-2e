@@ -1,6 +1,6 @@
 {
  "id": "ka",
- "title": "Ionization Constants of Weak Acids",
+ "title": "弱酸的电离常数",
  "kind": "table",
  "source": {
   "module": "m68866",
@@ -10,32 +10,32 @@
  "tables": [
   {
    "id": "ionization-constants-of-weak-acids",
-   "title": "Ionization Constants of Weak Acids",
+   "title": "弱酸的电离常数",
    "columns": [
     {
      "id": "acid",
-     "label": "Acid",
+     "label": "酸",
      "kind": "text"
     },
     {
      "id": "formula",
-     "label": "Formula",
+     "label": "化学式",
      "kind": "formula"
     },
     {
      "id": "ka-at-25-c",
-     "label": "<em>K<sub>a</sub></em> at 25 °C",
+     "label": "25 °C 时的 <em>K<sub>a</sub></em>",
      "kind": "number"
     }
    ],
    "rows": [
     [
-     "acetic",
+     "乙酸",
      "CH<sub>3</sub>CO<sub>2</sub><em>H</em>",
      "1.8 × 10<sup>−5</sup>"
     ],
     [
-     "arsenic",
+     "砷酸",
      "<em>H<sub>3</sub></em>AsO<sub>4</sub>",
      "5.5 × 10<sup>−3</sup>"
     ],
@@ -50,17 +50,17 @@
      ""
     ],
     [
-     "arsenous",
+     "亚砷酸",
      "<em>H<sub>3</sub></em>AsO<sub>3</sub>",
      "5.1 × 10<sup>−10</sup>"
     ],
     [
-     "boric",
+     "硼酸",
      "<em>H<sub>3</sub></em>BO<sub>3</sub>",
      "5.4 × 10<sup>−10</sup>"
     ],
     [
-     "carbonic",
+     "碳酸",
      "<em>H<sub>2</sub></em>CO<sub>3</sub>",
      "4.3 × 10<sup>−7</sup>"
     ],
@@ -70,32 +70,32 @@
      ""
     ],
     [
-     "formic",
+     "甲酸",
      "HCO<sub>2</sub><em>H</em>",
      "1.8 × 10<sup>−4</sup>"
     ],
     [
-     "hydrazoic",
+     "叠氮酸",
      "<em>H</em>N<sub>3</sub>",
      "2.5 × 10<sup>−5</sup>"
     ],
     [
-     "hydrocyanic",
+     "氢氰酸",
      "<em>H</em>CN",
      "4.9 × 10<sup>−10</sup>"
     ],
     [
-     "hydrofluoric",
+     "氢氟酸",
      "<em>H</em>F",
      "6.4 × 10<sup>−4</sup>"
     ],
     [
-     "hydrogen peroxide",
+     "过氧化氢",
      "<em>H<sub>2</sub></em>O<sub>2</sub>",
      "2.4 × 10<sup>−12</sup>"
     ],
     [
-     "hydrogen selenide",
+     "硒化氢",
      "<em>H<sub>2</sub></em>Se",
      "1.29 × 10<sup>−4</sup>"
     ],
@@ -105,12 +105,12 @@
      ""
     ],
     [
-     "hydrogen sulfate ion",
+     "硫酸氢根离子",
      "",
      "1.2 × 10<sup>−2</sup>"
     ],
     [
-     "hydrogen sulfide",
+     "硫化氢",
      "<em>H<sub>2</sub></em>S",
      "8.9 × 10<sup>−8</sup>"
     ],
@@ -120,7 +120,7 @@
      ""
     ],
     [
-     "hydrogen telluride",
+     "碲化氢",
      "<em>H<sub>2</sub></em>Te",
      "2.3 × 10<sup>−3</sup>"
     ],
@@ -130,27 +130,27 @@
      ""
     ],
     [
-     "hypobromous",
+     "次溴酸",
      "<em>H</em>BrO",
      "2.8 × 10<sup>−9</sup>"
     ],
     [
-     "hypochlorous",
+     "次氯酸",
      "<em>H</em>ClO",
      "2.9 × 10<sup>−8</sup>"
     ],
     [
-     "isocyanic",
+     "异氰酸",
      "<em>H</em>CNO",
      "2 × 10<sup>−4</sup>"
     ],
     [
-     "nitrous",
+     "亚硝酸",
      "<em>H</em>NO<sub>2</sub>",
      "4.6 × 10<sup>−4</sup>"
     ],
     [
-     "oxalic",
+     "草酸",
      "<em>H<sub>2</sub></em>C<sub>2</sub>O<sub>4</sub>",
      "6.0 × 10<sup>−2</sup>"
     ],
@@ -160,7 +160,7 @@
      ""
     ],
     [
-     "phosphoric",
+     "磷酸",
      "<em>H<sub>3</sub></em>PO<sub>4</sub>",
      "7.5 × 10<sup>−3</sup>"
     ],
@@ -175,7 +175,7 @@
      ""
     ],
     [
-     "phosphorous",
+     "亚磷酸",
      "<em>H<sub>3</sub></em>PO<sub>3</sub>",
      "5 × 10<sup>−2</sup>"
     ],
@@ -185,7 +185,7 @@
      ""
     ],
     [
-     "sulfurous",
+     "亚硫酸",
      "<em>H<sub>2</sub></em>SO<sub>3</sub>",
      "1.6 × 10<sup>−2</sup>"
     ],

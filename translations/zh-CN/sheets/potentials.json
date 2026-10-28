@@ -1,6 +1,6 @@
 {
  "id": "potentials",
- "title": "Standard Electrode (Half-Cell) Potentials",
+ "title": "标准电极（半电池）电势",
  "kind": "table",
  "source": {
   "module": "m68870",
@@ -10,11 +10,11 @@
  "tables": [
   {
    "id": "standard-electrode-half-cell-potentials",
-   "title": "Standard Electrode (Half-Cell) Potentials",
+   "title": "标准电极（半电池）电势",
    "columns": [
     {
      "id": "half-reaction",
-     "label": "Half-Reaction",
+     "label": "半反应",
      "kind": "formula"
     },
     {

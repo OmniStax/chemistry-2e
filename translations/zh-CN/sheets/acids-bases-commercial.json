@@ -1,6 +1,6 @@
 {
  "id": "acids-bases-commercial",
- "title": "Composition of Commercial Acids and Bases",
+ "title": "商品酸和碱的组成",
  "kind": "table",
  "source": {
   "module": "m68864",
@@ -10,83 +10,83 @@
  "tables": [
   {
    "id": "composition-of-commercial-acids-and-bases",
-   "title": "Composition of Commercial Acids and Bases",
+   "title": "商品酸和碱的组成",
    "columns": [
     {
      "id": "acid-or-base",
-     "label": "Acid or Base<sup class=\"fn\">1</sup>",
+     "label": "酸或碱<sup class=\"fn\">1</sup>",
      "kind": "text"
     },
     {
      "id": "density-g-ml",
-     "label": "Density (g/mL)<sup class=\"fn\">2</sup>",
+     "label": "密度（g/mL）<sup class=\"fn\">2</sup>",
      "kind": "number"
     },
     {
      "id": "percentage-by-mass",
-     "label": "Percentage by Mass",
+     "label": "质量分数",
      "kind": "text"
     },
     {
      "id": "molarity",
-     "label": "Molarity",
+     "label": "物质的量浓度",
      "kind": "number"
     }
    ],
    "rows": [
     [
-     "acetic acid, glacial",
+     "冰醋酸",
      "1.05",
      "99.5%",
      "17.4"
     ],
     [
-     "aqueous ammonia<sup class=\"fn\">3</sup>",
+     "氨水<sup class=\"fn\">3</sup>",
      "0.90",
      "28%",
      "14.8"
     ],
     [
-     "hydrochloric acid",
+     "盐酸",
      "1.18",
      "36%",
      "11.6"
     ],
     [
-     "nitric acid",
+     "硝酸",
      "1.42",
      "71%",
      "16.0"
     ],
     [
-     "perchloric acid",
+     "高氯酸",
      "1.67",
      "70%",
      "11.65"
     ],
     [
-     "phosphoric acid",
+     "磷酸",
      "1.70",
      "85%",
      "14.7"
     ],
     [
-     "sodium hydroxide",
+     "氢氧化钠",
      "1.53",
      "50%",
      "19.1"
     ],
     [
-     "sulfuric acid",
+     "硫酸",
      "1.84",
      "96%",
      "18.0"
     ]
    ],
    "notes": [
-    "Acids and bases are commercially available as aqueous solutions. This table lists properties (densities and concentrations) of common acid and base solutions. Nominal values are provided in cases where the manufacturer cites a range of concentrations and densities.",
-    "This column contains specific gravity data. In the case of this table, specific gravity is the ratio of density of a substance to the density of pure water at the same conditions. Specific gravity is often cited on commercial labels.",
-    "This solution is sometimes called “ammonium hydroxide,” although this term is not chemically accurate."
+    "酸和碱均以水溶液形式在市场上销售。本表列出常见酸溶液和碱溶液的性质（密度和浓度）。若生产商给出的是浓度和密度的范围，则列出标称值。",
+    "本列为相对密度数据。就本表而言，相对密度是某物质的密度与相同条件下纯水的密度之比。商品标签上常标注相对密度。",
+    "这种溶液有时被称为“氢氧化铵”，尽管这一名称在化学上并不准确。"
    ]
   }
  ]

@@ -1,6 +1,6 @@
 {
  "id": "water",
- "title": "Water Properties",
+ "title": "水的性质",
  "kind": "table",
  "source": {
   "module": "m68863",
@@ -10,16 +10,16 @@
  "tables": [
   {
    "id": "water-density-g-ml-at-different-temperatures-c",
-   "title": "Water Density (g/mL) at Different Temperatures (°C)",
+   "title": "不同温度（°C）下水的密度（g/mL）",
    "columns": [
     {
      "id": "temperature",
-     "label": "Temperature",
+     "label": "温度",
      "kind": "number"
     },
     {
      "id": "density",
-     "label": "Density",
+     "label": "密度",
      "kind": "number",
      "unit": "g/mL"
     }
@@ -31,7 +31,7 @@
     ],
     [
      "4",
-     "0.9999720 (density maximum)"
+     "0.9999720（密度最大）"
     ],
     [
      "10",
@@ -77,22 +77,22 @@
   },
   {
    "id": "water-vapor-pressure-at-different-temperatures-c",
-   "title": "Water Vapor Pressure at Different Temperatures (°C)",
+   "title": "不同温度（°C）下水的蒸气压",
    "columns": [
     {
      "id": "temperature",
-     "label": "Temperature",
+     "label": "温度",
      "kind": "number"
     },
     {
      "id": "vapor-pressure",
-     "label": "Vapor Pressure",
+     "label": "蒸气压",
      "kind": "number",
      "unit": "torr"
     },
     {
      "id": "vapor-pressure-pa",
-     "label": "Vapor Pressure",
+     "label": "蒸气压",
      "kind": "number",
      "unit": "Pa"
     }
@@ -212,11 +212,11 @@
   },
   {
    "id": "water-kw-and-pkw-at-different-temperatures-c",
-   "title": "Water Kw and pKw at Different Temperatures (°C)",
+   "title": "不同温度（°C）下水的 Kw 和 pKw",
    "columns": [
     {
      "id": "temperature",
-     "label": "Temperature",
+     "label": "温度",
      "kind": "number"
     },
     {
@@ -313,7 +313,7 @@
   },
   {
    "id": "specific-heat-capacity-for-water",
-   "title": "Specific Heat Capacity for Water",
+   "title": "水的比热容",
    "columns": [
     {
      "id": "col1",
@@ -335,7 +335,7 @@
   },
   {
    "id": "standard-water-melting-and-boiling-temperatures-and-enthalpies-of-the-transitions",
-   "title": "Standard Water Melting and Boiling Temperatures and Enthalpies of the Transitions",
+   "title": "水的标准熔化温度和沸腾温度及相变焓",
    "columns": [
     {
      "id": "col1",
@@ -344,7 +344,7 @@
     },
     {
      "id": "temperature",
-     "label": "Temperature",
+     "label": "温度",
      "kind": "number",
      "unit": "K"
     },
@@ -357,12 +357,12 @@
    ],
    "rows": [
     [
-     "melting",
+     "熔化",
      "273.15",
      "6.088"
     ],
     [
-     "boiling",
+     "沸腾",
      "373.15",
      "40.656 (44.016 at 298 K)"
     ]
@@ -370,7 +370,7 @@
   },
   {
    "id": "water-cryoscopic-freezing-point-depression-and-ebullioscopic-boiling-point-elevation-constants",
-   "title": "Water Cryoscopic (Freezing Point Depression) and Ebullioscopic (Boiling Point Elevation) Constants",
+   "title": "水的摩尔凝固点降低常数（凝固点降低）和摩尔沸点升高常数（沸点升高）",
    "columns": [
     {
      "id": "col1",
@@ -380,10 +380,10 @@
    ],
    "rows": [
     [
-     "K<sub>f</sub> = 1.86°C∙kg∙mol<sup>−1</sup> (cryoscopic constant)"
+     "K<sub>f</sub> = 1.86°C∙kg∙mol<sup>−1</sup>（摩尔凝固点降低常数）"
     ],
     [
-     "K<sub>b</sub> = 0.51°C∙kg∙mol<sup>−1</sup> (ebullioscopic constant)"
+     "K<sub>b</sub> = 0.51°C∙kg∙mol<sup>−1</sup>（摩尔沸点升高常数）"
     ]
    ]
   }

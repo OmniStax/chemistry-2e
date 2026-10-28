@@ -1,13 +1,13 @@
 {
   "kind": "elements",
   "id": "elements",
-  "title": "The Elements",
-  "source": "Standard reference values: IUPAC conventional atomic weights, Pauling electronegativities, first ionization energies in kJ/mol and covalent radii in pm; the sections are computed from this book.",
+  "title": "元素",
+  "source": "标准参考值：IUPAC 标准原子量，鲍林电负性，第一电离能（单位 kJ/mol）和共价半径（单位 pm）；各节为依据本书计算所得。",
   "generated_by": "tool",
   "elements": [
     {
       "symbol": "H",
-      "name": "Hydrogen",
+      "name": "氢",
       "number": 1,
       "weight": 1.008,
       "weight_label": "1.008",
@@ -32,7 +32,7 @@
     },
     {
       "symbol": "He",
-      "name": "Helium",
+      "name": "氦",
       "number": 2,
       "weight": 4.003,
       "weight_label": "4.003",
@@ -55,7 +55,7 @@
     },
     {
       "symbol": "Li",
-      "name": "Lithium",
+      "name": "锂",
       "number": 3,
       "weight": 6.94,
       "weight_label": "6.940",
@@ -76,7 +76,7 @@
     },
     {
       "symbol": "Be",
-      "name": "Beryllium",
+      "name": "铍",
       "number": 4,
       "weight": 9.012,
       "weight_label": "9.012",
@@ -97,7 +97,7 @@
     },
     {
       "symbol": "B",
-      "name": "Boron",
+      "name": "硼",
       "number": 5,
       "weight": 10.81,
       "weight_label": "10.81",
@@ -118,7 +118,7 @@
     },
     {
       "symbol": "C",
-      "name": "Carbon",
+      "name": "碳",
       "number": 6,
       "weight": 12.01,
       "weight_label": "12.01",
@@ -143,7 +143,7 @@
     },
     {
       "symbol": "N",
-      "name": "Nitrogen",
+      "name": "氮",
       "number": 7,
       "weight": 14.01,
       "weight_label": "14.01",
@@ -168,7 +168,7 @@
     },
     {
       "symbol": "O",
-      "name": "Oxygen",
+      "name": "氧",
       "number": 8,
       "weight": 16.0,
       "weight_label": "16.00",
@@ -194,7 +194,7 @@
     },
     {
       "symbol": "F",
-      "name": "Fluorine",
+      "name": "氟",
       "number": 9,
       "weight": 19.0,
       "weight_label": "19.00",
@@ -216,7 +216,7 @@
     },
     {
       "symbol": "Ne",
-      "name": "Neon",
+      "name": "氖",
       "number": 10,
       "weight": 20.18,
       "weight_label": "20.18",
@@ -239,7 +239,7 @@
     },
     {
       "symbol": "Na",
-      "name": "Sodium",
+      "name": "钠",
       "number": 11,
       "weight": 22.99,
       "weight_label": "22.99",
@@ -261,7 +261,7 @@
     },
     {
       "symbol": "Mg",
-      "name": "Magnesium",
+      "name": "镁",
       "number": 12,
       "weight": 24.31,
       "weight_label": "24.31",
@@ -282,7 +282,7 @@
     },
     {
       "symbol": "Al",
-      "name": "Aluminum",
+      "name": "铝",
       "number": 13,
       "weight": 26.98,
       "weight_label": "26.98",
@@ -303,7 +303,7 @@
     },
     {
       "symbol": "Si",
-      "name": "Silicon",
+      "name": "硅",
       "number": 14,
       "weight": 28.09,
       "weight_label": "28.09",
@@ -324,7 +324,7 @@
     },
     {
       "symbol": "P",
-      "name": "Phosphorus",
+      "name": "磷",
       "number": 15,
       "weight": 30.97,
       "weight_label": "30.97",
@@ -345,7 +345,7 @@
     },
     {
       "symbol": "S",
-      "name": "Sulfur",
+      "name": "硫",
       "number": 16,
       "weight": 32.06,
       "weight_label": "32.06",
@@ -367,7 +367,7 @@
     },
     {
       "symbol": "Cl",
-      "name": "Chlorine",
+      "name": "氯",
       "number": 17,
       "weight": 35.45,
       "weight_label": "35.45",
@@ -389,7 +389,7 @@
     },
     {
       "symbol": "Ar",
-      "name": "Argon",
+      "name": "氩",
       "number": 18,
       "weight": 39.95,
       "weight_label": "39.95",
@@ -411,7 +411,7 @@
     },
     {
       "symbol": "K",
-      "name": "Potassium",
+      "name": "钾",
       "number": 19,
       "weight": 39.1,
       "weight_label": "39.10",
@@ -432,7 +432,7 @@
     },
     {
       "symbol": "Ca",
-      "name": "Calcium",
+      "name": "钙",
       "number": 20,
       "weight": 40.08,
       "weight_label": "40.08",
@@ -454,7 +454,7 @@
     },
     {
       "symbol": "Sc",
-      "name": "Scandium",
+      "name": "钪",
       "number": 21,
       "weight": 44.96,
       "weight_label": "44.96",
@@ -473,7 +473,7 @@
     },
     {
       "symbol": "Ti",
-      "name": "Titanium",
+      "name": "钛",
       "number": 22,
       "weight": 47.87,
       "weight_label": "47.87",
@@ -494,7 +494,7 @@
     },
     {
       "symbol": "V",
-      "name": "Vanadium",
+      "name": "钒",
       "number": 23,
       "weight": 50.94,
       "weight_label": "50.94",
@@ -513,7 +513,7 @@
     },
     {
       "symbol": "Cr",
-      "name": "Chromium",
+      "name": "铬",
       "number": 24,
       "weight": 52.0,
       "weight_label": "52.00",
@@ -534,7 +534,7 @@
     },
     {
       "symbol": "Mn",
-      "name": "Manganese",
+      "name": "锰",
       "number": 25,
       "weight": 54.94,
       "weight_label": "54.94",
@@ -555,7 +555,7 @@
     },
     {
       "symbol": "Fe",
-      "name": "Iron",
+      "name": "铁",
       "number": 26,
       "weight": 55.85,
       "weight_label": "55.85",
@@ -580,7 +580,7 @@
     },
     {
       "symbol": "Co",
-      "name": "Cobalt",
+      "name": "钴",
       "number": 27,
       "weight": 58.93,
       "weight_label": "58.93",
@@ -601,7 +601,7 @@
     },
     {
       "symbol": "Ni",
-      "name": "Nickel",
+      "name": "镍",
       "number": 28,
       "weight": 58.69,
       "weight_label": "58.69",
@@ -620,7 +620,7 @@
     },
     {
       "symbol": "Cu",
-      "name": "Copper",
+      "name": "铜",
       "number": 29,
       "weight": 63.55,
       "weight_label": "63.55",
@@ -644,7 +644,7 @@
     },
     {
       "symbol": "Zn",
-      "name": "Zinc",
+      "name": "锌",
       "number": 30,
       "weight": 65.38,
       "weight_label": "65.38",
@@ -663,7 +663,7 @@
     },
     {
       "symbol": "Ga",
-      "name": "Gallium",
+      "name": "镓",
       "number": 31,
       "weight": 69.72,
       "weight_label": "69.72",
@@ -682,7 +682,7 @@
     },
     {
       "symbol": "Ge",
-      "name": "Germanium",
+      "name": "锗",
       "number": 32,
       "weight": 72.63,
       "weight_label": "72.63",
@@ -701,7 +701,7 @@
     },
     {
       "symbol": "As",
-      "name": "Arsenic",
+      "name": "砷",
       "number": 33,
       "weight": 74.92,
       "weight_label": "74.92",
@@ -720,7 +720,7 @@
     },
     {
       "symbol": "Se",
-      "name": "Selenium",
+      "name": "硒",
       "number": 34,
       "weight": 78.97,
       "weight_label": "78.97",
@@ -739,7 +739,7 @@
     },
     {
       "symbol": "Br",
-      "name": "Bromine",
+      "name": "溴",
       "number": 35,
       "weight": 79.9,
       "weight_label": "79.90",
@@ -758,7 +758,7 @@
     },
     {
       "symbol": "Kr",
-      "name": "Krypton",
+      "name": "氪",
       "number": 36,
       "weight": 83.8,
       "weight_label": "83.80",
@@ -777,7 +777,7 @@
     },
     {
       "symbol": "Rb",
-      "name": "Rubidium",
+      "name": "铷",
       "number": 37,
       "weight": 85.47,
       "weight_label": "85.47",
@@ -796,7 +796,7 @@
     },
     {
       "symbol": "Sr",
-      "name": "Strontium",
+      "name": "锶",
       "number": 38,
       "weight": 87.62,
       "weight_label": "87.62",
@@ -817,7 +817,7 @@
     },
     {
       "symbol": "Y",
-      "name": "Yttrium",
+      "name": "钇",
       "number": 39,
       "weight": 88.91,
       "weight_label": "88.91",
@@ -838,7 +838,7 @@
     },
     {
       "symbol": "Zr",
-      "name": "Zirconium",
+      "name": "锆",
       "number": 40,
       "weight": 91.22,
       "weight_label": "91.22",
@@ -857,7 +857,7 @@
     },
     {
       "symbol": "Nb",
-      "name": "Niobium",
+      "name": "铌",
       "number": 41,
       "weight": 92.91,
       "weight_label": "92.91",
@@ -876,7 +876,7 @@
     },
     {
       "symbol": "Mo",
-      "name": "Molybdenum",
+      "name": "钼",
       "number": 42,
       "weight": 95.95,
       "weight_label": "95.95",
@@ -895,7 +895,7 @@
     },
     {
       "symbol": "Tc",
-      "name": "Technetium",
+      "name": "锝",
       "number": 43,
       "weight": 98.0,
       "weight_label": "[98]",
@@ -914,7 +914,7 @@
     },
     {
       "symbol": "Ru",
-      "name": "Ruthenium",
+      "name": "钌",
       "number": 44,
       "weight": 101.1,
       "weight_label": "101.1",
@@ -933,7 +933,7 @@
     },
     {
       "symbol": "Rh",
-      "name": "Rhodium",
+      "name": "铑",
       "number": 45,
       "weight": 102.9,
       "weight_label": "102.9",
@@ -952,7 +952,7 @@
     },
     {
       "symbol": "Pd",
-      "name": "Palladium",
+      "name": "钯",
       "number": 46,
       "weight": 106.4,
       "weight_label": "106.4",
@@ -971,7 +971,7 @@
     },
     {
       "symbol": "Ag",
-      "name": "Silver",
+      "name": "银",
       "number": 47,
       "weight": 107.9,
       "weight_label": "107.9",
@@ -993,7 +993,7 @@
     },
     {
       "symbol": "Cd",
-      "name": "Cadmium",
+      "name": "镉",
       "number": 48,
       "weight": 112.4,
       "weight_label": "112.4",
@@ -1012,7 +1012,7 @@
     },
     {
       "symbol": "In",
-      "name": "Indium",
+      "name": "铟",
       "number": 49,
       "weight": 114.8,
       "weight_label": "114.8",
@@ -1033,7 +1033,7 @@
     },
     {
       "symbol": "Sn",
-      "name": "Tin",
+      "name": "锡",
       "number": 50,
       "weight": 118.7,
       "weight_label": "118.7",
@@ -1055,7 +1055,7 @@
     },
     {
       "symbol": "Sb",
-      "name": "Antimony",
+      "name": "锑",
       "number": 51,
       "weight": 121.8,
       "weight_label": "121.8",
@@ -1074,7 +1074,7 @@
     },
     {
       "symbol": "Te",
-      "name": "Tellurium",
+      "name": "碲",
       "number": 52,
       "weight": 127.6,
       "weight_label": "127.6",
@@ -1093,7 +1093,7 @@
     },
     {
       "symbol": "I",
-      "name": "Iodine",
+      "name": "碘",
       "number": 53,
       "weight": 126.9,
       "weight_label": "126.9",
@@ -1112,7 +1112,7 @@
     },
     {
       "symbol": "Xe",
-      "name": "Xenon",
+      "name": "氙",
       "number": 54,
       "weight": 131.3,
       "weight_label": "131.3",
@@ -1133,7 +1133,7 @@
     },
     {
       "symbol": "Cs",
-      "name": "Cesium",
+      "name": "铯",
       "number": 55,
       "weight": 132.9,
       "weight_label": "132.9",
@@ -1152,7 +1152,7 @@
     },
     {
       "symbol": "Ba",
-      "name": "Barium",
+      "name": "钡",
       "number": 56,
       "weight": 137.3,
       "weight_label": "137.3",
@@ -1173,7 +1173,7 @@
     },
     {
       "symbol": "La",
-      "name": "Lanthanum",
+      "name": "镧",
       "number": 57,
       "weight": 138.9,
       "weight_label": "138.9",
@@ -1192,7 +1192,7 @@
     },
     {
       "symbol": "Ce",
-      "name": "Cerium",
+      "name": "铈",
       "number": 58,
       "weight": 140.1,
       "weight_label": "140.1",
@@ -1211,7 +1211,7 @@
     },
     {
       "symbol": "Pr",
-      "name": "Praseodymium",
+      "name": "镨",
       "number": 59,
       "weight": 140.9,
       "weight_label": "140.9",
@@ -1232,7 +1232,7 @@
     },
     {
       "symbol": "Nd",
-      "name": "Neodymium",
+      "name": "钕",
       "number": 60,
       "weight": 144.2,
       "weight_label": "144.2",
@@ -1251,7 +1251,7 @@
     },
     {
       "symbol": "Pm",
-      "name": "Promethium",
+      "name": "钷",
       "number": 61,
       "weight": 145.0,
       "weight_label": "[145]",
@@ -1270,7 +1270,7 @@
     },
     {
       "symbol": "Sm",
-      "name": "Samarium",
+      "name": "钐",
       "number": 62,
       "weight": 150.4,
       "weight_label": "150.4",
@@ -1289,7 +1289,7 @@
     },
     {
       "symbol": "Eu",
-      "name": "Europium",
+      "name": "铕",
       "number": 63,
       "weight": 152.0,
       "weight_label": "152.0",
@@ -1308,7 +1308,7 @@
     },
     {
       "symbol": "Gd",
-      "name": "Gadolinium",
+      "name": "钆",
       "number": 64,
       "weight": 157.3,
       "weight_label": "157.3",
@@ -1329,7 +1329,7 @@
     },
     {
       "symbol": "Tb",
-      "name": "Terbium",
+      "name": "铽",
       "number": 65,
       "weight": 158.9,
       "weight_label": "158.9",
@@ -1348,7 +1348,7 @@
     },
     {
       "symbol": "Dy",
-      "name": "Dysprosium",
+      "name": "镝",
       "number": 66,
       "weight": 162.5,
       "weight_label": "162.5",
@@ -1367,7 +1367,7 @@
     },
     {
       "symbol": "Ho",
-      "name": "Holmium",
+      "name": "钬",
       "number": 67,
       "weight": 164.9,
       "weight_label": "164.9",
@@ -1386,7 +1386,7 @@
     },
     {
       "symbol": "Er",
-      "name": "Erbium",
+      "name": "铒",
       "number": 68,
       "weight": 167.3,
       "weight_label": "167.3",
@@ -1405,7 +1405,7 @@
     },
     {
       "symbol": "Tm",
-      "name": "Thulium",
+      "name": "铥",
       "number": 69,
       "weight": 168.9,
       "weight_label": "168.9",
@@ -1424,7 +1424,7 @@
     },
     {
       "symbol": "Yb",
-      "name": "Ytterbium",
+      "name": "镱",
       "number": 70,
       "weight": 173.0,
       "weight_label": "173.0",
@@ -1443,7 +1443,7 @@
     },
     {
       "symbol": "Lu",
-      "name": "Lutetium",
+      "name": "镥",
       "number": 71,
       "weight": 175.0,
       "weight_label": "175.0",
@@ -1462,7 +1462,7 @@
     },
     {
       "symbol": "Hf",
-      "name": "Hafnium",
+      "name": "铪",
       "number": 72,
       "weight": 178.5,
       "weight_label": "178.5",
@@ -1481,7 +1481,7 @@
     },
     {
       "symbol": "Ta",
-      "name": "Tantalum",
+      "name": "钽",
       "number": 73,
       "weight": 180.9,
       "weight_label": "180.9",
@@ -1500,7 +1500,7 @@
     },
     {
       "symbol": "W",
-      "name": "Tungsten",
+      "name": "钨",
       "number": 74,
       "weight": 183.8,
       "weight_label": "183.8",
@@ -1519,7 +1519,7 @@
     },
     {
       "symbol": "Re",
-      "name": "Rhenium",
+      "name": "铼",
       "number": 75,
       "weight": 186.2,
       "weight_label": "186.2",
@@ -1538,7 +1538,7 @@
     },
     {
       "symbol": "Os",
-      "name": "Osmium",
+      "name": "锇",
       "number": 76,
       "weight": 190.2,
       "weight_label": "190.2",
@@ -1557,7 +1557,7 @@
     },
     {
       "symbol": "Ir",
-      "name": "Iridium",
+      "name": "铱",
       "number": 77,
       "weight": 192.2,
       "weight_label": "192.2",
@@ -1578,7 +1578,7 @@
     },
     {
       "symbol": "Pt",
-      "name": "Platinum",
+      "name": "铂",
       "number": 78,
       "weight": 195.1,
       "weight_label": "195.1",
@@ -1599,7 +1599,7 @@
     },
     {
       "symbol": "Au",
-      "name": "Gold",
+      "name": "金",
       "number": 79,
       "weight": 197.0,
       "weight_label": "197.0",
@@ -1622,7 +1622,7 @@
     },
     {
       "symbol": "Hg",
-      "name": "Mercury",
+      "name": "汞",
       "number": 80,
       "weight": 200.6,
       "weight_label": "200.6",
@@ -1645,7 +1645,7 @@
     },
     {
       "symbol": "Tl",
-      "name": "Thallium",
+      "name": "铊",
       "number": 81,
       "weight": 204.4,
       "weight_label": "204.4",
@@ -1664,7 +1664,7 @@
     },
     {
       "symbol": "Pb",
-      "name": "Lead",
+      "name": "铅",
       "number": 82,
       "weight": 207.2,
       "weight_label": "207.2",
@@ -1688,7 +1688,7 @@
     },
     {
       "symbol": "Bi",
-      "name": "Bismuth",
+      "name": "铋",
       "number": 83,
       "weight": 209.0,
       "weight_label": "209.0",
@@ -1707,7 +1707,7 @@
     },
     {
       "symbol": "Po",
-      "name": "Polonium",
+      "name": "钋",
       "number": 84,
       "weight": 209.0,
       "weight_label": "[209]",
@@ -1726,7 +1726,7 @@
     },
     {
       "symbol": "At",
-      "name": "Astatine",
+      "name": "砹",
       "number": 85,
       "weight": 210.0,
       "weight_label": "[210]",
@@ -1745,7 +1745,7 @@
     },
     {
       "symbol": "Rn",
-      "name": "Radon",
+      "name": "氡",
       "number": 86,
       "weight": 222.0,
       "weight_label": "[222]",
@@ -1766,7 +1766,7 @@
     },
     {
       "symbol": "Fr",
-      "name": "Francium",
+      "name": "钫",
       "number": 87,
       "weight": 223.0,
       "weight_label": "[223]",
@@ -1785,7 +1785,7 @@
     },
     {
       "symbol": "Ra",
-      "name": "Radium",
+      "name": "镭",
       "number": 88,
       "weight": 226.0,
       "weight_label": "[226]",
@@ -1804,7 +1804,7 @@
     },
     {
       "symbol": "Ac",
-      "name": "Actinium",
+      "name": "锕",
       "number": 89,
       "weight": 227.0,
       "weight_label": "[227]",
@@ -1823,7 +1823,7 @@
     },
     {
       "symbol": "Th",
-      "name": "Thorium",
+      "name": "钍",
       "number": 90,
       "weight": 232.0,
       "weight_label": "232.0",
@@ -1842,7 +1842,7 @@
     },
     {
       "symbol": "Pa",
-      "name": "Protactinium",
+      "name": "镤",
       "number": 91,
       "weight": 231.0,
       "weight_label": "231.0",
@@ -1861,7 +1861,7 @@
     },
     {
       "symbol": "U",
-      "name": "Uranium",
+      "name": "铀",
       "number": 92,
       "weight": 238.0,
       "weight_label": "238.0",
@@ -1880,7 +1880,7 @@
     },
     {
       "symbol": "Np",
-      "name": "Neptunium",
+      "name": "镎",
       "number": 93,
       "weight": 237.0,
       "weight_label": "[237]",
@@ -1899,7 +1899,7 @@
     },
     {
       "symbol": "Pu",
-      "name": "Plutonium",
+      "name": "钚",
       "number": 94,
       "weight": 244.0,
       "weight_label": "[244]",
@@ -1918,7 +1918,7 @@
     },
     {
       "symbol": "Am",
-      "name": "Americium",
+      "name": "镅",
       "number": 95,
       "weight": 243.0,
       "weight_label": "[243]",
@@ -1937,7 +1937,7 @@
     },
     {
       "symbol": "Cm",
-      "name": "Curium",
+      "name": "锔",
       "number": 96,
       "weight": 247.0,
       "weight_label": "[247]",
@@ -1956,7 +1956,7 @@
     },
     {
       "symbol": "Bk",
-      "name": "Berkelium",
+      "name": "锫",
       "number": 97,
       "weight": 247.0,
       "weight_label": "[247]",
@@ -1975,7 +1975,7 @@
     },
     {
       "symbol": "Cf",
-      "name": "Californium",
+      "name": "锎",
       "number": 98,
       "weight": 251.0,
       "weight_label": "[251]",
@@ -1994,7 +1994,7 @@
     },
     {
       "symbol": "Es",
-      "name": "Einsteinium",
+      "name": "锿",
       "number": 99,
       "weight": 252.0,
       "weight_label": "[252]",
@@ -2013,7 +2013,7 @@
     },
     {
       "symbol": "Fm",
-      "name": "Fermium",
+      "name": "镄",
       "number": 100,
       "weight": 257.0,
       "weight_label": "[257]",
@@ -2032,7 +2032,7 @@
     },
     {
       "symbol": "Md",
-      "name": "Mendelevium",
+      "name": "钔",
       "number": 101,
       "weight": 258.0,
       "weight_label": "[258]",
@@ -2051,7 +2051,7 @@
     },
     {
       "symbol": "No",
-      "name": "Nobelium",
+      "name": "锘",
       "number": 102,
       "weight": 259.0,
       "weight_label": "[259]",
@@ -2070,7 +2070,7 @@
     },
     {
       "symbol": "Lr",
-      "name": "Lawrencium",
+      "name": "铹",
       "number": 103,
       "weight": 266.0,
       "weight_label": "[266]",
@@ -2089,7 +2089,7 @@
     },
     {
       "symbol": "Rf",
-      "name": "Rutherfordium",
+      "name": "𬬻",
       "number": 104,
       "weight": 267.0,
       "weight_label": "[267]",
@@ -2108,7 +2108,7 @@
     },
     {
       "symbol": "Db",
-      "name": "Dubnium",
+      "name": "𬭊",
       "number": 105,
       "weight": 268.0,
       "weight_label": "[268]",
@@ -2127,7 +2127,7 @@
     },
     {
       "symbol": "Sg",
-      "name": "Seaborgium",
+      "name": "𬭳",
       "number": 106,
       "weight": 269.0,
       "weight_label": "[269]",
@@ -2146,7 +2146,7 @@
     },
     {
       "symbol": "Bh",
-      "name": "Bohrium",
+      "name": "𬭛",
       "number": 107,
       "weight": 270.0,
       "weight_label": "[270]",
@@ -2165,7 +2165,7 @@
     },
     {
       "symbol": "Hs",
-      "name": "Hassium",
+      "name": "𬭶",
       "number": 108,
       "weight": 269.0,
       "weight_label": "[269]",
@@ -2184,7 +2184,7 @@
     },
     {
       "symbol": "Mt",
-      "name": "Meitnerium",
+      "name": "鿏",
       "number": 109,
       "weight": 278.0,
       "weight_label": "[278]",
@@ -2203,7 +2203,7 @@
     },
     {
       "symbol": "Ds",
-      "name": "Darmstadtium",
+      "name": "𫟼",
       "number": 110,
       "weight": 281.0,
       "weight_label": "[281]",
@@ -2222,7 +2222,7 @@
     },
     {
       "symbol": "Rg",
-      "name": "Roentgenium",
+      "name": "𬬭",
       "number": 111,
       "weight": 282.0,
       "weight_label": "[282]",
@@ -2241,7 +2241,7 @@
     },
     {
       "symbol": "Cn",
-      "name": "Copernicium",
+      "name": "鿔",
       "number": 112,
       "weight": 285.0,
       "weight_label": "[285]",
@@ -2260,7 +2260,7 @@
     },
     {
       "symbol": "Nh",
-      "name": "Nihonium",
+      "name": "鿭",
       "number": 113,
       "weight": 286.0,
       "weight_label": "[286]",
@@ -2279,7 +2279,7 @@
     },
     {
       "symbol": "Fl",
-      "name": "Flerovium",
+      "name": "𫓧",
       "number": 114,
       "weight": 289.0,
       "weight_label": "[289]",
@@ -2298,7 +2298,7 @@
     },
     {
       "symbol": "Mc",
-      "name": "Moscovium",
+      "name": "镆",
       "number": 115,
       "weight": 290.0,
       "weight_label": "[290]",
@@ -2317,7 +2317,7 @@
     },
     {
       "symbol": "Lv",
-      "name": "Livermorium",
+      "name": "𫟷",
       "number": 116,
       "weight": 293.0,
       "weight_label": "[293]",
@@ -2336,7 +2336,7 @@
     },
     {
       "symbol": "Ts",
-      "name": "Tennessine",
+      "name": "鿬",
       "number": 117,
       "weight": 294.0,
       "weight_label": "[294]",
@@ -2355,7 +2355,7 @@
     },
     {
       "symbol": "Og",
-      "name": "Oganesson",
+      "name": "鿫",
       "number": 118,
       "weight": 294.0,
       "weight_label": "[294]",

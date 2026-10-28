@@ -1,6 +1,6 @@
 {
  "id": "units",
- "title": "Units and Conversion Factors",
+ "title": "单位与换算因子",
  "kind": "table",
  "source": {
   "module": "m68861",
@@ -10,7 +10,7 @@
  "tables": [
   {
    "id": "units-of-length",
-   "title": "Units of Length",
+   "title": "长度单位",
    "columns": [
     {
      "id": "col1",
@@ -25,42 +25,42 @@
    ],
    "rows": [
     [
-     "meter (m)",
-     "= 39.37 inches (in.)<br>= 1.094 yards (yd)"
+     "米（m）",
+     "= 39.37 英寸（in.）<br>= 1.094 码（yd）"
     ],
     [
-     "centimeter (cm)",
-     "= 0.01 m (exact, definition)"
+     "厘米（cm）",
+     "= 0.01 m（精确值，按定义）"
     ],
     [
-     "millimeter (mm)",
-     "= 0.001 m (exact, definition)"
+     "毫米（mm）",
+     "= 0.001 m（精确值，按定义）"
     ],
     [
-     "kilometer (km)",
-     "= 1000 m (exact, definition)"
+     "千米（km）",
+     "= 1000 m（精确值，按定义）"
     ],
     [
-     "angstrom (Å)",
-     "= 10<sup>–8</sup> cm (exact, definition)<br>= 10<sup>–10</sup> m (exact, definition)"
+     "埃（Å）",
+     "= 10<sup>–8</sup> cm（精确值，按定义）<br>= 10<sup>–10</sup> m（精确值，按定义）"
     ],
     [
-     "yard (yd)",
+     "码（yd）",
      "= 0.9144 m"
     ],
     [
-     "inch (in.)",
-     "= 2.54 cm (exact, definition)"
+     "英寸（in.）",
+     "= 2.54 cm（精确值，按定义）"
     ],
     [
-     "mile (US)",
+     "英里（美制）",
      "= 1.60934 km"
     ]
    ]
   },
   {
    "id": "units-of-volume",
-   "title": "Units of Volume",
+   "title": "体积单位",
    "columns": [
     {
      "id": "col1",
@@ -75,34 +75,34 @@
    ],
    "rows": [
     [
-     "liter (L)",
-     "= 0.001 m<sup>3</sup> (exact, definition)<br>= 1000 cm<sup>3</sup> (exact, definition)<br>= 1.057 (US) quarts"
+     "升（L）",
+     "= 0.001 m<sup>3</sup>（精确值，按定义）<br>= 1000 cm<sup>3</sup>（精确值，按定义）<br>= 1.057 夸脱（美制）"
     ],
     [
-     "milliliter (mL)",
-     "= 0.001 L (exact, definition)<br>= 1 cm<sup>3</sup> (exact, definition)"
+     "毫升（mL）",
+     "= 0.001 L（精确值，按定义）<br>= 1 cm<sup>3</sup>（精确值，按定义）"
     ],
     [
-     "microliter (μL)",
-     "= 10<sup>–6</sup> L (exact, definition)<br>= 10<sup>–3</sup> cm<sup>3</sup> (exact, definition)"
+     "微升（μL）",
+     "= 10<sup>–6</sup> L（精确值，按定义）<br>= 10<sup>–3</sup> cm<sup>3</sup>（精确值，按定义）"
     ],
     [
-     "liquid quart (US)",
-     "= 32 (US) liquid ounces (exact, definition)<br>= 0.25 (US) gallon (exact, definition)<br>= 0.9463 L"
+     "液量夸脱（美制）",
+     "= 32 液量盎司（美制）（精确值，按定义）<br>= 0.25 加仑（美制）（精确值，按定义）<br>= 0.9463 L"
     ],
     [
-     "dry quart",
+     "干量夸脱",
      "= 1.1012 L"
     ],
     [
-     "cubic foot (US)",
+     "立方英尺（美制）",
      "= 28.316 L"
     ]
    ]
   },
   {
    "id": "units-of-mass",
-   "title": "Units of Mass",
+   "title": "质量单位",
    "columns": [
     {
      "id": "col1",
@@ -117,45 +117,45 @@
    ],
    "rows": [
     [
-     "gram (g)",
-     "= 0.001 kg (exact, definition)"
+     "克（g）",
+     "= 0.001 kg（精确值，按定义）"
     ],
     [
-     "milligram (mg)",
-     "= 0.001 g (exact, definition)"
+     "毫克（mg）",
+     "= 0.001 g（精确值，按定义）"
     ],
     [
-     "kilogram (kg)",
-     "= 1000 g (exact, definition)<br>= 2.205 lb<sup class=\"fn\">1</sup>"
+     "千克（kg）",
+     "= 1000 g（精确值，按定义）<br>= 2.205 lb<sup class=\"fn\">1</sup>"
     ],
     [
-     "ton (metric)",
-     "=1000 kg (exact, definition)<br>= 2204.62 lb"
+     "公吨",
+     "=1000 kg（精确值，按定义）<br>= 2204.62 lb"
     ],
     [
-     "ounce (oz)",
+     "盎司（oz）",
      "= 28.35 g"
     ],
     [
-     "pound (lb)",
+     "磅（lb）",
      "= 0.4535924 kg"
     ],
     [
-     "ton (short)",
-     "=2000 lb (exact, definition)<br>= 907.185 kg"
+     "短吨（美吨）",
+     "=2000 lb（精确值，按定义）<br>= 907.185 kg"
     ],
     [
-     "ton (long)",
-     "= 2240 lb (exact, definition)<br>= 1.016 metric ton"
+     "长吨",
+     "= 2240 lb（精确值，按定义）<br>= 1.016 公吨"
     ]
    ],
    "notes": [
-    "Strictly speaking, the ounce and pound are units of weight, <em>W</em> (a force equal to the product of mass and gravitational acceleration, <em>W</em> = <em>mg</em>). The conversion relations in this table are commonly used to equate masses and weight assuming a nominal value for <em>g</em> at the surface of the earth."
+    "严格地说，盎司和磅是重量 <em>W</em>（一种力，等于质量与重力加速度之积，<em>W</em> = <em>mg</em>）的单位。本表中的换算关系常用于在假定地球表面 <em>g</em> 取标称值的条件下将质量与重量等同起来。"
    ]
   },
   {
    "id": "units-of-energy",
-   "title": "Units of Energy",
+   "title": "能量单位",
    "columns": [
     {
      "id": "col1",
@@ -170,41 +170,41 @@
    ],
    "rows": [
     [
-     "4.184 joule (J)",
-     "= 1 thermochemical calorie (cal)"
+     "4.184 焦耳（J）",
+     "= 1 热化学卡（cal）"
     ],
     [
-     "1 thermochemical calorie (cal)",
+     "1 热化学卡（cal）",
      "= 4.184 × 10<sup>7 </sup> erg"
     ],
     [
-     "erg",
-     "= 10<sup>–7</sup> J (exact, definition)"
+     "尔格（erg）",
+     "= 10<sup>–7</sup> J（精确值，按定义）"
     ],
     [
-     "electron-volt (eV)",
+     "电子伏（eV）",
      "= 1.60218 × 10<sup>−19</sup> J = 23.061 kcal mol<sup>−1</sup>"
     ],
     [
-     "liter∙atmosphere",
-     "= 24.217 cal = 101.325 J (exact, definition)"
+     "升∙标准大气压",
+     "= 24.217 cal = 101.325 J（精确值，按定义）"
     ],
     [
-     "nutritional calorie (Cal)",
-     "= 1000 cal (exact, definition) = 4184 J"
+     "大卡（Cal）",
+     "= 1000 cal（精确值，按定义） = 4184 J"
     ],
     [
-     "British thermal unit (BTU)",
+     "英热单位（BTU）",
      "= 1054.804 J<sup class=\"fn\">1</sup>"
     ]
    ],
    "notes": [
-    "BTU is the amount of energy needed to heat one pound of water by one degree Fahrenheit. Therefore, the exact relationship of BTU to joules and other energy units depends on the temperature at which BTU is measured. 59 °F (15 °C) is the most widely used reference temperature for BTU definition in the United States. At this temperature, the conversion factor is the one provided in this table."
+    "BTU 是将一磅水加热一华氏度所需的能量。因此，BTU 与焦耳及其他能量单位之间的精确关系取决于测量 BTU 时的温度。在美国，定义 BTU 时使用最广泛的参考温度是 59 °F（15 °C）。在此温度下，换算因子即为本表所给出的值。"
    ]
   },
   {
    "id": "units-of-pressure",
-   "title": "Units of Pressure",
+   "title": "压强单位",
    "columns": [
     {
      "id": "col1",
@@ -219,20 +219,20 @@
    ],
    "rows": [
     [
-     "torr",
-     "= 1 mm Hg (exact, definition)"
+     "托",
+     "= 1 mm Hg（精确值，按定义）"
     ],
     [
-     "pascal (Pa)",
-     "= N m<sup>–2</sup> (exact, definition)<br>= kg m<sup>–1</sup> s<sup>–2</sup> (exact, definition)"
+     "帕斯卡（Pa）",
+     "= N m<sup>–2</sup>（精确值，按定义）<br>= kg m<sup>–1</sup> s<sup>–2</sup>（精确值，按定义）"
     ],
     [
-     "atmosphere (atm)",
-     "= 760 mm Hg (exact, definition)<br>= 760 torr (exact, definition)<br>= 101,325 N m<sup>–2</sup> (exact, definition)<br>= 101,325 Pa (exact, definition)"
+     "标准大气压（atm）",
+     "= 760 mm Hg（精确值，按定义）<br>= 760 torr（精确值，按定义）<br>= 101,325 N m<sup>–2</sup>（精确值，按定义）<br>= 101,325 Pa（精确值，按定义）"
     ],
     [
-     "bar",
-     "= 10<sup>5</sup> Pa (exact, definition)<br>= 10<sup>5</sup> kg m<sup>–1</sup> s<sup>–2</sup> (exact, definition)"
+     "巴",
+     "= 10<sup>5</sup> Pa（精确值，按定义）<br>= 10<sup>5</sup> kg m<sup>–1</sup> s<sup>–2</sup>（精确值，按定义）"
     ]
    ]
   }

@@ -1,6 +1,6 @@
 {
  "id": "half-lives",
- "title": "Half-Lives for Several Radioactive Isotopes",
+ "title": "若干放射性同位素的半衰期",
  "kind": "table",
  "source": {
   "module": "m68871",
@@ -10,36 +10,36 @@
  "tables": [
   {
    "id": "half-lives-for-several-radioactive-isotopes",
-   "title": "Half-Lives for Several Radioactive Isotopes",
+   "title": "若干放射性同位素的半衰期",
    "columns": [
     {
      "id": "isotope",
-     "label": "Isotope",
+     "label": "同位素",
      "kind": "formula"
     },
     {
      "id": "half-life",
-     "label": "Half-Life<sup class=\"fn\">1</sup>",
+     "label": "半衰期<sup class=\"fn\">1</sup>",
      "kind": "formula"
     },
     {
      "id": "type-of-emission",
-     "label": "Type of Emission<sup class=\"fn\">2</sup>",
+     "label": "发射类型<sup class=\"fn\">2</sup>",
      "kind": "text"
     },
     {
      "id": "isotope-2",
-     "label": "Isotope",
+     "label": "同位素",
      "kind": "formula"
     },
     {
      "id": "half-life-2",
-     "label": "Half-Life<sup class=\"fn\">1</sup>",
+     "label": "半衰期<sup class=\"fn\">1</sup>",
      "kind": "text"
     },
     {
      "id": "type-of-emission-2",
-     "label": "Type of Emission<sup class=\"fn\">2</sup>",
+     "label": "发射类型<sup class=\"fn\">2</sup>",
      "kind": "text"
     }
    ],
@@ -58,7 +58,7 @@
      "(β<sup>+</sup>)",
      "<sub>83</sub><sup>212</sup>Bi",
      "60.55 m",
-     "(αorβ<sup>−</sup>)"
+     "(α 或 β<sup>−</sup>)"
     ],
     [
      "<sub>9</sub><sup>15</sup>F",
@@ -87,7 +87,7 @@
     [
      "<sub>19</sub><sup>40</sup>K",
      "1.27 × 10<sup>9</sup> y",
-     "(βorE.C.)",
+     "(β 或 E.C.)",
      "<sub>84</sub><sup>218</sup>Po",
      "3.05 m",
      "(α)"
@@ -210,7 +210,7 @@
      "(α)",
      "<sub>97</sub><sup>243</sup>Bk",
      "4.5 h",
-     "(αorE.C.)"
+     "(α 或 E.C.)"
     ],
     [
      "<sub>92</sub><sup>235</sup>U",
@@ -226,7 +226,7 @@
      "(α)",
      "<sub>100</sub><sup>254</sup>Fm",
      "3.24 h",
-     "(αorS.F.)"
+     "(α 或 S.F.)"
     ],
     [
      "<sub>92</sub><sup>239</sup>U",
@@ -242,7 +242,7 @@
      "(β<sup>−</sup>)",
      "<sub>101</sub><sup>256</sup>Md",
      "76 m",
-     "(αorE.C.)"
+     "(α 或 E.C.)"
     ],
     [
      "<sub>94</sub><sup>239</sup>Pu",
@@ -263,10 +263,10 @@
     [
      "<sub>94</sub><sup>241</sup>Pu",
      "14.4 y",
-     "(αorβ<sup>−</sup>)",
+     "(α 或 β<sup>−</sup>)",
      "<sub>105</sub><sup>260</sup>Ha",
      "1.5 s",
-     "(αorS.F.)"
+     "(α 或 S.F.)"
     ],
     [
      "<sub>95</sub><sup>241</sup>Am",
@@ -274,12 +274,12 @@
      "(α)",
      "<sub>106</sub><sup>263</sup>Sg",
      "0.8 s",
-     "(αorS.F.)"
+     "(α 或 S.F.)"
     ]
    ],
    "notes": [
-    "y = years, d = days, h = hours, m = minutes, s = seconds",
-    "<em>E.C.</em> = electron capture, <em>S.F.</em> = Spontaneous fission"
+    "y = 年，d = 天，h = 小时，m = 分钟，s = 秒",
+    "<em>E.C.</em> = 电子俘获，<em>S.F.</em> = 自发裂变"
    ]
   }
  ]

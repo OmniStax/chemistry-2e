@@ -376,7 +376,7 @@
     {
       "sym": "a_vdw",
       "concept": "van-der-waals-equation",
-      "meaning": "特定气体分子间吸引力的范德华常数",
+      "meaning": "特定气体分子间吸引力的范德瓦耳斯常数",
       "unit": "L² atm/mol²",
       "section": "9.6",
       "anchor": "9.6-van-der-waals"
@@ -385,7 +385,7 @@
       "sym": "b_vdw",
       "concept": "van-der-waals-equation",
       "type": "volume",
-      "meaning": "特定气体分子大小的范德华常数",
+      "meaning": "特定气体分子大小的范德瓦耳斯常数",
       "unit": "L/mol",
       "section": "9.6",
       "anchor": "9.6-van-der-waals"

@@ -11,7 +11,7 @@
     "说明临界质量与核链式反应这两个概念的关系",
     "概述核裂变反应堆和核聚变反应堆的基本要求"
   ],
-  "summary_html": "<p>用其他原子核或高速粒子轰击原子，可以产生新的原子。这些<span data-concept=\"nuclear-transmutation\">嬗变反应</span>的产物可以是稳定的，也可以是放射性的。许多人工元素，包括锝、砹和<span data-concept=\"transuranium-element\">超铀元素</span>，都是用这种方法制得的。</p><p>核电以及核武器爆炸，都可以通过<span data-concept=\"nuclear-fission\">裂变</span>（重原子核分裂成两个或多个较轻的原子核和若干中子的反应）产生。由于中子与其他重原子核结合时可能引起更多的裂变反应，因此可能产生<span data-concept=\"chain-reaction\">链式反应</span>。如果裂变过程在<span data-concept=\"nuclear-reactor\">核反应堆</span>中进行，就可以获得有用的功率。轻原子核转变为较重原子核（<span data-concept=\"nuclear-fusion\">聚变</span>）同样产生<span data-concept=\"energy-and-work\">能量</span>。目前，这种<span data-concept=\"energy-and-work\">能量</span>尚未得到充分约束，而且过于昂贵，不适合商业<span data-concept=\"energy-and-work\">能量</span>生产。</p>",
+  "summary_html": "<p>用其他原子核或高速粒子轰击原子，可以产生新的原子。这些<span data-concept=\"nuclear-transmutation\">嬗变反应</span>的产物可以是稳定的，也可以是放射性的。许多人造元素，包括锝、砹和<span data-concept=\"transuranium-element\">超铀元素</span>，都是用这种方法制得的。</p><p>核电以及核武器爆炸，都可以通过<span data-concept=\"nuclear-fission\">裂变</span>（重原子核分裂成两个或多个较轻的原子核和若干中子的反应）产生。由于中子与其他重原子核结合时可能引起更多的裂变反应，因此可能产生<span data-concept=\"chain-reaction\">链式反应</span>。如果裂变过程在<span data-concept=\"nuclear-reactor\">核反应堆</span>中进行，就可以获得有用的功率。轻原子核转变为较重原子核（<span data-concept=\"nuclear-fusion\">聚变</span>）同样产生<span data-concept=\"energy-and-work\">能量</span>。目前，这种<span data-concept=\"energy-and-work\">能量</span>尚未得到充分约束，而且过于昂贵，不适合商业<span data-concept=\"energy-and-work\">能量</span>生产。</p>",
   "notes": "本节开头部分在书中没有标题，这里加上了 OmniStax 自己的标题；四条“学习链接”（一个关于大型强子对撞机的讲座和一段视频、一个核裂变模拟、一段关于核反应堆如何工作的视频，以及一个关于核废料管理的页面）被略去。以下各处保持书中印刷的原样：铀-235 之后的“分裂 U-238 原子核”、“Strassman”的写法、表 21.3 中鿏-266 旁的原子序数 107（其方程中为 109）、太阳反应中的“2₊₁⁰e⁺”、聚变的 3.6 × 10¹¹ kJ 被称为比裂变的 1.8 × 10¹⁰ kJ“稍大”、“any radioactive materials might be released”一句，以及摘要中的锝和砹（本节并未制得它们）。图 21.15（a）写作 ⁹⁷₃₇Rb + ¹³⁷₅₅Cs + 3n，其质量数之和为 237，实时图形改用图 21.16 中配平的 ⁹⁶₃₇Rb；图 21.16 把它的第一次裂变画作 Kr-93 和 Ba-142，而图上方的方程写的是 Ba-140 和 Kr-90；两幅图像均保持印刷原样。",
   "ai": {
     "text": [
@@ -712,7 +712,7 @@
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "核反应堆由以下部分组成：<br>1. 核燃料。必须有足够大量的可裂变同位素，才能维持受控的链式反应。放射性同位素装在称为燃料棒的管中。<br>2. 慢化剂。慢化剂使核反应产生的中子减速，使它们能被燃料吸收并引起更多的核反应。<br>3. 冷却剂。冷却剂把裂变反应产生的热量带到外部的锅炉和汽轮机，在那里转化为电能。<br>4. 控制系统。控制系统由放置在燃料棒之间的控制棒组成，用来吸收中子，并用于调节中子数量，使链式反应的速率保持在安全水平。<br>5. 屏蔽与安全壳系统。该部分的功能是保护工作人员免受核反应产生的辐射，并承受高温反应产生的高压。"
+        "solution": "核反应堆由以下部分组成：<br>1. 核燃料。必须有足够大量的可裂变同位素，才能维持受控的链式反应。放射性同位素装在称为燃料棒的管中。<br>2. 慢化剂。慢化剂使核反应产生的中子减速，使它们能被燃料吸收并引起更多的核反应。<br>3. 冷却剂。冷却剂把裂变反应产生的热量带到外部的锅炉和涡轮机，在那里转化为电能。<br>4. 控制系统。控制系统由放置在燃料棒之间的控制棒组成，用来吸收中子，并用于调节中子数量，使链式反应的速率保持在安全水平。<br>5. 屏蔽与安全壳系统。该部分的功能是保护工作人员免受核反应产生的辐射，并承受高温反应产生的高压。"
       }
     },
     {
@@ -746,7 +746,7 @@
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "铀的裂变产生热量，热量被带到外部的蒸汽发生器（锅炉）。产生的水蒸气推动汽轮机转动，汽轮机带动发电机发电。"
+        "solution": "铀的裂变产生热量，热量被带到外部的蒸汽发生器（锅炉）。产生的水蒸气推动涡轮机转动，涡轮机带动发电机发电。"
       }
     }
   ],

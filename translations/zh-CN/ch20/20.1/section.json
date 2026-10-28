@@ -52,7 +52,7 @@
     "/media/ch20/CNX_Chem_20_01_propene1.jpg",
     "/media/ch20/CNX_Chem_20_01_geoIsomers_img.jpg"
    ],
-   "original_caption": "（图 20.2）图中给出了甲烷、乙烷和戊烷分子的路易斯结构式、球棍模型和空间填充模型。（图 20.7）图中给出了烯烃乙烯、丙烯和 1-丁烯的展开结构式、球棍结构和空间填充模型。（图 20.10）这些分子模型显示了丁烯的构造异构体和几何异构体。",
+   "original_caption": "（图 20.2）图中给出了甲烷、乙烷和戊烷分子的路易斯结构、球棍模型和空间填充模型。（图 20.7）图中给出了烯烃乙烯、丙烯和 1-丁烯的展开结构式、球棍结构和空间填充模型。（图 20.10）这些分子模型显示了丁烯的构造异构体和几何异构体。",
    "draws": [],
    "conventions": [
     "C",
@@ -1048,7 +1048,7 @@
     "at": "end"
    },
    "cite": "alkanes",
-   "prompt": "写出下列各物质的化学式和路易斯结构式，它们都含有五个碳原子：<br>（a）一种烷烃<br>（b）一种烯烃<br>（c）一种炔烃",
+   "prompt": "写出下列各物质的化学式和路易斯结构，它们都含有五个碳原子：<br>（a）一种烷烃<br>（b）一种烯烃<br>（c）一种炔烃",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -1167,7 +1167,7 @@
     "at": "end"
    },
    "cite": "naming",
-   "prompt": "写出下列各烃的路易斯结构式和分子式：<br>（a）己烷<br>（b）3-甲基戊烷<br>（c）<em>顺</em>-3-己烯<br>（d）4-甲基-1-戊烯<br>（e）3-己炔<br>（f）4-甲基-2-戊炔",
+   "prompt": "写出下列各烃的路易斯结构和分子式：<br>（a）己烷<br>（b）3-甲基戊烷<br>（c）<em>顺</em>-3-己烯<br>（d）4-甲基-1-戊烯<br>（e）3-己炔<br>（f）4-甲基-2-戊炔",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -1201,7 +1201,7 @@
     "at": "end"
    },
    "cite": "isomers",
-   "prompt": "丁烷在一次性打火机中用作燃料。写出丁烷每种异构体的路易斯结构式。",
+   "prompt": "丁烷在一次性打火机中用作燃料。写出丁烷每种异构体的路易斯结构。",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -1218,7 +1218,7 @@
     "at": "end"
    },
    "cite": "alkene-isomers",
-   "prompt": "写出 ${\\text{CH}}_{3}\\text{CH}=\\text{CHCl}$ 的<em>顺反</em>异构体的路易斯结构式。",
+   "prompt": "写出 ${\\text{CH}}_{3}\\text{CH}=\\text{CHCl}$ 的<em>顺反</em>异构体的路易斯结构。",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -1252,7 +1252,7 @@
     "at": "end"
    },
    "cite": "naming",
-   "prompt": "写出 C<sub>4</sub>H<sub>9</sub>Cl 所有异构体的路易斯结构式和 IUPAC 名称。",
+   "prompt": "写出 C<sub>4</sub>H<sub>9</sub>Cl 所有异构体的路易斯结构和 IUPAC 名称。",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -1286,7 +1286,7 @@
     "at": "end"
    },
    "cite": "aromatic",
-   "prompt": "苯是无铅汽油中用作辛烷值助剂的化合物之一。它由乙炔催化转化为苯制得：<br>$3{\\text{C}}_{2}{\\text{H}}_{2}\\;\\longrightarrow \\;{\\text{C}}_{6}{\\text{H}}_{6}$<br>画出这些化合物的路易斯结构式（适当时画出共振式），并确定各自碳原子的杂化。",
+   "prompt": "苯是无铅汽油中用作辛烷值助剂的化合物之一。它由乙炔催化转化为苯制得：<br>$3{\\text{C}}_{2}{\\text{H}}_{2}\\;\\longrightarrow \\;{\\text{C}}_{6}{\\text{H}}_{6}$<br>画出这些化合物的路易斯结构（适当时画出共振式），并确定各自碳原子的杂化。",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -1303,7 +1303,7 @@
     "at": "end"
    },
    "cite": "addition",
-   "prompt": "为下列各反应分别写出两个完整的配平方程式，一个用结构简式，一个用路易斯结构式。<br>（a）1 mol 1-丁炔与 2 mol 碘反应。<br>（b）戊烷在空气中燃烧。",
+   "prompt": "为下列各反应分别写出两个完整的配平方程式，一个用结构简式，一个用路易斯结构。<br>（a）1 mol 1-丁炔与 2 mol 碘反应。<br>（b）戊烷在空气中燃烧。",
    "answer": {
     "type": "open",
     "generated_by": "source",

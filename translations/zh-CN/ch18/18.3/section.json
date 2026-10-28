@@ -35,7 +35,7 @@
  },
  "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "布鲁姆层级、概念标签、提示和建议思路由 AI 生成。答案来自书后答案。七道没有答案的习题——fs-idp16930624 和 fs-idp53586384（杂化与分子几何构型）、fs-idp20024944（路易斯结构式）、fs-idm40238272（配平方程式）、fs-idm26980560（化学式）、fs-idp26638608（硫化硅的实验式）和 fs-idp421376（硅氢化物的分子式）——被略去，也没有为它们计算答案。没有答案的概念性习题 fs-idp46618224 附有标明为 OmniStax 自己所写的建议思路。没有任何内容被移动。",
+ "exercise_notes": "布鲁姆层级、概念标签、提示和建议思路由 AI 生成。答案来自书后答案。七道没有答案的习题——fs-idp16930624 和 fs-idp53586384（杂化与分子几何构型）、fs-idp20024944（路易斯结构）、fs-idm40238272（配平方程式）、fs-idm26980560（化学式）、fs-idp26638608（硫化硅的实验式）和 fs-idp421376（硅氢化物的分子式）——被略去，也没有为它们计算答案。没有答案的概念性习题 fs-idp46618224 附有标明为 OmniStax 自己所写的建议思路。没有任何内容被移动。",
  "figures": [
   {
    "id": "sim-structures",
@@ -435,11 +435,11 @@
     "at": "end"
    },
    "cite": "boron-silicon",
-   "prompt": "为下列每个分子或离子写出路易斯结构式。不妨复习化学键一章。<br>（a）H<sub>3</sub>BPH<sub>3</sub><br>（b）$\\text{BF}_{4}{}^{-}$<br>（c）BBr<sub>3</sub><br>（d）B(CH<sub>3</sub>)<sub>3</sub><br>（e）B(OH)<sub>3</sub>",
+   "prompt": "为下列每个分子或离子写出路易斯结构。不妨复习化学键一章。<br>（a）H<sub>3</sub>BPH<sub>3</sub><br>（b）$\\text{BF}_{4}{}^{-}$<br>（c）BBr<sub>3</sub><br>（d）B(CH<sub>3</sub>)<sub>3</sub><br>（e）B(OH)<sub>3</sub>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "（a）H<sub>3</sub>BPH<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2a_img.jpg\" alt=\"这个路易斯结构式由一个硼原子与一个磷原子以单键相连组成。这两个原子各自与三个氢原子以单键相连。\"><br>（b）$\\text{BF}_{4}{}^{\\text{−}}$:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2b_img.jpg\" alt=\"这个路易斯结构式由一个硼原子与四个氟原子以单键相连组成，每个氟原子都有三对孤电子对。结构被方括号包围，方括号外的右上角有一个负号。\"><br>（c）BBr<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2c_img.jpg\" alt=\"这个路易斯结构式由一个硼原子与三个溴原子以单键相连组成，每个溴原子都有三对孤电子对。\"><br>（d）B(CH<sub>3</sub>)<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2d_img.jpg\" alt=\"这个路易斯结构式由一个硼原子与三个碳原子以单键相连组成，每个碳原子又与三个氢原子以单键相连。\"><br>（e）B(OH)<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2e_img.jpg\" alt=\"这个路易斯结构式由一个硼原子与三个氧原子以单键相连组成，每个氧原子都有两对孤电子对。每个氧原子与一个氢原子以单键相连。\">"
+    "solution": "（a）H<sub>3</sub>BPH<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2a_img.jpg\" alt=\"这个路易斯结构由一个硼原子与一个磷原子以单键相连组成。这两个原子各自与三个氢原子以单键相连。\"><br>（b）$\\text{BF}_{4}{}^{\\text{−}}$:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2b_img.jpg\" alt=\"这个路易斯结构由一个硼原子与四个氟原子以单键相连组成，每个氟原子都有三对孤电子对。结构被方括号包围，方括号外的右上角有一个负号。\"><br>（c）BBr<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2c_img.jpg\" alt=\"这个路易斯结构由一个硼原子与三个溴原子以单键相连组成，每个溴原子都有三对孤电子对。\"><br>（d）B(CH<sub>3</sub>)<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2d_img.jpg\" alt=\"这个路易斯结构由一个硼原子与三个碳原子以单键相连组成，每个碳原子又与三个氢原子以单键相连。\"><br>（e）B(OH)<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2e_img.jpg\" alt=\"这个路易斯结构由一个硼原子与三个氧原子以单键相连组成，每个氧原子都有两对孤电子对。每个氧原子与一个氢原子以单键相连。\">"
    }
   },
   {

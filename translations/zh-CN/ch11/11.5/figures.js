@@ -104,7 +104,7 @@ function bar(ctx, x0, y, per, n, total, col) {
           ? '泥粒使水变浑浊并散射光束，它们正在沉向底部。'
           : '泥已沉到底部，上方的清水不再显现光束。');
     const B = (s, on) => (on ? `\\boxed{\\text{${s}}}` : `\\text{${s}}`);
-    readout(d.readout, `${B('溶解的离子', v === 'solution')} \\;<\\; ${B('胶体粒子', v === 'colloid')} \\;<\\; ${B('悬浮粒子', v === 'suspension')}`, null, { values: false });
+    readout(d.readout, `${B('溶解的离子', v === 'solution')} \\;<\\; ${B('胶粒', v === 'colloid')} \\;<\\; ${B('悬浮粒子', v === 'suspension')}`, null, { values: false });
   }
   register(d.fig, { update: (dt) => { clock += dt; cy.step(dt, () => 1); }, draw });
 })();

@@ -104,7 +104,7 @@
   {
    "sym": "λ_decay",
    "concept": "decay-constant",
-   "meaning": "放射性同位素的衰变常数，即其一级速率常数",
+   "meaning": "放射性同位素的衰变常量，即其一级速率常数",
    "unit": "y⁻¹",
    "section": "21.3",
    "anchor": "21.3-half-lives"
@@ -112,7 +112,7 @@
   {
    "sym": "rate",
    "concept": "radioactive-decay-rate",
-   "meaning": "放射性样品的衰变速率，以每秒核衰变次数表示时称为活度",
+   "meaning": "放射性样品的衰变率，以每秒核衰变次数表示时称为活度",
    "unit": "decays/s",
    "section": "21.3",
    "anchor": "21.3-half-lives"
@@ -141,7 +141,7 @@
   {
    "sym": "t",
    "concept": "time",
-   "meaning": "衰变开始以来经过的时间，如用放射性测年法测得的物体的年龄",
+   "meaning": "衰变开始以来经过的时间，如用放射性鉴年法测得的物体的年龄",
    "unit": "y",
    "section": "21.3",
    "anchor": "21.3-half-lives"
@@ -157,7 +157,7 @@
   {
    "sym": "λ_decay",
    "concept": "decay-constant",
-   "meaning": "放射性同位素的衰变常数，等于 ln 2 除以其半衰期",
+   "meaning": "放射性同位素的衰变常量，等于 ln 2 除以其半衰期",
    "unit": "y⁻¹",
    "section": "21.6",
    "anchor": "21.6-ex-activity"

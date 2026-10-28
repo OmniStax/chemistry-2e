@@ -2,14 +2,14 @@
   "id": "7.3",
   "module": "m68739",
   "chapter": "7",
-  "title": "路易斯符号与路易斯结构式",
-  "short": "路易斯符号与路易斯结构式",
-  "lead": "路易斯符号用元素符号周围的点表示原子或单原子离子的价电子，路易斯结构式则表示分子或多原子离子的价电子如何在键中共用或作为孤电子对保留。八隅体规则指导这些结构的书写，其中有单键、双键和三键，有些中心原子会打破这一规则。",
+  "title": "路易斯符号与路易斯结构",
+  "short": "路易斯符号与路易斯结构",
+  "lead": "路易斯符号用元素符号周围的点表示原子或单原子离子的价电子，路易斯结构则表示分子或多原子离子的价电子如何在键中共用或作为孤电子对保留。八隅体规则指导这些结构的书写，其中有单键、双键和三键，有些中心原子会打破这一规则。",
   "objectives": [
     "写出电中性原子和离子的路易斯符号",
-    "画出表示简单分子中成键情况的路易斯结构式"
+    "画出表示简单分子中成键情况的路易斯结构"
   ],
-  "summary_html": "<p>价电子结构可以通过画路易斯符号（用于原子和单原子离子）和路易斯结构式（用于分子和多原子离子）来形象化地表示。在路易斯结构式中，用孤电子对、未成对电子以及单键、双键或三键来表明价电子在每个原子周围的位置。大多数结构——尤其是含有第二周期元素的结构——都服从八隅体规则，即每个原子（H 除外）周围都有八个电子。八隅体规则的例外出现在奇电子分子（自由基）、缺电子分子和超价分子中。</p>",
+  "summary_html": "<p>价电子结构可以通过画路易斯符号（用于原子和单原子离子）和路易斯结构（用于分子和多原子离子）来形象化地表示。在路易斯结构中，用孤电子对、未成对电子以及单键、双键或三键来表明价电子在每个原子周围的位置。大多数结构——尤其是含有第二周期元素的结构——都服从八隅体规则，即每个原子（H 除外）周围都有八个电子。八隅体规则的例外出现在奇电子分子（自由基）、缺电子分子和超价分子中。</p>",
   "notes": "本节没有任何内容被略去。“富勒烯化学”框中保留了书中多余的“自史前时代起就为人所知，。”，例 7.5 保留了书中把五步程序称为“前面讨论的六个步骤”的说法。",
   "ai": {
     "text": [
@@ -572,11 +572,11 @@
         "after": "ex-titan"
       },
       "cite": "writing-lewis",
-      "prompt": "一氧化碳 CO 和二氧化碳 CO<sub>2</sub> 都是化石燃料燃烧的产物。这两种气体也都会带来问题：CO 有毒，CO<sub>2</sub> 被认为与全球气候变化有关。这两种分子的路易斯结构式是什么？",
+      "prompt": "一氧化碳 CO 和二氧化碳 CO<sub>2</sub> 都是化石燃料燃烧的产物。这两种气体也都会带来问题：CO 有毒，CO<sub>2</sub> 被认为与全球气候变化有关。这两种分子的路易斯结构是什么？",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "<img src=\"/media/ch07/CNX_Chem_07_03_COCO2_img.jpg\" alt=\"图中有两个路易斯结构式。左边是一个碳与一个氧以三键相连，各带一对孤电子对。右边的结构是一个碳在两侧各与一个氧以双键相连。每个氧带两对孤电子对。\">"
+        "solution": "<img src=\"/media/ch07/CNX_Chem_07_03_COCO2_img.jpg\" alt=\"图中有两个路易斯结构。左边是一个碳与一个氧以三键相连，各带一对孤电子对。右边的结构是一个碳在两侧各与一个氧以双键相连。每个氧带两对孤电子对。\">"
       }
     },
     {
@@ -589,11 +589,11 @@
         "after": "ex-xenon"
       },
       "cite": "octet-exceptions",
-      "prompt": "卤素形成一类称为卤素互化物的化合物，其中卤素原子彼此以共价键结合。写出卤素互化物 BrCl<sub>3</sub> 和 ${\\text{ICl}}_{4}{}^{\\text{−}}$ 的路易斯结构式。",
+      "prompt": "卤素形成一类称为卤素互化物的化合物，其中卤素原子彼此以共价键结合。写出卤素互化物 BrCl<sub>3</sub> 和 ${\\text{ICl}}_{4}{}^{\\text{−}}$ 的路易斯结构。",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "<img src=\"/media/ch07/CNX_Chem_07_03_Interhal_img.jpg\" alt=\"图中有两个路易斯结构式。左边是一个带两对孤电子对的溴原子，与三个各带三对孤电子对的氯原子以单键相连。右边是一个带两对孤电子对的碘原子，与四个各带三对孤电子对的氯原子以单键相连。这个结构外面套着方括号，带上标负号。\">"
+        "solution": "<img src=\"/media/ch07/CNX_Chem_07_03_Interhal_img.jpg\" alt=\"图中有两个路易斯结构。左边是一个带两对孤电子对的溴原子，与三个各带三对孤电子对的氯原子以单键相连。右边是一个带两对孤电子对的碘原子，与四个各带三对孤电子对的氯原子以单键相连。这个结构外面套着方括号，带上标负号。\">"
       }
     },
     {
@@ -641,7 +641,7 @@
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "（a）<br><img src=\"/media/ch07/CNX_Chem_07_03_Exercise3a_img.jpg\" alt=\"图中有两个路易斯结构式。左边是带上标 2 和加号的符号 M g，右边是被八个点围绕、带上标 2 和负号的符号 S。\"><br>（b）<br><img src=\"/media/ch07/CNX_Chem_07_03_Exercise3b_img.jpg\" alt=\"图中有两个路易斯结构式。左边是带上标 3 和加号的符号 A l，右边是被八个点围绕、带上标 2 和负号的符号 O。\"><br>（c）<br><img src=\"/media/ch07/CNX_Chem_07_03_Exercise3c_img.jpg\" alt=\"图中有两个路易斯结构式。左边是带上标 3 和加号的符号 G a，右边是被八个点围绕、带上标负号的符号 C l。\"><br>（d）<br><img src=\"/media/ch07/CNX_Chem_07_03_Exercise3d_img.jpg\" alt=\"图中有两个路易斯结构式。左边是带上标加号的符号 K，右边是被八个点围绕、带上标 2 和负号的符号 O。\"><br>（e）<br><img src=\"/media/ch07/CNX_Chem_07_03_Exercise3e_img.jpg\" alt=\"图中有两个路易斯结构式。左边是带上标加号的符号 L i，右边是被八个点围绕、带上标 3 和负号的符号 N。\"><br>（f）<br><img src=\"/media/ch07/CNX_Chem_07_03_Exercise3f_img.jpg\" alt=\"图中有两个路易斯结构式。左边是带上标加号的符号 K，右边是被八个点围绕、带上标负号的符号 F。\">"
+        "solution": "（a）<br><img src=\"/media/ch07/CNX_Chem_07_03_Exercise3a_img.jpg\" alt=\"图中有两个路易斯结构。左边是带上标 2 和加号的符号 M g，右边是被八个点围绕、带上标 2 和负号的符号 S。\"><br>（b）<br><img src=\"/media/ch07/CNX_Chem_07_03_Exercise3b_img.jpg\" alt=\"图中有两个路易斯结构。左边是带上标 3 和加号的符号 A l，右边是被八个点围绕、带上标 2 和负号的符号 O。\"><br>（c）<br><img src=\"/media/ch07/CNX_Chem_07_03_Exercise3c_img.jpg\" alt=\"图中有两个路易斯结构。左边是带上标 3 和加号的符号 G a，右边是被八个点围绕、带上标负号的符号 C l。\"><br>（d）<br><img src=\"/media/ch07/CNX_Chem_07_03_Exercise3d_img.jpg\" alt=\"图中有两个路易斯结构。左边是带上标加号的符号 K，右边是被八个点围绕、带上标 2 和负号的符号 O。\"><br>（e）<br><img src=\"/media/ch07/CNX_Chem_07_03_Exercise3e_img.jpg\" alt=\"图中有两个路易斯结构。左边是带上标加号的符号 L i，右边是被八个点围绕、带上标 3 和负号的符号 N。\"><br>（f）<br><img src=\"/media/ch07/CNX_Chem_07_03_Exercise3f_img.jpg\" alt=\"图中有两个路易斯结构。左边是带上标加号的符号 K，右边是被八个点围绕、带上标负号的符号 F。\">"
       }
     },
     {
@@ -653,7 +653,7 @@
         "at": "end"
       },
       "cite": "lewis-symbols",
-      "prompt": "在下列路易斯结构式中，M 和 X 代表元素周期表第三周期的各种元素。用各元素的元素符号写出每种化合物的化学式：<br>（a）<br><img src=\"/media/ch07/CNX_Chem_07_03_MXLewisa_img.jpg\" alt=\"图中并排画有两个路易斯结构式，各自套着方括号。左边的结构是带上标 2 和加号的符号 M。右边是被四对孤电子对围绕的符号 X，括号外有上标 2 和负号。\"><br>（b）<br><img src=\"/media/ch07/CNX_Chem_07_03_MXLewisb_img.jpg\" alt=\"图中并排画有两个路易斯结构式，各自套着方括号。左边的结构是带上标 3 和加号的符号 M。右边的结构是被四对孤电子对围绕的符号 X，括号外有上标负号和下标 3。\"><br>（c）<br><img src=\"/media/ch07/CNX_Chem_07_03_MXLewisc_img.jpg\" alt=\"图中并排画有两个路易斯结构式，各自套着方括号。左边的结构是符号 M，括号外有上标加号和下标 2。右边的结构是被四对孤电子对围绕的符号 X，括号外有上标 2 和负号。\"><br>（d）<br><img src=\"/media/ch07/CNX_Chem_07_03_MXLewisd_img.jpg\" alt=\"图中并排画有两个路易斯结构式，各自套着方括号。左边的结构是符号 M，括号外有上标 3 和加号以及下标 2。右边的结构是被四对孤电子对围绕的符号 X，括号外有上标 2 和负号以及下标 3。\">",
+      "prompt": "在下列路易斯结构中，M 和 X 代表元素周期表第三周期的各种元素。用各元素的元素符号写出每种化合物的化学式：<br>（a）<br><img src=\"/media/ch07/CNX_Chem_07_03_MXLewisa_img.jpg\" alt=\"图中并排画有两个路易斯结构，各自套着方括号。左边的结构是带上标 2 和加号的符号 M。右边是被四对孤电子对围绕的符号 X，括号外有上标 2 和负号。\"><br>（b）<br><img src=\"/media/ch07/CNX_Chem_07_03_MXLewisb_img.jpg\" alt=\"图中并排画有两个路易斯结构，各自套着方括号。左边的结构是带上标 3 和加号的符号 M。右边的结构是被四对孤电子对围绕的符号 X，括号外有上标负号和下标 3。\"><br>（c）<br><img src=\"/media/ch07/CNX_Chem_07_03_MXLewisc_img.jpg\" alt=\"图中并排画有两个路易斯结构，各自套着方括号。左边的结构是符号 M，括号外有上标加号和下标 2。右边的结构是被四对孤电子对围绕的符号 X，括号外有上标 2 和负号。\"><br>（d）<br><img src=\"/media/ch07/CNX_Chem_07_03_MXLewisd_img.jpg\" alt=\"图中并排画有两个路易斯结构，各自套着方括号。左边的结构是符号 M，括号外有上标 3 和加号以及下标 2。右边的结构是被四对孤电子对围绕的符号 X，括号外有上标 2 和负号以及下标 3。\">",
       "answer": {
         "type": "open",
         "generated_by": "ai",
@@ -669,7 +669,7 @@
         "at": "end"
       },
       "cite": "writing-lewis",
-      "prompt": "写出双原子分子 P<sub>2</sub> 的路易斯结构式，P<sub>2</sub> 是高温磷蒸气中存在的一种不稳定的磷的形式。",
+      "prompt": "写出双原子分子 P<sub>2</sub> 的路易斯结构，P<sub>2</sub> 是高温磷蒸气中存在的一种不稳定的磷的形式。",
       "answer": {
         "type": "open",
         "generated_by": "source",
@@ -685,7 +685,7 @@
         "at": "end"
       },
       "cite": "writing-lewis",
-      "prompt": "写出下列各物质的路易斯结构式：<br>（a）H<sub>2</sub><br>（b）HBr<br>（c）PCl<sub>3</sub><br>（d）SF<sub>2</sub><br>（e）H<sub>2</sub>CCH<sub>2</sub><br>（f）HNNH<br>（g）H<sub>2</sub>CNH<br>（h）NO<sup>–</sup><br>（i）N<sub>2</sub><br>（j）CO<br>（k）CN<sup>–</sup>",
+      "prompt": "写出下列各物质的路易斯结构：<br>（a）H<sub>2</sub><br>（b）HBr<br>（c）PCl<sub>3</sub><br>（d）SF<sub>2</sub><br>（e）H<sub>2</sub>CCH<sub>2</sub><br>（f）HNNH<br>（g）H<sub>2</sub>CNH<br>（h）NO<sup>–</sup><br>（i）N<sub>2</sub><br>（j）CO<br>（k）CN<sup>–</sup>",
       "answer": {
         "type": "open",
         "generated_by": "ai",
@@ -701,11 +701,11 @@
         "at": "end"
       },
       "cite": "writing-lewis",
-      "prompt": "写出下列各物质的路易斯结构式：<br>（a）O<sub>2</sub><br>（b）H<sub>2</sub>CO<br>（c）AsF<sub>3</sub><br>（d）ClNO<br>（e）SiCl<sub>4</sub><br>（f）H<sub>3</sub>O<sup>+</sup><br>（g）${\\text{NH}}_{4}{}^{+}$<br>（h）${\\text{BF}}_{4}{}^{\\text{−}}$<br>（i）HCCH<br>（j）ClCN<br>（k）${\\text{C}}_{2}{}^{\\text{2+}}$",
+      "prompt": "写出下列各物质的路易斯结构：<br>（a）O<sub>2</sub><br>（b）H<sub>2</sub>CO<br>（c）AsF<sub>3</sub><br>（d）ClNO<br>（e）SiCl<sub>4</sub><br>（f）H<sub>3</sub>O<sup>+</sup><br>（g）${\\text{NH}}_{4}{}^{+}$<br>（h）${\\text{BF}}_{4}{}^{\\text{−}}$<br>（i）HCCH<br>（j）ClCN<br>（k）${\\text{C}}_{2}{}^{\\text{2+}}$",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "（a）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7a_img.jpg\" alt=\"图中的路易斯结构式是两个氧原子以双键相连，各带两对孤电子对。\"><br>在这种情况下，路易斯结构式不足以表示实验研究所表明的事实，即每个氧分子中有两个未成对电子。<br>（b）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7b_img.jpg\" alt=\"图中的路易斯结构式是一个碳原子，与两个氢原子以单键相连，与一个氧原子以双键相连。氧原子带两对孤电子对。\"><br>（c）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7c_img.jpg\" alt=\"图中的路易斯结构式是一个砷原子与三个氟原子以单键相连。每个氟原子带一对孤电子对。\"><br>（d）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7d_img.jpg\" alt=\"图中的路易斯结构式是一个带一对孤电子对的氮原子，与一个带三对孤电子对的氯原子以单键相连。氮还与一个带两对孤电子对的氧以双键相连。\"><br>（e）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7e_img.jpg\" alt=\"图中的路易斯结构式是一个硅原子与四个氯原子以单键相连。每个氯原子带三对孤电子对。\"><br>（f）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7f_img.jpg\" alt=\"图中的路易斯结构式是一个带一对孤电子对的氧原子，与三个氢原子以单键相连。这个结构外面套着方括号，带上标加号。\"><br>（g）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7g_img.jpg\" alt=\"图中的路易斯结构式是一个氮原子与四个氢原子以单键相连。这个结构外面套着方括号，带上标加号。\"><br>（h）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7h_img.jpg\" alt=\"图中的路易斯结构式是一个硼原子与四个氟原子以单键相连。每个氟原子带三对孤电子对。这个结构外面套着方括号，带上标负号。\"><br>（i）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7i_img.jpg\" alt=\"图中的路易斯结构式是两个碳原子以三键相连。每个碳还与一个氢原子以单键相连。\"><br>（j）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7j_img.jpg\" alt=\"图中的路易斯结构式是一个碳原子，与一个带一对孤电子对的氮原子以三键相连。碳还与一个带三对孤电子对的氯原子以单键相连。\"><br>（k）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7k_img.jpg\" alt=\"图中的路易斯结构式是两个碳原子以三键相连。第二个碳的右侧有一个上标 2 和加号。\">"
+        "solution": "（a）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7a_img.jpg\" alt=\"图中的路易斯结构是两个氧原子以双键相连，各带两对孤电子对。\"><br>在这种情况下，路易斯结构不足以表示实验研究所表明的事实，即每个氧分子中有两个未成对电子。<br>（b）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7b_img.jpg\" alt=\"图中的路易斯结构是一个碳原子，与两个氢原子以单键相连，与一个氧原子以双键相连。氧原子带两对孤电子对。\"><br>（c）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7c_img.jpg\" alt=\"图中的路易斯结构是一个砷原子与三个氟原子以单键相连。每个氟原子带一对孤电子对。\"><br>（d）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7d_img.jpg\" alt=\"图中的路易斯结构是一个带一对孤电子对的氮原子，与一个带三对孤电子对的氯原子以单键相连。氮还与一个带两对孤电子对的氧以双键相连。\"><br>（e）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7e_img.jpg\" alt=\"图中的路易斯结构是一个硅原子与四个氯原子以单键相连。每个氯原子带三对孤电子对。\"><br>（f）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7f_img.jpg\" alt=\"图中的路易斯结构是一个带一对孤电子对的氧原子，与三个氢原子以单键相连。这个结构外面套着方括号，带上标加号。\"><br>（g）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7g_img.jpg\" alt=\"图中的路易斯结构是一个氮原子与四个氢原子以单键相连。这个结构外面套着方括号，带上标加号。\"><br>（h）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7h_img.jpg\" alt=\"图中的路易斯结构是一个硼原子与四个氟原子以单键相连。每个氟原子带三对孤电子对。这个结构外面套着方括号，带上标负号。\"><br>（i）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7i_img.jpg\" alt=\"图中的路易斯结构是两个碳原子以三键相连。每个碳还与一个氢原子以单键相连。\"><br>（j）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7j_img.jpg\" alt=\"图中的路易斯结构是一个碳原子，与一个带一对孤电子对的氮原子以三键相连。碳还与一个带三对孤电子对的氯原子以单键相连。\"><br>（k）<br><img src=\"/media/ch07/CNX_Chem_07_03_Question7k_img.jpg\" alt=\"图中的路易斯结构是两个碳原子以三键相连。第二个碳的右侧有一个上标 2 和加号。\">"
       }
     },
     {
@@ -717,7 +717,7 @@
         "at": "end"
       },
       "cite": "octet-exceptions",
-      "prompt": "写出下列各物质的路易斯结构式：<br>（a）ClF<sub>3</sub><br>（b）PCl<sub>5</sub><br>（c）BF<sub>3</sub><br>（d）${\\text{PF}}_{6}{}^{\\text{−}}$",
+      "prompt": "写出下列各物质的路易斯结构：<br>（a）ClF<sub>3</sub><br>（b）PCl<sub>5</sub><br>（c）BF<sub>3</sub><br>（d）${\\text{PF}}_{6}{}^{\\text{−}}$",
       "answer": {
         "type": "open",
         "generated_by": "ai",
@@ -733,11 +733,11 @@
         "at": "end"
       },
       "cite": "octet-exceptions",
-      "prompt": "写出下列各物质的路易斯结构式：<br>（a）SeF<sub>6</sub><br>（b）XeF<sub>4</sub><br>（c）${\\text{SeCl}}_{3}{}^{+}$<br>（d）Cl<sub>2</sub>BBCl<sub>2</sub>（含有一个 B–B 键）",
+      "prompt": "写出下列各物质的路易斯结构：<br>（a）SeF<sub>6</sub><br>（b）XeF<sub>4</sub><br>（c）${\\text{SeCl}}_{3}{}^{+}$<br>（d）Cl<sub>2</sub>BBCl<sub>2</sub>（含有一个 B–B 键）",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "（a）SeF<sub>6</sub>：<br><img src=\"/media/ch07/CNX_Chem_07_03_Question9a_img.jpg\" alt=\"图中的路易斯结构式是一个硒原子与六个氟原子以单键相连，每个氟原子带三对孤电子对。\"><br>（b）XeF<sub>4</sub>：<br><img src=\"/media/ch07/CNX_Chem_07_03_Question9b_img.jpg\" alt=\"图中的路易斯结构式是一个带两对孤电子对的氙原子。它与四个氟原子以单键相连，每个氟原子带三对孤电子对。\"><br>（c）${\\text{SeCl}}_{3}{}^{\\text{+}}\\text{:}$<br><img src=\"/media/ch07/CNX_Chem_07_03_Question9c_img.jpg\" alt=\"图中的路易斯结构式是一个带一对孤电子对的硒原子，与三个各带三对孤电子对的氯原子以单键相连。整个结构外面套着方括号。\"><br>（d）Cl<sub>2</sub>BBCl<sub>2</sub>：<br><img src=\"/media/ch07/CNX_Chem_07_03_Question9d_img.jpg\" alt=\"图中的路易斯结构式是两个硼原子以单键相连。每个硼还与两个氯原子以单键相连，这两个氯原子都带三对孤电子对。\">"
+        "solution": "（a）SeF<sub>6</sub>：<br><img src=\"/media/ch07/CNX_Chem_07_03_Question9a_img.jpg\" alt=\"图中的路易斯结构是一个硒原子与六个氟原子以单键相连，每个氟原子带三对孤电子对。\"><br>（b）XeF<sub>4</sub>：<br><img src=\"/media/ch07/CNX_Chem_07_03_Question9b_img.jpg\" alt=\"图中的路易斯结构是一个带两对孤电子对的氙原子。它与四个氟原子以单键相连，每个氟原子带三对孤电子对。\"><br>（c）${\\text{SeCl}}_{3}{}^{\\text{+}}\\text{:}$<br><img src=\"/media/ch07/CNX_Chem_07_03_Question9c_img.jpg\" alt=\"图中的路易斯结构是一个带一对孤电子对的硒原子，与三个各带三对孤电子对的氯原子以单键相连。整个结构外面套着方括号。\"><br>（d）Cl<sub>2</sub>BBCl<sub>2</sub>：<br><img src=\"/media/ch07/CNX_Chem_07_03_Question9d_img.jpg\" alt=\"图中的路易斯结构是两个硼原子以单键相连。每个硼还与两个氯原子以单键相连，这两个氯原子都带三对孤电子对。\">"
       }
     },
     {
@@ -749,7 +749,7 @@
         "at": "end"
       },
       "cite": "writing-lewis",
-      "prompt": "写出下列各物质的路易斯结构式：<br>（a）${\\text{PO}}_{4}{}^{\\text{3−}}$<br>（b）${\\text{ICl}}_{4}{}^{\\text{−}}$<br>（c）${\\text{SO}}_{3}{}^{\\text{2−}}$<br>（d）HONO",
+      "prompt": "写出下列各物质的路易斯结构：<br>（a）${\\text{PO}}_{4}{}^{\\text{3−}}$<br>（b）${\\text{ICl}}_{4}{}^{\\text{−}}$<br>（c）${\\text{SO}}_{3}{}^{\\text{2−}}$<br>（d）HONO",
       "answer": {
         "type": "open",
         "generated_by": "ai",
@@ -781,7 +781,7 @@
         "at": "end"
       },
       "cite": "octet-exceptions",
-      "prompt": "写出下列分子或离子的路易斯结构式：<br>（a）SbH<sub>3</sub><br>（b）XeF<sub>2</sub><br>（c）Se<sub>8</sub>（一种环状分子，由八个 Se 原子组成一个环）",
+      "prompt": "写出下列分子或离子的路易斯结构：<br>（a）SbH<sub>3</sub><br>（b）XeF<sub>2</sub><br>（c）Se<sub>8</sub>（一种环状分子，由八个 Se 原子组成一个环）",
       "answer": {
         "type": "open",
         "generated_by": "ai",
@@ -797,11 +797,11 @@
         "at": "end"
       },
       "cite": "writing-lewis",
-      "prompt": "甲醇 H<sub>3</sub>COH 被用作某些赛车的燃料。乙醇 C<sub>2</sub>H<sub>5</sub>OH 在巴西被广泛用作车用燃料。甲醇和乙醇燃烧时都生成 CO<sub>2</sub> 和 H<sub>2</sub>O。用路易斯结构式代替化学式，写出这些燃烧反应的化学方程式。",
+      "prompt": "甲醇 H<sub>3</sub>COH 被用作某些赛车的燃料。乙醇 C<sub>2</sub>H<sub>5</sub>OH 在巴西被广泛用作车用燃料。甲醇和乙醇燃烧时都生成 CO<sub>2</sub> 和 H<sub>2</sub>O。用路易斯结构代替化学式，写出这些燃烧反应的化学方程式。",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "<img src=\"/media/ch07/CNX_Chem_07_03_Question18_img.jpg\" alt=\"图中用路易斯结构式表示两个反应。上面的反应是一个碳原子，与三个氢原子以单键相连，并与一个带两对孤电子对的氧原子以单键相连。该氧原子还与一个氢原子相连。后面是一个加号和数字一点五，再后面是两个以双键相连的氧原子，各带两对孤电子对。一个向右的箭头指向一个碳原子，它与两个氧原子以双键相连，每个氧原子带两对孤电子对。这个结构后面是一个加号、数字二，以及由一个带两对孤电子对的氧与两个氢原子以单键相连构成的结构。下面的反应是一个碳原子，与三个氢原子以单键相连，并与另一个碳原子以单键相连。第二个碳原子与两个氢原子以及一个带两对孤电子对的氧原子以单键相连。该氧原子还与一个氢原子相连。后面是一个加号和数字三，再后面是两个以双键相连的氧原子。每个氧原子带两对孤电子对。一个向右的箭头指向数字二和一个碳原子，它与两个氧原子以双键相连，每个氧原子带两对孤电子对。这个结构后面是一个加号、数字三，以及由一个带两对孤电子对的氧与两个氢原子以单键相连构成的结构。\">"
+        "solution": "<img src=\"/media/ch07/CNX_Chem_07_03_Question18_img.jpg\" alt=\"图中用路易斯结构表示两个反应。上面的反应是一个碳原子，与三个氢原子以单键相连，并与一个带两对孤电子对的氧原子以单键相连。该氧原子还与一个氢原子相连。后面是一个加号和数字一点五，再后面是两个以双键相连的氧原子，各带两对孤电子对。一个向右的箭头指向一个碳原子，它与两个氧原子以双键相连，每个氧原子带两对孤电子对。这个结构后面是一个加号、数字二，以及由一个带两对孤电子对的氧与两个氢原子以单键相连构成的结构。下面的反应是一个碳原子，与三个氢原子以单键相连，并与另一个碳原子以单键相连。第二个碳原子与两个氢原子以及一个带两对孤电子对的氧原子以单键相连。该氧原子还与一个氢原子相连。后面是一个加号和数字三，再后面是两个以双键相连的氧原子。每个氧原子带两对孤电子对。一个向右的箭头指向数字二和一个碳原子，它与两个氧原子以双键相连，每个氧原子带两对孤电子对。这个结构后面是一个加号、数字三，以及由一个带两对孤电子对的氧与两个氢原子以单键相连构成的结构。\">"
       }
     },
     {
@@ -813,7 +813,7 @@
         "at": "end"
       },
       "cite": "writing-lewis",
-      "prompt": "我们太阳系中的许多行星含有有机化学物质，包括甲烷（CH<sub>4</sub>）以及微量的乙烯（C<sub>2</sub>H<sub>4</sub>）、乙烷（C<sub>2</sub>H<sub>6</sub>）、丙炔（H<sub>3</sub>CCCH）和丁二炔（HCCCCH）。写出这些分子各自的路易斯结构式。",
+      "prompt": "我们太阳系中的许多行星含有有机化学物质，包括甲烷（CH<sub>4</sub>）以及微量的乙烯（C<sub>2</sub>H<sub>4</sub>）、乙烷（C<sub>2</sub>H<sub>6</sub>）、丙炔（H<sub>3</sub>CCCH）和丁二炔（HCCCCH）。写出这些分子各自的路易斯结构。",
       "answer": {
         "type": "open",
         "generated_by": "ai",
@@ -829,11 +829,11 @@
         "at": "end"
       },
       "cite": "writing-lewis",
-      "prompt": "四氯化碳以前用于扑灭电气火灾的灭火器。由于会生成有毒气体光气 Cl<sub>2</sub>CO，它不再用于这一目的。写出四氯化碳和光气的路易斯结构式。",
+      "prompt": "四氯化碳以前用于扑灭电气火灾的灭火器。由于会生成有毒气体光气 Cl<sub>2</sub>CO，它不再用于这一目的。写出四氯化碳和光气的路易斯结构。",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "<img src=\"/media/ch07/CNX_Chem_07_03_Carbtet_img.jpg\" alt=\"图中有两个路易斯结构式。左边是一个碳原子与四个氯原子以单键相连，每个氯原子带三对孤电子对。右边是一个碳原子，与一个带两对孤电子对的氧原子以双键相连。该碳原子还与两个氯原子以单键相连，每个氯原子带三对孤电子对。\">"
+        "solution": "<img src=\"/media/ch07/CNX_Chem_07_03_Carbtet_img.jpg\" alt=\"图中有两个路易斯结构。左边是一个碳原子与四个氯原子以单键相连，每个氯原子带三对孤电子对。右边是一个碳原子，与一个带两对孤电子对的氧原子以双键相连。该碳原子还与两个氯原子以单键相连，每个氯原子带三对孤电子对。\">"
       }
     },
     {
@@ -861,11 +861,11 @@
         "at": "end"
       },
       "cite": "writing-lewis",
-      "prompt": "下面给出了几种生物学上重要的分子中原子的排列。通过添加多重键和孤电子对来完成这些分子的路易斯结构式。不要再添加任何原子。<br>（a）氨基酸丝氨酸：<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioa_img.jpg\" alt=\"图中是一个路易斯结构式。一个氮原子与两个氢原子和一个碳原子以单键相连。该碳原子与一个氢原子和另外两个碳原子以单键相连。其中一个碳原子与两个氢原子和一个氧原子以单键相连。该氧原子与一个氢原子相连。另一个碳原子与两个氧原子以单键相连，其中一个氧原子与一个氢原子相连。\"><br>（b）尿素：<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbiob_img.jpg\" alt=\"图中是一个路易斯结构式。一个氮原子与两个氢原子和一个碳原子以单键相连。该碳原子与一个氧原子和另一个氮原子以单键相连。那个氮原子再与两个氢原子以单键相连。\"><br>（c）丙酮酸：<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioc_img.jpg\" alt=\"图中是一个路易斯结构式。一个碳原子与三个氢原子和另一个碳原子以单键相连。第二个碳原子与一个氧原子和第三个碳原子以单键相连。这个碳再与两个氧原子以单键相连，其中一个氧原子与一个氢原子以单键相连。\"><br>（d）尿嘧啶：<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbiod_img.jpg\" alt=\"图中是一个六边形环的路易斯结构式。从环的顶部开始（顺时针方向），三个碳原子、一个氮原子、一个碳原子和一个氮原子彼此以单键相连。顶部的碳原子与一个氧原子以单键相连。第二个和第三个碳以及那个氮原子各与一个氢原子以单键相连。下一个碳原子与一个氧原子以单键相连，最后一个氮原子与一个氢原子以单键相连。\"><br>（e）碳酸：<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioe_img.jpg\" alt=\"图中是一个路易斯结构式。一个碳原子与三个氧原子以单键相连。其中两个氧原子各与一个氢原子以单键相连。\">",
+      "prompt": "下面给出了几种生物学上重要的分子中原子的排列。通过添加多重键和孤电子对来完成这些分子的路易斯结构。不要再添加任何原子。<br>（a）氨基酸丝氨酸：<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioa_img.jpg\" alt=\"图中是一个路易斯结构。一个氮原子与两个氢原子和一个碳原子以单键相连。该碳原子与一个氢原子和另外两个碳原子以单键相连。其中一个碳原子与两个氢原子和一个氧原子以单键相连。该氧原子与一个氢原子相连。另一个碳原子与两个氧原子以单键相连，其中一个氧原子与一个氢原子相连。\"><br>（b）尿素：<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbiob_img.jpg\" alt=\"图中是一个路易斯结构。一个氮原子与两个氢原子和一个碳原子以单键相连。该碳原子与一个氧原子和另一个氮原子以单键相连。那个氮原子再与两个氢原子以单键相连。\"><br>（c）丙酮酸：<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioc_img.jpg\" alt=\"图中是一个路易斯结构。一个碳原子与三个氢原子和另一个碳原子以单键相连。第二个碳原子与一个氧原子和第三个碳原子以单键相连。这个碳再与两个氧原子以单键相连，其中一个氧原子与一个氢原子以单键相连。\"><br>（d）尿嘧啶：<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbiod_img.jpg\" alt=\"图中是一个六边形环的路易斯结构。从环的顶部开始（顺时针方向），三个碳原子、一个氮原子、一个碳原子和一个氮原子彼此以单键相连。顶部的碳原子与一个氧原子以单键相连。第二个和第三个碳以及那个氮原子各与一个氢原子以单键相连。下一个碳原子与一个氧原子以单键相连，最后一个氮原子与一个氢原子以单键相连。\"><br>（e）碳酸：<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioe_img.jpg\" alt=\"图中是一个路易斯结构。一个碳原子与三个氧原子以单键相连。其中两个氧原子各与一个氢原子以单键相连。\">",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "（a）<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioansa_img.jpg\" alt=\"图中是一个路易斯结构式。一个氮原子与两个氢原子和一个碳原子以单键相连。该碳原子与一个氢原子和另外两个碳原子以单键相连。其中一个碳原子与两个氢原子和一个氧原子以单键相连。该氧原子与一个氢原子相连。另一个碳与两个氧原子以单键相连，其中一个氧原子与一个氢原子相连。氧原子各有两对孤电子对的电子点，氮原子有一对孤电子对的电子点。\"><br>（b）<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioansb_img.jpg\" alt=\"图中是一个路易斯结构式。一个氮原子与两个氢原子和一个碳原子以单键相连。该碳原子与一个氧原子和一个氮原子以单键相连。那个氮原子再与两个氢原子以单键相连。氧原子有两对孤电子对的电子点，每个氮原子有一对孤电子对的电子点。\"><br>（c）<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioansc_img.jpg\" alt=\"图中是一个路易斯结构式。一个碳原子与三个氢原子和一个碳原子以单键相连。该碳原子与一个氧原子和第三个碳原子以单键相连。这个碳再与两个氧原子以单键相连，其中一个氧原子与一个氢原子以单键相连。每个氧原子有两对孤电子对的电子点。\"><br>（d）<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioansd_img.jpg\" alt=\"图中是一个六边形环的路易斯结构式。从环的顶部开始，三个碳原子、一个氮原子、一个碳原子和一个氮原子彼此以单键相连。顶部的碳与一个氧以单键相连，第二个和第三个碳以及那个氮原子各与一个氢原子以单键相连。下一个碳与一个氧原子以单键相连，最后一个氮与一个氢原子以单键相连。氧原子有两对孤电子对的电子点，氮原子有一对孤电子对的电子点。\"><br>（e）<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioanse_img.jpg\" alt=\"图中是一个路易斯结构式。一个碳原子与三个氧原子以单键相连。其中两个氧原子各与一个氢原子以单键相连。每个氧原子有两对孤电子对的电子点。\">"
+        "solution": "（a）<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioansa_img.jpg\" alt=\"图中是一个路易斯结构。一个氮原子与两个氢原子和一个碳原子以单键相连。该碳原子与一个氢原子和另外两个碳原子以单键相连。其中一个碳原子与两个氢原子和一个氧原子以单键相连。该氧原子与一个氢原子相连。另一个碳与两个氧原子以单键相连，其中一个氧原子与一个氢原子相连。氧原子各有两对孤电子对的电子点，氮原子有一对孤电子对的电子点。\"><br>（b）<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioansb_img.jpg\" alt=\"图中是一个路易斯结构。一个氮原子与两个氢原子和一个碳原子以单键相连。该碳原子与一个氧原子和一个氮原子以单键相连。那个氮原子再与两个氢原子以单键相连。氧原子有两对孤电子对的电子点，每个氮原子有一对孤电子对的电子点。\"><br>（c）<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioansc_img.jpg\" alt=\"图中是一个路易斯结构。一个碳原子与三个氢原子和一个碳原子以单键相连。该碳原子与一个氧原子和第三个碳原子以单键相连。这个碳再与两个氧原子以单键相连，其中一个氧原子与一个氢原子以单键相连。每个氧原子有两对孤电子对的电子点。\"><br>（d）<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioansd_img.jpg\" alt=\"图中是一个六边形环的路易斯结构。从环的顶部开始，三个碳原子、一个氮原子、一个碳原子和一个氮原子彼此以单键相连。顶部的碳与一个氧以单键相连，第二个和第三个碳以及那个氮原子各与一个氢原子以单键相连。下一个碳与一个氧原子以单键相连，最后一个氮与一个氢原子以单键相连。氧原子有两对孤电子对的电子点，氮原子有一对孤电子对的电子点。\"><br>（e）<br><img src=\"/media/ch07/CNX_Chem_07_03_Impbioanse_img.jpg\" alt=\"图中是一个路易斯结构。一个碳原子与三个氧原子以单键相连。其中两个氧原子各与一个氢原子以单键相连。每个氧原子有两对孤电子对的电子点。\">"
       }
     },
     {
@@ -877,11 +877,11 @@
         "at": "end"
       },
       "cite": "writing-lewis",
-      "prompt": "一种摩尔质量约为 42 g/mol 的化合物，按质量计含有 85.7% 的碳和 14.3% 的氢。写出该化合物分子的路易斯结构式。",
+      "prompt": "一种摩尔质量约为 42 g/mol 的化合物，按质量计含有 85.7% 的碳和 14.3% 的氢。写出该化合物分子的路易斯结构。",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "<img src=\"/media/ch07/CNX_Chem_07_03_Exercise25_img.jpg\" alt=\"图中是一个路易斯结构式。一个碳原子与三个氢原子和另一个碳原子以单键相连。第二个碳原子与另一个碳原子以双键相连，并与一个氢原子以单键相连。最后一个碳与两个氢原子以单键相连。\">"
+        "solution": "<img src=\"/media/ch07/CNX_Chem_07_03_Exercise25_img.jpg\" alt=\"图中是一个路易斯结构。一个碳原子与三个氢原子和另一个碳原子以单键相连。第二个碳原子与另一个碳原子以双键相连，并与一个氢原子以单键相连。最后一个碳与两个氢原子以单键相连。\">"
       }
     },
     {
@@ -1071,7 +1071,7 @@
     {
       "id": "c-six-steps",
       "kind": "correction",
-      "html": "书中说的是六个步骤。本节前面给出的画路易斯结构式的程序只有五个步骤。"
+      "html": "书中说的是六个步骤。本节前面给出的画路易斯结构的程序只有五个步骤。"
     }
   ]
 }

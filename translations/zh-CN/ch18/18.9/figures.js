@@ -33,7 +33,7 @@ const { C, PAL, alpha, register, begin, line, text, headline } = F;
   };
   const ion = F.choice(d.controls, { label: '\\text{离子}', key: 'ion', aria: '氯的含氧阴离子',
     options: ORDER.map((v) => ({ value: v, label: ION[v].label })), value: 'ClO2', onInput: () => draw() });
-  const VIEW = F.choice(d.controls, { label: '\\text{视图}', key: 'view', aria: '平面路易斯结构式或可转动的场景',
+  const VIEW = F.choice(d.controls, { label: '\\text{视图}', key: 'view', aria: '平面路易斯结构或可转动的场景',
     options: [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }], value: '2d', ms: 0, onInput: () => show() });
   const strip = F.makeCanvas(d.stage, 200);
   const ro = F.readout(d);

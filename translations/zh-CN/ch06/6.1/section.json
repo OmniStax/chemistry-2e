@@ -247,7 +247,7 @@
       "originals": [
         "/media/ch06/CNX_Chem_06_01_Ephoton.jpg"
       ],
-      "original_caption": "频率较低的光子没有足够的能量通过光电效应使电子逸出。对于高于阈频率的任何光频率，逸出电子的动能随入射光子的能量线性增大。",
+      "original_caption": "频率较低的光子没有足够的能量通过光电效应使电子逸出。对于高于阈值频率的任何光频率，逸出电子的动能随入射光子的能量线性增大。",
       "draws": [
         "wavelength",
         "frequency",
@@ -535,7 +535,7 @@
         "generated_by": "source",
         "value": 394,
         "unit": "kJ/mol",
-        "hint": "用 E = hν 求出阈频率处一个光子的能量，再乘以阿伏伽德罗常数，并把焦耳换算成千焦。",
+        "hint": "用 E = hν 求出阈值频率处一个光子的能量，再乘以阿伏伽德罗常数，并把焦耳换算成千焦。",
         "solution": "394 kJ/mol"
       }
     },
@@ -735,7 +735,7 @@
         "at": "end"
       },
       "cite": "photoelectric",
-      "prompt": "如果频率为 6.66 $\\times$ 10<sup>14</sup> s<sup>−1</sup> 的光子使一个电子逸出时带有 7.74 $\\times$ 10<sup>−20</sup> J 的动能，钠金属的阈频率是多少？如果钠暴露在橙光下，会观察到光电效应吗？",
+      "prompt": "如果频率为 6.66 $\\times$ 10<sup>14</sup> s<sup>−1</sup> 的光子使一个电子逸出时带有 7.74 $\\times$ 10<sup>−20</sup> J 的动能，钠金属的阈值频率是多少？如果钠暴露在橙光下，会观察到光电效应吗？",
       "answer": {
         "type": "number",
         "generated_by": "source",

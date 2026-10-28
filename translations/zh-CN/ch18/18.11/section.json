@@ -436,11 +436,11 @@
     "at": "end"
    },
    "cite": "interhalogens",
-   "prompt": "预测下列各物质的分子几何构型，并画出路易斯结构式。你不妨复习一下关于化学键与分子几何构型的一章。<br>（a）IF<sub>5</sub><br>（b）$\\text{I}_{3}{}^{-}$<br>（c）PCl<sub>5</sub><br>（d）SeF<sub>4</sub><br>（e）ClF<sub>3</sub>",
+   "prompt": "预测下列各物质的分子几何构型，并画出路易斯结构。你不妨复习一下关于化学键与分子几何构型的一章。<br>（a）IF<sub>5</sub><br>（b）$\\text{I}_{3}{}^{-}$<br>（c）PCl<sub>5</sub><br>（d）SeF<sub>4</sub><br>（e）ClF<sub>3</sub>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "（a）IF<sub>5</sub>：<br><img src=\"/media/ch18/CNX_Chem_18_11_Exercise4a_img.jpg\" alt=\"该路易斯结构式显示一个碘原子带有一个孤电子对，以单键与五个氟原子相连，每个氟原子各有三个孤电子对。图上标注为“四方锥形”。\"><br>（b）$\\text{I}_{3}{}^{-}$：<br><img src=\"/media/ch18/CNX_Chem_18_11_Exercise4b_img.jpg\" alt=\"该路易斯结构式显示一个碘原子带有三个孤电子对，以单键与两个碘原子相连，这两个碘原子各有三个孤电子对。图外有方括号，括号外有一个上标的负号。图上标注为“直线形”。\"><br>（c）PCl<sub>5</sub>：<br><img src=\"/media/ch18/CNX_Chem_18_11_Exercise4c_img.jpg\" alt=\"该路易斯结构式显示一个磷原子以单键与五个氯原子相连，每个氯原子各有三个孤电子对。图上标注为“三角双锥形”。\"><br>（d）SeF<sub>4</sub>：<br><img src=\"/media/ch18/CNX_Chem_18_11_Exercise4d_img.jpg\" alt=\"该路易斯结构式显示一个硒原子带有一个孤电子对，以单键与四个氟原子相连，每个氟原子各有三个孤电子对。图上标注为“跷跷板形”。\"><br>（e）ClF<sub>3</sub>：<br><img src=\"/media/ch18/CNX_Chem_18_11_Exercise4e_img.jpg\" alt=\"该路易斯结构式显示一个氯原子带有两个孤电子对，以单键与三个氟原子相连，每个氟原子各有三个孤电子对。图上标注为“T 形”。\">"
+    "solution": "（a）IF<sub>5</sub>：<br><img src=\"/media/ch18/CNX_Chem_18_11_Exercise4a_img.jpg\" alt=\"该路易斯结构显示一个碘原子带有一个孤电子对，以单键与五个氟原子相连，每个氟原子各有三个孤电子对。图上标注为“四方锥形”。\"><br>（b）$\\text{I}_{3}{}^{-}$：<br><img src=\"/media/ch18/CNX_Chem_18_11_Exercise4b_img.jpg\" alt=\"该路易斯结构显示一个碘原子带有三个孤电子对，以单键与两个碘原子相连，这两个碘原子各有三个孤电子对。图外有方括号，括号外有一个上标的负号。图上标注为“直线形”。\"><br>（c）PCl<sub>5</sub>：<br><img src=\"/media/ch18/CNX_Chem_18_11_Exercise4c_img.jpg\" alt=\"该路易斯结构显示一个磷原子以单键与五个氯原子相连，每个氯原子各有三个孤电子对。图上标注为“三角双锥形”。\"><br>（d）SeF<sub>4</sub>：<br><img src=\"/media/ch18/CNX_Chem_18_11_Exercise4d_img.jpg\" alt=\"该路易斯结构显示一个硒原子带有一个孤电子对，以单键与四个氟原子相连，每个氟原子各有三个孤电子对。图上标注为“跷跷板形”。\"><br>（e）ClF<sub>3</sub>：<br><img src=\"/media/ch18/CNX_Chem_18_11_Exercise4e_img.jpg\" alt=\"该路易斯结构显示一个氯原子带有两个孤电子对，以单键与三个氟原子相连，每个氟原子各有三个孤电子对。图上标注为“T 形”。\">"
    }
   },
   {

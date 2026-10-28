@@ -1,8 +1,0 @@
-{"terms":[
-{"source":"Type of Emission","target":"发射类型","authority":"book","note":"Appendix M column label; follows the glossary's 发射 for emission (γ 发射, 正电子发射). 衰变类型 is the common textbook alternative.","confirm":"owner"},
-{"source":"spontaneous fission","target":"自发裂变","authority":"物理学名词","note":"Appendix M footnote S.F.; 裂变 as in the glossary row fission. Not looked up in termonline.","confirm":"owner"},
-{"source":"Half-Reaction","target":"半反应","authority":"book","note":"Appendix L column label; glossary row half-reaction.","confirm":"no"},
-{"source":"Substance","target":"物质","authority":"book","note":"Appendix J column label; glossary row substance.","confirm":"no"},
-{"source":"ca (circa)","target":"约","authority":"book","note":"Appendix J, MgCO3·3H2O Ksp; standard usage.","confirm":"owner"},
-{"source":"y, d, h, m, s (half-life units)","target":"年、天、小时、分钟、秒","authority":"book","note":"Appendix M footnote 1 key; the unit letters in the cells are kept as printed.","confirm":"owner"}
-]}

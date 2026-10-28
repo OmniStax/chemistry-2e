@@ -129,12 +129,12 @@ function routeFigure(id, H, boxes, edges, head, ro) {
 routeFigure('fig-map7', 280,
   [{ c: 0, r: 0, t: 'NaOH 的体积', type: 'volume' }, { c: 1, r: 0, t: 'NaOH 的\n物质的量', type: 'amount' }, { c: 2, r: 0, t: 'HCl 的\n物质的量', type: 'amount' }, { c: 3, r: 0, t: 'HCl 的\n浓度', type: 'concentration' }],
   [[0, 1, '物质的量\n浓度'], [1, 2, '化学计量\n因子'], [2, 3, '溶液\n体积']],
-  '滴定剂的体积经各物质的物质的量，得到待测物的浓度。',
+  '滴定剂的体积经各物质的物质的量，得到分析物的浓度。',
   `\\frac{${hue('volume', '35.23\\ \\text{mL NaOH}')}\\times ${hue('concentration', '0.250\\ \\text{mmol/mL}')}\\times\\frac{1\\ \\text{mmol HCl}}{1\\ \\text{mmol NaOH}}}{${hue('volume', '50.00\\ \\text{mL}')}} = ${hue('concentration', '0.176\\ \\text{M HCl}')}`);
 routeFigure('fig-map8', 420,
   [{ c: 0, r: 0, t: 'BaSO₄ 的\n质量', type: 'mass' }, { c: 1, r: 0, t: 'BaSO₄ 的\n物质的量', type: 'amount' }, { c: 2, r: 0, t: 'MgSO₄ 的\n物质的量', type: 'amount' }, { c: 2, r: 1, t: 'MgSO₄ 的\n质量', type: 'mass' }, { c: 1, r: 1, t: 'MgSO₄ 的\n百分数' }],
   [[0, 1, '摩尔质量'], [1, 2, '化学计量\n因子'], [2, 3, '摩尔质量'], [3, 4, '样品\n质量']],
-  '沉淀的质量经物质的量，得到待测物的质量及其占样品的百分数。',
+  '沉淀的质量经物质的量，得到分析物的质量及其占样品的百分数。',
   `\\frac{${hue('mass', '0.3181\\ \\text{g MgSO}_4')}}{${hue('mass', '0.4550\\ \\text{g 样品}')}}\\times 100\\% = 69.91\\%`);
 routeFigure('fig-combmap', 690,
   [{ c: 0, r: 0, t: 'CO₂ 的\n质量', type: 'mass' }, { c: 1, r: 0, t: 'CO₂ 的\n物质的量', type: 'amount' }, { c: 2, r: 0, t: 'C 的\n物质的量', type: 'amount' }, { c: 3, r: 0, t: 'C 的\n质量', type: 'mass' },

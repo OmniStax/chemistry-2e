@@ -1,6 +1,6 @@
 {
  "id": "kf",
- "title": "配离子的形成常数",
+ "title": "配离子的生成常数",
  "kind": "table",
  "source": {
   "module": "m68869",
@@ -10,7 +10,7 @@
  "tables": [
   {
    "id": "formation-constants-for-complex-ions",
-   "title": "配离子的形成常数",
+   "title": "配离子的生成常数",
    "columns": [
     {
      "id": "equilibrium",

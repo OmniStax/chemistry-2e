@@ -210,7 +210,7 @@
     "at": "end"
    },
    "cite": "preparation",
-   "prompt": "完成并配平下列化学方程式：<br>（a）含熟石灰的灰泥的硬化<br>$\\text{Ca}{(\\text{OH})}_{2}+{\\text{CO}}_{2}\\;\\longrightarrow$<br>（b）从发电厂的烟道气中除去二氧化硫<br>$\\text{CaO}+{\\text{SO}}_{2}\\;\\longrightarrow$<br>（c）发酵粉中产生二氧化碳气体、使面包膨起的反应<br>${\\text{NaHCO}}_{3}+{\\text{NaH}}_{2}{\\text{PO}}_{4}\\;\\longrightarrow$",
+   "prompt": "完成并配平下列化学方程式：<br>（a）含熟石灰的灰泥的硬化<br>$\\text{Ca}{(\\text{OH})}_{2}+{\\text{CO}}_{2}\\;\\longrightarrow$<br>（b）从发电厂的烟气中除去二氧化硫<br>$\\text{CaO}+{\\text{SO}}_{2}\\;\\longrightarrow$<br>（c）发酵粉中产生二氧化碳气体、使面包膨起的反应<br>${\\text{NaHCO}}_{3}+{\\text{NaH}}_{2}{\\text{PO}}_{4}\\;\\longrightarrow$",
    "answer": {
     "type": "open",
     "generated_by": "source",

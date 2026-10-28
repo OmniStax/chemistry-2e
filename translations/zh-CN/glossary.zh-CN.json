@@ -704,8 +704,7 @@
       "target": "吸收器",
       "authority": "book",
       "url": "",
-      "note": "Combustion analysis: the preweighed device that takes up water or carbon dioxide (Figure 4.18 sim, referents). The prep agent's concept statement already uses 吸收器.",
-      "confirm": "termonline",
+      "note": "Combustion analysis: the preweighed device that takes up water or carbon dioxide (Figure 4.18 sim, referents). The prep agent's concept statement already uses 吸收器. Termonline sweep 2026-10-28 lists 吸收体 (物理学名词); kept: termonline lists \"吸收体\" (物理学, radiation absorber); the book means the combustion-analysis device, \"吸收器\".",
       "section": "4.5"
     },
     {
@@ -1051,8 +1050,7 @@
       "target": "酸性",
       "authority": "termonline",
       "url": "",
-      "note": "酸度 (化学名词) is the degree of acidity; the book names a chemical property, 酸性 termonline 2026-10-26: lists 酸度（兽医学名词）; 酸度（化学名词）; 酸度（大气科学名词）; 酸度（建筑学名词）; 酸度（生态学名词）; 酸度（电力名词）; 酸度（畜牧学名词）; 酸度（药学名词）; 酸度（计量学名词）; 酸度（食品科学技术名词）; target taken from standard textbook usage.",
-      "confirm": "termonline"
+      "note": "酸度 (化学名词) is the degree of acidity; the book names a chemical property, 酸性 termonline 2026-10-26: lists 酸度（兽医学名词）; 酸度（化学名词）; 酸度（大气科学名词）; 酸度（建筑学名词）; 酸度（生态学名词）; 酸度（电力名词）; 酸度（畜牧学名词）; 酸度（药学名词）; 酸度（计量学名词）; 酸度（食品科学技术名词）; target taken from standard textbook usage. Termonline sweep 2026-10-28 lists 酸度 (计量学名词/化学名词/大气科学名词); kept: termonline: 化学名词 “酸度” is the degree of acidity; the row names the chemical property, “酸性”."
     },
     {
       "source": "Acids and bases",
@@ -1123,8 +1121,7 @@
       "target": "锕铀系",
       "authority": "cnterm-physics",
       "url": "",
-      "note": "The decay series that begins at uranium-235. 物理学名词 lists 锕铀系 (actinium series); the book prints actinide series for it (footnote c-actinium-series), written 锕系 in the text as the glossary row for actinide series, and the footnote gives the English in parentheses. Confirm at termonline.",
-      "confirm": "termonline",
+      "note": "The decay series that begins at uranium-235. 物理学名词 lists 锕铀系 (actinium series); the book prints actinide series for it (footnote c-actinium-series), written 锕系 in the text as the glossary row for actinide series, and the footnote gives the English in parentheses. Confirm at termonline. Termonline sweep 2026-10-28 lists 锕系 (物理学名词); kept: termonline lists \"锕系\" (物理学名词), which in this book is the actinide elements; the U-235 decay series stays \"锕铀系\" to avoid that collision.",
       "section": "21.3"
     },
     {
@@ -1326,13 +1323,12 @@
     },
     {
       "source": "Adhesive force",
-      "target": "黏附力",
-      "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "adhesive force; 化学名词 writes 黏附 with the 黏 form (not 粘).",
+      "target": "附着力",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=d61ccb6f26ac11ee8eeab068e6519520",
+      "note": "adhesive force; 化学名词 writes 黏附 with the 黏 form (not 粘). Changed from 黏附力 after the termonline sweep 2026-10-28: 物理学名词 lists \"附着力\" for adhesive force, the same capillary-action sense; \"黏附力\" is not an entry (the physics book also uses 附着力).",
       "section": "10.2",
-      "concept": "adhesive-force",
-      "confirm": "termonline"
+      "concept": "adhesive-force"
     },
     {
       "source": "adhesive tape",
@@ -1347,8 +1343,7 @@
       "target": "吸附",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Verb form of adsorption.",
-      "confirm": "termonline",
+      "note": "Verb form of adsorption. Termonline sweep 2026-10-28 lists 被吸附物 = adsorbate (物理学名词), 吸附能力 = adsorbability (物理学名词); kept: termonline: only longer terms listed, which agree with “吸附”.",
       "section": "12.7"
     },
     {
@@ -1356,8 +1351,7 @@
       "target": "被吸附的",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 吸附百日咳、白喉、破伤风联合疫苗 (免疫学名词); kept: termonline: only a vaccine name is listed (false match); near physics terms agree with “吸附”.",
       "section": "12.7"
     },
     {
@@ -1466,8 +1460,7 @@
       "target": "空气泵",
       "authority": "book",
       "url": "",
-      "note": "Label in the alt of Figure 12.24.",
-      "confirm": "termonline",
+      "note": "Label in the alt of Figure 12.24. Termonline sweep 2026-10-28 lists 抽气泵 (物理学名词); kept: 物理学名词 \"抽气泵\" is an evacuating pump; the book's aquarium \"air pump\" pushes air in, so \"空气泵\" stays.",
       "section": "12.7"
     },
     {
@@ -1546,16 +1539,14 @@
       "target": "炼金术",
       "authority": "termonline",
       "url": "",
-      "note": "termonline lists 金丹术 (化学名词), the Chinese alchemy; 炼金术 is the usual word for the European alchemy the passage describes termonline 2026-10-26: lists 炼丹术（中医药学名词）; 金丹术（化学名词）; target taken from standard textbook usage.",
-      "confirm": "termonline"
+      "note": "termonline lists 金丹术 (化学名词), the Chinese alchemy; 炼金术 is the usual word for the European alchemy the passage describes termonline 2026-10-26: lists 炼丹术（中医药学名词）; 金丹术（化学名词）; target taken from standard textbook usage. Termonline sweep 2026-10-28 lists 金丹术 (化学名词), 炼丹术 (中医药学名词); kept: 化学名词 \"金丹术\" is Chinese alchemy; the passage means European alchemy, \"炼金术\"."
     },
     {
       "source": "alcohol",
       "target": "酒精",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Decided in the merge: in Chapter 1 the book means the alcohol of drinks, so the everyday word 酒精 is used (1.1, 1.2, 1.4). The class of compounds, the concept alcohol of Chapter 20, is 醇 (化学名词) and gets that target when the chapter is translated. The compound the book names ethanol is 乙醇.",
-      "confirm": "termonline",
+      "note": "Decided in the merge: in Chapter 1 the book means the alcohol of drinks, so the everyday word 酒精 is used (1.1, 1.2, 1.4). The class of compounds, the concept alcohol of Chapter 20, is 醇 (化学名词) and gets that target when the chapter is translated. The compound the book names ethanol is 乙醇. Termonline sweep 2026-10-28 lists 醇 (化学名词/化学工程名词 (二)基本有机化工); kept: termonline: 化学名词 lists the class “醇”; chapter 1 decided “酒精” for drinking alcohol in this row (the class gets “醇” in its own rows).",
       "section": "1.1"
     },
     {
@@ -1694,8 +1685,7 @@
       "target": "茜素黄 R",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Figure 14.19 alt text.",
-      "confirm": "termonline",
+      "note": "Figure 14.19 alt text. Termonline sweep 2026-10-28 lists 茜素黄R (化学名词); kept: termonline lists \"茜素黄R\" (化学名词), the same term; only the space before the Latin letter differs, following the book's spacing convention.",
       "section": "14.7"
     },
     {
@@ -1738,8 +1728,7 @@
       "target": "碱金属",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Hyphenated form used in compounds (alkali-metal salts).",
-      "confirm": "termonline",
+      "note": "Hyphenated form used in compounds (alkali-metal salts). Termonline sweep 2026-10-28 lists 碱金属原子 = alkali-metal atom (物理学名词); kept: Only \"碱金属原子\" is listed; it confirms \"碱金属\".",
       "section": "18.1"
     },
     {
@@ -1747,8 +1736,7 @@
       "target": "碱性",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 碱金属 = alkaline metal (物理学名词), 碱土金属 = alkaline earth metal (物理学名词); kept: termonline lists only longer terms (\"碱金属\", \"碱土金属\"); the bare adjective \"碱性\" is the standard chemistry word.",
       "section": "1.3"
     },
     {
@@ -1952,6 +1940,13 @@
       "url": "",
       "note": "物理学名词 α 衰变.",
       "section": "21.3"
+    },
+    {
+      "source": "alpha hexagonal (SiC)",
+      "target": "α 六方",
+      "authority": "book",
+      "url": "",
+      "note": "Thermo sheet: kept inside the <em> state marker, SiC(<em>s, α 六方</em>); common usage (碳化硅 α-SiC 六方)."
     },
     {
       "source": "alpha particle",
@@ -2228,8 +2223,7 @@
       "target": "氨基化物",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Metal amide NaNH₂ (氨基钠). The organic amide 酰胺 is a different term.",
-      "confirm": "termonline",
+      "note": "Metal amide NaNH₂ (氨基钠). The organic amide 酰胺 is a different term. Termonline sweep 2026-10-28 lists 酰胺 (化学名词/化学工程名词 (二)基本有机化工); kept: termonline lists \"酰胺\" (化学名词), the organic amide; this row is the metal amide (NaNH2), \"氨基化物\".",
       "section": "18.5"
     },
     {
@@ -2431,8 +2425,7 @@
       "target": "无定形的",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "化学名词 无定形.",
-      "confirm": "termonline",
+      "note": "化学名词 无定形. Termonline sweep 2026-10-28 lists 无定形 (食品科学技术名词/石油名词), 非晶质 (地质学名词); kept: termonline: listed “无定形” (food/petroleum) agrees with our “无定形的”; “非晶质” is geology.",
       "section": "18.3"
     },
     {
@@ -2533,8 +2526,7 @@
       "target": "两性的",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 双性杂质 = amphoteric impurity (物理学名词); kept: termonline lists only “双性杂质” (semiconductor impurity); “两性的” is the 化学名词 sense (两性氧化物/两性物质).",
       "section": "18.2"
     },
     {
@@ -2565,12 +2557,11 @@
     },
     {
       "source": "analyte",
-      "target": "待测物",
+      "target": "分析物",
       "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "The species of interest in an analysis (titration, gravimetric analysis, combustion analysis): 待测物, the analytical-chemistry term. Merge pass (2026-10-27): ch14 had 被滴定物 for the same source in a row no page used; one target, 待测物.",
+      "url": "https://www.termonline.cn/detail?id=b6a51c5126a711eebde2b068e6519520",
+      "note": "The species of interest in an analysis (titration, gravimetric analysis, combustion analysis): 待测物, the analytical-chemistry term. Merge pass (2026-10-27): ch14 had 被滴定物 for the same source in a row no page used; one target, 待测物. Changed from 待测物 after the termonline sweep 2026-10-28: 化学名词 lists \"分析物\" for analyte, the same analytical-chemistry concept.",
       "concept": "analyte",
-      "confirm": "termonline",
       "section": "4.5"
     },
     {
@@ -2738,8 +2729,7 @@
       "target": "抗酸剂",
       "authority": "book",
       "url": "",
-      "note": "制酸剂 / 抗酸药 are also used.",
-      "confirm": "termonline",
+      "note": "制酸剂 / 抗酸药 are also used. Termonline sweep 2026-10-28 lists 抗酸药 (兽医学名词); kept: termonline lists \"抗酸药\" only in 兽医学名词; \"抗酸剂\" is the usual chemistry-textbook word.",
       "section": "2.7"
     },
     {
@@ -3142,11 +3132,10 @@
     },
     {
       "source": "aromatic compound",
-      "target": "芳香族化合物",
+      "target": "芳香化合物",
       "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "url": "https://www.termonline.cn/detail?id=c636bc4f26a711eeb5e7b068e6519520",
+      "note": "Changed from 芳香族化合物 after the termonline sweep 2026-10-28: 化学名词 (and 化工, 生化) list \"芳香化合物\" as the 规范名 for aromatic compound.",
       "section": "20.1"
     },
     {
@@ -3227,6 +3216,14 @@
       "confirm": "termonline"
     },
     {
+      "source": "arsenous acid",
+      "target": "亚砷酸",
+      "authority": "termonline",
+      "url": "",
+      "note": "Ka sheet: the -ous acid of arsenic. Not looked up online.",
+      "confirm": "termonline"
+    },
+    {
       "source": "arsine",
       "target": "胂",
       "authority": "cnterm-chemistry",
@@ -3244,11 +3241,10 @@
     },
     {
       "source": "artificial element",
-      "target": "人工元素",
+      "target": "人造元素",
       "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "url": "https://www.termonline.cn/detail?id=d714b28a26ac11eeaa96b068e6519520",
+      "note": "Changed from 人工元素 after the termonline sweep 2026-10-28: Both 化学名词 and 物理学名词 list \"人造元素\" for artificial element, the same concept.",
       "section": "21.4"
     },
     {
@@ -3359,8 +3355,7 @@
       "target": "大气压强",
       "authority": "cnterm-physics",
       "url": "",
-      "note": "物理学名词 大气压强 (大气压 as short form).",
-      "confirm": "termonline",
+      "note": "物理学名词 大气压强 (大气压 as short form). Termonline sweep 2026-10-28 lists 大气压 (电气工程名词), 大气压力 (计量学名词/电力名词), 气压 (大气科学名词/水产名词); kept: Listings vary (\"大气压\", \"大气压力\", \"气压\"); 呼吸病学 \"大气压[强]\" covers \"大气压强\", the physics-sense quantity the book uses alongside pressure 压强.",
       "section": "9.1"
     },
     {
@@ -3580,8 +3575,7 @@
       "target": "衰减",
       "authority": "cnterm-physics",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 衰减全反射 = attenuated total reflection (物理学名词); kept: Only compounds such as \"衰减全反射\" (物理学名词) are listed; they confirm \"衰减\" as the verb.",
       "section": "21.6"
     },
     {
@@ -3695,8 +3689,7 @@
       "target": "阿伏加德罗常数",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "化学名词/GB 3102 阿伏加德罗常数 (symbol N_A); ch09 writes 阿伏加德罗 for the surname. The book uses \"Avogadro's number\" for the number 6.022 x 10^23 per mole.",
-      "confirm": "termonline",
+      "note": "化学名词/GB 3102 阿伏加德罗常数 (symbol N_A); ch09 writes 阿伏加德罗 for the surname. The book uses \"Avogadro's number\" for the number 6.022 x 10^23 per mole. Termonline sweep 2026-10-28 lists 阿伏伽德罗常量 (物理学名词); kept: termonline lists \"阿伏伽德罗常量\" (物理学名词); \"阿伏加德罗常数\" is the 化学名词/GB 3102 form used throughout the book and in Chinese chemistry textbooks.",
       "section": "4.3"
     },
     {
@@ -3757,9 +3750,8 @@
       "target": "方位量子数",
       "authority": "cnterm-physics",
       "url": "",
-      "note": "one of the names of the angular momentum quantum number (角量子数); written 角量子数（角动量量子数或方位量子数） in Table 6.1.",
-      "section": "6.3",
-      "confirm": "termonline"
+      "note": "one of the names of the angular momentum quantum number (角量子数); written 角量子数（角动量量子数或方位量子数） in Table 6.1. Termonline sweep 2026-10-28 lists 角量子数 (物理学名词/化学名词); kept: termonline lists “角量子数”; the book lists the alternative names and the row is the alias “方位量子数” beside “角量子数”.",
+      "section": "6.3"
     },
     {
       "source": "azurite",
@@ -3970,12 +3962,11 @@
     },
     {
       "source": "band theory",
-      "target": "能带理论",
+      "target": "能带论",
       "authority": "cnterm-physics",
-      "url": "",
-      "note": "",
-      "section": "8.4",
-      "confirm": "termonline"
+      "url": "https://www.termonline.cn/detail?id=cdbc69c126ac11ee8357b068e6519520",
+      "note": "Changed from 能带理论 after the termonline sweep 2026-10-28: 物理学名词 lists “能带论” for [energy] band theory, the same concept as the book’s band theory of solids; “能带理论” is the longer common variant.",
+      "section": "8.4"
     },
     {
       "source": "bar",
@@ -4092,8 +4083,7 @@
       "target": "能垒",
       "authority": "book",
       "url": "",
-      "note": "Energy barrier of a reaction diagram, used throughout 12.5 to 12.7 (the 12.5 sim-heads and one solution had 势垒, swept to 能垒; 势垒 is the physics potential barrier); 活化能垒 stays for 'activation barrier'.",
-      "confirm": "termonline",
+      "note": "Energy barrier of a reaction diagram, used throughout 12.5 to 12.7 (the 12.5 sim-heads and one solution had 势垒, swept to 能垒; 势垒 is the physics potential barrier); 活化能垒 stays for 'activation barrier'. Termonline sweep 2026-10-28 lists 遮栏 (电气工程名词/电力名词), 屏障 (化学名词), 障碍因素 (物理医学与康复名词); kept: termonline: listed forms are other senses (遮栏, 屏障); the book means the energy barrier of a reaction diagram, “能垒”.",
       "section": "12.5"
     },
     {
@@ -4173,8 +4163,7 @@
       "target": "贱金属",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Historical phrase in quotation marks. termonline: not looked up in this pass.",
-      "confirm": "termonline",
+      "note": "Historical phrase in quotation marks. termonline: not looked up in this pass. Termonline sweep 2026-10-28 lists 基体金属 (机械工程名词 第二分册/石油名词), 普通金属 (冶金学名词); kept: \"基体金属\" is the welding sense, \"普通金属\" the metallurgy class; the book's historical alchemical phrase is \"贱金属\".",
       "section": "1.1"
     },
     {
@@ -4207,9 +4196,8 @@
       "target": "底心",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "body-centered 体心 and face-centered 面心 are in the chapter; the lattice type C.",
-      "section": "10.6",
-      "confirm": "termonline"
+      "note": "body-centered 体心 and face-centered 面心 are in the chapter; the lattice type C. Termonline sweep 2026-10-28 lists 底心格[子] = base-centered lattice (物理学名词), 底心单斜格[子] = base-centered monoclinic lattice (物理学名词); kept: termonline: the listed “底心格[子]” agrees with “底心”.",
+      "section": "10.6"
     },
     {
       "source": "baseball",
@@ -4266,8 +4254,7 @@
       "target": "碱性溶液",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 基本解 (化学工程名词（十）化工系统工程与化工信息化); kept: termonline's \"基本解\" (化工系统工程) is a false match.",
       "concept": "basic-solution",
       "section": "14.2"
     },
@@ -4317,8 +4304,7 @@
       "target": "束",
       "authority": "cnterm-physics",
       "url": "",
-      "note": "射线束 for a ray beam.",
-      "confirm": "termonline",
+      "note": "射线束 for a ray beam. Termonline sweep 2026-10-28 lists 梁 (力学名词/土木工程名词), 射束 (通信科学技术名词), 横梁 (机械工程名词 第三分册); kept: \"梁\" is a structural beam (false match); \"束\" is a ray/particle beam (物理学名词 \"离子束\").",
       "section": "2.2"
     },
     {
@@ -4335,8 +4321,7 @@
       "target": "贝克勒尔",
       "authority": "book",
       "url": "",
-      "note": "The person; the unit is 贝可勒尔 (GB 3100).",
-      "confirm": "termonline",
+      "note": "The person; the unit is 贝可勒尔 (GB 3100). Termonline sweep 2026-10-28 lists 贝可 (化学名词), 贝可[勒尔] (核医学名词); kept: termonline lists the unit “贝可”; this row is the person, “贝克勒尔”.",
       "section": "21.3"
     },
     {
@@ -4344,8 +4329,7 @@
       "target": "贝可勒尔",
       "authority": "gb3100",
       "url": "",
-      "note": "GB 3100 贝可[勒尔] (Bq). Merge pass (2026-10-27): the unit is 贝可勒尔 (GB 3100); the person (row Becquerel) is 贝克勒尔; both kept, the book distinguishes them.",
-      "confirm": "termonline",
+      "note": "GB 3100 贝可[勒尔] (Bq). Merge pass (2026-10-27): the unit is 贝可勒尔 (GB 3100); the person (row Becquerel) is 贝克勒尔; both kept, the book distinguishes them. Termonline sweep 2026-10-28 lists 贝可 (化学名词), 贝可[勒尔] (核医学名词); kept: termonline: “贝可[勒尔]”/“贝可” is GB 3100’s unit name; “贝可勒尔” is the full form with the optional bracket.",
       "section": "21.6"
     },
     {
@@ -4403,8 +4387,7 @@
       "target": "V 形",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Molecular geometry.",
-      "confirm": "termonline",
+      "note": "Molecular geometry. Termonline sweep 2026-10-28 lists 排架 (土木工程名词/铁道科学技术名词/建筑学名词); kept: \"排架\" is a civil-engineering structure (false match); \"V 形\" is the molecular-geometry name.",
       "section": "18.12"
     },
     {
@@ -4499,6 +4482,13 @@
       "section": "21.3"
     },
     {
+      "source": "beta cubic (SiC)",
+      "target": "β 立方",
+      "authority": "book",
+      "url": "",
+      "note": "Thermo sheet: kept inside the <em> state marker, SiC(<em>s, β 立方</em>); common usage (碳化硅 β-SiC 立方)."
+    },
+    {
       "source": "beta particle",
       "target": "β 粒子",
       "authority": "cnterm-physics",
@@ -4528,8 +4518,7 @@
       "target": "碳酸氢根",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "The book uses bicarbonate for the anion HCO₃⁻ (13.3, 14.1, 14.5, 14.6, 15.3), where Chinese needs 碳酸氢根; running text writes 碳酸氢根离子 (row bicarbonate ion). 化学名词 lists 碳酸氢盐 for bicarbonate (termonline 2026-10-27); that is the class of salts, row hydrogen carbonate. Merge pass (2026-10-27): ch13 had 碳酸氢根, ch18 碳酸氢盐; one target for the source, 碳酸氢根.",
-      "confirm": "termonline",
+      "note": "The book uses bicarbonate for the anion HCO₃⁻ (13.3, 14.1, 14.5, 14.6, 15.3), where Chinese needs 碳酸氢根; running text writes 碳酸氢根离子 (row bicarbonate ion). 化学名词 lists 碳酸氢盐 for bicarbonate (termonline 2026-10-27); that is the class of salts, row hydrogen carbonate. Merge pass (2026-10-27): ch13 had 碳酸氢根, ch18 碳酸氢盐; one target for the source, 碳酸氢根. Termonline sweep 2026-10-28 lists 碳酸氢盐 (化学名词/呼吸病学名词); kept: termonline lists \"碳酸氢盐\" (化学名词), the salt; the book means the anion HCO3-, \"碳酸氢根\".",
       "section": "13.3"
     },
     {
@@ -4861,6 +4850,13 @@
       "section": "18.1"
     },
     {
+      "source": "black (crystal-form label)",
+      "target": "黑色",
+      "authority": "book",
+      "url": "",
+      "note": "Thermo sheet: the PbO, HgO and HgS form labels (oxide and sulfide forms); common usage."
+    },
+    {
       "source": "black phosphorus",
       "target": "黑磷",
       "authority": "cnterm-chemistry",
@@ -4900,8 +4896,7 @@
       "target": "漂白剂",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Household bleach is 漂白液 when it is the NaOCl solution; chlorine bleaching powder is 漂白粉.",
-      "confirm": "termonline",
+      "note": "Household bleach is 漂白液 when it is the NaOCl solution; chlorine bleaching powder is 漂白粉. Termonline sweep 2026-10-28 lists 漂白全息图 = bleached hologram (物理学名词), 光漂白 = optical bleaching (物理学名词); kept: termonline lists only \"漂白全息图\"/\"光漂白\"; \"漂白剂\" is the household chemical.",
       "section": "18.11"
     },
     {
@@ -4925,17 +4920,16 @@
       "target": "泡铜",
       "authority": "book",
       "url": "",
-      "note": "冶金学 泡铜 = crude copper blown in the converter (粗铜 is the wider term); chosen because the book names it after the air blisters. Owner to confirm.",
+      "note": "冶金学 泡铜 = crude copper blown in the converter (粗铜 is the wider term); chosen because the book names it after the air blisters. Owner to confirm. Termonline sweep 2026-10-28 lists 粗铜 (冶金学名词); owner decides: 冶金学名词 lists \"粗铜\" for blister copper, but the text explains the name by the blistered look (\"因其特有的外观而被称为泡铜\"), which \"泡铜\" keeps; owner decides.",
       "section": "19.1",
-      "confirm": "termonline"
+      "confirm": "owner"
     },
     {
       "source": "block",
       "target": "区",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "s-区, p-区 (periodic table blocks).",
-      "confirm": "termonline",
+      "note": "s-区, p-区 (periodic table blocks). Termonline sweep 2026-10-28 lists 毛坯 (电气工程名词), 嵌段 (化学名词), 阻塞 (地球物理学名词); kept: \"嵌段\" is the polymer block; \"区\" is the periodic-table block (s 区).",
       "section": "18.1"
     },
     {
@@ -5272,9 +5266,8 @@
       "authority": "cnterm-chemistry",
       "url": "",
       "concept": "bomb-calorimetry",
-      "note": "concept name; 弹式量热计 + 法.",
-      "section": "5.2",
-      "confirm": "termonline"
+      "note": "concept name; 弹式量热计 + 法. Termonline sweep 2026-10-28 lists 弹式测热计; kept: \"弹式测热计\" (unlabelled) is an instrument, not the method; \"弹式量热法\" follows 量热法/量热计.",
+      "section": "5.2"
     },
     {
       "source": "bombardment",
@@ -5549,9 +5542,8 @@
       "target": "玻恩",
       "authority": "book",
       "url": "",
-      "note": "Max Born.",
-      "section": "7.5",
-      "confirm": "termonline"
+      "note": "Max Born. Termonline sweep 2026-10-28 lists 玻恩-哈伯循环 = Born-Haber cycle (物理学名词), 玻恩近似 = Born approximation (物理学名词); kept: Person name; termonline compounds (\"玻恩-哈伯循环\") use the same \"玻恩\".",
+      "section": "7.5"
     },
     {
       "source": "Born-Haber cycle",
@@ -5600,9 +5592,8 @@
       "target": "三氟化硼",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "section": "7.3",
-      "confirm": "termonline"
+      "note": "Termonline sweep 2026-10-28 lists 三氟化硼计数器 = boron trifluoride counter (物理学名词); kept: termonline: only “三氟化硼计数器” listed, which agrees.",
+      "section": "7.3"
     },
     {
       "source": "boron trihalide",
@@ -5701,8 +5692,7 @@
       "target": "支链",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 支路 (电气工程名词/电力名词/计算机科学技术名词), 分支 (数学名词), 分枝 (草学名词); kept: \"支路\"/\"分支\" are circuit and math senses; \"支链\" is the hydrocarbon branch.",
       "section": "20.1"
     },
     {
@@ -5710,8 +5700,7 @@
       "target": "有支链的链",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "branched-chain alkanes 支链烷烃.",
-      "confirm": "termonline",
+      "note": "branched-chain alkanes 支链烷烃. Termonline sweep 2026-10-28 lists 支链 (化学工程名词); kept: termonline: 化学工程名词 lists “支链”, but that is also the word for the branch itself; the book contrasts branched with unbranched chains (“无支链的链”), so “有支链的链” stays.",
       "section": "20.1"
     },
     {
@@ -5761,8 +5750,7 @@
       "target": "盐水",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Concentrated salt solution; 卤水 is used for natural brines.",
-      "confirm": "termonline",
+      "note": "Concentrated salt solution; 卤水 is used for natural brines. Termonline sweep 2026-10-28 lists 布氏硬度 = Brinell hardness (力学名词); kept: termonline's \"布氏硬度\" is a false match.",
       "section": "18.2"
     },
     {
@@ -5783,12 +5771,19 @@
       "section": "9.2"
     },
     {
+      "source": "British thermal unit",
+      "target": "英热单位",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "Units sheet; 物理学名词 name from memory, BTU kept as the symbol. Not looked up online.",
+      "confirm": "termonline"
+    },
+    {
       "source": "brittle",
       "target": "脆的",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 脆性 = brittleness (物理学名词), 脆[性断]裂 = brittle fracture (物理学名词); kept: termonline lists only \"脆性\" and compounds, which confirm \"脆\".",
       "section": "18.3"
     },
     {
@@ -5912,8 +5907,8 @@
       "target": "布朗斯特–劳里碱",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Short form of Brønsted–Lowry base; same target as the concept term of ch14 (bronsted-lowry-base), which the spans must contain.",
-      "confirm": "termonline",
+      "note": "Short form of Brønsted–Lowry base; same target as the concept term of ch14 (bronsted-lowry-base), which the spans must contain. Termonline sweep 2026-10-28 lists 布朗斯特碱 (化学名词); owner decides: 化学名词 lists “布朗斯特碱” for Brønsted base, but the row is a short form whose spans must contain the concept term “布朗斯特–劳里碱”; owner to choose authority form versus concept-span consistency.",
+      "confirm": "owner",
       "section": "18.5"
     },
     {
@@ -5993,8 +5988,7 @@
       "target": "缓冲溶液",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "化学名词 缓冲溶液 (buffer solution); the book's noun \"buffer\" is the solution, so one term for both.",
-      "confirm": "termonline",
+      "note": "化学名词 缓冲溶液 (buffer solution); the book's noun \"buffer\" is the solution, so one term for both. Termonline sweep 2026-10-28 lists 缓冲气体 = buffer gas (物理学名词), 缓冲层 = buffer layer (物理学名词); kept: termonline: only other buffer senses (gas, layer, amplifier) listed; the book’s noun is the buffer solution, “缓冲溶液” (化学名词).",
       "concept": "buffer-composition",
       "section": "14.6"
     },
@@ -6254,6 +6248,14 @@
       "section": "6.3"
     },
     {
+      "source": "ca (circa)",
+      "target": "约",
+      "authority": "book",
+      "url": "",
+      "note": "Appendix J, the MgCO₃·3H₂O Ksp cell: Latin ca written 约, the <em> dropped with the word; standard usage.",
+      "confirm": "owner"
+    },
+    {
       "source": "cadmium",
       "target": "镉",
       "authority": "cnterm-chemistry",
@@ -6281,9 +6283,8 @@
       "source": "cadmium ion",
       "target": "镉离子",
       "authority": "cnterm-chemistry",
-      "note": "Exercise e64; built like the glossary rows silver ion and fluoride ion.",
+      "note": "Exercise e64; built like the glossary rows silver ion and fluoride ion. Termonline sweep 2026-10-28 lists 氦镉离子激光器 = helium-cadmium ion laser (光学名词); kept: Only an unrelated laser compound is listed; \"镉离子\" is regular nomenclature.",
       "section": "15.2",
-      "confirm": "termonline",
       "url": ""
     },
     {
@@ -6317,6 +6318,14 @@
       "url": "https://www.termonline.cn/detail?id=c461be2cb2db11f080660242ac110003",
       "note": "Listed at termonline under 农学名词, not in a chemistry or physics vocabulary; same form.",
       "section": "14.3"
+    },
+    {
+      "source": "calcite",
+      "target": "方解石",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Label of the CaCO₃ polymorph in the thermo sheet (矿物名). Written from memory in the sheet pass, not looked up at termonline.",
+      "confirm": "termonline"
     },
     {
       "source": "calcium",
@@ -6851,9 +6860,8 @@
       "authority": "cnterm-chemistry",
       "url": "",
       "concept": "calorimetry",
-      "note": "化学名词 量热法. Also the section 5.2 title. Not 量热学 (the field).",
-      "section": "5.2",
-      "confirm": "termonline"
+      "note": "化学名词 量热法. Also the section 5.2 title. Not 量热学 (the field). Termonline sweep 2026-10-28 lists 量热学 (物理学名词/化学名词/冶金学名词), 测热法 (肠外肠内营养学名词); kept: termonline lists \"量热学\" (the field, 化学名词/物理学名词); the book means the measuring technique, for which \"量热法\" is the established method form (-法 vs -学), also the 5.2 title.",
+      "section": "5.2"
     },
     {
       "source": "Cambridge University Press",
@@ -7391,9 +7399,8 @@
       "target": "卡西尼-惠更斯号",
       "authority": "book",
       "url": "",
-      "note": "the Cassini-Huygens mission; 土卫六 (Titan) is written without the name in Latin letters.",
-      "section": "7.3",
-      "confirm": "termonline"
+      "note": "the Cassini-Huygens mission; 土卫六 (Titan) is written without the name in Latin letters. Termonline sweep 2026-10-28 lists 卡西尼-惠更斯号土星探测器 (天文学名词); kept: termonline lists the full \"卡西尼-惠更斯号土星探测器\" (天文学名词); the book speaks of the mission, so the short name \"卡西尼-惠更斯号\" stays.",
+      "section": "7.3"
     },
     {
       "source": "cassiterite",
@@ -7415,9 +7422,8 @@
       "source": "catalysis",
       "target": "催化作用",
       "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "Heading of 12.7.",
-      "confirm": "termonline",
+      "url": "https://www.termonline.cn/detail?id=b13d065526a711eeb5eeb068e6519520",
+      "note": "Heading of 12.7. Termonline sweep 2026-10-28 lists 催化[作用] (化学名词), 催化 (材料科学技术名词/生物化学与分子生物学名词/冶金学名词); kept: termonline: “催化[作用]” (化学名词) with its optional bracket is the same term.",
       "section": "12.7"
     },
     {
@@ -7567,8 +7573,7 @@
       "target": "溶洞",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 洞府, 洞, 洞穴式自动虚拟环境 (计算机科学技术名词); kept: termonline lists “洞府/洞” (general or computing senses); the book means a limestone cave, “溶洞”.",
       "section": "18.6"
     },
     {
@@ -7703,6 +7708,14 @@
       "section": "1.4"
     },
     {
+      "source": "centimeter",
+      "target": "厘米",
+      "authority": "gb3100",
+      "url": "",
+      "note": "Units sheet: SI prefix and unit name, not individually in the glossary.",
+      "confirm": "owner"
+    },
+    {
       "source": "central atom",
       "target": "中心原子",
       "authority": "cnterm-chemistry",
@@ -7776,8 +7789,7 @@
       "target": "欧洲核子研究中心（CERN）",
       "authority": "book",
       "url": "",
-      "note": "The book spells out Conseil Européen pour la Recherche Nucléaire; the French name is kept as printed.",
-      "confirm": "termonline",
+      "note": "The book spells out Conseil Européen pour la Recherche Nucléaire; the French name is kept as printed. Termonline sweep 2026-10-28 lists 中国生态系统研究网络 (生态学名词); kept: termonline's \"中国生态系统研究网络\" is a false match (another acronym).",
       "section": "21.4"
     },
     {
@@ -7858,8 +7870,7 @@
       "target": "氧族元素",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Group 16 (氧族元素); 硫族元素 is used for S, Se, Te, Po only.",
-      "confirm": "termonline",
+      "note": "Group 16 (氧族元素); 硫族元素 is used for S, Se, Te, Po only. Termonline sweep 2026-10-28 lists 硫属玻璃 = chalcogenide glass (物理学名词); kept: Only \"硫属玻璃\" is listed; \"氧族元素\" stays per the row note.",
       "section": "18.1"
     },
     {
@@ -7918,9 +7929,8 @@
       "target": "木炭",
       "authority": "book",
       "url": "",
-      "note": "",
-      "section": "7.3",
-      "confirm": "termonline"
+      "note": "Termonline sweep 2026-10-28 lists 活性炭 (物理学名词); kept: termonline lists “活性炭” (activated charcoal), a different material from the book’s “木炭”.",
+      "section": "7.3"
     },
     {
       "source": "charge",
@@ -8026,9 +8036,8 @@
       "target": "螯合",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "section": "19.2",
-      "confirm": "termonline"
+      "note": "Termonline sweep 2026-10-28 lists 螯合作用 (化学名词/生物化学与分子生物学名词/药学名词), 螯合[作用] (核医学名词); kept: 化学名词 lists \"螯合作用\"; 核医学名词 \"螯合[作用]\" shows \"螯合\" is the accepted short form, and 螯合 also builds 螯合剂/螯合物.",
+      "section": "19.2"
     },
     {
       "source": "chelation therapy",
@@ -8105,8 +8114,7 @@
       "target": "化学平衡",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Concept name; the concept's term 'equilibrium' is 平衡.",
-      "confirm": "termonline",
+      "note": "Concept name; the concept's term 'equilibrium' is 平衡. Termonline sweep 2026-10-28 lists 化学平衡条件 = chemical equilibrium condition (物理学名词); kept: termonline lists only \"化学平衡条件\", confirming \"化学平衡\".",
       "concept": "chemical-equilibrium",
       "section": "13.1"
     },
@@ -8254,8 +8262,7 @@
       "authority": "termonline",
       "url": "",
       "concept": "chemistry",
-      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
-      "confirm": "termonline"
+      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage. Termonline sweep 2026-10-28 lists 痕量化学 = trace chemistry (物理学名词), 表面化学 = surface chemistry (物理学名词); kept: termonline lists only compounds (\"量子化学\" etc.) confirming \"化学\"."
     },
     {
       "source": "Chemistry 2e",
@@ -8488,8 +8495,7 @@
       "target": "亚氯酸盐",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 绿泥石 (冶金学名词/土壤学名词/石油名词); kept: termonline: “绿泥石” is the mineral; the book means the ClO₂⁻ salt, “亚氯酸盐”.",
       "section": "18.11"
     },
     {
@@ -8506,9 +8512,8 @@
       "target": "氯",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Ligand name Cl⁻.",
-      "section": "19.2",
-      "confirm": "termonline"
+      "note": "Ligand name Cl⁻. Termonline sweep 2026-10-28 lists 叶绿素 = chlorophyll (物理学名词); kept: Only an unrelated word is listed; \"氯\" is the ligand name.",
+      "section": "19.2"
     },
     {
       "source": "chlorocarbon",
@@ -8606,10 +8611,10 @@
     },
     {
       "source": "Choosing a Lewis structure by formal charge",
-      "target": "根据形式电荷选择路易斯结构式",
+      "target": "根据形式电荷选择路易斯结构",
       "authority": "book",
       "url": "",
-      "note": "concept name.",
+      "note": "concept name. Changed from 根据形式电荷选择路易斯结构式 after the termonline sweep 2026-10-28: follows the row Lewis structure.",
       "section": "7.4"
     },
     {
@@ -8756,9 +8761,15 @@
       "target": "顺",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "cis-isomer 顺式异构体, cis-2-butene 顺-2-丁烯.",
-      "confirm": "termonline",
+      "note": "cis-isomer 顺式异构体, cis-2-butene 顺-2-丁烯. Termonline sweep 2026-10-28 lists 竞争信息系统 (图书馆·情报与文献学名词), 细胞损伤评分 (呼吸病学名词); kept: Listed entries are acronym CIS (false match); \"顺\" is the isomer prefix (物理学名词 \"顺反异构\").",
       "section": "20.1"
+    },
+    {
+      "source": "cis (trailing isomer designator)",
+      "target": "顺式",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Thermo sheet, the word after a formula: reuses the rows cis 顺 and cis-isomer 顺式异构体 with 式; the <em> Latin marker of the source is dropped because the word is translated."
     },
     {
       "source": "Cis and trans configurations",
@@ -8835,8 +8846,7 @@
       "target": "包壳",
       "authority": "cnterm-physics",
       "url": "",
-      "note": "Zirconium alloy cladding of the fuel rods: 燃料棒的锆合金包壳.",
-      "confirm": "termonline",
+      "note": "Zirconium alloy cladding of the fuel rods: 燃料棒的锆合金包壳. Termonline sweep 2026-10-28 lists 包层 (物理学名词/电力名词/通信科学技术名词), 包覆 (冶金学名词); kept: termonline lists \"包层\" (物理, 通信: fibre cladding, fusion blanket); fuel-rod cladding in a reactor is \"包壳\".",
       "section": "21.4"
     },
     {
@@ -8930,10 +8940,9 @@
       "target": "克劳修斯–克拉珀龙方程",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "物理学名词 克拉珀龙; the order follows textbook usage.",
+      "note": "物理学名词 克拉珀龙; the order follows textbook usage. Termonline sweep 2026-10-28 lists 克劳修斯-克拉珀龙方程 (物理学名词); kept: termonline lists \"克劳修斯-克拉珀龙方程\" (物理学名词), the same term; only the connector differs (book's en dash convention).",
       "section": "10.3",
-      "concept": "clausius-clapeyron-equation",
-      "confirm": "termonline"
+      "concept": "clausius-clapeyron-equation"
     },
     {
       "source": "clay",
@@ -9071,9 +9080,8 @@
       "target": "聚结",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "colloid term 聚结.",
-      "section": "11.5",
-      "confirm": "termonline"
+      "note": "colloid term 聚结. Termonline sweep 2026-10-28 lists 聚合 = coalescence (物理学名词); kept: termonline: only the noun “聚合” (physics, coalescence) is listed; “聚结” is the colloid-chemistry verb and avoids collision with polymerisation “聚合”.",
+      "section": "11.5"
     },
     {
       "source": "cobalt",
@@ -9197,10 +9205,10 @@
     },
     {
       "source": "Cohesive and adhesive forces",
-      "target": "内聚力与黏附力",
+      "target": "内聚力与附着力",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
+      "note": "Changed from 内聚力与黏附力 after the termonline sweep 2026-10-28: follows the row Adhesive force.",
       "section": "10.2",
       "concept": "cohesive-and-adhesive-forces"
     },
@@ -9363,19 +9371,18 @@
     },
     {
       "source": "colloidal particle",
-      "target": "胶体粒子",
-      "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "",
-      "section": "11.5",
-      "confirm": "termonline"
+      "target": "胶粒",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=ebc5390e26ac11eeb0e9b068e6519520",
+      "note": "Changed from 胶体粒子 after the termonline sweep 2026-10-28: 物理学名词 (and 药学名词) list \"胶粒\" for colloidal particle, the same concept and the usual chemistry-textbook word.",
+      "section": "11.5"
     },
     {
       "source": "Colloidal particles are charged",
-      "target": "胶体粒子带电",
+      "target": "胶粒带电",
       "authority": "book",
       "url": "",
-      "note": "concept name.",
+      "note": "concept name. Changed from 胶体粒子带电 after the termonline sweep 2026-10-28: follows the row colloidal particle.",
       "section": "11.5"
     },
     {
@@ -9383,9 +9390,8 @@
       "target": "胶体体系",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "section": "11.5",
-      "confirm": "termonline"
+      "note": "Termonline sweep 2026-10-28 lists 胶体系统 (大气科学名词); kept: \"胶体系统\" is 大气科学名词; chemistry writes system as \"体系\" throughout the book.",
+      "section": "11.5"
     },
     {
       "source": "Colloids between solutions and suspensions",
@@ -9670,8 +9676,7 @@
       "target": "配离子",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "化学名词 配离子 (also in the shared sheet title Formation Constants for Complex Ions).",
-      "confirm": "termonline",
+      "note": "化学名词 配离子 (also in the shared sheet title Formation Constants for Complex Ions). Termonline sweep 2026-10-28 lists 复合离子 (化学名词), 络离子 (化学名词); kept: termonline lists \"复合离子\"/\"络离子\" (化学名词); the book's coordination vocabulary is the 配- series (配合物, 配体, 配离子), and \"络离子\" is the older series.",
       "section": "14.4"
     },
     {
@@ -9692,13 +9697,19 @@
       "url": ""
     },
     {
+      "source": "complexes (group heading)",
+      "target": "配合物",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Thermo sheet: the heading row above the cobalt complexes; follows the row coordination complex."
+    },
+    {
       "source": "complexing agent",
       "target": "配位剂",
       "authority": "book",
       "url": "",
-      "note": "'Complexing agents' tie up metal ions; 化学名词 配位剂.",
-      "section": "19.2",
-      "confirm": "termonline"
+      "note": "'Complexing agents' tie up metal ions; 化学名词 配位剂. Termonline sweep 2026-10-28 lists 络合剂 (计量学名词/化学名词/放射医学与防护名词); kept: termonline lists \"络合剂\" (化学名词, 计量学); kept as \"配位剂\" for the book's 配- coordination series (配离子, 配合物, 配体), \"络合\" being the older series.",
+      "section": "19.2"
     },
     {
       "source": "composition",
@@ -9896,9 +9907,8 @@
       "target": "凝聚法",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "colloid preparation by growth from molecules or ions (counterpart of the dispersion method); not the physical condensation 凝结.",
-      "section": "11.5",
-      "confirm": "termonline"
+      "note": "colloid preparation by growth from molecules or ions (counterpart of the dispersion method); not the physical condensation 凝结. Termonline sweep 2026-10-28 lists 冷凝法 (化学工程名词（八）化工装备); kept: termonline: “冷凝法” (化工装备) is vapour condensation; the book means colloid preparation by condensation, “凝聚法”.",
+      "section": "11.5"
     },
     {
       "source": "condensation reaction",
@@ -10066,8 +10076,7 @@
       "target": "守恒定律",
       "authority": "cnterm-physics",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 守恒律 (物理学名词/数学名词/自然辩证法名词); kept: termonline: 物理学名词 lists “守恒律”, but the physics book kept “守恒定律” throughout; kept for cross-book consistency and the named laws (质量守恒定律).",
       "section": "21.2"
     },
     {
@@ -10293,8 +10302,7 @@
       "target": "冷却剂",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 蓄冷剂 (农学名词), 冷却流体 (机械工程名词 第一分册), 冷却介质 (电力名词/水产名词); kept: termonline: listed forms are agricultural, mechanical or marine variants; “冷却剂” is the nuclear-reactor term the book uses.",
       "section": "18.12"
     },
     {
@@ -10399,9 +10407,8 @@
       "target": "配位异构体",
       "authority": "book",
       "url": "",
-      "note": "The book's alias of ionization isomer; in Chinese textbooks 配位异构 usually means another thing (ligand exchange between a cationic and an anionic complex), so this alias is recorded for the owner.",
-      "section": "19.2",
-      "confirm": "termonline"
+      "note": "The book's alias of ionization isomer; in Chinese textbooks 配位异构 usually means another thing (ligand exchange between a cationic and an anionic complex), so this alias is recorded for the owner. Termonline sweep 2026-10-28 lists 配位异构 = coordination isomerism (物理学名词); kept: Only \"配位异构\" is listed, which in Chinese textbooks names a different isomerism; the book's alias is kept as decided.",
+      "section": "19.2"
     },
     {
       "source": "coordination isomers",
@@ -10661,9 +10668,8 @@
       "target": "顶角",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Of a unit cell. Merge pass (2026-10-27): unit-cell corner only; the view-button label has its own row (corner (3D view button)).",
-      "section": "10.6",
-      "confirm": "termonline"
+      "note": "Of a unit cell. Merge pass (2026-10-27): unit-cell corner only; the view-button label has its own row (corner (3D view button)). Termonline sweep 2026-10-28 lists 拐角 (航天科学技术名词); kept: termonline: only “拐角” (aerospace) listed; the book means a unit-cell corner, “顶角”.",
+      "section": "10.6"
     },
     {
       "source": "corner (3D view button)",
@@ -10777,10 +10783,9 @@
       "source": "coulomb",
       "target": "库仑",
       "authority": "cnterm-physics",
-      "url": "",
-      "note": "",
-      "section": "7.6",
-      "confirm": "termonline"
+      "url": "https://www.termonline.cn/detail?id=fb7f3c0d26ad11ee99deb068e6519520",
+      "note": "Termonline sweep 2026-10-28 lists 库[仑] (电气工程名词/计量学名词/电力名词); kept: termonline: “库[仑]” with the optional bracket is the same term as “库仑”.",
+      "section": "7.6"
     },
     {
       "source": "Coulomb electrostatic potential",
@@ -10801,12 +10806,11 @@
     },
     {
       "source": "counter ion",
-      "target": "反离子",
+      "target": "反荷离子",
       "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "The ion of opposite charge that is added to precipitate an ion. termonline 2026-10-27: not listed under this English term; target taken from standard textbook usage.",
-      "section": "15.1",
-      "confirm": "termonline"
+      "url": "https://www.termonline.cn/detail?id=c378433026a711ee9766b068e6519520",
+      "note": "The ion of opposite charge that is added to precipitate an ion. termonline 2026-10-27: not listed under this English term; target taken from standard textbook usage. Changed from 反离子 after the termonline sweep 2026-10-28: 化学名词 (and 化工, 土壤学) list \"反荷离子\" for counter ion, the same concept.",
+      "section": "15.1"
     },
     {
       "source": "Counting atoms and molecules",
@@ -10856,8 +10860,7 @@
       "target": "电对",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Short for redox couple (氧化还原电对); 化学名词 电对.",
-      "confirm": "termonline",
+      "note": "Short for redox couple (氧化还原电对); 化学名词 电对. Termonline sweep 2026-10-28 lists 力偶 (物理学名词/力学名词); kept: \"力偶\" is the mechanical couple (false match); \"电对\" is the redox couple.",
       "section": "17.1"
     },
     {
@@ -11005,8 +11008,7 @@
       "target": "裂解",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Long hydrocarbon chains broken into smaller molecules (ethylene production); shared steam cracking is 蒸汽裂解.",
-      "confirm": "termonline",
+      "note": "Long hydrocarbon chains broken into smaller molecules (ethylene production); shared steam cracking is 蒸汽裂解. Termonline sweep 2026-10-28 lists 龟裂 (材料科学技术名词/精细化工名词), 裂化, 破碎 (食品科学技术名词/农学名词); kept: Listed \"龟裂\"/\"破碎\" are other senses; \"裂化\" (unlabelled) is fuel-oil cracking, while the book means ethylene production, where \"裂解\" is the chemistry term.",
       "section": "20.1"
     },
     {
@@ -11157,8 +11159,7 @@
       "target": "低温的",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 低温实验法 = cryogenics (物理学名词), 低温磁体 = cryogenic magnet (物理学名词); kept: termonline: only “低温实验法/低温磁体” listed, agreeing with “低温”.",
       "section": "18.12"
     },
     {
@@ -11166,8 +11167,7 @@
       "target": "低温学",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 低温实验法 (物理学名词); kept: termonline lists \"低温实验法\" (物理学); the book means the field, \"低温学\".",
       "section": "20.4"
     },
     {
@@ -11235,11 +11235,10 @@
       "source": "Crystal field theory",
       "target": "晶体场理论",
       "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "化学名词 晶体场理论.",
+      "url": "https://www.termonline.cn/detail?id=e422278926ac11ee98f3b068e6519520",
+      "note": "化学名词 晶体场理论. Termonline sweep 2026-10-28 lists 晶[体]场理论 (物理学名词); kept: termonline: “晶[体]场理论” with its optional bracket is the same term.",
       "concept": "crystal-field-theory",
-      "section": "19.3",
-      "confirm": "termonline"
+      "section": "19.3"
     },
     {
       "source": "crystal lattice",
@@ -11342,6 +11341,14 @@
       "section": "1.4"
     },
     {
+      "source": "cubic foot (US)",
+      "target": "立方英尺",
+      "authority": "termonline",
+      "url": "",
+      "note": "Units sheet: the US cubic foot, (US) written 美制 where it is kept. Not looked up online.",
+      "confirm": "termonline"
+    },
+    {
       "source": "cubic hole",
       "target": "立方空隙",
       "authority": "cnterm-chemistry",
@@ -11428,8 +11435,7 @@
       "target": "居里",
       "authority": "gb3100",
       "url": "",
-      "note": "GB 3102 居里 (Ci).",
-      "confirm": "termonline",
+      "note": "GB 3102 居里 (Ci). Termonline sweep 2026-10-28 lists 居里点 = Curie point (物理学名词), 居里定律 = Curie's law (物理学名词); kept: Only compounds (\"居里点\", \"居里温度\") are listed; \"居里\" is the GB 3102 unit.",
       "section": "21.6"
     },
     {
@@ -11487,8 +11493,7 @@
       "target": "环状",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 循环群 = cyclic group (物理学名词), 循环对称性 = cyclic symmetry (物理学名词); kept: Only \"循环群\" etc. (other senses) are listed; \"环状\" is the ring sense.",
       "section": "20.4"
     },
     {
@@ -11547,6 +11552,14 @@
       "url": "",
       "note": "",
       "section": "10.1"
+    },
+    {
+      "source": "d (half-life unit)",
+      "target": "天",
+      "authority": "book",
+      "url": "",
+      "note": "Appendix M footnote 1 key; the unit letters in the half-life cells are kept as printed.",
+      "confirm": "owner"
     },
     {
       "source": "d block",
@@ -11631,11 +11644,10 @@
     },
     {
       "source": "Daniell cell",
-      "target": "丹尼尔电池",
+      "target": "丹聂尔电池",
       "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "Daniell 丹尼尔; the person's name in its usual rendering.",
-      "confirm": "termonline",
+      "url": "https://www.termonline.cn/detail?id=a614158626a711ee878eb068e6519520",
+      "note": "Daniell 丹尼尔; the person's name in its usual rendering. Changed from 丹尼尔电池 after the termonline sweep 2026-10-28: 化学名词 writes \"丹聂尔电池\"; authority characters over the familiar \"丹尼尔电池\" (the person name in a biography may keep its usual rendering). The person Daniell is not named in the book.",
       "section": "17.5"
     },
     {
@@ -11651,9 +11663,8 @@
       "target": "虚线",
       "authority": "book",
       "url": "",
-      "note": "bond drawn as a dashed line (away from the viewer).",
-      "section": "7.6",
-      "confirm": "termonline"
+      "note": "bond drawn as a dashed line (away from the viewer). Termonline sweep 2026-10-28 lists 动态等位基因特异性杂交 (生物化学与分子生物学名词); kept: Listed DASH is a biochemistry acronym (false match); \"虚线\" is the bond drawing.",
+      "section": "7.6"
     },
     {
       "source": "dash (a line for a shared pair)",
@@ -11770,9 +11781,8 @@
       "target": "德拜",
       "authority": "book",
       "url": "",
-      "note": "unit of dipole moment, D.",
-      "section": "7.6",
-      "confirm": "termonline"
+      "note": "unit of dipole moment, D. Termonline sweep 2026-10-28 lists 德拜球 = Debye sphere (物理学名词), 德拜T³ 定律 = Debye T³ law (物理学名词); kept: Unit of dipole moment; termonline lists only compounds (\"德拜球\" etc.) that use the same \"德拜\".",
+      "section": "7.6"
     },
     {
       "source": "Debye–Hückel theory",
@@ -11826,11 +11836,10 @@
     },
     {
       "source": "decay constant",
-      "target": "衰变常数",
+      "target": "衰变常量",
       "authority": "cnterm-physics",
-      "url": "",
-      "note": "Not an exact entry in termonline (衰变 entries only); the standard textbook term.",
-      "confirm": "termonline",
+      "url": "https://www.termonline.cn/detail?id=85f349b926ac11ee8bacb068e6519520",
+      "note": "Not an exact entry in termonline (衰变 entries only); the standard textbook term. Changed from 衰变常数 after the termonline sweep 2026-10-28: 物理学名词 (and GB 3102) use \"衰变常量\"; same as the physics precedent 扩散系数 -> 扩散常量.",
       "section": "21.3"
     },
     {
@@ -11843,11 +11852,10 @@
     },
     {
       "source": "decay rate",
-      "target": "衰变速率",
-      "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "target": "衰变率",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=745cd3a226ac11eebb12b068e6519520",
+      "note": "Changed from 衰变速率 after the termonline sweep 2026-10-28: 物理学名词 and 核科学技术名词 list \"衰变率\", adopted in College Physics too. Also swept for rate of decay and rate of radioactive decay (rows below).",
       "section": "21.3"
     },
     {
@@ -12030,9 +12038,8 @@
       "target": "离域的",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "section": "8.3",
-      "confirm": "termonline"
+      "note": "Termonline sweep 2026-10-28 lists 退局域键 = delocalized bond (物理学名词); kept: termonline lists \"退局域键\" (物理学); \"离域\" is the chemistry form (离域π键).",
+      "section": "8.3"
     },
     {
       "source": "delocalized electrons",
@@ -12127,9 +12134,8 @@
       "source": "deposit",
       "target": "矿床",
       "authority": "cnterm-chemistry",
-      "note": "Ore deposit.",
+      "note": "Ore deposit. Termonline sweep 2026-10-28 lists 沉积物 (力学名词/电力名词), 存款 (经济学名词/管理科学技术名词), 委托保管 (图书馆·情报与文献学名词); kept: termonline's \"沉积物\", \"存款\" etc. are other senses; the book means an ore deposit, \"矿床\".",
       "section": "19.1",
-      "confirm": "termonline",
       "url": ""
     },
     {
@@ -12268,8 +12274,8 @@
       "target": "爆炸",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "The book says \"detonate/detonation\"; 爆轰 is the narrow technical term and 爆炸 is chosen for readability. termonline: not looked up in this pass.",
-      "confirm": "termonline",
+      "note": "The book says \"detonate/detonation\"; 爆轰 is the narrow technical term and 爆炸 is chosen for readability. termonline: not looked up in this pass. Termonline sweep 2026-10-28 lists 爆轰 (力学名词/化学工程名词（十）化工系统工程与化工信息化/化学工程名词（四）安全·环保·可持续发展), 爆震 (航天科学技术名词/机械工程名词 第四分册), 爆燃 (机械工程名词 第五分册); owner decides: termonline lists \"爆轰\" (力学, 化工安全) as the technical term; the book uses detonate/detonation in the hazard sense (XeO3, NFPA reactivity), where \"爆炸\" was chosen for readability; owner to choose.",
+      "confirm": "owner",
       "section": "1.3"
     },
     {
@@ -12361,9 +12367,8 @@
       "target": "抗磁性的",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "化学名词 抗磁性; paramagnetic is 顺磁性的 in ch18.",
-      "section": "6.4",
-      "confirm": "termonline"
+      "note": "化学名词 抗磁性; paramagnetic is 顺磁性的 in ch18. Termonline sweep 2026-10-28 lists 抗磁回路 = diamagnetic loop (物理学名词), 抗磁质 = diamagnetic substance (物理学名词); kept: termonline: only longer physics terms listed, agreeing with “抗磁”.",
+      "section": "6.4"
     },
     {
       "source": "diamagnetism",
@@ -12832,11 +12837,10 @@
     },
     {
       "source": "dimerization",
-      "target": "二聚",
-      "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "dimerization reaction 二聚反应; the product is a dimer 二聚体.",
-      "confirm": "termonline",
+      "target": "二聚化",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=985e857226ac11ee8ac4b068e6519520",
+      "note": "dimerization reaction 二聚反应; the product is a dimer 二聚体. Changed from 二聚 after the termonline sweep 2026-10-28: 物理学名词 lists \"二聚化\" for dimerization; sweep bare \"二聚\" only (not 二聚体, 二聚反应). Only the bare noun is swept (二聚化); 二聚体, 二聚反应 and the verb dimerize 二聚 stay.",
       "section": "12.4"
     },
     {
@@ -12882,6 +12886,14 @@
       "note": "Acetone (shared 丙酮). Searched at termonline 2026-10-28: not listed under its English term.",
       "confirm": "termonline",
       "section": "20.3"
+    },
+    {
+      "source": "dimethylamine",
+      "target": "二甲胺",
+      "authority": "termonline",
+      "url": "",
+      "note": "Kb sheet. Not looked up online.",
+      "confirm": "termonline"
     },
     {
       "source": "Dimitri Mendeleev",
@@ -13181,9 +13193,8 @@
       "target": "混乱度",
       "authority": "book",
       "url": "",
-      "note": "'the increase in disorder that accompanies formation of the solution'; 混乱度 as in ch16 row disorder (the 无序度 first chosen by 11.1 is not used); termonline not looked up.",
-      "section": "11.1",
-      "confirm": "termonline"
+      "note": "'the increase in disorder that accompanies formation of the solution'; 混乱度 as in ch16 row disorder (the 无序度 first chosen by 11.1 is not used); termonline not looked up. Termonline sweep 2026-10-28 lists 无序 (物理学名词/自动化名词/自然辩证法名词), 障碍 (医学名词 第七分册); kept: termonline: physics lists “无序”; the entropy-as-disorder sense of chemistry textbooks is “混乱度”, consistent with ch16.",
+      "section": "11.1"
     },
     {
       "source": "dispersal",
@@ -13454,17 +13465,15 @@
       "target": "DNA",
       "authority": "book",
       "url": "",
-      "note": "Kept as the abbreviation; ch10 has deoxyribonucleic acid (DNA) 脱氧核糖核酸（DNA）.",
-      "confirm": "termonline",
+      "note": "Kept as the abbreviation; ch10 has deoxyribonucleic acid (DNA) 脱氧核糖核酸（DNA）. Termonline sweep 2026-10-28 lists 脱氧核糖核酸 (物理学名词/化学名词/生物物理学名词); kept: termonline lists \"脱氧核糖核酸\"; the row keeps the abbreviation, and the full form already has its own row (ch10).",
       "section": "21.6"
     },
     {
       "source": "dna fingerprinting",
-      "target": "DNA 指纹鉴定",
-      "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "target": "DNA 指纹分析",
+      "authority": "termonline",
+      "url": "https://www.termonline.cn/detail?id=36d314701e4411efbb160242ac110002",
+      "note": "Changed from DNA 指纹鉴定 after the termonline sweep 2026-10-28: 生物化学与分子生物学名词 lists \"DNA指纹分析\" (written with the Latin-Chinese space rule), the same forensic sense.",
       "section": "20.4"
     },
     {
@@ -13769,6 +13778,14 @@
       "section": "10.4"
     },
     {
+      "source": "dry quart",
+      "target": "干量夸脱",
+      "authority": "termonline",
+      "url": "",
+      "note": "Units sheet: US customary unit. Not looked up online.",
+      "confirm": "termonline"
+    },
+    {
       "source": "drying agent",
       "target": "干燥剂",
       "authority": "cnterm-chemistry",
@@ -13855,8 +13872,7 @@
       "target": "染料",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 染料激光器 = dye laser (物理学名词), 发光染料 = luminescent dye (物理学名词); kept: termonline: only longer terms listed, agreeing with “染料”.",
       "section": "13.3"
     },
     {
@@ -14017,9 +14033,8 @@
       "target": "有效浓度",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "the activity of an ion (shared row activity 活度).",
-      "section": "11.4",
-      "confirm": "termonline"
+      "note": "the activity of an ion (shared row activity 活度). Termonline sweep 2026-10-28 lists 效应浓度 (水产名词); kept: termonline's \"效应浓度\" (水产, toxicology EC) is another sense; the book means activity, \"有效浓度\".",
+      "section": "11.4"
     },
     {
       "source": "Effective nuclear charge",
@@ -14194,8 +14209,7 @@
       "target": "导电性",
       "authority": "termonline",
       "url": "",
-      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
-      "confirm": "termonline"
+      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage. Termonline sweep 2026-10-28 lists 电导率 (化学名词/地球物理学名词/药学名词); kept: termonline: 化学名词 lists the quantity “电导率”; the row names the qualitative property of conducting, “导电性”."
     },
     {
       "source": "electrical current",
@@ -14264,8 +14278,7 @@
       "target": "电化学池",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Doubt: textbook 电化学池 (the cell, not the power source); 化学名词 lists 电化学电源 / termonline 化学电源 for the battery sense, which the book does not mean here. 电化学电池 is the variant.",
-      "confirm": "termonline",
+      "note": "Doubt: textbook 电化学池 (the cell, not the power source); 化学名词 lists 电化学电源 / termonline 化学电源 for the battery sense, which the book does not mean here. 电化学电池 is the variant. Termonline sweep 2026-10-28 lists 化学电源 (电子学名词); kept: \"化学电源\" (电子学名词) is the power-source sense; the book means the cell, \"电化学池\".",
       "section": "17.2"
     },
     {
@@ -14545,6 +14558,14 @@
       "section": "8.1"
     },
     {
+      "source": "electron rest mass",
+      "target": "电子静质量",
+      "authority": "termonline",
+      "url": "",
+      "note": "Constants sheet; rest mass is 静质量. Not looked up online.",
+      "confirm": "termonline"
+    },
+    {
       "source": "electron transfer",
       "target": "电子转移",
       "authority": "cnterm-chemistry",
@@ -14557,8 +14578,7 @@
       "target": "电子伏",
       "authority": "gb3100",
       "url": "",
-      "note": "GB 3102 electronvolt 电子伏 (eV); not found as an entry in termonline.",
-      "confirm": "termonline",
+      "note": "GB 3102 electronvolt 电子伏 (eV); not found as an entry in termonline. Termonline sweep 2026-10-28 lists 电子伏特 (核医学名词); kept: termonline lists \"电子伏特\" (核医学); \"电子伏\" is the GB 3102 name and the College Physics row.",
       "section": "21.1"
     },
     {
@@ -14769,9 +14789,8 @@
       "target": "单质",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "化学名词: 单质; elemental hydrogen is 单质氢.",
-      "section": "18.5",
-      "confirm": "termonline"
+      "note": "化学名词: 单质; elemental hydrogen is 单质氢. Termonline sweep 2026-10-28 lists 元素分布 = elemental mapping (物理学名词), 元像 = elemental image (光学名词); kept: termonline: only longer physics/optics terms (“元素分布”) are listed; “单质” is the chemistry term for an element in its uncombined form.",
+      "section": "18.5"
     },
     {
       "source": "elemental substances",
@@ -15017,10 +15036,9 @@
       "source": "enantiomer",
       "target": "对映异构体",
       "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "化学名词 对映异构体 (also 对映体).",
-      "section": "19.2",
-      "confirm": "termonline"
+      "url": "https://www.termonline.cn/detail?id=c43edbdd26a711ee9273b068e6519520",
+      "note": "化学名词 对映异构体 (also 对映体). Termonline sweep 2026-10-28 lists 对映[异构]体 (化学名词/生物化学与分子生物学名词/药学名词); kept: termonline: “对映[异构]体” (化学名词) with its optional bracket is the same term.",
+      "section": "19.2"
     },
     {
       "source": "enantiomers",
@@ -15071,8 +15089,7 @@
       "target": "吸热的",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Same target as the chapter 18 row.",
-      "confirm": "termonline",
+      "note": "Same target as the chapter 18 row. Termonline sweep 2026-10-28 lists 吸能反应 = endothermic reaction (物理学名词); kept: Only \"吸能反应\" (nuclear) is listed; \"吸热的\" is the thermochemistry word.",
       "section": "13.3"
     },
     {
@@ -15097,9 +15114,8 @@
       "target": "能量势垒",
       "authority": "cnterm-physics",
       "url": "",
-      "note": "'a large energy barrier to ionization'; 势垒 is the 物理学名词 term for a barrier.",
-      "section": "6.5",
-      "confirm": "termonline"
+      "note": "'a large energy barrier to ionization'; 势垒 is the 物理学名词 term for a barrier. Termonline sweep 2026-10-28 lists 能障 (生物化学与分子生物学名词); kept: termonline lists \"能障\" (生物化学); \"能量势垒\" builds on 物理学名词 \"势垒\" and is the usual chemistry wording.",
+      "section": "6.5"
     },
     {
       "source": "Energy Basics",
@@ -15156,8 +15172,7 @@
       "target": "浓缩",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "ch09 has uranium enrichment 铀浓缩 and enriched 浓缩的.",
-      "confirm": "termonline",
+      "note": "ch09 has uranium enrichment 铀浓缩 and enriched 浓缩的. Termonline sweep 2026-10-28 lists 富集 (计量学名词/化学名词/化学工程名词(三)化学工程基础), 充实制 (教育学名词); kept: termonline: 化学名词 lists “富集”, but uranium enrichment is “浓缩” (浓缩铀, the physics book’s kept row), the book’s 21.4 sense.",
       "section": "21.4"
     },
     {
@@ -15562,6 +15577,14 @@
       "section": "21.1"
     },
     {
+      "source": "erg",
+      "target": "尔格",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "Units sheet; 物理学名词 name from memory, not looked up online.",
+      "confirm": "termonline"
+    },
+    {
       "source": "Erich Hückel",
       "target": "埃里希·休克尔",
       "authority": "book",
@@ -15582,8 +15605,7 @@
       "target": "铬黑 T",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Figure 14.19 alt text; the source prints \"Eriochrome * Black T\", kept in parentheses as printed.",
-      "confirm": "termonline",
+      "note": "Figure 14.19 alt text; the source prints \"Eriochrome * Black T\", kept in parentheses as printed. Termonline sweep 2026-10-28 lists 铬黑T (化学名词/食品科学技术名词); kept: \"铬黑T\" (化学名词) is the same term; the space follows the spacing rule.",
       "section": "14.7"
     },
     {
@@ -15695,8 +15717,7 @@
       "target": "蚀刻",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Exercise e9, etching glass with hydrofluoric acid; the usual chemical and materials term.",
-      "confirm": "termonline",
+      "note": "Exercise e9, etching glass with hydrofluoric acid; the usual chemical and materials term. Termonline sweep 2026-10-28 lists 刻蚀 (计算机科学技术名词); kept: termonline lists \"刻蚀\" (计算机, 物理学: microfabrication); etching glass with HF is everyday \"蚀刻\".",
       "section": "4.1"
     },
     {
@@ -16025,6 +16046,14 @@
       "confirm": "termonline"
     },
     {
+      "source": "exact, definition",
+      "target": "精确值，按定义",
+      "authority": "book",
+      "url": "",
+      "note": "The phrase of the units table, written （精确值，按定义） after the number; the book's own phrase has no authority.",
+      "confirm": "owner"
+    },
+    {
       "source": "Example",
       "target": "例",
       "authority": "book",
@@ -16120,9 +16149,8 @@
       "source": "exosphere",
       "target": "外逸层",
       "authority": "book",
-      "url": "",
-      "note": "大气科学名词 外逸层 (散逸层).",
-      "confirm": "termonline",
+      "url": "https://www.termonline.cn/detail?id=e2588fdf26a811eeb8dfb068e6519520",
+      "note": "大气科学名词 外逸层 (散逸层). Termonline sweep 2026-10-28 lists 外[逸]层 (大气科学名词), 逸散层; kept: \"外[逸]层\" (大气科学名词) is the same entry with the optional character, so \"外逸层\" is confirmed.",
       "section": "9.1"
     },
     {
@@ -16130,8 +16158,7 @@
       "target": "放热的",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Same target as the chapter 18 row.",
-      "confirm": "termonline",
+      "note": "Same target as the chapter 18 row. Termonline sweep 2026-10-28 lists 放能反应 = exothermic reaction (物理学名词); kept: termonline: only “放能反应” listed (physics); “放热的” is the chemistry-thermodynamics adjective (放热反应).",
       "section": "13.3"
     },
     {
@@ -16217,8 +16244,7 @@
       "target": "指数的",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 指数式衰减 = exponential decay (物理学名词), 指数格式 = exponential scheme (力学名词); kept: Only compounds (\"指数式衰减\") are listed; \"指数的\" stays.",
       "section": "12.4"
     },
     {
@@ -16259,8 +16285,7 @@
       "target": "反应进程",
       "authority": "book",
       "url": "",
-      "note": "The x axis of a reaction diagram, not the quantity 反应进度 (ξ, in mol).",
-      "confirm": "termonline",
+      "note": "The x axis of a reaction diagram, not the quantity 反应进度 (ξ, in mol). Termonline sweep 2026-10-28 lists 反应进度 (化学名词/化学工程名词(三)化学工程基础/化学工程名词), 化学反应进度 (冶金学名词); kept: 化学名词 \"反应进度\" is the quantity ξ; the book uses extent of reaction for the axis of a reaction diagram, \"反应进程\".",
       "section": "12.5"
     },
     {
@@ -16268,8 +16293,8 @@
       "target": "外照射放射治疗",
       "authority": "cnterm-physics",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 外放射治疗; owner decides: termonline lists only “外放射治疗” with no named vocabulary; if “内照射治疗” (核医学名词) is adopted for the internal row, “外照射治疗” would be the symmetrical form; owner to choose.",
+      "confirm": "owner",
       "section": "21.5"
     },
     {
@@ -16342,10 +16367,9 @@
       "target": "f 区元素",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "化学名词 f 区元素.",
+      "note": "化学名词 f 区元素. Termonline sweep 2026-10-28 lists f区元素 (化学名词); kept: termonline lists \"f区元素\" (化学名词), the same term; only the space differs (book convention).",
       "concept": "f-block-element",
-      "section": "19.1",
-      "confirm": "termonline"
+      "section": "19.1"
     },
     {
       "source": "f-block elements",
@@ -16951,8 +16975,7 @@
       "target": "易裂变的",
       "authority": "termonline",
       "url": "",
-      "note": "物理学名词 易裂变 (易裂变核素); concept fissile-material is still untranslated in book.json (another chapter); the page writes “易裂变的”, the span on the whole phrase 易裂变的 as the quoted adjective.",
-      "confirm": "termonline",
+      "note": "物理学名词 易裂变 (易裂变核素); concept fissile-material is still untranslated in book.json (another chapter); the page writes “易裂变的”, the span on the whole phrase 易裂变的 as the quoted adjective. Termonline sweep 2026-10-28 lists 可裂变核 = fissile nucleus,fissionable nucleus (物理学名词); kept: termonline: only “可裂变核” listed; “易裂变的” is the nuclear-engineering adjective for fissile material.",
       "section": "9.4"
     },
     {
@@ -17011,8 +17034,7 @@
       "target": "可裂变的",
       "authority": "cnterm-physics",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 可裂变核 = fissile nucleus,fissionable nucleus (物理学名词); kept: termonline lists only \"可裂变核\" (物理学名词), which confirms \"可裂变\".",
       "section": "21.4"
     },
     {
@@ -17076,8 +17098,7 @@
       "target": "烧瓶",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "termonline: not looked up in this pass.",
-      "confirm": "termonline",
+      "note": "termonline: not looked up in this pass. Termonline sweep 2026-10-28 lists 砂箱 (机械工程名词 第二分册); kept: \"砂箱\" is a foundry flask (false match); \"烧瓶\" is the glassware.",
       "section": "1.2"
     },
     {
@@ -17101,9 +17122,8 @@
       "target": "燧石",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Rock name; the Latin silex stays in Latin letters. Standard textbook usage; not looked up at termonline.",
-      "section": "18.3",
-      "confirm": "termonline"
+      "note": "Rock name; the Latin silex stays in Latin letters. Standard textbook usage; not looked up at termonline. Termonline sweep 2026-10-28 lists 火石玻璃 = flint glass (物理学名词), 镧火石玻璃 = lanthanum flint glass (光学名词); kept: Only \"火石玻璃\" is listed; \"燧石\" is the rock.",
+      "section": "18.3"
     },
     {
       "source": "float",
@@ -17156,12 +17176,11 @@
     },
     {
       "source": "flue gas",
-      "target": "烟道气",
-      "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "Ex. 57b.",
-      "section": "18.6",
-      "confirm": "termonline"
+      "target": "烟气",
+      "authority": "termonline",
+      "url": "https://www.termonline.cn/detail?id=ae7ef80426ad11eea143b068e6519520",
+      "note": "Ex. 57b. Changed from 烟道气 after the termonline sweep 2026-10-28: 化学工程名词（基本有机化工）and 电力名词 list “烟气” for flue gas, the same combustion exhaust the exercise means; “烟道气” is the older variant.",
+      "section": "18.6"
     },
     {
       "source": "fluorapatite",
@@ -17266,9 +17285,8 @@
       "target": "氟",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Ligand name F⁻. Table 19.1 (anionic ligands): Chinese ligand names are the bare stems (氟, 氯, 溴, 碘, 氰, 硝酸根, 羟, 氧, 草酸根, 碳酸根), 合 follows the ligands in the complex name.",
-      "section": "19.2",
-      "confirm": "termonline"
+      "note": "Ligand name F⁻. Table 19.1 (anionic ligands): Chinese ligand names are the bare stems (氟, 氯, 溴, 碘, 氰, 硝酸根, 羟, 氧, 草酸根, 碳酸根), 合 follows the ligands in the complex name. Termonline sweep 2026-10-28 lists 荧光镜 = fluoroscope (物理学名词), 荧光学 = fluoroscopy (物理学名词); kept: Ligand stem in complex names; termonline's \"荧光镜\" etc. are false matches.",
+      "section": "19.2"
     },
     {
       "source": "fluoroapatite",
@@ -17373,8 +17391,7 @@
       "target": "英尺",
       "authority": "gb3100",
       "url": "",
-      "note": "Name of a non-SI unit in prose (GB 3101); the symbol stays as printed. Recorded as scenario 4.4.",
-      "confirm": "termonline",
+      "note": "Name of a non-SI unit in prose (GB 3101); the symbol stays as printed. Recorded as scenario 4.4. Termonline sweep 2026-10-28 lists 塔脚 (电力名词), 足 (动物学名词/人体解剖学名词), 基足 (植物学名词); kept: termonline: listed forms are anatomy/botany senses; the unit is “英尺”.",
       "section": "1.4"
     },
     {
@@ -17455,20 +17472,19 @@
     },
     {
       "source": "formation constant",
-      "target": "形成常数",
+      "target": "生成常数",
       "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "Same word as the shared sheet title 配离子的形成常数. termonline 2026-10-27: not listed under this English term.",
+      "url": "https://www.termonline.cn/detail?id=a311b6cb26a711eeb275b068e6519520",
+      "note": "Same word as the shared sheet title 配离子的形成常数. termonline 2026-10-27: not listed under this English term. Changed from 形成常数 after the termonline sweep 2026-10-28: 化学名词 lists \"生成常数\" for formation constant (K_f); the sheet title 配离子的形成常数 follows.",
       "concept": "formation-constant",
-      "section": "15.2",
-      "confirm": "termonline"
+      "section": "15.2"
     },
     {
       "source": "Formation Constants for Complex Ions",
-      "target": "配离子的形成常数",
+      "target": "配离子的生成常数",
       "authority": "book",
       "url": "",
-      "note": "sheet title (kf)",
+      "note": "sheet title (kf) Changed from 配离子的形成常数 after the termonline sweep 2026-10-28: follows the row formation constant (sheet title).",
       "confirm": "owner"
     },
     {
@@ -17502,8 +17518,7 @@
       "target": "化学式",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "chemical formula; 化学式 is the textbook word (the authority lists 分子式, 结构式, 实验式 for the kinds).",
-      "confirm": "termonline",
+      "note": "chemical formula; 化学式 is the textbook word (the authority lists 分子式, 结构式, 实验式 for the kinds). Termonline sweep 2026-10-28 lists 公式 (数学名词), 配合式 (化学工程名词（九）无机化工与肥料), 处方 (药学名词); kept: termonline lists “公式” (数学名词) and unrelated 配合式/处方; the book means the chemical formula, “化学式”.",
       "section": "2.4"
     },
     {
@@ -17564,9 +17579,8 @@
       "source": "forward reaction",
       "target": "正反应",
       "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "Referent label and prose; 正反应 / 逆反应 are the standard pair.",
-      "confirm": "termonline",
+      "url": "https://www.termonline.cn/detail?id=bd949c7e26a711eeb302b068e6519520",
+      "note": "Referent label and prose; 正反应 / 逆反应 are the standard pair. Termonline sweep 2026-10-28 lists 正[向]反应 (化学名词); kept: \"正[向]反应\" (化学名词) is the same entry; \"正反应\" is its bracketed short form.",
       "section": "13.1"
     },
     {
@@ -17973,9 +17987,8 @@
       "target": "条纹",
       "authority": "cnterm-physics",
       "url": "",
-      "note": "物理学名词 干涉条纹; the bands of the two-slit pattern.",
-      "section": "6.1",
-      "confirm": "termonline"
+      "note": "物理学名词 干涉条纹; the bands of the two-slit pattern. Termonline sweep 2026-10-28 lists 缘毛 (昆虫学名词); kept: termonline's \"缘毛\" (昆虫学) is a false match; 物理学名词 compounds use \"条纹\".",
+      "section": "6.1"
     },
     {
       "source": "Fritz London",
@@ -18234,8 +18247,7 @@
       "target": "加热炉",
       "authority": "book",
       "url": "",
-      "note": "Combustion train (Figure 4.18); referent label, figure label and sim-head all use 加热炉.",
-      "confirm": "termonline",
+      "note": "Combustion train (Figure 4.18); referent label, figure label and sim-head all use 加热炉. Termonline sweep 2026-10-28 lists 烧成炉 (机械工程名词 第二分册), 炉膛 (电力名词/航海科技名词/机械工程名词 第五分册), 炉胆 (机械工程名词 第五分册); kept: termonline: listed forms are mechanical/power senses (烧成炉, 炉膛); the combustion-train label stays “加热炉”.",
       "section": "4.5"
     },
     {
@@ -18392,9 +18404,8 @@
       "target": "电偶阳极",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Alternative name of the sacrificial anode; confirm.",
-      "section": "18.1",
-      "confirm": "termonline"
+      "note": "Alternative name of the sacrificial anode; confirm. Termonline sweep 2026-10-28 lists 牺牲阳极 (船舶工程名词); kept: \"牺牲阳极\" (船舶工程名词) lists galvanic anode as its alias; the source gives both names (\"also known as\"), so \"电偶阳极\" renders the alias beside the existing 牺牲阳极.",
+      "section": "18.1"
     },
     {
       "source": "galvanic cell",
@@ -18520,8 +18531,8 @@
       "target": "理想气体常数",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Same target as the chapter 17 row gas constant and the chapter 9 row; 化学名词 lists 摩尔气体常量, but the book's R is called the ideal gas constant elsewhere.",
-      "confirm": "termonline",
+      "note": "Same target as the chapter 17 row gas constant and the chapter 9 row; 化学名词 lists 摩尔气体常量, but the book's R is called the ideal gas constant elsewhere. Termonline sweep 2026-10-28 lists 气体常数 (计量学名词/大气科学名词/电力名词); owner decides: termonline lists \"气体常数\" (计量学名词) and \"[普适]气体常量\" (物理学名词); the book deliberately unified R as \"理想气体常数\" (ch09/ch17 rows), so switching the bare 'gas constant' row to \"气体常数\" is the owner's call.",
+      "confirm": "owner",
       "section": "13.2"
     },
     {
@@ -18705,8 +18716,7 @@
       "target": "盖革计数器",
       "authority": "cnterm-physics",
       "url": "",
-      "note": "物理学名词 盖革计数器 (盖革-米勒计数器); concept radiation-detectors still untranslated in book.json. termonline 2026-10-26: not listed under this English term (盖革计数器 is the standard name; 盖革 per the person row).",
-      "confirm": "termonline",
+      "note": "物理学名词 盖革计数器 (盖革-米勒计数器); concept radiation-detectors still untranslated in book.json. termonline 2026-10-26: not listed under this English term (盖革计数器 is the standard name; 盖革 per the person row). Termonline sweep 2026-10-28 lists 盖格计数器 (冶金学名词); kept: termonline lists “盖格计数器” only in 冶金学名词; “盖革计数器” follows 物理学名词 盖革-米勒计数器 and the physics book’s row.",
       "section": "2.2"
     },
     {
@@ -18714,8 +18724,7 @@
       "target": "盖革–米勒计数器",
       "authority": "cnterm-physics",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 盖革-米勒计数器 (物理学名词/电气工程名词/化学名词); kept: termonline lists \"盖革-米勒计数器\" (物理/化学名词), the same term; only the connector differs, and the book writes two-name terms with an en dash (盖–吕萨克).",
       "section": "21.6"
     },
     {
@@ -18723,8 +18732,7 @@
       "target": "盖革–米勒管",
       "authority": "cnterm-physics",
       "url": "",
-      "note": "ch02 has Geiger counter 盖革计数器.",
-      "confirm": "termonline",
+      "note": "ch02 has Geiger counter 盖革计数器. Termonline sweep 2026-10-28 lists 盖革-米勒[计数]管 (生物化学与分子生物学名词); kept: termonline lists \"盖革-米勒[计数]管\" (生化), the same term; only the connector differs (book's en dash convention).",
       "section": "21.6"
     },
     {
@@ -19079,8 +19087,7 @@
       "target": "丙三醇",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "化学名词 prefers 丙三醇 over the common name 甘油.",
-      "confirm": "termonline",
+      "note": "化学名词 prefers 丙三醇 over the common name 甘油. Termonline sweep 2026-10-28 lists 甘油 (生物化学与分子生物学名词); kept: termonline lists “甘油” only in 生物化学; 化学名词 prefers “丙三醇”.",
       "section": "1.4"
     },
     {
@@ -19251,9 +19258,16 @@
       "target": "格令",
       "authority": "gb3100",
       "url": "",
-      "note": "Name of a non-SI unit in prose (GB 3101); the symbol stays as printed. Recorded as scenario 4.4.",
-      "confirm": "termonline",
+      "note": "Name of a non-SI unit in prose (GB 3101); the symbol stays as printed. Recorded as scenario 4.4. Termonline sweep 2026-10-28 lists 晶粒 (材料科学技术名词/机械工程名词 第二分册/冶金学名词), 粮食 (农学名词), 磨粒 (机械工程名词 第二分册); kept: \"晶粒\"/\"粮食\" are other senses; \"格令\" is the unit name per GB 3101.",
       "section": "1.6"
+    },
+    {
+      "source": "gram",
+      "target": "克",
+      "authority": "gb3100",
+      "url": "",
+      "note": "Units sheet: SI prefix and unit name, not individually in the glossary.",
+      "confirm": "owner"
     },
     {
       "source": "gram solubility",
@@ -19335,8 +19349,7 @@
       "target": "重量分析法",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "same as gravimetric analysis.",
-      "confirm": "termonline",
+      "note": "same as gravimetric analysis. Termonline sweep 2026-10-28 lists 重量法 (化学名词); kept: termonline lists \"重量法\" (化学名词); the row is the same as gravimetric analysis, confirmed as 化学名词 \"重量分析法\", so the longer established form stays.",
       "section": "4.2"
     },
     {
@@ -19632,13 +19645,20 @@
       "url": "https://www.termonline.cn/detail?id=c93eb33b26a711ee8602b068e6519520"
     },
     {
+      "source": "h (half-life unit)",
+      "target": "小时",
+      "authority": "book",
+      "url": "",
+      "note": "Appendix M footnote 1 key; the unit letters in the half-life cells are kept as printed.",
+      "confirm": "owner"
+    },
+    {
       "source": "Haber",
       "target": "哈伯",
       "authority": "book",
       "url": "",
-      "note": "Fritz Haber; 哈伯 as in 玻恩-哈伯循环.",
-      "section": "7.5",
-      "confirm": "termonline"
+      "note": "Fritz Haber; 哈伯 as in 玻恩-哈伯循环. Termonline sweep 2026-10-28 lists 玻恩-哈伯循环 = Born-Haber cycle (物理学名词); kept: termonline: only “玻恩-哈伯循环” is listed, which agrees with our “哈伯”.",
+      "section": "7.5"
     },
     {
       "source": "Haber process",
@@ -19732,8 +19752,7 @@
       "target": "半衰期",
       "authority": "cnterm-physics",
       "url": "",
-      "note": "Used for a reaction and for a radioisotope alike.",
-      "confirm": "termonline",
+      "note": "Used for a reaction and for a radioisotope alike. Termonline sweep 2026-10-28 lists 比较半衰期 = comparative half-life (物理学名词); kept: termonline: only “比较半衰期” listed, which agrees with “半衰期”.",
       "section": "12.4"
     },
     {
@@ -20036,8 +20055,7 @@
       "target": "顶部空间",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "The air space above the beverage in the sealed container.",
-      "confirm": "termonline",
+      "note": "The air space above the beverage in the sealed container. Termonline sweep 2026-10-28 lists 顶隙度 (农学名词/食品科学技术名词), 罐头顶隙度 (水产名词); kept: \"顶隙度\" (农学/食品) is the measure of the headspace; the book means the space itself.",
       "section": "13.3"
     },
     {
@@ -20485,9 +20503,9 @@
       "target": "盖斯定律",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
+      "note": "Termonline sweep 2026-10-28: termonline 化学名词/物理学名词 lists 赫斯定律; kept 盖斯定律 as the familiar textbook name (orchestrator decision).",
       "section": "7.5",
-      "confirm": "termonline"
+      "confirm": "owner"
     },
     {
       "source": "Hess’s law",
@@ -20495,8 +20513,9 @@
       "authority": "cnterm-chemistry",
       "url": "",
       "concept": "hess-law",
-      "note": "Same target as the ch07 row (the book here writes the curly apostrophe).",
-      "section": "5.3"
+      "note": "Same target as the ch07 row (the book here writes the curly apostrophe). Termonline sweep 2026-10-28: termonline 化学名词/物理学名词 lists 赫斯定律; kept 盖斯定律 as the familiar textbook name (orchestrator decision).",
+      "section": "5.3",
+      "confirm": "owner"
     },
     {
       "source": "heterocyclic amine",
@@ -20658,9 +20677,8 @@
       "target": "六棱柱",
       "authority": "book",
       "url": "",
-      "note": "",
-      "section": "10.6",
-      "confirm": "termonline"
+      "note": "Termonline sweep 2026-10-28 lists 六方柱; kept: termonline lists \"六方柱\" (mineral crystal form); the book draws the hexagonal unit cell as a geometric solid, \"六棱柱\".",
+      "section": "10.6"
     },
     {
       "source": "hexagonal ring",
@@ -20818,10 +20836,9 @@
       "source": "highest occupied molecular orbital",
       "target": "最高占据分子轨道",
       "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "Built on 分子轨道; used in the solution of exercise e11.",
-      "section": "8.4",
-      "confirm": "termonline"
+      "url": "https://www.termonline.cn/detail?id=b81beeb826a711eeb180b068e6519520",
+      "note": "Built on 分子轨道; used in the solution of exercise e11. Termonline sweep 2026-10-28 lists 最高占据[分子]轨道 (化学名词); kept: \"最高占据[分子]轨道\" (化学名词) is the same entry.",
+      "section": "8.4"
     },
     {
       "source": "highway",
@@ -20871,10 +20888,9 @@
       "target": "空隙",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "the book says hole or interstice; 空隙 covers both, 间隙位置 is interstitial sites.",
+      "note": "the book says hole or interstice; 空隙 covers both, 间隙位置 is interstitial sites. Termonline sweep 2026-10-28 lists 空穴 (物理学名词/电子学名词/电气工程名词), 孔 (机械工程名词 第一分册); kept: termonline's \"空穴\" (物理/化学) is the semiconductor hole; the book means an interstice in a crystal packing, \"空隙\".",
       "section": "10.6",
-      "concept": "crystal-hole",
-      "confirm": "termonline"
+      "concept": "crystal-hole"
     },
     {
       "source": "Holes in closest-packed arrays",
@@ -21193,9 +21209,8 @@
       "source": "hybrid orbital",
       "target": "杂化轨道",
       "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "url": "https://www.termonline.cn/detail?id=e37cbbbf26ac11ee969ab068e6519520",
+      "note": "Termonline sweep 2026-10-28 lists 杂化轨道[函数] (物理学名词); kept: \"杂化轨道[函数]\" (物理学名词) is the same entry in its short form.",
       "section": "18.3"
     },
     {
@@ -21236,9 +21251,8 @@
       "target": "水合的",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "adjective for 'hydrated ions'; the row hydration (ch18) is 水合.",
-      "section": "11.2",
-      "confirm": "termonline"
+      "note": "adjective for 'hydrated ions'; the row hydration (ch18) is 水合. Termonline sweep 2026-10-28 lists 含水晶体 = hydrated crystal (物理学名词); kept: termonline: only “含水晶体” listed; “水合的” is the chemistry adjective (水合物).",
+      "section": "11.2"
     },
     {
       "source": "hydrated aluminum ion",
@@ -21314,8 +21328,7 @@
       "target": "氢化物",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 氢负离子 (化学名词); kept: termonline: 化学名词 lists “氢负离子” (H⁻) under hydride; the book’s 18.5 sense is the compounds, “氢化物”.",
       "section": "18.5"
     },
     {
@@ -21527,8 +21540,7 @@
       "target": "氰化氢",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 氢氰酸 (化学工程名词 (二)基本有机化工); kept: termonline lists \"氢氰酸\" (化工名词), which is the aqueous acid; the book means the HCN gas cloud (Cassini), \"氰化氢\".",
       "section": "14.3"
     },
     {
@@ -21998,11 +22010,10 @@
     },
     {
       "source": "hydroxyl radical",
-      "target": "羟基自由基",
+      "target": "羟自由基",
       "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "Built from the shared row free radical (自由基) and 羟基.",
-      "confirm": "termonline",
+      "url": "https://www.termonline.cn/detail?id=c3c0b36026a711ee83beb068e6519520",
+      "note": "Built from the shared row free radical (自由基) and 羟基. Changed from 羟基自由基 after the termonline sweep 2026-10-28: 化学名词 (also 生物化学与分子生物学名词) lists “羟自由基” as the term for hydroxyl radical; “羟基自由基” is the unnormalised variant.",
       "section": "12.7"
     },
     {
@@ -22071,6 +22082,14 @@
       "url": "",
       "note": "hypochlorite 次氯酸根.",
       "section": "2.6"
+    },
+    {
+      "source": "hypobromous acid",
+      "target": "次溴酸",
+      "authority": "termonline",
+      "url": "",
+      "note": "Ka sheet. Not looked up online.",
+      "confirm": "termonline"
     },
     {
       "source": "hypochlorite",
@@ -22294,8 +22313,7 @@
       "target": "理想气体状态方程",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Same target as the chapter 9 row ideal gas law; 13.2 writes 'ideal gas equation'.",
-      "confirm": "termonline",
+      "note": "Same target as the chapter 9 row ideal gas law; 13.2 writes 'ideal gas equation'. Termonline sweep 2026-10-28 lists 理想气体方程 (呼吸病学名词); kept: termonline lists \"理想气体方程\" (呼吸病学); the book unifies the law/equation as \"理想气体状态方程\".",
       "section": "13.2"
     },
     {
@@ -22303,8 +22321,8 @@
       "target": "理想气体状态方程",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "化学名词 理想气体状态方程 (the Chinese textbook name); 理想气体定律 is the alias the book's 'law' invites. The prose says 'law' and 'equation' for the same relation; both map here.",
-      "confirm": "termonline",
+      "note": "化学名词 理想气体状态方程 (the Chinese textbook name); 理想气体定律 is the alias the book's 'law' invites. The prose says 'law' and 'equation' for the same relation; both map here. Termonline sweep 2026-10-28: 物理学名词 lists 理想气体定律; kept as the standard textbook name 理想气体状态方程 (orchestrator decision).",
+      "confirm": "owner",
       "concept": "ideal-gas-law",
       "section": "9.2"
     },
@@ -22372,8 +22390,7 @@
       "target": "亚氨基化物",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 酰亚胺 (化学名词/化学工程名词 (二)基本有机化工); kept: termonline: “酰亚胺” is the organic imide; the book’s 18.5 sense is the inorganic NH²⁻ compound, “亚氨基化物”.",
       "section": "18.5"
     },
     {
@@ -22381,8 +22398,7 @@
       "target": "不互溶的",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 不互溶流体 = immiscible fluid (力学名词), 不互溶驱替 = immiscible displacement (力学名词); kept: termonline: the listed “不互溶流体” (力学名词) agrees with “不互溶”.",
       "section": "18.2"
     },
     {
@@ -22414,8 +22430,7 @@
       "target": "英寸",
       "authority": "gb3100",
       "url": "",
-      "note": "Name of a non-SI unit in prose (GB 3101); the symbol stays as printed. Recorded as scenario 4.4.",
-      "confirm": "termonline",
+      "note": "Name of a non-SI unit in prose (GB 3101); the symbol stays as printed. Recorded as scenario 4.4. Termonline sweep 2026-10-28 lists Z 箍缩 = Z-pinch (物理学名词), 带状箍缩 = belt pinch (物理学名词); kept: Listed entries are unrelated near matches; \"英寸\" is the GB 3101 unit name.",
       "section": "1.4"
     },
     {
@@ -22521,8 +22536,7 @@
       "target": "不水解的",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Review pass: said of ions that do not react with water (the group 1 and 2 cations, the anions of strong acids); Chinese textbooks say 不水解 or 不与水反应, not 惰性. In prose 不水解的离子 or 不水解; in the figure code 不水解：, and 不与水反应 in its sentences.",
-      "confirm": "termonline",
+      "note": "Review pass: said of ions that do not react with water (the group 1 and 2 cations, the anions of strong acids); Chinese textbooks say 不水解 or 不与水反应, not 惰性. In prose 不水解的离子 or 不水解; in the figure code 不水解：, and 不与水反应 in its sentences. Termonline sweep 2026-10-28 lists 惯性 = inertia (物理学名词), 惰性气体 = inert gas (物理学名词); kept: termonline lists only \"惰性气体\" etc.; the row is the book's sense of ions that do not hydrolyse, \"不水解的\".",
       "section": "14.4"
     },
     {
@@ -22683,9 +22697,8 @@
       "target": "内层",
       "authority": "book",
       "url": "",
-      "note": "",
-      "section": "7.1",
-      "confirm": "termonline"
+      "note": "Termonline sweep 2026-10-28 lists 内壳层 (物理学名词); kept: termonline lists \"内壳层\" (物理学名词); this book's shell is 化学名词 \"电子层\", so the inner shell is \"内层\" (内层电子), consistent with that series.",
+      "section": "7.1"
     },
     {
       "source": "inner shell electron",
@@ -22779,9 +22792,8 @@
       "source": "inspection",
       "target": "观察法",
       "authority": "book",
-      "note": "\"balanced by inspection\" is 用观察法配平, the usual textbook name of the trial-and-error balancing method; not a termonline entry.",
-      "section": "17.1",
-      "confirm": "termonline"
+      "note": "\"balanced by inspection\" is 用观察法配平, the usual textbook name of the trial-and-error balancing method; not a termonline entry. Termonline sweep 2026-10-28 lists 检验 (电气工程名词/航天科学技术名词/农学名词), 视诊 (兽医学名词), 望诊 (兽医学名词); kept: Listed \"检验\"/\"视诊\" are other senses; \"观察法\" is the textbook name of balancing by inspection.",
+      "section": "17.1"
     },
     {
       "source": "Instability of the planetary atom",
@@ -22989,10 +23001,10 @@
     },
     {
       "source": "Intermolecular and intramolecular forces",
-      "target": "分子间作用力与分子内作用力",
+      "target": "分子间力与分子内作用力",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
+      "note": "Changed from 分子间作用力与分子内作用力 after the termonline sweep 2026-10-28: follows the row intermolecular force (分子内作用力 keeps its wording; no 分子内力 entry was checked).",
       "section": "10.1",
       "concept": "intermolecular-versus-intramolecular-forces"
     },
@@ -23006,11 +23018,10 @@
     },
     {
       "source": "intermolecular force",
-      "target": "分子间作用力",
-      "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "target": "分子间力",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=e783e95a26ac11eeb5d1b068e6519520",
+      "note": "Changed from 分子间作用力 after the termonline sweep 2026-10-28: 物理学名词, 精细化工, 生物化学 and 化学工程名词 all list \"分子间力\" for intermolecular force.",
       "section": "18.4"
     },
     {
@@ -23047,11 +23058,10 @@
     },
     {
       "source": "internal radiation therapy",
-      "target": "内照射放射治疗",
-      "authority": "cnterm-physics",
-      "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "target": "内照射治疗",
+      "authority": "termonline",
+      "url": "https://www.termonline.cn/detail?id=89639be326ab11eeb05db068e6519520",
+      "note": "Changed from 内照射放射治疗 after the termonline sweep 2026-10-28: 核医学名词 lists “内照射治疗” for internal radiation therapy, the same nuclear-medicine sense as 21.6.",
       "section": "21.5"
     },
     {
@@ -23365,8 +23375,7 @@
       "target": "离子浓度",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 临界凝结浓度 = critical coagulation concentration (物理学名词); kept: termonline: only unrelated longer terms listed; “离子浓度” is the plain compositional term.",
       "section": "14.1"
     },
     {
@@ -24026,6 +24035,14 @@
       "section": "20.1"
     },
     {
+      "source": "isocyanic acid",
+      "target": "异氰酸",
+      "authority": "termonline",
+      "url": "",
+      "note": "Ka sheet. Not looked up online.",
+      "confirm": "termonline"
+    },
+    {
       "source": "isocyano",
       "target": "异氰基",
       "authority": "cnterm-chemistry",
@@ -24053,21 +24070,20 @@
     },
     {
       "source": "Isoelectronic species",
-      "target": "等电子粒子",
+      "target": "等电子体",
       "authority": "cnterm-chemistry",
-      "url": "",
+      "url": "https://www.termonline.cn/detail?id=be899df426a711ee8617b068e6519520",
       "concept": "isoelectronic",
-      "note": "concept name; \"species\" of atoms and ions: 粒子 rather than 物种; the term row isoelectronic is 等电子的 (ch7).",
-      "section": "6.5",
-      "confirm": "termonline"
+      "note": "concept name; \"species\" of atoms and ions: 粒子 rather than 物种; the term row isoelectronic is 等电子的 (ch7). Changed from 等电子粒子 after the termonline sweep 2026-10-28: 化学名词 lists \"等电子体\" for isoelectronic species, also the Chinese textbook term; the adjective row stays \"等电子的\".",
+      "section": "6.5"
     },
     {
       "source": "isoelectronic species",
-      "target": "等电子粒子",
+      "target": "等电子体",
       "authority": "cnterm-chemistry",
       "url": "",
       "concept": "isoelectronic",
-      "note": "",
+      "note": "Changed from 等电子粒子 after the termonline sweep 2026-10-28: follows the row Isoelectronic species.",
       "section": "6.5"
     },
     {
@@ -24213,10 +24229,9 @@
       "target": "同晶型的",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "adjective; 化学名词 同晶型.",
+      "note": "adjective; 化学名词 同晶型. Termonline sweep 2026-10-28 lists 同晶型置换法 = isomorphous replacement (物理学名词); kept: Only \"同晶型置换法\" is listed; it confirms \"同晶型\".",
       "section": "10.6",
-      "concept": "isomorphous",
-      "confirm": "termonline"
+      "concept": "isomorphous"
     },
     {
       "source": "isooctane",
@@ -24523,10 +24538,10 @@
     },
     {
       "source": "johannes diderik van der waals",
-      "target": "约翰内斯·迪德里克·范德华",
+      "target": "约翰内斯·迪德里克·范德瓦耳斯",
       "authority": "book",
       "url": "",
-      "note": "",
+      "note": "Changed from 约翰内斯·迪德里克·范德华 after the termonline sweep 2026-10-28: follows the row van der waals equation (one spelling of the name).",
       "section": "9.6"
     },
     {
@@ -24539,10 +24554,10 @@
     },
     {
       "source": "johannes van der waals",
-      "target": "约翰内斯·范德华",
+      "target": "约翰内斯·范德瓦耳斯",
       "authority": "book",
       "url": "",
-      "note": "short form of the shared row johannes diderik van der waals (约翰内斯·迪德里克·范德华), as the text names him without the middle name",
+      "note": "short form of the shared row johannes diderik van der waals (约翰内斯·迪德里克·范德华), as the text names him without the middle name Changed from 约翰内斯·范德华 after the termonline sweep 2026-10-28: follows the row van der waals equation (one spelling of the name).",
       "section": "9.6"
     },
     {
@@ -24876,6 +24891,14 @@
       "note": "Searched at termonline 2026-10-28: not listed under its English term.",
       "section": "7.5",
       "confirm": "termonline"
+    },
+    {
+      "source": "kilometer",
+      "target": "千米",
+      "authority": "gb3100",
+      "url": "",
+      "note": "Units sheet: SI prefix and unit name, not individually in the glossary.",
+      "confirm": "owner"
     },
     {
       "source": "kilopascal",
@@ -25356,9 +25379,8 @@
       "target": "浸取",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "section": "11.5",
-      "confirm": "termonline"
+      "note": "Termonline sweep 2026-10-28 lists 光漂白 = optical bleaching (物理学名词); kept: termonline: only an unrelated optics term listed; “浸取” is the chemistry term.",
+      "section": "11.5"
     },
     {
       "source": "lead",
@@ -25420,18 +25442,16 @@
       "target": "氧化铅",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "The book says \"lead oxide\" for the battery material PbO₂ (二氧化铅 in 化学名词); 氧化铅 is kept as the book words it, and the owner is told (translation-notes.md).",
-      "confirm": "termonline",
+      "note": "The book says \"lead oxide\" for the battery material PbO₂ (二氧化铅 in 化学名词); 氧化铅 is kept as the book words it, and the owner is told (translation-notes.md). Termonline sweep 2026-10-28 lists 红丹 (材料科学技术名词), 密陀僧 (冶金学名词); kept: termonline's \"红丹\", \"密陀僧\" are specific mineral/trade names; the row's PbO2 issue is already recorded for the owner.",
       "section": "1.2"
     },
     {
       "source": "lead storage battery",
-      "target": "铅酸电池",
-      "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "Reuses 铅酸电池 (lead-acid battery, shared glossary); 18.9 first wrote 铅蓄电池, swept.",
-      "section": "18.1",
-      "confirm": "termonline"
+      "target": "铅蓄电池",
+      "authority": "termonline",
+      "url": "https://www.termonline.cn/detail?id=bfe8250e26ad11eeb8c2b068e6519520",
+      "note": "Reuses 铅酸电池 (lead-acid battery, shared glossary); 18.9 first wrote 铅蓄电池, swept. Changed from 铅酸电池 after the termonline sweep 2026-10-28: 电子学名词 lists \"铅蓄电池\" for lead storage battery, which is also the Chinese school-textbook name; the separate lead-acid battery row keeps \"铅酸电池\". No page uses the term; lead-acid battery keeps 铅酸电池.",
+      "section": "18.1"
     },
     {
       "source": "lead sulfate",
@@ -25688,11 +25708,10 @@
     },
     {
       "source": "Lewis structure",
-      "target": "路易斯结构式",
+      "target": "路易斯结构",
       "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "url": "https://www.termonline.cn/detail?id=acbbf33826a711ee8468b068e6519520",
+      "note": "Changed from 路易斯结构式 after the termonline sweep 2026-10-28: 化学名词 规范名 for \"Lewis structure\" is \"路易斯结构\"; \"路易斯结构式\" is the familiar textbook variant.",
       "section": "18.9"
     },
     {
@@ -25706,10 +25725,10 @@
     },
     {
       "source": "Lewis Symbols and Structures",
-      "target": "路易斯符号与路易斯结构式",
+      "target": "路易斯符号与路易斯结构",
       "authority": "book",
       "url": "",
-      "note": "section title.",
+      "note": "section title. Changed from 路易斯符号与路易斯结构式 after the termonline sweep 2026-10-28: follows the row Lewis structure.",
       "section": "7.3",
       "confirm": "owner"
     },
@@ -25768,8 +25787,7 @@
       "target": "打火机",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 点火器 (机械工程名词 第五分册), 驳船 (船舶工程名词); kept: termonline's \"点火器\" (机械工程) and \"驳船\" (船舶) are other senses; the book means a cigarette lighter, \"打火机\".",
       "section": "20.1"
     },
     {
@@ -25884,8 +25902,7 @@
       "target": "直线形",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Molecular geometry.",
-      "confirm": "termonline",
+      "note": "Molecular geometry. Termonline sweep 2026-10-28 lists 线性[的] (数学名词), 线性 (核医学名词); kept: \"线性[的]\" is the mathematical sense; \"直线形\" is the molecular geometry.",
       "section": "18.12"
     },
     {
@@ -26025,6 +26042,14 @@
       "confirm": "termonline"
     },
     {
+      "source": "liquid quart",
+      "target": "液量夸脱",
+      "authority": "termonline",
+      "url": "",
+      "note": "Units sheet: US customary unit. Not looked up online.",
+      "confirm": "termonline"
+    },
+    {
       "source": "liquid solution",
       "target": "液态溶液",
       "authority": "book",
@@ -26070,6 +26095,14 @@
       "url": "",
       "concept": "liter",
       "note": ""
+    },
+    {
+      "source": "liter·atmosphere",
+      "target": "升·标准大气压",
+      "authority": "termonline",
+      "url": "",
+      "note": "Units sheet. The glossary row atmosphere is 大气 (the air); the unit atm is 标准大气压. Not looked up online.",
+      "confirm": "termonline"
     },
     {
       "source": "lithium",
@@ -26174,12 +26207,11 @@
     },
     {
       "source": "local anesthetic",
-      "target": "局部麻醉剂",
-      "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "exercise e18; 麻醉剂 follows the pending row anesthetic of ch12 12.4.",
-      "section": "10.3",
-      "confirm": "termonline"
+      "target": "局部麻醉药",
+      "authority": "termonline",
+      "url": "https://www.termonline.cn/detail?id=200accd126a811ee8ecbb068e6519520",
+      "note": "exercise e18; 麻醉剂 follows the pending row anesthetic of ch12 12.4. Changed from 局部麻醉剂 after the termonline sweep 2026-10-28: 医学名词, 麻醉学名词 and 兽医学名词 all list \"局部麻醉药\" for local anesthetic, the same drug class (the anesthetic row \"麻醉剂\" should be reviewed with it).",
+      "section": "10.3"
     },
     {
       "source": "local geometry",
@@ -26194,9 +26226,8 @@
       "target": "定域的",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Counterpart of delocalized 离域的 (ch08 row).",
-      "section": "8.3",
-      "confirm": "termonline"
+      "note": "Counterpart of delocalized 离域的 (ch08 row). Termonline sweep 2026-10-28 lists 局域态 = localized state (物理学名词), 局域条纹 = localized fringe (物理学名词); kept: termonline: physics lists “局域”; chemistry uses “定域” (定域键) for localized bonds/electrons.",
+      "section": "8.3"
     },
     {
       "source": "lock-and-key model",
@@ -26246,8 +26277,7 @@
       "target": "孤电子对",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 孤对电子 = lone pair electrons (物理学名词); kept: termonline: physics lists “孤对电子” for lone pair electrons; “孤电子对” is the chemistry-textbook form (化学名词 孤[电子]对).",
       "section": "18.4"
     },
     {
@@ -26433,8 +26463,7 @@
       "target": "光泽",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 集团 = cluster (物理学名词), 团簇 = cluster (物理学名词); kept: Only unrelated \"cluster\" entries; \"光泽\" stays.",
       "section": "18.3"
     },
     {
@@ -26495,6 +26524,14 @@
       "note": "Searched at termonline 2026-10-28: not listed under its English term.",
       "section": "11.4",
       "confirm": "termonline"
+    },
+    {
+      "source": "m (half-life unit)",
+      "target": "分钟",
+      "authority": "book",
+      "url": "",
+      "note": "Appendix M footnote 1 key; the unit letters in the half-life cells are kept as printed. m for minute is ambiguous with the metre, and JJF 1001 writes min.",
+      "confirm": "owner"
     },
     {
       "source": "m-nitrophenol",
@@ -26768,8 +26805,7 @@
       "target": "磁化",
       "authority": "cnterm-physics",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 磁化场 = magnetizing field (物理学名词), 磁化过程 = magnetization process,magnetizing process (物理学名词); kept: Only \"磁化场\"/\"磁化过程\" are listed; they confirm \"磁化\".",
       "section": "1.3"
     },
     {
@@ -26777,9 +26813,8 @@
       "target": "大小",
       "authority": "book",
       "url": "",
-      "note": "magnitude of a vector or a charge; 模 for the vector's length.",
-      "section": "7.6",
-      "confirm": "termonline"
+      "note": "magnitude of a vector or a charge; 模 for the vector's length. Termonline sweep 2026-10-28 lists 量值 (物理学名词), 星等 (天文学名词/航海科技名词), 震级; kept: 物理学名词 \"量值\" is a quantity value; the book means the size of a vector or charge, \"大小\" (as in the physics book).",
+      "section": "7.6"
     },
     {
       "source": "Magnitude of the equilibrium constant",
@@ -27180,11 +27215,10 @@
     },
     {
       "source": "mass-energy equivalence",
-      "target": "质能等价",
+      "target": "质能等价性",
       "authority": "cnterm-physics",
-      "url": "",
-      "note": "The concept; the equation is the 质能方程 (物理学名词 lists 质能关系).",
-      "confirm": "termonline",
+      "url": "https://www.termonline.cn/detail?id=f8c95e0c26ac11ee8e8db068e6519520",
+      "note": "The concept; the equation is the 质能方程 (物理学名词 lists 质能关系). Changed from 质能等价 after the termonline sweep 2026-10-28: 物理学名词 lists \"质能等价性\" for the same concept.",
       "concept": "mass-energy-equivalence",
       "section": "21.1"
     },
@@ -27336,8 +27370,7 @@
       "target": "麦克米伦",
       "authority": "book",
       "url": "",
-      "note": "Edwin McMillan.",
-      "confirm": "termonline",
+      "note": "Edwin McMillan. Termonline sweep 2026-10-28 lists 麦克米伦 Tc 公式 = McMillan's Tc formula (物理学名词); kept: termonline: the listed “麦克米伦 Tc 公式” agrees with our “麦克米伦”.",
       "section": "21.4"
     },
     {
@@ -27742,9 +27775,8 @@
       "target": "金属键",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "same as metallic bond; the book uses both forms.",
-      "section": "10.5",
-      "confirm": "termonline"
+      "note": "same as metallic bond; the book uses both forms. Termonline sweep 2026-10-28 lists 金属键合 (物理学名词); kept: 物理学名词 \"金属键合\" names the bonding process; the book uses metallic bonding for the bond itself, 化学名词 \"金属键\".",
+      "section": "10.5"
     },
     {
       "source": "metallic character",
@@ -27829,8 +27861,7 @@
       "target": "亚稳的",
       "authority": "cnterm-physics",
       "url": "",
-      "note": "Tc-99m: m for metastable, 亚稳态.",
-      "confirm": "termonline",
+      "note": "Tc-99m: m for metastable, 亚稳态. Termonline sweep 2026-10-28 lists 亚稳原子 = metastable atom (物理学名词), 亚稳相 = metastable phase (物理学名词); kept: Only compounds (\"亚稳态\", \"亚稳原子\") are listed; they confirm \"亚稳\".",
       "section": "21.3"
     },
     {
@@ -28099,8 +28130,7 @@
       "target": "迈尔",
       "authority": "termonline",
       "url": "",
-      "note": "person name",
-      "confirm": "termonline"
+      "note": "person name Termonline sweep 2026-10-28 lists 普朗特-迈耶尔流 = Prandtl-Meyer flow (力学名词); kept: Person name (Lothar Meyer); termonline lists only \"普朗特-迈耶尔流\" (力学) for a different Meyer; \"迈尔\" kept (\"迈耶尔\" is a variant transliteration)."
     },
     {
       "source": "mica",
@@ -28119,6 +28149,14 @@
       "section": "1.4"
     },
     {
+      "source": "microliter",
+      "target": "微升",
+      "authority": "gb3100",
+      "url": "",
+      "note": "Units sheet: SI prefix and unit name, not individually in the glossary.",
+      "confirm": "owner"
+    },
+    {
       "source": "microscopic domain",
       "target": "微观领域",
       "authority": "termonline",
@@ -28132,8 +28170,7 @@
       "target": "微观状态",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Textbook usage (化学名词 微观状态数; 物理学名词 微观态).",
-      "confirm": "termonline",
+      "note": "Textbook usage (化学名词 微观状态数; 物理学名词 微观态). Termonline sweep 2026-10-28 lists 微观态 (物理学名词); kept: termonline lists \"微观态\" (物理学名词); 化学名词 uses \"微观状态数\" for W, so the chemistry form \"微观状态\" stays.",
       "section": "16.2"
     },
     {
@@ -28205,6 +28242,14 @@
       "section": "21.6"
     },
     {
+      "source": "milligram",
+      "target": "毫克",
+      "authority": "gb3100",
+      "url": "",
+      "note": "Units sheet: SI prefix and unit name, not individually in the glossary.",
+      "confirm": "owner"
+    },
+    {
       "source": "Millikan",
       "target": "密立根",
       "authority": "termonline",
@@ -28235,6 +28280,14 @@
       "url": "",
       "concept": "milliliter",
       "note": ""
+    },
+    {
+      "source": "millimeter",
+      "target": "毫米",
+      "authority": "gb3100",
+      "url": "",
+      "note": "Units sheet: SI prefix and unit name, not individually in the glossary.",
+      "confirm": "owner"
     },
     {
       "source": "millimeter of mercury",
@@ -28661,9 +28714,9 @@
       "target": "分子几何构型",
       "authority": "book",
       "url": "",
-      "note": "",
+      "note": "Termonline sweep 2026-10-28 lists 分子几何结构 (化学名词), 分子几何[结构] (药学名词); owner decides: 化学名词 lists \"分子几何结构\"; \"分子几何构型\" is in the ch07 title and used book-wide, so switching to the 规范名 is the owner's call.",
       "section": "7.6",
-      "confirm": "termonline"
+      "confirm": "owner"
     },
     {
       "source": "molecular hydride",
@@ -28781,9 +28834,8 @@
       "target": "分子构型",
       "authority": "book",
       "url": "",
-      "note": "concept name and term: the arrangement of atoms in space, as opposed to electron-pair geometry; 分子构型 rather than the generic 分子结构.",
-      "section": "7.4",
-      "confirm": "termonline"
+      "note": "concept name and term: the arrangement of atoms in space, as opposed to electron-pair geometry; 分子构型 rather than the generic 分子结构. Termonline sweep 2026-10-28 lists 分子结构 (物理学名词); kept: termonline: 物理学名词 lists the generic “分子结构”; the book’s concept is the spatial arrangement of atoms (vs electron-pair geometry), the chemistry-textbook “分子构型”.",
+      "section": "7.4"
     },
     {
       "source": "Molecular Structure and Polarity",
@@ -28921,8 +28973,7 @@
       "target": "单原子的",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 单原子链 = monatomic chain (物理学名词); kept: termonline lists only \"单原子链\", confirming \"单原子\".",
       "section": "18.12"
     },
     {
@@ -28995,9 +29046,8 @@
       "target": "单斜",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "crystal system 单斜晶系 (ch18 has 单斜硫).",
-      "section": "10.6",
-      "confirm": "termonline"
+      "note": "crystal system 单斜晶系 (ch18 has 单斜硫). Termonline sweep 2026-10-28 lists 单斜晶系 = monoclinic crystal system (物理学名词), 简单单斜格[子] = simple monoclinic lattice (物理学名词); kept: termonline: the listed “单斜晶系” agrees with “单斜”.",
+      "section": "10.6"
     },
     {
       "source": "monoclinic sulfur",
@@ -29792,8 +29842,8 @@
       "target": "网状固体",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 二维网络固体 = two-dimensional network solid (物理学名词), 三维网络固体 = three-dimensional network solid (物理学名词); owner decides: Only longer entries exist (物理学名词 \"二维网络固体\" / \"三维网络固体\"), which suggest \"网络固体\" for network solid (pages write 共价网状固体); owner to choose 网络固体 vs 网状固体.",
+      "confirm": "owner",
       "section": "18.3"
     },
     {
@@ -29825,8 +29875,7 @@
       "target": "中性的",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Adjective, like acidic (酸性的) and basic (碱性的) in Chapter 18; in compounds the 的 is dropped (中性溶液).",
-      "confirm": "termonline",
+      "note": "Adjective, like acidic (酸性的) and basic (碱性的) in Chapter 18; in compounds the 的 is dropped (中性溶液). Termonline sweep 2026-10-28 lists 中[性]线 = neutral line (物理学名词), 中性介子 = neutral meson (物理学名词); kept: termonline: only longer terms listed, agreeing with “中性”.",
       "concept": "neutral-solution",
       "section": "14.2"
     },
@@ -29881,6 +29930,14 @@
       "url": "https://www.termonline.cn/detail?id=efb39f8126b011eeac9bb068e6519520",
       "note": "Confirmed at termonline (计量学名词).",
       "section": "21.5"
+    },
+    {
+      "source": "neutron rest mass",
+      "target": "中子静质量",
+      "authority": "termonline",
+      "url": "",
+      "note": "Constants sheet; rest mass is 静质量. Not looked up online.",
+      "confirm": "termonline"
     },
     {
       "source": "neutron star",
@@ -30291,8 +30348,7 @@
       "target": "一氧化二氮",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "N₂O. Merge pass (2026-10-27): one target for the source (化学名词 一氧化二氮, the form ch07 and ch18 write); the traditional 氧化亚氮 is the row dinitrogen oxide, and the 2.7 contrast passage has its own row (nitrous oxide (traditional name, 2.7 contrast)).",
-      "confirm": "termonline",
+      "note": "N₂O. Merge pass (2026-10-27): one target for the source (化学名词 一氧化二氮, the form ch07 and ch18 write); the traditional 氧化亚氮 is the row dinitrogen oxide, and the 2.7 contrast passage has its own row (nitrous oxide (traditional name, 2.7 contrast)). Termonline sweep 2026-10-28 lists 氧化亚氮 (医学名词 第六分册/麻醉学名词/计划生育名词), 笑气 (建筑学名词); kept: termonline: “氧化亚氮” is listed in medical/ecology vocabularies; the glossary deliberately uses the systematic “一氧化二氮” and keeps “氧化亚氮” for the traditional-name rows.",
       "section": "7.4, 18.7"
     },
     {
@@ -30461,6 +30517,14 @@
       "section": "13.4"
     },
     {
+      "source": "nominal value",
+      "target": "标称值",
+      "authority": "termonline",
+      "url": "",
+      "note": "Acids and bases sheet. Not looked up online.",
+      "confirm": "termonline"
+    },
+    {
       "source": "non-ideal behavior",
       "target": "非理想行为",
       "authority": "book",
@@ -30617,8 +30681,7 @@
       "target": "非金属",
       "authority": "termonline",
       "url": "",
-      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
-      "confirm": "termonline"
+      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage. Termonline sweep 2026-10-28 lists 非金属材料 = nonmetallic materials (物理学名词); kept: Only \"非金属材料\" is listed; it confirms \"非金属\"."
     },
     {
       "source": "nonmetal oxide",
@@ -30651,9 +30714,8 @@
       "target": "非极性的",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "section": "7.2",
-      "confirm": "termonline"
+      "note": "Termonline sweep 2026-10-28 lists 无极分子 = nonpolar molecule (物理学名词), 非偏振分束器 = nonpolarizing beamsplitter (物理学名词); kept: termonline lists only compounds (\"无极分子\" etc.); \"非极性\" is the chemistry word.",
+      "section": "7.2"
     },
     {
       "source": "nonpolar molecule",
@@ -30948,8 +31010,8 @@
       "target": "核式模型",
       "authority": "book",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 核模型 (物理学名词); owner decides: 物理学名词 lists “核模型” (models of the nucleus) and the sister physics book used “核模型” for Figure 31.13, while the chemistry book means Rutherford’s nuclear model of the atom, usually “核式模型”; owner to choose cross-book consistency or sense.",
+      "confirm": "owner",
       "section": "2.2"
     },
     {
@@ -30967,8 +31029,7 @@
       "target": "核电",
       "authority": "cnterm-physics",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 核动力 (物理学名词/电力名词/放射医学与防护名词); kept: termonline: physics lists “核动力” (propulsion/power source); the book means electricity from reactors, “核电” (能源科学技术名词), as the physics book kept.",
       "section": "21.4"
     },
     {
@@ -31017,8 +31078,7 @@
       "target": "核壳层",
       "authority": "cnterm-physics",
       "url": "",
-      "note": "The nucleon shells of the nucleus (壳层 for the electron shells is 电子层 in the shared glossary).",
-      "confirm": "termonline",
+      "note": "The nucleon shells of the nucleus (壳层 for the electron shells is 电子层 in the shared glossary). Termonline sweep 2026-10-28 lists 原子核壳模型 = nuclear shell model (物理学名词); kept: Only \"原子核壳模型\" is listed; \"核壳层\" is consistent with it.",
       "concept": "nuclear-shell",
       "section": "21.1"
     },
@@ -31104,8 +31164,7 @@
       "target": "原子核",
       "authority": "cnterm-physics",
       "url": "",
-      "note": "Plural of nucleus; ch02 has nucleus 原子核.",
-      "confirm": "termonline",
+      "note": "Plural of nucleus; ch02 has nucleus 原子核. Termonline sweep 2026-10-28 lists 核酸 = nucleic acid (物理学名词); kept: Plural of nucleus; termonline's \"核酸\" is a false match.",
       "section": "21.1"
     },
     {
@@ -31224,8 +31283,7 @@
       "target": "营养补充剂",
       "authority": "book",
       "url": "",
-      "note": "standard usage.",
-      "confirm": "termonline",
+      "note": "standard usage. Termonline sweep 2026-10-28 lists 营养补剂 (运动医学名词); kept: \"营养补剂\" is a sports-medicine shortening; \"营养补充剂\" is the established general and regulatory term.",
       "section": "2.7"
     },
     {
@@ -31423,8 +31481,7 @@
       "target": "八面体形",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 八面体位置 = octahedral site (物理学名词), 八面体群 = octahedral group (物理学名词); kept: termonline: only longer terms listed, agreeing with “八面体”.",
       "section": "18.3"
     },
     {
@@ -31498,9 +31555,8 @@
       "target": "八隅体",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "section": "7.3",
-      "confirm": "termonline"
+      "note": "Termonline sweep 2026-10-28 lists 八重态 (物理学名词), 八重线 (物理学名词), 八比特组 (通信科学技术名词); kept: \"八重态\"/\"八重线\" are particle-physics and spectroscopy senses (false match); \"八隅体\" is the octet rule term.",
+      "section": "7.3"
     },
     {
       "source": "octet rule",
@@ -31697,8 +31753,7 @@
       "target": "鸦片",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 寄生群落 (林学名词/生态学名词); kept: termonline's \"寄生群落\" (林学/生态) is a false match; \"鸦片\" is the drug.",
       "section": "20.4"
     },
     {
@@ -31740,9 +31795,8 @@
       "target": "轨道",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "section": "7.1",
-      "confirm": "termonline"
+      "note": "Termonline sweep 2026-10-28 lists 轨函 (物理学名词); kept: 物理学名词 \"轨函\" is a rarely used physics form; its own compounds (\"原子轨道\", \"杂化轨道[函数]\") use \"轨道\".",
+      "section": "7.1"
     },
     {
       "source": "orbital box (box in an orbital diagram)",
@@ -31785,8 +31839,7 @@
       "target": "级数",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Order of a reaction in a reactant: 对 A 的级数; first order 一级, second order 二级, zero order 零级.",
-      "confirm": "termonline",
+      "note": "Order of a reaction in a reactant: 对 A 的级数; first order 一级, second order 二级, zero order 零级. Termonline sweep 2026-10-28 lists 级 (物理学名词), 序 (物理学名词/数学名词), 阶 (物理学名词); kept: termonline: physics/maths list “级/序/阶” for other senses; reaction order in chemistry is “反应级数”, written “级数” per reactant.",
       "section": "12.3"
     },
     {
@@ -31828,8 +31881,7 @@
       "target": "矿石",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 离子实 = ion core (物理学名词), [磁]芯损耗 = core loss (物理学名词); kept: termonline's near hits (\"离子实\" etc.) are false matches.",
       "section": "18.2"
     },
     {
@@ -31922,9 +31974,8 @@
       "target": "正交",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "crystal system 正交晶系.",
-      "section": "10.6",
-      "confirm": "termonline"
+      "note": "crystal system 正交晶系. Termonline sweep 2026-10-28 lists 正交晶系 = orthorhombic crystal system (物理学名词), 简单正交格[子] = simple orthorhombic lattice (物理学名词); kept: termonline: the listed “正交晶系” agrees with “正交”.",
+      "section": "10.6"
     },
     {
       "source": "orthosilicic acid",
@@ -32033,8 +32084,7 @@
       "target": "盎司",
       "authority": "gb3100",
       "url": "",
-      "note": "Name of a non-SI unit in prose (GB 3101); the symbol stays as printed. Recorded as scenario 4.4.",
-      "confirm": "termonline",
+      "note": "Name of a non-SI unit in prose (GB 3101); the symbol stays as printed. Recorded as scenario 4.4. Termonline sweep 2026-10-28 lists 弹跳 = bounce (物理学名词), 反弹 = bounce (物理学名词); kept: termonline's \"弹跳\" etc. are false matches (bounce).",
       "section": "1.4"
     },
     {
@@ -32659,10 +32709,9 @@
       "target": "成对能",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "化学名词 成对能 (electron pairing energy).",
+      "note": "化学名词 成对能 (electron pairing energy). Termonline sweep 2026-10-28 lists [配]对能 (物理学名词); kept: \"[配]对能\" (物理学名词) is the nuclear pairing energy; \"成对能\" is the crystal-field electron pairing energy.",
       "concept": "pairing-energy",
-      "section": "19.3",
-      "confirm": "termonline"
+      "section": "19.3"
     },
     {
       "source": "paleoclimatology",
@@ -32716,9 +32765,8 @@
       "source": "panning",
       "target": "淘洗",
       "authority": "cnterm-chemistry",
-      "note": "Panning for silver and gold nuggets; the ore-dressing word for washing ore in a pan.",
+      "note": "Panning for silver and gold nuggets; the ore-dressing word for washing ore in a pan. Termonline sweep 2026-10-28 lists 跨越长度 = spanning length (物理学名词), 跨越集团 = spanning cluster (物理学名词); kept: Only unrelated \"spanning\" entries; \"淘洗\" is the ore-panning word.",
       "section": "19.1",
-      "confirm": "termonline",
       "url": ""
     },
     {
@@ -32760,8 +32808,7 @@
       "target": "顺磁性的",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 顺磁弛豫 = paramagnetic relaxation (物理学名词), 顺磁共振 = paramagnetic resonance,PMR (物理学名词); kept: termonline lists only compounds (\"顺磁共振\" etc.) confirming \"顺磁\".",
       "section": "18.9"
     },
     {
@@ -33708,19 +33755,18 @@
     },
     {
       "source": "petrochemical",
-      "target": "石油化工产品",
-      "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "target": "石油化学品",
+      "authority": "termonline",
+      "url": "https://www.termonline.cn/detail?id=7c08397726ae11ee8e2db068e6519520",
+      "note": "Changed from 石油化工产品 after the termonline sweep 2026-10-28: 石油名词 lists “石油化学品” for petrochemical, the same sense as the products named in 20.1; “石油化工产品” is a descriptive variant.",
       "section": "20.1"
     },
     {
       "source": "petrochemicals",
-      "target": "石油化工产品",
+      "target": "石油化学品",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Descriptive.",
+      "note": "Descriptive. Changed from 石油化工产品 after the termonline sweep 2026-10-28: follows the row petrochemical.",
       "section": "18.9"
     },
     {
@@ -33778,8 +33824,7 @@
       "target": "pH 计",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists pH计 (计量学名词/化学名词/机械工程名词 第三分册), 酸度计 (核医学名词/公路交通科技名词); kept: termonline: “pH计” is the same term; the space follows the book’s Latin/CJK spacing rule.",
       "section": "14.2"
     },
     {
@@ -33787,8 +33832,7 @@
       "target": "pH 试纸",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists pH试纸 (化学名词); kept: \"pH试纸\" (化学名词) is the same term; the space follows the book's Latin-Chinese spacing rule.",
       "section": "14.2"
     },
     {
@@ -33796,8 +33840,7 @@
       "target": "pH 标度",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "标度 as in 温标; used for scale throughout.",
-      "confirm": "termonline",
+      "note": "标度 as in 温标; used for scale throughout. Termonline sweep 2026-10-28 lists pH标度 (计量学名词); kept: termonline lists \"pH标度\" (计量学), the same term; only the space differs (book convention).",
       "section": "14.2"
     },
     {
@@ -33819,11 +33862,11 @@
     },
     {
       "source": "pharmacological effect",
-      "target": "药理作用",
-      "authority": "book",
-      "note": "",
+      "target": "药理效应",
+      "authority": "termonline",
+      "note": "Changed from 药理作用 after the termonline sweep 2026-10-28: termonline lists \"药理效应\" (老年医学名词) for the same sense; pharmacology distinguishes 药理作用 (action) from \"药理效应\" (effect), which the English says.",
       "section": "3.3",
-      "confirm": "termonline"
+      "url": "https://www.termonline.cn/detail?id=8359932d26af11ee9e0db068e6519520"
     },
     {
       "source": "phase",
@@ -33834,10 +33877,10 @@
     },
     {
       "source": "Phase and intermolecular forces",
-      "target": "相与分子间作用力",
+      "target": "相与分子间力",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
+      "note": "Changed from 相与分子间作用力 after the termonline sweep 2026-10-28: follows the row intermolecular force.",
       "section": "10.1",
       "concept": "phase-from-imf-and-kinetic-energy"
     },
@@ -33870,10 +33913,9 @@
       "source": "phase difference",
       "target": "相位差",
       "authority": "cnterm-physics",
-      "url": "",
-      "note": "",
-      "section": "8.4",
-      "confirm": "termonline"
+      "url": "https://www.termonline.cn/detail?id=e7a1484b26ac11ee8b32b068e6519520",
+      "note": "Termonline sweep 2026-10-28 lists 相[位]差 (物理学名词); kept: \"相[位]差\" is the same entry.",
+      "section": "8.4"
     },
     {
       "source": "Phase equilibria",
@@ -33919,11 +33961,10 @@
     },
     {
       "source": "phenol red",
-      "target": "酚红",
+      "target": "苯酚红",
       "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "Figure 14.19 alt text.",
-      "confirm": "termonline",
+      "url": "https://www.termonline.cn/detail?id=c165e96b26a711eeb085b068e6519520",
+      "note": "Figure 14.19 alt text. Changed from 酚红 after the termonline sweep 2026-10-28: 化学名词 lists the indicator as “苯酚红”; “酚红” is the everyday short form. Not inside 甲酚红.",
       "section": "14.7"
     },
     {
@@ -34032,8 +34073,7 @@
       "target": "磷化物",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 磷化铟 = indium phosphide,InP (物理学名词), 磷化镓 = gallium phosphide,GaP (物理学名词); kept: Only compounds (\"磷化铟\", \"磷化镓\") are listed; they confirm the \"磷化-\" pattern of \"磷化物\".",
       "section": "18.8"
     },
     {
@@ -34187,9 +34227,8 @@
       "target": "光活性的",
       "authority": "book",
       "url": "",
-      "note": "'photoactive' porous materials.",
-      "section": "19.2",
-      "confirm": "termonline"
+      "note": "'photoactive' porous materials. Termonline sweep 2026-10-28 lists 光敏剂 = photoactive compound,PAC (光学名词); kept: termonline: only “光敏剂” (photoactive compound) listed; the adjective stays “光活性的”.",
+      "section": "19.2"
     },
     {
       "source": "photochemical smog",
@@ -34226,11 +34265,10 @@
     },
     {
       "source": "photographic plate",
-      "target": "照相底片",
-      "authority": "book",
-      "url": "",
-      "note": "The plate that the radiation darkens in Figure 21.6; ch18 has photographic film 照相胶片. Usual textbook rendering; confirm.",
-      "confirm": "termonline",
+      "target": "照相底板",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=ab48285b26ac11ee922bb068e6519520",
+      "note": "The plate that the radiation darkens in Figure 21.6; ch18 has photographic film 照相胶片. Usual textbook rendering; confirm. Changed from 照相底片 after the termonline sweep 2026-10-28: 物理学名词 lists \"照相底板\" for the plate Becquerel fogged (Figure 21.6), adopted in College Physics as well; \"底片\" is film.",
       "section": "21.3"
     },
     {
@@ -34290,9 +34328,8 @@
       "target": "酞菁",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Copper phthalocyanine blue = 酞菁铜蓝, called phthalocyanine blue in the text.",
-      "section": "19.2",
-      "confirm": "termonline"
+      "note": "Copper phthalocyanine blue = 酞菁铜蓝, called phthalocyanine blue in the text. Termonline sweep 2026-10-28 lists 酞菁染料 (材料科学技术名词); kept: \"酞菁染料\" is the dye class; the book names the compound \"酞菁\".",
+      "section": "19.2"
     },
     {
       "source": "phthalocyanine blue",
@@ -34344,8 +34381,7 @@
       "authority": "termonline",
       "url": "",
       "concept": "physical-property",
-      "note": "termonline 2026-10-26: lists 物性（化学工程名词（十）化工系统工程与化工信息化）; 矿物物性（地质学名词）; target taken from standard textbook usage.",
-      "confirm": "termonline"
+      "note": "termonline 2026-10-26: lists 物性（化学工程名词（十）化工系统工程与化工信息化）; 矿物物性（地质学名词）; target taken from standard textbook usage. Termonline sweep 2026-10-28 lists 物性 (化学工程名词（十）化工系统工程与化工信息化), 矿物物性 (地质学名词); kept: termonline: “物性” is a chemical-engineering abbreviation; “物理性质” is the chemistry-textbook term."
     },
     {
       "source": "physical state",
@@ -34638,8 +34674,7 @@
       "target": "葡萄干布丁模型",
       "authority": "cnterm-physics",
       "url": "",
-      "note": "物理学名词 lists 布丁模型 (plum pudding model); the longer 葡萄干布丁模型 is the textbook form, and the page text is \"plum pudding\" in full.",
-      "confirm": "termonline",
+      "note": "物理学名词 lists 布丁模型 (plum pudding model); the longer 葡萄干布丁模型 is the textbook form, and the page text is \"plum pudding\" in full. Termonline sweep 2026-10-28 lists 布丁模型 (物理学名词); kept: termonline lists \"布丁模型\" (物理学名词); the book prints 'plum pudding' in full and \"葡萄干布丁模型\" is the chemistry-textbook form.",
       "section": "2.2"
     },
     {
@@ -34726,9 +34761,8 @@
       "target": "极性的",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "section": "7.2",
-      "confirm": "termonline"
+      "note": "Termonline sweep 2026-10-28 lists 高偏振星 (天文学名词), 极集 (数学名词), 极曲线 (航天科学技术名词/航空科学技术名词); kept: termonline's \"高偏振星\", \"极集\", \"极曲线\" are other senses; \"极性\" is in 物理学名词's polarity.",
+      "section": "7.2"
     },
     {
       "source": "Polar covalent bond",
@@ -34809,9 +34843,8 @@
       "target": "宝丽来",
       "authority": "book",
       "url": "",
-      "note": "Standard Chinese rendering of the company name; the English name is kept in parentheses at its one use.",
-      "section": "8.4",
-      "confirm": "termonline"
+      "note": "Standard Chinese rendering of the company name; the English name is kept in parentheses at its one use. Termonline sweep 2026-10-28 lists 偏振片 (航天科学技术名词); kept: termonline's \"偏振片\" (航天/物理) is the polarizing sheet; the book names the company (Kohn's summer job), \"宝丽来\".",
+      "section": "8.4"
     },
     {
       "source": "pollutant",
@@ -34907,9 +34940,8 @@
       "target": "多元酯",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Soaps paragraph: animal fats are glycerol triesters, so \"polyesters of fatty acids\" means multiple esters, not a polymer (聚酯 is PET and the like).",
-      "section": "11.5",
-      "confirm": "termonline"
+      "note": "Soaps paragraph: animal fats are glycerol triesters, so \"polyesters of fatty acids\" means multiple esters, not a polymer (聚酯 is PET and the like). Termonline sweep 2026-10-28 lists 聚酯 (化学名词/化学工程名词（七）高分子化工名词/石油名词); kept: termonline: “聚酯” is the polymer; the book’s “polyesters of fatty acids” are glycerol triesters (see note), so “多元酯”.",
+      "section": "11.5"
     },
     {
       "source": "polyethylene",
@@ -34930,11 +34962,10 @@
     },
     {
       "source": "polyethylene terephthalate",
-      "target": "聚对苯二甲酸乙二酯",
-      "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "target": "聚对苯二甲酸乙二醇酯",
+      "authority": "termonline",
+      "url": "https://www.termonline.cn/detail?id=8204d6ba26ae11ee9ba9b068e6519520",
+      "note": "Changed from 聚对苯二甲酸乙二酯 after the termonline sweep 2026-10-28: The only termonline entry for PET is \"聚对苯二甲酸乙二醇酯\" (石油名词), the same polymer; \"聚对苯二甲酸乙二酯\" is not listed.",
       "section": "20.1"
     },
     {
@@ -35192,8 +35223,7 @@
       "target": "假设",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Dalton's postulates are his 假设 (the textbook rendering).",
-      "confirm": "termonline",
+      "note": "Dalton's postulates are his 假设 (the textbook rendering). Termonline sweep 2026-10-28 lists 测量假设 = postulate of measurement (物理学名词), 无规相位假设 = postulate of random phases (物理学名词); kept: termonline lists only compounds (\"测量假设\" etc.) that use \"假设\".",
       "section": "2.1"
     },
     {
@@ -35377,11 +35407,10 @@
     },
     {
       "source": "potassium-argon dating",
-      "target": "钾-氩测年",
+      "target": "钾-氩年代测定",
       "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "url": "https://www.termonline.cn/detail?id=b846656e26a711eea1e5b068e6519520",
+      "note": "Changed from 钾-氩测年 after the termonline sweep 2026-10-28: 化学名词 lists “钾-氩年代测定” for the dating method; “钾-氩测年” is not an authority form (地理学名词 has “钾氩法测年”).",
       "section": "21.3"
     },
     {
@@ -35490,8 +35519,7 @@
       "target": "沉淀",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 脱溶[物] (物理学名词), 沉淀[物] (物理学名词), 沉积物 (材料科学技术名词); kept: \"沉淀[物]\" (物理学名词) is the same entry; \"沉淀\" is its short form.",
       "section": "18.6"
     },
     {
@@ -35903,8 +35931,7 @@
       "target": "压水堆",
       "authority": "cnterm-physics",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 压水反应堆 (放射医学与防护名词/电力名词); kept: termonline lists \"压水反应堆\" (放射医学, 电力); \"压水堆\" is the 核科学 usage and the same reactor.",
       "section": "21.4"
     },
     {
@@ -36166,8 +36193,7 @@
       "target": "性质",
       "authority": "termonline",
       "url": "",
-      "note": "termonline 2026-10-26: lists 属性（自然辩证法名词）; 物业（建筑学名词）; 物业（管理科学技术名词）; target taken from standard textbook usage.",
-      "confirm": "termonline"
+      "note": "termonline 2026-10-26: lists 属性（自然辩证法名词）; 物业（建筑学名词）; 物业（管理科学技术名词）; target taken from standard textbook usage. Termonline sweep 2026-10-28 lists 体性质 = bulk property (物理学名词), 内禀属性 = intrinsic property (物理学名词); kept: termonline: only longer terms listed, agreeing with “性质”."
     },
     {
       "source": "propionate ion",
@@ -36324,12 +36350,19 @@
       "section": "1.2"
     },
     {
-      "source": "proton transfer",
-      "target": "质子转移",
-      "authority": "cnterm-chemistry",
+      "source": "proton rest mass",
+      "target": "质子静质量",
+      "authority": "termonline",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Constants sheet; rest mass is 静质量. Not looked up online.",
+      "confirm": "termonline"
+    },
+    {
+      "source": "proton transfer",
+      "target": "质子传递",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=ad35b34126a711eeadedb068e6519520",
+      "note": "Changed from 质子转移 after the termonline sweep 2026-10-28: 化学名词 lists \"质子传递\" for proton transfer. Swept only for the noun phrase (14.5 涉及单个质子传递的); the verb uses (把质子转移给水) stay.",
       "section": "14.1"
     },
     {
@@ -36411,12 +36444,11 @@
     },
     {
       "source": "puckered ring",
-      "target": "皱折环",
+      "target": "折叠环",
       "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "Textbook usage for the folded eight-membered S8 ring; the book likens it to a crown (皇冠).",
-      "section": "18.4",
-      "confirm": "termonline"
+      "url": "https://www.termonline.cn/detail?id=a212a8a226a711eeaec3b068e6519520",
+      "note": "Textbook usage for the folded eight-membered S8 ring; the book likens it to a crown (皇冠). Changed from 皱折环 after the termonline sweep 2026-10-28: 化学名词 lists “折叠环” for puckered ring (non-planar ring conformation); “皱折环” is not an authority form.",
+      "section": "18.4"
     },
     {
       "source": "pug",
@@ -36466,8 +36498,7 @@
       "authority": "termonline",
       "url": "",
       "concept": "pure-substance",
-      "note": "termonline lists 纯物质 only in the electric-power vocabulary; 纯净物 is the chemistry textbook term termonline 2026-10-26: lists 纯物质（电力名词）; target taken from standard textbook usage.",
-      "confirm": "termonline"
+      "note": "termonline lists 纯物质 only in the electric-power vocabulary; 纯净物 is the chemistry textbook term termonline 2026-10-26: lists 纯物质（电力名词）; target taken from standard textbook usage. Termonline sweep 2026-10-28 lists 纯物质 (电力名词); kept: termonline: “纯物质” is listed only in 电力名词; “纯净物” is the chemistry-textbook term."
     },
     {
       "source": "pure water",
@@ -36557,9 +36588,8 @@
       "source": "pyrolysis",
       "target": "热解",
       "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "url": "https://www.termonline.cn/detail?id=ca706ae426ac11ee944bb068e6519520",
+      "note": "Termonline sweep 2026-10-28 lists 热[分]解 (物理学名词); kept: \"热[分]解\" (物理学名词) is the same entry; \"热解\" is its short form.",
       "section": "20.1"
     },
     {
@@ -36677,9 +36707,9 @@
       "target": "量子跃迁",
       "authority": "cnterm-physics",
       "url": "",
-      "note": "",
+      "note": "Termonline sweep 2026-10-28 lists 量子跳跃 (光学名词); owner decides: 光学名词 lists “量子跳跃” for quantum jump while “量子跃迁” (our target) is the usual chemistry-textbook word for the Bohr-model transition and the physics book has no row; owner to choose between authority form and textbook usage.",
       "section": "6.2",
-      "confirm": "termonline"
+      "confirm": "owner"
     },
     {
       "source": "quantum mechanical model",
@@ -36722,8 +36752,7 @@
       "target": "夸脱",
       "authority": "gb3100",
       "url": "",
-      "note": "Name of a non-SI unit in prose (GB 3101); the symbol stays as printed. Recorded as scenario 4.4.",
-      "confirm": "termonline",
+      "note": "Name of a non-SI unit in prose (GB 3101); the symbol stays as printed. Recorded as scenario 4.4. Termonline sweep 2026-10-28 lists 石英 = quartz (物理学名词), 水晶 = quartz (物理学名词); kept: Only unrelated entries; \"夸脱\" is the GB 3101 unit name.",
       "section": "1.4"
     },
     {
@@ -36745,11 +36774,10 @@
     },
     {
       "source": "quartz fiber",
-      "target": "石英纤维",
+      "target": "石英丝",
       "authority": "cnterm-physics",
-      "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "url": "https://www.termonline.cn/detail?id=c2582b6c26ac11ee9a27b068e6519520",
+      "note": "Changed from 石英纤维 after the termonline sweep 2026-10-28: 物理学名词 lists \"石英丝\" for quartz fiber, the fiber-electrometer sense of the \"quartz fiber dosimeter\" in the text.",
       "section": "21.6"
     },
     {
@@ -36834,8 +36862,7 @@
       "target": "放射病",
       "authority": "book",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 辐射病 (生态学名词); kept: \"辐射病\" is listed only in 生态学名词; \"放射病\" is the medical term (急性放射病).",
       "section": "21.6"
     },
     {
@@ -36892,11 +36919,10 @@
     },
     {
       "source": "radioactive dating",
-      "target": "放射性测年",
-      "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "The book uses radioactive dating and radiometric dating for the same method; 放射性测年 (unlisted), 放射性年代测定 is the formal name.",
-      "confirm": "termonline",
+      "target": "放射性鉴年法",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=7f3b9a4c26ac11eeb67bb068e6519520",
+      "note": "The book uses radioactive dating and radiometric dating for the same method; 放射性测年 (unlisted), 放射性年代测定 is the formal name. Changed from 放射性测年 after the termonline sweep 2026-10-28: 物理学名词 lists \"放射性鉴年法\" for radioactive dating; the sibling College Physics 2e adopted it in Pass 5, and the book uses the term for the same method. Also 放射性测年法/方法/技术 became 放射性鉴年法; 放射性碳测年 and 碳-14 测年 are other rows.",
       "section": "21.3"
     },
     {
@@ -37039,11 +37065,10 @@
     },
     {
       "source": "radiometric dating",
-      "target": "放射性测年",
-      "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "target": "放射性鉴年法",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=7f3b9a4c26ac11eeb67bb068e6519520",
+      "note": "Changed from 放射性测年 after the termonline sweep 2026-10-28: 物理学名词 lists \"放射性鉴年法\"; the book uses radiometric and radioactive dating for one method, adopted with the radioactive dating row (College Physics Pass 5). Same decision as the row radioactive dating.",
       "section": "21.3"
     },
     {
@@ -37143,8 +37168,7 @@
       "target": "雷尼镍",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Figure 4.15 alt text (Raney Ni); written 雷尼镍（Raney Ni）.",
-      "confirm": "termonline",
+      "note": "Figure 4.15 alt text (Raney Ni); written 雷尼镍（Raney Ni）. Termonline sweep 2026-10-28 lists 骨架镍 (化学工程名词 (二)基本有机化工); kept: termonline lists \"骨架镍\" (化工); the figure labels the reagent 'Raney Ni', and \"雷尼镍\" is the organic-chemistry textbook name.",
       "section": "4.4"
     },
     {
@@ -37243,10 +37267,10 @@
     },
     {
       "source": "rate of decay",
-      "target": "衰变速率",
+      "target": "衰变率",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Searched at termonline 2026-10-28: not listed under its English term.",
+      "note": "Searched at termonline 2026-10-28: not listed under its English term. Changed from 衰变速率 after the termonline sweep 2026-10-28: follows the row decay rate.",
       "confirm": "termonline",
       "section": "21.3"
     },
@@ -37269,10 +37293,10 @@
     },
     {
       "source": "rate of radioactive decay",
-      "target": "放射性衰变速率",
+      "target": "放射性衰变率",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Searched at termonline 2026-10-28: not listed under its English term.",
+      "note": "Searched at termonline 2026-10-28: not listed under its English term. Changed from 放射性衰变速率 after the termonline sweep 2026-10-28: follows the row decay rate.",
       "confirm": "termonline",
       "concept": "radioactive-decay-rate",
       "section": "21.3"
@@ -37416,11 +37440,10 @@
     },
     {
       "source": "reaction path",
-      "target": "反应路径",
+      "target": "反应途径",
       "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "Book's alias of reaction mechanism, written once in the first paragraph; not looked up at termonline.cn.",
-      "confirm": "termonline",
+      "url": "https://www.termonline.cn/detail?id=a480f4f526a711ee9249b068e6519520",
+      "note": "Book's alias of reaction mechanism, written once in the first paragraph; not looked up at termonline.cn. Changed from 反应路径 after the termonline sweep 2026-10-28: 化学名词 and the chemical-engineering vocabularies list “反应途径” for reaction path, the same sense as the book’s alias of the mechanism.",
       "section": "12.6"
     },
     {
@@ -37717,6 +37740,13 @@
       "section": "20.1"
     },
     {
+      "source": "red (crystal-form label)",
+      "target": "红色",
+      "authority": "book",
+      "url": "",
+      "note": "Thermo sheet: the PbO, HgO and HgS form labels (oxide and sulfide forms); common usage."
+    },
+    {
       "source": "red blood cell",
       "target": "红细胞",
       "authority": "book",
@@ -37781,11 +37811,10 @@
     },
     {
       "source": "redox couple",
-      "target": "氧化还原电对",
+      "target": "氧化还原对",
       "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "氧化还原电对 / 电对.",
-      "confirm": "termonline",
+      "url": "https://www.termonline.cn/detail?id=b6b232d126a711eeb604b068e6519520",
+      "note": "氧化还原电对 / 电对. Changed from 氧化还原电对 after the termonline sweep 2026-10-28: 化学名词 lists “氧化还原对” for redox couple; “氧化还原电对” is textbook usage but not the authority form (the short “电对” may stay where the book abbreviates). The short 电对 stays where the book abbreviates.",
       "section": "17.1"
     },
     {
@@ -37837,12 +37866,11 @@
     },
     {
       "source": "reference state",
-      "target": "参考状态",
-      "authority": "book",
-      "url": "",
-      "note": "the state of an element chosen as the zero of the Born-Haber cycle (Figure 7.13 original caption); plain textbook rendering, distinct from 标准状态 (standard state).",
-      "section": "7.5",
-      "confirm": "termonline"
+      "target": "参考态",
+      "authority": "termonline",
+      "url": "https://www.termonline.cn/detail?id=d9b4b42426a711ee9c2db068e6519520",
+      "note": "the state of an element chosen as the zero of the Born-Haber cycle (Figure 7.13 original caption); plain textbook rendering, distinct from 标准状态 (standard state). Changed from 参考状态 after the termonline sweep 2026-10-28: 化学工程名词 lists \"参考态\" (also \"参比态\") for the thermodynamic reference state, the same sense as the Born-Haber zero; \"参考状态\" is not an entry.",
+      "section": "7.5"
     },
     {
       "source": "refinery gas",
@@ -38289,8 +38317,7 @@
       "target": "可逆热",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "q_rev; 化学名词 可逆热 (the heat of a reversible process).",
-      "confirm": "termonline",
+      "note": "q_rev; 化学名词 可逆热 (the heat of a reversible process). Termonline sweep 2026-10-28 lists 可逆热机 = reversible heat engine (物理学名词); kept: termonline lists only \"可逆热机\"; \"可逆热\" is the q_rev term.",
       "section": "16.2"
     },
     {
@@ -38390,9 +38417,8 @@
       "target": "菱方",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "crystal system as the book names it (rhombohedral lattice); 化学名词 files it under 三方晶系 (rhombohedral setting), 菱方 is the common textbook word.",
-      "section": "10.6",
-      "confirm": "termonline"
+      "note": "crystal system as the book names it (rhombohedral lattice); 化学名词 files it under 三方晶系 (rhombohedral setting), 菱方 is the common textbook word. Termonline sweep 2026-10-28 lists 菱面体格[子] = rhombohedral lattice (物理学名词); kept: termonline lists only \"菱面体格[子]\"; \"菱方\" is the textbook crystal-system word, as the row's note records.",
+      "section": "10.6"
     },
     {
       "source": "ribonucleic acid (RNA)",
@@ -38458,8 +38484,7 @@
       "target": "环状结构",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 环状构造; kept: termonline lists \"环状构造\" (no vocabulary, geological sense); \"环状结构\" is the chemical wording.",
       "section": "20.1"
     },
     {
@@ -38541,8 +38566,7 @@
       "target": "𬬭",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "element 111, 化学名词（化学元素名称）; written 𬬭 (U+2CB2D, the character 钅 + 仑). Rare character: owner to check that the book font carries it.",
-      "confirm": "termonline",
+      "note": "element 111, 化学名词（化学元素名称）; written 𬬭 (U+2CB2D, the character 钅 + 仑). Rare character: owner to check that the book font carries it. Termonline sweep 2026-10-28 lists 【钅仑】 (核科学技术名词); kept: termonline’s “【钅仑】” is the same character as our “𬬭”.",
       "section": "21.3"
     },
     {
@@ -38628,8 +38652,7 @@
       "authority": "termonline",
       "url": "",
       "concept": "rounding",
-      "note": "数值修约 (GB/T 8170); termonline lists only 舍入 (电子学名词) for rounding, not the standard 修约; 'round' as a verb is 修约 termonline 2026-10-26: lists 倒圆角（机械工程名词 第二分册）; 扒圆（编辑与出版学名词）; 滚圆（食品科学技术名词）; 磨圆（电子学名词）; 舍入（电子学名词）; target taken from standard textbook usage.",
-      "confirm": "termonline"
+      "note": "数值修约 (GB/T 8170); termonline lists only 舍入 (电子学名词) for rounding, not the standard 修约; 'round' as a verb is 修约 termonline 2026-10-26: lists 倒圆角（机械工程名词 第二分册）; 扒圆（编辑与出版学名词）; 滚圆（食品科学技术名词）; 磨圆（电子学名词）; 舍入（电子学名词）; target taken from standard textbook usage. Termonline sweep 2026-10-28 lists 磨圆 (电子学名词), 舍入 (电子学名词), 扒圆 (编辑与出版学名词); kept: termonline: listed forms are other senses (磨圆, 倒圆角) or electronics “舍入”; numerical rounding of measurements is “修约” (GB/T 8170)."
     },
     {
       "source": "rounding error",
@@ -38690,11 +38713,10 @@
     },
     {
       "source": "rubidium-strontium dating",
-      "target": "铷-锶测年",
+      "target": "铷-锶年代测定",
       "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "url": "https://www.termonline.cn/detail?id=be380c6626a711eea638b068e6519520",
+      "note": "Changed from 铷-锶测年 after the termonline sweep 2026-10-28: 化学名词 lists \"铷-锶年代测定\" for rubidium-strontium dating.",
       "section": "21.3"
     },
     {
@@ -38772,8 +38794,7 @@
       "target": "𬬻",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "element 104, 化学名词（化学元素名称）; written 𬬻 (U+2CB3B, the character 钅 + 卢). Rare character: owner to check that the book font carries it.",
-      "confirm": "termonline",
+      "note": "element 104, 化学名词（化学元素名称）; written 𬬻 (U+2CB3B, the character 钅 + 卢). Rare character: owner to check that the book font carries it. Termonline sweep 2026-10-28 lists 【钅卢】 (核科学技术名词); kept: termonline’s “【钅卢】” is the same character as our “𬬻” written as a component description.",
       "section": "21.4"
     },
     {
@@ -38827,6 +38848,14 @@
       "concept": "rydberg-equation",
       "note": "里德伯公式 is the usual Chinese name; also the Balmer formula 巴耳末公式.",
       "section": "6.1"
+    },
+    {
+      "source": "s (half-life unit)",
+      "target": "秒",
+      "authority": "book",
+      "url": "",
+      "note": "Appendix M footnote 1 key; the unit letters in the half-life cells are kept as printed.",
+      "confirm": "owner"
     },
     {
       "source": "s block",
@@ -38942,9 +38971,8 @@
       "source": "saltpeter",
       "target": "硝石",
       "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "url": "https://www.termonline.cn/detail?id=af17590626a711ee907db068e6519520",
+      "note": "Termonline sweep 2026-10-28 lists [钾]硝石 (化学名词); kept: \"[钾]硝石\" (化学名词) is the same entry; \"硝石\" is its short form.",
       "section": "18.9"
     },
     {
@@ -39320,8 +39348,7 @@
       "target": "割线",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Line through two points of a curve.",
-      "confirm": "termonline",
+      "note": "Line through two points of a curve. Termonline sweep 2026-10-28 lists 正割 (数学名词); kept: termonline's \"正割\" (数学) is the trig function; the book means the line, \"割线\".",
       "section": "12.1"
     },
     {
@@ -39361,8 +39388,7 @@
       "target": "二级",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Written 二级反应 for a reaction, 二级 as a prefix.",
-      "confirm": "termonline",
+      "note": "Written 二级反应 for a reaction, 二级 as a prefix. Termonline sweep 2026-10-28 lists 二阶项 = second order term (物理学名词), 二阶效应 = second order effect (物理学名词); kept: termonline: physics lists “二阶”; reaction order in chemistry is “二级”.",
       "section": "12.3"
     },
     {
@@ -39598,9 +39624,8 @@
       "target": "周期",
       "authority": "book",
       "url": "",
-      "note": "the book's second name for a period (\"also called a series\"); Chinese has no second word, so it merges into 周期 (a forced scenario for the page). The lanthanide and actinide \"series\" are 镧系 and 锕系.",
+      "note": "the book's second name for a period (\"also called a series\"); Chinese has no second word, so it merges into 周期 (a forced scenario for the page). The lanthanide and actinide \"series\" are 镧系 and 锕系. Termonline sweep 2026-10-28 lists 级数 (数学名词), 统 (地质学名词), 丛编; kept: termonline's \"级数\", \"统\", \"丛书\", \"系\" are other senses; the book's 'series' is a second name of a period, \"周期\".",
       "concept": "period-of-the-periodic-table",
-      "confirm": "termonline",
       "section": "2.5"
     },
     {
@@ -39707,9 +39732,9 @@
       "target": "电子层",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "化学名词 电子层; 2.5 writes 最外电子层 for the outer shell with the span on 电子层 (forced scenario); the other chapters use the same word.",
+      "note": "化学名词 电子层; 2.5 writes 最外电子层 for the outer shell with the span on 电子层 (forced scenario); the other chapters use the same word. Termonline sweep 2026-10-28 lists 壳层 (物理学名词), 壳 (力学名词), 版子 (编辑与出版学名词); owner decides: termonline lists \"壳层\" (物理学名词, shell) and \"电子壳层\" (electron shell); no 化学名词 entry for \"电子层\" was found; a switch would touch every chapter and the subshell pair, so the owner decides.",
       "concept": "shell",
-      "confirm": "termonline",
+      "confirm": "owner",
       "section": "2.5"
     },
     {
@@ -39723,11 +39748,10 @@
     },
     {
       "source": "shellac",
-      "target": "虫胶",
+      "target": "紫胶",
       "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "url": "https://www.termonline.cn/detail?id=b898df7b26a711eebabcb068e6519520",
+      "note": "Changed from 虫胶 after the termonline sweep 2026-10-28: 化学名词 and 材料科学技术名词 list “紫胶” for shellac; “虫胶” is the common variant.",
       "section": "20.2"
     },
     {
@@ -39761,8 +39785,7 @@
       "target": "移动",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "平衡移动 is the standard term; 'shift right / left' is 向右移动 / 向左移动.",
-      "confirm": "termonline",
+      "note": "平衡移动 is the standard term; 'shift right / left' is 向右移动 / 向左移动. Termonline sweep 2026-10-28 lists 移位 (医学名词 第三分册), 变换 (化学工程名词（九）无机化工与肥料), 错型 (机械工程名词 第二分册); kept: Listed forms are medical/mechanical senses; \"移动\" is the equilibrium-shift word (平衡移动).",
       "section": "13.3"
     },
     {
@@ -40061,9 +40084,8 @@
       "target": "聚硅氧烷（硅酮）",
       "authority": "termonline",
       "url": "",
-      "note": "聚硅氧烷 is the 材料科学技术名词 entry (polysiloxane, silicone); 硅酮 (the trade word, 医学名词) in parentheses (review pass).",
-      "section": "7.2",
-      "confirm": "termonline"
+      "note": "聚硅氧烷 is the 材料科学技术名词 entry (polysiloxane, silicone); 硅酮 (the trade word, 医学名词) in parentheses (review pass). Termonline sweep 2026-10-28 lists 聚硅氧烷 (材料科学技术名词), 硅酮 (医学名词 第二分册); kept: Already adopted in review: \"聚硅氧烷\" (材料科学技术名词) with the trade word \"硅酮\" in parentheses.",
+      "section": "7.2"
     },
     {
       "source": "silver",
@@ -40365,9 +40387,8 @@
       "target": "键线式",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Usual textbook term for skeletal formula / line-angle formula.",
+      "note": "Usual textbook term for skeletal formula / line-angle formula. Termonline sweep 2026-10-28 lists 骨架状结构, 骨架结构 (食品科学技术名词); kept: termonline's \"骨架结构\" (食品) is another sense; the organic skeletal formula is \"键线式\".",
       "concept": "skeletal-structure",
-      "confirm": "termonline",
       "section": "20.1"
     },
     {
@@ -40375,9 +40396,8 @@
       "target": "骨架结构",
       "authority": "book",
       "url": "",
-      "note": "",
-      "section": "7.3",
-      "confirm": "termonline"
+      "note": "Termonline sweep 2026-10-28 lists 杆系结构 (土木工程名词); kept: termonline's \"杆系结构\" (土木) is a false match.",
+      "section": "7.3"
     },
     {
       "source": "skillet",
@@ -40417,8 +40437,7 @@
       "target": "炉渣",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 熔渣 (材料科学技术名词/机械工程名词 第二分册), 渣 (材料科学技术名词), 矿渣 (材料科学技术名词); kept: 材料科学技术名词 lists \"熔渣\"/\"渣\"/\"矿渣\"; \"炉渣\" is the established chemistry and metallurgy word for blast-furnace slag in the book.",
       "section": "18.2"
     },
     {
@@ -40592,9 +40611,8 @@
       "target": "肥皂",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "termonline 2026-10-27: unlisted; the standard word.",
-      "section": "11.5",
-      "confirm": "termonline"
+      "note": "termonline 2026-10-27: unlisted; the standard word. Termonline sweep 2026-10-28 lists 简单对象访问协议 (计算机科学技术名词); kept: termonline lists only the computing acronym SOAP (“简单对象访问协议”), a false match.",
+      "section": "11.5"
     },
     {
       "source": "soda ash",
@@ -40647,11 +40665,10 @@
     },
     {
       "source": "sodium bisulfate",
-      "target": "酸式硫酸钠",
-      "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "the common name of sodium hydrogen sulfate (硫酸氢钠); 酸式硫酸盐 is the traditional Chinese word for a bisulfate.",
-      "confirm": "termonline",
+      "target": "硫酸氢钠",
+      "authority": "termonline",
+      "url": "https://www.termonline.cn/detail?id=bb4ea9c6cef811eeaadc0242ac110002",
+      "note": "the common name of sodium hydrogen sulfate (硫酸氢钠); 酸式硫酸盐 is the traditional Chinese word for a bisulfate. Changed from 酸式硫酸钠 after the termonline sweep 2026-10-28: 化工名词 lists \"硫酸氢钠\", the systematic name of NaHSO4. Exercise 2.7 (f) keeps 酸式硫酸钠（硫酸氢钠的俗名）, which contrasts the common name with the systematic one.",
       "section": "2.7"
     },
     {
@@ -40691,8 +40708,7 @@
       "target": "氯化钠",
       "authority": "termonline",
       "url": "",
-      "note": "termonline: not looked up in this pass",
-      "confirm": "termonline"
+      "note": "termonline: not looked up in this pass Termonline sweep 2026-10-28 lists 农用食盐 (土壤学名词); kept: termonline's \"农用食盐\" (土壤学) is a narrower sense."
     },
     {
       "source": "sodium cyanide",
@@ -41286,8 +41302,7 @@
       "target": "苏联",
       "authority": "book",
       "url": "",
-      "note": "Place name; the book's the former Soviet Union is written 前苏联.",
-      "confirm": "termonline",
+      "note": "Place name; the book's the former Soviet Union is written 前苏联. Termonline sweep 2026-10-28 lists 苏美英法分区占领德国 (世界历史名词); kept: termonline: only a history phrase listed (false match).",
       "section": "21.4"
     },
     {
@@ -41407,11 +41422,10 @@
     },
     {
       "source": "specialty chemicals",
-      "target": "特种化学品",
-      "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "Precipitation paragraph, paired with the ch17 row commodity chemicals 大宗化学品.",
-      "confirm": "termonline",
+      "target": "专用化学品",
+      "authority": "termonline",
+      "url": "https://www.termonline.cn/detail?id=42ed7676bba311f080660242ac110003",
+      "note": "Precipitation paragraph, paired with the ch17 row commodity chemicals 大宗化学品. Changed from 特种化学品 after the termonline sweep 2026-10-28: 精细化工名词 lists “专用化学品” for specialty chemicals, the same industrial-chemistry sense; “特种化学品” is not listed.",
       "section": "4.2"
     },
     {
@@ -41421,6 +41435,14 @@
       "url": "https://www.termonline.cn/detail?id=049d978426a811ee8617b068e6519520",
       "note": "A molecule, ion or atom considered as one kind of particle (H₂ and 2H are different species; amphiprotic species; isoelectronic species). 化学名词 物种; 型体 is not used. Merge pass (2026-10-27): ch02, ch08, ch13, ch18 and ch21 wrote 化学物种 for the bare source \"species\" (14 places); swept to 物种, which chapters 4, 12, 13, 14, 15, 17 and the concept names already use. 化学物种 stays for the explicit source \"chemical species\" (its own row). In nuclear chemistry (ch21) the book's \"species\" names the particle or nuclide of an equation, written 粒子 / 核素 on those pages (a biological 物种 would mislead). Confirmed at termonline (医学名词 第三分册).",
       "section": "14.1"
+    },
+    {
+      "source": "specific gravity",
+      "target": "相对密度",
+      "authority": "termonline",
+      "url": "",
+      "note": "Units sheet note 2: 化学名词/物理学名词 name is 相对密度, 比重 is the old name. Not looked up online.",
+      "confirm": "termonline"
     },
     {
       "source": "specific heat",
@@ -41510,8 +41532,7 @@
       "target": "车速表",
       "authority": "book",
       "url": "",
-      "note": "Ordinary word in the car analogy; 速度表 is the variant.",
-      "confirm": "termonline",
+      "note": "Ordinary word in the car analogy; 速度表 is the variant. Termonline sweep 2026-10-28 lists 车速里程表 (机械工程名词 第四分册); kept: termonline: only 机械工程名词 “车速里程表” listed; the physics book also kept an everyday form for a car’s speedometer.",
       "section": "12.1"
     },
     {
@@ -41535,8 +41556,7 @@
       "target": "球体",
       "authority": "cnterm-physics",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 球面 (数学名词); kept: \"球面\" is the mathematical surface; the book means a solid ball, \"球体\".",
       "section": "21.1"
     },
     {
@@ -41639,6 +41659,14 @@
       "url": "",
       "note": "Heading.",
       "section": "17.2"
+    },
+    {
+      "source": "spontaneous fission",
+      "target": "自发裂变",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "Appendix M footnote S.F.; 裂变 as in the row fission. Not looked up in termonline.",
+      "confirm": "owner"
     },
     {
       "source": "spontaneous process",
@@ -41890,8 +41918,7 @@
       "target": "标准电极电势",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 标准电极电位 (电气工程名词/化学名词/化学工程名词（九）无机化工与肥料); kept: termonline lists \"标准电极电位\" (化学名词); the book's whole series is 电势 (电池电势, 标准还原电势) per 物理学名词 and Chinese chemistry textbooks.",
       "section": "18.11"
     },
     {
@@ -42239,6 +42266,15 @@
       "url": "",
       "note": "热机 is 物理学名词.",
       "section": "16.2"
+    },
+    {
+      "source": "steam turbine",
+      "target": "汽轮机",
+      "authority": "termonline",
+      "url": "",
+      "note": "Added by the termonline sweep 2026-10-28: the 5.1 figure alt says steam turbine, so 汽轮机 stays there; the row turbine is now 涡轮机. Not looked up as a separate entry.",
+      "section": "5.1",
+      "confirm": "termonline"
     },
     {
       "source": "stearic acid",
@@ -43263,9 +43299,8 @@
       "target": "超导的",
       "authority": "cnterm-physics",
       "url": "",
-      "note": "物理学名词 超导.",
-      "section": "19.1",
-      "confirm": "termonline"
+      "note": "物理学名词 超导. Termonline sweep 2026-10-28 lists 超导膜 = superconducting film (物理学名词), 超导态 = superconducting state (物理学名词); kept: Only compounds (\"超导态\", \"超导膜\") are listed; they confirm \"超导\".",
+      "section": "19.1"
     },
     {
       "source": "superconducting electromagnet",
@@ -43315,9 +43350,8 @@
       "target": "过冷的",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "section": "10.4",
-      "confirm": "termonline"
+      "note": "Termonline sweep 2026-10-28 lists 过冷蒸气 = supercooled vapor (物理学名词); kept: termonline lists only \"过冷蒸气\", confirming \"过冷\".",
+      "section": "10.4"
     },
     {
       "source": "Supercritical fluid",
@@ -43343,8 +43377,7 @@
       "target": "过热的",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 过热液体 = superheated liquid (物理学名词); kept: Only \"过热液体\" is listed; it confirms \"过热\".",
       "section": "18.10"
     },
     {
@@ -43451,11 +43484,10 @@
       "source": "surroundings",
       "target": "环境",
       "authority": "cnterm-chemistry",
-      "url": "",
+      "url": "https://www.termonline.cn/detail?id=982eac1526a711eeb3ccb068e6519520",
       "concept": "surroundings",
-      "note": "热力学 环境, the counterpart of 体系. Same target as the ch17 row.",
-      "section": "5.2",
-      "confirm": "termonline"
+      "note": "热力学 环境, the counterpart of 体系. Same target as the ch17 row. Termonline sweep 2026-10-28 lists [热力学]环境 (化学工程名词); kept: \"[热力学]环境\" (化学工程名词) is the same entry in its short form.",
+      "section": "5.2"
     },
     {
       "source": "surroundings vast compared to the system",
@@ -43760,8 +43792,7 @@
       "target": "失去光泽",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "The book's tarnish on silver; Doubt: 变暗 / 发黑 are other renderings, 失去光泽 names the loss of the shine in both.",
-      "confirm": "termonline",
+      "note": "The book's tarnish on silver; Doubt: 变暗 / 发黑 are other renderings, 失去光泽 names the loss of the shine in both. Termonline sweep 2026-10-28 lists 失泽物 (电气工程名词), 锖色 (地质学名词); kept: termonline: listed “锖色” (geology, mineral surface colour) and “失泽物” (electrical) are other senses; the book describes silver losing its shine.",
       "section": "17.6"
     },
     {
@@ -44016,8 +44047,7 @@
       "target": "三元化合物",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "三元化合物 is the 化学名词 form; the central atom plus O and H of E–O–H.",
-      "confirm": "termonline",
+      "note": "三元化合物 is the 化学名词 form; the central atom plus O and H of E–O–H. Termonline sweep 2026-10-28 lists 四元化合物 = quaternary compound (物理学名词); kept: termonline: only “四元化合物” listed, which agrees with “三元化合物”.",
       "section": "14.3"
     },
     {
@@ -44138,9 +44168,8 @@
       "target": "四方",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "crystal system 四方晶系; shown as 简单四方 / 体心四方 in the unit-cell select.",
-      "section": "10.6",
-      "confirm": "termonline"
+      "note": "crystal system 四方晶系; shown as 简单四方 / 体心四方 in the unit-cell select. Termonline sweep 2026-10-28 lists 四方晶系 = tetragonal crystal system (物理学名词), 简单四方格[子] = simple tetragonal lattice (物理学名词); kept: Only \"四方晶系\" etc. are listed; they confirm \"四方\".",
+      "section": "10.6"
     },
     {
       "source": "tetrahalide",
@@ -44577,9 +44606,8 @@
       "target": "理论产量",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "产量 is the amount of product obtained; 理论产率 is the 煤炭科学技术名词 form and is not used.",
+      "note": "产量 is the amount of product obtained; 理论产率 is the 煤炭科学技术名词 form and is not used. Termonline sweep 2026-10-28 lists 理论产率 (煤炭科学技术名词); kept: termonline: “理论产率” (煤炭科学技术名词) is a ratio; the book’s theoretical yield is an amount of product, “理论产量”.",
       "concept": "theoretical-yield",
-      "confirm": "termonline",
       "section": "4.4"
     },
     {
@@ -44633,12 +44661,11 @@
     },
     {
       "source": "thermal energy storage system",
-      "target": "储热系统",
-      "authority": "book",
-      "url": "",
-      "note": "5.1 solar box.",
-      "section": "5.1",
-      "confirm": "termonline"
+      "target": "蓄热系统",
+      "authority": "termonline",
+      "url": "https://www.termonline.cn/detail?id=a322571426ad11eeb83eb068e6519520",
+      "note": "5.1 solar box. Changed from 储热系统 after the termonline sweep 2026-10-28: 电力名词 lists \"蓄热系统\" for thermal energy storage system, the same sense; \"储热系统\" is not an entry.",
+      "section": "5.1"
     },
     {
       "source": "thermal equilibrium",
@@ -44650,12 +44677,11 @@
     },
     {
       "source": "thermal insulator",
-      "target": "隔热材料",
-      "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "\"a poorer insulator than a coffee cup calorimeter\"; not ch08 绝缘体 (electrical). In the exercises the sentence can be 隔热性能更差.",
-      "section": "5.2",
-      "confirm": "termonline"
+      "target": "热绝缘体",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=83604bfa26ac11eea7aeb068e6519520",
+      "note": "\"a poorer insulator than a coffee cup calorimeter\"; not ch08 绝缘体 (electrical). In the exercises the sentence can be 隔热性能更差. Changed from 隔热材料 after the termonline sweep 2026-10-28: 物理学名词 lists \"热绝缘体\" for thermal insulator, the same heat sense; sweep only where the source says thermal insulator (not generic insulating materials). No page says thermal insulator (5.2 insulating materials and 18.9 thermal insulation keep their wording).",
+      "section": "5.2"
     },
     {
       "source": "thermal pollution",
@@ -44680,6 +44706,14 @@
       "url": "",
       "note": "Exercise (left out of the section as unkeyed).",
       "section": "16.3"
+    },
+    {
+      "source": "thermochemical calorie",
+      "target": "热化学卡",
+      "authority": "termonline",
+      "url": "",
+      "note": "Units sheet: calorie is 卡 in the glossary; the qualifier is added. Not looked up online.",
+      "confirm": "termonline"
     },
     {
       "source": "thermochemical cycle",
@@ -44768,8 +44802,7 @@
       "target": "热释光的",
       "authority": "cnterm-physics",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 热释光剂量仪 = thermoluminescent dosimeter (物理学名词); kept: termonline lists only \"热释光剂量仪\", confirming \"热释光\".",
       "section": "21.6"
     },
     {
@@ -44826,9 +44859,8 @@
       "target": "硫氰酸根",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "thiocyanate ion.",
-      "section": "7.4",
-      "confirm": "termonline"
+      "note": "thiocyanate ion. Termonline sweep 2026-10-28 lists 硫氰酸盐 (化学名词), 硫氰酸酯 (化学名词); kept: termonline: 化学名词 lists the salt “硫氰酸盐”/ester; this row is the ion (SCN⁻), “硫氰酸根”.",
+      "section": "7.4"
     },
     {
       "source": "thiosulfate",
@@ -44976,13 +45008,12 @@
     },
     {
       "source": "threshold frequency",
-      "target": "阈频率",
+      "target": "阈值频率",
       "authority": "cnterm-physics",
-      "url": "",
+      "url": "https://www.termonline.cn/detail?id=8b4181f526ac11ee9233b068e6519520",
       "concept": "photoelectric-effect",
-      "note": "物理学名词 阈频率 (also 截止频率).",
-      "section": "6.1",
-      "confirm": "termonline"
+      "note": "物理学名词 阈频率 (also 截止频率). Changed from 阈频率 after the termonline sweep 2026-10-28: 物理学名词 lists \"阈值频率\" for threshold frequency; \"阈频率\" is not the entry.",
+      "section": "6.1"
     },
     {
       "source": "throat spray, cough syrup",
@@ -45240,9 +45271,8 @@
       "target": "氧化钛",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "二氧化钛 is the ch18 row for titanium dioxide.",
-      "section": "10.6",
-      "confirm": "termonline"
+      "note": "二氧化钛 is the ch18 row for titanium dioxide. Termonline sweep 2026-10-28 lists 钛白粉 (材料科学技术名词); kept: termonline lists \"钛白粉\" (材料), the trade pigment name; the chemical name \"氧化钛\" stays.",
+      "section": "10.6"
     },
     {
       "source": "titanium tetrachloride",
@@ -45415,8 +45445,7 @@
       "target": "托",
       "authority": "gb3100",
       "url": "",
-      "note": "GB 3100 non-SI unit 托 (1/760 atm); the symbol torr is kept in formulas and tables.",
-      "confirm": "termonline",
+      "note": "GB 3100 non-SI unit 托 (1/760 atm); the symbol torr is kept in formulas and tables. Termonline sweep 2026-10-28 lists 托里拆利定理 = Torricelli's theorem (物理学名词); kept: termonline lists only \"托里拆利定理\"; \"托\" is the GB 3100 unit name.",
       "concept": "torr",
       "section": "9.1"
     },
@@ -45506,9 +45535,15 @@
       "target": "反",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "trans-isomer 反式异构体, trans-2-butene 反-2-丁烯.",
-      "confirm": "termonline",
+      "note": "trans-isomer 反式异构体, trans-2-butene 反-2-丁烯. Termonline sweep 2026-10-28 lists 传输门 = transmon (物理学名词), 转移 = transfer (物理学名词); kept: termonline: only unrelated “trans-” words listed (false match); “反” is the cis/trans prefix.",
       "section": "20.1"
+    },
+    {
+      "source": "trans (trailing isomer designator)",
+      "target": "反式",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Thermo sheet, the word after a formula: reuses the rows trans 反 and trans-isomer 反式异构体 with 式; the <em> Latin marker of the source is dropped because the word is translated."
     },
     {
       "source": "trans configuration",
@@ -45555,12 +45590,11 @@
     },
     {
       "source": "transesterification",
-      "target": "酯交换反应",
+      "target": "酯交换",
       "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "Algae box.",
-      "section": "5.3",
-      "confirm": "termonline"
+      "url": "https://www.termonline.cn/detail?id=aaa6dc3926a711ee8a26b068e6519520",
+      "note": "Algae box. Changed from 酯交换反应 after the termonline sweep 2026-10-28: 化学名词 lists \"酯交换\"; the source says 'transesterification reaction', so prose \"酯交换反应\" already contains the term and needs no sweep. The pages write 酯交换反应 for transesterification reaction, which contains the term; not swept.",
+      "section": "5.3"
     },
     {
       "source": "transferase",
@@ -45772,8 +45806,7 @@
       "target": "实验",
       "authority": "book",
       "url": "",
-      "note": "One experimental run in a table of initial rates; 实验 as in the glossary row experiment, numbered 实验 1.",
-      "confirm": "termonline",
+      "note": "One experimental run in a table of initial rates; 实验 as in the glossary row experiment, numbered 实验 1. Termonline sweep 2026-10-28 lists 尝试函数 = trial function (物理学名词), 尝试法 = trial-and-error method (物理学名词); kept: Only \"尝试函数\" etc. are listed; \"实验\" is one run of an experiment.",
       "section": "12.3"
     },
     {
@@ -45806,9 +45839,8 @@
       "target": "三斜",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "crystal system 三斜晶系.",
-      "section": "10.6",
-      "confirm": "termonline"
+      "note": "crystal system 三斜晶系. Termonline sweep 2026-10-28 lists 三斜格[子] = triclinic lattice (物理学名词), 三斜晶系 = triclinic crystal system (物理学名词); kept: Only \"三斜晶系\"/\"三斜格[子]\" are listed; they confirm \"三斜\".",
+      "section": "10.6"
     },
     {
       "source": "tridentate ligand",
@@ -45841,9 +45873,8 @@
       "target": "三角双锥",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "The solid; the shape adjective trigonal bipyramidal is 三角双锥形 (ch18).",
-      "section": "8.2",
-      "confirm": "termonline"
+      "note": "The solid; the shape adjective trigonal bipyramidal is 三角双锥形 (ch18). Termonline sweep 2026-10-28 lists 三方双锥 (地质学名词); kept: termonline lists \"三方双锥\" (地质学 crystal form); VSEPR geometry is \"三角双锥\".",
+      "section": "8.2"
     },
     {
       "source": "trigonal bipyramidal",
@@ -46085,11 +46116,10 @@
     },
     {
       "source": "turbine",
-      "target": "汽轮机",
-      "authority": "cnterm-physics",
-      "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "target": "涡轮机",
+      "authority": "termonline",
+      "url": "https://www.termonline.cn/detail?id=13699c1326aa11ee8f3ab068e6519520",
+      "note": "Changed from 汽轮机 after the termonline sweep 2026-10-28: 机械/化工 vocabularies list \"涡轮\" and 建筑学 \"涡轮机\" for turbine; the book's turbines include wind turbines and jet-engine blades, so the general \"涡轮机\" (College Physics row) replaces \"汽轮机\", which stays only where the source says steam. 汽轮机 stays where the source says steam turbine (row steam turbine); 21.4 and 5.1 prose says turbine.",
       "section": "21.4"
     },
     {
@@ -46151,6 +46181,14 @@
       "url": "",
       "note": "termonline 2026-10-27: no entry under this English term; it lists 丁铎尔现象 (Tyndall phenomenon, 化学名词) and 廷德尔散射 (物理学名词, 光学名词). 丁达尔效应 is the form every Chinese chemistry textbook uses.",
       "section": "11.5",
+      "confirm": "owner"
+    },
+    {
+      "source": "Type of Emission",
+      "target": "发射类型",
+      "authority": "book",
+      "url": "",
+      "note": "Appendix M column label; follows the glossary 发射 for emission (γ 发射, 正电子发射). 衰变类型 is the common textbook alternative.",
       "confirm": "owner"
     },
     {
@@ -46365,9 +46403,8 @@
       "target": "能量单位",
       "authority": "book",
       "url": "",
-      "note": "The book's counting unit in Figure 16.9 (two units of thermal energy 两个单位的热能); not the SI unit of energy.",
-      "section": "16.2",
-      "confirm": "termonline"
+      "note": "The book's counting unit in Figure 16.9 (two units of thermal energy 两个单位的热能); not the SI unit of energy. Termonline sweep 2026-10-28 lists 能源计量单位 (资源科学技术名词); kept: termonline: only “能源计量单位” (resources) listed, another sense.",
+      "section": "16.2"
     },
     {
       "source": "united states national weather service",
@@ -46542,9 +46579,8 @@
       "target": "未成对电子",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "section": "7.3",
-      "confirm": "termonline"
+      "note": "Termonline sweep 2026-10-28 lists 未配对电子 (物理学名词); kept: termonline lists \"未配对电子\" (物理学名词); \"未成对电子\" is the established chemistry-textbook term and is used book-wide.",
+      "section": "7.3"
     },
     {
       "source": "unreacted",
@@ -46568,9 +46604,8 @@
       "target": "不饱和",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "bare word, counterpart of saturated 饱和.",
-      "section": "11.3",
-      "confirm": "termonline"
+      "note": "bare word, counterpart of saturated 饱和. Termonline sweep 2026-10-28 lists 不饱和增益 = unsaturated gain (物理学名词), 未饱和键 = unsaturated bond (物理学名词); kept: termonline lists only compounds (\"不饱和增益\" etc.), confirming \"不饱和\".",
+      "section": "11.3"
     },
     {
       "source": "unsaturated acid",
@@ -46645,8 +46680,7 @@
       "target": "不稳定核素",
       "authority": "cnterm-physics",
       "url": "",
-      "note": "ch02 has unstable isotope 不稳定同位素.",
-      "confirm": "termonline",
+      "note": "ch02 has unstable isotope 不稳定同位素. Termonline sweep 2026-10-28 lists 不稳定性核素 (放射医学与防护名词); kept: termonline: “不稳定性核素” is a radiation-medicine variant; “不稳定核素” is the standard nuclear form.",
       "section": "21.3"
     },
     {
@@ -46731,11 +46765,10 @@
     },
     {
       "source": "uranium-lead dating",
-      "target": "铀-铅测年",
+      "target": "铀-铅年代测定",
       "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "url": "https://www.termonline.cn/detail?id=c3e0a89226a711eeae32b068e6519520",
+      "note": "Changed from 铀-铅测年 after the termonline sweep 2026-10-28: 化学名词 lists \"铀-铅年代测定\" for uranium-lead dating.",
       "section": "21.3"
     },
     {
@@ -47058,28 +47091,27 @@
     },
     {
       "source": "van der waals constant",
-      "target": "范德华常数",
+      "target": "范德瓦耳斯常数",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "the constants a and b.",
+      "note": "the constants a and b. Changed from 范德华常数 after the termonline sweep 2026-10-28: follows the row van der waals equation.",
       "section": "9.6"
     },
     {
       "source": "van der waals equation",
-      "target": "范德华方程",
-      "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "化学名词 范德华方程.",
-      "confirm": "termonline",
+      "target": "范德瓦耳斯方程",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=fe6dde6426ac11ee9d58b068e6519520",
+      "note": "化学名词 范德华方程. Changed from 范德华方程 after the termonline sweep 2026-10-28: 物理学名词 and 化学工程名词 list \"范德瓦耳斯方程\", and a lookup of \"van der Waals force\" shows 化学名词 \"范德瓦耳斯力\", so the chemistry vocabulary also writes 范德瓦耳斯 (other 范德华 rows should follow). All 范德华 forms (force, constant, equation, the person) follow 范德瓦耳斯.",
       "concept": "van-der-waals-equation",
       "section": "9.6"
     },
     {
       "source": "Van der Waals force",
-      "target": "范德华力",
+      "target": "范德瓦耳斯力",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
+      "note": "Changed from 范德华力 after the termonline sweep 2026-10-28: follows the row van der waals equation.",
       "section": "10.1",
       "concept": "van-der-waals-force"
     },
@@ -47127,10 +47159,10 @@
     },
     {
       "source": "Vapor pressure and intermolecular forces",
-      "target": "蒸气压与分子间作用力",
+      "target": "蒸气压与分子间力",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
+      "note": "Changed from 蒸气压与分子间作用力 after the termonline sweep 2026-10-28: follows the row intermolecular force.",
       "section": "10.3",
       "concept": "vapor-pressure-and-imf"
     },
@@ -47165,8 +47197,7 @@
       "target": "汽化",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Same target as the existing row; 'vaporization of bromine'.",
-      "confirm": "termonline",
+      "note": "Same target as the existing row; 'vaporization of bromine'. Termonline sweep 2026-10-28 lists 气化 (物理学名词/电力名词); kept: termonline: 物理学名词 lists “气化” but its own “汽化热/汽化曲线” use “汽化”; the physics book kept “汽化” and the chemistry texts agree.",
       "section": "13.1"
     },
     {
@@ -47197,10 +47228,9 @@
       "source": "vector sum",
       "target": "矢量和",
       "authority": "cnterm-physics",
-      "url": "",
-      "note": "",
-      "section": "7.6",
-      "confirm": "termonline"
+      "url": "https://www.termonline.cn/detail?id=aa8fddd426ac11ee978bb068e6519520",
+      "note": "Termonline sweep 2026-10-28 lists 矢量[求]和 (物理学名词); kept: termonline: “矢量[求]和” with the optional bracket is the same term.",
+      "section": "7.6"
     },
     {
       "source": "vein",
@@ -47380,8 +47410,7 @@
       "target": "易挥发的",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "note": "Termonline sweep 2026-10-28 lists 挥发物 (地球物理学名词); kept: termonline: only “挥发物” (geophysics noun) listed; the adjective stays “易挥发的”.",
       "section": "18.5"
     },
     {
@@ -47927,9 +47956,8 @@
       "source": "weathering",
       "target": "风化",
       "authority": "cnterm-chemistry",
-      "url": "",
-      "note": "",
-      "confirm": "termonline",
+      "url": "https://www.termonline.cn/detail?id=e64b30bb26a811eeb21cb068e6519520",
+      "note": "Termonline sweep 2026-10-28 lists 风化[作用] (大气科学名词), 老化 (航天科学技术名词/机械工程名词 第一分册), 风化作用 (农学名词/草学名词); kept: \"风化[作用]\" is the same entry in its short form.",
       "section": "12.2"
     },
     {
@@ -47937,9 +47965,8 @@
       "target": "楔形线",
       "authority": "book",
       "url": "",
-      "note": "bond drawn as a solid wedge (toward the viewer).",
-      "section": "7.6",
-      "confirm": "termonline"
+      "note": "bond drawn as a solid wedge (toward the viewer). Termonline sweep 2026-10-28 lists 楔 (力学名词), 劈 (电子学名词), 刀楔 (机械工程名词 第二分册); kept: \"楔\"/\"劈\" are mechanics and electronics objects; \"楔形线\" is the book's bond-drawing convention.",
+      "section": "7.6"
     },
     {
       "source": "wedge and dash notation",
@@ -48334,10 +48361,10 @@
     },
     {
       "source": "Writing a Lewis structure",
-      "target": "书写路易斯结构式",
+      "target": "书写路易斯结构",
       "authority": "book",
       "url": "",
-      "note": "concept name (placed in 7.3); 路易斯结构式 as in ch18.",
+      "note": "concept name (placed in 7.3); 路易斯结构式 as in ch18. Changed from 书写路易斯结构式 after the termonline sweep 2026-10-28: follows the row Lewis structure.",
       "section": "7.3"
     },
     {
@@ -48590,12 +48617,19 @@
       "section": "20.1"
     },
     {
+      "source": "y (half-life unit)",
+      "target": "年",
+      "authority": "book",
+      "url": "",
+      "note": "Appendix M footnote 1 key; the unit letters in the half-life cells are kept as printed.",
+      "confirm": "owner"
+    },
+    {
       "source": "yard",
       "target": "码",
       "authority": "gb3100",
       "url": "",
-      "note": "Name of a non-SI unit in prose (GB 3101); the symbol stays as printed. Recorded as scenario 4.4.",
-      "confirm": "termonline",
+      "note": "Name of a non-SI unit in prose (GB 3101); the symbol stays as printed. Recorded as scenario 4.4. Termonline sweep 2026-10-28 lists 庭院, 车场 (土木工程名词/铁道科学技术名词), 桅横杆 (船舶工程名词); kept: Listed entries are other senses (\"庭院\", \"车场\"); \"码\" is the GB 3101 unit.",
       "section": "1.4"
     },
     {
@@ -48605,6 +48639,13 @@
       "url": "https://www.termonline.cn/detail?id=9cab67b326ac11eea979b068e6519520",
       "note": "Standard term; prose also 酵母菌 for the species (some species of yeast). Confirmed at termonline (物理学名词).",
       "section": "20.2"
+    },
+    {
+      "source": "yellow (crystal-form label)",
+      "target": "黄色",
+      "authority": "book",
+      "url": "",
+      "note": "Thermo sheet: the PbO, HgO and HgS form labels (oxide and sulfide forms); common usage."
     },
     {
       "source": "Yellowstone National Park",
@@ -48619,8 +48660,7 @@
       "target": "产率",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "yield of a reaction",
-      "confirm": "termonline",
+      "note": "yield of a reaction Termonline sweep 2026-10-28 lists 屈服 (物理学名词); kept: termonline's \"屈服\" (物理学) is the mechanics sense; reaction yield is \"产率\".",
       "section": "12.intro"
     },
     {

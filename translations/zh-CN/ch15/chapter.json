@@ -88,7 +88,7 @@
   {
    "sym": "K_f_form",
    "concept": "formation-constant",
-   "meaning": "配离子的形成常数（稳定常数）",
+   "meaning": "配离子的生成常数（稳定常数）",
    "unit": "none (concentrations in M)",
    "section": "15.2",
    "anchor": "15.2-complex-ions"
@@ -96,7 +96,7 @@
   {
    "sym": "K_d",
    "concept": "dissociation-constant",
-   "meaning": "配离子的解离常数，即其形成常数的倒数",
+   "meaning": "配离子的解离常数，即其生成常数的倒数",
    "unit": "none (concentrations in M)",
    "section": "15.2",
    "anchor": "15.2-complex-ions"
@@ -176,7 +176,7 @@
   {
    "sym": "K_f_form",
    "concept": "formation-constant",
-   "meaning": "配离子的形成常数（稳定常数）",
+   "meaning": "配离子的生成常数（稳定常数）",
    "unit": "none (concentrations in M)",
    "section": "15.3",
    "anchor": "15.3-complex"

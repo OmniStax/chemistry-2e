@@ -392,7 +392,7 @@
     "at": "end"
    },
    "cite": "reactions",
-   "prompt": "在画路易斯结构式时，我们了解到氢原子在共价化合物中只形成一个键。为什么？",
+   "prompt": "在画路易斯结构时，我们了解到氢原子在共价化合物中只形成一个键。为什么？",
    "answer": {
     "type": "open",
     "generated_by": "source",

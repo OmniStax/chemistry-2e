@@ -185,10 +185,10 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
     ['a', 'b', 'g'].forEach((k) => {
       const q = P(XS, yAt(k, XS, s), 0), e = F.REDUCED ? 1 : Math.min(1, hits0[k] / 12);
       ctx.save(); ctx.globalAlpha = 0.15 + 0.7 * e; ctx.fillStyle = PAL.ink; ctx.beginPath(); ctx.ellipse(q[0], q[1], 9, 13, 0, 0, TAU); ctx.fill(); ctx.restore();
-      hits.push({ x: q[0], y: q[1], r: 16, name: '' + { a: 'α 粒子', b: 'β 粒子', g: 'γ 射线' }[k] + '使照相底片变黑的位置' });
+      hits.push({ x: q[0], y: q[1], r: 16, name: '' + { a: 'α 粒子', b: 'β 粒子', g: 'γ 射线' }[k] + '使照相底板变黑的位置' });
     });
     const sb = PL(-200, 110);
-    lab.add('照相底片', sb[0], sb[1], -0.7, 0.7, PAL.ink, 22, 20);
+    lab.add('照相底板', sb[0], sb[1], -0.7, 0.7, PAL.ink, 22, 20);
 
     /* the three kinds named once, beside their beams just short of the plate */
     const names = { a: 'α', b: 'β', g: 'γ' }, stack = { a: 30, b: -30, g: 0 };
@@ -558,7 +558,7 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
   const d = sim('sim-carbon-dating', H);
   const RT = ctl(d.controls, {
     label: '\\krate_{t}', cls: 'rate', min: 1, max: 13.6, step: 0.01, value: 10.8, unit: '次衰变/min/g', dec: 2,
-    detents: [{ v: 9.07, label: '图坦卡蒙' }], specials: [{ at: R0 / 2, label: '一个半衰期' }], aria: '样品中现在测得的衰变速率，单位为每分钟每克碳的衰变次数',
+    detents: [{ v: 9.07, label: '图坦卡蒙' }], specials: [{ at: R0 / 2, label: '一个半衰期' }], aria: '样品中现在测得的衰变率，单位为每分钟每克碳的衰变次数',
   });
   const cy = cycle(() => TB - TA, 1.2);
   const ro = readout(d);
@@ -639,7 +639,7 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
 
     /* the graph */
     const { X, Y } = axes(ctx, GB, [TA, TB], [0, 15], {
-      nx: 6, ny: 3, xl: 't (y)', xc: TC, yl: '衰变速率 (次衰变/min/g C)', yc: RC, fx: (v) => grp(v, ','), fy: (v) => String(Math.round(v)),
+      nx: 6, ny: 3, xl: 't (y)', xc: TC, yl: '衰变率 (次衰变/min/g C)', yc: RC, fx: (v) => grp(v, ','), fy: (v) => String(Math.round(v)),
     });
     const x0 = X(0);
     line(ctx, x0, GB.t, x0, GB.b, alpha(PAL.ink, 0.4), 2, [10, 10]);

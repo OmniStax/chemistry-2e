@@ -393,7 +393,7 @@
         "at": "end"
       },
       "cite": "naming-alcohols",
-      "prompt": "写出下列化合物的结构简式并给出 IUPAC 名称：<br>（a）乙醇（ethyl alcohol，饮料中所含）<br>（b）甲醇（methyl alcohol，用作溶剂，例如用于虫胶中）<br>（c）乙二醇（ethylene glycol，防冻剂）<br>（d）异丙醇（isopropyl alcohol，用于外用消毒酒精）<br>（e）甘油（glycerine）",
+      "prompt": "写出下列化合物的结构简式并给出 IUPAC 名称：<br>（a）乙醇（ethyl alcohol，饮料中所含）<br>（b）甲醇（methyl alcohol，用作溶剂，例如用于紫胶中）<br>（c）乙二醇（ethylene glycol，防冻剂）<br>（d）异丙醇（isopropyl alcohol，用于外用消毒酒精）<br>（e）甘油（glycerine）",
       "answer": {
         "type": "open",
         "generated_by": "source",
@@ -444,7 +444,7 @@
         "at": "end"
       },
       "cite": "ethers",
-      "prompt": "MTBE，即甲基<em>叔</em>丁基醚，CH<sub>3</sub>OC(CH<sub>3</sub>)<sub>3</sub>，在含氧汽油中用作氧源。MTBE 由 2-甲基丙烯与甲醇反应制得。<br>（a）用路易斯结构式写出表示该反应的化学方程式。<br>（b）假设产率为 100%，制得<span data-type=\"mass\">恰好 1000 kg MTBE</span> 需要多少<span data-type=\"volume\">体积的甲醇</span>（<span data-type=\"density\">密度 0.7915 g/mL</span>）？",
+      "prompt": "MTBE，即甲基<em>叔</em>丁基醚，CH<sub>3</sub>OC(CH<sub>3</sub>)<sub>3</sub>，在含氧汽油中用作氧源。MTBE 由 2-甲基丙烯与甲醇反应制得。<br>（a）用路易斯结构写出表示该反应的化学方程式。<br>（b）假设产率为 100%，制得<span data-type=\"mass\">恰好 1000 kg MTBE</span> 需要多少<span data-type=\"volume\">体积的甲醇</span>（<span data-type=\"density\">密度 0.7915 g/mL</span>）？",
       "answer": {
         "type": "number",
         "value": 459.3,
@@ -465,7 +465,7 @@
         "at": "end"
       },
       "cite": "alcohols",
-      "prompt": "为下列每个反应写出两个完整的配平方程式，一个用结构简式，一个用路易斯结构式。<br>（a）在稀酸中用水处理 2-丁烯<br>（b）乙醇脱水生成乙烯",
+      "prompt": "为下列每个反应写出两个完整的配平方程式，一个用结构简式，一个用路易斯结构。<br>（a）在稀酸中用水处理 2-丁烯<br>（b）乙醇脱水生成乙烯",
       "answer": {
         "type": "open",
         "generated_by": "source",

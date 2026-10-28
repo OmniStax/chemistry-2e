@@ -11,8 +11,8 @@
     "解释探测放射性的常用工具的工作原理",
     "列举美国常见的辐射照射来源"
   ],
-  "summary_html": "<p>我们不断受到来自各种天然和人为来源的辐射照射。这种辐射可以影响生物体。<span data-concept=\"ionizing-radiation\">电离辐射</span>危害最大，因为它能使分子<span data-concept=\"ion\">电离</span>或断裂化学键，从而损伤分子并使细胞过程发生故障。它还能产生反应性很强的羟基自由基，这些自由基会<span data-concept=\"radiation-damage\">损伤生物分子并扰乱生理过程</span>。辐射可以造成躯体损伤或遗传损伤，对快速增殖的细胞危害最大。不同类型的辐射在<span data-concept=\"penetrating-power\">穿透物质的能力</span>和损伤组织的能力上各不相同：<span data-concept=\"alpha-particle\">α 粒子</span>的穿透能力最弱，但潜在的损伤可能最大；<span data-concept=\"gamma-ray\">γ 射线</span>的穿透能力最强。</p><p>人们用各种装置来探测和测量辐射并监测辐射照射，包括<span data-concept=\"radiation-detectors\">盖革计数器、闪烁体和剂量计</span>。我们用几种单位来度量辐射：用贝可勒尔或居里表示<span data-concept=\"radioactive-decay-rate\">放射性衰变速率</span>；用戈瑞或拉德表示<span data-concept=\"absorbed-dose\">吸收的能量</span>；用雷姆或希沃特表示<span data-concept=\"dose-equivalent\">辐射的生物效应</span>。<span data-concept=\"radiation-exposure\">辐射照射</span>可以引起范围很广的健康效应，从轻微到严重，直至死亡。我们可以通过用铅等致密材料屏蔽、远离辐射源和限制照射时间来尽量减少辐射的影响。</p>",
-  "notes": "本节正文没有任何内容被略去；书中以图片形式印出的羟基自由基反应，这里作为方程排出。本节开头在书中没有标题，这里加了一个 OmniStax 自己的标题“辐射与活细胞”。下列内容按书中原样保留：例 21.8 中的 1 Ci = 3.7 × 10¹¹ 次衰变/秒（正文给出的是 3.7 × 10¹⁰）及其结果 5.7 × 10² Ci；钴-60 的半衰期 5.26 y（21.3 节给出的是 5.27 y）；“使磷发光”；“铀-238，一种氡发射体”；“来自太阳的宇宙射线”；表中的“Rem = RBE × rad”和“意识丧失；”；“组织损伤单位（rem 或 Sv）包含”；以及“人体伦琴当量（roentgen equivalent for man）”，词汇表中写作“roentgen equivalent man”。",
+  "summary_html": "<p>我们不断受到来自各种天然和人为来源的辐射照射。这种辐射可以影响生物体。<span data-concept=\"ionizing-radiation\">电离辐射</span>危害最大，因为它能使分子<span data-concept=\"ion\">电离</span>或断裂化学键，从而损伤分子并使细胞过程发生故障。它还能产生反应性很强的羟自由基，这些自由基会<span data-concept=\"radiation-damage\">损伤生物分子并扰乱生理过程</span>。辐射可以造成躯体损伤或遗传损伤，对快速增殖的细胞危害最大。不同类型的辐射在<span data-concept=\"penetrating-power\">穿透物质的能力</span>和损伤组织的能力上各不相同：<span data-concept=\"alpha-particle\">α 粒子</span>的穿透能力最弱，但潜在的损伤可能最大；<span data-concept=\"gamma-ray\">γ 射线</span>的穿透能力最强。</p><p>人们用各种装置来探测和测量辐射并监测辐射照射，包括<span data-concept=\"radiation-detectors\">盖革计数器、闪烁体和剂量计</span>。我们用几种单位来度量辐射：用贝可勒尔或居里表示<span data-concept=\"radioactive-decay-rate\">放射性衰变率</span>；用戈瑞或拉德表示<span data-concept=\"absorbed-dose\">吸收的能量</span>；用雷姆或希沃特表示<span data-concept=\"dose-equivalent\">辐射的生物效应</span>。<span data-concept=\"radiation-exposure\">辐射照射</span>可以引起范围很广的健康效应，从轻微到严重，直至死亡。我们可以通过用铅等致密材料屏蔽、远离辐射源和限制照射时间来尽量减少辐射的影响。</p>",
+  "notes": "本节正文没有任何内容被略去；书中以图片形式印出的羟自由基反应，这里作为方程排出。本节开头在书中没有标题，这里加了一个 OmniStax 自己的标题“辐射与活细胞”。下列内容按书中原样保留：例 21.8 中的 1 Ci = 3.7 × 10¹¹ 次衰变/秒（正文给出的是 3.7 × 10¹⁰）及其结果 5.7 × 10² Ci；钴-60 的半衰期 5.26 y（21.3 节给出的是 5.27 y）；“使磷发光”；“铀-238，一种氡发射体”；“来自太阳的宇宙射线”；表中的“Rem = RBE × rad”和“意识丧失；”；“组织损伤单位（rem 或 Sv）包含”；以及“人体伦琴当量（roentgen equivalent for man）”，词汇表中写作“roentgen equivalent man”。",
   "ai": {
     "text": [
       {
@@ -92,7 +92,7 @@
       "originals": [
         "/media/ch21/CNX_Chem_21_06_Damage2.jpg"
       ],
-      "original_caption": "电离辐射可以（a）通过使生物分子电离或断裂其化学键而直接损伤生物分子，或（b）产生 H<sub>2</sub>O<sup>+</sup> 离子，该离子与 H<sub>2</sub>O 反应生成羟基自由基，羟基自由基再与生物分子反应，从而间接造成损伤。",
+      "original_caption": "电离辐射可以（a）通过使生物分子电离或断裂其化学键而直接损伤生物分子，或（b）产生 H<sub>2</sub>O<sup>+</sup> 离子，该离子与 H<sub>2</sub>O 反应生成羟自由基，羟自由基再与生物分子反应，从而间接造成损伤。",
       "draws": [],
       "conventions": [
         "O",
@@ -559,7 +559,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "铀-232 的活度更大，约为铀-233 的 2.32 × 10<sup>3</sup> 倍。活度为 $\\klamdecay N$，其中 $\\klamdecay=\\text{ln 2}/\\kthalf$。两种同位素的摩尔质量几乎相同，所以等质量的样品所含的原子核数几乎相同；铀-232 与铀-233 的核数之比为 233/232 = 1.004。衰变常数之比等于半衰期之比的倒数，(159,200 y)/(68.9 y) = 2.311 × 10<sup>3</sup>，因此铀-232 的一个原子核在给定的一秒内衰变的可能性约为铀-233 的 2300 倍。活度之比是二者的乘积，1.004 × 2.311 × 10<sup>3</sup> = 2.32 × 10<sup>3</sup>。半衰期短得多，使铀-232 成为活度更大的样品。"
+        "solution": "铀-232 的活度更大，约为铀-233 的 2.32 × 10<sup>3</sup> 倍。活度为 $\\klamdecay N$，其中 $\\klamdecay=\\text{ln 2}/\\kthalf$。两种同位素的摩尔质量几乎相同，所以等质量的样品所含的原子核数几乎相同；铀-232 与铀-233 的核数之比为 233/232 = 1.004。衰变常量之比等于半衰期之比的倒数，(159,200 y)/(68.9 y) = 2.311 × 10<sup>3</sup>，因此铀-232 的一个原子核在给定的一秒内衰变的可能性约为铀-233 的 2300 倍。活度之比是二者的乘积，1.004 × 2.311 × 10<sup>3</sup> = 2.32 × 10<sup>3</sup>。半衰期短得多，使铀-232 成为活度更大的样品。"
       }
     },
     {
@@ -605,7 +605,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "氖-24 的活度更大，约为铋-211 的 5.6 倍。活度为 $\\klamdecay N$，其中 $\\klamdecay=\\text{ln 2}/\\kthalf$，因此必须同时比较原子核数和衰变常数。等质量样品所含的核数与摩尔质量成反比，摩尔质量约为 24 g/mol 和 211 g/mol，所以氖样品所含的核数是铋样品的 211/24 = 8.79 倍。铋-211 的半衰期较短，所以它的衰变常数较大，为氖的 3.38 min/2.14 min = 1.58 倍。氖-24 与铋-211 的活度之比为 8.79/1.58 = 5.57。氖原子核多得多，足以抵消铋稍快的衰变。"
+        "solution": "氖-24 的活度更大，约为铋-211 的 5.6 倍。活度为 $\\klamdecay N$，其中 $\\klamdecay=\\text{ln 2}/\\kthalf$，因此必须同时比较原子核数和衰变常量。等质量样品所含的核数与摩尔质量成反比，摩尔质量约为 24 g/mol 和 211 g/mol，所以氖样品所含的核数是铋样品的 211/24 = 8.79 倍。铋-211 的半衰期较短，所以它的衰变常量较大，为氖的 3.38 min/2.14 min = 1.58 倍。氖-24 与铋-211 的活度之比为 8.79/1.58 = 5.57。氖原子核多得多，足以抵消铋稍快的衰变。"
       }
     }
   ],

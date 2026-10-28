@@ -4,13 +4,13 @@
   "chapter": "15",
   "title": "路易斯酸和碱",
   "short": "路易斯酸和碱",
-  "lead": "路易斯把酸和碱的概念推广到任何接受或给出一对电子以形成<span data-concept=\"coordinate-covalent-bond\">配位共价键</span>的物种。金属离子以这种方式结合配体时形成<span data-concept=\"complex-ion\">配离子</span>，其<span data-concept=\"formation-constant\">形成常数</span>决定了一种微溶盐能有多少溶解进入溶液。",
+  "lead": "路易斯把酸和碱的概念推广到任何接受或给出一对电子以形成<span data-concept=\"coordinate-covalent-bond\">配位共价键</span>的物种。金属离子以这种方式结合配体时形成<span data-concept=\"complex-ion\">配离子</span>，其<span data-concept=\"formation-constant\">生成常数</span>决定了一种微溶盐能有多少溶解进入溶液。",
   "objectives": [
     "解释酸碱化学的路易斯模型",
     "书写加合物和配离子形成的方程式",
-    "进行涉及形成常数的平衡计算"
+    "进行涉及生成常数的平衡计算"
   ],
-  "summary_html": "<p>路易斯酸是能够接受一对电子的物种，而路易斯碱有一对可供给予路易斯酸的电子。配离子是路易斯酸碱加合物的例子，由作为路易斯酸的中心金属原子或离子，与称为配体、作为路易斯碱的分子或离子成键而成。金属离子与配体反应生成配离子的平衡常数称为形成常数；其逆反应的平衡常数称为解离常数。</p>",
+  "summary_html": "<p>路易斯酸是能够接受一对电子的物种，而路易斯碱有一对可供给予路易斯酸的电子。配离子是路易斯酸碱加合物的例子，由作为路易斯酸的中心金属原子或离子，与称为配体、作为路易斯碱的分子或离子成键而成。金属离子与配体反应生成配离子的平衡常数称为生成常数；其逆反应的平衡常数称为解离常数。</p>",
   "notes": "本节没有任何内容被省略；它的五个路易斯方程式和 Cu(CN)<sub>2</sub><sup>–</sup> 的结构是依据书中的图片重新绘制的，例 15.14 的 ICE 表写成表格，并保留该例中不带单位的 [Ag(NH<sub>3</sub>)<sub>2</sub><sup>+</sup>] = 0.099，习题则按原样保留习题 64 的“0.100 NH<sub>3</sub>”、习题 72 的“氰化钾离子”以及习题 82 答案中不带电荷的 BF<sub>4</sub>。",
   "ai": {
     "text": [
@@ -36,7 +36,7 @@
   },
   "built": "2026-10-26",
   "exercises_lead": "",
-  "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案取自书后答案和“学习检测”的答案；习题 76 和 78 的答案是书中的路易斯结构式图片。七道没有答案的数值习题被略去，也没有为它们计算答案：fs-idm212489824、fs-idm50986272、fs-idm19606400、fs-idp18044656、fs-idm65404096、fs-idp26835744、fs-idm23888576。三道没有答案的概念习题 75、77 和 83 附有标明为 OmniStax 自拟的建议思路。习题 62（fs-idp46388832）放在讲授饱和的 15.1 节，习题 63 和 65（fs-idm65484352、fs-idm98555648）放在把溶解与其他平衡耦合的 15.3 节；习题 86、88 和 90（fs-idm299312、fs-idp457072、fs-idp135248）原印在 15.3 节，现放在这里，因为这里计算配离子的浓度。数值答案接受 2% 的误差，“学习检测”接受 5%，习题 66 中只有一位有效数字的形成常数接受 10%。",
+  "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案取自书后答案和“学习检测”的答案；习题 76 和 78 的答案是书中的路易斯结构图片。七道没有答案的数值习题被略去，也没有为它们计算答案：fs-idm212489824、fs-idm50986272、fs-idm19606400、fs-idp18044656、fs-idm65404096、fs-idp26835744、fs-idm23888576。三道没有答案的概念习题 75、77 和 83 附有标明为 OmniStax 自拟的建议思路。习题 62（fs-idp46388832）放在讲授饱和的 15.1 节，习题 63 和 65（fs-idm65484352、fs-idm98555648）放在把溶解与其他平衡耦合的 15.3 节；习题 86、88 和 90（fs-idm299312、fs-idp457072、fs-idp135248）原印在 15.3 节，现放在这里，因为这里计算配离子的浓度。数值答案接受 2% 的误差，“学习检测”接受 5%，习题 66 中只有一位有效数字的生成常数接受 10%。",
   "figures": [
     {
       "id": "fig-hydronium",
@@ -316,7 +316,7 @@
         "value": 2.9e-22,
         "unit": "M",
         "tol": 0.05,
-        "hint": "把两个质量都换算成物质的量；氰根过量，所以几乎所有的银都以 Ag(CN)<sub>2</sub><sup>−</sup> 的形式存在，剩余的氰根保持游离。然后由形成常数表达式解出 [Ag<sup>+</sup>]。",
+        "hint": "把两个质量都换算成物质的量；氰根过量，所以几乎所有的银都以 Ag(CN)<sub>2</sub><sup>−</sup> 的形式存在，剩余的氰根保持游离。然后由生成常数表达式解出 [Ag<sup>+</sup>]。",
         "solution": "2.9 × 10<sup>–22</sup> <em>M</em>"
       }
     },
@@ -336,7 +336,7 @@
         "generated_by": "source",
         "value": 8.2e-05,
         "unit": "M",
-        "hint": "求出混合到 0.250 L 后各自的浓度，让 Cd<sup>2+</sup> 完全生成 Cd(NH<sub>3</sub>)<sub>4</sub><sup>2+</sup>，再用附录 K 中的形成常数和剩余的氨进行计算。",
+        "hint": "求出混合到 0.250 L 后各自的浓度，让 Cd<sup>2+</sup> 完全生成 Cd(NH<sub>3</sub>)<sub>4</sub><sup>2+</sup>，再用附录 K 中的生成常数和剩余的氨进行计算。",
         "solution": "8.2 × 10<sup>–5</sup> <em>M</em>"
       }
     },
@@ -350,7 +350,7 @@
         "at": "end"
       },
       "cite": "complex-ions",
-      "prompt": "有时配离子的平衡用解离常数 <em>K</em><sub>d</sub> 来描述。对于配离子 ${\\text{AlF}}_{6}{}^{3-}$，解离反应为：<br>${\\text{AlF}}_{6}{}^{3-}\\rightleftharpoons{\\text{Al}}^{3+}+6{\\text{F}}^{-}$，且 ${K}_{\\text{d}}=\\frac{[{\\text{Al}}^{3+}]{[{\\text{F}}^{-}]}^{6}}{[{\\text{AlF}}_{6}{}^{3-}]}=2\\times{10}^{-24}$<br>计算 ${\\text{AlF}}_{6}{}^{3-}$ 的形成常数 <em>K</em><sub>f</sub> 的值。",
+      "prompt": "有时配离子的平衡用解离常数 <em>K</em><sub>d</sub> 来描述。对于配离子 ${\\text{AlF}}_{6}{}^{3-}$，解离反应为：<br>${\\text{AlF}}_{6}{}^{3-}\\rightleftharpoons{\\text{Al}}^{3+}+6{\\text{F}}^{-}$，且 ${K}_{\\text{d}}=\\frac{[{\\text{Al}}^{3+}]{[{\\text{F}}^{-}]}^{6}}{[{\\text{AlF}}_{6}{}^{3-}]}=2\\times{10}^{-24}$<br>计算 ${\\text{AlF}}_{6}{}^{3-}$ 的生成常数 <em>K</em><sub>f</sub> 的值。",
       "answer": {
         "type": "number",
         "generated_by": "source",
@@ -487,11 +487,11 @@
         "at": "end"
       },
       "cite": "other-acids",
-      "prompt": "写出下列各方程式中反应物和产物的路易斯结构式，并指出每个方程式中的路易斯酸和路易斯碱：<br>（a）${\\text{CO}}_{2}+{\\text{OH}}^{-}\\;\\longrightarrow\\;{\\text{HCO}}_{3}{}^{-}$<br>（b）$\\text{B}{(\\text{OH})}_{3}+{\\text{OH}}^{-}\\;\\longrightarrow\\;\\text{B}{(\\text{OH})}_{4}{}^{-}$<br>（c）${\\text{I}}^{-}+{\\text{I}}_{2}\\;\\longrightarrow\\;{\\text{I}}_{3}{}^{-}$<br>（d）${\\text{AlCl}}_{3}+{\\text{Cl}}^{-}\\;\\longrightarrow\\;{\\text{AlCl}}_{4}{}^{-}$（使用 Al-Cl 单键）<br>（e）${\\text{O}}^{2-}+{\\text{SO}}_{3}\\;\\longrightarrow\\;{\\text{SO}}_{4}{}^{2-}$",
+      "prompt": "写出下列各方程式中反应物和产物的路易斯结构，并指出每个方程式中的路易斯酸和路易斯碱：<br>（a）${\\text{CO}}_{2}+{\\text{OH}}^{-}\\;\\longrightarrow\\;{\\text{HCO}}_{3}{}^{-}$<br>（b）$\\text{B}{(\\text{OH})}_{3}+{\\text{OH}}^{-}\\;\\longrightarrow\\;\\text{B}{(\\text{OH})}_{4}{}^{-}$<br>（c）${\\text{I}}^{-}+{\\text{I}}_{2}\\;\\longrightarrow\\;{\\text{I}}_{3}{}^{-}$<br>（d）${\\text{AlCl}}_{3}+{\\text{Cl}}^{-}\\;\\longrightarrow\\;{\\text{AlCl}}_{4}{}^{-}$（使用 Al-Cl 单键）<br>（e）${\\text{O}}^{2-}+{\\text{SO}}_{3}\\;\\longrightarrow\\;{\\text{SO}}_{4}{}^{2-}$",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "（a）<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer18a_img.jpg\" alt=\"路易斯结构式：二氧化碳，即一个碳原子与两个氧原子形成双键，加上方括号内带负电荷的氢氧根离子，生成碳酸氢根离子，即一个碳原子与一个氧原子形成双键、与带三对孤电子对的第二个氧原子形成单键、并与连有氢的氧原子形成单键，置于方括号内并带负电荷。\"><br>（b）<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer18b_img.jpg\" alt=\"路易斯结构式：硼酸，即一个硼原子与三个 O–H 基团形成单键，加上方括号内带负电荷的氢氧根离子，生成 B(OH)4−，即一个硼原子与四个 O–H 基团形成单键，置于方括号内并带负电荷。\"><br>（c）<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer18c_img.jpg\" alt=\"路易斯结构式：碘分子，即两个碘原子以单键相连、各带三对孤电子对，加上带四对孤电子对和一个负电荷的碘离子，生成三碘离子，即三个碘原子排成一条直线，中间的一个带两对孤电子对，置于方括号内并带负电荷。\"><br>（d）<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer18d_img.jpg\" alt=\"路易斯结构式：氯化铝，即一个铝原子与三个氯原子形成单键，标为酸，加上带四对孤电子对和一个负电荷的氯离子，标为碱，生成 AlCl4−，即一个铝原子与四个氯原子形成单键，置于方括号内并带负电荷。\"><br>（e）<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer18e_img.jpg\" alt=\"路易斯结构式：三氧化硫，即一个硫原子与两个氧原子形成单键、与第三个氧原子形成双键，加上带四对孤电子对和 2− 电荷的氧离子，生成硫酸根离子，即一个硫原子与四个氧原子形成单键，置于方括号内并带 2− 电荷。\">"
+        "solution": "（a）<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer18a_img.jpg\" alt=\"路易斯结构：二氧化碳，即一个碳原子与两个氧原子形成双键，加上方括号内带负电荷的氢氧根离子，生成碳酸氢根离子，即一个碳原子与一个氧原子形成双键、与带三对孤电子对的第二个氧原子形成单键、并与连有氢的氧原子形成单键，置于方括号内并带负电荷。\"><br>（b）<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer18b_img.jpg\" alt=\"路易斯结构：硼酸，即一个硼原子与三个 O–H 基团形成单键，加上方括号内带负电荷的氢氧根离子，生成 B(OH)4−，即一个硼原子与四个 O–H 基团形成单键，置于方括号内并带负电荷。\"><br>（c）<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer18c_img.jpg\" alt=\"路易斯结构：碘分子，即两个碘原子以单键相连、各带三对孤电子对，加上带四对孤电子对和一个负电荷的碘离子，生成三碘离子，即三个碘原子排成一条直线，中间的一个带两对孤电子对，置于方括号内并带负电荷。\"><br>（d）<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer18d_img.jpg\" alt=\"路易斯结构：氯化铝，即一个铝原子与三个氯原子形成单键，标为酸，加上带四对孤电子对和一个负电荷的氯离子，标为碱，生成 AlCl4−，即一个铝原子与四个氯原子形成单键，置于方括号内并带负电荷。\"><br>（e）<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer18e_img.jpg\" alt=\"路易斯结构：三氧化硫，即一个硫原子与两个氧原子形成单键、与第三个氧原子形成双键，加上带四对孤电子对和 2− 电荷的氧离子，生成硫酸根离子，即一个硫原子与四个氧原子形成单键，置于方括号内并带 2− 电荷。\">"
       }
     },
     {
@@ -504,7 +504,7 @@
         "at": "end"
       },
       "cite": "other-acids",
-      "prompt": "写出下列各方程式中反应物和产物的路易斯结构式，并指出每个方程式中的路易斯酸和路易斯碱：<br>（a）${\\text{CS}}_{2}+{\\text{SH}}^{-}\\;\\longrightarrow\\;{\\text{HCS}}_{3}{}^{-}$<br>（b）${\\text{BF}}_{3}+{\\text{F}}^{-}\\;\\longrightarrow\\;{\\text{BF}}_{4}{}^{-}$<br>（c）${\\text{I}}^{-}+{\\text{SnI}}_{2}\\;\\longrightarrow\\;{\\text{SnI}}_{3}{}^{-}$<br>（d）$\\text{Al}{(\\text{OH})}_{3}+{\\text{OH}}^{-}\\;\\longrightarrow\\;\\text{Al}{(\\text{OH})}_{4}{}^{-}$<br>（e）${\\text{F}}^{-}+{\\text{SO}}_{3}\\;\\longrightarrow\\;{\\text{SFO}}_{3}{}^{-}$",
+      "prompt": "写出下列各方程式中反应物和产物的路易斯结构，并指出每个方程式中的路易斯酸和路易斯碱：<br>（a）${\\text{CS}}_{2}+{\\text{SH}}^{-}\\;\\longrightarrow\\;{\\text{HCS}}_{3}{}^{-}$<br>（b）${\\text{BF}}_{3}+{\\text{F}}^{-}\\;\\longrightarrow\\;{\\text{BF}}_{4}{}^{-}$<br>（c）${\\text{I}}^{-}+{\\text{SnI}}_{2}\\;\\longrightarrow\\;{\\text{SnI}}_{3}{}^{-}$<br>（d）$\\text{Al}{(\\text{OH})}_{3}+{\\text{OH}}^{-}\\;\\longrightarrow\\;\\text{Al}{(\\text{OH})}_{4}{}^{-}$<br>（e）${\\text{F}}^{-}+{\\text{SO}}_{3}\\;\\longrightarrow\\;{\\text{SFO}}_{3}{}^{-}$",
       "answer": {
         "type": "open",
         "generated_by": "ai",
@@ -521,11 +521,11 @@
         "at": "end"
       },
       "cite": "other-acids",
-      "prompt": "利用路易斯结构式，写出下列反应的配平方程式：<br>（a）$\\text{HCl}(g)+{\\text{PH}}_{3}(g)\\;\\longrightarrow$<br>（b）${\\text{H}}_{3}{\\text{O}}^{+}+{\\text{CH}}_{3}{}^{-}\\;\\longrightarrow$<br>（c）$\\text{CaO}+{\\text{SO}}_{3}\\;\\longrightarrow$<br>（d）${\\text{NH}}_{4}{}^{+}+{\\text{C}}_{2}{\\text{H}}_{5}{\\text{O}}^{-}\\;\\longrightarrow$",
+      "prompt": "利用路易斯结构，写出下列反应的配平方程式：<br>（a）$\\text{HCl}(g)+{\\text{PH}}_{3}(g)\\;\\longrightarrow$<br>（b）${\\text{H}}_{3}{\\text{O}}^{+}+{\\text{CH}}_{3}{}^{-}\\;\\longrightarrow$<br>（c）$\\text{CaO}+{\\text{SO}}_{3}\\;\\longrightarrow$<br>（d）${\\text{NH}}_{4}{}^{+}+{\\text{C}}_{2}{\\text{H}}_{5}{\\text{O}}^{-}\\;\\longrightarrow$",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "（a）<img src=\"/media/ch15/CNX_Chem_15_02_Answer24a_img.jpg\" alt=\"方程式 HCl(g) 加 PH3(g) 生成 PH4+ 加 Cl−，随后是同一反应的路易斯结构式：PH3 中磷原子的孤电子对从 HCl 夺取氢离子，生成鏻离子，即一个磷原子与四个氢原子成键，置于方括号内并带正电荷，以及带四对孤电子对的氯离子。\"><br>（b）${\\text{H}}_{3}{\\text{O}}^{+}+{\\text{CH}}_{3}{}^{-}\\;\\longrightarrow\\;{\\text{CH}}_{4}+{\\text{H}}_{2}\\text{O}$<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer24b_img.jpg\" alt=\"路易斯结构式：方括号内带正电荷的水合氢离子，加上甲基负离子，即一个碳原子带三个氢原子和一对孤电子对，置于方括号内并带负电荷，生成甲烷，即一个碳原子与四个氢原子成键，加上水，即一个氧原子带两个氢原子和两对孤电子对。\"><br>（c）$\\text{CaO}+{\\text{SO}}_{3}\\;\\longrightarrow\\;\\text{CaSO}4$<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer24c_img.jpg\" alt=\"路易斯结构式：Ca2+ 与带四对孤电子对和 2− 电荷的氧离子并列，加上三氧化硫，生成 Ca2+ 与硫酸根离子并列，硫酸根离子是一个硫原子与四个各带三对孤电子对的氧原子形成单键，置于方括号内并带 2− 电荷。\"><br>（d）${\\text{NH}}_{4}{}^{+}+{\\text{C}}_{2}{\\text{H}}_{5}{\\text{O}}^{-}\\;\\longrightarrow\\;{\\text{C}}_{2}{\\text{H}}_{5}\\text{OH}+{\\text{NH}}_{3}$<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer24d_img.jpg\" alt=\"路易斯结构式：方括号内带正电荷的铵根离子，加上乙氧基负离子，即氧上带三对孤电子对的 CH3CH2O−，置于方括号内并带负电荷，生成乙醇 CH3CH2OH，加上氨。\">"
+        "solution": "（a）<img src=\"/media/ch15/CNX_Chem_15_02_Answer24a_img.jpg\" alt=\"方程式 HCl(g) 加 PH3(g) 生成 PH4+ 加 Cl−，随后是同一反应的路易斯结构：PH3 中磷原子的孤电子对从 HCl 夺取氢离子，生成鏻离子，即一个磷原子与四个氢原子成键，置于方括号内并带正电荷，以及带四对孤电子对的氯离子。\"><br>（b）${\\text{H}}_{3}{\\text{O}}^{+}+{\\text{CH}}_{3}{}^{-}\\;\\longrightarrow\\;{\\text{CH}}_{4}+{\\text{H}}_{2}\\text{O}$<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer24b_img.jpg\" alt=\"路易斯结构：方括号内带正电荷的水合氢离子，加上甲基负离子，即一个碳原子带三个氢原子和一对孤电子对，置于方括号内并带负电荷，生成甲烷，即一个碳原子与四个氢原子成键，加上水，即一个氧原子带两个氢原子和两对孤电子对。\"><br>（c）$\\text{CaO}+{\\text{SO}}_{3}\\;\\longrightarrow\\;\\text{CaSO}4$<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer24c_img.jpg\" alt=\"路易斯结构：Ca2+ 与带四对孤电子对和 2− 电荷的氧离子并列，加上三氧化硫，生成 Ca2+ 与硫酸根离子并列，硫酸根离子是一个硫原子与四个各带三对孤电子对的氧原子形成单键，置于方括号内并带 2− 电荷。\"><br>（d）${\\text{NH}}_{4}{}^{+}+{\\text{C}}_{2}{\\text{H}}_{5}{\\text{O}}^{-}\\;\\longrightarrow\\;{\\text{C}}_{2}{\\text{H}}_{5}\\text{OH}+{\\text{NH}}_{3}$<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer24d_img.jpg\" alt=\"路易斯结构：方括号内带正电荷的铵根离子，加上乙氧基负离子，即氧上带三对孤电子对的 CH3CH2O−，置于方括号内并带负电荷，生成乙醇 CH3CH2OH，加上氨。\">"
       }
     },
     {
@@ -575,7 +575,7 @@
         "at": "end"
       },
       "cite": "lewis-definition",
-      "prompt": "最简单的氨基酸是甘氨酸 H<sub>2</sub>NCH<sub>2</sub>CO<sub>2</sub>H。氨基酸的共同特征是含有这样的官能团：氨基 –NH<sub>2</sub> 和羧基 –CO<sub>2</sub>H。氨基酸既可以作酸，也可以作碱。对于甘氨酸，羧基的酸强度与乙酸 CH<sub>3</sub>CO<sub>2</sub>H 的大致相同，氨基的碱强度比氨 NH<sub>3</sub> 的略大。<br>（a）写出甘氨酸溶于 1 <em>M</em> HCl 和 1 <em>M</em> KOH 时所形成离子的路易斯结构式。<br>（b）写出这种氨基酸溶于水时甘氨酸的路易斯结构式。（提示：考虑 –NH<sub>2</sub> 和 $-{\\text{CO}}_{2}{}^{-}$ 基团的相对碱强度。）",
+      "prompt": "最简单的氨基酸是甘氨酸 H<sub>2</sub>NCH<sub>2</sub>CO<sub>2</sub>H。氨基酸的共同特征是含有这样的官能团：氨基 –NH<sub>2</sub> 和羧基 –CO<sub>2</sub>H。氨基酸既可以作酸，也可以作碱。对于甘氨酸，羧基的酸强度与乙酸 CH<sub>3</sub>CO<sub>2</sub>H 的大致相同，氨基的碱强度比氨 NH<sub>3</sub> 的略大。<br>（a）写出甘氨酸溶于 1 <em>M</em> HCl 和 1 <em>M</em> KOH 时所形成离子的路易斯结构。<br>（b）写出这种氨基酸溶于水时甘氨酸的路易斯结构。（提示：考虑 –NH<sub>2</sub> 和 $-{\\text{CO}}_{2}{}^{-}$ 基团的相对碱强度。）",
       "answer": {
         "type": "open",
         "generated_by": "ai",
@@ -616,7 +616,7 @@
         "generated_by": "source",
         "value": 0.014,
         "unit": "M",
-        "hint": "设每升有 x mol 的 Ni(NH<sub>3</sub>)<sub>6</sub><sup>2+</sup> 解离，生成浓度为 x 的 Ni<sup>2+</sup> 和浓度为 6x 的 NH<sub>3</sub>，并使用附录 K 中它的形成常数。",
+        "hint": "设每升有 x mol 的 Ni(NH<sub>3</sub>)<sub>6</sub><sup>2+</sup> 解离，生成浓度为 x 的 Ni<sup>2+</sup> 和浓度为 6x 的 NH<sub>3</sub>，并使用附录 K 中它的生成常数。",
         "solution": "0.014 <em>M</em>"
       }
     },
@@ -637,7 +637,7 @@
         "generated_by": "source",
         "value": 7.2e-15,
         "unit": "M",
-        "hint": "设 Cu<sup>2+</sup> 完全生成 Cu(NH<sub>3</sub>)<sub>4</sub><sup>2+</sup>，求出剩余的氨，再由形成常数表达式解出所余的很小的 [Cu<sup>2+</sup>]。",
+        "hint": "设 Cu<sup>2+</sup> 完全生成 Cu(NH<sub>3</sub>)<sub>4</sub><sup>2+</sup>，求出剩余的氨，再由生成常数表达式解出所余的很小的 [Cu<sup>2+</sup>]。",
         "solution": "7.2 × 10<sup>–15</sup> <em>M</em>"
       }
     },
@@ -658,7 +658,7 @@
         "generated_by": "source",
         "value": 4.4e-22,
         "unit": "M",
-        "hint": "已有的氰根抑制了解离，所以 [CN<sup>–</sup>] 保持 0.00010 M；由 Fe(CN)<sub>6</sub><sup>3−</sup> 的形成常数表达式解出 [Fe<sup>3+</sup>]。",
+        "hint": "已有的氰根抑制了解离，所以 [CN<sup>–</sup>] 保持 0.00010 M；由 Fe(CN)<sub>6</sub><sup>3−</sup> 的生成常数表达式解出 [Fe<sup>3+</sup>]。",
         "solution": "4.4 × 10<sup>−22</sup> <em>M</em>"
       }
     }

@@ -4,16 +4,16 @@
  "chapter": "21",
  "title": "放射性衰变",
  "short": "放射性衰变",
- "lead": "不稳定的<span data-concept=\"nuclide\">核素</span>自发地变成另一种核素时，会放出 α 粒子、β 粒子、正电子或 γ 射线，或者俘获自身的一个电子。本节给这些<span data-concept=\"radioactive-decay\">衰变</span>方式命名，沿着铀-238 的<span data-concept=\"radioactive-decay-series\">衰变系</span>一路追踪，通过<span data-concept=\"radioactive-half-life\">半衰期</span>和<span data-concept=\"decay-constant\">衰变常数</span>用一级动力学处理衰变，并用它们为木材、纸张和岩石<span data-concept=\"radiometric-dating\">测年</span>。",
+ "lead": "不稳定的<span data-concept=\"nuclide\">核素</span>自发地变成另一种核素时，会放出 α 粒子、β 粒子、正电子或 γ 射线，或者俘获自身的一个电子。本节给这些<span data-concept=\"radioactive-decay\">衰变</span>方式命名，沿着铀-238 的<span data-concept=\"radioactive-decay-series\">衰变系</span>一路追踪，通过<span data-concept=\"radioactive-half-life\">半衰期</span>和<span data-concept=\"decay-constant\">衰变常量</span>用一级动力学处理衰变，并用它们为木材、纸张和岩石<span data-concept=\"radiometric-dating\">测年</span>。",
  "objectives": [
   "识别常见的放射性衰变方式",
   "识别核衰变反应中涉及的常见粒子和能量",
   "书写并配平核衰变方程",
   "计算衰变过程的动力学参数，包括半衰期",
-  "描述常见的放射性测年技术"
+  "描述常见的放射性鉴年法"
  ],
  "summary_html": "<p>n:p 比不稳定的原子核会发生自发的<span data-concept=\"radioactive-decay\">放射性衰变</span>。最常见的几类<span data-concept=\"radioactivity\">放射性</span>是 <span data-concept=\"alpha-decay\">α 衰变</span>、<span data-concept=\"beta-decay\">β 衰变</span>、<span data-concept=\"gamma-emission\">γ 发射</span>、<span data-concept=\"positron-emission\">正电子发射</span>和<span data-concept=\"electron-capture\">电子俘获</span>。核反应也常常涉及 <span data-concept=\"gamma-ray\">γ 射线</span>，有些原子核通过<span data-concept=\"electron-capture\">电子俘获</span>衰变。这些衰变方式中的每一种，都会形成一个 n:p 比更稳定的新原子核。有些物质会经历<span data-concept=\"radioactive-decay-series\">放射性衰变系</span>，经过多次衰变，最后才变成稳定同位素。所有的核衰变过程都遵循<span data-concept=\"first-order-integrated-rate-law\">一级动力学</span>，每种放射性同位素都有自己特征的<span data-concept=\"radioactive-half-life\">半衰期</span>，即其一半原子发生衰变所需的<span data-concept=\"time\">时间</span>。由于各核素的稳定性相差很大，放射性物质的<span data-concept=\"radioactive-half-life\">半衰期</span>跨度非常大。其中许多物质已在医学诊断和治疗、测定考古和地质物体的年龄等方面找到了有用的应用。</p>",
- "notes": "两个“学习链接”框（一个关于云室演示，一个关于 PhET 放射性测年模拟）被略去；本节按书中原样保留：“锕系”（书中印作 the actinide series）、残缺的一句“衰变常数 λ，也就是动力学一章中讨论的速率常数”、把钚写成 ²³⁹₉₄Ra 的符号、“as seen is gas samples”（译文无法保留这一印刷错误，写作“从冰中封存的气体样品看出”）、重复的 ¹⁴C¹⁴CO₂、例 21.5 中的“(15 × y)”及其先 2.0% 后 2.00%、Rb-87 的 488 亿年半衰期与例 21.7 的 4.7 × 10¹⁰ y 并存、碳-14 测年的极限约为 57,000 年而此前的最大值约为 50,000 年，以及图 21.5 的图片把子核标为氡-234，而其图注写的是钍-234。",
+ "notes": "两个“学习链接”框（一个关于云室演示，一个关于 PhET 放射性鉴年法模拟）被略去；本节按书中原样保留：“锕系”（书中印作 the actinide series）、残缺的一句“衰变常量 λ，也就是动力学一章中讨论的速率常数”、把钚写成 ²³⁹₉₄Ra 的符号、“as seen is gas samples”（译文无法保留这一印刷错误，写作“从冰中封存的气体样品看出”）、重复的 ¹⁴C¹⁴CO₂、例 21.5 中的“(15 × y)”及其先 2.0% 后 2.00%、Rb-87 的 488 亿年半衰期与例 21.7 的 4.7 × 10¹⁰ y 并存、碳-14 测年的极限约为 57,000 年而此前的最大值约为 50,000 年，以及图 21.5 的图片把子核标为氡-234，而其图注写的是钍-234。",
  "ai": {
   "text": [
    {
@@ -529,7 +529,7 @@
     "after": "ex-radiocarbon"
    },
    "cite": "ex-radiocarbon",
-   "prompt": "最近，人们利用保存在古埃及法老陵墓中的植物，确定了他们在位时间的更准确的年代。取自图坦卡蒙国王陵墓的种子和植物物质样品的 C-14 衰变速率为每分钟每克碳 9.07 次衰变。图坦卡蒙国王的统治是多久以前结束的？",
+   "prompt": "最近，人们利用保存在古埃及法老陵墓中的植物，确定了他们在位时间的更准确的年代。取自图坦卡蒙国王陵墓的种子和植物物质样品的 C-14 衰变率为每分钟每克碳 9.07 次衰变。图坦卡蒙国王的统治是多久以前结束的？",
    "answer": {
     "type": "number",
     "generated_by": "source",

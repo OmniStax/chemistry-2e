@@ -25,7 +25,7 @@ const { PAL, alpha, register, begin, line, text, headline } = F;
     options: ORDER.map((v) => ({ value: v, label: AM[v].label })), value: 'MeNH2', onInput: () => draw() });
   const nitro = F.choice(d.controls, { label: '\\text{氮}', key: 'nitrogen', aria: '孤电子对保留，或与氢离子成键',
     options: [{ value: 'pair', label: '孤电子对' }, { value: 'ion', label: '与 H⁺ 成键' }], value: 'pair', onInput: () => draw() });
-  const VIEW = F.choice(d.controls, { label: '\\text{视图}', key: 'view', aria: '平面路易斯结构式或可转动的场景',
+  const VIEW = F.choice(d.controls, { label: '\\text{视图}', key: 'view', aria: '平面路易斯结构或可转动的场景',
     options: [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }], value: '2d', ms: 0, onInput: () => show() });
   const ro = F.readout(d);
   let hits = []; F.hover(d.stage, () => hits);

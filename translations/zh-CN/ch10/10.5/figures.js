@@ -184,8 +184,8 @@ function ball(ctx, x, y, r, fill, stroke = alpha(PAL.ink, 0.5), w = 1.4) {
     SiO2: { f: 'SiO₂', head: '二氧化硅是一种共价网状固体：每个硅原子与四个氧原子成键。', ro: '\\text{Si 和 O 原子} \\;\\to\\; \\text{共价键} \\;\\to\\; \\text{非常硬，熔点很高}' },
     SiC: { f: 'SiC', head: '碳化硅是一种共价网状固体：每个硅原子与四个碳原子成键。', ro: '\\text{Si 和 C 原子} \\;\\to\\; \\text{共价键} \\;\\to\\; \\text{非常硬，熔点很高}' },
     graphite: { f: 'C（石墨）', head: '石墨由共价键合的碳原子平面片层构成，层与层之间靠非共价作用力结合在一起。', ro: '\\text{C 原子} \\;\\to\\; \\text{每个片层内为共价键，片层之间为弱作用力} \\;\\to\\; \\text{软，能导电}' },
-    CO2: { f: 'CO₂', head: '二氧化碳是由小的非极性 CO₂ 分子构成的分子固体。', ro: `\\text{CO}_{2}\\ \\text{分子} \\;\\to\\; \\text{分子间作用力} \\;\\to\\; \\text{在 } ${degC(-78)}\\text{ 熔化}` },
-    I2: { f: 'I₂', head: '碘是由较大的非极性 I₂ 分子构成的分子固体。', ro: `\\text{I}_{2}\\ \\text{分子} \\;\\to\\; \\text{分子间作用力} \\;\\to\\; \\text{在 } ${degC(114)}\\text{ 熔化}` },
+    CO2: { f: 'CO₂', head: '二氧化碳是由小的非极性 CO₂ 分子构成的分子固体。', ro: `\\text{CO}_{2}\\ \\text{分子} \\;\\to\\; \\text{分子间力} \\;\\to\\; \\text{在 } ${degC(-78)}\\text{ 熔化}` },
+    I2: { f: 'I₂', head: '碘是由较大的非极性 I₂ 分子构成的分子固体。', ro: `\\text{I}_{2}\\ \\text{分子} \\;\\to\\; \\text{分子间力} \\;\\to\\; \\text{在 } ${degC(114)}\\text{ 熔化}` },
   };
   const S = F.select(d.controls, { label: '\\text{固体}', options: Object.keys(INFO).map((k) => ({ value: k, label: INFO[k].f })), value: 'NaCl', aria: '晶态固体' });
   let sig = '';

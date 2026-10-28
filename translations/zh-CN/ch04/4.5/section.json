@@ -4,12 +4,12 @@
  "chapter": "4",
  "title": "化学定量分析",
  "short": "定量分析",
- "lead": "反应的化学计量可以反过来用，以测量样品中含有多少某种物质。在滴定中，与待测物完全反应的已知<span data-concept=\"concentration\">浓度</span>溶液的<span data-concept=\"volume\">体积</span>，给出待测物的<span data-concept=\"concentration\">浓度</span>；在重量分析法（燃烧分析是其中的一种）中，分离出的产物的<span data-concept=\"mass\">质量</span>，给出待测物的<span data-concept=\"mass\">质量</span>。",
+ "lead": "反应的化学计量可以反过来用，以测量样品中含有多少某种物质。在滴定中，与分析物完全反应的已知<span data-concept=\"concentration\">浓度</span>溶液的<span data-concept=\"volume\">体积</span>，给出分析物的<span data-concept=\"concentration\">浓度</span>；在重量分析法（燃烧分析是其中的一种）中，分离出的产物的<span data-concept=\"mass\">质量</span>，给出分析物的<span data-concept=\"mass\">质量</span>。",
  "objectives": [
   "描述滴定和重量分析法的基本方面。",
   "利用典型的滴定和重量分析数据进行化学计量计算。"
  ],
- "summary_html": "<p>化学反应的化学计量可以作为化学定量分析方法的基础。滴定要测量与样品溶液完全反应所需的滴定剂溶液的<span data-concept=\"volume\">体积</span>，然后利用滴定反应的化学计量，由这一<span data-concept=\"volume\">体积</span>算出样品中待测物的<span data-concept=\"concentration\">浓度</span>。重量分析法要通过物理或化学过程把待测物从样品中分离出来，测定其<span data-concept=\"mass\">质量</span>，再根据有关过程的化学计量，算出它在样品中的<span data-concept=\"concentration\">浓度</span>。燃烧分析是一种重量分析法，通过收集并称量化合物燃烧所生成的气态产物，来测定该化合物的元素组成。</p>",
+ "summary_html": "<p>化学反应的化学计量可以作为化学定量分析方法的基础。滴定要测量与样品溶液完全反应所需的滴定剂溶液的<span data-concept=\"volume\">体积</span>，然后利用滴定反应的化学计量，由这一<span data-concept=\"volume\">体积</span>算出样品中分析物的<span data-concept=\"concentration\">浓度</span>。重量分析法要通过物理或化学过程把分析物从样品中分离出来，测定其<span data-concept=\"mass\">质量</span>，再根据有关过程的化学计量，算出它在样品中的<span data-concept=\"concentration\">浓度</span>。燃烧分析是一种重量分析法，通过收集并称量化合物燃烧所生成的气态产物，来测定该化合物的元素组成。</p>",
  "notes": "书中的文字没有任何省略。",
  "ai": {
   "text": [

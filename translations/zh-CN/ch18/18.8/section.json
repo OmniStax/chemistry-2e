@@ -34,7 +34,7 @@
  },
  "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "布鲁姆层级、概念标签、提示和建议思路均由 AI 生成。答案取自书后答案；习题 67 和 75 的答案是本书的路易斯结构式图像。答案需要计算而书中未给出的无答案习题被略去，也没有为它们计算答案：68（fs-idp101864208，分子结构）、70（fs-idm43491296，杂化）、72（fs-idm123772752，数值）、74（fs-idp208490096，方程式）和 78（fs-idp126473504，数值）。无答案的概念性习题 76（fs-idm55936272）附有一条建议思路，标明为 OmniStax 自己所写。没有移动任何内容。",
+ "exercise_notes": "布鲁姆层级、概念标签、提示和建议思路均由 AI 生成。答案取自书后答案；习题 67 和 75 的答案是本书的路易斯结构图像。答案需要计算而书中未给出的无答案习题被略去，也没有为它们计算答案：68（fs-idp101864208，分子结构）、70（fs-idm43491296，杂化）、72（fs-idm123772752，数值）、74（fs-idp208490096，方程式）和 78（fs-idp126473504，数值）。无答案的概念性习题 76（fs-idm55936272）附有一条建议思路，标明为 OmniStax 自己所写。没有移动任何内容。",
  "figures": [
   {
    "id": "sim-phosphorus-cage",
@@ -198,11 +198,11 @@
     "at": "end"
    },
    "cite": "preparation",
-   "prompt": "写出下列各物质的路易斯结构式。你可能需要复习化学键与分子几何构型一章。<br>（a）PH<sub>3</sub><br>（b）${\\text{PH}}_{4}{}^{+}$<br>（c）P<sub>2</sub>H<sub>4</sub><br>（d）${\\text{PO}}_{4}{}^{3−}$<br>（e）PF<sub>5</sub>",
+   "prompt": "写出下列各物质的路易斯结构。你可能需要复习化学键与分子几何构型一章。<br>（a）PH<sub>3</sub><br>（b）${\\text{PH}}_{4}{}^{+}$<br>（c）P<sub>2</sub>H<sub>4</sub><br>（d）${\\text{PO}}_{4}{}^{3−}$<br>（e）PF<sub>5</sub>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "（a）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1a_img.jpg\" alt=\"此路易斯结构式显示一个带一对孤电子对的磷原子，与三个氢原子以单键相连。\"><br>（b）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1b_img.jpg\" alt=\"此路易斯结构式显示一个磷原子与四个氢原子以单键相连。结构外有方括号，括号外右上角为正号。\"><br>（c）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1c_img.jpg\" alt=\"此路易斯结构式显示两个磷原子，各带一对孤电子对，彼此以单键相连。每个磷原子还与两个氢原子以单键相连。\"><br>（d）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1d_img.jpg\" alt=\"此路易斯结构式显示一个磷原子与四个氧原子以单键相连，每个氧原子各带三对孤电子对。结构外有方括号，括号外右上角为 3 和负号。\"><br>（e）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1e_img.jpg\" alt=\"此路易斯结构式显示一个磷原子与五个氟原子以单键相连，每个氟原子各带三对孤电子对。\">"
+    "solution": "（a）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1a_img.jpg\" alt=\"此路易斯结构显示一个带一对孤电子对的磷原子，与三个氢原子以单键相连。\"><br>（b）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1b_img.jpg\" alt=\"此路易斯结构显示一个磷原子与四个氢原子以单键相连。结构外有方括号，括号外右上角为正号。\"><br>（c）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1c_img.jpg\" alt=\"此路易斯结构显示两个磷原子，各带一对孤电子对，彼此以单键相连。每个磷原子还与两个氢原子以单键相连。\"><br>（d）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1d_img.jpg\" alt=\"此路易斯结构显示一个磷原子与四个氧原子以单键相连，每个氧原子各带三对孤电子对。结构外有方括号，括号外右上角为 3 和负号。\"><br>（e）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1e_img.jpg\" alt=\"此路易斯结构显示一个磷原子与五个氟原子以单键相连，每个氟原子各带三对孤电子对。\">"
    }
   },
   {
@@ -276,11 +276,11 @@
     "at": "end"
    },
    "cite": "halides",
-   "prompt": "画出下列各物质的路易斯结构式，并描述其几何构型：<br>（a）${\\text{PF}}_{4}{}^{+}$<br>（b）PF<sub>5</sub><br>（c）${\\text{PF}}_{6}{}^{-}$<br>（d）POF<sub>3</sub>",
+   "prompt": "画出下列各物质的路易斯结构，并描述其几何构型：<br>（a）${\\text{PF}}_{4}{}^{+}$<br>（b）PF<sub>5</sub><br>（c）${\\text{PF}}_{6}{}^{-}$<br>（d）POF<sub>3</sub>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "（a）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8a_img.jpg\" alt=\"此路易斯结构式显示一个磷原子与四个氟原子以单键相连，每个氟原子各带三对孤电子对。结构外有方括号，括号外右上角为正号。结构下方标有“四面体形”。\"><br>（b）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8b_img.jpg\" alt=\"此路易斯结构式显示一个磷原子与五个氟原子以单键相连，每个氟原子各带三对孤电子对。结构下方标有“三角双锥形”。\"><br>（c）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8c_img.jpg\" alt=\"此路易斯结构式显示一个磷原子与六个氟原子以单键相连，每个氟原子各带三对孤电子对。结构外有方括号，括号外右上角为负号。结构下方标有“八面体形”。\"><br>（d）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8d_img.jpg\" alt=\"此路易斯结构式显示一个磷原子与三个氟原子以单键相连，每个氟原子各带三对孤电子对。该磷原子还与一个带两对孤电子对的氧原子以双键相连。结构下方标有“四面体形”。\">"
+    "solution": "（a）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8a_img.jpg\" alt=\"此路易斯结构显示一个磷原子与四个氟原子以单键相连，每个氟原子各带三对孤电子对。结构外有方括号，括号外右上角为正号。结构下方标有“四面体形”。\"><br>（b）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8b_img.jpg\" alt=\"此路易斯结构显示一个磷原子与五个氟原子以单键相连，每个氟原子各带三对孤电子对。结构下方标有“三角双锥形”。\"><br>（c）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8c_img.jpg\" alt=\"此路易斯结构显示一个磷原子与六个氟原子以单键相连，每个氟原子各带三对孤电子对。结构外有方括号，括号外右上角为负号。结构下方标有“八面体形”。\"><br>（d）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8d_img.jpg\" alt=\"此路易斯结构显示一个磷原子与三个氟原子以单键相连，每个氟原子各带三对孤电子对。该磷原子还与一个带两对孤电子对的氧原子以双键相连。结构下方标有“四面体形”。\">"
    }
   },
   {

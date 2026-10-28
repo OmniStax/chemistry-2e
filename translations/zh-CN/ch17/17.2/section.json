@@ -9,7 +9,7 @@
     "描述原电池及其各组成部分的功能",
     "用电池表示式表示原电池的组成和构造"
   ],
-  "summary_html": "<p><span data-concept=\"galvanic-cell\">原电池</span>是这样一种装置：自发的<span data-concept=\"redox-reaction\">氧化还原反应</span>间接发生，氧化剂和还原剂的氧化还原电对分别装在不同的<span data-concept=\"half-cell\">半电池</span>中。电子经外电路从还原剂（在<span data-concept=\"anode\">阳极</span><span data-concept=\"half-cell\">半电池</span>中）转移到氧化剂（在<span data-concept=\"cathode\">阴极</span><span data-concept=\"half-cell\">半电池</span>中），而溶液相中的惰性离子则经<span data-concept=\"salt-bridge\">盐桥</span>在<span data-concept=\"half-cell\">半电池</span>之间转移，以保持电中性。<span data-concept=\"galvanic-cell\">原电池</span>的构造和组成可以用化学式和其他符号，以<span data-concept=\"cell-notation\">电池图式</span>（<span data-concept=\"cell-notation\">电池表示式</span>）的形式简明地表示出来。</p>",
+  "summary_html": "<p><span data-concept=\"galvanic-cell\">原电池</span>是这样一种装置：自发的<span data-concept=\"redox-reaction\">氧化还原反应</span>间接发生，氧化剂和还原剂的氧化还原对分别装在不同的<span data-concept=\"half-cell\">半电池</span>中。电子经外电路从还原剂（在<span data-concept=\"anode\">阳极</span><span data-concept=\"half-cell\">半电池</span>中）转移到氧化剂（在<span data-concept=\"cathode\">阴极</span><span data-concept=\"half-cell\">半电池</span>中），而溶液相中的惰性离子则经<span data-concept=\"salt-bridge\">盐桥</span>在<span data-concept=\"half-cell\">半电池</span>之间转移，以保持电中性。<span data-concept=\"galvanic-cell\">原电池</span>的构造和组成可以用化学式和其他符号，以<span data-concept=\"cell-notation\">电池图式</span>（<span data-concept=\"cell-notation\">电池表示式</span>）的形式简明地表示出来。</p>",
   "notes": "本节没有任何内容被省略。总反应方程式中的 Cu^{2}{}^{+}，以及习题 fs-idm154595184（d）答案中位置不当的括号“(aq), Cu²⁺”，均按原样保留。",
   "ai": {
     "text": [
@@ -352,7 +352,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "该电极是阴极。活性电极由属于其半电池氧化还原电对的金属制成，因此质量增加意味着有金属原子附着到电极上：溶液中的金属离子在电极表面得到电子，以固态金属的形式沉积，M<sup><em>n</em>+</sup>(<em>aq</em>) + <em>n</em>e<sup>−</sup> ⟶ M(<em>s</em>)。这是一个还原过程，而还原发生在阴极。例如，在图 17.3 的铜–银电池中，银阴极随着 Ag<sup>+</sup>(<em>aq</em>) + e<sup>−</sup> ⟶ Ag(<em>s</em>) 的进行而变重，而铜阳极则因铜被氧化为进入溶液的 Cu<sup>2+</sup> 离子而质量减小。"
+        "solution": "该电极是阴极。活性电极由属于其半电池氧化还原对的金属制成，因此质量增加意味着有金属原子附着到电极上：溶液中的金属离子在电极表面得到电子，以固态金属的形式沉积，M<sup><em>n</em>+</sup>(<em>aq</em>) + <em>n</em>e<sup>−</sup> ⟶ M(<em>s</em>)。这是一个还原过程，而还原发生在阴极。例如，在图 17.3 的铜–银电池中，银阴极随着 Ag<sup>+</sup>(<em>aq</em>) + e<sup>−</sup> ⟶ Ag(<em>s</em>) 的进行而变重，而铜阳极则因铜被氧化为进入溶液的 Cu<sup>2+</sup> 离子而质量减小。"
       }
     },
     {

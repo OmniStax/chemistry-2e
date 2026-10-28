@@ -198,7 +198,7 @@ function twoWays(d, H, opts, onShow) {
   function draw() {
     if (two.three) {
       const key = palSig(); if (key !== sig && two.g) { sig = key; two.v.clear(); buildScene(two.v, two.g, sc);
-        two.v.label('分子内作用力（强）', [-1.84, -0.7, 0], two.g, -30); two.v.label('分子间作用力（弱）', [-0.1, -0.5, 0], two.g, -30); two.v.headline(HEAD); }
+        two.v.label('分子内作用力（强）', [-1.84, -0.7, 0], two.g, -30); two.v.label('分子间力（弱）', [-0.1, -0.5, 0], two.g, -30); two.v.headline(HEAD); }
       two.v?.invalidate();
     } else {
       const { ctx } = begin(d.c); hits.length = 0;
@@ -206,14 +206,14 @@ function twoWays(d, H, opts, onShow) {
       const P = drawScene(ctx, sc, o, hits);
       const [bx, by] = P([-1.84, 0, 0]), [ix, iy] = P([-0.1, 0, 0]);
       label(ctx, '分子内作用力（强）', bx, by + 8, { side: 'below', leader: true, size: 20, gap: 0.62 * o.s + 30 });
-      label(ctx, '分子间作用力（弱）', ix, iy - 8, { side: 'above', leader: true, size: 20, gap: 0.62 * o.s + 10 });
+      label(ctx, '分子间力（弱）', ix, iy - 8, { side: 'above', leader: true, size: 20, gap: 0.62 * o.s + 10 });
       text(ctx, 'H', P([2.47, 0, 0])[0], iy, PAL.ink, { size: 20, weight: 600, align: 'center' });
       text(ctx, 'Cl', P([1.2, 0, 0])[0], iy, PAL.panel, { size: 22, weight: 600, align: 'center' });
       text(ctx, 'H', P([-1.2, 0, 0])[0], iy, PAL.ink, { size: 20, weight: 600, align: 'center' });
       text(ctx, 'Cl', P([-2.47, 0, 0])[0], iy, PAL.panel, { size: 22, weight: 600, align: 'center' });
       topline(ctx, HEAD);
     }
-    readout(d.readout, '17\\ \\text{kJ} \\ll 430\\ \\text{kJ}\\quad (\\text{约为 25 倍})', '克服 1 摩尔液态 HCl 中的分子间作用力约需 17 kJ，而打断 1 摩尔 HCl 中的共价键则约需 430 kJ。');
+    readout(d.readout, '17\\ \\text{kJ} \\ll 430\\ \\text{kJ}\\quad (\\text{约为 25 倍})', '克服 1 摩尔液态 HCl 中的分子间力约需 17 kJ，而打断 1 摩尔 HCl 中的共价键则约需 430 kJ。');
   }
   register(d.fig, { update: () => {}, draw });
 })();

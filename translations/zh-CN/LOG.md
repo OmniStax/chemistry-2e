@@ -888,3 +888,96 @@ Conflicts decided (reason in each row's `note`; table in `translation-notes.md`)
 Sweeps. 173 string replacements in 84 files (species 14, bench 30, 3D view labels 74 including 3 in 18.5 and 18.7 that were still English or 前视, molecular weight 3, London forces 5, ion product 1, arithmetic sign 4, suggested approach 33, malleability 7, number of moles 2), 8 of them in chapter 1's `figures.js` (the view labels of 1.1 and 1.2); 5 concept statements through `ost set --chapter` (ch10, ch17, ch18). A grep for the superseded forms finds none.
 
 Checks. `node --check`: 112 `figures.js` (106 in chapters 2 to 21), 0 failures. JSON: 179 files parse (every `section.json`, `chapter.json`, `book-rows.json`, `book.json`, the glossary). `translation_parity.py --chapter chNN` for ch02 to ch21 (128 pages): 42 print `ok`, 84 list only `figures.js` code lines of recorded scenarios and `untranslated?` lines of pure-math solutions, 2 carry tag findings (exit 1 for ch02 2.7, English words kept in `<em>`, recorded; and ch19, 19.3, where a `<` in display math confuses the tool's parser and the tag multisets of the page are equal). Multiset of `id`, `data-concept`, `data-ref`, `data-type`, `data-figure`, `data-place`, `class` and tag names: all 128 `text.html` equal to the source except ch02/2.7 (11 `em` for the kept English names); all 128 `section.json` (string fields) equal in these attributes, 9 differ only in `sub`, `sup` or `em` tags the word order of a translated hint or solution needed. `OMNISTAX_CONTENT_DIR=/home/user OMNISTAX_BOOKS=chemistry-2e-zh-cn npm run check:content` and `ost.py check chemistry-2e-zh-cn`: "21 chapters, 114 sections, 21 introduction or summary pages, 30 checks, no errors, 14 warnings" (the 12 sheet titles and two non-numeric sheet cells, the same as chapter 1's Pass 4 apart from the chapters now added). Flags still on the glossary: `confirm: termonline` 2,785 rows, `confirm: owner` 331. The humanizer review and the `npm run dev` read-through (translate.md 8.4) of chapters 2 to 21 are outstanding for the owner.
+
+
+### Pass 27 (2026-10-28): appendix sheets (claude-sonnet-5-5, medium)
+
+The twelve sheet files (`sheets/elements.json`, `thermo.json`, `potentials.json`, `half-lives.json`, `ksp.json`, `acids-bases-commercial.json`, `constants.json`, `ka.json`, `kb.json`, `kf.json`, `units.json`, `water.json`) had been translated by four sheet agents, each leaving a `pending-<sheet>.json` term list and a `notes-<sheet>.md` table beside the files (elements; thermo; potentials, half-lives and ksp; acids-bases-commercial with constants, ka, kb, kf, units and water). This pass, run alone, folded them in and deleted the eight files; the sheets themselves were not edited here except `kf.json` (Pass 28).
+
+Glossary. The four pending lists held 28 rows (elements 1, thermo 7, potentials 6, acids-bases-commercial 14); composite rows were split into one source each (the six SI unit names, the three rest masses, the two quarts and the cubic foot, the two SiC forms, the three crystal-form colours, the five half-life unit letters, `liter·atmosphere` and `atmosphere (atm)`), which gave 45 candidate rows. 40 were added (5,765 to 5,805 rows, sorted by source): calcite 方解石; yellow, red, black (crystal-form labels); beta cubic and alpha hexagonal (SiC); cis and trans as trailing designators 顺式, 反式; complexes 配合物; Type of Emission 发射类型; spontaneous fission 自发裂变; ca (circa) 约; y, d, h, m, s as half-life units; specific gravity 相对密度; nominal value 标称值; arsenous, hypobromous and isocyanic acid; dimethylamine; the six units; thermochemical calorie, erg, British thermal unit; liter·atmosphere; liquid and dry quart, cubic foot (US); electron, neutron and proton rest mass; the phrase `exact, definition` 精确值，按定义. 5 were not added because the source was already a row with the same target, so the sheets follow the glossary: `Cesium` (cesium 铯), `Substance` (substance 物质), `Substance (column label)`, `Half-Reaction` (half-reaction 半反应) and `atmosphere (atm)` (标准大气压（atm）, ch09). Free-text authorities of the pending lists were mapped to ids of `authorities` (化学名词 and 矿物名 to cnterm-chemistry, 物理学名词 to cnterm-physics, GB 3100 to gb3100, "common usage" and the sheets' own wording to book, termonline unchanged). Flags: the rows written from memory carry `"confirm": "termonline"` (calcite, specific gravity, nominal value, the three acids, dimethylamine, thermochemical calorie, erg, British thermal unit, liter·atmosphere, the quarts and cubic foot, the rest masses), the rows of the sheets' own wording `"confirm": "owner"` (Type of Emission, spontaneous fission, ca, the half-life unit letters, the six units, `exact, definition`), the rest none. No sheet used a different target from an existing row: the notes of the sheets were checked against the glossary rows for hydrogen sulfate ion, phenylamine, glacial acetic acid, percent by mass, cryoscopic and ebullioscopic constants, the three tons, weight, acceleration due to gravity, Rydberg constant, gas constant, electron capture and fission; all agree.
+
+Notes. The four tables went into `translation-notes.md` as the section "Appendix sheets" with the owner items: the elements `category`, `classification` and `state` stay English because the app validates them as enums (`z.enum` in `sheets.ts`) and colours by them, so an app change with an i18n label map is needed (the proposed Chinese labels are listed); the half-life unit letters `y d h m s` stay as printed and `m` for minute is ambiguous against the metre and JJF 1001's min; the Latin `<em>cis</em>` and `<em>trans</em>` are dropped in thermo; the wording （精确值，按定义）; the terms written from memory and not looked up; the two inherited check warnings (`0.9999720（密度最大）` in water, `约 1 × 10−5` in ksp).
+
+Checks: the twelve sheets parse; `check:content` (below, Pass 28) reports 2 warnings, the two sheet cells, where Pass 26 reported 14 (the 12 English sheet titles are Chinese in `book.json` now).
+
+### Pass 28 (2026-10-28): termonline sweep (claude-sonnet-5-5, medium)
+
+Input: the lane results of the sweep of the whole glossary against 术语在线 (termonline.cn). 2,784 rows were searched in 6 lanes: 905 confirmed (591 listed under the same form in a chemistry or physics vocabulary and 314 under another subject's vocabulary with the same form; 3 further rows are near-exact, so 594 are listed in a chemistry or physics vocabulary including the 3 near-exact), 1,581 not listed (kept, the flag stays, a note says so), 295 judged by three Opus reviewers (211 listed with a different form, 84 listed only as longer or related entries): 49 adopted, 236 kept, 10 left to the owner. The orchestrator overrode two adoptions: `Hess's law` keeps 盖斯定律 (termonline lists 赫斯定律) and `ideal gas law` keeps 理想气体状态方程 (物理学名词 lists 理想气体定律), both now owner rows. Result: 47 adopted, 236 kept, 12 owner. This agent was the only one editing the translation.
+
+Glossary (`glossary.zh-CN.json`, changed first, 5,805 to 5,806 rows, layout and key order kept):
+- 47 adopted rows: target, authority (all ids already existed), entry URL from the decision, `confirm` removed, note "Changed from <old> after the termonline sweep 2026-10-28: <reason>" (plus a clause where the sweep was selective).
+- 17 rows followed an adopted one: Cohesive and adhesive forces, Choosing a Lewis structure by formal charge, Lewis Symbols and Structures, Writing a Lewis structure, Colloidal particles are charged, the three intermolecular headings, Formation Constants for Complex Ions (sheet title), isoelectronic species (lower case twin), petrochemicals, rate of decay and rate of radioactive decay (放射性衰变率), van der waals constant, Van der Waals force and the two person rows (范德瓦耳斯). One row was added: `steam turbine` 汽轮机 (5.1), because the figure alt there says steam turbine and keeps 汽轮机.
+- 236 kept rows: `confirm` cleared, note "Termonline sweep 2026-10-28 lists <forms> (<vocabulary>); kept: <reason>"; 14 of them got the entry URL because termonline lists the same form (the optional-bracket entries such as 外[逸]层, 正[向]反应).
+- 12 owner rows keep `"confirm": "owner"` and a note (10 from the review, `Hess's law` and `ideal gas law` by override, and the twin row `Hess’s law`); they are listed with both candidates in "Termonline sweep: owner decisions" of `translation-notes.md`.
+- Flags at the end of Pass 27 and 28 (5,806 rows): `termonline` 1,599, `owner` 360, none 3,847; before the two passes (5,765 rows) they were 1,876, 332 and 3,557.
+
+Sweeps (a script that logged each replacement with file and context; the 43 rows of the table are the ADOPT terms with a hit; the reviewed hits stay in the scratchpad log):
+
+| Term | Page places (`section.json`, `text.html`, `figures.js`) | `config.md` rows | Concept rows (`ost set`) | `chapter.json` rows (`ost set`) | Sheet |
+|---|---|---|---|---|---|
+| 黏附力 → 附着力 | 16 | 0 | 3 | 0 | 0 |
+| 丹尼尔电池 → 丹聂尔电池 | 2 | 0 | 0 | 0 | 0 |
+| 路易斯结构式 → 路易斯结构 | 380 | 3 | 16 | 1 | 0 |
+| 待测物 → 分析物 | 16 | 0 | 7 | 0 | 0 |
+| 芳香族化合物 → 芳香化合物 | 0 | 0 | 2 | 0 | 0 |
+| 人工元素 → 人造元素 | 1 | 0 | 0 | 0 | 0 |
+| 能带理论 → 能带论 | 1 | 0 | 0 | 0 | 0 |
+| 胶体粒子 → 胶粒 | 18 | 0 | 5 | 0 | 0 |
+| 反离子 → 反荷离子 | 0 | 0 | 3 | 0 | 0 |
+| 衰变常数 → 衰变常量 | 11 | 3 | 3 | 2 | 0 |
+| 衰变速率 → 衰变率 | 11 | 2 | 3 | 1 | 0 |
+| 二聚 → 二聚化 | 4 | 0 | 0 | 0 | 0 |
+| DNA 指纹鉴定 → DNA 指纹分析 | 1 | 0 | 0 | 0 | 0 |
+| 烟道气 → 烟气 | 1 | 0 | 0 | 0 | 0 |
+| 形成常数 → 生成常数 | 16 | 0 | 4 | 3 | 3 |
+| 羟基自由基 → 羟自由基 | 15 | 0 | 1 | 0 | 0 |
+| 分子间作用力 → 分子间力 | 49 | 6 | 6 | 1 | 0 |
+| 内照射放射治疗 → 内照射治疗 | 2 | 0 | 2 | 0 | 0 |
+| 等电子粒子 → 等电子体 | 4 | 0 | 1 | 0 | 0 |
+| 局部麻醉剂 → 局部麻醉药 | 2 | 0 | 0 | 0 | 0 |
+| 质能等价 → 质能等价性 | 0 | 0 | 1 | 0 | 0 |
+| 石油化工产品 → 石油化学品 | 2 | 0 | 0 | 0 | 0 |
+| 药理作用 → 药理效应 | 1 | 0 | 0 | 0 | 0 |
+| 酚红 → 苯酚红 | 1 | 0 | 0 | 0 | 0 |
+| 照相底片 → 照相底板 | 3 | 0 | 0 | 0 | 0 |
+| 聚对苯二甲酸乙二酯 → 聚对苯二甲酸乙二醇酯 | 2 | 0 | 0 | 0 | 0 |
+| 钾-氩测年 → 钾-氩年代测定 | 1 | 0 | 0 | 0 | 0 |
+| 质子转移 → 质子传递 | 1 | 0 | 0 | 0 | 0 |
+| 皱折环 → 折叠环 | 3 | 0 | 0 | 0 | 0 |
+| 石英纤维 → 石英丝 | 1 | 1 | 0 | 0 | 0 |
+| 放射性测年 → 放射性鉴年法 (also radiometric dating) | 11 | 1 | 1 | 1 | 0 |
+| 反应路径 → 反应途径 | 2 | 0 | 1 | 0 | 0 |
+| 氧化还原电对 → 氧化还原对 | 6 | 0 | 3 | 0 | 0 |
+| 参考状态 → 参考态 | 2 | 0 | 0 | 0 | 0 |
+| 铷-锶测年 → 铷-锶年代测定 | 1 | 0 | 0 | 0 | 0 |
+| 虫胶 → 紫胶 | 1 | 0 | 0 | 0 | 0 |
+| 酸式硫酸钠 → 硫酸氢钠 | 1 | 0 | 0 | 0 | 0 |
+| 特种化学品 → 专用化学品 | 1 | 0 | 0 | 0 | 0 |
+| 储热系统 → 蓄热系统 | 1 | 3 | 0 | 0 | 0 |
+| 阈频率 → 阈值频率 | 4 | 0 | 0 | 0 | 0 |
+| 汽轮机 → 涡轮机 | 14 | 0 | 2 | 0 | 0 |
+| 铀-铅测年 → 铀-铅年代测定 | 1 | 0 | 0 | 0 | 0 |
+| 范德华 → 范德瓦耳斯 (equation, force, constant, attraction, the person) | 23 | 0 | 2 | 2 | 0 |
+| total | 633 | 19 | 66 | 11 | 3 |
+
+Adopted in the glossary with no place to sweep: lead storage battery 铅酸电池 → 铅蓄电池, thermal insulator 隔热材料 → 热绝缘体, transesterification 酯交换反应 → 酯交换. Together with the 44 adopted rows the table stands for (`radioactive dating` and `radiometric dating` share one row), that is the 47.
+
+633 replacements in 87 page files (`section.json` 313 in 36 files, `text.html` 302 in 42, `figures.js` 18 in 9) and 19 in 5 `config.md` files; the concept `name`, `terms` and `statement` of 65 concepts through `ost set chemistry-2e-zh-cn concepts <id> '{...}' --chapter N` (66 term hits; `book-rows.json` and `book.json` were not hand-edited); 11 rows of `chapter.json` through `ost set` (the section titles 7.3 and 10.1; the meanings of a_vdw and b_vdw in ch09, K_f_form (15.2, 15.3) and K_d in ch15, λ_decay (21.3, 21.6), rate and t in ch21: 9 rows); the sheet title of `kf.json` by hand (2 places) and its label in `book.json` by hand, because `ost` refuses it ("sheets is a row of book.json that no chapter stages; edit it by hand"), one string; `translation-notes.md` 19 lines (the rows that describe what the pages say; the rows that record the history of a decision were kept and annotated: ch04 had 待测物, 2.7 and Chapter 14 sodium bisulfate). The merge that each `ost set` runs also folded in ten concept statements that earlier review passes had staged in `book-rows.json` and never merged into `book.json` (ch04: solubility, salt, insoluble, weak-acid, weak-base, stoichiometry; ch12: rate-constant, method-of-initial-rates, initial-rates-method; ch19: colors-of-complexes); they are the texts the review passes decided, not changes of this pass.
+
+Selective sweeps and places left unchanged:
+- `turbine` 涡轮机 everywhere except the 5.1 figure alt ("steam turbine", 3 places: 汽轮机 stays).
+- `sodium bisulfate` 硫酸氢钠 in 14.3 only; 2.7 exercise (f) keeps 酸式硫酸钠（硫酸氢钠的俗名）, which contrasts the common name with the systematic name.
+- `dimerization` 二聚化 only for the bare noun (4 places); 二聚体, 二聚反应 (12.4, four places) and the verb 二聚 (12.6, "NO dimerizes") stay.
+- `proton transfer` 质子传递 in one place (14.5, 涉及单个质子传递的); the verb uses (把质子转移给水, 7 places in 4.2, 14.3, 14.5, 18.10) stay.
+- `lead storage battery` 铅蓄电池: no page says it; every 铅酸电池 (17.5, 1.2) is "lead-acid battery" and stays. `thermal insulator` 热绝缘体: no page says it; 隔热材料 (5.2 "insulating materials", 18.9 "thermal insulation") stays. `transesterification` 酯交换: 酯交换反应 (5.3, 12.3) is "transesterification reaction" and contains the term.
+- `phenol red` 苯酚红 in 14.7 only, not inside 甲酚红. `redox couple` 氧化还原对; the short 电对 stays (17.2 and others).
+- `intermolecular force` 分子间力: the `force` span moved onto 力 (分子<em>间</em><span>力</span>); 分子内作用力 stays; 离子间作用力 (11.2) is a different term and stays.
+- `radioactive dating` and `radiometric dating` 放射性鉴年法: 放射性测年法, 放射性测年方法 and 放射性测年技术 became 放射性鉴年法; the headings of 21.3 read 用碳-14 的放射性鉴年法 and 用碳-14 以外核素的放射性鉴年法; 放射性碳测年 and 碳-14 测年 are other rows and stay.
+- `decay rate` also swept for rate of decay and rate of radioactive decay (放射性衰变率); `thermal energy storage system` 蓄热系统: the span `thermal-energy` wraps 蓄热.
+- All 范德华 forms follow 范德瓦耳斯, including the person's name.
+- `ideal gas law`, `Hess's law` and the other ten owner rows: no page changed.
+- Translation-notes rows that describe a decision's history keep the old form (listed above); `LOG.md` entries before this pass are history and were not rewritten.
+
+Owner list (12): quantum jump 量子跃迁 / 量子跳跃; nuclear model 核式模型 / 核模型; external beam radiation therapy 外照射放射治疗 / 外照射治疗; Brønsted base 布朗斯特–劳里碱 / 布朗斯特碱; gas constant 理想气体常数 / 气体常数; detonation 爆炸 / 爆轰; molecular geometry 分子几何构型 / 分子几何结构; shell 电子层 / 电子壳层; blister copper 泡铜 / 粗铜; network solid 网状固体 / 网络固体; Hess's law 盖斯定律 / 赫斯定律; ideal gas law 理想气体状态方程 / 理想气体定律; plus the hyphen against en dash in names (盖革–米勒, 克劳修斯–克拉珀龙 against termonline's hyphen; 盖-吕萨克 with a hyphen) and the typographic-only differences (Latin–Chinese spaces, optional brackets), all in `translation-notes.md`.
+
+Checks: `node --check` passes on the 112 `figures.js` (0 failures); 192 JSON files parse (every `section.json`, `chapter.json`, `book-rows.json`, `book.json`, the glossary, the 12 sheets); `translation_parity.py --chapter chNN` for ch01 to ch21: the printed lines are identical to the run on the copy of the translation made before the sweep (480 lines in all: recorded scenarios, the pure-math and number-and-unit solutions, the `figures.js` code lines; exit 0 except ch02, whose 2.7 keeps 11 `<em>` for the English names, and ch19, whose 19.3 has a `<` in display math that confuses the tool's parser, both recorded in Pass 26); the `id`, `data-concept`, `data-ref`, `data-type`, `data-figure`, `data-place`, `data-note`, `class` and tag-name multisets of the 135 `text.html` equal the source's except ch02/2.7 (the same 11 `em`), and the same attributes inside the `section.json` strings are unchanged from before the sweep in all pages; `OMNISTAX_CONTENT_DIR=/home/user OMNISTAX_BOOKS=chemistry-2e-zh-cn npm run --silent check:content .`: "21 chapters, 114 sections, 21 introduction or summary pages, 30 checks, no errors, 2 warnings" (the two inherited sheet cells, water `0.9999720（密度最大）` and ksp `约 1 × 10−5`). A grep of every page, `figures.js`, `chapter.json`, `book.json`, `config.md`, `translation-notes.md` and the sheets for the superseded targets leaves only the places listed under "Selective sweeps" (铅酸电池, 二聚体/二聚反应/二聚, 质子转移 as a verb, 汽轮机 in the 5.1 alt, 隔热材料, 酯交换反应, 酸式硫酸钠 in 2.7, 甲酚红) and the history rows of `translation-notes.md`. The humanizer review and the `npm run dev` read-through (translate.md 8.4) are outstanding for the owner.

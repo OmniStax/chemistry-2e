@@ -214,7 +214,7 @@ function burst(ctx, x, y, r, color, k) {
   function draw() {
     const { ctx } = begin(d.c), t = cy.now(), ind = path.value === 'indirect';
     hits = [];
-    topline(ctx, ind ? '间接效应：辐射使水电离，生成的羟基自由基使 DNA 断裂。' : '直接效应：辐射使 DNA 本身电离，一条链断裂。');
+    topline(ctx, ind ? '间接效应：辐射使水电离，生成的羟自由基使 DNA 断裂。' : '直接效应：辐射使 DNA 本身电离，一条链断裂。');
     const tgt = ind ? A : { x: strand(BREAK.direct, 0), y: BREAK.direct };
     const tBreak = ind ? 4.75 : 1.0, kb = clamp01((t - tBreak) / 0.3);
     dna(ctx, BREAK[path.value], kb);
@@ -252,7 +252,7 @@ function burst(ctx, x, y, r, color, k) {
     if (restA) lab(t < 1.0 ? '$\\text{H}_{2}\\text{O}$' : t < 2.0 ? '$\\text{H}_{2}\\text{O}^{+}$' : '$\\text{OH}^{\\bullet}$', A.x, A.y);
     if (t < 2.0 || t >= 2.8) lab(t < 2.8 ? '$\\text{H}_{2}\\text{O}$' : '$\\text{H}_{3}\\text{O}^{+}$', B.x, B.y);
     hits.push({ x: B.x, y: B.y, r: 40, name: t < 2.8 ? '水分子 H₂O' : '水合氢离子 H₃O⁺' });
-    hits.push(t < 2.8 ? { x: A.x, y: A.y, r: 40, name: t < 1.0 ? '水分子 H₂O' : '电离的水分子 H₂O⁺' } : { x: R.x, y: R.y, r: 36, name: '羟基自由基 OH•' });
+    hits.push(t < 2.8 ? { x: A.x, y: A.y, r: 40, name: t < 1.0 ? '水分子 H₂O' : '电离的水分子 H₂O⁺' } : { x: R.x, y: R.y, r: 36, name: '羟自由基 OH•' });
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();

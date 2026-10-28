@@ -152,7 +152,7 @@ function views(d, three, mount, draw) {
     butane: { name: '正丁烷', kind: 'alkane', n: 4, cond: '\\text{CH}_3\\text{CH}_2\\text{CH}_2\\text{CH}_3', mf: '\\text{C}_4\\text{H}_{10}', g3: AL(4), g2: [[0, 0], [1, 0], [2, 0], [3, 0]],
       head: '正丁烷的四个碳原子形成一条无支链的链：没有哪个碳原子与两个以上的其他碳原子成键。' },
     pentane: { name: '戊烷', kind: 'alkane', n: 5, cond: '\\text{CH}_3\\text{CH}_2\\text{CH}_2\\text{CH}_2\\text{CH}_3', mf: '\\text{C}_5\\text{H}_{12}', g3: AL(5), g2: [[0, 0], [1, 0], [2, 0], [3, 0], [4, 0]],
-      head: '约 109.5° 的键角使戊烷的碳链呈锯齿形，尽管其路易斯结构式把它画成直线。' },
+      head: '约 109.5° 的键角使戊烷的碳链呈锯齿形，尽管其路易斯结构把它画成直线。' },
     methylpropane: { name: '2-甲基丙烷', kind: 'alkane', n: 4, cond: '\\text{CH}_3\\text{CH(CH}_3)\\text{CH}_3', mf: '\\text{C}_4\\text{H}_{10}', g3: methylpropane(), g2: [[0, 0], [1, 0], [2, 0], [1, -1]],
       head: '2-甲基丙烷的中心碳原子与另外三个碳原子成键，所以它的链有支链。' },
     ethene: { name: '乙烯', kind: 'alkene', cond: '\\text{CH}_2{=}\\text{CH}_2', mf: '\\text{C}_2\\text{H}_4', g3: ene([[0, 0, 0], [D2, 0, 0]]),
@@ -173,7 +173,7 @@ function views(d, three, mount, draw) {
   const KEYS = Object.keys(MOL);
   const mol = F.select(d.controls, { label: '\\text{分子}', key: 'molecule', aria: '分子', value: 'pentane',
     options: KEYS.map((k) => ({ value: k, label: MOL[k].name })), onInput: () => V.show() });
-  const model = F.choice(d.controls, { label: '\\text{模型}', key: 'model', aria: '路易斯结构式，或可转动的模型', value: 'lewis',
+  const model = F.choice(d.controls, { label: '\\text{模型}', key: 'model', aria: '路易斯结构，或可转动的模型', value: 'lewis',
     options: [{ value: 'lewis', label: '路易斯' }, { value: 'ball', label: '球棍' }, { value: 'fill', label: '空间填充' }], onInput: () => V.show() });
   let hits = []; F.hover(d.stage, () => (model.value === 'lewis' ? hits : []));
 

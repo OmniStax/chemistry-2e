@@ -1,0 +1,1408 @@
+{
+ "id": "10.6",
+ "module": "m68773",
+ "chapter": "10",
+ "title": "晶态固体中的晶格结构",
+ "short": "晶格结构",
+ "lead": "大多数固体是晶态的，其粒子按在三维空间中重复的规则图案堆积，而晶胞描述的就是这种图案，从金属的简单立方、体心立方和面心立方晶胞，到离子填充在阴离子之间空隙中的盐的晶胞。X 射线衍射可以测量晶体中原子平面之间的距离，而晶胞的大小则把其中的原子与固体的<span data-concept=\"density\">密度</span>联系起来。",
+ "objectives": [
+  "描述晶体结构中原子和离子的排列",
+  "利用晶胞的尺寸计算离子半径",
+  "说明 X 射线衍射测量在测定晶体结构中的应用"
+ ],
+ "summary_html": "<p>晶态金属和简单离子化合物的结构可以用球的堆积来描述。金属原子可以堆积成六方最密堆积结构、立方最密堆积结构、体心结构和简单立方结构。简单离子结构中的阴离子通常采取其中一种结构，阳离子则占据阴离子之间剩下的空间。较小的阳离子通常占据阴离子最密堆积阵列中的四面体空隙。较大的阳离子通常占据八面体空隙。更大的阳离子可以占据阴离子简单立方阵列中的立方空隙。固体的结构可以通过指明晶胞的大小和形状以及晶胞的内容来描述。结构的类型和晶胞的尺寸可以通过 X 射线衍射测量来确定。</p>",
+ "notes": "指向布拉格方程模拟器的“学习链接”框被略去，因为图 10.63 + 10.64 已经让读者在页面上改变角度、波长和间距。书中钨的答案写作“19.26 g/cm”，例 10.17 的“学习检测”问的是“What it the formula”，习题 91 的答案说“the formula for thallium is TlI”，习题 95 谈到“occupied the same cites”的离子；以上四处均照书中原样保留（其中“What it”和“cites”两处笔误在中文中按原意译出）。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案取自书后答案以及“学习检测”的答案。没有答案的数值习题 fs-idp53519632（习题 82，铂的棱长和密度）、fs-idm25352864（84，铝的棱长和密度）、fs-idp21112320（86，三种立方晶格中的自由空间）、fs-idp8185568（98，H⁻ 的半径和 NaH 的密度）、fs-idp64501504（100，氟化锰的晶胞）、fs-idm23848128（102，16.21° 时的晶面间距）和 fs-idp31363760（104，由衍射求金的密度）被略去，也没有为它们算出答案。七道没有答案的概念性习题（76、78、80、88、90、94 和 96）保留，并附有标明为 OmniStax 自拟的建议思路，没有答案的选择题 92 保留为开放性问题，附有选项和建议思路。数值答案的容差为 2%。",
+ "figures": [
+  {
+   "id": "sim-simple",
+   "kind": "sim",
+   "number": "10.46",
+   "folds": [
+    "10.47",
+    "10.48",
+    "10.49"
+   ],
+   "originals": [
+    "/media/ch10/CNX_Chem_10_06_UnitCell1.jpg",
+    "/media/ch10/CNX_Chem_10_06_SimpleCub1.jpg",
+    "/media/ch10/CNX_Chem_10_06_SimpleCub2.jpg",
+    "/media/ch10/CNX_Chem_10_06_SimpleCub3.jpg"
+   ],
+   "original_caption": "（图 10.46）晶胞显示向各个方向重复的格点的位置。（图 10.47）当金属原子排列成一层中的球正好位于另一层中的球的正上方或正下方时，这种晶格结构称为简单立方。注意这些球是相互接触的。（图 10.48）简单立方晶格结构中的一个原子与其他六个原子接触，所以它的配位数为六。（图 10.49）简单立方晶胞在八个顶角上各含有八分之一个原子，所以总共含有一个原子。",
+   "draws": [
+    "length"
+   ],
+   "conventions": [
+    "Po"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "atoms view smaller and lower, note cut to packing and a = 2r"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-simpcube",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-cubic",
+   "kind": "sim",
+   "number": "10.50",
+   "folds": [
+    "10.51",
+    "10.52"
+   ],
+   "originals": [
+    "/media/ch10/CNX_Chem_10_06_CubUntCll.jpg",
+    "/media/ch10/CNX_Chem_10_06_BdyCntrdCb.jpg",
+    "/media/ch10/CNX_Chem_10_06_FcCntrdCbc.jpg"
+   ],
+   "original_caption": "（图 10.50）金属的立方晶胞：上排图显示格点的位置，下排图显示晶胞中金属原子的位置。（图 10.51）在体心立方结构中，某一层中的原子彼此并不接触。每个原子与其上一层中的四个原子和下一层中的四个原子接触。（图 10.52）面心立方固体的晶胞在顶角上有原子，并且如其名称所示，在各个面的中心也有原子。",
+   "draws": [
+    "length"
+   ],
+   "conventions": [
+    "Po",
+    "Fe",
+    "Cu"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "atoms view smaller, cell as a dropdown, note trimmed via macros"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-packing",
+   "kind": "sim",
+   "number": "10.53",
+   "folds": [
+    "10.54"
+   ],
+   "originals": [
+    "/media/ch10/CNX_Chem_10_06_CbcCltPckd.jpg",
+    "/media/ch10/CNX_Chem_10_06_ClstPckng2.jpg"
+   ],
+   "original_caption": "（图 10.53）CCP 排列由三层重复（ABCABC…）的、六方排列的原子构成。CCP 结构中的原子的配位数为 12，因为它们与本层中的六个原子接触，再加上上一层的三个原子和下一层的三个原子。转换一下观察角度，可以看出 CCP 结构的晶胞有这样一个面：一个顶角上是 A 层的一个原子，一条对角线上（在两个顶角和面的中央）是 B 层的原子，其余一个顶角上是 C 层的一个原子。这与面心立方排列相同。（图 10.54）在两种最密堆积中，原子都堆积得尽可能紧凑。六方最密堆积由两种交替的层（ABABAB…）构成。立方最密堆积由三种交替的层（ABCABCABC…）构成。",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-ex-ca",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-density",
+   "kind": "sim",
+   "draws": [
+    "mass",
+    "volume",
+    "length",
+    "density"
+   ],
+   "conventions": [
+    "Po",
+    "Fe",
+    "Ca"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-lattices",
+   "kind": "sim",
+   "number": "10.55",
+   "folds": [
+    "10.56"
+   ],
+   "originals": [
+    "/media/ch10/CNX_Chem_10_06_GenUnitCll.jpg",
+    "/media/ch10/CNX_Chem_10_06_CrystalSys.jpg"
+   ],
+   "original_caption": "（图 10.55）晶胞由其三个轴（a、b 和 c）的长度以及轴间的夹角（α、β 和 γ）来确定。（图 10.56）共有七个不同的晶系和 14 种不同的晶胞。",
+   "draws": [
+    "angle"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "angle arcs larger, names unstacked after each render"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-holes",
+   "kind": "sim",
+   "number": "10.57",
+   "folds": [
+    "10.58"
+   ],
+   "originals": [
+    "/media/ch10/CNX_Chem_10_06_TetOctHole.jpg",
+    "/media/ch10/CNX_Chem_10_06_IntIonst.jpg"
+   ],
+   "original_caption": "（图 10.57）阳离子可以占据阴离子之间的两类空隙：八面体空隙或四面体空隙。（图 10.58）阳离子的大小与化合物中被占据的空隙的形状直接相关。",
+   "draws": [
+    "length"
+   ],
+   "conventions": [
+    "Zn",
+    "S",
+    "Na",
+    "Cl",
+    "Cs"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "scene smaller and lowered below the headline"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-ionic",
+   "kind": "sim",
+   "number": "10.59",
+   "folds": [
+    "10.60",
+    "10.61",
+    "10.62"
+   ],
+   "originals": [
+    "/media/ch10/CNX_Chem_10_07_CsClStrctr.jpg",
+    "/media/ch10/CNX_Chem_10_07_NaClStrctr.jpg",
+    "/media/ch10/CNX_Chem_10_06_ZnSStrctr.jpg",
+    "/media/ch10/CNX_Chem_10_07_CaF2Strctr.jpg"
+   ],
+   "original_caption": "（图 10.59）阳离子和阴离子大小相近的离子化合物，例如 CsCl，通常形成简单立方结构。它们可以用顶角上是阳离子或顶角上是阴离子的晶胞来描述。（图 10.60）阴离子比阳离子大得多的离子化合物，例如 NaCl，通常形成 FCC 结构。它们可以用阳离子位于八面体空隙中的 FCC 晶胞来描述。（图 10.61）ZnS，即硫化锌（或闪锌矿），形成 FCC 晶胞，硫离子位于格点上，小得多的锌离子占据结构中一半的四面体空隙。（图 10.62）氟化钙 CaF2 形成 FCC 晶胞，钙离子（绿色）位于格点上，氟离子（红色）占据它们之间所有的四面体位置。",
+   "draws": [],
+   "conventions": [
+    "Cl",
+    "Cs",
+    "Na",
+    "S",
+    "Zn",
+    "Ca",
+    "F"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-licl",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-bragg",
+   "kind": "sim",
+   "number": "10.63",
+   "folds": [
+    "10.64"
+   ],
+   "originals": [
+    "/media/ch10/CNX_Chem_10_06_ConDec.jpg",
+    "/media/ch10/CNX_Chem_10_06_XRyDiff1.jpg"
+   ],
+   "original_caption": "（图 10.63）占据同一空间的光波会发生干涉，叠加成强度更大的波（a）或更小的波（b），这取决于它们的极大值和极小值相距多远。（图 10.64）对晶体内原子所散射的 X 射线的衍射，使人能够测定原子之间的距离。上图表示两个散射波之间的相长干涉，以及由此产生的高强度衍射波。下图表示相消干涉和低强度的衍射波。",
+   "draws": [
+    "wavelength",
+    "length",
+    "angle"
+   ],
+   "conventions": [
+    "Cu"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "d sin θ labels below the lower plane"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-diffractometer",
+   "kind": "photo",
+   "number": "10.65",
+   "draws": []
+  },
+  {
+   "id": "fig-franklin",
+   "kind": "photo",
+   "number": "10.66",
+   "draws": []
+  }
+ ],
+ "coverage": [
+  {
+   "span": "crystalline",
+   "concept": "types-of-crystalline-solids",
+   "verb": "uses"
+  },
+  {
+   "span": "metals",
+   "concept": "unit-cell",
+   "verb": "uses"
+  },
+  {
+   "span": "unit-cell",
+   "concept": "unit-cell",
+   "verb": "introduces"
+  },
+  {
+   "span": "unit-cell",
+   "concept": "coordination-number",
+   "verb": "introduces"
+  },
+  {
+   "span": "unit-cell",
+   "concept": "simple-cubic-structure",
+   "verb": "introduces"
+  },
+  {
+   "span": "simple-cubic",
+   "concept": "cubic-unit-cells",
+   "verb": "introduces"
+  },
+  {
+   "span": "simple-cubic",
+   "concept": "unit-cell",
+   "verb": "uses"
+  },
+  {
+   "span": "simple-cubic",
+   "concept": "simple-cubic-unit-cell",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-po",
+   "concept": "unit-cell-radius-and-density",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-po",
+   "concept": "density",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-po",
+   "concept": "molar-mass",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-po",
+   "concept": "avogadro-number",
+   "verb": "uses"
+  },
+  {
+   "span": "cubic-cells",
+   "concept": "cubic-unit-cells",
+   "verb": "reinforces"
+  },
+  {
+   "span": "cubic-cells",
+   "concept": "body-centered-cubic-unit-cell",
+   "verb": "introduces"
+  },
+  {
+   "span": "cubic-cells",
+   "concept": "body-centered-cubic-solid",
+   "verb": "introduces"
+  },
+  {
+   "span": "cubic-cells",
+   "concept": "face-centered-cubic-unit-cell",
+   "verb": "introduces"
+  },
+  {
+   "span": "cubic-cells",
+   "concept": "face-centered-cubic-solid",
+   "verb": "introduces"
+  },
+  {
+   "span": "cubic-cells",
+   "concept": "isomorphous",
+   "verb": "introduces"
+  },
+  {
+   "span": "closest-packing",
+   "concept": "closest-packing",
+   "verb": "introduces"
+  },
+  {
+   "span": "closest-packing",
+   "concept": "cubic-unit-cells",
+   "verb": "uses"
+  },
+  {
+   "span": "closest-packing",
+   "concept": "hexagonal-closest-packing",
+   "verb": "introduces"
+  },
+  {
+   "span": "closest-packing",
+   "concept": "cubic-closest-packing",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-ca",
+   "concept": "unit-cell-radius-and-density",
+   "verb": "uses"
+  },
+  {
+   "span": "lattice-systems",
+   "concept": "unit-cell",
+   "verb": "reinforces"
+  },
+  {
+   "span": "lattice-systems",
+   "concept": "space-lattice",
+   "verb": "introduces"
+  },
+  {
+   "span": "ionic-crystals",
+   "concept": "holes-in-closest-packed-arrays",
+   "verb": "introduces"
+  },
+  {
+   "span": "ionic-crystals",
+   "concept": "closest-packing",
+   "verb": "uses"
+  },
+  {
+   "span": "ionic-crystals",
+   "concept": "ionic-radius-trend",
+   "verb": "uses"
+  },
+  {
+   "span": "ionic-crystals",
+   "concept": "crystal-hole",
+   "verb": "introduces"
+  },
+  {
+   "span": "ionic-crystals",
+   "concept": "tetrahedral-hole",
+   "verb": "introduces"
+  },
+  {
+   "span": "ionic-crystals",
+   "concept": "octahedral-hole",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-zns",
+   "concept": "formula-from-hole-occupancy",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-zns",
+   "concept": "empirical-formula",
+   "verb": "uses"
+  },
+  {
+   "span": "octahedral",
+   "concept": "holes-in-closest-packed-arrays",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ex-al2o3",
+   "concept": "formula-from-hole-occupancy",
+   "verb": "uses"
+  },
+  {
+   "span": "cubic-holes",
+   "concept": "holes-in-closest-packed-arrays",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ionic-cells",
+   "concept": "ionic-unit-cells",
+   "verb": "introduces"
+  },
+  {
+   "span": "ionic-cells",
+   "concept": "ionic-compound-formula",
+   "verb": "uses"
+  },
+  {
+   "span": "ionic-radii",
+   "concept": "unit-cell-radius-and-density",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ex-licl",
+   "concept": "ionic-unit-cells",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-licl",
+   "concept": "unit-cell-radius-and-density",
+   "verb": "uses"
+  },
+  {
+   "span": "xray",
+   "concept": "bragg-equation",
+   "verb": "introduces"
+  },
+  {
+   "span": "xray",
+   "concept": "wave-properties",
+   "verb": "uses"
+  },
+  {
+   "span": "xray",
+   "concept": "diffraction",
+   "verb": "introduces"
+  },
+  {
+   "span": "xray",
+   "concept": "x-ray-crystallography",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-bragg",
+   "concept": "bragg-equation",
+   "verb": "uses"
+  },
+  {
+   "span": "franklin",
+   "concept": "bragg-equation",
+   "verb": "reinforces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm39353008",
+   "kind": "check-your-learning",
+   "bloom": "Analyze",
+   "place": {
+    "at": "inline",
+    "after": "ex-po"
+   },
+   "cite": "ex-po",
+   "prompt": "镍的晶胞棱长为 0.3524 nm。Ni 的密度为 8.90 g/cm<sup>3</sup>。镍是否以简单立方结构结晶？请解释。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "不是。如果 Ni 是简单立方，其密度可按下式求得：<br>1 个 Ni 原子 × (1 mol Ni / 6.022 × 10<sup>23</sup> 个 Ni 原子) × (58.693 g / 1 mol Ni) = 9.746 × 10<sup>−23</sup> g<br><em>V</em> = <em>l</em><sup>3</sup> = (3.524 × 10<sup>−8</sup> cm)<sup>3</sup> = 4.376 × 10<sup>−23</sup> cm<sup>3</sup><br>于是 Ni 的密度应为 = (9.746 × 10<sup>−23</sup> g)/(4.376 × 10<sup>−23</sup> cm<sup>3</sup>) = 2.23 g/cm<sup>3</sup><br>由于 Ni 的实际密度与此值不接近，所以 Ni 不形成简单立方结构。"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idp79703472",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-ca"
+   },
+   "cite": "ex-ca",
+   "prompt": "银以 FCC 结构结晶。其晶胞的棱长为 409 pm。<br>（a）在这种结构中，Ag 的原子半径是多少？<br>（b）计算 Ag 的密度。",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 144,
+      "unit": "pm"
+     },
+     {
+      "part": "(b)",
+      "value": 10.5,
+      "unit": "g/cm³"
+     }
+    ],
+    "solution": "（a）144 pm；（b）10.5 g/cm<sup>3</sup>"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idm32665648",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-zns"
+   },
+   "cite": "ex-zns",
+   "prompt": "硒化锂可以描述为硒离子的最密堆积阵列，锂离子位于所有的四面体空隙中。硒化锂的化学式是什么？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Li<sub>2</sub>Se"
+   }
+  },
+  {
+   "id": "cyl4",
+   "source_id": "fs-idp118444096",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-al2o3"
+   },
+   "cite": "ex-al2o3",
+   "prompt": "白色颜料氧化钛结晶时，钛离子占据氧离子最密堆积阵列中一半的八面体空隙。氧化钛的化学式是什么？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "TiO<sub>2</sub>"
+   }
+  },
+  {
+   "id": "cyl5",
+   "source_id": "fs-idp160437296",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-licl"
+   },
+   "cite": "ex-licl",
+   "prompt": "KCl（类 NaCl 结构，FCC）的晶胞棱长为 6.28 Å。假定阴离子与阳离子沿晶胞棱接触，计算钾离子的半径。氯离子的半径为 1.82 Å。",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 1.33,
+    "unit": "Å",
+    "solution": "钾离子的半径为 1.33 Å。"
+   }
+  },
+  {
+   "id": "cyl6",
+   "source_id": "fs-idp19350688",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-bragg"
+   },
+   "cite": "ex-bragg",
+   "prompt": "一块晶体的晶面间距等于 0.394 nm，它衍射波长为 0.147 nm 的 X 射线。一级衍射的角度是多少？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 10.8,
+    "unit": "°",
+    "solution": "10.8°"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idp28635312",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "cubic-cells",
+   "prompt": "描述铁的晶体结构，铁在立方晶胞中有两个等价的金属原子。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "铁的这种低温形式（910 °C 以下）的结构是体心立方。立方体的八个顶角上各有八分之一个原子，立方体的中心有一个原子。"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp129665808",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "cubic-cells",
+   "prompt": "描述 Pt 的晶体结构，Pt 在立方晶胞中有四个等价的金属原子。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "铂以面心立方（FCC）结构结晶，这就是立方最密堆积。在三种立方晶胞中，只有面心晶胞含有四个原子：八个顶角上各有一个原子，各贡献八分之一（$8\\;\\times \\;\\frac{1}{8}\\;=1$ 个原子），六个面的中心各有一个原子，各贡献二分之一（$6\\;\\times \\;\\frac{1}{2}\\;=3$ 个原子），共四个。简单立方晶胞含有一个原子，体心立方晶胞含有两个。在 Pt 晶胞中，顶角上的原子沿面对角线与相邻各面中心的原子接触，所有原子的环境都相同，每个原子与 12 个近邻接触，所以铂原子占据晶体 74% 的体积。"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp83460192",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": {
+    "at": "end"
+   },
+   "cite": "cubic-cells",
+   "prompt": "在铬的体心立方结构中，铬原子的配位数是多少？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 8,
+    "solution": "八"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idp26737392",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": {
+    "at": "end"
+   },
+   "cite": "closest-packing",
+   "prompt": "在铝的面心立方结构中，铝原子的配位数是多少？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "配位数为 12。铝的面心立方结构是立方最密堆积，由重复的、六方排列的原子层按 ABCABC⋯ 堆叠而成。每个铝原子与本层中的六个原子、上一层中位于其周围凹处的三个原子，以及下一层中的三个原子接触：6 + 3 + 3 = 12 个最近邻。"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp101733424",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": {
+    "at": "end"
+   },
+   "cite": "closest-packing",
+   "prompt": "钴金属以六方最密堆积结构结晶。钴原子的配位数是多少？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 12,
+    "solution": "12"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm14554640",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": {
+    "at": "end"
+   },
+   "cite": "closest-packing",
+   "prompt": "镍金属以立方最密堆积结构结晶。镍原子的配位数是多少？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "配位数为 12。在立方最密堆积中，每个镍原子位于一层六方排列的原子之中，与本层中的六个原子接触。上一层落在这一层的凹处，所以上一层有三个原子与该镍原子接触，下一层也有三个原子以同样的方式与它接触。总数为 6 + 3 + 3 = 12。六方最密堆积中的数目相同，因为第三层的位置是 A 型还是 C 型，改变的只是它的原子占据哪些凹处，而不是有多少个原子与每个原子接触。"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp53261968",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ex-ca",
+   "prompt": "钨以体心立方晶胞结晶，棱长为 3.165 Å。<br>（a）在这种结构中，钨的原子半径是多少？<br>（b）计算钨的密度。",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 1.37,
+      "unit": "Å"
+     },
+     {
+      "part": "(b)",
+      "value": 19.26,
+      "unit": "g/cm³"
+     }
+    ],
+    "solution": "（a）1.370 Å；（b）19.26 g/cm<sup class=\"fn\" data-note=\"c-e7-cm3\"></sup>"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idp45151232",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ex-ca",
+   "prompt": "钡以体心立方晶胞结晶，棱长为 5.025 Å。<br>（a）在这种结构中，钡的原子半径是多少？<br>（b）计算钡的密度。",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 2.176,
+      "unit": "Å"
+     },
+     {
+      "part": "(b)",
+      "value": 3.595,
+      "unit": "g/cm³"
+     }
+    ],
+    "solution": "（a）2.176 Å；（b）3.595 g/cm<sup>3</sup>"
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idm95309216",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "cubic-cells",
+   "prompt": "铝的密度为 2.7 g/cm<sup>3</sup>；硅的密度为 2.3 g/cm<sup>3</sup>。请解释为什么 Si 的原子更重，密度却更低。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Si 的晶体结构表明，它在固体中比 Al（配位数为 12）堆积得更疏松（配位数为 4）。"
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idp171132368",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ex-zns",
+   "prompt": "硫化镉有时被画家用作黄色颜料，它结晶时，镉占据硫离子最密堆积阵列中一半的四面体空隙。硫化镉的化学式是什么？请解释你的答案。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "在最密堆积阵列中，每个阴离子对应两个四面体空隙。如果只有一半的四面体空隙被占据，阴离子和阳离子的数目就相等。硫化镉的化学式为 CdS。"
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idp51480864",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ex-zns",
+   "prompt": "镉、锡和磷的一种化合物用于制造某些半导体。它结晶时，在磷离子的最密堆积阵列中，镉占据四分之一的四面体空隙，锡也占据四分之一的四面体空隙。该化合物的化学式是什么？请解释你的答案。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "化学式为 CdSnP<sub>2</sub>。最密堆积阵列中每个阴离子（这里是每个磷离子）对应两个四面体空隙。镉占据其中的四分之一，所以每个磷离子对应 $\\frac{1}{4}\\;\\times \\;2$，即 $\\frac{1}{2}$ 个镉离子；锡同样占据四分之一的空隙，所以每个磷离子对应 $\\frac{1}{2}$ 个锡离子。Cd:Sn:P 的比为 $\\frac{1}{2}$:$\\frac{1}{2}$:1，最简单的整数比为 1:1:2，从而得到 CdSnP<sub>2</sub>。这两种阳离子合起来占据一半的四面体空隙，就像 ZnS 中的锌那样。电荷与 Cd<sup>2+</sup> 和 Sn<sup>4+</sup> 相平衡：2+ 加 4+ 是 6+，两个 P<sup>3−</sup> 离子给出 6−。"
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idp161152672",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ex-al2o3",
+   "prompt": "钴的磁性氧化物用于录音磁带，它结晶时，在氧离子的紧密堆积阵列中，钴原子占据八分之一的四面体空隙和一半的八面体空隙。它的化学式是什么？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Co<sub>3</sub>O<sub>4</sub>"
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idp78371824",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ex-al2o3",
+   "prompt": "一种含锌、铝和硫的化合物以硫离子的最密堆积阵列结晶。锌离子位于八分之一的四面体空隙中，铝离子位于一半的八面体空隙中。该化合物的实验式是什么？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "实验式为 ZnAl<sub>2</sub>S<sub>4</sub>。硫离子的最密堆积阵列中，每个硫离子对应两个四面体空隙和一个八面体空隙。锌占据八分之一的四面体空隙，所以每个硫离子对应 $\\frac{1}{8}\\;\\times \\;2$，即 $\\frac{1}{4}$ 个锌离子。铝占据一半的八面体空隙，所以每个硫离子对应 $\\frac{1}{2}\\;\\times \\;1$，即 $\\frac{1}{2}$ 个铝离子。Zn:Al:S 的比为 $\\frac{1}{4}$:$\\frac{1}{2}$:1；乘以四得 1:2:4，所以化学式为 ZnAl<sub>2</sub>S<sub>4</sub>。电荷是平衡的：一个 Zn<sup>2+</sup> 和两个 Al<sup>3+</sup> 给出 8+，四个 S<sup>2−</sup> 给出 8−。"
+   }
+  },
+  {
+   "id": "e14",
+   "source_id": "fs-idp122808832",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "cubic-holes",
+   "prompt": "铊和碘的一种化合物以碘离子的简单立方阵列结晶，铊离子位于所有的立方空隙中。这种碘化物的化学式是什么？请解释你的答案。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "在简单立方阵列中，阵列里每个阴离子只对应一个可被阳离子占据的立方空隙。铊与碘的比必定是 1:1；因此，铊的化学式是 TlI。"
+   }
+  },
+  {
+   "id": "e15",
+   "source_id": "fs-idp80534576",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "octahedral",
+   "prompt": "下列哪种元素与硫反应，形成的固体中硫原子构成最密堆积阵列，且所有的八面体空隙都被占据：Li、Na、Be、Ca 还是 Al？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "钙。在最密堆积阵列中，每个阴离子对应一个八面体空隙，所以当所有的八面体空隙都被占据时，化合物中每个硫离子对应一个阳离子，即 1:1 的比，就像 NiO、MnS 和 NaCl 那样。1:1 的硫化物需要 2+ 的阳离子来平衡 S<sup>2−</sup>。Li 和 Na 形成 Li<sub>2</sub>S 和 Na<sub>2</sub>S，每个阴离子对应两个阳离子（它们填充的是四面体空隙），Al 形成 Al<sub>2</sub>S<sub>3</sub>，所以只有 Be 和 Ca 能给出 1:1 的硫化物。在这两者之间，离子的相对大小决定空隙。Ca<sup>2+</sup>（约 100 pm）与 Na<sup>+</sup>（102 pm）大小接近，而 Na<sup>+</sup> 填充 NaCl 中的八面体空隙，所以 CaS 采取同样的结构。Be<sup>2+</sup> 非常小（约 45 pm），适合较小的四面体空隙，BeS 结晶时 Be<sup>2+</sup> 位于一半的四面体空隙中，与 ZnS 相似。"
+   }
+  },
+  {
+   "id": "e16",
+   "source_id": "fs-idp72582816",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ex-al2o3",
+   "prompt": "金红石是一种含钛和氧的矿物，如果其结构可以描述为氧离子的最密堆积阵列，钛离子位于一半的八面体空隙中，那么金红石中钛的质量分数是多少？钛的氧化数是多少？",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "percent by mass of titanium",
+      "value": 59.95,
+      "unit": "%"
+     },
+     {
+      "part": "oxidation number of titanium",
+      "value": 4
+     }
+    ],
+    "solution": "59.95%；钛的氧化数为 +4。"
+   }
+  },
+  {
+   "id": "e17",
+   "source_id": "fs-idp81080000",
+   "kind": "exercise",
+   "bloom": "Evaluate",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ionic-cells",
+   "prompt": "请解释为什么化学性质相似的碱金属氯化物 NaCl 和 CsCl 结构不同，而化学性质不同的 NaCl 和 MnS 结构相同。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "结构取决于离子的相对大小及其数目之比，而不取决于它们在化学上是否相似。NaCl 和 CsCl 的阳离子与阴离子数目比都是 1:1，但它们的阳离子大小不同。Na<sup>+</sup>（102 pm）比 Cl<sup>−</sup>（181 pm）小得多，所以它能放进氯离子 FCC 阵列的八面体空隙，每个离子有六个邻居。Cs<sup>+</sup>（174 pm）几乎与 Cl<sup>−</sup> 一样大，对八面体空隙来说太大，所以氯离子采取更开放的简单立方阵列，每个铯离子位于一个立方空隙中，有八个邻居。NaCl 和 MnS 在化学上不同，但两者的阳离子与阴离子数目比都是 1:1，并且在两者中阳离子都比阴离子小得多，能放进八面体空隙，所以两者都以阴离子最密堆积阵列中所有八面体空隙都被填满的方式结晶。"
+   }
+  },
+  {
+   "id": "e18",
+   "source_id": "fs-idp80497568",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ionic-crystals",
+   "prompt": "矿物由熔融的岩浆形成时，不同的离子占据了晶体中相同的位置。尽管锂离子和镁离子的电荷不同，锂却常常与镁一起出现在矿物中。请提出一种解释。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "两种离子的大小接近：Mg，0.65；Li，0.60。这种相似性使两者相当容易互换。电荷的差异通常通过 Si<sup>4+</sup> 与 Al<sup>3+</sup> 的互换来补偿。"
+   }
+  },
+  {
+   "id": "e19",
+   "source_id": "fs-idp68651232",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ionic-cells",
+   "prompt": "碘化铷以立方晶胞结晶，晶胞的顶角上有碘离子，中心有一个铷离子。该化合物的化学式是什么？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "化学式为 RbI。立方晶胞八个顶角上的每个碘离子由八个晶胞共有，所以晶胞含有 $8\\;\\times \\;\\frac{1}{8}\\;=1$ 个碘离子。中心的铷离子完全位于晶胞之内，所以晶胞含有一个铷离子。每个 I<sup>−</sup> 对应一个 Rb<sup>+</sup>，给出 1:1 的比，这使电荷平衡，并给出化学式 RbI。这与氯化铯中的排列相同，阳离子位于阴离子简单立方阵列的立方空隙中。"
+   }
+  },
+  {
+   "id": "e20",
+   "source_id": "fs-idp62207184",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ionic-cells",
+   "prompt": "锰的各种氧化物之一以立方晶胞结晶，晶胞的顶角和中心有锰离子。氧离子位于晶胞每条棱的中点。该化合物的化学式是什么？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Mn<sub>2</sub>O<sub>3</sub>"
+   }
+  },
+  {
+   "id": "e21",
+   "source_id": "fs-idp178999856",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ex-licl",
+   "prompt": "在高于约 175 °C 的温度下，碘化铊(I)以与 CsCl 相同的结构结晶。TlI 的晶胞棱长为 4.20 Å。假定晶胞中体心的 Tl<sup>+</sup> 离子与立方体顶角上的 I<sup>−</sup> 离子相接触，计算 TI<sup>+</sup><sup class=\"fn\" data-note=\"c-e21-tl\"></sup>的离子半径。（I<sup>−</sup> 的离子半径为 2.16 Å。）",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 1.48,
+    "unit": "Å",
+    "solution": "1.48 Å"
+   }
+  },
+  {
+   "id": "e22",
+   "source_id": "fs-idp68785344",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ex-bragg",
+   "prompt": "以 15.55° 的角度 <em>θ</em>（一级衍射）衍射波长为 1.541 Å 的 X 射线的晶面，其间距是多少？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 2.874,
+    "unit": "Å",
+    "solution": "2.874 Å"
+   }
+  },
+  {
+   "id": "e23",
+   "source_id": "fs-idp184563440",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ex-bragg",
+   "prompt": "一种金属的晶面间距等于 0.4164 nm，它衍射波长为 0.2879 nm 的 X 射线。一级衍射峰的衍射角是多少？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 20.2,
+    "unit": "°",
+    "solution": "20.2°"
+   }
+  },
+  {
+   "id": "e24",
+   "source_id": "fs-idp20057536",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "xray",
+   "prompt": "当激发态钼原子中的一个电子从 L 层落到 K 层时，会发射出一条 X 射线。这些 X 射线被间距为 2.64 Å 的晶面以 7.75° 的角度衍射。假定为一级衍射，钼中 K 层与 L 层的能量差是多少？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 17400,
+    "unit": "eV",
+    "solution": "1.74 × 10<sup>4</sup> eV"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "unit-cell-radius-and-density"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "cubic-unit-cells"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "unit-cell-radius-and-density"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "formula-from-hole-occupancy"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "formula-from-hole-occupancy"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "ionic-unit-cells"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "unit-cell-radius-and-density"
+  },
+  {
+   "exercise": "cyl6",
+   "concept": "bragg-equation"
+  },
+  {
+   "exercise": "e1",
+   "concept": "cubic-unit-cells"
+  },
+  {
+   "exercise": "e2",
+   "concept": "cubic-unit-cells"
+  },
+  {
+   "exercise": "e3",
+   "concept": "cubic-unit-cells"
+  },
+  {
+   "exercise": "e4",
+   "concept": "closest-packing"
+  },
+  {
+   "exercise": "e4",
+   "concept": "cubic-unit-cells"
+  },
+  {
+   "exercise": "e5",
+   "concept": "closest-packing"
+  },
+  {
+   "exercise": "e6",
+   "concept": "closest-packing"
+  },
+  {
+   "exercise": "e7",
+   "concept": "unit-cell-radius-and-density"
+  },
+  {
+   "exercise": "e8",
+   "concept": "unit-cell-radius-and-density"
+  },
+  {
+   "exercise": "e9",
+   "concept": "cubic-unit-cells"
+  },
+  {
+   "exercise": "e9",
+   "concept": "closest-packing"
+  },
+  {
+   "exercise": "e10",
+   "concept": "formula-from-hole-occupancy"
+  },
+  {
+   "exercise": "e11",
+   "concept": "formula-from-hole-occupancy"
+  },
+  {
+   "exercise": "e12",
+   "concept": "formula-from-hole-occupancy"
+  },
+  {
+   "exercise": "e12",
+   "concept": "holes-in-closest-packed-arrays"
+  },
+  {
+   "exercise": "e13",
+   "concept": "formula-from-hole-occupancy"
+  },
+  {
+   "exercise": "e14",
+   "concept": "formula-from-hole-occupancy"
+  },
+  {
+   "exercise": "e14",
+   "concept": "holes-in-closest-packed-arrays"
+  },
+  {
+   "exercise": "e15",
+   "concept": "formula-from-hole-occupancy"
+  },
+  {
+   "exercise": "e15",
+   "concept": "ionic-compound-formula"
+  },
+  {
+   "exercise": "e16",
+   "concept": "formula-from-hole-occupancy"
+  },
+  {
+   "exercise": "e16",
+   "concept": "percent-composition-from-formula"
+  },
+  {
+   "exercise": "e16",
+   "concept": "oxidation-numbers"
+  },
+  {
+   "exercise": "e17",
+   "concept": "holes-in-closest-packed-arrays"
+  },
+  {
+   "exercise": "e17",
+   "concept": "ionic-unit-cells"
+  },
+  {
+   "exercise": "e18",
+   "concept": "holes-in-closest-packed-arrays"
+  },
+  {
+   "exercise": "e18",
+   "concept": "ionic-radius-trend"
+  },
+  {
+   "exercise": "e19",
+   "concept": "ionic-unit-cells"
+  },
+  {
+   "exercise": "e20",
+   "concept": "ionic-unit-cells"
+  },
+  {
+   "exercise": "e21",
+   "concept": "ionic-unit-cells"
+  },
+  {
+   "exercise": "e21",
+   "concept": "unit-cell-radius-and-density"
+  },
+  {
+   "exercise": "e22",
+   "concept": "bragg-equation"
+  },
+  {
+   "exercise": "e23",
+   "concept": "bragg-equation"
+  },
+  {
+   "exercise": "e24",
+   "concept": "bragg-equation"
+  },
+  {
+   "exercise": "e24",
+   "concept": "photon-energy"
+  }
+ ],
+ "referents": [
+  {
+   "id": "layer-a",
+   "label": "A 位置及其层",
+   "figures": [
+    "sim-packing"
+   ]
+  },
+  {
+   "id": "layer-b",
+   "label": "B 位置及其层",
+   "figures": [
+    "sim-packing"
+   ]
+  },
+  {
+   "id": "layer-c",
+   "label": "C 位置及其层",
+   "figures": [
+    "sim-packing"
+   ]
+  },
+  {
+   "id": "upper-ray",
+   "label": "被上方平面散射的射线及其波",
+   "figures": [
+    "sim-bragg"
+   ]
+  },
+  {
+   "id": "lower-ray",
+   "label": "被下方平面散射的射线及其波",
+   "figures": [
+    "sim-bragg"
+   ]
+  },
+  {
+   "id": "sum-wave",
+   "label": "两个散射波之和",
+   "figures": [
+    "sim-bragg"
+   ]
+  }
+ ],
+ "footnotes": [
+  {
+   "id": "c-e7-cm3",
+   "kind": "correction",
+   "html": "答案把密度写作 g/cm；它的单位应为 g/cm<sup>3</sup>。"
+  },
+  {
+   "id": "c-e21-tl",
+   "kind": "correction",
+   "html": "书中写作 TI<sup>+</sup>；该离子是铊(I)，即 Tl<sup>+</sup>。"
+  }
+ ]
+}

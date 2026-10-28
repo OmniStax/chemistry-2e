@@ -1,0 +1,556 @@
+{
+  "id": "16.3",
+  "module": "m68818",
+  "chapter": "16",
+  "title": "热力学第二定律和第三定律",
+  "short": "第二定律和第三定律",
+  "lead": "仅体系自身的<span data-concept=\"entropy\">熵变</span>并不能决定一个过程是否自发；还必须把其<span data-concept=\"surroundings\">环境</span>的熵变计算在内。热力学第二定律是针对宇宙表述的，热力学第三定律则确定了<span data-concept=\"entropy\">熵</span>的零点，使<span data-concept=\"standard-entropy\">标准熵</span>可以列成表格，并按反应加以组合。",
+  "objectives": [
+    "陈述并解释热力学第二定律和第三定律",
+    "计算标准条件下相变和化学反应的熵变"
+  ],
+  "summary_html": "<p><span data-concept=\"second-law-of-thermodynamics\">热力学第二定律</span>指出，自发过程使宇宙的<span data-concept=\"entropy\">熵</span>增加，<em>S</em><sub>univ</sub><sup class=\"fn\" data-note=\"c-s-univ-summary\"></sup> &gt; 0。如果 $\\kdSuniv$ &lt; 0，该过程是非自发的；如果 $\\kdSuniv$ = 0，体系处于平衡。<span data-concept=\"third-law-of-thermodynamics\">热力学第三定律</span>把<span data-concept=\"entropy\">熵</span>的零点确定为 <span data-type=\"temperature\">0 K</span> 时完美的纯净晶态固体的熵。由于只有一种可能的<span data-concept=\"microstate\">微观状态</span>，其<span data-concept=\"entropy\">熵</span>为零。我们可以利用过程所涉及的反应物和产物的<span data-concept=\"standard-entropy\">标准熵</span>值，来计算该过程的<span data-concept=\"standard-entropy-change\">标准熵变</span>。</p>",
+  "notes": "本节没有任何内容被略去。例 16.4 和小结中的“S_univ”都没有写 Δ，例 16.5 的答案以 J K⁻¹ mol⁻¹ 给出，例 16.6 的“学习检测”把 Ca(OH)₂ 的状态符号写成正体，这些均按原样保留；表 16.2 给出了其各单元格中的数值。",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ]
+  },
+  "built": "2026-10-26",
+  "exercises_lead": "",
+  "exercise_notes": "布鲁姆层级、概念标签、提示和建议的解题思路由AI 生成。答案取自书后答案和“学习检测”的答案。四道没有书后答案的数值习题 fs-idp174223232（乙醇的燃烧）、fs-idp125011360（铝热反应）、fs-idp53811024（N + O ⟶ NO 的 ΔS°）和 fs-idp277989936（附录 G 中的六个反应）被省略，没有为它们计算答案。没有书后答案的习题 fs-idp47425392 要求作出区分而非给出数值，予以保留，并附有标明为 OmniStax 自拟的建议思路。没有移动任何内容。",
+  "figures": [
+    {
+      "id": "sim-ice-universe",
+      "kind": "sim",
+      "draws": [
+        "temperature",
+        "entropy",
+        "energy"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    }
+  ],
+  "referents": [],
+  "coverage": [
+    {
+      "span": "second-law",
+      "concept": "entropy-change-of-universe",
+      "verb": "introduces"
+    },
+    {
+      "span": "second-law",
+      "concept": "second-law-of-thermodynamics",
+      "verb": "introduces"
+    },
+    {
+      "span": "second-law",
+      "concept": "entropy-change-of-surroundings",
+      "verb": "introduces"
+    },
+    {
+      "span": "second-law",
+      "concept": "entropy",
+      "verb": "uses"
+    },
+    {
+      "span": "second-law",
+      "concept": "system",
+      "verb": "uses"
+    },
+    {
+      "span": "second-law",
+      "concept": "surroundings",
+      "verb": "uses"
+    },
+    {
+      "span": "second-law",
+      "concept": "heat-flow",
+      "verb": "uses"
+    },
+    {
+      "span": "second-law",
+      "concept": "temperature",
+      "verb": "uses"
+    },
+    {
+      "span": "second-law",
+      "concept": "reversible-process",
+      "verb": "uses"
+    },
+    {
+      "span": "second-law",
+      "concept": "spontaneous-process",
+      "verb": "uses"
+    },
+    {
+      "span": "second-law",
+      "concept": "nonspontaneous-process",
+      "verb": "uses"
+    },
+    {
+      "span": "second-law",
+      "concept": "chemical-equilibrium",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-ice",
+      "concept": "predict-spontaneity-from-entropy",
+      "verb": "introduces"
+    },
+    {
+      "span": "ex-ice",
+      "concept": "entropy-change-of-surroundings",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-ice",
+      "concept": "melting",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-ice",
+      "concept": "celsius-kelvin-conversion",
+      "verb": "uses"
+    },
+    {
+      "span": "third-law",
+      "concept": "third-law-of-thermodynamics",
+      "verb": "introduces"
+    },
+    {
+      "span": "third-law",
+      "concept": "standard-entropy",
+      "verb": "introduces"
+    },
+    {
+      "span": "third-law",
+      "concept": "standard-entropy-change",
+      "verb": "introduces"
+    },
+    {
+      "span": "third-law",
+      "concept": "boltzmann-entropy-equation",
+      "verb": "uses"
+    },
+    {
+      "span": "third-law",
+      "concept": "microstate",
+      "verb": "uses"
+    },
+    {
+      "span": "third-law",
+      "concept": "crystalline-solid",
+      "verb": "uses"
+    },
+    {
+      "span": "third-law",
+      "concept": "absolute-zero",
+      "verb": "uses"
+    },
+    {
+      "span": "third-law",
+      "concept": "standard-state",
+      "verb": "uses"
+    },
+    {
+      "span": "third-law",
+      "concept": "balanced-equation",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-condensation",
+      "concept": "calculate-standard-entropy-change",
+      "verb": "introduces"
+    },
+    {
+      "span": "ex-condensation",
+      "concept": "condensation",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-condensation",
+      "concept": "entropy-and-phase",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-methanol",
+      "concept": "calculate-standard-entropy-change",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-methanol",
+      "concept": "combustion-reaction",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idp33042160",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-ice"
+      },
+      "cite": "ex-ice",
+      "prompt": "利用这些信息，判断液态水在相同温度下是否会自发凝固。关于 <em>S</em><sub>univ</sub> 的值，你能说些什么？",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "Δ<em>S</em><sub>univ</sub> at −10.00 °C",
+            "value": 0.7,
+            "unit": "J/K",
+            "tol": 0.1,
+            "hint": "凝固是熔化的逆过程：把 Δ<em>S</em><sub>sys</sub> 和 <em>q</em><sub>surr</sub> 的符号都改变，再在 263.15 K 下加上 <em>q</em><sub>surr</sub>/<em>T</em>。"
+          },
+          {
+            "part": "Δ<em>S</em><sub>univ</sub> at +10.00 °C",
+            "value": -0.9,
+            "unit": "J/K",
+            "tol": 0.1,
+            "hint": "用同样改变了符号的数值，取 <em>T</em> = 283.15 K。"
+          }
+        ],
+        "solution": "熵是状态函数，因此 Δ<em>S</em><sub>凝固</sub> = −Δ<em>S</em><sub>熔化</sub> = −22.1 J/K，<em>q</em><sub>surr</sub> = +6.00 kJ。在 −10.00 °C 时是自发的，+0.7 J/K；在 +10.00 °C 时是非自发的，−0.9 J/K。"
+      }
+    },
+    {
+      "id": "cyl2",
+      "source_id": "fs-idp173892208",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-condensation"
+      },
+      "cite": "ex-condensation",
+      "prompt": "计算下列过程的标准熵变：<br>${\\text{H}}_{2}(g)+{\\text{C}}_{2}{\\text{H}}_{4}(g)\\;\\longrightarrow \\;{\\text{C}}_{2}{\\text{H}}_{6}(g)$",
+      "answer": {
+        "type": "number",
+        "value": -120.6,
+        "unit": "J K⁻¹ mol⁻¹",
+        "tol": 0.005,
+        "generated_by": "source",
+        "hint": "用表 16.2 中 C<sub>2</sub>H<sub>6</sub>(<em>g</em>) 的标准熵，减去 H<sub>2</sub>(<em>g</em>) 和 C<sub>2</sub>H<sub>4</sub>(<em>g</em>) 的标准熵。",
+        "solution": "−120.6 J K<sup>–1</sup> mol<sup>–1</sup>"
+      }
+    },
+    {
+      "id": "cyl3",
+      "source_id": "fs-idp34274768",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-methanol"
+      },
+      "cite": "ex-methanol",
+      "prompt": "计算下列反应的标准熵变：<br>$\\text{Ca}{(\\text{OH})}_{2}(\\text{s})\\;\\longrightarrow \\;\\text{CaO}(s)+{\\text{H}}_{2}\\text{O}(l)$",
+      "answer": {
+        "type": "number",
+        "value": 24.7,
+        "unit": "J/K",
+        "tol": 0.005,
+        "generated_by": "source",
+        "hint": "从附录 G 中取 Ca(OH)<sub>2</sub>(<em>s</em>)、CaO(<em>s</em>) 和 H<sub>2</sub>O(<em>l</em>) 的标准熵，用产物之和减去反应物的标准熵。",
+        "solution": "24.7 J/K"
+      }
+    },
+    {
+      "id": "e20",
+      "source_id": "fs-idp47425392",
+      "source_number": "20",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "third-law",
+      "prompt": "对于化学变化，Δ<em>S</em> 与 Δ<em>S</em>° 有什么区别？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "$\\kdSo$ 是反应中每种反应物和产物都处于标准状态时的熵变，即每种物质 1 mol，气体为 1 bar，溶液为 1 <em>M</em>，温度通常为 298.15 K；$\\kdS$ 是变化在实际发生的任何条件下的熵变，可以是任意的压强、浓度和温度。$\\kdSo$ 对于给定温度下的给定反应只有一个值，由标准熵按 $\\kdSo=\\sum \\nu\\kSo\\text{(产物)}\\;-\\sum \\nu\\kSo\\text{(反应物)}$ 求得，表 16.2 中的 $\\kSo$ 值给出的就是这个量。$\\kdS$ 取决于混合物的实际状态：对于压强不是 1 bar 的气体，各物质的熵与其 $\\kSo$ 值不同，因此 $\\kdS$ 不同于 $\\kdSo$。只有当变化在标准条件下发生时，二者才相等。"
+      }
+    },
+    {
+      "id": "e21",
+      "source_id": "fs-idp33735696",
+      "source_number": "21",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "third-law",
+      "prompt": "计算下列变化的 $\\text{Δ}S^{\\circ}$。<br>（a）${\\text{SnCl}}_{4}(l)\\;\\longrightarrow \\;{\\text{SnCl}}_{4}(g)$<br>（b）${\\text{CS}}_{2}(g)\\;\\longrightarrow \\;{\\text{CS}}_{2}(l)$<br>（c）$\\text{Cu}(s)\\;\\longrightarrow \\;\\text{Cu}(g)$<br>（d）${\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;{\\text{H}}_{2}\\text{O}(g)$<br>（e）$2{\\text{H}}_{2}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{H}}_{2}\\text{O}(l)$<br>（f）$2\\text{HCl}(g)+\\text{Pb}(s)\\;\\longrightarrow \\;{\\text{PbCl}}_{2}(s)+{\\text{H}}_{2}(g)$<br>（g）$\\text{Zn}(s)+{\\text{CuSO}}_{4}(s)\\;\\longrightarrow \\;\\text{Cu}(s)+{\\text{ZnSO}}_{4}(s)$",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "(a)",
+            "value": 107,
+            "unit": "J/K",
+            "hint": "从附录 G 中取出每个标准熵，乘以其系数，再用产物之和减去反应物之和。"
+          },
+          {
+            "part": "(b)",
+            "value": -86.7,
+            "unit": "J/K"
+          },
+          {
+            "part": "(c)",
+            "value": 133.2,
+            "unit": "J/K"
+          },
+          {
+            "part": "(d)",
+            "value": 118.8,
+            "unit": "J/K"
+          },
+          {
+            "part": "(e)",
+            "value": -326.6,
+            "unit": "J/K"
+          },
+          {
+            "part": "(f)",
+            "value": -171.9,
+            "unit": "J/K"
+          },
+          {
+            "part": "(g)",
+            "value": -7.2,
+            "unit": "J/K"
+          }
+        ],
+        "solution": "（a）107 J/K；（b）−86.7 J/K；（c）133.2 J/K；（d）118.8 J/K；（e）−326.6 J/K；（f）−171.9 J/K；（g）−7.2 J/K"
+      }
+    },
+    {
+      "id": "e23",
+      "source_id": "fs-idp170448352",
+      "source_number": "23",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "ex-methanol",
+      "prompt": "确定气态丙烷 C<sub>3</sub>H<sub>8</sub> 在标准条件下燃烧生成气态二氧化碳和水的熵变。",
+      "answer": {
+        "type": "number",
+        "value": 100.3,
+        "unit": "J/K",
+        "tol": 0.005,
+        "generated_by": "source",
+        "hint": "配平 C<sub>3</sub>H<sub>8</sub>(<em>g</em>) + O<sub>2</sub>(<em>g</em>) ⟶ CO<sub>2</sub>(<em>g</em>) + H<sub>2</sub>O(<em>g</em>)，再像例 16.6 那样组合标准熵。",
+        "solution": "100.3 J/K"
+      }
+    },
+    {
+      "id": "e25",
+      "source_id": "fs-idp175070256",
+      "source_number": "25",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "third-law",
+      "prompt": "利用<a href=\"/chemistry-2e/sheets/thermo/\">附录 G</a> 中列出的相关 $S^{\\circ}$ 值，计算下列变化的 ${\\text{Δ}S^{\\circ}}_{298}$：<br>（a）${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\;\\longrightarrow \\;2{\\text{NH}}_{3}(g)$<br>（b）${\\text{N}}_{2}(g)+\\;\\frac{5}{2}{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{N}}_{2}{\\text{O}}_{5}(g)$",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "(a)",
+            "value": -198.1,
+            "unit": "J/K",
+            "hint": "在附录 G 中查出 N<sub>2</sub>、H<sub>2</sub>、NH<sub>3</sub>、O<sub>2</sub> 和 N<sub>2</sub>O<sub>5</sub> 的 $S^{\\circ}$，并按各自的系数加权，包括分数 5/2 在内。"
+          },
+          {
+            "part": "(b)",
+            "value": -348.9,
+            "unit": "J/K"
+          }
+        ],
+        "solution": "（a）−198.1 J/K；（b）−348.9 J/K"
+      }
+    },
+    {
+      "id": "e27",
+      "source_id": "fs-idp194136688",
+      "source_number": "27",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "ex-ice",
+      "prompt": "通过计算每个温度下的 Δ<em>S</em><sub>univ</sub>，判断 1 mol NaCl(<em>s</em>) 的熔化在 500 °C 和 700 °C 时是否自发。<br>${S}_{\\text{NaCl}(s)}^{{}^{\\circ}}=72.11\\frac{\\text{J}}{\\text{mol·K}}\\hspace{3em}{S}_{\\text{NaCl}(l)}^{{}^{\\circ}}=95.06\\;\\frac{\\text{J}}{\\text{mol·K}}\\hspace{3em}\\text{Δ}{H}_{\\text{熔化}}^{{}^{\\circ}}=\\text{27.95 kJ/mol}$<br>对于解此题所用的热力学信息（熵值和焓值），作了哪些假设？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "由于在这两个温度下 Δ<em>S</em><sub>univ</sub> &lt; 0，所以在这两个温度下熔化都不是自发的。所给的熵值和焓值是 NaCl 在 298 K 时的数值。这里假设它们在题中所用的较高温度下没有显著变化。"
+      }
+    },
+    {
+      "id": "e29",
+      "source_id": "fs-idp127896592",
+      "source_number": "29",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "third-law",
+      "prompt": "利用<a href=\"/chemistry-2e/sheets/thermo/\">附录 G</a> 中的标准熵数据，确定下列每个反应的熵变。所有过程都在标准条件和 25 °C 下发生。<br>（a）$\\text{C}(s\\text{, 石墨})+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{CO}}_{2}(g)$<br>（b）${\\text{O}}_{2}(g)+{\\text{N}}_{2}(g)\\;\\longrightarrow \\;\\text{2NO}(g)$<br>（c）$\\text{2Cu}(s)+\\text{S}(g)\\;\\longrightarrow \\;{\\text{Cu}}_{2}\\text{S}(s)$<br>（d）$\\text{CaO}(s)+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{Ca}{(\\text{OH})}_{2}(s)$<br>（e）${\\text{Fe}}_{2}{\\text{O}}_{3}(s)+\\text{3CO}(g)\\;\\longrightarrow \\;\\text{2Fe}(s)+{\\text{3CO}}_{2}(g)$<br>（f）${\\text{CaSO}}_{4}\\text{·}{\\text{2H}}_{2}\\text{O}(s)\\;\\longrightarrow \\;{\\text{CaSO}}_{4}(s)+{\\text{2H}}_{2}\\text{O}(g)$",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "(a)",
+            "value": 2.86,
+            "unit": "J/K",
+            "hint": "每个标准熵都在附录 G 中；乘以系数，再用产物之和减去反应物之和。"
+          },
+          {
+            "part": "(b)",
+            "value": 24.8,
+            "unit": "J/K"
+          },
+          {
+            "part": "(c)",
+            "value": -113.2,
+            "unit": "J/K"
+          },
+          {
+            "part": "(d)",
+            "value": -24.7,
+            "unit": "J/K"
+          },
+          {
+            "part": "(e)",
+            "value": 15.5,
+            "unit": "J/K"
+          },
+          {
+            "part": "(f)",
+            "value": 290.0,
+            "unit": "J/K"
+          }
+        ],
+        "solution": "（a）2.86 J/K；（b）24.8 J/K；（c）−113.2 J/K；（d）−24.7 J/K；（e）15.5 J/K；（f）290.0 J/K"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "predict-spontaneity-from-entropy"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "entropy-change-of-surroundings"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "calculate-standard-entropy-change"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "calculate-standard-entropy-change"
+    },
+    {
+      "exercise": "e20",
+      "concept": "standard-entropy-change"
+    },
+    {
+      "exercise": "e20",
+      "concept": "entropy"
+    },
+    {
+      "exercise": "e21",
+      "concept": "calculate-standard-entropy-change"
+    },
+    {
+      "exercise": "e21",
+      "concept": "standard-entropy"
+    },
+    {
+      "exercise": "e23",
+      "concept": "calculate-standard-entropy-change"
+    },
+    {
+      "exercise": "e23",
+      "concept": "combustion-reaction"
+    },
+    {
+      "exercise": "e25",
+      "concept": "calculate-standard-entropy-change"
+    },
+    {
+      "exercise": "e27",
+      "concept": "predict-spontaneity-from-entropy"
+    },
+    {
+      "exercise": "e27",
+      "concept": "entropy-change-of-universe"
+    },
+    {
+      "exercise": "e27",
+      "concept": "entropy-change-of-surroundings"
+    },
+    {
+      "exercise": "e29",
+      "concept": "calculate-standard-entropy-change"
+    }
+  ],
+  "footnotes": [
+    {
+      "id": "c-s-univ-example",
+      "kind": "correction",
+      "html": "书中此处写作 $S_{\\text{univ}} &lt; 0$，而在下一段写作 $S_{\\text{univ}} &gt; 0$。宇宙的熵总是正的；上面的求和给出的是变化量，在 −10.00 °C 时 $\\kdSuniv &lt; 0$，在 10.00 °C 时 $\\kdSuniv &gt; 0$。"
+    },
+    {
+      "id": "c-s-univ-summary",
+      "kind": "correction",
+      "html": "书中写作 $S_{\\text{univ}} &gt; 0$。第二定律是关于变化量的陈述，即 $\\kdSuniv &gt; 0$，如下一句所写。"
+    }
+  ]
+}

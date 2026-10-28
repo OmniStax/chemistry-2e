@@ -1,0 +1,1144 @@
+{
+ "types": [
+  {
+   "id": "heat-capacity",
+   "label": "热容",
+   "dimension": "J/°C"
+  }
+ ],
+ "symbols": [
+  {
+   "sym": "ΔT",
+   "latex": "\\Delta T",
+   "macro": "\\kdT"
+  },
+  {
+   "sym": "T_initial",
+   "latex": "T_{\\text{initial}}",
+   "macro": "\\kTinit"
+  },
+  {
+   "sym": "T_final",
+   "latex": "T_{\\text{final}}",
+   "macro": "\\kTfin"
+  },
+  {
+   "sym": "C_heat",
+   "latex": "C",
+   "macro": "\\kC"
+  },
+  {
+   "sym": "c_spec",
+   "latex": "c",
+   "macro": "\\kcspec"
+  },
+  {
+   "sym": "U",
+   "latex": "U",
+   "macro": "\\kU"
+  },
+  {
+   "sym": "H",
+   "latex": "H",
+   "macro": "\\kH"
+  },
+  {
+   "sym": "q_p",
+   "latex": "q_{\\text{p}}",
+   "macro": "\\kqp"
+  },
+  {
+   "sym": "ΔH_c°",
+   "latex": "\\Delta H_{\\text{c}}^{\\circ}",
+   "macro": "\\kdHc"
+  },
+  {
+   "sym": "ΔV",
+   "latex": "\\Delta V",
+   "macro": "\\kdV"
+  },
+  {
+   "sym": "n_coef",
+   "latex": "n"
+  },
+  {
+   "sym": "C_small_pan",
+   "latex": "C_{\\text{small pan}}",
+   "macro": "\\kCsmallpan"
+  },
+  {
+   "sym": "C_large_pan",
+   "latex": "C_{\\text{large pan}}",
+   "macro": "\\kClargepan"
+  },
+  {
+   "sym": "q_M",
+   "latex": "q_{\\text{substance M}}",
+   "macro": "\\kqM"
+  },
+  {
+   "sym": "q_W",
+   "latex": "q_{\\text{substance W}}",
+   "macro": "\\kqW"
+  },
+  {
+   "sym": "q_solution",
+   "latex": "q_{\\text{solution}}",
+   "macro": "\\kqsolution"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "energy-and-work",
+   "kind": "definition",
+   "section": "5.1",
+   "name": "能量",
+   "symbol": "E",
+   "terms": [
+    "能量"
+   ],
+   "type": "energy",
+   "statement": "能量是供给热量或做功的能力。做功是能量所做的两类事情之一：使物质逆着相反的作用力运动，例如打气筒把空气压进轮胎时所做的功。"
+  },
+  {
+   "id": "potential-and-kinetic-energy",
+   "kind": "idea",
+   "section": "5.1",
+   "name": "势能与动能",
+   "statement": "能量可以分为两类：势能，是物体因其位置、组成或状态而具有的能量；动能，是物体因其运动而具有的能量。汽油中储存的化学能是势能，热能则是动能。"
+  },
+  {
+   "id": "conservation-of-energy",
+   "kind": "axiom",
+   "section": "5.1",
+   "name": "能量守恒定律",
+   "statement": "在化学变化或物理变化中，能量既不能被创造，也不能被消灭，但可以改变形式。因此，反应放出的热量必定出现在别的地方。"
+  },
+  {
+   "id": "thermal-energy-and-temperature",
+   "kind": "idea",
+   "section": "5.1",
+   "name": "热能与温度",
+   "statement": "热能是原子和分子无规则运动的动能，温度则是衡量样品冷热程度的量，随粒子平均动能的增大而升高。二者并不相同：一堆篝火和一根火柴可以温度相同，所含的热能却相差悬殊。"
+  },
+  {
+   "id": "heat-flow",
+   "kind": "definition",
+   "section": "5.1",
+   "name": "热量",
+   "symbol": "q",
+   "terms": [
+    "热量"
+   ],
+   "type": "energy",
+   "statement": "热量是处于不同温度的两个物体之间热能的传递。它自发地从较热的物体流向较冷的物体，使前者的平均动能降低、后者的平均动能升高，直到二者达到热平衡、温度相同为止。"
+  },
+  {
+   "id": "exothermic-and-endothermic",
+   "kind": "definition",
+   "section": "5.1",
+   "name": "放热过程与吸热过程",
+   "statement": "放出热量的化学反应或物理变化是放热的，吸收热量的则是吸热的。放热过程使环境变热，吸热过程使环境变冷。"
+  },
+  {
+   "id": "energy-units",
+   "kind": "skill",
+   "section": "5.1",
+   "name": "能量单位的换算",
+   "statement": "能量的 SI 单位是焦耳，但化学家仍常使用卡，食品标签则以大卡为单位给出能量，每 1 大卡是 1 千卡。1 卡恰好等于 4.184 焦耳。能熟练地在这些单位之间换算，才能读懂食品标签，或比较以任一单位给出的结果。"
+  },
+  {
+   "id": "heat-capacity-and-specific-heat",
+   "kind": "definition",
+   "section": "5.1",
+   "name": "热容与比热容",
+   "statement": "物体的热容是它的温度变化 1 °C 时所吸收或放出的热量，它随物质的多少而增大，因此是广度性质。比热容是使 1 g 某种物质的温度升高 1 °C 所需的热量，它只取决于物质的种类，因此是强度性质。"
+  },
+  {
+   "id": "heat-specific-heat-relation",
+   "kind": "result",
+   "section": "5.1",
+   "name": "热量与比热容",
+   "statement": "物质吸收或放出的热量，等于它的比热容、质量与温度变化三者的乘积，温度变化取最终温度减去初始温度。q 的符号由这个差值决定：物质升温时为正，降温时为负；只要已知其中三个量，就能求出第四个。",
+   "forms": [
+    {
+     "id": "eq-heat",
+     "latex": "q=c\\times m\\times\\Delta T=c\\times m\\times(T_{\\text{final}}-T_{\\text{initial}})",
+     "ktex": "\\kq=c\\times\\km\\times\\kdT=c\\times\\km\\times(\\kTfin-\\kTinit)",
+     "condition": "不发生化学反应或相变，且在该温度范围内把比热容视为常数",
+     "anchor": "5.1-heat-equation"
+    }
+   ]
+  },
+  {
+   "id": "thermochemistry",
+   "kind": "definition",
+   "section": "5.1",
+   "name": "热化学",
+   "terms": [
+    "热化学"
+   ],
+   "statement": "热化学是测量化学反应或物理变化中所吸收或放出的热量的科学。"
+  },
+  {
+   "id": "work",
+   "kind": "definition",
+   "section": "5.1",
+   "name": "功",
+   "symbol": "w",
+   "terms": [
+    "功"
+   ],
+   "type": "energy",
+   "statement": "功是使物质逆着相反的作用力运动，或改变压强、体积等外部宏观变量的能量传递。"
+  },
+  {
+   "id": "potential-energy",
+   "kind": "definition",
+   "section": "5.1",
+   "name": "势能",
+   "terms": [
+    "势能"
+   ],
+   "statement": "势能是粒子或粒子体系因其相对位置、组成或状态而具有的能量。"
+  },
+  {
+   "id": "kinetic-energy",
+   "kind": "definition",
+   "section": "5.1",
+   "name": "动能",
+   "symbol": "KE",
+   "terms": [
+    "动能"
+   ],
+   "type": "energy",
+   "statement": "动能是物体因其运动而具有的能量，等于其质量与速度平方之积的二分之一。",
+   "forms": [
+    {
+     "id": "eq-kinetic-energy",
+     "latex": "\\text{KE}=\\frac{1}{2}mu^2",
+     "ktex": "\\kKE=\\frac{1}{2}\\km u^2",
+     "condition": "质量为 m、以速率 u 运动的粒子",
+     "section": "9.5",
+     "anchor": "9.5-speeds"
+    },
+    {
+     "id": "eq-kinetic-energy-2",
+     "latex": "KE = \\frac{1}{2}mv^2"
+    }
+   ]
+  },
+  {
+   "id": "thermal-energy",
+   "kind": "definition",
+   "section": "5.1",
+   "name": "热能",
+   "terms": [
+    "热能"
+   ],
+   "statement": "热能是与原子和分子的无规则运动相联系的动能。"
+  },
+  {
+   "id": "exothermic-process",
+   "kind": "definition",
+   "section": "5.1",
+   "name": "放热过程",
+   "terms": [
+    "放热过程"
+   ],
+   "statement": "放热过程是放出热量的化学反应或物理变化。"
+  },
+  {
+   "id": "endothermic-process",
+   "kind": "definition",
+   "section": "5.1",
+   "name": "吸热过程",
+   "terms": [
+    "吸热过程"
+   ],
+   "statement": "吸热过程是吸收热量的化学反应或物理变化。"
+  },
+  {
+   "id": "joule",
+   "kind": "definition",
+   "section": "5.1",
+   "name": "焦耳",
+   "terms": [
+    "焦耳（J）"
+   ],
+   "statement": "焦耳是能量的 SI 单位，等于 1 N 的力使物体移动 1 m 所用的能量。",
+   "forms": [
+    {
+     "id": "eq-joule",
+     "latex": "1\\ \\text{J} = 1\\ \\text{kg m}^2/\\text{s}^2"
+    }
+   ]
+  },
+  {
+   "id": "calorie",
+   "kind": "definition",
+   "section": "5.1",
+   "name": "卡",
+   "terms": [
+    "卡（cal）"
+   ],
+   "statement": "卡是热量或其他能量的单位，是使 1 g 水的温度升高 1 °C 所需的能量。1 卡恰好等于 4.184 焦耳。",
+   "forms": [
+    {
+     "id": "eq-calorie",
+     "latex": "1\\ \\text{cal} = 4.184\\ \\text{J}"
+    }
+   ]
+  },
+  {
+   "id": "heat-capacity",
+   "kind": "definition",
+   "section": "5.1",
+   "name": "热容",
+   "symbol": "C_heat",
+   "terms": [
+    "热容"
+   ],
+   "type": "heat-capacity",
+   "statement": "一个物体的热容是使其温度升高 1 °C 所需的热量。它是广度性质，随物体中物质的多少而增大。",
+   "forms": [
+    {
+     "id": "eq-heat-capacity",
+     "latex": "C=\\frac{q}{\\Delta T}",
+     "ktex": "C=\\frac{\\kq}{\\kdT}",
+     "condition": "物体吸收或放出热量 q，且不发生化学反应或相变",
+     "anchor": "5.1-capacity"
+    }
+   ]
+  },
+  {
+   "id": "specific-heat-capacity",
+   "kind": "definition",
+   "section": "5.1",
+   "name": "比热容",
+   "symbol": "c_spec",
+   "terms": [
+    "比热容"
+   ],
+   "type": "heat-capacity",
+   "statement": "物质的比热容是使 1 g 该物质的温度升高 1 °C 所需的热量。它是强度性质，仅取决于物质的种类。",
+   "forms": [
+    {
+     "id": "eq-specific-heat",
+     "latex": "c=\\frac{q}{m\\,\\Delta T}",
+     "ktex": "c=\\frac{\\kq}{\\km\\,\\kdT}",
+     "condition": "同一种物质的样品，不发生化学反应或相变",
+     "anchor": "5.1-capacity"
+    }
+   ]
+  },
+  {
+   "id": "system-and-surroundings",
+   "kind": "definition",
+   "section": "5.2",
+   "name": "体系与环境",
+   "statement": "体系是正在研究的化学变化或物理变化所涉及的那部分物质，环境则是其余的一切，它们向体系供给热量，或从体系带走热量。热量的符号是站在体系的立场上取定的。"
+  },
+  {
+   "id": "calorimetry-heat-balance",
+   "kind": "result",
+   "section": "5.2",
+   "name": "量热计中的热量平衡",
+   "statement": "把热的金属放入理想量热计中的冷水时，一方失去的热量全部被另一方得到，所以两个热量之和为零，一个是另一个的负值。负号记录的是热量流动方向相反，并不能由它直接确定任何一个热量的符号。",
+   "forms": [
+    {
+     "id": "eq-heat-balance",
+     "latex": "q_{\\text{substance M}}+q_{\\text{substance W}}=0",
+     "ktex": "\\kq_{\\text{substance M}}+\\kq_{\\text{substance W}}=0",
+     "condition": "理想量热计，其中全部热传递都发生在这两种物质之间",
+     "anchor": "5.2-heat-balance"
+    }
+   ]
+  },
+  {
+   "id": "heat-of-reaction-by-calorimetry",
+   "kind": "result",
+   "section": "5.2",
+   "name": "用量热法求反应热",
+   "statement": "因为能量既不被创造也不被消灭，量热计中的反应所产生或消耗的热量，等于周围溶液所吸收或失去的热量，二者符号相反。这是所有量热问题的核心概念：测出溶液的温度变化，就能由此求出反应的热量。",
+   "forms": [
+    {
+     "id": "eq-heat-reaction",
+     "latex": "q_{\\text{reaction}}=-q_{\\text{solution}}",
+     "ktex": "\\kq_{\\text{reaction}}=-\\kq_{\\text{solution}}",
+     "condition": "量热计本身不吸收热量，也不与外界环境交换热量",
+     "anchor": "5.2-reaction-heat"
+    }
+   ]
+  },
+  {
+   "id": "coffee-cup-calorimetry",
+   "kind": "skill",
+   "section": "5.2",
+   "name": "咖啡杯量热法",
+   "statement": "咖啡杯量热计测得的是温度变化，要把它化为热量，需要作出合理的假设，并明确说明。假设没有热量传到外界或杯子中，并且稀溶液的比热容和密度与水相同。把这些假设贯彻到底，求出符号正确的热量。"
+  },
+  {
+   "id": "bomb-calorimetry",
+   "kind": "skill",
+   "section": "5.2",
+   "name": "弹式量热法",
+   "statement": "弹式量热计在恒容条件下工作，用于燃烧这类放出大量热量并生成气体产物的反应。反应的热量由水和钢制弹体分担，所以计算时要把水吸收的热量，加上弹体的热容与温升之积。",
+   "forms": [
+    {
+     "id": "eq-bomb",
+     "latex": "q_{\\text{rxn}}=-(q_{\\text{water}}+q_{\\text{bomb}})",
+     "ktex": "\\kq_{\\text{rxn}}=-(\\kq_{\\text{water}}+\\kq_{\\text{bomb}})",
+     "condition": "弹式量热计，忽略产物和过量氧气所吸收的热量",
+     "anchor": "5.2-ex-bomb"
+    }
+   ]
+  },
+  {
+   "id": "food-calories",
+   "kind": "skill",
+   "section": "5.2",
+   "name": "计算食物中的大卡数",
+   "statement": "食品标签以大卡为单位给出能量。阿特沃特系统根据一份食物中蛋白质、碳水化合物和脂肪的克数，以及它们每克的平均大卡数来计算，这些数值来自弹式量热法。用这个求和，就可以核对标签，并比较不同的食物。"
+  },
+  {
+   "id": "system",
+   "kind": "definition",
+   "section": "5.2",
+   "name": "体系",
+   "terms": [
+    "体系"
+   ],
+   "statement": "体系是正在研究的化学变化或物理变化所涉及的那部分物质。"
+  },
+  {
+   "id": "surroundings",
+   "kind": "definition",
+   "section": "5.2",
+   "name": "环境",
+   "terms": [
+    "环境"
+   ],
+   "statement": "环境是除所研究的体系之外的全部物质。"
+  },
+  {
+   "id": "calorimetry",
+   "kind": "definition",
+   "section": "5.2",
+   "name": "量热法",
+   "terms": [
+    "量热法"
+   ],
+   "statement": "量热法是对化学过程或物理过程所涉及的热量进行测量的过程。"
+  },
+  {
+   "id": "calorimeter",
+   "kind": "definition",
+   "section": "5.2",
+   "name": "量热计",
+   "terms": [
+    "量热计"
+   ],
+   "statement": "量热计是用来测量化学过程或物理过程中吸收或放出热量的装置。"
+  },
+  {
+   "id": "bomb-calorimeter",
+   "kind": "definition",
+   "section": "5.2",
+   "name": "弹式量热计",
+   "terms": [
+    "弹式量热计"
+   ],
+   "statement": "弹式量热计是设计用来测量恒容过程能量变化的装置，常用于燃烧这类放出大量热量并生成气体产物的反应。"
+  },
+  {
+   "id": "nutritional-calorie",
+   "kind": "definition",
+   "section": "5.2",
+   "name": "大卡",
+   "terms": [
+    "大卡（Cal）"
+   ],
+   "statement": "大卡是营养学中表示食物消化所提供能量的单位，定义为 1000 卡，即 1 千卡。",
+   "forms": [
+    {
+     "id": "eq-nutritional-calorie",
+     "latex": "1\\ \\text{Cal} = 1\\ \\text{kcal}"
+    }
+   ]
+  },
+  {
+   "id": "first-law-of-thermodynamics",
+   "kind": "axiom",
+   "section": "5.3",
+   "name": "热力学第一定律",
+   "terms": [
+    "热力学第一定律"
+   ],
+   "statement": "体系的内能只因热量流入或流出体系，以及对体系做功或体系做功而改变。符号取体系一侧：热量流入时 q 为正，对体系做功时 w 为正。因此，既放出热量又做功的体系，内能在两方面都减少，发动机气缸中的气体就是这样。",
+   "forms": [
+    {
+     "id": "eq-first-law",
+     "latex": "\\Delta U=q+w",
+     "ktex": "\\kdU=\\kq+\\kwork",
+     "anchor": "5.3-first-law"
+    }
+   ]
+  },
+  {
+   "id": "state-function",
+   "kind": "definition",
+   "section": "5.3",
+   "name": "状态函数",
+   "terms": [
+    "状态函数"
+   ],
+   "statement": "状态函数的值只取决于体系所处的状态，而与该状态是如何达到的无关。内能和焓是状态函数，热量和功则不是，就像山顶的海拔与攀登的路线无关，而走过的路程却与路线有关。盖斯定律就建立在这一性质上。"
+  },
+  {
+   "id": "enthalpy-change-at-constant-pressure",
+   "kind": "result",
+   "section": "5.3",
+   "name": "恒压下的焓变",
+   "type": "energy",
+   "statement": "焓是体系的内能与其压强和体积之积的和。对于恒压且只做膨胀功的过程，焓变等于热量流动，所以通常在大气的恒定压强下工作的化学家用焓来描述反应的热量。在恒容的弹式量热计中测得的热量不是 ΔH。",
+   "forms": [
+    {
+     "id": "eq-dh-qp",
+     "latex": "\\Delta H=q_{\\text{p}}",
+     "ktex": "\\kdH=\\kqp",
+     "condition": "恒压过程，且所做的功仅由膨胀或收缩引起",
+     "anchor": "5.3-enthalpy"
+    }
+   ]
+  },
+  {
+   "id": "thermochemical-equations",
+   "kind": "skill",
+   "section": "5.3",
+   "name": "热化学方程式的书写与换算",
+   "statement": "热化学方程式在配平的方程式之后给出 ΔH，对应于方程式所示的以摩尔计的物质的量。由于 ΔH 是广度性质，它随系数按比例变化；把方程式反过来写，它的符号改变；它还取决于所写的物态。要把这三条规则都用上，并且在把测得的热量化为 ΔH 时考虑限量反应物。"
+  },
+  {
+   "id": "enthalpy-of-combustion",
+   "kind": "skill",
+   "section": "5.3",
+   "name": "使用标准燃烧焓",
+   "statement": "标准燃烧焓是 1 mol 物质在标准状态条件下完全燃烧时的焓变。有了它，再借助前几章的换算，就能求出任意量的燃料放出的热量，例如由异辛烷的值可以得出 1.00 L 汽油放出的热量。"
+  },
+  {
+   "id": "standard-enthalpy-of-formation",
+   "kind": "definition",
+   "section": "5.3",
+   "name": "标准生成焓",
+   "symbol": "ΔH_f°",
+   "terms": [
+    "标准生成焓"
+   ],
+   "type": "energy",
+   "statement": "标准状态是一组约定的参考条件，即 1 bar 和 1 M，并默认温度为 298.15 K，ΔH° 表示这些条件下的焓变。标准生成焓是由处于最稳定状态的单质生成恰好 1 mol 某物质的 ΔH°，所以处于最稳定形式的单质，其值为零，而生成反应的方程式常带有分数系数。"
+  },
+  {
+   "id": "hess-law",
+   "kind": "result",
+   "section": "5.3",
+   "name": "盖斯定律",
+   "terms": [
+    "盖斯定律"
+   ],
+   "statement": "如果一个过程是几个分步过程之和，则总过程的焓变等于各步焓变之和。这样，对于难以进行或有危险的反应，就可以把已知焓变的反应按需要反过来写或按比例换算后相加，求出其焓变。"
+  },
+  {
+   "id": "enthalpy-from-formation-enthalpies",
+   "kind": "skill",
+   "section": "5.3",
+   "name": "由生成焓求反应焓变",
+   "statement": "应用盖斯定律：把反应物分解为各自的单质，再重新生成产物。任一反应的标准焓变就等于各产物的生成焓乘以 n 之和，减去反应物的同样之和。借助附录 G 的表，可以计算没有人直接测量过的反应的 ΔH°。",
+   "forms": [
+    {
+     "id": "eq-hess-formation",
+     "latex": "\\Delta H_{\\text{reaction}}^{\\circ}=\\sum n\\times\\Delta H_{\\text{f}}^{\\circ}(\\text{products})-\\sum n\\times\\Delta H_{\\text{f}}^{\\circ}(\\text{reactants})",
+     "ktex": "\\kdHo_{\\text{reaction}}=\\sum n\\times\\kdHf(\\text{products})-\\sum n\\times\\kdHf(\\text{reactants})",
+     "condition": "标准状态条件，n 为配平的方程式中的化学计量系数",
+     "anchor": "5.3-formation-enthalpies"
+    }
+   ]
+  },
+  {
+   "id": "chemical-thermodynamics",
+   "kind": "definition",
+   "section": "5.3",
+   "name": "化学热力学",
+   "terms": [
+    "化学热力学"
+   ],
+   "statement": "化学热力学是研究与化学过程和物理过程相关的热量、功及各种形式能量之间关系的科学领域。"
+  },
+  {
+   "id": "internal-energy",
+   "kind": "definition",
+   "section": "5.3",
+   "name": "内能",
+   "symbol": "U",
+   "terms": [
+    "内能"
+   ],
+   "type": "energy",
+   "statement": "体系的内能是其所含物质中存在的所有可能形式的能量的总和。"
+  },
+  {
+   "id": "expansion-work",
+   "kind": "definition",
+   "section": "5.3",
+   "name": "膨胀功",
+   "terms": [
+    "膨胀功（压强–体积功）"
+   ],
+   "statement": "膨胀功，或称压强–体积功，是体系抵抗外压膨胀或收缩时所做的功。",
+   "forms": [
+    {
+     "id": "eq-expansion-work",
+     "latex": "P\\Delta V=-w",
+     "ktex": "\\kP\\kdV=-\\kwork",
+     "condition": "膨胀功或压强–体积功",
+     "anchor": "5.3-enthalpy"
+    }
+   ]
+  },
+  {
+   "id": "enthalpy",
+   "kind": "definition",
+   "section": "5.3",
+   "name": "焓",
+   "symbol": "H",
+   "terms": [
+    "焓"
+   ],
+   "type": "energy",
+   "statement": "体系的焓是其内能与压强和体积之积的和。",
+   "forms": [
+    {
+     "id": "eq-enthalpy",
+     "latex": "H=U+PV",
+     "ktex": "\\kH=\\kU+\\kP\\kV",
+     "anchor": "5.3-enthalpy"
+    }
+   ]
+  },
+  {
+   "id": "enthalpy-change",
+   "kind": "definition",
+   "section": "5.3",
+   "name": "焓变",
+   "symbol": "ΔH",
+   "terms": [
+    "焓变"
+   ],
+   "type": "energy",
+   "statement": "一个过程的焓变是体系焓的变化，当过程在恒压下进行时，它等于体系放出或吸收的热量。",
+   "forms": [
+    {
+     "id": "eq-enthalpy-change",
+     "latex": "\\Delta H=\\Delta U+P\\Delta V",
+     "ktex": "\\kdH=\\kdU+\\kP\\kdV",
+     "condition": "恒压过程",
+     "anchor": "5.3-enthalpy"
+    }
+   ]
+  },
+  {
+   "id": "standard-state",
+   "kind": "definition",
+   "section": "5.3",
+   "name": "标准状态",
+   "terms": [
+    "标准状态"
+   ],
+   "statement": "标准状态是被公认为报告热力学性质的共同参考条件的一组物理条件：压强 1 bar、浓度 1 M，并默认温度为 298.15 K。焓变符号上的度符号（°）表示该过程在这些条件下进行。"
+  },
+  {
+   "id": "hydrocarbon",
+   "kind": "definition",
+   "section": "5.3",
+   "name": "烃",
+   "terms": [
+    "烃"
+   ],
+   "statement": "烃是只由氢和碳组成的化合物，是化石燃料的主要成分。"
+  },
+  {
+   "id": "standard-enthalpy-of-combustion",
+   "kind": "definition",
+   "section": "5.3",
+   "name": "标准燃烧焓",
+   "symbol": "ΔH_c°",
+   "terms": [
+    "标准燃烧焓"
+   ],
+   "type": "energy",
+   "statement": "物质的标准燃烧焓是 1 mol 该物质在标准状态条件下完全燃烧时的焓变。"
+  }
+ ],
+ "concept_prereqs": [
+  {
+   "concept": "potential-and-kinetic-energy",
+   "prereq": "energy-and-work"
+  },
+  {
+   "concept": "conservation-of-energy",
+   "prereq": "potential-and-kinetic-energy"
+  },
+  {
+   "concept": "conservation-of-energy",
+   "prereq": "conservation-of-matter"
+  },
+  {
+   "concept": "thermal-energy-and-temperature",
+   "prereq": "potential-and-kinetic-energy"
+  },
+  {
+   "concept": "thermal-energy-and-temperature",
+   "prereq": "temperature-scales"
+  },
+  {
+   "concept": "heat-flow",
+   "prereq": "thermal-energy-and-temperature"
+  },
+  {
+   "concept": "exothermic-and-endothermic",
+   "prereq": "heat-flow"
+  },
+  {
+   "concept": "exothermic-and-endothermic",
+   "prereq": "physical-and-chemical-change"
+  },
+  {
+   "concept": "energy-units",
+   "prereq": "energy-and-work"
+  },
+  {
+   "concept": "energy-units",
+   "prereq": "convert-units"
+  },
+  {
+   "concept": "heat-capacity-and-specific-heat",
+   "prereq": "heat-flow"
+  },
+  {
+   "concept": "heat-capacity-and-specific-heat",
+   "prereq": "extensive-and-intensive-properties"
+  },
+  {
+   "concept": "heat-specific-heat-relation",
+   "prereq": "heat-capacity-and-specific-heat"
+  },
+  {
+   "concept": "heat-specific-heat-relation",
+   "prereq": "compute-with-units"
+  },
+  {
+   "concept": "system-and-surroundings",
+   "prereq": "heat-flow"
+  },
+  {
+   "concept": "calorimetry-heat-balance",
+   "prereq": "system-and-surroundings"
+  },
+  {
+   "concept": "calorimetry-heat-balance",
+   "prereq": "conservation-of-energy"
+  },
+  {
+   "concept": "calorimetry-heat-balance",
+   "prereq": "heat-specific-heat-relation"
+  },
+  {
+   "concept": "heat-of-reaction-by-calorimetry",
+   "prereq": "calorimetry-heat-balance"
+  },
+  {
+   "concept": "heat-of-reaction-by-calorimetry",
+   "prereq": "exothermic-and-endothermic"
+  },
+  {
+   "concept": "coffee-cup-calorimetry",
+   "prereq": "heat-of-reaction-by-calorimetry"
+  },
+  {
+   "concept": "coffee-cup-calorimetry",
+   "prereq": "density"
+  },
+  {
+   "concept": "bomb-calorimetry",
+   "prereq": "heat-of-reaction-by-calorimetry"
+  },
+  {
+   "concept": "bomb-calorimetry",
+   "prereq": "heat-capacity-and-specific-heat"
+  },
+  {
+   "concept": "food-calories",
+   "prereq": "energy-units"
+  },
+  {
+   "concept": "food-calories",
+   "prereq": "bomb-calorimetry"
+  },
+  {
+   "concept": "first-law-of-thermodynamics",
+   "prereq": "conservation-of-energy"
+  },
+  {
+   "concept": "first-law-of-thermodynamics",
+   "prereq": "system-and-surroundings"
+  },
+  {
+   "concept": "state-function",
+   "prereq": "first-law-of-thermodynamics"
+  },
+  {
+   "concept": "enthalpy-change-at-constant-pressure",
+   "prereq": "first-law-of-thermodynamics"
+  },
+  {
+   "concept": "enthalpy-change-at-constant-pressure",
+   "prereq": "state-function"
+  },
+  {
+   "concept": "thermochemical-equations",
+   "prereq": "enthalpy-change-at-constant-pressure"
+  },
+  {
+   "concept": "thermochemical-equations",
+   "prereq": "heat-of-reaction-by-calorimetry"
+  },
+  {
+   "concept": "enthalpy-of-combustion",
+   "prereq": "thermochemical-equations"
+  },
+  {
+   "concept": "standard-enthalpy-of-formation",
+   "prereq": "thermochemical-equations"
+  },
+  {
+   "concept": "hess-law",
+   "prereq": "state-function"
+  },
+  {
+   "concept": "hess-law",
+   "prereq": "thermochemical-equations"
+  },
+  {
+   "concept": "enthalpy-from-formation-enthalpies",
+   "prereq": "hess-law"
+  },
+  {
+   "concept": "enthalpy-from-formation-enthalpies",
+   "prereq": "standard-enthalpy-of-formation"
+  },
+  {
+   "concept": "thermochemical-equations",
+   "prereq": "balanced-equation"
+  },
+  {
+   "concept": "thermochemical-equations",
+   "prereq": "identify-limiting-reactant"
+  },
+  {
+   "concept": "thermochemical-equations",
+   "prereq": "mass-mole-conversion"
+  },
+  {
+   "concept": "thermochemical-equations",
+   "prereq": "molar-mass"
+  },
+  {
+   "concept": "enthalpy-of-combustion",
+   "prereq": "mass-mole-conversion"
+  },
+  {
+   "concept": "enthalpy-of-combustion",
+   "prereq": "molar-mass"
+  },
+  {
+   "concept": "enthalpy-from-formation-enthalpies",
+   "prereq": "balanced-equation"
+  },
+  {
+   "concept": "coffee-cup-calorimetry",
+   "prereq": "molarity"
+  },
+  {
+   "concept": "thermochemistry",
+   "prereq": "heat-flow"
+  },
+  {
+   "concept": "work",
+   "prereq": "energy-and-work"
+  },
+  {
+   "concept": "potential-energy",
+   "prereq": "energy-and-work"
+  },
+  {
+   "concept": "kinetic-energy",
+   "prereq": "energy-and-work"
+  },
+  {
+   "concept": "kinetic-energy",
+   "prereq": "mass"
+  },
+  {
+   "concept": "kinetic-energy",
+   "prereq": "velocity"
+  },
+  {
+   "concept": "thermal-energy",
+   "prereq": "kinetic-energy"
+  },
+  {
+   "concept": "thermal-energy",
+   "prereq": "atoms-and-molecules"
+  },
+  {
+   "concept": "exothermic-process",
+   "prereq": "heat-flow"
+  },
+  {
+   "concept": "endothermic-process",
+   "prereq": "heat-flow"
+  },
+  {
+   "concept": "joule",
+   "prereq": "unit"
+  },
+  {
+   "concept": "joule",
+   "prereq": "energy-and-work"
+  },
+  {
+   "concept": "calorie",
+   "prereq": "unit"
+  },
+  {
+   "concept": "calorie",
+   "prereq": "joule"
+  },
+  {
+   "concept": "heat-capacity",
+   "prereq": "heat-flow"
+  },
+  {
+   "concept": "heat-capacity",
+   "prereq": "temperature"
+  },
+  {
+   "concept": "heat-capacity",
+   "prereq": "extensive-and-intensive-properties"
+  },
+  {
+   "concept": "specific-heat-capacity",
+   "prereq": "heat-capacity"
+  },
+  {
+   "concept": "specific-heat-capacity",
+   "prereq": "mass"
+  },
+  {
+   "concept": "specific-heat-capacity",
+   "prereq": "extensive-and-intensive-properties"
+  },
+  {
+   "concept": "system",
+   "prereq": "matter"
+  },
+  {
+   "concept": "surroundings",
+   "prereq": "system"
+  },
+  {
+   "concept": "calorimetry",
+   "prereq": "heat-flow"
+  },
+  {
+   "concept": "calorimeter",
+   "prereq": "calorimetry"
+  },
+  {
+   "concept": "bomb-calorimeter",
+   "prereq": "calorimeter"
+  },
+  {
+   "concept": "bomb-calorimeter",
+   "prereq": "volume"
+  },
+  {
+   "concept": "nutritional-calorie",
+   "prereq": "calorie"
+  },
+  {
+   "concept": "nutritional-calorie",
+   "prereq": "unit-prefixes"
+  },
+  {
+   "concept": "chemical-thermodynamics",
+   "prereq": "heat-flow"
+  },
+  {
+   "concept": "chemical-thermodynamics",
+   "prereq": "work"
+  },
+  {
+   "concept": "chemical-thermodynamics",
+   "prereq": "energy-and-work"
+  },
+  {
+   "concept": "internal-energy",
+   "prereq": "energy-and-work"
+  },
+  {
+   "concept": "internal-energy",
+   "prereq": "system"
+  },
+  {
+   "concept": "expansion-work",
+   "prereq": "work"
+  },
+  {
+   "concept": "expansion-work",
+   "prereq": "gas-pressure"
+  },
+  {
+   "concept": "expansion-work",
+   "prereq": "volume"
+  },
+  {
+   "concept": "enthalpy",
+   "prereq": "internal-energy"
+  },
+  {
+   "concept": "enthalpy",
+   "prereq": "gas-pressure"
+  },
+  {
+   "concept": "enthalpy",
+   "prereq": "volume"
+  },
+  {
+   "concept": "enthalpy-change",
+   "prereq": "enthalpy"
+  },
+  {
+   "concept": "standard-state",
+   "prereq": "gas-pressure"
+  },
+  {
+   "concept": "standard-state",
+   "prereq": "molarity"
+  },
+  {
+   "concept": "standard-state",
+   "prereq": "temperature"
+  },
+  {
+   "concept": "hydrocarbon",
+   "prereq": "elements-and-compounds"
+  },
+  {
+   "concept": "standard-enthalpy-of-combustion",
+   "prereq": "enthalpy-change"
+  },
+  {
+   "concept": "standard-enthalpy-of-combustion",
+   "prereq": "standard-state"
+  },
+  {
+   "concept": "standard-enthalpy-of-combustion",
+   "prereq": "combustion-reaction"
+  },
+  {
+   "concept": "standard-enthalpy-of-combustion",
+   "prereq": "mole"
+  },
+  {
+   "concept": "thermal-energy-and-temperature",
+   "prereq": "thermal-energy"
+  },
+  {
+   "concept": "heat-flow",
+   "prereq": "thermal-energy"
+  },
+  {
+   "concept": "energy-units",
+   "prereq": "joule"
+  },
+  {
+   "concept": "energy-units",
+   "prereq": "calorie"
+  },
+  {
+   "concept": "heat-specific-heat-relation",
+   "prereq": "specific-heat-capacity"
+  },
+  {
+   "concept": "calorimetry-heat-balance",
+   "prereq": "calorimeter"
+  },
+  {
+   "concept": "coffee-cup-calorimetry",
+   "prereq": "calorimeter"
+  },
+  {
+   "concept": "bomb-calorimetry",
+   "prereq": "bomb-calorimeter"
+  },
+  {
+   "concept": "food-calories",
+   "prereq": "nutritional-calorie"
+  },
+  {
+   "concept": "first-law-of-thermodynamics",
+   "prereq": "internal-energy"
+  },
+  {
+   "concept": "first-law-of-thermodynamics",
+   "prereq": "work"
+  },
+  {
+   "concept": "enthalpy-change-at-constant-pressure",
+   "prereq": "enthalpy"
+  },
+  {
+   "concept": "enthalpy-change-at-constant-pressure",
+   "prereq": "enthalpy-change"
+  },
+  {
+   "concept": "enthalpy-change-at-constant-pressure",
+   "prereq": "expansion-work"
+  },
+  {
+   "concept": "enthalpy-of-combustion",
+   "prereq": "standard-enthalpy-of-combustion"
+  },
+  {
+   "concept": "thermochemical-equations",
+   "prereq": "enthalpy-change"
+  },
+  {
+   "concept": "standard-enthalpy-of-formation",
+   "prereq": "standard-state"
+  },
+  {
+   "concept": "hess-law",
+   "prereq": "enthalpy-change"
+  },
+  {
+   "concept": "exothermic-and-endothermic",
+   "prereq": "exothermic-process"
+  },
+  {
+   "concept": "exothermic-and-endothermic",
+   "prereq": "endothermic-process"
+  }
+ ]
+}

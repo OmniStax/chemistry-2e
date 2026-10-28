@@ -1,0 +1,554 @@
+{
+  "id": "20.2",
+  "module": "m68847",
+  "chapter": "20",
+  "title": "醇和醚",
+  "short": "醇和醚",
+  "lead": "<span data-concept=\"alcohol\">醇</span>和<span data-concept=\"ether\">醚</span>是氧以单键与<span data-concept=\"hydrocarbon\">烃</span>相连而形成的两类化合物：醇中是一个 –OH 基团取代了一个氢原子，醚中是一个氧原子位于两个碳原子之间。本节讲述它们各自如何制得和命名，并讲述糖，糖中的醇羟基和醚键使它们成为<span data-concept=\"carbohydrate\">碳水化合物</span>。",
+  "objectives": [
+    "描述醇的结构和性质",
+    "描述醚的结构和性质",
+    "为醇和醚命名并画出其结构"
+  ],
+  "summary_html": "<p>许多不是<span data-concept=\"hydrocarbon\">烃</span>的有机化合物可以看作烃的衍生物。烃的衍生物可以通过把烃的一个或多个氢原子换成<span data-concept=\"functional-group\">官能团</span>而形成，官能团至少含有一个碳和氢以外的元素的原子。烃的衍生物的性质主要由官能团决定。–OH 基团是<span data-concept=\"alcohol\">醇</span>的官能团。–R–O–R– 基团是<span data-concept=\"ether\">醚</span>的官能团。</p>",
+  "notes": "一则指向醚的命名视频复习的“学习链接”注释被略去。本节照原样保留“例 20.9 中所示的化合物”这一说法，它指的是前面画出的甲氧基乙烷；英文“ethylmethyl ether”和“isopropylmethyl ether”照原样连写；摘要中的“–R–O–R– 基团”也照原样保留；图 20.12 说明中“果糖是一种五碳单糖”（果糖实为六碳糖）也照原样保留。",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ]
+  },
+  "built": "2026-10-26",
+  "exercises_lead": "",
+  "exercise_notes": "布鲁姆层级、概念标签和提示均由 AI 生成。答案取自书后答案以及“学习检测”的答案。四道没有答案的题目被略去，也没有为它们计算答案：fs-idm8644288（三种醇的 IUPAC 名称）、fs-idm35115392（C₂H₆O 两种异构体的结构简式）、fs-idm78429600（三种化合物的结构简式）和 fs-idp5902704（两个反应的配平方程式）。没有答案的概念题 fs-idm36106080 附有一个标明为 OmniStax 自己撰写的建议思路。fs-idm20515632 的书后答案把“l,2,3-三羟基丙烷”写成字母 l，照原样保留。没有任何内容被移动。",
+  "figures": [
+    {
+      "id": "fig-fermentation",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-ethylene-hydration",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-polyols",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-ex-pentanol",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-methoxyethane",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-ex-diethyl-ether",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-oxygen-chain",
+      "kind": "sim",
+      "draws": [],
+      "conventions": [
+        "C",
+        "H",
+        "O"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-diethyl-ether-synthesis",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-sugars",
+      "kind": "photo",
+      "number": "20.12",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-diabetes",
+      "kind": "photo",
+      "number": "20.13",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "span": "alcohols",
+      "concept": "hydrocarbon-derivative",
+      "verb": "introduces"
+    },
+    {
+      "span": "alcohols",
+      "concept": "alcohol",
+      "verb": "introduces"
+    },
+    {
+      "span": "alcohols",
+      "concept": "preparing-alcohols",
+      "verb": "introduces"
+    },
+    {
+      "span": "alcohols",
+      "concept": "functional-group",
+      "verb": "uses"
+    },
+    {
+      "span": "alcohols",
+      "concept": "hydrocarbon",
+      "verb": "uses"
+    },
+    {
+      "span": "alcohols",
+      "concept": "base",
+      "verb": "uses"
+    },
+    {
+      "span": "alcohols",
+      "concept": "ionic-compounds",
+      "verb": "uses"
+    },
+    {
+      "span": "alcohols",
+      "concept": "covalent-bond",
+      "verb": "uses"
+    },
+    {
+      "span": "alcohols",
+      "concept": "addition-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "alcohols",
+      "concept": "alkene",
+      "verb": "uses"
+    },
+    {
+      "span": "alcohols",
+      "concept": "catalyst",
+      "verb": "uses"
+    },
+    {
+      "span": "alcohols",
+      "concept": "solvent",
+      "verb": "uses"
+    },
+    {
+      "span": "naming-alcohols",
+      "concept": "naming-alcohols",
+      "verb": "introduces"
+    },
+    {
+      "span": "naming-alcohols",
+      "concept": "alcohol",
+      "verb": "uses"
+    },
+    {
+      "span": "naming-alcohols",
+      "concept": "naming-alkanes",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-naming-alcohols",
+      "concept": "naming-alcohols",
+      "verb": "uses"
+    },
+    {
+      "span": "ethers",
+      "concept": "ether",
+      "verb": "introduces"
+    },
+    {
+      "span": "ethers",
+      "concept": "naming-ethers",
+      "verb": "introduces"
+    },
+    {
+      "span": "ethers",
+      "concept": "ethers-from-alcohols",
+      "verb": "introduces"
+    },
+    {
+      "span": "ethers",
+      "concept": "functional-group",
+      "verb": "uses"
+    },
+    {
+      "span": "ethers",
+      "concept": "substituent",
+      "verb": "uses"
+    },
+    {
+      "span": "ethers",
+      "concept": "alkyl-group",
+      "verb": "uses"
+    },
+    {
+      "span": "ethers",
+      "concept": "naming-alkanes",
+      "verb": "uses"
+    },
+    {
+      "span": "ethers",
+      "concept": "structural-isomer",
+      "verb": "uses"
+    },
+    {
+      "span": "ethers",
+      "concept": "solvent",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-naming-ethers",
+      "concept": "naming-ethers",
+      "verb": "uses"
+    },
+    {
+      "span": "carbohydrates",
+      "concept": "carbohydrate",
+      "verb": "introduces"
+    },
+    {
+      "span": "carbohydrates",
+      "concept": "alcohol",
+      "verb": "uses"
+    },
+    {
+      "span": "carbohydrates",
+      "concept": "ether",
+      "verb": "uses"
+    },
+    {
+      "span": "carbohydrates",
+      "concept": "polymer",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idm9024448",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-naming-alcohols"
+      },
+      "cite": "naming-alcohols",
+      "figure": {
+        "src": "/media/ch20/CNX_Chem_20_02_alcohol2_img.jpg",
+        "alt": "该结构显示一个 C H 下标 3 基团向右上方与一个 C 原子相连。该 C 原子向右下方与一个 C H 下标 2 基团相连。该 C H 下标 2 基团向右上方与一个 C H 下标 2 基团相连。该 C H 下标 2 基团向右下方与一个 C H 下标 3 基团相连。第二个 C 原子（从左到右）连有一个 C H 下标 3 基团和一个 O H 基团。"
+      },
+      "prompt": "为下列分子命名：",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "2-甲基-2-戊醇"
+      }
+    },
+    {
+      "id": "cyl2",
+      "source_id": "fs-idm48177328",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-naming-ethers"
+      },
+      "cite": "ethers",
+      "figure": {
+        "src": "/media/ch20/CNX_Chem_20_02_ethers2_img.jpg",
+        "alt": "分子结构显示一个 C H 下标 3 基团向右上方与一个 O 原子相连。O 原子向右下方与一个 C H 基团相连。该 C H 基团向右上方与一个 C H 下标 3 基团相连。该 C H 基团还向右下方与另一个 C H 下标 3 基团相连。"
+      },
+      "prompt": "给出所示醚的 IUPAC 名称和俗名：",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "IUPAC 名称：2-甲氧基丙烷；俗名：甲异丙醚"
+      }
+    },
+    {
+      "id": "e1",
+      "source_id": "fs-idm36106080",
+      "source_number": "30",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "naming-alcohols",
+      "prompt": "为什么己烷、己醇和己烯这几种化合物的名称如此相似？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "这些名称有共同的词干 <em>hex-</em>（“己”），因为这三种化合物都建立在同一条六个碳原子的链上；只有结尾不同，结尾表明所属的类别。己烷的结尾是 <em>-ane</em>（“烷”），即烷烃的结尾，只含单键。己烯的结尾是 <em>-ene</em>（“烯”），即烯烃的结尾，含有碳碳双键。己醇的结尾是 <em>-ol</em>（“醇”），即醇的结尾，其中一个 –OH 基团取代了烷烃的一个氢原子。系统名称就是这样构成的：词干给出母体链中的碳原子数，结尾给出化合物的种类，所以有相同链的化合物名称相似。"
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idm20515632",
+      "source_number": "31",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "naming-alcohols",
+      "prompt": "写出下列化合物的结构简式并给出 IUPAC 名称：<br>（a）乙醇（ethyl alcohol，饮料中所含）<br>（b）甲醇（methyl alcohol，用作溶剂，例如用于紫胶中）<br>（c）乙二醇（ethylene glycol，防冻剂）<br>（d）异丙醇（isopropyl alcohol，用于外用消毒酒精）<br>（e）甘油（glycerine）",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）乙醇（ethyl alcohol，ethanol）：CH<sub>3</sub>CH<sub>2</sub>OH；（b）甲醇（methyl alcohol，methanol）：CH<sub>3</sub>OH；（c）乙二醇（ethylene glycol，ethanediol）：HOCH<sub>2</sub>CH<sub>2</sub>OH；（d）异丙醇，2-丙醇：CH<sub>3</sub>CH(OH)CH<sub>3</sub>；（e）甘油，l,2,3-三羟基丙烷：HOCH<sub>2</sub>CH(OH)CH<sub>2</sub>OH"
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idm78442848",
+      "source_number": "33",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "ethers",
+      "prompt": "给出下列每种化合物的完整 IUPAC 名称和俗名：<br>（a）<img src=\"/media/ch20/CNX_Chem_20_02_Exercise4a_img.jpg\" alt=\"图中显示一个 C H 下标 3 基团与一个 C H 下标 2 基团相连。该 C H 下标 2 基团与一个 O 原子相连，该 O 原子还与一个 C H 下标 2 基团相连。该 C H 下标 2 基团与一个 C H 下标 2 基团相连。该 C H 下标 2 基团与一个 C H 下标 2 基团相连。该 C H 下标 2 基团与一个 C H 下标 3 基团相连。所有的键都在一条直线上。\"><br>（b）<img src=\"/media/ch20/CNX_Chem_20_02_Exercise4b_img.jpg\" alt=\"图中显示一个 C H 下标 3 基团与一个 C H 下标 2 基团相连。该 C H 下标 2 基团与一个 O 原子相连。该 O 原子与一个 C H 下标 2 基团相连，该 C H 下标 2 基团还与另一个 C H 下标 2 基团相连。该 C H 下标 2 基团与一个 C H 下标 3 基团相连。所有的键都在一条直线上。\"><br>（c）<img src=\"/media/ch20/CNX_Chem_20_02_Exercise4c_img.jpg\" alt=\"图中显示一个 C H 下标 3 基团与一个 O 原子相连。该 O 原子与一个 C H 下标 2 基团相连，该 C H 下标 2 基团还与另一个 C H 下标 2 基团相连。该 C H 下标 2 基团与一个 C H 下标 3 基团相连。所有的键都在一条直线上。\">",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）1-乙氧基丁烷，乙丁醚；（b）1-乙氧基丙烷，乙丙醚；（c）1-甲氧基丙烷，甲丙醚"
+      }
+    },
+    {
+      "id": "e4",
+      "source_id": "fs-idm39860656",
+      "source_number": "35",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "ethers",
+      "prompt": "写出分子式为 C<sub>2</sub>H<sub>6</sub>O<sub>2</sub> 的所有异构体的结构简式。标出每个异构体的官能团。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "HOCH<sub>2</sub>CH<sub>2</sub>OH，两个醇羟基；CH<sub>3</sub>OCH<sub>2</sub>OH，醚键和醇羟基"
+      }
+    },
+    {
+      "id": "e5",
+      "source_id": "fs-idp115280",
+      "source_number": "37",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "ethers",
+      "prompt": "MTBE，即甲基<em>叔</em>丁基醚，CH<sub>3</sub>OC(CH<sub>3</sub>)<sub>3</sub>，在含氧汽油中用作氧源。MTBE 由 2-甲基丙烯与甲醇反应制得。<br>（a）用路易斯结构写出表示该反应的化学方程式。<br>（b）假设产率为 100%，制得<span data-type=\"mass\">恰好 1000 kg MTBE</span> 需要多少<span data-type=\"volume\">体积的甲醇</span>（<span data-type=\"density\">密度 0.7915 g/mL</span>）？",
+      "answer": {
+        "type": "number",
+        "value": 459.3,
+        "unit": "L",
+        "part": "(b)",
+        "generated_by": "source",
+        "hint": "1 mol 甲醇生成 1 mol MTBE：求出 1000 kg MTBE 的物质的量，取同样物质的量的甲醇，先用摩尔质量把它换算成质量，再用密度换算成体积。",
+        "solution": "（a）<img src=\"/media/ch20/CNX_Chem_20_02_MTBE_img.jpg\" alt=\"图中显示一个反应。第一个分子是一个 C 原子与另一个 C 原子相连。第一个 C 原子（从左到右）连有两个 C H 下标 3 基团。第二个 C 原子连有两个 H 原子。后面是一个加号。下一个分子显示一个 H 原子与一个 O 原子相连，该 O 原子与一个 C H 下标 3 基团相连。后面是一个向右的箭头。这个分子显示一个 C 原子连有三个 C H 下标 3 基团。该 C 原子还与一个 O 原子相连，该 O 原子也与一个 C H 下标 3 基团相连。\"><br>（b）<span data-type=\"volume\">4.593 × 10<sup>2</sup> L</span>"
+      }
+    },
+    {
+      "id": "e6",
+      "source_id": "fs-idm1615328",
+      "source_number": "39",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "alcohols",
+      "prompt": "为下列每个反应写出两个完整的配平方程式，一个用结构简式，一个用路易斯结构。<br>（a）在稀酸中用水处理 2-丁烯<br>（b）乙醇脱水生成乙烯",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）${\\text{CH}}_{3}\\text{CH}={\\text{CHCH}}_{3}+{\\text{H}}_{2}\\text{O}\\;\\longrightarrow \\;{\\text{CH}}_{3}{\\text{CH}}_{2}{\\text{CH(OH)CH}}_{3}$<br><img src=\"/media/ch20/CNX_Chem_20_04_react2a_img.jpg\" alt=\"图中显示一个反应。第一个分子显示一个 C 原子连有三个 H 原子。第一个 C 原子与另一个 C 原子相连。第二个 C 原子连有一个 H 原子，还与第三个 C 原子形成双键。第三个 C 原子连有一个 H 原子和第四个 C 原子。第四个 C 原子连有三个 H 原子。后面是一个加号。第二个分子显示一个画有两组电子点的 O 原子，连有两个 H 原子。后面是一个向右的箭头，标为“酸”。新的分子是一个 C 原子连有三个 H 原子和第二个 C 原子。第二个 C 原子连有两个 H 原子和第三个 C 原子。第三个 C 原子连有一个 H 原子和一个画有两组电子点的 O 原子。该 O 原子连有一个 H 原子。第三个 C 原子还与第四个 C 原子相连，第四个 C 原子连有三个 H 原子。\"><br>（b）${\\text{CH}}_{3}{\\text{CH}}_{2}\\text{OH}\\;\\longrightarrow \\;{\\text{CH}}_{2}={\\text{CH}}_{2}+{\\text{H}}_{2}\\text{O}$<br><img src=\"/media/ch20/CNX_Chem_20_04_react2e_img.jpg\" alt=\"图中显示一个反应。第一个分子显示一个 C 原子连有三个 H 原子和第二个 C 原子。第二个 C 原子还连有一个 O 原子。该 O 原子画有两组电子点，并连有一个 H 原子。后面是一个指向右方的箭头。下一个分子显示两个 C 原子之间形成双键。每个 C 原子连有两个 H 原子。后面是一个加号。再下一个分子显示一个画有两组电子点的 O 原子，连有两个 H 原子。\">"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "naming-alcohols"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "naming-ethers"
+    },
+    {
+      "exercise": "e1",
+      "concept": "naming-alcohols"
+    },
+    {
+      "exercise": "e1",
+      "concept": "naming-alkanes"
+    },
+    {
+      "exercise": "e1",
+      "concept": "naming-unsaturated-hydrocarbons"
+    },
+    {
+      "exercise": "e2",
+      "concept": "naming-alcohols"
+    },
+    {
+      "exercise": "e2",
+      "concept": "write-organic-structures"
+    },
+    {
+      "exercise": "e3",
+      "concept": "naming-ethers"
+    },
+    {
+      "exercise": "e4",
+      "concept": "alcohol"
+    },
+    {
+      "exercise": "e4",
+      "concept": "ether"
+    },
+    {
+      "exercise": "e4",
+      "concept": "structural-isomer"
+    },
+    {
+      "exercise": "e5",
+      "concept": "ether"
+    },
+    {
+      "exercise": "e5",
+      "concept": "density"
+    },
+    {
+      "exercise": "e5",
+      "concept": "mass-stoichiometry"
+    },
+    {
+      "exercise": "e6",
+      "concept": "preparing-alcohols"
+    },
+    {
+      "exercise": "e6",
+      "concept": "addition-reaction"
+    },
+    {
+      "exercise": "e6",
+      "concept": "balanced-equation"
+    }
+  ],
+  "referents": [],
+  "footnotes": [
+    {
+      "id": "c-ether-example",
+      "kind": "correction",
+      "html": "本书引用了例 20.9，其中的醚是乙醚。名为甲乙醚的化合物是下面画出的甲氧基乙烷 CH<sub>3</sub>OCH<sub>2</sub>CH<sub>3</sub>，即段落开头所说的“下列化合物”。"
+    }
+  ]
+}

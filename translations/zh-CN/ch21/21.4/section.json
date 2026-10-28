@@ -1,0 +1,877 @@
+{
+  "id": "21.4",
+  "module": "m68856",
+  "chapter": "21",
+  "title": "嬗变与核能",
+  "short": "核能",
+  "lead": "<span data-concept=\"nuclear-transmutation\">核嬗变</span>使一种核素转变为另一种核素，方法是用其他原子核或中子轰击原子核，<span data-concept=\"transuranium-element\">超铀元素</span>就是这样制得的。本节随后转向两种释放巨大<span data-concept=\"energy-and-work\">能量</span>的核反应——重原子核的<span data-concept=\"nuclear-fission\">裂变</span>和轻原子核的<span data-concept=\"nuclear-fusion\">聚变</span>——以及<span data-concept=\"chain-reaction\">链式反应</span>、<span data-concept=\"critical-mass\">临界质量</span>和把裂变付诸应用的<span data-concept=\"nuclear-reactor\">核反应堆</span>的各个部分。",
+  "objectives": [
+    "描述超铀核素的合成",
+    "解释核裂变和核聚变过程",
+    "说明临界质量与核链式反应这两个概念的关系",
+    "概述核裂变反应堆和核聚变反应堆的基本要求"
+  ],
+  "summary_html": "<p>用其他原子核或高速粒子轰击原子，可以产生新的原子。这些<span data-concept=\"nuclear-transmutation\">嬗变反应</span>的产物可以是稳定的，也可以是放射性的。许多人造元素，包括锝、砹和<span data-concept=\"transuranium-element\">超铀元素</span>，都是用这种方法制得的。</p><p>核电以及核武器爆炸，都可以通过<span data-concept=\"nuclear-fission\">裂变</span>（重原子核分裂成两个或多个较轻的原子核和若干中子的反应）产生。由于中子与其他重原子核结合时可能引起更多的裂变反应，因此可能产生<span data-concept=\"chain-reaction\">链式反应</span>。如果裂变过程在<span data-concept=\"nuclear-reactor\">核反应堆</span>中进行，就可以获得有用的功率。轻原子核转变为较重原子核（<span data-concept=\"nuclear-fusion\">聚变</span>）同样产生<span data-concept=\"energy-and-work\">能量</span>。目前，这种<span data-concept=\"energy-and-work\">能量</span>尚未得到充分约束，而且过于昂贵，不适合商业<span data-concept=\"energy-and-work\">能量</span>生产。</p>",
+  "notes": "本节开头部分在书中没有标题，这里加上了 OmniStax 自己的标题；四条“学习链接”（一个关于大型强子对撞机的讲座和一段视频、一个核裂变模拟、一段关于核反应堆如何工作的视频，以及一个关于核废料管理的页面）被略去。以下各处保持书中印刷的原样：铀-235 之后的“分裂 U-238 原子核”、“Strassman”的写法、表 21.3 中鿏-266 旁的原子序数 107（其方程中为 109）、太阳反应中的“2₊₁⁰e⁺”、聚变的 3.6 × 10¹¹ kJ 被称为比裂变的 1.8 × 10¹⁰ kJ“稍大”、“any radioactive materials might be released”一句，以及摘要中的锝和砹（本节并未制得它们）。图 21.15（a）写作 ⁹⁷₃₇Rb + ¹³⁷₅₅Cs + 3n，其质量数之和为 237，实时图形改用图 21.16 中配平的 ⁹⁶₃₇Rb；图 21.16 把它的第一次裂变画作 Kr-93 和 Ba-142，而图上方的方程写的是 Ba-140 和 Kr-90；两幅图像均保持印刷原样。",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ]
+  },
+  "built": "2026-10-26",
+  "exercises_lead": "",
+  "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案取自书中的答案表；表中没有给出答案的 fs-idm227188304、fs-idm153436832 和 fs-idm209547408 的参考解法是 OmniStax 自己撰写的。表中没有答案的习题 fs-idm210379536（氢-1 与氚聚变生成每摩尔氦-4 所释放的能量）被略去，也没有为它计算答案。没有任何内容被移动。",
+  "figures": [
+    {
+      "id": "photo-cern",
+      "kind": "photo",
+      "number": "21.13",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-fission",
+      "kind": "sim",
+      "number": "21.14",
+      "folds": [
+        "21.15"
+      ],
+      "originals": [
+        "/media/ch21/CNX_Chem_21_04_Fission1.jpg",
+        "/media/ch21/CNX_Chem_21_04_Fission2.jpg"
+      ],
+      "original_caption": "（图 21.14）当一个慢中子撞击可裂变的 U-235 原子核时，它被吸收并形成不稳定的 U-236 原子核。随后 U-236 原子核迅速裂成两个较小的原子核（此例中为 Ba-141 和 Kr-92）以及若干中子（通常为两个或三个），并释放出非常大的能量。（图 21.15）（a）U-235 的核裂变产生一系列裂变产物。（b）U-235 的较大裂变产物通常是一种质量数在 85–105 左右的同位素，另一种同位素的质量数约大 50%，即约 130–150。",
+      "draws": [
+        "energy"
+      ],
+      "conventions": [
+        "p+",
+        "n0"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-chain",
+      "kind": "sim",
+      "number": "21.16",
+      "folds": [
+        "21.17"
+      ],
+      "originals": [
+        "/media/ch21/CNX_Chem_21_04_ChnReact1.jpg",
+        "/media/ch21/CNX_Chem_21_04_CritMass.jpg"
+      ],
+      "original_caption": "（图 21.16）大原子核（如 U-235）的裂变产生两个或三个中子，每个中子都能通过图中所示的反应引起另一个原子核的裂变。如果这一过程持续下去，就会发生核链式反应。（图 21.17）（a）在次临界质量中，易裂变材料太少，使过多的中子从材料中逸出，因此不会发生链式反应。（b）在临界质量中，易裂变材料中有足够多的中子引发裂变，从而产生链式反应。",
+      "draws": [
+        "energy"
+      ],
+      "conventions": [
+        "U",
+        "n0"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "photo-bomb",
+      "kind": "photo",
+      "number": "21.18",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "photo-power-plant",
+      "kind": "photo",
+      "number": "21.19",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-reactor",
+      "kind": "sim",
+      "number": "21.20",
+      "originals": [
+        "/media/ch21/CNX_Chem_21_04_ControlRod.jpg"
+      ],
+      "original_caption": "（a）所示的核反应堆堆芯含有（b）所示的燃料与控制棒组件。（来源：改编自 E. Generalic 的作品，http://glossary.periodni.com/glossary.php?en=control+rod）",
+      "draws": [
+        "rate",
+        "energy"
+      ],
+      "conventions": [
+        "U",
+        "n0"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "photo-three-mile-island",
+      "kind": "photo",
+      "number": "21.21",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "photo-fukushima",
+      "kind": "photo",
+      "number": "21.22",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "photo-fusion",
+      "kind": "photo",
+      "number": "21.23",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    }
+  ],
+  "referents": [
+    {
+      "id": "light-fragment",
+      "label": "较轻的裂变碎片",
+      "figures": [
+        "sim-fission"
+      ]
+    },
+    {
+      "id": "heavy-fragment",
+      "label": "较重的裂变碎片",
+      "figures": [
+        "sim-fission"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "span": "nuclear-age",
+      "concept": "radioactivity",
+      "verb": "uses"
+    },
+    {
+      "span": "nuclear-age",
+      "concept": "nuclear-chemistry",
+      "verb": "uses"
+    },
+    {
+      "span": "nuclear-age",
+      "concept": "isotopes",
+      "verb": "uses"
+    },
+    {
+      "span": "nuclear-age",
+      "concept": "energy-and-work",
+      "verb": "uses"
+    },
+    {
+      "span": "synthesis",
+      "concept": "nuclear-transmutation",
+      "verb": "introduces"
+    },
+    {
+      "span": "synthesis",
+      "concept": "particle-accelerator",
+      "verb": "introduces"
+    },
+    {
+      "span": "synthesis",
+      "concept": "transuranium-element",
+      "verb": "introduces"
+    },
+    {
+      "span": "synthesis",
+      "concept": "nuclide",
+      "verb": "uses"
+    },
+    {
+      "span": "synthesis",
+      "concept": "radioactive-decay",
+      "verb": "uses"
+    },
+    {
+      "span": "synthesis",
+      "concept": "neutron",
+      "verb": "uses"
+    },
+    {
+      "span": "synthesis",
+      "concept": "alpha-particle",
+      "verb": "uses"
+    },
+    {
+      "span": "synthesis",
+      "concept": "proton",
+      "verb": "uses"
+    },
+    {
+      "span": "synthesis",
+      "concept": "kinetic-energy",
+      "verb": "uses"
+    },
+    {
+      "span": "synthesis",
+      "concept": "atomic-number",
+      "verb": "uses"
+    },
+    {
+      "span": "synthesis",
+      "concept": "radioactive-half-life",
+      "verb": "uses"
+    },
+    {
+      "span": "synthesis",
+      "concept": "beta-decay",
+      "verb": "uses"
+    },
+    {
+      "span": "synthesis",
+      "concept": "balanced-nuclear-equation",
+      "verb": "uses"
+    },
+    {
+      "span": "synthesis",
+      "concept": "mass",
+      "verb": "uses"
+    },
+    {
+      "span": "fission",
+      "concept": "nuclear-fission",
+      "verb": "introduces"
+    },
+    {
+      "span": "fission",
+      "concept": "chain-reaction",
+      "verb": "introduces"
+    },
+    {
+      "span": "fission",
+      "concept": "fissile-material",
+      "verb": "introduces"
+    },
+    {
+      "span": "fission",
+      "concept": "critical-mass",
+      "verb": "introduces"
+    },
+    {
+      "span": "fission",
+      "concept": "binding-energy-per-nucleon",
+      "verb": "uses"
+    },
+    {
+      "span": "fission",
+      "concept": "mass-number",
+      "verb": "uses"
+    },
+    {
+      "span": "fission",
+      "concept": "isotopes",
+      "verb": "uses"
+    },
+    {
+      "span": "fission",
+      "concept": "neutron",
+      "verb": "uses"
+    },
+    {
+      "span": "fission",
+      "concept": "energy-and-work",
+      "verb": "uses"
+    },
+    {
+      "span": "fission",
+      "concept": "mass",
+      "verb": "uses"
+    },
+    {
+      "span": "fission",
+      "concept": "reaction-rate",
+      "verb": "uses"
+    },
+    {
+      "span": "fission",
+      "concept": "temperature",
+      "verb": "uses"
+    },
+    {
+      "span": "reactors",
+      "concept": "nuclear-reactor",
+      "verb": "introduces"
+    },
+    {
+      "span": "reactors",
+      "concept": "critical-mass",
+      "verb": "uses"
+    },
+    {
+      "span": "reactors",
+      "concept": "chain-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "reactors",
+      "concept": "energy-and-work",
+      "verb": "uses"
+    },
+    {
+      "span": "fuels",
+      "concept": "nuclear-fuel",
+      "verb": "introduces"
+    },
+    {
+      "span": "fuels",
+      "concept": "isotopes",
+      "verb": "uses"
+    },
+    {
+      "span": "fuels",
+      "concept": "grahams-law",
+      "verb": "uses"
+    },
+    {
+      "span": "fuels",
+      "concept": "gas-pressure",
+      "verb": "uses"
+    },
+    {
+      "span": "fuels",
+      "concept": "mass",
+      "verb": "uses"
+    },
+    {
+      "span": "fuels",
+      "concept": "chain-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "moderators",
+      "concept": "nuclear-moderator",
+      "verb": "introduces"
+    },
+    {
+      "span": "moderators",
+      "concept": "hydrogen-isotopes",
+      "verb": "uses"
+    },
+    {
+      "span": "moderators",
+      "concept": "nuclear-fission",
+      "verb": "uses"
+    },
+    {
+      "span": "coolants",
+      "concept": "reactor-coolant",
+      "verb": "introduces"
+    },
+    {
+      "span": "coolants",
+      "concept": "heat-flow",
+      "verb": "uses"
+    },
+    {
+      "span": "control-rods",
+      "concept": "control-rod",
+      "verb": "introduces"
+    },
+    {
+      "span": "control-rods",
+      "concept": "reaction-rate",
+      "verb": "uses"
+    },
+    {
+      "span": "control-rods",
+      "concept": "alpha-particle",
+      "verb": "uses"
+    },
+    {
+      "span": "control-rods",
+      "concept": "chain-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "control-rods",
+      "concept": "heat-flow",
+      "verb": "uses"
+    },
+    {
+      "span": "control-rods",
+      "concept": "nuclear-moderator",
+      "verb": "uses"
+    },
+    {
+      "span": "containment",
+      "concept": "containment-system",
+      "verb": "introduces"
+    },
+    {
+      "span": "containment",
+      "concept": "gamma-ray",
+      "verb": "uses"
+    },
+    {
+      "span": "containment",
+      "concept": "temperature",
+      "verb": "uses"
+    },
+    {
+      "span": "containment",
+      "concept": "gas-pressure",
+      "verb": "uses"
+    },
+    {
+      "span": "containment",
+      "concept": "heat-flow",
+      "verb": "uses"
+    },
+    {
+      "span": "containment",
+      "concept": "critical-mass",
+      "verb": "uses"
+    },
+    {
+      "span": "containment",
+      "concept": "transuranium-element",
+      "verb": "uses"
+    },
+    {
+      "span": "containment",
+      "concept": "radioactive-decay",
+      "verb": "uses"
+    },
+    {
+      "span": "containment",
+      "concept": "mass",
+      "verb": "uses"
+    },
+    {
+      "span": "containment",
+      "concept": "energy-and-work",
+      "verb": "uses"
+    },
+    {
+      "span": "fusion",
+      "concept": "nuclear-fusion",
+      "verb": "introduces"
+    },
+    {
+      "span": "fusion",
+      "concept": "nuclear-energy-release",
+      "verb": "introduces"
+    },
+    {
+      "span": "fusion",
+      "concept": "fusion-reactor",
+      "verb": "introduces"
+    },
+    {
+      "span": "fusion",
+      "concept": "positron",
+      "verb": "uses"
+    },
+    {
+      "span": "fusion",
+      "concept": "hydrogen-isotopes",
+      "verb": "uses"
+    },
+    {
+      "span": "fusion",
+      "concept": "mass",
+      "verb": "uses"
+    },
+    {
+      "span": "fusion",
+      "concept": "mass-defect",
+      "verb": "uses"
+    },
+    {
+      "span": "fusion",
+      "concept": "kinetic-energy",
+      "verb": "uses"
+    },
+    {
+      "span": "fusion",
+      "concept": "temperature",
+      "verb": "uses"
+    },
+    {
+      "span": "fusion",
+      "concept": "plasma",
+      "verb": "uses"
+    },
+    {
+      "span": "fusion",
+      "concept": "gas-pressure",
+      "verb": "uses"
+    },
+    {
+      "span": "fusion",
+      "concept": "energy-and-work",
+      "verb": "uses"
+    },
+    {
+      "span": "fusion",
+      "concept": "binding-energy-per-nucleon",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "e1",
+      "source_id": "fs-idm122155008",
+      "source_number": "47",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "synthesis",
+      "prompt": "写出下列超铀元素生成的配平核反应方程：<br>（a）锫-244，由 Am-241 与 He-4 反应生成<br>（b）镄-254，由 Pu-239 与大量中子反应生成<br>（c）铹-257，由 Cf-250 与 B-11 反应生成<br>（d）𬭊-260，由 Cf-249 与 N-15 反应生成",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）${}_{\\;95}^{241}\\text{Am}+{}_{2}^{4}\\text{He}\\;\\longrightarrow \\;{}_{\\;97}^{244}\\text{Bk}+{}_{0}^{1}\\text{n};$ （b）${}_{\\;94}^{239}\\text{Pu}+15{}_{0}^{1}\\text{n}\\;\\longrightarrow \\;{}_{100}^{254}\\text{Fm}+6{}_{−1}^{\\;0}\\text{e};$ （c）${}_{\\;98}^{250}\\text{Cf}+{}_{\\;5}^{11}\\text{B}\\;\\longrightarrow \\;{}_{103}^{257}\\text{Lr}+4{}_{0}^{1}\\text{n};$ （d）${}_{\\;98}^{249}\\text{Cf}+{}_{\\;7}^{15}\\text{N}\\;\\longrightarrow \\;{}_{105}^{260}\\text{Db}+4{}_{0}^{1}\\text{n}$"
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idm227188304",
+      "source_number": "48",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "fusion",
+      "prompt": "核裂变与核聚变有何不同？为什么这两个过程都是放热的？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "裂变是把重原子核分裂成较轻的原子核，聚变是把轻原子核结合成较重的原子核。在裂变中，铀-235 等重原子核吸收一个中子后，裂成两个质量数居中的原子核，并释放出几个中子；在聚变中，氢的同位素等极轻的原子核结合成氦等较重的原子核。两者都是放热的，因为两者都使核子趋向图 21.3 中比结合能曲线的峰值，即质量数 56 附近。裂变碎片的比结合能大于它们所来自的重原子核，聚变产物的比结合能大于形成它的轻原子核。在每种情形中，产物的结合都更紧密，其总质量小于反应物的总质量，损失的质量以能量的形式释放出来，<em>E</em> = <em>mc</em><sup>2</sup>。"
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idm39373072",
+      "source_number": "49",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "fusion",
+      "prompt": "聚变和裂变都是核反应。为什么聚变需要很高的温度，而裂变不需要？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "聚变要发生，两个原子核必须相互碰撞。需要高温使原子核获得足够的动能，以克服因其带正电荷而产生的极强排斥力。"
+      }
+    },
+    {
+      "id": "e4",
+      "source_id": "fs-idm153436832",
+      "source_number": "50",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "control-rods",
+      "prompt": "列举发生核链式反应所必需的条件。解释怎样控制链式反应，使其产生能量而不发生爆炸。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "当每次裂变释放的中子平均至少能再引起一次裂变时，链式反应就会发生。这要求有铀-235 或钚-239 等可裂变核素，其量至少达到临界质量，使产生的中子数等于或多于被吸收的中子数与从表面逸出的中子数之和；还要求中子足够慢，能被燃料吸收，在反应堆中这由慢化剂提供。反应堆通过把反应保持在恰好临界的状态来产生能量而不爆炸：升降硼、镉或铪等中子吸收体制成的控制棒，使每次裂变恰好引起一次后续裂变，速率保持稳定，并且可以把控制棒完全降下以使反应停止。爆炸需要超临界质量，其中裂变速率逐代增大，而反应堆燃料不可能形成这样的质量：它只被浓缩到约 5% 的铀-235，并且分散在各个独立的燃料棒中，因此临界质量不可能在一处形成。"
+      }
+    },
+    {
+      "id": "e5",
+      "source_id": "fs-idm213403024",
+      "source_number": "51",
+      "kind": "exercise",
+      "bloom": "Remember",
+      "place": {
+        "at": "end"
+      },
+      "cite": "reactors",
+      "prompt": "说明核反应堆的组成部分。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "核反应堆由以下部分组成：<br>1. 核燃料。必须有足够大量的可裂变同位素，才能维持受控的链式反应。放射性同位素装在称为燃料棒的管中。<br>2. 慢化剂。慢化剂使核反应产生的中子减速，使它们能被燃料吸收并引起更多的核反应。<br>3. 冷却剂。冷却剂把裂变反应产生的热量带到外部的锅炉和涡轮机，在那里转化为电能。<br>4. 控制系统。控制系统由放置在燃料棒之间的控制棒组成，用来吸收中子，并用于调节中子数量，使链式反应的速率保持在安全水平。<br>5. 屏蔽与安全壳系统。该部分的功能是保护工作人员免受核反应产生的辐射，并承受高温反应产生的高压。"
+      }
+    },
+    {
+      "id": "e6",
+      "source_id": "fs-idm209547408",
+      "source_number": "52",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "moderators",
+      "prompt": "在通常的实践中，要为产生能量而安全地进行核链式反应，既需要慢化剂，也需要控制棒。指出两者各自的作用，并解释为什么两者都是必需的。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "慢化剂使中子减速，从而使它们能引起裂变；控制棒吸收中子，使裂变速率保持在安全水平；前者使链式反应成为可能，后者防止它增大。裂变释放的中子运动得太快，不能被铀-235 吸收，所以要用轻水、重水或石墨等慢化剂把它们减速到足以引起后续裂变的速度；没有慢化剂，链式反应就不能自持。硼、镉或铪制成的控制棒吸收慢中子，升降控制棒可调节每次裂变所产生的中子中有多少继续引起另一次裂变，从而使速率保持稳定或使反应停止；没有控制棒，经过慢化的链式反应就可能失控地增长。"
+      }
+    },
+    {
+      "id": "e7",
+      "source_id": "fs-idm210381584",
+      "source_number": "53",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "reactors",
+      "prompt": "说明在核电厂中铀的势能是怎样转化为电能的。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "铀的裂变产生热量，热量被带到外部的蒸汽发生器（锅炉）。产生的水蒸气推动涡轮机转动，涡轮机带动发电机发电。"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "e1",
+      "concept": "nuclear-transmutation",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e1",
+      "concept": "transuranium-element",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e1",
+      "concept": "balancing-nuclear-equations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e2",
+      "concept": "nuclear-fission",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e2",
+      "concept": "nuclear-fusion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e2",
+      "concept": "nuclear-energy-release",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e3",
+      "concept": "nuclear-fusion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e3",
+      "concept": "kinetic-energy",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e4",
+      "concept": "chain-reaction",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e4",
+      "concept": "critical-mass",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e4",
+      "concept": "control-rod",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e5",
+      "concept": "nuclear-reactor",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e5",
+      "concept": "nuclear-fuel",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e5",
+      "concept": "nuclear-moderator",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e5",
+      "concept": "reactor-coolant",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e5",
+      "concept": "control-rod",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e5",
+      "concept": "containment-system",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e6",
+      "concept": "nuclear-moderator",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e6",
+      "concept": "control-rod",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e6",
+      "concept": "chain-reaction",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e7",
+      "concept": "nuclear-reactor",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e7",
+      "concept": "reactor-coolant",
+      "weights_by": "ai"
+    }
+  ],
+  "footnotes": [
+    {
+      "id": "c-u235-fission",
+      "kind": "correction",
+      "html": "书中说中子分裂的是 U-238 原子核，但被轰击的原子是铀-235。慢中子使 U-235 原子核分裂；U-238 俘获它们而变成铀-239。"
+    },
+    {
+      "id": "c-meitnerium",
+      "kind": "correction",
+      "html": "书中的表给出 107。鿏是 109 号元素，这也是它的方程所给出的原子序数 ${}_{109}^{266}\\text{Mt}$。"
+    }
+  ]
+}

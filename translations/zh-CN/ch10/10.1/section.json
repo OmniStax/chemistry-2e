@@ -1,0 +1,998 @@
+{
+  "id": "10.1",
+  "module": "m68761",
+  "chapter": "10",
+  "title": "分子间力",
+  "short": "分子间力",
+  "lead": "一种物质是固体、液体还是气体，取决于其粒子之间的吸引与驱使它们分开的<span data-concept=\"kinetic-energy\">动能</span>之间的较量。中性分子之间有三种吸引在起作用，即色散力、偶极–偶极吸引力和氢键，而分子的结构告诉我们它受到其中的哪几种。",
+  "objectives": [
+    "描述凝聚相中原子或分子之间可能存在的各类分子间力（色散力、偶极–偶极吸引力和氢键）",
+    "根据特定分子的结构，确定它们所受的分子间力的类型",
+    "解释物质内部存在的分子间力与其物态变化所对应的温度之间的关系"
+  ],
+  "summary_html": "<p>凝聚态物质（液体和固体）的物理性质可以用分子运动论来解释。在液体中，分子间的吸引<span data-concept=\"force\">力</span>使分子保持接触，不过分子仍有足够的 KE 相互滑过。</p><p>分子间吸引<span data-concept=\"force\">力</span>统称为范德瓦耳斯力，是液体和固体行为的成因，本质上是静电的。偶极–偶极吸引力来自一个极性分子带部分负电荷的一端对另一个分子带部分正电荷的一端的静电吸引。原子中电子的运动所产生的暂时偶极可以在相邻原子中诱导出偶极，并产生伦敦色散力。伦敦色散<span data-concept=\"force\">力</span>随分子尺寸增大而增大。氢键是一种特殊类型的偶极–偶极吸引力，当氢与三种电负性最大的元素 F、O 或 N 之一键合时产生。</p>",
+  "notes": "两个“学习链接”框被略去：一个是 PhET 物态模拟，本页展示各相的图取代了它的位置；另一个是关于凯勒·奥特姆壁虎研究的视频。书中自身的疏漏照原样保留：例 10.3 的题目中乙醇的沸点写作 78.4 °C，而其解答中为 78.5 °C；关于色散力、偶极–偶极吸引力和氢键的习题的答案中，把 ICl 写成了“ICI”。",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      },
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ]
+  },
+  "built": "2026-10-26",
+  "exercises_lead": "",
+  "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案取自书后答案以及“学习检测”的答案。没有答案的概念性习题 fs-idp56789136、fs-idp137732064、fs-idm102175568、fs-idm75414800、fs-idp70845808、fs-idp59807680、fs-idp11327328、fs-idm24391648 和 fs-idp83473328 附有标明为 OmniStax 自拟的建议思路。模拟类习题 fs-idm78391360 要求打开 PhET 物态模拟，已暂缓：本页展示各相的图不含该模拟的相互作用势部分。",
+  "figures": [
+    {
+      "id": "sim-phases",
+      "kind": "sim",
+      "number": "10.2",
+      "originals": [
+        "/media/ch10/CNX_Chem_10_01_KMTPhases1.jpg"
+      ],
+      "original_caption": "物质在固态、液态和气态之间的转变，发生在温度或压强的条件有利于分子间力发生相应变化的时候。（注：气相中粒子之间的空间比图中所示大得多。）",
+      "draws": [
+        "temperature"
+      ],
+      "conventions": [
+        "Ne",
+        "Ar",
+        "Kr",
+        "F",
+        "Cl"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "clock stepped, so the particles move"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-water-photo",
+      "kind": "photo",
+      "number": "10.3",
+      "draws": []
+    },
+    {
+      "id": "fig-butane-photo",
+      "kind": "photo",
+      "number": "10.4",
+      "draws": []
+    },
+    {
+      "id": "sim-intra-inter",
+      "kind": "sim",
+      "number": "10.5",
+      "originals": [
+        "/media/ch10/CNX_Chem_10_01_IntravInter.jpg"
+      ],
+      "original_caption": "分子内作用力使一个分子保持完整。分子间力使多个分子结合在一起，并决定物质的许多性质。",
+      "draws": [],
+      "conventions": [
+        "Cl",
+        "H"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "force labels moved off the atoms"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-dispersion",
+      "kind": "sim",
+      "number": "10.6",
+      "originals": [
+        "/media/ch10/CNX_Chem_10_01_DispForces.jpg"
+      ],
+      "original_caption": "色散力来自暂时偶极的形成，此处以两个非极性双原子分子为例加以说明。",
+      "draws": [
+        "temperature"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "clock stepped, δ labels in ink, force label lifted, note dropped"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-carbon-family",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-pentanes",
+      "kind": "sim",
+      "number": "10.7",
+      "originals": [
+        "/media/ch10/CNX_Chem_10_01_PentIso.jpg"
+      ],
+      "original_caption": "色散力的强度随分子之间接触面积的增大而增大，这些戊烷异构体的沸点就说明了这一点。",
+      "draws": [
+        "temperature",
+        "area"
+      ],
+      "conventions": [
+        "C",
+        "H"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "2D scaled to the tallest isomer, 3D contact label beside, no idle spin"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-geckos",
+      "kind": "photo",
+      "number": "10.8",
+      "draws": []
+    },
+    {
+      "id": "fig-dipoles",
+      "kind": "figure",
+      "number": "10.9",
+      "originals": [
+        "/media/ch10/CNX_Chem_10_01_DipDip.jpg"
+      ],
+      "original_caption": "此图显示了极性分子（例如 HCl）的两种排列方式，这两种排列使一个分子带部分负电荷的一端与另一个分子带部分正电荷的一端之间可以产生吸引。",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-hbond",
+      "kind": "sim",
+      "number": "10.10",
+      "originals": [
+        "/media/ch10/CNX_Chem_10_01_HBonding.jpg"
+      ],
+      "original_caption": "水分子与附近的水分子形成多重氢键相互作用。",
+      "draws": [],
+      "conventions": [
+        "O",
+        "H"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "3D cluster smaller and lowered below the headline"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-hydrides",
+      "kind": "sim",
+      "number": "10.11",
+      "folds": [
+        "10.12"
+      ],
+      "originals": [
+        "/media/ch10/CNX_Chem_10_01_HydrideBP1.jpg",
+        "/media/ch10/CNX_Chem_10_01_HydrideBP2.jpg"
+      ],
+      "original_caption": "（图 10.11）对于第 15、16 和 17 族氢化物，对于第 3、4、5 周期元素的氢化物，各类化合物的沸点随分子质量增大而升高。（图 10.12）与第 3−5 周期相比，第 17、16 和 15 族中第 2 周期元素（分别为 F、O 和 N）的二元氢化物由于氢键而表现出异常高的沸点。",
+      "draws": [
+        "temperature"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "period-2 names spread apart"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-dna",
+      "kind": "photo",
+      "number": "10.13",
+      "draws": []
+    },
+    {
+      "id": "fig-dna-pairs",
+      "kind": "photo",
+      "number": "10.14",
+      "draws": []
+    }
+  ],
+  "coverage": [
+    {
+      "span": "kmt",
+      "concept": "phase-from-imf-and-kinetic-energy",
+      "verb": "introduces"
+    },
+    {
+      "span": "kmt",
+      "concept": "kinetic-molecular-theory",
+      "verb": "uses"
+    },
+    {
+      "span": "kmt",
+      "concept": "intermolecular-force",
+      "verb": "introduces"
+    },
+    {
+      "span": "forces",
+      "concept": "intermolecular-versus-intramolecular-forces",
+      "verb": "introduces"
+    },
+    {
+      "span": "forces",
+      "concept": "van-der-waals-force",
+      "verb": "introduces"
+    },
+    {
+      "span": "dispersion",
+      "concept": "dispersion-forces",
+      "verb": "introduces"
+    },
+    {
+      "span": "dispersion",
+      "concept": "instantaneous-dipole",
+      "verb": "introduces"
+    },
+    {
+      "span": "dispersion",
+      "concept": "induced-dipole",
+      "verb": "introduces"
+    },
+    {
+      "span": "polarizability",
+      "concept": "polarizability-and-dispersion-strength",
+      "verb": "introduces"
+    },
+    {
+      "span": "polarizability",
+      "concept": "rank-by-intermolecular-forces",
+      "verb": "introduces"
+    },
+    {
+      "span": "polarizability",
+      "concept": "dispersion-forces",
+      "verb": "uses"
+    },
+    {
+      "span": "polarizability",
+      "concept": "polarizability",
+      "verb": "introduces"
+    },
+    {
+      "span": "shape",
+      "concept": "shape-and-dispersion-strength",
+      "verb": "introduces"
+    },
+    {
+      "span": "shape",
+      "concept": "dispersion-forces",
+      "verb": "uses"
+    },
+    {
+      "span": "geckos",
+      "concept": "dispersion-forces",
+      "verb": "reinforces"
+    },
+    {
+      "span": "dipole",
+      "concept": "dipole-dipole-attraction",
+      "verb": "introduces"
+    },
+    {
+      "span": "dipole",
+      "concept": "molecular-polarity",
+      "verb": "uses"
+    },
+    {
+      "span": "dipole",
+      "concept": "rank-by-intermolecular-forces",
+      "verb": "uses"
+    },
+    {
+      "span": "hbond",
+      "concept": "hydrogen-bonding",
+      "verb": "introduces"
+    },
+    {
+      "span": "hbond",
+      "concept": "electronegativity",
+      "verb": "uses"
+    },
+    {
+      "span": "hydrides",
+      "concept": "hydrogen-bonding",
+      "verb": "reinforces"
+    },
+    {
+      "span": "hydrides",
+      "concept": "rank-by-intermolecular-forces",
+      "verb": "uses"
+    },
+    {
+      "span": "dna",
+      "concept": "hydrogen-bonding",
+      "verb": "reinforces"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idm100317728",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-london"
+      },
+      "cite": "polarizability",
+      "prompt": "将下列烃按沸点从低到高排序：C<sub>2</sub>H<sub>6</sub>、C<sub>3</sub>H<sub>8</sub> 和 C<sub>4</sub>H<sub>10</sub>。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "C<sub>2</sub>H<sub>6</sub> &lt; C<sub>3</sub>H<sub>8</sub> &lt; C<sub>4</sub>H<sub>10</sub>。这些化合物都是非极性的，只有伦敦色散力：分子越大，色散力越大，沸点越高。因此沸点由低到高的顺序为 C<sub>2</sub>H<sub>6</sub> &lt; C<sub>3</sub>H<sub>8</sub> &lt; C<sub>4</sub>H<sub>10</sub>。"
+      }
+    },
+    {
+      "id": "cyl2",
+      "source_id": "fs-idm116129040",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-dipole"
+      },
+      "cite": "dipole",
+      "prompt": "预测 ICl 和 Br<sub>2</sub> 哪个的沸点更高。请解释你的理由。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "ICl。ICl 和 Br<sub>2</sub> 的质量相近（约 160 amu），因此所受的伦敦色散力相近。ICl 是极性的，因而还表现出偶极–偶极吸引力；Br<sub>2</sub> 是非极性的，没有这种吸引力。相对较强的偶极–偶极吸引力需要更多的能量来克服，所以 ICl 的沸点更高。"
+      }
+    },
+    {
+      "id": "cyl3",
+      "source_id": "fs-idm118983568",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-hbond"
+      },
+      "cite": "hydrides",
+      "prompt": "乙烷（CH<sub>3</sub>CH<sub>3</sub>）的熔点为 −183 °C，沸点为 −89 °C。预测甲胺（CH<sub>3</sub>NH<sub>2</sub>）的熔点和沸点。请解释你的理由。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "预测甲胺的熔点和沸点显著高于乙烷。CH<sub>3</sub>CH<sub>3</sub> 和 CH<sub>3</sub>NH<sub>2</sub> 的大小和质量相近，但甲胺含有 −NH 基团，因此可能表现出氢键。这大大增强了它的 IMF，因而提高了它的熔点和沸点。很难预测具体数值，但已知的数值是熔点 −93 °C，沸点 −6 °C。"
+      }
+    },
+    {
+      "id": "e1",
+      "source_id": "fs-idp113763312",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "kmt",
+      "prompt": "就宏观性质而言，液体和固体有何不同？又有何相似之处？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "液体和固体的相似之处在于它们都是由原子、离子或分子构成的物质。它们都不可压缩，密度相近，且都远大于气体的密度。它们的不同之处在于，液体没有固定的形状，而固体是刚性的。"
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idp56789136",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "kmt",
+      "prompt": "用分子运动论来说，液体在哪些方面与固体相似？在哪些方面与固体不同？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "液体与固体相似，在于它们的粒子彼此靠近并相互接触，所以两者都是凝聚相：各有确定的体积，几乎不可压缩，密度远大于气体，因为在两者中分子间吸引相对于粒子的动能都很强。液体与固体的不同在于粒子的排列方式和运动方式。在固体中，粒子被固定在确定的位置上，往往呈规则的、重复的图案，只能在这些位置附近振动。在液体中，粒子随机排列，具有足够的动能相互滑过，同时保持接触，所以液体会流动并呈容器的形状，而固体保持自己的形状。"
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idm25346224",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "kmt",
+      "prompt": "用分子运动论来说，液体在哪些方面与气体相似？在哪些方面与气体不同？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "它们的相似之处在于原子或分子可以自由地从一个位置移动到另一个位置。不同之处在于，液体的粒子被限制在盛放它们的容器的形状内。相反，气体会无限制地膨胀以充满所置入的空间。"
+      }
+    },
+    {
+      "id": "e4",
+      "source_id": "fs-idp137732064",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "kmt",
+      "prompt": "解释为什么液体会呈现倒入的任何容器的形状，而固体是刚性的并保持其形状。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "液体呈容器的形状，是因为它的分子具有足够的动能相互滑过，尽管它们之间的吸引使分子保持接触。因此样品在重力作用下流动，直到充满盛放它的容器的底部，同时体积保持不变。在固体中，IMF 相对于粒子的动能足够强，使粒子被锁定在固定的位置上，只能在这些位置附近振动。由于它们不能相对于彼此移动，固体不能流动，它是刚性的并保持自己的形状。"
+      }
+    },
+    {
+      "id": "e5",
+      "source_id": "fs-idm121006064",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "forces",
+      "prompt": "有什么证据表明所有中性原子和分子彼此之间都存在吸引力？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "在足够低的温度下，所有原子和分子都会凝结成液体或固体，此时吸引力超过分子的动能。"
+      }
+    },
+    {
+      "id": "e6",
+      "source_id": "fs-idm20127408",
+      "kind": "exercise",
+      "bloom": "Remember",
+      "place": {
+        "at": "end"
+      },
+      "cite": "dispersion",
+      "prompt": "定义下列各项并各举一例：<br>（a）色散力<br>（b）偶极–偶极吸引力<br>（c）氢键",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）当原子的电子围绕原子核不对称分布时，原子会产生一个暂时的偶极矩，色散力由此产生。这种结构在氩或氡这样的大原子中更为普遍。第二个原子随后会因第一个原子中偶极的出现而发生畸变。第二个原子的电子被吸引向第一个原子的正端，从而在第二个原子中形成偶极。最终结果是迅速涨落的、相互吸引的暂时偶极（例如 Ar）。（b）偶极–偶极吸引力是一个极性分子的正端与另一个极性分子的负端之间的静电吸引所产生的力（例如 ICI 分子<sup class=\"fn\" data-note=\"c-e6-icl\"></sup>通过偶极–偶极相互作用而相互吸引）。（c）只要氢原子与氟、氧或氮原子这样电负性较大的原子之一键合，就会形成氢键。一个分子中带部分正电荷的氢原子与另一个分子中带部分负电荷的原子之间的静电吸引，产生一种称为氢键的很强的偶极–偶极相互作用（例如 HF⋯HF）。"
+      }
+    },
+    {
+      "id": "e7",
+      "source_id": "fs-idm102175568",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "kmt",
+      "prompt": "无论物质是固体、液体还是气体，其中分子间力的类型都是相同的。那么，为什么物质会发生相变，从气体变为液体或固体呢？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "气体凝结或凝固，是因为冷却或压缩改变了分子的动能相对于 IMF 的大小，尽管力的种类保持不变。相取决于两者之间的平衡。冷却气体会降低其分子的平均动能，压缩则使分子靠得更近，使它们之间的吸引更强。一旦分子不再有足够的动能去克服把它们吸引在一起的作用，它们就保持接触，气体凝结为液体。进一步冷却会降低动能，直到 IMF 把分子保持在固定的位置上，液体凝固为固体。"
+      }
+    },
+    {
+      "id": "e8",
+      "source_id": "fs-idp44839120",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "polarizability",
+      "prompt": "为什么稀有气体的沸点按 He &lt; Ne &lt; Ar &lt; Kr &lt; Xe 的顺序升高？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "伦敦色散力通常随电子数的增多而增大。"
+      }
+    },
+    {
+      "id": "e9",
+      "source_id": "fs-idm75414800",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "hydrides",
+      "prompt": "氖和 HF 的分子质量大致相同。<br>（a）解释为什么氖和 HF 的沸点不同。<br>（b）比较 Ne、Ar、Kr 和 Xe 的沸点变化与 HF、HCl、HBr 和 HI 的沸点变化，并解释随原子质量或分子质量增大，这两种变化有何不同。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "（a）氖在 −246 °C 沸腾，HF 在约 20 °C 沸腾，因为 HF 分子之间通过氢键相互吸引，而氖原子之间只通过色散力相互吸引。氖原子是单个非极性原子，由于原子很小，其色散力很弱。HF 分子的质量与之大致相同，因此其色散力相近，但它是极性的，并且有一个氢原子与氟键合。因此 HF 分子之间通过偶极–偶极吸引力，以及强得多的氢键相互吸引，所以分开它们需要多得多的能量。<br>（b）稀有气体的沸点随原子质量稳步升高，从 Ne 的 −246 °C，经 Ar 的 −186 °C 和 Kr 的 −153 °C，到 Xe 的 −108 °C，因为它们唯一的吸引是色散力，而色散力随原子变大、更易极化而增大。卤化氢打破了这一规律：HCl（−85 °C）、HBr（−67 °C）和 HI（−35 °C）随分子质量增大而升高，因为它们的色散力增大，但最轻的 HF 却在约 20 °C 沸腾，是这四者中最高的。四者中只有 HF 能形成氢键，这种氢键的作用超过了较重卤化氢更大的色散力。"
+      }
+    },
+    {
+      "id": "e10",
+      "source_id": "fs-idm50276560",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "hydrides",
+      "prompt": "将下列各组化合物按沸点温度升高的顺序排列：<br>（a）HCl、H<sub>2</sub>O、SiH<sub>4</sub><br>（b）F<sub>2</sub>、Cl<sub>2</sub>、Br<sub>2</sub><br>（c）CH<sub>4</sub>、C<sub>2</sub>H<sub>6</sub>、C<sub>3</sub>H<sub>8</sub><br>（d）O<sub>2</sub>、NO、N<sub>2</sub>",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）SiH<sub>4</sub> &lt; HCl &lt; H<sub>2</sub>O；（b）F<sub>2</sub> &lt; Cl<sub>2</sub> &lt; Br<sub>2</sub>；（c）CH<sub>4</sub> &lt; C<sub>2</sub>H<sub>6</sub> &lt; C<sub>3</sub>H<sub>8</sub>；（d）N<sub>2</sub> &lt; O<sub>2</sub> &lt; NO"
+      }
+    },
+    {
+      "id": "e11",
+      "source_id": "fs-idp70845808",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "hydrides",
+      "prompt": "丁醇 C<sub>4</sub>H<sub>9</sub>OH 的分子质量为 74.14；乙二醇 CH<sub>2</sub>(OH)CH<sub>2</sub>OH 的分子质量为 62.08，但它们的沸点分别为 117.2 °C 和 174 °C。解释造成这一差异的原因。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "乙二醇的沸点较高，因为它的每个分子有两个 −OH 基团，而丁醇分子只有一个。丁醇是更重、更大的分子，所以它的色散力稍强，仅凭这一点会使它的沸点更高。在两种液体中，最强的吸引都是一个分子中与氧键合的氢原子与相邻分子中氧原子上的孤电子对之间的氢键。有两个 −OH 基团的乙二醇分子所能参与的氢键数目大约是丁醇分子的两倍，所以其分子之间的总体吸引要强得多。使分子在沸腾时分开需要更多的能量，也就需要更高的温度：乙二醇为 174 °C，而丁醇为 117.2 °C。"
+      }
+    },
+    {
+      "id": "e12",
+      "source_id": "fs-idp19547744",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "dipole",
+      "prompt": "根据分子间吸引力，解释摩尔质量相近的<em>正</em>丁烷（−1 °C）和氯乙烷（12 °C）沸点的差异。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "只有 C-H 键所产生的相当小的偶极–偶极相互作用可用来使<em>正</em>丁烷保持在液态。然而，氯乙烷由于 Cl-C 键而具有相当大的偶极相互作用；因此相互作用更强，导致沸点更高。"
+      }
+    },
+    {
+      "id": "e13",
+      "source_id": "fs-idp59807680",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "hydrides",
+      "prompt": "根据偶极矩和/或氢键，定性地解释摩尔质量相近的丙酮（56.2 °C）和 1-丙醇（97.4 °C）沸点的差异。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "1-丙醇的沸点较高，因为它的分子之间可以形成氢键，而丙酮分子不能。这两种化合物的摩尔质量相近，丙酮约为 58 g/mol，1-丙醇约为 60 g/mol，所以它们的色散力相当。丙酮 (CH<sub>3</sub>)<sub>2</sub>CO 因其 C=O 基团而是极性的，所以它的分子之间通过偶极–偶极吸引力相互吸引，但它没有任何氢原子与氧键合，所以不能在自身分子之间形成氢键。1-丙醇 CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>OH 也是极性的，并且有一个 −OH 基团，其氢原子被相邻分子氧原子上的孤电子对吸引。氢键比普通的偶极–偶极吸引力强，所以 1-丙醇必须加热到 97.4 °C 才沸腾，而丙酮在 56.2 °C 就沸腾。"
+      }
+    },
+    {
+      "id": "e14",
+      "source_id": "fs-idp12526608",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "hydrides",
+      "prompt": "H<sub>2</sub>O(<em>s</em>) 的熔点是 0 °C。你预计 H<sub>2</sub>S(<em>s</em>) 的熔点是 −85 °C、0 °C 还是 185 °C？请解释你的答案。",
+      "answer": {
+        "type": "choice",
+        "generated_by": "source",
+        "options": [
+          "−85 °C",
+          "0 °C",
+          "185 °C"
+        ],
+        "correct": 0,
+        "hint": "想一想这两种化合物中哪一种能形成氢键。",
+        "solution": "−85 °C。水具有更强的氢键，所以它在更高的温度熔化。"
+      }
+    },
+    {
+      "id": "e15",
+      "source_id": "fs-idp11327328",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "dipole",
+      "prompt": "硅烷（SiH<sub>4</sub>）、膦（PH<sub>3</sub>）和硫化氢（H<sub>2</sub>S）的熔点分别为 −185 °C、−133 °C 和 −85 °C。这对这三种化合物的极性和分子间吸引力说明了什么？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "这些熔点表明，分子的极性以及与之相关的偶极–偶极吸引力的强度，按 SiH<sub>4</sub> &lt; PH<sub>3</sub> &lt; H<sub>2</sub>S 的顺序增大。这三种分子的大小和摩尔质量相近（32、34 和 34 g/mol），所以它们的色散力相当。SiH<sub>4</sub> 是四面体形，其键偶极相互抵消，所以它是非极性的，只有色散力；它的熔点最低，为 −185 °C。PH<sub>3</sub> 是三角锥形，磷上有一对孤电子对，所以它是极性的，不过只是略有极性，因为磷和氢的电负性几乎相同；微弱的偶极–偶极吸引力叠加在它的色散力上，使其熔点升高到 −133 °C。H<sub>2</sub>S 是 V 形，硫的电负性大于氢，所以它的 S–H 键极性更强，在这三者中偶极矩最大。它的偶极–偶极吸引力最强，熔点最高，为 −85 °C。"
+      }
+    },
+    {
+      "id": "e16",
+      "source_id": "fs-idm54846080",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "hbond",
+      "prompt": "解释为什么两个水分子之间的氢键比两个氟化氢分子之间的氢键弱。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "氟化氢分子之间的氢键比水分子之间的氢键强，因为 F 的电负性大于 O 的电负性。因此，F 上的部分负电荷大于 O 上的部分负电荷。带部分正电荷的 H 与较大的、带部分负电荷的 F 之间的氢键，将比 H 与 O 之间形成的氢键更强。"
+      }
+    },
+    {
+      "id": "e17",
+      "source_id": "fs-idm24391648",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "hbond",
+      "figure": {
+        "src": "/media/ch10/CNX_Chem_10_01_AceticAcid_img.jpg",
+        "alt": "路易斯结构显示一个碳原子与三个氢原子和另一个碳原子单键相连，后一个碳原子又与一个氧原子双键相连，并与另一个氧原子单键相连，这个氧原子再与一个氢原子单键相连。虚线把末端的氧原子和氢原子连接到右侧旋转了 180 度的对应路易斯结构上。每条虚线都标为“氢键”。"
+      },
+      "prompt": "在某些条件下，乙酸 CH<sub>3</sub>COOH 的分子会形成“二聚体”，即由强分子间吸引力结合在一起的成对乙酸分子。画出乙酸的二聚体，表明两个 CH<sub>3</sub>COOH 分子是如何结合在一起的，并说明起作用的是哪种类型的 IMF。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "两个分子由两个氢键结合在一起。在二聚体中，两个 CH<sub>3</sub>COOH 分子通过它们的 COOH 基团相对，一个相对于另一个首尾倒置，CH<sub>3</sub> 基团指向外侧。每个分子的 O–H 基团的氢原子带部分正电荷，被另一个分子 C=O 氧原子上的孤电子对吸引，该氧原子带部分负电荷。平面画出时，两个 COOH 基团和两个氢键形成一个八原子的环，C=O····H–O–C=O····H–O–，并在第一个碳原子处闭合，虚线表示氢键。这种吸引是氢键，因为每个氢原子都与一个电负性很大的氧原子键合，并被相邻分子氧原子上的孤电子对吸引。"
+      }
+    },
+    {
+      "id": "e18",
+      "source_id": "fs-idp57460448",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "hbond",
+      "figure": {
+        "src": "/media/ch10/CNX_Chem_10_01_Aminacidch_img.jpg",
+        "alt": "水平显示螺旋结构的两圈。螺旋上叠加了三个路易斯结构。第一个显示一个氧原子旁边水平堆叠的短横线，三个点把它与一个氢原子相连，一条短横线把该氢原子与一个氮原子相连。第二个显示一个碳原子与一个氧原子双键相连，然后三个点连接到一个氢原子，该氢原子与一个氮原子键合。第三个显示一个碳原子与一个氧原子双键相连，三个点延伸到氧原子的右侧。"
+      },
+      "prompt": "蛋白质是氨基酸链，可以形成各种排列，其中之一是螺旋。是哪种 IMF 使蛋白质链保持这种形状？在蛋白质图像上标出使蛋白质保持在一起的 IMF 的位置。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "氢键是使蛋白质链保持在一起的主要 IMF。氢键存在于 N−H 与 C=O 之间。"
+      }
+    },
+    {
+      "id": "e19",
+      "source_id": "fs-idp83473328",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "kmt",
+      "prompt": "液态 NH<sub>3</sub> 的密度是 0.64 g/mL；气态 NH<sub>3</sub> 在 STP 下的密度是 0.0007 g/mL。解释这两种相的密度之差。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "液氨的密度约为 STP 下气体的 900 倍（0.64 g/mL ÷ 0.0007 g/mL ≈ 900），因为同样的分子在液体中堆积得紧密得多。密度是质量除以体积，两种相中每个分子的质量相同，所以差别来自一定数目的分子所占的体积。在液体中，IMF（主要是 NH<sub>3</sub> 分子之间的氢键）使分子彼此保持接触，所以一定质量只占很小的体积。在气体中，分子的动能克服了这些吸引，分子相距很远，之间大部分是空隙，所以同样质量的氨分布在大约 900 倍的体积中。"
+      }
+    },
+    {
+      "id": "e20",
+      "source_id": "fs-idp18248944",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "hydrides",
+      "prompt": "确定下列固体中存在的分子间力：<br>（a）CH<sub>3</sub>CH<sub>2</sub>OH<br>（b）CH<sub>3</sub>CH<sub>2</sub>CH<sub>3</sub><br>（c）CH<sub>3</sub>CH<sub>2</sub>Cl",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）氢键、偶极–偶极吸引力和色散力；（b）色散力；（c）偶极–偶极吸引力和色散力"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "polarizability-and-dispersion-strength"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "rank-by-intermolecular-forces"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "dipole-dipole-attraction"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "rank-by-intermolecular-forces"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "hydrogen-bonding"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "rank-by-intermolecular-forces"
+    },
+    {
+      "exercise": "e1",
+      "concept": "phase-from-imf-and-kinetic-energy"
+    },
+    {
+      "exercise": "e2",
+      "concept": "phase-from-imf-and-kinetic-energy"
+    },
+    {
+      "exercise": "e3",
+      "concept": "phase-from-imf-and-kinetic-energy"
+    },
+    {
+      "exercise": "e4",
+      "concept": "phase-from-imf-and-kinetic-energy"
+    },
+    {
+      "exercise": "e5",
+      "concept": "intermolecular-versus-intramolecular-forces"
+    },
+    {
+      "exercise": "e5",
+      "concept": "phase-from-imf-and-kinetic-energy"
+    },
+    {
+      "exercise": "e6",
+      "concept": "dispersion-forces"
+    },
+    {
+      "exercise": "e6",
+      "concept": "dipole-dipole-attraction"
+    },
+    {
+      "exercise": "e6",
+      "concept": "hydrogen-bonding"
+    },
+    {
+      "exercise": "e7",
+      "concept": "phase-from-imf-and-kinetic-energy"
+    },
+    {
+      "exercise": "e8",
+      "concept": "polarizability-and-dispersion-strength"
+    },
+    {
+      "exercise": "e9",
+      "concept": "hydrogen-bonding"
+    },
+    {
+      "exercise": "e9",
+      "concept": "polarizability-and-dispersion-strength"
+    },
+    {
+      "exercise": "e10",
+      "concept": "rank-by-intermolecular-forces"
+    },
+    {
+      "exercise": "e11",
+      "concept": "hydrogen-bonding"
+    },
+    {
+      "exercise": "e11",
+      "concept": "rank-by-intermolecular-forces"
+    },
+    {
+      "exercise": "e12",
+      "concept": "dipole-dipole-attraction"
+    },
+    {
+      "exercise": "e12",
+      "concept": "rank-by-intermolecular-forces"
+    },
+    {
+      "exercise": "e13",
+      "concept": "hydrogen-bonding"
+    },
+    {
+      "exercise": "e13",
+      "concept": "rank-by-intermolecular-forces"
+    },
+    {
+      "exercise": "e14",
+      "concept": "hydrogen-bonding"
+    },
+    {
+      "exercise": "e15",
+      "concept": "dipole-dipole-attraction"
+    },
+    {
+      "exercise": "e15",
+      "concept": "rank-by-intermolecular-forces"
+    },
+    {
+      "exercise": "e16",
+      "concept": "hydrogen-bonding"
+    },
+    {
+      "exercise": "e17",
+      "concept": "hydrogen-bonding"
+    },
+    {
+      "exercise": "e18",
+      "concept": "hydrogen-bonding"
+    },
+    {
+      "exercise": "e19",
+      "concept": "phase-from-imf-and-kinetic-energy"
+    },
+    {
+      "exercise": "e20",
+      "concept": "rank-by-intermolecular-forces"
+    },
+    {
+      "exercise": "e20",
+      "concept": "dispersion-forces"
+    }
+  ],
+  "referents": [
+    {
+      "id": "group-14",
+      "label": "碳族（第 14 族氢化物）",
+      "figures": [
+        "sim-hydrides"
+      ]
+    },
+    {
+      "id": "group-15",
+      "label": "氮族（第 15 族氢化物）",
+      "figures": [
+        "sim-hydrides"
+      ]
+    },
+    {
+      "id": "group-16",
+      "label": "氧族（第 16 族氢化物）",
+      "figures": [
+        "sim-hydrides"
+      ]
+    },
+    {
+      "id": "group-17",
+      "label": "卤族（第 17 族氢化物）",
+      "figures": [
+        "sim-hydrides"
+      ]
+    }
+  ],
+  "footnotes": [
+    {
+      "id": "c-ethanol-bp",
+      "kind": "correction",
+      "html": "书中此处印的是 78.5 °C，而题目中给出的乙醇沸点是 78.4 °C。应为 78.4 °C。"
+    },
+    {
+      "id": "c-e6-icl",
+      "kind": "correction",
+      "html": "答案中写的是 ICI；所指的极性分子应为一氯化碘 ICl。"
+    }
+  ]
+}

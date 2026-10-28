@@ -1,0 +1,1104 @@
+{
+ "id": "3.3",
+ "module": "m68703",
+ "chapter": "3",
+ "title": "物质的量浓度",
+ "short": "物质的量浓度",
+ "lead": "我们遇到的大多数物质都是混合物，而溶液，即含有一种或多种溶质的溶剂，则用它所含各组分的多少来描述。<span data-concept=\"molarity\">物质的量浓度</span>是每升溶液中所含溶质的物质的量（以<span data-concept=\"mole\">摩尔</span>计），它把物质的量、<span data-concept=\"mass\">质量</span>和<span data-concept=\"volume\">体积</span>联系起来，并在稀释过程中追踪溶液的<span data-concept=\"concentration\">浓度</span>。",
+ "objectives": [
+  "描述溶液的基本性质",
+  "用物质的量浓度计算溶液的浓度",
+  "用稀释公式进行稀释计算"
+ ],
+ "summary_html": "<p>溶液是均匀混合物。许多溶液含有一种称为溶剂的组分，其他称为溶质的组分溶解在其中。水溶液是溶剂为水的溶液。溶液的<span data-concept=\"concentration\">浓度</span>是溶液中溶质相对含量的一种度量。<span data-concept=\"concentration\">浓度</span>可以用多种单位来测量，其中一种非常有用的单位是<span data-concept=\"molarity\">物质的量浓度</span>，定义为每升溶液中所含溶质的物质的量（以<span data-concept=\"mole\">摩尔</span>计）。向溶液中加入溶剂可以降低溶质的<span data-concept=\"concentration\">浓度</span>，这一过程称为稀释。稀释公式是溶液稀释前后<span data-concept=\"concentration\">浓度</span>与<span data-concept=\"volume\">体积</span>之间的一个简单关系。</p>",
+ "notes": "指向 PhET 稀释模拟的“学习链接”框被略去；本页的交互图改为改变溶质的量、溶液的体积和浓度，并对溶液进行稀释，取代了它。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签、权重和提示均由 AI 生成。答案取自书后答案以及“学习检测”的答案。两道概念题 fs-idm107608448（将 NaCl 溶液从 1.00 L 稀释到 1.80 L）和 fs-idm80527600（200 mL 与 400 mL 的样品）在书中没有答案，附有标明由 AI 撰写的建议思路。没有答案的数值题 fs-idm78757216、fs-idm26412832、fs-idm26440336、fs-idm27178816、fs-idm27153856、fs-idm27683248、fs-idm27384272、fs-idm27364240 和 fs-idm26471216 被略去，fs-idm59335888 和 fs-idm3478704 也被略去，它们的（a）部分是概述步骤，而（b）部分导向没有答案的结果。有答案的概述题 fs-idm62194192 和 fs-idm26500064 只按（b）部分检查，书中的概述写在解里。没有取自或留给其他小节的内容。",
+ "figures": [
+  {
+   "id": "fig-espresso",
+   "kind": "photo",
+   "number": "3.14",
+   "draws": []
+  },
+  {
+   "id": "sim-molarity",
+   "kind": "sim",
+   "draws": [
+    "mass",
+    "amount",
+    "volume",
+    "concentration"
+   ],
+   "conventions": [
+    "C",
+    "O",
+    "Na",
+    "Cl",
+    "Co",
+    "Ca",
+    "K",
+    "Br"
+   ],
+   "facts": [
+    "#8fc6e8"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "readout numbers in type colours, molar M set upright"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-vinegar",
+   "kind": "photo",
+   "number": "3.15",
+   "draws": []
+  },
+  {
+   "id": "sim-dilution",
+   "kind": "sim",
+   "number": "3.16",
+   "originals": [
+    "/media/ch03/CNX_Chem_03_04_dilution.jpg"
+   ],
+   "original_caption": "两种溶液含有相同质量的硝酸铜。右侧的溶液更稀，因为硝酸铜溶解在更多的溶剂中。（来源：Mark Ott）",
+   "draws": [
+    "amount",
+    "volume",
+    "concentration"
+   ],
+   "facts": [
+    "#1f6fc5"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "readout numbers in type colours, molar M set upright"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "mixtures",
+   "concept": "concentration",
+   "verb": "uses"
+  },
+  {
+   "span": "solutions",
+   "concept": "solution-components",
+   "verb": "introduces"
+  },
+  {
+   "span": "solutions",
+   "concept": "concentration",
+   "verb": "introduces"
+  },
+  {
+   "span": "solutions",
+   "concept": "solvent",
+   "verb": "introduces"
+  },
+  {
+   "span": "solutions",
+   "concept": "solute",
+   "verb": "introduces"
+  },
+  {
+   "span": "solutions",
+   "concept": "aqueous-solution",
+   "verb": "introduces"
+  },
+  {
+   "span": "solutions",
+   "concept": "dissolved",
+   "verb": "introduces"
+  },
+  {
+   "span": "solutions",
+   "concept": "concentrated",
+   "verb": "introduces"
+  },
+  {
+   "span": "solutions",
+   "concept": "dilute",
+   "verb": "introduces"
+  },
+  {
+   "span": "molarity",
+   "concept": "molarity",
+   "verb": "introduces"
+  },
+  {
+   "span": "molarity",
+   "concept": "concentration",
+   "verb": "uses"
+  },
+  {
+   "span": "molarity",
+   "concept": "solution-components",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-molar-concentration",
+   "concept": "molarity",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-moles-volumes",
+   "concept": "molarity",
+   "verb": "uses"
+  },
+  {
+   "span": "molarity-calculations",
+   "concept": "molarity-calculations",
+   "verb": "introduces"
+  },
+  {
+   "span": "molarity-calculations",
+   "concept": "molarity",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-from-mass",
+   "concept": "molarity-calculations",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-mass-in-volume",
+   "concept": "molarity-calculations",
+   "verb": "uses"
+  },
+  {
+   "span": "guard-digit",
+   "concept": "molarity-calculations",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ex-volume-for-mass",
+   "concept": "molarity-calculations",
+   "verb": "uses"
+  },
+  {
+   "span": "dilution",
+   "concept": "dilution",
+   "verb": "introduces"
+  },
+  {
+   "span": "dilution",
+   "concept": "concentration",
+   "verb": "uses"
+  },
+  {
+   "span": "dilution-equation",
+   "concept": "dilution-equation",
+   "verb": "introduces"
+  },
+  {
+   "span": "dilution-equation",
+   "concept": "dilution",
+   "verb": "uses"
+  },
+  {
+   "span": "dilution-equation",
+   "concept": "molarity",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-diluted-concentration",
+   "concept": "dilution-equation",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-diluted-volume",
+   "concept": "dilution-equation",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-stock-volume",
+   "concept": "dilution-equation",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm98982768",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-molar-concentration"
+   },
+   "cite": "molarity",
+   "prompt": "一茶匙食糖约含 0.01 mol 蔗糖。如果把一茶匙糖溶于体积为 200 mL 的一杯茶中，蔗糖的物质的量浓度是多少？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.05,
+    "unit": "M",
+    "hint": "把体积换算成升，再用蔗糖的物质的量除以它。",
+    "solution": "0.05 <em>M</em>"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm64107376",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-moles-volumes"
+   },
+   "cite": "molarity",
+   "prompt": "例 3.14 中所述的加糖茶，多大体积（mL）所含的糖（mol）与本例中 10 mL 软饮料所含的相同？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 80,
+    "unit": "mL",
+    "hint": "用一小口中所含的 0.004 mol 糖除以例 3.14“学习检测”中茶的物质的量浓度。",
+    "solution": "80 mL"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idm81897840",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-from-mass"
+   },
+   "cite": "molarity-calculations",
+   "prompt": "计算 6.52 g CoCl<sub>2</sub>（128.9 g/mol）溶于总体积为 75.0 mL 的水溶液中所得溶液的物质的量浓度。",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.674,
+    "unit": "M",
+    "hint": "用摩尔质量把质量换算成物质的量，并把体积换算成升。",
+    "solution": "0.674 <em>M</em>"
+   }
+  },
+  {
+   "id": "cyl4",
+   "source_id": "fs-idm104693104",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-mass-in-volume"
+   },
+   "cite": "molarity-calculations",
+   "prompt": "250.0 mL 0.200 <em>M</em> 的氯化钙溶液中含有多少克 CaCl<sub>2</sub>（110.98 g/mol）？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 5.55,
+    "unit": "g",
+    "hint": "用物质的量浓度乘以以升计的体积得到物质的量，再乘以摩尔质量。",
+    "solution": "5.55 g CaCl<sub>2</sub>"
+   }
+  },
+  {
+   "id": "cyl5",
+   "source_id": "fs-idm88061984",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-volume-for-mass"
+   },
+   "cite": "molarity-calculations",
+   "prompt": "多大体积的 1.50 <em>M</em> KBr 溶液含有 66.0 g KBr？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.37,
+    "unit": "L",
+    "hint": "把 KBr 的质量换算成物质的量，再除以物质的量浓度。",
+    "solution": "0.370 L"
+   }
+  },
+  {
+   "id": "cyl6",
+   "source_id": "fs-idm81737600",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-diluted-concentration"
+   },
+   "cite": "dilution-equation",
+   "prompt": "将 25.0 mL 2.04 <em>M</em> 的 CH<sub>3</sub>OH 溶液稀释到 500.0 mL，所得溶液的浓度是多少？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.102,
+    "unit": "M",
+    "hint": "由 C<sub>1</sub>V<sub>1</sub> = C<sub>2</sub>V<sub>2</sub> 解出 C<sub>2</sub>；体积可以仍用 mL，因为它们的单位会约去。",
+    "solution": "0.102 <em>M</em> CH<sub>3</sub>OH"
+   }
+  },
+  {
+   "id": "cyl7",
+   "source_id": "fs-idm81033056",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-diluted-volume"
+   },
+   "cite": "dilution-equation",
+   "prompt": "某个实验室实验需要 0.125 <em>M</em> 的 HNO<sub>3</sub>。用 0.250 L 1.88 <em>M</em> 的 HNO<sub>3</sub> 可以配制多大体积的 0.125 <em>M</em> HNO<sub>3</sub>？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 3.76,
+    "unit": "L",
+    "hint": "对 V<sub>2</sub> 解稀释公式。",
+    "solution": "3.76 L"
+   }
+  },
+  {
+   "id": "cyl8",
+   "source_id": "fs-idm60422464",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-stock-volume"
+   },
+   "cite": "dilution-equation",
+   "prompt": "用 50.00 mL 3.00 <em>M</em> 的葡萄糖溶液，可以配制多大体积的 0.575 <em>M</em> 葡萄糖（C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>）溶液？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.261,
+    "unit": "L",
+    "hint": "对稀释后溶液的体积解稀释公式，并以升为单位给出。",
+    "solution": "0.261 L"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm107608448",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "dilution",
+   "prompt": "解释将 1.00 L NaCl 溶液稀释到 1.80 L 时，什么发生变化，什么保持不变。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "NaCl 的量保持不变，无论以摩尔还是以克计，而溶液的体积增大，浓度降低。稀释只加入溶剂，所以稀释前后溶质的物质的量相等，这就是 $\\kCone\\kVone=\\kCtwo\\kVtwo$ 的含义。同样量的 NaCl 现在占据 1.80 L 而不是 1.00 L，所以新的物质的量浓度为 $\\kCtwo=\\kCone\\times\\frac{1.00\\;\\text{L}}{1.80\\;\\text{L}}=0.556\\,\\kCone$，略大于原来浓度的一半。溶液的质量也增加了所加水的质量。"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idm66121488",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molarity",
+   "prompt": "计算硫酸溶液的物质的量浓度需要哪些信息？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "我们需要知道溶液中溶解的硫酸的物质的量和溶液的体积。"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm80527600",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "solutions",
+   "prompt": "一份 200 mL 和一份 400 mL 的盐溶液样品，物质的量浓度相同。这两份样品在哪些方面相同？在哪些方面不同？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "两份样品的组成相同：它们的物质的量浓度相同，盐与水的比例相同，与浓度有关的性质如密度和咸度也相同，因为物质的量浓度，即每升溶液中所含溶质的物质的量，与取用溶液的多少无关。它们的差别在于量：400 mL 的样品体积是前者的两倍，所以在相同的物质的量浓度下，它所含盐的物质的量和质量都是前者的两倍，溶液的总质量也是前者的两倍。"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm98103760",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molarity-calculations",
+   "prompt": "确定下列各溶液的物质的量浓度：（a）0.654 L 溶液中含 0.444 mol CoCl<sub>2</sub> （b）1.00 L 溶液中含 98.0 g 磷酸 H<sub>3</sub>PO<sub>4</sub> （c）40.00 mL 溶液中含 0.2074 g 氢氧化钙 Ca(OH)<sub>2</sub> （d）18.60 L 溶液中含 10.5 kg Na<sub>2</sub>SO<sub>4</sub>·10H<sub>2</sub>O （e）100.0 mL 溶液中含 7.0 $\\times$ 10<sup>−3</sup> mol I<sub>2</sub> （f）0.075 L 溶液中含 1.8 $\\times$ 10<sup>4</sup> mg HCl",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 0.679,
+      "unit": "M"
+     },
+     {
+      "part": "(b)",
+      "value": 1.0,
+      "unit": "M"
+     },
+     {
+      "part": "(c)",
+      "value": 0.06998,
+      "unit": "M"
+     },
+     {
+      "part": "(d)",
+      "value": 1.75,
+      "unit": "M"
+     },
+     {
+      "part": "(e)",
+      "value": 0.07,
+      "unit": "M"
+     },
+     {
+      "part": "(f)",
+      "value": 6.6,
+      "unit": "M"
+     }
+    ],
+    "solution": "（a）0.679 <em>M</em>；（b）1.00 <em>M</em>；（c）0.06998 <em>M</em>；（d）1.75 <em>M</em>；（e）0.070 <em>M</em>；（f）6.6 <em>M</em>"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idm62194192",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molarity-calculations",
+   "prompt": "考虑这个问题：用于静脉注射的 0.500 L 0.30 <em>M</em> 葡萄糖（C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>）溶液中，溶质的质量是多少？（a）概述回答该问题所需的步骤。（b）回答该问题。",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 27,
+    "unit": "g",
+    "part": "(b)",
+    "hint": "先由物质的量浓度和体积求出物质的量，再由葡萄糖的摩尔质量求出克数。",
+    "solution": "（a）确定 0.500 L 溶液中葡萄糖的物质的量；确定葡萄糖的摩尔质量；由物质的量和摩尔质量确定葡萄糖的质量；（b）27 g"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm62322112",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molarity-calculations",
+   "prompt": "计算下列各溶液中溶质的物质的量和质量：（a）2.00 L 18.5 <em>M</em> 的 H<sub>2</sub>SO<sub>4</sub>，即浓硫酸 （b）100.0 mL 3.8 $\\times$ 10<sup>−6</sup> <em>M</em> 的 NaCN，即血清中氰化钠的最低致死浓度 （c）5.50 L 13.3 <em>M</em> 的 H<sub>2</sub>CO，即用于“固定”组织样品的甲醛 （d）325 mL 1.8 $\\times$ 10<sup>−6</sup> <em>M</em> 的 FeSO<sub>4</sub>，即饮用水中凭味道可检出的硫酸亚铁的最低浓度",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a) moles",
+      "value": 37.0,
+      "unit": "mol"
+     },
+     {
+      "part": "(a) mass",
+      "value": 3630,
+      "unit": "g"
+     },
+     {
+      "part": "(b) moles",
+      "value": 3.8e-07,
+      "unit": "mol"
+     },
+     {
+      "part": "(b) mass",
+      "value": 1.9e-05,
+      "unit": "g"
+     },
+     {
+      "part": "(c) moles",
+      "value": 73.2,
+      "unit": "mol"
+     },
+     {
+      "part": "(c) mass",
+      "value": 2200,
+      "unit": "g"
+     },
+     {
+      "part": "(d) moles",
+      "value": 5.9e-07,
+      "unit": "mol"
+     },
+     {
+      "part": "(d) mass",
+      "value": 8.9e-05,
+      "unit": "g"
+     }
+    ],
+    "solution": "（a）37.0 mol H<sub>2</sub>SO<sub>4</sub>，3.63 $\\times$ 10<sup>3</sup> g H<sub>2</sub>SO<sub>4</sub>；（b）3.8 $\\times$ 10<sup>−7</sup> mol NaCN，1.9 $\\times$ 10<sup>−5</sup> g NaCN；（c）73.2 mol H<sub>2</sub>CO，2.20 kg H<sub>2</sub>CO；（d）5.9 $\\times$ 10<sup>−7</sup> mol FeSO<sub>4</sub>，8.9 $\\times$ 10<sup>−5</sup> g FeSO<sub>4</sub>"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idm26500064",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molarity-calculations",
+   "prompt": "考虑这个问题：0.500 L 溶液中含有 0.0908 g KMnO<sub>4</sub>，该溶液中 KMnO<sub>4</sub> 的物质的量浓度是多少？（a）概述回答该问题所需的步骤。（b）回答该问题。",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.00115,
+    "unit": "M",
+    "part": "(b)",
+    "hint": "由质量和 KMnO<sub>4</sub> 的摩尔质量求出物质的量，再除以体积。",
+    "solution": "（a）确定 KMnO<sub>4</sub> 的摩尔质量；确定溶液中 KMnO<sub>4</sub> 的物质的量；由物质的量和溶液的体积确定物质的量浓度；（b）1.15 $\\times$ 10<sup>−3</sup> <em>M</em>"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idm26577792",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molarity-calculations",
+   "prompt": "计算下列各溶液的物质的量浓度：（a）0.100 L 血清中含 0.195 g 胆固醇 C<sub>27</sub>H<sub>46</sub>O，即人体血清中胆固醇的平均浓度 （b）0.500 L 溶液中含 4.25 g NH<sub>3</sub>，即家用氨水中 NH<sub>3</sub> 的浓度 （c）2.50 L 溶液中含 1.49 kg 异丙醇 C<sub>3</sub>H<sub>7</sub>OH，即外用消毒酒精中异丙醇的浓度 （d）0.100 L 溶液中含 0.029 g I<sub>2</sub>，即 20 °C 时 I<sub>2</sub> 在水中的溶解度",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 0.00504,
+      "unit": "M"
+     },
+     {
+      "part": "(b)",
+      "value": 0.499,
+      "unit": "M"
+     },
+     {
+      "part": "(c)",
+      "value": 9.92,
+      "unit": "M"
+     },
+     {
+      "part": "(d)",
+      "value": 0.0011,
+      "unit": "M"
+     }
+    ],
+    "solution": "（a）5.04 $\\times$ 10<sup>−3</sup> <em>M</em>；（b）0.499 <em>M</em>；（c）9.92 <em>M</em>；（d）1.1 $\\times$ 10<sup>−3</sup> <em>M</em>"
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idm26521728",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molarity-calculations",
+   "prompt": "1.0 L 牛奶中约含 1.0 g 钙（以 Ca<sup>2+</sup> 形式）。牛奶中 Ca<sup>2+</sup> 的物质的量浓度是多少？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.025,
+    "unit": "M",
+    "hint": "用钙的摩尔质量把钙的质量换算成物质的量。",
+    "solution": "0.025 <em>M</em>"
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idm27167936",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "dilution-equation",
+   "prompt": "如果将 0.1718 L 0.3556 <em>M</em> 的 C<sub>3</sub>H<sub>7</sub>OH 溶液稀释到浓度为 0.1222 <em>M</em>，所得溶液的体积是多少？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.5,
+    "unit": "L",
+    "hint": "由 C<sub>1</sub>V<sub>1</sub> = C<sub>2</sub>V<sub>2</sub> 解出 V<sub>2</sub>。",
+    "solution": "0.5000 L"
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idm27694256",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "dilution-equation",
+   "prompt": "多大体积的 0.33 <em>M</em> C<sub>12</sub>H<sub>22</sub>O<sub>11</sub> 溶液经稀释，可以配制 25 mL 浓度为 0.025 <em>M</em> 的溶液？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 1.9,
+    "unit": "mL",
+    "hint": "对 V<sub>1</sub> 解稀释公式；体积可以仍用 mL。",
+    "solution": "1.9 mL"
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idm27672496",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "dilution-equation",
+   "prompt": "将下列各溶液稀释到给定的最终体积后，稀释后溶液的物质的量浓度是多少？（a）将 1.00 L 0.250 <em>M</em> 的 Fe(NO<sub>3</sub>)<sub>3</sub> 溶液稀释到最终体积 2.00 L （b）将 0.5000 L 0.1222 <em>M</em> 的 C<sub>3</sub>H<sub>7</sub>OH 溶液稀释到最终体积 1.250 L （c）将 2.35 L 0.350 <em>M</em> 的 H<sub>3</sub>PO<sub>4</sub> 溶液稀释到最终体积 4.00 L （d）将 22.50 mL 0.025 <em>M</em> 的 C<sub>12</sub>H<sub>22</sub>O<sub>11</sub> 溶液稀释到 100.0 mL",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 0.125,
+      "unit": "M"
+     },
+     {
+      "part": "(b)",
+      "value": 0.04888,
+      "unit": "M"
+     },
+     {
+      "part": "(c)",
+      "value": 0.206,
+      "unit": "M"
+     },
+     {
+      "part": "(d)",
+      "value": 0.0056,
+      "unit": "M"
+     }
+    ],
+    "solution": "（a）0.125 <em>M</em>；（b）0.04888 <em>M</em>；（c）0.206 <em>M</em>；（d）0.0056 <em>M</em>"
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idm27373392",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molarity-calculations",
+   "prompt": "为普通化学实验室购买了一瓶 2.00 L 的浓 HCl 溶液。该溶液含有 868.8 g HCl。该溶液的物质的量浓度是多少？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 11.9,
+    "unit": "M",
+    "hint": "把 HCl 的质量换算成物质的量，再除以体积。",
+    "solution": "11.9 <em>M</em>"
+   }
+  },
+  {
+   "id": "e14",
+   "source_id": "fs-idm26483264",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molarity-calculations",
+   "prompt": "多大体积的 0.20 <em>M</em> K<sub>2</sub>SO<sub>4</sub> 溶液含有 57 g K<sub>2</sub>SO<sub>4</sub>？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 1.6,
+    "unit": "L",
+    "hint": "把质量换算成物质的量，再除以物质的量浓度。",
+    "solution": "1.6 L"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "molarity"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "molarity"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "molarity-calculations"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "molarity",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "molarity-calculations"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "molarity",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "molarity-calculations"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "molarity",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl6",
+   "concept": "dilution-equation"
+  },
+  {
+   "exercise": "cyl7",
+   "concept": "dilution-equation"
+  },
+  {
+   "exercise": "cyl8",
+   "concept": "dilution-equation"
+  },
+  {
+   "exercise": "e1",
+   "concept": "dilution"
+  },
+  {
+   "exercise": "e1",
+   "concept": "dilution-equation",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e2",
+   "concept": "molarity"
+  },
+  {
+   "exercise": "e3",
+   "concept": "concentration"
+  },
+  {
+   "exercise": "e3",
+   "concept": "molarity",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e4",
+   "concept": "molarity-calculations"
+  },
+  {
+   "exercise": "e4",
+   "concept": "molarity",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e5",
+   "concept": "molarity-calculations"
+  },
+  {
+   "exercise": "e5",
+   "concept": "molarity",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e6",
+   "concept": "molarity-calculations"
+  },
+  {
+   "exercise": "e6",
+   "concept": "molarity",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e7",
+   "concept": "molarity-calculations"
+  },
+  {
+   "exercise": "e7",
+   "concept": "molarity",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e8",
+   "concept": "molarity-calculations"
+  },
+  {
+   "exercise": "e8",
+   "concept": "molarity",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "molarity-calculations"
+  },
+  {
+   "exercise": "e9",
+   "concept": "molarity",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e13",
+   "concept": "molarity-calculations"
+  },
+  {
+   "exercise": "e13",
+   "concept": "molarity",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e14",
+   "concept": "molarity-calculations"
+  },
+  {
+   "exercise": "e14",
+   "concept": "molarity",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e10",
+   "concept": "dilution-equation"
+  },
+  {
+   "exercise": "e10",
+   "concept": "dilution",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e11",
+   "concept": "dilution-equation"
+  },
+  {
+   "exercise": "e11",
+   "concept": "dilution",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e12",
+   "concept": "dilution-equation"
+  },
+  {
+   "exercise": "e12",
+   "concept": "dilution",
+   "weight": 2,
+   "weights_by": "ai"
+  }
+ ],
+ "referents": [
+  {
+   "id": "balance",
+   "label": "天平",
+   "figures": [
+    "sim-molarity"
+   ]
+  },
+  {
+   "id": "beaker",
+   "label": "盛有溶液的烧杯",
+   "figures": [
+    "sim-molarity"
+   ]
+  },
+  {
+   "id": "stock",
+   "label": "储备液",
+   "figures": [
+    "sim-dilution"
+   ]
+  },
+  {
+   "id": "diluted",
+   "label": "稀释后的溶液",
+   "figures": [
+    "sim-dilution"
+   ]
+  }
+ ],
+ "derivations": [
+  {
+   "id": "dilution-equation",
+   "what": "稀释公式",
+   "source": "化学（第2版），3.3 物质的量浓度",
+   "nodes": [
+    {
+     "assumes": [
+      {
+       "text": "下标 1 表示稀释前的溶液，下标 2 表示稀释后的溶液。",
+       "src": "3.3"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{n}{\\kn} = \\mk{M}{\\kM}\\mk{L}{\\kL}",
+      "src": "3.3"
+     },
+     "steps": [
+      {
+       "tex": "\\mk{n}{\\knone} = \\mk{M}{\\kMone}\\mk{L}{\\kLone}",
+       "uses": [
+        0
+       ]
+      }
+     ],
+     "src": "3.3"
+    },
+    {
+     "assumes": [
+      {
+       "text": "下标 1 表示稀释前的溶液，下标 2 表示稀释后的溶液。",
+       "src": "3.3"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{n}{\\kn} = \\mk{M}{\\kM}\\mk{L}{\\kL}",
+      "src": "3.3"
+     },
+     "steps": [
+      {
+       "tex": "\\mk{n}{\\kntwo} = \\mk{M}{\\kMtwo}\\mk{L}{\\kLtwo}",
+       "uses": [
+        0
+       ]
+      }
+     ],
+     "src": "3.3"
+    },
+    {
+     "assumes": [
+      {
+       "step": 0
+      },
+      {
+       "step": 1
+      },
+      {
+       "text": "稀释不改变溶液中溶质的物质的量。",
+       "src": "3.3"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{one}{\\knone} = \\mk{two}{\\kntwo}",
+      "src": "3.3",
+      "uses": [
+       2
+      ]
+     },
+     "steps": [
+      {
+       "tex": "\\mk{one}{\\kMone\\kLone} = \\mk{two}{\\kntwo}",
+       "uses": [
+        0
+       ]
+      },
+      {
+       "tex": "\\mk{one}{\\kMone\\kLone} = \\mk{two}{\\kMtwo\\kLtwo}",
+       "uses": [
+        1
+       ]
+      }
+     ],
+     "src": "3.3"
+    }
+   ]
+  }
+ ]
+}

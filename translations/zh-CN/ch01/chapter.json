@@ -1,0 +1,146 @@
+{
+ "id": "1",
+ "dir": "ch01",
+ "title": "基本概念",
+ "intro": {
+  "module": "m68663",
+  "slug": "1-introduction"
+ },
+ "sections": [
+  {
+   "id": "1.1",
+   "module": "m68664",
+   "title": "情境中的化学",
+   "slug": "1-1-chemistry-in-context"
+  },
+  {
+   "id": "1.2",
+   "module": "m68667",
+   "title": "物质的相与分类",
+   "slug": "1-2-phases-and-classification-of-matter"
+  },
+  {
+   "id": "1.3",
+   "module": "m68670",
+   "title": "物理性质和化学性质",
+   "slug": "1-3-physical-and-chemical-properties"
+  },
+  {
+   "id": "1.4",
+   "module": "m68674",
+   "title": "测量",
+   "slug": "1-4-measurements"
+  },
+  {
+   "id": "1.5",
+   "module": "m68690",
+   "title": "测量不确定度、准确度和精密度",
+   "slug": "1-5-measurement-uncertainty-accuracy-and-precision"
+  },
+  {
+   "id": "1.6",
+   "module": "m68683",
+   "title": "测量结果的数学处理",
+   "slug": "1-6-mathematical-treatment-of-measurement-results"
+  }
+ ],
+ "variables": [
+  {
+   "sym": "m",
+   "concept": "mass",
+   "meaning": "样品的质量，即其中所含物质的多少的度量",
+   "unit": "g",
+   "section": "1.4",
+   "anchor": "1.4-density"
+  },
+  {
+   "sym": "V",
+   "concept": "volume",
+   "meaning": "样品的体积，即它所占据的空间的大小",
+   "unit": "cm³",
+   "section": "1.4",
+   "anchor": "1.4-volume"
+  },
+  {
+   "sym": "d",
+   "concept": "density",
+   "meaning": "物质的密度，即样品的质量与其体积之比",
+   "unit": "g/cm³ (g/mL for liquids and solids, g/L for gases)",
+   "section": "1.4",
+   "anchor": "1.4-density"
+  },
+  {
+   "sym": "t",
+   "concept": "time",
+   "meaning": "时间间隔，用时间的 SI 基本单位度量",
+   "unit": "s",
+   "section": "1.4",
+   "anchor": "1.4-time"
+  },
+  {
+   "sym": "T",
+   "concept": "temperature",
+   "meaning": "样品的温度，用温度的 SI 基本单位度量",
+   "unit": "K",
+   "section": "1.4",
+   "anchor": "1.4-temperature"
+  },
+  {
+   "sym": "T_C",
+   "concept": "temperature",
+   "meaning": "在摄氏温标上读出的温度，在该温标上水在 0 °C 结冰，在 100 °C 沸腾",
+   "unit": "°C",
+   "section": "1.6",
+   "anchor": "1.6-linear-not-proportional"
+  },
+  {
+   "sym": "T_F",
+   "concept": "temperature",
+   "meaning": "在华氏温标上读出的温度，在该温标上水在 32 °F 结冰，在 212 °F 沸腾",
+   "unit": "°F",
+   "section": "1.6",
+   "anchor": "1.6-linear-not-proportional"
+  },
+  {
+   "sym": "T_K",
+   "concept": "temperature",
+   "meaning": "在开尔文温标上读出的温度，开尔文温标是绝对温标，其零点是理论上可达到的最低温度",
+   "unit": "K",
+   "section": "1.6",
+   "anchor": "1.6-kelvin-scale"
+  },
+  {
+   "sym": "v_iron",
+   "concept": "volume",
+   "ref": "iron-block",
+   "meaning": "例 1.2 中铁块的体积，以其排开的水面升高的量读出",
+   "unit": "mL",
+   "section": "1.4",
+   "anchor": "1.4-ex-displacement"
+  },
+  {
+   "sym": "V",
+   "concept": "volume",
+   "meaning": "例 1.6 中浴缸的体积，即其长度乘以宽度再乘以深度",
+   "unit": "dm³",
+   "section": "1.5",
+   "anchor": "1.5-ex-bathtub"
+  },
+  {
+   "sym": "T",
+   "concept": "temperature",
+   "meaning": "一个温度，无论在哪种温标上读出",
+   "unit": "°C, °F or K",
+   "section": "1.6",
+   "anchor": "1.6-linear-not-proportional"
+  },
+  {
+   "sym": "m",
+   "concept": "mass",
+   "meaning": "物体的质量，其重量等于质量乘以重力加速度",
+   "unit": "g",
+   "section": "1.6",
+   "anchor": "1.6-conversion-factors"
+  }
+ ]
+}

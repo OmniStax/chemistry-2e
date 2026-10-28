@@ -1,0 +1,681 @@
+{
+ "id": "18.3",
+ "module": "m68831",
+ "chapter": "18",
+ "title": "半金属的结构与一般性质",
+ "short": "半金属",
+ "lead": "六种<span data-concept=\"metalloid\">半金属</span>——硼、硅、锗、砷、锑和碲——位于金属与<span data-concept=\"nonmetal\">非金属</span>之间。本节先考察它们形成的共价晶体，然后较详细地讨论硼和硅：它们各自是如何被发现和提纯的，它们的卤化物如何充当<span data-concept=\"lewis-acid\">路易斯酸</span>，以及硼酸和<span data-concept=\"borate\">硼酸盐</span>、二氧化硅和<span data-concept=\"silicate\">硅酸盐</span>。",
+ "objectives": [
+  "描述半金属的一般制备方法、性质和用途",
+  "描述硼和硅的制备、性质和化合物"
+ ],
+ "summary_html": "<p>硼、硅、锗、砷、锑和碲这些元素在元素周期表中把金属与<span data-concept=\"nonmetal\">非金属</span>隔开。这些元素称为<span data-concept=\"metalloid\">半金属</span>，兼有金属和非金属的特征性质。这些元素的结构在许多方面与非金属相似，但它们是半导体。</p>",
+ "notes": "关于立方金刚石结构的“学习链接”被略去；图 18.12 已给出硅和锗的金刚石结构。本节按原样保留印刷了两次的锑段落（第二次没有“Sb₂S₅”），以及二氧化硅还原反应数组开头的两个空行。“passivation of silicon occurs due the formation”“colorless gasses”“The volatility of dry ice reflect”等英文拼写和语法错误无法在中文中保留，已按其本意翻译；“silicon is”与“sp³d²”之间缺少空格的排印问题同理，中文按中英文之间留空格的规则排版。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签、提示和建议思路由 AI 生成。答案来自书后答案。七道没有答案的习题——fs-idp16930624 和 fs-idp53586384（杂化与分子几何构型）、fs-idp20024944（路易斯结构）、fs-idm40238272（配平方程式）、fs-idm26980560（化学式）、fs-idp26638608（硫化硅的实验式）和 fs-idp421376（硅氢化物的分子式）——被略去，也没有为它们计算答案。没有答案的概念性习题 fs-idp46618224 附有标明为 OmniStax 自己所写的建议思路。没有任何内容被移动。",
+ "figures": [
+  {
+   "id": "sim-structures",
+   "kind": "sim",
+   "number": "18.12",
+   "folds": [
+    "18.13"
+   ],
+   "originals": [
+    "/media/ch18/CNX_Chem_18_03_Structures.jpg",
+    "/media/ch18/CNX_Chem_18_03_BIcosahed.jpg"
+   ],
+   "original_caption": "（图 18.12）（a）砷和（b）锑具有层状结构，与（c）石墨的结构相似，只是层是起伏的而不是平面的。（d）单质碲形成螺旋链。（图 18.13）二十面体是一种对称的立体形状，有 20 个面，每个面都是等边三角形。这些面相交于 12 个顶点。",
+   "draws": [
+    "length"
+   ],
+   "conventions": [
+    "B",
+    "Si",
+    "As",
+    "C",
+    "Te"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-zone-refining",
+   "kind": "sim",
+   "number": "18.14",
+   "originals": [
+    "/media/ch18/CNX_Chem_18_03_SiPurif.jpg"
+   ],
+   "original_caption": "用于提纯硅的区域精炼装置。",
+   "draws": [],
+   "facts": [
+    "#ffb347"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-bf3-lewis-acid",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-glass",
+   "kind": "photo",
+   "number": "18.15",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-boric-acid",
+   "kind": "photo",
+   "number": "18.16",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-borates",
+   "kind": "photo",
+   "number": "18.17",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-co2-sio2",
+   "kind": "sim",
+   "number": "18.18",
+   "originals": [
+    "/media/ch18/CNX_Chem_18_03_CO2vsSiO2.jpg"
+   ],
+   "original_caption": "由于碳倾向于形成双键和三键而硅不然，（a）二氧化碳是含有两个 C=O 双键的离散分子，（b）二氧化硅是氧原子在硅原子之间架桥而成的无限网络，每个硅原子有四个 Si-O 单键。（来源 a：改编自 Erica Gerdes 的作品；b：改编自 Didier Descouens 的作品）",
+   "draws": [],
+   "conventions": [
+    "C",
+    "O",
+    "Si"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "metalloids",
+   "concept": "metalloid-properties",
+   "verb": "introduces"
+  },
+  {
+   "span": "metalloids",
+   "concept": "boron-and-silicon-lewis-acids",
+   "verb": "introduces"
+  },
+  {
+   "span": "metalloids",
+   "concept": "metalloid",
+   "verb": "uses"
+  },
+  {
+   "span": "metalloids",
+   "concept": "nonmetal",
+   "verb": "uses"
+  },
+  {
+   "span": "metalloids",
+   "concept": "anion",
+   "verb": "uses"
+  },
+  {
+   "span": "metalloids",
+   "concept": "electronegativity",
+   "verb": "uses"
+  },
+  {
+   "span": "metalloids",
+   "concept": "electron-configuration",
+   "verb": "uses"
+  },
+  {
+   "span": "metalloids",
+   "concept": "valence-electrons",
+   "verb": "uses"
+  },
+  {
+   "span": "metalloids",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "metalloids",
+   "concept": "tetrahedral-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "metalloids",
+   "concept": "hybridization",
+   "verb": "uses"
+  },
+  {
+   "span": "metalloids",
+   "concept": "trigonal-planar-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "metalloids",
+   "concept": "lewis-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "metalloids",
+   "concept": "covalent-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "structures",
+   "concept": "metalloid-structures",
+   "verb": "introduces"
+  },
+  {
+   "span": "structures",
+   "concept": "covalent-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "structures",
+   "concept": "tetrahedral-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "structures",
+   "concept": "allotropes",
+   "verb": "uses"
+  },
+  {
+   "span": "structures",
+   "concept": "cubic-closest-packing",
+   "verb": "uses"
+  },
+  {
+   "span": "structures",
+   "concept": "covalent-network-solid",
+   "verb": "uses"
+  },
+  {
+   "span": "structures",
+   "concept": "metalloid",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "boron-preparation",
+   "verb": "introduces"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "silicon-preparation",
+   "verb": "introduces"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "borate",
+   "verb": "introduces"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "silicon-dioxide-structure",
+   "verb": "introduces"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "polymorph",
+   "verb": "introduces"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "silicate",
+   "verb": "introduces"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "amorphous-solid",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "chemical-reduction",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "passivation",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "enthalpy-change",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "lewis-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "lewis-base",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "boron-and-silicon-lewis-acids",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "octahedral-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "hybridization",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "trigonal-planar-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "acid-ionization-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "weak-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "hydrogen-bonding",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "crystalline-solid",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "intermolecular-force",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "covalent-network-solid",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "pi-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "sigma-and-pi-bonds",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "e29",
+   "source_id": "fs-idp187127952",
+   "source_number": "29",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "boron-silicon",
+   "prompt": "为下列每个分子或离子写出路易斯结构。不妨复习化学键一章。<br>（a）H<sub>3</sub>BPH<sub>3</sub><br>（b）$\\text{BF}_{4}{}^{-}$<br>（c）BBr<sub>3</sub><br>（d）B(CH<sub>3</sub>)<sub>3</sub><br>（e）B(OH)<sub>3</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）H<sub>3</sub>BPH<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2a_img.jpg\" alt=\"这个路易斯结构由一个硼原子与一个磷原子以单键相连组成。这两个原子各自与三个氢原子以单键相连。\"><br>（b）$\\text{BF}_{4}{}^{\\text{−}}$:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2b_img.jpg\" alt=\"这个路易斯结构由一个硼原子与四个氟原子以单键相连组成，每个氟原子都有三对孤电子对。结构被方括号包围，方括号外的右上角有一个负号。\"><br>（c）BBr<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2c_img.jpg\" alt=\"这个路易斯结构由一个硼原子与三个溴原子以单键相连组成，每个溴原子都有三对孤电子对。\"><br>（d）B(CH<sub>3</sub>)<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2d_img.jpg\" alt=\"这个路易斯结构由一个硼原子与三个碳原子以单键相连组成，每个碳原子又与三个氢原子以单键相连。\"><br>（e）B(OH)<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2e_img.jpg\" alt=\"这个路易斯结构由一个硼原子与三个氧原子以单键相连组成，每个氧原子都有两对孤电子对。每个氧原子与一个氢原子以单键相连。\">"
+   }
+  },
+  {
+   "id": "e31",
+   "source_id": "fs-idm42816224",
+   "source_number": "31",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "metalloids",
+   "prompt": "仅利用元素周期表，写出硅的完整电子构型，包括价层中的所有空轨道。不妨复习电子结构一章。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>2</sup>3<em>d</em><sup>0</sup>."
+   }
+  },
+  {
+   "id": "e33",
+   "source_id": "fs-idp50725056",
+   "source_number": "33",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "boron-silicon",
+   "prompt": "描述硅的杂化方式，以及下列分子和离子的分子构型：<br>（a）(CH<sub>3</sub>)<sub>3</sub>SiH<br>（b）$\\text{SiO}_{4}{}^{4−}$<br>（c）Si<sub>2</sub>H<sub>6</sub><br>（d）Si(OH)<sub>4</sub><br>（e）$\\text{SiF}_{6}{}^{2−}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）(CH<sub>3</sub>)<sub>3</sub>SiH：Si 周围为 <em>sp</em><sup>3</sup> 成键；结构为四面体形；（b）$\\text{SiO}_{4}{}^{\\text{4−}}$：Si 周围为 <em>sp</em><sup>3</sup> 成键；结构为四面体形；（c）Si<sub>2</sub>H<sub>6</sub>：每个 Si 周围为 <em>sp</em><sup>3</sup> 成键；结构沿 Si-Si 键为直线形；（d）Si(OH)<sub>4</sub>：Si 周围为 <em>sp</em><sup>3</sup> 成键；结构为四面体形；（e）$\\text{SiF}_{6}{}^{\\text{2−}}$：Si 周围为 <em>sp</em><sup>3</sup><em>d</em><sup>2</sup> 成键；结构为八面体形"
+   }
+  },
+  {
+   "id": "e34",
+   "source_id": "fs-idp46618224",
+   "source_number": "34",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "structures",
+   "prompt": "描述单质硅中硅原子的杂化方式和成键情况。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "单质硅中的每个硅原子都是 <em>sp</em><sup>3</sup> 杂化，并与四个相邻的硅原子形成四条共价 σ 单键。硅以金刚石结构结晶，其中每个原子与位于正四面体顶点的四个相邻原子成键。硅的价层构型为 3<em>s</em><sup>2</sup>3<em>p</em><sup>2</sup>；3<em>s</em> 轨道与三个 3<em>p</em> 轨道混合，得到四个等价的 <em>sp</em><sup>3</sup> 杂化轨道，它们指向四面体的顶点，彼此相隔 109.5°，每个杂化轨道容纳一个电子。每个杂化轨道与相邻原子的一个 <em>sp</em><sup>3</sup> 杂化轨道头碰头重叠，形成含有一对共用电子的 Si–Si σ 键。每个原子都以这种方式用掉全部四个价电子，因此晶体是由单键结合在一起的三维巨型分子，没有 π 键。"
+   }
+  },
+  {
+   "id": "e35",
+   "source_id": "fs-idp51747488",
+   "source_number": "35",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "boron-silicon",
+   "prompt": "把下列每个分子分类为极性分子或非极性分子。不妨复习化学键一章。<br>（a）SiH<sub>4</sub><br>（b）Si<sub>2</sub>H<sub>6</sub><br>（c）SiCl<sub>3</sub>H<br>（d）SiF<sub>4</sub><br>（e）SiCl<sub>2</sub>F<sub>2</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）非极性；（b）非极性；（c）极性；（d）非极性；（e）极性"
+   }
+  },
+  {
+   "id": "e37",
+   "source_id": "fs-idp54395392",
+   "source_number": "37",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": {
+    "at": "end"
+   },
+   "cite": "metalloids",
+   "prompt": "写出下列每个化合物的名称：<br>（a）TeO<sub>2</sub><br>（b）Sb<sub>2</sub>S<sub>3</sub><br>（c）GeF<sub>4</sub><br>（d）SiH<sub>4</sub><br>（e）GeH<sub>4</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）二氧化碲或氧化碲(IV)；（b）硫化锑(III)；（c）氟化锗(IV)；（d）硅烷或氢化硅(IV)；（e）氢化锗(IV)"
+   }
+  },
+  {
+   "id": "e39",
+   "source_id": "fs-idp194759200",
+   "source_number": "39",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "metalloids",
+   "prompt": "为什么硼在其化合物中的最大配位数限于四？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "硼只有 <em>s</em> 和 <em>p</em> 轨道可用，这些轨道最多可容纳四对电子。与硅不同，硼没有可用的 <em>d</em> 轨道。"
+   }
+  },
+  {
+   "id": "e41",
+   "source_id": "fs-idp50984592",
+   "source_number": "41",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "boron-silicon",
+   "prompt": "根据<a href=\"/chemistry-2e/sheets/thermo/\">附录 G</a>中给出的数据，确定下列每个反应的标准焓变和标准自由能变：<br>（a）${\\text{BF}}_{3}(g)+{\\text{3H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{B}{(\\text{OH})}_{3}(s)+\\text{3HF}(g)$<br>（b）${\\text{BCl}}_{3}(g)+{\\text{3H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{B}{(\\text{OH})}_{3}(s)+\\text{3HCl}(g)$<br>（c）${\\text{B}}_{2}{\\text{H}}_{6}(g)+{\\text{6H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{2B}{(\\text{OH})}_{3}(s)+{\\text{6H}}_{2}(g)$",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a) ΔH°",
+      "value": 87,
+      "unit": "kJ",
+      "hint": "用产物的标准生成焓之和（每项乘以其系数）减去反应物的标准生成焓之和；用标准生成自由能做同样的计算，即得 ΔG°。"
+     },
+     {
+      "part": "(a) ΔG°",
+      "value": 44,
+      "unit": "kJ"
+     },
+     {
+      "part": "(b) ΔH°",
+      "value": -109.9,
+      "unit": "kJ"
+     },
+     {
+      "part": "(b) ΔG°",
+      "value": -154.7,
+      "unit": "kJ"
+     },
+     {
+      "part": "(c) ΔH°",
+      "value": -510,
+      "unit": "kJ"
+     },
+     {
+      "part": "(c) ΔG°",
+      "value": -601.5,
+      "unit": "kJ"
+     }
+    ],
+    "solution": "（a）Δ<em>H</em>° = 87 kJ; Δ<em>G</em>° = 44 kJ；（b）Δ<em>H</em>° = −109.9 kJ; Δ<em>G</em>° = −154.7 kJ；（c）Δ<em>H</em>° = −510 kJ; Δ<em>G</em>° = −601.5 kJ"
+   }
+  },
+  {
+   "id": "e43",
+   "source_id": "fs-idm48610704",
+   "source_number": "43",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "boron-silicon",
+   "prompt": "假设你发现一块金刚石完全包埋在硅酸盐岩石中。你将如何用化学方法在不损伤金刚石的情况下把它取出来？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "温和的氢氟酸溶液可以溶解硅酸盐，而不会损伤金刚石。"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e29",
+   "concept": "lewis-structure"
+  },
+  {
+   "exercise": "e29",
+   "concept": "boron-and-silicon-lewis-acids"
+  },
+  {
+   "exercise": "e31",
+   "concept": "writing-electron-configurations"
+  },
+  {
+   "exercise": "e31",
+   "concept": "boron-and-silicon-lewis-acids"
+  },
+  {
+   "exercise": "e33",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "e33",
+   "concept": "boron-and-silicon-lewis-acids"
+  },
+  {
+   "exercise": "e34",
+   "concept": "metalloid-structures"
+  },
+  {
+   "exercise": "e34",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "e35",
+   "concept": "molecular-polarity"
+  },
+  {
+   "exercise": "e35",
+   "concept": "silicon-preparation"
+  },
+  {
+   "exercise": "e37",
+   "concept": "metalloid-properties"
+  },
+  {
+   "exercise": "e39",
+   "concept": "boron-and-silicon-lewis-acids"
+  },
+  {
+   "exercise": "e41",
+   "concept": "enthalpy-from-formation-enthalpies"
+  },
+  {
+   "exercise": "e41",
+   "concept": "boron-and-silicon-lewis-acids"
+  },
+  {
+   "exercise": "e43",
+   "concept": "silicate"
+  },
+  {
+   "exercise": "e43",
+   "concept": "silicon-dioxide-structure"
+  }
+ ]
+}

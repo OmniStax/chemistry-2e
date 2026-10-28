@@ -1,0 +1,86 @@
+{
+ "id": "2",
+ "dir": "ch02",
+ "title": "原子、分子和离子",
+ "intro": {
+  "module": "m68684",
+  "slug": "2-introduction"
+ },
+ "sections": [
+  {
+   "id": "2.1",
+   "module": "m68685",
+   "title": "原子论的早期思想",
+   "slug": "2-1-early-ideas-in-atomic-theory"
+  },
+  {
+   "id": "2.2",
+   "module": "m68687",
+   "title": "原子论的演变",
+   "slug": "2-2-evolution-of-atomic-theory"
+  },
+  {
+   "id": "2.3",
+   "module": "m68692",
+   "title": "原子结构与符号表示",
+   "slug": "2-3-atomic-structure-and-symbolism"
+  },
+  {
+   "id": "2.4",
+   "module": "m68693",
+   "title": "化学式",
+   "slug": "2-4-chemical-formulas"
+  },
+  {
+   "id": "2.5",
+   "module": "m68695",
+   "title": "元素周期表",
+   "slug": "2-5-the-periodic-table"
+  },
+  {
+   "id": "2.6",
+   "module": "m68696",
+   "title": "离子化合物与分子化合物",
+   "slug": "2-6-ionic-and-molecular-compounds"
+  },
+  {
+   "id": "2.7",
+   "module": "m68698",
+   "title": "化学命名法",
+   "slug": "2-7-chemical-nomenclature"
+  }
+ ],
+ "variables": [
+  {
+   "sym": "Z",
+   "concept": "atomic-number",
+   "meaning": "原子的原子序数，即其原子核中的质子数，它决定元素的种类",
+   "section": "2.3",
+   "anchor": "2.3-atomic-number"
+  },
+  {
+   "sym": "A",
+   "concept": "mass-number",
+   "meaning": "原子的质量数，即其原子核中质子与中子的总数",
+   "section": "2.3",
+   "anchor": "2.3-atomic-number"
+  },
+  {
+   "sym": "e",
+   "concept": "fundamental-charge",
+   "meaning": "元电荷，即一个电子所带电荷的大小",
+   "unit": "C",
+   "section": "2.3",
+   "anchor": "2.3-units",
+   "type": "charge"
+  },
+  {
+   "sym": "Q_charge",
+   "concept": "fundamental-charge",
+   "type": "charge",
+   "meaning": "粒子的电荷，是元电荷的整数倍",
+   "unit": "C",
+   "section": "2.2"
+  }
+ ]
+}

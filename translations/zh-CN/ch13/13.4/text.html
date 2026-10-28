@@ -1,0 +1,196 @@
+<section id="changes">
+<h2>浓度变化量之间的关系</h2>
+<p class="cite-target">在本章前面各节中，我们已经讲完了化学平衡的基本概念；这最后一节将展示更为实用的一面，即运用这些概念和适当的数学方法来进行各种<span data-concept="chemical-equilibrium">平衡</span>计算。这类计算在科学技术的许多领域都不可或缺，例如药品的配方和剂量的确定。药物被口服或注射之后，通常会参与若干个化学平衡，这些平衡会影响它在相关身体系统中的最终<span data-concept="concentration">浓度</span>。要算出能产生预期治疗效果的剂量，就需要了解这些平衡的定量方面。</p>
+<p>这里将要演示的许多有用的<span data-concept="chemical-equilibrium">平衡</span>计算，都需要用到表示<span data-concept="reactant">反应物</span>和<span data-concept="product">产物</span>的<span data-concept="concentration">浓度</span>变化的项。这些项由反应的<span data-concept="stoichiometry">化学计量关系</span>得出，氨的分解就是一例：</p>
+$$2{\text{NH}}_{3}(g)\rightleftharpoons{\text{N}}_{2}(g)+3{\text{H}}_{2}(g)$$
+<p>如本章前面所示，这一<span data-concept="chemical-equilibrium">平衡</span>可以在一个密封容器内建立，容器中最初可以只有 NH<sub>3</sub>，也可以是一种<span data-concept="mixture">混合物</span>，其成分为该<span data-concept="chemical-equilibrium">平衡</span>所涉及的三种化学物种中的任意两种。无论起始组成如何，反应<span data-concept="mixture">混合物</span>中这三种物种的<span data-concept="concentration">浓度</span>变化之间都遵循相同的关系，这由反应的<span data-concept="stoichiometry">化学计量关系</span>决定（另见动力学一章中有关反应速率表示方法的相关内容）。例如，若氮气的<span data-concept="concentration">浓度</span>增加了 <em>x</em>：</p>
+$$\Delta[{\text{N}}_{2}]=+x$$
+<p>其他物种<span data-concept="concentration">浓度</span>的相应变化为</p>
+$$\Delta[{\text{H}}_{2}]=\Delta[{\text{N}}_{2}]\left(\frac{3\;\text{mol}\;{\text{H}}_{2}}{1\;\text{mol}\;{\text{N}}_{2}}\right)=+3x$$
+$$\Delta[{\text{NH}}_{3}]=-\Delta[{\text{N}}_{2}]\left(\frac{2\;\text{mol}\;{\text{NH}}_{3}}{1\;\text{mol}\;{\text{N}}_{2}}\right)=-2x$$
+<p>其中负号表示<span data-concept="concentration">浓度</span>减小。</p>
+<div class="example" id="ex-changes">
+<h3>例 13.6 · 确定浓度的相对变化</h3>
+<p>对下列每个反应，推导出表示<span data-concept="concentration">浓度</span>变化的缺失项。</p>
+<p>（a）$\begin{array}{llll}{\text{C}}_{2}{\text{H}}_{2}(g)+ & 2{\text{Br}}_{2}(g) & \rightleftharpoons & {\text{C}}_{2}{\text{H}}_{2}{\text{Br}}_{4}(g) \\ x & \_\_\_\_\_ & & \_\_\_\_\_\end{array}$</p>
+<p>（b）$\begin{array}{llll}{\text{I}}_{2}(aq)+ & {\text{I}}^{-}(aq) & \rightleftharpoons & {\text{I}}_{3}{}^{-}(aq) \\ \_\_\_\_\_ & \_\_\_\_\_ & & x\end{array}$</p>
+<p>（c）$\begin{array}{lllll}{\text{C}}_{3}{\text{H}}_{8}(g)+ & 5{\text{O}}_{2}(g) & \rightleftharpoons & 3{\text{CO}}_{2}(g)+ & 4{\text{H}}_{2}\text{O}(g) \\ x & \_\_\_\_\_ & & \_\_\_\_\_ & \_\_\_\_\_\end{array}$</p>
+<h4>解</h4>
+<p>（a）$\begin{array}{llll}{\text{C}}_{2}{\text{H}}_{2}(g)+ & 2{\text{Br}}_{2}(g) & \rightleftharpoons & {\text{C}}_{2}{\text{H}}_{2}{\text{Br}}_{4}(g) \\ x & 2x & & -x\end{array}$</p>
+<p>（b）$\begin{array}{llll}{\text{I}}_{2}(aq)+ & {\text{I}}^{-}(aq) & \rightleftharpoons & {\text{I}}_{3}{}^{-}(aq) \\ -x & -x & & x\end{array}$</p>
+<p>（c）$\begin{array}{lllll}{\text{C}}_{3}{\text{H}}_{8}(g)+ & 5{\text{O}}_{2}(g) & \rightleftharpoons & 3{\text{CO}}_{2}(g)+ & 4{\text{H}}_{2}\text{O}(g) \\ x & 5x & & -3x & -4x\end{array}$</p>
+<h4>学习检测</h4>
+<div class="exercises" data-place="ex-changes"></div>
+</div>
+</section>
+
+<section id="calc-k">
+<h2>平衡常数的计算</h2>
+<p class="cite-target">一个反应的<span data-concept="equilibrium-constant">平衡常数</span>由其<span data-concept="reactant">反应物</span>和<span data-concept="product">产物</span>的<span data-concept="chemical-equilibrium">平衡</span><span data-concept="concentration">浓度</span>（或<span data-concept="partial-pressure">分压</span>）计算得出。如果这些<span data-concept="concentration">浓度</span>已知，计算只需把它们代入 <em>K</em> 的表达式，如例 13.2 所示。下面给出一个稍有难度的例子，其中要利用反应的<span data-concept="stoichiometry">化学计量关系</span>，从所给的信息推出<span data-concept="chemical-equilibrium">平衡</span><span data-concept="concentration">浓度</span>。这一计算的基本策略对许多类型的<span data-concept="chemical-equilibrium">平衡</span>计算都有帮助，它依赖于用一些项来分别表示<span data-concept="reactant">反应物</span>和<span data-concept="product">产物</span>的<span data-concept="concentration">浓度</span>在<em>起始</em>时是多少、随着反应进行如何<em>变化</em>，以及<span data-concept="system">体系</span>达到<em><span data-concept="chemical-equilibrium">平衡</span></em>时是多少。ICE 这个缩写常用来指称这种数学方法，而这些<span data-concept="concentration">浓度</span>项通常汇集在称为 ICE 表的表格中。</p>
+<div class="example" id="ex-calc-k">
+<h3>例 13.7 · 平衡常数的计算</h3>
+<p>碘<span data-concept="molecule">分子</span>与碘<span data-concept="ion">离子</span>发生可逆反应，生成三碘<span data-concept="ion">离子</span>。</p>
+$${\text{I}}_{2}(aq)+{\text{I}}^{-}(aq)\rightleftharpoons{\text{I}}_{3}{}^{-}(aq)$$
+<p>如果一份<span data-concept="mixtures">溶液</span>中 I<sub>2</sub> 和 I<sup>−</sup> 的<span data-concept="concentration">浓度</span>在反应前均为 <span data-type="concentration">1.000 × 10<sup>−3</sup> <em>M</em></span>，反应后 I<sub>2</sub> 的<span data-concept="chemical-equilibrium">平衡</span><span data-concept="concentration">浓度</span>为 <span data-type="concentration">6.61 × 10<sup>−4</sup> <em>M</em></span>，那么该反应的<span data-concept="equilibrium-constant">平衡常数</span>是多少？</p>
+<h4>解</h4>
+<p>要计算<span data-concept="chemical-equilibrium">平衡</span>常数，需要所有<span data-concept="reactant">反应物</span>和<span data-concept="product">产物</span>的<span data-concept="chemical-equilibrium">平衡</span><span data-concept="concentration">浓度</span>：</p>
+$$\kKc=\frac{[{\text{I}}_{3}{}^{-}]}{[{\text{I}}_{2}][{\text{I}}^{-}]}$$
+<p>题中给出了<span data-concept="reactant">反应物</span>的初始<span data-concept="concentration">浓度</span>和<span data-concept="product">产物</span>的<span data-concept="chemical-equilibrium">平衡</span><span data-concept="concentration">浓度</span>。利用这些信息推出<span data-concept="reactant">反应物</span>的<span data-concept="chemical-equilibrium">平衡</span><span data-concept="concentration">浓度</span>的表达式，并把全部信息列入一张 ICE 表。</p>
+<div class="book-table">
+  <table>
+    <thead><tr><th></th><th>I<sub>2</sub> +</th><th>I<sup>−</sup> ⇌</th><th>I<sub>3</sub><sup>−</sup></th></tr></thead>
+    <tbody>
+      <tr><th>初始浓度（<em>M</em>）</th><td class="num"><span data-type="concentration">1.000 × 10<sup>−3</sup></span></td><td class="num"><span data-type="concentration">1.000 × 10<sup>−3</sup></span></td><td class="num"><span data-type="concentration">0</span></td></tr>
+      <tr><th>变化（<em>M</em>）</th><td class="num">−<em>x</em></td><td class="num">−<em>x</em></td><td class="num">+<em>x</em></td></tr>
+      <tr><th>平衡浓度（<em>M</em>）</th><td class="num"><span data-type="concentration">1.000 × 10<sup>−3</sup></span> − <em>x</em></td><td class="num"><span data-type="concentration">1.000 × 10<sup>−3</sup></span> − <em>x</em></td><td class="num"><em>x</em></td></tr>
+    </tbody>
+  </table>
+</div>
+<p>在<span data-concept="chemical-equilibrium">平衡</span>时，I<sub>2</sub> 的<span data-concept="concentration">浓度</span>为 <span data-type="concentration">6.61 × 10<sup>−4</sup> <em>M</em></span>，因此</p>
+$$1.000\;\times\;{10}^{-3}-x=6.61\;\times\;{10}^{-4}$$
+$$x=1.000\;\times\;{10}^{-3}-6.61\;\times\;{10}^{-4}$$
+$$=3.39\;\times\;{10}^{-4}\;M$$
+<p>现在可以用所有<span data-concept="concentration">浓度</span>的数值来更新 ICE 表：</p>
+<div class="book-table">
+  <table>
+    <thead><tr><th></th><th>I<sub>2</sub> +</th><th>I<sup>−</sup> ⇌</th><th>I<sub>3</sub><sup>−</sup></th></tr></thead>
+    <tbody>
+      <tr><th>初始浓度（<em>M</em>）</th><td class="num"><span data-type="concentration">1.000 × 10<sup>−3</sup></span></td><td class="num"><span data-type="concentration">1.000 × 10<sup>−3</sup></span></td><td class="num"><span data-type="concentration">0</span></td></tr>
+      <tr><th>变化（<em>M</em>）</th><td class="num"><span data-type="concentration">−3.39 × 10<sup>−4</sup></span></td><td class="num"><span data-type="concentration">−3.39 × 10<sup>−4</sup></span></td><td class="num"><span data-type="concentration">+3.39 × 10<sup>−4</sup></span></td></tr>
+      <tr><th>平衡浓度（<em>M</em>）</th><td class="num"><span data-type="concentration">6.61 × 10<sup>−4</sup></span></td><td class="num"><span data-type="concentration">6.61 × 10<sup>−4</sup></span></td><td class="num"><span data-type="concentration">3.39 × 10<sup>−4</sup></span></td></tr>
+    </tbody>
+  </table>
+</div>
+<p>最后，把<span data-concept="chemical-equilibrium">平衡</span><span data-concept="concentration">浓度</span>代入 <em>K</em> 的表达式并求解：</p>
+$$\kKc=\frac{[{\text{I}}_{3}{}^{-}]}{[{\text{I}}_{2}][{\text{I}}^{-}]}$$
+$$=\;\frac{3.39\;\times\;{10}^{-4}\;M}{(6.61\;\times\;{10}^{-4}\;M)(6.61\;\times\;{10}^{-4}\;M)}\;=776$$
+<h4>学习检测</h4>
+<div class="exercises" data-place="ex-calc-k"></div>
+</div>
+</section>
+
+<section id="missing">
+<h2>未知平衡浓度的计算</h2>
+<p class="cite-target">当<span data-concept="equilibrium-constant">平衡常数</span>和除一个以外的所有<span data-concept="chemical-equilibrium">平衡</span><span data-concept="concentration">浓度</span>都已给出时，就可以算出其余的<span data-concept="chemical-equilibrium">平衡</span><span data-concept="concentration">浓度</span>。下一个例题演示了这类计算。</p>
+<div class="example" id="ex-missing">
+<h3>例 13.8 · 未知平衡浓度的计算</h3>
+<p><span data-concept="oxide">氮氧化物</span>是氮和氧在<span data-concept="temperature">高温</span>下反应生成的空气污染物。在 <span data-type="temperature">2000 °C</span> 时，反应 ${\text{N}}_{2}(g)+{\text{O}}_{2}(g)\rightleftharpoons 2\text{NO}(g)$ 的 $\kKc$ 值为 <span data-type="equilibrium-constant">4.1 × 10<sup>−4</sup></span>。计算 NO(<em>g</em>) 在空气中、<span data-type="pressure">1 atm</span> <span data-concept="gas-pressure">压强</span>和 <span data-type="temperature">2000 °C</span> 下的<span data-concept="chemical-equilibrium">平衡</span><span data-concept="concentration">浓度</span>。在此<span data-concept="gas-pressure">压强</span>和<span data-concept="temperature">温度</span>下，N<sub>2</sub> 和 O<sub>2</sub> 的<span data-concept="chemical-equilibrium">平衡</span><span data-concept="concentration">浓度</span>分别为 <span data-type="concentration">0.036 M</span> 和 <span data-type="concentration">0.0089 M</span>。</p>
+<h4>解</h4>
+<p>把所给的量代入<span data-concept="equilibrium-constant">平衡常数</span>表达式，求解 [NO]：</p>
+$$\kKc=\frac{{[\text{NO}]}^{2}}{[{\text{N}}_{2}]\;[{\text{O}}_{2}]}$$
+$${[\text{NO}]}^{2}=\kKc[{\text{N}}_{2}]\;[{\text{O}}_{2}]$$
+$$[\text{NO}]=\;\sqrt{\kKc[{\text{N}}_{2}]\;[{\text{O}}_{2}]}$$
+$$=\;\sqrt{(4.1\;\times\;{10}^{-4})(0.036)(0.0089)}$$
+$$=\;\sqrt{1.31\;\times\;{10}^{-7}}$$
+$$=3.6\;\times\;{10}^{-4}$$
+<p>因此，在这些条件下，<span data-concept="chemical-equilibrium">平衡</span>时 [NO] 为 <span data-type="concentration">3.6 × 10<sup>−4</sup> mol/L</span>。</p>
+<p>为了验证这一结果，可以把它与所给的<span data-concept="chemical-equilibrium">平衡</span><span data-concept="concentration">浓度</span>一起用来计算 <em>K</em> 的值：</p>
+$$\kKc=\;\frac{{[\text{NO}]}^{2}}{[{\text{N}}_{2}]\;[{\text{O}}_{2}]}$$
+$$=\;\frac{{(3.6\;\times\;{10}^{-4})}^{2}}{(0.036)(0.0089)}$$
+$$=4.0\;\times\;{10}^{-4}$$
+<p>这一结果与所给的 <em>K</em> 值在名义<span data-concept="uncertainty">不确定度</span>范围内一致，仅在最低有效位上相差 1。</p>
+<h4>学习检测</h4>
+<div class="exercises" data-place="ex-missing"></div>
+</div>
+</section>
+
+<section id="initial">
+<h2>由初始浓度计算平衡浓度</h2>
+<p class="cite-target">也许最具挑战性的一类<span data-concept="chemical-equilibrium">平衡</span>计算，是由初始<span data-concept="concentration">浓度</span>和<span data-concept="equilibrium-constant">平衡常数</span>推出<span data-concept="chemical-equilibrium">平衡</span><span data-concept="concentration">浓度</span>。这类计算通常可采用以下四步方法：</p>
+<ol>
+  <li>确定反应为达到<span data-concept="chemical-equilibrium">平衡</span>将向哪个方向进行。</li>
+  <li>建立 ICE 表。</li>
+  <li>计算<span data-concept="concentration">浓度</span>变化量，进而计算<span data-concept="chemical-equilibrium">平衡</span><span data-concept="concentration">浓度</span>。</li>
+  <li>验证所算得的<span data-concept="chemical-equilibrium">平衡</span><span data-concept="concentration">浓度</span>。</li>
+</ol>
+<p>本章的最后两个例题演示了这一策略的应用。</p>
+<div class="example" id="ex-pcl5">
+<h3>例 13.9 · 平衡浓度的计算</h3>
+<p>在某些条件下，PCl<sub>5</sub>(<em>g</em>) 分解为 PCl<sub>3</sub>(<em>g</em>) 和 Cl<sub>2</sub>(<em>g</em>) 的<span data-concept="equilibrium-constant">平衡常数</span> $\kKc$ 为 <span data-type="equilibrium-constant">0.0211</span>。在最初只含 PCl<sub>5</sub>、<span data-concept="concentration">浓度</span>为 <span data-type="concentration">1.00 <em>M</em></span> 的<span data-concept="mixture">混合物</span>中，PCl<sub>5</sub>、PCl<sub>3</sub> 和 Cl<sub>2</sub> 的<span data-concept="chemical-equilibrium">平衡</span><span data-concept="concentration">浓度</span>各是多少？</p>
+<h4>解</h4>
+<p>按前面所述的步骤进行。</p>
+<p>1. <em>确定反应进行的方向。</em></p>
+<p>PCl<sub>5</sub> 分解的<span data-concept="balanced-equation">配平的化学方程式</span>为</p>
+$${\text{PCl}}_{5}(g)\rightleftharpoons{\text{PCl}}_{3}(g)+{\text{Cl}}_{2}(g)$$
+<p>因为最初只有<span data-concept="reactant">反应物</span>，$\kQc$ = 0，所以反应将向右进行。</p>
+<p>2. <em>建立 ICE 表。</em></p>
+<div class="book-table">
+  <table>
+    <thead><tr><th></th><th>PCl<sub>5</sub> ⇌</th><th>PCl<sub>3</sub> +</th><th>Cl<sub>2</sub></th></tr></thead>
+    <tbody>
+      <tr><th>初始浓度（<em>M</em>）</th><td class="num"><span data-type="concentration">1.00</span></td><td class="num"><span data-type="concentration">0</span></td><td class="num"><span data-type="concentration">0</span></td></tr>
+      <tr><th>变化（<em>M</em>）</th><td class="num">−<em>x</em></td><td class="num">+<em>x</em></td><td class="num">+<em>x</em></td></tr>
+      <tr><th>平衡浓度（<em>M</em>）</th><td class="num"><span data-type="concentration">1.00</span> − <em>x</em></td><td class="num"><em>x</em></td><td class="num"><em>x</em></td></tr>
+    </tbody>
+  </table>
+</div>
+<p>3. <em>求解变化量以及<span data-concept="chemical-equilibrium">平衡</span><span data-concept="concentration">浓度</span>。</em></p>
+<p>把<span data-concept="chemical-equilibrium">平衡</span><span data-concept="concentration">浓度</span>代入<span data-concept="equilibrium-constant">平衡常数</span>方程，得</p>
+$$\kKc=\;\frac{[{\text{PCl}}_{3}][{\text{Cl}}_{2}]}{[{\text{PCl}}_{5}]}\;=0.0211$$
+$$=\;\frac{(x)(x)}{(1.00-x)}$$
+$$0.0211=\;\frac{(x)(x)}{(1.00-x)}$$
+$$0.0211(1.00-x)={x}^{2}$$
+$${x}^{2}+0.0211x-0.0211=0$$
+<p><a href="https://openstax.org/books/chemistry-2e/pages/b-essential-mathematics">附录 B</a> 表明，形如 <em>ax</em><sup>2</sup> + <em>bx</em> + <em>c</em> = 0 的方程可以改写后求解 <em>x</em>：</p>
+$$x=\;\frac{-b\;\pm\;\sqrt{{b}^{2}-4ac}}{2a}$$
+<p>在这里，<em>a</em> = 1，<em>b</em> = 0.0211，<em>c</em> = −0.0211。代入 <em>a</em>、<em>b</em> 和 <em>c</em> 的相应值，得到：</p>
+$$x=\;\frac{-0.0211\;\pm\;\sqrt{{(0.0211)}^{2}-4(1)(-0.0211)}}{2(1)}$$
+$$=\;\frac{-0.0211\;\pm\;\sqrt{(4.45\;\times\;{10}^{-4})+(8.44\;\times\;{10}^{-2})}}{2}$$
+$$=\;\frac{-0.0211\;\pm\;0.291}{2}$$
+<p>因此，这个一元二次方程的两个根为</p>
+$$x=\;\frac{-0.0211+0.291}{2}\;=0.135$$
+<p>和</p>
+$$x=\;\frac{-0.0211-0.291}{2}\;=-0.156$$
+<p>在本例中，只有正根具有物理意义（<span data-concept="concentration">浓度</span>不是零就是正数），因此 <em>x</em> = <span data-type="concentration">0.135 <em>M</em></span>。</p>
+<p><span data-concept="chemical-equilibrium">平衡</span><span data-concept="concentration">浓度</span>为</p>
+$$[{\text{PCl}}_{5}]\;=\;1.00-0.135=0.87\;M$$
+$$[{\text{PCl}}_{3}]=x=0.135\;M$$
+$$[{\text{Cl}}_{2}]=x=0.135\;M$$
+<p>4. <em>验证所算得的<span data-concept="chemical-equilibrium">平衡</span><span data-concept="concentration">浓度</span>。</em></p>
+<p>代入 $\kKc$ 的表达式（以检验计算）得</p>
+$$\kKc=\;\frac{[{\text{PCl}}_{3}][{\text{Cl}}_{2}]}{[{\text{PCl}}_{5}]}=\;\frac{(0.135)(0.135)}{0.87}\;=0.021$$
+<p>由<span data-concept="chemical-equilibrium">平衡</span><span data-concept="concentration">浓度</span>算得的<span data-concept="equilibrium-constant">平衡常数</span>与题中给出的 $\kKc$ 值相等（按适当的<span data-concept="significant-figures">有效数字</span>位数修约后）。</p>
+<h4>学习检测</h4>
+<div class="exercises" data-place="ex-pcl5"></div>
+<h4 id="ex-pcl5-2">学习检测</h4>
+<div class="exercises" data-place="ex-pcl5-2"></div>
+</div>
+<div class="example" id="ex-hcn">
+<h3>例 13.10 · 利用简化代数运算的假设计算平衡浓度</h3>
+<p><span data-type="concentration">0.15 <em>M</em></span> 的 HCN <span data-concept="mixtures">溶液</span>在<span data-concept="chemical-equilibrium">平衡</span>时的各<span data-concept="concentration">浓度</span>是多少？</p>
+$$\text{HCN}(aq)\;\rightleftharpoons\;{\text{H}}^{+}(aq)+{\text{CN}}^{-}(aq)\hspace{5em}\kKc=4.9\;\times\;{10}^{-10}$$
+<h4>解</h4>
+<p>用“<em>x</em>”表示每种<span data-concept="product">产物</span>在<span data-concept="chemical-equilibrium">平衡</span>时的<span data-concept="concentration">浓度</span>，得到下面的 ICE 表。</p>
+<div class="book-table">
+  <table>
+    <thead><tr><th></th><th>HCN(<em>aq</em>) ⇌</th><th>H<sup>+</sup>(<em>aq</em>) +</th><th>CN<sup>−</sup>(<em>aq</em>)</th></tr></thead>
+    <tbody>
+      <tr><th>初始浓度（<em>M</em>）</th><td class="num"><span data-type="concentration">0.15</span></td><td class="num"><span data-type="concentration">0</span></td><td class="num"><span data-type="concentration">0</span></td></tr>
+      <tr><th>变化（<em>M</em>）</th><td class="num">−<em>x</em></td><td class="num">+<em>x</em></td><td class="num">+<em>x</em></td></tr>
+      <tr><th>平衡浓度（<em>M</em>）</th><td class="num"><span data-type="concentration">0.15</span> − <em>x</em></td><td class="num"><em>x</em></td><td class="num"><em>x</em></td></tr>
+    </tbody>
+  </table>
+</div>
+<p>把<span data-concept="chemical-equilibrium">平衡</span><span data-concept="concentration">浓度</span>项代入 $\kKc$ 表达式</p>
+$$\kKc=\frac{(x)(x)}{0.15-x}$$
+<p>整理成一元二次方程的形式并求解 <em>x</em></p>
+$${x}^{2}+4.9\;\times\;{10}^{-10}x-7.35\;\times\;{10}^{-11}=0$$
+$$x=8.56\;\times\;{10}^{-6}\;M\;(\text{3 位有效数字})=8.6\;\times\;{10}^{-6}\;M\;(\text{2 位有效数字})$$
+<p>因此 [H<sup>+</sup>] = [CN<sup>–</sup>] = <em>x</em> = <span data-type="concentration">8.6 × 10<sup>–6</sup> <em>M</em></span>，[HCN] = 0.15 – <em>x</em> = <span data-type="concentration">0.15 <em>M</em></span>。</p>
+<p>请注意，在这种情况下，<span data-concept="concentration">浓度</span>的变化远小于初始<span data-concept="concentration">浓度</span>（这是 <em>K</em> 很小的结果），因此初始<span data-concept="concentration">浓度</span>的变化可以忽略不计：</p>
+$$\text{若}\;x\;\ll\;0.15\;M,\;\text{则}\;(0.15-x)\approx 0.15$$
+<p>这一近似使计算可以采用更简便的数学方法，从而无需求解一元二次方程的根：</p>
+$$\kKc=\;\frac{(x)(x)}{0.15-x}\;\approx\;\frac{{x}^{2}}{0.15}$$
+$$4.9\;\times\;{10}^{-10}=\;\frac{{x}^{2}}{0.15}$$
+$${x}^{2}=(0.15)(4.9\;\times\;{10}^{-10})=7.4\;\times\;{10}^{-11}$$
+$$x=\sqrt{7.4\;\times\;{10}^{-11}}=8.6\;\times\;{10}^{-6}\;M$$
+<p>算得的 <em>x</em> 值确实远小于初始<span data-concept="concentration">浓度</span></p>
+$$8.6\;\times\;{10}^{-6}\ll 0.15$$
+<p>因此该近似是合理的。如果这种简化方法得到的 <em>x</em> 值<em>不能</em>证明该近似合理，就需要不作近似，重新进行计算。</p>
+<figure class="sim" id="sim-small-x">
+  <div class="sim-head"><span class="eyebrow">Sim</span><span>形如 A ⇌ B + C 的反应从只有 A 开始，其 ICE 表会根据所选的<span data-concept="concentration">初始浓度</span>和<span data-concept="equilibrium-constant">平衡常数</span>填写。表下方以对数标度画出混合物在发生变化 <em>x</em> 之后的反应商 <em>x</em><sup>2</sup>/([A]<sub><em>i</em></sub> − <em>x</em>)，它在 <em>x</em> 的平衡值处与 <em>K</em><sub>c</sub> 的水平线相交。虚线是近似式 <em>x</em><sup>2</sup>/[A]<sub><em>i</em></sub>，它忽略了 [A] 的变化。可以选择例 13.9 中 PCl<sub>5</sub> 的分解，或本例中的 HCN 溶液，然后改变 <em>K</em><sub>c</sub> 和<span data-concept="concentration">初始浓度</span>，观察当 <em>x</em> 远小于 [A]<sub><em>i</em></sub> 时两个交点靠拢，而在并非如此时彼此远离。</span></div>
+</figure>
+<h4>学习检测</h4>
+<div class="exercises" data-place="ex-hcn"></div>
+</div>
+</section>

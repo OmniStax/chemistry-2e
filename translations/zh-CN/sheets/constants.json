@@ -1,0 +1,90 @@
+{
+ "id": "constants",
+ "title": "基本物理常量",
+ "kind": "table",
+ "source": {
+  "module": "m68862",
+  "appendix": "D"
+ },
+ "generated_by": "tool",
+ "tables": [
+  {
+   "id": "fundamental-physical-constants",
+   "title": "基本物理常量",
+   "columns": [
+    {
+     "id": "name-and-symbol",
+     "label": "名称和符号",
+     "kind": "text"
+    },
+    {
+     "id": "value",
+     "label": "数值",
+     "kind": "formula"
+    }
+   ],
+   "rows": [
+    [
+     "原子质量单位（amu）",
+     "1.6605402 × 10<sup>−27</sup> kg"
+    ],
+    [
+     "阿伏加德罗常数",
+     "6.02214076 × 10<sup>23</sup> mol<sup>−1</sup>"
+    ],
+    [
+     "玻尔兹曼常量（<em>k</em>）",
+     "1.380649 × 10<sup>−23</sup> J K<sup>−1</sup>"
+    ],
+    [
+     "电子的荷质比（<em>e/m<sub>e</sub></em>）",
+     "1.75881962 × 10<sup>11</sup> C kg<sup>−1</sup>"
+    ],
+    [
+     "元电荷（<em>e</em>）",
+     "1.602176634 × 10<sup>−19</sup> C"
+    ],
+    [
+     "电子静质量（<em>m<sub>e</sub></em>）",
+     "9.1093897 × 10<sup>−31</sup> kg"
+    ],
+    [
+     "法拉第常数（<em>F</em>）",
+     "9.6485309 × 10<sup>4</sup> C mol<sup>−1</sup>"
+    ],
+    [
+     "理想气体常数（<em>R</em>）",
+     "8.205784 × 10<sup>−2</sup> L atm mol<sup>−1</sup> K<sup>−1</sup> = 8.314510 J mol<sup>−1</sup> K<sup>−1</sup>"
+    ],
+    [
+     "理想气体的摩尔体积，1 atm，0 °C",
+     "22.41409 L mol<sup>–1</sup>"
+    ],
+    [
+     "理想气体的摩尔体积，1 bar，0 °C",
+     "22.71108 L mol<sup>–1</sup>"
+    ],
+    [
+     "中子静质量（<em>m<sub>n</sub></em>）",
+     "1.6749274 × 10<sup>−27</sup> kg"
+    ],
+    [
+     "普朗克常量（<em>h</em>）",
+     "6.62607015 × 10<sup>−34</sup> J s"
+    ],
+    [
+     "质子静质量（<em>m<sub>p</sub></em>）",
+     "1.6726231 × 10<sup>−27</sup> kg"
+    ],
+    [
+     "里德伯常量（R）",
+     "1.0973731534 × 10<sup>7</sup> m<sup>−1</sup> = 2.1798736 × 10<sup>−18</sup> J"
+    ],
+    [
+     "真空中的光速（<em>c</em>）",
+     "2.99792458 × 10<sup>8</sup> m s<sup>−1</sup>"
+    ]
+   ]
+  }
+ ]
+}

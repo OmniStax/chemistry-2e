@@ -1,0 +1,976 @@
+{
+ "id": "6.5",
+ "module": "m68735",
+ "chapter": "6",
+ "title": "元素性质的周期性变化",
+ "short": "周期性变化",
+ "lead": "原子的大小、从原子中移去一个电子所需的<span data-concept=\"energy-and-work\">能量</span>，以及它获得一个电子时的<span data-concept=\"energy-and-work\">能量</span>变化，都随其电子结构呈周期性变化。共价半径和离子半径、第一电离能和逐级电离能，以及<span data-concept=\"electron-affinity\">电子亲和能</span>，沿周期和沿族依次考察，并以有效核电荷作为线索。",
+ "objectives": [
+  "描述并解释所观察到的元素的原子大小、电离能和电子亲和能的递变趋势"
+ ],
+ "summary_html": "<p>电子构型使我们能够理解许多周期性递变规律。<span data-concept=\"covalent-radius\">共价半径</span>沿族向下增大，因为 <em>n</em> 能级（轨道大小）增大。<span data-concept=\"covalent-radius\">共价半径</span>沿周期从左到右大多减小，因为电子所感受到的有效核电荷增大，电子被更紧地拉向原子核。阴离子半径大于母体原子，而阳离子半径小于母体原子，因为价电子数发生了变化，而核电荷保持不变。<span data-concept=\"ionization-energy\">电离能</span>（形成阳离子所伴随的<span data-concept=\"energy-and-work\">能量</span>）沿族向下减小，沿周期大多增大，因为从更大、<span data-concept=\"energy-and-work\">能量</span>更高的轨道上移去一个电子更容易。<span data-concept=\"electron-affinity\">电子亲和能</span>（形成阴离子所伴随的<span data-concept=\"energy-and-work\">能量</span>）在电子进入<span data-concept=\"energy-and-work\">能量</span>更低、更靠近原子核的轨道时更有利（放热）。因此，<span data-concept=\"electron-affinity\">电子亲和能</span>在元素周期表中从左到右越来越负，沿族向下则减小。无论是 IE 还是<span data-concept=\"electron-affinity\">电子亲和能</span>的数据，遇到全充满或半充满的亚层时，都会出现偏离这些趋势的例外。</p>",
+ "notes": "关于周期性递变规律可视化的“学习链接”提示已略去；图 6.34 和图 6.35 在书中的文字描述与其图像不一致之处，保留图像上印出的数值（钌 710 kJ/mol，硫 −200 kJ/mol，氖 +30 kJ/mol）。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签和权重由 AI 生成。两道“学习检测”题均采用紧随其后的注释中书上自己的答案。章末习题的答案取自书后答案，其涵盖奇数题号；有答案的单选题按书中自己的选项设为选择题。八道没有答案的题均非数值题，保留并附有标明为 OmniStax 自拟的建议思路，且不评分：选择题 fs-idp30124176（最大半径）、fs-idm54929680（最小第一电离能）和 fs-idm176990768（与 S²⁺ 等电子）在题干中印出其选项，排序题 fs-idm147454816、fs-idm116086704 和 fs-idm44955136，fs-idm2181648 的逆电离过程，以及 fs-idm108984736 的等电子体半径则附有建议思路。书中印在此处的三道题考查的是 6.4 的电子构型，已放在该页，并将 source_section 设为 6.5：fs-idm150214960（ns²np³ 所在的族）、fs-idm121823200（ns² 所在的族）和 fs-idp177066416（为什么 Al 在第 13 族而不在第 3 族）。",
+ "figures": [
+  {
+   "id": "sim-halogen-radii",
+   "kind": "sim",
+   "number": "6.30",
+   "originals": [
+    "/media/ch06/CNX_Chem_06_05_CovalradiT.jpg"
+   ],
+   "original_caption": "（a）原子的半径定义为：由共价键连接的两个相同原子所组成的分子中，两核间距离的一半。卤素的原子半径沿族向下随 n 增大而增大。（b）按比例画出的各元素的共价半径。总的趋势是半径沿族向下增大，沿周期减小。",
+   "draws": [
+    "length"
+   ],
+   "conventions": [
+    "H",
+    "Li",
+    "Be",
+    "B",
+    "C",
+    "N",
+    "O",
+    "F",
+    "Na",
+    "Mg",
+    "Al",
+    "Si",
+    "P",
+    "S",
+    "Cl",
+    "K",
+    "Ca",
+    "Sc",
+    "Ti",
+    "V",
+    "Cr",
+    "Mn",
+    "Fe",
+    "Co",
+    "Ni",
+    "Cu",
+    "Zn",
+    "Ga",
+    "Ge",
+    "As",
+    "Se",
+    "Br",
+    "Rb",
+    "Sr",
+    "Y",
+    "Zr",
+    "Nb",
+    "Mo",
+    "Tc",
+    "Ru",
+    "Rh",
+    "Pd",
+    "Ag",
+    "Cd",
+    "In",
+    "Sn",
+    "Sb",
+    "Te",
+    "I",
+    "Cs",
+    "Ba",
+    "La",
+    "Hf",
+    "Ta",
+    "W",
+    "Re",
+    "Os",
+    "Ir",
+    "Pt",
+    "Au",
+    "Hg",
+    "Tl",
+    "Pb",
+    "Bi",
+    "Po",
+    "At"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-trends-graph",
+   "kind": "sim",
+   "number": "6.31",
+   "folds": [
+    "6.33"
+   ],
+   "originals": [
+    "/media/ch06/CNX_Chem_06_05_Radiigraph.jpg",
+    "/media/ch06/CNX_Chem_06_05_Firstiongr.jpg"
+   ],
+   "original_caption": "（图 6.31）在每个周期内，原子半径随 Z 增大而呈减小的趋势，例如从 K 到 Kr。在每个族内（例如图中紫色所示的碱金属），原子半径则随 Z 增大而增大。（图 6.33）前六个周期元素的第一电离能对原子序数作图。",
+   "draws": [
+    "energy",
+    "length"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-ions",
+   "kind": "sim",
+   "number": "6.32",
+   "originals": [
+    "/media/ch06/CNX_Chem_06_05_Ionradii.jpg"
+   ],
+   "original_caption": "阳离子的半径小于其母体原子（Al），这是由于失去了电子；阴离子的半径大于其母体（S），这是由于得到了电子。",
+   "draws": [
+    "length"
+   ],
+   "conventions": [
+    "Al",
+    "S"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-ie-table",
+   "kind": "sim",
+   "number": "6.34",
+   "folds": [
+    "6.35"
+   ],
+   "originals": [
+    "/media/ch06/CNX_Chem_06_05_Firstionen.jpg",
+    "/media/ch06/CNX_Chem_06_05_Elaffin.jpg"
+   ],
+   "original_caption": "（图 6.34）此版本的元素周期表给出部分元素的第一电离能（IE₁），单位为 kJ/mol。（图 6.35）此版本的元素周期表显示部分元素的电子亲和能值（单位为 kJ/mol）。",
+   "draws": [
+    "energy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "values on deeply shaded cells set in ink for contrast"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-oxygen-orbitals",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-successive",
+   "kind": "sim",
+   "draws": [
+    "energy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "headline IE symbols typeset through the macros"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "periodic-properties",
+   "concept": "valence-and-core-electrons",
+   "verb": "uses"
+  },
+  {
+   "span": "periodic-properties",
+   "concept": "principal-quantum-number-shells",
+   "verb": "uses"
+  },
+  {
+   "span": "covalent-radius",
+   "concept": "covalent-radius-trend",
+   "verb": "introduces"
+  },
+  {
+   "span": "covalent-radius",
+   "concept": "principal-quantum-number-shells",
+   "verb": "uses"
+  },
+  {
+   "span": "covalent-radius",
+   "concept": "covalent-radius",
+   "verb": "introduces"
+  },
+  {
+   "span": "effective-nuclear-charge",
+   "concept": "effective-nuclear-charge",
+   "verb": "introduces"
+  },
+  {
+   "span": "effective-nuclear-charge",
+   "concept": "covalent-radius-trend",
+   "verb": "reinforces"
+  },
+  {
+   "span": "effective-nuclear-charge",
+   "concept": "valence-and-core-electrons",
+   "verb": "uses"
+  },
+  {
+   "span": "effective-nuclear-charge",
+   "concept": "aufbau-principle",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-radii",
+   "concept": "predicting-periodic-trends",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-radii",
+   "concept": "covalent-radius-trend",
+   "verb": "uses"
+  },
+  {
+   "span": "ionic-radii",
+   "concept": "ionic-radius-trend",
+   "verb": "introduces"
+  },
+  {
+   "span": "ionic-radii",
+   "concept": "effective-nuclear-charge",
+   "verb": "uses"
+  },
+  {
+   "span": "ionic-radii",
+   "concept": "ion-configurations",
+   "verb": "uses"
+  },
+  {
+   "span": "isoelectronic",
+   "concept": "ionic-radius-trend",
+   "verb": "reinforces"
+  },
+  {
+   "span": "isoelectronic",
+   "concept": "writing-electron-configurations",
+   "verb": "uses"
+  },
+  {
+   "span": "isoelectronic",
+   "concept": "isoelectronic",
+   "verb": "introduces"
+  },
+  {
+   "span": "ionization-energy",
+   "concept": "ionization-energy-trend",
+   "verb": "introduces"
+  },
+  {
+   "span": "ionization-energy",
+   "concept": "covalent-radius-trend",
+   "verb": "uses"
+  },
+  {
+   "span": "ionization-energy",
+   "concept": "orbital-energy-order",
+   "verb": "uses"
+  },
+  {
+   "span": "ionization-energy",
+   "concept": "ionization-energy",
+   "verb": "introduces"
+  },
+  {
+   "span": "ie-exceptions",
+   "concept": "ionization-energy-trend",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ie-exceptions",
+   "concept": "hunds-rule",
+   "verb": "uses"
+  },
+  {
+   "span": "successive-ie",
+   "concept": "successive-ionization-energies",
+   "verb": "introduces"
+  },
+  {
+   "span": "successive-ie",
+   "concept": "valence-and-core-electrons",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-ionization",
+   "concept": "predicting-periodic-trends",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-ionization",
+   "concept": "successive-ionization-energies",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-ionization",
+   "concept": "ionization-energy-trend",
+   "verb": "uses"
+  },
+  {
+   "span": "electron-affinity",
+   "concept": "electron-affinity-trend",
+   "verb": "introduces"
+  },
+  {
+   "span": "electron-affinity",
+   "concept": "effective-nuclear-charge",
+   "verb": "uses"
+  },
+  {
+   "span": "electron-affinity",
+   "concept": "electron-affinity",
+   "verb": "introduces"
+  },
+  {
+   "span": "reactivity",
+   "concept": "predicting-periodic-trends",
+   "verb": "reinforces"
+  },
+  {
+   "span": "reactivity",
+   "concept": "electron-affinity-trend",
+   "verb": "uses"
+  },
+  {
+   "span": "reactivity",
+   "concept": "ionization-energy-trend",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm167417008",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-radii"
+   },
+   "cite": "effective-nuclear-charge",
+   "prompt": "给出一个原子的例子，其大小小于氟。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Ne 或 He"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm65177120",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-ionization"
+   },
+   "cite": "ionization-energy",
+   "prompt": "下列哪一个的 IE<sub>1</sub> 值最低：O、Po、Pb 还是 Ba？",
+   "answer": {
+    "type": "choice",
+    "generated_by": "source",
+    "options": [
+     "O",
+     "Po",
+     "Pb",
+     "Ba"
+    ],
+    "correct": 3,
+    "solution": "Ba"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idp42367872",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "covalent-radius",
+   "prompt": "根据它们在元素周期表中的位置，预测哪一个的原子半径最小：Mg、Sr、Si、Cl、I。",
+   "answer": {
+    "type": "choice",
+    "generated_by": "source",
+    "options": [
+     "Mg",
+     "Sr",
+     "Si",
+     "Cl",
+     "I"
+    ],
+    "correct": 3,
+    "solution": "Cl"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp30124176",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "covalent-radius",
+   "prompt": "根据它们在元素周期表中的位置，预测哪一个的原子半径最大：Li、Rb、N、F、I。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Rb 的原子半径最大。半径沿族向下增大，因为每向下一步都增加一个主量子数更大的电子层；而沿周期从左到右减小，因为 <em>Z</em><sub>eff</sub> 增大，把价电子拉得更靠近原子核。Li、N 和 F 位于第 2 周期，Rb 和 I 位于第 5 周期，所以 Rb 和 I 比另外三个多出三个电子层，原子半径更大。Rb 位于第 1 族，I 位于第 17 族，同处一个周期，因此有效核电荷较小的 Rb 是两者中较大的。图 6.30 中的共价半径与此一致：Rb 265 pm，Li 167 pm，I 133 pm，N 71 pm，F 64 pm。"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm155159840",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ionization-energy",
+   "prompt": "根据它们在元素周期表中的位置，预测哪一个的第一电离能最大：Mg、Ba、B、O、Te。",
+   "answer": {
+    "type": "choice",
+    "generated_by": "source",
+    "options": [
+     "Mg",
+     "Ba",
+     "B",
+     "O",
+     "Te"
+    ],
+    "correct": 3,
+    "solution": "O"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm54929680",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ionization-energy",
+   "prompt": "根据它们在元素周期表中的位置，预测哪一个的第一电离能最小：Li、Cs、N、F、I。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Cs 的第一电离能最小。$\\kIE_{1}$ 沿族向下减小，因为最外层电子所在的电子层离原子核更远，被束缚得更松；沿周期则随 <em>Z</em><sub>eff</sub> 增大而增大。Cs 与 Li 同在第 1 族，但低五个周期，位于第 6 周期，所以它的 6<em>s</em> 电子在这五者中离原子核最远，受到的吸引最弱。N 和 F 位于第 2 周期、Li 的右边，I 位于第 17 族，所以这三者对电子的束缚都更紧。图 6.34 给出 Cs 的 $\\kIE_{1}$ = 380 kJ/mol，而 Li 为 520 kJ/mol，I 为 1010 kJ/mol，N 为 1400 kJ/mol，F 为 1680 kJ/mol。"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idm155125392",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ionization-energy",
+   "prompt": "根据它们在元素周期表中的位置，将下列原子按第一电离能由小到大排序：F、Li、N、Rb",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Rb &lt; Li &lt; N &lt; F"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm147454816",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ionization-energy",
+   "prompt": "根据它们在元素周期表中的位置，将下列原子按第一电离能由小到大排序：Mg、O、S、Si",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "第一电离能由小到大的顺序为 Mg &lt; Si &lt; S &lt; O。Mg、Si 和 S 位于第 3 周期，分别在第 2、14 和 16 族，$\\kIE_{1}$ 沿周期从左到右一般增大，因为 <em>Z</em><sub>eff</sub> 增大，价电子被束缚得更紧，所以 Mg &lt; Si &lt; S。氧位于硫正上方的第 16 族；它的价电子在 <em>n</em> = 2 电子层，比硫的 <em>n</em> = 3 电子更靠近原子核，所以 O 的 $\\kIE_{1}$ 更大，排在最后。图 6.34 证实了这一顺序：Mg 730 kJ/mol，Si 780 kJ/mol，S 1000 kJ/mol，O 1310 kJ/mol。"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idm74793552",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "covalent-radius",
+   "prompt": "根据它们在元素周期表中的位置，将下列原子按半径由小到大列出：Mg、Ca、Rb、Cs。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Mg &lt; Ca &lt; Rb &lt; Cs"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idm116086704",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "covalent-radius",
+   "prompt": "根据它们在元素周期表中的位置，将下列原子按半径由小到大列出：Sr、Ca、Si、Cl。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "半径由小到大的顺序为 Cl &lt; Si &lt; Ca &lt; Sr。Si 和 Cl 位于第 3 周期，半径沿周期随 <em>Z</em><sub>eff</sub> 增大而减小，所以第 17 族的 Cl 比第 14 族的 Si 小。Ca 和 Sr 位于第 2 族，半径沿族向下随价层主量子数增大而增大，所以第 5 周期的 Sr 比第 4 周期的 Ca 大。Ca 的价电子在 <em>n</em> = 4 电子层，比 Si 和 Cl 的价电子多一个电子层，而且它还远在两者的左边，所以比两者都大。图 6.30 中的共价半径与此一致：Cl 99 pm，Si 111 pm，Ca 176 pm，Sr 195 pm。"
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idm107831680",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ionic-radii",
+   "prompt": "根据它们在元素周期表中的位置，将下列离子按半径由小到大列出：K<sup>+</sup>、Ca<sup>2+</sup>、Al<sup>3+</sup>、Si<sup>4+</sup>。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Si<sup>4+</sup> &lt; Al<sup>3+</sup> &lt; Ca<sup>2+</sup> &lt; K<sup>+</sup>"
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idm44955136",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ionic-radii",
+   "prompt": "将下列离子按半径由小到大列出：Li<sup>+</sup>、Mg<sup>2+</sup>、Br<sup>–</sup>、Te<sup>2–</sup>。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "半径由小到大的顺序为 Li<sup>+</sup> &lt; Mg<sup>2+</sup> &lt; Br<sup>–</sup> &lt; Te<sup>2–</sup>。电子构型显示出每种离子的最外层：Li<sup>+</sup> 为 1<em>s</em><sup>2</sup>，<em>n</em> = 1；Mg<sup>2+</sup> 为 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>，<em>n</em> = 2；Br<sup>–</sup> 为 [Ar]3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>6</sup>，<em>n</em> = 4；Te<sup>2–</sup> 为 [Kr]4<em>d</em><sup>10</sup>5<em>s</em><sup>2</sup>5<em>p</em><sup>6</sup>，<em>n</em> = 5。最外层电子的主量子数每增大一级，它们就离原子核更远，因此大小随 <em>n</em> 而变。两种阳离子失去了它们的价电子，比各自的母体原子小；两种阴离子得到了电子，使电子之间的排斥增大，每个电子的 <em>Z</em><sub>eff</sub> 降低，因此比各自的母体原子大。"
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idm119922592",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "isoelectronic",
+   "prompt": "下列哪个（些）原子和/或离子与 Br<sup>+</sup> 是等电子的：Se<sup>2+</sup>、Se、As<sup>–</sup>、Kr、Ga<sup>3+</sup>、Cl<sup>–</sup>？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Se, As<sup>−</sup>"
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idm176990768",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "isoelectronic",
+   "prompt": "下列哪个（些）原子和离子与 S<sup>2+</sup> 是等电子的：Si<sup>4+</sup>、Cl<sup>3+</sup>、Ar、As<sup>3+</sup>、Si、Al<sup>3+</sup>？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Cl<sup>3+</sup> 和 Si 与 S<sup>2+</sup> 是等电子的。硫有 16 个电子，所以 S<sup>2+</sup> 有 14 个，其构型为 [Ne]3<em>s</em><sup>2</sup>3<em>p</em><sup>2</sup>。把每种粒子的电子数按原子序数减去电荷数来计算，得到 Si<sup>4+</sup> 为 14 − 4 = 10；Cl<sup>3+</sup> 为 17 − 3 = 14；Ar 为 18；As<sup>3+</sup> 为 33 − 3 = 30；Si 为 14；Al<sup>3+</sup> 为 13 − 3 = 10。只有 Cl<sup>3+</sup> 和 Si 有 14 个电子，二者的构型都与 S<sup>2+</sup> 相同：硅原子为 [Ne]3<em>s</em><sup>2</sup>3<em>p</em><sup>2</sup>，从氯 [Ne]3<em>s</em><sup>2</sup>3<em>p</em><sup>5</sup> 中移去三个 3<em>p</em> 电子，同样得到 [Ne]3<em>s</em><sup>2</sup>3<em>p</em><sup>2</sup>。Si<sup>4+</sup> 和 Al<sup>3+</sup> 则与 Ne 是等电子的。"
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idm64525920",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "isoelectronic",
+   "prompt": "比较各离子中质子数和电子数，将下列离子按半径由小到大排序：As<sup>3–</sup>、Br<sup>–</sup>、K<sup>+</sup>、Mg<sup>2+</sup>。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Mg<sup>2+</sup> &lt; K<sup>+</sup> &lt; Br<sup>–</sup> &lt; As<sup>3–</sup>"
+   }
+  },
+  {
+   "id": "e14",
+   "source_id": "fs-idm2181648",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ionization-energy",
+   "prompt": "在五种元素 Al、Cl、I、Na、Rb 中，哪一种的反应放热最多？（E 代表一个原子。）这一反应的能量叫什么名称？（提示：注意所示过程<em>不</em>对应电子亲和能。）$\\text{E}^{+}(g)+\\text{e}^{-}\\longrightarrow\\text{E}(g)$",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Cl 的反应放热最多，放出 1250 kJ/mol，该反应的能量是第一电离能的负值，−$\\kIE_{1}$。过程 $\\text{E}^{+}(g)+\\text{e}^{-}\\longrightarrow\\text{E}(g)$ 是第一电离 $\\text{E}(g)\\longrightarrow\\text{E}^{+}(g)+\\text{e}^{-}$ 的逆过程，所以它放出的能量与电离所吸收的相同。因此，$\\kIE_{1}$ 最大的元素，在其阳离子俘获一个电子时放出的能量最多。五者之中，Na 和 Rb 在第 1 族，Al 在第 13 族，电离能都低，而 Cl 和 I 在第 17 族；Cl 在 I 的上方，价电子在较小的 <em>n</em> = 3 电子层，所以束缚得最紧。图 6.34 给出 Cl 的 $\\kIE_{1}$ = 1250 kJ/mol，I 为 1010 kJ/mol，Al 为 580 kJ/mol，Na 为 490 kJ/mol，Rb 为 400 kJ/mol。"
+   }
+  },
+  {
+   "id": "e15",
+   "source_id": "fs-idm68979552",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ionization-energy",
+   "prompt": "在五种元素 Sn、Si、Sb、O、Te 中，哪一种的反应吸热最多？（E 代表一个原子。）这一反应的能量叫什么名称？$\\text{E}(g)\\longrightarrow\\text{E}^{+}(g)+\\text{e}^{-}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "O, IE<sub>1</sub>"
+   }
+  },
+  {
+   "id": "e16",
+   "source_id": "fs-idm108984736",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "isoelectronic",
+   "prompt": "离子 S<sup>2–</sup>、Cl<sup>–</sup> 和 K<sup>+</sup> 的离子半径分别为 184、181、138 pm。解释这些离子为什么大小不同，尽管它们含有相同数目的电子。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "这三种离子大小不同，是因为它们的原子核所带电荷不同。每种离子都有 18 个电子，构型为 [Ne]3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>，所以它们是等电子的，而对于等电子体，质子数决定大小。S<sup>2–</sup> 有 16 个质子，Cl<sup>–</sup> 有 17 个，K<sup>+</sup> 有 19 个。因此，同样一组电子，在相同的屏蔽下，感受到钾原子核的 <em>Z</em><sub>eff</sub> 比氯原子核的大，而感受到硫原子核的最小。更强的吸引把电子拉得更近，所以半径随核电荷的增大而减小：S<sup>2–</sup> 最大，为 184 pm，Cl<sup>–</sup> 为 181 pm，而 K<sup>+</sup> 比氯多两个质子，最小，为 138 pm。"
+   }
+  },
+  {
+   "id": "e17",
+   "source_id": "fs-idm177180640",
+   "kind": "exercise",
+   "bloom": "Evaluate",
+   "place": {
+    "at": "end"
+   },
+   "cite": "successive-ie",
+   "prompt": "预期哪种主族原子的第二电离能最低？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Ra"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "covalent-radius-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "predicting-periodic-trends",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "ionization-energy-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "predicting-periodic-trends",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e1",
+   "concept": "covalent-radius-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e1",
+   "concept": "predicting-periodic-trends",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e2",
+   "concept": "covalent-radius-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e2",
+   "concept": "predicting-periodic-trends",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "ionization-energy-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "predicting-periodic-trends",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e4",
+   "concept": "ionization-energy-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e4",
+   "concept": "predicting-periodic-trends",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e5",
+   "concept": "ionization-energy-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e5",
+   "concept": "predicting-periodic-trends",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e6",
+   "concept": "ionization-energy-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e6",
+   "concept": "predicting-periodic-trends",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e7",
+   "concept": "covalent-radius-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e7",
+   "concept": "predicting-periodic-trends",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e8",
+   "concept": "covalent-radius-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e8",
+   "concept": "predicting-periodic-trends",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "ionic-radius-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "predicting-periodic-trends",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e10",
+   "concept": "ionic-radius-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e10",
+   "concept": "predicting-periodic-trends",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e11",
+   "concept": "ionic-radius-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e12",
+   "concept": "ionic-radius-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e13",
+   "concept": "ionic-radius-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e13",
+   "concept": "effective-nuclear-charge",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e14",
+   "concept": "ionization-energy-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e15",
+   "concept": "ionization-energy-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e16",
+   "concept": "ionic-radius-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e16",
+   "concept": "effective-nuclear-charge",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e17",
+   "concept": "successive-ionization-energies",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e17",
+   "concept": "predicting-periodic-trends",
+   "weight": 1,
+   "weights_by": "ai"
+  }
+ ]
+}

@@ -1,0 +1,1653 @@
+{
+ "id": "20.1",
+ "module": "m68846",
+ "chapter": "20",
+ "title": "烃",
+ "short": "烃",
+ "lead": "烃是最简单的<span data-concept=\"organic-compound\">有机化合物</span>，只含碳和氢，但它们的分子在碳链的长度、支链和环以及碳原子之间的键上各不相同。本节依次介绍<span data-concept=\"alkane\">烷烃</span>、<span data-concept=\"alkene\">烯烃</span>、<span data-concept=\"alkyne\">炔烃</span>和<span data-concept=\"aromatic-hydrocarbon\">芳香烃</span>：它们的分子如何绘制和命名，它们所形成的异构体，以及各自的典型反应。",
+ "objectives": [
+  "说明烃的重要性及其多样性的原因",
+  "命名饱和烃和不饱和烃，以及由它们衍生的分子",
+  "描述饱和烃和不饱和烃的特征反应",
+  "识别烃的构造异构体和几何异构体"
+ ],
+ "summary_html": "<p>碳原子之间牢固而稳定的键产生了含有链、支链和环的复杂分子。这些化合物的化学称为有机化学。<span data-concept=\"hydrocarbon\">烃</span>是仅由碳和氢组成的<span data-concept=\"organic-compound\">有机化合物</span>。<span data-concept=\"alkane\">烷烃</span>是<span data-concept=\"alkane\">饱和烃</span>——也就是只含单键的<span data-concept=\"hydrocarbon\">烃</span>。<span data-concept=\"alkene\">烯烃</span>含有一个或多个碳碳双键。<span data-concept=\"alkyne\">炔烃</span>含有一个或多个碳碳三键。<span data-concept=\"aromatic-hydrocarbon\">芳香烃</span>含有具有离域 <span data-concept=\"pi-bond\">π</span> 电子体系的环状结构。</p>",
+ "notes": "关于烷烃命名的“学习链接”视频未收入。本节按原书保留了用连接号（en dash）写的“2–甲基丙烷”、末尾没有句号的句子“（……与另外三个碳原子相连）”、在“也许更容易看出这种等价性”之前打开而始终未闭合的括号、被说成“空间排布”不同的构造异构体、120° 之后的空上标、“双键的位置”上多余的加粗，以及键 fs-idp68973952 中被排进其化学式里的 6H₂O。乙烯与 Cl₂ 反应图的 alt 把乙烯的结构式说成“乙烷”，也照原样保留。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签、提示和建议思路均由 AI 生成。答案取自书后答案以及“学习检测”的答案。11 道没有书后答案、其答案需要画图、命名或计算的习题未收入，也没有为它们编写答案：fs-idp52657872、fs-idp6728112、fs-idp4501296、fs-idp1311200、fs-idp65090000、fs-idp53700896、fs-idp69267152、fs-idp53031744、fs-idp68859968、fs-idp49893888、fs-idp80653232。没有书后答案的概念性习题 fs-idp53479808、fs-idp14199456 和 fs-idp45666096 带有一条标明为 OmniStax 自己所写的建议思路。没有习题被移动；20.4 在其自己的题干中陈述了 fs-idp49893888 的反应。",
+ "figures": [
+  {
+   "id": "sim-hydrocarbon-models",
+   "kind": "sim",
+   "number": "20.2",
+   "folds": [
+    "20.7",
+    "20.10"
+   ],
+   "originals": [
+    "/media/ch20/CNX_Chem_20_01_alkanes.jpg",
+    "/media/ch20/CNX_Chem_20_01_propene1.jpg",
+    "/media/ch20/CNX_Chem_20_01_geoIsomers_img.jpg"
+   ],
+   "original_caption": "（图 20.2）图中给出了甲烷、乙烷和戊烷分子的路易斯结构、球棍模型和空间填充模型。（图 20.7）图中给出了烯烃乙烯、丙烯和 1-丁烯的展开结构式、球棍结构和空间填充模型。（图 20.10）这些分子模型显示了丁烯的构造异构体和几何异构体。",
+   "draws": [],
+   "conventions": [
+    "C",
+    "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-line-structures",
+   "kind": "sim",
+   "number": "20.3",
+   "originals": [
+    "/media/ch20/CNX_Chem_20_01_LineStruct1.jpg"
+   ],
+   "original_caption": "同一种结构可以用三种不同的方式表示：展开式、结构简式和键线式。",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-ex-skeletal-draw",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-ex-skeletal-drawn",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-ex-skeletal-read",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-ex-skeletal-hydrogens",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-alkane-trend",
+   "kind": "sim",
+   "draws": [
+    "temperature"
+   ],
+   "conventions": [
+    "C"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-butane-drawings",
+   "kind": "sim",
+   "number": "20.4",
+   "originals": [
+    "/media/ch20/CNX_Chem_20_01_butaneIsom_img.jpg",
+    "/media/ch20/CNX_Chem_20_01_butane_img.jpg"
+   ],
+   "original_caption": "正丁烷结构的这三种表示方式并不是异构体，因为它们所含原子和键的排列相同。",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-substituents",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-ex-halogen",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-ex-halogen-numbered",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-alkyl-names",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-ex-substituted",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-propane-hydrogens",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-alkyl-groups",
+   "kind": "sim",
+   "number": "20.5",
+   "originals": [
+    "/media/ch20/CNX_Chem_20_01_alkyls.jpg"
+   ],
+   "original_caption": "该列表给出了从不同位置去掉氢原子所形成的各种烷基的名称和化学式。",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-alkyl-locations",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-fractional-distillation",
+   "kind": "sim",
+   "number": "20.6",
+   "originals": [
+    "/media/ch20/CNX_Chem_20_01_FracDistil.jpg"
+   ],
+   "original_caption": "在原油分馏塔中，在炉内被加热到约 425 °C 的油进入塔底时汽化。蒸气通过塔内一系列塔板上的泡罩上升。随着蒸气逐渐冷却，沸点较高的馏分，然后是沸点较低的馏分，冷凝为液体并被引出。（来源 左：改编自 Luigi Chiesa 的作品）",
+   "draws": [
+    "temperature"
+   ],
+   "conventions": [
+    "C"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-ethane-chlorine",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-monomer",
+   "kind": "photo",
+   "number": "20.8",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-recycle",
+   "kind": "photo",
+   "number": "20.9",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-alkene-names",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-ethene-chlorine",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-ex-alkene",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-ex-alkene-product",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-ethyne",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-ex-alkyne",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-acetylene-bromine",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-benzene",
+   "kind": "sim",
+   "number": "20.11",
+   "originals": [
+    "/media/ch20/CNX_Chem_20_01_aromatic_img.jpg",
+    "/media/ch20/CNX_Chem_20_01_benzene.jpg"
+   ],
+   "original_caption": "这个结构简式显示了苯独特的成键结构。",
+   "draws": [],
+   "conventions": [
+    "C",
+    "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-benzene-derivatives",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-ex-aromatic",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-ex-aromatic-isomers",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "organic",
+   "concept": "organic-compound",
+   "verb": "introduces"
+  },
+  {
+   "span": "organic",
+   "concept": "carbon-compound-diversity",
+   "verb": "introduces"
+  },
+  {
+   "span": "organic",
+   "concept": "hydrocarbon",
+   "verb": "uses"
+  },
+  {
+   "span": "organic",
+   "concept": "hybridization",
+   "verb": "uses"
+  },
+  {
+   "span": "alkanes",
+   "concept": "alkane",
+   "verb": "introduces"
+  },
+  {
+   "span": "alkanes",
+   "concept": "sp3-hybrid-orbital",
+   "verb": "uses"
+  },
+  {
+   "span": "alkanes",
+   "concept": "lewis-structure-diagram",
+   "verb": "uses"
+  },
+  {
+   "span": "alkanes",
+   "concept": "bond-angle",
+   "verb": "uses"
+  },
+  {
+   "span": "condensed",
+   "concept": "write-organic-structures",
+   "verb": "introduces"
+  },
+  {
+   "span": "skeletal",
+   "concept": "skeletal-structure",
+   "verb": "introduces"
+  },
+  {
+   "span": "alkane-trend",
+   "concept": "alkane-properties-trend",
+   "verb": "introduces"
+  },
+  {
+   "span": "alkane-trend",
+   "concept": "dispersion-forces",
+   "verb": "uses"
+  },
+  {
+   "span": "alkane-trend",
+   "concept": "melting-point",
+   "verb": "uses"
+  },
+  {
+   "span": "alkane-trend",
+   "concept": "boiling-point",
+   "verb": "uses"
+  },
+  {
+   "span": "alkane-trend",
+   "concept": "standard-temperature-and-pressure",
+   "verb": "uses"
+  },
+  {
+   "span": "isomers",
+   "concept": "alkane-structural-isomers",
+   "verb": "introduces"
+  },
+  {
+   "span": "isomers",
+   "concept": "structural-isomer",
+   "verb": "uses"
+  },
+  {
+   "span": "isomers",
+   "concept": "molecular-formula",
+   "verb": "uses"
+  },
+  {
+   "span": "isomers",
+   "concept": "lewis-structure-diagram",
+   "verb": "uses"
+  },
+  {
+   "span": "naming",
+   "concept": "naming-alkanes",
+   "verb": "introduces"
+  },
+  {
+   "span": "naming",
+   "concept": "substituent",
+   "verb": "introduces"
+  },
+  {
+   "span": "naming",
+   "concept": "nomenclature",
+   "verb": "uses"
+  },
+  {
+   "span": "alkyl",
+   "concept": "alkyl-group",
+   "verb": "introduces"
+  },
+  {
+   "span": "fuels",
+   "concept": "alkanes-as-fuels",
+   "verb": "introduces"
+  },
+  {
+   "span": "fuels",
+   "concept": "combustion-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "fuels",
+   "concept": "exothermic-process",
+   "verb": "uses"
+  },
+  {
+   "span": "fuels",
+   "concept": "distillation",
+   "verb": "uses"
+  },
+  {
+   "span": "fuels",
+   "concept": "boiling-point",
+   "verb": "uses"
+  },
+  {
+   "span": "fuels",
+   "concept": "intermolecular-force",
+   "verb": "uses"
+  },
+  {
+   "span": "substitution",
+   "concept": "substitution-reaction",
+   "verb": "introduces"
+  },
+  {
+   "span": "substitution",
+   "concept": "hybridization",
+   "verb": "uses"
+  },
+  {
+   "span": "functional",
+   "concept": "functional-group",
+   "verb": "introduces"
+  },
+  {
+   "span": "alkenes",
+   "concept": "alkene",
+   "verb": "introduces"
+  },
+  {
+   "span": "alkenes",
+   "concept": "sigma-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "alkenes",
+   "concept": "pi-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "alkenes",
+   "concept": "trigonal-planar-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "recycling",
+   "concept": "polymer",
+   "verb": "introduces"
+  },
+  {
+   "span": "recycling",
+   "concept": "catalyst",
+   "verb": "uses"
+  },
+  {
+   "span": "alkene-names",
+   "concept": "naming-unsaturated-hydrocarbons",
+   "verb": "introduces"
+  },
+  {
+   "span": "alkene-isomers",
+   "concept": "alkene-geometric-isomers",
+   "verb": "introduces"
+  },
+  {
+   "span": "alkene-isomers",
+   "concept": "geometric-isomer",
+   "verb": "uses"
+  },
+  {
+   "span": "alkene-isomers",
+   "concept": "structural-isomer",
+   "verb": "uses"
+  },
+  {
+   "span": "alkene-isomers",
+   "concept": "sp2-hybrid-orbital",
+   "verb": "uses"
+  },
+  {
+   "span": "addition",
+   "concept": "addition-reaction",
+   "verb": "introduces"
+  },
+  {
+   "span": "addition",
+   "concept": "pi-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "addition",
+   "concept": "sigma-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "addition",
+   "concept": "sp3-hybrid-orbital",
+   "verb": "uses"
+  },
+  {
+   "span": "alkynes",
+   "concept": "alkyne",
+   "verb": "introduces"
+  },
+  {
+   "span": "alkynes",
+   "concept": "sp-hybrid-orbital",
+   "verb": "uses"
+  },
+  {
+   "span": "alkynes",
+   "concept": "naming-unsaturated-hydrocarbons",
+   "verb": "uses"
+  },
+  {
+   "span": "alkynes",
+   "concept": "addition-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-alkyne-structure",
+   "concept": "carbon-geometry-and-hybridization",
+   "verb": "introduces"
+  },
+  {
+   "span": "aromatic",
+   "concept": "aromatic-hydrocarbon",
+   "verb": "introduces"
+  },
+  {
+   "span": "aromatic",
+   "concept": "resonance-hybrid",
+   "verb": "uses"
+  },
+  {
+   "span": "aromatic",
+   "concept": "resonance-forms",
+   "verb": "uses"
+  },
+  {
+   "span": "aromatic",
+   "concept": "valence-bond-theory",
+   "verb": "uses"
+  },
+  {
+   "span": "aromatic",
+   "concept": "resonance-and-delocalization",
+   "verb": "uses"
+  },
+  {
+   "span": "aromatic",
+   "concept": "substitution-reaction",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idp10059824",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-skeletal-draw"
+   },
+   "cite": "skeletal",
+   "prompt": "画出这两个分子的键线式：<br><img src=\"/media/ch20/CNX_Chem_20_01_LineStruct4_img.jpg\" alt=\"图 a 显示由五个 CH₂ 基团和一个 CH 基团连成的六边形环。一个 CH₃ 基团位于环的右上方，连在位于环右上部的 CH 基团上。图 b 显示一个直链分子，由 CH₃CH₂CH₂CH₂CH₃ 组成。\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<img src=\"/media/ch20/CNX_Chem_20_01_LineStruct5_img.jpg\" alt=\"图 a 显示一个顶点朝上的六边形。紧靠右侧的顶点上连有一条向右上方延伸的线段。图 b 显示一个锯齿图案，线段从左到右依次为上升、下降、上升、下降、上升。\">"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idp73321504",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-skeletal-read"
+   },
+   "cite": "skeletal",
+   "prompt": "指出这里所示分子的化学式：<br><img src=\"/media/ch20/CNX_Chem_20_01_LineStruct8_img.jpg\" alt=\"图中显示一个骨架模型，呈锯齿形图案，从左到右穿过分子中心，依次为上升、下降、上升、再下降。从两个上升的点向上和向下都伸出线段，形成四条支链。\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "C<sub>9</sub>H<sub>20</sub>"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idp50667744",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-halogen-names"
+   },
+   "cite": "naming",
+   "prompt": "命名下面的分子：<br><img src=\"/media/ch20/CNX_Chem_20_01_HalAlkane3_img.jpg\" alt=\"该图显示一个 C 原子与三个 H 原子和另一个 C 原子相连。第二个 C 原子与两个 H 原子和第三个 C 原子相连。第三个 C 原子与两个 Br 原子和第四个 C 原子相连。该 C 原子与一个 H 原子、一个 I 原子和第五个 C 原子相连。最后这个 C 原子与三个 H 原子相连。\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "3,3-二溴-2-碘戊烷"
+   }
+  },
+  {
+   "id": "cyl4",
+   "source_id": "fs-idp14108192",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-substituted-names"
+   },
+   "cite": "alkyl",
+   "prompt": "命名下面的分子：<br><img src=\"/media/ch20/CNX_Chem_20_01_octane2_img.jpg\" alt=\"该图显示一个 C 原子与三个 H 原子和另一个 C 原子相连。该 C 原子与两个 H 原子和第三个 C 原子相连。第三个 C 原子与两个 H 原子和第四个 C 原子相连。第四个 C 原子与两个 H 原子和第五个 C 原子相连。该 C 原子与一个 H 原子、链中的第六个 C 原子，以及另一个看起来是从链上分出的 C 原子相连。支链上的 C 原子与两个 H 原子和另一个 C 原子相连。这个 C 原子与两个 H 原子和另一个 C 原子相连。这第三个 C 原子出现在第二个的左侧，与三个 H 原子相连。链中的第六个 C 原子与两个 H 原子和第七个 C 原子相连。第七个 C 原子与两个 H 原子和第八个 C 原子相连。第八个 C 原子与三个 H 原子相连。\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "4-丙基辛烷"
+   }
+  },
+  {
+   "id": "cyl5",
+   "source_id": "fs-idp73227696",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-alkene-reactivity"
+   },
+   "cite": "addition",
+   "prompt": "写出所示反应的反应物和产物的名称：<br><img src=\"/media/ch20/CNX_Chem_20_01_ReactProd1_img.jpg\" alt=\"图中显示一个 C 原子与三个 H 原子和另一个 C 原子相连。第二个 C 原子与两个 H 原子和第三个 C 原子相连。第三个 C 原子与一个 H 原子相连，并与第四个 C 原子形成双键。第四个 C 原子与一个 H 原子和第五个 C 原子相连。第五个 C 原子与两个 H 原子和第六个 C 原子相连。第六个 C 原子与三个 H 原子相连。后面有一个加号，加号后是一个 Cl 原子与另一个 Cl 原子相连。后面有一个反应箭头。没有显示产物。\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "反应物：顺-3-己烯；产物：3,4-二氯己烷"
+   }
+  },
+  {
+   "id": "cyl6",
+   "source_id": "fs-idp19245952",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-alkyne-structure"
+   },
+   "cite": "alkynes",
+   "prompt": "指出所示分子中碳原子的杂化和键角：<br><img src=\"/media/ch20/CNX_Chem_20_01_HybrBAngl_img.jpg\" alt=\"图中显示一个结构式，一个 H 原子与一个 C 原子相连。该 C 原子与另一个 C 原子形成三键，后者还与 CH 相连。该 CH 与另一个 CH 形成双键，后者又向右上方与 CH₃ 相连。各 C 原子从左到右标为 1、2、3、4 或 5。\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "1 号碳：<em>sp</em>，180°；2 号碳：<em>sp</em>，180°；3 号碳：<em>sp</em><sup>2</sup>，120°；4 号碳：<em>sp</em><sup>2</sup>，120°；5 号碳：<em>sp</em><sup>3</sup>，109.5°"
+   }
+  },
+  {
+   "id": "cyl7",
+   "source_id": "fs-idp67295280",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-aromatic-structure"
+   },
+   "cite": "aromatic",
+   "prompt": "画出被两个溴取代的六元芳香环化合物的三种异构体。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<img src=\"/media/ch20/CNX_Chem_20_01_AromatIso3_img.jpg\" alt=\"图中显示三对结构式。第一对的第一个有一个六碳烃环，其中四个 C 原子各只与一个 H 原子相连。在环的右上方和右侧，两个没有连 H 原子的 C 原子各连有一个 Br 原子。环的中心有一个圆圈。在这个结构的下方，显示一个类似的结构，是一个内有圆圈的六边形。六边形右上方和右侧的顶点上各连有一个 Br 原子。第二对的第一个有一个六碳烃环，其中四个 C 原子各只与一个 H 原子相连。在环的右上方和右下方，两个没有连 H 原子的 C 原子各连有一个 Br 原子。环的中心有一个圆圈。在这个结构的下方，显示一个类似的结构，是一个内有圆圈的六边形。六边形右上方和右下方的顶点上各连有一个 Br 原子。第三对的第一个有一个六碳烃环，其中四个 C 原子各只与一个 H 原子相连。在环的右上方和左下方，两个没有连 H 原子的 C 原子上连有 Br 原子。环的中心有一个圆圈。在这个结构的下方，显示一个类似的结构，是一个内有圆圈的六边形。六边形右上方和左下方的顶点上各连有 Br 原子。\">"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idp73372304",
+   "source_number": "1",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "alkanes",
+   "prompt": "写出下列各物质的化学式和路易斯结构，它们都含有五个碳原子：<br>（a）一种烷烃<br>（b）一种烯烃<br>（c）一种炔烃",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "答案有若干组；其中一组是：<br>（a）C<sub>5</sub>H<sub>12</sub><br><img src=\"/media/ch20/CNX_Chem_20_01_ex1_1a_img.jpg\" alt=\"图中显示一条由五个以单键相连的 C 原子组成的链。每个 C 原子的上方和下方各连有一个 H 原子。链两端的 C 原子各连有第三个 H 原子。\"><br>（b）C<sub>5</sub>H<sub>10</sub><br><img src=\"/media/ch20/CNX_Chem_20_01_ex1_1b_img.jpg\" alt=\"图中显示一条五个 C 原子的链。从左到右，第一个 C 原子与第二个 C 原子形成单键。第二个 C 原子与第三个 C 原子形成单键。第三个 C 原子与第四个 C 原子形成双键。第四个 C 原子与第五个 C 原子形成单键。第一个 C 原子连有三个 H 原子。第二个 C 原子连有两个 H 原子。第三个 C 原子连有一个 H 原子。第四个 C 原子连有一个 H 原子。第五个 C 原子连有三个 H 原子。\"><br>（c）C<sub>5</sub>H<sub>8</sub><br><img src=\"/media/ch20/CNX_Chem_20_01_ex1_1c_img.jpg\" alt=\"图中显示一条五个碳原子的链。从左到右，第一个 C 原子与第二个 C 原子形成单键。第二个 C 原子与第三个 C 原子形成单键。第三个 C 原子与第四个 C 原子形成三键。第四个 C 原子与第五个 C 原子形成单键。第一个 C 原子连有三个 H 原子。第二个 C 原子连有两个 H 原子。第五个 C 原子连有三个 H 原子。\">"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp53479808",
+   "source_number": "2",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "alkenes",
+   "prompt": "饱和烃与不饱和烃中碳原子价轨道的杂化有什么区别？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "在饱和烃中，每个碳原子都是 <em>sp</em><sup>3</sup> 杂化；在不饱和烃中，双键的碳原子为 <em>sp</em><sup>2</sup> 杂化，三键的碳原子为 <em>sp</em> 杂化。具有四个单键的碳原子形成四个呈四面体排列的 σ 键，其全部四个价轨道都作为 <em>sp</em><sup>3</sup> 杂化轨道。双键中的碳原子由三个 <em>sp</em><sup>2</sup> 杂化轨道形成三个呈平面三角形排列的 σ 键，其一个未杂化的 <em>p</em> 轨道与相邻碳原子的 <em>p</em> 轨道并排重叠，形成 π 键。三键中的碳原子由两个 <em>sp</em> 杂化轨道形成两个呈直线形排列的 σ 键，其两个未杂化的 <em>p</em> 轨道形成两个 π 键。"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp46944768",
+   "source_number": "3",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "addition",
+   "prompt": "在微观层面上，溴与饱和烃的反应和它与不饱和烃的反应有何不同？它们有何相似之处？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "两个反应都使溴并入产物的结构中。区别在于并入发生的方式。在饱和烃中，现有的一个 C–H 键断裂，然后可以形成 C 与 Br 之间的键。在不饱和烃中，烃中唯一断裂的键是 π 键，其电子可用来与 Br<sub>2</sub> 中的一个溴原子形成键（Br–Br 键中的电子则在起始不饱和烃中原属于该 π 键的另一个碳上形成另一个 C–Br 键）。"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idp14199456",
+   "source_number": "4",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "alkynes",
+   "prompt": "在微观层面上，溴与烯烃的反应和它与炔烃的反应有何不同？它们有何相似之处？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "两者都是加成反应：当一个 π 键断裂时，一个溴分子加成到多重键上，两个碳原子上各连上一个溴原子。它们的区别在于加成的溴分子数目。碳碳双键含有一个 σ 键和一个 π 键，所以烯烃加成一个 Br<sub>2</sub> 分子；乙烯生成 1,2-二溴乙烷，其中两个碳原子仍以单个 σ 键相连。三键含有一个 σ 键和两个 π 键，所以炔烃可以加成两个 Br<sub>2</sub> 分子，每个 π 键一个：乙炔先生成保留一个双键的 1,2-二溴乙烯，然后生成保留一个单键的 1,1,2,2-四溴乙烷。在这两个反应中，π 键都被 C–Br σ 键取代，而碳原子之间的 σ 键保持不变。"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp53563584",
+   "source_number": "5",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "alkene-isomers",
+   "prompt": "解释为什么无支链的烯烃可以形成几何异构体，而无支链的烷烃不能。这一解释涉及宏观领域还是微观领域？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "无支链的烷烃可以绕 C–C 键自由旋转，使这些键周围取代基的所有取向都等价，可通过旋转互相转换。在无支链的烯烃中，由于不能绕 $\\text{C}=\\text{C}$ 键旋转，取代基的取向是固定的（不变的），因而允许存在不同的异构体。由于这些概念涉及分子水平的现象，所以这一解释涉及微观领域。"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idp45666096",
+   "source_number": "6",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "isomers",
+   "prompt": "解释为什么这两个分子不是异构体：<br><img src=\"/media/ch20/CNX_Chem_20_01_notiso1_img.jpg\" alt=\"图中显示两个结构式。第一个显示一条由六个碳原子组成的链，从右向左数，第二个和第三个碳之间有一个双键，共连有十二个 H 原子。分子两端以及上方连有 H 原子。除参与双键的 C 原子之外，所有 C 原子的下方也都连有 H 原子。第二个结构显示一条由五个以单键相连的 C 原子组成的烃链。一个连有三个 H 原子的 C 原子连在从右向左数第二个碳的下方。\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "它们的分子式不同，而异构体必须具有相同的分子式。第一个结构有六个碳原子和十二个氢原子，C<sub>6</sub>H<sub>12</sub>；它是烯烃 2-己烯，含有一个碳碳双键。第二个结构有一条五个碳原子的链，第二个碳上有一个甲基，因此也共有六个碳原子，但所有碳碳键都是单键，所以每个碳原子都带有它应有的全部氢：三个 CH<sub>3</sub> 基团各有三个，两个 CH<sub>2</sub> 基团各有两个，CH 上有一个，共十四个。它是烷烃 2-甲基戊烷 C<sub>6</sub>H<sub>14</sub>。双键使第一个分子少了两个氢原子，所以两者不是异构体。"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp68859088",
+   "source_number": "7",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "isomers",
+   "prompt": "解释为什么这两个分子不是异构体：<br><img src=\"/media/ch20/CNX_Chem_20_01_notiso2_img.jpg\" alt=\"图中显示两个结构式。第一个显示一条水平的烃链，由六个以单键相连的 C 原子组成。每个 C 原子的上方和下方各连有一个 H 原子。链两端的两个 C 原子各连有第三个 H 原子。第二个结构显示一条水平的烃链，由五个以单键相连的 C 原子组成，最右侧 C 原子的下方以单键连有第六个 C 原子。从左到右，第一个 C 原子连有三个 H 原子。第二个 C 原子连有两个 H 原子。第三个 C 原子连有两个 H 原子。第四个 C 原子连有两个 H 原子。第五个 C 原子连有两个 H 原子。连在第五个 C 原子下方的 C 原子连有三个 H 原子。\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "它们是同一种化合物，因为每一种都是含有由六个碳原子组成的无支链的链的饱和烃。"
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idp15287488",
+   "source_number": "9",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "naming",
+   "prompt": "写出下列各烃的路易斯结构和分子式：<br>（a）己烷<br>（b）3-甲基戊烷<br>（c）<em>顺</em>-3-己烯<br>（d）4-甲基-1-戊烯<br>（e）3-己炔<br>（f）4-甲基-2-戊炔",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）C<sub>6</sub>H<sub>14</sub><br><img src=\"/media/ch20/CNX_Chem_20_01_hexane_a_img.jpg\" alt=\"该图显示一条水平的烃链，由六个以单键相连的碳原子组成。每个 C 原子的上方和下方各连有一个 H 原子。链两端的两个 C 原子各连有第三个 H 原子。\"><br>（b）C<sub>6</sub>H<sub>14</sub><br><img src=\"/media/ch20/CNX_Chem_20_01_hexane_b_img.jpg\" alt=\"该图显示五个 C 原子连在一起，链的下方连有第六个 C 原子。从左到右，第一个 C 原子连有三个 H 原子，并与另一个 C 原子相连。第二个 C 原子的上方和下方各连有两个 H 原子，并与另一个 C 原子相连。第三个 C 原子的上方连有一个 H 原子，下方连有一个 C 原子。连在链中第三个 C 原子下方的 C 原子连有三个 H 原子。第三个 C 原子还与另一个 C 原子相连。链中的第四个 C 原子的上方和下方各连有两个 H 原子，并与另一个 C 原子相连。第五个 C 原子连有三个 H 原子。\"><br>（c）C<sub>6</sub>H<sub>12</sub><br><img src=\"/media/ch20/CNX_Chem_20_01_hexane_c_img.jpg\" alt=\"该图显示一个 C 原子连有三个 H 原子。该 C 原子与另一个 C 原子相连，后者的上方和下方各连有两个 H 原子。第二个 C 原子还向右下方与另一个 C 原子相连。这个 C 原子连有一个 H 原子，并与第四个 C 原子形成双键。第四个 C 原子也连有一个 H 原子。第四个 C 原子向右上方与另一个 C 原子相连。这个 C 原子的上方和下方各连有两个 H 原子。该 C 原子还与另一个 C 原子相连，后者连有三个 H 原子。\"><br>（d）C<sub>6</sub>H<sub>12</sub><br><img src=\"/media/ch20/CNX_Chem_20_01_hexane_d_img.jpg\" alt=\"该图显示一条长度为五个 C 原子的烃链。从左到右，第一个 C 原子连有两个 H 原子，并与第二个 C 原子形成双键。第二个 C 原子的上方连有一个 H 原子，并与第三个 C 原子相连。第三个 C 原子连有两个 H 原子，并与第四个 C 原子相连。第四个 C 原子的上方连有一个 H 原子，下方连有一个 C 原子。与链中第四个 C 原子相连的那个 C 原子连有三个 H 原子。第四个 C 原子还与第五个 C 原子相连，后者连有三个 H 原子。\"><br>（e）C<sub>6</sub>H<sub>10</sub><br><img src=\"/media/ch20/CNX_Chem_20_01_hexane_e_img.jpg\" alt=\"该图显示一条长度为六个 C 原子的烃链。第一个 C 原子连有三个 H 原子，并与第二个 C 原子相连。第二个 C 原子的上方和下方各连有一个 H 原子，并与第三个 C 原子相连。第三个 C 原子与第四个 C 原子形成三键。第四个 C 原子与第五个 C 原子形成单键，后者的上方和下方各连有两个 H 原子。第六个 C 原子连有三个 H 原子。\"><br>（f）C<sub>6</sub>H<sub>10</sub><br><img src=\"/media/ch20/CNX_Chem_20_01_hexane_f_img.jpg\" alt=\"该图显示一条长度为五个 C 原子的烃链。从左到右，第一个 C 原子连有三个 H 原子，并与第二个 C 原子相连。第二个 C 原子与第三个 C 原子形成三键。第三个 C 原子与第四个 C 原子形成单键。第四个 C 原子的上方连有一个 H 原子，下方连有一个 C 原子。连在第四个 C 原子下方的 C 原子连有三个 H 原子。第四个 C 原子与第五个 C 原子相连。第五个 C 原子连有三个 H 原子。\">"
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idp7100896",
+   "source_number": "11",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "naming",
+   "prompt": "给出下列各化合物的完整 IUPAC 名称：<br>（a）CH<sub>3</sub>CH<sub>2</sub>CBr<sub>2</sub>CH<sub>3</sub><br>（b）(CH<sub>3</sub>)<sub>3</sub>CCl<br>（c）<br><img src=\"/media/ch20/CNX_Chem_20_01_ex1_11_c_img.jpg\" alt=\"该结构显示一条烃链，由 CH₃CHCH₂CH₃ 组成，从左数第二个 C 原子的下方连有一个 CH₃ 基团。\"><br>（d）<br><img src=\"/media/ch20/CNX_Chem_20_01_ex1_11_d_img.jpg\" alt=\"该结构显示一条烃链，由 CH₃CHCH₂C 与 CH 以双键相连组成。\"><br>（e）<br><img src=\"/media/ch20/CNX_Chem_20_01_ex1_11_e_img.jpg\" alt=\"该结构显示一条水平链，由 CH₃CFCH₂CH₂CH₂CH₃ 组成，从左数第二个 C 原子的下方连有一个 CH₂CH 与 CH 以三键相连的基团。\"><br>（f）<br><img src=\"/media/ch20/CNX_Chem_20_01_ex1_11_f_img.jpg\" alt=\"该结构显示两个以双键相连的 C 原子，左上方连有 Cl，右下方连有 CH₃，右上方和左下方连有 H 原子。\"><br>（g）${({\\text{CH}}_{3})}_{2}{\\text{CHCH}}_{2}\\text{CH}={\\text{CH}}_{2}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）2,2-二溴丁烷；（b）2-氯-2-甲基丙烷；（c）2-甲基丁烷；（d）1-丁炔；（e）4-氟-4-甲基-1-辛炔；（f）<em>反</em>-1-氯丙烯；（g）4-甲基-1-戊烯"
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idp47819536",
+   "source_number": "13",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "isomers",
+   "prompt": "丁烷在一次性打火机中用作燃料。写出丁烷每种异构体的路易斯结构。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<img src=\"/media/ch20/CNX_Chem_20_01_ex1_14_img.jpg\" alt=\"图中显示两个结构。第一个包括一条由四个以单键相连的 C 原子组成的链。每个 C 原子的上方和下方各连有两个 H 原子。链两端的两个 C 原子各连有第三个 H 原子。该分子名为正丁烷。第二个包括一条由三个以单键相连的 C 原子组成的链，链中间 C 原子的上方连有一个 C 原子。从左到右，第一个 C 原子连有三个 H 原子。第二个 C 原子的下方连有一个 H 原子，上方连有一个 C 原子。连在中间 C 原子上方的 C 原子连有三个 H 原子。链中的第三个 C 原子连有三个 H 原子。该分子名为 2-甲基丙烷。\">"
+   }
+  },
+  {
+   "id": "e15",
+   "source_id": "fs-idp63809536",
+   "source_number": "15",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "alkene-isomers",
+   "prompt": "写出 ${\\text{CH}}_{3}\\text{CH}=\\text{CHCl}$ 的<em>顺反</em>异构体的路易斯结构。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<img src=\"/media/ch20/CNX_Chem_20_01_ex1_16_img.jpg\" alt=\"该图包括两个结构式。第一个结构显示两个以双键相连的 C 原子，右上方连有 Cl，左上方连有 CH₃，右下方和左下方连有 H 原子。该结构标为顺-。第二个结构显示两个以双键相连的碳原子，右下方连有 Cl，左上方连有 CH₃，右上方和左下方连有 H 原子。该结构标为反-。\">"
+   }
+  },
+  {
+   "id": "e17",
+   "source_id": "fs-idp67272704",
+   "source_number": "17",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "alkyl",
+   "prompt": "异辛烷是 C<sub>8</sub>H<sub>18</sub> 的一种异构体的俗名，它被用作汽油辛烷值 100 的标准：<br><img src=\"/media/ch20/CNX_Chem_20_01_ex1_18a_img.jpg\" alt=\"图中所示的烃分子结构包括 CH₃CHCH₂CCH₃。链中（从左数）第二个 C 原子上连有一个 CH₃ 基团。链中第四个 C 原子的上方和下方各连有一个 CH₃ 基团。\"><br>（a）该化合物的 IUPAC 名称是什么？<br>（b）写出其他含有五碳链和三个甲基取代基的异构体的名称。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）2,2,4-三甲基戊烷；（b）2,2,3-三甲基戊烷、2,3,4-三甲基戊烷和 2,3,3-三甲基戊烷：<br><img src=\"/media/ch20/CNX_Chem_20_01_ex1_18b_img.jpg\" alt=\"图中显示三个烃分子结构。第一个中，CH₃ 向右上方与一个 C 原子相连。该 C 原子向右下方与 CH 相连。CH 向右上方与 CH₂ 相连。CH₂ 向右下方与 CH₃ 相连。那个单独的 C 原子与两个 CH₃ 基团相连。CH 基团中的 C 与一个 CH₃ 基团相连。第二个结构显示 CH₃ 向右上方与 CH 相连，该 CH 向右下方与 CH 相连。该 CH 向右上方与另一个 CH 相连，后者向右下方与 CH₃ 相连。起始的 C 原子与一个 CH₃ 基团相连。第二个 C 原子与一个 CH₃ 基团相连。第三个 C 原子与一个 CH₃ 基团相连。第三个结构显示 CH₃ 向右上方与 CH 相连，该 CH 向右下方与 C 相连。C 向右上方与 CH₂ 相连，后者向右下方与 CH₃ 相连。第二个 C 原子与一个 CH₃ 基团相连。第三个 C 原子与两个 CH₃ 基团相连。\">"
+   }
+  },
+  {
+   "id": "e19",
+   "source_id": "fs-idp51534160",
+   "source_number": "19",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "naming",
+   "prompt": "写出 C<sub>4</sub>H<sub>9</sub>Cl 所有异构体的路易斯结构和 IUPAC 名称。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<img src=\"/media/ch20/CNX_Chem_20_01_ex1_20_img.jpg\" alt=\"图中给出四个结构式。第一个有一条长度为四个 C 原子的烃链。所有键都是单键。连有九个 H 原子，并在结构最右端连有一个 Cl 原子，标为 1-氯丁烷。第二个有一条长度为四个 C 原子的烃链。所有键都是单键。连有九个 H 原子，并在从左数第二个碳的上方连有一个 Cl 原子。该结构标为 2-氯丁烷。第三个有一条长度为三个 C 原子的烃链。所有键都是单键。中间 C 原子的下方连有一个 Cl 原子，上方还连有一个 CH₃ 基团。连有六个 H 原子，该结构标为 2-氯-2-甲基丙烷。第四个结构有一条长度为三个 C 原子的烃链。所有键都是单键。从左数第一个 C 原子的下方连有一个 Cl 原子，中间 C 原子的上方连有一个 CH₃ 基团。连有六个 H 原子，该结构标为 1-氯-2-甲基丙烷。\">"
+   }
+  },
+  {
+   "id": "e21",
+   "source_id": "fs-idp51005312",
+   "source_number": "21",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "alkyl",
+   "prompt": "写出 –C<sub>5</sub>H<sub>11</sub> 烷基所有异构体的结构。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "下面用结构简式表示碳骨架和相应数目的氢原子：<br><img src=\"/media/ch20/CNX_Chem_20_01_ex1_21_img.jpg\" alt=\"图中显示八个结构。第一个包括 CH₃ 与 CH₂ 相连，后者与 CH₂ 相连，后者与 CH₂ 相连，后者与 CH₂ 相连，末端有一个键。第二个显示 CH₃ 与 CH₂ 相连，后者与 CH₂ 相连，后者与 CH 相连，后者与 CH₃ 相连。从左数第四个 C 原子的上方有一个键。第三个显示 CH₃ 与 CH₂ 相连，后者与 CH 相连，后者与 CH₂ 相连，后者与 CH₃ 相连。从左数第三个 C 原子的上方有一个键。其余五个例子涉及支链。第四个结构显示 CH₃ 与 C 相连，后者与 C 相连。从左数第二个 C 原子的上方有一个键，下方有一个键连到 H 原子。第三个 C 与两个 CH₃ 基团以及一个 H 原子相连。第五个显示一个键通向一个 CH₂ 基团，该基团与一个 C 原子相连。这个 C 原子与三个 CH₃ 基团相连。第六个显示一个键，然后是 CH₂ 与 CH₂ 相连，后者与 CH 相连。该 CH 与两个 CH₃ 基团相连。第七个显示 CH₃ 与 CH₂ 相连，后者与 C 以一个键相连。该 C 还与两个 CH₃ 基团相连。最后一个结构显示 CH₃ 与 CH₂ 相连，后者与 CH 相连。该 CH 以一个键与一个 CH₂ 基团相连，并与一个 CH₃ 基团相连。\">"
+   }
+  },
+  {
+   "id": "e23",
+   "source_id": "fs-idp64361104",
+   "source_number": "23",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "aromatic",
+   "prompt": "苯是无铅汽油中用作辛烷值助剂的化合物之一。它由乙炔催化转化为苯制得：<br>$3{\\text{C}}_{2}{\\text{H}}_{2}\\;\\longrightarrow \\;{\\text{C}}_{6}{\\text{H}}_{6}$<br>画出这些化合物的路易斯结构（适当时画出共振式），并确定各自碳原子的杂化。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<img src=\"/media/ch20/CNX_Chem_20_01_ex1_23_img.jpg\" alt=\"图中显示两个结构式。第一个显示两个 C 原子，它们之间有一个三键。结构的每一端各连有一个 H 原子。第二个结构包括一个由 6 个 C 原子组成的烃环，中心有一个圆圈。C 原子之间有交替的双键。每个 C 原子各连有一个 H 原子。\"><br>在乙炔中，成键使用碳原子上的 <em>sp</em> 杂化轨道和氢原子上的 <em>s</em> 轨道。在苯中，碳原子为 <em>sp</em><sup>2</sup> 杂化。"
+   }
+  },
+  {
+   "id": "e25",
+   "source_id": "fs-idp68973952",
+   "source_number": "25",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "addition",
+   "prompt": "为下列各反应分别写出两个完整的配平方程式，一个用结构简式，一个用路易斯结构。<br>（a）1 mol 1-丁炔与 2 mol 碘反应。<br>（b）戊烷在空气中燃烧。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）$\\text{CH}\\equiv {\\text{CCH}}_{2}{\\text{CH}}_{3}+2{\\text{I}}_{2}\\;\\longrightarrow \\;{\\text{CHI}}_{2}{\\text{CI}}_{2}{\\text{CH}}_{2}{\\text{CH}}_{3}$<br><img src=\"/media/ch20/CNX_Chem_20_04_reaction1b_img.jpg\" alt=\"图中显示一个反应。左侧显示一条四碳烃链，从左到右，1 号和 2 号 C 原子之间有一个三键。第一个 C 与一个 H 原子相连。第二个 C 原子与第三个 C 原子相连。第三个 C 原子与两个 H 原子和第四个 C 原子相连。第四个 C 原子与三个 H 原子相连。后面是一个加号，加号后是 2 个 I-I，再后面是一个反应箭头，然后是一条四个 C 原子的烃链，从左到右，1 号和 2 号 C 原子的上方和下方都连有 I 原子。第一个 C 原子与一个 H 相连。第三个 C 原子与两个 H 原子相连。第四个 C 原子与三个 H 原子相连。\"><br>（b）${\\text{CH}}_{3}{\\text{CH}}_{2}{\\text{CH}}_{2}{\\text{CH}}_{2}{\\text{CH}}_{3}+8{\\text{O}}_{2}\\;\\longrightarrow \\;5{\\text{CO}}_{2}+{\\text{6H}}_{2}\\text{O}$<br><img src=\"/media/ch20/CNX_Chem_20_04_reaction1c_img.jpg\" alt=\"图中显示一个反应。左侧显示一条五个 C 原子的烃链，C 原子之间均为单键。每个 C 原子的上方和下方各连有一个 H 原子。链两端的两个 C 原子各连有第三个 H 原子。后面是一个加号，加号后是 8 个 O=O。反应箭头的右侧出现 5 个 O=C=O，加 6 个 O 与两个 H 原子相连。\">"
+   }
+  },
+  {
+   "id": "e27",
+   "source_id": "fs-idp81497952",
+   "source_number": "27",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "addition",
+   "prompt": "由 <span data-type=\"mass\">25.5 g</span> 丙烯可以制得多少质量的 2-溴丙烷？假设产物的产率为 100%。",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 74.5,
+    "unit": "g",
+    "hint": "溴化氢加成到丙烯的双键上，每个丙烯分子生成一个 2-溴丙烷分子；把丙烯的质量换算成物质的量，再把产物的物质的量换算成克。",
+    "solution": "<span data-type=\"mass\">74.5 g</span>"
+   }
+  },
+  {
+   "id": "e29",
+   "source_id": "fs-idp9096944",
+   "source_number": "29",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "alkenes",
+   "prompt": "乙烯可以通过乙烷的热解制得：<br>${\\text{C}}_{2}{\\text{H}}_{6}\\;\\longrightarrow \\;{\\text{C}}_{2}{\\text{H}}_{4}+{\\text{H}}_{2}$<br>假设产率为 100.0%，<span data-type=\"mass\">1.000 × 10<sup>3</sup> kg</span> 乙烷热解可生成多少千克乙烯？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 932.8,
+    "unit": "kg",
+    "hint": "一摩尔乙烷生成一摩尔乙烯；先用乙烷的摩尔质量把乙烷的质量换算成物质的量，再用乙烯的摩尔质量把乙烯的物质的量换算成千克。",
+    "solution": "<span data-type=\"mass\">9.328 × 10<sup>2</sup> kg</span>"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "skeletal-structure",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "write-organic-structures",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "skeletal-structure",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "write-organic-structures",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "naming-alkanes",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "substituent",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "naming-alkanes",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "alkyl-group",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "naming-unsaturated-hydrocarbons",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "alkene-geometric-isomers",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "addition-reaction",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "naming-alkanes",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl6",
+   "concept": "carbon-geometry-and-hybridization",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl6",
+   "concept": "alkyne",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl6",
+   "concept": "alkene",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl7",
+   "concept": "aromatic-hydrocarbon",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl7",
+   "concept": "substitution-reaction",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e1",
+   "concept": "alkane",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e1",
+   "concept": "alkene",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e1",
+   "concept": "alkyne",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e2",
+   "concept": "carbon-geometry-and-hybridization",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e2",
+   "concept": "alkane",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e2",
+   "concept": "alkene",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "substitution-reaction",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "addition-reaction",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e4",
+   "concept": "addition-reaction",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e4",
+   "concept": "alkene",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e4",
+   "concept": "alkyne",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e5",
+   "concept": "alkene-geometric-isomers",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e6",
+   "concept": "alkane-structural-isomers",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e6",
+   "concept": "alkene",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e7",
+   "concept": "alkane-structural-isomers",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "naming-alkanes",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "naming-unsaturated-hydrocarbons",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "alkene-geometric-isomers",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e11",
+   "concept": "naming-alkanes",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e11",
+   "concept": "naming-unsaturated-hydrocarbons",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e11",
+   "concept": "substituent",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e13",
+   "concept": "alkane-structural-isomers",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e15",
+   "concept": "alkene-geometric-isomers",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e17",
+   "concept": "naming-alkanes",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e17",
+   "concept": "alkane-structural-isomers",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e17",
+   "concept": "alkyl-group",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e19",
+   "concept": "alkane-structural-isomers",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e19",
+   "concept": "naming-alkanes",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e19",
+   "concept": "substituent",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e21",
+   "concept": "alkyl-group",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e21",
+   "concept": "alkane-structural-isomers",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e23",
+   "concept": "aromatic-hydrocarbon",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e23",
+   "concept": "carbon-geometry-and-hybridization",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e23",
+   "concept": "alkyne",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e25",
+   "concept": "addition-reaction",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e25",
+   "concept": "alkanes-as-fuels",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e25",
+   "concept": "alkyne",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e27",
+   "concept": "addition-reaction",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e27",
+   "concept": "mass-stoichiometry",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e29",
+   "concept": "mass-stoichiometry",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e29",
+   "concept": "alkene",
+   "weights_by": "ai"
+  }
+ ],
+ "footnotes": [
+  {
+   "id": "c-constitutional-isomers",
+   "kind": "correction",
+   "html": "书中用原子的空间排布来描述构造异构体，而这正是立体异构体的区别所在。构造异构体的区别在于哪些原子与哪些原子相连，如丁烷和 2-甲基丙烷。"
+  }
+ ]
+}

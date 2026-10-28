@@ -1,0 +1,231 @@
+{
+ "id": "3",
+ "dir": "ch03",
+ "title": "物质与溶液的组成",
+ "intro": {
+  "module": "m68699",
+  "slug": "3-introduction"
+ },
+ "sections": [
+  {
+   "id": "3.1",
+   "module": "m68700",
+   "title": "式量与摩尔概念",
+   "slug": "3-1-formula-mass-and-the-mole-concept"
+  },
+  {
+   "id": "3.2",
+   "module": "m68702",
+   "title": "实验式和分子式的确定",
+   "slug": "3-2-determining-empirical-and-molecular-formulas"
+  },
+  {
+   "id": "3.3",
+   "module": "m68703",
+   "title": "物质的量浓度",
+   "slug": "3-3-molarity"
+  },
+  {
+   "id": "3.4",
+   "module": "m68704",
+   "title": "溶液浓度的其他单位",
+   "slug": "3-4-other-units-for-solution-concentrations"
+  }
+ ],
+ "variables": [
+  {
+   "sym": "m",
+   "concept": "mass",
+   "meaning": "样品的质量，在天平上称量得到",
+   "unit": "g",
+   "section": "3.1",
+   "anchor": "3.1-conversions"
+  },
+  {
+   "sym": "MM",
+   "concept": "molar-mass",
+   "meaning": "物质的摩尔质量，即 1 摩尔该物质以克计的质量",
+   "unit": "g/mol",
+   "section": "3.1",
+   "anchor": "3.1-molar-mass"
+  },
+  {
+   "sym": "n",
+   "concept": "mole",
+   "meaning": "物质的量，以摩尔计",
+   "unit": "mol",
+   "section": "3.1",
+   "anchor": "3.1-mole"
+  },
+  {
+   "sym": "N_A",
+   "concept": "avogadro-number",
+   "meaning": "阿伏加德罗常数，即 1 摩尔物质中基本单元的数目",
+   "unit": "mol⁻¹",
+   "section": "3.1",
+   "anchor": "3.1-mole"
+  },
+  {
+   "sym": "n_fu",
+   "concept": "molecular-formula-from-empirical",
+   "meaning": "一个化合物分子中所含实验式单元的个数",
+   "unit": "formula units/molecule",
+   "section": "3.2",
+   "anchor": "3.2-molecular"
+  },
+  {
+   "sym": "M",
+   "concept": "molarity",
+   "meaning": "溶液的物质的量浓度，即每升溶液中所含溶质的物质的量",
+   "unit": "M (mol/L)",
+   "section": "3.3",
+   "anchor": "3.3-molarity"
+  },
+  {
+   "sym": "L",
+   "concept": "volume",
+   "meaning": "以升计的溶液体积，即本书 n = ML 中的写法",
+   "unit": "L",
+   "section": "3.3",
+   "anchor": "3.3-dilution-equation"
+  },
+  {
+   "sym": "M_1",
+   "concept": "molarity",
+   "meaning": "溶液稀释前的物质的量浓度",
+   "unit": "M",
+   "section": "3.3",
+   "anchor": "3.3-dilution-equation",
+   "ref": "stock"
+  },
+  {
+   "sym": "M_2",
+   "concept": "molarity",
+   "meaning": "溶液稀释后的物质的量浓度",
+   "unit": "M",
+   "section": "3.3",
+   "anchor": "3.3-dilution-equation",
+   "ref": "diluted"
+  },
+  {
+   "sym": "L_1",
+   "concept": "volume",
+   "meaning": "溶液稀释前以升计的体积",
+   "unit": "L",
+   "section": "3.3",
+   "anchor": "3.3-dilution-equation",
+   "ref": "stock"
+  },
+  {
+   "sym": "L_2",
+   "concept": "volume",
+   "meaning": "溶液稀释后以升计的体积",
+   "unit": "L",
+   "section": "3.3",
+   "anchor": "3.3-dilution-equation",
+   "ref": "diluted"
+  },
+  {
+   "sym": "C_1",
+   "concept": "concentration",
+   "meaning": "溶液稀释前的浓度，可用任何单位",
+   "unit": "M, or any concentration unit",
+   "section": "3.3",
+   "anchor": "3.3-dilution-equation",
+   "ref": "stock"
+  },
+  {
+   "sym": "C_2",
+   "concept": "concentration",
+   "meaning": "溶液稀释后的浓度，可用任何单位",
+   "unit": "M, or any concentration unit",
+   "section": "3.3",
+   "anchor": "3.3-dilution-equation",
+   "ref": "diluted"
+  },
+  {
+   "sym": "V_1",
+   "concept": "volume",
+   "meaning": "溶液稀释前的体积",
+   "unit": "L, or any volume unit",
+   "section": "3.3",
+   "anchor": "3.3-dilution-equation",
+   "ref": "stock"
+  },
+  {
+   "sym": "V_2",
+   "concept": "volume",
+   "meaning": "溶液稀释后的体积",
+   "unit": "L, or any volume unit",
+   "section": "3.3",
+   "anchor": "3.3-dilution-equation",
+   "ref": "diluted"
+  },
+  {
+   "sym": "n_1",
+   "concept": "mole",
+   "meaning": "溶液稀释前所含溶质的物质的量",
+   "unit": "mol",
+   "section": "3.3",
+   "anchor": "3.3-dilution-equation",
+   "ref": "stock"
+  },
+  {
+   "sym": "n_2",
+   "concept": "mole",
+   "meaning": "溶液稀释后所含溶质的物质的量，等于 n₁",
+   "unit": "mol",
+   "section": "3.3",
+   "anchor": "3.3-dilution-equation",
+   "ref": "diluted"
+  },
+  {
+   "sym": "m",
+   "concept": "mass",
+   "meaning": "所分析样品中某一元素的质量",
+   "unit": "g",
+   "section": "3.2",
+   "anchor": "3.2-empirical"
+  },
+  {
+   "sym": "n",
+   "concept": "mole",
+   "meaning": "样品中某一元素的物质的量，以摩尔计",
+   "unit": "mol",
+   "section": "3.2",
+   "anchor": "3.2-empirical"
+  },
+  {
+   "sym": "MM",
+   "concept": "molar-mass",
+   "meaning": "某一元素的摩尔质量，即 1 摩尔其原子以克计的质量",
+   "unit": "g/mol",
+   "section": "3.2",
+   "anchor": "3.2-empirical"
+  },
+  {
+   "sym": "V",
+   "concept": "volume",
+   "meaning": "溶液的体积，可用任何体积单位",
+   "unit": "L",
+   "section": "3.3",
+   "anchor": "3.3-dilution-equation"
+  },
+  {
+   "sym": "C_conc",
+   "concept": "concentration",
+   "meaning": "溶液的浓度，可用任何浓度单位",
+   "unit": "M, or any concentration unit",
+   "section": "3.3",
+   "anchor": "3.3-dilution-equation"
+  },
+  {
+   "sym": "m",
+   "concept": "mass",
+   "meaning": "溶质或含有该溶质的溶液的质量",
+   "unit": "g",
+   "section": "3.4",
+   "anchor": "3.4-ppm-ppb"
+  }
+ ]
+}

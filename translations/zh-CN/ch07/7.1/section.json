@@ -1,0 +1,410 @@
+{
+ "id": "7.1",
+ "module": "m68737",
+ "chapter": "7",
+ "title": "离子键",
+ "short": "离子键",
+ "lead": "钠是一种柔软的金属，氯是一种有毒的气体，二者结合生成食盐——一种由离子组成、性质完全独特的化合物。金属原子失去电子，非金属原子得到电子，由此产生的阳离子和阴离子在晶格中相互结合，晶格的化学式使它们的电荷达到平衡。",
+ "objectives": [
+  "解释阳离子、阴离子和离子化合物的形成",
+  "预测常见金属元素和非金属元素的电荷，并写出它们的电子构型"
+ ],
+ "summary_html": "<p>原子得到或失去电子，形成具有特别稳定的电子构型的离子。主族金属形成的阳离子的电荷很容易确定，因为除少数例外，这些离子的电子结构要么是稀有气体构型，要么是完全充满的电子层。非金属形成的阴离子的电荷也很容易确定，因为这些离子是非金属原子得到足够多的电子以充满其价层而形成的。</p>",
+ "notes": "本节没有任何内容被略去。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案取自书后答案以及“学习检测”的答案。没有答案的习题 fs-idm89581104、fs-idm143212928 和 fs-idm58592256 都要求给出书中没有标明的确定预测，因此被略去；没有答案的概念性习题 fs-idp12729440 和 fs-idm677136 附有一个标明为 OmniStax 自拟的建议思路。关于固体 NaCl 分子的习题（fs-idp49074848）在书中印在 7.2 节，这里把它放在介绍它所问的晶格的地方。",
+ "figures": [
+  {
+   "id": "fig-nacl-photos",
+   "kind": "photo",
+   "number": "7.2",
+   "draws": []
+  },
+  {
+   "id": "sim-charge-balance",
+   "kind": "sim",
+   "draws": [],
+   "conventions": [
+    "Na",
+    "K",
+    "Mg",
+    "Ca",
+    "Al",
+    "Fe",
+    "Cl",
+    "O",
+    "S",
+    "N"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: note that repeated the caption dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-nacl-lattice",
+   "kind": "sim",
+   "number": "7.3",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_01_NaClStruc-1938.jpg"
+   ],
+   "original_caption": "氯化钠（常见的食盐）中的原子这样排列，是为了使带相反电荷的粒子之间的相互作用最大化（a）。较小的球代表钠离子，较大的球代表氯离子。在展开图（b）中，可以更清楚地看出其几何构型。注意，每个离子都与周围所有的离子“成键”——这里是六个。",
+   "draws": [],
+   "conventions": [
+    "Na",
+    "Cl"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: camera pulled back so the packed crystal fits the stage"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "ionic-compounds",
+   "concept": "ions-and-atomic-charge",
+   "verb": "uses"
+  },
+  {
+   "span": "formation",
+   "concept": "ionic-lattice",
+   "verb": "introduces"
+  },
+  {
+   "span": "formation",
+   "concept": "ionic-bond",
+   "verb": "reinforces"
+  },
+  {
+   "span": "formation",
+   "concept": "ionic-compound-formula",
+   "verb": "uses"
+  },
+  {
+   "span": "formation",
+   "concept": "metals-nonmetals-metalloids",
+   "verb": "uses"
+  },
+  {
+   "span": "cations",
+   "concept": "predict-ion-charge",
+   "verb": "introduces"
+  },
+  {
+   "span": "cations",
+   "concept": "ion-electron-configuration",
+   "verb": "introduces"
+  },
+  {
+   "span": "cations",
+   "concept": "writing-electron-configurations",
+   "verb": "uses"
+  },
+  {
+   "span": "cations",
+   "concept": "inert-pair-effect",
+   "verb": "introduces"
+  },
+  {
+   "span": "anions",
+   "concept": "predict-ion-charge",
+   "verb": "reinforces"
+  },
+  {
+   "span": "anions",
+   "concept": "ion-electron-configuration",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ionic-compounds",
+   "concept": "ionic-bond",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ionic-compounds",
+   "concept": "ionic-compound-properties",
+   "verb": "introduces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm91310448",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-cations"
+   },
+   "cite": "cations",
+   "prompt": "钾和镁是我们饮食中所必需的。写出由这两种元素预期形成的离子的电子构型。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "K<sup>+</sup>: [Ar], Mg<sup>2+</sup>: [Ne]"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idp63594560",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-anions"
+   },
+   "cite": "anions",
+   "prompt": "写出磷原子及其负离子的电子构型。给出该阴离子的电荷。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "P: [Ne]3<em>s</em><sup>2</sup>3<em>p</em><sup>3</sup>; P<sup>3–</sup>: [Ne]3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm118463568",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ionic-compounds",
+   "prompt": "阳离子是通过得到质子而带正电，还是通过失去电子而带正电？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "在通常的化学反应中，原子核中的质子不会改变。只有外层电子发生移动。失去电子时形成正电荷。"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp12729440",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "formation",
+   "prompt": "硫酸铁(III) [Fe<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>] 由 Fe<sup>3+</sup> 和 ${\\text{SO}}_{4}{}^{\\text{2−}}$ 离子组成。解释为什么一份硫酸铁(III)样品是不带电的。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "硫酸铁(III)中的正电荷与负电荷相等，所以相互抵消。每个 Fe<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> 化学式单元含有两个 Fe<sup>3+</sup> 离子和三个 ${\\text{SO}}_{4}{}^{\\text{2−}}$ 离子。两个铁离子所带的总电荷为 2 × (3+) = 6+，三个硫酸根离子所带的总电荷为 3 × (2−) = 6−，所以该化学式单元的净电荷为 6+ + 6− = 0。一份样品由极大量的这种化学式单元构成，每一个都是电中性的，所以整份样品不带电。这就是离子按 2:3 的比例结合的原因：所有物质都必须呈电中性，而 2:3 是 Fe<sup>3+</sup> 与 ${\\text{SO}}_{4}{}^{\\text{2−}}$ 之间使正、负电荷总数相等的最简比。"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp63165504",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "formation",
+   "prompt": "下列原子中，哪些预期在二元离子化合物中形成负离子，哪些预期形成正离子：P、I、Mg、Cl、In、Cs、O、Pb、Co？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "P、I、Cl 和 O 是非金属，会形成阴离子。Mg、In、Cs、Pb 和 Co 是金属，会形成阳离子。"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm94727984",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "cations",
+   "prompt": "预测下列原子在二元离子化合物中所形成的单原子离子的电荷：<br>（a）P<br>（b）Mg<br>（c）Al<br>（d）O<br>（e）Cl<br>（f）Cs",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）P<sup>3–</sup>；（b）Mg<sup>2+</sup>；（c）Al<sup>3+</sup>；（d）O<sup>2–</sup>；（e）Cl<sup>–</sup>；（f）Cs<sup>+</sup>"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idm69463840",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "cations",
+   "prompt": "写出下列每种离子的电子构型：<br>（a）As<sup>3–</sup><br>（b）I<sup>–</sup><br>（c）Be<sup>2+</sup><br>（d）Cd<sup>2+</sup><br>（e）O<sup>2–</sup><br>（f）Ga<sup>3+</sup><br>（g）Li<sup>+</sup><br>（h）N<sup>3–</sup><br>（i）Sn<sup>2+</sup><br>（j）Co<sup>2+</sup><br>（k）Fe<sup>2+</sup><br>（l）As<sup>3+</sup>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）[Ar]4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>；（b）[Kr]4<em>d</em><sup>10</sup>5<em>s</em><sup>2</sup>5<em>p</em><sup>6</sup>；（c）1<em>s</em><sup>2</sup>；（d）[Kr]4<em>d</em><sup>10</sup>；（e）[He]2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>；（f）[Ar]3<em>d</em><sup>10</sup>；（g）1<em>s</em><sup>2</sup>；（h）[He]2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>；（i）[Kr]4<em>d</em><sup>10</sup>5<em>s</em><sup>2</sup>；（j）[Ar]3<em>d</em><sup>7</sup>；（k）[Ar]3<em>d</em><sup>6</sup>；（l）[Ar]3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm117401984",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "cations",
+   "prompt": "写出下列每种原子的完整电子构型，以及含有该元素的二元离子化合物中所含单原子离子的完整电子构型：<br>（a）Al<br>（b）Br<br>（c）Sr<br>（d）Li<br>（e）As<br>（f）S",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>1</sup>；Al<sup>3+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>；（b）1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>5</sup>；1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>6</sup>；（c）1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>；Sr<sup>2+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>6</sup>；（d）1<em>s</em><sup>2</sup>2<em>s</em><sup>1</sup>；Li<sup>+</sup>: 1<em>s</em><sup>2</sup>；（e）1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>3</sup>；1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>6</sup>；（f）1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>4</sup>；1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idm677136",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "formation",
+   "prompt": "从几种商品的标签上，列出其中所含的六种离子化合物。对每种化合物，写出其化学式。（你可能需要在合适的参考资料中查找一些化学式。）",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "商品标签上常见的六种离子化合物是氯化钠 NaCl（食盐）、氟化钠 NaF（牙膏）、碘化钾 KI（加碘盐）、碳酸钙 CaCO<sub>3</sub>（抗酸药片）、碳酸氢钠 NaHCO<sub>3</sub>（小苏打）和氢氧化镁 Mg(OH)<sub>2</sub>（镁乳）。每一种都是由金属阳离子与非金属阴离子或多原子阴离子结合而成，每个化学式都是使电荷相互抵消的离子的最简比。Na<sup>+</sup> 与 Cl<sup>−</sup>、Na<sup>+</sup> 与 F<sup>−</sup>、K<sup>+</sup> 与 I<sup>−</sup> 都是一比一平衡。Ca<sup>2+</sup> 与 ${\\text{CO}}_{3}{}^{\\text{2−}}$ 也是一比一平衡，Na<sup>+</sup> 与 ${\\text{HCO}}_{3}{}^{\\text{−}}$ 同样如此。Mg<sup>2+</sup> 需要两个 OH<sup>−</sup> 离子，2+ + 2(1−) = 0，所以氢氧根写在括号里，下标为 2。"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idp49074848",
+   "source_section": "7.2",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "formation",
+   "prompt": "为什么说“一个固体 NaCl 分子”是不正确的？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "NaCl 由排列成晶格的分立离子组成，而不是由共价键结合的分子。"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "ion-electron-configuration"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "predict-ion-charge"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "ion-electron-configuration"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "predict-ion-charge"
+  },
+  {
+   "exercise": "e1",
+   "concept": "ionic-bond"
+  },
+  {
+   "exercise": "e2",
+   "concept": "ionic-lattice"
+  },
+  {
+   "exercise": "e3",
+   "concept": "ionic-bond"
+  },
+  {
+   "exercise": "e3",
+   "concept": "predict-ion-charge"
+  },
+  {
+   "exercise": "e4",
+   "concept": "predict-ion-charge"
+  },
+  {
+   "exercise": "e5",
+   "concept": "ion-electron-configuration"
+  },
+  {
+   "exercise": "e6",
+   "concept": "ion-electron-configuration"
+  },
+  {
+   "exercise": "e6",
+   "concept": "predict-ion-charge"
+  },
+  {
+   "exercise": "e7",
+   "concept": "ionic-lattice"
+  },
+  {
+   "exercise": "e7",
+   "concept": "predict-ion-charge"
+  },
+  {
+   "exercise": "e8",
+   "concept": "ionic-lattice"
+  }
+ ]
+}

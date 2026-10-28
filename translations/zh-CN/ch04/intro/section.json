@@ -1,0 +1,36 @@
+{
+ "id": "intro",
+ "module": "m68730",
+ "chapter": "4",
+ "title": "引言",
+ "short": "引言",
+ "lead": "",
+ "notes": "本模块在学习目标的位置给出本章各节标题的列表，因目录视图已列出这些标题，故予省略。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "figures": [
+  {
+   "id": "fig-rocket",
+   "kind": "photo",
+   "number": "4.1",
+   "draws": []
+  }
+ ]
+}

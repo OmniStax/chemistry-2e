@@ -1,0 +1,495 @@
+{
+  "id": "9.4",
+  "module": "m68754",
+  "chapter": "9",
+  "title": "气体的泻流与扩散",
+  "short": "泻流与扩散",
+  "lead": "气体分子以每秒数百米的速率运动，但它们碰撞得极为频繁，所以气体是在几秒内而不是瞬间扩散到整个房间的，这种散开的过程就是扩散。气体通过微小孔洞的逸出称为泻流，气体泻流的快慢取决于它的<span data-concept=\"molar-mass\">摩尔质量</span>，由此可以比较泻流速率和泻流时间，并求出未知气体的<span data-concept=\"molar-mass\">摩尔质量</span>。",
+  "objectives": [
+    "定义并解释泻流与扩散",
+    "陈述格雷厄姆定律，并用它计算相关的气体性质"
+  ],
+  "summary_html": "<p>气态原子和分子在空间中自由而无规则地运动。扩散是气态原子和分子从<span data-concept=\"concentration\">浓度</span>相对较高的区域转移到<span data-concept=\"concentration\">浓度</span>相对较低的区域的过程。泻流是一个类似的过程，其中气态物种通过极小的孔从容器进入真空。气体的泻流速率与其<span data-concept=\"density\">密度</span>的平方根成反比，或与其原子/分子<span data-concept=\"mass\">质量</span>的平方根成反比（格雷厄姆定律）。</p>",
+  "notes": "本节没有“学习链接”框。图 9.28 是书中比较扩散与泻流的图，已并入图 9.27，作为同一对玻璃泡的泻流状态。铀的方框中的句子“²³⁵UF₆ 与 ²³⁸UF₆ 之间分子量的微小差异，仅约 0.4% 的浓缩，在一个扩散器中实现”，以及图 9.30 题注中缺失的句号，均照原样保留。",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      },
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ]
+  },
+  "built": "2026-10-26",
+  "exercises_lead": "",
+  "exercise_notes": "布鲁姆层级、概念标签、权重和提示均由 AI 生成。答案取自书后答案以及“学习检测”的答案。三道“学习检测”题紧接各自的例题内嵌排列。没有答案的数值习题 fs-idm54751408（H₂O 与 D₂O 的相对扩散速率）、fs-idm82361856（书中所称六氟化铀的 0.4%）和 fs-idm32668896（以 83.3 mL/s 扩散的气体的分子质量）被略去，也没有为它们算出答案。没有答案的概念性习题 fs-idm51619904 保留，并附上标明为 OmniStax 自己所拟的建议思路。有答案的习题 fs-idp44111184 由动能推导格雷厄姆定律，这一思想在 9.5 节展开；它仍留在此处，并附书中的答案。数值答案接受 2% 的容差。",
+  "figures": [
+    {
+      "id": "sim-bulbs",
+      "kind": "sim",
+      "number": "9.27",
+      "folds": [
+        "9.28"
+      ],
+      "originals": [
+        "/media/ch09/CNX_Chem_09_04_Diffusion.jpg",
+        "/media/ch09/CNX_Chem_09_04_DiffEff.jpg"
+      ],
+      "original_caption": "（图 9.27）（a）H2 和 O2 两种气体起初是分开的。（b）旋塞打开后，它们混合在一起。较轻的气体 H2 通过开口比 O2 快，因此旋塞刚打开后，移向 O2 一侧的 H2 分子比移向 H2 一侧的 O2 分子多。（c）过了一小会儿，运动较慢的 O2 分子和运动较快的 H2 分子都已均匀地分布在容器的两侧。（图 9.28）扩散是指分子由于无规则运动而不受限制地分散到整个空间。当这一过程被限制为分子通过实体隔板上很小的开口时，该过程称为泻流。",
+      "draws": [
+        "mass"
+      ],
+      "conventions": [
+        "H",
+        "O",
+        "Ne",
+        "Xe",
+        "C"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-balloons",
+      "kind": "photo",
+      "number": "9.29",
+      "draws": []
+    },
+    {
+      "id": "sim-diffuser",
+      "kind": "sim",
+      "number": "9.30",
+      "originals": [
+        "/media/ch09/CNX_Chem_09_04_GasDiff.jpg"
+      ],
+      "original_caption": "在扩散器中，气态 UF6 被泵过多孔隔板，隔板将 235UF6 与 238UF6 部分分离 UF6 必须通过许多大型扩散器单元，才能使 235U 达到足够的浓缩程度。",
+      "draws": [
+        "mass"
+      ],
+      "conventions": [
+        "U"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "thicker isotope rings; molecules kept off the rounded ends"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "animated: UF6 flowing, 235UF6 through the barrier to the enriched outlet"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "span": "mean-free-path",
+      "concept": "mean-free-path",
+      "verb": "introduces"
+    },
+    {
+      "span": "diffusion",
+      "concept": "diffusion-and-effusion",
+      "verb": "introduces"
+    },
+    {
+      "span": "diffusion",
+      "concept": "mean-free-path",
+      "verb": "uses"
+    },
+    {
+      "span": "diffusion",
+      "concept": "diffusion",
+      "verb": "introduces"
+    },
+    {
+      "span": "diffusion",
+      "concept": "effusion",
+      "verb": "introduces"
+    },
+    {
+      "span": "diffusion",
+      "concept": "rate-of-diffusion",
+      "verb": "introduces"
+    },
+    {
+      "span": "graham",
+      "concept": "grahams-law",
+      "verb": "introduces"
+    },
+    {
+      "span": "graham",
+      "concept": "diffusion-and-effusion",
+      "verb": "uses"
+    },
+    {
+      "span": "graham",
+      "concept": "molar-mass",
+      "verb": "uses"
+    },
+    {
+      "span": "graham-calc",
+      "concept": "grahams-law-calculations",
+      "verb": "introduces"
+    },
+    {
+      "span": "ex-h2-o2",
+      "concept": "grahams-law",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-xe-ne",
+      "concept": "grahams-law-calculations",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-unknown",
+      "concept": "grahams-law-calculations",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-unknown",
+      "concept": "molar-mass",
+      "verb": "uses"
+    },
+    {
+      "span": "uranium",
+      "concept": "grahams-law",
+      "verb": "reinforces"
+    },
+    {
+      "span": "uranium",
+      "concept": "diffusion-and-effusion",
+      "verb": "reinforces"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idp118691776",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-h2-o2"
+      },
+      "cite": "graham",
+      "prompt": "在特定的压强和温度下，氮气以 79 mL/s 的速率泻流。在相同条件下，二氧化硫将以多大的速率泻流？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 52,
+        "unit": "mL/s",
+        "hint": "二氧化硫比氮重，所以它泻流得更慢；用 79 mL/s 乘以摩尔质量之比的平方根，较轻者在上，较重者在下。",
+        "solution": "52 mL/s"
+      }
+    },
+    {
+      "id": "cyl2",
+      "source_id": "fs-idm54710976",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-xe-ne"
+      },
+      "cite": "graham-calc",
+      "prompt": "一个充了氦气的派对气球在 8.0 小时内缩小到原体积的 $\\frac{2}{3}$。一个充有等物质的量空气（ℳ = 28.2 g/mol）的相同气球，缩小到原体积的 $\\frac{1}{2}$ 需要多长时间？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 32,
+        "unit": "h",
+        "hint": "先求出氦气球漏掉一半气体所需的时间，再将该时间乘以摩尔质量之比的平方根，记住较重的气体需要的时间更长。",
+        "solution": "32 h"
+      }
+    },
+    {
+      "id": "cyl3",
+      "source_id": "fs-idp23019808",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-unknown"
+      },
+      "cite": "graham-calc",
+      "prompt": "氢气通过多孔容器泻流的速率是某未知气体的 8.97 倍。估算该未知气体的摩尔质量。",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 162,
+        "unit": "g/mol",
+        "hint": "速率之比 8.97 等于未知气体的摩尔质量与氢的摩尔质量之比的平方根，所以将其平方，再乘以 2.0 g/mol。",
+        "solution": "162 g/mol"
+      }
+    },
+    {
+      "id": "e1",
+      "source_id": "fs-idp190361360",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "graham-calc",
+      "prompt": "一个充了氦气的气球要 6 小时才能缩小到原体积的 50%。一个充了相同体积氢气（而不是氦气）的相同气球，体积减小 50% 需要多长时间？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 4.2,
+        "unit": "h",
+        "hint": "氢比氦轻，泻流更快，所以所需时间按两者摩尔质量之比的平方根缩短。",
+        "solution": "4.2 小时"
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idm51619904",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "diffusion",
+      "prompt": "解释为什么图 9.27 中间示意图中左、右两个玻璃泡里的分子数并不相同。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "因为 H<sub>2</sub> 分子穿过开口的速率比 O<sub>2</sub> 分子快，而中间的示意图显示的是旋塞刚打开之后、混合尚未完成的情形。按格雷厄姆定律，气体的扩散速率与其摩尔质量的平方根成反比，所以摩尔质量为 2 g/mol 的氢穿过开口的速率是摩尔质量为 32 g/mol 的氧的 $\\frac{\\sqrt{32\\;\\text{g/mol}}}{\\sqrt{2\\;\\text{g/mol}}}=4$ 倍。因此，在最初的片刻，进入 O<sub>2</sub> 一侧的 H<sub>2</sub> 分子比进入 H<sub>2</sub> 一侧的 O<sub>2</sub> 分子多。右侧玻璃泡得到的分子多于失去的，左侧玻璃泡失去的多于得到的，所以两边的分子数不同。过一小会儿，较慢的 O<sub>2</sub> 分子赶了上来，两种气体均匀地分布在两个玻璃泡中，分子数也就相等了，正如右侧示意图所示。"
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idp44111184",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "graham",
+      "prompt": "从泻流速率的定义和格雷厄姆关于速率与摩尔质量关系的发现出发，说明如何推导格雷厄姆定律方程，该方程把两种气体的相对泻流速率与它们的分子质量联系起来。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "泻流可以定义为气体通过针孔逸入真空的过程。格雷厄姆定律指出，对于由 A、B 两种气体组成的混合物：$(\\frac{\\text{A 的速率}}{\\text{B 的速率}})={(\\frac{\\text{B 的摩尔质量}}{\\text{A 的摩尔质量}})}^{1\\text{/}2}.$ A 和 B 在同一容器中且温度相同，因此具有相同的动能：${\\text{KE}}_{\\text{A}}={\\text{KE}}_{\\text{B}}$，$\\text{KE}=\\frac{1}{2}mv^{2}$。因此，$\\frac{1}{2}m_{\\text{A}}v_{\\text{A}}^{2}=\\frac{1}{2}m_{\\text{B}}v_{\\text{B}}^{2}$，所以 $\\frac{v_{\\text{A}}^{2}}{v_{\\text{B}}^{2}}=\\frac{m_{\\text{B}}}{m_{\\text{A}}}$，$(\\frac{v_{\\text{A}}^{2}}{v_{\\text{B}}^{2}})^{1/2}=(\\frac{m_{\\text{B}}}{m_{\\text{A}}})^{1/2}$，且 $\\frac{v_{\\text{A}}}{v_{\\text{B}}}=(\\frac{m_{\\text{B}}}{m_{\\text{A}}})^{1/2}$。"
+      }
+    },
+    {
+      "id": "e4",
+      "source_id": "fs-idm14659040",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "graham",
+      "prompt": "下列气体中，哪些扩散得比氧慢？F<sub>2</sub>、Ne、N<sub>2</sub>O、C<sub>2</sub>H<sub>2</sub>、NO、Cl<sub>2</sub>、H<sub>2</sub>S",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "F<sub>2</sub>、N<sub>2</sub>O、Cl<sub>2</sub>、H<sub>2</sub>S"
+      }
+    },
+    {
+      "id": "e5",
+      "source_id": "fs-idm4750352",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "graham",
+      "prompt": "计算 <sup>1</sup>H<sub>2</sub>（摩尔质量 2.0 g/mol）相对于 <sup>2</sup>H<sub>2</sub>（摩尔质量 4.0 g/mol）的相对扩散速率，以及 O<sub>2</sub>（摩尔质量 32 g/mol）相对于 O<sub>3</sub>（摩尔质量 48 g/mol）的相对扩散速率。",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "¹H₂ to ²H₂",
+            "value": 1.4,
+            "unit": "",
+            "hint": "较轻的分子扩散得更快，快的倍数是较重的摩尔质量与较轻的摩尔质量之比的平方根。"
+          },
+          {
+            "part": "O₂ to O₃",
+            "value": 1.2,
+            "unit": "",
+            "hint": "取 48 与 32 之比的平方根。"
+          }
+        ],
+        "solution": "1.4; 1.2"
+      }
+    },
+    {
+      "id": "e6",
+      "source_id": "fs-idp1096352",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "graham-calc",
+      "prompt": "当分别用氨和盐酸润湿的两个棉塞同时塞入一根 87.0 cm 长的玻璃管的两端时，气态 NH<sub>3</sub> 和气态 HCl 最先接触的地方会形成一圈白色的 NH<sub>4</sub>Cl。$\\text{NH}_{3}(g)+\\text{HCl}(g)\\longrightarrow\\text{NH}_{4}\\text{Cl}(s)$ 这发生在距离用氨润湿的棉塞大约多远处？（提示：计算 NH<sub>3</sub> 和 HCl 的扩散速率，并求出 NH<sub>3</sub> 的扩散比 HCl 快多少。）",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 51.7,
+        "unit": "cm",
+        "hint": "在相同的时间内，两种气体走过的距离之比等于它们的速率之比，两段距离之和为 87.0 cm。",
+        "solution": "51.7 cm"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "grahams-law",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "grahams-law-calculations",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "grahams-law-calculations",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e1",
+      "concept": "grahams-law-calculations",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e2",
+      "concept": "diffusion-and-effusion",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e2",
+      "concept": "grahams-law",
+      "weight": 1,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e3",
+      "concept": "grahams-law",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e4",
+      "concept": "grahams-law",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e5",
+      "concept": "grahams-law",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e6",
+      "concept": "grahams-law-calculations",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e6",
+      "concept": "diffusion-and-effusion",
+      "weight": 1,
+      "weights_by": "ai"
+    }
+  ],
+  "referents": [
+    {
+      "id": "left-bulb",
+      "label": "左侧玻璃泡",
+      "figures": [
+        "sim-bulbs"
+      ]
+    },
+    {
+      "id": "right-bulb",
+      "label": "右侧玻璃泡",
+      "figures": [
+        "sim-bulbs"
+      ]
+    },
+    {
+      "id": "lighter-gas",
+      "label": "较轻的气体",
+      "figures": [
+        "sim-bulbs"
+      ]
+    },
+    {
+      "id": "heavier-gas",
+      "label": "较重的气体",
+      "figures": [
+        "sim-bulbs"
+      ]
+    },
+    {
+      "id": "uf6-235",
+      "label": "²³⁵UF₆",
+      "figures": [
+        "sim-diffuser"
+      ]
+    },
+    {
+      "id": "uf6-238",
+      "label": "²³⁸UF₆",
+      "figures": [
+        "sim-diffuser"
+      ]
+    }
+  ]
+}

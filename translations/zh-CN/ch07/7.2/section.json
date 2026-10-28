@@ -1,0 +1,517 @@
+{
+ "id": "7.2",
+ "module": "m68738",
+ "chapter": "7",
+ "title": "共价键",
+ "short": "共价键",
+ "lead": "吸引电子的能力大致相等的原子不转移电子，而是共用电子，被两个原子核共同束缚的一对电子就是共价键。这对电子被共用得有多均匀，取决于电负性，即成键原子将共用电子吸引向自身的倾向。",
+ "objectives": [
+  "描述共价键的形成",
+  "定义电负性，并判断共价键的极性"
+ ],
+ "summary_html": "<p>共价键是在原子之间共用电子、且这些电子被两个原子的原子核共同吸引时形成的。在纯共价键中，电子被平均共用。在极性共价键中，电子被不平均地共用，因为一个原子对电子施加的吸引<span data-concept=\"force\">力</span>比另一个更强。原子吸引化学键中一对电子的能力称为其电负性。两个原子之间的电负性差决定键的极性有多大。在由两个相同原子构成的双原子分子中，电负性没有差别，因此键是非极性的，即纯共价键。当电负性差非常大时（金属与非金属之间就是如此），这种键合被称为离子键。</p>",
+ "notes": "本节没有任何内容被略去。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签和权重由 AI 生成。答案来自书后答案和“学习检测”的答案。本节在书中的第一道习题 fs-idp49074848（为什么说“一个固体 NaCl 分子”是不正确的）考查的是 7.1 节的离子晶格，已放在该节。没有答案的习题 fs-idm13014880、fs-idp18335616、fs-idp43172032、fs-idp49532528 和 fs-idp51035456 附有标明为 OmniStax 自拟的建议思路，没有答案的选择题 fs-idp9464672 保留为开放题，附书中的五个选项。",
+ "figures": [
+  {
+   "id": "sim-bond",
+   "kind": "sim",
+   "number": "7.4",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_02_Morse.jpg"
+   ],
+   "original_caption": "两个分开的氢原子（右）的势能随着它们相互靠近而降低，每个原子上的单个电子被共用而形成共价键。键长是势能达到最低时的核间距。",
+   "draws": [
+    "energy",
+    "length"
+   ],
+   "conventions": [
+    "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: H label kept on stage, shared cloud only on overlap, minimum label"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-en",
+   "kind": "figure",
+   "number": "7.6",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_02_ENTable.jpg"
+   ],
+   "original_caption": "鲍林导出的电负性数值遵循可预测的周期性规律，电负性较高者位于元素周期表的右上方。",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: class tints strengthened, table moved clear of the left edge"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-pauling",
+   "kind": "photo",
+   "number": "7.7",
+   "draws": []
+  },
+  {
+   "id": "sim-polarity",
+   "kind": "sim",
+   "number": "7.5",
+   "folds": [
+    "7.8"
+   ],
+   "originals": [
+    "/media/ch07/CNX_Chem_07_02_HClBond.jpg",
+    "/media/ch07/CNX_Chem_07_02_DeltaEN.jpg"
+   ],
+   "original_caption": "（图 7.5）（a）HCl 分子中的电子密度分布是不均匀的。氯原子核周围的电子密度更大。小黑点标出分子中氢原子核和氯原子核的位置。（b）符号 δ+ 和 δ– 表示 H–Cl 键的极性。（图 7.8）两个原子之间的电负性差增大时，键的离子性随之增强。",
+   "draws": [
+    "charge",
+    "dipole-moment"
+   ],
+   "conventions": [
+    "H",
+    "Li",
+    "Na",
+    "K",
+    "Cs",
+    "Mg",
+    "Ca",
+    "Ba",
+    "Mn",
+    "B",
+    "C",
+    "Si",
+    "N",
+    "P",
+    "O",
+    "S",
+    "Se",
+    "F",
+    "Cl",
+    "Br",
+    "I"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "covalent",
+   "concept": "covalent-bond-formation",
+   "verb": "introduces"
+  },
+  {
+   "span": "formation",
+   "concept": "covalent-bond-formation",
+   "verb": "reinforces"
+  },
+  {
+   "span": "formation",
+   "concept": "bond-length",
+   "verb": "introduces"
+  },
+  {
+   "span": "pure-polar",
+   "concept": "bond-polarity",
+   "verb": "introduces"
+  },
+  {
+   "span": "pure-polar",
+   "concept": "covalent-bond-formation",
+   "verb": "uses"
+  },
+  {
+   "span": "pure-polar",
+   "concept": "pure-covalent-bond",
+   "verb": "introduces"
+  },
+  {
+   "span": "pure-polar",
+   "concept": "polar-covalent-bond",
+   "verb": "introduces"
+  },
+  {
+   "span": "electronegativity",
+   "concept": "electronegativity",
+   "verb": "introduces"
+  },
+  {
+   "span": "electronegativity",
+   "concept": "bond-polarity",
+   "verb": "uses"
+  },
+  {
+   "span": "bond-type",
+   "concept": "bond-type-from-electronegativity",
+   "verb": "introduces"
+  },
+  {
+   "span": "bond-type",
+   "concept": "electronegativity",
+   "verb": "uses"
+  },
+  {
+   "span": "bond-type",
+   "concept": "bond-polarity",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ex-polarity",
+   "concept": "bond-polarity",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-polarity",
+   "concept": "electronegativity",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm8119280",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-polarity"
+   },
+   "cite": "bond-type",
+   "prompt": "聚硅氧烷（硅酮）是聚合物化合物，其中含有下列类型的共价键等：Si–O、Si–C、C–H 和 C–C。利用图 7.6 中的电负性数值，将这些键按极性增大的顺序排列，并用符号 δ+ 和 δ– 标出正、负原子。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<table><thead><tr><th>键</th><th>电负性差</th><th>极性</th></tr></thead><tbody><tr><td>C–C</td><td>0.0</td><td>非极性</td></tr><tr><td>C–H</td><td>0.4</td><td><sup>δ–</sup>C–H<sup>δ+</sup></td></tr><tr><td>Si–C</td><td>0.7</td><td><sup>δ+</sup>Si–C<sup>δ–</sup></td></tr><tr><td>Si–O</td><td>1.7</td><td><sup>δ+</sup>Si–O<sup>δ–</sup></td></tr></tbody></table>"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm13014880",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "bond-type",
+   "prompt": "可以用哪些信息来预测两个原子之间的键是共价键还是离子键？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "有两方面的信息可以预测键型：一是两个原子之间的电负性差，二是所涉原子的种类，即金属还是非金属，可由它们在元素周期表中的位置看出。按图 7.8 的粗略标度，差值低于约 0.4 时为纯（非极性）共价键，差值在约 0.4 至 1.8 之间时为极性共价键，差值更大时为离子键；H–Cl 的差值为 0.9，是极性共价键，Na–Cl 的差值为 2.1，是离子键。该标度有许多例外：HF 的差值为 1.9，却是极性共价键，而 MnI<sub>2</sub> 的差值仅为 1.0，却是离子键。因此更好的依据是原子的类型。两个非金属之间的键通常是共价键，如 HF 和 NH<sub>3</sub>；金属与非金属之间的键往往是离子键，如 NaCl 和 MnI<sub>2</sub>。"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp119456432",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "bond-type",
+   "prompt": "根据下列化合物中各组成原子在<a href=\"/chemistry-2e/sheets/elements/\">元素周期表</a>中的位置，预测哪些是离子化合物，哪些是共价化合物：<br>（a）Cl<sub>2</sub>CO<br>（b）MnO<br>（c）NCl<sub>3</sub><br>（d）CoBr<sub>2</sub><br>（e）K<sub>2</sub>S<br>（f）CO<br>（g）CaF<sub>2</sub><br>（h）HI<br>（i）CaO<br>（j）IBr<br>（k）CO<sub>2</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "离子化合物：（b）、（d）、（e）、（g）和（i）；共价化合物：（a）、（c）、（f）、（h）、（j）和（k）"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp18335616",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "pure-polar",
+   "prompt": "解释非极性共价键、极性共价键和离子键之间的区别。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "三者的区别在于成键电子是如何被共用的。在非极性（纯）共价键中，电子被平均共用，因为两个原子对电子的吸引相等；当原子相同时就是这样，如 H<sub>2</sub> 和 Cl<sub>2</sub>，其电负性差为 0。在极性共价键中，电子仍被共用，但不平均：电子偏向电负性较大的原子，该原子带部分负电荷 δ–，而另一个原子带部分正电荷 δ+。H–Cl 就是一例，其电负性差为 0.9。在离子键中，电子根本没有被共用。一个原子把电子给了另一个原子，形成由静电吸引结合在一起的阳离子和阴离子，如 NaCl，其差值为 2.1。沿着图 7.8，随着电负性差增大，键型由非极性共价键经极性共价键过渡到离子键。"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm121789856",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "electronegativity",
+   "prompt": "根据各原子在<a href=\"/chemistry-2e/sheets/elements/\">元素周期表</a>中的位置，判断每对原子中哪个原子的电负性更大：<br>（a）Br 或 Cl<br>（b）N 或 O<br>（c）S 或 O<br>（d）P 或 S<br>（e）Si 或 N<br>（f）Ba 或 P<br>（g）N 或 K",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）Cl；（b）O；（c）O；（d）S；（e）N；（f）P；（g）N"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp43172032",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "electronegativity",
+   "prompt": "根据各原子在<a href=\"/chemistry-2e/sheets/elements/\">元素周期表</a>中的位置，判断每对原子中哪个原子的电负性更大：<br>（a）N 或 P<br>（b）N 或 Ge<br>（c）S 或 F<br>（d）Cl 或 S<br>（e）H 或 C<br>（f）Se 或 P<br>（g）C 或 Si",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "电负性沿周期从左到右增大，沿族向下减小，图 7.6 中的数值证实了每一项选择。<br>（a）N。二者都在第 15 族，N 位于 P 的上方（3.0 对 2.1）。<br>（b）N。N 比 Ge 更靠上、更靠右（3.0 对 1.8）。<br>（c）F。F 比 S 更靠上、更靠右，它是电负性最大的元素（4.0 对 2.5）。<br>（d）Cl。二者都在第 3 周期，Cl 位于 S 的右侧（3.0 对 2.5）。<br>（e）C。碳的数值比氢的大（2.5 对 2.1）。<br>（f）Se。Se 比 P 更靠右，这一因素超过了它所在周期较靠下的影响（2.4 对 2.1）。<br>（g）C。二者都在第 14 族，C 位于 Si 的上方（2.5 对 1.8）。"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm28148800",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "electronegativity",
+   "prompt": "根据各原子在<a href=\"/chemistry-2e/sheets/elements/\">元素周期表</a>中的位置，将下列每个系列中的原子按电负性增大的顺序排列：<br>（a）C、F、H、N、O<br>（b）Br、Cl、F、H、I<br>（c）F、H、O、P、S<br>（d）Al、H、Na、O、P<br>（e）Ba、H、N、O、As",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）H、C、N、O、F；（b）H、I、Br、Cl、F；（c）H、P、S、O、F；（d）Na、Al、H、P、O；（e）Ba、H、As、N、O"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp49532528",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "electronegativity",
+   "prompt": "根据各原子在<a href=\"/chemistry-2e/sheets/elements/\">元素周期表</a>中的位置，将下列每个系列中的原子按电负性增大的顺序排列：<br>（a）As、H、N、P、Sb<br>（b）Cl、H、P、S、Si<br>（c）Br、Cl、Ge、H、Sr<br>（d）Ca、H、K、N、Si<br>（e）Cl、Cs、Ge、H、Sr",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "电负性沿周期升高，沿族向下降低；氢不符合这两种趋势，按其在图 7.6 中的数值 2.1 排位。<br>（a）Sb (1.9) &lt; As (2.0) &lt; P (2.1) = H (2.1) &lt; N (3.0)。N、P、As 和 Sb 在第 15 族，沿族向下依次降低，氢的数值与磷相同。<br>（b）Si (1.8) &lt; H (2.1) = P (2.1) &lt; S (2.5) &lt; Cl (3.0)。Si、P、S 和 Cl 在第 3 周期，沿周期依次升高。<br>（c）Sr (1.0) &lt; Ge (1.8) &lt; H (2.1) &lt; Br (2.8) &lt; Cl (3.0)。Sr 是第 2 族的金属，Ge 和 Br 在第 4 周期且 Br 在右侧，Cl 在第 17 族中位于 Br 的上方。<br>（d）K (0.8) &lt; Ca (1.0) &lt; Si (1.8) &lt; H (2.1) &lt; N (3.0)。K 和 Ca 是第 4 周期左侧的金属，Si 更靠右，N 则更靠右且更靠上。<br>（e）Cs (0.7) &lt; Sr (1.0) &lt; Ge (1.8) &lt; H (2.1) &lt; Cl (3.0)。Cs 位于最左端的最下方，Sr 在第 2 族，Ge 和 Cl 更靠右。"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idp31566784",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "electronegativity",
+   "prompt": "哪些原子与硫成键时，可使硫原子带部分正电荷？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "N、O、F 和 Cl"
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idp9464672",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "bond-type",
+   "prompt": "哪个键的极性最大？<br>（a）C–C<br>（b）C–H<br>（c）N–H<br>（d）O–H<br>（e）Se–H",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "（d）O–H 是极性最大的键，其电负性差为 1.4。键的极性随电负性差的绝对值增大而增强，由图 7.6 中的数值可得各键的差值：C–C，|2.5 – 2.5| = 0；C–H，|2.5 – 2.1| = 0.4；N–H，|3.0 – 2.1| = 0.9；O–H，|3.5 – 2.1| = 1.4；Se–H，|2.4 – 2.1| = 0.3。O–H 的差值最大，因此其电子偏移得最厉害，偏向带部分负电荷 δ– 的氧原子。"
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idp173506592",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "bond-type",
+   "prompt": "指出下列各对键中极性更大的键：<br>（a）HF 或 HCl<br>（b）NO 或 CO<br>（c）SH 或 OH<br>（d）PCl 或 SCl<br>（e）CH 或 NH<br>（f）SO 或 PO<br>（g）CN 或 NN",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）HF；（b）CO；（c）OH；（d）PCl；（e）NH；（f）PO；（g）CN"
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idp51035456",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "pure-polar",
+   "prompt": "下列哪些分子或离子含有极性键？<br>（a）O<sub>3</sub><br>（b）S<sub>8</sub><br>（c）O<sub>2</sub><sup>2−</sup><br>（d）NO<sub>3</sub><sup>−</sup><br>（e）CO<sub>2</sub><br>（f）H<sub>2</sub>S<br>（g）BH<sub>4</sub><sup>−</sup>",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "（d）${\\text{NO}}_{3}{}^{\\text{−}}$、（e）CO<sub>2</sub>、（f）H<sub>2</sub>S 和（g）${\\text{BH}}_{4}{}^{\\text{−}}$ 含有极性键。当共价键所连接的原子不同时，成键电子被不平均地共用，键是极性的；当原子相同时，电子被平均共用，键是纯共价键。O<sub>3</sub>、S<sub>8</sub> 和 ${\\text{O}}_{2}{}^{\\text{2−}}$ 只含 O–O 或 S–S 键，所以它们的键都是纯共价键。另外四种各连接两种不同元素的原子，由图 7.6 得到的电负性差分别为：N–O 为 0.5（3.5 – 3.0），C–O 为 1.0（3.5 – 2.5），S–H 为 0.4（2.5 – 2.1），B–H 为 0.1（2.1 – 2.0）。因此 B–H 键只有轻微的极性，而 CO<sub>2</sub> 的 C–O 键是这一组中极性最大的。"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "bond-polarity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "electronegativity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e1",
+   "concept": "bond-type-from-electronegativity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e2",
+   "concept": "bond-type-from-electronegativity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "bond-polarity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "bond-type-from-electronegativity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e4",
+   "concept": "electronegativity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e5",
+   "concept": "electronegativity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e6",
+   "concept": "electronegativity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e7",
+   "concept": "electronegativity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e8",
+   "concept": "bond-polarity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e8",
+   "concept": "electronegativity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "bond-polarity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "electronegativity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e10",
+   "concept": "bond-polarity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e10",
+   "concept": "electronegativity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e11",
+   "concept": "bond-polarity",
+   "weights_by": "ai"
+  }
+ ]
+}

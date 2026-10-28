@@ -1,0 +1,572 @@
+{
+ "id": "4.4",
+ "module": "m68714",
+ "chapter": "4",
+ "title": "反应的产率",
+ "short": "反应的产率",
+ "lead": "化学家很少恰好按配平的方程式所要求的量来混合反应物，最先用完的那种反应物，即限量反应物，决定了所能生成的产物的量。实际得到的产物的量与这个理论产量相比，就得出产率。",
+ "objectives": [
+  "解释理论产量和限量反应物/限量试剂的概念。",
+  "推导反应在指定条件下的理论产量。",
+  "计算反应的产率。"
+ ],
+ "summary_html": "<p>当反应所用反应物的量小于化学计量的量时，生成的产物的量将由限量反应物决定。化学反应生成的产物的量就是它的实际产量。这一产量往往小于表示该反应的配平的化学方程式的化学计量所预测的产物的量（即它的理论产量）。反应生成理论产量的程度用它的产率表示。</p>",
+ "notes": "指向关于限量反应物和过量反应物的交互式模拟的“学习链接”栏目被略去，关键方程式表由本章的公式承载；没有答案的加热碳酸钙那道习题把产物印成 CO₂(s)，这是本书的一处勘误，该题属于被略去的习题。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。两个“学习检测”都附有书中自己的答案。章末习题的答案取自书后答案，其涵盖十八道题中的九道；八道没有答案的数值习题（fs-idm72007808、fs-idp61299760、fs-idp99327968、fs-idm7557120、fs-idm43326768、fs-idm21873728、fs-idm574992、fs-idp41861648）被略去。没有答案的道尔顿原子论一题（fs-idm47361200）保留，并附有标明为 OmniStax 自己提出的建议思路。金原子一题把它的网址保留为纯文本。没有任何内容取自其他小节，也没有任何内容留给其他小节。数值答案接受 2% 的容差。",
+ "figures": [
+  {
+   "id": "sim-sandwich",
+   "kind": "sim",
+   "number": "4.13",
+   "originals": [
+    "/media/ch04/CNX_Chem_04_04_sandwich.jpg"
+   ],
+   "original_caption": "制作三明治可以用来说明限量反应物和过量反应物的概念。",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "bread drawn as a slice with its crust; note dropped, it repeated the caption"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-hcl-limiting",
+   "kind": "sim",
+   "number": "4.14",
+   "originals": [
+    "/media/ch04/CNX_Chem_04_04_limiting.jpg"
+   ],
+   "original_caption": "当 H2 和 Cl2 以非化学计量的量混合时，其中一种反应物会限制所能生成的 HCl 的量。这幅图显示的是氢过量、氯为限量反应物的反应。",
+   "draws": [],
+   "conventions": [
+    "H",
+    "Cl"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "note dropped, it repeated the headline"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-silicon-nitride",
+   "kind": "sim",
+   "draws": [
+    "mass",
+    "amount"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "level kept off the bar labels, step labels above boxes, note cut, caption"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-percent-yield",
+   "kind": "sim",
+   "draws": [
+    "mass",
+    "amount"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "step labels moved clear of the route boxes"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-green-chem",
+   "kind": "photo",
+   "number": "4.15",
+   "draws": []
+  }
+ ],
+ "coverage": [
+  {
+   "span": "stoichiometric-amounts",
+   "concept": "stoichiometry",
+   "verb": "uses"
+  },
+  {
+   "span": "stoichiometric-amounts",
+   "concept": "coefficients-as-ratios",
+   "verb": "uses"
+  },
+  {
+   "span": "limiting-reactant",
+   "concept": "limiting-reactant",
+   "verb": "introduces"
+  },
+  {
+   "span": "limiting-reactant",
+   "concept": "coefficients-as-ratios",
+   "verb": "uses"
+  },
+  {
+   "span": "limiting-reactant",
+   "concept": "mole-stoichiometry",
+   "verb": "uses"
+  },
+  {
+   "span": "limiting-reactant",
+   "concept": "excess-reactant",
+   "verb": "introduces"
+  },
+  {
+   "span": "comparing-products",
+   "concept": "identify-limiting-reactant",
+   "verb": "introduces"
+  },
+  {
+   "span": "comparing-products",
+   "concept": "limiting-reactant",
+   "verb": "reinforces"
+  },
+  {
+   "span": "comparing-products",
+   "concept": "stoichiometric-factor",
+   "verb": "uses"
+  },
+  {
+   "span": "comparing-products",
+   "concept": "mass-stoichiometry",
+   "verb": "uses"
+  },
+  {
+   "span": "percent-yield",
+   "concept": "theoretical-and-actual-yield",
+   "verb": "introduces"
+  },
+  {
+   "span": "percent-yield",
+   "concept": "percent-yield",
+   "verb": "introduces"
+  },
+  {
+   "span": "percent-yield",
+   "concept": "mass-stoichiometry",
+   "verb": "uses"
+  },
+  {
+   "span": "percent-yield",
+   "concept": "theoretical-yield",
+   "verb": "introduces"
+  },
+  {
+   "span": "percent-yield",
+   "concept": "actual-yield",
+   "verb": "introduces"
+  },
+  {
+   "span": "atom-economy",
+   "concept": "atom-economy",
+   "verb": "introduces"
+  },
+  {
+   "span": "atom-economy",
+   "concept": "percent-yield",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idp70587344",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-silicon-nitride"
+   },
+   "prompt": "当 5.00 g H<sub>2</sub> 与 10.0 g O<sub>2</sub> 反应生成水时，哪一种是限量反应物？",
+   "answer": {
+    "type": "open",
+    "solution": "O<sub>2</sub>",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm49018784",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-copper-yield"
+   },
+   "prompt": "由 32.9 g CCl<sub>4</sub> 和过量的 HF 反应生成 12.5 g 气体氟利昂 CF<sub>2</sub>Cl<sub>2</sub>，该反应的产率是多少？<br>${\\text{CCl}}_{4}+2\\text{HF}\\;\\longrightarrow \\;{\\text{CF}}_{2}{\\text{Cl}}_{2}+2\\text{HCl}$",
+   "answer": {
+    "type": "number",
+    "value": 48.3,
+    "unit": "%",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm48529264",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "comparing-products",
+   "prompt": "在由 8 g 钠和 8 g 双原子氯生成氯化钠的反应中，限量反应物是什么？",
+   "answer": {
+    "type": "open",
+    "solution": "限量反应物是 Cl<sub>2</sub>。",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idm47361200",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "percent-yield",
+   "prompt": "道尔顿原子论的哪条假设解释了我们为什么能计算化学反应的理论产量？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "原子在化学变化中既不会产生也不会消失，只是重新排列成新的物质，这一假设解释了这一点。由于反应物中的每个原子仍然存在于产物中，配平的方程式在两侧含有每种元素相同数目的原子，它的系数给出反应物与产物之间固定的物质的量之比。再加上化合物总是以相同的整数比含有其各元素这一假设，它确定了每种物质的化学式和摩尔质量，这样就能把已知量的限量反应物换算成确定量的产物。这个算得的量，即限量反应物全部按方程式所述反应时生成的产物的质量，就是理论产量。"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm38653920",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "percent-yield",
+   "prompt": "一名学生按照理论上应得到 81 g 的步骤分离出 25 g 化合物。他的产率是多少？",
+   "answer": {
+    "type": "number",
+    "value": 31,
+    "unit": "%",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm57693344",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "percent-yield",
+   "prompt": "氟利昂-12，CCl<sub>2</sub>F<sub>2</sub>，由 CCl<sub>4</sub> 与 HF 反应制得。该反应的另一种产物是 HCl。请概述由 32.9 g CCl<sub>4</sub> 生成 12.5 g CCl<sub>2</sub>F<sub>2</sub> 的反应，求其产率所需的步骤。氟利昂-12 已被禁用，不再用作制冷剂，因为它会催化臭氧的分解，而且在大气中的寿命很长。求出产率。",
+   "answer": {
+    "type": "number",
+    "value": 48.3,
+    "unit": "%",
+    "solution": "$\\text{g}\\;{\\text{CCl}}_{4}\\;\\longrightarrow \\;\\text{mol}\\;{\\text{CCl}}_{4}\\;\\longrightarrow \\;\\text{mol}\\;{\\text{CCl}}_{2}{\\text{F}}_{2}\\;\\longrightarrow \\;\\text{g}\\;{\\text{CCl}}_{2}{\\text{F}}_{2}$，产率 = 48.3%",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp34342864",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "percent-yield",
+   "prompt": "甲苯 C<sub>6</sub>H<sub>5</sub>CH<sub>3</sub> 在严格控制的条件下被空气氧化成苯甲酸 C<sub>6</sub>H<sub>5</sub>CO<sub>2</sub>H，苯甲酸用来制备食品防腐剂苯甲酸钠 C<sub>6</sub>H<sub>5</sub>CO<sub>2</sub>Na。把 1.000 kg 甲苯转化成 1.21 kg 苯甲酸的反应，其产率是多少？<br>$2{\\text{C}}_{6}{\\text{H}}_{5}{\\text{CH}}_{3}+3{\\text{O}}_{2}\\;\\longrightarrow \\;2{\\text{C}}_{6}{\\text{H}}_{5}{\\text{CO}}_{2}\\text{H}+2{\\text{H}}_{2}\\text{O}$",
+   "answer": {
+    "type": "number",
+    "value": 91.3,
+    "unit": "%",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm46525040",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "percent-yield",
+   "prompt": "请概述解下面这道题所需的步骤，然后进行计算。乙醚 (C<sub>2</sub>H<sub>5</sub>)<sub>2</sub>O 最初用作麻醉剂，后来被更安全、更有效的药物取代，它由乙醇与硫酸反应制得。<br>2C<sub>2</sub>H<sub>5</sub>OH + H<sub>2</sub>SO<sub>4</sub> ⟶ (C<sub>2</sub>H<sub>5</sub>)<sub>2</sub>O + H<sub>2</sub>SO<sub>4</sub>·H<sub>2</sub>O<br>如果由 1.500 L C<sub>2</sub>H<sub>5</sub>OH（d = 0.7894 g/mL）反应分离出 1.17 L 乙醚（d = 0.7134 g/mL），乙醚的产率是多少？",
+   "answer": {
+    "type": "number",
+    "value": 87.6,
+    "unit": "%",
+    "solution": "把乙醇的质量换算成乙醇的物质的量；利用配平的方程式的化学计量，把乙醇的物质的量与生成的乙醚的物质的量联系起来。把乙醚的物质的量换算成克；用实际得到的乙醚的克数（通过密度求得）除以理论质量，得出产率；87.6%",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idm49726752",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "limiting-reactant",
+   "prompt": "请概述按下面的化学方程式，当 0.50 mol Cr 与 0.75 mol H<sub>3</sub>PO<sub>4</sub> 反应时，确定限量反应物所需的步骤。<br>$2\\text{Cr}+2{\\text{H}}_{3}{\\text{PO}}_{4}\\;\\longrightarrow \\;2{\\text{CrPO}}_{4}+3{\\text{H}}_{2}$<br>确定限量反应物。",
+   "answer": {
+    "type": "open",
+    "solution": "所需的换算是 $\\text{mol Cr}\\;\\longrightarrow \\;\\text{mol}\\;{\\text{H}}_{3}{\\text{PO}}_{4}.$ 然后比较 Cr 的量与所存在的酸的量。Cr 是限量反应物。",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idp70668864",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "percent-yield",
+   "prompt": "铀可以从矿石中提取出来：先把它溶解成 UO<sub>2</sub>(NO<sub>3</sub>)<sub>2</sub>，再把它分离成固体 UO<sub>2</sub>(C<sub>2</sub>O<sub>4</sub>)·3H<sub>2</sub>O。向含有 1.481 g 硝酸铀酰 UO<sub>2</sub>(NO<sub>3</sub>)<sub>2</sub> 的溶液中加入 0.4031 g 草酸钠 Na<sub>2</sub>C<sub>2</sub>O<sub>4</sub>，得到 1.073 g 固体 UO<sub>2</sub>(C<sub>2</sub>O<sub>4</sub>)·3H<sub>2</sub>O。<br>Na<sub>2</sub>C<sub>2</sub>O<sub>4</sub> + UO<sub>2</sub>(NO<sub>3</sub>)<sub>2</sub> + 3H<sub>2</sub>O ⟶ UO<sub>2</sub>(C<sub>2</sub>O<sub>4</sub>)·3H<sub>2</sub>O + 2NaNO<sub>3</sub><br>求这个反应的限量反应物和产率。",
+   "answer": {
+    "type": "open",
+    "solution": "Na<sub>2</sub>C<sub>2</sub>O<sub>4</sub> 是限量反应物。产率 = 86.56%",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idm71853216",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "limiting-reactant",
+   "prompt": "用 30 个 C 原子、25 个 H 原子、12 个 O 原子、8 个 S 原子和 14 个 N 原子，可以制备多少个甜味剂糖精分子？<br><img src=\"/media/ch04/CNX_Chem_04_04_saccharin_img.jpg\" alt=\"给出了一个结构式。一个由 6 个 C 原子组成、带交替双键的六元环，其左侧四个相连的 C 原子上各键合有一个 H 原子。环右侧由双键相连的两个 C 原子，同时也属于它们右边的一个五元环。这对 C 原子中最靠近结构顶部的那个，与五元环顶部的一个 C 原子以单键相连，该 C 原子上方以双键连着一个 O 原子。一个 N 原子以单键连在这个 C 原子的右下方。N 原子的右侧和左下方各键合有一个 H 原子，它还与一个 S 原子相连。S 原子连接到两个环共用的第二个 C 原子上。S 原子的右下方还以双键连着一个 O 原子，正下方以双键连着第二个 O 原子。\">",
+   "answer": {
+    "type": "number",
+    "value": 4,
+    "unit": "molecules",
+    "solution": "只能制得四个分子。",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idm19471568",
+   "kind": "exercise",
+   "bloom": "Evaluate",
+   "place": {
+    "at": "end"
+   },
+   "cite": "stoichiometric-amounts",
+   "prompt": "你会同意以 ＄5 的价格购买 1 万亿（1,000,000,000,000）个金原子吗？请说明理由。请在 http://money.cnn.com/data/commodities/ 查询金的当前价格 $(\\text{1 金衡盎司}=\\text{31.1 g})$",
+   "answer": {
+    "type": "open",
+    "solution": "这个量无法用普通天平称量，因而毫无价值。",
+    "generated_by": "source"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "identify-limiting-reactant"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "mass-stoichiometry"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "percent-yield"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "theoretical-and-actual-yield"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "mass-stoichiometry"
+  },
+  {
+   "exercise": "e1",
+   "concept": "identify-limiting-reactant"
+  },
+  {
+   "exercise": "e1",
+   "concept": "mass-stoichiometry"
+  },
+  {
+   "exercise": "e2",
+   "concept": "theoretical-and-actual-yield"
+  },
+  {
+   "exercise": "e3",
+   "concept": "percent-yield"
+  },
+  {
+   "exercise": "e4",
+   "concept": "percent-yield"
+  },
+  {
+   "exercise": "e4",
+   "concept": "theoretical-and-actual-yield"
+  },
+  {
+   "exercise": "e4",
+   "concept": "mass-stoichiometry"
+  },
+  {
+   "exercise": "e5",
+   "concept": "percent-yield"
+  },
+  {
+   "exercise": "e5",
+   "concept": "theoretical-and-actual-yield"
+  },
+  {
+   "exercise": "e5",
+   "concept": "mass-stoichiometry"
+  },
+  {
+   "exercise": "e6",
+   "concept": "percent-yield"
+  },
+  {
+   "exercise": "e6",
+   "concept": "theoretical-and-actual-yield"
+  },
+  {
+   "exercise": "e6",
+   "concept": "mass-stoichiometry"
+  },
+  {
+   "exercise": "e7",
+   "concept": "identify-limiting-reactant"
+  },
+  {
+   "exercise": "e7",
+   "concept": "mole-stoichiometry"
+  },
+  {
+   "exercise": "e8",
+   "concept": "identify-limiting-reactant"
+  },
+  {
+   "exercise": "e8",
+   "concept": "percent-yield"
+  },
+  {
+   "exercise": "e8",
+   "concept": "mass-stoichiometry"
+  },
+  {
+   "exercise": "e9",
+   "concept": "limiting-reactant"
+  },
+  {
+   "exercise": "e9",
+   "concept": "identify-limiting-reactant"
+  },
+  {
+   "exercise": "e10",
+   "concept": "stoichiometry"
+  }
+ ],
+ "referents": [
+  {
+   "id": "bread",
+   "label": "面包片",
+   "figures": [
+    "sim-sandwich"
+   ]
+  },
+  {
+   "id": "cheese",
+   "label": "奶酪片",
+   "figures": [
+    "sim-sandwich"
+   ]
+  }
+ ]
+}

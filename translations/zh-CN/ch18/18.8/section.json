@@ -1,0 +1,391 @@
+{
+ "id": "18.8",
+ "module": "m68836",
+ "chapter": "18",
+ "title": "磷的存在、制备与性质",
+ "short": "磷",
+ "lead": "磷在工业上由磷酸钙制得，它的许多化合物的制备都从其氧化物 P<sub>4</sub>O<sub>10</sub> 开始。它形成两种常见的氧化物 P<sub>4</sub>O<sub>6</sub> 和 P<sub>4</sub>O<sub>10</sub>，并与卤素形成卤化物，其中最重要的是氯化物 PCl<sub>3</sub> 和 PCl<sub>5</sub>。",
+ "objectives": [
+  "描述磷的性质、制备方法和用途"
+ ],
+ "summary_html": "<p>磷（第 15 族）与活泼金属化合时通常表现出 3− 的<span data-concept=\"oxidation-number\">氧化态</span>，与电负性更大的非金属化合时表现出 3+ 和 5+ 的氧化态。<span data-concept=\"halogen\">卤素</span>和氧能够氧化磷。其氧化物是氧化磷(V) P<sub>4</sub>O<sub>10</sub> 和氧化磷(III) P<sub>4</sub>O<sub>6</sub>。制备正磷酸 H<sub>3</sub>PO<sub>4</sub> 的两种常用方法，一是磷酸盐与硫酸反应，二是水与氧化磷(V)反应。正磷酸是<span data-concept=\"triprotic-acid\">三元酸</span>，能形成三类盐。</p>",
+ "notes": "本节习题 71 的印刷错误（原文“2.00 g of PCl₃ is an excess of water”）按其含义译出（溶于过量水中），并保留一份小结，其中列出正磷酸的制备方法和盐类，这些内容在第 18.9 节中讲述。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签、提示和建议思路均由 AI 生成。答案取自书后答案；习题 67 和 75 的答案是本书的路易斯结构图像。答案需要计算而书中未给出的无答案习题被略去，也没有为它们计算答案：68（fs-idp101864208，分子结构）、70（fs-idm43491296，杂化）、72（fs-idm123772752，数值）、74（fs-idp208490096，方程式）和 78（fs-idp126473504，数值）。无答案的概念性习题 76（fs-idm55936272）附有一条建议思路，标明为 OmniStax 自己所写。没有移动任何内容。",
+ "figures": [
+  {
+   "id": "sim-phosphorus-cage",
+   "kind": "sim",
+   "number": "18.39",
+   "folds": [
+    "18.40"
+   ],
+   "originals": [
+    "/media/ch18/CNX_Chem_18_08_P4S3.jpg",
+    "/media/ch18/CNX_Chem_18_08_P4O6P4O10.jpg"
+   ],
+   "original_caption": "（图 18.39）P₄S₃ 是擦燃火柴火柴头的成分。（图 18.40）此图显示 P₄O₆（左）和 P₄O₁₀（右）的分子结构。",
+   "draws": [],
+   "conventions": [
+    "P",
+    "S",
+    "O"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-phosphorus-chlorides",
+   "kind": "sim",
+   "number": "18.41",
+   "originals": [
+    "/media/ch18/CNX_Chem_18_08_PCl3PCl5.jpg"
+   ],
+   "original_caption": "此图显示气相中 PCl₃（左）和 PCl₅（右）的分子结构。",
+   "draws": [],
+   "conventions": [
+    "P",
+    "Cl"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "preparation",
+   "concept": "phosphorus-preparation",
+   "verb": "introduces"
+  },
+  {
+   "span": "preparation",
+   "concept": "alloy",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "nonmetal",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "phosphorus-oxides",
+   "verb": "introduces"
+  },
+  {
+   "span": "oxides",
+   "concept": "standard-enthalpy-of-formation",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "halides",
+   "concept": "phosphorus-halides",
+   "verb": "introduces"
+  },
+  {
+   "span": "halides",
+   "concept": "halogen",
+   "verb": "uses"
+  },
+  {
+   "span": "halides",
+   "concept": "first-member-anomaly",
+   "verb": "uses"
+  },
+  {
+   "span": "halides",
+   "concept": "sublimation",
+   "verb": "uses"
+  },
+  {
+   "span": "halides",
+   "concept": "chemical-equilibrium",
+   "verb": "uses"
+  },
+  {
+   "span": "halides",
+   "concept": "oxyacid",
+   "verb": "uses"
+  },
+  {
+   "span": "halides",
+   "concept": "lewis-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "halides",
+   "concept": "lewis-base",
+   "verb": "uses"
+  },
+  {
+   "span": "halides",
+   "concept": "molecular-compounds",
+   "verb": "uses"
+  },
+  {
+   "span": "halides",
+   "concept": "x-ray-crystallography",
+   "verb": "uses"
+  },
+  {
+   "span": "halides",
+   "concept": "ionic-compounds",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "e67",
+   "source_id": "fs-idp52847792",
+   "source_number": "67",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "preparation",
+   "prompt": "写出下列各物质的路易斯结构。你可能需要复习化学键与分子几何构型一章。<br>（a）PH<sub>3</sub><br>（b）${\\text{PH}}_{4}{}^{+}$<br>（c）P<sub>2</sub>H<sub>4</sub><br>（d）${\\text{PO}}_{4}{}^{3−}$<br>（e）PF<sub>5</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1a_img.jpg\" alt=\"此路易斯结构显示一个带一对孤电子对的磷原子，与三个氢原子以单键相连。\"><br>（b）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1b_img.jpg\" alt=\"此路易斯结构显示一个磷原子与四个氢原子以单键相连。结构外有方括号，括号外右上角为正号。\"><br>（c）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1c_img.jpg\" alt=\"此路易斯结构显示两个磷原子，各带一对孤电子对，彼此以单键相连。每个磷原子还与两个氢原子以单键相连。\"><br>（d）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1d_img.jpg\" alt=\"此路易斯结构显示一个磷原子与四个氧原子以单键相连，每个氧原子各带三对孤电子对。结构外有方括号，括号外右上角为 3 和负号。\"><br>（e）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1e_img.jpg\" alt=\"此路易斯结构显示一个磷原子与五个氟原子以单键相连，每个氟原子各带三对孤电子对。\">"
+   }
+  },
+  {
+   "id": "e69",
+   "source_id": "fs-idm2951584",
+   "source_number": "69",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "halides",
+   "prompt": "完成并配平下列各化学方程式。（有些情况下，正确答案可能不止一个。）<br>（a）${\\text{P}}_{4}+\\text{Al}\\;\\longrightarrow$<br>（b）${\\text{P}}_{4}+\\text{Na}\\;\\longrightarrow$<br>（c）${\\text{P}}_{4}+{\\text{F}}_{2}\\;\\longrightarrow$<br>（d）${\\text{P}}_{4}+{\\text{Cl}}_{2}\\;\\longrightarrow$<br>（e）${\\text{P}}_{4}+{\\text{O}}_{2}\\;\\longrightarrow$<br>（f）${\\text{P}}_{4}{\\text{O}}_{6}+{\\text{O}}_{2}\\;\\longrightarrow$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）${\\text{P}}_{4}(s)+\\text{4Al}(s)\\;\\longrightarrow \\;\\text{4AlP}(s);$ （b）${\\text{P}}_{4}(s)+\\text{12Na}(s)\\;\\longrightarrow \\;{\\text{4Na}}_{3}\\text{P}(s);$ （c）${\\text{P}}_{4}(s)+{\\text{10F}}_{2}(g)\\;\\longrightarrow \\;{\\text{4PF}}_{5}(l);$ （d）${\\text{P}}_{4}(s)+{\\text{6Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{4PCl}}_{3}(l)$ 或 ${\\text{P}}_{4}(s)+{\\text{10Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{4PCl}}_{5}(l);$ （e）${\\text{P}}_{4}(s)+{\\text{3O}}_{2}(g)\\;\\longrightarrow \\;{\\text{P}}_{4}{\\text{O}}_{6}(s)$ 或 ${\\text{P}}_{4}(s)+{\\text{5O}}_{2}(g)\\;\\longrightarrow \\;{\\text{P}}_{4}{\\text{O}}_{10}(s);$ （f）${\\text{P}}_{4}{\\text{O}}_{6}(s)+{\\text{2O}}_{2}(g)\\;\\longrightarrow \\;{\\text{P}}_{4}{\\text{O}}_{10}(s)$"
+   }
+  },
+  {
+   "id": "e71",
+   "source_id": "fs-idp54197664",
+   "source_number": "71",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "halides",
+   "prompt": "需要多少体积的 0.200 <em>M</em> NaOH，才能中和将 2.00 g PCl<sub>3</sub> 溶于过量水中所得的溶液？注意，在这些条件下滴定 H<sub>3</sub>PO<sub>3</sub> 时，酸分子中只有一个质子发生反应。",
+   "answer": {
+    "type": "number",
+    "value": 291,
+    "unit": "mL",
+    "tol": 0.02,
+    "part": "the volume of NaOH solution",
+    "hint": "水使每个 PCl<sub>3</sub> 变成 H<sub>3</sub>PO<sub>3</sub> 和三个 HCl；计算与 NaOH 反应的酸的物质的量，每个 H<sub>3</sub>PO<sub>3</sub> 贡献一个质子，每个 HCl 贡献一个质子。",
+    "solution": "291 mL",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e73",
+   "source_id": "fs-idp32430320",
+   "source_number": "73",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "preparation",
+   "prompt": "若产率为 90%，制备 5.0 短吨（美吨）磷需要多少短吨（美吨）Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub>？",
+   "answer": {
+    "type": "number",
+    "value": 28,
+    "unit": "tons",
+    "tol": 0.03,
+    "part": "the mass of Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub>",
+    "hint": "每个 Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub> 含两个磷原子；先求含 5.0 短吨（美吨）磷的磷酸盐的质量，再除以 90% 的产率。",
+    "solution": "28 短吨（美吨）",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e75",
+   "source_id": "fs-idm54656592",
+   "source_number": "75",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "halides",
+   "prompt": "画出下列各物质的路易斯结构，并描述其几何构型：<br>（a）${\\text{PF}}_{4}{}^{+}$<br>（b）PF<sub>5</sub><br>（c）${\\text{PF}}_{6}{}^{-}$<br>（d）POF<sub>3</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8a_img.jpg\" alt=\"此路易斯结构显示一个磷原子与四个氟原子以单键相连，每个氟原子各带三对孤电子对。结构外有方括号，括号外右上角为正号。结构下方标有“四面体形”。\"><br>（b）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8b_img.jpg\" alt=\"此路易斯结构显示一个磷原子与五个氟原子以单键相连，每个氟原子各带三对孤电子对。结构下方标有“三角双锥形”。\"><br>（c）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8c_img.jpg\" alt=\"此路易斯结构显示一个磷原子与六个氟原子以单键相连，每个氟原子各带三对孤电子对。结构外有方括号，括号外右上角为负号。结构下方标有“八面体形”。\"><br>（d）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8d_img.jpg\" alt=\"此路易斯结构显示一个磷原子与三个氟原子以单键相连，每个氟原子各带三对孤电子对。该磷原子还与一个带两对孤电子对的氧原子以双键相连。结构下方标有“四面体形”。\">"
+   }
+  },
+  {
+   "id": "e76",
+   "source_id": "fs-idm55936272",
+   "source_number": "76",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "halides",
+   "prompt": "为什么亚磷酸分子中虽然含有三个氢原子，却只形成两个系列的盐？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "亚磷酸只形成两个系列的盐，是因为它的三个氢原子中只有两个具有酸性。其结构为 HPO(OH)<sub>2</sub>：磷原子直接与一个氢原子相连，以双键与一个氧原子相连，并与两个 OH 基团相连。在含氧酸中，可电离的氢原子是与氧相连的那些，高度极性的 O–H 键使碱能够夺去质子。P–H 键几乎没有极性，所以那个氢原子不发生电离。因此 H<sub>3</sub>PO<sub>3</sub> 是二元酸。用氢氧化钠等碱中和一个 O–H 氢，得到亚磷酸二氢盐，如 NaH<sub>2</sub>PO<sub>3</sub>；两个都中和，得到亚磷酸氢盐，如 Na<sub>2</sub>HPO<sub>3</sub>；不形成化学式为 Na<sub>3</sub>PO<sub>3</sub> 的盐。"
+   }
+  },
+  {
+   "id": "e77",
+   "source_id": "fs-idp5265904",
+   "source_number": "77",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "preparation",
+   "prompt": "指出下列各物质中磷的氧化态：<br>（a）NaH<sub>2</sub>PO<sub>3</sub><br>（b）PF<sub>5</sub><br>（c）P<sub>4</sub>O<sub>6</sub><br>（d）K<sub>3</sub>PO<sub>4</sub><br>（e）Na<sub>3</sub>P<br>（f）Na<sub>4</sub>P<sub>2</sub>O<sub>7</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）P = 3+；（b）P = 5+；（c）P = 3+；（d）P = 5+；（e）P = 3−；（f）P = 5+"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e67",
+   "concept": "lewis-structure"
+  },
+  {
+   "exercise": "e67",
+   "concept": "phosphorus-preparation"
+  },
+  {
+   "exercise": "e69",
+   "concept": "phosphorus-oxides"
+  },
+  {
+   "exercise": "e69",
+   "concept": "phosphorus-halides"
+  },
+  {
+   "exercise": "e69",
+   "concept": "balance-by-inspection"
+  },
+  {
+   "exercise": "e71",
+   "concept": "phosphorus-halides"
+  },
+  {
+   "exercise": "e71",
+   "concept": "titration-calculation"
+  },
+  {
+   "exercise": "e73",
+   "concept": "phosphorus-preparation"
+  },
+  {
+   "exercise": "e73",
+   "concept": "mass-stoichiometry"
+  },
+  {
+   "exercise": "e73",
+   "concept": "percent-yield"
+  },
+  {
+   "exercise": "e75",
+   "concept": "phosphorus-halides"
+  },
+  {
+   "exercise": "e75",
+   "concept": "lewis-structure"
+  },
+  {
+   "exercise": "e75",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "e76",
+   "concept": "phosphorus-oxides"
+  },
+  {
+   "exercise": "e76",
+   "concept": "oxyacid-strength"
+  },
+  {
+   "exercise": "e77",
+   "concept": "oxidation-numbers"
+  },
+  {
+   "exercise": "e77",
+   "concept": "phosphorus-preparation"
+  }
+ ]
+}

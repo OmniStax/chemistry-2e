@@ -1,0 +1,547 @@
+{
+ "id": "16",
+ "dir": "ch16",
+ "title": "热力学",
+ "intro": {
+  "module": "m68815",
+  "slug": "16-introduction"
+ },
+ "sections": [
+  {
+   "id": "16.1",
+   "module": "m68816",
+   "title": "自发性",
+   "slug": "16-1-spontaneity"
+  },
+  {
+   "id": "16.2",
+   "module": "m68817",
+   "title": "熵",
+   "slug": "16-2-entropy"
+  },
+  {
+   "id": "16.3",
+   "module": "m68818",
+   "title": "热力学第二定律和第三定律",
+   "slug": "16-3-the-second-and-third-laws-of-thermodynamics"
+  },
+  {
+   "id": "16.4",
+   "module": "m68819",
+   "title": "自由能",
+   "slug": "16-4-free-energy"
+  }
+ ],
+ "variables": [
+  {
+   "sym": "P",
+   "concept": "gas-pressure",
+   "meaning": "气体的压强，在真空中为零",
+   "unit": "atm",
+   "section": "16.1",
+   "anchor": "16.1-dispersal"
+  },
+  {
+   "sym": "w",
+   "concept": "work",
+   "meaning": "对体系所做的功，环境对体系做功时为正，体系对环境做功时为负",
+   "unit": "J",
+   "section": "16.1",
+   "anchor": "16.1-dispersal"
+  },
+  {
+   "sym": "ΔV",
+   "concept": "volume",
+   "meaning": "气体膨胀时体积的变化",
+   "unit": "L",
+   "section": "16.1",
+   "anchor": "16.1-dispersal"
+  },
+  {
+   "sym": "ΔU",
+   "concept": "internal-energy",
+   "meaning": "体系内能的变化",
+   "unit": "J",
+   "section": "16.1",
+   "anchor": "16.1-dispersal"
+  },
+  {
+   "sym": "q",
+   "concept": "heat-flow",
+   "meaning": "流入体系的热量，流入时为正，流出时为负",
+   "unit": "J",
+   "section": "16.1",
+   "anchor": "16.1-dispersal"
+  },
+  {
+   "sym": "T_X",
+   "concept": "temperature",
+   "meaning": "物体 X（较热的物体）的温度",
+   "unit": "K",
+   "section": "16.1",
+   "ref": "object-x",
+   "anchor": "16.1-dispersal"
+  },
+  {
+   "sym": "T_Y",
+   "concept": "temperature",
+   "meaning": "物体 Y（较冷的物体）的温度",
+   "unit": "K",
+   "section": "16.1",
+   "ref": "object-y",
+   "anchor": "16.1-dispersal"
+  },
+  {
+   "sym": "q_X",
+   "concept": "heat-flow",
+   "meaning": "物体 X 得到的热量，因 X 失去热能而为负",
+   "unit": "J",
+   "section": "16.1",
+   "ref": "object-x",
+   "anchor": "16.1-dispersal"
+  },
+  {
+   "sym": "q_Y",
+   "concept": "heat-flow",
+   "meaning": "物体 Y 得到的热量，与 X 的大小相等、符号相反",
+   "unit": "J",
+   "section": "16.1",
+   "ref": "object-y",
+   "anchor": "16.1-dispersal"
+  },
+  {
+   "sym": "S",
+   "concept": "entropy",
+   "meaning": "体系的熵，一个度量其物质和能量分散程度的状态函数",
+   "unit": "J/K",
+   "section": "16.2",
+   "anchor": "16.2-reversible-heat"
+  },
+  {
+   "sym": "ΔS",
+   "concept": "entropy",
+   "meaning": "过程的熵变，即其终态熵与始态熵之差",
+   "unit": "J/K",
+   "section": "16.2",
+   "anchor": "16.2-reversible-heat"
+  },
+  {
+   "sym": "q_rev",
+   "concept": "heat-flow",
+   "meaning": "可逆热，即始末态相同的理论可逆过程的热量",
+   "unit": "J",
+   "section": "16.2",
+   "anchor": "16.2-reversible-heat"
+  },
+  {
+   "sym": "T",
+   "concept": "temperature",
+   "meaning": "过程进行时的开尔文温度",
+   "unit": "K",
+   "section": "16.2",
+   "anchor": "16.2-reversible-heat"
+  },
+  {
+   "sym": "W",
+   "meaning": "体系可能有的微观状态数",
+   "unit": "none",
+   "section": "16.2",
+   "anchor": "16.2-microstates"
+  },
+  {
+   "sym": "W_f",
+   "meaning": "终态的微观状态数",
+   "unit": "none",
+   "section": "16.2",
+   "anchor": "16.2-microstates"
+  },
+  {
+   "sym": "W_i",
+   "meaning": "始态的微观状态数",
+   "unit": "none",
+   "section": "16.2",
+   "anchor": "16.2-microstates"
+  },
+  {
+   "sym": "k_B",
+   "meaning": "玻尔兹曼常量，1.38 × 10⁻²³ J/K",
+   "unit": "J/K",
+   "section": "16.2",
+   "anchor": "16.2-microstates"
+  },
+  {
+   "sym": "S_f",
+   "concept": "entropy",
+   "meaning": "终态的熵",
+   "unit": "J/K",
+   "section": "16.2",
+   "anchor": "16.2-microstates"
+  },
+  {
+   "sym": "S_i",
+   "concept": "entropy",
+   "meaning": "始态的熵",
+   "unit": "J/K",
+   "section": "16.2",
+   "anchor": "16.2-microstates"
+  },
+  {
+   "sym": "N_particles",
+   "meaning": "分布在各盒子中的粒子数",
+   "unit": "none",
+   "section": "16.2",
+   "anchor": "16.2-microstates"
+  },
+  {
+   "sym": "n_boxes",
+   "meaning": "粒子所分布的盒子数",
+   "unit": "none",
+   "section": "16.2",
+   "anchor": "16.2-microstates"
+  },
+  {
+   "sym": "S_solid",
+   "concept": "entropy",
+   "meaning": "物质处于固相时的熵",
+   "unit": "J/K",
+   "section": "16.2",
+   "anchor": "16.2-predicting-sign"
+  },
+  {
+   "sym": "S_liquid",
+   "concept": "entropy",
+   "meaning": "物质处于液相时的熵",
+   "unit": "J/K",
+   "section": "16.2",
+   "anchor": "16.2-predicting-sign"
+  },
+  {
+   "sym": "S_gas",
+   "concept": "entropy",
+   "meaning": "物质处于气相时的熵",
+   "unit": "J/K",
+   "section": "16.2",
+   "anchor": "16.2-predicting-sign"
+  },
+  {
+   "sym": "ΔS_univ",
+   "concept": "entropy-change-of-universe",
+   "meaning": "宇宙的熵变，即体系与环境合在一起的熵变",
+   "unit": "J/K",
+   "section": "16.3",
+   "anchor": "16.3-second-law"
+  },
+  {
+   "sym": "ΔS_sys",
+   "concept": "entropy",
+   "meaning": "体系的熵变",
+   "unit": "J/K",
+   "section": "16.3",
+   "anchor": "16.3-second-law"
+  },
+  {
+   "sym": "ΔS_surr",
+   "concept": "entropy-change-of-surroundings",
+   "meaning": "环境的熵变",
+   "unit": "J/K",
+   "section": "16.3",
+   "anchor": "16.3-second-law"
+  },
+  {
+   "sym": "T_sys",
+   "concept": "temperature",
+   "meaning": "体系的温度",
+   "unit": "K",
+   "section": "16.3",
+   "anchor": "16.3-second-law"
+  },
+  {
+   "sym": "T_surr",
+   "concept": "temperature",
+   "meaning": "环境的温度",
+   "unit": "K",
+   "section": "16.3",
+   "anchor": "16.3-second-law"
+  },
+  {
+   "sym": "q_surr",
+   "concept": "heat-flow",
+   "meaning": "环境得到的热量，在环境极其庞大时是可逆热的良好近似",
+   "unit": "J",
+   "section": "16.3",
+   "anchor": "16.3-second-law"
+  },
+  {
+   "sym": "S°",
+   "concept": "standard-entropy",
+   "meaning": "物质的标准熵，即 1 mol 物质在 1 bar 下的熵，通常列出 298.15 K 时的值",
+   "unit": "J mol⁻¹ K⁻¹",
+   "section": "16.3",
+   "anchor": "16.3-third-law"
+  },
+  {
+   "sym": "ΔS°",
+   "concept": "standard-entropy-change",
+   "meaning": "反应的标准熵变",
+   "unit": "J/K",
+   "section": "16.3",
+   "anchor": "16.3-third-law"
+  },
+  {
+   "sym": "ν_coef",
+   "meaning": "配平方程式中的化学计量系数",
+   "unit": "none",
+   "section": "16.3",
+   "anchor": "16.3-third-law"
+  },
+  {
+   "sym": "G",
+   "concept": "gibbs-free-energy",
+   "meaning": "体系的吉布斯自由能，由其焓、温度和熵定义",
+   "unit": "J",
+   "section": "16.4",
+   "anchor": "16.4-gibbs"
+  },
+  {
+   "sym": "ΔG",
+   "concept": "gibbs-free-energy",
+   "meaning": "恒温恒压下过程的自由能变",
+   "unit": "kJ",
+   "section": "16.4",
+   "anchor": "16.4-gibbs"
+  },
+  {
+   "sym": "H",
+   "concept": "enthalpy",
+   "meaning": "体系的焓，等于其内能与压强和体积之积的和",
+   "unit": "J",
+   "section": "16.4",
+   "anchor": "16.4-gibbs"
+  },
+  {
+   "sym": "ΔH",
+   "concept": "enthalpy-change",
+   "meaning": "过程的焓变，在恒压下等于体系的热量",
+   "unit": "kJ",
+   "section": "16.4",
+   "anchor": "16.4-gibbs"
+  },
+  {
+   "sym": "q_sys",
+   "concept": "heat-flow",
+   "meaning": "体系得到的热量，在恒压下等于焓变",
+   "unit": "J",
+   "section": "16.4",
+   "anchor": "16.4-gibbs"
+  },
+  {
+   "sym": "w_max",
+   "concept": "work",
+   "meaning": "过程在可逆条件下所能做的最大功，指膨胀功以外的各种功",
+   "unit": "kJ",
+   "section": "16.4",
+   "anchor": "16.4-free-work"
+  },
+  {
+   "sym": "ΔG°",
+   "concept": "standard-free-energy-change",
+   "meaning": "标准自由能变，即过程在标准条件下发生时的自由能变",
+   "unit": "kJ/mol",
+   "section": "16.4",
+   "anchor": "16.4-calculating"
+  },
+  {
+   "sym": "ΔH°",
+   "concept": "enthalpy-change",
+   "meaning": "标准焓变，即过程在标准状态条件下发生时的焓变",
+   "unit": "kJ",
+   "section": "16.4",
+   "anchor": "16.4-calculating"
+  },
+  {
+   "sym": "ΔG_f°",
+   "concept": "standard-free-energy-of-formation",
+   "meaning": "物质由处于标准状态的各元素生成时的标准生成自由能",
+   "unit": "kJ/mol",
+   "section": "16.4",
+   "anchor": "16.4-calculating"
+  },
+  {
+   "sym": "ΔH_f°",
+   "concept": "standard-enthalpy-of-formation",
+   "meaning": "标准生成焓，即在标准状态条件下由各元素最稳定的形态恰好生成 1 mol 物质时的焓变",
+   "unit": "kJ/mol",
+   "section": "16.4",
+   "anchor": "16.4-ex-vaporization"
+  },
+  {
+   "sym": "ΔG_1°",
+   "concept": "standard-free-energy-change",
+   "meaning": "两个耦合反应中第一个反应的标准自由能变",
+   "unit": "kJ",
+   "section": "16.4",
+   "anchor": "16.4-coupled"
+  },
+  {
+   "sym": "ΔG_2°",
+   "concept": "standard-free-energy-change",
+   "meaning": "两个耦合反应中第二个反应的标准自由能变",
+   "unit": "kJ",
+   "section": "16.4",
+   "anchor": "16.4-coupled"
+  },
+  {
+   "sym": "R",
+   "concept": "ideal-gas-constant",
+   "meaning": "理想气体常数，8.314 J/K mol",
+   "unit": "J mol⁻¹ K⁻¹",
+   "section": "16.4",
+   "anchor": "16.4-equilibrium"
+  },
+  {
+   "sym": "Q_c",
+   "concept": "reaction-quotient",
+   "meaning": "反应商，即体系的质量作用表达式的数值",
+   "unit": "none",
+   "section": "16.4",
+   "anchor": "16.4-equilibrium"
+  },
+  {
+   "sym": "Q_P",
+   "concept": "reaction-quotient",
+   "meaning": "用分压表示的反应商，用于气相平衡",
+   "unit": "none",
+   "section": "16.4",
+   "anchor": "16.4-equilibrium"
+  },
+  {
+   "sym": "K",
+   "concept": "equilibrium-constant",
+   "meaning": "平衡常数，即体系处于平衡时反应商的值",
+   "unit": "none",
+   "section": "16.4",
+   "anchor": "16.4-equilibrium"
+  },
+  {
+   "sym": "K_P",
+   "concept": "equilibrium-constant",
+   "meaning": "用分压表示的平衡常数",
+   "unit": "none",
+   "section": "16.4",
+   "anchor": "16.4-equilibrium"
+  },
+  {
+   "sym": "K_sp",
+   "concept": "solubility-product",
+   "meaning": "溶度积常数，即微溶离子化合物溶解的平衡常数",
+   "unit": "none",
+   "section": "16.4",
+   "anchor": "16.4-ex-ksp"
+  },
+  {
+   "sym": "Q_conc",
+   "concept": "reaction-quotient",
+   "meaning": "用物质的量浓度表示的反应商",
+   "unit": "none",
+   "section": "16.4",
+   "anchor": "16.4-equilibrium"
+  },
+  {
+   "sym": "S",
+   "concept": "entropy",
+   "meaning": "体系的熵，一个度量其物质和能量分散程度的状态函数",
+   "unit": "J/K",
+   "section": "16.3",
+   "anchor": "16.3-third-law"
+  },
+  {
+   "sym": "T",
+   "concept": "temperature",
+   "meaning": "过程进行时的开尔文温度",
+   "unit": "K",
+   "section": "16.3",
+   "anchor": "16.3-second-law"
+  },
+  {
+   "sym": "ΔS",
+   "concept": "entropy",
+   "meaning": "过程的熵变，即其终态熵与始态熵之差",
+   "unit": "J/K",
+   "section": "16.3",
+   "anchor": "16.3-second-law"
+  },
+  {
+   "sym": "q_rev",
+   "concept": "heat-flow",
+   "meaning": "可逆热，即始末态相同的理论可逆过程的热量",
+   "unit": "J",
+   "section": "16.3",
+   "anchor": "16.3-second-law"
+  },
+  {
+   "sym": "S",
+   "concept": "entropy",
+   "meaning": "体系的熵，一个度量其物质和能量分散程度的状态函数",
+   "unit": "J/K",
+   "section": "16.4",
+   "anchor": "16.4-gibbs"
+  },
+  {
+   "sym": "S°",
+   "concept": "standard-entropy",
+   "meaning": "物质的标准熵，即 1 mol 物质在 1 bar 下的熵，通常列出 298.15 K 时的值",
+   "unit": "J mol⁻¹ K⁻¹",
+   "section": "16.4",
+   "anchor": "16.4-ex-vaporization"
+  },
+  {
+   "sym": "T",
+   "concept": "temperature",
+   "meaning": "过程进行时的开尔文温度",
+   "unit": "K",
+   "section": "16.4",
+   "anchor": "16.4-gibbs"
+  },
+  {
+   "sym": "ΔS",
+   "concept": "entropy",
+   "meaning": "过程的熵变，即其终态熵与始态熵之差",
+   "unit": "J/K",
+   "section": "16.4",
+   "anchor": "16.4-gibbs"
+  },
+  {
+   "sym": "ΔS°",
+   "concept": "standard-entropy-change",
+   "meaning": "反应的标准熵变",
+   "unit": "J/K",
+   "section": "16.4",
+   "anchor": "16.4-calculating"
+  },
+  {
+   "sym": "ΔS_univ",
+   "concept": "entropy-change-of-universe",
+   "meaning": "宇宙的熵变，即体系与环境合在一起的熵变",
+   "unit": "J/K",
+   "section": "16.4",
+   "anchor": "16.4-gibbs"
+  },
+  {
+   "sym": "q_surr",
+   "concept": "heat-flow",
+   "meaning": "环境得到的热量，在环境极其庞大时是可逆热的良好近似",
+   "unit": "J",
+   "section": "16.4",
+   "anchor": "16.4-gibbs"
+  },
+  {
+   "sym": "w",
+   "concept": "work",
+   "meaning": "自发过程可以完成的有用功",
+   "unit": "J",
+   "section": "16.4",
+   "anchor": "16.4-free-work",
+   "redefines": true
+  }
+ ]
+}

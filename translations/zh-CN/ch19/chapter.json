@@ -1,0 +1,113 @@
+{
+ "id": "19",
+ "dir": "ch19",
+ "title": "过渡金属与配位化学",
+ "intro": {
+  "module": "m68841",
+  "slug": "19-introduction"
+ },
+ "sections": [
+  {
+   "id": "19.1",
+   "module": "m68842",
+   "title": "过渡金属及其化合物的存在、制备与性质",
+   "slug": "19-1-occurrence-preparation-and-properties-of-transition-metals-and-their-compounds"
+  },
+  {
+   "id": "19.2",
+   "module": "m68843",
+   "title": "过渡金属的配位化学",
+   "slug": "19-2-coordination-chemistry-of-transition-metals"
+  },
+  {
+   "id": "19.3",
+   "module": "m68844",
+   "title": "配位化合物的光谱性质与磁性质",
+   "slug": "19-3-spectroscopic-and-magnetic-properties-of-coordination-compounds"
+  }
+ ],
+ "variables": [
+  {
+   "sym": "E_std",
+   "concept": "standard-electrode-potential",
+   "meaning": "半反应的标准还原电势，例如重铬酸根、高锰酸根或二氧化钛在酸性溶液中被还原的半反应",
+   "unit": "V",
+   "section": "19.1",
+   "anchor": "19.1-properties"
+  },
+  {
+   "sym": "Δ_oct",
+   "concept": "crystal-field-splitting",
+   "meaning": "八面体配合物的晶体场分裂，即其 eg 与 t2g 轨道之间的能量差",
+   "unit": "J",
+   "section": "19.3",
+   "anchor": "19.3-cft"
+  },
+  {
+   "sym": "P_pair",
+   "concept": "pairing-energy",
+   "meaning": "成对能，即把两个自旋相反的电子放入同一个轨道所需的能量",
+   "unit": "J",
+   "section": "19.3",
+   "anchor": "19.3-cft"
+  },
+  {
+   "sym": "Δ_tet",
+   "concept": "crystal-field-other-geometries",
+   "meaning": "四面体配合物的晶体场分裂，即其 t2 与 e 轨道之间的能量差",
+   "unit": "J",
+   "section": "19.3",
+   "anchor": "19.3-ex-other-geometries"
+  },
+  {
+   "sym": "λ",
+   "concept": "wavelength",
+   "meaning": "配合物所吸收光的波长，例如 [Ti(H₂O)₆]³⁺ 吸收极大处的 499 nm",
+   "unit": "nm",
+   "section": "19.3",
+   "anchor": "19.3-ex-colors"
+  },
+  {
+   "sym": "ν",
+   "concept": "frequency",
+   "meaning": "在吸收极大处被吸收的光的频率",
+   "unit": "Hz",
+   "section": "19.3",
+   "anchor": "19.3-ex-colors"
+  },
+  {
+   "sym": "E",
+   "concept": "photon-energy",
+   "type": "energy",
+   "meaning": "所吸收光的一个光子的能量，等于吸收极大处的晶体场分裂",
+   "unit": "J",
+   "section": "19.3",
+   "anchor": "19.3-ex-colors"
+  },
+  {
+   "sym": "c",
+   "concept": "wave-speed-relation",
+   "type": "velocity",
+   "meaning": "真空中的光速，等于波长与频率的乘积",
+   "unit": "m/s",
+   "section": "19.3",
+   "anchor": "19.3-ex-colors"
+  },
+  {
+   "sym": "h",
+   "concept": "blackbody-radiation",
+   "meaning": "普朗克常量，6.63 × 10⁻³⁴ J s",
+   "unit": "J s",
+   "section": "19.3",
+   "anchor": "19.3-ex-colors"
+  },
+  {
+   "sym": "T",
+   "concept": "temperature",
+   "meaning": "超导材料的温度，例如低于 92 K 的 YBa₂Cu₃O₇",
+   "unit": "K",
+   "section": "19.1",
+   "anchor": "19.1-superconductors"
+  }
+ ]
+}

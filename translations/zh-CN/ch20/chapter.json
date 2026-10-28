@@ -1,0 +1,36 @@
+{
+ "id": "20",
+ "dir": "ch20",
+ "title": "有机化学",
+ "intro": {
+  "module": "m68845",
+  "slug": "20-introduction"
+ },
+ "sections": [
+  {
+   "id": "20.1",
+   "module": "m68846",
+   "title": "烃",
+   "slug": "20-1-hydrocarbons"
+  },
+  {
+   "id": "20.2",
+   "module": "m68847",
+   "title": "醇和醚",
+   "slug": "20-2-alcohols-and-ethers"
+  },
+  {
+   "id": "20.3",
+   "module": "m68848",
+   "title": "醛、酮、羧酸和酯",
+   "slug": "20-3-aldehydes-ketones-carboxylic-acids-and-esters"
+  },
+  {
+   "id": "20.4",
+   "module": "m68849",
+   "title": "胺和酰胺",
+   "slug": "20-4-amines-and-amides"
+  }
+ ],
+ "variables": []
+}

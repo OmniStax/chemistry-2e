@@ -1,0 +1,695 @@
+{
+  "id": "11.3",
+  "module": "m68782",
+  "chapter": "11",
+  "title": "溶解度",
+  "short": "溶解度",
+  "lead": "每种溶质在溶剂中都有一个能溶解的限度，溶液可以低于这个限度、恰好处于这个限度，也可以超过这个限度。这个限度随<span data-concept=\"temperature\">温度</span>而变，对气体来说还随<span data-concept=\"gas-pressure\">压强</span>而变；而成对的液体，从可以按任意比例混合到完全不相混合，各种情形都有。",
+  "objectives": [
+    "描述温度和压强对溶解度的影响",
+    "陈述亨利定律，并用它进行涉及气体在液体中溶解度的计算",
+    "解释液–液溶液可能具有的各种溶解程度"
+  ],
+  "summary_html": "<p>一种物质在另一种物质中的溶解程度由若干因素决定，其中包括物质的原子、离子或分子之间可能存在的分子间<span data-concept=\"force\">吸引力</span>的类型和相对强弱。这种溶解的倾向用物质的<span data-concept=\"solubility\">溶解度</span>来量化，即该物质在指定条件下于平衡时在溶液中的最大<span data-concept=\"concentration\">浓度</span>。饱和溶液所含溶质的<span data-concept=\"concentration\">浓度</span>等于其<span data-concept=\"solubility\">溶解度</span>。过饱和溶液是溶质的<span data-concept=\"concentration\">浓度</span>超过其<span data-concept=\"solubility\">溶解度</span>的溶液——这是一种非平衡（不稳定）状态，溶液受到适当扰动时会导致溶质析出。互溶的液体可以按任意比例相溶，不互溶的液体则彼此的<span data-concept=\"solubility\">互溶度</span>极低。气态溶质的<span data-concept=\"solubility\">溶解度</span>随<span data-concept=\"temperature\">温度</span>升高而降低，而大多数（但不是全部）固体溶质的溶解度随<span data-concept=\"temperature\">温度</span>升高而增大。气态溶质在溶液中的<span data-concept=\"concentration\">浓度</span>与溶液所接触气体的<span data-concept=\"partial-pressure\">分压</span>成正比，这一关系称为亨利定律。</p>",
+  "notes": "三个“学习链接”框被略去：可溶性盐的 PhET 模拟、乙酸钠从过饱和溶液中析出的视频，以及暖手袋结晶的视频。例 11.2 保留书中对 1.2 × 10⁻³ mol/L 的溶解度所写的“约 ~1.2 mol/L”，例 11.1 的“学习检测”的答案则按书中印刷的样子保留“100.0 mL 中 7.25 × 10⁻³”，不带它的单位克。",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      },
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ]
+  },
+  "built": "2026-10-26",
+  "exercises_lead": "",
+  "exercise_notes": "布鲁姆层级、概念标签和提示均由 AI 生成。答案取自书后答案以及“学习检测”的答案。没有答案的数值习题 fs-idm19146000（本章习题 24，水族箱中溶解氧的质量）被略去，也不给它算出答案。没有答案的概念性习题（16、18 和 22）以及没有答案的选择题 fs-idm7358128（习题 20）作为开放题保留，附有选项但不评分，并附有一条标明为 OmniStax 自己所作的建议思路。有答案的习题 fs-idp128725184 在书中印在 11.4 中，为习题 27，现放在这里，因为互溶性和图 11.14 是在本节讲授的。数值答案接受 2% 的容差，但 KBr 的质量分数除外，书中把它修约到一位有效数字，容差为 10%。",
+  "figures": [
+    {
+      "id": "sim-gas-solubility",
+      "kind": "sim",
+      "number": "11.8",
+      "originals": [
+        "/media/ch11/CNX_Chem_11_03_gasdissolv.jpg"
+      ],
+      "original_caption": "这些气体在水中的溶解度随温度升高而降低。所有溶解度都是在溶液上方气体的压强恒定为 101.3 kPa（1 atm）时测得的。",
+      "draws": [
+        "concentration",
+        "pressure",
+        "temperature",
+        "equilibrium-constant"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "curve names over the drop lines; note without plain k or the caption"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-o2-bubbles",
+      "kind": "photo",
+      "number": "11.9",
+      "draws": []
+    },
+    {
+      "id": "fig-beverage",
+      "kind": "photo",
+      "number": "11.10",
+      "draws": []
+    },
+    {
+      "id": "fig-recompress",
+      "kind": "photo",
+      "number": "11.11",
+      "draws": []
+    },
+    {
+      "id": "fig-ammonia",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-lake-nyos",
+      "kind": "photo",
+      "number": "11.12",
+      "draws": []
+    },
+    {
+      "id": "sim-nyos",
+      "kind": "sim",
+      "draws": [
+        "concentration",
+        "pressure",
+        "length",
+        "equilibrium-constant"
+      ],
+      "conventions": [
+        "O",
+        "C"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "parcel kept in the water; depth title and Pg label off the bracket"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-antifreeze",
+      "kind": "photo",
+      "number": "11.13",
+      "draws": []
+    },
+    {
+      "id": "fig-oil-water",
+      "kind": "photo",
+      "number": "11.14",
+      "draws": []
+    },
+    {
+      "id": "fig-bromine",
+      "kind": "photo",
+      "number": "11.15",
+      "draws": []
+    },
+    {
+      "id": "sim-solid-solubility",
+      "kind": "sim",
+      "number": "11.16",
+      "originals": [
+        "/media/ch11/CNX_Chem_11_03_solubility.jpg"
+      ],
+      "original_caption": "此图显示了几种固体的溶解度如何随温度变化。",
+      "draws": [
+        "temperature",
+        "mass"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "curve names over the drop line; notes that restated the headline dropped"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-handwarmer",
+      "kind": "photo",
+      "number": "11.17",
+      "draws": []
+    }
+  ],
+  "coverage": [
+    {
+      "span": "solubility",
+      "concept": "solubility-and-saturation",
+      "verb": "introduces"
+    },
+    {
+      "span": "solubility",
+      "concept": "saturated-solution",
+      "verb": "introduces"
+    },
+    {
+      "span": "solubility",
+      "concept": "unsaturated-solution",
+      "verb": "introduces"
+    },
+    {
+      "span": "supersaturated",
+      "concept": "supersaturated-solutions",
+      "verb": "introduces"
+    },
+    {
+      "span": "gases",
+      "concept": "gas-solubility-and-temperature",
+      "verb": "introduces"
+    },
+    {
+      "span": "henry",
+      "concept": "henrys-law",
+      "verb": "introduces"
+    },
+    {
+      "span": "henry",
+      "concept": "henrys-law-calculations",
+      "verb": "introduces"
+    },
+    {
+      "span": "henry",
+      "concept": "gas-solubility-and-temperature",
+      "verb": "uses"
+    },
+    {
+      "span": "nyos",
+      "concept": "supersaturated-solutions",
+      "verb": "uses"
+    },
+    {
+      "span": "nyos",
+      "concept": "henrys-law",
+      "verb": "uses"
+    },
+    {
+      "span": "liquids",
+      "concept": "miscibility",
+      "verb": "introduces"
+    },
+    {
+      "span": "liquids",
+      "concept": "miscible",
+      "verb": "introduces"
+    },
+    {
+      "span": "liquids",
+      "concept": "immiscible",
+      "verb": "introduces"
+    },
+    {
+      "span": "liquids",
+      "concept": "partially-miscible",
+      "verb": "introduces"
+    },
+    {
+      "span": "solids",
+      "concept": "solid-solubility-and-temperature",
+      "verb": "introduces"
+    },
+    {
+      "span": "solids",
+      "concept": "solubility-and-saturation",
+      "verb": "uses"
+    },
+    {
+      "span": "solids",
+      "concept": "supersaturated-solutions",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idp3359488",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-henry"
+      },
+      "cite": "henry",
+      "prompt": "将 0 °C 的 100.0 mL 水样暴露于含有某种气态溶质的气氛中（该溶质的压强为 152 torr），结果有 1.45 × 10<sup>−3</sup> g 该溶质溶解。用亨利定律求这种气态溶质在压强为 760 torr 时的溶解度。",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 0.0725,
+        "unit": "g/L",
+        "hint": "由第一次测量求出 k，单位取克每升每托，再乘以新的压强。",
+        "solution": "100.0 mL 中为 7.25 × 10<sup>−3</sup>，即 0.0725 g/L"
+      }
+    },
+    {
+      "id": "cyl2",
+      "source_id": "fs-idm260338832",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-trout"
+      },
+      "cite": "henry",
+      "prompt": "上述溪流回到正常的夏季温度 15 °C 时，预计溶解氧浓度是多少？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 8.2,
+        "unit": "mg/L",
+        "hint": "从图 11.8 中读出氧气在 15 °C 时的溶解度以求出 k，乘以 0.17 atm，再把 mol/L 换算为 mg/L。",
+        "solution": "8.2 mg/L"
+      }
+    },
+    {
+      "id": "e1",
+      "source_id": "fs-idp15462384",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "supersaturated",
+      "prompt": "假设给你一份澄清的硫代硫酸钠 Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub> 溶液。你怎样判断这份溶液是不饱和、饱和还是过饱和的？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "向溶液中加入一小粒固体硫代硫酸钠晶种，观察它发生什么变化。如果晶种溶解，溶液是不饱和的：它的浓度低于溶解度，所以还能容纳更多溶质。如果晶种既不溶解也不长大，也没有发生别的变化，溶液就是饱和的：它与固体处于平衡，溶解与结晶的速率相等。如果晶体从晶种上迅速长大，固体 Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub> 在整个液体中析出，那么这份溶液原先是过饱和的。它所含的溶质超过了它的溶解度，处于非平衡态，晶种引发了过量溶质的析出，这一过程一直持续到浓度降至溶解度，剩下的溶液是饱和的。"
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idp18282480",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "solids",
+      "prompt": "大多数固体在水中的过饱和溶液是通过冷却饱和溶液制得的。大多数气体在水中的过饱和溶液是通过加热饱和溶液制得的。解释这两种做法不同的原因。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "冷却溶液时，固体的溶解度通常降低，而加热溶液时，气体的溶解度通常降低。"
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idm29975600",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "liquids",
+      "prompt": "对下面的观察结果提出一种解释：乙醇 C<sub>2</sub>H<sub>5</sub>OH 与水完全互溶，而乙硫醇 C<sub>2</sub>H<sub>5</sub>SH 只能溶解到每 100 mL 水 1.5 g 的程度。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "乙醇与水互溶，是因为它的 O–H 基团参与同水分子的氢键。氧原子小而电负性很大，所以乙醇与水形成的 O–H 氢键至少与纯乙醇内部和纯水内部的吸引力一样强，两种分子可以按任意比例混合。硫原子比氧原子大得多，电负性也小得多，与氢接近，所以乙硫醇的 S–H 键只有微弱的极性，这种分子不能形成显著的氢键。乙硫醇只通过微弱的偶极–偶极作用力和色散力吸引水，这不足以克服水分子之间强得多的氢键，而要给乙硫醇腾出位置就必须破坏这些氢键。因此只有少量溶解，约为每 100 mL 水 1.5 g。"
+      }
+    },
+    {
+      "id": "e4",
+      "source_id": "fs-idp50664544",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "solids",
+      "prompt": "计算 10 °C 时 KBr 在水中的饱和溶液里 KBr 的质量分数。有用的数据见图 11.16，并把算得的百分数报告到一位有效数字。",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 40,
+        "unit": "%",
+        "tol": 0.1,
+        "hint": "读出 10 °C 时使 100 g 水饱和的 KBr 的质量，再除以整个溶液的质量。",
+        "solution": "40%"
+      }
+    },
+    {
+      "id": "e5",
+      "source_id": "fs-idm7358128",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "gases",
+      "prompt": "下列气体中，预计哪一种在水中最易溶解？请解释你的理由。<br>（a）CH<sub>4</sub><br>（b）CCl<sub>4</sub><br>（c）CHCl<sub>3</sub>",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "（c）CHCl<sub>3</sub>，即氯仿，预计溶解度最大。气体溶解时没有溶质–溶质吸引力需要克服，所以溶质–溶剂吸引力是影响其溶解度的唯一能量因素。CH<sub>4</sub> 和 CCl<sub>4</sub> 是对称的四面体形分子，其键偶极相互抵消，所以二者都是非极性的，只通过色散力吸引水分子。在 CHCl<sub>3</sub> 中，一个氯原子被氢取代，键偶极不再抵消，分子是极性的。极性的氯仿分子除了色散力之外，还与极性的水分子之间有偶极–偶极吸引，这是三者中最强的溶质–溶剂吸引力；氯仿在水中的溶解度约为只靠色散力束缚的氧气的 100 倍。"
+      }
+    },
+    {
+      "id": "e6",
+      "source_id": "fs-idp47233328",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "henry",
+      "prompt": "在 0 °C 和 1.00 atm 下，1 L 水中最多可溶解 0.70 g O<sub>2</sub>。在 0 °C 和 4.00 atm 下，1 L 水中溶解多少克 O<sub>2</sub>？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 2.8,
+        "unit": "g",
+        "hint": "温度固定时，溶解度与气体的压强成正比。",
+        "solution": "2.8 g"
+      }
+    },
+    {
+      "id": "e7",
+      "source_id": "fs-idp36424272",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "henry",
+      "prompt": "参见图 11.10。<br>（a）打开瓶子时，饮料中溶解的 CO<sub>2</sub> 的浓度发生了什么变化？<br>（b）是什么造成了这一变化？<br>（c）这种饮料对 CO<sub>2</sub> 是不饱和、饱和还是过饱和的？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "（a）溶解的 CO<sub>2</sub> 的浓度降低了：一部分二氧化碳以照片中看到的小气泡的形式离开了溶液。（b）打开之前，饮料在相对较高的气体压强下被 CO<sub>2</sub> 饱和。打开瓶子释放了这一压强，饮料上方的 CO<sub>2</sub> 压强降到了它在空气中低得多的数值。按亨利定律 $\\kCg=\\kkH\\kPg$，气体的溶解度与它在溶液上方的压强成正比，所以 CO<sub>2</sub> 的溶解度下降，超出新溶解度的那部分溶解气体开始逸出。（c）刚打开之后，饮料对 CO<sub>2</sub> 是过饱和的。它所含的 CO<sub>2</sub> 仍多于它在较低压强下的溶解度，浓度会不断下降，直到饮料跑气并达到它的溶解度，此时它是饱和的。"
+      }
+    },
+    {
+      "id": "e8",
+      "source_id": "fs-idp43619984",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "henry",
+      "prompt": "CO<sub>2</sub> 的亨利常数在 25 °C 时为 3.4 × 10<sup>−2</sup> <em>M</em>/atm。假定溶液为理想行为，要使一罐柠檬青柠味汽水中的 CO<sub>2</sub> 浓度保持在 0.10 <em>M</em>，需要多大的二氧化碳压强？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 2.9,
+        "unit": "atm",
+        "hint": "把 C<sub>g</sub> = kP<sub>g</sub> 变形，解出压强。",
+        "solution": "2.9 atm"
+      }
+    },
+    {
+      "id": "e9",
+      "source_id": "fs-idm32553568",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "henry",
+      "prompt": "假定溶液为理想行为，配制 1.25 L 3.20 <em>M</em> 的盐酸溶液，需要多少升在 30.0 °C 和 745 torr 下测得的 HCl 气体？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 102,
+        "unit": "L",
+        "hint": "先求溶液所需 HCl 的物质的量，再用理想气体状态方程求这么多气体的体积。",
+        "solution": "102 L HCl"
+      }
+    },
+    {
+      "id": "e10",
+      "source_id": "fs-idp128725184",
+      "source_section": "11.4",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "liquids",
+      "prompt": "图 11.14 所示的宏观行为的微观解释是什么？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "同种分子之间的键比异种分子之间的键更强。因此，会有一些区域，其中水分子把油分子排除在外，也会有另一些区域，其中油分子把水分子排除在外，从而形成非均匀的区域。"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "henrys-law-calculations"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "henrys-law-calculations"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "gas-solubility-and-temperature"
+    },
+    {
+      "exercise": "e1",
+      "concept": "supersaturated-solutions"
+    },
+    {
+      "exercise": "e1",
+      "concept": "solubility-and-saturation"
+    },
+    {
+      "exercise": "e2",
+      "concept": "supersaturated-solutions"
+    },
+    {
+      "exercise": "e2",
+      "concept": "gas-solubility-and-temperature"
+    },
+    {
+      "exercise": "e2",
+      "concept": "solid-solubility-and-temperature"
+    },
+    {
+      "exercise": "e3",
+      "concept": "miscibility"
+    },
+    {
+      "exercise": "e4",
+      "concept": "solid-solubility-and-temperature"
+    },
+    {
+      "exercise": "e4",
+      "concept": "solubility-and-saturation"
+    },
+    {
+      "exercise": "e5",
+      "concept": "gas-solubility-and-temperature"
+    },
+    {
+      "exercise": "e6",
+      "concept": "henrys-law-calculations"
+    },
+    {
+      "exercise": "e7",
+      "concept": "henrys-law"
+    },
+    {
+      "exercise": "e7",
+      "concept": "supersaturated-solutions"
+    },
+    {
+      "exercise": "e8",
+      "concept": "henrys-law-calculations"
+    },
+    {
+      "exercise": "e9",
+      "concept": "henrys-law-calculations"
+    },
+    {
+      "exercise": "e10",
+      "concept": "miscibility"
+    }
+  ],
+  "referents": [
+    {
+      "id": "methane",
+      "label": "溶于水的甲烷",
+      "figures": [
+        "sim-gas-solubility"
+      ]
+    },
+    {
+      "id": "oxygen",
+      "label": "溶于水的氧气",
+      "figures": [
+        "sim-gas-solubility"
+      ]
+    },
+    {
+      "id": "carbon-monoxide",
+      "label": "溶于水的一氧化碳",
+      "figures": [
+        "sim-gas-solubility"
+      ]
+    },
+    {
+      "id": "nitrogen",
+      "label": "溶于水的氮气",
+      "figures": [
+        "sim-gas-solubility"
+      ]
+    },
+    {
+      "id": "helium",
+      "label": "溶于水的氦气",
+      "figures": [
+        "sim-gas-solubility"
+      ]
+    },
+    {
+      "id": "lake",
+      "label": "火山口湖",
+      "figures": [
+        "sim-nyos"
+      ]
+    },
+    {
+      "id": "parcel",
+      "label": "在湖中上升的水团",
+      "figures": [
+        "sim-nyos"
+      ]
+    },
+    {
+      "id": "sugar",
+      "label": "糖，C₁₂H₂₂O₁₁",
+      "figures": [
+        "sim-solid-solubility"
+      ]
+    },
+    {
+      "id": "kno3",
+      "label": "硝酸钾，KNO₃",
+      "figures": [
+        "sim-solid-solubility"
+      ]
+    },
+    {
+      "id": "nano3",
+      "label": "硝酸钠，NaNO₃",
+      "figures": [
+        "sim-solid-solubility"
+      ]
+    },
+    {
+      "id": "nabr",
+      "label": "溴化钠，NaBr",
+      "figures": [
+        "sim-solid-solubility"
+      ]
+    },
+    {
+      "id": "kbr",
+      "label": "溴化钾，KBr",
+      "figures": [
+        "sim-solid-solubility"
+      ]
+    },
+    {
+      "id": "kcl",
+      "label": "氯化钾，KCl",
+      "figures": [
+        "sim-solid-solubility"
+      ]
+    },
+    {
+      "id": "nacl",
+      "label": "氯化钠，NaCl",
+      "figures": [
+        "sim-solid-solubility"
+      ]
+    },
+    {
+      "id": "cerium-sulfate",
+      "label": "硫酸铈，Ce₂(SO₄)₃",
+      "figures": [
+        "sim-solid-solubility"
+      ]
+    }
+  ],
+  "footnotes": [
+    {
+      "id": "c-o2-solubility",
+      "kind": "correction",
+      "html": "书中把氧气在 30.0 °C 时的溶解度印成约 ~1.2 mol/L。图 11.8 和随后的计算给出的是 $1.2 \\times 10^{-3}$ mol/L。"
+    }
+  ]
+}

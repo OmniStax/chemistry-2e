@@ -1,0 +1,394 @@
+{
+  "id": "9",
+  "dir": "ch09",
+  "title": "气体",
+  "intro": {
+    "module": "m68748",
+    "slug": "9-introduction"
+  },
+  "sections": [
+    {
+      "id": "9.1",
+      "module": "m68750",
+      "title": "气体压强",
+      "slug": "9-1-gas-pressure"
+    },
+    {
+      "id": "9.2",
+      "module": "m68751",
+      "title": "压强、体积、物质的量与温度的关系：理想气体状态方程",
+      "slug": "9-2-relating-pressure-volume-amount-and-temperature-the-ideal-gas-law"
+    },
+    {
+      "id": "9.3",
+      "module": "m68752",
+      "title": "气态物质、混合物与反应的化学计量",
+      "slug": "9-3-stoichiometry-of-gaseous-substances-mixtures-and-reactions"
+    },
+    {
+      "id": "9.4",
+      "module": "m68754",
+      "title": "气体的泻流与扩散",
+      "slug": "9-4-effusion-and-diffusion-of-gases"
+    },
+    {
+      "id": "9.5",
+      "module": "m68758",
+      "title": "分子运动论",
+      "slug": "9-5-the-kinetic-molecular-theory"
+    },
+    {
+      "id": "9.6",
+      "module": "m68759",
+      "title": "非理想气体的行为",
+      "slug": "9-6-non-ideal-gas-behavior"
+    }
+  ],
+  "variables": [
+    {
+      "sym": "P",
+      "concept": "gas-pressure",
+      "meaning": "气体所产生的压强，即其分子碰撞的力除以所撞击的面积",
+      "unit": "Pa (also kPa, bar, psi, atm, torr and mm Hg)",
+      "section": "9.1",
+      "anchor": "9.1-pressure"
+    },
+    {
+      "sym": "F_force",
+      "concept": "force",
+      "meaning": "作用在表面上的力",
+      "unit": "N",
+      "section": "9.1",
+      "anchor": "9.1-pressure"
+    },
+    {
+      "sym": "A_area",
+      "concept": "area",
+      "meaning": "力所作用的面积",
+      "unit": "m²",
+      "section": "9.1",
+      "anchor": "9.1-pressure"
+    },
+    {
+      "sym": "p_hydro",
+      "concept": "hydrostatic-pressure",
+      "meaning": "流体静压强，即一段流体柱因重力而产生的压强",
+      "unit": "Pa",
+      "section": "9.1",
+      "anchor": "9.1-barometer"
+    },
+    {
+      "sym": "h_col",
+      "concept": "length",
+      "meaning": "流体柱的高度",
+      "unit": "m",
+      "section": "9.1",
+      "anchor": "9.1-barometer"
+    },
+    {
+      "sym": "ρ",
+      "concept": "density",
+      "meaning": "流体的密度",
+      "unit": "kg/m³",
+      "section": "9.1",
+      "anchor": "9.1-barometer"
+    },
+    {
+      "sym": "g_grav",
+      "concept": "acceleration-due-to-gravity",
+      "meaning": "重力加速度",
+      "unit": "m/s²",
+      "section": "9.1",
+      "anchor": "9.1-barometer"
+    },
+    {
+      "sym": "P_atm",
+      "concept": "atmospheric-pressure-and-barometer",
+      "type": "pressure",
+      "meaning": "大气的压强",
+      "unit": "torr",
+      "section": "9.1"
+    },
+    {
+      "sym": "P_gas",
+      "concept": "gas-pressure",
+      "meaning": "烧瓶中气体的压强",
+      "unit": "torr",
+      "section": "9.1"
+    },
+    {
+      "sym": "P",
+      "concept": "gas-pressure",
+      "meaning": "气体的压强，由连在盛放它的容器上的压力计测得",
+      "unit": "atm (also kPa, torr, psi and bar, as the measurement is reported)",
+      "section": "9.2",
+      "anchor": "9.2-amontons"
+    },
+    {
+      "sym": "V",
+      "concept": "volume",
+      "meaning": "气体的体积，即限制住它的容器的体积",
+      "unit": "L",
+      "section": "9.2",
+      "anchor": "9.2-charles"
+    },
+    {
+      "sym": "n",
+      "concept": "mole",
+      "meaning": "容器中气体的物质的量，以摩尔计",
+      "unit": "mol",
+      "section": "9.2",
+      "anchor": "9.2-avogadro"
+    },
+    {
+      "sym": "T",
+      "concept": "temperature",
+      "meaning": "气体的开尔文温度，每一个气体定律的计算都要用它",
+      "unit": "K",
+      "section": "9.2",
+      "anchor": "9.2-amontons"
+    },
+    {
+      "sym": "R",
+      "concept": "ideal-gas-constant",
+      "meaning": "理想气体常数，也称普适气体常数，其数值取决于压强、体积和温度所用的单位",
+      "unit": "0.08206 L atm mol⁻¹ K⁻¹, or 8.314 kPa L mol⁻¹ K⁻¹",
+      "section": "9.2",
+      "anchor": "9.2-ideal-gas-law"
+    },
+    {
+      "sym": "P_1",
+      "concept": "gas-pressure",
+      "meaning": "处于第一种状态（问题所描述的变化之前）的封闭气体的压强",
+      "unit": "atm",
+      "section": "9.2",
+      "anchor": "9.2-amontons"
+    },
+    {
+      "sym": "P_2",
+      "concept": "gas-pressure",
+      "meaning": "同一气体处于第二种状态（变化之后）的压强",
+      "unit": "atm",
+      "section": "9.2",
+      "anchor": "9.2-amontons"
+    },
+    {
+      "sym": "V_1",
+      "concept": "volume",
+      "meaning": "处于第一种状态的封闭气体的体积",
+      "unit": "L",
+      "section": "9.2",
+      "anchor": "9.2-charles"
+    },
+    {
+      "sym": "V_2",
+      "concept": "volume",
+      "meaning": "同一气体处于第二种状态的体积",
+      "unit": "L",
+      "section": "9.2",
+      "anchor": "9.2-charles"
+    },
+    {
+      "sym": "T_1",
+      "concept": "temperature",
+      "meaning": "处于第一种状态的封闭气体的开尔文温度",
+      "unit": "K",
+      "section": "9.2",
+      "anchor": "9.2-amontons"
+    },
+    {
+      "sym": "T_2",
+      "concept": "temperature",
+      "meaning": "同一气体处于第二种状态的开尔文温度",
+      "unit": "K",
+      "section": "9.2",
+      "anchor": "9.2-amontons"
+    },
+    {
+      "sym": "n_1",
+      "concept": "mole",
+      "meaning": "处于第一种状态的封闭气体的物质的量，以摩尔计",
+      "unit": "mol",
+      "section": "9.2",
+      "anchor": "9.2-avogadro"
+    },
+    {
+      "sym": "n_2",
+      "concept": "mole",
+      "meaning": "同一气体处于第二种状态的物质的量",
+      "unit": "mol",
+      "section": "9.2",
+      "anchor": "9.2-avogadro"
+    },
+    {
+      "sym": "d",
+      "concept": "density",
+      "meaning": "气体的密度，即其质量除以体积",
+      "unit": "g/L",
+      "section": "9.3",
+      "anchor": "9.3-density"
+    },
+    {
+      "sym": "MM",
+      "concept": "molar-mass",
+      "meaning": "气体的摩尔质量，即其质量除以其物质的量（以摩尔计）",
+      "unit": "g/mol",
+      "section": "9.3",
+      "anchor": "9.3-density"
+    },
+    {
+      "sym": "m",
+      "concept": "mass",
+      "meaning": "气体样品的质量",
+      "unit": "g",
+      "section": "9.3",
+      "anchor": "9.3-density"
+    },
+    {
+      "sym": "P_total",
+      "concept": "gas-pressure",
+      "meaning": "混合气体的总压",
+      "unit": "atm",
+      "section": "9.3",
+      "anchor": "9.3-dalton"
+    },
+    {
+      "sym": "P_A",
+      "concept": "partial-pressure",
+      "meaning": "气体 A 的分压，即它单独存在于容器中时所产生的压强",
+      "unit": "atm",
+      "section": "9.3",
+      "anchor": "9.3-dalton"
+    },
+    {
+      "sym": "P_B",
+      "concept": "partial-pressure",
+      "meaning": "气体 B 的分压",
+      "unit": "atm",
+      "section": "9.3",
+      "anchor": "9.3-dalton"
+    },
+    {
+      "sym": "P_C",
+      "concept": "partial-pressure",
+      "meaning": "气体 C 的分压",
+      "unit": "atm",
+      "section": "9.3",
+      "anchor": "9.3-dalton"
+    },
+    {
+      "sym": "X_A",
+      "concept": "mole-fraction",
+      "meaning": "气体 A 的摩尔分数，即其物质的量除以混合物的总物质的量",
+      "unit": "none",
+      "section": "9.3",
+      "anchor": "9.3-dalton"
+    },
+    {
+      "sym": "n_A",
+      "concept": "mole",
+      "meaning": "混合物中气体 A 的物质的量",
+      "unit": "mol",
+      "section": "9.3",
+      "anchor": "9.3-dalton"
+    },
+    {
+      "sym": "n_total",
+      "concept": "mole",
+      "meaning": "混合物中所有气体的总物质的量",
+      "unit": "mol",
+      "section": "9.3",
+      "anchor": "9.3-dalton"
+    },
+    {
+      "sym": "MM_A",
+      "concept": "molar-mass",
+      "meaning": "气体 A 的摩尔质量",
+      "unit": "g/mol",
+      "section": "9.4",
+      "anchor": "9.4-graham"
+    },
+    {
+      "sym": "MM_B",
+      "concept": "molar-mass",
+      "meaning": "气体 B 的摩尔质量",
+      "unit": "g/mol",
+      "section": "9.4",
+      "anchor": "9.4-graham"
+    },
+    {
+      "sym": "KE",
+      "concept": "kinetic-energy",
+      "meaning": "质量为 m、速率为 u 的粒子的动能",
+      "unit": "J",
+      "section": "9.5",
+      "anchor": "9.5-speeds"
+    },
+    {
+      "sym": "u",
+      "concept": "speed",
+      "meaning": "单个气体分子的速率",
+      "unit": "m/s",
+      "section": "9.5",
+      "anchor": "9.5-speeds"
+    },
+    {
+      "sym": "u_rms",
+      "concept": "root-mean-square-speed",
+      "type": "velocity",
+      "meaning": "气体分子的方均根速率，即分子速率平方的平均值的平方根",
+      "unit": "m/s",
+      "section": "9.5",
+      "anchor": "9.5-speeds"
+    },
+    {
+      "sym": "KE_avg",
+      "concept": "kinetic-energy",
+      "meaning": "1 摩尔气体分子的平均动能",
+      "unit": "J/mol",
+      "section": "9.5",
+      "anchor": "9.5-speeds"
+    },
+    {
+      "sym": "MM",
+      "concept": "molar-mass",
+      "meaning": "气体的摩尔质量，在速率公式中以千克每摩尔表示",
+      "unit": "kg/mol",
+      "section": "9.5",
+      "anchor": "9.5-speeds"
+    },
+    {
+      "sym": "Z_comp",
+      "concept": "compressibility-factor",
+      "meaning": "压缩因子，即气体的实测摩尔体积除以同温同压下理想气体的摩尔体积",
+      "unit": "none",
+      "section": "9.6",
+      "anchor": "9.6-compressibility"
+    },
+    {
+      "sym": "V_m",
+      "concept": "molar-volume",
+      "meaning": "气体的摩尔体积，即 1 摩尔该气体的体积",
+      "unit": "L/mol",
+      "section": "9.6",
+      "anchor": "9.6-compressibility"
+    },
+    {
+      "sym": "a_vdw",
+      "concept": "van-der-waals-equation",
+      "meaning": "特定气体分子间吸引力的范德瓦耳斯常数",
+      "unit": "L² atm/mol²",
+      "section": "9.6",
+      "anchor": "9.6-van-der-waals"
+    },
+    {
+      "sym": "b_vdw",
+      "concept": "van-der-waals-equation",
+      "type": "volume",
+      "meaning": "特定气体分子大小的范德瓦耳斯常数",
+      "unit": "L/mol",
+      "section": "9.6",
+      "anchor": "9.6-van-der-waals"
+    }
+  ]
+}

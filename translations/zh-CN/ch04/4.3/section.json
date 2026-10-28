@@ -1,0 +1,764 @@
+{
+ "id": "4.3",
+ "module": "m68713",
+ "chapter": "4",
+ "title": "反应的化学计量",
+ "short": "反应的化学计量",
+ "lead": "配平的方程式中的系数给出了反应所消耗和生成的各物质的相对量，就像食谱给出各种原料的用量一样。由它们得到的化学计量因子，再配合<span data-concept=\"molar-mass\">摩尔质量</span>和阿伏加德罗常数，就能把反应中任意两种物质的<span data-concept=\"mole\">摩尔</span>数、分子数和<span data-concept=\"mass\">质量</span>联系起来。",
+ "objectives": [
+  "解释与化学反应有关的化学计量概念",
+  "利用配平的化学方程式导出联系反应物与产物之量的化学计量因子",
+  "进行涉及质量、物质的量和溶液物质的量浓度的化学计量计算"
+ ],
+ "summary_html": "<p>配平的化学方程式可用来描述反应的化学计量（反应物与产物的量之间的关系）。方程式中的系数用来导出化学计量因子，进而可用于计算反应物和产物的<span data-concept=\"mass\">质量</span>、物质的量以及其他定量性质。</p>",
+ "notes": "本节没有印出“学习链接”栏目。书后答案没有给出答案的九道章末习题已略去。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签和权重由 AI 生成。答案取自书后答案和“学习检测”的答案。习题 fs-idp166618800 和 fs-idp16477696（各要求写出六个反应的配平方程式并概述步骤）、fs-idp33547424（由铬和磷酸制氢）、fs-idp102353344（由氯化铜(II)制碘）、fs-idp216213984（制磺胺嘧啶银所需的氧化银）、fs-idp9841552（安全气囊所需的叠氮化钠）、fs-idp89497728（硝酸泄漏）、fs-idp10650096（由氯化钠制盐酸）和 fs-idp158165536（作媒染剂的乙酸钙）在书中没有答案，已略去。有答案的习题 fs-idp147780304 和 fs-idp61309952 引用了 fs-idp166618800 和 fs-idp16477696 中的反应，因此它们的题干已改写，按书中的原话各列出那六个反应，其中（f）小题的结构式画在习题卡片上。数值答案允许 2% 的容差。",
+ "figures": [
+  {
+   "id": "sim-ammonia",
+   "kind": "sim",
+   "draws": [
+    "amount"
+   ],
+   "conventions": [
+    "N",
+    "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "note dropped, it repeated the caption; plus sign kept off the nitrogen"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-iodine",
+   "kind": "photo",
+   "number": "4.10",
+   "draws": []
+  },
+  {
+   "id": "fig-route-al",
+   "kind": "figure",
+   "originals": [
+    "/media/ch04/CNX_Chem_04_03_moleratio1_img.jpg"
+   ],
+   "draws": [
+    "amount"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-route-propane",
+   "kind": "figure",
+   "originals": [
+    "/media/ch04/CNX_Chem_04_03_moleratio2_img.jpg"
+   ],
+   "draws": [
+    "amount"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "molecules of CO2 box added, as the book draws it"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-route-naoh",
+   "kind": "figure",
+   "originals": [
+    "/media/ch04/CNX_Chem_04_03_map2_img.jpg"
+   ],
+   "draws": [
+    "mass",
+    "amount"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-route-octane",
+   "kind": "figure",
+   "originals": [
+    "/media/ch04/CNX_Chem_04_03_map3_img.jpg"
+   ],
+   "draws": [
+    "mass",
+    "amount"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-flowchart",
+   "kind": "sim",
+   "number": "4.11",
+   "originals": [
+    "/media/ch04/CNX_Chem_04_03_flowchart.jpg"
+   ],
+   "original_caption": "该流程图描绘了大多数反应化学计量计算所涉及的各种计算步骤。",
+   "draws": [
+    "mass",
+    "amount",
+    "volume"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "box names wrap inside boxes, factor on two lines, wrapping choices as dropdowns"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-airbag",
+   "kind": "photo",
+   "number": "4.12",
+   "draws": []
+  }
+ ],
+ "coverage": [
+  {
+   "span": "stoichiometry",
+   "concept": "stoichiometry",
+   "verb": "introduces"
+  },
+  {
+   "span": "stoichiometry",
+   "concept": "balanced-equation",
+   "verb": "uses"
+  },
+  {
+   "span": "stoichiometry",
+   "concept": "coefficients-as-ratios",
+   "verb": "uses"
+  },
+  {
+   "span": "factors",
+   "concept": "stoichiometric-factor",
+   "verb": "introduces"
+  },
+  {
+   "span": "factors",
+   "concept": "coefficients-as-ratios",
+   "verb": "uses"
+  },
+  {
+   "span": "moles",
+   "concept": "mole-stoichiometry",
+   "verb": "introduces"
+  },
+  {
+   "span": "moles",
+   "concept": "stoichiometric-factor",
+   "verb": "uses"
+  },
+  {
+   "span": "moles",
+   "concept": "avogadro-number",
+   "verb": "uses"
+  },
+  {
+   "span": "masses",
+   "concept": "mass-stoichiometry",
+   "verb": "introduces"
+  },
+  {
+   "span": "masses",
+   "concept": "mole-stoichiometry",
+   "verb": "uses"
+  },
+  {
+   "span": "masses",
+   "concept": "molar-mass",
+   "verb": "uses"
+  },
+  {
+   "span": "routes",
+   "concept": "mass-stoichiometry",
+   "verb": "reinforces"
+  },
+  {
+   "span": "routes",
+   "concept": "stoichiometric-factor",
+   "verb": "reinforces"
+  },
+  {
+   "span": "routes",
+   "concept": "molarity",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idp48900096",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-moles-reactant"
+   },
+   "cite": "moles",
+   "prompt": "需要多少摩尔 Ca(OH)<sub>2</sub>，才能与 1.36 mol H<sub>3</sub>PO<sub>4</sub> 按方程式 $3\\text{Ca}{(\\text{OH})}_{2}+2{\\text{H}}_{3}{\\text{PO}}_{4}\\;\\longrightarrow \\;{\\text{Ca}}_{3}{({\\text{PO}}_{4})}_{2}+6{\\text{H}}_{2}\\text{O}$ 反应生成 Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub>？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 2.04,
+    "unit": "mol",
+    "hint": "把 H<sub>3</sub>PO<sub>4</sub> 的物质的量乘以因子（每 2 mol H<sub>3</sub>PO<sub>4</sub> 对应 3 mol Ca(OH)<sub>2</sub>）。",
+    "solution": "2.04 mol"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idp9124448",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-product-molecules"
+   },
+   "cite": "moles",
+   "prompt": "按下列方程式，4.0 mol Ca(OH)<sub>2</sub> 反应生成多少个 NH<sub>3</sub> 分子：$${({\\text{NH}}_{4})}_{2}{\\text{SO}}_{4}+\\text{Ca}{(\\text{OH})}_{2}\\;\\longrightarrow \\;2{\\text{NH}}_{3}+{\\text{CaSO}}_{4}+2{\\text{H}}_{2}\\text{O}$$",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 4.8e+24,
+    "unit": "NH₃ molecules",
+    "hint": "用化学计量因子把 Ca(OH)<sub>2</sub> 的物质的量换算成 NH<sub>3</sub> 的物质的量，再用阿伏加德罗常数。",
+    "solution": "4.8 $\\times$ 10<sup>24</sup> 个 NH<sub>3</sub> 分子"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idp113495744",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-masses-product"
+   },
+   "cite": "masses",
+   "prompt": "由 29.0 g 金属镓可制得多少质量的氧化镓 Ga<sub>2</sub>O<sub>3</sub>？该反应的方程式为 $4\\text{Ga}+3{\\text{O}}_{2}\\;\\longrightarrow \\;2{\\text{Ga}}_{2}{\\text{O}}_{3}.$",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 39.0,
+    "unit": "g",
+    "hint": "由 Ga 的质量求出它的物质的量，再求 Ga<sub>2</sub>O<sub>3</sub> 的物质的量，然后求它的质量。",
+    "solution": "39.0 g"
+   }
+  },
+  {
+   "id": "cyl4",
+   "source_id": "fs-idp274853984",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-masses-reactants"
+   },
+   "cite": "masses",
+   "prompt": "按方程式 ${\\text{Fe}}_{2}{\\text{O}}_{3}+3\\text{CO}\\;\\longrightarrow \\;2\\text{Fe}+3{\\text{CO}}_{2}$，与 25.13 g Fe<sub>2</sub>O<sub>3</sub> 反应需要多少质量的 CO？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 13.22,
+    "unit": "g",
+    "hint": "用 Fe<sub>2</sub>O<sub>3</sub> 的摩尔质量、每 1 mol Fe<sub>2</sub>O<sub>3</sub> 对应 3 mol CO 的因子，以及 CO 的摩尔质量。",
+    "solution": "13.22 g"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idp147780304",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "masses",
+   "figure": {
+    "src": "/media/ch04/CNX_Chem_04_03_etheneBr_img.jpg",
+    "alt": "（f）图中所示产物 1,2-二溴乙烷（以结构式画出）的物质的量和质量，它由 12.85 g 乙烯（以结构式画出）与过量 Br2 反应生成。"
+   },
+   "prompt": "确定下列各反应所要求的物质的量和质量：（a）与 10.0 g 金属钠 Na 反应生成氯化钠 NaCl 所需的氯 Cl<sub>2</sub> 的物质的量和质量。（b）1.252 g 氧化汞(II)分解生成的氧的物质的量和质量。（c）生成 128 g 氧所需的硝酸钠 NaNO<sub>3</sub> 的物质的量和质量。（NaNO<sub>2</sub> 是另一种产物。）（d）20.0 kg 碳在过量氧中燃烧生成的二氧化碳的物质的量和质量。（e）制取 1.500 kg 氧化铜(II)所需的碳酸铜(II)的物质的量和质量。（CO<sub>2</sub> 是另一种产物。）（f）12.85 g 图中所示的反应物与过量 Br<sub>2</sub> 反应生成的图中所示产物的物质的量和质量。",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a) moles Cl₂",
+      "value": 0.217,
+      "unit": "mol"
+     },
+     {
+      "part": "(a) mass Cl₂",
+      "value": 15.4,
+      "unit": "g"
+     },
+     {
+      "part": "(b) moles O₂",
+      "value": 0.00289,
+      "unit": "mol"
+     },
+     {
+      "part": "(b) mass O₂",
+      "value": 0.09248,
+      "unit": "g"
+     },
+     {
+      "part": "(c) moles NaNO₃",
+      "value": 8.0,
+      "unit": "mol"
+     },
+     {
+      "part": "(c) mass NaNO₃",
+      "value": 680,
+      "unit": "g"
+     },
+     {
+      "part": "(d) moles CO₂",
+      "value": 1665,
+      "unit": "mol"
+     },
+     {
+      "part": "(d) mass CO₂",
+      "value": 73.3,
+      "unit": "kg"
+     },
+     {
+      "part": "(e) moles",
+      "value": 18.86,
+      "unit": "mol"
+     },
+     {
+      "part": "(e) mass CuCO₃",
+      "value": 2.33,
+      "unit": "kg"
+     },
+     {
+      "part": "(f) moles C₂H₄Br₂",
+      "value": 0.458,
+      "unit": "mol"
+     },
+     {
+      "part": "(f) mass C₂H₄Br₂",
+      "value": 86.05,
+      "unit": "g"
+     }
+    ],
+    "solution": "（a）0.435 mol Na，0.217 mol Cl<sub>2</sub>，15.4 g Cl<sub>2</sub>；（b）0.005780 mol HgO，2.890 $\\times$ 10<sup>−3</sup> mol O<sub>2</sub>，9.248 $\\times$ 10<sup>−2</sup> g O<sub>2</sub>；（c）8.00 mol NaNO<sub>3</sub>，6.8 $\\times$ 10<sup>2</sup> g NaNO<sub>3</sub>；（d）1665 mol CO<sub>2</sub>，73.3 kg CO<sub>2</sub>；（e）18.86 mol CuO，2.330 kg CuCO<sub>3</sub>；（f）0.4580 mol C<sub>2</sub>H<sub>4</sub>Br<sub>2</sub>，86.05 g C<sub>2</sub>H<sub>4</sub>Br<sub>2</sub>"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp61309952",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "masses",
+   "figure": {
+    "src": "/media/ch04/CNX_Chem_04_03_ethene_img.jpg",
+    "alt": "（f）乙烯（以结构式画出）的物质的量和质量，它与 H2O 反应生成 9.55 g 乙醇（以结构式画出）。"
+   },
+   "prompt": "确定下列各反应所要求的物质的量和质量：（a）与 5.00 g HCl 反应生成 MgCl<sub>2</sub> 和 H<sub>2</sub> 所需的 Mg 的物质的量和质量。（b）1.252 g 氧化银(I)分解生成的氧的物质的量和质量。（c）生成 283 g 二氧化碳所需的碳酸镁 MgCO<sub>3</sub> 的物质的量和质量。（MgO 是另一种产物。）（d）20.0 kg 乙炔 C<sub>2</sub>H<sub>2</sub> 在过量氧中燃烧生成的水的物质的量和质量。（e）制取 2.500 kg 氧化钡 BaO 所需的过氧化钡 BaO<sub>2</sub> 的物质的量和质量（O<sub>2</sub> 是另一种产物。）（f）图中所示的反应物与 H<sub>2</sub>O 反应生成 9.55 g 图中所示的产物，所需该反应物的物质的量和质量。",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a) moles Mg",
+      "value": 0.0686,
+      "unit": "mol"
+     },
+     {
+      "part": "(a) mass Mg",
+      "value": 1.67,
+      "unit": "g"
+     },
+     {
+      "part": "(b) moles O₂",
+      "value": 0.002701,
+      "unit": "mol"
+     },
+     {
+      "part": "(b) mass O₂",
+      "value": 0.08644,
+      "unit": "g"
+     },
+     {
+      "part": "(c) moles MgCO₃",
+      "value": 6.43,
+      "unit": "mol"
+     },
+     {
+      "part": "(c) mass MgCO₃",
+      "value": 542,
+      "unit": "g"
+     },
+     {
+      "part": "(d) moles H₂O",
+      "value": 768,
+      "unit": "mol"
+     },
+     {
+      "part": "(d) mass H₂O",
+      "value": 13.8,
+      "unit": "kg"
+     },
+     {
+      "part": "(e) moles BaO₂",
+      "value": 16.31,
+      "unit": "mol"
+     },
+     {
+      "part": "(e) mass BaO₂",
+      "value": 2762,
+      "unit": "g"
+     },
+     {
+      "part": "(f) moles C₂H₄",
+      "value": 0.207,
+      "unit": "mol"
+     },
+     {
+      "part": "(f) mass C₂H₄",
+      "value": 5.81,
+      "unit": "g"
+     }
+    ],
+    "solution": "（a）0.0686 mol Mg，1.67 g Mg；（b）2.701 $\\times$ 10<sup>−3</sup> mol O<sub>2</sub>，0.08644 g O<sub>2</sub>；（c）6.43 mol MgCO<sub>3</sub>，542 g MgCO<sub>3</sub>；（d）768 mol H<sub>2</sub>O，13.8 kg H<sub>2</sub>O；（e）16.31 mol BaO<sub>2</sub>，2762 g BaO<sub>2</sub>；（f）0.207 mol C<sub>2</sub>H<sub>4</sub>，5.81 g C<sub>2</sub>H<sub>4</sub>"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp272460112",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "routes",
+   "prompt": "氯化镓由 2.6 L 1.44 M 的 HCl 溶液按下列方程式反应生成：$2\\text{Ga}+6\\text{HCl}\\;\\longrightarrow \\;2{\\text{GaCl}}_{3}+3{\\text{H}}_{2}.$（a）概述确定氯化镓的物质的量和质量所需的步骤。（b）进行所概述的计算。",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(b) moles GaCl₃",
+      "value": 1.25,
+      "unit": "mol"
+     },
+     {
+      "part": "(b) mass GaCl₃",
+      "value": 220,
+      "unit": "g"
+     }
+    ],
+    "solution": "（a）$\\text{HCl 溶液的体积}\\;\\longrightarrow \\;\\text{mol HCl}\\;\\longrightarrow \\;{\\text{mol GaCl}}_{3};$（b）1.25 mol GaCl<sub>3</sub>，2.2 $\\times$ 10<sup>2</sup> g GaCl<sub>3</sub>"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idp172099056",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "masses",
+   "prompt": "银常从 K[Ag(CN)<sub>2</sub>] 之类的矿石中提取，然后通过下列反应回收：$2\\text{K}[\\text{Ag}{(\\text{CN})}_{2}](aq)+\\text{Zn}(s)\\;\\longrightarrow \\;\\text{2Ag}(s)+\\text{Zn}{(\\text{CN})}_{2}(aq)+2\\text{KCN}(aq)$（a）35.27 g K[Ag(CN)<sub>2</sub>] 反应会生成多少个 Zn(CN)<sub>2</sub> 分子？（b）生成的 Zn(CN)<sub>2</sub> 的质量是多少？",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 5.337e+22,
+      "unit": "molecules"
+     },
+     {
+      "part": "(b)",
+      "value": 10.41,
+      "unit": "g"
+     }
+    ],
+    "solution": "（a）5.337 $\\times$ 10<sup>22</sup> 个分子；（b）10.41 g Zn(CN)<sub>2</sub>"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp65199360",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "masses",
+   "prompt": "金刚砂是碳化硅 SiC，一种很硬的材料，用作砂纸和其他用途中的磨料。它由纯净的沙子 SiO<sub>2</sub> 与碳在高温下反应制得。一氧化碳 CO 是该反应的另一种产物。写出该反应的配平方程式，并计算制取 3.00 kg SiC 需要多少 SiO<sub>2</sub>。",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 4.5,
+    "unit": "kg",
+    "solution": "${\\text{SiO}}_{2}+3\\text{C}\\;\\longrightarrow \\;\\text{SiC}+2\\text{CO},$ 4.50 kg SiO<sub>2</sub>"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idp220471472",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "masses",
+   "prompt": "尿素 CO(NH<sub>2</sub>)<sub>2</sub> 被大规模生产，用于制造脲醛塑料和用作肥料。由 $1.00\\;\\times \\;{10}^{3}\\;\\text{kg}$ 碳燃烧生成的 CO<sub>2</sub>，再经下列反应，最多能制得多少质量的尿素？${\\text{CO}}_{2}(g)+2{\\text{NH}}_{3}(g)\\;\\longrightarrow \\;\\text{CO}\\;{({\\text{NH}}_{2})}_{2}(s)+{\\text{H}}_{2}\\text{O}(l)$",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 5000.0,
+    "unit": "kg",
+    "solution": "5.00 $\\times$ 10<sup>3</sup> kg"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp82714064",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "routes",
+   "prompt": "一辆小型轿车在高速公路上每加仑可行驶 37.5 英里。若汽油按质量计含碳 84.2%，密度为 0.8205 g/mL，求一次 500 英里的行程中产生的二氧化碳的质量（每加仑 3.785 升）。",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 128000.0,
+    "unit": "g",
+    "solution": "1.28 $\\times$ 10<sup>5</sup> g CO<sub>2</sub>"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idp8090960",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "routes",
+   "prompt": "多大体积的 0.2089 <em>M</em> KI 溶液所含的 KI，恰好能与 43.88 mL 0.3842 <em>M</em> Cu(NO<sub>3</sub>)<sub>2</sub> 溶液中的 Cu(NO<sub>3</sub>)<sub>2</sub> 反应？$2\\text{Cu}{({\\text{NO}}_{3})}_{2}+4\\text{KI}\\;\\longrightarrow \\;2\\text{CuI}+{\\text{I}}_{2}+4{\\text{KNO}}_{3}$",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 161.4,
+    "unit": "mL",
+    "solution": "161.4 mL KI 溶液"
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idp149769296",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "masses",
+   "prompt": "有毒的颜料铅白 Pb<sub>3</sub>(OH)<sub>2</sub>(CO<sub>3</sub>)<sub>2</sub> 在白色涂料中已被金红石 TiO<sub>2</sub> 取代。由 379 g 按质量计含 88.3% 钛铁矿（FeTiO<sub>3</sub>）的矿石，可以制得多少金红石（g）？$2{\\text{FeTiO}}_{3}+4\\text{HCl}+{\\text{Cl}}_{2}\\;\\longrightarrow \\;2{\\text{FeCl}}_{3}+2{\\text{TiO}}_{2}+2{\\text{H}}_{2}\\text{O}$",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 176,
+    "unit": "g",
+    "solution": "176 g TiO<sub>2</sub>"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "mole-stoichiometry"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "stoichiometric-factor",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "mole-stoichiometry"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "mass-stoichiometry"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "mass-stoichiometry"
+  },
+  {
+   "exercise": "e1",
+   "concept": "mass-stoichiometry"
+  },
+  {
+   "exercise": "e2",
+   "concept": "mass-stoichiometry"
+  },
+  {
+   "exercise": "e3",
+   "concept": "mass-stoichiometry"
+  },
+  {
+   "exercise": "e3",
+   "concept": "stoichiometry",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e4",
+   "concept": "mass-stoichiometry"
+  },
+  {
+   "exercise": "e4",
+   "concept": "mole-stoichiometry",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e5",
+   "concept": "mass-stoichiometry"
+  },
+  {
+   "exercise": "e6",
+   "concept": "mass-stoichiometry"
+  },
+  {
+   "exercise": "e7",
+   "concept": "mass-stoichiometry"
+  },
+  {
+   "exercise": "e8",
+   "concept": "mass-stoichiometry"
+  },
+  {
+   "exercise": "e9",
+   "concept": "mass-stoichiometry"
+  }
+ ],
+ "referents": [
+  {
+   "id": "substance-a",
+   "label": "物质 A，已知的那个",
+   "figures": [
+    "sim-flowchart"
+   ]
+  },
+  {
+   "id": "substance-b",
+   "label": "物质 B，所求的那个",
+   "figures": [
+    "sim-flowchart"
+   ]
+  }
+ ]
+}

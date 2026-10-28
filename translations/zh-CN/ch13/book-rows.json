@@ -1,0 +1,645 @@
+{
+ "types": [
+  {
+   "id": "equilibrium-constant",
+   "label": "平衡常数",
+   "dimension": "none"
+  }
+ ],
+ "symbols": [
+  {
+   "sym": "K",
+   "latex": "K",
+   "macro": "\\kK"
+  },
+  {
+   "sym": "Q_c",
+   "latex": "Q",
+   "macro": "\\kQrxn"
+  },
+  {
+   "sym": "rate_f",
+   "latex": "\\text{rate}_{f}",
+   "macro": "\\kratef"
+  },
+  {
+   "sym": "rate_r",
+   "latex": "\\text{rate}_{r}",
+   "macro": "\\krater"
+  },
+  {
+   "sym": "[C]",
+   "latex": "[\\text{C}]",
+   "macro": "\\kconcC"
+  },
+  {
+   "sym": "[D]",
+   "latex": "[\\text{D}]",
+   "macro": "\\kconcD"
+  },
+  {
+   "sym": "P_D",
+   "latex": "P_D",
+   "macro": "\\kPD"
+  },
+  {
+   "sym": "k_f",
+   "latex": "k_{f}",
+   "macro": "\\kkf"
+  },
+  {
+   "sym": "k_r",
+   "latex": "k_{r}",
+   "macro": "\\kkr"
+  },
+  {
+   "sym": "Q_conc",
+   "latex": "Q_{c}",
+   "macro": "\\kQc"
+  },
+  {
+   "sym": "Q_P",
+   "latex": "Q_{P}",
+   "macro": "\\kQP"
+  },
+  {
+   "sym": "K_c",
+   "latex": "K_{c}",
+   "macro": "\\kKc"
+  },
+  {
+   "sym": "K_P",
+   "latex": "K_{P}",
+   "macro": "\\kKP"
+  },
+  {
+   "sym": "K_c_prime",
+   "latex": "K_{c'}",
+   "macro": "\\kKcprime"
+  },
+  {
+   "sym": "K_c1",
+   "latex": "K_{c1}",
+   "macro": "\\kKcone"
+  },
+  {
+   "sym": "K_c2",
+   "latex": "K_{c2}",
+   "macro": "\\kKctwo"
+  },
+  {
+   "sym": "Δn_gas",
+   "latex": "\\Delta n"
+  },
+  {
+   "sym": "x_ice",
+   "latex": "x"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "reversible-reaction",
+   "kind": "definition",
+   "section": "13.1",
+   "name": "可逆反应",
+   "terms": [
+    "可逆反应"
+   ],
+   "statement": "可逆反应既可以沿正向（从左到右）进行，也可以沿逆向（从右到左）进行，其方程式中用一种特殊的双箭头来强调这一点。"
+  },
+  {
+   "id": "chemical-equilibrium",
+   "kind": "definition",
+   "section": "13.1",
+   "name": "化学平衡",
+   "terms": [
+    "平衡"
+   ],
+   "statement": "随着可逆反应的进行，反应物浓度的下降使正反应变慢，产物浓度的升高使逆反应加快。当两个速率相等时，反应物和产物的浓度保持不变，体系处于平衡。",
+   "forms": [
+    {
+     "id": "eq-equal-rates",
+     "latex": "\\text{rate}_{f}=\\text{rate}_{r}",
+     "ktex": "\\kratef=\\krater",
+     "condition": "a reversible reaction at equilibrium",
+     "anchor": "13.1-reversible"
+    }
+   ]
+  },
+  {
+   "id": "equilibrium-is-dynamic",
+   "kind": "idea",
+   "section": "13.1",
+   "name": "平衡是动态的",
+   "statement": "处于平衡的反应并没有停止；它正以相同的速率同时沿正、逆两个方向进行。相变等物理变化同样可以建立这样的平衡，平衡时各浓度不必相等，只需保持恒定。"
+  },
+  {
+   "id": "reaction-quotient",
+   "kind": "definition",
+   "section": "13.2",
+   "name": "反应商",
+   "symbol": "Q_c",
+   "terms": [
+    "反应商"
+   ],
+   "type": "equilibrium-constant",
+   "statement": "反应商 $Q$ 是各产物浓度（各自取其在配平方程式中的系数为幂）的乘积，除以各反应物浓度（同样取其系数为幂）的乘积。它的值随反应的进行而变化，因此可作为反应所处状态的指示量。",
+   "forms": [
+    {
+     "id": "eq-reaction-quotient",
+     "latex": "Q_{c}=\\frac{[\\text{C}]^{x}[\\text{D}]^{y}}{[\\text{A}]^{m}[\\text{B}]^{n}}",
+     "ktex": "\\kQc=\\frac{\\kconcC^{x}\\kconcD^{y}}{\\kconcA^{m}\\kconcB^{n}}",
+     "condition": "the reaction mA + nB ⇌ xC + yD",
+     "anchor": "13.2-quotient"
+    },
+    {
+     "id": "eq-reaction-quotient-p",
+     "latex": "Q_{P}=\\frac{(P_{C})^{x}(P_{D})^{y}}{(P_{A})^{m}(P_{B})^{n}}",
+     "ktex": "\\kQP=\\frac{(\\kPC)^{x}(\\kPD)^{y}}{(\\kPA)^{m}(\\kPB)^{n}}",
+     "condition": "the gas-phase reaction mA + nB ⇌ xC + yD",
+     "anchor": "13.2-quotient"
+    }
+   ]
+  },
+  {
+   "id": "write-reaction-quotient",
+   "kind": "skill",
+   "section": "13.2",
+   "name": "反应商表达式的书写",
+   "statement": "由配平的方程式可以写出以物质的量浓度表示的 $Q_{c}$，对于气体还可写出以分压表示的 $Q_{P}$，表达式中只包含气态物种和溶质物种所对应的项。"
+  },
+  {
+   "id": "equilibrium-constant",
+   "kind": "definition",
+   "section": "13.2",
+   "name": "平衡常数",
+   "symbol": "K",
+   "terms": [
+    "平衡常数"
+   ],
+   "type": "equilibrium-constant",
+   "statement": "平衡常数 $K$ 是体系处于平衡时反应商所表现出的恒定值；$K_{c}$ 用物质的量浓度写出，$K_{P}$ 用分压写出。",
+   "forms": [
+    {
+     "id": "eq-k-equals-q",
+     "latex": "K_{c}=Q_{c}\\ \\text{at equilibrium}",
+     "condition": "a system at equilibrium; likewise K_P = Q_P",
+     "anchor": "13.2-constant",
+     "ktex": "\\kKc=\\kQc\\ \\text{at equilibrium}"
+    }
+   ]
+  },
+  {
+   "id": "magnitude-of-k",
+   "kind": "idea",
+   "section": "13.2",
+   "name": "平衡常数的大小",
+   "statement": "$K$ 很大的反应，在大部分反应物已变成产物时达到平衡；而 $K$ 很小则表示只有极少的反应物发生了反应。$K$ 的大小并不说明反应达到平衡的快慢。"
+  },
+  {
+   "id": "predict-direction-q-versus-k",
+   "kind": "skill",
+   "section": "13.2",
+   "name": "预测反应的方向",
+   "statement": "反应总是沿着达到平衡所需的方向进行：$Q < K$ 时沿正向，$Q > K$ 时沿逆向，$Q = K$ 时则不发生净反应。"
+  },
+  {
+   "id": "kp-kc-relation",
+   "kind": "result",
+   "section": "13.2",
+   "name": "Kp 与 Kc 的关系",
+   "statement": "理想气体的分压为 $P = MRT$，因此 $K_{P}$ 中的每个压强都是浓度乘以 $RT$，这些因子合并为 $(RT)^{\\Delta n}$，其中 $\\Delta n$ 是产物气体与反应物气体的物质的量之差。",
+   "forms": [
+    {
+     "id": "eq-kp-kc",
+     "latex": "K_{P}=K_{c}(RT)^{\\Delta n}",
+     "ktex": "\\kKP=\\kKc(R\\kT)^{\\Delta n}",
+     "condition": "a gas-phase equilibrium, with Δn = (c + d) − (a + b) for aA + bB ⇌ cC + dD",
+     "anchor": "13.2-homogeneous"
+    },
+    {
+     "id": "eq-delta-n",
+     "latex": "\\Delta n=(c+d)-(a+b)",
+     "condition": "the gas-phase reaction aA + bB ⇌ cC + dD",
+     "anchor": "13.2-homogeneous"
+    }
+   ]
+  },
+  {
+   "id": "homogeneous-and-heterogeneous-equilibria",
+   "kind": "idea",
+   "section": "13.2",
+   "name": "均相平衡与多相平衡",
+   "statement": "在均相平衡中，所有反应物和产物处于同一相；在多相平衡中，它们占据两个或多个相。由于纯液体和纯固体的相对浓度等于 1，它们不出现在 $Q$ 或 $K$ 中。"
+  },
+  {
+   "id": "coupled-equilibria",
+   "kind": "skill",
+   "section": "13.2",
+   "name": "多重平衡的平衡常数",
+   "statement": "将方程式颠倒，其 $K$ 取倒数；将其系数乘以 $x$，则 $K$ 变为 $x$ 次幂；将方程式相加，则它们的 $K$ 值相乘。因此，净反应的 $K$ 可由相加得到该反应的各反应的 $K$ 值求出。",
+   "forms": [
+    {
+     "id": "eq-reversed-k",
+     "latex": "K_{c'}=\\frac{1}{K_{c}}",
+     "condition": "the equation written in the reverse direction",
+     "anchor": "13.2-coupled",
+     "ktex": "\\kKcprime=\\frac{1}{\\kKc}"
+    },
+    {
+     "id": "eq-scaled-k",
+     "latex": "K_{c'}=K_{c}^{\\,x}",
+     "condition": "the coefficients of the equation multiplied by x",
+     "anchor": "13.2-coupled",
+     "ktex": "\\kKcprime=\\kKc^{\\,x}"
+    },
+    {
+     "id": "eq-coupled-k",
+     "latex": "K_{c'}=K_{c1}K_{c2}",
+     "condition": "the net equation formed by adding two equations",
+     "anchor": "13.2-coupled",
+     "ktex": "\\kKcprime=\\kKcone\\kKctwo"
+    }
+   ]
+  },
+  {
+   "id": "law-of-mass-action",
+   "kind": "axiom",
+   "section": "13.2",
+   "name": "质量作用定律",
+   "terms": [
+    "质量作用定律"
+   ],
+   "statement": "在给定温度下，无论从何种初始浓度出发达到平衡，处于平衡的体系的反应商都是恒定的。"
+  },
+  {
+   "id": "homogeneous-equilibrium",
+   "kind": "definition",
+   "section": "13.2",
+   "name": "均相平衡",
+   "terms": [
+    "均相平衡"
+   ],
+   "statement": "均相平衡是指所有反应物和产物（以及任何催化剂）都存在于同一相中的平衡。"
+  },
+  {
+   "id": "heterogeneous-equilibrium",
+   "kind": "definition",
+   "section": "13.2",
+   "name": "多相平衡",
+   "terms": [
+    "多相平衡"
+   ],
+   "statement": "多相平衡涉及处于两个或多个不同相中的反应物和产物。"
+  },
+  {
+   "id": "coupled-equilibrium",
+   "kind": "definition",
+   "section": "13.2",
+   "name": "多重平衡",
+   "terms": [
+    "多重平衡"
+   ],
+   "statement": "多重平衡是指两个或多个平衡反应，它们有一种或多种共同的反应物或产物物种。"
+  },
+  {
+   "id": "le-chateliers-principle",
+   "kind": "axiom",
+   "section": "13.3",
+   "name": "勒夏特列原理",
+   "terms": [
+    "勒夏特列原理"
+   ],
+   "statement": "对正反应和逆反应速率的影响不同的条件改变（扰动）会使两个速率不再相等，体系随后沿速率较大的方向发生净反应（移动），从而重新建立平衡。"
+  },
+  {
+   "id": "concentration-stress",
+   "kind": "result",
+   "section": "13.3",
+   "name": "浓度变化与平衡",
+   "statement": "加入反应物或移出产物使 $Q_{c} < K_{c}$，平衡向右移动；移出反应物或加入产物使 $Q_{c} > K_{c}$，平衡向左移动。新的组成有所不同，但扰动之后平衡常数的值与之前相同。"
+  },
+  {
+   "id": "volume-stress",
+   "kind": "result",
+   "section": "13.3",
+   "name": "体积变化与平衡",
+   "statement": "改变体积会使每个分压变化相同的倍数。若反应物气体与产物气体的物质的量总和相等，则 $Q_{P}$ 不变，平衡不移动；否则，减小体积会使平衡向气体物质的量较少的一侧移动。"
+  },
+  {
+   "id": "temperature-changes-k",
+   "kind": "result",
+   "section": "13.3",
+   "name": "温度变化与平衡",
+   "statement": "对于基元反应，$K_{c}=k_{f}/k_{r}$，而速率常数随温度变化，所以 $K$ 也随之变化。把热量看作吸热反应的反应物、放热反应的产物，就可以预测移动的方向：加热使吸热反应的平衡向右移动，使放热反应的平衡向左移动。",
+   "forms": [
+    {
+     "id": "eq-k-from-rate-constants",
+     "latex": "\\frac{[\\text{B}]}{[\\text{A}]}=\\frac{k_{f}}{k_{r}}=K_{c}",
+     "ktex": "\\frac{\\kconcB}{\\kconcA}=\\frac{\\kkf}{\\kkr}=\\kKc",
+     "condition": "the elementary reaction A ⇌ B at equilibrium",
+     "anchor": "13.3-temperature"
+    }
+   ]
+  },
+  {
+   "id": "catalyst-and-equilibrium",
+   "kind": "result",
+   "section": "13.3",
+   "name": "催化剂与平衡",
+   "statement": "催化剂同时降低正反应和逆反应的活化能，因此两者都被加速，平衡更快地达到，但平衡常数不变。"
+  },
+  {
+   "id": "predict-equilibrium-shift",
+   "kind": "skill",
+   "section": "13.3",
+   "name": "预测平衡的移动",
+   "statement": "给定一种扰动（加入或移出某个物种、体积或温度的改变、催化剂），勒夏特列原理可以预测移动的方向，以及重新建立平衡时各浓度如何变化。"
+  },
+  {
+   "id": "ice-change-terms",
+   "kind": "skill",
+   "section": "13.4",
+   "name": "浓度变化量之间的关系",
+   "statement": "无论初始组成如何，平衡体系中各物种浓度的变化量都由反应的化学计量关系相联系，因此它们都可以写成同一个未知量 $x$ 的倍数。"
+  },
+  {
+   "id": "k-from-ice-table",
+   "kind": "skill",
+   "section": "13.4",
+   "name": "用 ICE 表计算 K",
+   "statement": "把初始浓度、浓度变化量和平衡浓度汇集在 ICE 表中，就能由所给数据导出每个平衡浓度，将它们代入 $K$ 表达式便得到平衡常数。"
+  },
+  {
+   "id": "missing-equilibrium-concentration",
+   "kind": "skill",
+   "section": "13.4",
+   "name": "计算未知的平衡浓度",
+   "statement": "当平衡常数和除一个以外的所有平衡浓度已知时，可将 $K$ 表达式变形，解出未知的那个浓度。"
+  },
+  {
+   "id": "equilibrium-from-initial-concentrations",
+   "kind": "skill",
+   "section": "13.4",
+   "name": "由初始浓度计算平衡浓度",
+   "statement": "由初始浓度和 $K$ 求平衡组成需要四步：确定反应方向，列出 ICE 表，求出变化量（必要时用求根公式，并保留有物理意义的根），最后重新计算 $K$ 以验证结果。"
+  },
+  {
+   "id": "small-x-approximation",
+   "kind": "skill",
+   "section": "13.4",
+   "name": "x 很小时的近似",
+   "statement": "当 $K$ 很小时，浓度的变化量可能远小于初始浓度，因此初始浓度减去 $x$ 可以近似为初始浓度。必须检验结果，如果 $x$ 不可忽略，则不用近似重新计算。"
+  }
+ ],
+ "concept_prereqs": [
+  {
+   "concept": "reversible-reaction",
+   "prereq": "chemical-equation"
+  },
+  {
+   "concept": "chemical-equilibrium",
+   "prereq": "reversible-reaction"
+  },
+  {
+   "concept": "chemical-equilibrium",
+   "prereq": "reaction-rate"
+  },
+  {
+   "concept": "chemical-equilibrium",
+   "prereq": "elementary-rate-laws"
+  },
+  {
+   "concept": "chemical-equilibrium",
+   "prereq": "concentration"
+  },
+  {
+   "concept": "equilibrium-is-dynamic",
+   "prereq": "chemical-equilibrium"
+  },
+  {
+   "concept": "equilibrium-is-dynamic",
+   "prereq": "vapor-pressure-dynamic-equilibrium"
+  },
+  {
+   "concept": "reaction-quotient",
+   "prereq": "reversible-reaction"
+  },
+  {
+   "concept": "reaction-quotient",
+   "prereq": "balanced-equation"
+  },
+  {
+   "concept": "reaction-quotient",
+   "prereq": "molarity"
+  },
+  {
+   "concept": "write-reaction-quotient",
+   "prereq": "reaction-quotient"
+  },
+  {
+   "concept": "write-reaction-quotient",
+   "prereq": "daltons-law-of-partial-pressures"
+  },
+  {
+   "concept": "equilibrium-constant",
+   "prereq": "reaction-quotient"
+  },
+  {
+   "concept": "equilibrium-constant",
+   "prereq": "chemical-equilibrium"
+  },
+  {
+   "concept": "magnitude-of-k",
+   "prereq": "equilibrium-constant"
+  },
+  {
+   "concept": "magnitude-of-k",
+   "prereq": "rate-constant"
+  },
+  {
+   "concept": "predict-direction-q-versus-k",
+   "prereq": "equilibrium-constant"
+  },
+  {
+   "concept": "predict-direction-q-versus-k",
+   "prereq": "molarity-calculations"
+  },
+  {
+   "concept": "kp-kc-relation",
+   "prereq": "equilibrium-constant"
+  },
+  {
+   "concept": "kp-kc-relation",
+   "prereq": "ideal-gas-law"
+  },
+  {
+   "concept": "kp-kc-relation",
+   "prereq": "write-reaction-quotient"
+  },
+  {
+   "concept": "homogeneous-and-heterogeneous-equilibria",
+   "prereq": "write-reaction-quotient"
+  },
+  {
+   "concept": "homogeneous-and-heterogeneous-equilibria",
+   "prereq": "solution-components"
+  },
+  {
+   "concept": "coupled-equilibria",
+   "prereq": "equilibrium-constant"
+  },
+  {
+   "concept": "coupled-equilibria",
+   "prereq": "balanced-equation"
+  },
+  {
+   "concept": "le-chateliers-principle",
+   "prereq": "chemical-equilibrium"
+  },
+  {
+   "concept": "le-chateliers-principle",
+   "prereq": "rate-law"
+  },
+  {
+   "concept": "concentration-stress",
+   "prereq": "le-chateliers-principle"
+  },
+  {
+   "concept": "concentration-stress",
+   "prereq": "predict-direction-q-versus-k"
+  },
+  {
+   "concept": "volume-stress",
+   "prereq": "concentration-stress"
+  },
+  {
+   "concept": "volume-stress",
+   "prereq": "ideal-gas-law"
+  },
+  {
+   "concept": "volume-stress",
+   "prereq": "write-reaction-quotient"
+  },
+  {
+   "concept": "temperature-changes-k",
+   "prereq": "le-chateliers-principle"
+  },
+  {
+   "concept": "temperature-changes-k",
+   "prereq": "arrhenius-equation"
+  },
+  {
+   "concept": "temperature-changes-k",
+   "prereq": "exothermic-and-endothermic"
+  },
+  {
+   "concept": "temperature-changes-k",
+   "prereq": "elementary-rate-laws"
+  },
+  {
+   "concept": "catalyst-and-equilibrium",
+   "prereq": "catalysis-lowers-activation-energy"
+  },
+  {
+   "concept": "catalyst-and-equilibrium",
+   "prereq": "equilibrium-constant"
+  },
+  {
+   "concept": "predict-equilibrium-shift",
+   "prereq": "concentration-stress"
+  },
+  {
+   "concept": "predict-equilibrium-shift",
+   "prereq": "volume-stress"
+  },
+  {
+   "concept": "predict-equilibrium-shift",
+   "prereq": "temperature-changes-k"
+  },
+  {
+   "concept": "predict-equilibrium-shift",
+   "prereq": "catalyst-and-equilibrium"
+  },
+  {
+   "concept": "ice-change-terms",
+   "prereq": "stoichiometric-factor"
+  },
+  {
+   "concept": "ice-change-terms",
+   "prereq": "relative-reaction-rates"
+  },
+  {
+   "concept": "k-from-ice-table",
+   "prereq": "ice-change-terms"
+  },
+  {
+   "concept": "k-from-ice-table",
+   "prereq": "equilibrium-constant"
+  },
+  {
+   "concept": "missing-equilibrium-concentration",
+   "prereq": "equilibrium-constant"
+  },
+  {
+   "concept": "missing-equilibrium-concentration",
+   "prereq": "write-reaction-quotient"
+  },
+  {
+   "concept": "equilibrium-from-initial-concentrations",
+   "prereq": "ice-change-terms"
+  },
+  {
+   "concept": "equilibrium-from-initial-concentrations",
+   "prereq": "predict-direction-q-versus-k"
+  },
+  {
+   "concept": "equilibrium-from-initial-concentrations",
+   "prereq": "missing-equilibrium-concentration"
+  },
+  {
+   "concept": "small-x-approximation",
+   "prereq": "equilibrium-from-initial-concentrations"
+  },
+  {
+   "concept": "small-x-approximation",
+   "prereq": "magnitude-of-k"
+  },
+  {
+   "concept": "law-of-mass-action",
+   "prereq": "reaction-quotient"
+  },
+  {
+   "concept": "law-of-mass-action",
+   "prereq": "chemical-equilibrium"
+  },
+  {
+   "concept": "homogeneous-equilibrium",
+   "prereq": "chemical-equilibrium"
+  },
+  {
+   "concept": "heterogeneous-equilibrium",
+   "prereq": "chemical-equilibrium"
+  },
+  {
+   "concept": "coupled-equilibrium",
+   "prereq": "chemical-equilibrium"
+  },
+  {
+   "concept": "equilibrium-constant",
+   "prereq": "law-of-mass-action"
+  },
+  {
+   "concept": "homogeneous-and-heterogeneous-equilibria",
+   "prereq": "homogeneous-equilibrium"
+  },
+  {
+   "concept": "homogeneous-and-heterogeneous-equilibria",
+   "prereq": "heterogeneous-equilibrium"
+  },
+  {
+   "concept": "coupled-equilibria",
+   "prereq": "coupled-equilibrium"
+  }
+ ]
+}

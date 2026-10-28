@@ -1,0 +1,919 @@
+{
+ "id": "19.2",
+ "module": "m68843",
+ "chapter": "19",
+ "title": "过渡金属的配位化学",
+ "short": "配位化学",
+ "lead": "在配位化合物中，配体通过配位共价键把电子对给予中心金属原子或离子。这类配合物按阿尔弗雷德·维尔纳设计的规则命名，其形状取决于有多少个配位原子围绕着金属，可以以几何异构体和旋光异构体的形式存在，并在生物体内、工业和医药中发挥作用。",
+ "objectives": [
+  "列出配位化合物的基本特征",
+  "描述含有单齿和多齿配体的配合物的结构",
+  "使用标准命名规则为配位化合物命名",
+  "解释几何异构和旋光异构并举例",
+  "指出配位化合物在自然界和技术中的若干存在形式"
+ ],
+ "summary_html": "<p><span data-concept=\"transition-metal\">过渡元素</span>和<span data-concept=\"main-group-element\">主族元素</span>都可以形成<span data-concept=\"coordination-compound\">配位化合物</span>，即配合物，其中一个<span data-concept=\"central-metal\">中心金属原子或离子</span>通过<span data-concept=\"coordinate-covalent-bond\">配位共价键</span>与一个或多个<span data-concept=\"ligand\">配体</span>键合。具有多个<span data-concept=\"donor-atom\">配位原子</span>的配体称为<span data-concept=\"polydentate-ligand\">多齿配体</span>，并形成<span data-concept=\"chelate\">螯合物</span>。配合物中常见的几何构型是四面体形和平面正方形（<span data-concept=\"coordination-number\">配位数</span>均为四）以及八面体形（配位数为六）。某些八面体形和平面正方形配合物中可能出现<span data-concept=\"cis-trans-configuration\"><em>顺式</em>和<em>反式</em>构型</span>。除这些<span data-concept=\"geometric-isomer\">几何异构体</span>外，某些八面体形配合物中还可能有<span data-concept=\"optical-isomer\">旋光异构体</span>（互为镜像但不能重合的分子或离子）。配合物有多种多样的用途，包括血液中的氧运输、水的净化和药物用途。</p>",
+ "notes": "关于悉尼大学命名测验的“学习链接”已略去；本节保留书中原样印出的“dicyanoargenate(I)”、图 19.14 题注中的“[Cu(Cl)₄]²⁻”、“SCN−”、电离异构体 [CoCl₆][Br] 和 [CoCl₅Br][Cl]、图 19.22 中把每个配体放在“directly across from an adjacent ligand”位置的题注、图 19.27 中转化“carbon dioxide emissions from power plants”的催化转化器、“In the Figure 19.20”，以及例 19.5 学习检测的答案图上的 2−。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签和建议思路由 AI 生成。答案来自书后答案；习题 29 和 35 的答案以及例 19.5 学习检测的答案是书中的图。没有给出答案、需要自行计算才能得出答案的练习被略去，也没有为它们计算答案：26（fs-idp178303616）和 28（fs-idp104842000），配位数；30（fs-idp55630960），异构体的画图；32（fs-idp39687552），命名。练习 31 要为练习 28 中的化合物命名，所以它的题目列出了这些化合物。没有给出答案的选择题 34（fs-idp128328592）保持开放，附有选项和标明为 OmniStax 自己所作的建议思路。练习 27 印有“dibromobis(ethylenediamine) cobalt(III)”，练习 31 的答案印有“tetraamine”、“diaminedibromo”和“diaminedichloro”，均照原样保留。没有任何内容被移动。",
+ "figures": [
+  {
+   "id": "fig-colors",
+   "kind": "photo",
+   "number": "19.12",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-bond-type",
+   "kind": "photo",
+   "number": "19.13",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-complex-geometry",
+   "kind": "sim",
+   "number": "19.14",
+   "folds": [
+    "19.18",
+    "19.19",
+    "19.20"
+   ],
+   "originals": [
+    "/media/ch19/CNX_Chem_19_02_CN.jpg",
+    "/media/ch19/CNX_Chem_19_02_structures.jpg",
+    "/media/ch19/CNX_Chem_19_02_oct.jpg",
+    "/media/ch19/CNX_Chem_19_02_4geom.jpg"
+   ],
+   "original_caption": "（图 19.14）配合物（a）[Ag(NH₃)₂]⁺、（b）[Cu(Cl)₄]²⁻ 和（c）[Co(H₂O)₆]²⁺ 的配位数分别为二、四和六。这些配合物的几何构型与我们在主族元素的价层电子对互斥理论（VSEPR）中所见的相同：直线形、四面体形和八面体形。（图 19.18）这些是配位数为七和八的一些配合物的几何构型。（图 19.19）许多过渡金属配合物采取八面体形几何构型，六个配位原子与相邻配体在中心原子周围形成 90° 的键角。请注意，只有配位层内的配体才影响金属中心周围的几何构型。（图 19.20）配位数为四的过渡金属可以采取四面体形几何构型（a），如 K₂[Zn(CN)₄]，也可以采取平面正方形几何构型（b），如 [Pt(NH₃)₂Cl₂] 所示。",
+   "draws": [
+    "angle"
+   ],
+   "conventions": [
+    "Ag",
+    "Cu",
+    "Zn",
+    "Ni",
+    "Pt",
+    "Co",
+    "V",
+    "Cr",
+    "Zr",
+    "Re",
+    "Mo",
+    "N",
+    "H",
+    "O",
+    "C",
+    "Cl",
+    "F"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-en",
+   "kind": "photo",
+   "number": "19.15",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-heme",
+   "kind": "photo",
+   "number": "19.16",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-glycinate",
+   "kind": "photo",
+   "number": "19.17",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-cis-trans",
+   "kind": "sim",
+   "number": "19.21",
+   "folds": [
+    "19.22"
+   ],
+   "originals": [
+    "/media/ch19/CNX_Chem_19_02_cistrans.jpg",
+    "/media/ch19/CNX_Chem_19_02_transplatin.jpg"
+   ],
+   "original_caption": "（图 19.21）[Co(H₂O)₄Cl₂]⁺ 的顺式和反式异构体含有连接在同一个金属离子上的相同配体，但空间排布使这两种化合物的性质非常不同。（图 19.22）[Pt(NH₃)₂Cl₂] 的反式异构体中，每个配体都正好与一个相邻的配体相对。",
+   "draws": [
+    "angle"
+   ],
+   "conventions": [
+    "Co",
+    "Pt",
+    "Cl",
+    "O",
+    "N",
+    "H"
+   ],
+   "facts": [
+    "#7d4fa8",
+    "#4a8f3c"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-optical-isomers",
+   "kind": "sim",
+   "number": "19.23",
+   "folds": [
+    "19.24"
+   ],
+   "originals": [
+    "/media/ch19/CNX_Chem_19_02_enant.jpg",
+    "/media/ch19/CNX_Chem_19_02_Coen2Cl2.jpg"
+   ],
+   "original_caption": "（图 19.23）配合物 [M(en)₃]ⁿ⁺（Mⁿ⁺ = 金属离子，en = 乙二胺）有不能重合的镜像。（图 19.24）[Co(en)₂Cl₂]⁺ 存在三种异构形式。两个氯处于 180° 角位置时形成的反式异构体，其性质与顺式异构体非常不同。顺式异构体的镜像形成一对旋光异构体，它们的行为完全相同，只有在与其他对映异构体反应时才不同。",
+   "draws": [],
+   "conventions": [
+    "M",
+    "Co",
+    "N",
+    "C",
+    "Cl"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-chlorophyll",
+   "kind": "photo",
+   "number": "19.25",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-catalysts",
+   "kind": "photo",
+   "number": "19.26",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-catalytic-converter",
+   "kind": "photo",
+   "number": "19.27",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-dalessandro",
+   "kind": "photo",
+   "number": "19.28",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-hemoglobin",
+   "kind": "photo",
+   "number": "19.29",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-edta",
+   "kind": "photo",
+   "number": "19.30",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-bal-enterobactin",
+   "kind": "photo",
+   "number": "19.31",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-dmsa",
+   "kind": "photo",
+   "number": "19.32",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "coordination",
+   "concept": "central-metal",
+   "verb": "introduces"
+  },
+  {
+   "span": "coordination",
+   "concept": "donor-atom",
+   "verb": "introduces"
+  },
+  {
+   "span": "coordination",
+   "concept": "coordination-sphere",
+   "verb": "introduces"
+  },
+  {
+   "span": "coordination",
+   "concept": "monodentate-ligand",
+   "verb": "introduces"
+  },
+  {
+   "span": "coordination",
+   "concept": "bidentate-ligand",
+   "verb": "introduces"
+  },
+  {
+   "span": "coordination",
+   "concept": "polydentate-ligand",
+   "verb": "introduces"
+  },
+  {
+   "span": "coordination",
+   "concept": "chelate",
+   "verb": "introduces"
+  },
+  {
+   "span": "coordination",
+   "concept": "coordination-compound",
+   "verb": "uses"
+  },
+  {
+   "span": "coordination",
+   "concept": "coordinate-covalent-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "coordination",
+   "concept": "lewis-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "coordination",
+   "concept": "lewis-base",
+   "verb": "uses"
+  },
+  {
+   "span": "coordination",
+   "concept": "ligand",
+   "verb": "uses"
+  },
+  {
+   "span": "coordination",
+   "concept": "coordination-number",
+   "verb": "uses"
+  },
+  {
+   "span": "coordination",
+   "concept": "transition-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "coordination",
+   "concept": "inner-transition-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "coordination",
+   "concept": "main-group-element",
+   "verb": "uses"
+  },
+  {
+   "span": "coordination",
+   "concept": "octet-rule",
+   "verb": "uses"
+  },
+  {
+   "span": "coordination",
+   "concept": "valence-electrons",
+   "verb": "uses"
+  },
+  {
+   "span": "coordination",
+   "concept": "covalent-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "coordination",
+   "concept": "ionic-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "coordination",
+   "concept": "lone-pair",
+   "verb": "uses"
+  },
+  {
+   "span": "coordination",
+   "concept": "complex-ion",
+   "verb": "uses"
+  },
+  {
+   "span": "naming",
+   "concept": "naming-coordination-compounds",
+   "verb": "introduces"
+  },
+  {
+   "span": "naming",
+   "concept": "coordination-sphere",
+   "verb": "uses"
+  },
+  {
+   "span": "naming",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "naming",
+   "concept": "anion",
+   "verb": "uses"
+  },
+  {
+   "span": "naming",
+   "concept": "cation",
+   "verb": "uses"
+  },
+  {
+   "span": "naming",
+   "concept": "coordination-number",
+   "verb": "uses"
+  },
+  {
+   "span": "naming",
+   "concept": "bidentate-ligand",
+   "verb": "uses"
+  },
+  {
+   "span": "structures",
+   "concept": "complex-geometry",
+   "verb": "introduces"
+  },
+  {
+   "span": "structures",
+   "concept": "coordination-number",
+   "verb": "uses"
+  },
+  {
+   "span": "structures",
+   "concept": "vsepr-theory",
+   "verb": "uses"
+  },
+  {
+   "span": "isomerism",
+   "concept": "geometric-isomer",
+   "verb": "introduces"
+  },
+  {
+   "span": "isomerism",
+   "concept": "cis-trans-configuration",
+   "verb": "introduces"
+  },
+  {
+   "span": "isomerism",
+   "concept": "optical-isomer",
+   "verb": "introduces"
+  },
+  {
+   "span": "isomerism",
+   "concept": "linkage-isomer",
+   "verb": "introduces"
+  },
+  {
+   "span": "isomerism",
+   "concept": "ionization-isomer",
+   "verb": "introduces"
+  },
+  {
+   "span": "isomerism",
+   "concept": "isomers",
+   "verb": "uses"
+  },
+  {
+   "span": "isomerism",
+   "concept": "polar-molecule",
+   "verb": "uses"
+  },
+  {
+   "span": "isomerism",
+   "concept": "electronegativity",
+   "verb": "uses"
+  },
+  {
+   "span": "isomerism",
+   "concept": "bond-dipole-moment",
+   "verb": "uses"
+  },
+  {
+   "span": "nature",
+   "concept": "complexes-in-nature-and-technology",
+   "verb": "introduces"
+  },
+  {
+   "span": "nature",
+   "concept": "main-group-element",
+   "verb": "uses"
+  },
+  {
+   "span": "nature",
+   "concept": "photosynthesis",
+   "verb": "uses"
+  },
+  {
+   "span": "nature",
+   "concept": "catalyst",
+   "verb": "uses"
+  },
+  {
+   "span": "nature",
+   "concept": "activation-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "nature",
+   "concept": "chelate",
+   "verb": "uses"
+  },
+  {
+   "span": "nature",
+   "concept": "polydentate-ligand",
+   "verb": "uses"
+  },
+  {
+   "span": "nature",
+   "concept": "donor-atom",
+   "verb": "uses"
+  },
+  {
+   "span": "nature",
+   "concept": "electroplating",
+   "verb": "uses"
+  },
+  {
+   "span": "nature",
+   "concept": "cis-trans-configuration",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idp246755792",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-naming"
+   },
+   "cite": "ex-naming",
+   "prompt": "配合物二氰合银(I)酸钾用于制造消毒化合物。给出其化学式和配位数。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "K[Ag(CN)<sub>2</sub>]；配位数为二"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idp279300448",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-geometric-isomers"
+   },
+   "cite": "ex-geometric-isomers",
+   "prompt": "画出离子<em>反</em>-二溴·<em>反</em>-二氯·<em>反</em>-二水合钴(II)。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<img src=\"/media/ch19/CNX_Chem_19_02_H2O2Br2.jpg\" alt=\"此图显示方括号内的一个结构。中心的 Co 原子上用线段表示与上方和下方 Cl 原子的键。在左上方，一条以 Co 原子为顶点、向外逐渐变宽的虚楔形线，表示与 H₂O 基团的 O 原子成键。第二条虚楔形线表示中心 Co 原子与右上方的一个 Br 原子成键。同样，左下方的一条实楔形线表示与一个 Br 原子成键。右下方的第二条实楔形线表示与 H₂O 基团的 O 原子成键。此结构被括号括起。括号外右侧是上标 2 负号。\">"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idp8695360",
+   "kind": "check-your-learning",
+   "bloom": "Remember",
+   "place": {
+    "at": "inline",
+    "after": "ex-chelation"
+   },
+   "cite": "ex-chelation",
+   "prompt": "一些替代医学从业者推荐用螯合疗法治疗与重金属没有明确关系的疾病，如癌症和自闭症，尽管许多科学组织不提倡这种做法。<sup>1</sup>指出至少两种可能被螯合疗法扰乱的、对生物体重要的金属。<br><small><sup>1</sup> National Council against Health Fraud, <em>NCAHF Policy Statement on Chelation Therapy</em>, (Peabody, MA, 2002).</small>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Ca、Fe、Zn 和 Cu"
+   }
+  },
+  {
+   "id": "e27",
+   "source_id": "fs-idp151424672",
+   "source_number": "27",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "naming",
+   "prompt": "给出下列各物质的配位数并写出化学式，适当时包括所有异构体：<br>（a）四羟合锌(II)酸根离子（四面体形）<br>（b）六氰合钯(IV)酸根离子<br>（c）二氯合金(I)酸根离子（注意，<em>aurum</em> 在拉丁语中是“金”）<br>（d）二氯·二氨合铂(II)<br>（e）四氯·二氨合铬(III)酸钾<br>（f）六氰合铬(III)酸六氨合钴(III)<br>（g）硝酸二溴·双(乙二胺)合钴(III)",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）4，[Zn(OH)<sub>4</sub>]<sup>2−</sup>；（b）6，[Pd(CN)<sub>6</sub>]<sup>2−</sup>；（c）2，[AuCl<sub>2</sub>]<sup>−</sup>；（d）4，[Pt(NH<sub>3</sub>)<sub>2</sub>Cl<sub>2</sub>]；（e）6，K[Cr(NH<sub>3</sub>)<sub>2</sub>Cl<sub>4</sub>]；（f）6，[Co(NH<sub>3</sub>)<sub>6</sub>][Cr(CN)<sub>6</sub>]；（g）6，[Co(en)<sub>2</sub>Br<sub>2</sub>]NO<sub>3</sub>"
+   }
+  },
+  {
+   "id": "e29",
+   "source_id": "fs-idp5586896",
+   "source_number": "29",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "isomerism",
+   "prompt": "画出下列配合物的结构。指出其中的任何<em>顺式</em>、<em>反式</em>和旋光异构体。<br>（a）[Pt(H<sub>2</sub>O)<sub>2</sub>Br<sub>2</sub>]（平面正方形）<br>（b）[Pt(NH<sub>3</sub>)(py)(Cl)(Br)]（平面正方形，py = 吡啶，C<sub>5</sub>H<sub>5</sub>N）<br>（c）[Zn(NH<sub>3</sub>)<sub>3</sub>Cl]<sup>+</sup>（四面体形）<br>（d）[Pt(NH<sub>3</sub>)<sub>3</sub>Cl]<sup>+</sup>（平面正方形）<br>（e）[Ni(H<sub>2</sub>O)<sub>4</sub>Cl<sub>2</sub>]<br>（f）[Co(C<sub>2</sub>O<sub>4</sub>)<sub>2</sub>Cl<sub>2</sub>]<sup>3−</sup> (注意 ${\\text{C}}_{2}{\\text{O}}_{4}{}^{2−}$ 是双齿草酸根离子，$-{\\text{O}}_{2}{\\text{CCO}}_{2}{}^{\\text{−}})$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）[Pt(H<sub>2</sub>O)<sub>2</sub>Br<sub>2</sub>]：<img src=\"/media/ch19/CNX_Chem_19_02_Answer4a_img.jpg\" alt=\"此图显示两个结构。每个结构的中心都是一个 Pt 原子。左边的结构标注为“顺式”。从该 Pt 原子出发，一条用虚楔形线表示的单键，以 Pt 原子为顶点向右上方伸出，连到一个 Br 原子。同样，一条用实楔形线表示的单键，以 Pt 原子为顶点向右下方伸出，连到第二个 Br 原子。另一条用虚楔形线表示的单键，以 Pt 原子为顶点向左上方伸出，连到一个 H₂O 基团的 O 原子。同样，一条用实楔形线表示的单键，以 Pt 原子为顶点向左下方伸出，连到第二个 H₂O 基团的 O 原子。右边的结构标注为“反式”。从中心的 Pt 原子出发，一条用虚楔形线表示的单键，以 Pt 原子为顶点向右上方伸出，连到一个 Br 原子。同样，一条用实楔形线表示的单键，以 Pt 原子为顶点向右下方伸出，连到一个 H₂O 基团的 O 原子。另一条用虚楔形线表示的单键，以 Pt 原子为顶点向左上方伸出，连到第二个 H₂O 基团的 O 原子。同样，一条用实楔形线表示的单键，以 Pt 原子为顶点向左下方伸出，连到第二个 Br 原子。\"><br>（b） [Pt(NH<sub>3</sub>)(py)(Cl)(Br)]：<img src=\"/media/ch19/CNX_Chem_19_02_Answer4b_img.jpg\" alt=\"此图显示三个结构。每个结构的中心都是一个 Pt 原子。左边第一个结构中，一条用虚楔形线表示的单键，以 Pt 原子为顶点向右上方伸出，连到一个 Cl 原子。同样，一条用实楔形线表示的单键，以 Pt 原子为顶点向右下方伸出，连到一个 NH₃ 基团的 N 原子。另一条用虚楔形线表示的单键，以 Pt 原子为顶点向左上方伸出，连到一个 Br 原子。同样，一条用实楔形线表示的单键，以 Pt 原子为顶点向左下方伸出，连到 py。中间的结构中，一条用虚楔形线表示的单键，以 Pt 原子为顶点向右上方伸出，连到一个 Br 原子。同样，一条用实楔形线表示的单键，以 Pt 原子为顶点向右下方伸出，连到一个 NH₃ 基团的 N 原子。另一条用虚楔形线表示的单键，以 Pt 原子为顶点向左上方伸出，连到 py。同样，一条用实楔形线表示的单键，以 Pt 原子为顶点向左下方伸出，连到一个 Cl 原子。第三个结构中，一条用虚楔形线表示的单键，以 Pt 原子为顶点向右上方伸出，连到 py。同样，一条用实楔形线表示的单键，以 Pt 原子为顶点向右下方伸出，连到一个 NH₃ 基团的 N 原子。另一条用虚楔形线表示的单键，以 Pt 原子为顶点向左上方伸出，连到一个 Cl 原子。同样，一条用实楔形线表示的单键，以 Pt 原子为顶点向左下方伸出，连到一个 Br 原子。\"><br>（c） [Zn(NH<sub>3</sub>)<sub>3</sub>Cl]<sup>+</sup>：<img src=\"/media/ch19/CNX_Chem_19_02_Answer4c_img.jpg\" alt=\"方括号内，中心的 Zn 原子与一个 Cl 原子和三个 NH₃ 基团中的 N 原子以四面体的空间排布成键。短线段表示 Zn 原子向上与 Cl 原子的键，以及向左下与 NH₃ 基团的 N 的键。一条以 Zn 原子为顶点、在 NH₃ 基团的 N 原子一端变宽的虚楔形线，表示 Zn 原子右下方的一个键。最后一个键由类似的实楔形线表示，同样指向下方，仅略偏右，位于 Zn 原子下方，连到一个 NH₃ 的 N。括号外是一个上标加号。\"><br>（d） [Pt(NH<sub>3</sub>)<sub>3</sub>Cl]<sup>+</sup>：<img src=\"/media/ch19/CNX_Chem_19_02_Answer4d_img.jpg\" alt=\"此结构显示一条用虚楔形线表示的单键，以 Pt 原子为顶点向右上方伸出，连到一个 NH₃ 基团的 N 原子。同样，两条用实楔形线表示的单键，以 Pt 原子为顶点分别向右下方和左下方伸出，连到 NH₃ 基团的 N 原子。另一条用虚楔形线表示的单键，以 Pt 原子为顶点向左上方伸出，连到一个 Cl 原子。此结构被括号括起，括号右侧有上标加号。\"><br>（e） [Ni(H<sub>2</sub>O)<sub>4</sub>Cl<sub>2</sub>]：<img src=\"/media/ch19/CNX_Chem_19_02_Answer4e_img.jpg\" alt=\"此图显示两个结构。第一个标注为“反式”。该标注下方，方括号内是中心的 Ni 原子。从 Ni 原子出发，线段表示与上方和下方 Cl 原子的键。在右上方和左上方，以 Ni 原子为顶点、向外逐渐变宽的虚楔形线，表示与 H₂O 基团的 O 原子的键。同样，右下方和左下方的实楔形线表示与 H₂O 基团的 O 原子的键。此结构被括号括起。第二个结构标注为“顺式”。方括号内是中心的 Ni 原子。从 Ni 原子出发，线段表示与上方的一个 Cl 原子和下方的一个 H₂O 基团的 O 原子的键。在右上方和左上方，虚楔形线表示与 H₂O 基团的 O 原子的键。同样，右下方的一条实楔形线表示与一个 Cl 原子的键，左下方的一条实楔形线表示与 H₂O 基团的 O 原子的键。此结构也被括号括起。\"><br>（f） [Co(C<sub>2</sub>O<sub>4</sub>)<sub>2</sub>Cl<sub>2</sub>]<sup>3−</sup>：<img src=\"/media/ch19/CNX_Chem_19_02_Answer4f_img.jpg\" alt=\"此图包含三个结构。第一个结构的中心是一个 Co 原子，以单键连有四个 O 原子和两个 Cl 原子。这些键用向上和向下的线段、向左上和右上的虚楔形线、向左下和右下的实楔形线表示。Cl 原子位于结构的顶部和左上方。其余四个键从中心 Co 原子伸向 O 原子。这些 O 原子各与 C 原子相连，C 原子又各以双键与从中心 Co 原子向外伸出的 O 原子相连。这些 C 原子两两以短线段表示的键相连，在结构中形成两个环。整个结构被括号括起。括号外右侧是上标 3 负号。第二个结构看起来是第一个结构的镜像，中心的 Co 原子以单键连有四个 O 原子和两个 Cl 原子。这些键用向上和向下的线段、向左上和右上的虚楔形线、向左下和右下的实楔形线表示。Cl 原子位于结构的顶部和右上方。其余四个键从中心 Co 原子伸向 O 原子。这些 O 原子各与 C 原子相连，C 原子又各以双键与从中心 Co 原子向外伸出的 O 原子相连。这些 C 原子两两以短线段表示的键相连，在结构中形成两个环。整个结构被括号括起。括号外右侧是上标 3 负号。第三个结构的中心是一个 Co 原子，以单键连有四个 O 原子和两个 Cl 原子。这些键用向上和向下的线段、向左上和右上的虚楔形线、向左下和右下的实楔形线表示。Cl 原子位于结构的顶部和底部。其余四个键从中心 Co 原子伸向 O 原子。这些 O 原子各与 C 原子相连，C 原子又各与从中心 Co 原子向外伸出的 O 原子以双键相连。这些 C 原子两两以短线段表示的键相连，在结构中形成两个环。整个结构被括号括起。括号外右侧是上标 3 负号。最后这个结构的原子环位于结构的相对两侧。\">"
+   }
+  },
+  {
+   "id": "e31",
+   "source_id": "fs-idp39161552",
+   "source_number": "31",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "naming",
+   "prompt": "为练习 28 中给出的每种化合物或离子命名，包括金属的氧化态。<br>（a）[Co(CO<sub>3</sub>)<sub>3</sub>]<sup>3−</sup>（注意，在这个配合物中 CO<sub>3</sub><sup>2−</sup> 是双齿的）<br>（b）[Cu(NH<sub>3</sub>)<sub>4</sub>]<sup>2+</sup><br>（c）[Co(NH<sub>3</sub>)<sub>4</sub>Br<sub>2</sub>]<sub>2</sub>(SO<sub>4</sub>)<br>（d）[Pt(NH<sub>3</sub>)<sub>4</sub>][PtCl<sub>4</sub>]<br>（e）[Cr(en)<sub>3</sub>](NO<sub>3</sub>)<sub>3</sub><br>（f）[Pd(NH<sub>3</sub>)<sub>2</sub>Br<sub>2</sub>]（平面正方形）<br>（g）K<sub>3</sub>[Cu(Cl)<sub>5</sub>]<br>（h）[Zn(NH<sub>3</sub>)<sub>2</sub>Cl<sub>2</sub>]",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）三碳酸根合钴(III)酸根离子；（b）四氨合铜(II)离子；（c）硫酸二溴·四氨合钴(III)；（d）四氯合铂(II)酸四氨合铂(II)；（e）硝酸<em>三</em>(乙二胺)合铬(III)；（f）二溴·二氨合钯(II)；（g）五氯合铜(II)酸钾；（h）二氯·二氨合锌(II)"
+   }
+  },
+  {
+   "id": "e33",
+   "source_id": "fs-idp74861776",
+   "source_number": "33",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "isomerism",
+   "prompt": "说明下列配合物是否有异构体。<br>（a）四面体形 [Ni(CO)<sub>2</sub>(Cl)<sub>2</sub>]<br>（b）三角双锥形 [Mn(CO)<sub>4</sub>NO]<br>（c）[Pt(en)<sub>2</sub>Cl<sub>2</sub>]Cl<sub>2</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）无；（b）无；（c）两个 Cl 配体可以是<em>顺式</em>或<em>反式</em>。当它们是<em>顺式</em>时，还会有一个旋光异构体。"
+   }
+  },
+  {
+   "id": "e34",
+   "source_id": "fs-idp128328592",
+   "source_number": "34",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "coordination",
+   "prompt": "预测碳酸根配体 ${\\text{CO}}_{3}{}^{2−}$ 与金属中心配位时是单齿、双齿还是三齿配体。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "碳酸根可以作为单齿或双齿配体配位，但不能作为三齿配体。它的三个氧原子都带有孤电子对，都可以充当配位原子。然而，该离子是平面三角形的，其氧原子彼此相隔 120°，背向中心碳原子向外伸展，所以三个氧原子不可能同时到达同一个金属中心。要么是一个氧原子与金属成键，要么是两个氧原子一起与金属成键，并与碳原子形成一个小的四元环，如 [Co(NH<sub>3</sub>)<sub>4</sub>CO<sub>3</sub>]<sup>+</sup> 中，其中碳酸根是双齿的。"
+   }
+  },
+  {
+   "id": "e35",
+   "source_id": "fs-idp128328048",
+   "source_number": "35",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "isomerism",
+   "prompt": "画出 [CoCl<sub>5</sub>CN][CN] 的几何异构体、键合异构体和电离异构体。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<img src=\"/media/ch19/CNX_Chem_19_02_ex10ans_img.jpg\" alt=\"此图显示八个结构，各在方括号内，分三行排列。第一行有三个结构，第二行有三个结构，第三行有两个结构。这些结构按从左到右、从上到下的顺序描述。每个结构都有一个中心 Co 原子，其上方和下方有线段表示的键。在左上方和右上方，以 Co 原子为顶点、向外逐渐变宽的虚楔形线表示单键。同样，左下方和右下方的实楔形线表示单键。每个结构括号外的右侧，以括号中的上标标明一种元素或基团。第一个结构中，一个 CN 基团的 C 原子与 Co 原子相连。其余 5 个键都与 Cl 原子成键。结构外括号中的上标是 CN。第二个结构中，一个 CN 基团的 N 原子与 Co 原子相连。其余 5 个键都与 Cl 原子成键。结构外括号中的上标是 CN。第三个结构中，两个 CN 基团的 C 原子在结构的顶部和底部与 Co 原子相连。其余 4 个键都与 Cl 原子成键。结构外括号中的上标是 Cl。第四个结构中，一个 CN 基团的 C 原子在结构的顶部与 Co 原子相连，另一个 CN 基团的 N 原子在结构的底部与之相连。其余 4 个键都与 Cl 原子成键。结构外括号中的上标是 Cl。第五个结构中，两个 CN 基团的 N 原子在结构的顶部和底部与 Co 原子相连。其余 4 个键都与 Cl 原子成键。结构外括号中的上标是 Cl。第六个结构中，两个 CN 基团的 C 原子在结构的顶部和右上方与 Co 原子相连。其余 4 个键都与 Cl 原子成键。结构外括号中的上标是 Cl。第七个结构中，一个 CN 基团的 C 原子在结构的顶部与 Co 原子相连，另一个 CN 基团的 N 原子在结构的右上方与之相连。其余 4 个键都与 Cl 原子成键。结构外括号中的上标是 Cl。第八个结构中，两个 CN 基团的 N 原子在结构的顶部和右上方与 Co 原子相连。其余 4 个键都与 Cl 原子成键。结构外括号中的上标是 Cl。\">"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "naming-coordination-compounds"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "coordination-number"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "cis-trans-configuration"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "naming-coordination-compounds"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "complexes-in-nature-and-technology"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "chelate"
+  },
+  {
+   "exercise": "e27",
+   "concept": "naming-coordination-compounds"
+  },
+  {
+   "exercise": "e27",
+   "concept": "coordination-number"
+  },
+  {
+   "exercise": "e27",
+   "concept": "geometric-isomer"
+  },
+  {
+   "exercise": "e29",
+   "concept": "complex-geometry"
+  },
+  {
+   "exercise": "e29",
+   "concept": "cis-trans-configuration"
+  },
+  {
+   "exercise": "e29",
+   "concept": "optical-isomer"
+  },
+  {
+   "exercise": "e31",
+   "concept": "naming-coordination-compounds"
+  },
+  {
+   "exercise": "e31",
+   "concept": "oxidation-numbers"
+  },
+  {
+   "exercise": "e33",
+   "concept": "geometric-isomer"
+  },
+  {
+   "exercise": "e33",
+   "concept": "optical-isomer"
+  },
+  {
+   "exercise": "e34",
+   "concept": "polydentate-ligand"
+  },
+  {
+   "exercise": "e34",
+   "concept": "donor-atom"
+  },
+  {
+   "exercise": "e35",
+   "concept": "geometric-isomer"
+  },
+  {
+   "exercise": "e35",
+   "concept": "linkage-isomer"
+  },
+  {
+   "exercise": "e35",
+   "concept": "ionization-isomer"
+  }
+ ],
+ "footnotes": [
+  {
+   "id": "c-ionization-isomers",
+   "kind": "correction",
+   "html": "本书给出的这一对并不呈电中性：带一个 Br<sup>−</sup> 的 [CoCl<sub>6</sub>]<sup>3−</sup> 的电荷为 4−。电离异构体是在同一个电中性化合物的两个层之间互换一个阴离子，如 [Co(NH<sub>3</sub>)<sub>5</sub>Cl]Br 和 [Co(NH<sub>3</sub>)<sub>5</sub>Br]Cl。"
+  },
+  {
+   "id": "c-converter-caption",
+   "kind": "correction",
+   "html": "本书的题注把两件事合在了一起。正文所描述的催化剂转化的是在发电厂捕获的二氧化碳；而汽车的催化转化器（图中所示的那种）转化的是一氧化碳、氮氧化物和未燃烧的烃，不转化二氧化碳。"
+  },
+  {
+   "id": "c-fig-trans",
+   "kind": "correction",
+   "figure": "sim-cis-trans",
+   "html": "图 19.22 的题注说每个配体都正好与一个相邻的配体相对；在<em>反式</em>异构体中，每个配体正好与相同的配体相对，Cl 对 Cl，NH<sub>3</sub> 对 NH<sub>3</sub>。"
+  }
+ ]
+}

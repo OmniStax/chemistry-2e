@@ -1,0 +1,437 @@
+{
+  "id": "12.1",
+  "module": "m68786",
+  "chapter": "12",
+  "title": "化学反应速率",
+  "short": "化学反应速率",
+  "lead": "<span data-concept=\"reaction-rate\">化学反应的速率</span>衡量反应物被消耗或产物生成的快慢，可由<span data-concept=\"concentration\">浓度</span>随时间的变化求得，既可以取一段时间间隔，也可以取某一瞬间。反应的速率可以用它的任何一种反应物或产物来表示。",
+  "objectives": [
+    "定义化学反应速率",
+    "由给定化学反应的配平方程式推导速率表达式",
+    "由实验数据计算反应速率"
+  ],
+  "summary_html": "<p><span data-concept=\"reaction-rate\">反应速率</span>既可以用单位时间内反应物的量的减少来表示，也可以用单位时间内产物的量的增加来表示。同一反应的不同<span data-concept=\"rate-expression\">速率表达式</span>之间的关系，可直接由表示该反应的方程式中的化学计量系数推出。</p>",
+  "notes": "本节没有任何内容被略去；正文把书中的“t₂** − t₁”写成不带标记错误的形式，并按原样保留相对速率方程中的 ΔA 和 ΔB。",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ]
+  },
+  "built": "2026-10-26",
+  "exercises_lead": "",
+  "exercise_notes": "布鲁姆层级、概念标签和提示均由 AI 生成。答案取自书后答案以及“学习检测”的答案。两道没有书中答案的数值习题被略去，也没有为它们算出答案：fs-idp24119136 和 fs-idm40595504。同样没有答案的 fs-idp77962352 保留，并附有一份标明为由 AI 生成的建议思路。fs-idm82430624 的答案把 ClF₃ 写成了“CIF₃”，按原样保留。",
+  "figures": [
+    {
+      "id": "sim-h2o2-rate",
+      "kind": "sim",
+      "number": "12.2",
+      "folds": [
+        "12.3"
+      ],
+      "originals": [
+        "/media/ch12/CNX_Chem_12_01_KDataH2O2.jpg",
+        "/media/ch12/CNX_Chem_12_01_RRateIll.jpg"
+      ],
+      "original_caption": "（图 12.2）水溶液中 H₂O₂ 的分解速率随 H₂O₂ 浓度的降低而减小。（图 12.3）此图是 1.000 M H₂O₂ 溶液的浓度对时间的曲线。任一时刻的速率等于该时刻曲线切线斜率的负值。图中画出了 t = 0 h（“初始速率”）和 t = 12 h（12 h 时的“瞬时速率”）处的切线。",
+      "draws": [
+        "concentration",
+        "time",
+        "rate"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-urine-strips",
+      "kind": "photo",
+      "number": "12.4",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-nh3-rates",
+      "kind": "sim",
+      "number": "12.5",
+      "originals": [
+        "/media/ch12/CNX_Chem_12_01_NH3Decomp.jpg"
+      ],
+      "original_caption": "反应 2NH₃ ⟶ N₂ + 3H₂ 中，反应物和产物浓度的变化。三种浓度的变化速率由反应的化学计量关系联系起来，如 t = 500 s 处各切线的不同斜率所示。",
+      "draws": [
+        "concentration",
+        "time",
+        "rate"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    }
+  ],
+  "referents": [
+    {
+      "id": "nh3",
+      "label": "氨",
+      "figures": [
+        "sim-nh3-rates"
+      ]
+    },
+    {
+      "id": "n2",
+      "label": "氮气",
+      "figures": [
+        "sim-nh3-rates"
+      ]
+    },
+    {
+      "id": "h2",
+      "label": "氢气",
+      "figures": [
+        "sim-nh3-rates"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "span": "rate",
+      "concept": "reaction-rate",
+      "verb": "introduces"
+    },
+    {
+      "span": "rate",
+      "concept": "concentration",
+      "verb": "uses"
+    },
+    {
+      "span": "expression",
+      "concept": "rate-expression",
+      "verb": "introduces"
+    },
+    {
+      "span": "expression",
+      "concept": "reaction-rate",
+      "verb": "uses"
+    },
+    {
+      "span": "expression",
+      "concept": "molarity",
+      "verb": "uses"
+    },
+    {
+      "span": "average",
+      "concept": "rate-from-concentration-data",
+      "verb": "introduces"
+    },
+    {
+      "span": "average",
+      "concept": "average-rate",
+      "verb": "introduces"
+    },
+    {
+      "span": "average",
+      "concept": "instantaneous-rate",
+      "verb": "introduces"
+    },
+    {
+      "span": "average",
+      "concept": "initial-rate",
+      "verb": "introduces"
+    },
+    {
+      "span": "average",
+      "concept": "average-instantaneous-initial-rate",
+      "verb": "introduces"
+    },
+    {
+      "span": "average",
+      "concept": "rate-expression",
+      "verb": "uses"
+    },
+    {
+      "span": "relative",
+      "concept": "relative-reaction-rates",
+      "verb": "introduces"
+    },
+    {
+      "span": "relative",
+      "concept": "write-relative-rate-expressions",
+      "verb": "introduces"
+    },
+    {
+      "span": "relative",
+      "concept": "rate-expression",
+      "verb": "uses"
+    },
+    {
+      "span": "relative",
+      "concept": "instantaneous-rate",
+      "verb": "uses"
+    },
+    {
+      "span": "relative",
+      "concept": "balanced-equation",
+      "verb": "uses"
+    },
+    {
+      "span": "relative",
+      "concept": "stoichiometric-factor",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idp40614224",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-relative"
+      },
+      "cite": "relative",
+      "prompt": "在下列净离子方程式所描述的反应中，Br<sub>2</sub> 的生成速率为 6.0 × 10<sup>−6</sup> mol/L/s：${\\text{5Br}}^{\\text{−}}+{\\text{BrO}}_{3}{}^{\\text{−}}+{\\text{6H}}^{\\text{+}}\\;\\longrightarrow \\;{\\text{3Br}}_{2}+{\\text{3H}}_{2}\\text{O}$<br>写出联系各反应物的消耗速率与各产物的生成速率的方程式。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "$-\\;\\frac{1}{5}\\;\\frac{\\text{Δ}[{\\text{Br}}^{\\text{−}}]}{\\text{Δ}t}\\;=-\\;\\frac{\\text{Δ}[{\\text{BrO}}_{3}{}^{\\text{−}}]}{\\text{Δ}t}\\;=-\\;\\frac{1}{6}\\;\\frac{\\text{Δ}[{\\text{H}}^{\\text{+}}]}{\\text{Δ}t}\\;=\\;\\frac{1}{3}\\;\\frac{\\text{Δ}[{\\text{Br}}_{2}]}{\\text{Δ}t}\\;=\\;\\frac{1}{3}\\;\\frac{\\text{Δ}[{\\text{H}}_{\\text{2}}\\text{O}]}{\\text{Δ}t}$"
+      }
+    },
+    {
+      "id": "cyl2",
+      "source_id": "fs-idm24260800",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-h2o2-rates"
+      },
+      "cite": "relative",
+      "prompt": "如果氨 NH<sub>3</sub> 在 1150 K 时的分解速率为 2.10 × 10<sup>−6</sup> mol/L/s，那么氮气和氢气的生成速率各是多少？",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "rate of production of N<sub>2</sub>",
+            "value": 1.05e-06,
+            "unit": "mol/L/s",
+            "hint": "每生成 1 mol N<sub>2</sub> 有 2 mol NH<sub>3</sub> 分解，所以把氨的速率除以 2。"
+          },
+          {
+            "part": "rate of production of H<sub>2</sub>",
+            "value": 3.15e-06,
+            "unit": "mol/L/s",
+            "hint": "每生成 1 mol N<sub>2</sub> 同时生成 3 mol H<sub>2</sub>，所以把氮气的速率乘以 3。"
+          }
+        ],
+        "solution": "N<sub>2</sub> 为 1.05 × 10<sup>−6</sup> mol/L/s，H<sub>2</sub> 为 3.15 × 10<sup>−6</sup> mol/L/s。"
+      }
+    },
+    {
+      "id": "e1",
+      "source_id": "fs-idp53700320",
+      "source_number": "1",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "average",
+      "prompt": "平均速率、初始速率和瞬时速率有什么区别？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "瞬时速率是反应在任一特定时刻的速率，这一段时间短到反应物和产物的浓度变化可以忽略。初始速率是反应刚开始时（产物刚刚开始生成时）的瞬时速率。平均速率是瞬时速率在一段时间内的平均值。"
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idp77962352",
+      "source_number": "2",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "relative",
+      "prompt": "臭氧按下列方程式分解为氧气：${\\text{2O}}_{3}(g)\\;\\longrightarrow \\;{\\text{3O}}_{2}(g)$。写出联系此反应中以 O<sub>3</sub> 的消失和氧气的生成表示的速率表达式的方程式。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "$-\\;\\frac{1}{2}\\;\\frac{\\text{Δ}[{\\text{O}}_{3}]}{\\kdt}\\;=\\;\\frac{1}{3}\\;\\frac{\\text{Δ}[{\\text{O}}_{2}]}{\\kdt}$。臭氧是反应物，所以它的浓度下降，$\\text{Δ}[{\\text{O}}_{3}]$ 为负值；负号使它的这一项成为正的速率。氧气是产物，所以它的这一项不需要符号。配平的方程式表明，每分解 2 个 O<sub>3</sub> 分子就生成 3 个 O<sub>2</sub> 分子，所以氧气出现的速度是臭氧消失速度的 3/2 倍。把每个变化速率除以相应物种的系数，O<sub>3</sub> 为 2，O<sub>2</sub> 为 3，两项就相等，正如例 12.1 中的系数 4、5、4 和 6 所起的作用。"
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idm82430624",
+      "source_number": "3",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "relative",
+      "prompt": "在核工业中，三氟化氯用于制备六氟化铀，后者是铀的一种易挥发的化合物，用于分离铀同位素。三氟化氯由反应 ${\\text{Cl}}_{2}(g)+{\\text{3F}}_{2}(g)\\;\\longrightarrow \\;{\\text{2ClF}}_{3}(g)$ 制得。写出联系此反应中以 Cl<sub>2</sub> 和 F<sub>2</sub> 的消失以及 ClF<sub>3</sub> 的生成表示的速率表达式的方程式。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "$\\text{速率}=+\\frac{1}{2}\\;\\frac{\\text{Δ}[{\\text{CIF}}_{3}]}{\\text{Δ}t}\\;=-\\frac{\\text{Δ}[{\\text{Cl}}_{2}]}{\\text{Δ}t}\\;=-\\frac{1}{3}\\;\\frac{\\text{Δ}[{\\text{F}}_{2}]}{\\text{Δ}t}$<sup class=\"fn\" data-note=\"c-e3-clf3\"></sup>"
+      }
+    },
+    {
+      "id": "e5",
+      "source_id": "fs-idm57147216",
+      "source_number": "5",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "average",
+      "prompt": "对表示为 $2A\\;\\longrightarrow \\;B$ 的反应的速率所作的研究得到下列数据：<table><thead><tr><th>时间（s）</th><th>0.0</th><th>5.0</th><th>10.0</th><th>15.0</th><th>20.0</th><th>25.0</th><th>35.0</th></tr></thead><tbody><tr><td>[<em>A</em>] (<em>M</em>)</td><td>1.00</td><td>0.775</td><td>0.625</td><td>0.465</td><td>0.360</td><td>0.285</td><td>0.230</td></tr></tbody></table>（a）求 <em>A</em> 在 0.0 s 到 10.0 s 之间以及 10.0 s 到 20.0 s 之间的平均消失速率。<br>（b）由时间对 [<em>A</em>] 的图估算 <em>A</em> 在 15.0 s 时的瞬时消失速率。这一速率的单位是什么？<br>（c）用（a）和（b）中求得的速率，求 <em>B</em> 在 0.00 s 到 10.0 s 之间的平均生成速率，以及 <em>B</em> 在 15.0 s 时的瞬时生成速率。",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "(a) average rate, 0 to 10 s",
+            "value": 0.0375,
+            "unit": "mol L⁻¹ s⁻¹",
+            "hint": "用该时间间隔内 [<em>A</em>] 的下降量除以所用的 10.0 s。"
+          },
+          {
+            "part": "(a) average rate, 10 to 20 s",
+            "value": 0.0265,
+            "unit": "mol L⁻¹ s⁻¹"
+          },
+          {
+            "part": "(b) instantaneous rate at 15 s",
+            "value": 0.023,
+            "unit": "mol L⁻¹ s⁻¹",
+            "tol": 0.15,
+            "hint": "作 [<em>A</em>] 对时间的图，在 15.0 s 处作切线，取其斜率的负值。"
+          },
+          {
+            "part": "(c) average rate of formation of <em>B</em>, 0 to 10 s",
+            "value": 0.0188,
+            "unit": "mol L⁻¹ s⁻¹",
+            "hint": "每消耗 2 mol <em>A</em> 生成 1 mol <em>B</em>。"
+          },
+          {
+            "part": "(c) instantaneous rate of formation of <em>B</em> at 15 s",
+            "value": 0.012,
+            "unit": "mol L⁻¹ s⁻¹",
+            "tol": 0.15
+          }
+        ],
+        "solution": "（a）平均速率，0 − 10 s = 0.0375 mol L<sup>−1</sup> s<sup>−1</sup>；平均速率，10 − 20 s = 0.0265 mol L<sup>−1</sup> s<sup>−1</sup>；（b）瞬时速率，15 s = 0.023 mol L<sup>−1</sup> s<sup>−1</sup>；（c）B 生成的平均速率 = 0.0188 mol L<sup>−1</sup> s<sup>−1</sup>；B 生成的瞬时速率 = 0.012 mol L<sup>−1</sup> s<sup>−1</sup>"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "write-relative-rate-expressions"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "relative-reaction-rates"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "relative-reaction-rates"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "instantaneous-rate"
+    },
+    {
+      "exercise": "e1",
+      "concept": "average-instantaneous-initial-rate"
+    },
+    {
+      "exercise": "e1",
+      "concept": "average-rate"
+    },
+    {
+      "exercise": "e1",
+      "concept": "instantaneous-rate"
+    },
+    {
+      "exercise": "e1",
+      "concept": "initial-rate"
+    },
+    {
+      "exercise": "e2",
+      "concept": "write-relative-rate-expressions"
+    },
+    {
+      "exercise": "e3",
+      "concept": "write-relative-rate-expressions"
+    },
+    {
+      "exercise": "e5",
+      "concept": "rate-from-concentration-data"
+    },
+    {
+      "exercise": "e5",
+      "concept": "instantaneous-rate"
+    },
+    {
+      "exercise": "e5",
+      "concept": "relative-reaction-rates"
+    }
+  ],
+  "footnotes": [
+    {
+      "id": "c-e3-clf3",
+      "kind": "correction",
+      "html": "答案把产物写成 CIF<sub>3</sub>；产物是三氟化氯，即 ClF<sub>3</sub>。"
+    }
+  ]
+}

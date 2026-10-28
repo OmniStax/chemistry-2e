@@ -1,0 +1,521 @@
+{
+  "id": "17.5",
+  "module": "m68825",
+  "chapter": "17",
+  "title": "电池与燃料电池",
+  "short": "电池与燃料电池",
+  "lead": "日常设备中的<span data-concept=\"battery\">电池</span>，从锌碳<span data-concept=\"dry-cell\">干电池</span>到<span data-concept=\"lithium-ion-battery\">锂离子电池</span>，都是为供给电能而制造的<span data-concept=\"galvanic-cell\">原电池</span>，有些只能使用一次，有些则可以反复充电。<span data-concept=\"fuel-cell\">燃料电池</span>进行的是同类氧化还原化学反应，只是反应物是连续送入的。",
+  "objectives": [
+    "描述几种常见电池涉及的电化学",
+    "区分燃料电池与电池的工作方式"
+  ],
+  "summary_html": "<p>专门设计用作电源的<span data-concept=\"galvanic-cell\">原电池</span>称为<span data-concept=\"battery\">电池</span>。市面上有多种一次性使用的<span data-concept=\"battery\">电池</span>（<span data-concept=\"primary-cell\">一次电池</span>）和可充电的<span data-concept=\"battery\">电池</span>（<span data-concept=\"secondary-cell\">二次电池</span>），可满足各种应用，重要的指标包括<span data-concept=\"cell-potential\">电压</span>、尺寸和寿命。<span data-concept=\"fuel-cell\">燃料电池</span>有时称为<span data-concept=\"fuel-cell\">液流电池</span>，是利用通常与<span data-concept=\"combustion-reaction\">燃烧</span>过程相关的自发氧化还原反应的能量的装置。与<span data-concept=\"battery\">电池</span>一样，<span data-concept=\"fuel-cell\">燃料电池</span>让反应中的电子经外电路转移，但需要从外部储罐连续输入氧化还原反应物（燃料和氧化剂）。与内燃机相比，<span data-concept=\"fuel-cell\">燃料电池</span>在把反应释放的能量转化为有用功方面通常效率高得多。</p>",
+  "notes": "七个“学习链接”提示（涉及电池、锌碳电池、碱性电池、镍镉电池、锂离子电池、铅酸电池和燃料电池）被略去。“Its intended use a source”、把电解质写成“a potassium hydroxide electrode”、“a large amount current”以及“via a catalyzed electrochemical that is”都按原样保留，图 17.14 位于它所说明的方程式之前，与书中的印刷一致。",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ]
+  },
+  "built": "2026-10-26",
+  "exercises_lead": "",
+  "exercise_notes": "布鲁姆层级、概念标签和建议思路均由 AI 生成。答案取自书后答案。没有给出答案的 fs-idm149853488（一个铜铅电池），其标准电池电势和电极反应需要自行算出，故被略去。没有给出答案的 fs-idp39083136 保留，其建议思路标明为 OmniStax 自己所加。没有任何内容被移动。",
+  "figures": [
+    {
+      "id": "fig-daniell",
+      "kind": "photo",
+      "number": "17.8",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-dry-cell",
+      "kind": "photo",
+      "number": "17.9",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-alkaline",
+      "kind": "photo",
+      "number": "17.10",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-nicd",
+      "kind": "photo",
+      "number": "17.11",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-li-ion",
+      "kind": "sim",
+      "number": "17.12",
+      "originals": [
+        "/media/ch17/CNX_Chem_17_05_LiIon.jpg"
+      ],
+      "original_caption": "在锂离子电池中，随着锂离子在阳极和阴极之间转移，电荷流动。",
+      "draws": [
+        "potential"
+      ],
+      "conventions": [
+        "Li",
+        "Co",
+        "O",
+        "C",
+        "e-"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-lead-acid",
+      "kind": "photo",
+      "number": "17.13",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-fuel-cell",
+      "kind": "sim",
+      "number": "17.14",
+      "originals": [
+        "/media/ch17/CNX_Chem_17_05_FuelCell.jpg"
+      ],
+      "original_caption": "在这个氢燃料电池中，空气中的氧与氢反应，生成水和电。",
+      "draws": [
+        "potential"
+      ],
+      "conventions": [
+        "H",
+        "O",
+        "N",
+        "e-"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    }
+  ],
+  "referents": [],
+  "coverage": [
+    {
+      "span": "batteries",
+      "concept": "battery",
+      "verb": "introduces"
+    },
+    {
+      "span": "batteries",
+      "concept": "primary-cell",
+      "verb": "introduces"
+    },
+    {
+      "span": "batteries",
+      "concept": "secondary-cell",
+      "verb": "introduces"
+    },
+    {
+      "span": "batteries",
+      "concept": "galvanic-cell",
+      "verb": "uses"
+    },
+    {
+      "span": "batteries",
+      "concept": "oxidation",
+      "verb": "uses"
+    },
+    {
+      "span": "batteries",
+      "concept": "half-cell",
+      "verb": "uses"
+    },
+    {
+      "span": "batteries",
+      "concept": "salt-bridge",
+      "verb": "uses"
+    },
+    {
+      "span": "batteries",
+      "concept": "reversible-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "batteries",
+      "concept": "fuel-cell",
+      "verb": "uses"
+    },
+    {
+      "span": "single-use",
+      "concept": "dry-cell",
+      "verb": "introduces"
+    },
+    {
+      "span": "single-use",
+      "concept": "alkaline-battery",
+      "verb": "introduces"
+    },
+    {
+      "span": "single-use",
+      "concept": "primary-cell",
+      "verb": "uses"
+    },
+    {
+      "span": "single-use",
+      "concept": "anode",
+      "verb": "uses"
+    },
+    {
+      "span": "single-use",
+      "concept": "cathode",
+      "verb": "uses"
+    },
+    {
+      "span": "single-use",
+      "concept": "electrolyte",
+      "verb": "uses"
+    },
+    {
+      "span": "single-use",
+      "concept": "oxidation",
+      "verb": "uses"
+    },
+    {
+      "span": "single-use",
+      "concept": "reduction",
+      "verb": "uses"
+    },
+    {
+      "span": "single-use",
+      "concept": "cell-potential",
+      "verb": "uses"
+    },
+    {
+      "span": "single-use",
+      "concept": "galvanic-cell",
+      "verb": "uses"
+    },
+    {
+      "span": "single-use",
+      "concept": "battery",
+      "verb": "uses"
+    },
+    {
+      "span": "rechargeable",
+      "concept": "nickel-cadmium-battery",
+      "verb": "introduces"
+    },
+    {
+      "span": "rechargeable",
+      "concept": "lithium-ion-battery",
+      "verb": "introduces"
+    },
+    {
+      "span": "rechargeable",
+      "concept": "lead-acid-battery",
+      "verb": "introduces"
+    },
+    {
+      "span": "rechargeable",
+      "concept": "secondary-cell",
+      "verb": "uses"
+    },
+    {
+      "span": "rechargeable",
+      "concept": "cathode",
+      "verb": "uses"
+    },
+    {
+      "span": "rechargeable",
+      "concept": "anode",
+      "verb": "uses"
+    },
+    {
+      "span": "rechargeable",
+      "concept": "electrolyte",
+      "verb": "uses"
+    },
+    {
+      "span": "rechargeable",
+      "concept": "cell-potential",
+      "verb": "uses"
+    },
+    {
+      "span": "rechargeable",
+      "concept": "alkaline-battery",
+      "verb": "uses"
+    },
+    {
+      "span": "rechargeable",
+      "concept": "battery",
+      "verb": "uses"
+    },
+    {
+      "span": "fuel-cells",
+      "concept": "fuel-cell",
+      "verb": "introduces"
+    },
+    {
+      "span": "fuel-cells",
+      "concept": "galvanic-cell",
+      "verb": "uses"
+    },
+    {
+      "span": "fuel-cells",
+      "concept": "combustion-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "fuel-cells",
+      "concept": "catalyst",
+      "verb": "uses"
+    },
+    {
+      "span": "fuel-cells",
+      "concept": "half-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "fuel-cells",
+      "concept": "cell-potential",
+      "verb": "uses"
+    },
+    {
+      "span": "fuel-cells",
+      "concept": "anode",
+      "verb": "uses"
+    },
+    {
+      "span": "fuel-cells",
+      "concept": "cathode",
+      "verb": "uses"
+    },
+    {
+      "span": "fuel-cells",
+      "concept": "electrolyte",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "e33",
+      "source_id": "fs-idm100291296",
+      "source_number": "33",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "batteries",
+      "prompt": "考虑一个总反应为 $\\text{Cu}(s)+2{\\text{Ag}}^{\\text{+}}(aq)\\;\\longrightarrow \\;\\text{2Ag}(s)+{\\text{Cu}}^{2+}(aq)$ 的电池。<br>（a）阳极和阴极的反应各是什么？<br>（b）电池电势为零时电池即“耗尽”。这个电池耗尽时 <em>Q</em> 的值是多少？<br>（c）如果发现某个耗尽的电池中 [Cu<sup>2+</sup>] = 0.11 <em>M</em>，银离子的浓度是多少？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）$\\begin{array}{l} \\\\ \\text{阳极：Cu}(s)\\;\\longrightarrow \\;{\\text{Cu}}^{2+}(aq)+{\\text{2e}}^{\\text{−}}\\hspace{4em}{E}_{\\text{anode}}^{{}^{\\circ}}=\\text{0.34 V} \\\\ \\text{阴极：}\\;2\\;\\times \\;({\\text{Ag}}^{\\text{+}}(aq)+{\\text{e}}^{\\text{−}}\\;\\longrightarrow \\;\\text{Ag}(s))\\hspace{4em}{E}_{\\text{cathode}}^{{}^{\\circ}}=\\text{0.7996 V}\\end{array};$ （b）3.5 × 10<sup>15</sup>；（c）5.6 × 10<sup>−9</sup> <em>M</em>"
+      }
+    },
+    {
+      "id": "e34",
+      "source_id": "fs-idm59169968",
+      "source_number": "34",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "fuel-cells",
+      "prompt": "为什么电池会耗尽，而燃料电池不会？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "电池是自成一体的，在耗尽之前可供消耗的试剂有限。另外，电池反应的副产物会积累并干扰反应。燃料电池则不断得到反应物的补充，产物也被排出，所以只要不断供给试剂，它就能持续工作。"
+      }
+    },
+    {
+      "id": "e35",
+      "source_id": "fs-idp39083136",
+      "source_number": "35",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "rechargeable",
+      "prompt": "用能斯特方程解释某些电池在放电时观察到的电压下降。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "电池放电时，反应物被消耗，产物积累，因此反应商 $\\kQrxn$ 增大，由能斯特方程，在 25 °C 时 $\\kEcell=\\kEocell-\\;\\frac{0.0592\\text{ V}}{\\kn}\\;\\text{log}\\;\\kQrxn$，较大的 $\\kQrxn$ 从 $\\kEocell$ 中减去的更多，电池电势随之下降。例如在干电池中，$\\kQrxn$ 含有溶解物种的浓度：生成的 Zn<sup>2+</sup> 和 NH<sub>3</sub> 位于商的分子项，浓度升高，而被消耗的 NH<sub>4</sub>Cl 位于分母项，浓度降低，所以 log $\\kQrxn$ 在整个放电过程中不断增大，电压从最初的 1.5 V 稳步下降。如果电池反应一直进行到平衡，$\\kQrxn$ 就会等于 $\\kK$，$\\kEcell$ 为 0，电池就耗尽了。电池反应只涉及固体和液体的电池，如碱性电池，Zn(<em>s</em>) + 2MnO<sub>2</sub>(<em>s</em>) ⟶ ZnO(<em>s</em>) + Mn<sub>2</sub>O<sub>3</sub>(<em>s</em>)，其 $\\kQrxn$ 始终等于 1，这就是只有部分电池出现这种下降的原因。"
+      }
+    },
+    {
+      "id": "e36",
+      "source_id": "fs-idm192431088",
+      "source_number": "36",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "rechargeable",
+      "prompt": "汽车电池常以“冷启动电流”来标定，这是衡量电池在低温天气中性能的指标。请提出一个理由，解释为什么电池输出电流的能力在低温下会减弱。（提示：考虑化学反应的动力学。）",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "根据动力学理论，由于反应物分子之间的碰撞速率降低，化学反应在较低温度下进行得更慢。电池内部发生的氧化还原反应的速率随温度降低而减小，导致产生的电流减少。"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "e33",
+      "concept": "battery"
+    },
+    {
+      "exercise": "e33",
+      "concept": "half-reaction"
+    },
+    {
+      "exercise": "e33",
+      "concept": "anode"
+    },
+    {
+      "exercise": "e33",
+      "concept": "cathode"
+    },
+    {
+      "exercise": "e33",
+      "concept": "nernst-equation"
+    },
+    {
+      "exercise": "e34",
+      "concept": "battery"
+    },
+    {
+      "exercise": "e34",
+      "concept": "fuel-cell"
+    },
+    {
+      "exercise": "e35",
+      "concept": "nernst-equation"
+    },
+    {
+      "exercise": "e35",
+      "concept": "battery"
+    },
+    {
+      "exercise": "e35",
+      "concept": "cell-potential"
+    },
+    {
+      "exercise": "e36",
+      "concept": "lead-acid-battery"
+    },
+    {
+      "exercise": "e36",
+      "concept": "battery"
+    },
+    {
+      "exercise": "e36",
+      "concept": "temperature-and-rate"
+    }
+  ],
+  "footnotes": [
+    {
+      "id": "c-nicd-electrolyte",
+      "kind": "correction",
+      "html": "书中把氢氧化钾称为电极。它是电池的电解质；电极是镀镍的阴极和镀镉的阳极。"
+    }
+  ]
+}

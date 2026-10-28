@@ -1,0 +1,1074 @@
+{
+ "id": "8.2",
+ "module": "m68745",
+ "chapter": "8",
+ "title": "杂化原子轨道",
+ "short": "杂化原子轨道",
+ "lead": "孤立原子的轨道无法解释水这样的分子的键角。价键理论让成键原子的价轨道混合成各组杂化轨道，即 sp、sp²、sp³、sp³d 和 sp³d²，每一组各自在空间中按一定的排布指向，并把对哪一组的选择与原子周围的电子密度区域联系起来。",
+ "objectives": [
+  "解释原子轨道杂化的概念",
+  "确定与各种分子几何构型相对应的杂化轨道"
+ ],
+ "summary_html": "<p>我们可以用杂化轨道来描述以共价键结合的原子周围的电子密度，杂化轨道是部分或全部价层原子轨道的数学组合。这些杂化轨道要么形成指向分子中其他原子的 σ 键，要么含有孤电子对。我们可以根据中心原子周围电子密度区域的几何排布来确定它的杂化类型。两个这样的区域意味着 <em>sp</em> 杂化；三个，<em>sp</em><sup>2</sup> 杂化；四个，<em>sp</em><sup>3</sup> 杂化；五个，<em>sp</em><sup>3</sup><em>d</em> 杂化；六个，<em>sp</em><sup>3</sup><em>d</em><sup>2</sup> 杂化。π 键由未杂化的原子轨道（<em>p</em> 轨道或 <em>d</em> 轨道）形成。</p>",
+ "notes": "“学习链接”栏目中指向一个可以三维观察杂化轨道的网站的那条提示被略去，因为本页的三维图取代了它。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案来自本书的书后答案和“学习检测”的答案，fs-idp86297648 的答案保留了本书中未闭合的括号。七道没有书后答案的题（fs-idp3076096、fs-idp25144752、fs-idp180352816、fs-idm2424288、fs-idm10995632、fs-idm71570128 和 fs-idp15207648）保留，并附有标明为 AI 建议的解题思路。没有任何内容被略去，也没有任何内容取自其他小节。",
+ "figures": [
+  {
+   "id": "sim-water",
+   "kind": "sim",
+   "number": "8.6",
+   "folds": [
+    "8.7"
+   ],
+   "originals": [
+    "/media/ch08/CNX_Chem_08_02_H2Ovb.jpg",
+    "/media/ch08/CNX_Chem_08_02_H2Otet.jpg"
+   ],
+   "original_caption": "（图 8.6）氧原子（红色）的两个 2p 轨道与两个氢原子（蓝色）的 1s 轨道假想的重叠，将产生 90° 的键角。这与实验证据不符。（注意，轨道有时画成拉长的“气球”形状，而不是更真实的“饱满”形状，以便更容易看清几何关系。）（图 8.7）（a）水分子有四个电子密度区域，因此价层电子对互斥理论预测杂化轨道呈四面体形排列。（b）氧上的两个杂化轨道含有孤电子对，另外两个与氢原子的 1s 轨道重叠，形成 H₂O 中的 O–H 键。这一描述与实验得到的结构更相符。",
+   "draws": ["angle"],
+   "conventions": [
+    "O",
+    "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "framed clear of the headline, H atoms below, orbital label off the arc"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-sp",
+   "kind": "sim",
+   "number": "8.8",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_02_spGeom.jpg"
+   ],
+   "original_caption": "同一原子的一个 s 轨道（蓝色）与一个 p 轨道（红色）杂化，产生两个 sp 杂化轨道（黄色）。每个杂化轨道主要朝向一个方向。注意，每个 sp 轨道都有一个明显大于另一个的瓣。这两个 sp 轨道的夹角为 180°，与两个电子域的几何构型一致。",
+   "draws": ["angle"],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "framed clear of the headline, shorter headline, labels off axis names"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-sp-levels",
+   "kind": "figure",
+   "number": "8.9",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_02_spDiag.jpg"
+   ],
+   "original_caption": "这张轨道能级图表示直线形 BeCl₂ 分子中 Be 上的 sp 杂化轨道。两个 sp 杂化轨道各容纳一个电子，因此都是半充满的，可通过与 Cl 的 3p 轨道重叠而用于成键。",
+   "draws": [
+    "energy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-sp2",
+   "kind": "sim",
+   "number": "8.10",
+   "folds": [
+    "8.11",
+    "8.12"
+   ],
+   "originals": [
+    "/media/ch08/CNX_Chem_08_02_sp2Geom.jpg",
+    "/media/ch08/CNX_Chem_08_02_sp2Conv.jpg",
+    "/media/ch08/CNX_Chem_08_02_BH3.jpg"
+   ],
+   "original_caption": "（图 8.10）一个 s 轨道（蓝色）与两个 p 轨道（红色）杂化，产生三个等价的 sp² 杂化轨道（黄色），彼此夹角为 120°。其余未杂化的 p 轨道这里没有画出，它位于 z 轴上。（图 8.11）这种画平面三角形 sp² 杂化轨道的另一种方式，有时用于较拥挤的图中。（图 8.12）BH₃ 是缺电子分子，具有平面三角形结构。",
+   "draws": ["angle"],
+   "conventions": [
+    "B",
+    "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "framing, one-line headlines, labels off axis names, meta note dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-sp2-levels",
+   "kind": "figure",
+   "number": "8.13",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_02_BH3Diag.jpg"
+   ],
+   "original_caption": "在孤立的 B 原子中，有一个 2s 和三个 2p 价轨道。当硼处于有三个电子密度区域的分子中时，其中三个轨道杂化，形成一组三个 sp² 轨道和一个未杂化的 2p 轨道。三个半充满的杂化轨道各与氢原子的一个轨道重叠，在 BH₃ 中形成三个 σ 键。",
+   "draws": [
+    "energy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-sp2-examples",
+   "kind": "figure",
+   "number": "8.14",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_02_sp2Ex.jpg"
+   ],
+   "original_caption": "图中所示每个结构的中心原子都含有三个电子密度区域，都是 sp² 杂化。正如我们在讨论价层电子对互斥理论时所知，一个电子密度区域包含指向同一方向的所有电子。一对孤电子对、一个未成对电子、一个单键或一个多重键，各算作一个电子密度区域。",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "names under each structure, note repeating caption dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-sp3",
+   "kind": "sim",
+   "number": "8.15",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_02_sp3Geom.jpg"
+   ],
+   "original_caption": "一个 s 轨道（蓝色）与三个 p 轨道（红色）杂化，产生四个等价的 sp³ 杂化轨道（黄色），彼此夹角为 109.5°。",
+   "draws": ["angle"],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "framed clear of the headline, one-line headlines, labels off axis names"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-sp3-levels",
+   "kind": "figure",
+   "number": "8.16",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_02_sp3Diag.jpg"
+   ],
+   "original_caption": "当碳在 CH₄ 这样有四个电子密度区域的分子中成键时，孤立碳原子的四个价层原子轨道全部杂化。这产生四个等价的 sp³ 杂化轨道。每个杂化轨道与氢的一个轨道重叠，形成一个 C–H σ 键。",
+   "draws": [
+    "energy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-ethane",
+   "kind": "sim",
+   "number": "8.17",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_02_ethane.jpg"
+   ],
+   "original_caption": "（a）在乙烷分子 C₂H₆ 中，每个碳有四个 sp³ 轨道。（b）这四个轨道重叠，形成七个 σ 键。",
+   "draws": ["angle"],
+   "conventions": [
+    "C",
+    "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "framing, sp3 label off the C label, note repeating caption dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-sp3d-lewis",
+   "kind": "figure",
+   "number": "8.18",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_02_sp3d_img.jpg"
+   ],
+   "original_caption": "图中所示的三种化合物，其中心原子都表现出 sp³d 杂化，并呈三角双锥形。SF₄ 和 ClF₄⁺ 的中心原子上有一对孤电子对，ClF₃ 有两对孤电子对，使它呈图中所示的 T 形。",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "names under each structure, note repeating caption dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-sp3d",
+   "kind": "sim",
+   "number": "8.19",
+   "folds": [
+    "8.20"
+   ],
+   "originals": [
+    "/media/ch08/CNX_Chem_08_02_sp3d.jpg",
+    "/media/ch08/CNX_Chem_08_02_SF6.jpg"
+   ],
+   "original_caption": "（图 8.19）（a）PCl₅ 中磷周围的五个电子密度区域需要五个 sp³d 杂化轨道。（b）这些轨道组合成三角双锥结构，杂化轨道的每个大瓣指向一个顶点。和前面一样，每个轨道还有一个指向相反方向的小瓣（为清楚起见未画出）。（图 8.20）（a）六氟化硫 SF₆ 具有八面体结构，需要 sp³d² 杂化。（b）六个 sp³d² 轨道在硫周围形成八面体结构。同样，为清楚起见，每个轨道的小瓣未画出。",
+   "draws": ["angle"],
+   "conventions": [
+    "P",
+    "Cl",
+    "S",
+    "F"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "framing, outer-atom label off the 90° arc, meta caption clause cut"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-hybrid-sets",
+   "kind": "sim",
+   "number": "8.21",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_02_HybrdOrbit.jpg"
+   ],
+   "original_caption": "杂化轨道组的形状与电子对构型一致。例如，被三个电子密度区域包围的原子是 sp² 杂化，三个 sp² 轨道呈平面三角形排列。",
+   "draws": ["angle"],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "framed clear of the headline, choice label set as text"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-hydrides",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-sulfate",
+   "kind": "figure",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_02_sulfate_img.jpg"
+   ],
+   "draws": [],
+   "conventions": [
+    "O",
+    "S"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "charge mark placed by its oxygen, note giving the answer dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-urea",
+   "kind": "figure",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_02_urea_img.jpg"
+   ],
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "note giving the example's answer dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "water-problem",
+   "concept": "hybridization",
+   "verb": "introduces"
+  },
+  {
+   "span": "water-problem",
+   "concept": "valence-bond-theory",
+   "verb": "uses"
+  },
+  {
+   "span": "water-problem",
+   "concept": "vsepr-theory",
+   "verb": "uses"
+  },
+  {
+   "span": "water-problem",
+   "concept": "electron-pair-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "water-problem",
+   "concept": "writing-electron-configurations",
+   "verb": "uses"
+  },
+  {
+   "span": "water-problem",
+   "concept": "wavefunction-probability",
+   "verb": "uses"
+  },
+  {
+   "span": "hybrid-ideas",
+   "concept": "hybrid-orbital-properties",
+   "verb": "introduces"
+  },
+  {
+   "span": "hybrid-ideas",
+   "concept": "sigma-and-pi-bonds",
+   "verb": "uses"
+  },
+  {
+   "span": "hybrid-ideas",
+   "concept": "vsepr-theory",
+   "verb": "uses"
+  },
+  {
+   "span": "hybrid-ideas",
+   "concept": "hybridization",
+   "verb": "reinforces"
+  },
+  {
+   "span": "hybrid-ideas",
+   "concept": "hybrid-orbital",
+   "verb": "introduces"
+  },
+  {
+   "span": "sp",
+   "concept": "sp-sp2-sp3-hybrid-orbitals",
+   "verb": "introduces"
+  },
+  {
+   "span": "sp",
+   "concept": "hybrid-orbital-energy-diagram",
+   "verb": "introduces"
+  },
+  {
+   "span": "sp",
+   "concept": "hybrid-orbital-properties",
+   "verb": "uses"
+  },
+  {
+   "span": "sp",
+   "concept": "hunds-rule",
+   "verb": "uses"
+  },
+  {
+   "span": "sp",
+   "concept": "sigma-and-pi-bonds",
+   "verb": "uses"
+  },
+  {
+   "span": "sp",
+   "concept": "sp-hybrid-orbital",
+   "verb": "introduces"
+  },
+  {
+   "span": "sp2",
+   "concept": "sp-sp2-sp3-hybrid-orbitals",
+   "verb": "reinforces"
+  },
+  {
+   "span": "sp2",
+   "concept": "hybrid-orbital-energy-diagram",
+   "verb": "reinforces"
+  },
+  {
+   "span": "sp2",
+   "concept": "lewis-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "sp2",
+   "concept": "electron-pair-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "sp2",
+   "concept": "sp2-hybrid-orbital",
+   "verb": "introduces"
+  },
+  {
+   "span": "sp3",
+   "concept": "sp-sp2-sp3-hybrid-orbitals",
+   "verb": "reinforces"
+  },
+  {
+   "span": "sp3",
+   "concept": "hybrid-orbital-energy-diagram",
+   "verb": "reinforces"
+  },
+  {
+   "span": "sp3",
+   "concept": "sigma-and-pi-bonds",
+   "verb": "uses"
+  },
+  {
+   "span": "sp3",
+   "concept": "molecular-structure-versus-electron-pair-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "sp3",
+   "concept": "electron-pair-repulsion-order",
+   "verb": "uses"
+  },
+  {
+   "span": "sp3",
+   "concept": "sp3-hybrid-orbital",
+   "verb": "introduces"
+  },
+  {
+   "span": "sp3d",
+   "concept": "sp3d-and-sp3d2-hybrid-orbitals",
+   "verb": "introduces"
+  },
+  {
+   "span": "sp3d",
+   "concept": "electron-pair-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "sp3d",
+   "concept": "octet-rule-exceptions",
+   "verb": "uses"
+  },
+  {
+   "span": "sp3d",
+   "concept": "lewis-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "sp3d",
+   "concept": "sp3d-hybrid-orbital",
+   "verb": "introduces"
+  },
+  {
+   "span": "sp3d",
+   "concept": "sp3d2-hybrid-orbital",
+   "verb": "introduces"
+  },
+  {
+   "span": "assignment",
+   "concept": "assign-hybridization",
+   "verb": "introduces"
+  },
+  {
+   "span": "assignment",
+   "concept": "lewis-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "assignment",
+   "concept": "vsepr-theory",
+   "verb": "uses"
+  },
+  {
+   "span": "assignment",
+   "concept": "electron-pair-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "limits",
+   "concept": "limits-of-hybridization",
+   "verb": "introduces"
+  },
+  {
+   "span": "limits",
+   "concept": "hybridization",
+   "verb": "uses"
+  },
+  {
+   "span": "limits",
+   "concept": "bond-angle-and-bond-distance",
+   "verb": "uses"
+  },
+  {
+   "span": "examples",
+   "concept": "assign-hybridization",
+   "verb": "reinforces"
+  },
+  {
+   "span": "examples",
+   "concept": "lewis-structure",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idp175627360",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-sulfate"
+   },
+   "cite": "assignment",
+   "figure": {
+    "src": "/media/ch08/CNX_Chem_08_02_SF4_img.jpg",
+    "alt": "图中是一个路易斯结构，四个氟原子各与一个硫原子相连。相连的氟原子中，两个沿竖直方向分别在上和下，另两个分别伸入和伸出纸面，位于右侧。硫原子的左侧还连有一对孤电子对。"
+   },
+   "prompt": "SeF<sub>4</sub> 中硒原子的杂化类型是什么？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "硒原子是 <em>sp</em><sup>3</sup><em>d</em> 杂化。"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm15564528",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-urea"
+   },
+   "cite": "assignment",
+   "figure": {
+    "src": "/media/ch08/CNX_Chem_08_02_acetic_img.jpg",
+    "alt": "图中是一个路易斯结构，其中一个碳原子与一个带有两对孤电子对的氧原子以双键相连，并与另一个氧原子以单键相连，这第二个氧原子又与一个氢原子以单键相连。这第二个氧原子带有两对孤电子对。该碳原子还与另一个碳原子以单键相连，后者与三个氢原子以单键相连。"
+   },
+   "prompt": "乙酸 H<sub>3</sub>CC(O)OH 是使食醋具有气味和酸味的分子。乙酸中两个碳原子的杂化类型是什么？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "H<sub>3</sub><u>C</u>，<em>sp</em><sup>3</sup>；<u>C</u>(O)OH，<em>sp</em><sup>2</sup>"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm77916144",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "water-problem",
+   "prompt": "为什么价键理论中需要杂化的概念？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "在价键理论中引入杂化，是为了解释成键轨道的几何构型。"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp3076096",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": {
+    "at": "end"
+   },
+   "cite": "assignment",
+   "prompt": "给出描述下列每一组杂化轨道的形状：<br>（a）<em>sp</em><sup>2</sup><br>（b）<em>sp</em><sup>3</sup><em>d</em><br>（c）<em>sp</em><br>（d）<em>sp</em><sup>3</sup><em>d</em><sup>2</sup>",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "（a）平面三角形<br>（b）三角双锥形<br>（c）直线形<br>（d）八面体形<br>每组杂化轨道都指向与相同电子密度区域数相对应的电子对构型的各个方向，杂化轨道的数目等于组合的原子轨道的数目。<em>sp</em><sup>2</sup> 组有三个轨道（一个 <em>s</em> 轨道和两个 <em>p</em> 轨道），位于同一平面内，彼此相隔 120°。<em>sp</em><sup>3</sup><em>d</em> 组有五个轨道，三个位于同一平面内，彼此相隔 120°，两个沿垂直于该平面的轴。<em>sp</em> 组有两个轨道，指向相反，相隔 180°。<em>sp</em><sup>3</sup><em>d</em><sup>2</sup> 组有六个轨道，指向八面体的顶点，彼此相隔 90°。"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp97605024",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "sp3d",
+   "prompt": "解释为什么碳原子不能用 <em>sp</em><sup>3</sup><em>d</em> 杂化轨道形成五个键。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "碳的价层中没有 <em>d</em> 轨道。"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idp25144752",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "assignment",
+   "prompt": "下列各物质中，中心原子的杂化类型是什么？<br>（a）BeH<sub>2</sub><br>（b）SF<sub>6</sub><br>（c）${\\text{PO}}_{4}{}^{\\text{3−}}$<br>（d）PCl<sub>5</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "（a）<em>sp</em><br>（b）<em>sp</em><sup>3</sup><em>d</em><sup>2</sup><br>（c）<em>sp</em><sup>3</sup><br>（d）<em>sp</em><sup>3</sup><em>d</em><br>杂化轨道的数目与中心原子周围的电子密度区域数相同。在 BeH<sub>2</sub> 中，铍形成两个单键，没有孤电子对，所以两个区域需要两个 <em>sp</em> 轨道。在 SF<sub>6</sub> 中，硫形成六个 S–F 键，没有孤电子对，所以六个区域需要 <em>sp</em><sup>3</sup><em>d</em><sup>2</sup>。在 ${\\text{PO}}_{4}{}^{\\text{3−}}$（32 个价电子）中，磷与四个氧原子成键，没有孤电子对；无论键级是多少，每个键都算作一个区域，所以四个区域得到 <em>sp</em><sup>3</sup>。在 PCl<sub>5</sub> 中，磷形成五个 P–Cl 键，没有孤电子对，所以五个区域得到 <em>sp</em><sup>3</sup><em>d</em>。"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp86297648",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "assignment",
+   "prompt": "化学式为 AB<sub>3</sub> 的分子可以有四种不同的形状之一。给出每种形状，以及中心 A 原子的杂化类型。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "平面三角形，<em>sp</em><sup>2</sup>；三角锥形（A 上有一对孤电子对）<em>sp</em><sup>3</sup>；T 形（A 上有两对孤电子对 <em>sp</em><sup>3</sup><em>d</em>，或（A 上有三对孤电子对）<em>sp</em><sup>3</sup><em>d</em><sup>2</sup>"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idp180352816",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "assignment",
+   "figure": {
+    "src": "/media/ch08/CNX_Chem_08_02_methionine_img.jpg",
+    "alt": "图中是一个路易斯结构，其中一个碳原子与三个氢原子以单键相连，并与一个带有两对孤电子对的硫原子以单键相连。该硫原子连着一条由四个以单键相连的碳原子组成的链，其中前两个碳原子各与两个氢原子以单键相连，第三个碳原子与一个氢原子以单键相连，并与一个带有一对孤电子对的氮原子以单键相连。该氮原子还与两个氢原子以单键相连。链上第四个也是最后一个碳原子与一个带有两对孤电子对的氧原子以双键相连，并与一个带有两对孤电子对的氧原子以单键相连。第二个氧原子与一个氢原子以单键相连。"
+   },
+   "prompt": "甲硫氨酸 CH<sub>3</sub>SCH<sub>2</sub>CH<sub>2</sub>CH(NH<sub>2</sub>)CO<sub>2</sub>H 是蛋白质中的一种氨基酸。这种化合物的路易斯结构如下所示。各个碳原子、氧原子、氮原子和硫原子的杂化类型是什么？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "五个碳原子中有四个是 <em>sp</em><sup>3</sup>，CO<sub>2</sub>H 基团的碳是 <em>sp</em><sup>2</sup>；以双键相连的氧是 <em>sp</em><sup>2</sup>，O–H 基团的氧是 <em>sp</em><sup>3</sup>；氮是 <em>sp</em><sup>3</sup>；硫是 <em>sp</em><sup>3</sup>。每一个都由该原子周围的电子密度区域数得出，无论键级是多少，每个键都算作一个区域，每对孤电子对也算作一个区域。CH<sub>3</sub>、两个 CH<sub>2</sub> 和 CH 的碳各形成四个单键，即四个区域。羧基碳与一个氧形成双键，与另一个氧和与碳形成单键，即三个区域。C=O 的氧有一个双键和两对孤电子对，即三个区域；O–H 的氧有两个单键和两对孤电子对，即四个区域。氮有三个单键和一对孤电子对，即四个区域；硫有两个单键和两对孤电子对，即四个区域。"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idm9916608",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "assignment",
+   "prompt": "硫酸由以下方程式所表示的一系列反应制得：<br>${\\text{S}}_{8}(s)+8{\\text{O}}_{2}(g)\\;\\longrightarrow \\;8{\\text{SO}}_{2}(g)$<br>$2\\text{S}{\\text{O}}_{2}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{SO}}_{3}(g)$<br>${\\text{SO}}_{3}(g)+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;{\\text{H}}_{2}{\\text{SO}}_{4}(l)$<br>对下列各分子，画出路易斯结构，用价层电子对互斥理论预测分子几何构型，并确定硫的杂化类型：<br>（a）环状 S<sub>8</sub> 分子<br>（b）SO<sub>2</sub> 分子<br>（c）SO<sub>3</sub> 分子<br>（d）H<sub>2</sub>SO<sub>4</sub> 分子（氢原子与氧原子相连）",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）每个 S 呈 V 形（109°），<em>sp</em><sup>3</sup><br><img src=\"/media/ch08/CNX_Chem_08_02_SulfManuf1_img.jpg\" alt=\"图中是一个路易斯结构，八个硫原子各带有两对孤电子对，以单键相连成一个八边形的环。\"><br>（b）V 形（120°），<em>sp</em><sup>2</sup><br><img src=\"/media/ch08/CNX_Chem_08_02_SulfManuf2_img.jpg\" alt=\"图中是两个路易斯结构，用双向箭头相连。左边的结构表示一个带有一对孤电子对的硫原子，左侧与一个带有两对孤电子对的氧原子以双键相连，右侧与一个带有三对孤电子对的氧原子以单键相连。右边的结构表示同一个分子，只是以双键相连的氧在硫的右侧，以单键相连的氧在硫的左侧。\"><br>（c）平面三角形，<em>sp</em><sup>2</sup><br><img src=\"/media/ch08/CNX_Chem_08_02_SulfManuf3_img.jpg\" alt=\"图中是一个路易斯结构，一个硫原子与两个氧原子以单键相连，每个氧原子带有三对孤电子对，并与第三个带有两对孤电子对的氧原子以双键相连。\"><br>（d）四面体形，<em>sp</em><sup>3</sup><br><img src=\"/media/ch08/CNX_Chem_08_02_SulfManuf4_img.jpg\" alt=\"图中是一个路易斯结构，一个硫原子与四个氧原子以单键相连。其中两个氧原子各带有三对孤电子对，另外两个氧原子各带有两对孤电子对，并各与一个氢原子以单键相连。\">"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idm2424288",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "assignment",
+   "prompt": "两种重要的工业化学品乙烯 C<sub>2</sub>H<sub>4</sub> 和丙烯 C<sub>3</sub>H<sub>6</sub>，是通过蒸汽（或热）裂解工艺生产的：<br>$$2{\\text{C}}_{3}{\\text{H}}_{8}(g)\\;\\longrightarrow \\;{\\text{C}}_{2}{\\text{H}}_{4}(g)+{\\text{C}}_{3}{\\text{H}}_{6}(g)+{\\text{CH}}_{4}(g)+{\\text{H}}_{2}(g)$$对这四种含碳化合物中的每一种，完成下列各项：<br>（a）画出路易斯结构。<br>（b）预测碳原子周围的几何构型。<br>（c）确定每一类碳原子的杂化类型。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "（a）丙烷是 CH<sub>3</sub>–CH<sub>2</sub>–CH<sub>3</sub>，每个碳都有四个单键；乙烯是 H<sub>2</sub>C=CH<sub>2</sub>；丙烯是 H<sub>2</sub>C=CH–CH<sub>3</sub>；甲烷是 CH<sub>4</sub>，碳与氢形成四个单键。没有哪个碳带有孤电子对。<br>（b）有四个单键的碳有四个电子密度区域，几何构型为四面体形，丙烷和甲烷中的每个碳以及丙烯的 CH<sub>3</sub> 碳都是如此。有一个双键和两个单键的碳有三个区域，几何构型为平面三角形，乙烯的两个碳和丙烯的两个以双键相连的碳都是如此。<br>（c）有四个区域的四面体形碳是 <em>sp</em><sup>3</sup> 杂化：丙烷的全部三个碳、甲烷的碳和丙烯的 CH<sub>3</sub> 碳。有三个区域的平面三角形碳是 <em>sp</em><sup>2</sup> 杂化：乙烯的两个碳以及丙烯的 CH<sub>2</sub> 和 CH 碳，各保留一个未杂化的 <em>p</em> 轨道用于形成 π 键。"
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idp96568912",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "sp3d",
+   "prompt": "对一种化合物的分析表明，它按质量计含有 77.55% 的 Xe 和 22.45% 的 F。<br>（a）这种化合物的实验式是什么？<em>（在回答本题其余各部分时，假设它也是分子式）</em>。<br>（b）写出这种化合物的路易斯结构。<br>（c）预测这种化合物分子的形状。<br>（d）哪种杂化类型与你所预测的形状相一致？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）XeF<sub>2</sub><br>（b）<br><img src=\"/media/ch08/CNX_Chem_08_02_xefluoride_img.jpg\" alt=\"图中是一个路易斯结构，一个带有三对孤电子对的氙原子与两个氟原子以单键相连，每个氟原子带有三对孤电子对。\"><br>（c）直线形（d）<em>sp</em><sup>3</sup><em>d</em>"
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idm10995632",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "assignment",
+   "prompt": "考虑亚硝酸 HNO<sub>2</sub>（HONO）。<br>（a）写出路易斯结构。<br>（b）HNO<sub>2</sub> 分子中，中间的氧原子和氮原子的电子对构型和分子几何构型是什么？<br>（c）HNO<sub>2</sub> 中，中间的氧原子和氮原子的杂化类型是什么？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "（a）18 个价电子给出 H–O–N=O，每个氧原子上有两对孤电子对，氮上有一对孤电子对，这使除氢以外的每个原子都有八隅体。<br>（b）中间的氧有两个单键（分别与 H 和 N）和两对孤电子对，即四个电子密度区域：它的电子对构型为四面体形，分子几何构型为 V 形。氮有一个单键、一个双键和一对孤电子对，即三个区域：它的电子对构型为平面三角形，分子几何构型为 V 形。<br>（c）中间的氧有四个区域，是 <em>sp</em><sup>3</sup> 杂化；氮有三个区域，是 <em>sp</em><sup>2</sup> 杂化，保留一个未杂化的 <em>p</em> 轨道，用于与末端氧形成 π 键。"
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idm32929264",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "assignment",
+   "figure": {
+    "src": "/media/ch08/CNX_Chem_08_02_phsphorus1_img.jpg",
+    "alt": "图中是一个路易斯结构，三个磷原子以单键相连成一个三角形。每个磷原子通过一条竖直的单键与一个硫原子相连，而这些硫原子又各与一个磷原子相连，从而形成一个六元环，中间有一个硫。"
+   },
+   "prompt": "擦燃火柴含有一层 KClO<sub>3</sub> 和一层 P<sub>4</sub>S<sub>3</sub>。擦火柴时摩擦产生的热量使这两种化合物剧烈反应，从而点燃火柴的木梗。KClO<sub>3</sub> 含有 ${\\text{ClO}}_{3}{}^{\\text{−}}$ 离子。P<sub>4</sub>S<sub>3</sub> 是一种特殊的分子，其骨架结构如图。<br>（a）写出 P<sub>4</sub>S<sub>3</sub> 和 ${\\text{ClO}}_{3}{}^{-}$ 离子的路易斯结构。<br>（b）描述这些物种中 P 原子、S 原子和 Cl 原子周围的几何构型。<br>（c）为这些物种中的 P 原子、S 原子和 Cl 原子指定杂化类型。<br>（d）确定 P<sub>4</sub>S<sub>3</sub> 和 ${\\text{ClO}}_{3}{}^{-}$ 离子中各原子的氧化态和形式电荷。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）<br><img src=\"/media/ch08/CNX_Chem_08_02_phsphorus2_img.jpg\" alt=\"图中是两个路易斯结构，左边的一个表示三个磷原子以单键相连成一个三角形。每个磷原子通过一条竖直的单键与一个硫原子相连，而这些硫原子又各与一个磷原子相连，从而形成一个六元环，中间有一个硫。这个结构中的每个硫原子带有两对孤电子对，每个磷原子带有一对孤电子对。第二个路易斯结构表示一个氯原子与两个氧原子以单键相连，每个氧原子带有三对孤电子对，并与一个带有两对孤电子对的氧原子以双键相连。\"><br>（b）P 原子，三角锥形；S 原子，V 形，有两对孤电子对；Cl 原子，三角锥形；（c）P、S 和 Cl 的杂化类型在所有情况下都是 <em>sp</em><sup>3</sup>；（d）氧化态 P +1，S $-1\\frac{1}{3},$ Cl +5，O –2。形式电荷：P 0；S 0；Cl +2：O –1"
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idm71570128",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "assignment",
+   "figure": {
+    "src": "/media/ch08/CNX_Chem_08_02_enyne_img.jpg",
+    "alt": "图中是一个缺少全部键的路易斯结构。六个碳原子排成一条链。第一个碳周围有三个氢原子，第二个碳周围有两个，第五个碳附近有一个，第六个碳周围有两个。"
+   },
+   "prompt": "确定下列分子中每个碳原子的杂化类型。（给出了原子的排列；你需要确定每对原子之间连有几个键。）",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "该分子是 CH<sub>3</sub>CH<sub>2</sub>C≡CCH=CH<sub>2</sub>，沿链编号，其碳原子依次是 <em>sp</em><sup>3</sup>、<em>sp</em><sup>3</sup>、<em>sp</em>、<em>sp</em>、<em>sp</em><sup>2</sup>、<em>sp</em><sup>2</sup>。每个碳都需要四个键。碳 1 有三个氢和一个与碳 2 的单键，碳 2 有两个氢以及与碳 1 和碳 3 的单键。碳 6 有两个氢，所以它需要与碳 5 形成双键；于是碳 5 有这个双键和一个氢，所以它与碳 4 的键是单键。于是碳 4 需要与碳 3 形成三键，这就使碳 3 与碳 2 的单键一起完成了它的成键。把每个键算作一个电子密度区域，碳 1 和碳 2 有四个区域（<em>sp</em><sup>3</sup>），碳 3 和碳 4 有两个（<em>sp</em>），碳 5 和碳 6 有三个（<em>sp</em><sup>2</sup>）。"
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idp29495632",
+   "kind": "exercise",
+   "bloom": "Evaluate",
+   "place": {
+    "at": "end"
+   },
+   "cite": "sp3d",
+   "prompt": "写出 NF<sub>3</sub> 和 PF<sub>5</sub> 的路易斯结构。根据杂化轨道，解释 NF<sub>3</sub>、PF<sub>3</sub> 和 PF<sub>5</sub> 是稳定的分子，而 NF<sub>5</sub> 不存在这一事实。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<img src=\"/media/ch08/CNX_Chem_08_02_phosnitro_img.jpg\" alt=\"图中是两个路易斯结构。左边的结构表示一个带有一对孤电子对的氮原子与三个氟原子以单键相连，每个氟原子带有三对孤电子对。右边的结构表示一个磷原子与五个氟原子以单键相连，每个氟原子带有三对孤电子对。\"><br>磷和氮可以形成 <em>sp</em><sup>3</sup> 杂化轨道，分别在 PF<sub>3</sub> 和 NF<sub>3</sub> 中形成三个键并容纳一对孤电子对。然而，氮的价层没有 <em>d</em> 轨道，所以它不能形成一组 <em>sp</em><sup>3</sup><em>d</em> 杂化轨道来在 NF<sub>5</sub> 中与五个氟原子结合。磷有 <em>d</em> 轨道，可以在 PF<sub>5</sub> 中用 <em>sp</em><sup>3</sup><em>d</em> 杂化轨道与五个氟原子结合。"
+   }
+  },
+  {
+   "id": "e14",
+   "source_id": "fs-idp15207648",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "assignment",
+   "prompt": "除了 NF<sub>3</sub> 之外，氮的另外两种氟代衍生物也是已知的：N<sub>2</sub>F<sub>4</sub> 和 N<sub>2</sub>F<sub>2</sub>。你预测这两种分子的形状是什么？每种分子中氮的杂化类型是什么？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "N<sub>2</sub>F<sub>4</sub> 中每个氮周围为三角锥形，氮为 <em>sp</em><sup>3</sup>；N<sub>2</sub>F<sub>2</sub> 中每个氮周围为 V 形，氮为 <em>sp</em><sup>2</sup>。在 N<sub>2</sub>F<sub>4</sub>（38 个价电子）中，路易斯结构是 F<sub>2</sub>N–NF<sub>2</sub>：每个氮与两个氟和另一个氮形成单键，另有一对孤电子对。四个电子密度区域给出四面体形的电子对构型，因为有一对孤电子对，每个氮周围的排布为三角锥形，与 NF<sub>3</sub> 中相同。在 N<sub>2</sub>F<sub>2</sub>（24 个价电子）中，要满足八隅体，需要 F–N=N–F：每个氮与氟形成一个单键，与氮形成一个双键，另有一对孤电子对。三个区域给出平面三角形的电子对构型，所以 F–N=N 呈弯曲形，键角接近 120°，每个氮上未杂化的 <em>p</em> 轨道形成 N=N 的 π 键，使四个原子保持在同一平面内。"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "sp3d-and-sp3d2-hybrid-orbitals"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "sp-sp2-sp3-hybrid-orbitals"
+  },
+  {
+   "exercise": "e1",
+   "concept": "hybridization"
+  },
+  {
+   "exercise": "e2",
+   "concept": "sp-sp2-sp3-hybrid-orbitals"
+  },
+  {
+   "exercise": "e2",
+   "concept": "sp3d-and-sp3d2-hybrid-orbitals"
+  },
+  {
+   "exercise": "e3",
+   "concept": "sp3d-and-sp3d2-hybrid-orbitals"
+  },
+  {
+   "exercise": "e4",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "e5",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "e5",
+   "concept": "molecular-structure-versus-electron-pair-geometry"
+  },
+  {
+   "exercise": "e6",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "e7",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "e7",
+   "concept": "lewis-structure"
+  },
+  {
+   "exercise": "e8",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "e8",
+   "concept": "lewis-structure"
+  },
+  {
+   "exercise": "e9",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "e9",
+   "concept": "sp3d-and-sp3d2-hybrid-orbitals"
+  },
+  {
+   "exercise": "e10",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "e10",
+   "concept": "lewis-structure"
+  },
+  {
+   "exercise": "e11",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "e11",
+   "concept": "formal-charge"
+  },
+  {
+   "exercise": "e12",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "e12",
+   "concept": "multiple-bonds"
+  },
+  {
+   "exercise": "e13",
+   "concept": "sp3d-and-sp3d2-hybrid-orbitals"
+  },
+  {
+   "exercise": "e13",
+   "concept": "hybrid-orbital-properties"
+  },
+  {
+   "exercise": "e14",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "e14",
+   "concept": "lewis-structure"
+  }
+ ]
+}

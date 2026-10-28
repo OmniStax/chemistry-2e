@@ -1,0 +1,430 @@
+{
+ "id": "2.2",
+ "module": "m68687",
+ "chapter": "2",
+ "title": "原子论的演变",
+ "short": "原子论的演变",
+ "lead": "道尔顿理论中的原子原来还含有更小的粒子，三个实验——<span data-ref=\"tube\">汤姆孙的阴极射线管</span>、<span data-ref=\"drops\">密立根的油滴</span>和<span data-ref=\"foil\">卢瑟福的金箔</span>——各自揭示了原子内部的新东西。",
+ "objectives": [
+  "概述现代原子论发展中的重要里程碑",
+  "总结并解释汤姆孙、密立根和卢瑟福实验的结果",
+  "描述构成原子的三种亚原子粒子",
+  "给出同位素的定义，并举出几种元素的例子"
+ ],
+ "summary_html": "<p>尽管没有人真正见过原子的内部，但实验已经揭示了关于原子结构的许多信息。汤姆孙的阴极射线管表明，原子含有称为电子的带负电的小粒子。密立根发现存在一种元电荷——即电子的电荷。卢瑟福的金箔实验表明，原子具有一个小而致密、带正电的原子核；原子核内带正电的粒子称为质子。查德威克发现原子核中还含有不带电的粒子，称为中子。索迪证明，同一元素的原子在<span data-concept=\"mass\">质量</span>上可以不同；这些原子称为同位素。</p>",
+ "notes": "三个“学习链接”注记未收录：一段汤姆孙讲述其发现的录音、一个金箔实验的模拟，以及 PhET 卢瑟福散射模拟，其位置由交互式的图 2.9 + 2.10 取代。图 2.6 的图注写的是“质荷比”，而正文写的是“荷质比”；二者均按原书印出。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签和权重由 AI 生成。答案来自书后答案。未给出答案的习题 fs-idm71935680（电子和质子有何相似与不同）属于概念性题目，保留，并附有标明为 OmniStax 自拟的建议思路。习题 fs-idp23410688 和 fs-idm61727056 是 PhET 卢瑟福散射模拟的操作说明；图 2.9 + 2.10 以较低和较高两种能量，向金、银、锆和钙的葡萄干布丁原子与卢瑟福原子发射 α 粒子，因此这两道题都对照该图来做，其题干已改写为指明该图（用钙对应模拟中的 20 个质子，用锆对应其 40 个质子）。前一道没有答案，附有标明为 OmniStax 自拟的建议思路；后一道保留书中的答案。",
+ "figures": [
+  {
+   "id": "sim-cathode-ray",
+   "kind": "sim",
+   "number": "2.6",
+   "originals": [
+    "/media/ch02/CNX_Chem_02_02_CathodeRay.jpg"
+   ],
+   "original_caption": "（a）J. J. 汤姆孙在阴极射线管中产生了一条可见的射线束。（b）这是一只早期的阴极射线管，由费迪南德·布劳恩于 1897 年发明。（c）在阴极射线中，射线束（图中黄色）从阴极发出，被加速经过阳极，射向管端的荧光标度。外加电场和磁场同时引起的偏转，使汤姆孙得以计算构成阴极射线的粒子的质荷比。（来源 a：改编自 Nobel Foundation 的作品；b：改编自 Eugen Nesper 的作品；c：改编自 “Kurzon”/Wikimedia Commons 的作品）",
+   "draws": [
+    "charge"
+   ],
+   "conventions": [
+    "e-",
+    "Cu",
+    "Fe",
+    "Zn"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "note dropped; front magnet made see-through over the beam"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-oil-drop",
+   "kind": "sim",
+   "number": "2.7",
+   "originals": [
+    "/media/ch02/CNX_Chem_02_02_Millikan.jpg"
+   ],
+   "original_caption": "密立根的实验测量了单个油滴的电荷。表中的数据是几种可能数值的示例。",
+   "draws": [
+    "charge"
+   ],
+   "conventions": [
+    "e-"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "note kept only off the hover, where it says the hover field"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-atom-models",
+   "kind": "photo",
+   "number": "2.8",
+   "draws": []
+  },
+  {
+   "id": "sim-gold-foil",
+   "kind": "sim",
+   "number": "2.9",
+   "folds": [
+    "2.10"
+   ],
+   "originals": [
+    "/media/ch02/CNX_Chem_02_02_Rutherford.jpg",
+    "/media/ch02/CNX_Chem_02_02_GoldFoil3.jpg"
+   ],
+   "original_caption": "（图 2.9）盖革和卢瑟福向一片金箔发射 α 粒子，并探测这些粒子的去向，如这幅实验示意图所示。大多数粒子径直穿过金箔，但有少数发生了轻微偏转，还有极少数发生了显著偏转。（图 2.10）α 粒子只有在与质量大得多、带正电的金原子核碰撞或从其近旁经过时才会发生偏转。由于原子核与原子的大小相比非常小，所以发生偏转的 α 粒子很少。大多数粒子穿过电子所占据的相对较大的区域，而电子太轻，无法使高速运动的粒子偏转。",
+   "draws": [
+    "charge"
+   ],
+   "conventions": [
+    "Au",
+    "Ag",
+    "Zr",
+    "Ca",
+    "He",
+    "Ra",
+    "Pb",
+    "e-"
+   ],
+   "facts": [
+    "#39d353"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "lead block in lead's colour; camera pulled back so above view fits"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "cathode-ray",
+   "concept": "discovery-of-the-electron",
+   "verb": "introduces"
+  },
+  {
+   "span": "cathode-ray",
+   "concept": "daltons-atomic-theory",
+   "verb": "uses"
+  },
+  {
+   "span": "cathode-ray",
+   "concept": "electron",
+   "verb": "introduces"
+  },
+  {
+   "span": "oil-drop",
+   "concept": "fundamental-charge",
+   "verb": "introduces"
+  },
+  {
+   "span": "oil-drop",
+   "concept": "discovery-of-the-electron",
+   "verb": "uses"
+  },
+  {
+   "span": "atom-models",
+   "concept": "discovery-of-the-electron",
+   "verb": "uses"
+  },
+  {
+   "span": "atom-models",
+   "concept": "daltons-atomic-theory",
+   "verb": "uses"
+  },
+  {
+   "span": "gold-foil",
+   "concept": "nuclear-model-of-the-atom",
+   "verb": "introduces"
+  },
+  {
+   "span": "gold-foil",
+   "concept": "alpha-particle",
+   "verb": "introduces"
+  },
+  {
+   "span": "nucleus",
+   "concept": "nuclear-model-of-the-atom",
+   "verb": "reinforces"
+  },
+  {
+   "span": "nucleus",
+   "concept": "nucleus",
+   "verb": "introduces"
+  },
+  {
+   "span": "nucleus",
+   "concept": "proton",
+   "verb": "introduces"
+  },
+  {
+   "span": "isotopes",
+   "concept": "isotopes",
+   "verb": "introduces"
+  },
+  {
+   "span": "isotopes",
+   "concept": "daltons-atomic-theory",
+   "verb": "uses"
+  },
+  {
+   "span": "neutron",
+   "concept": "subatomic-particles",
+   "verb": "introduces"
+  },
+  {
+   "span": "neutron",
+   "concept": "isotopes",
+   "verb": "reinforces"
+  },
+  {
+   "span": "neutron",
+   "concept": "nuclear-model-of-the-atom",
+   "verb": "uses"
+  },
+  {
+   "span": "neutron",
+   "concept": "neutron",
+   "verb": "introduces"
+  },
+  {
+   "span": "atom-models",
+   "concept": "electrically-neutral",
+   "verb": "introduces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "e1",
+   "source_id": "fs-idp107697296",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "isotopes",
+   "prompt": "同位素的存在违背了道尔顿原子论的原始观点之一。是哪一条？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "道尔顿最初认为，某一特定元素的所有原子具有相同的性质，包括质量。因此，同位素的概念（即一种元素具有不同的质量）违背了这一最初的观点。为了解释同位素的存在，他的原子论的第二条假设被修改为：同一元素的原子必须具有相同的化学性质。"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idm71935680",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "neutron",
+   "prompt": "电子和质子有什么相似之处？又有什么不同？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "按本节给出的性质来比较这两种粒子：电荷、质量，以及它们在原子中的位置。二者都是存在于每个原子中的亚原子粒子，所带电荷的大小也相同，都是 1.6 × 10<sup>−19</sup> C，即密立根测得的元电荷。它们的不同之处在于：电荷的符号，电子为负，质子为正；质量，电子的质量不到质子的千分之一；位置，质子在原子核中，而电子在核外。"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm21866144",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "neutron",
+   "prompt": "质子和中子有什么相似之处？又有什么不同？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "二者都是位于原子核中的亚原子粒子。二者的质量大致相同。质子带正电，而中子不带电。"
+   }
+  },
+  {
+   "id": "s1",
+   "source_id": "fs-idp23410688",
+   "kind": "simulation-exercise",
+   "bloom": "Evaluate",
+   "place": {
+    "at": "end"
+   },
+   "cite": "gold-foil",
+   "prompt": "预测并检验向“葡萄干布丁”模型原子发射 α 粒子时的行为。（a）预测向具有汤姆孙葡萄干布丁模型结构的原子发射的 α 粒子所走的路径。解释你为什么预期 α 粒子会走这些路径。（b）如果向葡萄干布丁原子发射能量高于（a）中的 α 粒子，预测它们的路径与较低能量的 α 粒子的路径有何不同。解释你的理由。（c）现在检验你在（a）和（b）中的预测。在图 2.9 + 2.10 中，选择葡萄干布丁原子、金和较低的 α 能量，观察放大的箔中的路径和屏幕上的闪光。这与你在（a）中的预测相符吗？如果不符，解释为什么实际路径是图中所示的那样。然后选择较高的 α 能量。这与你在（b）中的预测相符吗？如果不符，解释能量增加对图中所示的实际路径有何影响。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "从每个模型中正电荷所处的位置入手。（a）在葡萄干布丁原子中，正电荷稀薄地分布在整个原子内，而电子太轻，可以忽略，所以没有哪个集中电荷的小区域能对 α 粒子产生强烈的推力。预期每个粒子都会穿过，至多发生轻微的弯曲，而且没有粒子会返回。（b）更快的 α 粒子在每个原子内停留的时间更短，也更难被转向，所以它们的路径应当更加笔直。（c）对于葡萄干布丁原子，穿过箔的每条路径都几乎是直的，每次闪光都落在靠近正前方的位置，被弹回的粒子数始终为零；在较高的能量下，这些小的弯曲会进一步缩小。盖革和马斯登看到的偶尔出现的大角度偏转，不可能来自这样的原子。"
+   }
+  },
+  {
+   "id": "s2",
+   "source_id": "fs-idm61727056",
+   "kind": "simulation-exercise",
+   "bloom": "Evaluate",
+   "place": {
+    "at": "end"
+   },
+   "cite": "gold-foil",
+   "prompt": "预测并检验向卢瑟福原子模型发射 α 粒子时的行为。（a）预测向具有卢瑟福原子模型结构的原子发射的 α 粒子所走的路径。解释你为什么预期 α 粒子会走这些路径。（b）如果向卢瑟福原子发射能量高于（a）中的 α 粒子，预测它们的路径与较低能量的 α 粒子的路径有何不同。解释你的理由。（c）预测如果向金以外元素的卢瑟福原子发射 α 粒子，α 粒子的路径会有何不同。你预期是什么因素导致这种路径差异，为什么？（d）现在检验你在（a）、（b）和（c）中的预测。在图 2.9 + 2.10 中，选择卢瑟福原子。最好从较小的原子核开始，所以选择钙（其原子核含有 20 个质子）和较低的 α 能量，观察路径和闪光。这与你在（a）中的预测相符吗？如果不符，解释为什么实际路径是图中所示的那样。选择较高的 α 能量。这与你在（b）中的预测相符吗？如果不符，解释能量增加对图中所示的实际路径有何影响。选择锆（其原子核含有 40 个质子）和较低的能量。这与你在（c）中的预测相符吗？如果不符，解释为什么实际路径是图中所示的那样。对银和金重复这一操作，它们的原子核含有更多的质子。关于原子的类型及其对 α 粒子路径的影响，你能作出什么概括？要明确而具体。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）卢瑟福原子有一个小的、带正电的原子核，所以大多数 α 粒子会穿过远离原子核的空旷空间而不发生偏转。那些从原子核近旁经过的 α 粒子，会因正电荷与正电荷之间的排斥而偏离原来的路径。α 粒子越是正对着原子核飞去，偏转角就越大。（b）从原子核近旁经过的较高能量的 α 粒子仍会发生偏转，但它们运动得越快，预期的偏转角就越小。（c）如果原子核较小，正电荷就较少，预期的偏转也较小——无论是 α 粒子未发生偏转地经过原子核的距离有多近，还是偏转角的大小，都是如此。如果原子核较大，正电荷就较多，预期的偏转也较大——会有更多的 α 粒子发生偏转，偏转角也更大。（d）α 粒子所走的路径与（a）、（b）和（c）中的预测相符。"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e1",
+   "concept": "isotopes"
+  },
+  {
+   "exercise": "e1",
+   "concept": "daltons-atomic-theory",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e2",
+   "concept": "subatomic-particles"
+  },
+  {
+   "exercise": "e2",
+   "concept": "fundamental-charge",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "subatomic-particles"
+  },
+  {
+   "exercise": "s1",
+   "concept": "nuclear-model-of-the-atom"
+  },
+  {
+   "exercise": "s2",
+   "concept": "nuclear-model-of-the-atom"
+  }
+ ],
+ "referents": [
+  {
+   "id": "tube",
+   "label": "阴极射线管",
+   "figures": [
+    "sim-cathode-ray"
+   ]
+  },
+  {
+   "id": "cathode",
+   "label": "阴极",
+   "figures": [
+    "sim-cathode-ray"
+   ]
+  },
+  {
+   "id": "anode",
+   "label": "阳极",
+   "figures": [
+    "sim-cathode-ray"
+   ]
+  },
+  {
+   "id": "drops",
+   "label": "油滴",
+   "figures": [
+    "sim-oil-drop"
+   ]
+  },
+  {
+   "id": "lead-block",
+   "label": "铅块",
+   "figures": [
+    "sim-gold-foil"
+   ]
+  },
+  {
+   "id": "foil",
+   "label": "箔",
+   "figures": [
+    "sim-gold-foil"
+   ]
+  },
+  {
+   "id": "screen",
+   "label": "荧光屏",
+   "figures": [
+    "sim-gold-foil"
+   ]
+  }
+ ]
+}

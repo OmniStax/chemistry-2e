@@ -1,0 +1,471 @@
+{
+  "id": "17.2",
+  "module": "m68822",
+  "chapter": "17",
+  "title": "原电池",
+  "short": "原电池",
+  "lead": "铜放入银离子溶液中，会把电子直接给予银离子。<span data-concept=\"galvanic-cell\">原电池</span>把这样一对反应物分隔在两个<span data-concept=\"half-cell\">半电池</span>中，使电子经外电路流动，并通过<span data-concept=\"salt-bridge\">盐桥</span>保持电荷平衡，而<span data-concept=\"cell-notation\">电池图式</span>则用一行把整个装置写出来。",
+  "objectives": [
+    "描述原电池及其各组成部分的功能",
+    "用电池表示式表示原电池的组成和构造"
+  ],
+  "summary_html": "<p><span data-concept=\"galvanic-cell\">原电池</span>是这样一种装置：自发的<span data-concept=\"redox-reaction\">氧化还原反应</span>间接发生，氧化剂和还原剂的氧化还原对分别装在不同的<span data-concept=\"half-cell\">半电池</span>中。电子经外电路从还原剂（在<span data-concept=\"anode\">阳极</span><span data-concept=\"half-cell\">半电池</span>中）转移到氧化剂（在<span data-concept=\"cathode\">阴极</span><span data-concept=\"half-cell\">半电池</span>中），而溶液相中的惰性离子则经<span data-concept=\"salt-bridge\">盐桥</span>在<span data-concept=\"half-cell\">半电池</span>之间转移，以保持电中性。<span data-concept=\"galvanic-cell\">原电池</span>的构造和组成可以用化学式和其他符号，以<span data-concept=\"cell-notation\">电池图式</span>（<span data-concept=\"cell-notation\">电池表示式</span>）的形式简明地表示出来。</p>",
+  "notes": "本节没有任何内容被省略。总反应方程式中的 Cu^{2}{}^{+}，以及习题 fs-idm154595184（d）答案中位置不当的括号“(aq), Cu²⁺”，均按原样保留。",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ]
+  },
+  "built": "2026-10-26",
+  "exercises_lead": "",
+  "exercise_notes": "布鲁姆层级、概念标签和建议思路由 AI 生成。答案取自书后答案和“学习检测”的答案。三道未给出答案、需要自行推算答案的习题被省去：fs-idm104280704（两个图式的半电池反应）、fs-idm218235136（配平四个反应并写出其图式）和 fs-idp19248144（三个体系的电池表示式）。有答案的 fs-idm144742192 和 fs-idm20230112 分别指向前两道，并各自重述了所指的图式或反应。无答案的 fs-idm144354208（问某电极是阳极还是阴极）和 fs-idm33124048 保留，附有标明为 OmniStax 自己提出的建议思路。没有任何内容被移动。",
+  "figures": [
+    {
+      "id": "fig-cu-ag",
+      "kind": "photo",
+      "number": "17.2",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-galvanic-cell",
+      "kind": "sim",
+      "number": "17.3",
+      "folds": [
+        "17.4"
+      ],
+      "originals": [
+        "/media/ch17/CNX_Chem_17_02_Galvanicel.jpg",
+        "/media/ch17/CNX_Chem_17_02_Oxidareduc.jpg"
+      ],
+      "original_caption": "（图 17.3）基于铜与银(I)离子之间自发反应的原电池。（图 17.4）基于镁与铁(III)离子之间自发反应的原电池。",
+      "draws": [
+        "concentration"
+      ],
+      "conventions": [
+        "Cu",
+        "Ag",
+        "Mg",
+        "Pt",
+        "Fe",
+        "Na",
+        "Cl",
+        "N",
+        "O",
+        "e-"
+      ],
+      "facts": [
+        "#3b8fd9"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    }
+  ],
+  "referents": [],
+  "coverage": [
+    {
+      "span": "transfer",
+      "concept": "redox-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "transfer",
+      "concept": "half-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "transfer",
+      "concept": "oxidation",
+      "verb": "uses"
+    },
+    {
+      "span": "transfer",
+      "concept": "reduction",
+      "verb": "uses"
+    },
+    {
+      "span": "transfer",
+      "concept": "spontaneous-process",
+      "verb": "uses"
+    },
+    {
+      "span": "galvanic",
+      "concept": "electrochemical-cell",
+      "verb": "introduces"
+    },
+    {
+      "span": "galvanic",
+      "concept": "galvanic-cell",
+      "verb": "introduces"
+    },
+    {
+      "span": "galvanic",
+      "concept": "half-cell",
+      "verb": "introduces"
+    },
+    {
+      "span": "galvanic",
+      "concept": "anode",
+      "verb": "introduces"
+    },
+    {
+      "span": "galvanic",
+      "concept": "cathode",
+      "verb": "introduces"
+    },
+    {
+      "span": "galvanic",
+      "concept": "salt-bridge",
+      "verb": "introduces"
+    },
+    {
+      "span": "galvanic",
+      "concept": "spontaneous-process",
+      "verb": "uses"
+    },
+    {
+      "span": "galvanic",
+      "concept": "oxidation",
+      "verb": "uses"
+    },
+    {
+      "span": "galvanic",
+      "concept": "reduction",
+      "verb": "uses"
+    },
+    {
+      "span": "galvanic",
+      "concept": "electrolyte",
+      "verb": "uses"
+    },
+    {
+      "span": "galvanic",
+      "concept": "concentration",
+      "verb": "uses"
+    },
+    {
+      "span": "notation",
+      "concept": "cell-notation",
+      "verb": "introduces"
+    },
+    {
+      "span": "notation",
+      "concept": "inert-electrode",
+      "verb": "introduces"
+    },
+    {
+      "span": "notation",
+      "concept": "active-electrode",
+      "verb": "introduces"
+    },
+    {
+      "span": "notation",
+      "concept": "anode",
+      "verb": "uses"
+    },
+    {
+      "span": "notation",
+      "concept": "cathode",
+      "verb": "uses"
+    },
+    {
+      "span": "notation",
+      "concept": "half-cell",
+      "verb": "uses"
+    },
+    {
+      "span": "notation",
+      "concept": "salt-bridge",
+      "verb": "uses"
+    },
+    {
+      "span": "notation",
+      "concept": "half-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "notation",
+      "concept": "molarity",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-schematics",
+      "concept": "cell-notation",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-schematics",
+      "concept": "half-reaction-method",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-schematics",
+      "concept": "half-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-schematics",
+      "concept": "anode",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-schematics",
+      "concept": "cathode",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idm168909584",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-schematics"
+      },
+      "cite": "ex-schematics",
+      "prompt": "不考虑溶质浓度和旁观离子的具体身份，写出电池净反应如下所示的原电池的图式。<br>${\\text{Sn}}^{4+}(aq)+\\text{Zn}(s)\\;\\longrightarrow \\;{\\text{Sn}}^{2+}(aq)+{\\text{Zn}}^{2+}(aq)$",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "$\\text{Zn}(s)\\,|\\,{\\text{Zn}}^{2+}(aq)\\,\\|\\,{\\text{Sn}}^{4+}(aq),{\\text{Sn}}^{2+}(aq)\\,|\\,\\text{Pt}(s)$"
+      }
+    },
+    {
+      "id": "e11",
+      "source_id": "fs-idm154595184",
+      "source_number": "11",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "notation",
+      "prompt": "为下列电池反应写出电池图式，按需要使用铂作惰性电极。<br>（a）$\\text{Mg}(s)+{\\text{Ni}}^{2+}(aq)\\;\\longrightarrow \\;{\\text{Mg}}^{2+}(aq)+\\text{Ni}(s)$<br>（b）$2{\\text{Ag}}^{\\text{+}}(aq)+\\text{Cu}(s)\\;\\longrightarrow \\;{\\text{Cu}}^{2+}(aq)+\\text{2Ag}(s)$<br>（c）$\\text{Mn}(s)+{\\text{Sn(NO}}_{3}{)}_{2}(aq)\\;\\longrightarrow \\;{\\text{Mn(NO}}_{3}{)}_{2}(aq)+\\text{Sn}(s)$<br>（d）$3{\\text{CuNO}}_{3}(aq)+{\\text{Au(NO}}_{3}{)}_{3}(aq)\\;\\longrightarrow \\;{\\text{3Cu(NO}}_{3}{)}_{2}(aq)+\\text{Au}(s)$",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）$\\text{Mg}(s)\\;\\,|\\,\\;{\\text{Mg}}^{2+}(aq)\\,\\|\\,{\\text{Ni}}^{\\text{2+}}(aq)\\;\\,|\\,\\;\\text{Ni}(s);$ （b）$\\text{Cu}(s)\\;\\,|\\,\\;{\\text{Cu}}^{2+}(aq)\\,\\|\\,{\\text{Ag}}^{\\text{+}}(aq)\\;\\,|\\,\\;\\text{Ag}(s);$ （c）$\\text{Mn}(s)\\;\\,|\\,\\;{\\text{Mn}}^{2+}(aq)\\,\\|\\,{\\text{Sn}}^{2+}(aq)\\;\\,|\\,\\;\\text{Sn}(s);$ （d）$\\text{Pt}(s)\\;\\,|\\,\\;{\\text{Cu}}^{\\text{+}}(aq{\\text{), Cu}}^{2+}(aq)\\,\\|\\,{\\text{Au}}^{\\text{3+}}(aq)\\;\\,|\\,\\;\\text{Au}(s)$"
+      }
+    },
+    {
+      "id": "e13",
+      "source_id": "fs-idm144742192",
+      "source_number": "13",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "notation",
+      "prompt": "为习题中给出这两个图式的每个电池写出配平的电池反应方程式，这两个图式表示的是按所写方式构成的原电池：<br>（a）$\\text{Mg}(s)\\,|\\,{\\text{Mg}}^{2+}(aq)\\,\\|\\,{\\text{Cu}}^{2+}(aq)\\,|\\,\\text{Cu}(s)$<br>（b）$\\text{Ni}(s)\\,|\\,\\;{\\text{Ni}}^{2+}(aq)\\,\\|\\,{\\text{Ag}}^{\\text{+}}(aq)\\,|\\,\\;\\text{Ag}(s)$",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）$\\text{Mg}(s)+{\\text{Cu}}^{2+}(aq)\\;\\longrightarrow \\;{\\text{Mg}}^{2+}(aq)+\\text{Cu}(s);$ （b）$2{\\text{Ag}}^{\\text{+}}(aq)+\\text{Ni}(s)\\;\\longrightarrow \\;{\\text{Ni}}^{2+}(aq)+\\text{2Ag}(s)$"
+      }
+    },
+    {
+      "id": "e15",
+      "source_id": "fs-idm20230112",
+      "source_number": "15",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "transfer",
+      "prompt": "指出习题中要求配平的这些反应各自的氧化剂和还原剂：<br>（a）$\\text{Al}(s)+{\\text{Zr}}^{4+}(aq)\\;\\longrightarrow \\;{\\text{Al}}^{3+}(aq)+\\text{Zr}(s)$<br>（b）${\\text{Ag}}^{\\text{+}}(aq)+\\text{NO}(g)\\;\\longrightarrow \\;\\text{Ag}(s)+{\\text{NO}}_{3}{}^{\\text{−}}(aq)\\hspace{5em}\\text{（酸性溶液）}$<br>（c）${\\text{SiO}}_{3}{}^{2−}(aq)+\\text{Mg}(s)\\;\\longrightarrow \\;\\text{Si}(s)+\\text{Mg}{(\\text{OH})}_{2}(s)\\hspace{5em}\\text{（碱性溶液）}$<br>（d）${\\text{ClO}}_{3}{}^{\\text{−}}(aq)+{\\text{MnO}}_{2}(s)\\;\\longrightarrow \\;{\\text{Cl}}^{\\text{−}}(aq)+{\\text{MnO}}_{4}{}^{\\text{−}}(aq)\\hspace{5em}\\text{（碱性溶液）}$",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "被氧化的物种 = 还原剂：（a）Al(<em>s</em>)；（b）NO(<em>g</em>)；（c）Mg(<em>s</em>)；（d）MnO<sub>2</sub>(<em>s</em>)；被还原的物种 = 氧化剂：（a）Zr<sup>4+</sup>(<em>aq</em>)；（b）Ag<sup>+</sup>(<em>aq</em>)；（c）${\\text{SiO}}_{3}{}^{2−}(aq)$；（d）${\\text{ClO}}_{3}{}^{\\text{−}}(aq)$"
+      }
+    },
+    {
+      "id": "e17",
+      "source_id": "fs-idm117307760",
+      "source_number": "17",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "galvanic",
+      "prompt": "为什么像图 17.3 中那样的原电池需要盐桥？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "没有盐桥，电路就会断开（或中断），电流无法流动。有了盐桥，每个半电池保持电中性，电流便可在电路中流动。"
+      }
+    },
+    {
+      "id": "e18",
+      "source_id": "fs-idm144354208",
+      "source_number": "18",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "notation",
+      "prompt": "在氧化还原反应进行的过程中，发现一个活性（金属）电极的质量增加。该电极是阳极还是阴极？请说明。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "该电极是阴极。活性电极由属于其半电池氧化还原对的金属制成，因此质量增加意味着有金属原子附着到电极上：溶液中的金属离子在电极表面得到电子，以固态金属的形式沉积，M<sup><em>n</em>+</sup>(<em>aq</em>) + <em>n</em>e<sup>−</sup> ⟶ M(<em>s</em>)。这是一个还原过程，而还原发生在阴极。例如，在图 17.3 的铜–银电池中，银阴极随着 Ag<sup>+</sup>(<em>aq</em>) + e<sup>−</sup> ⟶ Ag(<em>s</em>) 的进行而变重，而铜阳极则因铜被氧化为进入溶液的 Cu<sup>2+</sup> 离子而质量减小。"
+      }
+    },
+    {
+      "id": "e19",
+      "source_id": "fs-idp44043568",
+      "source_number": "19",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "notation",
+      "prompt": "在氧化还原反应进行的过程中，发现一个活性（金属）电极的质量减小。该电极是阳极还是阴极？请说明。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "活性电极参与氧化还原反应。由于金属形成阳离子，如果电极中的金属原子被氧化并进入溶液，电极的质量就会减小。氧化发生在阳极。"
+      }
+    },
+    {
+      "id": "e20",
+      "source_id": "fs-idm33124048",
+      "source_number": "20",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "notation",
+      "prompt": "对来自三个不同原电池的三个电极（A、B 和 C），在让这些电池通电一段时间前后分别测量其质量。电极 A 的质量增加，电极 B 的质量不变，电极 C 的质量减小。请判断每个电极是活性电极还是惰性电极，并指出（如果可能）它起阳极还是阴极的作用。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "电极 A 是活性电极，作阴极；电极 B 是惰性电极，无法从其质量判断它的角色；电极 C 是活性电极，作阳极。活性电极参与其半反应，因此其质量会发生变化。A 的质量增加，说明其溶液中的金属离子被还原并沉积在它上面，而还原发生在阴极。C 的质量减小，说明其金属被氧化为阳离子并溶解，而氧化发生在阳极。B 的质量不变，说明它既没有被氧化也没有被还原，这正是铂或石墨之类惰性电极的特征，它只是向溶液中的物种传导电子或从这些物种传导电子。由于惰性电极上的半反应只涉及溶解的或气态的物种，无论它作阳极还是阴极，其质量都保持不变，因此无法根据这些测量确定 B 的角色。"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "cell-notation"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "inert-electrode"
+    },
+    {
+      "exercise": "e11",
+      "concept": "cell-notation"
+    },
+    {
+      "exercise": "e11",
+      "concept": "inert-electrode"
+    },
+    {
+      "exercise": "e13",
+      "concept": "cell-notation"
+    },
+    {
+      "exercise": "e13",
+      "concept": "half-reaction"
+    },
+    {
+      "exercise": "e15",
+      "concept": "oxidizing-agent"
+    },
+    {
+      "exercise": "e15",
+      "concept": "reducing-agent"
+    },
+    {
+      "exercise": "e17",
+      "concept": "salt-bridge"
+    },
+    {
+      "exercise": "e17",
+      "concept": "galvanic-cell"
+    },
+    {
+      "exercise": "e18",
+      "concept": "active-electrode"
+    },
+    {
+      "exercise": "e18",
+      "concept": "anode"
+    },
+    {
+      "exercise": "e18",
+      "concept": "cathode"
+    },
+    {
+      "exercise": "e19",
+      "concept": "active-electrode"
+    },
+    {
+      "exercise": "e19",
+      "concept": "anode"
+    },
+    {
+      "exercise": "e20",
+      "concept": "active-electrode"
+    },
+    {
+      "exercise": "e20",
+      "concept": "inert-electrode"
+    },
+    {
+      "exercise": "e20",
+      "concept": "anode"
+    },
+    {
+      "exercise": "e20",
+      "concept": "cathode"
+    }
+  ]
+}

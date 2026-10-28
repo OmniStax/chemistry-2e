@@ -1,0 +1,373 @@
+{
+ "id": "17",
+ "dir": "ch17",
+ "title": "电化学",
+ "intro": {
+  "module": "m68820",
+  "slug": "17-introduction"
+ },
+ "sections": [
+  {
+   "id": "17.1",
+   "module": "m68821",
+   "title": "氧化还原化学回顾",
+   "slug": "17-1-review-of-redox-chemistry"
+  },
+  {
+   "id": "17.2",
+   "module": "m68822",
+   "title": "原电池",
+   "slug": "17-2-galvanic-cells"
+  },
+  {
+   "id": "17.3",
+   "module": "m68823",
+   "title": "电极电势和电池电势",
+   "slug": "17-3-electrode-and-cell-potentials"
+  },
+  {
+   "id": "17.4",
+   "module": "m68824",
+   "title": "电势、自由能与平衡",
+   "slug": "17-4-potential-free-energy-and-equilibrium"
+  },
+  {
+   "id": "17.5",
+   "module": "m68825",
+   "title": "电池与燃料电池",
+   "slug": "17-5-batteries-and-fuel-cells"
+  },
+  {
+   "id": "17.6",
+   "module": "m68826",
+   "title": "腐蚀",
+   "slug": "17-6-corrosion"
+  },
+  {
+   "id": "17.7",
+   "module": "m68827",
+   "title": "电解",
+   "slug": "17-7-electrolysis"
+  }
+ ],
+ "variables": [
+  {
+   "sym": "E_potential",
+   "concept": "electrical-potential",
+   "meaning": "电势，对伴随电荷分离或转移的能量的度量",
+   "unit": "V",
+   "section": "17.3",
+   "anchor": "17.3-cell-potentials"
+  },
+  {
+   "sym": "E_cell",
+   "concept": "cell-potential",
+   "meaning": "电池电势，阴极与阳极半电池之间的电势差",
+   "unit": "V",
+   "section": "17.3",
+   "anchor": "17.3-cell-potentials"
+  },
+  {
+   "sym": "E_cathode",
+   "concept": "electrode-potential",
+   "meaning": "作阴极的半电池的电势",
+   "unit": "V",
+   "section": "17.3",
+   "anchor": "17.3-cell-potentials"
+  },
+  {
+   "sym": "E_anode",
+   "concept": "electrode-potential",
+   "meaning": "作阳极的半电池的电势",
+   "unit": "V",
+   "section": "17.3",
+   "anchor": "17.3-cell-potentials"
+  },
+  {
+   "sym": "E°_cell",
+   "concept": "standard-cell-potential",
+   "meaning": "标准电池电势，两个半电池都处于标准状态条件下测得",
+   "unit": "V",
+   "section": "17.3",
+   "anchor": "17.3-cell-potentials"
+  },
+  {
+   "sym": "E°_cathode",
+   "concept": "standard-electrode-potential",
+   "meaning": "阴极半电池的标准电极电势",
+   "unit": "V",
+   "section": "17.3",
+   "anchor": "17.3-cell-potentials",
+   "ref": "cathode-half-cell"
+  },
+  {
+   "sym": "E°_anode",
+   "concept": "standard-electrode-potential",
+   "meaning": "阳极半电池的标准电极电势",
+   "unit": "V",
+   "section": "17.3",
+   "anchor": "17.3-cell-potentials",
+   "ref": "anode-half-cell"
+  },
+  {
+   "sym": "E_SHE",
+   "concept": "electrode-potential",
+   "meaning": "标准氢电极的电势，按定义恰为 0 V",
+   "unit": "V",
+   "section": "17.3",
+   "anchor": "17.3-she"
+  },
+  {
+   "sym": "E_X",
+   "concept": "electrode-potential",
+   "meaning": "半电池 X 的电极电势，即以 X 为阴极、SHE 为阳极的电池的电池电势",
+   "unit": "V",
+   "section": "17.3",
+   "anchor": "17.3-she"
+  },
+  {
+   "sym": "E°_X",
+   "concept": "standard-electrode-potential",
+   "meaning": "半电池 X 的标准电极电势，即其在标准状态条件下的电极电势",
+   "unit": "V",
+   "section": "17.3",
+   "anchor": "17.3-she"
+  },
+  {
+   "sym": "E_std",
+   "concept": "standard-electrode-potential",
+   "meaning": "标准电极电势，列表时按写成还原反应的半反应给出",
+   "unit": "V",
+   "section": "17.3",
+   "anchor": "17.3-interpreting"
+  },
+  {
+   "sym": "ΔG°",
+   "concept": "standard-free-energy-change",
+   "meaning": "标准自由能变，对应于在标准条件下发生的过程",
+   "unit": "kJ/mol",
+   "section": "17.4",
+   "anchor": "17.4-dg"
+  },
+  {
+   "sym": "ΔG",
+   "concept": "gibbs-free-energy",
+   "meaning": "氧化还原过程的自由能变",
+   "unit": "kJ/mol",
+   "section": "17.4",
+   "anchor": "17.4-nernst"
+  },
+  {
+   "sym": "w_max",
+   "concept": "work",
+   "meaning": "体系所能做的最大功",
+   "unit": "J",
+   "section": "17.4",
+   "anchor": "17.4-dg"
+  },
+  {
+   "sym": "w_elec",
+   "concept": "work",
+   "meaning": "把电子从还原剂转移到氧化剂的电功",
+   "unit": "J",
+   "section": "17.4",
+   "anchor": "17.4-dg"
+  },
+  {
+   "sym": "n",
+   "concept": "mole",
+   "meaning": "配平的氧化还原反应中转移电子的物质的量",
+   "unit": "mol",
+   "section": "17.4",
+   "anchor": "17.4-dg"
+  },
+  {
+   "sym": "F_Faraday",
+   "concept": "faradays-constant",
+   "meaning": "法拉第常数，一摩尔电子所带的电荷，96,485 C/mol",
+   "unit": "C/mol",
+   "section": "17.4",
+   "anchor": "17.4-dg"
+  },
+  {
+   "sym": "E_cell",
+   "concept": "cell-potential",
+   "meaning": "在实际的（可能是非标准的）条件下的电池电势",
+   "unit": "V",
+   "section": "17.4",
+   "anchor": "17.4-nernst"
+  },
+  {
+   "sym": "E°_cell",
+   "concept": "standard-cell-potential",
+   "meaning": "标准电池电势",
+   "unit": "V",
+   "section": "17.4",
+   "anchor": "17.4-dg"
+  },
+  {
+   "sym": "R",
+   "concept": "ideal-gas-constant",
+   "meaning": "理想气体常数，8.314 J/K mol",
+   "unit": "J mol⁻¹ K⁻¹",
+   "section": "17.4",
+   "anchor": "17.4-k"
+  },
+  {
+   "sym": "T",
+   "concept": "temperature",
+   "meaning": "温度，以开尔文计",
+   "unit": "K",
+   "section": "17.4",
+   "anchor": "17.4-k"
+  },
+  {
+   "sym": "K",
+   "concept": "equilibrium-constant",
+   "meaning": "氧化还原反应的平衡常数",
+   "unit": "none",
+   "section": "17.4",
+   "anchor": "17.4-k"
+  },
+  {
+   "sym": "Q_c",
+   "concept": "reaction-quotient",
+   "meaning": "反应商，反映反应混合物的组成",
+   "unit": "none",
+   "section": "17.4",
+   "anchor": "17.4-nernst"
+  },
+  {
+   "sym": "E_cell",
+   "concept": "cell-potential",
+   "meaning": "电池或燃料电池的电池电势",
+   "unit": "V",
+   "section": "17.5",
+   "anchor": "17.5-single-use"
+  },
+  {
+   "sym": "E_std",
+   "concept": "standard-electrode-potential",
+   "meaning": "标准还原电势，例如 Fe²⁺/Fe 电对的标准还原电势",
+   "unit": "V",
+   "section": "17.6",
+   "anchor": "17.6-rust"
+  },
+  {
+   "sym": "E°_cell",
+   "concept": "standard-cell-potential",
+   "meaning": "腐蚀电池的标准电池电势",
+   "unit": "V",
+   "section": "17.6",
+   "anchor": "17.6-rust"
+  },
+  {
+   "sym": "E°_anode",
+   "concept": "standard-electrode-potential",
+   "meaning": "写成还原反应的阳极半反应的标准电极电势",
+   "unit": "V",
+   "section": "17.7",
+   "anchor": "17.7-water"
+  },
+  {
+   "sym": "E°_cathode",
+   "concept": "standard-electrode-potential",
+   "meaning": "阴极半反应的标准电极电势",
+   "unit": "V",
+   "section": "17.7",
+   "anchor": "17.7-water"
+  },
+  {
+   "sym": "E°_cell",
+   "concept": "standard-cell-potential",
+   "meaning": "电解反应的标准电池电势，非自发反应的为负值",
+   "unit": "V",
+   "section": "17.7",
+   "anchor": "17.7-water"
+  },
+  {
+   "sym": "Q_charge",
+   "type": "charge",
+   "meaning": "电流在一段时间内通过所转移的电荷",
+   "unit": "C",
+   "section": "17.7",
+   "anchor": "17.7-quantitative"
+  },
+  {
+   "sym": "I",
+   "concept": "electric-current",
+   "meaning": "通过电解池的恒定电流",
+   "unit": "A",
+   "section": "17.7",
+   "anchor": "17.7-quantitative"
+  },
+  {
+   "sym": "t",
+   "concept": "time",
+   "meaning": "电流通过的时间间隔",
+   "unit": "s",
+   "section": "17.7",
+   "anchor": "17.7-quantitative"
+  },
+  {
+   "sym": "n",
+   "concept": "mole",
+   "meaning": "转移电子的物质的量",
+   "unit": "mol",
+   "section": "17.7",
+   "anchor": "17.7-quantitative"
+  },
+  {
+   "sym": "F_Faraday",
+   "concept": "faradays-constant",
+   "meaning": "法拉第常数，一摩尔电子的电荷，以库仑计",
+   "unit": "C/mol",
+   "section": "17.7",
+   "anchor": "17.7-quantitative"
+  },
+  {
+   "sym": "E°_cathode",
+   "concept": "standard-electrode-potential",
+   "meaning": "阴极半电池的标准电极电势",
+   "unit": "V",
+   "section": "17.4",
+   "anchor": "17.4-ex-relations",
+   "ref": "cathode-half-cell"
+  },
+  {
+   "sym": "E°_anode",
+   "concept": "standard-electrode-potential",
+   "meaning": "阳极半电池的标准电极电势",
+   "unit": "V",
+   "section": "17.4",
+   "anchor": "17.4-ex-relations",
+   "ref": "anode-half-cell"
+  },
+  {
+   "sym": "E_cathode",
+   "concept": "electrode-potential",
+   "meaning": "阴极半电池在其自身浓度下的电势",
+   "unit": "V",
+   "section": "17.4",
+   "anchor": "17.4-ex-concentration",
+   "ref": "cathode-half-cell"
+  },
+  {
+   "sym": "E_anode",
+   "concept": "electrode-potential",
+   "meaning": "阳极半电池在其自身浓度下的电势",
+   "unit": "V",
+   "section": "17.4",
+   "anchor": "17.4-ex-concentration",
+   "ref": "anode-half-cell"
+  },
+  {
+   "sym": "E_std",
+   "concept": "standard-cell-potential",
+   "meaning": "标准电池电势，在总结其与 ΔG° 和 K 的关系处写作 E°",
+   "unit": "V",
+   "section": "17.4",
+   "anchor": "17.4-k"
+  }
+ ]
+}

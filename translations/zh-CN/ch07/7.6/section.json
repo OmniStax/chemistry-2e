@@ -1,0 +1,1797 @@
+{
+ "id": "7.6",
+ "module": "m68742",
+ "chapter": "7",
+ "title": "分子构型与极性",
+ "short": "分子构型与极性",
+ "lead": "路易斯结构是平面画出的，但分子占据空间，其键具有可测量的距离和角度。价层电子对互斥理论预测各个电子密度区域如何围绕中心原子排布，而分子所取的形状决定其<span data-concept=\"bond-dipole-moment\">键偶极矩</span>如何叠加。",
+ "objectives": [
+  "利用价层电子对互斥（VSEPR）理论预测小分子的构型",
+  "解释极性共价键和分子极性的概念",
+  "根据分子的成键情况和构型判断分子的极性"
+ ],
+ "summary_html": "<p>VSEPR 理论预测分子中原子的三维排布。它指出，价电子将采取使高电子密度区域（键和/或孤电子对）之间排斥最小的电子对构型。分子构型只指分子中原子的位置，而不指电子，只有当中心原子周围没有孤电子对时，它才等同于电子对构型。偶极矩度量电荷的分离。对于一个键，<span data-concept=\"bond-dipole-moment\">键偶极矩</span>由两个原子之间的电负性之差决定。对于一个分子，总偶极矩既取决于各个键矩，也取决于这些偶极在分子构型中的排布方式。极性分子（具有可观偶极矩的分子）与电场相互作用，而非极性分子则不然。</p>",
+ "notes": "两个“学习链接”框被略去：一个是 PhET 分子形状模拟器，其位置由图 7.16 的工作台取代；另一个是 PhET 分子极性模拟，其位置由图 7.26 和图 7.28 的键矩工作台取代；例 7.17 和例 7.18 保留了书中关于这两个模拟的文字。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-fable-5-1"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-fable-5-1",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签和权重均由 AI 生成。答案取自书后答案以及“学习检测”的答案；没有答案的习题 fs-idm179024、fs-idm5404912、fs-idp23296480、fs-idp24689744、fs-idm62749296、fs-idp90274464、fs-idp95408832、fs-idp120029040、fs-idp126465632 和 fs-idm2150336（每一道都要求给出书中没有给出答案的明确预测）被略去，没有答案的概念性习题 fs-idp281408272、fs-idp134531056 和 fs-idm5235936 则附有标明为 OmniStax 自拟的建议思路。在五道要求运行 PhET 模拟的习题中，有四道对照本页的图重新改写了题干并点明这些图：fs-idp56829344 对照图 7.26 的键矩工作台（设为 NH₃），其中关于臭氧的（a）小问被略去，因为该工作台不画同一元素两个原子之间的键矩；fs-idp46580240、fs-idp17379424 和 fs-idp37961056 对照图 7.16 的工作台；其中有答案的两道保留书中的答案，没有答案的两道附有标明为 OmniStax 自拟的建议思路。第五道 fs-idp67065360 是让读者调节电负性的双原子分子，本页没有任何一幅图承载它，因此被略去。例 7.17 的“学习检测”对照图 7.16 的工作台，题干已改写，书中的“答案各不相同”则作为开放式答案保留。两道问“两个原子中哪一个”或“两个词中哪一个正确”的题，被设为针对书中原有选项的选择题。书中印在习题 fs-idp149682416、fs-idp122940912 和 fs-idp73458400 的答案里的图，保留在这些答案中。",
+ "figures": [
+  {
+   "id": "sim-formaldehyde",
+   "kind": "sim",
+   "number": "7.14",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_CH2O.jpg"
+   ],
+   "original_caption": "图中显示了甲醛分子 H₂CO 中键的距离（长度）和角度。",
+   "draws": [
+    "angle",
+    "length"
+   ],
+   "conventions": [
+    "C",
+    "O",
+    "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: notes repeating caption and headline dropped, atom labels closer"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-bef2",
+   "kind": "figure",
+   "number": "7.15",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_BeF2.jpg"
+   ],
+   "original_caption": "BeF₂ 分子具有直线形构型，其中两个键相距尽可能远，位于 Be 原子的相对两侧。",
+   "draws": [
+    "angle"
+   ],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: note that repeated the caption dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-vsepr",
+   "kind": "sim",
+   "number": "7.16",
+   "folds": [
+    "7.19",
+    "7.20"
+   ],
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_Egeom.jpg",
+    "/media/ch07/CNX_Chem_07_06_molgeom.jpg",
+    "/media/ch07/CNX_Chem_07_06_Axeq.jpg"
+   ],
+   "original_caption": "（图 7.16）VSEPR 理论预测的基本电子对构型使任何电子密度区域（键或孤电子对）周围的空间最大。（图 7.19）没有孤电子对时（第一列），分子构型与电子对构型相同。对于给定的电子对数目（行），含有一对或多对孤电子对的分子构型，由相应电子对构型的修改决定。（图 7.20）（a）在三角双锥中，两个轴向位置正好彼此相对，而三个赤道位置排成三角形。（b–d）ClF₃ 中的两对孤电子对（红线）有几种可能的排布，但实际观察到的是 T 形分子构型（b），这与较大的孤电子对都占据赤道位置相一致。",
+   "draws": [
+    "angle"
+   ],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: sketch sites apart, camera back, name lines and ClF3 row fixed"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-domains",
+   "kind": "sim",
+   "draws": [
+    "angle",
+    "time"
+   ],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: camera back, graph clear of headline, repeated notes dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-methane",
+   "kind": "figure",
+   "number": "7.17",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_CH4.jpg"
+   ],
+   "original_caption": "图中显示了甲烷分子 CH₄ 的分子构型，氢原子呈四面体排布。像这样的 VSEPR 构型常用楔形线与虚线表示法来画，其中实线表示位于纸面内的键，实心楔形线表示从纸面向上伸出的键，虚线表示向下伸入纸面的键。",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: fourth hydrogen drawn apart from the third, note dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-ammonia",
+   "kind": "figure",
+   "number": "7.18",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_NH3.jpg"
+   ],
+   "original_caption": "（a）氨分子的电子对构型为四面体形，有一对孤电子对和三个单键。（b）三角锥形分子构型由电子对构型确定。（c）实际键角稍微偏离理想角度，因为孤电子对占据的空间区域比单键更大，使 HNH 角略小于 109.5°。",
+   "draws": [
+    "angle"
+   ],
+   "conventions": [
+    "N",
+    "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: panel letters replace colliding captions, repeated note dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-lewis-co2",
+   "kind": "figure",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_CO2_img.jpg"
+   ],
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-lewis-bcl3",
+   "kind": "figure",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_BCl3_img.jpg"
+   ],
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-bcl3",
+   "kind": "figure",
+   "number": "7.21",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_BCl3mol.jpg"
+   ],
+   "draws": [
+    "angle"
+   ],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: note that repeated the caption dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-lewis-nh4",
+   "kind": "figure",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_NH4_img.jpg"
+   ],
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-ammonium",
+   "kind": "figure",
+   "number": "7.22",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_NH4mol.jpg"
+   ],
+   "original_caption": "铵根离子既具有四面体形电子对构型，也具有四面体形分子构型。",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: fourth hydrogen drawn apart, repeated note dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-lewis-h2o",
+   "kind": "figure",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_H2O_img.jpg"
+   ],
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-water",
+   "kind": "figure",
+   "number": "7.23",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_H2Omol.jpg"
+   ],
+   "original_caption": "（a）H₂O 的中心原子周围有四个电子密度区域，因此具有四面体形电子对构型。（b）其中两个电子区域是孤电子对，因此分子构型为 V 形。",
+   "draws": [],
+   "conventions": [
+    "O",
+    "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: panel letters replace repeated captions, note trimmed"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-lewis-sf4",
+   "kind": "figure",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_SF4_img.jpg"
+   ],
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-sf4",
+   "kind": "figure",
+   "number": "7.24",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_SF4mol.jpg"
+   ],
+   "original_caption": "（a）SF4 的五个电子密度区域呈三角双锥形排布。（b）其中一个区域是孤电子对，由此得到跷跷板形分子构型。",
+   "draws": [],
+   "conventions": [
+    "S",
+    "F"
+   ],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: panel letters replace captions that repeated the figure caption"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-lewis-xef4",
+   "kind": "figure",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_XeF4_img.jpg"
+   ],
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-xef4",
+   "kind": "figure",
+   "number": "7.25",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_XEF4mol.jpg"
+   ],
+   "original_caption": "（a）XeF₄ 的电子对构型为八面体形排布，有两对孤电子对（红线）和四个键。（b）分子构型为平面正方形，两对孤电子对正好彼此相对。",
+   "draws": [],
+   "conventions": [
+    "Xe",
+    "F"
+   ],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: panel letters replace repeated captions, note dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-lewis-glycine",
+   "kind": "figure",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_gly_img.jpg"
+   ],
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-glycine-3d",
+   "kind": "figure",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_gly3D_img.jpg"
+   ],
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: note that repeated the caption dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-bond-moments",
+   "kind": "sim",
+   "number": "7.26",
+   "folds": [
+    "7.27"
+   ],
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_BondVector.jpg",
+    "/media/ch07/CNX_Chem_07_06_CO2H2Odip.jpg"
+   ],
+   "original_caption": "（图 7.26）（a）C 和 H 之间的电负性之差很小，用一个短矢量表示。（b）B 和 F 之间的电负性之差大得多，因此表示键矩的矢量长得多。（图 7.27）分子的总偶极矩取决于各个键偶极矩以及它们的排布方式。（a）每个 CO 键都有键偶极矩，但它们方向相反，所以 CO₂ 分子整体是非极性的。（b）相反，水是极性的，因为 OH 键矩没有相互抵消。",
+   "draws": [
+    "dipole-moment"
+   ],
+   "conventions": [
+    "C",
+    "O",
+    "S",
+    "H",
+    "B",
+    "F",
+    "N",
+    "P",
+    "Cl"
+   ],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: crossed tails for plus signs, legend line, repeated notes dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-ocs",
+   "kind": "figure",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_OSC_img.jpg"
+   ],
+   "draws": [
+    "dipole-moment"
+   ],
+   "conventions": [
+    "O",
+    "C",
+    "S"
+   ],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: note that repeated the caption dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-chloromethane",
+   "kind": "figure",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_CHCl3_img.jpg"
+   ],
+   "draws": [
+    "dipole-moment"
+   ],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: fourth hydrogen drawn apart, repeated side notes dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-h2s-nh3",
+   "kind": "figure",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_SH2NH3_img.jpg"
+   ],
+   "draws": [
+    "charge"
+   ],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-field",
+   "kind": "sim",
+   "number": "7.28",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_Dipolfield.jpg"
+   ],
+   "original_caption": "（a）没有电场时，液态下的分子总是随机分布。（b）施加电场时，像 HF 这样的极性分子会使其偶极与电场方向对齐。",
+   "draws": [
+    "charge"
+   ],
+   "conventions": [
+    "H",
+    "F"
+   ],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: one representative δ pair, hover names, repeated note dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "bond-angles",
+   "concept": "bond-angle-and-bond-distance",
+   "verb": "introduces"
+  },
+  {
+   "span": "bond-angles",
+   "concept": "atoms-and-molecules",
+   "verb": "uses"
+  },
+  {
+   "span": "bond-angles",
+   "concept": "lewis-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "bond-angles",
+   "concept": "bond-angle",
+   "verb": "introduces"
+  },
+  {
+   "span": "vsepr",
+   "concept": "vsepr-theory",
+   "verb": "introduces"
+  },
+  {
+   "span": "vsepr",
+   "concept": "lewis-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "vsepr",
+   "concept": "bond-angle-and-bond-distance",
+   "verb": "uses"
+  },
+  {
+   "span": "geometries",
+   "concept": "electron-pair-geometry",
+   "verb": "introduces"
+  },
+  {
+   "span": "geometries",
+   "concept": "vsepr-theory",
+   "verb": "uses"
+  },
+  {
+   "span": "geometries",
+   "concept": "linear-geometry",
+   "verb": "introduces"
+  },
+  {
+   "span": "geometries",
+   "concept": "trigonal-planar-geometry",
+   "verb": "introduces"
+  },
+  {
+   "span": "geometries",
+   "concept": "tetrahedral-geometry",
+   "verb": "introduces"
+  },
+  {
+   "span": "geometries",
+   "concept": "trigonal-bipyramidal-geometry",
+   "verb": "introduces"
+  },
+  {
+   "span": "geometries",
+   "concept": "octahedral-geometry",
+   "verb": "introduces"
+  },
+  {
+   "span": "structure-versus-geometry",
+   "concept": "molecular-structure-versus-electron-pair-geometry",
+   "verb": "introduces"
+  },
+  {
+   "span": "structure-versus-geometry",
+   "concept": "electron-pair-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "repulsion-order",
+   "concept": "electron-pair-repulsion-order",
+   "verb": "introduces"
+  },
+  {
+   "span": "repulsion-order",
+   "concept": "bond-angle-and-bond-distance",
+   "verb": "uses"
+  },
+  {
+   "span": "repulsion-order",
+   "concept": "molecular-structure-versus-electron-pair-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "axial-equatorial",
+   "concept": "axial-and-equatorial-positions",
+   "verb": "introduces"
+  },
+  {
+   "span": "axial-equatorial",
+   "concept": "electron-pair-repulsion-order",
+   "verb": "uses"
+  },
+  {
+   "span": "axial-equatorial",
+   "concept": "axial-position",
+   "verb": "introduces"
+  },
+  {
+   "span": "axial-equatorial",
+   "concept": "equatorial-position",
+   "verb": "introduces"
+  },
+  {
+   "span": "predicting",
+   "concept": "predict-molecular-structure",
+   "verb": "introduces"
+  },
+  {
+   "span": "predicting",
+   "concept": "lewis-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting",
+   "concept": "electron-pair-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting",
+   "concept": "molecular-structure-versus-electron-pair-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting",
+   "concept": "axial-and-equatorial-positions",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-co2-bcl3",
+   "concept": "predict-molecular-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-ammonium",
+   "concept": "predict-molecular-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-water",
+   "concept": "predict-molecular-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-water",
+   "concept": "molecular-structure-versus-electron-pair-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-sf4",
+   "concept": "predict-molecular-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-sf4",
+   "concept": "axial-and-equatorial-positions",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-xef4",
+   "concept": "predict-molecular-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-xef4",
+   "concept": "axial-and-equatorial-positions",
+   "verb": "uses"
+  },
+  {
+   "span": "multicenter",
+   "concept": "predict-molecular-structure",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ex-glycine",
+   "concept": "predict-molecular-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-shape-simulator",
+   "concept": "predict-molecular-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "bond-dipole",
+   "concept": "bond-dipole-moment",
+   "verb": "introduces"
+  },
+  {
+   "span": "bond-dipole",
+   "concept": "bond-polarity",
+   "verb": "uses"
+  },
+  {
+   "span": "bond-dipole",
+   "concept": "bond-angle-and-bond-distance",
+   "verb": "uses"
+  },
+  {
+   "span": "bond-dipole",
+   "concept": "vector",
+   "verb": "introduces"
+  },
+  {
+   "span": "molecular-dipole",
+   "concept": "molecular-polarity",
+   "verb": "introduces"
+  },
+  {
+   "span": "molecular-dipole",
+   "concept": "bond-dipole-moment",
+   "verb": "uses"
+  },
+  {
+   "span": "molecular-dipole",
+   "concept": "predict-molecular-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "molecular-dipole",
+   "concept": "dipole-moment",
+   "verb": "introduces"
+  },
+  {
+   "span": "molecular-dipole",
+   "concept": "polar-molecule",
+   "verb": "introduces"
+  },
+  {
+   "span": "polar-properties",
+   "concept": "molecular-polarity",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ex-polarity-simulator",
+   "concept": "molecular-polarity",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-polarity-simulator",
+   "concept": "bond-dipole-moment",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm2891376",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-co2-bcl3"
+   },
+   "cite": "predicting",
+   "prompt": "碳酸根离子 ${\\text{CO}}_{3}{}^{\\text{2−}}$ 是一种常见的多原子离子，存在于从蛋壳到抗酸剂的各种物质中。这种多原子离子的电子对构型和分子构型分别是什么？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "电子对构型是平面三角形，分子构型也是平面三角形。由于共振，三个 C–O 键完全相同。无论它们是单键、双键，还是二者的平均，每个键都算作一个电子密度区域。"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idp17356704",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-ammonium"
+   },
+   "cite": "predicting",
+   "prompt": "找出一种具有三角双锥形分子构型的分子。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "任何中心原子周围有五个电子对且不含孤电子对的分子都是三角双锥形。PF<sub>5</sub> 是一个常见的例子。"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idm16663792",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-water"
+   },
+   "cite": "predicting",
+   "prompt": "水合氢离子 H<sub>3</sub>O<sup>+</sup> 在酸溶于水时形成。预测这种阳离子的电子对构型和分子构型。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "电子对构型：四面体形；分子构型：三角锥形"
+   }
+  },
+  {
+   "id": "cyl4",
+   "source_id": "fs-idp82124112",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-sf4"
+   },
+   "cite": "predicting",
+   "prompt": "预测 XeF<sub>2</sub> 分子的电子对构型和分子构型。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "电子对构型是三角双锥形。分子构型是直线形。"
+   }
+  },
+  {
+   "id": "cyl5",
+   "source_id": "fs-idp47136656",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-xef4"
+   },
+   "cite": "predicting",
+   "prompt": "在某个分子中，中心原子有三对孤电子对和两个键。其电子对构型和分子构型分别是什么？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "电子对构型：三角双锥形；分子构型：直线形"
+   }
+  },
+  {
+   "id": "cyl6",
+   "source_id": "fs-idp116942080",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-glycine"
+   },
+   "cite": "multicenter",
+   "figure": {
+    "src": "/media/ch07/CNX_Chem_07_06_ala_img.jpg",
+    "alt": "路易斯结构：一个带有两对孤电子对的氮原子，以单键与两个氢原子和一个碳原子相连，该碳原子又依次以单键与一个氢原子、一个甲基和另一个碳原子相连。这个碳原子以单键与带有两对孤电子对的一个氧原子相连，并以单键与另一个带有两对孤电子对且以单键连有一个氢原子的氧原子相连。"
+   },
+   "prompt": "另一种氨基酸是丙氨酸，其路易斯结构如下所示。预测氮原子、三个碳原子以及连有氢的氧原子的电子对构型和局部构型：",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "电子对构型：氮——四面体形；碳（<u>C</u>H）——四面体形；碳（<u>C</u>H<sub>3</sub>）——四面体形；碳（<u>C</u>O<sub>2</sub>）——平面三角形；氧（<u>O</u>H）——四面体形；局部构型：氮——三角锥形；碳（<u>C</u>H）——四面体形；碳（<u>C</u>H<sub>3</sub>）——四面体形；碳（<u>C</u>O<sub>2</sub>）——平面三角形；氧（<u>O</u>H）——V 形（109°）"
+   }
+  },
+  {
+   "id": "cyl7",
+   "source_id": "fs-idp54012352",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-shape-simulator"
+   },
+   "cite": "geometries",
+   "prompt": "在图 7.16 的工作台上搭建一个更复杂的分子，设置五个或六个电子密度区域以及一对或多对孤电子对。确定其电子对构型、分子构型和键角。然后试着找出与你搭建的构型相符的化学式。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "答案各不相同。例如，一个原子有四个单键、一个双键和一对孤电子对，则其电子基团几何构型为八面体形，分子构型为四方锥形。XeOF<sub>4</sub> 就是具有这种构型的分子。"
+   }
+  },
+  {
+   "id": "cyl8",
+   "source_id": "fs-idm708128",
+   "kind": "check-your-learning",
+   "bloom": "Understand",
+   "place": {
+    "at": "inline",
+    "after": "ex-polarity-simulator"
+   },
+   "cite": "bond-dipole",
+   "prompt": "确定能给出最大可能键偶极矩的部分电荷。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "部分电荷最大时，键矩最大。上面的两个解表示电子在键中被共用时的不均匀程度。当电负性之差最大时，键矩达到最大。A 和 C 的控件应设为同一个极端，B 应设为相反的极端。虽然键矩的大小不会因 B 是电负性最大还是最小而改变，但键矩的方向会改变。"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idp14744000",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "structure-versus-geometry",
+   "prompt": "解释为什么 HOH 分子是 V 形的，而 HBeH 分子是直线形的。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "水中两组未成对电子的位置迫使各键采取四面体形排布，因此得到的 HOH 分子是 V 形的。HBeH 分子（其中 Be 只有两个电子与氢提供的两个电子成键）必须使电子对彼此尽可能远，因此是直线形的。"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp281408272",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "structure-versus-geometry",
+   "prompt": "路易斯结构的哪一特征可以用来判断分子（或离子）的电子对构型和分子构型是否相同？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "中心原子上孤电子对的数目。路易斯结构中的中心原子没有孤电子对时，它周围的每个电子密度区域都是与另一个原子相连的键，所以描述原子位置的分子构型与描述所有区域位置的电子对构型相同。甲烷 CH<sub>4</sub> 有四个键，碳上没有孤电子对，在这两种意义上都是四面体形，BCl<sub>3</sub>（平面三角形）和 CO<sub>2</sub>（直线形）也是如此。中心原子带有一对或多对孤电子对时，二者就不同了：氨 NH<sub>3</sub> 有四个区域，电子对构型为四面体形，但其中一个区域是孤电子对，所以它的分子构型是三角锥形。"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm2043120",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "structure-versus-geometry",
+   "prompt": "解释电子对构型与分子构型的区别。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "无论电子对是在键中还是以孤电子对的形式存在，都必须为每一对电子提供空间。电子对构型考虑所有电子的位置。分子构型只考虑成键电子对的几何构型。"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idp134531056",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "repulsion-order",
+   "prompt": "为什么 NH<sub>3</sub> 中的 H–N–H 角小于 CH<sub>4</sub> 中的 H–C–H 键角？为什么 ${\\text{NH}}_{4}{}^{+}$ 中的 H–N–H 角与 CH<sub>4</sub> 中的 H–C–H 键角相同？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "两个分子的中心原子周围都有四个电子密度区域，电子对构型都是四面体形，但在 NH<sub>3</sub> 中，四个区域之一是孤电子对。孤电子对占据的空间区域比单键大，而且孤电子对-成键电子对的排斥大于成键电子对-成键电子对的排斥，所以孤电子对把三个 N–H 键推得更靠近，H–N–H 角约为 107°，小于 CH<sub>4</sub> 中 109.5° 的 H–C–H 角。在 ${\\text{NH}}_{4}{}^{+}$ 中，氮原子用 NH<sub>3</sub> 中原来是孤电子对的那对电子形成了第四个 N–H 键。于是该离子有四个成键区域而没有孤电子对，与 CH<sub>4</sub> 完全一样，所以四个区域相互的排斥相等，每个 H–N–H 角都是理想的四面体角 109.5°。"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp170194320",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molecular-dipole",
+   "prompt": "解释含有极性键的分子怎么可能是非极性的。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "只要极性键相互补偿（例如，两个相同的原子正好位于中心原子的相对两侧），分子就可以是非极性的。"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm5235936",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molecular-dipole",
+   "prompt": "一般来说，如果 M 上有一对或多对孤电子对，MX<sub>n</sub> 分子（其中 M 表示中心原子，X 表示端位原子；n = 2 – 5）就是极性的。NH<sub>3</sub>（M = N，X = H，n = 3）就是一个例子。有两种带有孤电子对的分子构型是这一规则的例外。它们是什么？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "带有三对孤电子对的直线形构型（如 XeF<sub>2</sub>）和带有两对孤电子对的平面正方形构型（如 XeF<sub>4</sub>）。分子的键矩相互抵消时是非极性的。在直线形的情形中，有五个区域，电子对构型为三角双锥形；三对孤电子对占据三个更宽敞的赤道位置，使两个 M–X 键处于相隔 180° 的轴向位置，所以它们相等的键矩方向相反而相互抵消。在平面正方形的情形中，有六个区域，电子对构型为八面体形；为使孤电子对-孤电子对的排斥最小，两对孤电子对位于中心原子的相对两侧，使四个 M–X 键在一个平面内成两对相对的键，所以它们的键矩也相互抵消。因此，尽管 M 上带有孤电子对，这两种分子都是非极性的。"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp57252544",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "predicting",
+   "prompt": "预测下列各分子或离子的电子对构型和分子构型：\n（a）SF<sub>6</sub>\n（b）PCl<sub>5</sub>\n（c）BeH<sub>2</sub>\n（d）${\\text{CH}}_{3}{}^{+}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）电子几何构型和分子构型都是八面体形。（b）电子几何构型和分子构型都是三角双锥形。（c）电子几何构型和分子构型都是直线形。（d）电子几何构型和分子构型都是平面三角形。"
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idp67177072",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "predicting",
+   "prompt": "下列各分子或离子的电子对构型和分子构型分别是什么？\n（a）ClF<sub>5</sub>\n（b）${\\text{ClO}}_{2}{}^{\\text{−}}$\n（c）${\\text{TeCl}}_{4}{}^{\\text{2−}}$\n（d）PCl<sub>3</sub>\n（e）SeF<sub>4</sub>\n（f）${\\text{PH}}_{2}{}^{\\text{−}}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）电子对构型：八面体形，分子构型：四方锥形；（b）电子对构型：四面体形，分子构型：V 形；（c）电子对构型：八面体形，分子构型：平面正方形；（d）电子对构型：四面体形，分子构型：三角锥形；（e）电子对构型：三角双锥形，分子构型：跷跷板形；（f）电子对构型：四面体形，分子构型：V 形（109°）"
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idp123628080",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "predicting",
+   "prompt": "确定下列各分子的电子对构型和分子构型：\n（a）ClNO（N 为中心原子）\n（b）CS<sub>2</sub>\n（c）Cl<sub>2</sub>CO（C 为中心原子）\n（d）Cl<sub>2</sub>SO（S 为中心原子）\n（e）SO<sub>2</sub>F<sub>2</sub>（S 为中心原子）\n（f）XeO<sub>2</sub>F<sub>2</sub>（Xe 为中心原子）\n（g）${\\text{ClOF}}_{2}{}^{+}$（Cl 为中心原子）",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）电子对构型：平面三角形，分子构型：V 形（120°）；（b）电子对构型：直线形，分子构型：直线形；（c）电子对构型：平面三角形，分子构型：平面三角形；（d）电子对构型：四面体形，分子构型：三角锥形；（e）电子对构型：四面体形，分子构型：四面体形；（f）电子对构型：三角双锥形，分子构型：跷跷板形；（g）电子对构型：四面体形，分子构型：三角锥形"
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idp87226080",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molecular-dipole",
+   "prompt": "下列分子和离子中，哪些含有极性键？其中哪些分子和离子具有偶极矩？\n（a）ClF<sub>5</sub>\n（b）${\\text{ClO}}_{2}{}^{\\text{−}}$\n（c）${\\text{TeCl}}_{4}{}^{\\text{2−}}$\n（d）PCl<sub>3</sub>\n（e）SeF<sub>4</sub>\n（f）${\\text{PH}}_{2}{}^{\\text{−}}$\n（g）XeF<sub>2</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "所有这些分子和离子都含有极性键。只有 ClF<sub>5</sub>、${\\text{ClO}}_{2}{}^{\\text{−}}$、PCl<sub>3</sub>、SeF<sub>4</sub> 和 ${\\text{PH}}_{2}{}^{\\text{−}}$ 具有偶极矩。"
+   }
+  },
+  {
+   "id": "e15",
+   "source_id": "fs-idp60611664",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molecular-dipole",
+   "prompt": "下列分子中，哪些具有偶极矩？\n（a）CS<sub>2</sub>\n（b）SeS<sub>2</sub>\n（c）CCl<sub>2</sub>F<sub>2</sub>\n（d）PCl<sub>3</sub>（P 为中心原子）\n（e）ClNO（N 为中心原子）",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "SeS<sub>2</sub>、CCl<sub>2</sub>F<sub>2</sub>、PCl<sub>3</sub> 和 ClNO 都具有偶极矩。"
+   }
+  },
+  {
+   "id": "e17",
+   "source_id": "fs-idp32930976",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molecular-dipole",
+   "prompt": "XF<sub>3</sub> 分子具有偶极矩。X 是硼还是磷？",
+   "answer": {
+    "type": "choice",
+    "generated_by": "source",
+    "options": [
+     "硼",
+     "磷"
+    ],
+    "correct": 1,
+    "solution": "P"
+   }
+  },
+  {
+   "id": "e19",
+   "source_id": "fs-idp164286384",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molecular-dipole",
+   "prompt": "Cl<sub>2</sub>BBCl<sub>2</sub> 分子是极性的还是非极性的？",
+   "answer": {
+    "type": "choice",
+    "generated_by": "source",
+    "options": [
+     "极性的",
+     "非极性的"
+    ],
+    "correct": 1,
+    "solution": "非极性的"
+   }
+  },
+  {
+   "id": "e21",
+   "source_id": "fs-idp16503888",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "multicenter",
+   "prompt": "描述所指示的一个或多个原子周围的分子构型：\n（a）硫酸 H<sub>2</sub>SO<sub>4</sub> [(HO)<sub>2</sub>SO<sub>2</sub>] 中的硫原子\n（b）氯酸 HClO<sub>3</sub> [HOClO<sub>2</sub>] 中的氯原子\n（c）过氧化氢 HOOH 中的氧原子\n（d）硝酸 HNO<sub>3</sub> [HONO<sub>2</sub>] 中的氮原子\n（e）硝酸 HNO<sub>3</sub> [HONO<sub>2</sub>] 中 OH 基团里的氧原子\n（f）臭氧分子 O<sub>3</sub> 中的中心氧原子\n（g）丙炔 CH<sub>3</sub>CCH 中的每个碳原子\n（h）氟利昂 CCl<sub>2</sub>F<sub>2</sub> 中的碳原子\n（i）丙二烯 H<sub>2</sub>CCCH<sub>2</sub> 中的每个碳原子",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）四面体形；（b）三角锥形；（c）V 形（109°）；（d）平面三角形；（e）V 形（<120°）；（f）V 形（109°）；（g）<u>C</u>H<sub>3</sub>CCH 为四面体形，CH<sub>3</sub><u>CC</u>H 为直线形；（h）四面体形；（i）H<sub>2</sub>C<u>C</u>CH<sub>2</sub> 为直线形；H<sub>2</sub><u>C</u>C<u>C</u>H<sub>2</sub> 为平面三角形"
+   }
+  },
+  {
+   "id": "e23",
+   "source_id": "fs-idp149682416",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "structure-versus-geometry",
+   "prompt": "化学式为 AB<sub>2</sub> 的分子（其中 A 和 B 代表不同的原子）可能具有三种不同形状之一。画出并命名这种分子可能具有的三种不同形状。为每种形状各举一个分子或离子的例子。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<img src=\"/media/ch07/CNX_Chem_07_06_Ques23ans_img.jpg\" alt=\"给出三个路易斯图。第一个图显示字母 A 向左和向右各以单键与字母 B 相连，图旁写有例子 CO2 和术语“直线形”。第二个图显示带有两对孤电子对的字母 A，向左和向右下方各以单键与字母 B 相连，图旁写有例子 H2O 和术语“V 形，角度约为 109 度”。第三个图显示带有一对孤电子对的字母 A，向左和向右下方各以单键与字母 B 相连，图旁写有例子 SO2 和术语“V 形，角度约为 120 度”。\">"
+   }
+  },
+  {
+   "id": "e25",
+   "source_id": "fs-idp122940912",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "predicting",
+   "prompt": "画出下列分子的路易斯电子式，适当时包括共振结构：\n（a）${\\text{CS}}_{3}{}^{\\text{2−}}$\n（b）CS<sub>2</sub>\n（c）CS\n（d）预测 ${\\text{CS}}_{3}{}^{\\text{2−}}$ 和 CS<sub>2</sub> 的分子形状，并说明你是如何得出预测的",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）<img src=\"/media/ch07/CNX_Chem_07_06_CS3a_img.jpg\" alt=\"CS3 2− 离子的三个共振式，各置于方括号中并带有 2− 电荷，以双向箭头相连：一个碳原子以单键与两个各带有三对孤电子对的硫原子相连，并以双键与带有两对孤电子对的第三个硫原子相连，双键在每个结构中移到不同的硫原子上。\"> （b）<img src=\"/media/ch07/CNX_Chem_07_06_CS3b_img.jpg\" alt=\"CS2 的路易斯结构：一个碳原子以双键与两个硫原子相连，每个硫原子各有两对孤电子对。\"> （c）<img src=\"/media/ch07/CNX_Chem_07_06_CS3c_img.jpg\" alt=\"CS 的路易斯结构：一个带有一对孤电子对的碳原子以三键与带有一对孤电子对的硫原子相连。\"> （d）${\\text{CS}}_{3}{}^{\\text{2−}}$ 含有三个电子密度区域（都是键，没有孤电子对）；形状为平面三角形；CS<sub>2</sub> 只有两个电子密度区域（都是键，没有孤电子对）；形状为直线形"
+   }
+  },
+  {
+   "id": "e27",
+   "source_id": "fs-idp73458400",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "multicenter",
+   "prompt": "某化合物的摩尔质量约为 42 g/mol，含碳 85.7%、氢 14.3%。它的分子构型是什么？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "路易斯结构由三个单元构成，但原子必须重新排布：<img src=\"/media/ch07/CNX_Chem_07_06_Ques28ans_img.jpg\" alt=\"一个路易斯结构，其中一个碳原子以单键与三个氢原子和第二个碳原子相连。第二个碳原子以单键与一个氢原子相连，并以双键与第三个碳原子相连，第三个碳原子以单键与两个氢原子相连。\">"
+   }
+  },
+  {
+   "id": "s29",
+   "source_id": "fs-idp56829344",
+   "kind": "simulation-exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molecular-dipole",
+   "prompt": "把图 7.26 的键矩工作台设为 NH<sub>3</sub>，拖动分子使其转动，直到你能看到全部三个键矩。（a）观察 NH<sub>3</sub> 的键偶极矩，并据此预测 N 和 H 哪一个电负性更大。（b）预测 NH<sub>3</sub> 是否应有分子偶极，如果有，它指向哪个方向。把你的预测与工作台为偶极矩画出的较粗箭头作比较。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "分子偶极指向远离氢原子的方向。"
+   }
+  },
+  {
+   "id": "s30",
+   "source_id": "fs-idp46580240",
+   "kind": "simulation-exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "geometries",
+   "prompt": "在图 7.16 的工作台上搭建一个分子。从中心原子开始，把一个双键、一个单键和一对孤电子对算作它的电子密度区域，并相应设置滑块。转动分子以观察完整的几何构型。说出电子对构型和分子构型的名称，并预测键角。然后读出绘图下方的两个名称和理想角度，核对你的答案。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "电子对构型为平面三角形，分子构型为 V 形，预测键角略小于理想的 120°。一个单键和一个双键各算作一个电子密度区域，孤电子对是第三个，所以中心原子有三个区域，三个区域排成平面三角形电子对构型，彼此之间的夹角为 120°。只有两个区域上有原子，所以描述原子位置的分子构型是 V 形。孤电子对占据的空间区域比任一个键都大，因此把两个键推得更靠近，它们之间的角小于 120°。工作台设为三个区域、一对孤电子对时，会显示平面三角形、V 形和 120°。"
+   }
+  },
+  {
+   "id": "s31",
+   "source_id": "fs-idp17379424",
+   "kind": "simulation-exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "repulsion-order",
+   "prompt": "把图 7.16 的工作台设为四个电子密度区域、两对孤电子对，即水分子，并记下它显示的理想角度。然后把它与例 7.13 给出的水的 104.5° 键角作比较，图 7.26 的键矩工作台设为 H<sub>2</sub>O 时画的就是这个角度。解释所观察到的差别。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "这两种构型非常相似。在模型模式中，每个电子基团占据的空间相同，因此键角显示为 109.5°。在“真实”模式中，孤电子对更大，使氢被压缩。这就导致了 104.5° 的较小角度。"
+   }
+  },
+  {
+   "id": "s32",
+   "source_id": "fs-idp37961056",
+   "kind": "simulation-exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "repulsion-order",
+   "prompt": "S<sub>2</sub>O 分子有一个中心硫原子，与一个氧原子和第二个硫原子相连，中心原子上有一对孤电子对。把图 7.16 的工作台设为中心硫原子周围的电子密度区域，并读出它显示的理想角度。解释实际键角应比这个理想角度大还是小。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "工作台设为三个区域、一对孤电子对时，显示平面三角形电子对构型、V 形分子构型和 120° 的理想角度，而实际的 S–S–O 角小于 120°。中心硫原子有两个键，一个与氧相连，一个与硫相连，还有一对孤电子对；无论键级如何，每个键都算作一个电子密度区域，所以有三个区域，呈平面三角形排布。由于孤电子对-成键电子对的排斥大于成键电子对-成键电子对的排斥，而且孤电子对占据的空间区域比键大，孤电子对把两个键推向彼此，使它们之间的角变小。S<sub>2</sub>O 中测得的角约为 118°。"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "electron-pair-geometry",
+   "weight": 2
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "electron-pair-geometry",
+   "weight": 2
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "molecular-structure-versus-electron-pair-geometry",
+   "weight": 2
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "axial-and-equatorial-positions",
+   "weight": 2
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "axial-and-equatorial-positions",
+   "weight": 2
+  },
+  {
+   "exercise": "cyl6",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "cyl7",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "cyl7",
+   "concept": "electron-pair-geometry",
+   "weight": 2
+  },
+  {
+   "exercise": "cyl8",
+   "concept": "bond-dipole-moment"
+  },
+  {
+   "exercise": "e1",
+   "concept": "molecular-structure-versus-electron-pair-geometry"
+  },
+  {
+   "exercise": "e1",
+   "concept": "vsepr-theory",
+   "weight": 2
+  },
+  {
+   "exercise": "e2",
+   "concept": "molecular-structure-versus-electron-pair-geometry"
+  },
+  {
+   "exercise": "e3",
+   "concept": "molecular-structure-versus-electron-pair-geometry"
+  },
+  {
+   "exercise": "e3",
+   "concept": "vsepr-theory",
+   "weight": 2
+  },
+  {
+   "exercise": "e4",
+   "concept": "electron-pair-repulsion-order"
+  },
+  {
+   "exercise": "e5",
+   "concept": "molecular-polarity"
+  },
+  {
+   "exercise": "e6",
+   "concept": "molecular-polarity"
+  },
+  {
+   "exercise": "e7",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "e7",
+   "concept": "electron-pair-geometry",
+   "weight": 2
+  },
+  {
+   "exercise": "e9",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "e9",
+   "concept": "electron-pair-geometry",
+   "weight": 2
+  },
+  {
+   "exercise": "e9",
+   "concept": "axial-and-equatorial-positions",
+   "weight": 2
+  },
+  {
+   "exercise": "e11",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "e11",
+   "concept": "electron-pair-geometry",
+   "weight": 2
+  },
+  {
+   "exercise": "e13",
+   "concept": "molecular-polarity"
+  },
+  {
+   "exercise": "e13",
+   "concept": "bond-dipole-moment",
+   "weight": 2
+  },
+  {
+   "exercise": "e15",
+   "concept": "molecular-polarity"
+  },
+  {
+   "exercise": "e17",
+   "concept": "molecular-polarity"
+  },
+  {
+   "exercise": "e19",
+   "concept": "molecular-polarity"
+  },
+  {
+   "exercise": "e21",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "e23",
+   "concept": "molecular-structure-versus-electron-pair-geometry"
+  },
+  {
+   "exercise": "e23",
+   "concept": "predict-molecular-structure",
+   "weight": 2
+  },
+  {
+   "exercise": "e25",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "e27",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "s29",
+   "concept": "molecular-polarity"
+  },
+  {
+   "exercise": "s29",
+   "concept": "bond-dipole-moment",
+   "weight": 2
+  },
+  {
+   "exercise": "s30",
+   "concept": "electron-pair-geometry"
+  },
+  {
+   "exercise": "s30",
+   "concept": "predict-molecular-structure",
+   "weight": 2
+  },
+  {
+   "exercise": "s31",
+   "concept": "electron-pair-repulsion-order"
+  },
+  {
+   "exercise": "s31",
+   "concept": "molecular-structure-versus-electron-pair-geometry",
+   "weight": 2
+  },
+  {
+   "exercise": "s32",
+   "concept": "electron-pair-repulsion-order"
+  },
+  {
+   "exercise": "s32",
+   "concept": "electron-pair-geometry",
+   "weight": 2
+  }
+ ],
+ "referents": [
+  {
+   "id": "negative-plate",
+   "label": "电场的负极板",
+   "figures": [
+    "sim-field"
+   ]
+  },
+  {
+   "id": "positive-plate",
+   "label": "电场的正极板",
+   "figures": [
+    "sim-field"
+   ]
+  }
+ ]
+}

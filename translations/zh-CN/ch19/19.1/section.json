@@ -1,0 +1,1294 @@
+{
+ "id": "19.1",
+ "module": "m68842",
+ "chapter": "19",
+ "title": "过渡金属及其化合物的存在、制备与性质",
+ "short": "过渡金属",
+ "lead": "过渡金属的 <em>d</em> 轨道部分填充，占据元素周期表的中部，内过渡金属则位于其下方的两行。本节介绍它们的反应性和众多的氧化态，铁、铜和银如何从矿石中提取，这些金属形成的卤化物、氧化物、氢氧化物、碳酸盐和其他盐，最后讲到铜的超导氧化物。",
+ "summary_html": "<p><span data-concept=\"transition-metal\">过渡金属</span>是 <em>d</em> 轨道部分填充的元素，位于元素周期表的 <span data-concept=\"d-block-element\"><em>d</em> 区</span>。过渡元素的反应性差别很大，从钪和铁等非常活泼的金属，到几乎惰性的元素，如<span data-concept=\"platinum-metals\">铂系元素</span>。从矿石中提取这些元素所用的化学方法，取决于该元素在矿石中的浓度，以及将该元素的离子还原为金属的难度。越活泼的金属越难还原。</p><p>过渡金属表现出金属所特有的化学行为。例如，它们在空气中加热时被氧化，并与<span data-concept=\"halogen\">卤素</span>单质反应生成<span data-concept=\"halide\">卤化物</span>。活动性顺序中位于氢之前的那些元素与<span data-concept=\"acid\">酸</span>反应，生成<span data-concept=\"salt\">盐</span>和氢气。过渡金属化合物中处于低<span data-concept=\"oxidation-number\">氧化态</span>的氧化物、氢氧化物和碳酸盐呈碱性。卤化物和其他盐一般在水中稳定，不过有些情况下必须排除氧。大多数过渡金属能形成多种稳定的氧化态，因而表现出范围很广的化学反应性。</p>",
+ "notes": "本节的开头，书中印出时没有标题，这里加上了 OmniStax 自己的一个标题；两处学习链接（炼钢的动画，以及超导体绕磁性跑道悬浮的视频）被略去。保留了书中印出的原样：“Hydrology involves the separation”、“it often useful to employ”、“zinc or iron(II) ions, which serves as the reducing agent”、例 19.3 中的“dicyanoargenate(I)”、例 19.2 中未配平的高锰酸根半反应、引自附录 H 的还原电势，以及“Bismouth-Strontium-Copper-Oxides”。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案来自书后答案。以下未附答案的习题已被略去，也没有为它们计算答案：fs-idm194766704（钛及其离子的电子构型）、fs-idm283106000（高炉中每短吨 Fe₂O₃ 所需的空气体积）、fs-idm34793824（碱金属氯化物中氯的百分含量）、fs-idm227700608（六个反应的产物）、fs-idm343897984（硫化铁(II)与酸反应产生的气体）和 fs-idm34789712（一个待配平的方程式）。fs-idm278997936 的答案对（b）给出的是 TiCl₃ 和 CrO₄²⁻，对（f）给出的是 CrCl₃，而题目中写的是 FeCl₂ 与 Cr₂O₇²⁻ 以及 FeCl₃；按原样保留。按印出的原样保留：fs-idm218727072 中的“VO₄³”、fs-idp5436400 答案中的“3Cl⁺”，以及 fs-idm232830240 答案中的“MnO⁴⁻”和“5Fe₃”。没有移动任何内容。",
+ "figures": [
+  {
+   "id": "sim-transition-series",
+   "kind": "sim",
+   "number": "19.2",
+   "originals": [
+    "/media/ch19/CNX_Chem_19_01_PeriodicEConfig.jpg"
+   ],
+   "original_caption": "过渡金属位于元素周期表的第 3–11 族。内过渡金属位于表主体下方的两行。",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-lanthanoid",
+   "kind": "photo",
+   "number": "19.3",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-oxidation-states",
+   "kind": "sim",
+   "number": "19.4",
+   "originals": [
+    "/media/ch19/CNX_Chem_19_01_Oxistatra.jpg"
+   ],
+   "original_caption": "第一过渡系的过渡金属可以形成具有不同氧化态的化合物。",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-native-metals",
+   "kind": "photo",
+   "number": "19.5",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-blast-furnace",
+   "kind": "sim",
+   "number": "19.6",
+   "originals": [
+    "/media/ch19/CNX_Chem_19_01_BlastFurn.jpg"
+   ],
+   "original_caption": "高炉内，不同的反应发生在不同的温度区。一氧化碳在较热的底部区域产生，向上升起，通过上部区域发生的一系列反应，把铁的氧化物还原为纯铁。",
+   "draws": [
+    "length",
+    "temperature"
+   ],
+   "conventions": [
+    "Fe",
+    "C",
+    "Ca",
+    "O"
+   ],
+   "facts": [
+    "#ff8c1a",
+    "#ffd24d"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-molten-steel",
+   "kind": "photo",
+   "number": "19.7",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-blister-copper",
+   "kind": "photo",
+   "number": "19.8",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-silver",
+   "kind": "photo",
+   "number": "19.9",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-superconductor",
+   "kind": "sim",
+   "number": "19.10",
+   "originals": [
+    "/media/ch19/CNX_Chem_19_01_ResTemp.jpg"
+   ],
+   "original_caption": "高温超导体 YBa₂Cu₃O₇ 的电阻随温度而变化。请注意电阻在低于 92 K 时降为零，此时该物质变为超导的。",
+   "draws": [
+    "temperature"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-maglev",
+   "kind": "photo",
+   "number": "19.11",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "transition",
+   "concept": "d-block-element",
+   "verb": "introduces"
+  },
+  {
+   "span": "transition",
+   "concept": "f-block-element",
+   "verb": "introduces"
+  },
+  {
+   "span": "transition",
+   "concept": "transition-series",
+   "verb": "introduces"
+  },
+  {
+   "span": "transition",
+   "concept": "coordination-compound",
+   "verb": "introduces"
+  },
+  {
+   "span": "transition",
+   "concept": "transition-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "transition",
+   "concept": "inner-transition-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "transition",
+   "concept": "lanthanide",
+   "verb": "uses"
+  },
+  {
+   "span": "transition",
+   "concept": "actinide",
+   "verb": "uses"
+  },
+  {
+   "span": "transition",
+   "concept": "electron-configuration",
+   "verb": "uses"
+  },
+  {
+   "span": "transition",
+   "concept": "ion-configurations",
+   "verb": "uses"
+  },
+  {
+   "span": "transition",
+   "concept": "main-group-element",
+   "verb": "uses"
+  },
+  {
+   "span": "transition",
+   "concept": "alloy",
+   "verb": "uses"
+  },
+  {
+   "span": "transition",
+   "concept": "cation",
+   "verb": "uses"
+  },
+  {
+   "span": "transition",
+   "concept": "lewis-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "transition",
+   "concept": "lewis-base",
+   "verb": "uses"
+  },
+  {
+   "span": "lanthanides-devices",
+   "concept": "rare-earth-element",
+   "verb": "introduces"
+  },
+  {
+   "span": "lanthanides-devices",
+   "concept": "lanthanide",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "transition-metal-reactivity",
+   "verb": "introduces"
+  },
+  {
+   "span": "properties",
+   "concept": "platinum-metals",
+   "verb": "introduces"
+  },
+  {
+   "span": "properties",
+   "concept": "transition-metal-oxidation-states",
+   "verb": "introduces"
+  },
+  {
+   "span": "properties",
+   "concept": "standard-electrode-potential",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "reducing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "half-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "lanthanide",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "alkaline-earth-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "oxyanion",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "cation",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "halogen",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "halide",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "acid",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "valence-electrons",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "transition-series",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "smelting",
+   "verb": "introduces"
+  },
+  {
+   "span": "preparation",
+   "concept": "isolating-transition-metals",
+   "verb": "introduces"
+  },
+  {
+   "span": "preparation",
+   "concept": "reducing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "electrolysis",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "distillation",
+   "verb": "uses"
+  },
+  {
+   "span": "iron",
+   "concept": "blast-furnace",
+   "verb": "introduces"
+  },
+  {
+   "span": "iron",
+   "concept": "steel",
+   "verb": "introduces"
+  },
+  {
+   "span": "iron",
+   "concept": "reducing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "iron",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "iron",
+   "concept": "alloy",
+   "verb": "uses"
+  },
+  {
+   "span": "copper",
+   "concept": "copper-isolation",
+   "verb": "introduces"
+  },
+  {
+   "span": "copper",
+   "concept": "lewis-acids-and-bases",
+   "verb": "uses"
+  },
+  {
+   "span": "copper",
+   "concept": "lewis-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "copper",
+   "concept": "lewis-base",
+   "verb": "uses"
+  },
+  {
+   "span": "copper",
+   "concept": "electrolysis",
+   "verb": "uses"
+  },
+  {
+   "span": "silver",
+   "concept": "hydrometallurgy",
+   "verb": "introduces"
+  },
+  {
+   "span": "silver",
+   "concept": "reducing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "silver",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "silver",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "transition-metal-compounds",
+   "verb": "introduces"
+  },
+  {
+   "span": "compounds",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "ionic-compounds",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "redox-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "halide",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "halogen",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "electronegativity",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "bond-polarity",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "covalent-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "ionic-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "melting-point",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "amphoteric",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "oxyanion",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "precipitate",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "net-ionic-equation",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "complex-ion",
+   "verb": "uses"
+  },
+  {
+   "span": "superconductors",
+   "concept": "superconductor",
+   "verb": "introduces"
+  },
+  {
+   "span": "superconductors",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "superconductors",
+   "concept": "boiling-point",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm42300304",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-valence-electrons"
+   },
+   "cite": "transition",
+   "prompt": "给出一个第一过渡系中不含 <em>d</em> 电子的离子的例子。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "V<sup>5+</sup> 是一种可能。其他例子包括 Sc<sup>3+</sup>、Ti<sup>4+</sup>、Cr<sup>6+</sup> 和 Mn<sup>7+</sup>。"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm126999824",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-activity"
+   },
+   "cite": "properties",
+   "prompt": "预测 HCl 与 Co(<em>s</em>) 之间，以及 HBr 与 Pt(<em>s</em>) 之间会发生什么反应（如果有的话）。你需要使用附录 L 中的标准还原电势。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "$\\text{Co}(s)+\\text{2HCl}\\;\\longrightarrow \\;{\\text{H}}_{2}+{\\text{CoCl}}_{2}(aq);$ 无反应，因为 Pt(<em>s</em>) 不会被 H<sup>+</sup> 氧化"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idm273943792",
+   "kind": "check-your-learning",
+   "bloom": "Understand",
+   "place": {
+    "at": "inline",
+    "after": "ex-refining-redox"
+   },
+   "cite": "silver",
+   "prompt": "在铁的精炼过程中，高炉中必须有碳存在。为什么需要碳才能把氧化铁转化为铁？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "碳被转化为 CO，CO 是接受电子的还原剂，使铁(III)能够被还原为铁(0)。"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm283590960",
+   "source_number": "1",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "transition",
+   "prompt": "写出下列各元素的电子构型：<br>（a）Sc<br>（b）Ti<br>（c）Cr<br>（d）Fe<br>（e）Ru",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）Sc：[Ar]4<em>s</em><sup>2</sup>3<em>d</em><sup>1</sup>；（b）Ti：[Ar]4<em>s</em><sup>2</sup>3<em>d</em><sup>2</sup>；（c）Cr：[Ar]4<em>s</em><sup>1</sup>3<em>d</em><sup>5</sup>；（d）Fe：[Ar]4<em>s</em><sup>2</sup>3<em>d</em><sup>6</sup>；（e）Ru：[Kr]5<em>s</em><sup>2</sup>4<em>d</em><sup>6</sup>"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm288603744",
+   "source_number": "3",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "transition",
+   "prompt": "写出下列各元素及其 3+ 离子的电子构型：<br>（a）La<br>（b）Sm<br>（c）Lu",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）La：[Xe]6<em>s</em><sup>2</sup>5<em>d</em><sup>1</sup>，La<sup>3+</sup>：[Xe]；（b）Sm：[Xe]6<em>s</em><sup>2</sup>4<em>f</em><sup>6</sup>，Sm<sup>3+</sup>：[Xe]4<em>f</em><sup>5</sup>；（c）Lu：[Xe]6<em>s</em><sup>2</sup>4<em>f</em><sup>14</sup>5<em>d</em><sup>1</sup>，Lu<sup>3+</sup>：[Xe]4<em>f</em><sup>14</sup>"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm115085520",
+   "source_number": "4",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "lanthanides-devices",
+   "prompt": "为什么在自然界中找不到单质形式的镧系元素？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "它们的反应性太强，无法以游离金属的形式存在。与碱土金属一样，镧系元素是容易被氧化的强还原剂，而且都形成稳定的 3+ 阳离子；其推动力与使 Be 和 Mg 变成 Be<sup>2+</sup> 和 Mg<sup>2+</sup> 的推动力相似。任何镧系金属与地壳中的氧和水接触时，都会被氧化为其 3+ 离子，因此这些元素只存在于化合物中，混杂在矿石里，要得到金属就必须还原这些化合物。"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idm224206832",
+   "source_number": "5",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "preparation",
+   "prompt": "下列元素中，哪一种最有可能用于通过还原 La<sub>2</sub>O<sub>3</sub> 来制备 La：Al、C 还是 Fe？为什么？",
+   "answer": {
+    "type": "choice",
+    "generated_by": "source",
+    "options": [
+     "Al",
+     "C",
+     "Fe"
+    ],
+    "correct": 0,
+    "solution": "使用 Al，因为它是最强的还原剂，也是所列选项中唯一能提供足够推动力把 La(III) 转化为 La 的。"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm218727072",
+   "source_number": "6",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "properties",
+   "prompt": "下列离子中，哪一个是最强的氧化剂：${\\text{VO}}_{4}{}^{3},$<sup class=\"fn\" data-note=\"c-e6-vo4\"></sup> ${\\text{CrO}}_{4}{}^{2−},$ 还是 ${\\text{MnO}}_{4}{}^{\\text{−}}\\text{?}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "${\\text{MnO}}_{4}{}^{\\text{−}}$ 是最强的氧化剂。每种离子中的金属都处于其所在族的最高氧化态：${\\text{VO}}_{4}{}^{3−}$ 中钒为 +5（$x - 8 = -3$），${\\text{CrO}}_{4}{}^{2−}$ 中铬为 +6（$x - 8 = -2$），${\\text{MnO}}_{4}{}^{−}$ 中锰为 +7（$x - 8 = -1$）。在第一过渡系中，这些最高氧化态越来越难以达到，也越来越不稳定，因此处于这种氧化态的金属越靠后越容易被还原。附录 L 中的还原电势与此一致：高锰酸根被还原为 Mn<sup>2+</sup>，电势为 +1.51 V；重铬酸根（铬(VI)在酸中的存在形式）被还原为 Cr<sup>3+</sup>，电势为 +1.33 V；钒(V)最不易被还原，电势约为 +1.0 V。最容易被还原的离子——高锰酸根——是最强的氧化剂。"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idm121393200",
+   "source_number": "7",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "properties",
+   "prompt": "下列元素中，哪一种最有可能形成化学式为 MO<sub>3</sub> 的氧化物：Zr、Nb 还是 Mo？",
+   "answer": {
+    "type": "choice",
+    "generated_by": "source",
+    "options": [
+     "Zr",
+     "Nb",
+     "Mo"
+    ],
+    "correct": 2,
+    "solution": "Mo"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idm111525632",
+   "source_number": "8",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "iron",
+   "prompt": "下列反应都发生在高炉中。其中哪些是氧化还原反应？<br>（a）${\\text{3Fe}}_{2}{\\text{O}}_{3}(s)+\\text{CO}(g)\\;\\longrightarrow \\;{\\text{2Fe}}_{3}{\\text{O}}_{4}(s)+{\\text{CO}}_{2}(g)$<br>（b）${\\text{Fe}}_{3}{\\text{O}}_{4}(s)+\\text{CO}(g)\\;\\longrightarrow \\;\\text{3FeO}(s)+{\\text{CO}}_{2}(g)$<br>（c）$\\text{FeO}(s)+\\text{CO}(g)\\;\\longrightarrow \\;\\text{Fe}(l)+{\\text{CO}}_{2}(g)$<br>（d）$\\text{C}(s)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{CO}}_{2}(g)$<br>（e）$\\text{C}(s)+{\\text{CO}}_{2}(g)\\;\\longrightarrow \\;\\text{2CO}(g)$<br>（f）${\\text{CaCO}}_{3}(s)\\;\\longrightarrow \\;\\text{CaO}(s)+{\\text{CO}}_{2}(g)$<br>（g）$\\text{CaO}(s)+{\\text{SiO}}_{2}(s)\\;\\longrightarrow \\;{\\text{CaSiO}}_{3}(l)$",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "反应（a）、（b）、（c）、（d）和（e）是氧化还原反应；（f）和（g）不是。在（a）中，铁由 Fe<sub>2</sub>O<sub>3</sub> 中的 +3 变为 Fe<sub>3</sub>O<sub>4</sub> 中的平均 +8/3，而碳由 CO 中的 +2 被氧化为 CO<sub>2</sub> 中的 +4。在（b）中，铁由 +8/3 还原为 FeO 中的 +2，在（c）中则由 +2 还原为金属中的 0，每次都伴随着碳由 +2 被氧化为 +4。在（d）中，碳由 0 被氧化为 +4，氧由 0 被还原为 −2。在（e）中，C (0) 中的碳被氧化，CO<sub>2</sub> (+4) 中的碳被还原，两者最终都变成 CO 中的 +2。在（f）中，钙仍为 +2，碳为 +4，氧为 −2；在（g）中，钙仍为 +2，硅为 +4，氧为 −2；氧化数没有变化，所以这两个反应不是氧化还原反应。"
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idm18229840",
+   "source_number": "9",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "iron",
+   "prompt": "为什么炉渣的形成对炼铁有用？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "CaSiO<sub>3</sub> 炉渣的密度比熔融的铁小，因此很容易分离。此外，漂浮的炉渣层形成屏障，防止熔融的铁接触 O<sub>2</sub>，否则会把 Fe 重新氧化为 Fe<sub>2</sub>O<sub>3</sub>。"
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idm217295232",
+   "source_number": "10",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "compounds",
+   "prompt": "你预期氧化锰(VII)水溶液的 pH 大于还是小于 7.0？请说明理由。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "pH 小于 7.0。过渡金属处于最低氧化态时的氧化物是碱性的，处于最高氧化态时的氧化物是酸性的。氧化锰(VII)中锰处于其最高氧化态 +7，是少数几种可溶于水的过渡金属氧化物之一。它与水反应生成高锰酸，${\\text{Mn}}_{2}{\\text{O}}_{7}(s)+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;{\\text{2HMnO}}_{4}(aq)$，高锰酸是一种强酸，电离为 H<sub>3</sub>O<sup>+</sup> 和 ${\\text{MnO}}_{4}{}^{−}$ 离子，所以溶液呈酸性。"
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idm275915200",
+   "source_number": "11",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "compounds",
+   "prompt": "铁(II)可被重铬酸根离子氧化为铁(III)，重铬酸根离子在酸性溶液中被还原为铬(III)。将一份 <span data-type=\"mass\">2.5000 g</span> 的铁矿石样品溶解，并将其中的铁转化为铁(II)。滴定时恰好需要 <span data-type=\"volume\">19.17 mL</span> <span data-type=\"concentration\">0.0100 <em>M</em></span> 的 Na<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub>。矿石样品中铁的百分含量是多少？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 2.57,
+    "unit": "%",
+    "tol": 0.01,
+    "solution": "2.57%"
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idm246626224",
+   "source_number": "13",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "properties",
+   "prompt": "求下列电化学池的电势：<br>Cd | Cd<sup>2+</sup>, <em>M</em> = 0.10 ‖ Ni<sup>2+</sup>, <em>M</em> = 0.50 | Ni",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.167,
+    "unit": "V",
+    "tol": 0.01,
+    "solution": "0.167 V"
+   }
+  },
+  {
+   "id": "e15",
+   "source_id": "fs-idm124442480",
+   "source_number": "15",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "properties",
+   "prompt": "反应 ${[\\text{Co}{({\\text{H}}_{2}\\text{O})}_{6}]}^{3+}(aq)+{\\text{e}}^{-}\\;\\longrightarrow \\;{[{\\text{Co}(\\text{H}}_{2}\\text{O}{)}_{6}]}^{2+}(aq)$ 的标准还原电势约为 1.8 V。反应 ${[\\text{Co}{({\\text{NH}}_{3})}_{6}]}^{3+}(aq)+{\\text{e}}^{-}\\;\\longrightarrow \\;{[\\text{Co}{({\\text{NH}}_{3})}_{6}]}^{2+}(aq)$ 的还原电势为 +0.1 V。计算电池电势，以说明配离子 [Co(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> 和/或 [Co(NH<sub>3</sub>)<sub>6</sub>]<sup>2+</sup> 能否被氧气氧化为相应的钴(III)配合物。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<em>E</em>° = −0.6 V，<em>E</em>° 为负，所以这一还原不是自发的。<em>E</em>° = +1.1 V"
+   }
+  },
+  {
+   "id": "e17",
+   "source_id": "fs-idp5436400",
+   "source_number": "17",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "compounds",
+   "prompt": "预测下列各反应的产物。（注：除了使用本章的信息外，还要使用你在学习到这个阶段已积累的知识，包括有关预测反应产物的信息。）<br>（a）$\\text{Fe}(s)+{\\text{H}}_{2}{\\text{SO}}_{4}(aq)\\;\\longrightarrow$<br>（b）${\\text{FeCl}}_{3}(aq)+\\text{NaOH}(aq)\\;\\longrightarrow$<br>（c）$\\text{Mn}{(\\text{OH})}_{2}(s)+\\text{HBr}(aq)\\;\\longrightarrow$<br>（d）$\\text{Cr}(s)+{\\text{O}}_{2}(g)\\;\\longrightarrow$<br>（e）${\\text{Mn}}_{2}{\\text{O}}_{3}(s)+\\text{HCl}(aq)\\longrightarrow$<br>（f）$\\text{Ti}(s)+xs{\\text{F}}_{2}(g)\\;\\longrightarrow$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）$\\text{Fe}(s)+2{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{SO}}_{4}{}^{2−}(aq)\\;\\longrightarrow \\;{\\text{Fe}}^{2+}(aq)+{\\text{SO}}_{4}{}^{2−}(aq)+{\\text{H}}_{2}(g)+2{\\text{H}}_{2}\\text{O}(l);$ （b）${\\text{FeCl}}_{3}(aq)+{\\text{3Na}}^{\\text{+}}(aq)+{\\text{3OH}}^{\\text{−}}(aq)\\;\\longrightarrow \\text{Fe}{(\\text{OH})}_{3}(s)+{\\text{3Na}}^{\\text{+}}(aq)+{\\text{3Cl}}^{\\text{+}}(aq);$<sup class=\"fn\" data-note=\"c-e17-cl\"></sup> （c）$\\text{Mn}{(\\text{OH})}_{2}(s)+2{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{2Br}}^{\\text{−}}(aq)\\;\\longrightarrow \\;{\\text{Mn}}^{2+}(aq)+{\\text{2Br}}^{\\text{−}}(aq)+4{\\text{H}}_{2}\\text{O}(l);$ （d）$\\text{4Cr}(s)+3{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{Cr}}_{2}{\\text{O}}_{3}(s);$ （e）${\\text{Mn}}_{2}{\\text{O}}_{3}(s)+6{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{6Cl}}^{\\text{−}}(aq)\\;\\longrightarrow \\;2{\\text{MnCl}}_{3}(s)+9{\\text{H}}_{2}\\text{O}(l);$ （f）$\\text{Ti}(s)+xs{\\text{F}}_{2}(g)\\;\\longrightarrow \\;{\\text{TiF}}_{4}(g)$"
+   }
+  },
+  {
+   "id": "e18",
+   "source_id": "fs-idm271102160",
+   "source_number": "18",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "copper",
+   "prompt": "描述电解精炼铜的过程。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "不纯的泡铜被铸成板材，用作电解池的阳极，纯铜薄片用作阴极，电解质是用硫酸酸化的硫酸铜(II)溶液。在较低的外加电压下，铜在阳极被氧化，$\\text{Cu}(s)\\;\\longrightarrow \\;{\\text{Cu}}^{2+}(aq)+{\\text{2e}}^{−}$，Cu<sup>2+</sup> 离子在阴极被还原，${\\text{Cu}}^{2+}(aq)+{\\text{2e}}^{−}\\;\\longrightarrow \\;\\text{Cu}(s)$，于是铜从不纯的阳极经溶液迁移，以近乎纯净的金属沉积在阴极上。比铜更容易被氧化的杂质，如铁、锌和镍，也在阳极溶解，但它们的离子比 Cu<sup>2+</sup> 更难被还原，仍留在溶液中。银、金和铂等较不活泼的金属不被氧化；它们作为阳极泥落到电解池底部，可从中回收。"
+   }
+  },
+  {
+   "id": "e19",
+   "source_id": "fs-idm278997936",
+   "source_number": "19",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "compounds",
+   "prompt": "预测下列反应的产物并配平方程式。<br>（a）将 Zn 加入 Cr<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> 的酸性溶液中。<br>（b）将 FeCl<sub>2</sub> 加入含有过量 ${\\text{Cr}}_{2}{\\text{O}}_{7}{}^{2−}$ 的盐酸溶液中。<br>（c）将 Cr<sup>2+</sup> 加入酸性溶液中的 ${\\text{Cr}}_{2}{\\text{O}}_{7}{}^{2−}$。<br>（d）将 Mn 与 CrO<sub>3</sub> 一起加热。<br>（e）将 CrO 加入水中的 2HNO<sub>3</sub>。<br>（f）将 FeCl<sub>3</sub> 加入 NaOH 水溶液。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）${\\text{Cr}}_{2}{({\\text{SO}}_{4})}_{3}(aq)+\\text{2Zn}(s)+{\\text{2H}}_{3}{\\text{O}}^{\\text{+}}(aq)\\;\\longrightarrow \\;{\\text{2Zn}}^{2+}(aq)+{\\text{H}}_{2}(g)+{\\text{2H}}_{2}\\text{O}(l)+{\\text{2Cr}}^{2+}(aq)+{\\text{3SO}}_{4}{}^{2−}(aq);$ （b）${\\text{4TiCl}}_{3}(s)+{\\text{CrO}}_{4}{}^{2−}(aq)+{\\text{8H}}^{\\text{+}}(aq)\\;\\longrightarrow \\;{\\text{4Ti}}^{4+}(aq)+\\text{Cr}(s)+{\\text{4H}}_{2}\\text{O}(l)+{\\text{12Cl}}^{\\text{−}}(aq);$<sup class=\"fn\" data-note=\"c-e19-other\"></sup> （c）在 pH 2 至 pH 6 的酸性溶液中，${\\text{CrO}}_{4}{}^{2−}$ 形成 ${\\text{HCrO}}_{4}{}^{\\text{−}},$ 它与重铬酸根离子处于平衡。反应为 ${\\text{2HCrO}}_{4}{}^{\\text{−}}(aq)\\;\\longrightarrow \\;{\\text{Cr}}_{2}{\\text{O}}_{7}{}^{2−}(aq)+{\\text{H}}_{2}\\text{O}(l).$ 在其他酸性 pH 值下，反应为 ${\\text{3Cr}}^{2+}(aq)+{\\text{CrO}}_{4}{}^{2−}(aq)+{\\text{8H}}_{3}{\\text{O}}^{\\text{+}}(aq)\\;\\longrightarrow \\;{\\text{4Cr}}^{3+}(aq)+{\\text{12H}}_{2}\\text{O}(l);$ （d）${\\text{8CrO}}_{3}(s)+\\text{9Mn}(s)\\;\\overset{\\text{Δ}}{\\longrightarrow}\\;{\\text{4Cr}}_{2}{\\text{O}}_{3}(s)+{\\text{3Mn}}_{3}{\\text{O}}_{4}(s);$ （e）$\\text{CrO}(s)+{\\text{2H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{2NO}}_{3}{}^{\\text{−}}(aq)\\;\\longrightarrow \\;{\\text{Cr}}^{2+}(aq)+{\\text{2NO}}_{3}{}^{\\text{−}}(aq)+{\\text{3H}}_{2}\\text{O}(l);$ （f）${\\text{CrCl}}_{3}(s)+\\text{3NaOH}(aq)\\;\\longrightarrow \\;\\text{Cr}{(\\text{OH})}_{3}(s)+{\\text{3Na}}^{\\text{+}}(aq)+{\\text{3Cl}}^{\\text{−}}(aq)$"
+   }
+  },
+  {
+   "id": "e21",
+   "source_id": "fs-idm232830240",
+   "source_number": "21",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "compounds",
+   "prompt": "预测下列各反应的产物，然后配平化学方程式。<br>（a）在水蒸气气氛中加热 Fe。<br>（b）将 NaOH 加入 Fe(NO<sub>3</sub>)<sub>3</sub> 溶液中。<br>（c）将 FeSO<sub>4</sub> 加入 KMnO<sub>4</sub> 的酸性溶液中。<br>（d）将 Fe 加入稀 H<sub>2</sub>SO<sub>4</sub> 溶液中。<br>（e）让 Fe(NO<sub>3</sub>)<sub>2</sub> 与 HNO<sub>3</sub> 的溶液在空气中静置。<br>（f）将 FeCO<sub>3</sub> 加入 HClO<sub>4</sub> 溶液中。<br>（g）在空气中加热 Fe。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）$\\text{3Fe}(s)+{\\text{4H}}_{2}\\text{O}(g)\\;\\longrightarrow \\;{\\text{Fe}}_{3}{\\text{O}}_{4}(s)+{\\text{4H}}_{2}(g);$ （b）$\\text{3NaOH}(aq)+\\text{Fe}{({\\text{NO}}_{3})}_{3}(aq)\\;\\overset{\\;{\\text{H}}_{2}\\text{O}\\;}{\\to}\\;\\text{Fe}{(\\text{OH})}_{3}(s)+{\\text{3Na}}^{\\text{+}}(aq)+3{\\text{NO}}_{3}{}^{\\text{−}}(aq);$ （c）$\\text{MnO}{}^{4−}+5{\\text{Fe}}^{\\text{2+}}+8{\\text{H}}^{\\text{+}}\\;\\longrightarrow \\;\\text{Mn}{}^{\\text{2+}}+5{\\text{Fe}}_{3}+4{\\text{H}}_{2}\\text{O};$<sup class=\"fn\" data-note=\"c-e21-mno4\"></sup> （d）$\\text{Fe}(s)+{\\text{2H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{SO}}_{4}{}^{2−}(aq)\\;\\longrightarrow \\;{\\text{Fe}}^{2+}(aq)+{\\text{SO}}_{4}{}^{2−}(aq)+{\\text{H}}_{2}(g)+{\\text{2H}}_{2}\\text{O}(l);$ （e）${\\text{4Fe}}^{2+}(aq)+{\\text{O}}_{2}(g)+{\\text{4HNO}}_{3}(aq)\\;\\longrightarrow \\;{\\text{4Fe}}^{3+}(aq)+{\\text{2H}}_{2}\\text{O}(l)+{\\text{4NO}}_{3}{}^{\\text{−}}(aq);$ （f）${\\text{FeCO}}_{3}(s)+{\\text{2HClO}}_{4}(aq)\\;\\longrightarrow \\;\\text{Fe}{({\\text{ClO}}_{4})}_{2}(aq)+{\\text{H}}_{2}\\text{O}(l)+{\\text{CO}}_{2}(g);$ （g）$\\text{3Fe}(s)+{\\text{2O}}_{2}(g)\\;\\overset{\\;\\text{Δ}\\;}{\\longrightarrow}\\;{\\text{Fe}}_{3}{\\text{O}}_{4}(s)$"
+   }
+  },
+  {
+   "id": "e23",
+   "source_id": "fs-idm186859104",
+   "source_number": "23",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "silver",
+   "prompt": "将稀氰化钠溶液缓慢滴入缓慢搅拌的硝酸银溶液中。开始会暂时形成白色沉淀，但随着氰化钠的继续加入，沉淀溶解。请用化学方程式解释这一现象。氰化银的溶解性与氯化银相似。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "随着 CN<sup>−</sup> 的加入，<br>${\\text{Ag}}^{\\text{+}}(aq)+{\\text{CN}}^{\\text{−}}(aq)\\;\\longrightarrow \\;\\text{AgCN}(s)$<br>随着更多 CN<sup>−</sup> 的加入，<br>$\\begin{array}{l}{\\text{Ag}}^{\\text{+}}(aq)+2{\\text{CN}}^{\\text{−}}(aq)\\;\\longrightarrow \\;{[\\text{Ag}{\\text{(CN)}}_{2}]}^{\\text{−}}(aq) \\\\ \\text{AgCN}(s)+{\\text{CN}}^{\\text{−}}(aq)\\;\\longrightarrow \\;{[\\text{Ag}{\\text{(CN)}}_{2}]}^{\\text{−}}(aq)\\end{array}$"
+   }
+  },
+  {
+   "id": "e24",
+   "source_id": "fs-idm229701392",
+   "source_number": "24",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "properties",
+   "prompt": "预测 [CrO<sub>4</sub>]<sup>2−</sup> 和 [WO<sub>4</sub>]<sup>2−</sup> 哪一个更稳定，并加以解释。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "[WO<sub>4</sub>]<sup>2−</sup> 更稳定。两种离子中的第 6 族金属都处于 6+ 氧化态。第二和第三过渡系的元素在高氧化态下比第一系的元素更稳定，因为它们的原子更大，离核更远的电子更容易失去。铬是该族中最轻的成员，最稳定的形式是 Cr<sup>3+</sup>，因此铬酸根中的铬(VI)很容易被还原，铬酸根是强氧化剂。钨与钼一样，在水溶液中主要限于 6+ 态，所以钨酸根几乎没有被还原的倾向。"
+   }
+  },
+  {
+   "id": "e25",
+   "source_id": "fs-idm159717696",
+   "source_number": "25",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "compounds",
+   "prompt": "给出第一过渡系下列各氧化物中金属的氧化态。（提示：化学式为 M<sub>3</sub>O<sub>4</sub> 的氧化物是<em>混合价化合物</em>的例子，其中金属离子以不止一种氧化态存在。可以把这类化合物的化学式写成等价的形式 MO·M<sub>2</sub>O<sub>3</sub>，以便估算金属的两种氧化态。）<br>（a）Sc<sub>2</sub>O<sub>3</sub><br>（b）TiO<sub>2</sub><br>（c）V<sub>2</sub>O<sub>5</sub><br>（d）CrO<sub>3</sub><br>（e）MnO<sub>2</sub><br>（f）Fe<sub>3</sub>O<sub>4</sub><br>（g）Co<sub>3</sub>O<sub>4</sub><br>（h）NiO<br>（i）Cu<sub>2</sub>O",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）Sc<sup>3+</sup>；（b）Ti<sup>4+</sup>；（c）V<sup>5+</sup>；（d）Cr<sup>6+</sup>；（e）Mn<sup>4+</sup>；（f）Fe<sup>2+</sup> 和 Fe<sup>3+</sup>；（g）Co<sup>2+</sup> 和 Co<sup>3+</sup>；（h）Ni<sup>2+</sup>；（i）Cu<sup>+</sup>"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e1",
+   "concept": "electron-configuration",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e1",
+   "concept": "transition-series",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "electron-configuration",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "ion-configurations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "lanthanide",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e4",
+   "concept": "lanthanide",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e4",
+   "concept": "transition-metal-reactivity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e5",
+   "concept": "isolating-transition-metals",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e5",
+   "concept": "reducing-agent",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e6",
+   "concept": "oxidizing-agent",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e6",
+   "concept": "transition-metal-oxidation-states",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e6",
+   "concept": "standard-electrode-potential",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e7",
+   "concept": "transition-metal-oxidation-states",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e7",
+   "concept": "transition-series",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e8",
+   "concept": "redox-reaction",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e8",
+   "concept": "oxidation-number",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e8",
+   "concept": "blast-furnace",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "blast-furnace",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "smelting",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e10",
+   "concept": "transition-metal-compounds",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e10",
+   "concept": "acid",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e11",
+   "concept": "redox-reaction",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e11",
+   "concept": "transition-metal-oxidation-states",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e13",
+   "concept": "standard-electrode-potential",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e13",
+   "concept": "transition-metal-reactivity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e15",
+   "concept": "standard-electrode-potential",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e15",
+   "concept": "complex-ion",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e15",
+   "concept": "transition-metal-oxidation-states",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e17",
+   "concept": "transition-metal-compounds",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e17",
+   "concept": "net-ionic-equation",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e18",
+   "concept": "copper-isolation",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e18",
+   "concept": "electrolysis",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e19",
+   "concept": "transition-metal-compounds",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e19",
+   "concept": "redox-reaction",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e19",
+   "concept": "transition-metal-oxidation-states",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e21",
+   "concept": "transition-metal-compounds",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e21",
+   "concept": "redox-reaction",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e23",
+   "concept": "hydrometallurgy",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e23",
+   "concept": "complex-ion",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e23",
+   "concept": "precipitate",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e24",
+   "concept": "transition-metal-oxidation-states",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e24",
+   "concept": "transition-series",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e25",
+   "concept": "oxidation-number",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e25",
+   "concept": "transition-metal-compounds",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "ion-configurations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "transition-series",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "transition-metal-reactivity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "standard-electrode-potential",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "blast-furnace",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "reducing-agent",
+   "weights_by": "ai"
+  }
+ ],
+ "footnotes": [
+  {
+   "id": "c-permanganate",
+   "kind": "correction",
+   "html": "书中的半反应在氧和氢上没有配平。四个氧原子和八个 H<sup>+</sup> 生成四个水：MnO<sub>4</sub><sup>−</sup> + 8H<sup>+</sup> + 5e<sup>−</sup> ⟶ Mn<sup>2+</sup> + 4H<sub>2</sub>O。"
+  },
+  {
+   "id": "c-appendix-l",
+   "kind": "correction",
+   "html": "书中引用的是附录 H，即弱酸的电离常数。标准还原电势在附录 L。"
+  },
+  {
+   "id": "c-e6-vo4",
+   "kind": "correction",
+   "html": "书中写的是 VO<sub>4</sub><sup>3</sup>；钒酸根离子是 VO<sub>4</sub><sup>3−</sup>。"
+  },
+  {
+   "id": "c-e17-cl",
+   "kind": "correction",
+   "html": "答案中写的是 3Cl<sup>+</sup>；旁观离子是氯离子，3Cl<sup>−</sup>(<em>aq</em>)。"
+  },
+  {
+   "id": "c-e19-other",
+   "kind": "correction",
+   "html": "答案对（b）给出的是 TiCl<sub>3</sub> 和 CrO<sub>4</sub><sup>2−</sup>，对（f）给出的是 CrCl<sub>3</sub>，而题目中写的是 FeCl<sub>2</sub> 与 Cr<sub>2</sub>O<sub>7</sub><sup>2−</sup> 以及 FeCl<sub>3</sub>。就题目中的反应物而言：（b）6Fe<sup>2+</sup> + Cr<sub>2</sub>O<sub>7</sub><sup>2−</sup> + 14H<sup>+</sup> ⟶ 6Fe<sup>3+</sup> + 2Cr<sup>3+</sup> + 7H<sub>2</sub>O；（f）FeCl<sub>3</sub>(<em>aq</em>) + 3NaOH(<em>aq</em>) ⟶ Fe(OH)<sub>3</sub>(<em>s</em>) + 3Na<sup>+</sup>(<em>aq</em>) + 3Cl<sup>−</sup>(<em>aq</em>)。"
+  },
+  {
+   "id": "c-e21-mno4",
+   "kind": "correction",
+   "html": "答案中写的是 MnO<sup>4−</sup> 和 5Fe<sub>3</sub>；方程式应为 MnO<sub>4</sub><sup>−</sup> + 5Fe<sup>2+</sup> + 8H<sup>+</sup> ⟶ Mn<sup>2+</sup> + 5Fe<sup>3+</sup> + 4H<sub>2</sub>O。"
+  }
+ ]
+}

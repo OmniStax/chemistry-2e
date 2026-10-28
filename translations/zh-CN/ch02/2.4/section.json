@@ -1,0 +1,542 @@
+{
+ "id": "2.4",
+ "module": "m68693",
+ "chapter": "2",
+ "title": "化学式",
+ "short": "化学式",
+ "lead": "化学式说明一种物质由哪些原子组成、各有多少个，化学家用几种方式书写和绘制化学式，每一种都显示出其他方式所没有的内容。",
+ "objectives": [
+  "用分子式和实验式表示分子的组成",
+  "用结构式表示分子内原子的成键排列"
+ ],
+ "summary_html": "<p>分子式用化学符号和下标表示分子或化合物中各种原子的确切数目。实验式给出化合物中原子的最简整数比。结构式表示分子中原子的成键排列。球棍模型和空间填充模型显示分子中原子的几何排列。异构体是分子式相同但原子排列不同的化合物。</p>",
+ "notes": "两个“学习链接”注记被略去：一个是 PhET“构建分子”模拟，另一个是关于香芹酮镜像分子的视频，其内容由图 2.24 体现。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。例 2.6 的学习检测附有书中自己的答案，章末习题的答案取自书后答案，其涵盖奇数编号的习题。没有答案、要求给出书中未给答案的确定化学式的习题 fs-idp231487264 和 fs-idp33519568 被略去，没有答案的概念题 fs-idm171756048 附有标明为 OmniStax 自己所写的建议思路。三道要求读者在 PhET“构建分子”模拟中搭建分子的习题（fs-idm75792016、fs-idm57514192 和 fs-idm80750976）暂缓，因为本页没有任何一幅图可以搭建分子。书中印在 fs-idm157365408 和 fs-idp2601824 里的图画保留在它们的题干中。",
+ "figures": [
+  {
+   "id": "fig-methane",
+   "kind": "sim",
+   "number": "2.16",
+   "originals": [
+    "/media/ch02/CNX_Chem_02_04_MethaneRep.jpg"
+   ],
+   "original_caption": "甲烷分子可以表示为（a）分子式，（b）结构式，（c）球棍模型和（d）空间填充模型。碳原子和氢原子分别用黑球和白球表示。",
+   "draws": [],
+   "conventions": [
+    "C",
+    "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-sulfur",
+   "kind": "sim",
+   "number": "2.17",
+   "originals": [
+    "/media/ch02/CNX_Chem_02_04_Sulfur.jpg"
+   ],
+   "original_caption": "硫分子由八个硫原子组成，因此写作 S₈。它可以表示为（a）结构式，（b）球棍模型和（c）空间填充模型。硫原子用黄色球表示。",
+   "draws": [],
+   "conventions": [
+    "S"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-hydrogen",
+   "kind": "sim",
+   "number": "2.18",
+   "originals": [
+    "/media/ch02/CNX_Chem_02_04_Hydrogen.jpg"
+   ],
+   "original_caption": "符号 H、2H、H₂ 和 2H₂ 表示截然不同的实体。",
+   "draws": [],
+   "conventions": [
+    "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "note dropped, it repeated the caption"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-tio2",
+   "kind": "photo",
+   "number": "2.19",
+   "draws": []
+  },
+  {
+   "id": "fig-benzene",
+   "kind": "sim",
+   "number": "2.20",
+   "originals": [
+    "/media/ch02/CNX_Chem_02_04_Benzene.jpg"
+   ],
+   "original_caption": "苯 C₆H₆ 产生于石油精炼，有许多工业用途。苯分子可以表示为（a）结构式，（b）球棍模型和（c）空间填充模型。（d）苯是一种透明的液体。（来源 d：改编自 Sahar Atwa 的作品）",
+   "draws": [],
+   "conventions": [
+    "C",
+    "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-acetic",
+   "kind": "sim",
+   "number": "2.21",
+   "originals": [
+    "/media/ch02/CNX_Chem_02_04_AceticAcid.jpg"
+   ],
+   "original_caption": "（a）食醋含有乙酸 C₂H₄O₂，其实验式为 CH₂O。它可以表示为（b）结构式和（c）球棍模型。（来源 a：改编自 “HomeSpot HQ”/Flickr 的作品）",
+   "draws": [],
+   "conventions": [
+    "C",
+    "H",
+    "O"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-empirical",
+   "kind": "sim",
+   "draws": [],
+   "conventions": [
+    "C",
+    "H",
+    "O"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "formula subscripts braced so only the digits drop"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-hammond",
+   "kind": "photo",
+   "number": "2.22",
+   "draws": []
+  },
+  {
+   "id": "fig-isomers",
+   "kind": "sim",
+   "number": "2.23",
+   "originals": [
+    "/media/ch02/CNX_Chem_02_04_Isomers.jpg"
+   ],
+   "original_caption": "（a）乙酸和甲酸甲酯（b）的分子是构造异构体；它们的化学式相同（C₂H₄O₂），结构却不同（因而化学性质也不同）。",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "swapping atoms pass on arcs; note dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-carvone",
+   "kind": "sim",
+   "number": "2.24",
+   "originals": [
+    "/media/ch02/CNX_Chem_02_04_Isomers2.jpg"
+   ],
+   "original_caption": "香芹酮分子是立体异构体；它们只是原子在空间中的相对取向不同。（来源 左下：改编自 “Miansari66”/Wikimedia Commons 的作品；右下：改编自 Forest & Kim Starr 的作品）",
+   "draws": [],
+   "conventions": [
+    "C",
+    "H",
+    "O"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "names moved clear of the molecules; note dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "molecular-formula",
+   "concept": "molecular-formula",
+   "verb": "introduces"
+  },
+  {
+   "span": "molecular-formula",
+   "concept": "structural-formulas-and-models",
+   "verb": "introduces"
+  },
+  {
+   "span": "molecular-formula",
+   "concept": "chemical-symbols",
+   "verb": "uses"
+  },
+  {
+   "span": "molecular-formula",
+   "concept": "atoms-and-molecules",
+   "verb": "uses"
+  },
+  {
+   "span": "molecular-formula",
+   "concept": "structural-formula",
+   "verb": "introduces"
+  },
+  {
+   "span": "elemental-molecules",
+   "concept": "molecular-formula",
+   "verb": "reinforces"
+  },
+  {
+   "span": "elemental-molecules",
+   "concept": "structural-formulas-and-models",
+   "verb": "reinforces"
+  },
+  {
+   "span": "subscripts-coefficients",
+   "concept": "subscripts-and-coefficients",
+   "verb": "introduces"
+  },
+  {
+   "span": "subscripts-coefficients",
+   "concept": "molecular-formula",
+   "verb": "uses"
+  },
+  {
+   "span": "empirical-formula",
+   "concept": "empirical-formula-from-molecular-formula",
+   "verb": "introduces"
+  },
+  {
+   "span": "empirical-formula",
+   "concept": "elements-and-compounds",
+   "verb": "uses"
+  },
+  {
+   "span": "empirical-formula",
+   "concept": "law-of-definite-proportions",
+   "verb": "uses"
+  },
+  {
+   "span": "empirical-formula",
+   "concept": "molecular-formula",
+   "verb": "uses"
+  },
+  {
+   "span": "empirical-formula",
+   "concept": "empirical-formula-of-a-compound",
+   "verb": "introduces"
+  },
+  {
+   "span": "empirical-from-molecular",
+   "concept": "empirical-formula-from-molecular-formula",
+   "verb": "reinforces"
+  },
+  {
+   "span": "empirical-from-molecular",
+   "concept": "structural-formulas-and-models",
+   "verb": "uses"
+  },
+  {
+   "span": "isomers",
+   "concept": "isomers",
+   "verb": "introduces"
+  },
+  {
+   "span": "isomers",
+   "concept": "structural-formulas-and-models",
+   "verb": "uses"
+  },
+  {
+   "span": "isomers",
+   "concept": "molecular-formula",
+   "verb": "uses"
+  },
+  {
+   "span": "isomers",
+   "concept": "structural-isomer",
+   "verb": "introduces"
+  },
+  {
+   "span": "spatial-isomers",
+   "concept": "isomers",
+   "verb": "reinforces"
+  },
+  {
+   "span": "spatial-isomers",
+   "concept": "spatial-isomer",
+   "verb": "introduces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm100343920",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-glucose"
+   },
+   "prompt": "一个四聚乙醛（一种用于对付蜗牛和蛞蝓的农药）分子含有 8 个碳原子、16 个氢原子和 4 个氧原子。四聚乙醛的分子式和实验式是什么？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "分子式，C<sub>8</sub>H<sub>16</sub>O<sub>4</sub>；实验式，C<sub>2</sub>H<sub>4</sub>O"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm188711792",
+   "source_number": "27",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "elemental-molecules",
+   "prompt": "解释为什么氧元素的一个原子的符号与氧分子的化学式不同。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "氧元素的符号 O 既表示该元素，也表示一个氧原子。氧分子 O<sub>2</sub> 含有两个氧原子；化学式中必须使用下标 2，以便把双原子分子与两个单独的氧原子区分开。"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idm171756048",
+   "source_number": "28",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "elemental-molecules",
+   "prompt": "解释为什么硫元素的符号与硫分子的化学式不同。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "先问一问每一部分记号计的是什么。符号 S 表示硫元素，也表示它的单个原子。然而硫最常见的形态由八个硫原子键合成环的分子构成，所以一个分子的化学式需要用下标说明它含有多少个原子，即 S<sub>8</sub>。若改写成 8S，则表示八个单独的、没有键合成一个整体的原子。"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm157365408",
+   "source_number": "29",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "empirical-from-molecular",
+   "prompt": "写出下列化合物的分子式和实验式：<br>（a）<img src=\"/media/ch02/CNX_Chem_02_04_Question3a_img.jpg\" alt=\"一个碳原子与两个氧原子分别形成两个独立的双键。\"><br>（b）<img src=\"/media/ch02/CNX_Chem_02_04_Question3b_img.jpg\" alt=\"一个氢原子与一个碳原子形成单键。该碳原子与另一个碳原子形成三键。第二个碳原子与一个氢原子形成单键。\"><br>（c）<img src=\"/media/ch02/CNX_Chem_02_04_Question3c_img.jpg\" alt=\"一个碳原子与另一个碳原子形成双键。每个碳原子又与两个氢原子形成单键。\"><br>（d）<img src=\"/media/ch02/CNX_Chem_02_04_Question3d_img.jpg\" alt=\"一个硫原子与两个氧原子形成双键，与两个氧原子形成单键。其中两个氧原子与一个氢原子形成单键。\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）分子式 CO<sub>2</sub>，实验式 CO<sub>2</sub>；（b）分子式 C<sub>2</sub>H<sub>2</sub>，实验式 CH；（c）分子式 C<sub>2</sub>H<sub>4</sub>，实验式 CH<sub>2</sub>；（d）分子式 H<sub>2</sub>SO<sub>4</sub>，实验式 H<sub>2</sub>SO<sub>4</sub>"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idm64843712",
+   "source_number": "31",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "empirical-from-molecular",
+   "prompt": "确定下列化合物的实验式：<br>（a）咖啡因，C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub><br>（b）蔗糖，C<sub>12</sub>H<sub>22</sub>O<sub>11</sub><br>（c）过氧化氢，H<sub>2</sub>O<sub>2</sub><br>（d）葡萄糖，C<sub>6</sub>H<sub>12</sub>O<sub>6</sub><br>（e）抗坏血酸（维生素 C），C<sub>6</sub>H<sub>8</sub>O<sub>6</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）C<sub>4</sub>H<sub>5</sub>N<sub>2</sub>O；（b）C<sub>12</sub>H<sub>22</sub>O<sub>11</sub>；（c）HO；（d）CH<sub>2</sub>O；（e）C<sub>3</sub>H<sub>4</sub>O<sub>3</sub>"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp2601824",
+   "source_number": "33",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "empirical-from-molecular",
+   "prompt": "写出下列化合物的实验式：<br>（a）<img src=\"/media/ch02/CNX_Chem_02_04_Question7a_img.jpg\" alt=\"两个碳原子彼此形成单键。左边的碳原子与三个氢原子形成单键。右边的碳原子与一个氧原子形成双键，与另一个氧原子形成单键。这第二个氧原子还与一个氢原子形成单键。\"><br>（b）<img src=\"/media/ch02/CNX_Chem_02_04_Question7b_img.jpg\" alt=\"最左边的碳原子与三个氢原子以及第二个碳原子形成单键。第二个碳原子与一个氧原子形成双键，与第二个氧原子形成单键，该氧原子与第三个碳原子成键。这第三个碳原子与两个氢原子以及第四个碳原子形成单键，第四个碳原子与三个氢原子形成单键。\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）CH<sub>2</sub>O；（b）C<sub>2</sub>H<sub>4</sub>O"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "empirical-formula-from-molecular-formula"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "molecular-formula"
+  },
+  {
+   "exercise": "e1",
+   "concept": "molecular-formula"
+  },
+  {
+   "exercise": "e1",
+   "concept": "subscripts-and-coefficients"
+  },
+  {
+   "exercise": "e2",
+   "concept": "molecular-formula"
+  },
+  {
+   "exercise": "e2",
+   "concept": "subscripts-and-coefficients"
+  },
+  {
+   "exercise": "e3",
+   "concept": "structural-formulas-and-models"
+  },
+  {
+   "exercise": "e3",
+   "concept": "molecular-formula"
+  },
+  {
+   "exercise": "e3",
+   "concept": "empirical-formula-from-molecular-formula"
+  },
+  {
+   "exercise": "e5",
+   "concept": "empirical-formula-from-molecular-formula"
+  },
+  {
+   "exercise": "e7",
+   "concept": "structural-formulas-and-models"
+  },
+  {
+   "exercise": "e7",
+   "concept": "empirical-formula-from-molecular-formula"
+  }
+ ]
+}

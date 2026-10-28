@@ -1,0 +1,1235 @@
+{
+ "types": [
+  {
+   "id": "dipole-moment",
+   "label": "偶极矩",
+   "dimension": "C·m"
+  }
+ ],
+ "symbols": [
+  {
+   "sym": "μ",
+   "latex": "\\mu",
+   "macro": "\\kmu"
+  },
+  {
+   "sym": "Q_partial",
+   "latex": "Q",
+   "macro": "\\kQpart"
+  },
+  {
+   "sym": "r_bond",
+   "latex": "r",
+   "macro": "\\krbond"
+  },
+  {
+   "sym": "ΔH°",
+   "latex": "\\Delta H^{\\circ}",
+   "macro": "\\kdHo"
+  },
+  {
+   "sym": "ΔH_f°",
+   "latex": "\\Delta H_{\\text{f}}^{\\circ}",
+   "macro": "\\kdHf"
+  },
+  {
+   "sym": "ΔH_s°",
+   "latex": "\\Delta H_{s}^{\\circ}",
+   "macro": "\\kdHs"
+  },
+  {
+   "sym": "ΔH_lattice",
+   "latex": "\\Delta H_{\\text{lattice}}",
+   "macro": "\\kdHlat"
+  },
+  {
+   "sym": "D_bond",
+   "latex": "D",
+   "macro": "\\kDbond"
+  },
+  {
+   "sym": "IE",
+   "latex": "\\text{IE}",
+   "macro": "\\kIE"
+  },
+  {
+   "sym": "EA",
+   "latex": "\\text{EA}",
+   "macro": "\\kEA"
+  },
+  {
+   "sym": "EN",
+   "latex": "\\text{EN}"
+  },
+  {
+   "sym": "ΔEN",
+   "latex": "\\Delta\\text{EN}"
+  },
+  {
+   "sym": "Z_plus",
+   "latex": "Z^{+}"
+  },
+  {
+   "sym": "Z_minus",
+   "latex": "Z^{-}"
+  },
+  {
+   "sym": "R_o",
+   "latex": "R_{\\text{o}}",
+   "macro": "\\kRo"
+  },
+  {
+   "sym": "C_lattice",
+   "latex": "C"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "bond-angle-and-bond-distance",
+   "kind": "definition",
+   "section": "7.6",
+   "name": "键角与键长",
+   "statement": "分子的形状由原子核之间的距离和键与键之间的夹角来描述。键角是共用一个原子的两个键之间的夹角，以度为单位；键长是两个成键原子的原子核之间的距离，以埃或皮米为单位。"
+  },
+  {
+   "id": "vsepr-theory",
+   "kind": "idea",
+   "section": "7.6",
+   "name": "价层电子对互斥理论",
+   "terms": [
+    "价层电子对互斥理论（VSEPR）"
+   ],
+   "statement": "VSEPR 理论只凭一个假设来预测分子的形状：中心原子价层中的高电子密度区域，无论是成键电子对还是孤电子对，都相互排斥，并取彼此相距最远的排布。该理论只考虑电子对之间的排斥，尽管核与核之间的排斥以及核与电子之间的吸引也会影响分子最终采取的排布。"
+  },
+  {
+   "id": "electron-pair-geometry",
+   "kind": "definition",
+   "section": "7.6",
+   "name": "电子对构型",
+   "terms": [
+    "电子对构型"
+   ],
+   "statement": "电子对构型是中心原子周围所有电子密度区域的排布，只有五种：两个区域为直线形，三个为平面三角形，四个为四面体形，五个为三角双锥形，六个为八面体形。一个单键、一个双键和一个三键各算作一个区域。"
+  },
+  {
+   "id": "molecular-structure-versus-electron-pair-geometry",
+   "kind": "idea",
+   "section": "7.6",
+   "name": "分子构型不同于电子对构型",
+   "statement": "电子对构型描述所有电子密度区域（键和孤电子对一并计入）的位置；分子构型描述的是原子的位置，对孤电子对不置一词。中心原子没有孤电子对时，两者相同；只要有孤电子对，两者便不同。所以甲烷是四面体形，而氨虽有同样的四个区域，却是三角锥形，水则是 V 形。"
+  },
+  {
+   "id": "electron-pair-repulsion-order",
+   "kind": "result",
+   "section": "7.6",
+   "name": "电子对排斥作用的强弱顺序",
+   "statement": "理想的角度只是近似值，因为各个电子密度区域的大小并不相同。孤电子对的排斥作用比成键电子对强，它所占的空间比三键大，三键比双键大，双键又比单键大。正是这一顺序解释了键角与理想角度之间的微小偏差，并在有不止一种排布可能时决定取哪一种。",
+   "forms": [
+    {
+     "id": "eq-repulsion-order",
+     "latex": "\\text{lone pair-lone pair}>\\text{lone pair-bonding pair}>\\text{bonding pair-bonding pair}",
+     "anchor": "7.6-repulsion-order"
+    },
+    {
+     "id": "eq-domain-size-order",
+     "latex": "\\text{lone pair}>\\text{triple bond}>\\text{double bond}>\\text{single bond}",
+     "anchor": "7.6-repulsion-order"
+    }
+   ]
+  },
+  {
+   "id": "axial-and-equatorial-positions",
+   "kind": "definition",
+   "section": "7.6",
+   "name": "轴向位置与赤道位置",
+   "statement": "在直线形、平面三角形和四面体形的排布中，每个端位位置都是等价的，所以孤电子对占据哪一个无关紧要。三角双锥有两种位置：轴向位置周围是 90° 的夹角，赤道位置因夹角为 120° 而有更大的空间。孤电子对总是占据赤道位置；在有两对孤电子对的八面体中，这两对相距 180°，这就是 ClF3 为 T 形、XeF4 为平面正方形的原因。"
+  },
+  {
+   "id": "predict-molecular-structure",
+   "kind": "skill",
+   "section": "7.6",
+   "name": "预测电子对构型和分子构型",
+   "statement": "要预测分子构型，先写出路易斯结构，数出中心原子周围的电子密度区域数。由此得出电子对构型，再根据孤电子对的数目给分子构型命名。若有不止一种排布可能，选择排斥最小的一种。对于没有单一中心原子的分子，依次处理每个内部原子，各有各的局部构型。"
+  },
+  {
+   "id": "bond-dipole-moment",
+   "kind": "definition",
+   "section": "7.6",
+   "name": "键偶极矩",
+   "symbol": "μ",
+   "terms": [
+    "键偶极矩"
+   ],
+   "type": "dipole-moment",
+   "statement": "极性共价键使一个原子带部分正电荷，另一个原子带部分负电荷。键偶极矩度量这种电荷分离，它等于部分电荷的大小与它们之间距离的乘积。我们把它画成一个从电负性较小的原子指向电负性较大的原子的矢量，正端标一个小加号，长度与电负性差成正比。",
+   "forms": [
+    {
+     "id": "eq-dipole-moment",
+     "latex": "\\mu = Qr",
+     "anchor": "7.6-bond-dipole"
+    }
+   ]
+  },
+  {
+   "id": "molecular-polarity",
+   "kind": "skill",
+   "section": "7.6",
+   "name": "判断分子的极性",
+   "statement": "只有当分子至少含有一个极性键，且各键矩按三维矢量相加后不能抵消时，分子才是极性的。因此，几何形状与电负性同样重要：二氧化碳有两个方向相反的极性键，是非极性分子；水有同样的两个键，但彼此弯向对方，是极性分子。BF3、CH4、PF5 和 SF6 等高度对称的分子，也由于同样的原因是非极性的；极性分子则是在电场中会取向排列、且易溶于极性溶剂的分子。"
+  },
+  {
+   "id": "bond-angle",
+   "kind": "definition",
+   "section": "7.6",
+   "name": "键角",
+   "terms": [
+    "键角"
+   ],
+   "statement": "键角是共用同一个原子的任意两个共价键之间的夹角。"
+  },
+  {
+   "id": "linear-geometry",
+   "kind": "definition",
+   "section": "7.6",
+   "name": "直线形",
+   "terms": [
+    "直线形"
+   ],
+   "statement": "直线形是指两个外围基团位于中心原子的相对两侧，相隔 180°。"
+  },
+  {
+   "id": "trigonal-planar-geometry",
+   "kind": "definition",
+   "section": "7.6",
+   "name": "平面三角形",
+   "terms": [
+    "平面三角形"
+   ],
+   "statement": "平面三角形是指三个外围基团在中心原子周围排成一个平面三角形，相互之间的夹角为 120°。"
+  },
+  {
+   "id": "tetrahedral-geometry",
+   "kind": "definition",
+   "section": "7.6",
+   "name": "四面体形",
+   "terms": [
+    "四面体形"
+   ],
+   "statement": "四面体形是指四个外围基团位于中心原子周围一个四面体的顶点上，相互之间的夹角为 109.5°。"
+  },
+  {
+   "id": "trigonal-bipyramidal-geometry",
+   "kind": "definition",
+   "section": "7.6",
+   "name": "三角双锥形",
+   "terms": [
+    "三角双锥形"
+   ],
+   "statement": "三角双锥形是指五个外围基团排在中心原子周围：其中三个构成一个平面三角形，相互之间的夹角为 120°，另外两个位于该平面的上方和下方，与该平面成 90°。"
+  },
+  {
+   "id": "octahedral-geometry",
+   "kind": "definition",
+   "section": "7.6",
+   "name": "八面体形",
+   "terms": [
+    "八面体形"
+   ],
+   "statement": "八面体形是指六个外围基团位于中心原子周围一个八面体的顶点上，相邻基团之间的夹角为 90°。"
+  },
+  {
+   "id": "axial-position",
+   "kind": "definition",
+   "section": "7.6",
+   "name": "轴向位置",
+   "terms": [
+    "轴向位置"
+   ],
+   "statement": "轴向位置是三角双锥构型中的一种位置，与另一个原子成 180° 角，与赤道位置成 90° 角。"
+  },
+  {
+   "id": "equatorial-position",
+   "kind": "definition",
+   "section": "7.6",
+   "name": "赤道位置",
+   "terms": [
+    "赤道位置"
+   ],
+   "statement": "赤道位置是三角双锥构型中三个相互夹角为 120° 的位置之一；轴向位置与它们成 90° 角。"
+  },
+  {
+   "id": "vector",
+   "kind": "definition",
+   "section": "7.6",
+   "name": "矢量",
+   "terms": [
+    "矢量"
+   ],
+   "statement": "矢量是既有大小又有方向的量。"
+  },
+  {
+   "id": "dipole-moment",
+   "kind": "definition",
+   "section": "7.6",
+   "name": "偶极矩",
+   "terms": [
+    "偶极矩"
+   ],
+   "statement": "分子的偶极矩描述其电荷分离，由各个键矩的矢量和决定，而矢量和又取决于分子构型。"
+  },
+  {
+   "id": "polar-molecule",
+   "kind": "definition",
+   "section": "7.6",
+   "name": "极性分子",
+   "terms": [
+    "极性分子"
+   ],
+   "statement": "极性分子，又称偶极子，是具有总偶极矩的分子。"
+  },
+  {
+   "id": "lewis-structure",
+   "kind": "skill",
+   "section": "7.3",
+   "name": "书写路易斯结构",
+   "statement": "书写路易斯结构时，先数出分子或离子的价电子数，用单键画出骨架，用孤电子对补足外围原子的八隅体，把剩余的电子放在中心原子上，若中心原子仍缺八隅体，则形成多重键。"
+  },
+  {
+   "id": "bond-polarity",
+   "kind": "idea",
+   "section": "7.2",
+   "name": "极性共价键与电负性",
+   "statement": "当两个成键原子的电负性不同时，共用电子被拉向电负性较大的原子，使其带部分负电荷，而另一个原子带部分正电荷。这一电负性差的大小决定键偶极矩的大小。"
+  },
+  {
+   "id": "ionic-lattice",
+   "kind": "idea",
+   "section": "7.1",
+   "name": "离子晶格",
+   "statement": "因为每种化合物都是电中性的，所以离子化合物的化学式给出的是电荷相互抵消的离子的最简比，例如 Al2O3 中每三个 O2− 对应两个 Al3+。该化学式并不描述一个分子：离子间的吸引在各个方向上都相同，所以每个离子都被所有相邻的异号离子吸引，离子便构成了三维晶格。"
+  },
+  {
+   "id": "predict-ion-charge",
+   "kind": "skill",
+   "section": "7.1",
+   "name": "预测单原子离子的电荷",
+   "statement": "主族金属原子倾向于失去全部价电子，非金属原子倾向于得到足够的电子以填满价层 s 和 p 轨道，所以在这两种情形下，离子都具有稀有气体的电子构型，其电荷可由族数读出。第 13 至 15 族的重元素还可能保留其价层 s 电子对，即惰性电子对效应，所以除了预期的离子之外，还存在 Tl+、Sn2+、Pb2+ 和 Bi3+。"
+  },
+  {
+   "id": "ion-electron-configuration",
+   "kind": "skill",
+   "section": "7.1",
+   "name": "书写离子的电子构型",
+   "statement": "阳离子的电子构型是从中性原子中移去电子写出的，阴离子的则是加上电子写出的。对于过渡金属，最外层的 s 电子先于任何 d 电子失去，尽管 d 轨道是最后填充的；所以铁失去 4s 电子对变成 Fe2+，再失去一个 3d 电子变成 Fe3+。"
+  },
+  {
+   "id": "inert-pair-effect",
+   "kind": "idea",
+   "section": "7.1",
+   "name": "惰性电子对效应",
+   "terms": [
+    "惰性电子对效应"
+   ],
+   "statement": "第 13 至 15 族的重原子倾向于形成价层 s 电子不被失去的离子，如 Tl⁺、Sn²⁺、Pb²⁺ 和 Bi³⁺。"
+  },
+  {
+   "id": "ionic-compound-properties",
+   "kind": "idea",
+   "section": "7.1",
+   "name": "离子化合物的性质",
+   "statement": "离子键很强，所以离子固体坚硬而脆，熔点高；离子被固定在原位，所以固体导电性差，而熔融态或溶液导电性好。"
+  },
+  {
+   "id": "covalent-bond-formation",
+   "kind": "idea",
+   "section": "7.2",
+   "name": "共价键的形成",
+   "statement": "当两个原子共用一对被两个原子核都吸引的电子时，就形成共价键。两个氢原子靠近时，由于每个电子都被两个原子核吸引，势能下降；随后原子核相互排斥，势能急剧上升。键长是能量最低时的距离。断开一个键总是需要能量，形成一个键总是放出能量。"
+  },
+  {
+   "id": "electronegativity",
+   "kind": "definition",
+   "section": "7.2",
+   "name": "电负性及其周期性递变规律",
+   "symbol": "EN",
+   "terms": [
+    "电负性"
+   ],
+   "statement": "电负性是原子将键中电子吸引向自身的倾向。在鲍林标度上，电负性在同一周期中从左到右增大，在同一族中从上到下减小。因此右上方的非金属电负性最大，其中氟最大，为 4.0，而第 1 族金属最小。电负性是计算得出的无量纲数；不要把它与电子亲和能混淆，后者是孤立原子的一个测得的能量。"
+  },
+  {
+   "id": "bond-type-from-electronegativity",
+   "kind": "skill",
+   "section": "7.2",
+   "name": "由电负性判断键型",
+   "statement": "两个成键原子电负性之差的绝对值，是键的性质的粗略度量：差值小则为纯共价键，居中则为极性共价键，大则为离子键。这只是一个参考，更好的依据是所涉原子的种类，因为两个非金属之间的键一般是共价键，金属与非金属之间的键则常为离子键。"
+  },
+  {
+   "id": "bond-length",
+   "kind": "definition",
+   "section": "7.2",
+   "name": "键长",
+   "symbol": "r_bond",
+   "terms": [
+    "键长",
+    "键长"
+   ],
+   "type": "length",
+   "statement": "键长，又称核间距，是两个成键原子的原子核之间势能最低时的距离。"
+  },
+  {
+   "id": "pure-covalent-bond",
+   "kind": "definition",
+   "section": "7.2",
+   "name": "纯共价键",
+   "terms": [
+    "纯共价键"
+   ],
+   "statement": "纯共价键，又称非极性共价键，是电负性相同的原子之间的共价键。"
+  },
+  {
+   "id": "polar-covalent-bond",
+   "kind": "definition",
+   "section": "7.2",
+   "name": "极性共价键",
+   "terms": [
+    "极性共价键"
+   ],
+   "statement": "极性共价键是电负性不同的原子之间的共价键，有一个正端和一个负端。"
+  },
+  {
+   "id": "lewis-symbol",
+   "kind": "skill",
+   "section": "7.3",
+   "name": "书写路易斯符号",
+   "statement": "书写路易斯符号时，在元素符号周围，每个价电子画一个点。去掉点表示形成阳离子，加上点表示形成阴离子，这样，离子化合物中电子的转移使电子总数保持不变。"
+  },
+  {
+   "id": "octet-rule",
+   "kind": "axiom",
+   "section": "7.3",
+   "name": "八隅体规则",
+   "terms": [
+    "八隅体规则"
+   ],
+   "statement": "主族原子倾向于形成足够多的键，使周围有八个价电子，每个键的共用电子对两个原子都计入。原子形成的键数常常可由其达到八个电子所需的电子数预测，所以碳形成四个键，氮三个，氧两个，氟一个；只需两个电子的氢是例外。"
+  },
+  {
+   "id": "multiple-bonds",
+   "kind": "definition",
+   "section": "7.3",
+   "name": "单键、双键和三键",
+   "statement": "单键在两个原子之间共用一对电子，双键共用两对，三键共用三对。当需要共用不止一对电子才能使每个原子都达到八隅体时，原子就会这样做，如甲醛和乙烯含有双键，一氧化碳和氰根离子含有三键。"
+  },
+  {
+   "id": "octet-rule-exceptions",
+   "kind": "idea",
+   "section": "7.3",
+   "name": "八隅体规则的例外",
+   "statement": "有三类分子不能使每个原子都有八个电子。奇电子分子，即自由基，如 NO，必然留下一个未成对电子；缺电子分子，如 BF3，其中心原子的电子少于八个；超价分子，如 PCl5 或 SF6，其中心原子属于第三周期或更靠后，所容纳的电子多于八个。"
+  },
+  {
+   "id": "lewis-dot-symbol",
+   "kind": "definition",
+   "section": "7.3",
+   "name": "路易斯符号",
+   "terms": [
+    "路易斯符号"
+   ],
+   "statement": "路易斯符号是元素或单原子离子的符号，其周围每个价电子画一个点。"
+  },
+  {
+   "id": "lewis-structure-diagram",
+   "kind": "definition",
+   "section": "7.3",
+   "name": "路易斯结构",
+   "terms": [
+    "路易斯结构"
+   ],
+   "statement": "路易斯结构是表示分子或离子中孤电子对和成键电子对的图示。"
+  },
+  {
+   "id": "lone-pair",
+   "kind": "definition",
+   "section": "7.3",
+   "name": "孤电子对",
+   "terms": [
+    "孤电子对"
+   ],
+   "statement": "孤电子对是未用于形成共价键的一对价电子。"
+  },
+  {
+   "id": "single-bond",
+   "kind": "definition",
+   "section": "7.3",
+   "name": "单键",
+   "terms": [
+    "单键"
+   ],
+   "statement": "单键是两个原子之间共用一对电子的键。"
+  },
+  {
+   "id": "double-bond",
+   "kind": "definition",
+   "section": "7.3",
+   "name": "双键",
+   "terms": [
+    "双键"
+   ],
+   "statement": "双键是两个原子之间共用两对电子的共价键。"
+  },
+  {
+   "id": "triple-bond",
+   "kind": "definition",
+   "section": "7.3",
+   "name": "三键",
+   "terms": [
+    "三键"
+   ],
+   "statement": "三键是两个原子之间共用三对电子的共价键。"
+  },
+  {
+   "id": "free-radical",
+   "kind": "definition",
+   "section": "7.3",
+   "name": "自由基",
+   "terms": [
+    "自由基"
+   ],
+   "statement": "自由基是含有奇数个电子的分子。"
+  },
+  {
+   "id": "hypervalent-molecule",
+   "kind": "definition",
+   "section": "7.3",
+   "name": "超价分子",
+   "terms": [
+    "超价分子"
+   ],
+   "statement": "超价分子至少含有一个价层电子多于八个的主族元素。"
+  },
+  {
+   "id": "formal-charge",
+   "kind": "skill",
+   "section": "7.4",
+   "name": "计算形式电荷",
+   "statement": "路易斯结构中原子的形式电荷，等于自由原子的价电子数，减去其孤电子对的电子数，再减去其成键电子数的一半。分子的形式电荷之和为零，离子的形式电荷之和等于其电荷。"
+  },
+  {
+   "id": "formal-charge-guidelines",
+   "kind": "skill",
+   "section": "7.4",
+   "name": "根据形式电荷选择路易斯结构",
+   "statement": "当可以写出不止一种路易斯结构时，较优的一种形式电荷为零，否则其非零形式电荷最小，相邻原子的形式电荷为零或符号相反，且任何负的形式电荷都在电负性较大的原子上。这些准则解释了为什么电负性最小的原子通常处于中心位置。"
+  },
+  {
+   "id": "resonance",
+   "kind": "idea",
+   "section": "7.4",
+   "name": "共振式和共振杂化体",
+   "terms": [
+    "共振"
+   ],
+   "statement": "当可以写出两个或更多个原子排布相同的路易斯结构时，其中任何一个都不能单独描述这个分子；电子的实际分布是它们的平均，即共振杂化体。分子并不在各共振式之间来回转换，所以亚硝酸根离子的两个 N–O 键和碳酸根离子的三个 C–O 键，经测定都是相同的。"
+  },
+  {
+   "id": "formal-charge-of-atom",
+   "kind": "definition",
+   "section": "7.4",
+   "name": "形式电荷",
+   "terms": [
+    "形式电荷"
+   ],
+   "statement": "原子的形式电荷，是每个键的电子被平均共用时该原子所带的电荷：中性原子的价电子数，减去其孤电子对的电子数，再减去其成键电子数的一半。",
+   "forms": [
+    {
+     "id": "eq-formal-charge",
+     "latex": "\\text{formal charge}=\\text{\\# valence shell electrons (free atom)}-\\text{\\# lone pair electrons}-\\frac{1}{2}\\,\\text{\\# bonding electrons}",
+     "anchor": "7.4-calculating-formal-charge"
+    }
+   ]
+  },
+  {
+   "id": "molecular-structure",
+   "kind": "definition",
+   "section": "7.4",
+   "name": "分子构型",
+   "terms": [
+    "分子构型"
+   ],
+   "statement": "分子或离子的分子构型，是其原子的排布，不考虑其孤电子对。"
+  },
+  {
+   "id": "resonance-forms",
+   "kind": "definition",
+   "section": "7.4",
+   "name": "共振式",
+   "terms": [
+    "共振式"
+   ],
+   "statement": "共振式是原子排布相同而电子排布不同的两个或更多个路易斯结构。"
+  },
+  {
+   "id": "resonance-hybrid",
+   "kind": "definition",
+   "section": "7.4",
+   "name": "共振杂化体",
+   "terms": [
+    "共振杂化体"
+   ],
+   "statement": "共振杂化体是各个路易斯结构所示共振式的平均，是分子中电子的实际分布。"
+  },
+  {
+   "id": "bond-energy",
+   "kind": "definition",
+   "section": "7.5",
+   "name": "键能",
+   "symbol": "D_bond",
+   "terms": [
+    "键能"
+   ],
+   "type": "energy",
+   "statement": "共价键的强度用键能来衡量，即断开气态分子中 1 mol 该种键所需的能量，对双原子分子来说就是其解离的标准焓变。在含有多个同类键的分子中，表中所列的值是平均值，因为断开第一个键所需的能量与断开其余的键并不相同。",
+   "forms": [
+    {
+     "id": "eq-bond-energy",
+     "latex": "\\text{XY}(g)\\longrightarrow\\text{X}(g)+\\text{Y}(g)\\qquad D_{\\text{X–Y}}=\\Delta H^{\\circ}",
+     "ktex": "\\text{XY}(g)\\longrightarrow\\text{X}(g)+\\text{Y}(g)\\qquad \\kDbond_{\\text{X–Y}}=\\kdHo",
+     "condition": "a diatomic molecule XY in the gas phase",
+     "anchor": "7.5-bond-strength"
+    }
+   ]
+  },
+  {
+   "id": "bond-strength-and-length",
+   "kind": "result",
+   "section": "7.5",
+   "name": "键的强度与键长",
+   "statement": "两个原子共用的电子对越多，它们之间的键就越强、越短，所以在同样的两个原子之间，三键比双键更强、更短，双键比单键更强、更短。当一个原子与同族成员成键时，键在族中自上而下逐渐变弱。"
+  },
+  {
+   "id": "enthalpy-from-bond-energies",
+   "kind": "skill",
+   "section": "7.5",
+   "name": "由键能估算焓变",
+   "statement": "反应的焓变近似等于断开反应物所有键所需的能量，减去形成生成物所有键所放出的能量。这一估算需要所有物种的路易斯结构，以便知道哪些键是单键、双键或三键；由于键能是平均值，所以估算是粗略的。",
+   "forms": [
+    {
+     "id": "eq-enthalpy-bond-energies",
+     "latex": "\\Delta H=\\sum D_{\\text{bonds broken}}-\\sum D_{\\text{bonds formed}}",
+     "ktex": "\\kdH=\\sum \\kDbond_{\\text{bonds broken}}-\\sum \\kDbond_{\\text{bonds formed}}",
+     "condition": "an estimate from average bond energies, for a reaction of gases",
+     "anchor": "7.5-enthalpy"
+    }
+   ]
+  },
+  {
+   "id": "lattice-energy",
+   "kind": "definition",
+   "section": "7.5",
+   "name": "晶格能",
+   "symbol": "ΔH_lattice",
+   "terms": [
+    "晶格能"
+   ],
+   "type": "energy",
+   "statement": "离子化合物的晶格能，是把 1 mol 该固体分离成气态离子所需的能量，按本书采用的约定是正值。它度量把离子固体维系在一起的吸引的强度，比共价键的键能大得多，因为它是每个离子与整个晶格相互作用之和。",
+   "forms": [
+    {
+     "id": "eq-lattice-energy-definition",
+     "latex": "\\text{MX}(s)\\longrightarrow\\text{M}^{n+}(g)+\\text{X}^{n-}(g)\\qquad \\Delta H_{\\text{lattice}}",
+     "ktex": "\\text{MX}(s)\\longrightarrow\\text{M}^{n+}(g)+\\text{X}^{n-}(g)\\qquad \\kdHlat",
+     "anchor": "7.5-lattice"
+    }
+   ]
+  },
+  {
+   "id": "lattice-energy-trends",
+   "kind": "result",
+   "section": "7.5",
+   "name": "晶格能的变化规律",
+   "statement": "由库仑定律导出，晶格能与离子电荷的乘积成正比，与离子间的距离成反比。两个电荷都加倍，晶格能变为四倍，所以 MgO 的晶格能接近 LiF 的四倍；离子越小，晶格能越大，所以 MgF2 的晶格能超过 MgI2。",
+   "forms": [
+    {
+     "id": "eq-lattice-energy-coulomb",
+     "latex": "\\Delta H_{\\text{lattice}}=\\frac{C(Z^{+})(Z^{-})}{R_{\\text{o}}}",
+     "ktex": "\\kdHlat=\\frac{C(Z^{+})(Z^{-})}{R_{\\text{o}}}",
+     "condition": "an ionic crystal; C depends on the type of crystal structure",
+     "anchor": "7.5-lattice-trends"
+    }
+   ]
+  },
+  {
+   "id": "born-haber-cycle",
+   "kind": "skill",
+   "section": "7.5",
+   "name": "应用玻恩-哈伯循环",
+   "statement": "晶格能不能直接测量。玻恩-哈伯循环把由单质生成离子固体的过程分成焓为已知的若干步：金属的升华、非金属的解离、金属原子的电离、非金属原子的电子亲和，以及晶格能的负值。根据盖斯定律，这些步骤相加等于生成焓，所以其中任何一步都可以由其余各步求得。"
+  },
+  {
+   "id": "born-haber-thermochemical-cycle",
+   "kind": "definition",
+   "section": "7.5",
+   "name": "玻恩-哈伯循环",
+   "terms": [
+    "玻恩-哈伯循环"
+   ],
+   "statement": "玻恩-哈伯循环是一个热化学循环，把由单质生成离子固体的各个能量步骤联系起来：金属的升华、非金属的解离、金属原子的电离、非金属原子的电子亲和，以及晶格的形成。",
+   "forms": [
+    {
+     "id": "eq-born-haber",
+     "latex": "\\Delta H_{\\text{f}}^{\\circ}=\\Delta H_{s}^{\\circ}+\\tfrac{1}{2}D+IE+(EA)+(-\\Delta H_{\\text{lattice}})",
+     "ktex": "\\kdHf=\\kdHs+\\tfrac{1}{2}\\kDbond+\\kIE+(\\kEA)+(-\\kdHlat)",
+     "condition": "the formation of an ionic solid MX from a solid metal and a diatomic gaseous nonmetal, as for CsF",
+     "anchor": "7.5-born-haber"
+    }
+   ]
+  }
+ ],
+ "concept_prereqs": [
+  {
+   "concept": "bond-angle-and-bond-distance",
+   "prereq": "atoms-and-molecules"
+  },
+  {
+   "concept": "vsepr-theory",
+   "prereq": "lewis-structure"
+  },
+  {
+   "concept": "vsepr-theory",
+   "prereq": "bond-angle-and-bond-distance"
+  },
+  {
+   "concept": "electron-pair-geometry",
+   "prereq": "vsepr-theory"
+  },
+  {
+   "concept": "molecular-structure-versus-electron-pair-geometry",
+   "prereq": "electron-pair-geometry"
+  },
+  {
+   "concept": "electron-pair-repulsion-order",
+   "prereq": "electron-pair-geometry"
+  },
+  {
+   "concept": "axial-and-equatorial-positions",
+   "prereq": "electron-pair-repulsion-order"
+  },
+  {
+   "concept": "predict-molecular-structure",
+   "prereq": "lewis-structure"
+  },
+  {
+   "concept": "predict-molecular-structure",
+   "prereq": "molecular-structure-versus-electron-pair-geometry"
+  },
+  {
+   "concept": "predict-molecular-structure",
+   "prereq": "axial-and-equatorial-positions"
+  },
+  {
+   "concept": "bond-dipole-moment",
+   "prereq": "bond-polarity"
+  },
+  {
+   "concept": "molecular-polarity",
+   "prereq": "bond-dipole-moment"
+  },
+  {
+   "concept": "molecular-polarity",
+   "prereq": "predict-molecular-structure"
+  },
+  {
+   "concept": "ionic-lattice",
+   "prereq": "ionic-bond"
+  },
+  {
+   "concept": "predict-ion-charge",
+   "prereq": "ionic-bond"
+  },
+  {
+   "concept": "ion-electron-configuration",
+   "prereq": "predict-ion-charge"
+  },
+  {
+   "concept": "covalent-bond-formation",
+   "prereq": "atoms-and-molecules"
+  },
+  {
+   "concept": "electronegativity",
+   "prereq": "covalent-bond-formation"
+  },
+  {
+   "concept": "bond-polarity",
+   "prereq": "electronegativity"
+  },
+  {
+   "concept": "bond-type-from-electronegativity",
+   "prereq": "bond-polarity"
+  },
+  {
+   "concept": "bond-type-from-electronegativity",
+   "prereq": "ionic-bond"
+  },
+  {
+   "concept": "lewis-symbol",
+   "prereq": "ion-electron-configuration"
+  },
+  {
+   "concept": "octet-rule",
+   "prereq": "lewis-symbol"
+  },
+  {
+   "concept": "multiple-bonds",
+   "prereq": "octet-rule"
+  },
+  {
+   "concept": "lewis-structure",
+   "prereq": "multiple-bonds"
+  },
+  {
+   "concept": "lewis-structure",
+   "prereq": "covalent-bond-formation"
+  },
+  {
+   "concept": "octet-rule-exceptions",
+   "prereq": "lewis-structure"
+  },
+  {
+   "concept": "formal-charge",
+   "prereq": "lewis-structure"
+  },
+  {
+   "concept": "formal-charge-guidelines",
+   "prereq": "formal-charge"
+  },
+  {
+   "concept": "formal-charge-guidelines",
+   "prereq": "electronegativity"
+  },
+  {
+   "concept": "resonance",
+   "prereq": "lewis-structure"
+  },
+  {
+   "concept": "bond-energy",
+   "prereq": "covalent-bond-formation"
+  },
+  {
+   "concept": "bond-strength-and-length",
+   "prereq": "bond-energy"
+  },
+  {
+   "concept": "bond-strength-and-length",
+   "prereq": "multiple-bonds"
+  },
+  {
+   "concept": "enthalpy-from-bond-energies",
+   "prereq": "bond-energy"
+  },
+  {
+   "concept": "enthalpy-from-bond-energies",
+   "prereq": "lewis-structure"
+  },
+  {
+   "concept": "lattice-energy",
+   "prereq": "ionic-lattice"
+  },
+  {
+   "concept": "lattice-energy-trends",
+   "prereq": "lattice-energy"
+  },
+  {
+   "concept": "born-haber-cycle",
+   "prereq": "lattice-energy"
+  },
+  {
+   "concept": "predict-ion-charge",
+   "prereq": "predict-ion-charge-from-group"
+  },
+  {
+   "concept": "ion-electron-configuration",
+   "prereq": "ion-configurations"
+  },
+  {
+   "concept": "predict-ion-charge",
+   "prereq": "ionization-energy-trend"
+  },
+  {
+   "concept": "predict-ion-charge",
+   "prereq": "electron-affinity-trend"
+  },
+  {
+   "concept": "electronegativity",
+   "prereq": "electron-affinity-trend"
+  },
+  {
+   "concept": "born-haber-cycle",
+   "prereq": "hess-law"
+  },
+  {
+   "concept": "born-haber-cycle",
+   "prereq": "standard-enthalpy-of-formation"
+  },
+  {
+   "concept": "born-haber-cycle",
+   "prereq": "ionization-energy-trend"
+  },
+  {
+   "concept": "born-haber-cycle",
+   "prereq": "electron-affinity-trend"
+  },
+  {
+   "concept": "enthalpy-from-bond-energies",
+   "prereq": "thermochemical-equations"
+  },
+  {
+   "concept": "lewis-symbol",
+   "prereq": "valence-and-core-electrons"
+  },
+  {
+   "concept": "lewis-symbol",
+   "prereq": "ion-configurations"
+  },
+  {
+   "concept": "lewis-structure",
+   "prereq": "electronegativity"
+  },
+  {
+   "concept": "resonance",
+   "prereq": "multiple-bonds"
+  },
+  {
+   "concept": "bond-angle-and-bond-distance",
+   "prereq": "covalent-bond-formation"
+  },
+  {
+   "concept": "covalent-bond-formation",
+   "prereq": "covalent-bond"
+  },
+  {
+   "concept": "ion-electron-configuration",
+   "prereq": "electron-configuration"
+  },
+  {
+   "concept": "inert-pair-effect",
+   "prereq": "valence-electrons"
+  },
+  {
+   "concept": "inert-pair-effect",
+   "prereq": "ions-and-atomic-charge"
+  },
+  {
+   "concept": "bond-length",
+   "prereq": "covalent-bond"
+  },
+  {
+   "concept": "bond-length",
+   "prereq": "potential-energy"
+  },
+  {
+   "concept": "bond-length",
+   "prereq": "nucleus"
+  },
+  {
+   "concept": "pure-covalent-bond",
+   "prereq": "covalent-bond"
+  },
+  {
+   "concept": "pure-covalent-bond",
+   "prereq": "electronegativity"
+  },
+  {
+   "concept": "polar-covalent-bond",
+   "prereq": "covalent-bond"
+  },
+  {
+   "concept": "polar-covalent-bond",
+   "prereq": "electronegativity"
+  },
+  {
+   "concept": "lewis-dot-symbol",
+   "prereq": "valence-electrons"
+  },
+  {
+   "concept": "lewis-dot-symbol",
+   "prereq": "chemical-symbols"
+  },
+  {
+   "concept": "lewis-structure-diagram",
+   "prereq": "lewis-dot-symbol"
+  },
+  {
+   "concept": "lewis-structure-diagram",
+   "prereq": "covalent-bond"
+  },
+  {
+   "concept": "lewis-structure-diagram",
+   "prereq": "lone-pair"
+  },
+  {
+   "concept": "lone-pair",
+   "prereq": "valence-electrons"
+  },
+  {
+   "concept": "lone-pair",
+   "prereq": "covalent-bond"
+  },
+  {
+   "concept": "single-bond",
+   "prereq": "covalent-bond"
+  },
+  {
+   "concept": "double-bond",
+   "prereq": "covalent-bond"
+  },
+  {
+   "concept": "triple-bond",
+   "prereq": "covalent-bond"
+  },
+  {
+   "concept": "free-radical",
+   "prereq": "valence-electrons"
+  },
+  {
+   "concept": "hypervalent-molecule",
+   "prereq": "valence-shell"
+  },
+  {
+   "concept": "hypervalent-molecule",
+   "prereq": "octet-rule"
+  },
+  {
+   "concept": "formal-charge-of-atom",
+   "prereq": "lewis-structure-diagram"
+  },
+  {
+   "concept": "formal-charge-of-atom",
+   "prereq": "lone-pair"
+  },
+  {
+   "concept": "formal-charge-of-atom",
+   "prereq": "valence-electrons"
+  },
+  {
+   "concept": "molecular-structure",
+   "prereq": "atoms-and-molecules"
+  },
+  {
+   "concept": "resonance-forms",
+   "prereq": "lewis-structure-diagram"
+  },
+  {
+   "concept": "resonance-hybrid",
+   "prereq": "resonance-forms"
+  },
+  {
+   "concept": "born-haber-thermochemical-cycle",
+   "prereq": "hess-law"
+  },
+  {
+   "concept": "born-haber-thermochemical-cycle",
+   "prereq": "lattice-energy"
+  },
+  {
+   "concept": "born-haber-thermochemical-cycle",
+   "prereq": "ionization-energy"
+  },
+  {
+   "concept": "born-haber-thermochemical-cycle",
+   "prereq": "electron-affinity"
+  },
+  {
+   "concept": "bond-angle",
+   "prereq": "covalent-bond"
+  },
+  {
+   "concept": "linear-geometry",
+   "prereq": "electron-pair-geometry"
+  },
+  {
+   "concept": "linear-geometry",
+   "prereq": "bond-angle"
+  },
+  {
+   "concept": "trigonal-planar-geometry",
+   "prereq": "electron-pair-geometry"
+  },
+  {
+   "concept": "trigonal-planar-geometry",
+   "prereq": "bond-angle"
+  },
+  {
+   "concept": "tetrahedral-geometry",
+   "prereq": "electron-pair-geometry"
+  },
+  {
+   "concept": "tetrahedral-geometry",
+   "prereq": "bond-angle"
+  },
+  {
+   "concept": "trigonal-bipyramidal-geometry",
+   "prereq": "electron-pair-geometry"
+  },
+  {
+   "concept": "trigonal-bipyramidal-geometry",
+   "prereq": "bond-angle"
+  },
+  {
+   "concept": "octahedral-geometry",
+   "prereq": "electron-pair-geometry"
+  },
+  {
+   "concept": "octahedral-geometry",
+   "prereq": "bond-angle"
+  },
+  {
+   "concept": "axial-position",
+   "prereq": "trigonal-bipyramidal-geometry"
+  },
+  {
+   "concept": "equatorial-position",
+   "prereq": "trigonal-bipyramidal-geometry"
+  },
+  {
+   "concept": "dipole-moment",
+   "prereq": "bond-dipole-moment"
+  },
+  {
+   "concept": "dipole-moment",
+   "prereq": "vector"
+  },
+  {
+   "concept": "dipole-moment",
+   "prereq": "molecular-structure"
+  },
+  {
+   "concept": "polar-molecule",
+   "prereq": "dipole-moment"
+  },
+  {
+   "concept": "covalent-bond-formation",
+   "prereq": "bond-length"
+  },
+  {
+   "concept": "bond-polarity",
+   "prereq": "polar-covalent-bond"
+  },
+  {
+   "concept": "bond-polarity",
+   "prereq": "pure-covalent-bond"
+  },
+  {
+   "concept": "bond-type-from-electronegativity",
+   "prereq": "polar-covalent-bond"
+  },
+  {
+   "concept": "bond-type-from-electronegativity",
+   "prereq": "pure-covalent-bond"
+  },
+  {
+   "concept": "lewis-symbol",
+   "prereq": "lewis-dot-symbol"
+  },
+  {
+   "concept": "lewis-structure",
+   "prereq": "lewis-structure-diagram"
+  },
+  {
+   "concept": "lewis-structure",
+   "prereq": "lone-pair"
+  },
+  {
+   "concept": "multiple-bonds",
+   "prereq": "single-bond"
+  },
+  {
+   "concept": "multiple-bonds",
+   "prereq": "double-bond"
+  },
+  {
+   "concept": "multiple-bonds",
+   "prereq": "triple-bond"
+  },
+  {
+   "concept": "octet-rule-exceptions",
+   "prereq": "free-radical"
+  },
+  {
+   "concept": "octet-rule-exceptions",
+   "prereq": "hypervalent-molecule"
+  },
+  {
+   "concept": "formal-charge",
+   "prereq": "formal-charge-of-atom"
+  },
+  {
+   "concept": "formal-charge-guidelines",
+   "prereq": "formal-charge-of-atom"
+  },
+  {
+   "concept": "resonance",
+   "prereq": "resonance-forms"
+  },
+  {
+   "concept": "resonance",
+   "prereq": "resonance-hybrid"
+  },
+  {
+   "concept": "born-haber-cycle",
+   "prereq": "born-haber-thermochemical-cycle"
+  },
+  {
+   "concept": "bond-strength-and-length",
+   "prereq": "bond-length"
+  },
+  {
+   "concept": "bond-angle-and-bond-distance",
+   "prereq": "bond-angle"
+  },
+  {
+   "concept": "bond-angle-and-bond-distance",
+   "prereq": "bond-length"
+  },
+  {
+   "concept": "axial-and-equatorial-positions",
+   "prereq": "axial-position"
+  },
+  {
+   "concept": "axial-and-equatorial-positions",
+   "prereq": "equatorial-position"
+  },
+  {
+   "concept": "predict-molecular-structure",
+   "prereq": "molecular-structure"
+  },
+  {
+   "concept": "predict-molecular-structure",
+   "prereq": "lone-pair"
+  },
+  {
+   "concept": "molecular-structure-versus-electron-pair-geometry",
+   "prereq": "molecular-structure"
+  },
+  {
+   "concept": "bond-dipole-moment",
+   "prereq": "polar-covalent-bond"
+  },
+  {
+   "concept": "bond-dipole-moment",
+   "prereq": "vector"
+  },
+  {
+   "concept": "molecular-polarity",
+   "prereq": "dipole-moment"
+  },
+  {
+   "concept": "molecular-polarity",
+   "prereq": "polar-molecule"
+  },
+  {
+   "concept": "ionic-compound-properties",
+   "prereq": "ionic-bond"
+  }
+ ]
+}

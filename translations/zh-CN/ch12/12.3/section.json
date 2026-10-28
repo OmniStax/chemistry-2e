@@ -1,0 +1,719 @@
+{
+ "id": "12.3",
+ "module": "m68789",
+ "chapter": "12",
+ "title": "速率定律",
+ "short": "速率定律",
+ "lead": "<span data-concept=\"rate-law\">速率定律</span>通过<span data-concept=\"rate-constant\">速率常数</span>和<span data-concept=\"reaction-order\">反应级数</span>，把<span data-concept=\"reaction-rate\">反应速率</span>与反应物的<span data-concept=\"concentration\">浓度</span>联系起来，而速率常数和反应级数要由实验求得。反应级数来自对浓度不同的各次实验的初始速率的比较，速率常数的单位则取决于<span data-concept=\"overall-reaction-order\">总级数</span>。",
+ "objectives": [
+  "说明速率定律的形式和作用",
+  "用速率定律计算反应速率",
+  "用速率和浓度数据确定反应级数并导出速率定律"
+ ],
+ "summary_html": "<p><span data-concept=\"rate-law\">速率定律</span>（<em>微分速率定律</em>）以数学方式描述物质<span data-concept=\"concentration\">浓度</span>的变化如何影响<span data-concept=\"reaction-rate\">化学反应速率</span>。<span data-concept=\"rate-law\">速率定律</span>由实验确定，不能由反应的化学计量关系预测。<span data-concept=\"reaction-order\">反应级数</span>描述每种物质的<span data-concept=\"concentration\">浓度</span>变化对总<span data-concept=\"reaction-rate\">速率</span>的影响有多大，<span data-concept=\"overall-reaction-order\">反应的总级数</span>是反应中各物质级数之和。<span data-concept=\"reaction-order\">反应级数</span>通常是一级、二级或零级，但也可能是分数级甚至负级。</p>",
+ "notes": "本节没有任何内容被略去；速率定律的列表保留了书中未配平的 2N₂O₅ ⟶ NO₂ + O₂，例 12.4 保留了“速率增加，也变为三倍”的赘余表述。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案来自书中的答案表和“学习检测”的答案。九道没有答案的数值习题被略去，也没有为它们算出答案：fs-idm211287824、fs-idm207653024、fs-idm53134032、fs-idm147604432、fs-idm233306880、fs-idm146074112、fs-idm168734944、fs-idm140371280、fs-idm152420960。没有答案的概念性习题 fs-idm181252208 带有一个建议的解题思路，标明为 OmniStax 自己所加。fs-idm57376432 的答案以一个多余的“(a)”开头，其解答中按原样保留。fs-idm49483024 的表按其单元格 4.17 × 10⁻⁴ 印出，而书中该表的摘要写作 4.7 × 10⁻⁴。",
+ "figures": [
+  {
+   "id": "fig-ozone-hole",
+   "kind": "photo",
+   "number": "12.8",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-initial-rates",
+   "kind": "sim",
+   "draws": [
+    "rate",
+    "concentration",
+    "rate-constant"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "referents": [
+  {
+   "id": "trial-1",
+   "label": "例 12.5 的实验 1",
+   "figures": [
+    "sim-initial-rates"
+   ]
+  },
+  {
+   "id": "trial-2",
+   "label": "例 12.5 的实验 2",
+   "figures": [
+    "sim-initial-rates"
+   ]
+  },
+  {
+   "id": "trial-3",
+   "label": "例 12.5 的实验 3",
+   "figures": [
+    "sim-initial-rates"
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "rate-laws",
+   "concept": "rate-law",
+   "verb": "introduces"
+  },
+  {
+   "span": "rate-laws",
+   "concept": "rate-constant",
+   "verb": "introduces"
+  },
+  {
+   "span": "rate-laws",
+   "concept": "reaction-order",
+   "verb": "introduces"
+  },
+  {
+   "span": "rate-laws",
+   "concept": "overall-reaction-order",
+   "verb": "introduces"
+  },
+  {
+   "span": "rate-laws",
+   "concept": "reaction-rate",
+   "verb": "uses"
+  },
+  {
+   "span": "rate-laws",
+   "concept": "concentration-and-rate",
+   "verb": "uses"
+  },
+  {
+   "span": "rate-laws",
+   "concept": "molarity",
+   "verb": "uses"
+  },
+  {
+   "span": "initial-rates",
+   "concept": "initial-rates-method",
+   "verb": "introduces"
+  },
+  {
+   "span": "initial-rates",
+   "concept": "method-of-initial-rates",
+   "verb": "introduces"
+  },
+  {
+   "span": "initial-rates",
+   "concept": "rate-from-rate-law",
+   "verb": "introduces"
+  },
+  {
+   "span": "initial-rates",
+   "concept": "rate-law",
+   "verb": "uses"
+  },
+  {
+   "span": "initial-rates",
+   "concept": "reaction-order",
+   "verb": "uses"
+  },
+  {
+   "span": "initial-rates",
+   "concept": "rate-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "initial-rates",
+   "concept": "initial-rate",
+   "verb": "uses"
+  },
+  {
+   "span": "units",
+   "concept": "rate-laws-are-experimental",
+   "verb": "introduces"
+  },
+  {
+   "span": "units",
+   "concept": "rate-constant-units",
+   "verb": "introduces"
+  },
+  {
+   "span": "units",
+   "concept": "overall-reaction-order",
+   "verb": "uses"
+  },
+  {
+   "span": "units",
+   "concept": "rate-constant",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm235878704",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-orders"
+   },
+   "cite": "rate-laws",
+   "prompt": "反应：$${\\text{H}}_{2}(g)+2\\text{NO}(g)\\;\\longrightarrow \\;{\\text{N}}_{2}\\text{O}(g)+{\\text{H}}_{2}\\text{O}(g)$$ 的速率定律已确定为速率 = <em>k</em>[NO]<sup>2</sup>[H<sub>2</sub>]。反应对每种反应物的级数各是多少？反应的总级数是多少？",
+   "answer": {
+    "generated_by": "source",
+    "type": "multi",
+    "parts": [
+     {
+      "part": "order in NO",
+      "value": 2,
+      "hint": "读出速率定律中 [NO] 的指数。"
+     },
+     {
+      "part": "order in H<sub>2</sub>",
+      "value": 1,
+      "hint": "没有写指数的浓度，其指数为一。"
+     },
+     {
+      "part": "overall order",
+      "value": 3,
+      "hint": "把各反应物的级数相加。"
+     }
+    ],
+    "solution": "NO 的级数 = 2；H<sub>2</sub> 的级数 = 1；总级数 = 3"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm235878704",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-orders"
+   },
+   "cite": "rate-laws",
+   "prompt": "在酯交换反应中，甘油三酯与醇反应，生成酯和甘油。许多学生在学习生成生物柴油的化学反应之前，先学习甲醇（CH<sub>3</sub>OH）与乙酸乙酯（CH<sub>3</sub>CH<sub>2</sub>OCOCH<sub>3</sub>）之间的反应作为示例反应：$${\\text{CH}}_{3}\\text{OH}+{\\text{CH}}_{3}{\\text{CH}}_{2}{\\text{OCOCH}}_{3}\\;\\longrightarrow \\;{\\text{CH}}_{3}{\\text{OCOCH}}_{3}+{\\text{CH}}_{3}{\\text{CH}}_{2}\\text{OH}$$ 在一定条件下，测得甲醇与乙酸乙酯之间反应的速率定律为：$$\\text{速率}=k[{\\text{CH}}_{3}\\text{OH}]$$ 反应对甲醇和乙酸乙酯的级数各是多少？反应的总级数是多少？",
+   "answer": {
+    "generated_by": "source",
+    "type": "multi",
+    "parts": [
+     {
+      "part": "order in CH<sub>3</sub>OH",
+      "value": 1,
+      "hint": "读出 [CH<sub>3</sub>OH] 的指数。"
+     },
+     {
+      "part": "order in CH<sub>3</sub>CH<sub>2</sub>OCOCH<sub>3</sub>",
+      "value": 0,
+      "hint": "不出现在速率定律中的反应物，其指数为零。"
+     },
+     {
+      "part": "overall order",
+      "value": 1,
+      "hint": "把各反应物的级数相加。"
+     }
+    ],
+    "solution": "CH<sub>3</sub>OH 的级数 = 1；CH<sub>3</sub>CH<sub>2</sub>OCOCH<sub>3</sub> 的级数 = 0；总级数 = 1"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idm234815200",
+   "kind": "check-your-learning",
+   "bloom": "Analyze",
+   "place": {
+    "at": "inline",
+    "after": "ex-ozone"
+   },
+   "cite": "initial-rates",
+   "prompt": "乙醛受热分解，生成甲烷和一氧化碳，反应方程式为：$${\\text{CH}}_{3}\\text{CHO}(g)\\;\\longrightarrow \\;{\\text{CH}}_{4}(g)+\\text{CO}(g)$$ 根据下列实验数据，确定该反应的速率定律和速率常数：<table><thead><tr><th>实验</th><th>[CH<sub>3</sub>CHO] (mol/L)</th><th>$-\\frac{\\Delta[{\\text{CH}}_{3}\\text{CHO}]}{\\Delta t}\\;(\\text{mol}\\;{\\text{L}}^{-1}\\;{\\text{s}}^{-1})$</th></tr></thead><tbody><tr><td>1</td><td>1.75 × 10<sup>−3</sup></td><td>2.06 × 10<sup>−11</sup></td></tr><tr><td>2</td><td>3.50 × 10<sup>−3</sup></td><td>8.24 × 10<sup>−11</sup></td></tr><tr><td>3</td><td>7.00 × 10<sup>−3</sup></td><td>3.30 × 10<sup>−10</sup></td></tr></tbody></table>",
+   "answer": {
+    "generated_by": "source",
+    "type": "multi",
+    "parts": [
+     {
+      "part": "order in CH<sub>3</sub>CHO",
+      "value": 2,
+      "hint": "从实验 1 到实验 2，浓度加倍，速率约变为四倍。"
+     },
+     {
+      "part": "<em>k</em>",
+      "value": 6.73e-06,
+      "unit": "L mol<sup>−1</sup> s<sup>−1</sup>",
+      "hint": "用某次实验的速率除以其浓度的平方。"
+     }
+    ],
+    "solution": "速率 = <em>k</em>[CH<sub>3</sub>CHO]<sup>2</sup>，<em>k</em> = 6.73 × 10<sup>−6</sup> L/mol/s"
+   }
+  },
+  {
+   "id": "cyl4",
+   "source_id": "fs-idm285627376",
+   "kind": "check-your-learning",
+   "bloom": "Analyze",
+   "place": {
+    "at": "inline",
+    "after": "ex-nocl"
+   },
+   "cite": "initial-rates",
+   "prompt": "利用所给的初始速率数据，导出反应：$${\\text{OCl}}^{-}(aq)+{\\text{I}}^{-}(aq)\\;\\longrightarrow \\;{\\text{OI}}^{-}(aq)+{\\text{Cl}}^{-}(aq)$$ 的速率定律。<table><thead><tr><th>实验</th><th>[OCl<sup>−</sup>] (mol/L)</th><th>[I<sup>−</sup>] (mol/L)</th><th>初始速率（mol/L/s）</th></tr></thead><tbody><tr><td>1</td><td>0.0040</td><td>0.0020</td><td>0.00184</td></tr><tr><td>2</td><td>0.0020</td><td>0.0040</td><td>0.00092</td></tr><tr><td>3</td><td>0.0020</td><td>0.0020</td><td>0.00046</td></tr></tbody></table>确定该反应的速率定律表达式，以及速率常数 <em>k</em> 的值（带适当的单位）。",
+   "answer": {
+    "generated_by": "source",
+    "type": "multi",
+    "parts": [
+     {
+      "part": "order in OCl<sup>−</sup>",
+      "value": 2,
+      "hint": "比较实验 1 和实验 3，其中只有 [OCl<sup>−</sup>] 改变。"
+     },
+     {
+      "part": "order in I<sup>−</sup>",
+      "value": 1,
+      "hint": "比较实验 2 和实验 3，其中只有 [I<sup>−</sup>] 改变。"
+     },
+     {
+      "part": "<em>k</em>",
+      "value": 57500,
+      "unit": "mol<sup>−2</sup> L<sup>2</sup> s<sup>−1</sup>",
+      "hint": "把实验 1 的浓度和速率代入速率定律。"
+     }
+    ],
+    "solution": "$\\frac{\\text{速率 2}}{\\text{速率 3}}=\\frac{0.00092}{0.00046}=\\frac{k(0.0020)^{x}(0.0040)^{y}}{k(0.0020)^{x}(0.0020)^{y}}$；2.00 = 2.00<sup><em>y</em></sup>；<em>y</em> = 1。$\\frac{\\text{速率 1}}{\\text{速率 2}}=\\frac{0.00184}{0.00092}=\\frac{k(0.0040)^{x}(0.0020)^{y}}{k(0.0020)^{x}(0.0040)^{y}}$；2.00 = 2<sup><em>x</em></sup>/2<sup><em>y</em></sup> = 2<sup><em>x</em></sup>/2<sup>1</sup>；4.00 = 2<sup><em>x</em></sup>；<em>x</em> = 2。代入实验 1 的浓度数据并解出 <em>k</em>，得到：速率 = <em>k</em>[OCl<sup>−</sup>]<sup>2</sup>[I<sup>−</sup>]<sup>1</sup>；0.00184 = <em>k</em>(0.0040)<sup>2</sup>(0.0020)<sup>1</sup>；<em>k</em> = 5.75 × 10<sup>4</sup> mol<sup>−2</sup> L<sup>2</sup> s<sup>−1</sup>"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm181252208",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "rate-laws",
+   "prompt": "反应速率与速率常数有何不同？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "速率是单位时间内反应物或产物浓度的变化量，它随反应的进行而变化；速率常数 $\\kk$ 是速率定律中的比例常数，对于给定的反应在给定的温度下保持不变。在速率定律 $\\krate=\\kk\\kconcA^{m}\\kconcB^{n}$ 中，速率取决于各浓度，所以随反应物被消耗而下降，而 $\\kk$ 则完全不依赖于浓度。对于一级反应 $\\krate=\\kk\\kconcA$，把 $\\kconcA$ 减半，速率就减半，而 $\\kk$ 不变；只有温度的改变或催化剂的加入才会改变 $\\kk$。它们的单位也不同：速率的单位总是浓度每时间，例如 mol L<sup>−1</sup> s<sup>−1</sup>，而 $\\kk$ 的单位取决于总级数，一级反应为 s<sup>−1</sup>，二级反应为 L mol<sup>−1</sup> s<sup>−1</sup>。"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idm256410736",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "rate-laws",
+   "prompt": "某反应物的浓度加倍，使反应速率增大为四倍。根据这一事实，回答下列问题：<br>（a）反应对该反应物的级数是多少？<br>（b）另一种反应物的浓度变为三倍，使反应速率增大为三倍。反应对该反应物的级数是多少？",
+   "answer": {
+    "generated_by": "source",
+    "type": "multi",
+    "parts": [
+     {
+      "part": "(a) order",
+      "value": 2,
+      "hint": "求使 2 的幂等于 4 的指数。"
+     },
+     {
+      "part": "(b) order",
+      "value": 1,
+      "hint": "求使 3 的幂等于 3 的指数。"
+     }
+    ],
+    "solution": "（a）2；（b）1"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm291799584",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "rate-laws",
+   "prompt": "对于过程 $\\text{CO}(g)+{\\text{NO}}_{2}(g)\\;\\longrightarrow \\;{\\text{CO}}_{2}(g)+\\text{NO}(g)$，若该反应的速率定律为 $\\text{速率}=k{[{\\text{NO}}_{2}]}^{2}$，则在下列情况下反应速率将如何变化？<br>（a）NO<sub>2</sub> 的压强由 0.50 atm 降至 0.250 atm。<br>（b）CO 的浓度由 0.01 <em>M</em> 增至 0.03 <em>M</em>。",
+   "answer": {
+    "generated_by": "source",
+    "type": "open",
+    "solution": "（a）该过程使速率降低为原来的四分之一。（b）由于 CO 不出现在速率定律中，速率不受影响。"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm222164384",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial-rates",
+   "prompt": "超声速飞机在平流层中的定期飞行令人担忧，因为这类飞机在发动机排出的废气中产生一氧化氮 NO 这种副产物。一氧化氮与臭氧反应，有人提出这可能加剧臭氧层的损耗。反应 $\\text{NO}+{\\text{O}}_{3}\\;\\longrightarrow \\;{\\text{NO}}_{2}+{\\text{O}}_{2}$ 对 NO 和 O<sub>3</sub> 均为一级，速率常数为 2.20 × 10<sup>7</sup> L/mol/s。当 [NO] = 3.3 × 10<sup>−6</sup> <em>M</em>、[O<sub>3</sub>] = 5.9 × 10<sup>−7</sup> <em>M</em> 时，NO 消失的瞬时速率是多少？",
+   "answer": {
+    "generated_by": "source",
+    "type": "number",
+    "value": 4.3e-05,
+    "unit": "mol/L/s",
+    "hint": "用速率常数乘以两个浓度。",
+    "solution": "4.3 × 10<sup>−5</sup> mol/L/s"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idm140350624",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial-rates",
+   "prompt": "<sup>14</sup>C 放射性衰变的速率常数为 1.21 × 10<sup>−4</sup> 年<sup>−1</sup>。衰变产物是氮原子和电子（β 粒子）：$${}_{6}^{14}\\text{C}\\;\\longrightarrow \\;{}_{7}^{14}\\text{N}+{\\text{e}}^{-}$$ $$\\text{速率}=k[{}_{6}^{14}\\text{C}]$$ 在碳-14 含量为 6.5 × 10<sup>−9</sup> <em>M</em> 的样品中，N 原子生成的瞬时速率是多少？",
+   "answer": {
+    "generated_by": "source",
+    "type": "number",
+    "value": 7.9e-13,
+    "unit": "mol/L/year",
+    "hint": "每衰变一个碳-14 原子就生成一个氮原子，所以 N 的生成速率就是速率定律给出的速率。",
+    "solution": "7.9 × 10<sup>−13</sup> mol/L/年"
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idm32841312",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial-rates",
+   "prompt": "酒精通过一系列代谢反应从血液中清除。第一步反应生成乙醛，随后生成其他产物。下列数据是针对普通男性血液中酒精的清除速率测得的，不过个体之间的速率可相差 25–30%。女性代谢酒精比男性稍慢：<table><tbody><tr><td>[C<sub>2</sub>H<sub>5</sub>OH] (<em>M</em>)</td><td>4.4 × 10<sup>−2</sup></td><td>3.3 × 10<sup>−2</sup></td><td>2.2 × 10<sup>−2</sup></td></tr><tr><td>速率（mol L<sup>−1</sup> h<sup>−1</sup>）</td><td>2.0 × 10<sup>−2</sup></td><td>2.0 × 10<sup>−2</sup></td><td>2.0 × 10<sup>−2</sup></td></tr></tbody></table>确定该反应的速率定律、速率常数和总级数。",
+   "answer": {
+    "generated_by": "source",
+    "type": "multi",
+    "parts": [
+     {
+      "part": "<em>k</em>",
+      "value": 0.02,
+      "unit": "mol L<sup>−1</sup> h<sup>−1</sup>",
+      "hint": "浓度下降时，速率并不改变。"
+     },
+     {
+      "part": "overall order",
+      "value": 0,
+      "hint": "浓度的几次幂能使速率保持不变？"
+     }
+    ],
+    "solution": "速率 = <em>k</em>；<em>k</em> = 2.0 × 10<sup>−2</sup> mol L<sup>−1</sup> h<sup>−1</sup>（普通男性约为 0.9 g L<sup>−1</sup> h<sup>−1</sup>）；该反应为零级。"
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idm263803776",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial-rates",
+   "prompt": "亚硝酰氯 NOCl 分解为 NO 和 Cl<sub>2</sub>。$$2\\text{NOCl}(g)\\;\\longrightarrow \\;2\\text{NO}(g)+{\\text{Cl}}_{2}(g)$$ 根据下列数据，确定该反应的速率定律、速率常数和总级数：<table><tbody><tr><td>[NOCl] (<em>M</em>)</td><td>0.10</td><td>0.20</td><td>0.30</td></tr><tr><td>速率（mol L<sup>−1</sup> h<sup>−1</sup>）</td><td>8.0 × 10<sup>−10</sup></td><td>3.2 × 10<sup>−9</sup></td><td>7.2 × 10<sup>−9</sup></td></tr></tbody></table>",
+   "answer": {
+    "generated_by": "source",
+    "type": "multi",
+    "parts": [
+     {
+      "part": "order in NOCl",
+      "value": 2,
+      "hint": "[NOCl] 加倍，速率变为四倍。"
+     },
+     {
+      "part": "<em>k</em>",
+      "value": 8e-08,
+      "unit": "L/mol/h",
+      "hint": "用某个速率除以其浓度的平方。"
+     }
+    ],
+    "solution": "速率 = <em>k</em>[NOCl]<sup>2</sup>；<em>k</em> = 8.0 × 10<sup>−8</sup> L/mol/h；二级"
+   }
+  },
+  {
+   "id": "e14",
+   "source_id": "fs-idm238094880",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial-rates",
+   "prompt": "一氧化氮与氯气按下式反应：$$2\\text{NO}(g)+{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;2\\text{NOCl}(g)$$ 对一定的反应物浓度，观察到如下初始反应速率：<table><thead><tr><th>[NO] (mol/L)</th><th>[Cl<sub>2</sub>] (mol/L)</th><th>速率（mol L<sup>−1</sup> h<sup>−1</sup>）</th></tr></thead><tbody><tr><td>0.50</td><td>0.50</td><td>1.14</td></tr><tr><td>1.00</td><td>0.50</td><td>4.56</td></tr><tr><td>1.00</td><td>1.00</td><td>9.12</td></tr></tbody></table>描述速率对 NO 和 Cl<sub>2</sub> 浓度的依赖关系的速率定律是什么？速率常数是多少？反应对每种反应物的级数各是多少？",
+   "answer": {
+    "generated_by": "source",
+    "type": "multi",
+    "parts": [
+     {
+      "part": "<em>k</em>",
+      "value": 9.1,
+      "unit": "L<sup>2</sup> mol<sup>−2</sup> h<sup>−1</sup>",
+      "hint": "先求出两个级数，再代入其中一行。"
+     },
+     {
+      "part": "order in NO",
+      "value": 2,
+      "hint": "比较前两行，其中只有 [NO] 改变。"
+     },
+     {
+      "part": "order in Cl<sub>2</sub>",
+      "value": 1,
+      "hint": "比较后两行，其中只有 [Cl<sub>2</sub>] 改变。"
+     }
+    ],
+    "solution": "速率 = <em>k</em>[NO]<sup>2</sup>[Cl<sub>2</sub>]；<em>k</em> = 9.1 L<sup>2</sup> mol<sup>−2</sup> h<sup>−1</sup>；对 NO 为二级；对 Cl<sub>2</sub> 为一级"
+   }
+  },
+  {
+   "id": "e16",
+   "source_id": "fs-idm49483024",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial-rates",
+   "prompt": "对于反应 $A\\;\\longrightarrow \\;B+C$，在 30 °C 时得到如下数据：<table><tbody><tr><td>[<em>A</em>] (<em>M</em>)</td><td>0.230</td><td>0.356</td><td>0.557</td></tr><tr><td>速率（mol L<sup>−1</sup> s<sup>−1</sup>）</td><td>4.17 × 10<sup>−4</sup></td><td>9.99 × 10<sup>−4</sup></td><td>2.44 × 10<sup>−3</sup></td></tr></tbody></table>（a）反应对 [<em>A</em>] 的级数是多少？速率定律是什么？<br>（b）速率常数是多少？",
+   "answer": {
+    "generated_by": "source",
+    "type": "multi",
+    "parts": [
+     {
+      "part": "(a) order in A",
+      "value": 2,
+      "hint": "比较两个速率之比与相应浓度之比，必要时使用对数。"
+     },
+     {
+      "part": "(b) <em>k</em>",
+      "value": 0.00788,
+      "unit": "L mol<sup>−1</sup> s<sup>−1</sup>",
+      "hint": "用速率除以浓度的平方。"
+     }
+    ],
+    "solution": "（a）速率定律对 A 为二级，写作速率 = <em>k</em>[<em>A</em>]<sup>2</sup>。（b）<em>k</em> = 7.88 × 10<sup>−3</sup> L mol<sup>−1</sup> s<sup>−1</sup>"
+   }
+  },
+  {
+   "id": "e18",
+   "source_id": "fs-idm57376432",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial-rates",
+   "prompt": "五氧化二氮 N<sub>2</sub>O<sub>5</sub> 溶于氯仿 CHCl<sub>3</sub> 中，在 45 °C 下一级分解的速率常数为 6.2 × 10<sup>−4</sup> min<sup>−1</sup>。$$2{\\text{N}}_{2}{\\text{O}}_{5}\\;\\longrightarrow \\;4{\\text{NO}}_{2}+{\\text{O}}_{2}$$ 当 [N<sub>2</sub>O<sub>5</sub>] = 0.40 <em>M</em> 时，反应速率是多少？",
+   "answer": {
+    "generated_by": "source",
+    "type": "number",
+    "value": 0.00025,
+    "unit": "mol/L/min",
+    "hint": "对一级反应，速率等于速率常数乘以浓度。",
+    "solution": "（a）2.5 × 10<sup>−4</sup> mol/L/min"
+   }
+  },
+  {
+   "id": "e20",
+   "source_id": "fs-idm237267424",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial-rates",
+   "prompt": "下列数据是为反应：$${\\text{I}}^{-}+{\\text{OCl}}^{-}\\;\\longrightarrow \\;{\\text{IO}}^{-}+{\\text{Cl}}^{-}$$ 测定的：<table><thead><tr><th></th><th>1</th><th>2</th><th>3</th></tr></thead><tbody><tr><td>${[{\\text{I}}^{-}]}_{\\text{初始}}$ (<em>M</em>)</td><td>0.10</td><td>0.20</td><td>0.30</td></tr><tr><td>${[{\\text{OCl}}^{-}]}_{\\text{初始}}$ (<em>M</em>)</td><td>0.050</td><td>0.050</td><td>0.010</td></tr><tr><td>速率（mol L<sup>−1</sup> s<sup>−1</sup>）</td><td>3.05 × 10<sup>−4</sup></td><td>6.20 × 10<sup>−4</sup></td><td>1.83 × 10<sup>−4</sup></td></tr></tbody></table>确定该反应的速率定律和速率常数。",
+   "answer": {
+    "generated_by": "source",
+    "type": "multi",
+    "parts": [
+     {
+      "part": "order in I<sup>−</sup>",
+      "value": 1,
+      "hint": "比较实验 1 和实验 2，其中只有 [I<sup>−</sup>] 改变。"
+     },
+     {
+      "part": "order in OCl<sup>−</sup>",
+      "value": 1,
+      "hint": "已知对 I<sup>−</sup> 的级数，比较实验 3 和实验 1。"
+     },
+     {
+      "part": "<em>k</em>",
+      "value": 0.061,
+      "unit": "L mol<sup>−1</sup> s<sup>−1</sup>",
+      "hint": "把实验 1 代入速率定律。"
+     }
+    ],
+    "solution": "速率 = <em>k</em>[I<sup>−</sup>][OCl<sup>−</sup>]；<em>k</em> = 6.1 × 10<sup>−2</sup> L mol <sup>−1</sup> s<sup>−1</sup>"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "reaction-order"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "overall-reaction-order"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "reaction-order"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "overall-reaction-order"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "method-of-initial-rates"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "rate-constant-units"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "method-of-initial-rates"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "rate-constant-units"
+  },
+  {
+   "exercise": "e1",
+   "concept": "rate-constant"
+  },
+  {
+   "exercise": "e1",
+   "concept": "rate-law"
+  },
+  {
+   "exercise": "e2",
+   "concept": "reaction-order"
+  },
+  {
+   "exercise": "e4",
+   "concept": "rate-from-rate-law"
+  },
+  {
+   "exercise": "e6",
+   "concept": "rate-from-rate-law"
+  },
+  {
+   "exercise": "e8",
+   "concept": "rate-from-rate-law"
+  },
+  {
+   "exercise": "e10",
+   "concept": "method-of-initial-rates"
+  },
+  {
+   "exercise": "e10",
+   "concept": "overall-reaction-order"
+  },
+  {
+   "exercise": "e10",
+   "concept": "rate-constant-units"
+  },
+  {
+   "exercise": "e12",
+   "concept": "method-of-initial-rates"
+  },
+  {
+   "exercise": "e12",
+   "concept": "overall-reaction-order"
+  },
+  {
+   "exercise": "e12",
+   "concept": "rate-constant-units"
+  },
+  {
+   "exercise": "e14",
+   "concept": "method-of-initial-rates"
+  },
+  {
+   "exercise": "e14",
+   "concept": "rate-constant-units"
+  },
+  {
+   "exercise": "e16",
+   "concept": "method-of-initial-rates"
+  },
+  {
+   "exercise": "e16",
+   "concept": "rate-constant-units"
+  },
+  {
+   "exercise": "e18",
+   "concept": "rate-from-rate-law"
+  },
+  {
+   "exercise": "e20",
+   "concept": "method-of-initial-rates"
+  },
+  {
+   "exercise": "e20",
+   "concept": "rate-constant-units"
+  }
+ ],
+ "footnotes": [
+  {
+   "id": "c-n2o5",
+   "kind": "correction",
+   "html": "书中写作 2N<sub>2</sub>O<sub>5</sub> ⟶ NO<sub>2</sub> + O<sub>2</sub>，这个方程式没有配平。该分解反应应为 2N<sub>2</sub>O<sub>5</sub> ⟶ 4NO<sub>2</sub> + O<sub>2</sub>。"
+  }
+ ]
+}

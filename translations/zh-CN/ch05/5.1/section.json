@@ -1,0 +1,668 @@
+{
+ "id": "5.1",
+ "module": "m68724",
+ "chapter": "5",
+ "title": "能量基础",
+ "short": "能量基础",
+ "lead": "<span data-concept=\"energy-and-work\">能量</span>是提供<span data-concept=\"heat-flow\">热量</span>或做<span data-concept=\"work\">功</span>的能力，每一次化学变化和物理变化都使它从一种形式转化为另一种形式，而不会创造或消灭任何能量。这里区分了热能、<span data-concept=\"temperature\">温度</span>和<span data-concept=\"heat-flow\">热量</span>，并把物质获得或失去的<span data-concept=\"heat-flow\">热量</span>与它的<span data-concept=\"specific-heat-capacity\">比热容</span>、<span data-concept=\"mass\">质量</span>和<span data-concept=\"temperature\">温度</span>变化联系起来。",
+ "objectives": [
+  "定义能量，区分能量的类型，并描述伴随化学变化和物理变化的能量变化的本质",
+  "区分热量、热能和温度这几个相关的性质",
+  "定义并区分比热容和热容，并描述二者的物理意义",
+  "进行涉及热量、比热容和温度变化的计算"
+ ],
+ "summary_html": "<p><span data-concept=\"energy-and-work\">能量</span>是提供<span data-concept=\"heat-flow\">热量</span>或做<span data-concept=\"work\">功</span>（施加<span data-concept=\"force\">力</span>使物质移动）的能力。<span data-concept=\"kinetic-energy\">动能</span>（KE）是运动的<span data-concept=\"energy-and-work\">能量</span>；势能是由相对位置、组成或状态而具有的<span data-concept=\"energy-and-work\">能量</span>。当<span data-concept=\"energy-and-work\">能量</span>从一种形式转化为另一种形式时，<span data-concept=\"energy-and-work\">能量</span>既不会被创造，也不会被消灭（能量守恒定律或热力学第一定律）。</p><p>物质的热能来自其组成原子或分子的<span data-concept=\"kinetic-energy\">动能</span>。<span data-concept=\"temperature\">温度</span>是物质的一种强度性质，反映冷热程度，随平均<span data-concept=\"kinetic-energy\">动能</span>的增大而升高。<span data-concept=\"heat-flow\">热量</span>是热能在不同<span data-concept=\"temperature\">温度</span>的物体之间的传递。化学过程和物理过程可以吸收<span data-concept=\"heat-flow\">热量</span>（吸热）或释放<span data-concept=\"heat-flow\">热量</span>（放热）。<span data-concept=\"energy-and-work\">能量</span>、<span data-concept=\"heat-flow\">热量</span>和<span data-concept=\"work\">功</span>的 SI 单位是焦耳（J）。</p><p><span data-concept=\"specific-heat-capacity\">比热容</span>和<span data-concept=\"heat-capacity\">热容</span>是改变一种物质或一个物体的<span data-concept=\"temperature\">温度</span>所需<span data-concept=\"energy-and-work\">能量</span>的量度。一种物质吸收或释放的<span data-concept=\"heat-flow\">热量</span>的多少，直接取决于物质的种类、它的<span data-concept=\"mass\">质量</span>以及它所经历的<span data-concept=\"temperature\">温度</span>变化。</p>",
+ "notes": "三则“学习链接”注释被略去：关于温度对分子运动影响的 PhET 模拟，卷曲双金属片的演示，以及关于能量形式与转化的 PhET 模拟；图 5.4 与图 5.6 合并的那幅图取代了第一则和第三则。图 5.2 是一幅由芝士汉堡、高速公路和加热炉拼成的合成图，位于本节开头，已被略去。表 5.1 把硅列在最后，不在其降序排列之中，书中即是如此印刷。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签、权重和提示均由 AI 生成。答案来自书后答案以及“学习检测”的答案。没有书中答案的习题 fs-idm38026992（28.4 g 水和 1.00 盎司铅的热容）、fs-idm26658464（把一块 75.0 g 的铁块加热到其熔点）、fs-idm42475152（275 g 水在得到 36.5 kJ 热量后的温度升高）、fs-idp43279360（44.7 g 的未知物质）和 fs-idp36071488（铝水壶）被略去。没有书中答案的习题 fs-idp25217856 关于汽车的能量转换，保留下来，并附有 OmniStax 撰写的建议思路。第二个“学习检测”以及 fs-idp36064736 的（b）部分所要求的身份判断不作核对；它在答案中给出。数值答案接受 2% 的容差。",
+ "figures": [
+  {
+   "id": "fig-waterfall",
+   "kind": "photo",
+   "number": "5.3",
+   "draws": []
+  },
+  {
+   "id": "fig-thermometers",
+   "kind": "photo",
+   "number": "5.5",
+   "draws": []
+  },
+  {
+   "id": "sim-heat-flow",
+   "kind": "sim",
+   "number": "5.4",
+   "folds": [
+    "5.6"
+   ],
+   "originals": [
+    "/media/ch05/CNX_Chem_05_01_HotCold.jpg",
+    "/media/ch05/CNX_Chem_05_01_HeatTrans1.jpg"
+   ],
+   "original_caption": "（图 5.4）（a）一份热水样品中的分子比（b）一份冷水样品中的分子运动得更快。（图 5.6）（a）物质 H 和 L 起初处于不同的温度，它们的原子具有不同的平均动能。（b）当它们相互接触时，分子之间的碰撞使动能（热能）从较热的物质传递到较冷的物质。（c）当两种物质处于相同的温度、其分子具有相同的平均动能时，这两个物体达到“热平衡”。",
+   "draws": [
+    "temperature",
+    "energy"
+   ],
+   "conventions": [
+    "O",
+    "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "heat label beside its arrow; contact tag kept off the traces"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-torch",
+   "kind": "photo",
+   "number": "5.7",
+   "draws": []
+  },
+  {
+   "id": "fig-pans",
+   "kind": "photo",
+   "number": "5.8",
+   "draws": []
+  },
+  {
+   "id": "sim-heating",
+   "kind": "sim",
+   "draws": [
+    "energy",
+    "temperature",
+    "mass",
+    "heat-capacity"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "gas sample kept under the headline; repeating note dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-solana",
+   "kind": "photo",
+   "number": "5.9",
+   "draws": []
+  },
+  {
+   "id": "fig-ivanpah",
+   "kind": "photo",
+   "number": "5.10",
+   "draws": []
+  }
+ ],
+ "coverage": [
+  {
+   "span": "thermochemistry",
+   "concept": "energy-and-work",
+   "verb": "uses"
+  },
+  {
+   "span": "thermochemistry",
+   "concept": "thermochemistry",
+   "verb": "introduces"
+  },
+  {
+   "span": "energy",
+   "concept": "energy-and-work",
+   "verb": "introduces"
+  },
+  {
+   "span": "energy",
+   "concept": "potential-and-kinetic-energy",
+   "verb": "introduces"
+  },
+  {
+   "span": "energy",
+   "concept": "work",
+   "verb": "introduces"
+  },
+  {
+   "span": "energy",
+   "concept": "potential-energy",
+   "verb": "introduces"
+  },
+  {
+   "span": "energy",
+   "concept": "kinetic-energy",
+   "verb": "introduces"
+  },
+  {
+   "span": "conservation",
+   "concept": "conservation-of-energy",
+   "verb": "introduces"
+  },
+  {
+   "span": "conservation",
+   "concept": "potential-and-kinetic-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "thermal",
+   "concept": "thermal-energy-and-temperature",
+   "verb": "introduces"
+  },
+  {
+   "span": "thermal",
+   "concept": "potential-and-kinetic-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "thermal",
+   "concept": "thermal-energy",
+   "verb": "introduces"
+  },
+  {
+   "span": "heat",
+   "concept": "heat-flow",
+   "verb": "introduces"
+  },
+  {
+   "span": "heat",
+   "concept": "thermal-energy-and-temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "exo-endo",
+   "concept": "exothermic-and-endothermic",
+   "verb": "introduces"
+  },
+  {
+   "span": "exo-endo",
+   "concept": "heat-flow",
+   "verb": "uses"
+  },
+  {
+   "span": "exo-endo",
+   "concept": "exothermic-process",
+   "verb": "introduces"
+  },
+  {
+   "span": "exo-endo",
+   "concept": "endothermic-process",
+   "verb": "introduces"
+  },
+  {
+   "span": "units",
+   "concept": "energy-units",
+   "verb": "introduces"
+  },
+  {
+   "span": "units",
+   "concept": "energy-and-work",
+   "verb": "uses"
+  },
+  {
+   "span": "units",
+   "concept": "joule",
+   "verb": "introduces"
+  },
+  {
+   "span": "units",
+   "concept": "calorie",
+   "verb": "introduces"
+  },
+  {
+   "span": "capacity",
+   "concept": "heat-capacity-and-specific-heat",
+   "verb": "introduces"
+  },
+  {
+   "span": "capacity",
+   "concept": "heat-flow",
+   "verb": "uses"
+  },
+  {
+   "span": "capacity",
+   "concept": "energy-units",
+   "verb": "uses"
+  },
+  {
+   "span": "capacity",
+   "concept": "heat-capacity",
+   "verb": "introduces"
+  },
+  {
+   "span": "capacity",
+   "concept": "specific-heat-capacity",
+   "verb": "introduces"
+  },
+  {
+   "span": "heat-equation",
+   "concept": "heat-specific-heat-relation",
+   "verb": "introduces"
+  },
+  {
+   "span": "heat-equation",
+   "concept": "heat-capacity-and-specific-heat",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-measuring-heat",
+   "concept": "heat-specific-heat-relation",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-other-quantities",
+   "concept": "heat-specific-heat-relation",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-other-quantities",
+   "concept": "heat-capacity-and-specific-heat",
+   "verb": "uses"
+  },
+  {
+   "span": "solar",
+   "concept": "heat-capacity-and-specific-heat",
+   "verb": "uses"
+  },
+  {
+   "span": "solar",
+   "concept": "conservation-of-energy",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idp1783792",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-measuring-heat"
+   },
+   "cite": "heat-equation",
+   "prompt": "需要向一只 502 g 的铁煎锅加入多少热量（以焦耳计），才能使其温度从 25 °C 升高到 250 °C？铁的比热容为 0.449 J/g °C。",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 50700,
+    "unit": "J",
+    "hint": "把比热容乘以质量，再乘以温度变化 250 °C − 25 °C。",
+    "solution": "5.07 $\\times$ 10<sup>4</sup> J"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm41581920",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-other-quantities"
+   },
+   "cite": "heat-equation",
+   "prompt": "一块未知金属重 217 g。当这块金属吸收 1.43 kJ 热量时，其温度从 24.5 °C 升高到 39.1 °C。求这种金属的比热容，并预测它是什么金属。",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "specific heat",
+      "value": 0.451,
+      "unit": "J/g °C",
+      "hint": "用以焦耳计的热量除以质量与温度变化的乘积。"
+     }
+    ],
+    "solution": "<em>c</em> = 0.451 J/g °C；这种金属很可能是铁"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm60138800",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "capacity",
+   "prompt": "燃烧的火柴和篝火可能温度相同，但在秋天的夜晚，你不会为了取暖而围坐在一根燃烧的火柴旁。为什么不会？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "1 克燃烧木材的温度，对火柴和篝火来说大致相同。这是强度性质，取决于材料（木材）。然而，产生的热量总量取决于材料的量；这是广度性质。篝火中的木材量比火柴中的多得多；产生的热量总量也大得多，这就是为什么我们可以围坐在篝火旁取暖，而一根火柴提供的热量不足以使我们免于受冷。"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp25217856",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "conservation",
+   "prompt": "编制一张表，列出汽车典型运行过程中发生的几种能量转换。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "沿着能量从油箱到道路的路径，可以得到这些转换。汽油在其分子中储存化学能，这是一种势能；燃烧时把这些能量以热量的形式释放出来，汽车将其中一部分用作机械能和电能，其余部分以热量的形式散失。<table><thead><tr><th>汽车中的过程</th><th>转换前的能量</th><th>转换后的能量</th></tr></thead><tbody><tr><td>启动：电池带动启动电机</td><td>化学能（电池）</td><td>电能，然后是动能（发动机转动）</td></tr><tr><td>汽油在气缸中燃烧</td><td>化学势能（燃料和氧气）</td><td>热能（炽热膨胀的气体）</td></tr><tr><td>膨胀的气体推动活塞</td><td>热能</td><td>动能（活塞、曲轴、车轮）</td></tr><tr><td>发动机带动交流发电机</td><td>动能</td><td>电能</td></tr><tr><td>交流发电机给电池充电</td><td>电能</td><td>化学势能</td></tr><tr><td>前照灯、收音机和风扇运转</td><td>电能</td><td>光、声、动能和热量</td></tr><tr><td>汽车爬坡</td><td>动能</td><td>重力势能</td></tr><tr><td>刹车使汽车停下</td><td>动能</td><td>热能（刹车中的摩擦）</td></tr><tr><td>排气和散热器带走废热</td><td>热能（热气体和发动机）</td><td>周围环境的热能</td></tr></tbody></table>"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm60216128",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "capacity",
+   "prompt": "解释一种物质的热容与比热容的区别。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "热容是指使一定质量的该物质的温度升高 1 度所需的热量；比热容是指使 1 克该物质的温度升高 1 度所需的热量。因此，热容是广度性质，比热容是强度性质。"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm11773136",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "capacity",
+   "prompt": "分别以焦耳每度和卡每度为单位，计算下列物质的热容：（a）45.8 g 氮气；（b）1.00 磅金属铝",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a) in J/°C",
+      "value": 47.6,
+      "unit": "J/°C",
+      "hint": "用表 5.1 中氮气的比热容乘以质量。"
+     },
+     {
+      "part": "(a) in cal/°C",
+      "value": 11.38,
+      "unit": "cal/°C",
+      "hint": "把焦耳数除以 4.184 J/cal。"
+     },
+     {
+      "part": "(b) in J/°C",
+      "value": 407,
+      "unit": "J/°C",
+      "hint": "1 磅为 453.6 g；乘以铝的比热容。"
+     },
+     {
+      "part": "(b) in cal/°C",
+      "value": 97.3,
+      "unit": "cal/°C",
+      "hint": "把焦耳数除以 4.184 J/cal。"
+     }
+    ],
+    "solution": "（a）47.6 J/°C；11.38 cal °C<sup>−1</sup>；（b）407 J/°C；97.3 cal °C<sup>−1</sup>"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idm34686800",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "heat-equation",
+   "prompt": "把一块 28.4 g（1 盎司）的冰块从 −23.0 °C 加热到 −1.0 °C，需要多少热量，分别以焦耳和卡表示？",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "in joules",
+      "value": 1310,
+      "unit": "J",
+      "hint": "使用表 5.1 中冰的比热容，温度变化为 22.0 °C。"
+     },
+     {
+      "part": "in calories",
+      "value": 313,
+      "unit": "cal",
+      "hint": "把焦耳数除以 4.184 J/cal。"
+     }
+    ],
+    "solution": "1310 J；313 cal"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idp13559760",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "heat-equation",
+   "prompt": "如果向 485 g 液态水加入 14.5 kJ 的热量，其温度会升高多少？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 7.15,
+    "unit": "°C",
+    "hint": "由 q = c × m × ΔT 解出 ΔT，其中 q 以焦耳计，c = 4.184 J/g °C。",
+    "solution": "7.15 °C"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp36064736",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "heat-equation",
+   "prompt": "一块未知固体物质重 437.2 g，需要 8460 J 才能使其温度从 19.3 °C 升高到 68.9 °C。（a）该物质的比热容是多少？（b）如果它是表 5.1 中的物质之一，它最可能是什么？",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 0.39,
+      "unit": "J/g °C",
+      "hint": "用热量除以质量与温度变化的乘积。"
+     }
+    ],
+    "solution": "（a）0.390 J/g °C；（b）很可能是铜。"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idp23764656",
+   "kind": "exercise",
+   "bloom": "Evaluate",
+   "place": {
+    "at": "end"
+   },
+   "cite": "heat-equation",
+   "prompt": "大多数人觉得水床很不舒服，除非水温保持在约 85 °F。如果不加热，装有 892 L 水的水床在 24 小时内会从 85 °F 冷却到 72 °F。估算 24 小时内为防止水床冷却所需的电能，以 kWh 计。注意 1 千瓦时（kWh）= 3.6 $\\times$ 10<sup>6</sup> J，并假设水的密度为 1.0 g/mL（与温度无关）。你还做了哪些假设？它们如何影响你计算出的结果（即它们可能产生“正”误差还是“负”误差）？",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "energy",
+      "value": 7.47,
+      "unit": "kWh",
+      "hint": "把温度变化换算成摄氏度，用 q = c × m × ΔT 求出热量，再除以 3.6 × 10<sup>6</sup> J/kWh。"
+     }
+    ],
+    "solution": "我们假设水的密度为 1.0 g/cm<sup>3</sup>（1 g/mL），并假设把水保持在 85 °F 所需的能量与把它从 72 °F 加热到 85 °F 所需的能量一样多。我们还假设只有水被加热。所需能量 = 7.47 kWh"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "heat-specific-heat-relation"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "heat-specific-heat-relation"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "heat-capacity-and-specific-heat",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e1",
+   "concept": "heat-capacity-and-specific-heat"
+  },
+  {
+   "exercise": "e1",
+   "concept": "thermal-energy-and-temperature",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e2",
+   "concept": "conservation-of-energy"
+  },
+  {
+   "exercise": "e2",
+   "concept": "potential-and-kinetic-energy",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "heat-capacity-and-specific-heat"
+  },
+  {
+   "exercise": "e4",
+   "concept": "heat-capacity-and-specific-heat"
+  },
+  {
+   "exercise": "e4",
+   "concept": "energy-units",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e5",
+   "concept": "heat-specific-heat-relation"
+  },
+  {
+   "exercise": "e5",
+   "concept": "energy-units",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e6",
+   "concept": "heat-specific-heat-relation"
+  },
+  {
+   "exercise": "e7",
+   "concept": "heat-specific-heat-relation"
+  },
+  {
+   "exercise": "e7",
+   "concept": "heat-capacity-and-specific-heat",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e8",
+   "concept": "heat-specific-heat-relation"
+  },
+  {
+   "exercise": "e8",
+   "concept": "energy-units",
+   "weight": 2,
+   "weights_by": "ai"
+  }
+ ],
+ "referents": [
+  {
+   "id": "sample-h",
+   "label": "样品 H，较热的水",
+   "figures": [
+    "sim-heat-flow"
+   ]
+  },
+  {
+   "id": "sample-l",
+   "label": "样品 L，较冷的水",
+   "figures": [
+    "sim-heat-flow"
+   ]
+  },
+  {
+   "id": "small-pan",
+   "label": "小铸铁煎锅",
+   "figures": [
+    "sim-heating"
+   ]
+  },
+  {
+   "id": "large-pan",
+   "label": "大铸铁煎锅",
+   "figures": [
+    "sim-heating"
+   ]
+  }
+ ]
+}

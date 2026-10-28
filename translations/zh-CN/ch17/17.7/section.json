@@ -1,0 +1,526 @@
+{
+  "id": "17.7",
+  "module": "m68827",
+  "chapter": "17",
+  "title": "电解",
+  "short": "电解",
+  "lead": "外部电源可以对氧化还原体系施加电压，驱动一个自身不会发生的反应。本节依次讲述熔融氯化钠、水和氯化钠水溶液的<span data-concept=\"electrolysis\">电解</span>，说明它在<span data-concept=\"electroplating\">电镀</span>中的应用，并根据<span data-concept=\"electric-current\">电流</span>和时间计算它所转移的电子的物质的量。",
+  "objectives": [
+    "描述电解的过程",
+    "比较电解池与原电池的工作原理",
+    "对电解过程进行化学计量计算"
+  ],
+  "summary_html": "<p>利用外部电源施加适当的电势，可以迫使非自发的氧化还原过程在<span data-concept=\"electrochemical-cell\">电化学池</span>中发生，这一过程称为<span data-concept=\"electrolysis\">电解</span>。<span data-concept=\"electrolysis\">电解</span>是某些矿石精炼过程、许多大宗化学品的工业生产，以及在各种产品上<span data-concept=\"electroplating\">电镀</span>金属镀层的基础。通过测量<span data-concept=\"electrolysis\">电解</span>过程中的<span data-concept=\"electric-current\">电流</span>，可以进行<span data-concept=\"electrolysis-stoichiometry\">化学计量计算</span>。</p>",
+  "notes": "本节没有任何内容被省略。无标题的开头部分带有我们自己加的标题“电解池”。例 17.10 中原文的“from a solution of containing”缺了一个词，无法在中文里照样保留，所以译为通顺的“由含有铬(III)离子的溶液”；定量部分中的“n mole of electrons”（单数）译为 n 摩尔电子，水中物种里“OH-”的连字符按印刷原样保留，开头部分中那个斜体的“electroplating”（其术语的注释对它作了定义）也按原样保留斜体。",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ]
+  },
+  "built": "2026-10-26",
+  "exercises_lead": "",
+  "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案来自书后答案和“学习检测”的答案。有五道没有给出答案的习题被略去，因为它们的答案需要自行算出：fs-idm330221280（2.5 A 电流通过 35 分钟的库仑数）、fs-idm324128112（同一情形下的电子数）、fs-idm27929184（四种熔融盐电解的半反应和电池反应）、fs-idp30601424（还原一摩尔四种离子所需的时间）和 fs-idm13758224（镀锌零件的表面积）。fs-idp30833248 指向被略去的 fs-idm27929184，所以它的题干重述了这四种熔融盐。没有任何内容被移动。",
+  "figures": [
+    {
+      "id": "sim-downs-cell",
+      "kind": "sim",
+      "number": "17.18",
+      "originals": [
+        "/media/ch17/CNX_Chem_17_07_NaCl.jpg"
+      ],
+      "original_caption": "这类电解槽（用于电解熔融氯化钠的电解槽）用于生产钠和氯的唐斯法，通常使用铁阴极和碳阳极。",
+      "draws": [],
+      "conventions": [
+        "Na",
+        "Cl",
+        "C",
+        "Fe",
+        "e-"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-water-electrolysis",
+      "kind": "sim",
+      "number": "17.19",
+      "originals": [
+        "/media/ch17/CNX_Chem_17_07_Water.jpg"
+      ],
+      "original_caption": "水的电解在阳极按化学计量的量产生氧气，在阴极产生氢气。",
+      "draws": [
+        "potential"
+      ],
+      "conventions": [
+        "O",
+        "H",
+        "Pt",
+        "e-"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-silver-plating",
+      "kind": "sim",
+      "number": "17.20",
+      "originals": [
+        "/media/ch17/CNX_Chem_17_07_Electroplate.jpg"
+      ],
+      "original_caption": "此示意图显示了用于给餐具镀银的电解池。",
+      "draws": [
+        "amount",
+        "current",
+        "time",
+        "charge",
+        "mass"
+      ],
+      "conventions": [
+        "Ag",
+        "e-"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    }
+  ],
+  "referents": [],
+  "coverage": [
+    {
+      "span": "electrolytic",
+      "concept": "electrolysis",
+      "verb": "introduces"
+    },
+    {
+      "span": "electrolytic",
+      "concept": "electrolytic-cell",
+      "verb": "introduces"
+    },
+    {
+      "span": "electrolytic",
+      "concept": "galvanic-cell",
+      "verb": "uses"
+    },
+    {
+      "span": "electrolytic",
+      "concept": "redox-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "electrolytic",
+      "concept": "spontaneous-process",
+      "verb": "uses"
+    },
+    {
+      "span": "electrolytic",
+      "concept": "secondary-cell",
+      "verb": "uses"
+    },
+    {
+      "span": "molten-nacl",
+      "concept": "driving-nonspontaneous-cell-reaction",
+      "verb": "introduces"
+    },
+    {
+      "span": "molten-nacl",
+      "concept": "cell-potential",
+      "verb": "uses"
+    },
+    {
+      "span": "molten-nacl",
+      "concept": "anode",
+      "verb": "uses"
+    },
+    {
+      "span": "molten-nacl",
+      "concept": "cathode",
+      "verb": "uses"
+    },
+    {
+      "span": "molten-nacl",
+      "concept": "half-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "water",
+      "concept": "driving-nonspontaneous-cell-reaction",
+      "verb": "reinforces"
+    },
+    {
+      "span": "water",
+      "concept": "standard-electrode-potential",
+      "verb": "uses"
+    },
+    {
+      "span": "water",
+      "concept": "standard-cell-potential",
+      "verb": "uses"
+    },
+    {
+      "span": "water",
+      "concept": "strong-acid",
+      "verb": "uses"
+    },
+    {
+      "span": "aqueous-nacl",
+      "concept": "electrolysis-of-aqueous-solutions",
+      "verb": "introduces"
+    },
+    {
+      "span": "aqueous-nacl",
+      "concept": "standard-electrode-potential",
+      "verb": "uses"
+    },
+    {
+      "span": "aqueous-nacl",
+      "concept": "standard-cell-potential",
+      "verb": "uses"
+    },
+    {
+      "span": "aqueous-nacl",
+      "concept": "oxidation",
+      "verb": "uses"
+    },
+    {
+      "span": "aqueous-nacl",
+      "concept": "reduction",
+      "verb": "uses"
+    },
+    {
+      "span": "electroplating",
+      "concept": "electroplating",
+      "verb": "introduces"
+    },
+    {
+      "span": "electroplating",
+      "concept": "electrolytic-cell",
+      "verb": "uses"
+    },
+    {
+      "span": "electroplating",
+      "concept": "anode",
+      "verb": "uses"
+    },
+    {
+      "span": "electroplating",
+      "concept": "cathode",
+      "verb": "uses"
+    },
+    {
+      "span": "electroplating",
+      "concept": "oxidation",
+      "verb": "uses"
+    },
+    {
+      "span": "electroplating",
+      "concept": "reduction",
+      "verb": "uses"
+    },
+    {
+      "span": "quantitative",
+      "concept": "electric-current",
+      "verb": "introduces"
+    },
+    {
+      "span": "quantitative",
+      "concept": "charge-and-moles-of-electrons",
+      "verb": "introduces"
+    },
+    {
+      "span": "quantitative",
+      "concept": "electrolysis-stoichiometry",
+      "verb": "introduces"
+    },
+    {
+      "span": "quantitative",
+      "concept": "faradays-constant",
+      "verb": "uses"
+    },
+    {
+      "span": "quantitative",
+      "concept": "half-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "quantitative",
+      "concept": "time",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-current-moles",
+      "concept": "electrolysis-stoichiometry",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-current-moles",
+      "concept": "charge-and-moles-of-electrons",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-current-moles",
+      "concept": "electric-current",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-current-moles",
+      "concept": "faradays-constant",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-current-moles",
+      "concept": "molar-mass",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-current-moles",
+      "concept": "mole",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-deposition-time",
+      "concept": "electrolysis-stoichiometry",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-deposition-time",
+      "concept": "electric-current",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-deposition-time",
+      "concept": "density",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-deposition-time",
+      "concept": "volume",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-deposition-time",
+      "concept": "molar-mass",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idm34493360",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-current-moles"
+      },
+      "cite": "ex-current-moles",
+      "prompt": "金属铝可以由铝(III)离子经电解制得。阴极上的半反应是什么？如果 25.0 A 的电流通过溶液 15.0 分钟，可回收多少质量的金属铝？",
+      "answer": {
+        "type": "number",
+        "part": "mass of aluminum metal recovered",
+        "value": 2.1,
+        "unit": "g",
+        "hint": "每个 Al<sup>3+</sup> 离子得到三个电子，所以铝的物质的量是 <em>It</em>/<em>F</em> 的三分之一。",
+        "generated_by": "source",
+        "solution": "${\\text{Al}}^{3+}(aq)+3\\;{\\text{e}}^{\\text{−}}\\;\\longrightarrow \\;\\text{Al}(s)$；0.0777 mol Al = 2.10 g Al。"
+      }
+    },
+    {
+      "id": "cyl2",
+      "source_id": "fs-idm33432704",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-deposition-time"
+      },
+      "cite": "ex-deposition-time",
+      "prompt": "给一块 3.00 m × 5.50 m 铁板的上表面镀锌，锌层厚 0.100 mm，需要多少质量的锌？如果锌来自 Zn(NO<sub>3</sub>)<sub>2</sub> 溶液，电流为 25.5 A，那么给这块铁板的上表面镀锌需要多长时间？锌的密度为 7.140 g/cm<sup>3</sup>。",
+      "answer": {
+        "type": "multi",
+        "parts": [
+          {
+            "part": "mass of zinc",
+            "value": 11.8,
+            "unit": "kg",
+            "hint": "锌的体积等于上表面的面积乘以厚度；再由其密度求出质量。"
+          },
+          {
+            "part": "time",
+            "value": 379,
+            "unit": "hr",
+            "hint": "每个 Zn<sup>2+</sup> 离子得到两个电子；<em>t</em> = <em>Q</em>/<em>I</em>。"
+          }
+        ],
+        "generated_by": "source",
+        "solution": "11.8 kg Zn 需要 379 小时。"
+      }
+    },
+    {
+      "id": "e46",
+      "source_id": "fs-idp30833248",
+      "source_number": "46",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "quantitative",
+      "prompt": "如果总电荷 3.33 × 10<sup>5</sup> C 通过上一题中的每个电解池，每个电解池中各生成多少质量的每种产物？上一题电解的熔融盐是：（a）CaCl<sub>2</sub>，（b）LiH，（c）AlCl<sub>3</sub>，（d）CrBr<sub>3</sub>。",
+      "answer": {
+        "type": "multi",
+        "parts": [
+          {
+            "part": "(a) mass Ca",
+            "value": 69.1,
+            "unit": "g"
+          },
+          {
+            "part": "(a) mass Cl<sub>2</sub>",
+            "value": 122,
+            "unit": "g"
+          },
+          {
+            "part": "(b) mass Li",
+            "value": 23.9,
+            "unit": "g"
+          },
+          {
+            "part": "(b) mass H<sub>2</sub>",
+            "value": 3.48,
+            "unit": "g"
+          },
+          {
+            "part": "(c) mass Al",
+            "value": 31.0,
+            "unit": "g"
+          },
+          {
+            "part": "(c) mass Cl<sub>2</sub>",
+            "value": 122,
+            "unit": "g"
+          },
+          {
+            "part": "(d) mass Cr",
+            "value": 59.8,
+            "unit": "g"
+          },
+          {
+            "part": "(d) mass Br<sub>2</sub>",
+            "value": 276,
+            "unit": "g"
+          }
+        ],
+        "generated_by": "source",
+        "solution": "（a）Ca 的质量 = 69.1 g，Cl<sub>2</sub> 的质量 = 122 g；（b）Li 的质量 = 23.9 g，H<sub>2</sub> 的质量 = 3.48 g；（c）Al 的质量 = 31.0 g，Cl<sub>2</sub> 的质量 = 122 g；（d）Cr 的质量 = 59.8 g，Br<sub>2</sub> 的质量 = 276 g"
+      }
+    },
+    {
+      "id": "e48",
+      "source_id": "fs-idm171259104",
+      "source_number": "48",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "quantitative",
+      "figure": {
+        "src": "/media/ch17/CNX_Chem_17_07_Water.jpg",
+        "alt": "该图显示了一种用于电解的装置。中央是一个顶部开口的腔室，下方延伸出一根竖直的柱，柱中几乎充满无色透明的液体，标注为“H₂O + H₂SO₄”。装置中的一根水平管把中央区域与左右两侧的竖直柱连通，每根竖直柱顶部有一个阀门或旋塞，底部有塞子。装置两侧液体表面附近都有气泡，左侧气泡标注为“O₂(g)”，右侧气泡标注为“H₂(g)”。",
+        "caption": "Figure 17.19 水的电解在阳极按化学计量的量产生氧气，在阴极产生氢气。"
+      },
+      "prompt": "45 分钟内有 2.345 A 的电流通过图 17.19 所示的电解池。如果压强恰好为 1 atm，在室温下收集到的氢气体积是多少？（提示：水面上方的气体只有氢气吗？）",
+      "answer": {
+        "type": "number",
+        "value": 0.79,
+        "unit": "L",
+        "generated_by": "source",
+        "solution": "0.79 L"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "electrolysis-stoichiometry"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "charge-and-moles-of-electrons"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "half-reaction"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "electrolysis-stoichiometry"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "electroplating"
+    },
+    {
+      "exercise": "e46",
+      "concept": "electrolysis-stoichiometry"
+    },
+    {
+      "exercise": "e46",
+      "concept": "charge-and-moles-of-electrons"
+    },
+    {
+      "exercise": "e48",
+      "concept": "electrolysis-stoichiometry"
+    },
+    {
+      "exercise": "e48",
+      "concept": "electric-current"
+    }
+  ]
+}

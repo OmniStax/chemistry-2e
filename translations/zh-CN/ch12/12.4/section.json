@@ -1,0 +1,896 @@
+{
+  "id": "12.4",
+  "module": "m68791",
+  "chapter": "12",
+  "title": "积分速率定律",
+  "short": "积分速率定律",
+  "lead": "对速率定律积分，就得到一个方程，说明反应物的<span data-concept=\"concentration\">浓度</span>如何随<span data-concept=\"time\">时间</span>变化。本节写出一级、二级和零级反应的这些积分速率定律，由反应的数据图读出反应的级数和<span data-concept=\"rate-constant\">速率常数</span>，并定义反应的<span data-concept=\"half-life\">半衰期</span>。",
+  "objectives": [
+    "说明积分速率定律的形式和作用",
+    "对零级、一级和二级反应进行积分速率定律的计算",
+    "定义半衰期并进行相关计算",
+    "由浓度/时间数据确定反应的级数"
+  ],
+  "summary_html": "<p>积分速率定律由微分速率定律经数学推导得出，它们描述反应物和产物的<span data-concept=\"concentration\">浓度</span>对<span data-concept=\"time\">时间</span>的依赖关系。</p><p>反应的<span data-concept=\"half-life\">半衰期</span>是使给定反应物的量减少一半所需的<span data-concept=\"time\">时间</span>。反应的<span data-concept=\"half-life\">半衰期</span>随<span data-concept=\"rate-constant\">速率常数</span>而变化，对某些反应级数，还随反应物的<span data-concept=\"concentration\">浓度</span>而变化。零级反应的<span data-concept=\"half-life\">半衰期</span>随反应中反应物的初始<span data-concept=\"concentration\">浓度</span>降低而缩短。一级反应的<span data-concept=\"half-life\">半衰期</span>与<span data-concept=\"concentration\">浓度</span>无关，二级反应的<span data-concept=\"half-life\">半衰期</span>随<span data-concept=\"concentration\">浓度</span>增大而缩短。</p>",
+  "notes": "本节没有任何内容被略去；例 12.8 保留了书中用 “1/0.200 mol⁻¹” 表示 1/(0.200 mol L⁻¹) 的印刷形式。",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ]
+  },
+  "built": "2026-10-26",
+  "exercises_lead": "",
+  "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案来自书中的答案表和“学习检测”的答案；答案表中印出的图和表按原样保留在答案里。八道没有答案的数值习题被略去，也没有为它们算出答案：fs-idm81797520、fs-idp123052496、fs-idm71090800、fs-idm82644240、fs-idm22532944、fs-idm45932336、fs-idp120051200、fs-idm43018880。没有答案的概念性习题 fs-idp11885680 带有一个建议的解题思路，标明为 OmniStax 自己所加。由图读出的速率常数接受 5% 的容差，例 12.12 的“学习检测”中的 18 min 接受 3%；其他数值答案接受 2%。",
+  "figures": [
+    {
+      "id": "sim-order-plots",
+      "kind": "sim",
+      "number": "12.9",
+      "folds": [
+        "12.10",
+        "12.11"
+      ],
+      "originals": [
+        "/media/ch12/CNX_Chem_12_04_FrstOKin.jpg",
+        "/media/ch12/CNX_Chem_12_04_2OrdKin.jpg",
+        "/media/ch12/CNX_Chem_12_04_AmDecomK.jpg"
+      ],
+      "original_caption": "（图 12.9）ln[H₂O₂] 与时间之间的线性关系表明，过氧化氢的分解是一级反应。（图 12.10）这两幅图分别是 C₄H₆ 二聚反应的一级图和二级图。二级图（右）中的线性趋势表明，该反应遵循二级动力学。（图 12.11）NH₃ 在钨（W）表面上的分解是零级反应，而在石英（SiO₂）表面上，该反应是一级反应。",
+      "draws": [
+        "concentration",
+        "time",
+        "rate-constant"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-half-lives",
+      "kind": "sim",
+      "number": "12.12",
+      "originals": [
+        "/media/ch12/CNX_Chem_12_04_HPerDcmp.jpg"
+      ],
+      "original_caption": "图示 H₂O₂ 在 40 °C 下的分解（2H₂O₂ ⟶ 2H₂O + O₂）。颜色的深浅表示 H₂O₂ 在所标时刻的浓度；H₂O₂ 实际上是无色的。",
+      "draws": [
+        "concentration",
+        "time",
+        "rate-constant"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "span": "integrated",
+      "concept": "integrated-rate-laws",
+      "verb": "introduces"
+    },
+    {
+      "span": "integrated",
+      "concept": "rate-law",
+      "verb": "uses"
+    },
+    {
+      "span": "first-order",
+      "concept": "first-order-integrated-rate-law",
+      "verb": "introduces"
+    },
+    {
+      "span": "first-order",
+      "concept": "integrated-rate-law-calculations",
+      "verb": "introduces"
+    },
+    {
+      "span": "first-order",
+      "concept": "order-from-linear-plots",
+      "verb": "introduces"
+    },
+    {
+      "span": "first-order",
+      "concept": "rate-constant",
+      "verb": "uses"
+    },
+    {
+      "span": "first-order",
+      "concept": "reaction-order",
+      "verb": "uses"
+    },
+    {
+      "span": "second-order",
+      "concept": "second-order-integrated-rate-law",
+      "verb": "introduces"
+    },
+    {
+      "span": "second-order",
+      "concept": "order-from-linear-plots",
+      "verb": "uses"
+    },
+    {
+      "span": "second-order",
+      "concept": "integrated-rate-law-calculations",
+      "verb": "uses"
+    },
+    {
+      "span": "zero-order",
+      "concept": "zero-order-integrated-rate-law",
+      "verb": "introduces"
+    },
+    {
+      "span": "zero-order",
+      "concept": "order-from-linear-plots",
+      "verb": "uses"
+    },
+    {
+      "span": "zero-order",
+      "concept": "rate-constant",
+      "verb": "uses"
+    },
+    {
+      "span": "half-life",
+      "concept": "half-life",
+      "verb": "introduces"
+    },
+    {
+      "span": "half-life",
+      "concept": "half-life-by-order",
+      "verb": "introduces"
+    },
+    {
+      "span": "half-life",
+      "concept": "first-order-integrated-rate-law",
+      "verb": "uses"
+    },
+    {
+      "span": "half-life",
+      "concept": "second-order-integrated-rate-law",
+      "verb": "uses"
+    },
+    {
+      "span": "half-life",
+      "concept": "zero-order-integrated-rate-law",
+      "verb": "uses"
+    },
+    {
+      "span": "half-life",
+      "concept": "integrated-rate-law-calculations",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idm148528000",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-first-order"
+      },
+      "cite": "first-order",
+      "prompt": "碘-131 是一种放射性同位素，用于诊断和治疗某些形式的甲状腺癌。碘-131 按下式衰变为氙-131：<br>I-131 ⟶ Xe-131 + 电子<br>该衰变是一级的，速率常数为 0.138 d<sup>−1</sup>。在 0.500 <em>M</em> 的这种物质溶液中，90% 的碘-131 衰变为 Xe-131 需要多少天？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 16.7,
+        "unit": "d",
+        "hint": "衰变 90% 后剩下 10%，所以 ln([A]<sub>0</sub>/[A]<sub><em>t</em></sub>) = ln 10；再除以 <em>k</em>。",
+        "solution": "16.7 天"
+      }
+    },
+    {
+      "id": "cyl2",
+      "source_id": "fs-idp35909968",
+      "kind": "check-your-learning",
+      "bloom": "Analyze",
+      "place": {
+        "at": "inline",
+        "after": "ex-plot-first"
+      },
+      "cite": "first-order",
+      "prompt": "画出下列数据的图，判断反应 <em>A</em> ⟶ <em>B</em> + <em>C</em> 是否为一级。<table><thead><tr><th>时间（s）</th><th>[<em>A</em>]</th></tr></thead><tbody><tr><td>4.0</td><td>0.220</td></tr><tr><td>8.0</td><td>0.144</td></tr><tr><td>12.0</td><td>0.110</td></tr><tr><td>16.0</td><td>0.088</td></tr><tr><td>20.0</td><td>0.074</td></tr></tbody></table>",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "ln[<em>A</em>]<sub><em>t</em></sub> 对 <em>t</em> 的图不是线性的，表明该反应不是一级：<br><img src=\"/media/ch12/CNX_Chem_12_04_CYL1_img.jpg\" alt=\"一幅题为“ln[A] 对时间”的图，x 轴为时间，单位为秒，在 5、10、15、20 和 25 处有标记，y 轴为 ln[A]，在 −3、−2、−1 和 0 处有标记。一条略有弯曲的曲线连接五个点，约为 (4, −1.5)、(8, −2)、(12, −2.2)、(16, −2.4) 和 (20, −2.6)。\"><br>"
+      }
+    },
+    {
+      "id": "cyl3",
+      "source_id": "fs-idm85213520",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-second-order"
+      },
+      "cite": "second-order",
+      "prompt": "如果丁二烯的初始浓度为 0.0200 <em>M</em>，20.0 min 后剩余的浓度是多少？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 0.0195,
+        "unit": "mol/L",
+        "tol": 0.005,
+        "hint": "用 1/[<em>A</em>]<sub><em>t</em></sub> = <em>kt</em> + 1/[<em>A</em>]<sub>0</sub>，其中 <em>k</em> = 5.76 × 10<sup>−2</sup> L mol<sup>−1</sup> min<sup>−1</sup>。",
+        "solution": "0.0195 mol/L"
+      }
+    },
+    {
+      "id": "cyl4",
+      "source_id": "fs-idp69093472",
+      "kind": "check-your-learning",
+      "bloom": "Analyze",
+      "place": {
+        "at": "inline",
+        "after": "ex-plot-second"
+      },
+      "cite": "second-order",
+      "prompt": "下列数据是否符合二级速率定律？<table><thead><tr><th>时间（s）</th><th>[<em>A</em>] (<em>M</em>)</th></tr></thead><tbody><tr><td>5</td><td>0.952</td></tr><tr><td>10</td><td>0.625</td></tr><tr><td>15</td><td>0.465</td></tr><tr><td>20</td><td>0.370</td></tr><tr><td>25</td><td>0.308</td></tr><tr><td>35</td><td>0.230</td></tr></tbody></table>",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "符合。1/[<em>A</em>]<sub><em>t</em></sub> 对 <em>t</em> 的图是线性的：<br><img src=\"/media/ch12/CNX_Chem_12_04_CYL2_img.jpg\" alt=\"一幅题为“1 除以 [A] 对时间”的图，x 轴为时间，单位为秒，从 0 到 40 每 10 标记一次，y 轴为 1 除以 [A]，从 0 到 5 每 1 标记一次。一条上升的直线穿过六个点，约为 (4, 1)、(10, 1.5)、(15, 2.2)、(20, 2.8)、(26, 3.4) 和 (36, 4.4)。\"><br>"
+      }
+    },
+    {
+      "id": "cyl5",
+      "source_id": "fs-idm339943456",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-zero-order"
+      },
+      "cite": "zero-order",
+      "prompt": "图 12.11 中的零级图显示，氨的初始浓度 0.0028 mol L<sup>−1</sup> 在 1000 s 内随时间线性下降。假定这种零级行为不变，浓度在什么时间（min）会达到 0.0001 mol L<sup>−1</sup>？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 35,
+        "unit": "min",
+        "hint": "以 <em>k</em> = 1.3 × 10<sup>−6</sup> mol L<sup>−1</sup> s<sup>−1</sup> 对 <em>t</em> 求解 [<em>A</em>]<sub><em>t</em></sub> = −<em>kt</em> + [<em>A</em>]<sub>0</sub>，再把秒换算成分钟。",
+        "solution": "35 min"
+      }
+    },
+    {
+      "id": "cyl6",
+      "source_id": "fs-idm35443680",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-half-life-first"
+      },
+      "cite": "half-life",
+      "prompt": "碘-131 的一级放射性衰变的速率常数为 0.138 d<sup>−1</sup>。这一衰变的半衰期是多少？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 5.02,
+        "unit": "d",
+        "hint": "对一级反应，<em>t</em><sub>1/2</sub> = 0.693/<em>k</em>。",
+        "solution": "5.02 d。"
+      }
+    },
+    {
+      "id": "cyl7",
+      "source_id": "fs-idm494886672",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-half-life-others"
+      },
+      "cite": "half-life",
+      "prompt": "氨在钨上热分解的半衰期（min）是多少（见例 12.10）？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 18,
+        "unit": "min",
+        "tol": 0.03,
+        "hint": "该反应是零级的，所以 <em>t</em><sub>1/2</sub> = [<em>A</em>]<sub>0</sub>/2<em>k</em>，其中 [<em>A</em>]<sub>0</sub> = 0.0028 mol L<sup>−1</sup>，<em>k</em> = 1.3 × 10<sup>−6</sup> mol L<sup>−1</sup> s<sup>−1</sup>。",
+        "solution": "18 min"
+      }
+    },
+    {
+      "id": "e1",
+      "source_id": "fs-idp11885680",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "first-order",
+      "prompt": "说明如何利用图解法，由一系列包含 <em>A</em> 在不同时间的浓度的数据，确定反应的级数及其速率常数。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "级数是这样一种：按其积分速率定律作图时，数据落在一条直线上；速率常数则由这条直线的斜率得出。由数据算出每个时间的 ln[<em>A</em>] 和 1/[<em>A</em>]，再分别画出 [<em>A</em>]、ln[<em>A</em>] 和 1/[<em>A</em>] 对 <em>t</em> 的图。每个积分速率定律对这些图中的某一幅都具有 <em>y</em> = <em>mx</em> + <em>b</em> 的形式：零级反应是 $\\kconcAt=-\\kk\\kt+\\kconcAz$，一级反应是 $\\ln\\kconcAt=(-\\kk)(\\kt)+\\ln\\kconcAz$，二级反应是 $\\frac{1}{\\kconcAt}=\\kk\\kt+\\frac{1}{\\kconcAz}$。三幅图中只有一幅是线性的，它就给出级数：[<em>A</em>] 对 <em>t</em> 为零级，ln[<em>A</em>] 对 <em>t</em> 为一级，1/[<em>A</em>] 对 <em>t</em> 为二级。这条直线的斜率（取直线上相距较远的两点读出）给出速率常数：零级和一级的斜率是 $-\\kk$，所以 $\\kk$ 是斜率的相反数；二级的斜率就是 $\\kk$ 本身。"
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idp145037952",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "first-order",
+      "prompt": "利用所给数据，以图解方式确定下列反应的级数和速率常数：SO<sub>2</sub>Cl<sub>2</sub> ⟶ SO<sub>2</sub> + Cl<sub>2</sub><table><tbody><tr><th>时间（s）</th><td>0</td><td>5.00 × 10<sup>3</sup></td><td>1.00 × 10<sup>4</sup></td><td>1.50 × 10<sup>4</sup></td></tr><tr><th>[SO<sub>2</sub>Cl<sub>2</sub>] (<em>M</em>)</th><td>0.100</td><td>0.0896</td><td>0.0802</td><td>0.0719</td></tr><tr><th>时间（s）</th><td>2.50 × 10<sup>4</sup></td><td>3.00 × 10<sup>4</sup></td><td>4.00 × 10<sup>4</sup></td><td></td></tr><tr><th>[SO<sub>2</sub>Cl<sub>2</sub>] (<em>M</em>)</th><td>0.0577</td><td>0.0517</td><td>0.0415</td><td></td></tr></tbody></table>",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "order",
+            "value": 1,
+            "hint": "画出 ln[SO<sub>2</sub>Cl<sub>2</sub>] 和 1/[SO<sub>2</sub>Cl<sub>2</sub>] 对时间的图，看哪一个是直线。"
+          },
+          {
+            "part": "<em>k</em>",
+            "value": 2.2e-05,
+            "unit": "s⁻¹",
+            "tol": 0.05,
+            "hint": "速率常数是那条直线斜率的相反数。"
+          }
+        ],
+        "solution": "画出 ln[SO<sub>2</sub>Cl<sub>2</sub>] 对 <em>t</em> 的图，显示出线性趋势；因此可知这是一级反应：<br><img src=\"/media/ch12/CNX_Chem_12_04_Exercise02_img.jpg\" alt=\"一幅图，x 轴为时间，单位为秒，从 0 到 4.00 乘以 10 的 4 次方，每 1.00 乘以 10 的 4 次方标记一次，y 轴为 ln[SO2Cl2]，从 −3.5 到 −2.5 标记。一条下降的直线穿过七个点，从约 (0, −2.3) 到 (3.0 乘以 10 的 4 次方, −3.2)。\"><br><em>k</em> = 2.20 × 10<sup>–5</sup> s<sup>−1</sup>"
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idp27819360",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "second-order",
+      "prompt": "纯臭氧缓慢分解为氧气，2O<sub>3</sub>(<em>g</em>) ⟶ 3O<sub>2</sub>(<em>g</em>)。用所给数据，通过图解法确定该反应的级数和速率常数。<table><tbody><tr><th>时间（h）</th><td>0</td><td>2.0 × 10<sup>3</sup></td><td>7.6 × 10<sup>3</sup></td><td>1.00 × 10<sup>4</sup></td></tr><tr><th>[O<sub>3</sub>] (<em>M</em>)</th><td>1.00 × 10<sup>−5</sup></td><td>4.98 × 10<sup>−6</sup></td><td>2.07 × 10<sup>−6</sup></td><td>1.66 × 10<sup>−6</sup></td></tr><tr><th>时间（h）</th><td>1.23 × 10<sup>4</sup></td><td>1.43 × 10<sup>4</sup></td><td>1.70 × 10<sup>4</sup></td><td></td></tr><tr><th>[O<sub>3</sub>] (<em>M</em>)</th><td>1.39 × 10<sup>−6</sup></td><td>1.22 × 10<sup>−6</sup></td><td>1.05 × 10<sup>−6</sup></td><td></td></tr></tbody></table>",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "order",
+            "value": 2,
+            "hint": "试画出 ln[O<sub>3</sub>] 和 1/[O<sub>3</sub>] 对时间的图；其中一个是直线。"
+          },
+          {
+            "part": "<em>k</em>",
+            "value": 50.1,
+            "unit": "L mol⁻¹ h⁻¹",
+            "tol": 0.05,
+            "hint": "对二级反应，速率常数是 1/[O<sub>3</sub>] 图的斜率。"
+          }
+        ],
+        "solution": "<br><img src=\"/media/ch12/CNX_Chem_12_04_Exercise04_img_new.jpg\" alt=\"一幅图，x 轴为 t，单位为小时，在 0、2 000、6 000、10 000、14 000 和 18 000 处有标记，y 轴为 1 除以 [O3]，从 0 到 9 每 1 标记一次。一条上升的直线穿过七个点，从 (0, 1.00) 到 (1.70 乘以 10 的 4 次方, 9.52)；直线上画有一个直角三角形，其水平直角边标为 Δt，竖直直角边标为 Δ(1/[O3])。\"><br>图线的线性很好，所以该反应是二级反应。<em>k</em> = 50.1 L mol<sup>−1</sup> h<sup>−1</sup>"
+      }
+    },
+    {
+      "id": "e5",
+      "source_id": "fs-idm81821952",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "half-life",
+      "prompt": "磷-32 一级衰变的半衰期是多少？（<sup>32</sup><sub>15</sub>P ⟶ <sup>32</sup><sub>16</sub>S + e<sup>−</sup>）该衰变的速率常数为 4.85 × 10<sup>−2</sup> 天<sup>−1</sup>。",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 14.3,
+        "unit": "d",
+        "hint": "对一级衰变，<em>t</em><sub>1/2</sub> = 0.693/<em>k</em>。",
+        "solution": "14.3 d"
+      }
+    },
+    {
+      "id": "e7",
+      "source_id": "fs-idm86787888",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "half-life",
+      "prompt": "NOCl 的浓度为 0.15 <em>M</em> 时，NOCl 分解的半衰期是多少？这个二级反应的速率常数为 8.0 × 10<sup>−8</sup> L mol<sup>−1</sup> s<sup>−1</sup>。",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 83000000.0,
+        "unit": "s",
+        "hint": "对二级反应，<em>t</em><sub>1/2</sub> = 1/(<em>k</em>[<em>A</em>]<sub>0</sub>)。",
+        "solution": "8.3 × 10<sup>7</sup> s"
+      }
+    },
+    {
+      "id": "e9",
+      "source_id": "fs-idm110943344",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "half-life",
+      "prompt": "化合物 <em>A</em> 反应生成化合物 <em>C</em> 和 <em>D</em>，发现该反应对 <em>A</em> 是二级的。测得该反应的速率常数为 2.42 L mol<sup>−1</sup> s<sup>−1</sup>。如果初始浓度为 0.500 mol/L，t<sub>1/2</sub> 的值是多少？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 0.826,
+        "unit": "s",
+        "hint": "对二级反应，<em>t</em><sub>1/2</sub> = 1/(<em>k</em>[<em>A</em>]<sub>0</sub>)。",
+        "solution": "0.826 s"
+      }
+    },
+    {
+      "id": "e11",
+      "source_id": "fs-idp55838576",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "first-order",
+      "prompt": "有些细菌对抗生素青霉素有抗药性，因为它们产生青霉素酶，这是一种分子量为 3 × 10<sup>4</sup> g/mol 的酶，能把青霉素转变为无活性的分子。尽管酶催化反应的动力学可能很复杂，但在低浓度下，这个反应可以用对催化剂（青霉素酶）为一级、同时还涉及青霉素浓度的速率定律来描述。由下列数据：1.0 L 溶液中含 0.15 µg（0.15 × 10<sup>−6</sup> g）青霉素酶，确定反应对青霉素的级数和速率常数的值。<table><thead><tr><th>[青霉素] (<em>M</em>)</th><th>速率（mol L<sup>−1</sup> min<sup>−1</sup>）</th></tr></thead><tbody><tr><td>2.0 × 10<sup>−6</sup></td><td>1.0 × 10<sup>−10</sup></td></tr><tr><td>3.0 × 10<sup>−6</sup></td><td>1.5 × 10<sup>−10</sup></td></tr><tr><td>4.0 × 10<sup>−6</sup></td><td>2.0 × 10<sup>−10</sup></td></tr></tbody></table>",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "order in penicillin",
+            "value": 1,
+            "hint": "比较青霉素浓度加倍时速率如何变化。"
+          },
+          {
+            "part": "<em>k</em>",
+            "value": 10000000.0,
+            "unit": "L mol⁻¹ min⁻¹",
+            "tol": 0.05,
+            "hint": "速率定律是速率 = <em>k</em>[青霉素酶][青霉素]；由青霉素酶的质量和分子量求出其物质的量浓度。"
+          }
+        ],
+        "solution": "该反应是一级的。<em>k</em> = 1.0 × 10<sup>7</sup> L mol<sup>−1</sup> min<sup>−1</sup>"
+      }
+    },
+    {
+      "id": "e13",
+      "source_id": "fs-idm84405632",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "half-life",
+      "prompt": "分子式为 C<sub>3</sub>H<sub>6</sub> 的分子有两种。丙烯 CH<sub>3</sub>CH=CH<sub>2</sub> 是聚丙烯的单体，聚丙烯用于室内外两用地毯。环丙烷用作麻醉剂：<br><img src=\"/media/ch12/CNX_Chem_12_04_Cycloprop_img.jpg\" alt=\"环丙烷的结构式：三个 CH2 基团位于等边三角形的顶点，以单键相连。\"><br>加热到 499 °C 时，环丙烷发生重排（异构化），生成丙烯，速率常数为 5.95 × 10<sup>−4</sup> s<sup>−1</sup>。这个反应的半衰期是多少？在 499 °C 下经过 0.75 h，环丙烷还剩下多大比例？",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "half-life",
+            "value": 1160,
+            "unit": "s",
+            "hint": "该反应是一级的，所以 <em>t</em><sub>1/2</sub> = 0.693/<em>k</em>。"
+          },
+          {
+            "part": "cyclopropane remaining",
+            "value": 20,
+            "unit": "%",
+            "tol": 0.03,
+            "hint": "把 0.75 h 换算成秒，再用 [<em>A</em>]<sub><em>t</em></sub>/[<em>A</em>]<sub>0</sub> = <em>e</em><sup>−<em>kt</em></sup>。"
+          }
+        ],
+        "solution": "1.16 × 10<sup>3</sup> s；剩下 20%"
+      }
+    },
+    {
+      "id": "e15",
+      "source_id": "fs-idp89138768",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "half-life",
+      "prompt": "假定运动员服用的类固醇的半衰期为 42 天。假设类固醇按一级过程生物降解，要经过多长时间，运动员体内才会剩下初始剂量的 1/64？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 252,
+        "unit": "days",
+        "hint": "六十四分之一就是二分之一自乘六次。",
+        "solution": "252 天"
+      }
+    },
+    {
+      "id": "e17",
+      "source_id": "fs-idp157675232",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "first-order",
+      "prompt": "硝化甘油是一种极其敏感的炸药。在一系列精心控制的实验中，把炸药样品加热到 160 °C，研究其一级分解。利用下列数据，确定每次实验的平均速率常数：<table><tbody><tr><th>初始 [C<sub>3</sub>H<sub>5</sub>N<sub>3</sub>O<sub>9</sub>] (<em>M</em>)</th><td>4.88</td><td>3.52</td><td>2.29</td><td>1.81</td><td>5.33</td><td>4.05</td><td>2.95</td><td>1.72</td></tr><tr><th><em>t</em> (s)</th><td>300</td><td>300</td><td>300</td><td>300</td><td>180</td><td>180</td><td>180</td><td>180</td></tr><tr><th>分解的百分数</th><td>52.0</td><td>52.9</td><td>53.2</td><td>53.9</td><td>34.6</td><td>35.9</td><td>36.0</td><td>35.4</td></tr></tbody></table>",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "<table><thead><tr><th>[<em>A</em>]<sub>0</sub> (<em>M</em>)</th><th><em>k</em> × 10<sup>3</sup> (s<sup>−1</sup>)</th></tr></thead><tbody><tr><td>4.88</td><td>2.45</td></tr><tr><td>3.52</td><td>2.51</td></tr><tr><td>2.29</td><td>2.53</td></tr><tr><td>1.81</td><td>2.58</td></tr><tr><td>5.33</td><td>2.36</td></tr><tr><td>4.05</td><td>2.47</td></tr><tr><td>2.95</td><td>2.48</td></tr><tr><td>1.72</td><td>2.43</td></tr></tbody></table>"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "first-order-integrated-rate-law"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "integrated-rate-law-calculations"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "order-from-linear-plots"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "first-order-integrated-rate-law"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "second-order-integrated-rate-law"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "integrated-rate-law-calculations"
+    },
+    {
+      "exercise": "cyl4",
+      "concept": "order-from-linear-plots"
+    },
+    {
+      "exercise": "cyl4",
+      "concept": "second-order-integrated-rate-law"
+    },
+    {
+      "exercise": "cyl5",
+      "concept": "zero-order-integrated-rate-law"
+    },
+    {
+      "exercise": "cyl5",
+      "concept": "integrated-rate-law-calculations"
+    },
+    {
+      "exercise": "cyl6",
+      "concept": "half-life-by-order"
+    },
+    {
+      "exercise": "cyl6",
+      "concept": "half-life"
+    },
+    {
+      "exercise": "cyl7",
+      "concept": "half-life-by-order"
+    },
+    {
+      "exercise": "cyl7",
+      "concept": "zero-order-integrated-rate-law"
+    },
+    {
+      "exercise": "e1",
+      "concept": "order-from-linear-plots"
+    },
+    {
+      "exercise": "e2",
+      "concept": "order-from-linear-plots"
+    },
+    {
+      "exercise": "e2",
+      "concept": "first-order-integrated-rate-law"
+    },
+    {
+      "exercise": "e3",
+      "concept": "order-from-linear-plots"
+    },
+    {
+      "exercise": "e3",
+      "concept": "second-order-integrated-rate-law"
+    },
+    {
+      "exercise": "e5",
+      "concept": "half-life-by-order"
+    },
+    {
+      "exercise": "e7",
+      "concept": "half-life-by-order"
+    },
+    {
+      "exercise": "e9",
+      "concept": "half-life-by-order"
+    },
+    {
+      "exercise": "e11",
+      "concept": "method-of-initial-rates"
+    },
+    {
+      "exercise": "e11",
+      "concept": "reaction-order"
+    },
+    {
+      "exercise": "e11",
+      "concept": "rate-constant"
+    },
+    {
+      "exercise": "e13",
+      "concept": "half-life-by-order"
+    },
+    {
+      "exercise": "e13",
+      "concept": "first-order-integrated-rate-law"
+    },
+    {
+      "exercise": "e13",
+      "concept": "integrated-rate-law-calculations"
+    },
+    {
+      "exercise": "e15",
+      "concept": "half-life"
+    },
+    {
+      "exercise": "e15",
+      "concept": "integrated-rate-law-calculations"
+    },
+    {
+      "exercise": "e17",
+      "concept": "first-order-integrated-rate-law"
+    },
+    {
+      "exercise": "e17",
+      "concept": "integrated-rate-law-calculations"
+    }
+  ],
+  "referents": [
+    {
+      "id": "tungsten",
+      "label": "钨表面",
+      "figures": [
+        "sim-order-plots"
+      ]
+    },
+    {
+      "id": "quartz",
+      "label": "石英表面",
+      "figures": [
+        "sim-order-plots"
+      ]
+    }
+  ],
+  "footnotes": [
+    {
+      "id": "c-second-order-unit",
+      "kind": "correction",
+      "html": "书中把 $\\frac{1}{0.200\\;\\text{mol}^{-1}}$ 里的初始浓度写成 0.200 mol<sup>−1</sup>。它应为 0.200 mol L<sup>−1</sup>，所以其倒数是 5.00 L mol<sup>−1</sup>，与下一行一致。"
+    }
+  ],
+  "derivations": [
+    {
+      "id": "half-life-first-order",
+      "what": "一级反应的半衰期",
+      "source": "化学（第2版），12.4 积分速率定律",
+      "nodes": [
+        {
+          "assumes": [
+            {
+              "tex": "\\kt = \\kthalf",
+              "src": "12.4"
+            },
+            {
+              "tex": "\\kconcAt = \\tfrac{1}{2}\\kconcAz",
+              "src": "12.4"
+            },
+            {
+              "tex": "\\ln 2 = 0.693"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{ln}{\\ln}\\,\\frac{\\mk{a0}{\\kconcAz}}{\\mk{at}{\\kconcAt}} = \\mk{k}{\\kk}\\mk{t}{\\kt}",
+            "src": "12.4"
+          },
+          "steps": [
+            {
+              "tex": "\\mk{t}{\\kt} = \\mk{ln}{\\ln}\\,\\frac{\\mk{a0}{\\kconcAz}}{\\mk{at}{\\kconcAt}}\\;\\times\\;\\mk{k}{\\frac{1}{\\kk}}",
+              "uses": []
+            },
+            {
+              "tex": "\\mk{t}{\\kthalf} = \\mk{ln}{\\ln}\\,\\frac{\\mk{a0}{\\kconcAz}}{\\mk{at}{\\frac{1}{2}\\kconcAz}}\\;\\times\\;\\mk{k}{\\frac{1}{\\kk}}",
+              "uses": [
+                0,
+                1
+              ]
+            },
+            {
+              "tex": "\\mk{t}{\\kthalf} = \\mk{ln}{\\ln}\\;\\mk{r}{2}\\;\\times\\;\\mk{k}{\\frac{1}{\\kk}}",
+              "uses": [],
+              "map": {
+                "a0": "r",
+                "at": "r"
+              }
+            },
+            {
+              "tex": "\\mk{t}{\\kthalf} = \\mk{v}{0.693}\\;\\times\\;\\mk{k}{\\frac{1}{\\kk}}",
+              "uses": [
+                2
+              ],
+              "map": {
+                "ln": "v",
+                "r": "v"
+              }
+            },
+            {
+              "tex": "\\mk{t}{\\kthalf} = \\frac{\\mk{v}{0.693}}{\\mk{k}{\\kk}}",
+              "uses": []
+            }
+          ],
+          "src": "12.4"
+        }
+      ]
+    },
+    {
+      "id": "half-life-second-order",
+      "what": "二级反应的半衰期",
+      "source": "化学（第2版），12.4 积分速率定律",
+      "nodes": [
+        {
+          "assumes": [
+            {
+              "tex": "\\kt = \\kthalf",
+              "src": "12.4"
+            },
+            {
+              "tex": "\\kconcAt = \\tfrac{1}{2}\\kconcAz",
+              "src": "12.4"
+            }
+          ],
+          "then": {
+            "tex": "\\frac{1}{\\mk{at}{\\kconcAt}} = \\mk{k}{\\kk}\\mk{t}{\\kt} + \\mk{a0}{\\frac{1}{\\kconcAz}}",
+            "src": "12.4"
+          },
+          "steps": [
+            {
+              "tex": "\\frac{1}{\\mk{at}{\\kconcAt}} - \\mk{a0}{\\frac{1}{\\kconcAz}} = \\mk{k}{\\kk}\\mk{t}{\\kt}",
+              "uses": []
+            },
+            {
+              "tex": "\\frac{1}{\\mk{at}{\\frac{1}{2}\\kconcAz}} - \\mk{a0}{\\frac{1}{\\kconcAz}} = \\mk{k}{\\kk}\\mk{t}{\\kthalf}",
+              "uses": [
+                0,
+                1
+              ]
+            },
+            {
+              "tex": "\\mk{at}{\\frac{2}{\\kconcAz}} - \\mk{a0}{\\frac{1}{\\kconcAz}} = \\mk{k}{\\kk}\\mk{t}{\\kthalf}",
+              "uses": []
+            },
+            {
+              "tex": "\\mk{d}{\\frac{1}{\\kconcAz}} = \\mk{k}{\\kk}\\mk{t}{\\kthalf}",
+              "uses": [],
+              "map": {
+                "at": "d",
+                "a0": "d"
+              }
+            },
+            {
+              "tex": "\\mk{t}{\\kthalf} = \\frac{\\mk{d}{1}}{\\mk{k}{\\kk}\\mk{a}{\\kconcAz}}",
+              "uses": [],
+              "map": {
+                "d": [
+                  "d",
+                  "a"
+                ]
+              }
+            }
+          ],
+          "src": "12.4"
+        }
+      ]
+    },
+    {
+      "id": "half-life-zero-order",
+      "what": "零级反应的半衰期",
+      "source": "化学（第2版），12.4 积分速率定律",
+      "nodes": [
+        {
+          "assumes": [
+            {
+              "tex": "\\kt = \\kthalf",
+              "src": "12.4"
+            },
+            {
+              "tex": "\\kconcA = \\frac{\\kconcAz}{2}",
+              "src": "12.4"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{a}{\\kconcA} = -\\mk{k}{\\kk}\\mk{t}{\\kt} + \\mk{a0}{\\kconcAz}",
+            "src": "12.4"
+          },
+          "steps": [
+            {
+              "tex": "\\mk{a}{\\frac{\\kconcAz}{2}} = -\\mk{k}{\\kk}\\mk{t}{\\kthalf} + \\mk{a0}{\\kconcAz}",
+              "uses": [
+                0,
+                1
+              ]
+            },
+            {
+              "tex": "\\mk{k}{\\kk}\\mk{t}{\\kthalf} = \\mk{a0}{\\kconcAz} - \\mk{a}{\\frac{\\kconcAz}{2}}",
+              "uses": []
+            },
+            {
+              "tex": "\\mk{k}{\\kk}\\mk{t}{\\kthalf} = \\mk{h}{\\frac{\\kconcAz}{2}}",
+              "uses": [],
+              "map": {
+                "a0": "h",
+                "a": "h"
+              }
+            },
+            {
+              "tex": "\\mk{t}{\\kthalf} = \\frac{\\mk{h}{\\kconcAz}}{\\mk{two}{2}\\mk{k}{\\kk}}",
+              "uses": [],
+              "map": {
+                "h": [
+                  "h",
+                  "two"
+                ]
+              }
+            }
+          ],
+          "src": "12.4"
+        }
+      ]
+    }
+  ]
+}

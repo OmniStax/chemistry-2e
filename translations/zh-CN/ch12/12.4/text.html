@@ -1,0 +1,193 @@
+<section id="integrated">
+<h2>积分速率定律</h2>
+<p class="cite-target">迄今讨论的<span data-concept="rate-law">速率定律</span>把<span data-concept="reaction-rate">速率</span>与<span data-concept="reactant">反应物</span>的<span data-concept="concentration">浓度</span>联系起来。我们还可以求出每个<span data-concept="rate-law">速率定律</span>的第二种形式，它把<span data-concept="reactant">反应物</span>的<span data-concept="concentration">浓度</span>与<span data-concept="time">时间</span>联系起来。这些形式称为<strong><span data-concept="integrated-rate-laws">积分速率定律</span></strong>。我们可以用<span data-concept="integrated-rate-laws">积分速率定律</span>来确定经过一段<span data-concept="time">时间</span>后存在的<span data-concept="reactant">反应物</span>或<span data-concept="product">产物</span>的量，或者估算反应进行到某一程度所需的<span data-concept="time">时间</span>。例如，要确定放射性材料必须储存多<span data-concept="length">长</span><span data-concept="time">时间</span>，其<span data-concept="radioactivity">放射性</span>才会衰变到安全水平，就要用到<span data-concept="integrated-rate-laws">积分速率定律</span>。</p>
+<p>利用微积分，可以把化学反应的微分<span data-concept="rate-law">速率定律</span>对<span data-concept="time">时间</span>积分，得到一个方程，它把反应<span data-concept="mixture">混合物</span>中存在的<span data-concept="reactant">反应物</span>或<span data-concept="product">产物</span>的量与反应经过的<span data-concept="time">时间</span>联系起来。这一过程可以非常简单，也可以非常复杂，取决于微分<span data-concept="rate-law">速率定律</span>的复杂程度。为便于讨论，我们将着重讨论一级、二级和零级反应所得到的<span data-concept="integrated-rate-laws">积分速率定律</span>。</p>
+</section>
+
+<section id="first-order">
+<h2>一级反应</h2>
+<p class="cite-target">对简单一级反应的<span data-concept="rate-law">速率定律</span>（$\krate=\kk\kconcA$）积分，得到一个描述<span data-concept="reactant">反应物</span><span data-concept="concentration">浓度</span>如何随<span data-concept="time">时间</span>变化的方程：</p>
+$$\kconcAt=\kconcAz\;e^{-\kk\kt}$$
+<p>其中 $\kconcAt$ 是 <em>A</em> 在任一<span data-concept="time">时间</span> $\kt$ 的<span data-concept="concentration">浓度</span>，$\kconcAz$ 是 <em>A</em> 的初始<span data-concept="concentration">浓度</span>，$\kk$ 是一级<span data-concept="rate-constant">速率常数</span>。</p>
+<p>为了数学上的方便，这个方程可以改写成其他形式，包括正比和反比的形式：</p>
+$$\ln\left(\frac{\kconcAt}{\kconcAz}\right)=-\kk\kt\hspace{2em}\text{或}\hspace{2em}\ln\left(\frac{\kconcAz}{\kconcAt}\right)=\kk\kt$$
+<p>以及一种表明<span data-concept="concentration">浓度</span>对<span data-concept="time">时间</span>呈线性依赖的形式：</p>
+$$\ln\kconcAt=\ln\kconcAz-\kk\kt$$
+<div class="example" id="ex-first-order">
+<h3>例 12.6 · 一级反应的积分速率定律</h3>
+<p>环丁烷 C<sub>4</sub>H<sub>8</sub> 在 <span data-type="temperature">500 °C</span> 下一级分解的<span data-concept="rate-constant">速率常数</span>为 <span data-type="rate-constant">9.2 × 10<sup>−3</sup> s<sup>−1</sup></span>：</p>
+$${\text{C}}_{4}{\text{H}}_{8}\;\longrightarrow\;{\text{2C}}_{2}{\text{H}}_{4}$$
+<p>C<sub>4</sub>H<sub>8</sub> 样品分解 80.0% 需要多长时间？</p>
+<h4>解</h4>
+<p>由于给出的是<span data-concept="reactant">反应物</span><span data-concept="concentration">浓度</span>的相对变化，<span data-concept="integrated-rate-laws">积分速率定律</span>便于采用的形式是：</p>
+$$\ln\left(\frac{\kconcAz}{\kconcAt}\right)=\kk\kt$$
+<p>C<sub>4</sub>H<sub>8</sub> 的初始<span data-concept="concentration">浓度</span> $\kconcAz$ 并未给出，但样品已分解 80.0% 这一条件，已足以求解本题。设初始<span data-concept="concentration">浓度</span>为 <em>x</em>，则分解 80.0% 之后的<span data-concept="concentration">浓度</span>是 <em>x</em> 的 20.0%，即 0.200<em>x</em>。把<span data-concept="rate-law">速率定律</span>变形以分离出 $\kt$，并代入已给的量，得到：</p>
+$$\begin{array}{rl}\kt & =\ln\;\frac{[x]}{[0.200x]}\;\times\;\frac{1}{\kk} \\ & =\ln\;5\;\times\;\frac{1}{9.2\;\times\;{10}^{-3}\;{\text{s}}^{-1}} \\ & =1.609\;\times\;\frac{1}{9.2\;\times\;{10}^{-3}\;{\text{s}}^{-1}} \\ & =1.7\;\times\;{10}^{2}\;\text{s}\end{array}$$
+<h4>学习检测</h4>
+<div class="exercises" data-place="ex-first-order"></div>
+</div>
+<p>在下一个例题中，<span data-concept="integrated-rate-laws">积分速率定律</span>的线性形式会很方便：</p>
+$$\begin{array}{rll}\ln\kconcAt & = & (-\kk)(\kt)+\ln\kconcAz \\ y & = & mx+b\end{array}$$
+<p>一级反应的 ln$\kconcAt$ 对 $\kt$ 的图是一条直线，斜率为 −$\kk$，<em>y</em> 轴截距为 ln$\kconcAz$。如果把一组速率数据这样作图，却<em>没有</em>得到直线，则该反应对 <em>A</em> 不是一级。</p>
+<div class="example" id="ex-plot-first">
+<h3>例 12.7 · 反应级数和速率常数的图解确定</h3>
+<p>通过画出 ln[H<sub>2</sub>O<sub>2</sub>] 对<span data-concept="time">时间</span>的图，证明图 12.2 中的数据可以用一级<span data-concept="rate-law">速率定律</span>表示。由这些数据确定 H<sub>2</sub>O<sub>2</sub> 分解的<span data-concept="rate-constant">速率常数</span>。</p>
+<h4>解</h4>
+<p>图 12.2 中的数据列在下面，ln[H<sub>2</sub>O<sub>2</sub>] 的图见图 12.9。</p>
+<div class="book-table">
+  <table>
+    <thead><tr><th>时间（h）</th><th>[H<sub>2</sub>O<sub>2</sub>] (<em>M</em>)</th><th>ln[H<sub>2</sub>O<sub>2</sub>]</th></tr></thead>
+    <tbody>
+      <tr><td class="num">0.00</td><td class="num">1.000</td><td class="num">0.000</td></tr>
+      <tr><td class="num">6.00</td><td class="num">0.500</td><td class="num">−0.693</td></tr>
+      <tr><td class="num">12.00</td><td class="num">0.250</td><td class="num">−1.386</td></tr>
+      <tr><td class="num">18.00</td><td class="num">0.125</td><td class="num">−2.079</td></tr>
+      <tr><td class="num">24.00</td><td class="num">0.0625</td><td class="num">−2.772</td></tr>
+    </tbody>
+  </table>
+</div>
+<figure class="sim" id="sim-order-plots" data-figure="12.9 + 12.10 + 12.11" data-original="/media/ch12/CNX_Chem_12_04_FrstOKin.jpg,/media/ch12/CNX_Chem_12_04_2OrdKin.jpg,/media/ch12/CNX_Chem_12_04_AmDecomK.jpg" data-original-caption="（图 12.9）ln[H₂O₂] 与时间之间的线性关系表明，过氧化氢的分解是一级反应。（图 12.10）这两幅图分别是 C₄H₆ 二聚反应的一级图和二级图。二级图（右）中的线性趋势表明，该反应遵循二级动力学。（图 12.11）NH₃ 在钨（W）表面上的分解是零级反应，而在石英（SiO₂）表面上，该反应是一级反应。">
+  <div class="sim-head"><span class="eyebrow">Figure 12.9 + 12.10 + 12.11</span><span>某反应物在若干个<span data-concept="time">时刻</span>测得的<span data-concept="concentration">浓度</span>，以三种方式对<span data-concept="time">时间</span>作图：[A]、ln[A] 和 1/[A]。每种图只对某一种反应级数是直线：零级反应的是 [A]，一级反应的是 ln[A]，二级反应的是 1/[A]。每幅图中各有一条虚线连接第一个点和最后一个点。各点落在这条线上时，该图就是线性的，这条线的斜率给出<span data-concept="rate-constant">速率常数</span>。选择过氧化氢的分解、丁二烯的二聚化，或氨在<span data-ref="tungsten">钨</span>和<span data-ref="quartz">石英</span>上的分解，找出各点排成一线的那幅图。</span></div>
+</figure>
+<p>ln[H<sub>2</sub>O<sub>2</sub>] 对<span data-concept="time">时间</span>的图是线性的，表明该反应可以用一级<span data-concept="rate-law">速率定律</span>描述。</p>
+<p>根据一级<span data-concept="integrated-rate-laws">积分速率定律</span>的线性形式，<span data-concept="rate-constant">速率常数</span>等于这条图线斜率的相反数。</p>
+$$\text{斜率}=\;\frac{y\;\text{的变化量}}{x\;\text{的变化量}}\;=\;\frac{\Delta y}{\Delta x}\;=\;\frac{\Delta\ln[{\text{H}}_{2}{\text{O}}_{2}]}{\kdt}$$
+<p>这条直线的斜率可以由 $\kt$ 取两个不同值时的 ln[H<sub>2</sub>O<sub>2</sub>] 求出（最好在直线两端附近各取一个）。例如，$\kt$ 为 <span data-type="time">0.00 h</span> 时 ln[H<sub>2</sub>O<sub>2</sub>] 的值是 0.000；$\kt$ = <span data-type="time">24.00 h</span> 时的值是 −2.772</p>
+$$\begin{array}{rll}\text{斜率} & = & \frac{-2.772-0.000}{24.00-0.00\;\text{h}} \\ & = & \frac{-2.772}{24.00\;\text{h}} \\ & = & -0.116\;{\text{h}}^{-1} \\ \kk & = & -\text{斜率}=-(-0.116\;{\text{h}}^{-1})=0.116\;{\text{h}}^{-1}\end{array}$$
+<h4>学习检测</h4>
+<div class="exercises" data-place="ex-plot-first"></div>
+</div>
+</section>
+
+<section id="second-order">
+<h2>二级反应</h2>
+<p class="cite-target">把<span data-concept="reactant">反应物</span><span data-concept="concentration">浓度</span>与二级反应的<span data-concept="rate-constant">速率常数</span>联系起来的方程可能相当复杂。为了以最小的复杂度说明问题，这里只描述最简单的二级反应，即<span data-concept="reaction-rate">速率</span>只取决于一种<span data-concept="reactant">反应物</span><span data-concept="concentration">浓度</span>的反应。对这类反应，微分<span data-concept="rate-law">速率定律</span>写作：</p>
+$$\krate=\kk{\kconcA}^{2}$$
+<p>对这些二级反应，<span data-concept="integrated-rate-laws">积分速率定律</span>是：</p>
+$$\frac{1}{\kconcAt}\;=\kk\kt+\;\frac{1}{\kconcAz}$$
+<p>其中方程里各项的含义与前面定义的相同。</p>
+<div class="example" id="ex-second-order">
+<h3>例 12.8 · 二级反应的积分速率定律</h3>
+<p>丁二烯<span data-concept="gas">气体</span>（C<sub>4</sub>H<sub>6</sub>）生成 C<sub>8</sub>H<sub>12</sub> <span data-concept="gas">气体</span>的反应，用方程式描述为：</p>
+$${\text{2C}}_{4}{\text{H}}_{6}(g)\;\longrightarrow\;{\text{C}}_{8}{\text{H}}_{12}(g)$$
+<p>这个“二聚化”反应是二级的，在一定条件下<span data-concept="rate-constant">速率常数</span>等于 <span data-type="rate-constant">5.76 × 10<sup>−2</sup> L mol<sup>−1</sup> min<sup>−1</sup></span>。如果丁二烯的初始<span data-concept="concentration">浓度</span>为 <span data-type="concentration">0.200 <em>M</em></span>，那么 <span data-type="time">10.0 min</span> 后的<span data-concept="concentration">浓度</span>是多少？</p>
+<h4>解</h4>
+<p>对二级反应，<span data-concept="integrated-rate-laws">积分速率定律</span>写作</p>
+$$\frac{1}{\kconcAt}\;=\kk\kt+\;\frac{1}{\kconcAz}$$
+<p>这个方程中有三个变量是已知的：$\kconcAz$ = <span data-type="concentration">0.200 mol/L</span>，$\kk$ = <span data-type="rate-constant">5.76 × 10<sup>−2</sup> L/mol/min</span>，$\kt$ = <span data-type="time">10.0 min</span>。因此，可以求解第四个变量 [<em>A</em>]：</p>
+$$\begin{array}{rll}\frac{1}{\kconcAt} & = & (5.76\;\times\;{10}^{-2}\;{\text{L mol}}^{-1}\;{\text{min}}^{-1})\;(10\;\text{min})+\;\frac{1}{0.200\;{\text{mol}}^{-1}} \\ \frac{1}{\kconcAt} & = & (5.76\;\times\;{10}^{-1}\;{\text{L mol}}^{-1})+5.00\;{\text{L mol}}^{-1} \\ \frac{1}{\kconcAt} & = & 5.58\;{\text{L mol}}^{-1} \\ \kconcAt & = & 1.79\;\times\;{10}^{-1}\;{\text{mol L}}^{-1}\end{array}$$<sup class="fn" data-note="c-second-order-unit"></sup>
+<p>因此，<span data-type="time">10.0 min</span> 末剩下 <span data-type="concentration">0.179 mol/L</span> 的丁二烯，而最初存在的是 <span data-type="concentration">0.200 mol/L</span>。</p>
+<h4>学习检测</h4>
+<div class="exercises" data-place="ex-second-order"></div>
+</div>
+<p>二级反应的<span data-concept="integrated-rate-laws">积分速率定律</span>具有直线方程的形式：</p>
+$$\begin{array}{rll}\frac{1}{\kconcAt} & = & \kk\kt+\;\frac{1}{\kconcAz} \\ y & = & mx+b\end{array}$$
+<p>二级反应的 $\frac{1}{\kconcAt}$ 对 $\kt$ 的图是一条直线，斜率为 $\kk$，<em>y</em> 轴截距为 $\frac{1}{\kconcAz}$。如果图不是直线，则该反应不是二级。</p>
+<div class="example" id="ex-plot-second">
+<h3>例 12.9 · 反应级数和速率常数的图解确定</h3>
+<p>下面的数据取自例 12.8 所描述的同一个反应。作出并比较两幅合适的数据图，以判定该反应是一级还是二级。确定<span data-concept="reaction-order">反应级数</span>之后，估算<span data-concept="rate-constant">速率常数</span>的值。</p>
+<h4>解</h4>
+<div class="book-table">
+  <table>
+    <thead><tr><th>时间（s）</th><th>[C<sub>4</sub>H<sub>6</sub>] (<em>M</em>)</th></tr></thead>
+    <tbody>
+      <tr><td class="num">0</td><td class="num">1.00 × 10<sup>−2</sup></td></tr>
+      <tr><td class="num">1600</td><td class="num">5.04 × 10<sup>−3</sup></td></tr>
+      <tr><td class="num">3200</td><td class="num">3.37 × 10<sup>−3</sup></td></tr>
+      <tr><td class="num">4800</td><td class="num">2.53 × 10<sup>−3</sup></td></tr>
+      <tr><td class="num">6200</td><td class="num">2.08 × 10<sup>−3</sup></td></tr>
+    </tbody>
+  </table>
+</div>
+<p>为了区分一级反应和二级反应，作出 ln[C<sub>4</sub>H<sub>6</sub>]<sub><em>t</em></sub> 对 $\kt$ 的图，并与 $\frac{1}{[{\text{C}}_{4}{\text{H}}_{6}]_{t}}$ 对 $\kt$ 的图比较。作这两幅图所需的值如下。</p>
+<div class="book-table">
+  <table>
+    <thead><tr><th>时间（s）</th><th>$\frac{1}{[{\text{C}}_{4}{\text{H}}_{6}]}\;({M}^{-1})$</th><th>ln[C<sub>4</sub>H<sub>6</sub>]</th></tr></thead>
+    <tbody>
+      <tr><td class="num">0</td><td class="num">100</td><td class="num">−4.605</td></tr>
+      <tr><td class="num">1600</td><td class="num">198</td><td class="num">−5.289</td></tr>
+      <tr><td class="num">3200</td><td class="num">296</td><td class="num">−5.692</td></tr>
+      <tr><td class="num">4800</td><td class="num">395</td><td class="num">−5.978</td></tr>
+      <tr><td class="num">6200</td><td class="num">481</td><td class="num">−6.175</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>这两幅图见图 12.10，由图可以清楚地看出，ln[C<sub>4</sub>H<sub>6</sub>]<sub><em>t</em></sub> 对 $\kt$ 的图不是线性的，因此该反应不是一级。$\frac{1}{[{\text{C}}_{4}{\text{H}}_{6}]_{t}}$ 对 $\kt$ 的图是线性的，表明该反应是二级。</p>
+<p>根据二级<span data-concept="integrated-rate-laws">积分速率定律</span>，<span data-concept="rate-constant">速率常数</span>等于 $\frac{1}{\kconcAt}$ 对 $\kt$ 图的斜率。利用 $\kt$ = <span data-type="time">0 s</span> 和 $\kt$ = <span data-type="time">6200 s</span> 时的数据，<span data-concept="rate-constant">速率常数</span>估算如下：</p>
+$$\kk=\text{斜率}=\frac{(481\;{M}^{-1}-100\;{M}^{-1})}{(6200\;\text{s}-0\;\text{s})}=0.0614\;{M}^{-1}\;{\text{s}}^{-1}$$
+<h4>学习检测</h4>
+<div class="exercises" data-place="ex-plot-second"></div>
+</div>
+</section>
+
+<section id="zero-order">
+<h2>零级反应</h2>
+<p class="cite-target">对零级反应，微分<span data-concept="rate-law">速率定律</span>是：</p>
+$$\krate=\kk$$
+<p>因此，零级反应的<span data-concept="reaction-rate">反应速率</span>是恒定的，与其<span data-concept="reactant">反应物</span>的<span data-concept="concentration">浓度</span>无关。这看起来可能违反直觉，因为当<span data-concept="reactant">反应物</span><span data-concept="concentration">浓度</span>为零时，<span data-concept="reaction-rate">反应速率</span>当然不可能是有限值。对本入门教材而言，只需指出：某些反应只在某些特定条件下才表现出零级动力学。这些反应在不满足特定条件时会表现出不同的动力学行为，出于这个原因，有时使用更审慎的术语<em>准零级</em>。</p>
+<p>零级反应的<span data-concept="integrated-rate-laws">积分速率定律</span>是一个线性函数：</p>
+$$\begin{array}{rll}\kconcAt & = & -\kk\kt+\kconcAz \\ y & = & mx+b\end{array}$$
+<p>零级反应的 $\kconcA$ 对 $\kt$ 的图是一条直线，斜率为 −$\kk$，<em>y</em> 轴截距为 $\kconcAz$。图 12.11 显示了氨在两种不同的受热<span data-concept="solid">固体</span>表面上热分解时，[NH<sub>3</sub>] 对 $\kt$ 的图。该分解反应在<span data-ref="quartz">石英（SiO<sub>2</sub>）表面</span>上表现为一级行为，<span data-concept="concentration">浓度</span>对<span data-concept="time">时间</span>的图呈指数衰减就说明了这一点。然而在<span data-ref="tungsten">钨表面</span>上，图是线性的，表明是零级动力学。</p>
+<div class="example" id="ex-zero-order">
+<h3>例 12.10 · 零级速率常数的图解确定</h3>
+<p>利用图 12.11 中的数据图，以图解方式估算氨在<span data-ref="tungsten">钨表面</span>上分解的零级<span data-concept="rate-constant">速率常数</span>。</p>
+<h4>解</h4>
+<p>零级动力学的<span data-concept="integrated-rate-laws">积分速率定律</span>描述的是<span data-concept="reactant">反应物</span><span data-concept="concentration">浓度</span> $\kconcAt$ 对<span data-concept="time">时间</span> $\kt$ 的线性图，其斜率等于<span data-concept="rate-constant">速率常数</span>的相反数 −$\kk$。仿照前面各例的数学方法，由图估算线性数据图（对 <span data-ref="tungsten">W</span> 上的分解）的斜率。利用 $\kt$ = <span data-type="time">0</span> 和 $\kt$ = <span data-type="time">1000 s</span> 时氨的<span data-concept="concentration">浓度</span>：</p>
+$$\kk=-\text{斜率}=-\frac{(0.0015\;\text{mol}\;{\text{L}}^{-1}-0.0028\;\text{mol}\;{\text{L}}^{-1})}{(1000\;\text{s}-0\;\text{s})}=1.3\;\times\;{10}^{-6}\;\text{mol}\;{\text{L}}^{-1}\;{\text{s}}^{-1}$$
+<h4>学习检测</h4>
+<div class="exercises" data-place="ex-zero-order"></div>
+</div>
+</section>
+
+<section id="half-life">
+<h2>反应的半衰期</h2>
+<p class="cite-target"><strong><span data-concept="half-life">反应的半衰期</span>（$\kthalf$）</strong>是消耗掉给定量<span data-concept="reactant">反应物</span>的一半所需的<span data-concept="time">时间</span>。在其后的每一个<span data-concept="half-life">半衰期</span>里，剩余<span data-concept="reactant">反应物</span><span data-concept="concentration">浓度</span>的一半被消耗。以<span data-concept="peroxide">过氧化氢</span>的分解（图 12.2）为例，我们发现在<span data-type="time">第一个<span data-concept="radioactive-half-life">半衰期</span>（从 0.00 小时到 6.00 小时）</span>内，<span data-type="concentration">H<sub>2</sub>O<sub>2</sub> 的<span data-concept="concentration">浓度</span>由 1.000 <em>M</em> 降为 0.500 <em>M</em></span>。在<span data-type="time">第二个<span data-concept="radioactive-half-life">半衰期</span>（从 6.00 小时到 12.00 小时）</span>内，<span data-type="concentration">它由 0.500 <em>M</em> 降为 0.250 <em>M</em></span>；在第三个<span data-concept="half-life">半衰期</span>内，<span data-type="concentration">它由 0.250 <em>M</em> 降为 0.125 <em>M</em></span>。H<sub>2</sub>O<sub>2</sub> 的<span data-concept="concentration">浓度</span>在每一个连续的 <span data-type="time">6.00 小时</span>里都降低一半。<span data-concept="peroxide">过氧化氢</span>的分解是一级反应，而且可以证明，一级反应的<span data-concept="half-life">半衰期</span>与<span data-concept="reactant">反应物</span>的<span data-concept="concentration">浓度</span>无关。然而，其他级数反应的<span data-concept="half-life">半衰期</span>取决于<span data-concept="reactant">反应物</span>的<span data-concept="concentration">浓度</span>。</p>
+<h3 id="half-life-first">一级反应</h3>
+<p>一级反应的<span data-concept="half-life">半衰期</span>与其<span data-concept="rate-constant">速率常数</span>之间的关系式，可以由<span data-concept="integrated-rate-laws">积分速率定律</span>按如下方式导出：</p>
+<figure class="dv" id="drv-half-life-first-order"></figure>
+<p>这个方程描述了反应的<span data-concept="half-life">半衰期</span>与其<span data-concept="rate-constant">速率常数</span> $\kk$ 之间预期的反比关系。较快的反应有较大的<span data-concept="rate-constant">速率常数</span>，相应地<span data-concept="half-life">半衰期</span>较短。较慢的反应有较小的<span data-concept="rate-constant">速率常数</span>，<span data-concept="half-life">半衰期</span>较长。</p>
+<div class="example" id="ex-half-life-first">
+<h3>例 12.11 · 利用半衰期计算一级速率常数</h3>
+<p>利用图 12.12 中给出的数据，计算<span data-concept="peroxide">过氧化氢</span>在水中于 <span data-type="temperature">40 °C</span> 下一级分解的<span data-concept="rate-constant">速率常数</span>。</p>
+<figure class="sim" id="sim-half-lives" data-figure="12.12" data-original="/media/ch12/CNX_Chem_12_04_HPerDcmp.jpg" data-original-caption="图示 H₂O₂ 在 40 °C 下的分解（2H₂O₂ ⟶ 2H₂O + O₂）。颜色的深浅表示 H₂O₂ 在所标时刻的浓度；H₂O₂ 实际上是无色的。">
+  <div class="sim-head"><span class="eyebrow">Figure 12.12</span><span>一份过氧化氢样品在 <span data-type="temperature">40 °C</span> 下分解，图中显示它在五个<span data-concept="time">时刻</span>的状态，彼此相隔 <span data-type="time">6.00 h</span>。颜色的深度代表 H<sub>2</sub>O<sub>2</sub> 的<span data-concept="concentration">浓度</span>，它实际上是无色的。随着时钟走动，各烧杯一起变淡，直到每个烧杯停在各自的<span data-concept="time">时刻</span>，下方的图在每个<span data-concept="half-life">半衰期</span>结束时将其标出。对这个一级反应，每个烧杯中的<span data-concept="concentration">浓度</span>都是前一个烧杯的一半。可以选择二级或零级反应，它们从相同的<span data-concept="concentration">浓度</span>出发，第一个<span data-concept="half-life">半衰期</span>也相同，然后观察随后的<span data-concept="half-life">半衰期</span>变得更长还是更短。</span></div>
+</figure>
+<h4>解</h4>
+<p>查看图 12.12 中的<span data-concept="concentration">浓度</span>/<span data-concept="time">时间</span>数据可知，<span data-type="time">H<sub>2</sub>O<sub>2</sub> 分解的<span data-concept="radioactive-half-life">半衰期</span>是 2.16 × 10<sup>4</sup> s</span>：</p>
+$$\begin{array}{rll}\kthalf & = & \frac{0.693}{\kk} \\ \kk & = & \frac{0.693}{\kthalf}\;=\;\frac{0.693}{2.16\;\times\;{10}^{4}\;\text{s}}\;=3.21\;\times\;{10}^{-5}\;{\text{s}}^{-1}\end{array}$$
+<h4>学习检测</h4>
+<div class="exercises" data-place="ex-half-life-first"></div>
+</div>
+<h3 id="half-life-second">二级反应</h3>
+<p>按与一级反应相同的方法，二级反应的<span data-concept="half-life">半衰期</span>与其<span data-concept="rate-constant">速率常数</span>和初始<span data-concept="concentration">浓度</span>之间的关系式，可以由其<span data-concept="integrated-rate-laws">积分速率定律</span>导出：</p>
+<figure class="dv" id="drv-half-life-second-order"></figure>
+<p>对二级反应，$\kthalf$ 与<span data-concept="reactant">反应物</span>的<span data-concept="concentration">浓度</span>成反比，而且随着反应进行，<span data-concept="reactant">反应物</span>的<span data-concept="concentration">浓度</span>降低，<span data-concept="half-life">半衰期</span>变长。与一级反应不同，二级反应的<span data-concept="rate-constant">速率常数</span>不能直接由<span data-concept="half-life">半衰期</span>算出，除非初始<span data-concept="concentration">浓度</span>已知。</p>
+<h3 id="half-life-zero">零级反应</h3>
+<p>与其他<span data-concept="reaction-order">反应级数</span>一样，零级<span data-concept="half-life">半衰期</span>的方程可以由<span data-concept="integrated-rate-laws">积分速率定律</span>导出：</p>
+<figure class="dv" id="drv-half-life-zero-order"></figure>
+<p>与所有<span data-concept="reaction-order">反应级数</span>一样，零级反应的<span data-concept="half-life">半衰期</span>与其<span data-concept="rate-constant">速率常数</span>成反比。然而，零级反应的<span data-concept="half-life">半衰期</span>随初始<span data-concept="concentration">浓度</span>的增大而变长。</p>
+<p>零级、一级和二级反应的微分速率定律和<span data-concept="integrated-rate-laws">积分速率定律</span>的方程，以及相应的<span data-concept="half-life">半衰期</span>，总结在表 12.2 中。</p>
+<div class="book-table">
+  <div class="tcap"><span class="eyebrow">表 12.2</span><span>零级、一级和二级反应的速率定律小结</span></div>
+  <table>
+    <thead><tr><th></th><th>零级</th><th>一级</th><th>二级</th></tr></thead>
+    <tbody>
+      <tr><th>速率定律</th><td>$\krate=\kk$</td><td>$\krate=\kk\kconcA$</td><td>$\krate=\kk{\kconcA}^{2}$</td></tr>
+      <tr><th>速率常数的单位</th><td><em>M</em> s<sup>−1</sup></td><td>s<sup>−1</sup></td><td><em>M</em><sup>−1</sup> s<sup>−1</sup></td></tr>
+      <tr><th>积分速率定律</th><td>$\kconcA=-\kk\kt+\kconcAz$</td><td>$\ln\kconcA=-\kk\kt+\ln\kconcAz$</td><td>$\frac{1}{\kconcA}\;=\kk\kt+\left(\frac{1}{\kconcAz}\right)$</td></tr>
+      <tr><th>对速率数据作线性拟合所需的图</th><td>$\kconcA$ 对 $\kt$</td><td>ln$\kconcA$ 对 $\kt$</td><td>$\frac{1}{\kconcA}$ 对 $\kt$</td></tr>
+      <tr><th>线性图的斜率与速率常数之间的关系</th><td>$\kk$ = −斜率</td><td>$\kk$ = −斜率</td><td>$\kk$ = 斜率</td></tr>
+      <tr><th>半衰期</th><td>$\kthalf=\;\frac{\kconcAz}{2\kk}$</td><td>$\kthalf=\frac{0.693}{\kk}$</td><td>$\kthalf=\frac{1}{\kconcAz\kk}$</td></tr>
+    </tbody>
+  </table>
+</div>
+<div class="example" id="ex-half-life-others">
+<h3>例 12.12 · 零级反应和二级反应的半衰期</h3>
+<p>例 12.8 中描述的丁二烯二聚反应的<span data-concept="half-life">半衰期</span>是多少？</p>
+<h4>解</h4>
+<p>所考虑的反应是二级的，从 <span data-type="concentration">0.200 mol L<sup>−1</sup></span> 的<span data-concept="reactant">反应物</span><span data-concept="mixtures">溶液</span>开始，<span data-concept="rate-constant">速率常数</span>为 <span data-type="rate-constant">0.0576 L mol<sup>−1</sup> min<sup>−1</sup></span>。把这些量代入二级<span data-concept="half-life">半衰期</span>方程：</p>
+$$\begin{array}{rll}\kthalf & = & \frac{1}{[(0.0576\;\text{L}\;{\text{mol}}^{-1}\;{\text{min}}^{-1})(0.200\;\text{mol}\;{\text{L}}^{-1})]}=86.8\;\text{min}\end{array}$$
+<h4>学习检测</h4>
+<div class="exercises" data-place="ex-half-life-others"></div>
+</div>
+</section>

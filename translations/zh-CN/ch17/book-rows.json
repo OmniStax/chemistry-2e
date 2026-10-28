@@ -1,0 +1,1029 @@
+{
+ "types": [
+  {
+   "id": "current",
+   "label": "电流",
+   "dimension": "A"
+  }
+ ],
+ "symbols": [
+  {
+   "sym": "E_potential",
+   "latex": "E",
+   "macro": "\\kEpot"
+  },
+  {
+   "sym": "E°_cell",
+   "latex": "E_{\\text{cell}}^{\\circ}",
+   "macro": "\\kEocell"
+  },
+  {
+   "sym": "E_cathode",
+   "latex": "E_{\\text{cathode}}",
+   "macro": "\\kEcathode"
+  },
+  {
+   "sym": "E_anode",
+   "latex": "E_{\\text{anode}}",
+   "macro": "\\kEanode"
+  },
+  {
+   "sym": "E°_cathode",
+   "latex": "E_{\\text{cathode}}^{\\circ}",
+   "macro": "\\kEocathode"
+  },
+  {
+   "sym": "E°_anode",
+   "latex": "E_{\\text{anode}}^{\\circ}",
+   "macro": "\\kEoanode"
+  },
+  {
+   "sym": "E_X",
+   "latex": "E_{\\text{X}}",
+   "macro": "\\kEX"
+  },
+  {
+   "sym": "E°_X",
+   "latex": "E_{\\text{X}}^{\\circ}",
+   "macro": "\\kEoX"
+  },
+  {
+   "sym": "E_SHE",
+   "latex": "E_{\\text{SHE}}",
+   "macro": "\\kEshe"
+  },
+  {
+   "sym": "F_Faraday",
+   "latex": "F",
+   "macro": "\\kFaraday"
+  },
+  {
+   "sym": "I",
+   "latex": "I",
+   "macro": "\\kI"
+  },
+  {
+   "sym": "w_elec",
+   "latex": "w_{\\text{elec}}",
+   "macro": "\\kwelec"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "oxidation-number-covalent-limit",
+   "kind": "idea",
+   "section": "17.1",
+   "name": "共价化合物中的氧化数",
+   "statement": "对于共价化合物，氧化数是这样指定的：设想每个共用键的极化都是完全的，使共用电子转移给电负性更大的原子。照此处理，水将成为由 O2− 阴离子和 H+ 阳离子构成的离子化合物，所以水中氧和氢的氧化数分别为 −2 和 +1。"
+  },
+  {
+   "id": "balance-redox-basic-solution",
+   "kind": "skill",
+   "section": "17.1",
+   "name": "在碱性溶液中配平氧化还原方程式",
+   "statement": "碱性介质中的氧化还原反应，其方程式先按酸性溶液用半反应法配平；然后在两边加入相同数目的 OH− 离子以中和 H+ 离子，把同一边的 H+ 和 OH− 合并为水，再化简方程式，使反应物和产物中都不再出现 H+。"
+  },
+  {
+   "id": "electrochemical-cell",
+   "kind": "definition",
+   "section": "17.2",
+   "name": "电化学池",
+   "statement": "电化学池含有一个氧化还原体系的全部反应物和产物，但使反应物彼此不能直接接触，因此电子是间接转移的，要经过与各分隔开的反应物相接触的外电路。"
+  },
+  {
+   "id": "galvanic-cell",
+   "kind": "definition",
+   "section": "17.2",
+   "name": "原电池",
+   "terms": [
+    "原电池",
+    "伏打电池"
+   ],
+   "statement": "原电池，或称伏打电池，是发生自发氧化还原反应的电化学池。电子经外电路从阳极半电池中的还原剂转移到阴极半电池中的氧化剂。"
+  },
+  {
+   "id": "half-cell",
+   "kind": "definition",
+   "section": "17.2",
+   "name": "半电池",
+   "terms": [
+    "半电池"
+   ],
+   "statement": "半电池是电化学池中含有单一反应物的氧化还原共轭对（即电对）的组成部分，例如 Cu(0)/Cu(II) 电对中，硝酸铜溶液里的铜箔。半电池的氧化还原反应只发生在其反应混合物与电极的界面上。"
+  },
+  {
+   "id": "anode",
+   "kind": "definition",
+   "section": "17.2",
+   "name": "阳极",
+   "terms": [
+    "阳极"
+   ],
+   "statement": "电化学池的阳极是发生氧化的电极。"
+  },
+  {
+   "id": "cathode",
+   "kind": "definition",
+   "section": "17.2",
+   "name": "阴极",
+   "terms": [
+    "阴极"
+   ],
+   "statement": "电化学池的阴极是发生还原的电极。"
+  },
+  {
+   "id": "salt-bridge",
+   "kind": "definition",
+   "section": "17.2",
+   "name": "盐桥",
+   "terms": [
+    "盐桥"
+   ],
+   "statement": "盐桥是充满惰性电解质溶液的管子，连通两个半电池的溶液，既使反应物保持分隔，又维持电荷平衡：惰性离子从盐桥流入各半电池，补偿电池反应在该半电池中产生或消耗的离子。"
+  },
+  {
+   "id": "cell-notation",
+   "kind": "definition",
+   "section": "17.2",
+   "name": "电池表示式",
+   "terms": [
+    "电池表示式",
+    "电池图式"
+   ],
+   "statement": "电池表示式，或称电池图式，是电化学池的组成和反应的符号表示。每种组分用其化学式或元素符号书写，相之间的界面用竖线表示，同一相中的组分用逗号隔开，电池图式从阳极开始，从左向右写到阴极。"
+  },
+  {
+   "id": "inert-electrode",
+   "kind": "definition",
+   "section": "17.2",
+   "name": "惰性电极",
+   "terms": [
+    "惰性电极"
+   ],
+   "statement": "惰性电极把电子传导到半电池中的反应物或从反应物传出，但自身不被氧化或还原。当半电池的氧化还原对中没有哪一个成员能作电极时，就需要惰性电极，例如两个成员都是溶质物种时；铂是常见的选择。"
+  },
+  {
+   "id": "active-electrode",
+   "kind": "definition",
+   "section": "17.2",
+   "name": "活性电极",
+   "terms": [
+    "活性电极"
+   ],
+   "statement": "活性电极由氧化还原对的一个成员制成，作为反应物或产物参与电化学池的氧化还原反应，所以其质量随反应进行而变化。"
+  },
+  {
+   "id": "electrical-potential",
+   "kind": "definition",
+   "section": "17.3",
+   "name": "电势",
+   "symbol": "E_potential",
+   "type": "potential",
+   "statement": "电势，在电学应用中更常称为电压，是对伴随电荷分离或转移的能量的度量。它以伏特度量，一伏特即每库仑电荷一焦耳能量，V = J/C。"
+  },
+  {
+   "id": "cell-potential",
+   "kind": "definition",
+   "section": "17.3",
+   "name": "电池电势",
+   "symbol": "E_cell",
+   "terms": [
+    "电池电势"
+   ],
+   "type": "potential",
+   "statement": "单个半电池的电势无法测量，因为电子的转移既需要给体也需要受体；只能测量两个半电池之间的电势差。阴极半电池与阳极半电池之间的这一差值就是电池电势。",
+   "forms": [
+    {
+     "id": "eq-cell-potential",
+     "latex": "E_{\\text{cell}}=E_{\\text{cathode}}-E_{\\text{anode}}",
+     "ktex": "\\kEcell=\\kEcathode-\\kEanode",
+     "anchor": "17.3-cell-potentials"
+    }
+   ]
+  },
+  {
+   "id": "standard-cell-potential",
+   "kind": "definition",
+   "section": "17.3",
+   "name": "标准电池电势",
+   "symbol": "E°_cell",
+   "terms": [
+    "标准电池电势"
+   ],
+   "type": "potential",
+   "statement": "标准电池电势是两个半电池都处于标准状态条件下，即浓度为 1 M、压强为 1 bar、温度为 298 K 时测得的电池电势。",
+   "forms": [
+    {
+     "id": "eq-standard-cell-potential",
+     "latex": "E_{\\text{cell}}^{\\circ}=E_{\\text{cathode}}^{\\circ}-E_{\\text{anode}}^{\\circ}",
+     "ktex": "\\kEocell=\\kEocathode-\\kEoanode",
+     "anchor": "17.3-cell-potentials"
+    }
+   ]
+  },
+  {
+   "id": "standard-hydrogen-electrode",
+   "kind": "definition",
+   "section": "17.3",
+   "name": "标准氢电极",
+   "terms": [
+    "标准氢电极",
+    "SHE"
+   ],
+   "statement": "标准氢电极（SHE）是被指定为电池电势测量的通用参比、并规定其电势恰为 0 V 的半电池。它基于氢离子还原为氢气：惰性铂电极浸在恰为 1 M 的 H+ 水溶液中，通入 1 bar 的 H2 气流，温度为 298 K。"
+  },
+  {
+   "id": "electrode-potential",
+   "kind": "definition",
+   "section": "17.3",
+   "name": "电极电势",
+   "symbol": "E_X",
+   "terms": [
+    "电极电势"
+   ],
+   "type": "potential",
+   "statement": "半电池 X 的电极电势，是由作阴极的 X 与作阳极的标准氢电极组成的电池所测得的电势。由于 SHE 的电势规定为 0 V，这样测得的电池电势就是 X 的电势。",
+   "forms": [
+    {
+     "id": "eq-electrode-potential",
+     "latex": "E_{\\text{cell}}=E_{\\text{X}}-E_{\\text{SHE}}=E_{\\text{X}}",
+     "ktex": "\\kEcell=\\kEX-\\kEshe=\\kEX",
+     "condition": "E_SHE = 0 V, by definition",
+     "anchor": "17.3-she"
+    }
+   ]
+  },
+  {
+   "id": "standard-electrode-potential",
+   "kind": "definition",
+   "section": "17.3",
+   "name": "标准电极电势",
+   "symbol": "E°_X",
+   "terms": [
+    "标准电极电势",
+    "标准还原电势"
+   ],
+   "type": "potential",
+   "statement": "半电池的标准电极电势，是它在标准状态条件下测得的电极电势。由于定义要求半电池作阴极，这些电势有时称为标准还原电势，并按写成还原反应的半反应列成表。"
+  },
+  {
+   "id": "electrode-potential-and-oxidant-strength",
+   "kind": "result",
+   "section": "17.3",
+   "name": "电极电势与氧化剂的强弱",
+   "statement": "标准电极电势越大者是越强的氧化剂：E° 增大，对应于该物种被还原的推动力增大。因此，按数值顺序排列的标准电极电势表，就是按各半反应中反应物的氧化能力排序的，从 E° 最正处的最强氧化剂到 E° 最负处的最弱氧化剂；负值只表示该反应物是比水溶液中的氢离子更弱的氧化剂。"
+  },
+  {
+   "id": "cell-potential-and-spontaneity",
+   "kind": "result",
+   "section": "17.3",
+   "name": "电池电势与自发性",
+   "statement": "电池电势的正负号表明电池反应的自发性：自发过程的电池电势为正，非自发过程的电池电势为负。把氧化还原反应反过来，其阴极和阳极半反应互换，因此电池电势的符号也随之改变。"
+  },
+  {
+   "id": "predict-redox-spontaneity",
+   "kind": "skill",
+   "section": "17.3",
+   "name": "由电极电势预测氧化还原反应的自发性",
+   "statement": "要预测一个氧化还原反应在标准状态条件下是否自发，先确定其阴极（还原）半反应和阳极（氧化）半反应，查出它们的标准电极电势，再用阴极的减去阳极的，算出标准电池电势。凡是氧化剂在表中的位置高于还原剂的反应，其标准电池电势为正，预测为自发。"
+  },
+  {
+   "id": "faradays-constant",
+   "kind": "definition",
+   "section": "17.4",
+   "name": "法拉第常数",
+   "symbol": "F_Faraday",
+   "terms": [
+    "法拉第常数"
+   ],
+   "type": "charge",
+   "statement": "法拉第常数是一摩尔电子所带的电荷，以库仑计，F = 96,485 C/mol e−。"
+  },
+  {
+   "id": "free-energy-and-cell-potential",
+   "kind": "result",
+   "section": "17.4",
+   "name": "自由能变与电池电势",
+   "statement": "对于原电池中的氧化还原反应，几乎全部最大功都与电子从还原剂转移到氧化剂相联系，这份功由转移的总电荷和电池电势决定。因此自由能变等于 −nF 乘以电池电势，其中 n 是转移电子的物质的量（mol）：自发的氧化还原反应电势为正、自由能变为负。",
+   "forms": [
+    {
+     "id": "eq-standard-free-energy-cell-potential",
+     "latex": "\\Delta G^{\\circ}=-nFE_{\\text{cell}}^{\\circ}",
+     "ktex": "\\kdGo=-\\kn\\kFaraday\\kEocell",
+     "anchor": "17.4-dg"
+    },
+    {
+     "id": "eq-free-energy-cell-potential",
+     "latex": "\\Delta G=-nFE_{\\text{cell}}",
+     "ktex": "\\kdG=-\\kn\\kFaraday\\kEcell",
+     "anchor": "17.4-dg"
+    },
+    {
+     "id": "eq-electrical-work",
+     "latex": "w_{\\text{elec}}=w_{\\text{max}}=-nFE_{\\text{cell}}",
+     "ktex": "\\kwelec=\\kwmax=-\\kn\\kFaraday\\kEcell",
+     "anchor": "17.4-dg"
+    }
+   ]
+  },
+  {
+   "id": "cell-potential-and-equilibrium-constant",
+   "kind": "result",
+   "section": "17.4",
+   "name": "标准电池电势与平衡常数",
+   "statement": "将 ΔG° = −RT ln K 与 ΔG° = −nFE°cell 合并可知，标准电池电势与平衡常数的自然对数成正比。标准电池电势为较大正值的氧化还原反应进行得远为完全，到达平衡时大部分反应物已转化为产物。",
+   "forms": [
+    {
+     "id": "eq-standard-cell-potential-k",
+     "latex": "E_{\\text{cell}}^{\\circ}=\\frac{RT}{nF}\\ln K",
+     "ktex": "\\kEocell=\\frac{R\\kT}{\\kn\\kFaraday}\\ln\\kK",
+     "anchor": "17.4-k"
+    },
+    {
+     "id": "eq-standard-cell-potential-k-298",
+     "latex": "E_{\\text{cell}}^{\\circ}=\\frac{0.0257\\text{ V}}{n}\\ln K=\\frac{0.0592\\text{ V}}{n}\\log K",
+     "ktex": "\\kEocell=\\frac{0.0257\\text{ V}}{\\kn}\\ln\\kK=\\frac{0.0592\\text{ V}}{\\kn}\\log\\kK",
+     "condition": "at 298.15 K",
+     "anchor": "17.4-ex-relations"
+    }
+   ]
+  },
+  {
+   "id": "potential-free-energy-equilibrium-relations",
+   "kind": "idea",
+   "section": "17.4",
+   "name": "E°、ΔG° 与 K 之间的关系",
+   "statement": "标准电池电势、标准自由能变和平衡常数是同一个反应推动力的三种相互关联的度量。K > 1、ΔG° < 0 且 E°cell > 0 时，反应在标准条件下自发，平衡时产物更多；K < 1、ΔG° > 0 且 E°cell < 0 时，反应非自发，平衡时反应物更多；K = 1、ΔG° = 0 且 E°cell = 0 时，反应在标准条件下处于平衡。"
+  },
+  {
+   "id": "nernst-equation",
+   "kind": "result",
+   "section": "17.4",
+   "name": "能斯特方程",
+   "terms": [
+    "能斯特方程"
+   ],
+   "statement": "把 ΔG = −nFEcell 代入 ΔG = ΔG° + RT ln Q，得到能斯特方程。它描述氧化还原体系的电势如何随转移电子的物质的量、温度，以及由反应商体现的反应混合物组成，而偏离其标准状态值。",
+   "forms": [
+    {
+     "id": "eq-nernst",
+     "latex": "E_{\\text{cell}}=E_{\\text{cell}}^{\\circ}-\\frac{RT}{nF}\\ln Q",
+     "ktex": "\\kEcell=\\kEocell-\\frac{R\\kT}{\\kn\\kFaraday}\\ln\\kQrxn",
+     "anchor": "17.4-nernst"
+    },
+    {
+     "id": "eq-nernst-298",
+     "latex": "E_{\\text{cell}}=E_{\\text{cell}}^{\\circ}-\\frac{0.0592\\text{ V}}{n}\\log Q",
+     "ktex": "\\kEcell=\\kEocell-\\frac{0.0592\\text{ V}}{\\kn}\\log\\kQrxn",
+     "condition": "at 298.15 K",
+     "anchor": "17.4-nernst"
+    }
+   ]
+  },
+  {
+   "id": "concentration-cell",
+   "kind": "definition",
+   "section": "17.4",
+   "name": "浓差电池",
+   "terms": [
+    "浓差电池"
+   ],
+   "statement": "浓差电池是由两个几乎相同的半电池构成的原电池，二者基于同一半反应、使用同一电极，只在某一氧化还原物种的浓度上不同。它的标准电池电势为零，所以电势只由浓度差决定，一直工作到两个浓度相等为止。"
+  },
+  {
+   "id": "predict-spontaneity-nonstandard",
+   "kind": "skill",
+   "section": "17.4",
+   "name": "计算非标准条件下的电池电势",
+   "statement": "要求氧化还原体系在非标准条件下的电势，先由列表的电极电势算出其标准电池电势，再由给定的浓度和压强写出反应商，把二者连同转移电子的物质的量一起代入能斯特方程；结果的符号可预测反应在这些条件下的自发性。"
+  },
+  {
+   "id": "battery",
+   "kind": "definition",
+   "section": "17.5",
+   "name": "电池",
+   "terms": [
+    "电池"
+   ],
+   "statement": "电池是专门设计和制造的、用作特定用途电源的原电池或多个串联的原电池。单体电池串联得到电压更高的电池组，同种化学体系的更大电池给出相同的电压，但能转移更多的电荷。"
+  },
+  {
+   "id": "primary-cell",
+   "kind": "definition",
+   "section": "17.5",
+   "name": "一次电池",
+   "terms": [
+    "一次电池"
+   ],
+   "statement": "一次电池是不可充电的电池，为一次性使用而设计。"
+  },
+  {
+   "id": "secondary-cell",
+   "kind": "definition",
+   "section": "17.5",
+   "name": "二次电池",
+   "terms": [
+    "二次电池"
+   ],
+   "statement": "二次电池是基于便于逆转的电池反应的电池，因此可以由外部电源充电。"
+  },
+  {
+   "id": "dry-cell",
+   "kind": "definition",
+   "section": "17.5",
+   "name": "干电池",
+   "terms": [
+    "干电池"
+   ],
+   "statement": "干电池，即锌碳电池，是基于锰(IV)对锌的自发氧化的一次电池。锌罐既作容器又作阳极，石墨棒作阴极，罐内充满由氧化锰(IV)、氯化锌(II)、氯化铵和水组成的电解质糊；各种尺寸的干电池都给出约 1.5 V。"
+  },
+  {
+   "id": "alkaline-battery",
+   "kind": "definition",
+   "section": "17.5",
+   "name": "碱性电池",
+   "terms": [
+    "碱性电池"
+   ],
+   "statement": "碱性电池是围绕与干电池相同的氧化还原对设计、但采用碱性电解质（常为氢氧化钾）的一次电池。它给出约 1.43 V，所释放的能量是同样大小干电池的三至五倍，且电解质泄漏较少。"
+  },
+  {
+   "id": "nickel-cadmium-battery",
+   "kind": "definition",
+   "section": "17.5",
+   "name": "镍镉电池",
+   "terms": [
+    "镍镉电池"
+   ],
+   "statement": "镍镉（NiCd）电池是基于氢氧化钾中 Ni/Cd 半电池的可充电电池，给出约 1.2 V。其正、负极板卷绕在一起，成卷绕式设计，因此能比大小相近的碱性电池输出大得多的电流，可充电约 1000 次。"
+  },
+  {
+   "id": "lithium-ion-battery",
+   "kind": "definition",
+   "section": "17.5",
+   "name": "锂离子电池",
+   "terms": [
+    "锂离子电池"
+   ],
+   "statement": "锂离子电池是广泛用于便携式电子设备的可充电电池，基于锂离子在石墨阳极与钴酸锂阴极之间的转移。它给出约 3.7 V，放电时几乎保持恒定，比同类电池更轻，存放时电量只缓慢损失。"
+  },
+  {
+   "id": "lead-acid-battery",
+   "kind": "definition",
+   "section": "17.5",
+   "name": "铅酸电池",
+   "terms": [
+    "铅酸电池"
+   ],
+   "statement": "铅酸电池是汽车中常用的可充电电池。其每个单体电池基于硫酸中的 Pb 半反应，产生约 2 V，所以把六个单体电池串联得到 12 V；它价格低廉，能提供起动电机所需的大电流。"
+  },
+  {
+   "id": "fuel-cell",
+   "kind": "definition",
+   "section": "17.5",
+   "name": "燃料电池",
+   "terms": [
+    "燃料电池"
+   ],
+   "statement": "燃料电池是使用传统燃烧燃料（最常见的是氢或甲烷）的原电池，燃料与氧化剂一起连续送入电池。燃料和氧化剂经历与燃烧相同的氧化还原化学，但走的是经催化的电化学途径，效率明显更高，只要不断供给反应物，电池就能持续工作。"
+  },
+  {
+   "id": "corrosion",
+   "kind": "definition",
+   "section": "17.6",
+   "name": "腐蚀",
+   "terms": [
+    "腐蚀"
+   ],
+   "statement": "腐蚀是金属因自然发生的电化学过程而劣化，例如铁上生锈、银上失去光泽，以及铜上的蓝绿色铜绿。金属物体上的不同部位起原电池阳极和阴极的作用，腐蚀发生在阳极部位。"
+  },
+  {
+   "id": "rusting-of-iron",
+   "kind": "idea",
+   "section": "17.6",
+   "name": "铁的生锈",
+   "statement": "铁暴露在氧和水中时，通过其表面的原电池而生锈：铁在阳极部位被氧化为 Fe2+，氧在阴极部位被还原，铁(II)在潮湿空气中进一步反应，生成称为铁锈的氧化铁(III)水合物。与铜上的铜绿不同，铁锈不形成保护层，所以铁锈剥落、露出新的铁之后，腐蚀仍继续进行。"
+  },
+  {
+   "id": "passivation",
+   "kind": "definition",
+   "section": "17.6",
+   "name": "钝化",
+   "statement": "钝化是在金属表面形成保护层，防止下面的金属进一步腐蚀，如铜上的铜绿和不锈钢上的氧化铬层。",
+   "terms": [
+    "钝化"
+   ]
+  },
+  {
+   "id": "galvanization",
+   "kind": "definition",
+   "section": "17.6",
+   "name": "镀锌",
+   "terms": [
+    "镀锌"
+   ],
+   "statement": "镀锌是保护铁或类似金属免受腐蚀的一种方法，即在其上涂一层薄薄的、更易被氧化的金属，通常是锌。完好的镀层使空气接触不到下面的金属，镀层破损后仍可通过阴极保护起保护作用。"
+  },
+  {
+   "id": "cathodic-protection",
+   "kind": "definition",
+   "section": "17.6",
+   "name": "阴极保护",
+   "terms": [
+    "阴极保护"
+   ],
+   "statement": "阴极保护是通过使金属成为原电池的阴极来防止其腐蚀，办法是把它与还原电势更低的、更活泼的金属相连。受保护的金属作为氧还原的阴极，只传导所转移的电子，而更活泼的金属被氧化。"
+  },
+  {
+   "id": "sacrificial-anode",
+   "kind": "definition",
+   "section": "17.6",
+   "name": "牺牲阳极",
+   "terms": [
+    "牺牲阳极"
+   ],
+   "statement": "牺牲阳极是由易被氧化的金属（常为镁或锌）制成的电极，与金属物体相连，通过阴极保护来保护它；它在腐蚀中被消耗，必须加以监测并定期更换。"
+  },
+  {
+   "id": "electrolysis",
+   "kind": "definition",
+   "section": "17.7",
+   "name": "电解",
+   "terms": [
+    "电解"
+   ],
+   "statement": "电解是外电路对氧化还原体系做功的过程，施加足以驱动本来非自发的反应的电压。给电池充电、冶炼金属矿石、制造大宗化学品和电镀都是其应用。"
+  },
+  {
+   "id": "electrolytic-cell",
+   "kind": "definition",
+   "section": "17.7",
+   "name": "电解池",
+   "terms": [
+    "电解池"
+   ],
+   "statement": "电解池是用外部电源驱动本来非自发的过程的电化学池。"
+  },
+  {
+   "id": "driving-nonspontaneous-cell-reaction",
+   "kind": "result",
+   "section": "17.7",
+   "name": "驱动非自发的电池反应",
+   "statement": "电池电势为负的电池反应是非自发的；要迫使它发生，必须对电池施加大小超过该负电池电势的正电势。水分解的标准电池电势为 −1.229 V，必须施加大于 +1.229 V 的电压来驱动。"
+  },
+  {
+   "id": "electrolysis-of-aqueous-solutions",
+   "kind": "idea",
+   "section": "17.7",
+   "name": "水溶液的电解",
+   "statement": "电解离子化合物的水溶液时，阳极和阴极半反应既可以涉及水的物种，也可以涉及溶质的物种。标准电势只能作为预测的参考，因为溶液并不处于标准状态：在氯化钠水溶液中，水和氯离子都被氧化，而被还原的是水而不是氢离子，因为氢离子的浓度远低于 1 M，在氯碱工艺中得到氢、氯和氢氧根。"
+  },
+  {
+   "id": "electroplating",
+   "kind": "definition",
+   "section": "17.7",
+   "name": "电镀",
+   "terms": [
+    "电镀"
+   ],
+   "statement": "电镀是用电解池在导电表面上沉积一层金属薄镀层，该表面作阴极，阳极往往是镀层金属，随镀层形成而溶解。它使物体更耐腐蚀、表面更坚固、外观更美观，或使金属得到提纯。"
+  },
+  {
+   "id": "electric-current",
+   "kind": "definition",
+   "section": "17.7",
+   "name": "电流",
+   "symbol": "I",
+   "type": "current",
+   "statement": "电流是任何带电物种的流动速率，这里最相关的是电子的流动。它以安培度量，一安培即每秒一库仑（A = 1 C/s），恒定电流在一段时间内转移的电荷等于二者之积。",
+   "forms": [
+    {
+     "id": "eq-charge-current-time",
+     "latex": "Q=It",
+     "ktex": "\\kQ=\\kI\\kt",
+     "anchor": "17.7-quantitative"
+    }
+   ]
+  },
+  {
+   "id": "charge-and-moles-of-electrons",
+   "kind": "result",
+   "section": "17.7",
+   "name": "电荷与电子的物质的量",
+   "statement": "氧化还原过程的化学计量关系给出它所转移的电子的物质的量，转移的电荷等于这一物质的量乘以法拉第常数；金属离子 Mn+ 还原为金属时，每摩尔金属转移 n mol 电子。",
+   "forms": [
+    {
+     "id": "eq-charge-moles-electrons",
+     "latex": "Q=nF",
+     "ktex": "\\kQ=\\kn\\kFaraday",
+     "anchor": "17.7-quantitative"
+    }
+   ]
+  },
+  {
+   "id": "electrolysis-stoichiometry",
+   "kind": "skill",
+   "section": "17.7",
+   "name": "电解的化学计量",
+   "statement": "在电解过程中测量电流，就可以进行化学计量计算：通过的电荷等于电流乘以时间，用法拉第常数换算成电子的物质的量，再由半反应换算成产物的物质的量，最后用摩尔质量换算成质量。同样的链条倒过来，可得到在给定电流下沉积给定量产物所需的时间。"
+  }
+ ],
+ "concept_prereqs": [
+  {
+   "concept": "oxidation-number-covalent-limit",
+   "prereq": "oxidation-number"
+  },
+  {
+   "concept": "oxidation-number-covalent-limit",
+   "prereq": "polar-covalent-bond"
+  },
+  {
+   "concept": "balance-redox-basic-solution",
+   "prereq": "half-reaction-method"
+  },
+  {
+   "concept": "electrochemical-cell",
+   "prereq": "half-reaction"
+  },
+  {
+   "concept": "galvanic-cell",
+   "prereq": "electrochemical-cell"
+  },
+  {
+   "concept": "galvanic-cell",
+   "prereq": "spontaneous-process"
+  },
+  {
+   "concept": "half-cell",
+   "prereq": "electrochemical-cell"
+  },
+  {
+   "concept": "anode",
+   "prereq": "half-cell"
+  },
+  {
+   "concept": "anode",
+   "prereq": "oxidation"
+  },
+  {
+   "concept": "cathode",
+   "prereq": "half-cell"
+  },
+  {
+   "concept": "cathode",
+   "prereq": "reduction"
+  },
+  {
+   "concept": "salt-bridge",
+   "prereq": "half-cell"
+  },
+  {
+   "concept": "salt-bridge",
+   "prereq": "electrolyte"
+  },
+  {
+   "concept": "cell-notation",
+   "prereq": "anode"
+  },
+  {
+   "concept": "cell-notation",
+   "prereq": "cathode"
+  },
+  {
+   "concept": "cell-notation",
+   "prereq": "salt-bridge"
+  },
+  {
+   "concept": "inert-electrode",
+   "prereq": "half-cell"
+  },
+  {
+   "concept": "active-electrode",
+   "prereq": "half-cell"
+  },
+  {
+   "concept": "electrical-potential",
+   "prereq": "energy-and-work"
+  },
+  {
+   "concept": "electrical-potential",
+   "prereq": "fundamental-charge"
+  },
+  {
+   "concept": "cell-potential",
+   "prereq": "electrical-potential"
+  },
+  {
+   "concept": "cell-potential",
+   "prereq": "anode"
+  },
+  {
+   "concept": "cell-potential",
+   "prereq": "cathode"
+  },
+  {
+   "concept": "standard-cell-potential",
+   "prereq": "cell-potential"
+  },
+  {
+   "concept": "standard-cell-potential",
+   "prereq": "standard-state"
+  },
+  {
+   "concept": "standard-hydrogen-electrode",
+   "prereq": "inert-electrode"
+  },
+  {
+   "concept": "standard-hydrogen-electrode",
+   "prereq": "standard-state"
+  },
+  {
+   "concept": "electrode-potential",
+   "prereq": "cell-potential"
+  },
+  {
+   "concept": "electrode-potential",
+   "prereq": "standard-hydrogen-electrode"
+  },
+  {
+   "concept": "standard-electrode-potential",
+   "prereq": "electrode-potential"
+  },
+  {
+   "concept": "standard-electrode-potential",
+   "prereq": "standard-cell-potential"
+  },
+  {
+   "concept": "electrode-potential-and-oxidant-strength",
+   "prereq": "standard-electrode-potential"
+  },
+  {
+   "concept": "electrode-potential-and-oxidant-strength",
+   "prereq": "oxidizing-agent"
+  },
+  {
+   "concept": "cell-potential-and-spontaneity",
+   "prereq": "standard-cell-potential"
+  },
+  {
+   "concept": "cell-potential-and-spontaneity",
+   "prereq": "nonspontaneous-process"
+  },
+  {
+   "concept": "predict-redox-spontaneity",
+   "prereq": "cell-potential-and-spontaneity"
+  },
+  {
+   "concept": "predict-redox-spontaneity",
+   "prereq": "electrode-potential-and-oxidant-strength"
+  },
+  {
+   "concept": "faradays-constant",
+   "prereq": "mole"
+  },
+  {
+   "concept": "faradays-constant",
+   "prereq": "fundamental-charge"
+  },
+  {
+   "concept": "free-energy-and-cell-potential",
+   "prereq": "standard-cell-potential"
+  },
+  {
+   "concept": "free-energy-and-cell-potential",
+   "prereq": "faradays-constant"
+  },
+  {
+   "concept": "free-energy-and-cell-potential",
+   "prereq": "free-energy-and-maximum-work"
+  },
+  {
+   "concept": "free-energy-and-cell-potential",
+   "prereq": "standard-free-energy-change"
+  },
+  {
+   "concept": "cell-potential-and-equilibrium-constant",
+   "prereq": "free-energy-and-cell-potential"
+  },
+  {
+   "concept": "cell-potential-and-equilibrium-constant",
+   "prereq": "free-energy-and-equilibrium-constant"
+  },
+  {
+   "concept": "potential-free-energy-equilibrium-relations",
+   "prereq": "cell-potential-and-equilibrium-constant"
+  },
+  {
+   "concept": "potential-free-energy-equilibrium-relations",
+   "prereq": "cell-potential-and-spontaneity"
+  },
+  {
+   "concept": "potential-free-energy-equilibrium-relations",
+   "prereq": "magnitude-of-k"
+  },
+  {
+   "concept": "nernst-equation",
+   "prereq": "free-energy-and-cell-potential"
+  },
+  {
+   "concept": "nernst-equation",
+   "prereq": "free-energy-and-reaction-quotient"
+  },
+  {
+   "concept": "concentration-cell",
+   "prereq": "galvanic-cell"
+  },
+  {
+   "concept": "concentration-cell",
+   "prereq": "half-cell"
+  },
+  {
+   "concept": "concentration-cell",
+   "prereq": "concentration"
+  },
+  {
+   "concept": "predict-spontaneity-nonstandard",
+   "prereq": "nernst-equation"
+  },
+  {
+   "concept": "predict-spontaneity-nonstandard",
+   "prereq": "cell-potential-and-spontaneity"
+  },
+  {
+   "concept": "predict-spontaneity-nonstandard",
+   "prereq": "write-reaction-quotient"
+  },
+  {
+   "concept": "battery",
+   "prereq": "galvanic-cell"
+  },
+  {
+   "concept": "primary-cell",
+   "prereq": "battery"
+  },
+  {
+   "concept": "secondary-cell",
+   "prereq": "battery"
+  },
+  {
+   "concept": "secondary-cell",
+   "prereq": "reversible-reaction"
+  },
+  {
+   "concept": "dry-cell",
+   "prereq": "primary-cell"
+  },
+  {
+   "concept": "dry-cell",
+   "prereq": "cell-potential"
+  },
+  {
+   "concept": "alkaline-battery",
+   "prereq": "dry-cell"
+  },
+  {
+   "concept": "nickel-cadmium-battery",
+   "prereq": "secondary-cell"
+  },
+  {
+   "concept": "nickel-cadmium-battery",
+   "prereq": "cell-potential"
+  },
+  {
+   "concept": "lithium-ion-battery",
+   "prereq": "secondary-cell"
+  },
+  {
+   "concept": "lithium-ion-battery",
+   "prereq": "cell-potential"
+  },
+  {
+   "concept": "lead-acid-battery",
+   "prereq": "secondary-cell"
+  },
+  {
+   "concept": "lead-acid-battery",
+   "prereq": "cell-potential"
+  },
+  {
+   "concept": "fuel-cell",
+   "prereq": "galvanic-cell"
+  },
+  {
+   "concept": "fuel-cell",
+   "prereq": "combustion-reaction"
+  },
+  {
+   "concept": "corrosion",
+   "prereq": "galvanic-cell"
+  },
+  {
+   "concept": "corrosion",
+   "prereq": "metal"
+  },
+  {
+   "concept": "rusting-of-iron",
+   "prereq": "corrosion"
+  },
+  {
+   "concept": "rusting-of-iron",
+   "prereq": "anode"
+  },
+  {
+   "concept": "rusting-of-iron",
+   "prereq": "cathode"
+  },
+  {
+   "concept": "passivation",
+   "prereq": "corrosion"
+  },
+  {
+   "concept": "galvanization",
+   "prereq": "corrosion"
+  },
+  {
+   "concept": "galvanization",
+   "prereq": "electrode-potential-and-oxidant-strength"
+  },
+  {
+   "concept": "cathodic-protection",
+   "prereq": "corrosion"
+  },
+  {
+   "concept": "cathodic-protection",
+   "prereq": "electrode-potential-and-oxidant-strength"
+  },
+  {
+   "concept": "sacrificial-anode",
+   "prereq": "cathodic-protection"
+  },
+  {
+   "concept": "electrolysis",
+   "prereq": "electrochemical-cell"
+  },
+  {
+   "concept": "electrolysis",
+   "prereq": "nonspontaneous-process"
+  },
+  {
+   "concept": "electrolytic-cell",
+   "prereq": "electrolysis"
+  },
+  {
+   "concept": "driving-nonspontaneous-cell-reaction",
+   "prereq": "electrolytic-cell"
+  },
+  {
+   "concept": "driving-nonspontaneous-cell-reaction",
+   "prereq": "cell-potential-and-spontaneity"
+  },
+  {
+   "concept": "electrolysis-of-aqueous-solutions",
+   "prereq": "driving-nonspontaneous-cell-reaction"
+  },
+  {
+   "concept": "electrolysis-of-aqueous-solutions",
+   "prereq": "standard-electrode-potential"
+  },
+  {
+   "concept": "electrolysis-of-aqueous-solutions",
+   "prereq": "neutral-solution"
+  },
+  {
+   "concept": "electroplating",
+   "prereq": "electrolytic-cell"
+  },
+  {
+   "concept": "electric-current",
+   "prereq": "fundamental-charge"
+  },
+  {
+   "concept": "electric-current",
+   "prereq": "time"
+  },
+  {
+   "concept": "charge-and-moles-of-electrons",
+   "prereq": "faradays-constant"
+  },
+  {
+   "concept": "charge-and-moles-of-electrons",
+   "prereq": "half-reaction"
+  },
+  {
+   "concept": "electrolysis-stoichiometry",
+   "prereq": "electric-current"
+  },
+  {
+   "concept": "electrolysis-stoichiometry",
+   "prereq": "charge-and-moles-of-electrons"
+  },
+  {
+   "concept": "electrolysis-stoichiometry",
+   "prereq": "electrolytic-cell"
+  },
+  {
+   "concept": "electrolysis-stoichiometry",
+   "prereq": "mass-stoichiometry"
+  }
+ ]
+}

@@ -1,0 +1,439 @@
+{
+ "id": "4.1",
+ "module": "m68709",
+ "chapter": "4",
+ "title": "化学方程式的书写与配平",
+ "short": "方程式的书写与配平",
+ "lead": "化学方程式写明哪些物质发生反应、哪些物质生成，其系数给出它们的相对数目，使每种元素在两侧的原子数相同。方程式还可以给出物态和条件，水中离子之间的反应可以写成分子方程式、完全离子方程式或净离子方程式。",
+ "objectives": [
+  "由对化学反应的叙述性描述推导出化学方程式。",
+  "写出并配平分子方程式、完全离子方程式和净离子方程式。"
+ ],
+ "summary_html": "<p>化学方程式是化学变化和物理变化的符号表示。发生变化的物质（反应物）与变化生成的物质（产物）的化学式，用一个箭头隔开，前面各带一个整数系数，表示它们的相对数目。配平的方程式，是指其系数使反应物和产物中每种元素的原子数相等的方程式。涉及离子型反应物或产物的水溶液中的化学反应，可以用完全离子方程式更真实地表示，用净离子方程式更简洁地表示。</p>",
+ "notes": "指向配平交互式教程的“学习链接”栏目被略去；第五题（c）小题的答案按书后答案原样保留，其中 MgC1₂ 里用的是数字 1。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。每个“学习检测”都附有紧随其后的注释中书中自带的答案。章末习题的答案取自书后答案，它只涵盖奇数编号的习题；解答对第五题（c）小题的答案印作数字 1 的 MgC1₂，按印刷原样保留。无解答的 fs-idp14690896、fs-idp106387184、fs-idp109313632 和 fs-idp61581984 各要求写出配平的方程式或解答未给出的化学式，故略去。无解答的概念题 fs-idp138111360 附有一个标注为 OmniStax 自拟的建议思路。没有从其他小节取用任何内容，也没有为其他小节保留任何内容。",
+ "figures": [
+  {
+   "id": "sim-methane",
+   "kind": "sim",
+   "number": "4.2",
+   "folds": [
+    "4.3"
+   ],
+   "originals": [
+    "/media/ch04/CNX_Chem_04_01_rxn2.jpg",
+    "/media/ch04/CNX_Chem_04_01_rxn3.jpg"
+   ],
+   "original_caption": "（图 4.2）甲烷与氧气反应生成二氧化碳和水（见下方）的过程，可以用化学式写成化学方程式来表示（见上方）。（图 4.3）无论参与反应的分子绝对数目是多少，发生反应的各物种的分子数（反应物）与生成的各物种的分子数（产物）之间的比值都相同，并由化学反应方程式给出。",
+   "draws": [],
+   "conventions": [
+    "C",
+    "H",
+    "O"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "note dropped, it repeated the tallies and the caption"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-balance",
+   "kind": "sim",
+   "draws": [],
+   "conventions": [
+    "H",
+    "O",
+    "N",
+    "C"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "chemical-equations",
+   "concept": "chemical-equation",
+   "verb": "introduces"
+  },
+  {
+   "span": "chemical-equations",
+   "concept": "reactant",
+   "verb": "introduces"
+  },
+  {
+   "span": "chemical-equations",
+   "concept": "product",
+   "verb": "introduces"
+  },
+  {
+   "span": "chemical-equations",
+   "concept": "coefficient",
+   "verb": "introduces"
+  },
+  {
+   "span": "coefficient-ratios",
+   "concept": "coefficients-as-ratios",
+   "verb": "introduces"
+  },
+  {
+   "span": "coefficient-ratios",
+   "concept": "chemical-equation",
+   "verb": "uses"
+  },
+  {
+   "span": "balanced-equations",
+   "concept": "balanced-equation",
+   "verb": "introduces"
+  },
+  {
+   "span": "balancing-by-inspection",
+   "concept": "balance-by-inspection",
+   "verb": "introduces"
+  },
+  {
+   "span": "balancing-by-inspection",
+   "concept": "balanced-equation",
+   "verb": "uses"
+  },
+  {
+   "span": "fractional-coefficients",
+   "concept": "balance-by-inspection",
+   "verb": "reinforces"
+  },
+  {
+   "span": "fractional-coefficients",
+   "concept": "coefficients-as-ratios",
+   "verb": "reinforces"
+  },
+  {
+   "span": "additional-information",
+   "concept": "chemical-equation",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ionic-equations",
+   "concept": "ionic-equations",
+   "verb": "introduces"
+  },
+  {
+   "span": "ionic-equations",
+   "concept": "write-net-ionic-equation",
+   "verb": "introduces"
+  },
+  {
+   "span": "ionic-equations",
+   "concept": "balance-by-inspection",
+   "verb": "uses"
+  },
+  {
+   "span": "ionic-equations",
+   "concept": "molecular-equation",
+   "verb": "introduces"
+  },
+  {
+   "span": "ionic-equations",
+   "concept": "complete-ionic-equation",
+   "verb": "introduces"
+  },
+  {
+   "span": "ionic-equations",
+   "concept": "net-ionic-equation",
+   "verb": "introduces"
+  },
+  {
+   "span": "ionic-equations",
+   "concept": "spectator-ion",
+   "verb": "introduces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idp1783792",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-n2o5"
+   },
+   "cite": "balancing-by-inspection",
+   "prompt": "写出硝酸铵分解生成氮气、氧气和水的配平的方程式。（提示：最后配平氧，因为在方程式右边它存在于不止一个分子中。）",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "$2{\\text{NH}}_{4}{\\text{NO}}_{3}\\;\\longrightarrow \\;2{\\text{N}}_{2}+{\\text{O}}_{2}+4{\\text{H}}_{2}\\text{O}$"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idp44418832",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-ionic"
+   },
+   "cite": "ionic-equations",
+   "prompt": "双原子的氯气和氢氧化钠（碱液）是大宗化学品，它们与双原子的氢气一起，通过电解盐水大量生产，其未配平的方程式如下：\n$\\text{NaCl}(aq)+{\\text{H}}_{2}\\text{O}(l)\\;\\overset{\\;\\text{通电}\\;}{\\to}\\;\\text{NaOH}(aq)+{\\text{H}}_{2}(g)+{\\text{Cl}}_{2}(g)$\n写出这一过程配平的分子方程式、完全离子方程式和净离子方程式。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "$2\\text{NaCl}(aq)+2{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;2\\text{NaOH}(aq)+{\\text{H}}_{2}(g)+{\\text{Cl}}_{2}(g)$（分子方程式）；$2{\\text{Na}}^{\\text{+}}(aq)+2{\\text{Cl}}^{\\text{−}}(aq)+2{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;2{\\text{Na}}^{\\text{+}}(aq)+2{\\text{OH}}^{\\text{−}}(aq)+{\\text{H}}_{2}(g)+{\\text{Cl}}_{2}(g)$（完全离子方程式）；$2{\\text{Cl}}^{\\text{−}}(aq)+2{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;2{\\text{OH}}^{\\text{−}}(aq)+{\\text{H}}_{2}(g)+{\\text{Cl}}_{2}(g)$（净离子方程式）"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idp56139840",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "balanced-equations",
+   "prompt": "说一个方程式是配平的，是什么意思？为什么方程式配平很重要？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "当反应物一侧和产物一侧所表示的每种元素的数目相同时，方程式就是配平的。方程式必须配平，才能准确反映物质守恒定律。"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp138111360",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ionic-equations",
+   "prompt": "考虑分子方程式、完全离子方程式和净离子方程式。\n（a）这几类方程式有什么区别？\n（b）在什么情况下，一个反应的完全离子方程式和净离子方程式是相同的？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "（a）这三种方程式的区别在于对溶解的离子化合物的写法。分子方程式把每种反应物和产物都写成中性的化学式，就好像都没有解离一样，例如 $\\text{CaCl}_{2}(aq)+2\\text{AgNO}_{3}(aq)\\;\\longrightarrow\\;\\text{Ca(NO}_{3})_{2}(aq)+2\\text{AgCl}(s)$。完全离子方程式把每种溶解的离子化合物（以及每种强酸或强碱）写成各自分开的离子，而固体、液体、气体和弱电解质仍保留其化学式。净离子方程式是从完全离子方程式中消去旁观离子（即在两侧以相同形式出现的离子）后得到的，这里为 $\\text{Cl}^{-}(aq)+\\text{Ag}^{+}(aq)\\;\\longrightarrow\\;\\text{AgCl}(s)$。<br>（b）当反应没有旁观离子时，完全离子方程式和净离子方程式相同，也就是说，写在反应物一侧的每种离子都变成了不以这些相同离子形式写出的产物。氢氧化钡与硫酸的反应就是一例：$\\text{Ba}^{2+}(aq)+2\\text{OH}^{-}(aq)+2\\text{H}^{+}(aq)+\\text{SO}_{4}{}^{2-}(aq)\\;\\longrightarrow\\;\\text{BaSO}_{4}(s)+2\\text{H}_{2}\\text{O}(l)$。每种离子最终都进入了不溶的固体或水中，所以没有什么可消去的，完全离子方程式本身就是净离子方程式。"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp267125008",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "balancing-by-inspection",
+   "prompt": "配平下列方程式：\n（a）${\\text{PCl}}_{5}(s)+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;{\\text{POCl}}_{3}(l)+\\text{HCl}(aq)$\n（b）$\\text{Cu}(s)+{\\text{HNO}}_{3}(aq)\\;\\longrightarrow \\;\\text{Cu}{({\\text{NO}}_{3})}_{2}(aq)+{\\text{H}}_{2}\\text{O}(l)+\\text{NO}(g)$\n（c）${\\text{H}}_{2}(g)+{\\text{I}}_{2}(s)\\;\\longrightarrow \\;\\text{HI}(s)$\n（d）$\\text{Fe}(s)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{Fe}}_{2}{\\text{O}}_{3}(s)$\n（e）$\\text{Na}(s)+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{NaOH}(aq)+{\\text{H}}_{2}(g)$\n（f）$({\\text{NH}}_{4}{)}_{2}{\\text{Cr}}_{2}{\\text{O}}_{7}(s)\\;\\longrightarrow \\;{\\text{Cr}}_{2}{\\text{O}}_{3}(s)+{\\text{N}}_{2}(g)+{\\text{H}}_{2}\\text{O}(g)$\n（g）${\\text{P}}_{4}(s)+{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{PCl}}_{3}(l)$\n（h）${\\text{PtCl}}_{4}(s)\\;\\longrightarrow \\;\\text{Pt}(s)+{\\text{Cl}}_{2}(g)$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）${\\text{PCl}}_{5}(s)+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;{\\text{POCl}}_{3}(l)+2\\text{HCl}(aq)$；（b）$3\\text{Cu}(s)+8{\\text{HNO}}_{3}(aq)\\;\\longrightarrow \\;3\\text{Cu}{({\\text{NO}}_{3})}_{2}(aq)+4{\\text{H}}_{2}\\text{O}(l)+2\\text{NO}(g)$；（c）${\\text{H}}_{2}(g)+{\\text{I}}_{2}(s)\\;\\longrightarrow \\;2\\text{HI}(s)$；（d）$4\\text{Fe}(s)+3{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{Fe}}_{2}{\\text{O}}_{3}(s)$；（e）$2\\text{Na}(s)+2{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;2\\text{NaOH}(aq)+{\\text{H}}_{2}(g)$；（f）$({\\text{NH}}_{4}{)}_{2}{\\text{Cr}}_{2}{\\text{O}}_{7}(s)\\;\\longrightarrow \\;{\\text{Cr}}_{2}{\\text{O}}_{3}(s)+{\\text{N}}_{2}(g)+4{\\text{H}}_{2}\\text{O}(g)$；（g）${\\text{P}}_{4}(s)+6{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;4{\\text{PCl}}_{3}(l)$；（h）${\\text{PtCl}}_{4}(s)\\;\\longrightarrow \\;\\text{Pt}(s)+2{\\text{Cl}}_{2}(g)$"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp122928448",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "balancing-by-inspection",
+   "prompt": "写出下列各化学反应配平的分子方程式。\n（a）固体碳酸钙受热分解，生成固体氧化钙和二氧化碳气体。\n（b）气态丁烷 C<sub>4</sub>H<sub>10</sub> 与双原子氧气反应，生成气态二氧化碳和水蒸气。\n（c）氯化镁水溶液与氢氧化钠水溶液反应，生成固体氢氧化镁和氯化钠水溶液。\n（d）水蒸气与金属钠反应，生成固体氢氧化钠和氢气。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）${\\text{CaCO}}_{3}(s)\\;\\longrightarrow \\;\\text{CaO}(s)+{\\text{CO}}_{2}(g)$；（b）$2{\\text{C}}_{4}{\\text{H}}_{10}(g)+13{\\text{O}}_{2}(g)\\;\\longrightarrow \\;8{\\text{CO}}_{2}(g)+10{\\text{H}}_{2}\\text{O}(g)$；（c）${\\text{MgC1}}_{2}(aq)+2\\text{NaOH}(aq)\\;\\longrightarrow \\;\\text{Mg}{\\text{(OH)}}_{2}(s)+2\\text{NaCl}(aq)$；（d）$2{\\text{H}}_{2}\\text{O}(g)+2\\text{Na}(s)\\;\\longrightarrow \\;2\\text{NaOH}(s)+{\\text{H}}_{2}(g)$"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp208990784",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "balancing-by-inspection",
+   "prompt": "彩色烟火往往涉及硝酸钡和氯酸钾的分解，以及金属镁、铝、铁与氧气的反应。\n（a）写出硝酸钡和氯酸钾的化学式。\n（b）固体氯酸钾分解，生成固体氯化钾和双原子氧气。写出该反应的方程式。\n（c）固体硝酸钡分解，生成固体氧化钡、双原子氮气和双原子氧气。写出该反应的方程式。\n（d）分别写出固体金属镁、铝、铁与双原子氧气反应生成相应金属氧化物的方程式。（假定氧化铁中含有 Fe<sup>3+</sup> 离子。）",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）Ba(NO<sub>3</sub>)<sub>2</sub>，KClO<sub>3</sub>；（b）$2{\\text{KClO}}_{3}(s)\\;\\longrightarrow \\;2\\text{KCl}(s)+3{\\text{O}}_{2}(g)$；（c）$2\\text{Ba}{({\\text{NO}}_{3})}_{2}(s)\\;\\longrightarrow \\;2\\text{BaO}(s)+2{\\text{N}}_{2}(g)+5{\\text{O}}_{2}(g)$；（d）$2\\text{Mg}(s)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2\\text{MgO}(s)$；$4\\text{Al}(s)+3{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{Al}}_{2}{\\text{O}}_{3}(s)$；$4\\text{Fe}(s)+3{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{Fe}}_{2}{\\text{O}}_{3}(s)$"
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idp220078048",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ionic-equations",
+   "prompt": "氟化氢水溶液（氢氟酸）用于蚀刻玻璃，也用于分析矿物的硅含量。氟化氢还会与沙子（二氧化硅）反应。\n（a）写出固体二氧化硅与氢氟酸反应，生成气态四氟化硅和液态水的方程式。\n（b）矿物萤石（氟化钙）在伊利诺伊州大量产出。固体氟化钙也可以由氯化钙水溶液与氟化钠水溶液反应制得，另一种产物是氯化钠水溶液。写出该反应的完全离子方程式和净离子方程式。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）$4\\text{HF}(aq)+{\\text{SiO}}_{2}(s)\\;\\longrightarrow \\;{\\text{SiF}}_{4}(g)+2{\\text{H}}_{2}\\text{O}(l)$；（b）完全离子方程式：$2{\\text{Na}}^{\\text{+}}(aq)+2{\\text{F}}^{\\text{−}}(aq)+{\\text{Ca}}^{2+}(aq)+2{\\text{Cl}}^{\\text{−}}(aq)\\;\\longrightarrow \\;\\text{Ca}{\\text{F}}_{2}(s)+2{\\text{Na}}^{\\text{+}}(aq)+2{\\text{Cl}}^{\\text{−}}(aq)$，净离子方程式：$2{\\text{F}}^{\\text{−}}(aq)+{\\text{Ca}}^{2+}(aq)\\;\\longrightarrow \\;{\\text{CaF}}_{2}(s)$"
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idp41635696",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ionic-equations",
+   "prompt": "根据配平的分子方程式，写出下列反应的完全离子方程式和净离子方程式：\n（a）${\\text{K}}_{2}{\\text{C}}_{2}{\\text{O}}_{4}(aq)+\\text{Ba}{\\text{(OH)}}_{2}(aq)\\;\\longrightarrow \\;2\\text{KOH}(aq)+{\\text{BaC}}_{2}{\\text{O}}_{4}(s)$\n（b）$\\text{Pb}{({\\text{NO}}_{3})}_{2}(aq)+{\\text{H}}_{2}{\\text{SO}}_{4}(aq)\\;\\longrightarrow \\;{\\text{PbSO}}_{4}(s)+2{\\text{HNO}}_{3}(aq)$\n（c）${\\text{CaCO}}_{3}(s)+{\\text{H}}_{2}{\\text{SO}}_{4}(aq)\\;\\longrightarrow \\;{\\text{CaSO}}_{4}(s)+{\\text{CO}}_{2}(g)+{\\text{H}}_{2}\\text{O}(l)$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）完全离子方程式：$2{\\text{K}}^{\\text{+}}(aq)+{\\text{C}}_{2}{\\text{O}}_{4}{}^{2−}(aq)+{\\text{Ba}}^{2+}(aq)+2{\\text{OH}}^{\\text{−}}(aq)\\;\\longrightarrow \\;2{\\text{K}}^{\\text{+}}(aq)+2{\\text{OH}}^{\\text{−}}(aq)+{\\text{BaC}}_{2}{\\text{O}}_{4}(s)$；净离子方程式：${\\text{Ba}}^{2+}(aq)+{\\text{C}}_{2}{\\text{O}}_{4}{}^{2−}(aq)\\;\\longrightarrow \\;{\\text{BaC}}_{2}{\\text{O}}_{4}(s)$。（b）完全离子方程式：${\\text{Pb}}^{2+}(aq)+2{\\text{NO}}_{3}{}^{\\text{−}}(aq)+2{\\text{H}}^{\\text{+}}(aq)+{\\text{SO}}_{4}{}^{2−}(aq)\\;\\longrightarrow \\;{\\text{PbSO}}_{4}(s)+2{\\text{H}}^{\\text{+}}(aq)+2{\\text{NO}}_{3}{}^{\\text{−}}(aq)$；净离子方程式：${\\text{Pb}}^{2+}(aq)+{\\text{SO}}_{4}{}^{2−}(aq)\\;\\longrightarrow \\;{\\text{PbSO}}_{4}(s)$。（c）完全离子方程式：${\\text{CaCO}}_{3}(s)+2{\\text{H}}^{\\text{+}}(aq)+{\\text{SO}}_{4}{}^{2−}(aq)\\;\\longrightarrow \\;{\\text{CaSO}}_{4}(s)+{\\text{CO}}_{2}(g)+{\\text{H}}_{2}\\text{O}(l)$；净离子方程式：${\\text{CaCO}}_{3}(s)+2{\\text{H}}^{\\text{+}}(aq)+{\\text{SO}}_{4}{}^{2−}(aq)\\;\\longrightarrow \\;{\\text{CaSO}}_{4}(s)+{\\text{CO}}_{2}(g)+{\\text{H}}_{2}\\text{O}(l)$"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "balance-by-inspection"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "chemical-equation"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "write-net-ionic-equation"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "ionic-equations"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "balance-by-inspection"
+  },
+  {
+   "exercise": "e1",
+   "concept": "balanced-equation"
+  },
+  {
+   "exercise": "e2",
+   "concept": "ionic-equations"
+  },
+  {
+   "exercise": "e3",
+   "concept": "balance-by-inspection"
+  },
+  {
+   "exercise": "e3",
+   "concept": "balanced-equation"
+  },
+  {
+   "exercise": "e5",
+   "concept": "balance-by-inspection"
+  },
+  {
+   "exercise": "e5",
+   "concept": "chemical-equation"
+  },
+  {
+   "exercise": "e7",
+   "concept": "balance-by-inspection"
+  },
+  {
+   "exercise": "e7",
+   "concept": "chemical-equation"
+  },
+  {
+   "exercise": "e9",
+   "concept": "balance-by-inspection"
+  },
+  {
+   "exercise": "e9",
+   "concept": "write-net-ionic-equation"
+  },
+  {
+   "exercise": "e9",
+   "concept": "ionic-equations"
+  },
+  {
+   "exercise": "e11",
+   "concept": "write-net-ionic-equation"
+  },
+  {
+   "exercise": "e11",
+   "concept": "ionic-equations"
+  }
+ ],
+ "referents": [
+  {
+   "id": "before",
+   "label": "反应前的混合物",
+   "figures": [
+    "sim-methane"
+   ]
+  },
+  {
+   "id": "after",
+   "label": "反应后的混合物",
+   "figures": [
+    "sim-methane"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1088 @@
+{
+ "id": "13.4",
+ "module": "m68801",
+ "chapter": "13",
+ "title": "平衡计算",
+ "short": "平衡计算",
+ "lead": "平衡常数与平衡<span data-concept=\"concentration\">浓度</span>可以互相推算。本节把一个反应的初始<span data-concept=\"concentration\">浓度</span>、它们的变化量和平衡<span data-concept=\"concentration\">浓度</span>汇集在一张 ICE 表中，并用它求出<span data-concept=\"equilibrium-constant\">平衡常数</span>、未知的<span data-concept=\"concentration\">浓度</span>，或整个平衡混合物。",
+ "objectives": [
+  "确定平衡体系中各化学物种的浓度或压强变化",
+  "用多种代数方法计算平衡浓度或平衡压强以及平衡常数"
+ ],
+ "summary_html": "<p>计算<span data-concept=\"equilibrium-constant\">平衡常数</span>和/或平衡<span data-concept=\"concentration\">浓度</span>的值，在许多应用中都有实际益处。一种使用初始<span data-concept=\"concentration\">浓度</span>、<span data-concept=\"concentration\">浓度</span>变化量和平衡<span data-concept=\"concentration\">浓度</span>的数学策略（其缩写为 ICE）对几类平衡计算都很有用。</p>",
+ "notes": "本节没有遗漏任何内容；书中以图片形式印出的 ICE 表在这里写成了表格，习题 13.70 中的“NaSO₄”以及习题 13.76 答案中压强外的方括号均按原样保留。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案来自书后答案和“学习检测”的答案。十六道没有答案的数值习题被省略，也没有为它们算出答案：fs-idp235853120、fs-idp220009680、fs-idp99340080、fs-idp95397216、fs-idp165909856、fs-idp120770528、fs-idp193760224、fs-idp277387888、fs-idp97213088、fs-idp145400352、fs-idp124881392、fs-idp307489856、fs-idp186517200、fs-idp301926064、fs-idp157265136、fs-idp303786512。没有答案的习题 fs-idp155255936、fs-idp76682304、fs-idp359131456 和 fs-idp222775760 附有一份标明为 OmniStax 自己撰写的建议思路。例 13.9 第二个“学习检测”中 [H₂] 的 0.06 M 允许 10% 的误差；其他数值答案允许 2% 的误差。没有习题在各节之间移动。",
+ "figures": [
+  {
+   "id": "sim-small-x",
+   "kind": "sim",
+   "draws": [
+    "equilibrium-constant",
+    "concentration"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "changes",
+   "concept": "ice-change-terms",
+   "verb": "introduces"
+  },
+  {
+   "span": "changes",
+   "concept": "stoichiometric-factor",
+   "verb": "uses"
+  },
+  {
+   "span": "changes",
+   "concept": "relative-reaction-rates",
+   "verb": "uses"
+  },
+  {
+   "span": "changes",
+   "concept": "concentration",
+   "verb": "uses"
+  },
+  {
+   "span": "calc-k",
+   "concept": "k-from-ice-table",
+   "verb": "introduces"
+  },
+  {
+   "span": "calc-k",
+   "concept": "ice-change-terms",
+   "verb": "uses"
+  },
+  {
+   "span": "calc-k",
+   "concept": "equilibrium-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "missing",
+   "concept": "missing-equilibrium-concentration",
+   "verb": "introduces"
+  },
+  {
+   "span": "missing",
+   "concept": "equilibrium-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "missing",
+   "concept": "write-reaction-quotient",
+   "verb": "uses"
+  },
+  {
+   "span": "initial",
+   "concept": "equilibrium-from-initial-concentrations",
+   "verb": "introduces"
+  },
+  {
+   "span": "initial",
+   "concept": "small-x-approximation",
+   "verb": "introduces"
+  },
+  {
+   "span": "initial",
+   "concept": "predict-direction-q-versus-k",
+   "verb": "uses"
+  },
+  {
+   "span": "initial",
+   "concept": "ice-change-terms",
+   "verb": "uses"
+  },
+  {
+   "span": "initial",
+   "concept": "magnitude-of-k",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idp184218304",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-changes"
+   },
+   "cite": "changes",
+   "prompt": "补全下列每个反应中的浓度变化量：<br>（a）$\\begin{array}{llll}2{\\text{SO}}_{2}(g)+ & {\\text{O}}_{2}(g) & \\rightleftharpoons & 2{\\text{SO}}_{3}(g) \\\\ \\_\\_\\_\\_\\_ & x & & \\_\\_\\_\\_\\_\\end{array}$<br>（b）$\\begin{array}{lll}{\\text{C}}_{4}{\\text{H}}_{8}(g) & \\rightleftharpoons & 2{\\text{C}}_{2}{\\text{H}}_{4}(g) \\\\ \\_\\_\\_\\_\\_ & & -2x\\end{array}$<br>（c）$\\begin{array}{lllll}4{\\text{NH}}_{3}(g)+ & 7{\\text{O}}_{2}(g) & \\rightleftharpoons & 4{\\text{NO}}_{2}(g)+ & 6{\\text{H}}_{2}\\text{O}(g) \\\\ \\_\\_\\_\\_\\_ & \\_\\_\\_\\_\\_ & & \\_\\_\\_\\_\\_ & \\_\\_\\_\\_\\_\\end{array}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）2<em>x</em>、<em>x</em>、−2<em>x；</em>（b）<em>x</em>、−2<em>x；</em>（c）4<em>x</em>、7<em>x</em>、−4<em>x</em>、−6<em>x</em> 或 −4<em>x</em>、−7<em>x</em>、4<em>x</em>、6<em>x</em>"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idp157656016",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-calc-k"
+   },
+   "cite": "calc-k",
+   "prompt": "乙醇和乙酸反应，生成水和乙酸乙酯，乙酸乙酯是造成某些洗甲水气味的溶剂。<br>${\\text{C}}_{2}{\\text{H}}_{5}\\text{OH}+{\\text{CH}}_{3}{\\text{CO}}_{2}\\text{H}\\rightleftharpoons{\\text{CH}}_{3}{\\text{CO}}_{2}{\\text{C}}_{2}{\\text{H}}_{5}+{\\text{H}}_{2}\\text{O}$<br>让 C<sub>2</sub>H<sub>5</sub>OH 和 CH<sub>3</sub>CO<sub>2</sub>H 各 1 mol 在 1 L 溶剂 1,4-二氧杂环己烷中反应，当每种反应物各剩下 $\\frac{1}{3}$ mol 时建立平衡。计算该反应的平衡常数。（注：在此反应中水是溶质。）",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 4,
+    "hint": "在 1 L 中每种反应物减少 2/3 mol，因此每种产物增加同样的量；填写 ICE 表并代入。",
+    "solution": "<em>K<sub>c</sub></em> = 4"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idp69595744",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-missing"
+   },
+   "cite": "missing",
+   "prompt": "在某一温度下，氮与氢反应生成氨的平衡常数 <em>K<sub>c</sub></em> 为 6.00 × 10<sup>−2</sup>。若氮和氢的平衡浓度分别为 4.26 <em>M</em> 和 2.09 <em>M</em>，计算氨的平衡浓度。",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 1.53,
+    "unit": "mol/L",
+    "hint": "对于 N<sub>2</sub> + 3H<sub>2</sub> ⇌ 2NH<sub>3</sub>，由 <em>K<sub>c</sub></em> = [NH<sub>3</sub>]<sup>2</sup>/([N<sub>2</sub>][H<sub>2</sub>]<sup>3</sup>) 解出 [NH<sub>3</sub>]。",
+    "solution": "1.53 mol/L"
+   }
+  },
+  {
+   "id": "cyl4",
+   "source_id": "fs-idp88215808",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-pcl5"
+   },
+   "cite": "initial",
+   "prompt": "乙酸 CH<sub>3</sub>CO<sub>2</sub>H 与乙醇 C<sub>2</sub>H<sub>5</sub>OH 反应，生成水和乙酸乙酯 CH<sub>3</sub>CO<sub>2</sub>C<sub>2</sub>H<sub>5</sub>。<br>${\\text{CH}}_{3}{\\text{CO}}_{2}\\text{H}+{\\text{C}}_{2}{\\text{H}}_{5}\\text{OH}\\rightleftharpoons{\\text{CH}}_{3}{\\text{CO}}_{2}{\\text{C}}_{2}{\\text{H}}_{5}+{\\text{H}}_{2}\\text{O}$<br>以 1,4-二氧杂环己烷为溶剂时，该反应的平衡常数为 4.0。对于起始时 CH<sub>3</sub>CO<sub>2</sub>H 为 0.15 <em>M</em>、C<sub>2</sub>H<sub>5</sub>OH 为 0.15 <em>M</em>、CH<sub>3</sub>CO<sub>2</sub>C<sub>2</sub>H<sub>5</sub> 为 0.40 <em>M</em>、H<sub>2</sub>O 为 0.40 <em>M</em> 的混合物，各平衡浓度是多少？",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "[CH₃CO₂H]",
+      "value": 0.18,
+      "unit": "M"
+     },
+     {
+      "part": "[C₂H₅OH]",
+      "value": 0.18,
+      "unit": "M"
+     },
+     {
+      "part": "[CH₃CO₂C₂H₅]",
+      "value": 0.37,
+      "unit": "M"
+     },
+     {
+      "part": "[H₂O]",
+      "value": 0.37,
+      "unit": "M"
+     }
+    ],
+    "solution": "[CH<sub>3</sub>CO<sub>2</sub>H] = 0.18 <em>M</em>, [C<sub>2</sub>H<sub>5</sub>OH] = 0.18 <em>M</em>, [CH<sub>3</sub>CO<sub>2</sub>C<sub>2</sub>H<sub>5</sub>] = 0.37 <em>M</em>, [H<sub>2</sub>O] = 0.37 <em>M</em>"
+   }
+  },
+  {
+   "id": "cyl5",
+   "source_id": "fs-idp88215808",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-pcl5-2"
+   },
+   "cite": "initial",
+   "prompt": "一个 1.00 L 的烧瓶中装有 1.00 mol H<sub>2</sub> 和 2.00 mol I<sub>2</sub>。在给定条件下，氢与碘反应生成碘化氢的平衡常数值为 50.5。H<sub>2</sub>、I<sub>2</sub> 和 HI 的平衡浓度（以 mol/L 计）各是多少？<br>${\\text{H}}_{2}(g)+{\\text{I}}_{2}(g)\\rightleftharpoons 2\\text{HI}(g)$",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "[H₂]",
+      "value": 0.06,
+      "unit": "M",
+      "tol": 0.1
+     },
+     {
+      "part": "[I₂]",
+      "value": 1.06,
+      "unit": "M"
+     },
+     {
+      "part": "[HI]",
+      "value": 1.88,
+      "unit": "M"
+     }
+    ],
+    "solution": "[H<sub>2</sub>] = 0.06 <em>M</em>, [I<sub>2</sub>] = 1.06 <em>M</em>, [HI] = 1.88 <em>M</em>"
+   }
+  },
+  {
+   "id": "cyl6",
+   "source_id": "fs-idm94442464",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-hcn"
+   },
+   "cite": "initial",
+   "prompt": "0.25 <em>M</em> 的 NH<sub>3</sub> 溶液中各平衡浓度是多少？<br>${\\text{NH}}_{3}(aq)+{\\text{H}}_{2}\\text{O}(l)\\;\\rightleftharpoons\\;{\\text{NH}}_{4}{}^{+}(aq)+{\\text{OH}}^{-}(aq)\\hspace{5em}{K}_{\\text{c}}=1.8\\;\\times\\;{10}^{-5}$",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "[OH⁻] = [NH₄⁺]",
+      "value": 0.0021,
+      "unit": "M"
+     },
+     {
+      "part": "[NH₃]",
+      "value": 0.25,
+      "unit": "M"
+     }
+    ],
+    "solution": "$[{\\text{OH}}^{-}]=[{\\text{NH}}_{4}{}^{+}]=0.0021\\;M;$ [NH<sub>3</sub>] = 0.25 <em>M</em>"
+   }
+  },
+  {
+   "id": "e50",
+   "source_id": "fs-idp78773232",
+   "source_number": "50",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "calc-k",
+   "prompt": "一个反应由下面的方程式表示：$\\text{A}(aq)+2\\text{B}(aq)\\rightleftharpoons 2\\text{C}(aq)\\hspace{5em}{K}_{c}=1\\;\\times \\;{10}^{3}$<br>（a）写出平衡常数的数学表达式。<br>（b）使用不大于 1 <em>M</em> 的浓度，找出两组描述处于平衡的 A、B、C 混合物的浓度。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "${K}_{c}=\\;\\frac{{[\\text{C}]}^{2}}{[\\text{A}]{[\\text{B}]}^{2}}.$ [A] = 0.1 <em>M</em>，[B] = 0.1 <em>M</em>，[C] = 1 <em>M</em>；以及 [A] = 0.01，[B] = 0.250，[C] = 0.791。"
+   }
+  },
+  {
+   "id": "e52",
+   "source_id": "fs-idp288474752",
+   "source_number": "52",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "calc-k",
+   "prompt": "根据下面的方程式，NH<sub>3</sub> 的生成反应在 500 °C 时的平衡常数值是多少？<br>${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2{\\text{NH}}_{3}(g)$<br>在 500 °C 下，NH<sub>3</sub>(<em>g</em>)、H<sub>2</sub>(<em>g</em>) 和 N<sub>2</sub>(<em>g</em>) 的平衡混合物中测得含 1.35 <em>M</em> H<sub>2</sub>、1.15 <em>M</em> N<sub>2</sub> 和 4.12 × 10<sup>−1</sup> <em>M</em> NH<sub>3</sub>。",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.06,
+    "solution": "<em>K<sub>c</sub></em> = 6.00 × 10<sup>−2</sup>"
+   }
+  },
+  {
+   "id": "e54",
+   "source_id": "fs-idp343440336",
+   "source_number": "54",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "calc-k",
+   "prompt": "将 0.72 mol 的 PCl<sub>5</sub> 样品放入 1.00 L 的容器中并加热。平衡时，容器中含有 0.40 mol PCl<sub>3</sub>(<em>g</em>) 和 0.40 mol Cl<sub>2</sub>(<em>g</em>)。计算该温度下 PCl<sub>5</sub> 分解为 PCl<sub>3</sub> 和 Cl<sub>2</sub> 的平衡常数值。",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.5,
+    "solution": "<em>K<sub>c</sub></em> = 0.50"
+   }
+  },
+  {
+   "id": "e56",
+   "source_id": "fs-idp70745776",
+   "source_number": "56",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "calc-k",
+   "prompt": "根据下列平衡压强，计算反应 $2\\text{NO}(g)+{\\text{Cl}}_{2}(g)\\rightleftharpoons 2\\text{NOCl}(g)$ 的平衡常数 <em>K<sub>P</sub></em> 的值：NO，0.050 atm；Cl<sub>2</sub>，0.30 atm；NOCl，1.2 atm。",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 1900,
+    "solution": "<em>K<sub>P</sub></em> = 1.9 × 10<sup>3</sup>"
+   }
+  },
+  {
+   "id": "e58",
+   "source_id": "fs-idp148498768",
+   "source_number": "58",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "calc-k",
+   "prompt": "在密闭容器中加热一份氯化铵样品。<br>${\\text{NH}}_{4}\\text{Cl}(s)\\rightleftharpoons {\\text{NH}}_{3}(g)+\\text{HCl}(g)$<br>平衡时，测得 NH<sub>3</sub>(<em>g</em>) 的压强为 1.75 atm。该温度下分解反应的平衡常数 <em>K<sub>P</sub></em> 的值是多少？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 3.06,
+    "solution": "<em>K<sub>P</sub></em> = 3.06"
+   }
+  },
+  {
+   "id": "e60",
+   "source_id": "fs-idp189641568",
+   "source_number": "60",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "changes",
+   "prompt": "补全下列不完整的 ICE 表。<br>（a）<br>$\\begin{array}{lllll} & 2{\\text{SO}}_{3}(g) & \\rightleftharpoons & 2{\\text{SO}}_{2}(g)+ & {\\text{O}}_{2}(g) \\\\ \\text{变化} & \\text{\\_\\_\\_} & & \\text{\\_\\_\\_} & +x\\end{array}$<br>（b）<br>$\\begin{array}{llllll} & 4{\\text{NH}}_{3}(g) & +\\;3{\\text{O}}_{2}(g) & \\rightleftharpoons & 2{\\text{N}}_{2}(g)+ & 6{\\text{H}}_{2}\\text{O}(g) \\\\ \\text{变化} & \\text{\\_\\_\\_} & +x & & \\text{\\_\\_\\_} & \\text{\\_\\_\\_}\\end{array}$<br>（c）<br>$\\begin{array}{lllll} & 2{\\text{CH}}_{4}(g) & \\rightleftharpoons & {\\text{C}}_{2}{\\text{H}}_{2}(g)+ & 3{\\text{H}}_{2}(g) \\\\ \\text{变化} & \\text{\\_\\_\\_} & & +x & \\text{\\_\\_\\_}\\end{array}$<br>（d）<br>$\\begin{array}{llllll} & {\\text{CH}}_{4}(g)+ & {\\text{H}}_{2}\\text{O}(g) & \\rightleftharpoons & \\text{CO}(g)+ & 3{\\text{H}}_{2}(g) \\\\ \\text{变化} & \\text{\\_\\_\\_} & +x & & \\text{\\_\\_\\_} & \\text{\\_\\_\\_}\\end{array}$<br>（e）<br>$\\begin{array}{llll}{\\text{NH}}_{4}\\text{Cl}(s) & \\rightleftharpoons & {\\text{NH}}_{3}(g)+ & \\text{HCl}(g) \\\\ \\text{变化} & & +x & \\text{\\_\\_\\_}\\end{array}$<br>（f）<br>$\\begin{array}{llll}\\text{Ni}(s)+ & 4\\text{CO}(g) & \\rightleftharpoons & \\text{Ni}{(\\text{CO})}_{4}(g) \\\\ \\text{变化} & +x & & \\text{\\_\\_\\_}\\end{array}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）−2<em>x</em>、+2<em>x</em>；（b）$\\frac{4}{3}x$、$-\\frac{2}{3}x$、−2<em>x</em>；（c）−2<em>x</em>、3<em>x</em>；（d）<em>x</em>、–<em>x</em>、−3<em>x</em>；（e）+<em>x</em>；（f）$-\\frac{1}{4}x$"
+   }
+  },
+  {
+   "id": "e61",
+   "source_id": "fs-idp155255936",
+   "source_number": "61",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "changes",
+   "prompt": "补全下列不完整的 ICE 表。<br>（a）<br>$\\begin{array}{lllll} & 2{\\text{H}}_{2}(g)+ & {\\text{O}}_{2}(g) & \\rightleftharpoons & 2{\\text{H}}_{2}\\text{O}(g) \\\\ \\text{变化} & \\text{\\_\\_\\_} & \\text{\\_\\_\\_} & & +x\\end{array}$<br>（b）<br>$\\begin{array}{llllll} & {\\text{CS}}_{2}(g)+ & 4{\\text{H}}_{2}(g) & \\rightleftharpoons & {\\text{CH}}_{4}(g)+ & 2{\\text{H}}_{2}\\text{S}(g) \\\\ \\text{变化} & +x & \\text{\\_\\_\\_} & & \\text{\\_\\_\\_} & \\text{\\_\\_\\_}\\end{array}$<br>（c）<br>$\\begin{array}{lllll} & {\\text{H}}_{2}(g)+ & {\\text{Cl}}_{2}(g) & \\rightleftharpoons & 2\\text{HCl}(g) \\\\ \\text{变化} & +x & \\text{\\_\\_\\_} & & \\text{\\_\\_\\_}\\end{array}$<br>（d）<br>$\\begin{array}{llllll} & 2{\\text{NH}}_{3}(g) & +\\;2{\\text{O}}_{2}(g) & \\rightleftharpoons & {\\text{N}}_{2}\\text{O}(g)+ & 3{\\text{H}}_{2}\\text{O}(g) \\\\ \\text{变化} & \\text{\\_\\_\\_} & \\text{\\_\\_\\_} & & \\text{\\_\\_\\_} & +x\\end{array}$<br>（e）<br>$\\begin{array}{llll}{\\text{NH}}_{4}\\text{HS}(s) & \\rightleftharpoons & {\\text{NH}}_{3}(g)+ & {\\text{H}}_{2}\\text{S}(g) \\\\ \\text{变化} & & +x & \\text{\\_\\_\\_}\\end{array}$<br>（f）<br>$\\begin{array}{llll}\\text{Fe}(s)+ & 5\\text{CO}(g) & \\rightleftharpoons & \\text{Fe}{(\\text{CO})}_{5}(g) \\\\ \\text{变化} & \\text{\\_\\_\\_} & & +x\\end{array}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "每种物种的变化量与其系数成正比：与已知物种在方程式同一侧的物种，变化量的符号相同；在另一侧的物种，符号相反。（a）H<sub>2</sub>O 的系数为 2，变化量为 +<em>x</em>，即每单位系数变化 +½<em>x</em>，所以 H<sub>2</sub> 为 −<em>x</em>，O<sub>2</sub> 为 −½<em>x</em>。（b）H<sub>2</sub> 为 +4<em>x</em>，CH<sub>4</sub> 为 −<em>x</em>，H<sub>2</sub>S 为 −2<em>x</em>。（c）Cl<sub>2</sub> 为 +<em>x</em>，HCl 为 −2<em>x</em>。（d）H<sub>2</sub>O 的系数为 3，变化量为 +<em>x</em>，即每单位系数变化 +⅓<em>x</em>，所以 NH<sub>3</sub> 为 −⅔<em>x</em>，O<sub>2</sub> 为 −⅔<em>x</em>，N<sub>2</sub>O 为 +⅓<em>x</em>。（e）H<sub>2</sub>S 为 +<em>x</em>；固体 NH<sub>4</sub>HS 没有变化量一项。（f）CO 为 −5<em>x</em>；固体 Fe 没有变化量一项。"
+   }
+  },
+  {
+   "id": "e62",
+   "source_id": "fs-idp116788016",
+   "source_number": "62",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "changes",
+   "prompt": "为什么习题 13.60 的（f）小题中没有给出 Ni 的变化量？Ni 的哪种性质确实发生了变化？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "纯晶态固体的活度等于 1 且保持不变；然而，Ni 的质量确实发生了变化。"
+   }
+  },
+  {
+   "id": "e63",
+   "source_id": "fs-idp76682304",
+   "source_number": "63",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "changes",
+   "prompt": "为什么习题 13.61 的（e）小题中没有给出 NH<sub>4</sub>HS 的变化量？NH<sub>4</sub>HS 的哪种性质确实发生了变化？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "NH<sub>4</sub>HS 是纯固体。它的浓度（活度）是恒定的，等于 1，所以不出现在 <em>K<sub>c</sub></em> = [NH<sub>3</sub>][H<sub>2</sub>S] 中；而 ICE 表只记录该表达式中出现的浓度，因此不给它变化量。确实发生变化的是 NH<sub>4</sub>HS 的量，从而也是它的质量：随着 NH<sub>3</sub> 和 H<sub>2</sub>S 生成，每生成 1 mol NH<sub>3</sub> 就消耗 1 mol 该固体，所以它的质量减少，而它的浓度保持不变。"
+   }
+  },
+  {
+   "id": "e64",
+   "source_id": "fs-idp99980832",
+   "source_number": "64",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "missing",
+   "prompt": "对含有 NH<sub>3</sub>、N<sub>2</sub> 和 H<sub>2</sub> 且在 400 °C 下处于平衡的密封反应容器中的气体进行分析，测得 N<sub>2</sub> 的浓度为 1.2 <em>M</em>，H<sub>2</sub> 的浓度为 0.24 <em>M</em>。<br>${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2{\\text{NH}}_{3}(g)\\hspace{5em}{K}_{c}=0.50\\;\\text{（}400\\;{}^{\\circ}\\text{C}\\;\\text{时）}$<br>计算 NH<sub>3</sub> 的平衡物质的量浓度。",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.091,
+    "unit": "M",
+    "solution": "[NH<sub>3</sub>] = 9.1 × 10<sup>−2</sup> <em>M</em>"
+   }
+  },
+  {
+   "id": "e66",
+   "source_id": "fs-idp316125088",
+   "source_number": "66",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "missing",
+   "prompt": "在 Cl<sub>2</sub>、Br<sub>2</sub> 和 BrCl 的平衡混合物中，如果混合物中 Cl<sub>2</sub> 的压强为 0.115 atm，Br<sub>2</sub> 的压强为 0.450 atm，那么 BrCl 的压强是多少？<br>${\\text{Cl}}_{2}(g)+{\\text{Br}}_{2}(g)\\rightleftharpoons 2\\text{BrCl}(g)\\hspace{5em}{K}_{P}=4.7\\;\\times \\;{10}^{−2}$",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.049,
+    "unit": "atm",
+    "solution": "<em>P</em><sub>BrCl</sub> = 4.9 × 10<sup>−2</sup> atm"
+   }
+  },
+  {
+   "id": "e68",
+   "source_id": "fs-idp170146416",
+   "source_number": "68",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "missing",
+   "prompt": "金属钴可以通过用一氧化碳还原氧化钴(II)来制备。<br>$\\text{CoO}(s)+\\text{CO}(g)\\rightleftharpoons \\text{Co}(s)+{\\text{CO}}_{2}(g)\\hspace{5em}{K}_{c}=4.90\\;\\times \\;{10}^{2}\\text{（}550\\;{}^{\\circ}\\text{C}\\;\\text{时）}$<br>在 [CO<sub>2</sub>] = 0.100 <em>M</em> 的平衡混合物中，剩余的 CO 浓度是多少？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.000204,
+    "unit": "M",
+    "solution": "[CO] = 2.04 × 10<sup>−4</sup> <em>M</em>"
+   }
+  },
+  {
+   "id": "e70",
+   "source_id": "fs-idp151659712",
+   "source_number": "70",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "missing",
+   "prompt": "十水合硫酸钠 Na<sub>2</sub>SO<sub>4</sub>·10H<sub>2</sub>O 按下面的方程式脱水：<br>${\\text{Na}}_{2}{\\text{SO}}_{4}\\text{·}10{\\text{H}}_{2}\\text{O}(s)\\rightleftharpoons {\\text{Na}}_{2}{\\text{SO}}_{4}(s)+10{\\text{H}}_{2}\\text{O}(g)\\hspace{5em}{K}_{P}=4.08\\;\\times \\;{10}^{−25}\\;\\text{（}25\\;{}^{\\circ}\\text{C}\\;\\text{时）}$<br>与 Na<sub>2</sub>SO<sub>4</sub>·10H<sub>2</sub>O 和 NaSO<sub>4</sub><sup class=\"fn\" data-note=\"c-e70-naso4\"></sup> 的混合物处于平衡时，水蒸气的压强是多少？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.00364,
+    "unit": "atm",
+    "solution": "${P}_{{\\text{H}}_{\\text{2}}}{}_{\\text{O}}=3.64\\;\\times \\;{10}^{\\text{−3}}\\;\\text{atm}$"
+   }
+  },
+  {
+   "id": "e72",
+   "source_id": "fs-idp210607184",
+   "source_number": "72",
+   "kind": "exercise",
+   "bloom": "Evaluate",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial",
+   "prompt": "一名学生解了下面的题，求得平衡浓度为 [SO<sub>2</sub>] = 0.590 <em>M</em>、[O<sub>2</sub>] = 0.0450 <em>M</em> 和 [SO<sub>3</sub>] = 0.260 <em>M</em>。这名学生如何能不重做该题就检查自己的解答？题目是：对于 600 °C 下的下列反应：<br>$2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2{\\text{SO}}_{3}(g)\\hspace{5em}{K}_{c}=4.32$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "根据算得的浓度计算 <em>Q</em>，看它是否等于 <em>K<sub>c</sub></em>。因为 <em>Q</em> 确实等于 4.32，所以体系必定处于平衡。"
+   }
+  },
+  {
+   "id": "e73",
+   "source_id": "fs-idp359131456",
+   "source_number": "73",
+   "kind": "exercise",
+   "bloom": "Evaluate",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial",
+   "prompt": "一名学生解了下面的题，求得平衡时 [N<sub>2</sub>O<sub>4</sub>] = 0.16 <em>M</em>。这名学生如何能不重做该题就看出答案是错的？题目是：由浓度为 0.10 <em>M</em> 的 NO<sub>2</sub> 样品形成的混合物中，N<sub>2</sub>O<sub>4</sub> 的平衡浓度是多少？<br>$2{\\text{NO}}_{2}(g)\\rightleftharpoons {\\text{N}}_{2}{\\text{O}}_{4}(g)\\hspace{5em}{K}_{c}=160$",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "这个答案比反应可能给出的量还大。根据 2NO<sub>2</sub> → N<sub>2</sub>O<sub>4</sub> 的化学计量关系，即使每个 NO<sub>2</sub> 分子都反应，0.10 <em>M</em> 的 NO<sub>2</sub> 最多也只能生成 0.10 <em>M</em> × ½ = 0.050 <em>M</em> 的 N<sub>2</sub>O<sub>4</sub>。0.16 <em>M</em> 的浓度所需要的氮原子和氧原子比样品所含的还多。因为 <em>K<sub>c</sub></em> = 160 很大，正确值略低于这个上限：在 $160=\\;\\frac{x}{{(0.10-2x)}^{2}}$ 中设 [N<sub>2</sub>O<sub>4</sub>] = <em>x</em>、[NO<sub>2</sub>] = 0.10 − 2<em>x</em>，得到 [N<sub>2</sub>O<sub>4</sub>] = 0.042 <em>M</em>，[NO<sub>2</sub>] = 0.016 <em>M</em>。"
+   }
+  },
+  {
+   "id": "e74",
+   "source_id": "fs-idp91440288",
+   "source_number": "74",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial",
+   "prompt": "在下面的题目中，假设 N<sub>2</sub>O<sub>4</sub> 浓度的变化小到可以忽略。<br>（a）以氯仿为溶剂，用 0.129 mol N<sub>2</sub>O<sub>4</sub> 配成 1.00 L 溶液，计算其中两种物种的平衡浓度。<br>${\\text{N}}_{2}{\\text{O}}_{4}(g)\\rightleftharpoons 2{\\text{NO}}_{2}(g)\\hspace{5em}{K}_{c}=1.07\\;\\times \\;{10}^{−5}$（在氯仿中）<br>（b）证实该变化小到可以忽略。",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "[NO₂]",
+      "value": 0.00117,
+      "unit": "M"
+     },
+     {
+      "part": "[N₂O₄]",
+      "value": 0.128,
+      "unit": "M"
+     }
+    ],
+    "solution": "（a）[NO<sub>2</sub>] = 1.17 × 10<sup>−3</sup> <em>M</em>；[N<sub>2</sub>O<sub>4</sub>] = 0.128 <em>M</em>；（b）将 N<sub>2</sub>O<sub>4</sub> 的初始浓度与其平衡浓度比较，即可证实 <em>x</em> 与 0.129 相比小到可以忽略的假设（二者仅在最低有效位上相差 1）。"
+   }
+  },
+  {
+   "id": "e76",
+   "source_id": "fs-idm19235840",
+   "source_number": "76",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial",
+   "prompt": "在下面的题目中，假设 H<sub>2</sub>S 压强的变化小到可以忽略。<br>（a）计算由初始压强为 0.824 atm 的 H<sub>2</sub>S 分解得到的平衡混合物中所有物种的平衡压强。<br>$2{\\text{H}}_{2}\\text{S}(g)\\rightleftharpoons 2{\\text{H}}_{2}(g)+{\\text{S}}_{2}(g)\\hspace{5em}{K}_{P}=2.2\\;\\times \\;{10}^{−6}$<br>（b）证实该变化小到可以忽略。",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "pressure of H₂S",
+      "value": 0.81,
+      "unit": "atm"
+     },
+     {
+      "part": "pressure of H₂",
+      "value": 0.014,
+      "unit": "atm"
+     },
+     {
+      "part": "pressure of S₂",
+      "value": 0.0072,
+      "unit": "atm"
+     }
+    ],
+    "solution": "（a）[H<sub>2</sub>S] = 0.810 atm，[H<sub>2</sub>] = 0.014 atm，[S<sub>2</sub>] = 0.0072 atm；（b）将 H<sub>2</sub>S 的初始浓度与其平衡浓度比较（0.824 atm 对 0.810 atm，相差不到 2%），即可证实 2<em>x</em> 与 0.824 相比小到可以忽略的假设。"
+   }
+  },
+  {
+   "id": "e78",
+   "source_id": "fs-idp55521216",
+   "source_number": "78",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial",
+   "prompt": "在由 [PCl<sub>5</sub>] = 2.00 <em>M</em> 的纯 PCl<sub>5</sub> 样品分解而成的平衡混合物中，PCl<sub>5</sub>、PCl<sub>3</sub> 和 Cl<sub>2</sub> 的浓度各是多少？<br>${\\text{PCl}}_{5}(g)\\rightleftharpoons {\\text{PCl}}_{3}(g)+{\\text{Cl}}_{2}(g)\\hspace{5em}{K}_{c}=0.0211$",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "[PCl₅]",
+      "value": 1.8,
+      "unit": "M"
+     },
+     {
+      "part": "[Cl₂]",
+      "value": 0.195,
+      "unit": "M"
+     },
+     {
+      "part": "[PCl₃]",
+      "value": 0.195,
+      "unit": "M"
+     }
+    ],
+    "solution": "[PCl<sub>5</sub>] = 1.80 <em>M</em>; [Cl<sub>2</sub>] = 0.195 <em>M</em>; [PCl<sub>3</sub>] = 0.195 <em>M</em>."
+   }
+  },
+  {
+   "id": "e79",
+   "source_id": "fs-idp116933168",
+   "source_number": "79",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial",
+   "prompt": "计算在 448 °C 下与 1.25 mol H<sub>2</sub> 和 63.5 g 碘处于平衡的 HI 的克数。<br>${\\text{H}}_{2}+{\\text{I}}_{2}\\rightleftharpoons 2\\text{HI}\\hspace{5em}{K}_{c}=50.2\\;\\text{（}448\\;{}^{\\circ}\\text{C}\\;\\text{时）}$",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 507,
+    "unit": "g",
+    "solution": "507 g"
+   }
+  },
+  {
+   "id": "e81",
+   "source_id": "fs-idp99670512",
+   "source_number": "81",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "missing",
+   "prompt": "如果 CaCO<sub>3</sub> 的分解反应在某一温度下的平衡常数（<em>K<sub>c</sub></em>）为 0.50，那么在该温度下的 6.50 L 容器中建立平衡，至少需要多少质量的 CaCO<sub>3</sub>？<br>${\\text{CaCO}}_{3}(s)\\rightleftharpoons \\text{CaO}(s)+{\\text{CO}}_{2}(g)$",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 330,
+    "unit": "g",
+    "solution": "330 g"
+   }
+  },
+  {
+   "id": "e84",
+   "source_id": "fs-idp291800000",
+   "source_number": "84",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "missing",
+   "prompt": "在给定温度下，该反应的平衡常数（<em>K<sub>c</sub></em>）为 5.0。<br>$\\text{CO}(g)+{\\text{H}}_{2}\\text{O}(g)\\rightleftharpoons {\\text{CO}}_{2}(g)+{\\text{H}}_{2}(g)$<br>（a）经分析，该温度下存在的各物质的平衡混合物中，每升含有 0.20 mol CO、0.30 mol 水蒸气和 0.90 mol H<sub>2</sub>。平衡混合物中有多少 mol CO<sub>2</sub>？<br>（b）保持温度不变，向体系中再加入 H<sub>2</sub>，并通过干燥除去一些水蒸气，由此建立了新的平衡混合物，每升含有 0.40 mol CO、0.30 mol 水蒸气和 1.2 mol H<sub>2</sub>。新的平衡混合物中有多少 mol CO<sub>2</sub>？将它与（a）小题中的量相比较，并讨论第二个值是否合理。解释为什么尽管在建立第二个平衡之前除去了一些水蒸气，两个平衡溶液中的水蒸气浓度仍然可以相同。",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a) CO₂",
+      "value": 0.33,
+      "unit": "mol"
+     },
+     {
+      "part": "(b) [CO₂]",
+      "value": 0.5,
+      "unit": "M"
+     }
+    ],
+    "solution": "（a）0.33 mol。（b）[CO<sub>2</sub>] = 0.50 <em>M</em>。加入 H<sub>2</sub> 后平衡向左移动，加入的 H<sub>2</sub> 因此生成了一些水。"
+   }
+  },
+  {
+   "id": "e86",
+   "source_id": "fs-idp121255200",
+   "source_number": "86",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial",
+   "prompt": "考虑下面的平衡<br>$4{\\text{NO}}_{2}(g)+6{\\text{H}}_{2}\\text{O}(g)\\rightleftharpoons 4{\\text{NH}}_{3}(g)+7{\\text{O}}_{2}(g)$<br>（a）该反应的平衡常数（<em>K<sub>c</sub></em>）的表达式是什么？<br>（b）如果反应商小于平衡常数，NH<sub>3</sub> 的浓度必须如何变化才能达到平衡？<br>（c）如果反应处于平衡，增大反应容器的体积会如何影响 NO<sub>2</sub> 的压强？<br>（d）如果四种气体的混合物达到平衡时 NO<sub>2</sub> 的压强变化为 28 torr，那么 O<sub>2</sub> 的压强将变化多少？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）${K}_{c}=\\;\\frac{{[{\\text{NH}}_{3}]}^{4}{[{\\text{O}}_{2}]}^{7}}{{[{\\text{NO}}_{2}]}^{4}{[{\\text{H}}_{2}\\text{O}]}^{6}}.$ （b）[NH<sub>3</sub>] 必须增大，<em>Q<sub>c</sub></em> 才能达到 <em>K<sub>c</sub></em>。（c）体系体积的增大会降低所有反应物（包括 NO<sub>2</sub>）的分压。（d）${P}_{{\\text{O}}_{\\text{2}}}=49\\;\\text{torr}$"
+   }
+  },
+  {
+   "id": "e87",
+   "source_id": "fs-idp222775760",
+   "source_number": "87",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial",
+   "prompt": "血红蛋白（Hb）与氧结合生成氧合血红蛋白（HbO<sub>2</sub>），这一过程部分地受血液中 H<sub>3</sub>O<sup>+</sup> 和溶解的 CO<sub>2</sub> 的浓度调节。虽然这一平衡很复杂，但可以概括为<br>${\\text{HbO}}_{2}(aq)+{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{CO}}_{2}(g)\\rightleftharpoons {\\text{CO}}_{2}\\text{−}\\text{Hb}\\text{−}{\\text{H}}^{\\text{+}}+{\\text{O}}_{2}(g)+{\\text{H}}_{2}\\text{O}(l)$<br>（a）写出该反应的平衡常数表达式。<br>（b）解释为什么肌肉在用力时产生的乳酸和 CO<sub>2</sub> 会促使流经肌肉的血液中的氧合血红蛋白释放 O<sub>2</sub>。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "（a）${K}_{c}=\\;\\frac{[{\\text{CO}}_{2}\\text{−}\\text{Hb}\\text{−}{\\text{H}}^{\\text{+}}][{\\text{O}}_{2}]}{[{\\text{HbO}}_{2}][{\\text{H}}_{3}{\\text{O}}^{\\text{+}}][{\\text{CO}}_{2}]};$ 液态水略去。（b）乳酸在肌肉中电离，使 [H<sub>3</sub>O<sup>+</sup>] 升高，而用力会产生 CO<sub>2</sub>，所以两者都增大了这一平衡中反应物的浓度。<em>Q<sub>c</sub></em> 的分母变大，<em>Q<sub>c</sub></em> 降到 <em>K<sub>c</sub></em> 以下，平衡向右移动，正如勒夏特列原理所预测的。这一移动使 HbO<sub>2</sub> 转化为 CO<sub>2</sub>−Hb−H<sup>+</sup> 并释放出 O<sub>2</sub>，所以流经工作肌肉的血液恰好在需要氧的地方放出更多的氧。"
+   }
+  },
+  {
+   "id": "e88",
+   "source_id": "fs-idp149802032",
+   "source_number": "88",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial",
+   "prompt": "液态 N<sub>2</sub>O<sub>3</sub> 在低温下呈深蓝色，但随着该化合物分解为 NO 和 NO<sub>2</sub>，颜色在较高温度下褪去并变为偏绿色。在 25 °C 时，该分解反应已测得 <em>K<sub>P</sub></em> = 1.91。如果将 0.236 mol N<sub>2</sub>O<sub>3</sub> 放入 25 °C 的 1.52 L 容器中，计算 N<sub>2</sub>O<sub>3</sub>(<em>g</em>)、NO<sub>2</sub>(<em>g</em>) 和 NO(<em>g</em>) 的平衡分压。",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "pressure of N₂O₃",
+      "value": 1.9,
+      "unit": "atm"
+     },
+     {
+      "part": "pressure of NO",
+      "value": 1.9,
+      "unit": "atm"
+     },
+     {
+      "part": "pressure of NO₂",
+      "value": 1.9,
+      "unit": "atm"
+     }
+    ],
+    "solution": "${P}_{{\\text{N}}_{\\text{2}}}{}_{{\\text{O}}_{\\text{3}}}=1.90\\;\\text{atm}\\;\\text{和}\\;{P}_{\\text{NO}}={P}_{{\\text{NO}}_{\\text{2}}}=1.90\\;\\text{atm}$"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "ice-change-terms",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "k-from-ice-table",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "ice-change-terms",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "missing-equilibrium-concentration",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "equilibrium-from-initial-concentrations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "predict-direction-q-versus-k",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "equilibrium-from-initial-concentrations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "ice-change-terms",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl6",
+   "concept": "small-x-approximation",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl6",
+   "concept": "equilibrium-from-initial-concentrations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e50",
+   "concept": "write-reaction-quotient",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e50",
+   "concept": "equilibrium-constant",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e52",
+   "concept": "equilibrium-constant",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e52",
+   "concept": "k-from-ice-table",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e54",
+   "concept": "k-from-ice-table",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e54",
+   "concept": "ice-change-terms",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e56",
+   "concept": "equilibrium-constant",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e56",
+   "concept": "write-reaction-quotient",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e58",
+   "concept": "k-from-ice-table",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e58",
+   "concept": "heterogeneous-equilibrium",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e60",
+   "concept": "ice-change-terms",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e61",
+   "concept": "ice-change-terms",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e61",
+   "concept": "heterogeneous-equilibrium",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e62",
+   "concept": "heterogeneous-equilibrium",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e62",
+   "concept": "ice-change-terms",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e63",
+   "concept": "heterogeneous-equilibrium",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e63",
+   "concept": "ice-change-terms",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e64",
+   "concept": "missing-equilibrium-concentration",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e66",
+   "concept": "missing-equilibrium-concentration",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e66",
+   "concept": "equilibrium-constant",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e68",
+   "concept": "missing-equilibrium-concentration",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e68",
+   "concept": "heterogeneous-equilibrium",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e70",
+   "concept": "missing-equilibrium-concentration",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e70",
+   "concept": "heterogeneous-equilibrium",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e72",
+   "concept": "equilibrium-from-initial-concentrations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e72",
+   "concept": "predict-direction-q-versus-k",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e73",
+   "concept": "equilibrium-from-initial-concentrations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e73",
+   "concept": "ice-change-terms",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e74",
+   "concept": "small-x-approximation",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e74",
+   "concept": "equilibrium-from-initial-concentrations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e76",
+   "concept": "small-x-approximation",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e76",
+   "concept": "ice-change-terms",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e78",
+   "concept": "equilibrium-from-initial-concentrations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e79",
+   "concept": "equilibrium-from-initial-concentrations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e79",
+   "concept": "molar-mass",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e81",
+   "concept": "missing-equilibrium-concentration",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e81",
+   "concept": "heterogeneous-equilibrium",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e84",
+   "concept": "missing-equilibrium-concentration",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e84",
+   "concept": "concentration-stress",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e86",
+   "concept": "write-reaction-quotient",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e86",
+   "concept": "predict-direction-q-versus-k",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e86",
+   "concept": "ice-change-terms",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e87",
+   "concept": "write-reaction-quotient",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e87",
+   "concept": "le-chateliers-principle",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e88",
+   "concept": "equilibrium-from-initial-concentrations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e88",
+   "concept": "ideal-gas-law",
+   "weights_by": "ai"
+  }
+ ],
+ "referents": [],
+ "footnotes": [
+  {
+   "id": "c-e70-naso4",
+   "kind": "correction",
+   "html": "书中写的是 NaSO<sub>4</sub>；上面方程式中脱水后的盐是 Na<sub>2</sub>SO<sub>4</sub>。"
+  }
+ ]
+}

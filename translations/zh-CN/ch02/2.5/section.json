@@ -1,0 +1,326 @@
+{
+ "id": "2.5",
+ "module": "m68695",
+ "chapter": "2",
+ "title": "元素周期表",
+ "short": "元素周期表",
+ "lead": "按原子序数依次排列元素，性质相似的元素会每隔一定间隔重复出现；元素周期表就建立在这种重复出现之上。周期律陈述了这一点，元素周期表则把元素排成周期和族。它把元素分为金属、非金属和半金属，也分为主族元素、过渡金属、内过渡金属，以及各有专名、成员化学性质相似的几个族。",
+ "objectives": [
+  "陈述周期律，并解释元素在元素周期表中的组织方式",
+  "根据元素在元素周期表中的位置预测其一般性质",
+  "根据性质和/或在元素周期表中的位置识别金属、非金属和半金属"
+ ],
+ "summary_html": "<p>人们发现元素之间相似的性质会周期性地重复出现，这促成了元素周期表的提出：元素按原子序数递增的顺序排列，横行称为周期，竖列称为族。元素周期表中同一族的元素具有相似的化学性质。元素可以分为金属、半金属和非金属，也可以分为主族元素、过渡金属和内过渡金属。族的编号从左到右为 1–18。第 1 族的元素称为碱金属；第 2 族的是碱土金属；第 15 族的是氮族元素；第 16 族的是氧族元素；第 17 族的是卤素；第 18 族的是稀有气体。</p>",
+ "notes": "略去了指向两个外部交互式元素周期表的“学习链接”注记；在图 2.26 旁，改为链接本书自己的元素周期表。图 2.25、2.26 和 2.27 是本书的图片，予以保留。关于第 12 族的脚注印在带有它的段落下方。按书中原样：术语表列有“水合物”，该术语在化学命名法一节中定义；术语表用第 1、2 族和第 12–18 族来定义主族元素，而正文说的是 13–18；正文把埃利恩的同事称为“George Hitchens”。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。“学习检测”附有书中自己的答案，四道奇数编号的习题附有书中的答案。四道偶数编号的习题（fs-idm430913456、fs-idm315946160、fs-idm281322784、fs-idm251902464）没有给出答案，且各自要求给出确定的分类、名称或符号，因此略去。没有取自其他小节的内容，也没有留给其他小节的内容。",
+ "figures": [
+  {
+   "id": "fig-mendeleev",
+   "kind": "photo",
+   "number": "2.25",
+   "draws": []
+  },
+  {
+   "id": "fig-periodic-table",
+   "kind": "photo",
+   "number": "2.26",
+   "draws": []
+  },
+  {
+   "id": "fig-families",
+   "kind": "photo",
+   "number": "2.27",
+   "draws": []
+  }
+ ],
+ "coverage": [
+  {
+   "span": "grouping-elements",
+   "concept": "periodic-law",
+   "verb": "introduces"
+  },
+  {
+   "span": "grouping-elements",
+   "concept": "periodic-table",
+   "verb": "introduces"
+  },
+  {
+   "span": "modern-table",
+   "concept": "periodic-law",
+   "verb": "reinforces"
+  },
+  {
+   "span": "modern-table",
+   "concept": "periods-and-groups",
+   "verb": "introduces"
+  },
+  {
+   "span": "modern-table",
+   "concept": "atomic-number-and-mass-number",
+   "verb": "uses"
+  },
+  {
+   "span": "modern-table",
+   "concept": "average-atomic-mass",
+   "verb": "uses"
+  },
+  {
+   "span": "modern-table",
+   "concept": "group-of-the-periodic-table",
+   "verb": "introduces"
+  },
+  {
+   "span": "modern-table",
+   "concept": "period-of-the-periodic-table",
+   "verb": "introduces"
+  },
+  {
+   "span": "metals-nonmetals",
+   "concept": "metals-nonmetals-metalloids",
+   "verb": "introduces"
+  },
+  {
+   "span": "metals-nonmetals",
+   "concept": "metal",
+   "verb": "introduces"
+  },
+  {
+   "span": "metals-nonmetals",
+   "concept": "nonmetal",
+   "verb": "introduces"
+  },
+  {
+   "span": "metals-nonmetals",
+   "concept": "metalloid",
+   "verb": "introduces"
+  },
+  {
+   "span": "element-families",
+   "concept": "element-families",
+   "verb": "introduces"
+  },
+  {
+   "span": "element-families",
+   "concept": "name-group-of-element",
+   "verb": "introduces"
+  },
+  {
+   "span": "element-families",
+   "concept": "periods-and-groups",
+   "verb": "uses"
+  },
+  {
+   "span": "element-families",
+   "concept": "main-group-element",
+   "verb": "introduces"
+  },
+  {
+   "span": "element-families",
+   "concept": "transition-metal",
+   "verb": "introduces"
+  },
+  {
+   "span": "element-families",
+   "concept": "inner-transition-metal",
+   "verb": "introduces"
+  },
+  {
+   "span": "element-families",
+   "concept": "lanthanide",
+   "verb": "introduces"
+  },
+  {
+   "span": "element-families",
+   "concept": "actinide",
+   "verb": "introduces"
+  },
+  {
+   "span": "element-families",
+   "concept": "alkali-metal",
+   "verb": "introduces"
+  },
+  {
+   "span": "element-families",
+   "concept": "alkaline-earth-metal",
+   "verb": "introduces"
+  },
+  {
+   "span": "element-families",
+   "concept": "pnictogen",
+   "verb": "introduces"
+  },
+  {
+   "span": "element-families",
+   "concept": "chalcogen",
+   "verb": "introduces"
+  },
+  {
+   "span": "element-families",
+   "concept": "halogen",
+   "verb": "introduces"
+  },
+  {
+   "span": "element-families",
+   "concept": "noble-gas",
+   "verb": "introduces"
+  },
+  {
+   "span": "bracketed-masses",
+   "concept": "average-atomic-mass",
+   "verb": "uses"
+  },
+  {
+   "span": "bracketed-masses",
+   "concept": "isotopes",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm382810864",
+   "kind": "check-your-learning",
+   "bloom": "Remember",
+   "place": {
+    "at": "inline",
+    "after": "ex-naming-groups"
+   },
+   "prompt": "给出下列每种元素所在族的名称：<br>（a）氪<br>（b）硒<br>（c）钡<br>（d）锂",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）稀有气体；（b）氧族元素；（c）碱土金属；（d）碱金属"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm319896576",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "metals-nonmetals",
+   "prompt": "利用<a href=\"/chemistry-2e/sheets/elements/\">元素周期表</a>，把下列每种元素分类为金属或非金属，然后再进一步把每种元素分类为主族（representative）元素、过渡金属或内过渡金属：<br>（a）铀<br>（b）溴<br>（c）锶<br>（d）氖<br>（e）金<br>（f）镅<br>（g）铑<br>（h）硫<br>（i）碳<br>（j）钾",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）金属，内过渡金属；（b）非金属，主族元素；（c）金属，主族元素；（d）非金属，主族元素；（e）金属，过渡金属；（f）金属，内过渡金属；（g）金属，过渡金属；（h）非金属，主族元素；（i）非金属，主族元素；（j）金属，主族元素"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idm419056816",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": {
+    "at": "end"
+   },
+   "cite": "element-families",
+   "prompt": "利用<a href=\"/chemistry-2e/sheets/elements/\">元素周期表</a>，指出下列每一族中最轻的成员：<br>（a）稀有气体<br>（b）碱土金属<br>（c）碱金属<br>（d）氧族元素",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）He；（b）Be；（c）Li；（d）O"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm415648752",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "element-families",
+   "prompt": "利用<a href=\"/chemistry-2e/sheets/elements/\">元素周期表</a>，给出下列每种元素的名称和符号：<br>（a）与锗处于同一周期的稀有气体<br>（b）与硒处于同一周期的碱土金属<br>（c）与锂处于同一周期的卤素<br>（d）与镉处于同一周期的氧族元素",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）氪，Kr；（b）钙，Ca；（c）氟，F；（d）碲，Te"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm430165648",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "element-families",
+   "prompt": "为下列每种中性同位素写出符号，须包括其原子序数和质量数。<br>（a）有 11 个质子、质量数为 23 的碱金属<br>（b）原子核中有 75 个中子、中性原子中有 54 个电子的稀有气体元素<br>（c）原子核中有 33 个质子和 40 个中子的同位素<br>（d）有 88 个电子和 138 个中子的碱土金属",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）${}_{11}^{23}\\text{Na}$；（b）${}_{\\;54}^{129}\\text{Xe}$；（c）${}_{33}^{73}\\text{As}$；（d）${}_{\\;88}^{226}\\text{Ra}$"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "name-group-of-element"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "element-families"
+  },
+  {
+   "exercise": "e1",
+   "concept": "metals-nonmetals-metalloids"
+  },
+  {
+   "exercise": "e1",
+   "concept": "element-families"
+  },
+  {
+   "exercise": "e2",
+   "concept": "element-families"
+  },
+  {
+   "exercise": "e2",
+   "concept": "periods-and-groups"
+  },
+  {
+   "exercise": "e3",
+   "concept": "periods-and-groups"
+  },
+  {
+   "exercise": "e3",
+   "concept": "name-group-of-element"
+  },
+  {
+   "exercise": "e4",
+   "concept": "name-group-of-element"
+  },
+  {
+   "exercise": "e4",
+   "concept": "isotope-symbols"
+  },
+  {
+   "exercise": "e4",
+   "concept": "atomic-number-and-mass-number"
+  }
+ ]
+}

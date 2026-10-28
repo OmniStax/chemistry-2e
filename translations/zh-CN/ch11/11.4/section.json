@@ -1,0 +1,1689 @@
+{
+  "id": "11.4",
+  "module": "m68783",
+  "chapter": "11",
+  "title": "依数性质",
+  "short": "依数性质",
+  "lead": "溶液的少数性质只取决于它所含溶质粒子的数目，而与这些粒子是什么无关，摩尔分数和<span data-concept=\"molality\">质量摩尔浓度</span>就是度量这一数目的。它们是<span data-concept=\"vapor-pressure\">蒸气压</span>的下降、沸点的升高、凝固点的降低和<span data-concept=\"osmotic-pressure\">渗透压</span>，以及它们在求<span data-concept=\"molar-mass\">摩尔质量</span>中的应用，还有针对电解质对它们加以修正的范托夫因子。",
+  "objectives": [
+    "用摩尔分数和质量摩尔浓度表示溶液各组分的浓度",
+    "描述溶质浓度对溶液各种性质（蒸气压、沸点、凝固点和渗透压）的影响",
+    "利用描述这些依数效应的数学方程进行计算",
+    "描述蒸馏的过程及其实际应用",
+    "解释渗透的过程，并描述它在工业和自然界中的应用"
+  ],
+  "summary_html": "<p>仅取决于溶质粒子<span data-concept=\"concentration\">浓度</span>的溶液性质称为依数性质。它们包括溶液中溶剂的<span data-concept=\"vapor-pressure\">蒸气压</span>、沸点和凝固点的变化。这些性质的大小只取决于溶液中溶质粒子的总<span data-concept=\"concentration\">浓度</span>，而与粒子的种类无关。溶液中溶质粒子的总<span data-concept=\"concentration\">浓度</span>也决定其<span data-concept=\"osmotic-pressure\">渗透压</span>。这是为防止纯溶剂分子透过半透膜扩散进入溶液而必须施加于溶液的<span data-concept=\"gas-pressure\">压强</span>。由于活度效应，离子化合物在溶液中可能不完全解离，在这种情况下，观察到的依数效应可能小于预测值。</p>",
+  "notes": "本节没有任何遗漏。例 11.3 保留了书中一处乙二醇的 C₂H₂(OH)₂，本节保留书中印刷的“electroyte”，表 11.3 保留标题中的“Predicated”（这两处拼写错误在中文中无法保留，译文分别作“电解质”和“预测值”）和 HCl 一行中的 H₃O⁺（书中该表的摘要写作 H⁺），表 11.2 的表头写成带度符号 °。",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      },
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ]
+  },
+  "built": "2026-10-26",
+  "exercises_lead": "",
+  "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案取自书后答案以及“学习检测”的答案。十七道无答案的数值习题未收入，也未为它们计算答案：fs-idp102879040、fs-idp977216、fs-idp82906048、fs-idp36241264、fs-idp172267408、fs-idm62881312、fs-idp169311680、fs-idp128908704、fs-idp140011408、fs-idp128832096、fs-idm4586416、fs-idp141394336、fs-idp138340304、fs-idp18476208、fs-idm1532816、fs-idp128684672、fs-idp445696。六道无答案的概念习题（本章的 26、28、42、54、58 和 66）附有标明为 OmniStax 自拟的建议思路。有答案的习题 fs-idp128725184（习题 27，图 11.14 中的油和水）放在 11.3，那里讲授互溶性。fs-idm4591712 的答案对苯取 K_f = 5.14 °C/m，而表 11.2 给出 5.12，按原样保留。数值答案接受 2% 的容差，但沸点接近 100 °C、蒸气压接近纯水的蒸气压、或摩尔分数接近 1 时需要更严的容差；例 11.12“学习检测”和习题 49 中只有一位有效数字的摩尔质量，分别接受 15% 和 3% 的容差。",
+  "figures": [
+    {
+      "id": "sim-vapor-lowering",
+      "kind": "sim",
+      "number": "11.18",
+      "originals": [
+        "/media/ch11/CNX_Chem_11_04_RaoultLaw.jpg"
+      ],
+      "original_caption": "不挥发性溶质通过阻碍溶剂分子的蒸发，使溶液的蒸气压下降。",
+      "draws": [
+        "pressure"
+      ],
+      "conventions": [
+        "O",
+        "H",
+        "C",
+        "N"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-lab-distill",
+      "kind": "photo",
+      "number": "11.19",
+      "draws": []
+    },
+    {
+      "id": "fig-refinery",
+      "kind": "photo",
+      "number": "11.20",
+      "draws": []
+    },
+    {
+      "id": "fig-ex-steps-bp",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-ex-steps-iodine",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-rocksalt",
+      "kind": "photo",
+      "number": "11.21",
+      "draws": []
+    },
+    {
+      "id": "fig-ex-steps-fp",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-deice",
+      "kind": "photo",
+      "number": "11.22",
+      "draws": []
+    },
+    {
+      "id": "sim-phase-diagram",
+      "kind": "sim",
+      "number": "11.23",
+      "originals": [
+        "/media/ch11/CNX_Chem_11_04_phasediag.jpg"
+      ],
+      "original_caption": "纯溶剂（实线）和由不挥发性溶质溶于该溶剂所成溶液（虚线）的相图。",
+      "draws": [
+        "concentration",
+        "pressure",
+        "temperature",
+        "colligative-constant"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "rewritten: log overview with a linear inset at 1 atm for ΔT_b and ΔP"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-osmosis",
+      "kind": "sim",
+      "number": "11.24",
+      "folds": [
+        "11.25"
+      ],
+      "originals": [
+        "/media/ch11/CNX_Chem_11_04_osmosis.jpg",
+        "/media/ch11/CNX_Chem_11_04_rvosmosis.jpg"
+      ],
+      "original_caption": "（图 11.24）（a）溶液和纯溶剂最初被一层渗透膜隔开。（b）溶剂分子净转移到溶液中，直到溶液的渗透压使两个方向上的转移速率相等。（图 11.25）施加大于溶液渗透压的压强会使渗透反向进行。溶液中的溶剂分子被压入纯溶剂中。",
+      "draws": [
+        "concentration",
+        "pressure",
+        "temperature"
+      ],
+      "conventions": [
+        "O",
+        "H",
+        "C"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "membrane label moved off the membrane; long headlines shortened"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-waterpur",
+      "kind": "photo",
+      "number": "11.26",
+      "draws": []
+    },
+    {
+      "id": "sim-red-cells",
+      "kind": "sim",
+      "number": "11.27",
+      "originals": [
+        "/media/ch11/CNX_Chem_11_04_bloodcell.jpg"
+      ],
+      "original_caption": "红细胞膜是透水的，在（a）低渗溶液中会膨胀并可能破裂；在（b）等渗溶液中保持正常的体积和形状；在（c）高渗溶液中会干瘪并可能死亡。（来源 a/b/c：改编自“LadyofHats”/Wikimedia commons 的作品）",
+      "draws": [
+        "pressure"
+      ],
+      "facts": [
+        "#c0392b"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "note that repeated the caption dropped"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-ex-steps-mm-fp",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-ex-steps-mm-osm",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-ion-pairs",
+      "kind": "sim",
+      "number": "11.28",
+      "originals": [
+        "/media/ch11/CNX_Chem_11_04_ionpair.jpg"
+      ],
+      "original_caption": "由于形成离子对，离子化合物在水中的解离并不总是完全的。",
+      "draws": [
+        "concentration"
+      ],
+      "conventions": [
+        "K",
+        "Cl",
+        "O",
+        "H"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "box edge set to the true spacing so ions no longer overlap at 1 m; note dropped"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-ex-steps-electrolyte",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "span": "colligative",
+      "concept": "colligative-properties",
+      "verb": "introduces"
+    },
+    {
+      "span": "molality",
+      "concept": "molality-and-mole-fraction",
+      "verb": "introduces"
+    },
+    {
+      "span": "molality",
+      "concept": "molality",
+      "verb": "introduces"
+    },
+    {
+      "span": "vapor",
+      "concept": "raoults-law",
+      "verb": "introduces"
+    },
+    {
+      "span": "vapor",
+      "concept": "colligative-properties",
+      "verb": "uses"
+    },
+    {
+      "span": "vapor",
+      "concept": "molality-and-mole-fraction",
+      "verb": "uses"
+    },
+    {
+      "span": "distillation",
+      "concept": "distillation",
+      "verb": "introduces"
+    },
+    {
+      "span": "distillation",
+      "concept": "raoults-law",
+      "verb": "uses"
+    },
+    {
+      "span": "boiling",
+      "concept": "boiling-point-elevation",
+      "verb": "introduces"
+    },
+    {
+      "span": "boiling",
+      "concept": "molality-and-mole-fraction",
+      "verb": "uses"
+    },
+    {
+      "span": "boiling",
+      "concept": "boiling-point-elevation-constant",
+      "verb": "introduces"
+    },
+    {
+      "span": "freezing",
+      "concept": "freezing-point-depression",
+      "verb": "introduces"
+    },
+    {
+      "span": "freezing",
+      "concept": "freezing-point-depression-constant",
+      "verb": "introduces"
+    },
+    {
+      "span": "phase",
+      "concept": "raoults-law",
+      "verb": "uses"
+    },
+    {
+      "span": "phase",
+      "concept": "boiling-point-elevation",
+      "verb": "uses"
+    },
+    {
+      "span": "phase",
+      "concept": "freezing-point-depression",
+      "verb": "uses"
+    },
+    {
+      "span": "phase",
+      "concept": "colligative-properties",
+      "verb": "reinforces"
+    },
+    {
+      "span": "osmosis",
+      "concept": "osmotic-pressure",
+      "verb": "introduces"
+    },
+    {
+      "span": "osmosis",
+      "concept": "semipermeable-membrane",
+      "verb": "introduces"
+    },
+    {
+      "span": "osmosis",
+      "concept": "osmosis",
+      "verb": "introduces"
+    },
+    {
+      "span": "osmosis",
+      "concept": "isotonic",
+      "verb": "introduces"
+    },
+    {
+      "span": "osmosis",
+      "concept": "hypertonic",
+      "verb": "introduces"
+    },
+    {
+      "span": "osmosis",
+      "concept": "hypotonic",
+      "verb": "introduces"
+    },
+    {
+      "span": "osmosis",
+      "concept": "crenation",
+      "verb": "introduces"
+    },
+    {
+      "span": "osmosis",
+      "concept": "hemolysis",
+      "verb": "introduces"
+    },
+    {
+      "span": "molar-mass",
+      "concept": "molar-mass-from-colligative-properties",
+      "verb": "introduces"
+    },
+    {
+      "span": "molar-mass",
+      "concept": "freezing-point-depression",
+      "verb": "uses"
+    },
+    {
+      "span": "molar-mass",
+      "concept": "osmotic-pressure",
+      "verb": "uses"
+    },
+    {
+      "span": "electrolytes",
+      "concept": "vant-hoff-factor",
+      "verb": "introduces"
+    },
+    {
+      "span": "electrolytes",
+      "concept": "freezing-point-depression",
+      "verb": "uses"
+    },
+    {
+      "span": "electrolytes",
+      "concept": "ion-pair",
+      "verb": "introduces"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idp183990080",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-mole-fraction"
+      },
+      "cite": "molality",
+      "prompt": "含有 0.850 g 氨 NH<sub>3</sub>、溶于 125 g 水的溶液，其摩尔分数和质量摩尔浓度各是多少？",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "mole fraction of NH<sub>3</sub>",
+            "value": 0.00714,
+            "hint": "把两个质量都换算为物质的量，再用氨的物质的量除以总物质的量。"
+          },
+          {
+            "part": "molality",
+            "value": 0.399,
+            "unit": "m",
+            "hint": "用氨的物质的量除以以千克计的水的质量。"
+          }
+        ],
+        "solution": "7.14 × 10<sup>−3</sup>；0.399 <em>m</em>"
+      }
+    },
+    {
+      "id": "cyl2",
+      "source_id": "fs-idp32863264",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-convert"
+      },
+      "cite": "molality",
+      "prompt": "溶于二氯甲烷 CH<sub>2</sub>Cl<sub>2</sub> 的碘 I<sub>2</sub> 的摩尔分数为 0.115。该溶液中碘的质量摩尔浓度 <em>m</em> 是多少？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 1.53,
+        "unit": "m",
+        "hint": "取 0.115 mol I<sub>2</sub> 和 0.885 mol CH<sub>2</sub>Cl<sub>2</sub>，求出以千克计的二氯甲烷的质量，然后相除。",
+        "solution": "1.53 <em>m</em>"
+      }
+    },
+    {
+      "id": "cyl3",
+      "source_id": "fs-idm370293600",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-molarity"
+      },
+      "cite": "molality",
+      "prompt": "硝酸 HNO<sub>3</sub>(<em>aq</em>) 在市场上有 33.7 <em>m</em> 的水溶液出售（密度 = 1.35 g/mL）。这种溶液的物质的量浓度是多少？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 14.6,
+        "unit": "M",
+        "hint": "取 1 kg 水和 33.7 mol HNO<sub>3</sub>，求出总质量，再由密度求出溶液的体积，然后用物质的量除以以升计的体积。",
+        "solution": "14.6 <em>M</em>"
+      }
+    },
+    {
+      "id": "cyl4",
+      "source_id": "fs-idp189679696",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-vapor"
+      },
+      "cite": "vapor",
+      "prompt": "一种溶液含有 5.00 g 尿素 CO(NH<sub>2</sub>)<sub>2</sub>（一种不挥发性溶质）和 0.100 kg 水。如果纯水在 25 °C 时的蒸气压为 23.7 torr，那么在假设理想行为的情况下，该溶液的蒸气压是多少？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 23.4,
+        "unit": "torr",
+        "tol": 0.002,
+        "hint": "求出水的摩尔分数，并乘以 23.7 torr。",
+        "solution": "23.4 torr"
+      }
+    },
+    {
+      "id": "cyl5",
+      "source_id": "fs-idp5504000",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-boiling"
+      },
+      "cite": "boiling",
+      "prompt": "假设符合理想溶液行为，例 11.3 中所述防冻液的沸点是多少？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 109.2,
+        "unit": "°C",
+        "tol": 0.001,
+        "hint": "利用例 11.3 中求得的质量摩尔浓度和表 11.2 中水的 <em>K</em><sub>b</sub> 值。",
+        "solution": "109.2 °C"
+      }
+    },
+    {
+      "id": "cyl6",
+      "source_id": "fs-idm46335744",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-iodine"
+      },
+      "cite": "boiling",
+      "prompt": "1.0 g 丙三醇 C<sub>3</sub>H<sub>5</sub>(OH)<sub>3</sub> 在 47.8 g 水中所成溶液的沸点是多少？假设为理想溶液。",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 100.12,
+        "unit": "°C",
+        "tol": 0.0001,
+        "hint": "按例 11.8 的四个步骤：丙三醇的物质的量、质量摩尔浓度、沸点的变化、新的沸点。",
+        "solution": "100.12 °C"
+      }
+    },
+    {
+      "id": "cyl7",
+      "source_id": "fs-idp14106448",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-freezing"
+      },
+      "cite": "freezing",
+      "prompt": "假设符合理想溶液行为，不挥发性非电解质溶质在硝基苯中的 1.85 <em>m</em> 溶液的凝固点是多少？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": -9.3,
+        "unit": "°C",
+        "hint": "用质量摩尔浓度乘以硝基苯的 <em>K</em><sub>f</sub>，再从其凝固点中减去所得结果，二者都取自表 11.2。",
+        "solution": "−9.3 °C"
+      }
+    },
+    {
+      "id": "cyl8",
+      "source_id": "fs-idp189701856",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-osmotic"
+      },
+      "cite": "osmosis",
+      "prompt": "假设符合理想溶液行为，体积为 0.750 L、含有 5.0 g 甲醇 CH<sub>3</sub>OH 的水溶液在 37 °C 时的渗透压（atm）是多少？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 5.3,
+        "unit": "atm",
+        "hint": "求出甲醇的物质的量浓度，然后用 <em>Π</em> = <em>MRT</em>，其中 <em>T</em> 以开尔文计。",
+        "solution": "5.3 atm"
+      }
+    },
+    {
+      "id": "cyl9",
+      "source_id": "fs-idp128313856",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-mm-freezing"
+      },
+      "cite": "molar-mass",
+      "prompt": "35.7 g 非电解质溶于 220.0 g 氯仿所成的溶液，沸点为 64.5 °C。假设符合理想溶液行为，这种化合物的摩尔质量是多少？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 180,
+        "unit": "g/mol",
+        "hint": "由表 11.2 中氯仿的沸点求出 Δ<em>T</em><sub>b</sub>，除以 <em>K</em><sub>b</sub> 得到质量摩尔浓度，然后求出物质的量和摩尔质量。",
+        "solution": "1.8 × 10<sup>2</sup> g/mol"
+      }
+    },
+    {
+      "id": "cyl10",
+      "source_id": "fs-idp132624672",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-mm-osmotic"
+      },
+      "cite": "molar-mass",
+      "prompt": "假设符合理想溶液行为，如果 25.0 mL 含 0.02 g 某蛋白质的溶液在 25 °C 时的渗透压为 0.56 torr，那么这种蛋白质的摩尔质量是多少？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 30000.0,
+        "unit": "g/mol",
+        "tol": 0.15,
+        "hint": "把渗透压换算为标准大气压，由 <em>Π</em> = <em>MRT</em> 求出物质的量浓度，然后求出 25.0 mL 中的物质的量和摩尔质量。",
+        "solution": "3 × 10<sup>4</sup> g/mol"
+      }
+    },
+    {
+      "id": "cyl11",
+      "source_id": "fs-idp86700768",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-electrolyte"
+      },
+      "cite": "electrolytes",
+      "prompt": "假设完全解离且符合理想溶液行为，计算 0.724 g CaCl<sub>2</sub> 在 175 g 水中所成溶液的凝固点。",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": -0.208,
+        "unit": "°C",
+        "hint": "每个 CaCl<sub>2</sub> 化学式单元产生三个离子，所以粒子的质量摩尔浓度是 CaCl<sub>2</sub> 的质量摩尔浓度的三倍。",
+        "solution": "−0.208 °C"
+      }
+    },
+    {
+      "id": "e1",
+      "source_id": "fs-idp102655040",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "colligative",
+      "prompt": "下列各项中，哪些属于溶液的宏观领域，哪些属于微观领域：沸点升高、亨利定律、氢键、离子–偶极吸引力、物质的量浓度、非电解质、非化学计量化合物、渗透、溶剂化离子？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "沸点升高、亨利定律、物质的量浓度、非电解质、非化学计量化合物和渗透属于宏观领域；氢键、离子–偶极吸引力和溶剂化离子属于微观领域。沸点升高是对大块样品测得的温度，亨利定律把测得的气体压强与测得的浓度联系起来，物质的量浓度是由质量和体积求得的浓度，渗透是观察到的溶剂透过膜的净流动。非电解质是通过测量其溶液的电导来确定的，非化学计量化合物是通过分析样品的组成来确定的，所以这两种分类都以实验室观察为依据。氢键和离子–偶极吸引力是单个分子和离子之间的作用力，溶剂化离子是被溶剂分子包围的单个离子；这些都不能在样品中直接看到或测量。"
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idp134512208",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "vapor",
+      "prompt": "画出纯水和糖溶液样品上方水蒸气压强随时间变化的定性图线，两种液体均蒸发至原体积的一半。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "图中有两条线。对于纯水，压强在整个过程中是一条水平线，位于纯水的蒸气压 $\\kPsolvstar$ 处。对于糖溶液，这条线起点低于它，并随时间缓缓向下倾斜。由拉乌尔定律，$\\kPsoln={X}_{\\text{溶剂}}\\kPsolvstar$。无论蒸发掉多少，纯水中水的摩尔分数都是 1，所以它的蒸气压不变。糖不挥发，所以溶液蒸发时只有水离开；同样数量的糖留在更少的水中，其摩尔分数升高而水的摩尔分数下降，蒸气压也随之下降。例如，起始时每 0.02 mol 糖对应 0.98 mol 水的溶液，$\\kPsoln=0.98\\kPsolvstar$；体积减半时，每 0.02 mol 糖对应 0.49 mol 水，所以 ${X}_{\\text{溶剂}}=0.49/0.51=0.96$，$\\kPsoln=0.96\\kPsolvstar$。"
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idp169338128",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "boiling",
+      "prompt": "电解质硝酸钾的溶液与非电解质丙三醇（C<sub>3</sub>H<sub>5</sub>(OH)<sub>3</sub>）的溶液都在 100.3 °C 沸腾。这两种溶液还有哪些其他物理性质是相同的？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "两者都形成均匀溶液；它们的沸点升高值相同，蒸气压下降值也相同。两种溶液的渗透压和凝固点降低值也相同。"
+      }
+    },
+    {
+      "id": "e4",
+      "source_id": "fs-idp169432880",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "molality",
+      "prompt": "浓硝酸溶液（HNO<sub>3</sub> 的质量分数为 68.0%）中 HNO<sub>3</sub> 和水的摩尔分数各是多少？<br>（a）概述回答该问题所需的步骤。<br>（b）回答该问题。",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "(b) mole fraction of HNO<sub>3</sub>",
+            "value": 0.378
+          },
+          {
+            "part": "(b) mole fraction of H<sub>2</sub>O",
+            "value": 0.622
+          }
+        ],
+        "solution": "（a）求出 100 g 溶液中 HNO<sub>3</sub> 和 H<sub>2</sub>O 的物质的量。求出各组分的摩尔分数。（b）HNO<sub>3</sub> 的摩尔分数为 0.378。H<sub>2</sub>O 的摩尔分数为 0.622。"
+      }
+    },
+    {
+      "id": "e5",
+      "source_id": "fs-idm61658912",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "molality",
+      "prompt": "计算每种溶质和溶剂的摩尔分数：<br>（a）0.710 kg 碳酸钠（洗涤碱）Na<sub>2</sub>CO<sub>3</sub> 在 10.0 kg 水中——0 °C 时的饱和溶液<br>（b）125 g NH<sub>4</sub>NO<sub>3</sub> 在 275 g 水中——用于制作速冷袋的混合物<br>（c）25 g Cl<sub>2</sub> 在 125 g 二氯甲烷 CH<sub>2</sub>Cl<sub>2</sub> 中<br>（d）0.372 g 四氢吡啶 C<sub>5</sub>H<sub>9</sub>N 在 125 g 氯仿 CHCl<sub>3</sub> 中",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "(a) Na<sub>2</sub>CO<sub>3</sub>",
+            "value": 0.0119
+          },
+          {
+            "part": "(a) H<sub>2</sub>O",
+            "value": 0.988,
+            "tol": 0.001
+          },
+          {
+            "part": "(b) NH<sub>4</sub>NO<sub>3</sub>",
+            "value": 0.0928
+          },
+          {
+            "part": "(b) H<sub>2</sub>O",
+            "value": 0.907
+          },
+          {
+            "part": "(c) Cl<sub>2</sub>",
+            "value": 0.192
+          },
+          {
+            "part": "(c) CH<sub>2</sub>Cl<sub>2</sub>",
+            "value": 0.808
+          },
+          {
+            "part": "(d) C<sub>5</sub>H<sub>9</sub>N",
+            "value": 0.00426
+          },
+          {
+            "part": "(d) CHCl<sub>3</sub>",
+            "value": 0.997,
+            "tol": 0.001
+          }
+        ],
+        "solution": "（a）<em>X</em><sub>Na<sub>2</sub>CO<sub>3</sub></sub> = 0.0119；<em>X</em><sub>H<sub>2</sub>O</sub> = 0.988；（b）<em>X</em><sub>NH<sub>4</sub>NO<sub>3</sub></sub> = 0.0928；<em>X</em><sub>H<sub>2</sub>O</sub> = 0.907；（c）<em>X</em><sub>Cl<sub>2</sub></sub> = 0.192；<em>X</em><sub>CH<sub>2</sub>CI<sub>2</sub></sub> = 0.808；（d）<em>X</em><sub>C<sub>5</sub>H<sub>9</sub>N</sub> = 0.00426；<em>X</em><sub>CHCl<sub>3</sub></sub> = 0.997"
+      }
+    },
+    {
+      "id": "e6",
+      "source_id": "fs-idp36238320",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "molality",
+      "prompt": "1 <em>M</em> 溶液与 1 <em>m</em> 溶液有什么区别？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "在 1 <em>M</em> 溶液中，这一摩尔溶质恰好包含在 1 L 溶液中。在 1 <em>m</em> 溶液中，这一摩尔溶质恰好包含在 1 kg 溶剂中。"
+      }
+    },
+    {
+      "id": "e7",
+      "source_id": "fs-idp36246800",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "molality",
+      "prompt": "浓硝酸溶液（HNO<sub>3</sub> 的质量分数为 68.0%）中硝酸的质量摩尔浓度是多少？<br>（a）概述回答该问题所需的步骤。<br>（b）回答该问题。",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 33.7,
+        "unit": "m",
+        "part": "(b)",
+        "solution": "（a）求出 HNO<sub>3</sub> 的摩尔质量。求出溶液中酸的物质的量。由物质的量和溶剂的质量求出质量摩尔浓度。（b）33.7 <em>m</em>"
+      }
+    },
+    {
+      "id": "e8",
+      "source_id": "fs-idp172276944",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "molality",
+      "prompt": "计算下列各溶液的质量摩尔浓度：<br>（a）0.710 kg 碳酸钠（洗涤碱）Na<sub>2</sub>CO<sub>3</sub> 在 10.0 kg 水中——0°C 时的饱和溶液<br>（b）125 g NH<sub>4</sub>NO<sub>3</sub> 在 275 g 水中——用于制作速冷袋的混合物<br>（c）25 g Cl<sub>2</sub> 在 125 g 二氯甲烷 CH<sub>2</sub>Cl<sub>2</sub> 中<br>（d）0.372 g 四氢吡啶 C<sub>5</sub>H<sub>9</sub>N 在 125 g 氯仿 CHCl<sub>3</sub> 中",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "(a)",
+            "value": 0.67,
+            "unit": "m"
+          },
+          {
+            "part": "(b)",
+            "value": 5.67,
+            "unit": "m"
+          },
+          {
+            "part": "(c)",
+            "value": 2.8,
+            "unit": "m"
+          },
+          {
+            "part": "(d)",
+            "value": 0.0358,
+            "unit": "m"
+          }
+        ],
+        "solution": "（a）6.70 × 10<sup>−1</sup> <em>m</em>；（b）5.67 <em>m</em>；（c）2.8 <em>m</em>；（d）0.0358 <em>m</em>"
+      }
+    },
+    {
+      "id": "e9",
+      "source_id": "fs-idm62873376",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "molality",
+      "prompt": "质量分数为 13.0% 的 K<sub>2</sub>CO<sub>3</sub> 溶液的密度为 1.09 g/cm<sup>3</sup>。计算该溶液的质量摩尔浓度。",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 1.08,
+        "unit": "m",
+        "solution": "1.08 <em>m</em>"
+      }
+    },
+    {
+      "id": "e10",
+      "source_id": "fs-idp135093440",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "electrolytes",
+      "prompt": "为什么 1 mol 氯化钠使 1 kg 水的凝固点降低的幅度，几乎是 1 mol 丙三醇的两倍？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "凝固点降低是一种依数性质：它取决于每千克溶剂中溶质粒子的数目，而与其种类无关。丙三醇是非电解质，所以 1 mol 丙三醇溶解后得到 1 mol 分子，形成粒子为 1 <em>m</em> 的溶液，使凝固点降低 $\\kdTf=\\kKf\\kmolal=1.86\\;{}^{\\circ}\\text{C}$。氯化钠是强电解质，解离为 Na<sup>+</sup> 和 Cl<sup>−</sup>，所以 1 mol NaCl 产生接近 2 mol 离子，降低的幅度几乎是前者的两倍，接近 3.7 °C。它略小于两倍，是因为离子并不是完全独立的粒子：残余的离子间吸引力，以及 Na<sup>+</sup> 和 Cl<sup>−</sup> 离子一起运动的离子对，使 NaCl 的范托夫因子小于其预测值 2，如表 11.3 中的实测值 1.9 所示。"
+      }
+    },
+    {
+      "id": "e11",
+      "source_id": "fs-idp40718720",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "boiling",
+      "prompt": "假设符合理想溶液行为，115.0 g 不挥发性蔗糖 C<sub>12</sub>H<sub>22</sub>O<sub>11</sub> 在 350.0 g 水中所成溶液的沸点是多少？<br>（a）概述回答该问题所需的步骤<br>（b）回答该问题",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 100.5,
+        "unit": "°C",
+        "tol": 0.0005,
+        "part": "(b)",
+        "solution": "（a）求出蔗糖的摩尔质量；求出溶液中蔗糖的物质的量；把溶剂的质量换算为以千克为单位；由物质的量和溶剂的质量求出质量摩尔浓度；求出水的沸点与溶液沸点之差；求出新的沸点。（b）100.5 °C"
+      }
+    },
+    {
+      "id": "e12",
+      "source_id": "fs-idp140267616",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "freezing",
+      "prompt": "假设符合理想溶液行为，115.0 g 蔗糖 C<sub>12</sub>H<sub>22</sub>O<sub>11</sub> 在 350.0 g 水中所成溶液的凝固点是多少？<br>（a）概述回答该问题所需的步骤。<br>（b）回答该问题。",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": -1.8,
+        "unit": "°C",
+        "part": "(b)",
+        "solution": "（a）求出蔗糖的摩尔质量；求出溶液中蔗糖的物质的量；把溶剂的质量换算为以千克为单位；由物质的量和溶剂的质量求出质量摩尔浓度；求出水的凝固点与溶液凝固点之差；求出新的凝固点。（b）−1.8 °C"
+      }
+    },
+    {
+      "id": "e13",
+      "source_id": "fs-idp95687760",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "osmosis",
+      "prompt": "假设符合理想溶液行为，1.64 g Ca(NO<sub>3</sub>)<sub>2</sub> 溶于水所成水溶液在 25 °C 时的渗透压是多少？溶液的体积为 275 mL。<br>（a）概述回答该问题所需的步骤。<br>（b）回答该问题。",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 2.67,
+        "unit": "atm",
+        "part": "(b)",
+        "solution": "（a）求出 Ca(NO<sub>3</sub>)<sub>2</sub> 的摩尔质量；求出溶液中 Ca(NO<sub>3</sub>)<sub>2</sub> 的物质的量；求出溶液中离子的物质的量；求出离子的物质的量浓度，然后求出渗透压。（b）2.67 atm"
+      }
+    },
+    {
+      "id": "e14",
+      "source_id": "fs-idp133898592",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "molar-mass",
+      "prompt": "含有 5.00 g 某化合物、溶于 25.00 g 四氯化碳（沸点 76.8 °C；<em>K</em><sub>b</sub> = 5.02 °C/<em>m</em>）的溶液，其正常沸点为 81.5 °C。假设符合理想溶液行为，该化合物的摩尔质量是多少？<br>（a）概述回答该问题所需的步骤。<br>（b）解此题。",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 210,
+        "unit": "g/mol",
+        "tol": 0.03,
+        "part": "(b)",
+        "solution": "（a）由沸点的变化和 <em>K</em><sub>b</sub> 确定质量摩尔浓度；由质量摩尔浓度和溶剂的质量确定溶液中溶质的物质的量；由物质的量和溶质的质量确定摩尔质量。（b）2.1 × 10<sup>2</sup> g mol<sup>−1</sup>"
+      }
+    },
+    {
+      "id": "e15",
+      "source_id": "fs-idm4591712",
+      "kind": "exercise",
+      "bloom": "Evaluate",
+      "place": {
+        "at": "end"
+      },
+      "cite": "electrolytes",
+      "prompt": "HCl 在苯中的 1.0 <em>m</em> 溶液的凝固点为 0.4 °C。HCl 在苯中是电解质吗？请说明。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "不是。纯苯在 5.5 °C 凝固，所以该溶液观察到的凝固点降低了 Δ<em>T</em><sub>f</sub> = 5.5 − 0.4 = 5.1 °C。假设 HCl 不电离，算得的值为 Δ<em>T</em><sub>f</sub> = (1.0 m)(5.14 °C/<em>m</em>)<sup class=\"fn\" data-note=\"c-e15-kf\"></sup> = 5.1 °C。这两个值吻合，支持了 HCl 未电离的假设。"
+      }
+    },
+    {
+      "id": "e16",
+      "source_id": "fs-idp140038656",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "molar-mass",
+      "prompt": "将 12.0 g 非电解质样品溶于 80.0 g 水中。溶液在 −1.94 °C 凝固。假设符合理想溶液行为，计算该物质的摩尔质量。",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 144,
+        "unit": "g/mol",
+        "solution": "144 g mol<sup>−1</sup>"
+      }
+    },
+    {
+      "id": "e17",
+      "source_id": "fs-idp189091568",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "electrolytes",
+      "prompt": "将下列溶液按凝固点由高到低排序：0.1 <em>m</em> Na<sub>3</sub>PO<sub>4</sub>、0.1 <em>m</em> C<sub>2</sub>H<sub>5</sub>OH、0.01 <em>m</em> CO<sub>2</sub>、0.15 <em>m</em> NaCl 和 0.2 <em>m</em> CaCl<sub>2</sub>。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "按凝固点由高到低的顺序：0.01 <em>m</em> CO<sub>2</sub> &gt; 0.1 <em>m</em> C<sub>2</sub>H<sub>5</sub>OH &gt; 0.15 <em>m</em> NaCl &gt; 0.1 <em>m</em> Na<sub>3</sub>PO<sub>4</sub> &gt; 0.2 <em>m</em> CaCl<sub>2</sub>。凝固点降低 $\\kdTf=\\kKf\\kmolal$ 与所有溶质粒子的质量摩尔浓度成正比。CO<sub>2</sub> 和乙醇是非电解质，分别给出 0.01 <em>m</em> 和 0.1 <em>m</em> 的粒子。假设完全解离，NaCl 每个化学式单元给出 2 个离子，2 × 0.15 <em>m</em> = 0.30 <em>m</em>；Na<sub>3</sub>PO<sub>4</sub> 给出 3Na<sup>+</sup> 和 $\\text{PO}_{4}{}^{3-}$，4 × 0.1 <em>m</em> = 0.4 <em>m</em>；CaCl<sub>2</sub> 给出 Ca<sup>2+</sup> 和 2Cl<sup>−</sup>，3 × 0.2 <em>m</em> = 0.6 <em>m</em>。水的 $\\kKf=1.86\\;{}^{\\circ}\\text{C}\\;{m}^{−1}$，凝固点约为 −0.02 °C、−0.19 °C、−0.56 °C、−0.74 °C 和 −1.1 °C。"
+      }
+    },
+    {
+      "id": "e18",
+      "source_id": "fs-idp58483920",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "electrolytes",
+      "prompt": "计算含有 0.010 mol NaCl、0.020 mol Na<sub>2</sub>SO<sub>4</sub> 和 0.030 mol MgCl<sub>2</sub> 的 0.100 kg 水的沸点升高，假设这些电解质完全解离且符合理想溶液行为。",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 0.87,
+        "unit": "°C",
+        "solution": "0.870 °C"
+      }
+    },
+    {
+      "id": "e19",
+      "source_id": "fs-idp70734848",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "molar-mass",
+      "prompt": "将重 0.210 g 的硫样品溶于 17.8 g 二硫化碳 CS<sub>2</sub>（<em>K</em><sub>b</sub> = 2.34 °C/<em>m</em>）中。如果沸点升高了 0.107 °C，那么硫分子在二硫化碳中的分子式是什么（假设符合理想溶液行为）？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "S<sub>8</sub>"
+      }
+    },
+    {
+      "id": "e20",
+      "source_id": "fs-idm56693456",
+      "kind": "exercise",
+      "bloom": "Evaluate",
+      "place": {
+        "at": "end"
+      },
+      "cite": "electrolytes",
+      "prompt": "在多年前进行的一个重要实验中，5.6977 g 碘化镉溶于 44.69 g 水，使沸点升高了 0.181 °C。这说明了 CdI<sub>2</sub> 溶液的什么性质？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "这种盐几乎不解离：它的溶液表现得好像几乎每个 CdI<sub>2</sub> 化学式单元都保持在一起，成为一个粒子。CdI<sub>2</sub> 的摩尔质量为 366.2 g/mol，所以 5.6977 g 是 0.015558 mol，在 0.04469 kg 水中的质量摩尔浓度为 0.015558 mol / 0.04469 kg = 0.3481 <em>m</em>。作为非电解质，它使沸点升高 $\\kdTb=\\kKb\\kmolal=0.512\\;{}^{\\circ}\\text{C}\\;{m}^{−1}\\times 0.3481\\;m=0.178\\;{}^{\\circ}\\text{C}$。表观范托夫因子是实测升高值除以这个值，<em>i</em> = 0.181 °C / 0.178 °C = 1.02。完全解离为 Cd<sup>2+</sup> 和 2I<sup>−</sup> 时会得到 <em>i</em> = 3，沸点升高值接近 0.535 °C。如此接近 1 的值意味着 CdI<sub>2</sub> 在水中是弱电解质，主要以未解离的 CdI<sub>2</sub> 单元存在，游离离子极少。"
+      }
+    },
+    {
+      "id": "e21",
+      "source_id": "fs-idp169417488",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "molar-mass",
+      "prompt": "溶菌酶是一种能裂解细胞壁的酶。含有 0.0750 g 该酶的 0.100 L 溶菌酶溶液样品，在 25 °C 时的渗透压为 1.32 × 10<sup>−3</sup> atm。假设符合理想溶液行为，溶菌酶的摩尔质量是多少？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 13900.0,
+        "unit": "g/mol",
+        "solution": "1.39 × 10<sup>4</sup> g mol<sup>−1</sup>"
+      }
+    },
+    {
+      "id": "e22",
+      "source_id": "fs-idp135108928",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "osmosis",
+      "prompt": "人血的渗透压在 37 °C 时为 7.6 atm。若要配制 1.00 L 用于静脉营养的葡萄糖 C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> 水溶液，并使该溶液在体温 37 °C 时的渗透压与血液相同（假设符合理想溶液行为），需要多少质量的葡萄糖？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 54,
+        "unit": "g",
+        "solution": "54 g"
+      }
+    },
+    {
+      "id": "e23",
+      "source_id": "fs-idp166052128",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "freezing",
+      "prompt": "假设符合理想溶液行为，如果 NaCl 水溶液在 −0.93 °C 凝固，则该溶液的沸点是多少？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 100.26,
+        "unit": "°C",
+        "tol": 0.0001,
+        "solution": "100.26 °C"
+      }
+    },
+    {
+      "id": "e24",
+      "source_id": "fs-idp241232",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "distillation",
+      "prompt": "甲醇 CH<sub>3</sub>OH 在 20 °C 时的蒸气压为 94 torr。乙醇 C<sub>2</sub>H<sub>5</sub>OH 在同一温度下的蒸气压为 44 torr。<br>（a）计算 50.0 g 甲醇和 50.0 g 乙醇所成溶液中甲醇和乙醇的摩尔分数。<br>（b）乙醇和甲醇形成的溶液表现得像理想溶液。计算 20 °C 时该溶液上方甲醇和乙醇的蒸气压。<br>（c）计算溶液上方蒸气中甲醇和乙醇的摩尔分数。",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "(a) X of CH<sub>3</sub>OH",
+            "value": 0.59
+          },
+          {
+            "part": "(a) X of C<sub>2</sub>H<sub>5</sub>OH",
+            "value": 0.41
+          },
+          {
+            "part": "(b) CH<sub>3</sub>OH",
+            "value": 55,
+            "unit": "torr"
+          },
+          {
+            "part": "(b) C<sub>2</sub>H<sub>5</sub>OH",
+            "value": 18,
+            "unit": "torr"
+          },
+          {
+            "part": "(c) CH<sub>3</sub>OH",
+            "value": 0.75
+          },
+          {
+            "part": "(c) C<sub>2</sub>H<sub>5</sub>OH",
+            "value": 0.25
+          }
+        ],
+        "solution": "（a）<em>X</em><sub>CH<sub>3</sub>OH</sub> = 0.590；<em>X</em><sub>C<sub>2</sub>H<sub>5</sub>OH</sub> = 0.410；（b）蒸气压为：CH<sub>3</sub>OH：55 torr；C<sub>2</sub>H<sub>5</sub>OH：18 torr；（c）CH<sub>3</sub>OH：0.75；C<sub>2</sub>H<sub>5</sub>OH：0.25"
+      }
+    },
+    {
+      "id": "e25",
+      "source_id": "fs-idp128680064",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "phase",
+      "prompt": "无空气水的三相点被定义为 273.16 K。为什么水必须不含空气？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "空气溶于水，溶解的气体是一种溶质，会使三相点偏离 273.16 K。与任何溶质一样，溶解的空气按拉乌尔定律使液体的蒸气压下降，所以在相图上它使液–气曲线下移，并使固–液曲线向左移向较低的温度，而纯冰的固–气曲线保持在原处。三相点是三条曲线的交点，所以含空气的水的三相点所处的温度和压强都比纯水略低。溶解的空气量还取决于水接触空气时的条件，所以对含空气的水测得的三相点会因样品而异。只有无空气水才能给出定义 273.16 K 的固定而可重现的温度。"
+      }
+    },
+    {
+      "id": "e26",
+      "source_id": "fs-idp128682240",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "freezing",
+      "prompt": "肉类即使储存在 −1 °C 也可以归类为新鲜的（未冻结）。为什么肉在这个温度下不会冻结？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "牛肉中水里存在的离子和化合物使牛肉的凝固点降到 −1 °C 以下。"
+      }
+    },
+    {
+      "id": "e27",
+      "source_id": "fs-idp13479328",
+      "kind": "exercise",
+      "bloom": "Evaluate",
+      "place": {
+        "at": "end"
+      },
+      "cite": "electrolytes",
+      "prompt": "将重 9.41 g 的 HgCl<sub>2</sub> 样品溶于 32.75 g 乙醇 C<sub>2</sub>H<sub>5</sub>OH（<em>K</em><sub>b</sub> = 1.20 °C/<em>m</em>）中。溶液的沸点升高为 1.27 °C。HgCl<sub>2</sub> 在乙醇中是电解质吗？请写出计算过程。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "Δbp = <em>K</em><sub>b</sub><em>m</em> = (1.20 °C/<em>m</em>)((9.41 g × 1 mol HgCl<sub>2</sub>/271.496 g)/0.03275 kg) = 1.27 °C。观察到的变化等于理论变化；因此不发生解离。"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "molality-and-mole-fraction"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "molality-and-mole-fraction"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "molality-and-mole-fraction"
+    },
+    {
+      "exercise": "cyl4",
+      "concept": "raoults-law"
+    },
+    {
+      "exercise": "cyl5",
+      "concept": "boiling-point-elevation"
+    },
+    {
+      "exercise": "cyl6",
+      "concept": "boiling-point-elevation"
+    },
+    {
+      "exercise": "cyl6",
+      "concept": "molality-and-mole-fraction"
+    },
+    {
+      "exercise": "cyl7",
+      "concept": "freezing-point-depression"
+    },
+    {
+      "exercise": "cyl8",
+      "concept": "osmotic-pressure"
+    },
+    {
+      "exercise": "cyl9",
+      "concept": "molar-mass-from-colligative-properties"
+    },
+    {
+      "exercise": "cyl9",
+      "concept": "boiling-point-elevation"
+    },
+    {
+      "exercise": "cyl10",
+      "concept": "molar-mass-from-colligative-properties"
+    },
+    {
+      "exercise": "cyl10",
+      "concept": "osmotic-pressure"
+    },
+    {
+      "exercise": "cyl11",
+      "concept": "vant-hoff-factor"
+    },
+    {
+      "exercise": "cyl11",
+      "concept": "freezing-point-depression"
+    },
+    {
+      "exercise": "e1",
+      "concept": "colligative-properties"
+    },
+    {
+      "exercise": "e2",
+      "concept": "raoults-law"
+    },
+    {
+      "exercise": "e3",
+      "concept": "colligative-properties"
+    },
+    {
+      "exercise": "e3",
+      "concept": "boiling-point-elevation"
+    },
+    {
+      "exercise": "e4",
+      "concept": "molality-and-mole-fraction"
+    },
+    {
+      "exercise": "e5",
+      "concept": "molality-and-mole-fraction"
+    },
+    {
+      "exercise": "e6",
+      "concept": "molality-and-mole-fraction"
+    },
+    {
+      "exercise": "e7",
+      "concept": "molality-and-mole-fraction"
+    },
+    {
+      "exercise": "e8",
+      "concept": "molality-and-mole-fraction"
+    },
+    {
+      "exercise": "e9",
+      "concept": "molality-and-mole-fraction"
+    },
+    {
+      "exercise": "e10",
+      "concept": "vant-hoff-factor"
+    },
+    {
+      "exercise": "e10",
+      "concept": "freezing-point-depression"
+    },
+    {
+      "exercise": "e11",
+      "concept": "boiling-point-elevation"
+    },
+    {
+      "exercise": "e11",
+      "concept": "molality-and-mole-fraction"
+    },
+    {
+      "exercise": "e12",
+      "concept": "freezing-point-depression"
+    },
+    {
+      "exercise": "e12",
+      "concept": "molality-and-mole-fraction"
+    },
+    {
+      "exercise": "e13",
+      "concept": "osmotic-pressure"
+    },
+    {
+      "exercise": "e13",
+      "concept": "vant-hoff-factor"
+    },
+    {
+      "exercise": "e14",
+      "concept": "molar-mass-from-colligative-properties"
+    },
+    {
+      "exercise": "e14",
+      "concept": "boiling-point-elevation"
+    },
+    {
+      "exercise": "e15",
+      "concept": "vant-hoff-factor"
+    },
+    {
+      "exercise": "e15",
+      "concept": "freezing-point-depression"
+    },
+    {
+      "exercise": "e16",
+      "concept": "molar-mass-from-colligative-properties"
+    },
+    {
+      "exercise": "e16",
+      "concept": "freezing-point-depression"
+    },
+    {
+      "exercise": "e17",
+      "concept": "vant-hoff-factor"
+    },
+    {
+      "exercise": "e17",
+      "concept": "freezing-point-depression"
+    },
+    {
+      "exercise": "e18",
+      "concept": "vant-hoff-factor"
+    },
+    {
+      "exercise": "e18",
+      "concept": "boiling-point-elevation"
+    },
+    {
+      "exercise": "e19",
+      "concept": "molar-mass-from-colligative-properties"
+    },
+    {
+      "exercise": "e19",
+      "concept": "boiling-point-elevation"
+    },
+    {
+      "exercise": "e20",
+      "concept": "vant-hoff-factor"
+    },
+    {
+      "exercise": "e20",
+      "concept": "boiling-point-elevation"
+    },
+    {
+      "exercise": "e21",
+      "concept": "molar-mass-from-colligative-properties"
+    },
+    {
+      "exercise": "e21",
+      "concept": "osmotic-pressure"
+    },
+    {
+      "exercise": "e22",
+      "concept": "osmotic-pressure"
+    },
+    {
+      "exercise": "e23",
+      "concept": "freezing-point-depression"
+    },
+    {
+      "exercise": "e23",
+      "concept": "boiling-point-elevation"
+    },
+    {
+      "exercise": "e24",
+      "concept": "raoults-law"
+    },
+    {
+      "exercise": "e24",
+      "concept": "distillation"
+    },
+    {
+      "exercise": "e24",
+      "concept": "molality-and-mole-fraction"
+    },
+    {
+      "exercise": "e25",
+      "concept": "freezing-point-depression"
+    },
+    {
+      "exercise": "e25",
+      "concept": "colligative-properties"
+    },
+    {
+      "exercise": "e26",
+      "concept": "freezing-point-depression"
+    },
+    {
+      "exercise": "e27",
+      "concept": "vant-hoff-factor"
+    },
+    {
+      "exercise": "e27",
+      "concept": "boiling-point-elevation"
+    }
+  ],
+  "referents": [
+    {
+      "id": "pure-tank",
+      "label": "纯水的容器",
+      "figures": [
+        "sim-vapor-lowering"
+      ]
+    },
+    {
+      "id": "solution-tank",
+      "label": "尿素溶液的容器",
+      "figures": [
+        "sim-vapor-lowering"
+      ]
+    },
+    {
+      "id": "vap-curve",
+      "label": "液–气曲线",
+      "figures": [
+        "sim-phase-diagram"
+      ]
+    },
+    {
+      "id": "melt-curve",
+      "label": "固–液曲线",
+      "figures": [
+        "sim-phase-diagram"
+      ]
+    },
+    {
+      "id": "sub-curve",
+      "label": "固–气曲线",
+      "figures": [
+        "sim-phase-diagram"
+      ]
+    },
+    {
+      "id": "water-arm",
+      "label": "纯水的一侧",
+      "figures": [
+        "sim-osmosis"
+      ]
+    },
+    {
+      "id": "solution-arm",
+      "label": "葡萄糖溶液的一侧",
+      "figures": [
+        "sim-osmosis"
+      ]
+    },
+    {
+      "id": "membrane",
+      "label": "半透膜",
+      "figures": [
+        "sim-osmosis"
+      ]
+    },
+    {
+      "id": "piston",
+      "label": "溶液上方的活塞",
+      "figures": [
+        "sim-osmosis"
+      ]
+    },
+    {
+      "id": "box",
+      "label": "盛溶液的方框",
+      "figures": [
+        "sim-ion-pairs"
+      ]
+    }
+  ],
+  "footnotes": [
+    {
+      "id": "c-glycol-formula",
+      "kind": "correction",
+      "html": "书中在换算因子中写的是 C<sub>2</sub>H<sub>2</sub>(OH)<sub>2</sub>。乙二醇是 C<sub>2</sub>H<sub>4</sub>(OH)<sub>2</sub>，其摩尔质量即所用的 62.07 g/mol。"
+    },
+    {
+      "id": "c-e15-kf",
+      "kind": "correction",
+      "html": "答案对苯取 5.14 °C/<em>m</em>；表 11.2 给出 <em>K</em><sub>f</sub> = 5.12 °C/<em>m</em>，凝固点降低值仍修约为 5.1 °C。"
+    }
+  ],
+  "derivations": [
+    {
+      "id": "vapor-pressure-of-solution",
+      "what": "含不挥发性溶质的溶液的蒸气压",
+      "source": "化学（第2版），11.4 依数性质",
+      "nodes": [
+        {
+          "assumes": [
+            {
+              "text": "气体混合物的总压强等于其所有组分的分压之和。",
+              "src": "9.3，道尔顿定律"
+            },
+            {
+              "tex": "\\kPA = X_{\\text{A}}\\kPAstar",
+              "src": "11.4，拉乌尔定律"
+            },
+            {
+              "text": "溶液含有一种易挥发的溶剂，且只含不挥发性溶质。"
+            },
+            {
+              "text": "不挥发性物质是指其蒸气压可忽略不计的物质，$P^{*} \\approx 0$。",
+              "src": "11.4"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{P}{\\kPsoln} = \\mk{S}{\\sum_{i}\\kPcomp}",
+            "src": "11.4",
+            "uses": [
+              0
+            ]
+          },
+          "steps": [
+            {
+              "tex": "\\mk{P}{\\kPsoln} = \\mk{S}{\\sum_{i}X_{i}\\kPcompstar}",
+              "uses": [
+                1
+              ]
+            },
+            {
+              "tex": "\\mk{P}{\\kPsoln} = \\mk{S}{X_{\\text{溶剂}}\\kPsolvstar} + \\mk{u}{\\sum_{\\text{溶质}}X_{i}\\kPcompstar}",
+              "uses": [
+                2
+              ],
+              "map": {
+                "S": [
+                  "S",
+                  "u"
+                ]
+              }
+            },
+            {
+              "tex": "\\mk{P}{\\kPsoln} = \\mk{S}{X_{\\text{溶剂}}\\kPsolvstar}",
+              "uses": [
+                3
+              ],
+              "cap": "每种溶质的 $P^{*}$ 都可忽略不计，所以它的项被略去。"
+            }
+          ],
+          "src": "11.4"
+        }
+      ]
+    }
+  ]
+}

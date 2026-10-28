@@ -1,0 +1,621 @@
+{
+  "id": "12.7",
+  "module": "m68795",
+  "chapter": "12",
+  "title": "催化作用",
+  "short": "催化作用",
+  "lead": "<span data-concept=\"catalyst\">催化剂</span>能提高反应速率而自身不被反应消耗。有些催化剂与反应物处于同一相中起作用，如高层大气中臭氧的破坏；另一些是固体，反应物在其表面上相遇，如氢化反应和汽车的催化转化器；而酶则是活细胞的催化剂。",
+  "objectives": [
+    "用反应机理和势能图解释催化剂的作用",
+    "列举自然过程和工业过程中催化作用的实例"
+  ],
+  "summary_html": "<p><span data-concept=\"catalyst\">催化剂</span>通过改变化学反应的<span data-concept=\"reaction-mechanism\">机理</span>来提供更低的<span data-concept=\"activation-energy\">活化能</span>，从而影响反应的速率。催化剂可以是均相的（与反应物处于同一相）或多相的（与反应物处于不同相）。</p>",
+  "notes": "两个“学习链接”（Link to Learning）提示被略去，即 ChemWiki 上关于催化转化器的页面和英国皇家化学会对酶的介绍；图 12.19 的图题中的“two transitions states”（原文如此）以及转化器提示框中正文说的是一氧化氮而方程式写的却是 NO₂，均照原书保留。",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ]
+  },
+  "built": "2026-10-26",
+  "exercises_lead": "",
+  "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案来自书中的答案表和“学习检测”的答案。没有答案的数值习题 fs-idm260004768（12.81）被略去，也没有为它计算答案；它的两幅图被并入习题 fs-idm189363504（12.83）的题干，该题问的就是这两幅图。没有答案的 fs-idm119808848、fs-idm194307024 和 fs-idm189363504 带有一个建议的解题思路，标明为 AI 生成。习题 fs-idm218836096 和“学习检测”中从图上读出的估计值按一定的容差核对。",
+  "figures": [
+    {
+      "id": "sim-catalysis",
+      "kind": "sim",
+      "number": "12.19",
+      "originals": [
+        "/media/ch12/CNX_Chem_12_07_CatReCoDig.jpg"
+      ],
+      "original_caption": "某一吸热过程在没有（红色曲线）和有（蓝色曲线）催化剂时的反应图。催化路径涉及两步机理（注意存在两个过渡态）和一种中间体（由两个过渡态之间的谷表示）。",
+      "draws": [
+        "energy",
+        "rate-constant",
+        "temperature"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-ex-catalyzed",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-molina",
+      "kind": "photo",
+      "number": "12.20",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-g6pd",
+      "kind": "photo",
+      "number": "12.21",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-pathway",
+      "kind": "photo",
+      "number": "12.22",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-hydrogenation",
+      "kind": "sim",
+      "number": "12.23",
+      "originals": [
+        "/media/ch12/CNX_Chem_12_07_HetCats-230a.jpg"
+      ],
+      "original_caption": "Ni 催化的反应 C₂H₄ + H₂ ⟶ C₂H₆ 的机理。（a）氢气吸附在表面上，H–H 键断裂，形成 Ni–H 键。（b）乙烯吸附在表面上，C–C π 键断裂，形成 Ni–C 键。（c）原子在表面上扩散，碰撞时形成新的 C–H 键。（d）C₂H₆ 分子从 Ni 表面脱附。",
+      "draws": [],
+      "conventions": [
+        "Ni",
+        "H",
+        "C"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-converter",
+      "kind": "photo",
+      "number": "12.24",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-enzyme",
+      "kind": "sim",
+      "number": "12.25",
+      "originals": [
+        "/media/ch12/CNX_Chem_12_07_Enzyme.jpg"
+      ],
+      "original_caption": "（a）按照锁钥模型，酶的活性部位的形状与底物完全吻合。（b）按照诱导契合模型，活性部位有一定的柔性，可以改变形状以便与底物结合。",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    }
+  ],
+  "referents": [
+    {
+      "id": "uncatalyzed",
+      "label": "未催化的反应",
+      "figures": [
+        "sim-catalysis"
+      ]
+    },
+    {
+      "id": "catalyzed",
+      "label": "催化的反应",
+      "figures": [
+        "sim-catalysis"
+      ]
+    },
+    {
+      "id": "enzyme",
+      "label": "酶",
+      "figures": [
+        "sim-enzyme"
+      ]
+    },
+    {
+      "id": "substrates",
+      "label": "底物",
+      "figures": [
+        "sim-enzyme"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "span": "catalysts",
+      "concept": "catalysis-lowers-activation-energy",
+      "verb": "introduces"
+    },
+    {
+      "span": "catalysts",
+      "concept": "catalyzed-reaction-diagrams",
+      "verb": "introduces"
+    },
+    {
+      "span": "catalysts",
+      "concept": "catalyst",
+      "verb": "uses"
+    },
+    {
+      "span": "catalysts",
+      "concept": "reaction-diagram",
+      "verb": "uses"
+    },
+    {
+      "span": "catalysts",
+      "concept": "activation-energy",
+      "verb": "uses"
+    },
+    {
+      "span": "catalysts",
+      "concept": "reaction-mechanism",
+      "verb": "uses"
+    },
+    {
+      "span": "catalysts",
+      "concept": "rate-determining-step",
+      "verb": "uses"
+    },
+    {
+      "span": "catalysts",
+      "concept": "activated-complex",
+      "verb": "uses"
+    },
+    {
+      "span": "catalysts",
+      "concept": "reaction-intermediate",
+      "verb": "uses"
+    },
+    {
+      "span": "catalysts",
+      "concept": "enthalpy-change",
+      "verb": "uses"
+    },
+    {
+      "span": "catalysts",
+      "concept": "arrhenius-equation",
+      "verb": "uses"
+    },
+    {
+      "span": "homogeneous",
+      "concept": "homogeneous-catalysis",
+      "verb": "introduces"
+    },
+    {
+      "span": "homogeneous",
+      "concept": "reaction-mechanism",
+      "verb": "uses"
+    },
+    {
+      "span": "homogeneous",
+      "concept": "reaction-intermediate",
+      "verb": "uses"
+    },
+    {
+      "span": "homogeneous",
+      "concept": "elementary-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "homogeneous",
+      "concept": "catalysis-lowers-activation-energy",
+      "verb": "uses"
+    },
+    {
+      "span": "heterogeneous",
+      "concept": "heterogeneous-catalysis",
+      "verb": "introduces"
+    },
+    {
+      "span": "heterogeneous",
+      "concept": "catalysis-lowers-activation-energy",
+      "verb": "uses"
+    },
+    {
+      "span": "heterogeneous",
+      "concept": "sigma-and-pi-bonds",
+      "verb": "uses"
+    },
+    {
+      "span": "heterogeneous",
+      "concept": "surface-area-and-rate",
+      "verb": "uses"
+    },
+    {
+      "span": "enzymes",
+      "concept": "enzymes",
+      "verb": "introduces"
+    },
+    {
+      "span": "enzymes",
+      "concept": "catalysis-lowers-activation-energy",
+      "verb": "uses"
+    },
+    {
+      "span": "enzymes",
+      "concept": "reaction-intermediate",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idm226461504",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-catalyzed"
+      },
+      "cite": "catalysts",
+      "figure": {
+        "src": "/media/ch12/CNX_Chem_12_07_Rxndiagramcyl_img.jpg",
+        "alt": "此图中给出了两幅图。横轴标注为“反应进程”，纵轴标注为“能量（kJ）”。纵轴从 0 到 100，间隔为 10。在 a 图中给出一条蓝色曲线。它从约 10 处的一段水平线开始，在中部附近急剧上升，达到约 91 的最大值，然后急剧下降到约 52，再次急剧上升到约 73，并下降到约 5 处的另一段水平线。在 b 图中，曲线的起止与之相似，但第一个峰达到约 81，下降到约 55，然后上升到约 77，再下降到约 5 处的水平区域。"
+      },
+      "prompt": "下面给出了某一化学过程在有催化剂和没有催化剂时的反应图。两个反应都涉及两步机理，且第一步是速率控制步骤。计算每个机理第一步的活化能，并指出哪一个对应于催化的反应。这两个机理的第二步相比如何？",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "$\\kEa$ of the first step, diagram (a)",
+            "value": 80,
+            "unit": "kJ",
+            "tol": 0.1,
+            "hint": "用第一个峰顶的能量减去反应物的能量。"
+          },
+          {
+            "part": "$\\kEa$ of the first step, diagram (b)",
+            "value": 70,
+            "unit": "kJ",
+            "tol": 0.1
+          },
+          {
+            "part": "$\\kEa$ of the second step, both diagrams",
+            "value": 20,
+            "unit": "kJ",
+            "tol": 0.15,
+            "hint": "第二个能垒要从中间体所在的谷底量到第二个峰顶。"
+          }
+        ],
+        "solution": "对于第一步，（a）的 <em>E</em><sub>a</sub> = 80 kJ，（b）的为 70 kJ，所以图（b）表示催化的反应。两个机理的第二步的活化能相同，都是 20 kJ。"
+      }
+    },
+    {
+      "id": "e1",
+      "source_id": "fs-idm121944048",
+      "source_number": "76",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "catalysts",
+      "prompt": "解释催化剂使反应速率增大的原因。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "催化剂的一般作用方式是提供一种机理，使反应物沿着反应能量更低的路径更容易地结合在一起。正反应和逆反应的速率都增大，从而更快地达到平衡。"
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idm119808848",
+      "source_number": "77",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "heterogeneous",
+      "prompt": "比较均相催化剂和多相催化剂的作用。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "两种催化剂加快反应的方式相同，都是提供一种活化能更低的替代机理，而且都不被消耗；它们的区别在于所处的相以及反应发生的地点。均相催化剂与反应物处于同一相，在整个这一相中起作用：它与一种反应物反应，形成中间体，中间体再进一步反应，生成产物并使催化剂再生。在一氧化氮催化的臭氧分解中，气态 NO 与 O<sub>3</sub> 反应生成 NO<sub>2</sub>，NO<sub>2</sub> 又与氧原子反应重新生成 NO，所以 NO 是第一步中的反应物，也是最后一步中的产物。多相催化剂处于不同的相，通常是固体，反应发生在它的表面上：反应物在那里被吸附、活化并发生反应，产物则脱附。在镍上乙烯的氢化反应中，H<sub>2</sub> 和 C<sub>2</sub>H<sub>4</sub> 与 Ni 表面结合，H–H 键和 C–C π 键断裂，形成新的 C–H 键，C<sub>2</sub>H<sub>6</sub> 离开表面。"
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idm268031984",
+      "source_number": "78",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "homogeneous",
+      "prompt": "考虑下面的情形并回答问题：氯氟甲烷（如 CCl<sub>2</sub>F<sub>2</sub>）分解产生的氯原子会催化大气中臭氧的分解。该分解的一种简化机理为：<br>$\\begin{array}{l}{\\text{O}}_{3}\\overset{\\;\\text{日光}\\;}{\\to}{\\text{O}}_{2}+\\text{O} \\\\ {\\text{O}}_{3}+\\text{Cl}\\;\\longrightarrow \\;{\\text{O}}_{2}+\\text{ClO} \\\\ \\text{ClO}+\\text{O}\\;\\longrightarrow \\;\\text{Cl}+{\\text{O}}_{2}\\end{array}$<br>（a）解释为什么氯原子是下列气相转变的催化剂：<br>$2{\\text{O}}_{3}\\;\\longrightarrow \\;3{\\text{O}}_{2}$<br>（b）一氧化氮也按下列机理参与臭氧的分解：<br>$\\begin{array}{l}{\\text{O}}_{3}\\overset{\\;\\text{日光}\\;}{\\to}{\\text{O}}_{2}+\\text{O} \\\\ {\\text{O}}_{3}+\\text{NO}\\;\\longrightarrow \\;{\\text{NO}}_{2}+{\\text{O}}_{2} \\\\ {\\text{NO}}_{2}+\\text{O}\\;\\longrightarrow \\;\\text{NO}+{\\text{O}}_{2}\\end{array}$<br>NO 是该分解反应的催化剂吗？请解释你的答案。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）氯原子是催化剂，因为它们在第二步中反应，又在第三步中再生。因此它们不会被用完，这正是催化剂的特征。（b）NO 是催化剂，理由与（a）相同。"
+      }
+    },
+    {
+      "id": "e4",
+      "source_id": "fs-idm194307024",
+      "source_number": "79",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "catalysts",
+      "prompt": "对于下列每一对反应图，指出其中哪一幅表示催化的反应：<br>（a）<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise4a_img.jpg\" alt=\"此图中给出了两幅图。横轴标注为“反应进程”，纵轴标注为“能量（kJ）”。第一幅图的纵轴从 0 到 30，间隔为 5。第二幅图的纵轴从 0 到 25，间隔为 5。在 a 图中给出一条蓝色曲线。它从约 12 处的一段水平区域开始，在中部附近急剧上升，达到约 24 的最大值，并同样下降到 5 处的另一段水平线。在 b 图中，曲线的起止与之相似，但在图中部附近达到的最大值只有 20。\"><br>（b）<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise4b_img.jpg\" alt=\"此图中给出了两幅图。横轴标注为“反应进程”，纵轴标注为“能量”。纵轴从 0 到 50，间隔为 5。在 a 图中给出一条蓝色曲线。它从约 2 处的一段水平区域开始，在中部附近急剧上升，达到约 43 的最大值，并同样下降到 15 处的另一段水平线。在 b 图中，曲线的起止与之相似，但在图中部附近达到的最大值只有约 32。\">",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "在两对图中，图（b）都是催化的反应。每对中的两幅图起点和终点的能量相同，因为催化剂不改变反应物、产物，也不改变二者之间的能量变化；它提供的是一条活化能更低的路径。活化能是峰顶高出反应物的高度。（a）反应物约在 12 kJ；图（a）的峰在约 24 kJ，所以 $\\kEa$ ≈ 12 kJ，图（b）的峰在约 20 kJ，所以 $\\kEa$ ≈ 8 kJ。能垒更低的图（b）是催化的。（b）反应物约在 2 kJ；图（a）的峰在约 43 kJ，所以 $\\kEa$ ≈ 41 kJ，图（b）的峰在约 32 kJ，所以 $\\kEa$ ≈ 30 kJ。图（b）同样是催化的。"
+      }
+    },
+    {
+      "id": "e5",
+      "source_id": "fs-idm219276192",
+      "source_number": "80",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "catalysts",
+      "prompt": "对于下列每一对反应图，指出每对中哪一幅表示催化的反应：<br>（a）<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise5a_img.jpg\" alt=\"此图中给出了两幅图。横轴标注为“反应进程”，纵轴标注为“能量（kJ）”。纵轴从 0 到 50，间隔为 5。在 a 图中给出一条蓝色曲线。它从约 2 J 处的一段水平线开始，在中部附近急剧上升，达到约 46 的最大值，然后急剧下降到约 35，再次上升到约 38，并下降到约 15 处的另一段水平线。在 b 图中，曲线的起止与之相似，但第一个峰达到约 46，下降到约 35，然后上升到约 43，再下降到约 15 处的水平区域。\"><br>（b）<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise5b_img.jpg\" alt=\"此图中给出了两幅图。横轴标注为“反应进程”，纵轴标注为“能量（kJ）”。纵轴从 0 到 50，间隔为 5。在 a 图中给出一条蓝色曲线。它从约 34 处的一段水平线开始，在中部附近急剧上升，达到约 45 的最大值，然后急剧下降到约 25，再次急剧上升到约 35，并下降到约 15 处的另一段水平线。在 b 图中，曲线的起止与之相似，但第一个峰达到约 40，下降到 25，然后上升到 35，再下降到约 15 处的水平区域。\">",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "过渡态能量的降低表明了催化剂的作用。（a）B；（b）B"
+      }
+    },
+    {
+      "id": "e7",
+      "source_id": "fs-idm218836096",
+      "source_number": "82",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "catalysts",
+      "prompt": "对于下列每幅反应图，估算该反应的活化能（$\\kEa$）：<br>（a）<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise7a_img.jpg\" alt=\"此图中给出了一幅图。横轴标注为“反应进程”，纵轴标注为“能量（kJ）”。给出一条蓝色曲线。它从约 35 处的一段水平线开始，在中部附近急剧上升，达到约 45 的最大值，然后急剧下降到约 24，再次上升到约 30，并下降到约 15 处的另一段水平线。\"><br>（b）<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise7b_img.jpg\" alt=\"此图中给出了一幅图。横轴标注为“反应进程”，纵轴标注为“能量（kJ）”。给出一条蓝色曲线。它从约 35 处的一段水平线开始，在中部附近急剧上升，达到约 45 的最大值，然后急剧下降到约 40，再次上升到约 45，并下降到约 20 处的另一段水平线。\">",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "(a)",
+            "value": 10,
+            "unit": "kJ",
+            "tol": 0.2,
+            "hint": "取左侧水平线的能量作为反应物的能量，用第一个峰顶的能量减去它。"
+          },
+          {
+            "part": "(b)",
+            "value": 10,
+            "unit": "kJ",
+            "tol": 0.2
+          }
+        ],
+        "solution": "从初始状态到过渡态所需的能量为：（a）10 kJ；（b）10 kJ。"
+      }
+    },
+    {
+      "id": "e8",
+      "source_id": "fs-idm189363504",
+      "source_number": "83",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "catalysts",
+      "prompt": "假定习题 12.81 中的图表示同一反应的不同机理，哪一个反应的速率更快？<br>（a）<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise6a_img.jpg\" alt=\"此图中给出了一幅图。横轴标注为“反应进程”，纵轴标注为“能量（kJ）”。纵轴从 0 到 40，间隔为 5。给出一条蓝色曲线。它从 10 处的一段水平区域开始，在中部附近急剧上升，达到 35 的最大值，并同样下降到 5 处的另一段水平线。\"><br>（b）<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise6b_img.jpg\" alt=\"此图中给出了一幅图。横轴标注为“反应进程”，纵轴标注为“能量（kJ）”。纵轴从 0 到 40，间隔为 5。给出一条蓝色曲线。它从 10 处的一段水平区域开始，在中部附近急剧上升，达到 20 的最大值，并同样下降到 5 处的另一段水平线。\">",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "反应（b）的速率更快。活化能是能垒高出反应物的高度，两幅图都把反应物放在 10 kJ。图（a）的峰在 35 kJ，所以 $\\kEa$ = 35 kJ − 10 kJ = 25 kJ；图（b）的峰在 20 kJ，所以 $\\kEa$ = 20 kJ − 10 kJ = 10 kJ。对于同一反应在相同温度下，活化能越低，有足够能量越过能垒的分子所占的比例越大，因此更多的碰撞会导致反应。所以，图（b）的机理的能垒低 15 kJ，速率更快，正如催化的路径比未催化的路径更快。"
+      }
+    },
+    {
+      "id": "e9",
+      "source_id": "fs-idm225889216",
+      "source_number": "84",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "catalysts",
+      "prompt": "考虑习题 12.82 中所示的两幅反应图的异同。这些图表示的是两个不同的总反应，还是同一总反应通过两种不同的机理进行？请解释你的答案。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "两幅图都描述两步的放热反应，但焓变不同，这表明这两幅图描绘的是两个不同的总反应。"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "catalyzed-reaction-diagrams"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "activation-energy"
+    },
+    {
+      "exercise": "e1",
+      "concept": "catalysis-lowers-activation-energy"
+    },
+    {
+      "exercise": "e2",
+      "concept": "homogeneous-catalysis"
+    },
+    {
+      "exercise": "e2",
+      "concept": "heterogeneous-catalysis"
+    },
+    {
+      "exercise": "e3",
+      "concept": "homogeneous-catalysis"
+    },
+    {
+      "exercise": "e3",
+      "concept": "reaction-mechanism"
+    },
+    {
+      "exercise": "e4",
+      "concept": "catalyzed-reaction-diagrams"
+    },
+    {
+      "exercise": "e5",
+      "concept": "catalyzed-reaction-diagrams"
+    },
+    {
+      "exercise": "e7",
+      "concept": "activation-energy"
+    },
+    {
+      "exercise": "e7",
+      "concept": "reaction-diagram"
+    },
+    {
+      "exercise": "e8",
+      "concept": "activation-energy"
+    },
+    {
+      "exercise": "e8",
+      "concept": "catalysis-lowers-activation-energy"
+    },
+    {
+      "exercise": "e9",
+      "concept": "reaction-diagram"
+    },
+    {
+      "exercise": "e9",
+      "concept": "reaction-mechanism"
+    },
+    {
+      "exercise": "e9",
+      "concept": "enthalpy-change"
+    }
+  ],
+  "footnotes": [
+    {
+      "id": "c-nitric-oxide",
+      "kind": "correction",
+      "html": "书中的第一个方程式分解的是 NO<sub>2</sub>，而正文说的是一氧化氮。一氧化氮的分解是 2NO(<em>g</em>) ⟶ N<sub>2</sub>(<em>g</em>) + O<sub>2</sub>(<em>g</em>)。"
+    }
+  ]
+}

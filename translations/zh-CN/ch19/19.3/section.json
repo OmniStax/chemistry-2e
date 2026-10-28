@@ -1,0 +1,823 @@
+{
+  "id": "19.3",
+  "module": "m68844",
+  "chapter": "19",
+  "title": "配位化合物的光谱性质与磁性质",
+  "short": "光谱性质与磁性质",
+  "lead": "<span data-concept=\"crystal-field-theory\">晶体场理论</span>把配合物的配体当作排斥金属 <em>d</em> 轨道中电子的点电荷。本节依次讨论这些轨道在八面体形、四面体形和平面正方形配合物中的分裂，将<span data-concept=\"crystal-field-splitting\">晶体场分裂</span>与<span data-concept=\"pairing-energy\">成对能</span>相比较以区分高自旋和低自旋配合物，并把这种分裂与配合物的磁性和颜色联系起来。",
+  "objectives": [
+    "概述晶体场理论（CFT）的基本前提",
+    "识别与各种 d 轨道分裂模式相联系的分子几何构型",
+    "预测选定过渡金属原子或离子的分裂 d 轨道上的电子构型",
+    "用 CFT 的概念解释光谱性质和磁性质"
+  ],
+  "summary_html": "<p><span data-concept=\"crystal-field-theory\">晶体场理论</span>把金属上的电子与<span data-concept=\"ligand\">配体</span>之间的相互作用当作简单的静电效应。<span data-concept=\"ligand\">配体</span>靠近金属离子，会使金属 <em>d</em> 轨道的能量相对于自由离子中的能量发生改变。配合物的颜色和磁性都可归因于这种<span data-concept=\"crystal-field-splitting\">晶体场分裂</span>。分裂的大小（$\\kdoct$）取决于与金属键合的<span data-concept=\"ligand\">配体</span>的性质。<span data-concept=\"ligand-field-strength\">强场配体</span>产生大的分裂，有利于形成<span data-concept=\"high-and-low-spin-complexes\">低自旋配合物</span>，其中 <em>t</em><sub>2<em>g</em></sub> 轨道先被完全填满，然后才有电子占据 <em>e<sub>g</sub></em> 轨道。<span data-concept=\"ligand-field-strength\">弱场配体</span>有利于形成<span data-concept=\"high-and-low-spin-complexes\">高自旋配合物</span>。<em>t</em><sub>2<em>g</em></sub> 和 <em>e<sub>g</sub></em> 轨道先都被单独占据，然后才有轨道被双占据。</p>",
+  "notes": "略去了关于钒配合物还原的“学习链接”，但保留了指向它的那句话。无标题的开头部分带有我们自拟的标题“解释过渡金属配合物”。t<sub>2g</sub> 列表中的“<em>d<sub>zy</sub></em>”、“Hund's rule”中的直撇号、图 19.35 的“5d 轨道”和“eg”、例 19.9 中表示频率的 v 及其“450（蓝色）”，以及“蓝色、蓝绿紫色或黄色”，均照原样保留。",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ]
+  },
+  "built": "2026-10-26",
+  "exercises_lead": "",
+  "exercise_notes": "布鲁姆层级、概念标签、提示和建议的解题思路由 AI 生成。答案取自书后答案和“学习检测”的答案；习题 37（fs-idm69906288）的答案是书中的一对晶体场图。三道没有给出答案、答案需要自行推算的习题未收入，也没有为它们计算答案：36（fs-idp119097632，[Fe(NO<sub>2</sub>)<sub>6</sub>]<sup>3−</sup> 和 [FeF<sub>6</sub>]<sup>3−</sup> 的未成对电子数）、38（fs-idp62990928，[Co(NH<sub>3</sub>)<sub>6</sub>]Cl<sub>3</sub> 的氧化态、<em>d</em> 电子数和未成对电子数）和 44（fs-idm147246656，由分析结果确定一种镍化合物的几何构型和化学式）。没有答案的选择题 46（fs-idp74371168）和 48（fs-idp70727968）保持开放，附有选项和建议的解题思路；没有答案的概念题 40（fs-idm98451056）和 42（fs-idm107475184）带有标明为 OmniStax 自拟的建议解题思路。没有任何习题被移动。",
+  "figures": [
+    {
+      "id": "sim-d-orbitals",
+      "kind": "sim",
+      "number": "19.33",
+      "folds": [
+        "19.34",
+        "19.36"
+      ],
+      "originals": [
+        "/media/ch19/CNX_Chem_19_03_Dorbital.jpg",
+        "/media/ch19/CNX_Chem_19_03_CFSE.jpg",
+        "/media/ch19/CNX_Chem_19_03_TetCube.jpg"
+      ],
+      "original_caption": "（图 19.33）此处显示了五个 d 轨道的方向特征。阴影部分表示轨道的相位。配体（L）沿坐标轴配位。为清楚起见，dx²−y² 轨道中省略了配体，以便标出坐标轴。（图 19.34）在八面体形配合物中，与 t2g 轨道相比，eg 轨道不稳定（能量较高），因为配体与它们直接指向的 d 轨道相互作用更强。（图 19.36）此图显示了四面体形配体相对于轨道坐标系的取向。",
+      "draws": [
+        "energy"
+      ],
+      "conventions": [
+        "M",
+        "L"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-high-low-spin",
+      "kind": "sim",
+      "number": "19.35",
+      "originals": [
+        "/media/ch19/CNX_Chem_19_03_Lowhigh.jpg"
+      ],
+      "original_caption": "铁(II)配合物在 5d 轨道中有六个电子。没有晶体场时，这些轨道是简并的。对于含强场配体的配合物，如 [Fe(CN)6]4−，Δoct 大于 P，电子先在能量较低的 t2g 轨道中成对，然后才占据 eg 轨道。对于含弱场配体的配合物，如 H2O，配体场分裂小于成对能，即 Δoct 小于 P，所以电子先单独占据所有 d 轨道，然后才发生成对。",
+      "draws": [
+        "energy"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-tet-splitting",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-square-planar",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-color-wheel",
+      "kind": "sim",
+      "number": "19.37",
+      "originals": [
+        "/media/ch19/CNX_Chem_19_03_Lightper.jpg"
+      ],
+      "original_caption": "（a）若物体吸收所有颜色的光，它就是黑色的。若它反射所有颜色的光，它就是白色的。若物体吸收除一种颜色以外的所有颜色，它就有了颜色，如这条黄色条带。如果它从白光中吸收了互补色（这里是靛蓝），这条带也呈黄色。（b）互补色在色环上彼此正相对。（c）[Cu(NH3)4]2+ 离子的溶液吸收红光和橙光，所以透射光呈现其互补色，即蓝色。",
+      "draws": [
+        "wavelength",
+        "frequency",
+        "velocity",
+        "energy"
+      ],
+      "facts": [
+        "spectrum"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-aqueous-colors",
+      "kind": "photo",
+      "number": "19.38",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-iron-complexes",
+      "kind": "photo",
+      "number": "19.39",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-copper-complexes",
+      "kind": "photo",
+      "number": "19.40",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    }
+  ],
+  "referents": [],
+  "coverage": [
+    {
+      "span": "opening",
+      "concept": "valence-bond-theory",
+      "verb": "uses"
+    },
+    {
+      "span": "opening",
+      "concept": "degenerate-orbitals",
+      "verb": "uses"
+    },
+    {
+      "span": "opening",
+      "concept": "coordination-compound",
+      "verb": "uses"
+    },
+    {
+      "span": "opening",
+      "concept": "d-orbital",
+      "verb": "uses"
+    },
+    {
+      "span": "cft",
+      "concept": "crystal-field-theory",
+      "verb": "introduces"
+    },
+    {
+      "span": "cft",
+      "concept": "eg-and-t2g-orbitals",
+      "verb": "introduces"
+    },
+    {
+      "span": "cft",
+      "concept": "crystal-field-splitting",
+      "verb": "introduces"
+    },
+    {
+      "span": "cft",
+      "concept": "spectrochemical-series",
+      "verb": "introduces"
+    },
+    {
+      "span": "cft",
+      "concept": "ligand-field-strength",
+      "verb": "introduces"
+    },
+    {
+      "span": "cft",
+      "concept": "pairing-energy",
+      "verb": "introduces"
+    },
+    {
+      "span": "cft",
+      "concept": "high-and-low-spin-complexes",
+      "verb": "introduces"
+    },
+    {
+      "span": "cft",
+      "concept": "d-orbital",
+      "verb": "uses"
+    },
+    {
+      "span": "cft",
+      "concept": "ligand",
+      "verb": "uses"
+    },
+    {
+      "span": "cft",
+      "concept": "hunds-rule",
+      "verb": "uses"
+    },
+    {
+      "span": "cft",
+      "concept": "degenerate-orbitals",
+      "verb": "uses"
+    },
+    {
+      "span": "cft",
+      "concept": "octahedral-geometry",
+      "verb": "uses"
+    },
+    {
+      "span": "cft",
+      "concept": "aufbau-principle",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-high-low-spin",
+      "concept": "predict-unpaired-electrons",
+      "verb": "introduces"
+    },
+    {
+      "span": "ex-high-low-spin",
+      "concept": "high-and-low-spin-complexes",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-high-low-spin",
+      "concept": "ion-configurations",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-high-low-spin",
+      "concept": "ligand-field-strength",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-other-geometries",
+      "concept": "crystal-field-other-geometries",
+      "verb": "introduces"
+    },
+    {
+      "span": "ex-other-geometries",
+      "concept": "tetrahedral-geometry",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-other-geometries",
+      "concept": "eg-and-t2g-orbitals",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-other-geometries",
+      "concept": "hunds-rule",
+      "verb": "uses"
+    },
+    {
+      "span": "square-planar",
+      "concept": "crystal-field-other-geometries",
+      "verb": "reinforces"
+    },
+    {
+      "span": "square-planar",
+      "concept": "complex-geometry",
+      "verb": "uses"
+    },
+    {
+      "span": "square-planar",
+      "concept": "cis-trans-configuration",
+      "verb": "uses"
+    },
+    {
+      "span": "magnetic",
+      "concept": "magnetic-moment-unpaired-electrons",
+      "verb": "introduces"
+    },
+    {
+      "span": "magnetic",
+      "concept": "paramagnetism",
+      "verb": "uses"
+    },
+    {
+      "span": "magnetic",
+      "concept": "diamagnetism",
+      "verb": "uses"
+    },
+    {
+      "span": "magnetic",
+      "concept": "high-and-low-spin-complexes",
+      "verb": "uses"
+    },
+    {
+      "span": "colors",
+      "concept": "complementary-colors",
+      "verb": "introduces"
+    },
+    {
+      "span": "colors",
+      "concept": "colors-of-complexes",
+      "verb": "introduces"
+    },
+    {
+      "span": "colors",
+      "concept": "electromagnetic-spectrum",
+      "verb": "uses"
+    },
+    {
+      "span": "colors",
+      "concept": "photon-energy",
+      "verb": "uses"
+    },
+    {
+      "span": "colors",
+      "concept": "crystal-field-splitting",
+      "verb": "uses"
+    },
+    {
+      "span": "colors",
+      "concept": "ligand-field-strength",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-colors",
+      "concept": "colors-of-complexes",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-colors",
+      "concept": "complementary-colors",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-colors",
+      "concept": "photon-energy",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-colors",
+      "concept": "wave-speed-relation",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-colors",
+      "concept": "frequency",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-colors",
+      "concept": "wavelength",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-colors",
+      "concept": "blackbody-radiation",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-colors",
+      "concept": "crystal-field-splitting",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idm131078432",
+      "kind": "check-your-learning",
+      "bloom": "Analyze",
+      "place": {
+        "at": "inline",
+        "after": "ex-high-low-spin"
+      },
+      "cite": "ex-high-low-spin",
+      "prompt": "晶体场分裂的大小只有在电子成对与填入能量较高的轨道之间可以选择时，才会影响电子的排布。对于哪些 <em>d</em> 电子构型，八面体形配合物会有高自旋和低自旋构型的区别？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "<em>d</em><sup>4</sup>、<em>d</em><sup>5</sup>、<em>d</em><sup>6</sup> 和 <em>d</em><sup>7</sup>"
+      }
+    },
+    {
+      "id": "cyl2",
+      "source_id": "fs-idm108712192",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-other-geometries"
+      },
+      "cite": "ex-other-geometries",
+      "prompt": "说明四面体形 <em>d</em><sup>4</sup> 离子将有多少个未成对电子。",
+      "answer": {
+        "type": "number",
+        "part": "unpaired electrons",
+        "value": 4,
+        "hint": "先比较较小的四面体形分裂与成对能，再把四个电子放入 <em>e</em> 组和 <em>t</em><sub>2</sub> 组。",
+        "generated_by": "source",
+        "solution": "4；因为 Δ<sub>tet</sub> 小，所有四面体形配合物都是高自旋的，电子在成对之前先进入 <em>t</em><sub>2</sub> 轨道"
+      }
+    },
+    {
+      "id": "cyl3",
+      "source_id": "fs-idp4936672",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-colors"
+      },
+      "cite": "ex-colors",
+      "prompt": "呈绿色的配合物，吸收什么波长的光子？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "红光，620–800 nm"
+      }
+    },
+    {
+      "id": "e37",
+      "source_id": "fs-idm69906288",
+      "source_number": "37",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "cft",
+      "prompt": "画出 [Fe(NO<sub>2</sub>)<sub>6</sub>]<sup>4−</sup> 和 [FeF<sub>6</sub>]<sup>3−</sup> 的晶体场图。说明每个配合物是高自旋还是低自旋，是顺磁性还是抗磁性，并比较每个配合物的 Δ<sub>oct</sub> 与 <em>P</em>。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "<img src=\"/media/ch19/CNX_Chem_19_03_FECN6FEH2O_img.jpg\" alt=\"图中有两列、两行用黄色勾边的方格。第一列标为“[Fe(NO₂)₆]⁴⁻”。第二列标为“[FeF₆]³⁻”。左列中有三个相连的黄色勾边方格。每个方格里有两个半箭头，一个向上，一个向下。正上方一行有两个相连的空方格。该列下方的标注为“低自旋，抗磁性，P 小于 大写 Δ 下标 oct”。右列中有三个相连的黄色勾边方格。左边的方格里有两个半箭头，一个向上，一个向下。另外两个方格里各有一个向上的半箭头。正上方一行有两个相连的方格，每个方格里有一个向上的半箭头。该列下方的标注为“高自旋，顺磁性，P 大于 大写 Δ 下标 oct”。\">"
+      }
+    },
+    {
+      "id": "e39",
+      "source_id": "fs-idm40512384",
+      "source_number": "39",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "ex-high-low-spin",
+      "prompt": "无水固体 CoCl<sub>2</sub> 为蓝色。由于它很容易从空气中吸收水，因此被用作湿度指示剂，以监测设备（如手机）是否曾暴露在过量的潮气中。预测这个反应生成什么产物，以及这个配合物将有多少个未成对电子。",
+      "answer": {
+        "type": "number",
+        "part": "unpaired electrons in the product",
+        "value": 3,
+        "hint": "水以六个配体的形式加成；求出 Co<sup>2+</sup> 的 <em>d</em> 电子数，并按弱场配体放置它的电子。",
+        "generated_by": "source",
+        "solution": "[Co(H<sub>2</sub>O)<sub>6</sub>]Cl<sub>2</sub>，有三个未成对电子。"
+      }
+    },
+    {
+      "id": "e40",
+      "source_id": "fs-idm98451056",
+      "source_number": "40",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "cft",
+      "prompt": "过渡系中某金属的配合物有可能有六个未成对电子吗？请说明。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "不可能。过渡金属离子只有五个 <em>d</em> 轨道，每个轨道只能容纳一个未成对电子，所以最多只有五个 <em>d</em> 电子可以未成对。这个最大值属于高自旋配合物中的 <em>d</em><sup>5</sup> 离子，如 [Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> 或 [FeF<sub>6</sub>]<sup>3−</sup>，五个轨道中各有一个电子。无论晶体场分裂有多大，第六个 <em>d</em> 电子都没有空轨道可进，必须与已有的电子成对，所以 <em>d</em><sup>6</sup> 离子最多有四个未成对电子，如 [Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup>，<em>d</em> 电子更多时未成对电子还要更少。"
+      }
+    },
+    {
+      "id": "e41",
+      "source_id": "fs-idm67958768",
+      "source_number": "41",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "ex-high-low-spin",
+      "prompt": "下列各配合物中有多少个未成对电子？<br>（a）[CoF<sub>6</sub>]<sup>3−</sup>（高自旋）<br>（b）[Mn(CN)<sub>6</sub>]<sup>3−</sup>（低自旋）<br>（c）[Mn(CN)<sub>6</sub>]<sup>4−</sup>（低自旋）<br>（d）[MnCl<sub>6</sub>]<sup>4−</sup>（高自旋）<br>（e）[RhCl<sub>6</sub>]<sup>3−</sup>（低自旋）",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "(a) [CoF<sub>6</sub>]<sup>3−</sup>",
+            "value": 4,
+            "hint": "先求出金属的氧化态及其 <em>d</em> 电子数。"
+          },
+          {
+            "part": "(b) [Mn(CN)<sub>6</sub>]<sup>3−</sup>",
+            "value": 2
+          },
+          {
+            "part": "(c) [Mn(CN)<sub>6</sub>]<sup>4−</sup>",
+            "value": 1
+          },
+          {
+            "part": "(d) [MnCl<sub>6</sub>]<sup>4−</sup>",
+            "value": 5
+          },
+          {
+            "part": "(e) [RhCl<sub>6</sub>]<sup>3−</sup>",
+            "value": 0
+          }
+        ],
+        "solution": "（a）4；（b）2；（c）1；（d）5；（e）0"
+      }
+    },
+    {
+      "id": "e42",
+      "source_id": "fs-idm107475184",
+      "source_number": "42",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "cft",
+      "prompt": "说明二磷酸根离子 [O<sub>3</sub>P−O−PO<sub>3</sub>]<sup>4−</sup> 如何能起水软化剂的作用，防止 Fe<sup>2+</sup> 沉淀为不溶的铁盐。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "二磷酸根作为多齿的螯合配体与 Fe<sup>2+</sup> 结合，使它保持在可溶的配合物中。每个磷原子都带有端基氧原子，这些氧原子带有孤电子对，两个磷原子上各有一个氧原子可以与同一个 Fe<sup>2+</sup> 离子配位，在它周围闭合成环；如果再有一个氧原子也参与键合，该离子可以是三齿的。形成的配合物，如 [Fe(P<sub>2</sub>O<sub>7</sub>)]<sup>2−</sup>，带有电荷，保持溶解。因为铁被束缚在配合物中，游离 Fe<sup>2+</sup> 的浓度保持得很低，使 FeCO<sub>3</sub> 或 Fe(OH)<sub>2</sub> 这类不溶盐的离子积不会超过其溶度积，所以不生成沉淀。与水软化中使用的其他配位剂一样，二磷酸根封存金属离子，而不是把它除去。"
+      }
+    },
+    {
+      "id": "e43",
+      "source_id": "fs-idm124930528",
+      "source_number": "43",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "ex-high-low-spin",
+      "prompt": "对于氧化数不变的同一金属离子的配合物，稳定性随 <em>t</em><sub>2<em>g</em></sub> 轨道中电子数的增多而增大。下列各对配合物中，哪一个配合物更稳定？<br>（a）[Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> 或 [Fe(CN)<sub>6</sub>]<sup>4−</sup><br>（b）[Co(NH<sub>3</sub>)<sub>6</sub>]<sup>3+</sup> 或 [CoF<sub>6</sub>]<sup>3−</sup><br>（c）[Mn(CN)<sub>6</sub>]<sup>4−</sup> 或 [MnCl<sub>6</sub>]<sup>4−</sup>",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）[Fe(CN)<sub>6</sub>]<sup>4−</sup>；（b）[Co(NH<sub>3</sub>)<sub>6</sub>]<sup>3+</sup>；（c）[Mn(CN)<sub>6</sub>]<sup>4−</sup>"
+      }
+    },
+    {
+      "id": "e45",
+      "source_id": "fs-idm79409024",
+      "source_number": "45",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "magnetic",
+      "prompt": "你认为配合物 [Co(en)<sub>3</sub>]Cl<sub>3</sub> 会有未成对电子吗？会有异构体吗？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "该配合物没有未成对电子。该配合物没有几何异构体，但其镜像不能重合，所以它有一个旋光异构体。"
+      }
+    },
+    {
+      "id": "e46",
+      "source_id": "fs-idp74371168",
+      "source_number": "46",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "magnetic",
+      "prompt": "你认为 Mg<sub>3</sub>[Cr(CN)<sub>6</sub>]<sub>2</sub> 是抗磁性的还是顺磁性的？请说明理由。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "它是顺磁性的。三个 Mg<sup>2+</sup> 离子共带 6+ 电荷，所以两个配离子共带 6−，每个都是 [Cr(CN)<sub>6</sub>]<sup>3−</sup>。有六个 CN<sup>−</sup> 配体时，−3 = −6 + <em>x</em>，铬处于 3+ 氧化态。铬是 [Ar]3<em>d</em><sup>5</sup>4<em>s</em><sup>1</sup>，所以 Cr<sup>3+</sup> 是 <em>d</em><sup>3</sup>。在八面体形配合物中，这三个电子单独占据三个 <em>t</em><sub>2<em>g</em></sub> 轨道。氰根是强场配体，产生很大的 $\\kdoct$，但这在这里没有影响，因为三个电子单独填入三个轨道，不可能成对。三个未成对电子使该化合物呈顺磁性。"
+      }
+    },
+    {
+      "id": "e47",
+      "source_id": "fs-idm103127008",
+      "source_number": "47",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "colors",
+      "prompt": "你认为金(I)离子 Au<sup>+</sup> 的盐是有颜色的吗？请说明。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "不是。Au<sup>+</sup> 的 5<em>d</em> 亚层已充满。"
+      }
+    },
+    {
+      "id": "e48",
+      "source_id": "fs-idp70727968",
+      "source_number": "48",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "colors",
+      "prompt": "[CuCl<sub>4</sub>]<sup>2−</sup> 是绿色的。[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> 是蓝色的。哪一个吸收能量较高的光子？预测哪一个的晶体场分裂较大？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> 吸收能量较高的光子，预测它的晶体场分裂较大。配合物呈现的是与其所吸收颜色互补的颜色。[CuCl<sub>4</sub>]<sup>2−</sup> 呈绿色，所以它吸收红光；[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> 呈蓝色，所以它吸收橙光。橙光的波长比红光短，又因为 $E=hc/\\lambda$，橙色光子的能量更高。所吸收光子的能量与 <em>d</em> 轨道之间的分裂相当，所以蓝色的六水合配合物，六个配体处于八面体形场中，分裂为 $\\kdoct$，其分裂比绿色的四面体形 [CuCl<sub>4</sub>]<sup>2−</sup> 大，后者的四个配体给出较小的分裂 $\\kdtet$。"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "high-and-low-spin-complexes"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "pairing-energy"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "crystal-field-other-geometries"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "predict-unpaired-electrons"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "complementary-colors"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "colors-of-complexes"
+    },
+    {
+      "exercise": "e37",
+      "concept": "high-and-low-spin-complexes"
+    },
+    {
+      "exercise": "e37",
+      "concept": "paramagnetism"
+    },
+    {
+      "exercise": "e37",
+      "concept": "diamagnetism"
+    },
+    {
+      "exercise": "e39",
+      "concept": "predict-unpaired-electrons"
+    },
+    {
+      "exercise": "e39",
+      "concept": "ligand-field-strength"
+    },
+    {
+      "exercise": "e40",
+      "concept": "predict-unpaired-electrons"
+    },
+    {
+      "exercise": "e40",
+      "concept": "d-orbital"
+    },
+    {
+      "exercise": "e41",
+      "concept": "predict-unpaired-electrons"
+    },
+    {
+      "exercise": "e41",
+      "concept": "high-and-low-spin-complexes"
+    },
+    {
+      "exercise": "e42",
+      "concept": "chelate"
+    },
+    {
+      "exercise": "e42",
+      "concept": "complex-ion"
+    },
+    {
+      "exercise": "e43",
+      "concept": "eg-and-t2g-orbitals"
+    },
+    {
+      "exercise": "e43",
+      "concept": "high-and-low-spin-complexes"
+    },
+    {
+      "exercise": "e45",
+      "concept": "predict-unpaired-electrons"
+    },
+    {
+      "exercise": "e45",
+      "concept": "optical-isomer"
+    },
+    {
+      "exercise": "e46",
+      "concept": "predict-unpaired-electrons"
+    },
+    {
+      "exercise": "e46",
+      "concept": "paramagnetism"
+    },
+    {
+      "exercise": "e47",
+      "concept": "colors-of-complexes"
+    },
+    {
+      "exercise": "e48",
+      "concept": "colors-of-complexes"
+    },
+    {
+      "exercise": "e48",
+      "concept": "crystal-field-splitting"
+    }
+  ],
+  "footnotes": [
+    {
+      "id": "c-dxy",
+      "kind": "correction",
+      "html": "书中写的是 <em>d<sub>zy</sub></em>，这又是 <em>d<sub>yz</sub></em> 轨道。第三个 <em>t</em><sub>2<em>g</em></sub> 轨道是 <em>d<sub>xy</sub></em>。"
+    },
+    {
+      "id": "c-fig-5d",
+      "kind": "correction",
+      "figure": "sim-high-low-spin",
+      "html": "图注把铁(II)的六个电子放在 5<em>d</em> 轨道中；它们是 3<em>d</em> 电子，正文即如此说。"
+    }
+  ]
+}

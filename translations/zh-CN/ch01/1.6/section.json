@@ -1,0 +1,1231 @@
+{
+ "id": "1.6",
+ "module": "m68683",
+ "chapter": "1",
+ "title": "测量结果的数学处理",
+ "short": "测量的数学处理",
+ "lead": "无法直接测量的量，可以由能够测量的量计算出来，单位与数值一样参与运算。量纲分析借助换算因子把一个测量值从一种单位换算到另一种单位，同样的细心也用于联系华氏、摄氏和开尔文三种<span data-concept=\"temperature\">温标</span>。",
+ "objectives": [
+  "解释涉及量的数学计算的量纲分析（因子标记）方法",
+  "利用量纲分析对给定性质进行单位换算，并进行涉及两个或多个性质的计算"
+ ],
+ "summary_html": "<p>测量使用各种各样的单位。把一个测得的量从一种单位换算成另一种单位，往往是有用的，有时甚至是必需的。这些换算借助单位换算因子来完成，换算因子由一种称为因子标记法或量纲分析的数学方法经简单应用而得。这一策略也用于由测得的量和适当的数学关系计算所求的量。</p>",
+ "notes": "本节的二十一道偶数编号习题在书后答案中没有答案，故予略去；本节没有印出学习链接注记，也没有照片，因此没有其他内容被略去。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-fable-5-1"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-fable-5-1",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签和权重由 AI 生成。每道学习检测都附有其后注记中书中自带的答案。章末习题的答案取自书后答案，其涵盖奇数编号的习题；二十一道偶数编号的习题（fs-idm321326256、fs-idm124621456、fs-idm128259568、fs-idm290820272、fs-idp3893440、fs-idm311405440、fs-idm293326720、fs-idm247037968、fs-idm242942368、fs-idm311016240、fs-idm219388000、fs-idm306975136、fs-idm110873792、fs-idm207241008、fs-idm95632784、fs-idm215482272、fs-idm305607360、fs-idm182387776、fs-idm291580080、fs-idm294247168、fs-idm307064960）没有书中给出的答案，故予略去，又因其无一例外都是数值题，所以未写建议的解法。关于腕尺的习题要求读者参看其前面那道没有答案、已被略去的习题，因此其题干中的这一括注已删去。三道习题——把换算因子写成比值、由软饮料标签导出换算因子、给出以范围表示的足球规格——作为开放式答案保留，供读者对照。没有从其他小节取用任何内容，也没有为其他小节保留任何内容。数值答案允许 2% 的容差。",
+ "figures": [
+  {
+   "id": "sim-temperature-scales",
+   "kind": "sim",
+   "number": "1.28",
+   "originals": [
+    "/media/ch01/CNX_Chem_01_06_TempScales.jpg"
+   ],
+   "original_caption": "华氏、摄氏和开尔文温标的比较。",
+   "draws": [
+    "temperature"
+   ],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "tick labels yield to the reading, line names off the dots, note cut"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "dimensional-analysis",
+   "concept": "dimensional-analysis",
+   "verb": "introduces"
+  },
+  {
+   "span": "dimensional-analysis",
+   "concept": "si-base-units",
+   "verb": "uses"
+  },
+  {
+   "span": "dimensional-analysis",
+   "concept": "derived-units",
+   "verb": "uses"
+  },
+  {
+   "span": "conversion-factors",
+   "concept": "unit-conversion-factor",
+   "verb": "introduces"
+  },
+  {
+   "span": "conversion-factors",
+   "concept": "convert-units",
+   "verb": "introduces"
+  },
+  {
+   "span": "conversion-factors",
+   "concept": "dimensional-analysis",
+   "verb": "uses"
+  },
+  {
+   "span": "conversion-factors",
+   "concept": "significant-figures-in-calculations",
+   "verb": "uses"
+  },
+  {
+   "span": "computing-quantities",
+   "concept": "compute-with-units",
+   "verb": "introduces"
+  },
+  {
+   "span": "computing-quantities",
+   "concept": "convert-units",
+   "verb": "uses"
+  },
+  {
+   "span": "computing-quantities",
+   "concept": "unit-conversion-factor",
+   "verb": "uses"
+  },
+  {
+   "span": "computing-quantities",
+   "concept": "density",
+   "verb": "uses"
+  },
+  {
+   "span": "temperature-scales",
+   "concept": "temperature-scales",
+   "verb": "introduces"
+  },
+  {
+   "span": "temperature-scales",
+   "concept": "fahrenheit",
+   "verb": "introduces"
+  },
+  {
+   "span": "linear-not-proportional",
+   "concept": "linear-versus-proportional-scales",
+   "verb": "introduces"
+  },
+  {
+   "span": "linear-not-proportional",
+   "concept": "celsius-fahrenheit-conversion",
+   "verb": "introduces"
+  },
+  {
+   "span": "linear-not-proportional",
+   "concept": "unit-conversion-factor",
+   "verb": "uses"
+  },
+  {
+   "span": "linear-not-proportional",
+   "concept": "temperature-scales",
+   "verb": "uses"
+  },
+  {
+   "span": "kelvin-scale",
+   "concept": "celsius-kelvin-conversion",
+   "verb": "introduces"
+  },
+  {
+   "span": "kelvin-scale",
+   "concept": "temperature-scales",
+   "verb": "reinforces"
+  },
+  {
+   "span": "kelvin-scale",
+   "concept": "si-base-units",
+   "verb": "uses"
+  },
+  {
+   "span": "kelvin-scale",
+   "concept": "linear-versus-proportional-scales",
+   "verb": "uses"
+  },
+  {
+   "span": "temperature-examples",
+   "concept": "celsius-fahrenheit-conversion",
+   "verb": "reinforces"
+  },
+  {
+   "span": "temperature-examples",
+   "concept": "celsius-kelvin-conversion",
+   "verb": "reinforces"
+  },
+  {
+   "span": "temperature-examples",
+   "concept": "significant-figures-in-calculations",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm150235328",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-frisbee"
+   },
+   "prompt": "将 9.345 qt 的体积换算成升。",
+   "answer": {
+    "type": "number",
+    "value": 8.844,
+    "unit": "L",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm305814320",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-antifreeze"
+   },
+   "prompt": "已知 1 L = 1.0567 qt 且 1 qt = 32 oz（精确值），1.000 oz 的体积是多少升？",
+   "answer": {
+    "type": "number",
+    "value": 0.02957,
+    "unit": "L",
+    "generated_by": "source",
+    "solution": "$2.957 \\times 10^{-2}$ L"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idm306560960",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-roadster"
+   },
+   "prompt": "一辆丰田普锐斯混合动力汽车从旧金山行驶到西雅图，距离为 1300 km（两位有效数字），消耗了 59.7 L 汽油。<br>（a）普锐斯在这次行程中的（平均）燃油经济性是多少英里每加仑？<br>（b）如果汽油价格为每加仑 ＄3.90，这次行程的燃油费用是多少？",
+   "answer": {
+    "type": "multi",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 51,
+      "unit": "mpg"
+     },
+     {
+      "part": "(b)",
+      "value": 62,
+      "unit": "dollars"
+     }
+    ],
+    "generated_by": "source",
+    "solution": "（a）51 mpg；（b）＄62"
+   }
+  },
+  {
+   "id": "cyl4",
+   "source_id": "fs-idm75569040",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-body-temperature"
+   },
+   "prompt": "将 80.92 °C 换算成 K 和 °F。",
+   "answer": {
+    "type": "multi",
+    "parts": [
+     {
+      "part": "K",
+      "value": 354.07,
+      "unit": "K"
+     },
+     {
+      "part": "°F",
+      "value": 177.66,
+      "unit": "°F"
+     }
+    ],
+    "generated_by": "source",
+    "solution": "354.07 K，177.66 °F"
+   }
+  },
+  {
+   "id": "cyl5",
+   "source_id": "fs-idm309453552",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-oven"
+   },
+   "prompt": "将 50 °F 换算成 °C 和 K。",
+   "answer": {
+    "type": "multi",
+    "parts": [
+     {
+      "part": "°C",
+      "value": 10,
+      "unit": "°C"
+     },
+     {
+      "part": "K",
+      "value": 280,
+      "unit": "K"
+     }
+    ],
+    "generated_by": "source",
+    "solution": "10 °C，280 K"
+   }
+  },
+  {
+   "id": "p1",
+   "source_id": "fs-idm287695728",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "conversion-factors",
+   "prompt": "写出下列各数的换算因子（写成比值）：<br>（a）1 米中的码数<br>（b）1 液量夸脱中的升数<br>（c）1 千克中的磅数",
+   "answer": {
+    "type": "open",
+    "solution": "（a）$\\frac{\\text{1.0936 yd}}{\\text{1 m}}$；（b）$\\frac{\\text{0.94635 L}}{\\text{1 qt}}$；（c）$\\frac{\\text{2.2046 lb}}{\\text{1 kg}}$",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "p3",
+   "source_id": "fs-idp43396912",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "一个软饮料瓶的标签用两种单位给出体积：2.0 L 和 67.6 fl oz。利用这一信息导出英制单位与公制单位之间的换算因子。你的换算因子可以合理保留几位有效数字？",
+   "answer": {
+    "type": "open",
+    "solution": "$\\frac{\\text{2.0 L}}{\\text{67.6 fl oz}}=\\frac{\\text{0.030 L}}{\\text{1 fl oz}}$。只能合理保留两位有效数字。",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "p5",
+   "source_id": "fs-idm125803088",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "足球使用的是圆周长在 27 至 28 in. 之间、重量在 14 至 16 oz 之间的圆球。这些规格用厘米和克作单位是多少？",
+   "answer": {
+    "type": "open",
+    "solution": "68–71 cm；400–450 g",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "p7",
+   "source_id": "fs-idm203954352",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "一个 12.0 oz 的罐子里装有多少毫升软饮料？",
+   "answer": {
+    "type": "number",
+    "value": 355,
+    "unit": "mL",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "p9",
+   "source_id": "fs-idp32978240",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "红细胞的直径约为 3 $\\times$ 10<sup>−4</sup> in.。它的直径是多少厘米？",
+   "answer": {
+    "type": "number",
+    "value": 0.0008,
+    "unit": "cm",
+    "generated_by": "source",
+    "solution": "8 $\\times$ 10<sup>−4</sup> cm"
+   }
+  },
+  {
+   "id": "p11",
+   "source_id": "fs-idm280166528",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "一名 197 lb 的举重运动员，是否足够轻，可以参加限重 90 kg 及以下的级别比赛？",
+   "answer": {
+    "type": "number",
+    "value": 89.4,
+    "unit": "kg",
+    "generated_by": "source",
+    "solution": "是；重量 = 89.4 kg"
+   }
+  },
+  {
+   "id": "p13",
+   "source_id": "fs-idm159954784",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "许多医学检验使用 5.0 μL 血清来进行。这一体积是多少毫升？",
+   "answer": {
+    "type": "number",
+    "value": 0.005,
+    "unit": "mL",
+    "generated_by": "source",
+    "solution": "5.0 $\\times$ 10<sup>−3</sup> mL"
+   }
+  },
+  {
+   "id": "p15",
+   "source_id": "fs-idm101514016",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "用科学（指数）记数法，以表 1.2 中的 SI 基本单位表示下列各量：<br>（a）0.13 g<br>（b）232 Gg<br>（c）5.23 pm<br>（d）86.3 mg<br>（e）37.6 cm<br>（f）54 μm<br>（g）1 Ts<br>（h）27 ps<br>(i) 0.15 mK",
+   "answer": {
+    "type": "multi",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 0.00013,
+      "unit": "kg"
+     },
+     {
+      "part": "(b)",
+      "value": 232000000.0,
+      "unit": "kg"
+     },
+     {
+      "part": "(c)",
+      "value": 5.23e-12,
+      "unit": "m"
+     },
+     {
+      "part": "(d)",
+      "value": 8.63e-05,
+      "unit": "kg"
+     },
+     {
+      "part": "(e)",
+      "value": 0.376,
+      "unit": "m"
+     },
+     {
+      "part": "(f)",
+      "value": 5.4e-05,
+      "unit": "m"
+     },
+     {
+      "part": "(g)",
+      "value": 1000000000000.0,
+      "unit": "s"
+     },
+     {
+      "part": "(h)",
+      "value": 2.7e-11,
+      "unit": "s"
+     },
+     {
+      "part": "(i)",
+      "value": 0.00015,
+      "unit": "K"
+     }
+    ],
+    "generated_by": "source",
+    "solution": "（a）1.3 $\\times$ 10<sup>−4</sup> kg；（b）2.32 $\\times$ 10<sup>8</sup> kg；（c）5.23 $\\times$ 10<sup>−12</sup> m；（d）8.63 $\\times$ 10<sup>−5</sup> kg；（e）3.76 $\\times$ 10<sup>−1</sup> m；（f）5.4 $\\times$ 10<sup>−5</sup> m；（g）1 $\\times$ 10<sup>12</sup> s；（h）2.7 $\\times$ 10<sup>−11</sup> s；(i) 1.5 $\\times$ 10<sup>−4</sup> K"
+   }
+  },
+  {
+   "id": "p17",
+   "source_id": "fs-idp54026624",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "许多国家按升出售汽油。加满一个 12.0 gal 的油箱需要多少升？",
+   "answer": {
+    "type": "number",
+    "value": 45.4,
+    "unit": "L",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "p19",
+   "source_id": "fs-idm186995360",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "长吨定义为恰好 2240 lb。这一质量是多少千克？",
+   "answer": {
+    "type": "number",
+    "value": 1016.0,
+    "unit": "kg",
+    "generated_by": "source",
+    "solution": "1.0160 $\\times$ 10<sup>3</sup> kg"
+   }
+  },
+  {
+   "id": "p21",
+   "source_id": "fs-idm250694352",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "完成下列各项所示的换算：<br>（a）足球场的长度 120 m（三位有效数字），换算成英尺<br>（b）非洲最高峰乞力马扎罗山的高度 19,565 ft，换算成千米<br>（c）一张 8.5 × 11 英寸的纸的面积，以 cm<sup>2</sup> 表示<br>（d）汽车发动机的排量 161 in.<sup>3</sup>，换算成升<br>（e）大气质量的估计值 5.6 × 10<sup>15</sup> 短吨（美吨），换算成千克<br>（f）一蒲式耳黑麦的质量 32.0 lb，换算成千克<br>（g）一片 5.00 格令的阿司匹林药片的质量，换算成毫克（1 格令 = 0.00229 oz）",
+   "answer": {
+    "type": "multi",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 394,
+      "unit": "ft"
+     },
+     {
+      "part": "(b)",
+      "value": 5.9634,
+      "unit": "km"
+     },
+     {
+      "part": "(c)",
+      "value": 600,
+      "unit": "cm²"
+     },
+     {
+      "part": "(d)",
+      "value": 2.64,
+      "unit": "L"
+     },
+     {
+      "part": "(e)",
+      "value": 5.1e+18,
+      "unit": "kg"
+     },
+     {
+      "part": "(f)",
+      "value": 14.5,
+      "unit": "kg"
+     },
+     {
+      "part": "(g)",
+      "value": 325,
+      "unit": "mg"
+     }
+    ],
+    "generated_by": "source",
+    "solution": "（a）394 ft；（b）5.9634 km；（c）6.0 $\\times$ 10<sup>2</sup>；（d）2.64 L；（e）5.1 $\\times$ 10<sup>18</sup> kg；（f）14.5 kg；（g）325 mg"
+   }
+  },
+  {
+   "id": "p23",
+   "source_id": "fs-idm311640624",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "化学家的 50 万亿埃跑，相当于考古学家的 10,900 腕尺跑。1 腕尺有多长，分别以米和英尺表示？（1 Å = 1 $\\times$ 10<sup>−8</sup> cm）",
+   "answer": {
+    "type": "multi",
+    "parts": [
+     {
+      "part": "in meters",
+      "value": 0.46,
+      "unit": "m"
+     },
+     {
+      "part": "in feet",
+      "value": 1.5,
+      "unit": "ft"
+     }
+    ],
+    "generated_by": "source",
+    "solution": "0.46 m；1.5 ft/腕尺"
+   }
+  },
+  {
+   "id": "p25",
+   "source_id": "fs-idm244153744",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "一位教师在为实验做准备时，需要 225 g 磷酸。手头唯一现成的容器是一个 150 mL 的锥形瓶。它是否大到足以盛下这些酸？酸的密度为 1.83 g/mL。",
+   "answer": {
+    "type": "number",
+    "value": 123,
+    "unit": "mL",
+    "generated_by": "source",
+    "solution": "是的，这些酸的体积为 123 mL。"
+   }
+  },
+  {
+   "id": "p27",
+   "source_id": "fs-idp15401744",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "一名学化学的学生身高 159 cm，重 45.8 kg。她的身高是多少英寸，重量是多少磅？",
+   "answer": {
+    "type": "multi",
+    "parts": [
+     {
+      "part": "height",
+      "value": 62.6,
+      "unit": "in."
+     },
+     {
+      "part": "weight",
+      "value": 101,
+      "unit": "lb"
+     }
+    ],
+    "generated_by": "source",
+    "solution": "62.6 in（约 5 ft 3 in.）和 101 lb"
+   }
+  },
+  {
+   "id": "p29",
+   "source_id": "fs-idm289866560",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "解答下面这些关于木材尺寸的问题。<br>（a）为了向欧洲人描述美国的房屋是如何建造的，必须把“二乘四”木材的尺寸换算成公制单位。在美国，其厚度 $\\times$ 宽度 $\\times$ 长度的尺寸为 1.50 in. $\\times$ 3.50 in. $\\times$ 8.00 ft。以 cm $\\times$ cm $\\times$ m 表示，这些尺寸是多少？<br>（b）这种木材可以用作竖直的立柱，立柱通常间隔 16.0 in. 放置。这一距离是多少厘米？",
+   "answer": {
+    "type": "multi",
+    "parts": [
+     {
+      "part": "(a) thickness",
+      "value": 3.81,
+      "unit": "cm"
+     },
+     {
+      "part": "(a) width",
+      "value": 8.89,
+      "unit": "cm"
+     },
+     {
+      "part": "(a) length",
+      "value": 2.44,
+      "unit": "m"
+     },
+     {
+      "part": "(b)",
+      "value": 40.6,
+      "unit": "cm"
+     }
+    ],
+    "generated_by": "source",
+    "solution": "（a）3.81 cm $\\times$ 8.89 cm $\\times$ 2.44 m；（b）40.6 cm"
+   }
+  },
+  {
+   "id": "p31",
+   "source_id": "fs-idm215857872",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "如果 27.6 cm<sup>3</sup> 的铝质量为 74.6 g，计算铝的密度。",
+   "answer": {
+    "type": "number",
+    "value": 2.7,
+    "unit": "g/cm³",
+    "generated_by": "source",
+    "solution": "2.70 g/cm<sup>3</sup>"
+   }
+  },
+  {
+   "id": "p33",
+   "source_id": "fs-idm361862336",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "计算下列质量。<br>（a）6.00 cm<sup>3</sup> 汞的质量是多少？汞的密度 = 13.5939 g/cm<sup>3</sup>。<br>（b）25.0 mL 辛烷的质量是多少？辛烷的密度 = 0.702 g/cm<sup>3</sup>。",
+   "answer": {
+    "type": "multi",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 81.6,
+      "unit": "g"
+     },
+     {
+      "part": "(b)",
+      "value": 17.6,
+      "unit": "g"
+     }
+    ],
+    "generated_by": "source",
+    "solution": "（a）81.6 g；（b）17.6 g"
+   }
+  },
+  {
+   "id": "p35",
+   "source_id": "fs-idm216432832",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "计算下列体积。<br>（a）25 g 碘的体积是多少？碘的密度 = 4.93 g/cm<sup>3</sup>。<br>（b）3.28 g 气态氢的体积是多少？气态氢的密度 = 0.089 g/L。",
+   "answer": {
+    "type": "multi",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 5.1,
+      "unit": "mL"
+     },
+     {
+      "part": "(b)",
+      "value": 37,
+      "unit": "L"
+     }
+    ],
+    "generated_by": "source",
+    "solution": "（a）5.1 mL；（b）37 L"
+   }
+  },
+  {
+   "id": "p37",
+   "source_id": "fs-idm208263472",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "将金的沸腾温度 2966 °C 换算成华氏度和开尔文。",
+   "answer": {
+    "type": "multi",
+    "parts": [
+     {
+      "part": "°F",
+      "value": 5371,
+      "unit": "°F"
+     },
+     {
+      "part": "K",
+      "value": 3239,
+      "unit": "K"
+     }
+    ],
+    "generated_by": "source",
+    "solution": "5371 °F，3239 K"
+   }
+  },
+  {
+   "id": "p39",
+   "source_id": "fs-idm126910176",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "将冰箱冷冻室最冷区域的温度 −10 °F 换算成摄氏度和开尔文。",
+   "answer": {
+    "type": "multi",
+    "parts": [
+     {
+      "part": "°C",
+      "value": -23,
+      "unit": "°C"
+     },
+     {
+      "part": "K",
+      "value": 250,
+      "unit": "K"
+     }
+    ],
+    "generated_by": "source",
+    "solution": "−23 °C，250 K"
+   }
+  },
+  {
+   "id": "p41",
+   "source_id": "fs-idm312310640",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "将液氨的沸腾温度 −28.1 °F 换算成摄氏度和开尔文。",
+   "answer": {
+    "type": "multi",
+    "parts": [
+     {
+      "part": "°C",
+      "value": -33.4,
+      "unit": "°C"
+     },
+     {
+      "part": "K",
+      "value": 239.8,
+      "unit": "K"
+     }
+    ],
+    "generated_by": "source",
+    "solution": "−33.4 °C，239.8 K"
+   }
+  },
+  {
+   "id": "p43",
+   "source_id": "fs-idm161487744",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "1995 年夏天，欧洲的天气异常炎热。电视新闻报道的气温高达 45 °C。用华氏温标表示，这一温度是多少？",
+   "answer": {
+    "type": "number",
+    "value": 113,
+    "unit": "°F",
+    "generated_by": "source"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "convert-units"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "unit-conversion-factor"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "convert-units"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "unit-conversion-factor"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "compute-with-units"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "convert-units"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "celsius-kelvin-conversion"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "celsius-fahrenheit-conversion"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "celsius-fahrenheit-conversion"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "celsius-kelvin-conversion"
+  },
+  {
+   "exercise": "p1",
+   "concept": "unit-conversion-factor"
+  },
+  {
+   "exercise": "p3",
+   "concept": "unit-conversion-factor"
+  },
+  {
+   "exercise": "p3",
+   "concept": "significant-figures-in-calculations",
+   "weight": 2
+  },
+  {
+   "exercise": "p5",
+   "concept": "convert-units"
+  },
+  {
+   "exercise": "p7",
+   "concept": "convert-units"
+  },
+  {
+   "exercise": "p9",
+   "concept": "convert-units"
+  },
+  {
+   "exercise": "p11",
+   "concept": "convert-units"
+  },
+  {
+   "exercise": "p13",
+   "concept": "convert-units"
+  },
+  {
+   "exercise": "p13",
+   "concept": "unit-prefixes",
+   "weight": 2
+  },
+  {
+   "exercise": "p15",
+   "concept": "unit-prefixes"
+  },
+  {
+   "exercise": "p15",
+   "concept": "scientific-notation"
+  },
+  {
+   "exercise": "p15",
+   "concept": "convert-units",
+   "weight": 2
+  },
+  {
+   "exercise": "p17",
+   "concept": "convert-units"
+  },
+  {
+   "exercise": "p19",
+   "concept": "convert-units"
+  },
+  {
+   "exercise": "p21",
+   "concept": "convert-units"
+  },
+  {
+   "exercise": "p21",
+   "concept": "compute-with-units",
+   "weight": 2
+  },
+  {
+   "exercise": "p23",
+   "concept": "convert-units"
+  },
+  {
+   "exercise": "p25",
+   "concept": "compute-with-units"
+  },
+  {
+   "exercise": "p25",
+   "concept": "density",
+   "weight": 2
+  },
+  {
+   "exercise": "p27",
+   "concept": "convert-units"
+  },
+  {
+   "exercise": "p29",
+   "concept": "convert-units"
+  },
+  {
+   "exercise": "p31",
+   "concept": "density"
+  },
+  {
+   "exercise": "p31",
+   "concept": "compute-with-units",
+   "weight": 2
+  },
+  {
+   "exercise": "p33",
+   "concept": "density"
+  },
+  {
+   "exercise": "p33",
+   "concept": "compute-with-units",
+   "weight": 2
+  },
+  {
+   "exercise": "p33",
+   "concept": "convert-units",
+   "weight": 1
+  },
+  {
+   "exercise": "p35",
+   "concept": "density"
+  },
+  {
+   "exercise": "p35",
+   "concept": "compute-with-units",
+   "weight": 2
+  },
+  {
+   "exercise": "p35",
+   "concept": "convert-units",
+   "weight": 1
+  },
+  {
+   "exercise": "p37",
+   "concept": "celsius-fahrenheit-conversion"
+  },
+  {
+   "exercise": "p37",
+   "concept": "celsius-kelvin-conversion"
+  },
+  {
+   "exercise": "p39",
+   "concept": "celsius-fahrenheit-conversion"
+  },
+  {
+   "exercise": "p39",
+   "concept": "celsius-kelvin-conversion"
+  },
+  {
+   "exercise": "p41",
+   "concept": "celsius-fahrenheit-conversion"
+  },
+  {
+   "exercise": "p41",
+   "concept": "celsius-kelvin-conversion"
+  },
+  {
+   "exercise": "p43",
+   "concept": "celsius-fahrenheit-conversion"
+  }
+ ],
+ "derivations": [
+  {
+   "id": "celsius-fahrenheit",
+   "what": "摄氏温度与华氏温度的换算",
+   "source": "化学（第2版），1.6 测量结果的数学处理",
+   "nodes": [
+    {
+     "assumes": [
+      {
+       "text": "两种温标之间的关系是线性的。",
+       "src": "1.6"
+      },
+      {
+       "text": "水在 0 °C 和 32 °F 时凝固，在 100 °C 和 212 °F 时沸腾。",
+       "src": "1.6"
+      },
+      {
+       "text": "摄氏温度为 $x$，华氏温度为 $y$。",
+       "src": "1.6"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{m}{m} = \\dfrac{\\mk{dy}{\\Delta y}}{\\mk{dx}{\\Delta x}}",
+      "src": "1.6",
+      "uses": [
+       0
+      ],
+      "why": "在一条直线上，任意两点之间的纵向增量与横向增量之比都相同。"
+     },
+     "steps": [
+      {
+       "tex": "\\mk{m}{m} = \\dfrac{\\mk{dy}{\\text{212 °F}-\\text{32 °F}}}{\\mk{dx}{\\text{100 °C}-\\text{0 °C}}}",
+       "uses": [
+        1,
+        2
+       ]
+      },
+      {
+       "tex": "\\mk{m}{m} = \\dfrac{\\mk{dy}{\\text{180 °F}}}{\\mk{dx}{\\text{100 °C}}}",
+       "uses": []
+      },
+      {
+       "tex": "\\mk{m}{m} = \\dfrac{\\mk{dy}{\\text{9 °F}}}{\\mk{dx}{\\text{5 °C}}}",
+       "uses": []
+      }
+     ],
+     "src": "1.6"
+    },
+    {
+     "assumes": [
+      {
+       "text": "两种温标之间的关系是线性的。",
+       "src": "1.6"
+      },
+      {
+       "text": "水在 0 °C 和 32 °F 时凝固，在 100 °C 和 212 °F 时沸腾。",
+       "src": "1.6"
+      },
+      {
+       "text": "摄氏温度为 $x$，华氏温度为 $y$。",
+       "src": "1.6"
+      },
+      {
+       "step": 0
+      }
+     ],
+     "then": {
+      "tex": "\\mk{y}{y} = \\mk{m}{m}\\mk{x}{x} + \\mk{b}{b}",
+      "src": "1.6",
+      "uses": [
+       0
+      ]
+     },
+     "steps": [
+      {
+       "tex": "\\mk{b}{b} = \\mk{y}{y} - \\mk{m}{m}\\mk{x}{x}",
+       "uses": []
+      },
+      {
+       "tex": "\\mk{b}{b} = \\mk{y}{\\text{32 °F}} - \\mk{m}{m}\\;\\times\\;\\mk{x}{\\text{0 °C}}",
+       "uses": [
+        1,
+        2
+       ],
+       "cap": "两对定义值都落在这条直线上；水的凝固点给出的数值更简单。"
+      },
+      {
+       "tex": "\\mk{b}{b} = \\mk{y}{\\text{32 °F}} - \\mk{m}{\\dfrac{\\text{9 °F}}{\\text{5 °C}}}\\;\\times\\;\\mk{x}{\\text{0 °C}}",
+       "uses": [
+        3
+       ]
+      },
+      {
+       "tex": "\\mk{b}{b} = \\mk{y}{\\text{32 °F}}",
+       "uses": []
+      }
+     ],
+     "src": "1.6"
+    },
+    {
+     "assumes": [
+      {
+       "text": "两种温标之间的关系是线性的。",
+       "src": "1.6"
+      },
+      {
+       "text": "摄氏温度为 $x$，华氏温度为 $y$。",
+       "src": "1.6"
+      },
+      {
+       "step": 0
+      },
+      {
+       "step": 1
+      }
+     ],
+     "then": {
+      "tex": "\\mk{y}{y} = \\mk{m}{m}\\mk{x}{x} + \\mk{b}{b}",
+      "src": "1.6",
+      "uses": [
+       0
+      ]
+     },
+     "steps": [
+      {
+       "tex": "\\mk{y}{\\kTF} = \\mk{m}{m}\\;\\times\\;\\mk{x}{\\kTC} + \\mk{b}{b}",
+       "uses": [
+        1
+       ]
+      },
+      {
+       "tex": "\\mk{y}{\\kTF} = \\left(\\mk{m}{\\dfrac{\\text{9 °F}}{\\text{5 °C}}}\\;\\times\\;\\mk{x}{\\kTC}\\right) + \\mk{b}{\\text{32 °F}}",
+       "uses": [
+        2,
+        3
+       ]
+      },
+      {
+       "tex": "\\mk{y}{\\kTF} = \\left(\\mk{m}{\\dfrac{9}{5}}\\;\\times\\;\\mk{x}{\\kTC}\\right) + \\mk{b}{32}",
+       "uses": [],
+       "cap": "每个温度都取其在各自温标上的度数，所以略去了单位。"
+      }
+     ],
+     "src": "1.6"
+    },
+    {
+     "assumes": [
+      {
+       "step": 2
+      }
+     ],
+     "then": {
+      "tex": "\\mk{y}{\\kTF} = \\left(\\mk{m}{\\dfrac{9}{5}}\\;\\times\\;\\mk{x}{\\kTC}\\right) + \\mk{b}{32}",
+      "src": "1.6"
+     },
+     "steps": [
+      {
+       "tex": "\\mk{y}{\\kTF} - \\mk{b}{32} = \\mk{m}{\\dfrac{9}{5}}\\;\\times\\;\\mk{x}{\\kTC}",
+       "uses": []
+      },
+      {
+       "tex": "\\mk{x}{\\kTC} = \\mk{m}{\\dfrac{5}{9}}\\left(\\mk{y}{\\kTF} - \\mk{b}{32}\\right)",
+       "uses": []
+      }
+     ],
+     "src": "1.6"
+    }
+   ]
+  }
+ ]
+}

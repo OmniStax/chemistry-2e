@@ -1,0 +1,237 @@
+{
+ "id": "18",
+ "dir": "ch18",
+ "title": "主族金属、半金属与非金属",
+ "intro": {
+  "module": "m68828",
+  "slug": "18-introduction"
+ },
+ "sections": [
+  {
+   "id": "18.1",
+   "module": "m68829",
+   "title": "周期性",
+   "slug": "18-1-periodicity"
+  },
+  {
+   "id": "18.2",
+   "module": "m68830",
+   "title": "主族金属的存在与制备",
+   "slug": "18-2-occurrence-and-preparation-of-the-representative-metals"
+  },
+  {
+   "id": "18.3",
+   "module": "m68831",
+   "title": "半金属的结构与一般性质",
+   "slug": "18-3-structure-and-general-properties-of-the-metalloids"
+  },
+  {
+   "id": "18.4",
+   "module": "m68832",
+   "title": "非金属的结构与一般性质",
+   "slug": "18-4-structure-and-general-properties-of-the-nonmetals"
+  },
+  {
+   "id": "18.5",
+   "module": "m68833",
+   "title": "氢的存在、制备与化合物",
+   "slug": "18-5-occurrence-preparation-and-compounds-of-hydrogen"
+  },
+  {
+   "id": "18.6",
+   "module": "m68834",
+   "title": "碳酸盐的存在、制备与性质",
+   "slug": "18-6-occurrence-preparation-and-properties-of-carbonates"
+  },
+  {
+   "id": "18.7",
+   "module": "m68835",
+   "title": "氮的存在、制备与性质",
+   "slug": "18-7-occurrence-preparation-and-properties-of-nitrogen"
+  },
+  {
+   "id": "18.8",
+   "module": "m68836",
+   "title": "磷的存在、制备与性质",
+   "slug": "18-8-occurrence-preparation-and-properties-of-phosphorus"
+  },
+  {
+   "id": "18.9",
+   "module": "m68837",
+   "title": "氧的存在、制备与化合物",
+   "slug": "18-9-occurrence-preparation-and-compounds-of-oxygen"
+  },
+  {
+   "id": "18.10",
+   "module": "m68838",
+   "title": "硫的存在、制备与性质",
+   "slug": "18-10-occurrence-preparation-and-properties-of-sulfur"
+  },
+  {
+   "id": "18.11",
+   "module": "m68839",
+   "title": "卤素的存在、制备与性质",
+   "slug": "18-11-occurrence-preparation-and-properties-of-halogens"
+  },
+  {
+   "id": "18.12",
+   "module": "m68840",
+   "title": "稀有气体的存在、制备与性质",
+   "slug": "18-12-occurrence-preparation-and-properties-of-the-noble-gases"
+  }
+ ],
+ "variables": [
+  {
+   "sym": "ΔH°",
+   "concept": "enthalpy-change",
+   "meaning": "反应的标准焓变，例如氢还原三氯化硼的反应，或二氧化硅与氟化氢的反应",
+   "unit": "kJ",
+   "section": "18.3",
+   "anchor": "18.3-boron-silicon"
+  },
+  {
+   "sym": "K_a",
+   "concept": "acid-ionization-constant",
+   "meaning": "硼酸的酸电离常数，硼酸对氢氧根离子起路易斯酸的作用",
+   "unit": "none",
+   "section": "18.3",
+   "anchor": "18.3-boron-silicon"
+  },
+  {
+   "sym": "ΔH°",
+   "concept": "enthalpy-change",
+   "meaning": "反应的标准焓变，例如哈伯法反应或肼的燃烧",
+   "unit": "kJ",
+   "section": "18.5",
+   "anchor": "18.5-compounds"
+  },
+  {
+   "sym": "ΔG_f°",
+   "concept": "standard-free-energy-of-formation",
+   "meaning": "肼由其单质生成的标准生成自由能",
+   "unit": "kJ/mol",
+   "section": "18.5",
+   "anchor": "18.5-compounds"
+  },
+  {
+   "sym": "E_std",
+   "concept": "standard-electrode-potential",
+   "meaning": "卤素的标准还原电势，或卤素与卤离子之间反应的标准电势",
+   "unit": "V",
+   "section": "18.5",
+   "anchor": "18.5-compounds"
+  },
+  {
+   "sym": "K_P",
+   "concept": "equilibrium-constant",
+   "meaning": "二氧化氮与四氧化二氮平衡的平衡常数，以分压表示",
+   "unit": "none",
+   "section": "18.7",
+   "anchor": "18.7-dioxide"
+  },
+  {
+   "sym": "ΔH°",
+   "concept": "enthalpy-change",
+   "meaning": "反应的标准焓变，例如由氧生成臭氧的反应，或二氧化硫的氧化反应",
+   "unit": "kJ",
+   "section": "18.9",
+   "anchor": "18.9-ozone"
+  },
+  {
+   "sym": "K_a",
+   "concept": "acid-ionization-constant",
+   "meaning": "硫酸氢根离子的酸电离常数",
+   "unit": "none",
+   "section": "18.9",
+   "anchor": "18.9-sulfur-oxyacids"
+  },
+  {
+   "sym": "K_a1",
+   "concept": "acid-ionization-constant",
+   "meaning": "亚硫酸第一步的电离常数",
+   "unit": "none",
+   "section": "18.9",
+   "anchor": "18.9-sulfur-oxyacids"
+  },
+  {
+   "sym": "K_a2",
+   "concept": "acid-ionization-constant",
+   "meaning": "亚硫酸第二步的电离常数",
+   "unit": "none",
+   "section": "18.9",
+   "anchor": "18.9-sulfur-oxyacids"
+  },
+  {
+   "sym": "pK_a",
+   "concept": "acid-ionization-constant",
+   "meaning": "卤素含氧酸的酸电离常数的负对数",
+   "unit": "none",
+   "section": "18.9",
+   "anchor": "18.9-halogen-oxyacids"
+  },
+  {
+   "sym": "V",
+   "concept": "volume",
+   "meaning": "电解水时在电极上收集到的气体的体积，阴极为氢气，阳极为氧气",
+   "unit": "mL",
+   "section": "18.5",
+   "anchor": "18.5-preparation"
+  },
+  {
+   "sym": "P",
+   "concept": "partial-pressure",
+   "meaning": "密闭容器中二氧化氮或四氧化二氮的分压",
+   "unit": "atm",
+   "section": "18.7",
+   "anchor": "18.7-dioxide"
+  },
+  {
+   "sym": "T",
+   "concept": "temperature",
+   "meaning": "密闭容器中气体的温度",
+   "unit": "K",
+   "section": "18.7",
+   "anchor": "18.7-dioxide"
+  },
+  {
+   "sym": "V",
+   "concept": "volume",
+   "meaning": "密闭容器的体积，由其活塞决定",
+   "unit": "L",
+   "section": "18.7",
+   "anchor": "18.7-dioxide"
+  },
+  {
+   "sym": "T",
+   "concept": "temperature",
+   "meaning": "温度，无论用哪种温标读数",
+   "unit": "°C",
+   "section": "18.4",
+   "anchor": "18.4-sulfur"
+  },
+  {
+   "sym": "T",
+   "concept": "temperature",
+   "meaning": "压入弗拉施法最外层管中的过热水的温度",
+   "unit": "°C",
+   "section": "18.10",
+   "anchor": "18.10-occurrence"
+  },
+  {
+   "sym": "E_std",
+   "concept": "standard-electrode-potential",
+   "meaning": "卤素的标准还原电势，或卤素与卤离子之间反应的标准电势",
+   "unit": "V",
+   "section": "18.11",
+   "anchor": "18.11-properties"
+  },
+  {
+   "sym": "r",
+   "concept": "covalent-radius",
+   "meaning": "原子的共价半径，即由共价键相连的两个相同原子核间距离的一半",
+   "unit": "pm",
+   "section": "18.11",
+   "anchor": "18.11-interhalogens"
+  }
+ ]
+}

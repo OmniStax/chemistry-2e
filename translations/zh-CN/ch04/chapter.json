@@ -1,0 +1,51 @@
+{
+  "id": "4",
+  "dir": "ch04",
+  "title": "化学反应的化学计量",
+  "intro": {
+    "module": "m68730",
+    "slug": "4-introduction"
+  },
+  "sections": [
+    {
+      "id": "4.1",
+      "module": "m68709",
+      "title": "化学方程式的书写与配平",
+      "slug": "4-1-writing-and-balancing-chemical-equations"
+    },
+    {
+      "id": "4.2",
+      "module": "m68710",
+      "title": "化学反应的分类",
+      "slug": "4-2-classifying-chemical-reactions"
+    },
+    {
+      "id": "4.3",
+      "module": "m68713",
+      "title": "反应的化学计量",
+      "slug": "4-3-reaction-stoichiometry"
+    },
+    {
+      "id": "4.4",
+      "module": "m68714",
+      "title": "反应的产率",
+      "slug": "4-4-reaction-yields"
+    },
+    {
+      "id": "4.5",
+      "module": "m68716",
+      "title": "化学定量分析",
+      "slug": "4-5-quantitative-chemical-analysis"
+    }
+  ],
+  "variables": [
+    {
+      "sym": "M",
+      "concept": "molarity",
+      "meaning": "溶液的物质的量浓度，即每升溶液中溶质的物质的量（等价地，也是每毫升溶液中溶质的毫摩尔数）",
+      "unit": "M (mol/L)",
+      "section": "4.5",
+      "anchor": "4.5-titration-calc"
+    }
+  ]
+}

@@ -1,0 +1,427 @@
+/* Figures for section 8.2 Hybrid Atomic Orbitals. Boots against the section's text article. */
+window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
+window.OMNISTAX_FIGURES['8.2'] = function (root, F) {
+const { el, tex, PAL, alpha, register, begin, line, arrow, text, topline, C } = F;
+const sim = (id, H) => F.sim(root, id, H);
+/* a still figure answers its choices, or nothing at all, and has no clock */
+const still = (d, draw) => register(d.fig, { update: () => {}, draw });
+function readout(host, main, small) { tex(host, main); if (small) host.appendChild(el('small', null, small)); }
+const hued = (e, type) => { e.style.color = C(type); return e; };
+const RAD = Math.PI / 180, TAU = 2 * Math.PI;
+
+/* ---------- vectors ---------- */
+const V = {
+  add: (a, b) => [a[0] + b[0], a[1] + b[1], a[2] + b[2]],
+  mul: (a, k) => [a[0] * k, a[1] * k, a[2] * k],
+  dot: (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2],
+  unit: (a) => { const l = Math.hypot(a[0], a[1], a[2]) || 1; return [a[0] / l, a[1] / l, a[2] / l]; },
+};
+function slerp(a, b, t) {
+  const w = Math.acos(Math.max(-1, Math.min(1, V.dot(a, b)))); if (w < 1e-6) return a;
+  const s = Math.sin(w); return V.add(V.mul(a, Math.sin((1 - t) * w) / s), V.mul(b, Math.sin(t * w) / s));
+}
+const rotY = (v, a) => { const c = Math.cos(a * RAD), s = Math.sin(a * RAD); return [v[0] * c + v[2] * s, v[1], -v[0] * s + v[2] * c]; };
+const rotX = (v, a) => { const c = Math.cos(a * RAD), s = Math.sin(a * RAD); return [v[0], v[1] * c - v[2] * s, v[1] * s + v[2] * c]; };
+
+/* the ideal directions of the five sets of hybrid orbitals, as unit vectors */
+const T3 = Math.sqrt(8 / 9), T1 = -1 / 3;
+const SITES = {
+  2: [[1, 0, 0], [-1, 0, 0]],
+  3: [[0, 1, 0], [Math.cos(210 * RAD), Math.sin(210 * RAD), 0], [Math.cos(330 * RAD), Math.sin(330 * RAD), 0]],
+  4: [[0, 1, 0], [T3, T1, 0], rotY([T3, T1, 0], 120), rotY([T3, T1, 0], 240)],
+  5: [[0, 1, 0], [0, -1, 0], [1, 0, 0], rotY([1, 0, 0], 120), rotY([1, 0, 0], 240)],
+  6: [[0, 1, 0], [0, -1, 0], [1, 0, 0], [-1, 0, 0], [0, 0, 1], [0, 0, -1]],
+};
+const ARRANGE = { 2: '直线形', 3: '平面三角形', 4: '四面体形', 5: '三角双锥形', 6: '八面体形' };
+const HYB = { 2: 'sp', 3: 'sp<sup>2</sup>', 4: 'sp<sup>3</sup>', 5: 'sp<sup>3</sup>d', 6: 'sp<sup>3</sup>d<sup>2</sup>' };
+const HYB_NAME = { 2: 'sp', 3: 'sp²', 4: 'sp³', 5: 'sp³d', 6: 'sp³d²' };
+const HYB_TEX = { 2: 'sp', 3: 'sp^2', 4: 'sp^3', 5: 'sp^3d', 6: 'sp^3d^2' };
+const ANGLES = { 2: '180°', 3: '120°', 4: '109.5°', 5: '90° 和 120°', 6: '90°' };
+/* the arcs each set marks: two site indices and the angle between them */
+const ARCS = { 2: [[0, 1, '180°']], 3: [[1, 2, '120°']], 4: [[1, 2, '109.5°']], 5: [[0, 2, '90°'], [2, 3, '120°']], 6: [[0, 2, '90°']] };
+const WORDS = { 2: '两', 3: '三', 4: '四', 5: '五', 6: '六' };
+
+/* ---------- three dimensions ----------
+   Orbitals are mathematical 3D (root rule 28.3): lobes in the categorical palette,
+   the book's s blue, p red and hybrid yellow as F.cat(0), F.cat(1) and F.cat(2);
+   atoms in the element palette; nuclei, axes and arcs in ink. Every lobe names
+   itself under the pointer. */
+const { sphere, stick, lobe: lobe3, arc: arc3d, polyline } = F.mesh;
+const S_COL = () => F.cat(0), P_COL = () => F.cat(1), H_COL = () => F.cat(2);
+const fade = (m, a) => { m.material.transparent = true; m.material.opacity *= a; m.visible = a > 0.01; return m; };
+function sOrb(g, v, c, r, col, a, name) {
+  const m = sphere(g, c, r, col, { transparent: true, opacity: 0.42 }); fade(m, a); if (a > 0.3) v.pickable(m, name); return m;
+}
+function pOrb(g, v, c, dir, len, col, a, name) {
+  [dir, V.mul(dir, -1)].forEach((u) => { const m = fade(lobe3(g, c, u, len, col), a); if (a > 0.3) v.pickable(m, name); });
+}
+/* a hybrid orbital: one large lobe along dir and, unless drawn thin, a small one behind it */
+function hOrb(g, v, c, dir, len, col, a, name, minor = 1, thin = 0) {
+  const m = fade(lobe3(g, c, dir, len * (1 + 0.3 * thin), col), a);
+  m.scale.x *= 1 - 0.5 * thin; m.scale.z *= 1 - 0.5 * thin;
+  if (a > 0.3) v.pickable(m, name);
+  if (minor * a > 0.01) { const n = fade(lobe3(g, c, V.mul(dir, -1), len * 0.34, col), a * minor); if (a * minor > 0.3) v.pickable(n, name); }
+  return m;
+}
+function axes3(g, v, L = 1.75) {
+  const col = alpha(PAL.ink, 0.45);
+  [[1, 0, 0, 'x'], [0, 1, 0, 'y'], [0, 0, 1, 'z']].forEach(([x, y, z, n]) => {
+    polyline(g, [[-x * L, -y * L, -z * L], [x * L, y * L, z * L]], col);
+    v.label(`<em>${n}</em>`, [x * (L + 0.18), y * (L + 0.18), z * (L + 0.18)], g, 0);
+  });
+}
+const nucleus = (g, r = 0.07) => sphere(g, [0, 0, 0], r, PAL.ink);
+const NAMES = { H: '氢（H）', B: '硼（B）', C: '碳（C）', O: '氧（O）', P: '磷（P）', Cl: '氯（Cl）', S: '硫（S）', F: '氟（F）' };
+function atom3(g, v, p, sym, r, a = 1) { const m = fade(sphere(g, p, r, F.el(sym)), a); if (a > 0.3) v.pickable(m, NAMES[sym]); return m; }
+function bond3(g, p, q, a = 1, r = 0.055) { return fade(stick(g, p, q, r, PAL.ink), a); }
+const FREE_PITCH = [-Math.PI / 2, Math.PI / 2];
+/* an angle between two directions from the nucleus: its arc and its degrees in the angle hue */
+const angle3 = (g, v, a, b, R, t) => hued(v.label(t, arc3d(g, a, b, R, [0, 0, 0], C('angle')), g, 0), 'angle');
+
+/* =====================================================================
+   FIGURE 8.6 + 8.7: water with two perpendicular 2p orbitals, then with four
+   sp3 hybrids. Still: a choice between two models; the lobes bend and turn
+   from one to the other and the hydrogen atoms swing with them.
+===================================================================== */
+(function () {
+  const d = sim('sim-water');
+  const v = F.view3d(d.stage, { h: 440, dist: 9.4, spin: 'idle', pitch: FREE_PITCH, views: [{ label: '正视', yaw: 0, pitch: 0 }, { label: '侧视', yaw: -0.9, pitch: 0.5 }] });
+  const g = v.part(0); g.position.y = 0.05;
+  const model = F.choice(d.controls, { label: '\\text{模型}', aria: '氧上的轨道', options: [{ value: 'p', label: '2<em>p</em> 轨道' }, { value: 'sp3', label: '<em>sp</em><sup>3</sup> 杂化轨道' }], value: 'p' });
+  /* the H–O–H bisector u points down, so the hydrogen atoms sit below the oxygen and the lone pairs above */
+  const u = [0, -1, 0], w = [1, 0, 0], z = [0, 0, 1];
+  const half = (a) => [V.add(V.mul(u, Math.cos(a * RAD)), V.mul(w, Math.sin(a * RAD))), V.add(V.mul(u, Math.cos(a * RAD)), V.mul(w, -Math.sin(a * RAD)))];
+  const [H1p, H2p] = half(45), [H1h, H2h] = half(54.75);
+  const back = [V.mul(H1p, -1), V.mul(H2p, -1)];
+  const lone = [V.add(V.mul(u, -Math.cos(54.75 * RAD)), V.mul(z, Math.sin(54.75 * RAD))), V.add(V.mul(u, -Math.cos(54.75 * RAD)), V.mul(z, -Math.sin(54.75 * RAD)))];
+  function draw() {
+    const k = model.mix((m) => (m === 'sp3' ? 1 : 0)), sp3 = model.value === 'sp3';
+    v.clear();
+    const col = F.mixColor(P_COL(), H_COL(), k), len = 1.05 + 0.2 * k;
+    const bonds = [slerp(H1p, H1h, k), slerp(H2p, H2h, k)], lones = [slerp(back[0], lone[0], k), slerp(back[1], lone[1], k)];
+    const bName = sp3 ? '氧的 sp³ 杂化轨道，用于成键' : '氧的 2p 轨道';
+    const lName = sp3 ? '氧的 sp³ 杂化轨道，容纳孤电子对' : '氧的 2p 轨道的另一个瓣';
+    bonds.forEach((b) => { const m = fade(lobe3(g, [0, 0, 0], b, len, col), 1); v.pickable(m, bName); });
+    lones.forEach((b) => { const m = fade(lobe3(g, [0, 0, 0], b, len * (1 - 0.1 * k), col), 1); v.pickable(m, lName); });
+    atom3(g, v, [0, 0, 0], 'O', 0.16);
+    bonds.forEach((b) => { const p = V.mul(b, 1.75); sOrb(g, v, p, 0.5, S_COL(), 1, '氢原子的 1s 轨道'); atom3(g, v, p, 'H', 0.12); });
+    if (k < 0.02 || k > 0.98) angle3(g, v, bonds[0], bonds[1], 0.75, sp3 ? '109.5°' : '90°');
+    else arc3d(g, bonds[0], bonds[1], 0.75, [0, 0, 0], C('angle'));
+    v.label('O', V.mul(u, -0.3), g, 0);
+    v.label(sp3 ? '<em>sp</em><sup>3</sup>' : '2<em>p</em>', V.mul(lones[0], 1.3), g, 0);
+    v.label('H', V.mul(bonds[0], 2.4), g, 0); v.label('H', V.mul(bonds[1], 2.4), g, 0);
+    v.headline(sp3
+      ? '四个 sp<sup>3</sup> 杂化轨道指向四面体的顶点，彼此相隔 109.5°；观测到的 H–O–H 角为 104.5°。'
+      : '两个互相垂直的 2p 轨道会使两个氢原子相距 90°；观测到的 H–O–H 角为 104.5°。');
+    readout(d.readout, `\\htmlClass{kv-angle}{\\angle\\text{HOH}_{\\text{预测}}} = ${sp3 ? '109.5' : '90'}^\\circ \\qquad \\htmlClass{kv-angle}{\\angle\\text{HOH}_{\\text{观测}}} = 104.5^\\circ`,
+      sp3 ? '两对孤电子对占据的空间比两对成键电子对大，所以观测到的角比 109.5° 略小。'
+        : '这一预测与观测到的角相差 14.5°，所以一个保留孤立原子的原子轨道的模型，不可能说明全部情况。');
+  }
+  still(d, draw);
+})();
+
+/* =====================================================================
+   FIGURES 8.8, 8.10 + 8.11 + 8.12 and 8.15: one s orbital and one, two or
+   three p orbitals mixing into a set of hybrids. Still: a choice between the
+   book's drawings; the atomic orbitals fade as the hybrids grow out of the
+   nucleus, and in 8.12 the hybrids draw in to become the B–H bonds.
+===================================================================== */
+const AXES = [[1, 0, 0], [0, 1, 0], [0, 0, 1]], AXN = ['x', 'y', 'z'];
+function bench(id, n, stages, opts) {
+  const d = sim(id);
+  const v = F.view3d(d.stage, { h: 420, dist: 9.6, spin: 'idle', pitch: FREE_PITCH, views: opts.views });
+  const g = v.part(0); g.position.y = -0.7;
+  const nP = n - 1;
+  const STATE = {
+    atomic: { at: 1, hy: 0, minor: 1, thin: 0, mol: 0 },
+    hybrid: { at: 0, hy: 1, minor: 1, thin: 0, mol: 0 },
+    thin: { at: 0, hy: 1, minor: 0, thin: 1, mol: 0 },
+    mol: { at: 0, hy: 0, minor: 0, thin: 1, mol: 1 },
+  };
+  const st = F.choice(d.controls, { label: '\\text{轨道}', aria: '选择哪种画法', options: stages, value: 'atomic' });
+  const dirs = SITES[n], hyb = HYB[n];
+  function draw() {
+    const s = st.mix((x) => STATE[x]);
+    v.clear(); axes3(g, v);
+    nucleus(g);
+    /* the atomic orbitals: the s orbital and the p orbitals that mix, and for sp2 the p orbital that stays */
+    sOrb(g, v, [0, 0, 0], 0.62, S_COL(), s.at, '价层 s 轨道');
+    for (let i = 0; i < nP; i++) pOrb(g, v, [0, 0, 0], AXES[i], 1.2, P_COL(), s.at, `价层 p 轨道（p${AXN[i]}）`);
+    if (n === 3) pOrb(g, v, [0, 0, 0], AXES[2], 1.2, P_COL(), 0.35, '未杂化的 p 轨道（pz）');
+    /* the hybrids grow from the nucleus */
+    const grow = F.ease.smooth(s.hy);
+    dirs.forEach((u) => { if (grow > 0.01) hOrb(g, v, [0, 0, 0], u, 1.35 * grow, H_COL(), Math.min(1, s.hy * 1.4), `${HYB_NAME[n]} 杂化轨道`, s.minor, s.thin); });
+    /* BH3: the hybrids draw in as the bonds and hydrogen atoms arrive */
+    if (s.mol > 0.01) {
+      atom3(g, v, [0, 0, 0], 'B', 0.3, s.mol);
+      dirs.forEach((u) => { const p = V.mul(u, 1.75); bond3(g, [0, 0, 0], p, s.mol, 0.07); atom3(g, v, p, 'H', 0.2, s.mol); });
+    }
+    const sp = st.value;
+    if (st.k > 0.98) {
+      if (sp === 'atomic') { v.label('<em>s</em>', [0.35, 0.5, 0.2], g, 0); v.label(`<em>p<sub>${AXN[0]}</sub></em>`, [1.2, -0.5, 0], g, 0); if (nP > 1) v.label(`<em>p<sub>y</sub></em>`, [-0.5, 1.2, 0], g, 0); if (nP > 2) v.label(`<em>p<sub>z</sub></em>`, [-0.45, -0.45, 1.2], g, 0); }
+      if (sp === 'hybrid' || sp === 'thin') v.label(`<em>${hyb}</em>`, V.mul(dirs[1], 1.6), g, 0);
+      if (n === 3 && sp !== 'atomic') v.label('<em>p<sub>z</sub></em>', [-0.45, -0.45, 1.2], g, 0);
+      if (sp !== 'atomic') ARCS[n].forEach(([i, j, t]) => angle3(g, v, dirs[i], dirs[j], 0.8, t));
+      if (sp === 'mol') { v.label('B', [0, -0.45, 0], g, 0); dirs.forEach((u) => v.label('H', V.mul(u, 1.75), g, -30)); }
+    }
+    v.headline(opts.head[sp]);
+    readout(d.readout, opts.eq, opts.note[sp]);
+  }
+  still(d, draw);
+}
+bench('sim-sp', 2, [{ value: 'atomic', label: '原子轨道' }, { value: 'hybrid', label: '杂化轨道' }], {
+  views: [{ label: '侧视', yaw: 0.45, pitch: 0.35 }, { label: '沿 x 轴', yaw: -Math.PI / 2, pitch: 0 }],
+  eq: '1\\ s + 1\\ p \\;\\longrightarrow\\; 2\\ sp',
+  head: { atomic: '一个 s 轨道和一个 p 轨道，混合之前。', hybrid: '两个 sp 杂化轨道，沿 x 轴相隔 180°。' },
+  note: { atomic: '进入这一组的有两个原子轨道，所以出来两个杂化轨道。', hybrid: '每个 sp 轨道有一个大瓣和一个小瓣；两个轨道的形状和能量等价。' },
+});
+bench('sim-sp2', 3, [{ value: 'atomic', label: '原子轨道' }, { value: 'hybrid', label: '杂化轨道' }, { value: 'thin', label: '画细' }, { value: 'mol', label: '在 BH<sub>3</sub> 中' }], {
+  views: [{ label: '正视', yaw: 0, pitch: 0 }, { label: '侧棱视', yaw: 0.3, pitch: 1.35 }],
+  eq: '1\\ s + 2\\ p \\;\\longrightarrow\\; 3\\ sp^2 \\;(+\\ 1\\ p\\ \\text{未杂化})',
+  head: { atomic: '一个 s 轨道和两个 p 轨道，混合之前。', hybrid: '三个 sp<sup>2</sup> 杂化轨道，在同一平面内相隔 120°。', thin: '同样的 sp<sup>2</sup> 轨道组，画得更细，不画小瓣。', mol: 'BH<sub>3</sub> 呈平面三角形，三个 B–H 键相隔 120°。' },
+  note: { atomic: '进入这一组的有三个原子轨道，所以出来三个杂化轨道。', hybrid: '三个杂化轨道的形状和能量等价，它们一起位于与未杂化 p 轨道垂直的平面内。', thin: '', mol: '硼的每个 sp² 杂化轨道与一个氢原子的 1s 轨道重叠，形成三个 σ 键之一。' },
+});
+bench('sim-sp3', 4, [{ value: 'atomic', label: '原子轨道' }, { value: 'hybrid', label: '杂化轨道' }], {
+  views: [{ label: '侧视', yaw: 0.45, pitch: 0.3 }, { label: '沿瓣方向看', yaw: 0, pitch: Math.PI / 2 }],
+  eq: '1\\ s + 3\\ p \\;\\longrightarrow\\; 4\\ sp^3',
+  head: { atomic: '一个 s 轨道和三个 p 轨道，混合之前。', hybrid: '四个 sp<sup>3</sup> 杂化轨道指向四面体的顶点。' },
+  note: { atomic: '进入这一组的有四个原子轨道，所以出来四个杂化轨道，没有 p 轨道剩余。', hybrid: '四个杂化轨道的形状和能量等价；每一个都可以与另一个轨道重叠形成 σ 键，或容纳一对孤电子对。' },
+});
+
+/* =====================================================================
+   FIGURES 8.9, 8.13 and 8.16: orbital energy-level diagrams, faithful copies.
+   Each orbital a line at its energy, each electron a half-arrow; the E axis
+   takes the energy hue and everything else is ink.
+===================================================================== */
+function halfArrow(ctx, x, y, up) {
+  const y0 = up ? y - 6 : y - 46, y1 = up ? y - 46 : y - 6;
+  line(ctx, x, y0, x, y1, PAL.ink, 3);
+  line(ctx, x, y1, x + (up ? -9 : 9), y1 + (up ? 13 : -13), PAL.ink, 3);
+}
+function level(ctx, x, y, lab, electrons, above = false) {
+  line(ctx, x - 46, y, x + 46, y, PAL.ink, 5);
+  text(ctx, lab, x, above ? y - 16 : y + 26, PAL.ink, { size: 22, align: 'center' });
+  if (electrons === 1) halfArrow(ctx, x, y, true);
+  if (electrons === 2) { halfArrow(ctx, x - 9, y, true); halfArrow(ctx, x + 9, y, false); }
+}
+function levels(id, o) {
+  const H = 420, d = sim(id, H);
+  function draw() {
+    const { ctx } = begin(d.c);
+    arrow(ctx, 110, 390, 110, 80, C('energy'), 4);
+    text(ctx, 'E', 78, 235, C('energy'), { size: 26, weight: 600, align: 'center' });
+    const y2s = 360, y2p = 120, yh = (y2s + o.m * y2p) / (o.m + 1);
+    text(ctx, `孤立 ${o.atom} 原子中的轨道`, 330, 48, PAL.ink, { size: 22, align: 'center' });
+    level(ctx, 210, y2s, '2s', 2);
+    [0, 1, 2].forEach((i) => level(ctx, 210 + i * 120, y2p, '2p', i < o.p ? 1 : 0));
+    arrow(ctx, 590, 250, 730, 250, PAL.muted, 6);
+    text(ctx, '杂化', 660, 222, PAL.ink, { size: 22, align: 'center' });
+    text(ctx, o.title, 1030, 48, PAL.ink, { size: 22, align: 'center' });
+    const nh = o.m + 1, x0 = 1030 - (nh - 1) * 60;
+    for (let i = 0; i < nh; i++) level(ctx, x0 + i * 120, yh, o.hyb, i < o.e ? 1 : 0);
+    const left = 3 - o.m;
+    for (let j = 0; j < left; j++) level(ctx, x0 + j * 120, y2p, '2p', 0, true);
+    if (left) text(ctx, '未杂化', x0 + left * 120 - 40, y2p + 6, PAL.ink, { size: 22 });
+    readout(d.readout, o.eq, o.note);
+  }
+  still(d, draw);
+}
+levels('fig-sp-levels', { atom: 'Be', m: 1, p: 0, e: 2, hyb: 'sp', title: 'BeCl_{2} 中 sp 杂化 Be 的轨道',
+  eq: '\\text{Be: } 2s^2 \\;\\longrightarrow\\; (sp)^1(sp)^1', note: '两个半充满的 sp 轨道，各可与 Cl 的 3p 轨道重叠。' });
+levels('fig-sp2-levels', { atom: 'B', m: 2, p: 1, e: 3, hyb: 'sp²', title: 'BH_{3} 中 sp² 杂化 B 原子的轨道',
+  eq: '\\text{B: } 2s^2\\,2p^1 \\;\\longrightarrow\\; (sp^2)^1(sp^2)^1(sp^2)^1', note: '三个半充满的 sp² 轨道，每个 B–H σ 键各用一个，另有一个空的 2p 轨道。' });
+levels('fig-sp3-levels', { atom: 'C', m: 3, p: 2, e: 4, hyb: 'sp³', title: 'CH_{4} 中 sp³ 杂化 C 原子的轨道',
+  eq: '\\text{C: } 2s^2\\,2p^2 \\;\\longrightarrow\\; (sp^3)^1(sp^3)^1(sp^3)^1(sp^3)^1', note: '四个半充满的 sp³ 轨道，每个 C–H σ 键各用一个。' });
+
+/* =====================================================================
+   FIGURE 8.17: ethane, as orbitals or as bonds, with one CH3 group turned
+   about the C–C axis by a slider (a rotation is a slider, not a cycle).
+===================================================================== */
+(function () {
+  const d = sim('sim-ethane');
+  const v = F.view3d(d.stage, { h: 420, dist: 8.8, spin: 'idle', pitch: FREE_PITCH, views: [{ label: '侧视', yaw: 0.35, pitch: 0.3 }, { label: '沿 C–C 键', yaw: -Math.PI / 2, pitch: 0 }] });
+  const g = v.part(0); g.position.y = -0.35;
+  const view = F.choice(d.controls, { label: '\\text{画法}', aria: '轨道或键', options: [{ value: 'orb', label: '轨道' }, { value: 'bond', label: 'σ 键' }], value: 'orb' });
+  const phi = F.ctl(d.controls, { label: '\\varphi', cls: 'angle', min: 0, max: 120, step: 1, value: 0, unit: '°', dec: 0, aria: '右侧 CH3 基团绕 C–C 键的旋转' });
+  const CC = 1.55, CH = 1.1 * 1.15;
+  const hDirs = (sign, turn) => [90, 210, 330].map((a) => V.unit([sign * 1 / 3, T3 * Math.cos((a + turn) * RAD), T3 * Math.sin((a + turn) * RAD)]));
+  function draw() {
+    const k = view.mix((x) => (x === 'bond' ? 1 : 0));
+    v.clear();
+    const C1 = [-CC / 2, 0, 0], C2 = [CC / 2, 0, 0];
+    const groups = [{ c: C1, toC: [1, 0, 0], hs: hDirs(-1, 0) }, { c: C2, toC: [-1, 0, 0], hs: hDirs(1, 60 + phi.v) }];
+    groups.forEach((gr) => {
+      /* orbitals */
+      hOrb(g, v, gr.c, gr.toC, 1.0, H_COL(), 1 - k, '碳的 sp³ 轨道，与另一个碳上的一个轨道头碰头重叠', 0.6);
+      gr.hs.forEach((u) => {
+        hOrb(g, v, gr.c, u, 0.95, H_COL(), 1 - k, '碳的 sp³ 轨道', 0.6);
+        sOrb(g, v, V.add(gr.c, V.mul(u, CH)), 0.42, S_COL(), 1 - k, '氢原子的 1s 轨道');
+      });
+      /* bonds */
+      atom3(g, v, gr.c, 'C', 0.2 + 0.08 * k);
+      gr.hs.forEach((u) => { const p = V.add(gr.c, V.mul(u, CH)); bond3(g, gr.c, p, k); atom3(g, v, p, 'H', 0.1 + 0.08 * k); });
+    });
+    bond3(g, C1, C2, k);
+    if (view.k > 0.98) {
+      v.label('C', [C1[0], -0.42, 0], g, 0); v.label('C', [C2[0], -0.42, 0], g, 0);
+      if (view.value === 'orb') v.label('<em>sp</em><sup>3</sup>', V.add(C1, V.mul(groups[0].hs[2], 1.1)), g, 0);
+    }
+    v.headline(`一个 CH<sub>3</sub> 基团绕 C–C 键转过 ${Math.round(phi.v)}°：在每个角度都是七个 σ 键，一个 C–C 键和六个 C–H 键。`);
+    readout(d.readout, `\\htmlClass{kv-angle}{\\varphi} = ${Math.round(phi.v)}^\\circ`, null);
+  }
+  still(d, draw);
+})();
+
+/* =====================================================================
+   FIGURE 8.19 + 8.20: PCl5 and SF6, as ball-and-stick molecules and as the
+   hybrid orbitals of the central atom (minor lobes left out, as the book
+   leaves them out). Still: two choices; the sticks become lobes as the
+   outer atoms fade, and one molecule gives way to the other.
+===================================================================== */
+(function () {
+  const d = sim('sim-sp3d');
+  const v = F.view3d(d.stage, { h: 440, dist: 10.6, spin: 'idle', pitch: FREE_PITCH, views: [{ label: '侧视', yaw: 0.45, pitch: 0.3 }, { label: '沿轴向看', yaw: 0, pitch: Math.PI / 2 }] });
+  const g = v.part(0); g.position.y = -0.6;
+  const MOL = { pcl5: { n: 5, c: 'P', x: 'Cl', rx: 0.3, name: 'PCl<sub>5</sub>' }, sf6: { n: 6, c: 'S', x: 'F', rx: 0.26, name: 'SF<sub>6</sub>' } };
+  const mol = F.choice(d.controls, { label: '\\text{分子}', aria: '分子', options: [{ value: 'pcl5', label: 'PCl<sub>5</sub>' }, { value: 'sf6', label: 'SF<sub>6</sub>' }], value: 'pcl5' });
+  const how = F.choice(d.controls, { label: '\\text{画法}', aria: '球棍或杂化轨道', options: [{ value: 'mol', label: '球棍' }, { value: 'hyb', label: '杂化轨道' }], value: 'mol' });
+  function one(key, a) {
+    if (a < 0.01) return;
+    const m = MOL[key], dirs = SITES[m.n], h = how.mix((x) => (x === 'hyb' ? 1 : 0)), hy = HYB_NAME[m.n];
+    atom3(g, v, [0, 0, 0], m.c, 0.34 * (1 - h) + 0.08, a);
+    dirs.forEach((u) => {
+      const p = V.mul(u, 1.85);
+      bond3(g, [0, 0, 0], p, a * (1 - h), 0.07); atom3(g, v, p, m.x, m.rx, a * (1 - h));
+      if (h > 0.01) hOrb(g, v, [0, 0, 0], u, 1.45 * F.ease.smooth(h), H_COL(), a * Math.min(1, h * 1.4), `${NAMES[m.c].split('（')[0]}的 ${hy} 杂化轨道`, 0);
+    });
+  }
+  function draw() {
+    v.clear();
+    one('pcl5', mol.a('pcl5')); one('sf6', mol.a('sf6'));
+    const m = MOL[mol.value], dirs = SITES[m.n], hyb = how.value === 'hyb';
+    if (mol.k > 0.98 && how.k > 0.98) {
+      ARCS[m.n].forEach(([i, j, t]) => angle3(g, v, dirs[i], dirs[j], 0.8, t));
+      if (hyb) v.label(`<em>${HYB[m.n]}</em>`, V.mul(dirs[2], 1.75), g, 0);
+      else { v.label(m.c, [0.3, -0.35, 0.3], g, 0); v.label(m.x, V.mul(dirs[1], 2.3), g, 0); }
+    }
+    const five = m.n === 5;
+    v.headline(hyb
+      ? `${five ? '磷' : '硫'}的${WORDS[m.n]}个 ${HYB[m.n]} 杂化轨道，每个的大瓣指向${five ? '三角双锥' : '八面体'}的一个顶点。`
+      : `${m.name}：${WORDS[m.n].toLowerCase()}个电子密度区域，${five ? '三角双锥形' : '八面体形'}。`);
+    readout(d.readout, five ? '1\\ s + 3\\ p + 1\\ d \\;\\longrightarrow\\; 5\\ sp^3d' : '1\\ s + 3\\ p + 2\\ d \\;\\longrightarrow\\; 6\\ sp^3d^2',
+      five ? '磷的 3s 轨道、三个 3p 轨道和一个 3d 轨道，形成 P–Cl 键的五个杂化轨道。' : '硫的 3s 轨道、三个 3p 轨道和两个 3d 轨道，形成 S–F 键的六个杂化轨道。');
+  }
+  still(d, draw);
+})();
+
+/* =====================================================================
+   FIGURE 8.21: the hybrid set for each number of regions of electron density.
+   Still: a choice of two to six regions; the old set fades as the new one
+   grows, and the headline reads the book's row.
+===================================================================== */
+(function () {
+  const d = sim('sim-hybrid-sets');
+  const v = F.view3d(d.stage, { h: 420, dist: 7.8, spin: 'idle', pitch: FREE_PITCH, views: [{ label: '侧视', yaw: 0.45, pitch: 0.3 }, { label: '正视', yaw: 0, pitch: 0 }] });
+  const g = v.part(0); g.position.y = -0.45;
+  const n = F.choice(d.controls, { label: '\\text{区域数}', aria: '电子密度区域的数目', options: [2, 3, 4, 5, 6].map((i) => ({ value: String(i), label: String(i) })), value: '3' });
+  function one(i, a) {
+    if (a < 0.01) return;
+    SITES[i].forEach((u) => hOrb(g, v, [0, 0, 0], u, 1.4 * (0.4 + 0.6 * a), H_COL(), a, `${HYB_NAME[i]} 杂化轨道`, 0));
+  }
+  function draw() {
+    v.clear(); nucleus(g);
+    [2, 3, 4, 5, 6].forEach((i) => one(i, n.a(String(i))));
+    const i = +n.value;
+    if (n.k > 0.98) ARCS[i].forEach(([a, b, t]) => angle3(g, v, SITES[i][a], SITES[i][b], 0.8, t));
+    v.headline(`${WORDS[i]}个电子密度区域：${HYB[i]} 杂化轨道呈${ARRANGE[i]}排列，相隔 ${ANGLES[i]}。`);
+    readout(d.readout, `${i}\\ \\text{区域} \\;\\longrightarrow\\; \\text{${ARRANGE[i]}},\\ ${HYB_TEX[i]}`,
+      i > 4 ? '这一组需要 d 轨道，所以只有第二周期之后的原子才可能有。' : '这种排列就是价层电子对互斥理论对相同区域数所预测的电子对构型。');
+  }
+  still(d, draw);
+})();
+
+/* ---------- Lewis structures: letters, bonds and pairs of dots, faithful copies ---------- */
+function bondLine(ctx, x1, y1, x2, y2, order = 1, w = 3.5) {
+  const dx = x2 - x1, dy = y2 - y1, L = Math.hypot(dx, dy) || 1, px = -dy / L * 7, py = dx / L * 7;
+  const offs = order === 1 ? [0] : order === 2 ? [-1, 1] : [-1.4, 0, 1.4];
+  offs.forEach((o) => line(ctx, x1 + px * o, y1 + py * o, x2 + px * o, y2 + py * o, PAL.ink, w));
+}
+function wedge(ctx, x1, y1, x2, y2) {
+  const dx = x2 - x1, dy = y2 - y1, L = Math.hypot(dx, dy) || 1, px = -dy / L * 9, py = dx / L * 9;
+  ctx.save(); ctx.fillStyle = PAL.ink; ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2 + px, y2 + py); ctx.lineTo(x2 - px, y2 - py); ctx.closePath(); ctx.fill(); ctx.restore();
+}
+function dashes(ctx, x1, y1, x2, y2) {
+  const dx = x2 - x1, dy = y2 - y1, L = Math.hypot(dx, dy) || 1, px = -dy / L, py = dx / L;
+  ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3;
+  for (let i = 1; i <= 6; i++) { const t = i / 6.5, w = 2 + 8 * t, x = x1 + dx * t, y = y1 + dy * t; ctx.beginPath(); ctx.moveTo(x + px * w, y + py * w); ctx.lineTo(x - px * w, y - py * w); ctx.stroke(); }
+  ctx.restore();
+}
+/* atoms: [{sym, x, y, lp: [angles in degrees]}]; bonds: [[i, j, order, 'w' | 'd']]; drawn about (cx, cy) */
+function lewis(ctx, cx, cy, atoms, bonds) {
+  const gap = (s) => (s.length > 1 ? 26 : 18);
+  bonds.forEach(([i, j, order, how]) => {
+    const a = atoms[i], b = atoms[j], x1 = cx + a.x, y1 = cy + a.y, x2 = cx + b.x, y2 = cy + b.y, dx = x2 - x1, dy = y2 - y1, L = Math.hypot(dx, dy) || 1;
+    const ax = x1 + dx * gap(a.sym) / L, ay = y1 + dy * gap(a.sym) / L, bx = x2 - dx * gap(b.sym) / L, by = y2 - dy * gap(b.sym) / L;
+    if (how === 'w') wedge(ctx, ax, ay, bx, by); else if (how === 'd') dashes(ctx, ax, ay, bx, by); else bondLine(ctx, ax, ay, bx, by, order ?? 1);
+  });
+  atoms.forEach((a) => {
+    const x = cx + a.x, y = cy + a.y;
+    text(ctx, a.sym, x, y + 1, PAL.ink, { size: a.sym.length > 1 ? 28 : 32, weight: 600, align: 'center' });
+    (a.lp ?? []).forEach((ang) => { const c = Math.cos(ang * RAD), s = -Math.sin(ang * RAD), dd = a.sym.length > 1 ? 36 : 30, px = -s, py = c; F.dot(ctx, x + c * dd + px * 7, y + s * dd + py * 7, PAL.ink, true, 4); F.dot(ctx, x + c * dd - px * 7, y + s * dd - py * 7, PAL.ink, true, 4); });
+  });
+}
+function ionBrackets(ctx, l, r, t, b, charge) {
+  ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.beginPath();
+  ctx.moveTo(l + 16, t); ctx.lineTo(l, t); ctx.lineTo(l, b); ctx.lineTo(l + 16, b); ctx.moveTo(r - 16, t); ctx.lineTo(r, t); ctx.lineTo(r, b); ctx.lineTo(r - 16, b); ctx.stroke(); ctx.restore();
+  text(ctx, charge, r + 10, t + 4, PAL.ink, { size: 24, weight: 600 });
+}
+function lewisFigure(id, H, paint, main, small) {
+  const d = sim(id, H);
+  still(d, () => { const { ctx } = begin(d.c); paint(ctx); if (main) readout(d.readout, main, small); });
+}
+
+/* FIGURE 8.14: ClNO, formaldehyde and ethene */
+lewisFigure('fig-sp2-examples', 330, (ctx) => {
+  lewis(ctx, 250, 160, [{ sym: 'Cl', x: -95, y: 30, lp: [180, 90, 270] }, { sym: 'N', x: 0, y: -30, lp: [90] }, { sym: 'O', x: 95, y: 30, lp: [0, 270] }], [[0, 1, 1], [1, 2, 2]]);
+  lewis(ctx, 700, 150, [{ sym: 'O', x: 0, y: -95, lp: [180, 0] }, { sym: 'C', x: 0, y: 15 }, { sym: 'H', x: -95, y: 75 }, { sym: 'H', x: 95, y: 75 }], [[0, 1, 2], [1, 2, 1], [1, 3, 1]]);
+  lewis(ctx, 1150, 150, [{ sym: 'C', x: -55, y: 0 }, { sym: 'C', x: 55, y: 0 }, { sym: 'H', x: -110, y: -85 }, { sym: 'H', x: -110, y: 85 }, { sym: 'H', x: 110, y: -85 }, { sym: 'H', x: 110, y: 85 }], [[0, 1, 2], [0, 2, 1], [0, 3, 1], [1, 4, 1], [1, 5, 1]]);
+  [[250, 'ClNO'], [700, 'CH₂O'], [1150, 'H₂CCH₂']].forEach(([x, t]) => text(ctx, t, x, 300, PAL.muted, { size: 24, align: 'center' }));
+});
+
+/* FIGURE 8.18: SF4, ClF3 and ClF4+ in wedge-and-dash notation */
+lewisFigure('fig-sp3d-lewis', 350, (ctx) => {
+  const see = (cx, c, lps) => lewis(ctx, cx, 160, [{ sym: c, x: 0, y: 0, lp: lps }, { sym: 'F', x: 0, y: -105 }, { sym: 'F', x: 0, y: 105 }, { sym: 'F', x: 90, y: -40 }, { sym: 'F', x: 90, y: 45 }], [[0, 1, 1], [0, 2, 1], [0, 3, 1, 'd'], [0, 4, 1, 'w']]);
+  see(250, 'S', [180]);
+  lewis(ctx, 700, 160, [{ sym: 'Cl', x: 0, y: 0, lp: [155, 205] }, { sym: 'F', x: 0, y: -105 }, { sym: 'F', x: 0, y: 105 }, { sym: 'F', x: 110, y: 0 }], [[0, 1, 1], [0, 2, 1], [0, 3, 1]]);
+  see(1140, 'Cl', [180]);
+  ionBrackets(ctx, 1060, 1265, 32, 290, '+');
+  [[250, 'SF₄'], [700, 'ClF₃'], [1160, 'ClF₄⁺']].forEach(([x, t]) => text(ctx, t, x, 326, PAL.muted, { size: 24, align: 'center' }));
+});
+
+/* the Lewis structure of urea, in Example 8.3 */
+lewisFigure('fig-urea', 280, (ctx) => {
+  lewis(ctx, 700, 140, [{ sym: 'C', x: 0, y: 0 }, { sym: 'O', x: 0, y: -100, lp: [90, 180] }, { sym: 'N', x: -120, y: 0, lp: [90] }, { sym: 'N', x: 120, y: 0, lp: [90] }, { sym: 'H', x: -235, y: 0 }, { sym: 'H', x: -120, y: 100 }, { sym: 'H', x: 235, y: 0 }, { sym: 'H', x: 120, y: 100 }],
+    [[0, 1, 2], [0, 2, 1], [0, 3, 1], [2, 4, 1], [2, 5, 1], [3, 6, 1], [3, 7, 1]]);
+}, '\\text{NH}_2\\text{C(O)NH}_2');
+
+/* the sulfate ion in Example 8.2, the book's ball-and-stick drawing laid flat; atoms in the element palette */
+(function () {
+  const H = 340, d = sim('fig-sulfate', H);
+  const ATOMS = [
+    { sym: 'O', x: 700, y: 62, r: 40 }, { sym: 'O', x: 556, y: 232, r: 40 }, { sym: 'O', x: 842, y: 222, r: 38, q: true },
+    { sym: 'S', x: 700, y: 196, r: 44 }, { sym: 'O', x: 740, y: 292, r: 42, q: true },
+  ];
+  function draw() {
+    const { ctx } = begin(d.c);
+    const s = ATOMS[3];
+    ATOMS.forEach((a) => { if (a !== s) line(ctx, s.x, s.y, a.x, a.y, PAL.ink, 12); });
+    ATOMS.forEach((a) => {
+      ctx.save(); ctx.beginPath(); ctx.arc(a.x, a.y, a.r, 0, TAU); ctx.fillStyle = F.el(a.sym); ctx.fill(); ctx.lineWidth = 1.5; ctx.strokeStyle = alpha(PAL.ink, 0.45); ctx.stroke(); ctx.restore();
+      if (a.q) text(ctx, '−', a.x + a.r + 16, a.y - a.r * 0.4, PAL.ink, { size: 30, weight: 600, align: 'center' });
+    });
+    readout(d.readout, '\\text{SO}_4{}^{2-}');
+  }
+  F.hover(d.stage, () => ATOMS.map((a) => ({ x: a.x, y: a.y, r: a.r, name: a.sym === 'S' ? '硫（S）' : a.q ? '氧（O），带负电荷' : '氧（O）' })));
+  still(d, draw);
+})();
+};

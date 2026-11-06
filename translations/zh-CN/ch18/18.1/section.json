@@ -1,0 +1,656 @@
+{
+ "id": "18.1",
+ "module": "m68829",
+ "chapter": "18",
+ "title": "周期性",
+ "short": "周期性",
+ "lead": "<span data-concept=\"main-group-element\">主族元素</span>按其在元素周期表中的位置分为金属、<span data-concept=\"metalloid\">半金属</span>和<span data-concept=\"nonmetal\">非金属</span>。<span data-concept=\"representative-metal\">主族金属</span>按族逐一讨论，从碱金属经第 2、12、13 和 14 族直到第 15 族的铋，涉及每种金属反应的难易、所形成的离子以及保护它们的薄膜。",
+ "objectives": [
+  "对元素进行分类",
+  "对主族元素的周期性性质作出预测"
+ ],
+ "summary_html": "<p>本节着重讨论<span data-concept=\"main-group-element\">主族元素</span>的周期性。这些元素是电子正在进入 <em>s</em> 轨道和 <em>p</em> 轨道的元素。主族元素出现在第 1、2 和 12–18 族。这些元素有<span data-concept=\"representative-metal\">主族金属</span>、<span data-concept=\"metalloid\">半金属</span>和<span data-concept=\"nonmetal\">非金属</span>。<span data-concept=\"alkali-metal\">碱金属</span>（第 1 族）反应性很高，容易形成电荷为 1+ 的离子，生成通常可溶于水的<span data-concept=\"ionic-compounds\">离子化合物</span>，并与水剧烈反应，生成氢气和金属氢氧化物的碱性溶液。<span data-concept=\"alkaline-earth-metal\">碱土金属</span>（第 2 族）的最外层电子比碱金属的外层电子更难移去，因此第 2 族金属的反应性低于第 1 族金属。这些元素很容易形成其中金属表现出 2+ <span data-concept=\"oxidation-number\">氧化态</span>的化合物。锌、镉和汞（第 12 族）通常表现出该族的 2+ 氧化态（不过汞也表现出 1+ 氧化态，其化合物中含有 ${\\text{Hg}}_{2}{}^{2+}).$ 铝、镓、铟和铊（第 13 族）比氢更容易被氧化。铝、镓和铟以 3+ 氧化态出现（不过铊也常以 Tl<sup>+</sup> 离子的形式出现）。锡和铅形成稳定的二价阳离子，以及其中金属表现出 4+ 氧化态的共价化合物。</p>",
+ "notes": "两段“学习链接”视频（碱金属在水中的反应，以及铝被汞侵蚀）未收入。本节保留了原文照印的“alkaline metal comes from”“Streetlights sometime employ”“grey (brittle) tin”与“gray tin”并用、“tin plate-sheet iron”、带连字符的“2+-oxidation state”及类似写法，以及用“groups 1, 2, 3, 12, 13, 14, and 15”指二十种主族金属；图 18.2 按正文的分类给元素着色，锌、镉和汞归入主族金属，镧系归入内过渡金属，而印刷的图把它们的着色恰好反过来。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签、提示和建议思路由 AI 生成。答案取自书后答案。三道没有答案的习题 fs-idp139403392（生石灰消化（熟化）的焓）、fs-idm8427088（硝酸汞(I)溶液中的离子）和 fs-idp36975968（钠、铝和氯，其（c）问要求画路易斯结构）未收入，也没有为它们计算答案。没有答案的选择题 fs-idp230369616 和 fs-idp144851648 保持开放，附有选项和建议思路；没有答案的概念题 fs-idp81885328 和 fs-idp36484288 附有标明为 OmniStax 自己所写的建议思路。fs-idp111201728 的答案如印刷所示，写作 Na + I₂ ⟶ 2NaI；fs-idp74127408 的答案只给出以磅计的质量，按 5% 核对。没有任何内容被移动。",
+ "figures": [
+  {
+   "id": "sim-periodic",
+   "kind": "sim",
+   "number": "18.2",
+   "originals": [
+    "/media/ch18/CNX_Chem_18_01_PeriodicPU3.jpg"
+   ],
+   "original_caption": "元素周期表中显示了主族金属的位置。非金属以绿色显示，半金属以紫色显示，过渡金属和内过渡金属以蓝色显示。",
+   "draws": [
+    "energy"
+   ],
+   "facts": [
+    "#e3c46e",
+    "#7392cb",
+    "#c49ac4",
+    "#8fb8aa"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-lithium",
+   "kind": "photo",
+   "number": "18.3",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-alkali-storage",
+   "kind": "photo",
+   "number": "18.4",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-sodium-flame",
+   "kind": "photo",
+   "number": "18.5",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-magnesium-water",
+   "kind": "photo",
+   "number": "18.6",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-zinc-hcl",
+   "kind": "photo",
+   "number": "18.7",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-mercury",
+   "kind": "photo",
+   "number": "18.8",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-tin-chlorides",
+   "kind": "photo",
+   "number": "18.9",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "classes",
+   "concept": "representative-metal",
+   "verb": "introduces"
+  },
+  {
+   "span": "classes",
+   "concept": "main-group-element",
+   "verb": "uses"
+  },
+  {
+   "span": "classes",
+   "concept": "transition-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "classes",
+   "concept": "inner-transition-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "classes",
+   "concept": "metalloid",
+   "verb": "uses"
+  },
+  {
+   "span": "classes",
+   "concept": "nonmetal",
+   "verb": "uses"
+  },
+  {
+   "span": "classes",
+   "concept": "metal",
+   "verb": "uses"
+  },
+  {
+   "span": "classes",
+   "concept": "salt",
+   "verb": "uses"
+  },
+  {
+   "span": "classes",
+   "concept": "passivation",
+   "verb": "uses"
+  },
+  {
+   "span": "alkali",
+   "concept": "alkali-metal-properties",
+   "verb": "introduces"
+  },
+  {
+   "span": "alkali",
+   "concept": "alkali-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "alkali",
+   "concept": "density",
+   "verb": "uses"
+  },
+  {
+   "span": "alkali",
+   "concept": "electrolysis",
+   "verb": "uses"
+  },
+  {
+   "span": "alkali",
+   "concept": "line-spectra",
+   "verb": "uses"
+  },
+  {
+   "span": "alkaline-earth",
+   "concept": "alkaline-earth-metal-properties",
+   "verb": "introduces"
+  },
+  {
+   "span": "alkaline-earth",
+   "concept": "alkaline-earth-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "alkaline-earth",
+   "concept": "passivation",
+   "verb": "uses"
+  },
+  {
+   "span": "alkaline-earth",
+   "concept": "lattice-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "alkaline-earth",
+   "concept": "reducing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "group-12",
+   "concept": "group-12-metals",
+   "verb": "introduces"
+  },
+  {
+   "span": "group-12",
+   "concept": "amalgam",
+   "verb": "introduces"
+  },
+  {
+   "span": "group-12",
+   "concept": "standard-electrode-potential",
+   "verb": "uses"
+  },
+  {
+   "span": "group-12",
+   "concept": "sacrificial-anode",
+   "verb": "uses"
+  },
+  {
+   "span": "group-12",
+   "concept": "cathodic-protection",
+   "verb": "uses"
+  },
+  {
+   "span": "group-12",
+   "concept": "alloy",
+   "verb": "uses"
+  },
+  {
+   "span": "group-12",
+   "concept": "passivation",
+   "verb": "uses"
+  },
+  {
+   "span": "group-13",
+   "concept": "group-13-metals",
+   "verb": "introduces"
+  },
+  {
+   "span": "group-13",
+   "concept": "amphoteric",
+   "verb": "uses"
+  },
+  {
+   "span": "group-13",
+   "concept": "inert-pair-effect",
+   "verb": "uses"
+  },
+  {
+   "span": "group-13",
+   "concept": "passivation",
+   "verb": "uses"
+  },
+  {
+   "span": "group-13",
+   "concept": "amalgam",
+   "verb": "uses"
+  },
+  {
+   "span": "group-14",
+   "concept": "tin-and-lead",
+   "verb": "introduces"
+  },
+  {
+   "span": "group-14",
+   "concept": "allotropes",
+   "verb": "introduces"
+  },
+  {
+   "span": "group-14",
+   "concept": "inert-pair-effect",
+   "verb": "uses"
+  },
+  {
+   "span": "group-15",
+   "concept": "bismuth",
+   "verb": "introduces"
+  },
+  {
+   "span": "group-15",
+   "concept": "inert-pair-effect",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "e1",
+   "source_id": "fs-idp50563648",
+   "source_number": "1",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "alkaline-earth",
+   "prompt": "碱金属与碱土金属在原子结构和一般性质上有何不同？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "碱金属最外层都有一个 <em>s</em> 电子。相反，碱土金属最外层有一个已填满的 <em>s</em> 亚层。一般而言，碱金属比同一周期中相应的碱土金属反应更快、反应性更强。"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp81885328",
+   "source_number": "2",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "alkali",
+   "prompt": "为什么碱金属的反应性从铯到锂依次降低？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "从铯到锂，反应性降低，因为在每个更轻的原子中，那个价电子被束缚得更紧。每种碱金属反应时都是失去其唯一的 <em>n</em>s<sup>1</sup> 电子而形成 1+ 离子，所以最容易放出该电子的金属最容易被氧化，反应性也最强。沿族从铯向锂向上，原子的电子层数更少、体积更小，所以价电子离原子核更近，受到的屏蔽也更少。它所感受到的吸引增大，第一电离能从铯的约 376 kJ/mol 升至锂的约 520 kJ/mol。由于移去电子需要更多能量，锂是这些金属中最不容易被氧化、反应性最低的，而铯最容易失去电子，反应性最强。"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp111201728",
+   "source_number": "3",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "classes",
+   "prompt": "预测表中第 1 列的每种物质与第 2 列的每种物质反应时可能生成的九种化合物的化学式。<table><thead><tr><th>1</th><th>2</th></tr></thead><tbody><tr><td>Na</td><td>I</td></tr><tr><td>Sr</td><td>Se</td></tr><tr><td>Al</td><td>O</td></tr></tbody></table>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "$\\begin{array}{l}\\text{Na}+{\\text{I}}_{2}\\;\\longrightarrow \\;\\text{2NaI} \\\\ \\text{2Na}+\\text{Se}\\;\\longrightarrow \\;{\\text{Na}}_{2}\\text{Se} \\\\ \\text{2Na}+{\\text{O}}_{2}\\;\\longrightarrow \\;{\\text{Na}}_{2}{\\text{O}}_{2}\\end{array}$<br>$\\begin{array}{l}\\text{Sr}+{\\text{I}}_{2}\\;\\longrightarrow \\;{\\text{SrI}}_{2} \\\\ \\text{Sr}+\\text{Se}\\;\\longrightarrow \\;\\text{SrSe} \\\\ \\text{2Sr}+{\\text{O}}_{2}\\;\\longrightarrow \\;\\text{2SrO}\\end{array}$<br>$\\begin{array}{l}\\text{2Al}+{\\text{3I}}_{2}\\;\\longrightarrow \\;{\\text{2AlI}}_{3} \\\\ \\text{2Al}+\\text{3Se}\\;\\longrightarrow \\;{\\text{Al}}_{2}{\\text{Se}}_{3} \\\\ \\text{4Al}+{\\text{3O}}_{2}\\;\\longrightarrow \\;{\\text{2Al}}_{2}{\\text{O}}_{3}\\end{array}$"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idp230369616",
+   "source_number": "4",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "classes",
+   "prompt": "预测下列各项中的最佳选项。你不妨复习电子结构一章中的相关例子。<br>（a）Al、Be 和 Ba 这几种元素中金属性最强的<br>（b）NaCl、CaCl<sub>2</sub> 和 BeCl<sub>2</sub> 这几种化合物中共价性最强的<br>（c）Rb、K 和 Li 这几种元素中第一电离能最低的<br>（d）Al、Al<sup>+</sup> 和 Al<sup>3+</sup> 中最小的<br>（e）Cs<sup>+</sup>、Ba<sup>2+</sup> 和 Xe 中最大的",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "（a）Ba；（b）BeCl<sub>2</sub>；（c）Rb；（d）Al<sup>3+</sup>；（e）Xe。<br>（a）金属性沿族向下增强，沿周期从左到右减弱。钡位于第 2 族底部，在铍的下方，并位于第 13 族铝的左侧，所以它最容易失去价电子，金属性最强。<br>（b）铍是第 2 族中最小的原子，其电离能是该族中最高的，所以它不会把电子完全交给氯；它的化合物表现出共价特征，BeCl<sub>2</sub> 的共价性最强，而 NaCl 和 CaCl<sub>2</sub> 是离子型的。<br>（c）第一电离能沿族向下减小，因为价电子离原子核更远、受到的屏蔽也更好，所以这三者中位于第 1 族最下方的铷，其值最低。<br>（d）三者的核电荷相同，都是 13+。Al<sup>3+</sup> 已失去全部三个价电子，只在两个电子层中保留 10 个电子，原子核对这些电子的吸引最紧，所以它最小。<br>（e）Cs<sup>+</sup>、Ba<sup>2+</sup> 和 Xe 是等电子的，每个都有 54 个电子。氙的核电荷最低，为 54+，而 Cs<sup>+</sup> 为 55+，Ba<sup>2+</sup> 为 56+，所以它的电子被束缚得最松，它最大。"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp156797456",
+   "source_number": "5",
+   "kind": "exercise",
+   "bloom": "Evaluate",
+   "place": {
+    "at": "end"
+   },
+   "cite": "alkaline-earth",
+   "prompt": "氯化钠和氯化锶都是白色固体。怎样才能把它们区分开？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "区分这两者的可能方法包括：通过与已知化合物比较的红外光谱法；能使钠呈现特征黄色（锶的火焰为红色）的焰色试验；或比较它们在水中的溶解度。在 20 °C 时，NaCl 的溶解量为 $\\frac{\\text{35.7 g}}{\\text{100 mL}}$，而 SrCl<sub>2</sub> 为 $\\frac{\\text{53.8 g}}{\\text{100 mL}}$。加热到 100 °C 提供了一种简便的检验，因为 NaCl 的溶解度为 $\\frac{\\text{39.12 g}}{\\text{100 mL}},$ 而 SrCl<sub>2</sub> 的为 $\\frac{\\text{100.8 g}}{\\text{100 mL}}.$ 对固体测定密度有时比较困难，但差异足够大（NaCl 为 2.165 g/mL，SrCl<sub>2</sub> 为 3.052 g/mL），因此这种方法是可行的，而且也许是最简便、成本最低的检验方法。"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idm18187152",
+   "source_number": "7",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "alkaline-earth",
+   "prompt": "写出单质锶与下列各物质反应的配平方程式：<br>（a）氧气<br>（b）溴化氢<br>（c）氢气<br>（d）磷<br>（e）水",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）$\\text{2Sr}(s)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;\\text{2SrO}(s);$（b）$\\text{Sr}(s)+\\text{2HBr}(g)\\;\\longrightarrow \\;{\\text{SrBr}}_{2}(s)+{\\text{H}}_{2}(g);$（c）$\\text{Sr}(s)+{\\text{H}}_{2}(g)\\;\\longrightarrow \\;{\\text{SrH}}_{2}(s);$（d）$\\text{6Sr}(s)+{\\text{P}}_{4}(s)\\;\\longrightarrow \\;{\\text{2Sr}}_{3}{\\text{P}}_{2}(s);$（e）$\\text{Sr}(s)+{\\text{2H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{Sr}{(\\text{OH})}_{2}(aq)+{\\text{H}}_{2}(g)$"
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idp74127408",
+   "source_number": "9",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "group-12",
+   "prompt": "如果鱼体内汞的含量按重量计为 30 ppm（百万分之三十），那么要摄入致死剂量的汞，需要吃多少千克鱼？（假设鱼中的汞全部在体内变成氯化汞(II)，且致死剂量为 0.20 g HgCl<sub>2</sub>。）这相当于多少磅鱼？",
+   "answer": {
+    "type": "number",
+    "value": 11,
+    "unit": "lb",
+    "tol": 0.05,
+    "part": "the mass of fish in pounds",
+    "hint": "由摩尔质量求出 0.20 g HgCl<sub>2</sub> 中汞的质量，再求在汞含量为 30 ppm 时含有这些汞的鱼的质量。",
+    "solution": "11 lb",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idp203792128",
+   "source_number": "11",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "group-14",
+   "prompt": "金属锡与 HCl 反应吗？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "是的，锡与盐酸反应生成氢气。"
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idp36484288",
+   "source_number": "12",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": {
+    "at": "end"
+   },
+   "cite": "group-14",
+   "prompt": "什么是锡疫，也叫锡病？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "锡疫，或称锡病，是锡制品在寒冷天气中缓慢碎裂成粉末的现象，由白锡转变为灰锡引起。锡有两种原子排列不同的同素异形体。白锡是有展性的金属形式，在 13.2 °C 以上稳定；低于该温度时，灰锡是更稳定的形式，而灰锡较脆，容易碎裂成粉末。在长时间的寒冷期间，白锡转变为灰锡，制品随之崩解。这种变化从一点开始缓慢进行并由此扩展，因为最先形成的灰锡会催化进一步的变化。这种扩展类似于植物或动物体内的感染，因此这一过程被称为锡病或锡疫。"
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idm16477216",
+   "source_number": "13",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "group-14",
+   "prompt": "比较 PbCl<sub>2</sub> 中的键与 PbCl<sub>4</sub> 中的键的性质。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "在 PbCl<sub>2</sub> 中，键是离子键，其 501 °C 的熔点表明了这一点。在 PbCl<sub>4</sub> 中，键是共价键，它在室温下是不稳定的液体，这就是证据。"
+   }
+  },
+  {
+   "id": "e14",
+   "source_id": "fs-idp144851648",
+   "source_number": "14",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "alkaline-earth",
+   "prompt": "铷与水的反应比钠与水的反应更剧烈还是更不剧烈？镁的反应速率与之相比如何？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "铷与水的反应比钠更剧烈，而镁的反应比两者都慢得多。碱金属的反应性沿第 1 族向下增强：铷位于钠的下方，原子更大，其唯一的价电子离原子核更远，所以它的第一电离能更低，更容易被氧化，从水中放出氢气也更猛烈。镁与钠在同一周期但属于第 2 族，原子更小，且必须失去两个电子才能形成 Mg<sup>2+</sup>，所以它的电离能更高，更不容易被氧化。它的表面还被一层紧密附着的碱式碳酸镁钝化。因此镁与冷水几乎不反应，与热水也只是缓慢反应，生成氢气以及含 Mg<sup>2+</sup> 和 OH<sup>−</sup> 离子的碱性溶液，如图 18.6 所示。"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e1",
+   "concept": "alkali-metal-properties"
+  },
+  {
+   "exercise": "e1",
+   "concept": "alkaline-earth-metal-properties"
+  },
+  {
+   "exercise": "e2",
+   "concept": "alkali-metal-properties"
+  },
+  {
+   "exercise": "e2",
+   "concept": "ionization-energy-trend"
+  },
+  {
+   "exercise": "e3",
+   "concept": "representative-metal"
+  },
+  {
+   "exercise": "e3",
+   "concept": "ionic-compound-formula"
+  },
+  {
+   "exercise": "e4",
+   "concept": "ionization-energy-trend"
+  },
+  {
+   "exercise": "e4",
+   "concept": "alkaline-earth-metal-properties"
+  },
+  {
+   "exercise": "e4",
+   "concept": "covalent-radius-trend"
+  },
+  {
+   "exercise": "e5",
+   "concept": "alkali-metal-properties"
+  },
+  {
+   "exercise": "e5",
+   "concept": "alkaline-earth-metal-properties"
+  },
+  {
+   "exercise": "e7",
+   "concept": "alkaline-earth-metal-properties"
+  },
+  {
+   "exercise": "e9",
+   "concept": "group-12-metals"
+  },
+  {
+   "exercise": "e11",
+   "concept": "tin-and-lead"
+  },
+  {
+   "exercise": "e12",
+   "concept": "allotropes"
+  },
+  {
+   "exercise": "e13",
+   "concept": "tin-and-lead"
+  },
+  {
+   "exercise": "e13",
+   "concept": "inert-pair-effect"
+  },
+  {
+   "exercise": "e14",
+   "concept": "alkali-metal-properties"
+  },
+  {
+   "exercise": "e14",
+   "concept": "alkaline-earth-metal-properties"
+  },
+  {
+   "exercise": "e14",
+   "concept": "passivation"
+  }
+ ]
+}

@@ -1,0 +1,948 @@
+{
+ "id": "13.3",
+ "module": "m68799",
+ "chapter": "13",
+ "title": "平衡的移动：勒夏特列原理",
+ "short": "平衡的移动",
+ "lead": "平衡可以因加入或移出反应物或产物、改变气态体系的<span data-concept=\"volume\">体积</span>、改变<span data-concept=\"temperature\">温度</span>或加入<span data-concept=\"catalyst\">催化剂</span>而受到扰动。<span data-concept=\"le-chateliers-principle\">勒夏特列原理</span>预测体系对这些扰动中每一种的响应，而氨的工业合成则把这些扰动都运用了起来。",
+ "objectives": [
+  "描述可以对平衡体系施加扰动的各种方式",
+  "利用勒夏特列原理预测受扰动平衡的响应"
+ ],
+ "summary_html": "<p>处于平衡的体系可能因<span data-concept=\"temperature\">温度</span>、<span data-concept=\"concentration\">浓度</span>以及在某些情况下<span data-concept=\"volume\">体积</span>和<span data-concept=\"partial-pressure\">压强</span>的变化而受到扰动。体系对这些扰动的响应由<span data-concept=\"le-chateliers-principle\">勒夏特列原理</span>描述：受到扰动的平衡体系将以抵消该扰动的方式发生移动，并重新建立平衡。<span data-concept=\"catalyst\">催化剂</span>会使可逆过程的正反应和逆反应的<span data-concept=\"reaction-rate\">速率</span>都增大，从而加快达到平衡的<span data-concept=\"reaction-rate\">速率</span>，但不改变平衡混合物的组成（$\\kK$ 不变）。</p>",
+ "notes": "“学习链接”中关于平衡随压强变化的视频已省略；由活塞封闭的容器中受扰动平衡的模拟可以回答同样的问题。书中有一处把“Le Chatelier’s principle”写成了不带重音符号的形式，习题 45 中把乙酸根离子写成 (<em>l</em>)，均按原样保留。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案来自书后答案。习题 fs-idp22318672、fs-idp55085984、fs-idp20860880、fs-idp212372192、fs-idp384696688、fs-idp31242816、fs-idp261498704 和 fs-idm33369776 没有书中给出的答案，附有一份标明为 OmniStax 自己撰写的建议思路；fs-idp219741088 是一道没有答案的选择题，作为开放题保留，附有它的四个选项和一份建议思路。习题 48（fs-idp92538384）涉及饱和硫酸银溶液中的放射性银离子，考查平衡的动态性质，编排在 13.1 中。",
+ "figures": [
+  {
+   "id": "sim-le-chatelier",
+   "kind": "sim",
+   "draws": [
+    "concentration",
+    "equilibrium-constant",
+    "rate"
+   ],
+   "conventions": [
+    "H",
+    "I",
+    "N",
+    "O"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-supersat",
+   "kind": "photo",
+   "number": "13.7",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-catalyst-diagram",
+   "kind": "sim",
+   "number": "13.8",
+   "originals": [
+    "/media/ch13/CNX_Chem_13_03_catalyst.jpg"
+   ],
+   "original_caption": "无催化剂（红色）和有催化剂（蓝色）时一个基元过程的反应图。催化剂的存在降低了正反应和逆反应的活化能，但不影响平衡常数的值。",
+   "draws": [
+    "energy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-haber-bosch",
+   "kind": "sim",
+   "number": "13.9",
+   "originals": [
+    "/media/ch13/CNX_Chem_13_03_factory.jpg"
+   ],
+   "original_caption": "该图显示了用哈伯–博施法商业化生产氨的典型工业装置。该过程在对化学平衡施加扰动、使之有利于产物生成的条件下运行。",
+   "draws": [
+    "energy"
+   ],
+   "conventions": [
+    "N",
+    "H",
+    "O"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "principle",
+   "concept": "le-chateliers-principle",
+   "verb": "introduces"
+  },
+  {
+   "span": "principle",
+   "concept": "chemical-equilibrium",
+   "verb": "uses"
+  },
+  {
+   "span": "principle",
+   "concept": "reaction-rate",
+   "verb": "uses"
+  },
+  {
+   "span": "principle",
+   "concept": "rate-law",
+   "verb": "uses"
+  },
+  {
+   "span": "principle",
+   "concept": "arrhenius-equation",
+   "verb": "uses"
+  },
+  {
+   "span": "concentration",
+   "concept": "concentration-stress",
+   "verb": "introduces"
+  },
+  {
+   "span": "concentration",
+   "concept": "rate-law",
+   "verb": "uses"
+  },
+  {
+   "span": "concentration",
+   "concept": "reaction-quotient",
+   "verb": "uses"
+  },
+  {
+   "span": "concentration",
+   "concept": "equilibrium-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "concentration",
+   "concept": "predict-direction-q-versus-k",
+   "verb": "uses"
+  },
+  {
+   "span": "concentration",
+   "concept": "law-of-mass-action",
+   "verb": "uses"
+  },
+  {
+   "span": "concentration",
+   "concept": "le-chateliers-principle",
+   "verb": "uses"
+  },
+  {
+   "span": "volume",
+   "concept": "volume-stress",
+   "verb": "introduces"
+  },
+  {
+   "span": "volume",
+   "concept": "partial-pressure",
+   "verb": "uses"
+  },
+  {
+   "span": "volume",
+   "concept": "ideal-gas-law",
+   "verb": "uses"
+  },
+  {
+   "span": "volume",
+   "concept": "molarity",
+   "verb": "uses"
+  },
+  {
+   "span": "volume",
+   "concept": "volume",
+   "verb": "uses"
+  },
+  {
+   "span": "volume",
+   "concept": "write-reaction-quotient",
+   "verb": "uses"
+  },
+  {
+   "span": "volume",
+   "concept": "le-chateliers-principle",
+   "verb": "reinforces"
+  },
+  {
+   "span": "volume",
+   "concept": "concentration-stress",
+   "verb": "reinforces"
+  },
+  {
+   "span": "temperature",
+   "concept": "temperature-changes-k",
+   "verb": "introduces"
+  },
+  {
+   "span": "temperature",
+   "concept": "elementary-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "temperature",
+   "concept": "elementary-rate-laws",
+   "verb": "uses"
+  },
+  {
+   "span": "temperature",
+   "concept": "rate-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "temperature",
+   "concept": "arrhenius-equation",
+   "verb": "uses"
+  },
+  {
+   "span": "temperature",
+   "concept": "exothermic-and-endothermic",
+   "verb": "uses"
+  },
+  {
+   "span": "temperature",
+   "concept": "enthalpy-change-at-constant-pressure",
+   "verb": "uses"
+  },
+  {
+   "span": "temperature",
+   "concept": "equilibrium-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "temperature",
+   "concept": "law-of-mass-action",
+   "verb": "uses"
+  },
+  {
+   "span": "catalyst",
+   "concept": "catalyst-and-equilibrium",
+   "verb": "introduces"
+  },
+  {
+   "span": "catalyst",
+   "concept": "catalyst",
+   "verb": "uses"
+  },
+  {
+   "span": "catalyst",
+   "concept": "catalysis-lowers-activation-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "catalyst",
+   "concept": "activation-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "catalyst",
+   "concept": "equilibrium-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "haber",
+   "concept": "predict-equilibrium-shift",
+   "verb": "introduces"
+  },
+  {
+   "span": "haber",
+   "concept": "le-chateliers-principle",
+   "verb": "uses"
+  },
+  {
+   "span": "haber",
+   "concept": "concentration-stress",
+   "verb": "uses"
+  },
+  {
+   "span": "haber",
+   "concept": "volume-stress",
+   "verb": "uses"
+  },
+  {
+   "span": "haber",
+   "concept": "temperature-changes-k",
+   "verb": "uses"
+  },
+  {
+   "span": "haber",
+   "concept": "catalyst-and-equilibrium",
+   "verb": "uses"
+  },
+  {
+   "span": "haber",
+   "concept": "magnitude-of-k",
+   "verb": "uses"
+  },
+  {
+   "span": "temperature",
+   "concept": "reaction-mechanism",
+   "verb": "uses"
+  },
+  {
+   "span": "catalyst",
+   "concept": "reaction-mechanism",
+   "verb": "uses"
+  },
+  {
+   "span": "catalyst",
+   "concept": "reaction-rate",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "e1",
+   "source_id": "fs-idp6498944",
+   "source_number": "31",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "volume",
+   "prompt": "下面的方程式表示一个可逆分解反应：$${\\text{CaCO}}_{3}(s)\\rightleftharpoons \\text{CaO}(s)+{\\text{CO}}_{2}(g)$$在什么条件下，密闭容器中的分解会进行到底，使得不再剩下 CaCO<sub>3</sub>？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "CaCO<sub>3</sub> 的量必须小到这样的程度：当 CaCO<sub>3</sub> 完全分解时，$P_{{\\text{CO}}_{2}}$ 仍小于 <em>K</em><sub>P</sub>。换句话说，起始的 CaCO<sub>3</sub> 的量不足以产生平衡所需的全部 $P_{{\\text{CO}}_{2}}$。"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp22318672",
+   "source_number": "32",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "volume",
+   "prompt": "说明如何识别体积变化会影响气相平衡体系的条件。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "只有当配平的方程式两侧气体的总物质的量不同时，体积的变化才会使气相平衡移动。把体积减小为原来的三分之一，会使每种分压都增大为原来的 3 倍。对于 H<sub>2</sub>(<em>g</em>) + I<sub>2</sub>(<em>g</em>) ⇌ 2HI(<em>g</em>)，两侧气体都是 2 mol，各因子相互抵消：${Q}_{P}{}^{'}=\\;\\frac{{(3{P}_{\\text{HI}})}^{2}}{3{P}_{{\\text{H}}_{2}}\\;3{P}_{{\\text{I}}_{2}}}={Q}_{P}={K}_{P},$ 因此没有移动。对于 2NO<sub>2</sub>(<em>g</em>) ⇌ 2NO(<em>g</em>) + O<sub>2</sub>(<em>g</em>)，左侧气体为 2 mol，右侧为 3 mol，同样的变化给出 <em>Q<sub>P</sub></em>′ = 3<sup>3</sup>/3<sup>2</sup> × <em>Q<sub>P</sub></em> = 3<em>K<sub>P</sub></em>，所以 <em>Q</em> &gt; <em>K</em>，平衡向左移动。因此，判断的方法是数出两侧气体的物质的量（不计固体和液体）：如果不同，体积减小会使平衡向气体物质的量较少的一侧移动，体积增大则向较多的一侧移动；如果相等，体积没有影响。"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp50583536",
+   "source_number": "33",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "temperature",
+   "prompt": "我们可以用反应的哪种性质来预测温度变化对平衡常数的值的影响？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "可以用焓变。如果反应是放热的，产生的热量可以看作产物。如果反应是吸热的，加入的热量可以看作反应物。额外的热量会使放热反应向反应物方向移动，却会使吸热反应向产物方向移动。冷却放热反应会使反应向产物一侧移动；冷却吸热反应则会使其向反应物一侧移动。"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idp176997392",
+   "source_number": "34",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "principle",
+   "prompt": "点燃燃气灶上的燃烧器时发生下列反应：$${\\text{CH}}_{4}(g)+2{\\text{O}}_{2}(g)\\rightleftharpoons {\\text{CO}}_{2}(g)+2{\\text{H}}_{2}\\text{O}(g)$$在这些条件下，CH<sub>4</sub>、O<sub>2</sub>、CO<sub>2</sub> 和 H<sub>2</sub>O 之间是否建立了平衡？请解释你的回答。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "不，它没有处于平衡。由于体系不是封闭的，产物不断地从火焰区域逸出；反应物也不断地从燃烧器和周围的大气中补充进来。"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp55085984",
+   "source_number": "35",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "temperature",
+   "prompt": "硫酸制造过程中必不可少的一步是由二氧化硫 SO<sub>2</sub> 和氧气 O<sub>2</sub> 生成三氧化硫 SO<sub>3</sub>，如下所示。在高温下，SO<sub>3</sub> 的生成速率较高，但 SO<sub>3</sub> 的平衡量（浓度或分压）比在较低温度下低。$$2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\;\\rightleftharpoons \\;2{\\text{SO}}_{3}(g)$$（a）随着温度升高，该反应的平衡常数是增大、减小，还是基本不变？<br>（b）该反应是吸热的还是放热的？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "（a）平衡常数随温度升高而减小。在 ${K}_{c}=\\;\\frac{{[{\\text{SO}}_{3}]}^{2}}{{[{\\text{SO}}_{2}]}^{2}[{\\text{O}}_{2}]},$ 中，较高温度下 SO<sub>3</sub> 的平衡量较小，意味着分子较小而分母较大，所以 <em>K<sub>c</sub></em> 较小。生成速率较快是动力学效应；它改变的是达到平衡的快慢，而不是平衡的位置。（b）该反应是放热的。此时热量是产物，2SO<sub>2</sub>(<em>g</em>) + O<sub>2</sub>(<em>g</em>) ⇌ 2SO<sub>3</sub>(<em>g</em>) + 热量，加入热量会使平衡向左移动，如观察到的那样使 SO<sub>3</sub> 的量减少。只有温度才会改变 <em>K</em> 的值，而加热时 <em>K</em> 下降标志着反应是放热的。"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm14144048",
+   "source_number": "36",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "haber",
+   "prompt": "提出四种可以使下列方程式所描述的平衡中肼 N<sub>2</sub>H<sub>4</sub> 的浓度增大的方法：$${\\text{N}}_{2}(g)+2{\\text{H}}_{2}(g)\\rightleftharpoons {\\text{N}}_{2}{\\text{H}}_{4}(g)\\hspace{5em}\\text{Δ}H=95\\;\\text{kJ}$$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "加入 N<sub>2</sub>；加入 H<sub>2</sub>；减小容器的体积；加热混合物。"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp20860880",
+   "source_number": "37",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "haber",
+   "prompt": "提出四种可以使下列方程式所描述的平衡中 PH<sub>3</sub> 的浓度增大的方法：$${\\text{P}}_{4}(g)+6{\\text{H}}_{2}(g)\\rightleftharpoons 4{\\text{PH}}_{3}(g)\\hspace{5em}\\text{Δ}H=110.5\\;\\text{kJ}$$",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "加入 P<sub>4</sub>；加入 H<sub>2</sub>；减小容器的体积；加热混合物。加入任一反应物都会使 <em>Q<sub>c</sub></em> 小于 <em>K<sub>c</sub></em>，所以平衡向右移动，生成更多的 PH<sub>3</sub>。左侧有 1 + 6 = 7 mol 气体，右侧有 4 mol，所以减小体积会使平衡向 PH<sub>3</sub> 一侧（气体较少的一侧）移动。该反应是吸热的（Δ<em>H</em> = 110.5 kJ），所以热量相当于反应物；升高温度会使平衡向右移动，并使 <em>K<sub>c</sub></em> 增大。"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idp53124112",
+   "source_number": "38",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "haber",
+   "prompt": "温度升高会对下列每个平衡产生怎样的影响？反应容器的体积减小又会对每个平衡产生怎样的影响？<br>（a）$2{\\text{NH}}_{3}(g)\\rightleftharpoons {\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\hspace{5em}\\text{Δ}H=92\\;\\text{kJ}$<br>（b）${\\text{N}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2\\text{NO}(g)\\hspace{5em}\\text{Δ}H=181\\;\\text{kJ}$<br>（c）$2{\\text{O}}_{3}(g)\\rightleftharpoons 3{\\text{O}}_{2}(g)\\hspace{5em}\\text{Δ}H=−285\\;\\text{kJ}$<br>（d）$\\text{CaO}(s)+{\\text{CO}}_{2}(g)\\rightleftharpoons {\\text{CaCO}}_{3}(s)\\hspace{5em}\\text{Δ}H=−176\\;\\text{kJ}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）<em>T</em> 升高 = 右移，<em>V</em> 减小 = 左移；（b）<em>T</em> 升高 = 右移，<em>V</em> = 无影响；（c）<em>T</em> 升高 = 左移，<em>V</em> 减小 = 左移；（d）<em>T</em> 升高 = 左移，<em>V</em> 减小 = 右移。"
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idp212372192",
+   "source_number": "39",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "haber",
+   "prompt": "温度升高会对下列每个平衡产生怎样的影响？反应容器的体积减小又会对每个平衡产生怎样的影响？<br>（a）$2{\\text{H}}_{2}\\text{O}(g)\\rightleftharpoons 2{\\text{H}}_{2}(g)+{\\text{O}}_{2}(g)\\hspace{5em}\\text{Δ}H=484\\;\\text{kJ}$<br>（b）${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2{\\text{NH}}_{3}(g)\\hspace{5em}\\text{Δ}H=−92.2\\;\\text{kJ}$<br>（c）$2\\text{Br}(g)\\rightleftharpoons {\\text{Br}}_{2}(g)\\hspace{5em}\\text{Δ}H=−224\\;\\text{kJ}$<br>（d）${\\text{H}}_{2}(g)+{\\text{I}}_{2}(s)\\rightleftharpoons 2\\text{HI}(g)\\hspace{5em}\\text{Δ}H=53\\;\\text{kJ}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Δ<em>H</em> 为正表示热量是反应物，所以加热使平衡向右移动；Δ<em>H</em> 为负表示热量是产物，所以加热使平衡向左移动。体积减小会使平衡向气体物质的量较少的一侧移动。（a）吸热，所以温度升高使平衡向右移动；气体为 2 mol 对 3 mol，所以体积减小使平衡向左移动。（b）放热，所以温度升高使平衡向左移动；气体为 4 mol 对 2 mol，所以体积减小使平衡向右移动。（c）放热，所以温度升高使平衡向左移动；气体为 2 mol 对 1 mol，所以体积减小使平衡向右移动。（d）吸热，所以温度升高使平衡向右移动；固体 I<sub>2</sub> 不计入，剩下气体为 1 mol 对 2 mol，所以体积减小使平衡向左移动。"
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idp65024704",
+   "source_number": "40",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "concentration",
+   "prompt": "甲醇可以在高温高压下、在合适的催化剂存在时由一氧化碳和氢气制得。<br>（a）写出下列可逆反应的平衡常数（<em>K</em><sub>c</sub>）表达式：$$2{\\text{H}}_{2}(g)+\\text{CO}(g)\\rightleftharpoons {\\text{CH}}_{3}\\text{OH}(g)\\hspace{5em}\\text{Δ}H=−90.2\\;\\text{kJ}$$（b）如果加入更多的 H<sub>2</sub>，平衡时 H<sub>2</sub>、CO 和 CH<sub>3</sub>OH 的浓度将发生什么变化？<br>（c）如果移出 CO，平衡时 H<sub>2</sub>、CO 和 CH<sub>3</sub>OH 的浓度将发生什么变化？<br>（d）如果加入 CH<sub>3</sub>OH，平衡时 H<sub>2</sub>、CO 和 CH<sub>3</sub>OH 的浓度将发生什么变化？<br>（e）如果体系的温度升高，平衡时 H<sub>2</sub>、CO 和 CH<sub>3</sub>OH 的浓度将发生什么变化？<br>（f）如果加入更多的催化剂，平衡时 H<sub>2</sub>、CO 和 CH<sub>3</sub>OH 的浓度将发生什么变化？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）${K}_{c}=\\;\\frac{[{\\text{CH}}_{3}\\text{OH}]}{{[{\\text{H}}_{2}]}^{2}[\\text{CO}]};$（b）[H<sub>2</sub>] 增大，[CO] 减小，[CH<sub>3</sub>OH] 增大；（c），[H<sub>2</sub>] 增大，[CO] 减小，[CH<sub>3</sub>OH] 减小；（d），[H<sub>2</sub>] 增大，[CO] 增大，[CH<sub>3</sub>OH] 增大；（e），[H<sub>2</sub>] 增大，[CO] 增大，[CH<sub>3</sub>OH] 减小；（f），没有变化。"
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idp384696688",
+   "source_number": "41",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "concentration",
+   "prompt": "氮气和氧气在高温下发生反应。<br>（a）写出下列可逆反应的平衡常数（<em>K</em><sub>c</sub>）表达式：$${\\text{N}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2\\text{NO}(g)\\hspace{5em}\\text{Δ}H=181\\;\\text{kJ}$$（b）如果加入更多的 O<sub>2</sub>，平衡时 N<sub>2</sub>、O<sub>2</sub> 和 NO 的浓度将发生什么变化？<br>（c）如果移出 N<sub>2</sub>，平衡时 N<sub>2</sub>、O<sub>2</sub> 和 NO 的浓度将发生什么变化？<br>（d）如果加入 NO，平衡时 N<sub>2</sub>、O<sub>2</sub> 和 NO 的浓度将发生什么变化？<br>（e）如果反应容器的体积减小，平衡时 N<sub>2</sub>、O<sub>2</sub> 和 NO 的浓度将发生什么变化？<br>（f）如果体系的温度升高，平衡时 N<sub>2</sub>、O<sub>2</sub> 和 NO 的浓度将发生什么变化？<br>（g）如果加入催化剂，平衡时 N<sub>2</sub>、O<sub>2</sub> 和 NO 的浓度将发生什么变化？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "（a）${K}_{c}=\\;\\frac{{[\\text{NO}]}^{2}}{[{\\text{N}}_{2}][{\\text{O}}_{2}]};$（b）平衡向右移动：[N<sub>2</sub>] 减小，[O<sub>2</sub>] 增大（移动只消耗了所加 O<sub>2</sub> 的一部分），[NO] 增大；（c）平衡向左移动以补充一部分 N<sub>2</sub>：[N<sub>2</sub>] 减小，[O<sub>2</sub>] 增大，[NO] 减小；（d）平衡向左移动：[N<sub>2</sub>] 增大，[O<sub>2</sub>] 增大，[NO] 增大；（e）两侧气体都是 2 mol，所以没有移动，但体积变小使 [N<sub>2</sub>]、[O<sub>2</sub>] 和 [NO] 都按同一因子增大；（f）该反应是吸热的（Δ<em>H</em> = 181 kJ），所以加热使 <em>K<sub>c</sub></em> 增大，平衡向右移动：[N<sub>2</sub>] 减小，[O<sub>2</sub>] 减小，[NO] 增大；（g）催化剂同等地加快正反应和逆反应，<em>K<sub>c</sub></em> 不变，所以没有任何浓度发生变化；只是更早地达到平衡。"
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idp201703744",
+   "source_number": "42",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "concentration",
+   "prompt": "水煤气是 H<sub>2</sub> 和 CO 的混合物，是一种重要的工业燃料，由水蒸气与红热的焦炭（基本上是纯碳）反应制得。<br>（a）写出下列可逆反应的平衡常数表达式：$$\\text{C}(s)+{\\text{H}}_{2}\\text{O}(g)\\rightleftharpoons \\text{CO}(g)+{\\text{H}}_{2}(g)\\hspace{5em}\\text{Δ}H=131.30\\;\\text{kJ}$$（b）如果加入更多的 C，平衡时每种反应物和产物的浓度将发生什么变化？<br>（c）如果移出 H<sub>2</sub>O，平衡时每种反应物和产物的浓度将发生什么变化？<br>（d）如果加入 CO，平衡时每种反应物和产物的浓度将发生什么变化？<br>（e）如果体系的温度升高，平衡时每种反应物和产物的浓度将发生什么变化？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）${K}_{c}=\\;\\frac{[\\text{CO}][{\\text{H}}_{2}]}{[{\\text{H}}_{2}\\text{O}]};$（b）[H<sub>2</sub>O] 不变，[CO] 不变，[H<sub>2</sub>] 不变；（c）[H<sub>2</sub>O] 减小，[CO] 减小，[H<sub>2</sub>] 减小；（d）[H<sub>2</sub>O] 增大，[CO] 增大，[H<sub>2</sub>] 减小；（e）[H<sub>2</sub>O] 减小，[CO] 增大，[H<sub>2</sub>] 增大。在（b）、（c）、（d）和（e）中，碳的质量会发生变化，但它的浓度（活度）不会变。"
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idp31242816",
+   "source_number": "43",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "concentration",
+   "prompt": "纯铁可以由氧化铁(III)被氢气还原制得。<br>（a）写出下列可逆反应的平衡常数（<em>K</em><sub>c</sub>）表达式：$${\\text{Fe}}_{2}{\\text{O}}_{3}(s)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2\\text{Fe}(s)+3{\\text{H}}_{2}\\text{O}(g)\\hspace{5em}\\text{Δ}H=98.7\\;\\text{kJ}$$（b）如果加入更多的 Fe，平衡时每种反应物和产物的浓度将发生什么变化？<br>（c）如果移出 H<sub>2</sub>O，平衡时每种反应物和产物的浓度将发生什么变化？<br>（d）如果加入 H<sub>2</sub>，平衡时每种反应物和产物的浓度将发生什么变化？<br>（e）如果反应容器的体积减小，平衡时每种反应物和产物的浓度将发生什么变化？<br>（f）如果体系的温度升高，平衡时每种反应物和产物的浓度将发生什么变化？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "（a）${K}_{c}=\\;\\frac{{[{\\text{H}}_{2}\\text{O}]}^{3}}{{[{\\text{H}}_{2}]}^{3}};$ 固体 Fe<sub>2</sub>O<sub>3</sub> 和 Fe 不出现在表达式中。（b）所有浓度都不变。加入 Fe 会增大它的质量，但纯固体的浓度（活度）是常数，所以 <em>Q<sub>c</sub></em> 仍等于 <em>K<sub>c</sub></em>。（c）平衡向右移动以补充一部分 H<sub>2</sub>O：[H<sub>2</sub>] 减小，[H<sub>2</sub>O] 减小，最终比之前更低，因为被移出的水只有一部分得到补充。（d）平衡向右移动：[H<sub>2</sub>] 增大，[H<sub>2</sub>O] 增大。（e）两侧气体都是 3 mol，所以没有移动；体积变小使 [H<sub>2</sub>] 和 [H<sub>2</sub>O] 按同一因子增大，它们的比值不变。（f）该反应是吸热的（Δ<em>H</em> = 98.7 kJ），所以加热使 <em>K<sub>c</sub></em> 增大，平衡向右移动：[H<sub>2</sub>] 减小，[H<sub>2</sub>O] 增大。在每一部分中，Fe<sub>2</sub>O<sub>3</sub> 和 Fe 的浓度都保持不变；在（c）、（d）和（f）中，Fe 的质量增加，Fe<sub>2</sub>O<sub>3</sub> 的质量减少。"
+   }
+  },
+  {
+   "id": "e14",
+   "source_id": "fs-idp52451264",
+   "source_number": "44",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "concentration",
+   "prompt": "氨是一种弱碱，按下列方程式与水反应：$${\\text{NH}}_{3}(aq)+{\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons {\\text{NH}}_{4}{}^{\\text{+}}(aq)+{\\text{OH}}^{\\text{−}}(aq)$$下列各项中，有没有能增大水中氨转化为铵根离子的百分数的？",
+   "answer": {
+    "type": "choice",
+    "generated_by": "source",
+    "options": [
+     "加入 NaOH",
+     "加入 HCl",
+     "加入 NH<sub>4</sub>Cl"
+    ],
+    "correct": 1,
+    "hint": "想一想哪一种加入方式是在移出该反应的产物，而不是加入产物。",
+    "solution": "只有（b）"
+   }
+  },
+  {
+   "id": "e15",
+   "source_id": "fs-idp261498704",
+   "source_number": "45",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "concentration",
+   "prompt": "乙酸是一种弱酸，按下列方程式与水反应：$${\\text{CH}}_{3}{\\text{CO}}_{2}\\text{H}(aq)+{\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons {\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{CH}}_{3}{\\text{CO}}_{2}{}^{\\text{−}}(l)$$<sup class=\"fn\" data-note=\"c-e15-aq\"></sup>下列各项中有没有能使发生反应并生成 ${\\text{CH}}_{3}{\\text{CO}}_{2}{}^{\\text{−}}$ 离子的乙酸的百分数增大的？<br>（a）加入 HCl<br>（b）加入 NaOH<br>（c）加入 NaCH<sub>3</sub>CO<sub>2</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "只有（b）。（a）HCl 提供 H<sub>3</sub>O<sup>+</sup>，它是产物，所以平衡向左移动，发生反应的乙酸的百分数变小。（b）NaOH 中的氢氧根离子与 H<sub>3</sub>O<sup>+</sup> 反应生成水，移出了一种产物；平衡向右移动，转化为 CH<sub>3</sub>CO<sub>2</sub><sup>−</sup> 的乙酸的百分数变大。（c）NaCH<sub>3</sub>CO<sub>2</sub> 提供 CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>，它是产物，所以平衡向左移动，发生反应的百分数变小。"
+   }
+  },
+  {
+   "id": "e16",
+   "source_id": "fs-idp157396912",
+   "source_number": "46",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "concentration",
+   "prompt": "提出两种方法，使与固体 AgCl 接触的、含有 Na<sup>+</sup>、Cl<sup>−</sup>、Ag<sup>+</sup> 和 ${\\text{NO}}_{3}{}^{\\text{−}},$ 的溶液中 Ag<sup>+</sup> 的平衡浓度降低。$${\\text{Na}}^{\\text{+}}(aq)+{\\text{Cl}}^{\\text{−}}(aq)+{\\text{Ag}}^{\\text{+}}(aq)+{\\text{NO}}_{3}{}^{\\text{−}}(aq)\\rightleftharpoons \\text{AgCl}(s)+{\\text{Na}}^{\\text{+}}(aq)+{\\text{NO}}_{3}{}^{\\text{−}}(aq)$$$$\\text{Δ}H=−65.9\\;\\text{kJ}$$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "向溶液中加入 NaCl 或其他能产生 Cl<sup>−</sup> 的盐。冷却溶液会迫使平衡向右移动，沉淀出更多的 AgCl(<em>s</em>)。"
+   }
+  },
+  {
+   "id": "e17",
+   "source_id": "fs-idm33369776",
+   "source_number": "47",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "temperature",
+   "prompt": "如何才能使下列平衡中水蒸气的压强增大？$${\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons {\\text{H}}_{2}\\text{O}(g)\\hspace{5em}\\text{Δ}H=41\\;\\text{kJ}$$",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "升高温度。液体不出现在平衡常数表达式中，所以 <em>K<sub>P</sub></em> = ${P}_{{\\text{H}}_{2}\\text{O}}$，即水蒸气本身的压强。只要还剩有一些液体，加入液态水或改变体积就都不能改变重新建立平衡后的这一压强：更多的液体蒸发，或更多的蒸气凝结，直到压强回到 <em>K<sub>P</sub></em>。只有 <em>K<sub>P</sub></em> 的值发生变化，平衡压强才会改变，而只有温度才会改变 <em>K</em>。这一变化是吸热的（Δ<em>H</em> = 41 kJ），所以热量相当于反应物；加热使平衡向蒸气一侧移动，并使 <em>K<sub>P</sub></em> 增大。水的蒸气压从 30 °C 时的 0.042 atm 上升到 100 °C 时的 1 atm。"
+   }
+  },
+  {
+   "id": "e18",
+   "source_id": "fs-idp219741088",
+   "source_number": "49",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "temperature",
+   "prompt": "把等物质的量的 HCl 和 HOCl 分别溶于等量的水中，HCl 溶液的凝固温度更低。哪种化合物的酸电离平衡常数更大？<br>（a）HCl<br>（b）H<sup>+</sup> + Cl<sup>–</sup><br>（c）HOCl<br>（d）H<sup>+</sup> + OCl<sup>–</sup>",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "（a）HCl。凝固点的降低取决于溶解的粒子数，所以凝固温度更低的 HCl 溶液所含的粒子比由同样物质的量的酸配成的 HOCl 溶液更多。因此 HCl 必定比 HOCl 电离得更充分：HCl ⇌ H<sup>+</sup> + Cl<sup>−</sup> 对比 HOCl ⇌ H<sup>+</sup> + OCl<sup>−</sup>。平衡时反应进行得更充分，意味着在 ${K}_{c}=\\;\\frac{[{\\text{H}}^{\\text{+}}][{\\text{Cl}}^{\\text{−}}]}{[\\text{HCl}]},$ 中产物浓度更大而反应物浓度更小，所以 HCl 的酸电离常数更大。选项（b）和（d）是电离生成的离子，不是被比较的化合物。"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e1",
+   "concept": "predict-equilibrium-shift"
+  },
+  {
+   "exercise": "e1",
+   "concept": "heterogeneous-equilibrium"
+  },
+  {
+   "exercise": "e2",
+   "concept": "volume-stress"
+  },
+  {
+   "exercise": "e3",
+   "concept": "temperature-changes-k"
+  },
+  {
+   "exercise": "e4",
+   "concept": "chemical-equilibrium"
+  },
+  {
+   "exercise": "e4",
+   "concept": "le-chateliers-principle"
+  },
+  {
+   "exercise": "e5",
+   "concept": "temperature-changes-k"
+  },
+  {
+   "exercise": "e5",
+   "concept": "predict-equilibrium-shift"
+  },
+  {
+   "exercise": "e6",
+   "concept": "predict-equilibrium-shift"
+  },
+  {
+   "exercise": "e6",
+   "concept": "concentration-stress"
+  },
+  {
+   "exercise": "e6",
+   "concept": "volume-stress"
+  },
+  {
+   "exercise": "e6",
+   "concept": "temperature-changes-k"
+  },
+  {
+   "exercise": "e7",
+   "concept": "predict-equilibrium-shift"
+  },
+  {
+   "exercise": "e7",
+   "concept": "concentration-stress"
+  },
+  {
+   "exercise": "e7",
+   "concept": "volume-stress"
+  },
+  {
+   "exercise": "e7",
+   "concept": "temperature-changes-k"
+  },
+  {
+   "exercise": "e8",
+   "concept": "temperature-changes-k"
+  },
+  {
+   "exercise": "e8",
+   "concept": "volume-stress"
+  },
+  {
+   "exercise": "e8",
+   "concept": "predict-equilibrium-shift"
+  },
+  {
+   "exercise": "e9",
+   "concept": "temperature-changes-k"
+  },
+  {
+   "exercise": "e9",
+   "concept": "volume-stress"
+  },
+  {
+   "exercise": "e9",
+   "concept": "predict-equilibrium-shift"
+  },
+  {
+   "exercise": "e10",
+   "concept": "concentration-stress"
+  },
+  {
+   "exercise": "e10",
+   "concept": "temperature-changes-k"
+  },
+  {
+   "exercise": "e10",
+   "concept": "catalyst-and-equilibrium"
+  },
+  {
+   "exercise": "e10",
+   "concept": "write-reaction-quotient"
+  },
+  {
+   "exercise": "e11",
+   "concept": "concentration-stress"
+  },
+  {
+   "exercise": "e11",
+   "concept": "volume-stress"
+  },
+  {
+   "exercise": "e11",
+   "concept": "temperature-changes-k"
+  },
+  {
+   "exercise": "e11",
+   "concept": "catalyst-and-equilibrium"
+  },
+  {
+   "exercise": "e11",
+   "concept": "write-reaction-quotient"
+  },
+  {
+   "exercise": "e12",
+   "concept": "concentration-stress"
+  },
+  {
+   "exercise": "e12",
+   "concept": "temperature-changes-k"
+  },
+  {
+   "exercise": "e12",
+   "concept": "heterogeneous-equilibrium"
+  },
+  {
+   "exercise": "e13",
+   "concept": "concentration-stress"
+  },
+  {
+   "exercise": "e13",
+   "concept": "volume-stress"
+  },
+  {
+   "exercise": "e13",
+   "concept": "temperature-changes-k"
+  },
+  {
+   "exercise": "e13",
+   "concept": "heterogeneous-equilibrium"
+  },
+  {
+   "exercise": "e14",
+   "concept": "concentration-stress"
+  },
+  {
+   "exercise": "e14",
+   "concept": "predict-equilibrium-shift"
+  },
+  {
+   "exercise": "e15",
+   "concept": "concentration-stress"
+  },
+  {
+   "exercise": "e15",
+   "concept": "predict-equilibrium-shift"
+  },
+  {
+   "exercise": "e16",
+   "concept": "concentration-stress"
+  },
+  {
+   "exercise": "e16",
+   "concept": "temperature-changes-k"
+  },
+  {
+   "exercise": "e16",
+   "concept": "predict-equilibrium-shift"
+  },
+  {
+   "exercise": "e17",
+   "concept": "temperature-changes-k"
+  },
+  {
+   "exercise": "e17",
+   "concept": "predict-equilibrium-shift"
+  },
+  {
+   "exercise": "e18",
+   "concept": "magnitude-of-k"
+  },
+  {
+   "exercise": "e18",
+   "concept": "freezing-point-depression"
+  }
+ ],
+ "footnotes": [
+  {
+   "id": "c-e15-aq",
+   "kind": "correction",
+   "html": "书中把乙酸根离子写成液态，CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>(<em>l</em>)；它其实是溶解的，应为 CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>(<em>aq</em>)。"
+  }
+ ],
+ "derivations": [
+  {
+   "id": "kc-rate-constants",
+   "what": "作为速率常数之比的平衡常数",
+   "source": "化学（第2版），13.3 平衡的移动：勒夏特列原理",
+   "nodes": [
+    {
+     "assumes": [
+      {
+       "text": "处于平衡时，正反应和逆反应以相等的速率进行。",
+       "src": "13.1"
+      },
+      {
+       "tex": "\\kratef = \\kkf\\kconcA",
+       "src": "13.3"
+      },
+      {
+       "tex": "\\krater = \\kkr\\kconcB",
+       "src": "13.3"
+      },
+      {
+       "tex": "\\text{A}\\rightleftharpoons\\text{B}\\qquad\\kKc = \\frac{\\kconcB}{\\kconcA}",
+       "src": "13.2"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{r}{\\krater} = \\mk{f}{\\kratef}",
+      "src": "13.3",
+      "uses": [
+       0
+      ]
+     },
+     "steps": [
+      {
+       "tex": "\\mk{f}{\\kkf\\kconcA} = \\mk{r}{\\kkr\\kconcB}",
+       "uses": [
+        1,
+        2
+       ]
+      },
+      {
+       "tex": "\\frac{\\mk{B}{\\kconcB}}{\\mk{A}{\\kconcA}} = \\frac{\\mk{kf}{\\kkf}}{\\mk{kr}{\\kkr}}",
+       "uses": [],
+       "map": {
+        "f": [
+         "kf",
+         "A"
+        ],
+        "r": [
+         "B",
+         "kr"
+        ]
+       }
+      },
+      {
+       "tex": "\\frac{\\mk{B}{\\kconcB}}{\\mk{A}{\\kconcA}} = \\frac{\\mk{kf}{\\kkf}}{\\mk{kr}{\\kkr}} = \\mk{K}{\\kKc}",
+       "uses": [
+        3
+       ]
+      }
+     ],
+     "src": "13.3"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,803 @@
+{
+ "id": "16.2",
+ "module": "m68817",
+ "chapter": "16",
+ "title": "熵",
+ "short": "熵",
+ "lead": "克劳修斯通过过程的可逆热及其温度定义了熵，玻尔兹曼则把熵与体系可能有的微观状态数联系起来。计算粒子如何分配在两个盒子中，以及两个物体如何分享能量单位，就把熵与概率联系在了一起，而同样的分散图景也指导着对熵变符号的预测。",
+ "objectives": [
+  "定义熵",
+  "解释熵与微观状态数之间的关系",
+  "预测化学过程和物理过程的熵变的符号"
+ ],
+ "summary_html": "<p><span data-concept=\"entropy\">熵（$\\kS$）</span>是一个<span data-concept=\"state-function\">状态函数</span>，它既可以与体系的<span data-concept=\"microstate\">微观状态</span>数（体系可以排布的方式数）相联系，也可以与可逆<span data-concept=\"heat-flow\">热</span>和开尔文<span data-concept=\"temperature\">温度</span>之比相联系。它可以解释为体系中物质和/或能量的分散或分布程度的度量，并且常被描述为代表体系的“混乱度”。</p><p>对于给定的物质，<span data-concept=\"entropy\">熵</span>取决于相，$\\kSsolid &lt; \\kSliquid &lt; \\kSgas$。对于处于同一物态、<span data-concept=\"temperature\">温度</span>相同的不同物质，较重的原子或较复杂的分子的<span data-concept=\"entropy\">熵</span>通常更大。体系被加热时以及形成溶液时，<span data-concept=\"entropy\">熵</span>增大。利用这些准则，可以可靠地预测某些化学反应和物理变化的<span data-concept=\"entropy\">熵变</span>的符号。</p>",
+ "notes": "模拟物态的“学习链接”部分被省略。按原样保留：图 16.7 的图注把卡诺的名字拼作“Nicholas”，而正文拼作“Nicolas”（中文译名相同）；热量流动一段中的“one of the other two distribution”；以及例 16.2 把 W<sub>f</sub>/W<sub>i</sub> 写成 W<sub>c</sub>/W<sub>a</sub>。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签、提示和建议的解题思路由AI 生成。答案取自书后答案和“学习检测”的答案；fs-idm203140096 的题干在（b）部分印作 Fe<sub>2</sub>O<sub>2</sub>(<em>s</em>)，并按原样保留。两道要求给出数值但没有书后答案的习题 fs-idp46279440 和 fs-idm215906096 被省略。五道没有书后答案的习题 fs-idm56843152、fs-idm199093136、fs-idm12232336、fs-idm216212480 和 fs-idm213645360 要求比较、判断符号或作出解释，每道都保留了标明为 OmniStax 自拟的建议思路。没有移动任何内容。",
+ "figures": [
+  {
+   "id": "fig-carnot",
+   "kind": "photo",
+   "number": "16.7",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-microstates",
+   "kind": "sim",
+   "number": "16.8",
+   "originals": [
+    "/media/ch16/CNX_Chem_16_02_Microstates.jpg"
+   ],
+   "original_caption": "图中给出了把四个粒子放入两个盒子所对应的十六种微观状态。这些微观状态按每个盒子中的粒子数分为五种分布——（a）、（b）、（c）、（d）和（e）。",
+   "draws": [
+    "entropy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-energy-microstates",
+   "kind": "sim",
+   "number": "16.9",
+   "originals": [
+    "/media/ch16/CNX_Chem_16_03_Energy.jpg"
+   ],
+   "original_caption": "这是一个描述热量从较热的物体流向较冷的物体的微观状态模型。（a）在热量流动发生之前，由粒子 A 和 B 组成的物体含有全部两个能量单位，由三种微观状态的一种分布来表示。（b）如果热量流动使能量均匀分散（转移了一个能量单位），则得到由四种微观状态组成的一种分布。（c）如果两个能量单位都发生转移，则所得分布有三种微观状态。",
+   "draws": [
+    "entropy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-ex-matter",
+   "kind": "figure",
+   "originals": [
+    "/media/ch16/CNX_Chem_16_03_Matter_img.jpg"
+   ],
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-entropy-phase",
+   "kind": "sim",
+   "number": "16.10",
+   "folds": [
+    "16.11"
+   ],
+   "originals": [
+    "/media/ch16/CNX_Chem_16_03_Entropies.jpg",
+    "/media/ch16/CNX_Chem_16_02_EntGraph.jpg"
+   ],
+   "original_caption": "（图 16.10）物质由相对有序的固体转变为有序程度较低的液体，再转变为有序程度更低的气体时，熵增大（ΔS > 0）。物质由气体转变为液体，再转变为固体时，熵减小（ΔS < 0）。（图 16.11）物质的温度升高时，熵增大，这与动能分布的范围变宽相对应。物质发生相变时，其熵有显著的变化。",
+   "draws": [
+    "temperature",
+    "entropy",
+    "energy",
+    "velocity"
+   ],
+   "conventions": [
+    "O",
+    "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "referents": [
+  {
+   "id": "hot-object",
+   "label": "较热的物体，粒子 A 和 B",
+   "figures": [
+    "sim-energy-microstates"
+   ]
+  },
+  {
+   "id": "cold-object",
+   "label": "较冷的物体，粒子 C 和 D",
+   "figures": [
+    "sim-energy-microstates"
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "reversible-heat",
+   "concept": "reversible-process",
+   "verb": "introduces"
+  },
+  {
+   "span": "reversible-heat",
+   "concept": "entropy",
+   "verb": "introduces"
+  },
+  {
+   "span": "reversible-heat",
+   "concept": "state-function",
+   "verb": "uses"
+  },
+  {
+   "span": "reversible-heat",
+   "concept": "heat-flow",
+   "verb": "uses"
+  },
+  {
+   "span": "reversible-heat",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "reversible-heat",
+   "concept": "kelvin",
+   "verb": "uses"
+  },
+  {
+   "span": "microstates",
+   "concept": "microstate",
+   "verb": "introduces"
+  },
+  {
+   "span": "microstates",
+   "concept": "boltzmann-entropy-equation",
+   "verb": "introduces"
+  },
+  {
+   "span": "microstates",
+   "concept": "most-probable-distribution",
+   "verb": "introduces"
+  },
+  {
+   "span": "microstates",
+   "concept": "entropy",
+   "verb": "uses"
+  },
+  {
+   "span": "microstates",
+   "concept": "state-function",
+   "verb": "uses"
+  },
+  {
+   "span": "microstates",
+   "concept": "dispersal-of-matter-and-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "microstates",
+   "concept": "ideal-gas",
+   "verb": "uses"
+  },
+  {
+   "span": "microstates",
+   "concept": "spontaneous-process",
+   "verb": "uses"
+  },
+  {
+   "span": "microstates",
+   "concept": "heat-flow",
+   "verb": "uses"
+  },
+  {
+   "span": "microstates",
+   "concept": "volume",
+   "verb": "uses"
+  },
+  {
+   "span": "microstates",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-delta-s",
+   "concept": "boltzmann-entropy-equation",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ex-delta-s",
+   "concept": "microstate",
+   "verb": "reinforces"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "entropy-and-phase",
+   "verb": "introduces"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "entropy-and-temperature",
+   "verb": "introduces"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "entropy-and-molecular-structure",
+   "verb": "introduces"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "predict-sign-of-entropy-change",
+   "verb": "introduces"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "entropy",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "melting",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "freezing",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "vaporization",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "sublimation",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "condensation",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "deposition",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "kinetic-molecular-theory",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "average-kinetic-energy-and-temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "kinetic-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "mixture",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "volume",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "heat-flow",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-predict-sign",
+   "concept": "predict-sign-of-entropy-change",
+   "verb": "reinforces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm141128112",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-delta-s"
+   },
+   "cite": "ex-delta-s",
+   "prompt": "请看图 16.9 所示的体系。在<em>全部</em>能量由较热的物体（<strong>AB</strong>）转移到较冷的物体（<strong>CD</strong>）的过程中，熵变是多少？",
+   "answer": {
+    "type": "number",
+    "value": 0,
+    "unit": "J/K",
+    "hint": "数出两个单位都在较热的物体中的微观状态数，以及两个单位都在较冷的物体中的微观状态数。",
+    "solution": "0 J/K",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm151499136",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-predict-sign"
+   },
+   "cite": "ex-predict-sign",
+   "prompt": "预测下列过程的熵变的符号。说明你作出预测的理由。<br>（a）${\\text{NaNO}}_{3}(s)\\;\\longrightarrow \\;{\\text{Na}}^{\\text{+}}(aq)+{\\text{NO}}_{3}{}^{-}(aq)$<br>（b）液态水的凝固<br>（c）${\\text{CO}}_{2}(s)\\;\\longrightarrow \\;{\\text{CO}}_{2}(g)$<br>（d）${\\text{CaCO}}_{3}(s)\\;\\longrightarrow \\;\\text{CaO}(s)+{\\text{CO}}_{2}(g)$",
+   "answer": {
+    "type": "open",
+    "solution": "（a）正；固体溶解，使溶液中可自由移动的离子增多。（b）负；液体变成了更有序的固体。（c）正；相对有序的固体变成了气体。（d）正；气态物质的物质的量净增大。",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idm145774432",
+   "source_number": "7",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "microstates",
+   "prompt": "图 16.8 给出了四个不同的粒子分配在两个盒子中的所有可能的分布和微观状态。求体系由分布（b）变为分布（d）时的熵变 Δ<em>S</em>。",
+   "answer": {
+    "type": "number",
+    "value": 0,
+    "unit": "J/K",
+    "hint": "数出分布（b）和分布（d）中的微观状态数，再用终态与始态的微观状态数之比。",
+    "solution": "始态有四种微观状态，终态也有四种微观状态。<br>$\\kdS=k\\;\\text{ln}\\;\\frac{{W}_{\\text{f}}}{{W}_{\\text{i}}}\\;=1.38\\;\\times \\;{10}^{-23}\\;\\text{J/K}\\;\\times \\;\\text{ln}\\;\\frac{4}{4}\\;=0$",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idm56843152",
+   "source_number": "8",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "microstates",
+   "prompt": "前一题所述的过程与图 16.4 所示的体系有什么联系？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "气体在图 16.4 的两个烧瓶之间膨胀，是向更概然的分布变化，而由（b）到（d）的变化则不是。当所有气体都留在一个烧瓶中时，体系类似于图 16.8 的分布（a），即每个粒子都在一个盒子里，对于四个粒子来说 $W = 1$。打开阀门，分子便向均匀分布（c）扩散，它是微观状态数最多的分布（$W = 6$），所以 $\\kdS = k\\;\\text{ln}\\;\\frac{W_{\\text{f}}}{W_{\\text{i}}} &gt; 0$，膨胀是自发的；对于摩尔量的气体，均匀分布的概率大到压倒一切，气体绝不会重新聚集到一个烧瓶中。分布（b）和（d）各有四种微观状态，所以二者之间的变化给出 $\\kdS = k\\;\\text{ln}\\;\\frac{4}{4} = 0$。把不均匀的分配颠倒过来，并不会使排布更加概然，因此没有熵的增大来推动它；只有向均匀分布的变化，如气体充满两个烧瓶，才会使熵增大。"
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idm72753056",
+   "source_number": "9",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "microstates",
+   "prompt": "考虑一个与图 16.8 相似的体系，只是它含有六个粒子而不是四个。在这种情形下，所有粒子都只在两个盒子中的一个里的概率是多少？把它与我们推导出的四粒子体系的相应概率 $\\frac{1}{8}$ 作比较。这一比较对于更大的体系说明了什么？",
+   "answer": {
+    "type": "open",
+    "solution": "所有粒子都在一侧的概率是 $\\frac{1}{32}.$ 这个概率明显低于四粒子体系的结果 $\\frac{1}{8}$。我们可以得出的结论是，所有粒子都只留在体系的一个部分中的概率，会随着粒子数的增多而迅速减小；例如，在室温和常压下，房间里所有气体分子都聚集在一侧的概率可以忽略不计，因为房间里的气体分子数非常大。",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idm18362192",
+   "source_number": "11",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "microstates",
+   "prompt": "考虑图 16.9 所示的体系。在能量起初与粒子 A 和 B 相关联，而后能量分配在位于不同盒子的两个粒子上（一个在 A-B 中，另一个在 C-D 中）的过程中，熵变是多少？",
+   "answer": {
+    "type": "number",
+    "value": 1.91e-23,
+    "unit": "J/K",
+    "tol": 0.01,
+    "hint": "始态是 A 和 B 上各有一个单位，只有一种微观状态；数出每个物体中各放一个单位的方式数。",
+    "solution": "始态只有一种。对于终态，能量可以位于 A-C、A-D、B-C 或 B-D 这几对粒子上。因此，可能的终态有四种。<br>$\\kdS=k\\;\\text{ln}\\;(\\frac{{W}_{\\text{f}}}{{W}_{\\text{i}}})=1.38\\;\\times \\;{10}^{-23}\\;\\text{J/K}\\;\\times \\;\\text{ln}\\;(\\frac{4}{1})=1.91\\;\\times \\;{10}^{-23}\\;\\text{J/K}$",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idm199093136",
+   "source_number": "12",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "predicting-sign",
+   "prompt": "将下列各组体系按熵增大的顺序排列。假设每种物质均为 1 mol，且同一组的各成员温度相同。<br>（a）H<sub>2</sub>(<em>g</em>)、HBrO<sub>4</sub>(<em>g</em>)、HBr(<em>g</em>)<br>（b）H<sub>2</sub>O(<em>l</em>)、H<sub>2</sub>O(<em>g</em>)、H<sub>2</sub>O(<em>s</em>)<br>（c）He(<em>g</em>)、Cl<sub>2</sub>(<em>g</em>)、P<sub>4</sub>(<em>g</em>)",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "（a）H<sub>2</sub>(<em>g</em>) &lt; HBr(<em>g</em>) &lt; HBrO<sub>4</sub>(<em>g</em>)。三者在同一温度下都是气体，所以排序取决于分子的大小和质量：HBr 的原子数与 H<sub>2</sub> 相同，但重得多，而含六个原子的 HBrO<sub>4</sub> 分子的振动和转动方式最多，因而微观状态数最多。<br>（b）H<sub>2</sub>O(<em>s</em>) &lt; H<sub>2</sub>O(<em>l</em>) &lt; H<sub>2</sub>O(<em>g</em>)。同一种物质的三种相遵循 $\\kSsolid &lt; \\kSliquid &lt; \\kSgas$，因为粒子的运动自由程度由固态到液态再到气态不断增大。<br>（c）He(<em>g</em>) &lt; Cl<sub>2</sub>(<em>g</em>) &lt; P<sub>4</sub>(<em>g</em>)。单个的轻氦原子只能从一处移到另一处，双原子的 Cl<sub>2</sub> 分子还能转动和振动，而较重的四原子 P<sub>4</sub> 分子的振动方式更多，所以微观状态数按这个顺序增多。"
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idm215000480",
+   "source_number": "13",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "predicting-sign",
+   "prompt": "在室温下，卤素的熵按 I<sub>2</sub>、Br<sub>2</sub>、Cl<sub>2</sub> 的顺序增大。请解释。",
+   "answer": {
+    "type": "open",
+    "solution": "这些分子的质量会提示相反的熵的变化趋势。观察到的趋势是熵随物态的变化更为显著所致。在室温下，I<sub>2</sub> 是固体，Br<sub>2</sub> 是液体，Cl<sub>2</sub> 是气体。",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e14",
+   "source_id": "fs-idm12232336",
+   "source_number": "14",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "predicting-sign",
+   "prompt": "考虑两个过程：I<sub>2</sub>(<em>s</em>) 的升华和 I<sub>2</sub>(<em>s</em>) 的熔化（注：后一过程可以在相同的温度但稍高的压强下发生）。<br>${\\text{I}}_{2}(s)\\;\\longrightarrow \\;{\\text{I}}_{2}(g)$<br>${\\text{I}}_{2}(s)\\;\\longrightarrow \\;{\\text{I}}_{2}(l)$<br>这两个过程中的 Δ<em>S</em> 是正还是负？在哪个过程中熵变的数值更大？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "这两个过程的 Δ<em>S</em> 都是正的，升华的 Δ<em>S</em> 数值更大。在每个过程中，碘分子都离开了只能围绕固定位置振动的有序固体，进入分子运动更自由的相，所以微观状态数增多，$\\kdS &gt; 0$。两者都从同一温度下的同一固体出发，所以变化的大小取决于终态。由于 $\\kSsolid &lt; \\kSliquid &lt; \\kSgas$，而分子相距很远并在整个容器中运动的气体，其熵比固体高出的幅度远大于液体，所以 I<sub>2</sub>(<em>s</em>) ⟶ I<sub>2</sub>(<em>g</em>) 的熵增大于 I<sub>2</sub>(<em>s</em>) ⟶ I<sub>2</sub>(<em>l</em>)。升华相当于先熔化再汽化，所以它的 Δ<em>S</em> 是这两个正的熵变之和。"
+   }
+  },
+  {
+   "id": "e15",
+   "source_id": "fs-idm136809856",
+   "source_number": "15",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "predicting-sign",
+   "prompt": "指出下列各对物质中哪一种物质的熵值更高。解释你的选择。<br>（a）C<sub>2</sub>H<sub>5</sub>OH(<em>l</em>) 或 C<sub>3</sub>H<sub>7</sub>OH(<em>l</em>)<br>（b）C<sub>2</sub>H<sub>5</sub>OH(<em>l</em>) 或 C<sub>2</sub>H<sub>5</sub>OH(<em>g</em>)<br>（c）2H(<em>g</em>) 或 H(<em>g</em>)",
+   "answer": {
+    "type": "open",
+    "solution": "（a）C<sub>3</sub>H<sub>7</sub>OH(<em>l</em>)，因为它是更大的分子（更复杂、质量更大），所以在任何给定温度下，描述其运动的微观状态更多。（b）C<sub>2</sub>H<sub>5</sub>OH(<em>g</em>)，因为它处于气态。（c）2H(<em>g</em>)，因为熵是广度性质，所以两个 H 原子（或 2 mol H 原子）的熵是一个原子（或 1 mol原子）的两倍。",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e16",
+   "source_id": "fs-idm216212480",
+   "source_number": "16",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "predicting-sign",
+   "prompt": "预测下列过程的熵变的符号。<br>（a）一块冰被加热到接近其熔点。<br>（b）在寒冷的早晨，呼出的气体形成雾。<br>（c）雪融化。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "（a）正。冰仍是固体，但温度升高，所以其分子的振动更剧烈，微观状态数增多，熵随温度升高而增大。<br>（b）负。雾是由微小的液态水滴组成的云，所以呼出气体中的水蒸气凝结成液体，而 $\\kSliquid &lt; \\kSgas$。<br>（c）正。熔化使固态水变成液态水，而 $\\kSsolid &lt; \\kSliquid$。"
+   }
+  },
+  {
+   "id": "e17",
+   "source_id": "fs-idm203140096",
+   "source_number": "17",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "predicting-sign",
+   "prompt": "预测下列过程的熵变的符号。说明你作出预测的理由。<br>（a）${\\text{Na}}^{+}(aq)+{\\text{Cl}}^{-}(aq)\\;\\longrightarrow \\;\\text{NaCl}(s)$<br>（b）$2\\text{Fe}(s)+\\frac{3}{2}{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{Fe}}_{2}{\\text{O}}_{2}(s)$<sup class=\"fn\" data-note=\"c-e17-fe2o3\"></sup><br>（c）$2{\\text{C}}_{6}{\\text{H}}_{14}(l)+19{\\text{O}}_{2}(g)\\;\\longrightarrow \\;14{\\text{H}}_{2}\\text{O}(g)+12{\\text{CO}}_{2}(g)$",
+   "answer": {
+    "type": "open",
+    "solution": "（a）负。相对有序的固体沉淀出来，使溶液中可自由移动的离子数减少。（b）负。从反应物到产物，气体净减少 3 mol。（c）正。从反应物到产物，气体净增加 7 mol。",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e18",
+   "source_id": "fs-idm213645360",
+   "source_number": "18",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "predicting-sign",
+   "prompt": "写出甲烷 CH<sub>4</sub>(<em>g</em>) 燃烧生成二氧化碳和水蒸气的配平的化学方程式。解释为什么难以预测这个化学反应的 Δ<em>S</em> 是正还是负。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "CH<sub>4</sub>(<em>g</em>) + 2O<sub>2</sub>(<em>g</em>) ⟶ CO<sub>2</sub>(<em>g</em>) + 2H<sub>2</sub>O(<em>g</em>)。Δ<em>S</em> 的符号难以预测，因为通常最强的判据，即气体物质的量的变化，在这里没有给出方向：两边都有 3 mol 气体。其余的因素也没有给出明确的答案，因为每一边都有三个分子，共由九个原子构成，即反应物是一个五原子的 CH<sub>4</sub> 和两个双原子的 O<sub>2</sub> 分子，产物是三个三原子分子，所以运动自由程度的增减无法通过观察来判断。标准熵可以解决这个问题：$\\kdSo = [213.8 + 2(188.8)] - [186.3 + 2(205.2)] = -5.3\\;\\text{J/K}$，这个变化小到任何定性规则都无法确定其符号。"
+   }
+  },
+  {
+   "id": "e19",
+   "source_id": "fs-idp19392560",
+   "source_number": "19",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "predicting-sign",
+   "prompt": "写出苯 C<sub>6</sub>H<sub>6</sub>(<em>l</em>) 燃烧生成二氧化碳和水蒸气的配平的化学方程式。你预期这个过程的 Δ<em>S</em> 是正还是负？",
+   "answer": {
+    "type": "open",
+    "solution": "${\\text{C}}_{6}{\\text{H}}_{6}(l)+7.5{\\text{O}}_{2}(g)\\;\\longrightarrow {\\text{3H}}_{2}\\text{O(}g)+{\\text{6CO}}_{2}(g)$<br>起初有 7.5 mol气体，最后有 3 + 6 = 9 mol气体。因此，这个反应很可能使熵增大，Δ<em>S</em> 为正。",
+    "generated_by": "source"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "boltzmann-entropy-equation",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "microstate",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "predict-sign-of-entropy-change",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "entropy-and-phase",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e7",
+   "concept": "boltzmann-entropy-equation",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e7",
+   "concept": "most-probable-distribution",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e8",
+   "concept": "most-probable-distribution",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e8",
+   "concept": "dispersal-of-matter-and-energy",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "most-probable-distribution",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "microstate",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e11",
+   "concept": "boltzmann-entropy-equation",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e11",
+   "concept": "microstate",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e12",
+   "concept": "entropy-and-molecular-structure",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e12",
+   "concept": "entropy-and-phase",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e13",
+   "concept": "entropy-and-phase",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e13",
+   "concept": "entropy-and-molecular-structure",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e14",
+   "concept": "entropy-and-phase",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e14",
+   "concept": "predict-sign-of-entropy-change",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e15",
+   "concept": "entropy-and-molecular-structure",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e15",
+   "concept": "entropy-and-phase",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e16",
+   "concept": "predict-sign-of-entropy-change",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e16",
+   "concept": "entropy-and-temperature",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e16",
+   "concept": "entropy-and-phase",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e17",
+   "concept": "predict-sign-of-entropy-change",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e18",
+   "concept": "predict-sign-of-entropy-change",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e19",
+   "concept": "predict-sign-of-entropy-change",
+   "weights_by": "ai"
+  }
+ ],
+ "footnotes": [
+  {
+   "id": "c-e17-fe2o3",
+   "kind": "correction",
+   "html": "书中写作 Fe<sub>2</sub>O<sub>2</sub>；2Fe 与 $\\frac{3}{2}$O<sub>2</sub> 的产物是 Fe<sub>2</sub>O<sub>3</sub>(<em>s</em>)。"
+  }
+ ],
+ "derivations": [
+  {
+   "id": "entropy-microstates",
+   "what": "由微观状态数求熵变",
+   "source": "化学（第2版），16.2 熵",
+   "nodes": [
+    {
+     "assumes": [
+      {
+       "tex": "\\kS = k\\;\\text{ln}\\;W",
+       "src": "16.2"
+      },
+      {
+       "tex": "\\ln x - \\ln y = \\ln\\frac{x}{y}",
+       "src": "Appendix B"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{d}{\\kdS} = \\mk{f}{\\kSf}-\\mk{i}{\\kSi}",
+      "src": "16.2"
+     },
+     "steps": [
+      {
+       "tex": "\\mk{d}{\\kdS} = \\mk{f}{k\\;\\text{ln}\\;{W}_{\\text{f}}}-\\mk{i}{k\\;\\text{ln}\\;{W}_{\\text{i}}}",
+       "uses": [
+        0
+       ]
+      },
+      {
+       "tex": "\\mk{d}{\\kdS} = \\mk{f}{k\\;\\text{ln}\\;\\frac{{W}_{\\text{f}}}{{W}_{\\text{i}}}}",
+       "uses": [
+        1
+       ],
+       "map": {
+        "i": "f"
+       }
+      }
+     ],
+     "src": "16.2"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,158 @@
+<section id="exact-numbers">
+<h2>精确数与不确定数</h2>
+<p class="cite-target">只要被计数的物体数目在计数过程中不发生变化，计数就是唯一不存在<span data-concept="uncertainty">不确定度</span>的一类测量。这种计数测量的结果就是<strong><span data-concept="exact-number">精确数</span></strong>的一个例子。通过数一盒鸡蛋，就可以<em>准确地</em>确定这盒里有多少个鸡蛋。定义量的数值同样是精确的。按定义，1 英尺恰好是 12 英寸，1 英寸恰好是 2.54 厘米，1 克恰好是 0.001 <span data-concept="kilogram">千克</span>。然而，由计数以外的测量得到的量，由于所用测量过程在实际中的局限，都有不同程度的不确定度。</p>
+</section>
+
+<section id="uncertainty">
+<h2>每个测量的最后一位数字都是不确定的</h2>
+<p class="cite-target">与定义量或直接计数得到的量不同，测量量的数值不是精确的。要测量量筒中<span data-concept="liquid">液体</span>的<span data-concept="volume">体积</span>，应当在弯月面的底部读数，弯月面即<span data-concept="liquid">液体</span>弯曲表面的最低点。</p>
+<figure class="sim" id="sim-meniscus" data-figure="1.26" data-original="/media/ch01/CNX_Chem_01_05_Measure.jpg" data-original-caption="要测量这个量筒中液体的体积，你必须在心里把 21 mL 和 22 mL 刻度线之间的距离分成十分之一毫升，然后在弯月面的底部读数（估计）。">
+  <div class="sim-head"><span class="eyebrow">Figure 1.26</span><span>一个刻度为 1 mL 的量筒盛有液体，旁边的放大镜显示弯月面底部所在的两条刻度线。移动<span data-type="volume">液面</span>，看刻度能确定地给出哪两位数字。然后把十分位数字设为你的估计值，<span data-type="volume">右侧的读数</span>就以你估计的数字作为其不确定的最后一位。刻度允许读到最小分度的十分之一，所以十分位之后的数字不必估计。</span></div>
+</figure>
+<p>参见图 1.26 中的示意图。在这个例子中，弯月面的底部显然位于 21 和 22 两条刻度线之间，这意味着<span data-type="volume"><span data-concept="liquid">液体</span><span data-concept="volume">体积</span></span><em>肯定</em>大于 21 mL 而小于 22 mL。弯月面看起来比较靠近 22 mL 刻度线，而不是 21 mL 刻度线，因此对<span data-type="volume"><span data-concept="liquid">液体</span>的<span data-concept="volume">体积</span></span>的一个合理估计是 21.6 mL。于是在数 21.6 中，数字 2 和 1 是确定的，而 6 是估计值。有的人可能认为弯月面与两条刻度线等距，把十分位数字估计为 5，而另一些人可能认为它更靠近 22 mL 刻度线，把这一位估计为 7。请注意，既然十分位数字已经不确定，再去估计百分位上的数字就毫无意义。一般来说，像这个量筒上这样的数值刻度，允许把测量读到最小分度的十分之一。这里的刻度以 1 mL 为分度，所以<span data-concept="volume">体积</span>可以测量到最接近的 0.1 mL。</p>
+<p>这一概念对所有测量都成立，即使你并没有主动去估计。如果把一枚 25 美分硬币放在普通电子天平上，你可能得到<span data-type="mass">6.72 g 的读数</span>。数字 6 和 7 是确定的，而 2 表明<span data-type="mass">这枚硬币的<span data-concept="mass">质量</span></span>可能在 6.71 克和 6.73 克之间。这枚硬币重<span data-type="mass"><em>约</em> 6.72 克</span>，测量的名义<span data-concept="uncertainty">不确定度</span>为 ± 0.01 克。如果用更灵敏的天平称这枚硬币，<span data-type="mass"><span data-concept="mass">质量</span></span>可能是 6.723 g。这意味着<span data-type="mass">它的<span data-concept="mass">质量</span></span>位于 6.722 克和 6.724 克之间，<span data-concept="uncertainty">不确定度</span>为 0.001 克。每个测量都有一定的<strong><span data-concept="uncertainty">不确定度</span></strong>，它取决于所用的仪器（以及使用者的能力）。一个测量值中的所有数字，包括不确定的最后一位，都称为<strong><span data-concept="significant-figures">有效数字</span></strong>（英文 significant figures 或 <strong><span data-concept="significant-figures">significant digits</span></strong>）。请注意，零也可以是测量值；例如，如果你站在一台显示<span data-concept="weight">重量</span>、精确到磅的秤上，它显示“120”，那么 1（百位）、2（十位）和 0（个位）都是有效（测量）数字。</p>
+</section>
+
+<section id="counting-digits">
+<h2>有效数字的计数：前导零、中间零和末尾零</h2>
+<p class="cite-target">当测量结果的<span data-concept="significant-figures">有效数字</span>准确地反映了测量过程的确定程度时，这个结果才算报告得恰当。但是，如果你要分析一个已报告的数值，并设法确定其中哪些数字是有效的、哪些不是，该怎么办呢？首先，所有非零数字都是有效的，需要斟酌的只有零。我们用“前导”“末尾”和“夹”来称呼这些零，并考虑如何处理它们。</p>
+<figure class="sim" id="fig-zeros" data-original="/media/ch01/CNX_Chem_01_05_SigDigits5_img.jpg">
+  <div class="sim-head"><span class="eyebrow">Figure</span><span>以两个数为例，说明三种零的名称。在 3090 中，3 和 9 之间的零是中间零，末尾的零是末尾零；在 0.008020 中，8 之前的三个零是前导零，8 和 2 之间的零是中间零，最后一个零是末尾零。</span></div>
+</figure>
+<p>从左边第一个非零数字开始，数这个数字及其右边所有其余的数字。这就是该测量值中<span data-concept="significant-figures">有效数字</span>的位数，除非最后一位是位于小数点左侧的末尾零。</p>
+<figure class="sim" id="fig-count-digits" data-original="/media/ch01/CNX_Chem_01_05_SigDigits1_img.jpg">
+  <div class="sim-head"><span class="eyebrow">Figure</span><span>从左边第一个非零数字开始数。1267 m 中的 1 是计数的起点，其右边的每个数字都要计入，共四位有效数字。55.0 g 中的第一个 5 是计数的起点，小数点右边的 0 也要计入，共三位有效数字。</span></div>
+</figure>
+<p>中间零来自测量，因此总是有效的。然而前导零从来不是有效的——它们只是告诉我们小数点的位置。</p>
+<figure class="sim" id="fig-captive-leading" data-original="/media/ch01/CNX_Chem_01_05_SigDigits2_img.jpg">
+  <div class="sim-head"><span class="eyebrow">Figure</span><span>中间零要计入，前导零不计入。70.607 mL 的每个数字都是测量得到的，两个零也在其内，所以它有五位有效数字；0.00832407 mL 的计数从 8 开始，其前面的三个零只是标示小数点的位置，所以它有六位有效数字。</span></div>
+</figure>
+<p>这个例子中的前导零不是有效的。我们可以使用科学记数法（见<a href="https://openstax.org/books/chemistry-2e/pages/b-essential-mathematics">附录 B</a>），把这个数表示为 8.32407 $\times$ 10<sup>−3</sup>；这样，数 8.32407 包含了全部<span data-concept="significant-figures">有效数字</span>，而 10<sup>−3</sup> 标示小数点的位置。</p>
+<p>对于以位于小数点位置左侧的零结尾的数，其<span data-concept="significant-figures">有效数字</span>的位数是不确定的。测量值 1,300 克中的零可能是有效的，也可能只是表明小数点的位置。这种歧义可以用科学记数法来消除：1.3 $\times$ 10<sup>3</sup>（两位<span data-concept="significant-figures">有效数字</span>），1.30 $\times$ 10<sup>3</sup>（三位<span data-concept="significant-figures">有效数字</span>，如果十位是测量得到的），或 1.300 $\times$ 10<sup>3</sup>（四位<span data-concept="significant-figures">有效数字</span>，如果个位也是测量得到的）。在只有小数形式的数可用时，稳妥的做法是假定所有末尾零都不是有效的。</p>
+<figure class="sim" id="fig-trailing" data-original="/media/ch01/CNX_Chem_01_05_SigDigits3_img.jpg">
+  <div class="sim-head"><span class="eyebrow">Figure</span><span>1300 g 的末尾零。1 和 3 是测量的结果；两个零可能是测量得到的数字，也可能只是小数点的占位符，只有下面的指数形式才能说明是哪一种。</span></div>
+</figure>
+<p>在确定<span data-concept="significant-figures">有效数字</span>时，务必留意所报告的数值，并在评估该数值是否合理时，从什么是合理的或可能的角度来考虑测量和<span data-concept="significant-figures">有效数字</span>。例如，2014 年 1 月的官方人口普查报告美国常住人口为 317,297,725。你认为美国人口真的被正确地确定到了所报告的九位<span data-concept="significant-figures">有效数字</span>，即确定到了<span data-concept="exact-number">精确</span>的人数吗？人们不断地出生、死亡，或迁入、迁出这个国家，而且对于大量实际上未被统计到的人，还要做一些假设。由于这些<span data-concept="uncertainty">不确定度</span>，更合理的期望也许是我们知道的人口数在一百万左右的范围之内，这时人口应报告为 3.17 $\times$ 10<sup>8</sup> 人。</p>
+</section>
+
+<section id="rounding">
+<h2>对计算结果进行修约</h2>
+<p class="cite-target">关于<span data-concept="uncertainty">不确定度</span>的第二条重要原则是，由测量值计算得到的结果，其不确定程度至少与该测量本身一样大。要考虑测量中的<span data-concept="uncertainty">不确定度</span>，以免对计算结果的<span data-concept="uncertainty">不确定度</span>作出错误的表述。做到这一点的一种方法，是以正确的<span data-concept="significant-figures">有效数字</span>位数报告计算结果，而位数由以下三条数的<strong><span data-concept="rounding">修约</span></strong>规则确定：</p>
+<ol>
+<li>数相加或相减时，把结果修约到与小数位数最少的那个数相同的小数位数（就加减而言，这是最不确定的值）。</li>
+<li>数相乘或相除时，把结果修约到与<span data-concept="significant-figures">有效数字</span>位数最少的那个数相同的位数（就乘除而言，这是最不确定的值）。</li>
+<li>如果要舍去的数字（紧靠在要保留的数字右边的那一位）小于 5，就“向下修约”，保留的数字不变；如果它大于 5，就“向上修约”，保留的数字加 1。如果舍去的数字是 5，并且它是该数的最后一位，或者其后只有零，则向上或向下修约，以使保留的数字成为偶数为准。如果舍去的 5 后面有任何非零数字，就向上修约。（这条规则的最后一部分也许让你觉得有点奇怪，但它以可靠的统计为依据，目的是在舍去数字“5”时避免任何偏差，因为 5 与保留数字的两个可能取值同样接近。）</li>
+</ol>
+<p>下面的例子说明如何应用这条规则，把几个不同的数<span data-concept="rounding">修约</span>到三位<span data-concept="significant-figures">有效数字</span>：</p>
+<ul>
+<li>0.028675 “向上”修约为 0.0287（舍去的数字 7 大于 5）</li>
+<li>18.3384 “向下”修约为 18.3（舍去的数字 3 小于 5）</li>
+<li>6.8752 “向上”修约为 6.88（舍去的数字是 5，其后有非零数字）</li>
+<li>92.85 “向下”修约为 92.8（舍去的数字是 5，保留的数字是偶数）</li>
+</ul>
+<p>让我们通过几个例子来运用这些规则。</p>
+<div class="example" id="ex-rounding">
+<h3>例 1.3 · 数的修约</h3>
+<p>把下列各数修约到指定的<span data-concept="significant-figures">有效数字</span>位数：</p>
+<p>（a）31.57（修约到两位<span data-concept="significant-figures">有效数字</span>）</p>
+<p>（b）8.1649（修约到三位<span data-concept="significant-figures">有效数字</span>）</p>
+<p>（c）0.051065（修约到四位<span data-concept="significant-figures">有效数字</span>）</p>
+<p>（d）0.90275（修约到四位<span data-concept="significant-figures">有效数字</span>）</p>
+<h4>解</h4>
+<p>（a）31.57 “向上”修约为 32（舍去的数字是 5，保留的数字是偶数）</p>
+<p>（b）8.1649 “向下”修约为 8.16（舍去的数字 4 小于 5）</p>
+<p>（c）0.051065 “向下”修约为 0.05106（舍去的数字是 5，保留的数字是偶数）</p>
+<p>（d）0.90275 “向上”修约为 0.9028（舍去的数字是 5，保留的数字是偶数）</p>
+<h4>学习检测</h4>
+<div class="exercises" data-place="ex-rounding"></div>
+</div>
+</section>
+
+<section id="calculations">
+<h2>在计算中保留有效数字</h2>
+<div class="example" id="ex-add-subtract">
+<h3>例 1.4 · 含有效数字的加法和减法</h3>
+<p class="cite-target">规则：数相加或相减时，把结果修约到与小数位数最少的那个数相同的小数位数（即就加减而言最不确定的值）。</p>
+<p>（a）把 1.0023 g 与 4.383 g 相加。</p>
+<p>（b）从 486 g 中减去 421.23 g。</p>
+<h4>解</h4>
+<p>（a）</p>
+$$\begin{array}{r} 1.0023\ \text{g} \\ +\ 4.383\ \text{g} \\ \hline 5.3853\ \text{g} \end{array}$$
+<p>答案是 5.385 g（修约到千分位；三位小数）</p>
+<p>（b）</p>
+$$\begin{array}{r} 486\ \text{g} \\ -\ 421.23\ \text{g} \\ \hline 64.77\ \text{g} \end{array}$$
+<p>答案是 65 g（修约到个位；没有小数位）</p>
+<figure class="sim" id="fig-column-sums" data-original="/media/ch01/CNX_Chem_01_05_SigDigits4_img.jpg">
+  <div class="sim-head"><span class="eyebrow">Figure</span><span>按竖式列出的两个和。在（a）中，1.0023 g 到万分位，而 4.383 g 只到千分位，所以 4.383 g 是二者中较不精密的，和 5.3853 g 修约到千分位，即 5.385 g。在（b）中，486 g 没有小数位，所以差 64.77 g 修约到个位，即 65 g。</span></div>
+</figure>
+<h4>学习检测</h4>
+<div class="exercises" data-place="ex-add-subtract"></div>
+</div>
+<div class="example" id="ex-multiply-divide">
+<h3>例 1.5 · 含有效数字的乘法和除法</h3>
+<p>规则：数相乘或相除时，把结果修约到与<span data-concept="significant-figures">有效数字</span>位数最少的那个数相同的位数（就乘除而言最不确定的值）。</p>
+<p>（a）把 0.6238 cm 乘以 6.6 cm。</p>
+<p>（b）把 421.23 g 除以 486 mL。</p>
+<h4>解</h4>
+<p>（a）</p>
+$$\begin{array}{l} 0.6238\ \text{cm} \times 6.6\ \text{cm} = 4.11708\ \text{cm}^{2} \longrightarrow \text{结果为 } 4.1\ \text{cm}^{2}\ (\text{修约到两位有效数字}) \\ \text{四位有效数字} \times \text{两位有效数字} \longrightarrow \text{答案为两位有效数字} \end{array}$$
+<p>（b）</p>
+$$\begin{array}{l} \dfrac{421.23\ \text{g}}{486\ \text{mL}} = 0.866728\ldots\ \text{g/mL} \longrightarrow \text{结果为 } 0.867\ \text{g/mL}\ (\text{修约到三位有效数字}) \\[1.2em] \dfrac{\text{五位有效数字}}{\text{三位有效数字}} \longrightarrow \text{答案为三位有效数字} \end{array}$$
+<h4>学习检测</h4>
+<div class="exercises" data-place="ex-multiply-divide"></div>
+</div>
+<p>在所有这些技术细节之中，重要的是记住制定这些关于<span data-concept="significant-figures">有效数字</span>和<span data-concept="rounding">修约</span>的规则的原因——为了正确地表示所报告数值的确定程度，并确保计算结果不被表示得比计算中所用的最不确定的值更确定。</p>
+<div class="example" id="ex-bathtub">
+<h3>例 1.6 · 含有效数字的计算</h3>
+<p>一种常见的浴缸<span data-type="length">长 13.44 dm</span>，<span data-type="length">宽 5.920 dm</span>，<span data-type="length">深 2.54 dm</span>。假定浴缸是长方形的，计算<span data-type="volume">它的近似<span data-concept="volume">体积</span></span>，以<span data-concept="liter">升</span>为单位。</p>
+<h4>解</h4>
+$$\begin{array}{lll} \kV &amp; = &amp; l \times w \times d \\ &amp; = &amp; 13.44\ \text{dm} \times 5.920\ \text{dm} \times 2.54\ \text{dm} \\ &amp; = &amp; 202.09459\ldots\ \text{dm}^{3}\ (\text{计算器给出的值}) \\ &amp; = &amp; 202\ \text{dm}^{3}\text{，即 202 L}\ (\text{答案修约到三位有效数字}) \end{array}$$
+<h4>学习检测</h4>
+<div class="exercises" data-place="ex-bathtub"></div>
+</div>
+<div class="example" id="ex-rebar">
+<h3>例 1.7 · 用排水法实验测定密度</h3>
+<p>称量<span data-ref="rebar">一根钢筋</span>，然后把它浸没在盛有部分水的量筒中，结果如图所示。</p>
+<figure class="sim" id="fig-rebar" data-original="/media/ch01/CNX_Chem_01_04_CylRebar.jpg">
+  <div class="sim-head"><span class="eyebrow">Figure</span><span><span data-ref="rebar">这根钢筋</span>浸没前后的量筒。<span data-ref="rebar">这块 69.658 g 的钢筋</span>放入前，水位在 <span data-type="volume">13.5 mL</span>，放入后在 <span data-type="volume">22.4 mL</span>，两次读数之间的<span data-type="volume">升高量</span>就是<span data-type="volume">钢筋的体积</span>。</span></div>
+</figure>
+<p>（a）利用这些数值确定<span data-type="density">这根钢筋的<span data-concept="density">密度</span></span>。</p>
+<p>（b）钢筋主要是铁。你在（a）中得到的结果支持这一说法吗？为什么？</p>
+<h4>解</h4>
+<p><span data-type="volume">这根钢筋的<span data-concept="volume">体积</span></span>等于<span data-type="volume">排开的水的<span data-concept="volume">体积</span></span>：</p>
+$$\text{体积} = 22.4\ \text{mL} - 13.5\ \text{mL} = 8.9\ \text{mL} = 8.9\ \text{cm}^{3}$$
+<p>（按加减法规则，修约到最接近的 0.1 mL）</p>
+<p><span data-type="density"><span data-concept="density">密度</span></span>是质量与体积之比：</p>
+$$\text{密度} = \frac{\text{质量}}{\text{体积}} = \frac{69.658\ \text{g}}{8.9\ \text{cm}^{3}} = 7.8\ \text{g/cm}^{3}$$
+<p>（按乘除法规则，修约到两位<span data-concept="significant-figures">有效数字</span>）</p>
+<p>由表 1.4 可知，<span data-type="density">铁的<span data-concept="density">密度</span></span>为 7.9 g/cm<sup>3</sup>，与<span data-type="density">钢筋的密度</span>非常接近，这为钢筋主要是铁这一事实提供了一些支持。</p>
+<h4>学习检测</h4>
+<figure class="sim" id="fig-gold" data-original="/media/ch01/CNX_Chem_01_04_CylGold.jpg">
+  <div class="sim-head"><span class="eyebrow">Figure</span><span><span data-ref="nugget">这块形状不规则、有光泽的淡黄色物质</span>浸没前后的量筒。<span data-ref="nugget">这块 51.842 g 的物块</span>放入前，水位在 <span data-type="volume">17.1 mL</span>，放入后在 <span data-type="volume">19.8 mL</span>。</span></div>
+</figure>
+<div class="exercises" data-place="ex-rebar"></div>
+</div>
+</section>
+
+<section id="accuracy-precision">
+<h2>重复测量：精密度与准确度</h2>
+<p class="cite-target">科学家通常对一个量进行重复测量，以确保其研究结果的质量，并评价结果的<strong><span data-concept="precision">精密度</span></strong>和<strong><span data-concept="accuracy">准确度</span></strong>。如果以同样的方式重复测量时得到非常相近的结果，就说这些测量是精密的。如果一个测量得到的结果非常接近真值或公认值，就认为它是准确的。精密的数值彼此一致；准确的数值与真值一致。这些特征描述可以推广到其他情形，例如射箭比赛的成绩（图 1.27）。</p>
+<figure class="sim" id="sim-targets" data-figure="1.27" data-original="/media/ch01/CNX_Chem_01_05_Archery.jpg" data-original-caption="（a）这些箭既靠近靶心，彼此也很接近，所以既准确又精密。（b）这些箭彼此接近，但没有命中靶心，所以精密但不准确。（c）这些箭既没有命中靶心，彼此也不接近，所以既不准确也不精密。">
+  <div class="sim-head"><span class="eyebrow">Figure 1.27</span><span>射手的箭落在靶上，你可以改变两个互不相干的量：<span data-type="length">整组箭离靶心有多远</span>，以及<span data-type="length">各支箭彼此之间散开得有多宽</span>。前者是射手的准确度，后者是精密度。靶旁的方格把这组箭放进四个角之一，每个角是一位不同的射手，各有自己的颜色，实时显示的箭取其所在角的颜色。把这组箭移离靶心而不让它们散开，可重现<span data-ref="archer-b">书中的（b）</span>，再让它们散开则得到 <span data-ref="archer-c">（c）</span>，把它们收紧并回到中心则得到 <span data-ref="archer-a">（a）</span>。<span data-ref="archer-d">第四个角</span>准确但不精密，与下面的 2 号分装机相对应。</span></div>
+</figure>
+<p>假设一家制药公司的质量控制化学师受命检查三台不同机器的<span data-concept="accuracy">准确度</span>和<span data-concept="precision">精密度</span>，这些机器本应把 <span data-type="volume">10 盎司（296 mL）</span>止咳糖浆分装到储存瓶中。她用每台机器各灌装五个瓶子，然后仔细测定<span data-type="volume">实际分装的<span data-concept="volume">体积</span></span>，得到表 1.5 中列出的结果。</p>
+<div class="book-table">
+  <div class="tcap"><span class="eyebrow">表 1.5</span><span>10 盎司（296 mL）分装机分装的止咳药<span data-concept="volume">体积</span>（mL）</span></div>
+  <table>
+    <thead><tr><th>1 号分装机</th><th>2 号分装机</th><th>3 号分装机</th></tr></thead>
+    <tbody>
+      <tr><td class="num">283.3</td><td class="num">298.3</td><td class="num">296.1</td></tr>
+      <tr><td class="num">284.1</td><td class="num">294.2</td><td class="num">295.9</td></tr>
+      <tr><td class="num">283.9</td><td class="num">296.0</td><td class="num">296.1</td></tr>
+      <tr><td class="num">284.0</td><td class="num">297.8</td><td class="num">296.0</td></tr>
+      <tr><td class="num">284.1</td><td class="num">293.9</td><td class="num">296.1</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>考虑到这些结果，她将报告：1 号分装机是精密的（各数值彼此接近，相差在零点几<span data-concept="milliliter">毫升</span>之内），但不准确（没有一个数值接近<span data-type="volume">296 mL 的目标值</span>，每个都低了 10 mL 以上）。2 号分装机的结果<span data-concept="accuracy">准确度</span>有所提高（<span data-type="volume">每个<span data-concept="volume">体积</span></span>与 296 mL 相差都不到 3 mL），但<span data-concept="precision">精密度</span>变差了（<span data-type="volume"><span data-concept="volume">体积</span></span>相差超过 4 mL）。最后，她可以报告 3 号分装机工作良好，分装止咳糖浆既准确（<span data-type="volume">所有<span data-concept="volume">体积</span></span>与<span data-type="volume">目标<span data-concept="volume">体积</span></span>相差都在 0.1 mL 之内）又精密（<span data-type="volume"><span data-concept="volume">体积</span></span>彼此相差不超过 0.2 mL）。</p>
+</section>

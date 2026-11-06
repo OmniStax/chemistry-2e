@@ -1,0 +1,139 @@
+<section id="dimensional-analysis">
+<h2>单位与其数值遵循同样的运算</h2>
+<p class="cite-target">所关注的量往往不容易（甚至不可能）直接测量，而必须由其他直接测得的性质和适当的数学关系计算得出。例如，考虑测量短跑运动员的平均<span data-concept="speed">速率</span>。这通常是通过测量运动员从起跑线跑到终点线所需的<em><span data-concept="time">时间</span></em>以及这两条线之间的<em>距离</em>，再根据联系这三种性质的方程计算<em><span data-concept="speed">速率</span></em>来完成的：</p>
+$$\text{速率}=\frac{\text{距离}}{\text{时间}}$$
+<p>奥运水平的短跑运动员能在大约<span data-type="time">10 s</span>内跑完<span data-type="length">100 m</span>，对应的<span data-type="velocity">平均速率</span>为</p>
+$$\frac{\text{100 m}}{\text{10 s}}=\text{10 m/s}$$
+<p>（对于这一计算和下一个计算，假定末尾的零是<span data-concept="significant-figures">有效数字</span>。）请注意，这一简单的算术是将每个被测量的数值相除，得到计算所得之量的数值（100/10 = 10），<em>同样地</em>，也将每个被测量的<span data-concept="unit">单位</span>相除，得到计算所得之量的<span data-concept="unit">单位</span>（m/s = m/s）。现在，考虑用这同一关系来预测以这一<span data-concept="speed">速率</span>奔跑的人行进<span data-type="length">25 m 的距离</span>所需的<span data-concept="time">时间</span>。这三种性质之间使用的是同一关系，但在这种情况下，给出的两个量是<span data-type="velocity">速率（10 m/s）</span>和<span data-type="length">距离（25 m）</span>。要得到所求的性质，即<span data-concept="time">时间</span>，必须对方程作适当的变形：</p>
+$$\text{时间}=\frac{\text{距离}}{\text{速率}}$$
+<p>于是，<span data-type="time">时间</span>可以这样计算：</p>
+$$\frac{\text{25 m}}{\text{10 m/s}}=\text{2.5 s}$$
+<p>同样，对数值的运算（25/10 = 2.5）伴随着对<span data-concept="unit">单位</span>的同样运算（m/(m/s) = s），从而得到结果的数值和<span data-concept="unit">单位</span>，即<span data-type="time">2.5 s</span>。请注意，正如数的情形一样，当一个<span data-concept="unit">单位</span>除以相同的<span data-concept="unit">单位</span>（此处为 m/m）时，结果为“1”——或者按通常的说法，<span data-concept="unit">单位</span>“约去”了。</p>
+<p>这些计算是一种用途广泛的数学方法的实例，这种方法称为<strong><span data-concept="dimensional-analysis">量纲分析</span></strong>（或<strong><span data-concept="dimensional-analysis">因子标记法</span></strong>）。<span data-concept="dimensional-analysis">量纲分析</span>基于这样一个前提：<em>量的<span data-concept="unit">单位</span>必须与其相应的数值经受同样的数学运算</em>。这种方法可以应用于从简单的<span data-concept="unit">单位</span>换算到涉及几个不同量的、更复杂的多步计算等各种计算。</p>
+</section>
+
+<section id="conversion-factors">
+<h2>换算因子是等于一的比值</h2>
+<p class="cite-target">用不同测量<span data-concept="unit">单位</span>表示的两个等价量之比，可以用作<strong><span data-concept="unit-conversion-factor">单位换算因子</span></strong>。例如，2.54 cm 和 1 in. 的<span data-concept="length">长度</span>是等价的（按定义），因此可以由比值导出<span data-concept="unit-conversion-factor">单位换算因子</span>，</p>
+$$\frac{\text{2.54 cm}}{\text{1 in.}}\;\text{(2.54 cm}=\text{1 in.) 或 2.54}\;\frac{\text{cm}}{\text{in.}}$$
+<p>表 1.6 给出了另外几个常用的换算因子。</p>
+<div class="book-table">
+  <div class="tcap"><span class="eyebrow">表 1.6</span><span>常用换算因子</span></div>
+  <table>
+    <thead><tr><th><span data-concept="length">长度</span></th><th><span data-concept="volume">体积</span></th><th><span data-concept="mass">质量</span></th></tr></thead>
+    <tbody>
+      <tr><td>1 m = 1.0936 yd</td><td>1 L = 1.0567 qt</td><td>1 kg = 2.2046 lb</td></tr>
+      <tr><td>1 in. = 2.54 cm（精确值）</td><td>1 qt = 0.94635 L</td><td>1 lb = 453.59 g<sup>1</sup></td></tr>
+      <tr><td>1 km = 0.62137 mi</td><td>1 ft<sup>3</sup> = 28.317 L</td><td>1（常衡）oz = 28.349 g</td></tr>
+      <tr><td>1 mi = 1609.3 m</td><td>1 tbsp = 14.787 mL</td><td>1（金衡）oz = 31.103 g</td></tr>
+    </tbody>
+  </table>
+  <p><small><sup>1</sup>严格地说，盎司和磅是<span data-concept="weight">重量</span> <em>W</em> 的<span data-concept="unit">单位</span>（<span data-concept="force">力</span>，等于<span data-concept="mass">质量</span>与重力加速度的乘积，$W = \km g$）。本表中的换算关系常用来在假定地球表面 <em>g</em> 取标称值的情况下，将<span data-concept="mass">质量</span>与<span data-concept="weight">重量</span>等同起来。</small></p>
+</div>
+<p>当一个量（例如以英寸为单位的距离）乘以适当的<span data-concept="unit-conversion-factor">单位换算因子</span>时，该量就被换算成以不同<span data-concept="unit">单位</span>表示的等值量（例如以厘米为单位的距离）。例如，<span data-type="length">一名篮球运动员 34 英寸的垂直弹跳高度</span>可以这样换算成厘米：</p>
+$$34\;\cancel{\text{in.}}\;\times\;\frac{\text{2.54 cm}}{1\;\cancel{\text{in.}}}\;=\text{86 cm}$$
+<p>由于这一简单的算术涉及的是<em>量</em>，<span data-concept="dimensional-analysis">量纲分析</span>的前提要求我们将<em>数值和<span data-concept="unit">单位</span></em>都相乘。这两个量的数值相乘，得到乘积量的数值 86，而<span data-concept="unit">单位</span>相乘，得到 $\frac{\text{in.}\;\times\;\text{cm}}{\text{in.}}$。正如数的情形一样，相同<span data-concept="unit">单位</span>之比在数值上也等于一，$\frac{\text{in.}}{\text{in.}}=\text{1,}$ 因此<span data-concept="unit">单位</span>的乘积化简为 <em>cm</em>。（相同的<span data-concept="unit">单位</span>相除得到因子 1 时，称为“约去”。）如下面的例题所示，<span data-concept="dimensional-analysis">量纲分析</span>可用来确认<span data-concept="unit">单位</span>换算因子是否应用得当。</p>
+<div class="example" id="ex-frisbee">
+<h3>例 1.8 · 使用单位换算因子</h3>
+<p><span data-type="mass">一个比赛用飞盘的<span data-concept="mass">质量</span></span>为 125 g。利用由关系式 1 oz = 28.349 g 导出的<span data-concept="unit-conversion-factor">单位换算因子</span>（表 1.6），将<span data-type="mass">其<span data-concept="mass">质量</span></span>换算成盎司。</p>
+<h4>解</h4>
+<p>给定换算因子后，可以用与将<span data-concept="length">长度</span>由英寸换算成厘米时所用方程类似的方程，求出<span data-type="mass">以盎司为单位的<span data-concept="mass">质量</span></span>。</p>
+$$x\;\text{oz}=\text{125 g}\;\times\;\text{单位换算因子}$$
+<p><span data-concept="unit-conversion-factor">单位换算因子</span>可以表示为：</p>
+$$\frac{\text{1 oz}}{\text{28.349 g}}\;\text{和}\;\frac{\text{28.349 g}}{\text{1 oz}}$$
+<p>正确的<span data-concept="unit-conversion-factor">单位换算因子</span>是能约去克这一<span data-concept="unit">单位</span>而留下盎司的那个比值。</p>
+$$\begin{array}{lll}x\;\text{oz} & = & 125\;\cancel{\text{g}}\;\times\;\frac{\text{1 oz}}{\text{28.349}\;\cancel{\text{g}}} \\ & = & \left(\frac{125}{\text{28.349}}\right)\;\text{oz} \\ & = & \text{4.41 oz (三位有效数字)}\end{array}$$
+<div class="exercises" data-place="ex-frisbee"></div>
+</div>
+</section>
+
+<section id="computing-quantities">
+<h2>由不同单位的测量值计算一个量</h2>
+<p class="cite-target">除了简单的<span data-concept="unit">单位</span>换算之外，<span data-concept="dimensional-analysis">因子标记法</span>还可以用来解决涉及计算的更复杂的问题。无论细节如何，基本方法都是相同的——计算中涉及的所有<em>因子</em>都必须适当地取向，以确保它们的<em>标记</em>（<span data-concept="unit">单位</span>）能够适当地约去和/或组合，从而在结果中得到所需的<span data-concept="unit">单位</span>。随着你对<span data-concept="chemistry">化学</span>的学习不断深入，你将遇到许多应用这种方法的机会。</p>
+<div class="example" id="ex-antifreeze">
+<h3>例 1.9 · 由测量结果和已知数学关系计算量</h3>
+<p>常见<span data-type="density">防冻液的<span data-concept="density">密度</span></span>以 g/mL 为<span data-concept="unit">单位</span>是多少？一份<span data-type="volume">4.00 qt</span> 的防冻液样品重<span data-type="mass">9.26 lb</span>。</p>
+<h4>解</h4>
+<p>由于 $\text{密度}=\frac{\text{质量}}{\text{体积}}$，我们需要用<span data-type="mass">以克为单位的<span data-concept="mass">质量</span></span>除以<span data-type="volume">以<span data-concept="milliliter">毫升</span>为单位的<span data-concept="volume">体积</span></span>。这就需要把<span data-type="volume">所给的<span data-concept="volume">体积</span></span>从夸脱换算成<span data-concept="milliliter">毫升</span>，并把<span data-type="mass">所给的<span data-concept="mass">质量</span></span>从磅换算成克。表 1.6 给出了所需的换算因子：1 lb = 453.59 g；1 L = 1.0567 qt；1 L = 1,000 mL。<span data-concept="mass">质量</span>可以按如下方式从磅换算成克：</p>
+$$\text{9.26}\;\cancel{\text{lb}}\;\times\;\frac{\text{453.59 g}}{1\;\cancel{\text{lb}}}\;=4.20\;\times\;{10}^{3}\;\text{g}$$
+<p><span data-concept="volume">体积</span>可以分两步从夸脱换算成<span data-concept="milliliter">毫升</span>：</p>
+<ol>
+<li><p><em>将夸脱换算成<span data-concept="liter">升</span>。</em></p>
+$$\text{4.00}\;\cancel{\text{qt}}\;\times\;\frac{\text{1 L}}{\text{1.0567}\;\cancel{\text{qt}}}\;=\text{3.78 L}$$</li>
+<li><p><em>将<span data-concept="liter">升</span>换算成<span data-concept="milliliter">毫升</span>。</em></p>
+$$\text{3.78}\;\cancel{\text{L}}\;\times\;\frac{\text{1000 mL}}{1\;\cancel{\text{L}}}\;=3.78\;\times\;{10}^{3}\;\text{mL}$$</li>
+</ol>
+<p>于是，</p>
+$$\text{密度}=\frac{\text{4.20}\;\times\;{10}^{3}\;\text{g}}{3.78\;\times\;{10}^{3}\;\text{mL}}\;=\text{1.11 g/mL}$$
+<p>另一种办法是，可以将计算安排成依次使用三个<span data-concept="unit">单位</span>换算因子，如下所示：</p>
+$$\frac{\text{9.26}\;\cancel{\text{lb}}}{\text{4.00}\;\cancel{\text{qt}}}\;\times\;\frac{\text{453.59 g}}{1\;\cancel{\text{lb}}}\;\times\;\frac{\text{1.0567}\;\cancel{\text{qt}}}{1\;\cancel{\text{L}}}\;\times\;\frac{1\;\cancel{\text{L}}}{\text{1000 mL}}\;=\text{1.11 g/mL}$$
+<div class="exercises" data-place="ex-antifreeze"></div>
+</div>
+<div class="example" id="ex-roadster">
+<h3>例 1.10 · 由测量结果和已知数学关系计算量</h3>
+<p>一辆 2014 款兰博基尼 Aventador Roadster 从费城行驶到亚特兰大，<span data-type="length">距离约 1250 km</span>，消耗了<span data-type="volume">213 L</span> 汽油。</p>
+<p>（a）这辆 Roadster 在这次行程中的（平均）燃油经济性是多少英里每加仑？</p>
+<p>（b）如果汽油价格为每加仑 &#36;3.80，这次行程的燃油费用是多少？</p>
+<h4>解</h4>
+<p>（a）首先把距离从千米换算成英里：</p>
+$$1250\;\cancel{\text{km}}\;\times\;\frac{\text{0.62137 mi}}{1\;\cancel{\text{km}}}\;=\text{777 mi}$$
+<p>然后把<span data-concept="volume">体积</span>从<span data-concept="liter">升</span>换算成加仑：</p>
+$$213\;\cancel{\text{L}}\;\times\;\frac{\text{1.0567}\;\cancel{\text{qt}}}{1\;\cancel{\text{L}}}\;\times\;\frac{\text{1 gal}}{4\;\cancel{\text{qt}}}\;=\text{56.3 gal}$$
+<p>最后，</p>
+$$\text{(平均)燃油经济性}=\frac{\text{777 mi}}{\text{56.3 gal}}\;=\text{13.8 英里/加仑}=\text{13.8 mpg}$$
+<p>另一种办法是，可以将计算安排成依次使用所有换算因子，如下所示：</p>
+$$\frac{1250\;\cancel{\text{km}}}{213\;\cancel{\text{L}}}\;\times\;\frac{\text{0.62137 mi}}{1\;\cancel{\text{km}}}\;\times\;\frac{1\;\cancel{\text{L}}}{\text{1.0567}\;\cancel{\text{qt}}}\;\times\;\frac{4\;\cancel{\text{qt}}}{\text{1 gal}}=\text{13.8 mpg}$$
+<p>（b）利用<span data-type="volume">先前算得的以加仑为单位的<span data-concept="volume">体积</span></span>，可得：</p>
+$$56.3\;\cancel{\text{gal}}\;\times\;\frac{\text{＄3.80}}{1\;\cancel{\text{gal}}}=\text{＄214}$$
+<div class="exercises" data-place="ex-roadster"></div>
+</div>
+</section>
+
+<section id="temperature-scales">
+<h2>温度与温标的确定方式</h2>
+<h3>温度单位的换算</h3>
+<p class="cite-target">我们用<strong><span data-concept="temperature">温度</span></strong>一词来指物质的冷热程度。测量<span data-concept="temperature">温度</span>变化的一种方法，是利用大多数物质在<span data-concept="temperature">温度</span>升高时膨胀、在<span data-concept="temperature">温度</span>降低时收缩这一事实。普通玻璃温度计中的<span data-concept="liquid">液体</span>随<span data-concept="temperature">温度</span>变化而改变其<span data-concept="volume">体积</span>，被封闭的<span data-concept="liquid">液体</span>表面在刻度标尺上的位置可以用来度量<span data-concept="temperature">温度</span>。</p>
+<p><span data-concept="temperature">温标</span>是相对于选定的参考<span data-concept="temperature">温度</span>来定义的：最常用的两个参考温度是在规定大气<span data-concept="gas-pressure">压强</span>下<span data-type="temperature">水的<span data-concept="freezing">凝固</span>和沸腾<span data-concept="temperature">温度</span></span>。在<span data-concept="celsius">摄氏</span>温标上，0 °C 被定义为<span data-type="temperature">水的<span data-concept="freezing">凝固</span><span data-concept="temperature">温度</span></span>，100 °C 被定义为<span data-type="temperature">水的沸腾<span data-concept="temperature">温度</span></span>。这两个<span data-concept="temperature">温度</span>之间的间隔被分成 100 个相等的区间，我们称之为度。在<strong><span data-concept="fahrenheit">华氏</span></strong>温标上，<span data-type="temperature">水的<span data-concept="melting-point">凝固点</span></span>被定义为 32 °F，<span data-type="temperature">沸腾<span data-concept="temperature">温度</span></span>被定义为 212 °F。<span data-concept="fahrenheit">华氏</span>温度计上这两点之间的间隔被分成 180 等份（度）。</p>
+</section>
+
+<section id="linear-not-proportional">
+<h2>摄氏温标与华氏温标为何由直线而非正比关联</h2>
+<p class="cite-target">按上一段所述方式定义<span data-concept="celsius">摄氏</span>温标和<span data-concept="fahrenheit">华氏</span><span data-concept="temperature">温标</span>，使得这两种温标上的<span data-concept="temperature">温度</span>值之间的关系，比其他性质的不同测量<span data-concept="unit">单位</span>之间的关系稍微复杂一些。对于给定性质，大多数测量<span data-concept="unit">单位</span>彼此成正比（<em>y</em> = <em>mx</em>）。以熟悉的<span data-concept="length">长度</span><span data-concept="unit">单位</span>为例：</p>
+$$\text{以英尺计的长度}=\left(\frac{\text{1 ft}}{\text{12 in.}}\right)\;\times\;\text{以英寸计的长度}$$
+<p>其中 <em>y</em> = 以英尺计的<span data-concept="length">长度</span>，<em>x</em> = 以英寸计的<span data-concept="length">长度</span>，比例常数 <em>m</em> 就是换算因子。然而，<span data-concept="celsius">摄氏</span>温标和<span data-concept="fahrenheit">华氏</span><span data-concept="temperature">温标</span>没有共同的零点，所以这两种温标之间的关系是线性关系，而不是正比关系（<em>y</em> = <em>mx</em> + <em>b</em>）。因此，把<span data-concept="temperature">温度</span>从其中一种温标换算成另一种，所需要的不只是简单地乘以换算因子 <em>m</em>；还必须考虑两种温标零点的差异（<em>b</em>）。</p>
+<p>联系<span data-concept="celsius">摄氏</span>与<span data-concept="fahrenheit">华氏</span><span data-concept="temperature">温度</span>的线性方程，很容易由定义每种温标所用的两个<span data-concept="temperature">温度</span>导出。</p>
+<figure class="dv" id="drv-celsius-fahrenheit"></figure>
+</section>
+
+<section id="kelvin-scale">
+<h2>开尔文温标与三种温标的比较</h2>
+<p class="cite-target">正如本章前面提到的，<span data-concept="temperature">温度</span>的 SI <span data-concept="unit">单位</span>是<span data-concept="kelvin">开尔文（K）</span>。与<span data-concept="celsius">摄氏</span>温标和<span data-concept="fahrenheit">华氏</span>温标不同，<span data-concept="kelvin">开尔文</span>温标是一种绝对<span data-concept="temperature">温标</span>，其中 0（零）K 对应于<span data-type="temperature">理论上所能达到的最低<span data-concept="temperature">温度</span></span>。由于<span data-concept="kelvin">开尔文</span><span data-concept="temperature">温标</span>是绝对的，<span data-concept="unit">单位</span>缩写 K 中不含度的符号。19 世纪初发现的<span data-concept="gas">气体</span><span data-concept="volume">体积</span>与<span data-concept="temperature">温度</span>之间的关系表明，<span data-concept="gas">气体</span>的<span data-concept="volume">体积</span>在<span data-type="temperature">−273.15 °C</span> 时将为零。1848 年，英国物理学家威廉·汤姆孙（后来采用了开尔文勋爵的头衔）基于这一概念提出了绝对<span data-concept="temperature">温标</span>（关于这一主题的进一步论述见本书中关于<span data-concept="gas">气体</span>的一章）。</p>
+<p><span data-type="temperature">水在这一温标上的<span data-concept="freezing">凝固</span><span data-concept="temperature">温度</span></span>为 273.15 K，<span data-type="temperature">其沸腾<span data-concept="temperature">温度</span></span>为 373.15 K。请注意，<span data-type="temperature">这两个参考<span data-concept="temperature">温度</span></span>在数值上相差 100，与摄氏温标相同，因此这两种<span data-concept="temperature">温标</span>之间的线性关系的斜率为 $1\;\frac{\text{K}}{\text{°C}}$。按同样的方法，可以导出<span data-concept="kelvin">开尔文</span>温标与<span data-concept="celsius">摄氏</span><span data-concept="temperature">温标</span>之间相互换算的方程：</p>
+$$\kTK=\kTC+\text{273.15}$$
+$$\kTC=\kTK-\text{273.15}$$
+<p>这些方程中的 273.15 是由实验测定的，所以并不精确。图 1.28 显示了三种<span data-concept="temperature">温标</span>之间的关系。</p>
+<figure class="sim" id="sim-temperature-scales" data-figure="1.28" data-original="/media/ch01/CNX_Chem_01_06_TempScales.jpg" data-original-caption="华氏、摄氏和开尔文温标的比较。">
+  <div class="sim-head"><span class="eyebrow">Figure 1.28</span><span><span data-type="temperature">同一个温度</span>同时在三支温度计上读数，即华氏、摄氏和开尔文温度计，<span data-type="temperature">水的凝固温度和沸腾温度</span>横贯三支温度计标出。<span data-type="temperature">三个读数</span>一同变化：<span data-type="temperature">摄氏读数和开尔文读数</span>始终相差 273.15，因为它们的度大小相同，而<span data-type="temperature">华氏读数</span>在摄氏温标每升高五度时升高九度。温度计旁的图以<span data-type="temperature">摄氏温度</span>为横坐标，绘出<span data-type="temperature">华氏读数和开尔文读数</span>，两条直线都不经过原点，这就是换算<span data-concept="temperature">温度</span>既需要斜率又需要截距的原因。</span></div>
+</figure>
+<p>尽管<span data-concept="kelvin">开尔文</span>（绝对）<span data-concept="temperature">温标</span>是正式的 SI <span data-concept="temperature">温标</span>，但<span data-concept="celsius">摄氏</span>温标在许多科学场合中常用，并且在世界上几乎所有地区的非科学场合中都是首选的温标。极少数国家（美国及其属地、巴哈马、伯利兹、开曼群岛和帕劳）仍在天气、医疗和烹饪中使用<span data-concept="fahrenheit">华氏</span>温标。</p>
+</section>
+
+<section id="temperature-examples">
+<h2>温度的换算</h2>
+<div class="example" id="ex-body-temperature">
+<h3>例 1.11 · 由摄氏温度换算</h3>
+<p><span data-type="temperature">正常<span data-concept="temperature">体温</span></span>通常被认为是 37.0 °C（尽管它随一天中的时间和测量方法而异，个体之间也有差异）。<span data-type="temperature">这一<span data-concept="temperature">温度</span></span>在<span data-concept="kelvin">开尔文</span>温标和<span data-concept="fahrenheit">华氏</span>温标上分别是多少？</p>
+<h4>解</h4>
+$$\text{K}=\text{°C}+273.15=37.0+273.2=\text{310.2 K}$$
+$$\text{°F}=\frac{9}{5}\text{°C}+32.0=\left(\frac{9}{5}\;\times\;37.0\right)+32.0=66.6+32.0=\text{98.6 °F}$$
+<div class="exercises" data-place="ex-body-temperature"></div>
+</div>
+<div class="example" id="ex-oven">
+<h3>例 1.12 · 由华氏温度换算</h3>
+<p>烘烤一份现成的比萨需要<span data-type="temperature">450 °F 的烤箱<span data-concept="temperature">温度</span></span>。如果你在欧洲，而你的烤箱温度计使用<span data-concept="celsius">摄氏</span>温标，那么<span data-type="temperature">应设定为多少</span>？<span data-type="temperature"><span data-concept="kelvin">开尔文</span><span data-concept="temperature">温度</span></span>是多少？</p>
+<h4>解</h4>
+$$\begin{aligned}\text{°C}&=\frac{5}{9}\text{(°F}-\text{32)}=\frac{5}{9}(450-32)=\frac{5}{9}\;\times\;418=\text{232 °C}\\&\longrightarrow\;\text{将烤箱设为 230 °C}\hspace{2em}(\text{两位有效数字})\end{aligned}$$
+$$\begin{aligned}\text{K}&=\text{°C}+273.15=\frac{5}{9}\text{(°F}-\text{32)}+273.15\\&=\frac{5}{9}(450-32)+273.15=505.4\;\text{K}\;\longrightarrow 5.1\times{10}^{2}\;\text{K}\end{aligned}$$
+<div class="exercises" data-place="ex-oven"></div>
+</div>
+</section>

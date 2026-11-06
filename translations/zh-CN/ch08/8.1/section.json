@@ -1,0 +1,403 @@
+{
+ "id": "8.1",
+ "module": "m68744",
+ "chapter": "8",
+ "title": "价键理论",
+ "short": "价键理论",
+ "lead": "价键理论把共价键描述为两个原子上半充满的原子轨道的重叠，这是路易斯结构和价层电子对互斥理论给出的分子形状所未能解释的。两个氢原子靠拢时的<span data-type=\"energy\">能量</span>决定<span data-type=\"length\">键长</span>和<span data-type=\"energy\">键能</span>，而轨道重叠的两种方式，即头碰头和肩并肩，构成单键、双键和三键。",
+ "objectives": [
+  "用原子轨道的重叠来描述共价键的形成",
+  "说明 σ 键和 π 键的定义并举例"
+ ],
+ "summary_html": "<p>价键理论把成键描述为不同原子上两个独立的原子轨道发生重叠的结果，这种重叠产生一个区域，其中有一对电子由两个原子共有。当轨道沿着包含两个原子核的轴重叠时，形成 σ 键。当它们以在该轴上产生节点的方式重叠时，形成 π 键。</p>",
+ "notes": "",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案来自书后答案和“学习检测”的答案；没有答案的数值习题 fs-idp204835968（由表 8.1 和由反应焓求一个 H–Cl 键的能量）被略去，而没有答案的概念题 fs-idp92050208、fs-idp78672368 和 fs-idp42077552 附有一份建议思路，并标明为 OmniStax 自己所写。书中在 fs-idp84623072 和 fs-idp108425904 的答案里印出的图像，保留在这两道题的答案中。",
+ "figures": [
+  {
+   "id": "sim-morse",
+   "kind": "sim",
+   "number": "8.2",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_01_Morse-3a8e.jpg"
+   ],
+   "original_caption": "（a）两个氢原子之间的相互作用随距离而变化。（b）体系的能量随原子的相互作用而变化。最低（最稳定）的能量出现在 74 pm 处，这就是 H₂ 分子所观察到的键长。",
+   "draws": [
+    "energy",
+    "length"
+   ],
+   "conventions": [
+    "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "atoms clear of the edge, stray cloud, axis title and label clearances"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-overlap",
+   "kind": "sim",
+   "number": "8.3",
+   "folds": [
+    "8.4",
+    "8.5"
+   ],
+   "originals": [
+    "/media/ch08/CNX_Chem_08_01_overlap.jpg",
+    "/media/ch08/CNX_Chem_08_01_sigma.jpg",
+    "/media/ch08/CNX_Chem_08_01_pi.jpg"
+   ],
+   "original_caption": "（图 8.3）（a）当两个 p 轨道头碰头时，它们的重叠最大。（b）任何其他排列都使重叠减少。圆点表示原子核的位置。（图 8.4）σ 键由下列情形的重叠形成：（a）两个 s 轨道，（b）一个 s 轨道和一个 p 轨道，（c）两个 p 轨道。圆点表示原子核的位置。（图 8.5）π 键由两个 p 轨道的肩并肩重叠形成。圆点表示原子核的位置。",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "rewritten: flat panels by default, 3D lobes behind a view choice"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-bond-types",
+   "kind": "figure",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_01_bondtype_img.jpg"
+   ],
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "misplaced name readout dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-butadiene",
+   "kind": "figure",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_01_C4H6_img.jpg"
+   ],
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "valence-bond",
+   "concept": "valence-bond-theory",
+   "verb": "introduces"
+  },
+  {
+   "span": "valence-bond",
+   "concept": "orbital-overlap",
+   "verb": "introduces"
+  },
+  {
+   "span": "bond-distance",
+   "concept": "bond-distance-and-bond-energy",
+   "verb": "introduces"
+  },
+  {
+   "span": "bond-distance",
+   "concept": "valence-bond-theory",
+   "verb": "uses"
+  },
+  {
+   "span": "sigma-pi",
+   "concept": "sigma-and-pi-bonds",
+   "verb": "introduces"
+  },
+  {
+   "span": "sigma-pi",
+   "concept": "valence-bond-theory",
+   "verb": "uses"
+  },
+  {
+   "span": "sigma-pi",
+   "concept": "sigma-bond",
+   "verb": "introduces"
+  },
+  {
+   "span": "sigma-pi",
+   "concept": "pi-bond",
+   "verb": "introduces"
+  },
+  {
+   "span": "multiple-bonds",
+   "concept": "multiple-bond-composition",
+   "verb": "introduces"
+  },
+  {
+   "span": "multiple-bonds",
+   "concept": "sigma-and-pi-bonds",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-butadiene",
+   "concept": "count-sigma-and-pi-bonds",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-butadiene",
+   "concept": "multiple-bond-composition",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idp85049088",
+   "kind": "check-your-learning",
+   "bloom": "Understand",
+   "place": {
+    "at": "inline",
+    "after": "ex-butadiene"
+   },
+   "cite": "sigma-pi",
+   "figure": {
+    "src": "/media/ch08/CNX_Chem_08_01_Exover_img.jpg",
+    "alt": "标有“a”“b”和“c”的三幅图。图 a 画出两个竖直并排且重叠的花生形轨道，其中一个轨道比另一个小。图 b 显示两个首尾相接且重叠的花生形轨道。图 c 显示两个大小不等、首尾相接且重叠的花生形轨道。"
+   },
+   "prompt": "指出每幅图表示的是 σ 键还是 π 键：\n（a）4<em>p</em> 轨道与 2<em>p</em> 轨道的肩并肩重叠\n（b）4<em>p</em> 轨道与 4<em>p</em> 轨道的头碰头重叠\n（c）4<em>p</em> 轨道与 2<em>p</em> 轨道的头碰头重叠",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）是 π 键，在连接两个原子核的轴上有一个节点，而（b）和（c）是沿轴重叠的 σ 键。"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idp92773152",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "sigma-pi",
+   "prompt": "说明 σ 键和 π 键有哪些相似之处，又有哪些不同之处。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "相似之处：两种键都由相邻原子上原子轨道的重叠形成，并且最多含有两个电子。不同之处：σ 键更强，由头碰头重叠形成，所有单键都是 σ 键；同样两个原子之间的 π 键较弱，因为它们由肩并肩重叠形成，而多重键含有一个或多个 π 键（此外还有一个 σ 键）。"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm21893728",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "bond-distance",
+   "prompt": "解释为什么成键发生在特定的平均键长处，而不是原子无限靠近。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "特定的平均键长就是能量最低的距离。距离小于键长时，两个原子核上的正电荷相互排斥，总能量升高。"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idp92050208",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "valence-bond",
+   "prompt": "用价键理论解释 F<sub>2</sub>、HF 和 ClBr 中的成键。画出所涉及的原子轨道重叠的草图。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "每个键都是 σ 键，由两个半充满轨道（每个原子各一个）头碰头重叠形成，这两个轨道中的单电子配对。氟原子（1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>5</sup>）有一个半充满的 2<em>p</em> 轨道。在 F<sub>2</sub> 中，两个氟原子的半充满 2<em>p</em> 轨道沿核间轴头碰头重叠，形成 <em>p</em>–<em>p</em> σ 键，如同 Cl<sub>2</sub> 中的那样。在 HF 中，氢的半充满 1<em>s</em> 轨道与氟的半充满 2<em>p</em> 轨道的一端重叠，形成 <em>s</em>–<em>p</em> σ 键，如同 HCl 中的那样。在 ClBr 中，氯的半充满 3<em>p</em> 轨道（3<em>s</em><sup>2</sup>3<em>p</em><sup>5</sup>）与溴的半充满 4<em>p</em> 轨道（4<em>s</em><sup>2</sup>4<em>p</em><sup>5</sup>）头碰头重叠，是又一个 <em>p</em>–<em>p</em> σ 键。草图与图 8.4 相符：对于 F<sub>2</sub> 和 ClBr，两个哑铃形的 <em>p</em> 轨道在两核连线上瓣对瓣相遇，ClBr 中溴的较大轨道画得更大；对于 HF，则是一个球与 <em>p</em> 轨道的一个瓣相遇。在每种情形中，重叠区域都位于核间轴上。"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp84623072",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "multiple-bonds",
+   "prompt": "用价键理论解释 O<sub>2</sub> 中的成键。画出 O<sub>2</sub> 中成键所涉及的原子轨道重叠的草图。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "成键：一个 σ 键和一个 π 键。<em>s</em> 轨道是充满的，不发生重叠。<em>p</em> 轨道沿轴重叠形成 σ 键，肩并肩重叠形成 π 键。 <img src=\"/media/ch08/CNX_Chem_08_01_O2bonds_img.jpg\" alt=\"此图显示两个原子的轨道在形成键时相加。右侧分别画出两个原子，每个原子有两个相互垂直的花生形轨道。一个向右的箭头表示两者已靠得更近，此时竖直的花生形轨道的上部和下部显示为在分子平面的上方和下方合并，而水平的花生形轨道则在两个原子核之间重叠。\">"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idp78672368",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "multiple-bonds",
+   "prompt": "HCN 分子中有多少个 σ 键和 π 键？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "HCN 有两个 σ 键和两个 π 键。它的路易斯结构是 H–C≡N:，碳是中心原子，以单键与氢相连，以三键与氮相连，这使碳有四个键，氮有八隅体并带一对孤电子对（共 10 个价电子）。两个原子之间的每个键都含有一个 σ 键，所以 C–H 键和 C≡N 键给出两个 σ 键。三键的第二条和第三条线是 π 键，所以有两个 π 键，都在碳和氮之间。"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp108425904",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "multiple-bonds",
+   "prompt": "一位朋友告诉你，由于每个 N 原子上的三个 <em>p</em> 轨道的重叠，N<sub>2</sub> 有三个 π 键。你同意吗？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "不同意，两个 <em>p</em> 轨道（每个 N 上各一个）将头碰头取向，形成 σ 键。 <img src=\"/media/ch08/CNX_Chem_08_01_N2LewStru_img.jpg\" alt=\"用路易斯结构和示意图两种方式画出两个氮原子。路易斯结构画出由三键相连的两个氮原子。示意图显示两个氮原子及其三个花生形 p 轨道。其中一个轨道水平放置，在两个原子核之间重叠，标为“σ 键”。另外两个轨道竖直放置，位于页面的 z 平面内。它们在原子核的上方和下方、以及纸面内外重叠，各自标为“π 键”。\">"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idp42077552",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "multiple-bonds",
+   "prompt": "画出 CO<sub>2</sub> 和 CO 的路易斯结构，并预测每个分子中 σ 键和 π 键的数目。\n（a）CO<sub>2</sub>\n（b）CO",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "（a）CO<sub>2</sub> 有两个 σ 键和两个 π 键。它的 16 个价电子给出路易斯结构 O=C=O，每个氧原子上有两对孤电子对。每个碳氧双键是一个 σ 键和一个 π 键，所以两个双键共给出两个 σ 键和两个 π 键。<br>（b）CO 有一个 σ 键和两个 π 键。它的 10 个价电子给出路易斯结构 :C≡O:，每个原子上有一对孤电子对，这是使两个原子都达到八隅体的唯一排布。三键含有一个 σ 键，它的第二条和第三条线是两个 π 键，如同 N<sub>2</sub> 中那样。"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "sigma-and-pi-bonds"
+  },
+  {
+   "exercise": "e1",
+   "concept": "sigma-and-pi-bonds"
+  },
+  {
+   "exercise": "e3",
+   "concept": "bond-distance-and-bond-energy"
+  },
+  {
+   "exercise": "e4",
+   "concept": "valence-bond-theory"
+  },
+  {
+   "exercise": "e4",
+   "concept": "sigma-and-pi-bonds"
+  },
+  {
+   "exercise": "e5",
+   "concept": "valence-bond-theory"
+  },
+  {
+   "exercise": "e5",
+   "concept": "multiple-bond-composition"
+  },
+  {
+   "exercise": "e6",
+   "concept": "count-sigma-and-pi-bonds"
+  },
+  {
+   "exercise": "e6",
+   "concept": "multiple-bond-composition"
+  },
+  {
+   "exercise": "e7",
+   "concept": "multiple-bond-composition"
+  },
+  {
+   "exercise": "e7",
+   "concept": "sigma-and-pi-bonds"
+  },
+  {
+   "exercise": "e8",
+   "concept": "count-sigma-and-pi-bonds"
+  }
+ ]
+}

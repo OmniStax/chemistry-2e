@@ -1,0 +1,1098 @@
+{
+ "id": "18.9",
+ "module": "m68837",
+ "chapter": "18",
+ "title": "氧的存在、制备与化合物",
+ "short": "氧",
+ "lead": "氧是地壳中含量最丰富的元素，从液态空气中分离得到，几乎能与所有元素反应。本节讨论<span data-concept=\"ozone\">臭氧</span>，主族金属的<span data-concept=\"oxide\">氧化物</span>、<span data-concept=\"peroxide\">过氧化物</span>、<span data-concept=\"superoxide\">超氧化物</span>和<span data-concept=\"hydroxide\">氢氧化物</span>，以及<span data-concept=\"chlor-alkali-process\">氯碱工艺</span>；还有氮、磷、硫和卤素的非金属氧化物和<span data-concept=\"oxyacid\">含氧酸</span>及其<span data-concept=\"salt\">盐</span>。",
+ "objectives": [
+  "描述氧的性质、制备和化合物",
+  "描述一些主族金属的氧化物、过氧化物和氢氧化物的制备、性质和用途"
+ ],
+ "summary_html": "<p>氧是反应性最强的元素之一。这种反应性加上它的丰度，使氧的化学非常丰富，而且为人们所深入了解。</p><p>主族金属与氧形成的化合物分为三类：（1）<span data-concept=\"oxide\">氧化物</span>，（2）<span data-concept=\"peroxide\">过氧化物</span>和<span data-concept=\"superoxide\">超氧化物</span>，以及（3）<span data-concept=\"hydroxide\">氢氧化物</span>。加热相应的氢氧化物、<span data-concept=\"nitrate\">硝酸盐</span>或<span data-concept=\"carbonate\">碳酸盐</span>是制备氧化物最常用的方法。在氧中加热金属或金属氧化物，可能生成过氧化物和超氧化物。可溶性氧化物溶于水形成氢氧化物溶液。大多数金属氧化物是<span data-concept=\"base-anhydride\">碱酐</span>，能与<span data-concept=\"acid\">酸</span>反应。主族金属的氢氧化物与酸发生<span data-concept=\"acid-base-reaction\">酸碱反应</span>，生成<span data-concept=\"salt\">盐</span>和水。氢氧化物有许多商业用途。</p><p>除氟之外，所有非金属都形成多种氧化物。几乎所有非金属氧化物都是<span data-concept=\"acid-anhydride\">酸酐</span>。<span data-concept=\"oxyacid-structure-and-strength\">含氧酸的酸性要求氢原子与分子中的氧原子键合，而不是与另一个非金属原子键合</span>。一般来说，含氧酸的强度随着与非金属原子键合、而不与氢键合的氧原子数目的增加而增强。</p>",
+ "notes": "关于金溶于王水的“学习链接”视频已省略。本节保留了原书印刷的“2HCL”、未配平的 Na₂O(s) + H₂O(l) ⟶ NaOH(aq)、“Tl₂O(s) + H₂O(aq)”、“peroxides ions”、“a bond order of 1½”之后的逗号、“tin(IV), SnO₂, and lead(IV), PbO₂”、“few second- and third-row transition metals”、“The process known as the chlor-alkali process, utilizes”、“Nitrogen pentaoxide”、把亚磷酸氢根称作“hydrogen phosphate ion, HPO₃²⁻”、HSO₄⁻ 和 H₂SO₃ 第一步电离均为 K<sub>a</sub> = 1.2 × 10⁻²、“2+-oxidation state”、“7+-oxidation state”、H₂S 之后下标处的逗号、摘要中的“Most metals oxides”以及答案中的“the oxygen electron”。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案取自书后答案。没有答案的习题 fs-idp152584704、fs-idm11343008、fs-idm41302384 和 fs-idm53754112（写方程式）以及 fs-idm95780080（中和一定质量碳酸钙所需硫酸的体积）已省略，也没有为它们计算答案。未作任何移动。",
+ "figures": [
+  {
+   "id": "fig-ozone",
+   "kind": "photo",
+   "number": "18.42",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-limelight",
+   "kind": "photo",
+   "number": "18.43",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-sunblock",
+   "kind": "photo",
+   "number": "18.44",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-zinc-hydroxide",
+   "kind": "photo",
+   "number": "18.45",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-antacid",
+   "kind": "photo",
+   "number": "18.46",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-so2",
+   "kind": "photo",
+   "number": "18.47",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-so3",
+   "kind": "photo",
+   "number": "18.48",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-chlorine-oxides",
+   "kind": "photo",
+   "number": "18.49",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-nitric-acid",
+   "kind": "photo",
+   "number": "18.50",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-nitrous-acid",
+   "kind": "photo",
+   "number": "18.51",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-phosphoric-acid",
+   "kind": "photo",
+   "number": "18.52",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-phosphorous-acid",
+   "kind": "photo",
+   "number": "18.53",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-sulfuric-acid",
+   "kind": "photo",
+   "number": "18.54",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-chlorine-oxyanions",
+   "kind": "sim",
+   "number": "18.55",
+   "folds": [
+    "18.56",
+    "18.57"
+   ],
+   "originals": [
+    "/media/ch18/CNX_Chem_18_09_ChloritIon.jpg",
+    "/media/ch18/CNX_Chem_18_09_ClO3Ion.jpg",
+    "/media/ch18/CNX_Chem_18_09_PerchloIon.jpg"
+   ],
+   "original_caption": "（图 18.55）亚氯酸与碱反应时生成亚氯酸根离子 ClO₂⁻。（图 18.56）卤酸与碱反应时生成氯酸根离子 ClO₃⁻。（图 18.57）高氯酸与碱反应，或电解其氯化物的热溶液时，可以生成高氯酸根离子 ClO₄⁻。",
+   "draws": [
+    "equilibrium-constant"
+   ],
+   "conventions": [
+    "Cl",
+    "O"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "oxygen",
+   "concept": "oxygen-occurrence-and-reactivity",
+   "verb": "introduces"
+  },
+  {
+   "span": "oxygen",
+   "concept": "photosynthesis",
+   "verb": "introduces"
+  },
+  {
+   "span": "oxygen",
+   "concept": "distillation",
+   "verb": "uses"
+  },
+  {
+   "span": "oxygen",
+   "concept": "boiling-point",
+   "verb": "uses"
+  },
+  {
+   "span": "oxygen",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "oxygen",
+   "concept": "combustion-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "oxygen",
+   "concept": "energy-and-work",
+   "verb": "uses"
+  },
+  {
+   "span": "oxygen",
+   "concept": "mass",
+   "verb": "uses"
+  },
+  {
+   "span": "oxygen",
+   "concept": "solubility",
+   "verb": "uses"
+  },
+  {
+   "span": "oxygen",
+   "concept": "electrolysis",
+   "verb": "uses"
+  },
+  {
+   "span": "oxygen",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "ozone",
+   "concept": "ozone",
+   "verb": "introduces"
+  },
+  {
+   "span": "ozone",
+   "concept": "allotropes",
+   "verb": "uses"
+  },
+  {
+   "span": "ozone",
+   "concept": "exothermic-and-endothermic",
+   "verb": "uses"
+  },
+  {
+   "span": "ozone",
+   "concept": "enthalpy-change",
+   "verb": "uses"
+  },
+  {
+   "span": "ozone",
+   "concept": "resonance-forms",
+   "verb": "uses"
+  },
+  {
+   "span": "ozone",
+   "concept": "energy-and-work",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "oxygen-occurrence-and-reactivity",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "standard-electrode-potential",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "noble-gas",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "halogen",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "oxide",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "peroxide",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "superoxide",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "oxide",
+   "verb": "introduces"
+  },
+  {
+   "span": "oxides",
+   "concept": "peroxide",
+   "verb": "introduces"
+  },
+  {
+   "span": "oxides",
+   "concept": "superoxide",
+   "verb": "introduces"
+  },
+  {
+   "span": "oxides",
+   "concept": "hydroxide",
+   "verb": "introduces"
+  },
+  {
+   "span": "oxides",
+   "concept": "base-anhydride",
+   "verb": "introduces"
+  },
+  {
+   "span": "oxides",
+   "concept": "chlor-alkali-process",
+   "verb": "introduces"
+  },
+  {
+   "span": "oxides",
+   "concept": "inert-pair-effect",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "acid-base-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "salt",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "bond-order",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "net-ionic-equation",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "complex-ion",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "lewis-acids-and-bases",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "electrolysis-of-aqueous-solutions",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "base",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "acid",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "alkali-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "reversible-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "cation",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "carbonate",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "nitrate",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "precipitate",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "oxidation",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "reduction",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetal-oxides",
+   "concept": "sulfite",
+   "verb": "introduces"
+  },
+  {
+   "span": "nonmetal-oxides",
+   "concept": "sulfate",
+   "verb": "introduces"
+  },
+  {
+   "span": "nonmetal-oxides",
+   "concept": "lewis-acids-and-bases",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetal-oxides",
+   "concept": "enthalpy-change",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetal-oxides",
+   "concept": "electronegativity",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetal-oxides",
+   "concept": "resonance-forms",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetal-oxides",
+   "concept": "molecular-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetal-oxides",
+   "concept": "oxide",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetal-oxides",
+   "concept": "hydroxide",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetal-oxides",
+   "concept": "strong-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetal-oxides",
+   "concept": "exothermic-and-endothermic",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetal-oxides",
+   "concept": "halogen",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetal-oxides",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetal-oxides",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "oxyacids",
+   "concept": "acid-anhydride",
+   "verb": "uses"
+  },
+  {
+   "span": "oxyacids",
+   "concept": "oxyanion",
+   "verb": "uses"
+  },
+  {
+   "span": "oxyacids",
+   "concept": "oxide",
+   "verb": "uses"
+  },
+  {
+   "span": "oxyacids",
+   "concept": "acid",
+   "verb": "uses"
+  },
+  {
+   "span": "oxyacids",
+   "concept": "salt",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "ostwald-process",
+   "verb": "introduces"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "nitrate",
+   "verb": "introduces"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "nitrogen-oxides-with-water",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "strong-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "weak-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "reducing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "disproportionation-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "molecular-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "resonance-forms",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "oxyacid",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "oxide",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "hydroxide",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "carbonate",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "salt",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "reduction",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "concentration",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "phosphorus-oxyacids",
+   "concept": "oxyacid-structure-and-strength",
+   "verb": "introduces"
+  },
+  {
+   "span": "phosphorus-oxyacids",
+   "concept": "disproportionation-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "phosphorus-oxyacids",
+   "concept": "lewis-structure-diagram",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur-oxyacids",
+   "concept": "sulfate",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur-oxyacids",
+   "concept": "sulfite",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur-oxyacids",
+   "concept": "diprotic-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur-oxyacids",
+   "concept": "acid-ionization-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur-oxyacids",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur-oxyacids",
+   "concept": "reducing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur-oxyacids",
+   "concept": "molecular-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur-oxyacids",
+   "concept": "oxide",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur-oxyacids",
+   "concept": "hydroxide",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur-oxyacids",
+   "concept": "base",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur-oxyacids",
+   "concept": "concentration",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur-oxyacids",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "halogen-oxyacids",
+   "concept": "oxyacid-strength",
+   "verb": "uses"
+  },
+  {
+   "span": "halogen-oxyacids",
+   "concept": "acid-ionization-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "halogen-oxyacids",
+   "concept": "disproportionation-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "halogen-oxyacids",
+   "concept": "weak-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "halogen-oxyacids",
+   "concept": "strong-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "halogen-oxyacids",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "halogen-oxyacids",
+   "concept": "electrolysis-of-aqueous-solutions",
+   "verb": "uses"
+  },
+  {
+   "span": "halogen-oxyacids",
+   "concept": "electronegativity",
+   "verb": "uses"
+  },
+  {
+   "span": "halogen-oxyacids",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "halogen-oxyacids",
+   "concept": "base",
+   "verb": "uses"
+  },
+  {
+   "span": "halogen-oxyacids",
+   "concept": "salt",
+   "verb": "uses"
+  },
+  {
+   "span": "halogen-oxyacids",
+   "concept": "gas-pressure",
+   "verb": "uses"
+  },
+  {
+   "span": "halogen-oxyacids",
+   "concept": "concentration",
+   "verb": "uses"
+  },
+  {
+   "span": "halogen-oxyacids",
+   "concept": "oxyacid-structure-and-strength",
+   "verb": "reinforces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "e1",
+   "source_id": "fs-idp58245760",
+   "source_number": "79",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "oxides",
+   "prompt": "预测钫在空气中燃烧的产物。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "FrO<sub>2</sub>"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp175610544",
+   "source_number": "81",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "oxides",
+   "prompt": "写出下列反应的配平化学方程式：<br>（a）锌金属在氧气流中加热<br>（b）加热碳酸锌直到质量不再减少<br>（c）将碳酸锌加入乙酸 CH<sub>3</sub>CO<sub>2</sub>H 溶液中<br>（d）将锌加入氢溴酸溶液中",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）$\\text{2Zn}(s)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;\\text{2ZnO}(s);$ （b）${\\text{ZnCO}}_{3}(s)\\;\\longrightarrow \\;\\text{ZnO}(s)+{\\text{CO}}_{2}(g);$ （c）${\\text{ZnCO}}_{3}(s)+2{\\text{CH}}_{3}\\text{COOH}(aq)\\;\\longrightarrow \\;\\text{Zn}{({\\text{CH}}_{3}\\text{COO})}_{2}(aq)+{\\text{CO}}_{2}(g)+{\\text{H}}_{2}\\text{O}(l);$ （d）$\\text{Zn}(s)+\\text{2HBr}(aq)\\;\\longrightarrow \\;{\\text{ZnBr}}_{2}(aq)+{\\text{H}}_{2}(g)$"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp99009104",
+   "source_number": "83",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "oxides",
+   "prompt": "引用适当的方程式，说明氢氧化铝的两性。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "$\\text{Al}{(\\text{OH})}_{3}(s)+3{\\text{H}}^{\\text{+}}(aq)\\;\\longrightarrow \\;{\\text{Al}}^{3+}+3{\\text{H}}_{2}\\text{O}(l);$ $\\text{Al}{(\\text{OH})}_{3}(s)+{\\text{OH}}^{-}\\;\\longrightarrow \\;{[\\text{Al}{(\\text{OH})}_{4}]}^{\\text{−}}(aq)$"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm57353488",
+   "source_number": "85",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "oxides",
+   "prompt": "写出下列反应的配平化学方程式：<br>（a）将氧化钠加入水中<br>（b）将碳酸铯加入过量的 HF 水溶液中<br>（c）将氧化铝加入 HClO<sub>4</sub> 水溶液中<br>（d）将碳酸钠溶液加入硝酸钡溶液中<br>（e）四氯化钛与单质钠反应生成钛金属",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）${\\text{Na}}_{2}\\text{O}(s)+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{2NaOH}(aq);$ （b）${\\text{Cs}}_{2}{\\text{CO}}_{3}(s)+\\text{2HF}(aq)\\;\\longrightarrow \\;\\text{2CsF}(aq)+\\;{\\text{CO}}_{2}(g)+{\\text{H}}_{2}\\text{O}(l);$ （c）${\\text{Al}}_{2}{\\text{O}}_{3}(s)+6{\\text{HClO}}_{4}(aq)\\;\\longrightarrow \\;\\text{2Al}{({\\text{ClO}}_{4})}_{3}(aq)+3{\\text{H}}_{2}\\text{O}(l);$ （d）${\\text{Na}}_{2}{\\text{CO}}_{3}(aq)+\\text{Ba}{({\\text{NO}}_{3})}_{2}(aq)\\;\\longrightarrow \\;2{\\text{NaNO}}_{3}(aq)+{\\text{BaCO}}_{3}(s);$ （e）${\\text{TiCl}}_{4}(l)+\\text{4Na}(s)\\;\\longrightarrow \\;\\text{Ti}(s)+\\text{4NaCl}(s)$"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp61089040",
+   "source_number": "87",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "halogen-oxyacids",
+   "prompt": "HClO<sub>4</sub> 和 HBrO<sub>4</sub> 哪个酸性更强？为什么？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "HClO<sub>4</sub> 的酸性更强，因为在一系列分子式相似的含氧酸中，中心原子的电负性越高，中心原子对氧的电子的吸引就越强。对氧的电子的吸引更强，使氧对 O-H 键中电子的吸引更强，氢就更容易释放。这个键越弱，酸性越强。"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idp59653392",
+   "source_number": "89",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "sulfur-oxyacids",
+   "prompt": "H<sub>2</sub>SO<sub>4</sub> 和 H<sub>2</sub>SeO<sub>4</sub> 哪个酸性更强？为什么？你可以复习一下关于酸碱平衡的章节。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "由于 H<sub>2</sub>SO<sub>4</sub> 和 H<sub>2</sub>SeO<sub>4</sub> 都是含氧酸，而且它们的中心原子具有相同的氧化数，酸的强度取决于中心原子的相对电负性。硫的电负性大于硒，所以 H<sub>2</sub>SO<sub>4</sub> 的酸性更强。"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e1",
+   "concept": "superoxide"
+  },
+  {
+   "exercise": "e1",
+   "concept": "alkali-metal"
+  },
+  {
+   "exercise": "e2",
+   "concept": "oxide"
+  },
+  {
+   "exercise": "e2",
+   "concept": "carbonate"
+  },
+  {
+   "exercise": "e2",
+   "concept": "acid-base-reaction"
+  },
+  {
+   "exercise": "e3",
+   "concept": "hydroxide"
+  },
+  {
+   "exercise": "e3",
+   "concept": "amphoteric"
+  },
+  {
+   "exercise": "e3",
+   "concept": "complex-ion"
+  },
+  {
+   "exercise": "e4",
+   "concept": "oxide"
+  },
+  {
+   "exercise": "e4",
+   "concept": "base-anhydride"
+  },
+  {
+   "exercise": "e4",
+   "concept": "hydroxide"
+  },
+  {
+   "exercise": "e4",
+   "concept": "acid-base-reaction"
+  },
+  {
+   "exercise": "e5",
+   "concept": "oxyacid-strength"
+  },
+  {
+   "exercise": "e5",
+   "concept": "oxyacid-structure-and-strength"
+  },
+  {
+   "exercise": "e5",
+   "concept": "electronegativity"
+  },
+  {
+   "exercise": "e6",
+   "concept": "oxyacid-strength"
+  },
+  {
+   "exercise": "e6",
+   "concept": "electronegativity"
+  }
+ ],
+ "footnotes": [
+  {
+   "id": "c-na2o-balance",
+   "kind": "correction",
+   "html": "书中的方程式没有配平。一个 Na<sub>2</sub>O 生成两个 NaOH：Na<sub>2</sub>O(<em>s</em>) + H<sub>2</sub>O(<em>l</em>) ⟶ 2NaOH(<em>aq</em>)。"
+  },
+  {
+   "id": "c-hydrogen-phosphite",
+   "kind": "correction",
+   "html": "书中把 HPO<sub>3</sub><sup>2−</sup> 称为磷酸氢根离子。它由亚磷酸 H<sub>3</sub>PO<sub>3</sub> 形成，应是亚磷酸氢根离子；磷酸氢根是 HPO<sub>4</sub><sup>2−</sup>。"
+  }
+ ]
+}

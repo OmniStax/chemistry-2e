@@ -1,0 +1,425 @@
+{
+ "id": "14.7",
+ "module": "m68809",
+ "chapter": "14",
+ "title": "酸碱滴定",
+ "short": "酸碱滴定",
+ "lead": "<span data-concept=\"titration-curve\">滴定曲线</span>记录样品的 <span data-concept=\"ph\">pH</span> 随加入<span data-concept=\"titrant\">滴定剂</span>而变化的情形。本节计算用<span data-concept=\"strong-base\">强碱</span>滴定<span data-concept=\"strong-acid\">强酸</span>和<span data-concept=\"weak-acid\">弱酸</span>时各个阶段的 <span data-concept=\"ph\">pH</span>，并说明如何选取与曲线相适应的<span data-concept=\"acid-base-indicators\">酸碱指示剂</span>来指示<span data-concept=\"end-point\">滴定终点</span>。",
+ "objectives": [
+  "解读强、弱酸碱体系的滴定曲线",
+  "计算滴定各重要阶段样品的 pH",
+  "解释酸碱指示剂的作用"
+ ],
+ "summary_html": "<p>酸碱滴定的<span data-concept=\"titration-curve\">滴定曲线</span>通常是 <span data-concept=\"ph\">pH</span> 对所加<span data-concept=\"titrant\">滴定剂</span><span data-concept=\"volume\">体积</span>所作的图。这些曲线有助于选择合适的<span data-concept=\"acid-base-indicators\">酸碱指示剂</span>，以便准确测定<span data-concept=\"end-point\">滴定终点</span>。</p>",
+ "notes": "本节没有任何内容被略去。例 14.21 中的拼写错误“intial”无法在中文中保留，译作“初始”；指示剂方程中罗马体的“pKa”写作 pK<sub>a</sub>。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签和提示均由 AI 生成。答案来自书后答案和“学习检测”的答案。没有答案的数值习题 fs-idp105330480 被略去，也没有为它计算答案。没有答案的概念题 fs-idm81056688 保留，附有一个标明为 AI 生成的建议思路。pH 答案接受 1% 的容差。",
+ "figures": [
+  {
+   "id": "sim-titration",
+   "kind": "sim",
+   "number": "14.18",
+   "folds": [
+    "14.20"
+   ],
+   "originals": [
+    "/media/ch14/CNX_Chem_14_07_titration.jpg",
+    "/media/ch14/CNX_Chem_14_07_titration2.jpg"
+   ],
+   "original_caption": "（图 14.18）（a）用 0.100 M NaOH（强碱）滴定 25.00 mL 0.100 M HCl（强酸）的滴定曲线，其化学计量点的 pH 为 7.00。（b）用 0.100 M NaOH（强碱）滴定 25.00 mL 0.100 M 乙酸（弱酸）的滴定曲线，其化学计量点的 pH 为 8.72。（图 14.20）强酸和弱酸的滴定曲线，说明如何正确选择酸碱指示剂。三种指示剂中的任何一种在强酸滴定的化学计量点处都会表现出相当尖锐的颜色变化，但只有酚酞适用于弱酸滴定。",
+   "draws": [
+    "volume",
+    "concentration",
+    "equilibrium-constant"
+   ],
+   "facts": [
+    "#d9342b",
+    "#f2c12e",
+    "#c8323c",
+    "#3a56b8",
+    "#e0479e"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-indicators",
+   "kind": "photo",
+   "number": "14.19",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "referents": [
+  {
+   "id": "strong-titration",
+   "label": "0.100 M HCl 的滴定",
+   "figures": [
+    "sim-titration"
+   ]
+  },
+  {
+   "id": "weak-titration",
+   "label": "0.100 M 乙酸的滴定",
+   "figures": [
+    "sim-titration"
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "titration-curves",
+   "concept": "titration-curve",
+   "verb": "introduces"
+  },
+  {
+   "span": "titration-curves",
+   "concept": "strong-acid-titration-ph",
+   "verb": "introduces"
+  },
+  {
+   "span": "titration-curves",
+   "concept": "weak-acid-titration-ph",
+   "verb": "introduces"
+  },
+  {
+   "span": "titration-curves",
+   "concept": "titration",
+   "verb": "uses"
+  },
+  {
+   "span": "titration-curves",
+   "concept": "equivalence-point",
+   "verb": "uses"
+  },
+  {
+   "span": "titration-curves",
+   "concept": "ph",
+   "verb": "uses"
+  },
+  {
+   "span": "titration-curves",
+   "concept": "ph-calculations",
+   "verb": "uses"
+  },
+  {
+   "span": "titration-curves",
+   "concept": "henderson-hasselbalch",
+   "verb": "uses"
+  },
+  {
+   "span": "titration-curves",
+   "concept": "salt-solution-calculations",
+   "verb": "uses"
+  },
+  {
+   "span": "titration-curves",
+   "concept": "acid-ionization-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "indicators",
+   "concept": "acid-base-indicators",
+   "verb": "introduces"
+  },
+  {
+   "span": "indicators",
+   "concept": "color-change-interval",
+   "verb": "introduces"
+  },
+  {
+   "span": "indicators",
+   "concept": "choose-indicator",
+   "verb": "introduces"
+  },
+  {
+   "span": "indicators",
+   "concept": "henderson-hasselbalch",
+   "verb": "uses"
+  },
+  {
+   "span": "indicators",
+   "concept": "measuring-ph",
+   "verb": "uses"
+  },
+  {
+   "span": "indicators",
+   "concept": "end-point",
+   "verb": "uses"
+  },
+  {
+   "span": "indicators",
+   "concept": "equivalence-point",
+   "verb": "uses"
+  },
+  {
+   "span": "indicators",
+   "concept": "titration-curve",
+   "verb": "reinforces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm49336656",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-strong-titration"
+   },
+   "cite": "titration-curves",
+   "prompt": "计算 50.0 mL 0.100 <em>M</em> HNO<sub>3</sub>(<em>aq</em>) 与 0.200 <em>M</em> NaOH（滴定剂）之间的强酸/强碱滴定，在所加碱的下列体积时的 pH：0.00 mL、15.0 mL、25.0 mL 和 40.0 mL。",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "0.00 mL",
+      "value": 1.0,
+      "tol": 0.01,
+      "hint": "未加碱时，[H<sub>3</sub>O<sup>+</sup>] 就是酸本身的 0.100 <em>M</em>。"
+     },
+     {
+      "part": "15.0 mL",
+      "value": 1.5111,
+      "tol": 0.01,
+      "hint": "用 5.00 × 10<sup>−3</sup> mol HNO<sub>3</sub> 减去所加 NaOH 的物质的量，再除以总体积 65.0 mL。"
+     },
+     {
+      "part": "25.0 mL",
+      "value": 7,
+      "tol": 0.01,
+      "hint": "25.0 mL 0.200 <em>M</em> NaOH 恰好等于酸的物质的量：这是强酸与强碱的化学计量点。"
+     },
+     {
+      "part": "40.0 mL",
+      "value": 12.523,
+      "tol": 0.01,
+      "hint": "过了化学计量点，由 90.0 mL 中过量的 NaOH 求 [OH<sup>−</sup>]，再由 pH = 14 + log[OH<sup>−</sup>] 求 pH。"
+     }
+    ],
+    "solution": "0.00: 1.000; 15.0: 1.5111; 25.0: 7; 40.0: 12.523"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm99459616",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-weak-titration"
+   },
+   "cite": "titration-curves",
+   "prompt": "计算 50.0 mL 0.100 <em>M</em> HCOOH(<em>aq</em>)（甲酸）与 0.200 <em>M</em> NaOH（滴定剂）之间的弱酸/强碱滴定，在所加碱的下列体积时的 pH：0.00 mL、15.0 mL、25.0 mL 和 30.0 mL。",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "0.00 mL",
+      "value": 2.37,
+      "tol": 0.01,
+      "hint": "单独用 ICE 表处理甲酸，所用的 <em>K</em><sub>a</sub> 取自附录 H。"
+     },
+     {
+      "part": "15.0 mL",
+      "value": 3.92,
+      "tol": 0.01,
+      "hint": "NaOH 把一部分酸变成了甲酸根；用亨德森–哈塞尔巴尔赫方程，代入两者的物质的量。"
+     },
+     {
+      "part": "25.0 mL",
+      "value": 8.29,
+      "tol": 0.01,
+      "hint": "在化学计量点处只剩下甲酸根，体积为 75.0 mL；求 <em>K</em><sub>b</sub> = <em>K</em><sub>w</sub>/<em>K</em><sub>a</sub>，再用 ICE 表处理这种碱。"
+     },
+     {
+      "part": "30.0 mL",
+      "value": 12.097,
+      "tol": 0.01,
+      "hint": "过了化学计量点，80.0 mL 中过量的 NaOH 决定 [OH<sup>−</sup>]。"
+     }
+    ],
+    "solution": "0.00 mL: 2.37; 15.0 mL: 3.92; 25.00 mL: 8.29; 30.0 mL: 12.097"
+   }
+  },
+  {
+   "id": "e92",
+   "source_id": "fs-idm5595328",
+   "source_number": "92",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "indicators",
+   "prompt": "说明如何为用强酸滴定弱碱选择合适的酸碱指示剂。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "在用强酸滴定弱碱的化学计量点处，由于存在共轭酸，所得溶液略呈酸性。因此，应选择在酸性范围内变色、且其变色范围涵盖化学计量点 pH 的指示剂。甲基橙就是一个很好的例子。"
+   }
+  },
+  {
+   "id": "e93",
+   "source_id": "fs-idm81056688",
+   "source_number": "93",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "indicators",
+   "prompt": "解释为什么酸碱指示剂是在一个 pH 范围内而不是在某一特定 pH 处变色。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "指示剂在大约 p<em>K</em><sub>a</sub> ± 1 的范围内变色，因为它的颜色取决于其两种形式的比值，而这一比值随 pH 逐渐变化。指示剂是一种弱酸，HIn(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + In<sup>−</sup>(<em>aq</em>)，其中 HIn 和 In<sup>−</sup> 具有不同的颜色，而亨德森–哈塞尔巴尔赫方程 pH = p<em>K</em><sub>a</sub> + log([In<sup>−</sup>]/[HIn]) 将这一比值与 pH 联系起来。在 pH = p<em>K</em><sub>a</sub> 时，两种形式相等，溶液显示两种颜色的混合。只有当大部分指示剂（通常约 60−90% 或更多）处于某一种形式时，眼睛才只看到该形式的颜色。在比 p<em>K</em><sub>a</sub> 高一个 pH 单位处，比值 [In<sup>−</sup>]/[HIn] 为 10，即约 91% 为 In<sup>−</sup>，而低一个单位处则为 1/10。所以，所感知的颜色是在大约两个 pH 单位的范围内稳步变化的，而不是在某一个值处突变。"
+   }
+  },
+  {
+   "id": "e94",
+   "source_id": "fs-idp255636208",
+   "source_number": "94",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "titration-curves",
+   "prompt": "计算用 0.100 <em>M</em> KOH 滴定 40 mL（0.040 L）0.100 <em>M</em> 巴比妥酸（<em>K</em><sub>a</sub> = 9.8 × 10<sup>−5</sup>）时，下列各点的 pH。<br>（a）未加 KOH<br>（b）加入 20 mL KOH 溶液<br>（c）加入 39 mL KOH 溶液<br>（d）加入 40 mL KOH 溶液<br>（e）加入 41 mL KOH 溶液",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 2.5,
+      "tol": 0.01,
+      "hint": "单独用 ICE 表处理巴比妥酸。"
+     },
+     {
+      "part": "(b)",
+      "value": 4.01,
+      "tol": 0.01,
+      "hint": "20 mL 时恰好到达半化学计量点。"
+     },
+     {
+      "part": "(c)",
+      "value": 5.6,
+      "tol": 0.01,
+      "hint": "用亨德森–哈塞尔巴尔赫方程，代入剩余酸和所生成的共轭碱的物质的量。"
+     },
+     {
+      "part": "(d)",
+      "value": 8.35,
+      "tol": 0.01,
+      "hint": "在化学计量点处，仅由共轭碱（在 80 mL 中）通过 <em>K</em><sub>b</sub> = <em>K</em><sub>w</sub>/<em>K</em><sub>a</sub> 决定 pH。"
+     },
+     {
+      "part": "(e)",
+      "value": 11.08,
+      "tol": 0.01,
+      "hint": "81 mL 中过量的 KOH 决定 [OH<sup>−</sup>]。"
+     }
+    ],
+    "solution": "(a) pH = 2.50; (b) pH = 4.01; (c) pH = 5.60; (d) pH = 8.35; (e) pH = 11.08"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "strong-acid-titration-ph"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "ph-calculations"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "weak-acid-titration-ph"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "henderson-hasselbalch"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "salt-solution-calculations"
+  },
+  {
+   "exercise": "e92",
+   "concept": "choose-indicator"
+  },
+  {
+   "exercise": "e92",
+   "concept": "color-change-interval"
+  },
+  {
+   "exercise": "e92",
+   "concept": "predict-salt-solution-ph"
+  },
+  {
+   "exercise": "e93",
+   "concept": "acid-base-indicators"
+  },
+  {
+   "exercise": "e93",
+   "concept": "color-change-interval"
+  },
+  {
+   "exercise": "e94",
+   "concept": "weak-acid-titration-ph"
+  },
+  {
+   "exercise": "e94",
+   "concept": "henderson-hasselbalch"
+  },
+  {
+   "exercise": "e94",
+   "concept": "salt-solution-calculations"
+  }
+ ]
+}

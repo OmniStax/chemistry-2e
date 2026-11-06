@@ -1,0 +1,270 @@
+{
+ "id": "12.2",
+ "module": "m68787",
+ "chapter": "12",
+ "title": "影响反应速率的因素",
+ "short": "影响反应速率的因素",
+ "lead": "有五个因素决定反应进行的快慢：反应物的性质、固体反应物被分割的细碎程度、<span data-concept=\"temperature\">温度</span>、反应物的<span data-concept=\"concentration\">浓度</span>，以及<span data-concept=\"catalyst\">催化剂</span>的存在。",
+ "objectives": [
+  "描述化学性质、物理状态、温度、浓度和催化作用对反应速率的影响"
+ ],
+ "summary_html": "<p><span data-concept=\"reaction-rate\">化学反应的速率</span>受多个参数影响。涉及两相的反应，在接触的<span data-concept=\"area\">表面积</span>更大时进行得更快。如果<span data-concept=\"temperature\">温度</span>或反应物<span data-concept=\"concentration\">浓度</span>升高，<span data-concept=\"reaction-rate\">给定反应的速率</span>通常也会增大。<span data-concept=\"catalyst\">催化剂</span>可以通过提供<span data-concept=\"activation-energy\">活化能</span>更低的另一条途径来提高<span data-concept=\"reaction-rate\">反应速率</span>。</p>",
+ "notes": "三则“学习链接”注释被略去：铯与水反应的视频、磷在氧气中燃烧的视频，以及 PhET 反应与速率（Reactions &amp; Rates）交互模拟，与之对应的是一氧化氮与臭氧的模拟。图 12.6 保留了书中印出的铁与盐酸反应的未配平方程式。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案取自书后答案。没有答案的概念题 fs-idm86018304 附有一个标明为 OmniStax 自己的建议思路。三道是 PhET 反应与速率（Reactions &amp; Rates）模拟操作说明的题目中，fs-idm66455280 对应一氧化氮与臭氧的模拟，其题面已改写为点出该模拟，并因书中没有答案而附有一个标明为 OmniStax 自己的建议思路；fs-idm66513728（关于一次瞄准的碰撞）和 fs-idm49710224（其答案描述的是模拟中 A 与 BC 的可逆反应趋于混合物）被暂缓，因为该模拟都没有画出这两者。",
+ "figures": [
+  {
+   "id": "fig-acid-dissol",
+   "kind": "photo",
+   "number": "12.6",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-statue",
+   "kind": "photo",
+   "number": "12.7",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-collisions",
+   "kind": "sim",
+   "draws": [
+    "temperature",
+    "concentration",
+    "rate",
+    "time"
+   ],
+   "conventions": [
+    "N",
+    "O"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "factors",
+   "concept": "reaction-rate",
+   "verb": "uses"
+  },
+  {
+   "span": "nature",
+   "concept": "chemical-nature-and-rate",
+   "verb": "introduces"
+  },
+  {
+   "span": "nature",
+   "concept": "reaction-rate",
+   "verb": "uses"
+  },
+  {
+   "span": "states",
+   "concept": "surface-area-and-rate",
+   "verb": "introduces"
+  },
+  {
+   "span": "states",
+   "concept": "area",
+   "verb": "uses"
+  },
+  {
+   "span": "states",
+   "concept": "reaction-rate",
+   "verb": "uses"
+  },
+  {
+   "span": "temperature",
+   "concept": "temperature-and-rate",
+   "verb": "introduces"
+  },
+  {
+   "span": "temperature",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "temperature",
+   "concept": "reaction-rate",
+   "verb": "uses"
+  },
+  {
+   "span": "concentration",
+   "concept": "concentration-and-rate",
+   "verb": "introduces"
+  },
+  {
+   "span": "concentration",
+   "concept": "concentration",
+   "verb": "uses"
+  },
+  {
+   "span": "concentration",
+   "concept": "reaction-rate",
+   "verb": "uses"
+  },
+  {
+   "span": "concentration",
+   "concept": "temperature-and-rate",
+   "verb": "reinforces"
+  },
+  {
+   "span": "catalyst",
+   "concept": "catalyst",
+   "verb": "introduces"
+  },
+  {
+   "span": "catalyst",
+   "concept": "reaction-rate",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "e1",
+   "source_id": "fs-idm30837936",
+   "source_number": "7",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "factors",
+   "prompt": "分别描述下列各项对金属镁与盐酸溶液反应速率的影响：盐酸的物质的量浓度、溶液的温度，以及镁块的大小。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "物质的量浓度越高，反应速率越大。温度越高，反应速率越大。较小的镁金属块比较大的镁块反应得更快，因为存在更多可反应的表面。"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idm86018304",
+   "source_number": "8",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "temperature",
+   "prompt": "解释为什么鸡蛋在丹佛的沸水中比在纽约市的沸水中煮得更慢。（提示：考虑温度对反应速率的影响以及压强对沸点的影响。）",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "鸡蛋在丹佛煮得更慢，是因为那里的水沸腾时温度较低，而煮熟鸡蛋的反应在较低的温度下进行得更慢。液体在其蒸气压等于其上方大气压时沸腾。丹佛位于海平面以上约一英里处，那里的大气压只有纽约市海平面气压的约 83%，因此那里的水在达到这一较低的蒸气压时就沸腾，沸点约为 95 °C，而不是 100 °C。无论加热得多么猛烈，沸水的温度都不可能高于其沸点。煮鸡蛋是一组化学反应，其中蛋白质改变结构，而化学反应通常在较高的温度下发生得更快。在温度约低 5 °C 的水中，这些反应较慢，所以鸡蛋在丹佛需要更长的时间才能煮熟。"
+   }
+  },
+  {
+   "id": "s4",
+   "source_id": "fs-idm66455280",
+   "source_number": "10",
+   "kind": "simulation-exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "concentration",
+   "prompt": "在密闭盒子中一氧化氮与臭氧的模拟里，观察分子在不同条件下如何碰撞和反应。设定温度和每种反应物的初始浓度，并观察图上方的碰撞次数以及图上不断下降的臭氧浓度。反应速率如何受浓度和温度的影响？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "当任一反应物的浓度增大以及温度升高时，速率都会增大。在 300 K 时，一氧化氮或臭氧的初始浓度越高，盒子里的分子就越多，它们相遇得更频繁：碰撞次数增长得更快，同样时间内发生的反应更多，臭氧浓度下降得更陡，虚线更陡，平均速率也更大。在每种反应物均为 1.00 M 时，把温度从 200 K 升到 600 K，分子运动得更快，因而碰撞更频繁，而且这些碰撞中发生反应的比例更大，所以臭氧同样消耗得更快。由于一次运行只含几十次碰撞，单次运行的结果会有散布，但重复运行就能显示出这两种趋势。两者都与本节一致：当反应物的浓度增大时，速率通常增大；在较高的温度下，反应发生得更快。"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e1",
+   "concept": "concentration-and-rate"
+  },
+  {
+   "exercise": "e1",
+   "concept": "temperature-and-rate"
+  },
+  {
+   "exercise": "e1",
+   "concept": "surface-area-and-rate"
+  },
+  {
+   "exercise": "e2",
+   "concept": "temperature-and-rate"
+  },
+  {
+   "exercise": "e2",
+   "concept": "boiling-point"
+  },
+  {
+   "exercise": "s4",
+   "concept": "concentration-and-rate"
+  },
+  {
+   "exercise": "s4",
+   "concept": "temperature-and-rate"
+  }
+ ],
+ "footnotes": [
+  {
+   "id": "c-iron-hcl",
+   "kind": "correction",
+   "html": "书中的方程式 Fe(<em>s</em>) + HCl(<em>aq</em>) ⟶ 2FeCl<sub>2</sub>(<em>aq</em>) + 3H<sub>2</sub>(<em>g</em>) 没有配平。该反应为 Fe(<em>s</em>) + 2HCl(<em>aq</em>) ⟶ FeCl<sub>2</sub>(<em>aq</em>) + H<sub>2</sub>(<em>g</em>)。"
+  }
+ ]
+}

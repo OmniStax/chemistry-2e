@@ -1,0 +1,608 @@
+{
+ "id": "18.4",
+ "module": "m68832",
+ "chapter": "18",
+ "title": "非金属的结构与一般性质",
+ "short": "非金属",
+ "lead": "<span data-concept=\"nonmetal\">非金属</span>放在一起讨论：它们如何与金属以及彼此成键，它们表现出的<span data-concept=\"oxidation-number\">氧化态</span>，它们的氧化还原化学和氧化物的规律，然后是元素单质本身的结构，包括碳、磷和硫的<span data-concept=\"allotropes\">同素异形体</span>。",
+ "objectives": [
+  "描述非金属的结构和性质"
+ ],
+ "summary_html": "<p><span data-concept=\"nonmetal\">非金属</span>的结构与<span data-concept=\"metal\">金属</span>的结构大不相同，主要是因为它们的<span data-concept=\"electronegativity\">电负性</span>更大，电子与单个原子结合得更紧。大多数非金属氧化物是<span data-concept=\"acid-anhydride\">酸酐</span>，也就是说，它们与水反应生成酸性溶液。分子结构在大多数非金属中很常见，其中几种有多种物理性质各异的<span data-concept=\"allotropes\">同素异形体</span>。</p>",
+ "notes": "本节按原书印刷保留方程 S(s) + O₂(g)⟶ 2SO₂(s)、NF₃、H₂ 和 H₂S 之后作为下标的逗号、“所需必要的电子”（原文为“the electron required necessary”）以及注释中对图 18.23 的两处引用；金刚石、石墨和磷的两种同素异形体的照片与图 18.20 和图 18.24 的书中原图一并给出，红磷的画法是每个四面体的一个键断开并与其邻居相连，使每个原子都保持三个键。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签和建议思路由 AI 生成。答案来自书后答案。两道没有答案的习题 fs-idm173324096（五种酸酐与水反应的配平方程式）和 fs-idm207037584（三种物种中硫的氧化态）被略去，也未计算它们的答案。没有答案的概念性习题 fs-idp44423136 和 fs-idp14134080 带有标明为 OmniStax 自拟的建议思路。fs-idm146332464 的答案按原样写作“an σ bond”（译文中英文冠词归并为“一个 σ 键”）。没有任何内容被移动。",
+ "figures": [
+  {
+   "id": "fig-oxidation-states",
+   "kind": "figure",
+   "number": "18.19",
+   "originals": [
+    "/media/ch18/CNX_Chem_18_04_OxStNonmts.jpg"
+   ],
+   "original_caption": "非金属在离子型和共价化合物中表现出这些常见的氧化态。",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-carbon",
+   "kind": "sim",
+   "number": "18.20",
+   "folds": [
+    "18.22",
+    "18.23"
+   ],
+   "originals": [
+    "/media/ch18/CNX_Chem_18_04_Carbonform.jpg",
+    "/media/ch18/CNX_Chem_18_04_Buckyball.jpg",
+    "/media/ch18/CNX_Chem_18_04_Nanotube.jpg"
+   ],
+   "original_caption": "（图 18.20）（a）金刚石和（b）石墨是碳的两种形态。（c）在金刚石的晶体结构中，共价键形成三维的四面体。（d）在石墨的晶体结构中，每个平面层由六元环组成。（来源 a：改编自 “Fancy Diamonds”/Flickr 的作品；b：改编自 http://images-of-elements.com/carbon.php 的作品）（图 18.22）C₆₀ 即巴克敏斯特富勒烯的分子结构是二十面体。（图 18.23）（a）石墨烯和（b）碳纳米管都是碳的同素异形体。",
+   "draws": [
+    "temperature"
+   ],
+   "conventions": [
+    "C"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-graphite-orbitals",
+   "kind": "figure",
+   "number": "18.21",
+   "originals": [
+    "/media/ch18/CNX_Chem_18_04_unhyporbC.jpg"
+   ],
+   "original_caption": "（a）石墨中的碳原子具有未杂化的 p 轨道。每个 p 轨道都垂直于碳原子所在的平面。（b）这是描述石墨的电子结构（作为共振杂化体）所必需的众多共振式中的两种。",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-phosphorus",
+   "kind": "sim",
+   "number": "18.24",
+   "originals": [
+    "/media/ch18/CNX_Chem_18_04_Phosphorus.jpg"
+   ],
+   "original_caption": "（a）白磷在空气中会自燃，因此保存在水中。（b）白磷的结构由排列成四面体的 P4 分子组成。（c）红磷的反应性比白磷低得多。（d）红磷的结构由通过 P-P 单键连接的 P4 四面体网络组成。（来源 a：改编自 http://images-of-elements.com/phosphorus.php 的作品）",
+   "draws": [
+    "temperature"
+   ],
+   "conventions": [
+    "P"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-sulfur",
+   "kind": "sim",
+   "number": "18.25",
+   "originals": [
+    "/media/ch18/CNX_Chem_18_04_Sulfrchain.jpg"
+   ],
+   "original_caption": "这四种硫的同素异形体显示出八元折叠环。每个硫原子通过共价 S-S 单键与环中的两个邻居相连。这里是（a）单个 S8 环，（b）环打开时形成的 S8 链，（c）硫原子加到 S8 链上形成的更长的链，以及（d）在较高温度下形成的很长的硫链的一部分。",
+   "draws": [
+    "temperature"
+   ],
+   "conventions": [
+    "S"
+   ],
+   "facts": [
+    "#e3c75a",
+    "#d4892b",
+    "#8c1d12"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "nonmetals",
+   "concept": "nonmetal-bonding-and-ions",
+   "verb": "introduces"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "first-member-anomaly",
+   "verb": "introduces"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "nonmetal-redox-patterns",
+   "verb": "introduces"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "acid-anhydride",
+   "verb": "introduces"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "disproportionation-reaction",
+   "verb": "introduces"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "nonmetal",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "metal",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "electronegativity",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "bond-type-from-electronegativity",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "ionic-compounds",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "covalent-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "cation",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "anion",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "valence-electrons",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "d-orbital",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "pi-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "redox-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "oxidation",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "reduction",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "oxyacid",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "oxyacid-strength",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "binary-acid-strength",
+   "verb": "uses"
+  },
+  {
+   "span": "structures",
+   "concept": "nonmetal-structures",
+   "verb": "introduces"
+  },
+  {
+   "span": "structures",
+   "concept": "covalent-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "structures",
+   "concept": "noble-gas",
+   "verb": "uses"
+  },
+  {
+   "span": "structures",
+   "concept": "halogen",
+   "verb": "uses"
+  },
+  {
+   "span": "structures",
+   "concept": "dispersion-forces",
+   "verb": "uses"
+  },
+  {
+   "span": "structures",
+   "concept": "polarizability",
+   "verb": "uses"
+  },
+  {
+   "span": "structures",
+   "concept": "allotropes",
+   "verb": "uses"
+  },
+  {
+   "span": "carbon",
+   "concept": "carbon-allotropes",
+   "verb": "introduces"
+  },
+  {
+   "span": "carbon",
+   "concept": "sp3-hybrid-orbital",
+   "verb": "uses"
+  },
+  {
+   "span": "carbon",
+   "concept": "sp2-hybrid-orbital",
+   "verb": "uses"
+  },
+  {
+   "span": "carbon",
+   "concept": "sigma-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "carbon",
+   "concept": "pi-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "carbon",
+   "concept": "resonance",
+   "verb": "uses"
+  },
+  {
+   "span": "carbon",
+   "concept": "resonance-forms",
+   "verb": "uses"
+  },
+  {
+   "span": "carbon",
+   "concept": "resonance-hybrid",
+   "verb": "uses"
+  },
+  {
+   "span": "carbon",
+   "concept": "dispersion-forces",
+   "verb": "uses"
+  },
+  {
+   "span": "carbon",
+   "concept": "covalent-network-solid",
+   "verb": "uses"
+  },
+  {
+   "span": "carbon",
+   "concept": "amorphous-solid",
+   "verb": "uses"
+  },
+  {
+   "span": "carbon",
+   "concept": "melting-point",
+   "verb": "uses"
+  },
+  {
+   "span": "carbon",
+   "concept": "allotropes",
+   "verb": "uses"
+  },
+  {
+   "span": "phosphorus",
+   "concept": "phosphorus-allotropes",
+   "verb": "introduces"
+  },
+  {
+   "span": "phosphorus",
+   "concept": "allotropes",
+   "verb": "uses"
+  },
+  {
+   "span": "phosphorus",
+   "concept": "covalent-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "phosphorus",
+   "concept": "melting-point",
+   "verb": "uses"
+  },
+  {
+   "span": "phosphorus",
+   "concept": "boiling-point",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur",
+   "concept": "sulfur-allotropes",
+   "verb": "introduces"
+  },
+  {
+   "span": "sulfur",
+   "concept": "allotropes",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur",
+   "concept": "viscosity",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur",
+   "concept": "amorphous-solid",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur",
+   "concept": "paramagnetism",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur",
+   "concept": "octet-rule",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur",
+   "concept": "valence-electrons",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur",
+   "concept": "melting-point",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "e1",
+   "source_id": "fs-idp44423136",
+   "source_number": "44",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "carbon",
+   "prompt": "碳形成多种同素异形体，其中两种是石墨和金刚石。硅具有金刚石结构。为什么没有具有石墨结构的硅的同素异形体？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "硅没有石墨同素异形体，是因为硅原子彼此之间不形成稳定的 π 键。石墨层所需要的不止是 σ 键：每个碳原子用 <em>sp</em><sup>2</sup> 杂化轨道与同一平面内的三个邻居形成 σ 键，而它垂直于层的未杂化 <em>p</em> 轨道与相邻原子上的 <em>p</em> 轨道并排重叠，形成 π 键。良好的并排重叠要求原子较小，每个族的第一个成员比较重的成员更容易形成 π 键。碳是第 14 族的第一个成员，原子足够小，而硅要大得多，所以它的 3<em>p</em> 轨道重叠很差，Si–Si π 键很弱。硅转而把全部四个价电子用于形成 σ 键，每个原子都是 <em>sp</em><sup>3</sup> 杂化，并与位于四面体顶点的四个邻居成键，这就是金刚石结构。"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idm146332464",
+   "source_number": "45",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "nonmetals",
+   "prompt": "大气中的氮以非常稳定的双原子分子形式存在。为什么磷形成的是不太稳定的 P<sub>4</sub> 分子，而不是 P<sub>2</sub> 分子？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "在 N<sub>2</sub> 分子中，氮原子之间有一个 σ 键和两个 π 键把两个原子结合在一起。三个强键的存在使 N<sub>2</sub> 成为非常稳定的分子。磷是第三周期元素，因此不能有效地形成 π 键；所以它必须通过形成三个 σ 键来满足其成键需求。"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm105553408",
+   "source_number": "47",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "nonmetals",
+   "prompt": "确定下列每种化合物中各元素的氧化数：<br>（a）HCN<br>（b）OF<sub>2</sub><br>（c）AsCl<sub>3</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）H = 1+，C = 2+，N = 3−；（b）O = 2+，F = 1−；（c）As = 3+，Cl = 1−"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm129789632",
+   "source_number": "49",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "nonmetals",
+   "prompt": "按电负性增大的顺序排列下列各项：F；Cl；O；S。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "S &lt; Cl &lt; O &lt; F"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp14134080",
+   "source_number": "50",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "phosphorus",
+   "prompt": "为什么白磷由四面体形的 P<sub>4</sub> 分子组成，而氮由双原子的 N<sub>2</sub> 分子组成？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "第 15 族的每个原子都有五个价电子，需要三个键才能完成八隅体；氮可以把三个键都形成在同一个伙伴上，而磷不能。氮是该族体积小的第一个成员，能形成强的 π 键，所以两个氮原子共用三对电子，形成一个三键，即一个 σ 键和两个 π 键，小分子 N<sub>2</sub> 的每个原子上各有一对孤电子对，使两个原子都得到满足。磷是体积较大的第三周期原子，其 3<em>p</em> 轨道并排重叠很差，所以 P–P π 键很弱，P≡P 三键不稳定。磷原子必须以 σ 键的形式与三个不同的磷原子形成三个键。在 P<sub>4</sub> 四面体中，每个原子位于一个顶点，以单键与其他三个原子成键，并保留一对孤电子对，因此每个原子都有八隅体，而不需要任何 π 键。"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e1",
+   "concept": "carbon-allotropes"
+  },
+  {
+   "exercise": "e1",
+   "concept": "first-member-anomaly"
+  },
+  {
+   "exercise": "e2",
+   "concept": "first-member-anomaly"
+  },
+  {
+   "exercise": "e2",
+   "concept": "phosphorus-allotropes"
+  },
+  {
+   "exercise": "e2",
+   "concept": "sigma-and-pi-bonds"
+  },
+  {
+   "exercise": "e3",
+   "concept": "oxidation-number"
+  },
+  {
+   "exercise": "e3",
+   "concept": "nonmetal-redox-patterns"
+  },
+  {
+   "exercise": "e4",
+   "concept": "electronegativity"
+  },
+  {
+   "exercise": "e4",
+   "concept": "nonmetal-bonding-and-ions"
+  },
+  {
+   "exercise": "e5",
+   "concept": "phosphorus-allotropes"
+  },
+  {
+   "exercise": "e5",
+   "concept": "first-member-anomaly"
+  },
+  {
+   "exercise": "e5",
+   "concept": "nonmetal-structures"
+  }
+ ],
+ "footnotes": [
+  {
+   "id": "c-so2-equation",
+   "kind": "correction",
+   "html": "书中写作 S(<em>s</em>) + O<sub>2</sub>(<em>g</em>) ⟶ 2SO<sub>2</sub>(<em>s</em>)。配平后的方程式只生成一分子二氧化硫，且为气体：S(<em>s</em>) + O<sub>2</sub>(<em>g</em>) ⟶ SO<sub>2</sub>(<em>g</em>)。"
+  }
+ ]
+}

@@ -1,0 +1,1120 @@
+{
+  "id": "6.3",
+  "module": "m68733",
+  "chapter": "6",
+  "title": "量子理论的发展",
+  "short": "量子理论的发展",
+  "lead": "玻尔模型说不出为什么只允许某些轨道，而且对任何含有一个以上电子的原子都不成立。取而代之的是德布罗意的物质波、海森伯关于位置和<span data-concept=\"momentum\">动量</span>不能同时知道的限制、薛定谔的<span data-concept=\"wavefunction\">波函数</span>，以及描述原子中电子的四个量子数。",
+  "objectives": [
+    "将在电磁辐射中观察到的波粒二象性概念推广到物质上",
+    "理解对原子中电子的量子力学描述的基本思想，即它使用三维波函数（即轨道）的概念，这些波函数规定了在空间某一特定部分找到电子的概率分布",
+    "列出并描述四个量子数的特征，这四个量子数构成完整确定原子中电子状态的基础"
+  ],
+  "summary_html": "<p>宏观物体表现得像粒子。微观物体（如电子）既有粒子的性质，也有波的性质。它们的精确轨迹无法确定。原子的量子力学模型根据一个称为<span data-concept=\"wavefunction\">波函数</span>的数学函数（常记作 <em>ψ</em>），以<em>概率</em>的方式描述电子的三维位置。原子的<span data-concept=\"wavefunction\">波函数</span>也称为轨道。<span data-concept=\"wavefunction\">波函数</span>的模的平方描述在空间某一特定区域找到电子的概率分布。因此，原子轨道描述的是原子中电子最可能被找到的区域。</p><p>原子轨道由三个量子数表征。主量子数 <em>n</em> 可以是任何正整数。轨道<span data-concept=\"energy-and-work\">能量</span>值的大致范围以及电子到原子核的平均距离都与 <em>n</em> 有关。<em>n</em> 值相同的轨道称为处于同一电子层。角量子数（副量子数、角动量量子数）<em>l</em> 可以取 0 到 <em>n</em> – 1 的任何整数值。这个量子数描述轨道的形状或类型。主量子数和 <em>l</em> 值都相同的轨道属于同一亚层。磁量子数 <em>m<sub>l</sub></em> 有 2<em>l</em> + 1 个值，从 –<em>l</em> 到 +<em>l</em>，描述轨道在空间中的取向。此外，每个电子都有自旋量子数 <em>m<sub>s</sub></em>，它可以等于 ±<sup>1</sup>&frasl;<sub>2</sub>。同一原子中不可能有两个电子的全部四个量子数的取值组合完全相同。</p>",
+  "notes": "三条“学习链接”提示——一幅双缝实验的漫画、一篇关于不确定性原理的宏观演示的文章和一个关于薛定谔的猫的故事——已略去。正文按书中印刷的样子保留了四处笔误：本应是 spatial（空间）的“special distribution”（译作“特殊分布”）、例 6.7 中的“m can have values”（m 可以取值）、第四道习题答案中以 m₁ 代替 m<sub>l</sub>，以及第十四道习题的两个方程中以 ν 表示速度。",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      },
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ]
+  },
+  "built": "2026-10-26",
+  "exercises_lead": "",
+  "exercise_notes": "布鲁姆层级、概念标签、权重和提示均由 AI 生成。四道“学习检测”题带有其后注释中书上自己的答案。章末习题的答案来自书后答案，涵盖本节十五道题中的八道。其余七道没有答案的题都是概念题，即 fs-idm185773696（量子数的允许取值）、fs-idp16534928（电子层、亚层和轨道）、fs-idm65709728 和 fs-idm109521552（前一题所问亚层的简并轨道）、fs-idm109481472（画出 p<sub>x</sub> 和 d<sub>xz</sub> 轨道的草图）、fs-idm165892704（不确定性原理）以及 fs-idm68696640（粒子性和波动性的方程）；每一道都附有标明为 OmniStax 自拟的建议思路，不计算答案。没有任何内容取自其他小节，也没有任何内容留给其他小节。数值答案接受 2% 的容差。",
+  "figures": [
+    {
+      "id": "photo-waterw",
+      "kind": "photo",
+      "number": "6.16",
+      "draws": []
+    },
+    {
+      "id": "sim-orbit-wave",
+      "kind": "sim",
+      "number": "6.17",
+      "originals": [
+        "/media/ch06/CNX_Chem_06_03_elecw.jpg"
+      ],
+      "original_caption": "如果把电子看作绕原子核运动的波，那么要使这种驻波行为成为可能，轨道上就必须恰好容纳整数个波长。",
+      "draws": [
+        "wavelength",
+        "length"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "note repeating the headline and caption dropped"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-double-slit",
+      "kind": "sim",
+      "number": "6.18",
+      "originals": [
+        "/media/ch06/CNX_Chem_06_03_Electrnin.jpg"
+      ],
+      "original_caption": "（a）电子穿过靠得很近的狭缝所形成的干涉图样表明，电子之类的量子粒子可以表现出波动行为。（b）这里所示的实验结果表明了电子的波粒二象性。",
+      "draws": [
+        "wavelength",
+        "mass",
+        "velocity"
+      ],
+      "conventions": [
+        "e-"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "note repeating the caption dropped"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-de-broglie",
+      "kind": "sim",
+      "draws": [
+        "wavelength",
+        "mass",
+        "velocity",
+        "length"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-shells",
+      "kind": "figure",
+      "number": "6.19",
+      "originals": [
+        "/media/ch06/CNX_Chem_06_03_Qnumbers.jpg"
+      ],
+      "original_caption": "不同的电子层由主量子数编号。",
+      "draws": [
+        "energy"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-radial",
+      "kind": "sim",
+      "number": "6.20",
+      "originals": [
+        "/media/ch06/CNX_Chem_06_03_sorbit.jpg"
+      ],
+      "original_caption": "图中给出了在 1s、2s、3s 轨道上找到电子的概率（y 轴）随到原子核距离变化的关系。",
+      "draws": [
+        "length"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "headline one line clear of the axis title; note repeating caption dropped"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-orbital-shapes",
+      "kind": "sim",
+      "number": "6.21",
+      "originals": [
+        "/media/ch06/CNX_Chem_06_03_Oshapes.jpg"
+      ],
+      "original_caption": "s、p、d 和 f 轨道的形状。",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "camera pulled back, axes shortened, clear of the headline; notes cut"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-subshell-energies",
+      "kind": "sim",
+      "number": "6.22",
+      "originals": [
+        "/media/ch06/CNX_Chem_06_03_subshells.jpg"
+      ],
+      "original_caption": "该图表给出多电子原子中电子轨道的能量。",
+      "draws": [
+        "energy"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "orbital lines narrowed so 1s clears the axis and 4p the edge"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-spin",
+      "kind": "figure",
+      "number": "6.23",
+      "originals": [
+        "/media/ch06/CNX_Chem_06_03_spin.jpg"
+      ],
+      "original_caption": "外磁场中自旋值为 ±½ 的电子。",
+      "draws": [
+        "energy"
+      ],
+      "conventions": [
+        "e-"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "moment arrows thinned so their heads show"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "span": "open-questions",
+      "concept": "bohr-stationary-states",
+      "verb": "uses"
+    },
+    {
+      "span": "open-questions",
+      "concept": "hydrogen-like-ions",
+      "verb": "uses"
+    },
+    {
+      "span": "microscopic-world",
+      "concept": "wave-particle-duality",
+      "verb": "uses"
+    },
+    {
+      "span": "de-broglie",
+      "concept": "de-broglie-wavelength",
+      "verb": "introduces"
+    },
+    {
+      "span": "de-broglie",
+      "concept": "wave-particle-duality",
+      "verb": "uses"
+    },
+    {
+      "span": "de-broglie",
+      "concept": "bohr-stationary-states",
+      "verb": "uses"
+    },
+    {
+      "span": "de-broglie",
+      "concept": "standing-waves-quantization",
+      "verb": "uses"
+    },
+    {
+      "span": "de-broglie",
+      "concept": "velocity",
+      "verb": "introduces"
+    },
+    {
+      "span": "de-broglie",
+      "concept": "momentum",
+      "verb": "introduces"
+    },
+    {
+      "span": "electron-interference",
+      "concept": "de-broglie-wavelength",
+      "verb": "reinforces"
+    },
+    {
+      "span": "electron-interference",
+      "concept": "wave-particle-duality",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-particle-wavelength",
+      "concept": "de-broglie-wavelength",
+      "verb": "uses"
+    },
+    {
+      "span": "uncertainty",
+      "concept": "heisenberg-uncertainty",
+      "verb": "introduces"
+    },
+    {
+      "span": "uncertainty",
+      "concept": "de-broglie-wavelength",
+      "verb": "uses"
+    },
+    {
+      "span": "quantum-model",
+      "concept": "wavefunction-probability",
+      "verb": "introduces"
+    },
+    {
+      "span": "quantum-model",
+      "concept": "heisenberg-uncertainty",
+      "verb": "uses"
+    },
+    {
+      "span": "quantum-model",
+      "concept": "quantum-mechanics",
+      "verb": "introduces"
+    },
+    {
+      "span": "quantum-model",
+      "concept": "wavefunction",
+      "verb": "introduces"
+    },
+    {
+      "span": "quantum-model",
+      "concept": "electron-density",
+      "verb": "introduces"
+    },
+    {
+      "span": "quantum-model",
+      "concept": "atomic-orbital",
+      "verb": "introduces"
+    },
+    {
+      "span": "shells",
+      "concept": "principal-quantum-number-shells",
+      "verb": "introduces"
+    },
+    {
+      "span": "shells",
+      "concept": "photon-emission-absorption",
+      "verb": "uses"
+    },
+    {
+      "span": "shells",
+      "concept": "bohr-energy-levels",
+      "verb": "uses"
+    },
+    {
+      "span": "shells",
+      "concept": "shell",
+      "verb": "introduces"
+    },
+    {
+      "span": "subshells",
+      "concept": "angular-momentum-quantum-number",
+      "verb": "introduces"
+    },
+    {
+      "span": "subshells",
+      "concept": "wavefunction-probability",
+      "verb": "uses"
+    },
+    {
+      "span": "subshells",
+      "concept": "principal-quantum-number-shells",
+      "verb": "uses"
+    },
+    {
+      "span": "subshells",
+      "concept": "subshell",
+      "verb": "introduces"
+    },
+    {
+      "span": "subshells",
+      "concept": "s-orbital",
+      "verb": "introduces"
+    },
+    {
+      "span": "subshells",
+      "concept": "p-orbital",
+      "verb": "introduces"
+    },
+    {
+      "span": "subshells",
+      "concept": "d-orbital",
+      "verb": "introduces"
+    },
+    {
+      "span": "subshells",
+      "concept": "f-orbital",
+      "verb": "introduces"
+    },
+    {
+      "span": "orientation",
+      "concept": "magnetic-quantum-number",
+      "verb": "introduces"
+    },
+    {
+      "span": "orientation",
+      "concept": "angular-momentum-quantum-number",
+      "verb": "uses"
+    },
+    {
+      "span": "orientation",
+      "concept": "principal-quantum-number-shells",
+      "verb": "reinforces"
+    },
+    {
+      "span": "orientation",
+      "concept": "degenerate-orbitals",
+      "verb": "introduces"
+    },
+    {
+      "span": "spin",
+      "concept": "spin-quantum-number",
+      "verb": "introduces"
+    },
+    {
+      "span": "spin",
+      "concept": "line-spectra",
+      "verb": "uses"
+    },
+    {
+      "span": "pauli",
+      "concept": "pauli-exclusion-principle",
+      "verb": "introduces"
+    },
+    {
+      "span": "pauli",
+      "concept": "spin-quantum-number",
+      "verb": "uses"
+    },
+    {
+      "span": "pauli",
+      "concept": "magnetic-quantum-number",
+      "verb": "uses"
+    },
+    {
+      "span": "worked-examples",
+      "concept": "working-with-quantum-numbers",
+      "verb": "introduces"
+    },
+    {
+      "span": "ex-shells-subshells",
+      "concept": "angular-momentum-quantum-number",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-shells-subshells",
+      "concept": "magnetic-quantum-number",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-max-electrons",
+      "concept": "pauli-exclusion-principle",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-max-electrons",
+      "concept": "working-with-quantum-numbers",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-orbital-table",
+      "concept": "working-with-quantum-numbers",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-orbital-table",
+      "concept": "angular-momentum-quantum-number",
+      "verb": "reinforces"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idm90452432",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-particle-wavelength"
+      },
+      "cite": "de-broglie",
+      "prompt": "计算一个质量为 100 g、以 35 m s<sup>–1</sup> 的速度运动的垒球的波长，假定它可以当作单个粒子来处理。",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 1.9e-34,
+        "unit": "m",
+        "hint": "先把质量换算成千克，再用普朗克常量除以质量与速度之积。",
+        "solution": "1.9 × 10<sup>–34</sup> m。我们从来不会认为被投出的垒球有波长，因为这个波长小到我们的感官或任何已知的仪器都不可能探测到。由于德布罗意波长与粒子的质量和速度都成反比，所以粒子的动量（质量与速度的数学乘积）必须足够小，才能产生可探测到的较大波长。"
+      }
+    },
+    {
+      "id": "cyl2",
+      "source_id": "fs-idm127242304",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-shells-subshells"
+      },
+      "cite": "subshells",
+      "prompt": "指出具有下列量子数的电子所在的亚层：（a）<em>n</em> = 3，<em>l</em> = 1；（b）<em>n</em> = 5，<em>l</em> = 3；（c）<em>n</em> = 2，<em>l</em> = 0。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）3<em>p</em>（b）5<em>f</em>（c）2<em>s</em>"
+      }
+    },
+    {
+      "id": "cyl3",
+      "source_id": "fs-idm169030688",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-max-electrons"
+      },
+      "cite": "pauli",
+      "prompt": "如果一个电子层最多含有 32 个电子，那么主量子数 <em>n</em> 是多少？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 4,
+        "hint": "主量子数为 n 的电子层最多容纳 2n² 个电子。",
+        "solution": "<em>n</em> = 4"
+      }
+    },
+    {
+      "id": "cyl4",
+      "source_id": "fs-idm161581600",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-orbital-table"
+      },
+      "cite": "orientation",
+      "prompt": "有多少个轨道的 <em>l</em> = 2 且 <em>n</em> = 3？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 5,
+        "hint": "角量子数为 l 的亚层有 2l + 1 个轨道。",
+        "solution": "五个简并的 3<em>d</em> 轨道"
+      }
+    },
+    {
+      "id": "e1",
+      "source_id": "fs-idp68295120",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "quantum-model",
+      "prompt": "玻尔模型和氢原子的量子力学模型有哪些相似之处？又有哪些不同之处？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "两种模型都有一个带正电的中心原子核，电子按照库仑静电势围绕原子核运动。玻尔模型<em>假定</em>电子在圆形轨道上运动，这些轨道的能量、角动量和半径是量子化的，由单一量子数 <em>n</em> = 1, 2, 3, … 规定，但这种量子化是玻尔为了把量子化纳入对原子本质上属于经典力学的描述而做出的特设假设。玻尔还假定，绕原子核运动的电子通常不发射也不吸收电磁辐射，而当电子切换到另一条轨道时才会这样。在量子力学模型中，电子并不沿精确的轨道运动（这样的轨道违反海森伯不确定性原理），而是采用对电子在任一给定时刻位置的概率解释，用一个称为波函数的数学函数 <em>ψ</em> 来确定电子的空间概率分布。这些波函数，即轨道，是三维驻波，可以由三个量子数来规定，这些量子数自然地产生于其背后的数学（无需任何特设假设）：主量子数 <em>n</em>（与玻尔所用的相同），它规定电子层，使 <em>n</em> 相同的轨道都具有相同的能量和大致相同的空间范围；角量子数 <em>l</em>，它是轨道角动量的量度，对应于轨道的大致形状，同时也规定亚层，使 <em>l</em>（和 <em>n</em>）相同的轨道都具有相同的能量；以及取向量子数 <em>m</em>，它是角动量 <em>z</em> 分量的量度，对应于轨道的取向。玻尔模型给出的能量表达式与量子力学的表达式相同，因此两者都正确地解释了氢的分立光谱（这是因错误的理由而得到正确答案的一个例子，许多学化学的学生对此深有同感），但它给出的角动量表达式是错误的（玻尔轨道必然都具有非零的角动量，而有些量子轨道［<em>s</em> 轨道］可以具有零角动量）。"
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idm185773696",
+      "kind": "exercise",
+      "bloom": "Remember",
+      "place": {
+        "at": "end"
+      },
+      "cite": "pauli",
+      "prompt": "四个量子数 <em>n</em>、<em>l</em>、<em>m<sub>l</sub></em> 和 <em>m<sub>s</sub></em> 各自的允许值是什么？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "对照表 6.1，一行一行地看。主量子数 <em>n</em> 可以是任何正整数。角量子数 <em>l</em> 取决于 <em>n</em>：它取从 0 到 <em>n</em> – 1 的每一个整数。磁量子数 <em>m<sub>l</sub></em> 取决于 <em>l</em>：它取从 –<em>l</em> 到 +<em>l</em> 的每一个整数，共 2<em>l</em> + 1 个值。自旋量子数 <em>m<sub>s</sub></em> 与其他量子数都无关，只有两个值，+<sup>1</sup>&frasl;<sub>2</sub> 和 –<sup>1</sup>&frasl;<sub>2</sub>。"
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idm127368704",
+      "kind": "exercise",
+      "bloom": "Remember",
+      "place": {
+        "at": "end"
+      },
+      "cite": "pauli",
+      "prompt": "描述电子与下列四个量子数 <em>n</em>、<em>l</em>、<em>m<sub>l</sub></em> 和 <em>m<sub>s</sub></em> 各自相关联的性质。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "<em>n</em> 决定能量值的大致范围以及电子到原子核的可能距离。<em>l</em> 决定轨道的形状。<em>m</em><sub>1</sub><sup class=\"fn\" data-note=\"c-e3-ml\"></sup> 决定 <em>l</em> 值相同的各轨道彼此之间的取向。<em>m<sub>s</sub></em> 决定电子的自旋。"
+      }
+    },
+    {
+      "id": "e4",
+      "source_id": "fs-idp16534928",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "subshells",
+      "prompt": "回答下列问题：<br>（a）不使用量子数，描述原子的电子层、亚层和轨道之间的差别。<br>（b）原子的电子层、亚层和轨道的量子数有何不同？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "（a）把这三者想成嵌套的几组。电子层是共有一个大致能量和到原子核的一个大致距离的轨道的集合。亚层是电子层中共有一种形状的轨道的集合。轨道是亚层中的单个空间区域，在其中一个或两个电子最可能被找到。（b）问一问命名每一组需要多少个量子数。电子层仅由 <em>n</em> 确定，亚层由 <em>n</em> 和 <em>l</em> 共同确定，而轨道由 <em>n</em>、<em>l</em> 和 <em>m<sub>l</sub></em> 共同确定。"
+      }
+    },
+    {
+      "id": "e5",
+      "source_id": "fs-idm226431552",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "subshells",
+      "prompt": "指出具有下列量子数的电子所在的亚层：<br>（a）<em>n</em> = 2，<em>l</em> = 1<br>（b）<em>n</em> = 4，<em>l</em> = 2<br>（c）<em>n</em> = 6，<em>l</em> = 0",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）2<em>p</em>；（b）4<em>d</em>；（c）6<em>s</em>"
+      }
+    },
+    {
+      "id": "e6",
+      "source_id": "fs-idm65709728",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "orientation",
+      "prompt": "上一题所描述的亚层中，哪些含有简并轨道？每个亚层中各有多少个简并轨道？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "2<em>p</em> 亚层含有三个简并轨道，4<em>d</em> 亚层含有五个，6<em>s</em> 亚层一个也没有。在含有一个以上电子的原子中，同一亚层的轨道具有同一能量，彼此简并，而角量子数为 <em>l</em> 的亚层含有 2<em>l</em> + 1 个轨道，<em>m<sub>l</sub></em> 的每个值各对应一个。（a）对于 2<em>p</em>，<em>l</em> = 1，所以 <em>m<sub>l</sub></em> = –1, 0 或 +1，这给出三个简并轨道。（b）对于 4<em>d</em>，<em>l</em> = 2，所以 <em>m<sub>l</sub></em> 从 –2 取到 +2，这给出五个简并轨道。（c）对于 6<em>s</em>，<em>l</em> = 0，所以 <em>m<sub>l</sub></em> = 0 是唯一的值；该亚层是单个轨道，没有其他能量相同的轨道。"
+      }
+    },
+    {
+      "id": "e7",
+      "source_id": "fs-idm5890656",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "subshells",
+      "prompt": "指出具有下列量子数的电子所在的亚层：<br>（a）<em>n</em> = 3，<em>l</em> = 2<br>（b）<em>n</em> = 1，<em>l</em> = 0<br>（c）<em>n</em> = 4，<em>l</em> = 3",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）3<em>d</em>；（b）1<em>s</em>；（c）4<em>f</em>"
+      }
+    },
+    {
+      "id": "e8",
+      "source_id": "fs-idm109521552",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "orientation",
+      "prompt": "上一题所描述的亚层中，哪些含有简并轨道？每个亚层中各有多少个简并轨道？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "3<em>d</em> 亚层含有五个简并轨道，4<em>f</em> 亚层含有七个，而 1<em>s</em> 亚层一个也没有。同一亚层的轨道具有同一能量，而角量子数为 <em>l</em> 的亚层含有 2<em>l</em> + 1 个轨道，<em>m<sub>l</sub></em> 的每个值各对应一个。（a）对于 3<em>d</em>，<em>l</em> = 2，所以 <em>m<sub>l</sub></em> = –2, –1, 0, +1 或 +2，这给出五个简并轨道。（b）对于 1<em>s</em>，<em>l</em> = 0，所以 <em>m<sub>l</sub></em> = 0 是唯一的值；该亚层是单个轨道，没有其他轨道可与之简并。（c）对于 4<em>f</em>，<em>l</em> = 3，所以 <em>m<sub>l</sub></em> 从 –3 取到 +3，这给出七个简并轨道。"
+      }
+    },
+    {
+      "id": "e9",
+      "source_id": "fs-idm153995968",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "orientation",
+      "prompt": "画出 $d_{x^{2}-y^{2}}$ 轨道和 <em>p<sub>y</sub></em> 轨道的边界面草图。务必画出并标明坐标轴。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "<img src=\"/media/ch06/CNX_Chem_06_03_Ex9soln_img.jpg\" alt=\"此图包含两幅示意图。第一幅是 2p 下标 y 轨道。第二幅是 d 下标 x 平方减 y 平方轨道。在 x、y、z 坐标系中，第一幅图有两个球形，沿 y 轴取向，在原点相连。第二幅图显示四个椭球形的瓣，端点围绕原点排布。其中两个椭球形的瓣沿 x 轴取向，另两个沿 y 轴取向。\">"
+      }
+    },
+    {
+      "id": "e10",
+      "source_id": "fs-idm109481472",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "orientation",
+      "prompt": "画出 <em>p<sub>x</sub></em> 和 <em>d<sub>xz</sub></em> 轨道的草图。务必画出并标明坐标。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "先画出 <em>x</em>、<em>y</em> 和 <em>z</em> 轴，原子核位于原点。<em>p</em> 轨道是由两个瓣组成的哑铃，沿其下标所示的轴放置，所以 <em>p<sub>x</sub></em> 轨道在原点两侧沿 <em>x</em> 轴各有一个瓣。下标中有两个字母的 <em>d</em> 轨道在这两个轴所在的平面内有四个瓣，位于两轴之间而不是沿着轴，所以 <em>d<sub>xz</sub></em> 轨道在 <em>xz</em> 平面内有四个瓣，每个象限一个。图 6.21 显示了这两种形状，并且可以转动它来核对草图。"
+      }
+    },
+    {
+      "id": "e11",
+      "source_id": "fs-idm139949520",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "pauli",
+      "figure": {
+        "src": "/media/ch06/CNX_Chem_06_03_OrbOutline_img.jpg",
+        "alt": "此图包含三幅示意图。在 x 中，画着一个圆，圆心有一个点。在 y 中，两个近似椭球的形状水平取向，二者之间有一个点。在 z 中，四个与 y 中相似的形状排成 x 形，中心有一个点。",
+        "caption": "三个轨道的轮廓，分别标为（x）、（y）和（z）。"
+      },
+      "prompt": "考虑这里以轮廓表示的轨道。<br>（a）（x）型轨道最多含有多少个电子？（y）型的呢？（z）型的呢？<br>（b）在 <em>n</em> = 2 的电子层中有多少个（x）型轨道？多少个（y）型的？多少个（z）型的？<br>（c）写出 <em>n</em> = 4 的电子层中（x）型轨道上一个电子的一组量子数。再写出 <em>n</em> = 2 的电子层中（y）型轨道上一个电子的，以及 <em>n</em> = 3 的电子层中（z）型轨道上一个电子的。<br>（d）（x）型轨道可能的最小 <em>n</em> 值是多少？（y）型的呢？（z）型的呢？<br>（e）（x）型轨道可能的 <em>l</em> 和 <em>m<sub>l</sub></em> 值是什么？（y）型的呢？（z）型的呢？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）x. 2，y. 2，z. 2；（b）x. 1，y. 3，z. 0；（c）x. 4 0 0 <sup>1</sup>&frasl;<sub>2</sub>，y. 2 1 0 <sup>1</sup>&frasl;<sub>2</sub>，z. 3 2 0 <sup>1</sup>&frasl;<sub>2</sub>；（d）x. 1，y. 2，z. 3；（e）x. <em>l</em> = 0，<em>m<sub>l</sub></em> = 0，y. <em>l</em> = 1，<em>m<sub>l</sub></em> = –1, 0 或 +1，z. <em>l</em> = 2，<em>m<sub>l</sub></em> = –2, –1, 0, +1, +2"
+      }
+    },
+    {
+      "id": "e12",
+      "source_id": "fs-idm165892704",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "uncertainty",
+      "prompt": "陈述海森伯不确定性原理。简要描述该原理意味着什么。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "海森伯不确定性原理指出，从根本上说，不可能同时精确地确定粒子的动量和位置。位置的不确定度与动量的不确定度之积不能小于一个固定的限度，Δ<em>x</em> × Δ<em>p<sub>x</sub></em> ≥ <em>ħ</em>/2，所以粒子的位置知道得越精确，其动量就越不能精确地知道，反之亦然。这条原理意味着，原子中的电子不能沿精确的路径被追踪，例如玻尔模型的圆形轨道，因为确定的轨道要求电子的位置和动量在每一时刻都被精确知道。电子只能用在空间某一区域找到它的概率来描述，这正是轨道所给出的。由于 <em>ħ</em> 非常小，这一限度对电子这样轻的粒子有影响，而对棒球这样的宏观物体则小到根本察觉不到。"
+      }
+    },
+    {
+      "id": "e13",
+      "source_id": "fs-idm130545344",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "pauli",
+      "prompt": "如果自旋量子数 <em>m<sub>s</sub></em> 可以有三个值而不是只有两个，那么原子的第二电子层可以容纳多少个电子？（提示：考虑泡利不相容原理。）",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 12,
+        "hint": "先数一数第二电子层的轨道数，再问：如果任何两个电子都不能四个量子数全部相同，一个轨道可以容纳多少个电子。",
+        "solution": "12"
+      }
+    },
+    {
+      "id": "e14",
+      "source_id": "fs-idm68696640",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "de-broglie",
+      "prompt": "下列方程中，哪些描述粒子性行为？哪些描述波动性行为？有没有同时涉及两种行为的？说明你做出选择的理由。<br>（a）<em>c</em> = <em>λν</em><br>（b）$E=\\frac{m{\\nu}^{2}}{2}$<br>（c）$r=\\frac{{n}^{2}{a}_{0}}{Z}$<br>（d）<em>E = hν</em><br>（e）$\\lambda=\\frac{h}{m\\nu}$<sup class=\"fn\" data-note=\"c-e14-v\"></sup>",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "方程（a）描述波动性行为，（b）和（c）描述粒子性行为，（d）和（e）同时涉及两者。只含有波的量（波长 <em>λ</em> 或频率 <em>ν</em>）的方程描述波；只含有质量、速度或确定位置的方程描述粒子；把两类量联系起来的方程则把二者结合在一起。（a）<em>c</em> = <em>λν</em> 把光的速率、波长和频率联系起来，这些都是波的性质，所以它是波动性的。（b）这里 <em>ν</em> 代表质量为 <em>m</em> 的粒子的速度，而 <em>E</em> = <em>mν</em><sup>2</sup>/2 是它的动能，所以它是粒子性的。（c）玻尔轨道的半径给出被当作粒子的电子到原子核的确定距离，所以它是粒子性的。（d）<em>E</em> = <em>hν</em> 用光子所对应的波的频率给出一个光子（光的粒子）的能量，所以它同时涉及两者。（e）德布罗意的 <em>λ</em> = <em>h</em>/<em>mν</em> 给出质量为 <em>m</em>、速度为 <em>ν</em> 的粒子的波长，所以它同时涉及两者。"
+      }
+    },
+    {
+      "id": "e15",
+      "source_id": "fs-idm24126560",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "pauli",
+      "prompt": "写出硒原子中 <em>n</em> 为 4 的每个电子的一组量子数。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "<table><thead><tr><th><em>n</em></th><th><em>l</em></th><th><em>m<sub>l</sub></em></th><th><em>s</em></th></tr></thead><tbody><tr><td>4</td><td>0</td><td>0</td><td>+<sup>1</sup>&frasl;<sub>2</sub></td></tr><tr><td>4</td><td>0</td><td>0</td><td>−<sup>1</sup>&frasl;<sub>2</sub></td></tr><tr><td>4</td><td>1</td><td>−1</td><td>+<sup>1</sup>&frasl;<sub>2</sub></td></tr><tr><td>4</td><td>1</td><td>0</td><td>+<sup>1</sup>&frasl;<sub>2</sub></td></tr><tr><td>4</td><td>1</td><td>+1</td><td>+<sup>1</sup>&frasl;<sub>2</sub></td></tr><tr><td>4</td><td>1</td><td>−1</td><td>−<sup>1</sup>&frasl;<sub>2</sub></td></tr></tbody></table>"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "de-broglie-wavelength"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "working-with-quantum-numbers"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "angular-momentum-quantum-number",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "working-with-quantum-numbers"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "pauli-exclusion-principle",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl4",
+      "concept": "working-with-quantum-numbers"
+    },
+    {
+      "exercise": "cyl4",
+      "concept": "magnetic-quantum-number",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e1",
+      "concept": "wavefunction-probability"
+    },
+    {
+      "exercise": "e1",
+      "concept": "principal-quantum-number-shells",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e1",
+      "concept": "heisenberg-uncertainty",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e2",
+      "concept": "principal-quantum-number-shells"
+    },
+    {
+      "exercise": "e2",
+      "concept": "angular-momentum-quantum-number",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e2",
+      "concept": "magnetic-quantum-number",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e2",
+      "concept": "spin-quantum-number",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e3",
+      "concept": "principal-quantum-number-shells"
+    },
+    {
+      "exercise": "e3",
+      "concept": "angular-momentum-quantum-number",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e3",
+      "concept": "magnetic-quantum-number",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e3",
+      "concept": "spin-quantum-number",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e4",
+      "concept": "principal-quantum-number-shells"
+    },
+    {
+      "exercise": "e4",
+      "concept": "angular-momentum-quantum-number",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e4",
+      "concept": "magnetic-quantum-number",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e5",
+      "concept": "working-with-quantum-numbers"
+    },
+    {
+      "exercise": "e5",
+      "concept": "angular-momentum-quantum-number",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e6",
+      "concept": "magnetic-quantum-number"
+    },
+    {
+      "exercise": "e6",
+      "concept": "working-with-quantum-numbers",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e7",
+      "concept": "working-with-quantum-numbers"
+    },
+    {
+      "exercise": "e7",
+      "concept": "angular-momentum-quantum-number",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e8",
+      "concept": "magnetic-quantum-number"
+    },
+    {
+      "exercise": "e8",
+      "concept": "working-with-quantum-numbers",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e9",
+      "concept": "magnetic-quantum-number"
+    },
+    {
+      "exercise": "e9",
+      "concept": "angular-momentum-quantum-number",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e10",
+      "concept": "magnetic-quantum-number"
+    },
+    {
+      "exercise": "e10",
+      "concept": "angular-momentum-quantum-number",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e11",
+      "concept": "working-with-quantum-numbers"
+    },
+    {
+      "exercise": "e11",
+      "concept": "pauli-exclusion-principle",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e11",
+      "concept": "magnetic-quantum-number",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e12",
+      "concept": "heisenberg-uncertainty"
+    },
+    {
+      "exercise": "e13",
+      "concept": "pauli-exclusion-principle"
+    },
+    {
+      "exercise": "e13",
+      "concept": "working-with-quantum-numbers",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e14",
+      "concept": "de-broglie-wavelength"
+    },
+    {
+      "exercise": "e14",
+      "concept": "wave-particle-duality",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e15",
+      "concept": "working-with-quantum-numbers"
+    },
+    {
+      "exercise": "e15",
+      "concept": "pauli-exclusion-principle",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e15",
+      "concept": "spin-quantum-number",
+      "weight": 2,
+      "weights_by": "ai"
+    }
+  ],
+  "referents": [
+    {
+      "id": "orbit",
+      "label": "电子波绕行的半径为 100 pm 的圆形轨道",
+      "figures": [
+        "sim-orbit-wave"
+      ]
+    },
+    {
+      "id": "source",
+      "label": "电子源",
+      "figures": [
+        "sim-double-slit"
+      ]
+    },
+    {
+      "id": "barrier",
+      "label": "带有两条窄缝的挡板",
+      "figures": [
+        "sim-double-slit"
+      ]
+    },
+    {
+      "id": "screen",
+      "label": "电子落在其上的屏",
+      "figures": [
+        "sim-double-slit"
+      ]
+    }
+  ],
+  "footnotes": [
+    {
+      "id": "c-m-l",
+      "kind": "correction",
+      "html": "书中此处写作 <em>m</em>。所指的量子数是磁量子数 <em>m<sub>l</sub></em>，当 <em>l</em> = 1 时它的取值为 –1, 0, +1。"
+    },
+    {
+      "id": "c-e3-ml",
+      "kind": "correction",
+      "html": "答案中写作 <em>m</em><sub>1</sub>；表示取向的量子数是 <em>m<sub>l</sub></em>。"
+    },
+    {
+      "id": "c-e14-v",
+      "kind": "correction",
+      "html": "书中把粒子的速度写作 <em>ν</em>，那是它表示频率的符号；在（b）和（e）中它是速度 <em>v</em>：$E=\\frac{m{v}^{2}}{2}$ 和 $\\lambda=\\frac{h}{mv}$。"
+    }
+  ]
+}

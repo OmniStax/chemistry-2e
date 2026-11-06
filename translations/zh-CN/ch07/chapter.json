@@ -1,0 +1,198 @@
+{
+  "id": "7",
+  "dir": "ch07",
+  "title": "化学键与分子几何构型",
+  "intro": {
+    "module": "m68736",
+    "slug": "7-introduction"
+  },
+  "sections": [
+    {
+      "id": "7.1",
+      "module": "m68737",
+      "title": "离子键",
+      "slug": "7-1-ionic-bonding"
+    },
+    {
+      "id": "7.2",
+      "module": "m68738",
+      "title": "共价键",
+      "slug": "7-2-covalent-bonding"
+    },
+    {
+      "id": "7.3",
+      "module": "m68739",
+      "title": "路易斯符号与路易斯结构",
+      "slug": "7-3-lewis-symbols-and-structures"
+    },
+    {
+      "id": "7.4",
+      "module": "m68740",
+      "title": "形式电荷与共振",
+      "slug": "7-4-formal-charges-and-resonance"
+    },
+    {
+      "id": "7.5",
+      "module": "m68741",
+      "title": "离子键与共价键的强度",
+      "slug": "7-5-strengths-of-ionic-and-covalent-bonds"
+    },
+    {
+      "id": "7.6",
+      "module": "m68742",
+      "title": "分子构型与极性",
+      "slug": "7-6-molecular-structure-and-polarity"
+    }
+  ],
+  "variables": [
+    {
+      "sym": "EN",
+      "concept": "electronegativity",
+      "meaning": "原子的电负性，即原子将键中电子吸引向自身的倾向，采用鲍林相对标度，范围为 0 至 4",
+      "section": "7.2",
+      "anchor": "7.2-electronegativity"
+    },
+    {
+      "sym": "ΔEN",
+      "concept": "electronegativity",
+      "meaning": "两个成键原子电负性之差的绝对值，是键的极性大小的粗略度量",
+      "section": "7.2",
+      "anchor": "7.2-bond-type"
+    },
+    {
+      "sym": "D_bond",
+      "concept": "bond-energy",
+      "meaning": "键能，即在气态分子中断开 1 摩尔某种共价键所需的能量；恒为正值",
+      "unit": "kJ/mol",
+      "section": "7.5",
+      "anchor": "7.5-bond-strength"
+    },
+    {
+      "sym": "ΔH",
+      "concept": "enthalpy-change",
+      "meaning": "反应的焓变，由所断开的键和所形成的键的键能估算",
+      "unit": "kJ",
+      "section": "7.5",
+      "anchor": "7.5-enthalpy"
+    },
+    {
+      "sym": "ΔH°",
+      "concept": "enthalpy-change",
+      "meaning": "反应的标准焓变",
+      "unit": "kJ",
+      "section": "7.5",
+      "anchor": "7.5-bond-strength"
+    },
+    {
+      "sym": "ΔH_lattice",
+      "concept": "lattice-energy",
+      "meaning": "晶格能，即把 1 摩尔离子固体分离成气态离子所需的能量",
+      "unit": "kJ/mol",
+      "section": "7.5",
+      "anchor": "7.5-lattice"
+    },
+    {
+      "sym": "C_lattice",
+      "concept": "lattice-energy-trends",
+      "meaning": "取决于晶体结构类型的常数",
+      "section": "7.5",
+      "anchor": "7.5-lattice-trends"
+    },
+    {
+      "sym": "Z_plus",
+      "concept": "ions-and-atomic-charge",
+      "meaning": "阳离子的电荷",
+      "section": "7.5",
+      "anchor": "7.5-lattice-trends"
+    },
+    {
+      "sym": "Z_minus",
+      "concept": "ions-and-atomic-charge",
+      "meaning": "阴离子的电荷",
+      "section": "7.5",
+      "anchor": "7.5-lattice-trends"
+    },
+    {
+      "sym": "R_o",
+      "concept": "lattice-energy-trends",
+      "type": "length",
+      "meaning": "离子间距，即正、负离子半径之和",
+      "unit": "pm",
+      "section": "7.5",
+      "anchor": "7.5-lattice-trends"
+    },
+    {
+      "sym": "ΔH_f°",
+      "concept": "standard-enthalpy-of-formation",
+      "meaning": "离子化合物由其单质生成的标准生成焓",
+      "unit": "kJ/mol",
+      "section": "7.5",
+      "anchor": "7.5-born-haber"
+    },
+    {
+      "sym": "ΔH_s°",
+      "concept": "enthalpies-of-phase-change",
+      "meaning": "金属的升华焓",
+      "unit": "kJ/mol",
+      "section": "7.5",
+      "anchor": "7.5-born-haber"
+    },
+    {
+      "sym": "IE",
+      "concept": "ionization-energy",
+      "meaning": "金属原子的电离能",
+      "unit": "kJ/mol",
+      "section": "7.5",
+      "anchor": "7.5-born-haber"
+    },
+    {
+      "sym": "EA",
+      "concept": "electron-affinity",
+      "meaning": "非金属原子的电子亲和能，该步骤放出能量时为负值",
+      "unit": "kJ/mol",
+      "section": "7.5",
+      "anchor": "7.5-born-haber"
+    },
+    {
+      "sym": "μ",
+      "concept": "bond-dipole-moment",
+      "meaning": "键偶极矩，即键中电荷分离的大小",
+      "unit": "C·m",
+      "section": "7.6",
+      "anchor": "7.6-bond-dipole"
+    },
+    {
+      "sym": "Q_partial",
+      "concept": "bond-polarity",
+      "type": "charge",
+      "meaning": "键两端部分电荷的大小，由成键原子的电负性差决定",
+      "unit": "C",
+      "section": "7.6",
+      "anchor": "7.6-bond-dipole"
+    },
+    {
+      "sym": "r_bond",
+      "concept": "bond-length",
+      "meaning": "两个部分电荷之间的距离，即成键原子的原子核间距",
+      "unit": "Å (1 Å = 10⁻¹⁰ m, 100 pm = 1 Å)",
+      "section": "7.6",
+      "anchor": "7.6-bond-dipole"
+    },
+    {
+      "sym": "ΔH",
+      "concept": "enthalpy-change",
+      "meaning": "1 摩尔固态 NaCl 解离为气态离子的焓变",
+      "unit": "kJ",
+      "section": "7.1",
+      "anchor": "7.1-formation"
+    },
+    {
+      "sym": "ΔH",
+      "concept": "enthalpy-change",
+      "meaning": "断开（或形成）1 摩尔氢分子中的键的焓变",
+      "unit": "kJ",
+      "section": "7.2",
+      "anchor": "7.2-formation"
+    }
+  ]
+}

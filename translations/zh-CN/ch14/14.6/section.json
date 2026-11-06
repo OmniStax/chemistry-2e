@@ -1,0 +1,622 @@
+{
+ "id": "14.6",
+ "module": "m68808",
+ "chapter": "14",
+ "title": "缓冲溶液",
+ "short": "缓冲溶液",
+ "lead": "<span data-concept=\"weak-acid\">弱酸</span>与其<span data-concept=\"conjugate-base\">共轭碱</span>的混合物，或<span data-concept=\"weak-base\">弱碱</span>与其<span data-concept=\"conjugate-acid\">共轭酸</span>的混合物，能够吸收加入的<span data-concept=\"strong-acid\">强酸</span>或强碱。本节解释这样的<span data-concept=\"buffer-composition\">缓冲溶液</span>如何起作用、受到什么限制、如何选择合适的<span data-concept=\"buffer-composition\">缓冲溶液</span>，以及如何计算它的 <span data-concept=\"ph\">pH</span>。",
+ "objectives": [
+  "描述酸碱缓冲溶液的组成和作用",
+  "计算加入酸或碱之前和之后缓冲溶液的 pH"
+ ],
+ "summary_html": "<p>含有相当量弱<span data-concept=\"conjugate-acid-base-pairs\">共轭酸碱对</span>的溶液称为<span data-concept=\"buffer-composition\">缓冲溶液</span>。加入少量酸或碱时，缓冲溶液的 <span data-concept=\"ph\">pH</span> 只会发生很小的变化。加入大量酸或碱可能超出<span data-concept=\"buffer-capacity\">缓冲容量</span>，消耗掉共轭酸碱对中某一种组分的大部分，使缓冲作用无法继续。</p>",
+ "notes": "略去了关于天然水缓冲体系的“学习链接”。按印刷原样保留：例 14.20（b）首次陈述时加入的是“1.0 mL of 0.10 NaOH”，没有写 M。书中图 14.16 图注的“has little affect”（应为 effect）无法在中文中保留，译作“几乎没有影响”；血液段落中缺少撇号的“buffer pairs pKa”译作“缓冲对的 pKa”，其中的 pKa 按符号排版。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案取自书后答案和“学习检测”的答案。没有答案的习题 fs-idm2126064、fs-idp21075184 和 fs-idm126903712 带有一条标明为 OmniStax 自己提出的建议思路。五道没有答案的数值习题被省略，也没有为它们计算答案：fs-idm163403536、fs-idm111908400、fs-idm128715952、fs-idp80593472、fs-idm111629776。在 fs-idm148474576 中，（b）部分在解答中以文字作答，两个 pH 值按 0.02% 的误差核对，因为它们只在小数点后第三位不同。",
+ "figures": [
+  {
+   "id": "sim-buffer",
+   "kind": "sim",
+   "number": "14.15",
+   "folds": [
+    "14.17"
+   ],
+   "originals": [
+    "/media/ch14/CNX_Chem_14_06_bufferchrt.jpg",
+    "/media/ch14/CNX_Chem_14_06_buffer.jpg"
+   ],
+   "original_caption": "（图 14.15）乙酸与乙酸盐混合物中的缓冲作用。（图 14.17）向 100 mL 缓冲溶液中逐渐加入越来越多的 0.10 M NaOH 溶液时 pH 的变化，该缓冲溶液最初的 [CH₃CO₂H] = 0.10 M，[CH₃CO₂⁻] = 0.10 M。注意缓冲容量用尽之后缓冲作用大大减弱，再加入强碱会使 pH 急剧上升。",
+   "draws": [
+    "amount",
+    "concentration",
+    "equilibrium-constant"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-compare",
+   "kind": "photo",
+   "number": "14.14",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-exhaust",
+   "kind": "photo",
+   "number": "14.16",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "referents": [
+  {
+   "id": "buffer",
+   "label": "乙酸盐缓冲溶液",
+   "figures": [
+    "sim-buffer"
+   ]
+  },
+  {
+   "id": "unbuffered",
+   "label": "非缓冲溶液",
+   "figures": [
+    "sim-buffer"
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "buffers",
+   "concept": "buffer-composition",
+   "verb": "introduces"
+  },
+  {
+   "span": "buffers",
+   "concept": "conjugate-acid-base-pairs",
+   "verb": "uses"
+  },
+  {
+   "span": "buffers",
+   "concept": "weak-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "buffers",
+   "concept": "ph",
+   "verb": "uses"
+  },
+  {
+   "span": "how-buffers-work",
+   "concept": "how-buffers-work",
+   "verb": "introduces"
+  },
+  {
+   "span": "how-buffers-work",
+   "concept": "buffer-ph-calculations",
+   "verb": "introduces"
+  },
+  {
+   "span": "how-buffers-work",
+   "concept": "le-chateliers-principle",
+   "verb": "uses"
+  },
+  {
+   "span": "how-buffers-work",
+   "concept": "neutralization-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "how-buffers-work",
+   "concept": "weak-acid-base-equilibrium-concentrations",
+   "verb": "uses"
+  },
+  {
+   "span": "how-buffers-work",
+   "concept": "ph-plus-poh",
+   "verb": "uses"
+  },
+  {
+   "span": "capacity",
+   "concept": "buffer-capacity",
+   "verb": "introduces"
+  },
+  {
+   "span": "capacity",
+   "concept": "buffer-composition",
+   "verb": "uses"
+  },
+  {
+   "span": "selection",
+   "concept": "buffer-capacity",
+   "verb": "reinforces"
+  },
+  {
+   "span": "selection",
+   "concept": "how-buffers-work",
+   "verb": "reinforces"
+  },
+  {
+   "span": "henderson-hasselbalch",
+   "concept": "henderson-hasselbalch",
+   "verb": "introduces"
+  },
+  {
+   "span": "henderson-hasselbalch",
+   "concept": "acid-ionization-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "henderson-hasselbalch",
+   "concept": "ph",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm144695456",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-buffer-ph"
+   },
+   "cite": "how-buffers-work",
+   "prompt": "证明加入 1.0 mL 0.10 <em>M</em> HCl 会使 100 mL 1.8 × 10<sup>−5</sup> <em>M</em> HCl 溶液的 pH 从 4.74 变为 3.00。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "1.8 × 10<sup>−5</sup> <em>M</em> HCl 的初始 pH；pH = −log[H<sub>3</sub>O<sup>+</sup>] = −log[1.8 × 10<sup>−5</sup>] = 4.74<br>100 mL 1.8 × 10<sup>−5</sup> <em>M</em> HCl 中 H<sub>3</sub>O<sup>+</sup> 的物质的量；1.8 × 10<sup>−5</sup> 摩尔/升 × 0.100 L = 1.8 × 10<sup>−6</sup><br>加入 1.0 mL 0.10 <em>M</em> HCl 带入的 H<sub>3</sub>O<sup>+</sup> 的物质的量：0.10 摩尔/升 × 0.0010 L = 1.0 × 10<sup>−4</sup> 摩尔；加入 1.0 mL 0.10 <em>M</em> HCl 之后的最终 pH：<br>pH = −log[H<sub>3</sub>O<sup>+</sup>] = −log(H<sub>3</sub>O<sup>+</sup> 的总物质的量/总体积) = −log((1.0 × 10<sup>−4</sup> mol + 1.8 × 10<sup>−6</sup> mol)/(101 mL × (1 L/1000 mL))) = 3.00"
+   }
+  },
+  {
+   "id": "e77",
+   "source_id": "fs-idm2126064",
+   "source_number": "77",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "buffers",
+   "prompt": "解释为什么可以用 NH<sub>4</sub>Cl 和 NaOH 的混合物配制缓冲溶液，却不能用 NH<sub>3</sub> 和 NaOH 配制。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "氢氧根离子把一部分铵根离子转化为氨，所以 NH<sub>4</sub>Cl 与物质的量少于 NH<sub>4</sub>Cl 的 NaOH 的混合物同时含有共轭酸碱对 NH<sub>4</sub><sup>+</sup>/NH<sub>3</sub> 的两个成员，这正是缓冲溶液所需要的。反应为 NH<sub>4</sub><sup>+</sup>(<em>aq</em>) + OH<sup>−</sup>(<em>aq</em>) ⟶ NH<sub>3</sub>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>)。例如，把 0.20 mol NH<sub>4</sub>Cl 与 0.10 mol NaOH 混合，剩下 0.10 mol NH<sub>4</sub><sup>+</sup> 和 0.10 mol NH<sub>3</sub>，这是一种缓冲溶液，其 pH = p<em>K</em><sub>a</sub> = −log(5.6 × 10<sup>−10</sup>) = 9.25。NH<sub>3</sub> 除去加入的酸，NH<sub>4</sub><sup>+</sup> 除去加入的碱。氨和氢氧化钠都是碱，彼此不发生反应，所以它们的混合物不含 NH<sub>4</sub><sup>+</sup>。没有弱酸来消耗加入的氢氧根，而且强碱固定了 [OH<sup>−</sup>]，这种混合物没有共轭酸碱对，不能起缓冲溶液的作用。"
+   }
+  },
+  {
+   "id": "e78",
+   "source_id": "fs-idm81726160",
+   "source_number": "78",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "how-buffers-work",
+   "prompt": "解释为什么向含有等量的酸 H<sub>3</sub>PO<sub>4</sub> 及其共轭碱的盐 NaH<sub>2</sub>PO<sub>4</sub> 的溶液中加入少量酸或碱时，pH 没有显著变化。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "过量的 H<sub>3</sub>O<sup>+</sup> 主要通过如下反应被除去：H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + H<sub>2</sub>PO<sub>4</sub><sup>−</sup>(<em>aq</em>) ⟶ H<sub>3</sub>PO<sub>4</sub>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>)<br>过量的碱通过如下反应被除去：OH<sup>−</sup>(<em>aq</em>) + H<sub>3</sub>PO<sub>4</sub>(<em>aq</em>) ⟶ H<sub>2</sub>PO<sub>4</sub><sup>−</sup>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>)"
+   }
+  },
+  {
+   "id": "e79",
+   "source_id": "fs-idp21075184",
+   "source_number": "79",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "how-buffers-work",
+   "prompt": "解释为什么向含有等量的碱 NH<sub>3</sub> 及其共轭酸的盐 NH<sub>4</sub>Cl 的溶液中加入少量酸或碱时，pH 没有显著变化。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "pH 几乎保持不变，是因为每次加入的物质都被 NH<sub>3</sub>/NH<sub>4</sub><sup>+</sup> 对的一个成员消耗，并转化为另一个成员。加入的酸被氨除去：NH<sub>3</sub>(<em>aq</em>) + H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) ⟶ NH<sub>4</sub><sup>+</sup>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>)。加入的碱被铵根离子除去：NH<sub>4</sub><sup>+</sup>(<em>aq</em>) + OH<sup>−</sup>(<em>aq</em>) ⟶ NH<sub>3</sub>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>)。这样，强酸或强碱就被一种弱酸或弱碱取代，pH 只取决于该共轭酸碱对的浓度比，pH = p<em>K</em><sub>a</sub> + log([NH<sub>3</sub>]/[NH<sub>4</sub><sup>+</sup>])。在 1.00 L 中二者各 1.00 mol 时，pH 为 9.25；加入 0.010 mol H<sub>3</sub>O<sup>+</sup> 后得到 0.99 mol NH<sub>3</sub> 和 1.01 mol NH<sub>4</sub><sup>+</sup>，pH = 9.25 + log(0.99/1.01) = 9.24。当两者的量相等而且比加入量大得多时，它们的比值几乎不变，所以 pH 只发生微小的变化。"
+   }
+  },
+  {
+   "id": "e80",
+   "source_id": "fs-idp10424992",
+   "source_number": "80",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "henderson-hasselbalch",
+   "prompt": "在含有 0.25 <em>M</em> CH<sub>3</sub>CO<sub>2</sub>H 和 0.030 <em>M</em> NaCH<sub>3</sub>CO<sub>2</sub> 的溶液中，[H<sub>3</sub>O<sup>+</sup>] 是多少？<br>CH<sub>3</sub>CO<sub>2</sub>H(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>(<em>aq</em>)&emsp;<em>K</em><sub>a</sub> = 1.8 × 10<sup>−5</sup>",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.00015,
+    "unit": "M",
+    "hint": "[H<sub>3</sub>O<sup>+</sup>] = <em>K</em><sub>a</sub> × [HA]/[A<sup>−</sup>]，其中酸及其共轭碱取给定的浓度。",
+    "solution": "[H<sub>3</sub>O<sup>+</sup>] = 1.5 × 10<sup>−4</sup> <em>M</em>"
+   }
+  },
+  {
+   "id": "e82",
+   "source_id": "fs-idp11460800",
+   "source_number": "82",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "henderson-hasselbalch",
+   "prompt": "在含有 0.125 <em>M</em> CH<sub>3</sub>NH<sub>2</sub> 和 0.130 <em>M</em> CH<sub>3</sub>NH<sub>3</sub>Cl 的溶液中，[OH<sup>−</sup>] 是多少？<br>CH<sub>3</sub>NH<sub>2</sub>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ CH<sub>3</sub>NH<sub>3</sub><sup>+</sup>(<em>aq</em>) + OH<sup>−</sup>(<em>aq</em>)&emsp;<em>K</em><sub>b</sub> = 4.4 × 10<sup>−4</sup>",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.00042,
+    "unit": "M",
+    "hint": "对于弱碱及其共轭酸，[OH<sup>−</sup>] = <em>K</em><sub>b</sub> × [B]/[HB<sup>+</sup>]。",
+    "solution": "[OH<sup>−</sup>] = 4.2 × 10<sup>−4</sup> <em>M</em>"
+   }
+  },
+  {
+   "id": "e84",
+   "source_id": "fs-idm108992432",
+   "source_number": "84",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "how-buffers-work",
+   "prompt": "向乙酸和乙酸钠浓度相等的酸性缓冲溶液中加入下列物质时，对乙酸、水合氢离子和乙酸根离子的浓度有什么影响：<br>（a）HCl<br>（b）KCH<sub>3</sub>CO<sub>2</sub><br>（c）NaCl<br>（d）KOH<br>（e）CH<sub>3</sub>CO<sub>2</sub>H",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）加入的 HCl 会使 H<sub>3</sub>O<sup>+</sup> 的浓度略有增大，它与 CH<sub>3</sub>CO<sub>2</sub><sup>−</sup> 反应并生成 CH<sub>3</sub>CO<sub>2</sub>H。因此 [CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>] 减小，[CH<sub>3</sub>CO<sub>2</sub>H] 增大。（b）加入的 KCH<sub>3</sub>CO<sub>2</sub> 会使 [CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>] 增大，它与 H<sub>3</sub>O<sup>+</sup> 反应并生成 CH<sub>3</sub>CO<sub>2</sub> H。因此 [H<sub>3</sub>O<sup>+</sup>] 略有减小，[CH<sub>3</sub>CO<sub>2</sub>H] 增大。（c）加入的 NaCl 对这些离子的浓度没有影响。（d）加入的 KOH 会产生 OH<sup>−</sup> 离子，它与 H<sub>3</sub>O<sup>+</sup> 反应，从而使 [H<sub>3</sub>O<sup>+</sup>] 降低。一部分额外的 CH<sub>3</sub>CO<sub>2</sub>H 会解离，在此过程中产生 [CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>] 离子。因此 [CH<sub>3</sub>CO<sub>2</sub>H] 略有减小，[CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>] 增大。（e）加入的 CH<sub>3</sub>CO<sub>2</sub>H 会使其浓度增大，使更多的乙酸发生解离，在此过程中产生更多的 [CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>] 和 H<sub>3</sub>O<sup>+</sup>。因此 [H<sub>3</sub>O<sup>+</sup>] 略有增大，[CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>] 增大。"
+   }
+  },
+  {
+   "id": "e85",
+   "source_id": "fs-idm126903712",
+   "source_number": "85",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "how-buffers-work",
+   "prompt": "向氨和硝酸铵浓度相等的碱性缓冲溶液中加入下列物质时，对氨、氢氧根离子和铵根离子的浓度有什么影响：<br>（a）KI<br>（b）NH<sub>3</sub><br>（c）HI<br>（d）NaOH<br>（e）NH<sub>4</sub>Cl",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "缓冲平衡为 NH<sub>3</sub>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ NH<sub>4</sub><sup>+</sup>(<em>aq</em>) + OH<sup>−</sup>(<em>aq</em>)。（a）KI 没有影响：K<sup>+</sup> 和 I<sup>−</sup> 是旁观离子，不与缓冲溶液反应，所以 [NH<sub>3</sub>]、[OH<sup>−</sup>] 和 [NH<sub>4</sub><sup>+</sup>] 保持不变。（b）加入的 NH<sub>3</sub> 使 [NH<sub>3</sub>] 增大；平衡向右移动，所以 [NH<sub>4</sub><sup>+</sup>] 增大，[OH<sup>−</sup>] 略有增大。（c）HI 是强酸；它的 H<sub>3</sub>O<sup>+</sup> 与氨反应，NH<sub>3</sub> + H<sub>3</sub>O<sup>+</sup> ⟶ NH<sub>4</sub><sup>+</sup> + H<sub>2</sub>O，所以 [NH<sub>3</sub>] 减小，[NH<sub>4</sub><sup>+</sup>] 增大，[OH<sup>−</sup>] 略有减小。（d）NaOH 带入 OH<sup>−</sup>，它与铵根离子反应，NH<sub>4</sub><sup>+</sup> + OH<sup>−</sup> ⟶ NH<sub>3</sub> + H<sub>2</sub>O，所以 [NH<sub>4</sub><sup>+</sup>] 减小，[NH<sub>3</sub>] 增大，[OH<sup>−</sup>] 略有增大。（e）NH<sub>4</sub>Cl 使 [NH<sub>4</sub><sup>+</sup>] 增大；平衡向左移动，所以 [OH<sup>−</sup>] 略有减小，[NH<sub>3</sub>] 增大。"
+   }
+  },
+  {
+   "id": "e86",
+   "source_id": "fs-idp11558384",
+   "source_number": "86",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "henderson-hasselbalch",
+   "prompt": "用 0.20 mol NH<sub>3</sub>、0.40 mol NH<sub>4</sub>NO<sub>3</sub> 和刚好足以配成 1.00 L 溶液的水配制的缓冲溶液，其 pH 是多少？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 8.95,
+    "tol": 0.001,
+    "hint": "由氨的 <em>K</em><sub>b</sub> 以及 NH<sub>4</sub><sup>+</sup> 与 NH<sub>3</sub> 之比求出 pOH，再用 pH = 14.00 − pOH。",
+    "solution": "pH = 8.95"
+   }
+  },
+  {
+   "id": "e88",
+   "source_id": "fs-idm105355104",
+   "source_number": "88",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "henderson-hasselbalch",
+   "prompt": "要使 0.300 L 0.50 <em>M</em> 乙酸溶液成为 pH 为 5.00 的缓冲溶液，必须加入多少固体 NaCH<sub>3</sub>CO<sub>2</sub>•3H<sub>2</sub>O？（提示：假定加入固体时体积的变化可以忽略。）",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "mass",
+      "value": 37,
+      "unit": "g",
+      "hint": "由亨德森–哈塞尔巴尔赫方程求出使 pH 为 5.00 的比值 [A<sup>−</sup>]/[HA]，再求乙酸根的物质的量和三水合物的质量。"
+     },
+     {
+      "part": "amount",
+      "value": 0.27,
+      "unit": "mol"
+     }
+    ],
+    "solution": "37 g (0.27 mol)"
+   }
+  },
+  {
+   "id": "e90",
+   "source_id": "fs-idm148474576",
+   "source_number": "90",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "how-buffers-work",
+   "prompt": "由等体积的 0.200 <em>M</em> 乙酸和 0.600 <em>M</em> 乙酸钠配制缓冲溶液。乙酸的 <em>K</em><sub>a</sub> 取 1.80 × 10<sup>−5</sup>。<br>（a）该溶液的 pH 是多少？<br>（b）该溶液是酸性的还是碱性的？<br>（c）向 0.200 L 原来的缓冲溶液中加入 3.00 mL 0.034 <em>M</em> HCl 后，所得溶液的 pH 是多少？",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a) pH",
+      "value": 5.222,
+      "tol": 0.0002,
+      "hint": "混合等体积后，各自的浓度减半；它们的比值不变。"
+     },
+     {
+      "part": "(c) pH",
+      "value": 5.22,
+      "tol": 0.0002,
+      "hint": "先让加入的 H<sub>3</sub>O<sup>+</sup> 把乙酸根转化为乙酸，再用新的量计算。"
+     }
+    ],
+    "solution": "（a）pH = 5.222；（b）该溶液呈酸性。（c）pH = 5.220"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "ph-calculations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "neutralization-reaction",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e77",
+   "concept": "buffer-composition",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e77",
+   "concept": "neutralization-reaction",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e78",
+   "concept": "how-buffers-work",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e79",
+   "concept": "how-buffers-work",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e80",
+   "concept": "henderson-hasselbalch",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e80",
+   "concept": "buffer-ph-calculations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e82",
+   "concept": "henderson-hasselbalch",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e82",
+   "concept": "buffer-ph-calculations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e84",
+   "concept": "how-buffers-work",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e84",
+   "concept": "le-chateliers-principle",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e85",
+   "concept": "how-buffers-work",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e85",
+   "concept": "le-chateliers-principle",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e86",
+   "concept": "henderson-hasselbalch",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e86",
+   "concept": "buffer-ph-calculations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e88",
+   "concept": "henderson-hasselbalch",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e88",
+   "concept": "buffer-ph-calculations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e90",
+   "concept": "buffer-ph-calculations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e90",
+   "concept": "henderson-hasselbalch",
+   "weights_by": "ai"
+  }
+ ],
+ "footnotes": [
+  {
+   "id": "c-naoh-molarity",
+   "kind": "correction",
+   "html": "书中印的是 0.10 NaOH，没有写单位；该溶液是 0.10 <em>M</em> NaOH，（b）部分的解就是这样使用它的。"
+  }
+ ],
+ "derivations": [
+  {
+   "id": "henderson-hasselbalch",
+   "what": "亨德森–哈塞尔巴尔赫方程",
+   "source": "化学（第2版），14.6 缓冲溶液",
+   "nodes": [
+    {
+     "assumes": [
+      {
+       "tex": "\\log xy = \\log x + \\log y",
+       "src": "附录 B"
+      },
+      {
+       "tex": "\\kpH = -\\log\\kconcHyd",
+       "src": "14.2"
+      },
+      {
+       "tex": "\\kpKa = -\\log\\kKa",
+       "src": "14.6"
+      },
+      {
+       "tex": "\\log\\frac{x}{y} = \\log x - \\log y",
+       "src": "附录 B"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{K}{\\kKa} = \\frac{\\mk{H}{\\kconcHyd}\\mk{A}{\\kconcAm}}{\\mk{HA}{\\kconcHA}}",
+      "src": "14.3"
+     },
+     "steps": [
+      {
+       "tex": "\\mk{H}{\\kconcHyd} = \\mk{K}{\\kKa}\\;\\times\\;\\mk{r}{\\frac{\\kconcHA}{\\kconcAm}}",
+       "uses": [],
+       "map": {
+        "A": "r",
+        "HA": "r"
+       }
+      },
+      {
+       "tex": "\\mk{H}{-\\log\\kconcHyd} = \\mk{L}{-\\log\\left(\\kKa\\;\\times\\;\\frac{\\kconcHA}{\\kconcAm}\\right)}",
+       "uses": [],
+       "map": {
+        "K": "L",
+        "r": "L"
+       }
+      },
+      {
+       "tex": "\\mk{H}{-\\log\\kconcHyd}\\;=\\;\\mk{k}{-\\log\\kKa}-\\mk{q}{\\log\\frac{\\kconcHA}{\\kconcAm}}",
+       "uses": [
+        0
+       ],
+       "map": {
+        "L": [
+         "k",
+         "q"
+        ]
+       }
+      },
+      {
+       "tex": "\\mk{H}{\\kpH} = \\mk{k}{\\kpKa}-\\mk{q}{\\log\\frac{\\kconcHA}{\\kconcAm}}",
+       "uses": [
+        1,
+        2
+       ]
+      },
+      {
+       "tex": "\\mk{H}{\\kpH} = \\mk{k}{\\kpKa}+\\mk{q}{\\log\\;\\frac{\\kconcAm}{\\kconcHA}}",
+       "uses": [
+        3
+       ],
+       "cap": "把分数倒过来，其对数的符号改变：$-\\log\\frac{x}{y} = \\log y - \\log x = \\log\\frac{y}{x}$。"
+      }
+     ],
+     "src": "14.6"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,417 @@
+{
+ "id": "10.2",
+ "module": "m68764",
+ "chapter": "10",
+ "title": "液体的性质",
+ "short": "液体的性质",
+ "lead": "液体分子之间的吸引作用体现在液体的行为上：同种分子之间的内聚力解释了黏度（液体对流动的阻力）和<span data-concept=\"surface-tension\">表面张力</span>（液体表面坚韧的“皮”）。液体与其所接触的表面之间的附着力与它们相互竞争，这场较量决定了液体如何润湿表面、弯月面向哪个方向弯曲，以及液体在细管中如何运动。",
+ "objectives": [
+  "区分附着力和内聚力",
+  "说明黏度、表面张力和毛细上升的定义",
+  "描述分子间吸引力在上述每种性质/现象中的作用"
+ ],
+ "summary_html": "<p>液态下分子之间的分子间力因物质的本性而异，并导致各种物理性质相应地发生变化。同种分子之间的内聚力决定了液体的黏度（对流动的阻力）和<span data-concept=\"surface-tension\">表面张力</span>（液体表面的弹性）。液体分子与和液体接触的表面上的不同分子之间的附着力，则决定了表面润湿和毛细上升等现象。</p>",
+ "notes": "本节不带自己的标题；页面按主题把它分为五个部分。图 10.16、10.17 和 10.19 各自把一张照片和一幅示意图合在一幅图中，保留为书中的图像；图 10.20 重绘为可交互的图。交互图中使用的汞的表面张力、密度和接触角，以及乙醇和乙二醇的密度，是书中没有给出的手册数值。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签、权重和提示由 AI 生成。答案取自书后答案以及“学习检测”的答案。没有答案的数值型习题 fs-idp26872272（本章第 28 题，水在直径 0.63 mm 的管中）被略去，也没有为它计算答案。三道没有答案的概念性习题（22、24 和 26）附有标明为 OmniStax 自拟的建议思路。数值答案的容差为 2%。",
+ "figures": [
+  {
+   "id": "fig-viscosity",
+   "kind": "photo",
+   "number": "10.15",
+   "draws": []
+  },
+  {
+   "id": "fig-droplet",
+   "kind": "photo",
+   "number": "10.16",
+   "draws": []
+  },
+  {
+   "id": "fig-strider",
+   "kind": "photo",
+   "number": "10.17",
+   "draws": []
+  },
+  {
+   "id": "fig-meniscus",
+   "kind": "photo",
+   "number": "10.18",
+   "draws": []
+  },
+  {
+   "id": "fig-wicking",
+   "kind": "photo",
+   "number": "10.19",
+   "draws": []
+  },
+  {
+   "id": "sim-caprise",
+   "kind": "sim",
+   "number": "10.20",
+   "originals": [
+    "/media/ch10/CNX_Chem_10_02_CapRise.jpg"
+   ],
+   "original_caption": "根据附着力与内聚力的相对强弱，液体在玻璃毛细管中可能上升（如水）或下降（如汞）。上升（或下降）的程度与液体的表面张力成正比，与液体的密度和管的半径成反比。",
+   "draws": [
+    "length",
+    "angle",
+    "surface-tension",
+    "density",
+    "acceleration"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "tubes start below the headline, liquid as a dropdown"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-blooddraw",
+   "kind": "photo",
+   "number": "10.21",
+   "draws": []
+  }
+ ],
+ "coverage": [
+  {
+   "span": "viscosity",
+   "concept": "viscosity",
+   "verb": "introduces"
+  },
+  {
+   "span": "viscosity",
+   "concept": "phase-from-imf-and-kinetic-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "viscosity",
+   "concept": "rank-by-intermolecular-forces",
+   "verb": "uses"
+  },
+  {
+   "span": "surface-tension",
+   "concept": "cohesive-and-adhesive-forces",
+   "verb": "introduces"
+  },
+  {
+   "span": "surface-tension",
+   "concept": "surface-tension",
+   "verb": "introduces"
+  },
+  {
+   "span": "surface-tension",
+   "concept": "hydrogen-bonding",
+   "verb": "uses"
+  },
+  {
+   "span": "surface-tension",
+   "concept": "cohesive-force",
+   "verb": "introduces"
+  },
+  {
+   "span": "surface-tension",
+   "concept": "adhesive-force",
+   "verb": "introduces"
+  },
+  {
+   "span": "adhesion",
+   "concept": "cohesive-and-adhesive-forces",
+   "verb": "reinforces"
+  },
+  {
+   "span": "capillary",
+   "concept": "capillary-action",
+   "verb": "introduces"
+  },
+  {
+   "span": "capillary",
+   "concept": "cohesive-and-adhesive-forces",
+   "verb": "uses"
+  },
+  {
+   "span": "capillary",
+   "concept": "hydrogen-bonding",
+   "verb": "uses"
+  },
+  {
+   "span": "capillary-rise",
+   "concept": "capillary-rise-equation",
+   "verb": "introduces"
+  },
+  {
+   "span": "capillary-rise",
+   "concept": "capillary-action",
+   "verb": "uses"
+  },
+  {
+   "span": "capillary-rise",
+   "concept": "surface-tension",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-capillary-rise",
+   "concept": "capillary-rise-equation",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idp7578512",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-capillary-rise"
+   },
+   "cite": "capillary-rise",
+   "prompt": "水在玻璃毛细管中上升到 8.4 cm 的高度。这根毛细管的直径是多少？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.36,
+    "unit": "mm",
+    "hint": "对毛细上升方程求解半径，使用例 10.4 中水的数值，再把结果乘以 2。",
+    "solution": "直径 = 0.36 mm"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm178529488",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "viscosity",
+   "prompt": "图中所示的试管里盛有等量的指定机油。把相同的金属球同时放入每支试管，片刻之后，球下落到图中所示的高度。<br><img src=\"/media/ch10/CNX_Chem_10_02_Testtubeoi_img.jpg\" alt=\"四个量筒，分别标有机油黏度（SAE）20、30、40 和 50。金属球在 SAE 20 量筒中位于下方五分之一处，在 SAE 30 量筒中下落了约四分之三，在 SAE 40 量筒中下落了一半，在 SAE 50 量筒中靠近液体顶部。\"><br>请按黏度由小到大的顺序给这些机油排序，并解释你的理由：",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "按黏度由小到大，这些机油依次为 SAE 20 &lt; SAE 30 &lt; SAE 40 &lt; SAE 50。黏度是液体对流动的阻力，测量它的一种方法是看金属球在液体中下落的速率：液体的黏度越大，球落得越慢。相同的球是在同一时刻扔下的，所以在相同时间内各自下落的距离可以比较它们的速率。SAE 20 机油中的球下落得最远，到了试管下方五分之一处，所以这种机油对流动的阻力最小。SAE 30 机油中的球下落了约四分之三，SAE 40 机油中的球下落了一半，而 SAE 50 机油中的球几乎没有离开液面，所以 SAE 50 的黏度最大。"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idm82765632",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "surface-tension",
+   "prompt": "尽管钢比水的密度大，但把一根钢针或回形针小心地沿长度方向放在静止的水面上，可以使它浮起来。请在分子水平上解释这是如何可能的。<br><img src=\"/media/ch10/CNX_Chem_10_02_Needlefloa_img.jpg\" alt=\"照片从上方近距离拍摄了一根针，它躺在一池水的水面上。\"><br>（来源：Cory Zanker）",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "水分子之间具有氢键这种很强的分子间力。因此水分子之间相互吸引得很强，表现出相对较大的表面张力，在其表面形成一种“皮”。如果轻轻放置，这层皮可以托住一只昆虫或一枚回形针。"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm187023264",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "surface-tension",
+   "prompt": "乙醚、丙酮、乙醇和乙二醇的表面张力和黏度值如图所示。<br><img src=\"/media/ch10/CNX_Chem_10_02_Question4_img.jpg\" alt=\"一张包含四种化合物及其球棍模型的表：乙醚，表面张力 17 mN/m，黏度 0.22 mPa·s；丙酮，23 mN/m，0.31 mPa·s；乙醇，22 mN/m，1.07 mPa·s；乙二醇，48 mN/m，16.1 mPa·s。\"><br>（a）从分子的大小和形状以及它们的 IMF 方面，解释它们黏度的差异。<br>（b）从分子的大小和形状以及它们的 IMF 方面，解释它们表面张力的差异：",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "（a）黏度按乙醚（0.22 mPa·s）&lt; 丙酮（0.31 mPa·s）&lt; 乙醇（1.07 mPa·s）&lt; 乙二醇（16.1 mPa·s）的顺序增大，这也是 IMF 强度增大的顺序。乙醚和丙酮没有与氧键合的氢原子，所以它们的分子只通过色散力和偶极–偶极吸引力相互吸引。乙醚的分子较大，但它的偶极很小，所以其吸引力最弱，最容易流动；丙酮的极性 C=O 基团带来更强的偶极–偶极吸引力和更高的黏度。乙醇虽然分子最小，但有 −OH 基团并形成氢键，分子相互滑过时必须不断断开并重新形成氢键，所以它的黏度约为丙酮的三倍。乙二醇每个分子有两个 −OH 基团，形成广泛的氢键网络把分子维系在一起，所以它的黏度约为乙醇的 15 倍。<br>（b）表面张力按乙醚（17 mN/m）&lt; 乙醇（22 mN/m）≈ 丙酮（23 mN/m）&lt; 乙二醇（48 mN/m）的顺序增大，同样遵循把表面分子拉向内部的内聚力。吸引力最弱的乙醚表面张力最低。丙酮和乙醇的表面张力几乎相等，因为丙酮较强的偶极–偶极吸引力和稍大的色散力，大致与每个乙醇分子通过其唯一的 −OH 基团所能形成的那一个氢键相当。乙二醇有两个 −OH 基团，每个分子形成的氢键最多，其内聚力远为最强，表面张力也最高。"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm183311984",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "viscosity",
+   "prompt": "你可能听过有人用“比冬天的糖蜜还慢”这个比喻来形容进展缓慢的过程。请运用分子大小和形状、分子间相互作用以及温度变化的影响等概念，解释为什么这个习语很贴切。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "温度对分子间力有影响：温度越高，分子的动能越大，分子间力被克服的程度也越大，因此液体越容易流动（黏度越小）。温度越低，分子间力被克服的程度越小，因此液体的黏度越小。"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idm91274448",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "viscosity",
+   "prompt": "人们常建议在驾车之前先让汽车发动机空转预热，尤其是在寒冷的冬日。虽然长时间空转的好处值得怀疑，但温热的发动机确实比冷的发动机更省油。请解释其原因。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "温热的发动机更省油，是因为它的机油黏度较小。黏度随温度升高而减小：温热机油的分子运动得更快，更能克服把它们维系在一起的 IMF，所以机油更容易流动。在冷发动机中，机油很稠，会阻碍活塞、曲轴和其他在机油中运动的部件的运动，所以燃烧燃料释放的部分能量用来克服这种阻力，而不是推动汽车。一旦机油变热变稀，因机油对流动的阻力而损失的能量就减少了，更多的能量用来驱动汽车。"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm92213792",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "surface-tension",
+   "prompt": "下表给出了水在几个不同温度下的表面张力和黏度。<br><table><thead><tr><th>水</th><th>表面张力 (mN/m)</th><th>黏度 (mPa s)</th></tr></thead><tbody><tr><td>0 °C</td><td>75.6</td><td>1.79</td></tr><tr><td>20 °C</td><td>72.8</td><td>1.00</td></tr><tr><td>60 °C</td><td>66.2</td><td>0.47</td></tr><tr><td>100 °C</td><td>58.9</td><td>0.28</td></tr></tbody></table>（a）随着温度升高，水的表面张力发生什么变化？请从分子间相互作用和温度变化的影响方面解释这是为什么。<br>（b）随着温度升高，水的黏度发生什么变化？请从分子间相互作用和温度变化的影响方面解释这是为什么。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）水的温度越高，其分子增大的动能越能有效地克服氢键，所以它的表面张力减小。表面张力与分子间力直接相关。（b）黏度呈现与表面张力相同的趋势，原因也相同。"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idm169275296",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "capillary-rise",
+   "prompt": "水在玻璃毛细管中上升到 17 cm 的高度。这根毛细管的直径是多少？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.00017,
+    "unit": "m",
+    "hint": "用例 10.4 中水的数值对毛细上升方程求解半径，再把半径乘以 2。",
+    "solution": "1.7 $\\times$ 10<sup>−4</sup> m"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "capillary-rise-equation"
+  },
+  {
+   "exercise": "e1",
+   "concept": "viscosity"
+  },
+  {
+   "exercise": "e2",
+   "concept": "surface-tension"
+  },
+  {
+   "exercise": "e2",
+   "concept": "hydrogen-bonding",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "viscosity"
+  },
+  {
+   "exercise": "e3",
+   "concept": "surface-tension"
+  },
+  {
+   "exercise": "e3",
+   "concept": "rank-by-intermolecular-forces",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e4",
+   "concept": "viscosity"
+  },
+  {
+   "exercise": "e4",
+   "concept": "phase-from-imf-and-kinetic-energy",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e5",
+   "concept": "viscosity"
+  },
+  {
+   "exercise": "e6",
+   "concept": "surface-tension"
+  },
+  {
+   "exercise": "e6",
+   "concept": "viscosity"
+  },
+  {
+   "exercise": "e7",
+   "concept": "capillary-rise-equation"
+  }
+ ],
+ "referents": [
+  {
+   "id": "narrow-tube",
+   "label": "直径为 d 的细管",
+   "figures": [
+    "sim-caprise"
+   ]
+  },
+  {
+   "id": "wide-tube",
+   "label": "宽度为其两倍的粗管",
+   "figures": [
+    "sim-caprise"
+   ]
+  },
+  {
+   "id": "beaker",
+   "label": "盛有液体的烧杯",
+   "figures": [
+    "sim-caprise"
+   ]
+  }
+ ]
+}

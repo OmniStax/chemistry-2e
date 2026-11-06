@@ -1,0 +1,272 @@
+{
+ "id": "1.3",
+ "module": "m68670",
+ "chapter": "1",
+ "title": "物理性质和化学性质",
+ "short": "物理性质和化学性质",
+ "lead": "每种物质都有区别于其他物质的性质，有些性质无需改变物质即可观察到，另一些则只有在物质变成新的物质时才能观察到。这些性质以及物质所经历的变化，分为物理的和化学的，也分为广度的和强度的；元素周期表则按这些性质对元素分组。",
+ "objectives": [
+  "能把物质的性质和变化判别为物理的或化学的",
+  "能把物质的性质判别为广度性质或强度性质"
+ ],
+ "summary_html": "<p>所有物质都有各自不同的物理性质和化学性质，并可能发生物理变化或化学变化。物理性质（如硬度和沸点）和物理变化（如熔化或凝固）不涉及物质组成的改变。化学性质（如可燃性和酸性）和化学变化（如生锈）则涉及生成与先前存在的物质不同的物质。</p><p>可测量的性质分为两类。广度性质取决于所存在物质的多少，例如金的<span data-concept=\"mass\">质量</span>。强度性质不取决于所存在物质的多少，例如金的<span data-concept=\"density\">密度</span>。<span data-concept=\"heat-flow\">热量</span>是广度性质的一个例子，<span data-concept=\"temperature\">温度</span>是强度性质的一个例子。</p>",
+ "notes": "图 1.22 的元素周期表保留为本书自己的图像；可在每一页旁随时查阅的交互式周期表，要等应用能够提供时再做。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-fable-5-1"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-fable-5-1",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "化学章末习题",
+ "exercise_notes": "布鲁姆层级、概念标签和权重由 AI 生成。答案取自书后答案，其涵盖本节习题列表中的第二、第四、第六和第八题；其余四题是没有答案的概念题，保留并附有 AI 撰写的建议思路，并已如此标明，因为没有计算出答案。没有删去任何习题，也没有为其他小节保留或取自其他小节的习题。",
+ "figures": [
+  { "id": "fig-physical-change", "kind": "photo", "number": "1.18", "draws": [] },
+  { "id": "fig-rust", "kind": "photo", "number": "1.19", "draws": [] },
+  { "id": "fig-chemical-change", "kind": "photo", "number": "1.20", "draws": [] },
+  {
+   "id": "sim-extensive",
+   "kind": "sim",
+   "draws": ["mass", "volume", "density", "temperature"],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "readout note cut to the one fact the caption lacks"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-hazard-diamond",
+   "kind": "figure",
+   "number": "1.21",
+   "originals": ["/media/ch01/CNX_Chem_01_03_HazDiamond.jpg"],
+   "original_caption": "美国消防协会（NFPA）的危险性菱形标志概括了化学物质的主要危险。",
+   "draws": [],
+   "facts": [
+    "#ff0000",
+    "#0000ff",
+    "#ffff00",
+    "#ffffff",
+    "#000000"
+   ],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "layout cleared of collisions, blue for contrast, readout dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  { "id": "fig-periodic-table", "kind": "photo", "number": "1.22", "draws": [] }
+ ],
+ "coverage": [
+  { "span": "physical", "concept": "physical-property", "verb": "introduces" },
+  { "span": "physical", "concept": "physical-and-chemical-change", "verb": "introduces" },
+  { "span": "physical", "concept": "physical-change", "verb": "introduces" },
+  { "span": "chemical", "concept": "chemical-property", "verb": "introduces" },
+  { "span": "chemical", "concept": "physical-and-chemical-change", "verb": "reinforces" },
+  { "span": "chemical", "concept": "classify-physical-or-chemical", "verb": "introduces" },
+  { "span": "chemical", "concept": "chemical-change", "verb": "introduces" },
+  { "span": "extensive", "concept": "extensive-and-intensive-properties", "verb": "introduces" },
+  { "span": "extensive", "concept": "extensive-property", "verb": "introduces" },
+  { "span": "extensive", "concept": "intensive-property", "verb": "introduces" },
+  { "span": "hazard", "concept": "chemical-property", "verb": "uses" },
+  { "span": "elements", "concept": "physical-property", "verb": "uses" }
+ ],
+ "exercises": [
+  {
+   "id": "ex1",
+   "source_id": "fs-idp14236032",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": { "at": "end" },
+   "cite": "chemical",
+   "prompt": "把下面这段话中带下划线的六种性质分别归类为化学性质或物理性质：氟是一种淡黄色的<u>气体</u>，<u>能与大多数物质反应</u>。游离态的氟<u>在 −220 °C 熔化</u>，<u>在 −188 °C 沸腾</u>。细碎的<u>金属在氟中燃烧</u>，火焰明亮。<u>19 克氟将与 1.0 克氢反应</u>。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "判断的依据是：这种性质能否在氟不变成另一种物质的情况下观察到。是气体、在 −220 °C 熔化和在 −188 °C 沸腾，都是状态和状态的变化，在每一种情况下氟仍然是氟，所以这三种是物理性质。能与大多数物质反应、金属在氟中燃烧，以及 19 克氟与 1.0 克氢化合，描述的都是氟变成另一种物质，所以这三种是化学性质。"
+   }
+  },
+  {
+   "id": "ex2",
+   "source_id": "fs-idp131775248",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "chemical",
+   "prompt": "把下列每种变化分别归类为物理变化或化学变化：（a）水蒸气凝结（b）汽油燃烧（c）牛奶变酸（d）糖溶于水（e）金熔化",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）物理变化；（b）化学变化；（c）化学变化；（d）物理变化；（e）物理变化"
+   }
+  },
+  {
+   "id": "ex3",
+   "source_id": "fs-idp293285456",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "chemical",
+   "prompt": "把下列每种变化分别归类为物理变化或化学变化：（a）煤燃烧（b）冰融化（c）把巧克力糖浆与牛奶混合（d）鞭炮爆炸（e）螺丝刀被磁化",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "对每种变化都要问：变化之后留下的物质与之前是否是同一种物质。煤燃烧是燃烧，属于化学变化，因为它生成二氧化碳和其他新物质。鞭炮爆炸产生的气体与原来的物质是非常不同的物质。所以（a）和（d）是化学变化。冰融化是状态的变化，把巧克力糖浆与牛奶混合得到的是混合物，其组分仍然是糖浆和牛奶，金属被磁化是物理变化，所以（b）、（c）和（e）是物理变化。"
+   }
+  },
+  {
+   "id": "ex4",
+   "source_id": "fs-idm547056",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "physical",
+   "prompt": "一份氧气样品的体积随温度的变化从 10 mL 变为 11 mL。这是化学变化还是物理变化？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "物理变化"
+   }
+  },
+  {
+   "id": "ex5",
+   "source_id": "fs-idp144519488",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "chemical",
+   "prompt": "2.0 升氢气与 1.0 升氧气化合，生成 2.0 升水蒸气。氧发生的是化学变化还是物理变化？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "看变化之后存在的是什么。变化之前有氢和氧两种物质；变化之后是水蒸气，它与这两者中的任何一种都是不同的物质。由于氧已成为一种新物质的一部分，而不只是改变了状态或体积，所以它发生的是化学变化。"
+   }
+  },
+  {
+   "id": "ex6",
+   "source_id": "fs-idp42952176",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": { "at": "end" },
+   "cite": "extensive",
+   "prompt": "解释广度性质与强度性质的区别。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "广度性质的值取决于所考虑物质的多少，而强度性质的值与所考虑物质的多少无关。"
+   }
+  },
+  {
+   "id": "ex7",
+   "source_id": "fs-idp85586464",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "extensive",
+   "prompt": "指出下列性质是广度性质还是强度性质。（a）体积（b）温度（c）湿度（d）热量（e）沸点",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "对每种性质都要问：物质的多少加倍时，它的值是否改变。样品的体积随样品加倍，它所含的热量也是如此，一滴热油和一锅热油就说明了这一点，所以（a）和（d）是广度性质。一杯和一加仑样品的温度相同，物质的沸点不取决于沸腾的是多少，而空气的湿度衡量的是空气按其大小含有多少水蒸气，而不是空气有多少，所以（b）、（c）和（e）是强度性质。"
+   }
+  },
+  {
+   "id": "ex8",
+   "source_id": "fs-idp121106016",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": { "at": "end" },
+   "cite": "extensive",
+   "prompt": "物质的密度（$d$）是一种强度性质，定义为其质量（$\\km$）与体积（$\\kV$）之比。$$\\text{密度} = \\frac{\\text{质量}}{\\text{体积}} \\hspace{2em} d = \\frac{\\km}{\\kV}$$ 考虑到质量和体积都是广度性质，解释为什么它们的比值——密度——是强度性质。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "质量和体积都是广度性质，二者都与所研究物质的多少成正比。用一种广度性质除以另一种广度性质，实际上会“抵消”这种对量的依赖，得到与量无关的比值（强度性质）。"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  { "exercise": "ex1", "concept": "physical-property" },
+  { "exercise": "ex1", "concept": "chemical-property" },
+  { "exercise": "ex2", "concept": "classify-physical-or-chemical" },
+  { "exercise": "ex2", "concept": "physical-and-chemical-change", "weight": 2 },
+  { "exercise": "ex3", "concept": "classify-physical-or-chemical" },
+  { "exercise": "ex3", "concept": "physical-and-chemical-change", "weight": 2 },
+  { "exercise": "ex4", "concept": "classify-physical-or-chemical" },
+  { "exercise": "ex4", "concept": "physical-and-chemical-change", "weight": 2 },
+  { "exercise": "ex5", "concept": "classify-physical-or-chemical" },
+  { "exercise": "ex5", "concept": "physical-and-chemical-change", "weight": 2 },
+  { "exercise": "ex6", "concept": "extensive-and-intensive-properties" },
+  { "exercise": "ex7", "concept": "extensive-and-intensive-properties" },
+  { "exercise": "ex8", "concept": "extensive-and-intensive-properties" }
+ ],
+ "referents": [
+  {
+   "id": "jug",
+   "label": "那壶牛奶",
+   "figures": [
+    "sim-extensive"
+   ]
+  }
+ ]
+}

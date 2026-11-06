@@ -1,0 +1,50 @@
+{
+ "id": "kb",
+ "title": "弱碱的电离常数",
+ "kind": "table",
+ "source": {
+  "module": "m68867",
+  "appendix": "I"
+ },
+ "generated_by": "tool",
+ "tables": [
+  {
+   "id": "ionization-constants-of-weak-bases",
+   "title": "弱碱的电离常数",
+   "columns": [
+    {
+     "id": "base",
+     "label": "碱",
+     "kind": "text"
+    },
+    {
+     "id": "kb-at-25-c",
+     "label": "25 °C 时的 <em>K</em><sub>b</sub>",
+     "kind": "number"
+    }
+   ],
+   "rows": [
+    [
+     "氨",
+     "1.8 × 10<sup>−5</sup>"
+    ],
+    [
+     "二甲胺",
+     "5.9 × 10<sup>−4</sup>"
+    ],
+    [
+     "甲胺",
+     "4.4 × 10<sup>−4</sup>"
+    ],
+    [
+     "苯胺",
+     "4.3 × 10<sup>−10</sup>"
+    ],
+    [
+     "三甲胺",
+     "6.3 × 10<sup>−5</sup>"
+    ]
+   ]
+  }
+ ]
+}

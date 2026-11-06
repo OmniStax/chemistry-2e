@@ -1,0 +1,394 @@
+{
+ "id": "17.6",
+ "module": "m68826",
+ "chapter": "17",
+ "title": "腐蚀",
+ "short": "腐蚀",
+ "lead": "金属暴露于空气和水中会通过电化学过程发生劣化：铜变绿，铁生锈。铁的生锈在金属自身表面以原电池的方式进行，而油漆、合金、镀锌层和牺牲阳极则是保护铁免受腐蚀的方法。",
+ "objectives": [
+  "定义腐蚀",
+  "列举一些用于防止或减缓腐蚀的方法"
+ ],
+ "summary_html": "<p>金属通过自然电化学过程发生的自发氧化称为<span data-concept=\"corrosion\">腐蚀</span>，常见的例子包括铁生锈和银失去光泽。<span data-concept=\"corrosion\">腐蚀</span>过程涉及<span data-concept=\"galvanic-cell\">原电池</span>的形成，金属物体上的不同部位分别起<span data-concept=\"anode\">阳极</span>和<span data-concept=\"cathode\">阴极</span>的作用，<span data-concept=\"corrosion\">腐蚀</span>发生在阳极部位。防止金属<span data-concept=\"corrosion\">腐蚀</span>的方法包括使用锌保护层（<span data-concept=\"galvanization\">镀锌</span>）和使用与金属物体相连的<span data-concept=\"sacrificial-anode\">牺牲阳极</span>（<span data-concept=\"cathodic-protection\">阴极保护</span>）。</p>",
+ "notes": "本节没有任何内容被略去。书中为图 17.16 的铁锈电池写下的“as illustrated in Figure 17.15”、“a passivating an oxide layer”、“because as they get used up”、阴极的下标 O₂/O²、摘要中的“Corrosion process involve”，以及习题 fs-idm80636048 缺失的问号，都按原样保留。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签和建议思路均由 AI 生成。答案取自书后答案。没有给出答案的选择题 fs-idp66944528 保留其选项和建议思路，不予评分；没有给出答案的概念题 fs-idm127027504 和 fs-idp44419248 保留建议思路，并标明为 OmniStax 自己所加；fs-idm127027504 中的 −2.07 V 和 −0.477 V 按原样保留。没有任何内容被略去或移动。",
+ "figures": [
+  {
+   "id": "fig-statue",
+   "kind": "photo",
+   "number": "17.15",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-corrosion",
+   "kind": "sim",
+   "number": "17.16",
+   "folds": [
+    "17.17"
+   ],
+   "originals": [
+    "/media/ch17/CNX_Chem_17_06_Rust.jpg",
+    "/media/ch17/CNX_Chem_17_06_Protect.jpg"
+   ],
+   "original_caption": "（图 17.16）涂漆的铁或钢表面被划破油漆而暴露于环境时，可能发生腐蚀。由此形成的原电池可近似用简化的电池图式 Fe(s) | Fe²⁺(aq) ||O₂(aq), H₂O(l) | Fe(s) 表示。（图 17.17）阴极保护是以电化学方式防止地下储罐腐蚀的一种有用方法。",
+   "draws": [
+    "potential"
+   ],
+   "conventions": [
+    "Fe",
+    "Zn",
+    "Mg",
+    "O",
+    "H",
+    "e-"
+   ],
+   "facts": [
+    "#7b3f1d"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "corrosion",
+   "concept": "corrosion",
+   "verb": "introduces"
+  },
+  {
+   "span": "corrosion",
+   "concept": "passivation",
+   "verb": "introduces"
+  },
+  {
+   "span": "corrosion",
+   "concept": "metal",
+   "verb": "uses"
+  },
+  {
+   "span": "corrosion",
+   "concept": "galvanic-cell",
+   "verb": "uses"
+  },
+  {
+   "span": "corrosion",
+   "concept": "oxidation",
+   "verb": "uses"
+  },
+  {
+   "span": "corrosion",
+   "concept": "redox-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "rust",
+   "concept": "rusting-of-iron",
+   "verb": "introduces"
+  },
+  {
+   "span": "rust",
+   "concept": "galvanic-cell",
+   "verb": "uses"
+  },
+  {
+   "span": "rust",
+   "concept": "anode",
+   "verb": "uses"
+  },
+  {
+   "span": "rust",
+   "concept": "cathode",
+   "verb": "uses"
+  },
+  {
+   "span": "rust",
+   "concept": "standard-electrode-potential",
+   "verb": "uses"
+  },
+  {
+   "span": "rust",
+   "concept": "standard-cell-potential",
+   "verb": "uses"
+  },
+  {
+   "span": "rust",
+   "concept": "cell-notation",
+   "verb": "uses"
+  },
+  {
+   "span": "rust",
+   "concept": "hydrate",
+   "verb": "uses"
+  },
+  {
+   "span": "protection",
+   "concept": "galvanization",
+   "verb": "introduces"
+  },
+  {
+   "span": "protection",
+   "concept": "cathodic-protection",
+   "verb": "introduces"
+  },
+  {
+   "span": "protection",
+   "concept": "sacrificial-anode",
+   "verb": "introduces"
+  },
+  {
+   "span": "protection",
+   "concept": "alloy",
+   "verb": "uses"
+  },
+  {
+   "span": "protection",
+   "concept": "passivation",
+   "verb": "uses"
+  },
+  {
+   "span": "protection",
+   "concept": "cathode",
+   "verb": "uses"
+  },
+  {
+   "span": "protection",
+   "concept": "anode",
+   "verb": "uses"
+  },
+  {
+   "span": "protection",
+   "concept": "electrode-potential-and-oxidant-strength",
+   "verb": "uses"
+  },
+  {
+   "span": "protection",
+   "concept": "standard-electrode-potential",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "e37",
+   "source_id": "fs-idp66944528",
+   "source_number": "37",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "protection",
+   "prompt": "每对金属中，哪一种更有可能腐蚀（氧化）？<br>（a）Mg 或 Ca<br>（b）Au 或 Hg<br>（c）Fe 或 Zn<br>（d）Ag 或 Pt",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "每对金属中，其电对在表 17.1 中标准还原电势较低的金属是更强的还原剂，更容易被氧化，因而更有可能腐蚀。<br>（a）Ca，因为 Ca<sup>2+</sup>/Ca 的 $\\kEo$ = −2.868 V，低于 Mg<sup>2+</sup>/Mg 的 −2.372 V。<br>（b）Hg，因为 Hg<sub>2</sub><sup>2+</sup>/Hg 的 $\\kEo$ = +0.7973 V，低于 Au<sup>3+</sup>/Au 的 +1.498 V。<br>（c）Zn，因为 Zn<sup>2+</sup>/Zn 的 $\\kEo$ = −0.7618 V，低于 Fe<sup>2+</sup>/Fe 的 −0.447 V。<br>（d）Ag，因为 Ag<sup>+</sup>/Ag 的 $\\kEo$ = +0.7996 V，低于 Pt<sup>2+</sup>/Pt 的 +1.20 V。"
+   }
+  },
+  {
+   "id": "e38",
+   "source_id": "fs-idm150150768",
+   "source_number": "38",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "protection",
+   "prompt": "考虑下列金属：Ag、Au、Mg、Ni 和 Zn。其中哪些金属可以在地下钢制储罐的阴极保护中用作牺牲阳极？钢是主要由铁组成的合金，因此取 −0.447 V 作为钢的标准还原电势。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Mg 和 Zn"
+   }
+  },
+  {
+   "id": "e39",
+   "source_id": "fs-idm127027504",
+   "source_number": "39",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "rust",
+   "prompt": "铝 $({E}_{{\\text{Al}}^{\\text{3+}}\\text{/Al}}^{{}^{\\circ}}=\\text{−2.07 V})$ 比铁 $({E}_{{\\text{Fe}}^{\\text{3+}}\\text{/Fe}}^{{}^{\\circ}}=\\text{−0.477 V})$<sup class=\"fn\" data-note=\"c-e39-potentials\"></sup> 更容易被氧化，然而当二者都暴露在环境中时，未经处理的铝具有很好的耐腐蚀性，而未经处理的铁的耐腐蚀性很差。什么可以解释这一现象？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "铝上形成的氧化物保护了它，而铁上形成的铁锈则不能。铝的还原电势很负，意味着它很容易与氧反应，但产物是一层薄而坚硬的氧化铝 Al<sub>2</sub>O<sub>3</sub>，它紧紧附着在表面上，使下方的金属不再与氧和水接触。这层钝化层一旦形成，进一步的腐蚀就极其缓慢，这与铜上的铜绿和不锈钢上的氧化铬层保护其下金属的方式相同。铁锈，即氧化铁(III)水合物 Fe<sub>2</sub>O<sub>3</sub>·<em>x</em>H<sub>2</sub>O，是多孔的并会剥落，使新鲜的铁暴露于大气中，所以铁会不断腐蚀。标准电势只描述被氧化的倾向，而不描述表面层形成后氧化持续的快慢。"
+   }
+  },
+  {
+   "id": "e40",
+   "source_id": "fs-idp47040832",
+   "source_number": "40",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "protection",
+   "prompt": "如果一块铁和一块锌接触，锌腐蚀而铁不腐蚀。如果一块铁和一块铜接触，铁腐蚀而铜不腐蚀。请解释这一现象。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "两个例子都涉及阴极保护。（牺牲）阳极是发生腐蚀（氧化或反应）的金属。对于铁（−0.447 V）和锌（−0.7618 V），锌的标准还原电势更负，因此充当阳极。对于铁和铜（0.34 V），铁的标准还原电势较小，因此发生腐蚀（充当阳极）。"
+   }
+  },
+  {
+   "id": "e41",
+   "source_id": "fs-idp44419248",
+   "source_number": "41",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "protection",
+   "prompt": "假设有三种不同的金属 A、B 和 C。金属 A 和 B 接触时，B 腐蚀而 A 不腐蚀。金属 A 和 C 接触时，A 腐蚀而 C 不腐蚀。根据这些信息，B 和 C 接触时，哪种金属腐蚀，哪种金属不腐蚀？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "B 和 C 接触时，B 腐蚀而 C 不腐蚀。两种金属接触时，发生腐蚀的金属充当阳极，它是还原电势较低的金属。B 与 A 接触时腐蚀，所以 B 的还原电势低于 A；A 与 C 接触时腐蚀，所以 A 的还原电势低于 C。因此顺序是 B &lt; A &lt; C，B 的还原电势低于 C，二者连接时 B 被氧化，而 C 受到保护，就像锌涂层保护镀锌铁一样。"
+   }
+  },
+  {
+   "id": "e42",
+   "source_id": "fs-idm80636048",
+   "source_number": "42",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "protection",
+   "prompt": "为什么用金属锂制成的牺牲阳极是一个糟糕的选择",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "虽然锂的还原电势使它能够保护其他金属，但这样高的电势也表明锂的反应性有多强；它会与大多数物质发生自发反应。这意味着锂会很快与其他物质反应，即使是那些不会氧化它所要保护的金属的物质。这样的反应性意味着牺牲阳极会很快耗尽，需要经常更换。（可选的补充原因：遇水有起火危险。）"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e37",
+   "concept": "electrode-potential-and-oxidant-strength"
+  },
+  {
+   "exercise": "e37",
+   "concept": "corrosion"
+  },
+  {
+   "exercise": "e38",
+   "concept": "cathodic-protection"
+  },
+  {
+   "exercise": "e38",
+   "concept": "sacrificial-anode"
+  },
+  {
+   "exercise": "e38",
+   "concept": "electrode-potential-and-oxidant-strength"
+  },
+  {
+   "exercise": "e39",
+   "concept": "corrosion"
+  },
+  {
+   "exercise": "e39",
+   "concept": "passivation"
+  },
+  {
+   "exercise": "e39",
+   "concept": "rusting-of-iron"
+  },
+  {
+   "exercise": "e40",
+   "concept": "cathodic-protection"
+  },
+  {
+   "exercise": "e40",
+   "concept": "sacrificial-anode"
+  },
+  {
+   "exercise": "e40",
+   "concept": "corrosion"
+  },
+  {
+   "exercise": "e41",
+   "concept": "corrosion"
+  },
+  {
+   "exercise": "e41",
+   "concept": "electrode-potential-and-oxidant-strength"
+  },
+  {
+   "exercise": "e42",
+   "concept": "sacrificial-anode"
+  },
+  {
+   "exercise": "e42",
+   "concept": "cathodic-protection"
+  }
+ ],
+ "footnotes": [
+  {
+   "id": "c-rust-figure",
+   "kind": "correction",
+   "html": "书中引用的是图 17.15，即自由女神像。铁表面的原电池画在图 17.16 中。"
+  },
+  {
+   "id": "c-e39-potentials",
+   "kind": "correction",
+   "html": "书中的电势与附录 L 不一致：Al<sup>3+</sup>/Al 的 <em>E</em>° 为 −1.662 V，Fe<sup>3+</sup>/Fe 的为 −0.037 V（−0.447 V 是 Fe<sup>2+</sup>/Fe 的）。铝仍然更容易被氧化。"
+  }
+ ]
+}

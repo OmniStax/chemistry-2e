@@ -1,0 +1,265 @@
+{
+  "id": "11.5",
+  "module": "m68784",
+  "chapter": "11",
+  "title": "胶体",
+  "short": "胶体",
+  "lead": "有些混合物含有的粒子，大到不能形成溶液，又小到不会沉降，这类胶体能散射光，其分散相和分散介质可以是物质的任何状态的组合。胶体可以用几种方法制备和稳定，其中肥皂和洗涤剂可作为油的乳化剂，而粒子上的电荷既使它们保持分散，又能让电场把它们从烟中拉出来。",
+  "objectives": [
+    "描述胶体分散系的组成和性质",
+    "列出并解释胶体的几种技术应用"
+  ],
+  "summary_html": "<p>胶体是这样一类混合物：一种或多种物质以相对较大的固体粒子或液滴的形式，分散在固态、液态或气态介质中。胶体的粒子保持分散，不会因重力而沉降，而且常常带电。胶体在自然界中广泛存在，并涉及许多技术应用。</p>",
+  "notes": "本节没有任何内容被略去。",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      },
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ]
+  },
+  "built": "2026-10-26",
+  "exercises_lead": "",
+  "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案取自书后答案。没有答案的概念题 fs-idm115359200 和 fs-idm26172416 附有标明为 OmniStax 自拟的建议思路。",
+  "figures": [
+    {"id": "fig-colloids", "kind": "photo", "number": "11.29", "draws": []},
+    {"id": "fig-searchlight", "kind": "photo", "number": "11.30", "draws": []},
+    {
+      "id": "sim-tyndall",
+      "kind": "sim",
+      "draws": [],
+      "conventions": [
+        "Na",
+        "Cl"
+      ],
+      "facts": [
+        "#22b04a"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "ion legend glyphs fixed; notes that repeated the caption dropped"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-amphiphile",
+      "kind": "sim",
+      "number": "11.31",
+      "folds": ["11.32"],
+      "originals": ["/media/ch11/CNX_Chem_11_05_soap.jpg", "/media/ch11/CNX_Chem_11_05_detrg.jpg"],
+      "original_caption": "（图 11.31）肥皂含有一个非极性烃基端（蓝色）和一个离子端（红色）。离子端是羧酸根基团。烃基端的长度因肥皂而异。（图 11.32）洗涤剂含有一个非极性烃基端（蓝色）和一个离子端（红色）。离子端可以是硫酸酯基，也可以是磺酸根基团。烃基端的长度因洗涤剂而异。",
+      "draws": [],
+      "conventions": [
+        "C",
+        "H",
+        "O",
+        "S",
+        "Na"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "notes that repeated the caption dropped"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-emulsion",
+      "kind": "sim",
+      "number": "11.33",
+      "originals": ["/media/ch11/CNX_Chem_11_05_emulsoil.jpg"],
+      "original_caption": "这张油滴在水中被乳化的剖面示意图，说明了肥皂或洗涤剂如何起乳化剂的作用。",
+      "draws": [],
+      "conventions": [
+        "H",
+        "O",
+        "C",
+        "Na"
+      ],
+      "facts": [
+        "#e6c46a"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "anion labels wait until all have settled; note dropped"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {"id": "fig-oil-spill", "kind": "photo", "number": "11.34", "draws": []},
+    {"id": "fig-cottrell", "kind": "photo", "number": "11.35", "draws": []},
+    {
+      "id": "sim-precipitator",
+      "kind": "sim",
+      "number": "11.36",
+      "originals": ["/media/ch11/CNX_Chem_11_05_Cottrellp.jpg"],
+      "original_caption": "在科特雷尔除尘器中，带正电和带负电的粒子被高度带电的电极吸引，在那里被中和并沉积为粉尘。",
+      "draws": [],
+      "conventions": [
+        "C"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "camera closer, labels off the chamber, oblique view, readout at zero, notes"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {"id": "fig-gel", "kind": "photo", "number": "11.37", "draws": []}
+  ],
+  "coverage": [
+    {"span": "colloids", "concept": "colloids-solutions-and-suspensions", "verb": "introduces"},
+    {"span": "colloids", "concept": "colloid", "verb": "introduces"},
+    {"span": "colloids", "concept": "suspension", "verb": "introduces"},
+    {"span": "colloids", "concept": "tyndall-effect", "verb": "introduces"},
+    {"span": "dispersed", "concept": "dispersed-phase-and-medium", "verb": "introduces"},
+    {"span": "dispersed", "concept": "colloids-solutions-and-suspensions", "verb": "uses"},
+    {"span": "dispersed", "concept": "dispersed-phase", "verb": "introduces"},
+    {"span": "dispersed", "concept": "dispersion-medium", "verb": "introduces"},
+    {"span": "dispersed", "concept": "emulsion", "verb": "introduces"},
+    {"span": "dispersed", "concept": "gel", "verb": "introduces"},
+    {"span": "preparation", "concept": "colloid-preparation", "verb": "introduces"},
+    {"span": "preparation", "concept": "emulsifying-agent", "verb": "introduces"},
+    {"span": "soaps", "concept": "soaps-and-detergents", "verb": "introduces"},
+    {"span": "soaps", "concept": "colloid-preparation", "verb": "uses"},
+    {"span": "soaps", "concept": "amphiphilic", "verb": "introduces"},
+    {"span": "charged", "concept": "charged-colloidal-particles", "verb": "introduces"},
+    {"span": "gels", "concept": "dispersed-phase-and-medium", "verb": "uses"}
+  ],
+  "exercises": [
+    {"id": "e1", "source_id": "fs-idm110325696", "kind": "exercise", "bloom": "Apply", "place": {"at": "end"}, "cite": "dispersed", "prompt": "指出下列每种胶体体系中的分散相和分散介质：淀粉分散系、烟、雾、珍珠、打发奶油、浮水肥皂、果冻、牛奶和红宝石。", "answer": {"type": "open", "generated_by": "source", "solution": "<table><thead><tr><th>胶体体系</th><th>分散相</th><th>分散介质</th></tr></thead><tbody><tr><td>淀粉分散系</td><td>淀粉</td><td>水</td></tr><tr><td>烟</td><td>固体粒子</td><td>空气</td></tr><tr><td>雾</td><td>水</td><td>空气</td></tr><tr><td>珍珠</td><td>水</td><td>碳酸钙（CaCO<sub>3</sub>）</td></tr><tr><td>打发奶油</td><td>空气</td><td>奶油</td></tr><tr><td>浮水肥皂</td><td>空气</td><td>肥皂</td></tr><tr><td>果冻</td><td>果汁</td><td>果胶凝胶</td></tr><tr><td>牛奶</td><td>乳脂</td><td>水</td></tr><tr><td>红宝石</td><td>氧化铬(III)（Cr<sub>2</sub>O<sub>3</sub>）</td><td>氧化铝（Al<sub>2</sub>O<sub>3</sub>）</td></tr></tbody></table>"}},
+    {"id": "e2", "source_id": "fs-idm115359200", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "preparation", "prompt": "区分制备胶体体系的分散法和凝聚法。", "answer": {"type": "open", "generated_by": "ai", "solution": "两类方法都产生胶体尺寸的粒子，但它们的起点相反。分散法从过大的粒子出发，把它们破碎到胶体尺度；例如，涂料颜料是在专用磨机中研磨大颗粒制得的，把两种不互溶的液体振荡或搅拌混合，也会把其中一种打碎成胶体尺寸的液滴，从而制得乳状液。凝聚法从过小的单元，即分子或离子出发，让它们聚集成胶体尺寸的粒子；例如，水分子凝结成极小的液滴时就形成云，把浓的氯化铁(III)溶液与热水混合时，经化学反应形成氢氧化铁(III)的红色胶体悬浮液。在凝聚法中，粒子的长大必须停在胶体范围之内，因为更大的粒子会形成液滴或沉淀，也就得不到胶体体系。"}},
+    {"id": "e3", "source_id": "fs-idm42853312", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "colloids", "prompt": "就分散粒子的大小和均匀性而言，胶体与溶液有何不同？", "answer": {"type": "open", "generated_by": "source", "solution": "胶体分散系所含的粒子比一般溶液中的溶质大得多。胶粒或是非常大的分子，或是较小粒子的聚集体，通常大到足以散射光。胶体在宏观（肉眼）尺度上是均匀的，而溶液则在微观（分子）尺度上是均匀的。"}},
+    {"id": "e4", "source_id": "fs-idm26172416", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "soaps", "prompt": "解释肥皂的去污作用。", "answer": {"type": "open", "generated_by": "ai", "solution": "肥皂的去污是靠把油污以胶粒的形式保持在水中，再由水带走。硬脂酸钠 C<sub>17</sub>H<sub>35</sub>CO<sub>2</sub>Na 这样的肥皂分子是两亲的：其 C<sub>17</sub>H<sub>35</sub>— 链是非极性的、疏水的，而 —CO<sub>2</sub><sup>−</sup> 羧酸根基团是离子型的、亲水的。油和油脂是非极性的，与水不互溶，所以单靠水不能把它们溶解。每个肥皂分子的烃基端溶于非极性的油或油脂，或被它们吸引，而离子端则被极性的水吸引。因此，肥皂分子在污垢颗粒与水的界面上排列起来，烃基链在油脂中，离子基团朝外伸向水中，成为非极性物质与极性物质之间的一座桥梁。裹上肥皂的污垢颗粒以胶粒的形式悬浮在水中，随冲洗水被冲走。"}},
+    {"id": "e5", "source_id": "fs-idm167047216", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "charged", "prompt": "如何证明胶粒带电？", "answer": {"type": "open", "generated_by": "source", "solution": "如果把它们放入电解池中，分散的粒子会向所带电荷与自身电荷相反的电极移动。在这个电极上，带电粒子被中和，并作为沉淀聚沉。"}}
+  ],
+  "exercise_concepts": [
+    {"exercise": "e1", "concept": "dispersed-phase-and-medium"},
+    {"exercise": "e2", "concept": "colloid-preparation"},
+    {"exercise": "e3", "concept": "colloids-solutions-and-suspensions"},
+    {"exercise": "e4", "concept": "soaps-and-detergents"},
+    {"exercise": "e5", "concept": "charged-colloidal-particles"}
+  ],
+  "referents": [
+    {
+      "id": "butterfat",
+      "label": "牛奶中的乳脂液滴",
+      "figures": [
+        "sim-tyndall"
+      ]
+    },
+    {
+      "id": "mud",
+      "label": "泥粒",
+      "figures": [
+        "sim-tyndall"
+      ]
+    },
+    {
+      "id": "glass",
+      "label": "玻璃杯",
+      "figures": [
+        "sim-tyndall"
+      ]
+    },
+    {
+      "id": "tail",
+      "label": "非极性烃基端",
+      "figures": [
+        "sim-amphiphile"
+      ]
+    },
+    {
+      "id": "head",
+      "label": "离子端",
+      "figures": [
+        "sim-amphiphile"
+      ]
+    },
+    {
+      "id": "point-electrode",
+      "label": "尖端电极",
+      "figures": [
+        "sim-precipitator"
+      ]
+    },
+    {
+      "id": "plate-electrode",
+      "label": "板电极，即腔室壁",
+      "figures": [
+        "sim-precipitator"
+      ]
+    },
+    {
+      "id": "hopper",
+      "label": "集尘斗",
+      "figures": [
+        "sim-precipitator"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,399 @@
+{
+ "id": "14.5",
+ "module": "m68807",
+ "chapter": "14",
+ "title": "多元酸",
+ "short": "多元酸",
+ "lead": "有些酸含有不止一个可电离的氢原子，碳酸和磷酸就是如此，它们一次一个地把质子转移给水，每一步都有各自的<span data-concept=\"acid-ionization-constant\">电离常数</span>；有些碱，如碳酸根离子，也以同样的分步方式接受不止一个质子。",
+ "objectives": [
+  "将前面介绍过的平衡概念推广到可以给出或接受不止一个质子的酸和碱"
+ ],
+ "summary_html": "<p>含有不止一个可电离质子的酸称为多元酸。这类酸发生涉及单个质子传递的<span data-concept=\"stepwise-ionization\">分步电离</span>反应。多元酸的电离常数随每一步依次减小；这种减小通常大到足以使我们可以分别处理各步，进行简单的平衡计算。</p>",
+ "notes": "本节没有任何内容被省略；例 14.19 的 ICE 表写成表格，乙酸方程式保留书中的图片，例题结尾一行保留印刷的 [H₃O⁺] = 1.2 × 10⁻⁴，不带单位。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案取自书后答案和“学习检测”的答案。两道没有答案的数值习题被省略，也没有为它们计算答案：fs-idp108710816 和 fs-idp33679104。有答案的习题 fs-idm75310368（习题 64，尼古丁作为接受两个质子的碱）印在 14.3 节，这里将其放入，因为它考查本节介绍的多元碱。习题 76 的（c）部分是一项论证，其详解答案取自书中，随解答给出。数值答案接受 2% 的误差，但“学习检测”和习题 64 中只有一位有效数字的浓度例外，它们接受 10%。",
+ "figures": [
+  {
+   "id": "sim-stepwise",
+   "kind": "sim",
+   "draws": [
+    "concentration",
+    "equilibrium-constant"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-acetic",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "monoprotic",
+   "concept": "polyprotic-acids",
+   "verb": "introduces"
+  },
+  {
+   "span": "monoprotic",
+   "concept": "monoprotic-acid",
+   "verb": "introduces"
+  },
+  {
+   "span": "monoprotic",
+   "concept": "acid-ionization",
+   "verb": "uses"
+  },
+  {
+   "span": "monoprotic",
+   "concept": "write-ionization-equations",
+   "verb": "uses"
+  },
+  {
+   "span": "diprotic",
+   "concept": "diprotic-acid",
+   "verb": "introduces"
+  },
+  {
+   "span": "diprotic",
+   "concept": "stepwise-ionization",
+   "verb": "introduces"
+  },
+  {
+   "span": "diprotic",
+   "concept": "acid-ionization-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "diprotic",
+   "concept": "polyprotic-acids",
+   "verb": "reinforces"
+  },
+  {
+   "span": "calculations",
+   "concept": "stepwise-ionization-calculations",
+   "verb": "introduces"
+  },
+  {
+   "span": "calculations",
+   "concept": "weak-acid-base-equilibrium-concentrations",
+   "verb": "uses"
+  },
+  {
+   "span": "calculations",
+   "concept": "small-x-approximation",
+   "verb": "uses"
+  },
+  {
+   "span": "triprotic",
+   "concept": "triprotic-acid",
+   "verb": "introduces"
+  },
+  {
+   "span": "triprotic",
+   "concept": "polyprotic-acids",
+   "verb": "reinforces"
+  },
+  {
+   "span": "triprotic",
+   "concept": "stepwise-ionization",
+   "verb": "reinforces"
+  },
+  {
+   "span": "triprotic",
+   "concept": "stepwise-ionization-calculations",
+   "verb": "reinforces"
+  },
+  {
+   "span": "bases",
+   "concept": "polyprotic-bases",
+   "verb": "introduces"
+  },
+  {
+   "span": "bases",
+   "concept": "diprotic-base",
+   "verb": "introduces"
+  },
+  {
+   "span": "bases",
+   "concept": "base-ionization-constant",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idp1592608",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-diprotic"
+   },
+   "cite": "calculations",
+   "prompt": "室温下，H<sub>2</sub>S 在饱和水溶液中的浓度约为 0.1 <em>M</em>。计算溶液中的 $[{\\text{H}}_{3}{\\text{O}}^{\\text{+}}],$ [HS<sup>−</sup>] 和 [S<sup>2−</sup>]：<br>${\\text{H}}_{2}\\text{S}(aq)+{\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{HS}}^{-}(aq)\\hspace{5em}{K}_{\\text{a}1}=8.9\\;\\times\\;{10}^{-8}$<br>${\\text{HS}}^{-}(aq)+{\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{S}}^{2-}(aq)\\hspace{5em}{K}_{\\text{a}2}=1.0\\;\\times\\;{10}^{-19}$",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "[H₃O⁺] = [HS⁻]",
+      "value": 9.4e-05,
+      "unit": "M",
+      "hint": "像例 14.19 那样，用 ICE 表单独处理第一步电离，假设 x 比 0.1 小得多。"
+     },
+     {
+      "part": "[S²⁻]",
+      "value": 1e-19,
+      "unit": "M",
+      "tol": 0.1,
+      "hint": "把第一步得到的 [H₃O⁺] 和 [HS⁻] 代入第二步电离的表达式。"
+     }
+    ],
+    "solution": "[H<sub>2</sub>S] = 0.1 <em>M</em>；$[{\\text{H}}_{3}{\\text{O}}^{\\text{+}}]$ = [HS<sup>−</sup>] = 0.000094 <em>M</em>；[S<sup>2−</sup>] = 1 × 10<sup>−19</sup> <em>M</em>"
+   }
+  },
+  {
+   "id": "e64",
+   "source_id": "fs-idm75310368",
+   "source_section": "14.3",
+   "source_number": "64",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "bases",
+   "prompt": "尼古丁 C<sub>10</sub>H<sub>14</sub>N<sub>2</sub> 是一种可以接受两个质子的碱（<em>K</em><sub>b1</sub> = 7 × 10<sup>−7</sup>，<em>K</em><sub>b2</sub> = 1.4 × 10<sup>−11</sup>）。在 0.050 <em>M</em> 的尼古丁溶液中，存在的每种物种的浓度各是多少？",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "[C₁₀H₁₄N₂]",
+      "value": 0.049,
+      "unit": "M",
+      "hint": "像处理多元酸那样，用 ICE 表单独处理第一步，即 K_b1 对应的碱电离。"
+     },
+     {
+      "part": "[C₁₀H₁₄N₂H⁺]",
+      "value": 0.00019,
+      "unit": "M",
+      "tol": 0.1
+     },
+     {
+      "part": "[C₁₀H₁₄N₂H₂²⁺]",
+      "value": 1.4e-11,
+      "unit": "M",
+      "hint": "第二步的产物由 K_b2 以及第一步的 [C₁₀H₁₄N₂H⁺] 和 [OH⁻] 求得。"
+     },
+     {
+      "part": "[OH⁻]",
+      "value": 0.00019,
+      "unit": "M",
+      "tol": 0.1
+     },
+     {
+      "part": "[H₃O⁺]",
+      "value": 5.3e-11,
+      "unit": "M",
+      "tol": 0.1,
+      "hint": "用水的离子积常数和 [OH⁻] 求解。"
+     }
+    ],
+    "solution": "[C<sub>10</sub>H<sub>14</sub>N<sub>2</sub>] = 0.049 <em>M</em>；[C<sub>10</sub>H<sub>14</sub>N<sub>2</sub>H<sup>+</sup>] = 1.9 × 10<sup>−4</sup> <em>M</em>；$[{\\text{C}}_{10}{\\text{H}}_{14}{\\text{N}}_{2}{\\text{H}}_{2}{}^{2+}]$ = 1.4 × 10<sup>−11</sup> <em>M</em>；[OH<sup>−</sup>] = 1.9 × 10<sup>−4</sup> <em>M</em>；[H<sub>3</sub>O<sup>+</sup>] = 5.3 × 10<sup>−11</sup> <em>M</em>"
+   }
+  },
+  {
+   "id": "e72",
+   "source_id": "fs-idp94973072",
+   "source_number": "72",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "diprotic",
+   "prompt": "在计算 0.134 <em>M</em> 的二元酸 H<sub>2</sub>CO<sub>3</sub> 溶液中的平衡浓度时，下列哪些浓度几乎相等：$[{\\text{H}}_{3}{\\text{O}}^{\\text{+}}],$ [OH<sup>−</sup>]、[H<sub>2</sub>CO<sub>3</sub>]、$[{\\text{HCO}}_{3}{}^{-}],$ $[{\\text{CO}}_{3}{}^{2-}]?$ 回答这个问题不需要计算。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "[H<sub>3</sub>O<sup>+</sup>] 和 $[{\\text{HCO}}_{3}{}^{-}]$ 几乎相等"
+   }
+  },
+  {
+   "id": "e74",
+   "source_id": "fs-idm125378656",
+   "source_number": "74",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "calculations",
+   "prompt": "计算 0.010 <em>M</em> 的邻苯二甲酸 C<sub>6</sub>H<sub>4</sub>(CO<sub>2</sub>H)<sub>2</sub> 溶液中存在的每种物种的浓度。<br>$\\begin{array}{l}{\\text{C}}_{6}{\\text{H}}_{4}{({\\text{CO}}_{2}\\text{H})}_{2}(aq)+{\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{C}}_{6}{\\text{H}}_{4}({\\text{CO}}_{2}\\text{H})\\;{({\\text{CO}}_{2})}^{-}(aq)\\hspace{4em}{K}_{\\text{a}}=1.1\\;\\times\\;{10}^{-3} \\\\ {\\text{C}}_{6}{\\text{H}}_{4}({\\text{CO}}_{2}\\text{H})({\\text{CO}}_{2}){}^{-}\\;(aq)+{\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{C}}_{6}{\\text{H}}_{4}{({\\text{CO}}_{2})}_{2}{}^{2-}(aq)\\hspace{5em}{K}_{\\text{a}}=3.9\\;\\times\\;{10}^{-6}\\end{array}$",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "[C₆H₄(CO₂H)₂]",
+      "value": 0.0072,
+      "unit": "M",
+      "hint": "K_a1 相对于 0.010 太大，不能忽略 x，所以要解第一步的一元二次方程。"
+     },
+     {
+      "part": "[C₆H₄(CO₂H)(CO₂)⁻] = [H₃O⁺]",
+      "value": 0.0028,
+      "unit": "M"
+     },
+     {
+      "part": "[C₆H₄(CO₂)₂²⁻]",
+      "value": 3.9e-06,
+      "unit": "M",
+      "hint": "把第一步得到的两个相等的浓度代入第二步电离的表达式，它们相互抵消。"
+     },
+     {
+      "part": "[OH⁻]",
+      "value": 3.6e-12,
+      "unit": "M"
+     }
+    ],
+    "solution": "[C<sub>6</sub>H<sub>4</sub>(CO<sub>2</sub>H)<sub>2</sub>] 7.2 × 10<sup>−3</sup> <em>M</em>, [C<sub>6</sub>H<sub>4</sub>(CO<sub>2</sub>H)(CO<sub>2</sub>)<sup>−</sup>] = [H<sub>3</sub>O<sup>+</sup>] 2.8 × 10<sup>−3</sup> <em>M</em>, $[{\\text{C}}_{6}{\\text{H}}_{4}{({\\text{CO}}_{2})}_{2}{}^{2-}]$ 3.9 × 10<sup>−6</sup> <em>M</em>, [OH<sup>−</sup>] 3.6 × 10<sup>−12</sup> <em>M</em>"
+   }
+  },
+  {
+   "id": "e76",
+   "source_id": "fs-idp153083664",
+   "source_number": "76",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "calculations",
+   "prompt": "离子 HTe<sup>−</sup> 是质子两性物种；它既可以作为酸，也可以作为碱。<br>（a）HTe<sup>−</sup> 与 H<sub>2</sub>O 的酸反应的 <em>K</em><sub>a</sub> 是多少？<br>（b）HTe<sup>−</sup> 在水中作为碱的反应的 <em>K</em><sub>b</sub> 是多少？<br>（c）论证在计算 0.10 M 的 H<sub>2</sub>Te 溶液中的 [HTe<sup>−</sup>] 时，H<sub>2</sub>Te 的第二步电离是否可以忽略。",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a) <em>K</em><sub>a</sub>",
+      "value": 1.5e-11,
+      "hint": "HTe⁻ 的酸反应就是 H₂Te 的第二步电离；在附录 H 中查找其常数。"
+     },
+     {
+      "part": "(b) <em>K</em><sub>b</sub>",
+      "value": 4.3e-12,
+      "hint": "HTe⁻ 作为碱是 H₂Te 的共轭碱，所以用 K_w 除以 H₂Te 的第一电离常数。"
+     }
+    ],
+    "solution": "（a）${K}_{\\text{a2}}=1.5\\;\\times\\;{10}^{-11};$<br>（b）${K}_{\\text{b}}=4.3\\;\\times\\;{10}^{-12};$<br>（c）$\\frac{[{\\text{Te}}^{2-}][{\\text{H}}_{3}{\\text{O}}^{\\text{+}}]}{[{\\text{HTe}}^{-}]}=\\frac{(x)(0.0141+x)}{(0.0141-x)}\\approx\\frac{(x)(0.0141)}{0.0141}=1.5\\;\\times\\;{10}^{-11}$<br>解出 <em>x</em> 得 1.5 × 10<sup>−11</sup> <em>M</em>。因此，与 0.014 <em>M</em> 相比，这个值可以忽略（1.1 × 10<sup>−7</sup>%）。"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "stepwise-ionization-calculations"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "weak-acid-base-equilibrium-concentrations"
+  },
+  {
+   "exercise": "e64",
+   "concept": "polyprotic-bases"
+  },
+  {
+   "exercise": "e64",
+   "concept": "stepwise-ionization-calculations"
+  },
+  {
+   "exercise": "e64",
+   "concept": "base-ionization-constant"
+  },
+  {
+   "exercise": "e72",
+   "concept": "stepwise-ionization-calculations"
+  },
+  {
+   "exercise": "e72",
+   "concept": "polyprotic-acids"
+  },
+  {
+   "exercise": "e74",
+   "concept": "stepwise-ionization-calculations"
+  },
+  {
+   "exercise": "e74",
+   "concept": "weak-acid-base-equilibrium-concentrations"
+  },
+  {
+   "exercise": "e76",
+   "concept": "stepwise-ionization-calculations"
+  },
+  {
+   "exercise": "e76",
+   "concept": "amphiprotic-species"
+  },
+  {
+   "exercise": "e76",
+   "concept": "conjugate-pair-strengths"
+  }
+ ],
+ "footnotes": [
+  {
+   "id": "c-hydronium-unit",
+   "kind": "correction",
+   "html": "书中给出 [H<sub>3</sub>O<sup>+</sup>] = 1.2 × 10<sup>−4</sup> 时没有写单位；它是 1.2 × 10<sup>−4</sup> <em>M</em>。"
+  }
+ ]
+}

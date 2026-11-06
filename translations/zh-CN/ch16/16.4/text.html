@@ -1,0 +1,232 @@
+<section id="gibbs">
+<h2>吉布斯自由能</h2>
+<p class="cite-target">用<span data-concept="second-law-of-thermodynamics">热力学第二定律</span>判断一个过程是否自发，难点之一在于既要测量<span data-concept="system">体系</span>的<span data-concept="entropy">熵变</span>，<em>又</em>要测量<span data-concept="entropy-change-of-surroundings">环境的熵变</span>。十九世纪后期，美国数学家约西亚·威拉德·吉布斯提出了另一种方法，引入了一个只用<span data-concept="system">体系</span>自身性质来定义的新热力学性质。这一新性质称为<strong><span data-concept="gibbs-free-energy">吉布斯自由能</span>（$\kG$）</strong>（或简称<em><span data-concept="gibbs-free-energy">自由能</span></em>），它用<span data-concept="system">体系</span>的<span data-concept="enthalpy">焓</span>和<span data-concept="entropy">熵</span>定义如下：</p>
+$$\kG=\kH-\kT\kS$$
+<p><span data-concept="gibbs-free-energy">自由能</span>是一个<span data-concept="state-function">状态函数</span>，在恒定<span data-concept="temperature">温度</span>和<span data-concept="gas-pressure">压强</span>下，<strong><span data-concept="gibbs-free-energy">自由能变</span>（$\kdG$）</strong>可以表示为：</p>
+$$\kdG=\kdH-\kT\kdS$$
+<p>（为简便起见，此后省略下标“sys”。）</p>
+<p>回顾此前推导出的<span data-concept="second-law-of-thermodynamics">热力学第二定律</span>表达式，就可以理解这一<span data-concept="system">体系</span>性质与过程自发性之间的关系：</p>
+<figure class="dv" id="drv-free-energy-universe"></figure>
+<p>因此，<span data-concept="gibbs-free-energy">自由能变</span>是过程自发性的可靠指标，它与此前确定的自发性指标 $\kdSuniv$ 直接相关。表 16.3 概括了过程的自发性与这些指标的正负号之间的关系。</p>
+<div class="book-table">
+  <div class="tcap"><span class="eyebrow">表 16.3</span><span>过程的自发性与热力学性质的符号之间的关系</span></div>
+  <table>
+    <tbody>
+      <tr><td>$\kdSuniv$ &gt; 0</td><td>$\kdG$ &lt; 0</td><td>自发</td></tr>
+      <tr><td>$\kdSuniv$ &lt; 0</td><td>$\kdG$ &gt; 0</td><td>非自发</td></tr>
+      <tr><td>$\kdSuniv$ = 0</td><td>$\kdG$ = 0</td><td>处于平衡</td></tr>
+    </tbody>
+  </table>
+</div>
+</section>
+
+<section id="free-work">
+<h2>Δ<em>G</em> 中的“自由”指什么？</h2>
+<p class="cite-target">除了指示自发性之外，<span data-concept="gibbs-free-energy">自由能变</span>还能提供<span data-concept="spontaneous-process">自发过程</span>所能完成的有用<span data-concept="work">功</span>（$\kwork$）的多少。虽然对这一问题的严格论述超出了入门<span data-concept="chemistry">化学</span>教材的范围，但简要讨论一下有助于更好地认识这一重要的热力学性质。</p>
+<p>为此，考虑一个自发的、<span data-concept="exothermic-and-endothermic">放热</span>的、<span data-concept="entropy">熵</span>减小的过程。<span data-concept="gibbs-free-energy">自由能变</span>的定义为</p>
+$$\kdG=\kdH-\kT\kdS$$
+<p>可以解释为该过程的<span data-concept="enthalpy-change">焓变</span> $\kdH$ 与传给<span data-concept="surroundings">环境</span>而损失的<span data-concept="energy-and-work">能量</span> $\kT\kdS$ 之差。所产生的<span data-concept="energy-and-work">能量</span>与损失的<span data-concept="energy-and-work">能量</span>之差，就是该过程可用（或称“自由”）来做有用<span data-concept="work">功</span>的<span data-concept="energy-and-work">能量</span> $\kdG$。如果该过程能够设法在<span data-concept="reversible-process">热力学可逆</span>的条件下进行，所能做的<span data-concept="work">功</span>将达到最大：</p>
+$$\kdG=\kwmax$$
+<p>其中 $\kwmax$ 指除<span data-concept="expansion-work">膨胀（压强–体积）功</span>以外的所有类型的<span data-concept="work">功</span>。</p>
+<p>然而，正如本章前面所指出的，这样的条件并不现实。此外，从<span data-concept="spontaneous-process">自发过程</span>中提取<span data-concept="work">功</span>所用的技术（例如<span data-concept="battery">电池</span>）的效率从来不会达到 100%，因此这些过程所做的<span data-concept="work">功</span>总是小于理论上的最大值。类似的推理也适用于<span data-concept="nonspontaneous-process">非自发过程</span>，对它而言，<span data-concept="gibbs-free-energy">自由能变</span>代表进行该过程时必须<em>对</em><span data-concept="system">体系</span>所做<span data-concept="work">功</span>的<em>最小</em>值。</p>
+</section>
+
+<section id="calculating">
+<h2>计算自由能变</h2>
+<p class="cite-target"><span data-concept="gibbs-free-energy">自由能</span>是<span data-concept="state-function">状态函数</span>，所以它的值只取决于<span data-concept="system">体系</span>始态和终态的条件。计算物理变化和化学反应的<span data-concept="gibbs-free-energy">自由能变</span>，一种方便而常用的方法是使用随处可得的<span data-concept="standard-state">标准状态</span>热力学数据汇编。其中一种方法是利用标准<span data-concept="enthalpy">焓</span>和<span data-concept="standard-entropy">熵</span>，按下面的关系式计算<strong><span data-concept="standard-free-energy-change">标准自由能变</span> $\kdGo$</strong>。</p>
+$$\kdGo=\kdHo-\kT\kdSo$$
+<div class="example" id="ex-vaporization">
+<h3>例 16.7 · 用标准焓变和标准熵变计算 $\kdGo$</h3>
+<p>利用<a href="/chemistry-2e/sheets/thermo/">附录 G</a> 中的标准<span data-concept="enthalpy">焓</span>和<span data-concept="entropy">熵</span>数据，计算水在<span data-concept="temperature">室温</span>（<span data-type="temperature">298 K</span>）下<span data-concept="vaporization">汽化</span>的<span data-concept="standard-free-energy-change">标准自由能变</span>。计算得到的 $\kdGo$ 值说明了这一过程的自发性如何？</p>
+<h4>解</h4>
+<p>所关注的过程如下：</p>
+$${\text{H}}_{2}\text{O}(l)\;\longrightarrow \;{\text{H}}_{2}\text{O}(g)$$
+<p>标准<span data-concept="gibbs-free-energy">自由能</span>变可用下式计算：</p>
+$$\kdGo=\kdHo-\kT\kdSo$$
+<p>由<a href="/chemistry-2e/sheets/thermo/">附录 G</a> 得：</p>
+<div class="book-table">
+  <table>
+    <thead><tr><th>物质</th><th>$\kdHf$ (kJ/mol)</th><th>$\kSo$ (J/K·mol)</th></tr></thead>
+    <tbody>
+      <tr><td>H<sub>2</sub>O(<em>l</em>)</td><td>−285.83</td><td>70.0</td></tr>
+      <tr><td>H<sub>2</sub>O(<em>g</em>)</td><td>−241.82</td><td>188.8</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>用附录中的数据计算标准<span data-concept="enthalpy-change">焓变</span>和<span data-concept="standard-entropy-change">标准熵变</span>，得到：</p>
+$$\begin{array}{l}\kdHo=\kdHf({\text{H}}_{2}\text{O}(g))\;-\kdHf({\text{H}}_{2}\text{O}(l)) \\ =[\text{−241.82 kJ/mol}-(\text{−285.83})]\;\text{kJ/mol}=\text{44.01 kJ}\end{array}$$
+$$\begin{array}{l}\kdSo=1\;\text{mol}\;\times \;\kSo({\text{H}}_{2}\text{O}(g))\;-1\;\text{mol}\;\times \;\kSo({\text{H}}_{2}\text{O}(l)) \\ =\text{(1 mol)}188.8\;\text{J/mol·K}-\text{(1 mol)}70.0\;\text{J/mol K}=118.8\;\text{J/K}\end{array}$$
+$$\kdGo=\kdHo-\kT\kdSo$$
+<p>代入标准<span data-concept="gibbs-free-energy">自由能</span>方程，得到：</p>
+$$\begin{array}{l}\kdGo=\kdHo-\kT\kdSo \\ \\ =\text{44.01 kJ}-(\text{298 K}\;\times \;118.8\;\text{J/K})\;\times \;\frac{\text{1 kJ}}{\text{1000 J}}\end{array}$$
+$$\text{44.01 kJ}-\text{35.4 kJ}=\text{8.6 kJ}$$
+<p>在 <span data-type="temperature">298 K（25 °C）</span>下 $\kdGo>0,$ 所以沸腾是非自发的（<em>不是</em>自发的）。</p>
+<h4>学习检测</h4>
+<div class="exercises" data-place="ex-vaporization"></div>
+</div>
+<p>反应的<span data-concept="standard-free-energy-change">标准自由能变</span>也可以由反应中<span data-concept="reactant">反应物</span>和<span data-concept="product">产物</span>的<strong><span data-concept="standard-free-energy-of-formation">标准生成自由能</span> $\kdGf$</strong> 值计算。<span data-concept="standard-free-energy-of-formation">标准生成自由能</span>是由处于<span data-concept="standard-state">标准状态</span>的<span data-concept="element">元素</span>生成 1 <span data-concept="mole">mol</span>某物质时伴随的<span data-concept="gibbs-free-energy">自由能变</span>。与<span data-concept="standard-enthalpy-of-formation">标准生成焓</span>类似，处于<span data-concept="standard-state">标准状态</span>的单质，其 $\kdGf$ 按定义为零。由 $\kdGf$ 值计算反应的 $\kdGo$，所用方法与此前对<span data-concept="enthalpy">焓</span>变和<span data-concept="entropy">熵</span>变所演示的相同。对于反应</p>
+$$m\text{A}+n\text{B}\;\longrightarrow \;x\text{C}+y\text{D},$$
+<p><span data-concept="temperature">室温</span>下的<span data-concept="standard-free-energy-change">标准自由能变</span>可以按下式计算</p>
+$$\begin{array}{l}\kdGo=\sum \nu \kdGo(\text{产物})\;-\sum \nu \kdGo(\text{反应物}) \\ \\ =[x\kdGf(\text{C})+y\kdGf(\text{D})]\;-\;[m\kdGf(\text{A})+n\kdGf(\text{B})].\end{array}$$
+<div class="example" id="ex-hgo">
+<h3>例 16.8 · 用标准生成自由能计算 $\kdGo$</h3>
+<p>考虑黄色<span data-concept="oxide">氧化汞(II)</span>的分解。</p>
+$$\text{HgO}(s,\;\text{黄色})\;\longrightarrow \;\text{Hg}(l)\;+\;\frac{1}{2}{\text{O}}_{2}(g)$$
+<p>用（a）<span data-concept="standard-free-energy-of-formation">标准生成自由能</span>和（b）<span data-concept="standard-enthalpy-of-formation">标准生成焓</span>与<span data-concept="standard-entropy">标准熵</span>，计算<span data-concept="temperature">室温</span>下的<span data-concept="standard-free-energy-change">标准自由能变</span> $\kdGo$。结果表明该反应在标准条件下是自发的还是非自发的？</p>
+<h4>解</h4>
+<p>所需数据见<a href="/chemistry-2e/sheets/thermo/">附录 G</a>，列于下表。</p>
+<div class="book-table">
+  <table>
+    <thead><tr><th>化合物</th><th>$\kdGf$ (kJ/mol)</th><th>$\kdHf$ (kJ/mol)</th><th>$\kSo$ (J/K·mol)</th></tr></thead>
+    <tbody>
+      <tr><td>HgO (<em>s</em>, 黄色)</td><td>−58.43</td><td>−90.46</td><td>71.13</td></tr>
+      <tr><td>Hg(<em>l</em>)</td><td>0</td><td>0</td><td>75.9</td></tr>
+      <tr><td>O<sub>2</sub>(<em>g</em>)</td><td>0</td><td>0</td><td>205.2</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>（a）用<span data-concept="standard-free-energy-of-formation">生成自由能</span>：</p>
+$$\kdGo=\sum \nu {G}_{f}^{{}^{\circ}}\text{(产物)}\;-\sum \nu \kdGf\text{(反应物)}$$<sup class="fn" data-note="c-sum-gf"></sup>
+$$=[1\kdGf\text{Hg}(l)+\;\frac{1}{2}\kdGf{\text{O}}_{\text{2}}(g)]\;-\;1\kdGf\text{HgO}(s,\;\text{黄色})$$
+$$=[1\;\text{mol}\text{(0 kJ/mol)}+\;\frac{1}{2}\;\text{mol(0 kJ/mol)}]\;-\text{1 mol(−58.43 kJ/mol)}=\text{58.43 kJ/mol}$$
+<p>（b）用<span data-concept="enthalpy">生成焓</span>和<span data-concept="entropy">熵</span>：</p>
+$$\kdHo=\sum \nu \kdHf\text{(产物)}\;-\sum \nu \kdHf\text{(反应物)}$$
+$$=[1\kdHf\text{Hg}(l)+\frac{1}{2}\kdHf{\text{O}}_{2}(g)]\;-1\kdHf\text{HgO}(s,\;\text{黄色})$$
+$$=[\text{1 mol}(\text{0 kJ/mol})\;+\;\frac{1}{2}\;\text{mol}(\text{0 kJ/mol})]\;-\text{1 mol}(\text{−90.46 kJ/mol})=\text{90.46 kJ/mol}$$
+$$\kdSo=\sum \nu \kdSo\text{(产物)}-\sum \nu \kdSo\text{(反应物)}$$<sup class="fn" data-note="c-sum-so"></sup>
+$$=[1\kdSo\text{Hg}(l)\;+\;\frac{1}{2}\kdSo{\text{O}}_{2}(g)]\;-1\kdSo\text{HgO}(s,\;\text{黄色})$$
+$$=[\text{1 mol}\;(\text{75.9 J/mol K})\;+\;\frac{1}{2}\;\text{mol}(\text{205.2 J/mol K})]\;-\text{1 mol}(\text{71.13 J/mol K})=\text{107.4 J/mol K}$$
+$$\kdGo=\kdHo-\kT\kdSo=\text{90.46 kJ}-\text{298.15 K}\;\times \;\text{107.4 J/K·mol}\;\times \;\frac{\text{1 kJ}}{\text{1000 J}}$$
+$$\kdGo=(90.46-32.01)\;\text{kJ/mol}=\text{58.45 kJ/mol}$$
+<p>在 <span data-type="temperature">25 °C</span> 下，两种方法算出的<span data-concept="standard-free-energy-change">标准自由能变</span>数值相同（精确到三位<span data-concept="significant-figures">有效数字</span>），并且都预测该过程在<span data-concept="temperature">室温</span>下是非自发的（<em>不是</em>自发的）。</p>
+<h4>学习检测</h4>
+<div class="exercises" data-place="ex-hgo"></div>
+</div>
+</section>
+
+<section id="coupled">
+<h2>耦合反应的自由能变</h2>
+<p class="cite-target">上面介绍的用<span data-concept="standard-free-energy-of-formation">生成自由能</span>计算反应<span data-concept="gibbs-free-energy">自由能变</span>的做法之所以可行，是因为 $\kG$ 是<span data-concept="state-function">状态函数</span>，这种做法类似于用<span data-concept="hess-law">盖斯定律</span>计算<span data-concept="enthalpy-change">焓变</span>（见<span data-concept="thermochemistry">热化学</span>一章）。以水的<span data-concept="vaporization">汽化</span>为例：</p>
+$${\text{H}}_{2}\text{O}(l)\to {\text{H}}_{2}\text{O}(g)$$
+<p>把水的两个相的生成反应相加（必须将<span data-concept="liquid">液</span>相的反应反过来写），就可以得到表示这一过程的方程。总反应的<span data-concept="gibbs-free-energy">自由能变</span>等于所加的两个反应的<span data-concept="gibbs-free-energy">自由能变</span>之和：</p>
+$$\begin{array}{l}\underline{\begin{array}{ll}{\text{H}}_{2}(g)+\frac{1}{2}{\text{O}}_{2}(g)\to {\text{H}}_{2}\text{O}(g)\hspace{6.6em}\kdGf\text{气态} & \\ {\text{H}}_{2}\text{O}(l)\to {\text{H}}_{2}(g)+\frac{1}{2}{\text{O}}_{2}(g)\hspace{5.6em}-\kdGf\text{液态}\end{array}} \\ \begin{array}{ll} \\ {\text{H}}_{2}\text{O}(l)\to {\text{H}}_{2}\text{O}(g)\hspace{10em}\kdGo=\kdGf\text{气态}-\kdGf\text{液态} & \end{array}\end{array}$$
+<p>当一个非自发反应与一个自发反应耦合而得以发生时，也可以采用这种方法。例如，由硫化锌制取单质锌在热力学上是不利的，$\kdGo$ 为正值就表明了这一点：</p>
+$$\text{ZnS}(s)\to \text{Zn}(s)+\text{S}(s)\hspace{5em}\kdGone=201.3\;\text{kJ}$$
+<p>由硫化物矿石生产锌的工业过程，是把这一分解反应与热力学上有利的硫的<span data-concept="oxidation">氧化</span>反应耦合起来：</p>
+$$\text{S}(s)+{\text{O}}_{\text{2}}(g)\to {\text{SO}}_{\text{2}}(g)\hspace{5em}\kdGtwo=-300.1\;\text{kJ}$$
+<p>耦合后的反应<span data-concept="gibbs-free-energy">自由能变</span>为负值，是自发的：</p>
+$$\text{ZnS}(s)+{\text{O}}_{2}(g)\to \text{Zn}(s)+\text{S}{\text{O}}_{2}(g)\hspace{5em}\kdGo=201.3\;\text{kJ}+-300.1\;\text{kJ}=-98.8\;\text{kJ}$$
+<p>这一过程通常在较高<span data-concept="temperature">温度</span>下进行，所以用标准<span data-concept="gibbs-free-energy">自由能</span>值得到的这一结果只是一个估计值。不过，计算的要点仍然成立。</p>
+<div class="example" id="ex-coupled">
+<h3>例 16.9 · 计算耦合反应的自由能变</h3>
+<p>把 ZnS 的分解与 H2S 的生成耦合起来的反应，在标准条件下预期是自发的吗？</p>
+<h4>解</h4>
+<p>按照上面概述的方法，并利用<a href="/chemistry-2e/sheets/thermo/">附录 G</a> 中的<span data-concept="gibbs-free-energy">自由能</span>值：</p>
+$$\begin{array}{l}\text{硫化锌的分解：}\hspace{5em}\text{ZnS}(s)\to \text{Zn}(s)+\text{S}(s)\hspace{5em}\kdGone=201.3\;\text{kJ} \\ \text{硫化氢的生成：}\hspace{5em}\text{S}(s)+{\text{H}}_{2}(g)\to {\text{H}}_{\text{2}}\text{S}(g)\hspace{5em}\kdGtwo=-33.4\;\text{kJ} \\ \text{耦合反应：}\hspace{2em}\text{ZnS}(s)+{\text{H}}_{2}(g)\to \text{Zn}(s)+{\text{H}}_{\text{2}}\text{S}(g)\hspace{4em}\kdGo=201.3\;\text{kJ}+-33.4\;\text{kJ}=167.9\;\text{kJ}\end{array}$$
+<p>耦合后的反应<span data-concept="gibbs-free-energy">自由能变</span>为正值，因此是非自发的。</p>
+<h4>学习检测</h4>
+<div class="exercises" data-place="ex-coupled"></div>
+</div>
+</section>
+
+<section id="temperature">
+<h2>自发性对温度的依赖</h2>
+<p class="cite-target">正如本章关于<span data-concept="entropy">熵</span>的一节中已经说明的，过程的自发性可能取决于<span data-concept="system">体系</span>的<span data-concept="temperature">温度</span>。例如，相变会因所涉物质的<span data-concept="temperature">温度</span>不同而朝这个方向或那个方向自发进行。同样，有些化学反应的自发性也可以随<span data-concept="temperature">温度</span>而变。为说明这一概念，来看把<span data-concept="gibbs-free-energy">自由能变</span>与过程的<span data-concept="enthalpy-change">焓变</span>和<span data-concept="entropy">熵变</span>联系起来的方程：</p>
+$$\kdG=\kdH-\kT\kdS$$
+<p>过程的自发性反映在其<span data-concept="gibbs-free-energy">自由能变</span>的正负号上，它取决于<span data-concept="enthalpy-change">焓变</span>和<span data-concept="entropy">熵变</span>的符号，在某些情况下还取决于热力学<span data-concept="temperature">温度</span>。由于 $\kT$ 是热力学（<span data-concept="kelvin">开尔文</span>）<span data-concept="temperature">温度</span>，它只能取正值。因此，<span data-concept="enthalpy-change">焓变</span>和<span data-concept="entropy">熵变</span>的符号有四种可能：</p>
+<ol>
+<li><strong>$\kdH$ 和 $\kdS$ 均为正。</strong>这种情况描述的是一个<span data-concept="system">体系</span><span data-concept="entropy">熵</span>增大的<span data-concept="exothermic-and-endothermic">吸热</span>过程。此时，如果 $\kT\kdS$ 项的大小大于 $\kdH$，$\kdG$ 将为负。如果 $\kT\kdS$ 项小于 $\kdH$，<span data-concept="gibbs-free-energy">自由能变</span>将为正。这样的过程<em>在<span data-concept="temperature">高温</span>下是自发的，在<span data-concept="temperature">低温</span>下是非自发的。</em></li>
+<li><strong>$\kdH$ 和 $\kdS$ 均为负。</strong>这种情况描述的是一个<span data-concept="system">体系</span><span data-concept="entropy">熵</span>减小的<span data-concept="exothermic-and-endothermic">放热</span>过程。此时，如果 $\kT\kdS$ 项的大小小于 $\kdH$，$\kdG$ 将为负。如果 $\kT\kdS$ 项的大小大于 $\kdH$，<span data-concept="gibbs-free-energy">自由能变</span>将为正。这样的过程<em>在<span data-concept="temperature">低温</span>下是自发的，在<span data-concept="temperature">高温</span>下是非自发的。</em></li>
+<li><strong>$\kdH$ 为正而 $\kdS$ 为负。</strong>这种情况描述的是一个<span data-concept="system">体系</span><span data-concept="entropy">熵</span>减小的<span data-concept="exothermic-and-endothermic">吸热</span>过程。此时，无论<span data-concept="temperature">温度</span>如何，$\kdG$ 都为正。这样的过程<em>在所有<span data-concept="temperature">温度</span>下都是非自发的。</em></li>
+<li><strong>$\kdH$ 为负而 $\kdS$ 为正。</strong>这种情况描述的是一个<span data-concept="system">体系</span><span data-concept="entropy">熵</span>增大的<span data-concept="exothermic-and-endothermic">放热</span>过程。此时，无论<span data-concept="temperature">温度</span>如何，$\kdG$ 都为负。这样的过程<em>在所有<span data-concept="temperature">温度</span>下都是自发的。</em></li>
+</ol>
+<p>这四种情形概括在图 16.12 中。</p>
+<figure class="sim" id="sim-temp-spont" data-figure="16.12 + 16.13" data-original="/media/ch16/CNX_Chem_16_04_Scenarios.jpg,/media/ch16/CNX_Chem_16_04_TempSpont-d7b9.jpg" data-original-caption="（图 16.12）焓变和熵变的符号有四种可能。（图 16.13）这些图表示 ΔH 和 ΔS 的正负号的四种可能组合下 ΔG 随温度的变化。">
+  <div class="sim-head"><span class="eyebrow">Figure 16.12 + 16.13</span><span><span data-concept="enthalpy-change">焓变</span>和<span data-concept="entropy">熵变</span>的符号有四种可能，对每一种，$\kdG$ 对 $\kT$ 的图都是一条直线，起点为 $\kdH$，每升高一开尔文下降 $\kdS$。拖动 $\kdH$ 和 $\kdS$，可使直线依次经过图旁表格中的四种情形；拖动 $\kT$，可读出某一<span data-concept="temperature">温度</span>下的 $\kdG$；当两个符号相同时，直线在 $\kT=\kdH/\kdS$ 处过零。起始值取自例 16.7 和 16.11 中水的汽化。</span></div>
+</figure>
+<div class="example" id="ex-co">
+<h3>例 16.10 · 预测自发性对温度的依赖</h3>
+<p>碳的不完全燃烧可用下面的方程表示：</p>
+$$\text{2C}(s)+{\text{O}}_{2}(g)\;\longrightarrow \;\text{2CO}(g)$$
+<p>这一过程的自发性如何依赖于<span data-concept="temperature">温度</span>？</p>
+<h4>解</h4>
+<p>燃烧过程是<span data-concept="exothermic-and-endothermic">放热</span>的（$\kdH$ &lt; 0）。这一反应中气态物质的物质的量增加（净增 1 <span data-concept="mole">mol</span><span data-concept="gas">气体</span>，$\kdS$ &gt; 0），因而<span data-concept="entropy">熵</span>增大。因此该反应在所有<span data-concept="temperature">温度</span>下都是自发的（$\kdG$ &lt; 0）。</p>
+<h4>学习检测</h4>
+<div class="exercises" data-place="ex-co"></div>
+</div>
+<p>在考虑关于自发性对<span data-concept="temperature">温度</span>的依赖所得出的结论时，需要牢记“高”和“低”这两个词的含义。由于这两个词是形容词，所讨论的<span data-concept="temperature">温度</span>是相对于某个参考<span data-concept="temperature">温度</span>而被认为高或低的。一个过程在某一<span data-concept="temperature">温度</span>下是非自发的，而在另一温度下是自发的，那么随着<span data-concept="temperature">温度</span>的变化，它的“自发性”（由其 $\kdG$ 反映）必然会发生变化。以 $\kdG$ 为 <em>y</em> 轴、$\kT$ 为 <em>x</em> 轴，把<span data-concept="gibbs-free-energy">自由能变</span>方程画成图，就能清楚地说明这一点：</p>
+$$\kdG=\kdH-\kT\kdS$$
+$$y=b+mx$$
+<p>这样的图见图 16.13。<span data-concept="enthalpy-change">焓变</span>和<span data-concept="entropy">熵变</span>的正负号相同的过程，其自发性依赖于<span data-concept="temperature">温度</span>，如图中两条黄线所示。每条线都在该过程特有的<span data-concept="temperature">温度</span>处，从一个自发性区域（$\kdG$ 为正或为负）进入另一个。这个<span data-concept="temperature">温度</span>用直线的 <em>x</em> 轴截距表示，即使 $\kdG$ 为零的 $\kT$ 值：</p>
+<figure class="dv" id="drv-crossover-temperature"></figure>
+<p>所以，说一个过程在“高”或“低”<span data-concept="temperature">温度</span>下是自发的，意思是<span data-concept="temperature">温度</span>分别高于或低于使该过程的 $\kdG$ 为零的那个<span data-concept="temperature">温度</span>。如前所述，$\kdG$ = 0 的条件描述的是处于<span data-concept="chemical-equilibrium">平衡</span>的<span data-concept="system">体系</span>。</p>
+<div class="example" id="ex-boiling">
+<h3>例 16.11 · 相变的平衡温度</h3>
+<p>正如液体和固体一章中所定义的，<span data-concept="liquid">液体</span>的<span data-concept="boiling-point">沸点</span>是其<span data-concept="liquid">液</span>相与气相处于<span data-concept="chemical-equilibrium">平衡</span>时的<span data-concept="temperature">温度</span>（即<span data-concept="vaporization">汽化</span>与<span data-concept="condensation">凝结</span>以相等的速率发生时）。利用<a href="/chemistry-2e/sheets/thermo/">附录 G</a> 中的信息估算水的<span data-concept="boiling-point">沸点</span>。</p>
+<h4>解</h4>
+<p>所关注的过程是下面的相变：</p>
+$${\text{H}}_{2}\text{O}(l)\;\longrightarrow \;{\text{H}}_{2}\text{O}(g)$$
+<p>当这一过程处于<span data-concept="chemical-equilibrium">平衡</span>时，$\kdG$ = 0，因此有：</p>
+$$0=\kdHo-\kT\kdSo\hspace{5em}\text{或}\hspace{5em}\kT=\;\frac{\kdHo}{\kdSo}$$
+<p>利用<a href="/chemistry-2e/sheets/thermo/">附录 G</a> 中的标准热力学数据，</p>
+$$\begin{array}{rll}\kdHo & = & 1\;\text{mol}\;\times \;\kdHf({\text{H}}_{2}\text{O}(g))\;-1\;\text{mol}\;\times \;\kdHf({\text{H}}_{2}\text{O}(l)) \\ & = & \text{(1 mol)}-\text{241.82 kJ/mol}-\text{(1 mol)}(-\text{286.83 kJ/mol})=\text{44.01 kJ}\end{array}$$<sup class="fn" data-note="c-water-enthalpy"></sup>
+$$\begin{array}{rll}\kdSo & = & 1\;\text{mol}\;\times \;\kdSo({\text{H}}_{2}\text{O}(g))\;-1\;\text{mol}\;\times \;\kdSo({\text{H}}_{2}\text{O}(l)) \\ & = & \text{(1 mol)}\;\text{188.8 J/K·mol}-\text{(1 mol)}\;\text{70.0 J/K·mol}=\text{118.8 J/K}\end{array}$$
+$$\kT=\;\frac{\kdHo}{\kdSo}\;=\;\frac{44.01\;\times \;{10}^{3}\;\text{J}}{118.8\;\text{J/K}}\;=370.5\;\text{K}=97.3\;\text{°C}$$
+<p>水的正常<span data-concept="boiling-point">沸点</span>的公认值为 <span data-type="temperature">373.2 K（100.0 °C）</span>，因此这一计算结果与之相当吻合。请注意，所用的<span data-concept="enthalpy-change">焓变</span>和<span data-concept="entropy">熵变</span>数据来自 <span data-type="temperature">298 K</span> 下的标准数据（<a href="/chemistry-2e/sheets/thermo/">附录 G</a>）。如果需要，可以改用在实际<span data-concept="boiling-point">沸点</span>（或至少更接近它）处测定的<span data-concept="enthalpy-change">焓变</span>和<span data-concept="entropy">熵变</span>，得到更精确的结果。</p>
+<h4>学习检测</h4>
+<div class="exercises" data-place="ex-boiling"></div>
+</div>
+</section>
+
+<section id="equilibrium">
+<h2>自由能与平衡</h2>
+<p class="cite-target">过程的<span data-concept="gibbs-free-energy">自由能变</span>可以看作其推动力的量度。$\kdG$ 为负值表示过程正向进行的推动力，为正值则表示过程逆向进行的推动力。当 $\kdG$ 为零时，正向和逆向的推动力相等，过程在两个方向上以相同的速率进行（<span data-concept="system">体系</span>处于<span data-concept="chemical-equilibrium">平衡</span>）。</p>
+<p>在<span data-concept="chemical-equilibrium">平衡</span>一章中，引入了<em><span data-concept="reaction-quotient">反应商</span></em> $\kQrxn$，作为<span data-concept="chemical-equilibrium">平衡</span><span data-concept="system">体系</span>状态的一种方便量度。请回忆，$\kQrxn$ 是该<span data-concept="system">体系</span>的质量作用表达式的数值，可以用它的值判断反应为达到<span data-concept="chemical-equilibrium">平衡</span>将朝哪个方向进行。当 $\kQrxn$ 小于<span data-concept="equilibrium-constant">平衡常数</span> $\kK$ 时，反应将正向进行，直到达到<span data-concept="chemical-equilibrium">平衡</span>，此时 $\kQrxn=\kK$。反过来，如果 $\kQrxn&gt;\kK$，过程将逆向进行，直到达到<span data-concept="chemical-equilibrium">平衡</span>。</p>
+<p>当<span data-concept="reactant">反应物</span>和<span data-concept="product">产物</span>处于<em>非标准条件</em>（<span data-concept="gas-pressure">压强</span>不是 1 <span data-concept="bar-unit">bar</span>；<span data-concept="concentration">浓度</span>不是 1 M）下发生的过程，其<span data-concept="gibbs-free-energy">自由能变</span>与<span data-concept="standard-free-energy-change">标准自由能变</span>的关系为下面的方程：</p>
+$$\kdG=\kdGo+R\kT\;\text{ln}\;\kQrxn$$
+<p><em>R</em> 是<span data-concept="ideal-gas-constant">理想气体常数</span>（8.314 J/K mol），$\kT$ 是<span data-concept="kelvin">开尔文</span>温度即热力学<span data-concept="temperature">温度</span>，$\kQrxn$ 是<span data-concept="reaction-quotient">反应商</span>。对于<span data-concept="gas">气</span>相平衡，使用以压强表示的<span data-concept="reaction-quotient">反应商</span> $\kQP$。对于凝聚相平衡，使用以浓度表示的<span data-concept="reaction-quotient">反应商</span> $\kQc$。这个方程可用来预测任何给定条件下过程的自发性，如例 16.12 所示。</p>
+<div class="example" id="ex-nonstandard">
+<h3>例 16.12 · 计算非标准条件下的 $\kdG$</h3>
+<p>在指定条件下，这里所示过程的<span data-concept="gibbs-free-energy">自由能变</span>是多少？</p>
+<p>$\kT$ = <span data-type="temperature">25 °C</span>，${P}_{{\text{N}}_{2}}=\text{0.870 atm},$ ${P}_{{\text{H}}_{2}}=\text{0.250 atm},$ 且 ${P}_{{\text{NH}}_{3}}=\text{12.9 atm}$</p>
+$${\text{2NH}}_{3}(g)\;\longrightarrow \;{\text{3H}}_{2}(g)+{\text{N}}_{2}(g)\hspace{5em}\kdGo=\text{33.0 kJ/mol}$$
+<h4>解</h4>
+<p>可以直接使用把<span data-concept="gibbs-free-energy">自由能变</span>与<span data-concept="standard-free-energy-change">标准自由能变</span>和<span data-concept="reaction-quotient">反应商</span>联系起来的方程：</p>
+$$\begin{array}{l}\kdG=\kdGo+R\kT\;\text{ln}\;\kQrxn=33.0\;\frac{\text{kJ}}{\text{mol}}\;+\;(8.314\;\frac{\text{J}}{\text{mol K}}\;\times \;\text{298 K}\;\times \;\text{ln}\;\frac{({0.250}^{3})\;\times \;0.870}{{12.9}^{2}}) \\ \\ =9680\;\frac{\text{J}}{\text{mol}}\;\text{或 9.68 kJ/mol}\end{array}$$
+<p>由于算得的 $\kdG$ 为正值，所以在这些条件下该反应是非自发的。</p>
+<h4>学习检测</h4>
+<div class="exercises" data-place="ex-nonstandard"></div>
+</div>
+<p>对于处于<span data-concept="chemical-equilibrium">平衡</span>的<span data-concept="system">体系</span>，$\kQrxn=\kK$ 且 $\kdG$ = 0，前面的方程可以写成</p>
+<figure class="dv" id="drv-free-energy-equilibrium"></figure>
+<p>这种形式的方程在这两个重要的热力学性质之间建立了有用的联系，可用来由<span data-concept="standard-free-energy-change">标准自由能变</span>求出<span data-concept="equilibrium-constant">平衡常数</span>，反之亦然。<span data-concept="standard-free-energy-change">标准自由能变</span>与<span data-concept="equilibrium-constant">平衡常数</span>之间的关系概括在表 16.4 中。</p>
+<div class="book-table">
+  <div class="tcap"><span class="eyebrow">表 16.4</span><span>标准自由能变与平衡常数之间的关系</span></div>
+  <table>
+    <thead><tr><th>$\kK$</th><th>$\kdGo$</th><th>平衡混合物的组成</th></tr></thead>
+    <tbody>
+      <tr><td>&gt; 1</td><td>&lt; 0</td><td>产物较多</td></tr>
+      <tr><td>&lt; 1</td><td>&gt; 0</td><td>反应物较多</td></tr>
+      <tr><td>= 1</td><td>= 0</td><td>反应物与产物的量相当</td></tr>
+    </tbody>
+  </table>
+</div>
+<div class="example" id="ex-ksp">
+<h3>例 16.13 · 用标准自由能变计算平衡常数</h3>
+<p>已知 Ag<sup>+</sup>(<em>aq</em>)、Cl<sup>−</sup>(<em>aq</em>) 和 AgCl(<em>s</em>) 的<span data-concept="standard-free-energy-of-formation">标准生成自由能</span>分别为 <span data-type="energy">77.1 kJ/mol</span>、<span data-type="energy">−131.2 kJ/mol</span> 和 <span data-type="energy">−109.8 kJ/mol</span>，计算 AgCl 的<span data-concept="solubility-product">溶度积</span> $\kKsp$。</p>
+<h4>解</h4>
+<p>所关注的反应如下：</p>
+$$\text{AgCl}(s)\;\rightleftharpoons \;{\text{Ag}}^{\text{+}}(aq)+{\text{Cl}}^{\text{−}}(aq)\hspace{5em}\kKsp=[{\text{Ag}}^{\text{+}}][{\text{Cl}}^{\text{−}}]$$
+<p>首先用<span data-concept="reactant">反应物</span>和<span data-concept="product">产物</span>的<span data-concept="standard-free-energy-of-formation">标准生成自由能</span>计算该反应的<span data-concept="standard-free-energy-change">标准自由能变</span>：</p>
+$$\begin{array}{l}\kdGo=[\kdGf({\text{Ag}}^{\text{+}}(aq))\;+\kdGf({\text{Cl}}^{\text{−}}(aq))]\;-\;[\kdGf(\text{AgCl}(s))] \\ =[\text{77.1 kJ/mol}-\text{131.2 kJ/mol}]-[-\text{109.8 kJ/mol}]=\text{55.7 kJ/mol}\end{array}$$
+<p>然后可以由其<span data-concept="standard-free-energy-change">标准自由能变</span>导出该反应的<span data-concept="equilibrium-constant">平衡常数</span>：</p>
+$$\kKsp={e}^{-\frac{\kdGo}{R\kT}}=\text{exp}(-\;\frac{\kdGo}{R\kT})\;=\text{exp}(-\;\frac{55.7\;\times \;{10}^{3}\;\text{J/mol}}{8.314\;\text{J/mol·K}\;\times \;298.15\;\text{K}})=\text{exp}(-22.470)={e}^{-22.470}=1.74\;\times \;{10}^{-10}$$
+<p>这一结果与<a href="/chemistry-2e/sheets/ksp/">附录 J</a> 中给出的值相当吻合。</p>
+<h4>学习检测</h4>
+<div class="exercises" data-place="ex-ksp"></div>
+</div>
+<p>为进一步说明这两个重要热力学概念之间的关系，请考虑这样一个现象：反应总是朝着最终建立<span data-concept="chemical-equilibrium">平衡</span>的方向自发进行。如果以<span data-concept="gibbs-free-energy">自由能</span>对反应进程（例如反映在 $\kQrxn$ 的值上）作图，就可以看出，当<span data-concept="system">体系</span>的<span data-concept="gibbs-free-energy">自由能</span>最小化时，即建立<span data-concept="chemical-equilibrium">平衡</span>（图 16.14）。如果一个<span data-concept="system">体系</span>由非平衡量的<span data-concept="reactant">反应物</span>和<span data-concept="product">产物</span>组成（$\kQrxn\ne\kK$），反应将朝着建立<span data-concept="chemical-equilibrium">平衡</span>所需的方向自发进行。</p>
+<figure class="sim" id="sim-gibbs" data-figure="16.14" data-original="/media/ch16/CNX_Chem_16_04_Gibbs-1aa8.jpg" data-original-caption="这些图表示标准自由能变为（a）负、（b）正和（c）零的体系的自由能随反应进程的变化。非平衡体系将朝着使自由能最小并建立平衡所需的任何方向自发进行。">
+  <div class="sim-head"><span class="eyebrow">Figure 16.14</span><span>在 <span data-type="temperature">298.15 K</span> 下，1 mol反应物变为产物时的<span data-concept="gibbs-free-energy">自由能</span>随反应进程的变化，其<span data-concept="standard-free-energy-change">标准自由能变</span>可以为负、为正或为零。拖动 $\kdGo$ 可移动曲线的最低点，该处 $\kQrxn=\kK$；拖动反应进程可选取一种混合物，并读出它的 $\kQrxn$ 和 $\kdG$ 的符号。非平衡体系将朝着使<span data-concept="gibbs-free-energy">自由能</span>最小并建立<span data-concept="chemical-equilibrium">平衡</span>所需的任何方向自发进行。</span></div>
+</figure>
+</section>

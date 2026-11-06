@@ -1,0 +1,544 @@
+{
+ "types": [],
+ "symbols": [
+  {
+   "sym": "K_sp",
+   "latex": "K_{\\text{sp}}",
+   "macro": "\\kKsp"
+  },
+  {
+   "sym": "Q_sp",
+   "latex": "Q_{\\text{sp}}",
+   "macro": "\\kQsp"
+  },
+  {
+   "sym": "K_f_form",
+   "latex": "K_{\\text{f}}",
+   "macro": "\\kKfform"
+  },
+  {
+   "sym": "K_d",
+   "latex": "K_{\\text{d}}",
+   "macro": "\\kKd"
+  },
+  {
+   "sym": "[M^m+]",
+   "latex": "[\\text{M}^{m+}]",
+   "macro": "\\kconcMion"
+  },
+  {
+   "sym": "[X^n-]",
+   "latex": "[\\text{X}^{n-}]",
+   "macro": "\\kconcXion"
+  },
+  {
+   "sym": "p_stoich",
+   "latex": "p"
+  },
+  {
+   "sym": "q_stoich",
+   "latex": "q"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "solubility-product",
+   "kind": "definition",
+   "section": "15.1",
+   "name": "溶度积常数",
+   "symbol": "K_sp",
+   "terms": [
+    "溶度积常数",
+    "溶度积"
+   ],
+   "type": "equilibrium-constant",
+   "statement": "难溶离子型固体的饱和溶液是一种平衡：固体溶解的速率与其离子沉淀的速率相等。它的平衡常数就是溶度积；由于平衡常数表达式中只出现气体和溶质，所以其中不含未溶解固体的项。",
+   "forms": [
+    {
+     "id": "eq-ksp",
+     "latex": "\\text{M}_{p}\\text{X}_{q}(s)\\rightleftharpoons p\\text{M}^{m+}(aq)+q\\text{X}^{n-}(aq)\\qquad K_{\\text{sp}}=[\\text{M}^{m+}]^{p}[\\text{X}^{n-}]^{q}",
+     "ktex": "\\text{M}_{p}\\text{X}_{q}(s)\\rightleftharpoons p\\text{M}^{m+}(aq)+q\\text{X}^{n-}(aq)\\qquad K_{\\text{sp}}=\\kconcMion^{p}\\kconcXion^{q}",
+     "condition": "溶解过程只涉及解离和溶剂化的微溶离子固体",
+     "anchor": "15.1-ksp-solubility"
+    }
+   ]
+  },
+  {
+   "id": "write-ksp-expression",
+   "kind": "skill",
+   "section": "15.1",
+   "name": "书写溶度积表达式",
+   "statement": "溶解方程式给出化合物生成的离子及其系数，每个系数都成为该离子浓度在溶度积表达式中的指数。"
+  },
+  {
+   "id": "ksp-from-solubility",
+   "kind": "skill",
+   "section": "15.1",
+   "name": "由溶解度计算 Ksp",
+   "statement": "当溶解只涉及解离和溶剂化时，实测的溶解度（若以克每升给出，则先换算成摩尔溶解度）通过溶解的化学计量关系确定各离子的浓度，溶度积随之得出。"
+  },
+  {
+   "id": "molar-solubility-from-ksp",
+   "kind": "skill",
+   "section": "15.1",
+   "name": "计算摩尔溶解度",
+   "statement": "用摩尔溶解度 <i>x</i> 表示 ICE 表中的各平衡浓度，再代入溶度积表达式，得到一个只含 <i>x</i> 的方程，其根就是摩尔溶解度。"
+  },
+  {
+   "id": "qsp-versus-ksp",
+   "kind": "result",
+   "section": "15.1",
+   "name": "预测沉淀的生成",
+   "statement": "只要溶液中含有这些离子，不论其来源如何，溶解平衡就会建立。若离子浓度给出的反应商大于溶度积，则溶液是过饱和的，沉淀会生成，直到反应商等于溶度积；若反应商较小，则没有沉淀生成。"
+  },
+  {
+   "id": "precipitation-concentration",
+   "kind": "skill",
+   "section": "15.1",
+   "name": "确定沉淀开始生成的条件",
+   "statement": "令反应商等于溶度积并代入已知的离子浓度，就得到沉淀刚开始生成时反荷离子的浓度，或把某一溶解离子降低到选定水平所需的浓度。"
+  },
+  {
+   "id": "selective-precipitation",
+   "kind": "idea",
+   "section": "15.1",
+   "name": "选择性沉淀",
+   "terms": [
+    "选择性沉淀"
+   ],
+   "statement": "当两种离子与同一种反荷离子生成不溶化合物时，缓慢提高反荷离子的浓度，会使化合物在较低反荷离子浓度下就达到溶度积的那种离子先沉淀出来，这取决于溶度积和离子浓度两个因素。"
+  },
+  {
+   "id": "common-ion-effect",
+   "kind": "result",
+   "section": "15.1",
+   "name": "同离子效应",
+   "terms": [
+    "同离子效应"
+   ],
+   "statement": "由于无论离子来自何处，平衡时离子浓度的乘积都是常数，所以加入其中一种离子会使溶解平衡向左移动，离子型化合物在已含有同离子的溶液中比在纯水中更难溶解。"
+  },
+  {
+   "id": "molar-solubility",
+   "kind": "definition",
+   "section": "15.1",
+   "name": "摩尔溶解度",
+   "terms": [
+    "摩尔溶解度"
+   ],
+   "statement": "化合物的摩尔溶解度是以每升饱和溶液中所含溶质的物质的量表示的溶解度。",
+   "type": "concentration"
+  },
+  {
+   "id": "coordinate-covalent-bond",
+   "kind": "definition",
+   "section": "15.2",
+   "name": "配位共价键",
+   "terms": [
+    "配位共价键"
+   ],
+   "statement": "当键中的一个原子提供两个成键电子时，就形成配位共价键，或称配位键。"
+  },
+  {
+   "id": "lewis-acids-and-bases",
+   "kind": "definition",
+   "section": "15.2",
+   "name": "路易斯酸和碱",
+   "terms": [
+    "路易斯酸碱化学"
+   ],
+   "statement": "按路易斯的定义，碱给出一对电子，酸接受一对电子，二者形成配位共价键，生成称为加合物的产物。布朗斯特–劳里酸碱反应是其中酸为 H<sup>+</sup> 的子类。"
+  },
+  {
+   "id": "complex-ions-and-ligands",
+   "kind": "definition",
+   "section": "15.2",
+   "name": "配离子和配体",
+   "statement": "配离子由一个中心原子（通常是作为路易斯酸的过渡金属阳离子）和围绕它的配体组成，配体是分子或离子，各自作为路易斯碱给出一对电子。"
+  },
+  {
+   "id": "formation-constant",
+   "kind": "definition",
+   "section": "15.2",
+   "name": "生成常数",
+   "symbol": "K_f_form",
+   "terms": [
+    "生成常数"
+   ],
+   "type": "equilibrium-constant",
+   "statement": "金属离子与配体反应生成配离子的平衡常数是它的生成常数，其逆反应的常数是解离常数，二者互为倒数。生成常数很大时，游离金属离子的浓度会降低到足以使该金属的一种微溶盐溶解。",
+   "forms": [
+    {
+     "id": "eq-kf",
+     "latex": "K_{\\text{f}}=\\frac{[\\text{Cu(CN)}_{2}{}^{-}]}{[\\text{Cu}^{+}][\\text{CN}^{-}]^{2}}",
+     "condition": "由 Cu<sup>+</sup> 和 CN<sup>–</sup> 生成 Cu(CN)<sub>2</sub><sup>–</sup>",
+     "anchor": "15.2-complex-ions"
+    }
+   ]
+  },
+  {
+   "id": "complex-ion-calculations",
+   "kind": "skill",
+   "section": "15.2",
+   "name": "计算配离子平衡",
+   "statement": "对配离子的解离列出 ICE 表，并采用很大的生成常数所支持的 <i>x</i> 很小的假设，即可得到游离金属离子和配体的浓度。"
+  },
+  {
+   "id": "complex-ion",
+   "kind": "definition",
+   "section": "15.2",
+   "name": "配离子",
+   "terms": [
+    "配离子"
+   ],
+   "statement": "配离子是由一个中心原子（通常是过渡金属阳离子）和围绕它的称为配体的分子或离子所组成的离子。"
+  },
+  {
+   "id": "ligand",
+   "kind": "definition",
+   "section": "15.2",
+   "name": "配体",
+   "terms": [
+    "配体"
+   ],
+   "statement": "配体是围绕在配离子中心原子周围的分子或离子，它作为路易斯碱给出一对电子而与中心原子成键。"
+  },
+  {
+   "id": "dissociation-constant",
+   "kind": "definition",
+   "section": "15.2",
+   "name": "解离常数",
+   "symbol": "K_d",
+   "terms": [
+    "解离常数"
+   ],
+   "type": "equilibrium-constant",
+   "statement": "解离常数 $K_{\\text{d}}$ 是配离子在溶液中分解为其组分的平衡常数；它是生成常数的倒数。",
+   "forms": [
+    {
+     "id": "eq-kd",
+     "latex": "K_{\\text{d}}=K_{\\text{f}}^{-1}",
+     "condition": "配离子及其形成反应的逆反应",
+     "anchor": "15.2-complex-ions"
+    }
+   ]
+  },
+  {
+   "id": "lewis-acid",
+   "kind": "definition",
+   "section": "15.2",
+   "name": "路易斯酸",
+   "terms": [
+    "路易斯酸"
+   ],
+   "statement": "路易斯酸是任何能接受一对电子并形成配位共价键的物种。"
+  },
+  {
+   "id": "lewis-base",
+   "kind": "definition",
+   "section": "15.2",
+   "name": "路易斯碱",
+   "terms": [
+    "路易斯碱"
+   ],
+   "statement": "路易斯碱是任何能给出一对电子并形成配位共价键的物种。"
+  },
+  {
+   "id": "lewis-acid-base-adduct",
+   "kind": "definition",
+   "section": "15.2",
+   "name": "路易斯酸碱加合物",
+   "terms": [
+    "路易斯酸碱加合物"
+   ],
+   "statement": "路易斯酸碱加合物是含有路易斯酸与路易斯碱之间所形成的配位共价键的化合物或离子。"
+  },
+  {
+   "id": "solubility-in-acid",
+   "kind": "result",
+   "section": "15.3",
+   "name": "在酸中的溶解度",
+   "statement": "当盐的阴离子是碱时，盐的溶解与该阴离子同水合氢离子的反应相互关联，此反应使阴离子被消耗，溶解平衡因而向右移动。总反应的常数等于溶度积除以共轭酸的电离常数。",
+   "forms": [
+    {
+     "id": "eq-k-acid-coupled",
+     "latex": "\\text{CaCO}_{3}(s)+\\text{H}_{3}\\text{O}^{+}(aq)\\rightleftharpoons\\text{Ca}^{2+}(aq)+\\text{HCO}_{3}{}^{-}(aq)+\\text{H}_{2}\\text{O}(l)\\qquad K=K_{\\text{sp}}/K_{\\text{a2}}=180",
+     "condition": "碳酸钙的溶解与碳酸氢根酸电离的逆反应相互关联",
+     "anchor": "15.3-reefs"
+    }
+   ]
+  },
+  {
+   "id": "dissolution-by-complex-formation",
+   "kind": "result",
+   "section": "15.3",
+   "name": "配合物形成使溶解度增大",
+   "statement": "当溶解与所溶金属的配离子的形成相互关联时，总反应的常数等于溶度积与生成常数之积，即使溶度积很小，这一常数也可以很大。",
+   "forms": [
+    {
+     "id": "eq-k-complex-coupled",
+     "latex": "\\text{Al(OH)}_{3}(s)+\\text{OH}^{-}(aq)\\rightleftharpoons\\text{Al(OH)}_{4}{}^{-}(aq)\\qquad K=K_{\\text{sp}}K_{\\text{f}}=22",
+     "condition": "氢氧化铝的溶解与 Al(OH)<sub>4</sub><sup>–</sup> 的形成相互关联",
+     "anchor": "15.3-complex"
+    }
+   ]
+  },
+  {
+   "id": "coupled-equilibrium-calculations",
+   "kind": "skill",
+   "section": "15.3",
+   "name": "计算多重平衡中的溶解度",
+   "statement": "多重平衡体系中的浓度可以一次依据一个平衡求出，例如先求缓冲溶液的氢氧根离子浓度，再用溶度积；也可以由合并后的总反应的常数求出。"
+  }
+ ],
+ "concept_prereqs": [
+  {
+   "concept": "solubility-product",
+   "prereq": "equilibrium-constant"
+  },
+  {
+   "concept": "solubility-product",
+   "prereq": "homogeneous-and-heterogeneous-equilibria"
+  },
+  {
+   "concept": "solubility-product",
+   "prereq": "solubility-and-saturation"
+  },
+  {
+   "concept": "solubility-product",
+   "prereq": "dissociation-of-ionic-compounds"
+  },
+  {
+   "concept": "write-ksp-expression",
+   "prereq": "solubility-product"
+  },
+  {
+   "concept": "write-ksp-expression",
+   "prereq": "balanced-equation"
+  },
+  {
+   "concept": "ksp-from-solubility",
+   "prereq": "write-ksp-expression"
+  },
+  {
+   "concept": "ksp-from-solubility",
+   "prereq": "mass-mole-conversion"
+  },
+  {
+   "concept": "ksp-from-solubility",
+   "prereq": "molarity"
+  },
+  {
+   "concept": "molar-solubility-from-ksp",
+   "prereq": "write-ksp-expression"
+  },
+  {
+   "concept": "molar-solubility-from-ksp",
+   "prereq": "equilibrium-from-initial-concentrations"
+  },
+  {
+   "concept": "qsp-versus-ksp",
+   "prereq": "solubility-product"
+  },
+  {
+   "concept": "qsp-versus-ksp",
+   "prereq": "predict-direction-q-versus-k"
+  },
+  {
+   "concept": "qsp-versus-ksp",
+   "prereq": "dilution-equation"
+  },
+  {
+   "concept": "qsp-versus-ksp",
+   "prereq": "precipitation-reaction"
+  },
+  {
+   "concept": "precipitation-concentration",
+   "prereq": "qsp-versus-ksp"
+  },
+  {
+   "concept": "precipitation-concentration",
+   "prereq": "ph-calculations"
+  },
+  {
+   "concept": "selective-precipitation",
+   "prereq": "precipitation-concentration"
+  },
+  {
+   "concept": "common-ion-effect",
+   "prereq": "solubility-product"
+  },
+  {
+   "concept": "common-ion-effect",
+   "prereq": "concentration-stress"
+  },
+  {
+   "concept": "common-ion-effect",
+   "prereq": "small-x-approximation"
+  },
+  {
+   "concept": "coordinate-covalent-bond",
+   "prereq": "lewis-structure"
+  },
+  {
+   "concept": "lewis-acids-and-bases",
+   "prereq": "coordinate-covalent-bond"
+  },
+  {
+   "concept": "lewis-acids-and-bases",
+   "prereq": "bronsted-lowry-acids-bases"
+  },
+  {
+   "concept": "lewis-acids-and-bases",
+   "prereq": "octet-rule-exceptions"
+  },
+  {
+   "concept": "complex-ions-and-ligands",
+   "prereq": "lewis-acids-and-bases"
+  },
+  {
+   "concept": "formation-constant",
+   "prereq": "complex-ions-and-ligands"
+  },
+  {
+   "concept": "formation-constant",
+   "prereq": "equilibrium-constant"
+  },
+  {
+   "concept": "formation-constant",
+   "prereq": "qsp-versus-ksp"
+  },
+  {
+   "concept": "complex-ion-calculations",
+   "prereq": "formation-constant"
+  },
+  {
+   "concept": "complex-ion-calculations",
+   "prereq": "small-x-approximation"
+  },
+  {
+   "concept": "solubility-in-acid",
+   "prereq": "coupled-equilibria"
+  },
+  {
+   "concept": "solubility-in-acid",
+   "prereq": "solubility-product"
+  },
+  {
+   "concept": "solubility-in-acid",
+   "prereq": "salt-ion-acidity"
+  },
+  {
+   "concept": "solubility-in-acid",
+   "prereq": "polyprotic-acids"
+  },
+  {
+   "concept": "dissolution-by-complex-formation",
+   "prereq": "coupled-equilibria"
+  },
+  {
+   "concept": "dissolution-by-complex-formation",
+   "prereq": "formation-constant"
+  },
+  {
+   "concept": "coupled-equilibrium-calculations",
+   "prereq": "solubility-in-acid"
+  },
+  {
+   "concept": "coupled-equilibrium-calculations",
+   "prereq": "dissolution-by-complex-formation"
+  },
+  {
+   "concept": "coupled-equilibrium-calculations",
+   "prereq": "molar-solubility-from-ksp"
+  },
+  {
+   "concept": "coupled-equilibrium-calculations",
+   "prereq": "henderson-hasselbalch"
+  },
+  {
+   "concept": "coupled-equilibrium-calculations",
+   "prereq": "coupled-equilibrium"
+  },
+  {
+   "concept": "molar-solubility",
+   "prereq": "solubility"
+  },
+  {
+   "concept": "molar-solubility",
+   "prereq": "molarity"
+  },
+  {
+   "concept": "complex-ion",
+   "prereq": "complex-ions-and-ligands"
+  },
+  {
+   "concept": "complex-ion",
+   "prereq": "lewis-acid"
+  },
+  {
+   "concept": "ligand",
+   "prereq": "complex-ions-and-ligands"
+  },
+  {
+   "concept": "ligand",
+   "prereq": "lewis-base"
+  },
+  {
+   "concept": "dissociation-constant",
+   "prereq": "formation-constant"
+  },
+  {
+   "concept": "dissociation-constant",
+   "prereq": "equilibrium-constant"
+  },
+  {
+   "concept": "lewis-acid",
+   "prereq": "lewis-acids-and-bases"
+  },
+  {
+   "concept": "lewis-acid",
+   "prereq": "coordinate-covalent-bond"
+  },
+  {
+   "concept": "lewis-base",
+   "prereq": "lewis-acids-and-bases"
+  },
+  {
+   "concept": "lewis-base",
+   "prereq": "coordinate-covalent-bond"
+  },
+  {
+   "concept": "lewis-acid-base-adduct",
+   "prereq": "lewis-acid"
+  },
+  {
+   "concept": "lewis-acid-base-adduct",
+   "prereq": "lewis-base"
+  },
+  {
+   "concept": "molar-solubility-from-ksp",
+   "prereq": "molar-solubility"
+  },
+  {
+   "concept": "ksp-from-solubility",
+   "prereq": "molar-solubility"
+  },
+  {
+   "concept": "common-ion-effect",
+   "prereq": "molar-solubility"
+  },
+  {
+   "concept": "complex-ion-calculations",
+   "prereq": "complex-ion"
+  },
+  {
+   "concept": "complex-ion-calculations",
+   "prereq": "dissociation-constant"
+  },
+  {
+   "concept": "dissolution-by-complex-formation",
+   "prereq": "complex-ion"
+  }
+ ]
+}

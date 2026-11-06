@@ -1,0 +1,372 @@
+{
+ "id": "13.1",
+ "module": "m68797",
+ "chapter": "13",
+ "title": "化学平衡",
+ "short": "化学平衡",
+ "lead": "<span data-concept=\"reversible-reaction\">可逆反应</span>可以沿两个方向进行，在封闭体系中，它的正过程与逆过程相互竞争。本节以四氧化二氮的分解和溴的汽化为例，描述这样的体系所达到的状态，以及体系到达该状态之后仍在发生什么。",
+ "objectives": [
+  "描述平衡体系的本质",
+  "解释化学平衡的动态本质"
+ ],
+ "summary_html": "<p>当正过程与逆过程以相等的速率发生时，<span data-concept=\"reversible-reaction\">可逆反应</span>处于<span data-concept=\"chemical-equilibrium\">平衡</span>。<span data-concept=\"equilibrium-is-dynamic\">化学平衡是动态过程</span>，其特征是反应物和产物各物种的量保持恒定。</p>",
+ "notes": "本节没有任何内容被略去。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案来自书后答案。没有书后答案的概念性题目 fs-idp122639232 和 fs-idp13186176 附有一份建议思路，并标明为 AI 生成。另有两道习题取自后面的小节，因为它们考查的是本节引入的动态平衡：fs-idp194491952 涉及图 13.4 中的密闭容器，印在第 13.2 节；fs-idp92538384 涉及饱和溶液中的放射性银离子，印在第 13.3 节。",
+ "figures": [
+  {
+   "id": "sim-n2o4-equilibrium",
+   "kind": "sim",
+   "number": "13.2",
+   "originals": [
+    "/media/ch13/CNX_Chem_13_01_equilibrium.jpg"
+   ],
+   "original_caption": "（a）装有无色 N₂O₄ 的密封管在分解生成棕色 NO₂ 时颜色变深。（b）分解反应达到平衡的过程中浓度随时间的变化。（c）平衡时，正反应速率与逆反应速率相等。",
+   "draws": [
+    "concentration",
+    "rate",
+    "rate-constant",
+    "time"
+   ],
+   "conventions": [
+    "N",
+    "O"
+   ],
+   "facts": [
+    "#8b4a1c"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-juggling",
+   "kind": "photo",
+   "number": "13.3",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-bromine",
+   "kind": "photo",
+   "number": "13.4",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "referents": [
+  {
+   "id": "n2o4",
+   "label": "四氧化二氮，N₂O₄",
+   "figures": [
+    "sim-n2o4-equilibrium"
+   ]
+  },
+  {
+   "id": "no2",
+   "label": "二氧化氮，NO₂",
+   "figures": [
+    "sim-n2o4-equilibrium"
+   ]
+  },
+  {
+   "id": "forward",
+   "label": "正反应",
+   "figures": [
+    "sim-n2o4-equilibrium"
+   ]
+  },
+  {
+   "id": "reverse",
+   "label": "逆反应",
+   "figures": [
+    "sim-n2o4-equilibrium"
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "reversible",
+   "concept": "reversible-reaction",
+   "verb": "introduces"
+  },
+  {
+   "span": "reversible",
+   "concept": "chemical-equilibrium",
+   "verb": "introduces"
+  },
+  {
+   "span": "reversible",
+   "concept": "reaction-rate",
+   "verb": "uses"
+  },
+  {
+   "span": "reversible",
+   "concept": "concentration",
+   "verb": "uses"
+  },
+  {
+   "span": "dynamic",
+   "concept": "equilibrium-is-dynamic",
+   "verb": "introduces"
+  },
+  {
+   "span": "dynamic",
+   "concept": "elementary-rate-laws",
+   "verb": "uses"
+  },
+  {
+   "span": "dynamic",
+   "concept": "rate-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "dynamic",
+   "concept": "concentration",
+   "verb": "uses"
+  },
+  {
+   "span": "dynamic",
+   "concept": "chemical-equilibrium",
+   "verb": "reinforces"
+  },
+  {
+   "span": "phase",
+   "concept": "vapor-pressure-dynamic-equilibrium",
+   "verb": "uses"
+  },
+  {
+   "span": "phase",
+   "concept": "vaporization",
+   "verb": "uses"
+  },
+  {
+   "span": "phase",
+   "concept": "equilibrium-is-dynamic",
+   "verb": "reinforces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "e1",
+   "source_id": "fs-idp156600272",
+   "source_number": "1",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": {
+    "at": "end"
+   },
+   "cite": "reversible",
+   "prompt": "说一个反应是“可逆的”，是什么意思？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "该反应既可以沿正向进行，也可以沿逆向进行。"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp122639232",
+   "source_number": "2",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": {
+    "at": "end"
+   },
+   "cite": "dynamic",
+   "prompt": "书写方程式时，可逆反应如何与不可逆反应区分开？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "可逆反应用双箭头 ⇌ 书写，不可逆反应用单箭头 → 书写。四氧化二氮的分解写作 N<sub>2</sub>O<sub>4</sub>(<em>g</em>) ⇌ 2NO<sub>2</sub>(<em>g</em>)：方向相反的两个半箭头表明，N<sub>2</sub>O<sub>4</sub> 分子分裂成 NO<sub>2</sub>，而成对的 NO<sub>2</sub> 分子也会结合，重新生成 N<sub>2</sub>O<sub>4</sub>。因此该反应沿两个方向进行，并且可以达到正、逆反应速率相等的平衡。单箭头则表示反应只从反应物进行到产物，直到某一种反应物被用完为止。"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp77430432",
+   "source_number": "3",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "dynamic",
+   "prompt": "如果一个反应是可逆的，那么什么时候可以说它已经达到平衡？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "当体系达到平衡时，反应物和产物的浓度不再发生进一步变化；正反应和逆反应仍在继续进行，但速率相等。"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idp13186176",
+   "source_number": "4",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "dynamic",
+   "prompt": "如果正反应和逆反应的速率常数相等，体系是否处于平衡？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "不一定。平衡要求速率相等，而不是速率常数相等。对于基元反应 N<sub>2</sub>O<sub>4</sub>(<em>g</em>) ⇌ 2NO<sub>2</sub>(<em>g</em>)，速率定律为 速率<sub>f</sub> = <em>k</em><sub>f</sub>[N<sub>2</sub>O<sub>4</sub>] 和 速率<sub>r</sub> = <em>k</em><sub>r</sub>[NO<sub>2</sub>]<sup>2</sup>。如果 <em>k</em><sub>f</sub> = <em>k</em><sub>r</sub>，只有当 [N<sub>2</sub>O<sub>4</sub>] = [NO<sub>2</sub>]<sup>2</sup> 时两个速率才相等，所以只有具有这种特定浓度的混合物才处于平衡。例如，1.0 <em>M</em> N<sub>2</sub>O<sub>4</sub> 与 0.50 <em>M</em> NO<sub>2</sub> 的混合物，其 [NO<sub>2</sub>]<sup>2</sup> = 0.25，所以它的正反应速率是逆反应速率的四倍，组成还会不断变化。速率常数相等只是确定了达到平衡时 [NO<sub>2</sub>]<sup>2</sup>/[N<sub>2</sub>O<sub>4</sub>] 的比值为 1；某个给定的体系是否处于平衡，仍取决于它的浓度。"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp9783616",
+   "source_number": "5",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "reversible",
+   "prompt": "如果产物和反应物的浓度相等，体系是否处于平衡？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "不一定。处于平衡的体系的特征是反应物和产物的浓度<em>恒定</em>，但反应物和产物的浓度值本身不必相等。"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp194491952",
+   "source_section": "13.2",
+   "source_number": "7",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "phase",
+   "prompt": "解释为什么如果容器不是图 13.4 所示的密闭容器，Br<sub>2</sub>(<em>l</em>) 与 Br<sub>2</sub>(<em>g</em>) 之间就不会建立平衡。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "如果把瓶口的塞子拿掉，液相和气相之间就无法建立平衡，因为体系不是封闭的；平衡的一个组分，即 Br<sub>2</sub> 蒸气，会从瓶中逸出，直到所有液体都消失。因此，蒸发的液体会多于能从气相凝结回液相的液体。"
+   }
+  },
+  {
+   "id": "e48",
+   "source_id": "fs-idp92538384",
+   "source_section": "13.3",
+   "source_number": "48",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "dynamic",
+   "prompt": "一种溶液被硫酸银饱和，并含有过量的固体硫酸银：<br>${\\text{Ag}}_{2}{\\text{SO}}_{4}(s)\\rightleftharpoons 2{\\text{Ag}}^{\\text{+}}(aq)+{\\text{SO}}_{4}{}^{2-}(aq)$<br>向该溶液中加入少量含有银的一种放射性同位素的固体硫酸银。几分钟之内，对一部分溶液相取样检测，结果显示含有放射性 Ag<sup>+</sup> 离子。解释这一观察结果。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "虽然溶液是饱和的，但溶解平衡的动态性质意味着，固体溶解和沉淀这两个相反的过程仍在继续发生（只是速率相等，即溶解的离子浓度和未溶解的固体的量保持恒定）。溶液相中检测到的放射性 Ag<sup>+</sup> 离子来自所加固体的溶解，而非放射性 Ag<sup>+</sup> 的沉淀抵消了它们的存在。"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e1",
+   "concept": "reversible-reaction"
+  },
+  {
+   "exercise": "e2",
+   "concept": "reversible-reaction"
+  },
+  {
+   "exercise": "e3",
+   "concept": "chemical-equilibrium"
+  },
+  {
+   "exercise": "e3",
+   "concept": "equilibrium-is-dynamic"
+  },
+  {
+   "exercise": "e4",
+   "concept": "chemical-equilibrium"
+  },
+  {
+   "exercise": "e4",
+   "concept": "rate-constant"
+  },
+  {
+   "exercise": "e5",
+   "concept": "chemical-equilibrium"
+  },
+  {
+   "exercise": "e5",
+   "concept": "equilibrium-is-dynamic"
+  },
+  {
+   "exercise": "e7",
+   "concept": "equilibrium-is-dynamic"
+  },
+  {
+   "exercise": "e7",
+   "concept": "vapor-pressure-dynamic-equilibrium"
+  },
+  {
+   "exercise": "e48",
+   "concept": "equilibrium-is-dynamic"
+  }
+ ]
+}

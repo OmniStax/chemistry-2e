@@ -1,0 +1,600 @@
+{
+  "id": "18.2",
+  "module": "m68830",
+  "chapter": "18",
+  "title": "主族金属的存在与制备",
+  "short": "主族金属的制备",
+  "lead": "大多数<span data-concept=\"representative-metal\">主族金属</span>在自然界中只以化合物的形式存在于矿物、盐矿床和海水中。本节介绍如何从这些化合物中分离出金属：一是<span data-concept=\"electrolysis\">电解</span>，即钠用<span data-concept=\"downs-cell\">唐斯电解槽</span>、铝用<span data-concept=\"hall-heroult-cell\">霍尔–埃鲁电解槽</span>、镁用熔融氯化镁；二是用硅或碳进行的<span data-concept=\"chemical-reduction\">化学还原</span>，如<span data-concept=\"pidgeon-process\">皮江法</span>以及锌和锡的制备。",
+  "objectives": [
+    "识别主族金属的天然来源",
+    "描述由天然来源制备这些元素所用的电解和化学还原过程"
+  ],
+  "summary_html": "<p>由于化学反应性强，必须通过从天然存在的化合物中<span data-concept=\"reduction\">还原</span>来制得纯净形式的<span data-concept=\"representative-metal\">主族金属</span>。<span data-concept=\"electrolysis\">电解</span>在钠、钾和铝的生产中很重要。<span data-concept=\"chemical-reduction\">化学还原</span>是分离镁、锌和锡的主要方法。类似的步骤对其他<span data-concept=\"representative-metal\">主族金属</span>也很重要。</p>",
+  "notes": "本节按原文保留了下列内容：“Ions of metals in of groups 1 and 2”“The principle tin ore”和“the principle lead and thallium ores”“In honor to the two inventors”，以及“In the next section”（指后面小节中的皮江法），还有小结中“sodium, potassium, and aluminum”为电解所制得的金属。",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ]
+  },
+  "built": "2026-10-26",
+  "exercises_lead": "",
+  "exercise_notes": "布鲁姆层级、概念标签、提示和建议思路由 AI 生成。答案来自书后答案。三道没有答案的数值习题 fs-idp119437920（由 3.00 kg 氯化钠得到的氯的质量）、fs-idp56785888（3.01 × 10²¹ 个镁原子所需的氧）和 fs-idp237555664（100 kg 钠所需的时间和氯的体积）未收入，也没有为它们算出答案。没有答案的概念性习题 fs-idp199448112、fs-idp236482640 和 fs-idp198987536 附有标明为 OmniStax 自拟的建议思路。无任何内容被移动。",
+  "figures": [
+    {
+      "id": "sim-downs-cell",
+      "kind": "sim",
+      "number": "18.10",
+      "originals": [
+        "/media/ch18/CNX_Chem_18_02_DownsCell.jpg"
+      ],
+      "original_caption": "纯金属钠是通过使用唐斯电解槽电解熔融氯化钠而分离得到的。不可能通过电解钠盐水溶液来分离钠，因为氢离子比钠离子更容易被还原；结果，阴极上生成的是氢气，而不是所需的金属钠。熔化 NaCl 所需的高温意味着金属钠以液态形成。",
+      "draws": [],
+      "conventions": [
+        "Na",
+        "Cl",
+        "H",
+        "e-"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ],
+      "facts": [
+        "#3a3d42",
+        "#c9ced6"
+      ]
+    },
+    {
+      "id": "sim-hall-heroult",
+      "kind": "sim",
+      "number": "18.11",
+      "originals": [
+        "/media/ch18/CNX_Chem_18_02_HallHerCell.jpg"
+      ],
+      "original_caption": "用于生产铝的电解池。电解冰晶石与氟化钙的溶液，在阴极得到金属铝，在阳极得到氧、一氧化碳和二氧化碳。",
+      "draws": [],
+      "conventions": [
+        "Al",
+        "O",
+        "C"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ],
+      "facts": [
+        "#3a3d42",
+        "#c9ced6"
+      ]
+    }
+  ],
+  "referents": [],
+  "coverage": [
+    {
+      "span": "occurrence",
+      "concept": "representative-metal",
+      "verb": "uses"
+    },
+    {
+      "span": "occurrence",
+      "concept": "alkaline-earth-metal",
+      "verb": "uses"
+    },
+    {
+      "span": "occurrence",
+      "concept": "electrolysis",
+      "verb": "uses"
+    },
+    {
+      "span": "occurrence",
+      "concept": "chemical-reduction",
+      "verb": "uses"
+    },
+    {
+      "span": "electrolysis",
+      "concept": "metal-isolation-by-electrolysis",
+      "verb": "introduces"
+    },
+    {
+      "span": "electrolysis",
+      "concept": "electrolysis",
+      "verb": "uses"
+    },
+    {
+      "span": "electrolysis",
+      "concept": "reduction",
+      "verb": "uses"
+    },
+    {
+      "span": "electrolysis",
+      "concept": "energy-and-work",
+      "verb": "uses"
+    },
+    {
+      "span": "sodium",
+      "concept": "downs-cell",
+      "verb": "introduces"
+    },
+    {
+      "span": "sodium",
+      "concept": "electrolysis",
+      "verb": "uses"
+    },
+    {
+      "span": "sodium",
+      "concept": "melting-point",
+      "verb": "uses"
+    },
+    {
+      "span": "sodium",
+      "concept": "colligative-properties",
+      "verb": "uses"
+    },
+    {
+      "span": "sodium",
+      "concept": "electric-current",
+      "verb": "uses"
+    },
+    {
+      "span": "sodium",
+      "concept": "cathode",
+      "verb": "uses"
+    },
+    {
+      "span": "sodium",
+      "concept": "anode",
+      "verb": "uses"
+    },
+    {
+      "span": "sodium",
+      "concept": "reduction",
+      "verb": "uses"
+    },
+    {
+      "span": "sodium",
+      "concept": "oxidation",
+      "verb": "uses"
+    },
+    {
+      "span": "sodium",
+      "concept": "density",
+      "verb": "uses"
+    },
+    {
+      "span": "sodium",
+      "concept": "temperature",
+      "verb": "uses"
+    },
+    {
+      "span": "aluminum",
+      "concept": "hall-heroult-cell",
+      "verb": "introduces"
+    },
+    {
+      "span": "aluminum",
+      "concept": "electrolytic-cell",
+      "verb": "uses"
+    },
+    {
+      "span": "aluminum",
+      "concept": "electrolysis",
+      "verb": "uses"
+    },
+    {
+      "span": "aluminum",
+      "concept": "precipitate",
+      "verb": "uses"
+    },
+    {
+      "span": "aluminum",
+      "concept": "cathode",
+      "verb": "uses"
+    },
+    {
+      "span": "aluminum",
+      "concept": "anode",
+      "verb": "uses"
+    },
+    {
+      "span": "aluminum",
+      "concept": "reduction",
+      "verb": "uses"
+    },
+    {
+      "span": "magnesium-electrolysis",
+      "concept": "metal-isolation-by-electrolysis",
+      "verb": "uses"
+    },
+    {
+      "span": "magnesium-electrolysis",
+      "concept": "electrolysis",
+      "verb": "uses"
+    },
+    {
+      "span": "magnesium-electrolysis",
+      "concept": "precipitate",
+      "verb": "uses"
+    },
+    {
+      "span": "magnesium-electrolysis",
+      "concept": "chemical-reduction",
+      "verb": "uses"
+    },
+    {
+      "span": "chemical-reduction",
+      "concept": "chemical-reduction",
+      "verb": "introduces"
+    },
+    {
+      "span": "chemical-reduction",
+      "concept": "representative-metal",
+      "verb": "uses"
+    },
+    {
+      "span": "chemical-reduction",
+      "concept": "reducing-agent",
+      "verb": "uses"
+    },
+    {
+      "span": "chemical-reduction",
+      "concept": "electrolysis",
+      "verb": "uses"
+    },
+    {
+      "span": "chemical-reduction",
+      "concept": "chemical-equilibrium",
+      "verb": "uses"
+    },
+    {
+      "span": "chemical-reduction",
+      "concept": "le-chateliers-principle",
+      "verb": "uses"
+    },
+    {
+      "span": "pidgeon",
+      "concept": "pidgeon-process",
+      "verb": "introduces"
+    },
+    {
+      "span": "pidgeon",
+      "concept": "temperature",
+      "verb": "uses"
+    },
+    {
+      "span": "pidgeon",
+      "concept": "chemical-thermodynamics",
+      "verb": "uses"
+    },
+    {
+      "span": "pidgeon",
+      "concept": "le-chateliers-principle",
+      "verb": "uses"
+    },
+    {
+      "span": "zinc",
+      "concept": "carbon-reduction-of-zinc-and-tin",
+      "verb": "introduces"
+    },
+    {
+      "span": "zinc",
+      "concept": "boiling-point",
+      "verb": "uses"
+    },
+    {
+      "span": "zinc",
+      "concept": "distillation",
+      "verb": "uses"
+    },
+    {
+      "span": "zinc",
+      "concept": "temperature",
+      "verb": "uses"
+    },
+    {
+      "span": "tin",
+      "concept": "carbon-reduction-of-zinc-and-tin",
+      "verb": "uses"
+    },
+    {
+      "span": "tin",
+      "concept": "reduction",
+      "verb": "uses"
+    },
+    {
+      "span": "tin",
+      "concept": "temperature",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "e1",
+      "source_id": "fs-idp79750944",
+      "source_number": "15",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "chemical-reduction",
+      "prompt": "写出氯化铯在高温下被单质钙还原的方程式。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "$\\text{2CsCl}(l)+\\text{Ca}(g)\\;\\overset{\\;\\begin{array}{l}\\text{逆流} \\\\ \\text{分馏} \\\\ \\text{塔}\\end{array}}{\\to}\\;\\text{2Cs}(g)+{\\text{CaCl}}_{2}(l)$"
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idp199448112",
+      "source_number": "16",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "sodium",
+      "prompt": "为什么在生产金属钠的过程中，必须将电解氯化钠所得的氯和钠分开？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "必须将钠和氯分开，因为它们会立即相互反应，重新生成氯化钠。钠是非常活泼的金属，氯是强氧化剂，所以液态钠遇到氯气会剧烈反应，$\\text{2Na}+{\\text{Cl}}_{2}\\;\\longrightarrow \\;\\text{2NaCl}$，释放出大量的热。该反应会抵消电解的作用，浪费为分离这些元素而消耗的电能，毁掉两种产物，并在高温的电解槽中造成火灾隐患。在唐斯电解槽中，碳阳极周围的铁网使阳极上生成的氯远离阴极上生成的钠。液态钠的密度小于熔融盐，浮起进入其收集器，而氯则经单独的出口进入储罐，因为氯也是一种有价值的产物。"
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idp265303360",
+      "source_number": "17",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "sodium",
+      "prompt": "给出电解熔融氯化锂的总反应以及电极上所发生反应的配平方程式。你不妨复习电化学一章中的相关例子。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "阴极（还原）： ${\\text{2Li}}^{+}+{\\text{2e}}^{-}\\;\\longrightarrow \\;\\text{2Li}(l)\\text{;}$ 阳极（氧化）： ${\\text{2Cl}}^{-}\\;\\longrightarrow \\;{\\text{Cl}}_{2}(g)+{\\text{2e}}^{\\text{−}};$ 总反应： ${\\text{2Li}}^{+}+{\\text{2Cl}}^{-}\\;\\longrightarrow \\;\\text{2Li}(l)+{\\text{Cl}}_{2}(g)$"
+      }
+    },
+    {
+      "id": "e4",
+      "source_id": "fs-idp84582880",
+      "source_number": "19",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "occurrence",
+      "prompt": "10.01 g 钙与水完全反应时，生成的氢气质量是多少克？",
+      "answer": {
+        "type": "number",
+        "value": 0.5035,
+        "unit": "g",
+        "part": "the mass of hydrogen gas",
+        "hint": "写出钙与水反应生成氢氧化钙和氢气的配平方程式，然后将钙的质量换算为物质的量，再换算为 H<sub>2</sub> 的物质的量，最后换算为克。",
+        "solution": "0.5035 g H<sub>2</sub>",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e5",
+      "source_id": "fs-idm19716784",
+      "source_number": "21",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "magnesium-electrolysis",
+      "prompt": "镁是一种活泼金属；它以粉末、带状和丝状的形式燃烧，发出耀眼的光。为什么可以在建筑中使用镁？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "尽管镁很活泼，但即使镁将与火焰接触，也可以用于建筑，因为会形成一层保护性的氧化物涂层，阻止其大量氧化。只有当金属被细分成粉末或呈薄片时，高强度的火焰才会使其迅速燃烧。"
+      }
+    },
+    {
+      "id": "e6",
+      "source_id": "fs-idp236482640",
+      "source_number": "22",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "aluminum",
+      "prompt": "为什么铝这样的活泼金属可以用作结构金属？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "铝可以用作结构金属，是因为钝化保护了它。铝虽然是活泼金属，但暴露在空气中时，会在其表面形成一层坚韧、坚硬、很薄的氧化铝 Al<sub>2</sub>O<sub>3</sub> 膜。这层膜不发生反应且附着紧密，因此能阻止氧和水到达下面的金属，抑制进一步的反应，这与镁上的碱式碳酸镁层很相似。因此，该金属在日常使用中腐蚀得很慢，它的低密度和强度可用于建筑和运输业，以及制罐和制箔。只有当这层膜遭到破坏时，例如铝与汞形成汞齐时，下面的金属才会很容易地与空气和水反应。"
+      }
+    },
+    {
+      "id": "e7",
+      "source_id": "fs-idp72169040",
+      "source_number": "23",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "aluminum",
+      "prompt": "描述通过电解还原生产金属铝的过程。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "从矿石中提取： $\\text{AlO}(\\text{OH})(s)+\\text{NaOH}(aq)+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{Na}[\\text{Al}{(\\text{OH})}_{4}](aq)$<br>回收： $\\text{2Na}[\\text{Al}{(\\text{OH})}_{4}](s)+{\\text{H}}_{2}{\\text{SO}}_{4}(aq)\\;\\longrightarrow \\;\\text{2Al}{(\\text{OH})}_{3}(s)+{\\text{Na}}_{2}{\\text{SO}}_{4}(aq)+{\\text{2H}}_{2}\\text{O}(l)$<br>烧结： $\\text{2Al}{(\\text{OH})}_{3}(s)\\;\\longrightarrow \\;{\\text{Al}}_{2}{\\text{O}}_{3}(s)+{\\text{3H}}_{2}\\text{O}(g)$<br>溶于 Na<sub>3</sub>AlF<sub>6</sub>(<em>l</em>) 并电解： ${\\text{Al}}^{3+}+{\\text{3e}}^{-}\\;\\longrightarrow \\;\\text{Al}(s)$"
+      }
+    },
+    {
+      "id": "e8",
+      "source_id": "fs-idp198987536",
+      "source_number": "24",
+      "kind": "exercise",
+      "bloom": "Remember",
+      "place": {
+        "at": "end"
+      },
+      "cite": "tin",
+      "prompt": "锡的常见矿石是什么？如何从中分离出锡？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "锡的常见矿石是锡石，即氧化物 SnO<sub>2</sub>，将矿石提纯后，用碳还原该氧化物，即可从中分离出锡。首先焙烧矿石，这样可将砷和硫等污染物以易挥发的氧化物形式除去。用盐酸处理剩余物质，可除去其他金属的氧化物，留下提纯的 SnO<sub>2</sub>。然后将提纯的矿石与碳在高于 1000 °C 时加热，碳将锡(IV)还原为金属：${\\text{SnO}}_{2}(s)+\\text{2C}(s)\\;\\overset{\\;\\text{Δ}\\;}{\\to}\\;\\text{Sn}(s)+\\text{2CO}(g)$。熔融的锡聚集在炉底，被放出并浇铸成锭。热炭对氧化锡(IV)的同样容易的还原，这也解释了古代世界为何早已知道锡。"
+      }
+    },
+    {
+      "id": "e9",
+      "source_id": "fs-idp139236992",
+      "source_number": "25",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "tin",
+      "prompt": "一位化学家将 1.497 g 某种金属（Sn、Pb、Sb 和 Cu 的合金）样品溶于硝酸，沉淀出偏锡酸 H<sub>2</sub>SnO<sub>3</sub>。她加热沉淀以赶出水，剩下 0.4909 g 氧化锡(IV)。原样品中锡的百分含量是多少？",
+      "answer": {
+        "type": "number",
+        "value": 25.83,
+        "unit": "%",
+        "part": "the percentage of tin",
+        "hint": "根据摩尔质量求出 0.4909 g SnO<sub>2</sub> 中锡的质量，再除以样品的质量。",
+        "solution": "25.83%",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e10",
+      "source_id": "fs-idp116461520",
+      "source_number": "27",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "magnesium-electrolysis",
+      "prompt": "若镁的产率为理论产量的 85%，则 100,000 A 的电流通过 MgCl<sub>2</sub> 熔体 1.00 h 时，会生成多少质量的镁？",
+      "answer": {
+        "type": "number",
+        "value": 39,
+        "unit": "kg",
+        "part": "the mass of magnesium",
+        "hint": "求出通过的电荷量，用法拉第常数将其换算为电子的物质的量，每个镁原子取两个电子，再应用 85% 的产率。",
+        "solution": "39 kg",
+        "generated_by": "source"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "e1",
+      "concept": "chemical-reduction"
+    },
+    {
+      "exercise": "e2",
+      "concept": "downs-cell"
+    },
+    {
+      "exercise": "e3",
+      "concept": "downs-cell"
+    },
+    {
+      "exercise": "e3",
+      "concept": "electrolysis"
+    },
+    {
+      "exercise": "e3",
+      "concept": "half-reaction"
+    },
+    {
+      "exercise": "e4",
+      "concept": "alkaline-earth-metal-properties"
+    },
+    {
+      "exercise": "e4",
+      "concept": "mass-stoichiometry"
+    },
+    {
+      "exercise": "e5",
+      "concept": "passivation"
+    },
+    {
+      "exercise": "e5",
+      "concept": "alkaline-earth-metal-properties"
+    },
+    {
+      "exercise": "e6",
+      "concept": "passivation"
+    },
+    {
+      "exercise": "e6",
+      "concept": "group-13-metals"
+    },
+    {
+      "exercise": "e7",
+      "concept": "hall-heroult-cell"
+    },
+    {
+      "exercise": "e8",
+      "concept": "carbon-reduction-of-zinc-and-tin"
+    },
+    {
+      "exercise": "e9",
+      "concept": "gravimetric-analysis"
+    },
+    {
+      "exercise": "e9",
+      "concept": "percent-composition"
+    },
+    {
+      "exercise": "e10",
+      "concept": "electrolysis-stoichiometry"
+    },
+    {
+      "exercise": "e10",
+      "concept": "metal-isolation-by-electrolysis"
+    },
+    {
+      "exercise": "e10",
+      "concept": "percent-yield"
+    }
+  ]
+}

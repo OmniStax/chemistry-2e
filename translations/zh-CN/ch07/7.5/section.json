@@ -1,0 +1,755 @@
+{
+ "id": "7.5",
+ "module": "m68741",
+ "chapter": "7",
+ "title": "离子键与共价键的强度",
+ "short": "键的强度",
+ "lead": "每个键的断开都需要<span data-concept=\"energy-and-work\">能量</span>，这份能量衡量了键的强度：共价键的<span data-concept=\"bond-energy\">键能</span>，离子固体的<span data-concept=\"lattice-energy\">晶格能</span>。平均<span data-concept=\"bond-energy\">键能</span>可以让我们估算反应的<span data-concept=\"enthalpy-change\">焓变</span>，而玻恩-哈伯循环则由可以测量的量求出晶格能。",
+ "objectives": [
+  "描述共价键和离子键形成与断开的能量变化",
+  "用玻恩-哈伯循环计算离子化合物的晶格能",
+  "用平均共价键能估算反应的焓变"
+ ],
+ "summary_html": "<p>共价键的强度用其键解离<span data-concept=\"energy-and-work\">能</span>来衡量，也就是断开 1 <span data-concept=\"mole\">摩尔</span>分子中那种特定的键所需的<span data-concept=\"energy-and-work\">能量</span>。多重键比同样两个原子之间的单键更强。反应的<span data-concept=\"enthalpy\">焓</span>可以根据断开键所需输入的<span data-concept=\"energy-and-work\">能量</span>和形成新键时放出的<span data-concept=\"energy-and-work\">能量</span>来估算。对于离子键，<span data-concept=\"lattice-energy\">晶格能</span>是把 1 <span data-concept=\"mole\">摩尔</span>化合物分离成其气相离子所需的<span data-concept=\"energy-and-work\">能量</span>。离子的电荷越高、离子之间的距离越短，<span data-concept=\"lattice-energy\">晶格能</span>就越大。<span data-concept=\"lattice-energy\">晶格能</span>常用玻恩-哈伯循环来计算，这是一个热化学循环，包含了把单质转变为离子化合物所涉及的全部能量步骤。</p>",
+ "notes": "本节没有任何内容被略去。表 7.4 按书中所印的样子给出，是针对 CsF 的，尽管书中对该表的描述说的是 NaCl。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签和权重由 AI 生成。答案来自书后答案和“学习检测”的答案。没有答案的习题 fs-idp18527664、fs-idp20766256、fs-idm39061296 和 fs-idm27862256 附有标明为 OmniStax 自拟的建议思路，没有答案的选择题 fs-idp46666496、fs-idp51586816 和 fs-idp15208208 作为开放题保留，并附本书的选项。没有答案的计算题 fs-idp57429280、fs-idp65498352、fs-idm2894352 和 fs-idp57420000 被略去。",
+ "figures": [
+  {
+   "id": "fig-ch4",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-length",
+   "kind": "sim",
+   "draws": [
+    "energy",
+    "length"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-enthalpy",
+   "kind": "sim",
+   "draws": [
+    "energy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-methanol",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-lattice",
+   "kind": "sim",
+   "draws": [
+    "energy",
+    "length"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-born-haber",
+   "kind": "sim",
+   "number": "7.13",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_05_BornHaber.jpg"
+   ],
+   "original_caption": "玻恩-哈伯循环显示了由所需的单质在其参考态下形成离子固体所涉及的各步骤的相对能量。",
+   "draws": [
+    "energy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: lattice-step label moved left of its arrow, inside the stage"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "bond-strength",
+   "concept": "bond-energy",
+   "verb": "introduces"
+  },
+  {
+   "span": "strength-length",
+   "concept": "bond-strength-and-length",
+   "verb": "introduces"
+  },
+  {
+   "span": "strength-length",
+   "concept": "bond-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "enthalpy",
+   "concept": "enthalpy-from-bond-energies",
+   "verb": "introduces"
+  },
+  {
+   "span": "enthalpy",
+   "concept": "bond-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-methanol",
+   "concept": "enthalpy-from-bond-energies",
+   "verb": "reinforces"
+  },
+  {
+   "span": "lattice",
+   "concept": "lattice-energy",
+   "verb": "introduces"
+  },
+  {
+   "span": "lattice-trends",
+   "concept": "lattice-energy-trends",
+   "verb": "introduces"
+  },
+  {
+   "span": "lattice-trends",
+   "concept": "lattice-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-lattice",
+   "concept": "lattice-energy-trends",
+   "verb": "reinforces"
+  },
+  {
+   "span": "born-haber",
+   "concept": "born-haber-cycle",
+   "verb": "introduces"
+  },
+  {
+   "span": "born-haber",
+   "concept": "lattice-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "born-haber",
+   "concept": "bond-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "born-haber",
+   "concept": "born-haber-thermochemical-cycle",
+   "verb": "introduces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm33428592",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-methanol"
+   },
+   "cite": "enthalpy",
+   "prompt": "乙醇 CH<sub>3</sub>CH<sub>2</sub>OH 是人类最早有意合成的有机化学品之一。它在工业上有许多用途，也是酒精饮料中所含的酒精。它可以由糖发酵得到，也可以通过乙烯的水合按下面的反应合成：<br><img src=\"/media/ch07/CNX_Chem_07_05_Ethanol_img.jpg\" alt=\"一组路易斯结构表示一个化学反应。第一个结构表示两个碳原子以双键相连，每个碳原子又与两个氢原子以单键相连。这个结构后面是一个加号，然后是一个带有两对孤电子对的氧原子，与两个氢原子以单键相连。一个向右的箭头指向一个碳原子，它与三个氢原子和第二个碳原子以单键相连。第二个碳原子与两个氢原子和一个带有两对孤电子对的氧原子以单键相连。这个氧原子还与一个氢原子以单键相连。\"><br>利用表 7.3 中的键能，计算这个反应的近似焓变 Δ<em>H</em>。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "–35 kJ"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idp16649648",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-lattice"
+   },
+   "cite": "lattice-trends",
+   "prompt": "氧化锌 ZnO 是一种非常有效的防晒剂。ZnO 的晶格能与 NaCl 的相比如何？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "ZnO 的晶格能更大，因为 ZnO 中阳离子和阴离子的 Z 值都更大，而且 ZnO 的离子间距比 NaCl 的小。"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idp18527664",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "strength-length",
+   "prompt": "下列各对键中，哪一个键最强？<br>（a）C–C 或 C=C<br>（b）C–N 或 C≡N<br>（c）C≡O 或 C=O<br>（d）H–F 或 H–Cl<br>（e）C–H 或 O–H<br>（f）C–N 或 C–O",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "（a）C=C，611 kJ/mol，而 C–C 为 345 kJ/mol。<br>（b）C≡N，891 kJ/mol，而 C–N 为 290 kJ/mol。<br>（c）C≡O，1080 kJ/mol，而 C=O 为 741 kJ/mol。<br>（d）H–F，569 kJ/mol，而 H–Cl 为 432 kJ/mol。<br>（e）O–H，464 kJ/mol，而 C–H 为 415 kJ/mol。<br>（f）C–O，350 kJ/mol，而 C–N 为 290 kJ/mol。<br>在（a）、（b）和（c）中，两个键连接的是同样的两个原子，共用的电子对越多，键就越强，所以三键比双键强，双键又比单键强。在（d）中，氢与同一族的两个原子成键，而键的强度沿族向下减小，所以 H–F 比 H–Cl 强。（e）和（f）连接的是不同的原子对，所以由表 7.2 中的数值来决定。"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp16780032",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "enthalpy",
+   "prompt": "利用表 7.2 中的键能，确定下列每个反应的近似焓变：<br>（a）$\\text{H}_{2}(g)+\\text{Br}_{2}(g)\\longrightarrow 2\\text{HBr}(g)$<br>（b）$\\text{CH}_{4}(g)+\\text{I}_{2}(g)\\longrightarrow \\text{CH}_{3}\\text{I}(g)+\\text{HI}(g)$<br>（c）$\\text{C}_{2}\\text{H}_{4}(g)+3\\text{O}_{2}(g)\\longrightarrow 2\\text{CO}_{2}(g)+2\\text{H}_{2}\\text{O}(g)$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）−114 kJ；（b）30 kJ；（c）−1055 kJ"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp28520976",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "enthalpy",
+   "prompt": "当一个分子可以形成两种不同的结构时，键较强的结构通常是更稳定的形式。利用键能预测羟胺分子的正确结构：<br><img src=\"/media/ch07/CNX_Chem_07_05_Hydroxya_img.jpg\" alt=\"给出了两个路易斯结构，中间写着“或”字。左边的结构表示一个带有一对孤电子对的氮原子，与两个氢原子以单键相连，还与一个带有两对孤电子对的氧原子相连。该氧原子与一个氢原子相连。右边的结构表示一个氮原子，与三个氢原子以单键相连，还与一个带有三对孤电子对的氧原子以单键相连。\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "键能较大的是左边的结构。它是更稳定的形式。"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idp20766256",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "bond-strength",
+   "prompt": "HCl(<em>g</em>) 的键能与 HCl(<em>g</em>) 的标准生成焓有什么不同？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "HCl(<em>g</em>) 的键能 432 kJ/mol，是把 1 摩尔 H–Cl 键断开成气态原子，$\\text{HCl}(g)\\longrightarrow \\text{H}(g)+\\text{Cl}(g)$，这一吸热变化的焓变。标准生成焓 $\\kdHf=-92.307\\;\\text{kJ/mol}$，是由处于标准状态的单质生成 1 摩尔 HCl(<em>g</em>)，$\\frac{1}{2}{\\text{H}}_{2}(g)+\\frac{1}{2}{\\text{Cl}}_{2}(g)\\longrightarrow \\text{HCl}(g)$，这一放热变化的焓变。这两个反应的方向和起始物质都不同：生成反应从 H<sub>2</sub> 和 Cl<sub>2</sub> 分子开始，而不是从分开的原子开始，所以它还包括断开半摩尔 H–H 键和半摩尔 Cl–Cl 键。把这些步骤相加，就把两个数值联系起来：$\\kdHf\\approx \\frac{1}{2}(436)+\\frac{1}{2}(243)-432=-92.5\\;\\text{kJ/mol}$，与测量值很接近。"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp19159472",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "bond-strength",
+   "prompt": "利用<a href=\"/chemistry-2e/sheets/thermo/\">附录 G</a> 中的标准生成焓数据，说明如何用 HCl(<em>g</em>) 的标准生成焓来确定其键能。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "$$\\begin{array}{ll}\\text{HCl}(g)\\longrightarrow \\tfrac{1}{2}\\text{H}_{2}(g)+\\tfrac{1}{2}\\text{Cl}_{2}(g) & \\Delta H_{1}^{\\circ}=-\\Delta H_{\\text{f}[\\text{HCl}(g)]}^{\\circ} \\\\ \\tfrac{1}{2}\\text{H}_{2}(g)\\longrightarrow \\text{H}(g) & \\Delta H_{2}^{\\circ}=\\Delta H_{\\text{f}[\\text{H}(g)]}^{\\circ} \\\\ \\tfrac{1}{2}\\text{Cl}_{2}(g)\\longrightarrow \\text{Cl}(g) & \\Delta H_{3}^{\\circ}=\\Delta H_{\\text{f}[\\text{Cl}(g)]}^{\\circ} \\\\ \\hline \\text{HCl}(g)\\longrightarrow \\text{H}(g)+\\text{Cl}(g) & \\Delta H^{\\circ}=\\Delta H_{1}^{\\circ}+\\Delta H_{2}^{\\circ}+\\Delta H_{3}^{\\circ}\\end{array}$$$$\\begin{array}{ll}D_{\\text{HCl}}=\\Delta H^{\\circ} & =\\Delta H_{\\text{f}[\\text{HCl}(g)]}^{\\circ}+\\Delta H_{\\text{f}[\\text{H}(g)]}^{\\circ}+\\Delta H_{\\text{f}[\\text{Cl}(g)]}^{\\circ} \\\\ & =-(-92.307\\;\\text{kJ})+217.97\\;\\text{kJ}+121.3\\;\\text{kJ} \\\\ & =431.6\\;\\text{kJ}\\end{array}$$"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idp19660960",
+   "kind": "exercise",
+   "bloom": "Evaluate",
+   "place": {
+    "at": "end"
+   },
+   "cite": "bond-strength",
+   "prompt": "利用<a href=\"/chemistry-2e/sheets/thermo/\">附录 G</a> 中的标准生成焓数据，确定哪个键更强：SF<sub>4</sub>(<em>g</em>) 中的 S–F 键，还是 SF<sub>6</sub>(<em>g</em>) 中的 S–F 键？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "SF<sub>4</sub> 中的 S–F 键更强。"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idm22310960",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "strength-length",
+   "prompt": "通过添加键（而不是原子）来完成下面的路易斯结构，然后指出最长的键：<br><img src=\"/media/ch07/CNX_Chem_07_05_C6H8Lew_img.jpg\" alt=\"给出了一个缺少键的路易斯结构。它表示水平排成一行的六个碳原子，间距相等。第一个碳原子周围画有三个氢原子，第二个碳原子周围画有两个，第五个碳原子上方画有一个，第六个碳原子旁边画有两个。\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<img src=\"/media/ch07/CNX_Chem_07_05_C6H8ans_img.jpg\" alt=\"给出了一个路易斯结构。一个与三个氢原子以单键相连的碳原子，与第二个碳原子相连。第二个碳原子与两个氢原子以单键相连。第二个碳原子与第三个碳原子以单键相连，第三个碳原子与第四个碳原子以三键相连，并与第五个碳原子以单键相连。第五个碳原子与一个氢原子以单键相连，并与第六个碳原子以双键相连，第六个碳原子与两个氢原子以单键相连。\"><br>C–C 单键最长。"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idp12625232",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "lattice-trends",
+   "prompt": "运用原子结构的原理回答下列各题：<sup>1</sup><br>（a）Ca 原子的半径是 197 pm；Ca<sup>2+</sup> 离子的半径是 99 pm。解释这一差别。<br>（b）CaO(<em>s</em>) 的晶格能是 –3460 kJ/mol；K<sub>2</sub>O 的晶格能是 –2240 kJ/mol。解释这一差别。<br>（c）根据下列电离能数值，解释 Ca 与 K 在第一电离能和第二电离能方面的差别。<br><table><thead><tr><th>元素</th><th>第一电离能（kJ/mol）</th><th>第二电离能（kJ/mol）</th></tr></thead><tbody><tr><td>K</td><td>419</td><td>3050</td></tr><tr><td>Ca</td><td>590</td><td>1140</td></tr></tbody></table>（d）Mg 的第一电离能是 738 kJ/mol，Al 的是 578 kJ/mol。解释这一差别。<br><small><sup>1</sup> 本题取自化学大学先修课程（Advanced Placement）考试，经教育考试服务中心（Educational Testing Service）许可使用。</small>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）当价层失去两个电子时，Ca 的半径失去最外层能级，退回到较低的 <em>n</em> = 3 能级，其半径要小得多。（b）与 K 相比，钙上的 +2 电荷把氧拉得近得多，因此相对于电荷较少的离子，晶格能增大。（c）由于核的吸引更强，以及拆开电子配对需要额外的能量，移去 Ca 中的 4<em>s</em> 电子比移去 K 中的 4<em>s</em> 电子需要更多的能量。K 的第二电离能要求从较低的能级移去一个电子，核对该电子的吸引要强得多。此外，还需要能量来拆开一个充满的轨道中的两个电子。对于 Ca，第二电离势只要求移去暴露在最外层能级中的一个单独电子。（d）在 Al 中，被移去的电子在 <em>p</em> 轨道中，受到的屏蔽相对较少且未成对。Mg 的能量较高，主要反映的是拆开 2<em>s</em> 电子的配对。"
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idp46666496",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "lattice-trends",
+   "prompt": "LiF 的晶格能是 1023 kJ/mol，Li–F 距离是 200.8 pm。NaF 的晶体结构与 LiF 相同，但 Na–F 距离是 231 pm。下列哪个数值最接近 NaF 的晶格能：510、890、1023、1175 或 4090 kJ/mol？解释你的选择。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "NaF 的晶格能最接近 890 kJ/mol。LiF 和 NaF 的结构相同，所以 C 相同，而且两者都含有电荷为 1+ 和 1– 的离子，所以 Z<sup>+</sup> 和 Z<sup>–</sup> 相同。$\\kdHlat=\\frac{\\text{C}({\\text{Z}}^{+})({\\text{Z}}^{-})}{\\kRo}$ 中唯一的差别是离子间距，而晶格能与它成反比。因此，较长的 Na–F 距离给出的晶格能比 LiF 的小：$$\\kdHlat(\\text{NaF})=1023\\;\\text{kJ/mol}\\times \\frac{200.8\\;\\text{pm}}{231\\;\\text{pm}}=889\\;\\text{kJ/mol}$$ 在这五个数值中，890 kJ/mol 最接近。1023 kJ/mol 及更大的数值要求距离等于或短于 LiF 中的距离，而 510 kJ/mol 要求距离大约为其两倍。"
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idp236067168",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "lattice-trends",
+   "prompt": "下列哪种物质把 1 摩尔固体转变为分开的离子所需的能量最少？<br>（a）MgO<br>（b）SrO<br>（c）KF<br>（d）CsF<br>（e）MgF<sub>2</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（d）"
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idm39061296",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "born-haber",
+   "prompt": "金属 M 与卤素 X<sub>2</sub> 的反应是放热反应，如下面的方程所示：$\\text{M}(s)+\\text{X}_{2}(g)\\longrightarrow \\text{MX}_{2}(s)$。对于下面每一项，指出哪个选项会使反应放热更多。解释你的答案。<br>（a）M<sup>+2</sup> 的半径大还是半径小<br>（b）M 的电离能高还是电离能低<br>（c）卤素的键能增大<br>（d）卤素的电子亲和能减小<br>（e）卤素形成的阴离子的大小增大",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "（a）M<sup>2+</sup> 的半径小。较小的阳离子使 $\\kRo$ 缩短，从而使晶格能增大，而 $-\\kdHlat$ 是放出能量的那一步。<br>（b）M 的电离能低。电离吸收能量，所以较小的 $\\kIE$ 给 $\\kdHf$ 增加的较少。<br>（c）卤素的键能增大使反应放热较少，因为断开 X–X 键吸收能量，$\\kDbond$ 直接加到 $\\kdHf$ 上；键能减小则使反应放热更多。<br>（d）电子亲和能减小，即每个卤素原子得到电子时放出的能量较少，使 $\\kEA$ 的负值变小，反应放热较少；电子亲和能增大则使反应放热更多。<br>（e）阴离子的大小增大使反应放热较少。较大的阴离子使 $\\kRo$ 变长、晶格能降低，所以离子形成固体时放出的能量较少；较小的阴离子则使反应放热更多。<br>每个答案都可以由玻恩-哈伯循环得出，对于 MX<sub>2</sub>，$\\kdHf=\\kdHs+\\kDbond+2\\kIE+2\\kEA-\\kdHlat$（其中 $\\kIE$ 是第一电离能与第二电离能之和），其中吸热的步骤使 $\\kdHf$ 升高，放热的步骤使它降低。"
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idp55219680",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "lattice-trends",
+   "prompt": "LiF 的晶格能是 1023 kJ/mol，Li–F 距离是 201 pm。MgO 的晶体结构与 LiF 相同，但 Mg–O 距离是 205 pm。下列哪个数值最接近 MgO 的晶格能：256 kJ/mol、512 kJ/mol、1023 kJ/mol、2046 kJ/mol 或 4008 kJ/mol？解释你的选择。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "4008 kJ/mol；MgO 中两种离子的电荷都是 LiF 中离子的两倍；键长非常接近，而且两者结构相同；根据晶格能的方程，预期能量变为四倍"
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idm27862256",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "lattice-trends",
+   "prompt": "下列各对化合物中，哪一个的晶格能较大？注：Mg<sup>2+</sup> 和 Li<sup>+</sup> 的半径相近；O<sup>2–</sup> 和 F<sup>–</sup> 的半径相近。解释你的选择。<br>（a）MgO 或 MgSe<br>（b）LiF 或 MgO<br>（c）Li<sub>2</sub>O 或 LiCl<br>（d）Li<sub>2</sub>Se 或 MgO",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "（a）MgO。电荷相同，都是 2+ 和 2–，但 O<sup>2–</sup> 比 Se<sup>2–</sup> 小，后者位于第 16 族更靠下的位置，所以 MgO 中的 $\\kRo$ 更短。<br>（b）MgO。Li<sup>+</sup> 和 Mg<sup>2+</sup> 的半径相近，F<sup>–</sup> 和 O<sup>2–</sup> 也相近，所以 $\\kRo$ 大致相同，但电荷的乘积对 MgO 是 (2)(2) = 4，对 LiF 是 (1)(1) = 1。书中给出 MgO 为 3900 kJ/mol，LiF 为 1023 kJ/mol。<br>（c）Li<sub>2</sub>O。电荷的乘积是 (1)(2) = 2，而 LiCl 是 (1)(1) = 1，并且半径与 F<sup>–</sup> 相近的 O<sup>2–</sup> 比 Cl<sup>–</sup> 小，所以两个因素都有利于 Li<sub>2</sub>O。<br>（d）MgO。电荷的乘积是 4，而 Li<sub>2</sub>Se 是 2，并且 Mg<sup>2+</sup> 与 Li<sup>+</sup> 大小相近、O<sup>2–</sup> 比 Se<sup>2–</sup> 小，所以 MgO 中的 $\\kRo$ 也更短。<br>在每一对中，晶格能 $\\kdHlat=\\frac{\\text{C}({\\text{Z}}^{+})({\\text{Z}}^{-})}{\\kRo}$ 都是电荷乘积较大或离子间距较短的那种化合物较大。"
+   }
+  },
+  {
+   "id": "e14",
+   "source_id": "fs-idp29388832",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "lattice-trends",
+   "prompt": "下列各对化合物中，哪一个的晶格能较大？注：Ba<sup>2+</sup> 和 K<sup>+</sup> 的半径相近；S<sup>2–</sup> 和 Cl<sup>–</sup> 的半径相近。解释你的选择。<br>（a）K<sub>2</sub>O 或 Na<sub>2</sub>O<br>（b）K<sub>2</sub>S 或 BaS<br>（c）KCl 或 BaS<br>（d）BaS 或 BaCl<sub>2</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）Na<sub>2</sub>O；Na<sup>+</sup> 的半径比 K<sup>+</sup> 小；（b）BaS；Ba 的电荷比 K 大；（c）BaS；Ba 和 S 的电荷更大；（d）BaS；S 的电荷更大"
+   }
+  },
+  {
+   "id": "e15",
+   "source_id": "fs-idp51586816",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "lattice-trends",
+   "prompt": "下列化合物中，哪一个把 1 摩尔固体转变为分开的离子所需的能量最多？<br>（a）MgO<br>（b）SrO<br>（c）KF<br>（d）CsF<br>（e）MgF<sub>2</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "（a）MgO 所需的能量最多。把 1 摩尔固体分离成其气态离子所需的能量就是晶格能，$\\kdHlat=\\frac{\\text{C}({\\text{Z}}^{+})({\\text{Z}}^{-})}{\\kRo}$。MgO 和 SrO 含有 2+ 和 2– 的离子，电荷的乘积是 4；MgF<sub>2</sub> 含有 2+ 和 1– 的离子，乘积是 2；KF 和 CsF 含有 1+ 和 1– 的离子，乘积是 1。这使 MgO 和 SrO 高于另外三种。在这两者之间，电荷相等，所以由较小的离子决定：Mg<sup>2+</sup> 在第 2 族中位于 Sr<sup>2+</sup> 之上，比它小，这使 MgO 的 $\\kRo$ 更短，晶格能更大，约为 3900 kJ/mol。"
+   }
+  },
+  {
+   "id": "e16",
+   "source_id": "fs-idp56209472",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "lattice-trends",
+   "prompt": "下列化合物中，哪一个把 1 摩尔固体转变为分开的离子所需的能量最多？<br>（a）K<sub>2</sub>S<br>（b）K<sub>2</sub>O<br>（c）CaS<br>（d）Cs<sub>2</sub>S<br>（e）CaO",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（e）"
+   }
+  },
+  {
+   "id": "e17",
+   "source_id": "fs-idp15208208",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "lattice-trends",
+   "prompt": "KF 的晶格能是 794 kJ/mol，离子间距是 269 pm。NaF 的结构与 KF 相同，其 Na–F 距离是 231 pm。下列哪个数值最接近 NaF 的晶格能：682 kJ/mol、794 kJ/mol、924 kJ/mol、1588 kJ/mol 或 3175 kJ/mol？解释你的答案。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "NaF 的晶格能最接近 924 kJ/mol。KF 和 NaF 的结构相同，所以 C 相同，而且两者都含有 1+ 和 1– 的离子，所以 Z<sup>+</sup> 和 Z<sup>–</sup> 相同。这样，晶格能 $\\kdHlat=\\frac{\\text{C}({\\text{Z}}^{+})({\\text{Z}}^{-})}{\\kRo}$ 与离子间距成反比，较短的 Na–F 距离给出的晶格能比 KF 的大：$$\\kdHlat(\\text{NaF})=794\\;\\text{kJ/mol}\\times \\frac{269\\;\\text{pm}}{231\\;\\text{pm}}=925\\;\\text{kJ/mol}$$ 在这五个数值中，924 kJ/mol 最接近。682 kJ/mol 要求距离比 KF 中的长，而 1588 或 3175 kJ/mol 要求离子的电荷有所改变。"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "enthalpy-from-bond-energies",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "bond-energy",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "lattice-energy-trends",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e1",
+   "concept": "bond-strength-and-length",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e1",
+   "concept": "bond-energy",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e2",
+   "concept": "enthalpy-from-bond-energies",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "enthalpy-from-bond-energies",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "bond-energy",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e4",
+   "concept": "bond-energy",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e5",
+   "concept": "bond-energy",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e6",
+   "concept": "bond-energy",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e7",
+   "concept": "bond-strength-and-length",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e8",
+   "concept": "lattice-energy-trends",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "lattice-energy-trends",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e10",
+   "concept": "lattice-energy-trends",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e10",
+   "concept": "lattice-energy",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e11",
+   "concept": "born-haber-cycle",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e11",
+   "concept": "lattice-energy-trends",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e12",
+   "concept": "lattice-energy-trends",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e13",
+   "concept": "lattice-energy-trends",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e14",
+   "concept": "lattice-energy-trends",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e15",
+   "concept": "lattice-energy-trends",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e15",
+   "concept": "lattice-energy",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e16",
+   "concept": "lattice-energy-trends",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e16",
+   "concept": "lattice-energy",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e17",
+   "concept": "lattice-energy-trends",
+   "weights_by": "ai"
+  }
+ ],
+ "derivations": [
+  {
+   "id": "born-haber-lattice-energy",
+   "what": "由玻恩-哈伯循环求晶格能",
+   "source": "Chemistry 2e，7.5 离子键与共价键的强度",
+   "nodes": [
+    {
+     "assumes": [
+      {
+       "text": "如果一个过程可以写成几个分步过程之和，则总过程的焓变等于各步骤焓变之和。",
+       "src": "5.3，盖斯定律"
+      },
+      {
+       "text": "循环的五个步骤相加，就是由单质生成化合物，$\\text{Cs}(s)+\\tfrac{1}{2}\\,\\text{F}_{2}(g)\\longrightarrow\\text{CsF}(s)$。",
+       "src": "表 7.4"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{f}{\\kdHf} = \\mk{s}{\\kdHs} + \\mk{D}{\\tfrac{1}{2}\\;\\kDbond} + \\mk{IE}{\\kIE} + \\mk{EA}{(\\kEA)} + \\mk{lat}{(-\\kdHlat)}",
+      "src": "表 7.4",
+      "uses": [
+       1,
+       0
+      ]
+     },
+     "steps": [
+      {
+       "tex": "\\mk{f}{\\kdHf} + \\mk{lat}{\\kdHlat} = \\mk{s}{\\kdHs} + \\mk{D}{\\tfrac{1}{2}\\;\\kDbond} + \\mk{IE}{\\kIE} + \\mk{EA}{\\kEA}",
+       "uses": []
+      },
+      {
+       "tex": "\\mk{lat}{\\kdHlat} = \\mk{s}{\\kdHs} + \\mk{D}{\\tfrac{1}{2}\\;\\kDbond} + \\mk{IE}{\\kIE} + \\mk{EA}{\\kEA} - \\mk{f}{\\kdHf}",
+       "uses": []
+      }
+     ],
+     "src": "7.5"
+    },
+    {
+     "assumes": [
+      {
+       "step": 0
+      },
+      {
+       "tex": "\\begin{aligned}&\\kdHs = 76.5,\\ \\ \\tfrac{1}{2}\\;\\kDbond = 79.4,\\ \\ \\kIE = 375.7,\\\\&\\kEA = -328.2,\\ \\ \\kdHf = -553.5\\;\\text{kJ/mol}\\end{aligned}",
+       "src": "表 7.4"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{lat}{\\kdHlat} = \\mk{s}{\\kdHs} + \\mk{D}{\\tfrac{1}{2}\\;\\kDbond} + \\mk{IE}{\\kIE} + \\mk{EA}{\\kEA} - \\mk{f}{\\kdHf}",
+      "src": "7.5"
+     },
+     "steps": [
+      {
+       "tex": "\\mk{lat}{\\kdHlat} = \\mk{s}{76.5} + \\mk{D}{79.4} + \\mk{IE}{375.7} + \\mk{EA}{(-328.2)} - \\mk{f}{(-553.5)}",
+       "uses": [
+        1
+       ]
+      },
+      {
+       "tex": "\\mk{lat}{\\kdHlat} = \\mk{v}{756.9\\;\\text{kJ/mol}}",
+       "uses": [],
+       "map": {
+        "s": "v",
+        "D": "v",
+        "IE": "v",
+        "EA": "v",
+        "f": "v"
+       }
+      }
+     ],
+     "src": "7.5"
+    }
+   ]
+  }
+ ]
+}

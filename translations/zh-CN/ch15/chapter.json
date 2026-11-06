@@ -1,0 +1,217 @@
+{
+ "id": "15",
+ "dir": "ch15",
+ "title": "其他类型反应的平衡",
+ "intro": {
+  "module": "m68810",
+  "slug": "15-introduction"
+ },
+ "sections": [
+  {
+   "id": "15.1",
+   "module": "m68811",
+   "title": "沉淀与溶解",
+   "slug": "15-1-precipitation-and-dissolution"
+  },
+  {
+   "id": "15.2",
+   "module": "m68813",
+   "title": "路易斯酸和碱",
+   "slug": "15-2-lewis-acids-and-bases"
+  },
+  {
+   "id": "15.3",
+   "module": "m68814",
+   "title": "多重平衡",
+   "slug": "15-3-coupled-equilibria"
+  }
+ ],
+ "variables": [
+  {
+   "sym": "K_sp",
+   "concept": "solubility-product",
+   "meaning": "溶度积常数，即微溶离子化合物溶解的平衡常数",
+   "unit": "none (concentrations in M)",
+   "section": "15.1",
+   "anchor": "15.1-solubility-product"
+  },
+  {
+   "sym": "Q_sp",
+   "concept": "reaction-quotient",
+   "meaning": "微溶离子化合物溶解的反应商",
+   "unit": "none (concentrations in M)",
+   "section": "15.1",
+   "anchor": "15.1-precipitation"
+  },
+  {
+   "sym": "[M^m+]",
+   "concept": "molarity",
+   "meaning": "饱和溶液中阳离子 M<sup>m+</sup> 的物质的量浓度",
+   "unit": "mol/L (M)",
+   "section": "15.1",
+   "anchor": "15.1-ksp-solubility"
+  },
+  {
+   "sym": "[X^n-]",
+   "concept": "molarity",
+   "meaning": "饱和溶液中阴离子 X<sup>n–</sup> 的物质的量浓度",
+   "unit": "mol/L (M)",
+   "section": "15.1",
+   "anchor": "15.1-ksp-solubility"
+  },
+  {
+   "sym": "p_stoich",
+   "concept": "solubility-product",
+   "type": null,
+   "meaning": "化学式 M<sub>p</sub>X<sub>q</sub> 中阳离子的个数",
+   "unit": "none",
+   "section": "15.1",
+   "anchor": "15.1-ksp-solubility"
+  },
+  {
+   "sym": "q_stoich",
+   "concept": "solubility-product",
+   "type": null,
+   "meaning": "化学式 M<sub>p</sub>X<sub>q</sub> 中阴离子的个数",
+   "unit": "none",
+   "section": "15.1",
+   "anchor": "15.1-ksp-solubility"
+  },
+  {
+   "sym": "x_ice",
+   "concept": "ice-change-terms",
+   "meaning": "ICE 表所定义的浓度变化；对简单的溶解，即摩尔溶解度",
+   "unit": "mol/L (M)",
+   "section": "15.1",
+   "anchor": "15.1-ksp-solubility"
+  },
+  {
+   "sym": "K_f_form",
+   "concept": "formation-constant",
+   "meaning": "配离子的生成常数（稳定常数）",
+   "unit": "none (concentrations in M)",
+   "section": "15.2",
+   "anchor": "15.2-complex-ions"
+  },
+  {
+   "sym": "K_d",
+   "concept": "dissociation-constant",
+   "meaning": "配离子的解离常数，即其生成常数的倒数",
+   "unit": "none (concentrations in M)",
+   "section": "15.2",
+   "anchor": "15.2-complex-ions"
+  },
+  {
+   "sym": "K",
+   "concept": "equilibrium-constant",
+   "meaning": "两个相互关联的平衡的净反应的平衡常数",
+   "unit": "none (concentrations in M)",
+   "section": "15.3",
+   "anchor": "15.3-reefs"
+  },
+  {
+   "sym": "K_a2",
+   "concept": "acid-ionization-constant",
+   "meaning": "碳酸的第二电离常数，对应碳酸氢根",
+   "unit": "none (concentrations in M)",
+   "section": "15.3",
+   "anchor": "15.3-reefs"
+  },
+  {
+   "sym": "[OH-]",
+   "concept": "molarity",
+   "meaning": "氢氧化物开始沉淀时氢氧根离子的物质的量浓度",
+   "unit": "mol/L (M)",
+   "section": "15.1",
+   "anchor": "15.1-precipitation"
+  },
+  {
+   "sym": "pOH",
+   "concept": "poh",
+   "meaning": "氢氧根离子物质的量浓度的以 10 为底的负对数",
+   "unit": "none",
+   "section": "15.1",
+   "anchor": "15.1-precipitation"
+  },
+  {
+   "sym": "pH",
+   "concept": "ph",
+   "meaning": "水合氢离子物质的量浓度的以 10 为底的负对数",
+   "unit": "none",
+   "section": "15.1",
+   "anchor": "15.1-precipitation"
+  },
+  {
+   "sym": "K_sp",
+   "concept": "solubility-product",
+   "meaning": "溶度积常数，即微溶离子化合物溶解的平衡常数",
+   "unit": "none (concentrations in M)",
+   "section": "15.2",
+   "anchor": "15.2-dissolution"
+  },
+  {
+   "sym": "Q_c",
+   "concept": "reaction-quotient",
+   "meaning": "氯化银溶解的反应商，随着配离子的形成而降到其溶度积以下",
+   "unit": "none",
+   "section": "15.2",
+   "anchor": "15.2-dissolution"
+  },
+  {
+   "sym": "K_sp",
+   "concept": "solubility-product",
+   "meaning": "溶度积常数，即微溶离子化合物溶解的平衡常数",
+   "unit": "none (concentrations in M)",
+   "section": "15.3",
+   "anchor": "15.3-reefs"
+  },
+  {
+   "sym": "K_a1",
+   "concept": "acid-ionization-constant",
+   "meaning": "碳酸第一步的电离常数",
+   "unit": "none (concentrations in M)",
+   "section": "15.3",
+   "anchor": "15.3-reefs"
+  },
+  {
+   "sym": "K_f_form",
+   "concept": "formation-constant",
+   "meaning": "配离子的生成常数（稳定常数）",
+   "unit": "none (concentrations in M)",
+   "section": "15.3",
+   "anchor": "15.3-complex"
+  },
+  {
+   "sym": "pK_a",
+   "concept": "acid-ionization-constant",
+   "meaning": "乙酸的酸电离常数的负对数",
+   "unit": "none",
+   "section": "15.3",
+   "anchor": "15.3-calculations"
+  },
+  {
+   "sym": "pH",
+   "concept": "ph",
+   "meaning": "缓冲溶液的 pH，即其水合氢离子物质的量浓度的以 10 为底的负对数",
+   "unit": "none",
+   "section": "15.3",
+   "anchor": "15.3-calculations"
+  },
+  {
+   "sym": "pOH",
+   "concept": "poh",
+   "meaning": "氢氧根离子物质的量浓度的以 10 为底的负对数",
+   "unit": "none",
+   "section": "15.3",
+   "anchor": "15.3-calculations"
+  },
+  {
+   "sym": "[OH-]",
+   "concept": "molarity",
+   "meaning": "氢氧根离子的物质的量浓度",
+   "unit": "mol/L (M)",
+   "section": "15.3",
+   "anchor": "15.3-calculations"
+  }
+ ]
+}

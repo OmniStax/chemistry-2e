@@ -1,0 +1,292 @@
+{
+ "id": "3.2",
+ "module": "m68702",
+ "chapter": "3",
+ "title": "实验式和分子式的确定",
+ "short": "实验式与分子式",
+ "lead": "当化合物的化学式未知时，我们首先测量其各元素的<span data-concept=\"mass\">质量</span>，由这些<span data-concept=\"mass\">质量</span>，或由化学式，就可以算出它的百分组成。把各元素的<span data-concept=\"mass\">质量</span>换算成以<span data-concept=\"mole\">摩尔</span>计的物质的量，就得到原子数的整数比，即实验式，再由<span data-concept=\"molar-mass\">摩尔质量</span>得出分子式。",
+ "objectives": [
+  "计算化合物的百分组成",
+  "确定化合物的实验式",
+  "确定化合物的分子式"
+ ],
+ "summary_html": "<p>一种物质是哪种物质，由组成其基本单元（共价化合物为分子，离子化合物为离子）的原子的种类和相对数目所决定。化合物的百分组成给出各元素在化合物中的质量分数，它往往由实验测定，并用来推导化合物的实验式。共价化合物的实验式量可以与该化合物的分子质量或<span data-concept=\"molar-mass\">摩尔质量</span>相比较，从而推导出分子式。</p>",
+ "notes": "学习链接注记（一段关于实验式更多例题的视频）已略去。例 3.13 的比值表中印的是 8.624，而它上面一行给出的是 8.641 mol H；书后答案给出氨中 N 为 82.24%，而正文算出的是 82.27%；两处都照印刷原样保留。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+ ,
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签和权重由 AI 生成。答案取自书后答案和学习检测的答案；答案为化学式的，由读者自行比较。没有答案的概念性习题 fs-idm115920688 带有一个由 AI 写出的建议思路。没有答案的习题 fs-idm99186192（HN<sub>3</sub>、TNT 以及 Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> 中硫酸根的百分组成）、fs-idm78648848（CuSO<sub>4</sub>∙5H<sub>2</sub>O 中水的百分数）、fs-idm106900080（由百分组成求两个实验式）、fs-idm234233056（二氯乙烷）和 fs-idp2230736（五种聚合物的实验式）已略去。",
+ "figures": [
+  {
+   "id": "sim-empirical",
+   "kind": "sim",
+   "number": "3.11",
+   "originals": ["/media/ch03/CNX_Chem_03_03_empform.jpg"],
+   "original_caption": "化合物的实验式可由样品中所有元素的质量推导出来。",
+   "draws": ["mass", "amount"],
+   "conventions": [
+    "Fe",
+    "O",
+    "C",
+    "H",
+    "Cl"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  { "id": "fig-hematite", "kind": "photo", "number": "3.12", "draws": [] },
+  { "id": "fig-brewtank", "kind": "photo", "number": "3.13", "draws": [] }
+ ],
+ "coverage": [
+  { "span": "percent", "concept": "percent-composition", "verb": "introduces" },
+  { "span": "percent", "concept": "formula-mass", "verb": "uses" },
+  { "span": "from-formula", "concept": "percent-composition-from-formula", "verb": "introduces" },
+  { "span": "from-formula", "concept": "molar-mass", "verb": "uses" },
+  { "span": "from-formula", "concept": "formula-mass", "verb": "uses" },
+  { "span": "empirical", "concept": "empirical-formula", "verb": "introduces" },
+  { "span": "empirical", "concept": "mass-mole-conversion", "verb": "uses" },
+  { "span": "empirical", "concept": "molar-mass", "verb": "uses" },
+  { "span": "from-percent", "concept": "empirical-formula-from-percent", "verb": "introduces" },
+  { "span": "from-percent", "concept": "percent-composition", "verb": "reinforces" },
+  { "span": "from-percent", "concept": "empirical-formula", "verb": "uses" },
+  { "span": "molecular", "concept": "molecular-formula-from-empirical", "verb": "introduces" },
+  { "span": "molecular", "concept": "empirical-formula", "verb": "uses" },
+  { "span": "molecular", "concept": "molar-mass", "verb": "uses" },
+  { "span": "molecular", "concept": "empirical-formula-from-percent", "verb": "reinforces" },
+  { "span": "molecular", "concept": "empirical-formula-mass", "verb": "introduces" }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm150394080",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-percent" },
+   "cite": "percent",
+   "prompt": "一份 24.81 g 的气态化合物样品，仅含碳、氧和氯，经测定含有 3.01 g C、4.00 g O 和 17.81 g Cl。这种化合物的百分组成是多少？",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     { "part": "% C", "value": 12.1, "unit": "%" },
+     { "part": "% O", "value": 16.1, "unit": "%" },
+     { "part": "% Cl", "value": 71.79, "unit": "%" }
+    ],
+    "solution": "12.1% C，16.1% O，71.79% Cl"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm162294688",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-aspirin" },
+   "cite": "from-formula",
+   "prompt": "保留三位有效数字，化合物 Fe<sub>2</sub>O<sub>3</sub> 中铁的质量分数是多少？",
+   "answer": { "type": "number", "generated_by": "source", "value": 69.9, "unit": "% Fe", "hint": "用两摩尔铁的质量除以 Fe<sub>2</sub>O<sub>3</sub> 的摩尔质量。", "solution": "69.9% Fe" }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idp70151968",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-hematite" },
+   "cite": "empirical",
+   "prompt": "如果一份样品含有 0.130 g 氮和 0.370 g 氧，该化合物的实验式是什么？",
+   "answer": { "type": "open", "generated_by": "source", "solution": "N<sub>2</sub>O<sub>5</sub>" }
+  },
+  {
+   "id": "cyl4",
+   "source_id": "fs-idp11336208",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-co2" },
+   "cite": "from-percent",
+   "prompt": "含有 40.0% C、6.71% H 和 53.28% O 的化合物，其实验式是什么？",
+   "answer": { "type": "open", "generated_by": "source", "solution": "CH<sub>2</sub>O" }
+  },
+  {
+   "id": "cyl5",
+   "source_id": "fs-idm153155296",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-nicotine" },
+   "cite": "molecular",
+   "prompt": "某化合物的百分组成为 49.47% C、5.201% H、28.84% N 和 16.48% O，分子质量为 194.2 amu，它的分子式是什么？",
+   "answer": { "type": "open", "generated_by": "source", "solution": "C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub>" }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm115920688",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": { "at": "end" },
+   "cite": "molecular",
+   "prompt": "要由化合物的实验式确定其分子式，需要什么信息？",
+   "answer": { "type": "open", "generated_by": "ai", "solution": "需要该化合物的分子质量或摩尔质量。实验式只给出原子的最简整数比，所以分子式是它的某个整数倍。用分子质量（或摩尔质量）除以实验式量（即实验式中各原子平均原子质量之和），就得到这个倍数 <em>n</em>，即每个分子中实验式单元的数目。再把实验式中的每个下标乘以 <em>n</em>，就得到分子式。例如，实验式为 CH<sub>2</sub>O（实验式量 30.03 amu）、分子质量为 180.16 amu 的化合物，<em>n</em> = 180.16/30.03 = 6，所以它的分子式为 C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>。" }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idm130496608",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "from-formula",
+   "prompt": "计算下列各项，保留四位有效数字：（a）氨 NH<sub>3</sub> 的百分组成 （b）照相定影液（“海波”）Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub> 的百分组成 （c）Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub> 中钙离子的百分数",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     { "part": "(a) % N", "value": 82.24, "unit": "%" },
+     { "part": "(a) % H", "value": 17.76, "unit": "%" },
+     { "part": "(b) % Na", "value": 29.08, "unit": "%" },
+     { "part": "(b) % S", "value": 40.56, "unit": "%" },
+     { "part": "(b) % O", "value": 30.36, "unit": "%" },
+     { "part": "(c) % Ca²⁺", "value": 38.76, "unit": "%" }
+    ],
+    "solution": "（a）% N = 82.24%，% H = 17.76%；（b）% Na = 29.08%，% S = 40.56%，% O = 30.36%；（c）% Ca<sup>2+</sup> = 38.76%"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp103798128",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "from-formula",
+   "prompt": "保留三位有效数字，确定 Co(NH<sub>3</sub>)<sub>6</sub>Cl<sub>3</sub> 中氨 NH<sub>3</sub> 的百分数。",
+   "answer": { "type": "number", "generated_by": "source", "value": 38.2, "unit": "% NH₃", "hint": "用六摩尔 NH<sub>3</sub> 的质量除以整个化合物的摩尔质量。", "solution": "% NH<sub>3</sub> = 38.2%" }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm2827872",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "from-percent",
+   "prompt": "确定具有下列百分组成的化合物的实验式：（a）15.8% 碳和 84.2% 硫 （b）40.0% 碳、6.7% 氢和 53.3% 氧",
+   "answer": { "type": "open", "generated_by": "source", "solution": "（a）CS<sub>2</sub>；（b）CH<sub>2</sub>O" }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idm108358432",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "molecular",
+   "prompt": "一种碳氢化合物含有 92.3% C，摩尔质量为 78.1 g/mol。它的分子式是什么？",
+   "answer": { "type": "open", "generated_by": "source", "solution": "C<sub>6</sub>H<sub>6</sub>" }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm149528800",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "molecular",
+   "prompt": "确定温石棉的实验式和分子式。温石棉的百分组成为：28.03% Mg、21.60% Si、1.16% H 和 49.21% O。温石棉的摩尔质量为 520.8 g/mol。",
+   "answer": { "type": "open", "generated_by": "source", "solution": "Mg<sub>3</sub>Si<sub>2</sub>H<sub>3</sub>O<sub>8</sub>（实验式），Mg<sub>6</sub>Si<sub>4</sub>H<sub>6</sub>O<sub>16</sub>（分子式）" }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp63104368",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "molecular",
+   "prompt": "一家大型纺织染料制造商研制出一种新的黄色染料。该染料按质量计的百分组成为 75.95% C、17.72% N 和 6.33% H，摩尔质量约为 240 g/mol。确定该染料的分子式。",
+   "answer": { "type": "open", "generated_by": "source", "solution": "C<sub>15</sub>H<sub>15</sub>N<sub>3</sub>" }
+  }
+ ],
+ "exercise_concepts": [
+  { "exercise": "cyl1", "concept": "percent-composition" },
+  { "exercise": "cyl2", "concept": "percent-composition-from-formula" },
+  { "exercise": "cyl3", "concept": "empirical-formula" },
+  { "exercise": "cyl4", "concept": "empirical-formula-from-percent" },
+  { "exercise": "cyl5", "concept": "molecular-formula-from-empirical" },
+  { "exercise": "cyl5", "concept": "empirical-formula-from-percent" },
+  { "exercise": "e1", "concept": "molecular-formula-from-empirical" },
+  { "exercise": "e2", "concept": "percent-composition-from-formula" },
+  { "exercise": "e3", "concept": "percent-composition-from-formula" },
+  { "exercise": "e4", "concept": "empirical-formula-from-percent" },
+  { "exercise": "e5", "concept": "molecular-formula-from-empirical" },
+  { "exercise": "e5", "concept": "empirical-formula-from-percent" },
+  { "exercise": "e6", "concept": "molecular-formula-from-empirical" },
+  { "exercise": "e6", "concept": "empirical-formula-from-percent", "weight": 2, "weights_by": "ai" },
+  { "exercise": "e7", "concept": "molecular-formula-from-empirical" },
+  { "exercise": "e7", "concept": "empirical-formula-from-percent" }
+ ],
+ "referents": [
+  {
+   "id": "hematite",
+   "label": "赤铁矿样品",
+   "figures": [
+    "sim-empirical"
+   ]
+  },
+  {
+   "id": "ch-sample",
+   "label": "碳和氢的样品",
+   "figures": [
+    "sim-empirical"
+   ]
+  },
+  {
+   "id": "clo-sample",
+   "label": "氯和氧的样品",
+   "figures": [
+    "sim-empirical"
+   ]
+  },
+  {
+   "id": "gas",
+   "label": "发酵产生的气体",
+   "figures": [
+    "sim-empirical"
+   ]
+  }
+ ],
+ "footnotes": [
+  {
+   "id": "c-h-ratio",
+   "kind": "correction",
+   "html": "书中这里除的是 8.624 mol H。上一行给出的是 8.641 mol H，而 8.641/1.233 = 7.008；该比值仍然接近 7。"
+  }
+ ]
+}

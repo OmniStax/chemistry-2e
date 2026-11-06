@@ -1,0 +1,714 @@
+{
+ "id": "2.3",
+ "module": "m68692",
+ "chapter": "2",
+ "title": "原子结构与符号表示",
+ "short": "原子结构",
+ "lead": "原子内部的质子、中子和电子是可以计数的，化学家把这些数目写进元素、同位素和离子的符号，也写进每种元素的原子<span data-concept=\"mass\">质量</span>中。",
+ "objectives": [
+  "书写并解释表示原子或离子的原子序数、质量数和电荷的符号",
+  "定义原子质量单位和平均原子质量",
+  "计算平均原子质量和同位素丰度"
+ ],
+ "summary_html": "<p>原子由一个带正电的小原子核和围绕它的电子组成。原子核含有质子和中子；其直径比原子的直径小约 100,000 倍。一个原子的<span data-concept=\"mass\">质量</span>通常用原子质量单位（amu）表示，称为原子质量。1 amu 定义为恰好等于碳-12 原子<span data-concept=\"mass\">质量</span>的 $\\frac{1}{12}$，等于 1.6605 $\\times$ 10<sup>−24</sup> g。</p><p>质子是相对较重的粒子，电荷为 1+，<span data-concept=\"mass\">质量</span>为 1.0073 amu。中子是相对较重的粒子，不带电荷，<span data-concept=\"mass\">质量</span>为 1.0087 amu。电子是轻粒子，电荷为 1−，<span data-concept=\"mass\">质量</span>为 0.00055 amu。原子核中的质子数称为原子序数（Z），它是决定原子属于何种元素的性质。原子核中质子数与中子数之和称为质量数，以 amu 表示时，近似等于原子的<span data-concept=\"mass\">质量</span>。当原子含有数目相等的电子和质子时，它是电中性的。</p><p>一种元素的同位素是原子序数相同而质量数不同的原子；因此，一种元素的同位素彼此之间只在原子核内的中子数上有所不同。当天然存在的元素由几种同位素组成时，该元素的原子质量代表所涉及的各同位素的<span data-concept=\"mass\">质量</span>的平均值。化学符号用符号来标识物质中的原子，这些符号是原子的一个、两个或三个字母的缩写。</p>",
+ "notes": "五个“学习链接”注记未收录：IUPAC 网站、PhET 的“构建原子”（Build an Atom）和“同位素与原子质量”（Isotopes and Atomic Mass）模拟——其位置由图 2.14 和平均质量图取代——以及一段关于质谱法的动画和一段视频。表 2.4 的单元格中印有各丰度，它们与书中对该表的小结不同。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案来自书中的答案表和“学习检测”的答案。没有答案的习题 fs-idm2862432（四种离子的符号）、fs-idm75926528（医学中使用的四种同位素中的粒子）、fs-idp18872976（五种中性同位素中的粒子）、fs-idm201300912（由三种丰度求平均质量）和 fs-idp15704448（两种锂来源的平均质量）未收录，没有答案的“构建原子”习题 fs-idp1819392（氧-16 及其离子）和没有答案的“同位素与原子质量”习题 fs-idm28786800（硼）也未收录。有答案的“构建原子”习题 fs-idm164758784 和 fs-idm103886288 对照图 2.14，有答案的习题 fs-idm112612912 对照平均质量图，其题目已改写为指明该图，书中的答案予以保留。两道没有答案的概念题附有建议的思路，标明为 OmniStax 自己所写。数值答案接受 2% 的容差。",
+ "figures": [
+  {
+   "id": "fig-atom-size",
+   "kind": "photo",
+   "number": "2.11",
+   "draws": []
+  },
+  {
+   "id": "fig-iodine",
+   "kind": "photo",
+   "number": "2.12",
+   "draws": []
+  },
+  {
+   "id": "fig-mercury",
+   "kind": "photo",
+   "number": "2.13",
+   "draws": []
+  },
+  {
+   "id": "sim-atom-symbol",
+   "kind": "sim",
+   "number": "2.14",
+   "originals": [
+    "/media/ch02/CNX_Chem_02_03_AtomSym.jpg"
+   ],
+   "original_caption": "原子的符号通过其常用的两个字母的符号表示元素，通过左上标表示质量数，通过左下标表示原子序数（有时省略），通过右上标表示电荷。",
+   "draws": [
+    "charge"
+   ],
+   "conventions": [
+    "p+",
+    "n0",
+    "e-"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "atomic number label split off the electron ring"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-average-mass",
+   "kind": "sim",
+   "draws": [
+    "mass"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "axis headroom, fulcrum off ticks, one-isotope headline, caption"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-mass-spec",
+   "kind": "sim",
+   "number": "2.15",
+   "originals": [
+    "/media/ch02/CNX_Chem_02_03_MassSpec.jpg"
+   ],
+   "original_caption": "在质谱仪中分析锆，得到的质谱含有显示 Zr 不同同位素的峰。",
+   "draws": [
+    "mass"
+   ],
+   "conventions": [
+    "Zr",
+    "B",
+    "Ne",
+    "Cl"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "inside-the-atom",
+   "concept": "subatomic-particles",
+   "verb": "reinforces"
+  },
+  {
+   "span": "inside-the-atom",
+   "concept": "nuclear-model-of-the-atom",
+   "verb": "uses"
+  },
+  {
+   "span": "units",
+   "concept": "atomic-mass-unit",
+   "verb": "introduces"
+  },
+  {
+   "span": "units",
+   "concept": "subatomic-particles",
+   "verb": "uses"
+  },
+  {
+   "span": "units",
+   "concept": "fundamental-charge",
+   "verb": "uses"
+  },
+  {
+   "span": "atomic-number",
+   "concept": "atomic-number-and-mass-number",
+   "verb": "introduces"
+  },
+  {
+   "span": "atomic-number",
+   "concept": "subatomic-particles",
+   "verb": "uses"
+  },
+  {
+   "span": "atomic-number",
+   "concept": "atomic-number",
+   "verb": "introduces"
+  },
+  {
+   "span": "atomic-number",
+   "concept": "mass-number",
+   "verb": "introduces"
+  },
+  {
+   "span": "ions",
+   "concept": "ions-and-atomic-charge",
+   "verb": "introduces"
+  },
+  {
+   "span": "ions",
+   "concept": "atomic-number-and-mass-number",
+   "verb": "uses"
+  },
+  {
+   "span": "ions",
+   "concept": "ion",
+   "verb": "introduces"
+  },
+  {
+   "span": "ions",
+   "concept": "cation",
+   "verb": "introduces"
+  },
+  {
+   "span": "ions",
+   "concept": "anion",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-composition",
+   "concept": "composition-of-an-atom",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-composition",
+   "concept": "ions-and-atomic-charge",
+   "verb": "uses"
+  },
+  {
+   "span": "chemical-symbols",
+   "concept": "chemical-symbols",
+   "verb": "introduces"
+  },
+  {
+   "span": "isotopes",
+   "concept": "isotope-symbols",
+   "verb": "introduces"
+  },
+  {
+   "span": "isotopes",
+   "concept": "isotopes",
+   "verb": "reinforces"
+  },
+  {
+   "span": "isotopes",
+   "concept": "chemical-symbols",
+   "verb": "uses"
+  },
+  {
+   "span": "isotopes",
+   "concept": "composition-of-an-atom",
+   "verb": "uses"
+  },
+  {
+   "span": "atomic-mass",
+   "concept": "average-atomic-mass",
+   "verb": "introduces"
+  },
+  {
+   "span": "atomic-mass",
+   "concept": "atomic-mass-unit",
+   "verb": "uses"
+  },
+  {
+   "span": "atomic-mass",
+   "concept": "isotopes",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-average-mass",
+   "concept": "average-atomic-mass",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-abundance",
+   "concept": "isotopic-abundance-from-average-mass",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-abundance",
+   "concept": "average-atomic-mass",
+   "verb": "uses"
+  },
+  {
+   "span": "mass-spectrometry",
+   "concept": "mass-spectrometry",
+   "verb": "introduces"
+  },
+  {
+   "span": "mass-spectrometry",
+   "concept": "ions-and-atomic-charge",
+   "verb": "uses"
+  },
+  {
+   "span": "mass-spectrometry",
+   "concept": "average-atomic-mass",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm5511728",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-composition"
+   },
+   "cite": "ex-composition",
+   "prompt": "一个铂离子的质量数为 195，含有 74 个电子。它含有多少个质子和中子，电荷是多少？",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "protons",
+      "value": 78,
+      "unit": "",
+      "hint": "铂的原子序数就是它的质子数。"
+     },
+     {
+      "part": "neutrons",
+      "value": 117,
+      "unit": "",
+      "hint": "用质量数减去质子数。"
+     },
+     {
+      "part": "charge (as a signed number)",
+      "value": 4,
+      "unit": "",
+      "hint": "电荷等于质子数减去电子数。"
+     }
+    ],
+    "solution": "78 个质子；117 个中子；电荷为 4+"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm139194256",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-average-mass"
+   },
+   "cite": "ex-average-mass",
+   "prompt": "发现一份镁样品含有 78.70% 的 <sup>24</sup>Mg 原子（质量 23.98 amu）、10.13% 的 <sup>25</sup>Mg 原子（质量 24.99 amu）和 11.17% 的 <sup>26</sup>Mg 原子（质量 25.98 amu）。计算一个 Mg 原子的平均质量。",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 24.31,
+    "unit": "amu",
+    "hint": "用每种同位素的质量乘以其丰度分数，再把三个乘积相加。",
+    "solution": "24.31 amu"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idm233489360",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-abundance"
+   },
+   "cite": "ex-abundance",
+   "prompt": "天然存在的铜由 <sup>63</sup>Cu（质量 62.9296 amu）和 <sup>65</sup>Cu（质量 64.9278 amu）组成，平均质量为 63.546 amu。按这两种同位素计，Cu 的百分组成是多少？",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "Cu-63",
+      "value": 69.15,
+      "unit": "%",
+      "hint": "设 x 为 Cu-63 所占的分数，则 Cu-65 所占的分数为 1.00 − x，解关于 x 的平均质量方程。"
+     },
+     {
+      "part": "Cu-65",
+      "value": 30.85,
+      "unit": "%",
+      "hint": "两个百分数之和为 100%。"
+     }
+    ],
+    "solution": "69.15% 的 Cu-63 和 30.85% 的 Cu-65"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idp67066944",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "isotopes",
+   "prompt": "一种给定元素的同位素总是在哪些方面不同？总是在哪些方面相同？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "从定义元素的因素入手。一种元素的每个原子都有相同的原子序数，所以该元素的同位素总是有相同的质子数，作为中性原子也有相同的电子数和相同的化学符号。不同的是原子核中的中子数，所以同位素的质量数和质量总是不同的。"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idm174365776",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "isotopes",
+   "prompt": "写出下列每种离子的符号：（a）带 1+ 电荷、原子序数为 55、质量数为 133 的离子（b）有 54 个电子、53 个质子和 74 个中子的离子（c）原子序数为 15、质量数为 31、带 3− 电荷的离子（d）有 24 个电子、30 个中子和 3+ 电荷的离子",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）<sup>133</sup>Cs<sup>+</sup>；（b）<sup>127</sup>I<sup>−</sup>；（c）<sup>31</sup>P<sup>3−</sup>；（d）<sup>57</sup>Co<sup>3+</sup>"
+   }
+  },
+  {
+   "id": "s1",
+   "source_id": "fs-idm164758784",
+   "kind": "simulation-exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "isotopes",
+   "prompt": "使用图 2.14，它构建前十二种元素的原子。（a）从前 10 种元素中任选一种你想构建的元素，并写出它的符号。（b）设定质子、中子和电子的数目，构成你所选元素的一个原子。写出你的原子中质子、中子和电子的数目，以及净电荷和质量数。（c）从图中写出的符号读出电荷和质量数，核对你对（b）的答案，如有需要就加以更正。（d）预测你的原子是稳定的还是不稳定的。说明你的理由。（e）读出图中是否称你的同位素为稳定同位素。你对（d）的回答正确吗？如果不正确，先预测你可以怎样做才能得到该元素的稳定原子，然后照做，看看是否行得通。解释你的理由。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）碳-12，<sup>12</sup>C；（b）这个原子含有六个质子和六个中子。中性的 <sup>12</sup>C 原子中有六个电子。这样一个中性原子的净电荷为零，质量数为 12。（c）前面的答案是正确的。（d）该原子将是稳定的，因为 C-12 是碳的稳定同位素。（e）前面的回答是正确的。如果选择不同的元素或同位素，这道习题还可以有其他答案。"
+   }
+  },
+  {
+   "id": "s2",
+   "source_id": "fs-idm103886288",
+   "kind": "simulation-exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "isotopes",
+   "prompt": "使用图 2.14。（a）设定质子、中子和电子的数目，构成锂-6 的一个中性原子，并给出这个原子的同位素符号。（b）现在去掉一个电子，形成一个离子，并给出你所形成的离子的符号。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）锂-6 含有三个质子、三个中子和三个电子。同位素符号为 <sup>6</sup>Li 或 ${}_{3}^{6}\\text{Li}.$（b）<sup>6</sup>Li<sup>+</sup> 或 ${}_{3}^{6}{\\text{Li}}^{+}$"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm187202528",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ions",
+   "prompt": "下面是我们饮食中必需的两种元素的同位素的性质。确定每种同位素中质子、中子和电子的数目，并写出它们的名称。（a）原子序数 26，质量数 58，电荷为 2+（b）原子序数 53，质量数 127，电荷为 1−",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）铁，26 个质子，24 个电子和 32 个中子；（b）碘，53 个质子，54 个电子和 74 个中子"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm80933584",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "isotopes",
+   "prompt": "给出下列每种同位素的中性原子中质子、电子和中子的数目：（a）${}_{3}^{7}\\text{Li}$（b）${}_{\\;52}^{125}\\text{Te}$（c）${}_{\\;47}^{109}\\text{Ag}$（d）${}_{\\;7}^{15}\\text{N}$（e）${}_{15}^{31}\\text{P}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）3 个质子，3 个电子，4 个中子；（b）52 个质子，52 个电子，73 个中子；（c）47 个质子，47 个电子，62 个中子；（d）7 个质子，7 个电子，8 个中子；（e）15 个质子，15 个电子，16 个中子"
+   }
+  },
+  {
+   "id": "s3",
+   "source_id": "fs-idm112612912",
+   "kind": "simulation-exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "atomic-mass",
+   "prompt": "使用例 2.4 上方的平均质量图，选择氖，这种元素有三种天然存在的同位素。（a）写出氖的各同位素的符号。（b）已知氖的平均原子质量为 20.18 amu，预测这些同位素在自然界中的相对含量（百分数）。解释你做出这一选择的理由。（c）把滑块设定到你的预测值，读出你的混合物的平均原子质量。它吻合得如何？如有必要，调整各含量。（d）把滑块移到虚线圆圈上，虚线圆圈标出自然界的混合比例，并把它与你的预测相比较。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "我们以氖为例。由于有三种同位素，没有办法确定能准确预测出使平均原子质量总和为 20.18 amu 的各丰度。我们猜测丰度为 9% 的 Ne-22、91% 的 Ne-20，而 Ne-21 只有痕量。平均质量将是 20.18 amu。核对自然界的同位素混合比例可知，丰度为 90.48% 的 Ne-20、9.25% 的 Ne-22 和 0.27% 的 Ne-21，所以我们猜测的含量需要略作调整。"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp165798448",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "atomic-mass",
+   "prompt": "IUPAC 列出的平均原子质量是基于对实验结果的研究。溴有两种同位素，<sup>79</sup>Br 和 <sup>81</sup>Br，它们的质量（分别为 78.9183 amu 和 80.9163 amu）和丰度（分别为 50.69% 和 49.31%）是在早期实验中测定的。根据这些实验计算溴的平均原子质量。",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 79.9,
+    "unit": "amu",
+    "hint": "用每种同位素的质量乘以其丰度分数，再把两个乘积相加。",
+    "solution": "79.90 amu"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm95116240",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ex-abundance",
+   "prompt": "一些元素的平均原子质量可能会因其矿石来源不同而有所变化。天然存在的硼由两种质量已准确知道的同位素组成（<sup>10</sup>B，10.0129 amu 和 <sup>11</sup>B，11.00931 amu）。硼的实际原子质量可以在 10.807 到 10.819 之间变化，取决于矿物来源是土耳其还是美国。计算得到来自这两个国家的硼的两个平均原子质量值所对应的百分丰度。",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "Turkey, % of the 10.0129 amu isotope",
+      "value": 20.3,
+      "unit": "%",
+      "hint": "设 x 为硼-10 所占的分数，解 10.807 = 10.0129x + 11.00931(1 − x)。"
+     },
+     {
+      "part": "United States, % of the 10.0129 amu isotope",
+      "value": 19.1,
+      "unit": "%",
+      "hint": "用平均质量 10.819 amu 解同一个方程。"
+     }
+    ],
+    "solution": "土耳其来源：20.3%（10.0129 amu 的同位素）；美国来源：19.1%（10.0129 amu 的同位素）"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idm4055376",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "atomic-mass",
+   "prompt": "某些陨石中 <sup>18</sup>O 与 <sup>16</sup>O 的丰度比大于用来计算地球上氧的平均原子质量的丰度比。这些陨石中一个氧原子的平均质量，是大于、小于还是等于地球上一个氧原子的平均质量？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "把平均质量看作各同位素质量的加权平均。氧-18 比氧-16 重，所以在氧-18 原子占比较大的样品中，较重的同位素在丰度分数乘以同位素质量之和中占的权重更大，平均值就向它的质量移动。因此，这些陨石中一个氧原子的平均质量大于地球上一个氧原子的平均质量。"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "composition-of-an-atom"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "ions-and-atomic-charge"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "average-atomic-mass"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "isotopic-abundance-from-average-mass"
+  },
+  {
+   "exercise": "e1",
+   "concept": "isotopes"
+  },
+  {
+   "exercise": "e1",
+   "concept": "atomic-number-and-mass-number"
+  },
+  {
+   "exercise": "e2",
+   "concept": "isotope-symbols"
+  },
+  {
+   "exercise": "e2",
+   "concept": "composition-of-an-atom"
+  },
+  {
+   "exercise": "s1",
+   "concept": "isotope-symbols"
+  },
+  {
+   "exercise": "s1",
+   "concept": "atomic-number-and-mass-number"
+  },
+  {
+   "exercise": "s2",
+   "concept": "isotope-symbols"
+  },
+  {
+   "exercise": "s2",
+   "concept": "ions-and-atomic-charge"
+  },
+  {
+   "exercise": "e3",
+   "concept": "composition-of-an-atom"
+  },
+  {
+   "exercise": "e4",
+   "concept": "composition-of-an-atom"
+  },
+  {
+   "exercise": "e4",
+   "concept": "isotope-symbols"
+  },
+  {
+   "exercise": "s3",
+   "concept": "average-atomic-mass"
+  },
+  {
+   "exercise": "e5",
+   "concept": "average-atomic-mass"
+  },
+  {
+   "exercise": "e6",
+   "concept": "isotopic-abundance-from-average-mass"
+  },
+  {
+   "exercise": "e7",
+   "concept": "average-atomic-mass"
+  }
+ ],
+ "referents": [
+  {
+   "id": "b-10",
+   "label": "硼-10",
+   "figures": [
+    "sim-average-mass"
+   ]
+  },
+  {
+   "id": "b-11",
+   "label": "硼-11",
+   "figures": [
+    "sim-average-mass"
+   ]
+  },
+  {
+   "id": "ne-20",
+   "label": "氖-20",
+   "figures": [
+    "sim-average-mass"
+   ]
+  },
+  {
+   "id": "ne-21",
+   "label": "氖-21",
+   "figures": [
+    "sim-average-mass"
+   ]
+  },
+  {
+   "id": "ne-22",
+   "label": "氖-22",
+   "figures": [
+    "sim-average-mass"
+   ]
+  },
+  {
+   "id": "cl-35",
+   "label": "氯-35",
+   "figures": [
+    "sim-average-mass"
+   ]
+  },
+  {
+   "id": "cl-37",
+   "label": "氯-37",
+   "figures": [
+    "sim-average-mass"
+   ]
+  },
+  {
+   "id": "sample",
+   "label": "样品",
+   "figures": [
+    "sim-mass-spec"
+   ]
+  },
+  {
+   "id": "field",
+   "label": "磁场",
+   "figures": [
+    "sim-mass-spec"
+   ]
+  }
+ ]
+}

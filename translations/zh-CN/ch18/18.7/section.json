@@ -1,0 +1,548 @@
+{
+ "id": "18.7",
+ "module": "m68835",
+ "chapter": "18",
+ "title": "氮的存在、制备与性质",
+ "short": "氮",
+ "lead": "氮是大气的主要成分，由液态空气制得，用于需要不活泼气氛的各种场合。本节介绍生物如何固定氮，以及氮与氧形成的各种氧化物，从一氧化二氮到五氧化二氮，包括二氧化氮与其二聚体之间的平衡，以及这些氧化物与水的反应。",
+ "objectives": [
+  "描述氮的性质、制备和用途"
+ ],
+ "summary_html": "<p>氮表现出从 3− 到 5+ 的<span data-concept=\"oxidation-number\">氧化态</span>。由于 N≡N <span data-concept=\"triple-bond\">三键</span>的稳定性，由分子氮制备化合物需要大量的能量。<span data-concept=\"alkali-metal\">碱金属</span>和<span data-concept=\"alkaline-earth-metal\">碱土金属</span>等活泼金属可以还原氮，生成金属氮化物。氮的氧化物和氮的氢化物也是重要的物质。</p>",
+ "notes": "本节没有印刷的标题，所以它的四个部分带有 OmniStax 自拟的标题。本节保留印刷原文：“十氧化四磷”、“已知能够进行固氮的生物只有微生物这一类”，以及图 18.38 图注中下标内的句点。二氧化氮平衡的 Sim 取平衡一章中四氧化二氮分解的 ΔH = 57.20 kJ。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案取自书后答案，fs-idp29787040 和 fs-idp9296992 的路易斯结构则取自书后答案中的图片。四道没有答案的习题 fs-idm31681344（四种物种中氮的杂化）、fs-idp2884576（十种物种中氮的氧化态）、fs-idp114788336（各 3.0 g 氢和氮所得氨的质量）和 fs-idp88710064（由滴定求 CsOH 溶液的浓度）未收入，也没有为它们计算答案。习题 59 把其（a）小题印作 NH<sup>2−</sup>，照印刷原样保留。没有任何内容被移动。",
+ "figures": [
+  {
+   "id": "fig-nitrogen-cycle",
+   "kind": "photo",
+   "number": "18.32",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-n2o",
+   "kind": "photo",
+   "number": "18.33",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-no-dimer",
+   "kind": "photo",
+   "number": "18.34",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-n2o3",
+   "kind": "photo",
+   "number": "18.35",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-copper-nitric",
+   "kind": "photo",
+   "number": "18.36",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-no2-n2o4",
+   "kind": "photo",
+   "number": "18.37",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-no2-dimer",
+   "kind": "sim",
+   "draws": [
+    "equilibrium-constant",
+    "pressure",
+    "temperature",
+    "volume"
+   ],
+   "conventions": [
+    "N",
+    "O"
+   ],
+   "facts": [
+    "#8b4a1c"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-n2o5",
+   "kind": "photo",
+   "number": "18.38",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "referents": [
+  {
+   "id": "n2o4",
+   "label": "四氧化二氮，N₂O₄",
+   "figures": [
+    "sim-no2-dimer"
+   ]
+  },
+  {
+   "id": "no2",
+   "label": "二氧化氮，NO₂",
+   "figures": [
+    "sim-no2-dimer"
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "occurrence",
+   "concept": "nitrogen-inertness",
+   "verb": "introduces"
+  },
+  {
+   "span": "occurrence",
+   "concept": "nitrogen-fixation",
+   "verb": "introduces"
+  },
+  {
+   "span": "occurrence",
+   "concept": "distillation",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "triple-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "boiling-point",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "melting-point",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "alkali-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "alkaline-earth-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "redox-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "nitrogen-oxides",
+   "verb": "introduces"
+  },
+  {
+   "span": "oxides",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "redox-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "resonance-forms",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "free-radical",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "chemical-equilibrium",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "dioxide",
+   "concept": "no2-n2o4-equilibrium",
+   "verb": "introduces"
+  },
+  {
+   "span": "dioxide",
+   "concept": "free-radical",
+   "verb": "uses"
+  },
+  {
+   "span": "dioxide",
+   "concept": "paramagnetism",
+   "verb": "uses"
+  },
+  {
+   "span": "dioxide",
+   "concept": "chemical-equilibrium",
+   "verb": "uses"
+  },
+  {
+   "span": "dioxide",
+   "concept": "equilibrium-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "dioxide",
+   "concept": "partial-pressure",
+   "verb": "uses"
+  },
+  {
+   "span": "dioxide",
+   "concept": "gas-pressure",
+   "verb": "uses"
+  },
+  {
+   "span": "dioxide",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "dioxide",
+   "concept": "volume",
+   "verb": "uses"
+  },
+  {
+   "span": "dioxide",
+   "concept": "le-chateliers-principle",
+   "verb": "uses"
+  },
+  {
+   "span": "dioxide",
+   "concept": "volume-stress",
+   "verb": "uses"
+  },
+  {
+   "span": "dioxide",
+   "concept": "temperature-changes-k",
+   "verb": "uses"
+  },
+  {
+   "span": "dioxide",
+   "concept": "resonance-forms",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "nitrogen-oxides-with-water",
+   "verb": "introduces"
+  },
+  {
+   "span": "reactions",
+   "concept": "acid-anhydride",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "oxyacid",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "disproportionation-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "reducing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "combustion-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "redox-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "resonance-forms",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "nitrogen-oxides",
+   "verb": "reinforces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "e59",
+   "source_id": "fs-idp29787040",
+   "source_number": "59",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "occurrence",
+   "prompt": "写出下列每一种物质的路易斯结构：<br>（a）NH<sup>2−</sup><br>（b）N<sub>2</sub>F<sub>4</sub><br>（c）NH<sub>2</sub><sup>−</sup><br>（d）NF<sub>3</sub><br>（e）N<sub>3</sub><sup>−</sup>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）NH<sup>2−</sup>：<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise1a_img.jpg\" alt=\"此路易斯结构显示一个带有三对孤电子对的氮原子与一个氢原子以单键相连。结构式外加方括号，括号外右上角标有二负号。\"><br>（b）N<sub>2</sub>F<sub>4</sub>：<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise1b_img.jpg\" alt=\"此路易斯结构显示两个氮原子，各带一对孤电子对，彼此以单键相连，并且各与两个氟原子以单键相连。每个氟原子带有三对孤电子对。\"><br>（c）NH<sub>2</sub><sup>−</sup>：<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise1c_img.jpg\" alt=\"此路易斯结构显示一个带有两对孤电子对的氮原子与两个氢原子以单键相连。结构式外加方括号，括号外右上角标有负号。\"><br>（d）NF<sub>3</sub>：<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise1d_img.jpg\" alt=\"此路易斯结构显示一个带有一对孤电子对的氮原子与三个氟原子以单键相连。每个氟原子带有三对孤电子对。\"><br>（e）N<sub>3</sub><sup>−</sup>：<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise1e_img.jpg\" alt=\"图中有三个路易斯结构，之间以双向箭头相连。左边的结构式显示一个带有一对孤电子对的氮原子与第二个氮原子以三键相连，第二个氮原子与第三个氮原子以单键相连。第三个氮原子带有三对孤电子对。整个结构式外加方括号，括号外右上角标有负号。中间的结构式显示一个带有三对孤电子对的氮原子与第二个氮原子以单键相连，第二个氮原子与第三个氮原子以三键相连。第三个氮原子带有一对孤电子对。整个结构式外加方括号，括号外右上角标有负号。右边的结构式显示一个带有两对孤电子对的氮原子与第二个氮原子以双键相连，第二个氮原子与第三个氮原子以双键相连。第三个氮原子带有两对孤电子对。整个结构式外加方括号，括号外右上角标有负号。\">"
+   }
+  },
+  {
+   "id": "e61",
+   "source_id": "fs-idp14942656",
+   "source_number": "61",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "occurrence",
+   "prompt": "解释氨如何既可以作布朗斯特–劳里碱，又可以作路易斯碱。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "氨可以作布朗斯特–劳里碱，因为它容易接受质子；也可以作路易斯碱，因为它有一对电子可以给出。<br>布朗斯特–劳里碱： ${\\text{NH}}_{3}+{\\text{H}}_{3}{\\text{O}}^{+}\\;\\longrightarrow \\;{\\text{NH}}_{4}{}^{+}+{\\text{H}}_{2}\\text{O}$<br>路易斯碱： ${\\text{2NH}}_{3}+{\\text{Ag}}^{+}\\;\\longrightarrow \\;{{\\text{[H}}_{3}\\text{N}-\\text{Ag}-{\\text{NH}}_{3}]}^{+}$"
+   }
+  },
+  {
+   "id": "e63",
+   "source_id": "fs-idp9296992",
+   "source_number": "63",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "dioxide",
+   "prompt": "对于下列每一种，画出路易斯结构，预测 ONO 键角，并给出氮的杂化方式。你可以复习化学键与分子几何构型以及共价键的高级理论这两章，以获得相关的例子。<br>（a）NO<sub>2</sub><br>（b）NO<sub>2</sub><sup>−</sup><br>（c）NO<sub>2</sub><sup>+</sup>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）NO<sub>2</sub>：<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise5a_img.jpg\" alt=\"图中有两个路易斯结构，之间以双向箭头相连。左边的结构式显示一个带有一个单电子的氮原子与一个带有两对孤电子对的氧原子以双键相连。该氮原子还与一个带有三对孤电子对的氧原子以单键相连。右边的结构式是左边结构式的镜像。\"><br>氮为 <em>sp</em><sup>2</sup> 杂化。分子呈 V 形，ONO 键角约为 120°。<br>（b）NO<sub>2</sub><sup>−</sup>：<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise5b_img.jpg\" alt=\"图中有两个路易斯结构，之间以双向箭头相连。每个结构式外加方括号，括号外右上角标有负号。左边的结构式显示一个带有一对孤电子对的氮原子与一个带有两对孤电子对的氧原子以双键相连。该氮原子还与一个带有三对孤电子对的氧原子以单键相连。右边的结构式是左边结构式的镜像。\"><br>氮为 <em>sp</em><sup>2</sup> 杂化。分子呈 V 形，ONO 键角略小于 120°。<br>（c）NO<sub>2</sub><sup>+</sup>：<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise5c_img.jpg\" alt=\"此路易斯结构显示一个氮原子，两侧各与一个带有两对孤电子对的氧原子以双键相连。结构式外加方括号，括号外右上角标有负号。\"><br>氮为 <em>sp</em> 杂化。分子呈直线形，ONO 键角为 180°。"
+   }
+  },
+  {
+   "id": "e65",
+   "source_id": "fs-idm46455776",
+   "source_number": "65",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "occurrence",
+   "prompt": "虽然 PF<sub>5</sub> 和 AsF<sub>5</sub> 是稳定的，氮却不形成 NF<sub>5</sub> 分子。解释同一族成员之间的这一差异。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "氮不能形成 NF<sub>5</sub> 分子，因为它没有可与另外两个氟原子成键的 <em>d</em> 轨道。"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e59",
+   "concept": "lewis-structure-diagram"
+  },
+  {
+   "exercise": "e59",
+   "concept": "resonance-forms"
+  },
+  {
+   "exercise": "e59",
+   "concept": "nitrogen-inertness"
+  },
+  {
+   "exercise": "e61",
+   "concept": "bronsted-lowry-base"
+  },
+  {
+   "exercise": "e61",
+   "concept": "lewis-base"
+  },
+  {
+   "exercise": "e61",
+   "concept": "ammonia-chemistry"
+  },
+  {
+   "exercise": "e63",
+   "concept": "lewis-structure-diagram"
+  },
+  {
+   "exercise": "e63",
+   "concept": "bond-angle"
+  },
+  {
+   "exercise": "e63",
+   "concept": "hybridization"
+  },
+  {
+   "exercise": "e63",
+   "concept": "nitrogen-oxides"
+  },
+  {
+   "exercise": "e65",
+   "concept": "octet-rule-exceptions"
+  },
+  {
+   "exercise": "e65",
+   "concept": "first-member-anomaly"
+  }
+ ]
+}

@@ -1,0 +1,1226 @@
+{
+ "id": "10.3",
+ "module": "m68768",
+ "chapter": "10",
+ "title": "相变",
+ "short": "相变",
+ "lead": "当<span data-concept=\"heat-flow\">热量</span>被加入或移出时，物质会由一种状态转变为另一种状态，而每一种变化都取决于分子间吸引力与分子<span data-concept=\"kinetic-energy\">动能</span>之间的较量。液体的<span data-concept=\"vapor-pressure\">蒸气压</span>、沸点，以及每一种物态变化所吸收或放出的<span data-concept=\"heat-flow\">热量</span>，都源于这一较量。",
+ "objectives": [
+  "定义相变和相变温度",
+  "解释相变温度与分子间吸引力之间的关系",
+  "描述典型加热曲线和冷却曲线所表示的过程，并计算这些过程中的热量流动和焓变"
+ ],
+ "summary_html": "<p>相变是使物质由一种物态转变为另一种物态的过程。物质的三种相之间共有六种相变。熔化、汽化和升华都是吸热过程，需要输入<span data-concept=\"heat-flow\">热量</span>来克服分子间吸引力。与之互逆的凝固、凝结和凝华都是放热过程，在分子间吸引<span data-concept=\"force\">力</span>建立或增强时放出<span data-concept=\"heat-flow\">热量</span>。相变发生的<span data-concept=\"temperature\">温度</span>由分子间吸引力的相对强弱决定，因此取决于物质的本性。</p>",
+ "notes": "开篇段落以及关于分子间力、温度和克劳修斯–克拉珀龙方程的段落，都放在本页自拟的标题之下；书中的五个标题予以保留。例 10.5“学习检测”中的表格按其单元格中的 20 °C 印出，尽管书中该表的摘要写的是 25 °C；例 10.7“学习检测”的答案照书中所给印出，即“41.4 kJ/mol**”。图 10.22 和图 10.24 所用的乙醚、乙醇和乙二醇的正常沸点，以及乙醚和乙二醇的汽化焓，是书中没有印出的手册数值；这两幅图所画的蒸气压是由克劳修斯–克拉珀龙方程算出的。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案取自书后答案以及“学习检测”的答案。三道没有答案的数值型习题 fs-idm91183360（本章第 38 题，CCl<sub>4</sub> 的正常沸点）、fs-idm100561472（第 42 题，注射器中的乙醚）和 fs-idm4941728（第 52 题，把一瓶水变成汗液和蒸气所需的热量）被略去，也没有为它们计算答案。没有答案的概念性习题（30、32、34、36、40、44、46 和 48）以及没有答案的选择题 fs-idm190677696（第 50 题）——作为开放题保留，附有选项，从不评分——附有标明为 OmniStax 自拟的建议思路。数值答案的容差为 2%。",
+ "figures": [
+  {
+   "id": "sim-vapor",
+   "kind": "sim",
+   "number": "10.22",
+   "originals": [
+    "/media/ch10/CNX_Chem_10_03_VapPress1.jpg"
+   ],
+   "original_caption": "在密闭容器中，当（a）分子从液体逸出成为气体的速率（b）增大并最终（c）等于气体分子进入液体的速率时，就达到了动态平衡。达到这一平衡后，气体的蒸气压保持不变，尽管汽化和凝结过程仍在继续。",
+   "draws": [
+    "pressure",
+    "time"
+   ],
+   "conventions": [
+    "C",
+    "O",
+    "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "note no longer repeats the caption"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-structures",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-ke",
+   "kind": "sim",
+   "number": "10.23",
+   "originals": [
+    "/media/ch10/CNX_Chem_10_03_VapPress3.jpg"
+   ],
+   "original_caption": "温度影响液体中分子的动能分布。在较高的温度下，有更多的分子具有从液体逸入气相所需的动能 KE。",
+   "draws": [
+    "temperature",
+    "energy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "curve names placed clear, 300 K tail hatched, note dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-bp",
+   "kind": "sim",
+   "number": "10.24",
+   "originals": [
+    "/media/ch10/CNX_Chem_10_03_VapPress2.jpg"
+   ],
+   "original_caption": "液体的沸点是其平衡蒸气压等于周围大气压强时的温度。正常沸点是对应于 1 atm（101.3 kPa）压强的沸点。",
+   "draws": [
+    "pressure",
+    "temperature",
+    "energy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-sweat",
+   "kind": "photo",
+   "number": "10.25",
+   "draws": []
+  },
+  {
+   "id": "fig-ice",
+   "kind": "photo",
+   "number": "10.26",
+   "draws": []
+  },
+  {
+   "id": "fig-iodine",
+   "kind": "photo",
+   "number": "10.27",
+   "draws": []
+  },
+  {
+   "id": "fig-ladder",
+   "kind": "figure",
+   "number": "10.28",
+   "originals": [
+    "/media/ch10/CNX_Chem_10_03_PhaseChng.jpg"
+   ],
+   "original_caption": "对于给定的物质，其熔化焓与汽化焓之和近似等于其升华焓。",
+   "draws": [
+    "energy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-heat",
+   "kind": "sim",
+   "number": "10.29",
+   "originals": [
+    "/media/ch10/CNX_Chem_10_03_HeatCurve.jpg"
+   ],
+   "original_caption": "典型的加热曲线描绘了物质吸收的热量不断增多时所引起的温度变化。当物质发生相变时，曲线上会出现平台（温度恒定的区域）。",
+   "draws": [
+    "mass",
+    "temperature",
+    "energy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "headline total is the readout's rounded sum"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "changes-of-state",
+   "concept": "phase-from-imf-and-kinetic-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "changes-of-state",
+   "concept": "condensation",
+   "verb": "introduces"
+  },
+  {
+   "span": "changes-of-state",
+   "concept": "melting",
+   "verb": "introduces"
+  },
+  {
+   "span": "changes-of-state",
+   "concept": "freezing",
+   "verb": "introduces"
+  },
+  {
+   "span": "vaporization",
+   "concept": "vapor-pressure-dynamic-equilibrium",
+   "verb": "introduces"
+  },
+  {
+   "span": "vaporization",
+   "concept": "vaporization",
+   "verb": "introduces"
+  },
+  {
+   "span": "vaporization",
+   "concept": "dynamic-equilibrium",
+   "verb": "introduces"
+  },
+  {
+   "span": "vaporization",
+   "concept": "vapor-pressure",
+   "verb": "introduces"
+  },
+  {
+   "span": "vapor-imf",
+   "concept": "vapor-pressure-and-imf",
+   "verb": "introduces"
+  },
+  {
+   "span": "vapor-imf",
+   "concept": "rank-by-intermolecular-forces",
+   "verb": "uses"
+  },
+  {
+   "span": "vapor-imf",
+   "concept": "hydrogen-bonding",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-vapor-imf",
+   "concept": "vapor-pressure-and-imf",
+   "verb": "uses"
+  },
+  {
+   "span": "vapor-temperature",
+   "concept": "vapor-pressure-and-temperature",
+   "verb": "introduces"
+  },
+  {
+   "span": "boiling",
+   "concept": "boiling-point",
+   "verb": "introduces"
+  },
+  {
+   "span": "boiling",
+   "concept": "vapor-pressure-and-temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "boiling",
+   "concept": "normal-boiling-point",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-leadville",
+   "concept": "boiling-point",
+   "verb": "uses"
+  },
+  {
+   "span": "clausius",
+   "concept": "clausius-clapeyron-equation",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-isooctane",
+   "concept": "clausius-clapeyron-calculations",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-benzene",
+   "concept": "clausius-clapeyron-calculations",
+   "verb": "uses"
+  },
+  {
+   "span": "vaporization-enthalpy",
+   "concept": "enthalpies-of-phase-change",
+   "verb": "introduces"
+  },
+  {
+   "span": "melting",
+   "concept": "enthalpies-of-phase-change",
+   "verb": "reinforces"
+  },
+  {
+   "span": "melting",
+   "concept": "melting-point",
+   "verb": "introduces"
+  },
+  {
+   "span": "sublimation",
+   "concept": "enthalpies-of-phase-change",
+   "verb": "reinforces"
+  },
+  {
+   "span": "sublimation",
+   "concept": "sublimation",
+   "verb": "introduces"
+  },
+  {
+   "span": "sublimation",
+   "concept": "deposition",
+   "verb": "introduces"
+  },
+  {
+   "span": "heating-curves",
+   "concept": "heating-curve",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-heat-total",
+   "concept": "heating-curve-calculations",
+   "verb": "introduces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm12389904",
+   "kind": "check-your-learning",
+   "bloom": "Analyze",
+   "place": {
+    "at": "inline",
+    "after": "ex-vapor-imf"
+   },
+   "cite": "vapor-imf",
+   "prompt": "20 °C 时几种醇的蒸气压列于下表。请根据这些醇的 IMF 的类型和程度解释这些蒸气压：<div class=\"book-table\"><table><tbody><tr><th>化合物</th><td>甲醇 CH<sub>3</sub>OH</td><td>乙醇 C<sub>2</sub>H<sub>5</sub>OH</td><td>丙醇 C<sub>3</sub>H<sub>7</sub>OH</td><td>丁醇 C<sub>4</sub>H<sub>9</sub>OH</td></tr><tr><th>20 °C 时的蒸气压</th><td>11.9 kPa</td><td>5.95 kPa</td><td>2.67 kPa</td><td>0.56 kPa</td></tr></tbody></table></div>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "这些化合物都能形成氢键；分子难以克服这些较强的 IMF，因此蒸气压相对较低。随着分子的尺寸由甲醇到丁醇逐渐增大，色散力增强，这意味着蒸气压按所观察到的那样降低：P<sub>甲醇</sub> &gt; P<sub>乙醇</sub> &gt; P<sub>丙醇</sub> &gt; P<sub>丁醇</sub>。"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm272706256",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-leadville"
+   },
+   "cite": "boiling",
+   "prompt": "在珠穆朗玛峰山坡上的一处大本营测得乙醚的沸点为 10 °C。请利用图 10.24 确定该营地大气压强的近似值。",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 40,
+    "unit": "kPa",
+    "hint": "在温度轴上找到 10 °C，向上到乙醚曲线，读出那里的压强。",
+    "solution": "约 40 kPa（0.4 atm）"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idm96861632",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-isooctane"
+   },
+   "cite": "clausius",
+   "prompt": "在 20.0 °C 时乙醇的蒸气压为 5.95 kPa，在 63.5 °C 时其蒸气压为 53.3 kPa。请利用这些信息估算乙醇的汽化焓。",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 41.4,
+    "unit": "kJ/mol",
+    "hint": "将两个温度都换算成开尔文，并像例 10.7 那样，对两点形式的克劳修斯–克拉珀龙方程求解 ΔH<sub>vap</sub>。",
+    "solution": "41,360 J/mol 或 41.4 kJ/mol**"
+   }
+  },
+  {
+   "id": "cyl4",
+   "source_id": "fs-idm143693744",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-benzene"
+   },
+   "cite": "clausius",
+   "prompt": "对于丙酮 (CH<sub>3</sub>)<sub>2</sub>CO，正常沸点为 56.5 °C，汽化焓为 31.3 kJ/mol。丙酮在 25.0 °C 时的蒸气压是多少？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 30.1,
+    "unit": "kPa",
+    "hint": "正常沸点给出一个点，即 56.5 °C 时为 101.3 kPa；两个温度都用开尔文表示，对两点形式的克劳修斯–克拉珀龙方程求解 25.0 °C 时的压强。",
+    "solution": "30.1 kPa"
+   }
+  },
+  {
+   "id": "cyl5",
+   "source_id": "fs-idm57843872",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-sweat"
+   },
+   "cite": "vaporization-enthalpy",
+   "prompt": "如果液氨 NH<sub>3</sub> 的汽化焓为 4.8 kJ/mol，那么在其沸点下蒸发 100.0 g 液氨需要多少热量？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 28,
+    "unit": "kJ",
+    "hint": "用氨的摩尔质量把氨的质量换算成物质的量，再乘以汽化焓。",
+    "solution": "28 kJ"
+   }
+  },
+  {
+   "id": "cyl6",
+   "source_id": "fs-idm143749376",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-heat-total"
+   },
+   "cite": "heating-curves",
+   "prompt": "94.0 g 处于 80.0 °C 的水冷却成 −30.0 °C 的冰时，放出的总热量是多少？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 68.7,
+    "unit": "kJ",
+    "hint": "把三个步骤相加：将水冷却到 0 °C、使其凝固、再把冰冷却到 −30.0 °C，采用例 10.10 中的比热容和熔化焓。",
+    "solution": "68.7 kJ"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm118197344",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "heating-curves",
+   "prompt": "继续给沸水加热。请解释为什么沸水的温度不变。那么什么发生了变化？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "沸水的温度保持在沸点，是因为所加入的热量用于在液体变为蒸气时克服水分子之间的分子间吸引力，而不是用于增大水分子的动能。温度反映分子的平均动能，因此在热量用于使分子分开的期间，温度不会上升。发生变化的是各相的量：液态水转变为水蒸气，所以锅中液体的量减少，蒸气的量增加，在 100 °C 下每吸收 40.67 kJ 就有 1 mol 水发生这种转变。只有在所有液体都汽化之后，继续加热才会使水蒸气的温度上升。"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idm202797040",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "melting",
+   "prompt": "继续给 0 °C 的冰加热。请解释为什么冰的温度不变。那么什么发生了变化？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "热量被冰吸收，提供了部分克服固体中分子间吸引力所需的能量，并引起向液态水的相变。在冰全部熔化之前，溶液一直保持在 0 °C。变化的只是以冰的形式存在的水的量，直到冰消失。此后水的温度才能上升。"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm7901664",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": {
+    "at": "end"
+   },
+   "cite": "vaporization",
+   "prompt": "是什么特征刻画了密闭容器中液体与其蒸气之间的动态平衡？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "这种平衡是动态的：汽化和凝结都在继续进行，且速率相等。在密闭容器中，分子不断从液体表面逸入蒸气，而蒸气分子不断撞击液体表面并重新进入液体。起初汽化较快，但随着蒸气的积累，凝结变得越来越频繁，直到两者的速率相等。从那时起，液体的量和蒸气的量都不再变化，因此蒸气的压强保持在该温度下的平衡蒸气压，尽管分子在两相之间不断交换。"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm90085344",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "vaporization",
+   "prompt": "指出两种常见的现象，表明某些液体具有足够大的蒸气压，以至于明显地蒸发。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "我们可以看到敞口容器中液体的量减少，也可以闻到某些液体的蒸气。"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idm202728384",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "sublimation",
+   "prompt": "指出两种常见的现象，表明某些固体（如干冰和樟脑丸）具有足以使其升华的蒸气压。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "一块放在空气中的干冰会变小并最终消失，而从不形成液体；放有樟脑丸的衣橱里会有樟脑丸的气味，而樟脑丸本身也在慢慢变小。这两种现象都表明分子直接离开固体进入气相。固体不经熔化就消失，说明它在升华；闻到樟脑丸的气味，说明其蒸气中有足够多的分子到达鼻子。二者都要求固体在室温下具有可观的蒸气压，正如液体逐渐因蒸发而减少以及能闻到易挥发液体的气味，表明该液体具有蒸气压一样。"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm63569328",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "vapor-imf",
+   "prompt": "液体中的分子间力与其蒸气压之间有什么关系？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "液体的蒸气压随其分子间力的增强而降低。"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idm134146112",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "melting",
+   "prompt": "固体中的分子间力与其熔化温度之间有什么关系？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "固体中的分子间力越强，其熔化温度越高。熔化需要使晶体中的粒子脱离其固定位置，这意味着要部分克服它们之间的吸引力。吸引力较弱的分子形成的晶体，熔化所需的能量较少，因此熔化温度较低；粒子之间吸引力较强的晶体，需要更多的能量，在较高的温度下熔化。熔化焓遵循同样的趋势，随吸引力的增强而增大。"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idm218809584",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "vapor-temperature",
+   "prompt": "为什么洒出的汽油在炎热的日子里比在寒冷的日子里蒸发得更快？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "随着温度升高，汽油分子的平均动能增大，因此与较低温度下相比，有更大比例的分子具有足够的能量逸出液体。"
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idm4937568",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": {
+    "at": "end"
+   },
+   "cite": "boiling",
+   "prompt": "液体的沸点什么时候等于它的正常沸点？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "当液体上方的气体压强恰好为 1 atm 时，二者相等。"
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idm12425360",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "boiling",
+   "prompt": "液体的沸腾与其蒸发有什么不同？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "蒸发只发生在液体的表面，且在任何温度下都可发生；而沸腾发生在整个液体内部，且只发生在其蒸气压等于周围压强的温度下。在蒸发中，表面上恰好具有足够动能来克服 IMF 的分子逸入气相，所以液体即使在远低于沸点时也会缓慢蒸发。随着液体被加热，其蒸气压升高，当蒸气压达到外界压强（在正常沸点时为 101.3 kPa）时，蒸气泡就能在液体内部形成并长大，这就是沸腾。"
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idm69160048",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "boiling",
+   "prompt": "利用图 10.24 中的信息，估算在丹佛大气压强为 83.3 kPa 时水的沸点。",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 95,
+    "unit": "°C",
+    "hint": "在压强轴上找到 83.3 kPa，横向到水的曲线，读出该点下方的温度。",
+    "solution": "约 95 °C"
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idm215245584",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "boiling",
+   "prompt": "解释下列现象：<br>（a）在得克萨斯州戴维斯堡（海拔 5000 英尺）煮一个鸡蛋，比在波士顿（海平面）需要更长的时间。<br>（b）出汗是使身体降温的一种机制。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）在 5000 英尺处，大气压强比海平面低，因此水会在较低的温度下沸腾。这个较低的温度会使煮蛋过程中涉及的物理变化和化学变化进行得更慢，因而需要更长的时间才能把鸡蛋完全煮熟。（b）只要围绕身体的空气所含的水蒸气少于该温度下空气所能容纳的最大量，汗液就会蒸发，从而带走使水汽化所需的汽化热，使身体降温。"
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idm165702432",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "sublimation",
+   "prompt": "水的汽化焓大于其熔化焓。请解释原因。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "水的汽化焓（100 °C 时为 40.67 kJ/mol）远大于其熔化焓（0 °C 时为 6.01 kJ/mol），因为汽化要完全克服分子间吸引力，而熔化只是部分克服。冰熔化时，分子离开晶体中的固定位置，但仍彼此接触，所以它们之间的大部分氢键依然存在，只是在分子相互滑过时断开又重新形成。液态水汽化时，每个分子都必须与其邻居完全分开，这就断开了它的全部氢键。完全克服吸引力所需的能量，远多于部分克服，每摩尔差不多是后者的七倍。"
+   }
+  },
+  {
+   "id": "e14",
+   "source_id": "fs-idm224362720",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "vaporization-enthalpy",
+   "prompt": "解释为什么下列物质的摩尔汽化焓按 CH<sub>4</sub> &lt; C<sub>2</sub>H<sub>6</sub> &lt; C<sub>3</sub>H<sub>8</sub> 的顺序增大，尽管 IMF 的类型（色散力）是相同的。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "色散力随分子质量或尺寸的增大而增强。在这个同系列中，构成分子的原子数增多，通过色散力产生的分子间吸引程度也随之增大，因此克服这些力并使液体汽化所需的能量也增大。"
+   }
+  },
+  {
+   "id": "e15",
+   "source_id": "fs-idm201825184",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "vaporization-enthalpy",
+   "prompt": "解释为什么下列物质的汽化焓按 CH<sub>4</sub> &lt; NH<sub>3</sub> &lt; H<sub>2</sub>O 的顺序增大，尽管这三种物质的摩尔质量大致相同。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "汽化焓按 CH<sub>4</sub> &lt; NH<sub>3</sub> &lt; H<sub>2</sub>O 的顺序增大，是因为分子之间的氢键从没有，到中等，再到广泛。三者的摩尔质量几乎相等（16、17 和 18 g/mol），所以色散力相近，差别在于其他吸引作用。CH<sub>4</sub> 是非极性的，没有与 N、O 或 F 相连的氢原子，所以它的分子之间只靠微弱的色散力相互吸引，使其汽化所需的能量很少。NH<sub>3</sub> 能形成氢键，但每个分子只有一对孤电子对来接受邻近分子的氢原子，这使每个分子平均只能形成约一个氢键。H<sub>2</sub>O 有两个氢原子和两对孤电子对，所以每个分子最多可参与四个氢键，平均每个分子两个，而且氮的电负性比氧小，所以氨的 N–H···N 氢键也比水的 O–H···O 氢键弱。因此水要克服的吸引力最强，汽化焓最大。"
+   }
+  },
+  {
+   "id": "e16",
+   "source_id": "fs-idm43844288",
+   "kind": "exercise",
+   "bloom": "Evaluate",
+   "place": {
+    "at": "end"
+   },
+   "cite": "vaporization-enthalpy",
+   "prompt": "CO<sub>2</sub>(<em>l</em>) 的汽化焓为 9.8 kJ/mol。你预期 CS<sub>2</sub>(<em>l</em>) 的汽化焓会是 28 kJ/mol、9.8 kJ/mol 还是 −8.4 kJ/mol？讨论这几个答案各自的合理性。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "CS<sub>2</sub> 的沸点高于 CO<sub>2</sub>，部分原因是 CS<sub>2</sub> 的分子量较大；因此，CS<sub>2</sub> 中的吸引力更强。所以可以预期其汽化热会大于 CO<sub>2</sub> 的 9.8 kJ/mol。28 kJ/mol 这个值看来是合理的。−8.4 kJ/mol 这个值意味着汽化时放出能量，这显然是不合理的。"
+   }
+  },
+  {
+   "id": "e17",
+   "source_id": "fs-idp7110192",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "vaporization-enthalpy",
+   "prompt": "氟化氢分子 HF 的极性比水分子 H<sub>2</sub>O 更大（例如，偶极矩更大），但液态氟化氢的摩尔汽化焓却比水的小。请解释。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "水的汽化焓较大，是因为每个水分子参与形成的氢键数目约为 HF 分子的两倍，尽管 HF 的每个氢键单独来看更强。HF 分子的氟上有三对孤电子对，却只有一个氢原子，所以只能提供一个氢键，平均每个分子形成一个氢键，使分子形成锯齿形的链。水分子有两个氢原子和两对孤电子对，所以可以提供两个氢键并接受两个氢键，平均每个分子形成两个，形成广泛的三维网络。因此，使 1 mol 液态水汽化所断开的氢键约为使 1 mol HF 汽化时的两倍，数目上的优势超过了 HF 单个氢键更强所带来的影响。"
+   }
+  },
+  {
+   "id": "e18",
+   "source_id": "fs-idp7150208",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "vaporization-enthalpy",
+   "prompt": "氯乙烷（沸点 13 °C）被用作局部麻醉药。把这种液体喷在皮肤上时，它使皮肤冷却到足以冻结并麻木的程度。请解释液态氯乙烷的冷却效应。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "使液体蒸发所需的热能（热量）是从皮肤上带走的。"
+   }
+  },
+  {
+   "id": "e19",
+   "source_id": "fs-idm190677696",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "boiling",
+   "prompt": "下列哪一项按沸点升高的顺序正确列出了这些化合物？<br>（a）N<sub>2</sub> &lt; CS<sub>2</sub> &lt; H<sub>2</sub>O &lt; KCl<br>（b）H<sub>2</sub>O &lt; N<sub>2</sub> &lt; CS<sub>2</sub> &lt; KCl<br>（c）N<sub>2</sub> &lt; KCl &lt; CS<sub>2</sub> &lt; H<sub>2</sub>O<br>（d）CS<sub>2</sub> &lt; N<sub>2</sub> &lt; KCl &lt; H<sub>2</sub>O<br>（e）KCl &lt; H<sub>2</sub>O &lt; CS<sub>2</sub> &lt; N<sub>2</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "正确的顺序是（a），N<sub>2</sub> &lt; CS<sub>2</sub> &lt; H<sub>2</sub>O &lt; KCl。N<sub>2</sub> 和 CS<sub>2</sub> 是非极性的，所以它们的分子之间只靠色散力相互吸引。N<sub>2</sub> 是较小的分子（28 g/mol），色散力最弱，所以沸点最低，为 −196 °C；较大、更易极化的 CS<sub>2</sub> 分子（76 g/mol）色散力更强，沸点为 46 °C。H<sub>2</sub>O 分子靠氢键结合在一起，氢键更强，水的沸点为 100 °C。KCl 是离子化合物，靠 K<sup>+</sup> 和 Cl<sup>−</sup> 离子之间强大的静电吸引力结合，远强于任何分子间力，其沸点约为 1420 °C。只有选项（a）是从最弱的吸引力排到最强的吸引力。"
+   }
+  },
+  {
+   "id": "e20",
+   "source_id": "fs-idm69576896",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "heating-curves",
+   "prompt": "将 422 g 处于 23.5 °C 的液态 H<sub>2</sub>O 转变为 150 °C 的水蒸气，需要多少热量？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 1125,
+    "unit": "kJ",
+    "hint": "像例 10.10 那样把三个步骤相加：把水加热到 100 °C，使其沸腾，再把水蒸气加热到 150 °C。",
+    "solution": "1125 kJ"
+   }
+  },
+  {
+   "id": "e21",
+   "source_id": "fs-idm136735584",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "melting",
+   "prompt": "四氯化钛 TiCl<sub>4</sub> 的熔点为 −23.2 °C，Δ<em>H</em><sub>熔化</sub> = 9.37 kJ/mol。<br>（a）使 263.1 g TiCl<sub>4</sub> 熔化需要多少能量？<br>（b）对于 TiCl<sub>4</sub>，Δ<em>H</em><sub>熔化</sub> 与 Δ<em>H</em><sub>汽化</sub> 哪一个的数值可能更大？请解释你的理由。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）13.0 kJ；（b）汽化热的数值可能更大，因为在汽化时分子间相互作用必须被完全克服，而熔化只削弱或破坏其中的一部分。"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "vapor-pressure-and-imf"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "rank-by-intermolecular-forces"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "boiling-point"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "clausius-clapeyron-calculations"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "clausius-clapeyron-calculations"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "boiling-point"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "enthalpies-of-phase-change"
+  },
+  {
+   "exercise": "cyl6",
+   "concept": "heating-curve-calculations"
+  },
+  {
+   "exercise": "e1",
+   "concept": "heating-curve"
+  },
+  {
+   "exercise": "e1",
+   "concept": "enthalpies-of-phase-change"
+  },
+  {
+   "exercise": "e2",
+   "concept": "heating-curve"
+  },
+  {
+   "exercise": "e2",
+   "concept": "enthalpies-of-phase-change"
+  },
+  {
+   "exercise": "e3",
+   "concept": "vapor-pressure-dynamic-equilibrium"
+  },
+  {
+   "exercise": "e4",
+   "concept": "vapor-pressure-dynamic-equilibrium"
+  },
+  {
+   "exercise": "e5",
+   "concept": "enthalpies-of-phase-change"
+  },
+  {
+   "exercise": "e6",
+   "concept": "vapor-pressure-and-imf"
+  },
+  {
+   "exercise": "e7",
+   "concept": "enthalpies-of-phase-change"
+  },
+  {
+   "exercise": "e7",
+   "concept": "rank-by-intermolecular-forces"
+  },
+  {
+   "exercise": "e8",
+   "concept": "vapor-pressure-and-temperature"
+  },
+  {
+   "exercise": "e9",
+   "concept": "boiling-point"
+  },
+  {
+   "exercise": "e10",
+   "concept": "boiling-point"
+  },
+  {
+   "exercise": "e10",
+   "concept": "vapor-pressure-and-temperature"
+  },
+  {
+   "exercise": "e11",
+   "concept": "boiling-point"
+  },
+  {
+   "exercise": "e12",
+   "concept": "boiling-point"
+  },
+  {
+   "exercise": "e12",
+   "concept": "enthalpies-of-phase-change"
+  },
+  {
+   "exercise": "e13",
+   "concept": "enthalpies-of-phase-change"
+  },
+  {
+   "exercise": "e14",
+   "concept": "enthalpies-of-phase-change"
+  },
+  {
+   "exercise": "e14",
+   "concept": "polarizability-and-dispersion-strength"
+  },
+  {
+   "exercise": "e15",
+   "concept": "enthalpies-of-phase-change"
+  },
+  {
+   "exercise": "e15",
+   "concept": "hydrogen-bonding"
+  },
+  {
+   "exercise": "e16",
+   "concept": "enthalpies-of-phase-change"
+  },
+  {
+   "exercise": "e16",
+   "concept": "polarizability-and-dispersion-strength"
+  },
+  {
+   "exercise": "e17",
+   "concept": "enthalpies-of-phase-change"
+  },
+  {
+   "exercise": "e17",
+   "concept": "hydrogen-bonding"
+  },
+  {
+   "exercise": "e18",
+   "concept": "enthalpies-of-phase-change"
+  },
+  {
+   "exercise": "e19",
+   "concept": "rank-by-intermolecular-forces"
+  },
+  {
+   "exercise": "e19",
+   "concept": "boiling-point"
+  },
+  {
+   "exercise": "e20",
+   "concept": "heating-curve-calculations"
+  },
+  {
+   "exercise": "e21",
+   "concept": "enthalpies-of-phase-change"
+  }
+ ],
+ "referents": [
+  {
+   "id": "flask",
+   "label": "密封烧瓶",
+   "figures": [
+    "sim-vapor"
+   ]
+  },
+  {
+   "id": "manometer",
+   "label": "压强计",
+   "figures": [
+    "sim-vapor"
+   ]
+  },
+  {
+   "id": "diethyl-ether",
+   "label": "乙醚",
+   "figures": [
+    "sim-bp"
+   ]
+  },
+  {
+   "id": "ethanol",
+   "label": "乙醇",
+   "figures": [
+    "sim-bp"
+   ]
+  },
+  {
+   "id": "water",
+   "label": "水",
+   "figures": [
+    "sim-bp"
+   ]
+  },
+  {
+   "id": "ethylene-glycol",
+   "label": "乙二醇",
+   "figures": [
+    "sim-bp"
+   ]
+  }
+ ],
+ "derivations": [
+  {
+   "id": "clausius-clapeyron-two-point",
+   "what": "克劳修斯–克拉珀龙方程的两点形式",
+   "source": "化学（第2版），10.3 相变",
+   "nodes": [
+    {
+     "assumes": [
+      {
+       "text": "两个数之积的对数等于它们的对数之和，$\\ln xy = \\ln x + \\ln y$。",
+       "src": "附录 B"
+      },
+      {
+       "text": "一个数的自然对数，是使 $e$ 的幂等于该数所需的指数，所以 $\\ln e^{x} = x$。",
+       "src": "附录 B"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{P}{\\kP} = \\mk{A}{A}\\mk{e}{e^{-\\kdHvap/R\\kT}}",
+      "src": "10.3"
+     },
+     "steps": [
+      {
+       "tex": "\\mk{P}{\\ln\\kP} = \\ln\\left(\\mk{A}{A}\\mk{e}{e^{-\\kdHvap/R\\kT}}\\right)",
+       "uses": [],
+       "cap": "相等的正数，其自然对数也相等。"
+      },
+      {
+       "tex": "\\mk{P}{\\ln\\kP} = \\mk{A}{\\ln A} + \\mk{e}{\\ln e^{-\\kdHvap/R\\kT}}",
+       "uses": [
+        0
+       ]
+      },
+      {
+       "tex": "\\mk{P}{\\ln\\kP} = \\mk{e}{-\\dfrac{\\kdHvap}{R\\kT}} + \\mk{A}{\\ln A}",
+       "uses": [
+        1
+       ]
+      }
+     ],
+     "src": "10.3"
+    },
+    {
+     "assumes": [
+      {
+       "step": 0
+      },
+      {
+       "text": "在温度 $\\kTone$ 时蒸气压为 $\\kPone$，在温度 $\\kTtwo$ 时为 $\\kPtwo$。",
+       "src": "10.3"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{P}{\\ln\\kP} = \\mk{e}{-\\dfrac{\\kdHvap}{R\\kT}} + \\mk{A}{\\ln A}",
+      "src": "10.3"
+     },
+     "steps": [
+      {
+       "tex": "\\mk{P}{\\ln\\kPone} = \\mk{e}{-\\dfrac{\\kdHvap}{R\\kTone}} + \\mk{A}{\\ln A}",
+       "uses": [
+        1
+       ]
+      },
+      {
+       "tex": "\\mk{A}{\\ln A} = \\mk{P}{\\ln\\kPone} + \\mk{e}{\\dfrac{\\kdHvap}{R\\kTone}}",
+       "uses": []
+      }
+     ],
+     "src": "10.3"
+    },
+    {
+     "assumes": [
+      {
+       "step": 0
+      },
+      {
+       "text": "在温度 $\\kTone$ 时蒸气压为 $\\kPone$，在温度 $\\kTtwo$ 时为 $\\kPtwo$。",
+       "src": "10.3"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{P}{\\ln\\kP} = \\mk{e}{-\\dfrac{\\kdHvap}{R\\kT}} + \\mk{A}{\\ln A}",
+      "src": "10.3"
+     },
+     "steps": [
+      {
+       "tex": "\\mk{P}{\\ln\\kPtwo} = \\mk{e}{-\\dfrac{\\kdHvap}{R\\kTtwo}} + \\mk{A}{\\ln A}",
+       "uses": [
+        1
+       ]
+      },
+      {
+       "tex": "\\mk{A}{\\ln A} = \\mk{P}{\\ln\\kPtwo} + \\mk{e}{\\dfrac{\\kdHvap}{R\\kTtwo}}",
+       "uses": []
+      }
+     ],
+     "src": "10.3"
+    },
+    {
+     "assumes": [
+      {
+       "step": 1
+      },
+      {
+       "step": 2
+      },
+      {
+       "text": "$A$ 是一个常数，其值取决于物质的本性。",
+       "src": "10.3"
+      },
+      {
+       "text": "两个数之商的对数等于它们的对数之差，$\\ln \\dfrac{x}{y} = \\ln x - \\ln y$。",
+       "src": "附录 B"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{P1}{\\ln\\kPone} + \\mk{e1}{\\dfrac{\\kdHvap}{R\\kTone}} = \\mk{P2}{\\ln\\kPtwo} + \\mk{e2}{\\dfrac{\\kdHvap}{R\\kTtwo}}",
+      "src": "10.3",
+      "uses": [
+       0,
+       1,
+       2
+      ],
+      "why": "两边都等于 $\\ln A$，而 $A$ 在两个温度下是相同的。"
+     },
+     "steps": [
+      {
+       "tex": "\\mk{P2}{\\ln\\kPtwo} - \\mk{P1}{\\ln\\kPone} = \\mk{e1}{\\dfrac{\\kdHvap}{R\\kTone}} - \\mk{e2}{\\dfrac{\\kdHvap}{R\\kTtwo}}",
+       "uses": []
+      },
+      {
+       "tex": "\\mk{P}{\\ln\\left(\\dfrac{\\kPtwo}{\\kPone}\\right)} = \\mk{e1}{\\dfrac{\\kdHvap}{R\\kTone}} - \\mk{e2}{\\dfrac{\\kdHvap}{R\\kTtwo}}",
+       "uses": [
+        3
+       ],
+       "map": {
+        "P1": "P",
+        "P2": "P"
+       }
+      },
+      {
+       "tex": "\\mk{P}{\\ln\\left(\\dfrac{\\kPtwo}{\\kPone}\\right)} = \\mk{e}{\\dfrac{\\kdHvap}{R}\\left(\\dfrac{1}{\\kTone} - \\dfrac{1}{\\kTtwo}\\right)}",
+       "uses": [],
+       "map": {
+        "e1": "e",
+        "e2": "e"
+       }
+      }
+     ],
+     "src": "10.3"
+    }
+   ]
+  },
+  {
+   "id": "enthalpy-of-sublimation",
+   "what": "升华焓",
+   "source": "化学（第2版），10.3 相变",
+   "nodes": [
+    {
+     "assumes": [
+      {
+       "text": "如果一个过程可以写成几个分步过程之和，那么总过程的焓变等于各步骤焓变之和。",
+       "src": "5.3，盖斯定律"
+      },
+      {
+       "text": "升华可以模拟为先熔化、后汽化的连续两步过程。",
+       "src": "10.3"
+      },
+      {
+       "text": "$\\kdHfus$ 是熔化（固体变为液体）的焓变，$\\kdHvap$ 是汽化（液体变为气体）的焓变。",
+       "src": "10.3"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{s}{\\kdHsub} = \\mk{f}{\\kdH_{\\text{固态}\\,\\longrightarrow\\,\\text{液态}}} + \\mk{v}{\\kdH_{\\text{液态}\\,\\longrightarrow\\,\\text{气态}}}",
+      "src": "10.3",
+      "uses": [
+       1,
+       0
+      ]
+     },
+     "steps": [
+      {
+       "tex": "\\mk{s}{\\kdHsub} = \\mk{f}{\\kdHfus} + \\mk{v}{\\kdHvap}",
+       "uses": [
+        2
+       ]
+      }
+     ],
+     "src": "10.3"
+    }
+   ]
+  }
+ ]
+}

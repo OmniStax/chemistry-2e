@@ -1,0 +1,1427 @@
+{
+  "id": "5.3",
+  "module": "m68727",
+  "chapter": "5",
+  "title": "焓",
+  "short": "焓",
+  "lead": "体系的<span data-concept=\"internal-energy\">内能</span>通过<span data-concept=\"heat-flow\">热量</span>和<span data-concept=\"work\">功</span>而改变，在恒定<span data-concept=\"gas-pressure\">压强</span>下，过程的<span data-concept=\"heat-flow\">热量</span>就是它的<span data-concept=\"enthalpy-change\">焓变</span>。热化学方程式带有这一变化，数据表把它列为燃烧<span data-concept=\"enthalpy\">焓</span>和生成焓，而盖斯定律则逐步把它相加。",
+  "objectives": [
+    "陈述热力学第一定律",
+    "定义焓，并解释它为什么属于状态函数",
+    "书写并配平热化学方程式",
+    "计算各种化学反应的焓变",
+    "解释盖斯定律，并用它计算反应焓变"
+  ],
+  "summary_html": "<p>如果化学变化在恒定<span data-concept=\"gas-pressure\">压强</span>下进行，且所做的唯一的<span data-concept=\"work\">功</span>是由膨胀或收缩引起的，则该变化的 <em>q</em> 称为<span data-concept=\"enthalpy-change\">焓变</span>，符号为 Δ<em>H</em>；对于在 298 K 标准状态条件下发生的反应，则记为 $\\text{Δ}H\\text{°}$。一个反应在一个方向上的 Δ<em>H</em> 与其逆向反应的 Δ<em>H</em> 大小相等、符号相反，且 Δ<em>H</em> 与反应物和产物的量成正比。<span data-concept=\"standard-enthalpy-of-formation\">标准生成焓</span>记作 $\\text{Δ}{H}_{\\text{f}}^{{}^{\\circ}},$ 是由处于最稳定状态的单质，在 1 bar 和 298.15 K 下生成 1 <span data-concept=\"mole\">摩尔</span>物质所伴随的<span data-concept=\"enthalpy-change\">焓变</span>。如果已知反应的反应物和产物的<span data-concept=\"standard-enthalpy-of-formation\">生成焓</span>，就可以用盖斯定律计算<span data-concept=\"enthalpy-change\">焓变</span>：如果一个过程可以写成若干分步过程之和，则总过程的<span data-concept=\"enthalpy-change\">焓变</span>等于各分步的<span data-concept=\"enthalpy-change\">焓变</span>之和。</p>",
+  "notes": "两个“学习链接”注释（内燃机和藻类生物燃料页面）已略去，关键方程式表由本章的方程式承载，书中的错误按原样保留：乙醇燃烧方程式在“(g+”处漏了一个括号，表 5.2 将异辛烷列为 –5465.5 kJ/mol，而正文和例 5.10 用的是 −5460 kJ/mol，例 5.9 把 KClO₃ 称为高氯酸盐，例 5.15 将 HNO₃ 列为 −207.4 kJ/mol，却按 −206.64 kJ/mol 计算，并由方程式得到 −136.80 kJ、由分步得到 −138.4 kJ，一道习题写作“表 5.2 该表中”，还有一份答案写作“HCL”。",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ]
+  },
+  "built": "2026-10-26",
+  "exercises_lead": "",
+  "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。八道学习检测题均附有书中自己的答案。章末习题的答案取自书后答案，其涵盖四十八道题中的二十四道；二十道没有答案的数值题（fs-idp167504688、fs-idp140736768、fs-idp103290416、fs-idp169467440、fs-idp155924624、fs-idp25402064、fs-idp165437584、fs-idp161291648、fs-idp173454656、fs-idp204534224、fs-idp149472576、fs-idp161656784、fs-idp173500624、fs-idp214812192、fs-idp195101120、fs-idp43583200、fs-idp208987456、fs-idp124891680、fs-idp149397888、fs-idp165246448）已略去。四道没有答案的概念题（fs-idp103276080 涉及氧乙炔焊炬；fs-idp104124592 涉及表 5.2；fs-idp154782528 涉及石墨和金刚石；fs-idp157714624 涉及 OsO₄）保留，并附有标明为 OmniStax 自拟的建议思路。对例 5.5 和 5.6 以及对前一节习题 5.25 的引用均为纯文本；没有取自其他小节的内容，也没有为其他小节保留的内容。热容答案中的 kJ/ºC 写作 kJ/°C。数值答案接受 2% 的容差。",
+  "figures": [
+    {
+      "id": "sim-first-law",
+      "kind": "sim",
+      "number": "5.19",
+      "originals": [
+        "/media/ch05/CNX_Chem_05_03_Systemqw.jpg"
+      ],
+      "original_caption": "体系的内能 U 可以通过热量流动和功而改变。如果热量流入体系（q入），或者对体系做功（w入），其内能增大，ΔU > 0。如果热量流出体系（q出），或者体系对外做功（w出），其内能减小，ΔU < 0。",
+      "draws": [
+        "energy"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "ΔU label under the levels; note that repeated the caption dropped"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-summit",
+      "kind": "photo",
+      "number": "5.20",
+      "draws": []
+    },
+    {
+      "id": "fig-gas-burning",
+      "kind": "photo",
+      "number": "5.21",
+      "draws": []
+    },
+    {
+      "id": "fig-algal-fuel",
+      "kind": "photo",
+      "number": "5.22",
+      "draws": []
+    },
+    {
+      "id": "fig-algal-process",
+      "kind": "photo",
+      "number": "5.23",
+      "draws": []
+    },
+    {
+      "id": "sim-hess",
+      "kind": "sim",
+      "number": "5.24",
+      "originals": [
+        "/media/ch05/CNX_Chem_05_03_HessCO2.jpg"
+      ],
+      "original_caption": "CO2(g) 由其元素生成的反应可以看作分两步发生，这两步之和即为总反应，如盖斯定律所述。水平的蓝线表示焓。对于放热过程，产物的焓低于反应物的焓。",
+      "draws": [
+        "energy"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "arrow labels placed clear of levels; sum table and repeating note dropped"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "span": "first-law",
+      "concept": "first-law-of-thermodynamics",
+      "verb": "introduces"
+    },
+    {
+      "span": "first-law",
+      "concept": "system-and-surroundings",
+      "verb": "uses"
+    },
+    {
+      "span": "first-law",
+      "concept": "conservation-of-energy",
+      "verb": "uses"
+    },
+    {
+      "span": "first-law",
+      "concept": "heat-flow",
+      "verb": "uses"
+    },
+    {
+      "span": "first-law",
+      "concept": "chemical-thermodynamics",
+      "verb": "introduces"
+    },
+    {
+      "span": "first-law",
+      "concept": "internal-energy",
+      "verb": "introduces"
+    },
+    {
+      "span": "expansion-work",
+      "concept": "first-law-of-thermodynamics",
+      "verb": "reinforces"
+    },
+    {
+      "span": "expansion-work",
+      "concept": "exothermic-and-endothermic",
+      "verb": "uses"
+    },
+    {
+      "span": "expansion-work",
+      "concept": "expansion-work",
+      "verb": "introduces"
+    },
+    {
+      "span": "state-functions",
+      "concept": "state-function",
+      "verb": "introduces"
+    },
+    {
+      "span": "state-functions",
+      "concept": "first-law-of-thermodynamics",
+      "verb": "uses"
+    },
+    {
+      "span": "enthalpy",
+      "concept": "enthalpy-change-at-constant-pressure",
+      "verb": "introduces"
+    },
+    {
+      "span": "enthalpy",
+      "concept": "state-function",
+      "verb": "uses"
+    },
+    {
+      "span": "enthalpy",
+      "concept": "bomb-calorimetry",
+      "verb": "uses"
+    },
+    {
+      "span": "enthalpy",
+      "concept": "enthalpy",
+      "verb": "introduces"
+    },
+    {
+      "span": "enthalpy",
+      "concept": "enthalpy-change",
+      "verb": "introduces"
+    },
+    {
+      "span": "thermochemical-equations",
+      "concept": "thermochemical-equations",
+      "verb": "introduces"
+    },
+    {
+      "span": "thermochemical-equations",
+      "concept": "exothermic-and-endothermic",
+      "verb": "uses"
+    },
+    {
+      "span": "thermochemical-equations",
+      "concept": "extensive-and-intensive-properties",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-hcl-naoh",
+      "concept": "thermochemical-equations",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-gummy-bear",
+      "concept": "thermochemical-equations",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-gummy-bear",
+      "concept": "identify-limiting-reactant",
+      "verb": "uses"
+    },
+    {
+      "span": "standard-state",
+      "concept": "standard-enthalpy-of-formation",
+      "verb": "introduces"
+    },
+    {
+      "span": "standard-state",
+      "concept": "extensive-and-intensive-properties",
+      "verb": "uses"
+    },
+    {
+      "span": "standard-state",
+      "concept": "standard-state",
+      "verb": "introduces"
+    },
+    {
+      "span": "combustion",
+      "concept": "enthalpy-of-combustion",
+      "verb": "introduces"
+    },
+    {
+      "span": "combustion",
+      "concept": "hydrocarbon",
+      "verb": "introduces"
+    },
+    {
+      "span": "combustion",
+      "concept": "standard-enthalpy-of-combustion",
+      "verb": "introduces"
+    },
+    {
+      "span": "ex-isooctane",
+      "concept": "enthalpy-of-combustion",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-isooctane",
+      "concept": "density",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-isooctane",
+      "concept": "mass-mole-conversion",
+      "verb": "uses"
+    },
+    {
+      "span": "formation",
+      "concept": "standard-enthalpy-of-formation",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-ozone",
+      "concept": "standard-enthalpy-of-formation",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-formation-equations",
+      "concept": "standard-enthalpy-of-formation",
+      "verb": "reinforces"
+    },
+    {
+      "span": "hess-law",
+      "concept": "hess-law",
+      "verb": "introduces"
+    },
+    {
+      "span": "hess-law",
+      "concept": "state-function",
+      "verb": "uses"
+    },
+    {
+      "span": "hess-law",
+      "concept": "thermochemical-equations",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-fecl3",
+      "concept": "hess-law",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-clf3",
+      "concept": "hess-law",
+      "verb": "reinforces"
+    },
+    {
+      "span": "formation-enthalpies",
+      "concept": "enthalpy-from-formation-enthalpies",
+      "verb": "introduces"
+    },
+    {
+      "span": "formation-enthalpies",
+      "concept": "hess-law",
+      "verb": "uses"
+    },
+    {
+      "span": "formation-enthalpies",
+      "concept": "standard-enthalpy-of-formation",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-hno3",
+      "concept": "enthalpy-from-formation-enthalpies",
+      "verb": "reinforces"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idm9240992",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-hcl-naoh"
+      },
+      "prompt": "当 1.34 g Zn(<em>s</em>) 与 60.0 mL 0.750 M HCl(<em>aq</em>) 反应时，产生 3.14 kJ 热量。确定该反应每摩尔锌反应的焓变：<br>$\\text{Zn}(s)+2\\text{HCl}(aq)\\;\\longrightarrow \\;{\\text{ZnCl}}_{2}(aq)+{\\text{H}}_{2}(g)$",
+      "answer": {
+        "type": "number",
+        "value": -153,
+        "unit": "kJ",
+        "generated_by": "source",
+        "solution": "Δ<em>H</em> = −153 kJ"
+      }
+    },
+    {
+      "id": "cyl2",
+      "source_id": "fs-idp107963312",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-gummy-bear"
+      },
+      "prompt": "当 1.42 g 铁与 1.80 g 氯气反应时，生成 3.22 g FeCl<sub>2</sub>(<em>s</em>)，并产生 8.60 kJ 热量。生成 1 摩尔 FeCl<sub>2</sub>(<em>s</em>) 时，该反应的焓变是多少？",
+      "answer": {
+        "type": "number",
+        "value": -338,
+        "unit": "kJ",
+        "generated_by": "source",
+        "solution": "Δ<em>H</em> = −338 kJ"
+      }
+    },
+    {
+      "id": "cyl3",
+      "source_id": "fs-idp90124816",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-isooctane"
+      },
+      "prompt": "125 g 乙炔燃烧会产生多少热量？",
+      "answer": {
+        "type": "number",
+        "value": 6250.0,
+        "unit": "kJ",
+        "generated_by": "source",
+        "solution": "6.25 $\\times$ 10<sup>3</sup> kJ"
+      }
+    },
+    {
+      "id": "cyl4",
+      "source_id": "fs-idp167759616",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-ozone"
+      },
+      "prompt": "氢气 H<sub>2</sub> 与气态氯 Cl<sub>2</sub> 发生爆炸性反应，生成氯化氢 HCl(<em>g</em>)。如果反应物和产物都处于标准状态条件，1 摩尔 H<sub>2</sub>(<em>g</em>) 与 1 摩尔 Cl<sub>2</sub>(<em>g</em>) 反应的焓变是多少？HCl(<em>g</em>) 的标准生成焓为 −92.3 kJ/mol。",
+      "answer": {
+        "type": "number",
+        "value": -184.6,
+        "unit": "kJ",
+        "generated_by": "source",
+        "solution": "对于反应 ${\\text{H}}_{2}(g)+{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;2\\text{HCl}(g)\\hspace{3em}\\text{Δ}H\\text{°}=−184.6\\;\\text{kJ}$"
+      }
+    },
+    {
+      "id": "cyl5",
+      "source_id": "fs-idp186597312",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-formation-equations"
+      },
+      "prompt": "写出下列物质的生成热反应方程式：<br>（a）C<sub>2</sub>H<sub>5</sub>OC<sub>2</sub>H<sub>5</sub>(<em>l</em>)<br>（b）Na<sub>2</sub>CO<sub>3</sub>(<em>s</em>)",
+      "answer": {
+        "type": "open",
+        "solution": "（a）$4\\text{C}(s,\\;\\text{石墨})+5{\\text{H}}_{2}(g)+\\;\\frac{1}{2}{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{C}}_{2}{\\text{H}}_{5}{\\text{OC}}_{2}{\\text{H}}_{5}(l);$ （b）$2\\text{Na}(s)+\\text{C}(s,\\;\\text{石墨})+\\;\\frac{3}{2}{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{Na}}_{2}{\\text{CO}}_{3}(s)$",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "cyl6",
+      "source_id": "fs-idp185548816",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-fecl3"
+      },
+      "prompt": "计算下述过程的 Δ<em>H</em>：<br>${\\text{N}}_{2}(g)+2{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{NO}}_{2}(g)$<br>根据以下信息：<br>${\\text{N}}_{2}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2\\text{NO}(g)\\hspace{3em}\\text{Δ}\\text{H}=180.5\\;\\text{kJ}$<br>$\\text{NO}(g)+\\;\\frac{1}{2}{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{NO}}_{2}(g)\\hspace{3em}\\text{Δ}\\text{H}=−57.06\\;\\text{kJ}$",
+      "answer": {
+        "type": "number",
+        "value": 66.4,
+        "unit": "kJ",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "cyl7",
+      "source_id": "fs-idp146901200",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-clf3"
+      },
+      "prompt": "氯化铝可由其元素生成：<br><em>(i)</em> $2\\text{Al}(s)+3{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;2{\\text{AlCl}}_{3}(s)\\hspace{3em}\\text{Δ}H\\text{°}=?$<br>利用这里的反应确定反应 <em>(i)</em> 的 Δ<em>H</em>°：<br><em>(ii)</em> $\\text{HCl}(g)\\;\\longrightarrow \\;\\text{HCl}(aq)\\hspace{3em}\\text{Δ}{H}_{(ii)}^{{}^{\\circ}}=−74.8\\;\\text{kJ}$<br><em>(iii)</em> ${\\text{H}}_{2}(g)+{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;2\\text{HCl}(g)\\hspace{3em}\\text{Δ}{H}_{(iii)}^{{}^{\\circ}}=−185\\;\\text{kJ}$<br><em>(iv)</em> ${\\text{AlCl}}_{3}(aq)\\;\\longrightarrow \\;{\\text{AlCl}}_{3}(s)\\hspace{3em}\\text{Δ}{H}_{(iv)}^{{}^{\\circ}}=+323\\;\\text{kJ/mol}$<br><em>(v)</em> $\\text{2Al}(s)+6\\text{HCl}(aq)\\;\\longrightarrow \\;2{\\text{AlCl}}_{3}(aq)+3{\\text{H}}_{2}(g)\\hspace{3em}\\text{Δ}{H}_{(v)}^{{}^{\\circ}}=−1049\\;\\text{kJ}$",
+      "answer": {
+        "type": "number",
+        "value": -1407,
+        "unit": "kJ",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "cyl8",
+      "source_id": "fs-idp120730208",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-hno3"
+      },
+      "prompt": "计算 1 摩尔乙醇 C<sub>2</sub>H<sub>5</sub>OH(<em>l</em>) 在生成 H<sub>2</sub>O(<em>l</em>) 和 CO<sub>2</sub>(<em>g</em>) 时的燃烧热。使用下列生成焓：C<sub>2</sub>H<sub>5</sub>OH(<em>l</em>)，−278 kJ/mol；H<sub>2</sub>O(<em>l</em>)，−286 kJ/mol；CO<sub>2</sub>(<em>g</em>)，−394 kJ/mol。",
+      "answer": {
+        "type": "number",
+        "value": -1368,
+        "unit": "kJ/mol",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e1",
+      "source_id": "fs-idp167492016",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "thermochemical-equations",
+      "prompt": "说明例 5.5 中测得的热量与下面方程式所描述的放热反应的焓变有何不同：<br>$\\text{HCl}(aq)+\\text{NaOH}(aq)\\;\\longrightarrow \\;\\text{NaCl}(aq)+{\\text{H}}_{2}\\text{O}(l)$",
+      "answer": {
+        "type": "open",
+        "solution": "所示反应的焓变针对的是恰好 1 mol HCL 和 1 mol NaOH；例中的热量是由 0.0500 mol HCl 和 0.0500 mol NaOH 产生的。",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idp146867872",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "thermochemical-equations",
+      "prompt": "计算例 5.6 所述条件下，每摩尔 NH<sub>4</sub>NO<sub>3</sub> 的溶解焓（溶解过程的 Δ<em>H</em>）。",
+      "answer": {
+        "type": "number",
+        "value": 25,
+        "unit": "kJ/mol",
+        "generated_by": "source",
+        "solution": "25 kJ mol<sup>−1</sup>"
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idp107667280",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "thermochemical-equations",
+      "prompt": "计算每摩尔 CaCl<sub>2</sub> 的溶解焓（溶解过程的 Δ<em>H</em>）（参见习题 5.25）。",
+      "answer": {
+        "type": "number",
+        "value": 81,
+        "unit": "kJ/mol",
+        "generated_by": "source",
+        "solution": "81 kJ mol<sup>−1</sup>"
+      }
+    },
+    {
+      "id": "e4",
+      "source_id": "fs-idp103276080",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "combustion",
+      "prompt": "尽管氧乙炔焊炬（图 5.7）中使用的气体基本上是纯乙炔，但在这种焊炬中燃烧 1 摩尔乙炔所产生的热量，很可能不等于表 5.2 中所列的乙炔燃烧焓。考虑到制表数据所对应的条件，提出一种解释。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "焊炬每摩尔放出的热量少于表中所列的 $\\kdHc=-1301.1\\;\\text{kJ/mol}$，因为它的条件不是表 5.2 的标准条件。表中的数值对应于完全燃烧，反应物和产物都在 25 °C 和 1 atm，生成的水为液态。在焊炬中，产物以很高的温度离开火焰，所以大部分能量留在热的气体中，而不是以 25 °C 的热量形式放出。水是以水蒸气而不是液体的形式生成的，水冷凝时本应放出的热量（每摩尔水约 44 kJ）始终没有放出。燃烧往往也不完全，生成一些一氧化碳或烟炱而不是二氧化碳，其放出的能量少于完全燃烧为 $\\text{CO}_{2}$ 时放出的能量。"
+      }
+    },
+    {
+      "id": "e5",
+      "source_id": "fs-idp103280960",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "combustion",
+      "prompt": "在标准状态条件下燃烧 4.00 摩尔乙炔会产生多少热量？",
+      "answer": {
+        "type": "number",
+        "value": 5204.4,
+        "unit": "kJ",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e6",
+      "source_id": "fs-idp169453984",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "combustion",
+      "prompt": "在标准状态条件下，要产生 100 kJ 热量，必须燃烧多少摩尔异辛烷？",
+      "answer": {
+        "type": "number",
+        "value": 0.0183,
+        "unit": "mol",
+        "generated_by": "source",
+        "solution": "1.83 $\\times$ 10<sup>−2</sup> mol"
+      }
+    },
+    {
+      "id": "e7",
+      "source_id": "fs-idp155902352",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "combustion",
+      "prompt": "2.50 g 甲烷在氧气中燃烧时，产生 125 kJ 热量。在这些条件下，每摩尔甲烷的燃烧焓是多少？",
+      "answer": {
+        "type": "number",
+        "value": -802,
+        "unit": "kJ/mol",
+        "generated_by": "source",
+        "solution": "–802 kJ mol<sup>−1</sup>"
+      }
+    },
+    {
+      "id": "e8",
+      "source_id": "fs-idp166201552",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "combustion",
+      "prompt": "将 0.562 g 碳在弹式量热计中于氧气里燃烧，生成二氧化碳。假设反应物和产物都处于标准状态条件，并且放出的热量与石墨的燃烧焓成正比。量热计的温度从 26.74 °C 升高到 27.93 °C。量热计及其内容物的热容是多少？",
+      "answer": {
+        "type": "number",
+        "value": 15.5,
+        "unit": "kJ/°C",
+        "generated_by": "source",
+        "solution": "15.5 kJ/°C"
+      }
+    },
+    {
+      "id": "e9",
+      "source_id": "fs-idp140766896",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "thermochemical-equations",
+      "prompt": "家庭可以通过让热水流过散热器来供暖。多大质量的水从 95.0 °C 冷却到 35.0 °C 时，所提供的热量与 100 g 水蒸气从 110 °C 冷却到 100 °C 时所提供的热量相同？",
+      "answer": {
+        "type": "number",
+        "value": 7.43,
+        "unit": "g",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e10",
+      "source_id": "fs-idp104124592",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "formation",
+      "prompt": "表 5.2 该表中的哪些燃烧焓同时也是标准生成焓？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "碳、氢、镁和硫的燃烧焓同时也是标准生成焓，分别是 $\\text{CO}_{2}(g)$、$\\text{H}_{2}\\text{O}(l)$、$\\text{MgO}(s)$ 和 $\\text{SO}_{2}(g)$ 的标准生成焓。标准生成焓 $\\kdHf$ 是由处于标准状态的单质生成 1 摩尔单一化合物的焓变。这四个燃烧反应的反应物都只是处于标准状态的单质，包括固态单质和 $\\text{O}_{2}(g)$，并且恰好生成 1 摩尔一种化合物；例如，$\\text{C}(s)+\\text{O}_{2}(g)\\;\\longrightarrow\\;\\text{CO}_{2}(g)$ 给出 $\\kdHf=\\kdHc=-393.5\\;\\text{kJ/mol}$。一氧化碳的燃烧从化合物出发，而甲烷、乙炔、乙醇、甲醇和异辛烷的燃烧从化合物出发并生成两种产物，所以这些数值不是生成焓。"
+      }
+    },
+    {
+      "id": "e11",
+      "source_id": "fs-idp165421856",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "formation",
+      "prompt": "H<sub>2</sub>O(<em>g</em>) 的标准生成焓与反应 ${\\text{2H}}_{2}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{H}}_{2}\\text{O}(g)$ 的 Δ<em>H</em>° 是否不同？",
+      "answer": {
+        "type": "open",
+        "solution": "是的。",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e12",
+      "source_id": "fs-idp161282368",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "formation",
+      "prompt": "在标准状态条件下，恰好 1 摩尔锰 Mn 燃烧生成 Mn<sub>3</sub>O<sub>4</sub>(<em>s</em>) 时，将释放多少千焦热量？",
+      "answer": {
+        "type": "number",
+        "value": 459.6,
+        "unit": "kJ",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e13",
+      "source_id": "fs-idp184316112",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "hess-law",
+      "prompt": "硝酸水溶液的工业生产中依次发生下列一系列反应：<br>$4{\\text{NH}}_{3}(g)+5{\\text{O}}_{2}(g)\\;\\longrightarrow \\;4\\text{NO}(g)+6{\\text{H}}_{2}\\text{O}(l)\\hspace{3em}\\text{Δ}\\text{H}=−907\\;\\text{kJ}$<br>$2\\text{NO}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{NO}}_{2}(g)\\hspace{3em}\\text{Δ}\\text{H}=−113\\;\\text{kJ}$<br>$3{\\text{NO}}_{2}+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;2{\\text{HNO}}_{3}(aq)+\\text{NO}(g)\\hspace{3em}\\text{Δ}\\text{H}=−139\\;\\text{kJ}$<br>确定用这一方法生产 1 摩尔硝酸水溶液的总焓变。净反应的联产物包括水和一氧化氮。",
+      "answer": {
+        "type": "number",
+        "value": -494,
+        "unit": "kJ/mol",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e14",
+      "source_id": "fs-idp154782528",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "hess-law",
+      "prompt": "石墨和金刚石都能燃烧。<br>$\\text{C}(s,\\;\\text{金刚石})+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{CO}}_{2}(g)$<br>石墨转化为金刚石：<br>$\\text{C}(s,\\;\\text{石墨})\\;\\longrightarrow \\;\\text{C}(s,\\;\\text{金刚石})\\hspace{3em}\\text{Δ}H\\text{°}=1.90\\;\\text{kJ}$<br>石墨的燃烧和金刚石的燃烧，哪一个产生的热量更多？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "金刚石的燃烧产生的热量更多，每摩尔多 1.90 kJ。金刚石的焓比石墨高 1.90 kJ，而两者燃烧后得到同样的产物 $\\text{CO}_{2}(g)$。根据盖斯定律，金刚石燃烧相当于先把它转化为石墨，再燃烧石墨：$\\text{C}(s,\\;\\text{金刚石})\\;\\longrightarrow\\;\\text{C}(s,\\;\\text{石墨})$ 的 $\\kdHo=-1.90\\;\\text{kJ}$，而 $\\text{C}(s,\\;\\text{石墨})+\\text{O}_{2}(g)\\;\\longrightarrow\\;\\text{CO}_{2}(g)$ 的 $\\kdHo=-393.5\\;\\text{kJ}$。二者相加，得金刚石燃烧的 $\\kdHo=-395.4\\;\\text{kJ}$，而石墨燃烧的为 $-393.5\\;\\text{kJ}$。"
+      }
+    },
+    {
+      "id": "e15",
+      "source_id": "fs-idp161090368",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "formation-enthalpies",
+      "prompt": "根据<a href=\"/chemistry-2e/sheets/thermo/\">附录 G</a> 中的摩尔生成热，确定蒸发 1 摩尔水需要多少热量：${\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;{\\text{H}}_{2}\\text{O}(g)$",
+      "answer": {
+        "type": "number",
+        "value": 44.01,
+        "unit": "kJ/mol",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e16",
+      "source_id": "fs-idp157714624",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "hess-law",
+      "prompt": "哪一个产生的热量更多？<br>$\\text{Os}(s)\\;+\\;2{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{OsO}}_{4}(s)$<br>还是<br>$\\text{Os}(s)\\;+\\;2{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{OsO}}_{4}(g)$<br>对于相变 ${\\text{OsO}}_{4}(s)\\;\\longrightarrow \\;{\\text{OsO}}_{4}(g)\\hspace{3em}\\text{Δ}\\text{H}=56.4\\;\\text{kJ}$",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "生成固态 $\\text{OsO}_{4}(s)$ 的反应产生的热量更多，每摩尔多 56.4 kJ。两个反应的起始反应物相同，都是 $\\text{Os}(s)$ 和 $2\\text{O}_{2}(g)$。根据盖斯定律，生成气体相当于先生成固体再把它转化为气体，所以生成 $\\text{OsO}_{4}(g)$ 的 $\\kdH$ 等于生成 $\\text{OsO}_{4}(s)$ 的 $\\kdH$ 加上 56.4 kJ。升华吸收 56.4 kJ，所以气态产物的焓比固态高 56.4 kJ，生成气体的放热比生成固体少 56.4 kJ。"
+      }
+    },
+    {
+      "id": "e17",
+      "source_id": "fs-idp155265632",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "hess-law",
+      "prompt": "计算下述过程的 $\\text{Δ}H\\text{°}$<br>$\\text{Sb}(s)+\\;\\frac{5}{2}{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{SbCl}}_{5}(s)$<br>根据以下信息：<br>$\\begin{array}{l}\\text{Sb}(s)+\\;\\frac{3}{2}{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{SbCl}}_{3}(s)\\hspace{3em}\\text{Δ}H\\text{°}=−314\\;\\text{kJ} \\\\ {\\text{SbCl}}_{3}(s)+{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{SbCl}}_{5}(s)\\hspace{3em}\\text{Δ}H\\text{°}=−80\\;\\text{kJ}\\end{array}$",
+      "answer": {
+        "type": "number",
+        "value": -394,
+        "unit": "kJ",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e18",
+      "source_id": "fs-idp128497376",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "hess-law",
+      "prompt": "计算过程 ${\\text{Hg}}_{2}{\\text{Cl}}_{2}(s)\\;\\longrightarrow \\;2\\text{Hg}(l)+{\\text{Cl}}_{2}(g)$ 的 Δ<em>H</em><br>根据以下信息：<br>$\\begin{array}{l}\\text{Hg}(l)+{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{HgCl}}_{2}(s)\\hspace{3em}\\text{Δ}H=−224\\;\\text{kJ} \\\\ \\text{Hg}(l)+{\\text{HgCl}}_{2}(s)\\;\\longrightarrow \\;{\\text{Hg}}_{2}{\\text{Cl}}_{2}(s)\\hspace{3em}\\text{Δ}H=−41.2\\;\\text{kJ}\\end{array}$",
+      "answer": {
+        "type": "number",
+        "value": 265,
+        "unit": "kJ",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e19",
+      "source_id": "fs-idp28899760",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "hess-law",
+      "prompt": "根据下列数据计算 NO(<em>g</em>) 的标准摩尔生成焓：<br>$\\begin{array}{l}{\\text{N}}_{2}(g)+2{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{NO}}_{2}(g)\\hspace{3em}\\text{Δ}H\\text{°}=66.4\\;\\text{kJ} \\\\ \\text{2NO}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{NO}}_{2}(g)\\hspace{3em}\\text{Δ}H\\text{°}=−114.1\\;\\text{kJ}\\end{array}$",
+      "answer": {
+        "type": "number",
+        "value": 90.3,
+        "unit": "kJ/mol",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e20",
+      "source_id": "fs-idp126940864",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "formation-enthalpies",
+      "prompt": "利用<a href=\"/chemistry-2e/sheets/thermo/\">附录 G</a> 中的数据，计算下列各反应的标准焓变：<br>（a）$\\text{Si}(s)+2{\\text{F}}_{2}(g)\\;\\longrightarrow \\;{\\text{SiF}}_{4}(g)$<br>（b）$2\\text{C}(s)+2{\\text{H}}_{2}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{CH}}_{3}{\\text{CO}}_{2}\\text{H}(l)$<br>（c）${\\text{CH}}_{4}(g)+{\\text{N}}_{2}(g)\\;\\longrightarrow \\;\\text{HCN}(g)+{\\text{NH}}_{3}(g)\\text{;}$<br>（d）${\\text{CS}}_{2}(g)+3{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{CCl}}_{4}(g)+{\\text{S}}_{2}{\\text{Cl}}_{2}(g)$",
+      "answer": {
+        "type": "multi",
+        "parts": [
+          {
+            "part": "(a)",
+            "value": -1615.0,
+            "unit": "kJ/mol"
+          },
+          {
+            "part": "(b)",
+            "value": -484.3,
+            "unit": "kJ/mol"
+          },
+          {
+            "part": "(c)",
+            "value": 164.2,
+            "unit": "kJ"
+          },
+          {
+            "part": "(d)",
+            "value": -232.1,
+            "unit": "kJ"
+          }
+        ],
+        "solution": "（a）−1615.0 kJ mol<sup>−1</sup>；（b）−484.3 kJ mol<sup>−1</sup>；（c）164.2 kJ；（d）−232.1 kJ",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e21",
+      "source_id": "fs-idp184430560",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "formation-enthalpies",
+      "prompt": "过氧化氢 H<sub>2</sub>O<sub>2</sub> 的分解曾被用来为各种航天器的控制喷管提供推力。利用<a href=\"/chemistry-2e/sheets/thermo/\">附录 G</a> 中的数据，确定在标准条件下恰好 1 摩尔 H<sub>2</sub>O<sub>2</sub> 分解会产生多少热量。<br>$2{\\text{H}}_{2}{\\text{O}}_{2}(l)\\;\\longrightarrow \\;2{\\text{H}}_{2}\\text{O}(g)+{\\text{O}}_{2}(g)$",
+      "answer": {
+        "type": "number",
+        "value": -54.04,
+        "unit": "kJ/mol",
+        "generated_by": "source",
+        "solution": "−54.04 kJ mol<sup>−1</sup>"
+      }
+    },
+    {
+      "id": "e22",
+      "source_id": "fs-idp86137744",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "formation-enthalpies",
+      "prompt": "计算丁烷 C<sub>4</sub>H<sub>10</sub>(<em>g</em>) 燃烧生成 H<sub>2</sub>O(<em>g</em>) 和 CO<sub>2</sub>(<em>g</em>) 时的燃烧焓。丁烷的生成焓为 −126 kJ/mol。",
+      "answer": {
+        "type": "number",
+        "value": -2660,
+        "unit": "kJ/mol",
+        "generated_by": "source",
+        "solution": "−2660 kJ mol<sup>−1</sup>"
+      }
+    },
+    {
+      "id": "e23",
+      "source_id": "fs-idp214849200",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "formation-enthalpies",
+      "prompt": "白色颜料 TiO<sub>2</sub> 是由四氯化钛 TiCl<sub>4</sub> 与气相中的水蒸气反应制得的：${\\text{TiCl}}_{4}(g)+2{\\text{H}}_{2}\\text{O}(g)\\;\\longrightarrow \\;{\\text{TiO}}_{2}(s)+4\\text{HCl}(g).$<br>在标准状态条件下，生成恰好 1 摩尔 TiO<sub>2</sub>(<em>s</em>) 会放出多少热量？",
+      "answer": {
+        "type": "number",
+        "value": -66.4,
+        "unit": "kJ",
+        "generated_by": "source",
+        "solution": "–66.4 kJ"
+      }
+    },
+    {
+      "id": "e24",
+      "source_id": "fs-idp160735680",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "formation-enthalpies",
+      "prompt": "在汽车发展的早期，夜间照明是靠燃烧乙炔 C<sub>2</sub>H<sub>2</sub> 提供的。尽管乙炔已不再用作汽车前灯，但一些洞穴探险者仍用它作为光源。乙炔（过去）是在灯中由水与碳化钙 CaC<sub>2</sub> 反应制备的：<br>${\\text{CaC}}_{2}(s)+2{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{Ca}{(\\text{OH})}_{2}(s)+{\\text{C}}_{2}{\\text{H}}_{2}(g).$<br>计算该反应的标准焓变。CaC<sub>2</sub> 的 $\\text{Δ}{H}_{\\text{f}}^{{}^{\\circ}}$ 为 −15.14 kcal/mol。",
+      "answer": {
+        "type": "number",
+        "value": -122.8,
+        "unit": "kJ",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e25",
+      "source_id": "fs-idp208963152",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "combustion",
+      "prompt": "硬煤的燃烧焓平均为 −35 kJ/g，汽油的为 1.28 $\\times$ 10<sup>5</sup> kJ/gal。多少千克硬煤提供的热量，与 1.0 加仑汽油所能提供的热量相同？假设汽油的密度为 0.692 g/mL（与异辛烷的密度相同）。",
+      "answer": {
+        "type": "number",
+        "value": 3.7,
+        "unit": "kg",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e26",
+      "source_id": "fs-idp181957264",
+      "kind": "exercise",
+      "bloom": "Evaluate",
+      "place": {
+        "at": "end"
+      },
+      "cite": "formation-enthalpies",
+      "prompt": "在与氧反应、并曾被考虑用作潜在火箭燃料的物质中，有乙硼烷 [B<sub>2</sub>H<sub>6</sub>，生成 B<sub>2</sub>O<sub>3</sub>(<em>s</em>) 和 H<sub>2</sub>O(<em>g</em>)]、甲烷 [CH<sub>4</sub>，生成 CO<sub>2</sub>(<em>g</em>) 和 H<sub>2</sub>O(<em>g</em>)] 和肼 [N<sub>2</sub>H<sub>4</sub>，生成 N<sub>2</sub>(<em>g</em>) 和 H<sub>2</sub>O(<em>g</em>)]。根据每 1.00 g 各物质与氧反应所放出的热量，这些化合物中哪一种最有可能用作火箭燃料？B<sub>2</sub>H<sub>6</sub>(<em>g</em>)、CH<sub>4</sub>(<em>g</em>) 和 N<sub>2</sub>H<sub>4</sub>(<em>l</em>) 的 $\\text{Δ}{H}_{\\text{f}}^{{}^{\\circ}}$ 可在<a href=\"/chemistry-2e/sheets/thermo/\">附录 G</a> 中找到。",
+      "answer": {
+        "type": "open",
+        "solution": "假设最好的火箭燃料是放热最多的那一种，则 B<sub>2</sub>H<sub>6</sub> 是首选。",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e27",
+      "source_id": "fs-idp124901952",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "formation-enthalpies",
+      "prompt": "乙烯 C<sub>2</sub>H<sub>4</sub> 是石油分馏的副产物，在商业上产量最大的 50 种化合物中居第四位。约 80% 的合成乙醇是由乙烯在合适催化剂存在下与水反应制得的。${\\text{C}}_{2}{\\text{H}}_{4}(g)+{\\text{H}}_{2}\\text{O}(g)\\;\\longrightarrow \\;{\\text{C}}_{2}{\\text{H}}_{5}\\text{OH}(l)$<br>利用<a href=\"/chemistry-2e/sheets/thermo/\">附录 G</a> 表中的数据，计算该反应的 Δ<em>H</em>°。",
+      "answer": {
+        "type": "number",
+        "value": -88.2,
+        "unit": "kJ",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e28",
+      "source_id": "fs-idp211817568",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "formation-enthalpies",
+      "prompt": "丙烷 C<sub>3</sub>H<sub>8</sub> 是一种常用作燃料的烃。<br>（a）写出丙烷气体完全燃烧的配平的化学方程式。<br>（b）计算在 25 °C 和 1.00 个标准大气压下完全燃烧 25.0 克丙烷所需的空气体积。假设空气中 O<sub>2</sub> 的体积分数为 21.0%。（提示：我们将在后面关于气体的一章中学习如何进行这一计算——现在请使用这一信息：25 °C 和 1.00 atm 下 1.00 L 空气含有 0.275 g O<sub>2</sub>。）<br>（c）丙烷的燃烧热为 −2,219.2 kJ/mol。已知 H<sub>2</sub>O(<em>l</em>) 的 $\\text{Δ}{H}_{\\text{f}}^{{}^{\\circ}}$ = −285.8 kJ/mol，CO<sub>2</sub>(<em>g</em>) 的 $\\text{Δ}{H}_{\\text{f}}^{{}^{\\circ}}$ = −393.5 kJ/mol，计算丙烷的生成热 $\\text{Δ}{H}_{\\text{f}}^{{}^{\\circ}}$。<br>（d）假设燃烧 25.0 克丙烷所放出的热量全部传给 4.00 千克水，计算水的温度升高多少。",
+      "answer": {
+        "type": "open",
+        "solution": "（a）${\\text{C}}_{3}{\\text{H}}_{8}(g)+5{\\text{O}}_{2}(g)\\;\\longrightarrow \\;3{\\text{CO}}_{2}(g)+4{\\text{H}}_{2}\\text{O}(l);$ （b）330 L 空气；（c）−104.5 kJ mol<sup>−1</sup>；（d）75.4 °C",
+        "generated_by": "source"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "thermochemical-equations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "identify-limiting-reactant",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "thermochemical-equations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "mass-mole-conversion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "enthalpy-of-combustion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "mass-mole-conversion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl4",
+      "concept": "standard-enthalpy-of-formation",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl4",
+      "concept": "thermochemical-equations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl5",
+      "concept": "standard-enthalpy-of-formation",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl5",
+      "concept": "balanced-equation",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl6",
+      "concept": "hess-law",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl7",
+      "concept": "hess-law",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl8",
+      "concept": "enthalpy-from-formation-enthalpies",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl8",
+      "concept": "enthalpy-of-combustion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e1",
+      "concept": "thermochemical-equations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e2",
+      "concept": "thermochemical-equations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e2",
+      "concept": "coffee-cup-calorimetry",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e3",
+      "concept": "thermochemical-equations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e3",
+      "concept": "coffee-cup-calorimetry",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e4",
+      "concept": "enthalpy-of-combustion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e4",
+      "concept": "standard-enthalpy-of-formation",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e5",
+      "concept": "enthalpy-of-combustion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e6",
+      "concept": "enthalpy-of-combustion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e7",
+      "concept": "enthalpy-of-combustion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e7",
+      "concept": "mass-mole-conversion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e8",
+      "concept": "enthalpy-of-combustion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e8",
+      "concept": "bomb-calorimetry",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e9",
+      "concept": "heat-specific-heat-relation",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e10",
+      "concept": "standard-enthalpy-of-formation",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e10",
+      "concept": "enthalpy-of-combustion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e11",
+      "concept": "standard-enthalpy-of-formation",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e11",
+      "concept": "thermochemical-equations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e12",
+      "concept": "standard-enthalpy-of-formation",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e12",
+      "concept": "thermochemical-equations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e13",
+      "concept": "hess-law",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e14",
+      "concept": "hess-law",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e14",
+      "concept": "state-function",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e15",
+      "concept": "enthalpy-from-formation-enthalpies",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e16",
+      "concept": "hess-law",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e16",
+      "concept": "thermochemical-equations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e17",
+      "concept": "hess-law",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e18",
+      "concept": "hess-law",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e19",
+      "concept": "hess-law",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e19",
+      "concept": "standard-enthalpy-of-formation",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e20",
+      "concept": "enthalpy-from-formation-enthalpies",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e21",
+      "concept": "enthalpy-from-formation-enthalpies",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e22",
+      "concept": "enthalpy-from-formation-enthalpies",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e22",
+      "concept": "enthalpy-of-combustion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e22",
+      "concept": "balanced-equation",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e23",
+      "concept": "enthalpy-from-formation-enthalpies",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e24",
+      "concept": "enthalpy-from-formation-enthalpies",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e24",
+      "concept": "energy-units",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e25",
+      "concept": "enthalpy-of-combustion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e25",
+      "concept": "convert-units",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e26",
+      "concept": "enthalpy-from-formation-enthalpies",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e26",
+      "concept": "enthalpy-of-combustion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e27",
+      "concept": "enthalpy-from-formation-enthalpies",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e28",
+      "concept": "enthalpy-from-formation-enthalpies",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e28",
+      "concept": "enthalpy-of-combustion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e28",
+      "concept": "mass-stoichiometry",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e28",
+      "concept": "heat-specific-heat-relation",
+      "weights_by": "ai"
+    }
+  ],
+  "footnotes": [
+    {
+      "id": "c-chlorate",
+      "kind": "correction",
+      "html": "书中写的是高氯酸盐。KClO<sub>3</sub> 是氯酸钾；高氯酸盐是 ClO<sub>4</sub><sup>−</sup>。"
+    },
+    {
+      "id": "c-isooctane",
+      "kind": "correction",
+      "html": "书中说表 5.2 给出的是 −5460 kJ。表 5.2 中异辛烷印的是 −5465.5 kJ/mol；−5460 kJ 是该值修约后的结果。"
+    },
+    {
+      "id": "c-hno3",
+      "kind": "correction",
+      "html": "第一行取 HNO<sub>3</sub>(<em>aq</em>) 的 Δ<em>H</em><sub>f</sub>° 为 −207.4 kJ/mol，第二行则用 −206.64 kJ/mol 计算。若用 −207.4 kJ/mol，总和为 −138.3 kJ，与下面求得的 −138.4 kJ 一致。"
+    }
+  ],
+  "derivations": [
+    {
+      "id": "enthalpy-change-heat",
+      "what": "恒压下的焓变",
+      "source": "化学（第2版），5.3 焓",
+      "nodes": [
+        {
+          "assumes": [
+            {
+              "text": "该过程在恒定压强下进行。",
+              "src": "5.3"
+            },
+            {
+              "tex": "\\kH = \\kU + \\kP\\kV",
+              "src": "5.3"
+            },
+            {
+              "tex": "\\kP\\kdV = -\\kwork",
+              "src": "5.3"
+            },
+            {
+              "tex": "\\kdU = \\kq + \\kwork",
+              "src": "5.3"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{H}{\\kdH} = \\mk{U}{\\kdU} + \\mk{PV}{\\kP\\kdV}",
+            "src": "5.3",
+            "uses": [
+              0,
+              1
+            ],
+            "why": "$\\kH = \\kU + \\kP\\kV$ 的变化等于 $\\kU$ 的变化加上 $\\kP\\kV$ 的变化，而在恒压下 $\\kP\\kV$ 的变化是 $\\kP\\kdV$。"
+          },
+          "steps": [
+            {
+              "tex": "\\mk{H}{\\kdH} = \\mk{U}{\\kdU} - \\mk{PV}{\\kwork}",
+              "uses": [
+                2
+              ]
+            },
+            {
+              "tex": "\\mk{H}{\\kdH} = \\mk{U}{\\kqp + \\kwork} - \\mk{PV}{\\kwork}",
+              "uses": [
+                3,
+                0
+              ],
+              "cap": "在恒压下，该过程的热量 $\\kq$ 就是热量 $\\kqp$。"
+            },
+            {
+              "tex": "\\mk{H}{\\kdH} = \\mk{U}{\\kqp}",
+              "uses": []
+            }
+          ],
+          "src": "5.3"
+        }
+      ]
+    },
+    {
+      "id": "reaction-enthalpy-from-formation",
+      "what": "由生成焓求反应焓变",
+      "source": "化学（第2版），5.3 焓",
+      "nodes": [
+        {
+          "assumes": [
+            {
+              "text": "如果一个过程可以写成若干分步过程之和，则总过程的焓变等于各分步的焓变之和。",
+              "src": "5.3，盖斯定律"
+            },
+            {
+              "text": "任何反应都可以写成：（i）把反应物分解为其组成单质，接着（ii）把这些单质重新化合得到产物。",
+              "src": "5.3"
+            },
+            {
+              "text": "标准生成焓 $\\kdHf$ 是由处于最稳定状态的单质恰好生成 1 摩尔纯净物的焓变。",
+              "src": "5.3"
+            },
+            {
+              "text": "如果化学方程式的方向反过来，其 $\\kdH$ 的正负号随之改变。",
+              "src": "5.3"
+            },
+            {
+              "text": "如果化学方程式的系数乘以某个因子，则焓变必须乘以同一个因子。",
+              "src": "5.3"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{rx}{{\\kdH}_{\\text{反应}}^{{}^{\\circ}}} = \\mk{i}{\\sum \\kdHo_{\\text{分解}}} + \\mk{ii}{\\sum \\kdHo_{\\text{生成}}}",
+            "src": "5.3",
+            "uses": [
+              1,
+              0
+            ]
+          },
+          "steps": [
+            {
+              "tex": "\\mk{rx}{{\\kdH}_{\\text{反应}}^{{}^{\\circ}}} = \\mk{i}{\\sum n\\;\\times\\;\\left(-\\kdHf(\\text{反应物})\\right)} + \\mk{ii}{\\sum \\kdHo_{\\text{生成}}}",
+              "uses": [
+                2,
+                3,
+                4
+              ],
+              "cap": "把 $n$ 摩尔反应物分解为其单质，就是其生成反应反转后再乘以 $n$。"
+            },
+            {
+              "tex": "\\mk{rx}{{\\kdH}_{\\text{反应}}^{{}^{\\circ}}} = \\mk{i}{\\sum n\\;\\times\\;\\left(-\\kdHf(\\text{反应物})\\right)} + \\mk{ii}{\\sum n\\;\\times\\;\\kdHf(\\text{产物})}",
+              "uses": [
+                2,
+                4
+              ],
+              "cap": "由单质生成 $n$ 摩尔产物，就是其生成反应乘以 $n$。"
+            },
+            {
+              "tex": "\\mk{rx}{{\\kdH}_{\\text{反应}}^{{}^{\\circ}}} = \\mk{ii}{\\sum n\\;\\times\\;\\kdHf(\\text{产物})} - \\mk{i}{\\sum n\\;\\times\\;\\kdHf(\\text{反应物})}",
+              "uses": []
+            }
+          ],
+          "src": "5.3"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,427 @@
+{
+  "id": "6",
+  "dir": "ch06",
+  "title": "元素的电子结构与周期性质",
+  "intro": {
+    "module": "m68728",
+    "slug": "6-introduction"
+  },
+  "sections": [
+    {
+      "id": "6.1",
+      "module": "m68729",
+      "title": "电磁能",
+      "slug": "6-1-electromagnetic-energy"
+    },
+    {
+      "id": "6.2",
+      "module": "m68732",
+      "title": "玻尔模型",
+      "slug": "6-2-the-bohr-model"
+    },
+    {
+      "id": "6.3",
+      "module": "m68733",
+      "title": "量子理论的发展",
+      "slug": "6-3-development-of-quantum-theory"
+    },
+    {
+      "id": "6.4",
+      "module": "m68734",
+      "title": "原子的电子结构（电子构型）",
+      "slug": "6-4-electronic-structure-of-atoms-electron-configurations"
+    },
+    {
+      "id": "6.5",
+      "module": "m68735",
+      "title": "元素性质的周期性变化",
+      "slug": "6-5-periodic-variations-in-element-properties"
+    }
+  ],
+  "variables": [
+    {
+      "sym": "λ",
+      "concept": "wavelength",
+      "meaning": "波的波长，即两个相邻波峰或波谷之间的距离",
+      "unit": "m",
+      "section": "6.1",
+      "anchor": "6.1-wave-speed"
+    },
+    {
+      "sym": "ν",
+      "concept": "frequency",
+      "meaning": "波的频率，即单位时间内通过空间中某一指定点的波的周期数",
+      "unit": "Hz",
+      "section": "6.1",
+      "anchor": "6.1-wave-speed"
+    },
+    {
+      "sym": "c",
+      "concept": "wave-speed-relation",
+      "meaning": "真空中的光速，2.998 × 10⁸ m/s，等于波长与频率之积",
+      "unit": "m/s",
+      "section": "6.1",
+      "anchor": "6.1-wave-speed",
+      "type": "velocity"
+    },
+    {
+      "sym": "E",
+      "concept": "photon-energy",
+      "type": "energy",
+      "meaning": "一个光子的能量，或普朗克处理中量子化的振动能量",
+      "unit": "J",
+      "section": "6.1",
+      "anchor": "6.1-blackbody"
+    },
+    {
+      "sym": "h",
+      "concept": "blackbody-radiation",
+      "meaning": "普朗克常量，6.626 × 10⁻³⁴ J s",
+      "unit": "J s",
+      "section": "6.1",
+      "anchor": "6.1-blackbody"
+    },
+    {
+      "sym": "n_quantum",
+      "concept": "quantization",
+      "meaning": "整数：驻波所含半波长的个数，或普朗克振动能量中能量子的个数",
+      "section": "6.1",
+      "anchor": "6.1-blackbody"
+    },
+    {
+      "sym": "λ_max",
+      "concept": "blackbody-radiation",
+      "type": "wavelength",
+      "meaning": "黑体曲线取极大值处的波长",
+      "unit": "m",
+      "section": "6.1",
+      "anchor": "6.1-blackbody"
+    },
+    {
+      "sym": "T",
+      "concept": "temperature",
+      "meaning": "黑体的温度，其分布所取决于的唯一参数",
+      "unit": "K",
+      "section": "6.1",
+      "anchor": "6.1-blackbody"
+    },
+    {
+      "sym": "R_inf",
+      "concept": "rydberg-equation",
+      "meaning": "里德伯常量，1.097 × 10⁷ m⁻¹",
+      "unit": "m⁻¹",
+      "section": "6.1",
+      "anchor": "6.1-rydberg"
+    },
+    {
+      "sym": "k",
+      "concept": "rydberg-equation",
+      "meaning": "巴耳末氢可见光谱线经验公式中的常数",
+      "unit": "m⁻¹",
+      "section": "6.1",
+      "anchor": "6.1-rydberg"
+    },
+    {
+      "sym": "E_n",
+      "concept": "bohr-energy-levels",
+      "meaning": "量子数为 n 的玻尔轨道上电子的能量，从电离极限算起，因而总是负值",
+      "unit": "J",
+      "section": "6.2",
+      "anchor": "6.2-stationary-states"
+    },
+    {
+      "sym": "ΔE",
+      "concept": "photon-emission-absorption",
+      "type": "energy",
+      "meaning": "电子所跃迁的两个轨道的能量之差，即所发射或吸收的光子的能量",
+      "unit": "J",
+      "section": "6.2",
+      "anchor": "6.2-stationary-states"
+    },
+    {
+      "sym": "n_quantum",
+      "concept": "quantum-number",
+      "meaning": "玻尔轨道的量子数，一个正整数，标记一条允许的轨道，在两个整数之间不取任何值",
+      "redefines": true,
+      "section": "6.2",
+      "anchor": "6.2-stationary-states"
+    },
+    {
+      "sym": "Z",
+      "concept": "atomic-number-and-mass-number",
+      "meaning": "核电荷，氢为 +1，He⁺ 为 +2，Li²⁺ 为 +3，依此类推",
+      "section": "6.2",
+      "anchor": "6.2-hydrogen-like"
+    },
+    {
+      "sym": "k",
+      "concept": "bohr-energy-levels",
+      "meaning": "玻尔电子能量公式中的常数，由电子质量、电子电荷和普朗克常量等基本常量构成，值为 2.179 × 10⁻¹⁸ J",
+      "redefines": true,
+      "unit": "J",
+      "section": "6.2",
+      "anchor": "6.2-rydberg-recovered"
+    },
+    {
+      "sym": "r",
+      "concept": "bohr-orbit-radius",
+      "meaning": "电子允许在其上运动的圆形轨道的半径",
+      "unit": "m",
+      "section": "6.2",
+      "anchor": "6.2-orbit-radius"
+    },
+    {
+      "sym": "a_0",
+      "concept": "bohr-orbit-radius",
+      "meaning": "玻尔半径，氢基态轨道的半径，值为 5.292 × 10⁻¹¹ m",
+      "unit": "m",
+      "section": "6.2",
+      "anchor": "6.2-orbit-radius"
+    },
+    {
+      "sym": "E_i",
+      "concept": "bohr-energy-levels",
+      "meaning": "电子出发时所在轨道的能量",
+      "unit": "J",
+      "section": "6.2",
+      "anchor": "6.2-stationary-states"
+    },
+    {
+      "sym": "E_f",
+      "concept": "bohr-energy-levels",
+      "meaning": "电子到达时所在轨道的能量",
+      "unit": "J",
+      "section": "6.2",
+      "anchor": "6.2-stationary-states"
+    },
+    {
+      "sym": "λ",
+      "concept": "wavelength",
+      "meaning": "电子在两个轨道之间跃迁时所发射或吸收的光子的波长",
+      "unit": "m",
+      "section": "6.2",
+      "anchor": "6.2-stationary-states"
+    },
+    {
+      "sym": "ν",
+      "concept": "frequency",
+      "meaning": "该光子的频率，其能量与之成正比",
+      "unit": "Hz",
+      "section": "6.2",
+      "anchor": "6.2-stationary-states"
+    },
+    {
+      "sym": "h",
+      "concept": "blackbody-radiation",
+      "meaning": "普朗克常量，6.626 × 10⁻³⁴ J s，把光子的能量与频率联系起来",
+      "unit": "J s",
+      "section": "6.2",
+      "anchor": "6.2-stationary-states"
+    },
+    {
+      "sym": "c",
+      "concept": "wave-speed-relation",
+      "meaning": "真空中的光速，2.998 × 10⁸ m/s",
+      "unit": "m/s",
+      "section": "6.2",
+      "anchor": "6.2-stationary-states",
+      "type": "velocity"
+    },
+    {
+      "sym": "R_inf",
+      "concept": "rydberg-equation",
+      "meaning": "里德伯常量，玻尔模型把它还原为商 k/hc",
+      "unit": "m⁻¹",
+      "section": "6.2",
+      "anchor": "6.2-rydberg-recovered"
+    },
+    {
+      "sym": "λ",
+      "concept": "de-broglie-wavelength",
+      "type": "wavelength",
+      "meaning": "质量为 m、速度为 v 的粒子的德布罗意波长",
+      "unit": "m",
+      "section": "6.3",
+      "anchor": "6.3-de-broglie"
+    },
+    {
+      "sym": "m",
+      "concept": "mass",
+      "meaning": "粒子的质量",
+      "unit": "kg",
+      "section": "6.3",
+      "anchor": "6.3-de-broglie"
+    },
+    {
+      "sym": "v",
+      "concept": "velocity",
+      "meaning": "粒子的速度，不要与频率 ν 混淆",
+      "unit": "m/s",
+      "section": "6.3",
+      "anchor": "6.3-de-broglie"
+    },
+    {
+      "sym": "p_momentum",
+      "concept": "momentum",
+      "meaning": "粒子的线动量，即其质量与速度的乘积",
+      "unit": "kg m/s",
+      "section": "6.3",
+      "anchor": "6.3-de-broglie"
+    },
+    {
+      "sym": "r",
+      "concept": "bohr-orbit-radius",
+      "meaning": "电子波必须与之相合的圆形轨道的半径",
+      "unit": "m",
+      "section": "6.3",
+      "anchor": "6.3-de-broglie"
+    },
+    {
+      "sym": "Δx",
+      "concept": "heisenberg-uncertainty",
+      "type": "length",
+      "meaning": "粒子位置的不确定度",
+      "unit": "m",
+      "section": "6.3",
+      "anchor": "6.3-uncertainty"
+    },
+    {
+      "sym": "Δp_x",
+      "concept": "heisenberg-uncertainty",
+      "type": "momentum",
+      "meaning": "粒子沿 x 方向动量的不确定度",
+      "unit": "kg m/s",
+      "section": "6.3",
+      "anchor": "6.3-uncertainty"
+    },
+    {
+      "sym": "hbar",
+      "concept": "blackbody-radiation",
+      "meaning": "普朗克常量除以 2π，1.055 × 10⁻³⁴ J s",
+      "unit": "J s",
+      "section": "6.3",
+      "anchor": "6.3-uncertainty"
+    },
+    {
+      "sym": "ψ",
+      "concept": "wavefunction",
+      "meaning": "电子的波函数，其模的平方给出在空间某点附近找到电子的概率",
+      "section": "6.3",
+      "anchor": "6.3-quantum-model"
+    },
+    {
+      "sym": "E",
+      "concept": "energy-and-work",
+      "meaning": "薛定谔方程中量子粒子的总能量",
+      "unit": "J",
+      "section": "6.3",
+      "anchor": "6.3-quantum-model"
+    },
+    {
+      "sym": "ΔE",
+      "concept": "photon-emission-absorption",
+      "type": "energy",
+      "meaning": "电子跃迁的能量变化，吸收光子时为正，发射光子时为负",
+      "unit": "J",
+      "section": "6.3",
+      "anchor": "6.3-shells"
+    },
+    {
+      "sym": "n_quantum",
+      "concept": "principal-quantum-number-shells",
+      "meaning": "主量子数，1, 2, 3, …，标明电子层",
+      "section": "6.3",
+      "anchor": "6.3-shells"
+    },
+    {
+      "sym": "n_i",
+      "concept": "principal-quantum-number-shells",
+      "meaning": "初始能量状态的主量子数",
+      "section": "6.3",
+      "anchor": "6.3-shells"
+    },
+    {
+      "sym": "n_f",
+      "concept": "principal-quantum-number-shells",
+      "meaning": "最终能量状态的主量子数",
+      "section": "6.3",
+      "anchor": "6.3-shells"
+    },
+    {
+      "sym": "l_quantum",
+      "concept": "angular-momentum-quantum-number",
+      "meaning": "角量子数（副量子数、角动量量子数），取 0 到 n − 1，标明亚层和轨道的形状",
+      "section": "6.3",
+      "anchor": "6.3-subshells"
+    },
+    {
+      "sym": "m_l",
+      "concept": "magnetic-quantum-number",
+      "meaning": "磁量子数，取 −l 到 +l，给出轨道的取向",
+      "section": "6.3",
+      "anchor": "6.3-orientation"
+    },
+    {
+      "sym": "m_s",
+      "concept": "spin-quantum-number",
+      "meaning": "自旋量子数，+1/2 或 −1/2",
+      "section": "6.3",
+      "anchor": "6.3-spin"
+    },
+    {
+      "sym": "Z",
+      "concept": "atomic-number-and-mass-number",
+      "meaning": "核电荷，即原子核中的质子数",
+      "section": "6.5",
+      "anchor": "6.5-effective-nuclear-charge"
+    },
+    {
+      "sym": "Z_eff",
+      "concept": "effective-nuclear-charge",
+      "meaning": "有效核电荷，计入其他电子的屏蔽后原子核对某一电子的吸引",
+      "section": "6.5",
+      "anchor": "6.5-effective-nuclear-charge"
+    },
+    {
+      "sym": "IE",
+      "concept": "ionization-energy",
+      "meaning": "电离能，从气态原子或离子中移去一个电子所需的能量；IE₁ 对应第一个电子，IE₂ 对应第二个电子",
+      "unit": "kJ/mol",
+      "section": "6.5",
+      "anchor": "6.5-ionization-energy"
+    },
+    {
+      "sym": "EA",
+      "concept": "electron-affinity",
+      "meaning": "电子亲和能，气态原子接受一个电子时的能量变化",
+      "unit": "kJ/mol",
+      "section": "6.5",
+      "anchor": "6.5-electron-affinity"
+    },
+    {
+      "sym": "r",
+      "concept": "covalent-radius",
+      "meaning": "原子的共价半径，即由共价键连接的两个相同原子的核间距的一半",
+      "unit": "pm",
+      "section": "6.5",
+      "anchor": "6.5-covalent-radius"
+    },
+    {
+      "sym": "E",
+      "concept": "bohr-energy-levels",
+      "meaning": "玻尔轨道上电子的能量，在电离极限处为零，此时电子已完全脱离原子核",
+      "unit": "J",
+      "section": "6.2",
+      "anchor": "6.2-orbit-radius",
+      "redefines": true
+    },
+    {
+      "sym": "ν",
+      "concept": "frequency",
+      "meaning": "波的频率，记作 ν，不是速度 v",
+      "unit": "Hz",
+      "section": "6.3",
+      "anchor": "6.3-de-broglie"
+    }
+  ]
+}

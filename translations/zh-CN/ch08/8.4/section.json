@@ -1,0 +1,981 @@
+{
+ "id": "8.4",
+ "module": "m68747",
+ "chapter": "8",
+ "title": "分子轨道理论",
+ "short": "分子轨道理论",
+ "lead": "O<sub>2</sub> 的路易斯结构使每个电子都成对，然而液氧却被吸引并停留在磁铁的两极之间。分子轨道理论把各原子的原子轨道组合成遍布整个分子的分子轨道，再用电子填充这些轨道，从而求出键级、磁性行为，以及整个第二周期各轨道的<span data-concept=\"energy-and-work\">能量</span>顺序。",
+ "objectives": [
+  "概述由原子轨道推导分子轨道的基本量子力学方法",
+  "描述成键分子轨道和反键分子轨道的特征",
+  "根据分子电子构型计算键级",
+  "写出第一周期和第二周期双原子分子的分子电子构型",
+  "把这些电子构型与分子的稳定性和磁性联系起来"
+ ],
+ "summary_html": "<p>分子轨道（MO）理论用原子波函数的组合来描述分子中电子的行为。所得到的分子轨道可以延伸到分子中的所有原子上。成键分子轨道由原子波函数的同相组合形成，这些轨道中的电子使分子稳定。反键分子轨道由原子波函数的反相组合产生，这些轨道中的电子使分子的稳定性降低。沿核间轴分布的分子轨道称为 σ MO。它们可以由 <em>s</em> 轨道或头碰头取向的 <em>p</em> 轨道形成。由肩并肩取向的 <em>p</em> 轨道形成的分子轨道，其电子密度位于核间轴的两侧，称为 π 轨道。</p><p>把分子轨道理论应用于原子的价电子，我们就可以描述双原子分子的电子结构。电子填充分子轨道所遵循的规则与填充原子轨道的规则相同；洪特规则和构造原理告诉我们，能量较低的轨道先被填充，电子先分散占据再配对，每个轨道最多可容纳两个自旋相反的电子。含有未成对电子的物质是顺磁性的，会被磁场吸引，而电子全部成对的物质是抗磁性的，会被磁场排斥。能够正确预测分子的磁性，是分子轨道理论相对于路易斯结构和价键理论的一个优势。</p>",
+ "notes": "三个“学习链接”注释（一段关于顺磁性和抗磁性行为的视频、分子轨道的 Orbitron 动画，以及苯分子轨道的图示）均被略去。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案来自本书的答案表和“学习检测”的答案；没有答案的数值型习题 fs-idm138595920（由十个原子轨道得到的分子轨道数）、fs-idm131971232（给定构型的键级）和 fs-idm79754896（四组物种的键级）未收录。没有答案的概念性习题 fs-idp105434592、fs-idm41078784、fs-idm179535904、fs-idm63366704、fs-idp45731680 和 fs-idm76713856，以及判断题 fs-idm16460880（保持开放，附有它的两个选项），都附有一个标明为 OmniStax 自拟的建议思路。例 8.5 的“学习检测”图像在其卡片上，书中带标注的图像在其答案中。",
+ "figures": [
+  {
+   "id": "fig-o2-lewis",
+   "kind": "figure",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_04_O2_img.jpg"
+   ],
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "lone pairs as the book draws them"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-gouy",
+   "kind": "sim",
+   "number": "8.27",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_04_Gouy.jpg"
+   ],
+   "original_caption": "古依天平比较样品在有磁场存在时的质量与关闭电磁铁时的质量，以确定样品中未成对电子的数目。",
+   "draws": [],
+   "conventions": [
+    "O",
+    "N"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "instruction note repeating the caption dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-waves",
+   "kind": "sim",
+   "number": "8.28",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_04_waveadd.jpg"
+   ],
+   "original_caption": "（a）同相的波组合时，相长干涉产生振幅更大的波。（b）反相的波组合时，相消干涉产生振幅更小（或为零）的波。",
+   "draws": [
+    "angle"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-mo-shapes",
+   "kind": "sim",
+   "number": "8.29",
+   "folds": [
+    "8.30",
+    "8.31"
+   ],
+   "originals": [
+    "/media/ch08/CNX_Chem_08_04_ssigma.jpg",
+    "/media/ch08/CNX_Chem_08_04_pMOsigma.jpg",
+    "/media/ch08/CNX_Chem_08_04_pMOpi.jpg"
+   ],
+   "original_caption": "（图 8.29）西格玛（σ）分子轨道和西格玛星（σ*）分子轨道由两个 <em>s</em> 原子轨道组合形成。圆点（·）表示原子核的位置。（图 8.30）沿核间轴组合两个 <em>p</em> 原子轨道的波函数，产生两个分子轨道 σ<sub><em>p</em></sub> 和 σ*<sub><em>p</em></sub>。（图 8.31）每两个 <em>p</em> 轨道肩并肩重叠，形成两个 π 分子轨道。把反相的轨道组合起来，得到一个有两个节点的反键分子轨道。其中一个包含核间轴，另一个垂直于该轴。把同相的轨道组合起来，得到一个成键轨道。有一个包含核间轴的节点（蓝色），该轨道的两个瓣位于这个节点的上方和下方。",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "framing, headline symbols typeset, controls on one row, caption"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-ao-types",
+   "kind": "figure",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_04_AOtype_img.jpg"
+   ],
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "readout repeating the drawn labels dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-kohn",
+   "kind": "photo",
+   "number": "8.32",
+   "draws": []
+  },
+  {
+   "id": "fig-hiv",
+   "kind": "photo",
+   "number": "8.33",
+   "draws": []
+  },
+  {
+   "id": "sim-mo-fill",
+   "kind": "sim",
+   "number": "8.34",
+   "folds": [
+    "8.35",
+    "8.36",
+    "8.40"
+   ],
+   "originals": [
+    "/media/ch08/CNX_Chem_08_04_FillMo.jpg",
+    "/media/ch08/CNX_Chem_08_04_H2MO-a7a1.jpg",
+    "/media/ch08/CNX_Chem_08_04_He2MO-cf1f.jpg",
+    "/media/ch08/CNX_Chem_08_04_O2MO-912b.jpg"
+   ],
+   "original_caption": "（图 8.34）这是同核双原子 Be₂⁺ 的分子轨道图，只显示价层的分子轨道。分子轨道的填充方式与原子轨道相同，遵循构造原理和洪特规则。（图 8.35）分子轨道能级图预测 H₂ 是一个稳定的分子，其能量低于分离的原子。（图 8.36）分子轨道能级图预测 He₂ 不是稳定的分子，因为它的成键电子数和反键电子数相等。（图 8.40）O₂ 的分子轨道能级图预测有两个未成对电子。",
+   "draws": [
+    "energy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "headline a sentence, electrons on lines, names above connectors"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-period2",
+   "kind": "sim",
+   "number": "8.37",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_04_X2MOs-bb74.jpg"
+   ],
+   "original_caption": "这里显示第二周期每个同核双原子分子的 MO 图。随着有效核电荷增大、原子半径减小，轨道能量沿周期降低。在 N₂ 与 O₂ 之间，轨道的顺序发生变化。",
+   "draws": [
+    "energy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "note repeating the caption dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-spmix",
+   "kind": "sim",
+   "number": "8.38",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_04_spmix-78e6.jpg"
+   ],
+   "original_caption": "没有混合时，MO 的模式如预期，σ<sub><em>p</em></sub> 轨道的能量低于 π<sub><em>p</em></sub> 轨道。发生 s-p 混合时，轨道如图所示发生移动，σ<sub><em>p</em></sub> 轨道的能量高于 π<sub><em>p</em></sub> 轨道。",
+   "draws": [
+    "energy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "names drawn above the connectors"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-bands",
+   "kind": "sim",
+   "number": "8.39",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_04_Band.jpg"
+   ],
+   "original_caption": "固体中的分子轨道靠得如此之近，以致被描述为能带。价带的能量较低，导带的能量较高。固体的类型由价带与导带之间“带隙”的大小决定。在导体中，只需很少的能量就能把电子从价带移到导带，所以它们导电性好。在绝缘体中，带隙很大，所以很少有电子移动，它们是电的不良导体。半导体介于两者之间：它们的导电性比绝缘体好，但不如导体。",
+   "draws": [
+    "energy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "paramagnetism",
+   "concept": "paramagnetism-and-diamagnetism",
+   "verb": "introduces"
+  },
+  {
+   "span": "paramagnetism",
+   "concept": "paramagnetism",
+   "verb": "introduces"
+  },
+  {
+   "span": "paramagnetism",
+   "concept": "diamagnetism",
+   "verb": "introduces"
+  },
+  {
+   "span": "mo-theory",
+   "concept": "molecular-orbital-theory",
+   "verb": "introduces"
+  },
+  {
+   "span": "mo-theory",
+   "concept": "molecular-orbital",
+   "verb": "introduces"
+  },
+  {
+   "span": "mo-theory",
+   "concept": "linear-combination-of-atomic-orbitals",
+   "verb": "introduces"
+  },
+  {
+   "span": "mo-theory",
+   "concept": "homonuclear-diatomic-molecule",
+   "verb": "introduces"
+  },
+  {
+   "span": "bonding-antibonding",
+   "concept": "bonding-and-antibonding-orbitals",
+   "verb": "introduces"
+  },
+  {
+   "span": "bonding-antibonding",
+   "concept": "molecular-orbital-theory",
+   "verb": "uses"
+  },
+  {
+   "span": "bonding-antibonding",
+   "concept": "bonding-orbital",
+   "verb": "introduces"
+  },
+  {
+   "span": "bonding-antibonding",
+   "concept": "antibonding-orbital",
+   "verb": "introduces"
+  },
+  {
+   "span": "sigma-pi-mo",
+   "concept": "sigma-and-pi-molecular-orbitals",
+   "verb": "introduces"
+  },
+  {
+   "span": "sigma-pi-mo",
+   "concept": "bonding-and-antibonding-orbitals",
+   "verb": "uses"
+  },
+  {
+   "span": "sigma-pi-mo",
+   "concept": "sigma-bonding-orbital",
+   "verb": "introduces"
+  },
+  {
+   "span": "sigma-pi-mo",
+   "concept": "sigma-antibonding-orbital",
+   "verb": "introduces"
+  },
+  {
+   "span": "sigma-pi-mo",
+   "concept": "pi-bonding-orbital",
+   "verb": "introduces"
+  },
+  {
+   "span": "sigma-pi-mo",
+   "concept": "pi-antibonding-orbital",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-mo-types",
+   "concept": "sigma-and-pi-molecular-orbitals",
+   "verb": "uses"
+  },
+  {
+   "span": "mo-diagram",
+   "concept": "molecular-orbital-diagram",
+   "verb": "introduces"
+  },
+  {
+   "span": "mo-diagram",
+   "concept": "molecular-orbital-energy-diagram",
+   "verb": "introduces"
+  },
+  {
+   "span": "bond-order",
+   "concept": "bond-order",
+   "verb": "introduces"
+  },
+  {
+   "span": "bond-order",
+   "concept": "molecular-orbital-diagram",
+   "verb": "uses"
+  },
+  {
+   "span": "diatomic",
+   "concept": "bond-order",
+   "verb": "uses"
+  },
+  {
+   "span": "diatomic",
+   "concept": "molecular-orbital-diagram",
+   "verb": "uses"
+  },
+  {
+   "span": "second-period",
+   "concept": "s-p-mixing",
+   "verb": "introduces"
+  },
+  {
+   "span": "second-period",
+   "concept": "diatomic-molecule-configurations",
+   "verb": "introduces"
+  },
+  {
+   "span": "second-period",
+   "concept": "bond-order",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-o2",
+   "concept": "diatomic-molecule-configurations",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-o2",
+   "concept": "paramagnetism-and-diamagnetism",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-c2",
+   "concept": "diatomic-molecule-configurations",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm91199824",
+   "kind": "check-your-learning",
+   "bloom": "Understand",
+   "place": {
+    "at": "inline",
+    "after": "ex-mo-types"
+   },
+   "cite": "sigma-pi-mo",
+   "figure": {
+    "src": "/media/ch08/CNX_Chem_08_04_siganti_img.jpg",
+    "alt": "图中是两个头碰头排列的轨道。每个轨道一侧大、一侧小。两个小的一侧彼此相对"
+   },
+   "prompt": "把图中所示的分子轨道标注为 <em>σ</em> 或 π、成键或反键，并指出节点出现在何处。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "该轨道沿核间轴分布，所以它是 σ 轨道。有一个节点将核间轴平分，所以它是反键轨道。<img src=\"/media/ch08/CNX_Chem_08_04_salabel_img.jpg\" alt=\"图中是两个头碰头排列的轨道。每个轨道一侧大、一侧小。两个小的一侧彼此相对，并被一条竖直的点线隔开。\">"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm85103616",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-o2"
+   },
+   "cite": "second-period",
+   "prompt": "空气的主要成分是 N<sub>2</sub>。根据 N<sub>2</sub> 的分子轨道图，预测它的键级，以及它是抗磁性的还是顺磁性的。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "N<sub>2</sub> 的键级为 3，是抗磁性的。"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idm114393376",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-c2"
+   },
+   "cite": "second-period",
+   "prompt": "Be<sub>2</sub><sup>2−</sup> 离子上会有多少个未成对电子？它是顺磁性的还是抗磁性的？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "两个，顺磁性的"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idp105434592",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "sigma-pi-mo",
+   "prompt": "画出由两个 <em>s</em> 轨道和由两个 <em>p</em> 轨道形成的成键分子轨道和反键分子轨道中的电子密度分布草图。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "在成键轨道中，同相组合使电子密度堆积在两核之间；在反键轨道中，反相组合在两核之间留下一个节点。由两个 <em>s</em> 轨道得到的成键 σ<sub><em>s</em></sub> 轨道是一个包围两个核的蛋形区域，在两核之间最密，而反键 σ*<sub><em>s</em></sub> 轨道是两个分开的区域，每个核周围一个，在两核正中间有一个垂直于核间轴的节面。由两个 <em>p</em> 轨道头碰头重叠得到的 σ<sub><em>p</em></sub> 轨道，在两核之间的轴上有一个大的密度瓣，在每个核的外侧各有一个小瓣，而 σ*<sub><em>p</em></sub> 轨道在两核之间有一个节点，其密度被推向外侧。由两个 <em>p</em> 轨道肩并肩重叠得到的 π<sub><em>p</em></sub> 轨道是两个香肠形的区域，一个在核间轴上方，一个在下方，各自伸展在两个核之上，有一个包含该轴的节面；π*<sub><em>p</em></sub> 轨道有同样的节面，另外在两核之间还有第二个节面，从而留下四个分开的瓣。"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idm165679168",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "mo-theory",
+   "prompt": "下列各项有何相似之处，又有何不同？\n（a）σ 分子轨道和 π 分子轨道\n（b）原子轨道的 <em>ψ</em> 和分子轨道的 <em>ψ</em>\n（c）成键轨道和反键轨道",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）相似之处：二者都是成键轨道，最多可容纳两个电子。不同之处：σ 轨道是原子轨道头碰头的组合，而 π 轨道由轨道肩并肩重叠形成。（b）相似之处：二者都是量子力学的构造，表示在原子或分子周围找到电子的概率。不同之处：原子轨道的 <em>ψ</em> 描述的是基于该原子的、一次仅一个电子的行为。对于分子，<em>ψ</em> 表示原子轨道的数学组合。（c）相似之处：二者都是可以容纳两个电子的轨道。不同之处：成键轨道的结果是把两个或更多原子结合在一起。反键轨道的作用是使已经形成的任何键变得不稳定。"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm177595920",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "paramagnetism",
+   "prompt": "电子数为奇数的分子有可能是抗磁性的吗？请解释为什么可能，或为什么不可能。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "无论分子轨道如何排布，奇数个电子都不可能全部成对。它总是顺磁性的。"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idm41078784",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "paramagnetism",
+   "prompt": "电子数为偶数的分子有可能是顺磁性的吗？请解释为什么可能，或为什么不可能。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "可以。当最后两个电子进入一组两个简并的分子轨道时，偶数个电子可以留下两个未成对电子，因为洪特规则在任何配对发生之前，先在每个轨道中各放一个自旋平行的电子。O<sub>2</sub> 有 12 个价电子，就是一个例子：其构型以 ${({\\pi}_{2py}^{*},\\;{\\pi}_{2pz}^{*})}^{2}$ 结尾，两个电子占据不同的 π* 轨道，该分子是顺磁性的，被吸引并停留在磁铁两极之间的液氧就表明了这一点。B<sub>2</sub> 有六个价电子，其构型以 ${({\\pi}_{2py},\\;{\\pi}_{2pz})}^{2}$ 结尾，出于同样的原因也是顺磁性的。"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm100278000",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "bonding-antibonding",
+   "prompt": "为什么成键分子轨道的能量比其母体原子轨道低？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "成键轨道的电子密度紧邻不止一个原子核。成键的带正电原子核与带负电电子之间的相互作用使体系稳定。"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idm63124960",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "diatomic",
+   "prompt": "解释为什么 H<sub>2</sub> 分子成键分子轨道中的电子，其能量比分离开的任一氢原子 1<em>s</em> 原子轨道中的电子低。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "两个成键电子的配对使体系的能量相对于未成键电子的能量降低。"
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idm179535904",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "second-period",
+   "prompt": "预测下列离子的价电子分子轨道构型，并说明它们是稳定的还是不稳定的离子。\n（a）Na<sub>2</sub><sup>2+</sup>\n（b）Mg<sub>2</sub><sup>2+</sup>\n（c）Al<sub>2</sub><sup>2+</sup>\n（d）Si<sub>2</sub><sup>2+</sup>\n（e）P<sub>2</sub><sup>2+</sup>\n（f）S<sub>2</sub><sup>2+</sup>\n（g）F<sub>2</sub><sup>2+</sup>\n（h）Ar<sub>2</sub><sup>2+</sup>",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "（a）Na<sub>2</sub><sup>2+</sup>：没有价电子（2 − 2 = 0）；键级为 0，不稳定。<br>（b）Mg<sub>2</sub><sup>2+</sup>：${({\\sigma}_{3s})}^{2}$；键级为 1，稳定。<br>（c）Al<sub>2</sub><sup>2+</sup>：${({\\sigma}_{3s})}^{2}{({\\sigma}_{3s}^{*})}^{2}$；键级为 0，不稳定。<br>（d）Si<sub>2</sub><sup>2+</sup>：${({\\sigma}_{3s})}^{2}{({\\sigma}_{3s}^{*})}^{2}{({\\pi}_{3py},\\;{\\pi}_{3pz})}^{2}$；键级为 1，稳定。<br>（e）P<sub>2</sub><sup>2+</sup>：${({\\sigma}_{3s})}^{2}{({\\sigma}_{3s}^{*})}^{2}{({\\pi}_{3py},\\;{\\pi}_{3pz})}^{4}$；键级为 2，稳定。<br>（f）S<sub>2</sub><sup>2+</sup>：${({\\sigma}_{3s})}^{2}{({\\sigma}_{3s}^{*})}^{2}{({\\sigma}_{3px})}^{2}{({\\pi}_{3py},\\;{\\pi}_{3pz})}^{4}$；键级为 3，稳定。<br>（g）F<sub>2</sub><sup>2+</sup>：${({\\sigma}_{2s})}^{2}{({\\sigma}_{2s}^{*})}^{2}{({\\sigma}_{2px})}^{2}{({\\pi}_{2py},\\;{\\pi}_{2pz})}^{4}{({\\pi}_{2py}^{*},\\;{\\pi}_{2pz}^{*})}^{2}$；键级为 2，稳定。<br>（h）Ar<sub>2</sub><sup>2+</sup>：${({\\sigma}_{3s})}^{2}{({\\sigma}_{3s}^{*})}^{2}{({\\sigma}_{3px})}^{2}{({\\pi}_{3py},\\;{\\pi}_{3pz})}^{4}{({\\pi}_{3py}^{*},\\;{\\pi}_{3pz}^{*})}^{4}$；键级为 1，稳定。<br>每个离子的价电子数是一个原子价电子数的两倍，再减去 2+ 电荷所对应的两个电子：0、2、4、6、8、10、12 和 14。轨道按能量顺序填充，对于硫之前的元素，π<sub><em>p</em></sub> 这一对在 σ<sub><em>p</em></sub> 之下，如同 Li 到 N，而对于 S、F 和 Ar，σ<sub><em>p</em></sub> 在 π<sub><em>p</em></sub> 这一对之下，如同 O 到 Ne。键级为(成键电子数 − 反键电子数)/2；对于 Si<sub>2</sub><sup>2+</sup>，(4 − 2)/2 = 1。键级大于零的离子预计是稳定的，键级为零的离子（如 Be<sub>2</sub>）则不稳定。"
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idm111217280",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "bond-order",
+   "prompt": "确定下列各组中每个成员的键级，并确定分子轨道模型预测每组中哪个成员的键最强。\n（a）H<sub>2</sub>、H<sub>2</sub><sup>+</sup>、H<sub>2</sub><sup>−</sup>\n（b）O<sub>2</sub>、O<sub>2</sub><sup>2+</sup>、O<sub>2</sub><sup>2−</sup>\n（c）Li<sub>2</sub>、Be<sub>2</sub><sup>+</sup>、Be<sub>2</sub>\n（d）F<sub>2</sub>、F<sub>2</sub><sup>+</sup>、F<sub>2</sub><sup>−</sup>\n（e）N<sub>2</sub>、N<sub>2</sub><sup>+</sup>、N<sub>2</sub><sup>−</sup>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）H<sub>2</sub> 键级 = 1，H<sub>2</sub><sup>+</sup> 键级 = 0.5，H<sub>2</sub><sup>−</sup> 键级 = 0.5，键最强的是 H<sub>2</sub>；（b）O<sub>2</sub> 键级 = 2，O<sub>2</sub><sup>2+</sup> 键级 = 3；O<sub>2</sub><sup>2−</sup> 键级 = 1，键最强的是 O<sub>2</sub><sup>2+</sup>；（c）Li<sub>2</sub> 键级 = 1，Be<sub>2</sub><sup>+</sup> 键级 = 0.5，Be<sub>2</sub> 键级 = 0，键最强的是 Li<sub>2</sub>；（d）F<sub>2</sub> 键级 = 1，F<sub>2</sub><sup>+</sup> 键级 = 1.5，F<sub>2</sub><sup>−</sup> 键级 = 0.5，键最强的是 F<sub>2</sub><sup>+</sup>；（e）N<sub>2</sub> 键级 = 3，N<sub>2</sub><sup>+</sup> 键级 = 2.5，N<sub>2</sub><sup>−</sup> 键级 = 2.5，键最强的是 N<sub>2</sub>"
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idm63366704",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "second-period",
+   "prompt": "对于 N<sub>2</sub> 分子的第一电离能，电子是从哪个分子轨道中移走的？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "电子是从 σ<sub>2<em>px</em></sub> 成键轨道中移走的。N<sub>2</sub> 的价层构型为 ${({\\sigma}_{2s})}^{2}{({\\sigma}_{2s}^{*})}^{2}{({\\pi}_{2py},\\;{\\pi}_{2pz})}^{4}{({\\sigma}_{2px})}^{2}$。因为氮表现出 s-p 混合，σ<sub>2<em>px</em></sub> 轨道被抬升到 π<sub>2<em>py</em></sub> 和 π<sub>2<em>pz</em></sub> 这一对之上，所以它是最高占据分子轨道，第一电离能移走其两个电子中的一个，留下 ${\\text{N}}_{2}{}^{\\text{+}}$，其构型为 ${({\\sigma}_{2px})}^{1}$。"
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idm135320832",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "second-period",
+   "prompt": "比较原子轨道图和分子轨道图，确定下列每一对中气相第一电离能最高（电子束缚得最紧）的成员：\n（a）H 和 H<sub>2</sub>\n（b）N 和 N<sub>2</sub>\n（c）O 和 O<sub>2</sub>\n（d）C 和 C<sub>2</sub>\n（e）B 和 B<sub>2</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）H<sub>2</sub>；（b）N<sub>2</sub>；（c）O；（d）C<sub>2</sub>；（e）B<sub>2</sub>"
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idp45731680",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "second-period",
+   "prompt": "第 2 周期的同核双原子分子中，哪些预测是顺磁性的？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "预测 B<sub>2</sub> 和 O<sub>2</sub> 是顺磁性的。B<sub>2</sub> 有六个价电子，其构型以 ${({\\pi}_{2py},\\;{\\pi}_{2pz})}^{2}$ 结尾：按洪特规则，这两个电子以平行自旋单独占据两个简并的 π 轨道。O<sub>2</sub> 有 12 个价电子，其构型以 ${({\\pi}_{2py}^{*},\\;{\\pi}_{2pz}^{*})}^{2}$ 结尾，在每个 π* 轨道中留下一个未成对电子。在 Li<sub>2</sub>、C<sub>2</sub>、N<sub>2</sub> 和 F<sub>2</sub> 中，每个被占据的轨道都容纳一对电子，所以它们是抗磁性的；Be<sub>2</sub> 和 Ne<sub>2</sub> 也是完全成对的，键级为 0，不能形成。"
+   }
+  },
+  {
+   "id": "e14",
+   "source_id": "fs-idm76747104",
+   "kind": "exercise",
+   "bloom": "Evaluate",
+   "place": {
+    "at": "end"
+   },
+   "cite": "second-period",
+   "prompt": "一位朋友告诉你，氟的 2<em>s</em> 轨道起始能量比锂的 2<em>s</em> 轨道低得多，所以 F<sub>2</sub> 中所形成的 σ<sub>2<em>s</em></sub> 分子轨道比 Li<sub>2</sub> 中的更稳定。你同意吗？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "同意，氟原子比 Li 原子小，所以 2<em>s</em> 轨道中的原子更靠近原子核，也更稳定。"
+   }
+  },
+  {
+   "id": "e15",
+   "source_id": "fs-idm16460880",
+   "kind": "exercise",
+   "bloom": "Evaluate",
+   "place": {
+    "at": "end"
+   },
+   "cite": "sigma-pi-mo",
+   "prompt": "判断对错：硼含有 2<em>s</em><sup>2</sup>2<em>p</em><sup>1</sup> 价电子，所以形成分子轨道只需要一个 <em>p</em> 轨道。\n（a）对\n（b）错",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "（b）错。分子轨道图把两个原子的所有价层原子轨道都组合起来，不论它们是否容纳电子，所以每个硼原子的 2<em>s</em> 和全部三个 2<em>p</em> 轨道形成八个分子轨道：σ<sub>2<em>s</em></sub>、σ*<sub>2<em>s</em></sub>、π<sub>2<em>py</em></sub> 与 π<sub>2<em>pz</em></sub> 这一对、σ<sub>2<em>px</em></sub>、两个 π* 轨道和 σ*<sub>2<em>px</em></sub>。在 B<sub>2</sub> 中有六个价电子，其构型为 ${({\\sigma}_{2s})}^{2}{({\\sigma}_{2s}^{*})}^{2}{({\\pi}_{2py},\\;{\\pi}_{2pz})}^{2}$。最后两个电子占据两个不同的 π 轨道，它们由 2<em>py</em> 和 2<em>pz</em> 轨道构成，所以即使对于已有的电子，也需要不止一个 <em>p</em> 轨道。"
+   }
+  },
+  {
+   "id": "e16",
+   "source_id": "fs-idm16458944",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "bond-order",
+   "prompt": "F<sub>2</sub> 上需要带多少电荷，才能生成键级为 2 的离子？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "2+"
+   }
+  },
+  {
+   "id": "e17",
+   "source_id": "fs-idm76713856",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "second-period",
+   "prompt": "预测 S<sub>2</sub> 的 MO 图是否会显示 s-p 混合。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "S<sub>2</sub> 的 MO 图不会显示明显的 s-p 混合；它将遵循 O<sub>2</sub> 的模式，σ<sub>3<em>px</em></sub> 在 π<sub>3<em>py</em></sub>、π<sub>3<em>pz</em></sub> 这一对之下。只有当 <em>s</em> 轨道和 <em>p</em> 轨道的能量相近时才会发生 s-p 混合，而二者之间的间隙沿周期变宽：在第 2 周期中，O、F 和 Ne 的间隙已大到它们的混合可以忽略。硫与氧同族，在其周期中的位置也相同，所以它的 3<em>s</em> 和 3<em>p</em> 轨道与氧的 2<em>s</em> 和 2<em>p</em> 轨道一样，能量相差太远，混合不足以改变轨道的顺序。"
+   }
+  },
+  {
+   "id": "e18",
+   "source_id": "fs-idm133690944",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "second-period",
+   "prompt": "解释为什么 N<sub>2</sub><sup>2+</sup> 是抗磁性的，而价电子数相同的 O<sub>2</sub><sup>4+</sup> 却是顺磁性的。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "N<sub>2</sub> 有 s-p 混合，所以在 N<sub>2</sub><sup>2+</sup> 中 π 轨道是最后被填充的。O<sub>2</sub> 没有 s-p 混合，所以 σ<sub><em>p</em></sub> 轨道先于 π 轨道被填充。"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "sigma-and-pi-molecular-orbitals"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "bonding-and-antibonding-orbitals"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "diatomic-molecule-configurations"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "bond-order"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "paramagnetism-and-diamagnetism"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "diatomic-molecule-configurations"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "paramagnetism-and-diamagnetism"
+  },
+  {
+   "exercise": "e1",
+   "concept": "sigma-and-pi-molecular-orbitals"
+  },
+  {
+   "exercise": "e1",
+   "concept": "bonding-and-antibonding-orbitals"
+  },
+  {
+   "exercise": "e2",
+   "concept": "molecular-orbital-theory"
+  },
+  {
+   "exercise": "e2",
+   "concept": "sigma-and-pi-molecular-orbitals"
+  },
+  {
+   "exercise": "e2",
+   "concept": "bonding-and-antibonding-orbitals"
+  },
+  {
+   "exercise": "e4",
+   "concept": "paramagnetism-and-diamagnetism"
+  },
+  {
+   "exercise": "e5",
+   "concept": "paramagnetism-and-diamagnetism"
+  },
+  {
+   "exercise": "e5",
+   "concept": "molecular-orbital-diagram"
+  },
+  {
+   "exercise": "e6",
+   "concept": "bonding-and-antibonding-orbitals"
+  },
+  {
+   "exercise": "e8",
+   "concept": "bonding-and-antibonding-orbitals"
+  },
+  {
+   "exercise": "e9",
+   "concept": "diatomic-molecule-configurations"
+  },
+  {
+   "exercise": "e9",
+   "concept": "bond-order"
+  },
+  {
+   "exercise": "e10",
+   "concept": "bond-order"
+  },
+  {
+   "exercise": "e10",
+   "concept": "diatomic-molecule-configurations"
+  },
+  {
+   "exercise": "e11",
+   "concept": "diatomic-molecule-configurations"
+  },
+  {
+   "exercise": "e11",
+   "concept": "s-p-mixing"
+  },
+  {
+   "exercise": "e12",
+   "concept": "molecular-orbital-diagram"
+  },
+  {
+   "exercise": "e12",
+   "concept": "bonding-and-antibonding-orbitals"
+  },
+  {
+   "exercise": "e13",
+   "concept": "paramagnetism-and-diamagnetism"
+  },
+  {
+   "exercise": "e13",
+   "concept": "diatomic-molecule-configurations"
+  },
+  {
+   "exercise": "e14",
+   "concept": "molecular-orbital-diagram"
+  },
+  {
+   "exercise": "e15",
+   "concept": "molecular-orbital-diagram"
+  },
+  {
+   "exercise": "e16",
+   "concept": "bond-order"
+  },
+  {
+   "exercise": "e17",
+   "concept": "s-p-mixing"
+  },
+  {
+   "exercise": "e18",
+   "concept": "s-p-mixing"
+  },
+  {
+   "exercise": "e18",
+   "concept": "paramagnetism-and-diamagnetism"
+  }
+ ],
+ "referents": [
+  {
+   "id": "balance",
+   "label": "古依天平",
+   "figures": [
+    "sim-gouy"
+   ]
+  },
+  {
+   "id": "sample",
+   "label": "管中的样品",
+   "figures": [
+    "sim-gouy"
+   ]
+  },
+  {
+   "id": "electromagnets",
+   "label": "电磁铁",
+   "figures": [
+    "sim-gouy"
+   ]
+  },
+  {
+   "id": "weights",
+   "label": "盘上的砝码",
+   "figures": [
+    "sim-gouy"
+   ]
+  },
+  {
+   "id": "wave-a",
+   "label": "第一个波",
+   "figures": [
+    "sim-waves"
+   ]
+  },
+  {
+   "id": "wave-b",
+   "label": "第二个波",
+   "figures": [
+    "sim-waves"
+   ]
+  },
+  {
+   "id": "wave-sum",
+   "label": "两个波的和",
+   "figures": [
+    "sim-waves"
+   ]
+  },
+  {
+   "id": "valence-band",
+   "label": "价带",
+   "figures": [
+    "sim-bands"
+   ]
+  },
+  {
+   "id": "conduction-band",
+   "label": "导带",
+   "figures": [
+    "sim-bands"
+   ]
+  }
+ ]
+}

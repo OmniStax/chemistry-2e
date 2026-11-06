@@ -1,0 +1,1205 @@
+{
+  "id": "13.2",
+  "module": "m68798",
+  "chapter": "13",
+  "title": "平衡常数",
+  "short": "平衡常数",
+  "lead": "<span data-concept=\"reaction-quotient\">反应商</span> <em>Q</em> 描述反应混合物的组成，它在平衡时的值就是<span data-concept=\"equilibrium-constant\">平衡常数</span> <em>K</em>。本节说明如何由配平的方程式，用<span data-concept=\"concentration\">浓度</span>或<span data-concept=\"partial-pressure\">分压</span>写出这两者，比较它们如何说明混合物将朝哪个方向反应，以及如何求得单相平衡、多相平衡和多重平衡的常数。",
+  "objectives": [
+    "由表示均相反应和多相反应的化学方程式导出反应商",
+    "用浓度和压强计算反应商和平衡常数的值",
+    "把平衡常数的大小与化学体系的性质联系起来"
+  ],
+  "summary_html": "<p>反应混合物的组成可以用一个称为<span data-concept=\"reaction-quotient\">反应商</span> $\\kQrxn$ 的数学函数来表示。对于处于平衡的反应，其组成是恒定的，此时 $\\kQrxn$ 称为<span data-concept=\"equilibrium-constant\">平衡常数</span> $\\kK$。</p><p><span data-concept=\"homogeneous-equilibrium\">均相平衡</span>是所有组分都处于同一相的平衡。<span data-concept=\"heterogeneous-equilibrium\">多相平衡</span>是组分处于两个或多个相中的平衡。</p>",
+  "notes": "本节没有任何内容被略去；习题 17 的答案把（e）和（f）的反应商标作 Q_P 和 Q_c，与题目所给的常数正好相反，例 13.5 的学习检测把它的两个常数都标作 K_c1，例 13.3 的描述给出 0.0203 M 之处则以其表格为准，均照原样保留。",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ]
+  },
+  "built": "2026-10-26",
+  "exercises_lead": "",
+  "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案来自书后答案和“学习检测”的答案。四道没有答案的数值题被略去，也没有为它们算出答案：fs-idp100224800、fs-idp163618080、fs-idp94819040 和 fs-idp72435440。九道没有答案的概念题和写表达式的题予以保留，并附有标明为 AI 生成的建议思路：fs-idp109971312、fs-idp176984288、fs-idp114043728、fs-idp237441536、fs-idp68591104、fs-idp52174160、fs-idp132912112、fs-idp93479024 和 fs-idp282222272。习题 fs-idp194491952 涉及必须使用密闭容器的溴，它考查 13.1 的动态平衡，因此放在 13.1。fs-idp110211104 的答案把（e）和（f）的反应商标作 Q_P 和 Q_c，与题目所给的常数正好相反，例 13.5 的学习检测把两个常数都标作 K_c1；两者均照原样保留。原来指向前一道习题的习题，改为用它的反应来指明那道习题。",
+  "figures": [
+    {
+      "id": "sim-quotient",
+      "kind": "sim",
+      "number": "13.5",
+      "originals": [
+        "/media/ch13/CNX_Chem_13_02_quotient.jpg"
+      ],
+      "original_caption": "从（a）只含反应物的混合物和（b）只含产物开始达到化学平衡时，浓度和 Qc 的变化。",
+      "draws": [
+        "concentration",
+        "equilibrium-constant",
+        "time"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-magnitude-k",
+      "kind": "sim",
+      "draws": [
+        "concentration",
+        "equilibrium-constant"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-mixtures",
+      "kind": "sim",
+      "number": "13.6",
+      "originals": [
+        "/media/ch13/CNX_Chem_13_02_mixtures.jpg"
+      ],
+      "original_caption": "反应 CO(g) + H₂O(g) ⇌ CO₂(g) + H₂(g) 建立平衡之前（Qc ≠ Kc）和之后（Qc = Kc）三种混合物的组成。",
+      "draws": [
+        "concentration",
+        "equilibrium-constant"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    }
+  ],
+  "referents": [
+    {
+      "id": "so2",
+      "label": "二氧化硫",
+      "figures": [
+        "sim-quotient"
+      ]
+    },
+    {
+      "id": "o2",
+      "label": "氧气",
+      "figures": [
+        "sim-quotient"
+      ]
+    },
+    {
+      "id": "so3",
+      "label": "三氧化硫",
+      "figures": [
+        "sim-quotient"
+      ]
+    },
+    {
+      "id": "no2",
+      "label": "二氧化氮",
+      "figures": [
+        "sim-magnitude-k"
+      ]
+    },
+    {
+      "id": "n2o4",
+      "label": "四氧化二氮",
+      "figures": [
+        "sim-magnitude-k"
+      ]
+    },
+    {
+      "id": "co",
+      "label": "一氧化碳",
+      "figures": [
+        "sim-mixtures"
+      ]
+    },
+    {
+      "id": "h2o",
+      "label": "水",
+      "figures": [
+        "sim-mixtures"
+      ]
+    },
+    {
+      "id": "co2",
+      "label": "二氧化碳",
+      "figures": [
+        "sim-mixtures"
+      ]
+    },
+    {
+      "id": "h2",
+      "label": "氢气",
+      "figures": [
+        "sim-mixtures"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "span": "quotient",
+      "concept": "reaction-quotient",
+      "verb": "introduces"
+    },
+    {
+      "span": "quotient",
+      "concept": "write-reaction-quotient",
+      "verb": "introduces"
+    },
+    {
+      "span": "quotient",
+      "concept": "reversible-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "quotient",
+      "concept": "balanced-equation",
+      "verb": "uses"
+    },
+    {
+      "span": "quotient",
+      "concept": "molarity",
+      "verb": "uses"
+    },
+    {
+      "span": "quotient",
+      "concept": "partial-pressure",
+      "verb": "uses"
+    },
+    {
+      "span": "constant",
+      "concept": "equilibrium-constant",
+      "verb": "introduces"
+    },
+    {
+      "span": "constant",
+      "concept": "law-of-mass-action",
+      "verb": "introduces"
+    },
+    {
+      "span": "constant",
+      "concept": "magnitude-of-k",
+      "verb": "introduces"
+    },
+    {
+      "span": "constant",
+      "concept": "reaction-quotient",
+      "verb": "uses"
+    },
+    {
+      "span": "constant",
+      "concept": "chemical-equilibrium",
+      "verb": "uses"
+    },
+    {
+      "span": "direction",
+      "concept": "predict-direction-q-versus-k",
+      "verb": "introduces"
+    },
+    {
+      "span": "direction",
+      "concept": "reaction-quotient",
+      "verb": "uses"
+    },
+    {
+      "span": "direction",
+      "concept": "equilibrium-constant",
+      "verb": "uses"
+    },
+    {
+      "span": "homogeneous",
+      "concept": "homogeneous-equilibrium",
+      "verb": "introduces"
+    },
+    {
+      "span": "homogeneous",
+      "concept": "kp-kc-relation",
+      "verb": "introduces"
+    },
+    {
+      "span": "homogeneous",
+      "concept": "ideal-gas-law",
+      "verb": "uses"
+    },
+    {
+      "span": "homogeneous",
+      "concept": "partial-pressure",
+      "verb": "uses"
+    },
+    {
+      "span": "homogeneous",
+      "concept": "molarity",
+      "verb": "uses"
+    },
+    {
+      "span": "homogeneous",
+      "concept": "write-reaction-quotient",
+      "verb": "uses"
+    },
+    {
+      "span": "heterogeneous",
+      "concept": "heterogeneous-equilibrium",
+      "verb": "introduces"
+    },
+    {
+      "span": "heterogeneous",
+      "concept": "homogeneous-and-heterogeneous-equilibria",
+      "verb": "introduces"
+    },
+    {
+      "span": "heterogeneous",
+      "concept": "write-reaction-quotient",
+      "verb": "uses"
+    },
+    {
+      "span": "coupled",
+      "concept": "coupled-equilibrium",
+      "verb": "introduces"
+    },
+    {
+      "span": "coupled",
+      "concept": "coupled-equilibria",
+      "verb": "introduces"
+    },
+    {
+      "span": "coupled",
+      "concept": "equilibrium-constant",
+      "verb": "uses"
+    },
+    {
+      "span": "coupled",
+      "concept": "balanced-equation",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idp168372720",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-quotient-expressions"
+      },
+      "cite": "quotient",
+      "prompt": "写出下列各反应以浓度表示的反应商表达式：<br>（a）$2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2{\\text{SO}}_{3}(g)$<br>（b）${\\text{C}}_{4}{\\text{H}}_{8}(g)\\rightleftharpoons 2{\\text{C}}_{2}{\\text{H}}_{4}(g)$<br>（c）$2{\\text{C}}_{4}{\\text{H}}_{10}(g)+13{\\text{O}}_{2}(g)\\rightleftharpoons 8{\\text{CO}}_{2}(g)+10{\\text{H}}_{2}\\text{O}(g)$",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）${Q}_{c}=\\;\\frac{{[{\\text{SO}}_{3}]}^{2}}{{[{\\text{SO}}_{2}]}^{2}[{\\text{O}}_{2}]};$ （b）${Q}_{c}=\\;\\frac{{[{\\text{C}}_{2}{\\text{H}}_{4}]}^{2}}{[{\\text{C}}_{4}{\\text{H}}_{8}]};$ （c）${Q}_{c}=\\;\\frac{{[{\\text{CO}}_{2}]}^{8}[{\\text{H}}_{2}\\text{O}{]}^{10}}{{[{\\text{C}}_{4}{\\text{H}}_{10}]}^{2}[{\\text{O}}_{2}{]}^{13}}$"
+      }
+    },
+    {
+      "id": "cyl2",
+      "source_id": "fs-idp54423808",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-evaluate-q"
+      },
+      "cite": "constant",
+      "prompt": "对于反应 ${\\text{2SO}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons {\\text{2SO}}_{3}(g),$ 平衡时的浓度为 [SO<sub>2</sub>] = 0.90 <em>M</em>、[O<sub>2</sub>] = 0.35 <em>M</em> 和 [SO<sub>3</sub>] = 1.1 <em>M</em>。平衡常数 <em>K<sub>c</sub></em> 的值是多少？",
+      "answer": {
+        "type": "number",
+        "value": 4.3,
+        "generated_by": "source",
+        "hint": "根据配平的方程式写出 $K_c$，每个浓度取其系数次幂，再代入平衡浓度。",
+        "solution": "<em>K<sub>c</sub></em> = 4.3"
+      }
+    },
+    {
+      "id": "cyl3",
+      "source_id": "fs-idp174376240",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-direction"
+      },
+      "cite": "direction",
+      "prompt": "计算反应商，并确定下列各反应为达到平衡将沿哪个方向进行。<br>（a）1.00 L 的烧瓶中含有 0.0500 mol NO(<em>g</em>)、0.0155 mol Cl<sub>2</sub>(<em>g</em>) 和 0.500 mol NOCl：$2\\text{NO}(g)+{\\text{Cl}}_{2}(g)\\rightleftharpoons 2\\text{NOCl}(g)\\hspace{2em}{K}_{c}=4.6\\;\\times \\;{10}^{4}$<br>（b）5.0 L 的烧瓶中含有 17 g NH<sub>3</sub>、14 g N<sub>2</sub> 和 12 g H<sub>2</sub>：${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2{\\text{NH}}_{3}(g)\\hspace{2em}{K}_{c}=0.060$<br>（c）2.00 L 的烧瓶中含有 230 g SO<sub>3</sub>(<em>g</em>)：$2{\\text{SO}}_{3}(g)\\rightleftharpoons 2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\hspace{2em}{K}_{c}=0.230$",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "(a) <em>Q<sub>c</sub></em>",
+            "value": 6450,
+            "hint": "先把各物质的量除以体积得到浓度，再计算 <em>Q<sub>c</sub></em>。"
+          },
+          {
+            "part": "(b) <em>Q<sub>c</sub></em>",
+            "value": 0.23,
+            "hint": "用摩尔质量把各质量换算成物质的量，再换算成 5.0 L 烧瓶中的浓度。"
+          },
+          {
+            "part": "(c) <em>Q<sub>c</sub></em>",
+            "value": 0,
+            "hint": "起初只有 SO<sub>3</sub>。"
+          }
+        ],
+        "solution": "（a）<em>Q<sub>c</sub></em> = 6.45 × 10<sup>3</sup>，正向。（b）<em>Q<sub>c</sub></em> = 0.23，逆向。（c）<em>Q<sub>c</sub></em> = 0，正向。"
+      }
+    },
+    {
+      "id": "cyl4",
+      "source_id": "fs-idp74619616",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-kp"
+      },
+      "cite": "homogeneous",
+      "prompt": "写出下列各反应中 <em>K<sub>c</sub></em> 与 <em>K<sub>P</sub></em> 之间关系的方程式：<br>（a）$2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2{\\text{SO}}_{3}(g)$<br>（b）${\\text{N}}_{2}{\\text{O}}_{4}(g)\\rightleftharpoons 2{\\text{NO}}_{2}(g)$<br>（c）${\\text{C}}_{3}{\\text{H}}_{8}(g)+5{\\text{O}}_{2}(g)\\rightleftharpoons 3{\\text{CO}}_{2}(g)+4{\\text{H}}_{2}\\text{O}(g)$<br>（d）在 227 °C 时，下列反应的 <em>K<sub>c</sub></em> = 0.0952：${\\text{CH}}_{3}\\text{OH}(g)\\rightleftharpoons \\text{CO}(g)+2{\\text{H}}_{2}(g)$ 在这一温度下 <em>K<sub>P</sub></em> 的值是多少？",
+      "answer": {
+        "type": "number",
+        "value": 160,
+        "part": "(d) <em>K<sub>P</sub></em>",
+        "generated_by": "source",
+        "hint": "由气态物种求出 Δ<em>n</em>，把 227 °C 换算成开尔文，再用 <em>K<sub>P</sub></em> = <em>K<sub>c</sub></em>(<em>RT</em>)<sup>Δ<em>n</em></sup>。",
+        "solution": "（a）<em>K<sub>P</sub></em> = <em>K<sub>c</sub></em> (<em>RT</em>)<sup>−1</sup>；（b）<em>K<sub>P</sub></em> = <em>K<sub>c</sub></em> (<em>RT</em>)；（c）<em>K<sub>P</sub></em> = <em>K<sub>c</sub></em> (<em>RT</em>)；（d）160 或 1.6 × 10<sup>2</sup>"
+      }
+    },
+    {
+      "id": "cyl5",
+      "source_id": "fs-idm384162720",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-coupled"
+      },
+      "cite": "coupled",
+      "prompt": "利用所给信息计算下列反应在 550 °C 时的 Kc：<br>$\\begin{array}{llll}{\\text{H}}_{2}(g)+{\\text{CO}}_{2}(g)\\rightleftharpoons \\text{CO}(g)+{\\text{H}}_{2}\\text{O}(g) & & & {\\text{K}}_{\\text{c}}=? \\\\ \\text{CoO}(s)+\\text{CO}(g)\\rightleftharpoons \\text{Co}(s)+{\\text{CO}}_{2}(g) & & & {\\text{K}}_{\\text{c}1}=490 \\\\ \\text{CoO}(s)+{\\text{H}}_{\\text{2}}(g)\\rightleftharpoons \\text{Co}(s)+{\\text{H}}_{2}O(g) & & & {\\text{K}}_{\\text{c}1}=67\\end{array}$<sup class=\"fn\" data-note=\"c-cyl5-kc2\"></sup>",
+      "answer": {
+        "type": "number",
+        "value": 0.14,
+        "generated_by": "source",
+        "hint": "把第一个反应颠倒后与第二个反应相加；颠倒后的常数是第一个常数的倒数。",
+        "solution": "K<sub>c</sub> = 0.14"
+      }
+    },
+    {
+      "id": "e6",
+      "source_id": "fs-idp109971312",
+      "source_number": "6",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "constant",
+      "prompt": "解释为什么在一定温度下，一个反应的反应商可以有无穷多个值，而该温度下的平衡常数却只能有一个值。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "反应商是针对存在的任一种反应物与产物的混合物计算的，由于浓度可以任意选取，所以混合物有无穷多种，<em>Q</em> 的值也有无穷多个，从只含反应物时的零到只含产物时的大到无法测量的值。平衡常数则是体系处于平衡时 <em>Q</em> 所取的那一个值。质量作用定律指出，在一定温度下，处于平衡的体系的反应商是恒定的：每一种混合物都要正向或逆向反应，直到它的 <em>Q</em> 达到这同一个值。在图 13.5 中，SO<sub>2</sub> 的氧化反应分别从只含反应物和只含产物开始，经过的 <em>Q<sub>c</sub></em> 值不同，但最终稳定在同一个 <em>K<sub>c</sub></em>。只有温度的改变才会改变 <em>K</em>。"
+      }
+    },
+    {
+      "id": "e8",
+      "source_id": "fs-idp176984288",
+      "source_number": "8",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "constant",
+      "prompt": "如果观察到下列反应处于平衡，能否判断该反应是从纯 NO<sub>2</sub> 开始的还是从纯 N<sub>2</sub>O<sub>4</sub> 开始的？<br>$2{\\text{NO}}_{2}(g)\\rightleftharpoons {\\text{N}}_{2}{\\text{O}}_{4}(g)$",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "不能。平衡时混合物的 <em>Q<sub>c</sub></em> = <em>K<sub>c</sub></em> = $\\frac{[{\\text{N}}_{2}{\\text{O}}_{4}]}{{[{\\text{NO}}_{2}]}^{2}}$，这是该温度下平衡常数唯一的值，并且正反应和逆反应以相等的速率进行；组成中没有任何东西记录它是如何到达这里的。纯 NO<sub>2</sub> 的样品通过正向净反应达到平衡，纯 N<sub>2</sub>O<sub>4</sub> 的样品则通过逆向净反应达到平衡，正如图 13.5 中 SO<sub>2</sub> 的氧化反应无论从只含反应物还是只含产物开始，都得到同一个 <em>K<sub>c</sub></em>。如果两个样品在相同体积中含有相同的原子，即 0.20 <em>M</em> NO<sub>2</sub> 或 0.10 <em>M</em> N<sub>2</sub>O<sub>4</sub>，它们最终的浓度完全相同。只有观察平衡之前的混合物，在其棕色还在变化的时候，才能看出起点。"
+      }
+    },
+    {
+      "id": "e9",
+      "source_id": "fs-idp237194960",
+      "source_number": "9",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "heterogeneous",
+      "prompt": "前面讨论过的溶解性规则中有这样一条：除 Hg<sub>2</sub>Cl<sub>2</sub>、AgCl、PbCl<sub>2</sub> 和 CuCl 外，所有氯化物都可溶。<br>（a）写出以方程式 $\\text{AgCl}(s)\\rightleftharpoons {\\text{Ag}}^{\\text{+}}(aq)+{\\text{Cl}}^{\\text{−}}(aq)$ 表示的反应的平衡常数表达式。<em>K<sub>c</sub></em> 是 &gt; 1、&lt; 1 还是 ≈ 1？请解释你的答案。<br>（b）写出以方程式 ${\\text{Pb}}^{2+}(aq)+2{\\text{Cl}}^{\\text{−}}(aq)\\rightleftharpoons {\\text{PbCl}}_{2}(s)$ 表示的反应的平衡常数表达式。<em>K<sub>c</sub></em> 是 &gt; 1、&lt; 1 还是 ≈ 1？请解释你的答案。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）<em>K<sub>c</sub></em> = [Ag<sup>+</sup>][Cl<sup>−</sup>] &lt; 1。AgCl 不溶；因此离子的浓度远小于 1 <em>M</em>；（b）${K}_{c}=\\;\\frac{1}{[{\\text{Pb}}^{2+}]{[{\\text{Cl}}^{\\text{−}}]}^{2}}$ &gt; 1，因为 PbCl<sub>2</sub> 不溶，固体的生成会使离子的浓度降到很低的水平（&lt;1 <em>M</em>）。"
+      }
+    },
+    {
+      "id": "e10",
+      "source_id": "fs-idp114043728",
+      "source_number": "10",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "heterogeneous",
+      "prompt": "前面讨论过的溶解性规则中有这样一条：碳酸盐、磷酸盐、硼酸盐和砷酸盐——铵根离子和碱金属的盐除外——都不溶。<br>（a）写出以方程式 ${\\text{CaCO}}_{3}(s)\\rightleftharpoons {\\text{Ca}}^{2+}(aq)+{\\text{CO}}_{3}{}^{2−}(\\text{aq})$ 表示的反应的平衡常数表达式。<em>K<sub>c</sub></em> 是 &gt; 1、&lt; 1 还是 ≈ 1？请解释你的答案。<br>（b）写出以方程式 $3{\\text{Ba}}^{2+}(aq)+2{\\text{PO}}_{4}{}^{3−}(aq)\\rightleftharpoons {\\text{Ba}}_{3}{({\\text{PO}}_{4})}_{2}(s)$ 表示的反应的平衡常数表达式。<em>K<sub>c</sub></em> 是 &gt; 1、&lt; 1 还是 ≈ 1？请解释你的答案。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "（a）<em>K<sub>c</sub></em> = [Ca<sup>2+</sup>][CO<sub>3</sub><sup>2−</sup>] &lt; 1。固体 CaCO<sub>3</sub> 不出现在表达式中。钙既不是碱金属也不是铵，所以 CaCO<sub>3</sub> 不溶，只有少量溶解；平衡时离子的浓度远小于 1 <em>M</em>，它们的乘积小于 1。（b）${K}_{c}=\\;\\frac{1}{{[{\\text{Ba}}^{2+}]}^{3}{[{\\text{PO}}_{4}{}^{3−}]}^{2}}$ &gt; 1。固体 Ba<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub> 不出现在表达式中。磷酸钡不溶，所以固体的生成会不断去除离子，直到它们的浓度非常小（远小于 1 <em>M</em>）；此时分母非常小，<em>K<sub>c</sub></em> 远大于 1。"
+      }
+    },
+    {
+      "id": "e11",
+      "source_id": "fs-idp61604544",
+      "source_number": "11",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "constant",
+      "prompt": "苯是无铅汽油中用作辛烷值助剂的化合物之一。它由乙炔催化转化为苯而制得：$3{\\text{C}}_{2}{\\text{H}}_{2}(g)\\;\\rightleftharpoons \\;{\\text{C}}_{6}{\\text{H}}_{6}(g).$ <em>K<sub>c</sub></em> 取哪个值会使这个反应在商业上最有用？<em>K<sub>c</sub></em> ≈ 0.01、<em>K<sub>c</sub></em> ≈ 1 还是 <em>K<sub>c</sub></em> ≈ 10？请解释你的答案。",
+      "answer": {
+        "type": "choice",
+        "options": [
+          "<em>K<sub>c</sub></em> ≈ 0.01",
+          "<em>K<sub>c</sub></em> ≈ 1",
+          "<em>K<sub>c</sub></em> ≈ 10"
+        ],
+        "correct": 2,
+        "generated_by": "source",
+        "solution": "由于 ${K}_{c}=\\;\\frac{[{\\text{C}}_{6}{\\text{H}}_{6}]}{{[{\\text{C}}_{2}{\\text{H}}_{2}]}^{3}},$ <em>K<sub>c</sub></em> ≈ 10 意味着 C<sub>6</sub>H<sub>6</sub> 比 C<sub>2</sub>H<sub>2</sub> 占优势。在这种情况下，如果达到平衡的速率合适，该反应在商业上是可行的。"
+      }
+    },
+    {
+      "id": "e12",
+      "source_id": "fs-idp237441536",
+      "source_number": "12",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "quotient",
+      "prompt": "证明对于方程式 $\\text{KI}(aq)+{\\text{I}}_{2}(aq)\\rightleftharpoons {\\text{KI}}_{3}(aq)$ 所表示的反应，完整的化学方程式、完全离子方程式和净离子方程式给出相同的反应商表达式。KI<sub>3</sub> 由离子 K<sup>+</sup> 和 ${\\text{I}}_{3}{}^{\\text{−}}$ 组成。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "三者都给出 ${Q}_{c}=\\;\\frac{[{\\text{I}}_{3}{}^{\\text{−}}]}{[{\\text{I}}^{\\text{−}}][{\\text{I}}_{2}]}.$ 对于完整方程式 KI(<em>aq</em>) + I<sub>2</sub>(<em>aq</em>) ⇌ KI<sub>3</sub>(<em>aq</em>)，${Q}_{c}=\\;\\frac{[{\\text{KI}}_{3}]}{[\\text{KI}][{\\text{I}}_{2}]};$ 两种盐都完全解离，每个化学式单元给出一个 I<sup>−</sup> 或一个 I<sub>3</sub><sup>−</sup>，所以 [KI] = [I<sup>−</sup>]，[KI<sub>3</sub>] = [I<sub>3</sub><sup>−</sup>]。对于完全离子方程式 K<sup>+</sup>(<em>aq</em>) + I<sup>−</sup>(<em>aq</em>) + I<sub>2</sub>(<em>aq</em>) ⇌ K<sup>+</sup>(<em>aq</em>) + I<sub>3</sub><sup>−</sup>(<em>aq</em>)，${Q}_{c}=\\;\\frac{[{\\text{K}}^{\\text{+}}][{\\text{I}}_{3}{}^{\\text{−}}]}{[{\\text{K}}^{\\text{+}}][{\\text{I}}^{\\text{−}}][{\\text{I}}_{2}]},$ 旁观离子的 [K<sup>+</sup>] 约去。净离子方程式 I<sup>−</sup>(<em>aq</em>) + I<sub>2</sub>(<em>aq</em>) ⇌ I<sub>3</sub><sup>−</sup>(<em>aq</em>) 则直接给出这一表达式。"
+      }
+    },
+    {
+      "id": "e13",
+      "source_id": "fs-idp57598704",
+      "source_number": "13",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "constant",
+      "prompt": "滴定要有效，反应必须迅速，并且反应的产率基本上必须是 100%。滴定反应的 <em>K<sub>c</sub></em> 是 &gt; 1、&lt; 1 还是 ≈ 1？",
+      "answer": {
+        "type": "choice",
+        "options": [
+          "<em>K<sub>c</sub></em> &gt; 1",
+          "<em>K<sub>c</sub></em> &lt; 1",
+          "<em>K<sub>c</sub></em> ≈ 1"
+        ],
+        "correct": 0,
+        "generated_by": "source",
+        "solution": "<em>K<sub>c</sub></em> &gt; 1"
+      }
+    },
+    {
+      "id": "e14",
+      "source_id": "fs-idp68591104",
+      "source_number": "14",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "constant",
+      "prompt": "沉淀反应要在重量分析中有用，反应的产物必须不溶。一个有用的沉淀反应的 <em>K<sub>c</sub></em> 是 &gt; 1、&lt; 1 还是 ≈ 1？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "<em>K<sub>c</sub></em> &gt; 1，而且远大于 1。沉淀反应是离子结合成固体，例如 Ag<sup>+</sup>(<em>aq</em>) + Cl<sup>−</sup>(<em>aq</em>) ⇌ AgCl(<em>s</em>)，其 ${K}_{c}=\\;\\frac{1}{[{\\text{Ag}}^{\\text{+}}][{\\text{Cl}}^{\\text{−}}]}.$ 固体不出现在表达式中，所以离子的浓度处在分母上。有用的沉淀反应使被测离子几乎不剩在溶液中，所以平衡时这些浓度非常小，分母非常小，<em>K<sub>c</sub></em> 就很大。"
+      }
+    },
+    {
+      "id": "e15",
+      "source_id": "fs-idp281095456",
+      "source_number": "15",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "quotient",
+      "prompt": "写出下列各反应的反应商 <em>Q<sub>c</sub></em> 的数学表达式：<br>（a）${\\text{CH}}_{4}(g)+{\\text{Cl}}_{2}(g)\\rightleftharpoons {\\text{CH}}_{3}\\text{Cl}(g)+\\text{HCl}(g)$<br>（b）${\\text{N}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2\\text{NO}(g)$<br>（c）$2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2{\\text{SO}}_{3}(g)$<br>（d）${\\text{BaSO}}_{3}(s)\\rightleftharpoons \\text{BaO}(s)+{\\text{SO}}_{2}(g)$<br>（e）${\\text{P}}_{4}(g)+5{\\text{O}}_{2}(g)\\rightleftharpoons {\\text{P}}_{4}{\\text{O}}_{10}(s)$<br>（f）${\\text{Br}}_{2}(g)\\rightleftharpoons 2\\text{Br}(g)$<br>（g）${\\text{CH}}_{4}(g)+2{\\text{O}}_{2}(g)\\rightleftharpoons {\\text{CO}}_{2}(g)+2{\\text{H}}_{2}\\text{O}(l)$<br>（h）${\\text{CuSO}}_{4}\\text{·}5{\\text{H}}_{2}\\text{O}(s)\\rightleftharpoons {\\text{CuSO}}_{4}(s)+5{\\text{H}}_{2}\\text{O}(g)$",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）${Q}_{c}=\\;\\frac{[{\\text{CH}}_{3}\\text{Cl}][\\text{HCl}]}{[{\\text{CH}}_{4}][{\\text{Cl}}_{2}]};$ （b）${Q}_{c}=\\;\\frac{{[\\text{NO}]}^{2}}{[{\\text{N}}_{2}]\\;[{\\text{O}}_{2}]};$ （c）${Q}_{c}=\\;\\frac{{[{\\text{SO}}_{3}]}^{2}}{{[{\\text{SO}}_{2}]}^{2}[{\\text{O}}_{2}]};$ （d）<em>Q<sub>c</sub></em> = [SO<sub>2</sub>]；（e）${Q}_{c}=\\;\\frac{1}{[{\\text{P}}_{4}]{[{\\text{O}}_{2}]}^{5}};$ （f）${Q}_{c}=\\;\\frac{{[\\text{Br}]}^{2}}{[{\\text{Br}}_{2}]};$ （g）${Q}_{c}=\\;\\frac{[{\\text{CO}}_{2}]}{[{\\text{CH}}_{4}]{[{\\text{O}}_{2}]}^{2}};$ （h）<em>Q<sub>c</sub></em> = [H<sub>2</sub>O]<sup>5</sup>"
+      }
+    },
+    {
+      "id": "e16",
+      "source_id": "fs-idp52174160",
+      "source_number": "16",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "quotient",
+      "prompt": "写出下列各反应的反应商 <em>Q<sub>c</sub></em> 的数学表达式：<br>（a）${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2{\\text{NH}}_{3}(g)$<br>（b）$4{\\text{NH}}_{3}(g)+5{\\text{O}}_{2}(g)\\rightleftharpoons 4\\text{NO}(g)+6{\\text{H}}_{2}\\text{O}(g)$<br>（c）${\\text{N}}_{2}{\\text{O}}_{4}(g)\\rightleftharpoons 2{\\text{NO}}_{2}(g)$<br>（d）${\\text{CO}}_{2}(g)+{\\text{H}}_{2}(g)\\rightleftharpoons \\text{CO}(g)+{\\text{H}}_{2}\\text{O}(g)$<br>（e）${\\text{NH}}_{4}\\text{Cl}(s)\\rightleftharpoons {\\text{NH}}_{3}(g)+\\text{HCl}(g)$<br>（f）$2\\text{Pb}{({\\text{NO}}_{3})}_{2}(s)\\rightleftharpoons 2\\text{PbO}(s)+4{\\text{NO}}_{2}(g)+{\\text{O}}_{2}(g)$<br>（g）$2{\\text{H}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2{\\text{H}}_{2}\\text{O}(l)$<br>（h）${\\text{S}}_{8}(g)\\rightleftharpoons 8\\text{S}(g)$",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "每个 <em>Q<sub>c</sub></em> 都是各产物浓度（每个浓度取其系数次幂）的乘积除以各反应物浓度（同样取其系数次幂）的乘积；（e）和（f）中的纯固体以及（g）中的液态水都不写入。（a）${Q}_{c}=\\;\\frac{{[{\\text{NH}}_{3}]}^{2}}{[{\\text{N}}_{2}]{[{\\text{H}}_{2}]}^{3}};$ （b）${Q}_{c}=\\;\\frac{{[\\text{NO}]}^{4}{[{\\text{H}}_{2}\\text{O}]}^{6}}{{[{\\text{NH}}_{3}]}^{4}{[{\\text{O}}_{2}]}^{5}};$ （c）${Q}_{c}=\\;\\frac{{[{\\text{NO}}_{2}]}^{2}}{[{\\text{N}}_{2}{\\text{O}}_{4}]};$ （d）${Q}_{c}=\\;\\frac{[\\text{CO}][{\\text{H}}_{2}\\text{O}]}{[{\\text{CO}}_{2}][{\\text{H}}_{2}]};$ （e）<em>Q<sub>c</sub></em> = [NH<sub>3</sub>][HCl]；（f）<em>Q<sub>c</sub></em> = [NO<sub>2</sub>]<sup>4</sup>[O<sub>2</sub>]；（g）${Q}_{c}=\\;\\frac{1}{{[{\\text{H}}_{2}]}^{2}[{\\text{O}}_{2}]};$ （h）${Q}_{c}=\\;\\frac{{[\\text{S}]}^{8}}{[{\\text{S}}_{8}]}$"
+      }
+    },
+    {
+      "id": "e17",
+      "source_id": "fs-idp110211104",
+      "source_number": "17",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "direction",
+      "prompt": "下面给出了每个体系中反应物和产物的初始浓度或压强。计算反应商，并确定每个体系为达到平衡将沿哪个方向进行。<br>（a）$2{\\text{NH}}_{3}(g)\\rightleftharpoons {\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\hspace{2em}{K}_{c}=17;$ [NH<sub>3</sub>] = 0.20 <em>M</em>，[N<sub>2</sub>] = 1.00 <em>M</em>，[H<sub>2</sub>] = 1.00 <em>M</em><br>（b）$2{\\text{NH}}_{3}(g)\\rightleftharpoons {\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\hspace{2em}{K}_{P}=6.8\\;\\times \\;{10}^{4};$ NH<sub>3</sub> = 3.0 atm，N<sub>2</sub> = 2.0 atm，H<sub>2</sub> = 1.0 atm<br>（c）$2{\\text{SO}}_{3}(g)\\;\\rightleftharpoons 2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\hspace{2em}{K}_{c}=0.230;$ [SO<sub>3</sub>] = 0.00 <em>M</em>，[SO<sub>2</sub>] = 1.00 <em>M</em>，[O<sub>2</sub>] = 1.00 <em>M</em><br>（d）$2{\\text{SO}}_{3}(g)\\rightleftharpoons 2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\hspace{2em}{K}_{P}=16.5;$ SO<sub>3</sub> = 1.00 atm，SO<sub>2</sub> = 1.00 atm，O<sub>2</sub> = 1.00 atm<br>（e）$2\\text{NO}(g)+{\\text{Cl}}_{2}(g)\\rightleftharpoons 2\\text{NOCl}(g)\\hspace{2em}{K}_{c}=4.6\\;\\times \\;{10}^{4};$ [NO] = 1.00 <em>M</em>，[Cl<sub>2</sub>] = 1.00 <em>M</em>，[NOCl] = 0 <em>M</em><br>（f）${\\text{N}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2\\text{NO}(g)\\hspace{2em}{K}_{P}=0.050;$ NO = 10.0 atm，N<sub>2</sub> = O<sub>2</sub> = 5 atm",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）<em>Q</em><sub>c</sub> = 25，向左进行；（b）<em>Q<sub>P</sub></em> = 0.22，向右进行；（c）<em>Q<sub>c</sub></em> 无定义，向左进行；（d）<em>Q<sub>P</sub></em> = 1.00，向右进行；（e）<em>Q<sub>P</sub></em> = 0，向右进行；（f）<em>Q<sub>c</sub></em><sup class=\"fn\" data-note=\"c-e17-labels\"></sup> = 4，向左进行"
+      }
+    },
+    {
+      "id": "e19",
+      "source_id": "fs-idp86297984",
+      "source_number": "19",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "direction",
+      "prompt": "下列反应在 720 K 时 <em>K<sub>P</sub></em> = 4.50 × 10<sup>−5</sup>。<br>${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2{\\text{NH}}_{3}(g)$<br>如果在反应容器中充入各种气体，使其分压为所列数值，那么为达到平衡，反应将向哪个方向移动？<em>P</em>(NH<sub>3</sub>) = 93 atm，<em>P</em>(N<sub>2</sub>) = 48 atm，<em>P</em>(H<sub>2</sub>) = 52 atm",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "体系将向反应物方向移动以达到平衡。"
+      }
+    },
+    {
+      "id": "e21",
+      "source_id": "fs-idp57788496",
+      "source_number": "21",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "heterogeneous",
+      "prompt": "在要求写出反应（a）CH<sub>4</sub> + Cl<sub>2</sub> 至（h）CuSO<sub>4</sub>·5H<sub>2</sub>O 的 <em>Q<sub>c</sub></em> 的那道习题所描述的体系中，哪些是均相平衡？哪些是多相平衡？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）均相；（b）均相；（c）均相；（d）多相；（e）多相；（f）均相；（g）多相；（h）多相"
+      }
+    },
+    {
+      "id": "e22",
+      "source_id": "fs-idp132912112",
+      "source_number": "22",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "heterogeneous",
+      "prompt": "在要求写出反应（a）N<sub>2</sub> + 3H<sub>2</sub> 至（h）S<sub>8</sub> 的 <em>Q<sub>c</sub></em> 的那道习题所描述的体系中，哪些是均相平衡？哪些是多相平衡？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "均相：（a）、（b）、（c）、（d）和（h），其中所有反应物和产物都是气体，所以都在同一相中。多相：（e），固体 NH<sub>4</sub>Cl 生成两种气体；（f），固体 Pb(NO<sub>3</sub>)<sub>2</sub> 生成固体 PbO 和两种气体；以及（g），两种气体生成液态水。这几个反应中的物种都处于两个相中。"
+      }
+    },
+    {
+      "id": "e23",
+      "source_id": "fs-idp14899216",
+      "source_number": "23",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "homogeneous",
+      "prompt": "在要求写出反应（a）CH<sub>4</sub> + Cl<sub>2</sub> 至（h）CuSO<sub>4</sub>·5H<sub>2</sub>O 的 <em>Q<sub>c</sub></em> 的那道习题的反应中，哪些反应的 <em>K<sub>c</sub></em>（用浓度计算）等于 <em>K<sub>P</sub></em>（用压强计算）？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "这种情况出现在（a）和（b）中。"
+      }
+    },
+    {
+      "id": "e24",
+      "source_id": "fs-idp93479024",
+      "source_number": "24",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "homogeneous",
+      "prompt": "在要求写出反应（a）N<sub>2</sub> + 3H<sub>2</sub> 至（h）S<sub>8</sub> 的 <em>Q<sub>c</sub></em> 的那道习题的反应中，哪些反应的 <em>K<sub>c</sub></em>（用浓度计算）等于 <em>K<sub>P</sub></em>（用压强计算）？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "只有（d）。由于 <em>K<sub>P</sub></em> = <em>K<sub>c</sub></em>(<em>RT</em>)<sup>Δ<em>n</em></sup>，当 Δ<em>n</em>（气态产物的物质的量减去气态反应物的物质的量）为零时，两者相等。只数气体：（a）Δ<em>n</em> = 2 − 4 = −2；（b）10 − 9 = 1；（c）2 − 1 = 1；（d）(1 + 1) − (1 + 1) = 0；（e）2 − 0 = 2；（f）5 − 0 = 5；（g）0 − 3 = −3，因为水是液态；（h）8 − 1 = 7。"
+      }
+    },
+    {
+      "id": "e25",
+      "source_id": "fs-idp102347760",
+      "source_number": "25",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "homogeneous",
+      "prompt": "把 <em>K<sub>c</sub></em> 的值换算成 <em>K<sub>P</sub></em> 的值，或把 <em>K<sub>P</sub></em> 的值换算成 <em>K<sub>c</sub></em> 的值。<br>（a）${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2{\\text{NH}}_{3}(g)\\hspace{2em}{K}_{c}=0.50\\;\\text{（}400\\;\\text{°C}\\;\\text{时）}$<br>（b）${\\text{H}}_{2}(g)+{\\text{I}}_{2}(g)\\rightleftharpoons 2\\text{HI}(g)\\hspace{2em}{K}_{c}=50.2\\;\\text{（}448\\;\\text{°C}\\;\\text{时）}$<br>（c）${\\text{Na}}_{2}{\\text{SO}}_{4}\\text{·}10{\\text{H}}_{2}\\text{O}(s)\\rightleftharpoons {\\text{Na}}_{2}{\\text{SO}}_{4}(s)+10{\\text{H}}_{2}\\text{O}(g)\\hspace{2em}{K}_{P}=4.08\\;\\times \\;{10}^{−25}\\;\\text{（}25\\;\\text{°C}\\;\\text{时）}$<br>（d）${\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons {\\text{H}}_{2}\\text{O}(g)\\hspace{2em}{K}_{P}=0.122\\;\\text{（}50\\;\\text{°C}\\;\\text{时）}$",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "(a) <em>K<sub>P</sub></em>",
+            "value": 0.00016,
+            "hint": "Δ<em>n</em> = 2 − 4；使用开尔文温度和 <em>R</em> = 0.0821 L atm mol<sup>−1</sup> K<sup>−1</sup>。"
+          },
+          {
+            "part": "(b) <em>K<sub>P</sub></em>",
+            "value": 50.2,
+            "hint": "在计算任何东西之前，先数出两边气体的物质的量。"
+          },
+          {
+            "part": "(c) <em>K<sub>c</sub></em>",
+            "value": 5.31e-39,
+            "hint": "只有水蒸气是气体，所以 Δ<em>n</em> = 10。"
+          },
+          {
+            "part": "(d) <em>K<sub>c</sub></em>",
+            "value": 0.0046
+          }
+        ],
+        "solution": "（a）<em>K<sub>P</sub></em> = 1.6 × 10<sup>−4</sup>；（b）<em>K<sub>P</sub></em> = 50.2；（c）<em>K<sub>c</sub></em> = 5.31 × 10<sup>−39</sup>；（d）<em>K<sub>c</sub></em> = 4.60 × 10<sup>−3</sup>"
+      }
+    },
+    {
+      "id": "e27",
+      "source_id": "fs-idp103369136",
+      "source_number": "27",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "heterogeneous",
+      "prompt": "30 °C 时，变化 ${\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons {\\text{H}}_{2}\\text{O}(g)$ 的平衡常数表达式的值是多少？（见<a href=\\\"/chemistry-2e/sheets/water/\\\">附录 E</a>。）",
+      "answer": {
+        "type": "number",
+        "value": 0.042,
+        "generated_by": "source",
+        "hint": "液体不写入表达式，所以 <em>K<sub>P</sub></em> 就是 30 °C 时水的蒸气压，以标准大气压（atm）为单位。",
+        "solution": "${K}_{P}={P}_{{\\text{H}}_{2}\\text{O}}=0.042.$"
+      }
+    },
+    {
+      "id": "e28",
+      "source_id": "fs-idp282222272",
+      "source_number": "28",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "homogeneous",
+      "prompt": "写出 HOCN 在水中电离的反应商表达式。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "HOCN 把一个质子给予水而电离：HOCN(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + OCN<sup>−</sup>(<em>aq</em>)，所以 ${Q}_{c}=\\;\\frac{[{\\text{H}}_{3}{\\text{O}}^{\\text{+}}][{\\text{OCN}}^{\\text{−}}]}{[\\text{HOCN}]}.$ 水既是溶剂又是反应物，作为液体不写入表达式，正如 HF(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + F<sup>−</sup>(<em>aq</em>) 那样。"
+      }
+    },
+    {
+      "id": "e29",
+      "source_id": "fs-idp131083248",
+      "source_number": "29",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "homogeneous",
+      "prompt": "写出 NH<sub>3</sub> 在水中电离的反应商表达式。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "${Q}_{c}=\\;\\frac{[{\\text{NH}}_{4}{}^{\\text{+}}][{\\text{OH}}^{\\text{−}}]}{[{\\text{NH}}_{3}]}$"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "write-reaction-quotient"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "reaction-quotient"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "equilibrium-constant"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "reaction-quotient"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "predict-direction-q-versus-k"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "write-reaction-quotient"
+    },
+    {
+      "exercise": "cyl4",
+      "concept": "kp-kc-relation"
+    },
+    {
+      "exercise": "cyl5",
+      "concept": "coupled-equilibria"
+    },
+    {
+      "exercise": "e6",
+      "concept": "reaction-quotient"
+    },
+    {
+      "exercise": "e6",
+      "concept": "equilibrium-constant"
+    },
+    {
+      "exercise": "e6",
+      "concept": "law-of-mass-action"
+    },
+    {
+      "exercise": "e8",
+      "concept": "law-of-mass-action"
+    },
+    {
+      "exercise": "e8",
+      "concept": "equilibrium-constant"
+    },
+    {
+      "exercise": "e9",
+      "concept": "write-reaction-quotient"
+    },
+    {
+      "exercise": "e9",
+      "concept": "magnitude-of-k"
+    },
+    {
+      "exercise": "e9",
+      "concept": "homogeneous-and-heterogeneous-equilibria"
+    },
+    {
+      "exercise": "e10",
+      "concept": "write-reaction-quotient"
+    },
+    {
+      "exercise": "e10",
+      "concept": "magnitude-of-k"
+    },
+    {
+      "exercise": "e10",
+      "concept": "homogeneous-and-heterogeneous-equilibria"
+    },
+    {
+      "exercise": "e11",
+      "concept": "magnitude-of-k"
+    },
+    {
+      "exercise": "e12",
+      "concept": "write-reaction-quotient"
+    },
+    {
+      "exercise": "e13",
+      "concept": "magnitude-of-k"
+    },
+    {
+      "exercise": "e14",
+      "concept": "magnitude-of-k"
+    },
+    {
+      "exercise": "e15",
+      "concept": "write-reaction-quotient"
+    },
+    {
+      "exercise": "e15",
+      "concept": "homogeneous-and-heterogeneous-equilibria"
+    },
+    {
+      "exercise": "e16",
+      "concept": "write-reaction-quotient"
+    },
+    {
+      "exercise": "e16",
+      "concept": "homogeneous-and-heterogeneous-equilibria"
+    },
+    {
+      "exercise": "e17",
+      "concept": "predict-direction-q-versus-k"
+    },
+    {
+      "exercise": "e17",
+      "concept": "reaction-quotient"
+    },
+    {
+      "exercise": "e19",
+      "concept": "predict-direction-q-versus-k"
+    },
+    {
+      "exercise": "e21",
+      "concept": "homogeneous-equilibrium"
+    },
+    {
+      "exercise": "e21",
+      "concept": "heterogeneous-equilibrium"
+    },
+    {
+      "exercise": "e22",
+      "concept": "homogeneous-equilibrium"
+    },
+    {
+      "exercise": "e22",
+      "concept": "heterogeneous-equilibrium"
+    },
+    {
+      "exercise": "e23",
+      "concept": "kp-kc-relation"
+    },
+    {
+      "exercise": "e24",
+      "concept": "kp-kc-relation"
+    },
+    {
+      "exercise": "e25",
+      "concept": "kp-kc-relation"
+    },
+    {
+      "exercise": "e27",
+      "concept": "homogeneous-and-heterogeneous-equilibria"
+    },
+    {
+      "exercise": "e27",
+      "concept": "equilibrium-constant"
+    },
+    {
+      "exercise": "e28",
+      "concept": "write-reaction-quotient"
+    },
+    {
+      "exercise": "e29",
+      "concept": "write-reaction-quotient"
+    }
+  ],
+  "footnotes": [
+    {
+      "id": "c-e17-labels",
+      "kind": "correction",
+      "html": "答案把这两个反应商的标注与题目所给的常数标反了：在（e）中，所给的是 <em>K<sub>c</sub></em>，反应商为 <em>Q<sub>c</sub></em> = 0；在（f）中，所给的是 <em>K<sub>P</sub></em>，反应商为 <em>Q<sub>P</sub></em> = 4。"
+    },
+    {
+      "id": "c-cyl5-kc2",
+      "kind": "correction",
+      "html": "书中把所给的两个常数都标作 <em>K</em><sub>c1</sub>；第二个，即 CoO(<em>s</em>) + H<sub>2</sub>(<em>g</em>) 的 67，应为 <em>K</em><sub>c2</sub>。"
+    }
+  ],
+  "derivations": [
+    {
+      "id": "kp-kc",
+      "what": "$\\kKP$ 与 $\\kKc$ 之间的关系",
+      "source": "化学（第2版），13.2 平衡常数",
+      "nodes": [
+        {
+          "assumes": [
+            {
+              "tex": "\\kM = \\frac{\\kn}{\\kV}",
+              "src": "3.3"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{P}{\\kP}\\mk{V}{\\kV} = \\mk{n}{\\kn}\\mk{RT}{R\\kT}",
+            "src": "9.2"
+          },
+          "steps": [
+            {
+              "tex": "\\mk{P}{\\kP} = \\mk{n}{\\left(\\frac{\\kn}{\\kV}\\right)}\\mk{RT}{R\\kT}",
+              "uses": [],
+              "map": {
+                "V": "n"
+              }
+            },
+            {
+              "tex": "\\mk{P}{\\kP} = \\mk{n}{\\kM}\\mk{RT}{R\\kT}",
+              "uses": [
+                0
+              ]
+            }
+          ],
+          "src": "13.2"
+        },
+        {
+          "assumes": [
+            {
+              "step": 0
+            },
+            {
+              "tex": "\\kKc = \\frac{{\\kconcC}^{c}{\\kconcD}^{d}}{{\\kconcA}^{a}{\\kconcB}^{b}}",
+              "src": "13.2"
+            },
+            {
+              "tex": "\\Delta n = (c+d)-(a+b)",
+              "src": "13.2"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{K}{\\kKP} = \\frac{\\mk{C}{{(\\kPC)}^{c}}\\mk{D}{{(\\kPD)}^{d}}}{\\mk{A}{{(\\kPA)}^{a}}\\mk{B}{{(\\kPB)}^{b}}}",
+            "src": "13.2",
+            "why": "气相反应 $a\\text{A}+b\\text{B}\\rightleftharpoons c\\text{C}+d\\text{D}$ 的 $K_P$，用分压写出。"
+          },
+          "steps": [
+            {
+              "tex": "\\mk{K}{\\kKP} = \\frac{\\mk{C}{{(\\kconcC\\times R\\kT)}^{c}}\\mk{D}{{(\\kconcD\\times R\\kT)}^{d}}}{\\mk{A}{{(\\kconcA\\times R\\kT)}^{a}}\\mk{B}{{(\\kconcB\\times R\\kT)}^{b}}}",
+              "uses": [
+                0
+              ],
+              "cap": "每种气体都以其各自的物质的量浓度遵循 $P = MRT$，所以 $P_C = [\\text{C}]RT$，其余气体同理。"
+            },
+            {
+              "tex": "\\mk{K}{\\kKP} = \\frac{\\mk{C}{{\\kconcC}^{c}}\\mk{D}{{\\kconcD}^{d}}}{\\mk{A}{{\\kconcA}^{a}}\\mk{B}{{\\kconcB}^{b}}}\\times\\frac{\\mk{rn}{{(R\\kT)}^{c+d}}}{\\mk{rd}{{(R\\kT)}^{a+b}}}",
+              "uses": [],
+              "cap": "积的幂等于各因子幂的积，$(xy)^n = x^n y^n$。",
+              "map": {
+                "C": [
+                  "C",
+                  "rn"
+                ],
+                "D": [
+                  "D",
+                  "rn"
+                ],
+                "A": [
+                  "A",
+                  "rd"
+                ],
+                "B": [
+                  "B",
+                  "rd"
+                ]
+              }
+            },
+            {
+              "tex": "\\mk{K}{\\kKP} = \\mk{Kc}{\\kKc}\\,\\frac{\\mk{rn}{{(R\\kT)}^{c+d}}}{\\mk{rd}{{(R\\kT)}^{a+b}}}",
+              "uses": [
+                1
+              ],
+              "map": {
+                "C": "Kc",
+                "D": "Kc",
+                "A": "Kc",
+                "B": "Kc"
+              }
+            },
+            {
+              "tex": "\\mk{K}{\\kKP} = \\mk{Kc}{\\kKc}\\mk{r}{{(R\\kT)}^{(c+d)-(a+b)}}",
+              "uses": [],
+              "cap": "同底数幂相除，指数相减，$x^m/x^n = x^{m-n}$。",
+              "map": {
+                "rn": "r",
+                "rd": "r"
+              }
+            },
+            {
+              "tex": "\\mk{K}{\\kKP} = \\mk{Kc}{\\kKc}\\mk{r}{{(R\\kT)}^{\\Delta n}}",
+              "uses": [
+                2
+              ]
+            }
+          ],
+          "src": "13.2"
+        }
+      ]
+    },
+    {
+      "id": "coupled-equilibria",
+      "what": "颠倒、乘系数和相加后的方程式的平衡常数",
+      "source": "化学（第2版），13.2 平衡常数",
+      "nodes": [
+        {
+          "assumes": [
+            {
+              "tex": "\\text{A}\\rightleftharpoons\\text{B}\\qquad\\kKc = \\frac{\\kconcB}{\\kconcA}",
+              "src": "13.2"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{K}{\\kKcprime} = \\mk{q}{\\frac{\\kconcA}{\\kconcB}}",
+            "src": "13.2",
+            "why": "颠倒后的方程式 $\\text{B}\\rightleftharpoons\\text{A}$ 的质量作用定律。"
+          },
+          "steps": [
+            {
+              "tex": "\\mk{K}{\\kKcprime} = \\frac{1}{\\mk{q}{\\frac{\\kconcB}{\\kconcA}}}",
+              "uses": []
+            },
+            {
+              "tex": "\\mk{K}{\\kKcprime} = \\frac{1}{\\mk{q}{\\kKc}}",
+              "uses": [
+                0
+              ]
+            }
+          ],
+          "src": "13.2"
+        },
+        {
+          "assumes": [
+            {
+              "tex": "\\text{A}\\rightleftharpoons\\text{B}\\qquad\\kKc = \\frac{\\kconcB}{\\kconcA}",
+              "src": "13.2"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{K}{\\kKcprime} = \\frac{\\mk{b}{{\\kconcB}^{\\text{x}}}}{\\mk{a}{{\\kconcA}^{\\text{x}}}}",
+            "src": "13.2",
+            "why": "乘以 x 之后的方程式 $\\text{xA}\\rightleftharpoons\\text{xB}$ 的质量作用定律。"
+          },
+          "steps": [
+            {
+              "tex": "\\mk{K}{\\kKcprime} = \\mk{q}{{\\left(\\frac{\\kconcB}{\\kconcA}\\right)}^{\\text{x}}}",
+              "uses": [],
+              "map": {
+                "b": "q",
+                "a": "q"
+              },
+              "cap": "两个指数相同的幂之商，等于商的幂，$\\frac{x^n}{y^n} = \\left(\\frac{x}{y}\\right)^n$。"
+            },
+            {
+              "tex": "\\mk{K}{\\kKcprime} = \\mk{q}{{\\kKc}^{\\text{x}}}",
+              "uses": [
+                0
+              ]
+            }
+          ],
+          "src": "13.2"
+        },
+        {
+          "assumes": [
+            {
+              "tex": "\\text{A}\\rightleftharpoons\\text{B}\\qquad\\kKcone = \\frac{\\kconcB}{\\kconcA}",
+              "src": "13.2"
+            },
+            {
+              "tex": "\\text{B}\\rightleftharpoons\\text{C}\\qquad\\kKctwo = \\frac{\\kconcC}{\\kconcB}",
+              "src": "13.2"
+            },
+            {
+              "tex": "\\text{A}\\rightleftharpoons\\text{C}\\qquad\\kKcprime = \\frac{\\kconcC}{\\kconcA}",
+              "src": "13.2"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{K}{\\kKcone\\;\\kKctwo} = \\mk{b}{\\frac{\\kconcB}{\\kconcA}}\\;\\times\\;\\mk{c}{\\frac{\\kconcC}{\\kconcB}}",
+            "src": "13.2",
+            "uses": [
+              0,
+              1
+            ]
+          },
+          "steps": [
+            {
+              "tex": "\\mk{K}{\\kKcone\\;\\kKctwo} = \\mk{q}{\\frac{\\cancel{\\kconcB}\\kconcC}{\\kconcA\\cancel{\\kconcB}}}",
+              "uses": [],
+              "map": {
+                "b": "q",
+                "c": "q"
+              }
+            },
+            {
+              "tex": "\\mk{K}{\\kKcone\\;\\kKctwo} = \\mk{q}{\\frac{\\kconcC}{\\kconcA}}",
+              "uses": []
+            },
+            {
+              "tex": "\\mk{q}{\\kKcprime} = \\mk{K}{\\kKcone\\;\\kKctwo}",
+              "uses": [
+                2
+              ]
+            }
+          ],
+          "src": "13.2"
+        }
+      ]
+    }
+  ]
+}

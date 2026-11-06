@@ -1,0 +1,1291 @@
+{
+  "id": "9.2",
+  "module": "m68751",
+  "chapter": "9",
+  "title": "压强、体积、物质的量与温度的关系：理想气体状态方程",
+  "short": "理想气体状态方程",
+  "lead": "描述一份气体样品有四个性质：<span data-concept=\"gas-pressure\">压强</span>、<span data-concept=\"volume\">体积</span>、<span data-concept=\"temperature\">温度</span>和物质的量，气球时代的科学家们发现了在另外两个量保持不变时，每两个量之间的关系。他们的四个定律——阿蒙顿定律、查理定律、玻意耳定律和阿伏加德罗定律——合并成一个适用于理想行为气体的方程，由它可以根据其余各量求出任意一个性质。",
+  "objectives": [
+    "找出气体各种性质之间的数学关系",
+    "运用理想气体状态方程及相关气体定律，计算指定条件下气体各种性质的值"
+  ],
+  "summary_html": "<p>气体的行为可以用若干根据其性质的实验观测得出的定律来描述。在<span data-concept=\"volume\">体积</span>不变的条件下，一定量气体的<span data-concept=\"gas-pressure\">压强</span>与其热力学<span data-concept=\"temperature\">温度</span>成正比（阿蒙顿定律）。在<span data-concept=\"gas-pressure\">压强</span>一定时，给定气体样品的<span data-concept=\"volume\">体积</span>与其热力学<span data-concept=\"temperature\">温度</span>成正比（查理定律）。在<span data-concept=\"temperature\">温度</span>保持不变时，一定量气体的<span data-concept=\"volume\">体积</span>与其<span data-concept=\"gas-pressure\">压强</span>成反比（玻意耳定律）。在相同的<span data-concept=\"temperature\">温度</span>和<span data-concept=\"gas-pressure\">压强</span>条件下，相同<span data-concept=\"volume\">体积</span>的任何气体含有相同数目的分子（阿伏加德罗定律）。</p><p>描述这些定律的方程是理想气体状态方程 <em>PV</em> = <em>nRT</em> 的特例，其中 <em>P</em> 是气体的<span data-concept=\"gas-pressure\">压强</span>，<em>V</em> 是其<span data-concept=\"volume\">体积</span>，<em>n</em> 是气体的物质的量，以<span data-concept=\"mole\">摩尔</span>计，<em>T</em> 是其开尔文<span data-concept=\"temperature\">温度</span>，<em>R</em> 是理想（普适）气体常数。</p>",
+  "notes": "两则“学习链接”被略去：一则是气体冷却时收缩、加热时膨胀的视频，另一则是压强、体积、温度和物质的量的 PhET 模拟，本页的气体盒子取代了它的位置。图 9.17 是大堡礁珊瑚的照片，位于水肺潜水的提示框旁，作为陪衬场景被略去；本章习题 31 旁的气象气球照片也一并略去；本章习题 26、28、30、32、34、36、38、40 和 44 在书中的答案表里没有答案，也被略去。",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-fable-5-1"
+      },
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      },
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-fable-5-1",
+        "effort": "low"
+      },
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ]
+  },
+  "built": "2026-10-26",
+  "exercises_lead": "",
+  "exercise_notes": "布鲁姆层级、概念标签、权重和提示均由 AI 生成。答案取自书后答案以及“学习检测”的答案。六道“学习检测”题在各自的例题之后随文给出；书中对例 9.8 的注射器一题给出的答案是（a）约 17–18 mL，（b）~18 mL，（c）17.7 mL，所以核对的数值是（c）部分，完整答案放在解答中。没有答案的数值习题 fs-idm179450656（12.5 mL 的注射器）、fs-idm244984432（一氧化碳的温度）、fs-idm179333888（再多呼吸五次的气球）、fs-idm207691136（以 kPa 计的安全气囊）、fs-idm171506192（碘蒸气）、fs-idm87206720（高空气球）、fs-idm131888352（充满的水肺气瓶）、fs-idp25823920（一小时内消耗的氧气）和 fs-idm26646416（镭产生的氦）被略去，也没有为它们算出答案。六道没有答案的概念题保留，所附的建议思路标明为 OmniStax 自己所写。有答案的习题 fs-idm188679440 要求画四幅图，书中以一幅图作答；这里的解答用书中对该图自己的描述来说明这幅图，并指出本页中实时画出这四幅图的模拟。数值答案接受 2% 的容差。",
+  "figures": [
+    {
+      "id": "fig-ballooning",
+      "kind": "photo",
+      "number": "9.9",
+      "draws": []
+    },
+    {
+      "id": "sim-amontons-sphere",
+      "kind": "sim",
+      "number": "9.10",
+      "originals": [
+        "/media/ch09/CNX_Chem_09_01_Amontons1.jpg"
+      ],
+      "original_caption": "温度对气体压强的影响：电热板关闭时，球内气体的压强相对较低。气体被加热后，球内气体的压强增大。",
+      "draws": [
+        "pressure",
+        "temperature",
+        "amount",
+        "volume"
+      ],
+      "conventions": [
+        "N",
+        "O"
+      ],
+      "ai": [
+        {
+          "model": "claude-fable-5-1",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "framed so label and plate show; dial unit clear; strip and note trimmed"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-amontons-graph",
+      "kind": "sim",
+      "number": "9.11",
+      "originals": [
+        "/media/ch09/CNX_Chem_09_02_Amontons2.jpg"
+      ],
+      "original_caption": "体积和空气的量一定时，压强与温度成正比，前提是温度用开尔文表示。（在更低的温度下无法测量，因为气体会凝结。）将这条直线外推到更低的压强，它在 –273 °C 处达到压强 0，这对应开尔文温标的 0，也是可能的最低温度，称为绝对零度。",
+      "draws": [
+        "pressure",
+        "temperature"
+      ],
+      "ai": [
+        {
+          "model": "claude-fable-5-1",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "pressure axis to 120 kPa; notes and labels clear of lines"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-charles-graph",
+      "kind": "sim",
+      "number": "9.12",
+      "originals": [
+        "/media/ch09/CNX_Chem_09_02_Charles2.jpg"
+      ],
+      "original_caption": "在 1 atm 的恒定压强下，1 摩尔甲烷气体的体积与温度呈线性关系。若温度用开尔文表示，体积与温度成正比。直线止于 111 K，因为甲烷在此温度液化；外推时，它与图的原点相交，对应绝对零度的温度。",
+      "draws": [
+        "volume",
+        "temperature"
+      ],
+      "ai": [
+        {
+          "model": "claude-fable-5-1",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "notes clear of the line and labels; subscripted V labels"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-boyle",
+      "kind": "sim",
+      "number": "9.13",
+      "folds": [
+        "9.14"
+      ],
+      "originals": [
+        "/media/ch09/CNX_Chem_09_03_BoylesLaw1.jpg",
+        "/media/ch09/CNX_Chem_09_02_Boyleslaw2.jpg"
+      ],
+      "original_caption": "（图 9.13）气体占据较小体积时，施加的压强较高；占据较大体积时，施加的压强较低（假定气体的量和温度不变）。由于 P 与 V 成反比，1/P 对 V 的图是直线。（图 9.14）压强与体积的关系是成反比。（a）P 对 V 的图是双曲线，而（b）(1/P) 对 V 的图是直线。",
+      "draws": [
+        "pressure",
+        "volume"
+      ],
+      "ai": [
+        {
+          "model": "claude-fable-5-1",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "dial unit clear; P labels and hyperbola note apart; note trimmed"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-breathing",
+      "kind": "sim",
+      "number": "9.15",
+      "originals": [
+        "/media/ch09/CNX_Chem_09_02_BoylesLaw4.jpg"
+      ],
+      "original_caption": "呼吸之所以发生，是因为肺的体积扩张和收缩，在肺与周围环境之间造成微小的压强差，使空气被吸入肺中和被压出肺外。",
+      "draws": [
+        "volume",
+        "pressure"
+      ],
+      "ai": [
+        {
+          "model": "claude-fable-5-1",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "rewritten: library silhouette with a chest lens, two lungs, readout"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-scuba",
+      "kind": "photo",
+      "number": "9.16",
+      "draws": []
+    },
+    {
+      "id": "sim-gas-box",
+      "kind": "sim",
+      "draws": [
+        "pressure",
+        "volume",
+        "temperature",
+        "amount"
+      ],
+      "conventions": [
+        "He",
+        "N",
+        "O",
+        "Ar",
+        "C"
+      ],
+      "ai": [
+        {
+          "model": "claude-fable-5-1",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "dial unit clear of the end labels"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-four-graphs",
+      "kind": "sim",
+      "draws": [
+        "pressure",
+        "volume",
+        "temperature",
+        "amount"
+      ],
+      "ai": [
+        {
+          "model": "claude-fable-5-1",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "law names above the frames; note that repeated the caption dropped"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-balloons",
+      "kind": "sim",
+      "number": "9.18",
+      "originals": [
+        "/media/ch09/CNX_Chem_09_02_HENH3O2.jpg"
+      ],
+      "original_caption": "无论化学成分如何，1 摩尔表现为理想行为的气体在 STP 下占据的体积约为 22.4 L。",
+      "draws": [
+        "volume",
+        "amount",
+        "pressure",
+        "temperature",
+        "mass"
+      ],
+      "conventions": [
+        "He",
+        "H",
+        "N",
+        "O",
+        "C",
+        "Ar"
+      ],
+      "ai": [
+        {
+          "model": "claude-fable-5-1",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "3D names above the balloons; strip line and note trimmed"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "span": "history",
+      "concept": "gas-pressure",
+      "verb": "uses"
+    },
+    {
+      "span": "amontons",
+      "concept": "amontons-law",
+      "verb": "introduces"
+    },
+    {
+      "span": "amontons",
+      "concept": "absolute-zero",
+      "verb": "introduces"
+    },
+    {
+      "span": "amontons",
+      "concept": "gas-pressure",
+      "verb": "uses"
+    },
+    {
+      "span": "amontons",
+      "concept": "celsius-kelvin-conversion",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-hair-spray",
+      "concept": "amontons-law",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-hair-spray",
+      "concept": "celsius-kelvin-conversion",
+      "verb": "uses"
+    },
+    {
+      "span": "charles",
+      "concept": "charles-law",
+      "verb": "introduces"
+    },
+    {
+      "span": "charles",
+      "concept": "absolute-zero",
+      "verb": "reinforces"
+    },
+    {
+      "span": "charles",
+      "concept": "volume",
+      "verb": "uses"
+    },
+    {
+      "span": "charles",
+      "concept": "celsius-kelvin-conversion",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-co2",
+      "concept": "charles-law",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-gas-thermometer",
+      "concept": "charles-law",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-gas-thermometer",
+      "concept": "celsius-kelvin-conversion",
+      "verb": "uses"
+    },
+    {
+      "span": "boyle",
+      "concept": "boyles-law",
+      "verb": "introduces"
+    },
+    {
+      "span": "boyle",
+      "concept": "gas-pressure",
+      "verb": "uses"
+    },
+    {
+      "span": "boyle",
+      "concept": "volume",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-syringe",
+      "concept": "boyles-law",
+      "verb": "uses"
+    },
+    {
+      "span": "breathing",
+      "concept": "boyles-law",
+      "verb": "reinforces"
+    },
+    {
+      "span": "avogadro",
+      "concept": "avogadro-law",
+      "verb": "introduces"
+    },
+    {
+      "span": "avogadro",
+      "concept": "volume",
+      "verb": "uses"
+    },
+    {
+      "span": "avogadro",
+      "concept": "atoms-and-molecules",
+      "verb": "uses"
+    },
+    {
+      "span": "ideal-gas-law",
+      "concept": "ideal-gas-law",
+      "verb": "introduces"
+    },
+    {
+      "span": "ideal-gas-law",
+      "concept": "ideal-gas",
+      "verb": "introduces"
+    },
+    {
+      "span": "ideal-gas-law",
+      "concept": "amontons-law",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ideal-gas-law",
+      "concept": "charles-law",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ideal-gas-law",
+      "concept": "boyles-law",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ideal-gas-law",
+      "concept": "avogadro-law",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ideal-gas-law",
+      "concept": "convert-units",
+      "verb": "uses"
+    },
+    {
+      "span": "ideal-gas-law",
+      "concept": "ideal-gas-constant",
+      "verb": "introduces"
+    },
+    {
+      "span": "ex-methane",
+      "concept": "ideal-gas-law",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-methane",
+      "concept": "convert-units",
+      "verb": "uses"
+    },
+    {
+      "span": "combined-gas-law",
+      "concept": "combined-gas-law",
+      "verb": "introduces"
+    },
+    {
+      "span": "combined-gas-law",
+      "concept": "ideal-gas-law",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-scuba",
+      "concept": "combined-gas-law",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-scuba",
+      "concept": "ideal-gas",
+      "verb": "uses"
+    },
+    {
+      "span": "diving",
+      "concept": "boyles-law",
+      "verb": "reinforces"
+    },
+    {
+      "span": "diving",
+      "concept": "gas-pressure",
+      "verb": "uses"
+    },
+    {
+      "span": "stp",
+      "concept": "standard-temperature-and-pressure",
+      "verb": "introduces"
+    },
+    {
+      "span": "stp",
+      "concept": "ideal-gas-law",
+      "verb": "uses"
+    },
+    {
+      "span": "stp",
+      "concept": "avogadro-law",
+      "verb": "uses"
+    },
+    {
+      "span": "stp",
+      "concept": "molar-volume",
+      "verb": "introduces"
+    },
+    {
+      "span": "stp",
+      "concept": "standard-molar-volume",
+      "verb": "introduces"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idm66260928",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-hair-spray"
+      },
+      "cite": "amontons",
+      "prompt": "一份氮气 N<sub>2</sub> 样品在 27 °C 和 600 torr 下占 45.0 mL。若体积保持不变而将其冷却到 –73 °C，压强将是多少？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 400,
+        "unit": "torr",
+        "hint": "把两个温度都换算成开尔文，使用 P₁/T₁ = P₂/T₂；体积不变。",
+        "solution": "400 torr"
+      }
+    },
+    {
+      "id": "cyl2",
+      "source_id": "fs-idm45782128",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-co2"
+      },
+      "cite": "charles",
+      "prompt": "一份氧气 O<sub>2</sub> 样品在 30 °C 和 452 torr 下占 32.2 mL。在 –70 °C 和相同压强下，它将占多大体积？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 21.6,
+        "unit": "mL",
+        "hint": "压强不变，所以 V₁/T₁ = V₂/T₂，两个温度都用开尔文。",
+        "solution": "21.6 mL"
+      }
+    },
+    {
+      "id": "cyl3",
+      "source_id": "fs-idm51209248",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-gas-thermometer"
+      },
+      "cite": "charles",
+      "prompt": "一份乙烷样品在 298 K 和 1.1 atm 下占 405 mL，它在 467 K 和 1.1 atm 下的体积是多少？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 635,
+        "unit": "mL",
+        "hint": "两个状态的压强相同，所以体积与开尔文温度成比例变化。",
+        "solution": "635 mL"
+      }
+    },
+    {
+      "id": "cyl4",
+      "source_id": "fs-idp10418864",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-syringe"
+      },
+      "cite": "boyle",
+      "prompt": "图 9.13 中的气体样品在 6.5 psi 的压强下体积为 30.0 mL。请用以下方法确定气体在 11.0 psi 压强下的体积：（a）图 9.13 中的 <em>P</em>-<em>V</em> 图（b）图 9.13 中的 1/<em>P</em> 对 <em>V</em> 图（c）玻意耳定律方程。请评论每种方法可能的准确度。",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 17.7,
+        "unit": "mL",
+        "part": "(c)",
+        "hint": "（c）部分用 P₁V₁ = P₂V₂，温度和气体的量均不变。",
+        "solution": "（a）约 17–18 mL；（b）~18 mL；（c）17.7 mL；从 <em>P</em>-<em>V</em> 图上很难估计准确，所以（a）可能比（b）更不准确；计算的准确度取决于方程和测量所允许的程度"
+      }
+    },
+    {
+      "id": "cyl5",
+      "source_id": "fs-idm72969744",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-methane"
+      },
+      "cite": "ideal-gas-law",
+      "prompt": "计算现代氢动力汽车 180 L 的储氢罐中，27 °C 下储存的 2520 摩尔氢气的压强，以 bar 表示。",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 350,
+        "unit": "bar",
+        "hint": "由 PV = nRT 解出 P，温度用开尔文，然后把压强换算成 bar。",
+        "solution": "350 bar"
+      }
+    },
+    {
+      "id": "cyl6",
+      "source_id": "fs-idp23616944",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-scuba"
+      },
+      "cite": "combined-gas-law",
+      "prompt": "发现一份氨样品在 27 °C 和 0.850 atm 的实验室条件下占 0.250 L。求这份样品在 0 °C 和 1.00 atm 下的体积。",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 0.193,
+        "unit": "L",
+        "hint": "氨的量不变，所以 P₁V₁/T₁ = P₂V₂/T₂。",
+        "solution": "0.193 L"
+      }
+    },
+    {
+      "id": "e1",
+      "source_id": "fs-idm6254784",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "amontons",
+      "prompt": "有时把自行车留在炎热天气的阳光下会爆胎。为什么？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "太阳加热轮胎内的空气，其压强升高，直到轮胎再也承受不住。轮胎里装着一定量的空气，体积几乎不能增大，所以适用阿蒙顿定律：体积和物质的量一定时，压强与开尔文温度成正比，$\\frac{\\kPone}{\\kTone}=\\frac{\\kPtwo}{\\kTtwo}$。炎热天气里阳光下的深色轮胎可以从 20 °C 升温到 50 °C，即从 293 K 升到 323 K，这使压强增大到原来的 $\\frac{323\\;\\text{K}}{293\\;\\text{K}}=1.10$ 倍，即增加百分之十。一个已经打气接近极限的轮胎会被推过这个极限而爆裂，就像例 9.5 中受热的发胶罐可能发生的那样。"
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idp16137760",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "boyle",
+      "prompt": "假定潜水员（图 9.16）呼出的气泡保持完整，请解释这些气泡的体积在上升到水面的过程中如何变化。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "气泡上升时，压强减小，所以它们的体积增大，正如玻意耳定律所指出的。"
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idm228222512",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "boyle",
+      "prompt": "叙述玻意耳定律的一种方式是：“在其他条件相同的情况下，气体的压强与其体积成反比。”（a）“成反比”一词是什么意思？（b）必须相同的“其他条件”是什么？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "（a）两个量成反比，是指其中一个增大若干倍时，另一个减小相同的倍数，因而它们的乘积保持不变：$\\kP=\\frac{k}{\\kV}$，即 $\\kP\\kV=k$。把气体的体积减半，压强加倍；把体积增至三倍，压强减小到三分之一。（b）其他条件是气体的温度和气体的量。玻意耳定律适用于温度恒定的一定量气体；在体积变化的同时加热气体或加入更多气体，会因体积变化以外的原因改变压强。"
+      }
+    },
+    {
+      "id": "e4",
+      "source_id": "fs-idm153017968",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "avogadro",
+      "prompt": "叙述阿伏加德罗定律的另一种方式是：“在其他条件相同的情况下，气体中的分子数与气体的体积成正比。”（a）“成正比”一词是什么意思？（b）必须相同的“其他条件”是什么？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）体积增大时，气体中的粒子数增多。（b）温度、压强"
+      }
+    },
+    {
+      "id": "e5",
+      "source_id": "fs-idm119503088",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "charles",
+      "prompt": "如果用来测定该曲线的样品中气体的物质的量加倍，图 9.12 中的图将如何变化？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "这条直线的斜率将变为原来的两倍：在每个温度下，体积都将是原来的两倍，而直线在绝对零度时仍通过原点。该图画的是 1 摩尔甲烷在 1 atm 恒定压强下的体积对其开尔文温度。由理想气体状态方程，$\\kV=\\frac{\\kn R}{\\kP}\\kT$，所以直线的斜率是 $\\frac{\\kn R}{\\kP}$，在相同压强下把 $\\kn$ 加倍，斜率也加倍；这就是阿伏加德罗定律，体积与物质的量成正比。在 273 K 时，1 mol 占 22.4 L，2 mol 占 44.8 L。直线仍然止于 111 K，因为甲烷在 1 atm 下于此温度液化，与气体的量无关。"
+      }
+    },
+    {
+      "id": "e6",
+      "source_id": "fs-idm150329120",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "boyle",
+      "prompt": "如果用来测定该曲线的样品中气体的物质的量加倍，图 9.13 中的图将如何变化？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "曲线会更靠右、更靠上，但基本形状相同。"
+      }
+    },
+    {
+      "id": "e7",
+      "source_id": "fs-idm221266736",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "ideal-gas-law",
+      "prompt": "除了图 9.13 中的数据之外，还需要什么其他信息，才能求出用来作该图的空气样品的质量？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "样品的温度和空气的摩尔质量。图中给出了样品在室温下的压强和体积，但没有给出确切的温度，而理想气体状态方程需要这三个量才能求出物质的量：$\\kn=\\frac{\\kP\\kV}{R\\kT}$。质量则是物质的量乘以摩尔质量，$\\km=\\kn\\kMM$，空气的摩尔质量是它那种主要由氮和氧组成的混合物的平均值，约 29 g/mol。例如，若样品在 25 °C，则 15.0 mL、13.0 psi（0.885 atm）的那个点给出 $\\kn=\\frac{(0.885\\;\\text{atm})(0.0150\\;\\text{L})}{(0.08206\\;\\text{L atm mol}^{-1}\\text{K}^{-1})(298\\;\\text{K})}=5.43\\times10^{-4}\\;\\text{mol}$，质量为 $(5.43\\times10^{-4}\\;\\text{mol})(29\\;\\text{g/mol})=0.016\\;\\text{g}$。"
+      }
+    },
+    {
+      "id": "e8",
+      "source_id": "fs-idm162722032",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "charles",
+      "prompt": "利用图 9.12，确定 1 mol CH<sub>4</sub> 气体在 150 K 和 1 atm 下的体积。",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 12.5,
+        "unit": "L",
+        "hint": "从图 9.12 的直线上读出 150 K 处的体积，或者用 V/T = k 和表中的一个点。",
+        "solution": "约 12.5 L"
+      }
+    },
+    {
+      "id": "e10",
+      "source_id": "fs-idm211017328",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "amontons",
+      "prompt": "一罐喷雾剂一直用到只剩下推进剂气体，其压强在 23 °C 时为 1344 torr。若把这个罐扔进火里（T = 475 °C），热罐中的压强将是多少？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 3400,
+        "unit": "torr",
+        "hint": "罐是刚性的，所以 P₁/T₁ = P₂/T₂，两个温度都用开尔文。",
+        "solution": "3.40 $\\times$ 10<sup>3</sup> torr"
+      }
+    },
+    {
+      "id": "e12",
+      "source_id": "fs-idm221278704",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "charles",
+      "prompt": "将 –196 °C 时测得的 2.50 L 氢气加热到 100 °C。假定压强不变，计算该气体在较高温度下的体积。",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 12.1,
+        "unit": "L",
+        "hint": "查理定律：V₁/T₁ = V₂/T₂，先把 –196 °C 和 100 °C 换算成开尔文。",
+        "solution": "12.1 L"
+      }
+    },
+    {
+      "id": "e14",
+      "source_id": "fs-idm24946256",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "ideal-gas-law",
+      "prompt": "一个气象气球在地面处装有 8.80 摩尔氦气，压强为 0.992 atm，温度为 25 °C。在这些条件下气球的体积是多少？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 217,
+        "unit": "L",
+        "hint": "由 PV = nRT 解出 V，取 R = 0.08206 L atm mol⁻¹ K⁻¹，T 用开尔文。",
+        "solution": "217 L"
+      }
+    },
+    {
+      "id": "e16",
+      "source_id": "fs-idm95690800",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "ideal-gas-law",
+      "prompt": "在 788.0 K、压强为 1.220 atm 的 4.3410 L 玻璃泡中，含有多少摩尔气态三氟化硼 BF<sub>3</sub>？BF<sub>3</sub> 有多少克？",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "moles",
+            "value": 0.0819,
+            "unit": "mol",
+            "hint": "由 PV = nRT 解出 n。"
+          },
+          {
+            "part": "grams",
+            "value": 5.553,
+            "unit": "g",
+            "hint": "把物质的量乘以 BF₃ 的摩尔质量。"
+          }
+        ],
+        "solution": "8.190 $\\times$ 10<sup>–2</sup> mol; 5.553 g"
+      }
+    },
+    {
+      "id": "e18",
+      "source_id": "fs-idm192798240",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "ideal-gas-law",
+      "prompt": "在下列各种情况下，各有多少克气体？（a）307 torr、26 °C 下的 0.100 L CO<sub>2</sub>（b）378.3 kPa、483 K 下的 8.75 L C<sub>2</sub>H<sub>4</sub>（c）0.23 torr、–54 °C 下的 221 mL Ar",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "(a)",
+            "value": 0.0724,
+            "unit": "g",
+            "hint": "压强用 atm，由 PV = nRT 求 n，再乘以 CO₂ 的摩尔质量。"
+          },
+          {
+            "part": "(b)",
+            "value": 23.1,
+            "unit": "g",
+            "hint": "压强用 kPa，取 R = 8.314 kPa L mol⁻¹ K⁻¹。"
+          },
+          {
+            "part": "(c)",
+            "value": 0.00015,
+            "unit": "g",
+            "hint": "先把 221 mL 换算成升、–54 °C 换算成开尔文，再解 n。"
+          }
+        ],
+        "solution": "（a）7.24 $\\times$ 10<sup>–2</sup> g；（b）23.1 g；（c）1.5 $\\times$ 10<sup>–4</sup> g"
+      }
+    },
+    {
+      "id": "e20",
+      "source_id": "fs-idm71892416",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "combined-gas-law",
+      "prompt": "一个医用氧气瓶的容积为 35.4 L，内装 O<sub>2</sub>，压强为 151 atm，温度为 25 °C。在正常体内条件，即 1 atm 和 37 °C 下，这相当于多大体积的 O<sub>2</sub>？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 5561,
+        "unit": "L",
+        "hint": "氧气的量固定，所以 P₁V₁/T₁ = P₂V₂/T₂。",
+        "solution": "5561 L"
+      }
+    },
+    {
+      "id": "e22",
+      "source_id": "fs-idm247077296",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "ideal-gas-law",
+      "prompt": "一个装有 11.34 kg 丁烷 C<sub>4</sub>H<sub>10</sub> 的 20.0 L 气瓶向大气打开。假设气瓶被打开，气体逸出，直到瓶内压强等于大气压 0.983 atm，温度为 27 °C，计算留在气瓶中的气体的质量。",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 46.4,
+        "unit": "g",
+        "hint": "剩下的气体在 0.983 atm 和 300 K 下充满 20.0 L；由 PV = nRT 求出它的物质的量，再用丁烷的摩尔质量换算成质量。",
+        "solution": "46.4 g"
+      }
+    },
+    {
+      "id": "e24",
+      "source_id": "fs-idm188679440",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "ideal-gas-law",
+      "prompt": "对于表现为理想行为的一定量气体，请画出带标注的图：（a）<em>P</em> 随 <em>V</em> 的变化（b）<em>V</em> 随 <em>T</em> 的变化（c）<em>P</em> 随 <em>T</em> 的变化（d）$\\frac{1}{P}$ 随 <em>V</em> 的变化",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "对于表现为理想行为的气体：（a）横轴为体积、纵轴为压强，一条下降的曲线，下降的速率逐渐减小，标注 n、T 恒定；（b）横轴为温度、纵轴为体积，一条上升的直线，标注 n、P 恒定；（c）横轴为温度、纵轴为压强，一条上升的直线，标注 n、V 恒定；（d）横轴为体积、纵轴为 1/P，一条上升的直线，标注 n、T 恒定。本节的第二个模拟根据气体的同一个状态画出了这四幅图。"
+      }
+    },
+    {
+      "id": "e25",
+      "source_id": "fs-idm259995696",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "stp",
+      "prompt": "在 STP 下，一升甲烷气体 CH<sub>4</sub> 所含的氢原子比一升纯氢气 H<sub>2</sub> 所含的更多。请以阿伏加德罗定律为出发点，解释原因。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "因为这两升气体含有相同数目的分子，而每个甲烷分子含四个氢原子，每个氢分子含两个。阿伏加德罗定律说，在相同温度和压强下，相同体积的气体含有相同数目的分子，与气体种类无关。在 STP 下，1 mol 任何气体占 22.4 L，所以每升含 $\\frac{1\\;\\text{L}}{22.4\\;\\text{L/mol}}=0.0446$ mol 分子。于是这一升 CH<sub>4</sub> 含 $4\\times0.0446=0.178$ mol 氢原子，这一升 H<sub>2</sub> 含 $2\\times0.0446=0.0893$ mol，所以甲烷所含的氢原子数是氢气的两倍。"
+      }
+    },
+    {
+      "id": "e26",
+      "source_id": "fs-idp25675936",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "stp",
+      "prompt": "氯氟烃（如 CCl<sub>2</sub>F<sub>2</sub>）对臭氧层的消耗作用众所周知。用 CH<sub>3</sub>CH<sub>2</sub>F(<em>g</em>) 等替代品取代氯氟烃，已在很大程度上纠正了这个问题。请计算 10.0 g 这两种化合物在 STP 下各占的体积：（a）CCl<sub>2</sub>F<sub>2</sub>(<em>g</em>)（b）CH<sub>3</sub>CH<sub>2</sub>F(<em>g</em>)",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "(a)",
+            "value": 1.85,
+            "unit": "L",
+            "hint": "用摩尔质量把 10.0 g 换算成物质的量（以摩尔计），再乘以标准摩尔体积 22.4 L/mol。"
+          },
+          {
+            "part": "(b)",
+            "value": 4.66,
+            "unit": "L",
+            "hint": "对 CH₃CH₂F 的摩尔质量做同样的步骤。"
+          }
+        ],
+        "solution": "（a）1.85 L CCl<sub>2</sub>F<sub>2</sub>；（b）4.66 L CH<sub>3</sub>CH<sub>2</sub>F"
+      }
+    },
+    {
+      "id": "e28",
+      "source_id": "fs-idm23005472",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "combined-gas-law",
+      "prompt": "一个体积为 100.21 L（21 °C、0.981 atm）的气球被放飞，刚好飘过不列颠哥伦比亚省的 Crumpit 山顶。若气球的最终体积为 144.53 L，温度为 5.24 °C，则气球飘过 Crumpit 山时所受的压强是多少？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 0.644,
+        "unit": "atm",
+        "hint": "用联合气体定律，两个温度都用开尔文，解出 P₂。",
+        "solution": "0.644 atm"
+      }
+    },
+    {
+      "id": "e29",
+      "source_id": "fs-idm189510384",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "amontons",
+      "prompt": "若一定量气体的温度在体积不变时加倍，压强会怎样？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "压强加倍。体积不变、气体的量一定时，阿蒙顿定律使压强与开尔文温度成正比，$\\frac{\\kPone}{\\kTone}=\\frac{\\kPtwo}{\\kTtwo}$，所以当 $\\kTtwo=2\\kTone$ 时，$\\kPtwo=\\kPone\\frac{\\kTtwo}{\\kTone}=2\\kPone$。例如，1.00 atm、300 K 的气体加热到 600 K，压强达到 2.00 atm。加倍必须是在开尔文温标上：把气体从 20 °C 加热到 40 °C，只是使它从 293 K 升到 313 K，压强只增大到原来的 1.07 倍。"
+      }
+    },
+    {
+      "id": "e30",
+      "source_id": "fs-idm136587680",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "boyle",
+      "prompt": "若一定量气体的体积在温度不变时增至三倍，压强会怎样？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "压强减小到原来的三分之一。"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "amontons-law"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "charles-law"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "charles-law"
+    },
+    {
+      "exercise": "cyl4",
+      "concept": "boyles-law"
+    },
+    {
+      "exercise": "cyl5",
+      "concept": "ideal-gas-law"
+    },
+    {
+      "exercise": "cyl6",
+      "concept": "combined-gas-law"
+    },
+    {
+      "exercise": "e1",
+      "concept": "amontons-law"
+    },
+    {
+      "exercise": "e2",
+      "concept": "boyles-law"
+    },
+    {
+      "exercise": "e3",
+      "concept": "boyles-law"
+    },
+    {
+      "exercise": "e4",
+      "concept": "avogadro-law"
+    },
+    {
+      "exercise": "e5",
+      "concept": "charles-law"
+    },
+    {
+      "exercise": "e5",
+      "concept": "avogadro-law",
+      "weight": 2
+    },
+    {
+      "exercise": "e6",
+      "concept": "boyles-law"
+    },
+    {
+      "exercise": "e6",
+      "concept": "avogadro-law",
+      "weight": 2
+    },
+    {
+      "exercise": "e7",
+      "concept": "ideal-gas-law"
+    },
+    {
+      "exercise": "e7",
+      "concept": "boyles-law",
+      "weight": 2
+    },
+    {
+      "exercise": "e8",
+      "concept": "charles-law"
+    },
+    {
+      "exercise": "e10",
+      "concept": "amontons-law"
+    },
+    {
+      "exercise": "e12",
+      "concept": "charles-law"
+    },
+    {
+      "exercise": "e14",
+      "concept": "ideal-gas-law"
+    },
+    {
+      "exercise": "e16",
+      "concept": "ideal-gas-law"
+    },
+    {
+      "exercise": "e18",
+      "concept": "ideal-gas-law"
+    },
+    {
+      "exercise": "e20",
+      "concept": "combined-gas-law"
+    },
+    {
+      "exercise": "e22",
+      "concept": "ideal-gas-law"
+    },
+    {
+      "exercise": "e24",
+      "concept": "ideal-gas-law"
+    },
+    {
+      "exercise": "e24",
+      "concept": "boyles-law",
+      "weight": 2
+    },
+    {
+      "exercise": "e24",
+      "concept": "charles-law",
+      "weight": 2
+    },
+    {
+      "exercise": "e24",
+      "concept": "amontons-law",
+      "weight": 2
+    },
+    {
+      "exercise": "e25",
+      "concept": "avogadro-law"
+    },
+    {
+      "exercise": "e25",
+      "concept": "standard-temperature-and-pressure",
+      "weight": 2
+    },
+    {
+      "exercise": "e26",
+      "concept": "standard-temperature-and-pressure"
+    },
+    {
+      "exercise": "e26",
+      "concept": "ideal-gas-law",
+      "weight": 2
+    },
+    {
+      "exercise": "e28",
+      "concept": "combined-gas-law"
+    },
+    {
+      "exercise": "e29",
+      "concept": "amontons-law"
+    },
+    {
+      "exercise": "e30",
+      "concept": "boyles-law"
+    }
+  ],
+  "referents": [
+    {
+      "id": "sphere",
+      "label": "密封球",
+      "figures": [
+        "sim-amontons-sphere"
+      ]
+    },
+    {
+      "id": "syringe",
+      "label": "注射器",
+      "figures": [
+        "sim-boyle"
+      ]
+    },
+    {
+      "id": "lungs",
+      "label": "肺",
+      "figures": [
+        "sim-breathing"
+      ]
+    },
+    {
+      "id": "diaphragm",
+      "label": "膈",
+      "figures": [
+        "sim-breathing"
+      ]
+    }
+  ]
+}

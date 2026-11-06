@@ -1,0 +1,423 @@
+{
+  "id": "16.1",
+  "module": "m68816",
+  "chapter": "16",
+  "title": "自发性",
+  "short": "自发性",
+  "lead": "有些过程自行朝一个方向进行，要使其沿相反方向进行，必须持续输入<span data-concept=\"energy-and-work\">能量</span>来驱动。一个过程是否自发，并不说明它进行得有多快；气体扩散到空烧瓶中，以及<span data-concept=\"heat-flow\">热量</span>在两个物体之间传递，显示出自发过程的共同之处。",
+  "objectives": [
+    "区分自发过程与非自发过程",
+    "描述某些自发过程所伴随的物质和能量的分散"
+  ],
+  "summary_html": "<p>化学过程和物理过程在一定条件下有朝一个方向发生的自然倾向。<span data-concept=\"spontaneous-process\">自发过程</span>的发生不需要来自外部的持续<span data-concept=\"energy-and-work\">能量</span>输入，而<span data-concept=\"nonspontaneous-process\">非自发过程</span>则需要。经历<span data-concept=\"spontaneous-process\">自发过程</span>的体系，其<span data-concept=\"energy-and-work\">能量</span>可能增加或减少，也可能不变，但体系内物质和/或<span data-concept=\"energy-and-work\">能量</span>的分布方式都会发生变化。</p>",
+  "notes": "本节没有遗漏任何内容。“(P = 0). (Figure 16.4).”中多余的句点按原样保留。图 16.2 的时间轴以天为单位，即其图注所说的一周，并采用正文给出的锝-99m 六小时半衰期，而书中的坐标轴读作小时。",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ]
+  },
+  "built": "2026-10-26",
+  "exercises_lead": "",
+  "exercise_notes": "布鲁姆层级、概念标签和建议的解题思路由AI 生成。答案取自书后答案和“学习检测”的答案。两道没有书后答案的习题 fs-idp120021296 和 fs-idp158359616 要求给出定义或描述，而不是数值，每道都保留了标明为 OmniStax 自拟的建议思路。没有遗漏，也没有移动任何内容。",
+  "figures": [
+    {
+      "id": "sim-decay",
+      "kind": "sim",
+      "number": "16.2",
+      "originals": [
+        "/media/ch16/CNX_Chem_16_01_decayrates.jpg"
+      ],
+      "original_caption": "U-238 和 Tc-99m 都会发生自发的放射性衰变，但速率相差悬殊。在一周的时间里，Tc-99m 样品基本上全部衰变，而 U-238 样品则一点也没有衰变。",
+      "draws": [
+        "time"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-carbon",
+      "kind": "photo",
+      "number": "16.3",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-gas-flasks",
+      "kind": "sim",
+      "number": "16.4",
+      "originals": [
+        "/media/ch16/CNX_Chem_16_02_Gas.jpg"
+      ],
+      "original_caption": "一个孤立体系由一个烧瓶中的理想气体组成，该烧瓶通过一个关闭的阀门与装有真空的第二个烧瓶相连。阀门一旦打开，气体便自发地在两个烧瓶之间均匀分布。",
+      "draws": [
+        "energy",
+        "pressure",
+        "volume"
+      ],
+      "conventions": [
+        "Ar"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-heat-flow",
+      "kind": "sim",
+      "number": "16.5",
+      "originals": [
+        "/media/ch16/CNX_Chem_16_02_Temperature.jpg"
+      ],
+      "original_caption": "两个温度不同的物体接触时，热量自发地从较热的物体流向较冷的物体。",
+      "draws": [
+        "temperature",
+        "energy",
+        "time"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-process",
+      "kind": "photo",
+      "number": "16.6",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    }
+  ],
+  "referents": [
+    {
+      "id": "tc-99m",
+      "label": "锝-99m",
+      "figures": [
+        "sim-decay"
+      ]
+    },
+    {
+      "id": "u-238",
+      "label": "铀-238",
+      "figures": [
+        "sim-decay"
+      ]
+    },
+    {
+      "id": "object-x",
+      "label": "物体 X，较热的物体",
+      "figures": [
+        "sim-heat-flow"
+      ]
+    },
+    {
+      "id": "object-y",
+      "label": "物体 Y，较冷的物体",
+      "figures": [
+        "sim-heat-flow"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "span": "spontaneity",
+      "concept": "nonspontaneous-process",
+      "verb": "introduces"
+    },
+    {
+      "span": "spontaneity",
+      "concept": "spontaneity-and-rate",
+      "verb": "introduces"
+    },
+    {
+      "span": "spontaneity",
+      "concept": "spontaneous-process",
+      "verb": "uses"
+    },
+    {
+      "span": "spontaneity",
+      "concept": "reaction-rate",
+      "verb": "uses"
+    },
+    {
+      "span": "spontaneity",
+      "concept": "phase-diagram",
+      "verb": "uses"
+    },
+    {
+      "span": "dispersal",
+      "concept": "dispersal-of-matter-and-energy",
+      "verb": "introduces"
+    },
+    {
+      "span": "dispersal",
+      "concept": "spontaneous-process",
+      "verb": "uses"
+    },
+    {
+      "span": "dispersal",
+      "concept": "ideal-gas",
+      "verb": "uses"
+    },
+    {
+      "span": "dispersal",
+      "concept": "expansion-work",
+      "verb": "uses"
+    },
+    {
+      "span": "dispersal",
+      "concept": "first-law-of-thermodynamics",
+      "verb": "uses"
+    },
+    {
+      "span": "dispersal",
+      "concept": "internal-energy",
+      "verb": "uses"
+    },
+    {
+      "span": "dispersal",
+      "concept": "heat-flow",
+      "verb": "uses"
+    },
+    {
+      "span": "dispersal",
+      "concept": "temperature",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-redistribution",
+      "concept": "dispersal-of-matter-and-energy",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-redistribution",
+      "concept": "sublimation",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-redistribution",
+      "concept": "condensation",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-redistribution",
+      "concept": "diffusion",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idp106049744",
+      "kind": "check-your-learning",
+      "bloom": "Understand",
+      "place": {
+        "at": "inline",
+        "after": "ex-redistribution"
+      },
+      "cite": "ex-redistribution",
+      "prompt": "描述把一把室温的汤匙放进一杯热咖啡中时，能量是如何重新分配的。",
+      "answer": {
+        "type": "open",
+        "solution": "热量将自发地从较热的物体（咖啡）流向较冷的物体（汤匙），随着汤匙变热、咖啡变凉，热能的分布变得更均匀。",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e1",
+      "source_id": "fs-idp114103472",
+      "source_number": "1",
+      "kind": "exercise",
+      "bloom": "Remember",
+      "place": {
+        "at": "end"
+      },
+      "cite": "spontaneity",
+      "prompt": "什么是自发反应？",
+      "answer": {
+        "type": "open",
+        "solution": "自发反应有自然发生的倾向，无需来自外部的持续能量输入便会进行。",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idp120021296",
+      "source_number": "2",
+      "kind": "exercise",
+      "bloom": "Remember",
+      "place": {
+        "at": "end"
+      },
+      "cite": "spontaneity",
+      "prompt": "什么是非自发反应？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "非自发反应是在给定条件下不会自行发生的反应：只有在持续从外部向它供给能量时才会进行，一旦撤去这种供给就会停止。在某一方向上自发的反应，在同样条件下沿相反方向是非自发的。氢和氧自发化合生成水，所以水分解为氢和氧是非自发的：只有在电流通过水时才会发生，电流切断时便停止。"
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idp1018800",
+      "source_number": "3",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "spontaneity",
+      "prompt": "指出下列过程是自发的还是非自发的。<br>（a）液态水在低于其凝固点的温度下凝固<br>（b）液态水在高于其凝固点的温度下凝固<br>（c）汽油的燃烧<br>（d）向空中抛出的球<br>（e）落向地面的雨滴<br>（f）铁在潮湿的大气中生锈",
+      "answer": {
+        "type": "open",
+        "solution": "（a）自发；（b）非自发；（c）自发；（d）非自发；（e）自发；（f）自发",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e4",
+      "source_id": "fs-idp158359616",
+      "source_number": "4",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "dispersal",
+      "prompt": "充氦气球在一夜之间自发地瘪了，因为 He 原子通过气球壁扩散出去。描述伴随这一过程的物质和/或能量的重新分布。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "物质变得更加分散。气球瘪掉之前，氦原子被限制在气球内部很小的体积中，浓度远高于周围空气；一夜之间，它们通过球壁扩散出去，散布到房间大得多的体积中，直到浓度近乎均匀。这与图 16.4 中气体从一个烧瓶扩散到抽成真空的第二个烧瓶是同样的变化：原子从较不分散、较不概然的排布变为更分散、更概然的排布。氦原子携带的动能也随之扩散，所以原先集中在气球内部的能量，现在分布在整个房间里。"
+      }
+    },
+    {
+      "id": "e5",
+      "source_id": "fs-idm103719792",
+      "source_number": "5",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "spontaneity",
+      "prompt": "许多塑料材料是含碳和氢的有机聚合物。这些塑料在空气中氧化生成二氧化碳和水是自发过程；然而，塑料材料往往在环境中持续存在。请解释。",
+      "answer": {
+        "type": "open",
+        "solution": "虽然塑料的氧化是自发的，但氧化的速率非常慢。因此塑料在动力学上是稳定的，即使经过相当长的时间也不会明显分解。",
+        "generated_by": "source"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "dispersal-of-matter-and-energy"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "heat-flow"
+    },
+    {
+      "exercise": "e1",
+      "concept": "spontaneous-process"
+    },
+    {
+      "exercise": "e2",
+      "concept": "nonspontaneous-process"
+    },
+    {
+      "exercise": "e3",
+      "concept": "spontaneous-process"
+    },
+    {
+      "exercise": "e3",
+      "concept": "nonspontaneous-process"
+    },
+    {
+      "exercise": "e4",
+      "concept": "dispersal-of-matter-and-energy"
+    },
+    {
+      "exercise": "e4",
+      "concept": "diffusion"
+    },
+    {
+      "exercise": "e5",
+      "concept": "spontaneity-and-rate"
+    }
+  ],
+  "footnotes": [
+    {
+      "id": "c-fig-days",
+      "kind": "correction",
+      "figure": "sim-decay",
+      "html": "原图的时间轴标为小时；对于图注所说的一周，应理解为天。Tc-99m 的半衰期约为 6 小时，所以几天之内它基本上就没有剩下了。"
+    }
+  ]
+}

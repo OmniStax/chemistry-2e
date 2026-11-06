@@ -1,0 +1,388 @@
+{
+  "id": "21.2",
+  "module": "m68852",
+  "chapter": "21",
+  "title": "核反应方程",
+  "short": "核反应方程",
+  "lead": "<span data-concept=\"nuclear-reaction\">核反应</span>改变的是原子核，而不是核外电子的排布。参与这些反应的粒子，从 <span data-concept=\"alpha-particle\">α 粒子</span>和 <span data-concept=\"beta-particle\">β 粒子</span>到<span data-concept=\"positron\">正电子</span>和 <span data-concept=\"gamma-ray\">γ 射线</span>，在这里逐一说明，核反应方程也在这里书写并配平。",
+  "objectives": [
+    "识别核反应中涉及的常见粒子和能量",
+    "书写并配平核反应方程"
+  ],
+  "summary_html": "<p>原子核可以发生使其质子数、中子数或能量状态改变的反应。许多不同的粒子都可以参与<span data-concept=\"nuclear-reaction\">核反应</span>。最常见的是<span data-concept=\"proton\">质子</span>、<span data-concept=\"neutron\">中子</span>、<span data-concept=\"positron\">正电子</span>（即带正电的<span data-concept=\"electron\">电子</span>）、<span data-concept=\"alpha-particle\">α 粒子</span>（即高能氦核）、<span data-concept=\"beta-particle\">β 粒子</span>（即高能<span data-concept=\"electron\">电子</span>）和 <span data-concept=\"gamma-ray\">γ 射线</span>（构成高能<span data-concept=\"electromagnetic-radiation\">电磁辐射</span>）。与化学反应一样，<span data-concept=\"balanced-nuclear-equation\">核反应总是配平的</span>。发生<span data-concept=\"nuclear-reaction\">核反应</span>时，总质量（数）和总电荷保持不变。</p>",
+  "notes": "本节正文没有任何删略。书中没有标题的本节开头，加上了 OmniStax 自拟的一个标题：核反应。",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ]
+  },
+  "built": "2026-10-26",
+  "exercises_lead": "",
+  "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案取自书后答案以及“学习检测”的答案。三道没有答案的习题 fs-idm5988192（补全四个核反应方程）、fs-idp59747856（锝-99 制备的方程）和 fs-idp208355344（碳-14 衰变产生的氮气的体积）被略去，也没有为它们计算答案。没有答案的概念性习题 fs-idp158311008 附有一条标明为 OmniStax 自拟的建议思路。有答案的习题 fs-idp74968928，即氟-19 的结合能，只考查 21.1 中的结合能，已移到那里，在那里它的 source_section 为 21.2。fs-idp225643904（b）的答案按书中所印，把氮-14 写成 ¹⁴₇C。",
+  "figures": [
+    {
+      "id": "sim-particles",
+      "kind": "sim",
+      "number": "21.4",
+      "originals": [
+        "/media/ch21/CNX_Chem_21_03_RadioDecay-d92b.jpg"
+      ],
+      "original_caption": "虽然核反应中会遇到许多种粒子，但此表总结了其中最常见者的名称、符号、表示形式和描述。",
+      "draws": [],
+      "conventions": [
+        "p+",
+        "n0",
+        "e-",
+        "e+",
+        "gamma"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-nuclear-balance",
+      "kind": "sim",
+      "draws": [],
+      "conventions": [
+        "p+",
+        "n0"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "span": "nuclear-reactions",
+      "concept": "nuclear-reaction",
+      "verb": "introduces"
+    },
+    {
+      "span": "nuclear-reactions",
+      "concept": "nuclide",
+      "verb": "uses"
+    },
+    {
+      "span": "nuclear-reactions",
+      "concept": "mass-number",
+      "verb": "uses"
+    },
+    {
+      "span": "nuclear-reactions",
+      "concept": "atomic-number",
+      "verb": "uses"
+    },
+    {
+      "span": "particles",
+      "concept": "beta-particle",
+      "verb": "introduces"
+    },
+    {
+      "span": "particles",
+      "concept": "positron",
+      "verb": "introduces"
+    },
+    {
+      "span": "particles",
+      "concept": "antimatter",
+      "verb": "introduces"
+    },
+    {
+      "span": "particles",
+      "concept": "gamma-ray",
+      "verb": "introduces"
+    },
+    {
+      "span": "particles",
+      "concept": "alpha-particle",
+      "verb": "uses"
+    },
+    {
+      "span": "particles",
+      "concept": "proton",
+      "verb": "uses"
+    },
+    {
+      "span": "particles",
+      "concept": "neutron",
+      "verb": "uses"
+    },
+    {
+      "span": "particles",
+      "concept": "electron",
+      "verb": "uses"
+    },
+    {
+      "span": "particles",
+      "concept": "mass-energy-equivalence",
+      "verb": "uses"
+    },
+    {
+      "span": "particles",
+      "concept": "electromagnetic-radiation",
+      "verb": "uses"
+    },
+    {
+      "span": "particles",
+      "concept": "wave-particle-duality",
+      "verb": "uses"
+    },
+    {
+      "span": "particles",
+      "concept": "excited-state",
+      "verb": "uses"
+    },
+    {
+      "span": "particles",
+      "concept": "mass",
+      "verb": "uses"
+    },
+    {
+      "span": "particles",
+      "concept": "energy-and-work",
+      "verb": "uses"
+    },
+    {
+      "span": "balancing",
+      "concept": "balanced-nuclear-equation",
+      "verb": "introduces"
+    },
+    {
+      "span": "balancing",
+      "concept": "balancing-nuclear-equations",
+      "verb": "introduces"
+    },
+    {
+      "span": "balancing",
+      "concept": "balanced-equation",
+      "verb": "uses"
+    },
+    {
+      "span": "balancing",
+      "concept": "nucleon",
+      "verb": "uses"
+    },
+    {
+      "span": "balancing",
+      "concept": "mass-number",
+      "verb": "uses"
+    },
+    {
+      "span": "balancing",
+      "concept": "atomic-number",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-balancing",
+      "concept": "balancing-nuclear-equations",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-balancing",
+      "concept": "periodic-table",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idp244468800",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-balancing"
+      },
+      "cite": "ex-balancing",
+      "prompt": "核素 ${}_{\\;53}^{125}\\text{I}$ 与一个电子结合，生成一个新的原子核，没有其他有质量的粒子。该反应的方程是什么？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "${}_{\\;53}^{125}\\text{I}+{}_{-1}^{\\;0}\\text{e}\\;\\longrightarrow \\;{}_{\\;52}^{125}\\text{Te}$"
+      }
+    },
+    {
+      "id": "e1",
+      "source_id": "fs-idp161987712",
+      "source_number": "11",
+      "kind": "exercise",
+      "bloom": "Remember",
+      "place": {
+        "at": "end"
+      },
+      "cite": "particles",
+      "prompt": "请对下列各项分别写出简要的描述或定义：<br>（a）核子<br>（b）α 粒子<br>（c）β 粒子<br>（d）正电子<br>（e）γ 射线<br>（f）核素<br>（g）质量数<br>（h）原子序数",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）核子是原子核中所含的任何粒子，因此可以指质子和中子。（b）α 粒子是天然放射性的一种产物，是氦原子的原子核。（c）β 粒子是天然放射性的一种产物，是高速电子。（d）正电子是质量与电子相同但带正电荷的粒子。（e）γ 射线构成高能量、短波长的电磁辐射。（f）核素是指单一类型原子核时使用的术语。（g）质量数是一种元素中质子数与中子数之和。（h）原子序数是一种元素原子核中的质子数。"
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idp158311008",
+      "source_number": "12",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "particles",
+      "prompt": "在核反应中可能产生的各种粒子（α 粒子、β 粒子等）中，哪些实际上是原子核？",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "α 粒子和质子是原子核。α 粒子 ${}_{2}^{4}\\text{He}$ 是由两个质子和两个中子组成的高能氦-4 原子核，质子 ${}_{1}^{1}\\text{p}$ 或 ${}_{1}^{1}\\text{H}$ 是氢-1 原子的原子核；用来轰击靶核的氘核 ${}_{1}^{2}\\text{H}$ 同样是氢-2 原子的原子核。图 21.4 中的其他粒子都不是原子核。中子 ${}_{0}^{1}\\text{n}$ 是原子核的单个组成部分，不含质子，所以它不是任何元素的原子核；β 粒子是高能电子，正电子是带正电的电子，γ 射线是电磁辐射的光子，它们都不含质子或中子。"
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idp126933936",
+      "source_number": "13",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "balancing",
+      "prompt": "补全下列各方程，写出缺失的粒子：<br>（a）${}_{13}^{27}\\text{Al}+{}_{2}^{4}\\text{He}\\;\\longrightarrow \\;?\\;+{}_{0}^{1}\\text{n}$<br>（b）${}_{\\;94}^{239}\\text{Pu}+?\\;\\longrightarrow \\;{}_{\\;96}^{242}\\text{Cm}+{}_{0}^{1}\\text{n}$<br>（c）${}_{\\;7}^{14}\\text{N}+{}_{2}^{4}\\text{He}\\;\\longrightarrow \\;\\text{?}+{}_{1}^{1}\\text{H}$<br>（d）${}_{\\;92}^{235}\\text{U}\\;\\longrightarrow \\;\\text{?}+{}_{\\;55}^{135}\\text{Cs}+4{}_{0}^{1}\\text{n}$",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）${}_{13}^{27}\\text{Al}+{}_{2}^{4}\\text{He}\\;\\longrightarrow \\;{}_{15}^{30}\\text{P}+{}_{0}^{1}\\text{n};$ （b）${}_{\\;94}^{239}\\text{Pu}+{}_{2}^{4}\\text{He}\\;\\longrightarrow \\;{}_{\\;96}^{242}\\text{Cm}+{}_{0}^{1}\\text{n};$ （c）${}_{\\;7}^{14}\\text{N}+{}_{2}^{4}\\text{He}\\;\\longrightarrow \\;{}_{\\;8}^{17}\\text{O}+{}_{1}^{1}\\text{H};$ （d）${}_{\\;92}^{235}\\text{U}\\;\\longrightarrow \\;{}_{37}^{96}\\text{Rb}+{}_{\\;55}^{135}\\text{Cs}+4{}_{0}^{1}\\text{n}$"
+      }
+    },
+    {
+      "id": "e4",
+      "source_id": "fs-idp225643904",
+      "source_number": "15",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "balancing",
+      "prompt": "请为下列各核反应写出配平的方程：<br>（a）用 α 粒子轰击 <sup>14</sup>N 制得 <sup>17</sup>O<br>（b）用中子轰击 <sup>14</sup>N 制得 <sup>14</sup>C<br>（c）用中子轰击 <sup>232</sup>Th 制得 <sup>233</sup>Th<br>（d）用 ${}_{1}^{2}\\text{H}$ 轰击 <sup>238</sup>U 制得 <sup>239</sup>U",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）${}_{\\;7}^{14}\\text{N}+{}_{2}^{4}\\text{He}\\;\\longrightarrow \\;{}_{\\;8}^{17}\\text{O}+{}_{1}^{1}\\text{H};$ （b）${}_{\\;7}^{14}\\text{C}+{}_{0}^{1}\\text{n}\\;\\longrightarrow \\;{}_{\\;6}^{14}\\text{C}+{}_{1}^{1}\\text{H};$<sup class=\"fn\" data-note=\"c-e4-n14\"></sup> （c）${}_{\\;90}^{232}\\text{Th}+{}_{0}^{1}\\text{n}\\;\\longrightarrow \\;{}_{\\;90}^{233}\\text{Th};$ （d）${}_{92}^{238}\\text{U}+{}_{1}^{2}\\text{H}\\;\\longrightarrow \\;{}_{\\;92}^{239}\\text{U}+{}_{1}^{1}\\text{H}$"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "balancing-nuclear-equations"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "balanced-nuclear-equation"
+    },
+    {
+      "exercise": "e1",
+      "concept": "nucleon"
+    },
+    {
+      "exercise": "e1",
+      "concept": "alpha-particle"
+    },
+    {
+      "exercise": "e1",
+      "concept": "beta-particle"
+    },
+    {
+      "exercise": "e1",
+      "concept": "positron"
+    },
+    {
+      "exercise": "e1",
+      "concept": "gamma-ray"
+    },
+    {
+      "exercise": "e1",
+      "concept": "nuclide"
+    },
+    {
+      "exercise": "e1",
+      "concept": "mass-number"
+    },
+    {
+      "exercise": "e1",
+      "concept": "atomic-number"
+    },
+    {
+      "exercise": "e2",
+      "concept": "alpha-particle"
+    },
+    {
+      "exercise": "e2",
+      "concept": "beta-particle"
+    },
+    {
+      "exercise": "e2",
+      "concept": "positron"
+    },
+    {
+      "exercise": "e2",
+      "concept": "gamma-ray"
+    },
+    {
+      "exercise": "e3",
+      "concept": "balancing-nuclear-equations"
+    },
+    {
+      "exercise": "e4",
+      "concept": "balancing-nuclear-equations"
+    },
+    {
+      "exercise": "e4",
+      "concept": "nuclear-reaction"
+    }
+  ],
+  "referents": [],
+  "footnotes": [
+    {
+      "id": "c-e4-n14",
+      "kind": "correction",
+      "html": "答案把 ${}_{\\;7}^{14}\\text{C}$ 写成了靶核；原子序数为 7 的原子核是氮-14，即 ${}_{\\;7}^{14}\\text{N}$，中子使它变成碳-14 和一个质子。"
+    }
+  ]
+}

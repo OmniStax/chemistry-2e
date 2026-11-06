@@ -1,0 +1,816 @@
+{
+ "types": [],
+ "symbols": [
+  {
+   "sym": "S°",
+   "latex": "S^{\\circ}",
+   "macro": "\\kSo"
+  },
+  {
+   "sym": "ΔS°",
+   "latex": "\\Delta S^{\\circ}",
+   "macro": "\\kdSo"
+  },
+  {
+   "sym": "ΔS_univ",
+   "latex": "\\Delta S_{\\text{univ}}",
+   "macro": "\\kdSuniv"
+  },
+  {
+   "sym": "ΔS_sys",
+   "latex": "\\Delta S_{\\text{sys}}",
+   "macro": "\\kdSsys"
+  },
+  {
+   "sym": "ΔS_surr",
+   "latex": "\\Delta S_{\\text{surr}}",
+   "macro": "\\kdSsurr"
+  },
+  {
+   "sym": "S_f",
+   "latex": "S_{\\text{f}}",
+   "macro": "\\kSf"
+  },
+  {
+   "sym": "S_i",
+   "latex": "S_{\\text{i}}",
+   "macro": "\\kSi"
+  },
+  {
+   "sym": "S_solid",
+   "latex": "S_{\\text{solid}}",
+   "macro": "\\kSsolid"
+  },
+  {
+   "sym": "S_liquid",
+   "latex": "S_{\\text{liquid}}",
+   "macro": "\\kSliquid"
+  },
+  {
+   "sym": "S_gas",
+   "latex": "S_{\\text{gas}}",
+   "macro": "\\kSgas"
+  },
+  {
+   "sym": "G",
+   "latex": "G",
+   "macro": "\\kG"
+  },
+  {
+   "sym": "ΔG°",
+   "latex": "\\Delta G^{\\circ}",
+   "macro": "\\kdGo"
+  },
+  {
+   "sym": "ΔG_f°",
+   "latex": "\\Delta G_{\\text{f}}^{\\circ}",
+   "macro": "\\kdGf"
+  },
+  {
+   "sym": "ΔG_1°",
+   "latex": "\\Delta G_{1}^{\\circ}",
+   "macro": "\\kdGone"
+  },
+  {
+   "sym": "ΔG_2°",
+   "latex": "\\Delta G_{2}^{\\circ}",
+   "macro": "\\kdGtwo"
+  },
+  {
+   "sym": "q_rev",
+   "latex": "q_{\\text{rev}}",
+   "macro": "\\kqrev"
+  },
+  {
+   "sym": "q_surr",
+   "latex": "q_{\\text{surr}}",
+   "macro": "\\kqsurr"
+  },
+  {
+   "sym": "q_sys",
+   "latex": "q_{\\text{sys}}",
+   "macro": "\\kqsys"
+  },
+  {
+   "sym": "q_X",
+   "latex": "q_{\\text{X}}",
+   "macro": "\\kqX"
+  },
+  {
+   "sym": "q_Y",
+   "latex": "q_{\\text{Y}}",
+   "macro": "\\kqY"
+  },
+  {
+   "sym": "w_max",
+   "latex": "w_{\\text{max}}",
+   "macro": "\\kwmax"
+  },
+  {
+   "sym": "T_X",
+   "latex": "T_{\\text{X}}",
+   "macro": "\\kTX"
+  },
+  {
+   "sym": "T_Y",
+   "latex": "T_{\\text{Y}}",
+   "macro": "\\kTY"
+  },
+  {
+   "sym": "T_sys",
+   "latex": "T_{\\text{sys}}",
+   "macro": "\\kTsys"
+  },
+  {
+   "sym": "T_surr",
+   "latex": "T_{\\text{surr}}",
+   "macro": "\\kTsurr"
+  },
+  {
+   "sym": "W",
+   "latex": "W"
+  },
+  {
+   "sym": "W_f",
+   "latex": "W_{\\text{f}}"
+  },
+  {
+   "sym": "W_i",
+   "latex": "W_{\\text{i}}"
+  },
+  {
+   "sym": "k_B",
+   "latex": "k"
+  },
+  {
+   "sym": "N_particles",
+   "latex": "N"
+  },
+  {
+   "sym": "n_boxes",
+   "latex": "n"
+  },
+  {
+   "sym": "ν_coef",
+   "latex": "\\nu"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "nonspontaneous-process",
+   "kind": "definition",
+   "section": "16.1",
+   "name": "非自发过程",
+   "terms": [
+    "非自发过程"
+   ],
+   "statement": "非自发过程除非由外界持续输入能量来“驱动”，否则不会发生。在一组特定条件下沿某一方向自发的过程，沿其逆方向则是非自发的。"
+  },
+  {
+   "id": "spontaneity-and-rate",
+   "kind": "idea",
+   "section": "16.1",
+   "name": "自发性与速率",
+   "statement": "过程是否自发与其快慢无关：自发变化可能快到几乎瞬间完成，也可能慢到无法观察。金刚石在环境压强下自发地转变为石墨，但速率极慢，所以金刚石在热力学上不稳定，在动力学上却是稳定的。"
+  },
+  {
+   "id": "dispersal-of-matter-and-energy",
+   "kind": "idea",
+   "section": "16.1",
+   "name": "物质与能量的分散",
+   "statement": "自发过程总伴随着物质或能量更均匀的分散。理想气体向真空膨胀时不做功，也不与外界交换热量，其内能不变，却会均匀地充满两个烧瓶；热量从较热的物体流向较冷的物体，使热能重新分布，而总量既无增加也无损失。"
+  },
+  {
+   "id": "reversible-process",
+   "kind": "definition",
+   "section": "16.2",
+   "name": "可逆过程",
+   "terms": [
+    "可逆过程"
+   ],
+   "statement": "可逆过程进行得极其缓慢，始终处于平衡，只要某个条件发生无限小的改变，其方向就能随之改变。它是一种形式化的理想模型，实际过程都是不可逆的，只能近似于它。"
+  },
+  {
+   "id": "entropy",
+   "kind": "definition",
+   "section": "16.2",
+   "name": "熵",
+   "symbol": "S",
+   "terms": [
+    "熵"
+   ],
+   "type": "entropy",
+   "statement": "熵是一个状态函数，是体系中物质和能量分散程度的度量，由体系的微观状态数决定，常被描述为体系的混乱度。克劳修斯将其变化定义为可逆热除以开尔文温度；在相同的始末态之间，不可逆过程的熵变与之相同。",
+   "forms": [
+    {
+     "id": "eq-entropy-change-reversible-heat",
+     "latex": "\\Delta S=\\frac{q_{\\text{rev}}}{T}",
+     "ktex": "\\kdS=\\frac{\\kqrev}{\\kT}",
+     "anchor": "16.2-reversible-heat"
+    }
+   ]
+  },
+  {
+   "id": "microstate",
+   "kind": "definition",
+   "section": "16.2",
+   "name": "微观状态",
+   "terms": [
+    "微观状态"
+   ],
+   "statement": "微观状态是构成体系的所有原子或分子的位置与能量的一种具体组态。"
+  },
+  {
+   "id": "boltzmann-entropy-equation",
+   "kind": "result",
+   "section": "16.2",
+   "name": "熵的玻尔兹曼公式",
+   "statement": "玻尔兹曼通过玻尔兹曼常量把体系的熵与其可能的微观状态数联系起来，所以使微观状态数增多的过程使熵增大，使微观状态数减少的过程使熵减小。",
+   "forms": [
+    {
+     "id": "eq-boltzmann-entropy",
+     "latex": "S=k\\ln W",
+     "ktex": "\\kS=k\\ln W",
+     "anchor": "16.2-microstates"
+    },
+    {
+     "id": "eq-entropy-change-microstates",
+     "latex": "\\Delta S=S_{\\text{f}}-S_{\\text{i}}=k\\ln\\frac{W_{\\text{f}}}{W_{\\text{i}}}",
+     "ktex": "\\kdS=\\kSf-\\kSi=k\\ln\\frac{W_{\\text{f}}}{W_{\\text{i}}}",
+     "anchor": "16.2-microstates"
+    }
+   ]
+  },
+  {
+   "id": "most-probable-distribution",
+   "kind": "result",
+   "section": "16.2",
+   "name": "最概然分布",
+   "statement": "每个盒子中粒子数相同的微观状态构成一种分布，某种分布的概率与其所含微观状态数成正比。由于熵随微观状态数增大，最概然分布，即各盒子中粒子数大致相等的分布，就是熵最大的分布，而且粒子数越多，这一点就越确定。",
+   "forms": [
+    {
+     "id": "eq-number-of-microstates",
+     "latex": "W=n^{N}",
+     "condition": "N particles distributed among n boxes",
+     "anchor": "16.2-microstates"
+    }
+   ]
+  },
+  {
+   "id": "entropy-and-phase",
+   "kind": "result",
+   "section": "16.2",
+   "name": "熵与物态",
+   "statement": "对任何物质，气体的熵大于液体，液体的熵大于固体，因为更自由的运动和更大的体积带来更多的微观状态。熔化、汽化和升华使熵增大，凝固、凝结和凝华使熵减小。",
+   "forms": [
+    {
+     "id": "eq-entropy-phase-order",
+     "latex": "S_{\\text{solid}}<S_{\\text{liquid}}<S_{\\text{gas}}",
+     "ktex": "\\kSsolid<\\kSliquid<\\kSgas",
+     "anchor": "16.2-predicting-sign"
+    }
+   ]
+  },
+  {
+   "id": "entropy-and-temperature",
+   "kind": "result",
+   "section": "16.2",
+   "name": "熵与温度",
+   "statement": "任何物质的熵都随温度升高而增大，因为粒子的运动更为剧烈，动能的分布也更宽；在每一次相变处，熵都发生显著变化。"
+  },
+  {
+   "id": "entropy-and-molecular-structure",
+   "kind": "result",
+   "section": "16.2",
+   "name": "熵、分子结构与混合",
+   "statement": "在给定温度下，较重的原子比较轻的原子熵更大；原子数较多的分子有更多的振动方式，因而有更多的微观状态。混合物的熵大于纯物质的熵，所以溶解使熵增大。"
+  },
+  {
+   "id": "predict-sign-of-entropy-change",
+   "kind": "skill",
+   "section": "16.2",
+   "name": "预测熵变的符号",
+   "statement": "综合考虑物态变化、温度变化、气体的物质的量、溶液中粒子的数目以及物种的复杂程度，就能预测化学过程或物理过程中体系的熵是增大还是减小。"
+  },
+  {
+   "id": "entropy-change-of-universe",
+   "kind": "definition",
+   "section": "16.3",
+   "name": "宇宙的熵变",
+   "symbol": "ΔS_univ",
+   "type": "entropy",
+   "statement": "体系与环境合起来构成宇宙，所以宇宙的熵变等于体系的熵变与环境的熵变之和。",
+   "forms": [
+    {
+     "id": "eq-entropy-change-universe",
+     "latex": "\\Delta S_{\\text{univ}}=\\Delta S_{\\text{sys}}+\\Delta S_{\\text{surr}}",
+     "ktex": "\\kdSuniv=\\kdSsys+\\kdSsurr",
+     "anchor": "16.3-second-law"
+    }
+   ]
+  },
+  {
+   "id": "second-law-of-thermodynamics",
+   "kind": "axiom",
+   "section": "16.3",
+   "name": "热力学第二定律",
+   "terms": [
+    "热力学第二定律"
+   ],
+   "statement": "一切自发变化都使宇宙的熵增大。使宇宙的熵减小的过程是非自发的（沿相反方向是自发的），宇宙的熵不变的过程则处于平衡。",
+   "forms": [
+    {
+     "id": "eq-second-law",
+     "latex": "\\Delta S_{\\text{univ}}>0",
+     "ktex": "\\kdSuniv>0",
+     "condition": "a spontaneous process",
+     "anchor": "16.3-second-law"
+    }
+   ]
+  },
+  {
+   "id": "entropy-change-of-surroundings",
+   "kind": "result",
+   "section": "16.3",
+   "name": "环境的熵变",
+   "symbol": "ΔS_surr",
+   "type": "entropy",
+   "statement": "当环境相对于体系极其庞大时，环境得到或失去的热量只占其热能的一个近乎无穷小的分数，所以环境的热量可近似为可逆热，环境的熵变就是该热量除以温度。",
+   "forms": [
+    {
+     "id": "eq-second-law-surroundings",
+     "latex": "\\Delta S_{\\text{univ}}=\\Delta S_{\\text{sys}}+\\Delta S_{\\text{surr}}=\\Delta S_{\\text{sys}}+\\frac{q_{\\text{surr}}}{T}",
+     "ktex": "\\kdSuniv=\\kdSsys+\\kdSsurr=\\kdSsys+\\frac{\\kqsurr}{\\kT}",
+     "condition": "surroundings vast compared to the system",
+     "anchor": "16.3-second-law"
+    }
+   ]
+  },
+  {
+   "id": "predict-spontaneity-from-entropy",
+   "kind": "skill",
+   "section": "16.3",
+   "name": "由宇宙的熵变预测自发性",
+   "statement": "把体系的熵变与环境的热量除以开尔文温度相加，即得宇宙的熵变，其符号表明过程在该温度下是否自发。"
+  },
+  {
+   "id": "third-law-of-thermodynamics",
+   "kind": "axiom",
+   "section": "16.3",
+   "name": "热力学第三定律",
+   "terms": [
+    "热力学第三定律"
+   ],
+   "statement": "在 0 K 时，纯净的完美晶态物质的熵为零，因为这样的晶体可以用唯一的微观状态来描述。",
+   "forms": [
+    {
+     "id": "eq-third-law",
+     "latex": "S=k\\ln W=k\\ln(1)=0",
+     "ktex": "\\kS=k\\ln W=k\\ln(1)=0",
+     "condition": "a pure, perfect crystalline substance at 0 K",
+     "anchor": "16.3-third-law"
+    }
+   ]
+  },
+  {
+   "id": "standard-entropy",
+   "kind": "definition",
+   "section": "16.3",
+   "name": "标准熵",
+   "symbol": "S°",
+   "terms": [
+    "标准熵"
+   ],
+   "type": "entropy",
+   "statement": "标准熵是 1 mol 物质在标准条件下的熵，标准条件即压强为 1 bar，列表值通常取温度为 298.15 K；它由精确的量热测量得出。"
+  },
+  {
+   "id": "standard-entropy-change",
+   "kind": "definition",
+   "section": "16.3",
+   "name": "标准熵变",
+   "symbol": "ΔS°",
+   "terms": [
+    "标准熵变"
+   ],
+   "type": "entropy",
+   "statement": "反应的标准熵变由产物和反应物的标准熵算出，每个标准熵都乘以它在配平方程式中的化学计量系数。",
+   "forms": [
+    {
+     "id": "eq-standard-entropy-change",
+     "latex": "\\Delta S^{\\circ}=\\sum\\nu S^{\\circ}(\\text{products})-\\sum\\nu S^{\\circ}(\\text{reactants})",
+     "ktex": "\\kdSo=\\sum\\nu\\kSo(\\text{products})-\\sum\\nu\\kSo(\\text{reactants})",
+     "anchor": "16.3-third-law"
+    }
+   ]
+  },
+  {
+   "id": "calculate-standard-entropy-change",
+   "kind": "skill",
+   "section": "16.3",
+   "name": "计算标准熵变",
+   "statement": "把每个产物和反应物的标准熵乘以它在配平方程式中的系数，再用产物之和减去反应物之和，就得到物理过程或化学过程的标准熵变。"
+  },
+  {
+   "id": "gibbs-free-energy",
+   "kind": "definition",
+   "section": "16.4",
+   "name": "吉布斯自由能",
+   "symbol": "G",
+   "terms": [
+    "吉布斯自由能",
+    "自由能变",
+    "自由能"
+   ],
+   "type": "energy",
+   "statement": "吉布斯自由能是用体系的焓和熵定义的状态函数，所以只需体系自身的量就能求得；在恒温恒压下，其变化等于焓变减去温度与熵变的乘积。",
+   "forms": [
+    {
+     "id": "eq-gibbs-free-energy",
+     "latex": "G=H-TS",
+     "ktex": "\\kG=\\kH-\\kT\\kS",
+     "anchor": "16.4-gibbs"
+    },
+    {
+     "id": "eq-free-energy-change",
+     "latex": "\\Delta G=\\Delta H-T\\Delta S",
+     "ktex": "\\kdG=\\kdH-\\kT\\kdS",
+     "condition": "constant temperature and pressure",
+     "anchor": "16.4-gibbs"
+    }
+   ]
+  },
+  {
+   "id": "free-energy-and-spontaneity",
+   "kind": "result",
+   "section": "16.4",
+   "name": "自由能与自发性",
+   "statement": "由于环境的热量等于恒压下焓变的相反数，自由能变就等于温度乘以宇宙的熵变再取负。自由能变为负表示过程自发，为正表示过程非自发，为零表示体系处于平衡。",
+   "forms": [
+    {
+     "id": "eq-free-energy-entropy-universe",
+     "latex": "\\Delta G=-T\\Delta S_{\\text{univ}}",
+     "ktex": "\\kdG=-\\kT\\kdSuniv",
+     "anchor": "16.4-gibbs"
+    }
+   ]
+  },
+  {
+   "id": "free-energy-and-maximum-work",
+   "kind": "result",
+   "section": "16.4",
+   "name": "自由能与最大功",
+   "statement": "自由能变是可用于（即“自由”地用于）做膨胀功以外的有用功的能量：它是自发过程在可逆进行时所能做的最大功，也是使非自发过程得以进行而必须对体系做的最小功。",
+   "forms": [
+    {
+     "id": "eq-free-energy-max-work",
+     "latex": "\\Delta G=w_{\\text{max}}",
+     "ktex": "\\kdG=\\kwmax",
+     "condition": "a process carried out reversibly; all work except expansion work",
+     "anchor": "16.4-free-work"
+    }
+   ]
+  },
+  {
+   "id": "standard-free-energy-change",
+   "kind": "definition",
+   "section": "16.4",
+   "name": "标准自由能变",
+   "symbol": "ΔG°",
+   "terms": [
+    "标准自由能变"
+   ],
+   "type": "energy",
+   "statement": "标准自由能变是过程在标准条件下的自由能变，标准条件即气体压强为 1 bar，溶液浓度为 1 M；它可由标准焓变和标准熵变算出。",
+   "forms": [
+    {
+     "id": "eq-standard-free-energy-change",
+     "latex": "\\Delta G^{\\circ}=\\Delta H^{\\circ}-T\\Delta S^{\\circ}",
+     "ktex": "\\kdGo=\\kdHo-\\kT\\kdSo",
+     "anchor": "16.4-calculating"
+    }
+   ]
+  },
+  {
+   "id": "standard-free-energy-of-formation",
+   "kind": "definition",
+   "section": "16.4",
+   "name": "标准生成自由能",
+   "symbol": "ΔG_f°",
+   "terms": [
+    "标准生成自由能"
+   ],
+   "type": "energy",
+   "statement": "标准生成自由能是由处于标准状态的各元素生成 1 mol 物质时的自由能变；处于标准状态的元素，其标准生成自由能为零，反应的标准自由能变可由产物和反应物的这一数值求得。",
+   "forms": [
+    {
+     "id": "eq-free-energy-from-formation",
+     "latex": "\\Delta G^{\\circ}=\\sum\\nu\\Delta G_{\\text{f}}^{\\circ}(\\text{products})-\\sum\\nu\\Delta G_{\\text{f}}^{\\circ}(\\text{reactants})",
+     "ktex": "\\kdGo=\\sum\\nu\\kdGf(\\text{products})-\\sum\\nu\\kdGf(\\text{reactants})",
+     "anchor": "16.4-calculating"
+    }
+   ]
+  },
+  {
+   "id": "free-energy-of-coupled-reactions",
+   "kind": "result",
+   "section": "16.4",
+   "name": "耦合反应的自由能",
+   "statement": "由于自由能是状态函数，由若干反应相加得到的反应，其自由能变等于各反应自由能变之和，所以非自发反应，例如硫化锌的分解，可以通过与自发反应耦合而成为自发的。"
+  },
+  {
+   "id": "temperature-dependence-of-spontaneity",
+   "kind": "result",
+   "section": "16.4",
+   "name": "自发性对温度的依赖",
+   "statement": "焓变与熵变的符号决定自发性如何依赖温度：二者皆为正时，过程在高温下自发；二者皆为负时，过程在低温下自发；焓变为正而熵变为负时，过程在任何温度下都不自发；焓变为负而熵变为正时，过程在任何温度下都自发。焓变与熵变同号的过程，在自由能变为零的温度处改变自发性。",
+   "forms": [
+    {
+     "id": "eq-crossover-temperature",
+     "latex": "T=\\frac{\\Delta H}{\\Delta S}",
+     "ktex": "\\kT=\\frac{\\kdH}{\\kdS}",
+     "condition": "the temperature at which the free energy change is zero",
+     "anchor": "16.4-temperature"
+    }
+   ]
+  },
+  {
+   "id": "free-energy-and-reaction-quotient",
+   "kind": "result",
+   "section": "16.4",
+   "name": "非标准条件下的自由能",
+   "statement": "反应物和产物处于非标准条件下的过程，其自由能变通过反应商与标准自由能变相联系：气体用以压强表示的反应商，凝聚相用以浓度表示的反应商。",
+   "forms": [
+    {
+     "id": "eq-free-energy-nonstandard",
+     "latex": "\\Delta G=\\Delta G^{\\circ}+RT\\ln Q",
+     "ktex": "\\kdG=\\kdGo+R\\kT\\ln\\kQrxn",
+     "anchor": "16.4-equilibrium"
+    }
+   ]
+  },
+  {
+   "id": "free-energy-and-equilibrium-constant",
+   "kind": "result",
+   "section": "16.4",
+   "name": "标准自由能变与平衡常数",
+   "statement": "平衡时反应商等于平衡常数，自由能变为零，由此把标准自由能变与平衡常数联系起来：标准自由能变为负意味着 K 大于 1，产物较多。体系的自由能最小时，平衡得以建立。",
+   "forms": [
+    {
+     "id": "eq-standard-free-energy-k",
+     "latex": "\\Delta G^{\\circ}=-RT\\ln K",
+     "ktex": "\\kdGo=-R\\kT\\ln\\kK",
+     "anchor": "16.4-equilibrium"
+    },
+    {
+     "id": "eq-k-from-standard-free-energy",
+     "latex": "K=e^{-\\Delta G^{\\circ}/RT}",
+     "ktex": "\\kK=e^{-\\kdGo/R\\kT}",
+     "anchor": "16.4-equilibrium"
+    }
+   ]
+  }
+ ],
+ "concept_prereqs": [
+  {
+   "concept": "nonspontaneous-process",
+   "prereq": "spontaneous-process"
+  },
+  {
+   "concept": "spontaneity-and-rate",
+   "prereq": "spontaneous-process"
+  },
+  {
+   "concept": "spontaneity-and-rate",
+   "prereq": "reaction-rate"
+  },
+  {
+   "concept": "dispersal-of-matter-and-energy",
+   "prereq": "spontaneous-process"
+  },
+  {
+   "concept": "dispersal-of-matter-and-energy",
+   "prereq": "first-law-of-thermodynamics"
+  },
+  {
+   "concept": "dispersal-of-matter-and-energy",
+   "prereq": "expansion-work"
+  },
+  {
+   "concept": "dispersal-of-matter-and-energy",
+   "prereq": "ideal-gas"
+  },
+  {
+   "concept": "reversible-process",
+   "prereq": "dynamic-equilibrium"
+  },
+  {
+   "concept": "entropy",
+   "prereq": "state-function"
+  },
+  {
+   "concept": "entropy",
+   "prereq": "reversible-process"
+  },
+  {
+   "concept": "entropy",
+   "prereq": "dispersal-of-matter-and-energy"
+  },
+  {
+   "concept": "microstate",
+   "prereq": "kinetic-molecular-theory"
+  },
+  {
+   "concept": "boltzmann-entropy-equation",
+   "prereq": "entropy"
+  },
+  {
+   "concept": "boltzmann-entropy-equation",
+   "prereq": "microstate"
+  },
+  {
+   "concept": "most-probable-distribution",
+   "prereq": "boltzmann-entropy-equation"
+  },
+  {
+   "concept": "entropy-and-phase",
+   "prereq": "boltzmann-entropy-equation"
+  },
+  {
+   "concept": "entropy-and-phase",
+   "prereq": "melting"
+  },
+  {
+   "concept": "entropy-and-phase",
+   "prereq": "sublimation"
+  },
+  {
+   "concept": "entropy-and-temperature",
+   "prereq": "boltzmann-entropy-equation"
+  },
+  {
+   "concept": "entropy-and-temperature",
+   "prereq": "maxwell-boltzmann-distribution"
+  },
+  {
+   "concept": "entropy-and-molecular-structure",
+   "prereq": "boltzmann-entropy-equation"
+  },
+  {
+   "concept": "entropy-and-molecular-structure",
+   "prereq": "properties-of-solutions"
+  },
+  {
+   "concept": "predict-sign-of-entropy-change",
+   "prereq": "entropy-and-phase"
+  },
+  {
+   "concept": "predict-sign-of-entropy-change",
+   "prereq": "entropy-and-temperature"
+  },
+  {
+   "concept": "predict-sign-of-entropy-change",
+   "prereq": "entropy-and-molecular-structure"
+  },
+  {
+   "concept": "predict-sign-of-entropy-change",
+   "prereq": "balanced-equation"
+  },
+  {
+   "concept": "entropy-change-of-universe",
+   "prereq": "entropy"
+  },
+  {
+   "concept": "second-law-of-thermodynamics",
+   "prereq": "entropy-change-of-universe"
+  },
+  {
+   "concept": "entropy-change-of-surroundings",
+   "prereq": "entropy-change-of-universe"
+  },
+  {
+   "concept": "predict-spontaneity-from-entropy",
+   "prereq": "second-law-of-thermodynamics"
+  },
+  {
+   "concept": "predict-spontaneity-from-entropy",
+   "prereq": "entropy-change-of-surroundings"
+  },
+  {
+   "concept": "predict-spontaneity-from-entropy",
+   "prereq": "celsius-kelvin-conversion"
+  },
+  {
+   "concept": "third-law-of-thermodynamics",
+   "prereq": "boltzmann-entropy-equation"
+  },
+  {
+   "concept": "standard-entropy",
+   "prereq": "third-law-of-thermodynamics"
+  },
+  {
+   "concept": "standard-entropy",
+   "prereq": "standard-state"
+  },
+  {
+   "concept": "standard-entropy-change",
+   "prereq": "standard-entropy"
+  },
+  {
+   "concept": "standard-entropy-change",
+   "prereq": "balanced-equation"
+  },
+  {
+   "concept": "calculate-standard-entropy-change",
+   "prereq": "standard-entropy-change"
+  },
+  {
+   "concept": "gibbs-free-energy",
+   "prereq": "enthalpy"
+  },
+  {
+   "concept": "gibbs-free-energy",
+   "prereq": "entropy"
+  },
+  {
+   "concept": "free-energy-and-spontaneity",
+   "prereq": "gibbs-free-energy"
+  },
+  {
+   "concept": "free-energy-and-spontaneity",
+   "prereq": "second-law-of-thermodynamics"
+  },
+  {
+   "concept": "free-energy-and-spontaneity",
+   "prereq": "entropy-change-of-surroundings"
+  },
+  {
+   "concept": "free-energy-and-spontaneity",
+   "prereq": "enthalpy-change-at-constant-pressure"
+  },
+  {
+   "concept": "free-energy-and-maximum-work",
+   "prereq": "free-energy-and-spontaneity"
+  },
+  {
+   "concept": "standard-free-energy-change",
+   "prereq": "gibbs-free-energy"
+  },
+  {
+   "concept": "standard-free-energy-change",
+   "prereq": "standard-entropy-change"
+  },
+  {
+   "concept": "standard-free-energy-change",
+   "prereq": "enthalpy-change"
+  },
+  {
+   "concept": "standard-free-energy-of-formation",
+   "prereq": "standard-free-energy-change"
+  },
+  {
+   "concept": "standard-free-energy-of-formation",
+   "prereq": "standard-enthalpy-of-formation"
+  },
+  {
+   "concept": "free-energy-of-coupled-reactions",
+   "prereq": "standard-free-energy-change"
+  },
+  {
+   "concept": "free-energy-of-coupled-reactions",
+   "prereq": "hess-law"
+  },
+  {
+   "concept": "temperature-dependence-of-spontaneity",
+   "prereq": "free-energy-and-spontaneity"
+  },
+  {
+   "concept": "temperature-dependence-of-spontaneity",
+   "prereq": "exothermic-and-endothermic"
+  },
+  {
+   "concept": "free-energy-and-reaction-quotient",
+   "prereq": "free-energy-and-spontaneity"
+  },
+  {
+   "concept": "free-energy-and-reaction-quotient",
+   "prereq": "standard-free-energy-change"
+  },
+  {
+   "concept": "free-energy-and-reaction-quotient",
+   "prereq": "reaction-quotient"
+  },
+  {
+   "concept": "free-energy-and-reaction-quotient",
+   "prereq": "ideal-gas-constant"
+  },
+  {
+   "concept": "free-energy-and-equilibrium-constant",
+   "prereq": "free-energy-and-reaction-quotient"
+  },
+  {
+   "concept": "free-energy-and-equilibrium-constant",
+   "prereq": "equilibrium-constant"
+  }
+ ]
+}

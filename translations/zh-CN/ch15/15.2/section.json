@@ -1,0 +1,915 @@
+{
+  "id": "15.2",
+  "module": "m68813",
+  "chapter": "15",
+  "title": "路易斯酸和碱",
+  "short": "路易斯酸和碱",
+  "lead": "路易斯把酸和碱的概念推广到任何接受或给出一对电子以形成<span data-concept=\"coordinate-covalent-bond\">配位共价键</span>的物种。金属离子以这种方式结合配体时形成<span data-concept=\"complex-ion\">配离子</span>，其<span data-concept=\"formation-constant\">生成常数</span>决定了一种微溶盐能有多少溶解进入溶液。",
+  "objectives": [
+    "解释酸碱化学的路易斯模型",
+    "书写加合物和配离子形成的方程式",
+    "进行涉及生成常数的平衡计算"
+  ],
+  "summary_html": "<p>路易斯酸是能够接受一对电子的物种，而路易斯碱有一对可供给予路易斯酸的电子。配离子是路易斯酸碱加合物的例子，由作为路易斯酸的中心金属原子或离子，与称为配体、作为路易斯碱的分子或离子成键而成。金属离子与配体反应生成配离子的平衡常数称为生成常数；其逆反应的平衡常数称为解离常数。</p>",
+  "notes": "本节没有任何内容被省略；它的五个路易斯方程式和 Cu(CN)<sub>2</sub><sup>–</sup> 的结构是依据书中的图片重新绘制的，例 15.14 的 ICE 表写成表格，并保留该例中不带单位的 [Ag(NH<sub>3</sub>)<sub>2</sub><sup>+</sup>] = 0.099，习题则按原样保留习题 64 的“0.100 NH<sub>3</sub>”、习题 72 的“氰化钾离子”以及习题 82 答案中不带电荷的 BF<sub>4</sub>。",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ]
+  },
+  "built": "2026-10-26",
+  "exercises_lead": "",
+  "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案取自书后答案和“学习检测”的答案；习题 76 和 78 的答案是书中的路易斯结构图片。七道没有答案的数值习题被略去，也没有为它们计算答案：fs-idm212489824、fs-idm50986272、fs-idm19606400、fs-idp18044656、fs-idm65404096、fs-idp26835744、fs-idm23888576。三道没有答案的概念习题 75、77 和 83 附有标明为 OmniStax 自拟的建议思路。习题 62（fs-idp46388832）放在讲授饱和的 15.1 节，习题 63 和 65（fs-idm65484352、fs-idm98555648）放在把溶解与其他平衡耦合的 15.3 节；习题 86、88 和 90（fs-idm299312、fs-idp457072、fs-idp135248）原印在 15.3 节，现放在这里，因为这里计算配离子的浓度。数值答案接受 2% 的误差，“学习检测”接受 5%，习题 66 中只有一位有效数字的生成常数接受 10%。",
+  "figures": [
+    {
+      "id": "fig-hydronium",
+      "kind": "figure",
+      "originals": [
+        "/media/ch15/CNX_Chem_15_03_hydronium_img.jpg"
+      ],
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-bf3",
+      "kind": "figure",
+      "originals": [
+        "/media/ch15/CNX_Chem_15_02_BF3-LA_img.jpg"
+      ],
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-silver-ammonia",
+      "kind": "figure",
+      "originals": [
+        "/media/ch15/CNX_Chem_15_02_NH3-LBase_img.jpg"
+      ],
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-oxide",
+      "kind": "figure",
+      "originals": [
+        "/media/ch15/CNX_Chem_15_02_NonmetalOx_img.jpg"
+      ],
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-displace",
+      "kind": "figure",
+      "originals": [
+        "/media/ch15/CNX_Chem_15_02_Displace_img.jpg"
+      ],
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-cucn2",
+      "kind": "figure",
+      "originals": [
+        "/media/ch15/CNX_Chem_15_02_CuCN2-_img.jpg"
+      ],
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-agcl-ammonia",
+      "kind": "sim",
+      "draws": [
+        "concentration",
+        "amount",
+        "equilibrium-constant"
+      ],
+      "facts": [
+        "#f4f4f2"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    }
+  ],
+  "referents": [
+    {
+      "id": "acid",
+      "label": "路易斯酸",
+      "figures": [
+        "fig-hydronium",
+        "fig-bf3",
+        "fig-silver-ammonia",
+        "fig-oxide",
+        "fig-displace",
+        "fig-cucn2"
+      ]
+    },
+    {
+      "id": "displacer",
+      "label": "置换另一种物质的碱或酸",
+      "figures": [
+        "fig-displace"
+      ]
+    },
+    {
+      "id": "base",
+      "label": "路易斯碱",
+      "figures": [
+        "fig-hydronium",
+        "fig-bf3",
+        "fig-silver-ammonia",
+        "fig-oxide",
+        "fig-displace",
+        "fig-cucn2"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "span": "lewis-definition",
+      "concept": "coordinate-covalent-bond",
+      "verb": "introduces"
+    },
+    {
+      "span": "lewis-definition",
+      "concept": "lewis-acids-and-bases",
+      "verb": "introduces"
+    },
+    {
+      "span": "lewis-definition",
+      "concept": "lewis-acid",
+      "verb": "introduces"
+    },
+    {
+      "span": "lewis-definition",
+      "concept": "lewis-base",
+      "verb": "introduces"
+    },
+    {
+      "span": "lewis-definition",
+      "concept": "lewis-acid-base-adduct",
+      "verb": "introduces"
+    },
+    {
+      "span": "lewis-definition",
+      "concept": "bronsted-lowry-acids-bases",
+      "verb": "uses"
+    },
+    {
+      "span": "lewis-definition",
+      "concept": "lewis-structure",
+      "verb": "uses"
+    },
+    {
+      "span": "other-acids",
+      "concept": "lewis-acid",
+      "verb": "reinforces"
+    },
+    {
+      "span": "other-acids",
+      "concept": "lewis-base",
+      "verb": "reinforces"
+    },
+    {
+      "span": "other-acids",
+      "concept": "lewis-acid-base-adduct",
+      "verb": "reinforces"
+    },
+    {
+      "span": "other-acids",
+      "concept": "octet-rule-exceptions",
+      "verb": "uses"
+    },
+    {
+      "span": "complex-ions",
+      "concept": "complex-ions-and-ligands",
+      "verb": "introduces"
+    },
+    {
+      "span": "complex-ions",
+      "concept": "complex-ion",
+      "verb": "introduces"
+    },
+    {
+      "span": "complex-ions",
+      "concept": "ligand",
+      "verb": "introduces"
+    },
+    {
+      "span": "complex-ions",
+      "concept": "formation-constant",
+      "verb": "introduces"
+    },
+    {
+      "span": "complex-ions",
+      "concept": "dissociation-constant",
+      "verb": "introduces"
+    },
+    {
+      "span": "complex-ions",
+      "concept": "equilibrium-constant",
+      "verb": "uses"
+    },
+    {
+      "span": "complex-ions",
+      "concept": "coupled-equilibria",
+      "verb": "uses"
+    },
+    {
+      "span": "dissolution",
+      "concept": "complex-ion-calculations",
+      "verb": "introduces"
+    },
+    {
+      "span": "dissolution",
+      "concept": "solubility-product",
+      "verb": "uses"
+    },
+    {
+      "span": "dissolution",
+      "concept": "qsp-versus-ksp",
+      "verb": "uses"
+    },
+    {
+      "span": "dissolution",
+      "concept": "small-x-approximation",
+      "verb": "uses"
+    },
+    {
+      "span": "dissolution",
+      "concept": "formation-constant",
+      "verb": "reinforces"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idm87668752",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-complex"
+      },
+      "cite": "dissolution",
+      "prompt": "计算将 1.00 g AgNO<sub>3</sub> 和 10.0 g KCN 溶于足量水配成 1.00 L 溶液后，该溶液的银离子浓度 [Ag<sup>+</sup>]。（提示：由于 <em>K</em><sub>f</sub> 很大，银/氰配离子（见附录 K），假设反应进行到底，然后计算配离子解离所产生的 [Ag<sup>+</sup>]。）",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 2.9e-22,
+        "unit": "M",
+        "tol": 0.05,
+        "hint": "把两个质量都换算成物质的量；氰根过量，所以几乎所有的银都以 Ag(CN)<sub>2</sub><sup>−</sup> 的形式存在，剩余的氰根保持游离。然后由生成常数表达式解出 [Ag<sup>+</sup>]。",
+        "solution": "2.9 × 10<sup>–22</sup> <em>M</em>"
+      }
+    },
+    {
+      "id": "e64",
+      "source_id": "fs-idm55438304",
+      "source_number": "64",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "dissolution",
+      "prompt": "计算将 0.100 L 0.0100 <em>M</em> Cd(NO<sub>3</sub>)<sub>2</sub> 与 0.150 L 0.100 NH<sub>3</sub>(<em>aq</em>)<sup class=\"fn\" data-note=\"c-e64-m\"></sup> 混合所得溶液中的镉离子浓度 [Cd<sup>2+</sup>]。",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 8.2e-05,
+        "unit": "M",
+        "hint": "求出混合到 0.250 L 后各自的浓度，让 Cd<sup>2+</sup> 完全生成 Cd(NH<sub>3</sub>)<sub>4</sub><sup>2+</sup>，再用附录 K 中的生成常数和剩余的氨进行计算。",
+        "solution": "8.2 × 10<sup>–5</sup> <em>M</em>"
+      }
+    },
+    {
+      "id": "e66",
+      "source_id": "fs-idm72577424",
+      "source_number": "66",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "complex-ions",
+      "prompt": "有时配离子的平衡用解离常数 <em>K</em><sub>d</sub> 来描述。对于配离子 ${\\text{AlF}}_{6}{}^{3-}$，解离反应为：<br>${\\text{AlF}}_{6}{}^{3-}\\rightleftharpoons{\\text{Al}}^{3+}+6{\\text{F}}^{-}$，且 ${K}_{\\text{d}}=\\frac{[{\\text{Al}}^{3+}]{[{\\text{F}}^{-}]}^{6}}{[{\\text{AlF}}_{6}{}^{3-}]}=2\\times{10}^{-24}$<br>计算 ${\\text{AlF}}_{6}{}^{3-}$ 的生成常数 <em>K</em><sub>f</sub> 的值。",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 5e+23,
+        "tol": 0.1,
+        "hint": "形成反应是解离反应的逆反应。",
+        "solution": "5 × 10<sup>23</sup>"
+      }
+    },
+    {
+      "id": "e68",
+      "source_id": "fs-idp18623376",
+      "source_number": "68",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "dissolution",
+      "prompt": "利用解离常数 <em>K</em><sub>d</sub> = 3.3 × 10<sup>–19</sup>，计算 0.250 <em>M</em> 的 $\\text{Cd}{(\\text{CN})}_{4}{}^{2-}$ 溶液中 Cd<sup>2+</sup> 和 CN<sup>–</sup> 的平衡浓度。",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "[Cd<sup>2+</sup>]",
+            "value": 5e-05,
+            "unit": "M",
+            "hint": "设每升有 x mol 的配离子解离：[Cd<sup>2+</sup>] = x，[CN<sup>–</sup>] = 4x。因为 x 比 0.250 小得多，解 x(4x)<sup>4</sup> = K<sub>d</sub>(0.250)。"
+          },
+          {
+            "part": "[CN<sup>–</sup>]",
+            "value": 0.0002,
+            "unit": "M"
+          }
+        ],
+        "solution": "<img src=\"/media/ch15/CNX_Chem_15_02_ICETable3_img.jpg\" alt=\"一张 ICE 表。初始浓度：Cd(CN)4 2− 为 0.250，CN− 为 0，Cd2+ 为 0。平衡浓度：0.250 − x、4x 和 x。\"><br>[Cd<sup>2+</sup>] = 5.0 × 10<sup>–5</sup> <em>M</em>；[CN<sup>–</sup>] = 2.0 × 10<sup>–4</sup> <em>M</em>"
+      }
+    },
+    {
+      "id": "e70",
+      "source_id": "fs-idm47233344",
+      "source_number": "70",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "dissolution",
+      "prompt": "利用解离常数 <em>K</em><sub>d</sub> = 2.2 × 10<sup>–34</sup>，计算 0.500 <em>M</em> 的 $\\text{Co}{({\\text{NH}}_{3})}_{6}{}^{3+}$ 溶液中 Co<sup>3+</sup> 和 NH<sub>3</sub> 的平衡浓度。",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "[Co<sup>3+</sup>]",
+            "value": 3e-06,
+            "unit": "M",
+            "hint": "设每升有 x mol 解离：[Co<sup>3+</sup>] = x，[NH<sub>3</sub>] = 6x；因为 x 比 0.500 小得多，解 x(6x)<sup>6</sup> = K<sub>d</sub>(0.500)。"
+          },
+          {
+            "part": "[NH<sub>3</sub>]",
+            "value": 1.8e-05,
+            "unit": "M"
+          }
+        ],
+        "solution": "[Co<sup>3+</sup>] = 3.0 × 10<sup>–6</sup> <em>M</em>；[NH<sub>3</sub>] = 1.8 × 10<sup>–5</sup> <em>M</em>"
+      }
+    },
+    {
+      "id": "e72",
+      "source_id": "fs-idm73346208",
+      "source_number": "72",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "dissolution",
+      "prompt": "计算要使 2.0 × 10<sup>–2</sup> mol 氰化银 AgCN 溶解在 100 mL 溶液中，必须加入的氰化钾离子的质量。",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 1.3,
+        "unit": "g",
+        "hint": "每个以 Ag(CN)<sub>2</sub><sup>−</sup> 的形式溶解的 AgCN 还要多结合一个氰根离子；求出所需氰根的物质的量，以及它们以 KCN 计的质量。",
+        "solution": "1.3 g"
+      }
+    },
+    {
+      "id": "e74",
+      "source_id": "fs-idm77437136",
+      "source_number": "74",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "dissolution",
+      "prompt": "一卷 35 mm 黑白照相胶片在显影前含有约 0.27 g 未曝光的 AgBr。1.0 L 定影液中需要多少质量的 Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub>·5H<sub>2</sub>O（五水合硫代硫酸钠，或称海波），才能把 AgBr 溶解为 $\\text{Ag}{({\\text{S}}_{2}{\\text{O}}_{3})}_{2}{}^{3-}$（<em>K</em><sub>f</sub> = 4.7 × 10<sup>13</sup>）？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 0.79,
+        "unit": "g",
+        "hint": "每溶解一个 AgBr，就有两个硫代硫酸根离子进入配离子；把硫代硫酸根的物质的量换算成五水合物的克数。",
+        "solution": "0.79 g"
+      }
+    },
+    {
+      "id": "e75",
+      "source_id": "fs-idp28555376",
+      "source_number": "75",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "lewis-definition",
+      "prompt": "我们已经看到酸的一个入门定义：酸是与水反应并使水合氢离子增多的化合物。在酸碱一章中，我们又看到了酸的两个定义：把质子（氢离子 H<sup>+</sup>）给予另一种化合物的化合物称为布朗斯特–劳里酸，而路易斯酸是任何能接受一对电子的物种。解释为什么入门定义是宏观定义，而布朗斯特–劳里定义和路易斯定义是微观定义。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "入门定义是宏观的，因为它是用对宏观样品所测得的量来表述的：水合氢离子浓度升高，会表现为 pH 计上较低的 pH，或指示剂的颜色变化，而不涉及任何单个粒子所做的事。布朗斯特–劳里定义和路易斯定义是微观的，因为它们描述的是单个分子或离子之间发生的事件，即一个质子从一个粒子转移到另一个粒子，或一对孤电子对被接受而形成新键。以溶于水的 HCl 为例，宏观的观察是 0.1 <em>M</em> HCl 溶液的 pH 读数为 1；微观的描述则是每个 HCl 分子把它的质子给予一个水分子，${\\text{HCl}}+{\\text{H}}_{2}\\text{O}\\;\\longrightarrow\\;{\\text{H}}_{3}{\\text{O}}^{+}+{\\text{Cl}}^{-}$，即水的氧上的一对孤电子对与氢离子成键。这样的事件在样品中是看不见的，但它们解释了在样品中测得的水合氢离子。"
+      }
+    },
+    {
+      "id": "e76",
+      "source_id": "fs-idm105219776",
+      "source_number": "76",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "other-acids",
+      "prompt": "写出下列各方程式中反应物和产物的路易斯结构，并指出每个方程式中的路易斯酸和路易斯碱：<br>（a）${\\text{CO}}_{2}+{\\text{OH}}^{-}\\;\\longrightarrow\\;{\\text{HCO}}_{3}{}^{-}$<br>（b）$\\text{B}{(\\text{OH})}_{3}+{\\text{OH}}^{-}\\;\\longrightarrow\\;\\text{B}{(\\text{OH})}_{4}{}^{-}$<br>（c）${\\text{I}}^{-}+{\\text{I}}_{2}\\;\\longrightarrow\\;{\\text{I}}_{3}{}^{-}$<br>（d）${\\text{AlCl}}_{3}+{\\text{Cl}}^{-}\\;\\longrightarrow\\;{\\text{AlCl}}_{4}{}^{-}$（使用 Al-Cl 单键）<br>（e）${\\text{O}}^{2-}+{\\text{SO}}_{3}\\;\\longrightarrow\\;{\\text{SO}}_{4}{}^{2-}$",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer18a_img.jpg\" alt=\"路易斯结构：二氧化碳，即一个碳原子与两个氧原子形成双键，加上方括号内带负电荷的氢氧根离子，生成碳酸氢根离子，即一个碳原子与一个氧原子形成双键、与带三对孤电子对的第二个氧原子形成单键、并与连有氢的氧原子形成单键，置于方括号内并带负电荷。\"><br>（b）<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer18b_img.jpg\" alt=\"路易斯结构：硼酸，即一个硼原子与三个 O–H 基团形成单键，加上方括号内带负电荷的氢氧根离子，生成 B(OH)4−，即一个硼原子与四个 O–H 基团形成单键，置于方括号内并带负电荷。\"><br>（c）<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer18c_img.jpg\" alt=\"路易斯结构：碘分子，即两个碘原子以单键相连、各带三对孤电子对，加上带四对孤电子对和一个负电荷的碘离子，生成三碘离子，即三个碘原子排成一条直线，中间的一个带两对孤电子对，置于方括号内并带负电荷。\"><br>（d）<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer18d_img.jpg\" alt=\"路易斯结构：氯化铝，即一个铝原子与三个氯原子形成单键，标为酸，加上带四对孤电子对和一个负电荷的氯离子，标为碱，生成 AlCl4−，即一个铝原子与四个氯原子形成单键，置于方括号内并带负电荷。\"><br>（e）<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer18e_img.jpg\" alt=\"路易斯结构：三氧化硫，即一个硫原子与两个氧原子形成单键、与第三个氧原子形成双键，加上带四对孤电子对和 2− 电荷的氧离子，生成硫酸根离子，即一个硫原子与四个氧原子形成单键，置于方括号内并带 2− 电荷。\">"
+      }
+    },
+    {
+      "id": "e77",
+      "source_id": "fs-idp56004352",
+      "source_number": "77",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "other-acids",
+      "prompt": "写出下列各方程式中反应物和产物的路易斯结构，并指出每个方程式中的路易斯酸和路易斯碱：<br>（a）${\\text{CS}}_{2}+{\\text{SH}}^{-}\\;\\longrightarrow\\;{\\text{HCS}}_{3}{}^{-}$<br>（b）${\\text{BF}}_{3}+{\\text{F}}^{-}\\;\\longrightarrow\\;{\\text{BF}}_{4}{}^{-}$<br>（c）${\\text{I}}^{-}+{\\text{SnI}}_{2}\\;\\longrightarrow\\;{\\text{SnI}}_{3}{}^{-}$<br>（d）$\\text{Al}{(\\text{OH})}_{3}+{\\text{OH}}^{-}\\;\\longrightarrow\\;\\text{Al}{(\\text{OH})}_{4}{}^{-}$<br>（e）${\\text{F}}^{-}+{\\text{SO}}_{3}\\;\\longrightarrow\\;{\\text{SFO}}_{3}{}^{-}$",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "（a）CS<sub>2</sub> 是 S=C=S，碳与两个硫原子形成双键，每个硫原子带两对孤电子对。SH<sup>–</sup> 是一个带三对孤电子对的硫原子与一个氢原子成键，带负电荷。在 ${\\text{HCS}}_{3}{}^{-}$ 中，碳与一个硫形成双键，与带三对孤电子对并带负电荷的第二个硫形成单键，并与连有氢的硫形成单键。SH<sup>–</sup> 的一对孤电子对形成新的 C–S 键，同时一个 C=S π 键的电子移到那个硫上：SH<sup>–</sup> 是路易斯碱，CS<sub>2</sub> 是路易斯酸。<br>（b）BF<sub>3</sub> 是一个硼原子与三个氟原子形成单键，每个氟带三对孤电子对，所以硼只有六个价电子。F<sup>–</sup> 带四对孤电子对。${\\text{BF}}_{4}{}^{-}$ 是硼与四个氟原子形成单键，置于方括号内并带负电荷。氟离子给出一对孤电子对，使硼达到八隅体：F<sup>–</sup> 是路易斯碱，BF<sub>3</sub> 是路易斯酸。<br>（c）I<sup>–</sup> 带四对孤电子对。SnI<sub>2</sub> 是一个带一对孤电子对的锡原子与两个碘原子形成单键，每个碘带三对孤电子对，所以锡有六个价电子。${\\text{SnI}}_{3}{}^{-}$ 是带一对孤电子对的锡与三个碘原子形成单键，置于方括号内并带负电荷。I<sup>–</sup> 是路易斯碱，SnI<sub>2</sub> 接受这对电子而使锡达到八隅体，是路易斯酸。<br>（d）Al(OH)<sub>3</sub> 是一个铝原子与三个 O–H 基团形成单键，每个氧带两对孤电子对，所以铝有六个价电子。OH<sup>–</sup> 是一个带三对孤电子对的氧与氢成键，带负电荷。${\\text{Al(OH)}}_{4}{}^{-}$ 是铝与四个 O–H 基团形成单键，置于方括号内并带负电荷。OH<sup>–</sup> 是路易斯碱，Al(OH)<sub>3</sub> 是路易斯酸。<br>（e）F<sup>–</sup> 带四对孤电子对。SO<sub>3</sub> 是一个硫原子与三个氧原子形成双键，每个氧带两对孤电子对。在 ${\\text{SFO}}_{3}{}^{-}$ 中，硫与带三对孤电子对的一个氟原子形成单键，与两个氧原子形成双键，并与带三对孤电子对的第三个氧形成单键，置于方括号内并带负电荷。F<sup>–</sup> 的一对孤电子对形成 S–F 键，同时一个 S=O π 键的电子移到氧上：F<sup>–</sup> 是路易斯碱，SO<sub>3</sub> 是路易斯酸。"
+      }
+    },
+    {
+      "id": "e78",
+      "source_id": "fs-idp26968080",
+      "source_number": "78",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "other-acids",
+      "prompt": "利用路易斯结构，写出下列反应的配平方程式：<br>（a）$\\text{HCl}(g)+{\\text{PH}}_{3}(g)\\;\\longrightarrow$<br>（b）${\\text{H}}_{3}{\\text{O}}^{+}+{\\text{CH}}_{3}{}^{-}\\;\\longrightarrow$<br>（c）$\\text{CaO}+{\\text{SO}}_{3}\\;\\longrightarrow$<br>（d）${\\text{NH}}_{4}{}^{+}+{\\text{C}}_{2}{\\text{H}}_{5}{\\text{O}}^{-}\\;\\longrightarrow$",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）<img src=\"/media/ch15/CNX_Chem_15_02_Answer24a_img.jpg\" alt=\"方程式 HCl(g) 加 PH3(g) 生成 PH4+ 加 Cl−，随后是同一反应的路易斯结构：PH3 中磷原子的孤电子对从 HCl 夺取氢离子，生成鏻离子，即一个磷原子与四个氢原子成键，置于方括号内并带正电荷，以及带四对孤电子对的氯离子。\"><br>（b）${\\text{H}}_{3}{\\text{O}}^{+}+{\\text{CH}}_{3}{}^{-}\\;\\longrightarrow\\;{\\text{CH}}_{4}+{\\text{H}}_{2}\\text{O}$<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer24b_img.jpg\" alt=\"路易斯结构：方括号内带正电荷的水合氢离子，加上甲基负离子，即一个碳原子带三个氢原子和一对孤电子对，置于方括号内并带负电荷，生成甲烷，即一个碳原子与四个氢原子成键，加上水，即一个氧原子带两个氢原子和两对孤电子对。\"><br>（c）$\\text{CaO}+{\\text{SO}}_{3}\\;\\longrightarrow\\;\\text{CaSO}4$<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer24c_img.jpg\" alt=\"路易斯结构：Ca2+ 与带四对孤电子对和 2− 电荷的氧离子并列，加上三氧化硫，生成 Ca2+ 与硫酸根离子并列，硫酸根离子是一个硫原子与四个各带三对孤电子对的氧原子形成单键，置于方括号内并带 2− 电荷。\"><br>（d）${\\text{NH}}_{4}{}^{+}+{\\text{C}}_{2}{\\text{H}}_{5}{\\text{O}}^{-}\\;\\longrightarrow\\;{\\text{C}}_{2}{\\text{H}}_{5}\\text{OH}+{\\text{NH}}_{3}$<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer24d_img.jpg\" alt=\"路易斯结构：方括号内带正电荷的铵根离子，加上乙氧基负离子，即氧上带三对孤电子对的 CH3CH2O−，置于方括号内并带负电荷，生成乙醇 CH3CH2OH，加上氨。\">"
+      }
+    },
+    {
+      "id": "e80",
+      "source_id": "fs-idm44455728",
+      "source_number": "80",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "dissolution",
+      "prompt": "在氰根离子的滴定中，加入 28.72 mL 0.0100 <em>M</em> AgNO<sub>3</sub> 后才开始沉淀。[Ag<sup>+</sup> 与 CN<sup>–</sup> 的反应进行到底，生成 $\\text{Ag}{(\\text{CN})}_{2}{}^{-}$ 配离子。] 当加入的 Ag<sup>+</sup> 超过完成 $\\text{Ag}{(\\text{CN})}_{2}{}^{-}$ 的生成所需的量时，溶液中就会析出固体 AgCN 沉淀。原始样品中有多少克 NaCN？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 0.0281,
+        "unit": "g",
+        "hint": "到出现第一份沉淀为止，每加入一个 Ag<sup>+</sup>，就有两个氰根离子进入配离子。",
+        "solution": "0.0281 g"
+      }
+    },
+    {
+      "id": "e82",
+      "source_id": "fs-idm47551360",
+      "source_number": "82",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "other-acids",
+      "prompt": "在稀水溶液中，HF 是弱酸。然而，纯液态 HF（沸点 = 19.5 °C）是强酸。在液态 HF 中，HNO<sub>3</sub> 的作用像碱，接受质子。加入几种作为路易斯酸、能接受 F<sup>–</sup> 离子的无机氟化物（例如 BF<sub>3</sub> 或 SbF<sub>5</sub>）之一，可以增强液态 HF 的酸性。写出纯 HNO<sub>3</sub> 与纯 HF 反应以及纯 HF 与 BF<sub>3</sub> 反应的配平化学方程式。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "${\\text{HNO}}_{3}(l)+\\text{HF}(l)\\;\\longrightarrow\\;{\\text{H}}_{2}{\\text{NO}}_{3}{}^{+}+{\\text{F}}^{-};$ $\\text{HF}(l)+{\\text{BF}}_{3}(g)\\;\\longrightarrow\\;{\\text{H}}^{+}+{\\text{BF}}_{4}$<sup class=\"fn\" data-note=\"c-e82-bf4\"></sup>"
+      }
+    },
+    {
+      "id": "e83",
+      "source_id": "fs-idp127234208",
+      "source_number": "83",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "lewis-definition",
+      "prompt": "最简单的氨基酸是甘氨酸 H<sub>2</sub>NCH<sub>2</sub>CO<sub>2</sub>H。氨基酸的共同特征是含有这样的官能团：氨基 –NH<sub>2</sub> 和羧基 –CO<sub>2</sub>H。氨基酸既可以作酸，也可以作碱。对于甘氨酸，羧基的酸强度与乙酸 CH<sub>3</sub>CO<sub>2</sub>H 的大致相同，氨基的碱强度比氨 NH<sub>3</sub> 的略大。<br>（a）写出甘氨酸溶于 1 <em>M</em> HCl 和 1 <em>M</em> KOH 时所形成离子的路易斯结构。<br>（b）写出这种氨基酸溶于水时甘氨酸的路易斯结构。（提示：考虑 –NH<sub>2</sub> 和 $-{\\text{CO}}_{2}{}^{-}$ 基团的相对碱强度。）",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "（a）在 1 <em>M</em> HCl 中，甘氨酸形成阳离子 ${\\text{H}}_{3}{\\text{N}}^{+}{\\text{CH}}_{2}{\\text{CO}}_{2}\\text{H}$：氮用它的孤电子对与一个氢离子成键，与三个氢原子和 CH<sub>2</sub> 的碳形成单键，带正电荷而没有孤电子对，羧基的碳与一个带两对孤电子对的氧形成双键，并与一个带两对孤电子对的 O–H 氧形成单键。在 1 <em>M</em> KOH 中，它形成阴离子 ${\\text{H}}_{2}{\\text{NCH}}_{2}{\\text{CO}}_{2}{}^{-}$：氮保留一对孤电子对和两个氢原子，羧基已失去质子，所以它的碳与一个带两对孤电子对的氧形成双键，并与一个带三对孤电子对、带负电荷的氧形成单键。强酸提供了足够的水合氢离子使氨基质子化，强碱则夺走羧基的酸性质子。<br>（b）在水中，甘氨酸是两性离子 ${\\text{H}}_{3}{\\text{N}}^{+}{\\text{CH}}_{2}{\\text{CO}}_{2}{}^{-}$，一端是（a）中质子化的氨基，另一端是羧酸根基团，整体是不带净电荷的离子。氨基是比氨略强的碱，$\\kKb\\approx 2\\;\\times \\;{10}^{-5}$，而羧酸根基团是与乙酸根离子一样弱的碱，$\\kKb=\\kKw \\text{/}\\kKa =1.0\\;\\times \\;{10}^{-14}\\text{/}1.8\\;\\times \\;{10}^{-5}=5.6\\;\\times \\;{10}^{-10}$，所以羧基的质子移到了氮上。"
+      }
+    },
+    {
+      "id": "e84",
+      "source_id": "fs-idm16601024",
+      "source_number": "84",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "other-acids",
+      "prompt": "硼酸 H<sub>3</sub>BO<sub>3</sub> 不是布朗斯特–劳里酸，而是路易斯酸。（提示：见习题 76 中的方程式。）<br>（a）写出它与水反应的方程式。<br>（b）预测由此形成的阴离子的形状。<br>（c）硼的杂化方式是什么？它与你预测的形状是否一致？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）${\\text{H}}_{3}{\\text{BO}}_{3}+{\\text{H}}_{2}\\text{O}\\;\\longrightarrow\\;{\\text{H}}_{4}{\\text{BO}}_{4}{}^{-}+{\\text{H}}^{+}$；（b）电子对构型和分子构型相同，都是四面体形。（c）四面体结构与 <em>sp</em><sup>3</sup> 杂化一致。"
+      }
+    },
+    {
+      "id": "e86",
+      "source_id": "fs-idm299312",
+      "source_section": "15.3",
+      "source_number": "86",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "dissolution",
+      "prompt": "计算 1.0 <em>M</em> [Ni(NH<sub>3</sub>)<sub>6</sub>](NO<sub>3</sub>)<sub>2</sub> 溶液中 Ni<sup>2+</sup> 的平衡浓度。",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 0.014,
+        "unit": "M",
+        "hint": "设每升有 x mol 的 Ni(NH<sub>3</sub>)<sub>6</sub><sup>2+</sup> 解离，生成浓度为 x 的 Ni<sup>2+</sup> 和浓度为 6x 的 NH<sub>3</sub>，并使用附录 K 中它的生成常数。",
+        "solution": "0.014 <em>M</em>"
+      }
+    },
+    {
+      "id": "e88",
+      "source_id": "fs-idp457072",
+      "source_section": "15.3",
+      "source_number": "88",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "dissolution",
+      "prompt": "计算最初含有 0.050 <em>M</em> Cu<sup>2+</sup> 和 1.00 <em>M</em> NH<sub>3</sub> 的溶液中 Cu<sup>2+</sup> 的平衡浓度。",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 7.2e-15,
+        "unit": "M",
+        "hint": "设 Cu<sup>2+</sup> 完全生成 Cu(NH<sub>3</sub>)<sub>4</sub><sup>2+</sup>，求出剩余的氨，再由生成常数表达式解出所余的很小的 [Cu<sup>2+</sup>]。",
+        "solution": "7.2 × 10<sup>–15</sup> <em>M</em>"
+      }
+    },
+    {
+      "id": "e90",
+      "source_id": "fs-idp135248",
+      "source_section": "15.3",
+      "source_number": "90",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "dissolution",
+      "prompt": "计算在含有 0.00010 <em>M</em> CN<sup>–</sup> 的溶液中加入 0.0888 mol K<sub>3</sub>[Fe(CN)<sub>6</sub>] 时 Fe<sup>3+</sup> 的平衡浓度。",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 4.4e-22,
+        "unit": "M",
+        "hint": "已有的氰根抑制了解离，所以 [CN<sup>–</sup>] 保持 0.00010 M；由 Fe(CN)<sub>6</sub><sup>3−</sup> 的生成常数表达式解出 [Fe<sup>3+</sup>]。",
+        "solution": "4.4 × 10<sup>−22</sup> <em>M</em>"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "complex-ion-calculations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "formation-constant",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e64",
+      "concept": "complex-ion-calculations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e64",
+      "concept": "formation-constant",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e64",
+      "concept": "dilution",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e66",
+      "concept": "dissociation-constant",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e66",
+      "concept": "formation-constant",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e68",
+      "concept": "complex-ion-calculations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e68",
+      "concept": "dissociation-constant",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e70",
+      "concept": "complex-ion-calculations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e70",
+      "concept": "dissociation-constant",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e72",
+      "concept": "formation-constant",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e72",
+      "concept": "complex-ion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e74",
+      "concept": "formation-constant",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e74",
+      "concept": "complex-ion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e75",
+      "concept": "lewis-acids-and-bases",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e75",
+      "concept": "bronsted-lowry-acids-bases",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e76",
+      "concept": "lewis-acid",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e76",
+      "concept": "lewis-base",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e76",
+      "concept": "lewis-acid-base-adduct",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e76",
+      "concept": "lewis-structure",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e77",
+      "concept": "lewis-acid",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e77",
+      "concept": "lewis-base",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e77",
+      "concept": "lewis-acid-base-adduct",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e77",
+      "concept": "lewis-structure",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e78",
+      "concept": "lewis-acids-and-bases",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e78",
+      "concept": "lewis-acid",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e78",
+      "concept": "lewis-base",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e78",
+      "concept": "lewis-structure",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e80",
+      "concept": "complex-ion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e80",
+      "concept": "titration-calculation",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e82",
+      "concept": "lewis-acid",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e82",
+      "concept": "lewis-acids-and-bases",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e82",
+      "concept": "bronsted-lowry-acids-bases",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e83",
+      "concept": "lewis-base",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e83",
+      "concept": "bronsted-lowry-acids-bases",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e83",
+      "concept": "lewis-structure",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e84",
+      "concept": "lewis-acid",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e84",
+      "concept": "vsepr-theory",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e84",
+      "concept": "hybridization",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e86",
+      "concept": "complex-ion-calculations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e86",
+      "concept": "formation-constant",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e88",
+      "concept": "complex-ion-calculations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e88",
+      "concept": "formation-constant",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e90",
+      "concept": "complex-ion-calculations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e90",
+      "concept": "formation-constant",
+      "weights_by": "ai"
+    }
+  ],
+  "footnotes": [
+    {
+      "id": "c-complex-unit",
+      "kind": "correction",
+      "html": "书中给出的 [Ag(NH<sub>3</sub>)<sub>2</sub><sup>+</sup>] = 0.099 没有写单位；应为 0.099 <em>M</em>。"
+    },
+    {
+      "id": "c-e64-m",
+      "kind": "correction",
+      "html": "书中给出的氨为 0.100，没有写单位；应为 0.100 <em>M</em> NH<sub>3</sub>。"
+    },
+    {
+      "id": "c-e82-bf4",
+      "kind": "correction",
+      "html": "答案中的 BF<sub>4</sub> 没有写电荷；生成的离子是 BF<sub>4</sub><sup>−</sup>。"
+    }
+  ]
+}

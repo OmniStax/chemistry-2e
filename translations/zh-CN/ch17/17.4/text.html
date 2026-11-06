@@ -1,0 +1,90 @@
+<section id="intro">
+<h2>电势与热力学</h2>
+<p class="cite-target">本章前面已经描述了<span data-concept="cell-potential">电池电势</span>与反应<em><span data-concept="spontaneous-process">自发性</span></em>之间的关系，这提示它与该反应的<span data-concept="gibbs-free-energy">自由能变</span>相关联（见热力学一章）。接着介绍了把电势解释为氧化剂<em><span data-concept="electrode-potential-and-oxidant-strength">强弱</span></em>的度量，这让人想起类似的<span data-concept="acid-base-ionization-constants">酸碱强度</span>度量，后者体现在<span data-concept="equilibrium-constant">平衡常数</span>中（见酸碱平衡一章）。本节概述电势与相关热力学性质 $\kdG$ 和 $\kK$ 之间的关系。</p>
+</section>
+
+<section id="dg">
+<h2><em>E</em>° 与 Δ<em>G</em>°</h2>
+<p class="cite-target">一个过程的<span data-concept="standard-free-energy-change">标准自由能变</span> $\kdGo$，在前面的章节中被定义为<span data-concept="system">体系</span>所能做的最大<span data-concept="work">功</span> $\kwmax$。对于在<span data-concept="galvanic-cell">原电池</span>内、<span data-concept="standard-state">标准状态</span>条件下进行的氧化还原反应，基本上全部<span data-concept="work">功</span>都与把<span data-concept="electron">电子</span>从还原剂转移到氧化剂有关，即 $\kwelec$：</p>
+<figure class="dv" id="drv-free-energy-cell-potential"></figure>
+<p>在这个方程中，$\kn$ 是转移<span data-concept="electron">电子</span>的<span data-concept="mole">物质的量</span>，$\kFaraday$ 是<strong><span data-concept="faradays-constant">法拉第常数</span></strong>，$\kEocell$ 是<span data-concept="standard-cell-potential">标准电池电势</span>。<span data-concept="faradays-constant">法拉第常数</span>被定义为 1 <span data-concept="mole">摩尔</span><span data-concept="electron">电子</span>的电荷（以库仑计），$\kFaraday$ = <span data-type="charge">96,485 C/mol e<sup>–</sup></span>。<span data-concept="gibbs-free-energy">自由能变</span>与<span data-concept="standard-cell-potential">标准电池电势</span>之间的关系，印证了前面对这两种性质分别讨论过的符号约定和自发性判据：自发的氧化还原反应表现为电势为正、<span data-concept="gibbs-free-energy">自由能变</span>为负。</p>
+</section>
+
+<section id="k">
+<h2><em>E</em>° 与 <em>K</em></h2>
+<p class="cite-target">把前面推导出的 $\kdGo$ 与 $\kK$ 之间的关系（见热力学一章）和上面联系 $\kdGo$ 与 $\kEocell$ 的方程结合起来，得到：</p>
+<figure class="dv" id="drv-cell-potential-k"></figure>
+<p>这个方程表明，<span data-concept="standard-cell-potential">标准电池电势</span>很大（为正）的氧化还原反应会进行得很彻底，当大部分<span data-concept="reactant">反应物</span>已转化为<span data-concept="product">产物</span>时达到<span data-concept="chemical-equilibrium">平衡</span>。$\kEo$、$\kdGo$ 和 $\kK$ 之间关系的概括见图 17.7，而把反应自发性与这些性质的值相联系的表格见表 17.2。</p>
+<figure class="sim" id="sim-relations" data-figure="17.7" data-original="/media/ch17/CNX_Chem_17_04_Relation.jpg" data-original-caption="表示三个重要热力学性质之间关系的图示。">
+  <div class="sim-head"><span class="eyebrow">Figure 17.7</span><span>某反应在 <span data-type="temperature">298 K</span> 时三个重要热力学性质 $\kEocell$、$\kdGo$ 和 $\kK$ 之间的关系，每个顶点标出它的值。拖动 $\kEocell$，可以看到 $\kdGo$ 随之变化而符号相反，而 $\kK$ 的变化跨越几十个 10 的幂；选择电子的<span data-concept="mole">物质的量</span> $\kn$，各个关系都随之成比例变化。图中 $\kK$ 取对数轴，它沿一条直线上升，该直线在 $\kEocell$ = 0 处经过 $\kK$ = 1，即滑块上的虚线圆圈。</span></div>
+</figure>
+<div class="book-table">
+  <div class="tcap"><span class="eyebrow">表 17.2</span></div>
+  <table>
+    <thead><tr><th>$\kK$</th><th>$\kdGo$</th><th>$\kEocell$</th><th></th></tr></thead>
+    <tbody>
+      <tr><td>&gt; 1</td><td>&lt; 0</td><td>&gt; 0</td><td>标准条件下反应是自发的<br>平衡时产物更多</td></tr>
+      <tr><td>&lt; 1</td><td>&gt; 0</td><td>&lt; 0</td><td>标准条件下反应是非自发的<br>平衡时反应物更多</td></tr>
+      <tr><td>= 1</td><td>= 0</td><td>= 0</td><td>标准条件下反应处于平衡<br>反应物和产物一样多</td></tr>
+    </tbody>
+  </table>
+</div>
+<div class="example cite-target" id="ex-relations">
+<h3>例 17.6 · 平衡常数、标准电池电势和标准自由能变</h3>
+<p>利用<a href="/chemistry-2e/sheets/potentials/">附录 L</a> 中的数据，计算下列反应在 <span data-type="temperature">25 °C</span> 时的<span data-concept="standard-cell-potential">标准电池电势</span>、<span data-concept="standard-free-energy-change">标准自由能变</span>和<span data-concept="equilibrium-constant">平衡常数</span>。请就正反应的自发性，以及由<span data-concept="reactant">反应物</span>和<span data-concept="product">产物</span>组成的<span data-concept="chemical-equilibrium">平衡</span><span data-concept="mixture">混合物</span>的组成作出说明。</p>
+$$2{\text{Ag}}^{\text{+}}(aq)+\text{Fe}(s)\rightleftharpoons \text{2Ag}(s)+{\text{Fe}}^{2+}(aq)$$
+<h4>解</h4>
+<p>该反应是一个<span data-concept="redox-reaction">氧化还原反应</span>，所以可以利用<a href="/chemistry-2e/sheets/potentials/">附录 L</a> 中的数据计算<span data-concept="standard-cell-potential">标准电池电势</span>。</p>
+$$\begin{array}{llrll} \\ \text{阳极（氧化）：} & \text{Fe}(s)\;\longrightarrow \;{\text{Fe}}^{2+}(aq)+{\text{2e}}^{\text{−}} & {E}_{{\text{Fe}}^{2+}\text{/Fe}}^{{}^{\circ}} & = & \text{−0.447 V} \\ \text{阴极（还原）：} & 2\;\times \;({\text{Ag}}^{\text{+}}(aq)+{\text{e}}^{\text{−}}\;\longrightarrow \;\text{Ag}(s)) & {E}_{{\text{Ag}}^{\text{+}}\text{/Ag}}^{{}^{\circ}} & = & \text{0.7996 V} \\ & \kEocell=\kEocathode-\kEoanode= & {E}_{{\text{Ag}}^{\text{+}}\text{/Ag}}^{{}^{\circ}}-{E}_{{\text{Fe}}^{2+}\text{/Fe}}^{{}^{\circ}} & = & \text{+1.247 V}\end{array}$$
+<p>取 $\kn$ = 2，则<span data-concept="equilibrium-constant">平衡常数</span>为</p>
+$$\begin{array}{rll}\kEocell & = & \frac{\text{0.0592 V}}{\kn}\;\text{log}\;\kK \\ \kK & = & {10}^{\kn\;\times \;\kEocell\text{/}\text{0.0592 V}} \\ \kK & = & {10}^{2\;\times \;\text{1.247 V/0.0592 V}} \\ \kK & = & {10}^{42.128} \\ \kK & = & 1.3\;\times \;{10}^{42}\end{array}$$
+<p>则标准<span data-concept="gibbs-free-energy">自由能</span>为</p>
+$$\begin{array}{rll}\kdGo & = & -\kn\kFaraday\kEocell \\ \kdGo & = & −2\;\times \;96{,}485\;\frac{\text{C}}{\text{mol}}\;\times \;1.247\;\frac{\text{J}}{\text{C}}=−240.6\;\frac{\text{kJ}}{\text{mol}}\end{array}$$
+<p>该反应是自发的，<span data-concept="gibbs-free-energy">自由能变</span>为负、<span data-concept="cell-potential">电池电势</span>为正表明了这一点。$\kK$ 值非常大，表明反应进行到接近完全，得到的<span data-concept="chemical-equilibrium">平衡</span><span data-concept="mixture">混合物</span>中主要是<span data-concept="product">产物</span>。</p>
+<h4>学习检测</h4>
+<div class="exercises" data-place="ex-relations"></div>
+</div>
+</section>
+
+<section id="nernst">
+<h2>非标准条件下的电势：能斯特方程</h2>
+<p class="cite-target">科学和社会所关注的大多数氧化还原过程并不是在<span data-concept="standard-state">标准状态</span>条件下发生的，因此这些体系在非标准条件下的电势是一种值得关注的性质。本节已经建立了电势与<span data-concept="gibbs-free-energy">自由能变</span>之间的关系，于是可以把前面讨论过的<span data-concept="gibbs-free-energy">自由能变</span>与反应<span data-concept="mixture">混合物</span>组成之间的关系用于此目的。</p>
+$$\kdG=\kdGo+R\kT\;\text{ln}\;\kQrxn$$
+<p>注意，<span data-concept="reaction-quotient">反应商</span> $\kQrxn$ 出现在这个方程中，使<span data-concept="gibbs-free-energy">自由能变</span>取决于反应<span data-concept="mixture">混合物</span>的组成。代入联系<span data-concept="gibbs-free-energy">自由能变</span>与<span data-concept="cell-potential">电池电势</span>的方程，就得到<strong><span data-concept="nernst-equation">能斯特方程</span></strong>：</p>
+<figure class="dv" id="drv-nernst"></figure>
+<p>这个方程描述了氧化还原<span data-concept="system">体系</span>（如<span data-concept="galvanic-cell">原电池</span>）的电势如何偏离其<span data-concept="standard-state">标准状态</span>值，具体地说，它表明电势是转移的<span data-concept="electron">电子</span>数 $\kn$、<span data-concept="temperature">温度</span> $\kT$ 以及反映在 $\kQrxn$ 中的反应<span data-concept="mixture">混合物</span>组成的函数。对大多数工作而言，<span data-concept="nernst-equation">能斯特方程</span>的一种方便形式，是把基本常数（$R$ 和 $\kFaraday$）与标准<span data-concept="temperature">温度</span> (298) K) 的值，连同由自然对数换算为以 10 为底的对数的因子一并代入的形式：</p>
+<figure class="dv" id="drv-nernst-298"></figure>
+<figure class="sim" id="sim-nernst">
+  <div class="sim-head"><span class="eyebrow">Sim</span><span><span data-type="temperature">298 K</span> 时的<span data-concept="nernst-equation">能斯特方程</span>表示为一条直线：<span data-concept="cell-potential">电池电势</span> $\kEcell$ 对<span data-concept="reaction-quotient">反应商</span> $\kQrxn$ 的对数作图。当 $\kQrxn$ = 1 时直线经过 $\kEocell$，$\kQrxn$ 每升高为原来的 10 倍，$\kEcell$ 就下降 0.0592 V 除以 $\kn$。滑动 $\kQrxn$ 可以改变混合物的组成，并观察该点在直线与零相交处（即 $\kQrxn$ = $\kK$，虚线圆圈）由自发变为非自发；拖动 $\kEocell$ 或选择 $\kn$ 可以平移或倾斜直线。默认值是例 17.7 中钴与铁(II)的反应。</span></div>
+</figure>
+<div class="example cite-target" id="ex-nonstandard">
+<h3>例 17.7 · 预测非标准条件下氧化还原反应的自发性</h3>
+<p>利用<span data-concept="nernst-equation">能斯特方程</span>预测下面所示氧化还原反应的自发性。</p>
+$$\text{Co}(s)+{\text{Fe}}^{2+}(aq,\;1.94\;M)\;\longrightarrow \;{\text{Co}}^{2+}(aq\text{, 0.15}\;M)+\text{Fe}(s)$$
+<h4>解</h4>
+<p>从<a href="/chemistry-2e/sheets/potentials/">附录 L</a> 和题目中整理信息，</p>
+$$\begin{array}{llrll} \\ \text{阳极（氧化）：} & \text{Co}(s)\;\longrightarrow \;{\text{Co}}^{2+}(aq)+{\text{2e}}^{\text{−}} & {E}_{{\text{Co}}^{2+}\text{/Co}}^{{}^{\circ}} & = & \text{−0.28 V} \\ \text{阴极（还原）：} & {\text{Fe}}^{2+}(aq)+{\text{2e}}^{\text{−}}\;\longrightarrow \;\text{Fe}(s) & {E}_{{\text{Fe}}^{2+}\text{/Fe}}^{{}^{\circ}} & = & \text{−0.447 V} \\ & \kEocell=\kEocathode-\kEoanode= & \text{−0.447 V}-(\text{−0.28 V}) & = & \text{−0.17 V}\end{array}$$
+<p>注意，<span data-concept="standard-cell-potential">标准电池电势</span>为负值，表明该过程在标准条件下不是自发的。把非标准条件代入<span data-concept="nernst-equation">能斯特方程</span>中的各项，得到：</p>
+$$\begin{array}{rll}\kQrxn & = & \frac{{[\text{Co}}^{2+}]}{{[\text{Fe}}^{2+}]}\;=\;\frac{0.15\;M}{1.94\;M}\;=0.077 \\ \kEcell & = & \kEocell-\;\frac{0.0592 V}{\kn}\;\text{log}\;\kQrxn \\ \kEcell & = & −0.1\text{7 V}-\;\frac{0.0592 V}{2}\;\text{log}\;0.077 \\ \kEcell & = & \text{−0.17 V}+0.033 V=−0.14 V\end{array}$$
+<p>在所给条件下，<span data-concept="cell-potential">电池电势</span>仍为负值（略为负），所以该反应仍然是非自发的。</p>
+<h4>学习检测</h4>
+<div class="exercises" data-place="ex-nonstandard"></div>
+</div>
+<p id="concentration-cell" class="cite-target"><strong><span data-concept="concentration-cell">浓差电池</span></strong>由两个几乎完全相同的<span data-concept="half-cell">半电池</span>连接而成，两者基于同一个<span data-concept="half-reaction">半反应</span>并使用同一种电极，只是某一种氧化还原物种的<span data-concept="concentration">浓度</span>不同。因此，<span data-concept="concentration-cell">浓差电池</span>的电势仅由所选氧化还原物种的<span data-concept="concentration">浓度</span>差决定。下面的例题说明了<span data-concept="nernst-equation">能斯特方程</span>在涉及<span data-concept="concentration-cell">浓差电池</span>的计算中的应用。</p>
+<div class="example cite-target" id="ex-concentration">
+<h3>例 17.8 · 浓差电池</h3>
+<p>下式所描述的<span data-concept="concentration-cell">浓差电池</span>的<span data-concept="cell-potential">电池电势</span>是多少？</p>
+$$\text{Zn}(s)\,|\,{\text{Zn}}^{2+}(aq\text{, 0.10}\;M)\,\|\,{\text{Zn}}^{2+}(aq\text{, 0.50}\;M)\,|\,\text{Zn}(s)$$
+<h4>解</h4>
+<p>由所给信息：</p>
+$$\begin{array}{l} \\ \underline{\begin{array}{llllllrll}\text{阳极：} & & & \text{Zn}(s)\;\longrightarrow \;{\text{Zn}}^{2+}(aq\text{, 0.10}\;M)+{\text{2e}}^{\text{−}} & & & \kEoanode & = & \text{−0.7618 V} \\ \text{阴极：} & & & {\text{Zn}}^{2+}(aq\text{, 0.50}\;M)+{\text{2e}}^{\text{−}}\;\longrightarrow \;\text{Zn}(s) & & & \kEocathode & = & \text{−0.7618 V}\end{array}} \\ \begin{array}{llllllrll}\text{总反应：} & & & {\text{Zn}}^{2+}(aq\text{, 0.50}\;M)\;\longrightarrow \;{\text{Zn}}^{2+}(aq\text{, 0.10}\;M) & & & \kEocell & = & \text{0.000 V}\end{array}\end{array}$$
+<p>代入<span data-concept="nernst-equation">能斯特方程</span>，</p>
+$$\kEcell=\text{0.000 V}-\;\frac{\text{0.0592 V}}{2}\;\text{log}\;\frac{0.10}{0.50}\;=+0.021 V$$
+<p><span data-concept="cell-potential">电池电势</span>为正值，表明总的电池反应（见上）是自发的。在这个自发反应中，<span data-ref="cathode-half-cell"><span data-concept="cathode">阴极</span></span>中的锌<span data-concept="ion">离子</span><span data-concept="concentration">浓度</span>下降（被还原为单质锌），而<span data-ref="anode-half-cell"><span data-concept="anode">阳极</span></span>中的则上升（由锌<span data-concept="anode">阳极</span>的<span data-concept="oxidation">氧化</span>产生）。<span data-ref="cathode-half-cell"><span data-concept="cathode">阴极</span></span>中锌<span data-concept="reduction">还原</span>的推动力更大，那里的锌(II)<span data-concept="ion">离子</span><span data-concept="concentration">浓度</span>更大（$\kEcathode$ &gt; $\kEanode$）。</p>
+<h4>学习检测</h4>
+<div class="exercises" data-place="ex-concentration"></div>
+</div>
+<figure class="sim" id="sim-concentration-cell">
+  <div class="sim-head"><span class="eyebrow">Sim</span><span>例 17.8 中的锌<span data-concept="concentration-cell">浓差电池</span>逐渐耗尽的过程。电子离开<span data-ref="anode-half-cell">稀溶液半电池</span>中的锌<span data-concept="anode">阳极</span>，经外电路流向<span data-ref="cathode-half-cell">浓溶液半电池</span>中的锌<span data-concept="cathode">阴极</span>，那里的 Zn<sup>2+</sup> 离子析出为锌，而<span data-concept="anode">阳极</span>则溶入其溶液中。请看下方图中两种锌(II)<span data-concept="concentration">浓度</span>如何趋于一致，同时<span data-concept="cell-potential">电池电势</span> $\kEcell$ 下降，电子也随之变慢，直到两种溶液浓度相等，电池达到平衡。电池耗尽的快慢取决于外电路，所以时间轴上没有数字。</span></div>
+</figure>
+</section>

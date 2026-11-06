@@ -1,0 +1,358 @@
+{
+ "id": "1.1",
+ "module": "m68664",
+ "chapter": "1",
+ "title": "情境中的化学",
+ "short": "情境中的化学",
+ "lead": "早在化学成为一门科学之前，人们从最初制作陶器和青铜时起就在实践化学了。它的发展脉络从炼金术士一直延伸到科学方法，如今化学家从宏观、微观和符号三个领域来考虑物质。",
+ "objectives": [
+  "概述化学的历史发展",
+  "举例说明化学在日常生活中的重要性",
+  "描述科学方法",
+  "区分假说、理论和定律",
+  "举例说明宏观领域、微观领域和符号领域"
+ ],
+ "summary_html": "<p>化学研究物质的组成、结构和性质，以及各种形态的物质相互转化的途径。因此，它在科学和技术的研究与实践中占据中心地位。化学家运用科学方法进行实验、提出假说、归纳定律并发展理论，以便更好地理解自然界的行为。为此，他们在宏观领域、微观领域和符号领域中开展工作。化学家对种类繁多、与我们的生活息息相关的物质进行测量、分析、提纯和合成。</p>",
+ "notes": "本节正文没有任何删减；图 1.3 和图 1.4 的示意图经过重绘，图 1.5 取代书中的合成图改为实时绘制，书中的原图并列保留。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-fable-5-1"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-fable-5-1",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签和那个权重由 AI 生成。习题 q1、q3、q5 和 q7 的答案来自书中自带的答案。习题 q2、q4 和 q6 没有书中给出的答案；它们都是概念性问题，所以附有一份由 AI 撰写的建议思路，并标明为生成内容。没有任何内容留待以后的小节，也没有任何内容取自其他小节。",
+ "figures": [
+  {
+   "id": "fig-alchemist",
+   "kind": "photo",
+   "number": "1.2",
+   "draws": []
+  },
+  {
+   "id": "fig-chemweb",
+   "kind": "figure",
+   "number": "1.3",
+   "originals": [
+    "/media/ch01/CNX_Chem_01_01_ChemWeb.jpg"
+   ],
+   "original_caption": "化学知识对于理解范围广泛的科学学科至关重要。这张图只展示了化学与其他领域之间的一部分相互关系。",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "caption: chemical physics no longer said to join physics"
+    }
+   ]
+  },
+  {
+   "id": "fig-scimethod",
+   "kind": "figure",
+   "number": "1.4",
+   "originals": [
+    "/media/ch01/CNX_Chem_01_01_SciMethod.jpg"
+   ],
+   "original_caption": "科学方法遵循的过程与这张图所示的相似。所有关键环节都已画出，顺序也大致正确。科学的进展很少是整齐利落的：它需要开放的探究，并要根据研究结果重新调整问题和想法。",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "loop arcs given visible arrowheads"
+    }
+   ]
+  },
+  {
+   "id": "sim-water",
+   "kind": "sim",
+   "number": "1.5",
+   "originals": [
+    "/media/ch01/CNX_Chem_01_01_WaterDom.jpg"
+   ],
+   "original_caption": "（a）空气中的湿气、冰山和海洋代表宏观领域中的水。（b）在分子层面（微观领域），气体分子相距很远且无序，固态水分子紧密靠近且有序，液体分子紧密靠近但无序。（c）化学式 H₂O 象征水，（g）、（s）和（l）象征它的相。（来源 a：改编自 “Gorkaazk”/Wikimedia Commons 的作品）",
+   "draws": [
+    "temperature"
+   ],
+   "conventions": [
+    "O",
+    "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "tick labels on a panel, repeated note dropped, caption trimmed"
+    }
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "scientific-method",
+   "concept": "scientific-method",
+   "verb": "introduces"
+  },
+  {
+   "span": "scientific-method",
+   "concept": "hypothesis-law-theory",
+   "verb": "introduces"
+  },
+  {
+   "span": "scientific-method",
+   "concept": "hypothesis",
+   "verb": "introduces"
+  },
+  {
+   "span": "scientific-method",
+   "concept": "scientific-law",
+   "verb": "introduces"
+  },
+  {
+   "span": "scientific-method",
+   "concept": "scientific-theory",
+   "verb": "introduces"
+  },
+  {
+   "span": "domains",
+   "concept": "domains-of-chemistry",
+   "verb": "introduces"
+  },
+  {
+   "span": "domains",
+   "concept": "macroscopic-domain",
+   "verb": "introduces"
+  },
+  {
+   "span": "domains",
+   "concept": "microscopic-domain",
+   "verb": "introduces"
+  },
+  {
+   "span": "domains",
+   "concept": "symbolic-domain",
+   "verb": "introduces"
+  },
+  {
+   "span": "central-science",
+   "concept": "chemistry",
+   "verb": "introduces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "q1",
+   "source_id": "fs-idm34987968",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "scientific-method",
+   "prompt": "说明你如何能在不使用温度计的情况下，通过实验确定室外温度是高于还是低于 0 °C（32 °F）。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "在室外放一杯水。如果温度低于 0 °C，水就会结冰。"
+   }
+  },
+  {
+   "id": "q2",
+   "source_id": "fs-idp45595424",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "scientific-method",
+   "prompt": "指出下列各陈述最类似于假说、定律还是理论。说明你的理由。\n（a）气压下降先于坏天气的出现。\n（b）地球上所有生命都是通过自然选择的过程，从一种共同的原始生物演化而来的。\n（c）我的卡车的燃油经济性（每加仑行驶里程）大幅下降，大概是因为该做保养了。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "针对每条陈述，问问它提出的是哪一类论断。陈述（a）概括了大量观察结果，并由一个事件预测另一个事件而不解释原因，这正是定律所做的。陈述（b）是对大量有关生物的证据所做的全面且有充分根据的解释，这正是理论的含义。陈述（c）是对一个观察结果的试探性解释，被当作接下来要检查什么的指南，这正是假说的含义；把卡车送去做保养就可以检验它。"
+   }
+  },
+  {
+   "id": "q3",
+   "source_id": "fs-idp38309200",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "scientific-method",
+   "prompt": "指出下列各陈述最类似于假说、定律还是理论。说明你的理由。\n（a）气体样品的压强与气体的温度成正比。\n（b）物质由微小的粒子组成，这些粒子可以按特定比例结合，形成具有特定性质的物质。\n（c）在较高温度下，固体（如盐或糖）在水中会溶解得更好。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）定律（陈述了一种始终如一地观察到的现象，可用于预测）；（b）理论（对物质行为被广泛接受的解释）；（c）假说（一种试探性解释，可以通过实验来研究）"
+   }
+  },
+  {
+   "id": "q4",
+   "source_id": "fs-idm58468592",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "domains",
+   "prompt": "指出下列每个带下划线的项目属于化学的宏观领域、微观领域还是符号领域。对于其中属于符号领域的，说明它们是宏观特征还是微观特征的符号。\n（a）一根<u>铅管</u>的质量为 14 磅。\n（b）某个<u>氯原子</u>的质量为 35 amu。\n（c）标签上写着 <u>Al</u> 的瓶子里装的是金属铝。\n（d）<u>Al</u> 是铝原子的符号。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "针对每个项目，问问它是大到可以看见和触摸、小到看不见，还是代表这两者之一的符号。你可以拿起并称量铅管（a），所以它属于宏观领域。单个氯原子（b）小到根本看不见，只存在于头脑中的图像里，所以它属于微观领域。（c）中的标签 Al 和（d）中的符号 Al 都是化学符号，因此都属于符号领域；它们的区别在于各自代表什么。在瓶子上，这个符号指明里面的金属，是宏观特征，而在（d）中，同一个符号代表一个铝原子，是微观特征。一个符号可以有两种含义，这正是符号领域的本质。"
+   }
+  },
+  {
+   "id": "q5",
+   "source_id": "fs-idm67489232",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "domains",
+   "prompt": "指出下列每个带下划线的项目属于化学的宏观领域、微观领域还是符号领域。对于属于符号领域的，说明它们是宏观特征还是微观特征的符号。\n（a）某个分子含有一个 <u>H</u> 原子和一个 Cl 原子。\n（b）<u>铜线</u>的密度约为 8 g/cm<sup>3</sup>。\n（c）瓶中装有 15 克<u>镍粉</u>。\n（d）一个<u>硫分子</u>由八个硫原子组成。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）符号，微观；（b）宏观；（c）符号，宏观；（d）微观"
+   }
+  },
+  {
+   "id": "q6",
+   "source_id": "fs-idp6505632",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "domains",
+   "prompt": "根据一种理论，气体的体积减小时压强会增大，因为气体中的分子要到达容器壁只需移动更短的距离。这种理论遵循的是对化学行为的宏观描述还是微观描述？说明你的答案。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "看看这个理论谈论的是什么。气体的压强和体积是宏观性质，因为你在实验室里对一份样品就可以测量这两者。然而，这个解释谈到的是分子的运动和撞击容器壁，而分子小到根本看不见。因此这个理论遵循的是微观描述。它用微观领域中发生的事情来解释宏观领域中观察到的行为，这正是化学中的理论的典型作用。"
+   }
+  },
+  {
+   "id": "q7",
+   "source_id": "fs-idp40361152",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "domains",
+   "prompt": "融化 2 磅冰所需的热量是融化 1 磅冰所需热量的两倍。这一观察结果是对化学行为的宏观描述还是微观描述？说明你的答案。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "宏观。所需的热量是根据宏观性质确定的。"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "q1",
+   "concept": "scientific-method"
+  },
+  {
+   "exercise": "q2",
+   "concept": "hypothesis-law-theory"
+  },
+  {
+   "exercise": "q3",
+   "concept": "hypothesis-law-theory"
+  },
+  {
+   "exercise": "q4",
+   "concept": "domains-of-chemistry"
+  },
+  {
+   "exercise": "q5",
+   "concept": "domains-of-chemistry"
+  },
+  {
+   "exercise": "q6",
+   "concept": "domains-of-chemistry"
+  },
+  {
+   "exercise": "q6",
+   "concept": "hypothesis-law-theory",
+   "weight": 1
+  },
+  {
+   "exercise": "q7",
+   "concept": "domains-of-chemistry"
+  }
+ ],
+ "referents": [
+  {
+   "id": "beaker",
+   "label": "烧杯中的水",
+   "figures": [
+    "sim-water"
+   ]
+  }
+ ]
+}

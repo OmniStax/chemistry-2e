@@ -1,0 +1,1917 @@
+{
+ "types": [
+  {
+   "id": "momentum",
+   "label": "动量",
+   "dimension": "kg·m/s"
+  },
+  {
+   "id": "wavefunction",
+   "label": "波函数",
+   "dimension": "m⁻³ᐟ²"
+  },
+  {
+   "id": "velocity",
+   "label": "速度、速率",
+   "dimension": "m/s"
+  }
+ ],
+ "symbols": [
+  {
+   "sym": "k",
+   "latex": "k",
+   "macro": "\\kk"
+  },
+  {
+   "sym": "E_n",
+   "latex": "E_{n}",
+   "macro": "\\kEn"
+  },
+  {
+   "sym": "E_i",
+   "latex": "E_{\\text{i}}",
+   "macro": "\\kEi"
+  },
+  {
+   "sym": "E_f",
+   "latex": "E_{\\text{f}}",
+   "macro": "\\kEf"
+  },
+  {
+   "sym": "ΔE",
+   "latex": "\\Delta E",
+   "macro": "\\kdE"
+  },
+  {
+   "sym": "n_quantum",
+   "latex": "n"
+  },
+  {
+   "sym": "r",
+   "latex": "r",
+   "macro": "\\kr"
+  },
+  {
+   "sym": "a_0",
+   "latex": "a_0",
+   "macro": "\\kao"
+  },
+  {
+   "sym": "h",
+   "latex": "h"
+  },
+  {
+   "sym": "c",
+   "latex": "c",
+   "macro": "\\kc"
+  },
+  {
+   "sym": "R_inf",
+   "latex": "R_{\\infty}"
+  },
+  {
+   "sym": "λ_max",
+   "latex": "\\lambda_{\\text{max}}",
+   "macro": "\\klammax"
+  },
+  {
+   "sym": "Δt",
+   "latex": "\\Delta t",
+   "macro": "\\kdt"
+  },
+  {
+   "sym": "v",
+   "latex": "v",
+   "macro": "\\kv"
+  },
+  {
+   "sym": "p_momentum",
+   "latex": "p",
+   "macro": "\\kp"
+  },
+  {
+   "sym": "Δx",
+   "latex": "\\Delta x",
+   "macro": "\\kdx"
+  },
+  {
+   "sym": "Δp_x",
+   "latex": "\\Delta p_{x}",
+   "macro": "\\kdpx"
+  },
+  {
+   "sym": "hbar",
+   "latex": "\\hbar"
+  },
+  {
+   "sym": "n_i",
+   "latex": "n_{\\text{i}}"
+  },
+  {
+   "sym": "n_f",
+   "latex": "n_{\\text{f}}"
+  },
+  {
+   "sym": "l_quantum",
+   "latex": "l"
+  },
+  {
+   "sym": "m_l",
+   "latex": "m_{l}"
+  },
+  {
+   "sym": "m_s",
+   "latex": "m_{s}"
+  },
+  {
+   "sym": "Z_eff",
+   "latex": "Z_{\\text{eff}}"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "photon-energy",
+   "kind": "axiom",
+   "section": "6.1",
+   "name": "光子能量",
+   "statement": "光以称为光子的分立能量包的形式被吸收和发射，一个光子的能量由辐射的频率决定，E = hν，或等价地由其波长决定，E = hc/λ。",
+   "forms": [
+    {
+     "id": "eq-photon-energy",
+     "latex": "E=h\\nu=\\frac{hc}{\\lambda}",
+     "ktex": "\\kE=h\\knu=\\frac{hc}{\\klam}",
+     "condition": "one photon of electromagnetic radiation",
+     "anchor": "6.1-photoelectric"
+    }
+   ]
+  },
+  {
+   "id": "line-spectra",
+   "kind": "idea",
+   "section": "6.1",
+   "name": "线状光谱",
+   "terms": [
+    "线状光谱"
+   ],
+   "statement": "经加热或通电激发的气体只在少数几个尖锐的波长处发光，而不是在一段不间断的波段上发光，每种元素都有自己的一组谱线。经典电磁理论预言的是连续光谱，无法解释这一现象。"
+  },
+  {
+   "id": "wave-properties",
+   "kind": "definition",
+   "section": "6.1",
+   "name": "波的性质",
+   "statement": "每一种波，包括电磁辐射，都有波长，即两个相邻波峰或波谷之间的距离；有频率，即单位时间内通过某一点的周期数；还有振幅，即从波峰到波谷高度的一半。振幅与波的强度有关，对光而言，强度就是亮度。我们用波长和频率来描述光。"
+  },
+  {
+   "id": "wave-speed-relation",
+   "kind": "result",
+   "section": "6.1",
+   "name": "波速",
+   "statement": "波的波长与频率之积就是它的速率，对真空中的电磁辐射而言，这一速率是常数 c。因此波长与频率成反比：一个增大，另一个就减小，由其中一个即可求出另一个。",
+   "forms": [
+    {
+     "id": "eq-wave-speed",
+     "latex": "c=\\lambda\\nu",
+     "ktex": "c=\\klam\\knu",
+     "condition": "electromagnetic radiation in a vacuum",
+     "anchor": "6.1-wave-speed"
+    }
+   ]
+  },
+  {
+   "id": "electromagnetic-spectrum",
+   "kind": "idea",
+   "section": "6.1",
+   "name": "电磁波谱",
+   "terms": [
+    "电磁波谱"
+   ],
+   "statement": "电磁辐射的波长范围极其宽广，从 γ 射线和 X 射线，经紫外线、可见光和红外线，到微波和无线电波，可见光只占其中很小的一部分。沿波谱方向，波长减小时能量和频率增大，每个区域各有各的用途。"
+  },
+  {
+   "id": "standing-waves-quantization",
+   "kind": "idea",
+   "section": "6.1",
+   "name": "驻波与量子化",
+   "statement": "驻波被限制在空间的某个区域内。两端固定的弦只能形成两端之间含有整数个半波长的波。这是量子化的一个例子，量子化是指只观察到某一性质的分立取值。两端之间不动的点是节点，节点的数目随波的能量增大而增多。"
+  },
+  {
+   "id": "blackbody-radiation",
+   "kind": "idea",
+   "section": "6.1",
+   "name": "黑体辐射与普朗克的量子化能量",
+   "statement": "受热物体发出连续光谱，其分布只取决于温度，温度升高时，曲线的峰向较短的波长移动。经典理论预言强度在短波长处会无限增大，这就是紫外灾难；普朗克把振动能量限制为分立值 E = nhν，拟合了观测到的曲线，这是能量量子化的首次出现。",
+   "forms": [
+    {
+     "id": "eq-planck-quantization",
+     "latex": "E=nh\\nu,\\; n=1,\\;2,\\;3,\\;\\ldots",
+     "ktex": "\\kE=nh\\knu,\\; n=1,\\;2,\\;3,\\;\\ldots",
+     "condition": "the vibrating atoms of a blackbody, restricted to discrete energies for each frequency",
+     "anchor": "6.1-blackbody"
+    }
+   ]
+  },
+  {
+   "id": "photoelectric-effect",
+   "kind": "idea",
+   "section": "6.1",
+   "name": "光电效应",
+   "statement": "只有当光的频率高于某一阈值时，光才能从洁净的金属表面打出电子；被打出电子的动能随频率增大，而不随亮度增大，电子的数目则随亮度增大。爱因斯坦把光看作由光子组成的粒子流来解释这一现象，每个光子携带能量 hν，因此只有能量足够的光子才能使电子脱离金属。"
+  },
+  {
+   "id": "wave-particle-duality",
+   "kind": "idea",
+   "section": "6.1",
+   "name": "波粒二象性",
+   "terms": [
+    "波粒二象性"
+   ],
+   "statement": "光的某些行为，例如通过两条窄缝后形成的干涉条纹，只能用波来解释；另一些行为，例如光电效应，则只能用粒子来解释。光既有波的性质，又有粒子的性质，这称为波粒二象性。物质也表现出同样的二象性。"
+  },
+  {
+   "id": "wave",
+   "kind": "definition",
+   "section": "6.1",
+   "name": "波",
+   "terms": [
+    "波"
+   ],
+   "statement": "波是某种性质随时间或空间的振荡，它能把能量从一点输送到另一点。"
+  },
+  {
+   "id": "wavelength",
+   "kind": "definition",
+   "section": "6.1",
+   "name": "波长",
+   "symbol": "λ",
+   "terms": [
+    "波长（λ）"
+   ],
+   "type": "wavelength",
+   "statement": "波的波长是两个相邻波峰或波谷之间的距离。"
+  },
+  {
+   "id": "frequency",
+   "kind": "definition",
+   "section": "6.1",
+   "name": "频率",
+   "symbol": "ν",
+   "terms": [
+    "频率（ν）"
+   ],
+   "type": "frequency",
+   "statement": "波的频率是单位时间内通过空间中某一指定点的波的周期数（波峰数或波谷数）。"
+  },
+  {
+   "id": "hertz",
+   "kind": "definition",
+   "section": "6.1",
+   "name": "赫兹",
+   "terms": [
+    "赫兹（Hz）"
+   ],
+   "statement": "赫兹是频率的单位，每秒一个周期。",
+   "forms": [
+    {
+     "id": "eq-hertz",
+     "latex": "1\\ \\text{Hz} = 1\\ \\text{s}^{-1}"
+    }
+   ]
+  },
+  {
+   "id": "amplitude",
+   "kind": "definition",
+   "section": "6.1",
+   "name": "振幅",
+   "terms": [
+    "振幅"
+   ],
+   "statement": "波的振幅是它所引起位移的大小，即从波峰到波谷高度的一半。"
+  },
+  {
+   "id": "intensity",
+   "kind": "definition",
+   "section": "6.1",
+   "name": "强度",
+   "terms": [
+    "强度"
+   ],
+   "statement": "强度是波所携带能量的一种性质，与波的振幅有关，例如光的亮度或声音的响度。"
+  },
+  {
+   "id": "electromagnetic-radiation",
+   "kind": "definition",
+   "section": "6.1",
+   "name": "电磁辐射",
+   "terms": [
+    "电磁辐射"
+   ],
+   "statement": "电磁辐射是以波的形式传播的能量，这种波具有电场分量和磁场分量。"
+  },
+  {
+   "id": "interference-pattern",
+   "kind": "idea",
+   "section": "6.1",
+   "name": "干涉图样",
+   "terms": [
+    "干涉图样"
+   ],
+   "statement": "干涉图样是波的相长干涉和相消干涉所形成的明暗相间的条纹图案。"
+  },
+  {
+   "id": "standing-wave",
+   "kind": "definition",
+   "section": "6.1",
+   "name": "驻波",
+   "terms": [
+    "驻波"
+   ],
+   "statement": "驻波（又称定波）是局限在空间某一区域内的波，其波长是分立的，由该区域的边界决定。"
+  },
+  {
+   "id": "node",
+   "kind": "definition",
+   "section": "6.1",
+   "name": "节点",
+   "terms": [
+    "节点"
+   ],
+   "statement": "节点是驻波上振幅为零的任一点。在原子轨道中，节点是找到电子的概率为零的地方。"
+  },
+  {
+   "id": "quantization",
+   "kind": "definition",
+   "section": "6.1",
+   "name": "量子化",
+   "symbol": "n_quantum",
+   "terms": [
+    "量子化"
+   ],
+   "statement": "量子化是指某一性质被限制在特定的分立值上，而不是连续的范围。"
+  },
+  {
+   "id": "blackbody",
+   "kind": "definition",
+   "section": "6.1",
+   "name": "黑体",
+   "terms": [
+    "黑体"
+   ],
+   "statement": "黑体是一种理想化的、能吸收全部入射电磁辐射的完美吸收体。受热时，它发出具有特征性的连续波长分布的辐射。"
+  },
+  {
+   "id": "continuous-spectrum",
+   "kind": "definition",
+   "section": "6.1",
+   "name": "连续光谱",
+   "terms": [
+    "连续光谱"
+   ],
+   "statement": "连续光谱是由一系列不间断的波长组成的电磁辐射，太阳发出的白光就是如此。"
+  },
+  {
+   "id": "photon",
+   "kind": "definition",
+   "section": "6.1",
+   "name": "光子",
+   "terms": [
+    "光子"
+   ],
+   "statement": "光子是电磁辐射最小可能的能量包，是光的粒子。"
+  },
+  {
+   "id": "rydberg-equation",
+   "kind": "axiom",
+   "section": "6.1",
+   "name": "里德伯公式",
+   "statement": "氢光谱中所有谱线的波长都符合同一个经验公式：波长的倒数等于里德伯常量乘以两个整数倒数平方之差（n₁ 小于 n₂）。可见光区四条谱线的巴耳末公式是 n₁ = 2 的情形。",
+   "forms": [
+    {
+     "id": "eq-rydberg",
+     "latex": "\\frac{1}{\\lambda}=R_{\\infty}\\left(\\frac{1}{n_1^{\\,2}}-\\frac{1}{n_2^{\\,2}}\\right)",
+     "ktex": "\\frac{1}{\\klam}=R_{\\infty}\\left(\\frac{1}{n_1^{\\,2}}-\\frac{1}{n_2^{\\,2}}\\right)",
+     "condition": "every emission line of hydrogen, with n₁ and n₂ integers and n₁ < n₂",
+     "anchor": "6.1-rydberg"
+    },
+    {
+     "id": "eq-balmer",
+     "latex": "\\frac{1}{\\lambda}=k\\left(\\frac{1}{4}-\\frac{1}{n^{2}}\\right),\\; n=3,\\;4,\\;5,\\;6",
+     "ktex": "\\frac{1}{\\klam}=k\\left(\\frac{1}{4}-\\frac{1}{n^{2}}\\right),\\; n=3,\\;4,\\;5,\\;6",
+     "condition": "the four visible lines of hydrogen, as Balmer found them empirically",
+     "anchor": "6.1-rydberg"
+    }
+   ]
+  },
+  {
+   "id": "classical-atom-instability",
+   "kind": "idea",
+   "section": "6.2",
+   "name": "行星式原子的不稳定性",
+   "statement": "在行星式的图像中，电子绕原子核运动，就像行星绕太阳运动一样。处在这样的轨道上的电子时刻在改变方向，因而始终在做加速运动，而按照经典电磁理论，做加速运动的电荷必定连续不断地辐射。这样，轨道会不断缩小，直到电子螺旋式地落入原子核，于是每个原子在本质上都是不稳定的。"
+  },
+  {
+   "id": "bohr-stationary-states",
+   "kind": "axiom",
+   "section": "6.2",
+   "name": "玻尔的定态",
+   "statement": "处在原子某一允许轨道上的电子完全不辐射；只有当它从一个允许轨道跃迁到另一个允许轨道时，才发射或吸收辐射。这些轨道的能量是量子化的：电子只能具有某些分立的能量，而不能取它们之间的任何值。"
+  },
+  {
+   "id": "bohr-energy-levels",
+   "kind": "result",
+   "section": "6.2",
+   "name": "玻尔能级",
+   "type": "energy",
+   "statement": "第 n 个轨道上电子的能量等于 −k 乘以核电荷的平方，再除以 n 的平方。常数 k 汇集了电子质量、电子电荷和普朗克常量。能量为负，是因为它们是从 E = 0 算起的，E = 0 是电离极限，即电子已完全脱离原子核之处。随着 n 增大，能量向零靠拢，所以能量阶梯的横档在底部相距很远，在顶部则靠得很近。使基态氢原子电离所需的能量就是 k 本身。",
+   "forms": [
+    {
+     "id": "eq-bohr-energy",
+     "latex": "E_n=-\\frac{kZ^2}{n^2}\\,,\\; n=1,\\;2,\\;3,\\;\\ldots",
+     "ktex": "\\kEn=-\\frac{kZ^2}{n^2}\\,,\\; n=1,\\;2,\\;3,\\;\\ldots",
+     "condition": "a one-electron atom or ion of nuclear charge Z",
+     "anchor": "6.2-hydrogen-like"
+    },
+    {
+     "id": "eq-bohr-energy-hydrogen",
+     "latex": "E_n=-\\frac{k}{n^2}\\,,\\; n=1,\\;2,\\;3,\\;\\ldots",
+     "ktex": "\\kEn=-\\frac{k}{n^2}\\,,\\; n=1,\\;2,\\;3,\\;\\ldots",
+     "condition": "hydrogen, for which the nuclear charge is +1",
+     "anchor": "6.2-stationary-states"
+    },
+    {
+     "id": "eq-ionization-limit",
+     "latex": "\\Delta E=E_{n\\;\\longrightarrow\\;\\infty}-E_1=0+k=k",
+     "ktex": "\\kdE=\\kE_{n\\;\\longrightarrow\\;\\infty}-\\kE_{1}=0+k=k",
+     "condition": "hydrogen in its ground state, the electron removed to an infinite distance",
+     "anchor": "6.2-orbit-radius"
+    }
+   ]
+  },
+  {
+   "id": "ground-and-excited-states",
+   "kind": "definition",
+   "section": "6.2",
+   "name": "基态与激发态",
+   "statement": "电子能量最低的原子处于基态，例如电子处在 n = 1 轨道上的氢原子。外界的能量可以把电子送到 n 更大的轨道上，此时原子处于激发态。"
+  },
+  {
+   "id": "photon-emission-absorption",
+   "kind": "result",
+   "section": "6.2",
+   "name": "光子的发射与吸收",
+   "statement": "电子在两个允许轨道之间跃迁时，原子发射或吸收一个光子，光子的能量等于这两个轨道能量之差。落到较低的轨道上就发射光子，吸收光子则使电子升到较高的轨道。能量既不能被创造，也不能被消灭，所以把电子从一个能级升到另一个能级所需的能量，等于它返回时释放的能量。我们取这一差值的绝对值，因为频率和波长总是正数。",
+   "forms": [
+    {
+     "id": "eq-photon-energy-difference",
+     "latex": "|\\Delta E|=|E_{\\text{f}}-E_{\\text{i}}|=h\\nu=\\frac{hc}{\\lambda}",
+     "ktex": "|\\kdE|=|\\kEf-\\kEi|=h\\knu=\\frac{hc}{\\klam}",
+     "condition": "the electron moves between two allowed orbits, so that one photon carries the whole difference",
+     "anchor": "6.2-stationary-states"
+    }
+   ]
+  },
+  {
+   "id": "hydrogen-like-ions",
+   "kind": "idea",
+   "section": "6.2",
+   "name": "类氢原子和类氢离子",
+   "statement": "玻尔模型只跟踪一个电子，所以它同样适用于 He⁺、Li²⁺、Be³⁺ 以及其他单电子离子，这些离子与氢的区别只在于核电荷。有两个电子的氦已经超出了该模型的范围，因为模型没有说明两个电子如何相互作用。"
+  },
+  {
+   "id": "bohr-orbit-radius",
+   "kind": "result",
+   "section": "6.2",
+   "name": "玻尔轨道半径",
+   "type": "length",
+   "statement": "允许轨道的半径与量子数的平方成正比，并随核电荷的增大而减小。半径以玻尔半径为单位来量度，玻尔半径是氢基态轨道的半径。电子的能量越高，被发现的位置离原子核越远。静电引力随距离增大而减弱，所以离核越远的电子被束缚得越松。",
+   "forms": [
+    {
+     "id": "eq-bohr-radius",
+     "latex": "r=\\frac{n^2}{Z}\\,a_0",
+     "condition": "a one-electron atom or ion of nuclear charge Z",
+     "anchor": "6.2-orbit-radius"
+    }
+   ]
+  },
+  {
+   "id": "rydberg-constant-recovered",
+   "kind": "result",
+   "section": "6.2",
+   "name": "由玻尔模型得到的里德伯常量",
+   "statement": "把玻尔模型的量子化能量代入光子关系式，得到波长倒数的表达式，其形式与里德伯公式相同，里德伯常量等于 k 除以 hc。玻尔的理论值与实验值符合得极好。",
+   "forms": [
+    {
+     "id": "eq-rydberg-from-bohr",
+     "latex": "\\frac{1}{\\lambda}=\\frac{k}{hc}\\left(\\frac{1}{n_1^{\\,2}}-\\frac{1}{n_2^{\\,2}}\\right)",
+     "ktex": "\\frac{1}{\\klam}=\\frac{k}{hc}\\left(\\frac{1}{n_1^{\\,2}}-\\frac{1}{n_2^{\\,2}}\\right)",
+     "condition": "hydrogen, and the quotient k/hc is the Rydberg constant",
+     "anchor": "6.2-rydberg-recovered"
+    }
+   ]
+  },
+  {
+   "id": "calculating-bohr-transition-energies",
+   "kind": "skill",
+   "section": "6.2",
+   "name": "计算跃迁能量",
+   "statement": "已知两个量子数和核电荷，由 kZ²(1/n₁² − 1/n₂²) 求出能量差。其符号说明光子是被吸收还是被发射，用 hc 除以其绝对值即得波长。然后可以用测得的光谱来检验这一结果。",
+   "forms": [
+    {
+     "id": "eq-bohr-transition",
+     "latex": "\\Delta E=kZ^2\\left(\\frac{1}{n_1^{\\,2}}-\\frac{1}{n_2^{\\,2}}\\right)",
+     "ktex": "\\kdE=kZ^2\\left(\\frac{1}{n_1^{\\,2}}-\\frac{1}{n_2^{\\,2}}\\right)",
+     "condition": "a one-electron atom or ion, the electron moving between the orbits n₁ and n₂",
+     "anchor": "6.2-rydberg-recovered"
+    },
+    {
+     "id": "eq-hydrogen-transition",
+     "latex": "\\Delta E=E_{\\text{final}}-E_{\\text{initial}}=-2.18\\times10^{-18}\\left(\\frac{1}{n_{\\text{f}}^{2}}-\\frac{1}{n_{\\text{i}}^{2}}\\right)\\text{ J}",
+     "ktex": "\\kdE=\\kE_{\\text{final}}-\\kE_{\\text{initial}}=-2.18\\times10^{-18}\\left(\\frac{1}{n_{\\text{f}}^{2}}-\\frac{1}{n_{\\text{i}}^{2}}\\right)\\text{ J}",
+     "condition": "the hydrogen atom, the electron moving from the state n_i to the state n_f",
+     "section": "6.3",
+     "anchor": "6.3-shells"
+    }
+   ]
+  },
+  {
+   "id": "bohr-model",
+   "kind": "idea",
+   "section": "6.2",
+   "name": "玻尔的氢原子模型",
+   "terms": [
+    "玻尔的氢原子模型"
+   ],
+   "statement": "玻尔的氢原子模型是一种结构模型，其中电子只沿圆形轨道绕原子核运动，每条轨道都有特定的允许半径和能量。"
+  },
+  {
+   "id": "quantum-number",
+   "kind": "definition",
+   "section": "6.2",
+   "name": "量子数",
+   "symbol": "n_quantum",
+   "terms": [
+    "量子数"
+   ],
+   "statement": "量子数是只有特定允许取值的数，用来表征原子中电子的排布。"
+  },
+  {
+   "id": "ground-state",
+   "kind": "definition",
+   "section": "6.2",
+   "name": "基态",
+   "terms": [
+    "基态"
+   ],
+   "statement": "基态是原子、离子或分子中的电子具有可能的最低能量的状态。"
+  },
+  {
+   "id": "excited-state",
+   "kind": "definition",
+   "section": "6.2",
+   "name": "激发态",
+   "terms": [
+    "激发态"
+   ],
+   "statement": "激发态是能量高于基态能量的状态。"
+  },
+  {
+   "id": "de-broglie-wavelength",
+   "kind": "axiom",
+   "section": "6.3",
+   "name": "德布罗意波长",
+   "statement": "德布罗意把波粒二象性推广到物质：质量为 m、速度为 v 的粒子表现为一种波，其波长等于普朗克常量除以它的动量。原子中电子的波长与原子的大小相近，所以在那里它的波动行为很明显，而垒球的波长小得根本无法探测。把电子看作圆形驻波，只有当圆周恰好容纳整数个波长时，电子才与某一轨道相合，这就解释了玻尔的量子化。",
+   "forms": [
+    {
+     "id": "eq-de-broglie",
+     "latex": "\\lambda=\\frac{h}{mv}=\\frac{h}{p}",
+     "ktex": "\\klam=\\frac{h}{\\km v}=\\frac{h}{p}",
+     "condition": "a particle of mass m moving with velocity v",
+     "anchor": "6.3-de-broglie"
+    },
+    {
+     "id": "eq-de-broglie-orbit",
+     "latex": "2\\pi r=n\\lambda,\\; n=1,\\;2,\\;3,\\;\\ldots",
+     "ktex": "2\\pi r=n\\klam,\\; n=1,\\;2,\\;3,\\;\\ldots",
+     "condition": "an electron viewed as a circular standing wave about the nucleus",
+     "anchor": "6.3-de-broglie"
+    }
+   ]
+  },
+  {
+   "id": "heisenberg-uncertainty",
+   "kind": "axiom",
+   "section": "6.3",
+   "name": "海森伯不确定性原理",
+   "terms": [
+    "海森伯不确定性原理"
+   ],
+   "statement": "从根本上说，不可能同时精确地确定粒子的动量和位置：这两个不确定量之积至少为 ħ/2。对棒球来说，这一限度小得察觉不到，但电子的质量足够小，不确定量就大而显著，这就是原子中的电子不能被赋予精确轨道的原因。",
+   "forms": [
+    {
+     "id": "eq-uncertainty",
+     "latex": "\\Delta x\\times\\Delta p_{x}=(\\Delta x)(m\\Delta v)\\ge\\frac{\\hbar}{2}",
+     "ktex": "\\Delta x\\times\\Delta p_{x}=(\\Delta x)(\\km\\Delta v)\\ge\\frac{\\hbar}{2}",
+     "condition": "a particle of mass m moving along x",
+     "anchor": "6.3-uncertainty"
+    },
+    {
+     "id": "eq-energy-time-uncertainty",
+     "latex": "\\Delta E\\,\\Delta t\\ge\\frac{\\hbar}{2}",
+     "ktex": "\\kdE\\,\\kdt\\ge\\frac{\\hbar}{2}",
+     "condition": "an atom making a transition from one energy state to another",
+     "anchor": "6.3-uncertainty"
+    }
+   ]
+  },
+  {
+   "id": "wavefunction-probability",
+   "kind": "idea",
+   "section": "6.3",
+   "name": "波函数和原子轨道的概率解释",
+   "statement": "薛定谔把电子描述为三维驻波，即波函数 ψ，玻恩对其做了解释：电子仍然是粒子，ψ 的模的平方给出在空间某点附近找到电子的概率。原子轨道是电子最可能出现的区域，所以量子力学模型描述的是电子可能在何处，而不是它沿着怎样的路径运动。",
+   "forms": [
+    {
+     "id": "eq-schrodinger",
+     "latex": "\\hat{H}\\psi=E\\psi",
+     "ktex": "\\hat{H}\\psi=\\kE\\psi",
+     "condition": "the Schrödinger equation in its most general form",
+     "anchor": "6.3-quantum-model"
+    }
+   ]
+  },
+  {
+   "id": "principal-quantum-number-shells",
+   "kind": "definition",
+   "section": "6.3",
+   "name": "主量子数",
+   "symbol": "n_quantum",
+   "terms": [
+    "主量子数（n）"
+   ],
+   "statement": "主量子数 n = 1, 2, 3, … 标记原子中电子的能级，其作用与玻尔原子中的 n 相同。n 相同的轨道构成一个电子层。n 越大，电子离原子核越远，能量越高。能级之间的跃迁吸收或发射一个携带能量差的光子。"
+  },
+  {
+   "id": "angular-momentum-quantum-number",
+   "kind": "definition",
+   "section": "6.3",
+   "name": "角量子数",
+   "symbol": "l_quantum",
+   "terms": [
+    "角量子数（l）"
+   ],
+   "statement": "角量子数（又称副量子数、角动量量子数）l 取 0 到 n − 1 的整数值，决定轨道的形状：l = 0、1、2、3 分别对应 s、p、d、f 轨道，n 和 l 都相同的轨道构成一个亚层。s 轨道是球形，p 轨道是哑铃形，一个轨道有 n − l − 1 个径向节点，即找到电子的概率为零的距离。"
+  },
+  {
+   "id": "magnetic-quantum-number",
+   "kind": "definition",
+   "section": "6.3",
+   "name": "磁量子数",
+   "symbol": "m_l",
+   "terms": [
+    "磁量子数（mₗ）"
+   ],
+   "statement": "磁量子数 m_l 取 −l 到 +l 的值，决定轨道在空间中的取向，所以一个亚层含有 2l + 1 个轨道：一个 s、三个 p、五个 d、七个 f。同一亚层的轨道能量相同，称为简并轨道；在氢中，同一电子层的所有轨道都是简并的，但在含有多个电子的原子中，同一电子层的各亚层能量不同。"
+  },
+  {
+   "id": "spin-quantum-number",
+   "kind": "definition",
+   "section": "6.3",
+   "name": "自旋量子数",
+   "symbol": "m_s",
+   "terms": [
+    "自旋量子数（mₛ）"
+   ],
+   "statement": "每个电子都有内禀的自旋，这是一种完全属于量子的性质，没有经典的对应，它只能处于两种状态之一，m_s = +1/2 或 −1/2。电子的行为像一块微小的磁体，在外磁场中这两种自旋状态的能量略有不同，这就是氢光谱中某些谱线是靠得很近的双线的原因。"
+  },
+  {
+   "id": "pauli-exclusion-principle",
+   "kind": "axiom",
+   "section": "6.3",
+   "name": "泡利不相容原理",
+   "terms": [
+    "泡利不相容原理"
+   ],
+   "statement": "同一原子中不可能有两个电子的四个量子数完全相同。由于自旋量子数只有两个取值，一个轨道最多容纳两个电子，同一轨道中的两个电子必须自旋相反。"
+  },
+  {
+   "id": "working-with-quantum-numbers",
+   "kind": "skill",
+   "section": "6.3",
+   "name": "运用量子数",
+   "statement": "给定 n 的值，列出 l 和 m_l 的允许值，给出各亚层的名称，并数出各亚层中的轨道数；一个电子层含有 n² 个轨道，最多容纳 2n² 个电子。给定一组量子数，指出它所属的亚层。"
+  },
+  {
+   "id": "velocity",
+   "kind": "definition",
+   "section": "6.3",
+   "name": "速度",
+   "symbol": "v",
+   "type": "velocity",
+   "statement": "粒子的速度是其位置变化的快慢，即它在给定方向上单位时间内经过的距离。"
+  },
+  {
+   "id": "momentum",
+   "kind": "definition",
+   "section": "6.3",
+   "name": "动量",
+   "symbol": "p_momentum",
+   "type": "momentum",
+   "statement": "粒子的线动量是它的质量与速度的乘积。",
+   "forms": [
+    {
+     "id": "eq-momentum",
+     "latex": "p = mv"
+    }
+   ]
+  },
+  {
+   "id": "quantum-mechanics",
+   "kind": "definition",
+   "section": "6.3",
+   "name": "量子力学",
+   "terms": [
+    "量子力学"
+   ],
+   "statement": "量子力学是用能量量子化、波粒二象性和海森伯不确定性原理来描述物质的学科。"
+  },
+  {
+   "id": "wavefunction",
+   "kind": "definition",
+   "section": "6.3",
+   "name": "波函数",
+   "symbol": "ψ",
+   "terms": [
+    "波函数（ψ）"
+   ],
+   "type": "wavefunction",
+   "statement": "波函数是对原子轨道的数学描述。它描述轨道的形状，可用来计算在任一给定位置找到电子的概率以及电子的能量。"
+  },
+  {
+   "id": "electron-density",
+   "kind": "definition",
+   "section": "6.3",
+   "name": "电子密度",
+   "terms": [
+    "电子密度",
+    "概率密度"
+   ],
+   "statement": "电子密度是对在空间某一区域找到电子的概率的度量，等于波函数模的平方。"
+  },
+  {
+   "id": "atomic-orbital",
+   "kind": "definition",
+   "section": "6.3",
+   "name": "原子轨道",
+   "terms": [
+    "原子轨道"
+   ],
+   "statement": "原子轨道是描述原子中电子行为的数学函数，即波函数；它被形象化为电子最可能被发现的空间区域。"
+  },
+  {
+   "id": "shell",
+   "kind": "definition",
+   "section": "6.3",
+   "name": "电子层",
+   "terms": [
+    "电子层"
+   ],
+   "statement": "电子层是主量子数 n 相同的原子轨道的集合。"
+  },
+  {
+   "id": "subshell",
+   "kind": "definition",
+   "section": "6.3",
+   "name": "亚层",
+   "terms": [
+    "亚层"
+   ],
+   "statement": "亚层是 n 和 l 的值都相同的原子轨道的集合。"
+  },
+  {
+   "id": "s-orbital",
+   "kind": "definition",
+   "section": "6.3",
+   "name": "s 轨道",
+   "terms": [
+    "s 轨道"
+   ],
+   "statement": "s 轨道是电子密度高的球形空间区域，是 l = 0 的轨道。"
+  },
+  {
+   "id": "p-orbital",
+   "kind": "definition",
+   "section": "6.3",
+   "name": "p 轨道",
+   "terms": [
+    "p 轨道"
+   ],
+   "statement": "p 轨道是电子密度高的哑铃形空间区域，是 l = 1 的轨道。"
+  },
+  {
+   "id": "d-orbital",
+   "kind": "definition",
+   "section": "6.3",
+   "name": "d 轨道",
+   "terms": [
+    "d 轨道"
+   ],
+   "statement": "d 轨道是电子密度高的空间区域，有四个瓣，或由一个哑铃和一个环面组成，是 l = 2 的轨道。"
+  },
+  {
+   "id": "f-orbital",
+   "kind": "definition",
+   "section": "6.3",
+   "name": "f 轨道",
+   "terms": [
+    "f 轨道"
+   ],
+   "statement": "f 轨道是电子密度高的多瓣空间区域，是 l = 3 的轨道。"
+  },
+  {
+   "id": "degenerate-orbitals",
+   "kind": "definition",
+   "section": "6.3",
+   "name": "简并轨道",
+   "terms": [
+    "简并轨道"
+   ],
+   "statement": "简并轨道是能量相同的轨道。"
+  },
+  {
+   "id": "orbital-energy-order",
+   "kind": "idea",
+   "section": "6.4",
+   "name": "原子轨道的能量顺序",
+   "statement": "在含有两个或更多电子的原子中，轨道的能量随 n 增大而升高，在同一电子层内按 s < p < d < f 的顺序升高，这是因为 l 较大的电子向核穿透得较少，受内层电子的屏蔽较多。对较大的原子，这两种趋势相互交叠，因此 4s 轨道低于 3d 轨道，填充顺序为 1s、2s、2p、3s、3p、4s、3d、4p，依此类推。"
+  },
+  {
+   "id": "aufbau-principle",
+   "kind": "result",
+   "section": "6.4",
+   "name": "构造原理",
+   "terms": [
+    "构造原理"
+   ],
+   "statement": "元素的电子构型是这样建立起来的：每次给原子核增加一个质子和一个电子，每个电子进入当前可用的能量最低的亚层，同时服从泡利不相容原理。只有在能量较低的亚层被填满之后，电子才进入能量较高的亚层，按 Z 增大的顺序阅读元素周期表，得到的也是同一顺序。"
+  },
+  {
+   "id": "hunds-rule",
+   "kind": "axiom",
+   "section": "6.4",
+   "name": "洪特规则",
+   "terms": [
+    "洪特规则"
+   ],
+   "statement": "一组简并轨道中能量最低的电子排布是未成对电子数最多的那种：一个亚层的每个轨道都先被单个电子占据，且自旋相同，然后才有轨道被两个电子占据。所以碳的两个 2p 电子位于不同的 p 轨道中，自旋相同。"
+  },
+  {
+   "id": "writing-electron-configurations",
+   "kind": "skill",
+   "section": "6.4",
+   "name": "书写电子构型和轨道表示式",
+   "statement": "电子构型用 n、亚层字母和表示电子数的上标列出每个被占据的亚层，如 1s²2s²2p⁴。轨道表示式则把每个轨道画成一个方框，把每个电子画成一个箭头。内层电子可以用构型与之相同的稀有气体的符号来简写，例如钠写作 [Ne]3s¹。你应当能为任何原子写出这两种形式，并能由构型确定是哪种原子。"
+  },
+  {
+   "id": "valence-and-core-electrons",
+   "kind": "definition",
+   "section": "6.4",
+   "name": "价电子与内层电子",
+   "statement": "最外层的电子是价电子，内层的电子是内层电子。价电子能量最高，最容易失去或共用，在化学反应中起最重要的作用，价电子数相同的元素具有相似的化学性质。"
+  },
+  {
+   "id": "configuration-exceptions",
+   "kind": "idea",
+   "section": "6.4",
+   "name": "预测构型的例外",
+   "statement": "有些原子并不遵循预测的填充顺序，因为所涉及的亚层能量非常接近。半充满和全充满的亚层代表更稳定的状态，所以铬和铜各把一个电子从 4s 移入 3d，而在铌中，两个 5s 电子配对的排斥作用超过了 5s 与 4d 之间的微小能隙；没有简单的方法可以预测这类例外。"
+  },
+  {
+   "id": "periodic-table-blocks",
+   "kind": "idea",
+   "section": "6.4",
+   "name": "电子构型与元素周期表",
+   "statement": "元素周期表把原子价电子数相同的元素放在同一族，这就是化学性质呈周期性重复的原因。最后一个电子进入的亚层把周期表分成主族元素（s 和 p）、过渡元素（d）和内过渡元素（f），这种分类决定了哪些轨道算作价层中的轨道。"
+  },
+  {
+   "id": "ion-configurations",
+   "kind": "skill",
+   "section": "6.4",
+   "name": "离子的电子构型",
+   "statement": "主族元素的阳离子失去的是最后填入的电子。过渡金属或内过渡金属先失去最高的 ns 电子，再失去 (n − 1)d 或 (n − 2)f 电子。阴离子按构造原理预测的顺序增加电子。根据这些规则，可由母体原子的构型写出离子的构型，或由构型和电荷确定是哪种离子。"
+  },
+  {
+   "id": "electron-configuration",
+   "kind": "definition",
+   "section": "6.4",
+   "name": "电子构型",
+   "terms": [
+    "电子构型"
+   ],
+   "statement": "电子构型是标明原子各电子层和亚层中电子占据情况的列表，如 1s²2s²2p⁴。"
+  },
+  {
+   "id": "orbital-diagram",
+   "kind": "definition",
+   "section": "6.4",
+   "name": "轨道表示式",
+   "terms": [
+    "轨道表示式"
+   ],
+   "statement": "轨道表示式是电子构型的图示，把每个轨道画成一个方框，把每个电子画成一个箭头。"
+  },
+  {
+   "id": "valence-shell",
+   "kind": "definition",
+   "section": "6.4",
+   "name": "价层",
+   "terms": [
+    "价层"
+   ],
+   "statement": "原子的价层是其能量较高的外层电子层。"
+  },
+  {
+   "id": "valence-electrons",
+   "kind": "definition",
+   "section": "6.4",
+   "name": "价电子",
+   "terms": [
+    "价电子"
+   ],
+   "statement": "价电子是原子能量较高的外层电子层中的电子。"
+  },
+  {
+   "id": "core-electrons",
+   "kind": "definition",
+   "section": "6.4",
+   "name": "内层电子",
+   "terms": [
+    "内层电子"
+   ],
+   "statement": "内层电子是原子中占据内层电子层轨道的电子。"
+  },
+  {
+   "id": "effective-nuclear-charge",
+   "kind": "definition",
+   "section": "6.5",
+   "name": "有效核电荷",
+   "symbol": "Z_eff",
+   "terms": [
+    "有效核电荷"
+   ],
+   "statement": "原子核对某一电子的吸引，等于核电荷减去其他电子的屏蔽。内层电子的屏蔽作用强，而同一价层的电子彼此屏蔽较弱，所以沿一个周期向右每走一步，Z 增加 1，而屏蔽只略有增加，有效核电荷在一个周期内逐渐增大。",
+   "forms": [
+    {
+     "id": "eq-effective-nuclear-charge",
+     "latex": "Z_{\\text{eff}}=Z-\\text{shielding}",
+     "condition": "any atom but hydrogen, whose inner electrons partly shield the outer ones",
+     "anchor": "6.5-effective-nuclear-charge"
+    }
+   ]
+  },
+  {
+   "id": "covalent-radius-trend",
+   "kind": "idea",
+   "section": "6.5",
+   "name": "共价半径的递变规律",
+   "statement": "共价半径是由共价键连接的两个相同原子的核间距的一半，沿一个族向下增大，因为每走一步都增加一个离原子核更远的电子层；沿一个周期从左到右减小，因为不断增大的有效核电荷把电子拉得更近。"
+  },
+  {
+   "id": "ionic-radius-trend",
+   "kind": "idea",
+   "section": "6.5",
+   "name": "离子半径的递变规律",
+   "statement": "阳离子比其母体原子小，因为余下的电子感受到更大的有效核电荷，电荷更高的阳离子更小；阴离子比其母体大，因为增加的电子相互排斥。具有相同电子构型的原子和离子是等电子的，其中核电荷较大者半径较小。"
+  },
+  {
+   "id": "ionization-energy-trend",
+   "kind": "idea",
+   "section": "6.5",
+   "name": "电离能的递变规律",
+   "statement": "第一电离能是从气态原子中移去束缚最松的电子所需的能量，它总是正值，通常沿一个族向下减小，沿一个周期增大，与大小的变化趋势相反。每当新的亚层开始时它就会下降，如从铍到硼；p 亚层超过半充满处也会下降，如从氮到氧。"
+  },
+  {
+   "id": "successive-ionization-energies",
+   "kind": "idea",
+   "section": "6.5",
+   "name": "逐级电离能",
+   "statement": "从阳离子中移去一个电子比从中性原子中移去一个电子更难，所以一种元素的逐级电离能总是增大。当开始移去内层电子时，逐级电离能有一个很大的跃升，它出现在最后一个价电子被移去之后：例如钪和镓出现在第三级电离之后。",
+   "forms": [
+    {
+     "id": "eq-second-ionization",
+     "latex": "\\text{X}^{+}(g)\\longrightarrow\\text{X}^{2+}(g)+\\text{e}^{-}\\qquad\\text{IE}_{2}",
+     "ktex": "\\text{X}^{+}(g)\\longrightarrow\\text{X}^{2+}(g)+\\text{e}^{-}\\qquad\\kIE_{2}",
+     "condition": "the cation losing its second most loosely bound electron",
+     "anchor": "6.5-ionization-energy"
+    }
+   ]
+  },
+  {
+   "id": "electron-affinity-trend",
+   "kind": "idea",
+   "section": "6.5",
+   "name": "电子亲和能的递变规律",
+   "statement": "电子亲和能是气态原子接受一个电子时的能量变化；释放能量时为负，否则为正。随着有效核电荷增大，电子亲和能沿一个周期往往变得更负。第 2、15 和 18 族是例外，因为全充满或半充满的亚层抗拒增加的电子。一族中的第二个元素，如氯，其值常比第一个元素更负，因为较小的 n = 2 电子层使其电子拥挤。"
+  },
+  {
+   "id": "predicting-periodic-trends",
+   "kind": "skill",
+   "section": "6.5",
+   "name": "预测周期性递变规律",
+   "statement": "根据元素在周期表中的位置，按半径、电离能或电子亲和能对原子和离子排序。把沿一个族向下的趋势与沿一个周期的趋势结合起来，并考虑已知的例外。金属性的变化趋势与大小相同，所以同样的读法可以说明哪些元素最容易失去电子。"
+  },
+  {
+   "id": "covalent-radius",
+   "kind": "definition",
+   "section": "6.5",
+   "name": "共价半径",
+   "symbol": "r",
+   "terms": [
+    "共价半径"
+   ],
+   "type": "length",
+   "statement": "原子的共价半径是以共价键连接的两个相同原子的核间距的一半。"
+  },
+  {
+   "id": "isoelectronic",
+   "kind": "definition",
+   "section": "6.5",
+   "name": "等电子体",
+   "terms": [
+    "等电子的"
+   ],
+   "statement": "电子构型相同的原子或离子是等电子的。"
+  },
+  {
+   "id": "ionization-energy",
+   "kind": "definition",
+   "section": "6.5",
+   "name": "电离能",
+   "symbol": "IE",
+   "terms": [
+    "电离能"
+   ],
+   "type": "energy",
+   "statement": "电离能是从气态原子或离子中移去一个电子所需的能量。第一电离能 IE₁ 移去的是中性原子中束缚最松的电子。",
+   "forms": [
+    {
+     "id": "eq-first-ionization",
+     "latex": "\\text{X}(g)\\longrightarrow\\text{X}^{+}(g)+\\text{e}^{-}\\qquad\\text{IE}_{1}",
+     "ktex": "\\text{X}(g)\\longrightarrow\\text{X}^{+}(g)+\\text{e}^{-}\\qquad\\kIE_{1}",
+     "condition": "a gaseous atom in its ground state losing its most loosely bound electron",
+     "anchor": "6.5-ionization-energy"
+    }
+   ]
+  },
+  {
+   "id": "electron-affinity",
+   "kind": "definition",
+   "section": "6.5",
+   "name": "电子亲和能",
+   "symbol": "EA",
+   "terms": [
+    "电子亲和能"
+   ],
+   "type": "energy",
+   "statement": "电子亲和能是气态原子或离子获得一个电子时的能量变化。释放能量时为负值。",
+   "forms": [
+    {
+     "id": "eq-electron-affinity",
+     "latex": "\\text{X}(g)+\\text{e}^{-}\\longrightarrow\\text{X}^{-}(g)\\qquad\\text{EA}_{1}",
+     "ktex": "\\text{X}(g)+\\text{e}^{-}\\longrightarrow\\text{X}^{-}(g)\\qquad\\kEA_{1}",
+     "condition": "a gaseous atom accepting an electron to form an anion",
+     "anchor": "6.5-electron-affinity"
+    }
+   ]
+  }
+ ],
+ "concept_prereqs": [
+  {
+   "concept": "classical-atom-instability",
+   "prereq": "atoms-and-molecules"
+  },
+  {
+   "concept": "bohr-stationary-states",
+   "prereq": "classical-atom-instability"
+  },
+  {
+   "concept": "bohr-stationary-states",
+   "prereq": "photon-energy"
+  },
+  {
+   "concept": "bohr-energy-levels",
+   "prereq": "bohr-stationary-states"
+  },
+  {
+   "concept": "ground-and-excited-states",
+   "prereq": "bohr-energy-levels"
+  },
+  {
+   "concept": "photon-emission-absorption",
+   "prereq": "photon-energy"
+  },
+  {
+   "concept": "photon-emission-absorption",
+   "prereq": "bohr-energy-levels"
+  },
+  {
+   "concept": "photon-emission-absorption",
+   "prereq": "ground-and-excited-states"
+  },
+  {
+   "concept": "hydrogen-like-ions",
+   "prereq": "bohr-energy-levels"
+  },
+  {
+   "concept": "hydrogen-like-ions",
+   "prereq": "atoms-and-molecules"
+  },
+  {
+   "concept": "bohr-orbit-radius",
+   "prereq": "bohr-stationary-states"
+  },
+  {
+   "concept": "bohr-orbit-radius",
+   "prereq": "hydrogen-like-ions"
+  },
+  {
+   "concept": "rydberg-constant-recovered",
+   "prereq": "photon-emission-absorption"
+  },
+  {
+   "concept": "rydberg-constant-recovered",
+   "prereq": "line-spectra"
+  },
+  {
+   "concept": "calculating-bohr-transition-energies",
+   "prereq": "photon-emission-absorption"
+  },
+  {
+   "concept": "calculating-bohr-transition-energies",
+   "prereq": "hydrogen-like-ions"
+  },
+  {
+   "concept": "calculating-bohr-transition-energies",
+   "prereq": "scientific-notation"
+  },
+  {
+   "concept": "calculating-bohr-transition-energies",
+   "prereq": "convert-units"
+  },
+  {
+   "concept": "wave-speed-relation",
+   "prereq": "wave-properties"
+  },
+  {
+   "concept": "wave-speed-relation",
+   "prereq": "scientific-notation"
+  },
+  {
+   "concept": "wave-speed-relation",
+   "prereq": "convert-units"
+  },
+  {
+   "concept": "electromagnetic-spectrum",
+   "prereq": "wave-speed-relation"
+  },
+  {
+   "concept": "standing-waves-quantization",
+   "prereq": "wave-properties"
+  },
+  {
+   "concept": "blackbody-radiation",
+   "prereq": "electromagnetic-spectrum"
+  },
+  {
+   "concept": "blackbody-radiation",
+   "prereq": "standing-waves-quantization"
+  },
+  {
+   "concept": "blackbody-radiation",
+   "prereq": "temperature-scales"
+  },
+  {
+   "concept": "photon-energy",
+   "prereq": "blackbody-radiation"
+  },
+  {
+   "concept": "photon-energy",
+   "prereq": "wave-speed-relation"
+  },
+  {
+   "concept": "photoelectric-effect",
+   "prereq": "photon-energy"
+  },
+  {
+   "concept": "wave-particle-duality",
+   "prereq": "photoelectric-effect"
+  },
+  {
+   "concept": "wave-particle-duality",
+   "prereq": "wave-properties"
+  },
+  {
+   "concept": "line-spectra",
+   "prereq": "electromagnetic-spectrum"
+  },
+  {
+   "concept": "line-spectra",
+   "prereq": "wave-speed-relation"
+  },
+  {
+   "concept": "de-broglie-wavelength",
+   "prereq": "wave-particle-duality"
+  },
+  {
+   "concept": "de-broglie-wavelength",
+   "prereq": "bohr-stationary-states"
+  },
+  {
+   "concept": "de-broglie-wavelength",
+   "prereq": "standing-waves-quantization"
+  },
+  {
+   "concept": "heisenberg-uncertainty",
+   "prereq": "de-broglie-wavelength"
+  },
+  {
+   "concept": "wavefunction-probability",
+   "prereq": "de-broglie-wavelength"
+  },
+  {
+   "concept": "wavefunction-probability",
+   "prereq": "heisenberg-uncertainty"
+  },
+  {
+   "concept": "principal-quantum-number-shells",
+   "prereq": "wavefunction-probability"
+  },
+  {
+   "concept": "principal-quantum-number-shells",
+   "prereq": "bohr-energy-levels"
+  },
+  {
+   "concept": "principal-quantum-number-shells",
+   "prereq": "photon-emission-absorption"
+  },
+  {
+   "concept": "angular-momentum-quantum-number",
+   "prereq": "principal-quantum-number-shells"
+  },
+  {
+   "concept": "magnetic-quantum-number",
+   "prereq": "angular-momentum-quantum-number"
+  },
+  {
+   "concept": "spin-quantum-number",
+   "prereq": "principal-quantum-number-shells"
+  },
+  {
+   "concept": "spin-quantum-number",
+   "prereq": "line-spectra"
+  },
+  {
+   "concept": "pauli-exclusion-principle",
+   "prereq": "spin-quantum-number"
+  },
+  {
+   "concept": "pauli-exclusion-principle",
+   "prereq": "magnetic-quantum-number"
+  },
+  {
+   "concept": "working-with-quantum-numbers",
+   "prereq": "pauli-exclusion-principle"
+  },
+  {
+   "concept": "working-with-quantum-numbers",
+   "prereq": "magnetic-quantum-number"
+  },
+  {
+   "concept": "orbital-energy-order",
+   "prereq": "angular-momentum-quantum-number"
+  },
+  {
+   "concept": "orbital-energy-order",
+   "prereq": "magnetic-quantum-number"
+  },
+  {
+   "concept": "aufbau-principle",
+   "prereq": "orbital-energy-order"
+  },
+  {
+   "concept": "aufbau-principle",
+   "prereq": "pauli-exclusion-principle"
+  },
+  {
+   "concept": "hunds-rule",
+   "prereq": "magnetic-quantum-number"
+  },
+  {
+   "concept": "hunds-rule",
+   "prereq": "spin-quantum-number"
+  },
+  {
+   "concept": "writing-electron-configurations",
+   "prereq": "aufbau-principle"
+  },
+  {
+   "concept": "writing-electron-configurations",
+   "prereq": "hunds-rule"
+  },
+  {
+   "concept": "writing-electron-configurations",
+   "prereq": "working-with-quantum-numbers"
+  },
+  {
+   "concept": "valence-and-core-electrons",
+   "prereq": "writing-electron-configurations"
+  },
+  {
+   "concept": "configuration-exceptions",
+   "prereq": "writing-electron-configurations"
+  },
+  {
+   "concept": "periodic-table-blocks",
+   "prereq": "valence-and-core-electrons"
+  },
+  {
+   "concept": "ion-configurations",
+   "prereq": "writing-electron-configurations"
+  },
+  {
+   "concept": "effective-nuclear-charge",
+   "prereq": "orbital-energy-order"
+  },
+  {
+   "concept": "effective-nuclear-charge",
+   "prereq": "valence-and-core-electrons"
+  },
+  {
+   "concept": "effective-nuclear-charge",
+   "prereq": "hydrogen-like-ions"
+  },
+  {
+   "concept": "covalent-radius-trend",
+   "prereq": "effective-nuclear-charge"
+  },
+  {
+   "concept": "covalent-radius-trend",
+   "prereq": "principal-quantum-number-shells"
+  },
+  {
+   "concept": "ionic-radius-trend",
+   "prereq": "ion-configurations"
+  },
+  {
+   "concept": "ionic-radius-trend",
+   "prereq": "effective-nuclear-charge"
+  },
+  {
+   "concept": "ionization-energy-trend",
+   "prereq": "covalent-radius-trend"
+  },
+  {
+   "concept": "ionization-energy-trend",
+   "prereq": "orbital-energy-order"
+  },
+  {
+   "concept": "ionization-energy-trend",
+   "prereq": "bohr-energy-levels"
+  },
+  {
+   "concept": "successive-ionization-energies",
+   "prereq": "ionization-energy-trend"
+  },
+  {
+   "concept": "successive-ionization-energies",
+   "prereq": "valence-and-core-electrons"
+  },
+  {
+   "concept": "electron-affinity-trend",
+   "prereq": "effective-nuclear-charge"
+  },
+  {
+   "concept": "electron-affinity-trend",
+   "prereq": "periodic-table-blocks"
+  },
+  {
+   "concept": "predicting-periodic-trends",
+   "prereq": "covalent-radius-trend"
+  },
+  {
+   "concept": "predicting-periodic-trends",
+   "prereq": "ionic-radius-trend"
+  },
+  {
+   "concept": "predicting-periodic-trends",
+   "prereq": "ionization-energy-trend"
+  },
+  {
+   "concept": "predicting-periodic-trends",
+   "prereq": "electron-affinity-trend"
+  },
+  {
+   "concept": "ion-configurations",
+   "prereq": "ions-and-atomic-charge"
+  },
+  {
+   "concept": "periodic-table-blocks",
+   "prereq": "periods-and-groups"
+  },
+  {
+   "concept": "periodic-table-blocks",
+   "prereq": "element-families"
+  },
+  {
+   "concept": "ionization-energy-trend",
+   "prereq": "exothermic-and-endothermic"
+  },
+  {
+   "concept": "covalent-radius-trend",
+   "prereq": "ionic-and-covalent-bonds"
+  },
+  {
+   "concept": "aufbau-principle",
+   "prereq": "atomic-number-and-mass-number"
+  },
+  {
+   "concept": "ionization-energy-trend",
+   "prereq": "hunds-rule"
+  },
+  {
+   "concept": "classical-atom-instability",
+   "prereq": "nuclear-model-of-the-atom"
+  },
+  {
+   "concept": "hydrogen-like-ions",
+   "prereq": "subatomic-particles"
+  },
+  {
+   "concept": "wave",
+   "prereq": "energy-and-work"
+  },
+  {
+   "concept": "wavelength",
+   "prereq": "wave"
+  },
+  {
+   "concept": "wavelength",
+   "prereq": "length"
+  },
+  {
+   "concept": "frequency",
+   "prereq": "wave"
+  },
+  {
+   "concept": "frequency",
+   "prereq": "time"
+  },
+  {
+   "concept": "hertz",
+   "prereq": "frequency"
+  },
+  {
+   "concept": "hertz",
+   "prereq": "unit"
+  },
+  {
+   "concept": "amplitude",
+   "prereq": "wave"
+  },
+  {
+   "concept": "intensity",
+   "prereq": "amplitude"
+  },
+  {
+   "concept": "electromagnetic-radiation",
+   "prereq": "wave"
+  },
+  {
+   "concept": "electromagnetic-radiation",
+   "prereq": "energy-and-work"
+  },
+  {
+   "concept": "interference-pattern",
+   "prereq": "wave"
+  },
+  {
+   "concept": "interference-pattern",
+   "prereq": "amplitude"
+  },
+  {
+   "concept": "standing-wave",
+   "prereq": "wave"
+  },
+  {
+   "concept": "standing-wave",
+   "prereq": "wavelength"
+  },
+  {
+   "concept": "node",
+   "prereq": "standing-wave"
+  },
+  {
+   "concept": "node",
+   "prereq": "amplitude"
+  },
+  {
+   "concept": "blackbody",
+   "prereq": "electromagnetic-radiation"
+  },
+  {
+   "concept": "continuous-spectrum",
+   "prereq": "electromagnetic-radiation"
+  },
+  {
+   "concept": "continuous-spectrum",
+   "prereq": "wavelength"
+  },
+  {
+   "concept": "photon",
+   "prereq": "electromagnetic-radiation"
+  },
+  {
+   "concept": "photon",
+   "prereq": "quantization"
+  },
+  {
+   "concept": "rydberg-equation",
+   "prereq": "line-spectra"
+  },
+  {
+   "concept": "rydberg-equation",
+   "prereq": "wavelength"
+  },
+  {
+   "concept": "bohr-model",
+   "prereq": "bohr-stationary-states"
+  },
+  {
+   "concept": "bohr-model",
+   "prereq": "nuclear-model-of-the-atom"
+  },
+  {
+   "concept": "quantum-number",
+   "prereq": "quantization"
+  },
+  {
+   "concept": "ground-state",
+   "prereq": "bohr-energy-levels"
+  },
+  {
+   "concept": "excited-state",
+   "prereq": "ground-state"
+  },
+  {
+   "concept": "velocity",
+   "prereq": "length"
+  },
+  {
+   "concept": "velocity",
+   "prereq": "time"
+  },
+  {
+   "concept": "momentum",
+   "prereq": "mass"
+  },
+  {
+   "concept": "momentum",
+   "prereq": "velocity"
+  },
+  {
+   "concept": "quantum-mechanics",
+   "prereq": "quantization"
+  },
+  {
+   "concept": "quantum-mechanics",
+   "prereq": "wave-particle-duality"
+  },
+  {
+   "concept": "quantum-mechanics",
+   "prereq": "heisenberg-uncertainty"
+  },
+  {
+   "concept": "wavefunction",
+   "prereq": "wave"
+  },
+  {
+   "concept": "wavefunction",
+   "prereq": "quantum-mechanics"
+  },
+  {
+   "concept": "electron-density",
+   "prereq": "wavefunction"
+  },
+  {
+   "concept": "atomic-orbital",
+   "prereq": "wavefunction"
+  },
+  {
+   "concept": "atomic-orbital",
+   "prereq": "electron-density"
+  },
+  {
+   "concept": "shell",
+   "prereq": "atomic-orbital"
+  },
+  {
+   "concept": "shell",
+   "prereq": "principal-quantum-number-shells"
+  },
+  {
+   "concept": "subshell",
+   "prereq": "shell"
+  },
+  {
+   "concept": "subshell",
+   "prereq": "angular-momentum-quantum-number"
+  },
+  {
+   "concept": "s-orbital",
+   "prereq": "atomic-orbital"
+  },
+  {
+   "concept": "s-orbital",
+   "prereq": "angular-momentum-quantum-number"
+  },
+  {
+   "concept": "p-orbital",
+   "prereq": "atomic-orbital"
+  },
+  {
+   "concept": "p-orbital",
+   "prereq": "angular-momentum-quantum-number"
+  },
+  {
+   "concept": "d-orbital",
+   "prereq": "atomic-orbital"
+  },
+  {
+   "concept": "d-orbital",
+   "prereq": "angular-momentum-quantum-number"
+  },
+  {
+   "concept": "f-orbital",
+   "prereq": "atomic-orbital"
+  },
+  {
+   "concept": "f-orbital",
+   "prereq": "angular-momentum-quantum-number"
+  },
+  {
+   "concept": "degenerate-orbitals",
+   "prereq": "atomic-orbital"
+  },
+  {
+   "concept": "electron-configuration",
+   "prereq": "shell"
+  },
+  {
+   "concept": "electron-configuration",
+   "prereq": "subshell"
+  },
+  {
+   "concept": "orbital-diagram",
+   "prereq": "electron-configuration"
+  },
+  {
+   "concept": "orbital-diagram",
+   "prereq": "spin-quantum-number"
+  },
+  {
+   "concept": "valence-shell",
+   "prereq": "shell"
+  },
+  {
+   "concept": "valence-electrons",
+   "prereq": "valence-shell"
+  },
+  {
+   "concept": "core-electrons",
+   "prereq": "shell"
+  },
+  {
+   "concept": "core-electrons",
+   "prereq": "valence-shell"
+  },
+  {
+   "concept": "covalent-radius",
+   "prereq": "ionic-and-covalent-bonds"
+  },
+  {
+   "concept": "covalent-radius",
+   "prereq": "nucleus"
+  },
+  {
+   "concept": "isoelectronic",
+   "prereq": "electron-configuration"
+  },
+  {
+   "concept": "isoelectronic",
+   "prereq": "ions-and-atomic-charge"
+  },
+  {
+   "concept": "ionization-energy",
+   "prereq": "ions-and-atomic-charge"
+  },
+  {
+   "concept": "ionization-energy",
+   "prereq": "energy-and-work"
+  },
+  {
+   "concept": "electron-affinity",
+   "prereq": "ions-and-atomic-charge"
+  },
+  {
+   "concept": "electron-affinity",
+   "prereq": "energy-and-work"
+  },
+  {
+   "concept": "wave-properties",
+   "prereq": "wavelength"
+  },
+  {
+   "concept": "wave-properties",
+   "prereq": "frequency"
+  },
+  {
+   "concept": "wave-properties",
+   "prereq": "amplitude"
+  },
+  {
+   "concept": "wave-speed-relation",
+   "prereq": "wavelength"
+  },
+  {
+   "concept": "wave-speed-relation",
+   "prereq": "frequency"
+  },
+  {
+   "concept": "photon-energy",
+   "prereq": "photon"
+  },
+  {
+   "concept": "photon-energy",
+   "prereq": "frequency"
+  },
+  {
+   "concept": "standing-waves-quantization",
+   "prereq": "standing-wave"
+  },
+  {
+   "concept": "standing-waves-quantization",
+   "prereq": "node"
+  },
+  {
+   "concept": "standing-waves-quantization",
+   "prereq": "quantization"
+  },
+  {
+   "concept": "blackbody-radiation",
+   "prereq": "blackbody"
+  },
+  {
+   "concept": "blackbody-radiation",
+   "prereq": "continuous-spectrum"
+  },
+  {
+   "concept": "electromagnetic-spectrum",
+   "prereq": "electromagnetic-radiation"
+  },
+  {
+   "concept": "photoelectric-effect",
+   "prereq": "photon"
+  },
+  {
+   "concept": "bohr-energy-levels",
+   "prereq": "quantum-number"
+  },
+  {
+   "concept": "ground-and-excited-states",
+   "prereq": "ground-state"
+  },
+  {
+   "concept": "ground-and-excited-states",
+   "prereq": "excited-state"
+  },
+  {
+   "concept": "photon-emission-absorption",
+   "prereq": "excited-state"
+  },
+  {
+   "concept": "calculating-bohr-transition-energies",
+   "prereq": "rydberg-equation"
+  },
+  {
+   "concept": "de-broglie-wavelength",
+   "prereq": "momentum"
+  },
+  {
+   "concept": "de-broglie-wavelength",
+   "prereq": "velocity"
+  },
+  {
+   "concept": "heisenberg-uncertainty",
+   "prereq": "momentum"
+  },
+  {
+   "concept": "wavefunction-probability",
+   "prereq": "wavefunction"
+  },
+  {
+   "concept": "wavefunction-probability",
+   "prereq": "electron-density"
+  },
+  {
+   "concept": "magnetic-quantum-number",
+   "prereq": "degenerate-orbitals"
+  },
+  {
+   "concept": "pauli-exclusion-principle",
+   "prereq": "atomic-orbital"
+  },
+  {
+   "concept": "working-with-quantum-numbers",
+   "prereq": "shell"
+  },
+  {
+   "concept": "working-with-quantum-numbers",
+   "prereq": "subshell"
+  },
+  {
+   "concept": "aufbau-principle",
+   "prereq": "electron-configuration"
+  },
+  {
+   "concept": "hunds-rule",
+   "prereq": "degenerate-orbitals"
+  },
+  {
+   "concept": "hunds-rule",
+   "prereq": "orbital-diagram"
+  },
+  {
+   "concept": "writing-electron-configurations",
+   "prereq": "electron-configuration"
+  },
+  {
+   "concept": "writing-electron-configurations",
+   "prereq": "orbital-diagram"
+  },
+  {
+   "concept": "valence-and-core-electrons",
+   "prereq": "valence-electrons"
+  },
+  {
+   "concept": "valence-and-core-electrons",
+   "prereq": "core-electrons"
+  },
+  {
+   "concept": "periodic-table-blocks",
+   "prereq": "electron-configuration"
+  },
+  {
+   "concept": "ion-configurations",
+   "prereq": "electron-configuration"
+  },
+  {
+   "concept": "configuration-exceptions",
+   "prereq": "electron-configuration"
+  },
+  {
+   "concept": "effective-nuclear-charge",
+   "prereq": "core-electrons"
+  },
+  {
+   "concept": "covalent-radius-trend",
+   "prereq": "covalent-radius"
+  },
+  {
+   "concept": "ionic-radius-trend",
+   "prereq": "isoelectronic"
+  },
+  {
+   "concept": "ionization-energy-trend",
+   "prereq": "ionization-energy"
+  },
+  {
+   "concept": "successive-ionization-energies",
+   "prereq": "ionization-energy"
+  },
+  {
+   "concept": "electron-affinity-trend",
+   "prereq": "electron-affinity"
+  },
+  {
+   "concept": "predicting-periodic-trends",
+   "prereq": "covalent-radius"
+  },
+  {
+   "concept": "predicting-periodic-trends",
+   "prereq": "ionization-energy"
+  },
+  {
+   "concept": "predicting-periodic-trends",
+   "prereq": "electron-affinity"
+  }
+ ]
+}

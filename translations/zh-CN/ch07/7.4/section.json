@@ -1,0 +1,837 @@
+{
+ "id": "7.4",
+ "module": "m68740",
+ "chapter": "7",
+ "title": "形式电荷与共振",
+ "short": "形式电荷与共振",
+ "lead": "当一个分子或离子可以写出不止一种路易斯结构时，形式电荷可以帮助我们判断哪一种最合理。有些分子和离子无法用单一的路易斯结构描述，共振则用若干个结构式同时描述它们。",
+ "objectives": [
+  "计算任意路易斯结构中各原子的形式电荷",
+  "利用形式电荷找出给定分子最合理的路易斯结构",
+  "解释共振的概念，并画出表示给定分子共振式的路易斯结构"
+ ],
+ "summary_html": "<p>在路易斯结构中，可以把每个键看作其电子的一半分给每个原子，从而为每个原子指定形式电荷。这些假想的形式电荷是确定最合适的路易斯结构的参考。形式电荷尽可能接近零的结构更优。当可以写出两个或更多个原子排布相同而电子分布不同的路易斯结构时，就会出现共振。电子的实际分布（共振杂化体）是各个路易斯结构（共振式）所示分布的平均。</p>",
+ "notes": "书中一个关于画共振结构和估算形式电荷的在线测验的链接未收入。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案来自书后答案和“学习检测”的答案。没有答案的习题 fs-idm30094208、fs-idp106918432、fs-idp216023872、fs-idp29752720、fs-idm33617232、fs-idp138240、fs-idp109056096、fs-idp77526928、fs-idp123681728 和 fs-idp123779760 附有标明为 OmniStax 自拟的建议思路。",
+ "figures": [
+  {
+   "id": "fig-icl4",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-brcl3",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-co2-options",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-thiocyanate",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-formal-charge",
+   "kind": "sim",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-n2o",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-n2o-charges",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-nno",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-no2-forms",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-no2-arrow",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-co3-forms",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-resonance-hybrid",
+   "kind": "sim",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: note that repeated the caption and the drawn shares dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "calculating-formal-charge",
+   "concept": "formal-charge",
+   "verb": "introduces"
+  },
+  {
+   "span": "calculating-formal-charge",
+   "concept": "lewis-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "calculating-formal-charge",
+   "concept": "formal-charge-of-atom",
+   "verb": "introduces"
+  },
+  {
+   "span": "formal-charge-structure",
+   "concept": "formal-charge-guidelines",
+   "verb": "introduces"
+  },
+  {
+   "span": "formal-charge-structure",
+   "concept": "formal-charge",
+   "verb": "uses"
+  },
+  {
+   "span": "formal-charge-structure",
+   "concept": "electronegativity",
+   "verb": "uses"
+  },
+  {
+   "span": "formal-charge-structure",
+   "concept": "multiple-bonds",
+   "verb": "uses"
+  },
+  {
+   "span": "formal-charge-structure",
+   "concept": "molecular-structure",
+   "verb": "introduces"
+  },
+  {
+   "span": "resonance",
+   "concept": "resonance",
+   "verb": "introduces"
+  },
+  {
+   "span": "resonance",
+   "concept": "lewis-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "resonance",
+   "concept": "multiple-bonds",
+   "verb": "uses"
+  },
+  {
+   "span": "resonance",
+   "concept": "resonance-forms",
+   "verb": "introduces"
+  },
+  {
+   "span": "resonance",
+   "concept": "resonance-hybrid",
+   "verb": "introduces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm21031296",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-icl4"
+   },
+   "cite": "calculating-formal-charge",
+   "prompt": "计算一氧化碳分子中每个原子的形式电荷：<br><img src=\"/media/ch07/CNX_Chem_07_04_CO_img.jpg\" alt=\"图中是一个路易斯结构。一个带一对孤电子对的碳原子以三键与一个带一对孤电子对的氧原子相连。\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "C −1，O +1"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idp59620704",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-brcl3"
+   },
+   "cite": "calculating-formal-charge",
+   "prompt": "确定 NCl<sub>3</sub> 中每个原子的形式电荷。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "N：0；三个 Cl 原子均为 0<br><img src=\"/media/ch07/CNX_Chem_07_04_Ex070402_img.jpg\" alt=\"图中是一个路易斯结构。一个带一对孤电子对的氮原子以单键与三个氯原子相连，每个氯原子各带三对孤电子对。\">"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idp56478288",
+   "kind": "check-your-learning",
+   "bloom": "Analyze",
+   "place": {
+    "at": "inline",
+    "after": "ex-n2o"
+   },
+   "cite": "formal-charge-structure",
+   "prompt": "亚硝酸根 $({\\text{NO}}_{2}{}^{\\text{−}})$ 离子最可能的分子构型是哪一种？<br><img src=\"/media/ch07/CNX_Chem_07_04_NO2ion_img.jpg\" alt=\"图中是两个路易斯结构，中间写有“或”字。左边的结构中，一个带两对孤电子对的氮原子以双键与一个带一对孤电子对的氧原子相连，该氧原子又以单键与一个带三对孤电子对的氧原子相连。该结构外有方括号，带上标负号。右边的结构中，一个带两对孤电子对的氧原子以双键与一个带一对孤电子对的氮原子相连，该氮原子又以单键与一个带三对孤电子对的氧原子相连。该结构外有方括号，带上标负号。\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "ONO<sup>–</sup>"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm30094208",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "resonance",
+   "prompt": "写出描述下列各分子或离子中电子分布的共振式。<br>（a）二氧化硒，OSeO<br>（b）硝酸根离子，${\\text{NO}}_{3}{}^{\\text{−}}$<br>（c）硝酸，HNO<sub>3</sub>（N 与一个 OH 基团和两个 O 原子相连）<br>（d）苯，C<sub>6</sub>H<sub>6</sub>：<br><img src=\"/media/ch07/CNX_Chem_07_04_CHOOd_img.jpg\" alt=\"图中是一个路易斯结构，由六个碳原子组成六边形环。碳原子之间以单键相连，每个碳原子还以单键与一个氢原子相连。\"><br>（e）甲酸根离子：<br><img src=\"/media/ch07/CNX_Chem_07_04_CHOOe_img.jpg\" alt=\"图中是一个路易斯结构。一个碳原子以单键与两个氧原子和一个氢原子相连。结构外有方括号，带上标负号。\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "每种情形下，都可以把一个双键画到两个或三个等同原子中的任何一个上，各共振式之间用双向箭头连接。<br>（a）OSeO，6 + 2(6) = 18 个电子，有两个共振式，O=Se–O ↔ O–Se=O。硒带一对孤电子对，双键氧带两对孤电子对，单键氧带三对。<br>（b）${\\text{NO}}_{3}{}^{\\text{−}}$，5 + 3(6) + 1 = 24 个电子，有三个共振式，与碳酸根类似。氮有一个 N=O 键和两个 N–O 键，没有孤电子对；双键氧带两对孤电子对，每个单键氧带三对，双键依次连到每个氧原子上。<br>（c）HNO<sub>3</sub>，24 个电子，有两个共振式。OH 氧以单键与 N 相连，带两对孤电子对，双键连到另外两个氧原子中的任何一个上，这两个氧原子则分别带两对和三对孤电子对。<br>（d）C<sub>6</sub>H<sub>6</sub>，6(4) + 6(1) = 30 个电子，有两个共振式。环上单键与双键交替排列，共有三个 C=C 键，在第二个共振式中，每个双键都沿环移动了一个位置。<br>（e）甲酸根离子，4 + 2(6) + 1 + 1 = 18 个电子，有两个共振式。碳与 H 相连，以双键与一个氧相连，该氧带两对孤电子对，以单键与另一个氧相连，该氧带三对；双键可以连到任一个氧上。两个共振式都在方括号中，电荷为 –。"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp11428640",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "resonance",
+   "prompt": "写出描述下列各分子或离子中电子分布的共振式。<br>（a）二氧化硫，SO<sub>2</sub><br>（b）碳酸根离子，${\\text{CO}}_{3}{}^{\\text{2−}}$<br>（c）碳酸氢根离子，${\\text{HCO}}_{3}{}^{\\text{−}}$（C 与一个 OH 基团和两个 O 原子相连）<br>（d）吡啶：<br><img src=\"/media/ch07/CNX_Chem_07_04_SO2resd_img.jpg\" alt=\"图中是一个路易斯结构，由五个碳原子和一个氮原子组成六边形环。每个碳原子以单键与一个氢原子相连。\"><br>（e）烯丙基阴离子：<br><img src=\"/media/ch07/CNX_Chem_07_04_SO2rese_img.jpg\" alt=\"图中是一个路易斯结构。一个碳原子以单键与两个氢原子和第二个碳原子相连。第二个碳原子以单键与一个氢原子和第三个碳原子相连。第三个碳原子以单键与两个氢原子相连。整个结构外有方括号，带上标负号。\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）<br><img src=\"/media/ch07/CNX_Chem_07_04_Ques2ansa_img.jpg\" alt=\"图中是两个路易斯结构，中间有一个双向箭头。左边的结构中，一个带一对孤电子对的硫原子，在左侧以单键与一个带三对孤电子对的氧原子相连。该硫原子在右侧还以双键与一个带两对孤电子对的氧原子相连。右边的结构由相同的原子组成，但这次双键在左边的氧原子与硫原子之间。孤电子对也随键型的变化而移动。右边结构中的硫原子下方还有第三个电子点。\"><br>（b）<br><img src=\"/media/ch07/CNX_Chem_07_04_Ques2ansb_img.jpg\" alt=\"图中是三个路易斯结构，之间有双向箭头，每个结构外都有方括号，带上标 2 和负号。左边的结构中，一个碳原子与三个氧原子相连：以单键与其中两个氧原子相连，这两个氧原子各带三对孤电子对；以双键与第三个氧原子相连，该氧原子带两对孤电子对。双键位于下方的氧原子与碳原子之间。中间和右边的结构与第一个相同，只是双键所连的氧原子移到了右边结构中的左侧氧原子上，而中间的结构只有单键。孤电子对也随键的变化而改变。\"><br>（c）<br><img src=\"/media/ch07/CNX_Chem_07_04_Ques2ansc_img.jpg\" alt=\"图中是两个路易斯结构，之间有双向箭头，每个结构外都有方括号，带上标负号。左边的结构中，一个碳原子与三个氧原子相连。它以单键与其中一个氧原子相连，该氧原子带三对孤电子对；以双键与另外两个氧原子相连，它们带两对孤电子对。其中一个双键氧原子还以单键与一个氢原子相连。右边的结构与第一个相同，但只有一个双键氧原子。原来连有氢原子的那个氧原子，现在以单键与碳原子相连。孤电子对也随键的变化而改变。\"><br>（d）<br><img src=\"/media/ch07/CNX_Chem_07_04_Ques2ansd_img.jpg\" alt=\"图中是两个路易斯结构，之间有双向箭头。左边的结构中，由五个碳原子和一个带一对孤电子对的氮原子组成六边形环，每个碳原子以单键与一个氢原子相连。环上单键与双键交替。右边的结构与第一个相同，但每个双键都转到了新的位置。\"><br>（e）<br><img src=\"/media/ch07/CNX_Chem_07_04_Ques2anse_img.jpg\" alt=\"图中是两个路易斯结构，之间有双向箭头。左边的结构中，一个碳原子以单键与两个氢原子和第二个碳原子相连。第二个碳原子以单键与一个氢原子相连，并以双键与第三个碳原子相连。第三个碳原子以单键与两个氢原子相连。整个结构外有方括号，带上标负号。右边的结构中，一个碳原子以单键与两个氢原子相连，并以双键与第二个碳原子相连。第二个碳原子以单键与一个氢原子和第三个碳原子相连。第三个碳原子以单键与两个氢原子相连。整个结构外有方括号，带上标负号。\">"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp106918432",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "resonance",
+   "prompt": "写出臭氧 O<sub>3</sub> 的共振式，臭氧是高层大气的组成部分，能保护地球免受紫外线辐射。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "臭氧有两个共振式，O=O–O ↔ O–O=O。三个氧原子共有 3(6) = 18 个价电子。在每个共振式中，中心氧原子有一个双键、一个单键和一对孤电子对；双键的末端氧原子带两对孤电子对，单键的末端氧原子带三对，所以每个原子都达到八隅体。中心原子只有在其一个键为双键时才达到八隅体，而两个末端原子是等同的，所以双键可以画到其中任何一个上。各共振式之间用双向箭头连接，与亚硝酸根离子一样。共振杂化体有两个相同的 O–O 键，每个都是单键与双键的平均。"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm29150896",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "resonance",
+   "prompt": "亚硝酸钠一直被用于培根等肉类的防腐，它是一种离子化合物。写出亚硝酸根离子 ${\\text{NO}}_{\\text{2}}{}^{\\text{–}}$ 的共振式。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<img src=\"/media/ch07/CNX_Chem_07_04_Ques11ans_img.jpg\" alt=\"图中是一对路易斯结构，这一对之间有一个双向箭头。这一对中左边的结构里，一个带一对孤电子对的氮原子以单键与一个带三对孤电子对的氧原子相连，并以双键与一个带两对孤电子对的氧原子相连。这一对中右边的图是左边的镜像。两个图外都有方括号，带上标负号。它们标注为“用于 N O 下标二上标负号”。\">"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp216023872",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "resonance",
+   "prompt": "根据所含的键，解释为什么乙酸 CH<sub>3</sub>CO<sub>2</sub>H 含有两种不同的碳氧键，而乙酸根离子（由乙酸失去一个氢离子形成）只含有一种碳氧键。这些物质的骨架结构如下所示：<br><img src=\"/media/ch07/CNX_Chem_07_04_Acet_img.jpg\" alt=\"图中是两个路易斯结构，之间有双向箭头。左边的结构中，一个碳原子以单键与三个氢原子和第二个碳原子相连。第二个碳原子以单键与两个氧原子相连。其中一个氧原子以单键与一个氢原子相连。右边的结构外有方括号，带上标负号，其中一个碳原子以单键与三个氢原子和第二个碳原子相连。第二个碳原子以单键与两个氧原子相连。\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "乙酸含有一个 C=O 双键和一个 C–O 单键，而在乙酸根离子中，两个碳氧键相同，每个都是单键与双键的平均。在乙酸中，第二个碳原子只有与一个氧形成双键才能达到八隅体。连有氢原子的氧原子已经有两个键和两对孤电子对，所以双键只能连到另一个氧上，因此只能写出一个路易斯结构：一个较短的 C=O 键和一个较长的 C–O 键。当氢离子离去后，两个氧原子的成键情况相同，双键可以画到其中任何一个上，得到两个共振式，负电荷在单键氧上。乙酸根离子是这些共振式的共振杂化体，所以它的两个 C–O 键是相同的，就像亚硝酸根的两个 N–O 键一样。"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idp30217376",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "resonance",
+   "prompt": "写出下列各物质的路易斯结构，适当时包括共振结构。指出哪一个的碳氧键最强。<br>（a）CO<sub>2</sub><br>（b）CO",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）<br><img src=\"/media/ch07/CNX_Chem_07_04_Ques13ansb_img.jpg\" alt=\"图中的结构是一个碳原子以双键与两个氧原子相连，每个氧原子各带两对孤电子对。\"><br>（b）<br><img src=\"/media/ch07/CNX_Chem_07_04_Ques13ansc_img.jpg\" alt=\"这一对中右边的结构是一个带一对孤电子对的碳原子，以三键与一个带一对孤电子对的氧原子相连。\"><br>CO 的碳氧键最强，因为 C 与 O 之间是三键。CO<sub>2</sub> 中是双键。"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp29752720",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "resonance",
+   "prompt": "含有碳酸氢钠（小苏打）和过氧化氢的牙膏被广泛使用。写出碳酸氢根离子和过氧化氢分子的路易斯结构，适当时包括共振式。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "碳酸氢根离子 ${\\text{HCO}}_{3}{}^{\\text{−}}$ 有两个共振式，过氧化氢只有一个路易斯结构，没有共振式。${\\text{HCO}}_{3}{}^{\\text{−}}$ 有 1 + 4 + 3(6) + 1 = 24 个价电子。碳与一个 OH 基团相连，该基团的氧带两对孤电子对；碳还与另外两个氧原子相连，一个是双键，该氧带两对孤电子对，另一个是单键，该氧带三对孤电子对；结构放在方括号中，电荷为 –。双键可以连到两个不带氢的氧原子中的任何一个上，所以这两个共振式之间用双向箭头连接。过氧化氢有 2(1) + 2(6) = 14 个价电子：H–O–O–H，每个氧上有两对孤电子对。只用单键，每个原子就已完整，而且没有其他电子排布能保持相同的原子排列，所以 H<sub>2</sub>O<sub>2</sub> 没有共振式。"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idp23408944",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "calculating-formal-charge",
+   "prompt": "确定下列各物质中每种元素的形式电荷：<br>（a）HCl<br>（b）CF<sub>4</sub><br>（c）PCl<sub>3</sub><br>（d）PF<sub>5</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）H：0，Cl：0；（b）C：0，F：0；（c）P：0，Cl 0；（d）P：0，F：0"
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idm33617232",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "calculating-formal-charge",
+   "prompt": "确定下列各物质中每种元素的形式电荷：<br>（a）H<sub>3</sub>O<sup>+</sup><br>（b）${\\text{SO}}_{4}{}^{\\text{2−}}$<br>（c）NH<sub>3</sub><br>（d）${\\text{O}}_{2}{}^{\\text{2−}}$<br>（e）H<sub>2</sub>O<sub>2</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "每个形式电荷等于自由原子的价电子数，减去孤电子对的电子数，再减去成键电子数的一半。<br>（a）H<sub>3</sub>O<sup>+</sup>：O，+1；H，0。氧有三个键和一对孤电子对，6 – 2 – 3 = +1，每个 H 为 1 – 0 – 1 = 0。总和 +1 是该离子的电荷。<br>（b）${\\text{SO}}_{4}{}^{\\text{2−}}$：S，+2；O，–1。在含有四个 S–O 单键、每个氧上有三对孤电子对的结构中，硫为 6 – 0 – 4 = +2，每个氧为 6 – 6 – 1 = –1，总和为 +2 + 4(–1) = –2。<br>（c）NH<sub>3</sub>：N，0；H，0。氮有三个键和一对孤电子对，5 – 2 – 3 = 0。<br>（d）${\\text{O}}_{2}{}^{\\text{2−}}$：每个 O 为 –1。该离子有 14 个电子，一个 O–O 单键，每个氧上有三对孤电子对，6 – 6 – 1 = –1，总和为 –2。<br>（e）H<sub>2</sub>O<sub>2</sub>：O，0；H，0。在 H–O–O–H 中，每个氧有两个键和两对孤电子对，6 – 4 – 2 = 0，总和为零，电中性分子必须如此。"
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idp25221456",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "calculating-formal-charge",
+   "prompt": "计算 Cl<sub>2</sub>、BeCl<sub>2</sub> 和 ClF<sub>5</sub> 分子中氯的形式电荷。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Cl<sub>2</sub> 中的 Cl：0；BeCl<sub>2</sub> 中的 Cl：0；ClF<sub>5</sub> 中的 Cl：0"
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idp138240",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "calculating-formal-charge",
+   "prompt": "计算下列化合物和离子中每种元素的形式电荷：<br>（a）F<sub>2</sub>CO<br>（b）NO<sup>–</sup><br>（c）${\\text{BF}}_{4}{}^{\\text{−}}$<br>（d）${\\text{SnCl}}_{3}{}^{\\text{−}}$<br>（e）H<sub>2</sub>CCH<sub>2</sub><br>（f）ClF<sub>3</sub><br>（g）SeF<sub>6</sub><br>（h）${\\text{PO}}_{4}{}^{\\text{3−}}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "每个形式电荷等于自由原子的价电子数，减去孤电子对的电子数，再减去成键电子数的一半，每种物质的形式电荷之和等于它的总电荷。<br>（a）F<sub>2</sub>CO：C，0；O，0；F，0。碳有一个 C=O 双键和两个 C–F 键，4 – 0 – 4 = 0；氧带两对孤电子对，为 6 – 4 – 2 = 0；每个 F 为 7 – 6 – 1 = 0。<br>（b）NO<sup>–</sup>：N，–1；O，0。在 N=O 中，每个原子上有两对孤电子对，N 为 5 – 4 – 2 = –1，O 为 6 – 4 – 2 = 0。<br>（c）${\\text{BF}}_{4}{}^{\\text{−}}$：B，–1；F，0。硼有四个单键，3 – 0 – 4 = –1。<br>（d）${\\text{SnCl}}_{3}{}^{\\text{−}}$：Sn，–1；Cl，0。26 个电子使锡有三个单键和一对孤电子对，4 – 2 – 3 = –1。<br>（e）H<sub>2</sub>CCH<sub>2</sub>：C，0；H，0。每个碳有一个双键和两个单键，4 – 0 – 4 = 0。<br>（f）ClF<sub>3</sub>：Cl，0；F，0。氯有三个键和两对孤电子对，7 – 4 – 3 = 0。<br>（g）SeF<sub>6</sub>：Se，0；F，0。硒有六个键，没有孤电子对，6 – 0 – 6 = 0。<br>（h）${\\text{PO}}_{4}{}^{\\text{3−}}$：P，+1；O，–1。磷有四个单键，5 – 0 – 4 = +1，每个氧带三对孤电子对，6 – 6 – 1 = –1；总和为 +1 + 4(–1) = –3。"
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idp137881216",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "resonance",
+   "prompt": "画出下列各化合物所有可能的共振结构。确定每个共振结构中每个原子的形式电荷：<br>（a）O<sub>3</sub><br>（b）SO<sub>2</sub><br>（c）${\\text{NO}}_{2}{}^{\\text{−}}$<br>（d）${\\text{NO}}_{3}{}^{\\text{−}}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）<br><img src=\"/media/ch07/CNX_Chem_07_04_Exercis12a_img.jpg\" alt=\"图中是两个路易斯结构，中间有一个双向箭头。左边的结构中，一个带一对孤电子对的氧原子以单键与一个带三对孤电子对的氧原子相连，并以双键与一个带两对孤电子对的氧原子相连。这个结构下方的符号和数字为“( 0 )，( 正 1 )，( 负 1 )”。这个结构的左侧有“形式电荷”字样和一个向右的箭头。右边的结构是左边的镜像，其下方的符号和数字为“( 负 1 )，( 正 1 )，( 0 )”。\"><br>（b）<br><img src=\"/media/ch07/CNX_Chem_07_04_Exercis12b_img.jpg\" alt=\"图中是两个路易斯结构，中间有一个双向箭头。左边的结构中，一个带一对孤电子对的硫原子以单键与一个带三对孤电子对的氧原子相连，并以双键与一个带两对孤电子对的氧原子相连。这个结构下方的符号和数字为“( 负 1 )，( 正 1 )，( 0 )”。右边的结构是左边的镜像，其下方的符号和数字为“( 0 )，( 正 1 )，( 负 1 )”。\"><br>（c）<br><img src=\"/media/ch07/CNX_Chem_07_04_Exercis12c_img.jpg\" alt=\"[图中是两个路易斯结构，每个结构外都有方括号，带上标负号，中间有一个双向箭头。左边的结构中，一个带一对孤电子对的氮原子以单键与一个带三对孤电子对的氧原子相连，并以双键与一个带两对孤电子对的氧原子相连。这个结构下方的符号和数字为“左括号，0，右括号，左括号，0，右括号，左括号，负 1，右括号。右边的结构是左边的镜像，其下方的符号和数字为“左括号，负 1，右括号，左括号，0，右括号，左括号，0，右括号。]\"><br>（d）<br><img src=\"/media/ch07/CNX_Chem_07_04_Exercis12d_img.jpg\" alt=\"[图中是三个路易斯结构，每个结构外都有方括号，带上标负号，之间有双向箭头。左边的结构中，一个氮原子以单键与两个氧原子相连，这两个氧原子各带三对孤电子对，并以双键与一个带两对孤电子对的氧原子相连。两个单键氧原子从结构顶部起按顺时针方向标注为“左括号，负 1，右括号，左括号，正 1，右括号”。这个结构下方的符号和数字为“左括号，0，右括号，左括号，负 1，右括号。中间的结构中，一个氮原子以单键与两个氧原子相连，这两个氧原子各带三对孤电子对，其中一个标注为“左括号，正 1，右括号”，并以双键与一个带两对孤电子对的氧原子相连，该氧原子标注为“左括号，0，右括号”。这个结构下方的符号和数字为“左括号，负 1，右括号，左括号，负 1，右括号。右边的结构中，一个氮原子以单键与两个氧原子相连，这两个氧原子各带三对孤电子对，并以双键与一个带两对孤电子对的氧原子相连。其中一个单键氧原子标注为“左括号，负 1，右括号，而双键氧原子标注为“左括号，正 1，右括号”。这个结构下方的符号和数字为“左括号，负 1，右括号”和“左括号，0，右括号”。]\">"
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idp109056096",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "formal-charge-structure",
+   "prompt": "根据形式电荷的考虑，下列哪种原子排列可能是亚硝酰氯的正确排列：ClNO 还是 ClON？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "ClNO 是可能的排列。两者都有 7 + 5 + 6 = 18 个价电子。在 ClNO 中，写作 Cl–N=O，Cl 上有三对孤电子对，N 上一对，O 上两对，形式电荷为：Cl 7 – 6 – 1 = 0，N 5 – 2 – 3 = 0，O 6 – 4 – 2 = 0。在 ClON 中，写作 Cl–O=N，Cl 上有三对孤电子对，O 上一对，N 上两对，形式电荷为：Cl 0，O 6 – 2 – 3 = +1，N 5 – 4 – 2 = –1。所有形式电荷为零的结构更优（准则 1），而 ClON 更差，因为它把负的形式电荷放在氮上，而不是电负性较大的氧上（准则 4）。"
+   }
+  },
+  {
+   "id": "e14",
+   "source_id": "fs-idp7647248",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "formal-charge-structure",
+   "prompt": "根据形式电荷的考虑，下列哪种原子排列可能是次氯酸的正确排列：HOCl 还是 OClH？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "HOCl"
+   }
+  },
+  {
+   "id": "e15",
+   "source_id": "fs-idp77526928",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "formal-charge-structure",
+   "prompt": "根据形式电荷的考虑，下列哪种原子排列可能是二氧化硫的正确排列：OSO 还是 SOO？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "OSO 是可能的排列。两者都有 3(6) = 18 个价电子。在 OSO 中，写作 O=S–O，S 上有一对孤电子对，形式电荷为：S 6 – 2 – 3 = +1，双键 O 6 – 4 – 2 = 0，单键 O 6 – 6 – 1 = –1。硫是第三周期的原子，可以容纳超过八个电子，所以也可以写出 S 上有一对孤电子对的 O=S=O，此时所有形式电荷都为零：S 6 – 2 – 4 = 0，每个 O 6 – 4 – 2 = 0。在 SOO 中，写作 S=O–O，S 上有两对孤电子对，中心 O 上一对，末端 O 上三对，电荷为：S 0，中心 O 6 – 2 – 3 = +1，末端 O –1；中心氧不能超过八隅体，所以没有任何 SOO 结构的形式电荷全为零，每一种都在氧原子上放了正的形式电荷。按准则 1，OSO 更优，而且它把电负性较小的原子硫放在中心，与二氧化碳一样。"
+   }
+  },
+  {
+   "id": "e16",
+   "source_id": "fs-idp27867056",
+   "kind": "exercise",
+   "bloom": "Evaluate",
+   "place": {
+    "at": "end"
+   },
+   "cite": "formal-charge-structure",
+   "prompt": "画出羟胺 H<sub>3</sub>NO 的结构并指定形式电荷；查一查它的结构。实际结构与形式电荷一致吗？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "使形式电荷为零的结构与实际结构一致：<br><img src=\"/media/ch07/CNX_Chem_07_04_OHamine_img.jpg\" alt=\"图中是一个路易斯结构。一个带一对孤电子对的氮原子以单键与两个氢原子和一个带两对孤电子对的氧原子相连。该氧原子以单键与一个氢原子相连。\">"
+   }
+  },
+  {
+   "id": "e17",
+   "source_id": "fs-idp123681728",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "calculating-formal-charge",
+   "prompt": "碘形成一系列氟化物（列于下方）。写出这四种化合物各自的路易斯结构，并确定每个分子中碘原子的形式电荷：<br>（a）IF<br>（b）IF<sub>3</sub><br>（c）IF<sub>5</sub><br>（d）IF<sub>7</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "在这四种化合物中，碘的形式电荷都是 0。每个氟原子与碘形成一个单键，并带三对孤电子对，7 – 6 – 1 = 0，剩余的电子作为孤电子对放在碘上。<br>（a）IF，7 + 7 = 14 个电子：I–F，碘上有三对孤电子对；I 为 7 – 6 – 1 = 0。<br>（b）IF<sub>3</sub>，7 + 3(7) = 28 个电子：三个 I–F 键，碘上有两对孤电子对；I 为 7 – 4 – 3 = 0。<br>（c）IF<sub>5</sub>，7 + 5(7) = 42 个电子：五个 I–F 键，碘上有一对孤电子对；I 为 7 – 2 – 5 = 0。<br>（d）IF<sub>7</sub>，7 + 7(7) = 56 个电子：七个 I–F 键，碘上没有孤电子对；I 为 7 – 0 – 7 = 0。<br>碘在 IF<sub>3</sub>、IF<sub>5</sub> 和 IF<sub>7</sub> 中是超价的，分别有 10、12 和 14 个电子，第五周期的原子可以容纳这么多电子。"
+   }
+  },
+  {
+   "id": "e18",
+   "source_id": "fs-idp26472064",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "calculating-formal-charge",
+   "prompt": "写出一种化合物的路易斯结构和化学式，该化合物的摩尔质量约为 70 g/mol，按质量计含 19.7% 的氮和 80.3% 的氟，并确定该化合物中各原子的形式电荷。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "NF<sub>3</sub>；<br><img src=\"/media/ch07/CNX_Chem_07_04_NF3_img.jpg\" alt=\"图中是一个路易斯结构。一个带一对孤电子对的氮原子以单键与三个氟原子相连，每个氟原子各带三对孤电子对。\">"
+   }
+  },
+  {
+   "id": "e19",
+   "source_id": "fs-idp123779760",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "formal-charge-structure",
+   "prompt": "我们预期亚硝酸具有下列哪种结构？确定形式电荷：<br><img src=\"/media/ch07/CNX_Chem_07_04_HNO2_img.jpg\" alt=\"图中是两个路易斯结构，中间写有“或”字。左边的结构中，一个氮原子以单键与一个带三对孤电子对的氧原子相连，还以单键与一个氢原子相连，并以双键与一个带两对孤电子对的氧原子相连。右边的结构中，一个氢原子以单键与一个带两对孤电子对的氧原子相连。该氧原子以单键与一个氮原子相连，氮原子又以双键与一个带两对孤电子对的氧原子相连。\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "预期的是右边的结构 H–O–N=O，因为它的形式电荷全为零。形式电荷等于自由原子的价电子数，减去孤电子对的电子数，再减去成键电子数的一半。在氢连在氮上的左边结构中，氮有四个键，没有孤电子对，5 – 0 – 4 = +1；带三对孤电子对的单键氧为 6 – 6 – 1 = –1；双键氧为 6 – 4 – 2 = 0；H 为 0。在右边的结构中，H 为 0；与氢相连的氧有两个键和两对孤电子对，为 6 – 4 – 2 = 0；氮有三个键和一对孤电子对，为 5 – 2 – 3 = 0；末端氧为 6 – 4 – 2 = 0。两组形式电荷之和都为零，但所有形式电荷都为零的结构更优（准则 1）。"
+   }
+  },
+  {
+   "id": "e20",
+   "source_id": "fs-idm30783968",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "calculating-formal-charge",
+   "prompt": "硫酸是全世界产量最大的工业化学品。仅在美国，每年就生产约 900 亿磅。写出硫酸 H<sub>2</sub>SO<sub>4</sub> 的路易斯结构，其中硫与两个氧原子和两个 OH 基团相连。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<img src=\"/media/ch07/CNX_Chem_07_04_H2SO4.jpg\" alt=\"图中是一个路易斯结构。一个氢原子以单键与一个带两对孤电子对的氧原子相连。该氧原子以单键与一个硫原子相连。该硫原子以双键与两个氧原子相连，这两个氧原子各带三对孤电子对，并以单键与一个带两对孤电子对的氧原子相连。这个氧原子以单键与一个氢原子相连。\">"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "formal-charge"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "formal-charge"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "formal-charge-guidelines"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "formal-charge"
+  },
+  {
+   "exercise": "e1",
+   "concept": "resonance"
+  },
+  {
+   "exercise": "e1",
+   "concept": "lewis-structure"
+  },
+  {
+   "exercise": "e2",
+   "concept": "resonance"
+  },
+  {
+   "exercise": "e2",
+   "concept": "lewis-structure"
+  },
+  {
+   "exercise": "e3",
+   "concept": "resonance"
+  },
+  {
+   "exercise": "e4",
+   "concept": "resonance"
+  },
+  {
+   "exercise": "e5",
+   "concept": "resonance"
+  },
+  {
+   "exercise": "e6",
+   "concept": "resonance"
+  },
+  {
+   "exercise": "e6",
+   "concept": "multiple-bonds"
+  },
+  {
+   "exercise": "e7",
+   "concept": "resonance"
+  },
+  {
+   "exercise": "e7",
+   "concept": "lewis-structure"
+  },
+  {
+   "exercise": "e8",
+   "concept": "formal-charge"
+  },
+  {
+   "exercise": "e9",
+   "concept": "formal-charge"
+  },
+  {
+   "exercise": "e10",
+   "concept": "formal-charge"
+  },
+  {
+   "exercise": "e11",
+   "concept": "formal-charge"
+  },
+  {
+   "exercise": "e11",
+   "concept": "octet-rule-exceptions"
+  },
+  {
+   "exercise": "e12",
+   "concept": "resonance"
+  },
+  {
+   "exercise": "e12",
+   "concept": "formal-charge"
+  },
+  {
+   "exercise": "e13",
+   "concept": "formal-charge-guidelines"
+  },
+  {
+   "exercise": "e14",
+   "concept": "formal-charge-guidelines"
+  },
+  {
+   "exercise": "e15",
+   "concept": "formal-charge-guidelines"
+  },
+  {
+   "exercise": "e16",
+   "concept": "formal-charge-guidelines"
+  },
+  {
+   "exercise": "e16",
+   "concept": "formal-charge"
+  },
+  {
+   "exercise": "e17",
+   "concept": "formal-charge"
+  },
+  {
+   "exercise": "e17",
+   "concept": "octet-rule-exceptions"
+  },
+  {
+   "exercise": "e18",
+   "concept": "formal-charge"
+  },
+  {
+   "exercise": "e18",
+   "concept": "lewis-structure"
+  },
+  {
+   "exercise": "e19",
+   "concept": "formal-charge-guidelines"
+  },
+  {
+   "exercise": "e19",
+   "concept": "formal-charge"
+  },
+  {
+   "exercise": "e20",
+   "concept": "lewis-structure"
+  },
+  {
+   "exercise": "e20",
+   "concept": "formal-charge"
+  }
+ ]
+}

@@ -1,0 +1,458 @@
+{
+ "id": "18.5",
+ "module": "m68833",
+ "chapter": "18",
+ "title": "氢的存在、制备与化合物",
+ "short": "氢",
+ "lead": "氢是宇宙中含量最丰富的元素，本节从它的<span data-concept=\"isotopes\">同位素</span>讲起，经由它由水蒸气、水、酸和金属氢化物制备的各种方法，一直讲到它受热时发生的反应，以及它与氮、磷、硫和卤素形成的化合物。",
+ "objectives": [
+  "描述氢的性质、制备和化合物"
+ ],
+ "summary_html": "<p>氢是宇宙中含量最丰富的元素，其化学性质十分独特。虽然它的某些化学反应性与<span data-concept=\"alkali-metal\">碱金属</span>相似，但氢具有许多与<span data-concept=\"electronegativity\">电负性</span>相对较低的<span data-concept=\"nonmetal\">非金属</span>相同的化学性质。它与活泼金属形成离子型氢化物，与电负性较小的元素形成氧化态为 1− 的共价化合物，与电负性较大的非金属形成氧化态为 1+ 的共价化合物。它与氧、氟和氯发生爆炸性反应，与溴的反应不那么剧烈，与碘、硫和氮的反应则缓慢得多。氢可以还原那些<span data-concept=\"standard-electrode-potential\">还原电势</span>比铬低的金属的氧化物，生成金属和水。<span data-concept=\"hydrogen-halide\">卤化氢</span>溶于水后都呈酸性。</p>",
+ "notes": "本节照原文行文处理“Water gas is as an industrial fuel”（水煤气是作为工业燃料）、“Inorganic derivations include”（无机衍生物包括）、“In which case, the sulfide may oxidize”（在这种情况下，硫化物可能氧化为）以及表 18.1 的第一行 MH 或 MH₂ ⟶ MOH 或 M(OH)₂ + H₂，该行没有写出水。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案取自书后答案。两道没有答案的习题 fs-idp75856256（氢化钙与水反应中的路易斯酸和碱、氧化剂和还原剂以及氧化数的变化）和 fs-idp249418928（给气球充氢所需 CaH₂ 的质量）未收入，也没有为它们计算答案。没有任何内容被移动。",
+ "figures": [
+  {
+   "id": "sim-electrolysis",
+   "kind": "sim",
+   "number": "18.26",
+   "originals": [
+    "/media/ch18/CNX_Chem_18_05_Electrolys.jpg"
+   ],
+   "original_caption": "水的电解产生氢和氧。由于氢原子的数目是氧原子的两倍，并且这两种元素都是双原子的，所以在阴极产生的氢的体积是在阳极产生的氧的体积的两倍。",
+   "draws": [
+    "volume"
+   ],
+   "conventions": [
+    "H",
+    "O"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-iron-hcl",
+   "kind": "photo",
+   "number": "18.27",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-shuttle",
+   "kind": "photo",
+   "number": "18.28",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-ammonia",
+   "kind": "photo",
+   "number": "18.29",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-ammonia-derivatives",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "hydrogen",
+   "concept": "hydrogen-isotopes",
+   "verb": "introduces"
+  },
+  {
+   "span": "hydrogen",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "hydrogen",
+   "concept": "molecule",
+   "verb": "uses"
+  },
+  {
+   "span": "hydrogen",
+   "concept": "isotopes",
+   "verb": "uses"
+  },
+  {
+   "span": "hydrogen",
+   "concept": "vapor-pressure",
+   "verb": "uses"
+  },
+  {
+   "span": "hydrogen",
+   "concept": "electrolysis",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "hydrogen-preparation",
+   "verb": "introduces"
+  },
+  {
+   "span": "preparation",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "catalyst",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "hydrocarbon",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "electrolysis",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "cathode",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "anode",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "volume",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "standard-electrode-potential",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "anion",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "hydrogenation",
+   "verb": "introduces"
+  },
+  {
+   "span": "reactions",
+   "concept": "hydrogen-place-in-periodic-table",
+   "verb": "introduces"
+  },
+  {
+   "span": "reactions",
+   "concept": "hydrogen-reactions",
+   "verb": "introduces"
+  },
+  {
+   "span": "reactions",
+   "concept": "exothermic-process",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "cation",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "covalent-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "anion",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "reducing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "strong-base",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "nonmetal",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "electronegativity",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "weak-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "gas-pressure",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "haber-process",
+   "verb": "introduces"
+  },
+  {
+   "span": "compounds",
+   "concept": "ammonia-chemistry",
+   "verb": "introduces"
+  },
+  {
+   "span": "compounds",
+   "concept": "hydrogen-halide",
+   "verb": "introduces"
+  },
+  {
+   "span": "compounds",
+   "concept": "nonmetal",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "strong-base",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "hydrogen-bonding",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "bronsted-lowry-base",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "reducing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "standard-free-energy-of-formation",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "density",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "lewis-base",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "strong-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "disproportionation-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "diprotic-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "weak-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "catalyst",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "enthalpy-change",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "standard-electrode-potential",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "e1",
+   "source_id": "fs-idm24100896",
+   "source_number": "51",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "reactions",
+   "prompt": "为什么氢与非金属成键时不显 1− 氧化态？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "非金属的电负性大于氢。因此，负电荷更适合表示在非金属上，它把键中的电子吸引向自身的倾向更大。"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp235517504",
+   "source_number": "53",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "reactions",
+   "prompt": "在画路易斯结构时，我们了解到氢原子在共价化合物中只形成一个键。为什么？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "氢只有一个轨道可用来与其他原子成键。因此，只能形成一个双电子键。"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp52465648",
+   "source_number": "55",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "preparation",
+   "prompt": "8.5 g KH 与水反应，生成的氢气质量是多少？<br>$\\text{KH}+{\\text{H}}_{2}\\text{O}\\;\\longrightarrow \\;\\text{KOH}+{\\text{H}}_{2}$",
+   "answer": {
+    "type": "number",
+    "value": 0.43,
+    "unit": "g",
+    "tol": 0.02,
+    "part": "the mass of H<sub>2</sub>",
+    "hint": "用 KH 的摩尔质量把 KH 的质量换算为物质的量，利用方程式中 KH 与 H<sub>2</sub> 的一比一关系，再把 H<sub>2</sub> 的物质的量换算为克。",
+    "solution": "0.43 g H<sub>2</sub>",
+    "generated_by": "source"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e1",
+   "concept": "hydrogen-reactions"
+  },
+  {
+   "exercise": "e1",
+   "concept": "electronegativity"
+  },
+  {
+   "exercise": "e2",
+   "concept": "hydrogen-place-in-periodic-table"
+  },
+  {
+   "exercise": "e2",
+   "concept": "covalent-bond"
+  },
+  {
+   "exercise": "e3",
+   "concept": "hydrogen-preparation"
+  },
+  {
+   "exercise": "e3",
+   "concept": "mass-stoichiometry"
+  }
+ ],
+ "footnotes": [
+  {
+   "id": "c-hydride-water",
+   "kind": "correction",
+   "html": "书中左边漏写了水。氢化物与水反应：MH 或 MH<sub>2</sub> + H<sub>2</sub>O ⟶ MOH 或 M(OH)<sub>2</sub> + H<sub>2</sub>。"
+  }
+ ]
+}

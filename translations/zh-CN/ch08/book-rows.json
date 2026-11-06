@@ -1,0 +1,971 @@
+{
+ "types": [],
+ "symbols": [
+  {
+   "sym": "ψ",
+   "latex": "\\psi",
+   "macro": "\\kpsi"
+  },
+  {
+   "sym": "Ψ",
+   "latex": "\\Psi",
+   "macro": "\\kPsi"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "valence-bond-theory",
+   "kind": "idea",
+   "section": "8.1",
+   "name": "价键理论",
+   "terms": [
+    "价键理论"
+   ],
+   "statement": "价键理论把共价键描述为不同原子上两个半充满原子轨道的重叠，使各轨道中的单电子结合成由两个原子核共享的电子对。这对电子与两个带正电的原子核之间的相互吸引把原子维系在一起，键的强度取决于轨道重叠的程度。"
+  },
+  {
+   "id": "bond-distance-and-bond-energy",
+   "kind": "result",
+   "section": "8.1",
+   "name": "键长与键能",
+   "statement": "两个原子靠近时，体系的能量先下降，因为每个电子都受到另一个原子核的吸引；随后能量陡然上升，因为原子核之间以及电子之间的排斥作用变得比吸引作用更强。键长是能量最低时的核间距离，键能是这一能量最低值与分离原子能量之差，也就是成键时释放的能量，以及断键时所需的能量。"
+  },
+  {
+   "id": "sigma-and-pi-bonds",
+   "kind": "definition",
+   "section": "8.1",
+   "name": "σ 键与 π 键",
+   "statement": "当轨道沿核间轴头碰头重叠时形成 σ 键，例如两个 s 轨道、一个 s 轨道与一个 p 轨道，或两个相向的 p 轨道的重叠。σ 键的电子密度集中在两个原子核的连线上。π 键由两个 p 轨道肩并肩重叠形成，其电子密度位于核间轴的两侧，沿轴本身有一个节面。头碰头的重叠可以更大，所以在同样两个原子之间，π 键通常比 σ 键弱。"
+  },
+  {
+   "id": "multiple-bond-composition",
+   "kind": "result",
+   "section": "8.1",
+   "name": "多重键的组成",
+   "statement": "在任意两个原子之间，最先形成的键总是 σ 键，而且同一位置上只能有一个 σ 键。因此单键是一个 σ 键，双键是一个 σ 键和一个 π 键，三键是一个 σ 键和两个 π 键，这就是碳碳双键比单键强、但不是单键两倍的原因。"
+  },
+  {
+   "id": "count-sigma-and-pi-bonds",
+   "kind": "skill",
+   "section": "8.1",
+   "name": "统计 σ 键和 π 键的数目",
+   "statement": "根据路易斯结构统计分子中 σ 键和 π 键的数目：每条键线贡献一个 σ 键，每个双键再增加一个 π 键，每个三键再增加两个 π 键。"
+  },
+  {
+   "id": "orbital-overlap",
+   "kind": "definition",
+   "section": "8.1",
+   "name": "重叠",
+   "terms": [
+    "重叠"
+   ],
+   "statement": "重叠是指来自两个不同原子的轨道共存于空间的同一区域，从而形成共价键。"
+  },
+  {
+   "id": "sigma-bond",
+   "kind": "definition",
+   "section": "8.1",
+   "name": "σ 键",
+   "terms": [
+    "σ 键"
+   ],
+   "statement": "σ 键是由原子轨道沿核间轴重叠形成的共价键。"
+  },
+  {
+   "id": "pi-bond",
+   "kind": "definition",
+   "section": "8.1",
+   "name": "π 键",
+   "terms": [
+    "π 键"
+   ],
+   "statement": "π 键是由原子轨道肩并肩重叠形成的共价键，其电子密度位于核间轴的两侧，沿轴本身有一个节面。"
+  },
+  {
+   "id": "hybridization",
+   "kind": "idea",
+   "section": "8.2",
+   "name": "原子轨道的杂化",
+   "terms": [
+    "杂化"
+   ],
+   "statement": "杂化是描述原子形成共价化合物时原子轨道发生变化的一种模型。它把原子价轨道的波函数组合成一组新的杂化轨道，这组杂化轨道的方向与观测到的几何构型相符，正如水的 104.5° 键角所要求的那样，而未经改变的、彼此成 90° 的 2p 轨道则不符合。"
+  },
+  {
+   "id": "hybrid-orbital-properties",
+   "kind": "idea",
+   "section": "8.2",
+   "name": "杂化轨道的性质",
+   "statement": "杂化轨道只存在于成键的原子中，其形状和取向与它们所源自的原子轨道大不相同，一组杂化轨道的数目等于参与组合的原子轨道的数目。同一组中的所有轨道，形状和能量都相同，这组轨道的类型取决于原子的电子对构型，杂化轨道形成 σ 键，而未杂化的轨道形成 π 键。"
+  },
+  {
+   "id": "sp-sp2-sp3-hybrid-orbitals",
+   "kind": "idea",
+   "section": "8.2",
+   "name": "sp、sp² 和 sp³ 杂化轨道",
+   "statement": "价层 s 轨道与一个 p 轨道混合，得到两个相距 180° 的 sp 杂化轨道；与两个 p 轨道混合，得到位于同一平面内、彼此成 120° 的三个 sp² 杂化轨道，并留下一个垂直于该平面的未杂化 p 轨道；与全部三个 p 轨道混合，得到指向四面体顶点、彼此成 109.5° 的四个 sp³ 杂化轨道。每个杂化轨道容纳一个成键电子对或一个孤电子对，因此直线形的 BeCl2、平面三角形的 BH3，以及四面体形的 CH4、NH3 和 H2O，都可以这样来描述。"
+  },
+  {
+   "id": "sp3d-and-sp3d2-hybrid-orbitals",
+   "kind": "idea",
+   "section": "8.2",
+   "name": "sp³d 和 sp³d² 杂化轨道",
+   "statement": "指向三角双锥顶点的五个杂化轨道，除 s 轨道和三个 p 轨道外还需要一个 d 轨道；指向八面体顶点的六个杂化轨道则需要两个 d 轨道。只有价层亚层中含有 d 轨道的原子才可能发生这类杂化，因此第一周期和第二周期的原子都不可能。"
+  },
+  {
+   "id": "hybrid-orbital-energy-diagram",
+   "kind": "skill",
+   "section": "8.2",
+   "name": "在能级图上表示杂化",
+   "statement": "画出轨道能级图，每个轨道用一条处于相应能量的水平线表示，每个电子用一个箭头表示，把孤立原子与成键后的原子并排放置，以显示价电子在杂化轨道组中的重新分布。这样的图表明哪些杂化轨道是半充满的、可以与另一原子的电子配对，以及哪些轨道仍未杂化。"
+  },
+  {
+   "id": "assign-hybridization",
+   "kind": "skill",
+   "section": "8.2",
+   "name": "确定杂化类型",
+   "statement": "原子的杂化类型由其周围电子密度区域的数目决定。先写出路易斯结构，再数出区域的数目，其中单键、多重键、自由基和孤电子对各算一个区域。然后从表中读出对应的杂化轨道组：两个区域为 sp，三个为 sp²，四个为 sp³，五个为 sp³d，六个为 sp³d²。VSEPR 理论预测形状，而杂化轨道则解释这一形状是怎样形成的。"
+  },
+  {
+   "id": "limits-of-hybridization",
+   "kind": "idea",
+   "section": "8.2",
+   "name": "杂化的局限性",
+   "statement": "杂化是为了解释观测到的几何构型而提出的，对价电子对靠得很近的较小的中心原子效果很好。对于较大的中心原子，价电子对离原子核较远，相互排斥较弱，观测到的键角接近未杂化 p 轨道之间的键角，所以只有在需要用杂化来解释结构时，我们才使用它。"
+  },
+  {
+   "id": "hybrid-orbital",
+   "kind": "definition",
+   "section": "8.2",
+   "name": "杂化轨道",
+   "terms": [
+    "杂化轨道"
+   ],
+   "statement": "杂化轨道是由中心原子上的原子轨道组合而成的轨道。"
+  },
+  {
+   "id": "sp-hybrid-orbital",
+   "kind": "definition",
+   "section": "8.2",
+   "name": "sp 杂化轨道",
+   "terms": [
+    "sp 杂化轨道"
+   ],
+   "statement": "sp 杂化轨道是由一个 s 轨道和一个 p 轨道组合而成的、呈直线形排布的两个轨道中的一个。"
+  },
+  {
+   "id": "sp2-hybrid-orbital",
+   "kind": "definition",
+   "section": "8.2",
+   "name": "sp² 杂化轨道",
+   "terms": [
+    "sp² 杂化轨道"
+   ],
+   "statement": "sp² 杂化轨道是由一个 s 轨道和两个 p 轨道组合而成的、呈平面三角形排布的三个轨道中的一个。"
+  },
+  {
+   "id": "sp3-hybrid-orbital",
+   "kind": "definition",
+   "section": "8.2",
+   "name": "sp³ 杂化轨道",
+   "terms": [
+    "sp³ 杂化轨道"
+   ],
+   "statement": "sp³ 杂化轨道是由一个 s 轨道和三个 p 轨道组合而成的、呈四面体形排布的四个轨道中的一个。"
+  },
+  {
+   "id": "sp3d-hybrid-orbital",
+   "kind": "definition",
+   "section": "8.2",
+   "name": "sp³d 杂化轨道",
+   "terms": [
+    "sp³d 杂化轨道"
+   ],
+   "statement": "sp³d 杂化轨道是由一个 s 轨道、三个 p 轨道和一个 d 轨道组合而成的、呈三角双锥形排布的五个轨道中的一个。"
+  },
+  {
+   "id": "sp3d2-hybrid-orbital",
+   "kind": "definition",
+   "section": "8.2",
+   "name": "sp³d² 杂化轨道",
+   "terms": [
+    "sp³d² 杂化轨道"
+   ],
+   "statement": "sp³d² 杂化轨道是由一个 s 轨道、三个 p 轨道和两个 d 轨道组合而成的、呈八面体形排布的六个轨道中的一个。"
+  },
+  {
+   "id": "pi-bonds-from-unhybridized-orbitals",
+   "kind": "idea",
+   "section": "8.3",
+   "name": "由未杂化轨道形成的多重键",
+   "statement": "在含有双键或三键的分子中，每个原子的杂化轨道形成 σ 骨架，剩下的未杂化 p 轨道则肩并肩重叠形成 π 键。乙烯的每个碳原子用三个 sp² 杂化轨道形成 σ 键，用一个垂直于分子平面的 p 轨道形成 π 键；乙炔的每个碳原子用两个 sp 杂化轨道形成 σ 键，用两个相互垂直的 p 轨道形成两个 π 键。"
+  },
+  {
+   "id": "restricted-rotation-about-pi-bonds",
+   "kind": "result",
+   "section": "8.3",
+   "name": "绕双键旋转受限",
+   "statement": "绕单键的旋转很容易发生，因为 σ 键的头碰头重叠关于核间轴对称，原子转动时不会改变。绕双键旋转则会使两个 p 轨道扭得不在一条直线上，破坏它们肩并肩的重叠，实质上等于断开 π 键，这就是乙烯的六个原子处于同一平面的原因。"
+  },
+  {
+   "id": "resonance-and-delocalization",
+   "kind": "result",
+   "section": "8.3",
+   "name": "共振与杂化",
+   "statement": "杂化只涉及 σ 键、孤电子对和单个未成对电子，而共振式只是 π 键的排布不同，π 键用的是未杂化的轨道。因此共振不会改变我们所指定的杂化类型，用任何一个共振式得到的结果都相同。π 电子本身并不定域在某一个共振式中，而是离域于整个分子，价键理论不容易描述这一点。"
+  },
+  {
+   "id": "paramagnetism-and-diamagnetism",
+   "kind": "definition",
+   "section": "8.4",
+   "name": "顺磁性与抗磁性",
+   "statement": "分子中含有未成对电子的物质是顺磁性的，会被吸入磁场；电子全部成对的物质是抗磁性的，受到微弱的排斥；两者都不是永久磁体。液氧会聚集在磁铁的两极之间，表明 O2 分子有两个未成对电子，尽管它的路易斯结构使每个电子都成了对。"
+  },
+  {
+   "id": "molecular-orbital-theory",
+   "kind": "idea",
+   "section": "8.4",
+   "name": "分子轨道理论",
+   "terms": [
+    "分子轨道理论"
+   ],
+   "statement": "分子轨道理论用分子轨道来描述分子中的电子，分子轨道由原子轨道线性组合而成，扩展到整个分子，而不是属于某一个原子。与原子轨道一样，分子轨道的能量是量子化的，最多容纳两个自旋相反的电子。该理论能解释价键理论无法解释的现象，其中包括氧的顺磁性，以及用多个共振式描述的成键情况。"
+  },
+  {
+   "id": "bonding-and-antibonding-orbitals",
+   "kind": "idea",
+   "section": "8.4",
+   "name": "成键分子轨道与反键分子轨道",
+   "statement": "两个原子的波函数同相组合是相长干涉，得到成键轨道，其能量低于原子轨道，电子密度位于两个原子核之间。两者反相组合是相消干涉，得到反键轨道，其能量较高，两个原子核之间有一个节点。两个原子轨道总是得到两个分子轨道，每种各一个，反键轨道用星号标记。"
+  },
+  {
+   "id": "sigma-and-pi-molecular-orbitals",
+   "kind": "idea",
+   "section": "8.4",
+   "name": "σ 分子轨道与 π 分子轨道",
+   "statement": "沿核间轴的分子轨道是 σ 轨道，由 s 轨道或头碰头重叠的 p 轨道形成；由肩并肩的 p 轨道形成、电子密度位于轴两侧的是 π 轨道。设原子位于 x 轴上，两个原子的六个 p 轨道给出 σpx 和 σpx*，以及由 py 和 pz 轨道形成的两对简并的 π 和 π* 轨道。"
+  },
+  {
+   "id": "molecular-orbital-diagram",
+   "kind": "skill",
+   "section": "8.4",
+   "name": "填充分子轨道图",
+   "statement": "分子轨道图把两个原子的原子轨道放在两侧，把它们形成的分子轨道放在中间，每个轨道都用一条处于相应能量的线表示。电子的填充方式与在原子中相同：按构造原理先填能量较低的轨道，按洪特规则先分占简并轨道、再配对，每个轨道容纳两个自旋相反的电子。填好的图给出分子的电子构型，写法是带上标，并把简并轨道放在圆括号内。"
+  },
+  {
+   "id": "bond-order",
+   "kind": "definition",
+   "section": "8.4",
+   "name": "键级",
+   "terms": [
+    "键级"
+   ],
+   "statement": "在分子轨道理论中，键级等于成键电子数减去反键电子数，再除以二，因为一个键由两个电子构成。它通常与路易斯结构中键的数目一致，是判断两个给定原子之间键的强度的一个依据，键级为零表示不会形成稳定的键。",
+   "forms": [
+    {
+     "id": "eq-bond-order",
+     "latex": "\\text{bond order}=\\frac{(\\text{number of bonding electrons})-(\\text{number of antibonding electrons})}{2}",
+     "anchor": "8.4-bond-order"
+    },
+    {
+     "id": "eq-bond-order-h2",
+     "latex": "\\text{bond order in H}_2=\\frac{(2-0)}{2}=1",
+     "anchor": "8.4-diatomic"
+    },
+    {
+     "id": "eq-bond-order-he2",
+     "latex": "\\text{bond order in He}_2=\\frac{(2-2)}{2}=0",
+     "anchor": "8.4-diatomic"
+    },
+    {
+     "id": "eq-bond-order-o2",
+     "latex": "\\text{O}_2=\\frac{(8-4)}{2}=2",
+     "anchor": "8.4-ex-o2"
+    }
+   ]
+  },
+  {
+   "id": "s-p-mixing",
+   "kind": "idea",
+   "section": "8.4",
+   "name": "s-p 混合",
+   "terms": [
+    "s-p 混合"
+   ],
+   "statement": "当原子的 2s 和 2p 轨道能量接近时，σs 和 σp 的波函数发生组合，使 σs 轨道降低，使 σp 轨道升高到 πp 对之上。从锂到氮，这一能隙很小，所以它们的双原子分子的 σp 轨道高于 π 轨道；对氧、氟和氖，能隙较大，它们的轨道图保持预期的顺序。s-p 混合不产生新的轨道，只是改变现有轨道的能量。"
+  },
+  {
+   "id": "diatomic-molecule-configurations",
+   "kind": "skill",
+   "section": "8.4",
+   "name": "预测双原子分子的电子构型",
+   "statement": "对于第一周期或第二周期元素形成的同核双原子分子或离子，选择有 s-p 混合或没有 s-p 混合的轨道图，按电荷增减电子，再进行填充。由此读出电子构型、键级和未成对电子的数目。结果可以预测该物种是否稳定、是否具有顺磁性，也解释了 O2 中路易斯结构所遗漏的两个未成对电子。"
+  },
+  {
+   "id": "paramagnetism",
+   "kind": "definition",
+   "section": "8.4",
+   "name": "顺磁性",
+   "terms": [
+    "顺磁性"
+   ],
+   "statement": "顺磁性是指本身没有磁性的材料被磁场吸引的现象。当材料中含有未成对电子时，就会出现这种现象。"
+  },
+  {
+   "id": "diamagnetism",
+   "kind": "definition",
+   "section": "8.4",
+   "name": "抗磁性",
+   "terms": [
+    "抗磁性"
+   ],
+   "statement": "抗磁性是指本身没有磁性的材料被磁场排斥的现象。当材料中的所有电子都成对时，就会出现这种现象。"
+  },
+  {
+   "id": "molecular-orbital",
+   "kind": "definition",
+   "section": "8.4",
+   "name": "分子轨道",
+   "terms": [
+    "分子轨道"
+   ],
+   "statement": "分子轨道是分子中电子出现概率较高的一个空间区域。它扩展到整个分子，最多容纳两个自旋相反的电子。"
+  },
+  {
+   "id": "linear-combination-of-atomic-orbitals",
+   "kind": "definition",
+   "section": "8.4",
+   "name": "原子轨道线性组合",
+   "terms": [
+    "原子轨道线性组合"
+   ],
+   "statement": "原子轨道线性组合是把原子轨道的波函数相加或相减，以此产生分子轨道的方法。"
+  },
+  {
+   "id": "homonuclear-diatomic-molecule",
+   "kind": "definition",
+   "section": "8.4",
+   "name": "同核双原子分子",
+   "terms": [
+    "同核双原子分子"
+   ],
+   "statement": "同核双原子分子是由两个相同的原子构成的分子。"
+  },
+  {
+   "id": "bonding-orbital",
+   "kind": "definition",
+   "section": "8.4",
+   "name": "成键轨道",
+   "terms": [
+    "成键轨道"
+   ],
+   "statement": "成键轨道是位于两个原子核之间的分子轨道。成键轨道中的电子使分子稳定。"
+  },
+  {
+   "id": "antibonding-orbital",
+   "kind": "definition",
+   "section": "8.4",
+   "name": "反键轨道",
+   "terms": [
+    "反键轨道"
+   ],
+   "statement": "反键轨道是位于两个原子核之间区域以外的分子轨道，两个原子核之间有一个节点。反键轨道中的电子使分子不稳定。"
+  },
+  {
+   "id": "sigma-bonding-orbital",
+   "kind": "definition",
+   "section": "8.4",
+   "name": "σ 成键轨道",
+   "terms": [
+    "σ 成键轨道"
+   ],
+   "statement": "σ 成键轨道是电子密度位于键轴上的分子轨道。"
+  },
+  {
+   "id": "sigma-antibonding-orbital",
+   "kind": "definition",
+   "section": "8.4",
+   "name": "σ* 反键轨道",
+   "terms": [
+    "σ* 反键轨道"
+   ],
+   "statement": "σ* 轨道是由原子轨道沿键轴反相重叠形成的反键分子轨道，两个原子核之间有一个节点。"
+  },
+  {
+   "id": "pi-bonding-orbital",
+   "kind": "definition",
+   "section": "8.4",
+   "name": "π 成键轨道",
+   "terms": [
+    "π 成键轨道"
+   ],
+   "statement": "π 成键轨道是由原子轨道肩并肩重叠形成的分子轨道，其电子密度位于核间轴的两侧。"
+  },
+  {
+   "id": "pi-antibonding-orbital",
+   "kind": "definition",
+   "section": "8.4",
+   "name": "π* 反键轨道",
+   "terms": [
+    "π* 反键轨道"
+   ],
+   "statement": "π* 轨道是由原子轨道肩并肩反相重叠形成的反键分子轨道，其电子密度位于核间轴的两侧，两个原子核之间有一个节点。"
+  },
+  {
+   "id": "molecular-orbital-energy-diagram",
+   "kind": "definition",
+   "section": "8.4",
+   "name": "分子轨道图",
+   "terms": [
+    "分子轨道图"
+   ],
+   "statement": "分子轨道图是分子轨道相对能级的图示，画在形成它们的原子轨道之间。"
+  }
+ ],
+ "concept_prereqs": [
+  {
+   "concept": "bond-distance-and-bond-energy",
+   "prereq": "valence-bond-theory"
+  },
+  {
+   "concept": "bond-distance-and-bond-energy",
+   "prereq": "bond-angle-and-bond-distance"
+  },
+  {
+   "concept": "sigma-and-pi-bonds",
+   "prereq": "valence-bond-theory"
+  },
+  {
+   "concept": "multiple-bond-composition",
+   "prereq": "sigma-and-pi-bonds"
+  },
+  {
+   "concept": "multiple-bond-composition",
+   "prereq": "lewis-structure"
+  },
+  {
+   "concept": "count-sigma-and-pi-bonds",
+   "prereq": "multiple-bond-composition"
+  },
+  {
+   "concept": "count-sigma-and-pi-bonds",
+   "prereq": "lewis-structure"
+  },
+  {
+   "concept": "hybridization",
+   "prereq": "valence-bond-theory"
+  },
+  {
+   "concept": "hybridization",
+   "prereq": "bond-angle-and-bond-distance"
+  },
+  {
+   "concept": "hybridization",
+   "prereq": "vsepr-theory"
+  },
+  {
+   "concept": "hybrid-orbital-properties",
+   "prereq": "hybridization"
+  },
+  {
+   "concept": "hybrid-orbital-properties",
+   "prereq": "sigma-and-pi-bonds"
+  },
+  {
+   "concept": "sp-sp2-sp3-hybrid-orbitals",
+   "prereq": "hybrid-orbital-properties"
+  },
+  {
+   "concept": "sp-sp2-sp3-hybrid-orbitals",
+   "prereq": "electron-pair-geometry"
+  },
+  {
+   "concept": "sp3d-and-sp3d2-hybrid-orbitals",
+   "prereq": "sp-sp2-sp3-hybrid-orbitals"
+  },
+  {
+   "concept": "sp3d-and-sp3d2-hybrid-orbitals",
+   "prereq": "axial-and-equatorial-positions"
+  },
+  {
+   "concept": "hybrid-orbital-energy-diagram",
+   "prereq": "sp-sp2-sp3-hybrid-orbitals"
+  },
+  {
+   "concept": "assign-hybridization",
+   "prereq": "sp-sp2-sp3-hybrid-orbitals"
+  },
+  {
+   "concept": "assign-hybridization",
+   "prereq": "sp3d-and-sp3d2-hybrid-orbitals"
+  },
+  {
+   "concept": "assign-hybridization",
+   "prereq": "predict-molecular-structure"
+  },
+  {
+   "concept": "assign-hybridization",
+   "prereq": "lewis-structure"
+  },
+  {
+   "concept": "limits-of-hybridization",
+   "prereq": "hybridization"
+  },
+  {
+   "concept": "limits-of-hybridization",
+   "prereq": "electron-pair-repulsion-order"
+  },
+  {
+   "concept": "pi-bonds-from-unhybridized-orbitals",
+   "prereq": "sp-sp2-sp3-hybrid-orbitals"
+  },
+  {
+   "concept": "pi-bonds-from-unhybridized-orbitals",
+   "prereq": "multiple-bond-composition"
+  },
+  {
+   "concept": "restricted-rotation-about-pi-bonds",
+   "prereq": "pi-bonds-from-unhybridized-orbitals"
+  },
+  {
+   "concept": "resonance-and-delocalization",
+   "prereq": "pi-bonds-from-unhybridized-orbitals"
+  },
+  {
+   "concept": "resonance-and-delocalization",
+   "prereq": "assign-hybridization"
+  },
+  {
+   "concept": "molecular-orbital-theory",
+   "prereq": "paramagnetism-and-diamagnetism"
+  },
+  {
+   "concept": "molecular-orbital-theory",
+   "prereq": "valence-bond-theory"
+  },
+  {
+   "concept": "molecular-orbital-theory",
+   "prereq": "resonance-and-delocalization"
+  },
+  {
+   "concept": "bonding-and-antibonding-orbitals",
+   "prereq": "molecular-orbital-theory"
+  },
+  {
+   "concept": "sigma-and-pi-molecular-orbitals",
+   "prereq": "bonding-and-antibonding-orbitals"
+  },
+  {
+   "concept": "sigma-and-pi-molecular-orbitals",
+   "prereq": "sigma-and-pi-bonds"
+  },
+  {
+   "concept": "molecular-orbital-diagram",
+   "prereq": "sigma-and-pi-molecular-orbitals"
+  },
+  {
+   "concept": "bond-order",
+   "prereq": "molecular-orbital-diagram"
+  },
+  {
+   "concept": "bond-order",
+   "prereq": "multiple-bond-composition"
+  },
+  {
+   "concept": "bond-order",
+   "prereq": "bond-distance-and-bond-energy"
+  },
+  {
+   "concept": "s-p-mixing",
+   "prereq": "molecular-orbital-diagram"
+  },
+  {
+   "concept": "diatomic-molecule-configurations",
+   "prereq": "s-p-mixing"
+  },
+  {
+   "concept": "diatomic-molecule-configurations",
+   "prereq": "bond-order"
+  },
+  {
+   "concept": "diatomic-molecule-configurations",
+   "prereq": "paramagnetism-and-diamagnetism"
+  },
+  {
+   "concept": "valence-bond-theory",
+   "prereq": "angular-momentum-quantum-number"
+  },
+  {
+   "concept": "molecular-orbital-theory",
+   "prereq": "wavefunction-probability"
+  },
+  {
+   "concept": "hybridization",
+   "prereq": "wavefunction-probability"
+  },
+  {
+   "concept": "hybridization",
+   "prereq": "writing-electron-configurations"
+  },
+  {
+   "concept": "hybrid-orbital-energy-diagram",
+   "prereq": "hunds-rule"
+  },
+  {
+   "concept": "hybrid-orbital-energy-diagram",
+   "prereq": "aufbau-principle"
+  },
+  {
+   "concept": "molecular-orbital-diagram",
+   "prereq": "writing-electron-configurations"
+  },
+  {
+   "concept": "molecular-orbital-diagram",
+   "prereq": "aufbau-principle"
+  },
+  {
+   "concept": "molecular-orbital-diagram",
+   "prereq": "hunds-rule"
+  },
+  {
+   "concept": "paramagnetism-and-diamagnetism",
+   "prereq": "writing-electron-configurations"
+  },
+  {
+   "concept": "bond-distance-and-bond-energy",
+   "prereq": "bond-energy"
+  },
+  {
+   "concept": "bond-order",
+   "prereq": "bond-strength-and-length"
+  },
+  {
+   "concept": "resonance-and-delocalization",
+   "prereq": "resonance"
+  },
+  {
+   "concept": "orbital-overlap",
+   "prereq": "atomic-orbital"
+  },
+  {
+   "concept": "orbital-overlap",
+   "prereq": "covalent-bond"
+  },
+  {
+   "concept": "sigma-bond",
+   "prereq": "orbital-overlap"
+  },
+  {
+   "concept": "pi-bond",
+   "prereq": "orbital-overlap"
+  },
+  {
+   "concept": "pi-bond",
+   "prereq": "p-orbital"
+  },
+  {
+   "concept": "pi-bond",
+   "prereq": "node"
+  },
+  {
+   "concept": "hybrid-orbital",
+   "prereq": "hybridization"
+  },
+  {
+   "concept": "hybrid-orbital",
+   "prereq": "atomic-orbital"
+  },
+  {
+   "concept": "sp-hybrid-orbital",
+   "prereq": "hybrid-orbital"
+  },
+  {
+   "concept": "sp-hybrid-orbital",
+   "prereq": "s-orbital"
+  },
+  {
+   "concept": "sp-hybrid-orbital",
+   "prereq": "p-orbital"
+  },
+  {
+   "concept": "sp-hybrid-orbital",
+   "prereq": "linear-geometry"
+  },
+  {
+   "concept": "sp2-hybrid-orbital",
+   "prereq": "hybrid-orbital"
+  },
+  {
+   "concept": "sp2-hybrid-orbital",
+   "prereq": "s-orbital"
+  },
+  {
+   "concept": "sp2-hybrid-orbital",
+   "prereq": "p-orbital"
+  },
+  {
+   "concept": "sp2-hybrid-orbital",
+   "prereq": "trigonal-planar-geometry"
+  },
+  {
+   "concept": "sp3-hybrid-orbital",
+   "prereq": "hybrid-orbital"
+  },
+  {
+   "concept": "sp3-hybrid-orbital",
+   "prereq": "s-orbital"
+  },
+  {
+   "concept": "sp3-hybrid-orbital",
+   "prereq": "p-orbital"
+  },
+  {
+   "concept": "sp3-hybrid-orbital",
+   "prereq": "tetrahedral-geometry"
+  },
+  {
+   "concept": "sp3d-hybrid-orbital",
+   "prereq": "hybrid-orbital"
+  },
+  {
+   "concept": "sp3d-hybrid-orbital",
+   "prereq": "s-orbital"
+  },
+  {
+   "concept": "sp3d-hybrid-orbital",
+   "prereq": "p-orbital"
+  },
+  {
+   "concept": "sp3d-hybrid-orbital",
+   "prereq": "d-orbital"
+  },
+  {
+   "concept": "sp3d-hybrid-orbital",
+   "prereq": "trigonal-bipyramidal-geometry"
+  },
+  {
+   "concept": "sp3d2-hybrid-orbital",
+   "prereq": "hybrid-orbital"
+  },
+  {
+   "concept": "sp3d2-hybrid-orbital",
+   "prereq": "s-orbital"
+  },
+  {
+   "concept": "sp3d2-hybrid-orbital",
+   "prereq": "p-orbital"
+  },
+  {
+   "concept": "sp3d2-hybrid-orbital",
+   "prereq": "d-orbital"
+  },
+  {
+   "concept": "sp3d2-hybrid-orbital",
+   "prereq": "octahedral-geometry"
+  },
+  {
+   "concept": "paramagnetism",
+   "prereq": "spin-quantum-number"
+  },
+  {
+   "concept": "diamagnetism",
+   "prereq": "spin-quantum-number"
+  },
+  {
+   "concept": "molecular-orbital",
+   "prereq": "atomic-orbital"
+  },
+  {
+   "concept": "molecular-orbital",
+   "prereq": "electron-density"
+  },
+  {
+   "concept": "linear-combination-of-atomic-orbitals",
+   "prereq": "wavefunction"
+  },
+  {
+   "concept": "linear-combination-of-atomic-orbitals",
+   "prereq": "atomic-orbital"
+  },
+  {
+   "concept": "homonuclear-diatomic-molecule",
+   "prereq": "atoms-and-molecules"
+  },
+  {
+   "concept": "bonding-orbital",
+   "prereq": "molecular-orbital"
+  },
+  {
+   "concept": "antibonding-orbital",
+   "prereq": "molecular-orbital"
+  },
+  {
+   "concept": "antibonding-orbital",
+   "prereq": "node"
+  },
+  {
+   "concept": "sigma-bonding-orbital",
+   "prereq": "bonding-orbital"
+  },
+  {
+   "concept": "sigma-antibonding-orbital",
+   "prereq": "antibonding-orbital"
+  },
+  {
+   "concept": "pi-bonding-orbital",
+   "prereq": "bonding-orbital"
+  },
+  {
+   "concept": "pi-bonding-orbital",
+   "prereq": "p-orbital"
+  },
+  {
+   "concept": "pi-antibonding-orbital",
+   "prereq": "antibonding-orbital"
+  },
+  {
+   "concept": "pi-antibonding-orbital",
+   "prereq": "p-orbital"
+  },
+  {
+   "concept": "molecular-orbital-energy-diagram",
+   "prereq": "molecular-orbital"
+  },
+  {
+   "concept": "molecular-orbital-energy-diagram",
+   "prereq": "atomic-orbital"
+  },
+  {
+   "concept": "valence-bond-theory",
+   "prereq": "orbital-overlap"
+  },
+  {
+   "concept": "sigma-and-pi-bonds",
+   "prereq": "sigma-bond"
+  },
+  {
+   "concept": "sigma-and-pi-bonds",
+   "prereq": "pi-bond"
+  },
+  {
+   "concept": "multiple-bond-composition",
+   "prereq": "sigma-bond"
+  },
+  {
+   "concept": "multiple-bond-composition",
+   "prereq": "pi-bond"
+  },
+  {
+   "concept": "count-sigma-and-pi-bonds",
+   "prereq": "sigma-bond"
+  },
+  {
+   "concept": "count-sigma-and-pi-bonds",
+   "prereq": "pi-bond"
+  },
+  {
+   "concept": "sp-sp2-sp3-hybrid-orbitals",
+   "prereq": "sp-hybrid-orbital"
+  },
+  {
+   "concept": "sp-sp2-sp3-hybrid-orbitals",
+   "prereq": "sp2-hybrid-orbital"
+  },
+  {
+   "concept": "sp-sp2-sp3-hybrid-orbitals",
+   "prereq": "sp3-hybrid-orbital"
+  },
+  {
+   "concept": "sp3d-and-sp3d2-hybrid-orbitals",
+   "prereq": "sp3d-hybrid-orbital"
+  },
+  {
+   "concept": "sp3d-and-sp3d2-hybrid-orbitals",
+   "prereq": "sp3d2-hybrid-orbital"
+  },
+  {
+   "concept": "assign-hybridization",
+   "prereq": "hybrid-orbital"
+  },
+  {
+   "concept": "hybrid-orbital-properties",
+   "prereq": "hybrid-orbital"
+  },
+  {
+   "concept": "pi-bonds-from-unhybridized-orbitals",
+   "prereq": "pi-bond"
+  },
+  {
+   "concept": "pi-bonds-from-unhybridized-orbitals",
+   "prereq": "hybrid-orbital"
+  },
+  {
+   "concept": "restricted-rotation-about-pi-bonds",
+   "prereq": "pi-bond"
+  },
+  {
+   "concept": "paramagnetism-and-diamagnetism",
+   "prereq": "paramagnetism"
+  },
+  {
+   "concept": "paramagnetism-and-diamagnetism",
+   "prereq": "diamagnetism"
+  },
+  {
+   "concept": "molecular-orbital-theory",
+   "prereq": "molecular-orbital"
+  },
+  {
+   "concept": "molecular-orbital-theory",
+   "prereq": "linear-combination-of-atomic-orbitals"
+  },
+  {
+   "concept": "bonding-and-antibonding-orbitals",
+   "prereq": "bonding-orbital"
+  },
+  {
+   "concept": "bonding-and-antibonding-orbitals",
+   "prereq": "antibonding-orbital"
+  },
+  {
+   "concept": "sigma-and-pi-molecular-orbitals",
+   "prereq": "sigma-bonding-orbital"
+  },
+  {
+   "concept": "sigma-and-pi-molecular-orbitals",
+   "prereq": "sigma-antibonding-orbital"
+  },
+  {
+   "concept": "sigma-and-pi-molecular-orbitals",
+   "prereq": "pi-bonding-orbital"
+  },
+  {
+   "concept": "sigma-and-pi-molecular-orbitals",
+   "prereq": "pi-antibonding-orbital"
+  },
+  {
+   "concept": "molecular-orbital-diagram",
+   "prereq": "molecular-orbital-energy-diagram"
+  },
+  {
+   "concept": "bond-order",
+   "prereq": "bonding-orbital"
+  },
+  {
+   "concept": "bond-order",
+   "prereq": "antibonding-orbital"
+  },
+  {
+   "concept": "diatomic-molecule-configurations",
+   "prereq": "homonuclear-diatomic-molecule"
+  },
+  {
+   "concept": "diatomic-molecule-configurations",
+   "prereq": "paramagnetism"
+  },
+  {
+   "concept": "diatomic-molecule-configurations",
+   "prereq": "diamagnetism"
+  }
+ ]
+}

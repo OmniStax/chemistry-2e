@@ -1,0 +1,379 @@
+{
+  "ch01": {
+    "symbols": [
+      "T_C",
+      "T_F",
+      "T_K",
+      "d",
+      "v_iron"
+    ],
+    "types": [
+      "density",
+      "length"
+    ]
+  },
+  "ch07": {
+    "symbols": [
+      "\u03bc",
+      "Q_partial",
+      "r_bond",
+      "\u0394H\u00b0",
+      "\u0394H_f\u00b0",
+      "\u0394H_s\u00b0",
+      "\u0394H_lattice",
+      "D_bond",
+      "IE",
+      "EA",
+      "EN",
+      "\u0394EN",
+      "Z_plus",
+      "Z_minus",
+      "R_o",
+      "C_lattice"
+    ],
+    "types": [
+      "dipole-moment"
+    ]
+  },
+  "ch09": {
+    "symbols": [
+      "R",
+      "P_1",
+      "P_2",
+      "V_1",
+      "V_2",
+      "T_1",
+      "T_2",
+      "n_1",
+      "n_2",
+      "F_force",
+      "A_area",
+      "p_hydro",
+      "h_col",
+      "\u03c1",
+      "g_grav",
+      "P_total",
+      "P_A",
+      "P_B",
+      "P_C",
+      "X_A",
+      "n_A",
+      "n_total",
+      "MM_A",
+      "MM_B",
+      "KE",
+      "KE_avg",
+      "u",
+      "u_rms",
+      "Z_comp",
+      "V_m",
+      "a_vdw",
+      "b_vdw",
+      "P_gas",
+      "P_atm"
+    ],
+    "types": [
+      "force",
+      "acceleration",
+      "area"
+    ]
+  },
+  "ch06": {
+    "symbols": [
+      "k",
+      "E_n",
+      "E_i",
+      "E_f",
+      "\u0394E",
+      "n_quantum",
+      "r",
+      "a_0",
+      "h",
+      "c",
+      "R_inf",
+      "\u03bb_max",
+      "\u0394t",
+      "v",
+      "p_momentum",
+      "\u0394x",
+      "\u0394p_x",
+      "hbar",
+      "n_i",
+      "n_f",
+      "l_quantum",
+      "m_l",
+      "m_s",
+      "Z_eff"
+    ],
+    "types": [
+      "momentum",
+      "wavefunction",
+      "velocity"
+    ]
+  },
+  "ch03": {
+    "symbols": [
+      "N_A",
+      "n_fu",
+      "L",
+      "L_1",
+      "L_2",
+      "M_1",
+      "M_2",
+      "C_1",
+      "C_2",
+      "C_conc"
+    ],
+    "types": []
+  },
+  "ch08": {
+    "symbols": [
+      "\u03c8",
+      "\u03a8"
+    ],
+    "types": []
+  },
+  "ch04": {
+    "symbols": [],
+    "types": []
+  },
+  "ch05": {
+    "symbols": [
+      "\u0394T",
+      "T_initial",
+      "T_final",
+      "C_heat",
+      "c_spec",
+      "U",
+      "H",
+      "q_p",
+      "\u0394H_c\u00b0",
+      "\u0394V",
+      "n_coef",
+      "C_small_pan",
+      "C_large_pan",
+      "q_M",
+      "q_W",
+      "q_solution"
+    ],
+    "types": [
+      "heat-capacity"
+    ]
+  },
+  "ch02": {
+    "symbols": [],
+    "types": []
+  },
+  "ch10": {
+    "symbols": [
+      "h_cap",
+      "T_surf",
+      "\u03b8_contact",
+      "r_tube",
+      "\u0394H_vap",
+      "\u0394H_fus",
+      "\u0394H_sub",
+      "A_cc",
+      "a_cell",
+      "r_atom",
+      "n_order",
+      "d_plane",
+      "\u03b8_bragg",
+      "l_edge",
+      "d_diag"
+    ],
+    "types": [
+      "angle",
+      "surface-tension"
+    ]
+  },
+  "ch11": {
+    "symbols": [
+      "C_g",
+      "k_H",
+      "P_g",
+      "m_molal",
+      "P_A*",
+      "P_i",
+      "P_i*",
+      "X_i",
+      "P_solution",
+      "P_solvent*",
+      "X_solvent",
+      "\u0394P_vp",
+      "\u0394T_b",
+      "K_b",
+      "\u0394T_f",
+      "K_f",
+      "\u03a0",
+      "i_vh"
+    ],
+    "types": [
+      "colligative-constant"
+    ]
+  },
+  "ch12": {
+    "symbols": [
+      "[A]",
+      "[A]_0",
+      "[A]_t",
+      "[B]",
+      "\u0394[A]",
+      "\u0394[B]",
+      "E_a",
+      "A_freq",
+      "m_rxorder",
+      "n_rxorder",
+      "k_1",
+      "k_2",
+      "k_m1"
+    ],
+    "types": [
+      "rate-constant"
+    ]
+  },
+  "ch13": {
+    "symbols": [
+      "K",
+      "Q_c",
+      "rate_f",
+      "rate_r",
+      "[C]",
+      "[D]",
+      "P_D",
+      "k_f",
+      "k_r",
+      "Q_conc",
+      "Q_P",
+      "K_c",
+      "K_P",
+      "K_c_prime",
+      "K_c1",
+      "K_c2",
+      "\u0394n_gas",
+      "x_ice"
+    ],
+    "types": [
+      "equilibrium-constant"
+    ]
+  },
+  "ch14": {
+    "symbols": [
+      "[H3O+]",
+      "[OH-]",
+      "[HA]",
+      "[A-]",
+      "[HB+]",
+      "[HA]_0",
+      "[H3O+]_eq",
+      "K_w",
+      "K_a",
+      "K_b_ion",
+      "pK_w",
+      "pK_a",
+      "pK_b",
+      "K_a1",
+      "K_a2",
+      "K_a3",
+      "K_b1",
+      "K_b2"
+    ],
+    "types": []
+  },
+  "ch15": {
+    "symbols": [
+      "K_sp",
+      "Q_sp",
+      "K_f_form",
+      "K_d",
+      "[M^m+]",
+      "[X^n-]",
+      "p_stoich",
+      "q_stoich"
+    ],
+    "types": []
+  },
+  "ch16": {
+    "symbols": [
+      "S\u00b0",
+      "\u0394S\u00b0",
+      "\u0394S_univ",
+      "\u0394S_sys",
+      "\u0394S_surr",
+      "S_f",
+      "S_i",
+      "S_solid",
+      "S_liquid",
+      "S_gas",
+      "G",
+      "\u0394G\u00b0",
+      "\u0394G_f\u00b0",
+      "\u0394G_1\u00b0",
+      "\u0394G_2\u00b0",
+      "q_rev",
+      "q_surr",
+      "q_sys",
+      "q_X",
+      "q_Y",
+      "w_max",
+      "T_X",
+      "T_Y",
+      "T_sys",
+      "T_surr",
+      "W",
+      "W_f",
+      "W_i",
+      "k_B",
+      "N_particles",
+      "n_boxes",
+      "\u03bd_coef"
+    ],
+    "types": []
+  },
+  "ch17": {
+    "symbols": [
+      "E_potential",
+      "E\u00b0_cell",
+      "E_cathode",
+      "E_anode",
+      "E\u00b0_cathode",
+      "E\u00b0_anode",
+      "E_X",
+      "E\u00b0_X",
+      "E_SHE",
+      "F_Faraday",
+      "I",
+      "w_elec"
+    ],
+    "types": [
+      "current"
+    ]
+  },
+  "ch18": {
+    "symbols": [],
+    "types": []
+  },
+  "ch19": {
+    "symbols": [
+      "\u0394_oct",
+      "\u0394_tet",
+      "P_pair"
+    ],
+    "types": []
+  },
+  "ch20": {
+    "symbols": [],
+    "types": []
+  },
+  "ch21": {
+    "symbols": [
+      "\u03bb_decay",
+      "N_0",
+      "N_t",
+      "activity"
+    ],
+    "types": [
+      "dose"
+    ]
+  }
+}

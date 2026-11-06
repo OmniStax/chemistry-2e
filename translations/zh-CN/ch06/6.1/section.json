@@ -1,0 +1,892 @@
+{
+  "id": "6.1",
+  "module": "m68729",
+  "chapter": "6",
+  "title": "电磁能",
+  "short": "电磁能",
+  "lead": "光表现为波，具有<span data-concept=\"wavelength\">波长</span>和<span data-concept=\"frequency\">频率</span>，同时也表现为一束<span data-concept=\"photon\">光子</span>流，每个光子都携带<span data-concept=\"energy-and-work\">能量</span>。由波、驻波和电磁波谱引出了经典物理学无法解释的三个观察结果：黑体辐射、光电效应和元素的线状光谱。",
+  "objectives": [
+    "解释波的基本行为，包括行波和驻波",
+    "描述光的波动性",
+    "使用适当的方程计算光波的相关性质，如频率、波长和能量",
+    "区分线状发射光谱和连续发射光谱",
+    "描述光的粒子性"
+  ],
+  "summary_html": "<p>光和其他形式的电磁辐射在真空中以恒定的<span data-concept=\"speed\">速率</span> <em>c</em> 传播，<em>c</em> 为 2.998 $\\times$ 10<sup>8</sup> m s<sup>−1</sup>。这种辐射表现出波动行为，可以用<span data-concept=\"frequency\">频率</span> <em>ν</em> 和<span data-concept=\"wavelength\">波长</span> <em>λ</em> 来表征，满足 <em>c</em> = <em>λν</em>。光是行波的一个例子。其他重要的波动现象还包括驻波、周期性振荡和振动。驻波表现出量子化，因为它们的<span data-concept=\"wavelength\">波长</span>只限于某些特征<span data-concept=\"length\">长度</span>的分立整数倍。电磁辐射通过两条间距很小、宽度与<span data-concept=\"wavelength\">波长</span>大致相近的狭窄狭缝时，会显示出干涉图样，这是波的相长干涉和相消干涉的结果。电磁辐射还表现出称为光子的粒子的性质。光子的<span data-concept=\"energy-and-work\">能量</span>与辐射的<span data-concept=\"frequency\">频率</span>（或者说<span data-concept=\"wavelength\">波长</span>）的关系为 <em>E</em> = <em>hν</em>（或 $\\kE=\\frac{hc}{\\klam}$），其中 <em>h</em> 是普朗克常量。光既表现出类似波的行为，又表现出类似粒子的行为，这被称为波粒二象性。所有形式的电磁辐射都具有这些性质，不过包括 X 射线、可见光、微波和无线电波在内的各种形式与物质的相互作用方式不同，实际应用也大不相同。电磁辐射可以通过把物质激发到更高的<span data-concept=\"energy-and-work\">能量</span>（例如加热）而产生。发出的光可以是连续的（如太阳这样的白炽光源），也可以是分立的（来自特定类型的受激原子）。连续光谱的分布通常可以近似为某个合适<span data-concept=\"temperature\">温度</span>下的黑体辐射。让通电的氢气管发出的光通过棱镜，就可以得到氢的线状光谱。这种线状光谱足够简单，因此可以由光谱推导出一个称为里德伯公式的经验公式。19 世纪后期和 20 世纪初的三个具有历史重要性的悖论——黑体问题、光电效应和原子的分立光谱——无法在现有的经典力学和经典电磁学框架内得到解释。这些悖论的解决最终催生了取代经典理论的量子理论。</p>",
+  "notes": "无线电塔和手机信号塔的照片（图 6.4），以及两条学习链接说明——一段关于定音鼓上径向节点的视频和一个光电效应模拟——被略去。书中的笔误按原样保留：本节以“Neils Bohr”结尾。",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      },
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ]
+  },
+  "built": "2026-10-26",
+  "exercises_lead": "",
+  "exercise_notes": "布鲁姆层级、概念标签、权重和提示由 AI 生成。三道“学习检测”题带有其后注释中书中自带的答案。章末习题的答案来自书后答案，该表涵盖本章习题列表中的奇数题；七道没有答案的题都是数值题，已略去，也没有计算答案：fs-idm65612800（103.1 MHz 调频电台的波长）、fs-idp23451200（汞 435.8 nm 谱线的能量）、fs-idp158798576（锂光子的频率、波长和颜色）、fs-idm74058400（铷两条谱线的频率和颜色）、fs-idp80961152（使一杯水变暖的红外光子）、fs-idp181189472（触发爬行动物视觉信号的光子）和 fs-idp156427216（蓝光激光器）。关于 RGB 显示器颜色的那道题，书中给出的是近似值并说明可能有所不同，所以它是一道开放题，答案供对照。没有任何内容取自其他小节，也没有任何内容留待其他小节。数值答案接受 2% 的容差。",
+  "figures": [
+    {
+      "id": "sim-wave",
+      "kind": "sim",
+      "number": "6.2",
+      "originals": [
+        "/media/ch06/CNX_Chem_06_01_Frequency.jpg"
+      ],
+      "original_caption": "一维正弦波显示了波长、频率和速率之间的关系。波长最短的波频率最高。振幅是波从波峰到波谷高度的一半。",
+      "draws": [
+        "wavelength",
+        "frequency"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "distance label off the λ bracket; note repeating the caption dropped"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-spectrum",
+      "kind": "sim",
+      "number": "6.3",
+      "originals": [
+        "/media/ch06/CNX_Chem_06_01_emspectrum.jpg"
+      ],
+      "original_caption": "电磁波谱的各个部分按频率递减、波长递增的顺序排列。（来源“宇宙射线”：改编自 NASA 的作品；来源“PET 扫描”：改编自 National Institute of Health 的作品；来源“X 射线”：改编自 Dr. Jochen Lengerke 的作品；来源“牙科固化”：改编自 Department of the Navy 的作品；来源“夜视”：改编自 Department of the Army 的作品；来源“遥控器”：改编自 Emilian Robert Vicol 的作品；来源“手机”：改编自 Brett Jordan 的作品；来源“微波炉”：改编自 Billy Mabray 的作品；来源“调幅广播”：改编自 Dave Clausen 的作品）",
+      "draws": [
+        "wavelength",
+        "frequency",
+        "energy",
+        "velocity"
+      ],
+      "facts": [
+        "spectrum"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "axis titles clear the values; E = hν into the readout; note dropped"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-amfm",
+      "kind": "sim",
+      "number": "6.5",
+      "originals": [
+        "/media/ch06/CNX_Chem_06_01_AMFM.jpg"
+      ],
+      "original_caption": "这幅示意图表示如何用调幅（AM）和调频（FM）来发射无线电波。",
+      "draws": [
+        "frequency"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "signal off the headline; AM note shortened"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-fringes",
+      "kind": "figure",
+      "number": "6.6",
+      "draws": [
+        "wavelength"
+      ],
+      "originals": [
+        "/media/ch06/CNX_Chem_06_01_LiteInterf.jpg"
+      ],
+      "original_caption": "图中显示光通过两条间距很小的狭窄狭缝时的干涉条纹图样。条纹的间距取决于波长，对于波长较短的蓝光，条纹的间距更小。（来源：PASCO）",
+      "facts": [
+        "spectrum",
+        "#000000"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "rewritten: four fringe bands drawn from the two-slit pattern"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-string",
+      "kind": "sim",
+      "number": "6.7",
+      "originals": [
+        "/media/ch06/CNX_Chem_06_01_Vibrstring.jpg"
+      ],
+      "original_caption": "振动的弦显示出一些一维驻波。由于弦的两个端点是固定的，因此只有含有整数个半波长的波才能形成。弦上位于两个端点之间、不运动的点称为节点。",
+      "draws": [
+        "wavelength"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "note repeating caption and headline cut to the quantization fact"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-drum",
+      "kind": "photo",
+      "number": "6.8",
+      "draws": []
+    },
+    {
+      "id": "fig-solar",
+      "kind": "photo",
+      "number": "6.9",
+      "draws": []
+    },
+    {
+      "id": "sim-blackbody",
+      "kind": "sim",
+      "number": "6.10",
+      "originals": [
+        "/media/ch06/CNX_Chem_06_01_Blackbody.jpg"
+      ],
+      "original_caption": "图中显示了一些有代表性的温度下的黑体光谱分布曲线。",
+      "draws": [
+        "wavelength",
+        "temperature"
+      ],
+      "facts": [
+        "spectrum"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "T to 6000 K, labels kept apart, one-line headline, note through macros"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-photoelectric",
+      "kind": "sim",
+      "number": "6.11",
+      "originals": [
+        "/media/ch06/CNX_Chem_06_01_Ephoton.jpg"
+      ],
+      "original_caption": "频率较低的光子没有足够的能量通过光电效应使电子逸出。对于高于阈值频率的任何光频率，逸出电子的动能随入射光子的能量线性增大。",
+      "draws": [
+        "wavelength",
+        "frequency",
+        "energy",
+        "velocity"
+      ],
+      "conventions": [
+        "e-"
+      ],
+      "facts": [
+        "spectrum"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "light source moved off its labels; notes repeating the caption cut"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "fig-neon",
+      "kind": "photo",
+      "number": "6.12",
+      "draws": []
+    },
+    {
+      "id": "fig-line-spectra",
+      "kind": "photo",
+      "number": "6.13",
+      "draws": []
+    }
+  ],
+  "coverage": [
+    {
+      "span": "light",
+      "concept": "wave-particle-duality",
+      "verb": "uses"
+    },
+    {
+      "span": "light",
+      "concept": "electromagnetic-radiation",
+      "verb": "introduces"
+    },
+    {
+      "span": "waves",
+      "concept": "wave-properties",
+      "verb": "introduces"
+    },
+    {
+      "span": "waves",
+      "concept": "wave",
+      "verb": "introduces"
+    },
+    {
+      "span": "waves",
+      "concept": "wavelength",
+      "verb": "introduces"
+    },
+    {
+      "span": "waves",
+      "concept": "frequency",
+      "verb": "introduces"
+    },
+    {
+      "span": "waves",
+      "concept": "hertz",
+      "verb": "introduces"
+    },
+    {
+      "span": "waves",
+      "concept": "amplitude",
+      "verb": "introduces"
+    },
+    {
+      "span": "waves",
+      "concept": "intensity",
+      "verb": "introduces"
+    },
+    {
+      "span": "wave-speed",
+      "concept": "wave-speed-relation",
+      "verb": "introduces"
+    },
+    {
+      "span": "wave-speed",
+      "concept": "wave-properties",
+      "verb": "uses"
+    },
+    {
+      "span": "em-spectrum",
+      "concept": "electromagnetic-spectrum",
+      "verb": "introduces"
+    },
+    {
+      "span": "em-spectrum",
+      "concept": "wave-speed-relation",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-frequency",
+      "concept": "wave-speed-relation",
+      "verb": "reinforces"
+    },
+    {
+      "span": "interference",
+      "concept": "wave-properties",
+      "verb": "uses"
+    },
+    {
+      "span": "interference",
+      "concept": "wave-particle-duality",
+      "verb": "uses"
+    },
+    {
+      "span": "interference",
+      "concept": "interference-pattern",
+      "verb": "introduces"
+    },
+    {
+      "span": "standing-waves",
+      "concept": "standing-waves-quantization",
+      "verb": "introduces"
+    },
+    {
+      "span": "standing-waves",
+      "concept": "wave-properties",
+      "verb": "uses"
+    },
+    {
+      "span": "standing-waves",
+      "concept": "standing-wave",
+      "verb": "introduces"
+    },
+    {
+      "span": "standing-waves",
+      "concept": "node",
+      "verb": "introduces"
+    },
+    {
+      "span": "standing-waves",
+      "concept": "quantization",
+      "verb": "introduces"
+    },
+    {
+      "span": "blackbody",
+      "concept": "blackbody-radiation",
+      "verb": "introduces"
+    },
+    {
+      "span": "blackbody",
+      "concept": "standing-waves-quantization",
+      "verb": "uses"
+    },
+    {
+      "span": "blackbody",
+      "concept": "blackbody",
+      "verb": "introduces"
+    },
+    {
+      "span": "blackbody",
+      "concept": "continuous-spectrum",
+      "verb": "introduces"
+    },
+    {
+      "span": "photoelectric",
+      "concept": "photoelectric-effect",
+      "verb": "introduces"
+    },
+    {
+      "span": "photoelectric",
+      "concept": "photon-energy",
+      "verb": "introduces"
+    },
+    {
+      "span": "photoelectric",
+      "concept": "wave-particle-duality",
+      "verb": "introduces"
+    },
+    {
+      "span": "photoelectric",
+      "concept": "blackbody-radiation",
+      "verb": "uses"
+    },
+    {
+      "span": "photoelectric",
+      "concept": "photon",
+      "verb": "introduces"
+    },
+    {
+      "span": "ex-photon-energy",
+      "concept": "photon-energy",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-photoelectric",
+      "concept": "photoelectric-effect",
+      "verb": "reinforces"
+    },
+    {
+      "span": "line-spectra",
+      "concept": "line-spectra",
+      "verb": "introduces"
+    },
+    {
+      "span": "line-spectra",
+      "concept": "photon-energy",
+      "verb": "uses"
+    },
+    {
+      "span": "rydberg",
+      "concept": "line-spectra",
+      "verb": "reinforces"
+    },
+    {
+      "span": "rydberg",
+      "concept": "rydberg-equation",
+      "verb": "introduces"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idm80944240",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-frequency"
+      },
+      "cite": "wave-speed",
+      "prompt": "美国用于发送和接收蜂窝电话信号的频率之一是 850 MHz。这种无线电波的波长是多少米？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 0.353,
+        "unit": "m",
+        "hint": "用光速除以频率，其中 850 MHz 写作 8.50 × 10⁸ s⁻¹。",
+        "solution": "0.353 m = 35.3 cm"
+      }
+    },
+    {
+      "id": "cyl2",
+      "source_id": "fs-idm50724640",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-photon-energy"
+      },
+      "cite": "photoelectric",
+      "prompt": "微波炉中的微波具有特定的频率，能够加热食物中所含的水分子。（这就是大多数塑料和玻璃在微波炉中不会变热的原因——它们不含水分子。）这个频率约为 3 $\\times$ 10<sup>9</sup> Hz。这些微波中一个光子的能量是多少？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 2e-24,
+        "unit": "J",
+        "hint": "频率已给出，所以直接用 E = hν。",
+        "solution": "2 $\\times$ 10<sup>−24</sup> J"
+      }
+    },
+    {
+      "id": "cyl3",
+      "source_id": "fs-idm49104768",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-photoelectric"
+      },
+      "cite": "photoelectric",
+      "prompt": "已知观察到光电效应的最低频率光子为 9.87 $\\times$ 10<sup>14</sup> Hz，计算铝中电子的阈值能量，单位为 kJ/mol。",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 394,
+        "unit": "kJ/mol",
+        "hint": "用 E = hν 求出阈值频率处一个光子的能量，再乘以阿伏伽德罗常数，并把焦耳换算成千焦。",
+        "solution": "394 kJ/mol"
+      }
+    },
+    {
+      "id": "e1",
+      "source_id": "fs-idm27661840",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "line-spectra",
+      "prompt": "红色霓虹灯招牌发出的光是由受激氖原子发光产生的。定性描述让氖灯发出的光通过棱镜所产生的光谱。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "光谱由彩色谱线组成，其中至少有一条（可能是最亮的一条）是红色的。"
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idm14736000",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "wave-speed",
+      "prompt": "调频广播电台 FM-95 的广播频率为 9.51 $\\times$ 10<sup>7</sup> s<sup>−1</sup>（95.1 MHz）。这些无线电波的波长是多少米？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 3.15,
+        "unit": "m",
+        "hint": "把 c = λν 变形，求出波长。",
+        "solution": "3.15 m"
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idm74775376",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "photoelectric",
+      "prompt": "波长为 614.5 nm 的光看起来是橙色的。这种橙光每个光子的能量是多少焦耳？以 eV 为单位的能量是多少（1 eV = 1.602 $\\times$ 10<sup>−19</sup> J）？",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "energy in joules",
+            "value": 3.233e-19,
+            "unit": "J",
+            "hint": "波长以米为单位，用 E = hc/λ。"
+          },
+          {
+            "part": "energy in electron volts",
+            "value": 2.018,
+            "unit": "eV",
+            "hint": "用能量的焦耳数除以 1.602 × 10⁻¹⁹ J/eV。"
+          }
+        ],
+        "solution": "3.233 $\\times$ 10<sup>−19</sup> J; 2.018 eV"
+      }
+    },
+    {
+      "id": "e4",
+      "source_id": "fs-idm60446336",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "photoelectric",
+      "prompt": "外科手术激光器产生的一个光子的能量为 3.027 $\\times$ 10<sup>−19</sup> J。计算这个光子的频率和波长。1 摩尔光子的总能量是多少？所发出的光是什么颜色？",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "frequency",
+            "value": 456800000000000.0,
+            "unit": "s⁻¹",
+            "hint": "用能量除以普朗克常量。"
+          },
+          {
+            "part": "wavelength",
+            "value": 656.3,
+            "unit": "nm",
+            "hint": "用光速除以频率，并把米换算成纳米。"
+          },
+          {
+            "part": "energy per mole",
+            "value": 182300.0,
+            "unit": "J/mol",
+            "hint": "用一个光子的能量乘以阿伏伽德罗常数。"
+          }
+        ],
+        "solution": "<em>ν</em> = 4.568 $\\times$ 10<sup>14</sup> s<sup>−1</sup>；<em>λ</em> = 656.3 nm；每摩尔的能量 = 1.823 $\\times$ 10<sup>5</sup> J mol<sup>−1</sup>；红色"
+      }
+    },
+    {
+      "id": "e5",
+      "source_id": "fs-idm104859984",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "em-spectrum",
+      "prompt": "铯的发射光谱含有两条谱线，其频率为（a）3.45 $\\times$ 10<sup>14</sup> Hz 和（b）6.53 $\\times$ 10<sup>14</sup> Hz。这两条谱线的波长和每个光子的能量各是多少？这两条谱线是什么颜色？",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "(a) wavelength",
+            "value": 8.69e-07,
+            "unit": "m",
+            "hint": "用光速除以频率。"
+          },
+          {
+            "part": "(a) energy",
+            "value": 2.29e-19,
+            "unit": "J",
+            "hint": "用普朗克常量乘以频率。"
+          },
+          {
+            "part": "(b) wavelength",
+            "value": 4.59e-07,
+            "unit": "m"
+          },
+          {
+            "part": "(b) energy",
+            "value": 4.33e-19,
+            "unit": "J"
+          }
+        ],
+        "solution": "（a）<em>λ</em> = 8.69 $\\times$ 10<sup>−7</sup> m；<em>E</em> = 2.29 $\\times$ 10<sup>−19</sup> J；（b）<em>λ</em> = 4.59 $\\times$ 10<sup>−7</sup> m；<em>E</em> = 4.33 $\\times$ 10<sup>−19</sup> J；（a）的颜色是红色；（b）是蓝色。"
+      }
+    },
+    {
+      "id": "e6",
+      "source_id": "fs-idp28548400",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "em-spectrum",
+      "prompt": "牙科诊所使用的一种放射成像设备发射波长为 2.090 $\\times$ 10<sup>−11</sup> m 的 X 射线。这种 X 射线的能量（单位为焦耳）和频率各是多少？",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "energy",
+            "value": 9.502e-15,
+            "unit": "J",
+            "hint": "用 E = hc/λ。"
+          },
+          {
+            "part": "frequency",
+            "value": 1.434e+19,
+            "unit": "s⁻¹",
+            "hint": "用光速除以波长。"
+          }
+        ],
+        "solution": "<em>E</em> = 9.502 $\\times$ 10<sup>−15</sup> J; <em>ν</em> = 1.434 $\\times$ 10<sup>19</sup> s<sup>−1</sup>"
+      }
+    },
+    {
+      "id": "e7",
+      "source_id": "fs-idm83382672",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "em-spectrum",
+      "prompt": "RGB 彩色电视机和计算机显示器使用阴极射线管，通过混合红光、绿光和蓝光来产生颜色。如果用放大镜观察屏幕，可以看到随着颜色变化，单个的点亮起和熄灭。利用可见光谱，确定这几种颜色各自的近似波长。这几种颜色的光子的频率和能量各是多少？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "红色：660 nm；4.54 $\\times$ 10<sup>14</sup> Hz；3.01 $\\times$ 10<sup>−19</sup> J。绿色：520 nm；5.77 $\\times$ 10<sup>14</sup> Hz；3.82 $\\times$ 10<sup>−19</sup> J。蓝色：440 nm；6.81 $\\times$ 10<sup>14</sup> Hz；4.51 $\\times$ 10<sup>−19</sup> J。也可能得到略有不同的数值。"
+      }
+    },
+    {
+      "id": "e8",
+      "source_id": "fs-idm115982512",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "photoelectric",
+      "prompt": "如果频率为 6.66 $\\times$ 10<sup>14</sup> s<sup>−1</sup> 的光子使一个电子逸出时带有 7.74 $\\times$ 10<sup>−20</sup> J 的动能，钠金属的阈值频率是多少？如果钠暴露在橙光下，会观察到光电效应吗？",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "part": "threshold frequency",
+        "value": 549000000000000.0,
+        "unit": "s⁻¹",
+        "hint": "光子的能量 hν 等于阈值能量加上电子的动能；用阈值能量除以 h。",
+        "solution": "5.49 $\\times$ 10<sup>14</sup> s<sup>−1</sup>；不会"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "wave-speed-relation"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "electromagnetic-spectrum",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "photon-energy"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "photoelectric-effect"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "photon-energy",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e1",
+      "concept": "line-spectra"
+    },
+    {
+      "exercise": "e2",
+      "concept": "wave-speed-relation"
+    },
+    {
+      "exercise": "e3",
+      "concept": "photon-energy"
+    },
+    {
+      "exercise": "e4",
+      "concept": "photon-energy"
+    },
+    {
+      "exercise": "e4",
+      "concept": "wave-speed-relation",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e4",
+      "concept": "electromagnetic-spectrum",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e5",
+      "concept": "wave-speed-relation"
+    },
+    {
+      "exercise": "e5",
+      "concept": "photon-energy"
+    },
+    {
+      "exercise": "e5",
+      "concept": "electromagnetic-spectrum",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e6",
+      "concept": "photon-energy"
+    },
+    {
+      "exercise": "e6",
+      "concept": "wave-speed-relation",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e7",
+      "concept": "electromagnetic-spectrum"
+    },
+    {
+      "exercise": "e7",
+      "concept": "photon-energy",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e8",
+      "concept": "photoelectric-effect"
+    },
+    {
+      "exercise": "e8",
+      "concept": "photon-energy",
+      "weight": 2,
+      "weights_by": "ai"
+    }
+  ],
+  "referents": [
+    {
+      "id": "rope",
+      "label": "波沿着传播的绳子",
+      "figures": [
+        "sim-wave"
+      ]
+    },
+    {
+      "id": "crest",
+      "label": "画面中被跟踪的标出的波峰",
+      "figures": [
+        "sim-wave"
+      ]
+    },
+    {
+      "id": "signal",
+      "label": "无线电波所携带的信号",
+      "figures": [
+        "sim-amfm"
+      ]
+    },
+    {
+      "id": "carrier",
+      "label": "载波，即发射信号的无线电波",
+      "figures": [
+        "sim-amfm"
+      ]
+    },
+    {
+      "id": "string",
+      "label": "两端固定的振动的弦",
+      "figures": [
+        "sim-string"
+      ]
+    },
+    {
+      "id": "metal",
+      "label": "光子撞击的金属",
+      "figures": [
+        "sim-photoelectric"
+      ]
+    }
+  ]
+}

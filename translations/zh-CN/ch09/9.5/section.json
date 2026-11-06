@@ -1,0 +1,604 @@
+{
+  "id": "9.5",
+  "module": "m68758",
+  "chapter": "9",
+  "title": "分子运动论",
+  "short": "分子运动论",
+  "lead": "气体定律描述了气体的行为，却没有说明其原因，而分子运动论用一幅简单的图景作出回答：分子在不停地运动，彼此之间以及与容器壁发生弹性碰撞。它的假设解释了气体定律，并把气体分子的<span data-concept=\"speed\">速率</span>和<span data-concept=\"kinetic-energy\">动能</span>与气体的<span data-concept=\"temperature\">温度</span>和<span data-concept=\"molar-mass\">摩尔质量</span>联系起来。",
+  "objectives": [
+    "陈述分子运动论的假设",
+    "用这一理论的假设解释气体定律"
+  ],
+  "summary_html": "<p>分子运动论是一个简单而又非常有效的模型，能够有效地解释理想气体的行为。该理论假定，气体由相距很远、<span data-concept=\"volume\">体积</span>可以忽略的分子组成，这些分子不停地运动，彼此之间以及与容器壁发生弹性碰撞，其平均<span data-concept=\"speed\">速率</span>由绝对<span data-concept=\"temperature\">温度</span>决定。气体中的单个分子表现出一定范围的<span data-concept=\"speed\">速率</span>，这些<span data-concept=\"speed\">速率</span>的分布取决于气体的<span data-concept=\"temperature\">温度</span>和其分子的<span data-concept=\"mass\">质量</span>。</p>",
+  "notes": "指向在线气体模拟器的“学习链接”提示被略去，取而代之的是一个盛有气体并统计分子速率的盒子。图 9.33 和图 9.34 并入图 9.32，作为它的两组对比。第二部分开头的句子“根据格雷厄姆定律”、图 9.31 的 (a) 图上的图片标注“Charles’s Law”、图 9.32 的图注为最概然速率所写的希腊字母 ν，以及图 9.34 的图注以小写字母开头，均按原样保留。",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      },
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ]
+  },
+  "built": "2026-10-26",
+  "exercises_lead": "",
+  "exercise_notes": "布鲁姆层级、概念标签、权重和提示均由 AI 生成。答案取自书后答案以及“学习检测”的答案。“学习检测”题紧接例 9.23 内嵌排列。没有答案的数值习题 fs-idp62923856（SO₂ 与 O₂ 的动能之比和速率之比）和 fs-idm98413904（由 H₂ 的方均根速率求 N₂ 的方均根速率）被略去，也没有为它们算出答案。没有答案的概念性习题 fs-idm159823744、fs-idm213877296 和 fs-idm194405232 予以保留，并附有标明为 OmniStax 自拟的建议思路。习题 fs-idp16129152 提到图 9.34，而该图并未画出 H₂ 或 H₂O 的曲线；习题 fs-idm150122880 用到了 9.3 节的气体密度；两者均按原样保留。数值答案接受 2% 的容差。",
+  "figures": [
+    {
+      "id": "sim-kmt",
+      "kind": "sim",
+      "number": "9.31",
+      "originals": [
+        "/media/ch09/CNX_Chem_09_04_KMT2.jpg"
+      ],
+      "original_caption": "（a）当气体温度升高时，由于分子碰撞的力和频率增大，气体压强增大。（b）当体积减小时，由于分子碰撞的频率增大，气体压强增大。（c）当气体的物质的量在压强不变时增加，体积增大，使单位时间内器壁单位面积上的碰撞次数保持不变。",
+      "draws": [
+        "pressure",
+        "volume",
+        "temperature",
+        "amount"
+      ],
+      "conventions": [
+        "N"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "scene lowered so names fit; orbit bounded to 52°"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-speeds",
+      "kind": "sim",
+      "number": "9.32",
+      "folds": [
+        "9.33",
+        "9.34"
+      ],
+      "originals": [
+        "/media/ch09/CNX_Chem_09_05_MolSpeed1.jpg",
+        "/media/ch09/CNX_Chem_09_05_MolSpeed2.jpg",
+        "/media/ch09/CNX_Chem_09_05_MolSpeed3.jpg"
+      ],
+      "original_caption": "（图 9.32）此处所示为 300 K 下氧气的分子速率分布。很少有分子以很低或很高的速率运动。具有中等速率的分子数迅速增加，直至一个最大值，即最概然速率，然后迅速下降。请注意，最概然速率 νp 略小于 400 m/s，而方均根速率 urms 更接近 500 m/s。（图 9.33）氮气（N2）的分子速率分布随着温度升高而向右移动并变平；随着温度降低而向左移动并变高。（图 9.34）分子速率与分子质量直接相关。在给定温度下，较轻的分子平均而言比较重的分子运动得更快。",
+      "draws": [
+        "temperature",
+        "energy",
+        "mass",
+        "velocity"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "caption: the compare choice draws the chosen gas, not nitrogen"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    },
+    {
+      "id": "sim-gasbox",
+      "kind": "sim",
+      "draws": [
+        "temperature",
+        "energy",
+        "velocity"
+      ],
+      "conventions": [
+        "He",
+        "N",
+        "Ar",
+        "Xe"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
+        }
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "span": "postulates",
+      "concept": "kinetic-molecular-theory",
+      "verb": "introduces"
+    },
+    {
+      "span": "kmt-part-1",
+      "concept": "kmt-explains-gas-laws",
+      "verb": "introduces"
+    },
+    {
+      "span": "kmt-part-1",
+      "concept": "kinetic-molecular-theory",
+      "verb": "uses"
+    },
+    {
+      "span": "kmt-part-1",
+      "concept": "speed",
+      "verb": "introduces"
+    },
+    {
+      "span": "speeds",
+      "concept": "maxwell-boltzmann-distribution",
+      "verb": "introduces"
+    },
+    {
+      "span": "speeds",
+      "concept": "average-kinetic-energy-and-temperature",
+      "verb": "introduces"
+    },
+    {
+      "span": "speeds",
+      "concept": "root-mean-square-speed",
+      "verb": "introduces"
+    },
+    {
+      "span": "ex-urms",
+      "concept": "root-mean-square-speed",
+      "verb": "uses"
+    },
+    {
+      "span": "kmt-part-2",
+      "concept": "grahams-law-from-kmt",
+      "verb": "introduces"
+    },
+    {
+      "span": "kmt-part-2",
+      "concept": "root-mean-square-speed",
+      "verb": "uses"
+    },
+    {
+      "span": "kmt-part-2",
+      "concept": "grahams-law",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idm203397264",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-urms"
+      },
+      "cite": "speeds",
+      "prompt": "计算 1 摩尔氧分子在 –23 °C 时的方均根速率。",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 441,
+        "unit": "m/s",
+        "hint": "先把温度换算为开尔文，把 O₂ 的摩尔质量换算为 kg/mol，再用 3RT 除以摩尔质量后的平方根计算，其中 R = 8.314 J/mol·K。",
+        "solution": "441 m/s"
+      }
+    },
+    {
+      "id": "e1",
+      "source_id": "fs-idm159823744",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "postulates",
+      "prompt": "利用分子运动论的假设，解释为什么气体能均匀地充满任意形状的容器。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "气体能均匀地充满容器，是因为它的分子可以向各个方向自由而无规则地运动，没有任何东西把它们束缚在一起。这些假设指出，气体由连续运动的分子组成，分子沿直线运动，只有在与其他分子或与器壁碰撞时才改变方向。分子与它们之间的距离相比很小，所以空间几乎是空的，分子不会互相挤占；它们彼此之间也没有吸引力或排斥力，所以没有一群分子会聚集在容器的某一处。它们的碰撞是弹性的，所以运动不会逐渐停止。分子作无规则运动，无论空间是什么形状，都能到达每一个角落，并且不断从浓度较高的区域扩散到浓度较低的区域，直到每个体积相等的部分里都有同样多的分子。"
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idm178556768",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "speeds",
+      "prompt": "在恒定温度下，气体中某个给定分子的速率能否加倍？请解释你的答案。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "能。在任何给定的时刻，气体样品中分子的速率有一个取值范围。任何一个分子在与其他分子碰撞时都可以加快或减慢。所有分子的平均速率在恒定温度下是恒定的。"
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idm213877296",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "speeds",
+      "prompt": "当条件作如下改变时，描述理想气体分子的平均动能会怎样变化：（a）在恒定温度下，通过减小体积使气体的压强增大。（b）在恒定体积下，通过升高温度使气体的压强增大。（c）分子的平均速率增大为原来的 2 倍。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "（a）平均动能不变。它只取决于开尔文温度，$\\kKEavg=\\frac{3}{2}R\\kT$，而此处温度保持不变；压强升高，是因为同样的分子更频繁地撞击较小的器壁面积，而不是因为它们运动得更快。（b）平均动能增大，与开尔文温度成正比：分子运动得更快，撞击器壁更频繁、更有力。（c）平均动能增大为原来的 4 倍。动能与速率的平方成正比，$\\kKEavg=\\frac{1}{2}\\kMM\\kurms^{2}$，所以分子的速率加倍，动能就是原来的 $2^{2}=4$ 倍，而气体的开尔文温度必须升高到原来的 4 倍才能做到这一点。"
+      }
+    },
+    {
+      "id": "e4",
+      "source_id": "fs-idp16129152",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "speeds",
+      "prompt": "氦样品中分子速率的分布如图 9.34 所示。如果样品被冷却，速率分布看起来更像 H<sub>2</sub> 的还是 H<sub>2</sub>O 的？请解释你的答案。",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "H<sub>2</sub>O。冷却使 He 原子的速率变慢，使它们的行为好像变重了一样。"
+      }
+    },
+    {
+      "id": "e5",
+      "source_id": "fs-idm124543936",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "speeds",
+      "prompt": "最初处于 STP 的 1 L CO 样品被加热到 546 K，其体积增大到 2 L。（a）这些变化对气体所施加的压强有什么影响？（b）对分子的平均动能有什么影响？（c）对分子的方均根速率有什么影响？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）气体的压强保持不变。（b）平均动能加倍。（c）方均根速率增大到初始值的 $\\sqrt{2}$ 倍；<em>u</em><sub>rms</sub> 与 $\\sqrt{{\\text{KE}}_{\\text{avg}}}$ 成正比。"
+      }
+    },
+    {
+      "id": "e6",
+      "source_id": "fs-idm150122880",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "kmt-part-1",
+      "prompt": "回答下列问题：（a）本章开头所示热气球中气体的压强，比气球外大气的压强大、小还是相等？（b）本章开头所示热气球中气体的密度，比气球外大气的密度大、小还是相等？（c）在 1 atm 的压强和 20 °C 的温度下，干燥空气的密度为 1.2256 g/L。干燥空气的（平均）摩尔质量是多少？（d）热气球中气体的平均温度为 1.30 $\\times$ 10<sup>2</sup> °F。假设其摩尔质量等于干燥空气的摩尔质量，计算它的密度。（e）热气球的升力等于气球排开的冷空气的质量与气球中气体的质量之差。（c）部分的冷空气与（d）部分的热空气，1.00 L 的质量之差是多少？（f）一个普通气球的直径为 60 英尺，体积为 1.1 $\\times$ 10<sup>5</sup> ft<sup>3</sup>。这样的气球的升力是多少？如果气球及其索具的重量为 500 磅，它载人和载货的能力是多少？（g）一个气球携带 40.0 加仑液态丙烷（密度 0.5005 g/L）。这些丙烷燃烧在 STP 下生成的 CO<sub>2</sub> 和 H<sub>2</sub>O 气体的体积是多少？（h）一次气球飞行可持续约 90 分钟。如果所有燃料都在这段时间内烧完，飞行期间气囊内热空气的热量损失的近似速率（以 kJ/min 计）是多少？",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "（a）相等；（b）小于；（c）29.48 g mol<sup>−1</sup>；（d）1.0966 g L<sup>−1</sup>；（e）0.129 g/L；（f）4.01 $\\times$ 10<sup>5</sup> g；净载重能力 = 384 磅；（g）270 L；（h）39.1 kJ min<sup>−1</sup>"
+      }
+    },
+    {
+      "id": "e7",
+      "source_id": "fs-idm194405232",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "kmt-part-2",
+      "prompt": "证明气体 1 的扩散速率与气体 2 的扩散速率之比 $\\frac{{R}_{1}}{{R}_{2}},$ 在 0 °C 和 100 °C 时相同。",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "该比值等于 $\\sqrt{\\frac{\\kMM_{2}}{\\kMM_{1}}}$，其中不含温度，所以在 0 °C 和 100 °C 时相同。气体的扩散速率与其分子的方均根速率 $\\kurms=\\sqrt{\\frac{3R\\kT}{\\kMM}}$ 成正比，而两种气体处于相同的温度。于是 $\\frac{R_{1}}{R_{2}}=\\frac{\\sqrt{3R\\kT/\\kMM_{1}}}{\\sqrt{3R\\kT/\\kMM_{2}}}=\\sqrt{\\frac{\\kMM_{2}}{\\kMM_{1}}}$，因为 $3R\\kT$ 在分子和分母中约去；这就是格雷厄姆定律。对于氢和氧，$\\kurms$ 在 273 K 时分别为 1838 m/s 和 461 m/s，在 373 K 时分别为 2149 m/s 和 539 m/s，两个比值都是 3.98，等于 $\\sqrt{\\frac{32.00\\;\\text{g/mol}}{2.016\\;\\text{g/mol}}}=3.98$。升高温度使两种气体都加快相同的倍数，$\\sqrt{\\frac{373\\;\\text{K}}{273\\;\\text{K}}}=1.17$，它们的比值保持不变。"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "root-mean-square-speed",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e1",
+      "concept": "kinetic-molecular-theory",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e2",
+      "concept": "maxwell-boltzmann-distribution",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e3",
+      "concept": "average-kinetic-energy-and-temperature",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e3",
+      "concept": "kmt-explains-gas-laws",
+      "weight": 1,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e4",
+      "concept": "maxwell-boltzmann-distribution",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e5",
+      "concept": "average-kinetic-energy-and-temperature",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e5",
+      "concept": "root-mean-square-speed",
+      "weight": 1,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e6",
+      "concept": "kmt-explains-gas-laws",
+      "weight": 1,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e6",
+      "concept": "gas-density",
+      "weight": 2,
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e7",
+      "concept": "grahams-law-from-kmt",
+      "weight": 2,
+      "weights_by": "ai"
+    }
+  ],
+  "referents": [
+    {
+      "id": "baseline",
+      "label": "基准气缸",
+      "figures": [
+        "sim-kmt",
+        "sim-gasbox"
+      ]
+    },
+    {
+      "id": "changed",
+      "label": "变化后的气缸",
+      "figures": [
+        "sim-kmt",
+        "sim-gasbox"
+      ]
+    },
+    {
+      "id": "xenon",
+      "label": "氙的曲线",
+      "figures": [
+        "sim-speeds"
+      ]
+    },
+    {
+      "id": "argon",
+      "label": "氩的曲线",
+      "figures": [
+        "sim-speeds"
+      ]
+    },
+    {
+      "id": "neon",
+      "label": "氖的曲线",
+      "figures": [
+        "sim-speeds"
+      ]
+    },
+    {
+      "id": "helium",
+      "label": "氦的曲线",
+      "figures": [
+        "sim-speeds"
+      ]
+    },
+    {
+      "id": "speed-count",
+      "label": "速率的计数",
+      "figures": [
+        "sim-gasbox"
+      ]
+    }
+  ],
+  "footnotes": [
+    {
+      "id": "c-grahams-law",
+      "kind": "correction",
+      "html": "书中把这一点归于格雷厄姆定律。下文所述是分子运动论对气体的解释；格雷厄姆定律涉及的是泻流和扩散的速率。"
+    }
+  ],
+  "derivations": [
+    {
+      "id": "root-mean-square-speed",
+      "what": "气体的方均根速率",
+      "source": "化学（第2版），9.5 分子运动论",
+      "nodes": [
+        {
+          "assumes": [
+            {
+              "tex": "\\kurms = \\sqrt{\\overline{\\ku^{2}}}",
+              "src": "9.5"
+            },
+            {
+              "text": "1 摩尔气体含有 $N_A$ 个分子，其摩尔质量 $\\kMM$（以 kg/mol 计）是它们的总质量。",
+              "src": "3.1"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{KE}{\\kKE} = \\tfrac{1}{2}\\mk{m}{\\km}\\mk{u}{\\ku^{2}}",
+            "src": "9.5"
+          },
+          "steps": [
+            {
+              "tex": "\\mk{KE}{\\overline{\\kKE}} = \\tfrac{1}{2}\\mk{m}{\\km}\\mk{u}{\\overline{\\ku^{2}}}",
+              "uses": [],
+              "cap": "对所有质量均为 $\\km$ 的分子求平均，$\\tfrac{1}{2}\\km\\ku^{2}$ 变为 $\\tfrac{1}{2}\\km$ 乘以 $\\ku^{2}$ 的平均值。"
+            },
+            {
+              "tex": "\\mk{KE}{\\overline{\\kKE}} = \\tfrac{1}{2}\\mk{m}{\\km}\\mk{u}{\\kurms^{2}}",
+              "uses": [
+                0
+              ]
+            },
+            {
+              "tex": "\\mk{KE}{\\kKEavg} = \\mk{N}{N_A}\\cdot\\tfrac{1}{2}\\mk{m}{\\km}\\mk{u}{\\kurms^{2}}",
+              "uses": [
+                1
+              ],
+              "cap": "$\\kKEavg$ 是 1 摩尔分子的动能，即单个分子平均动能的 $N_A$ 倍。"
+            },
+            {
+              "tex": "\\mk{KE}{\\kKEavg} = \\tfrac{1}{2}\\mk{m}{\\kMM}\\mk{u}{\\kurms^{2}}",
+              "uses": [
+                1
+              ],
+              "map": {
+                "N": "m"
+              }
+            }
+          ],
+          "src": "9.5"
+        },
+        {
+          "assumes": [
+            {
+              "step": 0
+            },
+            {
+              "tex": "\\kKEavg = \\tfrac{3}{2}\\;R\\kT",
+              "src": "9.5"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{KE}{\\kKEavg} = \\tfrac{1}{2}\\mk{m}{\\kMM}\\mk{u}{\\kurms^{2}}",
+            "src": "9.5"
+          },
+          "steps": [
+            {
+              "tex": "\\mk{h}{\\tfrac{1}{2}}\\mk{m}{\\kMM}\\mk{u}{\\kurms^{2}} = \\mk{KE}{\\tfrac{3}{2}\\;R\\kT}",
+              "uses": [
+                1
+              ]
+            },
+            {
+              "tex": "\\mk{u}{\\kurms^{2}} = \\dfrac{\\mk{KE}{3R\\kT}}{\\mk{m}{\\kMM}}",
+              "uses": [],
+              "map": {
+                "h": "KE"
+              }
+            },
+            {
+              "tex": "\\mk{u}{\\kurms} = \\sqrt{\\dfrac{\\mk{KE}{3R\\kT}}{\\mk{m}{\\kMM}}}",
+              "uses": []
+            }
+          ],
+          "src": "9.5"
+        }
+      ]
+    },
+    {
+      "id": "grahams-law",
+      "what": "由分子运动论推出格雷厄姆定律",
+      "source": "化学（第2版），9.5 分子运动论",
+      "nodes": [
+        {
+          "assumes": [
+            {
+              "tex": "\\text{泻流速率}\\;\\propto\\;\\kurms",
+              "src": "9.5"
+            },
+            {
+              "tex": "\\kurms = \\sqrt{\\dfrac{3R\\kT}{\\kMM}}",
+              "src": "9.5"
+            },
+            {
+              "text": "两种气体处于相同的温度 $\\kT$。"
+            }
+          ],
+          "then": {
+            "tex": "\\dfrac{\\mk{rA}{\\text{A 的泻流速率}}}{\\mk{rB}{\\text{B 的泻流速率}}} = \\dfrac{\\mk{uA}{\\ku_{\\text{rms}\\;\\text{A}}}}{\\mk{uB}{\\ku_{\\text{rms}\\;\\text{B}}}}",
+            "src": "9.5",
+            "uses": [
+              0
+            ],
+            "why": "每种气体的泻流速率都是同一个常数乘以该气体的 $\\kurms$，这个常数在比值中约去。"
+          },
+          "steps": [
+            {
+              "tex": "\\dfrac{\\mk{rA}{\\text{A 的泻流速率}}}{\\mk{rB}{\\text{B 的泻流速率}}} = \\dfrac{\\mk{uA}{\\sqrt{\\dfrac{3R\\kT}{\\kMMA}}}}{\\mk{uB}{\\sqrt{\\dfrac{3R\\kT}{\\kMMB}}}}",
+              "uses": [
+                1
+              ]
+            },
+            {
+              "tex": "\\dfrac{\\mk{rA}{\\text{A 的泻流速率}}}{\\mk{rB}{\\text{B 的泻流速率}}} = \\mk{q}{\\sqrt{\\dfrac{\\kMMB}{\\kMMA}}}",
+              "uses": [
+                2
+              ],
+              "map": {
+                "uA": "q",
+                "uB": "q"
+              },
+              "cap": "平方根之商就是商的平方根，而 $3R\\kT$ 对两种气体相同，因而约去。"
+            }
+          ],
+          "src": "9.5"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,398 @@
+{
+ "id": "4.5",
+ "module": "m68716",
+ "chapter": "4",
+ "title": "化学定量分析",
+ "short": "定量分析",
+ "lead": "反应的化学计量可以反过来用，以测量样品中含有多少某种物质。在滴定中，与分析物完全反应的已知<span data-concept=\"concentration\">浓度</span>溶液的<span data-concept=\"volume\">体积</span>，给出分析物的<span data-concept=\"concentration\">浓度</span>；在重量分析法（燃烧分析是其中的一种）中，分离出的产物的<span data-concept=\"mass\">质量</span>，给出分析物的<span data-concept=\"mass\">质量</span>。",
+ "objectives": [
+  "描述滴定和重量分析法的基本方面。",
+  "利用典型的滴定和重量分析数据进行化学计量计算。"
+ ],
+ "summary_html": "<p>化学反应的化学计量可以作为化学定量分析方法的基础。滴定要测量与样品溶液完全反应所需的滴定剂溶液的<span data-concept=\"volume\">体积</span>，然后利用滴定反应的化学计量，由这一<span data-concept=\"volume\">体积</span>算出样品中分析物的<span data-concept=\"concentration\">浓度</span>。重量分析法要通过物理或化学过程把分析物从样品中分离出来，测定其<span data-concept=\"mass\">质量</span>，再根据有关过程的化学计量，算出它在样品中的<span data-concept=\"concentration\">浓度</span>。燃烧分析是一种重量分析法，通过收集并称量化合物燃烧所生成的气态产物，来测定该化合物的元素组成。</p>",
+ "notes": "书中的文字没有任何省略。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案取自书后答案和“学习检测”的答案。没有答案的数值习题 fs-idm9962448（用 HBr 中和氢氧化钙）、fs-idm31045184（用硝酸银沉淀氯化钠）、fs-idp68782720（去除土豆皮的氢氧化钠）、fs-idp205066064（萘）、fs-idm26094912（提纯碳酸氢钠）、fs-idp204713328（用硝酸处理磷酸氢钾）、fs-idp69216752（用氢氧化钾处理酸雨）、fs-idp126088400（丁酸钙）和 fs-idm1209456（用 KHP 标定）被略去。数值答案接受 2% 的容差。",
+ "figures": [
+  { "id": "fig-buret", "kind": "photo", "number": "4.16", "draws": [] },
+  {
+   "id": "sim-titration",
+   "kind": "sim",
+   "draws": ["volume", "concentration", "amount"],
+   "facts": [
+    "#e8559b"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "end-point label kept clear of the axis; note cut to its one fact"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-map7",
+   "kind": "figure",
+   "originals": ["/media/ch04/CNX_Chem_04_05_map7_img.jpg"],
+   "draws": ["volume", "amount", "concentration"],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "box names and factor labels kept inside their room"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  { "id": "fig-filter", "kind": "photo", "number": "4.17", "draws": [] },
+  {
+   "id": "fig-map8",
+   "kind": "figure",
+   "originals": ["/media/ch04/CNX_Chem_04_05_map8_img.jpg"],
+   "draws": ["mass", "amount"],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "box names and factor labels kept inside their room"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-combustion",
+   "kind": "sim",
+   "number": "4.18",
+   "originals": ["/media/ch04/CNX_Chem_04_05_combustion.jpg"],
+   "original_caption": "这幅示意图展示了用于测定样品中碳和氢含量的燃烧分析装置的基本组成部分。",
+   "draws": ["mass", "amount"],
+   "facts": [
+    "#e2462a",
+    "#8cc63f",
+    "#4a6fe0"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "subscripts past 9 written; ratios past CH4 named; note cut"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-combmap",
+   "kind": "figure",
+   "originals": ["/media/ch04/CNX_Chem_04_05_combmap_img.jpg"],
+   "draws": ["mass", "amount"],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "box names and factor labels kept inside their room"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "coverage": [
+  { "span": "quantitative", "concept": "quantitative-analysis", "verb": "introduces" },
+  { "span": "quantitative", "concept": "stoichiometry", "verb": "uses" },
+  { "span": "quantitative", "concept": "analyte", "verb": "introduces" },
+  { "span": "titration", "concept": "titration", "verb": "introduces" },
+  { "span": "titration", "concept": "quantitative-analysis", "verb": "uses" },
+  { "span": "titration", "concept": "titrant", "verb": "introduces" },
+  { "span": "titration", "concept": "buret", "verb": "introduces" },
+  { "span": "titration", "concept": "equivalence-point", "verb": "introduces" },
+  { "span": "titration", "concept": "end-point", "verb": "introduces" },
+  { "span": "titration", "concept": "indicator", "verb": "introduces" },
+  { "span": "titration-calc", "concept": "titration-calculation", "verb": "introduces" },
+  { "span": "titration-calc", "concept": "titration", "verb": "uses" },
+  { "span": "titration-calc", "concept": "stoichiometric-factor", "verb": "uses" },
+  { "span": "titration-calc", "concept": "molarity", "verb": "uses" },
+  { "span": "ex-titration", "concept": "titration-calculation", "verb": "uses" },
+  { "span": "ex-titration", "concept": "mole-stoichiometry", "verb": "uses" },
+  { "span": "gravimetric", "concept": "gravimetric-analysis", "verb": "introduces" },
+  { "span": "gravimetric", "concept": "precipitation-reaction", "verb": "uses" },
+  { "span": "gravimetric", "concept": "quantitative-analysis", "verb": "uses" },
+  { "span": "ex-gravimetric", "concept": "gravimetric-analysis", "verb": "uses" },
+  { "span": "ex-gravimetric", "concept": "mass-stoichiometry", "verb": "uses" },
+  { "span": "combustion", "concept": "combustion-analysis", "verb": "introduces" },
+  { "span": "combustion", "concept": "gravimetric-analysis", "verb": "uses" },
+  { "span": "ex-combustion", "concept": "combustion-analysis", "verb": "uses" },
+  { "span": "ex-combustion", "concept": "empirical-formula", "verb": "uses" }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idp80717680",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-titration" },
+   "cite": "titration-calc",
+   "prompt": "用 0.09113 <em>M</em> 的高锰酸钾 KMnO<sub>4</sub> 溶液滴定 20.00 mL 草酸 H<sub>2</sub>C<sub>2</sub>O<sub>4</sub> 水溶液样品（见下面的净离子方程式）。$2{\\text{MnO}}_{4}{}^{-}(aq)+5{\\text{H}}_{2}{\\text{C}}_{2}{\\text{O}}_{4}(aq)+6{\\text{H}}^{+}(aq)\\;\\longrightarrow \\;10{\\text{CO}}_{2}(g)+2{\\text{Mn}}^{2+}(aq)+8{\\text{H}}_{2}\\text{O}(l)$ 到达滴定终点需要 23.24 mL。草酸的物质的量浓度是多少？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.2648,
+    "unit": "M",
+    "hint": "求出所加入的高锰酸钾的毫摩尔数，用每 2 mmol 高锰酸钾对应 5 mmol 草酸的因子，再除以样品的体积。",
+    "solution": "0.2648 <em>M</em>"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idp69077568",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-gravimetric" },
+   "cite": "gravimetric",
+   "prompt": "如果 1.1324 g 样品用过量的 Ag<sup>+</sup> 处理后生成 1.0881 g AgCl，样品中氯离子的百分含量是多少？$\\text{Ag}^{+}(aq)+\\text{Cl}^{-}(aq)\\;\\longrightarrow \\;\\text{AgCl}(s)$",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 23.76,
+    "unit": "%",
+    "hint": "把 AgCl 的质量换算成物质的量，再换算成氯离子的质量，然后除以样品的质量。",
+    "solution": "23.76%"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idp72915680",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-combustion" },
+   "cite": "combustion",
+   "prompt": "聚苯乙烯是由碳和氢组成的聚合物，其 0.00215 g 样品经燃烧分析，生成 0.00726 g CO<sub>2</sub> 和 0.00148 g H<sub>2</sub>O。聚苯乙烯的实验式是什么？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "CH"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm186096",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "titration-calc",
+   "prompt": "对 20.0 mL 酸雨样品进行滴定，需要 1.7 mL 0.0811 <em>M</em> NaOH 才到达滴定终点。如果假设雨水的酸性是由硫酸的存在引起的，这份雨水样品中硫酸的浓度是多少？",
+   "answer": { "type": "number", "generated_by": "source", "value": 0.0034, "unit": "M", "solution": "3.4 $\\times$ 10<sup>−3</sup> <em>M</em> H<sub>2</sub>SO<sub>4</sub>" }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp52490448",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "titration-calc",
+   "prompt": "在医学实验室测定血清中游离氯离子浓度的一种常用方法中，用 Hg(NO<sub>3</sub>)<sub>2</sub> 溶液滴定血清样品。$2{\\text{Cl}}^{-}(aq)+\\text{Hg}{({\\text{NO}}_{3})}_{2}(aq)\\;\\longrightarrow \\;2{\\text{NO}}_{3}{}^{-}(aq)+{\\text{HgCl}}_{2}(s)$ 0.25 mL 正常血清样品要用 1.46 mL 8.25 $\\times$ 10<sup>−4</sup> <em>M</em> Hg(NO<sub>3</sub>)<sub>2</sub>(<em>aq</em>) 才能到达滴定终点，该样品中 Cl<sup>−</sup> 的浓度是多少？",
+   "answer": { "type": "number", "generated_by": "source", "value": 0.0096, "unit": "M", "solution": "9.6 $\\times$ 10<sup>−3</sup> <em>M</em> Cl<sup>−</sup>" }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm17012464",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "gravimetric",
+   "prompt": "将质量为 0.165 g 的溴化镓 GaBr<sub>3</sub> 样品溶于水，并用硝酸银 AgNO<sub>3</sub> 处理，沉淀出 0.299 g AgBr。利用这些数据，计算 GaBr<sub>3</sub> 中 Ga 的质量百分数（%Ga）。",
+   "answer": { "type": "number", "generated_by": "source", "value": 22.4, "unit": "%", "solution": "22.4%" }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idp87527952",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "combustion",
+   "prompt": "一份 0.025 g 的由硼和氢组成的化合物样品，分子质量为 ~28 amu，暴露在空气中会自燃，生成 0.063 g B<sub>2</sub>O<sub>3</sub>。该化合物的实验式和分子式是什么？",
+   "answer": { "type": "open", "generated_by": "source", "solution": "实验式为 BH<sub>3</sub>。分子式为 B<sub>2</sub>H<sub>6</sub>。" }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp969280",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "titration-calc",
+   "prompt": "与 2.50 g 碳酸氢钠完全反应需要多少体积的 0.600 <em>M</em> HCl？${\\text{NaHCO}}_{3}(aq)+\\text{HCl}(aq)\\;\\longrightarrow \\;\\text{NaCl}(aq)+{\\text{CO}}_{2}(g)+{\\text{H}}_{2}\\text{O}(l)$",
+   "answer": { "type": "number", "generated_by": "source", "value": 49.6, "unit": "mL", "solution": "49.6 mL" }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idp26486752",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "titration-calc",
+   "prompt": "滴定 15.00 mL 0.1500 <em>M</em> 草酸，需要多少体积的 0.3300 <em>M</em> 氢氧化钠溶液？${\\text{C}}_{2}{\\text{O}}_{4}{\\text{H}}_{2}(aq)+2\\text{NaOH}(aq)\\;\\longrightarrow \\;{\\text{Na}}_{2}{\\text{C}}_{2}{\\text{O}}_{4}(aq)+2{\\text{H}}_{2}\\text{O}(l)$",
+   "answer": { "type": "number", "generated_by": "source", "value": 13.64, "unit": "mL", "solution": "13.64 mL" }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp97761872",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "titration-calc",
+   "prompt": "让一份固体氢氧化钙 Ca(OH)<sub>2</sub> 在水中静置，直到形成饱和溶液。用 5.00 $\\times$ 10<sup>−2</sup> <em>M</em> HCl 滴定 75.00 mL 这种溶液，需要 36.6 mL 该酸才到达滴定终点。$\\text{Ca}{(\\text{OH})}_{2}(aq)+2\\text{HCl}(aq)\\;\\longrightarrow \\;{\\text{CaCl}}_{2}(aq)+2{\\text{H}}_{2}\\text{O}(l)$ 物质的量浓度是多少？",
+   "answer": { "type": "number", "generated_by": "source", "value": 0.0122, "unit": "M", "solution": "0.0122 <em>M</em>" }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idp204697696",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "titration-calc",
+   "prompt": "滴定 40.00 mL 0.0656 <em>M</em> 的 H<sub>3</sub>PO<sub>4</sub> 溶液，需要多少毫升 0.1500 <em>M</em> 的 KOH 溶液？${\\text{H}}_{3}{\\text{PO}}_{4}(aq)+2\\text{KOH}(aq)\\;\\longrightarrow \\;{\\text{K}}_{2}{\\text{HPO}}_{4}(aq)+2{\\text{H}}_{2}\\text{O}(l)$",
+   "answer": { "type": "number", "generated_by": "source", "value": 34.99, "unit": "mL", "solution": "34.99 mL KOH" }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idp13191008",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": { "at": "end" },
+   "cite": "titration-calc",
+   "prompt": "WCl<sub>6</sub> 与 Al 在 ~400 °C 下反应，得到一种只含钨和氯的化合物的黑色晶体。这种化合物的一份样品用氢还原时，生成 0.2232 g 金属钨和氯化氢，氯化氢被水吸收。对由此生成的盐酸进行滴定，需要 46.2 mL 0.1051 <em>M</em> NaOH 才到达滴定终点。这种黑色氯化钨的实验式是什么？",
+   "answer": { "type": "open", "generated_by": "source", "solution": "实验式为 WCl<sub>4</sub>。" }
+  }
+ ],
+ "exercise_concepts": [
+  { "exercise": "cyl1", "concept": "titration-calculation" },
+  { "exercise": "cyl2", "concept": "gravimetric-analysis" },
+  { "exercise": "cyl3", "concept": "combustion-analysis" },
+  { "exercise": "e1", "concept": "titration-calculation" },
+  { "exercise": "e2", "concept": "titration-calculation" },
+  { "exercise": "e3", "concept": "gravimetric-analysis" },
+  { "exercise": "e4", "concept": "combustion-analysis" },
+  { "exercise": "e5", "concept": "titration-calculation" },
+  { "exercise": "e5", "concept": "mass-stoichiometry" },
+  { "exercise": "e6", "concept": "titration-calculation" },
+  { "exercise": "e7", "concept": "titration-calculation" },
+  { "exercise": "e8", "concept": "titration-calculation" },
+  { "exercise": "e9", "concept": "titration-calculation" },
+  { "exercise": "e9", "concept": "gravimetric-analysis" }
+ ],
+ "referents": [
+  {
+   "id": "buret",
+   "label": "盛氢氧化钠的滴定管",
+   "figures": [
+    "sim-titration"
+   ]
+  },
+  {
+   "id": "sample",
+   "label": "烧瓶中的盐酸样品",
+   "figures": [
+    "sim-titration"
+   ]
+  },
+  {
+   "id": "furnace",
+   "label": "加热炉",
+   "figures": [
+    "sim-combustion"
+   ]
+  },
+  {
+   "id": "combustion-sample",
+   "label": "被燃烧的样品",
+   "figures": [
+    "sim-combustion"
+   ]
+  },
+  {
+   "id": "h2o-absorber",
+   "label": "水吸收器",
+   "figures": [
+    "sim-combustion"
+   ]
+  },
+  {
+   "id": "co2-absorber",
+   "label": "二氧化碳吸收器",
+   "figures": [
+    "sim-combustion"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,616 @@
+{
+ "id": "20.3",
+ "module": "m68848",
+ "chapter": "20",
+ "title": "醛、酮、羧酸和酯",
+ "short": "羰基化合物",
+ "lead": "<span data-concept=\"aldehyde\">醛</span>、<span data-concept=\"ketone\">酮</span>、<span data-concept=\"carboxylic-acid\">羧酸</span>和<span data-concept=\"ester\">酯</span>都含有<span data-concept=\"carbonyl-group\">羰基</span>，即一个碳原子与一个氧原子以双键相连。本节说明每一类化合物在该碳原子上还连有什么，这些化合物如何由醇氧化制得，以及酯、脂肪和油在自然界中的分布。",
+ "objectives": [
+  "描述醛、酮、羧酸和酯的结构与性质"
+ ],
+ "summary_html": "<p>与<span data-concept=\"carbonyl-group\">羰基</span>相关的官能团包括<span data-concept=\"aldehyde\">醛</span>的 –CHO 基团、<span data-concept=\"ketone\">酮</span>的 –CO– 基团、<span data-concept=\"carboxylic-acid\">羧酸</span>的 –CO<sub>2</sub>H 基团和<span data-concept=\"ester\">酯</span>的 –CO<sub>2</sub>R 基团。羰基，即碳氧双键，是这几类有机分子的关键结构：醛含有至少一个与羰基碳原子相连的氢原子，酮含有两个与羰基碳原子相连的碳基团，羧酸含有一个与羰基碳原子相连的羟基，酯含有一个与羰基碳原子相连的氧原子，该氧原子又与另一个碳基团相连。<span data-concept=\"organic-oxidation-reduction\">相对于醇羟基中的碳原子，所有这些化合物都含有被氧化的碳原子。</span></p>",
+ "notes": "本节照原样保留以下说法：酯的“蒸气压比”其所由来的醇和羧酸“低”，乙酸“占食醋的 3–6%”，以及书后答案在 fs-idp58454944（e）中写出的 CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>CH(CH<sub>3</sub>)CHCH<sub>2</sub>，它没有写出双键。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级和概念标签均由 AI 生成。答案取自书后答案。以下没有答案的题目被略去，也没有为它们计算答案：fs-idp3066720（按氧化程度给分子排序）、fs-idm12119040（还原产物）、fs-idp44497952（杂化的变化）、fs-idm53048272（结构简式和几何构型）、fs-idp27562320（丁酸及其酯的路易斯结构、氧化数和杂化）、fs-idp28291200（要写的方程式）和 fs-idp49933200（产率）。没有任何内容被移动。",
+ "figures": [
+  {
+   "id": "fig-carbonyl-unit",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-aldehyde-ketone-groups",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-ethanal-butanone",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-carbonyl",
+   "kind": "sim",
+   "number": "20.14",
+   "originals": [
+    "/media/ch20/CNX_Chem_20_03_COgeom_img.jpg"
+   ],
+   "original_caption": "羰基是极性的，中心碳周围各键的几何构型为平面三角形。",
+   "conventions": [
+    "C",
+    "O",
+    "H",
+    "R"
+   ],
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-alcohol-oxidation",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-carbon-oxidation",
+   "kind": "sim",
+   "conventions": [
+    "C",
+    "H",
+    "O"
+   ],
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-to-aldehyde",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-to-ketone",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-esters",
+   "kind": "photo",
+   "number": "20.15",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-acid-ester-names",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-acid-salt",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-to-acid",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-ester-formation",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-strawberry",
+   "kind": "photo",
+   "number": "20.16",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "carbonyl",
+   "concept": "trigonal-planar-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "carbonyl",
+   "concept": "functional-group",
+   "verb": "uses"
+  },
+  {
+   "span": "aldehydes-ketones",
+   "concept": "carbonyl-group",
+   "verb": "introduces"
+  },
+  {
+   "span": "aldehydes-ketones",
+   "concept": "aldehyde",
+   "verb": "introduces"
+  },
+  {
+   "span": "aldehydes-ketones",
+   "concept": "ketone",
+   "verb": "introduces"
+  },
+  {
+   "span": "aldehydes-ketones",
+   "concept": "organic-oxidation-reduction",
+   "verb": "introduces"
+  },
+  {
+   "span": "aldehydes-ketones",
+   "concept": "oxidizing-alcohols",
+   "verb": "introduces"
+  },
+  {
+   "span": "aldehydes-ketones",
+   "concept": "functional-group",
+   "verb": "uses"
+  },
+  {
+   "span": "aldehydes-ketones",
+   "concept": "naming-alkanes",
+   "verb": "uses"
+  },
+  {
+   "span": "aldehydes-ketones",
+   "concept": "naming-alcohols",
+   "verb": "uses"
+  },
+  {
+   "span": "aldehydes-ketones",
+   "concept": "trigonal-planar-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "aldehydes-ketones",
+   "concept": "sp-sp2-sp3-hybrid-orbitals",
+   "verb": "uses"
+  },
+  {
+   "span": "aldehydes-ketones",
+   "concept": "sigma-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "aldehydes-ketones",
+   "concept": "pi-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "aldehydes-ketones",
+   "concept": "bond-polarity",
+   "verb": "uses"
+  },
+  {
+   "span": "aldehydes-ketones",
+   "concept": "electronegativity",
+   "verb": "uses"
+  },
+  {
+   "span": "aldehydes-ketones",
+   "concept": "lewis-base",
+   "verb": "uses"
+  },
+  {
+   "span": "aldehydes-ketones",
+   "concept": "oxidation",
+   "verb": "uses"
+  },
+  {
+   "span": "aldehydes-ketones",
+   "concept": "reduction",
+   "verb": "uses"
+  },
+  {
+   "span": "aldehydes-ketones",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "aldehydes-ketones",
+   "concept": "alcohol",
+   "verb": "uses"
+  },
+  {
+   "span": "carboxylic-acids-esters",
+   "concept": "carboxylic-acid",
+   "verb": "introduces"
+  },
+  {
+   "span": "carboxylic-acids-esters",
+   "concept": "ester",
+   "verb": "introduces"
+  },
+  {
+   "span": "carboxylic-acids-esters",
+   "concept": "fats-and-oils",
+   "verb": "introduces"
+  },
+  {
+   "span": "carboxylic-acids-esters",
+   "concept": "hydrogen-bonding",
+   "verb": "uses"
+  },
+  {
+   "span": "carboxylic-acids-esters",
+   "concept": "vapor-pressure",
+   "verb": "uses"
+  },
+  {
+   "span": "carboxylic-acids-esters",
+   "concept": "weak-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "carboxylic-acids-esters",
+   "concept": "base",
+   "verb": "uses"
+  },
+  {
+   "span": "carboxylic-acids-esters",
+   "concept": "salt",
+   "verb": "uses"
+  },
+  {
+   "span": "carboxylic-acids-esters",
+   "concept": "distillation",
+   "verb": "uses"
+  },
+  {
+   "span": "carboxylic-acids-esters",
+   "concept": "alcohol",
+   "verb": "uses"
+  },
+  {
+   "span": "carboxylic-acids-esters",
+   "concept": "nomenclature",
+   "verb": "uses"
+  },
+  {
+   "span": "carboxylic-acids-esters",
+   "concept": "oxidizing-alcohols",
+   "verb": "reinforces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm15460912",
+   "kind": "check-your-learning",
+   "bloom": "Analyze",
+   "place": {
+    "at": "inline",
+    "after": "ex-oxidation"
+   },
+   "cite": "aldehydes-ketones",
+   "prompt": "指出这三个分子中标记的碳原子相对于乙醇中标记的碳原子是被氧化还是被还原：<br><img src=\"/media/ch20/CNX_Chem_20_03_OxiRedu2_img.jpg\" alt=\"图中显示一个分子结构。一个 C H 下标 3 基团向右上方与一个 C H 下标 2 基团相连。C H 下标 2 基团向右下方连有一个 O H 基团。\"><br>在这种情况下无需计算氧化态，只需比较与标记碳原子相连的原子类型：<br><img src=\"/media/ch20/CNX_Chem_20_03_OxiRedu_img.jpg\" alt=\"图中显示三个分子结构，每个都有一个红色的中心 C 原子。在 a 中，中心 C 原子的左下方连有一个 C H 下标 3 基团，上方连有一个 H 原子，右侧是 H 下标 2。在 b 中，中心 C 原子上方以双键连有一个 O 原子，左下方连有一个 C H 下标 3 基团，右下方连有一个 H 原子。在 c 中，中心 C 原子上方以双键连有一个 O 原子，左下方连有一个 C H 下标 3 基团，右下方连有一个 O H 基团。\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）被还原（与氧原子的键被与氢原子的键取代）；（b）被氧化（一个与氢原子的键被一个与氧原子的键取代）；（c）被氧化（2 个与氢原子的键被与氧原子的键取代）"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm15644704",
+   "source_number": "41",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "aldehydes-ketones",
+   "prompt": "预测氧化本题所示分子的产物。在每种情况下，指出使标出的碳原子的氧化态增加最少时所得的产物：<br>（a）<br><img src=\"/media/ch20/CNX_Chem_20_03_OxiProd1a_a_img.jpg\" alt=\"图中显示一个反应的左侧和箭头。箭头上标有方括号中的 O。箭头左侧是一个分子结构。它显示一个 C H 下标 3 基团，向右上方与一个 C H 下标 2 基团相连。该 C H 下标 2 基团向左下方与一个 C 原子相连。这个 C 原子以红色显示，与一个 O 原子形成双键，与一个 H 原子形成单键。\"><br>（b）<br><img src=\"/media/ch20/CNX_Chem_20_03_OxiProd1a_b_img.jpg\" alt=\"图中显示一个反应的左侧和箭头。箭头上标有方括号中的 O。箭头左侧是一个分子结构。它显示一个 C H 下标 3 基团向右上方与一个 C H 下标 2 基团相连，该基团向右下方与另一个 C H 下标 2 基团相连，后者向右上方与一个 O H 基团相连。第二个 C H 下标 2 基团中的 C 为红色。\"><br>（c）<br><img src=\"/media/ch20/CNX_Chem_20_03_OxiProd1a_c_img.jpg\" alt=\"图中显示一个反应的左侧和箭头。箭头上标有方括号中的 O。箭头左侧是一个分子结构。它显示一个 C H 下标 3 基团向右上方与一个 C H 下标 2 基团相连，该基团向右下方与一个 C H 基团相连。这个 C H 基团中的 C 以红色显示。C H 基团中的 C 在其正下方与一个 C H 下标 3 基团相连。C H 基团向右上方与一个 O H 基团相连。\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）<br><img src=\"/media/ch20/CNX_Chem_20_03_OxiProd1b_a_img.jpg\" alt=\"图中显示一个分子结构，一个 C H 下标 3 基团向右上方与一个 C H 下标 2 基团相连，该基团向左下方与一个 C 原子相连。这个 C 原子以红色显示。该 C 原子在右上方与一个 O 原子形成双键。该 C 原子还在其正下方与一个 O H 基团形成单键。\"><br>（b）<br><img src=\"/media/ch20/CNX_Chem_20_03_OxiProd1b_b_img.jpg\" alt=\"图中显示一个分子结构，一个 C H 下标 3 基团向右上方与一个 C H 下标 2 基团相连，该基团向左下方与一个 C 基团相连。这个 C 原子以红色显示。该 C 原子在右上方与一个 O 原子形成双键。C 原子的正下方是与一个 H 原子形成的单键。\"><br>（c）<br><img src=\"/media/ch20/CNX_Chem_20_03_OxiProd1b_c_img.jpg\" alt=\"图中显示一个分子结构，一个 C H 下标 3 基团向右上方与一个 C H 下标 2 基团相连。该 C H 下标 2 基团向左下方与一个 C 原子相连。这个 C 原子以红色显示。该 C 原子在右上方与一个 O 原子形成双键。该 C 原子还与其正下方的一个 C H 下标 3 基团形成单键。\">"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp71829088",
+   "source_number": "43",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "aldehydes-ketones",
+   "prompt": "解释为什么不可能制备仅含两个碳原子的酮。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "酮含有一个与另外两个碳原子相连的基团；因此至少需要三个碳原子。"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp82703040",
+   "source_number": "45",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "carboxylic-acids-esters",
+   "prompt": "脂肪酸是羧酸，其长的烃链连在羧酸根基团上。饱和脂肪酸与不饱和脂肪酸有何不同？它们有何相似之处？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "由于它们都是羧酸，所以都含有 –COOH 官能团及其特性。不同之处在于，饱和脂肪酸的烃链不含双键或三键，而不饱和脂肪酸的烃链含有一个或多个重键。"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idp58454944",
+   "source_number": "47",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "aldehydes-ketones",
+   "prompt": "写出结构简式，如 CH<sub>3</sub>CH<sub>3</sub>，并描述每个碳原子处的分子几何构型。<br>（a）2-丙醇<br>（b）丙酮<br>（c）二甲醚<br>（d）乙酸<br>（e）3-甲基-1-己烯",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）CH<sub>3</sub>CH(OH)CH<sub>3</sub>：所有碳均为四面体形；（b）${\\text{CH}}_{3}\\text{C}\\text{O}{\\text{CH}}_{3}$：两端的碳为四面体形，中间的碳为平面三角形；（c）CH<sub>3</sub>OCH<sub>3</sub>：所有碳均为四面体形；（d）CH<sub>3</sub>COOH：甲基碳为四面体形，酸碳为平面三角形；（e）CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>CH(CH<sub>3</sub>)CHCH<sub>2</sub><sup class=\"fn\" data-note=\"c-e4-alkene\"></sup>：除最右侧的两个碳为平面三角形外，其余均为四面体形"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp14955296",
+   "source_number": "49",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "carboxylic-acids-esters",
+   "prompt": "写出乙酸根离子的两种共振式。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<br><img src=\"/media/ch20/CNX_Chem_20_03_acetate_img.jpg\" alt=\"图中显示，方括号内有一个 C 原子，其上方、下方和左侧连有 H 原子，右侧连有一个 C 原子。这第二个 C 原子的右上方以双键连有一个 O 原子，右下方以单键连有第二个 O 原子。方括号外右侧是一个上标减号。其后是一个双向箭头。该箭头右侧的方括号内有一个 C 原子，其上方、下方和左侧连有 H 原子，右侧连有一个 C 原子。这第二个 C 原子的右上方以单键连有一个 O 原子，右下方以双键连有第二个 O 原子。方括号外右侧是一个上标减号。以双键相连的 O 原子画有两对电子点，以单键相连的 O 原子画有 3 对电子点。\"><br>"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idp40990752",
+   "source_number": "51",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "carboxylic-acids-esters",
+   "prompt": "为下列每个反应写出两个完整的配平方程式，一个用结构简式，一个用路易斯结构。<br>（a）1-丁醇与乙酸反应<br>（b）把丙酸倒在固体碳酸钙上",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）${\\text{CH}}_{3}{\\text{CH}}_{2}{\\text{CH}}_{2}{\\text{CH}}_{2}{\\text{OH}+\\text{CH}}_{3}\\text{C}(\\text{O})\\text{OH}\\;\\;\\longrightarrow \\;\\;{\\text{CH}}_{3}\\text{C}(\\text{O}){\\text{OCH}}_{2}{\\text{CH}}_{2}{\\text{CH}}_{2}{\\text{CH}}_{3}+{\\text{H}}_{2}\\text{O:}$<br><img src=\"/media/ch20/CNX_Chem_20_04_react2b_img.jpg\" alt=\"图中显示一个反应。第一个分子结构显示一个 C 原子与三个 H 原子和另一个 C 原子相连。这第二个 C 原子与两个 H 原子和第三个 C 原子相连。这第三个 C 原子与两个 H 原子和第四个 C 原子相连。这个 C 原子与两个 H 原子和一个 O 原子相连。该 O 原子与一个 H 原子相连。该 O 原子画有两对电子点。其后是一个加号。下一个分子结构显示一个 C 原子与三个 H 原子和另一个 C 原子相连。这个 C 原子与一个 O 原子形成双键，与另一个 O 原子形成单键。该 O 原子与一个 H 原子成键。两个 O 原子都画有两对电子点。其后是一个指向右侧的反应箭头。下一个分子结构显示一个 C 原子与三个 H 原子和另一个 C 原子相连。这第二个 C 原子与一个 O 原子形成双键，与另一个 O 原子形成单键。这第二个 O 原子与一个 C 原子相连，该 C 原子与两个 H 原子和另一个 C 原子相连。这个 C 原子与两个 H 原子和另一个 C 相连。这个 C 原子与两个 H 原子和另一个 C 原子相连。该 C 原子与三个 H 原子相连。O 原子画有两对电子点。其后是一个加号。最后一个分子结构显示一个 O 原子与两个 H 原子相连。该 O 原子画有两对电子点。\"><br>（b）$2{\\text{CH}}_{3}{\\text{CH}}_{2}\\text{COOH}+{\\text{CaCO}}_{3}\\;\\longrightarrow \\;{({\\text{CH}}_{3}{\\text{CH}}_{2}\\text{COO})}_{2}\\text{Ca}+{\\text{CO}}_{2}+{\\text{H}}_{2}\\text{O:}$<br><img src=\"/media/ch20/CNX_Chem_20_04_react2c_img.jpg\" alt=\"图中显示一个反应。第一个分子结构前有一个 2。这第一个结构显示一个 C 原子与三个 H 原子和另一个 C 原子相连。这第二个 C 原子与两个 H 原子和第三个 C 原子相连。这第三个 C 原子与一个 O 原子形成双键，与另一个 O 原子形成单键。这第二个 O 原子与一个 H 原子形成单键。两个 O 原子都画有两对电子点。其后是一个加号以及 C a 上标 2 加号。C a 上标 2 加号旁边有一组方括号。括号内是一个中心 C 原子，与三个 O 原子相连。两个 O 原子画有三对电子点，一个 O 原子画有两对电子点。括号外有一个 2 减号作为上标。其后是一个指向右侧的箭头。接着是一个 2 和一组方括号。括号内是一个 C 原子，与三个 H 原子和另一个 C 原子相连。这个 C 原子与两个 H 原子和第三个 C 原子相连。这个 C 原子与两个 O 原子相连。一个 O 原子画有两对电子点，另一个 O 原子画有三对电子点。括号外有一个减号作为上标。括号旁边还有 C a 上标 2+。其后是一个加号。下一个分子结构显示一个 C 原子与两个 O 原子形成两组双键。每个 O 原子都画有两对电子点。其后是一个加号。最后一个分子结构显示一个 O 原子与两个 H 原子相连。该 O 原子画有两对电子点。\">"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp7346736",
+   "source_number": "53",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "aldehydes-ketones",
+   "prompt": "醇 A、B 和 C 的组成均为 C<sub>4</sub>H<sub>10</sub>O。醇 A 的分子含有支链碳链，可被氧化为醛；醇 B 的分子含有直链碳链，可被氧化为酮；醇 C 的分子既不能被氧化为醛，也不能被氧化为酮。写出这些分子的路易斯结构。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<br><img src=\"/media/ch20/CNX_Chem_20_03_alcoholABC_img.jpg\" alt=\"此图显示三个分子结构，分别标注为化合物 A、化合物 B 和化合物 C。在 A 中，显示一个 C 原子与三个 H 原子和第二个 C 原子相连。这个 C 原子与一个 H 原子相连。它在右上方与另一个 C 原子相连，后者与三个 H 原子相连。它在左下方与另一个 C 原子相连，后者与两个 H 原子和一个 O 原子相连。该 O 原子与一个 H 原子相连。该 O 原子画有两对电子点。在 B 中，一个 C 原子与三个 H 原子和另一个 C 原子相连。这第二个 C 原子与一个 H 原子和一个 O 原子相连。该 O 原子画有两对电子点，并与一个 H 原子相连。第二个 C 原子与第三个 C 原子相连，后者与两个 H 原子相连。第三个 C 原子与第四个 C 原子相连，后者与三个 H 原子相连。在 C 中，一个 C 原子与三个 H 原子和另一个 C 原子相连。这个 C 原子在上方与另一个 C 原子相连，后者与三个 H 原子相连，在下方与一个 C 原子相连，后者与三个 H 原子相连。它还与一个 O 原子相连，该 O 原子与一个 H 原子相连。该 O 原子画有两对电子点。\"><br>"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "organic-oxidation-reduction"
+  },
+  {
+   "exercise": "e1",
+   "concept": "oxidizing-alcohols"
+  },
+  {
+   "exercise": "e1",
+   "concept": "organic-oxidation-reduction"
+  },
+  {
+   "exercise": "e2",
+   "concept": "ketone"
+  },
+  {
+   "exercise": "e3",
+   "concept": "fats-and-oils"
+  },
+  {
+   "exercise": "e3",
+   "concept": "carboxylic-acid"
+  },
+  {
+   "exercise": "e4",
+   "concept": "carbonyl-group"
+  },
+  {
+   "exercise": "e4",
+   "concept": "ketone"
+  },
+  {
+   "exercise": "e4",
+   "concept": "carboxylic-acid"
+  },
+  {
+   "exercise": "e5",
+   "concept": "carboxylic-acid"
+  },
+  {
+   "exercise": "e5",
+   "concept": "resonance-forms"
+  },
+  {
+   "exercise": "e6",
+   "concept": "ester"
+  },
+  {
+   "exercise": "e6",
+   "concept": "carboxylic-acid"
+  },
+  {
+   "exercise": "e7",
+   "concept": "oxidizing-alcohols"
+  },
+  {
+   "exercise": "e7",
+   "concept": "alcohol"
+  }
+ ],
+ "footnotes": [
+  {
+   "id": "c-ester-volatility",
+   "kind": "correction",
+   "html": "书中说酯的蒸气压较低。酯的分子之间没有氢键，因此酯分子之间的结合力比衍生出它们的醇和羧酸弱，所以它们的蒸气压更高，也更易挥发。"
+  },
+  {
+   "id": "c-e4-alkene",
+   "kind": "correction",
+   "html": "书后答案的化学式漏掉了 1-己烯的双键：CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>CH(CH<sub>3</sub>)CH=CH<sub>2</sub>。"
+  }
+ ]
+}

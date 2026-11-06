@@ -1,0 +1,596 @@
+{
+ "id": "18.11",
+ "module": "m68839",
+ "chapter": "18",
+ "title": "卤素的存在、制备与性质",
+ "short": "卤素",
+ "lead": "<span data-concept=\"halogen\">卤素</span>，从氟到砹，反应性都太强，在自然界中找不到游离态。本节依次讲述每种卤素如何由其<span data-concept=\"halide\">卤</span>离子制得，每种卤素作为<span data-concept=\"oxidizing-agent\">氧化剂</span>的强度如何，主族金属的卤化物和<span data-concept=\"interhalogen\">卤素互化物</span>如何制备，以及卤素有哪些用途。",
+ "objectives": [
+  "描述卤素的制备、性质和用途",
+  "描述卤素化合物的性质、制备和用途"
+ ],
+ "summary_html": "<p><span data-concept=\"halogen\">卤素</span>与电负性较小的元素形成<span data-concept=\"halide\">卤化物</span>。金属的卤化物从离子型到共价型不等；非金属的卤化物是共价型的。<span data-concept=\"interhalogen\">卤素互化物</span>由两种或多种不同的卤素结合而成。</p><p>所有<span data-concept=\"representative-metal\">主族金属</span>都能与单质卤素或氢卤酸（HF、HCl、HBr 和 HI）的溶液直接反应，生成主族金属卤化物。实验室中的其他制备方法，是把氢卤酸水溶液加到含有这类碱性阴离子的化合物中，例如氢氧化物、氧化物或碳酸盐。</p>",
+ "notes": "关于钠与氯反应的“学习链接”被略去。本节照原样保留了印出的“HlO₃”（碘酸，小写的 l）、逗号被排成下标的“NaIO₃,”、表示氟磷灰石的“Ca(PO₄)₃F”、“四氯化物（CCl₄）”、碘的“空的价 d 轨道”，以及题注中的“淡黄绿色”与正文中的“黄绿色”之别；英文原文中的“makes the reaction between them to be imperceptibly slow”“The direct reaction of a metal and a halogen produce”“IF₅is”（图 18.63 的题注）和小结中的“such basic anions, such as”等语法或排印上的误写，中文无从重现，只按其意思译出。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签、提示和建议思路由 AI 生成。答案来自书后答案。三道没有答案的习题 fs-idp270945872（配平方程式）、fs-idp86909200（IF₃ 和 IF₅ 中碘的杂化）和 fs-idm15587536（生理盐水中氯化钠的质量）未收入，也没有为它们作答。没有答案的选择题 fs-idp153262192 保持开放，附有建议思路，不评分；没有答案的概念题 fs-idp137679248 和 fs-idp25457408 附有建议思路，并注明为 OmniStax 自己所写。习题 fs-idm10171552 用到关于氧的一节中的卤酸，习题 fs-idm48157456 用到关于磷的一节中的 PCl₅；没有移动任何内容。",
+ "figures": [
+  {
+   "id": "fig-halogen-gases",
+   "kind": "photo",
+   "number": "18.60",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-halogen-ladder",
+   "kind": "sim",
+   "draws": [
+    "potential"
+   ],
+   "facts": [
+    "#c9dc6a",
+    "#d9822b",
+    "#8a4b1f"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-hgi2",
+   "kind": "photo",
+   "number": "18.61",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-salt-mine",
+   "kind": "photo",
+   "number": "18.62",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-interhalogens",
+   "kind": "sim",
+   "number": "18.63",
+   "originals": [
+    "/media/ch18/CNX_Chem_18_11_IF3IF5IF7.jpg"
+   ],
+   "original_caption": "IF₃ 的结构为 T 形（左），IF₅ 为四方锥形（中），IF₇ 为五角双锥形（右）。",
+   "draws": [
+    "length"
+   ],
+   "conventions": [
+    "Cl",
+    "Br",
+    "I",
+    "F"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "halogens",
+   "concept": "halogen",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "halogen-preparation",
+   "verb": "introduces"
+  },
+  {
+   "span": "occurrence",
+   "concept": "halogen",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "halide",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "concentration",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "electrolysis",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "anode",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "cathode",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "chlor-alkali-process",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "halogen-properties",
+   "verb": "introduces"
+  },
+  {
+   "span": "properties",
+   "concept": "chlorine-water",
+   "verb": "introduces"
+  },
+  {
+   "span": "properties",
+   "concept": "vapor-pressure",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "sublimation",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "concentration",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "lewis-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "lewis-base",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "noble-gas",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "passivation",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "hydrocarbon",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "disproportionation-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "chemical-equilibrium",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "halogen",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "standard-electrode-potential",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "electronegativity",
+   "verb": "uses"
+  },
+  {
+   "span": "metal-halides",
+   "concept": "halide",
+   "verb": "introduces"
+  },
+  {
+   "span": "metal-halides",
+   "concept": "preparing-metal-halides",
+   "verb": "introduces"
+  },
+  {
+   "span": "metal-halides",
+   "concept": "representative-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "metal-halides",
+   "concept": "salt",
+   "verb": "uses"
+  },
+  {
+   "span": "metal-halides",
+   "concept": "ionic-and-covalent-bonds",
+   "verb": "uses"
+  },
+  {
+   "span": "metal-halides",
+   "concept": "redox-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "metal-halides",
+   "concept": "hydrogen-halide",
+   "verb": "uses"
+  },
+  {
+   "span": "metal-halides",
+   "concept": "insoluble",
+   "verb": "uses"
+  },
+  {
+   "span": "metal-halides",
+   "concept": "chlor-alkali-process",
+   "verb": "uses"
+  },
+  {
+   "span": "interhalogens",
+   "concept": "interhalogen",
+   "verb": "introduces"
+  },
+  {
+   "span": "interhalogens",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "interhalogens",
+   "concept": "covalent-radius",
+   "verb": "uses"
+  },
+  {
+   "span": "interhalogens",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "interhalogens",
+   "concept": "alkali-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "interhalogens",
+   "concept": "vsepr-theory",
+   "verb": "uses"
+  },
+  {
+   "span": "applications",
+   "concept": "chlorine-water",
+   "verb": "uses"
+  },
+  {
+   "span": "applications",
+   "concept": "hydrocarbon",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "e100",
+   "source_id": "fs-idp137679248",
+   "source_number": "100",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "metal-halides",
+   "prompt": "说“卤化汞(II)是弱电解质”是什么意思？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "这是说，当卤化汞(II)溶于水时，只有一小部分电离，所以溶液中主要是中性分子，离子很少。汞形成的是共价而非离子型的二元卤化物，因此例如 HgCl<sub>2</sub> 由分立的 Cl–Hg–Cl 分子构成，而不是由 Hg<sup>2+</sup> 和 Cl<sup>−</sup> 离子构成的晶格。溶解时，分子基本上保持完整，只有少数分子在 $${\\text{HgCl}}_{2}(aq)\\;\\rightleftharpoons \\;{\\text{HgCl}}^{+}(aq)+{\\text{Cl}}^{−}(aq)$$ 这样的平衡中解离，这些平衡远远偏向左边。由于溶液靠离子的运动导电，HgCl<sub>2</sub> 溶液只有微弱的导电性，远远不如同样浓度的 NaCl 或 CdCl<sub>2</sub> 等离子型卤化物的溶液，后者完全解离为离子。这种部分电离和导电性差，正是弱电解质的定义。"
+   }
+  },
+  {
+   "id": "e101",
+   "source_id": "fs-idm31814768",
+   "source_number": "101",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "metal-halides",
+   "prompt": "为什么 SnCl<sub>4</sub> 不被归为盐？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "SnCl<sub>4</sub> 不是盐，因为它是以共价键结合的。盐必须有离子键。"
+   }
+  },
+  {
+   "id": "e103",
+   "source_id": "fs-idm10171552",
+   "source_number": "103",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "properties",
+   "prompt": "HClO<sub>3</sub> 和 HBrO<sub>3</sub> 哪个酸性更强？为什么？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "在化学式相似的含氧酸中，酸的强度随中心原子电负性的增大而增大。HClO<sub>3</sub> 比 HBrO<sub>3</sub> 强；Cl 的电负性比 Br 大。"
+   }
+  },
+  {
+   "id": "e105",
+   "source_id": "fs-idm48157456",
+   "source_number": "105",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "interhalogens",
+   "prompt": "预测下列各物质的分子几何构型，并画出路易斯结构。你不妨复习一下关于化学键与分子几何构型的一章。<br>（a）IF<sub>5</sub><br>（b）$\\text{I}_{3}{}^{-}$<br>（c）PCl<sub>5</sub><br>（d）SeF<sub>4</sub><br>（e）ClF<sub>3</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）IF<sub>5</sub>：<br><img src=\"/media/ch18/CNX_Chem_18_11_Exercise4a_img.jpg\" alt=\"该路易斯结构显示一个碘原子带有一个孤电子对，以单键与五个氟原子相连，每个氟原子各有三个孤电子对。图上标注为“四方锥形”。\"><br>（b）$\\text{I}_{3}{}^{-}$：<br><img src=\"/media/ch18/CNX_Chem_18_11_Exercise4b_img.jpg\" alt=\"该路易斯结构显示一个碘原子带有三个孤电子对，以单键与两个碘原子相连，这两个碘原子各有三个孤电子对。图外有方括号，括号外有一个上标的负号。图上标注为“直线形”。\"><br>（c）PCl<sub>5</sub>：<br><img src=\"/media/ch18/CNX_Chem_18_11_Exercise4c_img.jpg\" alt=\"该路易斯结构显示一个磷原子以单键与五个氯原子相连，每个氯原子各有三个孤电子对。图上标注为“三角双锥形”。\"><br>（d）SeF<sub>4</sub>：<br><img src=\"/media/ch18/CNX_Chem_18_11_Exercise4d_img.jpg\" alt=\"该路易斯结构显示一个硒原子带有一个孤电子对，以单键与四个氟原子相连，每个氟原子各有三个孤电子对。图上标注为“跷跷板形”。\"><br>（e）ClF<sub>3</sub>：<br><img src=\"/media/ch18/CNX_Chem_18_11_Exercise4e_img.jpg\" alt=\"该路易斯结构显示一个氯原子带有两个孤电子对，以单键与三个氟原子相连，每个氟原子各有三个孤电子对。图上标注为“T 形”。\">"
+   }
+  },
+  {
+   "id": "e106",
+   "source_id": "fs-idp153262192",
+   "source_number": "106",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "properties",
+   "prompt": "哪种卤素的电离能最高？根据你学到的周期性质，这符合你的预测吗？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "氟的第一电离能在卤素中最高，约为 1681 kJ/mol，氯约为 1251 kJ/mol，溴约为 1140 kJ/mol，碘约为 1008 kJ/mol。这与周期性趋势的预测一致。第一电离能沿族向下递减：越重的卤素，其价电子所在的壳层越高，离核越远，并且受内层电子对核的屏蔽越强，所以移去一个电子所需的能量就越少。氟是第 17 族的第一个成员，是最小的卤素原子，它的 2<em>p</em> 电子离核最近，受到的屏蔽最少。因此，移去其中一个电子需要的能量最多。"
+   }
+  },
+  {
+   "id": "e107",
+   "source_id": "fs-idm70668928",
+   "source_number": "107",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "interhalogens",
+   "prompt": "给下列各化合物命名：<br>（a）BrF<sub>3</sub><br>（b）NaBrO<sub>3</sub><br>（c）PBr<sub>5</sub><br>（d）NaClO<sub>4</sub><br>（e）KClO",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）三氟化溴；（b）溴酸钠；（c）五溴化磷；（d）高氯酸钠；（e）次氯酸钾"
+   }
+  },
+  {
+   "id": "e108",
+   "source_id": "fs-idp25457408",
+   "source_number": "108",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "properties",
+   "prompt": "解释为什么在室温下，氟和氯是气体，溴是液体，碘是固体。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "卤素沿族向下由气体变为液体再变为固体，是因为随着分子变大，分子间的色散力增强。F<sub>2</sub>、Cl<sub>2</sub>、Br<sub>2</sub> 和 I<sub>2</sub> 都是非极性双原子分子，所以色散力是它们之间唯一的吸引作用。这些力取决于分子的电子云有多容易发生畸变，而这又随电子数目和分子的大小而增大：F<sub>2</sub> 有 18 个电子，Cl<sub>2</sub> 有 34 个，Br<sub>2</sub> 有 70 个，I<sub>2</sub> 有 106 个。小的 F<sub>2</sub> 和 Cl<sub>2</sub> 分子彼此吸引得非常弱，所以它们的沸点远低于室温，分别约为 −188 °C 和 −34 °C。较大的 Br<sub>2</sub> 分子彼此吸引得足够强，所以溴在约 59 °C 沸腾，在 25 °C 时是液体。最大的 I<sub>2</sub> 分子彼此吸引得最强，所以碘在约 114 °C 熔化，在室温下是固体。"
+   }
+  },
+  {
+   "id": "e109",
+   "source_id": "fs-idm108582784",
+   "source_number": "109",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "interhalogens",
+   "prompt": "下列各物质中卤素的氧化态是多少？<br>（a）H<sub>5</sub>IO<sub>6</sub><br>（b）$\\text{IO}_{4}{}^{-}$<br>（c）ClO<sub>2</sub><br>（d）ICl<sub>3</sub><br>（e）F<sub>2</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）I：7+；（b）I：7+；（c）Cl：4+；（d）I：3+；Cl：1−；（e）F：0"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e100",
+   "concept": "weak-electrolyte"
+  },
+  {
+   "exercise": "e100",
+   "concept": "halide"
+  },
+  {
+   "exercise": "e101",
+   "concept": "salt"
+  },
+  {
+   "exercise": "e101",
+   "concept": "halide"
+  },
+  {
+   "exercise": "e103",
+   "concept": "oxyacid-strength"
+  },
+  {
+   "exercise": "e103",
+   "concept": "electronegativity"
+  },
+  {
+   "exercise": "e105",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "e105",
+   "concept": "lewis-structure"
+  },
+  {
+   "exercise": "e105",
+   "concept": "interhalogen"
+  },
+  {
+   "exercise": "e106",
+   "concept": "ionization-energy-trend"
+  },
+  {
+   "exercise": "e106",
+   "concept": "halogen-properties"
+  },
+  {
+   "exercise": "e107",
+   "concept": "name-binary-molecular-compounds"
+  },
+  {
+   "exercise": "e107",
+   "concept": "name-ionic-compounds"
+  },
+  {
+   "exercise": "e107",
+   "concept": "interhalogen"
+  },
+  {
+   "exercise": "e108",
+   "concept": "dispersion-forces"
+  },
+  {
+   "exercise": "e108",
+   "concept": "halogen-properties"
+  },
+  {
+   "exercise": "e109",
+   "concept": "oxidation-number"
+  },
+  {
+   "exercise": "e109",
+   "concept": "interhalogen"
+  }
+ ],
+ "footnotes": [
+  {
+   "id": "c-fluoroapatite",
+   "kind": "correction",
+   "html": "本书写作 Ca(PO<sub>4</sub>)<sub>3</sub>F。氟磷灰石是 Ca<sub>5</sub>(PO<sub>4</sub>)<sub>3</sub>F，本节在几段之后就是这样写的。"
+  }
+ ]
+}

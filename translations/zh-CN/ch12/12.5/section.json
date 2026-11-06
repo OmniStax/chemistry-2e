@@ -1,0 +1,742 @@
+{
+ "id": "12.5",
+ "module": "m68793",
+ "chapter": "12",
+ "title": "碰撞理论",
+ "short": "碰撞理论",
+ "lead": "分子只有在碰撞时才会反应，而且只有在取向正确、能量足够时才会反应。这个最低能量，即活化能，通过阿伦尼乌斯方程把速率常数与温度联系起来。",
+ "objectives": [
+  "用碰撞理论的基本假设解释物理状态、温度和浓度对反应速率的影响",
+  "定义活化能和过渡态的概念",
+  "在涉及速率常数与温度之间关系的计算中使用阿伦尼乌斯方程"
+ ],
+ "summary_html": "<p>化学反应通常需要反应物物种之间发生碰撞。这些反应物的碰撞必须取向正确且<span data-concept=\"energy-and-work\">能量</span>足够，才能生成产物。<span data-concept=\"collision-theory\">碰撞理论</span>对许多实验参数如何影响<span data-concept=\"reaction-rate\">反应速率</span>做出了简单而有效的解释。<span data-concept=\"arrhenius-equation\">阿伦尼乌斯方程</span>描述了反应的<span data-concept=\"rate-constant\">速率常数</span>、<span data-concept=\"activation-energy\">活化能</span>、<span data-concept=\"temperature\">温度</span>以及对碰撞取向的依赖关系之间的联系。</p>",
+ "notes": "本节没有任何内容被略去；例 12.13 的结果中，E<sub>a</sub> 之后多余的粗体标记按普通文字写出。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案来自书中的答案表和“学习检测”的答案。三道没有答案的数值习题被略去，也没有为它们算出答案：fs-idm67340288（加热温度高 20 °C 的一个分解反应）、fs-idm129065792（乙醛分解的活化能）和 fs-idm166518032（一种 Co(III) 配合物的还原）。没有答案的概念性习题 fs-idm147445136、fs-idm190953584 和 fs-idm122581792，以及没有答案的选择题 fs-idm3600240（作为开放题保留，附带选项，不评分），都带有一个建议的解题思路，标明为 OmniStax 自己所加。两道 PhET 习题 fs-idp179196768（没有答案，带有建议的解题思路）和 fs-idp11390128（有答案）改为针对图 12.13 + 12.14 提问，而不是针对 PhET 模拟，其中一氧化碳分子代表 A，氧分子代表 BC；有答案的那道，答案是书中的。fs-idm167771040 的答案表把活化能写成“108 kJ”，按原样保留。数值答案接受 2% 的容差，除非书中的修约更粗。",
+ "figures": [
+  {
+   "id": "sim-collision",
+   "kind": "sim",
+   "number": "12.13",
+   "folds": [
+    "12.14"
+   ],
+   "originals": [
+    "/media/ch12/CNX_Chem_12_05_COandO2.jpg",
+    "/media/ch12/CNX_Chem_12_05_RCooDgm.jpg"
+   ],
+   "original_caption": "（图 12.13）图示一氧化碳分子与氧分子之间可能发生的两种碰撞。碰撞分子的取向在一定程度上决定这两个分子之间是否会发生反应。（图 12.14）放热反应 A + B ⟶ C + D 的反应图。",
+   "draws": [
+    "energy"
+   ],
+   "conventions": [
+    "C",
+    "O"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-distribution",
+   "kind": "sim",
+   "number": "12.15",
+   "originals": [
+    "/media/ch12/CNX_Chem_12_05_SuccessR.jpg"
+   ],
+   "original_caption": "分子能量分布图，显示能量超过下列值的分子数：（a）在给定温度下的两个不同的活化能，（b）在两个不同温度下的给定活化能。",
+   "draws": [
+    "energy",
+    "temperature",
+    "rate-constant"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-arrhenius-plot",
+   "kind": "sim",
+   "number": "12.16",
+   "originals": [
+    "/media/ch12/CNX_Chem_12_05_ArrhPlot.jpg"
+   ],
+   "original_caption": "此图显示了根据阿伦尼乌斯方程，反应 2HI ⟶ H2 + I2 的 ln k 与 1/T 之间的线性关系。",
+   "draws": [
+    "energy",
+    "rate-constant",
+    "temperature"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "postulates",
+   "concept": "collision-theory",
+   "verb": "introduces"
+  },
+  {
+   "span": "postulates",
+   "concept": "reaction-rate",
+   "verb": "uses"
+  },
+  {
+   "span": "orientation",
+   "concept": "collision-orientation",
+   "verb": "introduces"
+  },
+  {
+   "span": "orientation",
+   "concept": "activated-complex",
+   "verb": "introduces"
+  },
+  {
+   "span": "orientation",
+   "concept": "collision-theory",
+   "verb": "uses"
+  },
+  {
+   "span": "orientation",
+   "concept": "concentration-and-rate",
+   "verb": "reinforces"
+  },
+  {
+   "span": "activation",
+   "concept": "activation-energy",
+   "verb": "introduces"
+  },
+  {
+   "span": "activation",
+   "concept": "reaction-energy-diagram",
+   "verb": "introduces"
+  },
+  {
+   "span": "activation",
+   "concept": "reaction-diagram",
+   "verb": "introduces"
+  },
+  {
+   "span": "activation",
+   "concept": "kinetic-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "activation",
+   "concept": "enthalpy-change",
+   "verb": "uses"
+  },
+  {
+   "span": "activation",
+   "concept": "exothermic-process",
+   "verb": "uses"
+  },
+  {
+   "span": "arrhenius",
+   "concept": "arrhenius-equation",
+   "verb": "introduces"
+  },
+  {
+   "span": "arrhenius",
+   "concept": "frequency-factor",
+   "verb": "introduces"
+  },
+  {
+   "span": "arrhenius",
+   "concept": "energy-distribution-and-rate",
+   "verb": "introduces"
+  },
+  {
+   "span": "arrhenius",
+   "concept": "rate-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "arrhenius",
+   "concept": "ideal-gas-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "arrhenius",
+   "concept": "average-kinetic-energy-and-temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "arrhenius",
+   "concept": "temperature-and-rate",
+   "verb": "uses"
+  },
+  {
+   "span": "graphical",
+   "concept": "activation-energy-from-rate-constants",
+   "verb": "introduces"
+  },
+  {
+   "span": "graphical",
+   "concept": "arrhenius-equation",
+   "verb": "uses"
+  },
+  {
+   "span": "graphical",
+   "concept": "activation-energy",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm160727824",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-ea"
+   },
+   "cite": "ex-ea",
+   "prompt": "N<sub>2</sub>O<sub>5</sub> 在气相中分解为 NO 和 O<sub>2</sub> 的速率常数，在 650 K 时为 1.66 L/mol/s，在 700 K 时为 7.39 L/mol/s：<br>2N<sub>2</sub>O<sub>5</sub>(<em>g</em>) ⟶ 4NO(<em>g</em>) + 3O<sub>2</sub>(<em>g</em>)<br>假设该反应的动力学与阿伦尼乌斯方程一致，计算这一分解反应的活化能。",
+   "answer": {
+    "type": "number",
+    "value": 110000.0,
+    "unit": "J/mol",
+    "tol": 0.05,
+    "hint": "把两个速率常数及其温度代入阿伦尼乌斯方程的两点形式，解出活化能。",
+    "solution": "1.1 × 10<sup>5</sup> J mol<sup>−1</sup> 或 110 kJ mol<sup>−1</sup>",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idp801808",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "orientation",
+   "prompt": "化学反应发生在反应物碰撞时。有哪两个因素可能使碰撞不能产生化学反应？",
+   "answer": {
+    "type": "open",
+    "solution": "反应物可能运动得太慢，动能不足以超过反应的活化能；或者分子碰撞时的取向可能妨碍反应发生。",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idm147445136",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "postulates",
+   "prompt": "当反应物之间的每一次碰撞都导致反应时，是什么决定反应发生的速率？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "此时速率由碰撞频率决定，即单位时间内反应物物种之间的碰撞次数。碰撞理论的第一个假设指出，反应速率与反应物的碰撞速率成正比，$\\text{反应速率}\\;\\propto \\;\\frac{\\#\\;\\text{次碰撞}}{\\text{时间}}$，而关于取向和能量的假设 2 和假设 3，通常会使许多碰撞无功而返。如果每次碰撞都发生反应，这两个因素就不再降低速率，速率等于碰撞速率。碰撞速率随反应物浓度增大而增大，因为在给定体积内有更多的反应物分子，相遇得更频繁；也随温度升高而增大，因为运动更快的分子碰撞得更频繁。"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm141471856",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": {
+    "at": "end"
+   },
+   "cite": "activation",
+   "prompt": "反应的活化能是什么？这一能量与反应的活化络合物有什么关系？",
+   "answer": {
+    "type": "open",
+    "solution": "活化能是反应中形成活化络合物所需的最低能量。它通常表示为形成 1 摩尔活化络合物所需的能量。",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm190953584",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "arrhenius",
+   "prompt": "解释反应速率与其活化能之间的关系。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "活化能越高，反应越慢；活化能越低，反应越快。只有碰撞所带能量至少等于活化能 $\\kEa$ 的分子才能发生反应。在给定温度下的分子能量分布中，具有这么多能量的分子构成曲线在 $\\kEa$ 之外的尾部。$\\kEa$ 越大，这个界限就移得越远，符合条件的分子所占的比例就越小，成功的碰撞也就越少；$\\kEa$ 越小，能量足够的分子所占的比例就越大。阿伦尼乌斯方程 $\\kk=\\kAfreq{e}^{-\\kEa/R\\kT}$ 表达了这一点：指数项 ${e}^{-\\kEa/R\\kT}$ 是能量足够的分子所占的比例，它随 $\\kEa$ 增大而急剧下降，所以速率常数以及速率随之减小。"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idm162997840",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "graphical",
+   "prompt": "说明如何用图解法，由包含不同温度下反应速率的一系列数据来确定反应的活化能。",
+   "answer": {
+    "type": "open",
+    "solution": "在求出几个不同温度下的 <em>k</em> 之后，作 ln <em>k</em> 对 1/<em>T</em> 的图，得到斜率为 −<em>E</em><sub>a</sub>/<em>R</em> 的直线，由此可以确定 <em>E</em><sub>a</sub>。",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm122581792",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "arrhenius",
+   "prompt": "温度升高如何影响反应速率？请用反应速率的碰撞理论解释这一影响。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "温度升高使反应速率增大。按碰撞理论，这有两方面的作用。分子运动得更快，所以碰撞得更频繁；而且有更大比例的分子所带能量至少等于活化能 $\\kEa$，所以有更大份额的碰撞导致反应。第二方面的作用要大得多：温度较高时，能量分布变得更平、更宽，其在 $\\kEa$ 之外的尾部成倍增大。对于 $\\kEa$ = 50 kJ/mol 的反应，温度从 300 K 升高到 310 K，碰撞频率增大不到 2%，但能量足够的分子所占的比例 ${e}^{-\\kEa/R\\kT}$ 却变为原来的约 1.9 倍。在阿伦尼乌斯方程中，这表现为速率常数增大，反应相应加快。"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idm166001648",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "arrhenius",
+   "prompt": "某个反应的速率，温度每升高 10 °C 就加倍。<br>（a）反应在 45 °C 时的速率是 25 °C 时的多少倍？<br>（b）反应在 95 °C 时的速率是 25 °C 时的多少倍？",
+   "answer": {
+    "type": "multi",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 4,
+      "unit": "times",
+      "hint": "数一数从 25 °C 到 45 °C 有几个 10 °C 的台阶，每一个台阶加倍一次。"
+     },
+     {
+      "part": "(b)",
+      "value": 128,
+      "unit": "times",
+      "hint": "数一数从 25 °C 到 95 °C 有几个 10 °C 的台阶，每一个台阶加倍一次。"
+     }
+    ],
+    "solution": "（a）是 25 °C 时的 4 倍（b）是 25 °C 时的 128 倍",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idm128511072",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "arrhenius",
+   "prompt": "分解反应 C<sub>4</sub>H<sub>8</sub> ⟶ 2C<sub>2</sub>H<sub>4</sub> 在 325 °C 时的速率常数为 6.1 × 10<sup>−8</sup> s<sup>−1</sup>，活化能为每摩尔 C<sub>4</sub>H<sub>8</sub> 261 kJ。求该反应的频率因子。",
+   "answer": {
+    "type": "number",
+    "value": 3900000000000000.0,
+    "unit": "s⁻¹",
+    "tol": 0.05,
+    "hint": "把温度换算成开尔文，把活化能换算成焦耳每摩尔，然后对阿伦尼乌斯方程解出 A。",
+    "solution": "3.9 × 10<sup>15</sup> s<sup>−1</sup>",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idm131383728",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ex-ea",
+   "prompt": "人血清中碱性磷酸酶（ALP）水平升高，表明可能有肝脏或骨骼疾病。血清 ALP 的水平非常低，很难直接测量。但是，ALP 催化许多反应，可以通过在受控条件下测量其中一个反应的速率来确定它的相对浓度。其中一个这样的反应，是磷酸对硝基苯酯（PNPP）转化为对硝基苯氧负离子（PNP）和磷酸根离子。测试过程中对温度的控制非常重要；温度从 30 °C 变为 37 °C 时，反应速率增大到 1.47 倍。ALP 催化的 PNPP 转化为 PNP 和磷酸根的反应，其活化能是多少？",
+   "answer": {
+    "type": "number",
+    "value": 43.0,
+    "unit": "kJ/mol",
+    "hint": "速率常数之比就是速率之比，即 1.47；把它和以开尔文表示的两个温度代入阿伦尼乌斯方程的两点形式。",
+    "solution": "43.0 kJ/mol",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idm3600240",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": {
+    "at": "end"
+   },
+   "cite": "postulates",
+   "prompt": "按碰撞理论，化学反应的速率与下列哪一项成正比？<br>（a）每秒自由能的变化<br>（b）每秒温度的变化<br>（c）每秒的碰撞次数<br>（d）产物分子的数目",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "（c）每秒的碰撞次数。碰撞理论的第一个假设指出，反应速率与反应物的碰撞速率成正比，$\\text{反应速率}\\;\\propto \\;\\frac{\\#\\;\\text{次碰撞}}{\\text{时间}}$，也就是每秒的碰撞次数。自由能的变化和温度的变化描述的是反应的热力学和条件，而不是反应物相遇的频繁程度；产物分子的数目是一个量，不是速率。"
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idm58458096",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ex-ea",
+   "prompt": "碘化氢 HI 在气相中分解，生成氢气 H<sub>2</sub> 和碘 I<sub>2</sub>。在几个不同的温度下测定了该反应的速率常数 <em>k</em>，数据如下：<br><table><thead><tr><th>温度（K）</th><th><em>k</em> (L mol<sup>−1</sup> s<sup>−1</sup>)</th></tr></thead><tbody><tr><td>555</td><td>6.23 × 10<sup>−7</sup></td></tr><tr><td>575</td><td>2.42 × 10<sup>−6</sup></td></tr><tr><td>645</td><td>1.44 × 10<sup>−4</sup></td></tr><tr><td>700</td><td>2.01 × 10<sup>−3</sup></td></tr></tbody></table>该反应的活化能（以 kJ/mol 为单位）是多少？",
+   "answer": {
+    "type": "number",
+    "value": 177,
+    "unit": "kJ/mol",
+    "tol": 0.03,
+    "hint": "作 ln k 对 1/T 的图，或取第一行和最后一行，把斜率的负值乘以 R。",
+    "solution": "177 kJ/mol",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idm167771040",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ex-ea",
+   "prompt": "蔗糖水解为葡萄糖和果糖的反应<br>C<sub>12</sub>H<sub>22</sub>O<sub>11</sub> + H<sub>2</sub>O ⟶ C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + C<sub>6</sub>H<sub>12</sub>O<sub>6</sub><br>该反应对蔗糖的消失遵循一级速率定律：速率 = <em>k</em>[C<sub>12</sub>H<sub>22</sub>O<sub>11</sub>]（反应的产物葡萄糖和果糖分子式相同，但分子中原子的排列不同。）<br>（a）在中性溶液中，27 °C 时 <em>k</em> = 2.1 × 10<sup>−11</sup> s<sup>−1</sup>，37 °C 时为 8.5 × 10<sup>−11</sup> s<sup>−1</sup>。求这个方程的活化能、频率因子，以及 47 °C 时的速率常数（假设在该温度下动力学仍与阿伦尼乌斯方程一致）。<br>（b）初始浓度为 0.150 <em>M</em> 的蔗糖溶液达到平衡时，蔗糖的浓度为 1.65 × 10<sup>−7</sup> <em>M</em>。在没有催化剂的情况下，溶液在 27 °C 达到平衡需要多长时间？由于平衡时蔗糖的浓度非常低，假设该反应是不可逆的。<br>（c）为什么假设反应不可逆会使（b）的计算变得简单？",
+   "answer": {
+    "type": "multi",
+    "parts": [
+     {
+      "part": "(a) activation energy",
+      "value": 108,
+      "unit": "kJ/mol",
+      "tol": 0.03,
+      "hint": "用阿伦尼乌斯方程的两点形式，两个温度都用开尔文。"
+     },
+     {
+      "part": "(a) frequency factor",
+      "value": 200000000.0,
+      "unit": "s⁻¹",
+      "tol": 0.06,
+      "hint": "把活化能和任一速率常数代入阿伦尼乌斯方程，解出 A。"
+     },
+     {
+      "part": "(a) rate constant at 47 °C",
+      "value": 3.2e-10,
+      "unit": "s⁻¹",
+      "tol": 0.05,
+      "hint": "在 320 K 时，把 A 和活化能代入阿伦尼乌斯方程。"
+     },
+     {
+      "part": "(b)",
+      "value": 181000000.0,
+      "unit": "h",
+      "tol": 0.03,
+      "hint": "用一级积分速率定律和 27 °C 时的速率常数。"
+     }
+    ],
+    "solution": "<em>E</em><sub>a</sub> = 108 kJ<sup class=\"fn\" data-note=\"c-e12-ea\"></sup>；<em>A</em> = 2.0 × 10<sup>8</sup> s<sup>−1</sup>；<em>k</em> = 3.2 × 10<sup>−10</sup> s<sup>−1</sup>；（b）1.81 × 10<sup>8</sup> h 或 7.6 × 10<sup>6</sup> 天；（c）假设反应不可逆会使计算变得简单，因为我们不必考虑任何已转化为产物后又回到原来状态的反应物。",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idp179196768",
+   "kind": "simulation-exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "orientation",
+   "prompt": "使用图 12.13 + 12.14，其中一氧化碳分子代表 <em>A</em>，氧分子代表 <em>BC</em>，反应为 <em>A</em> + <em>BC</em> ⟶ <em>AB</em> + <em>C</em>，分子下方的反应图是能量视图。让碳端先碰撞，尝试以不同的能量发起碰撞。当碰撞能量线低于能量曲线的过渡态时，什么发生了变化？为什么？当它高于过渡态时，又会发生什么？为什么？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "当碰撞能量线低于过渡态时，反应不发生：分子相互弹开，仍是 CO 和 O<sub>2</sub>，没有变化。分子靠近时，它们的动能用于爬上能垒，所以圆点只上升到其高度等于碰撞能量为止，即曲线与虚线相交处，并在那里折回。这次碰撞所带的能量小于活化能（对这个反应约为 200 kJ/mol），所以这对分子始终达不到过渡态，其价层也无法穿透到足以让化学键重新排布的程度。当碰撞能量线高于过渡态时，反应发生：圆点越过峰顶，这对分子形成活化络合物，并分解为产物 CO<sub>2</sub> 和一个氧原子（<em>AB</em> + <em>C</em>），最终的能量比开始时低 34 kJ/mol。碳端先碰撞且能量至少等于活化能的碰撞，同时满足碰撞理论对取向和能量的要求，所以能够成功。"
+   }
+  },
+  {
+   "id": "e14",
+   "source_id": "fs-idp11390128",
+   "kind": "simulation-exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "orientation",
+   "prompt": "使用图 12.13 + 12.14，其中一氧化碳分子代表 <em>A</em>，氧分子代表 <em>BC</em>，反应为 <em>A</em> + <em>BC</em> ⟶ <em>AB</em> + <em>C</em>，分子下方的反应图是能量视图。让碰撞的能量高于过渡态，先以碳端、再以氧端让 <em>A</em> 撞向 <em>BC</em>。当 <em>A</em> 原子从不同方向撞上 <em>BC</em> 分子时，会发生什么？为什么？",
+   "answer": {
+    "type": "open",
+    "solution": "<em>A</em> 原子具有足够的能量与 <em>BC</em> 反应；然而，它从 <em>BC</em> 上弹开而不发生反应时的角度各不相同，这表明分子的取向是反应动力学的重要组成部分，并决定反应是否会发生。",
+    "generated_by": "source"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "activation-energy-from-rate-constants"
+  },
+  {
+   "exercise": "e1",
+   "concept": "collision-orientation"
+  },
+  {
+   "exercise": "e1",
+   "concept": "activation-energy"
+  },
+  {
+   "exercise": "e2",
+   "concept": "collision-theory"
+  },
+  {
+   "exercise": "e3",
+   "concept": "activation-energy"
+  },
+  {
+   "exercise": "e3",
+   "concept": "activated-complex"
+  },
+  {
+   "exercise": "e4",
+   "concept": "activation-energy"
+  },
+  {
+   "exercise": "e4",
+   "concept": "energy-distribution-and-rate"
+  },
+  {
+   "exercise": "e5",
+   "concept": "activation-energy-from-rate-constants"
+  },
+  {
+   "exercise": "e6",
+   "concept": "energy-distribution-and-rate"
+  },
+  {
+   "exercise": "e6",
+   "concept": "collision-theory"
+  },
+  {
+   "exercise": "e7",
+   "concept": "temperature-and-rate"
+  },
+  {
+   "exercise": "e8",
+   "concept": "arrhenius-equation"
+  },
+  {
+   "exercise": "e8",
+   "concept": "frequency-factor"
+  },
+  {
+   "exercise": "e9",
+   "concept": "activation-energy-from-rate-constants"
+  },
+  {
+   "exercise": "e10",
+   "concept": "collision-theory"
+  },
+  {
+   "exercise": "e11",
+   "concept": "activation-energy-from-rate-constants"
+  },
+  {
+   "exercise": "e12",
+   "concept": "activation-energy-from-rate-constants"
+  },
+  {
+   "exercise": "e12",
+   "concept": "arrhenius-equation"
+  },
+  {
+   "exercise": "e12",
+   "concept": "first-order-integrated-rate-law"
+  },
+  {
+   "exercise": "e13",
+   "concept": "activation-energy"
+  },
+  {
+   "exercise": "e13",
+   "concept": "reaction-diagram"
+  },
+  {
+   "exercise": "e13",
+   "concept": "activated-complex"
+  },
+  {
+   "exercise": "e14",
+   "concept": "collision-orientation"
+  }
+ ],
+ "footnotes": [
+  {
+   "id": "c-e12-ea",
+   "kind": "correction",
+   "html": "答案表把活化能写成以 kJ 为单位；它是一个摩尔量，<em>E</em><sub>a</sub> = 108 kJ/mol。"
+  }
+ ],
+ "derivations": [
+  {
+   "id": "arrhenius-two-point",
+   "what": "阿伦尼乌斯方程的两点形式",
+   "source": "化学（第2版），12.5 碰撞理论，例 12.13",
+   "nodes": [
+    {
+     "assumes": [
+      {
+       "tex": "\\ln\\kktwo = \\left(\\frac{-\\kEa}{R}\\right)\\left(\\frac{1}{\\kTtwo}\\right)+\\ln\\kAfreq",
+       "src": "12.5"
+      },
+      {
+       "tex": "\\ln x - \\ln y = \\ln\\frac{x}{y}",
+       "src": "附录 B"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{l1}{\\ln\\kkone} = \\mk{e1}{\\left(\\frac{-\\kEa}{R}\\right)}\\mk{t1}{\\left(\\frac{1}{\\kTone}\\right)}+\\mk{a1}{\\ln\\kAfreq}",
+      "src": "12.5",
+      "why": "阿伦尼乌斯方程在第一个温度 $T_1$ 下的线性形式，此时速率常数为 $k_1$。"
+     },
+     "steps": [
+      {
+       "tex": "\\mk{l1}{\\ln\\kkone} - \\mk{l2}{\\ln\\kktwo} = \\mk{e1}{\\left(\\frac{-\\kEa}{R}\\right)}\\mk{t1}{\\left(\\frac{1}{\\kTone}\\right)}+\\mk{a1}{\\ln\\kAfreq} - \\mk{e2}{\\left(\\frac{-\\kEa}{R}\\right)}\\mk{t2}{\\left(\\frac{1}{\\kTtwo}\\right)} - \\mk{a2}{\\ln\\kAfreq}",
+       "uses": [
+        0
+       ]
+      },
+      {
+       "tex": "\\mk{l1}{\\ln\\kkone} - \\mk{l2}{\\ln\\kktwo} = \\mk{e1}{\\left(\\frac{-\\kEa}{R}\\right)}\\mk{t1}{\\left(\\frac{1}{\\kTone}\\right)} - \\mk{e2}{\\left(\\frac{-\\kEa}{R}\\right)}\\mk{t2}{\\left(\\frac{1}{\\kTtwo}\\right)}",
+       "uses": []
+      },
+      {
+       "tex": "\\mk{l1}{\\ln\\kkone} - \\mk{l2}{\\ln\\kktwo} = \\mk{e1}{\\frac{-\\kEa}{R}}\\left(\\mk{t1}{\\frac{1}{\\kTone}} - \\mk{t2}{\\frac{1}{\\kTtwo}}\\right)",
+       "uses": [],
+       "map": {
+        "e2": "e1"
+       }
+      },
+      {
+       "tex": "\\mk{l1}{\\ln\\kkone} - \\mk{l2}{\\ln\\kktwo} = \\mk{e1}{\\frac{\\kEa}{R}}\\left(\\mk{t2}{\\frac{1}{\\kTtwo}} - \\mk{t1}{\\frac{1}{\\kTone}}\\right)",
+       "uses": []
+      },
+      {
+       "tex": "\\mk{l1}{\\ln\\frac{\\kkone}{\\kktwo}} = \\mk{e1}{\\frac{\\kEa}{R}}\\left(\\mk{t2}{\\frac{1}{\\kTtwo}} - \\mk{t1}{\\frac{1}{\\kTone}}\\right)",
+       "uses": [
+        1
+       ],
+       "map": {
+        "l2": "l1"
+       }
+      }
+     ],
+     "src": "例 12.13"
+    },
+    {
+     "assumes": [
+      {
+       "step": 0
+      },
+      {
+       "tex": "\\ln\\frac{x}{y} = \\ln x - \\ln y",
+       "src": "附录 B"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{l1}{\\ln\\frac{\\kkone}{\\kktwo}} = \\mk{e1}{\\frac{\\kEa}{R}}\\left(\\mk{t2}{\\frac{1}{\\kTtwo}} - \\mk{t1}{\\frac{1}{\\kTone}}\\right)",
+      "src": "例 12.13"
+     },
+     "steps": [
+      {
+       "tex": "\\mk{E}{\\kEa} = \\mk{R}{R}\\,\\frac{\\mk{l1}{\\ln\\frac{\\kkone}{\\kktwo}}}{\\mk{t2}{\\frac{1}{\\kTtwo}} - \\mk{t1}{\\frac{1}{\\kTone}}}",
+       "uses": [],
+       "map": {
+        "e1": [
+         "E",
+         "R"
+        ]
+       }
+      },
+      {
+       "tex": "\\mk{E}{\\kEa} = \\mk{R}{R}\\,\\frac{\\mk{l1}{\\ln\\kkone-\\ln\\kktwo}}{\\mk{t2}{\\frac{1}{\\kTtwo}} - \\mk{t1}{\\frac{1}{\\kTone}}}",
+       "uses": [
+        1
+       ]
+      },
+      {
+       "tex": "\\mk{E}{\\kEa} = -\\mk{R}{R}\\left(\\frac{\\mk{l1}{\\ln\\kktwo-\\ln\\kkone}}{\\mk{t2}{\\left(\\frac{1}{\\kTtwo}\\right)}-\\mk{t1}{\\left(\\frac{1}{\\kTone}\\right)}}\\right)",
+       "uses": []
+      }
+     ],
+     "src": "例 12.13"
+    }
+   ]
+  }
+ ]
+}

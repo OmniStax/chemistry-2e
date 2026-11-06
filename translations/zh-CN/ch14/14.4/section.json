@@ -1,0 +1,441 @@
+{
+ "id": "14.4",
+ "module": "m68806",
+ "chapter": "14",
+ "title": "盐的水解",
+ "short": "盐的水解",
+ "lead": "溶解的<span data-concept=\"salt\">盐</span>所含的离子可能作为酸或碱与水反应。本节说明如何根据盐的离子判断<span data-concept=\"salt\">盐</span>溶液是<span data-concept=\"acidic-solution\">酸性</span>、<span data-concept=\"basic-solution\">碱性</span>还是<span data-concept=\"neutral-solution\">中性</span>的，如何计算这类溶液的 <span data-concept=\"ph\">pH</span>，以及与水分子键合的金属离子溶解时会发生什么。",
+ "objectives": [
+  "预测盐溶液是酸性、碱性还是中性",
+  "计算盐溶液中各种物种的浓度",
+  "描述水合金属离子的酸电离"
+ ],
+ "summary_html": "<p>组成<span data-concept=\"salt\">盐</span>的离子可能具有酸性或碱性，溶解于水时发生电离，生成<span data-concept=\"acidic-solution\">酸性</span>或<span data-concept=\"basic-solution\">碱性溶液</span>。<span data-concept=\"salt-ion-acidity\">酸性阳离子通常是弱碱的共轭酸，碱性阴离子是弱酸的共轭碱</span>。<span data-concept=\"hydrated-metal-ion-acidity\">许多金属离子溶解时与水分子键合，生成可起酸作用的配离子</span>。</p>",
+ "notes": "本节没有任何内容被略去；例 14.15 和例 14.18 的 ICE 表由它们的图片改写为表格。例 14.15 的问句在书中末尾没有问号，中文译文补上了问号；其第二行 (x)(x)/0.233 − x) 只有一个右括号，乙酸根的碱电离方程式把氢氧根写成 OH−，例 14.17（b）中“,and”连写在一起（中文无空格，这一处无从体现），均按原样保留。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
+  ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案取自书后答案和“学习检测”的答案。没有答案的数值题 fs-idm1823584（关于普鲁卡因溶液）被略去，也没有为它算出答案。没有答案的 fs-idm95651552、fs-idm94404336 和 fs-idm8587472 保留，并附有一份标明为 AI 生成的建议思路。三道习题从第 14.3 节移到这里，因为它们考查本节所引入的盐的水解：fs-idm94404336 和 fs-idm94046624，关于强酸与弱碱、弱酸与强碱的中和；fs-idm8587472，关于把水合铝离子放进图 14.7。",
+ "figures": [
+  {
+   "id": "sim-salt-ions",
+   "kind": "sim",
+   "draws": [
+    "equilibrium-constant"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-hydrated-al",
+   "kind": "sim",
+   "number": "14.13",
+   "originals": [
+    "/media/ch14/CNX_Chem_14_04_hydronium.jpg"
+   ],
+   "original_caption": "铝离子与水反应时，水合铝离子成为一种弱酸。",
+   "draws": [
+    "equilibrium-constant",
+    "concentration"
+   ],
+   "conventions": [
+    "Al",
+    "O",
+    "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "acidic-ions",
+   "concept": "salt-ion-acidity",
+   "verb": "introduces"
+  },
+  {
+   "span": "acidic-ions",
+   "concept": "salt-solution-calculations",
+   "verb": "introduces"
+  },
+  {
+   "span": "acidic-ions",
+   "concept": "conjugate-pair-strengths",
+   "verb": "uses"
+  },
+  {
+   "span": "acidic-ions",
+   "concept": "dissociation-of-ionic-compounds",
+   "verb": "uses"
+  },
+  {
+   "span": "acidic-ions",
+   "concept": "acid-ionization-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "acidic-ions",
+   "concept": "base-ionization-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "acidic-ions",
+   "concept": "weak-acid-base-equilibrium-concentrations",
+   "verb": "uses"
+  },
+  {
+   "span": "acidic-ions",
+   "concept": "ph",
+   "verb": "uses"
+  },
+  {
+   "span": "basic-ions",
+   "concept": "salt-ion-acidity",
+   "verb": "uses"
+  },
+  {
+   "span": "basic-ions",
+   "concept": "salt-solution-calculations",
+   "verb": "uses"
+  },
+  {
+   "span": "basic-ions",
+   "concept": "base-ionization-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "both-ions",
+   "concept": "predict-salt-solution-ph",
+   "verb": "introduces"
+  },
+  {
+   "span": "both-ions",
+   "concept": "salt-ion-acidity",
+   "verb": "uses"
+  },
+  {
+   "span": "both-ions",
+   "concept": "amphiprotic-species",
+   "verb": "uses"
+  },
+  {
+   "span": "both-ions",
+   "concept": "acid-ionization-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "both-ions",
+   "concept": "base-ionization-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "metal-ions",
+   "concept": "hydrated-metal-ion-acidity",
+   "verb": "introduces"
+  },
+  {
+   "span": "metal-ions",
+   "concept": "bond-polarity",
+   "verb": "uses"
+  },
+  {
+   "span": "metal-ions",
+   "concept": "salt-solution-calculations",
+   "verb": "uses"
+  },
+  {
+   "span": "metal-ions",
+   "concept": "acid-ionization-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "metal-ions",
+   "concept": "ph",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idp38392128",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-anilinium"
+   },
+   "cite": "acidic-ions",
+   "prompt": "在 0.100 <em>M</em> 硝酸铵 NH<sub>4</sub>NO<sub>3</sub> 溶液中，水合氢离子浓度是多少？硝酸铵是一种盐，其组成离子为 ${\\text{NH}}_{4}{}^{\\text{+}}$ 和 ${\\text{NO}}_{3}{}^{\\text{−}}.$ 哪一种酸更强，${\\text{C}}_{6}{\\text{H}}_{5}{\\text{NH}}_{3}{}^{\\text{+}}$ 还是 ${\\text{NH}}_{4}{}^{\\text{+}}?$",
+   "answer": {
+    "type": "number",
+    "part": "[H<sub>3</sub>O<sup>+</sup>]",
+    "value": 7.5e-06,
+    "unit": "M",
+    "generated_by": "source",
+    "hint": "由氨的 $K_{\\text{b}}$ 求出 ${\\text{NH}}_{4}{}^{+}$ 的 $K_{\\text{a}}$，然后像例 14.15 那样列出 ICE 表；硝酸根离子不水解。",
+    "solution": "[H<sub>3</sub>O<sup>+</sup>] = 7.5 × 10<sup>−6</sup> <em>M</em>；${\\text{C}}_{6}{\\text{H}}_{5}{\\text{NH}}_{3}{}^{\\text{+}}$ 是更强的酸。"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idp37320880",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-acetate"
+   },
+   "cite": "basic-ions",
+   "prompt": "0.083 <em>M</em> NaCN 溶液的 pH 是多少？",
+   "answer": {
+    "type": "number",
+    "value": 11.11,
+    "tol": 0.001,
+    "generated_by": "source",
+    "hint": "氰根离子是弱酸 HCN 的共轭碱：由 HCN 的 $K_{\\text{a}}$ 求出它的 $K_{\\text{b}}$，解出 [OH<sup>−</sup>]，再换算成 pH。",
+    "solution": "11.11"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idm161229856",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-salt-nature"
+   },
+   "cite": "both-ions",
+   "prompt": "判断下列盐的水溶液是酸性、碱性还是中性的：<br>（a）K<sub>2</sub>CO<sub>3</sub><br>（b）CaCl<sub>2</sub><br>（c）KH<sub>2</sub>PO<sub>4</sub><br>（d）(NH<sub>4</sub>)<sub>2</sub>CO<sub>3</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）碱性；（b）中性；（c）酸性；（d）碱性"
+   }
+  },
+  {
+   "id": "cyl4",
+   "source_id": "fs-idm171178400",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-aluminum"
+   },
+   "cite": "metal-ions",
+   "prompt": "在含有足量强酸 HNO<sub>3</sub>、使 [H<sub>3</sub>O<sup>+</sup>] 达到 0.10 <em>M</em> 的 0.15 <em>M</em> Al(NO<sub>3</sub>)<sub>3</sub> 溶液中，$[\\text{Al}{({\\text{H}}_{2}\\text{O})}_{5}({\\text{OH})}^{2+}]$ 是多少？",
+   "answer": {
+    "type": "number",
+    "value": 2.1e-05,
+    "unit": "M",
+    "generated_by": "source",
+    "hint": "强酸使 [H<sub>3</sub>O<sup>+</sup>] 保持在 0.10 <em>M</em>，解例 14.18 的 $K_{\\text{a}}$ 表达式，求出那个唯一的未知浓度。",
+    "solution": "2.1 × 10<sup>−5</sup> <em>M</em>"
+   }
+  },
+  {
+   "id": "e26",
+   "source_id": "fs-idm94404336",
+   "source_section": "14.3",
+   "source_number": "26",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "acidic-ions",
+   "prompt": "解释为什么强酸与弱碱的中和反应得到弱酸性溶液。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "所生成的盐含有弱碱的共轭酸（一种弱酸），以及一个不与水反应的阴离子。以氨和盐酸为例：NH<sub>3</sub>(<em>aq</em>) + HCl(<em>aq</em>) ⟶ NH<sub>4</sub>Cl(<em>aq</em>)。氯化铵溶解为 NH<sub>4</sub><sup>+</sup> 和 Cl<sup>−</sup> 离子。氯离子是强酸的共轭碱，其碱性太弱，无法从水中夺取质子，因而不改变 pH。铵根离子是弱碱 NH<sub>3</sub> 的共轭酸，它发生轻微电离：NH<sub>4</sub><sup>+</sup>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + NH<sub>3</sub>(<em>aq</em>)，其中 <em>K</em><sub>a</sub> = <em>K</em><sub>w</sub>/<em>K</em><sub>b</sub> = (1.0 × 10<sup>−14</sup>)/(1.8 × 10<sup>−5</sup>) = 5.6 × 10<sup>−10</sup>。这点微小的电离使 [H<sub>3</sub>O<sup>+</sup>] 高于 1.0 × 10<sup>−7</sup> <em>M</em>，所以中和后的溶液呈弱酸性。"
+   }
+  },
+  {
+   "id": "e27",
+   "source_id": "fs-idm94046624",
+   "source_section": "14.3",
+   "source_number": "27",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "basic-ions",
+   "prompt": "解释为什么弱酸与强碱的中和反应得到弱碱性溶液。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "盐在溶液中电离，但其阴离子会与水轻微反应，生成弱酸。这一反应同时生成 OH<sup>−</sup>，使溶液呈碱性。"
+   }
+  },
+  {
+   "id": "e59",
+   "source_id": "fs-idm8587472",
+   "source_section": "14.3",
+   "source_number": "59",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "metal-ions",
+   "prompt": "利用 <em>K</em><sub>a</sub> 值 1.4 × 10<sup>−5</sup>，把 $\\text{Al}{({\\text{H}}_{2}\\text{O})}_{6}{}^{3+}$ 放在图 14.7 中的正确位置。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "水合铝离子的 <em>K</em><sub>a</sub> = 1.4 × 10<sup>−5</sup>，应放在酸一侧，紧接在乙酸（<em>K</em><sub>a</sub> = 1.8 × 10<sup>−5</sup>）之下、碳酸（4.3 × 10<sup>−7</sup>）之上，因为图中的酸按 <em>K</em><sub>a</sub> 递减排列。它是比乙酸稍弱的酸。它的共轭碱 [Al(H<sub>2</sub>O)<sub>5</sub>(OH)]<sup>2+</sup> 在碱一侧与它相对，<em>K</em><sub>b</sub> = <em>K</em><sub>w</sub>/<em>K</em><sub>a</sub> = (1.0 × 10<sup>−14</sup>)/(1.4 × 10<sup>−5</sup>) = 7.1 × 10<sup>−10</sup>。这使它成为比乙酸根离子（<em>K</em><sub>b</sub> = 5.6 × 10<sup>−10</sup>）稍强的碱，又比碳酸氢根离子（2.3 × 10<sup>−8</sup>）弱，正如共轭酸碱对的强度之间的反比关系所要求的那样。"
+   }
+  },
+  {
+   "id": "e69",
+   "source_id": "fs-idm95651552",
+   "source_number": "69",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "both-ions",
+   "prompt": "判断下列盐的水溶液是酸性、碱性还是中性的：<br>（a）Al(NO<sub>3</sub>)<sub>3</sub><br>（b）RbI<br>（c）KHCO<sub>2</sub><br>（d）CH<sub>3</sub>NH<sub>3</sub>Br",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "（a）酸性；（b）中性；（c）碱性；（d）酸性。（a）Al(NO<sub>3</sub>)<sub>3</sub> 给出水合铝离子 [Al(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup>（一种弱酸，<em>K</em><sub>a</sub> = 1.4 × 10<sup>−5</sup>）和硝酸根离子；硝酸根离子是强酸 HNO<sub>3</sub> 的共轭碱，不与水反应。（b）Rb<sup>+</sup> 是第 1 族阳离子，I<sup>−</sup> 是强酸 HI 的共轭碱，所以两种离子都不与水反应。（c）K<sup>+</sup> 是第 1 族阳离子，甲酸根离子 HCO<sub>2</sub><sup>−</sup> 是弱酸甲酸（<em>K</em><sub>a</sub> = 1.8 × 10<sup>−4</sup>）的共轭碱；它与水反应，HCO<sub>2</sub><sup>−</sup>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ HCO<sub>2</sub>H(<em>aq</em>) + OH<sup>−</sup>(<em>aq</em>)，其 <em>K</em><sub>b</sub> = 5.6 × 10<sup>−11</sup>。（d）CH<sub>3</sub>NH<sub>3</sub><sup>+</sup> 是弱碱甲胺（<em>K</em><sub>b</sub> = 4.4 × 10<sup>−4</sup>）的共轭酸，所以它作为酸电离，<em>K</em><sub>a</sub> = 2.3 × 10<sup>−11</sup>，而 Br<sup>−</sup> 是强酸 HBr 的共轭碱，不与水反应。"
+   }
+  },
+  {
+   "id": "e70",
+   "source_id": "fs-idm161278480",
+   "source_number": "70",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "both-ions",
+   "prompt": "判断下列盐的水溶液是酸性、碱性还是中性的：<br>（a）FeCl<sub>3</sub><br>（b）K<sub>2</sub>CO<sub>3</sub><br>（c）NH<sub>4</sub>Br<br>（d）KClO<sub>4</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）酸性；（b）碱性；（c）酸性；（d）中性"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "salt-solution-calculations"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "salt-ion-acidity"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "salt-solution-calculations"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "ph"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "predict-salt-solution-ph"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "salt-ion-acidity"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "salt-solution-calculations"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "hydrated-metal-ion-acidity"
+  },
+  {
+   "exercise": "e26",
+   "concept": "salt-ion-acidity"
+  },
+  {
+   "exercise": "e26",
+   "concept": "neutralization-reaction"
+  },
+  {
+   "exercise": "e27",
+   "concept": "salt-ion-acidity"
+  },
+  {
+   "exercise": "e27",
+   "concept": "neutralization-reaction"
+  },
+  {
+   "exercise": "e59",
+   "concept": "hydrated-metal-ion-acidity"
+  },
+  {
+   "exercise": "e59",
+   "concept": "conjugate-pair-strengths"
+  },
+  {
+   "exercise": "e69",
+   "concept": "predict-salt-solution-ph"
+  },
+  {
+   "exercise": "e69",
+   "concept": "hydrated-metal-ion-acidity"
+  },
+  {
+   "exercise": "e70",
+   "concept": "predict-salt-solution-ph"
+  },
+  {
+   "exercise": "e70",
+   "concept": "hydrated-metal-ion-acidity"
+  }
+ ]
+}

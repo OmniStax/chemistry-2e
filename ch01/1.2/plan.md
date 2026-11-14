@@ -83,59 +83,99 @@ elements and compounds and using the conservation law.
 
 id · replaces · concepts · moving or still, with the reason · sliders · headline · graph
 
-1. `sim-states` · replaces Figure 1.6 (the three flasks) · states-of-matter,
-   matter · **still**: the idea has no time in it; the sample answers the
-   state slider and nothing moves of itself · state (solid, liquid, gas;
-   ink, the slider's value written as the word rather than a number) and
-   the sample's volume $\kV$ (50 to 200 mL, default 100, volume) · "A
-   liquid takes the shape of each container but keeps its volume of 100
-   mL, forming a horizontal surface" · none. One sample drawn in two
-   containers of different shape, a narrow and a wide one, so the reader
-   sees what each state keeps: the solid its shape and volume, the liquid
-   its volume at two heights, the gas neither. The particle picture is
-   drawn beneath each container in ink, a lattice, a crowd and a few far
-   apart, with three lines saying why. Readout $\kV$ with the live
-   numbers; small line the book's own sentence for the state. Draws volume.
-2. `sim-conservation` · replaces Figure 1.8 (the bottle and the battery) ·
-   conservation-of-matter · **still**: each slider sets how far a
-   conversion has run, and the picture answers it · the fraction of the
-   sugar fermented (0 to 100 %, ink) and the fraction of the battery
-   discharged (0 to 100 %, ink) · "With the fermentation 40% along and the
-   battery 60% discharged, the kinds of matter have changed and neither
-   balance has moved" · none. The bottle stands on a balance reading
-   1000.0 g and the battery's reacting substances on one reading 642.6 g;
-   beside each, bars of the kinds of matter present, drawn to scale from
-   the formula masses (glucose 180.2 to ethanol 92.1 and carbon dioxide
-   88.0; lead, lead oxide and sulfuric acid 642.6 to lead sulfate 606.6
-   and water 36.0), shrink and grow as the sliders move while the balance
-   readings do not. The balance readings and the $\km$ of the readout are
-   the mass hue, and nothing else on the canvas is; the bars are ink,
-   since they are kinds of matter rather than a bound quantity. Draws mass.
-3. `fig-classify` · replaces Figure 1.11 (the flowchart) · classification-
-   of-matter · **still**, a faithful copy: a diagram of a procedure, with
-   nothing to vary · no sliders · no headline · none. Redrawn so that it
-   reads in both themes, with the book's boxes, questions and Yes/No
-   arrows; kind `figure`. Draws nothing.
-4. `sim-electrolysis` · replaces Figure 1.15 (water decomposed over a
-   battery, in a note) · atoms-and-molecules, elements-and-compounds,
-   conservation-of-matter · **still**: the slider sets how much water has
-   decomposed, and the tubes and the molecules answer it · the number of
-   water molecules decomposed (0 to 12 by 2, default 6, ink) · "6 water
-   molecules have become 6 hydrogen molecules and 3 oxygen molecules, and
-   the hydrogen tube holds twice the gas" · none. The beaker, the battery
-   and the two inverted tubes on the left, with the collected gas in the
-   volume hue and the hydrogen tube filling at twice the rate; the
-   remaining water molecules and the hydrogen and oxygen molecules formed
-   drawn on the right in ink (oxygen a filled disc, hydrogen a hollow
-   one); the equation with the live counts and $\kV_{\text{H}_2} =
-   2\kV_{\text{O}_2}$ in the readout. The book's three domains on one
-   canvas. Draws volume.
-5. `fig-fuel-cell` · replaces Figure 1.16 (the fuel cell, in a note) ·
-   elements-and-compounds, atoms-and-molecules · **still**, a faithful
-   copy: a schematic of a device, redrawn in ink with the book's labels
-   (hydrogen and oxygen in, unused hydrogen and water out, anode, proton
-   exchange membrane, cathode, electric power) · no sliders · none. Kind
-   `figure`. Draws nothing.
+The lines below are as rebuilt in the figure re-examination of 2026-11-14 (Claude Fable 5.2); the dated
+sections further down record the earlier passes and are superseded where they differ.
+
+1. `sim-states` · replaces Figure 1.6 · states-of-matter, matter · value add: variation, the one sample
+   seen in two containers of different shape and at any tilt, which the book's three upright flasks cannot
+   show (what "takes the shape of its container" and "forms a horizontal surface" mean) · arrows: none ·
+   still, the picture answers its controls; a change of state bends the sample from one shape into the
+   next over 0.9 s · state (choice: solid, liquid, gas; opens on liquid), tilt (0 to 20°, opens at 12°,
+   untyped) · headline: the book's own labels for the state shown ("A liquid takes the shape of its
+   container, with a horizontal surface and a fixed volume.") · no graph · 2D (rebuilt flat: a section
+   through each container shows the shape, the surface and the fill; the 3D scene was small, its labels
+   sat on it and a turn showed nothing more, root rule 28.5). The water molecules of the old scene are
+   gone: the book's passage is about shape and volume and says nothing of particles here. Draws volume
+   (the sample's fill and its millilitres); the flask and the cylinder are the referents `wide`, `narrow`.
+   works: parts: a stoppered conical flask (the book's) and a stoppered cylinder, each standing on a wedge
+   on one bench; the sample inside each · flow: nothing flows; on a change of state the sample's outline
+   bends into its new shape · must hold: (1) both containers are closed by a stopper, so the gas is held;
+   (2) the solid is the same square block in both and at every tilt, resting on the floor and sliding to
+   the low side; (3) the liquid's surface is horizontal at every tilt, in both containers; (4) the liquid
+   has the same volume in both (the same area of section, 80 mL) though its shape differs; (5) the gas
+   fills each container entirely, up to the stopper, so its volume is the container's, 250 mL and 150 mL;
+   (6) the readout's volumes agree with the labels · read off the image: three stoppered conical flasks;
+   "Solid: Has fixed shape and volume", "Liquid: Takes shape of container, Forms horizontal surface, Has
+   fixed volume", "Gas: Expands to fill container"; a red cube, a red-brown liquid about a third of the
+   way up, a pale brown gas filling the flask. The alt text calls the flasks beakers; they are flasks.
+   The millilitres are the figure's own (the book gives none).
+2. `sim-conservation` · replaces Figure 1.8 · conservation-of-matter · value add: variation, every stage
+   between the book's before and after, with the total seen not to move · arrows: the book's two
+   before-to-after arrows are symbolic and are not drawn · still: each slider sets how far a change has
+   run · fermented (0 to 100 % by 10, opens at 50), discharged (the same), both untyped · no headline (the
+   bars and the readout say it) · beside each apparatus one stacked bar of everything on that balance,
+   its two ends fixed, the total bracketed above it in the mass hue; the substances used up are listed on
+   the first line beneath and those formed, with the rest, on the second · 2D. The masses are the
+   figure's own, since the book gives none: 80.0 g of sugar in a 500.0 g bottle, and five reactions'
+   worth of battery, 3213.0 g, in 5000.0 g, in the ratios of the formula masses (glucose 180.16 to ethanol
+   92.14 and carbon dioxide 88.02; Pb 207.2, PbO₂ 239.2, 2 H₂SO₄ 196.2 to 2 PbSO₄ 606.6 and 2 H₂O 36.0),
+   chosen so that every step of the battery slider is exact to 0.1 g. Draws mass (balance readings,
+   totals, the readout's grams); the substances take `F.cat` colours, the same in the bar, the key and the
+   drawing (sugar on the bottle's floor, carbon dioxide's bubbles, the plates and their sulfate coat).
+   works: parts: a capped bottle standing on a balance; a lead-acid battery (case, lid, two posts, vent
+   caps, a cutaway showing plates in acid) standing on a second balance; a bar and its key beside each ·
+   flow: nothing leaves either vessel; inside, sugar becomes ethanol and carbon dioxide, and lead, lead
+   oxide and sulfuric acid become lead sulfate and water · must hold: (1) the bottle is capped at every
+   setting; (2) each balance reads the same at every setting; (3) each bar's ends do not move and its
+   segments are to scale; (4) the numbers in the key and the readout add up to the total as written;
+   (5) at 0 % only the starting substances have length and at 100 % only the products · read off the
+   image: (a) a bottle labelled "Pre-beer" with "Sugar" on its floor, an arrow, the same bottle with
+   "Carbonation", "Beer", "Ethanol" and bubbles; (b) a cutaway car battery, "Sheets of Pb and PbO₂ and
+   H₂SO₄", an arrow, the same battery, "PbSO₄ and H₂O". No numbers in the image or the text.
+3. `fig-classify` · replaces Figure 1.11 · classification-of-matter · value add: variation, a sample the
+   text names walked down the tree, so the reader sees the two questions answered and why; the still
+   flowchart alone was a restyled copy of the book's · arrows: the flowchart's, symbolic · still; on a
+   change of sample its tag travels the new path over 0.9 s · sample (a dropdown of eight, two of each
+   class, all named in the section's own text: gold, aluminum, table salt, silver chloride, Italian
+   dressing, granite, a sports drink, salt water; none is an item of exercises e9 or e10; opens on Italian
+   dressing, the subject of Figure 1.10 just above) · no headline · no graph · 2D. Under the chart two
+   lines give the answer to each question met and the book's reason for it; the readout writes sample,
+   class, sub-class. Kind `sim` with the number, eyebrow "Figure 1.11". Draws nothing typed.
+   works: parts: the book's seven boxes and three questions, joined by six elbowed Yes/No arrows · flow:
+   none · must hold: (1) boxes, questions and Yes/No sides are the book's (No to the left, Yes to the
+   right, at all three questions); (2) exactly one path is lit and it ends at the sample's class; (3) the
+   two answers written beneath are the ones on the lit path · read off the image: "Matter"; "Does it have
+   constant properties and composition?" No: "Mixture", Yes: "Pure substance"; "Is it uniform
+   throughout?" No: "Heterogeneous", Yes: "Homogeneous"; "Can it be simplified chemically?" No: "Element",
+   Yes: "Compound".
+4. `sim-electrolysis` · replaces Figure 1.15 (in a note) · atoms-and-molecules, elements-and-compounds,
+   conservation-of-matter · value add: variation, the two-to-one volumes and the molecule counts at every
+   extent, where the book draws one moment · arrows: the book's three wide arrows from sample to circle
+   are symbolic and are replaced by colour (each gas's circle wears its tube's colour) · still: the slider
+   sets how many of eight water molecules have decomposed · water molecules decomposed (0 to 8 by 2, opens
+   at 4, untyped) · no headline · no graph · 2D (rebuilt flat as the book draws it: the 3D bench was
+   small, its labels covered the tubes, and the lesson is two gas columns and three counts, root rule
+   28.5). Readout: the equation with the live counts (the book's 2 H₂O → 2 H₂ + O₂ while nothing has
+   decomposed), and V(H₂) = 2 V(O₂) on a second line. Draws volume (the gas columns and their brackets);
+   atoms through `F.el`; the tubes are the referents `h2-tube`, `o2-tube`.
+   works: parts: a beaker of water; a battery standing on its floor, under water, its two terminals on
+   top, − on the left and + on the right; an inverted test tube over each terminal, closed and rounded at
+   the top, open at the bottom, standing higher than the beaker; three circles of molecules, water,
+   hydrogen, oxygen · flow: gas forms at each terminal and bubbles up inside its tube to collect at the
+   closed top, pushing the tube's water down · must hold: (1) each tube's mouth is under water and over
+   its own terminal; (2) the gas is at the top of each tube with water beneath it; (3) the hydrogen column
+   is twice the oxygen column at every setting, and hydrogen is over the negative terminal; (4) the water
+   molecules left, the hydrogen and the oxygen molecules formed are 8 − n, n and n/2, and the atoms
+   balance; (5) the equation in the readout carries the same counts · read off the image: − on the left
+   terminal, + on the right; gas in the left tube about twice that in the right; circles "Water 2H₂O(l)",
+   "Hydrogen 2H₂(g)", "Oxygen O₂(g)" holding two water, two hydrogen and one oxygen molecule. The image's
+   ring round the tubes and its green divider are supports and are not drawn.
+5. `fig-molecules` (Figure 1.14) and `fig-fuel-cell` (Figure 1.16) · **reverted to the book's images**,
+   `photo` rows with their numbers. The redrawn molecules were flat discs where the book prints shaded
+   space-filling models with "Oxygen atom", "Hydrogen atom" and "Carbon atom" pointed out; the 2D/3D
+   choice turned molecules the passage only names, whose shapes it does not discuss (root rule 24.9). The
+   fuel cell was an ink restyling of a drawing the book prints more clearly in colour, in a note, about a
+   device whose parts (anode, cathode, protons) this page has not taught (rule 26.5).
 
 The bundle's images carry no `width`, so `widths` is empty on every row
 and no `data-width` or `data-original-width` is written.
@@ -169,8 +209,9 @@ None; no exercise of the section refers to a figure.
   reading and mass in the other. Judged: two numbers and a factor of six,
   which the text already states in one sentence; not built.
 
-No Sim is built; the section's three interactive figures all carry the
-book's numbers.
+No Sim is built; the section's four interactive figures all carry the
+book's numbers. (The flowchart walk listed above was built on 2026-11-14
+as Figure 1.11 itself, with samples from the text rather than the exercises.)
 
 ## Exercises
 
@@ -326,3 +367,11 @@ Judged against `docs/prompts/manim-style.md`; only the figures below changed.
 - `sim-states` · a change of state moves each of the 27 molecules from its place in the old packing to its place in the new one over 0.9 s while the old body fades and the new one fills (manim 15/16).
 - `sim-conservation` · readout one equation for the bottle, the battery's mass in the sentence (manim 12).
 - `sim-electrolysis` · readout the reaction alone, V(H₂) = 2V(O₂) in the sentence (manim 12).
+
+## Figure re-examination, 2026-11-14 (Claude Fable 5.2)
+
+Every drawn figure was set beside the book's image. `sim-states`, `sim-conservation` and `sim-electrolysis`
+were rebuilt (the first and last flat), `fig-classify` became interactive, and `fig-molecules` and
+`fig-fuel-cell` went back to the book's images; the plan lines and `works:` blocks under "Figures" are
+the current ones. The page still binds `volume` and `mass`; the only element colours left are the
+hydrogen and oxygen of Figure 1.15. Captions cut to what to change and what to look at.

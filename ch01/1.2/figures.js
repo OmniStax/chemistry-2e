@@ -1,9 +1,10 @@
 /* Figures for section 1.2 Phases and Classification of Matter. Boots against the section's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['1.2'] = function (root, F) {
-const { el, fmt, tex, C, PAL, alpha, ctl, register, begin, line, arrow, dot, text, headline, topline } = F;
+const { fmt, tex, C, PAL, alpha, ctl, register, begin, line, arrow, text, headline } = F;
 const sim = (id, H) => F.sim(root, id, H);
-function readout(host, main, small) { tex(host, main); if (small) host.appendChild(el('small', null, small)); }
+/* a deterministic scatter, the same on every redraw */
+const rnd = (i) => { const s = Math.sin(i * 12.9898 + 78.233) * 43758.5453; return s - Math.floor(s); };
 
 const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
 const TAU = 2 * Math.PI;
@@ -157,7 +158,7 @@ const poly = (ctx, pts) => { ctx.beginPath(); pts.forEach(([x, y], i) => (i ? ct
     const s = 20 * (1 - f); ctx.fillStyle = alpha(cSugar, 0.75); ctx.fillRect(AX - 40, y - 2 - s, 80, s);
     ctx.restore();
     const n = Math.round(16 * f);
-    for (let i = 0; i < n; i++) { const bx = AX - 27 + 54 * ((i * 0.618 + 0.1) % 1), by = y - 26 - 86 * ((i * 0.381 + 0.3) % 1), br = 3 + (i % 3); ctx.save(); ctx.strokeStyle = cGas; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(bx, by, br, 0, TAU); ctx.stroke(); ctx.restore(); }
+    for (let i = 0; i < n; i++) { const bx = AX - 27 + 54 * rnd(i * 2 + 1), by = y - 26 - 86 * rnd(i * 2 + 2), br = 3 + (i % 3); ctx.save(); ctx.strokeStyle = cGas; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(bx, by, br, 0, TAU); ctx.stroke(); ctx.restore(); }
     ctx.save(); ctx.strokeStyle = F.ref('bottle'); ctx.lineWidth = 4; ctx.lineJoin = 'round'; path(); ctx.stroke();
     ctx.fillStyle = F.ref('bottle'); ctx.beginPath(); ctx.roundRect(AX - 19, y - 198, 38, 16, 3); ctx.fill(); ctx.restore();
     hits.push({ x: AX, y: y - 190, r: 22, name: 'the cap that seals the bottle' }, { x: AX, y: y - 70, r: 44, name: 'the sealed bottle of beer precursor' });

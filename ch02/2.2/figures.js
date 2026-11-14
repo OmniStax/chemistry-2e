@@ -266,7 +266,7 @@ const E_CHARGE = 1.602e-19;
 /* =====================================================================
    FIGURE 2.9 + 2.10: the gold foil experiment seen from above, with the
    book's enlarged cross-section of the foil beside it. A radium source in
-   a lead block fires about forty α particles a second at a thin foil that
+   a lead block fires about sixty α particles a second at a thin foil that
    stands at the centre of a ring-shaped luminescent screen; each particle
    is scattered through the angle its impact parameter gives (Rutherford's
    point nucleus, or the spread-out charge of a plum pudding atom) and the
@@ -277,7 +277,7 @@ const E_CHARGE = 1.602e-19;
    turn would add nothing (root rule 28.5).
    Scale: the distance of closest approach is 0.028 of an atom's diameter
    for gold at the lower energy, hundreds of times the true value, so that
-   a particle comes back about once in half a minute; the caption says so.
+   a particle comes back about three times a minute; the caption says so.
 ===================================================================== */
 (function () {
   const H = 640;
@@ -300,7 +300,7 @@ const E_CHARGE = 1.602e-19;
   function changed() { tally.through = tally.aside = tally.back = 0; flights.length = 0; flashes.length = 0; repath(); }
 
   /* ---------- the apparatus from above ---------- */
-  const CX = 470, CY = 350, RING = 212, SX = 118, SPEED = 520, RATE = 40, LIFE = 1.6, GAPA = 0.1;
+  const CX = 470, CY = 350, RING = 212, SX = 118, SPEED = 520, RATE = 60, LIFE = 1.6, GAPA = 0.1;
   const flights = [], flashes = [];
   let debt = 0;
   function fire() {

@@ -35,8 +35,8 @@ function burst(ctx, x, y, R, k, color) {
    (1.3 to 2.1 s) and splits: each proton and neutron glides to its seat in
    the light fragment (up) or the heavy one (down), the n neutrons nearest
    the waist fly off right between them at 420 units/s, the fragments fly apart until
-   3.2 s; hold 1.2 s. The five reactions are the book's 21.15(a), with 21.16's
-   balanced ⁹⁶Rb in place of 21.15's ⁹⁷Rb. Graph: the book's yield curve read
+   3.2 s; hold 1.2 s. The five reactions are the book's 21.15(a), with
+   ⁹⁶Rb + ¹³⁷Cs as its image prints them. Graph: the book's yield curve read
    from its points, on its axes, 60 to 180 by 0 to 9 %.
 ===================================================================== */
 (function () {
@@ -172,47 +172,43 @@ function burst(ctx, x, y, R, k, color) {
 })();
 
 /* =====================================================================
-   FIGURE 21.16 + 21.17 · sim-chain · moving · 3D, physical (book rule: a
-   particle picture), its readings on a flat strip beneath.
-   A sphere of ²³⁵U whose radius, relative to the critical one, is r = m^⅓
-   for a mass m in critical masses. Each fission releases 3 neutrons; the
-   share escaping through the surface is (2/3)/r, the surface-to-volume
-   ratio of the sphere scaled so that 1 of 3 goes on at the critical mass
-   (a simple model; the caption says so). Nuclei: 36 m of them, the first
-   of a fixed list of points uniform in the ball. Generation 0 is the
-   nucleus the first neutron strikes at 0.6 s; generation g splits at
-   0.6 + 0.7 g s. The number that go on is carried from 3 × (1 − share) by
-   error diffusion, so the critical mass holds exactly one per generation;
-   each goes to one of the three nearest unstruck nuclei. Neutrons fly at
-   4.5 units/s, linearly. Orbit: free yaw, pitch within ±70°; the lump
-   floats with nothing beneath it, and no idle spin since the chain moves.
-   Strip: fissions per generation, 0 to 6, fixed 0 to 20, pinned() past it.
+   FIGURE 21.16 + 21.17 · sim-chain · moving · flat (rule 28.5)
+   A slice through a lump of ²³⁵U, as Figure 21.17 draws it: a disc whose
+   radius, relative to the critical one, is r = m^⅓ for a mass m in
+   critical masses. Each fission releases 3 neutrons; the share escaping
+   through the surface is (2/3)/r, the surface-to-volume ratio of a sphere
+   scaled so that 1 of 3 goes on at the critical mass (a simple model; the
+   readout states it). Nuclei: 60 r² of them in the slice, the first of a
+   fixed list of points uniform in the disc. Generation 0 is the nucleus the
+   first neutron strikes at 0.6 s; generation g splits at 0.6 + 0.7 g s.
+   The number that go on is carried from 3 × (1 − share) by error
+   diffusion, so the critical mass holds exactly one per generation; each
+   goes to one of the three nearest unstruck nuclei, and the rest fly out
+   through the surface. Neutrons fly linearly.
+   Graph: fissions per generation, 0 to 6, fixed 0 to 20, pinned() past it.
 ===================================================================== */
 (function () {
-  const S0 = 0.6, G = 0.7, NG = 7, T = S0 + (NG - 1) * G + 0.7, VN = 4.5, YMAX = 20, NMAX = 110, RU = 0.075;
-  const d = sim('sim-chain');
-  const V = F.view3d(d.stage, { spin: 'off', pitch: [-1.22, 1.22], h: 420, dist: 9, tilt: 0.3 });
-  const grp = V.part(0), cnv = F.makeCanvas(d.stage, 340);
+  const S0 = 0.6, G = 0.7, NG = 7, T = S0 + (NG - 1) * G + 0.7, VN = 330, YMAX = 20, H = 620;
+  const CX = 330, CY = 350, RC = 150;                        /* the centre of the slice and the critical radius, in canvas units */
+  const d = sim('sim-chain', H);
   const ms = ctl(d.controls, { label: '\\text{mass}', cls: '', key: 'mass', min: 0.3, max: 3, step: 0.01, value: 1, unit: '× critical mass', dec: 2,
-    aria: 'the mass of the lump as a multiple of the critical mass', specials: [{ at: 1, label: 'critical mass' }], onInput: () => { sig = ''; cy.reset(); } });
+    aria: 'the mass of the lump as a multiple of the critical mass', specials: [{ at: 1, label: 'critical mass' }], onInput: () => { key = ''; cy.reset(); } });
   const cy = cycle(() => T, 1.2);
-  const ro = readout(d);
-  const T3 = window.THREE;
-
-  const BALL = [];
-  for (let i = 0; BALL.length < NMAX; i++) { const p = [2 * hash(i, 1) - 1, 2 * hash(i, 2) - 1, 2 * hash(i, 3) - 1]; if (Math.hypot(...p) < 1) BALL.push(p); }
-  const unit = (i, s) => { const z = 2 * hash(i, s) - 1, a = 2 * Math.PI * hash(i, s + 1), q = Math.sqrt(1 - z * z); return [q * Math.cos(a), q * Math.sin(a), z]; };
-  const dist = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2]);
-  const ENTRY = [-0.82, 0.34, 0.46];
-
+  let hits = [];
+  hover(d.stage, () => hits);
+  /* points uniform in the unit disc, and unit directions, both fixed */
+  const DISC = [];
+  for (let i = 0; DISC.length < 260; i++) { const p = [2 * hash(i, 1) - 1, 2 * hash(i, 2) - 1]; if (Math.hypot(p[0], p[1]) < 1) DISC.push(p); }
+  const dirOf = (i, s) => { const a = 2 * Math.PI * hash(i, s); return [Math.cos(a), Math.sin(a)]; };
+  const dist = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]);
   function model(m) {
     const r = Math.cbrt(m), esc = Math.min(1, (2 / 3) / r), k = Math.abs(m - 1) < 1e-9 ? 1 : r2(3 * (1 - esc));
-    return { r, R: 1.55 * r, k, e: r2(3 - k), n: Math.round(36 * m) };
+    return { r, R: RC * r, k, e: r2(3 - k), n: Math.round(60 * r * r) };
   }
   function chain(M) {
-    const pts = BALL.slice(0, M.n).map((p) => p.map((c) => c * (M.R - RU * 1.6)));
+    const pts = DISC.slice(0, M.n).map((p) => [CX + p[0] * (M.R - 12), CY + p[1] * (M.R - 12)]);
     const gen = new Array(M.n).fill(-1), flights = [], counts = [], avail = new Set(pts.map((p, i) => i));
-    const e0 = ENTRY.map((c) => c * M.R * 0.55), first = [...avail].sort((a, b) => dist(pts[a], e0) - dist(pts[b], e0))[0];
+    const e0 = [CX - M.R * 0.45, CY - M.R * 0.3], first = [...avail].sort((a, b) => dist(pts[a], e0) - dist(pts[b], e0))[0];
     gen[first] = 0; avail.delete(first);
     let cur = [first], acc = 0.5;
     for (let g = 0; g < NG; g++) {
@@ -228,7 +224,12 @@ function burst(ctx, x, y, R, k, color) {
             const cand = [...avail].sort((a, b) => dist(pts[a], P) - dist(pts[b], P)).slice(0, 3), tgt = cand[Math.floor(hash(f * 5 + q, g + 3) * cand.length)];
             avail.delete(tgt); gen[tgt] = g + 1; next.push(tgt);
             flights.push({ g, a: P, b: pts[tgt], hit: true });
-          } else flights.push({ g, a: P, u: unit(f * 7 + q, 2 * g + 5), hit: false });
+          } else {
+            /* an escaping neutron leaves outward, never back across the slice */
+            let u = dirOf(f * 7 + q, 2 * g + 5); const out = [P[0] - CX, P[1] - CY];
+            if (u[0] * out[0] + u[1] * out[1] < 0) u = [-u[0], -u[1]];
+            flights.push({ g, a: P, u, hit: false });
+          }
         }
       });
       cur = next;
@@ -236,71 +237,62 @@ function burst(ctx, x, y, R, k, color) {
     return { pts, gen, flights, counts, first };
   }
   const sOf = (g) => S0 + g * G;
-
-  let sig = '', CH = null, M = null, lump = null, NUC = [], FR = [], FX = [], NEU = [], IN = null;
-  function build() {
-    const key = [ms.v.toFixed(2), F.CC, F.el('U'), F.el('n0'), C('energy'), F.cat(0), PAL.ink].join('|');
-    if (key === sig || !grp) return; sig = key;
-    M = model(ms.v); CH = chain(M);
-    V.clear();
-    const SG = F.mesh.geo().sphere, mU = F.mesh.mat(F.el('U')), mN = F.mesh.mat(F.el('n0')), mF = F.mesh.mat(F.cat(0));
-    lump = new T3.Mesh(SG, F.mesh.mat(F.el('U'), { transparent: true, opacity: 0.12, depthWrite: false })); lump.scale.setScalar(M.R); grp.add(lump);
-    V.pickable(lump, 'a lump of uranium-235, ' + fmt(ms.v, 2) + ' times the critical mass');
-    const mk = (mat, r, name) => { const o = new T3.Mesh(SG, mat); o.scale.setScalar(r); grp.add(o); if (name) V.pickable(o, name); return o; };
-    NUC = CH.pts.map((p) => { const o = mk(mU, RU, 'a uranium-235 nucleus'); o.position.set(...p); return o; });
-    FR = CH.pts.map(() => [mk(mF, RU * 0.75, 'a fission fragment'), mk(mF, RU * 0.65, 'a fission fragment')]);
-    FX = CH.pts.map(() => mk(F.mesh.mat(C('energy'), { transparent: true, opacity: 0, depthWrite: false }), RU * 2.4, null));
-    NEU = CH.flights.map((f) => mk(mN, RU * 0.5, f.hit ? 'a neutron that goes on to cause fission' : 'a neutron escaping through the surface'));
-    IN = mk(mN, RU * 0.5, 'the neutron that starts the chain');
-  }
-  const add3 = (a, u, s) => [a[0] + u[0] * s, a[1] + u[1] * s, a[2] + u[2] * s];
-
+  let key = '', M = null, CH = null;
   function draw() {
-    build();
-    const t = cy.now();
-    if (grp && CH) {
-      const P0 = CH.pts[CH.first], e = ENTRY.map((c) => c * (M.R + 1.2)), dd = dist(e, P0), dir = [(P0[0] - e[0]) / dd, (P0[1] - e[1]) / dd, (P0[2] - e[2]) / dd];
-      const tin = S0 - dd / VN;
-      IN.visible = t >= tin && t < S0; if (IN.visible) IN.position.set(...add3(e, dir, VN * (t - tin)));
-      CH.pts.forEach((p, i) => {
-        const g = CH.gen[i], s = g < 0 ? Infinity : sOf(g), q = smooth((t - s) / 0.3), u = [Math.cos(i * 1.7), Math.sin(i * 2.3), Math.cos(i * 0.9)];
-        NUC[i].visible = t < s;
-        FR[i].forEach((o, j) => { o.visible = t >= s; if (o.visible) o.position.set(...add3(p, u, (j ? -1 : 1) * (0.05 + 0.1 * q))); });
-        const f = t >= s ? 1 - (t - s) / 0.45 : 0;
-        FX[i].visible = f > 0; FX[i].material.opacity = 0.75 * clamp(f, 0, 1);
-      });
-      CH.flights.forEach((f, j) => {
-        const s = sOf(f.g), o = NEU[j], dt = t - s;
-        if (dt < 0) { o.visible = false; return; }
-        if (f.hit) { const L = dist(f.a, f.b), w = VN * dt; o.visible = w < L; if (o.visible) o.position.set(...add3(f.a, [(f.b[0] - f.a[0]) / L, (f.b[1] - f.a[1]) / L, (f.b[2] - f.a[2]) / L], w)); }
-        else { const p = add3(f.a, f.u, VN * dt); o.visible = Math.hypot(...p) < M.R + 0.9; if (o.visible) o.position.set(...p); }
-      });
-      V.invalidate();
-    }
-
-    const Mm = M || model(ms.v), CHc = CH || chain(Mm), crit = Mm.k === 1;
-    const { ctx } = begin(cnv);
-    topline(ctx, crit ? 'Each fission sends exactly one neutron on to split another nucleus, so the chain holds steady: a critical mass.'
-      : Mm.k < 1 ? 'Each fission sends only ' + fmt(Mm.k, 2) + ' neutrons on to split another nucleus, so the chain dies out: a subcritical mass.'
-        : 'Each fission sends ' + fmt(Mm.k, 2) + ' neutrons on to split other nuclei, so the fissions grow: a supercritical mass.');
-    const GB = { l: 470, r: 1060, t: 140, b: 284 };
-    const { X, Y } = axes(ctx, GB, [0, NG], [0, YMAX], { nx: NG, ny: 4, fx: () => '', xl: '', yl: 'fissions' });
-    text(ctx, 'generation', (GB.l + GB.r) / 2, GB.b + 50, PAL.muted, { size: 17, align: 'center' });
+    const { ctx } = begin(d.c);
+    if (key !== ms.v.toFixed(2)) { key = ms.v.toFixed(2); M = model(ms.v); CH = chain(M); }
+    const t = cy.now(), crit = M.k === 1, U = F.el('U'), NE = F.el('n0'), FRc = F.cat(0), E = C('energy');
+    hits = [];
+    topline(ctx, crit ? 'Each fission sends exactly one neutron on to split another nucleus, so the chain holds steady.'
+      : M.k < 1 ? 'Each fission sends only ' + fmt(M.k, 2) + ' neutrons on to split another nucleus, so the chain dies out.'
+        : 'Each fission sends ' + fmt(M.k, 2) + ' neutrons on to split other nuclei, so the fissions grow.');
+    /* the slice of the lump */
+    ctx.save(); ctx.beginPath(); ctx.arc(CX, CY, M.R, 0, 2 * Math.PI); ctx.fillStyle = alpha(U, 0.1); ctx.fill();
+    ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 2.5; ctx.stroke(); ctx.restore();
+    hits.push({ x: CX + M.R * 0.85, y: CY + M.R * 0.4, r: 26, name: 'a lump of uranium-235, ' + fmt(ms.v, 2) + ' times the critical mass' });
+    text(ctx, crit ? 'critical mass' : M.k < 1 ? 'subcritical mass' : 'supercritical mass', CX, CY + M.R + 30, PAL.ink, { size: 22, weight: 600, align: 'center', bg: PAL.panel });
+    /* the nuclei: whole until struck, then two fragments drifting apart under a burst of energy */
+    CH.pts.forEach((p, i) => {
+      const g = CH.gen[i], s = g < 0 ? Infinity : sOf(g);
+      if (t < s) { disc(ctx, p[0], p[1], 8, U, alpha(PAL.ink, 0.45)); hits.push({ x: p[0], y: p[1], r: 10, name: 'a uranium-235 nucleus' }); return; }
+      const q = smooth((t - s) / 0.3), a = i * 1.7, ux = Math.cos(a), uy = Math.sin(a), f = clamp(1 - (t - s) / 0.5, 0, 1);
+      burst(ctx, p[0], p[1], 22, f, E);
+      disc(ctx, p[0] + ux * (3 + 6 * q), p[1] + uy * (3 + 6 * q), 6, FRc, alpha(PAL.ink, 0.45));
+      disc(ctx, p[0] - ux * (3 + 6 * q), p[1] - uy * (3 + 6 * q), 5.5, FRc, alpha(PAL.ink, 0.45));
+      hits.push({ x: p[0], y: p[1], r: 12, name: 'a fission: two fragments, three neutrons and energy' });
+    });
+    /* the neutron that starts the chain, from outside the lump */
+    const P0 = CH.pts[CH.first], e = [CX - M.R - 120, CY - M.R - 30], dd = dist(e, P0), tin = S0 - dd / VN;
+    if (t >= tin && t < S0) { const w = VN * (t - tin); disc(ctx, e[0] + (P0[0] - e[0]) / dd * w, e[1] + (P0[1] - e[1]) / dd * w, 5, NE, alpha(PAL.ink, 0.5)); }
+    /* the neutrons in flight */
+    CH.flights.forEach((f) => {
+      const dt = t - sOf(f.g); if (dt < 0) return;
+      const w = VN * dt;
+      let x, y;
+      if (f.hit) { const L = dist(f.a, f.b); if (w >= L) return; x = f.a[0] + (f.b[0] - f.a[0]) / L * w; y = f.a[1] + (f.b[1] - f.a[1]) / L * w; }
+      else { x = f.a[0] + f.u[0] * w; y = f.a[1] + f.u[1] * w; if (Math.hypot(x - CX, y - CY) > M.R + 70) return; }
+      disc(ctx, x, y, 5, NE, alpha(PAL.ink, 0.5));
+      hits.push({ x, y, r: 10, name: f.hit ? 'a neutron that goes on to split another nucleus' : 'a neutron escaping through the surface' });
+    });
+    F.legend(ctx, { l: 20, r: 660, t: H - 52, b: H - 8 }, [
+      { s: '²³⁵U nucleus', draw: (c, x, y) => disc(c, x, y, 8, U, alpha(PAL.ink, 0.45)) },
+      { s: 'neutron', draw: (c, x, y) => disc(c, x, y, 5, NE, alpha(PAL.ink, 0.5)) },
+      { s: 'fission fragments', draw: (c, x, y) => { disc(c, x - 6, y, 6, FRc, alpha(PAL.ink, 0.45)); disc(c, x + 6, y, 5.5, FRc, alpha(PAL.ink, 0.45)); } },
+      { s: 'energy', draw: (c, x, y) => burst(c, x, y, 13, 1, E) },
+    ], { corner: 'bl', row: true, panel: false, size: 18 });
+    /* fissions per generation */
+    const GB = { l: 780, r: 1340, t: 150, b: 520 };
+    const { X, Y } = axes(ctx, GB, [0, NG], [0, YMAX], { nx: NG, ny: 4, fx: () => '', xl: 'generation', yl: 'fissions' });
     for (let g = 0; g < NG; g++) {
-      text(ctx, String(g), X(g + 0.5), GB.b + 24, PAL.muted, { size: 17, align: 'center' });
+      text(ctx, String(g), X(g + 0.5), GB.b + 22, PAL.muted, { size: 17, align: 'center' });
       if (t < sOf(g)) continue;
-      const n = CHc.counts[g], top = Y(Math.min(n, YMAX));
-      if (n > 0) { ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.45); ctx.fillRect(X(g) + 8, top, X(g + 1) - X(g) - 16, GB.b - top); ctx.restore(); }
+      const n = CH.counts[g], top = Y(Math.min(n, YMAX));
+      if (n > 0) { ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.45); ctx.fillRect(X(g) + 10, top, X(g + 1) - X(g) - 20, GB.b - top); ctx.restore(); }
+      if (n > 0 && n <= YMAX) text(ctx, String(n), X(g + 0.5), top - 16, PAL.ink, { size: 18, align: 'center' });
       if (n > YMAX) pinned(ctx, GB, X, Y, g + 0.5, n, PAL.ink, String(n));
     }
-    const LX = 40, U = F.el('U');
-    [[150, U, 0.85, 12, '²³⁵U nucleus'], [192, F.el('n0'), 1, 7, 'neutron'], [234, F.cat(0), 1, 9, 'fission fragments']].forEach(([y, col, a, r, s]) => {
-      disc(ctx, LX + 12, y, r, alpha(col, a), alpha(PAL.ink, 0.4), 1); text(ctx, s, LX + 34, y, PAL.ink, { size: 18 });
-    });
-    burst(ctx, LX + 12, 276, 15, 1, C('energy')); text(ctx, 'a fission', LX + 34, 276, PAL.ink, { size: 18 });
-
-    const kT = fmt(Mm.k, 2), eT = fmt(Mm.e, 2);
-    ro.set('\\mk{f}{\\text{to fission}} + \\mk{e}{\\text{escaping}} = \\mk{fv}{' + kT + '} + \\mk{ev}{' + eT + '} = 3\\ \\text{neutrons}', undefined, { form: crit ? 'c' : Mm.k < 1 ? 'sub' : 'super' });
+    const kT = fmt(M.k, 2), eT = fmt(M.e, 2);
+    F.tex(d.readout, '\\text{neutrons per fission} = \\text{to fission} + \\text{escaping} = ' + kT + ' + ' + eT + ' = 3');
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
@@ -373,8 +365,8 @@ function burst(ctx, x, y, R, k, color) {
     RODX.forEach((x) => { ctx.save(); ctx.fillStyle = alpha(INK, 0.78); ctx.fillRect(x - 4, 94, 8, tip - 94); ctx.restore(); hits.push({ x, y: Math.max(tip - 14, 200), r: 8, name: 'a control rod, ' + fmt(rods.v, 0) + '% in, absorbing slow neutrons' }); });
 
     /* the coolant */
-    if (level > 0.02) FLOWS.forEach((P, j) => { for (let i = 0; i < 16; i++) { const [x, y] = P.at(i * P.L / 16 + 60 * t + j * 11); disc(ctx, x, y, 3.2, alpha(INK, 0.5 * level)); } });
-    if (level > 0.02) { arrow(ctx, 160, INY, 200, INY, alpha(INK, 0.6 * level), 3); arrow(ctx, 630, INY, 675, INY, alpha(INK, 0.6 * level), 3); }
+    if (level > 0.02) FLOWS.forEach((P, j) => { for (let i = 0; i < 20; i++) { const [x, y] = P.at(i * P.L / 20 + 60 * t + j * 11); disc(ctx, x, y, 4.2, alpha(INK, 0.55 * level)); } });
+    if (level > 0.02) { arrow(ctx, 100, INY, 196, INY, alpha(INK, 0.7 * level), 4); arrow(ctx, 610, INY, 712, INY, alpha(INK, 0.7 * level), 4); }
 
     /* neutrons between the rods */
     const RATE = 24;

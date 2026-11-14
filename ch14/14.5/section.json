@@ -40,6 +40,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "K_a1 written as m × 10ⁿ; caption cut"
     }
    ]
   },

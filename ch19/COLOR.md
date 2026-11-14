@@ -58,7 +58,8 @@ Cu(NO₃)₂·5H₂O; the pink or blue of cobalt(II) hydroxide; the blue of
 anhydrous CoCl₂; the red of heme and green of chlorophyll; the glow of
 molten iron. The colour wheel and the absorbed and transmitted light of
 Figure 19.37 are `"spectrum"`, light in its own colour. A d orbital's two
-phases are drawn in two ink tones, never in type hues, as 6.3 drew them.
+phases, the two signs of ψ, are drawn in `F.cat(0)` and `F.cat(1)`, never in
+type hues, as 6.3 draws its orbitals, and named in the figure's key.
 
 ## Referents
 
@@ -68,7 +69,7 @@ As built (chapter pass, 2026-10-05): none. 19.1's series and metals, 19.2's isom
 
 - 19.1: the blast furnace draws `temperature` on its zone scale and `length` on its heights, with the glow of molten iron and of molten slag as facts and `F.el` for Fe, C, Ca and O; the superconductor Sim draws `temperature`; the series and oxidation-state Sims are ink with a neutral highlight. Resistance stays ink.
 - 19.2: `angle` on the geometry and cis–trans Sims' arcs; violet cis- and green trans-[Co(NH₃)₄Cl₂]⁺ as facts; `F.el` for every atom, a generic M through its fallback.
-- 19.3: `energy` for Δ<sub>oct</sub>, Δ<sub>tet</sub>, P and the splitting diagrams; the colour wheel draws `wavelength`, `frequency`, `velocity` and `energy` in its readout, with the wheel, the light and the solution as `"spectrum"`; M and L through `F.el`'s fallback.
+- 19.3: `energy` for Δ<sub>oct</sub>, Δ<sub>tet</sub>, P and the splitting diagrams; the colour wheel draws `wavelength`, `frequency`, `velocity` and `energy` in its readout, with the wheel, the light and the solution as `"spectrum"`; M and L through `F.el`'s fallback; the orbital's two signs in `F.cat(0)` and `F.cat(1)`.
 
 The frame of a figure and its labels stay in ink, and with colour coding off
 every figure stays legible from its labels.

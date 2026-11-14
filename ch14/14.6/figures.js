@@ -87,7 +87,7 @@ const amt = (x) => (x <= 0 ? '0' : x >= 100 ? x.toFixed(0) : x.toPrecision(3));
   }
 
   const B = { l: 560, r: 1330, t: 128, b: 462 };
-  const BAR = { base: 462, h: 140, w: 96, x: [150, 266] };
+  const BAR = { base: 462, h: 210, w: 104, x: [150, 274] };   /* the start line at two thirds of the way up, leaving room for the bar that grows */
   function draw() {
     const { ctx, H } = begin(d.c);
     hits = [];

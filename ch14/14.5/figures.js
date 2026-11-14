@@ -17,6 +17,8 @@ function sig(x, n = 3) {
 }
 const sigText = (x, n) => { const s = sig(x, n); return s.plain ?? `${s.m} × 10${sup(s.e)}`; };
 const sigTex = (x, n) => { const s = sig(x, n); return s.plain ?? `${s.m} \\times 10^{${s.e}}`; };
+/* a constant always as m × 10ⁿ, as the appendix prints it */
+const kTex = (x) => { const e = Math.floor(Math.log10(x) + 1e-9); return `${(x / 10 ** e).toFixed(1)} \\times 10^{${e}}`; };
 const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
 
 /* =====================================================================
@@ -100,7 +102,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     hits.push({ x: (B.l + B.r) / 2, y: yH, r: 12, name: `[H₃O⁺] = ${sigText(x)} M` });
 
     const T = TEX[key], xt = sigTex(x), ct = hue('concentration', sigTex(c, 2));
-    ro.set(`\\kKaone = \\frac{(x)(x)}{${ct} - x} = \\frac{(\\mk{x1}{${xt}})(\\mk{x2}{${xt}})}{\\mk{c}{${ct}} - \\mk{x3}{${xt}}} = \\mk{K}{${sigTex(a.K[0], 2)}}`,
+    ro.set(`\\kKaone = \\frac{(x)(x)}{${ct} - x} = \\frac{(\\mk{x1}{${xt}})(\\mk{x2}{${xt}})}{\\mk{c}{${ct}} - \\mk{x3}{${xt}}} = \\mk{K}{${kTex(a.K[0])}}`,
       `$[${T[2]}] = \\kKatwo [${T[1]}]/\\kconcHyd$ = ${sigText(a.K[1], 2)} M at every starting concentration, since $[${T[1]}] = \\kconcHyd$.`);
   }
   register(d.fig, { update: () => {}, draw });

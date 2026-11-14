@@ -16,8 +16,8 @@ built.
 | k_f, k_r | `rate-constant` | 13.1's sliders and rate laws, 13.3's rate laws (`\kkf`, `\kkr`) |
 | rate_f, rate_r | `rate` | 13.1's rate axis and readout, 13.3's rate laws |
 | t | `time` | 13.1, the time axis of 13.5 |
-| A partial pressure P_A to P_D | `pressure` | A K_P item and the Le Châtelier box |
-| T | `temperature` | |
+| A partial pressure P_A to P_D | `pressure` | A K_P item |
+| T | `temperature` | The vessel's temperature in the Le Châtelier Sim |
 | V and n in the ideal gas equation (13.2, 13.3) | `volume`, `amount` | |
 | ΔH, E_a, q, the energy axis of 13.8 | `energy` | |
 
@@ -35,7 +35,7 @@ ink.
 
 `F.el` for every molecule drawn: N₂O₄ and NO₂ in Figure 13.2; H₂, I₂, HI,
 N₂O₄ and NO₂ in the Le Châtelier Sim; N₂, H₂, NH₃ and water in Figure 13.9.
-Through `F.fact`: NO₂'s brown (`#8b4a1c`) darkening the box of Figure 13.2 in
+Through `F.fact`: NO₂'s brown (`#8b4a1c`) darkening the sealed tube of Figure 13.2 in
 proportion to [NO₂], never a stand-in for a concentration elsewhere. Bromine's
 vapour is the photograph of Figure 13.4 and is not drawn.
 

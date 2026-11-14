@@ -57,6 +57,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "rebuilt: lobes from the wave function, book box diagram, key"
         }
       ]
     },
@@ -76,6 +80,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "re-examined: enlarged, one-comparison readout, caption cut"
         }
       ]
     },
@@ -125,6 +133,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "re-examined: larger wheel and tube, key, caption cut"
         }
       ]
     },

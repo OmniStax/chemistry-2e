@@ -144,11 +144,11 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
   }
 
   /* the five levels as the book's boxes: x centre on the canvas and energy in units of Δoct about the free ion's average */
-  const DO = 190, YB = 220, BW = 96, BH = 54;
+  const DO = 190, YB = 220, BW = 96, BH = 40;
   const LV = {
     oct: { xy: [560, -0.4], xz: [660, -0.4], yz: [760, -0.4], z2: [610, 0.6], x2y2: [710, 0.6] },
     tet: { z2: [610, -0.6 * 4 / 9], x2y2: [710, -0.6 * 4 / 9], xy: [560, 0.4 * 4 / 9], xz: [660, 0.4 * 4 / 9], yz: [760, 0.4 * 4 / 9] },
-    sqp: { xz: [610, -0.55], yz: [710, -0.55], z2: [660, -0.15], xy: [660, 0.25], x2y2: [660, 0.75] },
+    sqp: { xz: [610, -0.6], yz: [710, -0.6], z2: [660, -0.12], xy: [660, 0.36], x2y2: [660, 0.84] },
   };
   const yOf = (e) => YB - e * DO;
   const SETS = {
@@ -165,7 +165,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     sqp: (o) => ({
       x2y2: 'Four ligands on the $x$- and $y$-axes: the lobes of $d_{x^2-y^2}$ point straight at all four.',
       xy: 'Four ligands on the $x$- and $y$-axes: the lobes of $d_{xy}$ lie in their plane, between them.',
-      z2: 'Four ligands on the $x$- and $y$-axes: $d_{z^2}$ points along $z$, where there are none, with only its ring in their plane.',
+      z2: 'Four ligands on the $x$- and $y$-axes: $d_{z^2}$ points along $z$, where there are none.',
     }[o.v] ?? `Four ligands on the $x$- and $y$-axes: the lobes of $${o.tex}$ point out of their plane.`),
   };
   const RO = {

@@ -70,6 +70,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "view buttons gone, sheets laid flat, diamond tetrahedron picked out"
     }
    ]
   },
@@ -109,6 +113,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "view buttons and spin gone, enlarged, readout one line, caption cut"
     }
    ]
   },
@@ -136,6 +144,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "tangle keeps its bond lengths, view buttons gone, caption cut"
     }
    ]
   }

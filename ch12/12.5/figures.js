@@ -67,7 +67,7 @@ const sciText = (x, sig) => { const { m, e } = sci(x, sig); return `${minus(m.to
     return { C: xC, Oa: xC - 0.5 - 0.02 * S(h), Ob, Oc: Ob + 0.65 + 0.9 * h };
   }
   /* the scene: the line of approach across the top band, 1 scene unit = 105 canvas units, centred */
-  const XC = 700, SC = 105, YM = 150, RAD = { C: 36, O: 32 };
+  const XC = 700, SC = 105, YM = 172, RAD = { C: 36, O: 32 };
   const NAMES = { Oa: 'an oxygen atom of the carbon monoxide molecule', C: 'the carbon atom of the carbon monoxide molecule', Ob: 'an oxygen atom of the oxygen molecule', Oc: 'an oxygen atom of the oxygen molecule' };
   let hits = []; F.hover(d.stage, () => hits);
   function atom(ctx, x, k) {
@@ -88,7 +88,7 @@ const sciText = (x, sig) => { const { m, e } = sci(x, sig); return `${minus(m.to
     /* drawn back to front: the O of CO and the far O behind, so the joined atoms overlap as the book draws them */
     const a = atomsAt(s, o);
     for (const k of (o === 'C' ? ['Oa', 'C', 'Oc', 'Ob'] : ['C', 'Oa', 'Oc', 'Ob'])) atom(ctx, XC + SC * a[k], k);
-    F.legend(ctx, { l: 1010, r: 1340, t: 222, b: 262 }, [{ s: 'carbon', draw: (c, x, y) => { c.save(); c.fillStyle = F.el('C'); c.beginPath(); c.arc(x, y, 10, 0, 2 * Math.PI); c.fill(); c.restore(); } }, { s: 'oxygen', draw: (c, x, y) => { c.save(); c.fillStyle = F.el('O'); c.beginPath(); c.arc(x, y, 10, 0, 2 * Math.PI); c.fill(); c.restore(); } }], { corner: 'tr', row: true, panel: false });
+    F.legend(ctx, { l: 1010, r: 1340, t: 236, b: 270 }, [{ s: 'carbon', draw: (c, x, y) => { c.save(); c.fillStyle = F.el('C'); c.beginPath(); c.arc(x, y, 10, 0, 2 * Math.PI); c.fill(); c.restore(); } }, { s: 'oxygen', draw: (c, x, y) => { c.save(); c.fillStyle = F.el('O'); c.beginPath(); c.arc(x, y, 10, 0, 2 * Math.PI); c.fill(); c.restore(); } }], { corner: 'tr', row: true, panel: false });
     const { X, Y } = F.axes(ctx, B, [0, 1], [-100, 350], { nx: 4, ny: 9, fx: () => '', fy: (y) => minus(fmt(y, 0)), xl: 'extent of reaction', yl: 'energy (kJ/mol)', yc: ce });
     line(ctx, B.l, Y(0), B.r, Y(0), guide, 2, [10, 10]);
     F.faded(ctx, cC, [0, 0], () => line(ctx, X(0.5), Y(DH), B.r, Y(DH), guide, 2, [10, 10]));
@@ -97,7 +97,9 @@ const sciText = (x, sig) => { const { m, e } = sci(x, sig); return `${minus(m.to
     F.faded(ctx, cC, [0, 0], () => {
       F.vbracket(ctx, X(0.5), Y(0), Y(EA), ce, 'E_{a}', 1);
       F.vbracket(ctx, X(0.5), Y(0), Y(DH), ce, 'ΔH', 1);
-      text(ctx, 'transition state', X(0.5), Y(EA) - 30, PAL.ink, { size: 20, align: 'center', bg: PAL.panel });
+      /* the name stands over the peak, lifted over the collision energy's line when that line would cross it */
+      const ty = E > EA + 5 && E < EA + 60 ? Y(E) - 26 : Y(EA) - 30;
+      text(ctx, 'transition state', X(0.5), ty, PAL.ink, { size: 20, align: 'center', bg: PAL.panel });
       text(ctx, 'CO_{2} + O', X(0.8), Y(DH) + 30, PAL.ink, { size: 20, align: 'center', bg: PAL.panel });
     });
     text(ctx, 'CO + O_{2}', X(0.06), Y(0) - 26, PAL.ink, { size: 20, align: 'left', bg: PAL.panel });
@@ -114,15 +116,15 @@ const sciText = (x, sig) => { const { m, e } = sci(x, sig); return `${minus(m.to
    temperatures, f(E) = (2/√π)(RT)^(−3/2) √E e^(−E/RT) per kJ/mol, and the
    fraction of each beyond E_a, erfc(√x) + 2√(x/π) e^(−x) with x = E_a/RT.
    Still: the curves answer the sliders. T1 is held at 300 K as the
-   reference; T2 runs 300 to 900 K and E_a 2 to 28 kJ/mol. Energy axis
-   fixed at 0 to 30 kJ/mol; the height fixed at 0.24 per kJ/mol, over the
+   reference; T2 runs 300 to 900 K and E_a 2 to 19 kJ/mol, default 8, so
+   both tails show as in the book's (b). Energy axis fixed at 0 to 20 kJ/mol; the height fixed at 0.24 per kJ/mol, over the
    300 K peak of 0.194. The two curves are unnamed instances, F.cat(0) and
    F.cat(1).
 ===================================================================== */
 (function () {
   const d = sim('sim-distribution', 560);
   const RK = 8.314e-3, T1 = 300;
-  const eaS = ctl(d.controls, { label: '\\kEa', cls: 'energy', min: 2, max: 28, step: 1, value: 12, unit: 'kJ/mol', dec: 0, aria: 'activation energy, in kilojoules per mole' });
+  const eaS = ctl(d.controls, { label: '\\kEa', cls: 'energy', min: 2, max: 19, step: 1, value: 8, unit: 'kJ/mol', dec: 0, aria: 'activation energy, in kilojoules per mole' });
   const tS = ctl(d.controls, { label: '\\kTtwo', cls: 'temperature', min: 300, max: 900, step: 10, value: 600, unit: 'K', dec: 0, aria: 'the second temperature, in kelvin' });
   const f = (E, T) => { const rt = RK * T; return E <= 0 ? 0 : 2 / Math.sqrt(Math.PI) * rt ** -1.5 * Math.sqrt(E) * Math.exp(-E / rt); };
   function erfc(x) {
@@ -137,62 +139,22 @@ const sciText = (x, sig) => { const { m, e } = sci(x, sig); return `${minus(m.to
     const { ctx, H } = begin(d.c), Ea = eaS.v, T2 = tS.v, ce = C('energy');
     const head = F.headline(ctx, `At $\\kTtwo$ = ${T2} K, ${pct(above(Ea, T2))}% of the molecules reach $\\kEa$ = ${Ea} kJ/mol, against ${pct(above(Ea, T1))}% at $\\kTone$ = ${T1} K.`);
     const lab = F.labeller(ctx, H, { headline: head });
-    const { X, Y } = F.axes(ctx, B, [0, 30], [0, 0.24], { nx: 6, ny: 4, fy: () => '', xl: 'kinetic energy (kJ/mol)', xc: ce, yl: 'number of molecules' });
+    const { X, Y } = F.axes(ctx, B, [0, 20], [0, 0.24], { nx: 4, ny: 4, fy: () => '', xl: 'kinetic energy (kJ/mol)', xc: ce, yl: 'number of molecules' });
     const k = F.arrival(d), curves = [[T1, F.cat(0), 'T_{1}'], [T2, F.cat(1), 'T_{2}']];
     for (const [T, col] of curves) {
       ctx.save(); ctx.globalAlpha *= 0.3 * k; ctx.fillStyle = col; ctx.beginPath(); ctx.moveTo(X(Ea), Y(0));
-      for (let i = 0; i <= 80; i++) { const E = Ea + (30 - Ea) * i / 80; ctx.lineTo(X(E), Y(f(E, T))); }
-      ctx.lineTo(X(30), Y(0)); ctx.closePath(); ctx.fill(); ctx.restore();
+      for (let i = 0; i <= 80; i++) { const E = Ea + (20 - Ea) * i / 80; ctx.lineTo(X(E), Y(f(E, T))); }
+      ctx.lineTo(X(20), Y(0)); ctx.closePath(); ctx.fill(); ctx.restore();
     }
-    for (const [T, col] of curves) F.curve(ctx, (E) => f(E, T), 0, 30, X, Y, col, 5, 240);
+    for (const [T, col] of curves) F.curve(ctx, (E) => f(E, T), 0, 20, X, Y, col, 5, 240);
     line(ctx, X(Ea), B.b, X(Ea), B.t + 30, ce, 3, [10, 10]);
     lab.add('E_{a}', X(Ea), B.t + 30, 0, -1, ce, 22, 14);
     for (const [T, col, name] of curves) { const E = 2.2 * RK * T; lab.add(`${name} = ${T} K`, X(E), Y(f(E, T)), 0.7, -0.7, col, 20, 26); }
     lab.flush();
     const val = Ea * 1000 / 8.314 * (1 / T2 - 1 / T1), ratio = Math.exp(-val);
-    tex(d.readout, `\\ln\\frac{\\kkone}{\\kktwo} = \\frac{\\kEa}{R}\\left(\\frac{1}{\\kTtwo}-\\frac{1}{\\kTone}\\right) = \\frac{${hue('energy', Ea * 1000 + '\\ \\text{J mol}^{-1}')}}{8.314\\ \\text{J mol}^{-1}\\,\\text{K}^{-1}}\\left(\\frac{1}{${hue('temperature', T2 + '\\ \\text{K}')}}-\\frac{1}{${hue('temperature', T1 + '\\ \\text{K}')}}\\right) = ${fmt(val, 2)},\\ \\text{so}\\ \\kktwo = ${ratio >= 10 ? fmt(ratio, 0) : fmt(ratio, 2)}\\,\\kkone`);
+    tex(d.readout, `\\ln\\frac{\\kkone}{\\kktwo} = \\frac{\\kEa}{R}\\left(\\frac{1}{\\kTtwo}-\\frac{1}{\\kTone}\\right) = \\frac{${hue('energy', Ea * 1000 + '\\ \\text{J mol}^{-1}')}}{8.314\\ \\text{J mol}^{-1}\\,\\text{K}^{-1}}\\left(\\frac{1}{${hue('temperature', T2 + '\\ \\text{K}')}}-\\frac{1}{${hue('temperature', T1 + '\\ \\text{K}')}}\\right) = ${minus(fmt(val, 2))} \\\\ \\frac{\\kktwo}{\\kkone} = e^{${fmt(-val, 2)}} = ${ratio >= 10 ? fmt(ratio, 0) : fmt(ratio, 2)}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
 
-/* =====================================================================
-   FIGURE 12.16: ln k against 1/T for 2HI → H2 + I2, the five rows of
-   Example 12.13's table as printed (1/T to three figures). Still: a
-   choice of two rows redraws the slope triangle. The slope is rounded to
-   two figures before it is multiplied by R, as the book does, so the
-   default gives the book's 1.8 × 10⁵ J/mol and the readout's numbers
-   multiply to its result. Axes fixed: 1/T 1.2 to 1.9 × 10⁻³ K⁻¹, ln k
-   −16 to −2. Ink throughout but the energy of the result.
-===================================================================== */
-(function () {
-  const d = sim('sim-arrhenius-plot', 600);
-  const Ts = [555, 575, 645, 700, 781], inv = [1.80, 1.74, 1.55, 1.43, 1.28], lk = [-14.860, -13.617, -9.362, -6.759, -3.231];
-  const opts = [];
-  for (let i = 0; i < 5; i++) for (let j = i + 1; j < 5; j++) opts.push({ value: `${i}-${j}`, label: `${Ts[i]} K and ${Ts[j]} K` });
-  const pair = F.select(d.controls, { label: '\\text{points}', options: opts, value: '0-4', aria: 'the two measurements the slope is taken between' });
-  const n = 5, mx = inv.reduce((a, b) => a + b) / n, my = lk.reduce((a, b) => a + b) / n;
-  const fit = inv.reduce((a, x, i) => a + (x - mx) * (lk[i] - my), 0) / inv.reduce((a, x) => a + (x - mx) ** 2, 0);
-  const lineAt = (x) => my + fit * (x - mx);
-  const B = { l: 170, r: 1290, t: 136, b: 510 };
-  function draw() {
-    const { ctx, H } = begin(d.c), [i, j] = pair.value.split('-').map(Number);
-    const dl = lk[i] - lk[j], dx = +(inv[i] - inv[j]).toFixed(2), sr = sci(dl / (dx * 1e-3), 2), slope = sr.m * 10 ** sr.e;
-    const Ea = -slope * 8.314;
-    const head = F.headline(ctx, `Between ${Ts[i]} K and ${Ts[j]} K, $\\Delta\\ln\\kk$ = ${minus(dl.toFixed(3))} over $\\Delta(1/\\kT)$ = ${dx.toFixed(2)} × 10⁻³ K⁻¹: a slope of ${sciText(slope, 2)} K.`);
-    const lab = F.labeller(ctx, H, { headline: head });
-    const { X, Y } = F.axes(ctx, B, [1.2, 1.9], [-16, -2], { nx: 7, ny: 7, fx: (x) => fmt(x, 1), fy: (y) => minus(fmt(y, 0)), xl: '1/T (10⁻³ K⁻¹)', yl: 'ln k' });
-    clipTo(ctx, B, () => F.curve(ctx, lineAt, 1.22, 1.88, X, Y, PAL.ink, 4, 2));
-    const k = F.arrival(d);
-    ctx.save(); ctx.globalAlpha *= k;
-    line(ctx, X(inv[j]), Y(lk[j]), X(inv[j]), Y(lk[i]), PAL.muted, 3, [10, 8]);
-    line(ctx, X(inv[j]), Y(lk[i]), X(inv[i]), Y(lk[i]), PAL.muted, 3, [10, 8]);
-    ctx.restore();
-    inv.forEach((x, m) => { const on = m === i || m === j; dot(ctx, X(x), Y(lk[m]), on ? PAL.ink : PAL.muted, true, on ? 11 : 8); });
-    lab.beside({ x1: X(inv[j]), y1: Y(lk[i]), x2: X(inv[j]), y2: Y(lk[j]) }, 'left', 'Δ ln k', PAL.ink, 20);
-    lab.beside({ x1: X(inv[j]), y1: Y(lk[i]), x2: X(inv[i]), y2: Y(lk[i]) }, 'right', 'Δ(1/T)', PAL.ink, 20);
-    lab.flush();
-    tex(d.readout, `\\kEa = -\\text{slope}\\times R = -(${sciTex(slope, 2)}\\ \\text{K})(8.314\\ \\text{J mol}^{-1}\\,\\text{K}^{-1}) = ${hue('energy', sciTex(Ea, 2) + '\\ \\text{J mol}^{-1}')}`);
-  }
-  register(d.fig, { update: () => {}, draw });
-})();
 };

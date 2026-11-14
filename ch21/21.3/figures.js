@@ -275,7 +275,7 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
     if (m === 'a') {
       const Dn = nucleus(Ad, Zd, 3); R = Dn.R;
       const nx = CX - ((VA * 4.0026) / 234.04) * dt;
-      Dn.pts.forEach((p) => nucleon(ctx, nx + p.x, CY + p.y, p.p));
+      Dn.pts.forEach((p) => nucleon(ctx, nx + p.x, CY + p.y, p.p, NS));
       const ax = CX + Dn.R - 2 + VA * dt;
       alphaParticle(ctx, ax, CY, NS);
       if (!after) ring(ctx, ax, CY, NS * 2.3, PAL.ink, 2.5);
@@ -286,7 +286,7 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
       let flip = -1;
       if (m === 'bm') flip = Pn.pts.findIndex((p, i) => !p.p && i > Pn.pts.length * 0.3);
       if (m === 'bp' || m === 'ec') flip = Pn.pts.findIndex((p, i) => p.p && (i > Pn.pts.length * 0.3 || Pn.pts.length < 10));
-      Pn.pts.forEach((p, i) => nucleon(ctx, CX + p.x, CY + p.y, i === flip && after ? !p.p : p.p));
+      Pn.pts.forEach((p, i) => nucleon(ctx, CX + p.x, CY + p.y, i === flip && after ? !p.p : p.p, NS));
       if (flip >= 0) {
         const f = Pn.pts[flip];
         if (!after) ring(ctx, CX + f.x, CY + f.y, NS + 4, PAL.ink, 2.5);
@@ -427,10 +427,10 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
       dot(ctx, p.x, p.y, PAL.ink, stable, 7);
       hits.push({ x: p.x, y: p.y, r: 12, name: long(i) + ': Z = ' + n[0] + ', n = ' + n[1] + ', A = ' + A(i) + (stable ? ', stable' : ', radioactive') });
     });
-    /* the names sit to the right of their points, as the book sets them, except where the step's arrow leaves that way */
+    /* the names sit above their points, clear of the arrows, which run nearly level on this scale */
     [...new Set([k, k + 1, 0, 14])].forEach((i) => {
-      const p = P(i), right = NUC[i][0] < 92 && !(i === k && !al);
-      lab.add(short(i), p.x, p.y, right ? 1 : -1, right ? 0.15 : -0.15, PAL.ink, 22, 22);
+      const p = P(i);
+      lab.add(short(i), p.x, p.y, 0, i === 14 ? 1 : -1, PAL.ink, 22, 20);
     });
     F.legend(ctx, ax, [
       { s: 'α decay', draw: (c, x, y) => arrow(c, x + 20, y - 6, x - 20, y + 6, CA, 4) },
@@ -441,7 +441,7 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
     lab.flush();
 
     const [zp, , sp] = NUC[k], [zd, , sd] = NUC[k + 1];
-    F.tex(d.readout, nucTex(A(k), zp, sp) + '\\longrightarrow' + nucTex(A(k + 1), zd, sd) + '+' + (al ? nucTex(4, 2, 'He') : '{}_{-1}^{\;0}\\text{e}'));
+    F.tex(d.readout, nucTex(A(k), zp, sp) + '\\longrightarrow' + nucTex(A(k + 1), zd, sd) + '+' + (al ? nucTex(4, 2, 'He') : '{}_{-1}^{\\;0}\\text{e}'));
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -589,7 +589,7 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
     ctx.fill(); ctx.stroke(); ctx.restore();
     if (crown > 0) {
       ctx.save(); ctx.globalAlpha = crown;
-      const LOBES = [[0, -50, 86], [-62, 0, 60], [62, 4, 60], [-34, 34, 52], [36, 38, 52]];
+      const LOBES = [[0, -44, 70], [-52, 0, 50], [52, 4, 50], [-28, 30, 44], [30, 32, 44]];
       LOBES.forEach(([dx, dy, r]) => ring(ctx, TXc + dx, 280 + dy, r, PAL.ink, 5));
       LOBES.forEach(([dx, dy, r]) => disc(ctx, TXc + dx, 280 + dy, r, PAL.soft, null));
       ctx.restore();

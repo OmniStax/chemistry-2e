@@ -303,13 +303,16 @@ const VIEW3 = { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3 };
     if (inBox && minGap(conf) > 0.8 * BD && ends(conf) > 1.6 * BD) { shapes = sh; confC = conf; }
   }
   if (!confC) { shapes = CHAINS.map(([a, b]) => walk(rng(1826), b - a)); confC = []; CHAINS.forEach((_, c) => shapes[c].forEach((p) => confC.push(add(p, C_AT[c])))); }
-  let confD = null;
-  for (let t = 1; t < 400 && !confD; t++) {
+  /* (d): the three chains turned and drawn together, each keeping its bond lengths; of 400 tries, the one whose
+     unbonded atoms stand farthest apart, so the tangle reads as chains and never as a lump */
+  let confD = null, best = -1;
+  for (let t = 1; t < 400; t++) {
     const R = rng(2300 + t), conf = [];
-    CHAINS.forEach((_, c) => { const turn = [R() * 1.2 - 0.6, R() * TAU, R() * 1.2 - 0.6], at = C_AT[c].map((x) => x * 0.62 + (R() - 0.5) * 0.2); shapes[c].forEach((p) => conf.push(add(rot(p, turn), at))); });
-    if (minGap(conf) > 0.85 * BD && ends(conf) > 1.5 * BD) confD = conf;
+    CHAINS.forEach((_, c) => { const turn = [R() * 1.2 - 0.6, R() * TAU, R() * 1.2 - 0.6], at = C_AT[c].map((x) => x * 0.6 + (R() - 0.5) * 0.2); shapes[c].forEach((p) => conf.push(add(rot(p, turn), at))); });
+    const g = minGap(conf);
+    if (ends(conf) > 1.5 * BD && g > best) { best = g; confD = conf; }
   }
-  if (!confD) confD = confC.map((p) => p.map((x) => x * 0.6));
+  if (!confD) confD = confC;
   const CONF = [confA, confB, confC, confD];
   const stage = (T) => Math.min(3, Math.max(0, (3 * (T - 113)) / (230 - 113)));
   const liquid = (T) => (T < 171 ? F.mixColor(F.fact(STRAW), F.fact(AMBER), smooth(113, 171, T)) : F.mixColor(F.fact(AMBER), F.fact(DARK), smooth(171, 230, T)));

@@ -115,17 +115,6 @@ function turn(p, yaw, pitch) {
   const x = p[0] * Math.cos(yaw) + p[2] * Math.sin(yaw), z1 = -p[0] * Math.sin(yaw) + p[2] * Math.cos(yaw);
   return [x, p[1] * Math.cos(pitch) - z1 * Math.sin(pitch), p[1] * Math.sin(pitch) + z1 * Math.cos(pitch)];
 }
-function twoWays(d, opts, onShow) {
-  const VIEW = F.choice(d.controls, { label: '\\text{view}', options: [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }], value: '2d', aria: 'a flat drawing or a scene to turn', onInput: () => show() });
-  const s = { v: null, g: null, get three() { return VIEW.value === '3d'; } };
-  function show() {
-    if (s.three && !s.v) { s.v = F.view3d(d.stage, { spin: 'idle', pitch: [-1.2, 1.2], ...opts }); s.g = s.v.part(0); }
-    d.c.style.display = s.three ? 'none' : '';
-    if (s.v) [s.v.wrap, d.stage.querySelector('.view3d-bar')].forEach((e) => { if (e) e.style.display = s.three ? '' : 'none'; });
-    onShow();
-  }
-  return s;
-}
 
 /* =====================================================================
    FIGURE 11.31 + 11.32: a soap and a detergent, one amphiphile with a
@@ -135,9 +124,10 @@ function twoWays(d, opts, onShow) {
    stearate chain, and turns the carboxylate head into the sulfate head,
    the Na+ ion moving to stand beside it. Coordinates in ångströms: C–C
    1.54 Å drawn as a 1.26 Å step along the chain, hydrogens tetrahedral
-   out of the plane of the zigzag. Still: nothing in the idea has a clock.
-   Two views, 2D first (book rule); the 3D scene has no ground, turns
-   freely about the vertical, pitch within 69° of level, idle spin.
+   out of the plane of the zigzag, drawn from one locked perspective as
+   the book's ball-and-stick pictures are. Still: nothing in the idea has
+   a clock. Flat: the lesson is the two ends and the chain's length,
+   which a turn does not show better (the 3D view was removed 2026-11-14).
 ===================================================================== */
 (function () {
   const d = sim('sim-amphiphile', 440);
@@ -188,7 +178,6 @@ function twoWays(d, opts, onShow) {
   const KEYS = [...new Set([...Object.keys(soap.atoms), ...Object.keys(det.atoms)])];
   const BONDS = [...new Map([...soap.bonds, ...det.bonds].map((b) => [b.join('|'), b])).values()];
   const AM = F.choice(d.controls, { label: '\\text{amphiphile}', options: [{ value: 'soap', label: 'soap' }, { value: 'det', label: 'detergent' }], value: 'soap', aria: 'a soap or a detergent' });
-  const two = twoWays(d, { h: 400, dist: 30, views: [{ label: 'side', yaw: 0, pitch: 0.2 }, { label: 'end on', yaw: Math.PI / 2, pitch: 0.1 }] }, () => draw());
   const hits = []; F.hover(d.stage, () => hits);
   /* each atom now: where it stands, the element it shows and how present it is */
   function now() {
@@ -209,40 +198,11 @@ function twoWays(d, opts, onShow) {
     soap: '\\underbrace{\\text{C}_{17}\\text{H}_{35}}_{\\text{nonpolar}}\\text{—}\\underbrace{\\text{CO}_{2}{}^{-}\\ \\text{Na}^{+}}_{\\text{ionic}}',
     det: '\\underbrace{\\text{C}_{12}\\text{H}_{25}}_{\\text{nonpolar}}\\text{—}\\underbrace{\\text{OSO}_{3}{}^{-}\\ \\text{Na}^{+}}_{\\text{ionic}}',
   };
-  let sig = '', meshes = null, shownHead = '';
-  const palSig = () => [PAL.ink, PAL.muted, F.el('C'), F.el('H'), F.el('O'), F.el('S'), F.el('Na')].join('|');
-  function build3() {
-    const key = palSig(); if (key === sig && meshes) return; sig = key; shownHead = '';
-    two.v.clear(); meshes = { atoms: {}, bonds: [] };
-    const T3D = window.THREE;
-    for (const k of KEYS) {
-      const g = new T3D.Group(); two.g.add(g);
-      const el0 = (soap.atoms[k] || det.atoms[k]).el;
-      const m = F.mesh.sphere(g, [0, 0, 0], R[el0], F.el(el0)); two.v.pickable(m, NAME(k, soap.atoms[k] ? 'soap' : 'det'));
-      const alt = soap.atoms[k] && det.atoms[k] && soap.atoms[k].el !== det.atoms[k].el ? F.mesh.sphere(g, [0, 0, 0], R[det.atoms[k].el], F.el(det.atoms[k].el)) : null;
-      if (alt) two.v.pickable(alt, NAME(k, 'det'));
-      meshes.atoms[k] = { g, m, alt };
-    }
-    for (const [a, b] of BONDS) { const g = new T3D.Group(); two.g.add(g); meshes.bonds.push({ a, b, g, m: F.mesh.stick(g, [0, 0, 0], [1, 0, 0], 0.1, PAL.muted) }); }
-  }
   function draw() {
     const at = now(), by = {}; at.forEach((a) => { (by[a.key] = by[a.key] || []).push(a); });
     const st = AM.value;
     const pos = (k) => by[k][0].p, op = (k) => Math.max(...by[k].map((a) => a.o));
-    if (two.three) {
-      build3();
-      for (const k of KEYS) {
-        const m = meshes.atoms[k], q = sub(pos(k), [CENTRE, 0, 0]);
-        m.g.position.set(q[0], q[1], q[2]);
-        if (m.alt) { F.fade3(m.m, AM.a('soap')); F.fade3(m.alt, AM.a('det')); } else F.fade3(m.g, op(k));
-      }
-      for (const b of meshes.bonds) {
-        const o = Math.min(op(b.a), op(b.b));
-        F.mesh.setStick(b.m, sub(pos(b.a), [CENTRE, 0, 0]), sub(pos(b.b), [CENTRE, 0, 0])); F.fade3(b.g, o);
-      }
-      if (shownHead !== HEAD[st]) { shownHead = HEAD[st]; two.v.headline(HEAD[st]); }
-      two.v.invalidate();
-    } else {
+    {
       const { ctx } = begin(d.c); hits.length = 0;
       const o = { yaw: -0.3, pitch: 0.4, s: 43 };
       const P = (p) => { const q = turn(sub(p, [CENTRE, 0, 0]), o.yaw, o.pitch); return [700 + q[0] * o.s, 270 - q[1] * o.s, q[2]]; };
@@ -273,7 +233,7 @@ function twoWays(d, opts, onShow) {
 })();
 
 /* =====================================================================
-   FIGURE 11.33: an oil drop emulsified by soap, in cross section. 32 soap
+   FIGURE 11.33: an oil drop emulsified by soap, in cross section. 40 soap
    anions start scattered through the water at random angles; one after
    another each drifts to its place on the drop's surface and turns so its
    hydrocarbon tail points into the oil and its ionic end stays in the
@@ -285,17 +245,17 @@ function twoWays(d, opts, onShow) {
 ===================================================================== */
 (function () {
   const OIL_AMBER = '#e6c46a';
-  const d = sim('sim-emulsion', 540);
-  const CX = 860, CY = 330, RD = 165, TAIL = 128, N = 32;
+  const d = sim('sim-emulsion', 600);
+  const CX = 860, CY = 340, RD = 205, TAIL = 152, N = 40;
   const rnd = (a, b) => a + Math.random() * (b - a);
-  /* the anions at 202.5° and 185.6°, on the left of the drop, arrive first and carry the labels */
-  const LABEL_SLOT = 18, TAIL_SLOT = 16;
-  const inWater = () => { for (;;) { const x = rnd(360, 1270), y = rnd(180, 500); if (Math.hypot(x - CX, y - CY) > RD + TAIL * 0.6 + 30) return [x, y]; } };
+  /* the anions at 207° and 184.5°, on the left of the drop, arrive first and carry the labels */
+  const LABEL_SLOT = 23, TAIL_SLOT = 20;
+  const inWater = () => { for (;;) { const x = rnd(360, 1290), y = rnd(170, 540); if (Math.hypot(x - CX, y - CY) > RD + TAIL * 0.6 + 30) return [x, y]; } };
   const order = [LABEL_SLOT, TAIL_SLOT, ...Array.from({ length: N }, (_, i) => (i * 13) % N).filter((i) => i !== LABEL_SLOT && i !== TAIL_SLOT)];
   /* a tail starts pointing away from the headline above and the edge below */
   const anions = Array.from({ length: N }, (_, i) => { const start = inWater(); return { th: (i / N) * TAU + TAU / (2 * N), start, a0: start[1] < 330 ? rnd(0.3, Math.PI - 0.3) : rnd(Math.PI + 0.3, TAU - 0.3), ph: rnd(0, TAU), n: order.indexOf(i) }; });
   const START = 0.4, GAP = 0.2, DUR = 1.6, TEND = START + GAP * (N - 1) + DUR;
-  const IONS = [[430, 150], [1180, 130], [1300, 300], [1180, 470], [470, 470]].map(([x, y]) => ({ x, y, ph: rnd(0, TAU), w: [0.3, 1.9, 3.5, 5.1].map((a) => a + rnd(-0.2, 0.2)) }));
+  const IONS = [[430, 150], [1200, 140], [1320, 330], [1200, 520], [470, 500]].map(([x, y]) => ({ x, y, ph: rnd(0, TAU), w: [0.3, 1.9, 3.5, 5.1].map((a) => a + rnd(-0.2, 0.2)) }));
   const FREE = Array.from({ length: 9 }, () => { const [x, y] = inWater(); return { x, y, a: rnd(0, TAU), ph: rnd(0, TAU) }; });
   const cy = cycle(() => TEND, 2.5);
   const hits = []; F.hover(d.stage, () => hits);
@@ -343,121 +303,127 @@ function twoWays(d, opts, onShow) {
     label(ctx, 'drop of oil', CX - 30, CY + RD - 10, { side: 'below', size: 20, leader: true, gap: 34 });
     const done = st.filter((s) => s.w >= 1).length;
     topline(ctx, done === N
-      ? 'All 32 soap anions have settled at the surface of the oil drop, and the coated drop stays suspended in the water.'
-      : done + ' of 32 soap anions have settled at the surface of the oil drop, their hydrocarbon tails in the oil and their ionic ends in the water.');
+      ? 'All ' + N + ' soap anions have settled at the surface of the oil drop, and the coated drop stays suspended in the water.'
+      : done + ' of ' + N + ' soap anions have settled at the surface of the oil drop, their hydrocarbon tails in the oil and their ionic ends in the water.');
     readout(d.readout, '\\underbrace{\\text{C}_{17}\\text{H}_{35}}_{\\text{in the oil}}\\text{—}\\underbrace{\\text{CO}_{2}{}^{-}}_{\\text{in the water}}', null, { values: false });
   }
   register(d.fig, { update: (dt) => { clock += dt; cy.step(dt, () => 1); }, draw });
 })();
 
 /* =====================================================================
-   FIGURE 11.36: a Cottrell precipitator in three dimensions. Soot-laden
-   smoke enters a cylindrical chamber through a pipe at its side; a point
-   electrode at a high DC voltage runs down the axis inside the grounded
-   plate electrode, the chamber wall. With the voltage on, each soot
-   particle takes up a charge, crosses to the wall, is neutralized there
-   and slides into the hopper as dust; with it off, the soot rises with
-   the gases and leaves through the outlet at the top. Moving: the smoke
-   flows without end. The chamber stands on a floor, so the pitch stays
-   between 2° and 70° above level; spin off, since the smoke already moves.
+   FIGURE 11.36: a Cottrell precipitator, drawn flat from the book's
+   image: a chamber whose grounded wall is the plate electrode, a point
+   electrode with its barbs hanging down the middle from an insulator at
+   a high DC voltage, the smoke's inlet low on the left, the outlet high
+   on the right, and the hopper's funnel and neck at the bottom. Moving:
+   the smoke flows without end. Soot enters through the inlet and the gas
+   carries it up toward the outlet; with the voltage on, a particle that
+   comes near the point electrode soon takes up a charge (at 2.5 a second
+   within 70 units of it), is driven straight out to the nearer side of
+   the plate electrode, is neutralized there and slides down the wall into
+   the hopper as dust; with it off, every particle rides out with the
+   gases. The counts start again at each switch.
+   Canvas units: chamber inside XL..XR from YT down to YF, the funnel to
+   the neck NL..NR at YN, the neck down to YB; inlet at YI, outlet at YO.
 ===================================================================== */
 (function () {
-  const T3D = window.THREE;
-  const d = sim('sim-precipitator');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: 'front', yaw: 0, pitch: 0.1 }, { label: 'oblique', yaw: 0.6, pitch: 0.45 }], h: 440, dist: 7.4, tilt: 0.15 });
-  v.setView(0, 0.12);
-  const grp = v.part(0), cnv = F.makeCanvas(d.stage, 200);
-  grp.position.y = -0.65;
-  const RC = 0.9, Y0 = -0.6, Y1 = 1.8, YIN = 0.1, YOUT = 1.45, YH = -1.2, YP = -1.6, FLOOR = -1.95;
-  const V = F.choice(d.controls, { label: '\\text{high DC voltage}', options: [{ value: 'off', label: 'off' }, { value: 'on', label: 'on' }], value: 'on', aria: 'the voltage on the point electrode', onInput: () => { outcomes.length = 0; gen++; } });
-  let gen = 0;
-  const POOL = 70, parts = [], outcomes = [];
+  const d = sim('sim-precipitator', 640);
+  const V = F.choice(d.controls, { label: '\\text{high DC voltage}', options: [{ value: 'off', label: 'off' }, { value: 'on', label: 'on' }], value: 'on', aria: 'the voltage on the point electrode', onInput: () => { got = 0; lost = 0; gen++; } });
+  const XC = 700, XL = 560, XR = 840, YT = 120, YF = 470, NL = 672, NR = 728, YN = 540, YB = 612, YI = 415, YO = 185, PH = 15, WALL = 14;
   const rnd = (a, b) => a + Math.random() * (b - a);
-  for (let i = 0; i < POOL; i++) parts.push({ on: false });
-  let spawnT = 0;
-  function spawn() {
-    const p = parts.find((q) => !q.on); if (!p) return;
-    Object.assign(p, { on: true, gen, ph: 'pipe', x: [-1.75, YIN + rnd(-0.07, 0.07), rnd(-0.07, 0.07)], r: RC, phi: Math.PI, rt: rnd(0.08, 0.75), pt: rnd(-1.1, 1.1) + Math.PI, age: 0 });
-  }
-  const polar = (r, phi, y) => [r * Math.cos(phi), y, r * Math.sin(phi)];
+  let parts = [], got = 0, lost = 0, gen = 0, due = 0;
+  /* the funnel wall at height y, for a particle sliding down it */
+  const funnelX = (side, y) => { const k = (y - YF) / (YN - YF); return side < 0 ? XL + (NL - XL) * k : XR + (NR - XR) * k; };
   function step(dt) {
+    due -= dt;
+    while (due <= 0) { parts.push({ x: XL - 150, y: YI + rnd(-PH + 5, PH - 5), vx: 220, ph: 'in', q: Math.random() < 0.5 ? 1 : -1, gen, j: rnd(0, 6.3) }); due += 0.16; }
     const on = V.value === 'on';
-    spawnT += dt; while (spawnT > 0.11) { spawnT -= 0.11; spawn(); }
     for (const p of parts) {
-      if (!p.on) continue;
-      p.age += dt;
-      if (p.ph === 'pipe') { p.x[0] += 0.9 * dt; if (p.x[0] >= -RC) { p.ph = 'mix'; p.y = p.x[1]; p.r = RC - 0.1; p.phi = Math.PI; p.age = 0; } continue; }
-      if (p.ph === 'mix' || p.ph === 'rise') {
-        const k = Math.min(1, dt * 2.2);
-        if (p.ph === 'mix') { p.r += (p.rt - p.r) * k; p.phi += (p.pt - p.phi) * k; if (p.age > 0.9) p.ph = 'rise'; }
-        p.y += 0.42 * dt;
-        if (on && p.ph === 'rise') p.r += 0.62 * dt;
-        p.phi += rnd(-0.4, 0.4) * dt;
-        if (p.r >= RC - 0.05) { p.r = RC - 0.05; p.ph = 'wall'; }
-        else if (p.y >= YOUT) { p.ph = 'out'; p.x = polar(p.r, p.phi, p.y); }
+      p.j += dt * 3;
+      if (p.ph === 'in') { p.x += p.vx * dt; if (p.x > XL + 4) p.ph = 'gas'; continue; }
+      if (p.ph === 'gas') {
+        /* the gas carries it in from the inlet, then up, then out of the outlet near the top */
+        p.vx += (60 - p.vx) * Math.min(1, dt * 1.8);
+        const vy = -125, toOut = p.y < YO + 70 ? (XR + 20 - p.x) * 1.6 : 0;
+        p.x += (p.vx + toOut + 12 * Math.sin(p.j)) * dt; p.y += (vy + 10 * Math.cos(p.j * 1.3)) * dt;
+        if (p.y < YO + 6 && p.x > XR - 30) { p.ph = 'out'; p.y = Math.max(YO - PH + 5, Math.min(YO + PH - 5, p.y)); }
+        if (p.y < YT + 10) p.y = YT + 10;
+        p.x = Math.max(XL + 6, Math.min(XR - 6, p.x));
+        if (on && Math.abs(p.x - XC) < 70 && p.y > YT + 40 && p.y < YF - 10 && Math.random() < dt * 2.5) { p.ph = 'charged'; p.side = p.x < XC ? -1 : 1; }
+        continue;
+      }
+      if (p.ph === 'charged') {
+        p.x += p.side * 190 * dt; p.y -= 40 * dt;
+        if ((p.side < 0 && p.x <= XL + 5) || (p.side > 0 && p.x >= XR - 5)) { p.x = p.side < 0 ? XL + 5 : XR - 5; p.ph = 'wall'; }
         continue;
       }
       if (p.ph === 'wall') {
-        if (p.y > Y0) p.y -= 0.55 * dt;
-        else { const f = clamp01((p.y - YH) / (Y0 - YH)); p.r = 0.12 + (RC - 0.17) * f; p.y -= 0.55 * dt; if (p.y < YH) p.r = 0.1; }
-        if (p.y <= YP) { p.on = false; if (p.gen === gen) outcomes.push(1); }
+        p.y += 130 * dt;
+        if (p.y > YF) p.x = funnelX(p.side, Math.min(p.y, YN)) - p.side * 5;
+        if (p.y >= YN) { p.ph = 'hopper'; p.x = XC + (p.x - XC) * 0.5; }
         continue;
       }
-      if (p.ph === 'out') {
-        p.x[0] += 0.9 * dt; p.x[1] += (YOUT - p.x[1]) * Math.min(1, dt * 4); p.x[2] *= 1 - Math.min(1, dt * 3);
-        if (p.x[0] >= 1.75) { p.on = false; if (p.gen === gen) outcomes.push(0); }
-      }
+      if (p.ph === 'hopper') { p.y += 160 * dt; if (p.y > YB + 20) { p.done = true; if (p.gen === gen) got++; } continue; }
+      if (p.ph === 'out') { p.x += 180 * dt; if (p.x > XR + 170) { p.done = true; if (p.gen === gen) lost++; } }
     }
-    while (outcomes.length > 50) outcomes.shift();
-  }
-  const where = (p) => (p.ph === 'pipe' || p.ph === 'out' ? p.x : polar(p.r, p.phi, p.y));
-  let sig = '', meshes = [];
-  const palSig = () => [PAL.ink, PAL.soft, PAL.muted, PAL.panel, F.el('C'), F.ref('point-electrode'), F.ref('plate-electrode'), F.ref('hopper')].join('|');
-  const tube = (r0, r1, h, y, color, opacity, rotZ = 0, x = 0) => {
-    const m = new T3D.Mesh(new T3D.CylinderGeometry(r0, r1, h, 48, 1, true), F.mesh.mat(color, { transparent: true, opacity, depthWrite: false, side: T3D.DoubleSide }));
-    m.position.set(x, y, 0); m.rotation.z = rotZ; grp.add(m); return m;
-  };
-  function build() {
-    if (palSig() === sig) return; sig = palSig();
-    v.clear(); meshes = [];
-    v.pickable(F.mesh.box(grp, [0, FLOOR, 0], [4.4, 0.08, 2.6], PAL.soft), 'the floor');
-    v.pickable(tube(RC, RC, Y1 - Y0, (Y0 + Y1) / 2, F.ref('plate-electrode'), 0.16), 'the plate electrode, the grounded wall of the chamber');
-    v.pickable(tube(RC, 0.2, Y0 - YH, (Y0 + YH) / 2, F.ref('hopper'), 0.16), 'the hopper, where the soot collects as dust');
-    v.pickable(tube(0.2, 0.2, YH - YP, (YH + YP) / 2, PAL.muted, 0.22), 'the outlet for the soot removed');
-    v.pickable(tube(0.16, 0.16, 0.9, YIN, PAL.muted, 0.45, Math.PI / 2, -RC - 0.4), 'the inlet for soot-laden smoke');
-    v.pickable(tube(0.16, 0.16, 0.9, YOUT, PAL.muted, 0.45, Math.PI / 2, RC + 0.4), 'the outlet where soot-free gases escape');
-    const cap = new T3D.Mesh(new T3D.CircleGeometry(RC, 48), F.mesh.mat(PAL.muted, { transparent: true, opacity: 0.3, side: T3D.DoubleSide })); cap.rotation.x = -Math.PI / 2; cap.position.y = Y1; grp.add(cap);
-    for (const [x, z] of [[-0.7, -0.5], [0.7, -0.5], [0, 0.8]]) F.mesh.stick(grp, [x, YH + 0.1, z], [x, FLOOR, z], 0.03, PAL.muted);
-    v.pickable(F.mesh.stick(grp, [0, 2.0, 0], [0, -0.35, 0], 0.025, F.ref('point-electrode')), 'the point electrode, at a high DC voltage');
-    for (let y = -0.25; y < 1.5; y += 0.22) for (let m = 0; m < 4; m++) { const a = m * Math.PI / 2 + y; F.mesh.stick(grp, [0, y, 0], [0.16 * Math.cos(a), y + 0.04, 0.16 * Math.sin(a)], 0.012, F.ref('point-electrode')); }
-    v.label('point electrode', [0, 2.27, 0], grp, 0).style.color = F.ref('point-electrode');
-    v.label('plate electrode', [RC + 1.15, 0.2, 0], grp, 0).style.color = F.ref('plate-electrode');
-    for (const y of [Y0, Y1]) F.mesh.polyline(grp, Array.from({ length: 49 }, (_, i) => polar(RC, (i / 48) * TAU, y)), F.ref('plate-electrode'));
-    v.label('soot-laden smoke', [-RC - 1.55, YIN - 0.4, 0], grp, 0);
-    v.label('soot-free gases escape', [RC + 1.6, YOUT - 0.45, 0], grp, 0);
-    v.label('soot removed here', [0, YP - 0.15, 0], grp, 14);
-    meshes = parts.map(() => { const m = F.mesh.sphere(grp, [0, 0, 0], 0.035, F.el('C')); v.pickable(m, 'a soot particle, mostly carbon'); m.visible = false; return m; });
+    parts = parts.filter((p) => !p.done);
   }
   const cy = cycle(() => Infinity, 0);
-  function draw() {
-    build();
-    parts.forEach((p, i) => { const m = meshes[i]; m.visible = p.on; if (p.on) { const q = where(p); m.position.set(q[0], q[1], q[2]); } });
-    v.invalidate();
-    const n = outcomes.length, got = outcomes.reduce((s, x) => s + x, 0), on = V.value === 'on';
-    const { ctx } = begin(cnv);
-    topline(ctx, n === 0
-      ? (on ? 'With the high DC voltage on, soot-laden smoke begins to flow into the chamber.' : 'With the voltage off, soot-laden smoke begins to flow into the chamber.')
-      : on ? 'With the high DC voltage on, ' + got + ' of the last ' + n + ' soot particles have been removed from the smoke.'
-        : 'With the voltage off, ' + (n - got) + ' of the last ' + n + ' soot particles have escaped with the gases.');
-    const per = 15, x0 = 470;
-    text(ctx, 'collected as dust', x0 - 20, 106, PAL.ink, { size: 18, align: 'right' });
-    bar(ctx, x0, 106, per, got, 50, F.el('C'));
-    text(ctx, String(got), x0 + per * 50 + 16, 106, PAL.ink, { size: 18 });
-    text(ctx, 'escaped with the gases', x0 - 20, 154, PAL.ink, { size: 18, align: 'right' });
-    bar(ctx, x0, 154, per, n - got, 50, F.el('C'));
-    text(ctx, String(n - got), x0 + per * 50 + 16, 154, PAL.ink, { size: 18 });
-    readout(d.readout, n === 0 ? '\\text{removed} = 0' : `\\text{removed} = \\frac{${got}}{${n}}`, null, { values: false });
+  let hits = [];
+  F.hover(d.stage, () => hits);
+  function vessel(ctx) {
+    const cp = F.ref('plate-electrode'), ch = F.ref('hopper'), r = 46;
+    ctx.save(); ctx.lineWidth = WALL; ctx.lineJoin = 'round'; ctx.lineCap = 'butt';
+    /* the plate electrode: the chamber wall, broken by the inlet and the outlet */
+    ctx.strokeStyle = cp; ctx.beginPath();
+    ctx.moveTo(XL - WALL / 2, YI - PH - WALL / 2); ctx.lineTo(XL - WALL / 2, YT + r); ctx.arcTo(XL - WALL / 2, YT - WALL / 2, XL + r, YT - WALL / 2, r + WALL / 2);
+    ctx.lineTo(XC - 46, YT - WALL / 2); ctx.moveTo(XC + 46, YT - WALL / 2); ctx.lineTo(XR - r, YT - WALL / 2); ctx.arcTo(XR + WALL / 2, YT - WALL / 2, XR + WALL / 2, YT + r, r + WALL / 2); ctx.lineTo(XR + WALL / 2, YO - PH - WALL / 2);
+    ctx.moveTo(XR + WALL / 2, YO + PH + WALL / 2); ctx.lineTo(XR + WALL / 2, YF);
+    ctx.moveTo(XL - WALL / 2, YI + PH + WALL / 2); ctx.lineTo(XL - WALL / 2, YF);
+    ctx.stroke();
+    /* the hopper: the funnel and its neck */
+    ctx.strokeStyle = ch; ctx.beginPath();
+    ctx.moveTo(XL - WALL / 2, YF); ctx.lineTo(NL - WALL / 2, YN); ctx.lineTo(NL - WALL / 2, YB);
+    ctx.moveTo(XR + WALL / 2, YF); ctx.lineTo(NR + WALL / 2, YN); ctx.lineTo(NR + WALL / 2, YB);
+    ctx.stroke();
+    /* the inlet and outlet pipes */
+    ctx.lineWidth = 6; ctx.strokeStyle = PAL.muted; ctx.beginPath();
+    for (const s of [-1, 1]) { ctx.moveTo(XL - 160, YI + s * (PH + 3)); ctx.lineTo(XL - WALL, YI + s * (PH + 3)); ctx.moveTo(XR + WALL, YO + s * (PH + 3)); ctx.lineTo(XR + 170, YO + s * (PH + 3)); }
+    ctx.stroke(); ctx.restore();
+    /* the insulator on top, and the point electrode hanging from it, a barb pair every 32 units */
+    const ce = F.ref('point-electrode');
+    ctx.save(); ctx.fillStyle = alpha(PAL.muted, 0.5); ctx.strokeStyle = PAL.muted; ctx.lineWidth = 2; ctx.beginPath(); ctx.roundRect(XC - 46, YT - 30, 92, 44, 8); ctx.fill(); ctx.stroke(); ctx.restore();
+    line(ctx, XC, YT - 56, XC, YF - 10, ce, 3);
+    ctx.save(); ctx.fillStyle = ce; ctx.fillRect(XC - 4, YT - 26, 8, 36); ctx.restore();
+    for (let y = YT + 50; y < YF - 20; y += 32) for (const s of [-1, 1]) { line(ctx, XC, y, XC + s * 24, y, ce, 2); line(ctx, XC + s * 24, y, XC + s * 33, y - 8, ce, 2); line(ctx, XC + s * 24, y, XC + s * 33, y + 8, ce, 2); }
+    /* the ground on the wall */
+    line(ctx, XL - WALL, YF + 30, XL - 50, YF + 70, PAL.ink, 2); line(ctx, XL - 50, YF + 70, XL - 50, YF + 84, PAL.ink, 2);
+    for (const [w, dy] of [[26, 84], [17, 92], [8, 100]]) line(ctx, XL - 50 - w, YF + dy, XL - 50 + w, YF + dy, PAL.ink, 2);
+    hits.push({ x: XL - 50, y: YF + 88, r: 24, name: 'the ground: the plate electrode is grounded' }, { x: XC, y: YT - 8, r: 40, name: 'the insulator that carries the point electrode' });
   }
-  register(d.fig, { update: (dt) => { cy.step(dt, () => 1); step(Math.min(dt, 0.05)); }, draw });
+  function draw() {
+    const { ctx } = begin(d.c);
+    hits = [];
+    ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.04); ctx.fillRect(XL, YT, XR - XL, YF - YT); ctx.restore();
+    vessel(ctx);
+    for (const p of parts) {
+      const c = p.ph === 'charged' ? F.mixColor(F.el('C'), PAL.ink, 0.2) : F.el('C');
+      ball(ctx, p.x, p.y, p.ph === 'hopper' || p.ph === 'wall' ? 4.5 : 4, c, 0.3);
+      hits.push({ x: p.x, y: p.y, r: 8, name: p.ph === 'charged' ? 'a charged soot particle, crossing to the plate electrode' : p.ph === 'wall' || p.ph === 'hopper' ? 'soot, neutralized, falling as dust' : 'a soot particle in the smoke' });
+    }
+    label(ctx, 'high DC voltage', XC - 56, YT - 30, { side: 'left', size: 19, gap: 12, leader: false, weight: 400 });
+    label(ctx, 'soot-laden smoke', XL - 160, YI, { side: 'left', size: 19, gap: 10, leader: false, weight: 400 });
+    label(ctx, 'soot-free gases escape', XR + 170, YO, { side: 'right', size: 19, gap: 10, leader: false, weight: 400 });
+    label(ctx, 'plate electrode', XR + WALL, 270, { side: 'right', size: 19, gap: 70, color: F.ref('plate-electrode') });
+    label(ctx, 'point electrode', XC + 32, 402, { side: 'right', size: 19, gap: 260, color: F.ref('point-electrode') });
+    label(ctx, 'soot removed here', NR + WALL, YB - 10, { side: 'right', size: 19, gap: 30, color: F.ref('hopper') });
+    hits.push({ x: XR + 4, y: 270, r: 14, name: 'the plate electrode, the chamber wall' }, { x: XC, y: 300, r: 12, name: 'the point electrode' }, { x: XC, y: YN + 30, r: 30, name: 'the hopper' });
+    const n = got + lost;
+    topline(ctx, V.value === 'off'
+      ? (n ? `With the voltage off, the soot rides through with the gases: ${lost} of ${n} particles escaped.` : 'With the voltage off, the soot rides through with the gases.')
+      : (n ? `With the high DC voltage on, ${got} of ${n} soot particles have been removed from the smoke.` : 'With the high DC voltage on, the soot is driven to the plate electrode.'));
+    tex(d.readout, n ? `\\text{removed} = \\frac{${got}}{${n}} = ${Math.round((100 * got) / n)}\\%` : '\\text{removed} = 0', false, { values: false });
+  }
+  register(d.fig, { update: (dt) => { cy.step(dt, () => 1); const n = Math.ceil(Math.min(dt, 0.2) / 0.04); for (let i = 0; i < n; i++) step(Math.min(dt, 0.2) / n); }, draw });
 })();
 };

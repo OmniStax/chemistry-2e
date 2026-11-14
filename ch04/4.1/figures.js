@@ -90,7 +90,7 @@ function molecule(ctx, key, x, y, a, s, hits) {
       const pb = BEFORE.map((k, j) => place(k, XL[j], y, turnB[j], SM)), pa = AFTER.map((k, j) => place(k, XR[j], y, turnA[j], SM));
       if (u <= 0) { BEFORE.forEach((k, j) => molecule(ctx, k, XL[j], y, turnB[j], SM, hits)); continue; }
       /* where the molecules stood, faint, so that the mixture before can still be counted */
-      F.faded(ctx, 0.22, [0, 0], () => BEFORE.forEach((k, j) => molecule(ctx, k, XL[j], y, turnB[j], SM)));
+      F.faded(ctx, 0.3, [0, 0], () => BEFORE.forEach((k, j) => molecule(ctx, k, XL[j], y, turnB[j], SM)));
       if (u >= 1) { AFTER.forEach((k, j) => molecule(ctx, k, XR[j], y, turnA[j], SM, hits)); continue; }
       MAP.forEach(([[bm, ba], [am, aa]], q) => {
         const a = pb[bm][ba], b = pa[am][aa], lift = Math.sin(Math.PI * u) * (q % 2 ? 1 : -1) * (14 + 30 * rnd(q + 7 * i));
@@ -160,7 +160,7 @@ function molecule(ctx, key, x, y, a, s, hits) {
     /* the piles: each species as that many whole molecules, three to a row, with + and the arrow between the species */
     const OP = 76, cw = (1340 - (m - 1) * OP) / m;
     /* one scale for the chosen reaction, so that three of its widest model fill a column and three rows fill the band */
-    const sz = r.sp.map((s) => span(s.m)), SC = Math.min(1.7, ...sz.map(([w, h]) => Math.min(cw / 3 / w, 104 / h))), RH = 104;
+    const sz = r.sp.map((s) => span(s.m)), SC = Math.min(1.7, ...sz.map(([w, h]) => Math.min(cw / 3.25 / w, 104 / h))), RH = 104;
     r.sp.forEach((s, i) => {
       const cx = 30 + cw / 2 + i * (cw + OP), wide = Math.max(sz[i][0] * SC, cw / 3.6);
       for (let k = 0; k < co[i]; k++) {

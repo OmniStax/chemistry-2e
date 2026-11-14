@@ -180,7 +180,7 @@ function spread(n, x1, x2, top, bot, gw, gh) {
     cylinder(ctx, XS[1], v2, c2, n, '₂', 'the diluted solution', rd);
     arrow(ctx, 310, RIM - 34, 460, RIM - 34, PAL.ink, 4);
     text(ctx, same ? 'no water added' : 'water added', 385, RIM - 10, PAL.ink, { size: 20, align: 'center' });
-    F.legend(ctx, { l: 255, r: 515, t: 269, b: 305 }, [{ s: '0.25 mol of Cu(NO₃)₂', draw: (c, x, y) => disc(c, x, y, 6, 'Cu') }], { corner: 'bottom', panel: false });
+    F.legend(ctx, { l: 238, r: 515, t: 269, b: 305 }, [{ s: '0.25 mol of Cu(NO₃)₂', draw: (c, x, y) => disc(c, x, y, 6, 'Cu') }], { corner: 'bl', panel: false });
     /* C against V: the curve of constant moles, and under each solution's point the rectangle whose area is its moles */
     const ax = axes(ctx, box, [0, 2.5], [0, 5], { xl: 'V (L)', xc: cv, yl: 'C (M)', yc: cc, nx: 5, ny: 5 });
     const rect = (v, c, col, dash) => {

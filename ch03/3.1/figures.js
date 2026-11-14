@@ -29,7 +29,7 @@ const sciTxt = (x, s) => { const p = parts(x, s); return p.e ? `${p.m} × 10${St
    The line runs from 10⁻⁵ mol to 1 mol, which holds every slider range.
    ===================================================================== */
 (function () {
-  const d = sim('sim-mole-chain', 470);
+  const d = sim('sim-mole-chain', 480);
   const NA = 6.022e23;
   const EX = {
     potassium: { label: 'Example 3.3 · potassium', sym: 'K', MM: '39.10', give: 'm', want: 'n', value: 4.7, sf: 2, unit: 'atoms', r: { min: 0.5, max: 10, step: 0.1, dec: 1, unit: 'g' },
@@ -70,7 +70,7 @@ const sciTxt = (x, s) => { const p = parts(x, s); return p.e ? `${p.m} × 10${St
     ctx.fillStyle = kind === 'm' || kind === 'n' ? alpha(c, lit ? 0.16 : 0.07) : PAL.soft; ctx.fill();
     ctx.lineWidth = lit ? 4 : 2; ctx.strokeStyle = lit ? c : alpha(c, 0.5); ctx.stroke(); ctx.restore();
     text(ctx, name, x, BY - 22, lit ? PAL.ink : PAL.muted, { size: Math.min(20, 20 * (w - 24) / F.measure(ctx, name, { size: 20 })), align: 'center' });
-    text(ctx, value, x, BY + 20, kind === 'm' || kind === 'n' ? c : PAL.ink, { size: 26, weight: 600, align: 'center' });
+    text(ctx, value, x, BY + 20, kind === 'm' || kind === 'n' ? c : PAL.ink, { size: Math.min(26, 26 * (w - 24) / F.measure(ctx, value, { size: 26, weight: 600 })), weight: 600, align: 'center' });
   }
   /* a factor between two boxes: an arrow the way the route runs and its verb when lit, a bare rule when not */
   function factor(ctx, xa, xb, w, name, value, dir) {
@@ -86,7 +86,7 @@ const sciTxt = (x, s) => { const p = parts(x, s); return p.e ? `${p.m} × 10${St
   const xOf = (n) => AX0 + (Math.log10(n) - LG0) / -LG0 * (AX1 - AX0);
   const MOL = ['0.00001 mol', '0.0001 mol', '0.001 mol', '0.01 mol', '0.1 mol', '1 mol'];
   function estimate(ctx, e, n) {
-    const rows = [AY + 32, AY + 61, AY + 90];
+    const rows = [AY + 34, AY + 66, AY + 98];
     line(ctx, AX0, AY, AX1, AY, PAL.ink, 3);
     text(ctx, 'moles', AX0 - 96, rows[0], C('amount'), { size: 19, weight: 600, align: 'right' });
     text(ctx, 'mass', AX0 - 96, rows[1], C('mass'), { size: 19, weight: 600, align: 'right' });
@@ -97,7 +97,7 @@ const sciTxt = (x, s) => { const p = parts(x, s); return p.e ? `${p.m} × 10${St
       if (k < 0) for (let j = 2; j <= 9; j++) { const xj = xOf(j * 10 ** k); line(ctx, xj, AY - 6, xj, AY + 6, alpha(PAL.ink, 0.45), 2); }
       const al = one ? 'right' : 'center', xt = one ? x + 14 : x;
       text(ctx, MOL[k - LG0], xt, rows[0], C('amount'), { size: 19, weight: one ? 600 : 400, align: al });
-      text(ctx, `${sciTxt(+e.MM * 10 ** k, 4)} g`, xt, rows[1], C('mass'), { size: 19, weight: one ? 600 : 400, align: al });
+      text(ctx, `${(+e.MM * 10 ** k).toFixed(Math.max(0, 3 - Math.floor(Math.log10(+e.MM)) - k))} g`, xt, rows[1], C('mass'), { size: 19, weight: one ? 600 : 400, align: al });
       text(ctx, sciTxt(NA * 10 ** k, 4), xt, rows[2], PAL.ink, { size: 19, weight: one ? 600 : 400, align: al });
     }
     const xs = Math.max(AX0, Math.min(AX1, xOf(n)));
@@ -115,15 +115,15 @@ const sciTxt = (x, s) => { const p = parts(x, s); return p.e ? `${p.m} × 10${St
     const a = ORDER.indexOf(e.give), b = ORDER.indexOf(e.want), lo = Math.min(a, b), hi = Math.max(a, b), sgn = Math.sign(b - a);
     const dirOf = (i) => (i >= lo && i < hi ? sgn : 0);
     /* three boxes across the stage; the fourth, carbon atoms, comes in for the one example that asks for it */
-    const k4 = ex.mix((k) => (EX[k].want === 'C' ? 1 : 0)), w = lerp(250, 200, k4);
-    const BX = [lerp(245, 120, k4), lerp(700, 500, k4), lerp(1155, 880, k4), 1260];
+    const k4 = ex.mix((k) => (EX[k].want === 'C' ? 1 : 0)), w = lerp(250, 190, k4);
+    const BX = [lerp(245, 115, k4), lerp(700, 505, k4), lerp(1155, 895, k4), 1285];
     factor(ctx, BX[0], BX[1], w, ['molar mass', 'divide by', 'multiply by'], `${e.MM} g/mol`, dirOf(0));
-    factor(ctx, BX[1], BX[2], w, ['Avogadro’s number', 'multiply by', 'divide by'], '6.022 × 10²³ mol⁻¹', dirOf(1));
+    factor(ctx, BX[1], BX[2], w, ['Avogadro’s number', 'multiply by', 'divide by'], '6.022 × 10²³/mol', dirOf(1));
     box(ctx, BX[0], w, 'm', `mass of ${e.sym}`, `${q.m} ${e.mg ? 'mg' : 'g'}`, lo === 0);
     box(ctx, BX[1], w, 'n', `moles of ${e.sym}`, `${q.n} mol`, lo <= 1 && hi >= 1);
     box(ctx, BX[2], w, 'N', `${e.sym} ${e.unit}`, q.N, lo <= 2 && hi >= 2);
     F.faded(ctx, k4, [0, 0], () => {
-      factor(ctx, BX[2], BX[3], w, ['C atoms per molecule', 'multiply by', 'divide by'], `${e.nC || 7}`, e.nC ? 1 : 0);
+      factor(ctx, BX[2], BX[3], w, ['C atoms', 'multiply by', 'divide by'], `${e.nC || 7} per molecule`, e.nC ? 1 : 0);
       box(ctx, BX[3], w, 'C', 'carbon atoms', e.nC ? q.C : '', true);
     });
     estimate(ctx, e, n);

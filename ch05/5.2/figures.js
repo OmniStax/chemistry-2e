@@ -133,7 +133,7 @@ const sim = (id, H) => F.sim(root, id, H);
         arrow(ctx, x0 + ux * a0, y0 + uy * a0, x0 + ux * a1, y0 + uy * a1, ce, 4);
       });
       ctx.restore();
-      text(ctx, 'q', px(XB - side / 3) - 44, py(side) - 34, ce, { size: 24, weight: 600, italic: true });
+      text(ctx, 'q', Math.min(px(XB + side / 3) + 34, px(rin(side + 1.4)) - 16), py(side) - 36, ce, { size: 24, weight: 600, italic: true });
       hits.push({ x: px(XB), y: py(side) - 28, r: 30, name: hot ? 'heat q leaving the ' + nm + ' for the water' : 'heat q leaving the water for the ' + nm });
     }
     /* the stirrer strokes while heat flows and rests above the metal when it stops */
@@ -150,7 +150,7 @@ const sim = (id, H) => F.sim(root, id, H);
     text(ctx, f1(st.Tw(t)) + ' °C', 206, 178, ct, { size: 20, weight: 600, align: 'right' });
     tag(ctx, ['stirrer'], 520, 190, px(XROD) + 4, 190);
     tag(ctx, ['cover'], 520, py(HC + 0.2), px(5.9), py(HC + 0.2));
-    tag(ctx, [['water W', rW], ' (surroundings)'], 520, 452, px(3.9), py(4.6));
+    tag(ctx, [['water W', rW], ' (surroundings)'], 520, 410, px(rin(level - 0.5) - 0.4), py(level - 0.5));
     tag(ctx, [[nm + ' M', rM], ' (system)'], 520, 520, px(XB + side / 2) - 5, py(side / 2));
     text(ctx, f1(st.Tm(t)) + ' °C', 520, 547, ct, { size: 20, weight: 600 });
     line(ctx, 512, 612, px(rin(1.5) + 0.15), py(1.5), alpha(PAL.ink, 0.5), 1.5);

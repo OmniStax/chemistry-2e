@@ -206,7 +206,7 @@ const plural = (n, one, many) => n + ' ' + (n === 1 ? one : many);
   /* the product axis runs 0 to 0.06 mol, past the most either slider can give (4.00 g Si gives 0.0475 mol, 3.00 g N2 0.0535 mol) */
   const BX = 880, BW = 440, PMAX = 0.06, PX = (n) => BX + (n / PMAX) * BW;
   function box(ctx, x, y, w, s, type) { const c = C(type); rrect(ctx, x, y - 26, w, 52, 6, alpha(c, 0.12), c, 2.5); text(ctx, s, x + w / 2, y, c, { size: 21, weight: 600, align: 'center', base: 'middle' }); }
-  function step(ctx, x1, x2, y, s) { arrow(ctx, x1, y, x2, y, PAL.muted, 3); text(ctx, s, (x1 + x2) / 2 - 6, y - 16, PAL.muted, { size: 17, align: 'center' }); }
+  function step(ctx, x1, x2, y, s) { arrow(ctx, x1, y, x2, y, PAL.muted, 3); text(ctx, s, (x1 + x2) / 2 - 6, y - 40, PAL.muted, { size: 16, align: 'center' }); }
   function draw() {
     const { ctx } = begin(d.c);
     const cn = C('amount');
@@ -231,8 +231,8 @@ const plural = (n, one, many) => n + ' ' + (n === 1 ? one : many);
       hits.push({ x: (BX + PX(r.p)) / 2, y: r.y, r: 24, name: 'the Si₃N₄ that all of the ' + r.name + ' could give' });
     });
     /* the amount that can form, a level across both bars */
-    line(ctx, PX(lesser), 122, PX(lesser), 322, PAL.ink, 2, [4, 8]);
-    hits.unshift({ x: PX(lesser), y: 220, r: 26, name: 'the Si₃N₄ that can form: ' + sig(lesser, 3) + ' mol' });
+    rows.forEach((r) => line(ctx, PX(lesser), r.y - 30, PX(lesser), r.y + 30, PAL.ink, 2, [4, 8]));
+    rows.forEach((r) => hits.unshift({ x: PX(lesser), y: r.y, r: 14, name: 'the Si₃N₄ that can form: ' + sig(lesser, 3) + ' mol' }));
     topline(ctx, eq ? 'Silicon and nitrogen are in the stoichiometric ratio, so neither is in excess.'
       : (siLim ? 'Silicon' : 'Nitrogen') + ' would give less Si₃N₄, so ' + (siLim ? 'silicon' : 'nitrogen') + ' is the limiting reactant and ' + sig(lesser, 3) + ' mol of Si₃N₄ can form.');
     const am = (s, u) => `${hue('amount', s)}\\ \\text{mol ${u}}`;
@@ -258,7 +258,7 @@ const plural = (n, one, many) => n + ' ' + (n === 1 ? one : many);
   /* the mass axis runs 0 to 1.0 g, past the 0.995 g that 2.5 g of copper sulfate can give */
   const AX = 180, AW = 1000, X = (g) => AX + g * AW;
   function box(ctx, x, y, w, s, type) { const c = C(type); rrect(ctx, x, y - 26, w, 52, 6, alpha(c, 0.12), c, 2.5); text(ctx, s, x + w / 2, y, c, { size: 20, weight: 600, align: 'center', base: 'middle' }); }
-  function step(ctx, x1, x2, y, s) { arrow(ctx, x1, y, x2, y, PAL.muted, 3); text(ctx, s, (x1 + x2) / 2 - 6, y - 16, PAL.muted, { size: 17, align: 'center' }); }
+  function step(ctx, x1, x2, y, s) { arrow(ctx, x1, y, x2, y, PAL.muted, 3); text(ctx, s, (x1 + x2) / 2 - 6, y - 40, PAL.muted, { size: 16, align: 'center' }); }
   function draw() {
     const { ctx } = begin(d.c);
     const cm = C('mass');

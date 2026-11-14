@@ -398,7 +398,7 @@ function seats(k, deg) { const s = []; for (let i = 0; i < k; i++) s.push([i % d
   const d = sim('sim-mo-fill', 860);
   const SPECIES = [['H', 0], ['H', 1], ['H', -1], ['He', 0], ['Li', 0], ['Be', 0], ['Be', 1], ['Be', -2], ['B', 0], ['C', 0], ['C', -2], ['N', 0], ['N', 1], ['N', 2], ['O', 0], ['O', 1], ['O', 2], ['O', -2], ['F', 0], ['F', 1], ['Ne', 0]];
   const SUP = { 0: '', 1: '⁺', 2: '²⁺', '-1': '⁻', '-2': '²⁻' };
-  const TSUP = { 0: '', 1: '^{+}', 2: '^{2+}', '-1': '^{-}', '-2': '^{2-}' };
+  const TSUP = { 0: '', 1: '{}^{+}', 2: '{}^{2+}', '-1': '{}^{-}', '-2': '{}^{2-}' };
   const nameOf = ([X, q]) => X + '₂' + SUP[q];
   const arrive = F.tween(d, 1);
   const pick = F.select(d.controls, { label: '\\text{species}', options: SPECIES.map((s, i) => ({ value: String(i), label: nameOf(s) })), value: '6', aria: 'molecule or ion', onInput: () => { arrive.set(0); arrive.to(1, 1600, F.ease.linear); } });
@@ -455,8 +455,9 @@ function seats(k, deg) { const s = []; for (let i = 0; i < k; i++) s.push([i % d
     const conf = D.mo.map((l, i) => (occ[i] ? `(${l.tex})^{${occ[i]}}` : '')).join('');
     const bo = (b - ab) / 2, nm = nameOf(SPECIES[+pick.value]);
     try { headline(ctx, `${nm} is $${conf}$: ` + (unp ? `${WORDS[unp] ?? unp} unpaired electron${unp > 1 ? 's' : ''}, so it is paramagnetic.` : 'every electron paired, so it is diamagnetic.')); } catch (e) { console.error("T: err", e.message, e.stack.slice(0, 300)); }
-    console.error("T:", `\\text{bond order in ${X}}_2${TSUP[q]}`, b, ab, bo);
-    tex(d.readout, `\\text{bond order in ${X}}_2${TSUP[q]} = \\frac{(${b} - ${ab})}{2} = ${fmt(bo, bo % 1 ? 1 : 0)}`);
+    setTimeout(() => console.error("T2", d.readout.innerHTML.length, d.readout.isConnected, d.readout.className), 30); console.error("T:", JSON.stringify(`\\text{bond order in ${X}}_2${TSUP[q]} = \\frac{(${b} - ${ab})}{2} = ${fmt(bo, bo % 1 ? 1 : 0)}`));
+    const VARS = [`\\text{bond order in ${X}}_2${TSUP[q]} = \\frac{(${b} - ${ab})}{2} = ${fmt(bo, bo % 1 ? 1 : 0)}`, `x = ${fmt(bo, bo % 1 ? 1 : 0)}`, `\\text{Be}_2^{+}`, `\\text{bond order} = 0.5`, `x = 1`];
+    tex(d.readout, VARS[window.__v || 0]);
     if (bo <= 0) { const s = el('small', null, 'With a bond order of zero, ' + nm + ' does not form.'); d.readout.appendChild(s); }
   }
   still(d, draw);

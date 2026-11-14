@@ -30,7 +30,7 @@ const rotY = (v, a) => { const c = Math.cos(a * RAD), s = Math.sin(a * RAD); ret
 const upPerp = (u) => { const w = V.sub([0, 1, 0], V.mul(u, u[1])); return V.len(w) > 0.2 ? V.unit(w) : V.unit(V.sub([1, 0, 0], V.mul(u, u[0]))); };
 
 /* ---------- atoms: the element palette, the radii and the names ---------- */
-const RADIUS = { H: 0.24, C: 0.39, N: 0.39, O: 0.39, F: 0.34, Cl: 0.44, S: 0.44, B: 0.39, P: 0.44, Xe: 0.5, E: 0.42, X: 0.3 };
+const RADIUS = { H: 0.24, C: 0.39, N: 0.39, O: 0.39, F: 0.34, Cl: 0.44, S: 0.44, B: 0.39, P: 0.44, Xe: 0.5, E: 0.36, X: 0.27 };
 const rOf = (sym) => RADIUS[sym] ?? 0.39;
 const NAMES = { H: 'hydrogen', C: 'carbon', N: 'nitrogen', O: 'oxygen', F: 'fluorine', Cl: 'chlorine', S: 'sulfur', B: 'boron', P: 'phosphorus', Xe: 'xenon', E: 'central atom E', X: 'bonded atom X' };
 const nameOf = (sym) => NAMES[sym] ?? sym;
@@ -149,7 +149,7 @@ const weak = (s) => `<span style="font-weight:400">${s}</span>`;
 (function () {
   const d = sim('sim-vsepr');
   const top = F.makeCanvas(d.stage, 104);
-  const S = stage3(d, { h: 640, dist: 7.6 }), v = S.v, g = v.part(0);
+  const S = stage3(d, { h: 640, dist: 7.1 }), v = S.v, g = v.part(0);
   const key = F.makeCanvas(d.stage, 60);
   v.setView(0.45, 0.24);
   const nums = (a, b) => { const o = []; for (let i = a; i <= b; i++) o.push({ value: String(i), label: String(i) }); return o; };
@@ -165,7 +165,7 @@ const weak = (s) => `<span style="font-weight:400">${s}</span>`;
   const PL = F.select(d.controls, { label: '\\text{lone pairs sit}', key: 'place', options: Object.keys(CLF).map((k) => ({ value: k, label: CLF[k].label })), value: 'eq', aria: 'where the two lone pairs sit in the trigonal bipyramid', ms: 0, onInput: () => shift() });
   const PLBOX = d.controls.lastElementChild;
   const { formula: fx, note } = F.readout(d);
-  const L = 1.15;
+  const L = 1.4;
 
   /* a state of the bench: its regions as directions, each a bond (w 0) or a lone pair (w 1), and its names */
   function state(n, lone, place) {
@@ -258,7 +258,7 @@ const weak = (s) => `<span style="font-weight:400">${s}</span>`;
 ===================================================================== */
 (function () {
   const d = sim('sim-domains');
-  const S = stage3(d, { h: 560, dist: 5.6 }), v = S.v, g = v.part(0);
+  const S = stage3(d, { h: 560, dist: 6.5 }), v = S.v, g = v.part(0);
   const c2 = F.makeCanvas(d.stage, 390);
   v.setView(0.4, 0.3);
   const nums = (a, b) => { const o = []; for (let i = a; i <= b; i++) o.push({ value: String(i), label: String(i) }); return o; };
@@ -269,7 +269,7 @@ const weak = (s) => `<span style="font-weight:400">${s}</span>`;
   const LP = F.choice(d.controls, { label: '\\text{lone pairs}', key: 'lone', options: nums(0, 2), value: '0', aria: 'how many of the regions are lone pairs', ms: 0, onInput: reset });
   const LPBOX = d.controls.lastElementChild;
   function fit() { const m = maxLone(+N.value); LP.options(nums(0, m), String(m)); LPBOX.style.display = m ? '' : 'none'; }
-  const T = 5, cy = cycle(() => T, 1.4), L = 1.15;
+  const T = 5, cy = cycle(() => T, 1.4), L = 1.4;
   /* a seeded generator, so that a run starts the same way every time and the scrubber can replay it */
   function rng(seed) { let s = seed >>> 0; return () => { s += 0x6D2B79F5; let z = s; z = Math.imul(z ^ (z >>> 15), z | 1); z ^= z + Math.imul(z ^ (z >>> 7), z | 61); return ((z ^ (z >>> 14)) >>> 0) / 4294967296; }; }
   let st = null, sig = '';   /* st: {p: unit positions, v: velocities, q: charges, tau: model time reached, trace: [[tau, angle]], meshes} */
@@ -384,20 +384,21 @@ const weak = (s) => `<span style="font-weight:400">${s}</span>`;
   }
   function draw2d() {
     const { ctx } = begin(c2);
-    const cx = 430, cyy = 190, K = 132;
+    const cx = 430, cyy = 175, K = 150;
     /* each hydrogen where the model now has it: across, up, and toward the reader */
     const at = HS.map((h) => { const w = vec(h); g.localToWorld(w); return [w.x, w.y, w.z]; });
     const kind = (p) => (Math.abs(p[2]) < NEAR ? 'line' : p[2] > 0 ? 'wedge' : 'dash');
     const order = at.map((p, i) => i).sort((i, j) => at[i][2] - at[j][2]);
     order.forEach((i) => {
       const p = at[i], x2 = cx + p[0] * K, y2 = cyy - p[1] * K, len = Math.hypot(x2 - cx, y2 - cyy);
-      if (len > 52) {
-        const ux = (x2 - cx) / len, uy = (y2 - cyy) / len, ax = cx + ux * 24, ay = cyy + uy * 24, bx = x2 - ux * 22, by = y2 - uy * 22, k = kind(p);
+      if (len > 46) {
+        const ux = (x2 - cx) / len, uy = (y2 - cyy) / len, ax = cx + ux * 21, ay = cyy + uy * 21, bx = x2 - ux * 19, by = y2 - uy * 19, k = kind(p);
         if (k === 'line') line(ctx, ax, ay, bx, by, PAL.ink, 3.5); else if (k === 'wedge') wedge(ctx, ax, ay, bx, by); else dashes(ctx, ax, ay, bx, by);
       }
-      text(ctx, 'H', x2, y2 + 1, PAL.ink, { size: 34, align: 'center', bg: PAL.panel });
+      text(ctx, 'H', x2, y2 + 1, PAL.ink, { size: 30, align: 'center', bg: PAL.panel });
     });
-    text(ctx, 'C', cx, cyy + 1, PAL.ink, { size: 34, align: 'center' });
+    text(ctx, 'C', cx, cyy + 1, PAL.ink, { size: 30, align: 'center' });
+    text(ctx, 'the model above, in wedge and dash notation', cx, 342, PAL.muted, { size: 19, align: 'center' });
     F.legend(ctx, { l: 760, r: 1340, t: 70, b: 310 }, [
       keyAtom('C'), keyAtom('H'),
       { s: 'bond in the plane of the page', draw: sampleLine },
@@ -420,7 +421,7 @@ const weak = (s) => `<span style="font-weight:400">${s}</span>`;
 ===================================================================== */
 function geometryPair(id, m) {
   const d = sim(id);
-  const S = stage3(d, { h: 560, dist: m.dist ?? 7.4 }), v = S.v, gA = v.part(-2.25), gB = v.part(2.25);
+  const S = stage3(d, { h: 560, dist: m.dist ?? 6.6 }), v = S.v, gA = v.part(-2.25), gB = v.part(2.25);
   const key = F.makeCanvas(d.stage, 60);
   v.setView(m.yaw ?? 0.5, m.pitch ?? 0.26);
   let sig = '';
@@ -431,8 +432,8 @@ function geometryPair(id, m) {
     /* left: every region, and the edges of the solid whose corners they point to */
     ball(S, gA, [0, 0, 0], m.c);
     m.dirs.forEach((u, i) => {
-      if (m.lone.includes(i)) v.pickable(lobe3(gA, [0, 0, 0], u, m.L * 0.9), 'lone pair');
-      else v.pickable(stick(gA, [0, 0, 0], P[i], 0.06, PAL.ink), `bond to ${nameOf(m.x)}`);
+      if (m.lone.includes(i)) v.pickable(lobe3(gA, [0, 0, 0], u, m.L * 0.86), 'lone pair');
+      else { v.pickable(stick(gA, [0, 0, 0], P[i], 0.06, PAL.ink), `bond to ${nameOf(m.x)}`); sphere(gA, P[i], 0.06, PAL.ink); }
     });
     for (let i = 0; i < P.length; i++) for (let j = i + 1; j < P.length; j++) if (V.angle(m.dirs[i], m.dirs[j]) < 150) polyline(gA, [P[i], P[j]], PAL.muted);
     S.under(weak('electron-pair geometry: ') + m.geom, gA);
@@ -464,8 +465,8 @@ function geometryPair(id, m) {
   geometryPair('fig-water', { c: 'O', x: 'H', L: 1.05, dirs, lone: [0, 1], geom: 'tetrahedral', struct: 'bent', arc: [2, 3, '104.5°'], formula: '\\text{H}_2\\text{O}', yaw: 0.6 });
 })();
 /* SF4: the lone pair in an equatorial position of the trigonal bipyramid; XeF4: the two lone pairs across the octahedron */
-geometryPair('fig-sf4', { c: 'S', x: 'F', L: 1.25, dirs: SITES[5], lone: [2], geom: 'trigonal bipyramidal', struct: 'seesaw', arc: null, formula: '\\text{SF}_4', dist: 8.2, yaw: 2.3 });
-geometryPair('fig-xef4', { c: 'Xe', x: 'F', L: 1.3, dirs: SITES[6], lone: [0, 1], geom: 'octahedral', struct: 'square planar', arc: [2, 4, '90°'], formula: '\\text{XeF}_4', dist: 8.2, yaw: 0.5, pitch: 0.36 });
+geometryPair('fig-sf4', { c: 'S', x: 'F', L: 1.25, dirs: SITES[5], lone: [2], geom: 'trigonal bipyramidal', struct: 'seesaw', arc: null, formula: '\\text{SF}_4', dist: 7.7, yaw: 2.3 });
+geometryPair('fig-xef4', { c: 'Xe', x: 'F', L: 1.3, dirs: SITES[6], lone: [0, 1], geom: 'octahedral', struct: 'square planar', arc: [2, 4, '90°'], formula: '\\text{XeF}_4', dist: 7.7, yaw: 0.5, pitch: 0.36 });
 
 /* =====================================================================
    FIGURE 7.26 + 7.27: the bond-moment bench. On the left the molecule

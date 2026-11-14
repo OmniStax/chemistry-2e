@@ -131,8 +131,8 @@ const book = (S) => S.atoms.map((a, i) => {
     hits = FAM[S.fam].flatMap((i) => { const T = STRUCTS[i], Bi = book(T); return T.atoms.map((a, n) => ({ x: centre(i) + a.x, y: CY, r: 40, name: `${NAMES[a.s]} (${a.s}): formal charge ${signed(Bi[n].fc)}` })); });
     const b = B[ai], a = S.atoms[ai];
     tex(d.readout,
-      `\\text{formal charge of ${a.s}} = \\text{valence e}^- - \\text{lone pair e}^- - \\tfrac{1}{2}\\,\\text{bonding e}^- = ${b.v} - ${b.lone} - \\tfrac{1}{2}(${b.bonding}) = ${b.fc > 0 ? '+' : ''}${texNum(b.fc, true)}`
-      + ` \\\\ \\text{sum of the formal charges} = ${B.map((x, i) => texNum(x.fc, i === 0)).join(' + ')} = ${texNum(sum(B.map((x) => x.fc)), true)} = \\text{charge of the ${S.charge ? 'ion' : 'molecule'}}`);
+      `\\text{formal charge of ${a.s}} = {\\text{valence e}^- - \\text{lone pair e}^- - \\tfrac{1}{2}\\,\\text{bonding e}^-} = {${b.v} - ${b.lone} - \\tfrac{1}{2}(${b.bonding})} = ${b.fc > 0 ? '+' : ''}${texNum(b.fc, true)}`
+      + ` \\\\ \\text{sum of the formal charges} = {${B.map((x, i) => texNum(x.fc, i === 0)).join(' + ')}} = ${texNum(sum(B.map((x) => x.fc)), true)} = \\text{charge of the ${S.charge ? 'ion' : 'molecule'}}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -208,7 +208,7 @@ const book = (S) => S.atoms.map((a, i) => {
     tally(hx, I.bo, I.fc, 'average ');
     text(ctx, n === 2 ? 'the two resonance forms' : 'the three resonance forms', (cxOf(0) + cxOf(n - 1)) / 2, CAP, PAL.muted, { size: 19, align: 'center' });
     text(ctx, 'resonance hybrid', hx, CAP, PAL.muted, { size: 19, align: 'center' });
-    text(ctx, `bonds to the ${I.ox[oi]} O`, L0 - 20, ROW[0], PAL.ink, { size: 19, align: 'right' });
+    text(ctx, `bonds to ${I.ox[oi]} O`, L0 - 20, ROW[0], PAL.ink, { size: 19, align: 'right' });
     text(ctx, 'its formal charge', L0 - 20, ROW[1], PAL.ink, { size: 19, align: 'right' });
     I.atoms.forEach((a, i) => out.push({ x: P[i][0], y: P[i][1], r: 30, name: i ? `oxygen (O): ${I.bo} bonds and a charge of ${I.fc}; its lone pairs are not drawn` : `${NAMES[a.s]} (${a.s}), the central atom` }));
     return out;

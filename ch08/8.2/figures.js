@@ -44,7 +44,7 @@ const HYB = { 2: '<em>sp</em>', 3: '<em>sp</em><sup>2</sup>', 4: '<em>sp</em><su
 const HYB_U = { 2: 'sp', 3: 'sp²', 4: 'sp³', 5: 'sp³d', 6: 'sp³d²' };
 const HYB_TEX = { 2: 'sp', 3: 'sp^2', 4: 'sp^3', 5: 'sp^3d', 6: 'sp^3d^2' };
 /* the arcs each set marks, as the book's Figure 8.21 marks them: two site indices and the angle */
-const ARCS = { 2: [[0, 1, '180°']], 3: [[0, 2, '120°']], 4: [[0, 1, '109.5°']], 5: [[0, 2, '90°'], [2, 3, '120°']], 6: [[0, 2, '90°']] };
+const ARCS = { 2: [[0, 1, '180°']], 3: [[0, 2, '120°']], 4: [[0, 1, '109.5°']], 5: [[0, 2, '90°'], [3, 4, '120°']], 6: [[0, 2, '90°']] };
 const WORDS = { 2: 'Two', 3: 'Three', 4: 'Four', 5: 'Five', 6: 'Six' };
 
 /* ---------- orbitals drawn from their wave functions ----------
@@ -205,7 +205,7 @@ const headline = (cv, s) => { const { ctx } = begin(cv); topline(ctx, s); };
       const reach = reachOf(a, b, L);
       B.forEach((dir) => hydrogen(S, g, V.mul(dir, reach + 0.12), 0.36, s.H));
       if (at) {
-        angle3(S, g, B[0], B[1], m === 'sp3' ? reach + 0.25 : reach + 0.7, DEG[m]);
+        angle3(S, g, B[0], B[1], m === 'sp3' ? reach + 0.25 : reach + 0.55, DEG[m]);
         if (m !== 'p') Lp.forEach((dir) => S.out('lone pair', V.mul(dir, L * 1.02), g, { gap: 4 }));
       }
       v.invalidate();
@@ -270,7 +270,7 @@ function bench(id, n, o) {
       const g0 = parts[0];
       if (s.H > 0.01) hy.slice(0, n).forEach((u) => hydrogen(S, g0, V.mul(u, L * 1.05), 0.36, s.H));
       if (at && (now === 'set' || now === 'bh3')) {
-        o.arcs.forEach(([i, j, t]) => angle3(S, g0, hy[i], hy[j], L * (s.H ? 1.75 : 1.3), t, { perp: chem([0, 0, 1]) }));
+        o.arcs.forEach(([i, j, t]) => angle3(S, g0, hy[i], hy[j], L * (s.H ? 1.75 : n === 2 ? 1.15 : 1.3), t, { perp: V.unit(chem([0, -1, 1])) }));
       }
       v.invalidate();
     }
@@ -306,7 +306,7 @@ bench('sim-sp3', 4, {
    angle. Still: a slider and a choice.
 ===================================================================== */
 (function () {
-  const { d, S, v, top, key } = frame('sim-ethane', { h: 520, dist: 6.5, tilt: 0.38, yaw: 0.32, spin: 'off' });
+  const { d, S, v, top, key } = frame('sim-ethane', { h: 520, dist: 6.6, tilt: 0.3, yaw: 0.14, spin: 'off' });
   const g = v.part(0);
   const atoms = F.choice(d.controls, { label: '\\text{atoms}', aria: 'apart or bonded', options: [{ value: 'apart', label: 'apart' }, { value: 'bonded', label: 'bonded' }], value: 'bonded' });
   const phi = F.ctl(d.controls, { label: '\\varphi', cls: 'angle', min: 0, max: 120, step: 1, value: 60, unit: '°', dec: 0, detents: [0, 60, 120], aria: 'turn of the right-hand CH3 group about the C–C bond' });
@@ -330,7 +330,7 @@ bench('sim-sp3', 4, {
         });
       });
       F.mesh.polyline(g, [[-2.6, 0, 0], [2.6, 0, 0]], alpha(PAL.ink, 0.35));
-      S.axis('C–C axis', [2.75, 0, 0], g, 0.3);
+      S.axis('C–C axis', [3.3, 0, 0], g, 0.3);
       v.invalidate();
     }
     const bonded = atoms.value === 'bonded';
@@ -347,7 +347,7 @@ bench('sim-sp3', 4, {
    points along it as the outer atoms fade. Still: two choices.
 ===================================================================== */
 (function () {
-  const { d, S, v, top, key } = frame('sim-sp3d', { h: 540, dist: 7.0, tilt: 0.28, yaw: 0.42 });
+  const { d, S, v, top, key } = frame('sim-sp3d', { h: 540, dist: 7.9, tilt: 0.28, yaw: 0.42 });
   const g = v.part(0);
   const MOL = { pcl5: { n: 5, c: 'P', x: 'Cl', rc: 0.42, rx: 0.36, name: 'PCl<sub>5</sub>', cn: 'phosphorus', xn: 'chlorine' }, sf6: { n: 6, c: 'S', x: 'F', rc: 0.42, rx: 0.3, name: 'SF<sub>6</sub>', cn: 'sulfur', xn: 'fluorine' } };
   const mol = F.choice(d.controls, { label: '\\text{molecule}', aria: 'molecule', options: [{ value: 'pcl5', label: 'PCl<sub>5</sub>' }, { value: 'sf6', label: 'SF<sub>6</sub>' }], value: 'pcl5' });
@@ -374,7 +374,7 @@ bench('sim-sp3', 4, {
     if (tag !== sig) {
       sig = tag; S.clear();
       one('pcl5', mol.a('pcl5'), h); one('sf6', mol.a('sf6'), h);
-      if (at) ARCS[m.n].forEach(([i, j, t]) => angle3(S, g, SITES[m.n][i], SITES[m.n][j], hyb ? L * 1.2 : 1.2, t));
+      if (at) ARCS[m.n].forEach(([i, j, t]) => angle3(S, g, SITES[m.n][i], SITES[m.n][j], hyb ? L * 1.22 : 1.2, t));
       v.invalidate();
     }
     const five = m.n === 5;
@@ -394,7 +394,7 @@ bench('sim-sp3', 4, {
    old set fades as the new one grows.
 ===================================================================== */
 (function () {
-  const { d, S, v, top, key } = frame('sim-hybrid-sets', { h: 540, dist: 6.2, tilt: 0.3, yaw: 0.42 });
+  const { d, S, v, top, key } = frame('sim-hybrid-sets', { h: 540, dist: 6.7, tilt: 0.3, yaw: 0.42 });
   const g = v.part(0);
   const n = F.choice(d.controls, { label: '\\text{regions}', aria: 'number of regions of electron density', options: [2, 3, 4, 5, 6].map((i) => ({ value: String(i), label: String(i) })), value: '4' });
   const L = 1.25, TIP = L * 1.1;
@@ -423,7 +423,7 @@ bench('sim-sp3', 4, {
         const col = alpha(PAL.ink, 0.6);
         edges(j).forEach(([p, q]) => dashed(V.mul(SITES[j][p], TIP * (j === 2 ? 1.25 : 1)), V.mul(SITES[j][q], TIP * (j === 2 ? 1.25 : 1)), col, 0.7 * a));
       });
-      if (at) ARCS[i].forEach(([a, b, t]) => angle3(S, g, SITES[i][a], SITES[i][b], L * 0.78, t, { perp: [0, 1, 0] }));
+      if (at) ARCS[i].forEach(([a, b, t]) => angle3(S, g, SITES[i][a], SITES[i][b], L * 1.18, t, { perp: [0, 1, 0] }));
       v.invalidate();
     }
     headline(top, `${WORDS[i]} regions of electron density: ${HYB_U[i]} hybrids in ${i === 6 ? 'an' : 'a'} ${ARRANGE[i]} arrangement.`);

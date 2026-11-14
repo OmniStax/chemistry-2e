@@ -78,10 +78,10 @@ function electron(ctx, x, y, up, a = 1, h = 34) {
     const head = (x, y, ang) => { ctx.beginPath(); ctx.moveTo(x - 9 * Math.cos(ang - 0.45), y - 9 * Math.sin(ang - 0.45)); ctx.lineTo(x, y); ctx.lineTo(x - 9 * Math.cos(ang + 0.45), y - 9 * Math.sin(ang + 0.45)); ctx.stroke(); };
     /* straight across the gap, then bulging loops that leave the face's edge and return to the other face */
     [-40, -20, 0, 20, 40].forEach((dy) => { ctx.beginPath(); ctx.moveTo(x0, GY + dy); ctx.lineTo(x1, GY + dy); ctx.stroke(); head(GX + 12, GY + dy, 0); });
-    [56, 104, 160].forEach((b, i) => [-1, 1].forEach((s) => {
-      const y = GY + s * (PH - 6 + i * 4);
-      ctx.beginPath(); ctx.moveTo(x0, y); ctx.bezierCurveTo(GX - FACE + 10 - i * 22, y + s * b, GX + FACE - 10 + i * 22, y + s * b, x1, y); ctx.stroke();
-      head(GX + 6, y + s * b * 0.75, 0);
+    [44, 78, 112].forEach((b, i) => [-1, 1].forEach((s) => {
+      const y = GY + s * (PH - 8), wx = 18 + i * 34;
+      ctx.beginPath(); ctx.moveTo(x0 - 6, y); ctx.bezierCurveTo(GX - FACE - wx, y + s * b * 1.3, GX + FACE + wx, y + s * b * 1.3, x1 + 6, y); ctx.stroke();
+      head(GX + 6, y + s * b * 0.975, 0);
     }));
     ctx.restore();
   }
@@ -104,7 +104,7 @@ function electron(ctx, x, y, up, a = 1, h = 34) {
     magnet(ctx, -1, cMag, on); magnet(ctx, 1, cMag, on);
     hits.push({ x: GX - FACE - POLE - BODY / 2, y: GY, r: 70, name: 'an electromagnet' + (on ? ', switched on' : ', switched off') }, { x: GX + FACE + POLE + BODY / 2, y: GY, r: 70, name: 'an electromagnet' + (on ? ', switched on' : ', switched off') });
     /* the sample tube on its thread from the left hook, its lower end between the pole faces */
-    const tTop = ly + 150, tBot = tTop + 205, tw = 17, liq = tBot - 140;
+    const tTop = ly + 150, tBot = tTop + 192, tw = 17, liq = tBot - 132;
     line(ctx, lx, ly + 10, lx, tTop - 10, PAL.ink, 2);
     const lc = sample.value === 'o2' ? F.fact(LOX_BLUE) : alpha(PAL.muted, 0.18);
     ctx.save();
@@ -146,12 +146,12 @@ function electron(ctx, x, y, up, a = 1, h = 34) {
     hits.push({ x: rx, y: dy - 20, r: 60, name: 'the weights on the dish, ' + fmt(massOf(sample.value), 2) + ' g' });
     /* labels, as the book's: sample, magnetic field, electromagnets, and the weights */
     F.label(ctx, 'sample', lx - tw, liq - 16, { side: 'left', color: cSam, gap: 60 });
-    F.label(ctx, 'electromagnets', GX, GY + BH + 54, { side: 'below', color: cMag, gap: 0, leader: false });
-    if (kOn > 0.5) F.label(ctx, 'magnetic field', GX + FACE + 18, GY - PH - 100, { side: 'right', color: PAL.ink, gap: 70 });
+    F.label(ctx, 'electromagnets', GX - FACE - POLE - BODY / 2, GY + BH + 34, { side: 'below', color: cMag, gap: 0, leader: false });
+    if (kOn > 0.5) F.label(ctx, 'magnetic field', GX + FACE + 40, GY - PH - 100, { side: 'right', color: PAL.ink, gap: 50 });
     F.label(ctx, 'weights', rx + dw, dy - 20, { side: 'right', color: cW, gap: 26 });
     F.label(ctx, 'Gouy balance', PX + 14, 300, { side: 'right', color: cBal, gap: 16, leader: false });
     hits.push({ x: GX, y: GY - PH - 60, r: 60, name: on ? 'the magnetic field between the poles, 0.50 T' : 'the gap between the poles; the field is off' });
-    const m = massOf(sample.value), dm = shiftOf(sample.value), nm = sample.value === 'o2' ? 'O₂' : 'N₂';
+    const m = +massOf(sample.value).toFixed(4), dm = +shiftOf(sample.value).toFixed(4), nm = sample.value === 'o2' ? 'O₂' : 'N₂';
     headline(ctx, !on ? 'With the electromagnets off, the sample and the weights balance.'
       : dm > 0 ? 'The field pulls the paramagnetic ' + nm + ' down into it, so the sample appears heavier.'
       : 'The field pushes the diamagnetic ' + nm + ' weakly out, so the sample appears slightly lighter.');
@@ -217,12 +217,12 @@ function electron(ctx, x, y, up, a = 1, h = 34) {
 (function () {
   const d = sim('sim-mo-shapes');
   const V = F.view3d(d.stage, { h: 560, dist: 12.5, tilt: 0.34, pitch: [-1.25, 1.25] });
-  V.setView(-0.5, 0.34);
+  V.setView(-0.3, 0.3);
   const g = V.part(0);
   const T3 = window.THREE, live = !!(T3 && V.scene);
   const BOND = { s: 74, pe: 110, ps: 110 };
   const A0 = 52.92, ZN = 1.95;   /* pm per bohr; the Slater exponent of a nitrogen 2p orbital, per bohr */
-  const SC = { s: 1.4, pe: 0.8, ps: 0.8 };   /* scene units per bohr (s) or per 1/ζ (p) */
+  const SC = { s: 1.4, pe: 0.64, ps: 0.64 };   /* scene units per bohr (s) or per 1/ζ (p) */
   const ISO = { s: 0.35, pe: 0.35, ps: 0.35 };
   const pair = F.select(d.controls, { label: '\\text{orbitals}', options: [{ value: 's', label: 'two s' }, { value: 'pe', label: 'two p, end to end' }, { value: 'ps', label: 'two p, side by side' }], value: 's', aria: 'which atomic orbitals combine',
     onInput: (v) => { R.set(BOND[v]); morph(); } });
@@ -255,7 +255,7 @@ function electron(ctx, x, y, up, a = 1, h = 34) {
     else { ao('ps', -h, 1, p, out); ao('ps', h, s, p, out); }
   }
   const scenePm = (k, pm) => (k === 's' ? (pm / A0) * SC.s : ((pm / A0) * ZN) * SC.pe);
-  const REACH = { s: 2.6, pe: 3.4, ps: 3.4 };
+  const REACH = { s: 2.6, pe: 4.3 * SC.pe, ps: 4.3 * SC.pe };
   /* the corners of a cube and its six tetrahedra about the diagonal 0–6 */
   const CO = [[0, 0, 0], [1, 0, 0], [1, 1, 0], [0, 1, 0], [0, 0, 1], [1, 0, 1], [1, 1, 1], [0, 1, 1]];
   const TETS = [[0, 5, 1, 6], [0, 1, 2, 6], [0, 2, 3, 6], [0, 3, 7, 6], [0, 7, 4, 6], [0, 4, 5, 6]];
@@ -359,7 +359,9 @@ function electron(ctx, x, y, up, a = 1, h = 34) {
 
 /* ---------- molecular orbital diagrams: the book's schematic layouts ----------
    Heights read off the book's own diagrams (Figures 8.34 to 8.36 for one s
-   pair, Figure 8.40 for the second period), larger higher. Without s-p
+   pair, Figure 8.40 for the second period), larger higher, with the 2p set
+   brought 70 units nearer the 2s set than the book draws it, so that its
+   levels, their electrons and their names stand clear of one another. Without s-p
    mixing (O₂ to Ne₂) σ2px lies below the π2p pair; with it (Li₂ to N₂) the
    two trade places, as Figure 8.37 shows. */
 const VAL = { H: 1, He: 2, Li: 1, Be: 2, B: 3, C: 4, N: 5, O: 6, F: 7, Ne: 8 };
@@ -374,12 +376,12 @@ function layout(X, withP) {
   const mo = [
     { id: 's', name: ['σ_{2s}'], tex: '\\sigma_{2s}', E: 57, deg: 1, anti: false, from: '2s' },
     { id: 's_', name: ['σ*_{2s}'], tex: '\\sigma_{2s}^{*}', E: 264, deg: 1, anti: true, from: '2s' },
-    { id: 'p', name: ['σ_{2px}'], tex: '\\sigma_{2px}', E: mix ? 550 : 445, deg: 1, anti: false, from: '2p' },
-    { id: 'pi', name: ['π_{2py}', 'π_{2pz}'], tex: '\\pi_{2py},\\,\\pi_{2pz}', E: mix ? 445 : 550, deg: 2, anti: false, from: '2p' },
-    { id: 'pi_', name: ['π*_{2py}', 'π*_{2pz}'], tex: '\\pi_{2py}^{*},\\,\\pi_{2pz}^{*}', E: 725, deg: 2, anti: true, from: '2p' },
-    { id: 'p_', name: ['σ*_{2px}'], tex: '\\sigma_{2px}^{*}', E: 830, deg: 1, anti: true, from: '2p' }];
+    { id: 'p', name: ['σ_{2px}'], tex: '\\sigma_{2px}', E: mix ? 480 : 375, deg: 1, anti: false, from: '2p' },
+    { id: 'pi', name: ['π_{2py}', 'π_{2pz}'], tex: '\\pi_{2py},\\,\\pi_{2pz}', E: mix ? 375 : 480, deg: 2, anti: false, from: '2p' },
+    { id: 'pi_', name: ['π*_{2py}', 'π*_{2pz}'], tex: '\\pi_{2py}^{*},\\,\\pi_{2pz}^{*}', E: 655, deg: 2, anti: true, from: '2p' },
+    { id: 'p_', name: ['σ*_{2px}'], tex: '\\sigma_{2px}^{*}', E: 760, deg: 1, anti: true, from: '2p' }];
   mo.sort((a, b) => a.E - b.E);
-  return { atom: [{ id: '2s', E: 160, deg: 1 }, { id: '2p', E: 638, deg: 3 }], mo };
+  return { atom: [{ id: '2s', E: 160, deg: 1 }, { id: '2p', E: 568, deg: 3 }], mo };
 }
 function fill(levels, n) { let left = n; return levels.map((l) => { const k = Math.min(left, 2 * l.deg); left -= k; return k; }); }
 /* where the electrons of a level of deg orbitals stand: singly first (Hund's rule), then paired; [orbital, up] in the order they arrive */
@@ -393,14 +395,14 @@ function seats(k, deg) { const s = []; for (let i = 0; i < k; i++) s.push([i % d
    electrons drop in by the Aufbau principle and Hund's rule after a change.
 ===================================================================== */
 (function () {
-  const d = sim('sim-mo-fill', 700);
+  const d = sim('sim-mo-fill', 860);
   const SPECIES = [['H', 0], ['H', 1], ['H', -1], ['He', 0], ['Li', 0], ['Be', 0], ['Be', 1], ['Be', -2], ['B', 0], ['C', 0], ['C', -2], ['N', 0], ['N', 1], ['N', 2], ['O', 0], ['O', 1], ['O', 2], ['O', -2], ['F', 0], ['F', 1], ['Ne', 0]];
   const SUP = { 0: '', 1: '⁺', 2: '²⁺', '-1': '⁻', '-2': '²⁻' };
   const TSUP = { 0: '', 1: '^{+}', 2: '^{2+}', '-1': '^{-}', '-2': '^{2-}' };
   const nameOf = ([X, q]) => X + '₂' + SUP[q];
   const arrive = F.tween(d, 1);
   const pick = F.select(d.controls, { label: '\\text{species}', options: SPECIES.map((s, i) => ({ value: String(i), label: nameOf(s) })), value: '6', aria: 'molecule or ion', onInput: () => { arrive.set(0); arrive.to(1, 1600, F.ease.linear); } });
-  const XL = 300, XM = 760, XR = 1220, PANEL = [XM - 250, XM + 250], YB = 610, YT = 170;
+  const XL = 300, XM = 760, XR = 1220, PANEL = [XM - 250, XM + 250], YB = 770, YT = 190;
   const WORDS = ['no', 'one', 'two', 'three', 'four'];
   let hits = []; F.hover(d.stage, () => hits);
   function draw() {
@@ -411,9 +413,9 @@ function seats(k, deg) { const s = []; for (let i = 0; i < k; i++) s.push([i % d
     const all = [...D.atom, ...D.mo].map((l) => l.E), lo = Math.min(...all), hi = Math.max(...all);
     const Y = (E) => YB - ((E - lo) / (hi - lo)) * (YB - YT);
     hits = [];
-    ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.06); ctx.fillRect(PANEL[0], 92, PANEL[1] - PANEL[0], YB + 50 - 92); ctx.restore();
-    eAxis(ctx, 80, YB + 40, 100);
-    [[XL, 'Atomic orbitals'], [XM, 'Molecular orbitals'], [XR, 'Atomic orbitals']].forEach(([x, s]) => text(ctx, s, x, 118, PAL.ink, { size: 21, align: 'center' }));
+    ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.06); ctx.fillRect(PANEL[0], 84, PANEL[1] - PANEL[0], YB + 50 - 84); ctx.restore();
+    eAxis(ctx, 80, YB + 50, 96);
+    [[XL, 'Atomic orbitals'], [XM, 'Molecular orbitals'], [XR, 'Atomic orbitals']].forEach(([x, s]) => text(ctx, s, x, 108, PAL.ink, { size: 21, align: 'center' }));
     text(ctx, X, XL, YB + 76, PAL.ink, { size: 23, align: 'center' });
     text(ctx, X + '₂' + SUP[q], XM, YB + 76, PAL.ink, { size: 23, align: 'center' });
     text(ctx, X, XR, YB + 76, PAL.ink, { size: 23, align: 'center' });

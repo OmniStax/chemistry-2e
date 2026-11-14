@@ -301,7 +301,7 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
     } else {
       /* the [Ag+] at which each salt begins to precipitate, AgCl's line first as Example 15.11 works them */
       const thr = (k, xr, ion) => `[\\text{Ag}^{+}] = \\frac{\\kKsp}{${ion}} = \\frac{\\mk{K${k}}{${hue('equilibrium-constant', sciTex(KS[k]))}}}{\\mk{x${k}}{${hue('concentration', sciTex(xr))}}} = \\mk{t${k}}{${hue('concentration', sciTex(round2(KS[k] / xr)))}}\\ \\text{M}`;
-      ro.set(`\\begin{gathered}{}${thr('cl', cr, '[\\text{Cl}^{-}]')} \\\\ ${thr('br', rr, '[\\text{Br}^{-}]')}\\end{gathered}`, undefined, { form: 'two' });
+      ro.set(`${thr('cl', cr, '[\\text{Cl}^{-}]')} \\\\ ${thr('br', rr, '[\\text{Br}^{-}]')}`, undefined, { form: 'two' });
     }
   }
   register(d.fig, { update: () => {}, draw });

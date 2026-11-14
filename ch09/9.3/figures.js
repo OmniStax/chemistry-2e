@@ -74,7 +74,7 @@ function molecule(ctx, f, x, y, k = 1, a = 0) {
     });
     topline(ctx, 'At ' + fmt(p, 2) + ' atm and ' + t + ' K one liter of any gas holds ' + fmt(slope, 4) + ' mol.');
     const m = MOLS[sel].m;
-    tex(d.readout, `${hue('density', 'd')} = \\frac{\\kMM\\kP}{R\\kT} \\\\ ${hue('density', 'd')} = \\frac{(${hue('mass', fmt(m, 2) + '\\ \\text{g/mol}')})(${hue('pressure', fmt(p, 2) + '\\ \\text{atm}')})}{(${RTEX})(${hue('temperature', t + '\\ \\text{K}')})} = ${hue('density', dTxt(dOf(sel)).replace(' g/L', '\\ \\text{g/L}'))}`);
+    tex(d.readout, `${hue('density', 'd')} = \\frac{\\kMM\\kP}{R\\kT} = \\frac{(${hue('mass', fmt(m, 2) + '\\ \\text{g/mol}')})(${hue('pressure', fmt(p, 2) + '\\ \\text{atm}')})}{(${RTEX})(${hue('temperature', t + '\\ \\text{K}')})} = ${hue('density', dTxt(dOf(sel)).replace(' g/L', '\\ \\text{g/L}'))}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -173,7 +173,7 @@ function molecule(ctx, f, x, y, k = 1, a = 0) {
       acc += v;
     });
     text(ctx, tot + ' kPa', X(tot) + 12, by, cp, { size: 20, weight: 600 });
-    tex(d.readout, `\\kPtot = \\kPA + \\kPB + \\kPC \\\\ \\kPtot = ${p.map((v) => hue('pressure', v + '\\ \\text{kPa}')).join(' + ')} = ${hue('pressure', tot + '\\ \\text{kPa}')}`);
+    tex(d.readout, `\\kPtot = \\kPA + \\kPB + \\kPC = ${p.map((v) => hue('pressure', v + '\\ \\text{kPa}')).join(' + ')} = ${hue('pressure', tot + '\\ \\text{kPa}')}`);
   }
   register(d.fig, { update: (dt) => { cy.step(dt, () => 1); step(dt); }, draw });
 })();
@@ -294,7 +294,7 @@ function molecule(ctx, f, x, y, k = 1, a = 0) {
     F.rich(ctx, ['total ', [PT + ' torr', cp]], box.r + 14, Y(PT) - 18, { size: 17 });
     hits.push({ x: (bl + br) / 2, y: (Y(PT) + Y(pw)) / 2, r: 24, name: 'the pressure of the argon alone, ' + fmt(pg, 0) + ' torr' }, { x: (bl + br) / 2, y: (Y(pw) + Y(0)) / 2, r: 24, name: 'the pressure of the water vapor, ' + fmt(pw, 1) + ' torr' });
     topline(ctx, 'At ' + t + ' °C water vapor is ' + fmt((100 * pw) / PT, 1) + '% of the gas trapped above the water.');
-    tex(d.readout, `\\kP_{${GTEX}} = \\kP_{\\text{T}} - \\kP_{\\text{H}_2\\text{O}} \\\\ \\kP_{${GTEX}} = ${hue('pressure', PT + '\\ \\text{torr}')} - ${hue('pressure', fmt(pw, 1) + '\\ \\text{torr}')} = ${hue('pressure', fmt(pg, 0) + '\\ \\text{torr}')}`);
+    tex(d.readout, `\\kP_{${GTEX}} = \\kP_{\\text{T}} - \\kP_{\\text{H}_2\\text{O}} = ${hue('pressure', PT + '\\ \\text{torr}')} - ${hue('pressure', fmt(pw, 1) + '\\ \\text{torr}')} = ${hue('pressure', fmt(pg, 0) + '\\ \\text{torr}')}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

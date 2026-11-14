@@ -190,7 +190,7 @@ function stateLabels(ctx, pts, color, top) {
     gauge(ctx, CX, 118, 96, P, 1.5, 'atm', 0.5, 0.1);
     text(ctx, 'P = ' + fmt(P, 2) + ' atm', CX + 120, 118, cp, { size: 26, weight: 600 });
     hits.push({ x: CX, y: 118, r: 96, name: 'pressure gauge' });
-    readout(d.readout, `\\frac{\\kP}{\\kT} = k \\\\ \\frac{${hue('pressure', fmt(P, 2) + '\\ \\text{atm}')}}{${hue('temperature', t + '\\ \\text{K}')}} = ${sig3(P / t)}\\ \\text{atm/K}`);
+    readout(d.readout, `\\frac{\\kP}{\\kT} = \\frac{${hue('pressure', fmt(P, 2) + '\\ \\text{atm}')}}{${hue('temperature', t + '\\ \\text{K}')}} = ${sig3(P / t)}\\ \\text{atm/K}`);
   }
   register(d.fig, { update: (dt) => { cy.step(dt, () => 1); clock += dt; g.step(dt, () => 150 * drawn(), inside); }, draw });
 })();
@@ -237,7 +237,7 @@ const scaled = (t1, t2, what) => (t1 === t2 ? 'Both states are at ' + t1 + ' K.'
     legend(ctx, g, [{ s: 'extrapolated: the air condenses below 173 K', color: cp, dash: [10, 10], w: 3 }], { corner: 'above' });
     legend(ctx, g, [{ s: 'measured', kind: 'dot', color: cp }, { s: 'absolute zero, 0 K (−273 °C)', kind: 'dot', hollow: true, color: PAL.ink }], { corner: 'below' });
     topline(ctx, scaled(t1, t2, 'pressure'));
-    readout(d.readout, `\\frac{\\kPone}{\\kTone} = \\frac{\\kPtwo}{\\kTtwo} \\\\ \\frac{${hue('pressure', fmt(p1, 1) + '\\ \\text{kPa}')}}{${hue('temperature', t1 + '\\ \\text{K}')}} = \\frac{${hue('pressure', fmt(p2, 1) + '\\ \\text{kPa}')}}{${hue('temperature', t2 + '\\ \\text{K}')}} = ${fmt(K, 3)}\\ \\text{kPa/K}`);
+    readout(d.readout, `\\frac{\\kPone}{\\kTone} = \\frac{\\kPtwo}{\\kTtwo} = \\frac{${hue('pressure', fmt(p1, 1) + '\\ \\text{kPa}')}}{${hue('temperature', t1 + '\\ \\text{K}')}} = \\frac{${hue('pressure', fmt(p2, 1) + '\\ \\text{kPa}')}}{${hue('temperature', t2 + '\\ \\text{K}')}} = ${fmt(K, 3)}\\ \\text{kPa/K}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -281,7 +281,7 @@ const scaled = (t1, t2, what) => (t1 === t2 ? 'Both states are at ' + t1 + ' K.'
     legend(ctx, g, [{ s: 'extrapolated: methane liquefies at 111 K', color: cv, dash: [10, 10], w: 3 }], { corner: 'above' });
     legend(ctx, g, [{ s: 'measured', kind: 'dot', color: cv }, { s: 'absolute zero, 0 K', kind: 'dot', hollow: true, color: PAL.ink }], { corner: 'below' });
     topline(ctx, scaled(t1, t2, 'volume'));
-    readout(d.readout, `\\frac{\\kVone}{\\kTone} = \\frac{\\kVtwo}{\\kTtwo} \\\\ \\frac{${hue('volume', fmt(v1, 1) + '\\ \\text{L}')}}{${hue('temperature', t1 + '\\ \\text{K}')}} = \\frac{${hue('volume', fmt(v2, 1) + '\\ \\text{L}')}}{${hue('temperature', t2 + '\\ \\text{K}')}} = ${fmt(K, 4)}\\ \\text{L/K}`);
+    readout(d.readout, `\\frac{\\kVone}{\\kTone} = \\frac{\\kVtwo}{\\kTtwo} = \\frac{${hue('volume', fmt(v1, 1) + '\\ \\text{L}')}}{${hue('temperature', t1 + '\\ \\text{K}')}} = \\frac{${hue('volume', fmt(v2, 1) + '\\ \\text{L}')}}{${hue('temperature', t2 + '\\ \\text{K}')}} = ${fmt(K, 4)}\\ \\text{L/K}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -340,7 +340,7 @@ const scaled = (t1, t2, what) => (t1 === t2 ? 'Both states are at ' + t1 + ' K.'
     [[v1, p1, 'P₁', 1], [v2, p2, 'P₂', 2]].forEach(([v, p, s, i]) => text(ctx, s + ' = ' + fmt(p, 1) + ' psi', gl.X(v) + (p > 30 ? 20 : 14), gl.Y(p) + (p > 30 ? 0 : -22) + (close && hi === i ? -30 : 0), cp, { size: 17, weight: 600, bg: PAL.panel }));
     const ratio = v2 / v1;
     topline(ctx, Math.abs(ratio - 1) < 0.005 ? 'The plunger has not moved, so the gauge reads the same.' : 'The volume is ' + fmt(ratio, 2) + ' times what it was, and the pressure is ' + fmt(1 / ratio, 2) + ' times.');
-    readout(d.readout, `\\kPone\\kVone = \\kPtwo\\kVtwo \\\\ (${hue('pressure', fmt(p1, 1) + '\\ \\text{psi}')})(${hue('volume', fmt(v1, 1) + '\\ \\text{mL}')}) = (${hue('pressure', fmt(p2, 1) + '\\ \\text{psi}')})(${hue('volume', fmt(v2, 1) + '\\ \\text{mL}')}) = ${fmt(K, 0)}\\ \\text{psi·mL}`);
+    readout(d.readout, `\\kPone\\kVone = \\kPtwo\\kVtwo = (${hue('pressure', fmt(p1, 1) + '\\ \\text{psi}')})(${hue('volume', fmt(v1, 1) + '\\ \\text{mL}')}) = (${hue('pressure', fmt(p2, 1) + '\\ \\text{psi}')})(${hue('volume', fmt(v2, 1) + '\\ \\text{mL}')}) = ${fmt(K, 0)}\\ \\text{psi·mL}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -502,7 +502,7 @@ const scaled = (t1, t2, what) => (t1 === t2 ? 'Both states are at ' + t1 + ' K.'
     graph(boxes[1], [0, 600], [0, 30], { xl: 'T (K)', xc: ct, yl: 'V (L)', yc: cv, nx: 3, ny: 3 }, (t) => (n * R * t) / P, T, V, ct, cv, 'P and n fixed: Charles’s law');
     graph(boxes[2], [0, 600], [0, 5], { xl: 'T (K)', xc: ct, yl: 'P (atm)', yc: cp, nx: 3, ny: 5, out: sig3(P) + ' atm' }, (t) => (n * R * t) / V, T, P, ct, cp, 'V and n fixed: Amontons’s law');
     graph(boxes[3], [0, 30], [0, 2], { xl: 'V (L)', xc: cv, yl: '1/P (atm⁻¹)', yc: cp, nx: 3, ny: 2, fy: (v) => fmt(v, 1) }, (v) => v / (n * R * T), V, 1 / P, cv, cp, 'T and n fixed: Boyle’s law again');
-    readout(d.readout, `\\kP = \\frac{\\kn R\\kT}{\\kV} \\\\ \\frac{(${hue('amount', fmt(n, 2) + '\\ \\text{mol}')})(${RTEX})(${hue('temperature', T + '\\ \\text{K}')})}{${hue('volume', fmt(V, 1) + '\\ \\text{L}')}} = ${hue('pressure', sig3(P) + '\\ \\text{atm}')}`);
+    readout(d.readout, `\\kP = \\frac{\\kn R\\kT}{\\kV} = \\frac{(${hue('amount', fmt(n, 2) + '\\ \\text{mol}')})(${RTEX})(${hue('temperature', T + '\\ \\text{K}')})}{${hue('volume', fmt(V, 1) + '\\ \\text{L}')}} = ${hue('pressure', sig3(P) + '\\ \\text{atm}')}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -550,7 +550,7 @@ const scaled = (t1, t2, what) => (t1 === t2 ? 'Both states are at ' + t1 + ' K.'
       F.rich(ctx, [[fmt(n, 2) + ' mol', C('amount')], ', ', [fmt(V, 1) + ' L', C('volume')]], x, 614, { size: 21, align: 'center' });
     });
     topline(ctx, 'At STP, ' + fmt(n, 2) + ' mol of any of these gases fills ' + fmt(V, 1) + ' L.');
-    readout(d.readout, `\\kV = \\frac{\\kn R\\kT}{\\kP} \\\\ \\frac{(${hue('amount', fmt(n, 2) + '\\ \\text{mol}')})(${RTEX})(${hue('temperature', '273.15\\ \\text{K}')})}{${hue('pressure', '1\\ \\text{atm}')}} = ${hue('volume', fmt(V, 1) + '\\ \\text{L}')}`);
+    readout(d.readout, `\\kV = \\frac{\\kn R\\kT}{\\kP} = \\frac{(${hue('amount', fmt(n, 2) + '\\ \\text{mol}')})(${RTEX})(${hue('temperature', '273.15\\ \\text{K}')})}{${hue('pressure', '1\\ \\text{atm}')}} = ${hue('volume', fmt(V, 1) + '\\ \\text{L}')}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

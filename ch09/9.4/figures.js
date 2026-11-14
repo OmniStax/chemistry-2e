@@ -179,7 +179,7 @@ const molName = (f) => (MOLS[f].atoms.length === 1 ? 'an atom of ' + MOLS[f].wor
     F.rich(ctx, ['Passes through the ' + (eff() ? 'pinhole' : 'stopcock') + ' so far: ' + a + ' ', [String(na), F.ref(REF[0])], ', ' + b + ' ', [String(nb), F.ref(REF[1])], nb > 0 ? ' (ratio ' + fmt(na / nb, 1) + ')' : ''], 700, 46, { size: 24, align: 'center' });
     const key = mode.value + pair.value; if (key === shown) return; shown = key;
     const MA = MOLS[a].m, MB = MOLS[b].m, mm = (x) => hue('mass', fmt(x, 1) + '\\ \\text{g/mol}'), word = eff() ? 'effusion' : 'diffusion';
-    tex(d.readout, `\\frac{\\text{rate of ${word} of }${TEXF[a]}}{\\text{rate of ${word} of }${TEXF[b]}} = \\frac{\\sqrt{\\kMM_{${TEXF[b]}}}}{\\sqrt{\\kMM_{${TEXF[a]}}}} \\\\ = \\frac{\\sqrt{${mm(MB)}}}{\\sqrt{${mm(MA)}}} = ${fmt(Math.sqrt(MB / MA), 2)}`, undefined, { values: false });
+    tex(d.readout, `\\frac{\\text{rate of ${word} of }${TEXF[a]}}{\\text{rate of ${word} of }${TEXF[b]}} = \\frac{\\sqrt{\\kMM_{${TEXF[b]}}}}{\\sqrt{\\kMM_{${TEXF[a]}}}} = \\frac{\\sqrt{${mm(MB)}}}{\\sqrt{${mm(MA)}}} = ${fmt(Math.sqrt(MB / MA), 2)}`, undefined, { values: false });
   }
   register(d.fig, { update: (dt) => { cy.step(dt, () => 1); step(dt); }, draw });
 })();
@@ -281,7 +281,7 @@ const molName = (f) => (MOLS[f].atoms.length === 1 ? 'an atom of ' + MOLS[f].wor
     F.legend(ctx, { l: L, r: R, t: TOP, b: BOT }, [235, 238].map((iso) => ({ s: iso === 235 ? '²³⁵UF_{6}' : '²³⁸UF_{6}', draw: (c, x, y) => mol(c, x, y, iso) })), { corner: 'below' });
     if (said) return; said = true;
     const mm = (x) => hue('mass', x + '\\ \\text{g/mol}'), iso = (a) => `{}^{${a}}\\text{UF}_6`;
-    tex(d.readout, `\\frac{\\text{rate of diffusion of }${iso(235)}}{\\text{rate of diffusion of }${iso(238)}} = \\frac{\\sqrt{\\kMM_{${iso(238)}}}}{\\sqrt{\\kMM_{${iso(235)}}}} \\\\ = \\frac{\\sqrt{${mm('352.04')}}}{\\sqrt{${mm('349.03')}}} = 1.0043`, undefined, { values: false });
+    tex(d.readout, `\\frac{\\text{rate of diffusion of }${iso(235)}}{\\text{rate of diffusion of }${iso(238)}} = \\frac{\\sqrt{\\kMM_{${iso(238)}}}}{\\sqrt{\\kMM_{${iso(235)}}}} = \\frac{\\sqrt{${mm('352.04')}}}{\\sqrt{${mm('349.03')}}} = 1.0043`, undefined, { values: false });
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();

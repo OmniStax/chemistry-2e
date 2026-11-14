@@ -78,7 +78,7 @@ const commas = (x) => Math.round(x).toLocaleString('en-US');
     topline(ctx, f === ATM && a === 1 ? 'A column of air one inch square weighs 14.7 lb, so the atmosphere presses with 14.7 lb/in².'
       : Math.abs(q - 1) < 0.005 ? lbs(f) + ' lb on ' + sq(a) + ' in² presses exactly as hard as the atmosphere.'
       : (named ? named[2] : lbs(f) + ' lb spread over ' + sq(a) + ' in²') + ' presses ' + times + ' times as hard as the atmosphere.');
-    tex(d.readout, `\\kP = \\frac{\\kforce}{\\karea} \\\\ \\kP = \\frac{${hue('force', lbs(f).replace(',', '{,}') + '\\ \\text{lb}')}}{${hue('area', sq(a) + '\\ \\text{in}^2')}} = ${hue('pressure', pStr(p).replace(',', '{,}') + '\\ \\text{lb/in}^2')}`);
+    tex(d.readout, `\\kP = \\frac{\\kforce}{\\karea} = \\frac{${hue('force', lbs(f).replace(',', '{,}') + '\\ \\text{lb}')}}{${hue('area', sq(a) + '\\ \\text{in}^2')}} = ${hue('pressure', pStr(p).replace(',', '{,}') + '\\ \\text{lb/in}^2')}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -119,7 +119,7 @@ const commas = (x) => Math.round(x).toLocaleString('en-US');
     tube(ctx, 940, hW, alpha(PAL.ink, 0.16), 'water', 'h = ' + fmt(hW, 2) + ' m', 'water-barometer');
     topline(ctx, 'An atmospheric pressure of ' + fmt(Ps.v, 1) + ' kPa holds up ' + fmt(hHg * 1000, 0) + ' mm of mercury or ' + fmt(hW, 2) + ' m of water.');
     const pa = hue('pressure', commas(p).replace(',', '{,}') + '\\ \\text{Pa}'), g = hue('acceleration', '9.81\\ \\text{m/s}^2');
-    tex(d.readout, `\\kphyd = \\khcol\\krho\\kgrav \\\\ \\text{mercury: }\\ (${hue('length', fmt(hHg, 3) + '\\ \\text{m}')})(${hue('density', '13{,}595\\ \\text{kg/m}^3')})(${g}) = ${pa} \\\\ \\text{water: }\\ (${hue('length', fmt(hW, 2) + '\\ \\text{m}')})(${hue('density', '1{,}000\\ \\text{kg/m}^3')})(${g}) = ${pa}`);
+    tex(d.readout, `\\text{mercury: }\\ \\kphyd = \\khcol\\krho\\kgrav = (${hue('length', fmt(hHg, 3) + '\\ \\text{m}')})(${hue('density', '13{,}595\\ \\text{kg/m}^3')})(${g}) = ${pa} \\\\ \\text{water: }\\ \\kphyd = \\khcol\\krho\\kgrav = (${hue('length', fmt(hW, 2) + '\\ \\text{m}')})(${hue('density', '1{,}000\\ \\text{kg/m}^3')})(${g}) = ${pa}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -195,8 +195,8 @@ const commas = (x) => Math.round(x).toLocaleString('en-US');
       : dMm === 0 ? 'The gas and the atmosphere press equally, and the mercury stands level.'
       : 'The mercury stands ' + h + ' mm higher in the ' + (dMm > 0 ? 'open' : 'gas') + ' arm, so the gas is ' + h + ' mm Hg ' + (dMm > 0 ? 'above' : 'below') + ' the atmosphere.');
     const G = '\\kPgas', A = '\\kPatm', mm = (v) => hue('pressure', v + '\\ \\text{mm Hg}');
-    tex(d.readout, closed ? `${G} = \\khcol\\krho\\kgrav \\\\ ${G} = ${mm(pg)}`
-      : `${G} = ${A} ${dMm >= 0 ? '+' : '-'} \\khcol\\krho\\kgrav \\\\ ${G} = ${mm(pa)} ${dMm >= 0 ? '+' : '-'} ${mm(h)} = ${mm(pg)}`);
+    tex(d.readout, closed ? `${G} = \\khcol\\krho\\kgrav = ${mm(pg)}`
+      : `${G} = ${A} ${dMm >= 0 ? '+' : '-'} \\khcol\\krho\\kgrav = ${mm(pa)} ${dMm >= 0 ? '+' : '-'} ${mm(h)} = ${mm(pg)}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

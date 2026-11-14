@@ -79,7 +79,7 @@ const zOf = (g, P, T) => (P * molarVolume(g.a, g.b, P, T)) / (R * T);
     topline(ctx, P < 1 ? 'At a pressure near zero, every gas has Z = 1 and behaves as an ideal gas.'
       : 'At ' + fmt(P, 0) + ' atm and ' + fmt(T, 0) + ' K, Z for ' + g.f + ' is ' + fmt(zS, 2) + ', so its molar volume is ' + fmt(100 * zS, 0) + '% of an ideal gas’s.');
     tex(d.readout, P < 1 ? 'Z = \\frac{\\kP\\kVm}{R\\kT} = 1'
-      : `Z = \\frac{\\kP\\kVm}{R\\kT} \\\\ = \\frac{(${hue('pressure', fmt(P, 0))}\\ \\text{atm})(${hue('volume', VmS.toPrecision(3))}\\ \\text{L/mol})}{(0.08206\\ \\text{L atm/(mol K)})(${hue('temperature', fmt(T, 0))}\\ \\text{K})} = ${fmt(zS, 2)}`);
+      : `Z = \\frac{\\kP\\kVm}{R\\kT} = \\frac{(${hue('pressure', fmt(P, 0))}\\ \\text{atm})(${hue('volume', VmS.toPrecision(3))}\\ \\text{L/mol})}{(0.08206\\ \\text{L atm/(mol K)})(${hue('temperature', fmt(T, 0))}\\ \\text{K})} = ${fmt(zS, 2)}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

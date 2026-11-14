@@ -60,12 +60,13 @@ function bar(ctx, x0, y, per, n, total, col) {
     const t = cy.now(), v = M.value, laser = F.fact(LASER_GREEN);
     const sus = MIX.suspension.parts, settled = sus.reduce((s, p) => s + fallen(p, t), 0) / sus.length;
     /* how cloudy the water is, how much the beam scatters inside it, and how much reaches the card */
-    const cloud = M.mix((k) => (k === 'suspension' ? 1 - settled : 0));
-    const glow = M.mix((k) => (k === 'colloid' ? 1 : k === 'suspension' ? 0.45 * (1 - settled) : 0));
-    const reach = M.mix((k) => (k === 'solution' ? 1 : k === 'colloid' ? 0.55 : 0.08 + 0.92 * settled));
+    const by = (f) => Object.keys(MIX).reduce((s, k) => s + M.a(k) * f(k), 0) / Math.max(1e-6, Object.keys(MIX).reduce((s, k) => s + M.a(k), 0));
+    const cloud = by((k) => (k === 'suspension' ? 1 - settled : 0));
+    const glow = by((k) => (k === 'colloid' ? 1 : k === 'suspension' ? 0.45 * (1 - settled) : 0));
+    const reach = by((k) => (k === 'solution' ? 1 : k === 'colloid' ? 0.55 : 0.08 + 0.92 * settled));
     ctx.save(); ctx.fillStyle = alpha(PAL.muted, 0.08 + 0.6 * cloud); ctx.fillRect(GL.l, GL.surf, GL.r - GL.l, GL.bot - GL.surf); ctx.restore();
     /* the beam: from the laser to the glass, through the liquid, and on to the card */
-    line(ctx, 330, BY, GL.l, BY, alpha(laser, 0.35 * reach + 0.15), 4);
+    line(ctx, 330, BY, GL.l, BY, alpha(laser, 0.5), 4);
     ctx.save();
     const g = ctx.createLinearGradient(GL.l, 0, GL.r, 0);
     g.addColorStop(0, alpha(laser, 0.8 * glow)); g.addColorStop(1, alpha(laser, 0.8 * glow * (0.35 + 0.65 * reach)));

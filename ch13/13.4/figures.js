@@ -45,9 +45,8 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     options: [{ value: 'pcl5', label: 'PCl₅ ⇌ PCl₃ + Cl₂' }, { value: 'hcn', label: 'HCN ⇌ H⁺ + CN⁻' }],
     onInput: () => { const r = RX[pick.value]; K.set(Math.log10(r.K)); c0.set(r.c0); c0.relabel(hue('concentration', r.a), r.aria); },
   });
-  const K = ctl(d.controls, { label: '\\kKc', cls: 'equilibrium-constant', min: -10, max: 1, step: 0.001, value: Math.log10(4.9e-10), unit: '', dec: 2, aria: 'equilibrium constant Kc, on a logarithmic scale' });
-  const c0 = ctl(d.controls, { label: hue('concentration', RX.hcn.a), cls: 'concentration', min: 0.01, max: 2, step: 0.01, value: 0.15, unit: 'M', dec: 2, aria: RX.hcn.aria });
-  const kBox = K.el.querySelector('.ctl-val');
+  const K = ctl(d.controls, { label: '\\kKc', cls: 'equilibrium-constant', min: -10, max: 1, step: 0.001, value: Math.log10(4.9e-10), fmt: (lg) => sigText(10 ** lg), specials: [{ at: () => Math.log10(RX[pick.value].K), label: 'the example' }], aria: 'equilibrium constant Kc, on a logarithmic scale' });
+  const c0 = ctl(d.controls, { label: hue('concentration', RX.hcn.a), cls: 'concentration', min: 0.01, max: 2, step: 0.01, value: 0.15, unit: 'M', dec: 2, specials: [{ at: () => RX[pick.value].c0, label: 'the example' }], aria: RX.hcn.aria });
   const ro = F.readout(d);
   let hits = [];
   F.hover(d.stage, () => hits);
@@ -72,7 +71,6 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     const r = RX[pick.value], k = 10 ** K.v, c = c0.v, lk = K.v, lc = Math.log10(c);
     const x = (2 * k * c) / (k + Math.sqrt(k * k + 4 * k * c)), xa = Math.sqrt(k * c);
     const cK = C('equilibrium-constant'), cC = C('concentration');
-    if (kBox) kBox.textContent = sigText(k);
     const spA = `[${r.sp[0]}]_{i}`, cs = c.toFixed(2);
     const lines = topline(ctx, `$x$ is ${pct(x / c)}% of ${spA}, and the approximation $${cs} - x \\approx ${cs}$ puts $x$ ${pct(xa / x - 1)}% too high.`);
     const lab = F.labeller(ctx, H, { headline: lines });

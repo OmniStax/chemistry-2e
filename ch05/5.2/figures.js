@@ -137,7 +137,7 @@ const sim = (id, H) => F.sim(root, id, H);
       hits.push({ x: px(XB), y: py(side) - 28, r: 30, name: hot ? 'heat q leaving the ' + nm + ' for the water' : 'heat q leaving the water for the ' + nm });
     }
     /* the stirrer strokes while heat flows and rests above the metal when it stops */
-    const lo = Math.min(side + 1.9, level - 0.7), hi = Math.min(lo + 2, level - 0.5);
+    const lo = Math.min(side + 1.9, level - 1.3), hi = Math.min(lo + 2, level - 0.9);
     const hr = moving ? lo + (hi - lo) * (0.5 - 0.5 * Math.cos(t * 7)) : lo;
     ring(ctx, hr, false);
     cover(ctx, rc);

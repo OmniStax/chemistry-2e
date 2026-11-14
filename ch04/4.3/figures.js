@@ -137,9 +137,9 @@ const sciTxt = (x, sf) => { const p = parts(x, sf); return p.e ? `${p.m} × 10${
     give.set(e.give); want.set(e.want); showSlider(e.give); relight();
   }
   /* box centres: A in the two left columns, B mirrored in the two right */
-  const W = 230, HB = 104;
-  const P = { vpA: [135, 170], mA: [465, 170], vsA: [135, 340], nA: [465, 340], NA: [465, 510],
-    nB: [935, 340], mB: [935, 170], vpB: [1265, 170], vsB: [1265, 340], NB: [935, 510] };
+  const W = 220, WV = 210, HB = 104, wOf = (key) => (key[0] === 'v' ? WV : W);
+  const P = { vpA: [115, 170], mA: [440, 170], vsA: [115, 340], nA: [440, 340], NA: [440, 510],
+    nB: [960, 340], mB: [960, 170], vpB: [1285, 170], vsB: [1285, 340], NB: [960, 510] };
   const hueOf = (kind) => (kind === 'm' ? C('mass') : kind === 'n' ? C('amount') : kind === 'v' ? C('volume') : PAL.ink);
   /* a name on one line, or on two split at the space that keeps the longer line shortest */
   function fit(ctx, name, room) {
@@ -151,7 +151,7 @@ const sciTxt = (x, sf) => { const p = parts(x, sf); return p.e ? `${p.m} × 10${
   }
   /* a box in the hue of what it holds (a count in ink), its name and, on the route, its value */
   function box(ctx, x, y, kind, name, value, on) {
-    const c = hueOf(kind);
+    const c = hueOf(kind), W = kind === 'v' ? WV : 220;
     ctx.save(); ctx.globalAlpha = 0.5 + 0.5 * on;
     ctx.beginPath(); ctx.roundRect(x - W / 2, y - HB / 2, W, HB, 10);
     ctx.fillStyle = kind === 'N' ? PAL.soft : alpha(c, 0.08 + 0.14 * on); ctx.fill();
@@ -184,7 +184,7 @@ const sciTxt = (x, sf) => { const p = parts(x, sf); return p.e ? `${p.m} × 10${
       const [x1, y1] = P[p], [x2, y2] = P[q], i = path.indexOf(p), j = path.indexOf(q);
       const lit = i >= 0 && j >= 0 && Math.abs(i - j) === 1 ? Math.min(1, Math.max(0, k * steps - Math.min(i, j))) : 0;
       const hor = y1 === y2, s = Math.sign(x2 - x1) || 1, t = Math.sign(y2 - y1) || 1;
-      const ax = hor ? x1 + s * (W / 2 + 8) : x1, ay = hor ? y1 : y1 + t * (HB / 2 + 8), bx = hor ? x2 - s * (W / 2 + 8) : x2, by = hor ? y2 : y2 - t * (HB / 2 + 8);
+      const ax = hor ? x1 + s * (wOf(p) / 2 + 8) : x1, ay = hor ? y1 : y1 + t * (HB / 2 + 8), bx = hor ? x2 - s * (wOf(q) / 2 + 8) : x2, by = hor ? y2 : y2 - t * (HB / 2 + 8);
       link(ctx, ax, ay, bx, by, lit > 0.99 ? PAL.ink : alpha(PAL.ink, 0.45), lit > 0.99 ? 5 : 3);
       if (lit > 0 && lit < 1) line(ctx, ax, ay, ax + (bx - ax) * lit, ay + (by - ay) * lit, PAL.ink, 5);
       const mx = (ax + bx) / 2, my = (ay + by) / 2;
@@ -205,8 +205,8 @@ const sciTxt = (x, sf) => { const p = parts(x, sf); return p.e ? `${p.m} × 10${
       const at = path.indexOf(key), shown = lit && k * steps >= at - 0.02;
       box(ctx, P[key][0], P[key][1], kind, nm[key], shown ? (key === g + 'A' ? given.txt : sciTxt(val[key], sfOf(key))) + unit[kind] : '', lit ? 1 : 0);
     });
-    F.rich(ctx, [['substance A', F.ref('substance-a')], ', given: ' + a.txt], 300, 60, { size: 24, align: 'center' });
-    F.rich(ctx, [['substance B', F.ref('substance-b')], ', sought: ' + b.txt], 1100, 60, { size: 24, align: 'center' });
+    F.rich(ctx, [['substance A', F.ref('substance-a')], ', given: ' + a.txt], 280, 60, { size: 24, align: 'center' });
+    F.rich(ctx, [['substance B', F.ref('substance-b')], ', sought: ' + b.txt], 1120, 60, { size: 24, align: 'center' });
     /* the chain of factors with the live numbers, one line: a brace keeps it whole and the readout sets it to fit */
     const q = (num, kind, sp) => (kind === 'N' ? `${num}\\ ${sp.tex}\\ \\text{${sp.unit}}`
       : hue(kind === 'm' ? 'mass' : 'amount', `${num}\\ ${kind === 'm' ? '\\text{g}' : '\\text{mol}'}`) + `\\ ${sp.tex}`);

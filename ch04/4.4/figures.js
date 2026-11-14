@@ -114,7 +114,7 @@ const plural = (n, one, many) => n + ' ' + (n === 1 ? one : many);
   const cy = cycle(() => LEAD + (Math.min(Hn.v, Cl.v) - 1) * LAG + DUR, 2.4);
   let hits = []; F.hover(d.stage, () => hits);
   const RH = 14, RCL = 22, DH = 8, DCL = 13;          /* radii, and each atom's distance from its molecule's centre */
-  const PY = 104, PW = 500, PH = 340, LX = 40, RX = 860, CW = PW / 5, CH = PH / 4;
+  const PY = 104, PW = 480, PH = 340, LX = 40, RX = 880, CW = PW / 5, CH = PH / 4;
   /* the box as 5 by 4 places, tiled by ten pairs of neighbouring places: a reacting H2 and Cl2 start side by side */
   const DOM = [[[0, 0], [0, 1]], [[1, 0], [2, 0]], [[1, 1], [2, 1]], [[3, 0], [4, 0]], [[3, 1], [3, 2]], [[4, 1], [4, 2]], [[0, 2], [1, 2]], [[0, 3], [1, 3]], [[2, 2], [2, 3]], [[3, 3], [4, 3]]];
   const ORDER = [2, 6, 4, 9, 0, 3, 8, 5, 7, 1];
@@ -231,7 +231,7 @@ const plural = (n, one, many) => n + ' ' + (n === 1 ? one : many);
       hits.push({ x: (BX + PX(r.p)) / 2, y: r.y, r: 24, name: 'the Si₃N₄ that all of the ' + r.name + ' could give' });
     });
     /* the amount that can form, a level across both bars */
-    rows.forEach((r) => line(ctx, PX(lesser), r.y - 30, PX(lesser), r.y + 30, PAL.ink, 2, [4, 8]));
+    rows.forEach((r) => line(ctx, PX(lesser), r.y - 26, PX(lesser), r.y + 26, PAL.ink, 2, [4, 8]));
     rows.forEach((r) => hits.unshift({ x: PX(lesser), y: r.y, r: 14, name: 'the Si₃N₄ that can form: ' + sig(lesser, 3) + ' mol' }));
     topline(ctx, eq ? 'Silicon and nitrogen are in the stoichiometric ratio, so neither is in excess.'
       : (siLim ? 'Silicon' : 'Nitrogen') + ' would give less Si₃N₄, so ' + (siLim ? 'silicon' : 'nitrogen') + ' is the limiting reactant and ' + sig(lesser, 3) + ' mol of Si₃N₄ can form.');

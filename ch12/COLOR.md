@@ -34,8 +34,7 @@ strip's time axis.
 ## Facts and conventions
 
 `F.el` for every atom and molecule drawn: NO, O₃, NO₂ and O₂ (12.2's box),
-CO, O₂, CO₂ and O (12.13), cyclobutane and ethylene in 3D (12.6), NO₂, CO, NO
-and CO₂ (12.17), H₂, C₂H₄, C₂H₆ and the nickel surface (12.23). A collision
+CO, O₂, CO₂ and O (12.13), H₂, C₂H₄, C₂H₆ and the nickel surface (12.23). A collision
 draws an identified pair, never an anonymous A + BC: NO + O₃ in 12.2's
 many-collisions box, CO + O₂ in 12.5's single oriented collision. No figure
 paints a fact: the test strips and the ozone map are photographs, and H₂O₂ is
@@ -52,8 +51,8 @@ As built:
   table, its solution and the Sim.
 - **12.4.** `tungsten`, `quartz`: the two ammonia series of Figure 12.11 in
   the fold. The flasks of 12.12 are one sample over a clock, not referents.
-- **12.7.** `uncatalyzed`, `catalyzed`: the two paths of Figure 12.19;
-  `enzyme`, `substrates`: Figure 12.25. Two groups that never meet.
+- **12.7.** `uncatalyzed`, `catalyzed`: the two paths of Figure 12.19.
+  Figure 12.25 is the book's image and has none.
 - **12.2, 12.5, 12.6.** None. The two distribution curves of 12.5 and the
   three species of 12.6's slow-step Sim take `F.cat`, since the text names no
   one of them as a referent; the steps of a mechanism stay in ink.

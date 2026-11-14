@@ -224,6 +224,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "readout one equation, view buttons gone, Lewis structure enlarged, caption cut"
     }
    ]
   }

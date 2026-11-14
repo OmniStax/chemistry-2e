@@ -87,8 +87,8 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
 ===================================================================== */
 (function () {
   const d = sim('sim-interhalogens');
-  const FREE = { spin: 'idle', views: [{ label: 'side', yaw: 0.35, pitch: 0.22 }, { label: 'down the axis', yaw: 0, pitch: Math.PI / 2 }] };
-  const v = F.view3d(d.stage, { ...FREE, h: 600, dist: 7.6 });
+  const v = F.view3d(d.stage, { spin: 'idle', h: 560, dist: 6.4 });
+  const kc = F.makeCanvas(d.stage, 60);
   const g = v.part(0);
   const K = 0.62;                                               /* scene units per ångström */
   const RCOV = { F: 64, Cl: 99, Br: 114, I: 133 };              /* covalent radii, pm (Table 6.2) */
@@ -163,9 +163,10 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
       const far = 1 - Math.abs(w.z);
       if (!lp || far > lp.far + 0.05) lp = { p: V.mul(dir, 1.15), on, far };
     }
-    v.label(X, [0, 0, 0], h, 0);
-    if (named) v.label('F', named, h, 0);
-    if (lp) plain(v.label('lone pair', lp.p, h, 0), lp.on);
+    /* a key under the scene in place of labels on the atoms */
+    { const { ctx } = F.begin(kc), e = [{ s: NAME[B.X], draw: (c, x, y) => F.dot(c, x, y, F.el(B.X), true, 10) }, { s: NAME.F, draw: (c, x, y) => F.dot(c, x, y, F.el('F'), true, 8) }];
+      if (B.n < 7) e.push({ s: 'lone pair', draw: (c, x, y) => F.dot(c, x, y, F.alpha(PAL.ink, 0.35), true, 10) });
+      F.legend(ctx, { l: 60, r: 1340, t: 0, b: 60 }, e, { corner: 'top', row: true, panel: false, size: 20 }); }
     v.headline(B.head);
     const lone = (7 - B.n) / 2;
     ro.set(`\\mk{m}{\\text{${B.X}F}${B.n > 1 ? `_{${B.n}}` : ''}}:\\ \\mk{b}{${B.n}}\\ \\text{bond${B.n > 1 ? 's' : ''}} + \\mk{l}{${lone}}\\ \\text{lone pair${lone === 1 ? '' : 's'}} = \\mk{p}{${B.n + lone}}\\ \\text{electron pairs}`,

@@ -269,10 +269,6 @@ const tag = (ctx, s, x, y, align, to) => {
     tag(ctx, 'Anode', 330, ELEC, 'right', [XA - AW / 2, ELEC]); text(ctx, '+', 300, ELEC + 30, PAL.ink, { size: 26, align: 'center' });
     tag(ctx, 'Cathode', 1070, ELEC, 'left', [XC + AW / 2, ELEC]); text(ctx, '−', 1110, ELEC + 30, PAL.ink, { size: 26, align: 'center' });
     F.legend(ctx, { l: 0, r: 1400, t: 0, b: H }, [{ s: 'electron, e⁻', kind: 'dot', color: F.el('e-') }, { s: 'O₂', draw: (g, x, y) => o2(g, x, y, 1) }, { s: 'H₂', draw: (g, x, y) => h2(g, x, y, 1) }], { corner: 'bl', size: 20 });
-    const head = V > VT + 1e-9 ? 'Above 1.229 V, oxygen forms at the anode and twice its volume of hydrogen at the cathode.'
-      : V > VT - 1e-9 ? 'At 1.229 V, the applied voltage only balances the cell potential, and no gas forms.'
-        : 'Below 1.229 V, the source cannot decompose water.';
-    F.topline(ctx, head);
     const rel = V > VT + 1e-9 ? '>' : V > VT - 1e-9 ? '=' : '<';
     const tex = `\\text{applied voltage} = ${hue('potential', V.toFixed(3) + '\\ \\text{V}')} ${rel} ${hue('potential', '1.229\\ \\text{V}')} = -\\kEocell`;
     if (tex !== lastTex) { lastTex = tex; ro.set(tex, 'Four electrons pass through the source for every O₂ and every two H₂, so the hydrogen arm fills twice as fast.'); }
@@ -329,7 +325,7 @@ const tag = (ctx, s, x, y, align, to) => {
       ctx.beginPath(); ctx.ellipse(XS, BOWL.y, BOWL.rx + grow, BOWL.ry + grow, 0, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore();
     };
     if (coat > 0.3) spoon(F.el('Ag'), coat);
-    spoon(PAL.muted, 0);
+    spoon(F.mixColor(PAL.muted, F.el('Ag'), Math.min(1, 4 * k)), 0);
     hits.push({ x: XS, y: BOWL.y, r: 40, name: m > 0 ? `the spoon, the cathode, silvered with ${sig4(m)} g of silver` : 'the spoon, the cathode' });
     /* the solution over the immersed parts, then the glass */
     ctx.save(); ctx.fillStyle = alpha(PAL.muted, 0.1); ctx.fillRect(BL + 2, LEVEL, BR - BL - 4, FLOOR - LEVEL - 2); ctx.restore();

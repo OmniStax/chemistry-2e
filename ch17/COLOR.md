@@ -45,8 +45,8 @@ carries its charge as a mark.
 Facts, drawn as the thing looks: the blue of Cu²⁺(aq) deepening in 17.2 and
 17.3, the gray fluffy silver, the yellow-green of chlorine gas, the brown of
 rust and the blue-green of the patina (17.15 is a photograph). The
-voltmeter's red and black inputs in 17.6 are the instrument's own colours and
-stay as the book draws them.
+voltmeter's red and black inputs in 17.6 are the instrument's own colours,
+drawn where the text names them, since the book's image shows neither.
 
 ## Referents
 

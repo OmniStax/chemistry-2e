@@ -14,7 +14,7 @@ const { C, PAL, alpha, register, begin, line, text, headline } = F;
    HClO4 strong, with no value given). Still: a series of states.
 ===================================================================== */
 (function () {
-  const d = F.sim(root, 'sim-chlorine-oxyanions', 400);
+  const d = F.sim(root, 'sim-chlorine-oxyanions', 440);
   const ORDER = ['ClO', 'ClO2', 'ClO3', 'ClO4'];
   /* the sites in the order oxygen takes them, as the book draws them: right, then left, then down, then up */
   const SITES = ['right', 'left', 'down', 'up'];
@@ -44,18 +44,18 @@ const { C, PAL, alpha, register, begin, line, text, headline } = F;
   const weight = (s) => ion.mix((v) => has(v, s));
 
   /* ---------- the flat view: the book's electron-dot structure ---------- */
-  const CX = 700, CY = 238, BOND = 100, LP = 30, SPREAD = 6.5;
+  const CX = 700, CY = 246, BOND = 116, LP = 35, SPREAD = 7;
   const DIR = { right: [1, 0], left: [-1, 0], down: [0, 1], up: [0, -1] };
   const NAME = { Cl: 'chlorine atom', O: 'oxygen atom' };
   function pair(ctx, x, y, dx, dy, name, a = 1) {
     if (a <= 0.01) return;
     ctx.save(); ctx.globalAlpha *= a;
-    [-SPREAD, SPREAD].forEach((o) => F.dot(ctx, x - dy * o, y + dx * o, PAL.ink, true, 3.6));
+    [-SPREAD, SPREAD].forEach((o) => F.dot(ctx, x - dy * o, y + dx * o, PAL.ink, true, 4.2));
     ctx.restore();
     if (a > 0.5 && name) hits.push({ x, y, r: 13, name });
   }
   function brackets(ctx) {
-    const x1 = CX - 175, x2 = CX + 175, y1 = CY - 152, y2 = CY + 152;
+    const x1 = CX - 200, x2 = CX + 200, y1 = CY - 166, y2 = CY + 166;
     [[x1, 1], [x2, -1]].forEach(([x, s]) => {
       ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.beginPath();
       ctx.moveTo(x + s * 14, y1); ctx.lineTo(x, y1); ctx.lineTo(x, y2); ctx.lineTo(x + s * 14, y2); ctx.stroke(); ctx.restore();
@@ -66,7 +66,7 @@ const { C, PAL, alpha, register, begin, line, text, headline } = F;
     const { ctx } = begin(d.c); hits = [];
     headline(ctx, HEAD[ion.value]);
     brackets(ctx);
-    text(ctx, 'Cl', CX, CY + 1, PAL.ink, { size: 30, align: 'center' });
+    text(ctx, 'Cl', CX, CY + 1, PAL.ink, { size: 36, align: 'center' });
     hits.push({ x: CX, y: CY, r: 22, name: NAME.Cl });
     SITES.forEach((s) => {
       const w = weight(s), [dx, dy] = DIR[s];
@@ -76,7 +76,7 @@ const { C, PAL, alpha, register, begin, line, text, headline } = F;
       if (w <= 0.01) return;
       const back = (1 - w) * 24, ox = CX + dx * (BOND - back), oy = CY + dy * (BOND - back);
       F.faded(ctx, w, [0, 0], () => {
-        text(ctx, 'O', ox, oy + 1, PAL.ink, { size: 30, align: 'center' });
+        text(ctx, 'O', ox, oy + 1, PAL.ink, { size: 36, align: 'center' });
         Object.keys(DIR).filter((t) => t !== { right: 'left', left: 'right', up: 'down', down: 'up' }[s])
           .forEach((t) => { const [ex, ey] = DIR[t]; pair(ctx, ox + ex * LP, oy + ey * LP, ex, ey, w > 0.5 ? 'lone pair on oxygen' : null); });
       });
@@ -90,8 +90,7 @@ const { C, PAL, alpha, register, begin, line, text, headline } = F;
   const T3 = { right: [k3, 0, -h3 * k3], left: [-k3, 0, -h3 * k3], down: [0, -k3, h3 * k3], up: [0, k3, h3 * k3] };
   let V = null, g = null;
   function mount() {
-    V = F.view3d(d.stage, { spin: 'idle', h: 470, dist: 7.6, tilt: 0.2, pitch: [-Math.PI / 2, Math.PI / 2],
-      views: [{ label: 'front', yaw: 0, pitch: 0.2 }, { label: 'side', yaw: Math.PI / 2, pitch: 0.2 }] });
+    V = F.view3d(d.stage, { spin: 'idle', h: 470, dist: 6.8, tilt: 0.2, pitch: [-Math.PI / 2, Math.PI / 2] });
     d.stage.insertBefore(V.wrap, strip);
     const bar = d.stage.querySelector('.view3d-bar'); if (bar) d.stage.insertBefore(bar, strip);
     g = V.part(0); g.position.y = -0.3;
@@ -148,8 +147,7 @@ const { C, PAL, alpha, register, begin, line, text, headline } = F;
 
   function readout() {
     const t = ION[ion.value], weak = t.pKa !== null;
-    const tex = `\\mk{a}{${t.acid}(aq)} + \\mk{w}{\\text{H}_{2}\\text{O}(l)}\\mk{r}{\\;${weak ? '\\rightleftharpoons' : '\\longrightarrow'}\\;}\\mk{h}{\\text{H}_{3}\\text{O}^{+}(aq)} + \\mk{b}{${t.tex}(aq)}`
-      + (weak ? `\\qquad \\mk{k}{\\kpKa = ${t.pKa.toFixed(1)}}` : '');
+    const tex = `\\mk{a}{${t.acid}(aq)} + \\mk{w}{\\text{H}_{2}\\text{O}(l)}\\mk{r}{\\;${weak ? '\\rightleftharpoons' : '\\longrightarrow'}\\;}\\mk{h}{\\text{H}_{3}\\text{O}^{+}(aq)} + \\mk{b}{${t.tex}(aq)}`;
     const n = t.n, ox = 2 * n - 1;
     const note = `With ${COUNT[n]} oxygen atom${n > 1 ? 's' : ''} at 2− and a charge of 1− on the ion, chlorine’s oxidation state is ${ox}+.`;
     ro.set(tex, note, { form: weak });

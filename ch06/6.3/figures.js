@@ -99,11 +99,11 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
    the drawn screen, over the drawn wavelength. The apparatus is schematic.
 ===================================================================== */
 (function () {
-  const d = sim('sim-double-slit', 480);
+  const d = sim('sim-double-slit', 500);
   const v = ctl(d.controls, { label: '\\kv', cls: 'velocity', min: 4, max: 10, step: 0.1, value: 10, unit: '× 10⁶ m/s', dec: 1, aria: 'the speed of the electrons', onInput: () => { sample(); cy.reset(); } });
   const T = 7, NMAX = 2400;
   const cy = cycle(() => T, 2.5);
-  const TOP = 92, BOT = 412, YC = (TOP + BOT) / 2;
+  const TOP = 118, BOT = 438, YC = (TOP + BOT) / 2;
   const XS = 176, XB = 400, XE = 640, D2 = 22;       /* the source's mouth, the barrier, the screen edge on; half the slit separation */
   const SCR = { l: 716, r: 916, t: TOP, b: BOT };
   const HB = { l: 990, r: 1340 }, NB = 64, BH = (BOT - TOP) / NB;
@@ -177,7 +177,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
       for (let i = 0; i <= 320; i++) { const y = TOP + ((BOT - TOP) * i) / 320, x = HB.l + (prob(y) / tot) * N * scale; if (i) ctx.lineTo(x, y); else ctx.moveTo(x, y); }
       ctx.stroke(); ctx.restore();
     }
-    F.legend(ctx, { l: HB.l, r: HB.r + 30, t: TOP - 8, b: BOT }, [{ s: 'electrons counted', kind: 'swatch', color: alpha(ce, 0.45) }, { s: '|ψ|² of the wave', color: PAL.ink, w: 3 }], { corner: 'tr', size: 18 });
+    F.legend(ctx, { l: HB.l, r: HB.r, t: TOP, b: BOT }, [{ s: 'electrons counted', kind: 'swatch', color: alpha(ce, 0.45) }, { s: '|ψ|² of the wave', color: PAL.ink, w: 3 }], { corner: 'above', size: 19 });
     text(ctx, 'count at each height', (HB.l + HB.r) / 2, BOT + 30, PAL.ink, { size: 20, align: 'center' });
     const lam = HP / (ME * v.v * 1e6);
     tex(d.readout, `\\klam = \\frac{h}{\\km \\kv} = \\frac{6.626\\times10^{-34}\\ \\text{kg m}^{2}\\text{/s}}{(9.109\\times10^{-31}\\ \\text{kg})(${fmt(v.v, 1)}\\times10^{6}\\ \\text{m/s})} = ${sciT(lam, 2)}\\ \\text{m}`);
@@ -248,7 +248,7 @@ const ANG = [() => 1, (c) => c, (c) => (3 * c * c - 1) / 2];
 (function () {
   const d = sim('sim-radial');
   const V = F.view3d(d.stage, { h: 520, dist: 7.9, tilt: 0.2, yaw: [-1.2, 1.2], pitch: [-0.9, 0.9] });
-  V.setView(0.55, 0.2);
+  V.setView(0.42, 0.2);
   const g = V.part(0), c2 = F.makeCanvas(d.stage, 300);
   const KEYS = ['1s', '2s', '3s', '2p', '3p', '3d'];
   const orb = F.choice(d.controls, { label: '\\text{orbital}', options: KEYS.map((k) => ({ value: k, label: k.replace(/([spd])$/, '<em>$1</em>') })), value: '3s', aria: 'the orbital drawn' });
@@ -276,7 +276,7 @@ const ANG = [() => 1, (c) => c, (c) => (3 * c * c - 1) / 2];
     const geo = new T3.BufferGeometry();
     geo.setAttribute('position', new T3.Float32BufferAttribute(pos, 3));
     geo.setAttribute('color', new T3.Float32BufferAttribute(new Array(pos.length).fill(0), 3));
-    const pts = new T3.Points(geo, new T3.PointsMaterial({ size: 0.05, vertexColors: true, transparent: true, opacity: 0.6, depthWrite: false }));
+    const pts = new T3.Points(geo, new T3.PointsMaterial({ size: 0.06, vertexColors: true, transparent: true, opacity: 0.75, depthWrite: false }));
     pts.renderOrder = 1; grp.add(pts);
     /* the cut face */
     const cv = document.createElement('canvas'); cv.width = cv.height = 360;
@@ -285,11 +285,11 @@ const ANG = [() => 1, (c) => c, (c) => (3 * c * c - 1) / 2];
     face.renderOrder = 2; grp.add(face);
     V.pickable(face, 'the cut through the nucleus');
     /* a ring at each radial node, the ruler under the face, and the nucleus */
-    const inks = [], dash = () => { const m = new T3.LineDashedMaterial({ dashSize: 0.07, gapSize: 0.05 }); inks.push(m); return m; };
+    const inks = [], dash = (len) => { const u = Math.min(0.06, len / 28); const m = new T3.LineDashedMaterial({ dashSize: u, gapSize: u * 0.8 }); inks.push(m); return m; };
     const solid = () => { const m = new T3.LineBasicMaterial(); inks.push(m); return m; };
     o.nodes.forEach((rn) => {
       const p = []; for (let i = 0; i <= 96; i++) { const a = (TAU * i) / 96; p.push(new T3.Vector3(rn * s * Math.cos(a), rn * s * Math.sin(a), 0.004)); }
-      const ring = new T3.Line(new T3.BufferGeometry().setFromPoints(p), dash()); ring.computeLineDistances(); ring.renderOrder = 3; grp.add(ring);
+      const ring = new T3.Line(new T3.BufferGeometry().setFromPoints(p), dash(TAU * rn * s)); ring.computeLineDistances(); ring.renderOrder = 3; grp.add(ring);
     });
     const YR = -W - 0.1, seg = (a, b) => { const l = new T3.Line(new T3.BufferGeometry().setFromPoints([new T3.Vector3(...a), new T3.Vector3(...b)]), solid()); l.renderOrder = 3; grp.add(l); };
     seg([0, YR, 0], [W, YR, 0]);
@@ -310,7 +310,8 @@ const ANG = [() => 1, (c) => c, (c) => (3 * c * c - 1) / 2];
     for (let j = 0; j < N; j++) for (let i = 0; i < N; i++) {
       const x = ((i + 0.5) / N * 2 - 1) * o.ext, z = (1 - (j + 0.5) / N * 2) * o.ext, w = psi(o, x, z), k = 4 * (j * N + i), px = w >= 0 ? pa : pb;
       img.data[k] = px[0]; img.data[k + 1] = px[1]; img.data[k + 2] = px[2];
-      img.data[k + 3] = Math.round(255 * Math.min(1, 0.9 * Math.pow((w * w) / ref, 0.38)));
+      const edge = Math.max(0, Math.min(1, (1 - Math.hypot(x, z) / o.ext) / 0.15));
+      img.data[k + 3] = Math.round(255 * edge * Math.min(1, 0.9 * Math.pow((w * w) / ref, 0.38)));
     }
     c.clearRect(0, 0, N, N); c.putImageData(img, 0, 0); sc.tx.needsUpdate = true;
     sc.inks.forEach((m) => m.color.set(PAL.ink)); sc.nuc.material.color.set(PAL.ink);
@@ -327,7 +328,7 @@ const ANG = [() => 1, (c) => c, (c) => (3 * c * c - 1) / 2];
       paint(sc); F.fade3(sc.grp, a); sc.labels.forEach((e) => { e.style.display = a > 0.5 ? '' : 'none'; });
     });
     V.invalidate();
-    const { ctx } = begin(c2), nodes = o.n - o.l - 1, ca = F.cat(0), cb = F.cat(1); { const cc = [0,1,2,3,4].map((i) => F.cat(i)).join(' '); if (window.__c !== cc) { window.__c = cc; console.error('CATS', cc); } }
+    const { ctx } = begin(c2), nodes = o.n - o.l - 1, ca = F.cat(0), cb = F.cat(1);
     const box = { l: 150, r: 1300, t: 62, b: 222 };
     const ax = axes(ctx, box, [0, 1500], [0, 1], { xl: 'distance from nucleus (pm)', xc: C('length'), yl: 'probability density', nx: 5, ny: 0 }), { X, Y } = ax;
     /* the area under the curve in the colour of the sign of ψ there */
@@ -374,7 +375,13 @@ const byV = {}; Object.entries(SHAPES).forEach(([l, list]) => list.forEach((q) =
 ===================================================================== */
 (function () {
   const d = sim('sim-orbital-shapes');
-  const V = F.view3d(d.stage, { spin: 'idle', h: 560, dist: 10.6, tilt: 0.28 });
+  const names = [];
+  /* an axis name is hidden while its end of the axis is seen against the orbital, so no name sits on a lobe */
+  function clear() {
+    const o = V.project([0, 0, 0], g), ppu = V.wrap.clientHeight / (2 * (10.6 / V.at.zoom) * Math.tan(Math.PI / 12));
+    names.forEach(({ e, p }) => { const q = V.project(p, g); e.style.visibility = Math.hypot(q[0] - o[0], q[1] - o[1]) < 1.08 * RMAX * ppu ? 'hidden' : ''; });
+  }
+  const V = F.view3d(d.stage, { spin: 'idle', h: 560, dist: 10.6, tilt: 0.28, onRender: () => { if (names.length) clear(); } });
   V.setView(-0.6, 0.28);
   const g = V.part(0);
   const optsOf = (l) => SHAPES[l].map((q) => ({ value: q.v, label: q.label }));
@@ -406,7 +413,7 @@ const byV = {}; Object.entries(SHAPES).forEach(([l, list]) => list.forEach((q) =
     const L = 2.45;
     [[[L, 0, 0], 'x'], [[0, 0, -L], 'y'], [[0, L, 0], 'z']].forEach(([p, name]) => {
       axesLines.push(F.mesh.polyline(g, [p.map((c) => -c * 0.92), p], PAL.muted));
-      V.label(`<em>${name}</em>`, p.map((c) => c * 1.07), g, 0, 'bare');
+      const tip = p.map((c) => c * 1.07); names.push({ e: V.label(`<em>${name}</em>`, tip, g, 0, 'bare'), p: tip });
     });
     nuc = F.mesh.sphere(g, [0, 0, 0], 0.045, PAL.ink); V.pickable(nuc, 'the nucleus');
   }

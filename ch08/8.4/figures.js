@@ -454,8 +454,8 @@ function seats(k, deg) { const s = []; for (let i = 0; i < k; i++) s.push([i % d
     D.mo.forEach((l, i) => { if (l.anti) ab += occ[i]; else b += occ[i]; const pairs = Math.max(0, occ[i] - l.deg); unp += occ[i] - 2 * pairs; });
     const conf = D.mo.map((l, i) => (occ[i] ? `(${l.tex})^{${occ[i]}}` : '')).join('');
     const bo = (b - ab) / 2, nm = nameOf(SPECIES[+pick.value]);
-    try { headline(ctx, `${nm} is $${conf}$: ` + (unp ? `${WORDS[unp] ?? unp} unpaired electron${unp > 1 ? 's' : ''}, so it is paramagnetic.` : 'every electron paired, so it is diamagnetic.')); } catch (e) { console.log('T: err', e.message, e.stack.slice(0, 300)); }
-    console.log("T:", `\\text{bond order in ${X}}_2${TSUP[q]}`, b, ab, bo);
+    try { headline(ctx, `${nm} is $${conf}$: ` + (unp ? `${WORDS[unp] ?? unp} unpaired electron${unp > 1 ? 's' : ''}, so it is paramagnetic.` : 'every electron paired, so it is diamagnetic.')); } catch (e) { console.error("T: err", e.message, e.stack.slice(0, 300)); }
+    console.error("T:", `\\text{bond order in ${X}}_2${TSUP[q]}`, b, ab, bo);
     tex(d.readout, `\\text{bond order in ${X}}_2${TSUP[q]} = \\frac{(${b} - ${ab})}{2} = ${fmt(bo, bo % 1 ? 1 : 0)}`);
     if (bo <= 0) { const s = el('small', null, 'With a bond order of zero, ' + nm + ' does not form.'); d.readout.appendChild(s); }
   }

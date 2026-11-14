@@ -178,8 +178,8 @@ function burst(ctx, x, y, R, k, color) {
    critical masses. Each fission releases 3 neutrons; the share escaping
    through the surface is (2/3)/r, the surface-to-volume ratio of a sphere
    scaled so that 1 of 3 goes on at the critical mass (a simple model; the
-   readout states it). Nuclei: 60 r² of them in the slice, the first of a
-   fixed list of points uniform in the disc. Generation 0 is the nucleus the
+   caption states it). Nuclei: 60 r² of them in the slice, spread evenly on a
+   sunflower. Generation 0 is the nucleus the
    first neutron strikes at 0.6 s; generation g splits at 0.6 + 0.7 g s.
    The number that go on is carried from 3 × (1 − share) by error
    diffusion, so the critical mass holds exactly one per generation; each
@@ -196,9 +196,7 @@ function burst(ctx, x, y, R, k, color) {
   const cy = cycle(() => T, 1.2);
   let hits = [];
   hover(d.stage, () => hits);
-  /* points uniform in the unit disc, and unit directions, both fixed */
-  const DISC = [];
-  for (let i = 0; DISC.length < 260; i++) { const p = [2 * hash(i, 1) - 1, 2 * hash(i, 2) - 1]; if (Math.hypot(p[0], p[1]) < 1) DISC.push(p); }
+  /* unit directions, fixed */
   const dirOf = (i, s) => { const a = 2 * Math.PI * hash(i, s); return [Math.cos(a), Math.sin(a)]; };
   const dist = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]);
   function model(m) {
@@ -206,7 +204,8 @@ function burst(ctx, x, y, R, k, color) {
     return { r, R: RC * r, k, e: r2(3 - k), n: Math.round(60 * r * r) };
   }
   function chain(M) {
-    const pts = DISC.slice(0, M.n).map((p) => [CX + p[0] * (M.R - 12), CY + p[1] * (M.R - 12)]);
+    /* evenly spread on a sunflower, a little jittered so the slice does not look ruled */
+    const pts = Array.from({ length: M.n }, (_, k) => { const rr = (M.R - 14) * Math.sqrt((k + 0.5) / M.n), a = k * GOLD; return [CX + rr * Math.cos(a) + 6 * (hash(k, 4) - 0.5), CY + rr * Math.sin(a) + 6 * (hash(k, 5) - 0.5)]; });
     const gen = new Array(M.n).fill(-1), flights = [], counts = [], avail = new Set(pts.map((p, i) => i));
     const e0 = [CX - M.R * 0.45, CY - M.R * 0.3], first = [...avail].sort((a, b) => dist(pts[a], e0) - dist(pts[b], e0))[0];
     gen[first] = 0; avail.delete(first);
@@ -271,7 +270,7 @@ function burst(ctx, x, y, R, k, color) {
       let x, y;
       if (f.hit) { const L = dist(f.a, f.b); if (w >= L) return; x = f.a[0] + (f.b[0] - f.a[0]) / L * w; y = f.a[1] + (f.b[1] - f.a[1]) / L * w; }
       else { x = f.a[0] + f.u[0] * w; y = f.a[1] + f.u[1] * w; if (Math.hypot(x - CX, y - CY) > M.R + 70) return; }
-      disc(ctx, x, y, 5, NE, alpha(PAL.ink, 0.5));
+      disc(ctx, x, y, 6, NE, alpha(PAL.ink, 0.5));
       hits.push({ x, y, r: 10, name: f.hit ? 'a neutron that goes on to split another nucleus' : 'a neutron escaping through the surface' });
     });
     F.legend(ctx, { l: 20, r: 660, t: H - 52, b: H - 8 }, [

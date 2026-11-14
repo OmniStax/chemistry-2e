@@ -276,7 +276,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     ctx.save(); ctx.globalAlpha *= k;
     if (yP >= TOP - 1 && yP <= BOT + 1) {
       panes.forEach(([[l, r]]) => line(ctx, l, yP, r, yP, alpha(C('pressure'), 0.75), 2.5, [10, 10]));
-      place(ctx, [[`${fmtP(P)} kPa`, C('pressure')]], M[1] - 6, yP, 17, [[0, -18, 'right'], [0, 18, 'right'], [-(M[1] - M[0]) * 0.3, -18, 'right'], [-(M[1] - M[0]) * 0.3, 18, 'right'], [-(M[1] - M[0]) * 0.6, 18, 'right']]);
+      place(ctx, [[`${fmtP(P)} kPa`, C('pressure')]], M[1] - 6, yP, 17, [0, 0.2, 0.35, 0.5, 0.65].flatMap((f) => [[-(M[1] - M[0]) * f, -18, 'right'], [-(M[1] - M[0]) * f, 18, 'right']]));
       hits.push({ x: (M[0] + M[1]) / 2, y: yP, r: 10, name: `constant pressure, ${fmtP(P)} kPa` });
       cr.forEach((c) => {
         /* a crossing is labelled once, in the close-up where it falls inside it */

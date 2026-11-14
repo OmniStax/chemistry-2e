@@ -13,7 +13,7 @@
   "Provide examples illustrating macroscopic, microscopic, and symbolic domains"
  ],
  "summary_html": "<p>Chemistry deals with the composition, structure, and properties of matter, and the ways by which various forms of matter may be interconverted. Thus, it occupies a central place in the study and practice of science and technology. Chemists use the scientific method to perform experiments, pose hypotheses, and formulate laws and develop theories, so that they can better understand the behavior of the natural world. To do so, they operate in the macroscopic, microscopic, and symbolic domains. Chemists measure, analyze, purify, and synthesize a wide variety of substances that are important to our lives.</p>",
- "notes": "Nothing of the section’s text is left out; the diagrams of Figures 1.3 and 1.4 are redrawn, and Figure 1.5 is drawn live in place of the book’s composite, with the book’s own images kept beside them.",
+ "notes": "Nothing of the section’s text is left out, and Figures 1.2 to 1.5 are the book’s own images.",
  "ai": {
   "text": [
    {
@@ -36,6 +36,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -51,88 +54,37 @@
   },
   {
    "id": "fig-chemweb",
-   "kind": "figure",
+   "kind": "photo",
    "number": "1.3",
-   "originals": [
-    "/media/ch01/CNX_Chem_01_01_ChemWeb.jpg"
-   ],
-   "original_caption": "Knowledge of chemistry is central to understanding a wide range of scientific disciplines. This diagram shows just some of the interrelationships between chemistry and other fields.",
    "draws": [],
    "ai": [
     {
-     "model": "claude-fable-5-1",
-     "effort": "low",
-     "part": "built"
-    },
-    {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    },
-    {
-     "model": "claude-opus-5-5",
-     "effort": "high",
-     "part": "caption: chemical physics no longer said to join physics"
+     "model": "claude-fable-5-2",
+     "part": "redraw removed; the book's image and caption restored"
     }
    ]
   },
   {
    "id": "fig-scimethod",
-   "kind": "figure",
+   "kind": "photo",
    "number": "1.4",
-   "originals": [
-    "/media/ch01/CNX_Chem_01_01_SciMethod.jpg"
-   ],
-   "original_caption": "The scientific method follows a process similar to the one shown in this diagram. All the key components are shown, in roughly the right order. Scientific progress is seldom neat and clean: It requires open inquiry and the reworking of questions and ideas in response to findings.",
    "draws": [],
    "ai": [
     {
-     "model": "claude-fable-5-1",
-     "effort": "low",
-     "part": "built"
-    },
-    {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    },
-    {
-     "model": "claude-opus-5-5",
-     "effort": "high",
-     "part": "loop arcs given visible arrowheads"
+     "model": "claude-fable-5-2",
+     "part": "redraw removed; the book's image and caption restored"
     }
    ]
   },
   {
    "id": "sim-water",
-   "kind": "sim",
+   "kind": "photo",
    "number": "1.5",
-   "originals": [
-    "/media/ch01/CNX_Chem_01_01_WaterDom.jpg"
-   ],
-   "original_caption": "(a) Humidity in the air, icebergs, and the ocean represent water in the macroscopic domain. (b) At the molecular level (microscopic domain), gas molecules are far apart and disorganized, solid water molecules are close together and organized, and liquid molecules are close together and disorganized. (c) The formula H₂O symbolizes water, and (g), (s), and (l) symbolize its phases. (credit a: modification of work by “Gorkaazk”/Wikimedia Commons)",
-   "draws": [
-    "temperature"
-   ],
-   "conventions": [
-    "O",
-    "H"
-   ],
+   "draws": [],
    "ai": [
     {
-     "model": "claude-fable-5-1",
-     "effort": "low",
-     "part": "built"
-    },
-    {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    },
-    {
-     "model": "claude-opus-5-5",
-     "effort": "high",
-     "part": "tick labels on a panel, repeated note dropped, caption trimmed"
+     "model": "claude-fable-5-2",
+     "part": "redraw removed; the book's image and caption restored"
     }
    ]
   }
@@ -259,13 +211,5 @@
   { "exercise": "q6", "concept": "hypothesis-law-theory", "weight": 1 },
   { "exercise": "q7", "concept": "domains-of-chemistry" }
  ],
- "referents": [
-  {
-   "id": "beaker",
-   "label": "the beaker of water",
-   "figures": [
-    "sim-water"
-   ]
-  }
- ]
+ "referents": []
 }

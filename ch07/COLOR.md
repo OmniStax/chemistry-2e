@@ -11,12 +11,12 @@ draw and which words its text marks, not a ceiling on the page.
 | Section | Categories its figures draw | Referents | Facts and conventions |
 |---|---|---|---|
 | Intro | none | none | the photograph |
-| 7.1 | none (`energy` and `amount` in the text) | none | `F.el` for the Na⁺ and Cl⁻ of the lattice and every ion chosen |
-| 7.2 | `energy` and `length` (Figure 7.4), `charge` and `dipole-moment` (Figure 7.5 + 7.8) | none | `F.el` for every atom; `F.cat` for the metals, metalloids and nonmetals of Figure 7.6 |
+| 7.1 | none (`energy` and `amount` in the text) | none | `F.el` for the Na⁺ and Cl⁻ of the lattice |
+| 7.2 | `energy` and `length` (Figure 7.4), `charge` and `dipole-moment` (Figure 7.5 + 7.8) | none | `F.el` for every atom |
 | 7.3 | none | none | Lewis symbols and structures in ink; `F.cat(0)` for the electrons each step places |
 | 7.4 | none | none | Lewis structures in ink; `F.cat(0)` for the chosen atom's electrons |
-| 7.5 | `energy`, `length` (the bond lengths of Table 7.3 and the R<sub>o</sub> of the lattice) | none | `F.cat` for the C–C, C–N and C–O series of the bond-length graph, which the text never names one by one |
-| 7.6 | `angle`, `length` (Figure 7.14), `dipole-moment`, `charge`, `time` (the regions Sim's trace) | the negative and the positive plate (Figure 7.28) | `F.el` for every atom; the generic E and X in the panel grey |
+| 7.5 | `energy`, `length` (the bond lengths of Table 7.3 and the R<sub>o</sub> of the lattice) | none | none |
+| 7.6 | `angle`, `dipole-moment`, `charge`, `time` (the regions Sim's trace) | the negative and the positive plate (Figure 7.28) | `F.el` for every atom; the generic E and X in the panel grey |
 
 ## Energy in 7.2 and 7.5
 
@@ -38,19 +38,17 @@ variables rows: ΔH as `\kdH`, ΔH° as `\kdHo`, the bond energy D as `\kDbond`
 
 ## Lengths, angles and dipole moments in 7.6
 
-- **Angle.** The arcs and the degrees written on them in Figures 7.14, 7.15,
-  7.16 + 7.19 + 7.20, 7.18 and 7.21, and the smallest angle the regions Sim
+- **Angle.** The arcs and the degrees written on them in Figures 7.16 + 7.19 +
+  7.20, 7.18, 7.23 and 7.25, and the smallest angle the regions Sim
   marks on its sphere and traces against time, wear the angle hue. The ideal
   angles the text quotes (109.5°, 120°, 180°) are marked where they name the
   angle of a molecule on the page.
-- **Length.** The bracket of the C=O bond distance in Figure 7.14 and its 1.21 Å.
 - **Dipole moment.** Every bond-moment arrow and the molecular dipole of the
-  bench of Figure 7.26 + 7.27, the arrows of the OCS and chloromethane sketches,
-  and the crossed arrow of Figure 7.5 + 7.8 in 7.2. μ is written `\kmu`; in
+  bench of Figure 7.26 + 7.27, and the crossed arrow of Figure 7.5 + 7.8 in 7.2. μ is written `\kmu`; in
   μ = Qr, Q is `\kQpart` (charge) and r is `\krbond` (length).
 - **Charge.** The partial charges δ+ and δ− are partial charges, which the
-  book's `COLOR.md` types as `charge`: the δ marks of Figure 7.5 + 7.8, of the
-  H₂S and NH₃ sketch and of the molecules of Figure 7.28 wear it, and so do the
+  book's `COLOR.md` types as `charge`: the δ marks of Figure 7.5 + 7.8 and of
+  the molecules of Figure 7.28 wear it, and so do the
   words that name the partial charge of a particular atom on the page. The
   δ written in the book's own maths (Table 7.1) has no variables row and stays
   ink.
@@ -83,8 +81,8 @@ uses for the electrons of one step is `F.cat(0)`.
 
 Every atom, ion and molecule with an identity takes its element colour through
 `F.el(symbol)` and never as a hex literal; a generic E or X takes the panel's
-grey with its letter, as the book's Figure 7.19 draws it. A bond is a line and
+grey and is named in the key. A bond is a line and
 a lone pair a cloud; a measured angle an arc and a distance a bracket; a bond
 moment an arrow whose length is its magnitude. A solid is lit, not coloured,
 and every colour is read from `PAL`, `C` and `F.el()` on each draw. A viewpoint
-is not a slider: a 3D scene is turned by dragging and by its buttons.
+is not a slider: a 3D scene is turned by dragging.

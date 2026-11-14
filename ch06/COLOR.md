@@ -11,11 +11,11 @@ draw and which words its text marks, not a ceiling on the page.
 | Section | Categories its figures draw | Referents | Facts and conventions |
 |---|---|---|---|
 | Intro | none | none | the photograph |
-| 6.1 | `wavelength`, `frequency`, `energy`, `temperature`, `velocity`, `length` (in the text) | the rope and its marked crest (6.2), the signal and the carrier (6.5), the string (6.7), the metal (6.11) | the colours of visible light through `F.fact`; the ejected electron through `F.el('e-')` |
+| 6.1 | `wavelength`, `frequency`, `energy`, `temperature`, `velocity`, `length` (in the text) | the rope and its marked crest (6.2), the string (6.7), the metal (6.11) | the colours of visible light through `F.fact`; the ejected electron through `F.el('e-')` |
 | 6.2 | `energy`, `wavelength`, `length`, `velocity` (the c of a readout) | none | the colours of visible light through `F.fact`; the electron through `F.el('e-')` |
 | 6.3 | `wavelength`, `mass`, `velocity`, `length`, `energy`, `momentum` (in the text) | the orbit (6.17); the source, the barrier and the screen (6.18) | the electron through `F.el('e-')`; `F.cat` for the two signs of a wavefunction |
-| 6.4 | `energy` | the s, p, d and f blocks (6.27 + 6.29) | `F.el` for every atom; `F.cat` for the blocks of the filling-order diagram (6.26), which the text never names one by one |
-| 6.5 | `energy`, `length` | none | `F.el` for every atom and ion |
+| 6.4 | `energy` | none | `F.cat` for the s, p, d and f blocks of Figure 6.27 |
+| 6.5 | `energy`, `length` | none | none |
 
 ## What stays in ink
 
@@ -37,23 +37,26 @@ own row under the key `n_quantum`, with no macro, and is never written with
 
 ## The colours of the spectrum are a fact
 
-The visible band on the spectrum, the wavelength strip beneath the Bohr
-ladder, the blackbody curves and the photons of the photoelectric effect are
-painted in the colours of visible light through `F.fact`: a line at 656 nm is
+The visible band on the spectrum, the lines of the transition series and the
+photon of the Bohr ladder, the blackbody curves and the photons of the
+photoelectric effect are painted in the colours of visible light through `F.fact`: a line at 656 nm is
 red because light of that wavelength is red. A line in the ultraviolet or the
 infrared falls outside the painted band and is drawn in the wavelength hue,
 which says that it has a wavelength and no colour. The spectrum's colours are
 on the band and the lines lying in it; the wavelength hue is on the axis, the
 ticks and the λ of the readout.
 
-## How the ladder and the strip are tied together (6.2)
+## How the ladder and the series are coloured (6.2)
 
-- **Energy is the ladder.** The rungs, the arrow between two of them, the
-  bracket of the jump and the Eₙ, ΔE and k of the readout wear the energy hue.
-- **Wavelength is the strip.** The axis beneath, its ticks and numbers, and
-  the λ of the readout wear the wavelength hue.
-- **The readout colours them.** λ = hc ÷ |ΔE| is written with ΔE in the energy
-  hue, λ in the wavelength hue, c in the velocity hue and h in ink.
+- **Energy is the ladder.** The rungs and their energies, the energy axis, the
+  arrow between two rungs, the energy of the photon and the Eₙ, ΔE and k of the
+  readout wear the energy hue.
+- **Wavelength is the series.** The transition-series Sim, a figure of its
+  own, draws the lines on a wavelength axis: the axis, its ticks and numbers,
+  the series limits and the λ of the readout wear the wavelength hue, and so
+  does the wavelength written beside the ladder's photon.
+- **The ladder's readout colours them.** λ = hc ÷ |ΔE| is written with ΔE in
+  the energy hue, λ in the wavelength hue, c in the velocity hue and h in ink.
 - **The electron is a particle with an identity** and takes `F.el('e-')`; it
   is the thing whose energy the rung states, not the energy itself. The
   nucleus of a one-electron atom or ion is drawn in ink with its charge
@@ -63,17 +66,14 @@ ticks and the λ of the readout.
 
 ## Referents
 
-- **6.1.** The rope and the marked crest of the travelling wave, the signal
-  and the carrier of AM and FM (one curve each), the vibrating string of
-  Figure 6.7, and the metal slab of the photoelectric effect. The waves drawn
+- **6.1.** The rope and the marked crest of the travelling wave, the vibrating
+  string of Figure 6.7, and the metal slab of the photoelectric effect. The waves drawn
   on them keep their category hues: the wavelength bracket on the rope, the
   half-wavelength bracket under the string.
 - **6.3.** The orbit the electron wave runs around, drawn dashed and again
   unrolled; the electron wave on it keeps the wavelength hue. The source, the
   barrier with its two slits, and the screen of the double-slit Sim, the
   screen in both its edge-on and face-on views.
-- **6.4.** The four blocks of the periodic table in the folded Figure 6.27 +
-  6.29, which the caption and the list of element classes name one by one.
 
 Particles keep their element colours whatever the text calls them: an atom,
 an ion, an electron or a proton is never a referent.

@@ -102,11 +102,13 @@ function cluster(ctx, atoms, x, y, a = 0, k = 1) {
     line(ctx, b.x - b.half + 2, b.lv, b.x + b.half - 2, b.lv, alpha(PAL.ink, 0.45), 1.5);
   }
   function glass(ctx, b, color) { ctx.save(); ctx.strokeStyle = color; ctx.lineWidth = 3; ctx.lineJoin = 'round'; ctx.lineCap = 'round'; beakerPath(ctx, b); ctx.stroke(); ctx.restore(); }
-  /* the grid places of a beaker in a shuffled order, each nudged a little off its centre */
-  function places(b, seed) {
-    const r = rng(seed), w = 2 * b.half - 44, all = [];
-    b.rows.forEach((y, j) => { for (let i = 0; i < b.cols; i++) all.push([b.x - w / 2 + (w * (i + 0.5)) / b.cols + (r() - 0.5) * 8, y + (r() - 0.5) * 8 + (j % 2 ? 3 : -3)]); });
-    return shuffled(all, r);
+  /* the grid places of a beaker, each nudged a little off its centre, dealt as on a chessboard: cations take one colour of square
+     and anions the other, so no two ions of one sign stand side by side and the large anions never touch */
+  function places(b, seed, ions) {
+    const r = rng(seed), w = 2 * b.half - 44, sq = [[], []];
+    b.rows.forEach((y, j) => { for (let i = 0; i < b.cols; i++) sq[(i + j) % 2].push([b.x - w / 2 + (w * (i + 0.5)) / b.cols + (r() - 0.5) * 6, y + (r() - 0.5) * 8]); });
+    const pos = shuffled(sq[0], r), neg = shuffled(sq[1], r);
+    return ions.map((p) => (p.s > 0 ? pos : neg).pop());
   }
   /* the ions of one salt: CHARGE / q of each, cations and anions taken turn about */
   function ionsOf(s) {
@@ -135,7 +137,7 @@ function cluster(ctx, atoms, x, y, a = 0, k = 1) {
     /* liquids, then what is in them, then the glass */
     liquid(ctx, BK.a); liquid(ctx, BK.b); liquid(ctx, BK.mix);
     [[SA, BK.a, ia, 'first-solution', sa], [SB, BK.b, ib, 'second-solution', sb]].forEach(([S, b, idx, who, s], n) => {
-      const pl = places(b, 31 + idx * 7 + n);
+      const pl = places(b, 31 + idx * 7 + n, S.list);
       S.list.forEach((p, i) => drawIon(ctx, p, pl[i][0], pl[i][1]));
       const rc = F.ref(who);
       glass(ctx, b, rc);
@@ -146,7 +148,7 @@ function cluster(ctx, atoms, x, y, a = 0, k = 1) {
     arrow(ctx, 366, 150, 446, 196, PAL.ink, 4);
     arrow(ctx, 366, 440, 446, 394, PAL.ink, 4);
     /* the mixture: every ion of both solutions; the ions of an insoluble pairing packed on the bottom, the rest spread through the liquid */
-    const M = BK.mix, all = SA.list.concat(SB.list), pl = places(M, 97 + ia * 13 + ib);
+    const M = BK.mix, all = SA.list.concat(SB.list), pl = places(M, 97 + ia * 13 + ib, all);
     const inSolid = (p) => solids.some((q) => (p.s > 0 ? q.c === p.key : q.a === p.key));
     const packed = new Map();
     let heap = null;

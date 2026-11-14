@@ -118,7 +118,7 @@ const plural = (n, one, many) => n + ' ' + (n === 1 ? one : many);
   /* the box as 5 by 4 places, tiled by ten pairs of neighbouring places: a reacting H2 and Cl2 start side by side */
   const DOM = [[[0, 0], [0, 1]], [[1, 0], [2, 0]], [[1, 1], [2, 1]], [[3, 0], [4, 0]], [[3, 1], [3, 2]], [[4, 1], [4, 2]], [[0, 2], [1, 2]], [[0, 3], [1, 3]], [[2, 2], [2, 3]], [[3, 3], [4, 3]]];
   const ORDER = [2, 6, 4, 9, 0, 3, 8, 5, 7, 1];
-  const place = ([col, row]) => { const k = col + 5 * row; return { x: CW * (col + 0.5) + 11 * Math.sin(k * 12.9898 + 1), y: CH * (row + 0.5) + 6 * Math.sin(k * 78.233 + 2), th: 0.85 * Math.sin(k * 37.7 + 0.5), ph: TAU * ((k * 0.618034) % 1) }; };
+  const place = ([col, row]) => { const k = col + 5 * row; return { x: CW * (col + 0.5) + 8 * Math.sin(k * 12.9898 + 1), y: CH * (row + 0.5) + 6 * Math.sin(k * 78.233 + 2), th: 0.85 * Math.sin(k * 37.7 + 0.5), ph: TAU * ((k * 0.618034) % 1) }; };
   /* the molecules provided: pairs fill the tiling from the front, the reactant in excess from the back, one to a pair of places first */
   function mixture(h, c) {
     const used = Math.min(h, c), extra = Math.abs(h - c), kind = h > c ? 'H2' : 'Cl2', free = 10 - used;

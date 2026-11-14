@@ -171,10 +171,11 @@ const sciTxt = (x, sf) => { const p = parts(x, sf); return p.e ? `${p.m} × 10${
     const { ctx } = begin(d.c);
     const e = EX[ex.value], a = SP[e.A], b = SP[e.B], g = give.value, w = want.value;
     const na = toMol(g, S[g].v), nb = (na * e.cB) / e.cA;
-    /* the given value keeps the digits its slider shows; the answer takes as many, the steps between one more */
-    const [, , , dec] = e.R[g], sf = Math.min(4, Math.max(2, S[g].v.toFixed(dec).replace(/^[0.]+/, '').replace('.', '').length));
+    /* the given value is written as its slider shows it; the answer takes as many digits (two or three), the steps between one more */
+    const [, , , dec] = e.R[g], shownAs = S[g].v.toFixed(dec), digits = shownAs.replace(/^[0.]+/, '').replace('.', '').length, sf = Math.min(3, Math.max(2, digits));
+    const given = { txt: g === 'N' ? sciTxt(na * NA, Math.max(2, digits)) : shownAs, tex: g === 'N' ? sciTex(na * NA, Math.max(2, digits)) : shownAs };
     const val = { mA: na * MMof(e.A), nA: na, NA: na * NA, mB: nb * MMof(e.B), nB: nb, NB: nb * NA };
-    const sfOf = (key) => (key === g + 'A' || key === w + 'B' ? sf : sf + 1);
+    const sfOf = (key) => (key === w + 'B' ? sf : sf + 1);
     const unit = { m: ' g', n: ' mol', N: '' };
     /* the route as a list of box keys, and the edges it runs along */
     const path = [g + 'A', ...(g === 'n' ? [] : ['nA']), 'nB', ...(w === 'n' ? [] : [w + 'B'])];
@@ -202,20 +203,20 @@ const sciTxt = (x, sf) => { const p = parts(x, sf); return p.e ? `${p.m} × 10${
     Object.keys(P).forEach((key) => {
       const kind = key.startsWith('v') ? 'v' : key[0], lit = on.has(key);
       const at = path.indexOf(key), shown = lit && k * steps >= at - 0.02;
-      box(ctx, P[key][0], P[key][1], kind, nm[key], shown ? sciTxt(val[key], sfOf(key)) + unit[kind] : '', lit ? 1 : 0);
+      box(ctx, P[key][0], P[key][1], kind, nm[key], shown ? (key === g + 'A' ? given.txt : sciTxt(val[key], sfOf(key))) + unit[kind] : '', lit ? 1 : 0);
     });
     F.rich(ctx, [['substance A', F.ref('substance-a')], ', given: ' + a.txt], 300, 60, { size: 24, align: 'center' });
     F.rich(ctx, [['substance B', F.ref('substance-b')], ', sought: ' + b.txt], 1100, 60, { size: 24, align: 'center' });
     /* the chain of factors with the live numbers, one line: a brace keeps it whole and the readout sets it to fit */
-    const q = (key, kind, sp) => (kind === 'N' ? `${sciTex(val[key], sf)}\\ ${sp.tex}\\ \\text{${sp.unit}}`
-      : hue(kind === 'm' ? 'mass' : 'amount', `${sciTex(val[key], sf)}\\ ${kind === 'm' ? '\\text{g}' : '\\text{mol}'}`) + `\\ ${sp.tex}`);
+    const q = (num, kind, sp) => (kind === 'N' ? `${num}\\ ${sp.tex}\\ \\text{${sp.unit}}`
+      : hue(kind === 'm' ? 'mass' : 'amount', `${num}\\ ${kind === 'm' ? '\\text{g}' : '\\text{mol}'}`) + `\\ ${sp.tex}`);
     const f = [];
     if (g === 'm') f.push(`\\frac{1\\ \\text{mol}\\ ${a.tex}}{${a.MM}\\ \\text{g}\\ ${a.tex}}`);
     if (g === 'N') f.push(`\\frac{1\\ \\text{mol}\\ ${a.tex}}{6.022\\times 10^{23}\\ ${a.tex}\\ \\text{${a.unit}}}`);
     f.push(`\\frac{${e.cB}\\ \\text{mol}\\ ${b.tex}}{${e.cA}\\ \\text{mol}\\ ${a.tex}}`);
     if (w === 'm') f.push(`\\frac{${b.MM}\\ \\text{g}\\ ${b.tex}}{1\\ \\text{mol}\\ ${b.tex}}`);
     if (w === 'N') f.push(`\\frac{6.022\\times 10^{23}\\ ${b.tex}\\ \\text{${b.unit}}}{1\\ \\text{mol}\\ ${b.tex}}`);
-    tex(d.readout, `{${q(g + 'A', g, a)} \\times ${f.join(' \\times ')} = ${q(w + 'B', w, b)}}`);
+    tex(d.readout, `{${q(given.tex, g, a)} \\times ${f.join(' \\times ')} = ${q(sciTex(val[w + 'B'], sf), w, b)}}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

@@ -442,7 +442,7 @@ const byV = {}; Object.entries(SHAPES).forEach(([l, list]) => list.forEach((q) =
     const L = 2.45;
     [[[L, 0, 0], 'x'], [[0, 0, -L], 'y'], [[0, L, 0], 'z']].forEach(([p, name]) => {
       axesLines.push(F.mesh.polyline(g, [p.map((c) => -c * 0.92), p], PAL.muted));
-      const tip = p.map((c) => c * 1.07); names.push({ e: V.label(`<em>${name}</em>`, tip, g, 0, 'bare'), p: tip });
+      const tip = p.map((c) => c * 1.12); names.push({ e: V.label(`<em>${name}</em>`, tip, g, 0, 'bare'), p: tip });
     });
     nuc = F.mesh.sphere(g, [0, 0, 0], 0.045, PAL.ink); V.pickable(nuc, 'the nucleus');
   }

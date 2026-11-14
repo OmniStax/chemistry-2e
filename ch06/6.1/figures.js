@@ -24,7 +24,8 @@ function sciT(x, d = 2) {
 /* a wavelength in metres in the unit its region is usually given in */
 function lenU(m) {
   if (m >= 1) return fmt(m, m < 10 ? 2 : m < 100 ? 1 : 0) + ' m';
-  if (m >= 1e-2) return fmt(m * 100, m < 0.1 ? 2 : 1) + ' cm';
+  if (m >= 0.1) return fmt(m, 3) + ' m';
+  if (m >= 1e-2) return fmt(m * 100, 2) + ' cm';
   if (m >= 1e-3) return fmt(m * 1000, 2) + ' mm';
   if (m >= 1e-6) return fmt(m * 1e6, m < 1e-5 ? 2 : 1) + ' μm';
   if (m >= 1e-9) return fmt(m * 1e9, m < 1e-8 ? 2 : 0) + ' nm';
@@ -146,13 +147,16 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
     { name: 'visible', a: V0, b: V1 }, { name: 'infrared', a: V1, b: -4.6 }, { name: 'terahertz', a: -4.6, b: -3 },
     { name: 'microwave', a: -3, b: -0.3 }, { name: 'broadcast and wireless radio', short: 'radio', a: -0.3, b: HI + PAD },
   ];
-  const LG = ctl(d.controls, { label: '\\klam', cls: 'wavelength', min: LO, max: HI, step: 0.01, value: Math.log10(589e-9), unit: '', fmt: (lg) => lenU(Math.pow(10, lg)), aria: 'wavelength',
-    detents: [{ v: Math.log10(589e-9), label: '589 nm' }, { v: Math.log10(CL / 850e6), label: '850 MHz' }] });
+  /* the two wavelengths of Example 6.1 and its Check Your Learning; the slider's step lands beside them, so a value within half a step is read as the detent itself */
+  const DET = [Math.log10(589e-9), Math.log10(CL / 850e6)];
+  const exact = (lg) => DET.find((v) => Math.abs(v - lg) < 0.006) ?? lg;
+  const LG = ctl(d.controls, { label: '\\klam', cls: 'wavelength', min: LO, max: HI, step: 0.01, value: DET[0], unit: '', fmt: (lg) => lenU(Math.pow(10, exact(lg))), aria: 'wavelength',
+    detents: [{ v: DET[0], label: '589 nm' }, { v: DET[1], label: '850 MHz' }] });
   const WY = 86, SY = 166, SH = 56;                /* the wave and the strip of regions */
   const AX = [262, 352, 442];                      /* the wavelength, frequency and energy scales */
   function draw() {
     const { ctx } = begin(d.c);
-    const lg = LG.v, lam = Math.pow(10, lg), nu = CL / lam, E = HP * nu, nm = lam * 1e9;
+    const lg = exact(LG.v), lam = Math.pow(10, lg), nu = CL / lam, E = HP * nu, nm = lam * 1e9;
     const cw = C('wavelength'), cf = C('frequency'), ce = C('energy'), x = X(lg);
     /* the wave above the strip: short at the gamma end, long at the radio end */
     ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.5); ctx.lineWidth = 2.5; ctx.beginPath();
@@ -380,7 +384,7 @@ const DARK = '#000000';
     hits.push({ x: (MT.l + MT.r) / 2, y: MT.y + MT.h / 2, r: 30, name: 'the metal, whose electrons are held by 3.21 × 10⁻¹⁹ J' });
     /* photons: wave trains of their own wavelength arriving at 45°; electrons leaving at 45° */
     const n = BR.v * LOOP, pw = 16 + nm / 14, bl = 2.5 * pw, SP = 300 * (v / 6.2e5);
-    ctx.save(); ctx.beginPath(); ctx.rect(20, 100, 940, MT.y - 100); ctx.clip();
+    ctx.save(); ctx.beginPath(); ctx.rect(20, 100, 890, MT.y - 100); ctx.clip();
     for (let i = 0; i < n; i++) {
       const t0 = (i / n) * LOOP, age = (((t - t0) % LOOP) + LOOP) % LOOP;
       const hx = 340 + hash(i + 1) * 300, hy = MT.y;

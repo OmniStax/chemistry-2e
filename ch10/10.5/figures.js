@@ -62,12 +62,12 @@ function ball(ctx, x, y, r, fill, stroke = alpha(PAL.ink, 0.5), w = 1.4) {
   const R = rng(1038);
   const gl = nodes.map((p) => p.slice()), glassLinks = crystalLinks.map((l) => l.slice());
   {
-    const N0 = nbrs(crystalLinks), used = new Set(), cand = crystalLinks.map((_, k) => k).sort(() => R() - 0.5);
+    const used = new Set(), cand = crystalLinks.map((_, k) => k).sort(() => R() - 0.5);
     let done = 0;
     for (const k of cand) {
-      if (done >= 16) break;
-      const [a, b] = glassLinks[k], ring = [a, b, ...N0[a], ...N0[b]];
-      if (N0[a].length < 3 || N0[b].length < 3 || ring.some((n) => used.has(n) || N0[n].length < 3)) continue;
+      if (done >= 12) break;
+      const N0 = nbrs(glassLinks), [a, b] = glassLinks[k], ring = [a, b, ...N0[a], ...N0[b]];
+      if (N0[a].length < 3 || N0[b].length < 3 || ring.some((n) => used.has(n))) continue;
       const na = N0[a].filter((n) => n !== b), nb = N0[b].filter((n) => n !== a);
       const m = [(gl[a][0] + gl[b][0]) / 2, (gl[a][1] + gl[b][1]) / 2];
       const turn = (p) => [m[0] - (p[1] - m[1]), m[1] + (p[0] - m[0])];
@@ -75,10 +75,11 @@ function ball(ctx, x, y, r, fill, stroke = alpha(PAL.ink, 0.5), w = 1.4) {
       /* a keeps one of its own neighbours and takes the one of b's on its side, and b the same */
       const near = (p, q) => Math.hypot(p[0] - gl[q][0], p[1] - gl[q][1]);
       const ka = near(A, na[0]) < near(A, na[1]) ? 0 : 1, kb = near(A, nb[0]) < near(A, nb[1]) ? 0 : 1;
+      if (na.concat(nb).some((n) => N0[n].length < 2)) continue;
       const swap = (x, from, to) => { const l = glassLinks.find(([p, q]) => (p === x && q === from) || (q === x && p === from)); l[l[0] === x ? 1 : 0] = to; };
       swap(na[1 - ka], a, b); swap(nb[kb], b, a);
       gl[a] = A; gl[b] = B;
-      ring.forEach((n) => used.add(n)); done++;
+      used.add(a); used.add(b); done++;
     }
     gl.forEach((p) => { p[0] += (R() - 0.5) * 0.3 * L; p[1] += (R() - 0.5) * 0.3 * L; });
     const N1 = nbrs(glassLinks), edge = nodes.map((p, i) => N1[i].length < 3);

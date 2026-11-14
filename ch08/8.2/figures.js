@@ -49,10 +49,10 @@ const WORDS = { 2: 'Two', 3: 'Three', 4: 'Four', 5: 'Five', 6: 'Six' };
 
 /* ---------- orbitals drawn from their wave functions ----------
    An orbital a·s + b·p (a² + |b|² = 1) has the angular part f(θ) = a + √3|b| cos θ about the direction
-   of b. Its surface is drawn at r = L (|f|/2)^2.6: an s orbital is a sphere, a p orbital two lobes pinched
+   of b. Its surface is drawn at r = L (|f|/2)^2.2: an s orbital is a sphere, a p orbital two lobes pinched
    at the nucleus, a hybrid one large lobe with a small one behind, in the book's proportions. Every
    state of a mixing is drawn by the same rule, so a morph passes only through real combinations. */
-const NT = 60, NP = 40, Q = 2.6;
+const NT = 60, NP = 40, Q = 2.2;
 let INDEX = null;
 function orbital(v, g, at, a, b, L, color, name, { opacity = 1 } = {}) {
   const T = window.THREE; if (!T || L < 1e-3 || opacity < 0.01) return null;
@@ -230,7 +230,7 @@ const headline = (cv, s) => { const { ctx } = begin(cv); topline(ctx, s); };
    morph. Figure 8.12's BH₃ adds a hydrogen atom to each sp² hybrid.
 ===================================================================== */
 function bench(id, n, o) {
-  const { d, S, v, top, key } = frame(id, { h: 520, dist: 9.4, tilt: 0.3, yaw: -0.42 });
+  const { d, S, v, top, key } = frame(id, { h: 520, dist: 9.4, tilt: o.tilt ?? 0.3, yaw: o.yaw ?? -0.42 });
   const L = 1.05, AX = 1.4, GAP = 3.05;
   const parts = [0, 1, 2, 3].map(() => v.part(0));
   const states = [{ value: 'atomic', label: 'atomic orbitals' }, { value: 'hybrid', label: 'hybrid orbitals' }, { value: 'set', label: 'the set' }].concat(o.bh3 ? [{ value: 'bh3', label: 'BH<sub>3</sub>' }] : []);
@@ -252,7 +252,7 @@ function bench(id, n, o) {
     const tag = [JSON.stringify(s), now, at, palSig()].join('|');
     if (tag !== sig) {
       sig = tag; S.clear();
-      const grow = 1 + 0.45 * s.close;
+      const grow = 1 + 0.7 * s.close;
       parts.forEach((g, i) => {
         g.position.x = (i - 1.5) * GAP * (1 - s.close); g.scale.setScalar(grow);
         const q = orbs[i], a = q.atomic[0] + (q.mixed[0] - q.atomic[0]) * s.mix, b = V.lerp(q.atomic[1], q.mixed[1], s.mix);
@@ -261,14 +261,13 @@ function bench(id, n, o) {
         const op = q.mixes ? 1 : 1 - 0.65 * s.mix;
         const nm = q.mixes && s.mix > 0.5 ? `an ${HYB_U[n]} hybrid orbital` : i === 0 ? 'the valence s orbital' : `a valence p orbital, ${['pₓ', 'p_y', 'p_z'][i - 1]}${q.mixes ? '' : ', unhybridized'}`;
         orbital(v, g, [0, 0, 0], a, b, L, col, nm, { opacity: op });
-        if (i === 0 || s.close < 0.98) { axes3(S, g, AX, i === 0 ? L : 0); nucleus(S, g, [0, 0, 0], 'the nucleus'); }
+        if (i === 0 || s.close < 0.98) { axes3(S, g, AX, i === 0 && s.close < 0.02 ? L : 0); nucleus(S, g, [0, 0, 0], 'the nucleus'); }
         if (at && now !== 'set' && now !== 'bh3') S.under(q.mixes && now === 'hybrid' ? HYB[n] : q.name + (q.mixes || now === 'atomic' ? '' : ' (unhybridized)'), g);
       });
       const g0 = parts[0];
       if (s.H > 0.01) hy.slice(0, n).forEach((u) => hydrogen(S, g0, V.mul(u, L * 1.05), 0.36, s.H));
       if (at && (now === 'set' || now === 'bh3')) {
-        o.arcs.forEach(([i, j, t]) => angle3(S, g0, hy[i], hy[j], L * (s.H ? 1.55 : 1.2), t, { perp: chem([0, 0, 1]) }));
-        if (now === 'set' && n < 4) S.out(P_NAME[2] + ' (unhybridized)', V.mul(chem([0, 0, 1]), L * 0.9), g0, { gap: 4 });
+        o.arcs.forEach(([i, j, t]) => angle3(S, g0, hy[i], hy[j], L * (s.H ? 1.75 : 1.3), t, { perp: chem([0, 0, 1]) }));
       }
       v.invalidate();
     }
@@ -284,6 +283,7 @@ bench('sim-sp', 2, {
   head: { atomic: 'The s orbital and one p orbital mix; the other two p orbitals do not.', hybrid: 'Two sp hybrids, each with one large lobe and one small one.', set: 'The two sp hybrids point 180° apart along x.' },
 });
 bench('sim-sp2', 3, {
+  tilt: 0.6, yaw: -0.3,
   dirs: [[1, 0, 0], [Math.cos(120 * RAD), Math.sin(120 * RAD), 0], [Math.cos(240 * RAD), Math.sin(240 * RAD), 0]], arcs: [[0, 1, '120°']],
   eq: '1\\ s + 3\\ p \\;\\longrightarrow\\; 3\\ sp^2 + 1\\ p',
   bh3: '3\\ sp^2\\ (\\text{B}) + 3\\ 1s\\ (\\text{H}) \\;\\longrightarrow\\; 3\\ \\sigma\\ \\text{bonds}',

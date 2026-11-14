@@ -223,7 +223,7 @@ const HAL = [
   const pulse = (u) => 0.62 * Math.sin(2.1 * u) + 0.38 * Math.sin(3.4 * u + 1.2);
   /* one molecule, two atoms ra in radius whose centres stand 1.24 ra apart; s, −1 to 1, is how far its electrons have shifted to the right */
   function molecule(ctx, cx, cy, ra, s, h) {
-    const dx = 0.62 * ra, x0 = cx - dx - ra, x1 = cx + dx + ra, k = Math.min(1, Math.abs(s));
+    const dx = 0.62 * ra, x0 = cx - dx - ra, x1 = cx + dx + ra, k = Math.min(1, 1.4 * Math.abs(s));
     const shape = () => { ctx.beginPath(); ctx.arc(cx - dx, cy, ra, 0, TAU); ctx.moveTo(cx + dx + ra, cy); ctx.arc(cx + dx, cy, ra, 0, TAU); };
     const plus = F.mixColor(PAL.soft, F.cat(0), k), minus = F.mixColor(PAL.soft, F.cat(1), k);
     ctx.save(); shape(); ctx.clip();
@@ -246,13 +246,13 @@ const HAL = [
     const { ctx } = begin(d.c); hits.length = 0;
     /* one scale for every halogen: 0.85 canvas units per picometre of atomic radius */
     const h = hal(), ra = h.r * 0.85, amp = 0.35 + 0.65 * (h.r - 72) / (150 - 72);
-    const s1 = amp * pulse(t), s2 = 0.85 * amp * pulse(t - 0.18), gap = 130;
+    const s1 = amp * pulse(t), s2 = 0.85 * amp * pulse(t - 0.05), gap = 130;   /* the induced dipole follows the first almost at once, a little weaker */
     const w = 3.24 * ra, cxA = 700 - gap / 2 - w / 2, cxB = 700 + gap / 2 + w / 2, cy = 250;
     const A = molecule(ctx, cxA, cy, ra, s1, h), B = molecule(ctx, cxB, cy, ra, s2, h);
     const k = Math.min(1, Math.abs(s1 * s2) / (0.25 * amp * amp + 0.02));
     F.faded(ctx, 0.15 + 0.85 * k, [0, 0], () => { line(ctx, A.x1 + 18, cy, B.x0 - 18, cy, PAL.ink, 8, [1, 18]); });
     label(ctx, 'attractive force', (A.x1 + B.x0) / 2, cy - 12, { side: 'above', leader: true, size: 20, gap: Math.max(70, ra + 10) });
-    label(ctx, 'unequal distribution of electrons', cxA, cy - ra - 4, { side: 'above', leader: true, size: 20, gap: 30 });
+    label(ctx, 'unequal distribution of electrons', cxA - 0.62 * ra, cy - ra + 6, { side: 'above', leader: true, size: 20, gap: 56 });
     const yb = cy + ra + 34;
     hbracket(ctx, A.x0, A.x1, yb, PAL.ink); hbracket(ctx, B.x0, B.x1, yb, PAL.ink);
     text(ctx, 'temporary dipoles', 700, yb + 34, PAL.ink, { size: 20, align: 'center', weight: 600 });
@@ -276,7 +276,7 @@ const HAL = [
    17, Example 10.1's graph for group 14.
 ===================================================================== */
 (function () {
-  const d = sim('sim-hydrides', 600);
+  const d = sim('sim-hydrides', 740);
   /* boiling points, °C, periods 2 to 5; pred is the text's prediction for period 2 (none for the carbon family) */
   const FAM = [
     { id: 'group-17', name: 'group 17', f: ['HF', 'HCl', 'HBr', 'HI'], bp: [20, -85, -67, -35], pred: -110 },
@@ -284,20 +284,20 @@ const HAL = [
     { id: 'group-15', name: 'group 15', f: ['NH₃', 'PH₃', 'AsH₃', 'SbH₃'], bp: [-33, -88, -62, -17], pred: -120 },
     { id: 'group-14', name: 'group 14', f: ['CH₄', 'SiH₄', 'GeH₄', 'SnH₄'], bp: [-160, -120, -90, -52], pred: null },
   ];
-  /* where each label of periods 3 to 5 stands from its point [dx, dy, align], set apart from its neighbours as the book sets them */
+  /* where each label of periods 3 to 5 stands from its point [dx, dy, align], as the book sets them; the carbon family, which the
+     book's graph does not carry, is named on CH₄ alone and by hover elsewhere, since its labels would crowd those of the others */
   const AT = {
-    HCl: [0, -24, 'center'], HBr: [6, 24, 'center'], HI: [16, 0, 'left'],
-    'H₂S': [0, -24, 'center'], 'H₂Se': [0, -24, 'center'], 'H₂Te': [16, -16, 'left'],
-    'PH₃': [10, 24, 'left'], 'AsH₃': [-14, -18, 'right'], 'SbH₃': [16, 0, 'left'],
-    'SiH₄': [14, 18, 'left'], 'GeH₄': [14, 18, 'left'], 'SnH₄': [16, 0, 'left'],
+    HCl: [14, -20, 'left'], HBr: [-12, 18, 'right'], HI: [16, 0, 'left'],
+    'H₂S': [14, -20, 'left'], 'H₂Se': [0, -24, 'center'], 'H₂Te': [16, -18, 'left'],
+    'PH₃': [12, 22, 'left'], 'AsH₃': [-16, -12, 'right'], 'SbH₃': [16, 0, 'left'],
   };
   const M = F.choice(d.controls, { label: '\\text{period 2}', options: [{ value: 'trend', label: 'predicted from the trend' }, { value: 'measured', label: 'measured' }], value: 'trend', aria: 'predicted or measured boiling points of the period 2 hydrides' });
   const hits = []; F.hover(d.stage, () => hits);
   function draw() {
     const { ctx } = begin(d.c); hits.length = 0;
-    const ct = C('temperature'), box = { l: 200, r: 1240, t: 110, b: 530 };
-    /* fixed axes: periods 1.5 to 5.5 with the ticks at 2 to 5, −200 °C to 150 °C by 50 */
-    const g = axes(ctx, box, [1.5, 5.5], [-200, 150], { xl: 'period', yl: 'boiling point (°C)', yc: ct, nx: 4, ny: 7, fx: (v) => (Number.isInteger(v) ? String(v) : '') });
+    const ct = C('temperature'), box = { l: 200, r: 1240, t: 120, b: 680 };
+    /* fixed axes: periods 1 to 6 with the ticks named at 2 to 5, −200 °C to 150 °C by 50 */
+    const g = axes(ctx, box, [1, 6], [-200, 150], { xl: 'period', yl: 'boiling point (°C)', yc: ct, nx: 5, ny: 7, fx: (v) => (v >= 2 && v <= 5 ? String(v) : '') });
     const p2 = M.mix((v) => FAM.map((fm) => (v === 'trend' && fm.pred !== null ? fm.pred : fm.bp[0])));
     const meas = M.value === 'measured';
     FAM.forEach((fm, i) => {
@@ -308,7 +308,7 @@ const HAL = [
         const hollow = j === 0 && guess;
         dot(ctx, g.X(j + 2), g.Y(y), col, !hollow, 10);
         hits.push({ x: g.X(j + 2), y: g.Y(y), r: 14, name: fm.f[j] + (hollow ? ', predicted about ' : ', boils at ') + neg(j === 0 && fm.pred !== null ? (meas ? fm.bp[0] : fm.pred) : y) + ' °C' });
-        if (j > 0) { const [dx, dy, al] = AT[fm.f[j]]; text(ctx, fm.f[j], g.X(j + 2) + dx, g.Y(y) + dy, col, { size: 18, weight: 600, align: al, bg: PAL.panel }); }
+        if (j > 0 && AT[fm.f[j]]) { const [dx, dy, al] = AT[fm.f[j]]; text(ctx, fm.f[j], g.X(j + 2) + dx, g.Y(y) + dy, col, { size: 18, weight: 600, align: al, bg: PAL.panel }); }
       });
     });
     /* the period-2 names left of their points, spread apart where two lie close (HF and NH₃ as predicted) */

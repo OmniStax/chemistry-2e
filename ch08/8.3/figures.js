@@ -105,7 +105,7 @@ const RAD = Math.PI / 180;
     });
   }
   const v = F.view3d(d.stage, { spin: 'idle', h: 560, dist: DIST, tilt: 0.42, pitch: [-1.2, 1.2], onRender: place });
-  const g = v.part(0), key = F.makeCanvas(d.stage, 64); window.__g83 = g;
+  const g = v.part(0), key = F.makeCanvas(d.stage, 64);
   const mol = F.choice(d.controls, { label: '\\text{molecule}', aria: 'the molecule', value: 'ethene', ms: 0,
     options: [{ value: 'ethene', label: 'ethene (C₂H₄)' }, { value: 'acetylene', label: 'acetylene (C₂H₂)' }], onInput: () => tw.show(mol.value === 'ethene') });
   const tw = F.ctl(d.controls, { label: '\\theta', cls: 'angle', key: 'twist', aria: 'twist of one CH2 group about the C–C axis', min: 0, max: 90, step: 1, value: 0, unit: '°', dec: 0, specials: [{ at: 90, label: 'perpendicular' }] });

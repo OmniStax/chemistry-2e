@@ -330,14 +330,16 @@ const bpAt = (k, p) => { const q = LIQ[k]; return 1 / (1 / (q.bp + 273.15) - (R 
     /* each stretch named as the book names it: one phase on a slope, the two that coexist on a plateau */
     steps.forEach((s) => {
       const xm = X((s.x0 + s.x1) / 2), ym = Y((s.t0 + s.t1) / 2), wide = X(s.x1) - X(s.x0), tall = Math.abs(Y(s.t1) - Y(s.t0));
-      if (s.kind === 'warm' && (wide > 6 || tall > 24)) label(ctx, FORM[s.ph], xm, ym, { side: 'right', size: 18, gap: wide < 40 ? 34 : 22, weight: 400 });
+      /* a short stretch of ice is named at its cold end, below the melting plateau's name */
+      const yw = s.ph === 's' && tall < 60 ? Math.max(Y(s.t0), Y(s.t1)) : ym;
+      if (s.kind === 'warm' && (wide > 6 || tall > 24)) label(ctx, FORM[s.ph], xm, yw, { side: 'right', size: 18, gap: 22, weight: 400 });
       if (s.kind === 'change' && wide > 40) {
         const both = s.melt ? 'H₂O(s) and H₂O(l)' : 'H₂O(l) and H₂O(g)';
         if (s.melt && wide < 260) {
-          /* a short melting plateau: its name below and to the right, clear of the slope that leaves it, on a leader */
-          const lx = Math.max(xm, X(s.x1)) + 70, ly = ym + 44;
-          line(ctx, xm, ym + 6, lx - 30, ly - 12, alpha(PAL.ink, 0.5), 1.5, [5, 6]);
-          label(ctx, both, lx, ly, { side: 'below', size: 18, gap: 0, weight: 400 });
+          /* a short melting plateau: its name above and to the right on a leader, clear of the water's slope and of the ice */
+          const lx = X(s.x1) + 62, ly = ym - 50;
+          line(ctx, X(s.x1) - 12, ym - 6, lx - 6, ly + 8, alpha(PAL.ink, 0.5), 1.5, [5, 6]);
+          label(ctx, both, lx, ly, { side: 'right', size: 18, gap: 0, weight: 400 });
         } else label(ctx, both, xm, ym, { side: 'below', size: 18, gap: 24, weight: 400 });
       }
     });

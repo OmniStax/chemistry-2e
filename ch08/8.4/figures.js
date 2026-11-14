@@ -223,7 +223,7 @@ function electron(ctx, x, y, up, a = 1, h = 34) {
   const BOND = { s: 74, pe: 110, ps: 110 };
   const A0 = 52.92, ZN = 1.95;   /* pm per bohr; the Slater exponent of a nitrogen 2p orbital, per bohr */
   const SC = { s: 1.4, pe: 0.8, ps: 0.8 };   /* scene units per bohr (s) or per 1/ζ (p) */
-  const ISO = { s: 0.45, pe: 0.35, ps: 0.35 };
+  const ISO = { s: 0.35, pe: 0.35, ps: 0.35 };
   const pair = F.select(d.controls, { label: '\\text{orbitals}', options: [{ value: 's', label: 'two s' }, { value: 'pe', label: 'two p, end to end' }, { value: 'ps', label: 'two p, side by side' }], value: 's', aria: 'which atomic orbitals combine',
     onInput: (v) => { R.set(BOND[v]); morph(); } });
   const comb = F.choice(d.controls, { label: '\\text{phase}', options: [{ value: 'in', label: 'in phase' }, { value: 'out', label: 'out of phase' }], value: 'in', aria: 'in phase or out of phase', onInput: () => morph() });
@@ -312,7 +312,7 @@ function electron(ctx, x, y, up, a = 1, h = 34) {
     geo.computeBoundingSphere(); return geo;
   }
   function plane(axis, a) {
-    const s = 3.1, pts = axis === 'x' ? [[0, -s, -s], [0, s, -s], [0, s, s], [0, -s, s]] : [[-s * 1.6, 0, -s], [s * 1.6, 0, -s], [s * 1.6, 0, s], [-s * 1.6, 0, s]];
+    const s = 2.1, pts = axis === 'x' ? [[0, -s, -s], [0, s, -s], [0, s, s], [0, -s, s]] : [[-s * 1.6, 0, -s], [s * 1.6, 0, -s], [s * 1.6, 0, s], [-s * 1.6, 0, s]];
     const geo = new T3.BufferGeometry(); geo.setAttribute('position', new T3.Float32BufferAttribute(pts.flat(), 3)); geo.setIndex([0, 1, 2, 0, 2, 3]);
     const m = new T3.Mesh(geo, new T3.MeshBasicMaterial({ color: PAL.ink, transparent: true, opacity: 0.1 * a, side: T3.DoubleSide, depthWrite: false })); g.add(m);
     const edge = F.mesh.polyline(g, [...pts, pts[0]], alpha(PAL.ink, 0.45 * a));

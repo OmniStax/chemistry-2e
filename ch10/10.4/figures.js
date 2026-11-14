@@ -52,7 +52,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
       melt: (P) => { const a = 1955.539, b = 2055.4593, r = Math.max(0, P / 518 - 1), x = (-a + Math.sqrt(a * a + 4 * b * r)) / (2 * b); return (K - 56.6) * (1 + x) - K; },
       T: [-100, 100], tick: 25, lP: [1, 6], mag: null,
       s: 'solid carbon dioxide', l: 'liquid carbon dioxide', g: 'gaseous carbon dioxide',
-      at: { solid: ['solid', -82, 4.3], liquid: ['liquid', -12, 4.5], gas: ['gas', -20, 2.1], scf: ['supercritical fluid', 0, 0] },
+      at: { solid: ['solid', -82, 4.3], liquid: ['liquid', -12, 4.5], gas: ['gas', 45, 2.2], scf: ['supercritical fluid', 0, 0] },
       start: [-30, 2000],
     },
   };
@@ -227,7 +227,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     const M = [mainL, 1000];
     clip(ctx, M, () => {
       /* the supercritical fluid's fence: up from the critical point to the solid-liquid curve or the top, and across to the right */
-      const yTop = v === 'co2' && k >= 1 ? Y(L10(F.solve((q) => s.melt(10 ** q) - s.Tc, 3, 7) ?? 6)) : TOP;
+      const yTop = v === 'co2' && k >= 1 ? Y(F.solve((q) => s.melt(10 ** q) - s.Tc, 3, 7) ?? 6) : TOP;
       stroke(ctx, [cv.cp, [cv.cp[0], yTop]], alpha(PAL.ink, 0.4), 2.5, [10, 10]);
       stroke(ctx, [cv.cp, [M[1], cv.cp[1]]], alpha(PAL.ink, 0.4), 2.5, [10, 10]);
       ['sub', 'vap', 'melt'].forEach((c) => stroke(ctx, cv[c], F.ref(CURVE[c][0]), 4));
@@ -241,6 +241,8 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
       if (g.mag) hits.push({ x: MAG.tp[0], y: MAG.tp[1], r: 14, name: `the triple point, ${fmtT(s.Tt, 2)} °C and ${fmtP(s.Pt)} kPa` });
     }
 
+    /* the curves are kept clear of the labels placed round the isobar */
+    ['sub', 'vap', 'melt'].forEach((c) => [cv[c], g.mag && k >= 1 ? MAG[c] : []].forEach((pts) => pts.forEach(([x, y]) => boxes.push({ l: x - 5, r: x + 5, t: y - 5, b: y + 5, curve: true })))));
     /* the region names, the two points' labels and the key, for the substance shown */
     ctx.save(); ctx.globalAlpha *= k;
     const R = s.at, gx = g.X;
@@ -253,7 +255,8 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     if (M[1] - cv.cp[0] > 190) region('supercritical fluid', scx, scy);
     else { region('supercritical', scx, scy - 14); region('fluid', scx, scy + 14); }
     const vals = (t, p, dt = 1) => [[`${fmtT(t, dt)} °C`, C('temperature')], ', ', [`${fmtP(p)} kPa`, C('pressure')]];
-    const pointLabel = (name, ref, x, y, t, p, dt) => {
+    const pointLabel = (name, ref, x, y0, t, p, dt, up) => {
+      const y = up ? y0 - 70 : y0;
       const w = Math.max(F.measure(ctx, name, { size: 17, weight: 600 }), F.measure(ctx, `${fmtT(t, dt)} °C, ${fmtP(p)} kPa`, { size: 17, weight: 600 }));
       const l = Math.min(x + 14, M[1] - 6 - w);
       text(ctx, name, l, y + 24, F.ref(ref), { size: 17, weight: 600, align: 'left', bg: PAL.panel });
@@ -261,7 +264,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
       boxes.push({ l: l - 4, r: l + w + 4, t: y + 12, b: y + 58 });
     };
     pointLabel('triple point', 'triple-point', cv.tp[0], cv.tp[1], s.Tt, s.Pt, v === 'water' ? 2 : 1);
-    pointLabel('critical point', 'critical-point', cv.cp[0], cv.cp[1], s.Tc, s.Pc, v === 'water' ? 0 : 1);
+    pointLabel('critical point', 'critical-point', cv.cp[0], cv.cp[1], s.Tc, s.Pc, v === 'water' ? 0 : 1, v === 'co2');
     ctx.restore();
     /* the key under the window: each curve by the pair of changes that happen across it */
     F.legend(ctx, { l: W.l - 12, r: W.r + 12, t: W.b + 14, b: BOT + 12 }, [
@@ -276,9 +279,9 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     ctx.save(); ctx.globalAlpha *= k;
     if (yP >= TOP - 1 && yP <= BOT + 1) {
       panes.forEach(([[l, r]]) => line(ctx, l, yP, r, yP, alpha(C('pressure'), 0.75), 2.5, [10, 10]));
-      place(ctx, [[`${fmtP(P)} kPa`, C('pressure')]], M[1] - 6, yP, 17, [0, 0.2, 0.35, 0.5, 0.65].flatMap((f) => [[-(M[1] - M[0]) * f, -18, 'right'], [-(M[1] - M[0]) * f, 18, 'right']]));
       hits.push({ x: (M[0] + M[1]) / 2, y: yP, r: 10, name: `constant pressure, ${fmtP(P)} kPa` });
-      cr.forEach((c) => {
+      cr.forEach((c, ci) => {
+        if (ci && Math.abs(c.T - cr[ci - 1].T) < TOL) return;
         /* a crossing is labelled once, in the close-up where it falls inside it */
         let labelled = false;
         panes.forEach(([[l, r], X, rg], pi) => {
@@ -292,6 +295,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
             [[0, -24, 'center'], [0, 24, 'center'], [10, -24, 'left'], [-10, -24, 'right'], [10, 24, 'left'], [-10, 24, 'right']]);
         });
       });
+      place(ctx, [[`${fmtP(P)} kPa`, C('pressure')]], M[1] - 6, yP, 17, [0, 0.2, 0.35, 0.5, 0.65].flatMap((f) => [[-(M[1] - M[0]) * f, -18, 'right'], [-(M[1] - M[0]) * f, 18, 'right']]));
     }
     panes.forEach(([[l, r], X, rg]) => {
       if (T < rg[0] || T > rg[1]) return;
@@ -333,12 +337,13 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     /* the transition temperatures at this pressure in order, T set among them: = where it sits on one */
     const SYM = { melt: '\\kT_{\\text{melt}}', boil: '\\kT_{\\text{boil}}', sub: '\\kT_{\\text{sub}}', crit: '\\kT_{\\text{c}}' };
     const deg = (t, dec) => hue('temperature', `${fmt(t, dec)}\\ ^\\circ\\text{C}`);
-    const items = cr.map((c) => ({ T: c.T, s: `${SYM[c.kind]} = ${deg(c.T, 1)}` }));
+    const dp = (t) => (Math.abs(t) < 1 ? 2 : 1);
+    const items = cr.map((c) => ({ T: c.T, s: `${SYM[c.kind]} = ${deg(c.T, dp(c.T))}` }));
     if (P >= s.Pc) items.push({ T: s.Tc, s: `${SYM.crit} = ${deg(s.Tc, 1)}` });
     items.sort((p, q) => p.T - q.T);
     /* T sits among them in order; on a curve it stands first among the equal ones, written bare */
     const on = items.findIndex((it) => Math.abs(it.T - T) < TOL), next = items.findIndex((it) => it.T > T);
-    items.splice(on >= 0 ? on : next < 0 ? items.length : next, 0, { T: on >= 0 ? items[on].T : T, s: on >= 0 ? '\\kT' : `\\kT = ${deg(T, 1)}` });
+    items.splice(on >= 0 ? on : next < 0 ? items.length : next, 0, { T: on >= 0 ? items[on].T : T, s: on >= 0 ? '\\kT' : `\\kT = ${deg(T, dp(T))}` });
     const chain = items.map((it, i) => (i ? (Math.abs(it.T - items[i - 1].T) < TOL ? ' = ' : ' < ') : '') + it.s).join('');
     F.tex(d.readout, `\\text{at } \\kP = ${hue('pressure', `${fmtP(P).replace(/,/g, '{,}')}\\ \\text{kPa}`)}\\!:\\; ${chain}`);
   }

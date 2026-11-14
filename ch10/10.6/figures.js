@@ -366,7 +366,7 @@ cubicFigure('sim-cubic', ['sc', 'bcc', 'fcc'], 'bcc', 'atoms');
 ===================================================================== */
 (function () {
   const KH = 70, d = sim('sim-holes', KH);
-  const v = F.view3d(d.stage, { h: 520, dist: 7.2, tilt: 0.3, spin: 'idle', pitch: [-0.9, 0.9] });
+  const v = F.view3d(d.stage, { h: 540, dist: 7.8, tilt: 0.3, spin: 'idle', pitch: [-0.9, 0.9] });
   v.setView(-0.4, 0.3);
   const grp = v.part(0);
   const cnv = F.makeCanvas(d.stage, 150);

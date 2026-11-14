@@ -303,9 +303,10 @@ function ball(ctx, x, y, r, fill, stroke = alpha(PAL.ink, 0.5), w = 1.4) {
 (function () {
   const KH = 56;
   const d = sim('sim-graphene', KH);   /* a strip above the scene carries the headline, clear of the atoms */
-  const v = F.view3d(d.stage, { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.45, h: 560, dist: 6.4, zoomMax: 3.2 });
+  const v = F.view3d(d.stage, { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.45, h: 480, dist: 6.4, zoomMax: 3.2 });
   v.setView(-0.35, 0.45);
-  const ZOOM = { sheet: 1, ball: 2.6, tube: 0.95 };   /* the stack is seen nearly edge on, as the book draws it */
+  v.look({ zoom: 1.4 });
+  const ZOOM = { sheet: 1.4, ball: 2.5, tube: 1.7 };   /* the stack is seen nearly edge on, as the book draws it */
   const grp = v.part(0);
   /* the sheet is built in its own plane (x round the tube, y along it); turned so the sheet lies flat, the stack rises in layers and the tube lies across */
   if (grp) grp.setRotationFromAxisAngle(new window.THREE.Vector3(1, 1, 1).normalize(), -TAU / 3);
@@ -333,7 +334,7 @@ function ball(ctx, x, y, r, fill, stroke = alpha(PAL.ink, 0.5), w = 1.4) {
   const bp = bucky.map((p) => p.map((x) => (x * A) / 2));
   const bb = []; for (let i = 0; i < bp.length; i++) for (let j = i + 1; j < bp.length; j++) if (Math.abs(dist3(bp[i], bp[j]) - A) < 0.01) bb.push([i, j]);
   const FORM = F.choice(d.controls, { label: '\\text{form}', options: [{ value: 'sheet', label: 'sheet' }, { value: 'ball', label: 'buckyball' }, { value: 'tube', label: 'nanotube' }, { value: 'stack', label: 'stacked sheets' }], value: 'sheet', aria: 'the form of graphene',
-    onInput: () => { v.glide(FORM.value === 'stack' ? { zoom: 1, pitch: 0.16 } : { zoom: ZOOM[FORM.value] }, 900); } });
+    onInput: () => { v.glide(FORM.value === 'stack' ? { zoom: 1.35, pitch: 0.16 } : { zoom: ZOOM[FORM.value] }, 900); } });
   const NAME = 'a carbon atom, C';
   let sig = '', sheet = null, layers = null, ballG = null, sMesh = [], sBond = [], layerN = 0;
   function build() {

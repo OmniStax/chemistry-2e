@@ -33,7 +33,7 @@ Table 8.1 stays in the text as `div.book-table` with its spanned title written a
 
 ## Binds
 
-`energy` only (Figure 8.2).
+`energy` and `length` (Figure 8.2).
 
 ## Wanted at chapter level
 

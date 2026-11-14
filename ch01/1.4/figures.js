@@ -59,7 +59,7 @@ function rule(ctx, x1, x2, y, h) {
     specials: [{ at: 1, label: '1 cm' }, { at: IN, label: '1 in.' }, { at: YD, label: '1 yd' }, { at: 100, label: '1 m' }] });
   const X = (cm) => 100 + 12 * cm;                /* the rule: 12 logical units to the centimeter, fixed */
   const yBar = 84, yT = 124, yB = 244;
-  const K = 120, SPAN = 5, LENS = K * SPAN, lBar = 336, lT = 356, lB = 496;   /* the lens: 5 cm of the rule, ten times larger */
+  const K = 120, SPAN = 7.5, LENS = K * SPAN, lBar = 336, lT = 356, lB = 496;   /* the lens: 7.5 cm of the rule, ten times larger */
   const say = once(d.readout);
   function draw() {
     const { ctx } = begin(d.c);
@@ -183,7 +183,7 @@ function rule(ctx, x1, x2, y, h) {
       ctx.restore();
     }
     /* the key to the tinted cube */
-    F.legend(ctx, { l: 940, r: 1370, t: 30, b: 200 }, [{ s: u === 1 ? '1 cm³ = 1 mL' : '1 dm³ = 1 L', draw: (c, x, y) => { c.save(); c.fillStyle = PAL.soft; c.fillRect(x + 11, y, 22, 22); c.fillStyle = alpha(cv, 0.4); c.fillRect(x + 11, y, 22, 22); c.strokeStyle = PAL.ink; c.lineWidth = 1.5; c.strokeRect(x + 11, y, 22, 22); c.restore(); } }], { corner: 'tr', size: 20 });
+    F.legend(ctx, { l: 940, r: 1370, t: 30, b: 200 }, [{ s: u === 1 ? '1 cm³ = 1 mL' : '1 dm³ = 1 L', draw: (c, x, y) => { c.save(); c.fillStyle = PAL.soft; c.fillRect(x - 11, y - 11, 22, 22); c.fillStyle = alpha(cv, 0.4); c.fillRect(x - 11, y - 11, 22, 22); c.strokeStyle = PAL.ink; c.lineWidth = 1.5; c.strokeRect(x - 11, y - 11, 22, 22); c.restore(); } }], { corner: 'tr', size: 20 });
     const V = a * a * a, tc = (x) => commas(String(x)).replace(/,/g, '{,}'), side = hue('length', a + '\\ \\text{cm}');
     const more = a < 10 ? [tc(V) + '\\ \\text{mL}'] : a === 10 ? ['1{,}000\\ \\text{mL}', '1\\ \\text{L}'] : a < 100 ? [tc(V / 1000) + '\\ \\text{L}'] : ['1{,}000\\ \\text{L}', '1\\ \\text{m}^3'];
     say(`\\text{volume} = ${side} \\times ${side} \\times ${side} = ` + [tc(V) + '\\ \\text{cm}^3', ...more].map((x) => hue('volume', x)).join(' = '));
@@ -206,7 +206,7 @@ function rule(ctx, x1, x2, y, h) {
   /* seven solids are states the reader picks (rule 26.1): a dropdown, since a row of seven buttons would wrap */
   const M = F.select(d.controls, { label: '\\text{solid}', aria: 'the solid the cube is made of', options: MATS.map((m, i) => ({ value: String(i), label: m[0] })), value: '4', ms: 0 });
   const A = ctl(d.controls, { label: '\\text{edge length}', cls: 'length', min: 0.5, max: 3, step: 0.01, value: 2, unit: 'cm', dec: 2, aria: 'edge length of the cube in centimeters' });
-  const box = { l: 830, r: 1340, t: 90, b: 450 };   /* axes fixed from the slider's maximum: a 3 cm cube is 27 cm³, and of gold 521 g */
+  const box = { l: 800, r: 1240, t: 90, b: 450 };   /* axes fixed from the slider's maximum: a 3 cm cube is 27 cm³, and of gold 521 g */
   const hits = []; F.hover(d.stage, () => hits);
   const say = once(d.readout);
   function draw() {
@@ -215,8 +215,8 @@ function rule(ctx, x1, x2, y, h) {
     const cm = C('mass'), cv = C('volume'), cl = C('length');
     /* the cube of lead and the cube of gold are the section's referents; the other solids are told apart by the palette after them */
     const hueOf = (i) => (MATS[i][2] ? F.ref(MATS[i][2]) : F.cat(2 + i - MATS.slice(0, i).filter((x) => x[2]).length)), mine = hueOf(which);
-    /* the balance, and the cube on its pan, at 60 logical units to the centimeter */
-    const ox = 390, oy = 372, e = a * 60, P = (x, y, z) => { const q = FRONT.P([x, y, z]); return [ox + q[0], oy + q[1]]; };
+    /* the balance, and the cube on its pan, at 78 logical units to the centimeter (60 in the model, drawn 1.3 times larger) */
+    const ox = 370, oy = 400, e = a * 60, Z = 1.3, P = (x, y, z) => { const q = FRONT.P([x * Z, y * Z, z * Z]); return [ox + q[0], oy + q[1]]; };
     slab(ctx, P, -175, 175, -100, -24, -120, 120);
     slab(ctx, P, -24, 24, -24, -8, -24, 24, 2);
     slab(ctx, P, -135, 135, -8, 0, -105, 105);
@@ -225,8 +225,8 @@ function rule(ctx, x1, x2, y, h) {
     text(ctx, sig3(m) + ' g', (dl + dr) / 2, (dt + db) / 2, cm, { size: 24, weight: 600, align: 'center' });
     slab(ctx, P, -e / 2, e / 2, 0, e, -e / 2, e / 2);
     const [fx, f0] = P(e / 2, 0, e / 2), f1 = P(e / 2, e, e / 2)[1], top = P(0, e, -e / 2)[1];
-    vbracket(ctx, fx + 22, f1, f0, cl, fmt(a, 2) + ' cm', 1);
-    F.rich(ctx, ['a cube of ', [name, mine]], ox, top - 30, { size: 22, align: 'center' });
+    vbracket(ctx, fx + 22, f1, f0, cl);
+    F.rich(ctx, ['a cube of ', [name, mine], ', ', [fmt(a, 2) + ' cm', cl], ' on an edge'], ox, top - 30, { size: 22, align: 'center' });
     /* mass against volume: a line through the origin for each solid, the chosen one heavy, and the cube's point on it */
     const ax = F.axes(ctx, box, [0, 27], [0, 600], { xl: 'volume (cm³)', xc: cv, yl: 'mass (g)', yc: cm, nx: 3, ny: 3 });
     MATS.forEach(([, r], i) => { if (i !== which) line(ctx, ax.X(0), ax.Y(0), ax.X(27), ax.Y(r * 27), alpha(hueOf(i), 0.6), 2.5); });
@@ -237,8 +237,12 @@ function rule(ctx, x1, x2, y, h) {
     MATS.forEach(([n, r], i) => { if (i === which) return; dot(ctx, ax.X(V), ax.Y(r * V), hueOf(i), false, 5); hits.push({ x: ax.X(V), y: ax.Y(r * V), r: 11, name: n + ', ' + sig3(r * V) + ' g at ' + sig3(V) + ' cm³' }); });
     dot(ctx, ax.X(V), ax.Y(m), mine, true, 9);
     hits.push({ x: ax.X(V), y: ax.Y(m), r: 14, name: name + ', ' + sig3(m) + ' g at ' + sig3(V) + ' cm³' },
-      { x: ox, y: (top + f0) / 2, r: e * 0.7, name: 'a cube of ' + name + ', ' + fmt(a, 2) + ' cm on an edge' }, { x: (dl + dr) / 2, y: (dt + db) / 2, r: 70, name: 'balance, reading ' + sig3(m) + ' g' });
-    F.legend(ctx, ax, MATS.map(([n], i) => ({ s: n, color: hueOf(i), w: i === which ? 5 : 2.5, i })).sort((p, q) => MATS[q.i][1] - MATS[p.i][1]), { corner: 'tl' });
+      { x: ox, y: (top + f0) / 2, r: e * 0.9, name: 'a cube of ' + name + ', ' + fmt(a, 2) + ' cm on an edge' }, { x: (dl + dr) / 2, y: (dt + db) / 2, r: 70, name: 'balance, reading ' + sig3(m) + ' g' });
+    /* each line named at its right end, the names stepped apart where the lines end close together */
+    const ends = MATS.map(([n, r], i) => ({ n, i, y0: ax.Y(r * 27), y: ax.Y(r * 27) })).sort((p, q) => p.y0 - q.y0);
+    ends.forEach((t, j) => { if (j) t.y = Math.max(t.y, ends[j - 1].y + 30); });
+    for (let j = ends.length - 1; j >= 0; j--) ends[j].y = Math.min(ends[j].y, j === ends.length - 1 ? box.b - 4 : ends[j + 1].y - 30);
+    ends.forEach((t) => { line(ctx, box.r + 2, t.y0, box.r + 16, t.y, alpha(hueOf(t.i), 0.7), 1.5); text(ctx, t.n, box.r + 22, t.y, hueOf(t.i), { size: 18, weight: t.i === which ? 600 : 400 }); });
     const side = hue('length', fmt(a, 2) + '\\ \\text{cm}'), vol = hue('volume', sig3(V) + '\\ \\text{cm}^3');
     say(`${hue('volume', '\\text{volume}')} = ${side} \\times ${side} \\times ${side} = ${vol} \\\\ ` +
       `${hue('density', '\\text{density}')} = \\frac{${hue('mass', '\\text{mass}')}}{${hue('volume', '\\text{volume}')}} = \\frac{${hue('mass', sig3(m) + '\\ \\text{g}')}}{${vol}} = ${hue('density', sig3(Number(sig3(m)) / Number(sig3(V))) + '\\ \\text{g/cm}^3')}`);
@@ -302,7 +306,7 @@ function rule(ctx, x1, x2, y, h) {
     ctx.beginPath(); ctx.moveTo(CL - 16, RIM - 8); ctx.lineTo(CL, RIM + 8); ctx.lineTo(CL, FLOOR - 8); ctx.quadraticCurveTo(CL, FLOOR, CL + 8, FLOOR); ctx.lineTo(CR - 8, FLOOR); ctx.quadraticCurveTo(CR, FLOOR, CR, FLOOR - 8); ctx.lineTo(CR, RIM); ctx.stroke();
     ctx.fillStyle = PAL.soft; ctx.beginPath(); ctx.moveTo(CL - 6, FLOOR + 2); ctx.lineTo(CR + 6, FLOOR + 2); ctx.lineTo(CR + 44, BENCH); ctx.lineTo(CL - 44, BENCH); ctx.closePath(); ctx.fill(); ctx.stroke(); ctx.restore();
     for (let mL = 1; mL <= 50; mL++) { const big = mL % 10 === 0, mid = mL % 5 === 0; line(ctx, CL, Y(mL), CL + (big ? 30 : mid ? 20 : 11), Y(mL), PAL.ink, big ? 2 : 1.2); if (big) text(ctx, String(mL), CL - 14, Y(mL), PAL.muted, { size: 17, align: 'right' }); }
-    text(ctx, 'mL', CL - 14, Y(50) - 30, PAL.muted, { size: 17, align: 'right' });
+    text(ctx, 'mL', CL - 44, Y(50) - 30, PAL.muted, { size: 17, align: 'right' });
     /* the surface, a shallow meniscus read at its lowest point, and the two levels carried out to the right */
     ctx.save(); ctx.strokeStyle = cv; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(CL + 2, Y(level) - 3);
     if (under > 0 && under < hb) { ctx.quadraticCurveTo((CL + bx - wb / 2) / 2, Y(level) + 2, bx - wb / 2, Y(level)); ctx.moveTo(bx + wb / 2, Y(level)); ctx.quadraticCurveTo((CR + bx + wb / 2) / 2, Y(level) + 2, CR - 2, Y(level) - 3); }

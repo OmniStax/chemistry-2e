@@ -185,7 +185,7 @@ const VIEW3 = { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3 };
 ===================================================================== */
 (function () {
   const d = sim('sim-phosphorus');
-  const v = F.view3d(d.stage, { ...VIEW3, h: 420, dist: 4.9 });
+  const v = F.view3d(d.stage, { ...VIEW3, spin: 'off', yaw: [-0.9, 0.9], h: 420, dist: 6.0 });
   const grp = v.part(0);
   const E = 0.6, H = E * Math.sqrt(2 / 3), OPEN = 1.35, SP = OPEN * E + E, N = 4;
   /* a tetrahedron, base in the xz plane, a and b at the front, apex d up; s spreads a and b to OPEN × E */
@@ -306,8 +306,8 @@ const VIEW3 = { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3 };
   let confD = null;
   for (let t = 1; t < 400 && !confD; t++) {
     const R = rng(2300 + t), conf = [];
-    CHAINS.forEach((_, c) => { const turn = [R() * 1.2 - 0.6, R() * TAU, R() * 1.2 - 0.6], at = C_AT[c].map((x) => x * 0.42 + (R() - 0.5) * 0.2); shapes[c].forEach((p) => conf.push(add(rot(p, turn), at))); });
-    if (minGap(conf) > 0.68 * BD && ends(conf) > 1.5 * BD) confD = conf;
+    CHAINS.forEach((_, c) => { const turn = [R() * 1.2 - 0.6, R() * TAU, R() * 1.2 - 0.6], at = C_AT[c].map((x) => x * 0.62 + (R() - 0.5) * 0.2); shapes[c].forEach((p) => conf.push(add(rot(p, turn), at))); });
+    if (minGap(conf) > 0.85 * BD && ends(conf) > 1.5 * BD) confD = conf;
   }
   if (!confD) confD = confC.map((p) => p.map((x) => x * 0.6));
   const CONF = [confA, confB, confC, confD];

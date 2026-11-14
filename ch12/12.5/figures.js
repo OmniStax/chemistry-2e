@@ -16,8 +16,9 @@ const sciTex = (x, sig) => { const { m, e } = sci(x, sig); return `${m.toFixed(s
 const sciText = (x, sig) => { const { m, e } = sci(x, sig); return `${minus(m.toFixed(sig - 1))} × 10${String(e).replace('-', '⁻').replace(/\d/g, (c) => '⁰¹²³⁴⁵⁶⁷⁸⁹'[c])}`; };
 
 /* =====================================================================
-   FIGURE 12.13 + 12.14: one collision of CO with O2, in three dimensions,
-   above the reaction diagram it traces. Moving: the pair runs along one
+   FIGURE 12.13 + 12.14: one collision of CO with O2, drawn flat and
+   space-filling as the book draws it, above the reaction diagram it
+   traces (the molecules meet on one line, so turning showed nothing). Moving: the pair runs along one
    path coordinate s with the potential U(s) drawn below, s from 0 to 3.4
    the reactants' plateau, 3.4 to 4.25 the climb to the transition state,
    4.25 to 5.25 the descent, then the products' plateau to 8.25. Speed is
@@ -28,7 +29,7 @@ const sciText = (x, sig) => { const { m, e } = sci(x, sig); return `${minus(m.to
    is fixed at −100 to 350 kJ/mol, over the slider's 320.
 ===================================================================== */
 (function () {
-  const d = sim('sim-collision');
+  const d = sim('sim-collision', 700);
   const EA = 200, DH = -34, WALL = 1.9, DT = 1 / 120;
   let traj = [0];
   const cy = cycle(() => (traj.length - 1) * DT, 1.2);
@@ -65,27 +66,29 @@ const sciText = (x, sig) => { const { m, e } = sci(x, sig); return `${minus(m.to
     const h = s - 4.25, xC = -0.375 - 0.45 * h, Ob = xC + 0.75 - 0.23 * S(h);
     return { C: xC, Oa: xC - 0.5 - 0.02 * S(h), Ob, Oc: Ob + 0.65 + 0.9 * h };
   }
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [-1.22, 1.22], views: [{ label: 'side', yaw: 0, pitch: 0.18 }, { label: 'above', yaw: 0, pitch: 1.2 }], h: 300, dist: 5.6, tilt: 0.18 });
-  const grp = v.part(0), cnv = F.makeCanvas(d.stage, 470);
-  if (grp) grp.position.y = -0.4;
-  const NAMES = { Oa: 'an oxygen atom from the carbon monoxide molecule', C: 'the carbon atom from the carbon monoxide molecule', Ob: 'an oxygen atom from the oxygen molecule', Oc: 'an oxygen atom from the oxygen molecule' };
-  let sig = '', balls = {};
-  function build() {
-    if (!grp) return;
-    const now = [F.el('C'), F.el('O')].join('|'); if (now === sig) return; sig = now;
-    v.clear(); balls = {};
-    for (const k of ['Oa', 'C', 'Ob', 'Oc']) balls[k] = v.pickable(F.mesh.sphere(grp, [0, 0, 0], k === 'C' ? 0.34 : 0.3, F.el(k === 'C' ? 'C' : 'O')), NAMES[k]);
+  /* the scene: the line of approach across the top band, 1 scene unit = 105 canvas units, centred */
+  const XC = 700, SC = 105, YM = 150, RAD = { C: 36, O: 32 };
+  const NAMES = { Oa: 'an oxygen atom of the carbon monoxide molecule', C: 'the carbon atom of the carbon monoxide molecule', Ob: 'an oxygen atom of the oxygen molecule', Oc: 'an oxygen atom of the oxygen molecule' };
+  let hits = []; F.hover(d.stage, () => hits);
+  function atom(ctx, x, k) {
+    const r = RAD[k === 'C' ? 'C' : 'O'];
+    ctx.save(); ctx.fillStyle = F.el(k === 'C' ? 'C' : 'O'); ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.arc(x, YM, r, 0, 2 * Math.PI); ctx.fill(); ctx.stroke(); ctx.restore();
+    hits.push({ x, y: YM, r, name: NAMES[k] });
   }
-  const B = { l: 150, r: 1290, t: 60, b: 390 };
+  const B = { l: 150, r: 1290, t: 300, b: 610 };
   function draw() {
     const o = side.value, E = eS.v, s = traj[Math.min(traj.length - 1, Math.round(cy.now() / DT))] ?? 0;
-    build();
-    if (grp) { const a = atomsAt(s, o); for (const k in balls) balls[k].position.set(a[k], 0, 0); v.invalidate(); }
-    v.headline(o === 'O'
-      ? 'Oxygen strikes oxygen: no arrangement of these atoms leads to CO<sub>2</sub>, and the molecules bounce apart.'
-      : E >= EA ? 'The carbon end strikes with at least $\\kEa$: the molecules pass the transition state and part as CO<sub>2</sub> and O.'
+    const { ctx } = begin(d.c), ce = C('energy'), cC = side.a('C'), guide = alpha(PAL.ink, 0.35);
+    hits = [];
+    F.topline(ctx, o === 'O'
+      ? 'Oxygen strikes oxygen: no arrangement of these atoms leads to CO_{2}, and the molecules bounce apart.'
+      : E >= EA ? 'The carbon end strikes with at least $\\kEa$: the molecules pass the transition state and part as CO_{2} and O.'
         : 'The carbon end strikes with less than $\\kEa$: the molecules climb part of the way to the transition state and bounce apart.');
-    const { ctx } = begin(cnv), ce = C('energy'), cC = side.a('C'), guide = alpha(PAL.ink, 0.35);
+    /* drawn back to front: the O of CO and the far O behind, so the joined atoms overlap as the book draws them */
+    const a = atomsAt(s, o);
+    for (const k of (o === 'C' ? ['Oa', 'C', 'Oc', 'Ob'] : ['C', 'Oa', 'Oc', 'Ob'])) atom(ctx, XC + SC * a[k], k);
+    F.legend(ctx, { l: 1010, r: 1340, t: 222, b: 262 }, [{ s: 'carbon', draw: (c, x, y) => { c.save(); c.fillStyle = F.el('C'); c.beginPath(); c.arc(x, y, 10, 0, 2 * Math.PI); c.fill(); c.restore(); } }, { s: 'oxygen', draw: (c, x, y) => { c.save(); c.fillStyle = F.el('O'); c.beginPath(); c.arc(x, y, 10, 0, 2 * Math.PI); c.fill(); c.restore(); } }], { corner: 'tr', row: true, panel: false });
     const { X, Y } = F.axes(ctx, B, [0, 1], [-100, 350], { nx: 4, ny: 9, fx: () => '', fy: (y) => minus(fmt(y, 0)), xl: 'extent of reaction', yl: 'energy (kJ/mol)', yc: ce });
     line(ctx, B.l, Y(0), B.r, Y(0), guide, 2, [10, 10]);
     F.faded(ctx, cC, [0, 0], () => line(ctx, X(0.5), Y(DH), B.r, Y(DH), guide, 2, [10, 10]));

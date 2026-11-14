@@ -79,7 +79,7 @@ const poly = (ctx, pts) => { ctx.beginPath(); pts.forEach(([x, y], i) => (i ? ct
     return [[x0, 0], [x0 + SIDE, 0], [x0 + SIDE, SIDE], [x0, SIDE]];
   }
   const shape = (v, th, s) => (s === 'solid' ? solid(v, th) : s === 'liquid' ? liquid(v, th).out : v.inside);
-  const DEPTH = { solid: 0.78, liquid: 0.46, gas: 0.16 };
+  const DEPTH = { solid: 0.78, liquid: 0.46, gas: 0.2 };
   const hits = []; F.hover(d.stage, () => hits);
   function draw() {
     const { ctx } = begin(d.c);
@@ -303,7 +303,7 @@ const poly = (ctx, pts) => { ctx.beginPath(); pts.forEach(([x, y], i) => (i ? ct
   const TOP = 110, MOUTH = 412, TR = 30;                     /* a tube: the centre of its dome, its open mouth, its half width */
   const tubePath = (ctx, x) => { ctx.beginPath(); ctx.moveTo(x - TR, MOUTH); ctx.lineTo(x - TR, TOP); ctx.arc(x, TOP, TR, Math.PI, 0); ctx.lineTo(x + TR, MOUTH); };
   const CIRC = [{ x: 720, name: 'water' }, { x: 980, name: 'hydrogen', ref: 'h2-tube' }, { x: 1240, name: 'oxygen', ref: 'o2-tube' }], CY = 300, CR = 110;
-  const S8 = [[-58, -52], [0, -62], [58, -52], [-32, 0], [32, 0], [-58, 52], [0, 62], [58, 52]];
+  const S8 = [[0, 0]].concat(Array.from({ length: 7 }, (_, i) => [72 * Math.sin((i * TAU) / 7), -72 * Math.cos((i * TAU) / 7)]));
   const S4 = [[-38, -36], [38, -36], [-38, 36], [38, 36]];
   const turnOf = (i) => ((i * 2.4) % TAU);
   function draw() {
@@ -348,8 +348,8 @@ const poly = (ctx, pts) => { ctx.beginPath(); pts.forEach(([x, y], i) => (i ? ct
       const rc = c.ref ? F.ref(c.ref) : PAL.ink;
       ctx.save(); ctx.strokeStyle = rc; ctx.lineWidth = 3.5; ctx.beginPath(); ctx.arc(c.x, CY, CR, 0, TAU); ctx.stroke(); ctx.restore();
       for (let j = 0; j < count[i]; j++) {
-        if (i === 0) water(named, ctx, c.x + S8[j][0], CY + S8[j][1], turnOf(j), 1.5);
-        else if (i === 1) diatomic(named, ctx, c.x + S8[j][0], CY + S8[j][1], 13, 'H', turnOf(j + 3));
+        if (i === 0) water(named, ctx, c.x + S8[j][0], CY + S8[j][1], turnOf(j), 1.3);
+        else if (i === 1) diatomic(named, ctx, c.x + S8[j][0], CY + S8[j][1], 12, 'H', turnOf(j + 3));
         else diatomic(named, ctx, c.x + S4[j][0], CY + S4[j][1], 16, 'O', turnOf(j + 1));
       }
       text(ctx, c.name, c.x, CY + CR + 34, rc, { size: 24, weight: 600, align: 'center' });

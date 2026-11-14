@@ -94,26 +94,21 @@ const knots = (ks) => (x) => {
 })();
 
 /* =====================================================================
-   FIGURE 12.23: ethylene and hydrogen on a nickel surface, in three
-   dimensions. One clock runs the book's four steps: (a) two H2 molecules
-   land and come apart into hydrogen atoms on the metal; (b) ethylene
-   lies down on the surface, its double bond becoming single as two Ni–C
-   bonds form; (c) one hydrogen atom slides across the surface to each
-   carbon and bonds to it; (d) the ethane lifts off. Scene units: the
-   nickel atoms 0.5 apart, about 5 Å per unit, the molecules on the same
-   scale. Moving: the steps have a clock, 11.4 s and a 1.4 s hold.
-   Physical 3D, a bench-like surface: pitch 0.05 to 1.3 rad so the slab is
-   never seen from beneath, yaw ±1.2 rad, no idle spin since the clock
-   moves the scene. Without WebGL the strip draws the atoms flat, from
-   the front.
+   FIGURE 12.23: ethylene and hydrogen on a nickel surface, drawn in a
+   locked perspective from the book's own viewpoint (the book prints the
+   slab in perspective; turning it showed nothing one oblique view does
+   not). One clock runs the book's four steps: (a) two H2 molecules land
+   and come apart into hydrogen atoms on the metal; (b) ethylene lies down
+   on the surface, its double bond becoming single as two Ni–C bonds
+   form; (c) one hydrogen atom slides across the surface to each carbon
+   and bonds to it; (d) the ethane lifts off. Scene units: the nickel
+   atoms 0.5 apart, about 5 Å per unit, the molecules on the same scale,
+   SC canvas units per scene unit. Moving: the steps have a clock, 11.4 s
+   and a 1.4 s hold. Atoms are painted far to near, each bond at the
+   depth of its middle.
 ===================================================================== */
 (function () {
-  const d = sim('sim-hydrogenation');
-  const v = F.view3d(d.stage, { h: 470, dist: 6.4, tilt: 0.42, spin: 'off', pitch: [0.05, 1.3], yaw: [-1.2, 1.2],
-    views: [{ label: 'front', yaw: 0, pitch: 0.42 }, { label: 'above', yaw: 0, pitch: 1.25 }] });
-  const has3 = !!v.scene;
-  if (!has3) v.wrap.style.display = 'none';
-  const FLAT = has3 ? 0 : 360, cnv = F.makeCanvas(d.stage, 130 + FLAT);
+  const d = sim('sim-hydrogenation', 560);
   const LOOP = 11.4, cy = cycle(() => LOOP, 1.4);
   const NI_R = 0.25, NI_Y = -0.13, TOP = NI_Y + NI_R, YS = TOP + 0.07, YC = 0.47, CH = 0.27;
   const NI = [];
@@ -167,55 +162,58 @@ const knots = (ks) => (x) => {
     '(a) Hydrogen is adsorbed on the surface, breaking the H–H bonds and forming Ni–H bonds.',
     '(b) Ethylene is adsorbed on the surface, breaking the C–C π-bond and forming Ni–C bonds.',
     '(c) Atoms diffuse across the surface and form new C–H bonds when they collide.',
-    '(d) C<sub>2</sub>H<sub>6</sub> molecules desorb from the Ni surface.',
+    '(d) C_{2}H_{6} molecules desorb from the Ni surface.',
   ];
-  const TAGS = ['(a) hydrogen adsorbed', '(b) ethylene adsorbed', '(c) atoms meet', '(d) ethane desorbs'];
   const KIND = { h: 'H', c: 'C', e: 'H' };
   const NAME = { H: 'a hydrogen atom, H', C: 'a carbon atom, C' };
   const RAD = { H: 0.095, C: 0.145 };
-  const grp = has3 ? v.part(0) : null;
-  let sig = '', meshes = {}, sticks = {};
-  const palSig = () => [PAL.ink, PAL.muted, F.el('Ni'), F.el('H'), F.el('C')].join('|');
-  function build(s) {
-    if (!has3) return;
-    const key = palSig(); if (key === sig) return; sig = key;
-    v.clear(); meshes = {}; sticks = {};
-    grp.position.y = -0.7;
-    const slab = F.mesh.box(grp, [0, NI_Y - 0.2, 0], [3.5, 0.4, 2.5], F.el('Ni'));
-    v.pickable(slab, 'the nickel catalyst, a solid');
-    NI.forEach((p) => v.pickable(F.mesh.sphere(grp, p, NI_R, F.el('Ni')), 'a nickel atom of the catalyst surface, Ni'));
-    Object.keys(s.atoms).forEach((id) => { const el = KIND[id[0]]; meshes[id] = v.pickable(F.mesh.sphere(grp, s.atoms[id], RAD[el], F.el(el)), NAME[el]); });
-    s.bonds.forEach((b) => { sticks[b.id] = F.mesh.stick(grp, b.p, b.q, b.id.startsWith('nic') ? 0.022 : 0.032, b.id.startsWith('nic') ? PAL.muted : PAL.ink); });
-    v.label('Ni surface', [-1.95, NI_Y, 0.4], grp, 0);
+  const SC = 210, V = F.view({ yaw: 0.32, pitch: 0.5, dist: 2600, cx: 690, cy: 360 });
+  /* a scene point to the canvas, and its depth along the line of sight (larger is farther) */
+  const cam = [2600 * Math.sin(0.32) * Math.cos(0.5), 2600 * Math.sin(0.5), 2600 * Math.cos(0.32) * Math.cos(0.5)];
+  const P = (p) => V.P([p[0] * SC, p[1] * SC, p[2] * SC]);
+  const depth = (p) => Math.hypot(p[0] * SC - cam[0], p[1] * SC - cam[1], p[2] * SC - cam[2]);
+  const rOf = (p, r) => (r * SC * 2600) / depth(p);
+  let hits = []; F.hover(d.stage, () => hits);
+  function ball(ctx, p, el, r) {
+    const [x, y] = P(p), rr = rOf(p, r);
+    ctx.save(); ctx.fillStyle = F.el(el); ctx.strokeStyle = alpha(PAL.ink, 0.5); ctx.lineWidth = 1.2;
+    ctx.beginPath(); ctx.arc(x, y, rr, 0, 2 * Math.PI); ctx.fill(); ctx.stroke();
+    /* a soft highlight up and to the left, so a ball reads as a ball beside its neighbours */
+    ctx.fillStyle = alpha(PAL.panel, 0.28); ctx.beginPath(); ctx.arc(x - rr * 0.32, y - rr * 0.34, rr * 0.42, 0, 2 * Math.PI); ctx.fill(); ctx.restore();
+    return [x, y, rr];
   }
-  function place(s) {
-    if (!has3) return;
-    Object.keys(s.atoms).forEach((id) => { const p = s.atoms[id]; meshes[id].position.set(p[0], p[1], p[2]); });
-    s.bonds.forEach((b) => { const m = sticks[b.id]; m.visible = b.on; if (b.on) F.mesh.setStick(m, b.p, b.q); });
-    v.headline(STEPS[s.step]);
-    v.invalidate();
-  }
-  /* the scene seen from the front, flat, for a browser without WebGL */
-  function flat(ctx, s) {
-    const X = (p) => 700 + p[0] * 300, Y = (p) => 330 - p[1] * 140, R = 140;
-    const ball = (p, el, r) => { ctx.save(); ctx.fillStyle = F.el(el); ctx.strokeStyle = alpha(PAL.ink, 0.6); ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(X(p), Y(p), r * R, 0, 2 * Math.PI); ctx.fill(); ctx.stroke(); ctx.restore(); };
-    NI.filter((p) => p[2] === 1).forEach((p) => ball(p, 'Ni', NI_R));
-    s.bonds.forEach((b) => { if (b.on) line(ctx, X(b.p), Y(b.p), X(b.q), Y(b.q), b.id.startsWith('nic') ? PAL.muted : PAL.ink, 3); });
-    Object.keys(s.atoms).forEach((id) => { const el = KIND[id[0]]; ball(s.atoms[id], el, RAD[el]); });
-    text(ctx, 'Ni surface', 200, Y([0, NI_Y, 0]) + 56, PAL.ink, { size: 20 });
-    topline(ctx, STEPS[s.step].replace(/<sub>(\d)<\/sub>/g, '_{$1}'));
+  function slab(ctx) {
+    /* the block of metal under the top layer of atoms: its top, front and right faces */
+    const x0 = -1.75, x1 = 1.75, z0 = -1.25, z1 = 1.25, yt = NI_Y, yb = NI_Y - 0.4;
+    const q = (x, y, z) => P([x, y, z]);
+    const faceOf = (pts, k) => { ctx.save(); ctx.beginPath(); pts.forEach((pt, i) => (i ? ctx.lineTo(pt[0], pt[1]) : ctx.moveTo(pt[0], pt[1]))); ctx.closePath(); ctx.fillStyle = F.el('Ni'); ctx.fill(); ctx.fillStyle = alpha(PAL.ink, k); ctx.fill(); ctx.strokeStyle = alpha(PAL.ink, 0.6); ctx.lineWidth = 1.5; ctx.stroke(); ctx.restore(); };
+    faceOf([q(x0, yt, z0), q(x1, yt, z0), q(x1, yt, z1), q(x0, yt, z1)], 0.12);
+    faceOf([q(x0, yt, z1), q(x1, yt, z1), q(x1, yb, z1), q(x0, yb, z1)], 0.3);
+    faceOf([q(x1, yt, z1), q(x1, yt, z0), q(x1, yb, z0), q(x1, yb, z1)], 0.42);
   }
   function draw() {
-    const s = state(cy.now());
-    build(s); place(s);
-    const { ctx } = begin(cnv);
-    if (!has3) flat(ctx, s);
-    const w = 300, gap = 26, x0 = (1400 - 4 * w - 3 * gap) / 2, y0 = FLAT + 30;
-    TAGS.forEach((tg, i) => {
-      const on = i === s.step, x = x0 + i * (w + gap);
-      ctx.save(); ctx.strokeStyle = on ? PAL.ink : alpha(PAL.ink, 0.25); ctx.lineWidth = on ? 3 : 1.5; ctx.beginPath(); ctx.roundRect(x, y0, w, 64, 8); ctx.stroke(); ctx.restore();
-      text(ctx, tg, x + w / 2, y0 + 32, on ? PAL.ink : PAL.muted, { size: 20, weight: on ? 600 : 400, align: 'center' });
-    });
+    const s = state(cy.now()), { ctx } = begin(d.c);
+    hits = [];
+    topline(ctx, STEPS[s.step]);
+    slab(ctx);
+    const items = [];
+    NI.forEach((p) => items.push({ z: depth(p), p, el: 'Ni', r: NI_R, name: 'a nickel atom of the catalyst surface, Ni' }));
+    Object.keys(s.atoms).forEach((id) => { const el = KIND[id[0]], p = s.atoms[id]; items.push({ z: depth(p), p, el, r: RAD[el], name: NAME[el] }); });
+    s.bonds.forEach((b) => { if (b.on) { const m = [(b.p[0] + b.q[0]) / 2, (b.p[1] + b.q[1]) / 2, (b.p[2] + b.q[2]) / 2]; items.push({ z: depth(m) + 1, bond: b }); } });
+    items.sort((u, w) => w.z - u.z);
+    for (const it of items) {
+      if (it.bond) {
+        const b = it.bond, [x1, y1] = P(b.p), [x2, y2] = P(b.q), ni = b.id.startsWith('nic');
+        line(ctx, x1, y1, x2, y2, ni ? PAL.muted : PAL.ink, ni ? 4 : 6);
+        continue;
+      }
+      const [x, y, rr] = ball(ctx, it.p, it.el, it.r);
+      if (it.el !== 'Ni') hits.push({ x, y, r: rr + 4, name: it.name });
+    }
+    const corner = P([-1.75, NI_Y - 0.4, 1.25]);
+    text(ctx, 'Ni surface', corner[0] - 12, corner[1] - 30, PAL.ink, { size: 22, align: 'right' });
+    hits.push({ x: 690, y: P([0, NI_Y, 0])[1], r: 160, name: 'the nickel catalyst, a solid' });
+    F.legend(ctx, { l: 1080, r: 1360, t: 470, b: 540 }, ['C', 'H'].map((e) => ({ s: e === 'C' ? 'carbon' : 'hydrogen', draw: (c, x, y) => { c.save(); c.fillStyle = F.el(e); c.strokeStyle = alpha(PAL.ink, 0.5); c.lineWidth = 1.2; c.beginPath(); c.arc(x, y, e === 'C' ? 11 : 8, 0, 2 * Math.PI); c.fill(); c.stroke(); c.restore(); } })), { corner: 'br' });
   }
   F.tex(d.readout, '\\text{C}_{2}\\text{H}_{4}(g) + \\text{H}_{2}(g) \\xrightarrow{\\;\\text{Ni}\\;} \\text{C}_{2}\\text{H}_{6}(g)');
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });

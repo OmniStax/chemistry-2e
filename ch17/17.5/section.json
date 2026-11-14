@@ -104,6 +104,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "readout on separate lines, short caption"
         }
       ]
     },
@@ -142,6 +146,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "headline dropped, readout split, labels clear, short caption"
         }
       ]
     }

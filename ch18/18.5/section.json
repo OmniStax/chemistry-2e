@@ -48,6 +48,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt flat from the book’s drawing with its insets, caption cut"
     }
    ]
   },

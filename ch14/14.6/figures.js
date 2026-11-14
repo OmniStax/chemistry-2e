@@ -87,14 +87,15 @@ const amt = (x) => (x <= 0 ? '0' : x >= 100 ? x.toFixed(0) : x.toPrecision(3));
   }
 
   const B = { l: 560, r: 1330, t: 128, b: 462 };
-  const BAR = { base: 462, h: 210, w: 104, x: [150, 274] };   /* the start line at two thirds of the way up, leaving room for the bar that grows */
+  const BAR = { base: 462, h: 160, w: 104, x: [150, 274] };   /* a partner can at most double, so the start line stands halfway up the room under the headline */
   function draw() {
     const { ctx, H } = begin(d.c);
     hits = [];
     const dir = add.value, c = +buf.value, x = n.v, cA = C('amount'), cC = C('concentration');
     const cB = F.ref('buffer'), cU = F.ref('unbuffered');
     const a0 = c * V0, V = vol(x);
-    const ha = dir === 'base' ? a0 - x : a0 + x, ab = dir === 'base' ? a0 + x : a0 - x;
+    /* the strong acid or base turns one partner into the other until that partner is gone; past it the excess stays as H₃O⁺ or OH⁻ */
+    const ha = Math.min(2 * a0, dir === 'base' ? a0 - x : a0 + x), ab = Math.min(2 * a0, dir === 'base' ? a0 + x : a0 - x);
     const spent = Math.min(ha, ab) <= 0, ratio = ab / ha;
     const hh = !spent && ratio >= 0.01 && ratio <= 100;
 

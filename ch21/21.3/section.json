@@ -56,6 +56,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "radioactive substance named; readout on three lines; caption cut"
     }
    ]
   },
@@ -84,6 +88,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "round nucleus packing; key in a row; general equation in readout"
     }
    ]
   },
@@ -114,6 +122,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt on the book's axes (Z across, n up); count in headline"
     }
    ]
   },
@@ -135,6 +147,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "caption cut"
     }
    ]
   },
@@ -161,6 +177,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "headline one line; units in readout; caption cut"
     }
    ]
   },

@@ -64,6 +64,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "caption cut"
         }
       ]
     },
@@ -87,6 +91,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "two equations on two lines; caption cut"
         }
       ]
     },
@@ -110,6 +118,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "lead dims gamma rather than stopping all; readout on two lines"
         }
       ]
     },
@@ -163,6 +175,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "caption cut"
         }
       ]
     },

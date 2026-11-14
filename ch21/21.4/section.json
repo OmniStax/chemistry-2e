@@ -68,6 +68,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "caption cut; Rb-96 erratum note withdrawn"
         }
       ]
     },
@@ -95,6 +99,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "rebuilt flat: a slice of the lump with bars of fissions beside"
         }
       ]
     },
@@ -145,6 +153,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "coolant flow and nozzle arrows bolder; caption cut"
         }
       ]
     },

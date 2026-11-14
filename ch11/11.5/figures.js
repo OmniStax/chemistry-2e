@@ -130,7 +130,7 @@ function turn(p, yaw, pitch) {
    which a turn does not show better (the 3D view was removed 2026-11-14).
 ===================================================================== */
 (function () {
-  const d = sim('sim-amphiphile', 440);
+  const d = sim('sim-amphiphile', 420);
   const R = { C: 0.38, H: 0.25, O: 0.36, S: 0.5, Na: 0.55 };
   const WORD = { C: 'a carbon atom, C', H: 'a hydrogen atom, H', O: 'an oxygen atom, O', S: 'a sulfur atom, S', Na: 'a sodium ion, Na<sup>+</sup>' };
   const cpos = (k) => [1.26 * k, k % 2 ? 0.44 : -0.44, 0];
@@ -297,11 +297,11 @@ function turn(p, yaw, pitch) {
     /* the book's four labels, the two on the anion only once it has arrived */
     const L = st[LABEL_SLOT], Tl = st[TAIL_SLOT], ion = IONS[0];
     label(ctx, 'solvated cation', ion.x - 40, ion.y, { side: 'left', size: 20, leader: true, gap: 60 });
-    const settled = st.every((s) => s.w >= 1);
+    const settled = st.every((s) => s.w >= 0.999);
     if (settled) label(ctx, 'ionic end', L.x - 14, L.y, { side: 'left', size: 20, leader: true, gap: 110 });
     if (settled) label(ctx, 'hydrocarbon tail', Tl.x + Math.cos(Tl.a) * 36, Tl.y + Math.sin(Tl.a) * 36 + 4, { side: 'left', size: 20, leader: true, gap: 170 });
     label(ctx, 'drop of oil', CX - 30, CY + RD - 10, { side: 'below', size: 20, leader: true, gap: 34 });
-    const done = st.filter((s) => s.w >= 1).length;
+    const done = st.filter((s) => s.w >= 0.999).length;
     topline(ctx, done === N
       ? 'All ' + N + ' soap anions have settled at the surface of the oil drop, and the coated drop stays suspended in the water.'
       : done + ' of ' + N + ' soap anions have settled at the surface of the oil drop, their hydrocarbon tails in the oil and their ionic ends in the water.');

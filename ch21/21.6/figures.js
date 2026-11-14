@@ -173,12 +173,11 @@ function burst(ctx, x, y, r, color, k) {
   const path = F.choice(d.controls, { label: 'path', options: [{ value: 'direct', label: 'direct' }, { value: 'indirect', label: 'indirect' }], value: 'indirect', onInput: () => { cy.reset(); say(); } });
   const T = () => (path.value === 'direct' ? 3.2 : 5.6);
   const cy = cycle(T, 1.2);
-  const ro = F.readout(d);
   const EQ = {
     direct: '\\mk{m}{\\text{biomolecule}}+\\mk{r}{\\text{radiation}}\\longrightarrow\\mk{i}{\\text{biomolecule}^{+}}+\\mk{e}{\\text{e}^{-}}',
-    indirect: '\\mk{m}{\\text{H}_{2}\\text{O}}+\\mk{r}{\\text{radiation}}\\longrightarrow\\mk{i}{\\text{H}_{2}\\text{O}^{+}}+\\mk{e}{\\text{e}^{-}},\\quad\\mk{i2}{\\text{H}_{2}\\text{O}^{+}}+\\mk{w}{\\text{H}_{2}\\text{O}}\\longrightarrow\\mk{h}{\\text{H}_{3}\\text{O}^{+}}+\\mk{oh}{\\text{OH}^{\\bullet}}',
+    indirect: '\\mk{m}{\\text{H}_{2}\\text{O}}+\\mk{r}{\\text{radiation}}\\longrightarrow\\mk{i}{\\text{H}_{2}\\text{O}^{+}}+\\mk{e}{\\text{e}^{-}} \\\\ \\mk{i2}{\\text{H}_{2}\\text{O}^{+}}+\\mk{w}{\\text{H}_{2}\\text{O}}\\longrightarrow\\mk{h}{\\text{H}_{3}\\text{O}^{+}}+\\mk{oh}{\\text{OH}^{\\bullet}}',
   };
-  const say = () => ro.set(EQ[path.value], undefined, { form: path.value });
+  const say = () => F.tex(d.readout, EQ[path.value].replace(/\\mk\{\w+\}/g, ''));
   say();
   /* the DNA: two strands about a vertical axis */
   const DX = 1110, DY0 = 92, DY1 = 420, AMP = 62, PER = 170;
@@ -278,8 +277,10 @@ function burst(ctx, x, y, r, color, k) {
   /* a fixed scatter of ions along each particle's track */
   let seed = 7;
   const rnd = () => { seed = (seed * 16807) % 2147483647; return seed / 2147483647; };
+  /* lead dims γ rays and does not stop them all: every other one passes through and leaves the scene */
   LANES.forEach((l) => {
-    l.ions = EMIT.map(() => { const n = Math.max(1, Math.round(((l.stop - XS) * l.per100) / 100)); return Array.from({ length: n }, () => ({ x: XS + 20 + rnd() * (l.stop - XS - 20), dy: (rnd() - 0.5) * 34 })); });
+    l.stops = EMIT.map((_, i) => (l.key === 'g' && i % 2 ? 1400 : l.stop));
+    l.ions = EMIT.map((_, i) => { const st = Math.min(l.stops[i], 1330), n = Math.max(1, Math.round(((st - XS) * l.per100) / 100)); return Array.from({ length: n }, () => ({ x: XS + 20 + rnd() * (st - XS - 20), dy: (rnd() - 0.5) * 34 })); });
   });
   const BAR = { paper: [296, 312], metal: [512, 530], glass: [600, 712], concrete: [790, 930], lead: [1030, 1120] };
   function ionMark(ctx, x, y, a) {
@@ -300,7 +301,7 @@ function burst(ctx, x, y, r, color, k) {
   function draw() {
     const { ctx } = begin(d.c), t = cy.now();
     hits = [];
-    topline(ctx, 'α particles stop in paper, β particles in metal, neutrons in water, and γ rays only in lead.');
+    topline(ctx, 'α particles stop in paper, β particles in metal and neutrons in water; γ rays cross the concrete, and lead dims them.');
     const top = 92, bot = 448;
     /* the barriers, back to front */
     const slab = (x0, x1, fill, name) => { ctx.save(); ctx.fillStyle = fill; ctx.fillRect(x0, top, x1 - x0, bot - top); ctx.strokeStyle = PAL.muted; ctx.lineWidth = 2; ctx.strokeRect(x0, top, x1 - x0, bot - top); ctx.restore(); hits.push({ x: (x0 + x1) / 2, y: 110, r: Math.max(16, (x1 - x0) / 2), name }); };
@@ -324,13 +325,13 @@ function burst(ctx, x, y, r, color, k) {
     });
     /* ions, which fade as they recombine, then the particles in flight */
     LANES.forEach((l) => EMIT.forEach((e, i) => {
-      const x = Math.min(XS + l.v * (t - e), l.stop);
+      const x = Math.min(XS + l.v * (t - e), l.stops[i]);
       if (t < e) return;
       l.ions[i].forEach((q) => { if (q.x <= x) { const tq = e + (q.x - XS) / l.v; ionMark(ctx, q.x, l.y + q.dy, 1 - clamp01((t - tq - 1.4) / 0.8)); } });
     }));
-    LANES.forEach((l) => EMIT.forEach((e) => {
+    LANES.forEach((l) => EMIT.forEach((e, i) => {
       if (t < e) return;
-      const x = Math.min(XS + l.v * (t - e), l.stop), tStop = e + (l.stop - XS) / l.v, a = 1 - clamp01((t - tStop) / 0.35);
+      const x = Math.min(XS + l.v * (t - e), l.stops[i]), tStop = e + (l.stops[i] - XS) / l.v, a = 1 - clamp01((t - tStop) / 0.35);
       if (a <= 0) return;
       ctx.save(); ctx.globalAlpha = a; particle(ctx, l.key, x, l.y); ctx.restore();
       hits.push({ x, y: l.y, r: 18, name: `${l.name === 'neutron' ? 'a neutron' : l.name === 'γ ray' ? 'a γ ray' : 'an ' + l.name}` });
@@ -340,7 +341,7 @@ function burst(ctx, x, y, r, color, k) {
     hits.push({ x: 1190, y: 482, r: 14, name: 'an ion pair, left where the radiation knocked out an electron' });
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
-  tex(d.readout, '\\text{penetration: }\\alpha<\\beta<\\text{n}<\\gamma\\qquad\\text{ionizing power: }\\alpha:\\text{n}:\\beta:\\gamma\\approx20:10:2:1');
+  tex(d.readout, '\\text{penetration: }\\alpha<\\beta<\\text{n}<\\gamma \\\\ \\text{ionizing power: }\\alpha:\\text{n}:\\beta:\\gamma\\approx20:10:2:1');
 })();
 
 /* =====================================================================

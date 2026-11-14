@@ -121,11 +121,13 @@ const lerp = (a, b, k) => a + (b - a) * k;
     /* the magnesium anode and its wire */
     const mgW = MG.w * (1 - 0.32 * s), mgH = MG.h * (1 - 0.18 * s);
     pick.only(ctx, 'mg', () => {
-      const wire = [[MG.x, MG.y - MG.h / 2], [MG.x, 455], [960, 455], [960, FB]];
+      const wire = [[MG.x, MG.y - mgH / 2 - 16], [MG.x, 455], [960, 455], [960, FB]];
       for (let i = 0; i < wire.length - 1; i++) line(ctx, wire[i][0], wire[i][1], wire[i + 1][0], wire[i + 1][1], PAL.ink, 4);
       ctx.fillStyle = PAL.panel; ctx.fillRect(MG.x - MG.w / 2 - 2, MG.y - MG.h / 2 - 2, MG.w + 4, MG.h + 4);
       ctx.fillStyle = alpha(PAL.ink, 0.05); ctx.fillRect(MG.x - MG.w / 2 - 2, MG.y - MG.h / 2 - 2, MG.w + 4, MG.h + 4);
-      fillPath(ctx, () => ctx.roundRect(MG.x - mgW / 2, MG.y - mgH / 2, mgW, mgH, 12), alpha(mag, 0.55), mag, 2.5);
+      /* a cast block with a neck where the wire is fastened, as the book draws it, shrinking as it dissolves */
+      fillPath(ctx, () => ctx.roundRect(MG.x - 14, MG.y - mgH / 2 - 16, 28, 20, 4), alpha(mag, 0.55), mag, 2.5);
+      fillPath(ctx, () => ctx.roundRect(MG.x - mgW / 2, MG.y - mgH / 2, mgW, mgH, [Math.min(40, mgW / 2), Math.min(40, mgW / 2), 10, 10]), alpha(mag, 0.55), mag, 2.5);
     }, [0, 10]);
 
     /* electrons through the metal, from the anodic site to the cathodic site */
@@ -191,10 +193,8 @@ const lerp = (a, b, k) => a + (b - a) * k;
     text(ctx, `anodic site:  ${o.el} ⟶ ${o.ion} + 2e⁻`, ax, 604, PAL.ink, { size: 20, align: 'center', bg: PAL.panel });
 
     /* the particles, once each */
-    const items = [['electron, e⁻', (x, y) => ball(ctx, x, y, 6, F.el('e-'))], ['O₂', (x, y) => o2(ctx, x, y)], ['H₂O', (x, y) => h2o(ctx, x, y)], [`${o.ion} ion`, (x, y) => ball(ctx, x, y, 9, F.el(o.el), 1, true)]];
-    const w = items.map(([str]) => F.measure(ctx, str, { size: 17 }) + 56);
-    let lx = 700 - w.reduce((a, b) => a + b, 0) / 2;
-    items.forEach(([str, mark], i) => { mark(lx + 14, 652); text(ctx, str, lx + 34, 652, PAL.ink, { size: 17 }); lx += w[i]; });
+    F.legend(ctx, { l: 0, r: 1400, t: 0, b: H }, [{ s: 'electron, e⁻', draw: (g, x, y) => ball(g, x, y, 6, F.el('e-')) }, { s: 'O₂', draw: (g, x, y) => o2(g, x, y) },
+      { s: 'H₂O', draw: (g, x, y) => h2o(g, x, y) }, { s: `${o.ion} ion`, draw: (g, x, y) => ball(g, x, y, 9, F.el(o.el), 1, true) }], { corner: 'bottom', row: true, size: 18 });
 
     topline(ctx, o.head);
     ro.set(`\\kEocell = \\mk{c}{\\kEo{}_{\\text{O}_2/\\text{H}_2\\text{O}}} - \\mk{a}{\\kEo{}_{${o.couple}}} = \\mk{cv}{+1.23\\ \\text{V}} - \\mk{av}{(${o.E}\\ \\text{V})} = \\mk{r}{${o.cell}\\ \\text{V}}`, o.note, { form: v });

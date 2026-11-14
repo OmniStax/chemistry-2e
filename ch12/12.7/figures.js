@@ -86,7 +86,7 @@ const knots = (ks) => (x) => {
     hits = [{ x: g.X(0.5), y: g.Y(R0 + EU), r: 26, name: 'transition state of the uncatalyzed path' }]
       .concat(now.ts.map(([x, y], i) => ({ x: g.X(x), y: g.Y(y), r: 22, name: now.ts.length > 1 ? (i ? 'second' : 'first') + ' transition state of the catalyzed path' : 'transition state of the catalyzed path' })))
       .concat(now.mid ? [{ x: g.X(now.mid[0]), y: g.Y(now.mid[1]), r: 22, name: 'intermediate of the catalyzed path, in the valley between its transition states' }] : []);
-    topline(ctx, e >= EU ? 'At 26 kJ/mol the two barriers stand equally high, and neither path is faster.' : `On the catalyzed path $\\kEa$ is ${e} kJ/mol against 26 kJ/mol, from the same reactants to the same products.`);
+    topline(ctx, e >= EU ? 'At 26 kJ/mol the two barriers stand equally high, and neither path is faster.' : `The catalyst lowers $\\kEa$ from 26 to ${e} kJ/mol and leaves ΔH at 4 kJ/mol.`);
     const ratio = Math.exp((EU - e) / RT);
     ro.set(`\\mk{ratio}{\\frac{${kcat}}{${kun}}} = \\mk{law}{\\exp\\left(\\frac{${Eun} - ${Ecat}}{R\\kT}\\right)} = \\exp\\left(\\frac{(${hue('energy', '26')} - \\mk{ec}{${hue('energy', String(e))}})\\ \\text{kJ/mol}}{(8.314 \\times 10^{-3}\\ \\text{kJ mol}^{-1}\\,\\text{K}^{-1})(${hue('temperature', '298\\ \\text{K}')})}\\right) = \\mk{val}{${big(ratio)}}`);
   }

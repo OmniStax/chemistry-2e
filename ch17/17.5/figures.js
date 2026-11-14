@@ -195,9 +195,7 @@ function legend(ctx, y, items) {
     /* names */
     F.label(ctx, 'fuel in', 225, 250, { side: 'above', gap: 22 });
     F.label(ctx, 'air in', 1175, 250, { side: 'above', gap: 22 });
-    F.label(ctx, 'anode', 535, BOT, { side: 'below', gap: 24 });
-    F.label(ctx, 'electrolyte', 700, BOT, { side: 'below', gap: 24 });
-    F.label(ctx, 'cathode', 865, BOT, { side: 'below', gap: 24 });
+    for (const [s0, x0] of [['anode', 535], ['electrolyte', 700], ['cathode', 865]]) text(ctx, s0, x0, BOT + 28, ink, { size: 22, align: 'center' });
     F.label(ctx, 'electric current', 700, WY - 14, { side: 'above', gap: 22 });
     legend(ctx, 622, [
       { name: 'H₂', w: 32, draw: (x, y) => h2(ctx, x, y) },

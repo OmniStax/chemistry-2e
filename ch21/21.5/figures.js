@@ -174,62 +174,6 @@ function rng(seed) {
 })();
 
 /* =====================================================================
-   FIGURE 21.27: the decay scheme of cobalt-60, a faithful copy on an
-   energy axis, 130 logical units to the MeV. Co-60 (2.82 MeV above
-   Ni-60's ground state) β-decays to Ni-60's level at 2.5057 MeV
-   (0.31 MeV, 99.88%) or at 1.3325 MeV (1.48 MeV, 0.12%), and the
-   nucleus falls to its ground state by two γ rays, 1.1732 MeV and
-   1.3325 MeV. Still: nothing varies.
-===================================================================== */
-(function () {
-  const H = 540, d = sim('sim-co60-decay', H);
-  const AX = 160, Y0 = 476, K = 130, Y = (e) => Y0 - e * K;
-  const CO = { e: 2.82, l: 220, r: 470 }, NI = { l: 640, r: 1040 }, LV = [2.5057, 1.3325, 0];
-  let hits = [];
-  F.hover(d.stage, () => hits);
-  function draw() {
-    const { ctx } = begin(d.c), ec = C('energy'), be = F.el('e-'), G = F.el('gamma');
-    hits = [];
-    /* the energy axis */
-    line(ctx, AX, Y(0) + 6, AX, Y(3.2), PAL.muted, 2.5);
-    for (let e = 0; e <= 3; e++) {
-      line(ctx, AX - 8, Y(e), AX, Y(e), PAL.muted, 2.5);
-      text(ctx, String(e), AX - 16, Y(e), PAL.muted, { size: 17, align: 'right' });
-    }
-    text(ctx, 'E (MeV)', AX, Y(3.2) - 22, ec, { size: 21, weight: 600, align: 'center' });
-    /* the levels */
-    line(ctx, CO.l, Y(CO.e), CO.r, Y(CO.e), PAL.ink, 5);
-    text(ctx, '${}^{60}_{27}\\text{Co}$', (CO.l + CO.r) / 2, Y(CO.e) - 30, PAL.ink, { size: 28, align: 'center', tex: true });
-    text(ctx, '5.272 a', (CO.l + CO.r) / 2, Y(CO.e) + 24, C('time'), { size: 21, weight: 600, align: 'center' });
-    hits.push({ x: (CO.l + CO.r) / 2, y: Y(CO.e), r: 60, name: 'cobalt-60, half-life 5.272 a' });
-    LV.forEach((e) => {
-      line(ctx, NI.l, Y(e), NI.r, Y(e), PAL.ink, 5);
-      if (e > 0) text(ctx, `${e.toFixed(4)} MeV`, NI.r + 16, Y(e), ec, { size: 19, weight: 600 });
-      hits.push({ x: (NI.l + NI.r) / 2, y: Y(e), r: 40, name: e ? `nickel-60 in an excited state, ${e.toFixed(4)} MeV above its ground state` : 'nickel-60 in its ground state' });
-    });
-    text(ctx, '${}^{60}_{28}\\text{Ni}$', (NI.l + NI.r) / 2, Y(0) + 32, PAL.ink, { size: 28, align: 'center', tex: true });
-    /* the two β branches */
-    const branch = (x1, e1, mev, pct, lx, ly) => {
-      F.arrow(ctx, CO.r, Y(CO.e), x1, Y(e1), be, 4);
-      text(ctx, 'β', lx, ly, be, { size: 24, weight: 600 });
-      const bx = lx + measure(ctx, 'β', { size: 24, weight: 600 }) + 10;
-      text(ctx, `${mev} MeV`, bx, ly, ec, { size: 20, weight: 600 });
-      text(ctx, pct, bx + measure(ctx, `${mev} MeV`, { size: 20, weight: 600 }) + 10, ly, PAL.ink, { size: 20 });
-    };
-    branch(700, LV[0], '0.31', '99.88%', 560, Y(CO.e) - 18);
-    branch(720, LV[1], '1.48', '0.12%', 410, Y(1.85));
-    /* the two γ rays */
-    [[LV[0], LV[1], '1.1732'], [LV[1], LV[2], '1.3325']].forEach(([a, b, mev]) => {
-      wavy(ctx, 880, Y(a) + 4, 880, Y(b) - 4, G, 6, 20, 3);
-      const ym = (Y(a) + Y(b)) / 2;
-      text(ctx, 'γ', 910, ym, G, { size: 24, weight: 600 });
-      text(ctx, `${mev} MeV`, 936, ym, ec, { size: 20, weight: 600 });
-    });
-  }
-  register(d.fig, { update: () => {}, draw });
-})();
-
-/* =====================================================================
    FIGURE 21.29: the ionization chamber of a smoke detector. Every 6.00 s
    (a loop that repeats seamlessly) americium-241 below a hole in the
    negative plate sends 24 α particles up into the air, at 700 units a

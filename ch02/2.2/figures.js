@@ -144,7 +144,7 @@ const E_CHARGE = 1.602e-19;
     label(ctx, 'cathode', CX - 17, Y0 - 24, { side: 'above', gap: 76, color: cc });
     label(ctx, 'anode', AX + AW / 2, Y0 - 18, { side: 'above', gap: 58, color: ca });
     label(ctx, 'cathode ray', 500, Y0 + 6, { side: 'below', gap: 62 });
-    label(ctx, 'charged plates', P1 + 4, Y0 - GAP - 6, { side: 'above', gap: 104 });
+    label(ctx, charged ? 'charged plates' : 'plates', P1 + 4, Y0 - GAP - 6, { side: 'above', gap: 104 });
     label(ctx, 'magnets', 812, Y0 + 90, { side: 'below', gap: 32 });
     label(ctx, 'scale on the glass', BX + (BR + 12) * Math.cos(0.75), Y0 + (BR + 12) * Math.sin(0.75), { side: 'below', gap: 56 });
     /* the two bends in degrees, rounded once so that the numbers shown add up */

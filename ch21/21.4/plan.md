@@ -47,7 +47,7 @@ No Check Your Learning. End of section, 47 to 54. Four keyed kept with the book'
 
 ## Left out
 
-The four Link to Learning notes (the CERN tour and video, the fission simulation, whose idea `sim-fission` and `sim-chain` carry, the reactors video and the waste-management page). Errata kept as printed: "split the U-238 nuclei" after uranium-235; "Strassman"; Table 21.3's meitnerium "107" beside ²⁶⁶₁₀₉Mt; the sun's equation "2₊₁⁰e⁺"; fusion's 3.6 × 10¹¹ kJ "somewhat larger" than fission's 1.8 × 10¹⁰ kJ; "any radioactive materials might be released"; the summary's technetium and astatine, which this section does not make. Figure 21.15(a)'s unbalanced ⁹⁷₃₇Rb (kept in the original image, replaced in the live figure), and Figure 21.16's first fission drawn as Kr-93 and Ba-142 beside the unbalanced Ba-140 + Kr-90 + 3n written under it (kept in the original image).
+The four Link to Learning notes (the CERN tour and video, the fission simulation, whose idea `sim-fission` and `sim-chain` carry, the reactors video and the waste-management page). Errata kept as printed: "split the U-238 nuclei" after uranium-235; "Strassman"; Table 21.3's meitnerium "107" beside ²⁶⁶₁₀₉Mt; the sun's equation "2₊₁⁰e⁺"; fusion's 3.6 × 10¹¹ kJ "somewhat larger" than fission's 1.8 × 10¹⁰ kJ; "any radioactive materials might be released"; the summary's technetium and astatine, which this section does not make. (Checked against the images on 2026-11-14: Figure 21.15(a) prints ⁹⁶₃₇Rb + ¹³⁷₅₅Cs + 3n and Figure 21.16 draws and writes ¹⁴⁰Ba + ⁹³Kr + 3n, both balanced; the errata once listed here came from the alt text.)
 
 ## Wanted at chapter level
 

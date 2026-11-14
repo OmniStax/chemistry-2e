@@ -115,8 +115,7 @@ function legend(ctx, y, items) {
     topline(ctx, dis ? 'On discharge, lithium ions leave the graphite for the cobalt oxide as electrons run through the device.' : 'On charge, the charger drives electrons and lithium ions back into the graphite.');
     d.hits = hits;
     const x = (dis ? 6 - arrived : arrived) / 12;
-    say(d, `\\text{Li}_{1-x}\\text{CoO}_{2}+x\\,\\text{LiC}_{6}\\rightleftharpoons\\text{LiCoO}_{2}+x\\,\\text{C}_{6}\\qquad x = ${fmt(x, 2)}\\qquad \\kEcell\\sim ${hue('potential', '3.7\\ \\text{V}')}`,
-      'One electron passes through the external circuit for each lithium ion that crosses the electrolyte.');
+    say(d, `\\text{Li}_{1-x}\\text{CoO}_{2}+x\\,\\text{LiC}_{6}\\rightleftharpoons\\text{LiCoO}_{2}+x\\,\\text{C}_{6} \\\\ x = ${fmt(x, 2)} \\\\ \\kEcell\\sim ${hue('potential', '3.7\\ \\text{V}')}`);
   }
   F.hover(d.stage, () => d.hits || []);
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
@@ -134,7 +133,7 @@ function legend(ctx, y, items) {
    wrapped so the streams never break.
 ===================================================================== */
 (function () {
-  const d = sim('sim-fuel-cell', 650);
+  const d = sim('sim-fuel-cell', 580);
   const WY = 160, AX = 535, CX = 865, TOP = 230, BOT = 550, T = 6.2, TURNS = [0.1, 2.5];
   const YA = [320, 420], YC = 380;
   const fuelTo = (y) => [[175, 262], [450, 262], [450, y], [492, y]];
@@ -151,6 +150,8 @@ function legend(ctx, y, items) {
   const hplus = (ctx, x, y) => { atom(ctx, x, y, 8, 'H'); charge(ctx, x, y, 8, true); };
   function draw() {
     const { ctx } = begin(d.c), t = cy.now(), ink = PAL.ink, hits = [];
+    /* no headline: the scene is drawn 70 units up */
+    ctx.save(); ctx.translate(0, -70);
     /* channels: walls in soft gray, the gas paths open */
     const wall = (l, tp, r, b) => { ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = alpha(ink, 0.6); ctx.lineWidth = 2; ctx.fillRect(l, tp, r - l, b - tp); ctx.strokeRect(l, tp, r - l, b - tp); ctx.restore(); };
     wall(300, 230, 470, 250); wall(300, 290, 400, 490); wall(300, 530, 470, 550);
@@ -206,9 +207,9 @@ function legend(ctx, y, items) {
       { name: 'H⁺', w: 30, draw: (x, y) => hplus(ctx, x - 6, y) },
       { name: 'e⁻', w: 24, draw: (x, y) => electron(ctx, x - 5, y) },
     ]);
-    topline(ctx, 'Electrons from hydrogen at the anode reach oxygen at the cathode through the external circuit, while H⁺ crosses the electrolyte.');
-    d.hits = hits;
-    say(d, `2\\text{H}_{2}(g)+\\text{O}_{2}(g)\\longrightarrow 2\\text{H}_{2}\\text{O}(g)\\qquad \\kEcell\\sim ${hue('potential', '1.2\\ \\text{V}')}`,
+    ctx.restore();
+    d.hits = hits.map((h) => ({ ...h, y: h.y - 70 }));
+    say(d, `2\\text{H}_{2}(g)+\\text{O}_{2}(g)\\longrightarrow 2\\text{H}_{2}\\text{O}(g) \\\\ \\kEcell\\sim ${hue('potential', '1.2\\ \\text{V}')}`,
       `So far ${2 * done} H₂ and ${done} O₂ have reacted, giving ${2 * done} H₂O, and ${4 * done} electrons have passed through the circuit.`);
   }
   F.hover(d.stage, () => d.hits || []);

@@ -108,7 +108,7 @@ Pull a helium nucleus apart and watch 0.0305 amu reappear as 28.4 MeV. Slide alo
 Errata the sections found beyond the list above, carried as printed and named in the sections' `notes`:
 
 - 21.3: Figure 21.5's image labels the daughter radon-234 where its caption says thorium-234.
-- 21.4: Figure 21.15 (a) writes ⁹⁷₃₇Rb + ¹³⁷₅₅Cs + 3n, whose mass numbers add to 237, not 236; the live Figure 21.14 + 21.15 takes Figure 21.16's balanced ⁹⁶₃₇Rb in its place, and the original image keeps the book's. Figure 21.16 draws its first fission as Kr-93 and Ba-142 above an equation that writes Ba-140 + Kr-90 + 3n, which itself adds to 233; the original image is kept as printed.
+- 21.4: Figure 21.15 (a) prints ⁹⁶₃₇Rb + ¹³⁷₅₅Cs + 3n and Figure 21.16 draws and writes ¹⁴⁰₅₆Ba + ⁹³₃₆Kr + 3n, both balanced (corrected 2026-11-14 against the images; an earlier note here read 97 and 142 from the alt text).
 
 Departures from the plan above, each argued in its section's plan:
 

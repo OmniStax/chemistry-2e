@@ -38,10 +38,10 @@ const FURNACE = '#e2462a';
   const MT = ctl(d.controls, { label: '\\kM_{\\text{NaOH}}', cls: 'concentration', min: 0.1, max: 0.5, step: 0.001, value: 0.25, unit: 'M', dec: 3, onInput: reset, aria: 'molarity of the sodium hydroxide titrant' });
   const VS = ctl(d.controls, { label: '\\kV_{\\text{sample}}', cls: 'volume', min: 10, max: 50, step: 0.5, value: 50, unit: 'mL', dec: 2, onInput: reset, aria: 'volume of the hydrochloric acid sample' });
   const MA = ctl(d.controls, { label: '\\kM_{\\text{HCl}}', cls: 'concentration', key: 'acid', min: 0.05, max: 0.3, step: 0.001, value: 0.176, unit: 'M', dec: 3, onInput: reset, aria: 'molarity of the hydrochloric acid' });
-  /* Example 4.14 reads 35.23 mL of 0.250 M NaOH into 50.00 mL, which is 0.17615 M and is given as 0.176 M. The acid is
-     therefore 0.00015 M above the three figures its slider shows, so that the figure opens on the book's 35.23 mL; the
-     molarity an end point gives still rounds to the slider's figures at every setting */
-  const acid = () => MA.v + 0.00015;
+  /* Example 4.14 reads 35.23 mL of 0.250 M NaOH into 50.00 mL, which is 0.17615 M and is given as 0.176 M. At the
+     slider's 0.176 M the acid is therefore the example's 0.17615 M, so that the figure opens on the book's 35.23 mL and
+     8.81 mmol; every other setting is the molarity shown */
+  const acid = () => (Math.abs(MA.v - 0.176) < 1e-9 ? 0.17615 : MA.v);
   const RATE = 8, CAP = 50;                                  /* mL delivered per second of the figure's clock; the buret holds 50 mL */
   const veq = () => (VS.v * acid()) / MT.v;
   const vend = () => Math.min(veq(), CAP);
@@ -154,7 +154,7 @@ const FURNACE = '#e2462a';
    glow and the absorber grains stay facts.
 ===================================================================== */
 (function () {
-  const d = sim('sim-combustion', 580);
+  const d = sim('sim-combustion', 540);
   const T = 6, cy = cycle(() => T, 1.8);
   const MH = ctl(d.controls, { label: '\\km_{\\text{H}_2\\text{O}}', cls: 'mass', key: 'water', min: 0.5, max: 5, step: 0.01, value: 1.61, unit: 'mg', dec: 2, onInput: () => cy.reset(), aria: 'mass gained by the water absorber' });
   const MC = ctl(d.controls, { label: '\\km_{\\text{CO}_2}', cls: 'mass', key: 'carbon-dioxide', min: 1, max: 10, step: 0.01, value: 3.94, unit: 'mg', dec: 2, onInput: () => cy.reset(), aria: 'mass gained by the carbon dioxide absorber' });
@@ -237,8 +237,8 @@ const FURNACE = '#e2462a';
        along, and stops at a place among the grains of the absorber that takes it up: one drawn molecule for each
        0.01 mmol, so their numbers are in the ratio of the moles the two gains are */
     const lane = (x, k) => YC + Math.sin(x / 47 + k * 2.4) * Math.max(0, bore(x) - 19) * 0.62;
-    const SPAN = X1 + 60 - X0;
-    for (let i = 0; i < 9; i++) { const x = X0 - 20 + ((tau * 150 + (i * SPAN) / 9) % SPAN); molecule(ctx, 'O2', x, lane(x, i), Math.sin(x / 60 + i) * (bore(x) > TH ? 1 : 0.3), ', passing through'); }
+    const SPAN = X1 - X0;
+    for (let i = 0; i < 9; i++) { const x = X0 + ((tau * 150 + (i * SPAN) / 9) % SPAN); molecule(ctx, 'O2', x, lane(x, i), Math.sin(x / 60 + i) * (bore(x) > TH ? 1 : 0.3), ', passing through'); }
     const SPEED = 760 / (0.33 * T);
     const caught = [0, 0];
     [{ key: 'H2O', n: clamp(Math.round((MH.v / 18.02) * 100), 1, 40), w: WIDE[1], seed: 31 }, { key: 'CO2', n: clamp(Math.round(nC * 100), 1, 40), w: WIDE[2], seed: 57 }].forEach((k, j) => {
@@ -280,7 +280,7 @@ const FURNACE = '#e2462a';
     });
     hits.push({ x: SX, y: FLOOR - 10, r: 40, name: 'the sample, burning in the stream of oxygen' }, { x: (FL + FR) / 2, y: FT + 20, r: 30, name: 'furnace' }, { x: (FL + FR) / 2, y: FBM - 20, r: 30, name: 'furnace' },
       { x: 400, y: YC - R + 4, r: 14, name: 'combustion tube' }, { x: SX + 82, y: FLOOR, r: 12, name: 'boat that holds the sample' });
-    F.legend(ctx, { l: 24, r: 590, t: FBM + 50, b: 568 }, ['O2', 'H2O', 'CO2'].map((k) => ({ s: { O2: 'oxygen, O₂', H2O: 'water, H₂O', CO2: 'carbon dioxide, CO₂' }[k], draw: (c, x, y) => molecule(c, k, x, y, 0) })), { corner: 'bl', row: true });
+    F.legend(ctx, { l: 24, r: 1376, t: 450, b: 528 }, ['O2', 'H2O', 'CO2'].map((k) => ({ s: { O2: 'oxygen, O₂', H2O: 'water, H₂O', CO2: 'carbon dioxide, CO₂' }[k], draw: (c, x, y) => molecule(c, k, x, y, 0) })), { corner: 'bottom', row: true });
     const ratio = nH / nC;
     headline(ctx, fmt(ratio, 2) + ' mol H for every mol C'
       + (ratio > 4.05 ? ': more hydrogen than any hydrocarbon holds, since CH₄ has 4.' : name ? ': the empirical formula is ' + name + '.' : ', a ratio that no small whole numbers fit.'));

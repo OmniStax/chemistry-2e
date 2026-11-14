@@ -219,7 +219,7 @@ function cluster(ctx, atoms, x, y, a = 0, k = 1) {
   const GAS = F.choice(d.controls, { label: '\\text{gas}', aria: 'the gas that dissolves', value: 'HCl', options: [{ value: 'HCl', label: 'HCl' }, { value: 'NH3', label: 'NH₃' }], onInput: () => cy.reset() });
   const S = 1.15, N = 10;
   /* the flask: its centre, the top of the glass, the foot of the neck, the base, the half widths of neck and base, the water's surface */
-  const FX = 430, RIM = 128, NECK = 225, BASE = 650, NW = 60, BW = 400, LY = 392;
+  const FX = 430, RIM = 128, NECK = 225, BASE = 650, NW = 60, BW = 400, LY = 370;
   const hw = (y) => (y <= NECK ? NW : NW + ((y - NECK) / (BASE - NECK)) * (BW - NW));
   function flaskPath(ctx, lip) {
     ctx.beginPath();
@@ -229,10 +229,10 @@ function cluster(ctx, atoms, x, y, a = 0, k = 1) {
   }
   /* places in the water on a triangular grid, 50 apart, each nudged a little; ten neighbouring pairs of them take a gas molecule and
      the water molecule it meets, a dozen more hold water, the rest stay empty */
-  const r = rng(4205), PITCH = 56, sites = [];
+  const r = rng(4205), PITCH = 60, sites = [];
   for (let j = 0, y = LY + 38; y < BASE - 24; j++, y += PITCH * 0.866) {
     const half = hw(y) - (y > BASE - 60 ? 44 : 30), n = Math.floor((2 * half) / PITCH), x0 = FX - (n * PITCH) / 2 + (j % 2 ? PITCH / 4 : -PITCH / 4);
-    for (let i = 0; i <= n; i++) { const x = x0 + i * PITCH; if (Math.abs(x - FX) < half) sites.push({ x: x + (r() - 0.5) * 7, y: y + (r() - 0.5) * 7, gx: x, gy: y }); }
+    for (let i = 0; i <= n; i++) { const x = x0 + i * PITCH; if (Math.abs(x - FX) < half) sites.push({ x: x + (r() - 0.5) * 6, y: y + (r() - 0.5) * 6, gx: x, gy: y }); }
   }
   const near = (a, b) => Math.hypot(a.gx - b.gx, a.gy - b.gy) < PITCH * 1.2;
   const pairs = [];
@@ -245,7 +245,7 @@ function cluster(ctx, atoms, x, y, a = 0, k = 1) {
   const waters = shuffled(sites.filter((s) => !s.used), r).slice(0, 12).map((s) => ({ x: s.x, y: s.y, a: r() * TAU }));
   /* ten places in the gas above the water, below the stopper: rows of one, two, three and four */
   const starts = [];
-  [[242, 1], [280, 2], [318, 3], [356, 4]].forEach(([y, n]) => { for (let i = 0; i < n; i++) starts.push({ x: FX + (i - (n - 1) / 2) * 64 + (r() - 0.5) * 8, y: y + (r() - 0.5) * 6, a: r() * TAU }); });
+  [[236, 1], [270, 2], [304, 3], [338, 4]].forEach(([y, n]) => { for (let i = 0; i < n; i++) starts.push({ x: FX + (i - (n - 1) / 2) * 64 + (r() - 0.5) * 8, y: y + (r() - 0.5) * 4, a: r() * TAU }); });
   /* each gas molecule goes to the pair most nearly below it, and the lowest leave first */
   pairs.sort((a, b) => a.e.x - b.e.x);
   const byX = starts.slice().sort((a, b) => a.x - b.x);
@@ -271,7 +271,7 @@ function cluster(ctx, atoms, x, y, a = 0, k = 1) {
   };
   const NAME = { H2O: 'a water molecule, H₂O', H3O: 'a hydronium ion, H₃O⁺', OH: 'a hydroxide ion, OH⁻', HCl: 'a hydrogen chloride molecule, HCl', Cl: 'a chloride ion, Cl⁻', NH3: 'an ammonia molecule, NH₃', NH4: 'an ammonium ion, NH₄⁺' };
   const mol = (ctx, key, x, y, a = 0) => cluster(ctx, SHAPE[key], x, y, a, S);
-  const sign = (ctx, x, y, s) => text(ctx, s, x + 13 * S, y - 19 * S, PAL.ink, { size: 18, weight: 600 });
+  const sign = (ctx, x, y, s) => text(ctx, s, x + 14 * S, y - 20 * S, PAL.ink, { size: 18, weight: 600 });
   let rkey = '';
   function draw() {
     const { ctx } = begin(d.c);
@@ -320,7 +320,7 @@ function cluster(ctx, atoms, x, y, a = 0, k = 1) {
       }
     });
     late.forEach((f) => f());
-    F.label(ctx, acid ? 'HCl(g)' : 'NH₃(g)', FX - 116, 318, { side: 'left', gap: 70, leader: true, size: 20 });
+    F.label(ctx, acid ? 'HCl(g)' : 'NH₃(g)', FX - 104, 304, { side: 'left', gap: 70, leader: true, size: 20 });
     F.label(ctx, 'H₂O(l)', FX - hw(500) + 26, 500, { side: 'left', gap: 60, leader: true, size: 20 });
     /* the key beside the flask, which also counts each kind */
     const nW = waters.length + N - nR;

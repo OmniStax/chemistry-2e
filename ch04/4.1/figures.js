@@ -44,12 +44,12 @@ function molecule(ctx, key, x, y, a, s, hits) {
    atoms are in their element colours; counts are ink.
 ===================================================================== */
 (function () {
-  const d = sim('sim-methane', 660);
+  const d = sim('sim-methane', 720);
   const n = () => Math.round(N.v);
   const cy = cycle(() => n(), 1.4);
   const N = ctl(d.controls, { label: '\\text{methane molecules}', cls: '', key: 'methane', min: 1, max: 6, step: 1, value: 3, unit: '', dec: 0, aria: 'number of methane molecules', onInput: () => cy.reset() });
   let hits = []; F.hover(d.stage, () => hits);
-  const L = { l: 30, r: 650 }, R = { l: 750, r: 1370 }, TOP = 62, BOT = 632, MIDY = 346, SM = 1.12;
+  const L = { l: 30, r: 650 }, R = { l: 750, r: 1370 }, TOP = 62, BOT = 692, MIDY = 376, SM = 1.05;
   /* the columns: methane and its two oxygens on the left; carbon dioxide and the two waters on the right */
   const XL = [150, 350, 500], XR = [910, 1110, 1250];
   /* which reactant atom becomes which product atom: [molecule, atom] before, [molecule, atom] after.
@@ -82,7 +82,7 @@ function molecule(ctx, key, x, y, a, s, hits) {
     text(ctx, 2 * m + ' oxygen, O_2', (XL[1] + XL[2]) / 2, 98, PAL.ink, { size: 22, align: 'center' });
     text(ctx, done + ' carbon dioxide, CO_2', XR[0], 98, PAL.ink, { size: 22, align: 'center' });
     text(ctx, 2 * done + ' water, H_2O', (XR[1] + XR[2]) / 2, 98, PAL.ink, { size: 22, align: 'center' });
-    const rh = Math.min(96, 426 / m), y0 = MIDY - ((m - 1) * rh) / 2;
+    const rh = Math.min(112, 486 / m), y0 = MIDY - ((m - 1) * rh) / 2;
     const flying = [];
     for (let i = 0; i < m; i++) {
       const y = y0 + i * rh, u = ease(Math.min(1, Math.max(0, t - i)));
@@ -98,8 +98,8 @@ function molecule(ctx, key, x, y, a, s, hits) {
       });
     }
     flying.sort((p, q) => p.z - q.z).forEach((p) => { atom(ctx, p.x, p.y, p.e, p.r); hits.push({ x: p.x, y: p.y, r: p.r + 2, name: NAME[p.e] + ' atom' }); });
-    tally(ctx, (L.l + L.r) / 2, 602, m);
-    tally(ctx, (R.l + R.r) / 2, 602, done);
+    tally(ctx, (L.l + L.r) / 2, 662, m);
+    tally(ctx, (R.l + R.r) / 2, 662, done);
     const sp = '\\text{CH}_4 : \\text{O}_2 : \\text{CO}_2 : \\text{H}_2\\text{O} = ';
     tex(d.readout, sp + (m > 1 ? `${m}:${2 * m}:${m}:${2 * m} = ` : '') + '1:2:1:2');
   }
@@ -130,10 +130,10 @@ function molecule(ctx, key, x, y, a, s, hits) {
     NH3: (p) => S('NH3', 'ammonia, NH_3', '{\\text{NH}}_{3}', { N: 1, H: 3 }, p),
   };
   const RX = {
-    water: { name: 'H₂O ⟶ H₂ + O₂', sp: [SP.H2O(0), SP.H2(1), SP.O2(1)] },
-    n2o5: { name: 'N₂ + O₂ ⟶ N₂O₅', sp: [SP.N2(0), SP.O2(0), SP.N2O5(1)] },
-    ethane: { name: 'C₂H₆ + O₂ ⟶ H₂O + CO₂', sp: [SP.C2H6(0), SP.O2(0), SP.H2O(1), SP.CO2(1)] },
-    ammonia: { name: 'N₂ + H₂ ⟶ NH₃', sp: [SP.N2(0), SP.H2(0), SP.NH3(1)] },
+    water: { name: 'H₂O decomposes', sp: [SP.H2O(0), SP.H2(1), SP.O2(1)] },
+    n2o5: { name: 'N₂O₅ forms', sp: [SP.N2(0), SP.O2(0), SP.N2O5(1)] },
+    ethane: { name: 'C₂H₆ burns', sp: [SP.C2H6(0), SP.O2(0), SP.H2O(1), SP.CO2(1)] },
+    ammonia: { name: 'NH₃ forms', sp: [SP.N2(0), SP.H2(0), SP.NH3(1)] },
   };
   const rx = () => RX[pick.value];
   const plain = (s) => s.f.split(', ')[0];
@@ -142,7 +142,8 @@ function molecule(ctx, key, x, y, a, s, hits) {
     aria: 'coefficient of ' + plain(RX.water.sp[Math.min(i, 2)]) }));
   function choose() {
     const r = rx();
-    K.forEach((k, i) => { const s = r.sp[i]; if (s) { k.relabel(s.t, 'coefficient of ' + plain(s)); k.set(1); } k.show(!!s); });
+    /* a reaction of three species has three sliders: the fourth leaves the row, so that the row is laid out for the controls it holds */
+    K.forEach((k, i) => { const s = r.sp[i]; if (s) { k.relabel(s.t, 'coefficient of ' + plain(s)); k.set(1); if (!k.el.isConnected) d.controls.appendChild(k.el); } else k.el.remove(); });
   }
   choose();
   let hits = []; F.hover(d.stage, () => hits);
@@ -156,7 +157,7 @@ function molecule(ctx, key, x, y, a, s, hits) {
     /* the piles: each species as that many whole molecules, three to a row, with + and the arrow between the species */
     const OP = 76, cw = (1340 - (m - 1) * OP) / m;
     /* one scale for the chosen reaction, so that three of its widest model fill a column and three rows fill the band */
-    const sz = r.sp.map((s) => span(s.m)), SC = Math.min(1.3, ...sz.map(([w, h]) => Math.min(cw / 3 / w, 104 / h))), RH = 104;
+    const sz = r.sp.map((s) => span(s.m)), SC = Math.min(1.7, ...sz.map(([w, h]) => Math.min(cw / 3 / w, 104 / h))), RH = 104;
     r.sp.forEach((s, i) => {
       const cx = 30 + cw / 2 + i * (cw + OP), wide = Math.max(sz[i][0] * SC, cw / 3.6);
       const rows = Math.ceil(co[i] / 3);

@@ -54,6 +54,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "end-point label kept clear of the axis; note cut to its one fact"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: stand, clamp, stopcock and flask drawn; opens on the book's 35.23 mL"
     }
    ]
   },
@@ -122,6 +126,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "subscripts past 9 written; ratios past CH4 named; note cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: one continuous train, the gases drawn moving and taken up"
     }
    ]
   },

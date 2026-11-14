@@ -158,6 +158,8 @@ const TAU = 2 * Math.PI;
     /* the graph: ΔT 0 to 100 °C by 20 from the slider range; q 0 to 100,000 J by 20,000, which holds the large pan's 90,700 J */
     const box = { l: 190, r: 1300, t: 60, b: 430 };
     const g = axes(ctx, box, [0, 100], [0, 100000], { xl: 'ΔT (°C)', xc: ct, yl: 'q (J)', yc: ce, nx: 5, ny: 5, fy: (v) => v.toLocaleString('en-US') });
+    /* the sample's line first, the pans' dashes over it, so a sample that is a pan shows both */
+    plot(ctx, g, (x) => Cap * x, ce, { w: 5 });
     const entries = PANS.map((p) => {
       const col = F.ref(p.ref), cap = IRON * p.m;
       plot(ctx, g, (x) => cap * x, col, { w: 3, dash: [10, 10] });
@@ -165,7 +167,6 @@ const TAU = 2 * Math.PI;
       hits.push({ x: g.X(50), y: g.Y(p.q), r: 14, name: `the ${p.name}: ${p.q.toLocaleString('en-US')} J warms its ${p.m} g of iron by 50.0 °C` });
       return { s: `${p.name}, ${p.m} g of iron`, color: col, w: 3, dash: [10, 10], f: (x) => cap * x };
     });
-    plot(ctx, g, (x) => Cap * x, ce, { w: 5 });
     line(ctx, g.X(dt), box.b, g.X(dt), g.Y(Math.min(100000, q)), alpha(ct, 0.7), 2, [4, 8]);
     /* the point, dropped to both axes so its heat reads on the q axis; past the frame it is pinned at the edge */
     const p = pinned(ctx, box, g.X, g.Y, dt, q, ce);

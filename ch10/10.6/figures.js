@@ -178,7 +178,7 @@ function cubicFigure(id, cells, cell0, pic0) {
     const key3 = p === 'points'
       ? [{ s: 'point shared by eight cells', draw: disc(PAL.ink, 7) }, { s: `its ${q.cn} nearest neighbors`, draw: disc(PAL.ink, 5) }, { s: 'other lattice points', draw: disc(alpha(PAL.ink, 0.35), 3.5) }]
       : [{ s: p === 'inside' ? `${M}: one-eighth at a corner` : `${M} atom at a corner`, draw: disc(col, 10) }];
-    if (p !== 'points' && q.extra) key3.push({ s: p === 'inside' ? (cell === 'bcc' ? `${M}: all of the one at the center` : `${M}: one-half at a face center`) : `${M} atom at the ${q.extra}`, draw: disc(inner(col), 10) });
+    if (p !== 'points' && q.extra) key3.push({ s: p === 'inside' ? (cell === 'bcc' ? `${M}: the whole atom at the center` : `${M}: one-half at a face center`) : `${M} atom at the ${q.extra}`, draw: disc(inner(col), 10) });
     if (p === 'atoms') key3.push({ s: 'the atoms touch along this line', color: C('length'), w: 5 });
     keyStrip(d, KH, key3);
     ro.set(p === 'points' ? `\\text{coordination number} = \\mk{cn}{${q.cn}}` : p === 'atoms' ? q.rel : q.count, '', { form: p + cell });

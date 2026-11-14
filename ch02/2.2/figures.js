@@ -162,7 +162,7 @@ const E_CHARGE = 1.602e-19;
     ro.set(!top ? `\\text{bend down} = \\text{plates} + \\text{magnets} = ${D(a)} + ${D(b)} = ${D(net)}`
       : net >= 0 ? `\\text{bend up} = \\text{plates} - \\text{magnets} = ${D(a)} - ${D(b)} = ${D(net)}`
       : `\\text{bend down} = \\text{magnets} - \\text{plates} = ${D(b)} - ${D(a)} = ${D(net)}`,
-      balanced ? 'From the field strengths at this balance and the bend with the plates alone, Thomson calculated the charge-to-mass ratio of the particles, 1.759 × 10¹¹ C/kg.' : '');
+      balanced ? 'This balance, and the bend with the plates alone, gave Thomson the charge-to-mass ratio: 1.759 × 10¹¹ C/kg.' : '');
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
@@ -232,8 +232,8 @@ const E_CHARGE = 1.602e-19;
     for (let i = 0; i < k; i++) { const a = (i / k) * TAU + 0.4; disc(ctx, DX + (k > 1 ? 7.5 * Math.cos(a) : 0), yd + (k > 1 ? 7.5 * Math.sin(a) : 0), 3.6, ce, null); }
     hits.push({ x: DX, y: yd, r: R + 8, name: 'oil drop ' + drop.value + ', carrying ' + k + ' extra electron' + (k > 1 ? 's' : '') });
     const pull = 1.6 * k * E.v / 100, f14 = (x) => fmt(x, 1) + ' × 10⁻¹⁴ N';
-    text(ctx, '↑ pull of the field', DX + 44, 262, PAL.ink, { size: 18 }); text(ctx, f14(pull), DX + 62, 286, PAL.ink, { size: 19, weight: 600 });
-    text(ctx, '↓ weight', DX + 44, 452, PAL.ink, { size: 18 }); text(ctx, f14(4.8), DX + 62, 475, PAL.ink, { size: 19, weight: 600 });
+    text(ctx, '↑ pull of the field', DX + 44, 258, PAL.ink, { size: 18 }); text(ctx, pull ? f14(pull) : '0 N', DX + 62, 290, PAL.ink, { size: 19, weight: 600 });
+    text(ctx, '↓ weight', DX + 44, 446, PAL.ink, { size: 18 }); text(ctx, f14(4.8), DX + 62, 478, PAL.ink, { size: 19, weight: 600 });
     label(ctx, 'atomizer', 92, 164, { side: 'above', gap: 30 });
     label(ctx, 'pinhole', DX, TOP - 12, { side: 'above', gap: 58 });
     label(ctx, 'telescope', 200, 386, { side: 'below', gap: 30 });

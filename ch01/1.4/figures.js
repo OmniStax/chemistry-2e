@@ -54,9 +54,9 @@ function rule(ctx, x1, x2, y, h) {
   const d = sim('sim-length', 556);
   const IN = 2.54, YD = 91.44;
   const cmText = (v) => trim(v, 4) + ' cm';
-  /* the book's four lengths are the dashed circles on the track (rule 26.1) */
+  /* the book's four lengths: 1 cm is where the track starts, and the inch, the yard and the meter are its dashed circles (rule 26.1) */
   const L = ctl(d.controls, { label: '\\text{length}', cls: 'length', min: 1, max: 100, step: 1, value: 100, unit: 'cm', fmt: cmText, aria: 'length in centimeters',
-    specials: [{ at: 1, label: '1 cm' }, { at: IN, label: '1 in.' }, { at: YD, label: '1 yd' }, { at: 100, label: '1 m' }] });
+    specials: [{ at: IN, label: '1 in.' }, { at: YD, label: '1 yd' }, { at: 100, label: '1 m' }] });
   const X = (cm) => 100 + 12 * cm;                /* the rule: 12 logical units to the centimeter, fixed */
   const yBar = 84, yT = 124, yB = 244;
   const K = 120, SPAN = 7.5, LENS = K * SPAN, lBar = 336, lT = 356, lB = 496;   /* the lens: 7.5 cm of the rule, ten times larger */
@@ -66,7 +66,7 @@ function rule(ctx, x1, x2, y, h) {
     const l = L.v, inches = l / IN, cl = C('length');
     /* the rule: centimeters down from the top edge, inches up from the bottom edge, both from one zero */
     rule(ctx, X(0), X(100), yT, yB - yT);
-    for (let c = 0; c <= 100; c++) { const big = c % 10 === 0, mid = c % 5 === 0; line(ctx, X(c), yT, X(c), yT + (big ? 30 : mid ? 20 : 12), PAL.ink, big ? 2 : 1.2); if (big && c) text(ctx, String(c), X(c), yT + 46, PAL.ink, { size: 17, align: 'center' }); }
+    for (let c = 0; c <= 100; c++) { const big = c % 10 === 0, mid = c % 5 === 0; line(ctx, X(c), yT, X(c), yT + (big ? 30 : mid ? 20 : 12), PAL.ink, big ? 2 : 1.2); if (big && c) text(ctx, String(c), X(c) - (c === 100 ? 6 : 0), yT + 46, PAL.ink, { size: 17, align: c === 100 ? 'right' : 'center' }); }
     for (let i = 0; i <= 39; i++) { const ft = i % 12 === 0, six = i % 6 === 0; line(ctx, X(i * IN), yB, X(i * IN), yB - (ft ? 30 : six ? 22 : 14), PAL.ink, ft ? 2 : 1.2); if (six && i) text(ctx, String(i), X(i * IN), yB - 46, PAL.ink, { size: 17, align: 'center' }); }
     text(ctx, 'cm', X(0) - 12, yT + 20, PAL.muted, { size: 17, align: 'right' });
     text(ctx, 'in.', X(0) - 12, yB - 20, PAL.muted, { size: 17, align: 'right' });

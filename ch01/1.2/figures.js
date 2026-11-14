@@ -49,10 +49,10 @@ const poly = (ctx, pts) => { ctx.beginPath(); pts.forEach(([x, y], i) => (i ? ct
   /* each container in its own frame: origin at the middle of its base, y up. `inside` is the space under the stopper;
      `glass` the wall from the rim down one side, across the base and up the other; px the canvas x of its low corner */
   const VES = [
-    { ref: 'wide', name: 'flask', cap: 250, px: 230, half: 216, neck: 38, top: 350, rim: 388, low: -216 + (178 / 300) * SIDE,
+    { ref: 'wide', name: 'flask', cap: 250, px: 265, half: 216, neck: 38, top: 350, rim: 388, low: -216 + (178 / 300) * SIDE,
       inside: [[-216, 0], [216, 0], [38, 300], [38, 350], [-38, 350], [-38, 300]],
       glass: [[-44, 392], [-38, 386], [-38, 300], [-216, 0], [216, 0], [38, 300], [38, 386], [44, 392]] },
-    { ref: 'narrow', name: 'cylinder', cap: 150, px: 930, half: 85, neck: 85, top: 282.35, rim: 320, low: -85,
+    { ref: 'narrow', name: 'cylinder', cap: 150, px: 965, half: 85, neck: 85, top: 282.35, rim: 320, low: -85,
       inside: [[-85, 0], [85, 0], [85, 282.35], [-85, 282.35]],
       glass: [[-91, 324], [-85, 318], [-85, 0], [85, 0], [85, 318], [91, 324]] },
   ];
@@ -107,8 +107,8 @@ const poly = (ctx, pts) => { ctx.beginPath(); pts.forEach(([x, y], i) => (i ? ct
       const mid = pts.reduce((s, p) => [s[0] + p[0] / pts.length, s[1] + p[1] / pts.length], [0, 0]);
       hits.push({ x: mid[0], y: mid[1], r: to === 'gas' ? 70 : 46, name: 'the ' + to + ', ' + (to === 'gas' ? v.cap : SAMPLE) + ' mL' });
       /* the stopper, wedged in the mouth, then the glass */
-      const st = [[-v.neck + 1, v.top], [v.neck - 1, v.top], [v.neck + 8, v.rim + 34], [-v.neck - 8, v.rim + 34]].map(W);
-      ctx.save(); poly(ctx, st); ctx.fillStyle = PAL.muted; ctx.fill(); ctx.restore();
+      const st = [[-v.neck + 2, v.top], [v.neck - 2, v.top], [v.neck + 7, v.rim + 26], [-v.neck - 7, v.rim + 26]].map(W);
+      ctx.save(); poly(ctx, st); ctx.fillStyle = PAL.soft; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5; ctx.lineJoin = 'round'; ctx.fill(); ctx.stroke(); ctx.restore();
       const sm = W([0, v.rim]); hits.push({ x: sm[0], y: sm[1], r: 34, name: 'the stopper' });
       const g = v.glass.map(W);
       ctx.save(); ctx.strokeStyle = rc; ctx.lineWidth = 4; ctx.lineJoin = 'round'; ctx.lineCap = 'round'; ctx.beginPath(); g.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y))); ctx.stroke(); ctx.restore();
@@ -193,14 +193,14 @@ const poly = (ctx, pts) => { ctx.beginPath(); pts.forEach(([x, y], i) => (i ? ct
     segs.forEach((s) => {
       const w = s.g * k;
       if (w > 0.2) {
-        ctx.save(); ctx.fillStyle = s.rest ? PAL.soft : s.color; ctx.fillRect(x, y - 28, w, 56);
+        ctx.save(); ctx.fillStyle = s.rest ? alpha(PAL.muted, 0.3) : s.color; ctx.fillRect(x, y - 28, w, 56);
         if (x > BL + 1) { ctx.fillStyle = PAL.panel; ctx.fillRect(x - 1, y - 28, 2, 56); } ctx.restore();
         for (let hx = x + Math.min(w / 2, 20); hx < x + w; hx += 40) hits.push({ x: hx, y, r: 24, name: s.name + ', ' + fmt(s.g, 1) + ' g' });
       }
       x += w;
     });
     ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.strokeRect(BL, y - 28, BR - BL, 56); ctx.restore();
-    const entry = (s) => ({ s: s.name + ' ' + fmt(s.g, 1) + ' g', color: s.rest ? PAL.muted : s.color, kind: 'swatch' });
+    const entry = (s) => ({ s: s.name + ' ' + fmt(s.g, 1) + ' g', color: s.rest ? alpha(PAL.muted, 0.3) : s.color, kind: 'swatch' });
     F.legend(ctx, { l: BL, r: BR, t: y - 28, b: y - 2 }, segs.filter((s) => s.used).map(entry), { corner: 'below', size: 18 });
     F.legend(ctx, { l: BL, r: BR, t: y - 28, b: y + 30 }, segs.filter((s) => !s.used).map(entry), { corner: 'below', size: 18 });
   }
@@ -291,25 +291,26 @@ const poly = (ctx, pts) => { ctx.beginPath(); pts.forEach(([x, y], i) => (i ? ct
    over the negative terminal at twice the volume of the oxygen over the
    positive one. Beside it the book's three circles hold the molecules,
    counted: the water left, the hydrogen and the oxygen formed. Still:
-   the slider sets how many of twelve water molecules have decomposed.
+   the slider sets how many of eight water molecules have decomposed.
    Flat (root rule 28.5): the lesson is two gas columns and three counts.
 ===================================================================== */
 (function () {
   const d = sim('sim-electrolysis', 640);
-  const N = ctl(d.controls, { label: '\\text{water molecules decomposed}', cls: '', key: 'decomposed', min: 0, max: 12, step: 2, value: 6, unit: '', dec: 0, aria: 'number of water molecules decomposed' });
+  const ALL = 8;                                             /* the water molecules the picture starts with */
+  const N = ctl(d.controls, { label: '\\text{water molecules decomposed}', cls: '', key: 'decomposed', min: 0, max: ALL, step: 2, value: 4, unit: '', dec: 0, aria: 'number of water molecules decomposed' });
   const hits = [], named = namer(hits); F.hover(d.stage, () => hits);
-  const TUBE = [{ x: 262, ref: 'h2-tube', gas: 'hydrogen', per: 24 }, { x: 338, ref: 'o2-tube', gas: 'oxygen', per: 12 }];
-  const TOP = 100, MOUTH = 412, TR = 30;                     /* a tube: the centre of its dome, its open mouth, its half width */
+  const TUBE = [{ x: 262, ref: 'h2-tube', gas: 'hydrogen', sym: 'V_{H₂}', per: 36 }, { x: 338, ref: 'o2-tube', gas: 'oxygen', sym: 'V_{O₂}', per: 18 }];
+  const TOP = 110, MOUTH = 412, TR = 30;                     /* a tube: the centre of its dome, its open mouth, its half width */
   const tubePath = (ctx, x) => { ctx.beginPath(); ctx.moveTo(x - TR, MOUTH); ctx.lineTo(x - TR, TOP); ctx.arc(x, TOP, TR, Math.PI, 0); ctx.lineTo(x + TR, MOUTH); };
-  const CIRC = [{ x: 700, name: 'water' }, { x: 960, name: 'hydrogen' }, { x: 1220, name: 'oxygen' }], CY = 400, CR = 100;
-  const S12 = []; [[-60, 2], [-20, 4], [20, 4], [60, 2]].forEach(([dy, c]) => { for (let i = 0; i < c; i++) S12.push([(i - (c - 1) / 2) * 44, dy]); });
-  const S6 = [[-52, -28], [0, -28], [52, -28], [-52, 28], [0, 28], [52, 28]];
+  const CIRC = [{ x: 720, name: 'water' }, { x: 980, name: 'hydrogen', ref: 'h2-tube' }, { x: 1240, name: 'oxygen', ref: 'o2-tube' }], CY = 300, CR = 110;
+  const S8 = [[-58, -52], [0, -62], [58, -52], [-32, 0], [32, 0], [-58, 52], [0, 62], [58, 52]];
+  const S4 = [[-38, -36], [38, -36], [-38, 36], [38, 36]];
   const turnOf = (i) => ((i * 2.4) % TAU);
   function draw() {
     const { ctx } = begin(d.c);
     hits.length = 0;
-    const n = N.v, vol = C('volume'), wet = alpha(PAL.muted, 0.2), count = [12 - n, n, n / 2];
-    /* the beaker and its water */
+    const n = N.v, vol = C('volume'), wet = alpha(PAL.muted, 0.2), count = [ALL - n, n, n / 2];
+    /* the beaker's water */
     ctx.save(); ctx.fillStyle = wet; ctx.beginPath(); ctx.roundRect(92, 335, 416, 263, [0, 0, 14, 14]); ctx.fill(); ctx.restore();
     line(ctx, 92, 335, 508, 335, alpha(PAL.ink, 0.45), 1.5);
     /* the battery standing on the floor of the beaker, its terminals on top */
@@ -318,47 +319,45 @@ const poly = (ctx, pts) => { ctx.beginPath(); pts.forEach(([x, y], i) => (i ? ct
     ctx.fillStyle = PAL.ink; ctx.beginPath(); ctx.roundRect(225, 420, 150, 44, [6, 6, 0, 0]); ctx.fill(); ctx.stroke();
     ctx.fillStyle = PAL.muted; TUBE.forEach((t) => { ctx.beginPath(); ctx.roundRect(t.x - 13, 404, 26, 16, 3); ctx.fill(); ctx.stroke(); });
     ctx.restore();
-    text(ctx, '−', 262, 442, PAL.panel, { size: 24, weight: 600, align: 'center' }); text(ctx, '+', 338, 442, PAL.panel, { size: 24, weight: 600, align: 'center' });
-    text(ctx, 'battery', 300, 530, PAL.ink, { size: 18, align: 'center' });
-    text(ctx, 'water', 445, 560, PAL.ink, { size: 18, align: 'center' });
+    text(ctx, '−', 262, 442, PAL.panel, { size: 26, weight: 600, align: 'center' }); text(ctx, '+', 338, 442, PAL.panel, { size: 26, weight: 600, align: 'center' });
+    text(ctx, 'battery', 300, 530, PAL.ink, { size: 20, align: 'center' });
+    text(ctx, 'water', 445, 560, PAL.ink, { size: 20, align: 'center' });
     hits.push({ x: 300, y: 500, r: 60, name: 'the battery' }, { x: 262, y: 412, r: 14, name: 'the negative terminal' }, { x: 338, y: 412, r: 14, name: 'the positive terminal' }, { x: 150, y: 470, r: 50, name: 'water in the beaker' }, { x: 450, y: 440, r: 50, name: 'water in the beaker' });
     /* the two tubes: water held up inside each, and the gas collected above it */
     TUBE.forEach((t, i) => {
-      const made = count[i + 1] * (i ? 2 : 1), gb = 70 + t.per * made, rc = F.ref(t.ref);
+      const gb = TOP - TR + t.per * n, rc = F.ref(t.ref);
       ctx.save(); tubePath(ctx, t.x); ctx.closePath(); ctx.clip();
-      ctx.fillStyle = PAL.panel; ctx.fillRect(t.x - TR, 60, 2 * TR, MOUTH - 60);
-      ctx.fillStyle = wet; ctx.fillRect(t.x - TR, made ? gb : 60, 2 * TR, MOUTH - (made ? gb : 60));
-      if (made) { ctx.fillStyle = alpha(vol, 0.4); ctx.fillRect(t.x - TR, 60, 2 * TR, gb - 60); }
+      ctx.fillStyle = PAL.panel; ctx.fillRect(t.x - TR, TOP - TR, 2 * TR, MOUTH - TOP + TR);
+      ctx.fillStyle = wet; ctx.fillRect(t.x - TR, gb, 2 * TR, MOUTH - gb);
+      if (n) { ctx.fillStyle = alpha(vol, 0.4); ctx.fillRect(t.x - TR, TOP - TR, 2 * TR, gb - TOP + TR); }
       ctx.restore();
-      if (made) line(ctx, t.x - TR + 2, gb, t.x + TR - 2, gb, alpha(PAL.ink, 0.45), 1.5);
+      if (n) line(ctx, t.x - TR + 2, gb, t.x + TR - 2, gb, alpha(PAL.ink, 0.45), 1.5);
       /* bubbles rising from the terminal */
-      if (made) [[-8, 392, 4], [7, 372, 5], [-4, 348, 4.5], [9, 322, 5.5], [-9, 296, 5]].forEach(([dx, by, br]) => { if (by < gb + 14) return; ctx.save(); ctx.fillStyle = PAL.panel; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(t.x + dx, by, br, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore(); hits.push({ x: t.x + dx, y: by, r: br + 5, name: 'a bubble of ' + t.gas }); });
+      if (n) [[-8, 392, 4], [7, 372, 5], [-4, 348, 4.5], [9, 322, 5.5], [-9, 296, 5], [5, 268, 5.5], [-6, 238, 5]].forEach(([dx, by, br]) => { if (by < gb + 14) return; ctx.save(); ctx.fillStyle = PAL.panel; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(t.x + dx, by, br, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore(); hits.push({ x: t.x + dx, y: by, r: br + 5, name: 'a bubble of ' + t.gas }); });
       ctx.save(); ctx.strokeStyle = rc; ctx.lineWidth = 3.5; ctx.lineCap = 'round'; tubePath(ctx, t.x); ctx.stroke(); ctx.restore();
-      for (let y = 80; y <= MOUTH; y += 30) hits.push({ x: t.x + (i ? TR : -TR), y, r: 10, name: 'the ' + t.gas + ' tube, over the ' + (i ? 'positive' : 'negative') + ' terminal' });
-      if (made) { F.vbracket(ctx, i ? 394 : 206, 70, gb, vol, t.gas, i ? 1 : -1, { size: 20 }); hits.push({ x: t.x, y: (70 + gb) / 2, r: 26, name: t.gas + ' gas collected' }); }
+      for (let y = TOP; y <= MOUTH; y += 30) hits.push({ x: t.x + (i ? TR : -TR), y, r: 10, name: 'the ' + t.gas + ' tube, over the ' + (i ? 'positive' : 'negative') + ' terminal' });
+      text(ctx, t.gas, i ? t.x - TR + 6 : t.x + TR - 6, 50, rc, { size: 22, weight: 600, align: i ? 'left' : 'right' });
+      if (n) { F.vbracket(ctx, i ? 396 : 204, TOP - TR, gb, vol, t.sym, i ? 1 : -1, { size: 22 }); hits.push({ x: t.x, y: (TOP - TR + gb) / 2, r: 26, name: t.gas + ' gas collected' }); }
     });
     /* the beaker's glass, drawn over the water */
     ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3.5; ctx.lineJoin = 'round'; ctx.lineCap = 'round';
     ctx.beginPath(); ctx.moveTo(80, 296); ctx.lineTo(90, 302); ctx.lineTo(90, 584); ctx.arcTo(90, 600, 106, 600, 16); ctx.lineTo(494, 600); ctx.arcTo(510, 600, 510, 584, 16); ctx.lineTo(510, 302); ctx.lineTo(520, 296); ctx.stroke(); ctx.restore();
     [[90, 380], [90, 520], [510, 380], [510, 520], [200, 600], [400, 600]].forEach(([x, y]) => hits.push({ x, y, r: 14, name: 'the beaker' }));
-    /* what each part is made of: a ring on the sample, a line to its circle of molecules */
-    const from = [[452, 492], [262, 86 + 6 * Math.max(n, 2)], [338, 86]];
+    /* the molecules, counted: the water left, then the hydrogen and the oxygen formed, each circle in its tube's colour */
     CIRC.forEach((c, i) => {
-      const [sx, sy] = from[i], ex = i ? c.x - 40 : c.x - CR * 0.92, ey = i ? CY - Math.sqrt(CR * CR - 1600) : CY + CR * 0.39;
-      line(ctx, sx, sy, ex, ey, PAL.ink, 2);
-      ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.arc(sx, sy, 13, 0, TAU); ctx.stroke();
-      ctx.fillStyle = PAL.panel; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(c.x, CY, CR, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore();
+      const rc = c.ref ? F.ref(c.ref) : PAL.ink;
+      ctx.save(); ctx.strokeStyle = rc; ctx.lineWidth = 3.5; ctx.beginPath(); ctx.arc(c.x, CY, CR, 0, TAU); ctx.stroke(); ctx.restore();
       for (let j = 0; j < count[i]; j++) {
-        if (i === 0) water(named, ctx, c.x + S12[j][0], CY + S12[j][1], turnOf(j), 1);
-        else if (i === 1) diatomic(named, ctx, c.x + S12[j][0], CY + S12[j][1], 9.5, 'H', turnOf(j + 3));
-        else diatomic(named, ctx, c.x + S6[j][0], CY + S6[j][1], 12, 'O', turnOf(j + 1));
+        if (i === 0) water(named, ctx, c.x + S8[j][0], CY + S8[j][1], turnOf(j), 1.5);
+        else if (i === 1) diatomic(named, ctx, c.x + S8[j][0], CY + S8[j][1], 13, 'H', turnOf(j + 3));
+        else diatomic(named, ctx, c.x + S4[j][0], CY + S4[j][1], 16, 'O', turnOf(j + 1));
       }
-      text(ctx, c.name, c.x, CY + CR + 30, PAL.ink, { size: 22, weight: 600, align: 'center' });
-      text(ctx, count[i] + ' ' + ['H₂O(l)', 'H₂(g)', 'O₂(g)'][i], c.x, CY + CR + 62, PAL.ink, { size: 22, align: 'center' });
+      text(ctx, c.name, c.x, CY + CR + 34, rc, { size: 24, weight: 600, align: 'center' });
+      text(ctx, count[i] + ' ' + ['H₂O(l)', 'H₂(g)', 'O₂(g)'][i], c.x, CY + CR + 68, PAL.ink, { size: 24, align: 'center' });
     });
-    arrow(ctx, 810, CY, 850, CY, PAL.ink, 4);
-    text(ctx, '+', 1090, CY, PAL.ink, { size: 30, weight: 600, align: 'center' });
-    const eq = n ? `${n}\\,\\text{H}_2\\text{O}(l) \\longrightarrow ${n}\\,\\text{H}_2(g) + ${n / 2 === 1 ? '' : n / 2 + '\\,'}\\text{O}_2(g)` : '2\\,\\text{H}_2\\text{O}(l) \\longrightarrow 2\\,\\text{H}_2(g) + \\text{O}_2(g)';
+    arrow(ctx, 836, CY, 866, CY, PAL.ink, 4);
+    text(ctx, '+', 1110, CY, PAL.ink, { size: 32, weight: 600, align: 'center' });
+    const eq = n ? `${n}\\,\\text{H}_2\\text{O}(l) \\longrightarrow ${n}\\,\\text{H}_2(g) + ${n === 2 ? '' : n / 2 + '\\,'}\\text{O}_2(g)` : '2\\,\\text{H}_2\\text{O}(l) \\longrightarrow 2\\,\\text{H}_2(g) + \\text{O}_2(g)';
     tex(d.readout, eq + ' \\\\ \\kV_{\\text{H}_2} = 2\\,\\kV_{\\text{O}_2}');
   }
   register(d.fig, { update: () => {}, draw });

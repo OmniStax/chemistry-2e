@@ -122,7 +122,8 @@ models('fig-sulfur', 'sulfur');
     const c = CMP[key], els = Object.keys(c.n), per = els.map((s) => Math.floor(c.n[s] / n)), over = els.map((s) => c.n[s] % n);
     const left = Math.max(...over), most = Math.max(1, ...per), avail = 1340 - X0 - (left ? LEFT : 0);
     const bw = Math.min((avail - (n - 1) * GAP) / n, most * SP + 56), sp = Math.min(SP, (bw - 40) / most);
-    const bx = X0 + (avail - n * bw - (n - 1) * GAP) / 2, end = bx + n * bw + (n - 1) * GAP;
+    /* the row names, the boxes and what is left over stand centred together */
+    const wide = n * bw + (n - 1) * GAP, tail = left ? 76 + (left - 1) * 46 + 24 : 0, bx = 700 + (90 - wide - tail) / 2, end = bx + wide;
     const rowY = (r) => TOP + 48 + (els.length === 1 ? 0.5 : r / (els.length - 1)) * (BH - 96);
     const atoms = [];
     els.forEach((s, r) => {

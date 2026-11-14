@@ -338,7 +338,7 @@ const frac = (pct) => String(+(pct / 100).toFixed(4));
       text(ctx, nm, x, y, isoCol[i], { size: 17, weight: 600, align: 'center' });
     });
     const sum = landed.reduce((p, c) => p + c, 0), all = iso.reduce((p, z) => p + z.n, 0);
-    headline(ctx, sum < all ? `${sum} of ${all} ions have reached the detector. Each one adds to the peak of its isotope.`
+    headline(ctx, sum < all ? `${sum} of ${all} ions ${sum === 1 ? 'has' : 'have'} reached the detector. Each one adds to the peak of its isotope.`
       : `All ${all} ions have reached the detector. Each peak is its isotope’s share of them.`);
     const prod = e.iso.map((s) => +((s.nat / 100) * s.m).toFixed(3));
     const avg = prod.reduce((p, c) => p + c, 0);

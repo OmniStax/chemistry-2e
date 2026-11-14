@@ -1,9 +1,8 @@
 /* Figures for section 3.1 Formula Mass and the Mole Concept. Boots against the section's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['3.1'] = function (root, F) {
-const { el, tex, C, PAL, alpha, ctl, register, begin, line, text, headline, dot } = F;
+const { tex, C, PAL, alpha, ctl, register, begin, line, text, headline, dot } = F;
 const sim = (id, H) => F.sim(root, id, H);
-function readout(host, main, small) { tex(host, main); if (small) host.appendChild(el('small', null, small)); }
 const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
 
 /* ---------- numbers to s significant figures, in exponent form outside 0.001 to 10 000 ---------- */

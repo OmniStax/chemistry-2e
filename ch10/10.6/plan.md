@@ -58,7 +58,7 @@ None.
 
 ## Binds
 
-`wavelength` (sim-bragg's slider, drawn waves and readout). Everything else is ink, the element palette or `F.cat` for the layers.
+`wavelength` (sim-bragg's slider, drawn waves and readout). Everything else is ink, the element palette, the referents A, B, C for the layers, or `F.cat(0)` for the centering points of sim-lattices.
 
 ## Exercises
 

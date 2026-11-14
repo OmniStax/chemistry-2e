@@ -72,6 +72,8 @@ function orbital(v, g, at, a, b, L, color, name, { opacity = 1 } = {}) {
   m.quaternion.setFromUnitVectors(new T.Vector3(0, 1, 0), new T.Vector3(ax[0], ax[1], ax[2]));
   g.add(m); if (name && opacity > 0.3) v.pickable(m, name); return m;
 }
+/* how far the large lobe of a·s + b·p reaches */
+const reachOf = (a, bl, L) => { const n = Math.hypot(a, bl) || 1; return L * Math.pow((a + Math.sqrt(3) * bl) / n / 2, Q); };
 /* the coefficients of the hybrids of a set of n made from s and n − 1 p orbitals */
 const hybridAB = (n, u) => [1 / Math.sqrt(n), V.mul(u, Math.sqrt((n - 1) / n))];
 const S_COL = () => F.cat(0), P_COL = () => F.cat(1), H_COL = () => F.cat(2);
@@ -178,8 +180,8 @@ const headline = (cv, s) => { const { ctx } = begin(cv); topline(ctx, s); };
    a choice of three models, each change one morph.
 ===================================================================== */
 (function () {
-  const { d, S, v, top, key } = frame('sim-water', { h: 540, dist: 6.6, tilt: 0.2, yaw: 0.12 });
-  const g = v.part(0); g.position.y = 0.1;
+  const { d, S, v, top, key } = frame('sim-water', { h: 540, dist: 6.4, tilt: 0.2, yaw: 0.12 });
+  const g = v.part(0); g.position.y = 0.45;
   const model = F.choice(d.controls, { label: '\\text{model}', aria: 'the orbitals of oxygen', options: [{ value: 'p', label: '2<em>p</em> orbitals' }, { value: 'sp3', label: '<em>sp</em><sup>3</sup> hybrids' }, { value: 'h2o', label: 'in H<sub>2</sub>O' }], value: 'p' });
   const L = 1.3;
   /* the H–O–H bisector points down, the bonds in the page's plane, the lone pairs up and out of it */
@@ -200,9 +202,10 @@ const headline = (cv, s) => { const { ctx } = begin(cv); topline(ctx, s); };
       const a = 0.5 * s.hyb, b = Math.sqrt(1 - a * a);
       B.forEach((dir) => orbital(v, g, [0, 0, 0], a, V.mul(dir, b), L, col, s.hyb > 0.5 ? 'an sp³ hybrid orbital of oxygen, bonding' : 'a 2p orbital of oxygen'));
       Lp.forEach((dir) => orbital(v, g, [0, 0, 0], 0.5, V.mul(dir, Math.sqrt(0.75)), L * s.lp, H_COL(), 'an sp³ hybrid orbital of oxygen, holding a lone pair', { opacity: Math.min(1, s.lp * 1.5) }));
-      B.forEach((dir) => hydrogen(S, g, V.mul(dir, L * 1.02), 0.42, s.H));
+      const reach = reachOf(a, b, L);
+      B.forEach((dir) => hydrogen(S, g, V.mul(dir, reach + 0.12), 0.36, s.H));
       if (at) {
-        angle3(S, g, B[0], B[1], L * (m === 'sp3' ? 1.12 : 1.6), DEG[m]);
+        angle3(S, g, B[0], B[1], m === 'sp3' ? reach + 0.25 : reach + 0.7, DEG[m]);
         if (m !== 'p') Lp.forEach((dir) => S.out('lone pair', V.mul(dir, L * 1.02), g, { gap: 4 }));
       }
       v.invalidate();
@@ -303,7 +306,7 @@ bench('sim-sp3', 4, {
    angle. Still: a slider and a choice.
 ===================================================================== */
 (function () {
-  const { d, S, v, top, key } = frame('sim-ethane', { h: 520, dist: 7.2, tilt: 0.38, yaw: 0.32, spin: 'off' });
+  const { d, S, v, top, key } = frame('sim-ethane', { h: 520, dist: 6.5, tilt: 0.38, yaw: 0.32, spin: 'off' });
   const g = v.part(0);
   const atoms = F.choice(d.controls, { label: '\\text{atoms}', aria: 'apart or bonded', options: [{ value: 'apart', label: 'apart' }, { value: 'bonded', label: 'bonded' }], value: 'bonded' });
   const phi = F.ctl(d.controls, { label: '\\varphi', cls: 'angle', min: 0, max: 120, step: 1, value: 60, unit: '°', dec: 0, detents: [0, 60, 120], aria: 'turn of the right-hand CH3 group about the C–C bond' });
@@ -326,7 +329,8 @@ bench('sim-sp3', 4, {
           hydrogen(S, g, V.add(c, V.mul(u, hr)), 0.38);
         });
       });
-      F.mesh.polyline(g, [[-2.9, 0, 0], [2.9, 0, 0]], alpha(PAL.ink, 0.3));
+      F.mesh.polyline(g, [[-2.6, 0, 0], [2.6, 0, 0]], alpha(PAL.ink, 0.35));
+      S.axis('C–C axis', [2.75, 0, 0], g, 0.3);
       v.invalidate();
     }
     const bonded = atoms.value === 'bonded';
@@ -422,7 +426,7 @@ bench('sim-sp3', 4, {
       if (at) ARCS[i].forEach(([a, b, t]) => angle3(S, g, SITES[i][a], SITES[i][b], L * 0.78, t, { perp: [0, 1, 0] }));
       v.invalidate();
     }
-    headline(top, `${WORDS[i]} regions of electron density: ${HYB_U[i]} hybrids in a ${ARRANGE[i]} arrangement.`);
+    headline(top, `${WORDS[i]} regions of electron density: ${HYB_U[i]} hybrids in ${i === 6 ? 'an' : 'a'} ${ARRANGE[i]} arrangement.`);
     keyRow(key, [KEY.h(`${HYB_U[i]} hybrid orbital`), { s: ARRANGE[i] + ' arrangement', dash: [6, 6], color: alpha(PAL.ink, 0.6), w: 2 }]);
     tex(d.readout, `${i}\\ \\text{regions} \\;\\longrightarrow\\; \\text{${ARRANGE[i]}} \\;\\longrightarrow\\; ${HYB_TEX[i]}`);
   }

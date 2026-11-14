@@ -242,7 +242,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     }
 
     /* the curves are kept clear of the labels placed round the isobar */
-    ['sub', 'vap', 'melt'].forEach((c) => [cv[c], g.mag && k >= 1 ? MAG[c] : []].forEach((pts) => pts.forEach(([x, y]) => boxes.push({ l: x - 5, r: x + 5, t: y - 5, b: y + 5, curve: true })))));
+    ['sub', 'vap', 'melt'].forEach((c) => [cv[c], g.mag && k >= 1 ? MAG[c] : []].forEach((pts) => pts.forEach(([x, y]) => boxes.push({ l: x - 5, r: x + 5, t: y - 5, b: y + 5, curve: true }))));
     /* the region names, the two points' labels and the key, for the substance shown */
     ctx.save(); ctx.globalAlpha *= k;
     const R = s.at, gx = g.X;

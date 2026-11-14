@@ -268,7 +268,7 @@ const bpAt = (k, p) => { const q = LIQ[k]; return 1 / (1 / (q.bp + 273.15) - (R 
     });
     const tb = bpAt(sel, p), q = LIQ[sel];
     if (tb >= 0 && tb <= 140) text(ctx, fmt(tb, 1) + ' °C', X(tb), box.b + 50, ct, { size: 18, weight: 600, align: 'center', bg: PAL.panel });
-    topline(ctx, `At ${fmt(p, 1)} kPa, ${q.name} boils at ${fmt(tb, 1)} °C${tb > 140 ? ', off the right of the graph' : ''}.`);
+    topline(ctx, `At ${fmt(p, 1)} kPa, ${q.name} boils at ${fmt(tb, 1)} °C${tb > 140 ? ', off the right of the graph' : tb < 0 ? ', off the left of the graph' : ''}.`);
     const tk = tb + 273.15, t1 = q.bp + 273.15;
     tex(d.readout, `\\kTtwo={\\left(\\frac{1}{\\kTone}-\\frac{R\\ln(\\kPtwo/\\kPone)}{\\kdHvap}\\right)}^{-1}={\\left(\\frac{1}{${hue('temperature', fmt(t1, 1) + '\\ \\text{K}')}}-\\frac{(8.3145\\ \\text{J/mol·K})\\ln(${hue('pressure', fmt(p, 1) + '\\ \\text{kPa}')}/${hue('pressure', '101.3\\ \\text{kPa}')})}{${hue('energy', fmt(q.dH * 1000, 0) + '\\ \\text{J/mol}')}}\\right)}^{-1}=${hue('temperature', fmt(tk, 1) + '\\ \\text{K}')}=${hue('temperature', fmt(tb, 1) + '\\ ^{\\circ}\\text{C}')}`);
   }

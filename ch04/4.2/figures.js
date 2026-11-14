@@ -44,7 +44,7 @@ function cluster(ctx, atoms, x, y, a = 0, k = 1) {
   const AN = {
     I: { u: 'I', t: '\\text{I}', q: 1, kind: 'halide', name: 'iodide', ...one('I', 17) }, Cl: { u: 'Cl', t: '\\text{Cl}', q: 1, kind: 'halide', name: 'chloride', ...one('Cl', 14) },
     NO3: { u: 'NO₃', t: '\\text{NO}_{3}', q: 1, poly: true, kind: 'always', name: 'nitrate', ...tri('N') },
-    Ac: { u: 'C₂H₃O₂', t: '\\text{C}_{2}\\text{H}_{3}\\text{O}_{2}', q: 1, poly: true, kind: 'always', name: 'acetate', shape: [['H', -15, -8, 4.5], ['H', -15, 8, 4.5], ['H', -19, 0, 4.5], ['O', 15, -9, 7], ['O', 15, 9, 7], ['C', -7, 0, 8], ['C', 7, 0, 8]], R: 23 },
+    Ac: { u: 'C₂H₃O₂', t: '\\text{C}_{2}\\text{H}_{3}\\text{O}_{2}', q: 1, poly: true, kind: 'always', name: 'acetate', shape: [['H', -12.5, -7, 4], ['H', -12.5, 7, 4], ['H', -16, 0, 4], ['O', 13, -8, 6.5], ['O', 13, 8, 6.5], ['C', -6, 0, 7], ['C', 6, 0, 7]], R: 20 },
     SO4: { u: 'SO₄', t: '\\text{SO}_{4}', q: 2, poly: true, kind: 'sulfate', name: 'sulfate', shape: [['O', -9, -9, 7.5], ['O', 9, -9, 7.5], ['O', -9, 9, 7.5], ['O', 9, 9, 7.5], ['S', 0, 0, 9]], R: 20 },
     CO3: { u: 'CO₃', t: '\\text{CO}_{3}', q: 2, poly: true, kind: 'carbonate', name: 'carbonate', ...tri('C') },
   };

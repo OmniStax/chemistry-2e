@@ -34,6 +34,7 @@ const sig = (x, n = 4) => { const e = Math.floor(Math.log10(Math.abs(x))); retur
   ];
   let S = SAMPLES[0];
   const pLabel = (sym) => `\\%\\,\\text{${sym}}`;
+  const pFmt = (v) => `${v.toFixed(2)}%`;
   const marksOf = (s) => [{ at: s.p, label: s.label }, ...s.marks];
   const pick = F.select(d.controls, { label: '\\text{sample}', aria: 'sample analysed',
     options: SAMPLES.map((s, i) => ({ value: String(i), label: s.label })), value: '0',
@@ -41,11 +42,11 @@ const sig = (x, n = 4) => { const e = Math.floor(Math.log10(Math.abs(x))); retur
       S = SAMPLES[+pick.value];
       M.range({ min: S.rm[0], max: S.rm[1], step: S.rm[2], dec: S.rm[3], unit: 'g', value: S.m });
       P.relabel(pLabel(S.a), `mass percent of ${NAME[S.a]}`);
-      P.range({ min: S.rp[0], max: S.rp[1], step: 0.01, dec: 2, unit: '%', value: S.p });
+      P.range({ min: S.rp[0], max: S.rp[1], step: 0.01, fmt: pFmt, value: S.p });
       P.mark(marksOf(S));
     } });
   const M = ctl(d.controls, { label: '\\km_{\\text{sample}}', cls: 'mass', min: 10, max: 100, step: 0.01, value: 50, unit: 'g', dec: 2, aria: 'mass of the sample' });
-  const P = ctl(d.controls, { label: pLabel('Fe'), cls: '', key: 'percent', min: 50, max: 90, step: 0.01, value: 69.94, unit: '%', dec: 2, aria: 'mass percent of iron', specials: marksOf(S) });
+  const P = ctl(d.controls, { label: pLabel('Fe'), cls: '', key: 'percent', min: 50, max: 90, step: 0.01, value: 69.94, unit: '', fmt: pFmt, aria: 'mass percent of iron', specials: marksOf(S) });
   const hits = [];
   F.hover(d.stage, () => hits);
 

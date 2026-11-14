@@ -178,9 +178,7 @@ const knots = (ks) => (x) => {
   function ball(ctx, p, el, r) {
     const [x, y] = P(p), rr = rOf(p, r);
     ctx.save(); ctx.fillStyle = F.el(el); ctx.strokeStyle = alpha(PAL.ink, 0.5); ctx.lineWidth = 1.2;
-    ctx.beginPath(); ctx.arc(x, y, rr, 0, 2 * Math.PI); ctx.fill(); ctx.stroke();
-    /* a soft highlight up and to the left, so a ball reads as a ball beside its neighbours */
-    ctx.fillStyle = alpha(PAL.panel, 0.28); ctx.beginPath(); ctx.arc(x - rr * 0.32, y - rr * 0.34, rr * 0.42, 0, 2 * Math.PI); ctx.fill(); ctx.restore();
+    ctx.beginPath(); ctx.arc(x, y, rr, 0, 2 * Math.PI); ctx.fill(); ctx.stroke(); ctx.restore();
     return [x, y, rr];
   }
   function slab(ctx) {

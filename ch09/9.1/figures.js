@@ -3,116 +3,82 @@ window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['9.1'] = function (root, F) {
 const { el, fmt, tex, C, PAL, alpha, ctl, register, begin, line, arrow, dot, text, topline, vbracket, scale } = F;
 const sim = (id, H) => F.sim(root, id, H);
-function readout(host, main, small) { tex(host, main); if (small) host.appendChild(el('small', null, small)); }
 const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
-const sig3 = (x) => { const s = Math.abs(x).toPrecision(3); return s.includes('e') ? String(Math.round(Number(s))) : s; };
 const commas = (x) => Math.round(x).toLocaleString('en-US');
 
 /* =====================================================================
-   FIGURE 9.2: one load pressed on a thumbnail, a skate blade or a bare
-   foot, P = F/A. Still: the pressure answers two sliders. The area
-   decides what bears the load: the book's column of air on a bowling
-   ball over a thumbnail below 1.5 in², a skater on a blade below 6 in²,
-   the same skater barefoot above. The footprint is drawn to scale on a
-   grid of square inches; the bar beside runs 0 to 100 lb/in².
+   FIGURE 9.2: a load standing on a foot, P = F/A. Still: the pressure
+   answers two sliders, both logarithmic so that the book's air column
+   (14.7 lb on 1 in²), skate blade (60 lb on 2 in²), bare foot (60 lb on
+   30 in²) and elephant's foot (3500 lb on 250 in²) are all on them.
+   Side view on the left, the contact area from below on a grid of
+   square inches at the same scale (18 units to the inch), and a
+   pressure bar, 0 to 100 lb/in², with the atmosphere marked on it.
 ===================================================================== */
 (function () {
   const d = sim('sim-force-area', 540);
-  const Fs = ctl(d.controls, { label: '\\kforce', cls: 'force', min: 1, max: 150, step: 0.1, value: 14.7, unit: 'lb', dec: 1, aria: 'force in pounds', detents: [{ v: 14.7, label: 'air' }, { v: 60, label: 'skater' }] });
-  const As = ctl(d.controls, { label: '\\karea', cls: 'area', min: 0.5, max: 30, step: 0.5, value: 1, unit: 'in²', dec: 1, aria: 'area in square inches', detents: [{ v: 1, label: 'thumbnail' }, 2, { v: 30, label: 'foot' }] });
-  const PMAX = 100, GROUND = 420;
-  /* a sole about 10 in long, heel at the origin, toes along +x, lateral side up; scaled to the area set */
-  const SOLE = [[0, 0], [0.2, -0.7], [1, -1.2], [2.5, -1.3], [5, -1.35], [7, -1.6], [8.5, -1.7], [9.6, -1.2], [10.1, -0.4], [10.2, 0.4], [9.9, 1.2], [9, 1.7], [7.5, 1.8], [6.5, 1.2], [5, 0.5], [3.5, 0.5], [2, 0.9], [1, 1.1], [0.2, 0.7]];
-  const SOLE_A = Math.abs(SOLE.reduce((s, p, i) => { const q = SOLE[(i + 1) % SOLE.length]; return s + p[0] * q[1] - q[0] * p[1]; }, 0)) / 2;
-  const smooth = (ctx, pts) => {
-    const mid = (i) => { const p = pts[i % pts.length], q = pts[(i + 1) % pts.length]; return [(p[0] + q[0]) / 2, (p[1] + q[1]) / 2]; };
-    ctx.beginPath(); ctx.moveTo(...mid(0));
-    for (let i = 1; i <= pts.length; i++) ctx.quadraticCurveTo(...pts[i % pts.length], ...mid(i));
-    ctx.closePath();
-  };
-  const kindOf = (a) => (a < 1.5 ? 'nail' : a < 6 ? 'blade' : 'foot');
-  const NAME = { nail: 'thumbnail', blade: 'skate blade', foot: 'bare foot' };
-  /* the footprint, seen from below on a 12 in by 5 in grid of square inches */
-  const G = { l: 690, t: 230, u: 28, nx: 12, ny: 5 };
-  function footprint(ctx, kind, a, ca, lab) {
-    const { l, t, u, nx, ny } = G, r = l + nx * u, b = t + ny * u, cx = (l + r) / 2, cy = (t + b) / 2;
-    for (let i = 0; i <= nx; i++) line(ctx, l + i * u, t, l + i * u, b, alpha(PAL.ink, 0.18), 1.5);
-    for (let j = 0; j <= ny; j++) line(ctx, l, t + j * u, r, t + j * u, alpha(PAL.ink, 0.18), 1.5);
-    ctx.save(); ctx.fillStyle = alpha(ca, 0.35); ctx.strokeStyle = ca; ctx.lineWidth = 3;
-    if (kind === 'nail') {
-      const ry = Math.sqrt(a / (Math.PI * 1.15)), rx = 1.15 * ry;
-      ctx.beginPath(); ctx.ellipse(cx, cy, rx * u, ry * u, 0, 0, Math.PI * 2);
-    } else if (kind === 'blade') {
-      const L = 10, w = a / L, x0 = cx - (L / 2) * u, x1 = cx + (L / 2) * u, h = (w * u) / 2;
-      ctx.beginPath(); ctx.moveTo(x0, cy - h); ctx.lineTo(x1 - 0.4 * u, cy - h); ctx.quadraticCurveTo(x1, cy - h, x1, cy); ctx.quadraticCurveTo(x1, cy + h, x1 - 0.4 * u, cy + h); ctx.lineTo(x0, cy + h); ctx.closePath();
-    } else {
-      const k = Math.sqrt(a / SOLE_A), len = 10.2 * k;
-      smooth(ctx, SOLE.map(([x, y]) => [cx + (x * k - len / 2) * u, cy + y * k * u]));
-    }
-    ctx.fill(); ctx.stroke(); ctx.restore();
-    lab.place({ l, t, r, b });
-    text(ctx, 'footprint, 1 in² squares', cx, t - 22, PAL.muted, { size: 17, align: 'center' });
-    text(ctx, NAME[kind] + ', A = ' + fmt(a, 1) + ' in²', cx, b + 26, ca, { size: 22, weight: 600, align: 'center' });
-  }
-  /* pressure arrows under the patch that bears the load, each as long as the pressure */
-  function pressArrows(ctx, x0, x1, y, p, cp, n) {
-    const pl = 14 + 50 * Math.min(p, PMAX) / PMAX;
-    for (let i = 0; i < n; i++) { const x = x0 + (i + 0.5) * (x1 - x0) / n; arrow(ctx, x, y + 3, x, y + 3 + pl, cp, 3); }
-  }
+  const lg = Math.log10;
+  const Fs = ctl(d.controls, { label: '\\kforce', cls: 'force', min: 0, max: lg(3500), step: lg(3500) / 3544, value: lg(14.7), unit: 'lb', fmt: (v) => lbs(fOf(v)) + ' lb', aria: 'force in pounds', detents: [{ v: lg(14.7), label: 'air' }, { v: lg(60), label: 'skater' }, { v: lg(3500), label: 'elephant' }] });
+  const As = ctl(d.controls, { label: '\\karea', cls: 'area', min: lg(0.5), max: lg(250), step: lg(500) / 2699, value: 0, unit: 'in²', fmt: (v) => sq(aOf(v)) + ' in²', aria: 'area in square inches', detents: [0, { v: lg(2), label: 'blade' }, { v: lg(30), label: 'bare foot' }, { v: lg(250), label: 'elephant' }] });
+  /* the values as the slider shows them, so the readout divides the numbers the reader sees */
+  function fOf(v) { const f = 10 ** v; return f < 100 ? Math.round(f * 10) / 10 : Number(f.toPrecision(3)); }
+  function aOf(v) { const a = 10 ** v; return a < 10 ? Math.round(a * 10) / 10 : Math.round(a); }
+  function lbs(f) { return f < 100 ? fmt(f, 1) : commas(f); }
+  function sq(a) { return a < 10 ? fmt(a, 1) : String(a); }
+  const pStr = (p) => (p < 1 ? p.toPrecision(2) : p < 10 ? fmt(p, 2) : p < 100 ? fmt(p, 1) : commas(Number(p.toPrecision(3))));
+  const ATM = 14.7, PMAX = 100, U = 18, SX = 290, GY = 410, FOOT = 30;
+  const G = { l: 620, t: 150, n: 16 };
+  /* the cases the text works, named in the headline when both sliders rest on one */
+  const CASES = [
+    [60, 2, 'One blade under the 120 lb skater'],
+    [60, 30, 'One bare foot under the 120 lb skater'], [3500, 250, 'One foot under the 14,000 lb elephant'],
+  ];
   function draw() {
     const { ctx } = begin(d.c);
-    const lab = F.labeller(ctx, 540, { headline: 1 });
-    const f = Fs.v, a = As.v, p = f / a, kind = kindOf(a), cp = C('pressure'), cf = C('force'), ca = C('area');
-    const fl = 20 + 90 * (f / 150);
-    if (kind === 'nail') {
-      /* a thumbs-up seen from the back; the thumbnail at (NX, NY) bears the ball */
-      const NX = 330, NY = 350, R = 72, by = NY - R;
-      F.hand(ctx, NX - 90, NY + 114, { aim: [1, 0], view: 'back', curl: 0.9, thumb: 'up', s: 1.9 });
-      ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.07); ctx.fillRect(NX - 20, 80, 40, by - R - 80); ctx.restore();
-      line(ctx, NX - 20, 80, NX - 20, by - R, alpha(PAL.ink, 0.4), 2, [10, 10]); line(ctx, NX + 20, 80, NX + 20, by - R, alpha(PAL.ink, 0.4), 2, [10, 10]);
-      ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.22); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(NX, by, R, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
-      ctx.fillStyle = PAL.ink; [[-16, -40], [10, -42], [-2, -18]].forEach(([dx, dy]) => { ctx.beginPath(); ctx.arc(NX + dx, by + dy, 7, 0, Math.PI * 2); ctx.fill(); }); ctx.restore();
-      arrow(ctx, NX, by - R - 10 - fl, NX, by - R - 8, cf, 5);
-      pressArrows(ctx, NX - 14, NX + 14, NY, p, cp, 3);
-      lab.add('F = ' + fmt(f, 1) + ' lb', NX + 6, by - R - 10 - fl / 2, 1, 0, cf, 22, 24);
-      lab.add('column of air', NX - 20, 150, -1, 0, PAL.muted, 20, 16);
-      lab.add('bowling ball', NX + R * 0.7, by - R * 0.7, 1, -0.4, PAL.ink, 20, 16);
-      lab.add('thumbnail', NX + 22, NY + 6, 1, 0.3, ca, 20, 30);
-    } else {
-      /* the skater stands on the ice; the near foot's patch is the one the load is on */
-      const SX = 300, s = 2, fx = SX + 9 * s, lift = kind === 'blade' ? 26 : 6, fy = GROUND - lift, half = 30;
-      ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.06); ctx.fillRect(40, GROUND, 600, 90); ctx.restore();
-      line(ctx, 40, GROUND, 640, GROUND, PAL.ink, 3);
-      F.silhouette(ctx, { x: SX, y: fy, s, pose: 'stand', color: PAL.muted });
-      for (const [x, c] of [[SX - 9 * s, alpha(PAL.ink, 0.45)], [fx, PAL.ink]]) {
-        if (kind === 'blade') {
-          line(ctx, x - 12, fy, x + 22, fy, c, 12); line(ctx, x - 8, fy + 4, x - 8, GROUND - 3, c, 3); line(ctx, x + 16, fy + 4, x + 16, GROUND - 3, c, 3);
-          line(ctx, x - half, GROUND - 2, x + half, GROUND - 2, c, 4);
-        } else {
-          ctx.save(); ctx.fillStyle = c; ctx.beginPath(); ctx.moveTo(x - 10, fy - 4); ctx.lineTo(x - 14, GROUND); ctx.lineTo(x + 34, GROUND); ctx.quadraticCurveTo(x + 30, fy - 4, x + 6, fy - 6); ctx.closePath(); ctx.fill(); ctx.restore();
-        }
-      }
-      const x0 = kind === 'blade' ? fx - half : fx - 14, x1 = kind === 'blade' ? fx + half : fx + 34;
-      const ax = fx + 44;
-      arrow(ctx, ax, fy - 2 - fl, ax, fy, cf, 5);
-      pressArrows(ctx, x0, x1, GROUND, p, cp, 4);
-      lab.add('F = ' + fmt(f, 1) + ' lb', ax + 6, fy - 2 - fl / 2, 1, 0, cf, 22, 20);
-      lab.add(NAME[kind], x0, GROUND + 10, -1, 0.2, ca, 20, 26);
-      lab.add('skater', SX + 6 * s, fy - 140 * s, 1, 0, PAL.muted, 20, 24);
-      lab.add('ice', 600, GROUND + 60, 0, 0, PAL.muted, 20, 0);
-    }
-    footprint(ctx, kind, a, ca, lab);
-    /* the pressure bar, 0 to 100 lb/in² */
-    const bx = 1190, bt = 120, bb = 430, yOf = (v) => bb - (bb - bt) * Math.min(v, PMAX) / PMAX;
-    ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.06); ctx.fillRect(bx, bt, 70, bb - bt);
-    ctx.fillStyle = cp; ctx.fillRect(bx, yOf(p), 70, bb - yOf(p));
-    ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.strokeRect(bx, bt, 70, bb - bt); ctx.restore();
+    const f = fOf(Fs.v), a = aOf(As.v), p = f / a, cp = C('pressure'), cf = C('force'), ca = C('area');
+    const w = Math.sqrt(a) * U, x0 = SX - w / 2, x1 = SX + w / 2;
+    /* the ground and the pressure on it: arrows a fixed distance apart, each as long as the pressure */
+    ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.06); ctx.fillRect(60, GY, 460, 112); ctx.restore();
+    line(ctx, 60, GY, 520, GY, PAL.ink, 3);
+    text(ctx, 'ground', 76, GY + 92, PAL.muted, { size: 17, base: 'middle' });
+    const n = Math.max(1, Math.round(w / 20)), pl = 14 + 0.8 * Math.min(p, PMAX);
+    for (let i = 0; i < n; i++) { const x = x0 + (i + 0.5) * w / n; arrow(ctx, x, GY + 4, x, GY + 4 + pl, cp, 3); }
+    text(ctx, 'P', x1 + 14, GY + 6 + pl / 2, cp, { size: 24, weight: 600, base: 'middle' });
+    /* the foot, as wide as the side of a square of area A */
+    ctx.save(); ctx.fillStyle = alpha(ca, 0.35); ctx.strokeStyle = ca; ctx.lineWidth = 3;
+    ctx.fillRect(x0, GY - FOOT, w, FOOT); ctx.strokeRect(x0, GY - FOOT, w, FOOT); ctx.restore();
+    text(ctx, 'A', x0 - 14, GY - FOOT / 2, ca, { size: 24, weight: 600, align: 'right', base: 'middle' });
+    /* the load on it, larger as it is heavier, and its weight */
+    const k = lg(f), bw = 130 + 38 * k, bh = 66 + 24 * k, top = GY - FOOT - bh;
+    ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.12); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3;
+    ctx.fillRect(SX - bw / 2, top, bw, bh); ctx.strokeRect(SX - bw / 2, top, bw, bh); ctx.restore();
+    text(ctx, 'load', SX, top + bh / 2, PAL.ink, { size: 20, align: 'center', base: 'middle' });
+    const fl = 34 + 20 * k;
+    arrow(ctx, SX, top - 6 - fl, SX, top - 6, cf, 5);
+    text(ctx, 'F = ' + lbs(f) + ' lb', SX + 16, top - 6 - fl / 2, cf, { size: 22, weight: 600, base: 'middle' });
+    /* the contact area from below, on square inches */
+    const { l, t, n: gn } = G, r = l + gn * U, b = t + gn * U, cx = (l + r) / 2, cy = (t + b) / 2;
+    for (let i = 0; i <= gn; i++) { line(ctx, l + i * U, t, l + i * U, b, alpha(PAL.ink, 0.18), 1.5); line(ctx, l, t + i * U, r, t + i * U, alpha(PAL.ink, 0.18), 1.5); }
+    ctx.save(); ctx.fillStyle = alpha(ca, 0.35); ctx.strokeStyle = ca; ctx.lineWidth = 3;
+    ctx.fillRect(cx - w / 2, cy - w / 2, w, w); ctx.strokeRect(cx - w / 2, cy - w / 2, w, w); ctx.restore();
+    text(ctx, 'from below, on 1 in² squares', cx, t - 22, PAL.muted, { size: 17, align: 'center' });
+    F.rich(ctx, ['contact area ', ['A = ' + sq(a) + ' in²', ca]], cx, b + 30, { size: 22, align: 'center' });
+    /* the pressure bar, 0 to 100 lb/in², the atmosphere marked */
+    const bx = 1090, bwid = 70, bt = 150, bb = 438, yOf = (v) => bb - (bb - bt) * Math.min(v, PMAX) / PMAX;
+    ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.06); ctx.fillRect(bx, bt, bwid, bb - bt);
+    ctx.fillStyle = cp; ctx.fillRect(bx, yOf(p), bwid, bb - yOf(p));
+    ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.strokeRect(bx, bt, bwid, bb - bt); ctx.restore();
     for (let v = 0; v <= PMAX; v += 20) { line(ctx, bx - 8, yOf(v), bx, yOf(v), PAL.muted, 2); text(ctx, String(v), bx - 14, yOf(v), PAL.muted, { size: 17, align: 'right', base: 'middle' }); }
-    text(ctx, 'P (lb/in²)', bx + 35, bb + 34, cp, { size: 20, weight: 600, align: 'center' });
-    text(ctx, (p > PMAX ? '▲ ' : '') + fmt(p, p < 10 ? 2 : 1), bx + 84, yOf(p), cp, { size: 20, weight: 600, base: 'middle' });
-    lab.flush();
-    topline(ctx, 'A load of ' + fmt(f, 1) + ' lb on a ' + fmt(a, 1) + ' in² ' + NAME[kind] + ' presses with $\\kP$ = ' + fmt(p, p < 10 ? 2 : 1) + ' lb/in².');
-    readout(d.readout, `\\kP = \\frac{\\kforce}{\\karea} = \\frac{${hue('force', fmt(f, 1) + '\\ \\text{lb}')}}{${hue('area', fmt(a, 1) + '\\ \\text{in}^2')}} = ${hue('pressure', fmt(p, p < 10 ? 2 : 1) + '\\ \\text{lb/in}^2')}`);
+    line(ctx, bx - 8, yOf(ATM), bx + bwid + 16, yOf(ATM), PAL.ink, 2, [10, 10]);
+    text(ctx, 'atmosphere, 14.7', bx + bwid + 24, yOf(ATM), PAL.muted, { size: 17, base: 'middle' });
+    F.rich(ctx, [['P = ' + pStr(p), cp], ' lb/in²'], bx + bwid / 2, bt - 26, { size: 22, align: 'center' });
+    if (p > PMAX) text(ctx, 'off the scale', bx + bwid + 24, bt, PAL.muted, { size: 17, base: 'middle' });
+    const named = CASES.find(([cf0, ca0]) => cf0 === f && ca0 === a), q = p / ATM;
+    const times = q >= 10 ? commas(Number(q.toPrecision(2))) : q.toPrecision(2);
+    topline(ctx, f === ATM && a === 1 ? 'A column of air one inch square weighs 14.7 lb, so the atmosphere presses with 14.7 lb/in².'
+      : Math.abs(q - 1) < 0.005 ? lbs(f) + ' lb on ' + sq(a) + ' in² presses exactly as hard as the atmosphere.'
+      : (named ? named[2] : lbs(f) + ' lb spread over ' + sq(a) + ' in²') + ' presses ' + times + ' times as hard as the atmosphere.');
+    tex(d.readout, `\\kP = \\frac{\\kforce}{\\karea} \\\\ \\kP = \\frac{${hue('force', lbs(f).replace(',', '{,}') + '\\ \\text{lb}')}}{${hue('area', sq(a) + '\\ \\text{in}^2')}} = ${hue('pressure', pStr(p).replace(',', '{,}') + '\\ \\text{lb/in}^2')}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -120,16 +86,17 @@ const commas = (x) => Math.round(x).toLocaleString('en-US');
 /* =====================================================================
    FIGURE 9.4: a mercury and a water barometer on one scale of height,
    0 to 12 m. Still: each column stands where hρg equals the pressure of
-   the atmosphere set on the slider.
+   the atmosphere set on the slider. Mercury at 0 °C (13,595 kg/m³) and
+   standard gravity, so 1 atm holds the book's 760 mm and 10.33 m.
 ===================================================================== */
 (function () {
-  const d = sim('sim-barometer', 630);
+  const d = sim('sim-barometer', 650);
   const Ps = ctl(d.controls, { label: '\\kPatm', cls: 'pressure', min: 60, max: 110, step: 0.1, value: 101.3, unit: 'kPa', dec: 1, aria: 'atmospheric pressure in kilopascals', detents: [{ v: 101.325, label: '1 atm' }] });
-  const G = 9.81, RHO = { Hg: 13600, water: 1000 };
-  const top = 70, base = 520, perM = (base - top) / 12;
+  const G = 9.80665, RHO = { Hg: 13595, water: 1000 };
+  const top = 100, base = 540, perM = (base - top) / 12;
   const Y = (m) => base - m * perM;
   function tube(ctx, x, hM, fill, name, hLabel, who) {
-    const tw = 34, dishW = 190, dishH = 44, wall = F.ref(who), ch = C('length');
+    const tw = 34, dishW = 190, dishH = 44, wall = F.ref(who), ch = C('length'), cp = C('pressure');
     ctx.fillStyle = fill; ctx.fillRect(x - dishW / 2, base, dishW, dishH);
     line(ctx, x - dishW / 2, base - 20, x - dishW / 2, base + dishH, PAL.ink, 3); line(ctx, x + dishW / 2, base - 20, x + dishW / 2, base + dishH, PAL.ink, 3); line(ctx, x - dishW / 2, base + dishH, x + dishW / 2, base + dishH, PAL.ink, 3);
     ctx.fillStyle = fill; ctx.fillRect(x - tw / 2, Y(hM), tw, base - Y(hM) + 30);
@@ -138,104 +105,99 @@ const commas = (x) => Math.round(x).toLocaleString('en-US');
     vbracket(ctx, x + 130, Y(hM), base, ch, hLabel, 1);
     text(ctx, name, x, base + dishH + 30, wall, { size: 20, weight: 600, align: 'center' });
     text(ctx, 'vacuum', x - tw / 2 - 10, Y(11.3), PAL.muted, { size: 17, align: 'right' });
+    /* the atmosphere on the open dish, either side of the tube */
+    for (const dx of [-70, 70]) arrow(ctx, x + dx, base - 70, x + dx, base - 6, cp, 4);
+    text(ctx, 'atmospheric pressure', x - 44, base - 88, cp, { size: 20, weight: 600, align: 'right', base: 'middle' });
   }
   function draw() {
     const { ctx } = begin(d.c);
-    const p = Ps.v * 1000, cp = C('pressure');
+    const p = Ps.v * 1000;
     const hHg = p / (RHO.Hg * G), hW = p / (RHO.water * G);
     for (let m = 0; m <= 12; m += 2) { line(ctx, 110, Y(m), 122, Y(m), PAL.muted, 2); text(ctx, m + ' m', 100, Y(m), PAL.muted, { size: 17, align: 'right', base: 'middle' }); }
     line(ctx, 122, Y(0), 122, Y(12), PAL.muted, 2);
-    tube(ctx, 380, hHg, F.el('Hg'), 'mercury', 'h = ' + fmt(hHg * 1000, 0) + ' mm', 'mercury-barometer');
-    tube(ctx, 850, hW, alpha(PAL.ink, 0.16), 'water', 'h = ' + fmt(hW, 2) + ' m', 'water-barometer');
-    for (const x of [380, 850]) for (const dx of [-70, 70]) arrow(ctx, x + dx, base - 70, x + dx, base - 6, cp, 4);
-    text(ctx, 'atmosphere', 1180, base - 50, cp, { size: 20, weight: 600, align: 'center' });
-    arrow(ctx, 1180, base - 36, 1180, base - 4, cp, 4);
+    tube(ctx, 440, hHg, F.el('Hg'), 'mercury', 'h = ' + fmt(hHg * 1000, 0) + ' mm', 'mercury-barometer');
+    tube(ctx, 940, hW, alpha(PAL.ink, 0.16), 'water', 'h = ' + fmt(hW, 2) + ' m', 'water-barometer');
     topline(ctx, 'An atmospheric pressure of ' + fmt(Ps.v, 1) + ' kPa holds up ' + fmt(hHg * 1000, 0) + ' mm of mercury or ' + fmt(hW, 2) + ' m of water.');
-    readout(d.readout, `\\kphyd = \\khcol\\krho\\kgrav = (${hue('length', fmt(hHg, 3) + '\\ \\text{m}')})(${hue('density', '13{,}600\\ \\text{kg/m}^3')})(${hue('acceleration', '9.81\\ \\text{m/s}^2')}) = ${hue('pressure', commas(p).replace(',', '{,}') + '\\ \\text{Pa}')}`);
+    const pa = hue('pressure', commas(p).replace(',', '{,}') + '\\ \\text{Pa}'), g = hue('acceleration', '9.81\\ \\text{m/s}^2');
+    tex(d.readout, `\\kphyd = \\khcol\\krho\\kgrav \\\\ \\text{mercury: }\\ (${hue('length', fmt(hHg, 3) + '\\ \\text{m}')})(${hue('density', '13{,}595\\ \\text{kg/m}^3')})(${g}) = ${pa} \\\\ \\text{water: }\\ (${hue('length', fmt(hW, 2) + '\\ \\text{m}')})(${hue('density', '1{,}000\\ \\text{kg/m}^3')})(${g}) = ${pa}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
-
-/* ---------- the manometer painter, shared by Figure 9.5 and the images of Examples 9.3 and 9.4 ----------
-   A bulb of gas on the left joined through a valve to a U-tube of mercury; dMm is how far the mercury in the far arm stands
-   above that in the gas arm, in millimetres of mercury, negative when the gas arm is higher. */
-function manometer(ctx, o) {
-  const { x = 700, y0, s, dMm, closed, hLabel, gasTop = 110, bottom } = o;
-  const cp = C('pressure'), tw = 36, L = x - 90, R = x + 90, half = dMm * s / 2;
-  const yL = y0 + half, yR = y0 - half, armTop = gasTop - 30;
-  const bx = x - 360, by = gasTop + 40;
-  /* the gas: the bulb, the pipe and the gas arm above the mercury */
-  ctx.fillStyle = alpha(cp, 0.18);
-  ctx.beginPath(); ctx.arc(bx, by, 70, 0, 2 * Math.PI); ctx.fill();
-  ctx.fillRect(bx + 60, by - tw / 2, L + tw / 2 - bx - 60, tw);
-  ctx.fillRect(L - tw / 2, by - tw / 2, tw, yL - by + tw / 2);
-  ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(bx, by, 70, 0, 2 * Math.PI); ctx.stroke();
-  line(ctx, bx + 68, by - tw / 2, L + tw / 2, by - tw / 2, PAL.ink, 3); line(ctx, bx + 68, by + tw / 2, L - tw / 2, by + tw / 2, PAL.ink, 3);
-  /* the valve */
-  const vx = (bx + L) / 2;
-  ctx.fillStyle = PAL.ink; ctx.beginPath(); ctx.moveTo(vx - 16, by - 24); ctx.lineTo(vx + 16, by + 24); ctx.lineTo(vx + 16, by - 24); ctx.lineTo(vx - 16, by + 24); ctx.closePath(); ctx.fill();
-  /* the mercury in the U */
-  const Hg = F.el('Hg');
-  ctx.fillStyle = Hg;
-  ctx.fillRect(L - tw / 2, yL, tw, bottom - yL); ctx.fillRect(R - tw / 2, yR, tw, bottom - yR);
-  ctx.beginPath(); ctx.arc(x, bottom, 90 + tw / 2, 0, Math.PI); ctx.arc(x, bottom, 90 - tw / 2, Math.PI, 0, true); ctx.closePath(); ctx.fill();
-  /* the tube's walls */
-  ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3;
-  line(ctx, L - tw / 2, by + tw / 2, L - tw / 2, bottom, PAL.ink, 3); line(ctx, L + tw / 2, by - tw / 2, L + tw / 2, bottom, PAL.ink, 3);
-  line(ctx, R - tw / 2, armTop, R - tw / 2, bottom, PAL.ink, 3); line(ctx, R + tw / 2, armTop, R + tw / 2, bottom, PAL.ink, 3);
-  ctx.beginPath(); ctx.arc(x, bottom, 90 + tw / 2, 0, Math.PI); ctx.stroke(); ctx.beginPath(); ctx.arc(x, bottom, 90 - tw / 2, 0, Math.PI); ctx.stroke();
-  line(ctx, L - tw / 2, by - tw / 2, L - tw / 2, armTop, PAL.ink, 3); line(ctx, L + tw / 2, armTop, L + tw / 2, by - tw / 2, PAL.ink, 3); line(ctx, L - tw / 2, armTop, L + tw / 2, armTop, PAL.ink, 3);
-  if (closed) { line(ctx, R - tw / 2, armTop, R + tw / 2, armTop, PAL.ink, 3); text(ctx, 'closed end (vacuum)', R + tw / 2 + 14, armTop + 4, PAL.muted, { size: 17, base: 'middle' }); }
-  else text(ctx, 'open end', R + tw / 2 + 14, armTop + 4, PAL.muted, { size: 17, base: 'middle' });
-  text(ctx, 'gas', bx, by, PAL.ink, { size: 22, weight: 600, align: 'center', base: 'middle' });
-  /* the two levels and h between them */
-  const hi = Math.min(yL, yR), lo = Math.max(yL, yR);
-  line(ctx, L - tw / 2 - 30, yL, L + tw / 2, yL, alpha(PAL.ink, 0.4), 2, [4, 8]);
-  line(ctx, R - tw / 2, yR, R + tw / 2 + 60, yR, alpha(PAL.ink, 0.4), 2, [4, 8]);
-  if (Math.abs(yL - yR) > 3) {
-    line(ctx, L + tw / 2, hi, R + tw / 2 + 60, hi, alpha(PAL.ink, 0.4), 2, [4, 8]); line(ctx, L - tw / 2 - 30, lo, R + tw / 2 + 60, lo, alpha(PAL.ink, 0.4), 2, [4, 8]);
-    vbracket(ctx, R + tw / 2 + 50, hi, lo, C('length'), hLabel, 1);
-  } else text(ctx, 'level', R + tw / 2 + 64, yR, PAL.ink, { size: 18, weight: 600, base: 'middle' });
-}
 
 /* =====================================================================
    FIGURE 9.5: one manometer, closed or open at its far end, the gas
    pressure and the atmosphere on sliders. The book's three cases are
-   three states of it. Still: the levels stand at equilibrium. The tube
-   draws 0.317 units per mm of mercury, so 1200 mm fits the arms.
+   three states of it. Still: the levels stand at equilibrium. A bulb of
+   gas opens through a stopcock and an elbow into the left arm of a
+   U-tube of mercury. The tube draws 0.23 units per mm of mercury, the
+   two levels moving equally and oppositely about y0, so the mercury
+   stays below the elbow and inside the arms from −800 to +1200 mm.
 ===================================================================== */
 (function () {
-  const d = sim('sim-manometer', 580);
+  const d = sim('sim-manometer', 650);
   const end = F.choice(d.controls, { label: 'end', options: [{ value: 'closed', label: 'closed' }, { value: 'open', label: 'open' }], value: 'open', aria: 'the far end of the manometer', onInput: () => { atm.disable(end.value === 'closed'); gas.refresh(); } });
-  const gas = ctl(d.controls, { label: '\\kPgas', cls: 'pressure', min: 0, max: 1200, step: 1, value: 897, unit: 'torr', dec: 0, aria: 'pressure of the gas in torr', specials: [{ at: () => (end.value === 'open' ? atm.v : null), label: 'equal' }] });
-  const atm = ctl(d.controls, { label: '\\kPatm', cls: 'pressure', min: 600, max: 800, step: 1, value: 760, unit: 'torr', dec: 0, aria: 'atmospheric pressure in torr', onInput: () => gas.refresh() });
+  const gas = ctl(d.controls, { label: '\\kPgas', cls: 'pressure', min: 0, max: 1200, step: 1, value: 897, unit: 'mm Hg', dec: 0, aria: 'pressure of the gas in millimetres of mercury', specials: [{ at: () => (end.value === 'open' ? atm.v : null), label: 'equal' }] });
+  const atm = ctl(d.controls, { label: '\\kPatm', cls: 'pressure', min: 600, max: 800, step: 1, value: 760, unit: 'mm Hg', dec: 0, aria: 'atmospheric pressure in millimetres of mercury', onInput: () => gas.refresh() });
+  const X = 780, SEP = 110, TW = 44, L = X - SEP, R = X + SEP, TOP = 160, BY = 230, B = 490, Y0 = 350, S = 0.23, BR = 84, BX = L - 330;
   function draw() {
     const { ctx } = begin(d.c);
-    const closed = end.value === 'closed', pg = gas.v, pa = atm.v;
-    const dMm = closed ? pg : pg - pa, h = Math.abs(dMm);
-    manometer(ctx, { x: 760, y0: 270, s: 0.3, dMm, closed, hLabel: 'h = ' + h + ' mm', gasTop: 110, bottom: 450 });
-    if (!closed) { const cp = C('pressure'); arrow(ctx, 850, 96, 850, 128, cp, 4); text(ctx, 'P_{atm} = ' + pa + ' torr', 950, 150, cp, { size: 20, weight: 600, base: 'middle' }); }
-    const side = dMm > 0 ? 'the far arm' : 'the gas arm';
-    topline(ctx, closed ? 'With a closed end the mercury stands ' + h + ' mm higher in the far arm, so the gas pressure is ' + pg + ' torr.'
-      : dMm === 0 ? 'The gas and the atmosphere press equally, so the mercury is level in both arms.'
-      : 'The mercury stands ' + h + ' mm higher in ' + side + ', so the gas is ' + h + ' torr ' + (dMm > 0 ? 'above' : 'below') + ' the atmosphere.');
-    const G = '\\kPgas', A = '\\kPatm', hv = hue('pressure', pg + '\\ \\text{torr}');
-    const main = closed ? `${G} = \\khcol\\krho\\kgrav = ${h}\\ \\text{mm Hg} = ${hv}`
-      : dMm >= 0 ? `${G} = ${A} + \\khcol\\krho\\kgrav = ${hue('pressure', pa + '\\ \\text{torr}')} + ${h}\\ \\text{mm Hg} = ${hv}`
-      : `${G} = ${A} - \\khcol\\krho\\kgrav = ${hue('pressure', pa + '\\ \\text{torr}')} - ${h}\\ \\text{mm Hg} = ${hv}`;
-    readout(d.readout, main);
+    const closed = end.value === 'closed', pg = gas.v, pa = atm.v, cp = C('pressure'), Hg = F.el('Hg');
+    const dMm = closed ? pg : pg - pa, h = Math.abs(dMm), half = dMm * S / 2, yL = Y0 + half, yR = Y0 - half;
+    const ex = L - TW / 2, ey = BY + TW / 2;                       /* the elbow's inner corner */
+    const mouth = Math.asin(TW / 2 / BR), px0 = BX + BR * Math.cos(mouth);   /* where the pipe leaves the bulb */
+    /* the gas: bulb, pipe, elbow and the left arm down to the mercury, one body */
+    ctx.save(); ctx.fillStyle = alpha(cp, 0.18); ctx.beginPath();
+    ctx.arc(BX, BY, BR, 0, 2 * Math.PI); ctx.rect(BX + BR - 20, BY - TW / 2, ex - (BX + BR - 20), TW);
+    ctx.moveTo(ex, ey); ctx.lineTo(ex, ey - TW); ctx.arc(ex, ey, TW, -Math.PI / 2, 0); ctx.closePath();
+    ctx.rect(ex, ey, TW, yL - ey); ctx.fill('nonzero'); ctx.restore();
+    /* the mercury: both arms and the bend */
+    ctx.save(); ctx.fillStyle = Hg;
+    ctx.fillRect(L - TW / 2, yL, TW, B + 2 - yL); ctx.fillRect(R - TW / 2, yR, TW, B + 2 - yR);
+    ctx.beginPath(); ctx.arc(X, B, SEP + TW / 2, 0, Math.PI); ctx.arc(X, B, SEP - TW / 2, Math.PI, 0, true); ctx.closePath(); ctx.fill(); ctx.restore();
+    /* the glass */
+    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.lineJoin = 'round';
+    ctx.beginPath(); ctx.arc(BX, BY, BR, mouth, 2 * Math.PI - mouth); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(px0, BY - TW / 2); ctx.lineTo(ex, BY - TW / 2); ctx.arc(ex, ey, TW, -Math.PI / 2, 0); ctx.lineTo(L + TW / 2, B); ctx.arc(X, B, SEP - TW / 2, Math.PI, 0, true); ctx.lineTo(R - TW / 2, TOP);
+    if (closed) ctx.arc(R, TOP, TW / 2, Math.PI, 0);
+    else ctx.moveTo(R + TW / 2, TOP);
+    ctx.lineTo(R + TW / 2, B); ctx.arc(X, B, SEP + TW / 2, 0, Math.PI); ctx.lineTo(ex, ey); ctx.lineTo(px0, ey); ctx.stroke();
+    /* the stopcock on the pipe, open: a plug across the bore with its handle above */
+    const vx = (BX + BR + ex) / 2;
+    ctx.fillStyle = PAL.panel; ctx.fillRect(vx - 13, BY - 34, 26, 68);
+    ctx.fillStyle = alpha(cp, 0.18); ctx.fillRect(vx - 13, BY - 10, 26, 20);
+    ctx.strokeRect(vx - 13, BY - 34, 26, 68); ctx.restore();
+    line(ctx, vx - 13, BY - 10, vx + 13, BY - 10, PAL.ink, 2); line(ctx, vx - 13, BY + 10, vx + 13, BY + 10, PAL.ink, 2);
+    line(ctx, vx, BY - 34, vx, BY - 50, PAL.ink, 5); line(ctx, vx - 26, BY - 52, vx + 26, BY - 52, PAL.ink, 8);
+    text(ctx, 'stopcock', vx, BY + 54, PAL.muted, { size: 17, align: 'center', base: 'middle' });
+    text(ctx, 'gas', BX, BY, PAL.ink, { size: 22, weight: 600, align: 'center', base: 'middle' });
+    text(ctx, 'P_{gas} = ' + pg + ' mm Hg', BX, BY + BR + 28, cp, { size: 20, weight: 600, align: 'center', base: 'middle' });
+    text(ctx, 'mercury', L - TW / 2 - 16, B + 36, PAL.muted, { size: 17, align: 'right', base: 'middle' });
+    const rx = R + TW / 2 + 16;
+    if (closed) {
+      text(ctx, 'closed end', rx, TOP - 10, PAL.muted, { size: 17, base: 'middle' });
+      text(ctx, 'vacuum', rx, Math.max(TOP + 26, (TOP + yR) / 2 - 6), PAL.muted, { size: 17, base: 'middle' });
+    } else {
+      arrow(ctx, R, TOP - 56, R, TOP - 6, cp, 4);
+      text(ctx, 'P_{atm} = ' + pa + ' mm Hg', rx, TOP - 34, cp, { size: 20, weight: 600, base: 'middle' });
+      text(ctx, 'open end', rx, TOP + 8, PAL.muted, { size: 17, base: 'middle' });
+    }
+    /* the two levels and h between them */
+    const hi = Math.min(yL, yR), lo = Math.max(yL, yR), bxr = R + TW / 2 + 60;
+    if (h > 0) {
+      line(ctx, (yL < yR ? L : R) + TW / 2, hi, bxr, hi, alpha(PAL.ink, 0.4), 2, [4, 8]);
+      line(ctx, L - TW / 2, lo, bxr, lo, alpha(PAL.ink, 0.4), 2, [4, 8]);
+      vbracket(ctx, bxr, hi, lo, C('length'), 'h = ' + h + ' mm', 1);
+    } else {
+      line(ctx, L - TW / 2, yL, bxr, yL, alpha(PAL.ink, 0.4), 2, [4, 8]);
+      text(ctx, 'level, h = 0', bxr + 10, yR, C('length'), { size: 22, weight: 600, base: 'middle' });
+    }
+    topline(ctx, closed ? (h === 0 ? 'Nothing presses on either arm, so the mercury stands level.' : 'Against a vacuum, the gas holds the mercury ' + h + ' mm higher in the closed arm.')
+      : dMm === 0 ? 'The gas and the atmosphere press equally, and the mercury stands level.'
+      : 'The mercury stands ' + h + ' mm higher in the ' + (dMm > 0 ? 'open' : 'gas') + ' arm, so the gas is ' + h + ' mm Hg ' + (dMm > 0 ? 'above' : 'below') + ' the atmosphere.');
+    const G = '\\kPgas', A = '\\kPatm', mm = (v) => hue('pressure', v + '\\ \\text{mm Hg}');
+    tex(d.readout, closed ? `${G} = \\khcol\\krho\\kgrav \\\\ ${G} = ${mm(pg)}`
+      : `${G} = ${A} ${dMm >= 0 ? '+' : '-'} \\khcol\\krho\\kgrav \\\\ ${G} = ${mm(pa)} ${dMm >= 0 ? '+' : '-'} ${mm(h)} = ${mm(pg)}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
-
-/* ---------- the images of Examples 9.3 and 9.4 and their Check Your Learning, faithful still copies ---------- */
-for (const [id, closed, dMm, lab] of [
-  ['fig-manometer-ex3', true, 264, 'h = 26.4 cm'],
-  ['fig-manometer-cyl3', true, 152, 'h = 6.0 in.'],
-  ['fig-manometer-ex4', false, 137, 'h = 13.7 cm'],
-  ['fig-manometer-cyl4', false, -118, 'h = 4.63 in.'],
-]) {
-  const d = sim(id, 480);
-  register(d.fig, { update: () => {}, draw: () => { const { ctx } = begin(d.c); manometer(ctx, { x: 760, y0: 250, s: 0.55, dMm, closed, hLabel: lab, gasTop: 90, bottom: 350 }); } });
-}
 };

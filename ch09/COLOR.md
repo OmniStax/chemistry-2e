@@ -27,7 +27,7 @@ definition stay ink. The figures draw these:
 | `length` | the column height h of the barometer and the manometers (`\khcol`) |
 | `force`, `area` | the force arrow and the area bracket of Figure 9.2 (`\kforce`, `\karea`) |
 | `acceleration` | g in p = hρg (`\kgrav`) |
-| `velocity` | the speed axes, v_p and u_rms on the distributions (`\ku`, `\kurms`) |
+| `velocity` | the speed axes, the live distribution curve, u_p and u_rms on the distributions (`\ku`, `\kurms`) |
 | `energy` | KE and KE_avg in the readouts of 9.5 |
 
 `time` and `concentration` reach the chapter only in words (the 243 s of
@@ -57,10 +57,12 @@ ink while the density line and the words are coloured.
   gas of the pair chosen (their count bars). ²³⁵UF₆ and ²³⁸UF₆ in the diffuser
   are referents: the uranium atom is `F.el('U')` and the ring round it the
   referent hue, since the isotope is the one difference.
-- **9.5** The baseline and the changed cylinder of Figure 9.31; the xenon,
-  argon, neon and helium curves of the distribution figure; the count of
-  speeds in the gas-box Sim. The four temperature curves of one gas are not
-  named one by one in the text and are told apart by `F.cat(i)`.
+- **9.5** The baseline and the changed cylinder of Figure 9.31 (their walls,
+  names and bars); the xenon, krypton, argon, neon and helium curves of the
+  distribution figure; the count of speeds in the gas-box Sim. The live
+  distribution curve is a single curve and wears `velocity`. The four
+  temperature curves of one gas are not named one by one in the text and are
+  told apart by `F.cat(i)`.
 - **9.6** The five Z curves of Figure 9.35 (hydrogen, nitrogen, oxygen,
   methane, carbon dioxide), with the ideal line ink and dashed; the ideal and
   the real gas of Figure 9.36 (their boxes, labels and bar names).

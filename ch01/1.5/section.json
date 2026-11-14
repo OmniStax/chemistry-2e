@@ -35,6 +35,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -68,15 +71,16 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "magnifier labels kept inside, reading label clear, note dropped"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: real cylinder, zoom window with the tenths, reading as a sum"
     }
    ]
   },
   {
    "id": "fig-zeros",
    "kind": "figure",
-   "originals": [
-    "/media/ch01/CNX_Chem_01_05_SigDigits5_img.jpg"
-   ],
    "draws": [],
    "ai": [
     {
@@ -88,15 +92,16 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image"
     }
    ]
   },
   {
    "id": "fig-count-digits",
    "kind": "figure",
-   "originals": [
-    "/media/ch01/CNX_Chem_01_05_SigDigits1_img.jpg"
-   ],
    "draws": [],
    "ai": [
     {
@@ -108,15 +113,16 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image"
     }
    ]
   },
   {
    "id": "fig-captive-leading",
    "kind": "figure",
-   "originals": [
-    "/media/ch01/CNX_Chem_01_05_SigDigits2_img.jpg"
-   ],
    "draws": [],
    "ai": [
     {
@@ -128,15 +134,16 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image"
     }
    ]
   },
   {
    "id": "fig-trailing",
    "kind": "figure",
-   "originals": [
-    "/media/ch01/CNX_Chem_01_05_SigDigits3_img.jpg"
-   ],
    "draws": [],
    "ai": [
     {
@@ -148,15 +155,16 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image"
     }
    ]
   },
   {
    "id": "fig-column-sums",
    "kind": "figure",
-   "originals": [
-    "/media/ch01/CNX_Chem_01_05_SigDigits4_img.jpg"
-   ],
    "draws": [],
    "ai": [
     {
@@ -173,19 +181,17 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "notes shortened to clear the edge and each other"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image"
     }
    ]
   },
   {
    "id": "fig-rebar",
    "kind": "figure",
-   "originals": [
-    "/media/ch01/CNX_Chem_01_04_CylRebar.jpg"
-   ],
-   "draws": [
-    "volume",
-    "mass"
-   ],
+   "draws": [],
    "ai": [
     {
      "model": "claude-fable-5-1",
@@ -201,19 +207,17 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "arrow clear of the scale labels, note cut to one sentence"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image"
     }
    ]
   },
   {
    "id": "fig-gold",
    "kind": "figure",
-   "originals": [
-    "/media/ch01/CNX_Chem_01_04_CylGold.jpg"
-   ],
-   "draws": [
-    "volume",
-    "mass"
-   ],
+   "draws": [],
    "ai": [
     {
      "model": "claude-fable-5-1",
@@ -229,6 +233,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "arrow clear of the scale labels, note cut to one sentence"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image"
     }
    ]
   },
@@ -256,6 +264,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "legend swatches spaced, note cut to its one fact"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "three-zone target as the book draws it, sliders that equal the readout"
     }
    ]
   }
@@ -727,20 +739,6 @@
   }
  ],
  "referents": [
-  {
-   "id": "rebar",
-   "label": "the piece of rebar",
-   "figures": [
-    "fig-rebar"
-   ]
-  },
-  {
-   "id": "nugget",
-   "label": "the piece of yellowish material",
-   "figures": [
-    "fig-gold"
-   ]
-  },
   {
    "id": "archer-a",
    "label": "archer (a), accurate and precise",

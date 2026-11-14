@@ -79,9 +79,9 @@ function electron(ctx, x, y, up, a = 1, h = 34) {
     /* straight across the gap, then bulging loops that leave the face's edge and return to the other face */
     [-40, -20, 0, 20, 40].forEach((dy) => { ctx.beginPath(); ctx.moveTo(x0, GY + dy); ctx.lineTo(x1, GY + dy); ctx.stroke(); head(GX + 12, GY + dy, 0); });
     [44, 78, 112].forEach((b, i) => [-1, 1].forEach((s) => {
-      const y = GY + s * (PH - 8), wx = 18 + i * 34;
-      ctx.beginPath(); ctx.moveTo(x0 - 6, y); ctx.bezierCurveTo(GX - FACE - wx, y + s * b * 1.3, GX + FACE + wx, y + s * b * 1.3, x1 + 6, y); ctx.stroke();
-      head(GX + 6, y + s * b * 0.975, 0);
+      const y = GY + s * (PH - 8), wx = 40 + i * 52;
+      ctx.beginPath(); ctx.moveTo(x0 - 6, y); ctx.bezierCurveTo(GX - FACE - wx, y + s * b * 1.25, GX + FACE + wx, y + s * b * 1.25, x1 + 6, y); ctx.stroke();
+      head(GX + 6, y + s * b * 0.94, 0);
     }));
     ctx.restore();
   }
@@ -145,7 +145,7 @@ function electron(ctx, x, y, up, a = 1, h = 34) {
     ctx.restore();
     hits.push({ x: rx, y: dy - 20, r: 60, name: 'the weights on the dish, ' + fmt(massOf(sample.value), 2) + ' g' });
     /* labels, as the book's: sample, magnetic field, electromagnets, and the weights */
-    F.label(ctx, 'sample', lx - tw, liq - 16, { side: 'left', color: cSam, gap: 60 });
+    F.label(ctx, 'sample', lx - tw, liq - 40, { side: 'left', color: cSam, gap: 60 });
     F.label(ctx, 'electromagnets', GX - FACE - POLE - BODY / 2, GY + BH + 34, { side: 'below', color: cMag, gap: 0, leader: false });
     if (kOn > 0.5) F.label(ctx, 'magnetic field', GX + FACE + 40, GY - PH - 100, { side: 'right', color: PAL.ink, gap: 50 });
     F.label(ctx, 'weights', rx + dw, dy - 20, { side: 'right', color: cW, gap: 26 });
@@ -230,12 +230,12 @@ function electron(ctx, x, y, up, a = 1, h = 34) {
   const R = ctl(d.controls, { label: '\\text{distance}', cls: 'length', min: 60, max: 300, step: 1, value: 74, unit: 'pm', dec: 0, aria: 'distance between the nuclei in picometers',
     specials: [{ at: () => BOND[pair.value], label: 'bond length' }] });
   const INFO = {
-    sin: { tex: '\\sigma_s', head: 'In phase, two $s$ orbitals merge into the bonding $\\sigma_s$ orbital, its density between the nuclei.' },
-    sout: { tex: '\\sigma_s^{*}', head: 'Out of phase, two $s$ orbitals give the antibonding $\\sigma_s^{*}$ orbital, with a node between the nuclei.' },
-    pein: { tex: '\\sigma_p', head: 'In phase end to end, two $p$ orbitals give the bonding $\\sigma_p$ orbital, a large lobe between the nuclei.' },
-    peout: { tex: '\\sigma_p^{*}', head: 'Out of phase end to end, two $p$ orbitals give the antibonding $\\sigma_p^{*}$ orbital, with a node between the nuclei.' },
-    psin: { tex: '\\pi_p', head: 'In phase side by side, two $p$ orbitals give the bonding $\\pi_p$ orbital, above and below a node that holds the axis.' },
-    psout: { tex: '\\pi_p^{*}', head: 'Out of phase side by side, two $p$ orbitals give the antibonding $\\pi_p^{*}$ orbital, with two nodes.' },
+    sin: { tex: '\\sigma_s', head: 'In phase, two $s$ orbitals merge into $\\sigma_s$, dense between the nuclei.' },
+    sout: { tex: '\\sigma_s^{*}', head: 'Out of phase, two $s$ orbitals give $\\sigma_s^{*}$, with a node between the nuclei.' },
+    pein: { tex: '\\sigma_p', head: 'End to end in phase, two $p$ orbitals give $\\sigma_p$, a large lobe between the nuclei.' },
+    peout: { tex: '\\sigma_p^{*}', head: 'End to end out of phase, two $p$ orbitals give $\\sigma_p^{*}$, with a node between the nuclei.' },
+    psin: { tex: '\\pi_p', head: 'Side by side in phase, two $p$ orbitals give $\\pi_p$, above and below a node along the axis.' },
+    psout: { tex: '\\pi_p^{*}', head: 'Side by side out of phase, two $p$ orbitals give $\\pi_p^{*}$, with two nodes.' },
   };
   /* one atomic orbital at x = c (scene units): its value and gradient at (x, y, z) */
   function ao(kind, c, sgn, p, out) {
@@ -398,7 +398,7 @@ function seats(k, deg) { const s = []; for (let i = 0; i < k; i++) s.push([i % d
   const d = sim('sim-mo-fill', 860);
   const SPECIES = [['H', 0], ['H', 1], ['H', -1], ['He', 0], ['Li', 0], ['Be', 0], ['Be', 1], ['Be', -2], ['B', 0], ['C', 0], ['C', -2], ['N', 0], ['N', 1], ['N', 2], ['O', 0], ['O', 1], ['O', 2], ['O', -2], ['F', 0], ['F', 1], ['Ne', 0]];
   const SUP = { 0: '', 1: '⁺', 2: '²⁺', '-1': '⁻', '-2': '²⁻' };
-  const TSUP = { 0: '', 1: '{}^{+}', 2: '{}^{2+}', '-1': '{}^{-}', '-2': '{}^{2-}' };
+  const TSUP = { 0: '', 1: '^{+}', 2: '^{2+}', '-1': '^{-}', '-2': '^{2-}' };
   const nameOf = ([X, q]) => X + '₂' + SUP[q];
   const arrive = F.tween(d, 1);
   const pick = F.select(d.controls, { label: '\\text{species}', options: SPECIES.map((s, i) => ({ value: String(i), label: nameOf(s) })), value: '6', aria: 'molecule or ion', onInput: () => { arrive.set(0); arrive.to(1, 1600, F.ease.linear); } });
@@ -454,10 +454,8 @@ function seats(k, deg) { const s = []; for (let i = 0; i < k; i++) s.push([i % d
     D.mo.forEach((l, i) => { if (l.anti) ab += occ[i]; else b += occ[i]; const pairs = Math.max(0, occ[i] - l.deg); unp += occ[i] - 2 * pairs; });
     const conf = D.mo.map((l, i) => (occ[i] ? `(${l.tex})^{${occ[i]}}` : '')).join('');
     const bo = (b - ab) / 2, nm = nameOf(SPECIES[+pick.value]);
-    try { headline(ctx, `${nm} is $${conf}$: ` + (unp ? `${WORDS[unp] ?? unp} unpaired electron${unp > 1 ? 's' : ''}, so it is paramagnetic.` : 'every electron paired, so it is diamagnetic.')); } catch (e) { console.error("T: err", e.message, e.stack.slice(0, 300)); }
-    setTimeout(() => console.error("T2", d.readout.innerHTML.length, d.readout.isConnected, d.readout.className), 30); console.error("T:", JSON.stringify(`\\text{bond order in ${X}}_2${TSUP[q]} = \\frac{(${b} - ${ab})}{2} = ${fmt(bo, bo % 1 ? 1 : 0)}`));
-    const VARS = [`\\text{bond order in ${X}}_2${TSUP[q]} = \\frac{(${b} - ${ab})}{2} = ${fmt(bo, bo % 1 ? 1 : 0)}`, `x = ${fmt(bo, bo % 1 ? 1 : 0)}`, `\\text{Be}_2^{+}`, `\\text{bond order} = 0.5`, `x = 1`];
-    tex(d.readout, VARS[window.__v || 0]);
+    headline(ctx, `${nm} is $${conf}$: ` + (unp ? `${WORDS[unp] ?? unp} unpaired electron${unp > 1 ? 's' : ''}, so it is paramagnetic.` : 'every electron paired, so it is diamagnetic.'));
+    tex(d.readout, `\\text{bond order in ${X}}_2${TSUP[q]} = \\frac{(${b} - ${ab})}{2} = ${fmt(bo, bo % 1 ? 1 : 0)}`);
     if (bo <= 0) { const s = el('small', null, 'With a bond order of zero, ' + nm + ' does not form.'); d.readout.appendChild(s); }
   }
   still(d, draw);
@@ -509,7 +507,7 @@ function seats(k, deg) { const s = []; for (let i = 0; i < k; i++) s.push([i % d
         line(ctx, XM - 32, Y(l.E0), XM + 32, Y(l.E0), alpha(l.c, 0.35), 4, [6, 6]);
         line(ctx, XM, Y(l.E0), XM, y + (l.E > l.E0 ? 4 : -4), alpha(l.c, 0.6), 2, [2, 6]);
       }
-      xs.forEach((x) => { line(ctx, x, y, x + w, y, l.c, 6); text(ctx, l.n, x + w / 2, y + 26, l.c, { size: 22, align: 'center', bg: PAL.panel }); });
+      xs.forEach((x) => { line(ctx, x, y, x + w, y, l.c, 6); text(ctx, l.n, x + w / 2, y + 26, l.c, { size: 22, align: 'center' }); });
       hits.push({ x: XM, y, r: 60, name: 'the ' + l.n.replace(/[_{}]/g, '') + ' molecular orbital' + (l.deg > 1 ? 's' : '') + (l.E0 !== undefined && Math.abs(l.E - l.E0) > 6 ? (l.E > l.E0 ? ', raised by the mixing' : ', lowered by the mixing') : '') });
     });
     const sp = L[2].E, at = Math.abs(m - CROSS) < 0.005;
@@ -570,10 +568,11 @@ function seats(k, deg) { const s = []; for (let i = 0; i < k; i++) s.push([i % d
       ctx.restore();
     } else {
       const E = solid.k < 1 ? levelsOf(N, solid.from ?? solid.value).map((e, i) => e + (levelsOf(N, solid.value)[i] - e) * F.ease.smooth(solid.k)) : levelsOf(N, solid.value);
+      const room = Math.min(...E.slice(0, N / 2).map((e, i) => (i ? (E[i] - E[i - 1]) * SC : Infinity)));
       E.forEach((e, i) => {
         const bond = i < N / 2, y = Y(e), c = bond ? cV : cC;
         line(ctx, X0, y, X1, y, c, N > 8 ? 3 : 5, bond ? undefined : [12, 8]);
-        if (N <= 4 && bond) { electron(ctx, (X0 + X1) / 2 - 10, y, true, 1, 26); electron(ctx, (X0 + X1) / 2 + 10, y, false, 1, 26); }
+        if (bond && room > 44) { electron(ctx, (X0 + X1) / 2 + 40, y, true, 1, 30); electron(ctx, (X0 + X1) / 2 + 60, y, false, 1, 30); }
       });
       vt = Y(E[N / 2 - 1]); vb = Y(E[0]); cb = Y(E[N / 2]); ct = Y(E[N - 1]);
     }
@@ -583,16 +582,19 @@ function seats(k, deg) { const s = []; for (let i = 0; i < k; i++) s.push([i % d
     F.rich(ctx, [[many ? 'conduction band' : 'antibonding orbitals', cC], ' (empty)'], X1 + 26, (ct + cb) / 2, { size: 22 });
     F.rich(ctx, [[many ? 'valence band' : 'bonding orbitals', cV], ' (filled)'], X1 + 26, (vt + vb) / 2, { size: 22 });
     /* the gap: an arrow both ways between the top of the valence set and the foot of the conduction set */
-    const gx = X0 + 70;
-    if (vt - cb > 26) { arrow(ctx, gx, (vt + cb) / 2, gx, cb + 3, cE, 3); arrow(ctx, gx, (vt + cb) / 2, gx, vt - 3, cE, 3); }
-    else { line(ctx, gx, cb, gx, vt, cE, 3); }
-    F.label(ctx, many ? 'band gap' : 'gap', gx + 14, (vt + cb) / 2, { side: 'right', color: cE, gap: 4, leader: false });
+    const gx = X0 + 70, gName = many ? 'band gap' : 'gap';
+    if (vt - cb > 40) {
+      arrow(ctx, gx, (vt + cb) / 2, gx, cb + 3, cE, 3); arrow(ctx, gx, (vt + cb) / 2, gx, vt - 3, cE, 3);
+      F.label(ctx, gName, gx + 14, (vt + cb) / 2, { side: 'right', color: cE, gap: 4, leader: false });
+    } else {
+      const bx = X1 + 12; line(ctx, bx, cb, bx, vt, cE, 3); line(ctx, bx - 6, cb, bx + 6, cb, cE, 3); line(ctx, bx - 6, vt, bx + 6, vt, cE, 3);
+      F.label(ctx, gName, bx + 10, (vt + cb) / 2, { side: 'right', color: cE, gap: 4, leader: false });
+    }
     hits.push({ x: (X0 + X1) / 2, y: (vt + vb) / 2, r: 70, name: many ? 'the valence band: the bonding orbitals, filled' : 'the bonding orbitals, each with two electrons' }, { x: (X0 + X1) / 2, y: (ct + cb) / 2, r: 70, name: many ? 'the conduction band: the antibonding orbitals, empty' : 'the antibonding orbitals, empty' });
     headline(ctx, N === Infinity ? `In ${NAME[solid.value]} the band gap is ${SIZE[solid.value]}.`
       : N === 2 ? 'Two atoms give one bonding and one antibonding orbital, far apart in energy.'
       : `${N} atoms give ${N / 2} bonding and ${N / 2} antibonding orbitals, each at a slightly different energy.`);
-    tex(d.readout, N === Infinity ? '\\frac{N}{2} = \\frac{10^{23}}{2} = 5 \\times 10^{22}\\ \\text{bonding orbitals (filled)} = \\text{antibonding orbitals (empty)}'
-      : `\\frac{N}{2} = \\frac{${N}}{2} = ${N / 2}\\ \\text{bonding orbital${N > 2 ? 's' : ''} (filled)} = \\text{antibonding orbital${N > 2 ? 's' : ''} (empty)}`);
+    tex(d.readout, `\\text{bonding orbitals} = \\text{antibonding orbitals} = \\frac{N}{2} = ` + (N === Infinity ? '\\frac{10^{23}}{2} = 5 \\times 10^{22}' : `\\frac{${N}}{2} = ${N / 2}`));
   }
   still(d, draw);
 })();

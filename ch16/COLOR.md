@@ -15,8 +15,7 @@ chapter; it invents no hue.
 | K, K_P, K_sp, Q, Q_P | `equilibrium-constant` | 16.4 only, where ΔG° meets K |
 | P (16.1, the empty flask), partial pressures in 16.4 examples | `pressure` | Where a readout states one |
 | ΔV | `volume` | 16.1's expansion |
-| Time on Figure 16.2's axis | `time` | — |
-| The speed axis of Figure 16.10 + 16.11 | `velocity` | — |
+| Time on Figure 16.2's axis and Figure 16.5's, the time shown on Figure 16.2's slider | `time` | — |
 | 1.00 kJ/K, the heat capacity of Figure 16.5's objects | `heat-capacity` | In the caption only |
 
 These stay in ink: W, W_f, W_i (counts of microstates), k (the Boltzmann
@@ -32,9 +31,9 @@ skill (the second law, predicting the sign of ΔS) stays ink, and so does
 ## Facts and conventions
 
 `F.el` for every atom and molecule drawn: the argon of Figure 16.4 and the
-water of Figure 16.10 + 16.11. The four particles of Figure 16.8 and of
-Example 16.2's image are told apart by `F.cat`, since the text names none of
-them. The energy units of Figure 16.9 are ink marks, the book's asterisks.
+water of Figure 16.10 + 16.11, whose kinetic energy axis is `energy`. The
+four particles of Figure 16.8 are told apart by `F.cat`, since the text names
+none of them; Example 16.2's image is the book's own. The energy units of Figure 16.9 are ink marks, the book's asterisks.
 
 ## Referents
 

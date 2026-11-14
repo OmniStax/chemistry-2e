@@ -10,7 +10,7 @@
     "Describe the dispersal of matter and energy that accompanies certain spontaneous processes"
   ],
   "summary_html": "<p>Chemical and physical processes have a natural tendency to occur in one direction under certain conditions. A <span data-concept=\"spontaneous-process\">spontaneous process</span> occurs without the need for a continual input of <span data-concept=\"energy-and-work\">energy</span> from some external source, while a <span data-concept=\"nonspontaneous-process\">nonspontaneous process</span> requires such. Systems undergoing a <span data-concept=\"spontaneous-process\">spontaneous process</span> may or may not experience a gain or loss of <span data-concept=\"energy-and-work\">energy</span>, but they will experience a change in the way matter and/or <span data-concept=\"energy-and-work\">energy</span> is distributed within the system.</p>",
-  "notes": "Nothing of the section is left out. The stray full stop of “(P = 0). (Figure 16.4).” is kept as printed. Figure 16.2 is drawn with time in days, the week its caption names, and with the six-hour half-life of technetium-99m that the text gives, where the book’s axis reads hours.",
+  "notes": "Nothing of the section is left out. The stray full stop of “(P = 0). (Figure 16.4).” is kept as printed. Figure 16.2 is drawn from the half-lives the text gives, about six hours for technetium-99m and 4.47 billion years for uranium-238, over a span of time the reader sets, where the book’s axis reads hours.",
   "ai": {
     "text": [
       {
@@ -45,6 +45,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "rebuilt: time-shown slider from an hour to billions of years"
         }
       ]
     },
@@ -72,7 +76,8 @@
       "draws": [
         "energy",
         "pressure",
-        "volume"
+        "volume",
+        "time"
       ],
       "conventions": [
         "Ar"
@@ -82,6 +87,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "rebuilt flat: section through the flasks, count trace beneath"
         }
       ]
     },
@@ -103,6 +112,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "fixed: apart then in contact, larger blocks, readout lines"
         }
       ]
     },

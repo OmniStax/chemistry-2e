@@ -79,8 +79,9 @@ const VIEW3 = { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3 };
 ===================================================================== */
 (function () {
   const d = sim('sim-carbon');
-  const v = F.view3d(d.stage, { ...VIEW3, h: 460, dist: 8.4, views: [{ label: 'face on', yaw: 0, pitch: 0 }, { label: 'edge on', yaw: Math.PI / 2, pitch: 0 }] });
-  const grp = v.part(0); if (grp) grp.position.y = -0.3;
+  const v = F.view3d(d.stage, { ...VIEW3, h: 560, dist: 7.2 });
+  /* the sheets lie flat, as the book draws graphite's layers, so the stacking reads from the side */
+  const grp = v.part(0); if (grp) { grp.position.y = -0.1; grp.rotation.x = -Math.PI / 2; }
   const A = 0.3, NC = 8, NR = 6, PER = R3 * A, Wd = NC * PER, RT = Wd / TAU, GAP = 0.71, RA = 0.08, RB = 0.03;
   const flat = [];
   for (let j = 0; j < NR; j++) for (let i = 0; i < NC; i++) { const x = ((i + j / 2) * PER) % Wd; flat.push([x, j * 1.5 * A], [x, j * 1.5 * A + A]); }
@@ -98,12 +99,12 @@ const VIEW3 = { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3 };
     const Rk = RT / k, th = p[0] / Rk;
     return [Rk * Math.sin(th), p[1], Rk * Math.cos(th) - Rk + RT];
   };
-  /* diamond: three cubic cells of the face-centred lattice with its tetrahedral basis, edge 0.75 */
-  const DA = 0.75, FCC = [[0, 0, 0], [0.5, 0.5, 0], [0.5, 0, 0.5], [0, 0.5, 0.5]], BAS = [[0, 0, 0], [0.25, 0.25, 0.25]];
+  /* diamond: two cubic cells each way of the face-centred lattice with its tetrahedral basis, edge 0.95 */
+  const DA = 0.95, FCC = [[0, 0, 0], [0.5, 0.5, 0], [0.5, 0, 0.5], [0, 0.5, 0.5]], BAS = [[0, 0, 0], [0.25, 0.25, 0.25]];
   const dia = [];
-  for (let i = -1; i <= 3; i++) for (let j = -1; j <= 3; j++) for (let k = -1; k <= 3; k++) FCC.forEach((f) => BAS.forEach((b) => {
+  for (let i = -1; i <= 2; i++) for (let j = -1; j <= 2; j++) for (let k = -1; k <= 2; k++) FCC.forEach((f) => BAS.forEach((b) => {
     const p = [i + f[0] + b[0], j + f[1] + b[1], k + f[2] + b[2]];
-    if (p.every((x) => x > -1e-6 && x < 3 + 1e-6)) dia.push(p.map((x) => (x - 1.5) * DA));
+    if (p.every((x) => x > -1e-6 && x < 2 + 1e-6)) dia.push(p.map((x) => (x - 1) * DA));
   }));
   const DB = (R3 / 4) * DA, diaBonds = [];
   for (let i = 0; i < dia.length; i++) for (let j = i + 1; j < dia.length; j++) if (Math.abs(dist3(dia[i], dia[j]) - DB) < 0.01) diaBonds.push([i, j]);
@@ -132,8 +133,12 @@ const VIEW3 = { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3 };
       pts.forEach((p) => { if (on(p)) v.pickable(F.mesh.sphere(g, p, RA, F.el('C')), NAME.layer); });
       sheetBonds.forEach(([a, b], i) => { if (!wraps[i] && on(pts[a]) && on(pts[b])) F.mesh.stick(g, pts[a], pts[b], RB, PAL.muted); });
     });
-    dia.forEach((p, i) => { if (keep[i]) v.pickable(F.mesh.sphere(diaG, p, RA, F.el('C')), NAME.diamond); });
-    diaBonds.forEach(([i, j]) => { if (keep[i] && keep[j]) v.pickable(F.mesh.stick(diaG, dia[i], dia[j], RB, PAL.muted), 'a C–C single bond'); });
+    /* one atom near the centre and its four neighbours solid, its bonds in ink; the rest pale, so the tetrahedron reads */
+    let hub = -1, bd = 1e9; dia.forEach((p, i) => { const r = Math.hypot(...p), n = diaBonds.filter((b) => b.includes(i)).length; if (keep[i] && n === 4 && r < bd) { bd = r; hub = i; } });
+    const near = new Set([hub]); diaBonds.forEach(([i, j]) => { if (i === hub) near.add(j); if (j === hub) near.add(i); });
+    const pale = { transparent: true, opacity: 0.4, depthWrite: false };
+    dia.forEach((p, i) => { if (keep[i]) v.pickable(F.mesh.sphere(diaG, p, near.has(i) ? RA * 1.15 : RA, F.el('C'), near.has(i) ? undefined : pale), NAME.diamond); });
+    diaBonds.forEach(([i, j]) => { if (!keep[i] || !keep[j]) return; const on = i === hub || j === hub; v.pickable(F.mesh.stick(diaG, dia[i], dia[j], on ? RB * 2 : RB, on ? PAL.ink : PAL.muted, on ? undefined : pale), 'a C–C single bond'); });
     bp.forEach((p) => v.pickable(F.mesh.sphere(ballG, p, RA, F.el('C')), NAME.ball));
     bb.forEach(([i, j]) => F.mesh.stick(ballG, bp[i], bp[j], RB, PAL.muted));
   }
@@ -170,78 +175,6 @@ const VIEW3 = { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3 };
 })();
 
 /* =====================================================================
-   FIGURE 18.21: a faithful copy. (a) Two fused rings of a graphite
-   layer in the book's perspective (a locked view), an unhybridized p
-   orbital standing perpendicular to the plane on every atom, its two
-   phases in two category colours as 8.3 draws them. (b) Two resonance
-   forms of a five-ring piece of a layer: every bond of one direction is
-   double in the first, of another direction in the second, so each
-   carbon atom has one double bond in each. Still, no controls.
-===================================================================== */
-(function () {
-  const d = sim('fig-graphite-orbitals', 470);
-  const hits = []; F.hover(d.stage, () => hits);
-  /* (a): the rings in the plane y = 0, bond 92 canvas units, seen from a little above */
-  const S = 104, LOBE = 100, view = F.view({ yaw: 0.32, pitch: 0.52, dist: 1500, cx: 300, cy: 226 });
-  const ring = [];
-  [-S * R3 / 2, S * R3 / 2].forEach((cx) => { for (let k = 0; k < 6; k++) { const a = Math.PI / 6 + (k * Math.PI) / 3; const p = [cx + S * Math.cos(a), 0, S * Math.sin(a)]; if (!ring.some((q) => dist3(q, p) < 1)) ring.push(p); } });
-  const rBonds = [];
-  for (let i = 0; i < ring.length; i++) for (let j = i + 1; j < ring.length; j++) if (Math.abs(dist3(ring[i], ring[j]) - S) < 1) rBonds.push([i, j]);
-  const depth = (p) => p[0] * Math.sin(0.32) + p[2] * Math.cos(0.32);
-  const order = ring.map((_, i) => i).sort((a, b) => depth(ring[a]) - depth(ring[b]));
-  function lobe(ctx, base, top, w, fill) {
-    const ux = top[0] - base[0], uy = top[1] - base[1], L = Math.hypot(ux, uy), u = [ux / L, uy / L], n = [-u[1], u[0]];
-    const at = (s, t) => [base[0] + u[0] * s * L + n[0] * t * w, base[1] + u[1] * s * L + n[1] * t * w];
-    ctx.save(); ctx.beginPath(); ctx.moveTo(base[0], base[1]);
-    ctx.bezierCurveTo(...at(0.3, 0.75), ...at(1.02, 1.05), ...at(1, 0));
-    ctx.bezierCurveTo(...at(1.02, -1.05), ...at(0.3, -0.75), base[0], base[1]);
-    ctx.fillStyle = alpha(fill, 0.82); ctx.fill(); ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 1.5; ctx.stroke(); ctx.restore();
-  }
-  /* (b): a honeycomb piece of pointy-top rings, rows 0 and 2, columns 0 and 1, which closes a fifth ring between them */
-  const b = 58, atoms = [], bonds = [];
-  [[0, 0], [1, 0], [0, 2], [1, 2]].forEach(([c, r]) => {
-    const cx = c * R3 * b + (r % 2) * R3 * b / 2, cy = r * 1.5 * b;
-    for (let k = 0; k < 6; k++) { const a = -Math.PI / 2 + (k * Math.PI) / 3, p = [cx + b * Math.cos(a), cy + b * Math.sin(a)]; if (!atoms.some((q) => Math.hypot(q[0] - p[0], q[1] - p[1]) < 1)) atoms.push(p); }
-  });
-  for (let i = 0; i < atoms.length; i++) for (let j = i + 1; j < atoms.length; j++) if (Math.abs(Math.hypot(atoms[i][0] - atoms[j][0], atoms[i][1] - atoms[j][1]) - b) < 1) bonds.push([i, j]);
-  const cls = (dx, dy) => (Math.abs(dx) < 1 ? 0 : dx * dy > 0 ? 1 : 2);   /* 0 vertical, 1 falling to the right, 2 rising to the right */
-  const UPSET = [[0, -1], [R3 / 2, 0.5], [-R3 / 2, 0.5]], DOWNSET = [[0, 1], [R3 / 2, -0.5], [-R3 / 2, -0.5]];
-  const stubs = [];
-  atoms.forEach((p, i) => {
-    const nb = bonds.filter((e) => e.includes(i)).map(([a, c]) => { const q = atoms[a === i ? c : a]; return [(q[0] - p[0]) / b, (q[1] - p[1]) / b]; });
-    const set = nb.some(([x, y]) => DOWNSET.some(([u, w]) => Math.abs(u - x) < 0.01 && Math.abs(w - y) < 0.01)) ? DOWNSET : UPSET;
-    set.forEach(([u, w]) => { if (!nb.some(([x, y]) => Math.abs(u - x) < 0.01 && Math.abs(w - y) < 0.01)) stubs.push({ i, u, w }); });
-  });
-  const xs = atoms.map((p) => p[0]), ys = atoms.map((p) => p[1]);
-  const midX = (Math.min(...xs) + Math.max(...xs)) / 2, midY = (Math.min(...ys) + Math.max(...ys)) / 2;
-  function form(ctx, ox, oy, dbl) {
-    const at = (p) => [ox + p[0] - midX, oy + p[1] - midY], CUT = 14;
-    const bond = (p, q, two) => {
-      const dx = q[0] - p[0], dy = q[1] - p[1], L = Math.hypot(dx, dy), ux = dx / L, uy = dy / L, nx = -uy, ny = ux;
-      const a = [p[0] + ux * CUT, p[1] + uy * CUT], e = q.end ? q : [q[0] - ux * CUT, q[1] - uy * CUT];
-      if (!two) { line(ctx, a[0], a[1], e[0], e[1], PAL.ink, 2.4); return; }
-      [-3.6, 3.6].forEach((o) => line(ctx, a[0] + nx * o, a[1] + ny * o, e[0] + nx * o, e[1] + ny * o, PAL.ink, 2.2));
-    };
-    bonds.forEach(([i, j]) => { const p = at(atoms[i]), q = at(atoms[j]); bond(p, q, cls(q[0] - p[0], q[1] - p[1]) === dbl); });
-    stubs.forEach(({ i, u, w }) => { const p = at(atoms[i]), q = [p[0] + u * b * 0.62, p[1] + w * b * 0.62]; q.end = true; bond(p, q, cls(u, w) === dbl); });
-    atoms.forEach((p) => { const [x, y] = at(p); text(ctx, 'C', x, y, PAL.ink, { size: 22, align: 'center' }); hits.push({ x, y, r: 12, name: 'a carbon atom, with one double bond in this resonance form' }); });
-  }
-  still(d, () => {
-    const { ctx } = begin(d.c); hits.length = 0;
-    const P = (p) => view.P(p);
-    ring.forEach((p) => { const base = P(p), top = P([p[0], -LOBE, p[2]]); lobe(ctx, base, top, 30, F.cat(1)); hits.push({ x: (base[0] + top[0]) / 2, y: (base[1] + top[1]) / 2, r: 20, name: 'an unhybridized p orbital, the lobe of one phase below the plane' }); });
-    rBonds.forEach(([i, j]) => { const a = P(ring[i]), c = P(ring[j]); line(ctx, a[0], a[1], c[0], c[1], PAL.ink, 3); });
-    ring.forEach((p) => { const q = P(p); F.dot(ctx, q[0], q[1], PAL.ink, true, 5); hits.push({ x: q[0], y: q[1], r: 9, name: 'a carbon atom, sp² hybridized, bonded to its neighbors by σ bonds in the plane' }); });
-    order.forEach((i) => { const p = ring[i], base = P(p), top = P([p[0], LOBE, p[2]]); lobe(ctx, base, top, 30, F.cat(0)); hits.push({ x: (base[0] + top[0]) / 2, y: (base[1] + top[1]) / 2, r: 20, name: 'an unhybridized p orbital, the lobe of the other phase above the plane' }); });
-    form(ctx, 790, 214, 0);
-    form(ctx, 1236, 214, 1);
-    arrow(ctx, 980, 214, 1046, 214, PAL.ink, 3); arrow(ctx, 1046, 214, 980, 214, PAL.ink, 3);
-    text(ctx, '(a)', 300, 446, PAL.ink, { size: 20, align: 'center' });
-    text(ctx, '(b)', 1013, 446, PAL.ink, { size: 20, align: 'center' });
-  });
-})();
-
-/* =====================================================================
    FIGURE 18.24: white phosphorus as P4 molecules and red phosphorus as
    P4 tetrahedra joined by P–P single bonds. Four molecules: in the red
    form each opens the bond between its two front base atoms, and those
@@ -252,7 +185,7 @@ const VIEW3 = { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3 };
 ===================================================================== */
 (function () {
   const d = sim('sim-phosphorus');
-  const v = F.view3d(d.stage, { ...VIEW3, h: 420, dist: 7.2, views: [{ label: 'front', yaw: 0, pitch: 0.15 }, { label: 'above', yaw: 0, pitch: 1.2 }] });
+  const v = F.view3d(d.stage, { ...VIEW3, h: 420, dist: 4.9 });
   const grp = v.part(0);
   const E = 0.6, H = E * Math.sqrt(2 / 3), OPEN = 1.35, SP = OPEN * E + E, N = 4;
   /* a tetrahedron, base in the xz plane, a and b at the front, apex d up; s spreads a and b to OPEN × E */
@@ -296,8 +229,8 @@ const VIEW3 = { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3 };
     v.headline(FORM.value === 'white' ? 'White phosphorus exists as P₄ molecules, four atoms at the corners of a regular tetrahedron.' : 'Heated to 270–300 °C without air, the P₄ tetrahedra join through P–P single bonds into red phosphorus.');
     v.invalidate();
     readout(d.readout, FORM.value === 'white'
-      ? `\\text{P}_{4}\\text{ molecules, each P bonded to 3 P} \\;\\to\\; \\text{melts at }${degC('44.2')}\\text{, very reactive, very toxic}`
-      : `\\text{P}_{4}\\text{ tetrahedra joined by P–P bonds, each P bonded to 3 P} \\;\\to\\; \\text{melts at }{\\sim}${degC(600)}\\text{, much less reactive, essentially nontoxic}`);
+      ? `\\text{separate P}_{4}\\text{ molecules, each P bonded to 3 P; melts at }${degC('44.2')}`
+      : `\\text{P}_{4}\\text{ tetrahedra joined in a chain, each P still bonded to 3 P; melts at }{\\sim}${degC(600)}`);
   }
   still(d, draw);
 })();
@@ -316,7 +249,7 @@ const VIEW3 = { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3 };
 ===================================================================== */
 (function () {
   const d = sim('sim-sulfur');
-  const v = F.view3d(d.stage, { ...VIEW3, h: 420, dist: 6.2, views: [{ label: 'front', yaw: 0, pitch: 0.1 }, { label: 'above', yaw: 0, pitch: 1.2 }] });
+  const v = F.view3d(d.stage, { ...VIEW3, h: 440, dist: 4.9 });
   const grp = v.part(0), c2 = F.makeCanvas(d.stage, 210); if (grp) grp.position.y = -0.2;
   const Tsl = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 113, max: 260, step: 1, value: 113, unit: '°C', dec: 0, aria: 'temperature of the liquid sulfur in degrees Celsius', specials: [{ at: 230, label: 'does not pour' }] });
   const BD = 0.42, NA = 32;

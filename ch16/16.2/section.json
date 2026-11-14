@@ -59,6 +59,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "fixed: boxes and particles at full size, caption cut"
     }
    ]
   },
@@ -78,21 +82,26 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "fixed: larger boxes, letters and asterisks, caption cut"
     }
    ]
   },
   {
    "id": "fig-ex-matter",
    "kind": "figure",
-   "originals": [
-    "/media/ch16/CNX_Chem_16_03_Matter_img.jpg"
-   ],
    "draws": [],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "reverted to the book's image"
     }
    ]
   },
@@ -111,8 +120,7 @@
    "draws": [
     "temperature",
     "entropy",
-    "energy",
-    "velocity"
+    "energy"
    ],
    "conventions": [
     "O",
@@ -123,6 +131,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt flat: moving molecules, S–T and energy spread beside"
     }
    ]
   }

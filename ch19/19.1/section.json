@@ -39,6 +39,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "re-examined: headline and readout split, caption cut"
     }
    ]
   },
@@ -69,6 +73,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "re-examined: atom and ion rows, one-equation readout"
     }
    ]
   },
@@ -112,6 +120,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "re-examined: book reaction list beside shaft, key row, readout"
     }
    ]
   },
@@ -170,6 +182,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "re-examined: one-line readout, coolant headline, caption cut"
     }
    ]
   },

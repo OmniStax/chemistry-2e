@@ -56,7 +56,8 @@ function sci(x) {
       ],
       y: [[0, 0.004, 4, (v) => fmt(v, 3)], [-8, -5, 3, (v) => minus(fmt(v, 0))], [0, 1600, 4, (v) => fmt(v, 0)]],
       head: 'On tungsten [NH_{3}] falls in a straight line, zero order; on quartz ln[NH_{3}] does, first order.',
-      ro: `\\kk = -\\text{slope} = -\\frac{${hue('concentration', '0.0015\\ \\text{mol L}^{-1}')} - ${hue('concentration', '0.0028\\ \\text{mol L}^{-1}')}}{${hue('time', '1000\\ \\text{s}')} - ${hue('time', '0\\ \\text{s}')}} = ${hue('rate-constant', '1.3 \\times 10^{-6}\\ \\text{mol L}^{-1}\\,\\text{s}^{-1}')}`,
+      /* the book's Example 12.10 for tungsten; quartz by the same two-point reading of its ln plot (2.80e-3 M to 7.02e-4 M) */
+      ro: `\\kk_{\\text{W}} = -\\text{slope} = -\\frac{${hue('concentration', '0.0015\\ \\text{mol L}^{-1}')} - ${hue('concentration', '0.0028\\ \\text{mol L}^{-1}')}}{${hue('time', '1000\\ \\text{s}')} - ${hue('time', '0\\ \\text{s}')}} = ${hue('rate-constant', '1.3 \\times 10^{-6}\\ \\text{mol L}^{-1}\\,\\text{s}^{-1}')} \\\\ \\kk_{\\text{SiO}_{2}} = -\\text{slope} = -\\frac{-7.262 - (-5.878)}{${hue('time', '1000\\ \\text{s}')} - ${hue('time', '0\\ \\text{s}')}} = ${hue('rate-constant', '1.38 \\times 10^{-3}\\ \\text{s}^{-1}')}`,
     },
   };
   const pick = F.choice(d.controls, { label: '\\text{reaction}', options: [{ value: 'h2o2', label: 'H₂O₂' }, { value: 'c4h6', label: 'C₄H₆' }, { value: 'nh3', label: 'NH₃' }], value: 'h2o2', aria: 'the reaction whose concentration data are plotted' });
@@ -140,24 +141,29 @@ function sci(x) {
   function beaker(ctx, cx, c) {
     const w = 150, h = 150, top = 96, l = cx - w / 2, r = cx + w / 2, bot = top + h, rad = 16, lt = top + h * 0.38;
     ctx.save();
+    if (c !== null) {
     ctx.beginPath(); ctx.moveTo(l, lt); ctx.lineTo(l, bot - rad); ctx.quadraticCurveTo(l, bot, l + rad, bot); ctx.lineTo(r - rad, bot); ctx.quadraticCurveTo(r, bot, r, bot - rad); ctx.lineTo(r, lt); ctx.closePath();
     ctx.fillStyle = alpha(C('concentration'), 0.06 + 0.74 * c); ctx.fill();
     ctx.strokeStyle = alpha(C('concentration'), 0.25 + 0.6 * c); ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(l, lt); ctx.lineTo(r, lt); ctx.stroke();
+    }
     ctx.strokeStyle = alpha(PAL.ink, 0.6); ctx.lineWidth = 3; ctx.lineJoin = 'round';
     ctx.beginPath(); ctx.moveTo(l - 12, top - 6); ctx.quadraticCurveTo(l, top - 6, l, top + 10); ctx.lineTo(l, bot - rad); ctx.quadraticCurveTo(l, bot, l + rad, bot); ctx.lineTo(r - rad, bot); ctx.quadraticCurveTo(r, bot, r, bot - rad); ctx.lineTo(r, top); ctx.stroke();
     ctx.restore();
-    return { top, bot, w, h };
+    return (beaker.last = { top, bot, w, h });
   }
   function draw() {
     const { ctx } = begin(d.c), O = ORD[order.value], now = cy.now(), ct = C('concentration'), tc = C('time');
     hits = [];
     topline(ctx, O.head);
+    /* a beaker fills in when the clock reaches its time; until then it stands empty and faint, its time already written */
     TIMES.forEach((ti, i) => {
-      const c = O.c(Math.min(now, ti)), g = beaker(ctx, XS[i], c), y = g.bot + 28;
-      text(ctx, conc(c) + ' M', XS[i], y, ct, { size: 21, weight: 600, align: 'center' });
+      const reached = now >= ti - 1e-9, c = O.c(ti);
+      if (reached) beaker(ctx, XS[i], c); else F.faded(ctx, 0.35, [0, 0], () => beaker(ctx, XS[i], null));
+      const g = beaker.last, y = g.bot + 28;
+      if (reached) text(ctx, conc(c) + ' M', XS[i], y, ct, { size: 21, weight: 600, align: 'center' });
       text(ctx, ti === 0 ? '0 s' : `$${sci(ti * 3600)}$ s`, XS[i], y + 28, tc, { size: 19, align: 'center', tex: true });
       text(ctx, `(${ti} h)`, XS[i], y + 54, tc, { size: 19, align: 'center' });
-      hits.push({ x: XS[i], y: (g.top + g.bot) / 2, r: 75, name: `the sample at ${ti} h: ${conc(c)} M` });
+      hits.push({ x: XS[i], y: (g.top + g.bot) / 2, r: 75, name: reached ? `the sample at ${ti} h: ${conc(c)} M` : `the sample at ${ti} h, not yet reached` });
     });
     const a = F.axes(ctx, B, [0, 24], [0, 1.2], { nx: 4, ny: 6, fx: (v) => fmt(v, 0), fy: (v) => fmt(v, 1), xl: 'time (h)', xc: tc, yl: '[H_{2}O_{2}] (M)', yc: ct });
     for (const ti of TIMES) if (ti > 0 && ti <= now) {
@@ -181,7 +187,7 @@ function sci(x) {
     let ro;
     if (order.value === 'first') ro = `\\kconcAt = \\kconcAz e^{-\\kk\\kt} = (${A0})\\,e^{-(${K(sci(O.k) + '\\ \\text{s}^{-1}')})(${T})} = ${hue('concentration', conc(cn) + '\\ M')}`;
     else if (order.value === 'second') ro = `\\frac{1}{\\kconcAt} = \\kk\\kt + \\frac{1}{\\kconcAz} = (${K(sci(O.k) + '\\ M^{-1}\\,\\text{s}^{-1}')})(${T}) + \\frac{1}{${A0}} = ${sci(1 / cn)}\\ M^{-1}`;
-    else ro = cn > 0 ? `\\kconcAt = -\\kk\\kt + \\kconcAz = -(${K(sci(O.k) + '\\ M\\,\\text{s}^{-1}')})(${T}) + ${A0} = ${hue('concentration', conc(cn) + '\\ M')}` : `\\kconcAt = ${hue('concentration', '0\\ M')}\\text{, all of A used up at } \\kt = ${hue('time', sci(2 * TS) + '\\ \\text{s}')}`;
+    else ro = cn > 0 ? `\\kconcAt = -\\kk\\kt + \\kconcAz = -(${K(sci(O.k) + '\\ M\\,\\text{s}^{-1}')})(${T}) + ${A0} = ${hue('concentration', conc(cn) + '\\ M')}` : `\\kconcAt = ${hue('concentration', '0\\ M')} \\text{ for } \\kt \\ge \\frac{\\kconcAz}{\\kk} = \\frac{${A0}}{${K(sci(O.k) + '\\ M\\,\\text{s}^{-1}')}} = ${hue('time', sci(2 * TS) + '\\ \\text{s}')}`;
     tex(d.readout, ro, false, { values: false });
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 4), draw });

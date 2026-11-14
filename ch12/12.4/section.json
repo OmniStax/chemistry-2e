@@ -24,6 +24,9 @@
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-opus-5-5"
       }
     ]
   },
@@ -55,6 +58,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "caption cut; quartz's k read off its ln plot in the readout"
         }
       ]
     },
@@ -76,6 +83,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "beakers fill at their own time, never mislabelled; caption cut"
         }
       ]
     }
@@ -787,7 +798,10 @@
             },
             {
               "tex": "\\frac{1}{\\mk{at}{\\frac{1}{2}\\kconcAz}} - \\mk{a0}{\\frac{1}{\\kconcAz}} = \\mk{k}{\\kk}\\mk{t}{\\kthalf}",
-              "uses": [0, 1]
+              "uses": [
+                0,
+                1
+              ]
             },
             {
               "tex": "\\mk{at}{\\frac{2}{\\kconcAz}} - \\mk{a0}{\\frac{1}{\\kconcAz}} = \\mk{k}{\\kk}\\mk{t}{\\kthalf}",
@@ -839,7 +853,10 @@
           "steps": [
             {
               "tex": "\\mk{a}{\\frac{\\kconcAz}{2}} = -\\mk{k}{\\kk}\\mk{t}{\\kthalf} + \\mk{a0}{\\kconcAz}",
-              "uses": [0, 1]
+              "uses": [
+                0,
+                1
+              ]
             },
             {
               "tex": "\\mk{k}{\\kk}\\mk{t}{\\kthalf} = \\mk{a0}{\\kconcAz} - \\mk{a}{\\frac{\\kconcAz}{2}}",

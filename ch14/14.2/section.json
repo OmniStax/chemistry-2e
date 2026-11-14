@@ -48,6 +48,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "row values fade clear of the marker; labels spread; caption cut"
     }
    ]
   },

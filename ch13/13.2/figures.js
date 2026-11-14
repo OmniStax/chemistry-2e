@@ -22,16 +22,17 @@ const conc = (s) => hue('concentration', s);
 /* =====================================================================
    FIGURE 13.5: 2SO2 + O2 ⇌ 2SO3 run from reactants only ([SO2]0 = 1.00 M,
    [O2]0 = 0.50 M) or from product only ([SO3]0 = 1.00 M), the same mixture
-   written two ways, so both runs end at [SO3] = 0.568 M, [SO2] = 0.432 M,
-   [O2] = 0.216 M. K_c = 8.0 is a model value (the book prints none); net
+   written two ways, so both runs end at [SO3] = 0.589 M, [SO2] = 0.411 M,
+   [O2] = 0.206 M, the heights the book's image draws. K_c = 10 is a model
+   value read from those heights (the book prints none); net
    rate k_f[SO2]²[O2] − k_r[SO3]², k_f = 1 and k_r = k_f/K_c in model time,
    integrated by RK4 at load. The time axis is unnumbered, as the book's.
-   Axes fixed: concentration 0 to 1.00 M, Q_c 0 to 14 (K_c = 8.0 with
+   Axes fixed: concentration 0 to 1.00 M, Q_c 0 to 16 (K_c = 10 with
    headroom; larger values leave through the top edge).
 ===================================================================== */
 (function () {
   const d = sim('sim-quotient', 760);
-  const K = 8, KR = 1 / K, N = 1400;
+  const K = 10, KR = 1 / K, N = 1400;
   const rhs = (c) => { const r = c[0] * c[0] * c[1] - KR * c[2] * c[2]; return [-2 * r, -r, 2 * r]; };
   const Qof = (c) => c[2] * c[2] / (c[0] * c[0] * c[1]);
   function integrate(s0, T) {
@@ -55,8 +56,8 @@ const conc = (s) => hue('concentration', s);
   const cy = cycle(() => 5, 1.2);
   const start = F.choice(d.controls, { label: '\\text{start}', aria: 'the starting mixture', value: 'r',
     options: [{ value: 'r', label: 'reactants only' }, { value: 'p', label: 'product only' }], onInput: () => cy.reset() });
-  const G1 = { l: 150, r: 1170, t: 120, b: 350 }, G2 = { l: 150, r: 1170, t: 450, b: 680 };
-  const QMAX = 14;
+  const G1 = { l: 150, r: 1300, t: 120, b: 350 }, G2 = { l: 150, r: 1300, t: 450, b: 680 };
+  const QMAX = 16;
   function draw() {
     const { ctx } = begin(d.c);
     const key = start.value, other = key === 'r' ? 'p' : 'r', run = RUNS[key];
@@ -64,19 +65,20 @@ const conc = (s) => hue('concentration', s);
     const cK = C('equilibrium-constant'), ct = C('time'), cc = C('concentration'), guide = alpha(PAL.ink, 0.4);
     const blank = () => '';
     const g1 = F.axes(ctx, G1, [0, TMAX], [0, 1], { nx: 4, ny: 4, fx: blank, fy: (v) => fmt(v, 2), yl: 'concentration (M)', yc: cc });
-    const g2 = F.axes(ctx, G2, [0, TMAX], [0, QMAX], { nx: 4, ny: 7, fx: blank, fy: (v) => fmt(v, 0), xl: 'time', xc: ct, yl: 'reaction quotient, Q_{c}', yc: cK });
+    const g2 = F.axes(ctx, G2, [0, TMAX], [0, QMAX], { nx: 4, ny: 4, fx: blank, fy: (v) => fmt(v, 0), xl: 'time', xc: ct, yl: 'reaction quotient, Q_{c}', yc: cK });
     const reached = t >= TEQ[key];
     if (reached) {
       const x = g1.X(TEQ[key]);
       line(ctx, x, G1.t, x, G1.b, guide, 2, [10, 10]); line(ctx, x, G2.t, x, G2.b, guide, 2, [10, 10]);
-      text(ctx, 'equilibrium is reached', x, G1.t - 22, PAL.ink, { size: 18, align: 'center', bg: PAL.panel });
+      const room = G1.r - x > 230;   /* the words beside the line, on whichever side has room */
+      text(ctx, 'equilibrium is reached', room ? x + 12 : x - 12, G1.t + 18, PAL.ink, { size: 18, align: room ? 'left' : 'right', bg: PAL.panel });
     }
     clipTo(ctx, G2, () => {
       line(ctx, G2.l, g2.Y(K), G2.r, g2.Y(K), cK, 3, [10, 10]);
       F.curve(ctx, (s) => Qof(at(RUNS[other], s)), 0.002, TMAX, g2.X, g2.Y, alpha(cK, 0.28), 3, 300);
       F.curve(ctx, (s) => Qof(at(run, s)), 0.002, t, g2.X, g2.Y, cK, 5, 300);
     });
-    text(ctx, 'K_{c} = 8.0', G2.r + 24, g2.Y(K), cK, { size: 20, weight: 600 });
+    text(ctx, '$\\kKc$ = 10', G2.l + 16, g2.Y(K) - 20, PAL.ink, { size: 20, bg: PAL.panel, tex: true });
     SP.forEach((s, j) => {
       const c = F.ref(s.id);
       F.curve(ctx, (x) => at(run, x)[j], 0, t, g1.X, g1.Y, c, 5, 300);
@@ -85,7 +87,7 @@ const conc = (s) => hue('concentration', s);
     SP.forEach((s, j) => dot(ctx, g1.X(t), g1.Y(now[j]), F.ref(s.id), true, 8));
     if (q <= QMAX) dot(ctx, g2.X(t), g2.Y(q), cK, false, 9);
     else F.pinned(ctx, G2, g2.X, g2.Y, t, q, cK);
-    SP.forEach((s, j) => { const y = G1.t + 24 + 34 * j; line(ctx, G1.r + 24, y, G1.r + 64, y, F.ref(s.id), 5); text(ctx, s.name, G1.r + 76, y, F.ref(s.id), { size: 20, weight: 600 }); });
+    F.legend(ctx, g1, SP.map((s) => ({ s: s.name, color: F.ref(s.id), w: 5 })), { corner: 'above' });
     topline(ctx, reached ? '$\\kQc$ has reached $\\kKc$, and the concentrations no longer change.'
       : key === 'r' ? 'Starting from reactants only, $\\kQc$ climbs from 0 toward $\\kKc$.'
       : 'Starting from product only, $\\kQc$ falls from an immeasurably large value toward $\\kKc$.');
@@ -109,7 +111,7 @@ const conc = (s) => hue('concentration', s);
    The Q scale is log10 Q from −3 to 3; 0 and ∞ are pinned at its ends.
 ===================================================================== */
 (function () {
-  const d = sim('sim-mixtures', 560);
+  const d = sim('sim-mixtures', 580);
   const KC = 0.640;
   const IDS = ['co', 'h2o', 'co2', 'h2'], NAMES = ['[CO]', '[H_{2}O]', '[CO_{2}]', '[H_{2}]'];
   const MIX = {
@@ -121,19 +123,28 @@ const conc = (s) => hue('concentration', s);
     options: [{ value: '1', label: 'Mixture 1' }, { value: '2', label: 'Mixture 2' }, { value: '3', label: 'Mixture 3' }] });
   const pr = ctl(d.controls, { label: '\\text{progress}', cls: '', key: 'progress', min: 0, max: 100, step: 1, value: 0, unit: '%', dec: 0,
     aria: 'how far the mixture has gone toward equilibrium, in percent', specials: [{ at: 100, label: 'equilibrium' }] });
-  const G = { l: 150, r: 600, t: 120, b: 470 };
-  const S = { l: 800, r: 1330, y: 300 }, LMIN = -3, LMAX = 3;
+  const G = { l: 150, r: 660, t: 120, b: 470 };
+  const S = { l: 820, r: 1330, y: 320 }, LMIN = -3, LMAX = 3;
   const SX = (lq) => S.l + (lq - LMIN) / (LMAX - LMIN) * (S.r - S.l);
   const Qof = (c) => c[0] * c[1] === 0 ? (c[2] * c[3] === 0 ? NaN : Infinity) : c[2] * c[3] / (c[0] * c[1]);
   const xOfQ = (q) => q === 0 ? S.l : q === Infinity ? S.r : SX(Math.min(LMAX, Math.max(LMIN, Math.log10(q))));
   const stateOf = (m, p) => MIX[m].a.map((v, j) => v + p * (MIX[m].b[j] - v));
   const SUP = { '-3': '10⁻³', '-2': '10⁻²', '-1': '10⁻¹', '0': '1', '1': '10', '2': '10²', '3': '10³' };
+  /* one stacked bar; each value inside its segment where the segment holds it, else beside the bar on a leader, stacked upward */
   function stack(ctx, Y, x, w, c, ghost) {
-    let y0 = 0;
+    let y0 = 0, last = Infinity;
+    const out = [];
     c.forEach((v, j) => {
       const col = F.ref(IDS[j]);
-      if (v > 0) rect(ctx, x - w / 2, Y(y0 + v), x + w / 2, Y(y0), ghost ? alpha(col, 0.18) : col, ghost ? col : null, ghost ? [6, 5] : null);
-      y0 += v;
+      if (v > 0) rect(ctx, x - w / 2, Y(y0 + v), x + w / 2, Y(y0), ghost ? alpha(col, 0.22) : col, ghost ? col : null, ghost ? [6, 5] : null);
+      out.push([v, Y(y0 + v / 2), Y(y0) - Y(y0 + v)]); y0 += v;
+    });
+    out.forEach(([v, ym, hgt]) => {
+      if (!(v > 0)) return;
+      if (hgt >= 26) { text(ctx, sig(v), x, ym, PAL.ink, { size: 17, weight: 600, align: 'center', bg: PAL.panel }); return; }
+      const y = Math.min(ym, last - 24); last = y;
+      line(ctx, x + w / 2 + 2, ym, x + w / 2 + 16, y, alpha(PAL.ink, 0.6), 1.5);
+      text(ctx, sig(v), x + w / 2 + 20, y, PAL.ink, { size: 17, weight: 600, bg: PAL.panel });
     });
     return y0;
   }
@@ -142,35 +153,27 @@ const conc = (s) => hue('concentration', s);
     const p = pr.v / 100, m = pick.value, cK = C('equilibrium-constant'), cc = C('concentration');
     const g = F.axes(ctx, G, [0, 1], [0, 0.10], { nx: 1, ny: 5, fx: () => '', fy: (v) => fmt(v, 2), yl: 'concentration (M)', yc: cc });
     const [a, now] = pick.mix((v) => [...MIX[v].a, ...stateOf(v, p)]).reduce((acc, v, i) => { acc[i < 4 ? 0 : 1].push(v); return acc; }, [[], []]);
-    const XA = 260, XB = 470, W = 130;
+    const XA = 285, XB = 520, W = 120;
+    F.legend(ctx, { l: G.l, r: G.r, t: G.b + 50, b: G.b + 84 }, IDS.map((id, j) => ({ s: NAMES[j], color: F.ref(id), kind: 'swatch' })), { corner: 'top', row: true, panel: false });
     stack(ctx, g.Y, XA, W, a, true);
     stack(ctx, g.Y, XB, W, now, false);
     text(ctx, 'before reaction', XA, G.b + 28, PAL.ink, { size: 18, align: 'center' });
     text(ctx, p >= 1 ? 'at equilibrium' : `${fmt(pr.v, 0)}% of the way`, XB, G.b + 28, PAL.ink, { size: 18, align: 'center' });
-    let y0 = 0, last = Infinity;
-    const want = now.map((v) => { const m = g.Y(y0 + v / 2); y0 += v; return m; });
-    now.forEach((v, j) => {
-      if (!(v > 0)) return;
-      const y = Math.min(want[j], last - 28); last = y;
-      const col = F.ref(IDS[j]), x0 = XB + W / 2;
-      if (Math.abs(y - want[j]) > 2) line(ctx, x0 + 2, want[j], x0 + 22, y, alpha(col, 0.6), 1.5, [5, 6]);
-      text(ctx, `${NAMES[j]} ${sig(v)}`, x0 + 28, y, col, { size: 18, weight: 600, bg: PAL.panel });
-    });
     /* the Q scale */
     line(ctx, S.l, S.y, S.r, S.y, PAL.muted, 2);
     for (let e = LMIN; e <= LMAX; e++) { line(ctx, SX(e), S.y - 8, SX(e), S.y + 8, PAL.muted, 2); text(ctx, SUP[e], SX(e), S.y + 30, PAL.muted, { size: 17, align: 'center' }); }
-    text(ctx, 'reaction quotient, Q_{c} (log scale)', (S.l + S.r) / 2, S.y - 150, cK, { size: 20, weight: 600, align: 'center' });
+    text(ctx, 'reaction quotient $\\kQc$ (log scale)', (S.l + S.r) / 2, S.y - 170, PAL.ink, { size: 20, align: 'center', tex: true });
     const xk = SX(Math.log10(KC));
     line(ctx, xk, S.y - 70, xk, S.y + 50, cK, 3, [10, 10]);
-    text(ctx, 'K_{c} = 0.640', xk, S.y - 88, cK, { size: 20, weight: 600, align: 'center', bg: PAL.panel });
-    text(ctx, 'Q_{c} < K_{c}: forward', (S.l + xk) / 2, S.y + 74, PAL.ink, { size: 18, align: 'center' });
-    text(ctx, 'Q_{c} > K_{c}: reverse', (xk + S.r) / 2, S.y + 74, PAL.ink, { size: 18, align: 'center' });
+    text(ctx, '$\\kKc$ = 0.640', xk, S.y - 88, PAL.ink, { size: 20, align: 'center', bg: PAL.panel, tex: true });
+    text(ctx, '$\\kQc < \\kKc$: forward', (S.l + xk) / 2, S.y + 74, PAL.ink, { size: 18, align: 'center', tex: true });
+    text(ctx, '$\\kQc > \\kKc$: reverse', (xk + S.r) / 2, S.y + 74, PAL.ink, { size: 18, align: 'center', tex: true });
     const qa = Qof(MIX[m].a);
     const xa = pick.mix((v) => xOfQ(Qof(MIX[v].a))), xn = pick.mix((v) => xOfQ(Qof(stateOf(v, p))));
     dot(ctx, xa, S.y, cK, false, 10);
     dot(ctx, xn, S.y, cK, true, 9);
-    const end = (x) => x <= S.l + 1 ? '0' : x >= S.r - 1 ? '∞' : null;
-    if (end(xa)) text(ctx, `Q_{c} = ${end(xa)}`, xa, S.y - 34, cK, { size: 17, weight: 600, align: 'center', bg: PAL.panel });
+    const qs0 = qa === 0 ? '0' : qa === Infinity ? '∞' : sig(qa);
+    if (Math.abs(xn - xa) > 4 || p === 0) text(ctx, `start ${qs0}`, xa, S.y - 34, PAL.ink, { size: 17, align: 'center', bg: PAL.panel });
     const dir = qa < KC ? 'below' : 'above', way = qa < KC ? 'forward' : 'reverse';
     topline(ctx, p >= 1 ? `Mixture ${m} has reached equilibrium, where $\\kQc$ equals $\\kKc$.` : `Mixture ${m} starts with $\\kQc$ ${dir} $\\kKc$, so it reacts in the ${way} direction.`);
     const r = stateOf(m, p).map((v) => +sig(v)), sh = r.map((v) => conc(sig(v)));
@@ -192,15 +195,16 @@ const conc = (s) => hue('concentration', s);
    SIM: the magnitude of K. Example 13.2's flask, 0.10 M NO2 at the start,
    2NO2 ⇌ N2O4 at equilibrium for K_c = 10^s, s from −2 to 4. With
    [NO2] = c, [N2O4] = (0.10 − c)/2 and K_c = [N2O4]/c², so
-   2K_c c² + c − 0.10 = 0. s = 2.21 gives K_c = 1.6 × 10², [NO2] = 0.0161 M,
+   2K_c c² + c − 0.10 = 0. s = log 160 gives K_c = 1.6 × 10², [NO2] = 0.0161 M,
    [N2O4] = 0.0420 M, Example 13.2's 0.016 M and 0.042 M. Bar axis 0 to
    0.12 M, headroom over the starting 0.10 M of NO2.
 ===================================================================== */
 (function () {
   const d = sim('sim-magnitude-k', 500);
   const C0 = 0.10;
-  const s = ctl(d.controls, { label: '\\log \\kKc', cls: 'equilibrium-constant', key: 'logK', min: -2, max: 4, step: 0.01, value: 2.21, unit: '', dec: 2,
-    detents: [-2, -1, 0, 1, 2, 3, 4], aria: 'the base-ten logarithm of the equilibrium constant' });
+  const s = ctl(d.controls, { label: '\\kKc', cls: 'equilibrium-constant', key: 'logK', min: -2, max: 4, step: 0.001, value: Math.log10(160),
+    fmt: (lg) => { const [m, e] = sciParts(10 ** lg); return e === 0 ? m : `${m} × 10${String(e).split('').map((ch) => SUPD[ch]).join('')}`; },
+    detents: [-2, -1, 0, 1, 2, 3, 4], specials: [{ at: Math.log10(160), label: 'Example 13.2' }], aria: 'the equilibrium constant, on a logarithmic scale' });
   const G = { l: 420, r: 980, t: 120, b: 410 };
   const eq = (K) => { const c = (-1 + Math.sqrt(1 + 8 * K * C0)) / (4 * K); return [c, (C0 - c) / 2]; };
   function draw() {
@@ -216,7 +220,7 @@ const conc = (s) => hue('concentration', s);
     text(ctx, `${concTxt(n)} M`, X2, g.Y(n) - 20, cD, { size: 20, weight: 600, align: 'center', bg: PAL.panel });
     text(ctx, '[NO_{2}]', X1, G.b + 30, cN, { size: 22, weight: 600, align: 'center' });
     text(ctx, '[N_{2}O_{4}]', X2, G.b + 30, cD, { size: 22, weight: 600, align: 'center' });
-    text(ctx, 'starting [NO_{2}]', X1 + W / 2 + 12, g.Y(C0), PAL.muted, { size: 17 });
+    text(ctx, 'starting [NO_{2}]', X1 + W / 2 + 22, g.Y(C0), PAL.muted, { size: 17, bg: PAL.panel });
     const f = (C0 - c) / C0 * 100, pct = f < 9.95 ? fmt(f, 1) : fmt(f, 0);
     topline(ctx, `At $\\kKc = ${sciTex(K)}$, ${pct}% of the NO_{2} has become N_{2}O_{4}.`);
     const nc = +concTex(c).replace(' \\times 10^{', 'e').replace('}', ''), nn = +concTex(n).replace(' \\times 10^{', 'e').replace('}', '');

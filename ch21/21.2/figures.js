@@ -17,64 +17,6 @@ function disc(ctx, x, y, r, fill, s) {
 }
 
 /* =====================================================================
-   FIGURE 21.4: the six particles of nuclear reactions as the book
-   tabulates them, name, symbols, representation and description, each
-   particle drawn in the element palette (proton p+, neutron n0, electron
-   e-, positron e+, photon gamma). A faithful copy: nothing varies.
-===================================================================== */
-(function () {
-  const H = 680, d = sim('sim-particles', H);
-  const COLS = [20, 230, 480, 680, 1380], HEAD = 70, ROW = 96, TOP = 20;
-  const ROWS = [
-    { name: 'Alpha particle', sym: '${}^{4}_{2}\\text{He}$  or  ${}^{4}_{2}\\alpha$', desc: ['(High-energy) helium nuclei consisting of two', 'protons and two neutrons'], rep: 'alpha' },
-    { name: 'Beta particle', sym: '${}^{\\;0}_{-1}\\text{e}$  or  ${}^{\\;0}_{-1}\\beta$', desc: ['(High-energy) electrons'], rep: 'beta' },
-    { name: 'Positron', sym: '${}^{\\;0}_{+1}\\text{e}$  or  ${}^{\\;0}_{+1}\\beta$', desc: ['Particles with the same mass as an electron', 'but with 1 unit of positive charge'], rep: 'positron' },
-    { name: 'Proton', sym: '${}^{1}_{1}\\text{H}$  or  ${}^{1}_{1}\\text{p}$', desc: ['Nuclei of hydrogen atoms'], rep: 'proton' },
-    { name: 'Neutron', sym: '${}^{1}_{0}\\text{n}$', desc: ['Particles with a mass approximately equal to', 'that of a proton but with no charge'], rep: 'neutron' },
-    { name: 'Gamma ray', sym: '$\\gamma$', desc: ['Very high-energy electromagnetic radiation'], rep: 'gamma' },
-  ];
-  const rowY = (i) => TOP + HEAD + ROW * i + ROW / 2;
-  function rep(ctx, kind, x, y) {
-    const P = F.el('p+'), N = F.el('n0');
-    if (kind === 'alpha') {
-      const r = 15, o = 11;
-      disc(ctx, x - o, y - o, r, N); disc(ctx, x + o, y - o, r, P, 1);
-      disc(ctx, x - o, y + o, r, P, 1); disc(ctx, x + o, y + o, r, N);
-    } else if (kind === 'beta') disc(ctx, x, y, 11, F.el('e-'), -1);
-    else if (kind === 'positron') disc(ctx, x, y, 11, F.el('e+'), 1);
-    else if (kind === 'proton') disc(ctx, x, y, 15, P, 1);
-    else if (kind === 'neutron') disc(ctx, x, y, 15, N);
-    else {
-      const G = F.el('gamma'), x0 = x - 72, x1 = x + 30;
-      ctx.save(); ctx.strokeStyle = G; ctx.lineWidth = 3; ctx.beginPath();
-      for (let u = x0; u <= x1; u += 2) { const yy = y + 7 * Math.sin(((u - x0) / 11) * Math.PI); u === x0 ? ctx.moveTo(u, yy) : ctx.lineTo(u, yy); }
-      ctx.stroke(); ctx.restore();
-      F.arrow(ctx, x1 - 2, y, x1 + 22, y, G, 3);
-      text(ctx, '$\\gamma$', x + 66, y, PAL.ink, { size: 26, align: 'center', tex: true });
-    }
-  }
-  function draw() {
-    const { ctx } = begin(d.c);
-    ctx.save(); ctx.fillStyle = PAL.soft; ctx.fillRect(COLS[0], TOP, COLS[4] - COLS[0], HEAD); ctx.restore();
-    const bottom = TOP + HEAD + ROW * ROWS.length;
-    for (let i = 0; i <= ROWS.length; i++) line(ctx, COLS[0], TOP + HEAD + ROW * i, COLS[4], TOP + HEAD + ROW * i, PAL.rule, 2);
-    line(ctx, COLS[0], TOP, COLS[4], TOP, PAL.rule, 2);
-    COLS.forEach((x) => line(ctx, x, TOP, x, bottom, PAL.rule, 2));
-    ['Name', 'Symbol(s)', 'Representation', 'Description'].forEach((h, j) =>
-      text(ctx, h, (COLS[j] + COLS[j + 1]) / 2, TOP + HEAD / 2, PAL.ink, { size: 26, weight: 600, align: 'center' }));
-    ROWS.forEach((r, i) => {
-      const y = rowY(i);
-      text(ctx, r.name, COLS[0] + 20, y, PAL.ink, { size: 26 });
-      text(ctx, r.sym, COLS[1] + 20, y, PAL.ink, { size: 28, tex: true });
-      rep(ctx, r.rep, (COLS[2] + COLS[3]) / 2, y);
-      const n = r.desc.length;
-      r.desc.forEach((s, k) => text(ctx, s, COLS[3] + 20, y + (k - (n - 1) / 2) * 32, PAL.ink, { size: 25 }));
-    });
-  }
-  register(d.fig, { update: () => {}, draw });
-})();
-
-/* =====================================================================
    SIM: balancing a nuclear equation. One of the section's six reactions
    (Example 21.4 and the five of the history list), every nuclide drawn
    as a packing of its A nucleons, Z of them protons. The reader sets A
@@ -86,7 +28,7 @@ function disc(ctx, x, y, r, fill, s) {
    crossfades the scene, and landing on both circles morphs the arrow.
 ===================================================================== */
 (function () {
-  const H = 620, d = sim('sim-nuclear-balance', H);
+  const H = 600, d = sim('sim-nuclear-balance', H);
   const SYM = ' H He Li Be B C N O F Ne Na Mg Al Si P S Cl Ar K Ca Sc Ti V Cr Mn Fe Co Ni Cu Zn Ga Ge As Se Br Kr Rb Sr Y Zr Nb Mo Tc Ru Rh Pd Ag Cd In Sn Sb Te I Xe Cs Ba La Ce Pr Nd Pm Sm Eu Gd Tb Dy Ho Er Tm Yb Lu Hf Ta W Re Os Ir Pt Au Hg Tl Pb Bi Po At Rn Fr Ra Ac Th Pa U Np Pu Am Cm Bk Cf Es Fm'.split(' ');
   const NAME = ' hydrogen helium lithium beryllium boron carbon nitrogen oxygen fluorine neon sodium magnesium aluminum silicon phosphorus sulfur chlorine argon potassium calcium scandium titanium vanadium chromium manganese iron cobalt nickel copper zinc gallium germanium arsenic selenium bromine krypton rubidium strontium yttrium zirconium niobium molybdenum technetium ruthenium rhodium palladium silver cadmium indium tin antimony tellurium iodine xenon cesium barium lanthanum cerium praseodymium neodymium promethium samarium europium gadolinium terbium dysprosium holmium erbium thulium ytterbium lutetium hafnium tantalum tungsten rhenium osmium iridium platinum gold mercury thallium lead bismuth polonium astatine radon francium radium actinium thorium protactinium uranium neptunium plutonium americium curium berkelium californium einsteinium fermium'.split(' ');
   /* a species is [symbol, A, Z, coefficient]; 'X' is the product the reader sets */
@@ -112,7 +54,7 @@ function disc(ctx, x, y, r, fill, s) {
   const term = (s) => (s[3] > 1 ? s[3] : '') + nuc(s);
 
   /* the nucleons of a nucleus on a sunflower spiral: radius of the disc RN, spacing C */
-  const RN = 8, C = 8.6, GOLD = Math.PI * (3 - Math.sqrt(5));
+  const RN = 7.5, C = 7.9, GOLD = Math.PI * (3 - Math.sqrt(5));
   const radius = (a) => (a <= 1 ? RN : C * Math.sqrt(a - 0.5) + RN);
   function nucleus(ctx, x, y, a, z) {
     const P = F.el('p+'), N = F.el('n0'), zz = Math.min(z, a), order = shuffled(a, a * 131 + zz);
@@ -130,7 +72,6 @@ function disc(ctx, x, y, r, fill, s) {
     for (let i = a - 1; i > 0; i--) { s = (s * 48271) % 2147483647; const j = s % (i + 1); [o[i], o[j]] = [o[j], o[i]]; }
     shuffles.set(seed, o); return o;
   }
-  const YC = 250;
   /* positions of every species of one reaction, centred on the canvas */
   function layout(key) {
     const r = RX[key], GAP = 34, PLUS = 26, ARR = 130;
@@ -151,8 +92,9 @@ function disc(ctx, x, y, r, fill, s) {
   const sumTex = (t) => t.map((q) => (q.c > 1 ? `${q.c} \\times ${q.v}` : `${q.v}`)).join(' + ') + (t.length > 1 || t[0].c > 1 ? ` = ${sumOf(t)}` : '');
 
   function scene(ctx, key) {
-    const items = layout(key), r = RX[key], hits = [];
-    const YL = YC + Math.max(...items.map((it) => it.R ?? 0)) + 44;
+    const items = layout(key), r = RX[key], hits = [], maxR = Math.max(...items.map((it) => it.R ?? 0));
+    /* the nuclei, their symbols, the two sums and the key stand as one block, centred under the headline */
+    const YC = 80 + (H - 80 - (2 * maxR + 44 + 112 + 36)) / 2 + maxR, YL = YC + maxR + 44;
     items.forEach((it) => {
       if (it.plus) { text(ctx, '+', it.x, YC, PAL.ink, { size: 38, align: 'center' }); return; }
       if (it.arrow) { F.arrow(ctx, it.x - it.w / 2, YC, it.x + it.w / 2, YC, PAL.ink, 4); return; }
@@ -173,13 +115,17 @@ function disc(ctx, x, y, r, fill, s) {
     const arrow = items.find((it) => it.arrow), left = items.filter((it) => it.side === 'L'), right = items.filter((it) => it.side === 'R');
     const mid = (list) => (Math.min(...list.map((it) => it.x - it.w / 2)) + Math.max(...list.map((it) => it.x + it.w / 2))) / 2;
     const lx = Math.min(mid(left), arrow.x - 150), rx = Math.max(mid(right), arrow.x + 150);
-    [['mass numbers', 1, H - 132], ['charges', 2, H - 86]].forEach(([what, j, y]) => {
+    [['mass numbers', 1, YL + 66], ['charges', 2, YL + 108]].forEach(([what, j, y]) => {
       const a = sums(r.L, key, j), b = sums(r.R, key, j), ok = sumOf(a) === sumOf(b);
       text(ctx, `$${sumTex(a)}$`, lx, y, PAL.ink, { size: 26, align: 'center', tex: true });
       text(ctx, `$${sumTex(b)}$`, rx, y, PAL.ink, { size: 26, align: 'center', tex: true });
       text(ctx, ok ? '=' : '≠', arrow.x, y, ok ? PAL.ink : PAL.muted, { size: 32, align: 'center', weight: 600 });
       text(ctx, what, 24, y, PAL.muted, { size: 21 });
     });
+    const P = F.el('p+'), N = F.el('n0'), ly = YL + 150;
+    disc(ctx, 36, ly, RN + 2, P); text(ctx, 'proton', 56, ly, PAL.ink, { size: 21 });
+    const nx = 56 + measure(ctx, 'proton', { size: 21 }) + 36;
+    disc(ctx, nx, ly, RN + 2, N); text(ctx, 'neutron', nx + 20, ly, PAL.ink, { size: 21 });
     return hits;
   }
   const balanced = (key) => {
@@ -203,10 +149,6 @@ function disc(ctx, x, y, r, fill, s) {
     topline(ctx, headlineOf());
     if (pick.k < 1 && pick.from !== key) pick.only(ctx, pick.from, () => scene(ctx, pick.from));
     pick.only(ctx, key, () => { hits = scene(ctx, key); });
-    const P = F.el('p+'), N = F.el('n0'), ly = H - 32;
-    disc(ctx, 36, ly, RN + 2, P); text(ctx, 'proton', 56, ly, PAL.ink, { size: 21 });
-    const nx = 56 + measure(ctx, 'proton', { size: 21 }) + 36;
-    disc(ctx, nx, ly, RN + 2, N); text(ctx, 'neutron', nx + 20, ly, PAL.ink, { size: 21 });
     const ok = balanced(key);
     const side = (list, p) => list.map((s, i) => `\\mk{${key}${p}${i}}{${term(sp(s, key))}}`).join(' + ');
     ro.set(`${side(r.L, 'l')} \\;\\mk{arr}{${ok ? '\\longrightarrow' : '\\not\\longrightarrow'}}\\; ${side(r.R, 'r')}`, undefined, { form: `${key}${ok}` });

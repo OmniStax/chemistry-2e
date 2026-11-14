@@ -18,7 +18,7 @@ const minus = (s) => String(s).replace('-', '−');
 ===================================================================== */
 (function () {
   const H = 640, d = sim('sim-temp-spont', H);
-  const G = { l: 130, r: 830, t: 130, b: 560 };
+  const G = { l: 130, r: 800, t: 130, b: 560 };
   const YR = [-150, 150];
   let dH = null, dS = null, T = null;
   const ready = () => dH && dS && T;
@@ -46,16 +46,16 @@ const minus = (s) => String(s).replace('-', '−');
     { h: 1, s: -1, a: 0.5, b: 0.95, words: ['nonspontaneous at', 'any temperature'], name: 'ΔH > 0 and ΔS < 0: nonspontaneous at any temperature' },
     { h: -1, s: -1, a: -0.5, b: 0.35, words: ['spontaneous at', 'low temperature'], name: 'ΔH < 0 and ΔS < 0: spontaneous at low temperature' },
   ];
-  const TB = { l: 990, w: 185, gap: 8, t: 196, h: 176 };
+  const TB = { l: 960, w: 192, gap: 8, t: 186, h: 196 };
 
   function table(ctx, sh, ss) {
     const cE = C('energy'), cS = C('entropy');
-    text(ctx, 'ΔH > 0', TB.l + TB.w / 2, 146, cE, { size: 22, weight: 600, align: 'center' });
-    text(ctx, 'ΔH < 0', TB.l + TB.w * 1.5 + TB.gap, 146, cE, { size: 22, weight: 600, align: 'center' });
-    text(ctx, 'endothermic', TB.l + TB.w / 2, 174, PAL.muted, { size: 17, align: 'center' });
-    text(ctx, 'exothermic', TB.l + TB.w * 1.5 + TB.gap, 174, PAL.muted, { size: 17, align: 'center' });
-    text(ctx, 'ΔS > 0', TB.l - 12, TB.t + TB.h / 2, cS, { size: 22, weight: 600, align: 'right' });
-    text(ctx, 'ΔS < 0', TB.l - 12, TB.t + TB.h * 1.5 + TB.gap, cS, { size: 22, weight: 600, align: 'right' });
+    text(ctx, 'ΔH > 0', TB.l + TB.w / 2, 128, cE, { size: 24, weight: 600, align: 'center' });
+    text(ctx, 'ΔH < 0', TB.l + TB.w * 1.5 + TB.gap, 128, cE, { size: 24, weight: 600, align: 'center' });
+    text(ctx, 'endothermic', TB.l + TB.w / 2, 160, PAL.muted, { size: 19, align: 'center' });
+    text(ctx, 'exothermic', TB.l + TB.w * 1.5 + TB.gap, 160, PAL.muted, { size: 19, align: 'center' });
+    text(ctx, 'ΔS > 0', TB.l - 12, TB.t + TB.h / 2, cS, { size: 24, weight: 600, align: 'right' });
+    text(ctx, 'ΔS < 0', TB.l - 12, TB.t + TB.h * 1.5 + TB.gap, cS, { size: 24, weight: 600, align: 'right' });
     CASES.forEach((c, i) => {
       const col = c.h > 0 ? 0 : 1, row = c.s > 0 ? 0 : 1;
       const x0 = TB.l + col * (TB.w + TB.gap), y0 = TB.t + row * (TB.h + TB.gap), on = c.h === sh && c.s === ss;
@@ -63,12 +63,12 @@ const minus = (s) => String(s).replace('-', '−');
       ctx.fillStyle = on ? alpha(cE, 0.08) : PAL.panel; ctx.fillRect(x0, y0, TB.w, TB.h);
       ctx.strokeStyle = on ? PAL.ink : PAL.rule; ctx.lineWidth = on ? 2.5 : 1.5; ctx.strokeRect(x0, y0, TB.w, TB.h);
       ctx.restore();
-      const pl = x0 + 22, pr = x0 + TB.w - 22, pm = y0 + 58, ph = 38;
-      line(ctx, pl, y0 + 16, pl, y0 + 100, alpha(PAL.ink, 0.4), 2);
+      const pl = x0 + 22, pr = x0 + TB.w - 22, pm = y0 + 60, ph = 40;
+      line(ctx, pl, y0 + 16, pl, y0 + 104, alpha(PAL.ink, 0.4), 2);
       line(ctx, pl, pm, pr, pm, alpha(PAL.ink, 0.4), 2, [6, 6]);
       line(ctx, pl, pm - c.a * ph, pr, pm - c.b * ph, on ? cE : PAL.muted, on ? 4 : 3);
-      text(ctx, c.words[0], x0 + TB.w / 2, y0 + 126, on ? PAL.ink : PAL.muted, { size: 17, align: 'center' });
-      text(ctx, c.words[1], x0 + TB.w / 2, y0 + 150, on ? PAL.ink : PAL.muted, { size: 17, align: 'center' });
+      text(ctx, c.words[0], x0 + TB.w / 2, y0 + 136, on ? PAL.ink : PAL.muted, { size: 19, align: 'center' });
+      text(ctx, c.words[1], x0 + TB.w / 2, y0 + 164, on ? PAL.ink : PAL.muted, { size: 19, align: 'center' });
       hits.push({ x: x0 + TB.w / 2, y: y0 + TB.h / 2, r: 70, name: c.name });
     });
   }
@@ -151,9 +151,10 @@ const minus = (s) => String(s).replace('-', '−');
    FIGURE 16.14: G against reaction progress for one mole of A turning
    into B at 298.15 K, G°(A) = 0: G(x) = xΔG° + RT[x ln x + (1−x) ln(1−x)],
    whose slope is ΔG° + RT ln Q with Q = x/(1 − x), lowest at Q = K =
-   e^(−ΔG°/RT). ΔG° from −5 to 5 kJ/mol puts the minimum between 12 % and
-   88 % products; the frame is fixed at G from −8 to 6 kJ/mol, which holds
-   every curve the slider reaches (lowest −5.31) above the Q and K labels. No tick numbers on G, as
+   e^(−ΔG°/RT). ΔG° from −3 to 3 kJ/mol puts the minimum between 23 % and
+   77 % products; the frame is fixed at G from −5.2 to 3.4 kJ/mol, which holds
+   every curve the slider reaches (lowest −3.65) above the Q and K labels. RT is
+   2.479 kJ/mol, written as one number in the readout. No tick numbers on G, as
    the book prints none. Still: a relation with no clock.
 ===================================================================== */
 (function () {
@@ -166,7 +167,7 @@ const minus = (s) => String(s).replace('-', '−');
   const xeq = (g0) => { const k = Kof(g0); return k / (1 + k); };
   const sig3 = (v) => (v >= 100 ? v.toFixed(1) : v.toPrecision(3));
   const g0c = F.ctl(d.controls, {
-    label: '\\kdGo', cls: 'energy', min: -5, max: 5, step: 0.01, value: -2, unit: 'kJ/mol', dec: 2, detents: [-2, 2],
+    label: '\\kdGo', cls: 'energy', min: -3, max: 3, step: 0.01, value: -2, unit: 'kJ/mol', dec: 2, detents: [-2, 2],
     aria: 'standard free energy change, in kilojoules per mole', specials: [{ at: 0, label: 'K = 1' }],
   });
   const xc = F.ctl(d.controls, {
@@ -182,8 +183,8 @@ const minus = (s) => String(s).replace('-', '−');
     const g0 = +g0c.v.toFixed(2), x = xc.v, f = Gof(g0), xe = xeq(g0), at = Math.abs(x - xe) < 1e-6;
     const cE = C('energy'), cK = C('equilibrium-constant');
     hits = [];
-    const { X, Y } = F.axes(ctx, G, [0, 1], [-8, 6], {
-      nx: 4, ny: 7, xl: 'reaction progress', yl: 'Gibbs free energy (G)', yc: cE,
+    const { X, Y } = F.axes(ctx, G, [0, 1], [-5.2, 3.4], {
+      nx: 4, ny: 0, xl: 'reaction progress', yl: 'Gibbs free energy (G)', yc: cE,
       fx: (v) => (v === 0 ? 'Reactants' : v === 1 ? 'Products' : ''), fy: () => '',
     });
     const q = x / (1 - x), qs = sig3(q), k = Kof(g0), ks = sig3(k);
@@ -223,14 +224,14 @@ const minus = (s) => String(s).replace('-', '−');
     } else dot(ctx, mx, my, cE, true, 9);
     lab.flush();
 
-    const G0 = hue('energy', g0.toFixed(2)), TT = hue('temperature', '298.15');
+    const G0 = `${hue('energy', g0.toFixed(2))}\\ \\text{kJ/mol}`, RTv = `${RT.toFixed(3)}\\ \\text{kJ/mol}`;
     let tex;
     if (at) {
-      const e = (-g0 / RT).toFixed(3), kk = sig3(Math.exp(+e));
-      tex = `\\mk{G}{\\kdG} = 0,\\quad \\mk{Q}{\\kQrxn} = \\mk{K}{\\kK} = e^{-\\mk{G0}{\\kdGo}/\\mk{RT}{R\\kT}} = e^{\\mk{e}{${e}}} = \\mk{k}{${hue('equilibrium-constant', kk)}}`;
+      const e = (-g0 / RT).toFixed(3), kk = sig3(Math.exp(+e)), G0p = g0 < 0 ? `(${G0})` : G0;
+      tex = `\\mk{Q}{\\kQrxn} = \\mk{K}{\\kK} = e^{-\\mk{G0}{\\kdGo}/\\mk{RT}{R\\kT}} = e^{-\\mk{g0}{${G0p}}/(\\mk{rt}{${RTv}})} = e^{\\mk{e}{${e}}} = \\mk{k}{${hue('equilibrium-constant', kk)}}`;
     } else {
       const dg = g0 + RT * Math.log(+qs);
-      tex = `\\mk{G}{\\kdG} = \\mk{G0}{\\kdGo} + \\mk{RT}{R\\kT}\\ln\\mk{Q}{\\kQrxn} = \\mk{g0}{${G0}} + (\\mk{r}{8.314\\times10^{-3}})(\\mk{t}{${TT}})\\ln\\mk{q}{${hue('equilibrium-constant', qs)}} = \\mk{g}{${hue('energy', dg.toFixed(2))}}\\ \\text{kJ/mol}`;
+      tex = `\\mk{G}{\\kdG} = \\mk{G0}{\\kdGo} + \\mk{RT}{R\\kT}\\ln\\mk{Q}{\\kQrxn} = \\mk{g0}{${G0}} + (\\mk{rt}{${RTv}})\\ln\\mk{q}{${hue('equilibrium-constant', qs)}} = \\mk{g}{${hue('energy', dg.toFixed(2))}}\\ \\text{kJ/mol}`;
     }
     const note = g0 === 0 ? '$\\kK = 1$: reactants and products are comparably abundant at equilibrium.'
       : g0 < 0 ? '$\\kK > 1$: products are more abundant at equilibrium.' : '$\\kK < 1$: reactants are more abundant at equilibrium.';

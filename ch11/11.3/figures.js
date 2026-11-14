@@ -84,8 +84,8 @@ function spline(xs, ys) {
       ? 'At ' + fmt(t, 1) + ' °C, ' + g.name + ' at ' + fmt(p, 1) + ' kPa dissolves in water to a concentration of ' + s.plain + ' mol/L.'
       : 'With no ' + g.name + ' above the water at ' + fmt(t, 1) + ' °C, none of it dissolves.');
     const cgT = p > 0 ? s.tex : '0';
-    readout(d.readout, `\\kCg = \\kkH\\kPg = (${hue('equilibrium-constant', sk.tex + '\\ \\text{mol L}^{-1}\\,\\text{kPa}^{-1}')})(${hue('pressure', fmt(p, 1) + '\\ \\text{kPa}')}) = ${hue('concentration', cgT + '\\ \\text{mol L}^{-1}')}`,
-      'The Henry’s law constant is the solubility at ' + fmt(t, 1) + ' °C and 101.3 kPa divided by 101.3 kPa.');
+    const s1 = sci(c1 * 1e-3), kk = hue('equilibrium-constant', sk.tex + '\\ \\text{mol L}^{-1}\\,\\text{kPa}^{-1}');
+    tex(d.readout, `\\kkH = \\frac{\\kCg}{\\kPg} = \\frac{${hue('concentration', s1.tex + '\\ \\text{mol L}^{-1}')}}{${hue('pressure', '101.3\\ \\text{kPa}')}} = ${kk} \\\\ \\kCg = \\kkH\\kPg = (${kk})(${hue('pressure', fmt(p, 1) + '\\ \\text{kPa}')}) = ${hue('concentration', cgT + '\\ \\text{mol L}^{-1}')}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -116,7 +116,9 @@ function spline(xs, ys) {
     const { ctx } = begin(d.c);
     hits.length = 0;
     const cc = C('concentration'), cl = C('length'), lake = F.ref('lake'), parcel = F.ref('parcel');
-    const d0 = D0.v, tau = cy.now(), dep = d0 * (1 - tau / RISE), c0 = Csat(d0), cs = Csat(dep), held = Math.min(c0, cs), out = Math.max(0, c0 - cs);
+    const d0 = D0.v, tau = cy.now(), dep = d0 * (1 - tau / RISE), c0 = Csat(d0), cs = Csat(dep), held = Math.min(c0, cs);
+    /* the gas released is the difference of the two rounded concentrations shown, so the numbers add up */
+    const out = Math.max(0, +Mf(c0) - +Mf(held));
     /* the lake in section: surface at y 150, 200 m at y 540 */
     const Ys = (m) => 150 + m * 1.95, XC = 340;
     ctx.save();
@@ -156,8 +158,7 @@ function spline(xs, ys) {
     text(ctx, 'parcel of water', XC - 52, yp, parcel, { size: 17, align: 'right', bg: PAL.panel });
     /* the graph: depth down, concentration across */
     const box = { l: 800, r: 1320, t: 140, b: 530 };
-    const G = axes(ctx, box, [0, 0.8], [-200, 0], { xl: 'C_{g} of CO_{2} (M)', xc: cc, nx: 4, ny: 4, fx: (v) => fmt(v, 1), fy: (v) => fmt(-v, 0) });
-    text(ctx, 'depth (m)', box.l, box.b + 58, cl, { align: 'left', weight: 600, size: 20 });
+    const G = axes(ctx, box, [0, 0.8], [-200, 0], { xl: 'C_{g} of CO_{2} (M)', xc: cc, yl: 'depth (m)', yc: cl, nx: 4, ny: 4, fx: (v) => fmt(v, 1), fy: (v) => fmt(-v, 0) });
     curve(ctx, (v) => v, -200, 0, (v) => G.X(Csat(-v)), G.Y, cc, 5);
     text(ctx, 'solubility, kP_{g}', G.X(Csat(40)) + 14, G.Y(-40), cc, { size: 17, weight: 600, bg: PAL.panel });
     line(ctx, G.X(c0), G.Y(-d0), G.X(c0), G.Y(-dep), alpha(PAL.ink, 0.35), 2, [4, 8]);
@@ -167,8 +168,8 @@ function spline(xs, ys) {
     topline(ctx, out < 0.005
       ? 'At ' + fmt(dep, 0) + ' m the water holds ' + Mf(held) + ' M of CO₂, all it can keep at ' + fmt(Pof(dep), 1) + ' atm.'
       : 'At ' + fmt(dep, 0) + ' m the water can hold ' + Mf(held) + ' M of CO₂, so ' + Mf(out) + ' M of the ' + Mf(c0) + ' M it carried has come out as gas.');
-    readout(d.readout, `\\kCg = \\kkH\\kPg = (${hue('equilibrium-constant', '0.034\\ M/\\text{atm}')})(${hue('pressure', fmt(Pof(dep), 1) + '\\ \\text{atm}')}) = ${hue('concentration', Mf(held) + '\\ M')}`,
-      'The parcel left ' + fmt(d0, 0) + ' m holding ' + Mf(c0) + ' M; at the surface it can keep only ' + fmt(Csat(0), 3) + ' M.');
+    const hc = (x) => hue('concentration', Mf(x) + '\\ M');
+    tex(d.readout, `\\kCg = \\kkH\\kPg = (${hue('equilibrium-constant', '0.034\\ M/\\text{atm}')})(${hue('pressure', fmt(Pof(dep), 1) + '\\ \\text{atm}')}) = ${hc(held)} \\\\ \\text{released} = ${hc(c0)} - ${hc(held)} = ${hc(out)}`);
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
@@ -189,7 +190,7 @@ function spline(xs, ys) {
     { v: 'NaNO3', ref: 'nano3', lab: 'NaNO_{3}', plain: 'NaNO₃', tex: '\\text{NaNO}_{3}', data: [73, 88, 104, 124, 148, 178] },
     { v: 'NaBr', ref: 'nabr', lab: 'NaBr', plain: 'NaBr', tex: '\\text{NaBr}', data: [112, 113, 115, 118, 120, 125] },
     { v: 'KBr', ref: 'kbr', lab: 'KBr', plain: 'KBr', tex: '\\text{KBr}', data: [55, 66, 77, 88, 97, 106] },
-    { v: 'KCl', ref: 'kcl', lab: 'KCl', plain: 'KCl', tex: '\\text{KCl}', data: [28, 34, 40, 45.5, 51, 56] },
+    { v: 'KCl', ref: 'kcl', lab: 'KCl', plain: 'KCl', tex: '\\text{KCl}', data: [31, 35, 40, 45, 50, 56] },
     { v: 'NaCl', ref: 'nacl', lab: 'NaCl', plain: 'NaCl', tex: '\\text{NaCl}', data: [35.7, 36, 36.6, 37.3, 38.4, 39.8] },
     { v: 'Ce2SO43', ref: 'cerium-sulfate', lab: 'Ce_{2}(SO_{4})_{3}', plain: 'Ce₂(SO₄)₃', tex: '\\text{Ce}_{2}(\\text{SO}_{4})_{3}', data: [20, 10, 4.5, 2.2, 1.5, 1.5], end: 92 },
   ].map((s) => ({ ...s, f: spline(TS, s.data), end: s.end ?? 100 }));

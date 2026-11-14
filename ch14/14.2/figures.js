@@ -24,9 +24,9 @@ const clamp01 = (x) => Math.max(0, Math.min(1, x));
   const SX = 760;
   const y = (p) => TOP + (p + 1.5) * ROW;
   const SOL = [
-    ['1 M HCl', 0, 0], ['gastric juice', 1.5, 1.25], ['lime juice', 2.0, 1.8], ['1 M CH_{3}CO_{2}H (vinegar)', 2.4, 2.35],
+    ['1 M HCl', 0, 0], ['gastric juice', 1.5, 1.15], ['lime juice', 2.0, 1.72], ['1 M CH_{3}CO_{2}H (vinegar)', 2.4, 2.35],
     ['stomach acid', 2.9, 2.9], ['wine', 3.5, 3.55], ['orange juice', 4.2, 4.2], ['coffee', 5.0, 5.05], ['rain water', 5.7, 5.7],
-    ['pure water', 7.0, 7.0], ['blood', 7.4, 7.6], ['ocean water', 8.0, 8.2], ['baking soda', 8.4, 8.75],
+    ['pure water', 7.0, 7.0], ['blood', 7.4, 7.6], ['ocean water', 8.0, 8.2], ['baking soda', 8.4, 8.8],
     ['Milk of Magnesia', 10.5, 10.5], ['household ammonia, NH_{3}', 11.9, 11.85], ['bleach', 12.6, 12.6], ['1 M NaOH', 14.0, 14.0],
   ];
   let tc = null;
@@ -47,7 +47,7 @@ const clamp01 = (x) => Math.max(0, Math.min(1, x));
   function draw() {
     const { ctx } = begin(d.c), cC = C('concentration'), pkw = tc.mix((v) => PKW[v]), pkwNow = PKW[tc.value], p = ph.v, ym = y(p);
     hits = [];
-    const near = (yy) => clamp01((Math.abs(yy - ym) - 18) / 14);
+    const near = (yy) => clamp01((Math.abs(yy - ym) - 24) / 12);   /* a row value the marker's panels would touch fades */
     const inside = (yy) => clamp01((yy - TOP - 12) / 12) * clamp01((BOT - yy - 12) / 12);
     const yN = y(pkw / 2);
     ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.07); ctx.fillRect(L, yN - ROW * 0.45, R - L, ROW * 0.9); ctx.restore();

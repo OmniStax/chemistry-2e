@@ -48,6 +48,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "K_c 10 to match the image; F.legend; caption cut"
         }
       ]
     },
@@ -63,6 +67,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "slider shows K_c, circle at Example 13.2; caption cut"
         }
       ]
     },
@@ -83,6 +91,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "values in both bars, legend, ink labels; caption cut"
         }
       ]
     }

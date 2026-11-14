@@ -1,19 +1,24 @@
 /* Figures for section 21.1 Nuclear Structure and Stability. Boots against the section's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['21.1'] = function (root, F) {
-const { tex, C, PAL, alpha, register, begin, line, arrow, dot, text, topline, axes, curve, labeller } = F;
+const { tex, C, PAL, alpha, ctl, register, begin, line, arrow, dot, text, topline, axes, curve, labeller } = F;
 const sim = (id, H) => F.sim(root, id, H);
 
-const NAME = 'hydrogen helium lithium beryllium boron carbon nitrogen oxygen fluorine neon sodium magnesium aluminum silicon phosphorus sulfur chlorine argon potassium calcium scandium titanium vanadium chromium manganese iron cobalt nickel copper zinc gallium germanium arsenic selenium bromine krypton rubidium strontium yttrium zirconium niobium molybdenum technetium ruthenium rhodium palladium silver cadmium indium tin antimony tellurium iodine xenon cesium barium lanthanum cerium praseodymium neodymium promethium samarium europium gadolinium terbium dysprosium holmium erbium thulium ytterbium lutetium hafnium tantalum tungsten rhenium osmium iridium platinum gold mercury thallium lead bismuth polonium astatine radon francium radium actinium thorium protactinium uranium'.split(' ');
+const NAME = 'hydrogen helium lithium beryllium boron carbon nitrogen oxygen fluorine neon sodium magnesium aluminum silicon phosphorus sulfur chlorine argon potassium calcium scandium titanium vanadium chromium manganese iron cobalt nickel copper zinc gallium germanium arsenic selenium bromine krypton rubidium strontium yttrium zirconium niobium molybdenum technetium ruthenium rhodium palladium silver cadmium indium tin antimony tellurium iodine xenon cesium barium lanthanum cerium praseodymium neodymium promethium samarium europium gadolinium terbium dysprosium holmium erbium thulium ytterbium lutetium hafnium tantalum tungsten rhenium osmium iridium platinum gold mercury thallium lead bismuth polonium astatine radon francium radium actinium thorium protactinium uranium neptunium plutonium americium curium berkelium californium einsteinium fermium mendelevium nobelium lawrencium rutherfordium dubnium seaborgium bohrium hassium meitnerium darmstadtium roentgenium copernicium nihonium flerovium moscovium livermorium tennessine oganesson'.split(' ');
+const SYM = 'H He Li Be B C N O F Ne Na Mg Al Si P S Cl Ar K Ca Sc Ti V Cr Mn Fe Co Ni Cu Zn Ga Ge As Se Br Kr Rb Sr Y Zr Nb Mo Tc Ru Rh Pd Ag Cd In Sn Sb Te I Xe Cs Ba La Ce Pr Nd Pm Sm Eu Gd Tb Dy Ho Er Tm Yb Lu Hf Ta W Re Os Ir Pt Au Hg Tl Pb Bi Po At Rn Fr Ra Ac Th Pa U Np Pu Am Cm Bk Cf Es Fm Md No Lr Rf Db Sg Bh Hs Mt Ds Rg Cn Nh Fl Mc Lv Ts Og'.split(' ');
 
 /* =====================================================================
-   FIGURE 21.2: the band of stability. The book's chart, protons across
-   and neutrons up; every stable nuclide a point, the known radioactive
-   nuclides a shaded band, the line n = Z, and the text's three examples
-   marked. Still.
+   FIGURE 21.2: the band of stability. The book's chart on its own equal
+   scale, protons across and neutrons up: every stable nuclide a point,
+   the known radioactive nuclides a shaded band, the line n = Z. A slider
+   on Z picks one element; its stable nuclide (the text's nitrogen-14,
+   iron-56 and lead-207, else the most abundant) is joined to the origin,
+   so the slope of that line is its n:p ratio, and beside the chart the
+   ratio of every stable nuclide is plotted against Z, climbing from 1
+   toward 1.5. Still: the chart answers the slider.
 ===================================================================== */
 (function () {
-  const d = sim('sim-band-stability', 800);
+  const d = sim('sim-band-stability', 820);
   /* the mass numbers of the stable nuclides of each element, Z = 1 to 83 (none for 43 and 61) */
   const STABLE = [
     [1, 2], [3, 4], [6, 7], [9], [10, 11], [12, 13], [14, 15], [16, 17, 18], [19], [20, 21, 22],
@@ -26,40 +31,78 @@ const NAME = 'hydrogen helium lithium beryllium boron carbon nitrogen oxygen flu
     [175], [176, 177, 178, 179, 180], [181], [182, 183, 184, 186], [185], [184, 187, 188, 189, 190, 192], [191, 193], [192, 194, 195, 196, 198], [197], [196, 198, 199, 200, 201, 202, 204],
     [203, 205], [204, 206, 207, 208], [209],
   ];
+  /* the nuclide read for each element: the most abundant stable one, except the text's three (nitrogen-14, iron-56, lead-207) */
+  const MAIN = [1, 4, 7, 9, 11, 12, 14, 16, 19, 20, 23, 24, 27, 28, 31, 32, 35, 40, 39, 40, 45, 48, 51, 52, 55, 56, 59, 58, 63, 64,
+    69, 74, 75, 80, 79, 84, 85, 88, 89, 90, 93, 98, 0, 102, 103, 106, 107, 114, 113, 120, 121, 126, 127, 132, 133, 138, 139, 140, 141, 142,
+    0, 152, 153, 158, 159, 164, 165, 166, 169, 174, 175, 180, 181, 184, 185, 192, 193, 195, 197, 202, 205, 207, 209];
+  const REF = { 7: 'nitrogen-14', 26: 'iron-56', 82: 'lead-207' };
   /* the edges of the book's band of known nuclides, [Z, n], read off its figure */
   const LO = [[1, 0], [5, 2], [10, 5], [15, 8], [20, 16], [25, 20], [30, 26], [35, 32], [40, 39], [45, 44], [50, 50], [55, 56], [60, 61], [65, 68], [70, 77], [75, 85], [80, 95], [83, 97], [85, 114], [90, 121], [95, 131], [100, 141], [105, 149], [110, 157], [115, 166], [118, 172]];
   const HI = [[1, 3], [3, 8], [5, 15], [10, 19], [15, 28], [20, 40], [25, 45], [30, 54], [35, 61], [40, 67], [45, 77], [50, 88], [55, 92], [60, 101], [65, 106], [70, 110], [75, 118], [80, 127], [85, 136], [90, 149], [95, 154], [100, 159], [105, 166], [110, 171], [115, 176], [118, 178]];
-  const REFS = [['nitrogen-14', 7, 7, -0.25, -1], ['iron-56', 26, 30, -0.55, -0.85], ['lead-207', 82, 125, -0.75, -0.65]];
-  const box = { l: 130, r: 1330, t: 80, b: 690 };
+  const edge = (E, z) => { for (let i = 1; i < E.length; i++) if (z <= E[i][0]) { const [z0, n0] = E[i - 1], [z1, n1] = E[i]; return n0 + ((n1 - n0) * (z - z0)) / (z1 - z0); } return E[E.length - 1][1]; };
+  const Zs = ctl(d.controls, { label: 'Z', cls: '', min: 1, max: 118, step: 1, value: 26, unit: '', dec: 0, aria: 'number of protons, Z',
+    detents: [{ v: 7, label: 'N-14' }, { v: 26, label: 'Fe-56' }, { v: 82, label: 'Pb-207' }] });
+  /* the chart on one scale for both axes, as the book draws it: 3.7 units per nucleon, Z 0 to 120 by n 0 to 180 */
+  const u = 3.7, boxA = { l: 92, t: 110, b: 70 + 180 * u, r: 92 + 120 * u };
+  /* the ratio n/Z of every stable nuclide against Z, Z 0 to 120 and n:p 0.4 to 1.6, hydrogen-1 (0) pinned at the floor */
+  const boxB = { l: 680, r: 1340, t: 150, b: boxA.b };
   let hits = []; F.hover(d.stage, () => hits);
   function draw() {
     const { ctx } = begin(d.c);
-    const lab = labeller(ctx, 800);
-    const { X, Y } = axes(ctx, box, [0, 120], [0, 180], { nx: 12, ny: 9, xl: 'number of protons (Z)', yl: 'number of neutrons (n)' });
+    const lab = labeller(ctx, 820);
+    const Z = Zs.v, A = Z <= 83 ? MAIN[Z - 1] : 0, n = A - Z, name = NAME[Z - 1];
+    const ref = REF[Z], col = ref ? F.ref(ref) : PAL.ink;
     hits = [];
+    const a = axes(ctx, boxA, [0, 120], [0, 180], { nx: 6, ny: 9, xl: 'number of protons (Z)', yl: 'number of neutrons (n)' });
+    const { X, Y } = a;
+    /* the band of known nuclides */
     ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.13); ctx.beginPath();
-    LO.forEach(([z, n], i) => (i ? ctx.lineTo(X(z), Y(n)) : ctx.moveTo(X(z), Y(n))));
-    HI.slice().reverse().forEach(([z, n]) => ctx.lineTo(X(z), Y(n)));
+    LO.forEach(([z, m], i) => (i ? ctx.lineTo(X(z), Y(m)) : ctx.moveTo(X(z), Y(m))));
+    HI.slice().reverse().forEach(([z, m]) => ctx.lineTo(X(z), Y(m)));
     ctx.closePath(); ctx.fill(); ctx.restore();
     line(ctx, X(0), Y(0), X(120), Y(120), PAL.ink, 3);
-    lab.beside({ x1: X(0), y1: Y(0), x2: X(120), y2: Y(120) }, 'right', 'n = Z', PAL.ink, 20, { offset: 0.9 });
-    STABLE.forEach((as, i) => as.forEach((A) => {
-      const Z = i + 1, x = X(Z), y = Y(A - Z);
-      dot(ctx, x, y, PAL.ink, true, 4);
-      hits.push({ x, y, r: 6, name: `${NAME[i]}-${A}: ${Z} protons, ${A - Z} neutrons, stable` });
+    text(ctx, 'n = Z', X(119), Y(106), PAL.ink, { size: 20, align: 'right' });
+    /* the chosen element's column of known nuclides */
+    const lo = edge(LO, Z), hi = edge(HI, Z);
+    line(ctx, X(Z), Y(Math.max(0, lo - 6)), X(Z), Y(Math.min(180, hi + 6)), alpha(PAL.ink, 0.45), 2, [4, 8]);
+    STABLE.forEach((as, i) => as.forEach((M) => {
+      const z = i + 1, x = X(z), y = Y(M - z);
+      dot(ctx, x, y, PAL.ink, true, z === Z ? 4 : 2.6);
+      hits.push({ x, y, r: 6, name: `${NAME[i]}-${M}: ${z} protons, ${M - z} neutrons, stable` });
     }));
-    REFS.forEach(([id, Z, n, ux, uy]) => {
-      const x = X(Z), y = Y(n), col = F.ref(id);
-      dot(ctx, x, y, col, true, 8);
-      lab.add(id, x, y, ux, uy, col, 20, 70);
-    });
-    const LX = X(88), LY = Y(34);
-    ctx.save(); ctx.fillStyle = PAL.panel; ctx.fillRect(LX - 22, LY - 26, 250, 92); ctx.restore();
-    dot(ctx, LX, LY, PAL.ink, true, 6);
-    text(ctx, 'nonradioactive', LX + 22, LY, PAL.ink, { size: 19 });
-    ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.13); ctx.fillRect(LX - 10, LY + 28, 20, 20); ctx.restore();
-    text(ctx, 'radioactive', LX + 22, LY + 38, PAL.ink, { size: 19 });
+    if (A) {
+      /* the line from the origin through the nuclide: its slope is n:p */
+      const k = n / Z, zEnd = Math.min(120, 180 / k);
+      line(ctx, X(0), Y(0), X(zEnd), Y(k * zEnd), alpha(col, 0.7), 3, [10, 10]);
+      dot(ctx, X(Z), Y(n), col, true, 9);
+      lab.add(`${name}-${A}`, X(Z), Y(n), Z < 12 ? 0.3 : 0.8, Z < 12 ? -1 : 0.6, col, 20, Z < 12 ? 70 : 40);
+    }
+    F.legend(ctx, a, [{ s: 'stable', kind: 'dot', color: PAL.ink }, { s: 'radioactive', kind: 'swatch', color: alpha(PAL.ink, 0.13) }], { corner: 'br' });
+    /* the ratio graph */
+    const b = axes(ctx, boxB, [0, 120], [0.4, 1.6], { nx: 6, ny: 6, xl: 'number of protons (Z)', yl: 'n:p ratio of stable nuclides' });
+    line(ctx, b.X(0), b.Y(1), b.X(120), b.Y(1), PAL.ink, 3);
+    text(ctx, 'n = Z', b.X(118), b.Y(1) + 22, PAL.ink, { size: 20, align: 'right' });
+    STABLE.forEach((as, i) => as.forEach((M) => {
+      const z = i + 1, r = (M - z) / z, x = b.X(z), y = b.Y(Math.max(0.4, r));
+      if (r < 0.4) { F.pinned(ctx, boxB, b.X, b.Y, z, r, PAL.ink); hits.push({ x, y, r: 8, name: `${NAME[i]}-${M}: n:p = 0, below the axis` }); return; }
+      dot(ctx, x, y, PAL.ink, true, z === Z ? 5 : 3.5);
+      hits.push({ x, y, r: 6, name: `${NAME[i]}-${M}: n:p = ${M - z}/${z} = ${((M - z) / z).toFixed(2)}` });
+    }));
+    line(ctx, b.X(Z), boxB.t, b.X(Z), boxB.b, alpha(PAL.ink, 0.45), 2, [4, 8]);
+    if (A) {
+      const yb = b.Y(Math.max(0.4, n / Z));
+      dot(ctx, b.X(Z), yb, col, true, 9);
+      lab.add(`${name}-${A}`, b.X(Z), yb, 0.7, -0.7, col, 20, 46);
+    }
     lab.flush();
+    const Nm = name[0].toUpperCase() + name.slice(1);
+    if (A) {
+      topline(ctx, `${Nm}-${A} has ${n} neutron${n === 1 ? '' : 's'} for its ${Z} proton${Z === 1 ? '' : 's'}, an n:p ratio of ${(n / Z).toFixed(2)}.`);
+      tex(d.readout, `{}^{${A}}_{${Z}}\\text{${SYM[Z - 1]}}:\\ \\text{n:p} = \\frac{n}{Z} = \\frac{${n}}{${Z}} = ${(n / Z).toFixed(2)}`);
+    } else {
+      topline(ctx, `${Nm} (Z = ${Z}) has no stable nuclide: every one of its nuclides is radioactive.`);
+      tex(d.readout, `\\text{${name}},\\ Z = ${Z}:\\ \\text{known nuclides from } n \\approx ${Math.round(lo)} \\text{ to } ${Math.round(hi)},\\ \\text{none stable}`);
+    }
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -105,10 +148,10 @@ const NAME = 'hydrogen helium lithium beryllium boron carbon nitrogen oxygen flu
     return Math.max(0, B / A);
   };
   const sci = (v, n = 4) => { const e = Math.floor(Math.log10(v)); return `${(v / 10 ** e).toFixed(n - 1)}\\times10^{${e}}`; };
-  const box = { l: 470, r: 1340, t: 110, b: 470 };
-  const CX = 200, CY = 300, S = 9.4, R = 5.4, GOLD = 2.39996;
+  /* the graph on the right; the nucleus on the left, sized so that uranium-238 just fills its square */
+  const box = { l: 520, r: 1340, t: 130, b: 520 };
+  const CX = 230, CY = 310, S = 12.2, R = 7, GOLD = 2.39996;
   const isP = (i, q) => Math.floor(((i + 1) * q.Z) / q.A) > Math.floor((i * q.Z) / q.A);
-  const ro = F.readout(d);
   let hits = []; F.hover(d.stage, () => hits);
   function draw() {
     const { ctx } = begin(d.c);
@@ -142,12 +185,13 @@ const NAME = 'hydrogen helium lithium beryllium boron carbon nitrogen oxygen flu
     }
     ctx.restore();
     hits.push({ x: CX, y: CY, r: S * Math.sqrt(q.A) + 4, name: `${q.name} nucleus: ${q.Z} protons and ${q.N} neutrons` });
-    const ly = 520;
-    dot(ctx, CX - 90, ly, cp, true, 7); text(ctx, 'proton', CX - 76, ly, PAL.ink, { size: 19 });
-    dot(ctx, CX + 20, ly, cn, true, 7); text(ctx, 'neutron', CX + 34, ly, PAL.ink, { size: 19 });
+    F.legend(ctx, { l: CX - 200, r: CX + 200, t: 528, b: 588 }, [
+      { s: `${q.Z} protons`, draw: (c, x, y) => dot(c, x, y, cp, true, 8) },
+      { s: `${q.N} neutrons`, draw: (c, x, y) => dot(c, x, y, cn, true, 8) },
+    ], { corner: 'top', row: true, panel: false, size: 20 });
     topline(ctx, `${q.name[0].toUpperCase() + q.name.slice(1)} is ${q.dm.toFixed(4)} amu lighter than its ${q.Z} protons, ${q.N} neutrons and ${q.Z} electrons.`);
-    ro.set(`\\kE=\\km\\kc^{2}=(${sci(q.kg)}\\ \\text{kg})(2.998\\times10^{8}\\ \\text{m/s})^{2}=${sci(q.J)}\\ \\text{J}=${q.MeV.toFixed(1)}\\ \\text{MeV}`,
-      `$\\kE$ ÷ ${q.A} nucleons = ${q.per.toFixed(3)} MeV per nucleon, the height of the point on the curve`);
+    tex(d.readout, `\\kE=\\km\\kc^{2}=(${sci(q.kg)}\\ \\text{kg})(2.998\\times10^{8}\\ \\text{m/s})^{2}=${q.MeV.toFixed(1)}\\ \\text{MeV}`
+      + ` \\\\ \\frac{\\kE}{A}=\\frac{${q.MeV.toFixed(1)}\\ \\text{MeV}}{${q.A}\\ \\text{nucleons}}=${q.per.toFixed(3)}\\ \\text{MeV per nucleon}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

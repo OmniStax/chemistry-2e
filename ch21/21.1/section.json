@@ -44,6 +44,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt: equal-scale chart, Z slider, n:p ratio graph beside"
     }
    ]
   },
@@ -69,6 +73,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "nucleus enlarged, legend counts, readout split in two lines"
     }
    ]
   }

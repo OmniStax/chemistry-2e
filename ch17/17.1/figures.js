@@ -14,26 +14,26 @@ const RAD = Math.PI / 180;
    middle of the bond to the receiving atom; lone pairs hold. Still.
 ===================================================================== */
 (function () {
-  const H = 580, d = sim('sim-polarization', H);
-  const R = { O: 38, H: 27, C: 38, Cl: 44, N: 38 }, GAP = 15, ER = 7.5;
+  const H = 640, d = sim('sim-polarization', H);
+  const R = { O: 48, H: 34, C: 48, Cl: 52, N: 48 }, GAP = 18, ER = 9;
   const NAME = { O: 'an oxygen atom, O', H: 'a hydrogen atom, H', C: 'the carbon atom, C', Cl: 'a chlorine atom, Cl', N: 'the nitrogen atom, N' };
   const at = (x, y, a, L) => [x + L * Math.cos(a * RAD), y + L * Math.sin(a * RAD)];
   /* atoms [element, x, y, formal charge, lone-pair angles, label direction]; bonds [giver, taker, order] */
   const MOL = {
     H2O: {
       to: 'O', charge: 0,
-      atoms: [['O', 700, 250, 0, [-60, -120], -90], ['H', ...at(700, 250, 142, 190), 0, [], 142], ['H', ...at(700, 250, 38, 190), 0, [], 38]],
+      atoms: [['O', 700, 270, 0, [-60, -120], -90], ['H', ...at(700, 270, 142, 260), 0, [], 142], ['H', ...at(700, 270, 38, 260), 0, [], 38]],
       bonds: [[1, 0, 1], [2, 0, 1]],
     },
     CCl4: {
       to: 'Cl', charge: 0,
-      atoms: [['C', 700, 325, 0, [], -45], ...[-90, 0, 90, 180].map((a) => ['Cl', ...at(700, 325, a, 165), 0, [a - 90, a, a + 90], a + 45])],
+      atoms: [['C', 700, 345, 0, [], -45], ...[-90, 0, 90, 180].map((a) => ['Cl', ...at(700, 345, a, 170), 0, [a - 90, a, a + 90], a + 45])],
       bonds: [[0, 1, 1], [0, 2, 1], [0, 3, 1], [0, 4, 1]],
     },
     NO3: {
       to: 'O', charge: -1,
-      atoms: [['N', 700, 345, 1, [], 90], ['O', ...at(700, 345, -90, 170), 0, [-30, -150], -90],
-        ['O', ...at(700, 345, 150, 170), -1, [60, 150, 240], 195], ['O', ...at(700, 345, 30, 170), -1, [-60, 30, 120], 75]],
+      atoms: [['N', 700, 400, 1, [], 90], ['O', ...at(700, 400, -90, 200), 0, [-30, -150], -90],
+        ['O', ...at(700, 400, 150, 200), -1, [60, 150, 240], 195], ['O', ...at(700, 400, 30, 200), -1, [-60, 30, 120], 75]],
       bonds: [[0, 1, 2], [0, 2, 1], [0, 3, 1]],
     },
   };
@@ -53,14 +53,14 @@ const RAD = Math.PI / 180;
   let hits = []; F.hover(d.stage, () => hits);
 
   function readout(key, p) {
-    const m = MOL[key], whole = p === 1, dec = whole ? 0 : 2, q = charges(m, p), s = (x) => sgn(x, dec);
+    const m = MOL[key], whole = p === 1, dec = whole || p === 0 ? 0 : 2, q = charges(m, p), s = (x) => sgn(x, dec);
     const term = (k, n, el, x) => `\\mk{${k}}{(\\text{${n} ${el}})(${s(x)})}`;
-    const tot = (k, x) => `\\mk{${k}}{${s(x)}}`;
+    const tot = (k, x, first) => { const v = s(x); return `\\mk{${k}}{${first ? v : v.startsWith('-') ? `(${v})` : v.replace('+', '')}}`; };
     const sum = `\\mk{q}{${sgn(m.charge, 0)}}`;
-    if (key === 'H2O') return [`${term('O', 1, 'O', q[0])}+${term('H', 2, 'H', q[1])}=${tot('tO', q[0])}+${tot('tH', 2 * q[1])}=${sum}`, 'w'];
-    if (key === 'CCl4') return [`${term('C', 1, 'C', q[0])}+${term('Cl', 4, 'Cl', q[1])}=${tot('tC', q[0])}+${tot('tCl', 4 * q[1])}=${sum}`, 'c'];
-    if (whole) return [`${term('N', 1, 'N', q[0])}+${term('O3', 3, 'O', q[1])}=${tot('tN', q[0])}+${tot('tO3', 3 * q[1])}=${sum}`, 'n1'];
-    return [`${term('N', 1, 'N', q[0])}+${term('Od', 1, 'O', q[1])}+${term('Os', 2, 'O', q[2])}=${tot('tN', q[0])}+${tot('tOd', q[1])}+${tot('tOs', 2 * q[2])}=${sum}`, 'n0'];
+    if (key === 'H2O') return [`${term('O', 1, 'O', q[0])}+${term('H', 2, 'H', q[1])}=${tot('tO', q[0], true)}+${tot('tH', 2 * q[1])}=${sum}`, 'w'];
+    if (key === 'CCl4') return [`${term('C', 1, 'C', q[0])}+${term('Cl', 4, 'Cl', q[1])}=${tot('tC', q[0], true)}+${tot('tCl', 4 * q[1])}=${sum}`, 'c'];
+    if (whole) return [`${term('N', 1, 'N', q[0])}+${term('O3', 3, 'O', q[1])}=${tot('tN', q[0], true)}+${tot('tO3', 3 * q[1])}=${sum}`, 'n1'];
+    return [`${term('N', 1, 'N', q[0])}+${term('Od', 1, 'O', q[1])}+${term('Os', 2, 'O', q[2])}=${tot('tN', q[0], true)}+${tot('tOd', q[1])}+${tot('tOs', 2 * q[2])}=${sum}`, 'n0'];
   }
   let lastForm = null;
   function setReadout() {
@@ -73,24 +73,25 @@ const RAD = Math.PI / 180;
 
   function scene(ctx, key, p, lab, live) {
     const m = MOL[key], q = charges(m, p), e = F.el('e-'), whole = p === 1;
-    const pair = (cx, cy, nx, ny, offs, name) => offs.forEach((o) => { const x = cx + nx * o, y = cy + ny * o; dot(ctx, x, y, e, true, ER); if (live) hits.push({ x, y, r: 11, name }); });
+    const pair = (cx, cy, nx, ny, offs, name) => offs.forEach((o) => { const x = cx + nx * o, y = cy + ny * o; dot(ctx, x, y, e, true, ER); if (lab) lab.block(x - ER, y - ER, x + ER, y + ER); if (live) hits.push({ x, y, r: 11, name }); });
     m.bonds.forEach(([g, t, n]) => {
       const [, ax, ay] = m.atoms[g], [te, bx, by] = m.atoms[t], L = Math.hypot(bx - ax, by - ay), ux = (bx - ax) / L, uy = (by - ay) / L;
       const ga = R[m.atoms[g][0]], gb = R[te];
       line(ctx, ax + ux * ga, ay + uy * ga, bx - ux * gb, by - uy * gb, alpha(PAL.ink, 0.35), 2, [4, 8]);
       const mx = (ax + ux * ga + bx - ux * gb) / 2, my = (ay + uy * ga + by - uy * gb) / 2;
       const ex = bx - ux * (gb + GAP), ey = by - uy * (gb + GAP);
-      pair(mx + p * (ex - mx), my + p * (ey - my), -uy, ux, n === 2 ? [-26, -10, 10, 26] : [-8, 8], n === 2 ? 'two bonding pairs of electrons' : 'a bonding pair of electrons');
+      pair(mx + p * (ex - mx), my + p * (ey - my), -uy, ux, n === 2 ? [-32, -12, 12, 32] : [-10, 10], n === 2 ? 'two bonding pairs of electrons' : 'a bonding pair of electrons');
     });
     m.atoms.forEach(([el, x, y, , lone]) => lone.forEach((a) => {
       const [cx, cy] = at(x, y, a, R[el] + GAP);
-      pair(cx, cy, -Math.sin(a * RAD), Math.cos(a * RAD), [-8, 8], 'a lone pair of electrons');
+      pair(cx, cy, -Math.sin(a * RAD), Math.cos(a * RAD), [-10, 10], 'a lone pair of electrons');
     }));
     m.atoms.forEach(([el, x, y, , , la], i) => {
       ctx.save(); ctx.fillStyle = F.el(el); ctx.strokeStyle = alpha(PAL.ink, 0.5); ctx.lineWidth = 1.5;
       ctx.beginPath(); ctx.arc(x, y, R[el], 0, 2 * Math.PI); ctx.fill(); ctx.stroke(); ctx.restore();
       if (live) hits.push({ x, y, r: R[el], name: NAME[el] });
-      if (lab) { const ux = Math.cos(la * RAD), uy = Math.sin(la * RAD); lab.add(`${el} ${shown(q[i], whole ? 0 : 2)}`, x + ux * R[el], y + uy * R[el], ux, uy, PAL.ink, 22, 40); }
+      if (lab) lab.block(x - R[el], y - R[el], x + R[el], y + R[el]);
+      if (lab) { const ux = Math.cos(la * RAD), uy = Math.sin(la * RAD); lab.add(`${el} ${shown(q[i], whole || p === 0 ? 0 : 2)}`, x + ux * (R[el] + 12), y + uy * (R[el] + 12), ux, uy, PAL.ink, 24, 40); }
     });
   }
 
@@ -106,8 +107,7 @@ const RAD = Math.PI / 180;
       mol.only(ctx, o, () => scene(ctx, o, p, null, false));
     }
     mol.only(ctx, key, () => { scene(ctx, key, p, lab, true); lab.flush(); });
-    dot(ctx, 80, H - 30, F.el('e-'), true, ER);
-    text(ctx, 'electron', 98, H - 30, PAL.ink, { size: 18, align: 'left' });
+    F.legend(ctx, { l: 0, r: 1400, t: 0, b: H }, [{ s: 'electron', kind: 'dot', color: F.el('e-') }], { corner: 'bl' });
     setReadout();
   }
   register(d.fig, { update: () => {}, draw });

@@ -47,6 +47,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "fixed: larger molecule, legend, tidier sums, short caption"
     }
    ]
   }

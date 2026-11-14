@@ -1,7 +1,7 @@
 /* Figures for section 17.2 Galvanic Cells. Boots against the section's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['17.2'] = function (root, F) {
-const { PAL, cycle, register, begin, text, dot } = F;
+const { PAL, alpha, cycle, register, begin, line, arrow, text, dot } = F;
 const sim = (id, H) => F.sim(root, id, H);
 const TAU = 2 * Math.PI;
 const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
@@ -9,232 +9,249 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
 const rnd = (k, j) => { const s = Math.sin(k * 127.1 + j * 311.7) * 43758.5453; return s - Math.floor(s); };
 
 /* =====================================================================
-   FIGURE 17.3 + 17.4: two galvanic cells on a bench, in three dimensions.
-   Two beakers of equal volume joined by a salt bridge and by a wire through
-   the external circuit. Moving: the cell runs for T = 6 s of model time and
-   holds. Every τ = 0.6 s two electrons cross the wire and one event happens
-   in each half-cell: one Cu²⁺ (Mg²⁺) leaves the anode, two Ag⁺ plate onto
-   the cathode (two Fe³⁺ arrive at the platinum and leave as Fe²⁺), and two
-   anions and two cations leave the bridge's plugs. The extent ξ (mol/L)
-   grows linearly to XMAX: [Cu²⁺] = 1 + ξ, [Ag⁺] = 1 − 2ξ; [Mg²⁺] = 0.1 + ξ,
-   [Fe³⁺] = 0.2 − 2ξ, [Fe²⁺] = 0.3 + 2ξ. CU_BLUE is the color of Cu²⁺(aq),
-   a physical fact. The cells stand on a bench, so the pitch stays between
-   2° and 70° above level.
+   FIGURE 17.3 + 17.4: a galvanic cell, flat, as the book draws it. Two
+   beakers of equal volume joined by a salt bridge (an inverted U with a
+   porous plug under the liquid at each end) and by a wire from each
+   electrode up to the external circuit. Moving: the cell runs for T = 6 s
+   of model time and holds. Every 0.6 s two electrons pass along the wire
+   from the anode to the cathode and one event happens in each half-cell:
+   one Cu²⁺ (Mg²⁺) leaves the anode, two Ag⁺ plate onto the cathode (two
+   Fe³⁺ meet the platinum and leave as Fe²⁺), and two anions leave the
+   bridge's left plug while two cations leave its right plug, so each
+   half-cell stays neutral. The extent ξ (mol/L) grows linearly to XMAX:
+   [Cu²⁺] = 1 + ξ, [Ag⁺] = 1 − 2ξ; [Mg²⁺] = 0.1 + ξ, [Fe³⁺] = 0.2 − 2ξ,
+   [Fe²⁺] = 0.3 + 2ξ. CU_BLUE is the colour of Cu²⁺(aq), a physical fact.
 ===================================================================== */
 (function () {
-  const T3D = window.THREE;
-  const d = sim('sim-galvanic-cell');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: 'front', yaw: 0, pitch: 0.16 }, { label: 'above', yaw: 0, pitch: 1.1 }], h: 660, dist: 8.4, tilt: 0.16 });
-  const grp = v.part(0), cnv = F.makeCanvas(d.stage, 100);
-  grp.position.y = -0.35;
+  const H = 770, d = sim('sim-galvanic-cell', H);
   const CU_BLUE = '#3b8fd9';                    /* the blue of Cu²⁺(aq) */
-  const T = 6, TAU_E = 0.6, LIFE = 1.8;
-  const XA = -1.7, XC = 1.7, RB = 0.8, YB = -1.3, YT = 0.35, YL = 0, XS = 1.15, YP = -0.5, YW = 1.45;
+  const T = 6, TE = 0.6, LIFE = 1.8;
+  /* beakers: centres, inner half-width, rim, floor, liquid level */
+  const LX = 330, RX = 1070, HW = 175, RIM = 300, FLOOR = 640, LEVEL = 410;
+  /* the wire's height, the external circuit's box, the bridge's legs, top and plug */
+  const WY = 100, BOX = { x: 700, y: 100, w: 240, h: 72 }, BL = 445, BR = 955, BT = 222, BW = 60, PLUG = 500;
+  const XA = 240, XC = 1160, TOP = 250, BOT = 590;           /* the electrodes' x, their tops at the wire, the strips' foot */
   const CELLS = {
     cu: {
       xmax: 0.25, dec: 2,
-      head: 'Electrons flow from the copper anode to the silver cathode.',
-      labels: ['Cu anode (−)', 'Ag cathode (+)', 'salt bridge (NaNO<sub>3</sub>)', 'Cu(NO<sub>3</sub>)<sub>2</sub>(<em>aq</em>)', 'AgNO<sub>3</sub>(<em>aq</em>)'],
-      kinds: [
-        { el: 'Cu', role: 'out', at: 'anode', m: 1, name: 'a copper(II) ion, Cu²⁺, entering the solution from the anode' },
-        { el: 'Ag', role: 'in', at: 'cathode', m: 2, name: 'a silver(I) ion, Ag⁺, about to plate onto the cathode as silver' },
-        { el: 'NO3', role: 'out', at: 'left plug', m: 2, name: 'a nitrate ion, NO₃⁻, leaving the salt bridge' },
-        { el: 'Na', role: 'out', at: 'right plug', m: 2, name: 'a sodium ion, Na⁺, leaving the salt bridge' },
-      ],
-      legend: [['e-', 'electron, e⁻'], ['Cu', 'Cu²⁺'], ['Ag', 'Ag⁺'], ['NO3', 'NO₃⁻'], ['Na', 'Na⁺']],
       tex: (x, f) => `\\mk{an}{\\text{Cu}(s)}\\,|\\,\\mk{as}{${hue('concentration', f(1 + x) + '\\;M')}\\;\\text{Cu}^{2+}(aq)}\\,\\|\\,\\mk{cs}{${hue('concentration', f(1 - 2 * x) + '\\;M')}\\;\\text{Ag}^{+}(aq)}\\,|\\,\\mk{ca}{\\text{Ag}(s)}`,
-      note: 'For every two electrons through the wire, one Cu²⁺ ion enters the anode solution, two Ag⁺ ions plate onto the cathode, and two NO₃⁻ and two Na⁺ ions leave the salt bridge.',
+      note: 'For every two electrons through the wire, one Cu²⁺ enters the anode solution, two Ag⁺ plate out as silver, and two NO₃⁻ and two Na⁺ leave the salt bridge.',
     },
     mg: {
       xmax: 0.075, dec: 3,
-      head: 'Electrons flow from the magnesium anode to the platinum.',
-      labels: ['Mg anode (−)', 'Pt cathode (+)', 'salt bridge', 'MgCl<sub>2</sub>(<em>aq</em>)', 'FeCl<sub>3</sub>(<em>aq</em>), FeCl<sub>2</sub>(<em>aq</em>)'],
-      kinds: [
-        { el: 'Mg', role: 'out', at: 'anode', m: 1, name: 'a magnesium ion, Mg²⁺, entering the solution from the anode' },
-        { el: 'Fe', role: 'in', at: 'cathode', m: 2, name: 'an iron(III) ion, Fe³⁺, about to take an electron at the platinum' },
-        { el: 'Fe', role: 'out', at: 'cathode', m: 2, name: 'an iron(II) ion, Fe²⁺, leaving the platinum' },
-        { el: 'Cl', role: 'out', at: 'left plug', m: 2, name: 'a chloride ion, Cl⁻, leaving the salt bridge' },
-        { el: 'Na', role: 'out', at: 'right plug', m: 2, name: 'a sodium ion, Na⁺, leaving the salt bridge' },
-      ],
-      legend: [['e-', 'electron, e⁻'], ['Mg', 'Mg²⁺'], ['Fe', 'Fe³⁺ in, Fe²⁺ out'], ['Cl', 'Cl⁻'], ['Na', 'Na⁺']],
       tex: (x, f) => `\\mk{an}{\\text{Mg}(s)}\\,|\\,\\mk{as}{${hue('concentration', f(0.1 + x) + '\\;M')}\\;\\text{Mg}^{2+}(aq)}\\,\\|\\,\\mk{cs}{${hue('concentration', f(0.2 - 2 * x) + '\\;M')}\\;\\text{Fe}^{3+}(aq),\\,${hue('concentration', f(0.3 + 2 * x) + '\\;M')}\\;\\text{Fe}^{2+}(aq)}\\,|\\,\\mk{ca}{\\text{Pt}(s)}`,
-      note: 'For every two electrons through the wire, one Mg²⁺ ion enters the anode solution, two Fe³⁺ ions become Fe²⁺ at the platinum, which does not change, and two Cl⁻ and two Na⁺ ions leave the salt bridge.',
+      note: 'For every two electrons through the wire, one Mg²⁺ enters the anode solution, two Fe³⁺ become Fe²⁺ at the platinum, which does not change, and two Cl⁻ and two Na⁺ leave the salt bridge.',
     },
   };
   const cy = cycle(() => T, 1.2);
-  const cell = F.choice(d.controls, { label: '\\text{cell}', options: [{ value: 'cu', label: 'copper and silver(I)' }, { value: 'mg', label: 'magnesium and iron(III)' }], value: 'cu', ms: 0, aria: 'the galvanic cell', onInput: () => cy.reset() });
+  const cell = F.choice(d.controls, { label: '\\text{cell}', options: [{ value: 'cu', label: 'copper and silver(I)' }, { value: 'mg', label: 'magnesium and iron(III)' }], value: 'cu', aria: 'the galvanic cell', onInput: () => cy.reset() });
   const ro = F.readout(d);
+  let hits = []; F.hover(d.stage, () => hits);
 
-  /* the electrodes: where each one's top meets the wire, and the points ions leave from or arrive at */
-  const PLATE = { w: 0.32, d: 0.06, y0: -0.95, y1: 0.75 };
-  const AX = XA - 0.25, CX = XC + 0.25;
-  const MG = { x: XA - 0.35, c: [XA - 0.03, -0.86], r0: 0.32, r1: 0.06, turns: 2.5 };
-  const PT = { x: XC + 0.45, yc: -0.86, r: 0.14, len: 0.85, turns: 8 };
-  const spiral = (u) => { const a = Math.PI + u * MG.turns * TAU, r = MG.r0 - u * (MG.r0 - MG.r1); return [MG.c[0] + r * Math.cos(a), MG.c[1] + r * Math.sin(a), 0]; };
-  const helix = (u) => { const p = u * PT.turns * TAU; return [PT.x - u * PT.len, PT.yc + PT.r * Math.cos(p), PT.r * Math.sin(p)]; };
-  const top = (c) => (c === 'cu' ? [[AX, PLATE.y1, 0], [CX, PLATE.y1, 0]] : [[MG.x, 0.75, 0], [PT.x, 0.75, 0]]);
-  function surface(c, at, k, j) {
-    const a = rnd(k, j), b = rnd(k, j + 7), s = rnd(k, j + 13) < 0.5 ? -1 : 1;
-    if (at === 'left plug' || at === 'right plug') return [(at === 'left plug' ? -XS : XS) + (a - 0.5) * 0.12, YP - 0.06, (b - 0.5) * 0.12];
-    if (c === 'cu') return [(at === 'anode' ? AX : CX) + (a - 0.5) * PLATE.w, PLATE.y0 + 0.1 + b * (YL - PLATE.y0 - 0.25), s * 0.05];
-    if (at === 'anode') { const p = spiral(0.05 + 0.9 * a); return [p[0], p[1], s * 0.06]; }
-    const p = helix(0.05 + 0.9 * a); return [p[0], p[1] + (b - 0.5) * 0.06, p[2] + s * 0.05];
-  }
-  /* a point in the solution about half a unit from p, kept inside its beaker */
-  function away(p, k, j) {
-    const xc = p[0] < 0 ? XA : XC, a = rnd(k, j + 21) * TAU, e = (rnd(k, j + 29) - 0.5) * 1.2;
-    let q = [p[0] + 0.5 * Math.cos(a) * Math.cos(e), p[1] + 0.5 * Math.sin(e) - 0.12, p[2] + 0.5 * Math.sin(a) * Math.cos(e)];
-    const dx = q[0] - xc, dz = q[2], r = Math.hypot(dx, dz), lim = RB - 0.18;
-    if (r > lim) q = [xc + dx * lim / r, q[1], dz * lim / r];
-    q[1] = Math.max(YB + 0.15, Math.min(YL - 0.12, q[1]));
-    return q;
-  }
-
-  /* the tube along a path of points, smoothed */
-  const tube = (pts, r, color, extra) => {
-    const m = new T3D.Mesh(new T3D.TubeGeometry(new T3D.CatmullRomCurve3(pts.map((p) => new T3D.Vector3(p[0], p[1], p[2]))), Math.max(48, pts.length * 3), r, 12, false), F.mesh.mat(color, extra));
-    grp.add(m); return m;
-  };
-  /* straight runs joined by quarter turns of radius rc */
-  function rounded(pts, rc) {
+  /* a polyline with each corner rounded to radius r, and a walker along it by arc length */
+  function rounded(pts, r) {
     const out = [pts[0]];
     for (let i = 1; i < pts.length - 1; i++) {
       const p = pts[i], a = pts[i - 1], b = pts[i + 1];
-      const ua = [a[0] - p[0], a[1] - p[1]].map((x, _, u) => x / Math.hypot(...u)), ub = [b[0] - p[0], b[1] - p[1]].map((x, _, u) => x / Math.hypot(...u));
-      for (let s = 0; s <= 8; s++) {
-        const t = s / 8, A = [p[0] + ua[0] * rc, p[1] + ua[1] * rc], B = [p[0] + ub[0] * rc, p[1] + ub[1] * rc];
-        out.push([(1 - t) ** 2 * A[0] + 2 * (1 - t) * t * p[0] + t * t * B[0], (1 - t) ** 2 * A[1] + 2 * (1 - t) * t * p[1] + t * t * B[1], 0]);
-      }
+      const la = Math.hypot(a[0] - p[0], a[1] - p[1]), lb = Math.hypot(b[0] - p[0], b[1] - p[1]);
+      const A = [p[0] + (a[0] - p[0]) * r / la, p[1] + (a[1] - p[1]) * r / la], B = [p[0] + (b[0] - p[0]) * r / lb, p[1] + (b[1] - p[1]) * r / lb];
+      for (let s = 0; s <= 10; s++) { const t = s / 10; out.push([(1 - t) ** 2 * A[0] + 2 * (1 - t) * t * p[0] + t * t * B[0], (1 - t) ** 2 * A[1] + 2 * (1 - t) * t * p[1] + t * t * B[1]]); }
     }
     out.push(pts[pts.length - 1]); return out;
   }
-  /* even samples along a straight-run path, for the electrons and the tubes */
-  function along(pts, n) {
-    const seg = pts.slice(1).map((p, i) => Math.hypot(p[0] - pts[i][0], p[1] - pts[i][1], p[2] - pts[i][2])), L = seg.reduce((a, b) => a + b, 0);
-    const at = (s) => { let i = 0; while (i < seg.length - 1 && s > seg[i]) { s -= seg[i]; i++; } const t = Math.min(1, s / seg[i]); return pts[i].map((c, k) => c + (pts[i + 1][k] - c) * t); };
-    return { L, at, pts: Array.from({ length: n + 1 }, (_, i) => at((i / n) * L)) };
+  function walker(pts) {
+    const seg = pts.slice(1).map((p, i) => Math.hypot(p[0] - pts[i][0], p[1] - pts[i][1])), L = seg.reduce((a, b) => a + b, 0);
+    const at = (s) => { s = Math.max(0, Math.min(L, s)); let i = 0; while (i < seg.length - 1 && s > seg[i]) { s -= seg[i]; i++; } const t = seg[i] ? s / seg[i] : 0; return [pts[i][0] + (pts[i + 1][0] - pts[i][0]) * t, pts[i][1] + (pts[i + 1][1] - pts[i][1]) * t]; };
+    return { L, at, pts };
   }
-
-  let sig = '', parts = {}, pools = [], electrons = [], wire = null, coils = [];
-  /* ionic radii, drawn as 0.04 + 0.00033 × the radius in pm: Mg²⁺ 72, Cu²⁺ 73, Fe²⁺ 78, Na⁺ 102, Ag⁺ 115, Cl⁻ 181 */
-  const ION_R = { Mg: 0.064, Cu: 0.064, Fe: 0.066, Na: 0.074, Ag: 0.078, Cl: 0.1 }, NE = 16;
-  const palSig = () => [PAL.ink, PAL.soft, PAL.muted, PAL.panel, F.fact(CU_BLUE), ...['Cu', 'Ag', 'Mg', 'Pt', 'Fe', 'Na', 'Cl', 'N', 'O', 'e-'].map((s) => F.el(s)), cell.value].join('|');
-  function ion(kind, name) {
-    const g = new T3D.Group(); grp.add(g);
-    if (kind === 'NO3') {
-      v.pickable(F.mesh.sphere(g, [0, 0, 0], 0.05, F.el('N')), name);
-      for (let i = 0; i < 3; i++) { const a = i * TAU / 3; v.pickable(F.mesh.sphere(g, [0.075 * Math.cos(a), 0.075 * Math.sin(a), 0], 0.045, F.el('O')), name); }
-    } else v.pickable(F.mesh.sphere(g, [0, 0, 0], ION_R[kind], F.el(kind)), name);
-    g.traverse((o) => { if (o.material) { o.material.transparent = true; } });
-    g.position.set(0, -50, 0); return g;
-  }
-  /* the magnesium ribbon at nine thicknesses, one shown at a time, the rest kept out of sight */
-  const mgCoil = (lv) => {
-    const r = 0.042 * (1 - 0.4 * lv / 8), pts = [[MG.x, 0.75, 0], [MG.x, MG.c[1] + 0.12, 0], ...Array.from({ length: 80 }, (_, i) => spiral(i / 79))];
-    return v.pickable(tube(pts, r, F.el('Mg')), 'the magnesium anode, an active electrode');
+  const stroke = (ctx, pts, color, w, cap = 'round') => {
+    ctx.save(); ctx.strokeStyle = color; ctx.lineWidth = w; ctx.lineCap = cap; ctx.lineJoin = 'round';
+    ctx.beginPath(); pts.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y))); ctx.stroke(); ctx.restore();
   };
-  function build() {
-    if (!v.scene || palSig() === sig) return; sig = palSig();
-    v.clear(); parts = {}; coils = [];
-    const c = cell.value, C0 = CELLS[c];
-    const glass = { transparent: true, opacity: 0.1, depthWrite: false, side: T3D.DoubleSide };
-    v.pickable(F.mesh.box(grp, [0, YB - 0.06, 0], [6.4, 0.1, 2.2], PAL.soft), 'bench');
-    for (const [x, who] of [[XA, 'anode'], [XC, 'cathode']]) {
-      const b = new T3D.Mesh(new T3D.CylinderGeometry(RB, RB, YT - YB, 40, 1, true), F.mesh.mat(PAL.ink, glass)); b.position.set(x, (YT + YB) / 2, 0); grp.add(b);
-      const floor = new T3D.Mesh(new T3D.CircleGeometry(RB, 40), F.mesh.mat(PAL.ink, glass)); floor.rotation.x = -Math.PI / 2; floor.position.set(x, YB + 0.005, 0); grp.add(floor);
-      const liq = new T3D.Mesh(new T3D.CylinderGeometry(RB - 0.02, RB - 0.02, YL - YB - 0.01, 40), F.mesh.mat(PAL.muted, { transparent: true, opacity: 0.14, depthWrite: false })); liq.position.set(x, (YL + YB) / 2, 0); grp.add(liq);
-      v.pickable(liq, who === 'anode' ? 'the anode half-cell’s solution' : 'the cathode half-cell’s solution');
-      parts[who + 'Liq'] = liq;
-    }
-    /* the salt bridge, an inverted U of glass with a porous plug at each end */
-    const bridge = rounded([[-XS, YP, 0], [-XS, 0.9, 0], [XS, 0.9, 0], [XS, YP, 0]], 0.3);
-    v.pickable(tube(bridge, 0.13, PAL.ink, glass), 'the salt bridge');
-    tube(bridge, 0.105, PAL.muted, { transparent: true, opacity: 0.16, depthWrite: false });
-    for (const s of [-1, 1]) v.pickable(F.mesh.stick(grp, [s * XS, YP - 0.04, 0], [s * XS, YP + 0.08, 0], 0.12, PAL.muted), 'a porous plug');
-    /* the wire through the external circuit, and the path the electrons follow */
-    const [ta, tc] = top(c);
-    const path = [ta, [ta[0], YW, 0], [tc[0], YW, 0], tc];
-    const smooth = rounded(path, 0.35);
-    v.pickable(tube(smooth, 0.025, PAL.ink), 'the wire of the external circuit');
-    v.pickable(F.mesh.box(grp, [0, YW, 0], [1.1, 0.46, 0.3], PAL.panel), 'the external circuit');
-    F.mesh.box(grp, [0, YW, 0], [1.14, 0.5, 0.26], PAL.muted);
-    wire = along(smooth.map((p) => [p[0], p[1], 0]), 200);
-    electrons = Array.from({ length: NE }, () => v.pickable(F.mesh.sphere(grp, [0, -50, 0], 0.05, F.el('e-')), 'an electron, e⁻, in the wire'));
-    /* the electrodes */
+  const wirePath = walker(rounded([[XA, TOP], [XA, WY], [XC, WY], [XC, TOP]], 46));
+  const bridgeLine = rounded([[BL, PLUG], [BL, BT], [BR, BT], [BR, PLUG]], 64);
+  const bridge = walker(bridgeLine);
+  /* the Mg ribbon: down from the wire, then a flat spiral; the Pt wire: down, then a coil lying along the floor */
+  const SP = { x: 300, y: 540, r0: 70, r1: 14, turns: 2.4 };
+  const spiral = (u) => { const a = Math.PI + u * SP.turns * TAU, r = SP.r0 - u * (SP.r0 - SP.r1); return [SP.x + r * Math.cos(a), SP.y + r * Math.sin(a)]; };
+  const ribbon = [[SP.x - SP.r0, TOP], ...Array.from({ length: 160 }, (_, i) => spiral(i / 159))];
+  const COIL = { x0: XC, x1: 1000, y: 560, r: 30, turns: 7 };
+  const coil = (u) => { const p = u * COIL.turns * TAU; return [COIL.x0 - u * (COIL.x0 - COIL.x1) - 11 * Math.sin(p), COIL.y - COIL.r * Math.cos(p)]; };
+  const ptWire = [[XC, TOP], [XC, COIL.y - COIL.r], ...Array.from({ length: 240 }, (_, i) => coil(i / 239))];
+
+  /* where an ion leaves or meets an electrode, and a point in the solution about 110 units from it */
+  function surface(c, at, k, j, run) {
+    const a = rnd(k, j), b = rnd(k, j + 7);
+    if (at === 'left plug' || at === 'right plug') return [(at === 'left plug' ? BL : BR) + (a - 0.5) * 30, PLUG + 14];
     if (c === 'cu') {
-      for (const [x, el, who] of [[AX, 'Cu', 'anode'], [CX, 'Ag', 'cathode']]) {
-        const name = who === 'anode' ? 'the copper anode, an active electrode' : 'the silver cathode, an active electrode';
-        v.pickable(F.mesh.box(grp, [x, (YL + PLATE.y1) / 2, 0], [PLATE.w, PLATE.y1 - YL, PLATE.d], F.el(el)), name);
-        parts[who] = v.pickable(F.mesh.box(grp, [x, (YL + PLATE.y0) / 2, 0], [PLATE.w, YL - PLATE.y0, PLATE.d], F.el(el)), name);
-      }
-    } else {
-      coils = Array.from({ length: 9 }, (_, lv) => mgCoil(lv));
-      const pt = [[PT.x, 0.75, 0], [PT.x, PT.yc + PT.r + 0.1, 0], ...Array.from({ length: 160 }, (_, i) => helix(i / 159))];
-      v.pickable(tube(pt, 0.022, F.el('Pt')), 'the platinum cathode, an inert electrode');
+      const half = at === 'anode' ? 22 - 9 * run : 22 + 8 * run;
+      return [(at === 'anode' ? XA + half : XC - half) + 8 * (at === 'anode' ? 1 : -1), LEVEL + 30 + b * (BOT - LEVEL - 50)];
     }
-    pools = C0.kinds.map((k) => {
-      const n = k.m * (Math.ceil(LIFE / TAU_E) + 1);
-      return { ...k, meshes: Array.from({ length: n }, () => ion(k.el, k.name)) };
-    });
-    const spots = [[XA - 1.35, 0.55, 0], [XC + 1.35, 0.55, 0], [0, 0.4, 0], [XA, YB - 0.3, 1.0], [XC, YB - 0.3, 1.0]];
-    C0.labels.forEach((s, i) => v.label(s, spots[i], grp, 0));
-    v.label('external circuit', [0, YW + 0.4, 0], grp, 0);
-    v.headline(C0.head);
+    if (at === 'anode') return spiral(0.05 + 0.8 * a);
+    return coil(0.05 + 0.9 * a);
   }
-  function placeIons(t) {
-    const c = cell.value, K = Math.floor(T / TAU_E);
-    pools.forEach((pool, pi) => {
-      pool.meshes.forEach((m) => m.position.set(0, -50, 0));
+  function away(p, at, k, j) {
+    const cx = p[0] < 700 ? LX : RX, ang = rnd(k, j + 21) * TAU;
+    let dir = [Math.cos(ang), Math.sin(ang)];
+    if (at === 'anode' && cell.value === 'cu') dir = [Math.abs(dir[0]) + 0.4, dir[1]];
+    if (at === 'cathode' && cell.value === 'cu') dir = [-Math.abs(dir[0]) - 0.4, dir[1]];
+    if (at.endsWith('plug')) dir = [dir[0], Math.abs(dir[1]) + 0.5];
+    const L = Math.hypot(dir[0], dir[1]), q = [p[0] + 110 * dir[0] / L, p[1] + 110 * dir[1] / L];
+    q[0] = Math.max(cx - HW + 20, Math.min(cx + HW - 20, q[0])); q[1] = Math.max(LEVEL + 22, Math.min(FLOOR - 20, q[1]));
+    return q;
+  }
+  const NAMES = {
+    Cu: 'a copper(II) ion, Cu²⁺, entering the solution from the anode', Ag: 'a silver(I) ion, Ag⁺, about to plate onto the cathode as silver',
+    NO3: 'a nitrate ion, NO₃⁻, leaving the salt bridge for the anode half-cell', Na: 'a sodium ion, Na⁺, leaving the salt bridge for the cathode half-cell',
+    Mg: 'a magnesium ion, Mg²⁺, entering the solution from the anode', Fe3: 'an iron(III) ion, Fe³⁺, about to take an electron at the platinum',
+    Fe2: 'an iron(II) ion, Fe²⁺, leaving the platinum', Cl: 'a chloride ion, Cl⁻, leaving the salt bridge for the anode half-cell',
+  };
+  /* ionic radii drawn as 4 + 0.07 × the radius in pm: Mg²⁺ 72, Cu²⁺ 73, Fe 64 to 78, Na⁺ 102, Ag⁺ 115, Cl⁻ 181 */
+  const ION_R = { Mg: 9, Cu: 9, Fe3: 9, Fe2: 9.5, Na: 11, Ag: 12, Cl: 16.5 };
+  function ion(ctx, kind, x, y, o) {
+    ctx.save(); ctx.globalAlpha = o;
+    if (kind === 'NO3') {
+      for (let i = 0; i < 3; i++) { const a = i * TAU / 3 - Math.PI / 2; dot(ctx, x + 10 * Math.cos(a), y + 10 * Math.sin(a), F.el('O'), true, 6.5); }
+      dot(ctx, x, y, F.el('N'), true, 6.5);
+    } else dot(ctx, x, y, F.el(kind.slice(0, 2)), true, ION_R[kind]);
+    ctx.restore();
+    if (o > 0.4) hits.push({ x, y, r: 16, name: NAMES[kind] });
+  }
+  /* every kind of moving particle: what it is, whether it leaves (out) or arrives (in), where, and how many per event */
+  const KINDS = {
+    cu: [{ k: 'Cu', role: 'out', at: 'anode', m: 1 }, { k: 'Ag', role: 'in', at: 'cathode', m: 2 }, { k: 'NO3', role: 'out', at: 'left plug', m: 2 }, { k: 'Na', role: 'out', at: 'right plug', m: 2 }],
+    mg: [{ k: 'Mg', role: 'out', at: 'anode', m: 1 }, { k: 'Fe3', role: 'in', at: 'cathode', m: 2 }, { k: 'Fe2', role: 'out', at: 'cathode', m: 2 }, { k: 'Cl', role: 'out', at: 'left plug', m: 2 }, { k: 'Na', role: 'out', at: 'right plug', m: 2 }],
+  };
+  function ions(ctx, c, t, run) {
+    const K = Math.floor(T / TE);
+    KINDS[c].forEach((pool, pi) => {
       for (let k = 0; k < K; k++) {
-        const tk = (k + 0.5) * TAU_E, out = pool.role === 'out';
-        const f = out ? (t - tk) / LIFE : 1 + (t - tk) / LIFE;
+        const tk = (k + 0.5) * TE, out = pool.role === 'out';
+        /* a bridge ion first runs down its leg to the plug, then out into the solution */
+        const plug = pool.at.endsWith('plug'), t0 = plug ? tk - LIFE / 2 : tk;
+        const f = out ? (t - t0) / (plug ? 1.5 * LIFE : LIFE) : 1 + (t - tk) / LIFE;
         if (f < 0 || f >= 1 || (!out && t > tk)) continue;
         for (let j = 0; j < pool.m; j++) {
-          /* an Fe²⁺ leaves from where its Fe³⁺ arrived, so both use the cathode's draw for that event */
+          /* an Fe²⁺ leaves from where its Fe³⁺ arrived */
           const seed = pool.at === 'cathode' ? 100 + j : pi * 10 + j;
-          const p = surface(c, pool.at, k, seed), q = away(p, k, seed);
-          const a = out ? p : q, b = out ? q : p, g = pool.meshes[(k * pool.m + j) % pool.meshes.length];
-          g.position.set(a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f, a[2] + (b[2] - a[2]) * f);
-          const o = out ? Math.min(1, (1 - f) / 0.35) : Math.min(1, f / 0.3);
-          g.traverse((x) => { if (x.material) x.material.opacity = o; });
+          const p = surface(c, pool.at, k, seed, run), q = away(p, pool.at, k, seed);
+          let x, y;
+          if (plug) {
+            const left = pool.at === 'left plug', inside = 0.4;
+            if (f < inside) {
+              /* along the bridge from part way across to the plug at its foot */
+              const s0 = bridge.L * (0.5 + (rnd(k, seed + 3) - 0.5) * 0.25), s1 = left ? 0 : bridge.L, s = s0 + (s1 - s0) * (f / inside);
+              [x, y] = bridge.at(s); x += (rnd(k, seed + 5) - 0.5) * 18 * Math.min(1, f * 4);
+            } else { const g = (f - inside) / (1 - inside); x = p[0] + (q[0] - p[0]) * g; y = p[1] + (q[1] - p[1]) * g; }
+          } else {
+            const a = out ? p : q, b = out ? q : p; x = a[0] + (b[0] - a[0]) * f; y = a[1] + (b[1] - a[1]) * f;
+          }
+          const o = out ? Math.min(1, (1 - f) / 0.3, plug ? f / 0.08 : 1) : Math.min(1, f / 0.3);
+          ion(ctx, pool.k, x, y, o);
         }
       }
     });
   }
+
+  function beaker(ctx, cx, tint, name) {
+    const l = cx - HW, r = cx + HW, rc = 22;
+    ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.03);
+    ctx.beginPath(); ctx.moveTo(l, RIM); ctx.lineTo(l, FLOOR - rc); ctx.quadraticCurveTo(l, FLOOR, l + rc, FLOOR); ctx.lineTo(r - rc, FLOOR); ctx.quadraticCurveTo(r, FLOOR, r, FLOOR - rc); ctx.lineTo(r, RIM); ctx.fill();
+    ctx.fillStyle = tint;
+    ctx.beginPath(); ctx.moveTo(l, LEVEL); ctx.lineTo(l, FLOOR - rc); ctx.quadraticCurveTo(l, FLOOR, l + rc, FLOOR); ctx.lineTo(r - rc, FLOOR); ctx.quadraticCurveTo(r, FLOOR, r, FLOOR - rc); ctx.lineTo(r, LEVEL); ctx.fill();
+    ctx.restore();
+    hits.push({ x: cx, y: (LEVEL + FLOOR) / 2 + 60, r: 60, name });
+  }
+  function glass(ctx, cx) {
+    const l = cx - HW, r = cx + HW, rc = 22, g = alpha(PAL.ink, 0.6);
+    ctx.save(); ctx.strokeStyle = g; ctx.lineWidth = 4; ctx.lineJoin = 'round';
+    ctx.beginPath(); ctx.moveTo(l - 16, RIM - 10); ctx.quadraticCurveTo(l, RIM - 6, l, RIM + 14); ctx.lineTo(l, FLOOR - rc); ctx.quadraticCurveTo(l, FLOOR, l + rc, FLOOR);
+    ctx.lineTo(r - rc, FLOOR); ctx.quadraticCurveTo(r, FLOOR, r, FLOOR - rc); ctx.lineTo(r, RIM); ctx.stroke(); ctx.restore();
+    line(ctx, l + 2, LEVEL, r - 2, LEVEL, alpha(PAL.ink, 0.35), 2);
+  }
+  function tag(ctx, s, lx, ly, tx, ty, align) {
+    if (tx != null) line(ctx, align === 'right' ? lx + 8 : align === 'left' ? lx - 8 : lx, align === 'center' ? ly - 16 : ly, tx, ty, alpha(PAL.ink, 0.55), 1.5);
+    text(ctx, s, lx, ly, PAL.ink, { size: 22, align });
+  }
+
   let lastTex = '';
   function draw() {
-    build();
-    const c = cell.value, C0 = CELLS[c], t = cy.now(), x = C0.xmax * t / T, run = x / C0.xmax;
-    if (v.scene) {
-      placeIons(t);
-      const sp = wire.L / NE, vel = 2 * sp / TAU_E;
-      electrons.forEach((m, i) => {
-        const s = (i * sp + vel * t) % wire.L, p = wire.at(s), inBox = Math.abs(p[0]) < 0.55 && p[1] > YW - 0.3;
-        if (inBox) m.position.set(0, -50, 0); else m.position.set(p[0], p[1], p[2]);
-      });
-      if (c === 'cu') {
-        parts.anode.scale.z = 1 - 0.5 * run; parts.cathode.scale.z = 1 + 0.9 * run;
-        parts.anodeLiq.material.color.set(F.fact(CU_BLUE)); parts.anodeLiq.material.opacity = 0.26 + 0.14 * run;
-      } else {
-        const lv = Math.round(run * 8);
-        coils.forEach((m, i) => m.position.set(0, i === lv ? 0 : -50, 0));
-      }
-      v.invalidate();
+    const { ctx } = begin(d.c);
+    hits = [];
+    const c = cell.value, C0 = CELLS[c], t = cy.now(), x = C0.xmax * t / T, run = x / C0.xmax, cu = c === 'cu';
+    const left = cu ? alpha(F.fact(CU_BLUE), 0.22 + 0.18 * run) : alpha(PAL.muted, 0.13), right = alpha(PAL.muted, 0.13);
+    beaker(ctx, LX, left, cu ? 'the anode half-cell: copper(II) nitrate solution' : 'the anode half-cell: magnesium chloride solution');
+    beaker(ctx, RX, right, cu ? 'the cathode half-cell: silver nitrate solution' : 'the cathode half-cell: iron(III) and iron(II) chloride solution');
+
+    /* the electrodes: Cu thins and Ag thickens; the Mg ribbon thins; the Pt coil is unchanged */
+    if (cu) {
+      const wa = 44 - 18 * run, wc = 44 + 16 * run;
+      ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.6); ctx.lineWidth = 1.5;
+      ctx.fillStyle = F.el('Cu'); ctx.fillRect(XA - wa / 2, TOP, wa, BOT - TOP); ctx.strokeRect(XA - wa / 2, TOP, wa, BOT - TOP);
+      ctx.fillStyle = F.el('Ag'); ctx.fillRect(XC - wc / 2, TOP, wc, BOT - TOP); ctx.strokeRect(XC - wc / 2, TOP, wc, BOT - TOP); ctx.restore();
+      hits.push({ x: XA, y: 480, r: 26, name: 'the copper anode, where copper is oxidized' }, { x: XC, y: 480, r: 30, name: 'the silver cathode, where silver(I) ions are reduced' });
+    } else {
+      const w = 13 - 6 * run;
+      stroke(ctx, ribbon, alpha(PAL.ink, 0.6), w + 3); stroke(ctx, ribbon, F.el('Mg'), w);
+      stroke(ctx, ptWire, alpha(PAL.ink, 0.6), 8); stroke(ctx, ptWire, F.el('Pt'), 5);
+      hits.push({ x: SP.x, y: SP.y, r: 70, name: 'the magnesium anode, where magnesium is oxidized' }, { x: (COIL.x0 + COIL.x1) / 2, y: COIL.y, r: 50, name: 'the platinum cathode, an inert electrode where iron(III) ions are reduced' });
     }
-    const fx = (y) => y.toFixed(C0.dec);
-    const s = C0.tex(x, fx);
+
+    /* the salt bridge: glass, its electrolyte, a porous plug at each foot, both feet under the liquid */
+    stroke(ctx, bridgeLine, alpha(PAL.ink, 0.55), BW + 4, 'butt');
+    stroke(ctx, bridgeLine, PAL.panel, BW - 4, 'butt');
+    stroke(ctx, bridgeLine, alpha(PAL.muted, 0.14), BW - 4, 'butt');
+    for (const bx of [BL, BR]) { ctx.save(); ctx.fillStyle = PAL.muted; ctx.fillRect(bx - BW / 2 + 2, PLUG - 16, BW - 4, 16); ctx.restore(); }
+    hits.push({ x: 700, y: BT, r: 36, name: cu ? 'the salt bridge, filled with sodium nitrate solution' : 'the salt bridge, filled with sodium chloride solution' },
+      { x: BL, y: PLUG - 8, r: 18, name: 'a porous plug' }, { x: BR, y: PLUG - 8, r: 18, name: 'a porous plug' });
+    /* the liquid over everything below its surface, then the glass */
+    for (const [cx, tint] of [[LX, left], [RX, right]]) { ctx.save(); ctx.fillStyle = tint; ctx.globalAlpha = 0.5; ctx.fillRect(cx - HW + 2, LEVEL, 2 * HW - 4, FLOOR - LEVEL - 2); ctx.restore(); glass(ctx, cx); }
+    ions(ctx, c, t, run);
+
+    /* the wire and the external circuit, and the electrons, two per event, anode to cathode */
+    stroke(ctx, wirePath.pts, PAL.ink, 5);
+    const NE = 22, sp = wirePath.L / NE, vel = 2 * sp / TE;
+    for (let i = 0; i < NE; i++) {
+      const s = (i * sp + vel * t) % wirePath.L, [ex, ey] = wirePath.at(s);
+      if (Math.abs(ex - BOX.x) < BOX.w / 2 + 6 && Math.abs(ey - BOX.y) < BOX.h) continue;
+      dot(ctx, ex, ey, F.el('e-'), true, 8);
+      hits.push({ x: ex, y: ey, r: 12, name: 'an electron, e⁻, in the wire' });
+    }
+    ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.roundRect(BOX.x - BOX.w / 2, BOX.y - BOX.h / 2, BOX.w, BOX.h, 12); ctx.fill(); ctx.stroke(); ctx.restore();
+    text(ctx, 'external circuit', BOX.x, BOX.y, PAL.ink, { size: 22, align: 'center' });
+    hits.push({ x: BOX.x, y: BOX.y, r: 40, name: 'the external circuit' });
+    text(ctx, 'flow of electrons', 690, 30, PAL.ink, { size: 22, align: 'right' });
+    arrow(ctx, 706, 30, 776, 30, PAL.ink, 3);
+
+    /* labels, all on parts that hold still */
+    text(ctx, 'Flow of anions', 568, 168, PAL.ink, { size: 22, align: 'right' }); arrow(ctx, 640, 168, 584, 168, PAL.ink, 3);
+    text(ctx, 'Flow of cations', 832, 168, PAL.ink, { size: 22, align: 'left' }); arrow(ctx, 760, 168, 816, 168, PAL.ink, 3);
+    tag(ctx, cu ? 'Salt bridge (NaNO₃)' : 'Salt bridge', 700, 330, 700, BT + BW / 2 + 2, 'center');
+    if (cu) {
+      tag(ctx, 'Cu anode', XA - 34, 268, null, null, 'right');
+      tag(ctx, 'Ag cathode', XC + 38, 268, null, null, 'left');
+      tag(ctx, 'Porous plug', 580, 590, BL + 24, PLUG - 4, 'left');
+      tag(ctx, 'Cu(NO₃)₂(aq)', LX, 680, null, null, 'center');
+      tag(ctx, 'AgNO₃(aq)', RX, 680, null, null, 'center');
+    } else {
+      tag(ctx, 'Mg anode', 136, 440, SP.x - SP.r0 - 6, 440, 'right');
+      tag(ctx, 'Pt cathode', 1264, 440, XC + 6, 440, 'left');
+      tag(ctx, 'Porous plug', 580, 590, BL + 24, PLUG - 4, 'left');
+      tag(ctx, 'MgCl₂(aq)', LX, 680, null, null, 'center');
+      tag(ctx, 'FeCl₃(aq) and FeCl₂(aq)', RX, 680, null, null, 'center');
+    }
+
+    /* the key: each moving particle once */
+    const nitrate = (g, px, py) => { for (let i = 0; i < 3; i++) { const a = i * TAU / 3 - Math.PI / 2; dot(g, px + 10 * Math.cos(a), py + 10 * Math.sin(a), F.el('O'), true, 6.5); } dot(g, px, py, F.el('N'), true, 6.5); };
+    const sample = (el, r) => (g, px, py) => dot(g, px, py, F.el(el), true, r);
+    const keys = cu
+      ? [{ s: 'electron, e⁻', draw: sample('e-', 8) }, { s: 'Cu²⁺', draw: sample('Cu', ION_R.Cu) }, { s: 'Ag⁺', draw: sample('Ag', ION_R.Ag) }, { s: 'NO₃⁻', draw: nitrate }, { s: 'Na⁺', draw: sample('Na', ION_R.Na) }]
+      : [{ s: 'electron, e⁻', draw: sample('e-', 8) }, { s: 'Mg²⁺', draw: sample('Mg', ION_R.Mg) }, { s: 'Fe³⁺ in, Fe²⁺ out', draw: sample('Fe', ION_R.Fe3) }, { s: 'Cl⁻', draw: sample('Cl', ION_R.Cl) }, { s: 'Na⁺', draw: sample('Na', ION_R.Na) }];
+    F.legend(ctx, { l: 0, r: 1400, t: 0, b: H }, keys, { corner: 'bottom', row: true, size: 20 });
+
+    const fx = (y) => y.toFixed(C0.dec), s = C0.tex(x, fx);
     if (s !== lastTex) { lastTex = s; ro.set(s, C0.note, { form: c, values: false }); }
-    /* the legend: every particle the cell moves, named once */
-    const { ctx } = begin(cnv);
-    const items = C0.legend, gap = 270, x0 = 700 - (items.length - 1) * gap / 2, y = 50;
-    items.forEach(([s0, name], i) => {
-      const cx = x0 + i * gap;
-      if (s0 === 'NO3') {
-        dot(ctx, cx - 30, y, F.el('N'), true, 9);
-        for (let k = 0; k < 3; k++) { const a = k * TAU / 3 - Math.PI / 2; dot(ctx, cx - 30 + 15 * Math.cos(a), y + 15 * Math.sin(a), F.el('O'), true, 8); }
-      } else dot(ctx, cx - 30, y, F.el(s0), true, s0 === 'e-' ? 8 : 160 * ION_R[s0]);
-      text(ctx, name, cx - 8, y, PAL.ink, { size: 26, align: 'left' });
-    });
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();

@@ -27,7 +27,8 @@
       {
         "model": "claude-opus-5-5",
         "effort": "low"
-      }
+      },
+      {"model": "claude-opus-5-5"}
     ]
   },
   "built": "2026-09-28",
@@ -51,7 +52,8 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "curve names over the drop lines; note without plain k or the caption"
-        }
+        },
+        {"model": "claude-opus-5-5", "part": "note made Example 11.1's k line; caption cut"}
       ]
     },
     {"id": "fig-o2-bubbles", "kind": "photo", "number": "11.9", "draws": []},
@@ -88,7 +90,8 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "parcel kept in the water; depth title and Pg label off the bracket"
-        }
+        },
+        {"model": "claude-opus-5-5", "part": "depth title on its axis; released line adds up; caption cut"}
       ]
     },
     {"id": "fig-antifreeze", "kind": "photo", "number": "11.13", "draws": []},
@@ -111,7 +114,8 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "curve names over the drop line; notes that restated the headline dropped"
-        }
+        },
+        {"model": "claude-opus-5-5", "part": "KCl curve from the image (31 g at 0 °C); caption cut"}
       ]
     },
     {"id": "fig-handwarmer", "kind": "photo", "number": "11.17", "draws": []}

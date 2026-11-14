@@ -123,7 +123,17 @@ function arcPts(a, b, R, m) {
   for (let i = 0; i <= 32; i++) { const t = i / 32; pts.push(V.mul(opp ? V.add(V.mul(a, Math.cos(Math.PI * t)), V.mul(m, Math.sin(Math.PI * t))) : slerp(a, b, t), R)); }
   return { pts, mid: V.mul(opp ? m : V.unit(V.add(a, b)), R + 0.22) };
 }
-const FREE = { spin: 'idle', views: [{ label: 'front', yaw: 0.35, pitch: 0.22 }, { label: 'down the axis', yaw: 0, pitch: Math.PI / 2 }] };
+const FREE = { spin: 'idle' };
+/* the elements a scene draws, named in a key row under it; nothing is written on an atom */
+const ELNAME = { Ag: 'silver', Cu: 'copper', Zn: 'zinc', Ni: 'nickel', Pt: 'platinum', Co: 'cobalt', V: 'vanadium', Cr: 'chromium', Zr: 'zirconium', Re: 'rhenium', Mo: 'molybdenum', M: 'metal ion M', N: 'nitrogen', H: 'hydrogen', O: 'oxygen', C: 'carbon', Cl: 'chlorine', F: 'fluorine' };
+const ORDER = ['Ag', 'Cu', 'Zn', 'Ni', 'Pt', 'Co', 'V', 'Cr', 'Zr', 'Re', 'Mo', 'M', 'Cl', 'F', 'O', 'N', 'C', 'H'];
+function keyRow(c, syms, extra = []) {
+  const { ctx } = F.begin(c);
+  const disc = (s) => (cc, x, y) => { cc.save(); cc.beginPath(); cc.arc(x, y, Math.max(6, 22 * rad(s)), 0, 2 * Math.PI); cc.fillStyle = F.el(s); cc.fill(); cc.lineWidth = 1.5; cc.strokeStyle = F.alpha(PAL.ink, s === 'H' ? 0.8 : 0.45); cc.stroke(); cc.restore(); };
+  const list = ORDER.filter((s) => syms.includes(s)).map((s) => ({ s: ELNAME[s], draw: disc(s) }));
+  F.legend(ctx, { l: 40, r: 1360, t: 0, b: 64 }, [...list, ...extra], { corner: 'top', row: true, panel: false, size: 20 });
+}
+const symsOf = (atoms) => [...new Set(atoms.filter((t) => t.a > 0.5).map((t) => t.sym))];
 const OCT = [[0, 1, 0], [0, -1, 0], [1, 0, 0], [-1, 0, 0], [0, 0, 1], [0, 0, -1]];
 
 /* =====================================================================
@@ -133,8 +143,9 @@ const OCT = [[0, 1, 0], [0, -1, 0], [1, 0, 0], [-1, 0, 0], [0, 0, 1], [0, 0, -1]
 ===================================================================== */
 (function () {
   const d = sim('sim-complex-geometry');
-  const v = F.view3d(d.stage, { ...FREE, h: 760, dist: 9.2 });
-  const g = v.part(0); g.position.y = -0.4;
+  const v = F.view3d(d.stage, { ...FREE, h: 680, dist: 9.6 });
+  const key = F.makeCanvas(d.stage, 64);
+  const g = v.part(0); g.position.y = -0.2;
   const K = 0.62;
   const eq = (n, off = 90) => Array.from({ length: n }, (_, i) => dirOf(90, off + (360 / n) * i));
   const GEOM = {
@@ -188,13 +199,12 @@ const OCT = [[0, 1, 0], [0, -1, 0], [1, 0, 0], [-1, 0, 0], [0, 0, 1], [0, 0, -1]
     const terms = kinds.map((t) => { const n = sites.filter((s) => s.type === t).length / (t === 'en' ? 2 : 1); return { t, n, q: LIG[t].q }; });
     const sum = terms.reduce((s, t) => s + t.n * t.q, 0), x = q - sum;
     const termTex = terms.map((t, i) => `\\mk{t${i}}{${t.n === 1 ? '' : t.n}${t.n === 1 ? signed(t.q) : '(' + signed(t.q) + ')'}}`).join(' + ');
-    const tex = `\\mk{ion}{${TEXION[id]}}:\\ \\mk{q}{${signed(q)}} = ${termTex} + \\mk{x}{x},\\quad \\mk{r}{x = ${signed(x)}}`;
+    const tex = `\\mk{ion}{${TEXION[id]}}:\\ \\mk{q}{${signed(q)}} = ${termTex} + \\mk{x}{x}\\;\\Rightarrow\\; \\mk{r}{x = ${signed(x)}}`;
     const cn = G.dirs.length;
-    const what = bridges ? `three bidentate en ligands place ${NUM[cn]} nitrogen donor atoms`
-      : kinds.length > 1 ? `${kinds.map((t) => `${NUM[sites.filter((s) => s.type === t).length]} ${LIGNAME[t]}`).join(' and ')} ligands place ${NUM[cn]} donor atoms`
-      : `${NUM[cn]} ${LIGNAME[kinds[0]]} ligands place their donor atoms`;
+    const what = bridges ? `three en ligands, ${NUM[cn]} nitrogen donor atoms`
+      : `${kinds.map((t) => `${NUM[sites.filter((s) => s.type === t).length]} ${LIGNAME[t]}`).join(' and ')} ligand${cn > 1 ? 's' : ''}, donor atoms`;
     const shape = { linear: 'in a line on either side of the metal', trigonal: 'at the corners of a triangle', tetrahedral: 'at the corners of a tetrahedron', square: 'at the corners of a square', tbp: 'at the corners of a trigonal bipyramid', spy: 'at the corners of a square pyramid', octahedral: 'at the corners of an octahedron', pbp: 'at the corners of a pentagonal bipyramid', sap: 'at the corners of a square antiprism', dodec: 'at the corners of a dodecahedron' }[geom];
-    const head = `In ${label} ${what} ${shape}: the coordination number is ${NUM[cn]}${label.startsWith('K₂') ? ', and the potassium ions lie outside the coordination sphere' : ''}.`;
+    const head = `${label}: ${what} ${shape}, coordination number ${cn}${label.startsWith('K₂') ? '; the K⁺ ions lie outside the coordination sphere' : ''}.`;
     const note = { tetrahedral: 'Each pair of ligands forms an angle of $\\htmlClass{kv-angle}{109.5^\\circ}$.', square: 'Each ligand has two others at $\\htmlClass{kv-angle}{90^\\circ}$, the cis positions, and one at $\\htmlClass{kv-angle}{180^\\circ}$, the trans position.', octahedral: 'Adjacent donor atoms are $\\htmlClass{kv-angle}{90^\\circ}$ apart about the central atom.' }[geom] || '';
     C[id] = { id, label, metal, geom, sites, bridges: bridges || [], tex, terms: terms.length, head, note, kinds };
   });
@@ -213,21 +223,11 @@ const OCT = [[0, 1, 0], [0, -1, 0], [1, 0, 0], [-1, 0, 0], [0, 0, 1], [0, 0, -1]
       const [i, j, lab] = arc, a = donors[i], b = donors[j];
       const { pts, mid } = arcPts(a.d, b.d, 0.62, null);
       polyline(g, pts, F.C('angle'));
-      plain(hued(v.label(lab, mid, g, 0), 'angle'), (k - 0.6) / 0.4);
+      plain(hued(v.label(lab, mid, g, 0, 'bare'), 'angle'), (k - 0.6) / 0.4);
     }
-    const lab = (s, p, dy) => plain(v.label(s, p, g, dy), k < 0.5 ? 1 - 2 * k : 2 * k - 1);
-    lab(S.metal, [0, 0, 0], -38);
-    /* one label per kind of ligand, on the member that shows farthest out to the side and clear of the headline */
-    const W = v.wrap.clientWidth || 1;
-    const side = (dd) => { const [x, y] = v.project(V.mul(dd.d, dd.r * K), g); return Math.abs(x - W / 2) - 4 * Math.max(0, 120 - y); };
-    S.kinds.forEach((t) => {
-      const idx = S.sites.map((s, i) => i).filter((i) => S.sites[i].type === t && donors[i]).sort((i, j) => side(donors[j]) - side(donors[i]))[0];
-      if (idx === undefined) return;
-      const dd = donors[idx];
-      lab(LIG[t].label, V.mul(dd.d, (dd.r + (t === 'CN' || t === 'CO' ? 1.15 : 0) + (t === 'NH3' || t === 'OH2' ? 1.3 : 0.85)) * K), 0);
-    });
+    keyRow(key, symsOf(atoms));
     v.headline(B.head);
-    ro.set(B.tex, B.note, { form: B.terms });
+    ro.set(B.tex, '', { form: B.terms });
   }
   still(d, draw);
 })();
@@ -239,8 +239,9 @@ const OCT = [[0, 1, 0], [0, -1, 0], [1, 0, 0], [-1, 0, 0], [0, 0, 1], [0, 0, -1]
 ===================================================================== */
 (function () {
   const d = sim('sim-cis-trans');
-  const v = F.view3d(d.stage, { spin: 'idle', views: [{ label: 'front', yaw: 0.35, pitch: 0.22 }, { label: 'from above', yaw: 0, pitch: Math.PI / 2 }], h: 700, dist: 7.6 });
-  const g = v.part(0); g.position.y = -0.2;
+  const v = F.view3d(d.stage, { spin: 'idle', h: 620, dist: 7.6 });
+  const key = F.makeCanvas(d.stage, 64);
+  const g = v.part(0); g.position.y = -0.35;
   const K = 0.62;
   const [Y, Yn, X, Xn, Z, Zn] = OCT;
   const site = (dd, type, r) => ({ d: dd, type, r });
@@ -270,14 +271,12 @@ const OCT = [[0, 1, 0], [0, -1, 0], [1, 0, 0], [-1, 0, 0], [0, 0, 1], [0, 0, -1]
     const { pts, mid } = arcPts(a.d, b.d, 0.62, m);
     polyline(g, pts, F.C('angle'));
     const cis = iso.value === 'cis', P = CPX[cx.value], M = P.metal;
-    if (k > 0.6) plain(hued(v.label(cis ? '90°' : '180°', mid, g, 0), 'angle'), (k - 0.6) / 0.4);
-    v.label(M, [0, 0, 0], g, -38);
-    v.label('Cl', V.mul(donors[2].d, (donors[2].r + 0.85) * K), g, 0);
-    v.label(P.L, V.mul(donors[3].d, (donors[3].r + 1.3) * K), g, 0);
+    if (k > 0.6) plain(hued(v.label(cis ? '90°' : '180°', mid, g, 0, 'bare'), 'angle'), (k - 0.6) / 0.4);
+    keyRow(key, symsOf(atoms));
     const colour = P.colour ? (cis ? `, which is violet${swatch(VIOLET)}` : `, which is green${swatch(GREEN)}`) : '';
-    v.headline(cis ? `In <i>cis</i>-${P.name}${colour}, the two chloride ligands are adjacent.` : `In <i>trans</i>-${P.name}${colour}, the two chloride ligands are directly across from one another.`);
+    v.headline(cis ? `In <i>cis</i>-${P.name}${colour}, the two chloride ligands are adjacent.` : `In <i>trans</i>-${P.name}${colour}, each ligand is directly across from an identical one.`);
     ro.set(`\\htmlClass{kv-angle}{\\angle\\text{Cl–${M}–Cl}} = ${cis ? 90 : 180}^\\circ`,
-      cis ? `The two ${M}–Cl bond dipoles lie on one side of the metal and do not cancel: the ${M === 'Pt' ? 'molecule' : 'ion'} is polar.` : `Each ligand is directly across from an identical ligand, so the bond dipoles cancel: the ${M === 'Pt' ? 'molecule' : 'ion'} is nonpolar.`);
+      cis ? `The two ${M}–Cl bond dipoles lie on one side of the metal and do not cancel.` : `Opposite bond dipoles cancel.`);
   }
   still(d, draw);
 })();
@@ -289,8 +288,9 @@ const OCT = [[0, 1, 0], [0, -1, 0], [1, 0, 0], [-1, 0, 0], [0, 0, 1], [0, 0, -1]
 ===================================================================== */
 (function () {
   const d = sim('sim-optical-isomers');
-  const v = F.view3d(d.stage, { spin: 'off', tilt: 0.3, views: [{ label: 'front', yaw: 0, pitch: 0.3 }, { label: 'from above', yaw: 0, pitch: Math.PI / 2 }], h: 700, dist: 9.6 });
-  const g = v.part(0); g.position.y = -0.2;
+  const v = F.view3d(d.stage, { spin: 'off', tilt: 0.12, h: 620, dist: 8.4, yaw: [-0.9, 0.9] });
+  const key = F.makeCanvas(d.stage, 64);
+  const g = v.part(0); g.position.y = -0.1;
   const K = 0.5, D = 3.7 * K;
   const site = (i, type, r) => ({ d: OCT[i], type, r });
   const CPX = {
@@ -304,12 +304,20 @@ const OCT = [[0, 1, 0], [0, -1, 0], [1, 0, 0], [-1, 0, 0], [0, 0, 1], [0, 0, -1]
   [[1, 1, 1], [1, 1, -1], [1, -1, 1], [-1, 1, 1]].forEach((n) => [1, 2].forEach((q) => ROTS.push([V.unit(n), (q * 2 * Math.PI) / 3])));
   [[1, 1, 0], [1, -1, 0], [1, 0, 1], [1, 0, -1], [0, 1, 1], [0, 1, -1]].forEach((n) => ROTS.push([V.unit(n), Math.PI]));
   const mirror = (p) => [-p[0], p[1], p[2]];
+  /* each complex is turned so that the threefold axis of [M(en)₃]ⁿ⁺, (−1, 1, 1) in the octahedron's frame, points at the
+     reader: the three rings then stand as a propeller, and the two hands of the propeller are the two isomers; and */
+  /* the plane y = z of the octahedron, which holds that axis and is one of its mirror planes, is laid on the mirror
+     between the two, so the image's donor atoms sit on the same six corners and the octahedron's rotations can fit it */
+  const U3 = V.unit([-1, 1, 1]), U1 = V.unit([0, 1, -1]), U2 = V.cross(U3, U1);
+  const Q = (p) => [V.dot(p, U1), V.dot(p, U2), V.dot(p, U3)];
   /* for each complex, the rotation of its mirror image that leaves the fewest atoms without a twin of the same element */
   Object.values(CPX).forEach((c) => {
     const S = { metal: c.metal, sites: c.sites, bridges: c.bridges };
-    const orig = blend(S, S, 1, K).atoms;
+    const orig = blend(S, S, 1, K).atoms.map((t) => ({ ...t, p: Q(t.p) }));
     let best = null;
-    ROTS.forEach(([n, a]) => {
+    /* the octahedron's rotations, carried into the turned frame */
+    ROTS.forEach(([n0, a]) => {
+      const n = Q(n0);
       const miss = orig.filter((t) => !orig.some((o) => o.sym === t.sym && V.len(V.sub(o.p, rot(mirror(t.p), n, a))) < 0.15)).length;
       if (!best || miss < best.miss || (miss === best.miss && a < best.a)) best = { n, a, miss };
     });
@@ -322,9 +330,10 @@ const OCT = [[0, 1, 0], [0, -1, 0], [1, 0, 0], [-1, 0, 0], [0, 0, 1], [0, 0, -1]
     const k = cx.k, A = CPX[cx.from], B = CPX[cx.value];
     const t = F.ease.smooth(arr.mix((x) => (x === 'over' ? 1 : 0)));
     const { n, a } = B.best;
-    const left = blend(A.S, B.S, k, K, [-D * (1 - t), 0, 0]);
+    const left = blend(A.S, B.S, k, K);
+    left.atoms.forEach((x) => { x.p = V.add(Q(x.p), [-D * (1 - t), 0, 0]); });
     const right = blend(A.S, B.S, k, K, [0, 0, 0], { ghost: true, s: 1 + 0.06 * t });
-    right.atoms.forEach((x) => { x.p = V.add(rot(mirror(x.p), n, a * t), [D * (1 - t), 0, 0]); x.name = 'mirror image: ' + x.name; });
+    right.atoms.forEach((x) => { x.p = V.add(rot(mirror(Q(x.p)), n, a * t), [D * (1 - t), 0, 0]); x.name = 'mirror image: ' + x.name; });
     const off = left.atoms.length;
     const atoms = [...left.atoms, ...right.atoms], bonds = [...left.bonds, ...right.bonds.map((b) => ({ ...b, i: b.i + off, j: b.j + off }))];
     v.clear();
@@ -332,19 +341,14 @@ const OCT = [[0, 1, 0], [0, -1, 0], [1, 0, 0], [-1, 0, 0], [0, 0, 1], [0, 0, -1]
     if (t < 0.99) {
       const h = 2.9 * K, l = polyline(g, [[0, h, h], [0, h, -h], [0, -h, -h], [0, -h, h], [0, h, h]], PAL.muted);
       l.material.transparent = true; l.material.opacity = 1 - t;
-      plain(v.label('mirror', [0, -h, 0], g, -22), 1 - t);
+      plain(v.label('mirror', [0, -h - 0.25, 0], g, 0, 'bare'), 1 - t);
     }
-    const S = k < 0.5 ? A : B;
-    v.label(S.metal, left.atoms[0].p, g, -34);
-    const ci = S.sites.map((s, i) => i).filter((i) => S.sites[i].type === 'Cl').sort((i, j) => OCT[i][1] - OCT[j][1])[0] ?? -1;
-    if (ci >= 0) v.label('Cl', V.add(left.atoms[0].p, V.mul(OCT[ci], 3.15 * K)), g, 0);
-    const cs = left.atoms.filter((x) => x.sym === 'C' && x.a > 0.5).sort((p, q) => p.p[1] - q.p[1]);
-    if (cs.length) v.label('en', cs[0].p, g, -22);
+    keyRow(key, symsOf(atoms), t > 0.5 ? [{ s: 'the image, seen through', draw: (cc, x, y) => { cc.save(); cc.globalAlpha = 0.4; cc.beginPath(); cc.arc(x, y, 9, 0, 2 * Math.PI); cc.fillStyle = F.el('C'); cc.fill(); cc.restore(); } }] : []);
     const over = arr.value === 'over', miss = B.best.miss;
     v.headline(over
-      ? (miss ? `Turned to its best fit, the mirror image of ${B.name} still leaves ${miss} atoms where the original has none: the two are optical isomers.` : `Turned to fit, the mirror image of ${B.name} lands atom for atom on the original: it is the same ion, with no optical isomer.`)
-      : `${B.name} stands beside its mirror image, reflected in the plane between them.`);
-    ro.set(`\\text{atoms of the image without a twin} = ${miss}\\ \\text{of}\\ ${B.total}`);
+      ? (miss ? `Turned to its best fit, the mirror image of ${B.name} still leaves ${miss} atoms where the original has none: the two are optical isomers.` : `Turned to fit, the mirror image of ${B.name} lands atom for atom on the original: it is the same ion.`)
+      : `${B.name} beside its mirror image.`);
+    ro.set(`\\text{atoms of the image with no match} = ${miss}\\ \\text{of}\\ ${B.total}`);
   }
   still(d, draw);
 })();

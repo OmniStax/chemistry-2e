@@ -40,12 +40,12 @@ function spin(ctx, x, y, up, h, color, w = 3) {
   const d = sim('sim-transition-series', 790);
   const range = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => a + i);
   const SERIES = {
-    first: { z: range(21, 29), head: 'The first transition series runs across period 4 from scandium to copper.', ro: '{}_{21}\\text{Sc}\\ \\text{to}\\ {}_{29}\\text{Cu}\\text{:}\\ 9\\ \\text{elements, filling the}\\ 3d\\ \\text{subshell}' },
-    second: { z: range(39, 47), head: 'The second transition series runs across period 5 from yttrium to silver.', ro: '{}_{39}\\text{Y}\\ \\text{to}\\ {}_{47}\\text{Ag}\\text{:}\\ 9\\ \\text{elements, filling the}\\ 4d\\ \\text{subshell}' },
-    third: { z: [57, ...range(72, 79)], head: 'The third transition series is lanthanum and the elements of period 6 from hafnium to gold.', ro: '{}_{57}\\text{La}\\ \\text{and}\\ {}_{72}\\text{Hf}\\ \\text{to}\\ {}_{79}\\text{Au}\\text{:}\\ 9\\ \\text{elements, filling the}\\ 5d\\ \\text{subshell}' },
-    fourth: { z: [89, ...range(104, 111)], head: 'The fourth transition series is actinium and the elements of period 7 from rutherfordium to roentgenium.', ro: '{}_{89}\\text{Ac}\\ \\text{and}\\ {}_{104}\\text{Rf}\\ \\text{to}\\ {}_{111}\\text{Rg}\\text{:}\\ 9\\ \\text{elements, filling the}\\ 6d\\ \\text{subshell}' },
-    lanthanides: { z: range(57, 71), head: 'The lanthanide series is lanthanum and the elements from cerium to lutetium.', ro: '{}_{57}\\text{La}\\ \\text{to}\\ {}_{71}\\text{Lu}\\text{:}\\ 15\\ \\text{elements, filling the}\\ 4f\\ \\text{subshell}' },
-    actinides: { z: range(89, 103), head: 'The actinide series is actinium and the elements from thorium to lawrencium.', ro: '{}_{89}\\text{Ac}\\ \\text{to}\\ {}_{103}\\text{Lr}\\text{:}\\ 15\\ \\text{elements, filling the}\\ 5f\\ \\text{subshell}' },
+    first: { z: range(21, 29), head: 'The first transition series fills the $3d$ subshell across period 4.', ro: '{}_{21}\\text{Sc}\\ \\text{to}\\ {}_{29}\\text{Cu}\\text{:}\\ 9\\ \\text{elements}' },
+    second: { z: range(39, 47), head: 'The second transition series fills the $4d$ subshell across period 5.', ro: '{}_{39}\\text{Y}\\ \\text{to}\\ {}_{47}\\text{Ag}\\text{:}\\ 9\\ \\text{elements}' },
+    third: { z: [57, ...range(72, 79)], head: 'The third transition series fills the $5d$ subshell: lanthanum, then hafnium to gold.', ro: '{}_{57}\\text{La}\\ \\text{and}\\ {}_{72}\\text{Hf}\\ \\text{to}\\ {}_{79}\\text{Au}\\text{:}\\ 9\\ \\text{elements}' },
+    fourth: { z: [89, ...range(104, 111)], head: 'The fourth transition series fills the $6d$ subshell: actinium, then rutherfordium to roentgenium.', ro: '{}_{89}\\text{Ac}\\ \\text{and}\\ {}_{104}\\text{Rf}\\ \\text{to}\\ {}_{111}\\text{Rg}\\text{:}\\ 9\\ \\text{elements}' },
+    lanthanides: { z: range(57, 71), head: 'Cerium to lutetium fill the $4f$ subshell; lanthanum joins the lanthanides by its behavior.', ro: '{}_{57}\\text{La}\\ \\text{to}\\ {}_{71}\\text{Lu}\\text{:}\\ 15\\ \\text{elements}' },
+    actinides: { z: range(89, 103), head: 'Thorium to lawrencium fill the $5f$ subshell; actinium joins the actinides by its behavior.', ro: '{}_{89}\\text{Ac}\\ \\text{to}\\ {}_{103}\\text{Lr}\\text{:}\\ 15\\ \\text{elements}' },
   };
   const pick = F.choice(d.controls, {
     label: '\\text{series}', aria: 'the series lit on the table', value: 'first',
@@ -98,12 +98,12 @@ function spin(ctx, x, y, up, h, color, w = 3) {
 
 /* =====================================================================
    FIGURE 19.4: the oxidation states of the first transition series.
-   The book's chart, the chosen metal's column lit; beside it the metal's
-   4s and 3d orbital boxes, the electrons its highest state removes (the
-   4s first) drawn hollow and numbered in the order they leave. Still.
+   The book's chart, the chosen metal's column lit; beside it the atom's
+   4s and 3d boxes above the ion's in its highest state, the electrons
+   that state removes (the 4s first) left as faint numbered ghosts. Still.
 ===================================================================== */
 (function () {
-  const d = sim('sim-oxidation-states', 600);
+  const d = sim('sim-oxidation-states', 560);
   /* symbol, name, Z, 4s and 3d electrons of the atom, the states the book's chart prints */
   const M = [
     ['Sc', 'Scandium', 21, 2, 1, [3]], ['Ti', 'Titanium', 22, 2, 2, [3, 4]], ['V', 'Vanadium', 23, 2, 3, [2, 3, 4, 5]],
@@ -116,27 +116,38 @@ function spin(ctx, x, y, up, h, color, w = 3) {
   });
   const of = (v) => M.find((m) => m.sym === v);
   /* the chart */
-  const GX = 70, GW = 62, GY = 150, RH = 50;
-  /* the orbital boxes */
-  const SX = 820, DX = 940, BY = 300, BW = 66, BH = 60;
+  const GX = 50, GW = 62, GY = 150, RH = 49;
+  /* the orbital boxes: the atom's row above the ion's */
+  const SX = 840, DX = 960, BW = 76, BH = 70, Y1 = 220, Y2 = 420;
   /* every electron of the atom: where it sits and the order it leaves in (4s first, then 3d from the last one placed) */
   function electrons(m) {
     const out = [];
-    for (let i = 0; i < m.s; i++) out.push({ x: SX + (i === 0 ? 0.36 : 0.64) * BW, up: i === 0, sub: 's', i });
-    for (let i = 0; i < m.d; i++) { const box = i < 5 ? i : i - 5, up = i < 5; out.push({ x: DX + box * BW + (up ? 0.36 : 0.64) * BW, up, sub: 'd', i }); }
+    for (let i = 0; i < m.s; i++) out.push({ x: SX + (m.s === 1 ? 0.5 : i === 0 ? 0.36 : 0.64) * BW, up: i === 0, sub: 's', i });
+    for (let i = 0; i < m.d; i++) {
+      const box = i < 5 ? i : i - 5, up = i < 5, two = m.d > 5 && box < m.d - 5;
+      out.push({ x: DX + box * BW + (two ? (up ? 0.36 : 0.64) : 0.5) * BW, up, sub: 'd', i });
+    }
     const sOut = out.filter((e) => e.sub === 's').reverse(), dOut = out.filter((e) => e.sub === 'd').reverse();
     [...sOut, ...dOut].forEach((e, n) => { e.order = n + 1; e.lost = n + 1 <= m.top; });
     return out;
   }
-  let hits = []; F.hover(d.stage, () => hits);
+  const ORD = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh'];
   const cfg = (s, dd) => (dd ? `3d^{${dd}}` : '') + (s ? `4s^{${s}}` : '');
+  const boxes = (ctx, y) => {
+    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2;
+    ctx.strokeRect(SX, y - BH / 2, BW, BH);
+    for (let b = 0; b < 5; b++) ctx.strokeRect(DX + b * BW, y - BH / 2, BW, BH);
+    ctx.restore();
+    text(ctx, '[Ar]', SX - 18, y, PAL.ink, { size: 22, align: 'right' });
+  };
+  let hits = []; F.hover(d.stage, () => hits);
   function draw() {
     const { ctx } = begin(d.c);
     const m = of(pick.value);
     hits = [];
     /* the chart, as the book prints it */
     const gx = pick.mix((v) => GX + M.indexOf(of(v)) * GW);
-    ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.12); ctx.fillRect(gx + 2, GY - 52, GW - 4, 7 * RH + 56); ctx.restore();
+    ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.12); ctx.fillRect(gx + 2, GY - 54, GW - 4, 7 * RH + 58); ctx.restore();
     M.forEach((q, c) => {
       const x = GX + c * GW + GW / 2, sel = q.sym === m.sym;
       text(ctx, q.sym, x + 6, GY - 22, PAL.ink, { size: 22, weight: sel ? 600 : 400, align: 'center' });
@@ -152,33 +163,39 @@ function spin(ctx, x, y, up, h, color, w = 3) {
     ctx.save(); ctx.strokeStyle = PAL.rule; ctx.lineWidth = 1.5;
     for (let n = 0; n <= 7; n++) { ctx.beginPath(); ctx.moveTo(GX, GY + n * RH); ctx.lineTo(GX + 10 * GW, GY + n * RH); ctx.stroke(); }
     ctx.restore();
-    /* the orbital boxes of the chosen metal */
-    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2;
-    ctx.strokeRect(SX, BY - BH / 2, BW, BH);
-    for (let b = 0; b < 5; b++) ctx.strokeRect(DX + b * BW, BY - BH / 2, BW, BH);
-    ctx.restore();
-    text(ctx, '4', SX + BW / 2 - 5, BY + BH / 2 + 26, PAL.ink, { size: 22, align: 'right' });
-    text(ctx, 's', SX + BW / 2 - 5, BY + BH / 2 + 26, PAL.ink, { size: 22, italic: true });
-    text(ctx, '3', DX + 2.5 * BW - 5, BY + BH / 2 + 26, PAL.ink, { size: 22, align: 'right' });
-    text(ctx, 'd', DX + 2.5 * BW - 5, BY + BH / 2 + 26, PAL.ink, { size: 22, italic: true });
-    text(ctx, '[Ar]', SX - 24, BY, PAL.ink, { size: 22, align: 'right' });
+    /* the atom above, the ion in its highest state below */
+    boxes(ctx, Y1); boxes(ctx, Y2);
+    text(ctx, '4s', SX + BW / 2, Y1 - BH / 2 - 20, PAL.ink, { size: 22, align: 'center' });
+    text(ctx, '3d', DX + 2.5 * BW, Y1 - BH / 2 - 20, PAL.ink, { size: 22, align: 'center' });
     M.forEach((q) => pick.only(ctx, q.sym, () => {
+      text(ctx, q.sym, SX - 84, Y1, PAL.ink, { size: 24, weight: 600, align: 'right' });
+      text(ctx, q.sym + '^{' + q.top + '+}', SX - 84, Y2, PAL.ink, { size: 24, weight: 600, align: 'right' });
       electrons(q).forEach((e) => {
-        spin(ctx, e.x, BY, e.up, BH - 16, e.lost ? alpha(PAL.ink, 0.28) : PAL.ink, e.lost ? 2 : 3.5);
-        if (e.lost) text(ctx, String(e.order), e.x, BY - BH / 2 - 16, PAL.muted, { size: 16, align: 'center' });
+        spin(ctx, e.x, Y1, e.up, BH - 22, PAL.ink, 3.5);
+        if (e.lost) {
+          spin(ctx, e.x, Y2, e.up, BH - 22, alpha(PAL.ink, 0.22), 2.5);
+          text(ctx, String(e.order), e.x, Y2 + BH / 2 + 18, PAL.muted, { size: 17, align: 'center' });
+        } else spin(ctx, e.x, Y2, e.up, BH - 22, PAL.ink, 3.5);
       });
+      const n = q.top;
+      arrow(ctx, SX - 110, Y1 + BH / 2 + 14, SX - 110, Y2 - BH / 2 - 14, PAL.ink, 3);
+      text(ctx, '− ' + n + 'e⁻', SX - 122, (Y1 + Y2) / 2, PAL.ink, { size: 22, align: 'right' });
     }, [0, 0]));
-    electrons(m).forEach((e) => hits.push({ x: e.x, y: BY, r: 14, name: (e.lost ? 'lost in ' + m.sym + ' ' + m.top + '+, removed ' + ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh'][e.order - 1] : 'kept in ' + m.sym + ' ' + m.top + '+') + ': a ' + (e.sub === 's' ? '4s' : '3d') + ' electron, spin ' + (e.up ? 'up' : 'down') }));
-    /* the key to the drawing */
-    const KY = 470, KX = SX - 60;
-    spin(ctx, KX + 10, KY, true, 34, PAL.ink, 3.5); text(ctx, 'kept', KX + 30, KY, PAL.ink, { size: 18 });
-    spin(ctx, KX + 110, KY, true, 34, alpha(PAL.ink, 0.28), 2); text(ctx, 'lost in the highest state, numbered in order', KX + 130, KY, PAL.ink, { size: 18 });
+    electrons(m).forEach((e) => {
+      const what = 'a ' + (e.sub === 's' ? '4s' : '3d') + ' electron, spin ' + (e.up ? 'up' : 'down');
+      hits.push({ x: e.x, y: Y1, r: 16, name: m.sym + ' atom: ' + what });
+      hits.push({ x: e.x, y: Y2, r: 16, name: e.lost ? 'removed ' + ORD[e.order - 1] + ' to form ' + m.sym + m.top + '+: ' + what : m.sym + m.top + '+: ' + what + ', kept' });
+    });
+    F.legend(ctx, { l: SX - 40, r: 1350, t: Y2 + BH / 2 + 34, b: 556 }, [
+      { s: 'electron', draw: (c, x, y) => spin(c, x, y, true, 22, PAL.ink, 3) },
+      { s: 'removed, in the order shown', draw: (c, x, y) => spin(c, x, y, true, 22, alpha(PAL.ink, 0.22), 2.5) },
+    ], { corner: 'top', row: true, panel: false, size: 18 });
     const n = m.s + m.d, all = m.top >= n;
     topline(ctx, all
       ? `${m.name} loses all ${WORD[n]} of its $4s$ and $3d$ electrons in its highest oxidation state, ${m.top}+.`
       : `In its highest oxidation state, ${m.top}+, ${m.name.toLowerCase()} loses only ${WORD[m.top]} of its ${WORD[n]} $4s$ and $3d$ electrons.`);
     const sl = Math.max(0, m.s - m.top), dl = m.d - Math.max(0, m.top - m.s);
-    tex(d.readout, `\\text{${m.sym}}\\text{:}\\ [\\text{Ar}]\\,${cfg(m.s, m.d)}\\ \\longrightarrow\\ \\text{${m.sym}}^{${m.top}+}\\text{:}\\ [\\text{Ar}]${sl || dl ? '\\,' + cfg(sl, dl) : ''},\\quad ${m.top}\\ \\text{of}\\ ${n}\\ \\text{valence electrons lost}`);
+    tex(d.readout, `\\text{${m.sym}}\\ ([\\text{Ar}]\\,${cfg(m.s, m.d)}) \\longrightarrow \\text{${m.sym}}^{${m.top}+}\\ ([\\text{Ar}]${sl || dl ? '\\,' + cfg(sl, dl) : ''}) + ${m.top}e^{-}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -191,11 +208,11 @@ function spin(ctx, x, y, up, h, color, w = 3) {
    molten iron flow in and out along their pipes. Flat cutaway.
 ===================================================================== */
 (function () {
-  const H = 820, d = sim('sim-blast-furnace', H);
+  const H = 870, d = sim('sim-blast-furnace', H);
   const IRON = '#ff8c1a';                         /* the glow of molten iron */
   const SLAG = '#ffd24d';                         /* the glow of molten slag */
   const T = 6;
-  const CX = 400, K = 6.4, YB = 770;
+  const CX = 340, K = 6.4, YB = 770;
   const yOf = (h) => YB - h * K;
   /* the inner half-width of the furnace at height h ft: hearth, bosh, belly, stack and throat */
   const half = (h) => (h <= 10 ? 112 : h <= 25 ? 112 + ((h - 10) / 15) * 46 : h <= 35 ? 158 : h <= 84 ? 158 - ((h - 35) / 49) * 58 : 100);
@@ -204,6 +221,11 @@ function spin(ctx, x, y, up, h, color, w = 3) {
     ore: { 75: '3Fe_2O_3 + CO -> 2Fe_3O_4 + CO_2', 65: 'Fe_3O_4 + CO -> 3FeO + CO_2', 55: 'FeO + CO -> Fe + CO_2', 45: 'Fe(s)', 35: 'Fe(s)', 25: 'Fe(l)', 15: 'Fe(l)', 5: 'Fe(l)' },
     coke: { 75: 'C(s)', 65: 'C(s)', 55: 'C(s)', 45: 'C + CO_2 -> 2CO', 35: 'C + CO_2 -> 2CO', 25: 'C + CO_2 -> 2CO', 15: 'C + O_2 -> CO_2', 5: 'C + O_2 -> CO_2' },
     lime: { 75: 'CaCO_3(s)', 65: 'CaCO_3(s)', 55: 'CaCO_3(s)', 45: 'CaCO_3(s)', 35: 'CaCO_3 -> CaO + CO_2', 25: 'CaO + SiO_2 -> CaSiO_3', 15: 'CaSiO_3(l)', 5: 'CaSiO_3(l)' },
+  };
+  /* the reactions the book prints beside each zone */
+  const ZR = {
+    75: '3Fe₂O₃ + CO ⟶ 2Fe₃O₄ + CO₂', 65: 'Fe₃O₄ + CO ⟶ 3FeO + CO₂', 55: 'FeO + CO ⟶ Fe + CO₂', 45: 'C + CO₂ ⟶ 2CO',
+    35: 'CaCO₃ ⟶ CaO + CO₂; C + CO₂ ⟶ 2CO', 25: 'CaO + SiO₂ ⟶ CaSiO₃; C + CO₂ ⟶ 2CO', 15: 'C + O₂ ⟶ CO₂',
   };
   /* a formula written the book's way: upright symbols, subscripted counts, the arrow long */
   const tx = (s) => s.split(' ').map((w) => {
@@ -232,7 +254,7 @@ function spin(ctx, x, y, up, h, color, w = 3) {
   }
   /* the gas: molecules strung along the path from the tuyeres up the shaft and out of the off-take */
   const GAS = Array.from({ length: 26 }, (_, i) => ({ s0: i / 26 + rnd() * 0.02, f: 0.15 + 0.7 * rnd() }));
-  const OFF = 83, PIPE_X = 690;
+  const OFF = 83, PIPE_X = 620;
   function gasAt(g, t) {
     const s = (g.s0 + (3 * t) / T) % 1, up = 0.82;
     if (s < up) { const h = 14 + (s / up) * (OFF - 14), w = half(h); return { x: CX - w + g.f * 2 * w, y: yOf(h), h }; }
@@ -306,46 +328,42 @@ function spin(ctx, x, y, up, h, color, w = 3) {
       hits.push({ x: p.x, y: p.y, r: 8, name: two ? 'carbon dioxide, CO₂' : 'carbon monoxide, CO' });
     });
     /* the followed lump */
-    const k = clamp01(t / T), hEnd = kind === 'ore' ? 5 : kind === 'lime' ? 7 : 9, hf = 80 - (80 - hEnd) * k;
+    const k = clamp01(t / T), hEnd = kind === 'ore' ? 5 : kind === 'lime' ? 7 : 11, hf = 80 - (80 - hEnd) * k;
     const fx = CX - 40, fl = look(kind, hf);
     if (fl.r > 0.5) {
       ctx.save(); ctx.beginPath(); ctx.arc(fx, yOf(hf), fl.r + 3, 0, TAU); ctx.fillStyle = fl.c; ctx.fill(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 1.5; ctx.stroke(); ctx.restore();
       hits.push({ x: fx, y: yOf(hf), r: 18, name: 'the lump followed: ' + NAMES[kind](hf) });
     }
     ctx.save(); ctx.beginPath(); ctx.arc(fx, yOf(hf), 17, 0, TAU); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5; ctx.stroke(); ctx.restore();
-    /* the scale of zones: height and temperature */
+    /* the zones as the book lists them: height, temperature and the reactions there; the followed lump's zone in ink */
     const zone = ZONES.reduce((b, z) => (Math.abs(z[0] - hf) < Math.abs(b[0] - hf) ? z : b));
-    const SXH = 900, SXT = 990;
+    const SXT = 860, SXR = 884;
     ZONES.forEach(([h, Tc]) => {
-      const y = yOf(h), on = h === zone[0];
+      const y = yOf(h), on = h === zone[0], f = on ? 1 : 0.5;
       line(ctx, CX + half(h) + 34, y, CX + half(h) + 46, y, PAL.muted, 2);
-      text(ctx, h + ' ft', SXH, y, on ? C('length') : alpha(C('length'), 0.55), { size: 19, weight: on ? 600 : 400, align: 'right' });
-      text(ctx, Tc + ' °C', SXT + 70, y, on ? C('temperature') : alpha(C('temperature'), 0.55), { size: 19, weight: on ? 600 : 400, align: 'right' });
+      const wt = on ? 600 : 400;
+      F.rich(ctx, [[h + ' ft', alpha(C('length'), f), wt], [', ', alpha(PAL.ink, f), 400], [Tc + ' °C', alpha(C('temperature'), f), wt]], SXT, y, { size: 19, align: 'right' });
+      if (ZR[h]) text(ctx, ZR[h], SXR, y, on ? PAL.ink : PAL.muted, { size: 18, weight: on ? 600 : 400 });
     });
     const zy = yOf(zone[0]);
-    ctx.save(); ctx.beginPath(); ctx.moveTo(SXH - 70, zy); ctx.lineTo(SXH - 84, zy - 8); ctx.lineTo(SXH - 84, zy + 8); ctx.closePath(); ctx.fillStyle = PAL.ink; ctx.fill(); ctx.restore();
-    text(ctx, 'height', SXH, yOf(83), C('length'), { size: 17, align: 'right' });
-    text(ctx, 'temperature', SXT + 70, yOf(83), C('temperature'), { size: 17, align: 'right' });
+    const mx = SXT - F.measure(ctx, zone[0] + ' ft, ' + zone[1] + ' °C', { size: 19, weight: 600 }) - 12;
+    ctx.save(); ctx.beginPath(); ctx.moveTo(mx, zy); ctx.lineTo(mx - 14, zy - 8); ctx.lineTo(mx - 14, zy + 8); ctx.closePath(); ctx.fillStyle = PAL.ink; ctx.fill(); ctx.restore();
     /* names of the inlets and outlets */
     label(ctx, 'roasted ore, coke, limestone', CX + 14, yOf(97), { side: 'right', size: 19, leader: false, gap: 8 });
     label(ctx, 'CO, CO_{2}, N_{2}', PIPE_X + 10, yOf(OFF) - 30, { side: 'above', size: 19, leader: false, gap: 0 });
     label(ctx, 'preheated air', CX - half(15) - 200, yOf(15) - 26, { side: 'right', size: 19, leader: false, gap: 0 });
     label(ctx, 'slag', 100, yOf(7) - 24, { side: 'right', size: 19, leader: false, gap: 0 });
-    label(ctx, 'molten iron', PIPE_X + 48, yOf(2.5), { side: 'right', size: 19, leader: false, gap: 8 });
+    label(ctx, 'molten iron', PIPE_X - 10, yOf(2.5) + 30, { side: 'right', size: 19, leader: false, gap: 0 });
     /* the key */
-    const LX = 1110, LY = 580;
-    [['Fe', 'iron ore'], ['C', 'coke'], ['Ca', 'limestone']].forEach(([s, n], i) => {
-      const y = LY + i * 34; ctx.save(); ctx.beginPath(); ctx.arc(LX, y, 9, 0, TAU); ctx.fillStyle = F.el(s); ctx.fill(); ctx.strokeStyle = alpha(PAL.ink, 0.6); ctx.lineWidth = 1; ctx.stroke(); ctx.restore();
-      text(ctx, n, LX + 20, y, PAL.ink, { size: 18 });
-    });
-    [[-3.5, 'C'], [3.5, 'O']].forEach(([dx, s]) => { ctx.save(); ctx.beginPath(); ctx.arc(LX + dx, LY + 102, 4, 0, TAU); ctx.fillStyle = F.el(s); ctx.fill(); ctx.strokeStyle = alpha(PAL.ink, 0.5); ctx.lineWidth = 0.8; ctx.stroke(); ctx.restore(); });
-    text(ctx, 'CO', LX + 20, LY + 102, PAL.ink, { size: 18 });
-    [[-7, 'O'], [0, 'C'], [7, 'O']].forEach(([dx, s]) => { ctx.save(); ctx.beginPath(); ctx.arc(LX + dx, LY + 136, 4, 0, TAU); ctx.fillStyle = F.el(s); ctx.fill(); ctx.strokeStyle = alpha(PAL.ink, 0.5); ctx.lineWidth = 0.8; ctx.stroke(); ctx.restore(); });
-    text(ctx, 'CO_{2}', LX + 20, LY + 136, PAL.ink, { size: 18 });
-    ctx.save(); ctx.beginPath(); ctx.arc(LX, LY + 172, 15, 0, TAU); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5; ctx.stroke(); ctx.restore();
-    text(ctx, 'the lump followed', LX + 26, LY + 172, PAL.ink, { size: 18 });
+    const mol = (parts) => (c, x, y) => parts.forEach(([dx, s]) => { c.save(); c.beginPath(); c.arc(x + dx, y, 4, 0, TAU); c.fillStyle = F.el(s); c.fill(); c.strokeStyle = alpha(PAL.ink, 0.5); c.lineWidth = 0.8; c.stroke(); c.restore(); });
+    const lump = (s) => (c, x, y) => { c.save(); c.beginPath(); c.arc(x, y, 9, 0, TAU); c.fillStyle = F.el(s); c.fill(); c.strokeStyle = alpha(PAL.ink, 0.6); c.lineWidth = 1; c.stroke(); c.restore(); };
+    F.legend(ctx, { l: 40, r: 1360, t: 800, b: 866 }, [
+      { s: 'iron ore', draw: lump('Fe') }, { s: 'coke', draw: lump('C') }, { s: 'limestone', draw: lump('Ca') },
+      { s: 'CO', draw: mol([[-3.5, 'C'], [3.5, 'O']]) }, { s: 'CO_{2}', draw: mol([[-7, 'O'], [0, 'C'], [7, 'O']]) },
+      { s: 'the lump followed', draw: (c, x, y) => { c.save(); c.beginPath(); c.arc(x, y, 13, 0, TAU); c.strokeStyle = PAL.ink; c.lineWidth = 2.5; c.stroke(); c.restore(); } },
+    ], { corner: 'top', row: true, panel: false, size: 18 });
     topline(ctx, HEAD[kind]);
-    tex(d.readout, `${kv('length', zone[0] + '\\ \\text{ft}')},\\ ${kv('temperature', zone[1] + '\\ ^\\circ\\text{C}')}\\text{:}\\quad ${tx(R[kind][zone[0]])}`, false, { values: false });
+    tex(d.readout, tx(R[kind][zone[0]]), false, { values: false });
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
@@ -396,11 +414,12 @@ function spin(ctx, x, y, up, h, color, w = 3) {
     const r = R(Tc)(T);
     line(ctx, X(T), Y(r), X(T), box.b, alpha(ct, 0.6), 2, [4, 8]);
     dot(ctx, X(T), Y(r), PAL.ink, true, 9);
-    const name = m.name;
-    topline(ctx, below
-      ? `At ${T} K, ${name} ${m.plural ? 'conduct' : 'conducts'} electricity with no resistance.`
-      : `At ${T} K, ${name} still ${m.plural ? 'have' : 'has'} resistance; ${m.plural ? 'they become' : 'it becomes'} superconducting below ${Tc} K.`);
-    tex(d.readout, `\\kT = ${T}\\ \\text{K} ${below ? '<' : '\\geq'} ${kv('temperature', Tc + '\\ \\text{K}')}\\text{:}\\quad \\text{resistance} ${below ? '= 0' : '> 0'}`);
+    const name = m.name, pl = m.plural, coolant = { 4: 'liquid helium', 77: 'liquid nitrogen' }[T];
+    topline(ctx, coolant && below ? `Cooled by ${coolant} to ${T} K, ${name} ${pl ? 'conduct' : 'conducts'} with no resistance.`
+      : coolant ? `Cooled by ${coolant} to ${T} K, ${name} still ${pl ? 'have' : 'has'} resistance; ${pl ? 'they need' : 'it needs'} less than ${Tc} K.`
+      : below ? `At ${T} K, ${name} ${pl ? 'conduct' : 'conducts'} with no resistance.`
+      : `At ${T} K, ${name} ${pl ? 'have' : 'has'} resistance; ${pl ? 'they become' : 'it becomes'} superconducting below ${Tc} K.`);
+    tex(d.readout, `\\text{resistance} ${below ? '= 0' : '> 0'}\\ \\text{at}\\ \\kT = ${T}\\ \\text{K} ${below ? '<' : '\\geq'} ${kv('temperature', Tc + '\\ \\text{K}')}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

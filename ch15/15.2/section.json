@@ -33,90 +33,96 @@
     {
       "id": "fig-hydronium",
       "kind": "figure",
-      "originals": [
-        "/media/ch15/CNX_Chem_15_03_hydronium_img.jpg"
-      ],
       "draws": [],
       "ai": [
         {
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "reverted to the book's image"
         }
       ]
     },
     {
       "id": "fig-bf3",
       "kind": "figure",
-      "originals": [
-        "/media/ch15/CNX_Chem_15_02_BF3-LA_img.jpg"
-      ],
       "draws": [],
       "ai": [
         {
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "reverted to the book's image"
         }
       ]
     },
     {
       "id": "fig-silver-ammonia",
       "kind": "figure",
-      "originals": [
-        "/media/ch15/CNX_Chem_15_02_NH3-LBase_img.jpg"
-      ],
       "draws": [],
       "ai": [
         {
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "reverted to the book's image"
         }
       ]
     },
     {
       "id": "fig-oxide",
       "kind": "figure",
-      "originals": [
-        "/media/ch15/CNX_Chem_15_02_NonmetalOx_img.jpg"
-      ],
       "draws": [],
       "ai": [
         {
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "reverted to the book's image"
         }
       ]
     },
     {
       "id": "fig-displace",
       "kind": "figure",
-      "originals": [
-        "/media/ch15/CNX_Chem_15_02_Displace_img.jpg"
-      ],
       "draws": [],
       "ai": [
         {
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "reverted to the book's image"
         }
       ]
     },
     {
       "id": "fig-cucn2",
       "kind": "figure",
-      "originals": [
-        "/media/ch15/CNX_Chem_15_02_CuCN2-_img.jpg"
-      ],
       "draws": [],
       "ai": [
         {
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "reverted to the book's image"
         }
       ]
     },
@@ -136,43 +142,15 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "real beaker, opens at 0.10 M ammonia, caption cut"
         }
       ]
     }
   ],
-  "referents": [
-    {
-      "id": "acid",
-      "label": "the Lewis acid",
-      "figures": [
-        "fig-hydronium",
-        "fig-bf3",
-        "fig-silver-ammonia",
-        "fig-oxide",
-        "fig-displace",
-        "fig-cucn2"
-      ]
-    },
-    {
-      "id": "displacer",
-      "label": "the base or acid that displaces another",
-      "figures": [
-        "fig-displace"
-      ]
-    },
-    {
-      "id": "base",
-      "label": "the Lewis base",
-      "figures": [
-        "fig-hydronium",
-        "fig-bf3",
-        "fig-silver-ammonia",
-        "fig-oxide",
-        "fig-displace",
-        "fig-cucn2"
-      ]
-    }
-  ],
+  "referents": [],
   "coverage": [
     {
       "span": "lewis-definition",

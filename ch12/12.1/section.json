@@ -23,6 +23,9 @@
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-opus-5-5"
       }
     ]
   },
@@ -52,6 +55,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "triangle labels clear, units substituted, both rates in readout; caption cut"
         }
       ]
     },
@@ -86,6 +93,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "book's 0–4 axis; readout substitutes each slope; caption cut"
         }
       ]
     }

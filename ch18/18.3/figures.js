@@ -44,8 +44,8 @@ function hub(s, deg) {
 ===================================================================== */
 (function () {
   const d = sim('sim-structures');
-  const v = F.view3d(d.stage, { spin: 'idle', pitch: [-1.45, 1.45], tilt: 0.3, h: 500, dist: 11, views: [{ label: 'side', yaw: 0, pitch: 0 }, { label: 'top', yaw: 0, pitch: 1.45 }] });
-  const grp = v.part(0); if (grp) grp.position.y = -0.3;
+  const v = F.view3d(d.stage, { spin: 'idle', pitch: [-1.45, 1.45], tilt: 0.3, h: 560, dist: 8.3 });
+  const grp = v.part(0); if (grp) grp.position.y = -0.12;
   const B = 0.6;
   /* a honeycomb sheet in the x–z plane, the two sublattices lifted ±h out of it */
   function sheet(y, h, shift, half) {
@@ -110,8 +110,11 @@ function hub(s, deg) {
       sig = key; v.clear();
       const info = INFO[S.value], s = BUILD[S.value](); centre(s.atoms);
       const h = info.deg ? hub(s, info.deg) : -1;
-      s.atoms.forEach((a, i) => v.pickable(F.mesh.sphere(grp, a.p, i === h ? (s.r || 0.13) * 1.25 : s.r || 0.13, F.el(a.el)), info.name));
-      s.bonds.forEach(([i, j]) => { const on = i === h || j === h; F.mesh.stick(grp, s.atoms[i].p, s.atoms[j].p, on ? 0.075 : 0.04, on ? PAL.ink : PAL.muted); });
+      /* the hub and its neighbours solid, every other atom and bond pale, so the hub's bonds can be counted from any side */
+      const near = new Set(h < 0 ? s.atoms.map((_, i) => i) : [h]); if (h >= 0) s.bonds.forEach(([i, j]) => { if (i === h) near.add(j); if (j === h) near.add(i); });
+      const pale = { transparent: true, opacity: 0.4, depthWrite: false };
+      s.atoms.forEach((a, i) => v.pickable(F.mesh.sphere(grp, a.p, i === h ? (s.r || 0.13) * 1.25 : s.r || 0.13, F.el(a.el), near.has(i) ? undefined : pale), info.name));
+      s.bonds.forEach(([i, j]) => { const on = i === h || j === h; F.mesh.stick(grp, s.atoms[i].p, s.atoms[j].p, on ? 0.075 : 0.04, on ? PAL.ink : PAL.muted, on || h < 0 ? undefined : pale); });
       v.headline(info.head);
     }
     if (grp) F.fade3(grp, S.a(S.value));
@@ -122,23 +125,30 @@ function hub(s, deg) {
 })();
 
 /* =====================================================================
-   FIGURE 18.14: zone refining. Moving on a 7 s clock: for 5.5 s the rod
-   is lowered through the fixed heat source, so the thin molten zone moves
-   from the bottom of the rod to the top; each impurity atom stays put
-   until the zone reaches it and then rides in the melt. For the last
-   1.5 s the impure top end is cut off and set aside. Flat side view; the
-   heat source, and so the zone, stay where they are in the frame.
+   FIGURE 18.14: zone refining, drawn as the book draws it: a housing cut
+   away to show the rod hanging inside, the ring of the heat source round
+   it, the rod held by a thin rod above and below. Moving on a 7 s clock:
+   for 5.5 s the rod is lowered through the fixed heat source, so the thin
+   molten zone moves from the bottom of the rod to the top; each impurity
+   atom stays put until the zone reaches it and then rides in the melt.
+   For the last 1.5 s the impure top end is cut off. Beside it, on the
+   rod's own scale, the impurity atoms in each tenth of the rod, now
+   (bars) and before the pass (dashed).
 ===================================================================== */
 (function () {
-  const H = 680, d = sim('sim-zone-refining', H);
+  const H = 640, d = sim('sim-zone-refining', H);
   const MOLTEN = '#ffb347';                       /* the orange glow of molten silicon */
-  const CX = 640, HY = 360, RL = 240, RW = 64, ZH = 28, A = ZH / (2 * RL), TP = 5.5, T = 7;
+  const CX = 520, HY = 362, RL = 236, RW = 92, ZH = 30, A = ZH / (2 * RL), TP = 5.5, T = 7;
+  const WL = CX - 118, WR = CX + 118, WT = 112, WB = 612;   /* the window cut in the housing */
   const N = 22;
   let seed = 1814; const rnd = () => { seed = (seed * 16807) % 2147483647; return seed / 2147483647; };
-  const IMP = Array.from({ length: N }, (_, i) => ({ u: 0.06 + (0.92 * (i + rnd())) / N, w: (rnd() - 0.5) * 0.76, o: (rnd() - 0.5) * 1.3 * A, ph: rnd() * TAU }));
+  const IMP = Array.from({ length: N }, (_, i) => ({ u: 0.06 + (0.9 * (i + rnd())) / N, w: (rnd() - 0.5) * 0.76, o: (rnd() - 0.5) * 1.3 * A, ph: rnd() * TAU }));
+  const BOX = { l: 900, r: 1290, t: 150, b: 560 };
   const cy = F.cycle(() => T, 1.5);
   const hits = []; F.hover(d.stage, () => hits);
   const ro = d.readout;
+  const slices = (us) => { const n = Array(10).fill(0); us.forEach((u) => { n[Math.min(9, Math.max(0, Math.floor(u * 10)))]++; }); return n; };
+  const BEFORE = slices(IMP.map((m) => m.u));
   function draw() {
     const { ctx } = begin(d.c); hits.length = 0;
     const t = cy.now(), s = clamp01(t / TP), cut = clamp01((t - TP) / (T - TP));
@@ -146,50 +156,75 @@ function hub(s, deg) {
     const yB = HY + uz * RL, yT = yB - RL;            /* the rod's bottom and top in the frame */
     const yOf = (u) => yB - u * RL;
     const UC = 1 - 2 * A - 0.02;                    /* where the impure end is cut */
-    const k = F.ease.smooth(cut), dx = 190 * k, dy = -30 * k;
-    /* the tube, cut away in front */
-    ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.04); ctx.fillRect(CX - 52, 96, 104, H - 120); ctx.restore();
-    line(ctx, CX - 52, 96, CX - 52, H - 24, alpha(PAL.ink, 0.35), 2);
-    line(ctx, CX + 52, 96, CX + 52, H - 24, alpha(PAL.ink, 0.35), 2);
-    /* the rod: pure below the cut, the impure end above it (set aside once cut) */
-    const body = (y1, y2, ox, oy) => { ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.beginPath(); ctx.rect(CX - RW / 2 + ox, y1 + oy, RW, y2 - y1); ctx.fill(); ctx.stroke(); ctx.restore(); };
-    if (cut > 0) { body(yOf(UC), yB, 0, 0); body(yT, yOf(UC), dx, dy); }
-    else body(yT, yB, 0, 0);
+    const k = F.ease.smooth(cut), lift = -46 * k;
+    const steel = F.mixColor(PAL.ink, PAL.panel, 0.55);
+    /* the housing, a cylinder with a window cut in its front */
+    ctx.save(); ctx.fillStyle = steel; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(CX - 160, 92); ctx.lineTo(CX - 160, 628); ctx.ellipse(CX, 628, 160, 14, 0, Math.PI, 0, true); ctx.lineTo(CX + 160, 92); ctx.ellipse(CX, 92, 160, 14, 0, 0, Math.PI, true); ctx.closePath(); ctx.fill(); ctx.stroke();
+    ctx.beginPath(); ctx.ellipse(CX, 92, 160, 14, 0, 0, TAU); ctx.fillStyle = F.mixColor(steel, PAL.panel, 0.3); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = PAL.panel; ctx.fillRect(WL, WT, WR - WL, WB - WT); ctx.strokeRect(WL, WT, WR - WL, WB - WT); ctx.restore();
+    hits.push({ x: CX - 140, y: 300, r: 20, name: 'the housing, cut away to show the rod' }, { x: CX + 140, y: 500, r: 20, name: 'the housing, cut away to show the rod' });
+    ctx.save(); ctx.beginPath(); ctx.rect(WL + 1, WT + 1, WR - WL - 2, WB - WT - 2); ctx.clip();
+    /* the holders above and below the rod, which move with it */
+    line(ctx, CX, WT, CX, yT + (cut > 0 ? lift : 0), PAL.ink, 4);
+    line(ctx, CX, yB + 26, CX, WB, PAL.ink, 4);
+    /* the rod: pure below the cut, the impure end above it (lifted away once cut); its foot tapers to the holder */
+    const body = (y1, y2, oy, foot, a) => F.faded(ctx, a, [0, 0], () => {
+      ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.beginPath();
+      ctx.moveTo(CX - RW / 2, y1 + oy); ctx.lineTo(CX + RW / 2, y1 + oy); ctx.lineTo(CX + RW / 2, y2 + oy);
+      if (foot) { ctx.lineTo(CX + 8, y2 + 26); ctx.lineTo(CX - 8, y2 + 26); }
+      ctx.lineTo(CX - RW / 2, y2 + oy); ctx.closePath(); ctx.fill(); ctx.stroke(); ctx.restore();
+    });
+    if (cut > 0) { body(yOf(UC), yB, 0, true, 1); body(yT, yOf(UC), lift, false, 1); }
+    else body(yT, yB, 0, true, 1);
     hits.push({ x: CX, y: (yT + yB) / 2, r: RW / 2, name: 'the silicon rod' });
     /* the molten zone at the heat source, glowing; it freezes as the cut is made */
     const zt = Math.max(HY - ZH / 2, yT), zb = Math.min(HY + ZH / 2, yB), glow = 1 - k;
     if (zb > zt && glow > 0) F.faded(ctx, glow, [0, 0], () => {
-      ctx.save(); ctx.fillStyle = alpha(F.fact(MOLTEN), 0.25); ctx.fillRect(CX - RW / 2 - 6, zt - 6, RW + 12, zb - zt + 12);
+      ctx.save(); ctx.fillStyle = alpha(F.fact(MOLTEN), 0.3); ctx.fillRect(CX - RW / 2 - 6, zt - 7, RW + 12, zb - zt + 14);
       ctx.fillStyle = F.fact(MOLTEN); ctx.fillRect(CX - RW / 2 + 1, zt, RW - 2, zb - zt); ctx.restore();
     });
     /* the impurity atoms: in place until the zone reaches them, then carried in the melt */
-    let inMelt = 0;
+    let inMelt = 0, above = 0, us = [];
     IMP.forEach((m) => {
       const ride = uz + m.o, carried = m.u <= uz + A, u = Math.max(m.u, ride);
-      if (carried) inMelt++;
+      if (carried) inMelt++; else above++;
+      us.push(u);
       const sway = carried && cut === 0 ? Math.sin(t * 5 + m.ph) * 0.06 : 0;
       const piece = u > UC && cut > 0;
-      const x = CX + (m.w + sway) * RW + (piece ? dx : 0), y = yOf(u) + (piece ? dy : 0);
-      dot(ctx, x, y, F.cat(0), true, 5);
-      hits.push({ x, y, r: 7, name: 'an impurity atom' });
+      const x = CX + (m.w + sway) * RW, y = yOf(u) + (piece ? lift : 0);
+      dot(ctx, x, y, F.cat(0), true, 6);
+      hits.push({ x, y, r: 8, name: 'an impurity atom' });
     });
-    /* the heat source, a coil round the tube */
-    [-12, 0, 12].forEach((o) => { ctx.save(); ctx.strokeStyle = PAL.muted; ctx.lineWidth = 4; ctx.beginPath(); ctx.ellipse(CX, HY + o, 74, 9, 0, 0, TAU); ctx.stroke(); ctx.restore(); });
-    hits.push({ x: CX - 70, y: HY, r: 14, name: 'the heat source' });
+    /* the heat source, a ring round the rod, its back behind and its front over it */
+    ctx.save(); ctx.strokeStyle = F.fact(MOLTEN); ctx.lineWidth = 7; ctx.beginPath(); ctx.ellipse(CX, HY, RW / 2 + 22, 10, 0, 0, TAU); ctx.stroke(); ctx.restore();
+    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.ellipse(CX, HY, RW / 2 + 26, 13, 0, 0, TAU); ctx.stroke(); ctx.restore();
+    hits.push({ x: CX - RW / 2 - 22, y: HY, r: 14, name: 'the heat source, a ring round the rod' });
     /* the rod's motion while it is lowered */
-    if (cut === 0 && s < 1) arrow(ctx, CX, yB + 12, CX, yB + 56, PAL.ink, 4);
-    /* region names at fixed places in the frame, shown where the rod is there */
-    const at = (y) => (yT < y && y < yB ? 1 : 0);
-    label(ctx, 'heat source', CX - 76, HY, { side: 'left', leader: true, gap: 70, size: 20 });
-    F.faded(ctx, at(HY - 90) * (1 - k), [0, 0], () => label(ctx, 'impure silicon', CX + RW / 2, HY - 90, { side: 'right', leader: true, gap: 110, size: 20 }));
-    F.faded(ctx, at(HY) * (1 - k), [0, 0], () => label(ctx, 'molten silicon', CX + RW / 2, HY, { side: 'right', leader: true, gap: 110, size: 20 }));
-    F.faded(ctx, at(HY + 90), [0, 0], () => label(ctx, 'pure silicon', CX + RW / 2, HY + 90, { side: 'right', leader: true, gap: 110, size: 20 }));
-    if (cut > 0) F.faded(ctx, k, [0, 0], () => label(ctx, 'impure end, cut off', CX + RW / 2 + dx, (yT + yOf(UC)) / 2 + dy, { side: 'right', leader: true, gap: 40, size: 20 }));
-    dot(ctx, 860, 620, F.cat(0), true, 5); text(ctx, 'impurity atom', 876, 620, PAL.ink, { size: 18, base: 'middle' });
-    topline(ctx, cut > 0 ? 'The impure top end of the rod is cut off, leaving pure silicon.' : 'As the rod is lowered through the heat source, the molten zone moves up the rod and carries the impurities with it.');
+    if (cut === 0 && s < 1) arrow(ctx, CX, Math.max(HY + 40, yB - 110), CX, Math.max(HY + 92, yB - 50), PAL.ink, 4);
+    ctx.restore();
+    /* region names at fixed places in the frame, beside the window, shown where the rod is there */
+    const at = (y) => (yT < y && y < yB ? 1 : 0), LX = WL - 4;
+    const name = (s2, y, a) => F.faded(ctx, a, [0, 0], () => { line(ctx, CX - RW / 2 - 4, y, LX - 70, y, PAL.ink, 1.8); text(ctx, s2, LX - 80, y, PAL.ink, { size: 22, align: 'right', bg: PAL.panel }); });
+    name('heat source', HY - 22, 1);
+    name('impure silicon', HY - 100, at(HY - 100) * (1 - k));
+    name('molten silicon', HY + 14, at(HY) * (1 - k));
+    name('pure silicon', HY + 120, at(HY + 120));
+    if (cut > 0) name('impure end, cut off', (yT + yOf(UC)) / 2 + lift, k);
+    /* the impurities in each tenth of the rod, on the rod's own scale */
+    const ax = F.axes(ctx, BOX, [0, 24], [0, 1], { nx: 3, ny: 0, xl: 'impurity atoms in each tenth of the rod' });
+    text(ctx, 'top of rod', BOX.l - 12, BOX.t + 4, PAL.muted, { size: 17, align: 'right' }); text(ctx, 'bottom', BOX.l - 12, BOX.b - 4, PAL.muted, { size: 17, align: 'right' });
+    const now = slices(cut > 0 ? us.map((u) => (u > UC ? 2 : u)).filter((u) => u <= 1) : us);
+    const zy = ax.Y(uz);
+    if (glow > 0) F.faded(ctx, glow, [0, 0], () => { ctx.save(); ctx.fillStyle = alpha(F.fact(MOLTEN), 0.35); ctx.fillRect(BOX.l, zy - (BOX.b - BOX.t) * A, BOX.r - BOX.l, 2 * (BOX.b - BOX.t) * A); ctx.restore(); });
+    now.forEach((n, i) => { if (!n) return; const y0 = ax.Y((i + 1) / 10), y1 = ax.Y(i / 10); ctx.save(); ctx.fillStyle = alpha(F.cat(0), 0.55); ctx.strokeStyle = F.cat(0); ctx.lineWidth = 2; ctx.fillRect(ax.X(0), y0 + 3, ax.X(n) - ax.X(0), y1 - y0 - 6); ctx.strokeRect(ax.X(0), y0 + 3, ax.X(n) - ax.X(0), y1 - y0 - 6); ctx.restore(); hits.push({ x: ax.X(n / 2), y: (y0 + y1) / 2, r: 18, name: `${n} impurity atom${n === 1 ? '' : 's'} in this tenth of the rod` }); });
+    const pts = []; BEFORE.forEach((n, i) => { pts.push([ax.X(n), ax.Y(i / 10)], [ax.X(n), ax.Y((i + 1) / 10)]); });
+    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5; ctx.setLineDash([8, 7]); ctx.beginPath(); pts.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y))); ctx.stroke(); ctx.restore();
+    F.legend(ctx, BOX, [{ s: 'impurity atom', draw: (c, x, y) => dot(c, x, y, F.cat(0), true, 6) }, { s: 'before the pass', color: PAL.ink, w: 2.5, dash: [8, 7] }], { corner: 'br' });
+    topline(ctx, cut > 0 ? 'The impure top end is cut off, leaving pure silicon.' : 'Lowering the rod moves the molten zone up it, and the impurities go with the melt.');
     const main = cut > 0
-      ? `\\text{impure end cut off:}\\ ${N}\\ \\text{of}\\ ${N}\\ \\text{impurity atoms removed},\\ 0\\ \\text{left in the pure silicon}`
-      : `\\text{zone at}\\ ${Math.round(100 * s)}\\%\\ \\text{of the rod:}\\ ${inMelt}\\ \\text{of}\\ ${N}\\ \\text{impurity atoms in the melt},\\ 0\\ \\text{left in the pure silicon}`;
+      ? `\\text{impurity atoms: } ${N}\\ \\text{in the cut-off end} + 0\\ \\text{in the pure silicon} = ${N}`
+      : `\\text{impurity atoms: } ${above}\\ \\text{impure} + ${inMelt}\\ \\text{in the melt} + 0\\ \\text{pure} = ${N}`;
     tex(ro, main, false, { values: false });
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
@@ -204,8 +239,8 @@ function hub(s, deg) {
 ===================================================================== */
 (function () {
   const d = sim('sim-co2-sio2');
-  const v = F.view3d(d.stage, { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.35, h: 500, dist: 10.5, views: [{ label: 'along an axis', yaw: 0, pitch: 0 }, { label: 'along a diagonal', yaw: Math.PI / 4, pitch: 0.6155 }] });
-  const grp = v.part(0); if (grp) grp.position.y = -0.3;
+  const v = F.view3d(d.stage, { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.35, h: 560, dist: 8.8 });
+  const grp = v.part(0); if (grp) grp.position.y = -0.12;
   const FCC = [[0, 0, 0], [0.5, 0.5, 0], [0.5, 0, 0.5], [0, 0.5, 0.5]];
   const inCell = (p) => p.every((x) => x > -1e-6 && x < 1 + 1e-6);
   function fccCell() { const s = []; [0, 1].forEach((i) => [0, 1].forEach((j) => [0, 1].forEach((k) => FCC.forEach((f) => { const p = [f[0] + i, f[1] + j, f[2] + k]; if (inCell(p) && !s.some((q) => dist3(q, p) < 1e-6)) s.push(p); })))); return s; }
@@ -232,8 +267,8 @@ function hub(s, deg) {
     },
   };
   const INFO = {
-    CO2: { label: 'carbon dioxide', head: 'Solid carbon dioxide is built of separate CO₂ molecules, each with two C=O double bonds.', ro: '\\text{O=C=O:}\\ 2\\ \\sigma + 2\\ \\pi\\ \\text{bonds},\\quad 2\\ \\text{O per C} \\quad\\Rightarrow\\quad \\text{CO}_{2}' },
-    SiO2: { label: 'silicon dioxide', head: 'In silicon dioxide every silicon atom bonds to four oxygen atoms, and every oxygen atom bridges two silicon atoms.', ro: '\\text{Si:}\\ 4\\ \\sigma\\ \\text{bonds},\\ 0\\ \\pi,\\quad 4 \\times \\tfrac{1}{2}\\ \\text{O} = 2\\ \\text{O per Si} \\quad\\Rightarrow\\quad \\text{SiO}_{2}' },
+    CO2: { label: 'carbon dioxide', head: 'Solid carbon dioxide is built of separate CO₂ molecules, each with two C=O double bonds.', ro: '\\text{O per C} = 2 \\times 1 = 2 \\;\\Rightarrow\\; \\text{CO}_{2}\\ \\text{(two C=O double bonds; no O shared)}' },
+    SiO2: { label: 'silicon dioxide', head: 'In silicon dioxide every silicon atom bonds to four oxygen atoms, and every oxygen atom bridges two silicon atoms.', ro: '\\text{O per Si} = 4 \\times \\tfrac{1}{2} = 2 \\;\\Rightarrow\\; \\text{SiO}_{2}\\ \\text{(four Si–O single bonds; each O shared by two Si)}' },
   };
   const S = F.choice(d.controls, { label: '\\text{solid}', options: Object.keys(INFO).map((k) => ({ value: k, label: INFO[k].label })), value: 'CO2', aria: 'carbon dioxide or silicon dioxide' });
   let sig = '';
@@ -244,8 +279,10 @@ function hub(s, deg) {
       sig = key; v.clear();
       const s = BUILD[S.value](); centre(s.atoms);
       const h = S.value === 'SiO2' ? hub({ atoms: s.atoms.map((a) => (a.el === 'Si' ? a : { p: [99, 99, 99] })), bonds: s.bonds }, 4) : -1;
-      s.atoms.forEach((a) => v.pickable(F.mesh.sphere(grp, a.p, a.r, F.el(a.el)), NM[a.el]));
-      s.bonds.forEach(([i, j, o]) => { const on = i === h || j === h; if (o === 2) F.mesh.bond(grp, s.atoms[i].p, s.atoms[j].p, 2, 0.04, PAL.muted); else F.mesh.stick(grp, s.atoms[i].p, s.atoms[j].p, on ? 0.075 : 0.04, on ? PAL.ink : PAL.muted); });
+      const near = new Set(h < 0 ? s.atoms.map((_, i) => i) : [h]); if (h >= 0) s.bonds.forEach(([i, j]) => { if (i === h) near.add(j); if (j === h) near.add(i); });
+      const pale = { transparent: true, opacity: 0.45, depthWrite: false };
+      s.atoms.forEach((a, i) => v.pickable(F.mesh.sphere(grp, a.p, a.r, F.el(a.el), near.has(i) ? undefined : pale), NM[a.el]));
+      s.bonds.forEach(([i, j, o]) => { const on = i === h || j === h; if (o === 2) F.mesh.bond(grp, s.atoms[i].p, s.atoms[j].p, 2, 0.04, PAL.muted); else F.mesh.stick(grp, s.atoms[i].p, s.atoms[j].p, on ? 0.075 : 0.04, on ? PAL.ink : PAL.muted, on ? undefined : pale); });
       v.headline(INFO[S.value].head);
     }
     if (grp) F.fade3(grp, S.a(S.value));

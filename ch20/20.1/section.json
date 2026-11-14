@@ -55,6 +55,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt: Lewis strip above a turning model, no view switch or buttons"
     }
    ]
   },
@@ -72,6 +76,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "expanded formula on long branch bonds as the book draws it"
     }
    ]
   },
@@ -137,24 +145,38 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "readout one formula per line, headline shortened"
+    }
+   ]
+  },
+  {
+   "id": "fig-butane-isomers",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "part": "kept as the book's image, once folded into Figure 20.4"
     }
    ]
   },
   {
    "id": "sim-butane-drawings",
-   "kind": "sim",
+   "kind": "photo",
    "number": "20.4",
-   "originals": [
-    "/media/ch20/CNX_Chem_20_01_butaneIsom_img.jpg",
-    "/media/ch20/CNX_Chem_20_01_butane_img.jpg"
-   ],
-   "original_caption": "These three representations of the structure of n-butane are not isomers because they all contain the same arrangement of atoms and bonds.",
    "draws": [],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "reverted to the book's image"
     }
    ]
   },
@@ -232,18 +254,18 @@
   },
   {
    "id": "sim-alkyl-groups",
-   "kind": "sim",
+   "kind": "photo",
    "number": "20.5",
-   "originals": [
-    "/media/ch20/CNX_Chem_20_01_alkyls.jpg"
-   ],
-   "original_caption": "This listing gives the names and formulas for various alkyl groups formed by the removal of hydrogen atoms from different locations.",
    "draws": [],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "reverted to the book's image"
     }
    ]
   },
@@ -261,23 +283,18 @@
   },
   {
    "id": "sim-fractional-distillation",
-   "kind": "sim",
+   "kind": "photo",
    "number": "20.6",
-   "originals": [
-    "/media/ch20/CNX_Chem_20_01_FracDistil.jpg"
-   ],
-   "original_caption": "In a column for the fractional distillation of crude oil, oil heated to about 425 °C in the furnace vaporizes when it enters the base of the tower. The vapors rise through bubble caps in a series of trays in the tower. As the vapors gradually cool, fractions of higher, then of lower, boiling points condense to liquids and are drawn off. (credit left: modification of work by Luigi Chiesa)",
-   "draws": [
-    "temperature"
-   ],
-   "conventions": [
-    "C"
-   ],
+   "draws": [],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "reverted to the book's image"
     }
    ]
   },
@@ -422,6 +439,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt: book drawings above a turning ring with its p orbitals"
     }
    ]
   },

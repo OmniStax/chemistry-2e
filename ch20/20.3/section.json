@@ -75,7 +75,6 @@
    "conventions": [
     "C",
     "O",
-    "H",
     "R"
    ],
    "draws": [],
@@ -84,6 +83,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt: book drawing above a turning group with its p orbitals"
     }
    ]
   },
@@ -113,6 +116,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "readout one chain, caption cut"
     }
    ]
   },

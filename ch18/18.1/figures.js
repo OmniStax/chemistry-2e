@@ -68,9 +68,9 @@ const still = (d, draw) => register(d.fig, { update: () => {}, draw });
      prints it, and the oxidation states the text gives each metal, a trailing * marking the state two below the group's */
   const GROUPS = {
     1: { m: [['Li', 520, '1+'], ['Na', 490, '1+'], ['K', 420, '1+'], ['Rb', 400, '1+'], ['Cs', 380, '1+']],
-      head: 'Down group 1 the first ionization energy falls from 520 to 380 kJ/mol, and each alkali metal forms a 1+ ion.' },
+      head: 'Down group 1 the first ionization energy falls and reactivity rises; each alkali metal forms a 1+ ion.' },
     2: { m: [['Be', 900, '2+'], ['Mg', 730, '2+'], ['Ca', 590, '2+'], ['Sr', 550, '2+'], ['Ba', 500, '2+']],
-      head: 'Down group 2 the first ionization energy falls from 900 to 500 kJ/mol, above group 1 in each period, and each metal forms a 2+ ion.' },
+      head: 'Each group 2 metal has a higher first ionization energy than the group 1 metal of its period, and forms a 2+ ion.' },
     12: { m: [['Zn', 910, '2+'], ['Cd', 870, '2+'], ['Hg', 1000, '2+ 1+']],
       head: 'Zinc, cadmium and mercury form 2+ ions, and mercury also 1+ in $\\text{Hg}_{2}{}^{2+}$; zinc is the most reactive and mercury the least.' },
     13: { m: [['B', 800], ['Al', 580, '3+'], ['Ga', 580, '3+ 1+*'], ['In', 560, '3+ 1+*'], ['Tl', 590, '3+ 1+*']],
@@ -135,7 +135,7 @@ const still = (d, draw) => register(d.fig, { update: () => {}, draw });
     });
     /* the chosen group's column, outlined from its first period to its last */
     ['1', '2', '12', '13', '14', '15'].forEach((k) => pick.only(ctx, k, () => {
-      const g = +k, p0 = TOP[g] ?? 4;
+      const g = +k, p0 = BY[GROUPS[k].m[0][0]].p;
       box3(ctx, cx(g) - CW / 2 - 5, cy(p0) - CH / 2 - 5, CW + 10, cy(7) - cy(p0) + CH + 10, PAL.ink, false);
     }, [0, 0]));
 
@@ -189,8 +189,10 @@ const still = (d, draw) => register(d.fig, { update: () => {}, draw });
     if (v === 'all') {
       tex(d.readout, '\\text{representative metals: }\\underset{1}{5}+\\underset{2}{5}+\\underset{12}{3}+\\underset{13}{4}+\\underset{14}{2}+\\underset{15}{1}=20');
     } else {
-      const m = GROUPS[v].m, a = m[0], b = m[m.length - 1];
-      tex(d.readout, `\\kIE_{1}(\\text{${a[0]}})=${a[1]}\\ \\text{kJ/mol}\\qquad\\kIE_{1}(\\text{${b[0]}})=${b[1]}\\ \\text{kJ/mol}`);
+      /* the group's IE₁ from top to bottom as one chain, the sign between each pair the comparison of the two */
+      const m = GROUPS[v].m;
+      const chain = m.map(([sym, ie], i) => (i ? (ie < m[i - 1][1] ? ' > ' : ie > m[i - 1][1] ? ' < ' : ' = ') : '') + `\\text{${sym}}\\ ${ie}`).join('');
+      tex(d.readout, `\\kIE_{1}\\ \\text{(kJ/mol):}\\ ${chain}`);
     }
   });
 })();

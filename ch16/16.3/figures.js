@@ -9,13 +9,14 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
 /* =====================================================================
    Example 16.4: ice melting, dS_sys = 22.1 J/K, q_surr = -6.00 kJ.
    Bars of dS_sys, dS_surr = q_surr/T and dS_univ on one zero line
-   (±28 J/K; |dS_surr| is 25.0 J/K at 240 K), beside dS_univ against T
+   (6 units a J/K; |dS_surr| is 25.0 J/K at 240 K, 150 units), their
+   names beneath, beside dS_univ against T
    (240 to 310 K, -4 to +4 J/K; the curve reaches ±2.9 J/K at the ends).
    dS_univ = 0 at T = 6000/22.1 = 271.5 K. Freezing reverses both signs.
    Still: the temperature and the process are states, not a clock.
 ===================================================================== */
 (function () {
-  const H = 470, d = sim('sim-ice-universe', H);
+  const H = 500, d = sim('sim-ice-universe', H);
   const DS = 22.1, Q = 6.00e3, TX = Q / DS;
   const PROC = F.choice(d.controls, { label: '\\text{process}', key: 'process', aria: 'the process, melting of ice or freezing of water',
     options: [{ value: 'melting', label: 'melting' }, { value: 'freezing', label: 'freezing' }], value: 'melting', onInput: () => draw() });
@@ -24,8 +25,8 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     detents: [{ v: 263.15, label: '−10.00 °C' }, { v: 283.15, label: '10.00 °C' }],
     specials: [{ at: TX, label: 'equilibrium' }], onInput: () => draw() });
   const ro = F.readout(d);
-  const BAR = { zero: 290, k: 5, w: 100 }, COLS = [150, 310, 470];
-  const G = { l: 720, r: 1330, t: 130, b: 390 };
+  const BAR = { zero: 285, k: 6, w: 110 }, COLS = [150, 330, 510];
+  const G = { l: 760, r: 1320, t: 120, b: 400 };
   const minus = (s) => s.replace('-', '−');
   const one = (u) => (Math.abs(u) < 0.05 ? '0.0' : (u > 0 ? '+' : '') + u.toFixed(1));
 
@@ -43,9 +44,9 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     const s = PROC.mix((p) => (p === 'melting' ? 1 : -1));
     const t = T.v, sys = s * DS, surr = -s * Q / t, univ = sys + surr;
 
-    line(ctx, 70, BAR.zero, 550, BAR.zero, PAL.ink, 2);
+    line(ctx, 60, BAR.zero, 600, BAR.zero, PAL.ink, 2);
     [['$\\kdSsys$', sys, false], ['$\\kdSsurr$', surr, false], ['$\\kdSuniv$', univ, true]].forEach(([name, v, solid], i) => {
-      text(ctx, name, COLS[i], 122, PAL.ink, { size: 24, align: 'center', tex: true });
+      text(ctx, name, COLS[i], H - 26, PAL.ink, { size: 24, align: 'center', tex: true });
       bar(ctx, COLS[i], v, ce, solid);
     });
 
@@ -66,14 +67,13 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     F.dot(ctx, px, py, ce, true, 10);
 
     const p = PROC.value, sg = p === 'melting' ? 1 : -1, u = sg * (DS - Q / t), shown = one(u);
-    const c = t - 273.15, cs = `${c >= 0 ? '' : '−'}${Math.abs(c).toFixed(2)}`;
-    const at = `At ${t.toFixed(2)} K (${cs} °C)`;
-    headline(ctx, shown === '0.0' ? `At ${t.toFixed(2)} K the two entropy changes cancel, and ice and water are at equilibrium.`
+    const at = `At ${t.toFixed(2)} K`;
+    headline(ctx, shown === '0.0' ? `${at} the two entropy changes cancel: ice and water are at equilibrium.`
       : p === 'melting'
-        ? (u < 0 ? `${at} the surroundings lose more entropy than the ice gains, so melting is nonspontaneous.`
-          : `${at} the ice gains more entropy than the surroundings lose, so melting is spontaneous.`)
-        : (u > 0 ? `${at} the surroundings gain more entropy than the water loses, so freezing is spontaneous.`
-          : `${at} the water loses more entropy than the surroundings gain, so freezing is nonspontaneous.`));
+        ? (u < 0 ? `${at} the surroundings lose more entropy than the ice gains: melting is nonspontaneous.`
+          : `${at} the ice gains more entropy than the surroundings lose: melting is spontaneous.`)
+        : (u > 0 ? `${at} the surroundings gain more entropy than the water loses: freezing is spontaneous.`
+          : `${at} the water loses more entropy than the surroundings gain: freezing is nonspontaneous.`));
     const sv = hue('entropy', `${sg > 0 ? '' : '-'}22.1\\ \\text{J/K}`);
     const qv = hue('energy', `${sg > 0 ? '-' : ''}6.00\\times 10^{3}\\ \\text{J}`);
     const tv = hue('temperature', `${t.toFixed(2)}\\ \\text{K}`);

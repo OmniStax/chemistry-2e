@@ -16,6 +16,7 @@ no hue.
 | Grams dissolved, a gram solubility | `mass` | 15.1, where a readout states it |
 | A volume of solution mixed | `volume` | Where a precipitation example mixes two, and 15.3's 1.00 L |
 | The solid in 15.2's Sim | `amount` | Its slider, in moles |
+| The rates of dissolution and precipitation in Figure 15.2 | `rate`, against `time` | The axis titles only; the two curves are told apart with `F.cat` |
 
 These stay in ink: x, the exponents p and q, the logarithm terms, the
 stoichiometric coefficients.
@@ -43,13 +44,10 @@ Each section lists its own in `referents`. As built:
   each on the K_sp plane in its two-salt state; with one salt the line wears
   `equilibrium-constant`. Figure 15.2's salt and ions are drawn in the element
   palette (convention wins) and are not referents.
-- **15.2.** `base`, `acid` and `displacer`: the Lewis base, the Lewis acid and
-  the species that displaces another, in the five redrawn Lewis equations and
-  the Cu(CN)₂⁻ structure, each atom in the colour of the species it came from.
-  The metal ion is the acid and the ligand the base, so they are not referents
-  of their own; the Sim tells its [Cl⁻] and [Ag⁺] curves apart with `F.cat`.
+- **15.2.** None. Its Lewis equations and the Cu(CN)₂⁻ structure are the
+  book's images; the Sim tells its [Cl⁻] and [Ag⁺] curves apart with `F.cat`.
 - **15.3.** `al-ion` and `aluminate`, one line each on the solubility-against-pH
-  Sim, the aluminate also naming the Al(OH)₄⁻ Figure. The two coupled
+  Sim. The two coupled
   reactions of a net equilibrium are not split into referents, since each K is
   written once in the book's equations.
 

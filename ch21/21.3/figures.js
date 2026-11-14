@@ -75,7 +75,7 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
     onInput: () => { hits0.a = hits0.b = hits0.g = 0; },
   });
   const cy = cycle(() => Infinity, 0);
-  const ro = readout(d);
+  
   let hits = [];
   hover(d.stage, () => hits);
   const flights = [], debt = { a: 0, b: 0, g: 0 }, hits0 = { a: 0, b: 0, g: 0 };
@@ -120,9 +120,9 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
     const s = plates.mix((v) => SIGN[v]), st = plates.value, CQ = C('charge');
     hits = [];
     const head = {
-      up: 'With the positive plate above, β particles bend up toward it, α particles bend down toward the negative plate, and γ rays pass straight through.',
-      down: 'With the positive plate below, β particles bend down toward it, α particles bend up toward the negative plate, and γ rays pass straight through.',
-      off: 'Between uncharged plates all three kinds of radiation travel straight to the same spot.',
+      up: 'β particles bend up toward the positive plate, α particles down toward the negative one, and γ rays go straight.',
+      down: 'β particles bend down toward the positive plate, α particles up toward the negative one, and γ rays go straight.',
+      off: 'Between uncharged plates all three kinds of radiation go straight to the same spot.',
     }[st];
     const lab = labeller(ctx, H, { headline: topline(ctx, head) });
 
@@ -135,6 +135,8 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
     const bc = P(-530, 95, 0);
     hits.push({ x: bc[0], y: bc[1] + 60, r: 70, name: 'lead block, which absorbs the radiation that does not leave through the bore' });
     lab.add('lead block', bc[0], bc[1] - 10, 0, -1, PAL.ink, 22, 30);
+    const bb = P(-560, -95, 95);
+    lab.add('radioactive substance', b0[0], b0[1], -0.25, 1, PAL.ink, 22, bb[1] - b0[1] + 40);
 
     /* the plates: the lower first, the beams between them, the upper over them */
     const plate = (y) => box(ctx, [XP1, y - 5, -85], [XP2, y + 5, 85], PAL.soft, 1.5);
@@ -205,7 +207,7 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
       const towardPlus = k === 'b', upward = (st === 'up') === towardPlus;
       return '\\text{' + (upward ? 'up' : 'down') + ', toward }' + hue(towardPlus ? '+' : '-');
     };
-    ro.set('\\mk{a}{{}_{2}^{4}\\alpha}\\;\\mk{ad}{' + dir('a') + '}\\qquad \\mk{b}{{}_{-1}^{\\;0}\\beta}\\;\\mk{bd}{' + dir('b') + '}\\qquad \\mk{g}{{}_{0}^{0}\\gamma}\\;\\mk{gd}{' + dir('g') + '}', undefined, { form: st });
+    F.tex(d.readout, '{}_{2}^{4}\\alpha\\;' + dir('a') + ' \\\\ {}_{-1}^{\\;0}\\beta\\;' + dir('b') + ' \\\\ {}_{0}^{0}\\gamma\\;' + dir('g'));
   }
   register(d.fig, { update: (dt) => { cy.step(dt, () => 1); step(dt); }, draw, arrive: false });
 })();
@@ -223,7 +225,7 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
    leaves. Everything at time t follows from t alone.
 ===================================================================== */
 (function () {
-  const H = 540, T = 4.5, T0 = 0.8, CX = 430, CY = 300, NS = 16, SP = 29, VA = 110, VL = 150, VG = 170;
+  const H = 540, T = 4.5, T0 = 0.8, CX = 520, CY = 305, NS = 17, SP = 21, VA = 110, VL = 150, VG = 170;
   const unit = (x, y) => { const l = Math.hypot(x, y); return [x / l, y / l]; };
   const MODES = {
     a: { label: 'alpha decay', P: [238, 92, 'U', 'uranium'], D: [234, 90, 'Th', 'thorium'] },
@@ -238,16 +240,12 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
     options: Object.keys(MODES).map((k) => ({ value: k, label: MODES[k].label })), value: 'a', onInput: () => cy.reset(),
   });
   const cy = cycle(() => T, 1.2);
-  const ro = readout(d);
+  
   let hits = [];
   hover(d.stage, () => hits);
 
-  const LATTICE = [];
-  for (let j = -12; j <= 12; j++) for (let i = -12; i <= 12; i++) {
-    const x = (i + (j & 1) * 0.5) * SP, y = j * SP * 0.866;
-    LATTICE.push({ x, y, r: Math.hypot(x, y) + hash(i, j) * 0.5 });
-  }
-  LATTICE.sort((a, b) => a.r - b.r);
+  /* a round packing: the k-th nucleon on a sunflower spiral, so any count fills a disc */
+  const LATTICE = Array.from({ length: 80 }, (_, k) => { const r = 16.2 * Math.sqrt(k + 0.5), a = k * 2.39996; return { x: r * Math.cos(a), y: r * Math.sin(a) }; });
   function nucleus(A, Z, salt) {
     const n = Math.round(1.25 * Math.pow(A, 2 / 3)), pts = LATTICE.slice(0, n).map((p) => ({ x: p.x, y: p.y }));
     const order = pts.map((_, i) => i).sort((i, j) => hash(i, salt) - hash(j, salt));
@@ -272,7 +270,7 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
       bp: 'A proton in oxygen-15 becomes a neutron as the nucleus emits a positron, and nitrogen-15 remains.',
       ec: 'Potassium-40 captures an inner electron, a proton becomes a neutron, and argon-40 remains; an outer electron fills the vacancy and an X-ray leaves.',
     }[m]);
-    ctx.save(); ctx.beginPath(); ctx.rect(20, 96, 1010, H - 106); ctx.clip();
+    ctx.save(); ctx.beginPath(); ctx.rect(20, 92, 1360, H - 92); ctx.clip();
     let R;
     if (m === 'a') {
       const Dn = nucleus(Ad, Zd, 3); R = Dn.R;
@@ -292,7 +290,7 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
       if (flip >= 0) {
         const f = Pn.pts[flip];
         if (!after) ring(ctx, CX + f.x, CY + f.y, NS + 4, PAL.ink, 2.5);
-        else if (dt < 0.6) { ctx.save(); ctx.globalAlpha = 1 - dt / 0.6; ring(ctx, CX + f.x, CY + f.y, NS + 4 + 18 * dt, PAL.ink, 2.5); ctx.restore(); }
+        else ring(ctx, CX + f.x, CY + f.y, NS + 4, PAL.ink, 2.5, [6, 6]);
         hits.push({ x: CX + f.x, y: CY + f.y, r: 14, name: (after ? 'the nucleon that changed: now a ' : 'the nucleon that changes: a ') + ((m === 'bm') === after ? 'proton' : 'neutron') });
       }
       if (m === 'g' && !after) ring(ctx, CX, CY, R + 8, PAL.ink, 2.5, [8, 7]);
@@ -310,7 +308,7 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
         hits.push({ x: hx, y: hy, r: 18, name: 'the γ ray, a quantum of high-energy electromagnetic radiation' });
       }
       if (m === 'ec') {
-        const R1 = 140, R2 = 220;
+        const R1 = 135, R2 = 198;
         ring(ctx, CX, CY, R1, alpha(PAL.ink, 0.35), 2, [6, 8]);
         ring(ctx, CX, CY, R2, alpha(PAL.ink, 0.35), 2, [6, 8]);
         hits.push({ x: CX - R1 * 0.71, y: CY + R1 * 0.71, r: 14, name: 'an inner electron shell' });
@@ -341,20 +339,18 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
     hits.push({ x: CX, y: CY, r: R, name: (isParent ? name(M.P) : name(M.D)) + ' nucleus: ' + (isParent ? Zp : Zd) + ' protons, ' + ((isParent ? Ap - Zp : Ad - Zd)) + ' neutrons' });
 
     /* legend: the kinds this mode draws */
-    const LX = 1080, rows = [['p+', 'proton'], ['n0', 'neutron']];
+    const rows = [['p+', 'proton'], ['n0', 'neutron']];
     if (m === 'a') rows.push(['alpha', 'α particle']);
     if (m === 'bm') rows.push(['e-', 'β particle (electron)']);
     if (m === 'bp') rows.push(['e+', 'positron']);
     if (m === 'g') rows.push(['gamma', 'γ ray']);
     if (m === 'ec') rows.push(['e-', 'electron'], ['gamma', 'X-ray']);
-    rows.forEach(([k, s], i) => {
-      const y = 140 + i * 40, gx = LX + 14;
-      if (k === 'p+' || k === 'n0') nucleon(ctx, gx, y, k === 'p+', 12);
-      else if (k === 'alpha') alphaParticle(ctx, gx, y, 6);
-      else if (k === 'gamma') photon(ctx, gx + 22, y, [1, 0], 42, 5, 12);
-      else disc(ctx, gx, y, 8, F.el(k), alpha(PAL.ink, 0.5));
-      text(ctx, s, LX + 50, y, PAL.ink, { size: 19 });
-    });
+    F.legend(ctx, { l: 700, r: 1380, t: H - 70, b: H - 10 }, rows.map(([k, s]) => ({ s, draw: (c, x, y) => {
+      if (k === 'p+' || k === 'n0') nucleon(c, x, y, k === 'p+', 10);
+      else if (k === 'alpha') alphaParticle(c, x, y, 5.5);
+      else if (k === 'gamma') photon(c, x + 20, y, [1, 0], 40, 4, 10);
+      else disc(c, x, y, 8, F.el(k), alpha(PAL.ink, 0.5));
+    } })), { corner: 'br', row: true, panel: false, size: 19 });
 
     const P0 = nucTex(Ap, Zp, sp + (m === 'g' ? '*' : '')), D0 = nucTex(Ad, Zd, sd);
     const tex = {
@@ -364,19 +360,26 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
       bp: '\\mk{p}{' + P0 + '}\\longrightarrow\\mk{x}{{}_{+1}^{\\;0}\\text{e}}+\\mk{d}{' + D0 + '}',
       ec: '\\mk{p}{' + P0 + '}+\\mk{x}{{}_{-1}^{\\;0}\\text{e}}\\longrightarrow\\mk{d}{' + D0 + '}',
     }[m];
-    const note = m === 'g' ? 'A and Z do not change, so n:p stays ' + NP(M.P) + '.'
-      : 'n:p ' + ((Ad - Zd) / Zd > (Ap - Zp) / Zp ? 'rises' : 'falls') + ' from ' + NP(M.P) + ' to ' + NP(M.D) + '.';
-    ro.set(tex, note, { form: m });
+    const X = '{}_{\\text{Z}}^{\\text{A}}\\text{X}';
+    const gen = {
+      a: X + '\\longrightarrow{}_{2}^{4}\\text{He}+{}_{\\text{Z}-2}^{\\text{A}-4}\\text{Y}',
+      bm: X + '\\longrightarrow{}_{-1}^{\\;0}\\text{e}+{}_{\\text{Z}+1}^{\\;\\text{A}}\\text{Y}',
+      g: X + '\\longrightarrow{}_{0}^{0}\\gamma+{}_{\\text{Z}}^{\\text{A}}\\text{Y}',
+      bp: X + '\\longrightarrow{}_{+1}^{\\;0}\\text{e}+{}_{\\text{Z}-1}^{\\;\\text{A}}\\text{Y}',
+      ec: X + '+{}_{-1}^{\\;0}\\text{e}\\longrightarrow{}_{\\text{Z}-1}^{\\;\\text{A}}\\text{Y}',
+    }[m];
+    F.tex(d.readout, tex.replace(/\\mk\{\w+\}/g, '') + ' \\\\ ' + gen);
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
 
 /* =====================================================================
    FIGURE 21.9 · sim-decay-series · still · flat (rule 28.1)
-   The uranium-238 series on the book's axes, the number of neutrons across
-   (122 to 148) and the atomic number up (80 to 93, a unit of headroom over
-   uranium). One step is chosen: the steps before it solid, it thick, the
-   steps after it faint. α arrows in ink, β arrows in F.cat(1).
+   The uranium-238 series on the book's own axes, the atomic number across
+   (80 to 92) and the number of neutrons up (122 to 148). One step is
+   chosen: the steps before it solid, it thick, the steps after it faint;
+   its parent and daughter are named, with the two ends of the series.
+   α arrows in ink, β arrows in F.cat(1), named by the key.
 ===================================================================== */
 (function () {
   const H = 640;
@@ -396,25 +399,26 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
     options: NUC.slice(0, 14).map((_, i) => ({ value: String(i), label: (i + 1) + ': ' + short(i) + ' → ' + short(i + 1) + (isAlpha(i) ? ' (α)' : ' (β)') })),
     value: '0',
   });
-  const ro = readout(d);
   let hits = [];
   hover(d.stage, () => hits);
-  const BOX = { l: 130, r: 960, t: 110, b: 560 };
+  const BOX = { l: 140, r: 1320, t: 110, b: 570 };
 
   function draw() {
     const { ctx } = begin(d.c);
     const k = +pick.value || 0, al = isAlpha(k), CA = PAL.ink, CB = F.cat(1);
+    let na = 0; for (let i = 0; i <= k; i++) if (isAlpha(i)) na++;
+    const nb = k + 1 - na;
     hits = [];
-    const lab = labeller(ctx, H, { headline: topline(ctx, 'Step ' + (k + 1) + ': ' + long(k) + ' emits ' + (al ? 'an α particle' : 'a β particle') + ' and becomes ' + long(k + 1) + '.') });
-    const { X, Y } = axes(ctx, BOX, [122, 148], [80, 93], {
-      nx: 13, ny: 13, fx: (v) => String(Math.round(v)), fy: (v) => (v === 93 ? '' : String(Math.round(v))),
-      xl: 'number of neutrons (n)', yl: 'atomic number (Z)',
-    });
-    const P = (i) => ({ x: X(NUC[i][1]), y: Y(NUC[i][0]) });
+    const lab = labeller(ctx, H, { headline: topline(ctx, 'Step ' + (k + 1) + ' of 14: ' + long(k) + ' emits ' + (al ? 'an α particle' : 'a β particle') + ' and becomes ' + long(k + 1)
+      + ' (' + na + ' α and ' + nb + ' β ' + (nb === 1 && na === 1 ? 'decay' : 'decays') + ' so far).') });
+    const ax = axes(ctx, BOX, [80, 92], [122, 148], { nx: 12, ny: 13, fx: (v) => String(Math.round(v)), fy: (v) => String(Math.round(v)),
+      xl: 'atomic number (Z)', yl: 'number of neutrons (n)' });
+    const { X, Y } = ax;
+    const P = (i) => ({ x: X(NUC[i][0]), y: Y(NUC[i][1]) });
     for (let i = 0; i < 14; i++) {
       const a = P(i), b = P(i + 1), L = Math.hypot(b.x - a.x, b.y - a.y), ux = (b.x - a.x) / L, uy = (b.y - a.y) / L;
       const col = isAlpha(i) ? CA : CB, now = i === k, done = i < k;
-      arrow(ctx, a.x + ux * 12, a.y + uy * 12, b.x - ux * 12, b.y - uy * 12, now ? col : alpha(col, done ? 0.75 : 0.35), now ? 5 : 3);
+      arrow(ctx, a.x + ux * 12, a.y + uy * 12, b.x - ux * 12, b.y - uy * 12, now ? col : alpha(col, done ? 0.75 : 0.3), now ? 5 : 3);
       hits.push({ x: (a.x + b.x) / 2, y: (a.y + b.y) / 2, r: 12, name: 'step ' + (i + 1) + ': ' + (isAlpha(i) ? 'α' : 'β') + ' decay of ' + long(i) + ' to ' + long(i + 1) });
     }
     NUC.forEach((n, i) => {
@@ -423,32 +427,21 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
       dot(ctx, p.x, p.y, PAL.ink, stable, 7);
       hits.push({ x: p.x, y: p.y, r: 12, name: long(i) + ': Z = ' + n[0] + ', n = ' + n[1] + ', A = ' + A(i) + (stable ? ', stable' : ', radioactive') });
     });
-    const named = [...new Set([k, k + 1, 0, 14])];
-    const dirOf = (i) => {
-      if (i === k) return al ? [0.6, -0.8] : [0.6, 0.8];
-      if (i === k + 1) return al ? [-0.6, 0.8] : [0.5, -0.9];
-      return i === 0 ? [0.6, -0.8] : [0.2, 1];
-    };
-    named.forEach((i) => { const p = P(i), [ux, uy] = dirOf(i); lab.add(short(i), p.x, p.y, ux, uy, PAL.ink, 22, 20); });
+    /* the names sit to the right of their points, as the book sets them, except where the step's arrow leaves that way */
+    [...new Set([k, k + 1, 0, 14])].forEach((i) => {
+      const p = P(i), right = NUC[i][0] < 92 && !(i === k && !al);
+      lab.add(short(i), p.x, p.y, right ? 1 : -1, right ? 0.15 : -0.15, PAL.ink, 22, 22);
+    });
+    F.legend(ctx, ax, [
+      { s: 'α decay', draw: (c, x, y) => arrow(c, x + 20, y - 6, x - 20, y + 6, CA, 4) },
+      { s: 'β decay', draw: (c, x, y) => arrow(c, x - 14, y - 6, x + 14, y + 6, CB, 4) },
+      { s: 'stable', kind: 'dot', draw: (c, x, y) => dot(c, x, y, PAL.ink, true, 7) },
+      { s: 'radioactive', draw: (c, x, y) => dot(c, x, y, PAL.ink, false, 7) },
+    ], { corner: 'br' });
     lab.flush();
 
-    const LX = 1020;
-    arrow(ctx, LX, 150, LX + 46, 150 + 46, CA, 5);
-    text(ctx, 'α decay', LX + 70, 174, PAL.ink, { size: 20 });
-    arrow(ctx, LX, 260, LX + 46, 260 - 23, CB, 5);
-    text(ctx, 'β decay', LX + 70, 250, PAL.ink, { size: 20 });
-    dot(ctx, LX + 22, 320, PAL.ink, true, 7);
-    text(ctx, 'stable', LX + 70, 320, PAL.ink, { size: 20 });
-    dot(ctx, LX + 22, 362, PAL.ink, false, 7);
-    text(ctx, 'radioactive', LX + 70, 362, PAL.ink, { size: 20 });
-
     const [zp, , sp] = NUC[k], [zd, , sd] = NUC[k + 1];
-    const tex = '\\mk{p}{' + nucTex(A(k), zp, sp) + '}\\longrightarrow\\mk{d}{' + nucTex(A(k + 1), zd, sd) + '}+'
-      + (al ? '\\mk{x}{' + nucTex(4, 2, 'He') + '}' : '\\mk{x}{{}_{-1}^{\\;0}\\text{e}}');
-    let na = 0; for (let i = 0; i <= k; i++) if (isAlpha(i)) na++;
-    const nb = k + 1 - na, left = 13 - k;
-    ro.set(tex, 'After this step: ' + na + ' α ' + (na === 1 ? 'decay' : 'decays') + ' and ' + nb + ' β ' + (nb === 1 ? 'decay' : 'decays')
-      + (left ? '; ' + left + (left === 1 ? ' step remains' : ' steps remain') + ' to lead-206.' : '; lead-206 is stable.'), { form: al });
+    F.tex(d.readout, nucTex(A(k), zp, sp) + '\\longrightarrow' + nucTex(A(k + 1), zd, sd) + '+' + (al ? nucTex(4, 2, 'He') : '{}_{-1}^{\;0}\\text{e}'));
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -584,7 +577,7 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
     const tau = TA + cy.now(), Rm = RT.v, TC = C('time'), RC = C('rate');
     const age = sig(-Math.log(sig(Rm, 3) / R0) / LAM, 3);
     const live = Math.max(0, Math.min(1, -tau / 600 + 1)), crown = Math.max(0, Math.min(1, 1 - tau / 1500));
-    const lab = labeller(ctx, H, { headline: topline(ctx, 'Carbon giving ' + fsig(Rm, 3) + ' disintegrations per minute per gram, against 13.6 when it was alive, is about ' + grp(age, ',') + ' years old.') });
+    const lab = labeller(ctx, H, { headline: topline(ctx, 'Carbon giving ' + fsig(Rm, 3) + ' dis/min/g, against 13.6 while alive, is about ' + grp(age, ',') + ' years old.') });
     hits = [];
 
     /* the ground and the tree, leafless once dead */
@@ -657,7 +650,7 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
     hits.push({ x: px, y: py, r: 12, name: (tau < 0 ? 'alive: ' : grp(tau, ',') + ' y after death: ') + fsig(rateAt(tau), 3) + ' dis/min/g' });
     lab.flush();
 
-    ro.set('\\kt=-\\frac{1}{\\klamdecay}\\ln\\left(\\frac{\\krate_{t}}{\\krate_{0}}\\right)=-\\frac{1}{1.21\\times10^{-4}\\;\\text{y}^{-1}}\\ln\\left(\\frac{' + fsig(Rm, 3) + '}{13.6}\\right)=' + grp(age, '{,}') + '\\;\\text{y}',
+    ro.set('\\kt=-\\frac{1}{\\klamdecay}\\ln\\left(\\frac{\\krate_{t}}{\\krate_{0}}\\right)=-\\frac{1}{1.21\\times10^{-4}\\;\\text{y}^{-1}}\\ln\\left(\\frac{' + fsig(Rm, 3) + '\\;\\text{dis/min/g}}{13.6\\;\\text{dis/min/g}}\\right)=' + grp(age, '{,}') + '\\;\\text{y}',
       'The sample drawn has ' + left + ' of its ' + NA + ' carbon-14 atoms left.');
   }
   register(d.fig, {

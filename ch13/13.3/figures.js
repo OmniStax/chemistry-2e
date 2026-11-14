@@ -20,47 +20,48 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
    constant TAUK; the molecules follow the rounded extent, and a forward
    and a reverse reaction every 0.7 s keep the balance dynamic. A run is
    computed whole when a choice changes, so the transport scrubs it
-   exactly. Positions fold into the vessel, whose height h(t) the piston
-   sets; the strip plots every concentration against unscaled time, its
-   range fixed per run from the largest concentration it reaches.
+   exactly. Flat (book rule: every molecule must be seen and turning the
+   vessel shows nothing): the vessel in side view, its piston at the
+   height h(t) sets; positions fold into it. The graph beside plots every
+   concentration against unscaled time, its range fixed per run from the
+   largest concentration it reaches.
 ===================================================================== */
 (function () {
-  const d = F.sim(root, 'sim-le-chatelier');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: 'front', yaw: 0, pitch: 0.12 }, { label: 'above', yaw: 0.5, pitch: 1.0 }], h: 380, dist: 6.0, tilt: 0.2 });
-  const grp = v.part(0), cnv = F.makeCanvas(d.stage, 340);
+  const d = F.sim(root, 'sim-le-chatelier', 600);
+  /* each molecule's atoms [element, dx, dy, r] in canvas units, space-filling */
   const MOLS = {
-    H2: { name: 'hydrogen, H₂', atoms: [['H', -0.05, 0, 0, 0.05], ['H', 0.05, 0, 0, 0.05]] },
-    I2: { name: 'iodine, I₂', atoms: [['I', -0.11, 0, 0, 0.105], ['I', 0.11, 0, 0, 0.105]] },
-    HI: { name: 'hydrogen iodide, HI', atoms: [['H', -0.1, 0, 0, 0.05], ['I', 0.05, 0, 0, 0.105]] },
-    N2O4: { name: 'dinitrogen tetroxide, N₂O₄', atoms: [['N', -0.085, 0, 0, 0.065], ['N', 0.085, 0, 0, 0.065], ['O', -0.15, 0.1, 0, 0.06], ['O', -0.15, -0.1, 0, 0.06], ['O', 0.15, 0.1, 0, 0.06], ['O', 0.15, -0.1, 0, 0.06]] },
-    NO2: { name: 'nitrogen dioxide, NO₂', atoms: [['N', 0, 0.03, 0, 0.065], ['O', -0.105, -0.03, 0, 0.06], ['O', 0.105, -0.03, 0, 0.06]] },
+    H2: { name: 'hydrogen, H₂', atoms: [['H', -5, 0, 7], ['H', 5, 0, 7]] },
+    I2: { name: 'iodine, I₂', atoms: [['I', -11, 0, 13], ['I', 11, 0, 13]] },
+    HI: { name: 'hydrogen iodide, HI', atoms: [['H', -12, 0, 7], ['I', 3, 0, 13]] },
+    N2O4: { name: 'dinitrogen tetroxide, N₂O₄', atoms: [['O', -12.8, -7.2, 6.8], ['O', -12.8, 7.2, 6.8], ['O', 12.8, -7.2, 6.8], ['O', 12.8, 7.2, 6.8], ['N', -5.6, 0, 7.2], ['N', 5.6, 0, 7.2]] },
+    NO2: { name: 'nitrogen dioxide, NO₂', atoms: [['O', -8.8, 4, 6.8], ['O', 8.8, 4, 6.8], ['N', 0, -2.4, 7.2]] },
   };
   const RX = {
-    hi: { label: 'H_{2} + I_{2} ⇌ 2HI', T: 673.15, K: 50, u: 0.02, sig: 3,
+    hi: { label: 'H_{2} + I_{2} ⇌ 2HI', T: 673.15, deg: 400, K: 50, u: 0.02, sig: 3,
       sp: [{ k: 'H2', nu: -1, n: 2, M: 2.016, f: 'H_{2}', t: '\\text{H}_{2}' }, { k: 'I2', nu: -1, n: 4, M: 253.8, f: 'I_{2}', t: '\\text{I}_{2}' }, { k: 'HI', nu: 2, n: 20, M: 127.9, f: 'HI', t: '\\text{HI}' }],
       stresses: [
         { value: 'add-H2', label: 'add H₂', add: { H2: 4 } }, { value: 'add-I2', label: 'add I₂', add: { I2: 4 } },
         { value: 'remove-HI', label: 'remove HI', add: { HI: -10 } }, { value: 'add-HI', label: 'add HI', add: { HI: 10 } },
         { value: 'compress', label: 'compress to V/3', vol: 1 / 3 }] },
-    n2o4: { label: 'N_{2}O_{4} ⇌ 2NO_{2}', T: 298.15, K: (0.016 * 0.016) / 0.042, u: 0.002, sig: 2, dH: 57200,
+    n2o4: { label: 'N_{2}O_{4} ⇌ 2NO_{2}', T: 298.15, deg: 25, K: (0.016 * 0.016) / 0.042, u: 0.002, sig: 2, dH: 57200,
       sp: [{ k: 'N2O4', nu: -1, n: 21, M: 92.01, f: 'N_{2}O_{4}', t: '\\text{N}_{2}\\text{O}_{4}' }, { k: 'NO2', nu: 2, n: 8, M: 46.01, f: 'NO_{2}', t: '\\text{NO}_{2}' }],
       stresses: [
         { value: 'add-N2O4', label: 'add N₂O₄', add: { N2O4: 10 } }, { value: 'add-NO2', label: 'add NO₂', add: { NO2: 8 } },
         { value: 'remove-NO2', label: 'remove NO₂', add: { NO2: -4 } }, { value: 'compress', label: 'compress to V/3', vol: 1 / 3 },
         { value: 'heat', label: 'heat to 50 °C', T: 323.15, deg: 50 }, { value: 'cool', label: 'cool to 0 °C', T: 273.15, deg: 0 }] },
   };
-  const rxn = F.choice(d.controls, { label: '\\text{reaction}', options: [{ value: 'hi', label: 'H₂ + I₂ ⇌ 2HI' }, { value: 'n2o4', label: 'N₂O₄ ⇌ 2NO₂' }], value: 'hi', aria: 'the equilibrium in the vessel', onInput: rerun });
-  const picks = {};
-  for (const key of ['hi', 'n2o4']) {
-    picks[key] = F.select(d.controls, { label: '\\text{stress}', key: 'stress-' + key, options: RX[key].stresses.map(({ value, label }) => ({ value, label })), value: RX[key].stresses[0].value, aria: 'the stress applied at the dashed line', onInput: rerun });
-    picks[key].el = d.controls.lastElementChild;
-  }
-  const fx = F.el('div'); d.readout.append(fx);
+  const opts = (key) => RX[key].stresses.map(({ value, label }) => ({ value, label }));
+  const rxn = F.choice(d.controls, { label: '\\text{reaction}', options: [{ value: 'hi', label: 'H₂ + I₂ ⇌ 2HI' }, { value: 'n2o4', label: 'N₂O₄ ⇌ 2NO₂' }], value: 'hi', aria: 'the equilibrium in the vessel',
+    onInput: () => { pick.options(opts(rxn.value), RX[rxn.value].stresses[0].value); rerun(); } });
+  const pick = F.select(d.controls, { label: '\\text{stress}', key: 'stress', options: opts('hi'), value: 'add-H2', aria: 'the stress applied at the dashed line', onInput: () => rerun() });
+  const picks = { get hi() { return pick; }, get n2o4() { return pick; } };
 
-  const L = 1, RC = 0.2, TS = 1.5, TRUN = 7, DT = 1 / 60, NF = Math.round(TRUN / DT), TAUK = 0.6, PISTON = 0.6, GROW = 0.3;
+  const RC = 0.2, TS = 1.5, TRUN = 7, DT = 1 / 60, NF = Math.round(TRUN / DT), TAUK = 0.6, PISTON = 0.6, GROW = 0.3;
+  /* the vessel's inside, in canvas units: full height at h = 1 */
+  const VL = 70, VR = 500, VB = 520, VT = 150, PAD = 22;
   const cy = cycle(() => TRUN, 1.5);
-  let run = null;
-
+  let run = null, hits = [];
+  F.hover(d.stage, () => hits);
   function simulate() {
     const R = RX[rxn.value], st = R.stresses.find((s) => s.value === picks[rxn.value].value) ?? R.stresses[0];
     const rand = rng(R.sp.length * 977 + R.stresses.indexOf(st) * 131 + 7);
@@ -130,62 +131,55 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
     if (!stressed) stress();
     return { R, st, vol, K1: R.K, K2, hOf, series, settled, cmax, slots, halos, posN, kindAt, xe, id: Math.random() };
   }
-  function rerun() {
-    for (const key of ['hi', 'n2o4']) picks[key].el.style.display = key === rxn.value ? '' : 'none';
-    run = simulate(); cy.reset();
-  }
+  function rerun() { run = simulate(); cy.reset(); }
   rerun();
 
-  const T3 = () => window.THREE;
-  let sig = '', meshes = [], halo3 = [], piston = null, rod = null;
-  const palSig = () => [PAL.ink, PAL.panel, PAL.muted, F.CC, F.el('H'), F.el('I'), F.el('N'), F.el('O')].join('|');
-  function molecule3(k) {
-    const g = new (T3().Group)(); grp.add(g);
-    MOLS[k].atoms.forEach(([e, x, y, z, r]) => v.pickable(F.mesh.sphere(g, [x, y, z], r, F.el(e)), MOLS[k].name));
-    g.visible = false; return g;
+  function molecule(ctx, k, x, y, th, s = 1) {
+    const c = Math.cos(th), sn = Math.sin(th);
+    MOLS[k].atoms.forEach(([e, dx, dy, r]) => {
+      ctx.save(); ctx.fillStyle = F.el(e); ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 1.2;
+      ctx.beginPath(); ctx.arc(x + s * (dx * c - dy * sn), y + s * (dx * sn + dy * c), r * s, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore();
+    });
   }
-  function build() {
-    const key = [run.id, palSig()].join('|'); if (key === sig || !T3()) return; sig = key;
-    const T = T3();
-    if (!grp) return;
-    v.clear(); grp.position.set(0, -0.42, 0);
-    const box = new T.Mesh(new T.BoxGeometry(2 * L, 2 * L, 2 * L), F.mesh.mat(PAL.ink, { transparent: true, opacity: 0.05, depthWrite: false, side: T.DoubleSide })); grp.add(box);
-    v.pickable(box, 'the vessel');
-    grp.add(new T.LineSegments(new T.EdgesGeometry(new T.BoxGeometry(2 * L, 2 * L, 2 * L)), new T.LineBasicMaterial({ color: new T.Color(PAL.ink) })));
-    piston = F.mesh.box(grp, [0, L, 0], [2 * L - 0.02, 0.06, 2 * L - 0.02], PAL.muted, { transparent: true, opacity: 0.85 });
-    v.pickable(piston, 'the piston');
-    rod = F.mesh.stick(grp, [0, L, 0], [0, L + 0.7, 0], 0.05, PAL.muted);
-    v.pickable(rod, 'the piston');
-    v.label(run.R.label.replace(/_\{(\d)\}/g, (_, n) => '₀₁₂₃₄₅₆₇₈₉'[n]), [0, L + 0.95, 0], grp, 6);
-    meshes = run.slots.map((s) => { const by = {}; for (const [, k] of s.kinds) by[k] ??= molecule3(k); return by; });
-    halo3 = run.halos.map(() => { const h = F.mesh.sphere(grp, [0, 0, 0], 0.22, PAL.ink, { transparent: true, opacity: 0, depthWrite: false }); h.visible = false; return h; });
-  }
-  const phys = (q, h) => { const bot = -L + RC, top = -L + 2 * L * h - RC; return [q[0] * (L - RC), (bot + top) / 2 + (q[1] * (top - bot)) / 2, q[2] * (L - RC)]; };
+  /* a folded position [-1, 1]² to the canvas, inside a vessel whose piston stands at h */
+  const top = (h) => VB - (VB - VT) * h;
+  const place = (q, h) => [VL + PAD + ((q[0] + 1) / 2) * (VR - VL - 2 * PAD), VB - PAD - ((q[1] + 1) / 2) * (VB - top(h) - 2 * PAD)];
 
   function draw() {
+    const { ctx } = begin(d.c);
     const t = cy.now(), f = Math.min(NF, Math.max(0, Math.round(t / DT))), { R, st, series, hOf, slots, halos, posN, kindAt } = run, h = hOf(t);
-    build();
-    if (piston) {
-      const top = -L + 2 * L * h;
-      piston.position.y = top + 0.03; F.mesh.setStick(rod, [0, top + 0.06, 0], [0, top + 0.06 + 0.7 + (1 - h) * 1.2, 0]);
-      slots.forEach((s, i) => {
-        const k = kindAt(s, t), by = meshes[i], on = t >= s.born && t < s.died + GROW;
-        for (const kk in by) by[kk].visible = on && kk === k;
-        if (!on) return;
-        const g = by[k], sc = s.born > 0 && t < s.born + GROW ? (t - s.born) / GROW : t >= s.died ? 1 - (t - s.died) / GROW : 1;
-        g.scale.setScalar(Math.max(0.01, sc));
-        g.position.set(...phys(posN(s, Math.min(t, s.died)), h));
-        g.rotation.set(s.rot[0] + s.spin[0] * t, s.rot[1] + s.spin[1] * t, s.rot[2] + s.spin[2] * t);
-      });
-      halos.forEach(({ t: te, s }, i) => { const k = (t - te) / 0.6, m = halo3[i]; m.visible = k >= 0 && k < 1; if (!m.visible) return; m.material.opacity = 0.22 * (1 - k); m.position.set(...phys(posN(s, te), hOf(te))); });
-      v.invalidate();
-    }
+    hits = [];
+    /* the vessel: walls and floor, the piston at its height, the rod above */
+    const yp = top(h), deg = t < TS || !st.T ? R.deg : st.deg;
+    ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.04); ctx.fillRect(VL, yp, VR - VL, VB - yp); ctx.restore();
+    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 4; ctx.lineJoin = 'round'; ctx.beginPath();
+    ctx.moveTo(VL - 2, VT - 40); ctx.lineTo(VL - 2, VB + 2); ctx.lineTo(VR + 2, VB + 2); ctx.lineTo(VR + 2, VT - 40); ctx.stroke(); ctx.restore();
+    ctx.save(); ctx.fillStyle = alpha(PAL.muted, 0.55); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2;
+    ctx.fillRect(VL + 1, yp - 18, VR - VL - 2, 18); ctx.strokeRect(VL + 1, yp - 18, VR - VL - 2, 18);
+    ctx.fillRect((VL + VR) / 2 - 9, VT - 62, 18, yp - 18 - (VT - 62)); ctx.strokeRect((VL + VR) / 2 - 9, VT - 62, 18, yp - 18 - (VT - 62)); ctx.restore();
+    hits.push({ x: (VL + VR) / 2, y: yp - 9, r: 30, name: 'the piston' });
+    text(ctx, `${deg} °C`, VR + 16, VB - 14, C('temperature'), { size: 20, weight: 600, bg: PAL.panel });
 
-    const { ctx } = begin(cnv);
+    /* the molecules, and a faint ring where one has just reacted */
+    ctx.save(); ctx.beginPath(); ctx.rect(VL, yp, VR - VL, VB - yp); ctx.clip();
+    halos.forEach(({ t: te, s }) => { const k = (t - te) / 0.6; if (k < 0 || k >= 1) return; const [x, y] = place(posN(s, te), hOf(te)); ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.45 * (1 - k)); ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(x, y, 22 + 16 * k, 0, TAU); ctx.stroke(); ctx.restore(); });
+    slots.forEach((s) => {
+      const k = kindAt(s, t), on = t >= s.born && t < s.died + GROW;
+      if (!on) return;
+      const sc = s.born > 0 && t < s.born + GROW ? (t - s.born) / GROW : t >= s.died ? 1 - (t - s.died) / GROW : 1;
+      const [x, y] = place(posN(s, Math.min(t, s.died)), h);
+      molecule(ctx, k, x, y, s.rot[0] + s.spin[0] * 2 * t, Math.max(0.01, sc));
+      hits.push({ x, y, r: 18, name: MOLS[k].name });
+    });
+    ctx.restore();
+    F.legend(ctx, { l: VL, r: VR, t: VB + 14, b: VB + 50 }, R.sp.map((s) => ({ s: s.f, draw: (c, x, y) => molecule(c, s.k, x, y, 0, 0.75) })), { corner: 'top', row: true, panel: false });
+
+    /* the concentrations against time, the stress at the dashed line */
     const c = series[f], c0 = series[0], cEnd = series[NF], K = t < TS ? run.K1 : run.K2;
-    const G = { l: 150, r: 1120, t: 128, b: 268 }, yr = F.nice(0, run.cmax * 1.08, 4);
+    const G = { l: 650, r: 1240, t: 150, b: 480 }, yr = F.nice(0, run.cmax * 1.08, 4);
     const g = F.axes(ctx, G, [0, TRUN], [0, yr.hi], { nx: 7, ny: yr.n, fx: () => '', fy: (q) => (q ? fmt(q, R.sig === 3 ? 2 : 3) : '0'), xl: 'time', yl: 'concentration (M)', yc: C('concentration') });
     line(ctx, g.X(TS), G.t, g.X(TS), G.b, alpha(PAL.ink, 0.4), 2, [10, 10]);
+    text(ctx, st.label, g.X(TS) + 10, G.t + 16, PAL.muted, { size: 17, bg: PAL.panel });
     R.sp.forEach((s, i) => {
       const col = F.cat(i);
       ctx.save(); ctx.strokeStyle = col; ctx.lineWidth = 5; ctx.lineJoin = 'round'; ctx.beginPath();
@@ -193,6 +187,7 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
       ctx.stroke(); ctx.restore();
       dot(ctx, g.X(f * DT), g.Y(c[i]), col, true, 8);
     });
+    /* each curve named at the right edge, at its final value, stepped apart where two would touch */
     const tags = R.sp.map((s, i) => ({ s: `[${s.f}]`, y0: g.Y(cEnd[i]), y: g.Y(cEnd[i]), col: F.cat(i) })).sort((p, q) => p.y0 - q.y0);
     for (let k = 1; k < tags.length; k++) tags[k].y = Math.max(tags[k].y, tags[k - 1].y + 26);
     const over = tags[tags.length - 1].y - (G.b + 12);
@@ -226,7 +221,7 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
     const tex = R.sp.length === 3
       ? `\\kQc = \\frac{[${R.sp[2].t}]^{2}}{[${R.sp[0].t}][${R.sp[1].t}]} = \\frac{(${cc(2)})^{2}}{(${cc(0)})(${cc(1)})} = ${kv(q)} ${rel} \\kKc = ${kv(K)}`
       : `\\kQc = \\frac{[${R.sp[1].t}]^{2}}{[${R.sp[0].t}]} = \\frac{(${cc(1)})^{2}}{${cc(0)}} = ${kv(q)} ${rel} \\kKc = ${kv(K)}`;
-    F.tex(fx, tex, false, { values: false });
+    F.tex(d.readout, tex, false, { values: false });
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
@@ -234,7 +229,7 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
 /* =====================================================================
    FIGURE 13.8: reaction diagrams of one elementary process without and
    with a catalyst. Energies are illustrative, since the book prints
-   none: reactants 0 kJ, products −60 kJ, the uncatalyzed peak 100 kJ, the
+   none: reactants 0 kJ, products −60 kJ, (each bracket carries its value) the uncatalyzed peak 100 kJ, the
    catalyzed peak on the slider (20 to 100 kJ, default 63 kJ, the book's
    proportion). Each path is flat, rises on a half cosine from 0.25 to its peak at
    0.52, and falls on another to the products at 0.80. The energy axis
@@ -246,32 +241,31 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
   const d = F.sim(root, 'sim-catalyst-diagram', 560);
   const Ec = ctl(d.controls, { label: '\\kEa\\ \\text{forward, catalyzed}', cls: 'energy', min: 20, max: 100, step: 1, value: 63, unit: 'kJ', dec: 0, specials: [{ at: 100, label: 'no catalyst' }], aria: 'forward activation energy of the catalyzed path, in kilojoules' });
   const ro = F.readout(d);
-  const G = { l: 300, r: 1060, t: 120, b: 500 }, B = 80, ER = 0, EP = -60, EU = 100, X0 = 0.25, XP = 0.52, X1 = 0.8;
+  const G = { l: 170, r: 1290, t: 110, b: 500 }, B = 80, ER = 0, EP = -60, EU = 100, X0 = 0.25, XP = 0.52, X1 = 0.8;
   const prof = (pk) => (x) => (x < X0 ? ER : x < XP ? ER + ((pk - ER) * (1 - Math.cos((Math.PI * (x - X0)) / (XP - X0)))) / 2 : x < X1 ? pk + ((EP - pk) * (1 - Math.cos((Math.PI * (x - XP)) / (X1 - XP)))) / 2 : EP);
   function bracket(ctx, x, y1, y2, side, lines, below) {
     const col = C('energy');
     if (Math.abs(y2 - y1) > 4) { F.arrow(ctx, x, (y1 + y2) / 2, x, y1, col, 3); F.arrow(ctx, x, (y1 + y2) / 2, x, y2, col, 3); }
     const ym = below ?? (y1 + y2) / 2, ax = side > 0 ? 'left' : 'right';
-    lines.forEach((s, i) => text(ctx, s, x + side * 12, ym + (i - (lines.length - 1) / 2) * 24, col, { size: 19, weight: 600, align: ax, bg: PAL.panel }));
+    lines.forEach(([s, c], i) => text(ctx, s, x + side * 12, ym + (i - (lines.length - 1) / 2) * 24, c, { size: 19, weight: c === col ? 600 : 400, align: ax, bg: PAL.panel }));
   }
   function draw() {
     const { ctx } = begin(d.c), pk = Ec.v, drop = EU - pk;
     const a = F.axes(ctx, G, [0, 1], [0, 200], { nx: 1, ny: 1, fx: () => '', fy: () => '', xl: 'extent of reaction', yl: 'energy', yc: C('energy') });
     const g = { X: a.X, Y: (e) => a.Y(e + B) }, c0 = F.cat(0), c1 = F.cat(1);
-    line(ctx, g.X(0.13), g.Y(EU), g.X(0.97), g.Y(EU), alpha(c0, 0.8), 3, [10, 10]);
-    if (drop > 0.5) line(ctx, g.X(0.18), g.Y(pk), g.X(0.88), g.Y(pk), alpha(c1, 0.8), 3, [10, 10]);
+    line(ctx, g.X(0.13), g.Y(EU), g.X(0.93), g.Y(EU), alpha(c0, 0.8), 3, [10, 10]);
+    if (drop > 0.5) line(ctx, g.X(0.18), g.Y(pk), g.X(0.86), g.Y(pk), alpha(c1, 0.8), 3, [10, 10]);
     F.curve(ctx, prof(EU), 0, 1, g.X, g.Y, c0, 5, 200);
     F.curve(ctx, prof(pk), 0, 1, g.X, g.Y, c1, 5, 200);
     text(ctx, 'transition state', g.X(XP), g.Y(EU) - 22, PAL.ink, { size: 19, align: 'center', bg: PAL.panel });
-    bracket(ctx, g.X(0.13), g.Y(ER), g.Y(EU), -1, ['E_{a}', 'forward']);
-    bracket(ctx, g.X(0.97), g.Y(EP), g.Y(EU), 1, ['E_{a}', 'reverse']);
+    const ce = C('energy'), kj = (x) => [fmt(x, 0) + ' kJ', ce];
+    bracket(ctx, g.X(0.13), g.Y(ER), g.Y(EU), -1, [['E_{a} forward', PAL.ink], kj(EU)]);
+    bracket(ctx, g.X(0.93), g.Y(EP), g.Y(EU), 1, [['E_{a} reverse', PAL.ink], kj(EU - EP)]);
     if (drop > 0.5) {
-      bracket(ctx, g.X(0.18), g.Y(ER), g.Y(pk), 1, ['E_{a}', 'forward'], g.Y(ER) - g.Y(pk) < 64 ? g.Y(ER) + 34 : undefined);
-      bracket(ctx, g.X(0.88), g.Y(EP), g.Y(pk), -1, ['E_{a}', 'reverse']);
+      bracket(ctx, g.X(0.18), g.Y(ER), g.Y(pk), 1, [['E_{a} forward', PAL.ink], kj(pk)], g.Y(ER) - g.Y(pk) < 64 ? g.Y(ER) + 40 : undefined);
+      bracket(ctx, g.X(0.86), g.Y(EP), g.Y(pk), -1, [['E_{a} reverse', PAL.ink], kj(pk - EP)]);
     }
-    const lx = G.r + 70, ly = G.t + 10;
-    line(ctx, lx, ly, lx + 44, ly, c0, 5); text(ctx, 'uncatalyzed', lx + 56, ly, PAL.ink, { size: 18 });
-    line(ctx, lx, ly + 32, lx + 44, ly + 32, c1, 5); text(ctx, 'catalyzed', lx + 56, ly + 32, PAL.ink, { size: 18 });
+    F.legend(ctx, a, [{ s: 'uncatalyzed', color: c0, w: 5 }, { s: 'catalyzed', color: c1, w: 5 }], { corner: 'bl' });
     topline(ctx, drop > 0.5 ? `Both activation energies of the catalyzed path are ${fmt(drop, 0)} kJ lower than without the catalyst.` : 'Without a catalyst, the two paths are one.');
     const en = (x) => hue('energy', fmt(x, 0) + '\\ \\text{kJ}');
     ro.set(`\\kEa(\\text{forward}) - \\kEa(\\text{reverse}) = ${en(pk)} - ${en(pk - EP)} = ${en(EP)}`,
@@ -341,7 +335,7 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
     { x: 250, y: 270, r: 30, name: 'compressor for the feed gases' }, { x: 600, y: 790, r: 30, name: 'compressor for the recycled gases' },
     { x: 420, y: 450, r: 45, name: 'heat exchanger inside the catalyst chamber' }, { x: 420, y: 580, r: 40, name: 'catalyst' },
     { x: 420, y: 705, r: 50, name: 'heater' }, { x: 320, y: 560, r: 25, name: 'catalyst chamber, 400 to 500 °C' }, { x: 520, y: 560, r: 25, name: 'catalyst chamber, 400 to 500 °C' },
-    { x: 770, y: 195, r: 60, name: 'heat exchanger' }, { x: 1060, y: 700, r: 35, name: 'refrigeration' }, { x: 1090, y: 820, r: 60, name: 'liquid ammonia, NH₃(l), in storage' },
+    { x: 770, y: 195, r: 60, name: 'heat exchanger: the hot mixture warms the recycled gases' }, { x: 1060, y: 700, r: 35, name: 'refrigeration' }, { x: 1090, y: 820, r: 60, name: 'liquid ammonia, NH₃(l), in storage' },
     { x: 1280, y: 600, r: 22, name: 'cold water in' }, { x: 1280, y: 380, r: 22, name: 'hot water out' },
   ];
   function draw() {
@@ -387,17 +381,17 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
 
     const lab = (s, x, y, align = 'left') => text(ctx, s, x, y, PAL.ink, { size: 19, align, bg: PAL.panel });
     lab('N_{2}, H_{2} feed gases', 40, 236);
-    lab('catalyst chamber,', 286, 596, 'right'); lab('400 to 500 °C', 286, 620, 'right');
-    line(ctx, 292, 600, 376, 582, alpha(PAL.ink, 0.5), 1.5);
-    lab('heat exchanger', 770, 128, 'center');
+    lab('catalyst chamber,', 286, 440, 'right'); lab('400 to 500 °C', 286, 464, 'right');
+    line(ctx, 292, 452, 304, 452, alpha(PAL.ink, 0.5), 1.5);
+    lab('catalyst', 250, 582, 'right');
+    line(ctx, 258, 582, 376, 582, alpha(PAL.ink, 0.5), 1.5);
     lab('condenser', 1214, 490);
     lab('NH_{3}(l) storage', 1232, 812);
     lab('recycled N_{2}, H_{2}', 775, 460, 'center');
-    const lx = 1110, ly = 128;
-    [['N2', 'N_{2}'], ['H2', 'H_{2}'], ['NH3', 'NH_{3}']].forEach(([k, s], i) => { glyph(ctx, k, lx + i * 96, ly); text(ctx, s, lx + i * 96 + 16, ly, PAL.ink, { size: 18 }); });
+    F.legend(ctx, { l: 1000, r: 1380, t: 110, b: 146 }, [['N2', 'N_{2}'], ['H2', 'H_{2}'], ['NH3', 'NH_{3}']].map(([k, s]) => ({ s, draw: (c, x, y) => glyph(c, k, x, y) })), { corner: 'top', row: true, panel: false });
     topline(ctx, 'NH_{3} forms over the catalyst and is condensed out of the stream, while the unreacted N_{2} and H_{2} go round again.');
   }
-  F.tex(d.readout, '\\text{N}_{2}(g) + 3\\text{H}_{2}(g) \\rightleftharpoons 2\\text{NH}_{3}(g) \\qquad \\kdH = -92.2\\ \\text{kJ}');
+  F.tex(d.readout, '\\text{N}_{2}(g) + 3\\text{H}_{2}(g) \\rightleftharpoons 2\\text{NH}_{3}(g) \\\\ \\kdH = -92.2\\ \\text{kJ}');
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
 };

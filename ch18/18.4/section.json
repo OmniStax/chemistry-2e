@@ -75,18 +75,18 @@
   },
   {
    "id": "fig-graphite-orbitals",
-   "kind": "figure",
+   "kind": "photo",
    "number": "18.21",
-   "originals": [
-    "/media/ch18/CNX_Chem_18_04_unhyporbC.jpg"
-   ],
-   "original_caption": "(a) Carbon atoms in graphite have unhybridized p orbitals. Each p orbital is perpendicular to the plane of carbon atoms. (b) These are two of the many resonance forms of graphite necessary to describe its electronic structure as a resonance hybrid.",
    "draws": [],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "reverted to the book’s image"
     }
    ]
   },

@@ -11,7 +11,7 @@ ball-and-stick and space-filling models already draw them.
 
 | Quantity | Type | Sections | Treatment |
 |---|---|---|---|
-| a melting or boiling point (Table 20.1's –187.7 °C to 316.1 °C), an oil heated to 425 °C, 140 °C for diethyl ether, 0 °C at STP, –196 °C of liquid nitrogen | `temperature` | 20.1, 20.2, 20.4 | `data-type` on the value; the axis and readout of a boiling-point Sim, the tray temperatures of the distillation column |
+| a melting or boiling point (Table 20.1's –187.7 °C to 316.1 °C), an oil heated to 425 °C, 140 °C for diethyl ether, 0 °C at STP, –196 °C of liquid nitrogen | `temperature` | 20.1, 20.2, 20.4 | `data-type` on the value; the axis and readout of a boiling-point Sim |
 | 1 atm at STP | `pressure` | 20.1 | `data-type` on the value (Table 20.1's footnote) |
 | a mass of an exercise (25.5 g, 0.2352 g, 1.000 × 10³ kg, 1000 kg, 13.0 g) | `mass` | 20.1, 20.2, 20.3 | `data-type` where a prompt or key states one |
 | a volume of methanol (4.593 × 10² L) | `volume` | 20.2 | in one key |
@@ -73,7 +73,7 @@ every figure stays legible from its labels.
 
 ## As built
 
-- `temperature`: 20.1 Table 20.1's melting and boiling points and its footnote's 0 °C, the 425 °C of the furnace, the curves and readout of the carbon-count Sim and the temperature bar beside the distillation tower, which carries no tray temperatures since the book gives none; 20.2 the 140 °C of the ether synthesis; 20.4 the –196 °C of liquid nitrogen. "Melting point" and "boiling point" are marked where they name the temperature.
+- `temperature`: 20.1 Table 20.1's melting and boiling points and its footnote's 0 °C, the 425 °C of the furnace in Figure 20.6's caption (the book's image, kept), the curves and readout of the carbon-count Sim; 20.2 the 140 °C of the ether synthesis; 20.4 the –196 °C of liquid nitrogen. "Melting point" and "boiling point" are marked where they name the temperature.
 - `pressure`: 20.1, the footnote's 1 atm. `mass`: 20.1's exercises, and 20.2's 1000 kg of MTBE. `volume` and `density`: 20.2's methanol item. 20.3 binds no type, since its items with masses are left out unkeyed; "vapor pressure" is its one typed word.
-- Conventions: `F.el` for every atom in all twelve live figures; R groups through `F.el('R')`. The book's red, purple and green emphasis is drawn as weight or an ink ring.
+- Conventions: `F.el` for every atom drawn as a ball, in the five figures that draw them (20.1's molecule models, carbon-count chain and benzene ring; 20.3's carbonyl group and oxidation ladder); R groups through `F.el('R')`. The line structures, the oxygen-chain names and the peptides are drawn in ink. The book's red, purple and green emphasis is drawn as weight or an ink ring.
 - Referents: none in any section. The propane image is kept as printed, its purple and green hydrogen atoms named by the text.

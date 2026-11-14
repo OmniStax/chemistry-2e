@@ -1,7 +1,7 @@
 /* Figures for section 14.3 Relative Strengths of Acids and Bases. Boots against the section's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['14.3'] = function (root, F) {
-const { el, fmt, tex, C, PAL, alpha, ctl, register, begin, line, dot, text, topline, arrow } = F;
+const { fmt, tex, C, PAL, alpha, ctl, register, begin, line, dot, text, topline, arrow } = F;
 const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
 /* a small seeded generator, so a slider position always draws the same arrangement */
 const rng = (seed) => () => { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; };
@@ -15,128 +15,146 @@ const KW = 1.0e-14;
 const sup = (t) => t.replace(/[0-9−+-]/g, (ch) => '⁰¹²³⁴⁵⁶⁷⁸⁹'['0123456789'.indexOf(ch)] || (ch === '+' ? '⁺' : '⁻'));
 
 /* =====================================================================
-   SIM: an acid in water, in three dimensions. Still: the box answers its
-   choice and its slider. One hundred formula units of the chosen acid at
-   every concentration; x from x²/([HA]₀ − x) = K_a solved exactly (HCl
-   complete), water's own ionization neglected as the text does. The slots
-   drawn ionized are the first round(100x/[HA]₀) of a fixed shuffled order,
-   so dilution ionizes more of the same box. Strip: log concentration axis
-   10⁻⁴ to 1 M (acetate at 0.010 M acetic acid is 4.1 × 10⁻⁴ M; 1 M HCl gives
-   1 M), pH beneath it; HCl's [HA] ≈ 0 is pinned at the left end. No ground:
-   yaw free, pitch within 70°; spin starts off, nothing else moves.
+   SIM: an acid in water, flat. Still: the beaker answers its choice and
+   its slider. One hundred formula units of the chosen acid at every
+   concentration, each drawn space-filling by its atoms; x from
+   x²/([HA]₀ − x) = K_a solved exactly (HCl complete), water's own
+   ionization neglected as the text does. The slots drawn ionized are the
+   first round(100x/[HA]₀) of a fixed shuffled order, so dilution ionizes
+   more of the same molecules: each one's proton leaves for a water
+   molecule, which becomes H₃O⁺ beside the ringed conjugate base. Graph:
+   percent ionization against [HA]₀, both logarithmic, 0.01 to 1 M and
+   0.1 to 100 %, a curve per acid (acetic acid's 0.42 % at 1 M is the
+   lowest value, HCl's 100 % the highest).
 ===================================================================== */
 (function () {
-  const d = F.sim(root, 'sim-acid-water');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [-1.22, 1.22], views: [{ label: 'front', yaw: 0, pitch: 0.12 }, { label: 'corner', yaw: 0.65, pitch: 0.45 }], h: 400, dist: 6.6, tilt: 0.3 });
-  const grp = v.part(0), cnv = F.makeCanvas(d.stage, 290);
+  const d = F.sim(root, 'sim-acid-water', 620);
+  /* atoms as [element, x, y, r] in canvas units about the molecule's centre; the acidic hydrogen is last */
   const ACIDS = {
-    HCl: { name: 'hydrochloric acid', unit: 'molecules', K: Infinity, a: 'HCl', b: 'Cl⁻', an: 'a molecule of hydrogen chloride, HCl', bn: 'a chloride ion, Cl⁻',
-      atoms: [['Cl', 0, 0, 0], ['H', 0.15, 0, 0, 1]] },
-    HSO4: { name: 'hydrogen sulfate ion', unit: 'ions', K: 1.2e-2, a: 'HSO₄⁻', b: 'SO₄²⁻', an: 'a hydrogen sulfate ion, HSO₄⁻', bn: 'a sulfate ion, SO₄²⁻',
-      atoms: [['S', 0, 0, 0], ['O', 0.087, 0.087, 0.087], ['O', 0.087, -0.087, -0.087], ['O', -0.087, 0.087, -0.087], ['O', -0.087, -0.087, 0.087], ['H', 0.15, 0.15, 0.15, 1]] },
-    HNO2: { name: 'nitrous acid', unit: 'molecules', K: 4.6e-4, a: 'HNO₂', b: 'NO₂⁻', an: 'a molecule of nitrous acid, HNO₂', bn: 'a nitrite ion, NO₂⁻',
-      atoms: [['O', -0.07, -0.03, 0], ['N', 0.05, 0.04, 0], ['O', 0.16, -0.02, 0], ['H', -0.15, 0.03, 0, 1]] },
-    CH3CO2H: { name: 'acetic acid', unit: 'molecules', K: 1.8e-5, a: 'CH₃CO₂H', b: 'CH₃CO₂⁻', an: 'a molecule of acetic acid, CH₃CO₂H', bn: 'an acetate ion, CH₃CO₂⁻',
-      atoms: [['C', -0.12, 0, 0], ['C', 0.03, 0, 0], ['O', 0.1, 0.11, 0], ['O', 0.1, -0.11, 0], ['H', -0.18, 0.09, 0], ['H', -0.18, -0.05, 0.08], ['H', -0.18, -0.05, -0.08], ['H', 0.2, -0.12, 0, 1]] },
+    HCl: { name: 'hydrochloric acid', unit: 'molecules', K: Infinity, a: 'HCl', b: 'Cl⁻', an: 'hydrogen chloride, HCl', bn: 'chloride ion, Cl⁻',
+      atoms: [['Cl', 0, 0, 12], ['H', 14, -6, 7]] },
+    HSO4: { name: 'hydrogen sulfate ion', unit: 'ions', K: 1.2e-2, a: 'HSO₄⁻', b: 'SO₄²⁻', an: 'hydrogen sulfate ion, HSO₄⁻', bn: 'sulfate ion, SO₄²⁻',
+      atoms: [['O', -8, -9, 8], ['O', 8, -9, 8], ['S', 0, 0, 9.5], ['O', -9, 8, 8], ['O', 9, 8, 8], ['H', 16, -16, 6]] },
+    HNO2: { name: 'nitrous acid', unit: 'molecules', K: 4.6e-4, a: 'HNO₂', b: 'NO₂⁻', an: 'nitrous acid, HNO₂', bn: 'nitrite ion, NO₂⁻',
+      atoms: [['O', -11, 5, 8], ['N', 0, -3, 8.5], ['O', 11, 5, 8], ['H', -19, -2, 6]] },
+    CH3CO2H: { name: 'acetic acid', unit: 'molecules', K: 1.8e-5, a: 'CH₃CO₂H', b: 'CH₃CO₂⁻', an: 'acetic acid, CH₃CO₂H', bn: 'acetate ion, CH₃CO₂⁻',
+      atoms: [['H', -19, -6, 6], ['H', -17, 8, 6], ['H', -10, -13, 6], ['C', -9, 0, 9], ['C', 5, 0, 9], ['O', 12, -10, 8], ['O', 13, 10, 8], ['H', 21, 14, 6]] },
   };
-  const R_AT = { H: 0.045, C: 0.07, N: 0.068, O: 0.066, S: 0.09, Cl: 0.095 };
-  const pick = F.choice(d.controls, { label: '\\text{acid}', options: [{ value: 'HCl', label: 'HCl' }, { value: 'HSO4', label: 'HSO₄⁻' }, { value: 'HNO2', label: 'HNO₂' }, { value: 'CH3CO2H', label: 'CH₃CO₂H' }], value: 'CH3CO2H', aria: 'acid dissolved in the water' });
-  const c0 = ctl(d.controls, { label: '\\kconcHAz', cls: 'concentration', min: 0.01, max: 1, step: 0.005, value: 0.1, unit: 'M', dec: 3, detents: [0.125, 0.5], snap: true, aria: 'initial concentration of the acid, in moles per liter' });
-  const fx = el('div'), nt = el('small'); d.readout.append(fx, nt);
-  nt.textContent = 'Each molecule drawn stands for one hundredth of the acid dissolved.';
-  const N = 100, HALF = 1.3, R = rng(29);
-  /* slot centres kept apart, and a fixed order in which slots ionize */
+  const H3O = [['H', -9, -6, 6], ['H', 9, -6, 6], ['O', 0, 0, 9], ['H', 0, 11, 6]];
+  const pick = F.choice(d.controls, { label: '\\text{acid}', options: [{ value: 'HCl', label: 'HCl' }, { value: 'HSO4', label: 'HSO₄⁻' }, { value: 'HNO2', label: 'HNO₂' }, { value: 'CH3CO2H', label: 'CH₃CO₂H' }], value: 'CH3CO2H', aria: 'acid dissolved in the water', onInput: () => shown.set(solve(pick.value, 10 ** c0.v).n) });
+  const c0 = ctl(d.controls, { label: '\\kconcHAz', cls: 'concentration', key: 'c0', min: -2, max: 0, step: 0.001, value: -1, fmt: (lg) => `${cM(10 ** lg)} M`,
+    detents: [{ v: Math.log10(0.125), label: '0.125' }, { v: Math.log10(0.5), label: '0.50' }], snap: true, aria: 'initial concentration of the acid', onInput: () => moved() });
+  const N = 100, R = rng(29);
+  function cM(c) { return c < 0.0995 ? c.toPrecision(2) : c.toPrecision(3); }
+  /* the beaker: glass from BX0 to BX1, liquid from LY to BY; 10 by 10 slots, jittered */
+  const BX0 = 70, BX1 = 650, BY = 556, LY = 150, TOPY = 104;
   const slots = [];
   for (let i = 0; i < N; i++) {
-    let p = null;
-    for (let t = 0; t < 600 && !p; t++) { const q = [0, 0, 0].map(() => (R() * 2 - 1) * (HALF - 0.2)); if (slots.every((s) => Math.hypot(q[0] - s.p[0], q[1] - s.p[1], q[2] - s.p[2]) > 0.37)) p = q; }
-    if (!p) p = [0, 0, 0].map(() => (R() * 2 - 1) * (HALF - 0.2));
-    const u = [R() - 0.5, R() - 0.5, R() - 0.5], l = Math.hypot(...u) || 1;
-    slots.push({ p, rot: [R() * 6.28, R() * 6.28, R() * 6.28], away: u.map((c) => c / l) });
+    const col = i % 10, row = Math.floor(i / 10);
+    const x = BX0 + 48 + col * 54 + (R() - 0.5) * 12, y = LY + 32 + row * 38 + (R() - 0.5) * 8;
+    slots.push({ x, y, flip: R() < 0.5 ? -1 : 1, hx: (R() < 0.5 ? -1 : 1) * (14 + R() * 6), hy: 15 + R() * 4 });
   }
   const order = slots.map((_, i) => i);
   for (let i = N - 1; i > 0; i--) { const j = Math.floor(R() * (i + 1)); [order[i], order[j]] = [order[j], order[i]]; }
-  slots[order[0]].away = [0.28, 0.92, 0.28];
-  const T3D = window.THREE;
-  const H3O = [['O', 0, 0, 0], ['H', 0.09, -0.04, 0], ['H', -0.045, -0.04, 0.078], ['H', -0.045, -0.04, -0.078]];
-  function molecule(parent, atoms, at, rot, name) {
-    const g = new T3D.Group(); g.position.set(...at); g.rotation.set(...rot); parent.add(g);
-    atoms.forEach(([e, x, y, z]) => v.pickable(F.mesh.sphere(g, [x, y, z], R_AT[e], F.el(e)), name));
-    return g;
-  }
+  const rank = new Array(N); order.forEach((s, r) => { rank[s] = r; });
   function solve(acid, c) {
     const K = ACIDS[acid].K;
     const x = K === Infinity ? c : (-K + Math.sqrt(K * K + 4 * K * c)) / 2;
-    return { x, ha: c - x, n: Math.round((N * x) / c) };
+    return { x, n: Math.round((N * x) / c) };
   }
-  let sig = '', forms = [], labs = {}, fadeIn = F.tween(d, 1);
-  const palSig = () => [pick.value, PAL.ink, F.CC, F.shown, F.ref('acid'), F.ref('base'), ...['H', 'C', 'N', 'O', 'S', 'Cl'].map((e) => F.el(e))].join('|');
-  function build() {
-    const key = palSig(); if (key === sig) return;
-    const was = sig.split('|')[0]; sig = key;
-    v.clear();
-    const A = ACIDS[pick.value];
-    F.mesh.box(grp, [0, 0, 0], [2 * HALF, 2 * HALF, 2 * HALF], PAL.ink, { transparent: true, opacity: 0.05, depthWrite: false });
-    for (const [a, b] of [[-1, -1], [-1, 1], [1, -1], [1, 1]]) {
-      F.mesh.stick(grp, [a * HALF, -HALF, b * HALF], [a * HALF, HALF, b * HALF], 0.01, PAL.muted);
-      F.mesh.stick(grp, [-HALF, a * HALF, b * HALF], [HALF, a * HALF, b * HALF], 0.01, PAL.muted);
-      F.mesh.stick(grp, [a * HALF, b * HALF, -HALF], [a * HALF, b * HALF, HALF], 0.01, PAL.muted);
-    }
-    const base = A.atoms.filter((t) => !t[4]);
-    forms = slots.map((s) => {
-      const whole = molecule(grp, A.atoms, s.p, s.rot, A.an);
-      const ion = new T3D.Group(); grp.add(ion);
-      molecule(ion, base, s.p, s.rot, A.bn);
-      const h = s.p.map((c, k) => Math.max(-HALF + 0.12, Math.min(HALF - 0.12, c + s.away[k] * 0.3)));
-      molecule(ion, H3O, h, s.rot, 'a hydronium ion, H₃O⁺');
-      return { whole, ion, h };
+  /* the ionized count eases between slider positions, so a proton is seen to leave */
+  const shown = F.tween(d, solve('CH3CO2H', 0.1).n);
+  function moved() { shown.to(solve(pick.value, 10 ** c0.v).n, 500); }
+  function atoms(ctx, list, x, y, s, flip, skipH, a = 1) {
+    ctx.save(); ctx.globalAlpha *= a;
+    list.forEach(([e, ax, ay, r], i) => {
+      if (skipH && i === list.length - 1) return;
+      ctx.beginPath(); ctx.arc(x + flip * ax * s, y + ay * s, r * s, 0, 2 * Math.PI);
+      ctx.fillStyle = F.el(e); ctx.fill(); ctx.lineWidth = 1.5; ctx.strokeStyle = alpha(PAL.ink, e === 'H' ? 0.7 : 0.45); ctx.stroke();
     });
-    const first = order[0], gap = (i) => Math.hypot(...slots[i].p.map((q, k) => q - slots[first].p[k]));
-    const lastN = order.slice(N - 20).reduce((a, b) => (gap(b) > gap(a) ? b : a));
-    labs = {
-      acid: v.label(A.a, [slots[lastN].p[0], slots[lastN].p[1] + 0.2, slots[lastN].p[2]], grp, 6),
-      base: v.label(A.b, [slots[first].p[0], slots[first].p[1] - 0.3, slots[first].p[2]], grp, 0),
-      hyd: v.label('H₃O⁺', [forms[first].h[0], forms[first].h[1] + 0.16, forms[first].h[2]], grp, 6),
-    };
-    labs.acid.style.color = F.ref('acid'); labs.base.style.color = F.ref('base');
-    if (was && was !== pick.value) { fadeIn.set(0); fadeIn.to(1, 600); }
+    ctx.restore();
   }
-  /* strip: log axis 10⁻⁴ to 10⁰ M */
-  const X = (c) => 170 + (Math.log10(c) + 4) * 260, AY = 196;
-  function draw() {
-    build();
-    const A = ACIDS[pick.value], c = c0.v, s = solve(pick.value, c);
-    forms.forEach((f, i) => { const on = order.indexOf(i) < s.n; f.whole.visible = !on; f.ion.visible = on; });
-    labs.acid.style.display = s.n < N ? '' : 'none';
-    labs.base.style.display = labs.hyd.style.display = s.n > 0 ? '' : 'none';
-    F.fade3(grp, fadeIn.v);
-    v.invalidate();
-
-    const { ctx } = begin(cnv);
-    const ph = -Math.log10(s.x), cs = fmt(c, 3);
-    const one = A.unit.slice(0, -1), who = s.n >= N ? `every ${one} has` : s.n === 0 ? `fewer than 1 of every 100 ${A.unit} has` : `${s.n} of every 100 ${A.unit} ${s.n === 1 ? 'has' : 'have'}`;
-    topline(ctx, `In a ${cs} M solution of ${A.name}, ${who} given ${s.n > 1 && s.n < N ? 'their protons' : 'its proton'} to water, and the pH is ${fmt(ph, 2)}.`);
-    const box = { l: X(1e-4), r: X(1), t: AY - 12, b: AY + 12 };
-    line(ctx, box.l, AY, box.r, AY, C('concentration'), 3);
-    for (let e = -4; e <= 0; e++) {
-      line(ctx, X(10 ** e), AY - 8, X(10 ** e), AY + 8, C('concentration'), 3);
-      text(ctx, e === 0 ? '1' : '10' + sup(String(e)), X(10 ** e), AY + 30, C('concentration'), { size: 17, align: 'center' });
-      text(ctx, String(-e), X(10 ** e), AY + 62, C('concentration'), { size: 17, align: 'center' });
+  /* slot i at ionization k (0 whole, 1 ionized): the acid's hydrogen travels to a water molecule that arrives as H3O+,
+     and a ring in the conjugate base's colour gathers the two ions */
+  const SC = 0.85;
+  let ringA = 1;   /* the rings pick out the ionized few; where most are ionized they fade, since every pair would wear one */
+  function slot(ctx, A, i, k) {
+    const s = slots[i], hAt = A.atoms[A.atoms.length - 1];
+    const bx = s.x - 5 * k, ox = s.x + s.hx * SC, oy = s.y + s.hy * SC;
+    if (k > 0) {
+      ctx.save(); ctx.setLineDash([5, 5]); ctx.strokeStyle = alpha(F.ref('base'), k * ringA); ctx.lineWidth = 3;
+      ctx.beginPath(); ctx.arc((bx + ox) / 2, (s.y + oy) / 2, 27, 0, 2 * Math.PI); ctx.stroke(); ctx.restore();
+      atoms(ctx, H3O, ox, oy, 0.8 * SC, 1, false, k);
     }
-    text(ctx, 'concentration (M)', box.r + 24, AY + 30, C('concentration'), { size: 17 });
-    text(ctx, 'pH', box.r + 24, AY + 62, C('concentration'), { size: 17 });
-    const lab = F.labeller(ctx, 290);
-    lab.block(box.l - 20, AY + 14, box.r + 200, AY + 76); lab.block(0, 0, 1400, 100);
-    if (s.ha > 1e-4) {
-      dot(ctx, X(s.ha), AY, F.ref('acid'), true, 9);
-      lab.add('[HA]', X(s.ha), AY, s.ha < s.x ? -0.5 : 0.5, -0.87, F.ref('acid'), 20, 34);
-    } else F.pinned(ctx, box, X, () => AY, 1e-4 / 2, 0, F.ref('acid'), '[HA] ≈ 0');
-    dot(ctx, X(s.x), AY, F.ref('base'), true, 9);
-    lab.add('[A⁻] = [H_{3}O⁺]', X(s.x), AY, s.ha > 1e-4 && s.ha < s.x ? 0.5 : -0.5, -0.87, F.ref('base'), 20, 34);
-    lab.flush();
+    atoms(ctx, A.atoms, bx, s.y, SC, s.flip, true, 0.5 + 0.5 * k);   /* the molecules still whole stand back, the ions forward */
+    if (k < 1) {
+      const hx = bx + s.flip * hAt[1] * SC, hy = s.y + hAt[2] * SC;
+      atoms(ctx, [['H', 0, 0, hAt[3]]], hx + (ox - hx) * k, hy + (oy - 6 - hy) * k, SC, 1, false, 0.5 * (1 - k * k));
+    }
+  }
+  /* graph: % ionization against [HA]₀, log both, drawn on log10 + 2 and log10 + 1 so that no zero line falls inside the frame */
+  const G = { l: 830, r: 1240, t: 130, b: 480 };
+  const pct = (acid, c) => (100 * solve(acid, c).x) / c;
+  let hits = [];
+  F.hover(d.stage, () => hits);
+  function draw() {
+    const { ctx } = begin(d.c), A = ACIDS[pick.value], c = 10 ** c0.v, s = solve(pick.value, c), nk = shown.v;
+    hits = [];
+    /* the beaker: a lip flaring out at the top, a pouring spout at the left, rounded foot; the liquid inside */
+    const ink = PAL.ink, glass = alpha(PAL.ink, 0.75);
+    ctx.save();
+    ctx.fillStyle = alpha(PAL.ink, 0.045);
+    ctx.beginPath(); ctx.moveTo(BX0, LY); ctx.lineTo(BX0, BY - 14); ctx.quadraticCurveTo(BX0, BY, BX0 + 14, BY); ctx.lineTo(BX1 - 14, BY); ctx.quadraticCurveTo(BX1, BY, BX1, BY - 14); ctx.lineTo(BX1, LY); ctx.closePath(); ctx.fill();
+    ctx.strokeStyle = glass; ctx.lineWidth = 4; ctx.lineJoin = 'round';
+    ctx.beginPath(); ctx.moveTo(BX0 - 16, TOPY - 8); ctx.quadraticCurveTo(BX0, TOPY - 2, BX0, TOPY + 14); ctx.lineTo(BX0, BY - 14); ctx.quadraticCurveTo(BX0, BY, BX0 + 14, BY);
+    ctx.lineTo(BX1 - 14, BY); ctx.quadraticCurveTo(BX1, BY, BX1, BY - 14); ctx.lineTo(BX1, TOPY + 6); ctx.quadraticCurveTo(BX1, TOPY, BX1 + 8, TOPY - 2); ctx.stroke();
+    ctx.restore();
+    line(ctx, BX0, LY, BX1, LY, alpha(PAL.ink, 0.35), 2);
+    for (let k = 1; k <= 4; k++) { const gy = BY - k * 82; line(ctx, BX1 - 34, gy, BX1 - 4, gy, alpha(PAL.ink, 0.4), 2); }
+    /* the molecules: whole ones first, then the ionized pairs above them */
+    ringA = Math.max(0, Math.min(1, (60 - nk) / 30));
+    const lo = Math.min(Math.floor(nk), N), frac = nk - Math.floor(nk);
+    const kOf = (i) => (rank[i] < lo ? 1 : rank[i] === lo ? frac : 0);
+    const draws = slots.map((_, i) => i).sort((a, b) => kOf(a) - kOf(b));
+    pick.only(ctx, pick.value, () => draws.forEach((i) => slot(ctx, A, i, kOf(i))), [0, 0]);
+    if (pick.k < 1 && pick.from && pick.from !== pick.value) {
+      const B = ACIDS[pick.from], nb = solve(pick.from, c).n;
+      pick.only(ctx, pick.from, () => slots.forEach((_, i) => slot(ctx, B, i, rank[i] < nb ? 1 : 0)), [0, 0]);
+    }
+    slots.forEach((sl, i) => {
+      const on = kOf(i) >= 0.5;
+      hits.push({ x: sl.x, y: sl.y, r: 18, name: on ? `${A.bn}, its proton given to water` : A.an });
+      if (on) hits.push({ x: sl.x + sl.hx, y: sl.y + sl.hy, r: 10, name: 'hydronium ion, H₃O⁺' });
+    });
+    /* the key under the beaker */
+    F.legend(ctx, { l: BX0, r: BX1, t: LY, b: BY - 28 }, [
+      { s: A.a, draw: (cx, x, y) => atoms(cx, A.atoms, x, y, 0.7, 1, false, 0.5) },
+      { s: `${A.b} + H_{3}O⁺`, draw: (cx, x, y) => {
+        cx.save(); cx.setLineDash([4, 4]); cx.strokeStyle = F.ref('base'); cx.lineWidth = 2.5; cx.beginPath(); cx.arc(x + 2, y + 2, 20, 0, 2 * Math.PI); cx.stroke(); cx.restore();
+        atoms(cx, A.atoms, x - 5, y - 2, 0.55, 1, true); atoms(cx, H3O, x + 10, y + 9, 0.45, 1, false);
+      } },
+    ], { corner: 'below' });
+    /* the graph */
+    const cc = C('concentration');
+    const g = F.axes(ctx, G, [0, 2], [0, 3], { nx: 2, ny: 3, fx: (v) => ['0.01', '0.1', '1'][Math.round(v)], fy: (v) => ['0.1', '1', '10', '100'][Math.round(v)],
+      xl: '[HA]_{0} (M)', xc: cc, yl: '% ionization', yc: PAL.ink });
+    Object.keys(ACIDS).forEach((k) => {
+      const on = k === pick.value, col = on ? PAL.ink : alpha(PAL.ink, 0.32);
+      F.plot(ctx, g, (u) => Math.log10(pct(k, 10 ** (u - 2))) + 1, col, { w: on ? 5 : 3 });
+      const yEnd = Math.log10(pct(k, 1)) + 1;
+      text(ctx, ACIDS[k].a, G.r + 12, g.Y(yEnd), on ? PAL.ink : PAL.muted, { size: 20, weight: on ? 600 : 400 });
+    });
+    const P = (100 * s.x) / c, px = g.X(c0.v + 2), py = g.Y(Math.log10(P) + 1);
+    line(ctx, px, py, px, G.b, alpha(cc, 0.6), 2.5, [4, 8]);
+    line(ctx, G.l, py, px, py, alpha(PAL.ink, 0.45), 2.5, [4, 8]);
+    dot(ctx, px, py, PAL.ink, true, 9);
+    hits.push({ x: px, y: py, r: 14, name: `${A.name}, ${cM(c)} M: ${fmt(P, P >= 10 ? 0 : 1)} % ionized` });
 
-    const conc = (q) => (q < 0.0095 ? sci(q) : fmt(q, 3)) + '\\ M';
-    tex(fx, `\\text{\\% ionization} = \\frac{\\kconcHydeq}{\\kconcHAz}\\times 100 = \\frac{${hue('concentration', conc(s.x))}}{${hue('concentration', conc(c))}}\\times 100 = ${fmt((100 * s.x) / c, (100 * s.x) / c >= 10 ? 0 : 1)}\\%`);
+    const ph = -Math.log10(s.x), cs = cM(c), n = s.n;
+    const one = A.unit.slice(0, -1), who = n >= N ? `every ${one} has` : n === 0 ? `fewer than 1 of every 100 ${A.unit} has` : `${n} of every 100 ${A.unit} ${n === 1 ? 'has' : 'have'}`;
+    topline(ctx, `In ${cs} M ${A.name}, ${who} given ${n > 1 && n < N ? 'their protons' : 'its proton'} to water; the pH is ${fmt(ph, 2)}.`);
+    const conc = (q) => (q < 0.0095 ? sci(q) : cM(q)) + '\\ M';
+    tex(d.readout, `\\text{\\% ionization} = \\frac{\\kconcHydeq}{\\kconcHAz}\\times 100 = \\frac{${hue('concentration', conc(s.x))}}{${hue('concentration', conc(c))}}\\times 100 = ${fmt(P, P >= 10 ? 0 : 1)}\\%`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -144,15 +162,15 @@ const sup = (t) => t.replace(/[0-9−+-]/g, (ch) => '⁰¹²³⁴⁵⁶⁷⁸⁹
 /* =====================================================================
    FIGURE 14.7 + 14.8: conjugate acid-base pairs on one ladder. Still: a
    choice of pair. K_a axis 10⁰ (H₃O⁺, as Figure 14.7 places it) down to
-   10⁻¹⁴ (H₂O), 31 units a decade; the K_b axis is its mirror, K_b = K_w/K_a,
+   10⁻¹⁴ (H₂O), 40 units a decade; the K_b axis is its mirror, K_b = K_w/K_a,
    so each pair is one level rung. Constants: Appendix H; NH₄⁺ from Appendix
    I's K_b of NH₃; HClO₂, H₃O⁺ and H₂O at Figure 14.7's own 10⁻², 1.0 and
-   10⁻¹⁴. Rows in a crowded decade are spread 27 units apart in blocks
+   10⁻¹⁴. Rows in a crowded decade are spread 34 units apart in blocks
    centred on their true places, with leaders to their marks. The six strong
    acids stack above H₃O⁺ and the five non-acids below H₂O, as Figure 14.8.
 ===================================================================== */
 (function () {
-  const H = 960;
+  const H = 1190;
   const d = F.sim(root, 'sim-conjugate-ladder', H);
   const P = (id, a, an, b, bn, band, K, Kb) => ({ id, a, an, b, bn, band, K, Kb });
   const PAIRS = [
@@ -184,7 +202,7 @@ const sup = (t) => t.replace(/[0-9−+-]/g, (ch) => '⁰¹²³⁴⁵⁶⁷⁸⁹
     P('CH4', 'CH_{4}', 'methane', 'CH_{3}⁻', 'methide ion', 'low'),
   ];
   PAIRS.forEach((p) => { if (p.K == null && p.Kb) p.K = KW / p.Kb; if (p.K && !p.Kb) p.Kb = KW / p.K; });
-  const Y0 = 330, DEC = 31, ROW = 27, TOP0 = 150, LOW0 = 820;
+  const ROW = 34, DEC = 40, TOP0 = 150, Y0 = TOP0 + 6 * ROW + 14, LOW0 = Y0 + 14 * DEC + 76;
   const XA = 535, XB = 865;
   /* true places on the axes, then rows spread into blocks */
   const axisRows = PAIRS.filter((p) => p.K);
@@ -223,16 +241,16 @@ const sup = (t) => t.replace(/[0-9−+-]/g, (ch) => '⁰¹²³⁴⁵⁶⁷⁸⁹
     const { ctx } = begin(d.c);
     const sel = byId[pick.value], hc = C('equilibrium-constant'), bandBg = F.mixColor(PAL.panel, PAL.ink, 0.05);
     topline(ctx, headline(sel));
-    text(ctx, 'acid', 400, 112, PAL.ink, { size: 22, weight: 600, align: 'right' });
-    text(ctx, 'conjugate base', 1000, 112, PAL.ink, { size: 22, weight: 600 });
+    text(ctx, 'acid', 462, 108, PAL.ink, { size: 24, weight: 600, align: 'right' });
+    text(ctx, 'conjugate base', 938, 108, PAL.ink, { size: 24, weight: 600 });
     /* bands */
     ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.05);
     ctx.fillRect(60, TOP0 - ROW / 2, 1280, 6 * ROW); ctx.fillRect(60, LOW0 - ROW / 2, 1280, 5 * ROW); ctx.restore();
     /* the symbolic arrows of increasing strength */
     arrow(ctx, 40, LOW0 + 4 * ROW, 40, TOP0 - 6, PAL.ink, 4);
-    text(ctx, 'stronger acids', 24, TOP0 - 34, PAL.ink, { size: 17 });
+    text(ctx, 'stronger acids', 24, TOP0 - 42, PAL.ink, { size: 20 });
     arrow(ctx, 1360, TOP0, 1360, LOW0 + 4 * ROW + 6, PAL.ink, 4);
-    text(ctx, 'stronger bases', 1376, LOW0 + 4 * ROW + 32, PAL.ink, { size: 17, align: 'right' });
+    text(ctx, 'stronger bases', 1376, LOW0 + 4 * ROW + 40, PAL.ink, { size: 20, align: 'right' });
     /* the chosen rung, bending from the last pair's place to this one's */
     const ry = pick.mix((id) => byId[id].ty ?? byId[id].y), ly = pick.mix((id) => byId[id].y);
     const onAxis = sel.ty != null;
@@ -240,23 +258,23 @@ const sup = (t) => t.replace(/[0-9−+-]/g, (ch) => '⁰¹²³⁴⁵⁶⁷⁸⁹
     if (onAxis) {
       line(ctx, XA, ry, XB, ry, PAL.ink, 3, [10, 10]);
     } else {
-      line(ctx, 476, ly, 924, ly, PAL.ink, 3, [10, 10]);
+      line(ctx, 470, ly, 930, ly, PAL.ink, 3, [10, 10]);
     }
     /* the two axes */
     line(ctx, XA, Y0, XA, YEND, hc, 3); line(ctx, XB, Y0, XB, YEND, hc, 3);
     for (let e = 0; e <= 14; e += 2) {
       const y = Y0 + e * DEC;
       line(ctx, XA, y, XA + 10, y, hc, 3); line(ctx, XB - 10, y, XB, y, hc, 3);
-      text(ctx, e === 0 ? '1.0' : '10' + sup('−' + e), XA + 18, y, hc, { size: 17, bg: PAL.panel });
-      text(ctx, e === 14 ? '1.0' : '10' + sup('−' + (14 - e)), XB - 18, y, hc, { size: 17, align: 'right', bg: PAL.panel });
+      text(ctx, e === 0 ? '1.0' : '10' + sup('−' + e), XA + 18, y, hc, { size: 20, bg: PAL.panel });
+      text(ctx, e === 14 ? '1.0' : '10' + sup('−' + (14 - e)), XB - 18, y, hc, { size: 20, align: 'right', bg: PAL.panel });
     }
     if (onAxis) { dot(ctx, XA, ry, F.ref('acid'), true, 8); dot(ctx, XB, ry, F.ref('base'), true, 8); }
-    text(ctx, '$\\kKa$', XA, YEND + 30, PAL.ink, { size: 24, align: 'center', tex: true });
-    text(ctx, '$\\kKbion$', XB, YEND + 30, PAL.ink, { size: 24, align: 'center', tex: true });
-    text(ctx, 'acids ionize completely in water;', 700, TOP0 + 2.5 * ROW - 14, PAL.muted, { size: 17, align: 'center', bg: bandBg });
-    text(ctx, 'their bases do not ionize', 700, TOP0 + 2.5 * ROW + 14, PAL.muted, { size: 17, align: 'center', bg: bandBg });
-    text(ctx, 'acids do not ionize in water;', 700, LOW0 + 2 * ROW - 14, PAL.muted, { size: 17, align: 'center', bg: bandBg });
-    text(ctx, 'their bases ionize completely', 700, LOW0 + 2 * ROW + 14, PAL.muted, { size: 17, align: 'center', bg: bandBg });
+    text(ctx, '$\\kKa$', XA, YEND + 34, PAL.ink, { size: 24, align: 'center', tex: true });
+    text(ctx, '$\\kKbion$', XB, YEND + 34, PAL.ink, { size: 24, align: 'center', tex: true });
+    text(ctx, 'acids ionize completely in water;', 700, TOP0 + 2.5 * ROW - 16, PAL.muted, { size: 20, align: 'center', bg: bandBg });
+    text(ctx, 'their bases do not ionize', 700, TOP0 + 2.5 * ROW + 16, PAL.muted, { size: 20, align: 'center', bg: bandBg });
+    text(ctx, 'acids do not ionize in water;', 700, LOW0 + 2 * ROW - 16, PAL.muted, { size: 20, align: 'center', bg: bandBg });
+    text(ctx, 'their bases ionize completely', 700, LOW0 + 2 * ROW + 16, PAL.muted, { size: 20, align: 'center', bg: bandBg });
     hits = [];
     PAIRS.forEach((p) => {
       const w = pick.a(p.id), ca = F.mixColor(PAL.ink, F.ref('acid'), w), cb = F.mixColor(PAL.ink, F.ref('base'), w);
@@ -270,18 +288,18 @@ const sup = (t) => t.replace(/[0-9−+-]/g, (ch) => '⁰¹²³⁴⁵⁶⁷⁸⁹
         if (p.id === 'H2O') ctx.fillRect(60, p.y - ROW / 2, 400, ROW); else ctx.fillRect(940, p.y - ROW / 2, 400, ROW);
         ctx.restore();
       }
-      text(ctx, p.a, 462, p.y, ca, { size: 22, weight: wt, align: 'right' });
-      text(ctx, p.an, 330, p.y, alpha(PAL.ink, 0.62), { size: 17, align: 'right' });
-      text(ctx, p.b, 938, p.y, cb, { size: 22, weight: wt });
-      text(ctx, p.bn, 1080, p.y, alpha(PAL.ink, 0.62), { size: 17 });
+      text(ctx, p.a, 462, p.y, ca, { size: 25, weight: wt, align: 'right' });
+      text(ctx, p.an, 320, p.y, PAL.muted, { size: 20, align: 'right' });
+      text(ctx, p.b, 938, p.y, cb, { size: 25, weight: wt });
+      text(ctx, p.bn, 1085, p.y, PAL.muted, { size: 20 });
       const plain = (q) => sci(q).replace(/ \\times 10\^\{(-?\d+)\}/, (_, e) => ' × 10' + sup(e));
       const ka = p.K ? 'Ka = ' + plain(p.K) : (p.band === 'top' ? 'a strong acid' : 'not an acid in water');
       const kb = p.Kb ? 'Kb = ' + plain(p.Kb) : (p.band === 'low' ? 'a strong base' : 'not a base in water');
       hits.push({ x: 400, y: p.y, r: 14, name: `${p.an}, ${ka}` }, { x: 1000, y: p.y, r: 14, name: `${p.bn}, ${kb}` });
     });
     const kv = (s) => hue('equilibrium-constant', s);
-    if (sel.band === 'top') tex(d.readout, `\\kKa \\approx \\infty, \\qquad \\kKbion = \\kKw/\\kKa \\approx 0`);
-    else if (sel.band === 'low') tex(d.readout, `\\kKbion \\approx \\infty, \\qquad \\kKa = \\kKw/\\kKbion \\approx 0`);
+    if (sel.band === 'top') tex(d.readout, `\\kKa \\approx \\infty \\\\ \\kKbion = \\kKw/\\kKa \\approx 0`);
+    else if (sel.band === 'low') tex(d.readout, `\\kKbion \\approx \\infty \\\\ \\kKa = \\kKw/\\kKbion \\approx 0`);
     else {
       const r2 = (q) => { const e = Math.floor(Math.log10(q) + 1e-9); return +(q / 10 ** e).toFixed(1) * 10 ** e; };
       tex(d.readout, `\\kKa \\times \\kKbion = (${kv(sci(sel.K))})(${kv(sci(sel.Kb))}) = ${kv(sci(r2(sel.K) * r2(sel.Kb)))} = \\kKw`);

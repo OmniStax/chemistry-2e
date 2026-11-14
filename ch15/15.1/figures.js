@@ -21,45 +21,49 @@ const sciTex = (x) => { const [m, e] = sig2(x); return e >= -2 && e <= 0 ? (+m *
 function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
 
 /* =====================================================================
-   FIGURE 15.2: silver chloride dissolving in a beaker of water, in
-   three dimensions. A rock-salt block of 24 Ag+ and 24 Cl- (edge 5.55 Å,
-   ionic radii 1.15 and 1.81 Å drawn at 0.9) stands on the floor of the
-   beaker among 22 water molecules; the scene is in units of 10 Å.
-   Moving: ion pairs leave the top of the block at a steady rate, 2.5
-   per unit time, and dissolved ions return at k n², so the number in
-   solution follows n = 4 tanh(0.625 t) and settles at four pairs. Each
-   return is scheduled where the smooth count returned, 2.5 t − n,
-   passes a half-integer, so the step counts beneath track the smooth
-   ones; positions are a function of the clock alone, and the timeline
-   scrubs exactly. The beaker stands on a bench: pitch 0.05 to 1.2 rad.
+   FIGURE 15.2: silver chloride in a beaker of water, flat. A rock-salt
+   face of 32 ions (8 by 4, Ag+ and Cl- alternating, radii in the ratio
+   of 1.15 to 1.81 Å) lies on the floor of the beaker among 15 water
+   molecules, every particle in view. Moving: ion pairs leave the
+   surface of the solid at a steady rate, 2 pairs per unit time, and
+   dissolved ions return at k n², so the number of pairs in solution
+   follows n = 3 tanh(2t/3) and settles at three (one Ag+ to five water
+   molecules, as the note says). Each return is scheduled where the
+   smooth count returned, 2t − n, passes a half-integer. Beside the
+   beaker the two rates against time: the dissolution rate is flat and
+   the precipitation rate, 2 tanh²(2t/3),
+   rises to meet it. Positions are functions of the clock alone, so the
+   timeline scrubs exactly. Rates and time are schematic: no ticks.
 ===================================================================== */
 (function () {
-  const T3D = window.THREE;
-  const d = sim('sim-agcl');
-  const v = F.view3d(d.stage, { spin: 'off', h: 520, dist: 7.4, tilt: 0.3, pitch: [0.05, 1.2],
-    views: [{ label: 'front', yaw: 0, pitch: 0.3 }, { label: 'above', yaw: 0, pitch: 1.15 }] });
-  const grp = v.part(0), strip = F.makeCanvas(d.stage, 250);
-  const T = 6, TR = 0.8, RD = 2.5, NEQ = 4, G = Math.sqrt(RD * RD / (NEQ * NEQ));
-  const S = 0.2775, Y0 = -0.78, RAD = { Ag: 0.104, Cl: 0.163 };
+  const H = 640, d = sim('sim-agcl', H);
+  const T = 6, TR = 0.8, RD = 2, NEQ = 3, G = RD / NEQ;
   const NAME = { Ag: 'a silver ion, Ag⁺', Cl: 'a chloride ion, Cl⁻' };
-  const R = 1.35, FLOOR = -0.95, SURF = 0.55, TOP = 0.95;
-
-  /* the lattice: 4 × 4 × 3 sites, alternating Ag+ and Cl- */
-  const sites = [];
-  for (let k = 0; k < 3; k++) for (let i = 0; i < 4; i++) for (let j = 0; j < 4; j++) {
-    sites.push({ kind: (i + j + k) % 2 ? 'Cl' : 'Ag', p: [(i - 1.5) * S, Y0 + k * S, (j - 1.5) * S], top: k === 2 });
+  const RAD = { Ag: 15, Cl: 24 };
+  /* the beaker: centre, half width, rim, base; the water stands at lv */
+  const BK = { x: 310, half: 250, top: 90, base: 600, lv: 150 };
+  /* the solid: an 8 by 4 face of the lattice resting on the floor, spacing 46 */
+  const SP = 46, COLS = 8, ROWS = 4, sites = [];
+  for (let j = 0; j < ROWS; j++) for (let i = 0; i < COLS; i++) {
+    sites.push({ kind: (i + j) % 2 ? 'Cl' : 'Ag', i, j, p: [BK.x + (i - (COLS - 1) / 2) * SP, BK.base - 28 - j * SP] });
   }
-  const rand = rng(1501);
-  const outside = (p, m) => Math.abs(p[0]) > 0.62 + m || Math.abs(p[2]) > 0.62 + m || p[1] > Y0 + 2 * S + 0.2 + m;
-  function inWater(lo, hi, rMax, m) {
-    for (;;) {
-      const a = rand() * TAU, r = Math.sqrt(rand()) * rMax, p = [r * Math.cos(a), lo + rand() * (hi - lo), r * Math.sin(a)];
-      if (outside(p, m)) return p;
-    }
+  const siteAt = (i, j) => sites.findIndex((s) => s.i === i && s.j === j);
+  const rand = rng(1502);
+  /* places in the water on a staggered grid, nudged off their centres, clear of the solid: 15 for water molecules, the rest for dissolved ions */
+  const solidBox = { l: sites[0].p[0] - 40, r: sites[COLS - 1].p[0] + 40, t: sites[sites.length - 1].p[1] - 45 };
+  const slots = [];
+  for (let r = 0; BK.lv + 42 + r * 62 <= BK.base - 30; r++) for (let c = 0; ; c++) {
+    const x = BK.x - BK.half + 40 + c * 74 + (r % 2 ? 37 : 0), y = BK.lv + 42 + r * 62;
+    if (x > BK.x + BK.half - 38) break;
+    if (x > solidBox.l && x < solidBox.r && y > solidBox.t) continue;
+    slots.push([x + (rand() - 0.5) * 8, y + (rand() - 0.5) * 6]);
   }
+  for (let i = slots.length - 1; i > 0; i--) { const j = Math.floor(rand() * (i + 1)); [slots[i], slots[j]] = [slots[j], slots[i]]; }
+  const waterSlots = slots.slice(0, 15), ionSlots = slots.slice(15);
 
   /* the schedule: departures every 1/RD from 0.2, arrivals where the smooth count returned passes j − 1/2 */
   const nSmooth = (t) => NEQ * Math.tanh(G * t), back = (t) => RD * t - nSmooth(t);
+  const rateOut = () => RD, rateIn = (t) => RD * Math.tanh(G * t) ** 2;
   const outs = [], ins = [];
   for (let i = 0; (i + 0.5) / RD < T - 0.3; i++) outs.push((i + 0.5) / RD);
   for (let j = 1; ; j++) {
@@ -70,32 +74,33 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
   }
   const ions = sites.map((s, i) => ({ kind: s.kind, home: i, trips: [] }));
   const at = sites.map((_, i) => i);         /* the ion on each site, or -1 */
-  const freed = [];                          /* sites in the order they were vacated */
-  const order = sites.map((s, i) => i).filter((i) => sites[i].top);
-  for (let i = order.length - 1; i > 0; i--) { const j = Math.floor(rand() * (i + 1)); [order[i], order[j]] = [order[j], order[i]]; }
+  /* a site is on the surface when it is on the top row, at either end, or beside a vacancy */
+  const exposed = (s) => { const { i, j } = sites[s]; return j === ROWS - 1 || i === 0 || i === COLS - 1 || [[1, 0], [-1, 0], [0, 1]].some(([a, b]) => { const k = siteAt(i + a, j + b); return k >= 0 && at[k] < 0; }); };
+  const freed = [], away = [], slotFree = ionSlots.map(() => true);
   const events = [...outs.flatMap((t) => [[t, 'out', 'Ag'], [t + 0.12, 'out', 'Cl']]), ...ins.flatMap((t) => [[t, 'in', 'Ag'], [t + 0.12, 'in', 'Cl']])].sort((a, b) => a[0] - b[0]);
-  const away = [];
   for (const [t, what, kind] of events) {
     if (what === 'out') {
-      const s = order.find((i) => sites[i].kind === kind && at[i] >= 0);
+      const cand = sites.map((_, i) => i).filter((i) => sites[i].kind === kind && at[i] >= 0 && exposed(i));
+      const s = cand.sort((a, b) => sites[b].j - sites[a].j || rand() - 0.5)[Math.floor(rand() * Math.min(3, cand.length))];
       const ion = ions[at[s]]; at[s] = -1; freed.push(s);
-      ion.trips.push({ t0: t, from: s, c: inWater(0.05, 0.4, 1.05, 0.15), ph: [rand() * TAU, rand() * TAU, rand() * TAU] });
+      const free = slotFree.map((f, k) => (f ? k : -1)).filter((k) => k >= 0), slot = free.length ? free[Math.floor(rand() * free.length)] : 0;
+      slotFree[slot] = false;
+      ion.trips.push({ t0: t, from: s, slot, ph: [rand() * TAU, rand() * TAU] });
       away.push(ion);
     } else {
       const k = away.findIndex((ion) => ion.kind === kind && ion.trips[ion.trips.length - 1].t0 + TR <= t - TR);
       if (k < 0) continue;
       const ion = away.splice(k, 1)[0], f = freed.findIndex((i) => sites[i].kind === kind);
       const s = freed.splice(f, 1)[0], tr = ion.trips[ion.trips.length - 1];
-      tr.t1 = t; tr.to = s; at[s] = ions.indexOf(ion);
+      tr.t1 = t; tr.to = s; at[s] = ions.indexOf(ion); slotFree[tr.slot] = true;
     }
   }
-  const dissolved = (t) => outs.filter((x) => x <= t).length;
-  const returned = (t) => ins.filter((x) => x <= t).length;
+  const inSolution = (t) => outs.filter((x) => x <= t).length - ins.filter((x) => x <= t).length;
 
   const smooth = F.ease.smooth;
-  const bez = (a, c, b, k) => [0, 1, 2].map((i) => (1 - k) * (1 - k) * a[i] + 2 * k * (1 - k) * c[i] + k * k * b[i]);
-  const wander = (tr, t) => [tr.c[0] + 0.12 * Math.sin(1.3 * t + tr.ph[0]), tr.c[1] + 0.08 * Math.sin(1.1 * t + tr.ph[1]), tr.c[2] + 0.12 * Math.sin(0.9 * t + tr.ph[2])];
-  const lift = (p) => [p[0] * 1.15, p[1] + 0.45, p[2] * 1.15];
+  const bez = (a, c, b, k) => [0, 1].map((i) => (1 - k) * (1 - k) * a[i] + 2 * k * (1 - k) * c[i] + k * k * b[i]);
+  const wander = (tr, t) => { const c = ionSlots[tr.slot]; return [c[0] + 5 * Math.sin(1.3 * t + tr.ph[0]), c[1] + 4 * Math.sin(1.1 * t + tr.ph[1])]; };
+  const lift = (p) => [p[0] + (p[0] - BK.x) * 0.3, p[1] - 70];
   function where(ion, t) {
     let s = ion.home;
     for (const tr of ion.trips) {
@@ -109,88 +114,63 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
     }
     return sites[s].p;
   }
-
-  /* water: bent molecules (O–H 0.96 Å, 104.5°) placed once, each jiggling about its place */
-  const HW = 52.25 * Math.PI / 180, waters = [];
-  for (let n = 0; n < 22; n++) {
-    const p = inWater(FLOOR + 0.15, SURF - 0.12, 1.18, 0.12), a = rand() * TAU, b = rand() * TAU;
-    const u = [Math.cos(a) * Math.cos(b), Math.sin(b), Math.sin(a) * Math.cos(b)];
-    const w = [-Math.sin(a), 0, Math.cos(a)];
-    waters.push({ p, u, w, ph: rand() * TAU });
+  /* water: bent molecules (104.5°) at their places, each jiggling and turning a little */
+  const waters = waterSlots.map((p) => ({ p, a: rand() * TAU, ph: rand() * TAU }));
+  const HW = 52.25 * Math.PI / 180;
+  function water(ctx, m, t) {
+    const c = [m.p[0] + 4 * Math.sin(2.1 * t + m.ph), m.p[1] + 3 * Math.sin(1.7 * t + 2 * m.ph)], a = m.a + 0.25 * Math.sin(0.9 * t + m.ph);
+    [-1, 1].forEach((s) => ball(ctx, c[0] + 20 * Math.cos(a + s * HW), c[1] + 20 * Math.sin(a + s * HW), 11, F.el('H')));
+    ball(ctx, c[0], c[1], 19, F.el('O'));
+    hits.push({ x: c[0], y: c[1], r: 26, name: 'a water molecule, H₂O' });
   }
-  const wpos = (m, t) => {
-    const j = 0.035, c = [m.p[0] + j * Math.sin(2.1 * t + m.ph), m.p[1] + j * Math.sin(1.7 * t + 2 * m.ph), m.p[2] + j * Math.sin(1.9 * t + 3 * m.ph)];
-    const h = (s) => [0, 1, 2].map((i) => c[i] + 0.096 * (Math.cos(HW) * m.u[i] + s * Math.sin(HW) * m.w[i]));
-    return [c, h(1), h(-1)];
-  };
+  function ball(ctx, x, y, r, fill) {
+    ctx.save(); ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fillStyle = fill; ctx.fill();
+    ctx.lineWidth = 1.5; ctx.strokeStyle = alpha(PAL.ink, 0.5); ctx.stroke(); ctx.restore();
+  }
+  function ion(ctx, kind, x, y) { ball(ctx, x, y, RAD[kind], F.el(kind)); hits.push({ x, y, r: RAD[kind] + 2, name: NAME[kind] }); }
+  /* a beaker standing on its base: straight walls, a rounded foot, a flared rim with a spout at the left */
+  function beakerPath(ctx) {
+    const l = BK.x - BK.half, r = BK.x + BK.half;
+    ctx.beginPath();
+    ctx.moveTo(l - 16, BK.top - 8); ctx.quadraticCurveTo(l - 2, BK.top - 2, l, BK.top + 14);
+    ctx.lineTo(l, BK.base - 14); ctx.quadraticCurveTo(l, BK.base, l + 14, BK.base);
+    ctx.lineTo(r - 14, BK.base); ctx.quadraticCurveTo(r, BK.base, r, BK.base - 14);
+    ctx.lineTo(r, BK.top + 8); ctx.quadraticCurveTo(r, BK.top, r + 6, BK.top - 2);
+  }
 
   const cy = F.cycle(() => T, 1.2);
-  let sig = '', ionMesh = [], waterMesh = [];
-  const palSig = () => [PAL.ink, PAL.panel, PAL.soft, PAL.muted, F.el('Ag'), F.el('Cl'), F.el('O'), F.el('H')].join('|');
-  function build() {
-    if (palSig() === sig) return; sig = palSig();
-    v.clear();
-    v.pickable(F.mesh.box(grp, [0, FLOOR - 0.08, 0], [3.6, 0.06, 3.0], PAL.soft), 'the bench');
-    const glass = new T3D.Mesh(new T3D.CylinderGeometry(R, R, TOP - FLOOR, 48, 1, true), F.mesh.mat(PAL.ink, { transparent: true, opacity: 0.1, depthWrite: false, side: T3D.DoubleSide }));
-    glass.position.set(0, (TOP + FLOOR) / 2, 0); grp.add(glass); v.pickable(glass, 'the beaker');
-    const water = new T3D.Mesh(new T3D.CylinderGeometry(R - 0.01, R - 0.01, SURF - FLOOR, 48), F.mesh.mat(PAL.ink, { transparent: true, opacity: 0.05, depthWrite: false }));
-    water.position.set(0, (SURF + FLOOR) / 2, 0); grp.add(water);
-    const base = new T3D.Mesh(new T3D.CylinderGeometry(R, R, 0.03, 48), F.mesh.mat(PAL.ink, { transparent: true, opacity: 0.18 }));
-    base.position.set(0, FLOOR - 0.015, 0); grp.add(base);
-    ionMesh = ions.map((ion) => v.pickable(F.mesh.sphere(grp, sites[ion.home].p, RAD[ion.kind], F.el(ion.kind)), NAME[ion.kind]));
-    waterMesh = waters.map(() => {
-      const o = v.pickable(F.mesh.sphere(grp, [0, 0, 0], 0.12, F.el('O')), 'a water molecule, H₂O');
-      const h1 = v.pickable(F.mesh.sphere(grp, [0, 0, 0], 0.075, F.el('H')), 'a water molecule, H₂O');
-      const h2 = v.pickable(F.mesh.sphere(grp, [0, 0, 0], 0.075, F.el('H')), 'a water molecule, H₂O');
-      return [o, h1, h2];
-    });
-  }
-
-  /* the strip: the counts of pairs dissolved and returned so far against the clock */
-  const B = { l: 190, r: 980, t: 78, b: 222 };
-  function drawStrip(t) {
-    const { ctx } = begin(strip);
-    const legend = [['Ag', 'Ag⁺ ion', RAD.Ag], ['Cl', 'Cl⁻ ion', RAD.Cl], ['O', 'water molecule', 0.12]];
-    legend.forEach(([s, name, r], i) => {
-      const x = 230 + i * 260, y = 30, rr = 70 * r;
-      ctx.save(); ctx.beginPath(); ctx.arc(x, y, rr, 0, TAU); ctx.fillStyle = F.el(s); ctx.fill(); ctx.lineWidth = 1.5; ctx.strokeStyle = alpha(PAL.ink, 0.45); ctx.stroke();
-      if (s === 'O') [-1, 1].forEach((sg) => { ctx.beginPath(); ctx.arc(x + sg * 8, y - 7, 5, 0, TAU); ctx.fillStyle = F.el('H'); ctx.fill(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 1.5; ctx.stroke(); });
-      ctx.restore();
-      text(ctx, name, x + rr + 14, y, PAL.ink, { size: 18 });
-    });
-    const X = (s) => B.l + (s / T) * (B.r - B.l), Y = (n) => B.b - (n / 16) * (B.b - B.t);
-    line(ctx, B.l, B.b, B.r, B.b, PAL.muted, 2); line(ctx, B.l, B.t, B.l, B.b, PAL.muted, 2);
-    [0, 4, 8, 12, 16].forEach((n) => { line(ctx, B.l - 6, Y(n), B.l, Y(n), PAL.muted, 2); text(ctx, String(n), B.l - 12, Y(n), PAL.muted, { size: 16, align: 'right' }); });
-    text(ctx, 'ion pairs', B.l - 52, B.t - 22, PAL.ink, { size: 17, weight: 600, align: 'center' });
-    text(ctx, 'time →', B.r, B.b + 18, PAL.muted, { size: 16, align: 'right' });
-    const steps = (times, upto, dash) => {
-      ctx.save(); ctx.strokeStyle = dash ? PAL.muted : PAL.ink; ctx.lineWidth = 4; if (dash) ctx.setLineDash([10, 8]);
-      ctx.beginPath(); ctx.moveTo(X(0), Y(0)); let n = 0;
-      for (const s of times) { if (s > upto) break; ctx.lineTo(X(s), Y(n)); n += 1; ctx.lineTo(X(s), Y(n)); }
-      ctx.lineTo(X(upto), Y(n)); ctx.stroke(); ctx.restore();
-    };
-    steps(outs, t, false); steps(ins, t, true);
-    const D = dissolved(t), P = returned(t);
-    line(ctx, X(t), B.t, X(t), B.b, alpha(PAL.ink, 0.25), 2, [4, 8]);
-    if (D - P > 0) F.vbracket(ctx, X(t) + 10, Y(D), Y(P), PAL.ink, '', 1);
-    const L = 1030;
-    line(ctx, L, 104, L + 44, 104, PAL.ink, 4); text(ctx, `dissolved, ${D}`, L + 58, 104, PAL.ink, { size: 18 });
-    line(ctx, L, 146, L + 44, 146, PAL.muted, 4, [10, 8]); text(ctx, `returned, ${P}`, L + 58, 146, PAL.ink, { size: 18 });
-    F.vbracket(ctx, L + 22, 172, 204, PAL.ink, '', 1); text(ctx, `in solution, ${D - P}`, L + 58, 188, PAL.ink, { size: 18 });
-  }
+  let hits = [];
+  F.hover(d.stage, () => hits);
+  const GB = { l: 680, r: 1340, t: 170, b: 540 };
   function draw() {
-    build();
-    const t = cy.now();
-    ions.forEach((ion, i) => { const p = where(ion, t); ionMesh[i].position.set(p[0], p[1], p[2]); });
-    waters.forEach((m, i) => wpos(m, t).forEach((p, j) => waterMesh[i][j].position.set(p[0], p[1], p[2])));
-    v.headline(nSmooth(t) < 0.95 * NEQ ? 'Ag⁺ and Cl⁻ ions leave the solid faster than they return.' : 'Ions now leave the solid and return to it at the same rate: the solution is saturated.');
-    v.invalidate();
-    drawStrip(t);
+    const { ctx } = begin(d.c);
+    const t = cy.now(), n = inSolution(t);
+    hits = [];
+    const head = nSmooth(t) < 0.95 * NEQ
+      ? `Ions leave the solid faster than they return: ${n} Ag⁺ and ${n} Cl⁻ are dissolved so far.`
+      : 'Ions now leave the solid and return to it at the same rate, so the number dissolved holds steady.';
+    topline(ctx, head);
+    /* the water, then the glass over it */
+    ctx.save(); beakerPath(ctx); ctx.closePath(); ctx.clip(); ctx.fillStyle = alpha(PAL.muted, 0.16); ctx.fillRect(BK.x - BK.half, BK.lv, 2 * BK.half, BK.base - BK.lv); ctx.restore();
+    line(ctx, BK.x - BK.half + 2, BK.lv, BK.x + BK.half - 2, BK.lv, alpha(PAL.ink, 0.45), 1.5);
+    waters.forEach((m) => water(ctx, m, t));
+    /* the solid first, then the ions on their way or in solution, so a moving ion passes in front */
+    const pos = ions.map((o) => where(o, t)), home = ions.map((o, i) => { const p = pos[i]; return sites.some((s) => s.p[0] === p[0] && s.p[1] === p[1]); });
+    ions.forEach((o, i) => { if (home[i]) ion(ctx, o.kind, pos[i][0], pos[i][1]); });
+    ions.forEach((o, i) => { if (!home[i]) ion(ctx, o.kind, pos[i][0], pos[i][1]); });
+    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.lineJoin = 'round'; ctx.lineCap = 'round'; beakerPath(ctx); ctx.stroke(); ctx.restore();
+        text(ctx, 'AgCl(s)', BK.x, BK.base + 6, PAL.ink, { size: 20, align: 'center', base: 'top' });
+    /* the two rates against time */
+    const ax = F.axes(ctx, GB, [0, T], [0, 1.25 * RD], { nx: 0, ny: 0, xl: 'time', xc: C('time'), yl: 'rate', yc: C('rate') });
+    const cOut = F.cat(0), cIn = F.cat(1);
+    if (t > 0.01) { F.plot(ctx, ax, rateOut, cOut, { w: 5, x: [0, t] }); F.plot(ctx, ax, rateIn, cIn, { w: 5, x: [0, t] }); }
+    dot(ctx, ax.X(t), ax.Y(rateOut()), cOut, true, 9); dot(ctx, ax.X(t), ax.Y(rateIn(t)), cIn, true, 9);
+    hits.push({ x: ax.X(t), y: ax.Y(rateOut()), r: 12, name: 'the rate of dissolution' }, { x: ax.X(t), y: ax.Y(rateIn(t)), r: 12, name: 'the rate of precipitation' });
     ro.set(SAT, NOTE, { values: false });
+    F.legend(ctx, ax, [{ s: 'dissolution', color: cOut, w: 5 }, { s: 'precipitation', color: cIn, w: 5 }], { corner: 'above' });
   }
-  const ro = F.readout(d);
+  const ro = F.readout(d), NOTE = 'A saturated solution holds one Ag⁺ ion for every 4.4 million water molecules; the beaker draws one for every five.';
   const SAT = `\\kKsp = [\\text{Ag}^{+}][\\text{Cl}^{-}] = (${hue('concentration', '1.26 \\times 10^{-5}')})(${hue('concentration', '1.26 \\times 10^{-5}')}) = ${hue('equilibrium-constant', '1.6 \\times 10^{-10}')}`;
-  const NOTE = 'A saturated solution holds one Ag⁺ ion for every 4.4 million water molecules; the beaker draws one for every five.';
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
 
@@ -208,7 +188,7 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
    pinned. Still: the comparison has no clock.
 ===================================================================== */
 (function () {
-  const H = 640, d = sim('sim-ksp-plane', H);
+  const H = 660, d = sim('sim-ksp-plane', H);
   const KS = { cl: 1.6e-10, br: 5.0e-13 }, LK = { cl: Math.log10(1.6e-10), br: Math.log10(5.0e-13) };
   const START = { one: { a: -4, c: -4, r: -4 }, two: { a: -9, c: -1, r: -4 } };
   const pick = F.choice(d.controls, {
@@ -216,26 +196,24 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
     options: [{ value: 'one', label: 'AgCl' }, { value: 'two', label: 'AgCl and AgBr' }],
     onInput: (m) => { const s = START[m]; ag.set(s.a); cl.set(s.c); br.set(s.r); br.show(m === 'two'); [ag, cl, br].forEach((h) => h.refresh()); draw(); },
   });
-  const ag = ctl(d.controls, { label: '[\\text{Ag}^{+}]', cls: 'concentration', key: 'ag', min: -12, max: -2, step: 0.01, value: -4, unit: 'M', dec: 2,
+  const ag = ctl(d.controls, { label: '[\\text{Ag}^{+}]', cls: 'concentration', key: 'ag', min: -12, max: -2, step: 0.01, value: -4, fmt: (lg) => `${sciText(10 ** lg)} M`,
     aria: 'the silver ion concentration, on a logarithmic scale',
     specials: [{ at: () => LK.cl - cl.v, label: 'AgCl' }, { at: () => (pick.value === 'two' ? LK.br - br.v : null), label: 'AgBr' }], onInput: () => draw() });
-  const cl = ctl(d.controls, { label: '[\\text{Cl}^{-}]', cls: 'concentration', key: 'cl', min: -10, max: 0, step: 0.01, value: -4, unit: 'M', dec: 2,
+  const cl = ctl(d.controls, { label: '[\\text{Cl}^{-}]', cls: 'concentration', key: 'cl', min: -10, max: 0, step: 0.01, value: -4, fmt: (lg) => `${sciText(10 ** lg)} M`,
     aria: 'the chloride ion concentration, on a logarithmic scale', specials: [{ at: () => LK.cl - ag.v, label: 'saturated' }], onInput: () => draw() });
-  const br = ctl(d.controls, { label: '[\\text{Br}^{-}]', cls: 'concentration', key: 'br', min: -10, max: 0, step: 0.01, value: -4, unit: 'M', dec: 2,
+  const br = ctl(d.controls, { label: '[\\text{Br}^{-}]', cls: 'concentration', key: 'br', min: -10, max: 0, step: 0.01, value: -4, fmt: (lg) => `${sciText(10 ** lg)} M`,
     aria: 'the bromide ion concentration, on a logarithmic scale', specials: [{ at: () => LK.br - ag.v, label: 'saturated' }], onInput: () => draw() });
   br.show(false, { ms: 0 });
-  const box = (h) => h.el.querySelector('.ctl-val');
   const ro = F.readout(d);
   let hits = [];
   F.hover(d.stage, () => hits);
 
-  const G = { l: 210, r: 1250, t: 120, b: 560 }, XR = [-12, -2], YR = [-12, 0];
+  const G = { l: 210, r: 1250, t: 150, b: 580 }, XR = [-12, -2], YR = [-12, 0];
   /* a product shown from rounded factors, so the numbers on screen multiply to the number on screen */
   const rel = (q, k) => (Math.abs(q / k - 1) < 0.03 ? '=' : q > k ? '>' : '<');
   function draw() {
     const { ctx } = begin(d.c);
     const two = pick.value === 'two', a = 10 ** ag.v, c = 10 ** cl.v, r = 10 ** br.v;
-    [[ag, a], [cl, c], [br, r]].forEach(([h, x]) => { const b = box(h); if (b) b.textContent = sciText(x); });
     const cC = C('concentration'), cK = C('equilibrium-constant');
     const colCl = pick.mixColor((m) => (m === 'two' ? F.ref('agcl') : cK)), colBr = F.ref('agbr'), aBr = pick.a('two');
     const ar = round2(a), cr = round2(c), rr = round2(r);
@@ -319,11 +297,11 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
 
     if (!two) {
       const q = round2(ar * cr), how = rel(q, KS.cl);
-      ro.set(`\\kQsp = [\\text{Ag}^{+}][\\text{Cl}^{-}] = (\\mk{a}{${hue('concentration', sciTex(ar))}})(\\mk{c}{${hue('concentration', sciTex(cr))}}) = \\mk{q}{${hue('equilibrium-constant', sciTex(q))}} \\mk{rel}{${how === '>' ? '\\gt' : how === '<' ? '\\lt' : '='}} \\mk{K}{\\kKsp}`, undefined, { form: 'one' });
+      ro.set(`\\kQsp = [\\text{Ag}^{+}][\\text{Cl}^{-}] = (\\mk{a}{${hue('concentration', sciTex(ar))}})(\\mk{c}{${hue('concentration', sciTex(cr))}}) = \\mk{q}{${hue('equilibrium-constant', sciTex(q))}} \\mk{rel}{${how === '>' ? '\\gt' : how === '<' ? '\\lt' : '='}} \\mk{K}{\\kKsp} = \\mk{Kv}{${hue('equilibrium-constant', '1.6 \\times 10^{-10}')}}`, undefined, { form: 'one' });
     } else {
-      const k = LK.cl - cl.v <= LK.br - br.v ? 'cl' : 'br', xr = k === 'cl' ? cr : rr, ion = k === 'cl' ? '[\\text{Cl}^{-}]' : '[\\text{Br}^{-}]';
-      const t = round2(KS[k] / xr);
-      ro.set(`[\\text{Ag}^{+}] = \\frac{\\kKsp}{${ion}} = \\frac{\\mk{K}{${hue('equilibrium-constant', sciTex(KS[k]))}}}{\\mk{x}{${hue('concentration', sciTex(xr))}}} = \\mk{t}{${hue('concentration', sciTex(t))}}\\ \\text{M}`, undefined, { form: 'two-' + k });
+      /* the [Ag+] at which each salt begins to precipitate, AgCl's line first as Example 15.11 works them */
+      const thr = (k, xr, ion) => `[\\text{Ag}^{+}] = \\frac{\\kKsp}{${ion}} = \\frac{\\mk{K${k}}{${hue('equilibrium-constant', sciTex(KS[k]))}}}{\\mk{x${k}}{${hue('concentration', sciTex(xr))}}} = \\mk{t${k}}{${hue('concentration', sciTex(round2(KS[k] / xr)))}}\\ \\text{M}`;
+      ro.set(`\\begin{gathered}{}${thr('cl', cr, '[\\text{Cl}^{-}]')} \\\\ ${thr('br', rr, '[\\text{Br}^{-}]')}\\end{gathered}`, undefined, { form: 'two' });
     }
   }
   register(d.fig, { update: () => {}, draw });

@@ -33,13 +33,13 @@ function ball(ctx, x, y, r, fill, stroke = alpha(PAL.ink, 0.5), w = 1.4) {
    against temperature, fixed axes 1000 to 1800 °C by 200 and 0 to 100 %.
 ===================================================================== */
 (function () {
-  const H = 720;
+  const H = 730;
   const d = sim('sim-order', H);
   const MP = 1713, SOFT = 1100;
   const FORM = F.choice(d.controls, { label: '\\text{form}', options: [{ value: 'crystal', label: 'crystalline (quartz)' }, { value: 'glass', label: 'amorphous (fused silica)' }], value: 'crystal', aria: 'crystalline or amorphous silicon dioxide' });
   const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 1000, max: 1800, step: 10, value: 1400, unit: '°C', dec: 0, aria: 'temperature in degrees Celsius', specials: [{ at: MP, label: 'melting point' }] });
   /* the net: silicon at the corners of flat-topped hexagons, Si to Si L, an oxygen on every link */
-  const L = 72, BOX = { l: 70, r: 1330, t: 40, b: 404 };
+  const L = 72, BOX = { l: 70, r: 1330, t: 34, b: 414 };
   const nodes = [], key = (x, y) => `${Math.round(x)},${Math.round(y)}`, seen = new Set();
   for (let i = -1; i < 14; i++) for (let j = -1; j < 5; j++) {
     const cx = 1.5 * L * i, cy = R3 * L * (j + (i % 2 ? 0.5 : 0));
@@ -149,9 +149,9 @@ function ball(ctx, x, y, r, fill, stroke = alpha(PAL.ink, 0.5), w = 1.4) {
     P.forEach((p) => { ball(ctx, p[0], p[1], 17, F.el('Si')); hits.push({ x: p[0], y: p[1], r: 17, name: 'a silicon atom, Si' }); });
     const disc = (sym, r) => (c, x, y) => ball(c, x + 14, y + 11, r, F.el(sym));
     const key = [{ s: 'silicon atom', draw: disc('Si', 10) }, { s: 'oxygen atom', draw: disc('O', 7) }, { s: 'broken link', color: alpha(PAL.ink, 0.5), w: 3, dash: [4, 5] }];
-    F.legend(ctx, { l: 80, r: 1320, t: 416, b: 460 }, key, { corner: 'top', row: true, size: 20 });
+    F.legend(ctx, { l: 80, r: 1320, t: 424, b: 468 }, key, { corner: 'top', row: true, size: 20 });
     /* graph: share of links broken, 1000 to 1800 °C by 200, 0 to 100 % by 50 */
-    const box = { l: 230, r: 1180, t: 520, b: 650 };
+    const box = { l: 230, r: 1180, t: 530, b: 660 };
     const { X, Y } = axes(ctx, box, [1000, 1800], [0, 100], { nx: 4, ny: 2, xl: 'T (°C)', xc: C('temperature'), yl: 'links broken (%)', fy: (v) => fmt(v, 0) });
     line(ctx, X(MP), box.t, X(MP), box.b, alpha(PAL.ink, 0.35), 2, [4, 8]);
     text(ctx, 'melting point, 1713 °C', X(MP) - 8, box.t - 22, PAL.muted, { size: 17, align: 'right' });

@@ -217,9 +217,9 @@ models('fig-sulfur', 'sulfur');
   };
   /* the pair is met from the front, as the book draws it; laid on each other they are seen from the side, where front and back show */
   const VIEW = { mirror: { yaw: -0.18, pitch: 0.12 }, turned: { yaw: -0.18, pitch: 0.12 }, over: { yaw: 0.6, pitch: 0.16 } };
-  const v = F.view3d(d.stage, { h: 720, dist: 23.5, tilt: 0.12, onRender: names });
+  const v = F.view3d(d.stage, { h: 720, dist: 25, tilt: 0.12, onRender: names });
   v.setView(-0.18, 0.12);
-  const g = v.part(0); g.position.y = 0.1;   /* room for the headline above and the names below */
+  const g = v.part(0);
   let sig = '', gS = null, gR = null, plane = null, lab = null;
   function molecule(grp, atoms, which) {
     B.forEach(([i, j, o]) => F.mesh.bond(grp, atoms[i].slice(1), atoms[j].slice(1), o, 0.07));

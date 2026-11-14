@@ -216,7 +216,7 @@ function rule(ctx, x1, x2, y, h) {
     /* the cube of lead and the cube of gold are the section's referents; the other solids are told apart by the palette after them */
     const hueOf = (i) => (MATS[i][2] ? F.ref(MATS[i][2]) : F.cat(2 + i - MATS.slice(0, i).filter((x) => x[2]).length)), mine = hueOf(which);
     /* the balance, and the cube on its pan, at 78 logical units to the centimeter (60 in the model, drawn 1.3 times larger) */
-    const ox = 370, oy = 400, e = a * 60, Z = 1.3, P = (x, y, z) => { const q = FRONT.P([x * Z, y * Z, z * Z]); return [ox + q[0], oy + q[1]]; };
+    const ox = 370, oy = 372, e = a * 60, Z = 1.3, P = (x, y, z) => { const q = FRONT.P([x * Z, y * Z, z * Z]); return [ox + q[0], oy + q[1]]; };
     slab(ctx, P, -175, 175, -100, -24, -120, 120);
     slab(ctx, P, -24, 24, -24, -8, -24, 24, 2);
     slab(ctx, P, -135, 135, -8, 0, -105, 105);
@@ -282,7 +282,7 @@ function rule(ctx, x1, x2, y, h) {
     const rest = floats ? Y(V1 + V) + 14 + hb : FLOOR - 2, lift = during(p, 0.12, 0.34), over = during(p, 0.34, 0.56), down = during(p, 0.56, 0.92);
     const bx = PANX + (CX - PANX) * over, by = PANY + (RIM - 12 - PANY) * lift + (rest - (RIM - 12)) * down;
     /* the water level with the block's foot that far below the first level */
-    const under = clamp((by - Y(V1)) / (1 - share), 0, hb), level = V1 + (V * under) / hb, risen = level - V1;
+    const under = over < 1 ? 0 : clamp((by - Y(V1)) / (1 - share), 0, hb), level = V1 + (V * under) / hb, risen = level - V1;
     line(ctx, 60, BENCH, 1340, BENCH, PAL.rule, 2);
     /* the balance: a pan on a stem over a body with a display, which reads the block only while it rests on the pan */
     ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5; ctx.lineJoin = 'round';

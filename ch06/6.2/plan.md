@@ -139,8 +139,8 @@ headline · graph
    choices, in ink since a quantum number and a nuclear charge are labels:
    n<sub>i</sub> (1 to 6, default 3), n<sub>f</sub> (1 to 6, default 2),
    atom or ion (H, He⁺, Li²⁺) · headline: which way the electron went and
-   what light the photon is, "The electron falls from n = 3 to n = 2 and
-   the atom emits a photon of red light." · no graph · 2D (a ladder).
+   what light the photon is, "In hydrogen the electron falls from n = 3 to
+   n = 2 and a photon of red light is emitted." · no graph · 2D (a ladder).
    Rebuilt on 2026-11-14: the wavelength strip, the diagonal line to it and
    the magnified inset are gone (the spectrum is `sim-series`'s), so the
    ladder takes the stage, 570 units tall, and every rung is told apart at
@@ -186,15 +186,15 @@ headline · graph
    charge draws every orbit in · arrows: none · **still**: it answers its
    two choices · n (1 to 5, the levels of Figure 6.14, default 3, Example
    6.4's orbit) and atom or ion · headline: the pattern neither label
-   states, "In hydrogen the n = 3 orbit is 9 times as wide as the n = 1
-   orbit, and its electron takes 1/9 of the energy to remove." · no graph ·
+   states, "The n = 3 orbit is 9 times as wide as n = 1, and its electron
+   takes 1/9 of the energy to remove." · no graph ·
    2D. Rebuilt on 2026-11-14: the orbits of n = 5 and 6 used to run off the
    frame, the ladder stood small in a blank half with eight crowded labels,
    and the headline repeated the readout. Now every orbit is inside the
-   frame at one fixed scale (12.8 units to a Bohr radius), the ladder is as
-   tall as the atom, only the chosen orbit and rung are labelled (the rest
-   answer to the pointer, since their labels would collide once Z shrinks
-   them, rule 26.7), and the readout works out both equations.
+   frame at one fixed scale (12.6 units to a Bohr radius), the ladder is as
+   tall as the atom, only the chosen orbit is labelled, in a column clear of every orbit on a
+   leader from the electron (the rest answer to the pointer, since their
+   labels would collide once Z shrinks them, rule 26.7), and the readout works out both equations.
    works: parts: the nucleus, an ink dot with its charge; five circular
    orbits round it of radius n²a₀/Z; the electron on the chosen orbit and a
    dashed radius from the nucleus to it, in the length hue; a scale bar of
@@ -218,28 +218,40 @@ headline · graph
    arrows: none · **still** · n₁ (1 to 4, default 2) as a choice, n₂ (n₁ + 1
    to n₁ + 8, default 3) as a dropdown whose list follows n₁, atom or ion ·
    headline: how many lines of the chosen series are visible light · the
-   graph is the picture: a logarithmic wavelength axis, 10 nm to 5000 nm
-   (Li²⁺'s shortest limit is 10.1 nm, hydrogen's 5 → 4 line 4051 nm), fixed
-   for every choice; on a logarithmic axis a factor of Z² is one rigid
-   shift · readout 1/λ = R∞Z²(1/n₁² − 1/n₂²) with the live numbers, then λ ·
-   2D. Rebuilt on 2026-11-14: one thin strip in a blank stage, its lines
-   bunched in 60 units and an "n₂ up to" control that changed the drawing
-   and not the idea, a readout that left n₂ a letter.
-   works: parts: four rows, one for each n₁, each a band with one line for
-   every n₂ from n₁ + 1 to 12 and a dashed line at the series limit; the
-   chosen row at full strength and the others faint; the chosen line
-   taller, with its n₂ and wavelength above it; the visible band, 400 to
-   700 nm, painted in the colours of light on the axis and marked through
-   the rows by two faint lines; a line in the visible band is drawn in its
-   own colour, a line outside it in the wavelength hue · must hold: (1) in
-   hydrogen the lines to n₁ = 2 from n₂ = 3, 4, 5, 6 stand at 656, 486, 434
-   and 410 nm inside the visible band and the rest of that row in the
-   ultraviolet, limit 364.7 nm; the row n₁ = 1 lies wholly in the
-   ultraviolet and the rows 3 and 4 in the infrared; (2) every row crowds
-   toward its dashed limit on the short-wavelength side; (3) the readout's
-   wavelength is where the chosen line stands; (4) for He⁺ every line is at
-   a quarter, for Li²⁺ a ninth, of hydrogen's wavelength · no image to
-   read: R∞ = k/hc = 1.097 × 10⁷ m⁻¹ from the text's constants.
+   graph is the picture, in two parts. Above, the four series on one
+   logarithmic wavelength axis, 10 nm to 5000 nm (Li²⁺'s shortest limit is
+   10.1 nm, hydrogen's 5 → 4 line 4051 nm), fixed for every choice; on a
+   logarithmic axis a factor of Z² is one rigid shift. Below, the chosen
+   series alone, spread out on a linear axis that runs from its limit to
+   its longest wavelength: a zoom, whose range follows the choice, because
+   on the shared axis a whole series is 60 to 120 units wide and its lines
+   cannot be told apart · readout 1/λ = R∞Z²(1/n₁² − 1/n₂²) with the live
+   numbers, then λ · 2D. Rebuilt on 2026-11-14: one thin strip in a blank
+   stage, its lines bunched in 60 units, an "n₂ up to" control that changed
+   the drawing and not the idea, and a readout that left n₂ a letter.
+   works: parts: above, four rows, one for each n₁, each with one line for
+   every n₂ up to 20 and a dashed line at the series limit, the chosen row
+   at full strength with a frame round its lines and the others faint; the
+   visible band, 400 to 700 nm, painted on the axis and marked through the
+   rows by two faint lines, the three regions named over their columns.
+   Below, the framed series again: every line up to n₂ = 40, the first
+   eight numbered with their n₂ where there is room, the chosen line
+   heavier with its wavelength, the limit dashed, the visible part of the
+   stretch painted along the foot. A line in the visible band is drawn in
+   its own colour, a line outside it in the wavelength hue · must hold: (1)
+   in hydrogen the lines to n₁ = 2 from n₂ = 3, 4, 5, 6 stand at 656, 486,
+   434 and 410 nm inside the visible band and the rest of that series in
+   the ultraviolet, limit 364.6 nm; the row n₁ = 1 lies wholly in the
+   ultraviolet and the rows 3 and 4 in the infrared; (2) every series
+   crowds toward its dashed limit on the short-wavelength side; (3) the
+   readout's wavelength is where the chosen line stands; (4) for He⁺ every
+   line is at a quarter, for Li²⁺ a ninth, of hydrogen's wavelength, so the
+   rows shift left together and the spread-out pattern keeps its shape · no
+   image to read: R∞ = 1.097 × 10⁷ m⁻¹, which is k/hc from the text's
+   constants to four figures. The ladder figure works its wavelength from
+   ΔE as Example 6.5 does (656.5 nm for 3 → 2) and this one from R∞
+   (656.3 nm); the two differ in the fourth figure because the text's
+   constants carry four.
 4. `fig-spectra` · **the unnumbered spectra plate**, `CNX_Chem_06_01_2spectra.jpg`,
    which the last exercise prints without a number (the book numbers the
    same file 6.13 in 6.1) · rydberg-constant-recovered · a faithful copy,

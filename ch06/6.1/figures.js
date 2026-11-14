@@ -211,7 +211,7 @@ const DARK = '#000000';
 (function () {
   const d = sim('fig-fringes', 380);
   const X0 = 300, X1 = 1370, XC = (X0 + X1) / 2, TOP = 28, BH = 64, GAP = 22;
-  const PX_PER_NM = 0.032, ENV = 5;   /* fringe spacing 20.8 units at 650 nm; slit spacing five slit widths */
+  const PX_PER_NM = 0.05, ENV = 5;    /* fringe spacing 32.5 units at 650 nm; slit spacing five slit widths */
   const BANDS = [
     { name: 'white light', nm: null },
     { name: 'red light', nm: 650 },

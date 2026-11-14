@@ -268,7 +268,7 @@ const nName = (n) => (n === Infinity ? 'n = ∞' : 'n = ' + n);
     if (jump > 0.02) dot(ctx, EX, y1, cel, false, 7);
     dot(ctx, EX, ey, cel, true, 7); hits.push({ x: EX, y: ey, r: 13, name: 'the electron' });
     topline(ctx, emit
-      ? 'In ' + ion + ' the electron falls from n = ' + ni + ' to n = ' + nf + ' and the atom emits a photon of ' + region(nm) + '.'
+      ? 'In ' + ion + ' the electron falls from n = ' + ni + ' to n = ' + nf + ' and a photon of ' + region(nm) + ' is emitted.'
       : 'In ' + ion + ' a photon of ' + region(nm) + ' is absorbed and the electron rises from n = ' + ni + ' to n = ' + nf + '.');
     tex(d.readout,
       `\\kdE=\\kk Z^{2}\\left(\\frac{1}{n_{\\text{i}}^{2}}-\\frac{1}{n_{\\text{f}}^{2}}\\right)=(${sciT(K)}\\ \\text{J})(${Z})^{2}\\left(\\frac{1}{${ni}^{2}}-\\frac{1}{${nf}^{2}}\\right)=${hu('energy', sciT(dE) + '\\ \\text{J}')}`
@@ -334,7 +334,7 @@ const nName = (n) => (n === Infinity ? 'n = ∞' : 'n = ' + n);
     /* from the rung up to E = 0: the energy that removes the electron */
     const y0 = Y(n), bxx = L - 34;
     line(ctx, bxx, TOP, bxx, y0, ce, 3); line(ctx, bxx, TOP, bxx + 12, TOP, ce, 3); line(ctx, bxx, y0, bxx + 12, y0, ce, 3);
-    F.rich(ctx, ['energy to remove the electron, ', [sciU(-E) + ' J', ce]], bxx - 8, TOP - 34, { size: 20 });
+    F.rich(ctx, ['energy to remove the electron, ', [sciU(-E) + ' J', ce]], R, TOP - 36, { size: 20, align: 'right' });
     /* the pattern neither label states */
     topline(ctx, n === 1
       ? 'The n = 1 orbit is the smallest, and its electron takes the most energy to remove.'

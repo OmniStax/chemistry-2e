@@ -128,11 +128,21 @@ function stage3(d, o) {
 /* an atom as a ball in its element colour, named under the pointer */
 function ball(S, g, p, sym, extra) { const m = sphere(g, p, rOf(sym), atomColor(sym), extra); S.v.pickable(m, nameOf(sym) + (sym === 'E' || sym === 'X' ? '' : ' atom')); return m; }
 /* the arc of an angle as a thin tube, so it keeps its weight on a large stage; returns its midpoint */
-function arcTube(g, a, b, R, color, n = 14) {
-  const ua = V.unit(a), ub = V.unit(b), pts = [];
-  for (let i = 0; i <= n; i++) pts.push(V.mul(slerp(ua, ub, i / n), R));
+function arcTube(g, a, b, R, color, perp) {
+  const ua = V.unit(a), ub = V.unit(b), pts = [], straight = V.dot(ua, ub) < -0.999, n = straight ? 24 : 14;
+  /* two bonds in one straight line have no one arc between them: the half circle goes round by way of perp */
+  const side = straight ? V.unit(V.sub(perp ?? upPerp(ua), V.mul(ua, V.dot(perp ?? upPerp(ua), ua)))) : null;
+  const at = (k) => (straight ? V.add(V.mul(ua, Math.cos(Math.PI * k)), V.mul(side, Math.sin(Math.PI * k))) : slerp(ua, ub, k));
+  for (let i = 0; i <= n; i++) pts.push(V.mul(at(i / n), R));
   for (let i = 0; i < n; i++) stick(g, pts[i], pts[i + 1], 0.016, color);
-  return V.mul(V.unit(V.add(ua, ub)), R);
+  return V.mul(V.unit(at(0.5)), R);
+}
+/* of the directions square to an axis, the one that stands farthest from every other region */
+function clearSide(axis, others) {
+  const u = upPerp(axis), w = [axis[1] * u[2] - axis[2] * u[1], axis[2] * u[0] - axis[0] * u[2], axis[0] * u[1] - axis[1] * u[0]];
+  let best = u, room = -1;
+  for (let k = 0; k < 24; k++) { const c = V.add(V.mul(u, Math.cos(k * TAU / 24)), V.mul(w, Math.sin(k * TAU / 24))), r = Math.min(180, ...others.map((o) => V.angle(c, o))); if (r > room + 1e-6) { room = r; best = c; } }
+  return best;
 }
 const weak = (s) => `<span style="font-weight:400">${s}</span>`;
 
@@ -159,10 +169,10 @@ const weak = (s) => `<span style="font-weight:400">${s}</span>`;
      control stands there only then (rule 24.6) */
   const CLF = {
     eq: { label: 'both equatorial', at: [2, 3], why: 'This is what ClF₃ does. In an equatorial position a lone pair has two neighbors at 90° and two at 120°; in an axial position it would have three at 90°.' },
-    one: { label: 'one axial, one equatorial', at: [0, 2], why: 'The axial lone pair has three neighbors at 90° where an equatorial one has two, so this arrangement is less stable and ClF₃ does not take it.' },
+    one: { label: 'one axial', at: [0, 2], why: 'The axial lone pair has three neighbors at 90° where an equatorial one has two, so this arrangement is less stable and ClF₃ does not take it.' },
     both: { label: 'both axial', at: [0, 1], why: 'Each lone pair now has three neighbors at 90°. This is the most crowded of the three arrangements, and ClF₃ does not take it.' },
   };
-  const PL = F.select(d.controls, { label: '\\text{lone pairs sit}', key: 'place', options: Object.keys(CLF).map((k) => ({ value: k, label: CLF[k].label })), value: 'eq', aria: 'where the two lone pairs sit in the trigonal bipyramid', ms: 0, onInput: () => shift() });
+  const PL = F.select(d.controls, { label: '\\text{placed}', key: 'place', options: Object.keys(CLF).map((k) => ({ value: k, label: CLF[k].label })), value: 'eq', aria: 'where the two lone pairs sit in the trigonal bipyramid', ms: 0, onInput: () => shift() });
   const PLBOX = d.controls.lastElementChild;
   const { formula: fx, note } = F.readout(d);
   const L = 1.4;
@@ -225,7 +235,7 @@ const weak = (s) => `<span style="font-weight:400">${s}</span>`;
       /* at rest: the angles between the bonds, and at five regions the two kinds of position */
       if (q >= 1) {
         const dirs = t.regions.map((r) => r.dir), cA = F.C('angle');
-        bondArcs(t.ideal, dirs, t.at, t.n).forEach(({ i, j, label }) => hued(S.out(label, arcTube(g, dirs[i], dirs[j], L * 0.52, cA), g, { gap: 5 }), 'angle'));
+        bondArcs(t.ideal, dirs, t.at, t.n).forEach(({ i, j, label }) => hued(S.out(label, arcTube(g, dirs[i], dirs[j], L * 0.52, cA, clearSide(dirs[i], dirs.filter((_, k) => k !== i && k !== j))), g, { gap: 5 }), 'angle'));
         if (t.n === 5) [['axial', 0], ['equatorial', t.regions.findIndex((r, i) => i > 1 && r.w < 0.5) > 0 ? t.regions.findIndex((r, i) => i > 1 && r.w < 0.5) : 2]].forEach(([name, i]) => {
           const lonePair = t.regions[i].w > 0.5;
           S.out(weak(name), V.mul(dirs[i], lonePair ? L * 0.93 : L), g, { r: lonePair ? 0 : rOf('X'), gap: 6 });

@@ -225,97 +225,121 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
 
 /* ---------- hydrogen's radial functions, a₀ = 1, normalized ---------- */
 const RADIAL = {
-  '1s': { n: 1, l: 0, R: (r) => 2 * Math.exp(-r), nodes: [], ext: 5, ticks: [0, 100, 200] },
-  '2s': { n: 2, l: 0, R: (r) => (1 / (2 * Math.SQRT2)) * (2 - r) * Math.exp(-r / 2), nodes: [2], ext: 14, ticks: [0, 200, 400, 600] },
-  '3s': { n: 3, l: 0, R: (r) => (2 / (81 * Math.sqrt(3))) * (27 - 18 * r + 2 * r * r) * Math.exp(-r / 3), nodes: [(9 - 3 * Math.sqrt(3)) / 2, (9 + 3 * Math.sqrt(3)) / 2], ext: 26, ticks: [0, 500, 1000] },
-  '2p': { n: 2, l: 1, R: (r) => (1 / (2 * Math.sqrt(6))) * r * Math.exp(-r / 2), nodes: [], ext: 13, ticks: [0, 200, 400, 600] },
-  '3p': { n: 3, l: 1, R: (r) => (8 / (27 * Math.sqrt(6))) * r * (1 - r / 6) * Math.exp(-r / 3), nodes: [6], ext: 25, ticks: [0, 500, 1000] },
-  '3d': { n: 3, l: 2, R: (r) => (4 / (81 * Math.sqrt(30))) * r * r * Math.exp(-r / 3), nodes: [], ext: 23, ticks: [0, 500, 1000] },
+  '1s': { n: 1, l: 0, R: (r) => 2 * Math.exp(-r), nodes: [] },
+  '2s': { n: 2, l: 0, R: (r) => (1 / (2 * Math.SQRT2)) * (2 - r) * Math.exp(-r / 2), nodes: [2] },
+  '3s': { n: 3, l: 0, R: (r) => (2 / (81 * Math.sqrt(3))) * (27 - 18 * r + 2 * r * r) * Math.exp(-r / 3), nodes: [(9 - 3 * Math.sqrt(3)) / 2, (9 + 3 * Math.sqrt(3)) / 2] },
+  '2p': { n: 2, l: 1, R: (r) => (1 / (2 * Math.sqrt(6))) * r * Math.exp(-r / 2), nodes: [] },
+  '3p': { n: 3, l: 1, R: (r) => (8 / (27 * Math.sqrt(6))) * r * (1 - r / 6) * Math.exp(-r / 3), nodes: [6] },
+  '3d': { n: 3, l: 2, R: (r) => (4 / (81 * Math.sqrt(30))) * r * r * Math.exp(-r / 3), nodes: [] },
 };
 /* the angular part about the z axis for each l, largest value 1: 1, cos θ, (3cos²θ − 1)/2 */
 const ANG = [() => 1, (c) => c, (c) => (3 * c * c - 1) / 2];
 
 /* =====================================================================
-   FIGURE 6.20: an orbital cut in half through its nucleus, above its
-   radial graph. Mathematical 3D: the half of the cloud behind the cut is
-   a cloud of points sampled from |ψ|²; the cut face is painted with the
-   sign of ψ, deeper where |ψ|² is greater, and each radial node is ringed
-   on it. Every orbital is scaled to fill the stage and carries a ruler in
-   pm; the graph beneath keeps one distance axis for all of them. The orbit
-   is bounded to the views that show the cut face. Still: a change of
-   orbital crossfades the scenes and bends the curve.
+   FIGURE 6.20: an orbital with a quarter cut away, above its radial graph.
+   Mathematical 3D: the body is the contour of |ψ| at three tenths of its
+   outermost peak, lit, in the colour of the sign of ψ; the quarter toward
+   the reader is removed, and the two flat faces of the cut are painted
+   with the same sign colours, deeper where |ψ|² is greater. A radial node
+   is the gap between two shells, ringed on the faces. Every orbital is
+   scaled to fill the stage and carries a ruler in pm; the graph beneath
+   keeps one distance axis for all of them. The orbit is bounded to the
+   views that look into the cut. Still: a change of orbital crossfades the
+   scenes and bends the curve.
 ===================================================================== */
 (function () {
   const d = sim('sim-radial');
-  const V = F.view3d(d.stage, { h: 520, dist: 7.9, tilt: 0.24, yaw: [-1.45, -0.1], pitch: [-0.9, 0.9] });
-  V.setView(-0.62, 0.24);
+  const V = F.view3d(d.stage, { h: 520, dist: 7.9, tilt: 0.24, yaw: [-1.4, -0.15], pitch: [-0.9, 0.9] });
+  V.setView(-0.66, 0.24);
   const g = V.part(0), c2 = F.makeCanvas(d.stage, 300);
   const KEYS = ['1s', '2s', '3s', '2p', '3p', '3d'];
   const orb = F.choice(d.controls, { label: '\\text{orbital}', options: KEYS.map((k) => ({ value: k, label: k.replace(/([spd])$/, '<em>$1</em>') })), value: '3s', aria: 'the orbital drawn' });
-  const W = 1.6;                                     /* the half-width of the cut face in the scene; an orbital's `ext` Bohr radii fill it */
+  const W = 1.6;                                     /* the half-width of a cut face in the scene */
   const T3 = window.THREE, live = !!(T3 && V.scene);
   const psi = (o, x, z) => { const r = Math.hypot(x, z) || 1e-9; return o.R(r) * ANG[o.l](z / r); };
+  /* the humps of |R| between its nodes, each with its peak; the contour's level; how far the body reaches */
+  const SHAPE = {};
+  KEYS.forEach((key) => {
+    const o = RADIAL[key], cuts = [0, ...o.nodes, 60];
+    const humps = cuts.slice(0, -1).map((lo, i) => { const hi = cuts[i + 1]; let rp = lo, m = 0; for (let r = lo; r < hi; r += 0.01) { const v = Math.abs(o.R(r)); if (v > m) { m = v; rp = r; } } return { lo, hi, rp, peak: m }; });
+    const level = 0.3 * humps[humps.length - 1].peak;
+    const root = (a, b, t) => { for (let i = 0; i < 40; i++) { const m = (a + b) / 2; if ((Math.abs(o.R(m)) > t) === (Math.abs(o.R(a)) > t)) a = m; else b = m; } return (a + b) / 2; };
+    /* where |R| falls to t on the far and the near side of a hump's peak; the near side is the nucleus itself where |R| is still above t there */
+    const far = (h, t) => root(h.rp, h.hi, t), near = (h, t) => (Math.abs(o.R(h.lo)) > t ? h.lo : root(h.lo, h.rp, t));
+    const reach = far(humps[humps.length - 1], level), ext = reach * 1.12, pm = ext * A0, step = pm < 350 ? 100 : pm < 900 ? 200 : 500;
+    const ticks = []; for (let t = 0; t <= pm; t += step) ticks.push(t);
+    SHAPE[key] = { humps, level, far, near, ext, ticks };
+  });
+  const NT = 48, NP = 96, CUT = NP / 4;              /* the grid of directions; the first quarter of the turn about z is cut away */
   const scenes = {};
-  /* the electron density of the outermost shell, the depth of colour the face is scaled to */
-  function outerDensity(o) { const from = o.nodes.length ? o.nodes[o.nodes.length - 1] : 0; let m = 0; for (let r = from; r < o.ext; r += 0.02) m = Math.max(m, o.R(r) ** 2); return m; }
   function build(key) {
     if (scenes[key] || !live) return scenes[key];
-    const o = RADIAL[key], s = W / o.ext, grp = new T3.Group();
-    /* the cloud, less the quarter toward the reader (the scene's x > 0, z > 0); the orbital's z axis is the scene's y */
-    const pr = (r) => r * r * o.R(r) ** 2;
-    let pmax = 0; for (let r = 0; r < o.ext * 1.2; r += 0.02) pmax = Math.max(pmax, pr(r));
-    let seed = 20 + key.charCodeAt(0) * 7 + key.charCodeAt(1);
-    const rnd = () => { seed = (seed * 16807) % 2147483647; return seed / 2147483647; };
-    const pos = [], sgn = [];
-    while (pos.length < 3 * 9000) {
-      const r = rnd() * o.ext * 1.1; if (rnd() * pmax > pr(r)) continue;
-      const z = 2 * rnd() - 1, ph = TAU * rnd(), q = Math.sqrt(1 - z * z);
-      const a = ANG[o.l](z); if (rnd() > a * a) continue;
-      const px = q * Math.cos(ph) * r * s, pz = q * Math.sin(ph) * r * s; if (px > 0 && pz > 0) continue;
-      pos.push(px, z * r * s, pz); sgn.push(o.R(r) * a >= 0 ? 1 : -1);
-    }
-    const geo = new T3.BufferGeometry();
-    geo.setAttribute('position', new T3.Float32BufferAttribute(pos, 3));
-    geo.setAttribute('color', new T3.Float32BufferAttribute(new Array(pos.length).fill(0), 3));
-    const pts = new T3.Points(geo, new T3.PointsMaterial({ size: 0.06, vertexColors: true, transparent: true, opacity: 0.75, depthWrite: false }));
-    pts.renderOrder = 1; grp.add(pts);
-    /* the two cut faces, which meet along the orbital's z axis: the same half-plane picture on each */
-    const cv = document.createElement('canvas'); cv.width = 200; cv.height = 400;
+    const o = RADIAL[key], sh = SHAPE[key], s = W / sh.ext, grp = new T3.Group(), mats = { pos: [], neg: [] };
+    /* the body: for each hump of |R|, the contour's far and near sheets, over every direction outside the cut.
+       The orbital's z axis is the scene's y; the cut is the quarter between the scene's +x and +z. */
+    sh.humps.forEach((h) => {
+      const sign = o.R(h.rp) >= 0 ? 1 : -1;
+      [sh.far, sh.near].forEach((at) => {
+        const pos = [], col = [], on = [];
+        for (let i = 0; i <= NT; i++) for (let j = 0; j <= NP; j++) {
+          const th = (Math.PI * i) / NT, ph = (TAU * j) / NP, c = Math.cos(th), a = Math.abs(ANG[o.l](c)), ok = h.peak * a > sh.level;
+          const r = (ok ? at(h, sh.level / a) : h.rp) * s, q = Math.sin(th);
+          pos.push(q * Math.cos(ph) * r, c * r, q * Math.sin(ph) * r); on.push(ok); col.push(sign * (ANG[o.l](c) >= 0 ? 1 : -1));
+        }
+        const idx = [];
+        for (let i = 0; i < NT; i++) for (let j = CUT; j < NP; j++) {
+          const p = i * (NP + 1) + j, b = p + NP + 1;
+          if (on[p] || on[b] || on[p + 1]) idx.push(p, b, p + 1);
+          if (on[b] || on[b + 1] || on[p + 1]) idx.push(b, b + 1, p + 1);
+        }
+        if (!idx.length) return;
+        const geo = new T3.BufferGeometry();
+        geo.setAttribute('position', new T3.Float32BufferAttribute(pos, 3));
+        geo.setAttribute('color', new T3.Float32BufferAttribute(new Array(pos.length).fill(0), 3));
+        geo.setIndex(idx); geo.computeVertexNormals();
+        const mesh = new T3.Mesh(geo, new T3.MeshPhongMaterial({ vertexColors: true, side: T3.DoubleSide, shininess: 20 }));
+        mesh.userData.sgn = col; grp.add(mesh); V.pickable(mesh, 'the orbital, where the electron is most likely to be found');
+        (mats.pos).push(mesh);
+      });
+    });
+    /* the two flat faces of the cut, which meet along the orbital's z axis: the same half-plane picture on each */
+    const cv = document.createElement('canvas'); cv.width = 240; cv.height = 480;
     const tx = new T3.CanvasTexture(cv); if (T3.SRGBColorSpace) tx.colorSpace = T3.SRGBColorSpace;
-    const mat = new T3.MeshBasicMaterial({ map: tx, transparent: true, depthWrite: false, side: T3.DoubleSide });
+    const mat = new T3.MeshBasicMaterial({ map: tx, alphaTest: 0.5, side: T3.DoubleSide });
     const faceA = new T3.Mesh(new T3.PlaneGeometry(W, 2 * W), mat); faceA.position.set(W / 2, 0, 0);
     const faceB = new T3.Mesh(new T3.PlaneGeometry(W, 2 * W), mat); faceB.rotation.y = -Math.PI / 2; faceB.position.set(0, 0, W / 2);
-    [faceA, faceB].forEach((f) => { f.renderOrder = 2; grp.add(f); V.pickable(f, 'a cut face through the nucleus'); });
-    /* a ring at each radial node, the ruler under the face, and the nucleus */
+    [faceA, faceB].forEach((f) => { grp.add(f); V.pickable(f, 'a cut face through the nucleus'); });
+    /* a ring at each radial node on both faces, the ruler under the cut, and the nucleus */
     const inks = [], dash = (len) => { const u = Math.min(0.06, len / 28); const m = new T3.LineDashedMaterial({ dashSize: u, gapSize: u * 0.8 }); inks.push(m); return m; };
     const solid = () => { const m = new T3.LineBasicMaterial(); inks.push(m); return m; };
     o.nodes.forEach((rn) => {
-      [(c, h) => [c, h, 0.004], (c, h) => [0.004, h, c]].forEach((at) => {
+      [(c, h) => [c, h, 0.006], (c, h) => [0.006, h, c]].forEach((at) => {
         const p = []; for (let i = 0; i <= 48; i++) { const a = -Math.PI / 2 + (Math.PI * i) / 48; p.push(new T3.Vector3(...at(rn * s * Math.cos(a), rn * s * Math.sin(a)))); }
-        const ring = new T3.Line(new T3.BufferGeometry().setFromPoints(p), dash(TAU * rn * s)); ring.computeLineDistances(); ring.renderOrder = 3; grp.add(ring);
+        const ring = new T3.Line(new T3.BufferGeometry().setFromPoints(p), dash(TAU * rn * s)); ring.computeLineDistances(); grp.add(ring);
       });
     });
-    const YR = -W - 0.1, seg = (a, b) => { const l = new T3.Line(new T3.BufferGeometry().setFromPoints([new T3.Vector3(...a), new T3.Vector3(...b)]), solid()); l.renderOrder = 3; grp.add(l); };
+    const YR = -W - 0.12, seg = (a, b) => grp.add(new T3.Line(new T3.BufferGeometry().setFromPoints([new T3.Vector3(...a), new T3.Vector3(...b)]), solid()));
     seg([0, YR, 0], [W, YR, 0]);
-    const labels = o.ticks.map((pm, i) => { const x = (pm / A0) * s; seg([x, YR, 0], [x, YR - 0.07, 0]); return V.label(pm + (i === o.ticks.length - 1 ? ' pm' : ''), [x, YR - 0.2, 0], g, 0, 'tick'); });
-    const nuc = F.mesh.sphere(grp, [0, 0, 0], 0.035, PAL.ink); V.pickable(nuc, 'the nucleus');
+    const labels = sh.ticks.map((pm, i) => { const x = (pm / A0) * s; seg([x, YR, 0], [x, YR - 0.07, 0]); return V.label(pm + (i === sh.ticks.length - 1 ? ' pm' : ''), [x, YR - 0.22, 0], g, 0, 'tick'); });
+    const nuc = F.mesh.sphere(grp, [0, 0, 0], 0.03, PAL.ink); V.pickable(nuc, 'the nucleus');
     g.add(grp);
-    scenes[key] = { o, grp, geo, sgn, cv, tx, inks, nuc, labels, paint: '' };
+    scenes[key] = { o, sh, grp, meshes: mats.pos, cv, tx, inks, nuc, labels, paint: '' };
     return scenes[key];
   }
   function paint(sc) {
-    const a = F.cat(0), b = F.cat(1), tag = [a, b, PAL.ink].join('|'); if (sc.paint === tag) return;
-    const ca = new T3.Color(a), cb = new T3.Color(b), col = sc.geo.getAttribute('color');
-    sc.sgn.forEach((s, i) => { const c = s > 0 ? ca : cb; col.setXYZ(i, c.r, c.g, c.b); });
-    col.needsUpdate = true;
-    /* the face: the colour of the sign of ψ, its opacity rising with |ψ|² and full in the outermost shell's densest part */
-    const N = sc.cv.width, M = sc.cv.height, c = sc.cv.getContext('2d'), img = c.createImageData(N, M), o = sc.o, ref = outerDensity(o);
-    c.fillStyle = a; c.fillRect(0, 0, 1, 1); const pa = c.getImageData(0, 0, 1, 1).data; c.fillStyle = b; c.fillRect(0, 0, 1, 1); const pb = c.getImageData(0, 0, 1, 1).data;
+    const a = F.cat(0), b = F.cat(1), tag = [a, b, PAL.ink, PAL.panel].join('|'); if (sc.paint === tag) return;
+    const ca = new T3.Color(a), cb = new T3.Color(b);
+    sc.meshes.forEach((m) => { const col = m.geometry.getAttribute('color'); m.userData.sgn.forEach((s, i) => { const c = s > 0 ? ca : cb; col.setXYZ(i, c.r, c.g, c.b); }); col.needsUpdate = true; });
+    /* the faces: inside the contour, the colour of the sign of ψ over the page's ground, deeper where |ψ|² is greater */
+    const N = sc.cv.width, M = sc.cv.height, c = sc.cv.getContext('2d'), o = sc.o, sh = sc.sh, ref = (sh.level / 0.3) ** 2;
+    const probe = (css) => { c.clearRect(0, 0, 1, 1); c.fillStyle = css; c.fillRect(0, 0, 1, 1); return c.getImageData(0, 0, 1, 1).data; };
+    const pa = probe(a), pb = probe(b), pg = probe(PAL.panel), img = c.createImageData(N, M);
     for (let j = 0; j < M; j++) for (let i = 0; i < N; i++) {
-      const x = ((i + 0.5) / N) * o.ext, z = (1 - ((j + 0.5) / M) * 2) * o.ext, w = psi(o, x, z), k = 4 * (j * N + i), px = w >= 0 ? pa : pb;
-      img.data[k] = px[0]; img.data[k + 1] = px[1]; img.data[k + 2] = px[2];
-      const edge = Math.max(0, Math.min(1, (1 - Math.hypot(x, z) / o.ext) / 0.15));
-      img.data[k + 3] = Math.round(255 * edge * Math.min(1, 0.9 * Math.pow((w * w) / ref, 0.38)));
+      const x = ((i + 0.5) / N) * sh.ext, z = (1 - ((j + 0.5) / M) * 2) * sh.ext, w = psi(o, x, z), k = 4 * (j * N + i), px = w >= 0 ? pa : pb;
+      if (Math.abs(w) < sh.level) continue;
+      const t = 0.42 + 0.58 * Math.min(1, Math.pow((w * w) / ref, 0.4));
+      for (let q = 0; q < 3; q++) img.data[k + q] = Math.round(pg[q] * (1 - t) + px[q] * t);
+      img.data[k + 3] = 255;
     }
     c.clearRect(0, 0, N, M); c.putImageData(img, 0, 0); sc.tx.needsUpdate = true;
     sc.inks.forEach((m) => m.color.set(PAL.ink)); sc.nuc.material.color.set(PAL.ink);
@@ -339,7 +363,7 @@ const ANG = [() => 1, (c) => c, (c) => (3 * c * c - 1) / 2];
     const fill = (k, a) => F.faded(ctx, a, [0, 0], () => {
       const R = RADIAL[k].R, f = pOf(k);
       for (let x = 0; x < 1500; x += 4) {
-        ctx.fillStyle = alpha(R((x + 2) / A0) >= 0 ? ca : cb, 0.34);
+        ctx.fillStyle = alpha(R((x + 2) / A0) >= 0 ? ca : cb, 0.4);
         ctx.fillRect(X(x), Y(f(x + 2)), X(x + 4) - X(x) + 0.5, Y(0) - Y(f(x + 2)));
       }
     });
@@ -347,7 +371,7 @@ const ANG = [() => 1, (c) => c, (c) => (3 * c * c - 1) / 2];
     fill(key, orb.a(key));
     orb.curve(ctx, (k) => pOf(k), 0, 1500, X, Y, PAL.ink, 4, 400);
     o.nodes.forEach((r) => { const x = X(r * A0); line(ctx, x, box.t, x, box.b, PAL.ink, 2, [6, 6]); text(ctx, fmt(r * A0, 0) + ' pm', x + 10, box.t + 14, PAL.ink, { size: 19 }); });
-    F.legend(ctx, ax, [{ s: 'ψ positive', kind: 'swatch', color: alpha(ca, 0.6) }, { s: 'ψ negative', kind: 'swatch', color: alpha(cb, 0.6) }, { s: 'radial node', color: PAL.ink, w: 2, dash: [6, 6] }], { corner: 'above', size: 19 });
+    F.legend(ctx, ax, [{ s: 'ψ positive', kind: 'swatch', color: alpha(ca, 0.7) }, { s: 'ψ negative', kind: 'swatch', color: alpha(cb, 0.7) }, { s: 'radial node', color: PAL.ink, w: 2, dash: [6, 6] }], { corner: 'above', size: 19 });
     tex(d.readout, `\\text{radial nodes} = n - l - 1 = ${o.n} - ${o.l} - 1 = ${nodes}`);
   }
   still(d, draw);

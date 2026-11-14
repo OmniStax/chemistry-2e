@@ -148,7 +148,7 @@ const book = (S) => S.atoms.map((a, i) => {
    bond and lone pairs carry F.cat(0); the rest is ink.
 ===================================================================== */
 (function () {
-  const H = 490, CY = 232, L0 = 204, R0 = 1390, CAP = 384, ROW = [424, 460];
+  const H = 490, CY = 232, L0 = 216, R0 = 1390, CAP = 384, ROW = [424, 460];
   const IONS = {
     no2: {
       label: 'NO₂⁻', bond: 'N–O', charge: '−', small: false, m: 50, mh: 56, w: 310, wh: 322, q: 26, ox: ['left', 'right'], bo: '1.5', fc: '−½', fcTex: '-\\tfrac{1}{2}',
@@ -208,8 +208,8 @@ const book = (S) => S.atoms.map((a, i) => {
     tally(hx, I.bo, I.fc, 'average ');
     text(ctx, n === 2 ? 'the two resonance forms' : 'the three resonance forms', (cxOf(0) + cxOf(n - 1)) / 2, CAP, PAL.muted, { size: 19, align: 'center' });
     text(ctx, 'resonance hybrid', hx, CAP, PAL.muted, { size: 19, align: 'center' });
-    text(ctx, `bonds to ${I.ox[oi]} O`, L0 - 20, ROW[0], PAL.ink, { size: 19, align: 'right' });
-    text(ctx, 'its formal charge', L0 - 20, ROW[1], PAL.ink, { size: 19, align: 'right' });
+    text(ctx, `bonds to ${I.ox[oi]} O`, L0 - 14, ROW[0], PAL.ink, { size: 19, align: 'right' });
+    text(ctx, 'its formal charge', L0 - 14, ROW[1], PAL.ink, { size: 19, align: 'right' });
     I.atoms.forEach((a, i) => out.push({ x: P[i][0], y: P[i][1], r: 30, name: i ? `oxygen (O): ${I.bo} bonds and a charge of ${I.fc}; its lone pairs are not drawn` : `${NAMES[a.s]} (${a.s}), the central atom` }));
     return out;
   }

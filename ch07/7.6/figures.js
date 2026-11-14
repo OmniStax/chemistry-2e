@@ -482,12 +482,12 @@ geometryPair('fig-xef4', { c: 'Xe', x: 'F', L: 1.3, dirs: SITES[6], lone: [0, 1]
 (function () {
   const d = sim('sim-bond-moments');
   const top = F.makeCanvas(d.stage, 104);
-  const S = stage3(d, { h: 600, dist: 7.9 }), v = S.v, gA = v.part(-2.3), gB = v.part(2.3);
+  const S = stage3(d, { h: 600, dist: 7.0 }), v = S.v, gA = v.part(-2.3), gB = v.part(2.3);
   const key = F.makeCanvas(d.stage, 60);
   v.setView(0.3, 0.2);
   /* the electronegativities the book prints in Figure 7.6 */
   const EN = { H: 2.1, B: 2.0, C: 2.5, N: 3.0, O: 3.5, F: 4.0, P: 2.1, S: 2.5, Cl: 3.0 };
-  const K = 0.5;   /* scene units of arrow for each unit of electronegativity difference */
+  const K = 0.7;   /* scene units of arrow for each unit of electronegativity difference */
   /* three bonds at one polar angle from the upright axis that make the given angle with one another, and two in one plane */
   const pyramid = (angle) => { const cosA = Math.sqrt((1 + 2 * Math.cos(angle * RAD)) / 3), s = Math.sqrt(1 - cosA * cosA); return [90, 210, 330].map((az) => [s * Math.cos(az * RAD), -cosA, s * Math.sin(az * RAD)]); };
   const bent = (angle) => [[-Math.sin(angle / 2 * RAD), -Math.cos(angle / 2 * RAD), 0], [Math.sin(angle / 2 * RAD), -Math.cos(angle / 2 * RAD), 0]];
@@ -508,13 +508,13 @@ geometryPair('fig-xef4', { c: 'Xe', x: 'F', L: 1.3, dirs: SITES[6], lone: [0, 1]
   const M = F.select(d.controls, { label: '\\text{molecule}', options: Object.keys(MOLS).map((k) => ({ value: k, label: MOLS[k].label })), value: 'h2o', aria: 'the molecule, or the two bonds of Figure 7.26', ms: 0 });
   /* a bond moment from a to b (a the less electronegative end): shaft, head and the crossed tail that is the book's plus sign */
   function moment(g, a, b, heavy) {
-    const cM = F.C('dipole-moment'), u = V.unit(V.sub(b, a)), w = upPerp(u), r = heavy ? 0.07 : 0.035;
+    const cM = F.C('dipole-moment'), u = V.unit(V.sub(b, a)), w = upPerp(u), r = heavy ? 0.06 : 0.036;
     arrow3(g, a, b, r, cM);
     if (!heavy) { const bar = V.add(a, V.mul(u, 0.07)); stick(g, V.sub(bar, V.mul(w, 0.1)), V.add(bar, V.mul(w, 0.1)), 0.03, cM); }
   }
   /* the size of a bond's moment on the scale of Figure 7.6 and the atom it points to; carbon and sulfur tie there, and
      the text says sulfur is slightly the more electronegative, so that arrow is drawn at a least length toward sulfur */
-  function momentOf(a, b) { const dEN = EN[b] - EN[a], tie = Math.abs(dEN) < 0.05; return { dEN: Math.abs(dEN), to: tie ? (b === 'S' ? b : a) : dEN > 0 ? b : a, len: Math.max(0.16, Math.abs(dEN) * K), tie }; }
+  function momentOf(a, b) { const dEN = EN[b] - EN[a], tie = Math.abs(dEN) < 0.05; return { dEN: Math.abs(dEN), to: tie ? (b === 'S' ? b : a) : dEN > 0 ? b : a, len: Math.max(0.2, Math.abs(dEN) * K), tie }; }
   let sig = '';
   function build(mol, id) {
     const s = id + '|' + palSig(); if (s === sig) return; sig = s;

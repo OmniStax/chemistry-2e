@@ -346,7 +346,7 @@ const DARK = '#000000';
 
 /* =====================================================================
    FIGURE 6.11: the photoelectric effect. Photons of one wavelength strike
-   a metal whose electrons are held by 3.21 × 10⁻¹⁹ J (the metal the
+   a metal whose threshold is 619 nm, 3.21 × 10⁻¹⁹ J (the metal the
    book's two speeds imply); above that energy each photon frees one
    electron, which leaves with the rest. Beside the scene a bar sets one
    photon's energy against the threshold. Moving: photons arrive and
@@ -354,10 +354,10 @@ const DARK = '#000000';
 ===================================================================== */
 (function () {
   const d = sim('sim-photoelectric', 580);
-  const W0 = 3.21e-19;                              /* J, the threshold energy */
-  const L0 = (HP * CL / W0) * 1e9;                  /* nm, the threshold wavelength, 619 nm */
+  const L0 = 619;                                   /* nm, the threshold wavelength */
+  const W0 = (HP * CL) / (L0 * 1e-9);               /* J, the threshold energy, 3.209 × 10⁻¹⁹ J */
   const LAM = ctl(d.controls, { label: '\\klam', cls: 'wavelength', min: 200, max: 800, step: 1, value: 550, unit: 'nm', dec: 0, aria: 'wavelength of the light',
-    detents: [700, 550, 400], specials: [{ at: Math.round(L0), label: 'threshold' }] });
+    detents: [700, 550, 400], specials: [{ at: L0, label: 'threshold' }] });
   const BR = ctl(d.controls, { label: '\\text{brightness}', cls: '', min: 1, max: 8, step: 1, value: 3, unit: 'photons/s', dec: 0, aria: 'brightness, the number of photons arriving each second' });
   const LOOP = 8, cy = cycle(() => LOOP, 0);
   const MT = { l: 60, r: 880, y: 440, h: 56 };      /* the metal and its surface */
@@ -365,12 +365,12 @@ const DARK = '#000000';
   const BOX = { l: 1040, r: 1300, t: 140, b: 470 }; /* the energy bar */
   const Q = Math.SQRT1_2;
   const hash = (i) => { const s = Math.sin(i * 12.9898) * 43758.5453; return s - Math.floor(s); };
-  const e19 = (x) => (x / 1e-19).toFixed(2);
+  const e19 = (x) => (x / 1e-19).toFixed(3);
   let hits = []; F.hover(d.stage, () => hits);
   function draw() {
     const { ctx } = begin(d.c);
     hits = [];
-    const nm = LAM.v, E = (HP * CL) / (nm * 1e-9), KE = E - W0, out = KE > 0;
+    const nm = LAM.v, E = (HP * CL) / (nm * 1e-9), KE = E - W0, out = nm < L0, at = nm === L0;
     const v = out ? Math.sqrt((2 * KE) / ME) : 0, t = cy.now();
     const cw = C('wavelength'), ce = C('energy'), cv = C('velocity'), cm = F.ref('metal'), cel = F.el('e-'), pc = lightOr(nm);
     /* the metal */
@@ -402,7 +402,7 @@ const DARK = '#000000';
     ctx.restore();
     F.rich(ctx, ['light of ', [nm + ' nm', cw]], 50, 330, { size: 22 });
     if (out) F.rich(ctx, ['v_{max} = ', [sciU(v) + ' m/s', cv]], 490, 128, { size: 22, align: 'center' });
-    else text(ctx, 'no electrons ejected', 640, 400, PAL.muted, { size: 22, align: 'center' });
+    else text(ctx, 'no electrons ejected', 770, 400, PAL.muted, { size: 22, align: 'center' });
     F.legend(ctx, { l: MT.l, r: MT.r, t: MT.y + MT.h, b: 566 }, [
       { s: 'photon', draw: (c, x, y) => waveBetween(c, x - 20, y, x + 20, y, 16, 6, 0, pc, 3) },
       { s: 'electron', kind: 'dot', color: cel },
@@ -420,10 +420,11 @@ const DARK = '#000000';
     if (out) vbracket(ctx, bx1 + 22, yE, yW, ce, 'KE', 1);
     topline(ctx, out
       ? 'Each photon of ' + nm + ' nm carries more than the threshold energy and frees one electron.'
-      : 'A photon of ' + nm + ' nm carries less than the threshold energy, so no electron leaves, however bright the light.');
+      : at ? 'A photon of ' + nm + ' nm carries just the threshold energy, with none left over to carry an electron away.'
+        : 'A photon of ' + nm + ' nm carries less than the threshold energy, so no electron leaves, however bright the light.');
     tex(d.readout, out
-      ? `\\kKE=\\frac{h\\kc}{\\klam}-\\kE_{\\text{threshold}}=${e19(E)}\\times10^{-19}\\ \\text{J}-3.21\\times10^{-19}\\ \\text{J}=${(+e19(E) - 3.21).toFixed(2)}\\times10^{-19}\\ \\text{J}`
-      : `\\kE=\\frac{h\\kc}{\\klam}=${e19(E)}\\times10^{-19}\\ \\text{J}<\\kE_{\\text{threshold}}=3.21\\times10^{-19}\\ \\text{J}`);
+      ? `\\kKE=\\frac{h\\kc}{\\klam}-\\kE_{\\text{threshold}}=${e19(E)}\\times10^{-19}\\ \\text{J}-${e19(W0)}\\times10^{-19}\\ \\text{J}=${(+e19(E) - +e19(W0)).toFixed(3)}\\times10^{-19}\\ \\text{J}`
+      : `\\kE=\\frac{h\\kc}{\\klam}=${e19(E)}\\times10^{-19}\\ \\text{J}${at ? '=' : '<'}\\kE_{\\text{threshold}}=${e19(W0)}\\times10^{-19}\\ \\text{J}`);
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();

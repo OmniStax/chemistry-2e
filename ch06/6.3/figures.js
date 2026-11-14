@@ -247,8 +247,8 @@ const ANG = [() => 1, (c) => c, (c) => (3 * c * c - 1) / 2];
 ===================================================================== */
 (function () {
   const d = sim('sim-radial');
-  const V = F.view3d(d.stage, { h: 520, dist: 7.9, tilt: 0.2, yaw: [-1.2, 1.2], pitch: [-0.9, 0.9] });
-  V.setView(0.42, 0.2);
+  const V = F.view3d(d.stage, { h: 520, dist: 7.9, tilt: 0.24, yaw: [-1.45, -0.1], pitch: [-0.9, 0.9] });
+  V.setView(-0.62, 0.24);
   const g = V.part(0), c2 = F.makeCanvas(d.stage, 300);
   const KEYS = ['1s', '2s', '3s', '2p', '3p', '3d'];
   const orb = F.choice(d.controls, { label: '\\text{orbital}', options: KEYS.map((k) => ({ value: k, label: k.replace(/([spd])$/, '<em>$1</em>') })), value: '3s', aria: 'the orbital drawn' });
@@ -261,35 +261,39 @@ const ANG = [() => 1, (c) => c, (c) => (3 * c * c - 1) / 2];
   function build(key) {
     if (scenes[key] || !live) return scenes[key];
     const o = RADIAL[key], s = W / o.ext, grp = new T3.Group();
-    /* the half of the cloud behind the cut (the chemist's y ≥ 0); the chemist's x, z, y are the scene's x, y, −z */
+    /* the cloud, less the quarter toward the reader (the scene's x > 0, z > 0); the orbital's z axis is the scene's y */
     const pr = (r) => r * r * o.R(r) ** 2;
     let pmax = 0; for (let r = 0; r < o.ext * 1.2; r += 0.02) pmax = Math.max(pmax, pr(r));
     let seed = 20 + key.charCodeAt(0) * 7 + key.charCodeAt(1);
     const rnd = () => { seed = (seed * 16807) % 2147483647; return seed / 2147483647; };
     const pos = [], sgn = [];
-    while (pos.length < 3 * 5200) {
-      const r = rnd() * o.ext * 1.15; if (rnd() * pmax > pr(r)) continue;
-      const z = 2 * rnd() - 1, ph = Math.PI * rnd(), q = Math.sqrt(1 - z * z);
+    while (pos.length < 3 * 9000) {
+      const r = rnd() * o.ext * 1.1; if (rnd() * pmax > pr(r)) continue;
+      const z = 2 * rnd() - 1, ph = TAU * rnd(), q = Math.sqrt(1 - z * z);
       const a = ANG[o.l](z); if (rnd() > a * a) continue;
-      pos.push(q * Math.cos(ph) * r * s, z * r * s, -q * Math.sin(ph) * r * s); sgn.push(o.R(r) * a >= 0 ? 1 : -1);
+      const px = q * Math.cos(ph) * r * s, pz = q * Math.sin(ph) * r * s; if (px > 0 && pz > 0) continue;
+      pos.push(px, z * r * s, pz); sgn.push(o.R(r) * a >= 0 ? 1 : -1);
     }
     const geo = new T3.BufferGeometry();
     geo.setAttribute('position', new T3.Float32BufferAttribute(pos, 3));
     geo.setAttribute('color', new T3.Float32BufferAttribute(new Array(pos.length).fill(0), 3));
     const pts = new T3.Points(geo, new T3.PointsMaterial({ size: 0.06, vertexColors: true, transparent: true, opacity: 0.75, depthWrite: false }));
     pts.renderOrder = 1; grp.add(pts);
-    /* the cut face */
-    const cv = document.createElement('canvas'); cv.width = cv.height = 360;
+    /* the two cut faces, which meet along the orbital's z axis: the same half-plane picture on each */
+    const cv = document.createElement('canvas'); cv.width = 200; cv.height = 400;
     const tx = new T3.CanvasTexture(cv); if (T3.SRGBColorSpace) tx.colorSpace = T3.SRGBColorSpace;
-    const face = new T3.Mesh(new T3.PlaneGeometry(2 * W, 2 * W), new T3.MeshBasicMaterial({ map: tx, transparent: true, depthWrite: false, side: T3.DoubleSide }));
-    face.renderOrder = 2; grp.add(face);
-    V.pickable(face, 'the cut through the nucleus');
+    const mat = new T3.MeshBasicMaterial({ map: tx, transparent: true, depthWrite: false, side: T3.DoubleSide });
+    const faceA = new T3.Mesh(new T3.PlaneGeometry(W, 2 * W), mat); faceA.position.set(W / 2, 0, 0);
+    const faceB = new T3.Mesh(new T3.PlaneGeometry(W, 2 * W), mat); faceB.rotation.y = -Math.PI / 2; faceB.position.set(0, 0, W / 2);
+    [faceA, faceB].forEach((f) => { f.renderOrder = 2; grp.add(f); V.pickable(f, 'a cut face through the nucleus'); });
     /* a ring at each radial node, the ruler under the face, and the nucleus */
     const inks = [], dash = (len) => { const u = Math.min(0.06, len / 28); const m = new T3.LineDashedMaterial({ dashSize: u, gapSize: u * 0.8 }); inks.push(m); return m; };
     const solid = () => { const m = new T3.LineBasicMaterial(); inks.push(m); return m; };
     o.nodes.forEach((rn) => {
-      const p = []; for (let i = 0; i <= 96; i++) { const a = (TAU * i) / 96; p.push(new T3.Vector3(rn * s * Math.cos(a), rn * s * Math.sin(a), 0.004)); }
-      const ring = new T3.Line(new T3.BufferGeometry().setFromPoints(p), dash(TAU * rn * s)); ring.computeLineDistances(); ring.renderOrder = 3; grp.add(ring);
+      [(c, h) => [c, h, 0.004], (c, h) => [0.004, h, c]].forEach((at) => {
+        const p = []; for (let i = 0; i <= 48; i++) { const a = -Math.PI / 2 + (Math.PI * i) / 48; p.push(new T3.Vector3(...at(rn * s * Math.cos(a), rn * s * Math.sin(a)))); }
+        const ring = new T3.Line(new T3.BufferGeometry().setFromPoints(p), dash(TAU * rn * s)); ring.computeLineDistances(); ring.renderOrder = 3; grp.add(ring);
+      });
     });
     const YR = -W - 0.1, seg = (a, b) => { const l = new T3.Line(new T3.BufferGeometry().setFromPoints([new T3.Vector3(...a), new T3.Vector3(...b)]), solid()); l.renderOrder = 3; grp.add(l); };
     seg([0, YR, 0], [W, YR, 0]);
@@ -305,15 +309,15 @@ const ANG = [() => 1, (c) => c, (c) => (3 * c * c - 1) / 2];
     sc.sgn.forEach((s, i) => { const c = s > 0 ? ca : cb; col.setXYZ(i, c.r, c.g, c.b); });
     col.needsUpdate = true;
     /* the face: the colour of the sign of ψ, its opacity rising with |ψ|² and full in the outermost shell's densest part */
-    const N = sc.cv.width, c = sc.cv.getContext('2d'), img = c.createImageData(N, N), o = sc.o, ref = outerDensity(o);
+    const N = sc.cv.width, M = sc.cv.height, c = sc.cv.getContext('2d'), img = c.createImageData(N, M), o = sc.o, ref = outerDensity(o);
     c.fillStyle = a; c.fillRect(0, 0, 1, 1); const pa = c.getImageData(0, 0, 1, 1).data; c.fillStyle = b; c.fillRect(0, 0, 1, 1); const pb = c.getImageData(0, 0, 1, 1).data;
-    for (let j = 0; j < N; j++) for (let i = 0; i < N; i++) {
-      const x = ((i + 0.5) / N * 2 - 1) * o.ext, z = (1 - (j + 0.5) / N * 2) * o.ext, w = psi(o, x, z), k = 4 * (j * N + i), px = w >= 0 ? pa : pb;
+    for (let j = 0; j < M; j++) for (let i = 0; i < N; i++) {
+      const x = ((i + 0.5) / N) * o.ext, z = (1 - ((j + 0.5) / M) * 2) * o.ext, w = psi(o, x, z), k = 4 * (j * N + i), px = w >= 0 ? pa : pb;
       img.data[k] = px[0]; img.data[k + 1] = px[1]; img.data[k + 2] = px[2];
       const edge = Math.max(0, Math.min(1, (1 - Math.hypot(x, z) / o.ext) / 0.15));
       img.data[k + 3] = Math.round(255 * edge * Math.min(1, 0.9 * Math.pow((w * w) / ref, 0.38)));
     }
-    c.clearRect(0, 0, N, N); c.putImageData(img, 0, 0); sc.tx.needsUpdate = true;
+    c.clearRect(0, 0, N, M); c.putImageData(img, 0, 0); sc.tx.needsUpdate = true;
     sc.inks.forEach((m) => m.color.set(PAL.ink)); sc.nuc.material.color.set(PAL.ink);
     sc.paint = tag;
   }

@@ -100,60 +100,86 @@ const nName = (n) => (n === Infinity ? 'n = ∞' : 'n = ' + n);
    place, a rigid shift on a logarithmic axis.
 ===================================================================== */
 (function () {
-  const d = sim('sim-series', 710);
+  const d = sim('sim-series', 760);
   const N2LIST = (n1) => span(n1 + 1, n1 + 8);
   const N1 = qn(d.controls, { label: 'n_1', min: 1, max: 4, value: 2, aria: 'the orbit the jump ends on', onInput: () => N2.options(N2LIST(N1.v)) });
   const N2 = F.select(d.controls, { label: 'n_2', options: N2LIST(2), value: '3', aria: 'the orbit the jump starts from' });
   const ZC = ionPick(d.controls);
   const AX = { l: 150, r: 1350 }, LO = 1, HI = Math.log10(5000);
   const X = (nm) => AX.l + ((Math.log10(nm) - LO) / (HI - LO)) * (AX.r - AX.l);
-  const ROW = { y0: 118, h: 76, gap: 40 }, STRIP = { t: 590, b: 620 }, NDRAWN = 20;
+  const ROW = { y0: 104, h: 40, gap: 14 }, STRIP = { t: 322, b: 344 };
   const rowTop = (n1) => ROW.y0 + (n1 - 1) * (ROW.h + ROW.gap);
   const TICKS = [10, 20, 50, 100, 200, 500, 1000, 2000, 5000];
+  /* the chosen series again, spread out on a linear axis from its limit to its longest wavelength */
+  const DET = { l: 150, r: 1350, t: 520, b: 640, in0: 50, in1: 70 }, NFAR = 40;
+  const limitNm = (n1, Z) => (n1 * n1) / (RINF * Z * Z) * 1e9;
+  const sliver = (x0, x1, t, b, a, c) => { const N = 96; for (let i = 0; i < N; i++) { const u = a + ((c - a) * i) / N, v = a + ((c - a) * (i + 1)) / N; ctx2.fillStyle = lightColor((u + v) / 2); ctx2.fillRect(x0(u), t, x0(v) - x0(u) + 0.6, b - t); } };
+  let ctx2 = null;
   let hits = []; F.hover(d.stage, () => hits);
   function draw() {
-    const { ctx } = begin(d.c);
+    const { ctx } = begin(d.c); ctx2 = ctx;
     hits = [];
     const n1 = N1.v; if (+N2.value <= n1 || +N2.value > n1 + 8) N2.options(N2LIST(n1));
     const n2 = +N2.value, Z = ZC.v, Zm = ZC.mix((z) => z), cw = C('wavelength'), ion = ZC.name;
-    /* the visible band, marked through the rows */
-    [400, 700].forEach((nm) => line(ctx, X(nm), ROW.y0 - 8, X(nm), STRIP.t, alpha(PAL.ink, 0.3), 2, [4, 8]));
-    /* the four series */
+    /* ---- above: the four series on one axis ---- */
+    [400, 700].forEach((nm) => line(ctx, X(nm), ROW.y0 - 30, X(nm), STRIP.t, alpha(PAL.ink, 0.3), 2, [4, 8]));
     for (let m = 1; m <= 4; m++) {
-      const t = rowTop(m), on = m === n1, limit = (m * m) / (RINF * Zm * Zm) * 1e9;
+      const t = rowTop(m), on = m === n1, limit = limitNm(m, Zm);
       ctx.save(); ctx.fillStyle = PAL.soft; ctx.fillRect(AX.l, t, AX.r - AX.l, ROW.h); ctx.restore();
-      text(ctx, 'n₁ = ' + m, AX.l - 16, t + ROW.h / 2, on ? PAL.ink : PAL.muted, { size: 21, weight: on ? 600 : 400, align: 'right' });
+      text(ctx, 'n₁ = ' + m, AX.l - 16, t + ROW.h / 2, on ? PAL.ink : PAL.muted, { size: 20, weight: on ? 600 : 400, align: 'right' });
       F.faded(ctx, on ? 1 : 0.5, [0, 0], () => {
-        for (let k = NDRAWN; k > m; k--) {
-          if (on && k === n2) continue;
-          const nm = lambdaNm(m, k, Zm);
-          line(ctx, X(nm), t + 4, X(nm), t + ROW.h - 4, lineColor(nm), k - m <= 8 ? 3 : 2);
-        }
-        line(ctx, X(limit), t - 6, X(limit), t + ROW.h + 6, cw, 2.5, [7, 6]);
+        for (let k = 20; k > m; k--) { const nm = lambdaNm(m, k, Zm); line(ctx, X(nm), t + 3, X(nm), t + ROW.h - 3, lineColor(nm), k - m <= 6 ? 3 : 2); }
+        line(ctx, X(limit), t - 4, X(limit), t + ROW.h + 4, cw, 2.5, [6, 5]);
       });
-      for (let k = m + 1; k <= m + 8; k++) hits.push({ x: X(lambdaNm(m, k, Zm)), y: t + ROW.h / 2, r: 9, name: 'n₂ = ' + k + ' to n₁ = ' + m + ', ' + nmU(lambdaNm(m, k, Z)) });
-      hits.push({ x: X(limit), y: t + ROW.h / 2, r: 8, name: 'the limit of the series, ' + nmU((m * m) / (RINF * Z * Z) * 1e9) });
+      hits.push({ x: (X(limit) + X(lambdaNm(m, m + 1, Zm))) / 2, y: t + ROW.h / 2, r: 24, name: 'the lines that end on n₁ = ' + m + ', ' + nmU(limitNm(m, Z)) + ' to ' + nmU(lambdaNm(m, m + 1, Z)) });
     }
-    /* the chosen line, taller than its row, with its orbit and wavelength above it, and the limit named below */
-    const t = rowTop(n1), nm = lambdaNm(n1, n2, Zm), at = lambdaNm(n1, n2, Z), limitAt = (n1 * n1) / (RINF * Z * Z) * 1e9, xl = X((n1 * n1) / (RINF * Zm * Zm) * 1e9);
-    line(ctx, X(nm), t - 10, X(nm), t + ROW.h + 10, lineColor(nm), 5);
-    F.rich(ctx, ['n₂ = ' + n2 + ', ', [nmU(at), cw]], Math.min(AX.r - 110, Math.max(AX.l + 110, X(nm))), t - 24, { size: 19, align: 'center' });
-    F.rich(ctx, ['limit, ', [nmU(limitAt), cw]], Math.max(AX.l + 150, xl - 8), t + ROW.h + 22, { size: 17, align: 'right' });
-    /* the axis: its strip, the visible band painted sliver by sliver, the regions named */
-    ctx.save(); ctx.fillStyle = PAL.soft; ctx.fillRect(AX.l, STRIP.t, AX.r - AX.l, STRIP.b - STRIP.t); ctx.restore();
-    const N = 96;
-    for (let i = 0; i < N; i++) {
-      const a = 400 + (300 * i) / N, b = 400 + (300 * (i + 1)) / N;
-      ctx.save(); ctx.fillStyle = lightColor((a + b) / 2); ctx.fillRect(X(a), STRIP.t, X(b) - X(a) + 0.6, STRIP.b - STRIP.t); ctx.restore();
-    }
-    const ym = (STRIP.t + STRIP.b) / 2;
-    text(ctx, 'ultraviolet', X(70), ym, PAL.muted, { size: 16, align: 'center' });
-    text(ctx, 'infrared', X(1900), ym, PAL.muted, { size: 16, align: 'center' });
-    text(ctx, 'visible', X(529), STRIP.t - 13, PAL.muted, { size: 16, align: 'center' });
+    /* the chosen row is the one spread out below: a bracket under its lines says so */
+    const t1 = rowTop(n1), xa = X(limitNm(n1, Zm)), xb = X(lambdaNm(n1, n1 + 1, Zm));
+    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.strokeRect(xa - 7, t1 - 5, xb - xa + 14, ROW.h + 10); ctx.restore();
+    /* the axis: its strip, the visible band painted, the regions named */
+    ctx.save(); ctx.fillStyle = PAL.soft; ctx.fillRect(AX.l, STRIP.t, AX.r - AX.l, STRIP.b - STRIP.t);
+    sliver(X, X, STRIP.t, STRIP.b, 400, 700); ctx.restore();
+    /* the three regions, named over their columns */
+    text(ctx, 'ultraviolet', X(63), ROW.y0 - 18, PAL.muted, { size: 17, align: 'center' });
+    text(ctx, 'visible', X(529), ROW.y0 - 18, PAL.muted, { size: 17, align: 'center' });
+    text(ctx, 'infrared', X(1870), ROW.y0 - 18, PAL.muted, { size: 17, align: 'center' });
     line(ctx, AX.l, STRIP.b, AX.r, STRIP.b, cw, 2);
-    TICKS.forEach((v) => { line(ctx, X(v), STRIP.b, X(v), STRIP.b + 9, cw, 2); text(ctx, String(v), X(v), STRIP.b + 27, cw, { size: 17, align: 'center' }); });
-    text(ctx, 'wavelength λ (nm), logarithmic scale', AX.r, STRIP.b + 62, cw, { size: 20, weight: 600, align: 'right' });
-    /* how many lines of the chosen series are light the eye sees; none of them lies beyond n₂ = 20 */
+    TICKS.forEach((v) => { line(ctx, X(v), STRIP.b, X(v), STRIP.b + 9, cw, 2); text(ctx, String(v), X(v), STRIP.b + 26, cw, { size: 17, align: 'center' }); });
+    text(ctx, 'wavelength λ (nm), logarithmic scale', AX.r, STRIP.b + 56, cw, { size: 19, weight: 600, align: 'right' });
+    /* ---- below: the chosen series spread out ---- */
+    const lim = limitNm(n1, Zm), first = lambdaNm(n1, n1 + 1, Zm), limAt = limitNm(n1, Z), at = lambdaNm(n1, n2, Z);
+    const DX = (nm) => DET.l + DET.in0 + ((nm - lim) / (first - lim)) * (DET.r - DET.in1 - DET.l - DET.in0);
+    F.rich(ctx, ['The lines that end on ', ['n₁ = ' + n1, PAL.ink, 600], ', spread out'], DET.l, DET.t - 62, { size: 20 });
+    ctx.save(); ctx.fillStyle = PAL.soft; ctx.fillRect(DET.l, DET.t, DET.r - DET.l, DET.b - DET.t);
+    /* the part of this stretch the eye sees, painted along its foot */
+    const v0 = Math.max(400, lim), v1 = Math.min(700, first * 1.06);
+    if (v1 > v0) { ctx.beginPath(); ctx.rect(DET.l, DET.b - 12, DET.r - DET.l, 12); ctx.clip(); sliver(DX, DX, DET.b - 12, DET.b, v0, v1); }
+    ctx.restore();
+    for (let k = NFAR; k > n1; k--) {
+      if (k === n2) continue;
+      const nm = lambdaNm(n1, k, Zm);
+      line(ctx, DX(nm), DET.t + 8, DX(nm), DET.b - 16, lineColor(nm), k - n1 <= 8 ? 4 : 2);
+    }
+    line(ctx, DX(lim), DET.t - 10, DX(lim), DET.b + 2, cw, 3, [8, 6]);
+    /* each line's n₂ above it where there is room; the chosen one heavier, with its wavelength */
+    const xs = DX(lambdaNm(n1, n2, Zm));
+    line(ctx, xs, DET.t - 10, xs, DET.b - 16, lineColor(lambdaNm(n1, n2, Zm)), 7);
+    const tag = 'n₂ = ' + n2 + ', ', tw = F.measure(ctx, tag + nmU(at), { size: 20, weight: 600 }), tx = Math.min(DET.r - tw / 2, Math.max(DET.l + tw / 2, xs));
+    F.rich(ctx, [[tag, PAL.ink, 600], [nmU(at), cw]], tx, DET.t - 28, { size: 20, align: 'center' });
+    for (let k = n1 + 1; k <= n1 + 8; k++) {
+      const x = DX(lambdaNm(n1, k, Zm));
+      hits.push({ x, y: (DET.t + DET.b) / 2, r: 10, name: 'n₂ = ' + k + ' to n₁ = ' + n1 + ', ' + nmU(lambdaNm(n1, k, Z)) });
+      if (k !== n2 && Math.abs(x - tx) > tw / 2 + 24 && (k === n1 + 1 || DX(lambdaNm(n1, k - 1, Zm)) - x > 30)) text(ctx, String(k), x, DET.t - 14, PAL.muted, { size: 17, align: 'center' });
+    }
+    hits.push({ x: DX(lim), y: (DET.t + DET.b) / 2, r: 9, name: 'the limit of the series, n₂ = ∞' });
+    /* its own axis, in round steps of this stretch */
+    line(ctx, DET.l, DET.b, DET.r, DET.b, cw, 2);
+    const stepOf = (w) => { const p = Math.pow(10, Math.floor(Math.log10(w / 5))), q = w / 5 / p; return (q < 1.5 ? 1 : q < 3.5 ? 2 : q < 7.5 ? 5 : 10) * p; };
+    const stp = stepOf(first - lim);
+    for (let v = Math.ceil((lim + (first - lim) * 0.06) / stp) * stp; v <= first * 1.0001; v += stp) { line(ctx, DX(v), DET.b, DX(v), DET.b + 9, cw, 2); text(ctx, fmt(v, stp < 1 ? 1 : 0), DX(v), DET.b + 26, cw, { size: 17, align: 'center' }); }
+    F.rich(ctx, ['limit, ', [nmU(limAt), cw]], DX(lim) - 6, DET.b + 56, { size: 18 });
+    text(ctx, 'wavelength λ (nm)', DET.r, DET.b + 56, cw, { size: 19, weight: 600, align: 'right' });
+    /* how many lines of the chosen series are light the eye sees */
     let nVis = 0, nUV = 0, nIR = 0;
     for (let k = n1 + 1; k <= 400; k++) { const w = lambdaNm(n1, k, Z); if (visible(w)) nVis++; else if (w < 400) nUV++; else nIR++; }
     topline(ctx, nVis
@@ -263,7 +289,7 @@ const nName = (n) => (n === Infinity ? 'n = ∞' : 'n = ' + n);
   const d = sim('sim-orbit-rung', 780);
   const N = qn(d.controls, { label: 'n', min: 1, max: 5, value: 3, aria: 'quantum number of the orbit' });
   const ZC = ionPick(d.controls);
-  const SC = 12.6, CX = 360, CY = 440, ANG = 35 * Math.PI / 180;
+  const SC = 12.6, CX = 360, CY = 440, ANG = 35 * Math.PI / 180, LX = 706;
   const TOP = 150, BOT = 720, L = 1010, R = 1200;
   const Y = (n) => ladderY(n, TOP, BOT), SLOT = slotsOf(5, TOP, BOT, 26);
   let hits = []; F.hover(d.stage, () => hits);
@@ -286,9 +312,10 @@ const nName = (n) => (n === Infinity ? 'n = ∞' : 'n = ' + n);
     const r = (n * n / Zm) * SC, ex = CX + r * Math.cos(ANG), ey = CY - r * Math.sin(ANG);
     line(ctx, CX, CY, ex, ey, cr, 3, [6, 6]);
     dot(ctx, ex, ey, cel, true, 6); hits.push({ x: ex, y: ey, r: 11, name: 'the electron, on the n = ' + n + ' orbit' });
-    const lx = ex + 18, ly = ey - 26;
-    text(ctx, 'n = ' + n, lx, ly, PAL.ink, { size: 20, weight: 600, bg: PAL.panel });
-    text(ctx, 'r = ' + fmt(rA, n * n % Z ? 2 : 0) + ' a₀ = ' + fmt(rM * 1e10, 3) + ' Å', lx, ly + 27, cr, { size: 20, weight: 600, bg: PAL.panel });
+    /* its name and radius stand in a column clear of every orbit, on a leader from the electron */
+    line(ctx, ex + 12, ey, LX - 12, ey, alpha(PAL.ink, 0.35), 2);
+    text(ctx, 'n = ' + n, LX, ey - 14, PAL.ink, { size: 20, weight: 600 });
+    text(ctx, 'r = ' + fmt(rA, n * n % Z ? 2 : 0) + ' a₀ = ' + fmt(rM * 1e10, 3) + ' Å', LX, ey + 14, cr, { size: 20, weight: 600 });
     /* the scale bar */
     const bx = 44, by = 752;
     line(ctx, bx, by, bx + 5 * SC, by, PAL.ink, 3); line(ctx, bx, by - 8, bx, by + 8, PAL.ink, 2); line(ctx, bx + 5 * SC, by - 8, bx + 5 * SC, by + 8, PAL.ink, 2);
@@ -305,10 +332,9 @@ const nName = (n) => (n === Infinity ? 'n = ∞' : 'n = ' + n);
     });
     dot(ctx, L + 50, Y(n), cel, true, 8); hits.push({ x: L + 50, y: Y(n), r: 12, name: 'the electron, on the n = ' + n + ' rung' });
     /* from the rung up to E = 0: the energy that removes the electron */
-    const y0 = Y(n), bxx = L - 34, mid = (TOP + y0) / 2;
+    const y0 = Y(n), bxx = L - 34;
     line(ctx, bxx, TOP, bxx, y0, ce, 3); line(ctx, bxx, TOP, bxx + 12, TOP, ce, 3); line(ctx, bxx, y0, bxx + 12, y0, ce, 3);
-    text(ctx, 'energy to remove the electron', bxx - 16, mid - 14, PAL.ink, { size: 19, align: 'right', bg: PAL.panel });
-    text(ctx, sciU(-E) + ' J', bxx - 16, mid + 14, ce, { size: 20, weight: 600, align: 'right', bg: PAL.panel });
+    F.rich(ctx, ['energy to remove the electron, ', [sciU(-E) + ' J', ce]], bxx - 8, TOP - 34, { size: 20 });
     /* the pattern neither label states */
     topline(ctx, n === 1
       ? 'The n = 1 orbit is the smallest, and its electron takes the most energy to remove.'

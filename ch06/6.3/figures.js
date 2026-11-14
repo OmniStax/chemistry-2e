@@ -249,7 +249,7 @@ const ANG = [() => 1, (c) => c, (c) => (3 * c * c - 1) / 2];
 ===================================================================== */
 (function () {
   const d = sim('sim-radial');
-  const V = F.view3d(d.stage, { h: 520, dist: 7.3, tilt: 0.2, yaw: [-0.95, -0.2], pitch: [-0.5, 0.7] });
+  const V = F.view3d(d.stage, { h: 520, dist: 7.6, tilt: 0.2, yaw: [-0.95, -0.2], pitch: [-0.5, 0.7] });
   V.setView(-0.46, 0.2);
   const g = V.part(0), c2 = F.makeCanvas(d.stage, 300);
   const KEYS = ['1s', '2s', '3s', '2p', '3p', '3d'];
@@ -321,9 +321,9 @@ const ANG = [() => 1, (c) => c, (c) => (3 * c * c - 1) / 2];
     });
     const YR = -W / 1.08 - 0.16, seg = (a, b) => grp.add(new T3.Line(new T3.BufferGeometry().setFromPoints([new T3.Vector3(...a), new T3.Vector3(...b)]), solid()));
     seg([0, YR, 0], [(sh.ticks[sh.ticks.length - 1] / A0) * s, YR, 0]);
-    const labels = sh.ticks.map((pm, i) => { const x = (pm / A0) * s; seg([x, YR, 0], [x, YR - 0.07, 0]); return V.label(pm + (i === sh.ticks.length - 1 ? ' pm' : ''), [x, YR - 0.25, 0], g, 0, 'tick'); });
+    const labels = sh.ticks.map((pm, i) => { const x = (pm / A0) * s; seg([x, YR, 0], [x, YR - 0.07, 0]); return V.label(pm + (i === sh.ticks.length - 1 ? ' pm' : ''), [x, YR - 0.25 + 0.2, 0], g, 0, 'tick'); });
     const nuc = F.mesh.sphere(grp, [0, 0, 0], 0.03, PAL.ink); V.pickable(nuc, 'the nucleus');
-    g.add(grp);
+    grp.position.y = 0.2; g.add(grp);
     scenes[key] = { o, sh, grp, meshes: mats.pos, cv, tx, inks, nuc, labels, paint: '' };
     return scenes[key];
   }
@@ -405,10 +405,10 @@ const byV = {}; Object.entries(SHAPES).forEach(([l, list]) => list.forEach((q) =
 (function () {
   const d = sim('sim-orbital-shapes');
   const names = [];
-  /* an axis name is hidden while its end of the axis is seen against the orbital, so no name sits on a lobe */
+  /* an axis name is hidden while its end of the axis is seen against the orbital or lies off the stage, so no name sits on a lobe */
   function clear() {
     const o = V.project([0, 0, 0], g), ppu = V.wrap.clientHeight / (2 * (10.6 / V.at.zoom) * Math.tan(Math.PI / 12));
-    names.forEach(({ e, p }) => { const q = V.project(p, g); e.style.visibility = Math.hypot(q[0] - o[0], q[1] - o[1]) < 1.08 * RMAX * ppu ? 'hidden' : ''; });
+    names.forEach(({ e, p }) => { const q = V.project(p, g); const off = q[0] < 10 || q[1] < 10 || q[0] > V.wrap.clientWidth - 10 || q[1] > V.wrap.clientHeight - 10; e.style.visibility = off || Math.hypot(q[0] - o[0], q[1] - o[1]) < 1.08 * RMAX * ppu ? 'hidden' : ''; });
   }
   const V = F.view3d(d.stage, { spin: 'idle', h: 560, dist: 10.6, tilt: 0.28, onRender: () => { if (names.length) clear(); } });
   V.setView(-0.6, 0.28);
@@ -439,7 +439,7 @@ const byV = {}; Object.entries(SHAPES).forEach(([l, list]) => list.forEach((q) =
     };
     sheets = [sheet(), sheet()];
     /* the chemist's x, z, y are the scene's x, y, −z: z up and y away from the reader, as the book draws the axes */
-    const L = 2.45;
+    const L = 2.25;
     [[[L, 0, 0], 'x'], [[0, 0, -L], 'y'], [[0, L, 0], 'z']].forEach(([p, name]) => {
       axesLines.push(F.mesh.polyline(g, [p.map((c) => -c * 0.92), p], PAL.muted));
       const tip = p.map((c) => c * 1.12); names.push({ e: V.label(`<em>${name}</em>`, tip, g, 0, 'bare'), p: tip });

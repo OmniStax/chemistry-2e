@@ -26,6 +26,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -68,15 +71,16 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "note dropped, it repeated the caption"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: O₂ molecules react one at a time, atoms counted at every step"
     }
    ]
   },
   {
    "id": "fig-dalton-test",
    "kind": "figure",
-   "originals": [
-    "/media/ch02/CNX_Chem_02_01_Dalton6_img.jpg"
-   ],
    "draws": [],
    "ai": [
     {
@@ -88,6 +92,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "spheres in the green and blue the example names"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image"
     }
    ]
   },
@@ -97,10 +105,7 @@
    "draws": [
     "mass"
    ],
-   "conventions": [
-    "C",
-    "H"
-   ],
+   "conventions": [],
    "ai": [
     {
      "model": "claude-opus-5-5",
@@ -111,6 +116,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "note dropped, it repeated the caption"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt as a graph: samples A, B and C on one line through the origin"
     }
    ]
   },
@@ -139,7 +148,15 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "note dropped, it repeated the caption"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: one atom per 0.20 g Cu, chlorine bars on the copper's scale"
     }
+   ],
+   "facts": [
+    "#8a9a3c",
+    "#a8562e"
    ]
   }
  ],

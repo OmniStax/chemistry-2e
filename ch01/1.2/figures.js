@@ -135,8 +135,8 @@ const poly = (ctx, pts) => { ctx.beginPath(); pts.forEach(([x, y], i) => (i ? ct
 ===================================================================== */
 (function () {
   const d = sim('sim-conservation', 640);
-  const Fm = ctl(d.controls, { label: '\\text{fermented}', cls: '', key: 'fermented', min: 0, max: 100, step: 5, value: 50, unit: '%', dec: 0, aria: 'how much of the sugar has fermented' });
-  const Ds = ctl(d.controls, { label: '\\text{discharged}', cls: '', key: 'discharged', min: 0, max: 100, step: 5, value: 50, unit: '%', dec: 0, aria: 'how far the battery has discharged' });
+  const Fm = ctl(d.controls, { label: '\\text{fermented}', cls: '', key: 'fermented', min: 0, max: 100, step: 10, value: 50, unit: '%', dec: 0, aria: 'how much of the sugar has fermented' });
+  const Ds = ctl(d.controls, { label: '\\text{discharged}', cls: '', key: 'discharged', min: 0, max: 100, step: 10, value: 50, unit: '%', dec: 0, aria: 'how far the battery has discharged' });
   const r1 = (x) => Math.max(0, Math.round(x * 10) / 10) + 0;
   const hits = []; F.hover(d.stage, () => hits);
   const AX = 200, BL = 430, BR = 1330;                      /* the apparatus column, and the two ends of each bar */
@@ -157,7 +157,7 @@ const poly = (ctx, pts) => { ctx.beginPath(); pts.forEach(([x, y], i) => (i ? ct
     const s = 20 * (1 - f); ctx.fillStyle = alpha(cSugar, 0.75); ctx.fillRect(AX - 40, y - 2 - s, 80, s);
     ctx.restore();
     const n = Math.round(16 * f);
-    for (let i = 0; i < n; i++) { const bx = AX - 26 + ((i * 37) % 53), by = y - 30 - ((i * 53) % 105), br = 3 + (i % 3); if (Math.abs(bx - AX) > 10 && by < y - 118) continue; ctx.save(); ctx.strokeStyle = cGas; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(bx, by, br, 0, TAU); ctx.stroke(); ctx.restore(); }
+    for (let i = 0; i < n; i++) { const bx = AX - 27 + 54 * ((i * 0.618 + 0.1) % 1), by = y - 26 - 86 * ((i * 0.381 + 0.3) % 1), br = 3 + (i % 3); ctx.save(); ctx.strokeStyle = cGas; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(bx, by, br, 0, TAU); ctx.stroke(); ctx.restore(); }
     ctx.save(); ctx.strokeStyle = F.ref('bottle'); ctx.lineWidth = 4; ctx.lineJoin = 'round'; path(); ctx.stroke();
     ctx.fillStyle = F.ref('bottle'); ctx.beginPath(); ctx.roundRect(AX - 19, y - 198, 38, 16, 3); ctx.fill(); ctx.restore();
     hits.push({ x: AX, y: y - 190, r: 22, name: 'the cap that seals the bottle' }, { x: AX, y: y - 70, r: 44, name: 'the sealed bottle of beer precursor' });
@@ -213,14 +213,14 @@ const poly = (ctx, pts) => { ctx.beginPath(); pts.forEach(([x, y], i) => (i ? ct
     const A = [{ name: 'sugar', g: sugar, color: F.cat(0), used: true }, { name: 'ethanol', g: eth, color: F.cat(1) }, { name: 'carbon dioxide', g: co2, color: F.cat(2) }, { name: 'water and the rest', g: 420, rest: true }];
     bottle(ctx, 250, f, F.cat(0), F.cat(2)); balance(ctx, 250, 190, '500.0 g');
     bar(ctx, 150, 'in the sealed bottle', 500, A);
-    /* the battery: one reaction's worth, 642.6 g, in 1000 g */
-    const pb = r1(207.2 * (1 - q)), ox = r1(239.2 * (1 - q)), acid = r1(196.2 * (1 - q)), so4 = r1(606.6 * q), h2o = r1(642.6 - pb - ox - acid - so4);
+    /* the battery: five reactions' worth, 3213.0 g, in 5000 g, so that every tenth of the way is exact to 0.1 g */
+    const pb = r1(1036 * (1 - q)), ox = r1(1196 * (1 - q)), acid = r1(981 * (1 - q)), so4 = r1(3033 * q), h2o = r1(180 * q);
     const col = [0, 1, 2, 3, 4].map((i) => F.cat(i));
     const B = [{ name: 'lead', g: pb, color: col[0], used: true }, { name: 'lead oxide', g: ox, color: col[1], used: true }, { name: 'sulfuric acid', g: acid, color: col[2], used: true },
-      { name: 'lead sulfate', g: so4, color: col[3] }, { name: 'water', g: h2o, color: col[4] }, { name: 'the case and the rest', g: 357.4, rest: true }];
-    battery(ctx, 548, q, col); balance(ctx, 548, 270, '1000.0 g');
-    bar(ctx, 450, 'in the battery', 1000, B);
-    tex(d.readout, `\\km_{\\text{bottle}} = ${A.map((s) => cm(s.g)).join(' + ')} = ${cm(500)} \\\\ \\km_{\\text{battery}} = ${B.map((s) => cm(s.g)).join(' + ')} = ${cm(1000)}`);
+      { name: 'lead sulfate', g: so4, color: col[3] }, { name: 'water', g: h2o, color: col[4] }, { name: 'the case and the rest', g: 1787, rest: true }];
+    battery(ctx, 548, q, col); balance(ctx, 548, 270, '5000.0 g');
+    bar(ctx, 450, 'in the battery', 5000, B);
+    tex(d.readout, `\\km_{\\text{bottle}} = ${A.map((s) => cm(s.g)).join(' + ')} = ${cm(500)} \\\\ \\km_{\\text{battery}} = ${B.map((s) => cm(s.g)).join(' + ')} = ${cm(5000)}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

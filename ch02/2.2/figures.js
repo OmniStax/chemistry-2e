@@ -211,17 +211,17 @@ const E_CHARGE = 1.602e-19;
     MIST.forEach(([x, yy]) => disc(ctx, x, yy, 3, alpha(rd, 0.65), null));
     hits.push({ x: 560, y: 196, r: 40, name: 'oil sprayed in fine droplets' }, { x: 380, y: 180, r: 40, name: 'oil sprayed in fine droplets' });
     /* the brass plates, the upper one with its pinhole */
-    rect(ctx, 300, TOP - 12, DX - 9, TOP, PAL.muted, PAL.ink, 1.5); rect(ctx, DX + 9, TOP - 12, 780, TOP, PAL.muted, PAL.ink, 1.5);
-    rect(ctx, 300, BOT, 780, BOT + 12, PAL.muted, PAL.ink, 1.5);
-    text(ctx, '+', 794, TOP - 6, cq, { size: 28, weight: 600, align: 'center' });
-    text(ctx, '−', 794, BOT + 6, cq, { size: 28, weight: 600, align: 'center' });
+    rect(ctx, 300, TOP - 12, DX - 9, TOP, PAL.muted, PAL.ink, 1.5); rect(ctx, DX + 9, TOP - 12, 772, TOP, PAL.muted, PAL.ink, 1.5);
+    rect(ctx, 300, BOT, 772, BOT + 12, PAL.muted, PAL.ink, 1.5);
+    text(ctx, '+', 792, TOP - 6, cq, { size: 28, weight: 600, align: 'center' });
+    text(ctx, '−', 792, BOT + 6, cq, { size: 28, weight: 600, align: 'center' });
     /* the telescope through one wall, and the X-ray tube at the other */
     rect(ctx, 150, 362, CL + 46, 386, PAL.soft, PAL.ink, 2); rect(ctx, 116, 355, 150, 393, PAL.soft, PAL.ink, 2); rect(ctx, CL - 8, 356, CL + 8, 392, PAL.muted, PAL.ink, 1.5);
-    rect(ctx, CR, 296, CR + 44, 324, PAL.soft, PAL.ink, 2); rect(ctx, CR - 14, 302, CR, 318, PAL.muted, PAL.ink, 1.5);
+    rect(ctx, CR, 318, CR + 44, 346, PAL.soft, PAL.ink, 2); rect(ctx, CR - 14, 324, CR, 340, PAL.muted, PAL.ink, 1.5);
     ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.6); ctx.lineWidth = 2.5; ctx.beginPath();
-    for (let x = CR - 18; x >= DX + 34; x -= 3) { const yy = 310 + 7 * Math.sin((x - DX) / 9); if (x === CR - 18) ctx.moveTo(x, yy); else ctx.lineTo(x, yy); }
+    for (let x = CR - 18; x >= DX + 34; x -= 3) { const yy = 332 + 7 * Math.sin((x - DX) / 9); if (x === CR - 18) ctx.moveTo(x, yy); else ctx.lineTo(x, yy); }
     ctx.stroke(); ctx.restore();
-    F.arrow(ctx, DX + 36, 310, DX + 22, 310, alpha(PAL.ink, 0.6), 2.5);
+    F.arrow(ctx, DX + 36, 332, DX + 22, 332, alpha(PAL.ink, 0.6), 2.5);
     /* the line the drop moves on, from the pinhole to the lower plate */
     line(ctx, DX, TOP - 12, DX, BOT, alpha(rd, 0.45), 2, [3, 9]);
     /* the drop and its extra electrons, its weight down and the pull of the field up */
@@ -232,12 +232,12 @@ const E_CHARGE = 1.602e-19;
     for (let i = 0; i < k; i++) { const a = (i / k) * TAU + 0.4; disc(ctx, DX + (k > 1 ? 7.5 * Math.cos(a) : 0), yd + (k > 1 ? 7.5 * Math.sin(a) : 0), 3.6, ce, null); }
     hits.push({ x: DX, y: yd, r: R + 8, name: 'oil drop ' + drop.value + ', carrying ' + k + ' extra electron' + (k > 1 ? 's' : '') });
     const pull = 1.6 * k * E.v / 100, f14 = (x) => fmt(x, 1) + ' × 10⁻¹⁴ N';
-    text(ctx, '↑ pull of the field', DX + 44, 268, PAL.ink, { size: 18 }); text(ctx, f14(pull), DX + 62, 291, PAL.ink, { size: 19, weight: 600 });
+    text(ctx, '↑ pull of the field', DX + 44, 262, PAL.ink, { size: 18 }); text(ctx, f14(pull), DX + 62, 286, PAL.ink, { size: 19, weight: 600 });
     text(ctx, '↓ weight', DX + 44, 452, PAL.ink, { size: 18 }); text(ctx, f14(4.8), DX + 62, 475, PAL.ink, { size: 19, weight: 600 });
     label(ctx, 'atomizer', 92, 164, { side: 'above', gap: 30 });
     label(ctx, 'pinhole', DX, TOP - 12, { side: 'above', gap: 58 });
     label(ctx, 'telescope', 200, 386, { side: 'below', gap: 30 });
-    label(ctx, 'X-rays', CR + 44, 310, { side: 'right', gap: 16 });
+    label(ctx, 'X-rays', CR + 44, 332, { side: 'right', gap: 16 });
     label(ctx, 'brass plates', 680, BOT + 12, { side: 'below', gap: 28 });
     /* the ladder of charge, 0 to 8.0 × 10⁻¹⁹ C, a rung at every multiple of 1.6 */
     const ax0 = 1010, ax1 = 1340, Y = (q) => 548 - 49 * q;
@@ -421,7 +421,7 @@ const E_CHARGE = 1.602e-19;
     hits.length = 0;
     bench(ctx); section(ctx);
     const [nm, Z] = ELS[elc.value], Q = Z * E_CHARGE, tot = tally.through + tally.aside + tally.back, w = 600;
-    F.rich(ctx, ['Of ', [num(tot), PAL.ink, w], ' α particles so far, ', [num(tally.through), PAL.ink, w], ' went straight through, ', [num(tally.aside), PAL.ink, w], ' were deflected and ', [num(tally.back), PAL.ink, w], ' came back.'], 700, 46, { size: 24, align: 'center' });
+    F.rich(ctx, ['Of ', [num(tot), PAL.ink, w], ' α particles so far, ', [num(tally.through), PAL.ink, w], ' went straight through, ', [num(tally.aside), PAL.ink, w], tally.aside === 1 ? ' was deflected and ' : ' were deflected and ', [num(tally.back), PAL.ink, w], ' came back.'], 700, 46, { size: 24, align: 'center' });
     ro.set(`\\kQ = ${Z}\\,\\ke = ${Z} \\times ${hue('1.602\\times10^{-19}\\ \\text{C}')} = ${hue(sciTex(Q, 2) + '\\ \\text{C}')}`,
       model.value === 'nuclear' ? 'All of this positive charge sits in the ' + nm + ' nucleus.' : 'This positive charge is spread through the whole ' + nm + ' atom.');
   }

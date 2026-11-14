@@ -75,8 +75,8 @@ const r1 = (v) => Math.round(v * 10 + 1e-6) / 10;
     hits = [];
     /* the temperatures the book marks, across all three thermometers: water's two in dashes, −40 as a thin rule */
     const top = SCALES[0].y - 78, foot = SCALES[2].y + 34;
-    line(ctx, X(-40), top + 44, X(-40), foot, alpha(PAL.ink, 0.45), 2);
-    line(ctx, X(0), top + 44, X(0), foot, PAL.ink, 2, [10, 8]); line(ctx, X(100), top + 44, X(100), foot, PAL.ink, 2, [10, 8]);
+    line(ctx, X(-40), top + 16, X(-40), foot, alpha(PAL.ink, 0.45), 2);
+    line(ctx, X(0), top + 16, X(0), foot, PAL.ink, 2, [10, 8]); line(ctx, X(100), top + 16, X(100), foot, PAL.ink, 2, [10, 8]);
     text(ctx, '°C and °F agree', X(-40), top, PAL.ink, { size: 20, align: 'center' });
     text(ctx, 'Freezing point of water', X(0), top, PAL.ink, { size: 20, align: 'center' });
     text(ctx, 'Boiling point of water', X(100), top, PAL.ink, { size: 20, align: 'center' });

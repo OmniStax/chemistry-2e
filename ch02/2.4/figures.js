@@ -215,7 +215,7 @@ models('fig-sulfur', 'sulfur');
     over: `Laid on ${WHICH.S}, ${WHICH.R} matches it in the ring's plane only: what stands in front of the ring in one stands behind it in the other.`,
   };
   /* the pair is met from the front, as the book draws it; laid on each other they are seen from the side, where front and back show */
-  const VIEW = { mirror: { yaw: -0.18, pitch: 0.12 }, turned: { yaw: -0.18, pitch: 0.12 }, over: { yaw: 1.05, pitch: 0.16 } };
+  const VIEW = { mirror: { yaw: -0.18, pitch: 0.12 }, turned: { yaw: -0.18, pitch: 0.12 }, over: { yaw: 0.6, pitch: 0.16 } };
   const v = F.view3d(d.stage, { h: 720, dist: 23.5, tilt: 0.12, onRender: names });
   v.setView(-0.18, 0.12);
   const g = v.part(0); g.position.y = 0.1;   /* room for the headline above and the names below */

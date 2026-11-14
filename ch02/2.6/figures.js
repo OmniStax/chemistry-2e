@@ -67,7 +67,7 @@ const WORDS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six'];
       const t = t0 + ((k - (n - 1) / 2) * 2 * Math.PI) / slots;
       const x = cx + R * Math.cos(t), y = CY + R * Math.sin(t);
       if (k < empty) {
-        ctx.save(); ctx.globalAlpha = a; ctx.setLineDash([4, 4]); ctx.lineWidth = 2; ctx.strokeStyle = alpha(PAL.ink, 0.6);
+        ctx.save(); ctx.globalAlpha = a; ctx.setLineDash([4, 4]); ctx.lineWidth = 2.5; ctx.strokeStyle = alpha(PAL.ink, 0.85);
         ctx.beginPath(); ctx.arc(x, y, re, 0, 2 * Math.PI); ctx.stroke(); ctx.restore();
         hits.push({ x, y, r: re + 3, name: 'place of an electron lost' });
         continue;

@@ -1,72 +1,41 @@
 /* Figures for section 1.4 Measurements. Boots against the section's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['1.4'] = function (root, F) {
-const { el, fmt, tex, C, PAL, alpha, ctl, register, begin, line, arrow, dot, text, headline, vbracket } = F;
+const { fmt, tex, C, PAL, alpha, ctl, register, begin, line, dot, text, hbracket, vbracket, cycle } = F;
 const sim = (id, H) => F.sim(root, id, H);
-function readout(host, main, small) { tex(host, main); if (small) host.appendChild(el('small', null, small)); }
 
 /* ---------- small helpers shared by the figures ---------- */
+const clamp = (x, lo, hi) => Math.min(hi, Math.max(lo, x));
 const commas = (s) => s.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 /* a number to n significant figures, never in exponent form, with commas above a thousand */
 const sig = (x, n) => { const s = Math.abs(x).toPrecision(n); return s.includes('e') || Math.abs(x) >= 1000 ? commas(String(Math.round(Number(s)))) : s; };
 const sig3 = (x) => sig(x, 3);
+/* a number to at most n significant figures with no trailing zeros: 39.37, 0.3937, 1 */
+const trim = (x, n) => String(Number(x.toPrecision(n)));
 /* the significant figures a decimal string carries, for a reading that limits a result */
 const sigOf = (s) => s.replace('.', '').replace(/^0+/, '').length;
-/* the book's listed materials are states the reader picks, not a quantity to slide through (rule 26.1): a dropdown, since a
-   row of seven buttons beside two sliders would wrap; the figure reads the index it always read */
-function pick(controls, o, names) {
-  const c = F.select(controls, { label: o.label, aria: o.aria, options: names.map((n, i) => ({ value: String(i), label: n })), value: String(o.value ?? 0), onInput: () => o.onInput?.() });
-  return { get v() { return +c.value; }, set(x) { c.set(String(x)); }, mix: (f) => c.mix(f) };
-}
-/* ---------- a locked view of the solids the book draws in perspective (rule 28.2) ----------
-   The book prints its cubes as solids seen from one corner, so they are projected through the drawing
-   layer's locked view rather than skewed by hand: one fixed viewpoint, one fixed lamp, shaded faces and
-   no orbit, which keeps the figure flat in cost and in chrome. The view is built once and never moves.
-   Coordinates keep the names the figures use: x runs to the right and front, y to the left and front, z
-   up, with (ox, oy) the front bottom vertex on the canvas; the view's own axes are y up and z toward the
-   reader, so the three are handed over as [-y, z, -x]. A body takes no type hue (rule 7): a face is the
-   page colour under the share of ink its angle to the lamp earns it. */
-const LOCKED = F.view({ yaw: Math.PI / 4, pitch: 0.6155, dist: 3000, cx: 0, cy: 0 });
-const iso = (ox, oy, x, y, z) => { const q = LOCKED.P([-y, z, -x]); return [ox + q[0], oy + q[1]]; };
-/* the three faces of a solid of edge e that the view can see, with their outward normals in the view's axes */
-const FACES = [
-  { pts: (e) => [[0, 0, 0], [e, 0, 0], [e, 0, e], [0, 0, e]], n: [1, 0, 0] },     /* front right */
-  { pts: (e) => [[0, 0, 0], [0, e, 0], [0, e, e], [0, 0, e]], n: [0, 0, 1] },     /* front left */
-  { pts: (e) => [[0, 0, e], [e, 0, e], [e, e, e], [0, e, e]], n: [0, 1, 0] },     /* top */
-];
-function cube(ctx, ox, oy, e, w = 2.5) {
-  FACES.forEach((f) => F.face(ctx, f.pts(e).map(([x, y, z]) => iso(ox, oy, x, y, z)), LOCKED.shade(f.n), w));
-}
-/* the twelve edges of a box of edge e in the same locked view, hidden ones dashed */
-function boxOutline(ctx, ox, oy, e, color) {
-  const P = (x, y, z) => iso(ox, oy, x, y, z);
-  const seg = (a, b, dash) => { const [x1, y1] = P(...a), [x2, y2] = P(...b); line(ctx, x1, y1, x2, y2, color, 1.5, dash); };
-  const hid = [4, 8];
-  seg([0, 0, 0], [e, 0, 0]); seg([0, 0, 0], [0, e, 0]); seg([0, 0, 0], [0, 0, e]);
-  seg([e, 0, 0], [e, 0, e]); seg([0, e, 0], [0, e, e]); seg([0, 0, e], [e, 0, e]); seg([0, 0, e], [0, e, e]);
-  seg([e, 0, e], [e, e, e]); seg([0, e, e], [e, e, e]);
-  seg([e, 0, 0], [e, e, 0], hid); seg([0, e, 0], [e, e, 0], hid); seg([e, e, 0], [e, e, e], hid);
-}
-/* a digital balance: a platform with (x, y) the centre of its top, and a display beneath reading the mass */
-function balance(ctx, x, y, w, reading) {
-  const cm = C('mass');
-  ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = cm; ctx.lineWidth = 3;
-  ctx.fillRect(x - w / 2, y, w, 14); ctx.strokeRect(x - w / 2, y, w, 14);
-  ctx.fillRect(x - w * 0.36, y + 14, w * 0.72, 56); ctx.strokeRect(x - w * 0.36, y + 14, w * 0.72, 56);
-  ctx.fillStyle = PAL.panel; ctx.fillRect(x - w * 0.3, y + 26, w * 0.6, 34); ctx.strokeRect(x - w * 0.3, y + 26, w * 0.6, 34);
-  ctx.restore();
-  text(ctx, reading, x, y + 43, cm, { size: 24, weight: 600, align: 'center' });
-}
-/* a balance whose platform is drawn in the same projection as the cube on it: (x, y) is the front vertex of the platform, S its side */
-function isoBalance(ctx, x, y, S, reading) {
-  const cm = C('mass'), P = (px, py, pz) => iso(x, y, px, py, pz);
-  F.face(ctx, [P(0, 0, -14), P(S, 0, -14), P(S, 0, 0), P(0, 0, 0)], LOCKED.shade([1, 0, 0]), 3);
-  F.face(ctx, [P(0, 0, -14), P(0, S, -14), P(0, S, 0), P(0, 0, 0)], LOCKED.shade([0, 0, 1]), 3);
-  F.face(ctx, [P(0, 0, 0), P(S, 0, 0), P(S, S, 0), P(0, S, 0)], LOCKED.shade([0, 1, 0]), 3);
-  ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = cm; ctx.lineWidth = 3;
-  ctx.fillRect(x - 150, y + 14, 300, 66); ctx.strokeRect(x - 150, y + 14, 300, 66);
-  ctx.fillStyle = PAL.panel; ctx.fillRect(x - 90, y + 26, 180, 40); ctx.strokeRect(x - 90, y + 26, 180, 40); ctx.restore();
-  text(ctx, reading, x, y + 46, cm, { size: 24, weight: 600, align: 'center' });
+/* a value in its category's colour inside a readout: the number wears the hue, the signs around it stay ink (rule 26.17) */
+const hue = (cls, s) => `\\htmlClass{kv-${cls}}{${s}}`;
+/* a readout is written when its numbers change, not on every frame of a moving figure */
+const once = (host) => { let last = ''; return (s) => { if (s !== last) { last = s; tex(host, s); } }; };
+
+/* ---------- the two locked views of the section's solids (rule 28.2) ----------
+   The book prints its cubes as solids seen from one corner, so Figure 1.25 projects them through the
+   drawing layer's locked view: one fixed viewpoint, one fixed lamp, shaded faces and no orbit, which
+   keeps the figure flat in cost and in chrome. Coordinates keep the names the figure uses: x runs to
+   the right and front, y to the left and front, z up, with (ox, oy) the front bottom vertex on the
+   canvas; the view's own axes are y up and z toward the reader, so the three are handed over as
+   [-y, z, -x]. A body takes no type hue (rule 7): a face is the page colour under the share of ink its
+   angle to the lamp earns it. */
+const CORNER = F.view({ yaw: Math.PI / 4, pitch: 0.6155, dist: 3000, cx: 0, cy: 0 });
+const iso = (ox, oy, x, y, z) => { const q = CORNER.P([-y, z, -x]); return [ox + q[0], oy + q[1]]; };
+/* The cube on the balance is seen from the front and a little above instead, so that the balance's
+   display faces the reader and its reading is set square: x right, y up, z toward the reader. */
+const FRONT = F.view({ yaw: 0, pitch: 0.36, dist: 3000, cx: 0, cy: 0 });
+/* a box in the front view, its top and its front face (the sides are edge-on from here) */
+function slab(ctx, P, x0, x1, y0, y1, z0, z1, w = 2.5) {
+  F.face(ctx, [P(x0, y1, z1), P(x1, y1, z1), P(x1, y1, z0), P(x0, y1, z0)], FRONT.shade([0, 1, 0]), w);
+  F.face(ctx, [P(x0, y0, z1), P(x1, y0, z1), P(x1, y1, z1), P(x0, y1, z1)], FRONT.shade([0, 0, 1]), w);
 }
 /* a wooden rule from x1 to x2 across the top edge y, h tall; ticks and labels are drawn by the caller */
 function rule(ctx, x1, x2, y, h) {
@@ -74,213 +43,290 @@ function rule(ctx, x1, x2, y, h) {
 }
 
 /* =====================================================================
-   FIGURE 1.23: a meter beside a yard, a centimeter beside an inch. A
-   metric rule above a yard rule, the chosen length drawn as a bar over
-   both, and the book's inset of one inch against 2.54 cm. Still: a length
-   answers its slider and nothing here has a clock.
+   FIGURE 1.23: a meter, a yard, a centimeter and an inch on one rule.
+   The book's rule carries centimeters along its top edge and inches and
+   feet along its bottom edge; the chosen length lies over it as a bar,
+   and the stretch of the rule round the bar's end is drawn again ten
+   times larger, as the book's inset draws the first inch. Still: a
+   length answers its slider and nothing here has a clock.
 ===================================================================== */
 (function () {
-  const d = sim('sim-length', 600);
-  const L = ctl(d.controls, { label: '\\text{length}', cls: 'length', min: 1, max: 100, step: 1, value: 100, unit: 'cm', dec: 0, aria: 'length in centimeters' });
-  const X0 = 150, PX = 11;                       /* 11 logical units per centimeter */
-  const X = (cm) => X0 + cm * PX;
+  const d = sim('sim-length', 556);
   const IN = 2.54, YD = 91.44;
+  const cmText = (v) => trim(v, 4) + ' cm';
+  /* the book's four lengths are the dashed circles on the track (rule 26.1) */
+  const L = ctl(d.controls, { label: '\\text{length}', cls: 'length', min: 1, max: 100, step: 1, value: 100, unit: 'cm', fmt: cmText, aria: 'length in centimeters',
+    specials: [{ at: 1, label: '1 cm' }, { at: IN, label: '1 in.' }, { at: YD, label: '1 yd' }, { at: 100, label: '1 m' }] });
+  const X = (cm) => 100 + 12 * cm;                /* the rule: 12 logical units to the centimeter, fixed */
+  const yBar = 84, yT = 124, yB = 244;
+  const K = 120, SPAN = 5, LENS = K * SPAN, lBar = 336, lT = 356, lB = 496;   /* the lens: 5 cm of the rule, ten times larger */
+  const say = once(d.readout);
   function draw() {
     const { ctx } = begin(d.c);
-    const l = L.v, inches = l / IN, yards = l / YD, cl = C('length');
-    /* the metric rule, 0 to 100 cm */
-    const yM = 190;
-    rule(ctx, X(0), X(100), yM, 70);
-    for (let c = 0; c <= 100; c++) { const big = c % 10 === 0, mid = c % 5 === 0; line(ctx, X(c), yM, X(c), yM + (big ? 26 : mid ? 18 : 10), PAL.ink, big ? 2 : 1.2); if (big && c) text(ctx, String(c), X(c), yM + 44, PAL.ink, { size: 17, align: 'center' }); }
-    text(ctx, 'centimeters', X(100) - 8, yM + 62, PAL.muted, { size: 15, align: 'right' });
-    /* the yard rule, 0 to 36 in, at the same scale */
-    const yY = 330;
-    rule(ctx, X(0), X(YD), yY, 70);
-    for (let i = 0; i <= 36; i++) { const ft = i % 12 === 0, six = i % 6 === 0; line(ctx, X(i * IN), yY, X(i * IN), yY + (ft ? 26 : six ? 18 : 10), PAL.ink, ft ? 2 : 1.2); if (six && i) text(ctx, String(i), X(i * IN), yY + 44, PAL.ink, { size: 17, align: 'center' }); }
-    for (let f = 1; f <= 3; f++) text(ctx, f + ' ft', X(f * 12 * IN) - 6, yY + 62, PAL.muted, { size: 15, align: 'right' });
-    text(ctx, 'inches', X(0) + 8, yY + 62, PAL.muted, { size: 15 });
-    /* the ends of the two rules named */
-    text(ctx, '1 m', X(100) + 14, yM + 16, PAL.ink, { size: 20, weight: 600 });
-    text(ctx, '1 yd', X(YD) + 14, yY + 16, PAL.ink, { size: 20, weight: 600 });
-    /* the chosen length as a bar above the metric rule, with drop lines through both rules */
-    const yB = 130;
-    line(ctx, X(0), yB, X(l), yB, cl, 7);
-    line(ctx, X(0), yB - 12, X(0), yB + 12, cl, 3); line(ctx, X(l), yB - 12, X(l), yB + 12, cl, 3);
-    [[yB + 12, yM + 32], [yM + 56, yY + 32], [yY + 56, yY + 70]].forEach(([a, b]) => line(ctx, X(l), a, X(l), b, cl, 2, [4, 8]));
-    text(ctx, l + ' cm', X(l / 2), yB - 26, cl, { size: 22, weight: 600, align: 'center' });
-    text(ctx, fmt(inches, 2) + ' in', X(l) + (l > 90 ? -10 : 10), yY + 88, cl, { size: 20, weight: 600, align: l > 90 ? 'right' : 'left' });
-    /* the inset: one inch against 2.54 cm, magnified ten times */
-    const iX0 = 150, K = 110, iy = 470;
-    const IX = (cm) => iX0 + cm * K;
-    rule(ctx, IX(0), IX(3), iy, 60);
-    for (let mm = 0; mm <= 30; mm++) { const c = mm % 10 === 0, h = mm % 5 === 0; line(ctx, IX(mm / 10), iy, IX(mm / 10), iy + (c ? 24 : h ? 16 : 9), PAL.ink, c ? 2 : 1); if (c && mm && mm < 30) text(ctx, mm / 10 + ' cm', IX(mm / 10), iy + 42, PAL.ink, { size: 16, align: 'center' }); }
-    line(ctx, IX(0), iy - 22, IX(IN), iy - 22, PAL.ink, 7);
-    line(ctx, IX(0), iy - 32, IX(0), iy - 12, PAL.ink, 3); line(ctx, IX(IN), iy - 32, IX(IN), iy - 12, PAL.ink, 3);
-    text(ctx, '1 in. = 2.54 cm', IX(1.5), iy + 84, PAL.ink, { size: 20, weight: 600, align: 'center' });
-    text(ctx, 'magnified ten times', IX(3) + 16, iy + 30, PAL.muted, { size: 16 });
-    /* the comparison the book prints under its rules */
-    text(ctx, '1 m = 1.094 yd = 39.37 in.', 1300, iy + 30, PAL.ink, { size: 22, weight: 600, align: 'right' });
-    text(ctx, 'A meter is about 3 inches longer than a yard.', 1300, iy + 62, PAL.muted, { size: 17, align: 'right' });
-    headline(ctx, 'A length of ' + l + ' cm is ' + fmt(l / 100, 2) + ' m, which is ' + fmt(yards, 3) + ' yd or ' + fmt(inches, 2) + ' in.');
-    readout(d.readout, `\\htmlClass{kv-length}{${l}\\ \\text{cm} = ${fmt(l / 100, 2)}\\ \\text{m} = ${fmt(yards, 3)}\\ \\text{yd} = ${fmt(inches, 2)}\\ \\text{in.}}`);
+    const l = L.v, inches = l / IN, cl = C('length');
+    /* the rule: centimeters down from the top edge, inches up from the bottom edge, both from one zero */
+    rule(ctx, X(0), X(100), yT, yB - yT);
+    for (let c = 0; c <= 100; c++) { const big = c % 10 === 0, mid = c % 5 === 0; line(ctx, X(c), yT, X(c), yT + (big ? 30 : mid ? 20 : 12), PAL.ink, big ? 2 : 1.2); if (big && c) text(ctx, String(c), X(c), yT + 46, PAL.ink, { size: 17, align: 'center' }); }
+    for (let i = 0; i <= 39; i++) { const ft = i % 12 === 0, six = i % 6 === 0; line(ctx, X(i * IN), yB, X(i * IN), yB - (ft ? 30 : six ? 22 : 14), PAL.ink, ft ? 2 : 1.2); if (six && i) text(ctx, String(i), X(i * IN), yB - 46, PAL.ink, { size: 17, align: 'center' }); }
+    text(ctx, 'cm', X(0) - 12, yT + 20, PAL.muted, { size: 17, align: 'right' });
+    text(ctx, 'in.', X(0) - 12, yB - 20, PAL.muted, { size: 17, align: 'right' });
+    text(ctx, '1 ft', X(12 * IN), yB + 24, PAL.ink, { size: 17, align: 'center' });
+    text(ctx, '2 ft', X(24 * IN), yB + 24, PAL.ink, { size: 17, align: 'center' });
+    text(ctx, '3 ft = 1 yd', X(YD), yB + 24, PAL.ink, { size: 17, weight: 600, align: 'center' });
+    text(ctx, '1 m', X(100) + 12, yT + 20, PAL.ink, { size: 20, weight: 600 });
+    /* the length as a bar over the rule */
+    line(ctx, X(0), yBar, X(l), yBar, cl, 7);
+    line(ctx, X(0), yBar - 12, X(0), yBar + 12, cl, 3); line(ctx, X(l), yBar - 12, X(l), yBar + 12, cl, 3);
+    line(ctx, X(l), yBar + 12, X(l), yT, cl, 2, [4, 8]);
+    text(ctx, cmText(l), Math.max(X(l / 2), 130), yBar - 26, cl, { size: 22, weight: 600, align: 'center' });
+    /* what the length has over a yard, once it is longer than one */
+    if (l > YD + 0.5) {
+      line(ctx, X(YD), 34, X(YD), yT, alpha(PAL.ink, 0.35), 2, [4, 8]);
+      hbracket(ctx, X(YD), X(l), 44, cl);
+      F.rich(ctx, [[trim((l - YD) / IN, 3) + ' in.', cl], ' longer than a yard'], X(YD) - 16, 44, { size: 20, align: 'right' });
+    }
+    /* the lens: the rule round the bar's end ten times larger, millimeters above and sixteenths of an inch below */
+    const mid = clamp(X(l), 100 + LENS / 2, 1300 - LENS / 2), left = mid - LENS / 2, right = mid + LENS / 2;
+    const lo = clamp(l - SPAN / 2, -0.3, 100.3 - SPAN), LX = (cm) => left + (cm - lo) * K;
+    const guide = alpha(PAL.ink, 0.4);
+    line(ctx, X(l), yB + 44, left, lBar - 22, guide, 1.5, [8, 8]); line(ctx, X(l), yB + 44, right, lBar - 22, guide, 1.5, [8, 8]);
+    line(ctx, X(l), yB, X(l), yB + 44, guide, 1.5, [8, 8]);
+    ctx.save(); ctx.beginPath(); ctx.rect(left, lBar - 20, LENS, lB - lBar + 22); ctx.clip();
+    rule(ctx, LX(0), LX(100), lT, lB - lT);
+    for (let mm = Math.max(0, Math.ceil(lo * 10)); mm <= Math.min(1000, Math.floor((lo + SPAN) * 10)); mm++) {
+      const c = mm % 10 === 0, h = mm % 5 === 0, x = LX(mm / 10);
+      line(ctx, x, lT, x, lT + (c ? 34 : h ? 24 : 13), PAL.ink, c ? 2 : 1.2);
+    }
+    for (let i = Math.max(0, Math.ceil((lo / IN) * 16)); i <= Math.min(629, Math.floor(((lo + SPAN) / IN) * 16)); i++) {
+      const x = LX((i * IN) / 16);
+      line(ctx, x, lB, x, lB - (i % 16 === 0 ? 38 : i % 8 === 0 ? 29 : i % 4 === 0 ? 22 : i % 2 === 0 ? 16 : 11), PAL.ink, i % 16 === 0 ? 2 : 1.2);
+    }
+    line(ctx, LX(0), lBar, LX(l), lBar, cl, 7);
+    line(ctx, LX(0), lBar - 12, LX(0), lBar + 12, cl, 3); line(ctx, LX(l), lBar - 12, LX(l), lBar + 12, cl, 3);
+    line(ctx, LX(l), lBar + 12, LX(l), lT, cl, 2, [4, 8]);
+    ctx.restore();
+    /* the lens's numbers are page text, which the clip does not reach, so only those inside it are set */
+    const inside = (x) => x > left + 16 && x < right - 16;
+    for (let c = Math.max(0, Math.ceil(lo)); c <= Math.min(100, Math.floor(lo + SPAN)); c++) if (inside(LX(c))) text(ctx, String(c), LX(c), lT + 52, PAL.ink, { size: 18, align: 'center' });
+    for (let i = Math.max(0, Math.ceil(lo / IN)); i <= Math.min(39, Math.floor((lo + SPAN) / IN)); i++) if (inside(LX(i * IN))) text(ctx, String(i), LX(i * IN), lB - 56, PAL.ink, { size: 18, align: 'center' });
+    ctx.save(); ctx.strokeStyle = guide; ctx.lineWidth = 1.5; ctx.strokeRect(left, lBar - 22, LENS, lB - lBar + 24); ctx.restore();
+    text(ctx, 'cm', left - 12, lT + 22, PAL.muted, { size: 17, align: 'right' });
+    text(ctx, 'in.', left - 12, lB - 22, PAL.muted, { size: 17, align: 'right' });
+    text(ctx, '×10', right + 12, (lT + lB) / 2, PAL.muted, { size: 18 });
+    F.rich(ctx, [[cmText(l), cl], ' = ', [trim(inches, 4) + ' in.', cl]], clamp(LX(l), left + 110, right - 110), lB + 30, { size: 20, align: 'center' });
+    say([cmText(l).replace(' cm', '\\ \\text{cm}'), trim(l / 100, 4) + '\\ \\text{m}', trim(l / YD, 4) + '\\ \\text{yd}', trim(inches, 4) + '\\ \\text{in.}'].map((s) => hue('length', s)).join(' = '));
   }
   register(d.fig, { update: () => {}, draw });
 })();
 
 /* =====================================================================
-   FIGURE 1.25: the cubic meter, the liter and the milliliter nested. A
-   cube of the chosen edge stands inside the outline of the cubic meter,
-   and beside it the same cube is magnified with the cubic centimeter and
-   the dime for comparison. Still: a cube answers its edge slider.
+   FIGURE 1.25: the milliliter, the liter and the cubic meter. A cube is
+   built of small cubes and seen from the book's corner, its three faces
+   ruled into them, so the count along an edge is read off the drawing.
+   Up to 10 cm the small cube is the cubic centimeter and a dime stands
+   beside it at the same scale; past 10 cm the view pulls back ten times
+   and the small cube is the liter. Still: the cube answers its slider,
+   and the view eases once as the edge passes 10 cm (manim 7).
 ===================================================================== */
 (function () {
-  const d = sim('sim-volume', 640);
-  const A = ctl(d.controls, { label: '\\text{edge } a', cls: 'length', min: 1, max: 100, step: 1, value: 10, unit: 'cm', dec: 0, aria: 'edge of the cube in centimeters',
-    specials: [{ at: 1, label: '1 mL' }, { at: 10, label: '1 L' }, { at: 100, label: '1 m³' }] });
+  const d = sim('sim-volume', 620);
+  /* nineteen stops: 1 to 10 cm by ones, then 20 to 100 cm by tens, so every cube is a whole number of small cubes */
+  const edgeOf = (i) => { const n = Math.round(i); return n <= 10 ? n : (n - 9) * 10; };
+  const NEAR = 33, FAR = 3.3;                     /* logical units per centimeter in the two frames */
+  const zoom = F.tween(d, Math.log10(NEAR));
+  let frame = NEAR;
+  const I = ctl(d.controls, { label: '\\text{edge length}', cls: 'length', min: 1, max: 19, step: 1, value: 10, unit: 'cm', fmt: (i) => edgeOf(i) + ' cm', aria: 'edge length of the cube in centimeters',
+    specials: [{ at: 1, label: '1 mL' }, { at: 10, label: '1 L' }, { at: 19, label: '1 m³' }],
+    onInput: () => { const want = edgeOf(I.v) <= 10 ? NEAR : FAR; if (want !== frame) { frame = want; zoom.to(Math.log10(want), 1100); } } });
+  const say = once(d.readout);
   function draw() {
     const { ctx } = begin(d.c);
-    const a = A.v, V = a * a * a;
-    /* the cubic meter and the cube inside it, to scale */
-    const ox = 330, oy = 560, K = 210;
-    boxOutline(ctx, ox, oy, K, PAL.muted);
-    const [bxl, byl] = iso(ox, oy, K, 0, 0); text(ctx, '1 m³', bxl + 8, byl + 26, PAL.muted, { size: 20, weight: 600 });
-    const e = (K * a) / 100;
-    if (e >= 4) cube(ctx, ox, oy, e); else dot(ctx, ox, oy, PAL.ink, true, 5);
-    if (a < 100) { const [lx, ly] = iso(ox, oy, e, 0, e / 2); text(ctx, a + ' cm', lx + 16, ly + 4, C('length'), { size: 18, weight: 600, bg: alpha(PAL.panel, 0.85) }); }
-    text(ctx, 'to scale inside the cubic meter', 330, 618, PAL.muted, { size: 16, align: 'center' });
-    /* the same cube magnified, with the cubic centimeter and the dime at the same magnification */
-    const k = 220 / Math.max(a, 6), E = a * k, mx = 840, my = 430;
-    cube(ctx, mx, my, E);
-    const [ax, ay] = iso(mx, my, E, 0, E / 2); text(ctx, 'a = ' + a + ' cm', ax + 14, ay, C('length'), { size: 20, weight: 600 });
-    if (a > 1) {
-      const sx = iso(mx, my, E, 0, 0)[0] + 110, sy = my - 30;
-      if (k >= 5) cube(ctx, sx, sy, k, 2); else dot(ctx, sx, sy, PAL.ink, true, 4);
-      text(ctx, '1 cm³ = 1 mL', sx, sy + 40, PAL.ink, { size: 17, align: 'center' });
-      const dx = sx + 170, r = (1.8 * k) / 2;
-      ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = PAL.muted; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(dx, sy - r, Math.max(r, 3), 0, Math.PI * 2); ctx.fill(); ctx.stroke(); ctx.restore();
-      text(ctx, '1.8 cm dime', dx, sy + 40, PAL.ink, { size: 17, align: 'center' });
-    } else text(ctx, 'this is the cubic centimeter', iso(mx, my, E, 0, 0)[0] + 40, my - 60, PAL.ink, { size: 17 });
-    text(ctx, 'magnified ' + fmt(k / (K / 100), 1) + ' times', 1000, 618, PAL.muted, { size: 16, align: 'center' });
-    /* the volume in the units the book names */
-    const L = V / 1000, Ls = fmt(L, L === Math.round(L) ? 0 : 3);
-    const words = a === 100 ? '1,000,000 cm³, which is 1,000 L or one cubic meter' : L >= 1 ? commas(String(V)) + ' cm³, which is ' + commas(String(V)) + ' mL or ' + Ls + ' L' : V + ' cm³, which is ' + V + ' mL';
-    headline(ctx, 'A cube ' + a + ' cm on an edge holds ' + words + '.');
-    const lit = L >= 1 ? ` = ${Ls}\\ \\text{L}` : '', cub = a === 100 ? ` = 1\\ \\text{m}^3` : '';
-    const tc = (x) => commas(String(x)).replace(/,/g, '{,}');
-    readout(d.readout, `\\kV = \\htmlClass{kv-length}{a}^3 = (\\htmlClass{kv-length}{${a}\\ \\text{cm}})^3 = ${tc(V)}\\ \\text{cm}^3 = ${tc(V)}\\ \\text{mL}${lit}${cub}`,
-      a === 10 || a === 100 ? '' : 'Doubling the edge multiplies the volume by eight, since the volume is the edge cubed.');
-  }
-  register(d.fig, { update: () => {}, draw });
-})();
-
-/* =====================================================================
-   SIM: density from a cube on a balance. The material is one of the seven
-   solids of Table 1.4, the edge sets the volume, the balance reads the
-   mass, and the readout divides. Beside it the seven densities as bars.
-   Still: the picture answers its sliders.
-===================================================================== */
-(function () {
-  const d = sim('sim-density', 580);
-  const MATS = [['ice', 0.92], ['oak', 0.75], ['iron', 7.87], ['copper', 8.96], ['silver', 10.5], ['lead', 11.34], ['gold', 19.3]];
-  const OTHER = MATS.length;                                 /* the eighth entry of the dropdown: a solid of a density between the book's */
-  /* the material is picked from a dropdown, and its density is also a slider with a soft detent at each of the seven solids of
-     Table 1.4 (rule 26.1), so that the reader can slide between the book's values and see the balance answer; the ticks carry no
-     names, since seven names on one track would collide, and the dropdown does the naming. Picking a material moves the slider to
-     its detent; releasing the slider near a detent settles on it and the dropdown follows, and anywhere else the dropdown reads
-     "another solid". */
-  const M = pick(d.controls, { label: '\\text{material}', value: 5, aria: 'material of the cube', onInput: () => { if (M.v < OTHER) RHO.set(MATS[M.v][1]); } }, [...MATS.map((m) => m[0]), 'another solid']);
-  const RHO = ctl(d.controls, { label: '\\text{density}', cls: 'density', min: 0.5, max: 20, step: 0.01, value: 11.34, unit: 'g/cm³', dec: 2, aria: 'density of the solid', detents: MATS.map((m) => m[1]), snap: true });
-  const A = ctl(d.controls, { label: '\\text{edge } a', cls: 'length', min: 0.5, max: 3, step: 0.01, value: 2, unit: 'cm', dec: 2, aria: 'edge of the cube in centimeters' });
-  const matOf = (rho) => MATS.findIndex((m) => Math.abs(m[1] - rho) < 0.005);
-  let hits = []; F.hover(d.stage, () => hits);
-  function draw() {
-    const { ctx } = begin(d.c);
-    const rho = RHO.v, which = matOf(rho); M.set(which < 0 ? OTHER : which);
-    const name = which < 0 ? 'a solid of density ' + fmt(rho, 2) + ' g/cm³' : MATS[which][0], a = A.v, V = a * a * a, m = rho * V, dens = m / V;
-    const cm = C('mass'), cvol = C('volume'), cl = C('length'), cd = C('density');
-    /* the samples the text names by referent, the others told apart by the referent palette after them */
-    const REF = { lead: 'lead', gold: 'gold' }, hueOf = (i) => (REF[MATS[i][0]] ? F.ref(REF[MATS[i][0]]) : F.cat(2 + i - MATS.slice(0, i).filter((m) => REF[m[0]]).length));
-    /* the cube on the balance */
-    const bx = 330, by = 400, e = a * 60, S = 220;
-    isoBalance(ctx, bx, by, S, sig3(m) + ' g');
-    const [cx0, cy0] = iso(bx, by, (S - e) / 2, (S - e) / 2, 0);
-    cube(ctx, cx0, cy0, e);
-    const [lx, ly] = iso(cx0, cy0, e, 0, e / 2); text(ctx, 'a = ' + fmt(a, 2) + ' cm', lx + 16, ly, cl, { size: 20, weight: 600 });
-    text(ctx, name, bx, by + 106, which >= 0 && REF[MATS[which][0]] ? F.ref(REF[MATS[which][0]]) : PAL.ink, { size: 22, weight: 600, align: 'center' });
-    text(ctx, 'V = a³ = ' + sig3(V) + ' cm³', bx, by + 136, cvol, { size: 20, weight: 600, align: 'center' });
-    /* the seven densities of Table 1.4: the samples of a table, told apart by the categorical palette (rule 7.4) with their names
-       in ink beneath, the chosen one outlined in ink; a density off the table is a dashed level across the chart */
-    const gl = 760, gr = 1320, gt = 150, gb = 420, Y = (v) => gb - ((gb - gt) * v) / 20, bw = (gr - gl) / MATS.length;
-    for (let v = 0; v <= 20; v += 5) { if (v) line(ctx, gl, Y(v), gr, Y(v), PAL.rule, 1.5); text(ctx, String(v), gl - 12, Y(v), PAL.muted, { size: 17, align: 'right' }); }
-    line(ctx, gl, gt, gl, gb, PAL.muted, 2); line(ctx, gl, gb, gr, gb, PAL.muted, 2);
-    text(ctx, 'density (g/cm³)', gl, gt - 24, cd, { size: 20, weight: 600 });
-    MATS.forEach(([n, r], i) => {
-      const x = gl + bw * (i + 0.5), on = i === which;
-      ctx.save(); ctx.fillStyle = alpha(hueOf(i), on ? 1 : 0.55); ctx.fillRect(x - bw * 0.3, Y(r), bw * 0.6, gb - Y(r)); if (on) { ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.strokeRect(x - bw * 0.3, Y(r), bw * 0.6, gb - Y(r)); } ctx.restore();
-      text(ctx, n, x, gb + 24, PAL.ink, { size: 17, align: 'center', weight: on ? 600 : 400 });
-      text(ctx, sig3(r), x, Y(r) - 16, on ? PAL.ink : PAL.muted, { size: 15, align: 'center' });
+    const a = edgeOf(I.v), s = 10 ** zoom.v, far = clamp(Math.log10(NEAR) - zoom.v, 0, 1), fine = clamp((s - 6) / 10, 0, 1);
+    const u = a > 10 ? 10 : 1, cl = C('length'), cv = C('volume');
+    const ox = 560 + 140 * far, oy = 590;
+    const P = (x, y, z) => iso(ox, oy, x * s, y * s, z * s);
+    const quad = (pts, k, w) => F.face(ctx, pts.map((p) => P(...p)), k, w);
+    const seg = (p, q, color, w) => { const [x1, y1] = P(...p), [x2, y2] = P(...q); line(ctx, x1, y1, x2, y2, color, w); };
+    /* the three faces the corner view shows */
+    quad([[0, 0, 0], [a, 0, 0], [a, 0, a], [0, 0, a]], CORNER.shade([1, 0, 0]), 0);
+    quad([[0, 0, 0], [0, a, 0], [0, a, a], [0, 0, a]], CORNER.shade([0, 0, 1]), 0);
+    quad([[0, 0, a], [a, 0, a], [a, a, a], [0, a, a]], CORNER.shade([0, 1, 0]), 0);
+    /* one small cube at the top front corner, tinted as the book tints one */
+    ctx.save(); ctx.fillStyle = alpha(cv, 0.4);
+    [[[0, 0, a - u], [u, 0, a - u], [u, 0, a], [0, 0, a]], [[0, 0, a - u], [0, u, a - u], [0, u, a], [0, 0, a]], [[0, 0, a], [u, 0, a], [u, u, a], [0, u, a]]].forEach((pts) => {
+      ctx.beginPath(); pts.forEach((p, i) => { const [x, y] = P(...p); if (i) ctx.lineTo(x, y); else ctx.moveTo(x, y); }); ctx.closePath(); ctx.fill();
     });
-    if (which < 0) { line(ctx, gl, Y(rho), gr, Y(rho), PAL.ink, 2.5, [10, 8]); text(ctx, fmt(rho, 2) + ' g/cm³', gr - 6, Y(rho) - 14, PAL.ink, { size: 15, align: 'right', bg: PAL.panel }); }
-    text(ctx, 'the solids of Table 1.4', gr, gb + 52, PAL.muted, { size: 16, align: 'right' });
-    const [qx, qy] = iso(cx0, cy0, e / 2, e / 2, e / 2);
-    hits.length = 0; hits.push({ x: qx, y: qy, r: e * 0.9, name: which < 0 ? name : 'a cube of ' + name + ', ' + sig3(m) + ' g' }, { x: bx, y: by + 46, r: 60, name: 'balance, reading ' + sig3(m) + ' g' });
-    headline(ctx, 'A cube of ' + name + ' ' + fmt(a, 2) + ' cm on an edge holds ' + sig3(V) + ' cm³. The balance reads ' + sig3(m) + ' g, so the density of the solid is ' + sig3(dens) + ' g/cm³.');
-    const gold = 19.3 * V, other = name === 'gold' ? 'A lead cube of the same size would weigh ' + sig3(11.34 * V) + ' g, since the volume is the same and lead is ' + sig3(11.34 / 19.3) + ' times as dense as gold.' : 'A gold cube of the same size would weigh ' + sig3(gold) + ' g, since the volume is the same and gold is ' + sig3(19.3 / rho) + ' times as dense.';
-    readout(d.readout, `\\text{density} = \\frac{\\km}{\\kV} = \\frac{\\htmlClass{kv-mass}{${sig3(m)}\\ \\text{g}}}{\\htmlClass{kv-volume}{${sig3(V)}\\ \\text{cm}^3}} = \\htmlClass{kv-density}{${sig3(dens)}\\ \\text{g/cm}^3}`, other);
+    ctx.restore();
+    /* the faces ruled into small cubes: every centimeter while the view is near, every decimeter beyond 10 cm */
+    const ruleFaces = (st, color, w) => {
+      for (let j = st; j < a; j += st) {
+        seg([j, 0, 0], [j, 0, a], color, w); seg([0, 0, j], [a, 0, j], color, w);
+        seg([0, j, 0], [0, j, a], color, w); seg([0, 0, j], [0, a, j], color, w);
+        seg([j, 0, a], [j, a, a], color, w); seg([0, j, a], [a, j, a], color, w);
+      }
+    };
+    if (fine > 0) ruleFaces(1, alpha(PAL.ink, 0.55 * fine), 1.2);
+    if (a > 10) ruleFaces(10, alpha(PAL.ink, 0.55 + 0.25 * fine), 1.2 + 0.8 * fine);
+    [[[0, 0, 0], [a, 0, 0]], [[0, 0, 0], [0, a, 0]], [[0, 0, 0], [0, 0, a]], [[a, 0, 0], [a, 0, a]], [[0, a, 0], [0, a, a]], [[0, 0, a], [a, 0, a]], [[0, 0, a], [0, a, a]], [[a, 0, a], [a, a, a]], [[0, a, a], [a, a, a]]]
+      .forEach(([p, q]) => seg(p, q, PAL.ink, 2.5));
+    /* the edge, measured up the right-hand corner */
+    const [ex, e0] = P(a, 0, 0), e1 = P(a, 0, a)[1];
+    vbracket(ctx, ex + 24, e1, e0, cl, a + ' cm', 1);
+    /* a dime at the same scale, as the book's part (b) sets one beside the cubic centimeter */
+    if (fine > 0) {
+      const r = 0.9 * s, dx = ox + 430, dy = oy - r;
+      ctx.save(); ctx.globalAlpha *= fine;
+      ctx.fillStyle = PAL.soft; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.arc(dx, dy, r, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+      ctx.strokeStyle = PAL.muted; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.arc(dx, dy, r * 0.86, 0, Math.PI * 2); ctx.stroke();
+      hbracket(ctx, dx - r, dx + r, dy - r - 20, cl);
+      F.rich(ctx, ['dime, ', ['1.8 cm', cl], ' across'], dx, dy - r - 48, { size: 20, align: 'center' });
+      ctx.restore();
+    }
+    /* the key to the tinted cube */
+    F.legend(ctx, { l: 940, r: 1370, t: 30, b: 200 }, [{ s: u === 1 ? '1 cm³ = 1 mL' : '1 dm³ = 1 L', draw: (c, x, y) => { c.save(); c.fillStyle = PAL.soft; c.fillRect(x + 11, y, 22, 22); c.fillStyle = alpha(cv, 0.4); c.fillRect(x + 11, y, 22, 22); c.strokeStyle = PAL.ink; c.lineWidth = 1.5; c.strokeRect(x + 11, y, 22, 22); c.restore(); } }], { corner: 'tr', size: 20 });
+    const V = a * a * a, tc = (x) => commas(String(x)).replace(/,/g, '{,}'), side = hue('length', a + '\\ \\text{cm}');
+    const more = a < 10 ? [tc(V) + '\\ \\text{mL}'] : a === 10 ? ['1{,}000\\ \\text{mL}', '1\\ \\text{L}'] : a < 100 ? [tc(V / 1000) + '\\ \\text{L}'] : ['1{,}000\\ \\text{L}', '1\\ \\text{m}^3'];
+    say(`\\text{volume} = ${side} \\times ${side} \\times ${side} = ` + [tc(V) + '\\ \\text{cm}^3', ...more].map((x) => hue('volume', x)).join(' = '));
+  }
+  register(d.fig, { update: () => {}, draw });
+})();
+
+/* =====================================================================
+   SIM: density from a cube on a balance. The solid is one of the seven
+   of Table 1.4, the edge sets the volume and the balance reads the mass;
+   beside it mass is plotted against volume, a line for each solid, so
+   the cube's point climbs its solid's line as the cube grows. Still: the
+   picture answers its controls.
+===================================================================== */
+(function () {
+  const d = sim('sim-density', 560);
+  /* Table 1.4's solids in the table's order and at its values; oak at the middle of the table's range, and lead at
+     11.34 g/cm³ so that the cube of Example 1.1 weighs the example's 90.7 g (11.34 still reads 11.3 to three figures) */
+  const MATS = [['ice', 0.92], ['oak', 0.75], ['iron', 7.9], ['copper', 9.0], ['lead', 11.34, 'lead'], ['silver', 10.5], ['gold', 19.3, 'gold']];
+  /* seven solids are states the reader picks (rule 26.1): a dropdown, since a row of seven buttons would wrap */
+  const M = F.select(d.controls, { label: '\\text{solid}', aria: 'the solid the cube is made of', options: MATS.map((m, i) => ({ value: String(i), label: m[0] })), value: '4', ms: 0 });
+  const A = ctl(d.controls, { label: '\\text{edge length}', cls: 'length', min: 0.5, max: 3, step: 0.01, value: 2, unit: 'cm', dec: 2, aria: 'edge length of the cube in centimeters' });
+  const box = { l: 830, r: 1340, t: 90, b: 450 };   /* axes fixed from the slider's maximum: a 3 cm cube is 27 cm³, and of gold 521 g */
+  const hits = []; F.hover(d.stage, () => hits);
+  const say = once(d.readout);
+  function draw() {
+    const { ctx } = begin(d.c);
+    const which = +M.value, [name, rho] = MATS[which], a = A.v, V = a * a * a, m = rho * V;
+    const cm = C('mass'), cv = C('volume'), cl = C('length');
+    /* the cube of lead and the cube of gold are the section's referents; the other solids are told apart by the palette after them */
+    const hueOf = (i) => (MATS[i][2] ? F.ref(MATS[i][2]) : F.cat(2 + i - MATS.slice(0, i).filter((x) => x[2]).length)), mine = hueOf(which);
+    /* the balance, and the cube on its pan, at 60 logical units to the centimeter */
+    const ox = 390, oy = 372, e = a * 60, P = (x, y, z) => { const q = FRONT.P([x, y, z]); return [ox + q[0], oy + q[1]]; };
+    slab(ctx, P, -175, 175, -100, -24, -120, 120);
+    slab(ctx, P, -24, 24, -24, -8, -24, 24, 2);
+    slab(ctx, P, -135, 135, -8, 0, -105, 105);
+    const [dl, dt] = P(-95, -44, 120), [dr, db] = P(95, -86, 120);
+    ctx.save(); ctx.fillStyle = PAL.panel; ctx.strokeStyle = cm; ctx.lineWidth = 3; ctx.fillRect(dl, dt, dr - dl, db - dt); ctx.strokeRect(dl, dt, dr - dl, db - dt); ctx.restore();
+    text(ctx, sig3(m) + ' g', (dl + dr) / 2, (dt + db) / 2, cm, { size: 24, weight: 600, align: 'center' });
+    slab(ctx, P, -e / 2, e / 2, 0, e, -e / 2, e / 2);
+    const [fx, f0] = P(e / 2, 0, e / 2), f1 = P(e / 2, e, e / 2)[1], top = P(0, e, -e / 2)[1];
+    vbracket(ctx, fx + 22, f1, f0, cl, fmt(a, 2) + ' cm', 1);
+    F.rich(ctx, ['a cube of ', [name, mine]], ox, top - 30, { size: 22, align: 'center' });
+    /* mass against volume: a line through the origin for each solid, the chosen one heavy, and the cube's point on it */
+    const ax = F.axes(ctx, box, [0, 27], [0, 600], { xl: 'volume (cm³)', xc: cv, yl: 'mass (g)', yc: cm, nx: 3, ny: 3 });
+    MATS.forEach(([, r], i) => { if (i !== which) line(ctx, ax.X(0), ax.Y(0), ax.X(27), ax.Y(r * 27), alpha(hueOf(i), 0.6), 2.5); });
+    line(ctx, ax.X(0), ax.Y(0), ax.X(27), ax.Y(rho * 27), mine, 5);
+    line(ctx, ax.X(V), ax.Y(m), ax.X(V), box.b, cv, 2, [4, 8]); line(ctx, box.l, ax.Y(m), ax.X(V), ax.Y(m), cm, 2, [4, 8]);
+    hits.length = 0;
+    /* what a cube of each other solid would weigh at this volume: a ring on its line, named under the pointer */
+    MATS.forEach(([n, r], i) => { if (i === which) return; dot(ctx, ax.X(V), ax.Y(r * V), hueOf(i), false, 5); hits.push({ x: ax.X(V), y: ax.Y(r * V), r: 11, name: n + ', ' + sig3(r * V) + ' g at ' + sig3(V) + ' cm³' }); });
+    dot(ctx, ax.X(V), ax.Y(m), mine, true, 9);
+    hits.push({ x: ax.X(V), y: ax.Y(m), r: 14, name: name + ', ' + sig3(m) + ' g at ' + sig3(V) + ' cm³' },
+      { x: ox, y: (top + f0) / 2, r: e * 0.7, name: 'a cube of ' + name + ', ' + fmt(a, 2) + ' cm on an edge' }, { x: (dl + dr) / 2, y: (dt + db) / 2, r: 70, name: 'balance, reading ' + sig3(m) + ' g' });
+    F.legend(ctx, ax, MATS.map(([n], i) => ({ s: n, color: hueOf(i), w: i === which ? 5 : 2.5, i })).sort((p, q) => MATS[q.i][1] - MATS[p.i][1]), { corner: 'tl' });
+    const side = hue('length', fmt(a, 2) + '\\ \\text{cm}'), vol = hue('volume', sig3(V) + '\\ \\text{cm}^3');
+    say(`${hue('volume', '\\text{volume}')} = ${side} \\times ${side} \\times ${side} = ${vol} \\\\ ` +
+      `${hue('density', '\\text{density}')} = \\frac{${hue('mass', '\\text{mass}')}}{${hue('volume', '\\text{volume}')}} = \\frac{${hue('mass', sig3(m) + '\\ \\text{g}')}}{${vol}} = ${hue('density', sig3(Number(sig3(m)) / Number(sig3(V))) + '\\ \\text{g/cm}^3')}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
 
 /* =====================================================================
    SIM: the volume of a block by displacement of water, and its density.
-   The block is weighed on the balance, then held under the water in the
-   graduated cylinder; the water rises by the block's volume. Still: the
-   levels answer the sliders.
+   The block is weighed on the balance, lifted, carried over the
+   graduated cylinder and lowered into the water, which rises by the
+   block's volume. Moving: the rise is the idea, and it happens while
+   the block goes under. Five seconds, then a hold.
 ===================================================================== */
 (function () {
-  const d = sim('sim-displacement', 640);
-  const MATS = [['iron', 7.87], ['wood', 0.65], ['foam', 0.230], ['unknown', 3.26], ['copper', 8.96], ['lead', 11.34], ['gold', 19.3]];
-  const M = pick(d.controls, { label: '\\text{material}', value: 0, aria: 'material of the block' }, MATS.map((m) => m[0]));
-  const VB = ctl(d.controls, { label: '\\kV', cls: 'volume', min: 1, max: 20, step: 0.1, value: 4, unit: 'mL', dec: 1, aria: 'volume of the block' });
-  const V1 = ctl(d.controls, { label: 'V_1', cls: 'volume', min: 10, max: 40, step: 0.1, value: 25.5, unit: 'mL', dec: 1, aria: 'water in the cylinder before the block' });
-  let hits = []; F.hover(d.stage, () => hits);
+  const d = sim('sim-displacement', 620);
+  /* the samples Example 1.2, its Check Your Learning and exercise s1 measure, each with the density that gives the book's
+     mass and the volume the book gives it (foam at 10.0 mL, so that its density carries the answer's three figures) */
+  const SAMPLES = { iron: { rho: 7.87, vol: 4.0, ref: 'iron-block' }, wood: { rho: 0.65, vol: 3.0, ref: 'wood-block' }, foam: { rho: 0.230, vol: 10.0 }, unknown: { rho: 3.26, vol: 5.7 } };
+  const T = 5, cy = cycle(() => T, 1.6);
+  const M = F.choice(d.controls, { label: '\\text{sample}', aria: 'the sample the block is made of', options: Object.keys(SAMPLES).map((n) => ({ value: n, label: n })), value: 'iron', ms: 0, onInput: (v) => { VB.set(SAMPLES[v].vol); cy.reset(); } });
+  const VB = ctl(d.controls, { label: '\\text{block volume}', cls: 'volume', min: 1, max: 15, step: 0.1, value: 4, unit: 'mL', dec: 1, aria: 'volume of the block in milliliters', onInput: () => cy.reset() });
+  const V1 = 25.5;                                /* the water before the block goes in, as Example 1.2 reads it */
+  const BENCH = 606, PANX = 380, PANY = 470;
+  const CL = 900, CR = 1020, FLOOR = 590, PXML = 8, Y = (mL) => FLOOR - PXML * mL, RIM = Y(50) - 24, CX = (CL + CR) / 2;
+  const hits = []; F.hover(d.stage, () => hits);
+  const say = once(d.readout);
+  const during = (p, a, b) => F.ease.smooth(clamp((p - a) / (b - a), 0, 1));
   function draw() {
     const { ctx } = begin(d.c);
+    const name = M.value, S = SAMPLES[name], V = VB.v, mass = fmt(S.rho * V, 2), floats = S.rho < 1, p = cy.now() / T;
+    const cm = C('mass'), cv = C('volume'), rc = S.ref ? F.ref(S.ref) : PAL.ink;
+    /* the block in section: its width is a share of the cylinder's bore and its height its volume over that share, so the
+       water it pushes aside is exactly the water that rises */
+    const wb = Math.min(Math.sqrt((PXML * V * (CR - CL)) / 0.8), 100), hb = (PXML * V * (CR - CL)) / wb, share = wb / (CR - CL);
+    /* where the block's foot is: on the pan, lifted clear, carried over the cylinder, lowered to the bottom or held just under */
+    const rest = floats ? Y(V1 + V) + 14 + hb : FLOOR - 2, lift = during(p, 0.12, 0.34), over = during(p, 0.34, 0.56), down = during(p, 0.56, 0.92);
+    const bx = PANX + (CX - PANX) * over, by = PANY + (RIM - 12 - PANY) * lift + (rest - (RIM - 12)) * down;
+    /* the water level with the block's foot that far below the first level */
+    const under = clamp((by - Y(V1)) / (1 - share), 0, hb), level = V1 + (V * under) / hb, risen = level - V1;
+    line(ctx, 60, BENCH, 1340, BENCH, PAL.rule, 2);
+    /* the balance: a pan on a stem over a body with a display, which reads the block only while it rests on the pan */
+    ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5; ctx.lineJoin = 'round';
+    ctx.beginPath(); ctx.roundRect(PANX - 165, PANY + 26, 330, BENCH - PANY - 26, [14, 14, 4, 4]); ctx.fill(); ctx.stroke();
+    ctx.fillRect(PANX - 14, PANY + 8, 28, 18); ctx.strokeRect(PANX - 14, PANY + 8, 28, 18);
+    ctx.beginPath(); ctx.roundRect(PANX - 135, PANY, 270, 8, 3); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = PAL.panel; ctx.strokeStyle = cm; ctx.lineWidth = 3; ctx.fillRect(PANX - 95, PANY + 56, 190, 50); ctx.strokeRect(PANX - 95, PANY + 56, 190, 50); ctx.restore();
+    const onPan = lift < 0.02;
+    text(ctx, (onPan ? mass : '0.00') + ' g', PANX, PANY + 81, cm, { size: 24, weight: 600, align: 'center' });
+    /* where the block was weighed, dashed once it has left, and the mass that was read there */
+    if (!onPan) { ctx.save(); ctx.strokeStyle = alpha(rc, 0.6); ctx.lineWidth = 2; ctx.setLineDash([7, 7]); ctx.strokeRect(PANX - wb / 2, PANY - hb, wb, hb); ctx.restore(); }
+    F.rich(ctx, [[name + ' block', rc], ', ', [mass + ' g', cm]], PANX - wb / 2 - 18, PANY - Math.min(hb, 70) / 2, { size: 20, align: 'right' });
+    /* the water, then the block in front of it */
+    ctx.save(); ctx.fillStyle = alpha(cv, 0.22); ctx.fillRect(CL, Y(level), CR - CL, FLOOR - Y(level)); ctx.restore();
+    const hold = during(p, 0.12, 0.2);
+    if (hold > 0) { ctx.save(); ctx.globalAlpha *= hold; line(ctx, bx, 0, bx, by - hb, PAL.ink, floats ? 4 : 1.5); ctx.restore(); }
+    ctx.save(); ctx.fillStyle = PAL.panel; ctx.fillRect(bx - wb / 2, by - hb, wb, hb); ctx.fillStyle = alpha(rc, 0.3); ctx.strokeStyle = rc; ctx.lineWidth = 3; ctx.fillRect(bx - wb / 2, by - hb, wb, hb); ctx.strokeRect(bx - wb / 2, by - hb, wb, hb); ctx.restore();
+    if (under > 0) { ctx.save(); ctx.fillStyle = alpha(cv, 0.16); ctx.fillRect(bx - wb / 2, by - under, wb, under); ctx.restore(); }
+    /* the graduated cylinder: glass walls with a pouring lip, a foot, a mark at every milliliter */
+    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+    ctx.beginPath(); ctx.moveTo(CL - 16, RIM - 8); ctx.lineTo(CL, RIM + 8); ctx.lineTo(CL, FLOOR - 8); ctx.quadraticCurveTo(CL, FLOOR, CL + 8, FLOOR); ctx.lineTo(CR - 8, FLOOR); ctx.quadraticCurveTo(CR, FLOOR, CR, FLOOR - 8); ctx.lineTo(CR, RIM); ctx.stroke();
+    ctx.fillStyle = PAL.soft; ctx.beginPath(); ctx.moveTo(CL - 6, FLOOR + 2); ctx.lineTo(CR + 6, FLOOR + 2); ctx.lineTo(CR + 44, BENCH); ctx.lineTo(CL - 44, BENCH); ctx.closePath(); ctx.fill(); ctx.stroke(); ctx.restore();
+    for (let mL = 1; mL <= 50; mL++) { const big = mL % 10 === 0, mid = mL % 5 === 0; line(ctx, CL, Y(mL), CL + (big ? 30 : mid ? 20 : 11), Y(mL), PAL.ink, big ? 2 : 1.2); if (big) text(ctx, String(mL), CL - 14, Y(mL), PAL.muted, { size: 17, align: 'right' }); }
+    text(ctx, 'mL', CL - 14, Y(50) - 30, PAL.muted, { size: 17, align: 'right' });
+    /* the surface, a shallow meniscus read at its lowest point, and the two levels carried out to the right */
+    ctx.save(); ctx.strokeStyle = cv; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(CL + 2, Y(level) - 3);
+    if (under > 0 && under < hb) { ctx.quadraticCurveTo((CL + bx - wb / 2) / 2, Y(level) + 2, bx - wb / 2, Y(level)); ctx.moveTo(bx + wb / 2, Y(level)); ctx.quadraticCurveTo((CR + bx + wb / 2) / 2, Y(level) + 2, CR - 2, Y(level) - 3); }
+    else ctx.quadraticCurveTo(CX, Y(level) + 3, CR - 2, Y(level) - 3);
+    ctx.stroke(); ctx.restore();
+    const XR = CR + 200;
+    line(ctx, CR + 6, Y(V1), XR, Y(V1), cv, 2, [10, 10]);
+    F.rich(ctx, ['before, ', [fmt(V1, 1) + ' mL', cv]], CR + 16, Y(V1) + 20, { size: 20 });
+    if (risen > 0.04) {
+      line(ctx, CR + 6, Y(level), XR, Y(level), cv, 2.5);
+      F.rich(ctx, [under < hb ? 'now, ' : 'after, ', [fmt(level, 1) + ' mL', cv]], CR + 16, Y(level) - 20, { size: 20 });
+      vbracket(ctx, XR + 14, Y(level), Y(V1), cv);
+      F.rich(ctx, ['rise, ', [fmt(risen, 1) + ' mL', cv]], XR + 34, (Y(level) + Y(V1)) / 2, { size: 20 });
+    }
+    if (floats && down > 0.98) text(ctx, 'held under', CX + 14, RIM - 40, PAL.ink, { size: 18 });
     hits.length = 0;
-    const [name, rho] = MATS[M.v], V = VB.v, v1 = V1.v, v2 = v1 + V, m = rho * V, n = sigOf(fmt(V, 1)), dens = sig(m / V, n);
-    const cm = C('mass'), cvol = C('volume'), floats = rho < 1;
-    /* the iron and the wood block are the referents of Example 1.2; the samples only the exercises name are drawn in ink */
-    const who = { iron: 'iron-block', wood: 'wood-block' }[name], rc = who ? F.ref(who) : PAL.ink;
-    /* the block on the balance: a rectangle whose area follows the volume */
-    const bx = 300, by = 380, side = 26 * Math.cbrt(V), bw = side * 1.6, bh = side * 0.9;
-    balance(ctx, bx, by, 300, fmt(m, 2) + ' g');
-    ctx.save(); ctx.fillStyle = alpha(rc, 0.25); ctx.strokeStyle = rc; ctx.lineWidth = 3; ctx.fillRect(bx - bw / 2, by - bh, bw, bh); ctx.strokeRect(bx - bw / 2, by - bh, bw, bh); ctx.restore();
-    text(ctx, name + ' block', bx, by - bh - 24, rc, { size: 22, weight: 600, align: 'center' });
-    text(ctx, 'weighed first, on the balance', bx, by + 100, PAL.muted, { size: 17, align: 'center' });
-    /* the graduated cylinder, 0 to 60 mL */
-    const cl = 900, cr = 1040, ct = 150, cb = 580, Y = (mL) => cb - ((cb - ct) * mL) / 60;
-    ctx.save(); ctx.fillStyle = alpha(cvol, 0.22); ctx.fillRect(cl, Y(v2), cr - cl, cb - Y(v2)); ctx.restore();
-    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(cl, ct - 10); ctx.lineTo(cl, cb); ctx.lineTo(cr, cb); ctx.lineTo(cr, ct - 10); ctx.stroke(); ctx.restore();
-    for (let mL = 0; mL <= 60; mL++) { const big = mL % 10 === 0, mid = mL % 5 === 0; line(ctx, cl, Y(mL), cl + (big ? 26 : mid ? 18 : 10), Y(mL), PAL.ink, big ? 2 : 1); if (big) text(ctx, String(mL), cl - 12, Y(mL), PAL.muted, { size: 16, align: 'right' }); }
-    text(ctx, 'mL', cl - 12, ct - 26, PAL.muted, { size: 16, align: 'right' });
-    /* the block under the water, held by a rod when it would float, and the two levels */
-    const bw2 = 90, bh2 = ((cb - ct) / 60) * V * 0.72, byy = cb - 10 - bh2, bxx = (cl + cr) / 2 - bw2 / 2;
-    ctx.save(); ctx.fillStyle = alpha(rc, 0.35); ctx.strokeStyle = rc; ctx.lineWidth = 2.5; ctx.fillRect(bxx, byy, bw2, bh2); ctx.strokeRect(bxx, byy, bw2, bh2); ctx.restore();
-    const rod = M.mix((i) => (MATS[+i][1] < 1 ? 1 : 0));
-    if (rod > 0.01) { ctx.save(); ctx.globalAlpha = rod; line(ctx, (cl + cr) / 2, ct - 40, (cl + cr) / 2, byy, PAL.ink, 3); text(ctx, 'held under', (cl + cr) / 2 + 12, ct - 30, PAL.muted, { size: 16 }); ctx.restore(); }
-    line(ctx, cl, Y(v1), cr + 40, Y(v1), cvol, 2.5, [10, 10]);
-    line(ctx, cl, Y(v2), cr + 40, Y(v2), cvol, 3);
-    text(ctx, 'before, V₁ = ' + fmt(v1, 1) + ' mL', cr + 150, Y(v1) + (V < 3 ? 22 : 0), cvol, { size: 18, weight: 600 });
-    text(ctx, 'after, V₂ = ' + fmt(v2, 1) + ' mL', cr + 150, Y(v2) - (V < 3 ? 22 : 0), cvol, { size: 18, weight: 600 });
-    vbracket(ctx, cr + 60, Y(v2), Y(v1), cvol, '', 1);
-    text(ctx, 'rise = ' + fmt(V, 1) + ' mL', cr + 50, Y(v2) - (V < 3 ? 48 : 26), cvol, { size: 18, weight: 600 });
-    text(ctx, 'then lowered into the cylinder', (cl + cr) / 2 + 60, cb + 40, PAL.muted, { size: 17, align: 'center' });
-    hits.push({ x: bx, y: by - bh / 2, r: Math.max(bw, bh) / 2 + 4, name: 'the ' + name + ' block, ' + fmt(m, 2) + ' g' }, { x: bx, y: by + 40, r: 56, name: 'balance, reading ' + fmt(m, 2) + ' g' },
-      { x: bxx + bw2 / 2, y: byy + bh2 / 2, r: Math.max(bw2, bh2) / 2 + 4, name: 'the ' + name + ' block under the water' }, { x: (cl + cr) / 2, y: (Y(v2) + cb) / 2, r: 40, name: 'water in the graduated cylinder, ' + fmt(v2, 1) + ' mL with the block in' });
-    headline(ctx, 'The water rises from ' + fmt(v1, 1) + ' mL to ' + fmt(v2, 1) + ' mL, so the ' + name + ' block has a volume of ' + fmt(V, 1) + ' mL; it weighs ' + fmt(m, 2) + ' g, so its density is ' + dens + ' g/mL.');
-    readout(d.readout, `\\text{density} = \\frac{\\km}{\\kV} = \\frac{\\htmlClass{kv-mass}{${fmt(m, 2)}\\ \\text{g}}}{\\htmlClass{kv-volume}{${fmt(V, 1)}\\ \\text{mL}}} = \\htmlClass{kv-density}{${dens}\\ \\text{g/mL}}`,
-      floats ? 'A block less dense than water floats, so it is held under the surface until it is fully submerged.' : '');
+    hits.push({ x: bx, y: by - hb / 2, r: Math.max(wb, hb) / 2 + 4, name: 'the ' + name + ' block, ' + mass + ' g' }, { x: PANX, y: PANY + 70, r: 80, name: 'balance, reading ' + (onPan ? mass : '0.00') + ' g' },
+      { x: CX, y: (Y(level) + FLOOR) / 2, r: 60, name: 'water in the graduated cylinder, at ' + fmt(level, 1) + ' mL' });
+    if (hold > 0) hits.push({ x: bx, y: (by - hb) / 2, r: 14, name: floats ? 'rod that holds the block under the water' : 'thread the block hangs on' });
+    /* the readout is the measurement's result: the two readings subtracted, then the density to the figures the readings allow */
+    const vs = fmt(V, 1), n = Math.min(sigOf(mass), sigOf(vs)), vol = hue('volume', vs + '\\ \\text{mL}');
+    say(`${hue('volume', '\\text{volume}')} = ${hue('volume', fmt(V1 + V, 1) + '\\ \\text{mL}')} - ${hue('volume', fmt(V1, 1) + '\\ \\text{mL}')} = ${vol} \\\\ ` +
+      `${hue('density', '\\text{density}')} = \\frac{${hue('mass', '\\text{mass}')}}{${hue('volume', '\\text{volume}')}} = \\frac{${hue('mass', mass + '\\ \\text{g}')}}{${vol}} = ${hue('density', sig(Number(mass) / Number(vs), n) + '\\ \\text{g/mL}')}`);
   }
-  register(d.fig, { update: () => {}, draw });
+  register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
 };

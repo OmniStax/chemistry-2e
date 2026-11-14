@@ -48,7 +48,7 @@ const MOL = {
     fb: [0, 1, 2, 3, 4, 5, 6, 7].map((k) => [k, (k + 1) % 8]),
     A: [['S', 2.3, 0, -0.53], ['S', 1.62, 1.62, 0.53], ['S', 0, 2.3, -0.53], ['S', -1.62, 1.62, 0.53], ['S', -2.3, 0, -0.53], ['S', -1.62, -1.62, 0.53], ['S', 0, -2.3, -0.53], ['S', 1.62, -1.62, 0.53]],
     B: [0, 1, 2, 3, 4, 5, 6, 7].map((k) => [k, (k + 1) % 8]),
-    key: ['S'], dist: 17.2, grow: 1.4, yaw: 1.12, tilt: 0.3,
+    key: ['S'], dist: 17.2, grow: 1.4, yaw: 0.8, tilt: 0.3,
   },
 };
 function models(id, key) {
@@ -56,7 +56,7 @@ function models(id, key) {
   const M = F.choice(d.controls, { label: '\\text{model}', options: [{ value: 'ball', label: 'ball-and-stick' }, { value: 'space', label: 'space-filling' }], value: 'ball', aria: 'which model of the molecule turns below the formulas' });
   let hits = [];
   F.hover(d.stage, () => hits);
-  const v = F.view3d(d.stage, { spin: 'idle', h: 470, dist: m.dist, tilt: m.tilt });
+  const v = F.view3d(d.stage, { spin: 'idle', h: 440, dist: m.dist, tilt: m.tilt });
   v.setView(m.yaw, m.tilt);
   const grp = v.part(0);
   let sticks = null, balls = [], sig = '';
@@ -208,15 +208,17 @@ models('fig-sulfur', 'sulfur');
   const S = turned.map(([s, x, y, z]) => [s, x - mx, y - my, z]), Rm = S.map(([s, x, y, z]) => [s, -x, y, z]);
   const GAP = Math.max(...S.map((a) => Math.abs(a[1]))) + 1.5;
   const WHICH = { S: '<em>S</em>-(+)-carvone', R: '<em>R</em>-(−)-carvone' }, PLAIN = { S: 'S-(+)-carvone', R: 'R-(−)-carvone' };
-  const K = F.choice(d.controls, { label: '\\textit{R}\\text{-(−)-carvone}', options: [{ value: 'mirror', label: 'mirror image' }, { value: 'turned', label: 'turned 180°' }, { value: 'over', label: 'laid on <em>S</em>' }], value: 'mirror', aria: 'where R-(−)-carvone stands', ms: 1400 });
+  const K = F.choice(d.controls, { label: '\\textit{R}\\text{-(−)-carvone}', options: [{ value: 'mirror', label: 'mirror image' }, { value: 'turned', label: 'turned 180°' }, { value: 'over', label: 'laid on <em>S</em>' }], value: 'mirror', aria: 'where R-(−)-carvone stands', ms: 1400, onInput: (x) => v.glide(VIEW[x], 1400) });
   const HEAD = {
     mirror: `${WHICH.R} is the mirror image of ${WHICH.S}.`,
     turned: `Turned half way round, ${WHICH.R} has its ring and its oxygen atom where ${WHICH.S} has them.`,
     over: `Laid on ${WHICH.S}, ${WHICH.R} matches it in the ring's plane only: what stands in front of the ring in one stands behind it in the other.`,
   };
-  const v = F.view3d(d.stage, { h: 680, dist: 21, tilt: 0.12, onRender: names });
+  /* the pair is met from the front, as the book draws it; laid on each other they are seen from the side, where front and back show */
+  const VIEW = { mirror: { yaw: -0.18, pitch: 0.12 }, turned: { yaw: -0.18, pitch: 0.12 }, over: { yaw: 1.05, pitch: 0.16 } };
+  const v = F.view3d(d.stage, { h: 720, dist: 23.5, tilt: 0.12, onRender: names });
   v.setView(-0.18, 0.12);
-  const g = v.part(0); g.position.y = -0.55;   /* room for the headline above and the names below */
+  const g = v.part(0); g.position.y = 0.1;   /* room for the headline above and the names below */
   let sig = '', gS = null, gR = null, plane = null, lab = null;
   function molecule(grp, atoms, which) {
     B.forEach(([i, j, o]) => F.mesh.bond(grp, atoms[i].slice(1), atoms[j].slice(1), o, 0.07));
@@ -249,8 +251,8 @@ models('fig-sulfur', 'sulfur');
     if (!v.scene) return;
     build();
     gR.rotation.y = K.mix((x) => (x === 'mirror' ? 0 : Math.PI));
-    gR.position.x = K.mix((x) => (x === 'over' ? -GAP : GAP));
-    F.fade3(gR, K.mix((x) => (x === 'over' ? 0.5 : 1)));
+    gR.position.x = K.mix((x) => (x === 'over' ? 0 : GAP)); gS.position.x = -gR.position.x;
+    F.fade3(gR, K.mix((x) => (x === 'over' ? 0.55 : 1)));
     F.fade3(plane, K.mix((x) => (x === 'mirror' ? 1 : 0)));
     v.headline(HEAD[K.value]);
     v.invalidate();

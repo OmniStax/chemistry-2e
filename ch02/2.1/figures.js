@@ -54,9 +54,10 @@ const atom = (ctx, x, y, sym, r) => disc(ctx, x, y, r, F.el(sym), sym === 'H');
       }
     }
     /* the change as the book writes one: the elements, an arrow, the compound */
-    text(ctx, '+', 350, Y0, PAL.ink, { size: 36, align: 'center' });
-    arrow(ctx, 770, Y0, 850, Y0, PAL.ink, 4);
-    const name = (a, x, s, sub) => F.faded(ctx, Math.min(1, Math.max(0, a)), [0, 0], () => {
+    const some = (a, f) => F.faded(ctx, Math.min(1, Math.max(0, a)), [0, 0], f);
+    some(8 - p, () => text(ctx, '+', 350, Y0, PAL.ink, { size: 36, align: 'center' }));
+    some(p, () => arrow(ctx, 770, Y0, 850, Y0, PAL.ink, 4));
+    const name = (a, x, s, sub) => some(a, () => {
       text(ctx, s, x, 432, PAL.ink, { size: 22, weight: 600, align: 'center' }); text(ctx, sub, x, 462, PAL.muted, { size: 18, align: 'center' });
     });
     name(8 - p, 180, 'copper', 'a shiny, red-brown solid');
@@ -120,7 +121,7 @@ const atom = (ctx, x, y, sym, r) => disc(ctx, x, y, r, F.el(sym), sym === 'H');
    The powders' colours are the fact the text names, read off the photographs.
 ===================================================================== */
 (function () {
-  const d = sim('sim-copper-chlorides', 620);
+  const d = sim('sim-copper-chlorides', 630);
   const M = ctl(d.controls, { label: '\\km_{\\text{Cu}}', cls: 'mass', min: 0.2, max: 1.6, step: 0.2, value: 1, unit: 'g', dec: 2, aria: 'mass of copper in each sample' });
   const GREEN = 0.558, POWDER = { green: '#8a9a3c', brown: '#a8562e' };
   const RC = 41, RL = 33, PITCH = 88, X0 = 284, PER_G = PITCH / 0.2;
@@ -152,9 +153,9 @@ const atom = (ctx, x, y, sym, r) => disc(ctx, x, y, r, F.el(sym), sym === 'H');
   function draw() {
     const { ctx } = begin(d.c);
     const n = Math.round(M.v / 0.2), cu = 0.2 * n; hits = [];
-    const g = row(ctx, { n, y: 150, per: 1, name: 'green compound', powder: POWDER.green });
-    const b = row(ctx, { n, y: 420, per: 2, name: 'brown compound', powder: POWDER.brown });
-    F.legend(ctx, { l: 30, r: 1370, t: 14, b: 606 }, [{ s: 'copper atom', draw: (c, x, y) => atom(c, x, y, 'Cu', 11) }, { s: 'chlorine atom', draw: (c, x, y) => atom(c, x, y, 'Cl', 9) }], { corner: 'tr' });
+    const g = row(ctx, { n, y: 140, per: 1, name: 'green compound', powder: POWDER.green });
+    const b = row(ctx, { n, y: 407, per: 2, name: 'brown compound', powder: POWDER.brown });
+    F.legend(ctx, { l: 30, r: 1370, t: 14, b: 616 }, [{ s: 'copper atom', draw: (c, x, y) => atom(c, x, y, 'Cu', 11) }, { s: 'chlorine atom', draw: (c, x, y) => atom(c, x, y, 'Cl', 9) }], { corner: 'tr' });
     const cuT = `\\htmlClass{kv-mass}{${fmt(cu, 2)}\\ \\text{g}}\\ \\text{Cu}`, clT = (v) => `\\htmlClass{kv-mass}{${cl(v)}\\ \\text{g}}\\ \\text{Cl}`;
     tex(d.readout, `\\dfrac{\\dfrac{${clT(b)}}{${cuT}}}{\\dfrac{${clT(g)}}{${cuT}}}=\\dfrac{2}{1}`);
   }

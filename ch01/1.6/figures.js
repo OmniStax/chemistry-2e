@@ -74,9 +74,9 @@ const r1 = (v) => Math.round(v * 10 + 1e-6) / 10;
     const shown = { F: f, C: c, K: c + 273.15 };
     hits = [];
     /* the temperatures the book marks, across all three thermometers: water's two in dashes, −40 as a thin rule */
-    const top = SCALES[0].y - 68, foot = SCALES[2].y + 34;
-    line(ctx, X(-40), top + 16, X(-40), foot, alpha(PAL.ink, 0.45), 2);
-    line(ctx, X(0), top + 16, X(0), foot, PAL.ink, 2, [10, 8]); line(ctx, X(100), top + 16, X(100), foot, PAL.ink, 2, [10, 8]);
+    const top = SCALES[0].y - 78, foot = SCALES[2].y + 34;
+    line(ctx, X(-40), top + 44, X(-40), foot, alpha(PAL.ink, 0.45), 2);
+    line(ctx, X(0), top + 44, X(0), foot, PAL.ink, 2, [10, 8]); line(ctx, X(100), top + 44, X(100), foot, PAL.ink, 2, [10, 8]);
     text(ctx, '°C and °F agree', X(-40), top, PAL.ink, { size: 20, align: 'center' });
     text(ctx, 'Freezing point of water', X(0), top, PAL.ink, { size: 20, align: 'center' });
     text(ctx, 'Boiling point of water', X(100), top, PAL.ink, { size: 20, align: 'center' });
@@ -107,7 +107,7 @@ const r1 = (v) => Math.round(v * 10 + 1e-6) / 10;
     text(ctx, 'reading on each scale', box.l, box.t - 24, temp, { size: 20, weight: 600, bg: PAL.panel });
     for (const s of SCALES) {
       plot(ctx, g, s.of, temp, { w: 4 });
-      text(ctx, s.unit, box.r + 14, g.Y(s.of(HI)), PAL.ink, { size: 22, weight: 600 });
+      text(ctx, s.unit, box.r + 22, g.Y(s.of(HI)), PAL.ink, { size: 22, weight: 600 });
     }
     /* where each line meets 0 °C: the intercept its conversion adds */
     for (const [s, v] of [[SCALES[0], '32 °F'], [SCALES[2], '273.15 K']]) {

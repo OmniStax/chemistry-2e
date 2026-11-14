@@ -1,9 +1,8 @@
 /* Figures for section 2.3 Atomic Structure and Symbolism. Boots against the section's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['2.3'] = function (root, F) {
-const { el, fmt, tex, C, PAL, alpha, ctl, register, begin, line, text, headline, cycle } = F;
+const { fmt, tex, C, PAL, alpha, ctl, register, begin, line, text, headline, cycle } = F;
 const sim = (id, H) => F.sim(root, id, H);
-function readout(host, main, small) { host.textContent = ''; tex(host, main); if (small) host.appendChild(el('small', null, small)); }
 
 /* a particle as the chapter draws it: a filled disc with an ink rim */
 function disc(ctx, x, y, r, fill, w = 1.5) {
@@ -172,9 +171,11 @@ const frac = (pct) => String(+(pct / 100).toFixed(4));
     const list = here.length === 2 ? here.join(' or ') : here.slice(0, -1).join(', ') + ', or ' + here[here.length - 1];
     headline(ctx, only ? `Every atom here is ${name}-${only.A}, so the average mass is the mass of one atom.`
       : `No single atom of ${name} has the average mass. Each one is ${list}.`);
-    const terms = e.iso.map((s, i) => `(${frac(pct[i])} \\times \\htmlClass{kv-mass}{${s.ms}\\ \\text{amu}})`).join(' + ');
+    const term = e.iso.map((s, i) => `(${frac(pct[i])} \\times \\htmlClass{kv-mass}{${s.ms}\\ \\text{amu}})`);
+    /* three terms are wider than the readout, so the third takes a line of its own */
+    const terms = n === 3 ? `${term[0]} + ${term[1]} \\\\ {} + ${term[2]}` : term.join(' + ');
     const sums = prod.map((v) => `\\htmlClass{kv-mass}{${fmt(v, 2)}\\ \\text{amu}}`).join(' + ');
-    /* the chain is wider than the readout, so it breaks once, before a relation sign (root rule 26.14) */
+    /* the chain is wider than the readout, so it breaks before a relation sign (root rule 26.14) */
     tex(d.readout, `\\text{average mass} = ${terms} \\\\ = ${sums} = \\htmlClass{kv-mass}{${fmt(avg, 2)}\\ \\text{amu}}`);
   }
   register(d.fig, { update: () => {}, draw });
@@ -190,20 +191,22 @@ const frac = (pct) => String(+(pct / 100).toFixed(4));
    at the far end adds to the peak of its isotope. Moving: the ions fly
    and the peaks grow over one cycle, which is the clock of the idea.
    The tube is the same for every element: an ion of the middle mass
-   follows its axis, and the others part from it SPREAD times as far as
+   follows its axis, and the others part from it `spread` times as far as
    they truly would (the radius of a path goes as the square root of the
-   mass, so Zr-90 and Zr-96 truly differ by about 3 %).
+   mass, so Zr-90 and Zr-96 truly differ by about 3 %); the factor is
+   chosen per element so that every beam lands on the detector, and the
+   stage says it (root rule 28.4).
 ===================================================================== */
 (function () {
   const d = sim('sim-mass-spec', 600);
   /* isotopic masses (amu) and natural abundances (%); an isotope the text names wears its referent's colour, as in the Sim above */
   const ELEMENTS = {
-    zirconium: { sym: 'Zr', iso: [{ A: 90, m: 89.9047, nat: 51.45 }, { A: 91, m: 90.9056, nat: 11.22 }, { A: 92, m: 91.9050, nat: 17.15 }, { A: 94, m: 93.9063, nat: 17.38 }, { A: 96, m: 95.9083, nat: 2.80 }] },
-    boron: { sym: 'B', iso: [{ A: 10, m: 10.0129, nat: 19.9, ref: 'b-10' }, { A: 11, m: 11.0093, nat: 80.1, ref: 'b-11' }] },
-    neon: { sym: 'Ne', iso: [{ A: 20, m: 19.9924, nat: 90.48, ref: 'ne-20' }, { A: 21, m: 20.9938, nat: 0.27, ref: 'ne-21' }, { A: 22, m: 21.9914, nat: 9.25, ref: 'ne-22' }] },
-    chlorine: { sym: 'Cl', iso: [{ A: 35, m: 34.96885, nat: 75.76, ref: 'cl-35' }, { A: 37, m: 36.96590, nat: 24.24, ref: 'cl-37' }] },
+    zirconium: { sym: 'Zr', spread: 8, iso: [{ A: 90, m: 89.9047, nat: 51.45 }, { A: 91, m: 90.9056, nat: 11.22 }, { A: 92, m: 91.9050, nat: 17.15 }, { A: 94, m: 93.9063, nat: 17.38 }, { A: 96, m: 95.9083, nat: 2.80 }] },
+    boron: { sym: 'B', spread: 4, iso: [{ A: 10, m: 10.0129, nat: 19.9, ref: 'b-10' }, { A: 11, m: 11.0093, nat: 80.1, ref: 'b-11' }] },
+    neon: { sym: 'Ne', spread: 4, iso: [{ A: 20, m: 19.9924, nat: 90.48, ref: 'ne-20' }, { A: 21, m: 20.9938, nat: 0.27, ref: 'ne-21' }, { A: 22, m: 21.9914, nat: 9.25, ref: 'ne-22' }] },
+    chlorine: { sym: 'Cl', spread: 8, iso: [{ A: 35, m: 34.96885, nat: 75.76, ref: 'cl-35' }, { A: 37, m: 36.96590, nat: 24.24, ref: 'cl-37' }] },
   };
-  const T = 6, SPREAD = 6, IONS = 90;            /* one cycle of 6 s; path spread drawn six times its true size; about 90 ions a cycle */
+  const T = 6, IONS = 90;                        /* one cycle of 6 s; about 90 ions a cycle */
   const cy = cycle(() => T, 1.2);
   const pick = F.choice(d.controls, { label: 'element', aria: 'element', value: 'zirconium',
     options: Object.keys(ELEMENTS).map((k) => ({ value: k, label: k })), onInput: () => cy.reset() });
@@ -241,7 +244,7 @@ const frac = (pct) => String(+(pct / 100).toFixed(4));
     { x: (XA + XB) / 2, y: Y0 + 110, r: 40, name: 'magnetic field between the poles of a magnet' }, { x: DX + NX * 10, y: DY + NY * 10, r: 40, name: 'detector' },
   ];
   F.hover(d.stage, () => hits);
-  let last = '';
+  const ro = F.readout(d);
   function draw() {
     const { ctx } = begin(d.c);
     const e = ELEMENTS[pick.value], t = cy.now(), mMid = (e.iso[0].m + e.iso[e.iso.length - 1].m) / 2;
@@ -250,7 +253,7 @@ const frac = (pct) => String(+(pct / 100).toFixed(4));
     /* each isotope: its path, where it meets the detector, its speed past the plates, and when each of its ions leaves and lands */
     const W0 = XS - X0, a = XP[0] - XS, b = XP[1] - XP[0];
     const iso = e.iso.map((s, i) => {
-      const P = path(RM * (1 + 0.5 * SPREAD * (s.m - mMid) / mMid));
+      const P = path(RM * (1 + 0.5 * e.spread * (s.m - mMid) / mMid));
       const L3 = ((DX - P.ex) * NX + (DY - P.ey) * NY) / (P.ux * NX + P.uy * NY), L = P.L1 + P.L2 + L3;
       const v = V * Math.sqrt(mMid / s.m), v0 = 0.45 * v, tA = a / v0, tB = (2 * b) / (v0 + v), acc = (v - v0) / tB;
       const fly = tA + tB + (L - W0 - a - b) / v;
@@ -317,7 +320,7 @@ const frac = (pct) => String(+(pct / 100).toFixed(4));
     F.legend(ctx, { l: 20, r: 520, t: 470, b: 560 }, [
       { s: `${e.sym}^{+} ion`, draw: (c, x, y) => { disc(c, x, y, 9, fill, 1.2); sign(c, x, y, 10, true); } },
       { s: 'electron', draw: (c, x, y) => disc(c, x, y, 5, F.el('e-'), 1) }], { corner: 'bl', row: true, panel: false, size: 18 });
-    text(ctx, `The paths are drawn ${SPREAD} times as far apart as they are.`, 30, 572, PAL.muted, { size: 17 });
+    text(ctx, `The paths are drawn ${e.spread} times as far apart as they are.`, 30, 572, PAL.muted, { size: 17 });
     /* the spectrum: relative abundance 0 to 100 % against mass-to-charge ratio, a unit either side of the isotopes */
     const lo = e.iso[0].A - 1, hi = e.iso[e.iso.length - 1].A + 1, wide = hi - lo > 4;
     const box = { l: 1020, r: 1375, t: 170, b: 470 };
@@ -336,11 +339,11 @@ const frac = (pct) => String(+(pct / 100).toFixed(4));
     });
     const sum = landed.reduce((p, c) => p + c, 0), all = iso.reduce((p, z) => p + z.n, 0);
     headline(ctx, sum < all ? `${sum} of ${all} ions have reached the detector. Each one adds to the peak of its isotope.`
-      : `All ${all} ions have reached the detector, and the peaks stand at the isotopes’ shares of them.`);
+      : `All ${all} ions have reached the detector. Each peak is its isotope’s share of them.`);
     const prod = e.iso.map((s) => +((s.nat / 100) * s.m).toFixed(3));
     const avg = prod.reduce((p, c) => p + c, 0);
     const str = `\\text{average mass} = (${prod.map((v) => fmt(v, 3)).join(' + ')})\\ \\text{amu} = \\htmlClass{kv-mass}{${fmt(avg, 3)}\\ \\text{amu}}`;
-    if (str !== last) { last = str; readout(d.readout, str, 'Each term is an isotope’s fractional abundance, the height of its finished peak, times its isotopic mass.'); }
+    ro.set(str, 'Each term is an isotope’s fractional abundance, the height of its finished peak, times its isotopic mass.');
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();

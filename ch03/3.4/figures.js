@@ -52,10 +52,10 @@ const round3 = (x) => Number(x.toPrecision(3));
   /* both masses on logarithmic tracks, since the section's solutes run from micrograms to hundreds of grams; each value
      box shows the mass itself. The dashed circles on the solute's track are the masses that make 1 ppb, 1 ppm and 1% of
      the solution chosen, so they move with the other slider. */
-  const MS = ctl(d.controls, { label: '\\km_{\\text{solution}}', cls: 'mass', min: 0, max: 3, step: 0.001, value: lg10(300), unit: '', fmt: (v) => massStr(round3(10 ** v)), aria: 'mass of solution' });
-  const R = ctl(d.controls, { label: '\\km_{\\text{solute}}', cls: 'mass', min: -7, max: 3, step: 0.001, value: lg10(4.5e-6), unit: '', fmt: (v) => massStr(round3(10 ** v)), aria: 'mass of solute',
+  const MS = ctl(d.controls, { label: '\\km_{\\text{solution}}', cls: 'mass', min: 0, max: 3, step: 0.0001, value: lg10(300), unit: '', fmt: (v) => massStr(round3(10 ** v)), aria: 'mass of solution' });
+  const R = ctl(d.controls, { label: '\\km_{\\text{solute}}', cls: 'mass', min: -7, max: 3, step: 0.0001, value: lg10(4.5e-6), unit: '', fmt: (v) => massStr(round3(10 ** v)), aria: 'mass of solute',
     specials: [{ at: () => lg10(masses().ms) - 9, label: '1 ppb' }, { at: () => lg10(masses().ms) - 6, label: '1 ppm' }, { at: () => lg10(masses().ms) - 2, label: '1%' }] });
-  const which = () => SAMPLES.findIndex((s) => Math.abs(lg10(s[1]) - R.v) < 0.002 && Math.abs(lg10(s[2]) - MS.v) < 0.002);
+  const which = () => SAMPLES.findIndex((s) => Math.abs(lg10(s[1]) - R.v) < 0.0002 && Math.abs(lg10(s[2]) - MS.v) < 0.0002);
   /* the two masses as the value boxes show them (three figures), the book's own numbers on a named solution */
   function masses() {
     const i = which();
@@ -78,6 +78,8 @@ const round3 = (x) => Number(x.toPrecision(3));
     const { ctx } = begin(d.c);
     const { i, ms, m } = masses(); S.set(String(i < 0 ? OTHER : i));
     const frac = Math.min(1, m / ms), lg = Math.max(LO, lg10(frac)), xm = X(lg), cm = C('mass');
+    /* the marker's line first, so every number it passes stands on its own patch of page over it */
+    line(ctx, xm, yF, xm, ROWS[2].y + 12, cm, 3, [4, 8]);
     /* the mass-fraction line, one decade per step */
     text(ctx, 'mass of solute ÷', X0 - 50, yF - 13, PAL.ink, { size: 18, weight: 600, align: 'right' });
     text(ctx, 'mass of solution', X0 - 50, yF + 13, PAL.ink, { size: 18, weight: 600, align: 'right' });
@@ -89,19 +91,18 @@ const round3 = (x) => Number(x.toPrecision(3));
     /* each unit's row: numbered over the stretch where it reads 0.1 to 1000, a bare line elsewhere */
     ROWS.forEach((r) => {
       const a = Math.max(LO, -1 - r.k), b = Math.min(HI, 3 - r.k);
-      text(ctx, r.name, X0 - 50, r.y - 14, PAL.ink, { size: 18, weight: 600, align: 'right' });
-      text(ctx, r.by, X0 - 50, r.y + 14, PAL.muted, { size: 17, align: 'right' });
+      text(ctx, r.name, X0 - 50, r.y - 13, PAL.ink, { size: 18, weight: 600, align: 'right' });
+      text(ctx, r.by, X0 - 50, r.y + 17, PAL.muted, { size: 17, align: 'right' });
       line(ctx, X0, r.y, X1, r.y, alpha(PAL.ink, 0.3), 2);
       ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.1); ctx.fillRect(X(a), r.y - 15, X(b) - X(a), 30); ctx.restore();
       line(ctx, X(a), r.y, X(b), r.y, PAL.ink, 2.5);
       for (let k = a; k <= b; k++) {
         const v = k + r.k;
         line(ctx, X(k), r.y - 9, X(k), r.y + 9, PAL.ink, 2);
-        text(ctx, withUnit(v < 0 ? (10 ** v).toFixed(-v) : String(10 ** v), r.unit), X(k), r.y + 32, PAL.muted, { size: 17, align: 'center' });
+        text(ctx, withUnit(v < 0 ? (10 ** v).toFixed(-v) : String(10 ** v), r.unit), X(k), r.y + 32, PAL.muted, { size: 17, align: 'center', bg: alpha(PAL.panel, 0.9) });
       }
     });
-    /* the marker at the chosen ratio, crossing every row */
-    line(ctx, xm, yF, xm, ROWS[2].y + 12, cm, 3, [4, 8]);
+    /* the marker at the chosen ratio */
     dot(ctx, xm, yF, cm, true, 10);
     /* the section's solutions on the fraction line, each named above it; the acid's name a row higher, clear of the bleach's */
     SAMPLES.forEach((s, j) => {

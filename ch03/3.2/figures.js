@@ -1,125 +1,136 @@
 /* Figures for section 3.2 Determining Empirical and Molecular Formulas. Boots against the section's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['3.2'] = function (root, F) {
-const { el, tex, C, PAL, alpha, ctl, register, begin, line, arrow, text, headline } = F;
+const { tex, C, PAL, alpha, ctl, register, begin, line, arrow, text, headline } = F;
 const sim = (id, H) => F.sim(root, id, H);
 const still = (d, draw) => register(d.fig, { update: () => {}, draw });
-function readout(host, main, small) { tex(host, main); if (small) host.appendChild(el('small', null, small)); }
 const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
 const sig = (x, n = 4) => { const e = Math.floor(Math.log10(Math.abs(x))); return x.toFixed(Math.max(0, n - 1 - e)); };
 
 /* =====================================================================
    FIGURE 3.11: the book's six-box chart for elements A and X, each box
-   showing its live value, with the sample's percent composition as a bar
-   above it and the empirical formula unit drawn in element colours.
-   Still: the values answer the sliders and the sample choice.
+   showing its live value, fed by the sample drawn as a bar split by mass
+   percent. The mass of the sample changes the masses and the amounts and
+   leaves the ratio; the percent composition changes the ratio and the
+   formula. Still: the values answer the controls.
 ===================================================================== */
 (function () {
-  const d = sim('sim-empirical', 540);
+  const d = sim('sim-empirical', 590);
   const MM = { Fe: 55.85, O: 16.00, C: 12.01, H: 1.008, Cl: 35.45 };
   const MMS = { Fe: '55.85', O: '16.00', C: '12.01', H: '1.008', Cl: '35.45' };
   const NAME = { Fe: 'iron', O: 'oxygen', C: 'carbon', H: 'hydrogen', Cl: 'chlorine' };
-  /* the book's samples; each slider runs from about a fifth to twice the book's mass */
+  const pct = (a, i, x, j) => (100 * i * MM[a]) / (i * MM[a] + j * MM[x]);
+  /* the book's samples: m the sample's mass (its range, step, decimals), p the mass percent of the first
+     element (its range), marks the other real compounds of the same two elements */
   const SAMPLES = [
-    { label: 'hematite', ref: 'hematite', name: 'the hematite sample', a: 'Fe', x: 'O', ma: 34.97, mx: 15.03, ra: [5, 70, 0.01, 2], rx: [2, 40, 0.01, 2] },
-    { label: 'carbon and hydrogen', ref: 'ch-sample', name: 'the sample of carbon and hydrogen', a: 'C', x: 'H', ma: 1.71, mx: 0.287, ra: [0.2, 4, 0.01, 2], rx: [0.03, 0.6, 0.001, 3] },
-    { label: 'chlorine and oxygen', ref: 'clo-sample', name: 'the sample of chlorine and oxygen', a: 'Cl', x: 'O', ma: 5.31, mx: 8.40, ra: [0.5, 12, 0.01, 2], rx: [1, 20, 0.01, 2] },
-    { label: 'fermentation gas', ref: 'gas', name: 'the fermentation gas', a: 'C', x: 'O', ma: 27.29, mx: 72.71, ra: [5, 60, 0.01, 2], rx: [10, 150, 0.01, 2] },
+    { label: 'hematite', ref: 'hematite', name: 'the hematite sample', a: 'Fe', x: 'O', m: 50.00, rm: [10, 100, 0.01, 2], p: 69.94, rp: [50, 90],
+      marks: [{ at: pct('Fe', 1, 'O', 1), label: 'FeO' }] },
+    { label: 'carbon and hydrogen', ref: 'ch-sample', name: 'the sample of carbon and hydrogen', a: 'C', x: 'H', m: 1.997, rm: [0.5, 4, 0.001, 3], p: 85.63, rp: [70, 95],
+      marks: [{ at: pct('C', 1, 'H', 4), label: 'CH₄' }, { at: pct('C', 1, 'H', 1), label: 'CH' }] },
+    { label: 'chlorine and oxygen', ref: 'clo-sample', name: 'the sample of chlorine and oxygen', a: 'Cl', x: 'O', m: 13.71, rm: [3, 30, 0.01, 2], p: 38.73, rp: [30, 85],
+      marks: [{ at: pct('Cl', 1, 'O', 2), label: 'ClO₂' }, { at: pct('Cl', 2, 'O', 1), label: 'Cl₂O' }] },
+    { label: 'fermentation gas', ref: 'gas', name: 'the fermentation gas', a: 'C', x: 'O', m: 100.00, rm: [20, 200, 0.01, 2], p: 27.29, rp: [20, 50],
+      marks: [{ at: pct('C', 1, 'O', 1), label: 'CO' }] },
   ];
   let S = SAMPLES[0];
-  const mLabel = (sym) => `\\km_{\\text{${sym}}}`;
-  const rangeOf = (r, v) => ({ min: r[0], max: r[1], step: r[2], dec: r[3], unit: 'g', value: v });
+  const pLabel = (sym) => `\\%\\,\\text{${sym}}`;
+  const marksOf = (s) => [{ at: s.p, label: s.label }, ...s.marks];
   const pick = F.select(d.controls, { label: '\\text{sample}', aria: 'sample analysed',
     options: SAMPLES.map((s, i) => ({ value: String(i), label: s.label })), value: '0',
     onInput: () => {
       S = SAMPLES[+pick.value];
-      mA.relabel(mLabel(S.a), `mass of ${NAME[S.a]}`); mX.relabel(mLabel(S.x), `mass of ${NAME[S.x]}`);
-      mA.range(rangeOf(S.ra, S.ma)); mX.range(rangeOf(S.rx, S.mx));
+      M.range({ min: S.rm[0], max: S.rm[1], step: S.rm[2], dec: S.rm[3], unit: 'g', value: S.m });
+      P.relabel(pLabel(S.a), `mass percent of ${NAME[S.a]}`);
+      P.range({ min: S.rp[0], max: S.rp[1], step: 0.01, dec: 2, unit: '%', value: S.p });
+      P.mark(marksOf(S));
     } });
-  const mA = ctl(d.controls, { label: mLabel('Fe'), cls: 'mass', min: 5, max: 70, step: 0.01, value: 34.97, unit: 'g', dec: 2, aria: 'mass of iron' });
-  const mX = ctl(d.controls, { label: mLabel('O'), cls: 'mass', min: 2, max: 40, step: 0.01, value: 15.03, unit: 'g', dec: 2, aria: 'mass of oxygen' });
+  const M = ctl(d.controls, { label: '\\km_{\\text{sample}}', cls: 'mass', min: 10, max: 100, step: 0.01, value: 50, unit: 'g', dec: 2, aria: 'mass of the sample' });
+  const P = ctl(d.controls, { label: pLabel('Fe'), cls: '', key: 'percent', min: 50, max: 90, step: 0.01, value: 69.94, unit: '%', dec: 2, aria: 'mass percent of iron', specials: marksOf(S) });
   const hits = [];
   F.hover(d.stage, () => hits);
 
-  /* the smallest whole multiplier up to 6 that brings every subscript within 0.08 of a whole number */
+  /* the smallest whole multiplier up to 5 that brings every subscript within 0.04 of a whole number, none above 9 */
   function whole(r) {
-    for (let k = 1; k <= 6; k++) if (r.every((x) => Math.abs(x * k - Math.round(x * k)) <= 0.08)) return { k, n: r.map((x) => Math.round(x * k)) };
+    for (let k = 1; k <= 5; k++) {
+      if (r.every((x) => Math.abs(x * k - Math.round(x * k)) <= 0.04 && Math.round(x * k) <= 9)) {
+        return { k, n: r.map((x) => Math.round(x * k)), exact: r.every((x) => Math.abs(+x.toFixed(3) * k - Math.round(x * k)) < 1e-9) };
+      }
+    }
     return null;
   }
   const sub = (sym, n) => (n === 1 ? sym : `${sym}_{${n}}`);
+  const atomsOf = (n, sym) => `${n} atom${n === 1 ? '' : 's'} of ${sym}`;
 
-  function box(ctx, x, y, w, h, color, name, value, valueColor) {
+  function box(ctx, x, y, w, h, color, name, value, o = {}) {
     ctx.save(); ctx.beginPath(); ctx.roundRect(x - w / 2, y - h / 2, w, h, 8);
     ctx.fillStyle = color === PAL.ink ? PAL.soft : alpha(color, 0.12); ctx.fill();
     ctx.lineWidth = 3; ctx.strokeStyle = color; ctx.stroke(); ctx.restore();
-    text(ctx, name, x, y - 15, PAL.ink, { size: 17, align: 'center' });
-    text(ctx, value, x, y + 16, valueColor ?? color, { size: 21, weight: 600, align: 'center' });
+    text(ctx, name, x, y - 20, PAL.ink, { size: 22, align: 'center' });
+    text(ctx, value, x, y + 20, o.color ?? color, { size: o.size ?? 27, weight: 600, align: 'center' });
   }
   function step(ctx, x1, x2, y, words, value) {
     arrow(ctx, x1, y, x2, y, PAL.ink, 4);
-    text(ctx, value, (x1 + x2) / 2, y - 17, PAL.ink, { size: 17, align: 'center' });
-    words.forEach((w, i) => text(ctx, w, (x1 + x2) / 2, y + 22 + 20 * i, PAL.muted, { size: 17, align: 'center' }));
+    text(ctx, value, (x1 + x2) / 2 - 6, y - 21, PAL.ink, { size: 21, weight: 600, align: 'center' });
+    words.forEach((w, i) => text(ctx, w, (x1 + x2) / 2 - 6, y + 26 + 24 * i, PAL.muted, { size: 20, align: 'center' }));
   }
   function atom(ctx, x, y, sym) {
-    ctx.save(); ctx.beginPath(); ctx.arc(x, y, 15, 0, Math.PI * 2); ctx.fillStyle = F.el(sym); ctx.fill();
+    ctx.save(); ctx.beginPath(); ctx.arc(x, y, 19, 0, Math.PI * 2); ctx.fillStyle = F.el(sym); ctx.fill();
     ctx.lineWidth = 1.5; ctx.strokeStyle = PAL.ink; ctx.stroke(); ctx.restore();
-    hits.push({ x, y, r: 16, name: `${sym}, ${NAME[sym]}` });
+    hits.push({ x, y, r: 20, name: `${sym}, ${NAME[sym]}` });
   }
 
   function draw() {
     const { ctx } = begin(d.c); hits.length = 0;
-    const A = S.a, X = S.x, ma = mA.v, mx = mX.v, total = ma + mx;
+    const A = S.a, X = S.x, total = M.v, pa = P.v, dec = S.rm[3];
+    const ma = (total * pa) / 100, mx = total - ma;
     const na = ma / MM[A], nx = mx / MM[X], low = Math.min(na, nx);
     const ra = na / low, rx = nx / low, w = whole([ra, rx]);
     const formula = w ? sub(A, w.n[0]) + sub(X, w.n[1]) : null;
-    const fmtM = (m, r) => m.toFixed(r[3]);
+    const book = Math.abs(pa - S.p) < 0.005;
 
-    /* percent composition: the sample's mass split by element (bar 140 to 1260) */
-    const bx0 = 140, bx1 = 1260, by = 112, bh = 36, split = bx0 + (bx1 - bx0) * (ma / total);
+    /* the sample: its mass split by element (bar 150 to 1250), outlined in the referent's colour while it is the book's */
+    const bx0 = 150, bx1 = 1250, by = 112, bh = 46, split = bx0 + (bx1 - bx0) * (pa / 100);
     [[bx0, split, A], [split, bx1, X]].forEach(([x0, x1, sym]) => {
       ctx.save(); ctx.fillStyle = alpha(F.el(sym), 0.45); ctx.fillRect(x0, by, x1 - x0, bh);
       ctx.lineWidth = 2; ctx.strokeStyle = PAL.ink; ctx.strokeRect(x0, by, x1 - x0, bh); ctx.restore();
-      if (x1 - x0 > 50) text(ctx, sym, (x0 + x1) / 2, by + bh / 2, PAL.ink, { size: 20, weight: 600, align: 'center' });
+      if (x1 - x0 > 50) text(ctx, sym, (x0 + x1) / 2, by + bh / 2, PAL.ink, { size: 23, weight: 600, align: 'center' });
     });
-    /* the sample itself, outlined in its referent's colour */
-    ctx.save(); ctx.lineWidth = 4; ctx.strokeStyle = F.ref(S.ref); ctx.strokeRect(bx0 - 3, by - 3, bx1 - bx0 + 6, bh + 6); ctx.restore();
-    for (let x = bx0 + 18; x < bx1; x += 36) hits.push({ x, y: by + bh / 2, r: 18, name: S.name });
-    const pa = (100 * ma) / total;
-    text(ctx, `% ${A} = ${pa.toFixed(2)}%`, bx0, by + bh + 24, PAL.ink, { size: 19 });
-    text(ctx, `% ${X} = ${(100 - pa).toFixed(2)}%`, bx1, by + bh + 24, PAL.ink, { size: 19, align: 'right' });
-    text(ctx, `mass of sample ${total.toFixed(2)} g`, 700, by + bh + 24, C('mass'), { size: 19, weight: 600, align: 'center' });
+    ctx.save(); ctx.lineWidth = 4; ctx.strokeStyle = book ? F.ref(S.ref) : PAL.ink; ctx.strokeRect(bx0 - 3, by - 3, bx1 - bx0 + 6, bh + 6); ctx.restore();
+    const barName = book ? S.name : `a sample of ${NAME[A]} and ${NAME[X]}`;
+    for (let x = bx0 + 23; x < bx1; x += 46) hits.push({ x, y: by + bh / 2, r: 23, name: barName });
+    text(ctx, `${pa.toFixed(2)}% ${A}`, bx0, by + bh + 28, PAL.ink, { size: 21 });
+    text(ctx, `${(100 - pa).toFixed(2)}% ${X}`, bx1, by + bh + 28, PAL.ink, { size: 21, align: 'right' });
+    F.rich(ctx, ['sample, ', [`${total.toFixed(dec)} g`, C('mass')]], 700, by + bh + 28, { size: 21, align: 'center' });
 
     /* the chart: mass to moles for each element, joined, divided by the lower, made whole */
-    const yA = 262, yX = 402, yM = 332, bw = 200, bhh = 76;
-    const xMass = 120, xMol = 480, xJoin = 620, xRatio = 890, xForm = 1240;
-    [[A, ma, na, yA, S.ra], [X, mx, nx, yX, S.rx]].forEach(([sym, m, n, y, r]) => {
-      box(ctx, xMass, y, bw, bhh, C('mass'), `mass of ${sym} atoms`, `${fmtM(m, r)} g`);
-      box(ctx, xMol, y, bw, bhh, C('amount'), `moles of ${sym} atoms`, `${sig(n)} mol`);
-      step(ctx, xMass + bw / 2 + 6, xMol - bw / 2 - 6, y, ['divide by', 'molar mass'], `÷ ${MMS[sym]} g/mol`);
-      line(ctx, xMol + bw / 2, y, xJoin, y, PAL.ink, 3);
+    const yA = 296, yX = 456, yM = 376, bhh = 92;
+    const xMass = 118, wMass = 204, xMol = 490, wMol = 204, xJoin = 624, xRatio = 924, wRatio = 224, xForm = 1293, wForm = 194;
+    [[A, ma, na, yA], [X, mx, nx, yX]].forEach(([sym, m, n, y]) => {
+      box(ctx, xMass, y, wMass, bhh, C('mass'), `mass of ${sym} atoms`, `${m.toFixed(dec)} g`);
+      box(ctx, xMol, y, wMol, bhh, C('amount'), `moles of ${sym} atoms`, `${sig(n)} mol`);
+      step(ctx, xMass + wMass / 2 + 4, xMol - wMol / 2 - 4, y, ['divide by', 'molar mass'], `÷ ${MMS[sym]} g/mol`);
+      line(ctx, xMol + wMol / 2, y, xJoin, y, PAL.ink, 4);
     });
-    line(ctx, xJoin, yA, xJoin, yX, PAL.ink, 3);
-    step(ctx, xJoin, xRatio - bw / 2 - 6, yM, ['divide by lowest', 'number of moles'], `÷ ${sig(low)} mol`);
-    box(ctx, xRatio, yM, bw, bhh, PAL.ink, `${A} to ${X} mole ratio`, `${ra.toFixed(3)} : ${rx.toFixed(3)}`, PAL.ink);
-    step(ctx, xRatio + bw / 2 + 6, xForm - bw / 2 - 6, yM, ['lowest whole', 'numbers'], w ? `× ${w.k}` : '× ?');
-    box(ctx, xForm, yM, bw, bhh, PAL.ink, 'empirical formula', formula ?? 'no small ratio', formula ? PAL.ink : PAL.muted);
+    line(ctx, xJoin, yA - 2, xJoin, yX + 2, PAL.ink, 4);
+    step(ctx, xJoin, xRatio - wRatio / 2 - 4, yM, ['divide by lowest', 'number of moles'], `÷ ${sig(low)} mol`);
+    box(ctx, xRatio, yM, wRatio, bhh, PAL.ink, `${A} to ${X} mole ratio`, `${ra.toFixed(3)} : ${rx.toFixed(3)}`);
+    step(ctx, xRatio + wRatio / 2 + 4, xForm - wForm / 2 - 4, yM, ['convert ratio to', 'lowest whole', 'numbers'], w ? `× ${w.k}` : '');
+    box(ctx, xForm, yM, wForm, bhh, PAL.ink, 'empirical formula', formula ?? 'not whole', formula ? {} : { color: PAL.muted, size: 23 });
 
-    /* the empirical formula unit in the book's atom colours */
-    if (w && w.n[0] + w.n[1] <= 14) {
-      const atoms = [...Array(w.n[0]).fill(A), ...Array(w.n[1]).fill(X)], per = 7;
-      atoms.forEach((sym, i) => {
-        const row = Math.floor(i / per), inRow = Math.min(per, atoms.length - row * per), j = i % per;
-        atom(ctx, xForm + (j - (inRow - 1) / 2) * 34, yM + 76 + row * 34, sym);
+    /* the empirical formula unit, a row of atoms for each element */
+    if (w) {
+      [[A, w.n[0]], [X, w.n[1]]].forEach(([sym, n], row) => {
+        const x1 = xForm + wForm / 2 - 20;
+        for (let i = 0; i < n; i++) atom(ctx, x1 - (n - 1 - i) * 42, yM + 122 + row * 46, sym);
       });
     }
 
-    headline(ctx, formula
-      ? `${fmtM(ma, S.ra)} g ${A} and ${fmtM(mx, S.rx)} g ${X} contain ${sig(na)} mol ${A} and ${sig(nx)} mol ${X}, so the empirical formula is ${formula}.`
-      : `${fmtM(ma, S.ra)} g ${A} and ${fmtM(mx, S.rx)} g ${X} contain ${sig(na)} mol ${A} and ${sig(nx)} mol ${X}, a ratio no small whole numbers fit.`);
-    readout(d.readout,
-      `\\kn_{\\text{${A}}} = \\frac{\\km_{\\text{${A}}}}{\\kMM_{\\text{${A}}}} = \\frac{${hue('mass', `${fmtM(ma, S.ra)}\\ \\text{g}`)}}{${hue('mass', `${MMS[A]}\\ \\text{g/mol}`)}} = ${hue('amount', `${sig(na)}\\ \\text{mol}`)}`,
-      w ? `Dividing both amounts by ${sig(low)} mol gives ${ra.toFixed(3)} to ${rx.toFixed(3)}${w.k > 1 ? `, and multiplying by ${w.k} gives whole numbers` : ''}.`
-        : `Dividing both amounts by ${sig(low)} mol gives ${ra.toFixed(3)} to ${rx.toFixed(3)}, and no multiplier up to 6 makes both whole.`);
+    headline(ctx, w
+      ? `${formula}: ${atomsOf(w.n[0], A)} for every ${atomsOf(w.n[1], X)}, whatever the mass of the sample.`
+      : `${ra.toFixed(3)} mol of ${A} to ${rx.toFixed(3)} mol of ${X} is not a ratio of small whole numbers.`);
+    const mol = (n) => hue('amount', `${sig(n)}\\ \\text{mol}`);
+    tex(d.readout, `\\kn_{\\text{${A}}} : \\kn_{\\text{${X}}} = ${mol(na)} : ${mol(nx)} = ${ra.toFixed(3)} : ${rx.toFixed(3)}`
+      + (w ? ` ${w.exact ? '=' : '\\approx'} ${w.n[0]} : ${w.n[1]}` : ''));
   }
   still(d, draw);
 })();

@@ -28,6 +28,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -77,6 +80,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "heat label beside its arrow; contact tag kept off the traces"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt flat: every molecule in view with a trail, graph beside"
     }
    ]
   },
@@ -111,6 +118,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "gas sample kept under the headline; repeating note dropped"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "graph alone; the dashed lines are the text's iron pans, in joules"
     }
    ]
   },

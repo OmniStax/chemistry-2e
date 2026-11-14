@@ -26,6 +26,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -33,6 +36,18 @@
  "exercises_lead": "",
  "exercise_notes": "Bloom levels, concept tags, weights and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The unkeyed numerical exercises fs-idm75457248 (coffee diluted with water), fs-idm57057808 (the 70.0-g metal), fs-idm66134336 (KCl in 50.0 g of water), fs-idm54145200 (NaCl and AgNO<sub>3</sub>), fs-idp17899648 (fructose), fs-idp26469408 (a ton of coal), fs-idp47280960 (a teaspoon of sucrose), fs-idm30519744 (a pint of ice cream) and fs-idp47244464 (cereal against isooctane) are left out, and so is part (a) of fs-idm5511248; its part (b) and the unkeyed conceptual exercises fs-idm40469024 and fs-idm15197120 and fs-idp3696624 are kept with a suggested approach marked as OmniStax’s own. The two questions on greater, lesser, or the same are set as choices over the book’s three words. Numeric answers accept 2% tolerance.",
  "figures": [
+  {
+   "id": "fig-heat-meas",
+   "kind": "photo",
+   "number": "5.11",
+   "draws": []
+  },
+  {
+   "id": "fig-calorim",
+   "kind": "photo",
+   "number": "5.12",
+   "draws": []
+  },
   {
    "id": "fig-calorim2",
    "kind": "photo",
@@ -42,17 +57,11 @@
   {
    "id": "sim-calorimeter",
    "kind": "sim",
-   "number": "5.11",
-   "folds": [
-    "5.12",
-    "5.14"
-   ],
+   "number": "5.14",
    "originals": [
-    "/media/ch05/CNX_Chem_05_02_HeatMeas.jpg",
-    "/media/ch05/CNX_Chem_05_02_Calorim.jpg",
     "/media/ch05/CNX_Chem_05_02_HeatTrans2.jpg"
    ],
-   "original_caption": "In a calorimetric determination, either (a) an exothermic process occurs and heat, q, is negative, indicating that thermal energy is transferred from the system to its surroundings, or (b) an endothermic process occurs and heat, q, is positive, indicating that thermal energy is transferred from the surroundings to the system. A simple calorimeter can be constructed from two polystyrene cups. A thermometer and stirrer extend through the cover into the reaction mixture. In a simple calorimetry process, (a) heat, q, is transferred from the hot metal, M, to the cool water, W, until (b) both are at the same temperature.",
+   "original_caption": "In a simple calorimetry process, (a) heat, q, is transferred from the hot metal, M, to the cool water, W, until (b) both are at the same temperature.",
    "draws": [
     "energy",
     "temperature",
@@ -76,6 +85,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "loop lands on the final state; bar labels, q label, readout hues, note"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt from the book's images as Figure 5.14; 5.11 and 5.12 restored"
     }
    ]
   },

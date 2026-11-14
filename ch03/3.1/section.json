@@ -11,7 +11,7 @@
   "Explain the relation between mass, moles, and numbers of atoms or molecules, and perform calculations deriving these quantities from one another"
  ],
  "summary_html": "<p>The formula mass of a substance is the sum of the average atomic masses of each atom represented in the chemical formula and is expressed in atomic mass units. The formula mass of a covalent compound is also called the molecular <span data-concept=\"mass\">mass</span>. A convenient amount unit for expressing very large numbers of atoms or molecules is the <span data-concept=\"mole\">mole</span>. Experimental measurements have determined the number of entities composing 1 <span data-concept=\"mole\">mole</span> of substance to be 6.022 × 10<sup>23</sup>, a quantity called Avogadro’s number. The <span data-concept=\"mass\">mass</span> in grams of 1 <span data-concept=\"mole\">mole</span> of substance is its <span data-concept=\"molar-mass\">molar mass</span>. Due to the use of the same reference substance in defining the atomic mass unit and the <span data-concept=\"mole\">mole</span>, the formula mass (amu) and <span data-concept=\"molar-mass\">molar mass</span> (g/mol) for any substance are numerically equivalent (for example, one H<sub>2</sub>O molecule weighs approximately18 amu and 1 <span data-concept=\"mole\">mole</span> of H<sub>2</sub>O molecules weighs approximately 18 g).</p>",
- "notes": "The Link to Learning note, a video on the size of the mole, is left out. Five of the six boxes-and-arrows diagrams in the solutions of Examples 3.3 to 3.8 are left out, since the interactive figure before the examples draws the same route; Example 3.7 keeps its diagram, which its solution points at.",
+ "notes": "The Link to Learning note, a video on the size of the mole, is left out.",
  "ai": {
   "text": [
    {
@@ -27,6 +27,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -36,38 +39,15 @@
  "figures": [
   {
    "id": "fig-formula-mass",
-   "kind": "sim",
+   "kind": "photo",
    "number": "3.2",
-   "folds": [
-    "3.3",
-    "3.4"
-   ],
-   "originals": [
-    "/media/ch03/CNX_Chem_03_01_chloroform.jpg",
-    "/media/ch03/CNX_Chem_03_01_aspirin.jpg",
-    "/media/ch03/CNX_Chem_03_01_saltMass.jpg"
-   ],
-   "original_caption": "(Figure 3.2) The average mass of a chloroform molecule, CHCl₃, is 119.37 amu, which is the sum of the average atomic masses of each of its constituent atoms. The model shows the molecular structure of chloroform. (Figure 3.3) The average mass of an aspirin molecule is 180.15 amu. The model shows the molecular structure of aspirin, C₉H₈O₄. (Figure 3.4) Table salt, NaCl, contains an array of sodium and chloride ions combined in a 1:1 ratio. Its formula mass is 58.44 amu.",
-   "draws": ["mass"],
-   "conventions": [
-    "C",
-    "H",
-    "O",
-    "Cl",
-    "Na"
-   ],
-   "ai": [
-    {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    },
-    {
-     "model": "claude-opus-5-5",
-     "effort": "high",
-     "part": "compound dropdown, notes dropped, 3D models scaled clear of headline"
-    }
-   ]
+   "draws": []
+  },
+  {
+   "id": "fig-aspirin-mass",
+   "kind": "photo",
+   "number": "3.3",
+   "draws": []
   },
   {
    "id": "fig-ibuprofen-table",
@@ -80,6 +60,12 @@
      "part": "built"
     }
    ]
+  },
+  {
+   "id": "fig-salt-mass",
+   "kind": "photo",
+   "number": "3.4",
+   "draws": []
   },
   {
    "id": "fig-alsulfate-table",
@@ -128,6 +114,32 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "box names shortened, units moved to the values"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: chain fills the stage, estimate line of one mole added"
+    }
+   ]
+  },
+  {
+   "id": "fig-potassium-route",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-fable-5-2",
+     "part": "the book's flowchart put back where the solution points at it"
+    }
+   ]
+  },
+  {
+   "id": "fig-argon-route",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-fable-5-2",
+     "part": "the book's flowchart put back where the solution points at it"
     }
    ]
   },
@@ -136,6 +148,28 @@
    "kind": "photo",
    "number": "3.8",
    "draws": []
+  },
+  {
+   "id": "fig-copper-route",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-fable-5-2",
+     "part": "the book's flowchart put back where the solution points at it"
+    }
+   ]
+  },
+  {
+   "id": "fig-glycine-route",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-fable-5-2",
+     "part": "the book's flowchart put back where the solution points at it"
+    }
+   ]
   },
   {
    "id": "fig-glycine-table",
@@ -170,6 +204,17 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-saccharin-route",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-fable-5-2",
+     "part": "the book's flowchart put back where the solution points at it"
     }
    ]
   },

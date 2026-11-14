@@ -1,19 +1,18 @@
 /* Figures for section 5.3 Enthalpy. Boots against the section's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['5.3'] = function (root, F) {
-const { el, fmt, tex, C, PAL, alpha, ctl, register, begin, line, arrow, text, topline, measure } = F;
+const { fmt, tex, C, PAL, alpha, ctl, register, begin, line, arrow, text, measure } = F;
 const sim = (id, H) => F.sim(root, id, H);
-function readout(host, main, small) { tex(host, main); if (small) host.appendChild(el('small', null, small)); }
 
 const hue = (s) => `\\htmlClass{kv-energy}{${s}}`;
 /* a signed number with its sign always written, as the book writes enthalpy changes */
 const signed = (x, dec) => (x > 0 ? '+' : x < 0 ? '−' : '') + fmt(Math.abs(x), dec);
 const signedTex = (x, dec) => (x > 0 ? '+' : x < 0 ? '-' : '') + fmt(Math.abs(x), dec);
 const lerp = (a, b, k) => a + (b - a) * k;
-function rrect(ctx, x, y, w, h, r, fill, stroke, lw = 2, dash) {
+function rrect(ctx, x, y, w, h, r, fill, stroke, lw = 2) {
   ctx.save(); ctx.beginPath(); ctx.roundRect(x, y, w, h, r);
   if (fill) { ctx.fillStyle = fill; ctx.fill(); }
-  if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = lw; if (dash) ctx.setLineDash(dash); ctx.stroke(); }
+  if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = lw; ctx.stroke(); }
   ctx.restore();
 }
 /* work is told from heat by its stroke: a dashed shaft ending in the same head */
@@ -25,141 +24,143 @@ function dashedArrow(ctx, x1, y1, x2, y2, color, w) {
 }
 
 /* =====================================================================
-   FIGURE 5.19: the first law. A system inside its surroundings, the heat
-   arrow on the left and the work arrow on the right, each pointing in or
-   out by its sign and as long as its size. The internal energy before and
-   after is a pair of levels at the right with ΔU between them. Heat and
-   work are one type and share the energy hue; they are told apart by
-   label and stroke. Still: the relation has no clock.
+   FIGURE 5.19: the first law. On the left the system inside its
+   surroundings, the heat arrow on its left and the work arrow on its
+   right, each pointing in or out by its sign and as long as its size. On
+   the right the internal energy as two levels: from U before the heat
+   arrow, then the work arrow from where the heat arrow ends, landing on
+   U after, with one ΔU arrow spanning both. Heat and work are one type
+   and share the energy hue; heat is solid and work dashed. Still.
 ===================================================================== */
 (function () {
-  const d = sim('sim-first-law', 470);
-  const q = ctl(d.controls, { label: '\\kq', cls: 'energy', min: -100, max: 100, step: 1, value: 40, unit: 'kJ', dec: 0, aria: 'heat flowing into the system in kilojoules',
+  const d = sim('sim-first-law', 460);
+  const q = ctl(d.controls, { label: '\\kq', cls: 'energy', min: -50, max: 50, step: 1, value: 40, unit: 'kJ', dec: 0, aria: 'heat, positive into the system, in kilojoules',
     specials: [{ at: () => -w.v, label: 'ΔU = 0' }] });
-  const w = ctl(d.controls, { label: '\\kwork', cls: 'energy', min: -100, max: 100, step: 1, value: -15, unit: 'kJ', dec: 0, aria: 'work done on the system in kilojoules',
+  const w = ctl(d.controls, { label: '\\kwork', cls: 'energy', min: -50, max: 50, step: 1, value: -15, unit: 'kJ', dec: 0, aria: 'work, positive when done on the system, in kilojoules',
     specials: [{ at: () => -q.v, label: 'ΔU = 0' }] });
-  const SX = 560, SY = 270, RX = 170, RY = 95;
-  /* arrows run 40 to 240 units long for 0 to 100 kJ; ΔU levels move 0.72 units per kJ, ±144 at ±200 kJ */
-  const len = (v) => (Math.abs(v) / 100) * 200 + 40, UK = 0.72, UX = 1080, UW = 200;
+  const hits = []; F.hover(d.stage, () => hits);
+  const SX = 410, SY = 230, RX = 160, RY = 112;
+  /* the boundary arrows run 36 to 186 units for 0 to 50 kJ; the levels move 1.95 units per kJ, ±195 units at ΔU = ±100 kJ */
+  const len = (v) => 36 + (Math.abs(v) / 50) * 150, UK = 1.95;
+  const LX0 = 972, LX1 = 1232, QX = 1022, WX = 1107, DX = 1192;
   function draw() {
     const { ctx } = begin(d.c);
     const ce = C('energy'), dU = q.v + w.v;
-    rrect(ctx, 30, 84, 1340, 370, 8, alpha(PAL.soft, 0.7), PAL.rule, 1.5);
-    text(ctx, 'Surroundings', 60, 118, PAL.muted, { size: 20 });
+    hits.length = 0;
+    /* the surroundings and the system */
+    rrect(ctx, 24, 20, 766, 420, 8, alpha(PAL.soft, 0.7), PAL.rule, 1.5);
+    text(ctx, 'Surroundings', 407, 56, PAL.ink, { size: 22, align: 'center' });
     ctx.save(); ctx.beginPath(); ctx.ellipse(SX, SY, RX, RY, 0, 0, 2 * Math.PI);
-    ctx.fillStyle = PAL.panel; ctx.fill(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.stroke(); ctx.restore();
-    text(ctx, 'System', SX, SY - 18, PAL.ink, { size: 22, align: 'center', base: 'middle' });
-    text(ctx, dU > 0 ? 'ΔU > 0' : dU < 0 ? 'ΔU < 0' : 'ΔU = 0', SX, SY + 20, ce, { size: 22, weight: 600, align: 'center', base: 'middle' });
-    /* heat, at the left edge of the system */
-    const qx = SX - RX - 6;
+    ctx.fillStyle = PAL.panel; ctx.fill(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5; ctx.stroke(); ctx.restore();
+    text(ctx, 'System', SX, SY - 20, PAL.ink, { size: 24, align: 'center', base: 'middle' });
+    text(ctx, dU > 0 ? 'ΔU > 0' : dU < 0 ? 'ΔU < 0' : 'ΔU = 0', SX, SY + 20, ce, { size: 24, weight: 600, align: 'center', base: 'middle' });
+    /* heat crosses the boundary on the left, work on the right */
+    const edge = (side, v, sym, into, out, dashed) => {
+      const x0 = SX + side * (RX + 8), cx = x0 + side * 105;
+      text(ctx, sym + ' = ' + (v === 0 ? '0' : signed(v, 0)) + ' kJ', cx, SY - 34, ce, { size: 22, weight: 600, align: 'center' });
+      text(ctx, v > 0 ? into : v < 0 ? out : dashed ? 'no work' : 'no heat', cx, SY + 46, PAL.ink, { size: 20, align: 'center' });
+      if (v === 0) return;
+      const x1 = x0 + side * len(v), a = v > 0 ? [x1, x0] : [x0, x1];
+      (dashed ? dashedArrow : arrow)(ctx, a[0], SY, a[1], SY, ce, 5);
+      hits.push({ x: (x0 + x1) / 2, y: SY, r: 40, name: dashed ? 'work, w' : 'heat, q' });
+    };
+    edge(-1, q.v, 'q', 'heat in', 'heat out', false);
+    edge(1, w.v, 'w', 'work on the system', 'work by the system', true);
+    /* the internal energy: U before, then q, then w, landing on U after */
+    const y0 = SY, yq = y0 - q.v * UK, y1 = y0 - dU * UK, up = dU >= 0 ? 1 : -1;
+    arrow(ctx, 850, 440, 850, 20, alpha(PAL.ink, 0.45), 2.5);
+    text(ctx, 'U', 836, 30, ce, { size: 22, weight: 600, align: 'right', base: 'middle' });
+    hits.push({ x: 850, y: 230, r: 26, name: 'internal energy, increasing upward' });
+    line(ctx, LX0, y0, LX1, y0, ce, 3, [10, 10]);
+    line(ctx, LX0, y1, LX1, y1, ce, 5);
+    text(ctx, 'U before', LX0 - 12, y0 + up * 13, ce, { size: 20, align: 'right', base: 'middle' });
+    text(ctx, 'U after', LX0 - 12, y1 - up * 13, ce, { size: 20, weight: 600, align: 'right', base: 'middle' });
+    if (q.v !== 0 && w.v !== 0) line(ctx, QX, yq, WX, yq, alpha(PAL.ink, 0.4), 2, [4, 8]);
     if (q.v !== 0) {
-      const L = len(q.v);
-      if (q.v > 0) arrow(ctx, qx - L, SY, qx, SY, ce, 5); else arrow(ctx, qx, SY, qx - L, SY, ce, 5);
-      text(ctx, 'q = ' + signed(q.v, 0) + ' kJ', qx - 140, SY - 30, ce, { size: 22, weight: 600, align: 'center' });
-      text(ctx, q.v > 0 ? 'heat in' : 'heat out', qx - 140, SY + 42, PAL.ink, { size: 19, align: 'center' });
-    } else text(ctx, 'no heat flows', qx - 120, SY + 6, PAL.muted, { size: 19, align: 'center' });
-    /* work, at the right edge */
-    const wx = SX + RX + 6;
+      arrow(ctx, QX, y0, QX, yq, ce, 4);
+      if (Math.abs(yq - y0) >= 30) text(ctx, 'q', QX - 14, (y0 + yq) / 2, ce, { size: 22, weight: 600, align: 'right', base: 'middle' });
+      hits.push({ x: QX, y: (y0 + yq) / 2, r: 24, name: 'heat, q = ' + signed(q.v, 0) + ' kJ' });
+    }
     if (w.v !== 0) {
-      const L = len(w.v);
-      if (w.v > 0) dashedArrow(ctx, wx + L, SY, wx, SY, ce, 5); else dashedArrow(ctx, wx, SY, wx + L, SY, ce, 5);
-      text(ctx, 'w = ' + signed(w.v, 0) + ' kJ', wx + 140, SY - 30, ce, { size: 22, weight: 600, align: 'center' });
-      text(ctx, w.v > 0 ? 'work done on the system' : 'work done by the system', wx + 140, SY + 42, PAL.ink, { size: 19, align: 'center' });
-    } else text(ctx, 'no work is done', wx + 120, SY + 6, PAL.muted, { size: 19, align: 'center' });
-    /* the internal energy before and after */
-    const y0 = SY, y1 = SY - dU * UK;
-    line(ctx, UX, y0, UX + UW, y0, ce, 3, [10, 10]);
-    line(ctx, UX, y1, UX + UW, y1, ce, 5);
-    text(ctx, 'U before', UX + UW + 10, y0 + (dU < 0 ? -12 : 14), ce, { size: 19, base: 'middle' });
-    if (dU !== 0) {
-      text(ctx, 'U after', UX + UW + 10, y1 + (dU < 0 ? 14 : -12), ce, { size: 19, weight: 600, base: 'middle' });
-      if (Math.abs(y1 - y0) > 26) arrow(ctx, UX + UW / 2, y0, UX + UW / 2, y1 + (dU > 0 ? 2 : -2), ce, 4);
-      text(ctx, 'ΔU = ' + signed(dU, 0) + ' kJ', UX + UW / 2, Math.max(y0, y1) + 34, ce, { size: 20, weight: 600, align: 'center', base: 'middle' });
-    } else text(ctx, 'U after is the same', UX + UW / 2, y0 + 30, ce, { size: 19, align: 'center' });
-    const qs = q.v > 0 ? 'absorbs ' + q.v + ' kJ of heat' : q.v < 0 ? 'loses ' + -q.v + ' kJ of heat' : 'neither gains nor loses heat';
-    const ws = w.v > 0 ? 'has ' + w.v + ' kJ of work done on it' : w.v < 0 ? 'does ' + -w.v + ' kJ of work on the surroundings' : 'does no work';
-    const us = dU > 0 ? 'its internal energy rises by ' + dU + ' kJ' : dU < 0 ? 'its internal energy falls by ' + -dU + ' kJ' : 'its internal energy does not change';
-    topline(ctx, 'The system ' + qs + ' and ' + ws + ', so ' + us + '.');
-    readout(d.readout, `\\kdU = \\kq + \\kwork = (${hue(signedTex(q.v, 0))}\\ \\text{kJ}) + (${hue(signedTex(w.v, 0))}\\ \\text{kJ}) = ${hue(signedTex(dU, 0))}\\ \\text{kJ}`);
+      dashedArrow(ctx, WX, yq, WX, y1, ce, 4);
+      if (Math.abs(y1 - yq) >= 30) text(ctx, 'w', WX + 14, (yq + y1) / 2, ce, { size: 22, weight: 600, base: 'middle' });
+      hits.push({ x: WX, y: (yq + y1) / 2, r: 24, name: 'work, w = ' + signed(w.v, 0) + ' kJ' });
+    }
+    if (Math.abs(y1 - y0) > 10) arrow(ctx, DX, y0, DX, y1, ce, 6);
+    text(ctx, 'ΔU = ' + (dU === 0 ? '0' : signed(dU, 0)) + ' kJ', LX1 + 14, (y0 + y1) / 2, ce, { size: 22, weight: 600, base: 'middle' });
+    tex(d.readout, `\\kdU = \\kq + \\kwork = (${hue(signedTex(q.v, 0))}\\ \\text{kJ}) + (${hue(signedTex(w.v, 0))}\\ \\text{kJ}) = ${hue(signedTex(dU, 0))}\\ \\text{kJ}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
 
 /* =====================================================================
-   FIGURE 5.24: the Hess ladder. Three enthalpy levels, one overall arrow
-   and two step arrows between them, for the book's carbon dioxide
-   (Figure 5.24), iron(III) chloride (Example 5.13) and the reaction of
-   Example 5.15 taken by way of its elements. Reversing turns every arrow
-   round and changes every sign; the factor stretches every level from the
-   top one. The levels and arrows are enthalpies, in the energy hue; the
-   formulas are ink. Still: nothing here has a clock.
+   FIGURE 5.24: the Hess ladder. Three enthalpy levels on an axis in kJ
+   with the elements at 0, one arrow for the reaction in one step and two
+   for its two steps, for the book's carbon dioxide (the image's numbers),
+   iron(III) chloride (Example 5.13) and the reaction of Example 5.15
+   taken by way of its elements, whose first step climbs. Reversing turns
+   every arrow round and swaps which level holds the reactants. Levels,
+   axis and arrows are enthalpies, in the energy hue; formulas are ink.
+   The axis is fixed at +40 to −430 kJ, which holds all three. Still.
 ===================================================================== */
 (function () {
-  const d = sim('sim-hess', 580);
+  const d = sim('sim-hess', 560);
+  /* levels: the reactants, the intermediate set, the products, each at the sum of its enthalpies of formation */
   const RX = {
-    co2: { levels: [['C(s) + O₂(g)', 0], ['CO(g) + ½O₂(g)', -111], ['CO₂(g)', -394]], dec: 0 },
+    co2: { levels: [['C(s) + O₂(g)', 0], ['CO(g) + ½O₂(g)', -111], ['CO₂(g)', -393.5]], dec: 1 },
     fecl3: { levels: [['Fe(s) + 3/2 Cl₂(g)', 0], ['FeCl₂(s) + ½Cl₂(g)', -341.8], ['FeCl₃(s)', -399.5]], dec: 1 },
     hno3: { levels: [['3NO₂(g) + H₂O(l)', -186.23], ['3/2 N₂(g) + 7/2 O₂(g) + H₂(g)', 0], ['2HNO₃(aq) + NO(g)', -323.03]], dec: 2 },
   };
   const pick = F.select(d.controls, { label: '\\text{reaction}', aria: 'the reaction and its two steps', value: 'co2',
-    options: [{ value: 'co2', label: 'CO₂ (Figure 5.24)' }, { value: 'fecl3', label: 'FeCl₃ (Example 5.13)' }, { value: 'hno3', label: 'HNO₃ (Example 5.15)' }] });
+    options: [{ value: 'co2', label: 'C + O₂ → CO₂' }, { value: 'fecl3', label: 'Fe + 3/2 Cl₂ → FeCl₃' }, { value: 'hno3', label: '3NO₂ + H₂O → 2HNO₃ + NO' }] });
   const dir = F.choice(d.controls, { label: '\\text{direction}', aria: 'the direction of every equation', value: 'fwd',
     options: [{ value: 'fwd', label: 'forward' }, { value: 'rev', label: 'reverse' }] });
-  const f = ctl(d.controls, { label: '\\text{factor}', cls: '', min: 0.5, max: 2, step: 0.5, value: 1, unit: '', dec: 1, aria: 'the factor every equation is multiplied by', detents: [0.5, 1, 2] });
-  /* the enthalpy scale runs from +50 kJ down to −850 kJ, past the −799 kJ that twice the iron(III) chloride ladder reaches */
-  const TOP = 120, BOT = 520, HMAX = 50, HMIN = -850, Y = (h) => TOP + ((HMAX - h) / (HMAX - HMIN)) * (BOT - TOP);
-  const A = { x0: 200, x1: 560 }, M = { x0: 640, x1: 1010 }, E = { x0: 200, x1: 1010 };
-  const XO = 330, X1 = 600, X2 = 900;
+  const hits = []; F.hover(d.stage, () => hits);
+  const Y = (h) => 100 - h;                                  /* one unit per kJ: 0 kJ at y = 100, −400 kJ at y = 500 */
+  const A = { x0: 210, x1: 650 }, M = { x0: 560, x1: 1010 }, E = { x0: 210, x1: 1010 };
+  const XO = 340, X1 = 605, X2 = 860, AX = 120, KX = 1080;
+  /* the book's image prints −111 beside −282.5 and −393.5: a value loses a trailing .0 */
+  const num = (v, dec) => signed(v, dec).replace(/\.0$/, ''), numTex = (v, dec) => signedTex(v, dec).replace(/\.0$/, '');
   function draw() {
     const { ctx } = begin(d.c);
-    const ce = C('energy'), r = RX[pick.value], k = f.v;
-    const hs = pick.mix((v) => RX[v].levels.map((l) => l[1]));
-    const s = dir.mix((v) => (v === 'rev' ? 1 : 0));
-    const yA = Y(hs[0] * k), yM = Y(hs[1] * k), yE = Y(hs[2] * k);
-    const sign = dir.value === 'rev' ? -1 : 1;
-    const d1 = (hs[1] - hs[0]) * k, d2 = (hs[2] - hs[1]) * k, dO = (hs[2] - hs[0]) * k;
-    const exo = dO * sign < 0;
-    const lines = topline(ctx, 'Step 1 (' + signed(d1 * sign, r.dec) + ' kJ) and step 2 (' + signed(d2 * sign, r.dec) + ' kJ) add up to ' + signed(dO * sign, r.dec)
-      + ' kJ, the same as the overall reaction in one step, which is ' + (exo ? 'exothermic.' : 'endothermic.'));
-    /* every box drawn so far, so the arrow labels can step clear of the levels, the formulas and each other */
-    const taken = [{ l: 0, r: 1400, t: 0, b: lines === 2 ? 96 : 68 }];
-    const clash = (b) => taken.some((o) => b.l < o.r + 6 && o.l < b.r + 6 && b.t < o.b + 4 && o.t < b.b + 4);
-    /* the enthalpy axis, as the book draws it */
-    arrow(ctx, 40, BOT + 20, 40, TOP - 30, ce, 4);
-    text(ctx, 'H increasing', 60, TOP - 30, ce, { size: 20, weight: 600, base: 'middle' });
-    taken.push({ l: 36, r: 44, t: TOP - 30, b: BOT + 20 }, { l: 50, r: 60 + measure(ctx, 'H increasing', { size: 20, weight: 600 }) + 7, t: TOP - 44, b: TOP - 16 });
-    /* the three levels, the start of the reaction on the upper left in the book's order */
-    const pre = k === 1 ? '' : fmt(k, k % 1 ? 1 : 0) + ' × (';
-    const post = k === 1 ? '' : ')';
-    [[A, yA, 0], [M, yM, 1], [E, yE, 2]].forEach(([L, y, i]) => {
-      line(ctx, L.x0, y, L.x1, y, ce, 4);
-      const s0 = pre + r.levels[i][0] + post, ty = i === 2 ? y + 28 : y - 14;
-      text(ctx, s0, L.x0 + 10, ty, PAL.ink, { size: 20 });
-      taken.push({ l: L.x0, r: L.x1, t: y - 3, b: y + 3 }, { l: L.x0 + 3, r: L.x0 + 17 + measure(ctx, s0, { size: 20 }), t: ty - 14, b: ty + 14 });
+    const ce = C('energy'), r = RX[pick.value], rev = dir.value === 'rev', sign = rev ? -1 : 1;
+    const hs = pick.mix((v) => RX[v].levels.map((l) => l[1])), s = dir.mix((v) => (v === 'rev' ? 1 : 0));
+    const yA = Y(hs[0]), yM = Y(hs[1]), yE = Y(hs[2]);
+    const L = r.levels, d1 = (L[1][1] - L[0][1]) * sign, d2 = (L[2][1] - L[1][1]) * sign, dO = (L[2][1] - L[0][1]) * sign;
+    hits.length = 0;
+    /* the enthalpy axis, in kJ from the elements */
+    arrow(ctx, AX, 540, AX, 40, ce, 3);
+    text(ctx, 'H (kJ), elements at 0', AX + 16, 34, ce, { size: 18, weight: 600, base: 'middle' });
+    for (let h = 0; h >= -400; h -= 100) {
+      line(ctx, AX - 8, Y(h), AX, Y(h), ce, 2);
+      text(ctx, fmt(h, 0), AX - 14, Y(h), PAL.muted, { size: 17, align: 'right', base: 'middle' });
+    }
+    /* the three levels and what each holds */
+    [[A, yA, 0, 0], [M, yM, 1, 90], [E, yE, 2, 0]].forEach(([S, y, i, dx]) => {
+      line(ctx, S.x0, y, S.x1, y, ce, 4);
+      text(ctx, L[i][0], S.x0 + 10 + dx, i === 2 ? y + 26 : y - 14, PAL.ink, { size: 21 });
+      hits.push({ x: (S.x0 + S.x1) / 2, y, r: 16, name: 'the enthalpy of ' + L[i][0] });
     });
-    /* the arrows: forward runs top level to middle to bottom; reverse turns each one round */
-    const grow = (x, ya, yb, wdt) => { const t = lerp(ya, yb, s), h = lerp(yb, ya, s); if (Math.abs(h - t) > 8) arrow(ctx, x, t, x, h, ce, wdt); taken.push({ l: x - 4, r: x + 4, t: Math.min(ya, yb), b: Math.max(ya, yb) }); };
-    grow(XO, yA, yE, 6);
-    grow(X1, yA, yM, 4);
-    grow(X2, yM, yE, 4);
-    /* each label beside its arrow at mid-height, or the nearest height that is clear, with a leader when it leaves the arrow's span */
+    /* the arrows: forward runs reactants to intermediate to products; reverse turns each one round */
+    const grow = (x, ya, yb, wdt) => { const t = lerp(ya, yb, s), h = lerp(yb, ya, s); if (Math.abs(h - t) > 8) arrow(ctx, x, t, x, h, ce, wdt); };
+    grow(XO, yA, yE, 7); grow(X1, yA, yM, 4.5); grow(X2, yM, yE, 4.5);
     const lab = (x, ya, yb, v, name, side) => {
-      const str = name + ' = ' + signed(v * sign, r.dec) + ' kJ', w = measure(ctx, str, { size: 20, weight: 600 }) + 14, mid = (ya + yb) / 2;
-      const l = side > 0 ? x + 20 - 7 : x - 20 - w + 7;
-      let y = mid;
-      for (const dy of [0, 24, -24, 48, -48, 72, -72, 96, -96, 120, -120, 144, -144]) {
-        const b = { l, r: l + w, t: mid + dy - 14, b: mid + dy + 14 };
-        if (b.b > 576 || clash(b)) continue;
-        y = mid + dy; taken.push(b); break;
-      }
-      if (y < Math.min(ya, yb) || y > Math.max(ya, yb)) line(ctx, x + side * 6, mid, x + side * 16, y, alpha(ce, 0.5), 1.5, [5, 6]);
-      text(ctx, str, side > 0 ? x + 20 : x - 20, y, ce, { size: 20, weight: 600, base: 'middle', bg: PAL.panel, align: side > 0 ? 'left' : 'right' });
+      const val = num(v, r.dec) + ' kJ', y = (ya + yb) / 2, wd = measure(ctx, name + ' ', { size: 21 }) + measure(ctx, val, { size: 21, weight: 600 });
+      F.rich(ctx, [name + ' ', [val, ce]], side > 0 ? x + 18 : x - 18 - wd, y, { size: 21, base: 'middle', bg: PAL.panel });
+      hits.push({ x, y, r: 22, name: name + ', ΔH° = ' + val });
     };
-    lab(XO, yA, yE, dO, 'overall ΔH°', -1);
-    lab(X1, yA, yM, d1, 'step 1 ΔH°', -1);
-    lab(X2, yM, yE, d2, 'step 2 ΔH°', 1);
-    readout(d.readout, `\\kdHo_{\\text{overall}} = \\kdHo_{1} + \\kdHo_{2} = (${hue(signedTex(d1 * sign, r.dec))}\\ \\text{kJ}) + (${hue(signedTex(d2 * sign, r.dec))}\\ \\text{kJ}) = ${hue(signedTex(dO * sign, r.dec))}\\ \\text{kJ}`,
-      k === 1 && sign === 1 ? '' : 'Reversing an equation changes the sign of its enthalpy change, and multiplying it by a factor multiplies its enthalpy change by the same factor.');
+    lab(XO, yA, yE, dO, 'one step', -1);
+    lab(X1, yA, yM, d1, 'step 1', -1);
+    lab(X2, yM, yE, d2, 'step 2', 1);
+    /* the key at the right: which level holds the reactants, which the products, and the sign of the change */
+    const yR = lerp(yA, yE, s), yP = lerp(yE, yA, s);
+    line(ctx, KX, yR, KX + 40, yR, PAL.ink, 3); line(ctx, KX, yP, KX + 40, yP, PAL.ink, 3);
+    line(ctx, KX + 20, yA, KX + 20, yE, alpha(PAL.ink, 0.4), 2, [4, 8]);
+    text(ctx, 'reactants', KX + 54, yR, PAL.ink, { size: 21, base: 'middle' });
+    text(ctx, 'products', KX + 54, yP, PAL.ink, { size: 21, base: 'middle' });
+    text(ctx, dO < 0 ? 'exothermic,' : 'endothermic,', KX + 54, (yA + yE) / 2 - 14, PAL.ink, { size: 21, weight: 600, base: 'middle' });
+    text(ctx, dO < 0 ? 'products lower' : 'products higher', KX + 54, (yA + yE) / 2 + 14, PAL.ink, { size: 21, base: 'middle' });
+    tex(d.readout, `\\kdHo_{\\text{overall}} = \\kdHo_{1} + \\kdHo_{2} = (${hue(numTex(d1, r.dec))}\\ \\text{kJ}) + (${hue(numTex(d2, r.dec))}\\ \\text{kJ}) = ${hue(numTex(dO, r.dec))}\\ \\text{kJ}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

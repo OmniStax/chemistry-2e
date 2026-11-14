@@ -36,7 +36,7 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
   const jt = F.tween(d, target);
   function settle() { const j = state().joined; if (j !== target) { target = j; jt.to(j, 900); } }
   /* the cylinder: walls, floor, the gas's height per litre */
-  const WL = 130, WR = 650, FLOOR = 600, PERL = 220;
+  const WL = 130, WR = 650, FLOOR = 600, PERL = 240;
   /* sixteen slots on a jittered 6 × 3 grid of the gas, as fractions of its width and height */
   const rand = rng(1807), cells = [];
   for (let r = 0; r < 3; r++) for (let c = 0; c < 6; c++) cells.push([(c + 0.5) / 6 + (rand() - 0.5) * 0.04, (r + 0.5) / 3 + (rand() - 0.5) * 0.12]);
@@ -74,7 +74,8 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
     ctx.fillRect(WL + 2, top - 20, WR - WL - 4, 20); ctx.strokeRect(WL + 2, top - 20, WR - WL - 4, 20);
     ctx.fillRect((WL + WR) / 2 - 9, 70, 18, top - 90); ctx.strokeRect((WL + WR) / 2 - 9, 70, 18, top - 90); ctx.restore();
     hits.push({ x: WL + 60, y: top - 10, r: 14, name: 'the piston' }, { x: (WL + WR) / 2, y: (top + 70) / 2, r: 14, name: 'the piston rod' });
-    text(ctx, '2NO₂ ⇌ N₂O₄', WR + 22, 112, PAL.ink, { size: 24, weight: 600 });
+    text(ctx, '2NO₂ ⇌ N₂O₄', WR + 30, 150, PAL.ink, { size: 24, weight: 600 });
+    [[NO2, 'NO₂', 206], [N2O4, 'N₂O₄', 258]].forEach(([m, s2, y]) => { mol(ctx, WR + 62, y, m); text(ctx, s2, WR + 104, y, PAL.ink, { size: 20 }); });
     /* the partial pressures as two bars beside the cylinder, on 0 to 3.5 atm */
     const ax = F.axes(ctx, { l: 900, r: 1300, t: 190, b: FLOOR }, [0, 1], [0, 3.5], { nx: 0, ny: 7, yl: 'partial pressure (atm)', yc: C('pressure') });
     [[s.n2o4, 'n2o4', 'N₂O₄', 1000], [s.no2, 'no2', 'NO₂', 1200]].forEach(([p, id, name, x]) => {

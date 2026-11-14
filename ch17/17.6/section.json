@@ -73,6 +73,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "Mg block as drawn, legend, steady readout, short caption"
     }
    ]
   }

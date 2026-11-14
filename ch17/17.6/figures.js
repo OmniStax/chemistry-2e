@@ -37,7 +37,7 @@ const lerp = (a, b, k) => a + (b - a) * k;
   const cy = F.cycle(() => T, 1.2);
   const pick = F.choice(d.controls, { label: '\\text{protection}', options: Object.keys(OPT).map((k) => ({ value: k, label: OPT[k].label })), value: 'paint', aria: 'how the iron is protected', onInput: () => cy.reset() });
   const ro = F.readout(d);
-  let hits = [];
+  let hits = [], lastRo = '';
   F.hover(d.stage, () => hits);
 
   /* a soil stipple fixed once, so the soil does not shimmer */
@@ -197,7 +197,8 @@ const lerp = (a, b, k) => a + (b - a) * k;
       { s: 'H₂O', draw: (g, x, y) => h2o(g, x, y) }, { s: `${o.ion} ion`, draw: (g, x, y) => ball(g, x, y, 9, F.el(o.el), 1, true) }], { corner: 'bottom', row: true, size: 18 });
 
     topline(ctx, o.head);
-    ro.set(`\\kEocell = \\mk{c}{\\kEo{}_{\\text{O}_2/\\text{H}_2\\text{O}}} - \\mk{a}{\\kEo{}_{${o.couple}}} = \\mk{cv}{+1.23\\ \\text{V}} - \\mk{av}{(${o.E}\\ \\text{V})} = \\mk{r}{${o.cell}\\ \\text{V}}`, o.note, { form: v });
+    const rtex = `\\kEocell = \\mk{c}{\\kEo{}_{\\text{O}_2/\\text{H}_2\\text{O}}} - \\mk{a}{\\kEo{}_{${o.couple}}} = \\mk{cv}{+1.23\\ \\text{V}} - \\mk{av}{(${o.E}\\ \\text{V})} = \\mk{r}{${o.cell}\\ \\text{V}}`;
+    if (rtex + v !== lastRo) { lastRo = rtex + v; ro.set(rtex, o.note, { form: v }); }
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();

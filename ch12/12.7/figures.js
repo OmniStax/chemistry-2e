@@ -108,7 +108,7 @@ const knots = (ks) => (x) => {
    depth of its middle.
 ===================================================================== */
 (function () {
-  const d = sim('sim-hydrogenation', 560);
+  const d = sim('sim-hydrogenation', 600);
   const LOOP = 11.4, cy = cycle(() => LOOP, 1.4);
   const NI_R = 0.25, NI_Y = -0.13, TOP = NI_Y + NI_R, YS = TOP + 0.07, YC = 0.47, CH = 0.27;
   const NI = [];
@@ -166,8 +166,9 @@ const knots = (ks) => (x) => {
   ];
   const KIND = { h: 'H', c: 'C', e: 'H' };
   const NAME = { H: 'a hydrogen atom, H', C: 'a carbon atom, C' };
-  const RAD = { H: 0.095, C: 0.145 };
-  const SC = 210, V = F.view({ yaw: 0.32, pitch: 0.5, dist: 2600, cx: 690, cy: 360 });
+  /* atoms a little larger than covalent radii on this scale, so the molecules read beside the metal, as the book draws them */
+  const RAD = { H: 0.11, C: 0.165 };
+  const SC = 190, V = F.view({ yaw: 0.32, pitch: 0.5, dist: 2600, cx: 690, cy: 400 });
   /* a scene point to the canvas, and its depth along the line of sight (larger is farther) */
   const cam = [2600 * Math.sin(0.32) * Math.cos(0.5), 2600 * Math.sin(0.5), 2600 * Math.cos(0.32) * Math.cos(0.5)];
   const P = (p) => V.P([p[0] * SC, p[1] * SC, p[2] * SC]);
@@ -184,7 +185,7 @@ const knots = (ks) => (x) => {
   }
   function slab(ctx) {
     /* the block of metal under the top layer of atoms: its top, front and right faces */
-    const x0 = -1.75, x1 = 1.75, z0 = -1.25, z1 = 1.25, yt = NI_Y, yb = NI_Y - 0.4;
+    const x0 = -1.75, x1 = 1.75, z0 = -1.25, z1 = 1.25, yt = NI_Y, yb = NI_Y - 0.25;
     const q = (x, y, z) => P([x, y, z]);
     const faceOf = (pts, k) => { ctx.save(); ctx.beginPath(); pts.forEach((pt, i) => (i ? ctx.lineTo(pt[0], pt[1]) : ctx.moveTo(pt[0], pt[1]))); ctx.closePath(); ctx.fillStyle = F.el('Ni'); ctx.fill(); ctx.fillStyle = alpha(PAL.ink, k); ctx.fill(); ctx.strokeStyle = alpha(PAL.ink, 0.6); ctx.lineWidth = 1.5; ctx.stroke(); ctx.restore(); };
     faceOf([q(x0, yt, z0), q(x1, yt, z0), q(x1, yt, z1), q(x0, yt, z1)], 0.12);
@@ -204,16 +205,16 @@ const knots = (ks) => (x) => {
     for (const it of items) {
       if (it.bond) {
         const b = it.bond, [x1, y1] = P(b.p), [x2, y2] = P(b.q), ni = b.id.startsWith('nic');
-        line(ctx, x1, y1, x2, y2, ni ? PAL.muted : PAL.ink, ni ? 4 : 6);
+        line(ctx, x1, y1, x2, y2, ni ? PAL.muted : PAL.ink, ni ? 4 : 7);
         continue;
       }
       const [x, y, rr] = ball(ctx, it.p, it.el, it.r);
       if (it.el !== 'Ni') hits.push({ x, y, r: rr + 4, name: it.name });
     }
-    const corner = P([-1.75, NI_Y - 0.4, 1.25]);
+    const corner = P([-1.75, NI_Y - 0.25, 1.25]);
     text(ctx, 'Ni surface', corner[0] - 12, corner[1] - 30, PAL.ink, { size: 22, align: 'right' });
-    hits.push({ x: 690, y: P([0, NI_Y, 0])[1], r: 160, name: 'the nickel catalyst, a solid' });
-    F.legend(ctx, { l: 1080, r: 1360, t: 470, b: 540 }, ['C', 'H'].map((e) => ({ s: e === 'C' ? 'carbon' : 'hydrogen', draw: (c, x, y) => { c.save(); c.fillStyle = F.el(e); c.strokeStyle = alpha(PAL.ink, 0.5); c.lineWidth = 1.2; c.beginPath(); c.arc(x, y, e === 'C' ? 11 : 8, 0, 2 * Math.PI); c.fill(); c.stroke(); c.restore(); } })), { corner: 'br' });
+    hits.push({ x: 690, y: P([0, NI_Y, 0])[1], r: 150, name: 'the nickel catalyst, a solid' });
+    F.legend(ctx, { l: 1080, r: 1360, t: 500, b: 580 }, ['C', 'H'].map((e) => ({ s: e === 'C' ? 'carbon' : 'hydrogen', draw: (c, x, y) => { c.save(); c.fillStyle = F.el(e); c.strokeStyle = alpha(PAL.ink, 0.5); c.lineWidth = 1.2; c.beginPath(); c.arc(x, y, e === 'C' ? 11 : 8, 0, 2 * Math.PI); c.fill(); c.stroke(); c.restore(); } })), { corner: 'br' });
   }
   F.tex(d.readout, '\\text{C}_{2}\\text{H}_{4}(g) + \\text{H}_{2}(g) \\xrightarrow{\\;\\text{Ni}\\;} \\text{C}_{2}\\text{H}_{6}(g)');
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });

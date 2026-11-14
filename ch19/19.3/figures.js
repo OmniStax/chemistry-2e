@@ -22,9 +22,9 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
 (function () {
   const d = sim('sim-d-orbitals');
   const names = [];
-  const V = F.view3d(d.stage, { spin: 'idle', h: 560, dist: 13, tilt: 0.3, onRender: () => { if (names.length) hideBehind(); } });
+  const V = F.view3d(d.stage, { spin: 'idle', h: 560, dist: 15, tilt: 0.3, onRender: () => { if (names.length) hideBehind(); } });
   V.setView(-0.62, 0.3);
-  const g = V.part(0); g.position.y = -0.3;
+  const g = V.part(0); g.position.y = -0.45;
   const key = F.makeCanvas(d.stage, 60), c2 = F.makeCanvas(d.stage, 380);
   const ORBS = [
     { v: 'x2y2', label: 'd<sub>x²−y²</sub>', tex: 'd_{x^2-y^2}', name: 'd_{x²−y²}', f: (x, y) => x * x - y * y },
@@ -77,7 +77,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
   let center = null;
   /* an axis name hides while it is seen against the orbital, so no name sits on a lobe */
   function hideBehind() {
-    const o = V.project([0, 0, 0], g), ppu = V.wrap.clientHeight / (2 * (13 / V.at.zoom) * Math.tan(Math.PI / 12));
+    const o = V.project([0, 0, 0], g), ppu = V.wrap.clientHeight / (2 * (15 / V.at.zoom) * Math.tan(Math.PI / 12));
     names.forEach(({ e, p }) => { const q = V.project(p, g); e.style.visibility = Math.hypot(q[0] - o[0], q[1] - o[1]) < 1.05 * RMAX * ppu ? 'hidden' : ''; });
   }
   if (live) {
@@ -88,10 +88,10 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
       g.add(mesh); V.pickable(mesh, 'a lobe of the d orbital; its color is the sign of the wave function'); return { geo: geo3, pos, col, mesh };
     };
     sheets = [sheet(), sheet()];
-    const LA = 3.25;
+    const LA = 2.85;
     [[[LA, 0, 0], 'x'], [[0, LA, 0], 'y'], [[0, 0, LA], 'z']].forEach(([p, nm]) => {
       axes.push(F.mesh.polyline(g, [S(p.map((q) => -q)), S(p)], PAL.muted));
-      const tip = S(p.map((q) => q * 1.08)); names.push({ e: V.label(`<em>${nm}</em>`, tip, g, 0, 'bare'), p: tip });
+      const tip = S(p.map((q) => q * 1.09)); names.push({ e: V.label(`<em>${nm}</em>`, tip, g, 0, 'bare'), p: tip });
     });
     center = F.mesh.sphere(g, [0, 0, 0], 0.07, F.el('M')); V.pickable(center, 'the metal ion, M, at the origin');
     AX6.forEach(() => {

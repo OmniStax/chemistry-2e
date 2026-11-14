@@ -20,7 +20,7 @@ const clamp01 = (x) => Math.max(0, Math.min(1, x));
 (function () {
   const d = sim('sim-titration', 680);
   const KW = 1e-14, CA = 0.1, CB = 0.1, VA = 25, VEQ = CA * VA / CB;
-  const G = { l: 120, r: 1010, t: 140, b: 600 };
+  const G = { l: 110, r: 960, t: 140, b: 600 };
   const MO_RED = '#d9342b', MO_YELLOW = '#f2c12e', LITMUS_RED = '#c8323c', LITMUS_BLUE = '#3a56b8', PHPH_PINK = '#e0479e';
   const IND = {
     mo: { name: 'methyl orange', lo: 3.0, hi: 4.2, acid: () => F.fact(MO_RED), base: () => F.fact(MO_YELLOW), words: ['red', 'orange', 'yellow'] },
@@ -145,24 +145,40 @@ const clamp01 = (x) => Math.max(0, Math.min(1, x));
     hits.push({ x: mx, y: my, r: 16, name: `the ${which === 'strong' ? 'HCl' : ph} solution after ${v.toFixed(2)} mL of NaOH` });
     lab.flush();
 
-    /* the buret over the flask, flat: the titrant level falls as the flask fills */
-    const cx = 1210, top = 150, bt = 300, bw = 15, yb = 600, ys = 410, wb = 118, wn = 34, yl = 320;
-    ctx.save(); ctx.fillStyle = alpha(PAL.muted, 0.18); ctx.fillRect(cx - bw, top + (v / 50) * (bt - 40 - top), 2 * bw, bt - 40 - top - (v / 50) * (bt - 40 - top)); ctx.restore();
-    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.beginPath();
-    ctx.moveTo(cx - bw, top); ctx.lineTo(cx - bw, bt - 40); ctx.lineTo(cx - 4, bt); ctx.lineTo(cx - 4, bt + 30);
-    ctx.moveTo(cx + bw, top); ctx.lineTo(cx + bw, bt - 40); ctx.lineTo(cx + 4, bt); ctx.lineTo(cx + 4, bt + 30); ctx.stroke(); ctx.restore();
-    line(ctx, cx - 30, bt - 18, cx + 30, bt - 18, PAL.ink, 5);
-    for (let m = 0; m <= 50; m += 10) { const yy = top + (m / 50) * (bt - 40 - top); line(ctx, cx - bw, yy, cx - bw + 9, yy, PAL.ink, 2); }
-    hits.push({ x: cx, y: (top + bt) / 2, r: 40, name: `buret of 0.100 M NaOH, ${v.toFixed(2)} mL delivered` });
-    const half = (y) => (y <= ys ? wn : wn + (wb - wn) * (y - ys) / (yb - ys));
-    const level = yb - 44 - (v / 50) * 120;
-    const liquid = (fill, a) => { ctx.save(); ctx.globalAlpha *= a; ctx.fillStyle = fill; ctx.beginPath(); ctx.moveTo(cx - half(level), level); ctx.lineTo(cx + half(level), level); ctx.lineTo(cx + wb, yb); ctx.lineTo(cx - wb, yb); ctx.closePath(); ctx.fill(); ctx.restore(); };
-    liquid(PAL.muted, 0.16);
-    liquid(ind.mixColor((k) => tint(k, pExact)), 0.7);
-    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.lineJoin = 'round'; ctx.beginPath();
-    ctx.moveTo(cx - wn - 8, yl); ctx.lineTo(cx - wn, yl + 8); ctx.lineTo(cx - wn, ys); ctx.lineTo(cx - wb, yb); ctx.lineTo(cx + wb, yb); ctx.lineTo(cx + wn, ys); ctx.lineTo(cx + wn, yl + 8); ctx.lineTo(cx + wn + 8, yl); ctx.stroke(); ctx.restore();
-    hits.push({ x: cx, y: (ys + yb) / 2, r: 80, name: `flask of 25.00 mL of 0.100 M ${which === 'strong' ? 'HCl' : ph} with ${ic.name}, ${word}, ${(VA + v).toFixed(2)} mL in all` });
-
+    /* the bench, flat, as 4.5 draws it: a stand and clamp holding a 50 mL buret whose level has fallen by the
+       volume delivered, its stopcock and tip inside the neck of a 125 mL conical flask; the flask's liquid stands
+       at the level its 25.00 mL of sample plus the titrant come to, in the indicator's colour at that pH */
+    const BX = 1236, BW = 26, RODX = 1078, BENCH = 652, Yb = (mL) => 156 + 5.6 * mL, COCK = Yb(50) + 32, TIP = COCK + 58;
+    const FB = BENCH - 24, FN = FB - 92, FM = FN - 28, WB = 96, WN = 22;
+    const levelOf = (mL) => { const w = Math.cbrt(WB ** 3 - clamp01(mL / 125) * (WB ** 3 - WN ** 3)); return { y: FB - ((WB - w) / (WB - WN)) * (FB - FN), w }; };
+    const flaskPath = () => { ctx.beginPath(); ctx.moveTo(BX - WN - 5, FM); ctx.lineTo(BX - WN, FM + 6); ctx.lineTo(BX - WN, FN); ctx.lineTo(BX - WB + 3, FB - 10); ctx.quadraticCurveTo(BX - WB, FB, BX - WB + 12, FB); ctx.lineTo(BX + WB - 12, FB); ctx.quadraticCurveTo(BX + WB, FB, BX + WB - 3, FB - 10); ctx.lineTo(BX + WN, FN); ctx.lineTo(BX + WN, FM + 6); ctx.lineTo(BX + WN + 5, FM); };
+    ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5; ctx.lineJoin = 'round';
+    ctx.beginPath(); ctx.roundRect(RODX - 40, FB, BX + WB + 24 - (RODX - 40), BENCH - FB, 5); ctx.fill(); ctx.stroke();
+    ctx.beginPath(); ctx.roundRect(RODX - 5, 84, 10, FB - 84, 3); ctx.fill(); ctx.stroke();
+    const CY = Yb(30);
+    ctx.beginPath(); ctx.roundRect(RODX - 13, CY - 15, 26, 30, 4); ctx.fill(); ctx.stroke();
+    ctx.fillRect(RODX + 13, CY - 5, BX - BW / 2 - 10 - RODX - 13, 10); ctx.strokeRect(RODX + 13, CY - 5, BX - BW / 2 - 10 - RODX - 13, 10);
+    [-1, 1].forEach((s) => { ctx.beginPath(); ctx.moveTo(BX - BW / 2 - 10, CY + s * 4); ctx.lineTo(BX - BW / 2 - 10, CY + s * 19); ctx.lineTo(BX + BW / 2 + 6, CY + s * 19); ctx.lineTo(BX + BW / 2 + 6, CY + s * 12); ctx.lineTo(BX - BW / 2 - 3, CY + s * 12); ctx.lineTo(BX - BW / 2 - 3, CY + s * 4); ctx.closePath(); ctx.fill(); ctx.stroke(); });
+    ctx.restore();
+    ctx.save(); ctx.fillStyle = alpha(cV, 0.24); ctx.beginPath(); ctx.moveTo(BX - BW / 2, Yb(v)); ctx.lineTo(BX + BW / 2, Yb(v)); ctx.lineTo(BX + BW / 2, Yb(50) + 9); ctx.lineTo(BX + 5, COCK - 8); ctx.lineTo(BX - 5, COCK - 8); ctx.lineTo(BX - BW / 2, Yb(50) + 9); ctx.closePath(); ctx.fill(); ctx.restore();
+    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+    [-1, 1].forEach((s) => { ctx.beginPath(); ctx.moveTo(BX + s * (BW / 2 + 4), Yb(0) - 42); ctx.lineTo(BX + s * BW / 2, Yb(0) - 36); ctx.lineTo(BX + s * BW / 2, Yb(50) + 9); ctx.lineTo(BX + s * 5, COCK - 8); ctx.moveTo(BX + s * 5, COCK + 8); ctx.lineTo(BX + s * 5, TIP - 20); ctx.lineTo(BX + s * 2.5, TIP); ctx.stroke(); });
+    ctx.restore();
+    for (let mL = 0; mL <= 50; mL += 1) { const big = mL % 10 === 0; if (mL % 5 && !big) continue; line(ctx, BX + BW / 2, Yb(mL), BX + BW / 2 - (big ? BW : 14), Yb(mL), PAL.ink, big ? 2 : 1.2); if (big) text(ctx, String(mL), BX + BW / 2 + 8, Yb(mL), PAL.muted, { size: 17 }); }
+    ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.roundRect(BX - 18, COCK - 7, 36, 14, 4); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = PAL.ink; ctx.beginPath(); ctx.roundRect(BX - 3, COCK - 13, 6, 26, 3); ctx.fill(); ctx.restore();
+    ctx.save(); ctx.strokeStyle = cV; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(BX - BW / 2 + 2, Yb(v) - 3); ctx.quadraticCurveTo(BX, Yb(v) + 3, BX + BW / 2 - 2, Yb(v) - 3); ctx.stroke(); ctx.restore();
+    text(ctx, '0.100 M NaOH', BX, Yb(0) - 60, PAL.ink, { size: 18, align: 'center' });
+    const lv = levelOf(VA + v), tintNow = ind.mixColor((k) => tint(k, pExact));
+    ctx.save(); flaskPath(); ctx.clip();
+    ctx.fillStyle = alpha(PAL.muted, 0.14); ctx.fillRect(BX - WB - 4, lv.y, 2 * WB + 8, FB - lv.y + 4);
+    ctx.fillStyle = alpha(tintNow, 0.75); ctx.fillRect(BX - WB - 4, lv.y, 2 * WB + 8, FB - lv.y + 4);
+    ctx.restore();
+    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.lineJoin = 'round'; ctx.lineCap = 'round'; flaskPath(); ctx.stroke(); ctx.restore();
+    line(ctx, BX - lv.w + 3, lv.y, BX + lv.w - 3, lv.y, alpha(PAL.ink, 0.5), 2);
+    hits.push({ x: BX, y: (Yb(v) + Yb(50)) / 2, r: 26, name: `buret of 0.100 M NaOH, ${v.toFixed(2)} mL delivered` },
+      { x: BX, y: COCK, r: 20, name: 'stopcock' }, { x: (RODX + BX) / 2, y: CY, r: 28, name: 'clamp that holds the buret' }, { x: RODX, y: 380, r: 16, name: 'stand' },
+      { x: BX, y: (lv.y + FB) / 2, r: 70, name: `flask of 25.00 mL of 0.100 M ${which === 'strong' ? 'HCl' : ph} with ${ic.name}, ${word}; ${(VA + v).toFixed(2)} mL in all` });
   }
   register(d.fig, { update: () => {}, draw });
 })();

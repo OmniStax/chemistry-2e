@@ -127,6 +127,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt flat with every molecule visible, bars beside, caption cut"
     }
    ]
   },

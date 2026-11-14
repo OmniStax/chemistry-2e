@@ -294,8 +294,8 @@ const DARK = '#000000';
    chosen one over them with λ_max marked and the visible band painted
    under it, and the classical prediction for the same temperature dashed
    beside it, climbing without limit at short wavelengths. Still.
-   Axes fixed: 0 to 3000 nm as the book's, and 0 to 11 arbitrary units
-   with the 5500 K maximum at 9.6, where the book draws it.
+   Axes fixed: 0 to 3000 nm as the book's, and 0 to 12.5 arbitrary units
+   with the 5500 K maximum at 9.6, which leaves its label clear of the region names.
 ===================================================================== */
 (function () {
   const d = sim('sim-blackbody', 600);
@@ -308,22 +308,22 @@ const DARK = '#000000';
   const planck = (T) => (lam) => (lam <= 20 ? 0 : S * raw(lam, T));
   /* the classical curve: Planck's with the vibrating atoms allowed any energy, intensity ∝ T/λ⁴ */
   const classical = (T) => (lam) => (S * lam * T) / (C2 * Math.pow(lam / 1000, 5));
-  const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 2000, max: 5500, step: 10, value: 4400, unit: 'K', dec: 0, aria: 'temperature of the blackbody', detents: BOOK });
+  const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 2500, max: 5500, step: 10, value: 4400, unit: 'K', dec: 0, aria: 'temperature of the blackbody', detents: BOOK });
   function draw() {
     const { ctx } = begin(d.c);
     const Tv = T.v, cw = C('wavelength'), lm = WIEN / Tv, pk = planck(Tv)(lm);
-    const ax = axes(ctx, B, [0, 3000], [0, 11], { nx: 6, ny: 0, xl: 'wavelength λ (nm)', xc: cw, yl: 'intensity (arbitrary units)' }), { X, Y } = ax;
+    const ax = axes(ctx, B, [0, 3000], [0, 12.5], { nx: 6, ny: 0, xl: 'wavelength λ (nm)', xc: cw, yl: 'intensity (arbitrary units)' }), { X, Y } = ax;
     const clip = (f) => { ctx.save(); ctx.beginPath(); ctx.rect(B.l, B.t - 2, B.r - B.l, B.b - B.t + 4); ctx.clip(); f(); ctx.restore(); };
     /* the regions */
     [400, 700].forEach((v) => line(ctx, X(v), B.t, X(v), B.b, alpha(PAL.ink, 0.35), 2, [10, 10]));
     text(ctx, 'ultraviolet', X(200), B.t + 18, PAL.muted, { size: 17, align: 'center' });
     text(ctx, 'visible', X(550), B.t + 18, PAL.muted, { size: 17, align: 'center' });
-    text(ctx, 'infrared', X(1750), B.t + 18, PAL.muted, { size: 17, align: 'center' });
+    text(ctx, 'infrared', X(1500), B.t + 18, PAL.muted, { size: 17, align: 'center' });
     /* the visible band under the chosen curve, in the colours of that light */
     clip(() => paintVisible(ctx, X, B.b, (nm) => Math.max(B.t, Y(planck(Tv)(nm)))));
     /* the book's four temperatures, faint and named in the key (the lower two lie too close to the axis to label), and the line through their maxima */
     BOOK.forEach((t0) => F.plot(ctx, ax, planck(t0), alpha(PAL.ink, 0.3), { w: 2, x: [25, 3000] }));
-    F.plot(ctx, ax, (lam) => planck(WIEN / lam)(lam), alpha(cw, 0.7), { w: 2, x: [WIEN / 5500, WIEN / 2000], dash: [6, 8] });
+    F.plot(ctx, ax, (lam) => planck(WIEN / lam)(lam), alpha(cw, 0.7), { w: 2, x: [WIEN / 5500, WIEN / 2500], dash: [6, 8] });
     BOOK.forEach((t0) => dot(ctx, X(WIEN / t0), Y(planck(t0)(WIEN / t0)), cw, true, 5));
     /* the classical prediction, then the observed curve over it */
     F.plot(ctx, ax, classical(Tv), PAL.ink, { w: 3, x: [150, 3000], dash: [10, 10] });
@@ -334,7 +334,7 @@ const DARK = '#000000';
     F.legend(ctx, ax, [
       { s: 'observed at ' + Tv + ' K', color: PAL.ink, w: 5 },
       { s: 'classical theory at ' + Tv + ' K', color: PAL.ink, w: 3, dash: [10, 10] },
-      { s: 'observed at 2500, 3400, 4400, 5500 K, lowest to highest', color: alpha(PAL.ink, 0.3), w: 2 },
+      { s: 'observed at 2500, 3400, 4400 and 5500 K', color: alpha(PAL.ink, 0.3), w: 2 },
       { s: 'the maxima, λ_{max}', color: alpha(cw, 0.7), w: 2, dash: [6, 8] },
     ], { corner: 'tr' });
     topline(ctx, 'At ' + Tv + ' K the observed curve peaks at ' + fmt(lm, 0) + ' nm, ' + (lm < 400 ? 'in the ultraviolet' : lm <= 700 ? 'in the visible' : 'in the infrared') + '.');

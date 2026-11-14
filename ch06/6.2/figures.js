@@ -219,7 +219,7 @@ const nName = (n) => (n === Infinity ? 'n = ∞' : 'n = ' + n);
     line(ctx, 1150, b0, 1150, b1, PAL.ink, 2); line(ctx, 1140, b0, 1150, b0, PAL.ink, 2); line(ctx, 1140, b1, 1150, b1, PAL.ink, 2);
     text(ctx, 'excited states', 1168, (b0 + b1) / 2, PAL.ink, { size: 20 });
     if (same) {
-      dot(ctx, EX, Y(ni), cel, true, 9); hits.push({ x: EX, y: Y(ni), r: 13, name: 'the electron' });
+      dot(ctx, EX, Y(ni), cel, true, 7); hits.push({ x: EX, y: Y(ni), r: 13, name: 'the electron' });
       topline(ctx, 'In ' + ion + ' the electron stays on n = ' + ni + ', so no photon is absorbed or emitted.');
       tex(d.readout, `\\kEn=-\\frac{\\kk Z^{2}}{n^{2}}=-\\frac{(${sciT(K)}\\ \\text{J})(${Z})^{2}}{${ni}^{2}}=${hu('energy', sciT(energy(ni, Z)) + '\\ \\text{J}')}`);
       return;
@@ -239,8 +239,8 @@ const nName = (n) => (n === Infinity ? 'n = ∞' : 'n = ' + n);
     F.rich(ctx, [[nmU(nm), cw], ', ' + region(nm)], 270, ym + 74, { size: 20, align: 'center', bg: PAL.panel });
     /* the electron: hollow where it started, filled where it is */
     const ey = y1 + (y2 - y1) * jump;
-    if (jump > 0.02) dot(ctx, EX, y1, cel, false, 9);
-    dot(ctx, EX, ey, cel, true, 9); hits.push({ x: EX, y: ey, r: 13, name: 'the electron' });
+    if (jump > 0.02) dot(ctx, EX, y1, cel, false, 7);
+    dot(ctx, EX, ey, cel, true, 7); hits.push({ x: EX, y: ey, r: 13, name: 'the electron' });
     topline(ctx, emit
       ? 'In ' + ion + ' the electron falls from n = ' + ni + ' to n = ' + nf + ' and the atom emits a photon of ' + region(nm) + '.'
       : 'In ' + ion + ' a photon of ' + region(nm) + ' is absorbed and the electron rises from n = ' + ni + ' to n = ' + nf + '.');

@@ -291,7 +291,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
           const inMag = g.mag && pi === 0;
           if (labelled || (g.mag && !inMag && c.T >= s.mag[0] && c.T <= s.mag[1])) return;
           labelled = true;
-          place(ctx, [[`${fmtT(c.T, Math.abs(c.T) < 10 && inMag ? 1 : 0)} °C`, C('temperature')]], x, yP, 17,
+          place(ctx, [[`${fmtT(c.T, inMag ? (Math.abs(c.T) < 1 ? 2 : 1) : 0)} °C`, C('temperature')]], x, yP, 17,
             [[0, -24, 'center'], [0, 24, 'center'], [10, -24, 'left'], [-10, -24, 'right'], [10, 24, 'left'], [-10, 24, 'right']]);
         });
       });

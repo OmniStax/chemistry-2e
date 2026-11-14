@@ -67,7 +67,7 @@ function orbital(v, g, at, a, b, L, color, name, { opacity = 1 } = {}) {
   const geo = new T.BufferGeometry(); geo.setAttribute('position', new T.BufferAttribute(pos, 3)); geo.setIndex(INDEX); geo.computeVertexNormals();
   const m = new T.Mesh(geo, F.mesh.mat(color, opacity < 1 ? { transparent: true, opacity, depthWrite: false, side: T.DoubleSide } : { side: T.DoubleSide, shininess: 30 }));
   /* lobes with p character drawn a little slimmer than the bare profile, as the book draws them; an s orbital stays round */
-  const slim = 1 - 0.2 * bl; m.scale.set(slim, 1, slim);
+  const slim = 1 - 0.38 * bl; m.scale.set(slim, 1, slim);
   m.position.set(at[0], at[1], at[2]);
   m.quaternion.setFromUnitVectors(new T.Vector3(0, 1, 0), new T.Vector3(ax[0], ax[1], ax[2]));
   g.add(m); if (name && opacity > 0.3) v.pickable(m, name); return m;
@@ -106,7 +106,7 @@ function stage3(d, o) {
       l.el.style.left = q[0] + 'px'; l.el.style.top = q[1] + 'px';
     });
   }
-  v = F.view3d(d.stage, { h: o.h, dist: o.dist, tilt: o.tilt ?? 0.3, spin: 'idle', onRender: place });
+  v = F.view3d(d.stage, { h: o.h, dist: o.dist, tilt: o.tilt ?? 0.3, spin: o.spin ?? 'idle', onRender: place });
   if (o.yaw != null) v.setView(o.yaw, o.tilt ?? 0.3);
   return {
     v,
@@ -303,7 +303,7 @@ bench('sim-sp3', 4, {
    angle. Still: a slider and a choice.
 ===================================================================== */
 (function () {
-  const { d, S, v, top, key } = frame('sim-ethane', { h: 560, dist: 9.2, tilt: 0.3, yaw: 0.3 });
+  const { d, S, v, top, key } = frame('sim-ethane', { h: 520, dist: 7.2, tilt: 0.38, yaw: 0.32, spin: 'off' });
   const g = v.part(0);
   const atoms = F.choice(d.controls, { label: '\\text{atoms}', aria: 'apart or bonded', options: [{ value: 'apart', label: 'apart' }, { value: 'bonded', label: 'bonded' }], value: 'bonded' });
   const phi = F.ctl(d.controls, { label: '\\varphi', cls: 'angle', min: 0, max: 120, step: 1, value: 60, unit: '°', dec: 0, detents: [0, 60, 120], aria: 'turn of the right-hand CH3 group about the C–C bond' });
@@ -343,7 +343,7 @@ bench('sim-sp3', 4, {
    points along it as the outer atoms fade. Still: two choices.
 ===================================================================== */
 (function () {
-  const { d, S, v, top, key } = frame('sim-sp3d', { h: 560, dist: 8.2, tilt: 0.28, yaw: 0.42 });
+  const { d, S, v, top, key } = frame('sim-sp3d', { h: 540, dist: 7.0, tilt: 0.28, yaw: 0.42 });
   const g = v.part(0);
   const MOL = { pcl5: { n: 5, c: 'P', x: 'Cl', rc: 0.42, rx: 0.36, name: 'PCl<sub>5</sub>', cn: 'phosphorus', xn: 'chlorine' }, sf6: { n: 6, c: 'S', x: 'F', rc: 0.42, rx: 0.3, name: 'SF<sub>6</sub>', cn: 'sulfur', xn: 'fluorine' } };
   const mol = F.choice(d.controls, { label: '\\text{molecule}', aria: 'molecule', options: [{ value: 'pcl5', label: 'PCl<sub>5</sub>' }, { value: 'sf6', label: 'SF<sub>6</sub>' }], value: 'pcl5' });
@@ -370,7 +370,7 @@ bench('sim-sp3', 4, {
     if (tag !== sig) {
       sig = tag; S.clear();
       one('pcl5', mol.a('pcl5'), h); one('sf6', mol.a('sf6'), h);
-      if (at) ARCS[m.n].forEach(([i, j, t]) => angle3(S, g, SITES[m.n][i], SITES[m.n][j], hyb ? L * 1.12 : 0.95, t));
+      if (at) ARCS[m.n].forEach(([i, j, t]) => angle3(S, g, SITES[m.n][i], SITES[m.n][j], hyb ? L * 1.2 : 1.2, t));
       v.invalidate();
     }
     const five = m.n === 5;
@@ -390,10 +390,10 @@ bench('sim-sp3', 4, {
    old set fades as the new one grows.
 ===================================================================== */
 (function () {
-  const { d, S, v, top, key } = frame('sim-hybrid-sets', { h: 560, dist: 7.6, tilt: 0.3, yaw: 0.42 });
+  const { d, S, v, top, key } = frame('sim-hybrid-sets', { h: 540, dist: 6.2, tilt: 0.3, yaw: 0.42 });
   const g = v.part(0);
   const n = F.choice(d.controls, { label: '\\text{regions}', aria: 'number of regions of electron density', options: [2, 3, 4, 5, 6].map((i) => ({ value: String(i), label: String(i) })), value: '4' });
-  const L = 1.25, TIP = L * 1.02;
+  const L = 1.25, TIP = L * 1.1;
   /* the edges of each arrangement: pairs of sites at its smallest angles (and the equatorial triangle of five) */
   function edges(i) {
     const s = SITES[i], out = [];

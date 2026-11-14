@@ -29,6 +29,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5"
    }
   ]
  },
@@ -39,9 +42,6 @@
   {
    "id": "fig-o2-lewis",
    "kind": "figure",
-   "originals": [
-    "/media/ch08/CNX_Chem_08_04_O2_img.jpg"
-   ],
    "draws": [],
    "ai": [
     {
@@ -53,6 +53,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "lone pairs as the book draws them"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "reverted to the book's image"
     }
    ]
   },
@@ -64,10 +68,8 @@
     "/media/ch08/CNX_Chem_08_04_Gouy.jpg"
    ],
    "original_caption": "A Gouy balance compares the mass of a sample in the presence of a magnetic field with the mass with the electromagnet turned off to determine the number of unpaired electrons in a sample.",
-   "draws": [],
-   "conventions": [
-    "O",
-    "N"
+   "draws": [
+    "mass"
    ],
    "ai": [
     {
@@ -79,7 +81,14 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "instruction note repeating the caption dropped"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt from the image: magnets fixed, pole gap, field; masses; caption"
     }
+   ],
+   "facts": [
+    "#7fa6e8"
    ]
   },
   {
@@ -90,12 +99,18 @@
     "/media/ch08/CNX_Chem_08_04_waveadd.jpg"
    ],
    "original_caption": "(a) When in-phase waves combine, constructive interference produces a wave with greater amplitude. (b) When out-of-phase waves combine, destructive interference produces a wave with less (or no) amplitude.",
-   "draws": ["angle"],
+   "draws": [
+    "angle"
+   ],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "crest guides; readout one chain with 2A cos(Δφ/2); caption cut"
     }
    ]
   },
@@ -113,7 +128,10 @@
     "/media/ch08/CNX_Chem_08_04_pMOpi.jpg"
    ],
    "original_caption": "(Figure 8.29) Sigma (σ) and sigma-star (σ*) molecular orbitals are formed by the combination of two <em>s</em> atomic orbitals. The dots (·) indicate the locations of nuclei. (Figure 8.30) Combining wave functions of two <em>p</em> atomic orbitals along the internuclear axis creates two molecular orbitals, σ<sub><em>p</em></sub> and σ*<sub><em>p</em></sub>. (Figure 8.31) Side-by-side overlap of each two <em>p</em> orbitals results in the formation of two π molecular orbitals. Combining the out-of-phase orbitals results in an antibonding molecular orbital with two nodes. One contains the internuclear axis, and one is perpendicular to the axis. Combining the in-phase orbitals results in a bonding orbital. There is a node (blue) containing the internuclear axis with the two lobes of the orbital located above and below this node.",
-   "draws": [],
+   "draws": [
+    "length",
+    "wavefunction"
+   ],
    "ai": [
     {
      "model": "claude-opus-5-5",
@@ -124,15 +142,16 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "framing, headline symbols typeset, controls on one row, caption"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt: true contour surfaces, distance slider, no view buttons"
     }
    ]
   },
   {
    "id": "fig-ao-types",
    "kind": "figure",
-   "originals": [
-    "/media/ch08/CNX_Chem_08_04_AOtype_img.jpg"
-   ],
    "draws": [],
    "ai": [
     {
@@ -144,6 +163,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "readout repeating the drawn labels dropped"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "reverted to the book's image"
     }
    ]
   },
@@ -188,20 +211,18 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "headline a sentence, electrons on lines, names above connectors"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt as the book's diagrams, filling the stage; caption cut"
     }
    ]
   },
   {
    "id": "sim-period2",
-   "kind": "sim",
+   "kind": "photo",
    "number": "8.37",
-   "originals": [
-    "/media/ch08/CNX_Chem_08_04_X2MOs-bb74.jpg"
-   ],
-   "original_caption": "This shows the MO diagrams for each homonuclear diatomic molecule in the second period. The orbital energies decrease across the period as the effective nuclear charge increases and atomic radius decreases. Between N₂ and O₂, the order of the orbitals changes.",
-   "draws": [
-    "energy"
-   ],
+   "draws": [],
    "ai": [
     {
      "model": "claude-opus-5-5",
@@ -212,6 +233,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "note repeating the caption dropped"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "reverted to the book's image"
     }
    ]
   },
@@ -236,6 +261,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "names drawn above the connectors"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "book's heights; π pair beside σ; unmixed places traced; caption"
     }
    ]
   },
@@ -255,6 +284,10 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt: levels of an alternating chain; gap set by the solid"
     }
    ]
   }

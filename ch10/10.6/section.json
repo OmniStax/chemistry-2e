@@ -27,6 +27,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5"
    }
   ]
  },
@@ -60,6 +63,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "atoms view smaller and lower, note cut to packing and a = 2r"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt: stage filled, key strip, contact line, no view buttons"
     }
    ]
   },
@@ -102,6 +109,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "atoms view smaller, cell as a dropdown, note trimmed via macros"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt: stage filled, key, contact line, center atoms shaded"
     }
    ]
   },
@@ -121,6 +132,10 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt: opaque layers, key, a unit-cell state facing a cube face"
     }
    ]
   },
@@ -128,23 +143,6 @@
    "id": "fig-ex-ca",
    "kind": "figure",
    "draws": [],
-   "ai": [
-    {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
-  },
-  {
-   "id": "sim-density",
-   "kind": "sim",
-   "draws": ["mass", "volume", "length", "density"],
-   "conventions": [
-    "Po",
-    "Fe",
-    "Ca"
-   ],
    "ai": [
     {
      "model": "claude-opus-5-5",
@@ -174,6 +172,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "angle arcs larger, names unstacked after each render"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt: monoclinic base-centered as the book, key, two-line readout"
     }
    ]
   },
@@ -205,6 +207,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "scene smaller and lowered below the headline"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "scene enlarged, key strip, no view buttons, caption cut"
     }
    ]
   },
@@ -235,6 +241,10 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "scene enlarged, key strip, one readout line per ion"
     }
    ]
   },
@@ -274,6 +284,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "d sin θ labels below the lower plane"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "caption cut, labels checked at the slider extremes"
     }
    ]
   },

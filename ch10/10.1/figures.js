@@ -8,509 +8,317 @@ const TAU = 2 * Math.PI;
 const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
 const neg = (x) => (x < 0 ? '−' + fmt(-x, 0) : fmt(x, 0));
 const texNum = (x, d = 0) => (x < 0 ? '-' : '') + fmt(Math.abs(x), d);
-const T3D = window.THREE;
-const { sphere: sphere3, stick: stick3 } = F.mesh;
-const palSig = () => [PAL.ink, PAL.panel, PAL.muted, F.el('H'), F.el('O'), F.el('Cl'), F.el('C')].join('|');
-
-/* ---------- vectors, for building molecules in ångströms ---------- */
-const add = (a, b) => [a[0] + b[0], a[1] + b[1], a[2] + b[2]];
-const sub = (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
-const mul = (a, k) => [a[0] * k, a[1] * k, a[2] * k];
-const cross = (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
-const unit = (a) => { const n = Math.hypot(a[0], a[1], a[2]) || 1; return mul(a, 1 / n); };
-const COS_T = 1 / 3, SIN_T = Math.sqrt(8 / 9), HALF = (109.47 / 2) * Math.PI / 180;
-/* the three directions that make the tetrahedral angle with the bond u, turned about u by phi0 from the reference ref */
-function tetraOthers(u, ref, phi0 = 0) {
-  const p = unit(cross(ref, u)), q = cross(u, p);
-  return [0, 1, 2].map((k) => { const f = phi0 + (k * TAU) / 3; return add(mul(u, -COS_T), add(mul(p, SIN_T * Math.cos(f)), mul(q, SIN_T * Math.sin(f)))); });
+/* a reproducible scatter, so the particles start in the same places on every visit */
+function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6d2b79f5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+/* one atom in the element palette, with a faint ink rim so that it shows on the page */
+function atom(ctx, e, x, y, r) {
+  ctx.save(); ctx.fillStyle = F.el(e); ctx.strokeStyle = alpha(PAL.ink, 0.5); ctx.lineWidth = 1.5;
+  ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore();
 }
-/* the two directions left on a tetrahedral atom that has bonds along the unit vectors a and b */
-function tetraPair(a, b) { const m = unit(mul(add(a, b), -1)), w = unit(cross(a, b)); return [add(mul(m, Math.cos(HALF)), mul(w, Math.sin(HALF))), add(mul(m, Math.cos(HALF)), mul(w, -Math.sin(HALF)))]; }
-/* a view from yaw about the vertical and pitch about the horizontal: [x, y, depth], depth toward the reader */
-function turn(p, yaw, pitch) {
-  const x = p[0] * Math.cos(yaw) + p[2] * Math.sin(yaw), z1 = -p[0] * Math.sin(yaw) + p[2] * Math.cos(yaw);
-  return [x, p[1] * Math.cos(pitch) - z1 * Math.sin(pitch), p[1] * Math.sin(pitch) + z1 * Math.cos(pitch)];
-}
-const NAME = { H: 'hydrogen', C: 'carbon', O: 'oxygen', N: 'nitrogen', F: 'fluorine', Cl: 'chlorine', Br: 'bromine', I: 'iodine', At: 'astatine', Ne: 'neon', Ar: 'argon', Kr: 'krypton' };
-
-/* ---------- a molecular scene drawn both ways (book rule: intermolecular forces carry the 2D/3D view choice) ----------
-   A scene is atoms {el, p, r, name}, bonds [i, j] drawn as sticks, and dots [a, b], an intermolecular attraction drawn as a
-   dotted ink line between two points. The flat drawing is the scene seen from one fixed view, the atoms painted far to near
-   so the nearer ones cover the farther; the 3D stage builds the same scene in meshes, mounted on the first switch. */
-function drawScene(ctx, sc, o, hits) {
-  const P = (p) => { const q = turn(p, o.yaw, o.pitch); return [o.cx + q[0] * o.s, o.cy - q[1] * o.s, q[2]]; };
-  const at = sc.atoms.map((a) => ({ ...a, q: P(a.p) }));
-  for (const [a, b] of sc.dots) { const A = P(a), B = P(b); line(ctx, A[0], A[1], B[0], B[1], PAL.ink, 5, [1, 11]); }
-  for (const [i, j] of sc.bonds) { const A = at[i].q, B = at[j].q; line(ctx, A[0], A[1], B[0], B[1], PAL.muted, 10); }
-  at.slice().sort((a, b) => a.q[2] - b.q[2]).forEach((a) => {
-    ctx.save(); ctx.fillStyle = F.el(a.el); ctx.strokeStyle = a.el === 'H' ? PAL.ink : alpha(PAL.ink, 0.45); ctx.lineWidth = a.el === 'H' ? 1.6 : 1.2;
-    ctx.beginPath(); ctx.arc(a.q[0], a.q[1], a.r * o.s, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore();
-  });
-  if (hits) at.slice().sort((a, b) => b.q[2] - a.q[2]).forEach((a) => hits.push({ x: a.q[0], y: a.q[1], r: a.r * o.s, name: a.name }));
-  return P;
-}
-function buildScene(v, g, sc, o = {}) {
-  sc.atoms.forEach((a) => v.pickable(sphere3(g, a.p, a.r, F.el(a.el)), a.name));
-  sc.bonds.forEach(([i, j]) => stick3(g, sc.atoms[i].p, sc.atoms[j].p, 0.09, PAL.muted));
-  sc.dots.forEach(([a, b]) => { const L = Math.hypot(...sub(b, a)), n = Math.max(2, Math.round(L / 0.28)); for (let k = 1; k < n; k++) sphere3(g, add(a, mul(sub(b, a), k / n)), o.dot ?? 0.055, PAL.ink); });
-}
-/* the view choice of such a figure: the flat canvas, or the stage with its buttons and a strip for the headline */
-function twoWays(d, H, opts, onShow) {
-  const VIEW = F.choice(d.controls, { label: '\\text{view}', options: [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }], value: '2d', aria: 'a flat drawing or a scene to turn', onInput: () => show() });
-  const s = { v: null, g: null, get three() { return VIEW.value === '3d'; } };
-  function show() {
-    if (s.three && !s.v) { s.v = F.view3d(d.stage, { spin: 'idle', pitch: [-1.2, 1.2], ...opts }); s.g = s.v.part(0); }
-    d.c.style.display = s.three ? 'none' : '';
-    if (s.v) [s.v.wrap, d.stage.querySelector('.view3d-bar')].forEach((e) => { if (e) e.style.display = s.three ? '' : 'none'; });
-    onShow();
-  }
-  return s;
-}
+/* Table 10.1: the halogens, molar mass (g/mol), atomic radius (pm), melting and boiling points (K) */
+const HAL = [
+  { k: 'F', f: 'F₂', tf: 'F_{2}', name: 'fluorine', M: 38, r: 72, mp: 53, bp: 85 },
+  { k: 'Cl', f: 'Cl₂', tf: 'Cl_{2}', name: 'chlorine', M: 71, r: 99, mp: 172, bp: 238 },
+  { k: 'Br', f: 'Br₂', tf: 'Br_{2}', name: 'bromine', M: 160, r: 114, mp: 266, bp: 332 },
+  { k: 'I', f: 'I₂', tf: 'I_{2}', name: 'iodine', M: 254, r: 133, mp: 387, bp: 457 },
+  { k: 'At', f: 'At₂', tf: 'At_{2}', name: 'astatine', M: 420, r: 150, mp: 575, bp: 610 },
+];
 
 /* =====================================================================
-   FIGURE 10.2: three phases of one substance in a flask, in three
-   dimensions. The temperature slider sets the average kinetic energy; the
-   substance sets how strongly the particles attract, told by its melting
-   and boiling points. Below the melting point the particles vibrate about
-   the sites of a lattice, between the two points they slide past one
-   another in a puddle on the floor, and above the boiling point they fly
-   across the whole flask. Moving: the particles' motion is the idea. The
-   flask stands on a floor, so the pitch stays between 1° and 69° above
-   level; the yaw is free and there is no idle spin, since the particles
-   already move.
+   FIGURE 10.2: one halogen of Table 10.1 in a stoppered flask, drawn
+   flat so that every molecule is seen. The temperature sets how fast the
+   molecules move; the halogen sets how strongly they attract, told by its
+   melting and boiling points. Below the melting point the molecules
+   vibrate about the places of a crystal on the floor of the flask,
+   between the two points they slide over one another in a pool, and
+   above the boiling point they fly across the whole flask. Beside it,
+   each halogen's solid, liquid and gas ranges stand on one temperature
+   axis with the temperature as a line across them, so the reader reads at
+   once which halogens are gases, liquids or solids at that temperature.
+   Moving: the motion against the attraction is the idea.
 ===================================================================== */
 (function () {
-  const d = sim('sim-phases');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.02, 1.2], tilt: 0.3, views: [{ label: 'front', yaw: 0, pitch: 0.12 }, { label: 'corner', yaw: 0.7, pitch: 0.45 }], h: 400, dist: 4.8 });
-  const grp = v.part(0), cnv = F.makeCanvas(d.stage, 230);
-  /* the book's halogens from Table 10.1 and three noble gases, each with its normal melting and boiling points in kelvin */
-  const SUBS = {
-    Ne: { name: 'neon', f: 'Ne', el: 'Ne', two: false, mp: 25, bp: 27 },
-    Ar: { name: 'argon', f: 'Ar', el: 'Ar', two: false, mp: 84, bp: 87 },
-    Kr: { name: 'krypton', f: 'Kr', el: 'Kr', two: false, mp: 116, bp: 120 },
-    F2: { name: 'fluorine', f: 'F_{2}', el: 'F', two: true, mp: 53, bp: 85 },
-    Cl2: { name: 'chlorine', f: 'Cl_{2}', el: 'Cl', two: true, mp: 172, bp: 238 },
-  };
-  const S = F.choice(d.controls, { label: '\\text{substance}', options: Object.keys(SUBS).map((k) => ({ value: k, label: SUBS[k].f.replace('_{2}', '₂') })), value: 'Cl2', aria: 'the substance in the flask', onInput: () => { T.refresh(); } });
-  const sub_ = () => SUBS[S.value];
-  const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 10, max: 260, step: 1, value: 200, unit: 'K', dec: 0, aria: 'temperature in kelvin',
-    specials: [{ at: () => sub_().mp, label: 'melting point' }, { at: () => sub_().bp, label: 'boiling point' }] });
-  const W = 0.62, FLOOR = -0.9, TOP = 0.9, R = 0.1, A = 0.23, SLAB = FLOOR + 0.5;
-  const N = 27;
-  const LAT = [], LIQ = [];
-  for (let i = 0; i < 3; i++) for (let j = 0; j < 3; j++) for (let k = 0; k < 3; k++) LAT.push([(i - 1) * A, FLOOR + R + j * A, (k - 1) * A]);
-  const ps = LAT.map((p, i) => ({ x: p.slice(), u: unit([Math.sin(i * 2.3), Math.cos(i * 1.7), Math.sin(i * 0.9 + 1)]), o: unit([1, 0.2 * Math.sin(i), 0.2 * Math.cos(i)]), w: unit([Math.cos(i), Math.sin(i * 3), 0.5]), ph: [i * 1.1, i * 2.3, i * 0.7] }));
-  let t = 0;
-  const phase = () => { const s = sub_(), T0 = T.v; return T0 < s.mp ? 'solid' : T0 < s.bp ? 'liquid' : 'gas'; };
-  function step(dt) {
-    t += dt;
-    const ph = phase(), T0 = T.v, s = sub_();
-    const vg = 0.12 * Math.sqrt(T0 / 10) + 0.1, vl = 0.4 * vg, amp = 0.012 + 0.02 * Math.min(1.2, T0 / s.mp);
-    ps.forEach((q, i) => {
-      if (ph === 'solid') {
-        const L = LAT[i], tg = [L[0] + amp * Math.sin(9 * t + q.ph[0]), L[1] + amp * Math.sin(11 * t + q.ph[1]), L[2] + amp * Math.sin(10 * t + q.ph[2])];
-        for (let k = 0; k < 3; k++) q.x[k] += (tg[k] - q.x[k]) * Math.min(1, 5 * dt);
-        q.o = unit(add(q.o, mul(sub([1, 0.15 * Math.sin(7 * t + i), 0.15 * Math.cos(8 * t + i)], q.o), Math.min(1, 5 * dt))));
-        return;
-      }
-      const sp = ph === 'gas' ? vg : vl;
-      for (let k = 0; k < 3; k++) q.x[k] += q.u[k] * sp * dt;
-      const top = ph === 'gas' ? TOP - R : SLAB;
-      if (q.x[1] > top) { if (ph === 'liquid') q.x[1] -= Math.min(q.x[1] - top, 1.2 * dt); if (q.u[1] > 0) q.u[1] = -q.u[1]; }
-      if (q.x[1] < FLOOR + R) { q.x[1] = FLOOR + R; q.u[1] = Math.abs(q.u[1]); }
-      for (const k of [0, 2]) { if (Math.abs(q.x[k]) > W - R) { q.x[k] = Math.sign(q.x[k]) * (W - R); q.u[k] = -Math.sign(q.x[k]) * Math.abs(q.u[k]); } }
-      if (ph === 'liquid') q.u = unit(add(q.u, mul([Math.sin(3 * t + q.ph[0]), Math.sin(2.6 * t + q.ph[1]), Math.sin(3.4 * t + q.ph[2])], 0.6 * dt)));
-      q.o = unit(add(q.o, mul(cross(q.w, q.o), 2.5 * sp * dt / 0.3)));
-    });
-    if (phase() === 'liquid') for (let i = 0; i < N; i++) for (let j = i + 1; j < N; j++) {
-      const a = ps[i].x, b = ps[j].x, dd = sub(b, a), L = Math.hypot(...dd), m = 2.1 * R;
-      if (L < m && L > 1e-6) { const push = mul(dd, (m - L) / (2 * L)); for (let k = 0; k < 3; k++) { a[k] -= push[k]; b[k] += push[k]; } }
+  const d = sim('sim-phases', 640);
+  const ROOM = 298;
+  const X = F.choice(d.controls, { label: '\\text{halogen}', options: HAL.map((h) => ({ value: h.k, label: h.f })), value: 'Br', aria: 'the halogen in the flask', onInput: () => { T.refresh(); settle(); } });
+  const hal = () => HAL.find((h) => h.k === X.value);
+  const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 10, max: 650, step: 1, value: ROOM, unit: 'K', dec: 0, aria: 'temperature in kelvin',
+    specials: [{ at: ROOM, label: 'room temperature' }, { at: () => hal().mp, label: 'melting point' }, { at: () => hal().bp, label: 'boiling point' }] });
+  /* the flask: its centre, the top of the glass, the foot of the neck, the base, the half widths of neck and base; the stopper's foot */
+  const FX = 360, RIM = 122, NECK = 214, BASE = 604, NW = 50, BW = 255, STOP = 196;
+  const hw = (y) => (y <= NECK ? NW : NW + ((y - NECK) / (BASE - NECK)) * (BW - NW));
+  function flaskPath(ctx, lip) {
+    ctx.beginPath();
+    if (lip) ctx.moveTo(FX - NW - 9, RIM - 6); else ctx.moveTo(FX - NW, RIM);
+    ctx.lineTo(FX - NW, RIM + (lip ? 3 : 0)); ctx.arcTo(FX - NW, NECK, FX - BW, BASE, 16); ctx.arcTo(FX - BW, BASE, FX + BW, BASE, 26); ctx.arcTo(FX + BW, BASE, FX + NW, NECK, 26); ctx.arcTo(FX + NW, NECK, FX + NW, RIM, 16); ctx.lineTo(FX + NW, RIM + (lip ? 3 : 0));
+    if (lip) ctx.lineTo(FX + NW + 9, RIM - 6);
+  }
+  /* the inward normals of the two sloping walls, and a point on each */
+  const sl = Math.hypot(BW - NW, BASE - NECK), nR = [-(BASE - NECK) / sl, (BW - NW) / sl], nL = [(BASE - NECK) / sl, (BW - NW) / sl];
+  const N = 34, r = rng(1021);
+  const ms = Array.from({ length: N }, () => ({ x: FX, y: BASE - 40, vx: 0, vy: 0, a: r() * TAU, w: (r() - 0.5) * 4, f: 0.6 + 0.8 * r(), ph: [r() * TAU, r() * TAU, r() * TAU], site: null }));
+  const size = () => 4 + hal().r * 0.09;                 /* the drawn atomic radius grows with Table 10.1's, though not in proportion, so that fluorine still fills a pool */
+  /* the places of the crystal: rows of at most eight molecules lying end to end, from the floor up, each row offset by half a place */
+  function sites() {
+    const ra = size(), dx = 3.35 * ra, dy = 2.15 * ra, out = [];
+    for (let j = 0; out.length < N; j++) {
+      const y = BASE - 8 - 1.1 * ra - j * dy, n = Math.max(1, Math.min(8, Math.floor((2 * (hw(y) - 10 - 1.7 * ra)) / dx) + 1)), x0 = FX - ((n - 1) * dx) / 2 + (j % 2 ? dx / 4 : -dx / 4);
+      for (let i = 0; i < n && out.length < N; i++) out.push([x0 + i * dx, y]);
+    }
+    return out;
+  }
+  const phaseAt = (T0, h) => (T0 < h.mp ? 'solid' : T0 < h.bp ? 'liquid' : 'gas');
+  let last = '';
+  /* the walls: the neck above its foot, the sloping sides below it, the floor, the stopper */
+  function walls(m, R) {
+    if (m.y < STOP + R) { m.y = STOP + R; m.vy = Math.abs(m.vy); }
+    if (m.y > BASE - 4 - R) { m.y = BASE - 4 - R; m.vy = -Math.abs(m.vy); }
+    if (m.y < NECK) {
+      if (m.x < FX - NW + R) { m.x = FX - NW + R; m.vx = Math.abs(m.vx); }
+      if (m.x > FX + NW - R) { m.x = FX + NW - R; m.vx = -Math.abs(m.vx); }
+      return;
+    }
+    for (const [n, x0] of [[nR, FX + NW], [nL, FX - NW]]) {
+      const dist = (m.x - x0) * n[0] + (m.y - NECK) * n[1];
+      if (dist < R) { m.x += (R - dist) * n[0]; m.y += (R - dist) * n[1]; const vn = m.vx * n[0] + m.vy * n[1]; if (vn < 0) { m.vx -= 2 * vn * n[0]; m.vy -= 2 * vn * n[1]; } }
     }
   }
-  let sig = '', ms = [];
-  function build() {
-    const s = sub_(), key = S.value + '|' + palSig() + F.el(s.el); if (key === sig || !grp) return; sig = key;
-    v.clear(); ms = [];
-    const glass = new T3D.Mesh(new T3D.BoxGeometry(2 * W, TOP - FLOOR, 2 * W), F.mesh.mat(PAL.ink, { transparent: true, opacity: 0.06, depthWrite: false, side: T3D.DoubleSide }));
-    glass.position.set(0, (TOP + FLOOR) / 2, 0); grp.add(glass);
-    const e = new T3D.LineSegments(new T3D.EdgesGeometry(new T3D.BoxGeometry(2 * W, TOP - FLOOR, 2 * W)), new T3D.LineBasicMaterial({ color: new T3D.Color(PAL.ink) }));
-    e.position.copy(glass.position); grp.add(e);
-    const nm = s.two ? 'a ' + s.name + ' molecule, ' + s.f.replace('_{2}', '₂') : 'a ' + s.name + ' atom, ' + s.f;
-    ps.forEach(() => {
-      const m = new T3D.Group(); grp.add(m);
-      if (s.two) { v.pickable(sphere3(m, [-0.07, 0, 0], 0.085, F.el(s.el)), nm); v.pickable(sphere3(m, [0.07, 0, 0], 0.085, F.el(s.el)), nm); }
-      else v.pickable(sphere3(m, [0, 0, 0], R, F.el(s.el)), nm);
-      ms.push(m);
-    });
-    v.label('sealed flask', [W, TOP, 0], grp, 6);
+  let t = 0;
+  function step(h) {
+    t += h;
+    const hl = hal(), T0 = T.v, ph = phaseAt(T0, hl), ra = size(), R = 1.45 * ra;
+    const vg = Math.max(45, 62 * Math.sqrt(T0 / hl.M));
+    if (ph === 'solid' && last !== 'solid') {
+      /* each molecule takes the nearest free place of the crystal, the lowest molecules first */
+      const free = sites();
+      ms.slice().sort((a, b) => b.y - a.y).forEach((m) => { let bi = 0, bd = Infinity; free.forEach((s, i) => { const dd = Math.hypot(s[0] - m.x, s[1] - m.y); if (dd < bd) { bd = dd; bi = i; } }); m.site = free.splice(bi, 1)[0]; });
+    }
+    if (ph !== 'solid') ms.forEach((m) => { m.site = null; });
+    last = ph;
+    if (ph === 'solid') {
+      const amp = ra * (0.05 + 0.18 * Math.min(1, T0 / hl.mp));
+      ms.forEach((m) => {
+        const tx = m.site[0] + amp * Math.sin(11 * t + m.ph[0]), ty = m.site[1] + amp * Math.sin(13 * t + m.ph[1]), k = Math.min(1, 7 * h);
+        m.x += (tx - m.x) * k; m.y += (ty - m.y) * k; m.vx = 0; m.vy = 0;
+        let da = (0.12 * Math.sin(9 * t + m.ph[2]) - m.a) % Math.PI; if (da > Math.PI / 2) da -= Math.PI; if (da < -Math.PI / 2) da += Math.PI;
+        m.a += da * k;
+      });
+      return;
+    }
+    if (ph === 'gas') {
+      ms.forEach((m) => {
+        let sp = Math.hypot(m.vx, m.vy); const want = vg * m.f;
+        if (sp < 1e-3) { const a = r() * TAU; m.vx = Math.cos(a); m.vy = Math.sin(a); sp = 1; }
+        const k = sp + (want - sp) * Math.min(1, 2 * h); m.vx *= k / sp; m.vy *= k / sp;
+        m.x += m.vx * h; m.y += m.vy * h; m.a += m.w * (vg / 120) * h;
+      });
+    } else {
+      /* a liquid: the molecules settle under a pull to the floor and jostle with the heat, staying in contact */
+      const jig = 3.2 * vg;
+      ms.forEach((m) => {
+        m.vy += 1400 * h; m.vx += (r() - 0.5) * jig * Math.sqrt(h) * 2.2; m.vy += (r() - 0.5) * jig * Math.sqrt(h) * 2.2;
+        const damp = Math.max(0, 1 - 4 * h); m.vx *= damp; m.vy *= damp;
+        m.x += m.vx * h; m.y += m.vy * h; m.w += (r() - 0.5) * 6 * h; m.w *= 0.99; m.a += m.w * h;
+      });
+    }
+    /* contacts: two molecules never overlap; in the gas they bounce off one another */
+    for (let i = 0; i < N; i++) for (let j = i + 1; j < N; j++) {
+      const a = ms[i], b = ms[j], dx = b.x - a.x, dy = b.y - a.y, L = Math.hypot(dx, dy), m2 = 2 * R;
+      if (ph === 'liquid' && L >= m2 && L < 1.5 * m2) {
+        /* neighbours in the liquid pull together, which keeps the pool whole */
+        const ux = dx / L, uy = dy / L, k = 500 * h; a.vx += ux * k; a.vy += uy * k; b.vx -= ux * k; b.vy -= uy * k;
+      }
+      if (L < m2 && L > 1e-6) {
+        const ux = dx / L, uy = dy / L, push = (m2 - L) / 2;
+        a.x -= ux * push; a.y -= uy * push; b.x += ux * push; b.y += uy * push;
+        const rv = (b.vx - a.vx) * ux + (b.vy - a.vy) * uy;
+        if (rv < 0) { const k = ph === 'gas' ? 1 : 0.6; a.vx += k * rv * ux; a.vy += k * rv * uy; b.vx -= k * rv * ux; b.vy -= k * rv * uy; }
+      }
+    }
+    ms.forEach((m) => walls(m, R));
   }
-  const X1 = new T3D.Vector3(1, 0, 0), tmp = new T3D.Vector3();
+  function advance(dt) { const n = Math.max(1, Math.ceil(dt / (1 / 120))); for (let i = 0; i < n; i++) step(Math.min(dt, 0.1) / n); }
+  /* a new halogen starts from a spread of the flask and settles before it is drawn */
+  function settle() {
+    last = '';
+    const sp = sites();
+    ms.forEach((m, i) => { m.x = sp[i][0] + (r() - 0.5) * 6; m.y = sp[i][1] - (phaseAt(T.v, hal()) === 'gas' ? 260 * r() : 0); m.vx = (r() - 0.5) * 60; m.vy = (r() - 0.5) * 60; });
+    for (let i = 0; i < 120; i++) step(1 / 60);
+  }
+  settle();
+  const hits = []; F.hover(d.stage, () => hits);
+  /* the chart: each halogen's solid, liquid and gas ranges on one temperature axis, 0 to 700 K by 100 */
+  const BOX = { l: 760, r: 1196, t: 120, b: 548 };
+  const WHAT = { solid: 'a solid: its molecules vibrate about fixed places', liquid: 'a liquid: its molecules slide past one another but stay together', gas: 'a gas: its molecules fly apart and fill the flask' };
   function draw() {
-    build();
-    ps.forEach((q, i) => { const m = ms[i]; if (!m) return; m.position.set(q.x[0], q.x[1], q.x[2]); m.quaternion.setFromUnitVectors(X1, tmp.set(q.o[0], q.o[1], q.o[2])); });
-    v.invalidate();
-    const s = sub_(), T0 = T.v, ph = phase(), ct = C('temperature');
-    const { ctx } = begin(cnv);
-    const X = (k) => 110 + (k / 260) * 1180, y = 150;
-    line(ctx, X(0), y, X(260), y, PAL.ink, 3);
-    for (let k = 0; k <= 260; k += 20) { line(ctx, X(k), y, X(k), y + 9, PAL.ink, 2); if (k % 40 === 0 && Math.abs(k - T0) > 12) text(ctx, String(k), X(k), y + 26, PAL.muted, { size: 16, align: 'center' }); }
-    text(ctx, 'K', X(260) + 22, y + 26, ct, { size: 16 });
-    line(ctx, X(s.mp), y - 34, X(s.mp), y, PAL.ink, 3); line(ctx, X(s.bp), y - 34, X(s.bp), y, PAL.ink, 3);
-    const close = s.bp - s.mp < 25;
-    text(ctx, 'melts ' + s.mp + ' K', X(s.mp) - 8, y - 48, PAL.ink, { size: 16, align: 'right' });
-    text(ctx, 'boils ' + s.bp + ' K', X(s.bp) + 8, y - 48, PAL.ink, { size: 16, align: 'left' });
-    text(ctx, 'solid', (X(10) + X(s.mp)) / 2, y - 16, PAL.muted, { size: 17, align: 'center' });
-    if (!close) text(ctx, 'liquid', (X(s.mp) + X(s.bp)) / 2, y - 16, PAL.muted, { size: 17, align: 'center' });
-    if (X(260) - X(s.bp) > 60) text(ctx, 'gas', (X(s.bp) + X(260)) / 2, y - 16, PAL.muted, { size: 17, align: 'center' });
-    ctx.save(); ctx.fillStyle = ct; ctx.beginPath(); ctx.moveTo(X(T0), y + 4); ctx.lineTo(X(T0) - 11, y + 44); ctx.lineTo(X(T0) + 11, y + 44); ctx.closePath(); ctx.fill(); ctx.restore();
-    text(ctx, 'T = ' + T0 + ' K', Math.min(Math.max(X(T0), 80), 1320), y + 62, ct, { size: 20, weight: 600, align: 'center' });
-    const WHAT = { solid: 'a solid: the particles vibrate about fixed positions', liquid: 'a liquid: the particles move past each other but stay in contact', gas: 'a gas: the particles move independently and fill the flask' };
-    topline(ctx, 'At ' + T0 + ' K ' + s.name + ' is ' + WHAT[ph] + '.');
-    const mp = hue('temperature', s.mp + '\\ \\text{K}'), bp = hue('temperature', s.bp + '\\ \\text{K}'), tt = `\\kT = ${hue('temperature', T0 + '\\ \\text{K}')}`;
-    const main = ph === 'solid' ? `${tt} < ${mp}\\ \\text{(melting point)}` : ph === 'liquid' ? `\\text{melting point } ${mp} \\le ${tt} < ${bp}\\ \\text{(boiling point)}` : `${tt} \\ge ${bp}\\ \\text{(boiling point)}`;
-    readout(d.readout, main, 'The stronger the attractions between the particles of a substance, the higher the temperature, and so the greater the average kinetic energy, needed to melt it and to boil it.');
+    const { ctx } = begin(d.c); hits.length = 0;
+    const hl = hal(), T0 = T.v, ph = phaseAt(T0, hl), ra = size(), ct = C('temperature');
+    /* the flask: a faint tint of glass, the stopper in the neck, then the glass itself */
+    ctx.save(); flaskPath(ctx, false); ctx.closePath(); ctx.fillStyle = alpha(PAL.muted, 0.07); ctx.fill(); ctx.restore();
+    ctx.save(); ctx.fillStyle = alpha(PAL.muted, 0.55); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.lineJoin = 'round';
+    ctx.beginPath(); ctx.moveTo(FX - NW - 14, 84); ctx.lineTo(FX + NW + 14, 84); ctx.lineTo(FX + NW - 2, STOP); ctx.lineTo(FX - NW + 2, STOP); ctx.closePath(); ctx.fill(); ctx.stroke(); ctx.restore();
+    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.lineJoin = 'round'; ctx.lineCap = 'round'; flaskPath(ctx, true); ctx.stroke(); ctx.restore();
+    hits.push({ x: FX, y: 140, r: 50, name: 'the stopper, which seals the flask' });
+    /* the molecules: a short trail behind each moving one, then its two atoms */
+    const b = 0.62 * ra, nm = 'a ' + hl.name + ' molecule, ' + hl.f;
+    if (ph !== 'solid') ms.forEach((m) => { const k = ph === 'gas' ? 0.16 : 0.1; line(ctx, m.x, m.y, m.x - m.vx * k, m.y - m.vy * k, alpha(F.el(hl.k), 0.3), 1.4 * ra); });
+    ms.forEach((m) => {
+      const c = Math.cos(m.a) * b, s = Math.sin(m.a) * b;
+      atom(ctx, hl.k, m.x - c, m.y - s, ra); atom(ctx, hl.k, m.x + c, m.y + s, ra);
+      hits.push({ x: m.x, y: m.y, r: 1.6 * ra, name: nm });
+    });
+    /* the chart */
+    const g = axes(ctx, BOX, [0, 5], [0, 700], { nx: 0, ny: 7, yl: 'temperature (K)', yc: ct, xl: 'larger molecules, stronger dispersion forces →' });
+    const cw = 58;
+    HAL.forEach((h, i) => {
+      const cx = g.X(i + 0.5), x0 = cx - cw / 2, on = h.k === hl.k;
+      ctx.save();
+      ctx.fillStyle = alpha(PAL.ink, on ? 0.34 : 0.2); ctx.fillRect(x0, g.Y(h.mp), cw, g.Y(0) - g.Y(h.mp));
+      ctx.fillStyle = alpha(PAL.ink, on ? 0.14 : 0.08); ctx.fillRect(x0, g.Y(h.bp), cw, g.Y(h.mp) - g.Y(h.bp));
+      ctx.strokeStyle = on ? PAL.ink : alpha(PAL.ink, 0.3); ctx.lineWidth = on ? 3 : 1.5; ctx.strokeRect(x0, g.Y(700), cw, g.Y(0) - g.Y(700));
+      ctx.restore();
+      text(ctx, h.f, cx, BOX.b + 26, on ? PAL.ink : PAL.muted, { size: 20, weight: on ? 600 : 400, align: 'center' });
+      hits.push({ x: cx, y: g.Y(h.mp / 2), r: 26, name: h.name + ': solid below ' + h.mp + ' K' }, { x: cx, y: g.Y(Math.min(680, h.bp + 60)), r: 26, name: h.name + ': gas above ' + h.bp + ' K' });
+      if (h.bp - h.mp > 25) hits.push({ x: cx, y: g.Y((h.mp + h.bp) / 2), r: 18, name: h.name + ': liquid from ' + h.mp + ' to ' + h.bp + ' K' });
+      if (on) {
+        /* the three ranges named inside the chosen column, where a range is tall enough to hold its name */
+        [['solid', 0, h.mp], ['liquid', h.mp, h.bp], ['gas', h.bp, 700]].forEach(([s, lo, hi]) => { const ym = (g.Y(lo) + g.Y(hi)) / 2; if (g.Y(lo) - g.Y(hi) > 26 && Math.abs(ym - g.Y(T.v)) > 16 && Math.abs(ym - g.Y(ROOM)) > 12) text(ctx, s, cx, (g.Y(lo) + g.Y(hi)) / 2, PAL.ink, { size: 16, align: 'center', bg: PAL.panel }); });
+      }
+    });
+    /* room temperature, and the temperature set, as levels across every column */
+    const yT = g.Y(T0), yR = g.Y(ROOM);
+    if (Math.abs(yT - yR) > 3) {
+      line(ctx, BOX.l, yR, BOX.r, yR, alpha(PAL.ink, 0.45), 2, [10, 10]);
+      if (Math.abs(yT - yR) > 26) text(ctx, 'room temperature', BOX.r + 10, yR, PAL.muted, { size: 16 });
+    }
+    line(ctx, BOX.l, yT, BOX.r, yT, ct, 4);
+    text(ctx, 'T = ' + T0 + ' K', BOX.r + 10, yT, ct, { size: 18, weight: 600 });
+    if (T0 === ROOM) text(ctx, 'room temperature', BOX.r + 10, yT + 24, PAL.muted, { size: 16 });
+    topline(ctx, 'At ' + T0 + ' K ' + hl.name + ' is ' + WHAT[ph] + '.');
+    const mp = hue('temperature', hl.mp + '\\ \\text{K}'), bp = hue('temperature', hl.bp + '\\ \\text{K}'), tt = `\\kT = ${hue('temperature', T0 + '\\ \\text{K}')}`;
+    readout(d.readout, ph === 'solid' ? `${tt} < ${mp}\\ \\text{(melting point)}` : ph === 'liquid' ? `\\text{melting point } ${mp} \\le ${tt} < ${bp}\\ \\text{(boiling point)}` : `${tt} \\ge ${bp}\\ \\text{(boiling point)}`);
   }
   const clk = cycle(() => Infinity, 0);
-  register(d.fig, { update: (dt) => { clk.step(dt, () => 1); step(dt); }, draw });
+  register(d.fig, { update: (dt) => { clk.step(dt, () => 1); advance(dt); }, draw });
 })();
 
 /* =====================================================================
-   FIGURE 10.5: two HCl molecules, the covalent bond within each and the
-   weak attraction between them. Still: nothing in the idea varies. Built
-   both ways behind the view choice, the flat drawing first; the scene has
-   no ground and turns freely within 69° of level.
+   FIGURE 10.6: the dispersion force between two molecules of a halogen of
+   Table 10.1. The electrons of the left molecule shift from end to end on
+   a clock, and the neighbor's electrons follow a moment later, so that the
+   facing ends always carry opposite partial charges and attract. Moving:
+   the book calls the dipoles "rapidly fluctuating". The halogen choice
+   sets the size of the atoms on one fixed scale (Table 10.1's atomic
+   radii) and how far the electrons shift, the polarizability; the readout
+   gives the radius and the boiling point. Flat: the charge moves along one
+   axis, as the book draws it.
 ===================================================================== */
 (function () {
-  const d = sim('sim-intra-inter', 420);
-  const sc = {
-    atoms: [
-      { el: 'Cl', p: [-2.6, 0, 0], r: 0.62, name: 'a chlorine atom, Cl' }, { el: 'H', p: [-1.33, 0, 0], r: 0.36, name: 'a hydrogen atom, H' },
-      { el: 'Cl', p: [1.07, 0, 0], r: 0.62, name: 'a chlorine atom, Cl' }, { el: 'H', p: [2.34, 0, 0], r: 0.36, name: 'a hydrogen atom, H' },
-    ],
-    bonds: [[0, 1], [2, 3]], dots: [[[-0.93, 0, 0], [0.41, 0, 0]]],
-  };
-  sc.atoms.forEach((a) => { a.p[0] += 0.13; });
-  sc.dots[0] = sc.dots[0].map((p) => [p[0] + 0.13, p[1], p[2]]);
-  const hits = []; F.hover(d.stage, () => hits);
-  const HEAD = 'Each HCl molecule is held together by a strong covalent bond; the two molecules attract each other only weakly.';
-  const two = twoWays(d, 420, { h: 380, dist: 8, views: [{ label: 'side', yaw: 0, pitch: 0 }, { label: 'end on', yaw: Math.PI / 2, pitch: 0 }] }, () => draw());
-  let sig = '';
-  function draw() {
-    if (two.three) {
-      const key = palSig(); if (key !== sig && two.g) { sig = key; two.v.clear(); buildScene(two.v, two.g, sc);
-        two.v.label('intramolecular force (strong)', [-1.84, -0.7, 0], two.g, -30); two.v.label('intermolecular force (weak)', [-0.1, -0.5, 0], two.g, -30); two.v.headline(HEAD); }
-      two.v?.invalidate();
-    } else {
-      const { ctx } = begin(d.c); hits.length = 0;
-      const o = { yaw: 0, pitch: 0, cx: 700, cy: 230, s: 130 };
-      const P = drawScene(ctx, sc, o, hits);
-      const [bx, by] = P([-1.84, 0, 0]), [ix, iy] = P([-0.1, 0, 0]);
-      label(ctx, 'intramolecular force (strong)', bx, by + 8, { side: 'below', leader: true, size: 20, gap: 0.62 * o.s + 30 });
-      label(ctx, 'intermolecular force (weak)', ix, iy - 8, { side: 'above', leader: true, size: 20, gap: 0.62 * o.s + 10 });
-      text(ctx, 'H', P([2.47, 0, 0])[0], iy, PAL.ink, { size: 20, weight: 600, align: 'center' });
-      text(ctx, 'Cl', P([1.2, 0, 0])[0], iy, PAL.panel, { size: 22, weight: 600, align: 'center' });
-      text(ctx, 'H', P([-1.2, 0, 0])[0], iy, PAL.ink, { size: 20, weight: 600, align: 'center' });
-      text(ctx, 'Cl', P([-2.47, 0, 0])[0], iy, PAL.panel, { size: 22, weight: 600, align: 'center' });
-      topline(ctx, HEAD);
-    }
-    readout(d.readout, '17\\ \\text{kJ} \\ll 430\\ \\text{kJ}\\quad (\\text{about 25 times more})', 'About 17 kJ overcomes the intermolecular forces in one mole of liquid HCl, but breaking the covalent bonds in one mole of HCl takes about 430 kJ.');
-  }
-  register(d.fig, { update: () => {}, draw });
-})();
-
-/* =====================================================================
-   FIGURE 10.6: the dispersion force between two nonpolar diatomic
-   molecules. The electrons of the left molecule shift from end to end on
-   a clock, and the neighbor's electrons follow a moment later, so that
-   the facing ends always carry opposite partial charges. Moving: the
-   dipoles are "rapidly fluctuating". The halogen choice sets the size of
-   the molecules (Table 10.1's atomic radii) and how far the electrons
-   shift, the polarizability; the readout gives the halogen's melting and
-   boiling points. Flat: the charge shifts along one axis.
-===================================================================== */
-(function () {
-  const d = sim('sim-dispersion', 470);
-  const HAL = [
-    { v: 'F', f: 'F_{2}', name: 'fluorine', r: 72, mp: 53, bp: 85 }, { v: 'Cl', f: 'Cl_{2}', name: 'chlorine', r: 99, mp: 172, bp: 238 },
-    { v: 'Br', f: 'Br_{2}', name: 'bromine', r: 114, mp: 266, bp: 332 }, { v: 'I', f: 'I_{2}', name: 'iodine', r: 133, mp: 387, bp: 457 },
-    { v: 'At', f: 'At_{2}', name: 'astatine', r: 150, mp: 575, bp: 610 },
-  ];
-  const X = F.choice(d.controls, { label: '\\text{halogen}', options: HAL.map((h) => ({ value: h.v, label: h.f.replace('_{2}', '₂') })), value: 'Cl', aria: 'the halogen' });
-  const hal = () => HAL.find((h) => h.v === X.value);
+  const d = sim('sim-dispersion', 520);
+  const X = F.choice(d.controls, { label: '\\text{halogen}', options: HAL.map((h) => ({ value: h.k, label: h.f })), value: 'Cl', aria: 'the halogen' });
+  const hal = () => HAL.find((h) => h.k === X.value);
   const hits = []; F.hover(d.stage, () => hits);
   let t = 0;
+  const CUT = Math.acos(0.62);   /* where the two atoms' outlines meet, as an angle from the line of centres */
   const pulse = (u) => 0.62 * Math.sin(2.1 * u) + 0.38 * Math.sin(3.4 * u + 1.2);
+  /* one molecule, two atoms ra in radius whose centres stand 1.24 ra apart; s, −1 to 1, is how far its electrons have shifted to the right */
   function molecule(ctx, cx, cy, ra, s, h) {
-    const dx = ra * 0.62, x0 = cx - dx - ra, x1 = cx + dx + ra, xb = cx + s * dx;
-    const shape = () => { ctx.beginPath(); ctx.arc(cx - dx, cy, ra, 0, TAU); ctx.arc(cx + dx, cy, ra, 0, TAU); };
-    const a = Math.min(0.92, 0.18 + 0.9 * Math.abs(s));
-    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 6; ctx.beginPath(); ctx.arc(cx - dx, cy, ra, 0, TAU); ctx.stroke(); ctx.beginPath(); ctx.arc(cx + dx, cy, ra, 0, TAU); ctx.stroke(); ctx.restore();
+    const dx = 0.62 * ra, x0 = cx - dx - ra, x1 = cx + dx + ra, k = Math.min(1, Math.abs(s));
+    const shape = () => { ctx.beginPath(); ctx.arc(cx - dx, cy, ra, 0, TAU); ctx.moveTo(cx + dx + ra, cy); ctx.arc(cx + dx, cy, ra, 0, TAU); };
+    const plus = F.mixColor(PAL.soft, F.cat(0), k), minus = F.mixColor(PAL.soft, F.cat(1), k);
     ctx.save(); shape(); ctx.clip();
-    ctx.fillStyle = PAL.panel; ctx.fillRect(x0 - 2, cy - ra - 2, x1 - x0 + 4, 2 * ra + 4);
-    ctx.globalAlpha = a;
-    ctx.fillStyle = s >= 0 ? F.cat(0) : F.cat(1); ctx.fillRect(x0 - 2, cy - ra - 2, xb - x0 + 2, 2 * ra + 4);
-    ctx.fillStyle = s >= 0 ? F.cat(1) : F.cat(0); ctx.fillRect(xb, cy - ra - 2, x1 - xb + 2, 2 * ra + 4);
+    const gr = ctx.createLinearGradient(x0, 0, x1, 0), [cl, cr] = s >= 0 ? [plus, minus] : [minus, plus];
+    gr.addColorStop(0, cl); gr.addColorStop(0.42, cl); gr.addColorStop(0.58, cr); gr.addColorStop(1, cr);
+    ctx.fillStyle = gr; ctx.fillRect(x0 - 2, cy - ra - 2, x1 - x0 + 4, 2 * ra + 4);
     ctx.restore();
+    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(cx - dx, cy, ra, CUT, TAU - CUT); ctx.stroke(); ctx.restore();
+    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(cx + dx, cy, ra, Math.PI + CUT, 3 * Math.PI - CUT); ctx.stroke(); ctx.restore();
     dot(ctx, cx - dx, cy, PAL.ink, true, 7); dot(ctx, cx + dx, cy, PAL.ink, true, 7);
-    hits.push({ x: cx - dx, y: cy, r: ra, name: 'a ' + h.name + ' atom, ' + h.v }, { x: cx + dx, y: cy, r: ra, name: 'a ' + h.name + ' atom, ' + h.v });
-    if (Math.abs(s) > 0.2) {
-      text(ctx, s > 0 ? 'δ+' : 'δ−', x0 + 30, cy, PAL.ink, { size: 24, weight: 600, align: 'center' });
-      text(ctx, s > 0 ? 'δ−' : 'δ+', x1 - 30, cy, PAL.ink, { size: 24, weight: 600, align: 'center' });
-    }
+    const a = Math.max(0, Math.min(1, (k - 0.15) / 0.25));
+    if (a > 0) F.faded(ctx, a, [0, 0], () => {
+      text(ctx, s > 0 ? 'δ+' : 'δ−', x0 + 0.42 * ra, cy, PAL.ink, { size: 24, weight: 600, align: 'center', bg: PAL.panel });
+      text(ctx, s > 0 ? 'δ−' : 'δ+', x1 - 0.42 * ra, cy, PAL.ink, { size: 24, weight: 600, align: 'center', bg: PAL.panel });
+    });
+    hits.push({ x: cx - dx, y: cy, r: ra, name: 'a ' + h.name + ' atom, ' + h.k }, { x: cx + dx, y: cy, r: ra, name: 'a ' + h.name + ' atom, ' + h.k });
     return { x0, x1 };
   }
   function draw() {
     const { ctx } = begin(d.c); hits.length = 0;
-    const h = hal(), ra = h.r * 0.62, amp = Math.min(1, Math.pow(h.r / 150, 1.6));
-    const s1 = amp * pulse(t), s2 = 0.85 * amp * pulse(t - 0.18), gap = 110;
-    const width = 2 * (2 * ra * 1.62) + gap, cxA = 700 - width / 2 + ra * 1.62, cxB = 700 + width / 2 - ra * 1.62, cy = 230;
+    /* one scale for every halogen: 0.85 canvas units per picometre of atomic radius */
+    const h = hal(), ra = h.r * 0.85, amp = 0.35 + 0.65 * (h.r - 72) / (150 - 72);
+    const s1 = amp * pulse(t), s2 = 0.85 * amp * pulse(t - 0.18), gap = 130;
+    const w = 3.24 * ra, cxA = 700 - gap / 2 - w / 2, cxB = 700 + gap / 2 + w / 2, cy = 250;
     const A = molecule(ctx, cxA, cy, ra, s1, h), B = molecule(ctx, cxB, cy, ra, s2, h);
     const k = Math.min(1, Math.abs(s1 * s2) / (0.25 * amp * amp + 0.02));
-    F.faded(ctx, 0.15 + 0.85 * k, [0, 0], () => { line(ctx, A.x1 + 16, cy, B.x0 - 16, cy, PAL.ink, 7, [1, 16]); });
-    label(ctx, 'attractive force', (A.x1 + B.x0) / 2, cy - 10, { side: 'above', leader: true, size: 20, gap: ra + 6 });
-    const yb = cy + ra + 30;
+    F.faded(ctx, 0.15 + 0.85 * k, [0, 0], () => { line(ctx, A.x1 + 18, cy, B.x0 - 18, cy, PAL.ink, 8, [1, 18]); });
+    label(ctx, 'attractive force', (A.x1 + B.x0) / 2, cy - 12, { side: 'above', leader: true, size: 20, gap: Math.max(70, ra + 10) });
+    label(ctx, 'unequal distribution of electrons', cxA, cy - ra - 4, { side: 'above', leader: true, size: 20, gap: 30 });
+    const yb = cy + ra + 34;
     hbracket(ctx, A.x0, A.x1, yb, PAL.ink); hbracket(ctx, B.x0, B.x1, yb, PAL.ink);
-    text(ctx, 'temporary dipoles', 700, yb + 34, PAL.ink, { size: 20, align: 'center' });
-    const ly = 440;
-    dot(ctx, 440, ly, F.cat(0), true, 11); text(ctx, 'δ+, fewer electrons', 460, ly, PAL.ink, { size: 18 });
-    dot(ctx, 760, ly, F.cat(1), true, 11); text(ctx, 'δ−, more electrons', 780, ly, PAL.ink, { size: 18 });
-    topline(ctx, 'Two ' + h.name + ' molecules, ' + h.f + ': the larger the atoms, the farther their electrons shift and the stronger the attraction.');
-    readout(d.readout, `\\text{${h.f.replace('_{2}', '}_2\\text{')}}:\\ \\text{atomic radius } ${h.r}\\ \\text{pm},\\ \\text{melting point } ${hue('temperature', h.mp + '\\ \\text{K}')},\\ \\text{boiling point } ${hue('temperature', h.bp + '\\ \\text{K}')}`);
+    text(ctx, 'temporary dipoles', 700, yb + 34, PAL.ink, { size: 20, align: 'center', weight: 600 });
+    F.legend(ctx, { l: 300, r: 1100, t: 470, b: 510 }, [{ s: 'δ+ end, fewer electrons', color: F.cat(0), kind: 'swatch' }, { s: 'δ− end, more electrons', color: F.cat(1), kind: 'swatch' }], { corner: 'top', row: true, panel: false });
+    readout(d.readout, `\\text{atomic radius of ${h.k}} = ${h.r}\\ \\text{pm} \\\\ \\text{boiling point of } \\text{${h.tf.replace('_{2}', '}_2\\text{')}} = ${hue('temperature', h.bp + '\\ \\text{K}')}`);
   }
   const clk = cycle(() => Infinity, 0);
   register(d.fig, { update: (dt) => { clk.step(dt, () => 1); t += dt; }, draw });
 })();
 
 /* =====================================================================
-   FIGURE 10.7: the three pentane isomers, each molecule above its mirror
-   image, space-filling in the element palette, with the contact between
-   them drawn as the book's jagged band. Still: the atoms bend from one
-   isomer into the next when the choice changes. Built both ways behind
-   the view choice, the flat drawing first; the scene has no ground and
-   turns freely within 69° of level.
-===================================================================== */
-(function () {
-  const d = sim('sim-pentanes', 600);
-  const CC = 1.54, CH = 1.09, RC = 1.7, RH = 1.2, Y = [0, 1, 0], XV = [1, 0, 0];
-  /* carbons and their neighbors, then the hydrogens that complete each carbon's four bonds, in carbon order */
-  function alkane(cs, nb) {
-    const hs = [];
-    cs.forEach((c, i) => {
-      const us = nb[i].map((j) => unit(sub(cs[j], c)));
-      let dirs = [];
-      if (us.length === 1) dirs = tetraOthers(us[0], Math.abs(us[0][1]) > 0.9 ? XV : Y, 0.3);
-      else if (us.length === 2) dirs = tetraPair(us[0], us[1]);
-      else if (us.length === 3) dirs = [unit(mul(add(add(us[0], us[1]), us[2]), -1))];
-      dirs.forEach((u) => hs.push(add(c, mul(u, CH))));
-    });
-    return [...cs, ...hs];
-  }
-  const zig = (i, n) => [(i - (n - 1) / 2) * CC * Math.sin(HALF), 0, (i % 2 ? 0.5 : -0.5) * CC * Math.cos(HALF)];
-  const nC = [0, 1, 2, 3, 4].map((i) => zig(i, 5));
-  const N_PENT = alkane(nC, [[1], [0, 2], [1, 3], [2, 4], [3]]);
-  const iC = [0, 1, 2, 3].map((i) => zig(i, 4));
-  const br = tetraPair(unit(sub(iC[0], iC[1])), unit(sub(iC[2], iC[1]))).find((u) => u[1] > 0);
-  iC.push(add(iC[1], mul(br, CC)));
-  const ISO = alkane(iC, [[1], [0, 2, 4], [1, 3], [2], [1]]);
-  const tet = [[0, 1, 0], ...[90, 210, 330].map((a) => [SIN_T * Math.cos((a * Math.PI) / 180), -COS_T, SIN_T * Math.sin((a * Math.PI) / 180)])];
-  const NEO = alkane([[0, 0, 0], ...tet.map((u) => mul(u, CC))], [[1, 2, 3, 4], [0], [0], [0], [0]]);
-  /* each molecule is stood on its contact: centred across, its lowest surface a little above the plane of contact */
-  function stand(pts) {
-    const cx = pts.reduce((s, p) => s + p[0], 0) / pts.length, cz = pts.reduce((s, p) => s + p[2], 0) / pts.length;
-    const low = Math.min(...pts.map((p, i) => p[1] - (i < 5 ? RC : RH)));
-    return pts.map((p) => [p[0] - cx, p[1] - low + 0.1, p[2] - cz]);
-  }
-  const ISOS = {
-    neo: { name: 'neopentane', f: 'neopentane', bp: 9.5, head: 'small contact area, weakest attraction', pts: stand(NEO) },
-    iso: { name: 'isopentane', f: 'isopentane', bp: 27, head: 'less surface area, less attraction', pts: stand(ISO) },
-    n: { name: 'n-pentane', f: 'n-pentane', bp: 36, head: 'large contact area, strong attraction', pts: stand(N_PENT) },
-  };
-  /* one scale for the flat drawing, from the tallest isomer: its molecule and its image span 2 × TALL Å, 470 units of the canvas */
-  const TALL = Math.max(...Object.values(ISOS).map((q) => Math.max(...q.pts.map((p, i) => p[1] + (i < 5 ? RC : RH) + 0.1 * Math.abs(p[2])))));
-  const K = F.choice(d.controls, { label: '\\text{isomer}', options: [{ value: 'neo', label: 'neopentane' }, { value: 'iso', label: 'isopentane' }, { value: 'n', label: 'n-pentane' }], value: 'n', aria: 'the pentane isomer', onInput: () => draw() });
-  const hits = []; F.hover(d.stage, () => hits);
-  const two = twoWays(d, 600, { h: 520, dist: 26, spin: 'off', views: [{ label: 'side', yaw: 0, pitch: 0 }, { label: 'end on', yaw: Math.PI / 2, pitch: 0 }] }, () => draw());
-  const atomName = (i, m) => (i < 5 ? 'a carbon atom of ' : 'a hydrogen atom of ') + m;
-  function sceneOf(pts, m) {
-    const atoms = [];
-    pts.forEach((p, i) => atoms.push({ el: i < 5 ? 'C' : 'H', p, r: i < 5 ? RC : RH, name: atomName(i, m) }));
-    pts.forEach((p, i) => atoms.push({ el: i < 5 ? 'C' : 'H', p: [p[0], -p[1], p[2]], r: i < 5 ? RC : RH, name: atomName(i, m) }));
-    return { atoms, bonds: [], dots: [] };
-  }
-  /* the width of the facing surface: the atoms whose undersides lie within 0.7 Å of the lowest */
-  function contact(pts) {
-    const low = pts.map((p, i) => p[1] - (i < 5 ? RC : RH)), m = Math.min(...low);
-    const near = pts.filter((p, i) => low[i] < m + 0.7);
-    return [Math.min(...near.map((p) => p[0])) - 0.8, Math.max(...near.map((p) => p[0])) + 0.8];
-  }
-  function band(ctx, x0, x1, y) {
-    ctx.save(); ctx.strokeStyle = C('area'); ctx.lineWidth = 5; ctx.beginPath();
-    for (let x = x0, i = 0; x <= x1; x += 9, i++) { const yy = y + (i % 2 ? -5 : 5); if (i) ctx.lineTo(x, yy); else ctx.moveTo(x, yy); }
-    ctx.stroke(); ctx.restore();
-  }
-  let sig = '';
-  function draw() {
-    const iso = ISOS[K.value], flat = K.mix((v) => ISOS[v].pts.flat()), pts = [];
-    for (let i = 0; i < flat.length; i += 3) pts.push([flat[i], flat[i + 1], flat[i + 2]]);
-    const [c0, c1] = contact(pts), head = iso.name + ': ' + iso.head + ', boiling point ' + fmt(iso.bp, iso.bp % 1 ? 1 : 0) + ' °C.';
-    if (two.three) {
-      const key = K.value + palSig() + C('area');
-      if (key !== sig && two.g) {
-        sig = key; two.v.clear(); buildScene(two.v, two.g, sceneOf(iso.pts, iso.name));
-        const cc = contact(iso.pts);
-        F.mesh.box(two.g, [(cc[0] + cc[1]) / 2, 0, 0], [cc[1] - cc[0], 0.04, 3.2], C('area'), { transparent: true, opacity: 0.5 });
-        two.v.label('contact', [Math.max(...iso.pts.map((p, i) => p[0] + (i < 5 ? RC : RH))) + 0.4, 0, 0], two.g, -12); two.v.headline(/^n-/.test(head) ? head : head.charAt(0).toUpperCase() + head.slice(1));
-      }
-      two.v?.invalidate();
-    } else {
-      const { ctx } = begin(d.c); hits.length = 0;
-      const o = { yaw: 0.35, pitch: 0.1, cx: 700, cy: 340, s: Math.min(44, 235 / TALL) };
-      drawScene(ctx, sceneOf(pts, iso.name), o, hits);
-      const Pc0 = turn([c0, 0, 0], o.yaw, o.pitch), Pc1 = turn([c1, 0, 0], o.yaw, o.pitch);
-      band(ctx, o.cx + Pc0[0] * o.s, o.cx + Pc1[0] * o.s, o.cy - Pc0[1] * o.s);
-      label(ctx, 'contact', o.cx + Pc1[0] * o.s + 6, o.cy, { side: 'right', size: 20 });
-      topline(ctx, /^n-/.test(head) ? head : head.charAt(0).toUpperCase() + head.slice(1));
-    }
-    readout(d.readout, `\\text{boiling point of ${iso.name.replace('n-', '\\textit{n}-')}} = ${hue('temperature', fmt(iso.bp, iso.bp % 1 ? 1 : 0) + '\\ ^\\circ\\text{C}')}`,
-      'All three isomers are C₅H₁₂, so their molecules have the same mass; the longer the contact between neighboring molecules, the stronger the dispersion forces and the higher the boiling point.');
-  }
-  register(d.fig, { update: () => {}, draw });
-})();
-
-/* =====================================================================
-   FIGURE 10.9: two arrangements of polar HCl molecules that bring the
-   partial negative end of one molecule next to the partial positive end
-   of another: in a line, and side by side and antiparallel. A faithful
-   still: nothing in it varies. The ends take the categorical pair of the
-   chapter, the δ+ end F.cat(0) and the δ− end F.cat(1).
-===================================================================== */
-(function () {
-  const d = sim('fig-dipoles', 440);
-  const hits = []; F.hover(d.stage, () => hits);
-  function dipole(ctx, cx, cy, flip) {
-    const rp = 34, rn = 52, dx = 40, sgn = flip ? -1 : 1, xp = cx - sgn * dx, xn = cx + sgn * dx;
-    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 5; ctx.beginPath(); ctx.arc(xp, cy, rp, 0, TAU); ctx.stroke(); ctx.beginPath(); ctx.arc(xn, cy, rn, 0, TAU); ctx.stroke(); ctx.restore();
-    ctx.save(); ctx.beginPath(); ctx.arc(xp, cy, rp, 0, TAU); ctx.arc(xn, cy, rn, 0, TAU); ctx.clip();
-    ctx.fillStyle = flip ? F.cat(1) : F.cat(0); ctx.fillRect(cx - 200, cy - rn - 2, 200, 2 * rn + 4);
-    ctx.fillStyle = flip ? F.cat(0) : F.cat(1); ctx.fillRect(cx, cy - rn - 2, 200, 2 * rn + 4);
-    ctx.restore();
-    text(ctx, 'δ+', xp - sgn * 4, cy, PAL.panel, { size: 24, weight: 600, align: 'center' });
-    text(ctx, 'δ−', xn + sgn * 8, cy, PAL.panel, { size: 24, weight: 600, align: 'center' });
-    hits.push({ x: xp, y: cy, r: rp, name: 'the hydrogen end of an HCl molecule, δ+' }, { x: xn, y: cy, r: rn, name: 'the chlorine end of an HCl molecule, δ−' });
-    return { l: cx - dx - (flip ? rn : rp), r: cx + dx + (flip ? rp : rn), xp, xn };
-  }
-  function draw() {
-    const { ctx } = begin(d.c); hits.length = 0;
-    const cy = 200, a = dipole(ctx, 190, cy, false), b = dipole(ctx, 470, cy, false);
-    line(ctx, a.r + 12, cy, b.l - 12, cy, PAL.ink, 6, [1, 14]);
-    const u = dipole(ctx, 1000, 150, false), w = dipole(ctx, 1000, 290, true);
-    line(ctx, u.xp, 150 + 40, w.xn, 290 - 56, PAL.ink, 6, [1, 14]);
-    line(ctx, u.xn, 150 + 56, w.xp, 290 - 40, PAL.ink, 6, [1, 14]);
-    label(ctx, 'attraction', (a.r + b.l) / 2, cy - 8, { side: 'above', leader: true, size: 20 });
-    text(ctx, 'in a line', 330, 320, PAL.muted, { size: 18, align: 'center' });
-    text(ctx, 'side by side', 1000, 390, PAL.muted, { size: 18, align: 'center' });
-    dot(ctx, 470, 415, F.cat(0), true, 11); text(ctx, 'δ+ end (H)', 490, 415, PAL.ink, { size: 18 });
-    dot(ctx, 700, 415, F.cat(1), true, 11); text(ctx, 'δ− end (Cl)', 720, 415, PAL.ink, { size: 18 });
-    topline(ctx, 'Polar HCl molecules attract where the δ− end of one molecule meets the δ+ end of another.');
-  }
-  register(d.fig, { update: () => {}, draw });
-})();
-
-/* =====================================================================
-   FIGURE 10.10: five water molecules joined by hydrogen bonds. The central
-   molecule donates its two hydrogen atoms to two neighbors and accepts one
-   from each of two others, so its four hydrogen bonds point toward the
-   corners of a tetrahedron, as they do in ice; the free hydrogen atoms of
-   the outer molecules reach toward molecules beyond. Still. Built both
-   ways behind the view choice, the flat drawing first; the cluster has no
-   ground and turns freely within 69° of level.
-===================================================================== */
-(function () {
-  const d = sim('sim-hbond', 560);
-  const OH = 0.96, OO = 2.8;
-  const t = [[1, 1, 1], [-1, -1, 1], [1, -1, -1], [-1, 1, -1]].map(unit);
-  const atoms = [], bonds = [], dots = [];
-  const water = (o, h1, h2) => { const i = atoms.length; atoms.push({ el: 'O', p: o, r: 0.42, name: 'an oxygen atom of a water molecule' }, { el: 'H', p: h1, r: 0.28, name: 'a hydrogen atom of a water molecule' }, { el: 'H', p: h2, r: 0.28, name: 'a hydrogen atom of a water molecule' }); bonds.push([i, i + 1], [i, i + 2]); return i; };
-  water([0, 0, 0], mul(t[0], OH), mul(t[1], OH));
-  [0, 1].forEach((k) => {
-    const o = mul(t[k], OO), hs = tetraOthers(mul(t[k], -1), Math.abs(t[k][1]) > 0.9 ? [1, 0, 0] : [0, 1, 0], 0.4).slice(0, 2).map((u) => add(o, mul(u, OH)));
-    water(o, hs[0], hs[1]); dots.push([mul(t[k], OH + 0.3), sub(o, mul(t[k], 0.45))]);
-    hs.forEach((h) => dots.push([add(h, mul(unit(sub(h, o)), 0.35)), add(h, mul(unit(sub(h, o)), 1.5))]));
-  });
-  [2, 3].forEach((k) => {
-    const o = mul(t[k], OO), h1 = mul(t[k], OO - OH), h2 = add(o, mul(tetraOthers(mul(t[k], -1), [0, 1, 0], 0.9)[0], OH));
-    water(o, h1, h2); dots.push([mul(t[k], OO - OH - 0.3), mul(t[k], 0.45)]);
-    dots.push([add(h2, mul(unit(sub(h2, o)), 0.35)), add(h2, mul(unit(sub(h2, o)), 1.5))]);
-  });
-  const sc = { atoms, bonds, dots };
-  const hits = []; F.hover(d.stage, () => hits);
-  const HEAD = 'Hydrogen bonds join each hydrogen atom of one water molecule to an oxygen atom of another.';
-  const two = twoWays(d, 560, { h: 480, dist: 20, views: [{ label: 'front', yaw: 0.5, pitch: 0.3 }, { label: 'down a bond', yaw: Math.PI / 4, pitch: Math.atan(1 / Math.SQRT2) }] }, () => draw());
-  let sig = '';
-  function draw() {
-    if (two.three) {
-      const key = palSig(); if (key !== sig && two.g) { sig = key; two.v.clear(); two.g.position.y = -0.6; buildScene(two.v, two.g, sc); two.v.headline(HEAD); two.v.setView(0.5, 0.3); }
-      two.v?.invalidate();
-    } else {
-      const { ctx } = begin(d.c); hits.length = 0;
-      const o = { yaw: 0.5, pitch: 0.3, cx: 640, cy: 345, s: 66 };
-      const P = drawScene(ctx, sc, o, hits);
-      const [hx, hy] = P(dots[0][0].map((c, i) => (c + dots[0][1][i]) / 2));
-      label(ctx, 'hydrogen bond', hx, hy, { side: 'right', leader: true, size: 20, gap: 90 });
-      const [bx, by] = P(mul(add(atoms[0].p, atoms[2].p), 0.5));
-      label(ctx, 'covalent bond', bx, by, { side: 'left', leader: true, size: 20, gap: 110 });
-      topline(ctx, HEAD);
-    }
-    readout(d.readout, '\\text{H}_2\\text{O}\\cdots\\text{HOH}', 'The central molecule forms four hydrogen bonds, two through its own hydrogen atoms and two through the lone pairs of its oxygen atom.');
-  }
-  register(d.fig, { update: () => {}, draw });
-})();
-
-/* =====================================================================
    FIGURE 10.11 + 10.12: the boiling points of the binary hydrides of
-   groups 14 to 17 against the period. The choice moves the three
-   period-2 points from where the heavier hydrides' trends predict them
-   (the text's −120, −80 and −110 °C) to where they are measured, and the
-   lines bend with them; the carbon family of Example 10.1, which has no
-   hydrogen bonding, stays on its trend. Still. The families are the
-   section's referents, each in its F.ref; the temperature axis wears its hue.
+   groups 15, 16 and 17 against the period, with the carbon family of
+   Example 10.1 beside them. The choice moves the three period-2 points
+   from where the heavier hydrides' trends predict them (the text's −120,
+   −80 and −110 °C, dashed as in Figure 10.11) to where they are measured
+   (Figure 10.12), and the lines bend with them; CH₄, which forms no
+   hydrogen bonds, stays on its trend in both. Still. The families are the
+   section's referents, each in its F.ref; the temperature axis wears its
+   hue. Values read off the book's images: Figure 10.12 for groups 15 to
+   17, Example 10.1's graph for group 14.
 ===================================================================== */
 (function () {
-  const d = sim('sim-hydrides', 560);
-  /* measured normal boiling points, °C, periods 2 to 5; pred is the text's prediction for period 2 */
+  const d = sim('sim-hydrides', 600);
+  /* boiling points, °C, periods 2 to 5; pred is the text's prediction for period 2 (none for the carbon family) */
   const FAM = [
-    { id: 'group-14', name: 'carbon family (group 14)', f: ['CH_{4}', 'SiH_{4}', 'GeH_{4}', 'SnH_{4}'], bp: [-161, -112, -88, -52], pred: -161 },
-    { id: 'group-15', name: 'nitrogen family (group 15)', f: ['NH_{3}', 'PH_{3}', 'AsH_{3}', 'SbH_{3}'], bp: [-33, -88, -62, -17], pred: -120 },
-    { id: 'group-16', name: 'oxygen family (group 16)', f: ['H_{2}O', 'H_{2}S', 'H_{2}Se', 'H_{2}Te'], bp: [100, -60, -41, -2], pred: -80 },
-    { id: 'group-17', name: 'halogen family (group 17)', f: ['HF', 'HCl', 'HBr', 'HI'], bp: [20, -85, -67, -35], pred: -110 },
+    { id: 'group-17', name: 'group 17', f: ['HF', 'HCl', 'HBr', 'HI'], bp: [20, -85, -67, -35], pred: -110 },
+    { id: 'group-16', name: 'group 16', f: ['H₂O', 'H₂S', 'H₂Se', 'H₂Te'], bp: [100, -60, -41, -2], pred: -80 },
+    { id: 'group-15', name: 'group 15', f: ['NH₃', 'PH₃', 'AsH₃', 'SbH₃'], bp: [-33, -88, -62, -17], pred: -120 },
+    { id: 'group-14', name: 'group 14', f: ['CH₄', 'SiH₄', 'GeH₄', 'SnH₄'], bp: [-160, -120, -90, -52], pred: null },
   ];
+  /* where each label of periods 3 to 5 stands from its point [dx, dy, align], set apart from its neighbours as the book sets them */
+  const AT = {
+    HCl: [0, -24, 'center'], HBr: [6, 24, 'center'], HI: [16, 0, 'left'],
+    'H₂S': [0, -24, 'center'], 'H₂Se': [0, -24, 'center'], 'H₂Te': [16, -16, 'left'],
+    'PH₃': [10, 24, 'left'], 'AsH₃': [-14, -18, 'right'], 'SbH₃': [16, 0, 'left'],
+    'SiH₄': [14, 18, 'left'], 'GeH₄': [14, 18, 'left'], 'SnH₄': [16, 0, 'left'],
+  };
   const M = F.choice(d.controls, { label: '\\text{period 2}', options: [{ value: 'trend', label: 'predicted from the trend' }, { value: 'measured', label: 'measured' }], value: 'trend', aria: 'predicted or measured boiling points of the period 2 hydrides' });
   const hits = []; F.hover(d.stage, () => hits);
   function draw() {
     const { ctx } = begin(d.c); hits.length = 0;
-    const ct = C('temperature'), box = { l: 170, r: 1000, t: 100, b: 490 };
-    /* fixed axes: periods 1 to 6, −200 °C to 150 °C by 50 */
-    const g = axes(ctx, box, [1, 6], [-200, 150], { xl: 'Period', yl: 'Boiling point (°C)', yc: ct, nx: 5, ny: 7 });
-    const p2 = M.mix((v) => FAM.map((fm) => (v === 'trend' ? fm.pred : fm.bp[0])));
+    const ct = C('temperature'), box = { l: 200, r: 1240, t: 110, b: 530 };
+    /* fixed axes: periods 1.5 to 5.5 with the ticks at 2 to 5, −200 °C to 150 °C by 50 */
+    const g = axes(ctx, box, [1.5, 5.5], [-200, 150], { xl: 'period', yl: 'boiling point (°C)', yc: ct, nx: 4, ny: 7, fx: (v) => (Number.isInteger(v) ? String(v) : '') });
+    const p2 = M.mix((v) => FAM.map((fm) => (v === 'trend' && fm.pred !== null ? fm.pred : fm.bp[0])));
     const meas = M.value === 'measured';
     FAM.forEach((fm, i) => {
-      const col = F.ref(fm.id), ys = [p2[i], ...fm.bp.slice(1)];
-      for (let k = 0; k < 3; k++) line(ctx, g.X(k + 2), g.Y(ys[k]), g.X(k + 3), g.Y(ys[k + 1]), col, 4, k === 0 && !meas && i > 0 ? [10, 10] : undefined);
-      ys.forEach((y, k) => {
-        const hollow = k === 0 && !meas && i > 0;
-        dot(ctx, g.X(k + 2), g.Y(y), col, !hollow, 9);
-        hits.push({ x: g.X(k + 2), y: g.Y(y), r: 14, name: fm.f[k].replace(/_\{(\d)\}/g, (m, n) => '₀₁₂₃₄₅'[n]) + (hollow ? ', predicted about ' : ', boils at ') + neg(y) + ' °C' });
+      const col = F.ref(fm.id), ys = [p2[i], ...fm.bp.slice(1)], guess = fm.pred !== null && !meas;
+      line(ctx, g.X(2), g.Y(ys[0]), g.X(3), g.Y(ys[1]), col, 4, guess ? [10, 10] : undefined);
+      for (let j = 1; j < 3; j++) line(ctx, g.X(j + 2), g.Y(ys[j]), g.X(j + 3), g.Y(ys[j + 1]), col, 4);
+      ys.forEach((y, j) => {
+        const hollow = j === 0 && guess;
+        dot(ctx, g.X(j + 2), g.Y(y), col, !hollow, 10);
+        hits.push({ x: g.X(j + 2), y: g.Y(y), r: 14, name: fm.f[j] + (hollow ? ', predicted about ' : ', boils at ') + neg(j === 0 && fm.pred !== null ? (meas ? fm.bp[0] : fm.pred) : y) + ' °C' });
+        if (j > 0) { const [dx, dy, al] = AT[fm.f[j]]; text(ctx, fm.f[j], g.X(j + 2) + dx, g.Y(y) + dy, col, { size: 18, weight: 600, align: al, bg: PAL.panel }); }
       });
     });
-    /* the period-2 names beside their points, spread apart where two points lie close (HF and NH₃ as predicted) */
-    const p2names = FAM.map((fm, i) => ({ s: i && !meas ? fm.f[0] + ' ?' : fm.f[0], y: g.Y(p2[i]), col: F.ref(fm.id) })).sort((a, b) => a.y - b.y);
-    p2names.forEach((q, i) => { if (i && q.y < p2names[i - 1].y + 26) q.y = p2names[i - 1].y + 26; text(ctx, q.s, g.X(2) - 18, q.y, q.col, { size: 18, weight: 600, align: 'right', bg: PAL.panel }); });
-    FAM.forEach((fm, i) => { const y = 150 + i * 40; dot(ctx, 1060, y, F.ref(fm.id), true, 9); text(ctx, fm.name, 1080, y, PAL.ink, { size: 17 }); });
-    topline(ctx, meas ? 'Measured, H_{2}O boils at 100 °C, HF at 20 °C and NH_{3} at −33 °C, far above the trends of the heavier hydrides.'
-      : 'The trends of the heavier hydrides predict that H_{2}O boils near −80 °C, HF near −110 °C and NH_{3} near −120 °C.');
-    readout(d.readout, meas ? `\\text{boiling point of H}_2\\text{O} = ${hue('temperature', '100\\ ^\\circ\\text{C}')}` : `\\text{boiling point of H}_2\\text{O} \\approx ${hue('temperature', texNum(-80) + '\\ ^\\circ\\text{C}')}`,
-      meas ? 'Hydrogen bonding lifts the boiling points of NH₃, H₂O and HF far above the trends; CH₄, which cannot form hydrogen bonds, stays on its trend.'
-        : 'Down each group the molecules grow larger and their dispersion forces stronger, so the boiling points of periods 3 to 5 rise steadily.');
+    /* the period-2 names left of their points, spread apart where two lie close (HF and NH₃ as predicted) */
+    const p2names = FAM.map((fm, i) => ({ s: fm.pred !== null && !meas ? fm.f[0] + ' ?' : fm.f[0], y: g.Y(p2[i]), col: F.ref(fm.id) })).sort((a, b) => a.y - b.y);
+    p2names.forEach((q, i) => { if (i && q.y < p2names[i - 1].y + 24) q.y = p2names[i - 1].y + 24; text(ctx, q.s, g.X(2) - 18, q.y, q.col, { size: 18, weight: 600, align: 'right', bg: PAL.panel }); });
+    F.legend(ctx, g, FAM.map((fm) => ({ s: fm.name, color: F.ref(fm.id), kind: 'line', w: 4 })), { corner: 'br' });
+    topline(ctx, meas ? 'Measured, H₂O boils at 100 °C, HF at 20 °C and NH₃ at −33 °C, far above the trends of the heavier hydrides.'
+      : 'The trends of the heavier hydrides predict that H₂O boils near −80 °C, HF near −110 °C and NH₃ near −120 °C.');
+    readout(d.readout, meas ? `\\text{boiling point of H}_2\\text{O} = ${hue('temperature', '100\\ ^\\circ\\text{C}')} \\gg ${hue('temperature', texNum(-80) + '\\ ^\\circ\\text{C}')}\\ \\text{(trend)}`
+      : `\\text{boiling point of H}_2\\text{O} \\approx ${hue('temperature', texNum(-80) + '\\ ^\\circ\\text{C}')}\\ \\text{(trend)}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

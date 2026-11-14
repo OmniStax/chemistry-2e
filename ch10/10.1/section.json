@@ -42,11 +42,11 @@
       "original_caption": "Transitions between solid, liquid, and gaseous states of a substance occur when conditions of temperature or pressure favor the associated changes in intermolecular forces. (Note: The space between particles in the gas phase is much greater than shown.)",
       "draws": ["temperature"],
       "conventions": [
-        "Ne",
-        "Ar",
-        "Kr",
         "F",
-        "Cl"
+        "Cl",
+        "Br",
+        "I",
+        "At"
       ],
       "ai": [
         {
@@ -58,35 +58,16 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "clock stepped, so the particles move"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "rebuilt flat: Table 10.1 halogens in a flask beside their ranges"
         }
       ]
     },
     { "id": "fig-water-photo", "kind": "photo", "number": "10.3", "draws": [] },
     { "id": "fig-butane-photo", "kind": "photo", "number": "10.4", "draws": [] },
-    {
-      "id": "sim-intra-inter",
-      "kind": "sim",
-      "number": "10.5",
-      "originals": ["/media/ch10/CNX_Chem_10_01_IntravInter.jpg"],
-      "original_caption": "Intramolecular forces keep a molecule intact. Intermolecular forces hold multiple molecules together and determine many of a substance’s properties.",
-      "draws": [],
-      "conventions": [
-        "Cl",
-        "H"
-      ],
-      "ai": [
-        {
-          "model": "claude-opus-5-5",
-          "effort": "low",
-          "part": "built"
-        },
-        {
-          "model": "claude-opus-5-5",
-          "effort": "high",
-          "part": "force labels moved off the atoms"
-        }
-      ]
-    },
+    { "id": "sim-intra-inter", "kind": "photo", "number": "10.5", "draws": [] },
     {
       "id": "sim-dispersion",
       "kind": "sim",
@@ -94,6 +75,7 @@
       "originals": ["/media/ch10/CNX_Chem_10_01_DispForces.jpg"],
       "original_caption": "Dispersion forces result from the formation of temporary dipoles, as illustrated here for two nonpolar diatomic molecules.",
       "draws": ["temperature"],
+      "conventions": ["F", "Cl", "Br", "I", "At"],
       "ai": [
         {
           "model": "claude-opus-5-5",
@@ -104,6 +86,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "clock stepped, δ labels in ink, force label lifted, note dropped"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "rebuilt: book outline and labels, one scale, legend, readout split"
         }
       ]
     },
@@ -119,70 +105,10 @@
         }
       ]
     },
-    {
-      "id": "sim-pentanes",
-      "kind": "sim",
-      "number": "10.7",
-      "originals": ["/media/ch10/CNX_Chem_10_01_PentIso.jpg"],
-      "original_caption": "The strength of the dispersion forces increases with the contact area between molecules, as demonstrated by the boiling points of these pentane isomers.",
-      "draws": ["temperature", "area"],
-      "conventions": [
-        "C",
-        "H"
-      ],
-      "ai": [
-        {
-          "model": "claude-opus-5-5",
-          "effort": "low",
-          "part": "built"
-        },
-        {
-          "model": "claude-opus-5-5",
-          "effort": "high",
-          "part": "2D scaled to the tallest isomer, 3D contact label beside, no idle spin"
-        }
-      ]
-    },
+    { "id": "sim-pentanes", "kind": "photo", "number": "10.7", "draws": [] },
     { "id": "fig-geckos", "kind": "photo", "number": "10.8", "draws": [] },
-    {
-      "id": "fig-dipoles",
-      "kind": "figure",
-      "number": "10.9",
-      "originals": ["/media/ch10/CNX_Chem_10_01_DipDip.jpg"],
-      "original_caption": "This image shows two arrangements of polar molecules, such as HCl, that allow an attraction between the partial negative end of one molecule and the partial positive end of another.",
-      "draws": [],
-      "ai": [
-        {
-          "model": "claude-opus-5-5",
-          "effort": "low",
-          "part": "built"
-        }
-      ]
-    },
-    {
-      "id": "sim-hbond",
-      "kind": "sim",
-      "number": "10.10",
-      "originals": ["/media/ch10/CNX_Chem_10_01_HBonding.jpg"],
-      "original_caption": "Water molecules participate in multiple hydrogen-bonding interactions with nearby water molecules.",
-      "draws": [],
-      "conventions": [
-        "O",
-        "H"
-      ],
-      "ai": [
-        {
-          "model": "claude-opus-5-5",
-          "effort": "low",
-          "part": "built"
-        },
-        {
-          "model": "claude-opus-5-5",
-          "effort": "high",
-          "part": "3D cluster smaller and lowered below the headline"
-        }
-      ]
-    },
+    { "id": "fig-dipoles", "kind": "photo", "number": "10.9", "draws": [] },
+    { "id": "sim-hbond", "kind": "photo", "number": "10.10", "draws": [] },
     {
       "id": "sim-hydrides",
       "kind": "sim",
@@ -201,6 +127,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "period-2 names spread apart"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "values read off the images, every point named, legend inside"
         }
       ]
     },

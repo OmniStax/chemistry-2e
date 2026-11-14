@@ -26,6 +26,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5"
    }
   ]
  },
@@ -45,10 +48,8 @@
     "/media/ch08/CNX_Chem_08_02_H2Otet.jpg"
    ],
    "original_caption": "(Figure 8.6) The hypothetical overlap of two of the 2p orbitals on an oxygen atom (red) with the 1s orbitals of two hydrogen atoms (blue) would produce a bond angle of 90°. This is not consistent with experimental evidence. (Note that orbitals may sometimes be drawn in an elongated “balloon” shape rather than in a more realistic “plump” shape in order to make the geometry easier to visualize.) (Figure 8.7) (a) A water molecule has four regions of electron density, so VSEPR theory predicts a tetrahedral arrangement of hybrid orbitals. (b) Two of the hybrid orbitals on oxygen contain lone pairs, and the other two overlap with the 1s orbitals of hydrogen atoms to form the O–H bonds in H₂O. This description is more consistent with the experimental structure.",
-   "draws": ["angle"],
-   "conventions": [
-    "O",
-    "H"
+   "draws": [
+    "angle"
    ],
    "ai": [
     {
@@ -60,6 +61,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "framed clear of the headline, H atoms below, orbital label off the arc"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt: lobes from wave functions, three models, key, no view buttons"
     }
    ]
   },
@@ -71,7 +76,9 @@
     "/media/ch08/CNX_Chem_08_02_spGeom.jpg"
    ],
    "original_caption": "Hybridization of an s orbital (blue) and a p orbital (red) of the same atom produces two sp hybrid orbitals (yellow). Each hybrid orbital is oriented primarily in just one direction. Note that each sp orbital contains one lobe that is significantly larger than the other. The set of two sp orbitals are oriented at 180°, which is consistent with the geometry for two domains.",
-   "draws": ["angle"],
+   "draws": [
+    "angle"
+   ],
    "ai": [
     {
      "model": "claude-opus-5-5",
@@ -82,25 +89,27 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "framed clear of the headline, shorter headline, labels off axis names"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt: four valence orbitals in panels that mix, then close as the set"
     }
    ]
   },
   {
    "id": "fig-sp-levels",
-   "kind": "figure",
+   "kind": "photo",
    "number": "8.9",
-   "originals": [
-    "/media/ch08/CNX_Chem_08_02_spDiag.jpg"
-   ],
-   "original_caption": "This orbital energy-level diagram shows the sp hybridized orbitals on Be in the linear BeCl₂ molecule. Each of the two sp hybrid orbitals holds one electron and is thus half filled and available for bonding via overlap with a Cl 3p orbital.",
-   "draws": [
-    "energy"
-   ],
+   "draws": [],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "reverted to the book's image"
     }
    ]
   },
@@ -118,10 +127,8 @@
     "/media/ch08/CNX_Chem_08_02_BH3.jpg"
    ],
    "original_caption": "(Figure 8.10) The hybridization of an s orbital (blue) and two p orbitals (red) produces three equivalent sp² hybridized orbitals (yellow) oriented at 120° with respect to each other. The remaining unhybridized p orbital is not shown here, but is located along the z axis. (Figure 8.11) This alternate way of drawing the trigonal planar sp² hybrid orbitals is sometimes used in more crowded figures. (Figure 8.12) BH₃ is an electron-deficient molecule with a trigonal planar structure.",
-   "draws": ["angle"],
-   "conventions": [
-    "B",
-    "H"
+   "draws": [
+    "angle"
    ],
    "ai": [
     {
@@ -133,36 +140,34 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "framing, one-line headlines, labels off axis names, meta note dropped"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt: panels mixing into the sp2 set, pz kept, BH3 state"
     }
    ]
   },
   {
    "id": "fig-sp2-levels",
-   "kind": "figure",
+   "kind": "photo",
    "number": "8.13",
-   "originals": [
-    "/media/ch08/CNX_Chem_08_02_BH3Diag.jpg"
-   ],
-   "original_caption": "In an isolated B atom, there are one 2s and three 2p valence orbitals. When boron is in a molecule with three regions of electron density, three of the orbitals hybridize and create a set of three sp² orbitals and one unhybridized 2p orbital. The three half-filled hybrid orbitals each overlap with an orbital from a hydrogen atom to form three σ bonds in BH₃.",
-   "draws": [
-    "energy"
-   ],
+   "draws": [],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "reverted to the book's image"
     }
    ]
   },
   {
    "id": "fig-sp2-examples",
-   "kind": "figure",
+   "kind": "photo",
    "number": "8.14",
-   "originals": [
-    "/media/ch08/CNX_Chem_08_02_sp2Ex.jpg"
-   ],
-   "original_caption": "The central atom(s) in each of the structures shown contain three regions of electron density and are sp² hybridized. As we know from the discussion of VSEPR theory, a region of electron density contains all of the electrons that point in one direction. A lone pair, an unpaired electron, a single bond, or a multiple bond would each count as one region of electron density.",
    "draws": [],
    "ai": [
     {
@@ -174,6 +179,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "names under each structure, note repeating caption dropped"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "reverted to the book's image"
     }
    ]
   },
@@ -185,7 +194,9 @@
     "/media/ch08/CNX_Chem_08_02_sp3Geom.jpg"
    ],
    "original_caption": "The hybridization of an s orbital (blue) and three p orbitals (red) produces four equivalent sp³ hybridized orbitals (yellow) oriented at 109.5° with respect to each other.",
-   "draws": ["angle"],
+   "draws": [
+    "angle"
+   ],
    "ai": [
     {
      "model": "claude-opus-5-5",
@@ -196,25 +207,27 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "framed clear of the headline, one-line headlines, labels off axis names"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt: four panels mixing into the tetrahedral sp3 set"
     }
    ]
   },
   {
    "id": "fig-sp3-levels",
-   "kind": "figure",
+   "kind": "photo",
    "number": "8.16",
-   "originals": [
-    "/media/ch08/CNX_Chem_08_02_sp3Diag.jpg"
-   ],
-   "original_caption": "The four valence atomic orbitals from an isolated carbon atom all hybridize when the carbon bonds in a molecule like CH₄ with four regions of electron density. This creates four equivalent sp³ hybridized orbitals. Overlap of each of the hybrid orbitals with a hydrogen orbital creates a C–H σ bond.",
-   "draws": [
-    "energy"
-   ],
+   "draws": [],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "reverted to the book's image"
     }
    ]
   },
@@ -226,10 +239,8 @@
     "/media/ch08/CNX_Chem_08_02_ethane.jpg"
    ],
    "original_caption": "(a) In the ethane molecule, C₂H₆, each carbon has four sp³ orbitals. (b) These four orbitals overlap to form seven σ bonds.",
-   "draws": ["angle"],
-   "conventions": [
-    "C",
-    "H"
+   "draws": [
+    "angle"
    ],
    "ai": [
     {
@@ -241,17 +252,17 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "framing, sp3 label off the C label, note repeating caption dropped"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt: apart and bonded states, CH3 turn slider, key"
     }
    ]
   },
   {
    "id": "fig-sp3d-lewis",
-   "kind": "figure",
+   "kind": "photo",
    "number": "8.18",
-   "originals": [
-    "/media/ch08/CNX_Chem_08_02_sp3d_img.jpg"
-   ],
-   "original_caption": "The three compounds pictured exhibit sp³d hybridization in the central atom and a trigonal bipyramid form. SF₄ and ClF₄⁺ have one lone pair of electrons on the central atom, and ClF₃ has two lone pairs giving it the T-shape shown.",
    "draws": [],
    "ai": [
     {
@@ -263,6 +274,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "names under each structure, note repeating caption dropped"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "reverted to the book's image"
     }
    ]
   },
@@ -278,7 +293,9 @@
     "/media/ch08/CNX_Chem_08_02_SF6.jpg"
    ],
    "original_caption": "(Figure 8.19) (a) The five regions of electron density around phosphorus in PCl₅ require five hybrid sp³d orbitals. (b) These orbitals combine to form a trigonal bipyramidal structure with each large lobe of the hybrid orbital pointing at a vertex. As before, there are also small lobes pointing in the opposite direction for each orbital (not shown for clarity). (Figure 8.20) (a) Sulfur hexafluoride, SF₆, has an octahedral structure that requires sp³d² hybridization. (b) The six sp³d² orbitals form an octahedral structure around sulfur. Again, the minor lobe of each orbital is not shown for clarity.",
-   "draws": ["angle"],
+   "draws": [
+    "angle"
+   ],
    "conventions": [
     "P",
     "Cl",
@@ -295,6 +312,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "framing, outer-atom label off the 90° arc, meta caption clause cut"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt: larger scene, key, arcs outside, no view buttons"
     }
    ]
   },
@@ -306,7 +327,9 @@
     "/media/ch08/CNX_Chem_08_02_HybrdOrbit.jpg"
    ],
    "original_caption": "The shapes of hybridized orbital sets are consistent with the electron-pair geometries. For example, an atom surrounded by three regions of electron density is sp² hybridized, and the three sp² orbitals are arranged in a trigonal planar fashion.",
-   "draws": ["angle"],
+   "draws": [
+    "angle"
+   ],
    "ai": [
     {
      "model": "claude-opus-5-5",
@@ -317,6 +340,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "framed clear of the headline, choice label set as text"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt: lobes from wave functions, dashed arrangement, key"
     }
    ]
   },
@@ -335,14 +362,7 @@
   {
    "id": "fig-sulfate",
    "kind": "figure",
-   "originals": [
-    "/media/ch08/CNX_Chem_08_02_sulfate_img.jpg"
-   ],
    "draws": [],
-   "conventions": [
-    "O",
-    "S"
-   ],
    "ai": [
     {
      "model": "claude-opus-5-5",
@@ -353,15 +373,16 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "charge mark placed by its oxygen, note giving the answer dropped"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "reverted to the book's image"
     }
    ]
   },
   {
    "id": "fig-urea",
    "kind": "figure",
-   "originals": [
-    "/media/ch08/CNX_Chem_08_02_urea_img.jpg"
-   ],
    "draws": [],
    "ai": [
     {
@@ -373,6 +394,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "note giving the example's answer dropped"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "reverted to the book's image"
     }
    ]
   }

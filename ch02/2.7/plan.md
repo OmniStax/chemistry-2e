@@ -18,7 +18,7 @@ The book's headers stand as the page's `<h2>` in sentence case; the two headers 
 
 ## Figures
 
-- `fig-chromate` · Figure 2.32 · polyatomic-ions (the Cr(VI) oxyanions the note names) · value add: shape in 3D; the reader turns chromate's tetrahedron and sees dichromate as two tetrahedra sharing a corner oxygen atom, where the book prints one fixed view · still: a molecule has no clock · choices `ion` (chromate, dichromate) and `model` (structural formula, ball-and-stick); no slider · headline names the ion and what the model shows · no graph · both ways per the book's rule for a structure the text names: the structural formula is the flat default (`CrO₄²⁻` and `Cr₂O₇²⁻` in brackets with the charge), the ball-and-stick a 3D scene on `F.view3d` mounted on the first switch; physical 3D, free orbit (an ion has no ground), idle spin, views front and top. Bond orders as the book draws them (two double bonds on each chromium, the rest single). Atoms through `F.el`; chromium is not in the element palette and falls to its fallback (wanted below). Photograph (a), Erin Brockovich, is reached through the original the figure swaps to, as 2.2 does with Thomson; the note's text points at her by the figure number. Charges in ink: 2.7 binds nothing.
+- `fig-chromate` · Figure 2.32 · kept as the book's image (a photograph row). Reverted on 2026-11-14: the interactive version put Erin Brockovich's photograph, which the note's text cites by this figure number, behind the Original switch; its opening view was a structural formula the book does not print; and the book's image already shows both ions as ball-and-stick models with their double bonds. Turning the ions showed a tetrahedron, which this section on naming does not teach (shape comes in chapter 7). `figures.js` is removed, as the section now draws nothing.
 
 No Sim. The Link to Learning is a drill site, not a simulation of an idea; the naming rules are tables and flowing prose that no slider varies. Nothing binds a type (`ch02/COLOR.md`: 2.7 binds nothing).
 
@@ -42,4 +42,4 @@ No Sim. The Link to Learning is a drill site, not a simulation of an idea; the n
 - Element palette: `Cr` is missing from `omnistax-web/src/lib/fig/elements.ts`; the book draws chromium light steel blue (Figure 2.32b).
 - No concept, edge or symbol fix.
 
-**Applied by the chapter pass (2026-09-28).** Glossary rows carry no anchor field, so the anchors listed are not written. The element palette now carries Cr; Figure 2.32 draws chromium in its own colour.
+**Applied by the chapter pass (2026-09-28).** Glossary rows carry no anchor field, so the anchors listed are not written. The element palette now carries Cr.

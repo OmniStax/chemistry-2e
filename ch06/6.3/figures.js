@@ -327,7 +327,7 @@ const ANG = [() => 1, (c) => c, (c) => (3 * c * c - 1) / 2];
       paint(sc); F.fade3(sc.grp, a); sc.labels.forEach((e) => { e.style.display = a > 0.5 ? '' : 'none'; });
     });
     V.invalidate();
-    const { ctx } = begin(c2), nodes = o.n - o.l - 1, ca = F.cat(0), cb = F.cat(1);
+    const { ctx } = begin(c2), nodes = o.n - o.l - 1, ca = F.cat(0), cb = F.cat(1); if (!window.__c) { window.__c = 1; console.error('CATS', [0,1,2,3,4].map((i) => F.cat(i)).join(' ')); }
     const box = { l: 150, r: 1300, t: 62, b: 222 };
     const ax = axes(ctx, box, [0, 1500], [0, 1], { xl: 'distance from nucleus (pm)', xc: C('length'), yl: 'probability density', nx: 5, ny: 0 }), { X, Y } = ax;
     /* the area under the curve in the colour of the sign of ψ there */

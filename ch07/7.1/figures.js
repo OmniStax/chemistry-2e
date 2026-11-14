@@ -23,9 +23,9 @@ const TAU = 2 * Math.PI;
      na and cl which ion is picked out, zoom and ty the camera */
   const STATE = {
     a: { s: 1, k: 1, rods: 0, dim: 1, na: 0, cl: 0, zoom: 1.42, ty: 0 },
-    b: { s: 1.9, k: 0.6, rods: 1, dim: 1, na: 0, cl: 0, zoom: 1.12, ty: 0 },
-    na: { s: 1.9, k: 0.6, rods: 1, dim: 0.1, na: 1, cl: 0, zoom: 1.12, ty: 0 },
-    cl: { s: 1.9, k: 0.6, rods: 1, dim: 0.1, na: 0, cl: 1, zoom: 0.8, ty: 0.85 },
+    b: { s: 1.9, k: 0.6, rods: 1, dim: 1, na: 0, cl: 0, zoom: 1.02, ty: 0 },
+    na: { s: 1.9, k: 0.6, rods: 1, dim: 0.1, na: 1, cl: 0, zoom: 1.02, ty: 0 },
+    cl: { s: 1.9, k: 0.6, rods: 1, dim: 0.1, na: 0, cl: 1, zoom: 0.8, ty: 0.75 },
   };
   /* free yaw; pitch bounded so the layers of the crystal stay readable (rule 26.3) */
   const v = F.view3d(d.stage, { spin: 'idle', h: 640, dist: 13.4, tilt: 0.3, pitch: [-0.9, 0.9] });

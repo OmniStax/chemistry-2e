@@ -134,7 +134,7 @@ const hueL = (s) => `\\htmlClass{kv-length}{${s}}`;
     const r = RX[rc.value], b = sum(r.broken), f = sum(r.formed), dH = b - f;
     headline(ctx, dH < 0 ? `Forming the new bonds releases ${-dH} kJ more than breaking the old ones takes, so the reaction is exothermic.`
       : `Breaking the old bonds takes ${dH} kJ more than forming the new ones releases, so the reaction is endothermic.`);
-    F.tex(d.readout, `\\kdH = \\textstyle\\sum \\kDbond_{\\text{bonds broken}} - \\sum \\kDbond_{\\text{bonds formed}} ${r.long ? '\\\\ ' : ''}= [${r.sb}]\\ \\text{kJ} - [${r.sf}]\\ \\text{kJ} = ${hueE((dH < 0 ? '-' : '') + Math.abs(dH) + '\\ \\text{kJ}')}`);
+    F.tex(d.readout, `\\kdH = \\textstyle\\sum \\kDbond_{\\text{broken}} - \\sum \\kDbond_{\\text{formed}} ${r.long ? '\\\\ ' : ''}= [${r.sb}]\\ \\text{kJ} - [${r.sf}]\\ \\text{kJ} = ${hueE((dH < 0 ? '-' : '') + Math.abs(dH) + '\\ \\text{kJ}')}`);
   }
   still(d, draw);
 })();

@@ -40,7 +40,7 @@ Tables 7.2 "Bond Energies (kJ/mol)" (spanned header written by hand), 7.3 "Avera
 
 ## Binds
 
-`energy` only, per `../COLOR.md`.
+`energy` and `length`, per `../COLOR.md`. No figure uses `F.cat` since the 2026-11-14 rebuild of `sim-length`.
 
 ## Wanted at chapter level
 

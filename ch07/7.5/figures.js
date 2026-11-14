@@ -47,13 +47,15 @@ const hueL = (s) => `\\htmlClass{kv-length}{${s}}`;
       const B = PAIRS[key];
       path(B, cE, 5);
       B.forEach(([n, , x, y]) => {
+        /* C–N stands just under C–O, so its label goes below the point, clear of that one */
+        const dy = n === 'C–N' ? 30 : -28;
         dot(ctx, X(x), Y(y), cE, true, 10);
-        F.rich(ctx, [[n + '  ', PAL.ink, 600], [fmt(x, 2) + ' Å', cL], ',  ', [y + ' kJ/mol', cE]], X(x) + 18, Y(y) - 28, { size: 21, bg: PAL.panel });
+        F.rich(ctx, [[n + '  ', PAL.ink, 600], [fmt(x, 2) + ' Å', cL], ',  ', [y + ' kJ/mol', cE]], X(x) + 18, Y(y) + dy, { size: 21, bg: PAL.panel });
       });
     }, [0, 0]));
     const B = PAIRS[pick.value], s = B[0], t = B[2];
     headline(ctx, `The ${t[0]} bond is ${fmt(s[2] - t[2], 2)} Å shorter than the ${s[0]} bond and takes ${t[3] - s[3]} kJ/mol more to break.`);
-    F.tex(d.readout, B.map((b) => `\\kDbond_{${b[1]}} = ${hueE(b[3] + '\\ \\text{kJ/mol}')}`).join('\;<\;'));
+    F.tex(d.readout, B.map((b) => `\\kDbond_{${b[1]}} = ${hueE(b[3] + '\\ \\text{kJ/mol}')}`).join('\\ <\\ '));
   }
   still(d, draw);
 })();
@@ -76,7 +78,7 @@ const hueL = (s) => `\\htmlClass{kv-length}{${s}}`;
       broken: [HCL, HCL], formed: [HH, CLCL], sb: '2(432)', sf: '436 + 243' },
     meoh: { label: 'CO + 2H₂ → CH₃OH', from: 'CO(g) + 2H₂(g)', atoms: 'C(g) + O(g) + 4H(g)', to: 'CH₃OH(g)',
       broken: [['C≡O', 1080], HH, HH], formed: [['C–H', 415], ['C–H', 415], ['C–H', 415], ['C–O', 350], ['O–H', 464]],
-      sb: '1080 + 2(436)', sf: '3(415) + 350 + 464' },
+      sb: '1080 + 2(436)', sf: '3(415) + 350 + 464', long: true },
   };
   const rc = F.choice(d.controls, { label: '\\text{reaction}', aria: 'the reaction', value: 'hcl',
     options: Object.keys(RX).map((k) => ({ value: k, label: RX[k].label })) });
@@ -112,7 +114,7 @@ const hueL = (s) => `\\htmlClass{kv-length}{${s}}`;
     line(ctx, A2 - 20, yP, XE, yP, PAL.ink, 4);
     text(ctx, r.from, 164, yR + 26, PAL.ink, { size: 22 });
     text(ctx, r.atoms, (B1 + B2 + BW) / 2, YT - 24, PAL.ink, { size: 22, align: 'center' });
-    text(ctx, r.to, XE, yP + 26, PAL.ink, { size: 22, align: 'right' });
+    text(ctx, r.to, B2, yP + 26, PAL.ink, { size: 22 });
     /* the climb and the fall, with their totals */
     arrow(ctx, A1, yR, A1, YT + 4, cE, 4);
     text(ctx, 'bonds broken', A1 + 18, (yR + YT) / 2 - 15, PAL.ink, { size: 21 });
@@ -132,7 +134,7 @@ const hueL = (s) => `\\htmlClass{kv-length}{${s}}`;
     const r = RX[rc.value], b = sum(r.broken), f = sum(r.formed), dH = b - f;
     headline(ctx, dH < 0 ? `Forming the new bonds releases ${-dH} kJ more than breaking the old ones takes, so the reaction is exothermic.`
       : `Breaking the old bonds takes ${dH} kJ more than forming the new ones releases, so the reaction is endothermic.`);
-    F.tex(d.readout, `\\kdH = \\textstyle\\sum \\kDbond_{\\text{bonds broken}} - \\sum \\kDbond_{\\text{bonds formed}} = [${r.sb}]\\ \\text{kJ} - [${r.sf}]\\ \\text{kJ} = ${hueE((dH < 0 ? '-' : '') + Math.abs(dH) + '\\ \\text{kJ}')}`);
+    F.tex(d.readout, `\\kdH = \\textstyle\\sum \\kDbond_{\\text{bonds broken}} - \\sum \\kDbond_{\\text{bonds formed}} ${r.long ? '\\\\ ' : ''}= [${r.sb}]\\ \\text{kJ} - [${r.sf}]\\ \\text{kJ} = ${hueE((dH < 0 ? '-' : '') + Math.abs(dH) + '\\ \\text{kJ}')}`);
   }
   still(d, draw);
 })();
@@ -195,7 +197,7 @@ const hueL = (s) => `\\htmlClass{kv-length}{${s}}`;
     /* the book's two compounds */
     MARKS.forEach((k) => {
       dot(ctx, X(k.R), Y(k.E), PAL.ink, false, 8);
-      text(ctx, `${k.n}, ${k.E}`, X(k.R) + 15, Y(k.E) + 17, PAL.ink, { size: 18, bg: PAL.panel });
+      text(ctx, `${k.n}, ${k.E}`, X(k.R) + (k.n === 'LiF' ? -15 : 15), Y(k.E) + 17, PAL.ink, { size: 18, bg: PAL.panel, align: k.n === 'LiF' ? 'right' : 'left' });
       hits.push({ x: X(k.R), y: Y(k.E), r: 14, name: `${k.n}: ${k.E} kJ/mol at ${k.R} pm` });
     });
     /* the point for the charges and distance chosen, dropped to both axes */
@@ -238,7 +240,7 @@ const hueL = (s) => `\\htmlClass{kv-length}{${s}}`;
   /* to scale: the highest level (531.6 kJ/mol) at y = 140, the lowest (−553.5) at y = 650 */
   const top = 140, bot = 650, Y = (v) => top + ((E[3] - v) / (E[3] - HF)) * (bot - top);
   /* each level's span and where its name starts; the climbing steps share one column, the falling steps another, as in the image */
-  const SPAN = [[170, 560], [170, 560], [170, 560], [430, 1010], [870, 1250], [170, 1010]];
+  const SPAN = [[170, 525], [170, 525], [170, 525], [430, 1010], [870, 1250], [170, 1010]];
   const LX = [182, 182, 182, 600, 962, 1000];
   const AX = [500, 500, 500, 940, 940];
   function draw() {
@@ -261,8 +263,8 @@ const hueL = (s) => `\\htmlClass{kv-length}{${s}}`;
       if (k <= 0) return;
       const x = AX[i], y0 = Y(E[i]), y1 = Y(E[i + 1]);
       arrow(ctx, x, y0, x, y0 + (y1 - y0) * k, cE, 5);
-      if (k > 0.85) level(i + 1, (k - 0.85) / 0.15);
-      F.faded(ctx, clamp((k - 0.5) * 2), [0, 0], () => F.rich(ctx, [[stp.sym + ' = ', PAL.ink, 600], [fmt(stp.dh, 1) + ' kJ/mol', cE]], x + 20, (y0 + y1) / 2, { size: 21 }));
+      if (k > 0.85 && i < 4) level(i + 1, (k - 0.85) / 0.15);
+      F.faded(ctx, clamp((k - 0.5) * 2), [0, 0], () => F.rich(ctx, [[stp.sym + ' = ', PAL.ink, 600], [fmt(stp.dh, 1) + ' kJ/mol', cE]], x + (i < 3 ? 42 : 20), (y0 + y1) / 2, { size: 21 }));
     });
     headline(ctx, done === 0 ? 'Cesium metal and fluorine gas lie 553.5 kJ/mol above solid CsF.'
       : done < 5 ? STEPS[done - 1].what
@@ -273,7 +275,7 @@ const hueL = (s) => `\\htmlClass{kv-length}{${s}}`;
     const tex = done === 0 ? `\\kdHf = ${hueE('-553.5' + kj)}`
       : done === 1 ? `\\kdHs = ${hueE('76.5' + kj)}`
       : done < 5 ? `${syms} = (${nums})${kj} = ${hueE(fmt(E[done], 1) + kj)}`
-      : `\\kdHlat = ${syms} - \\kdHf = [${nums} - (-553.5)]${kj} = ${hueE('756.9' + kj)}`;
+      : `\\kdHlat = ${syms} - \\kdHf \\\\ = [${nums} - (-553.5)]${kj} = ${hueE('756.9' + kj)}`;
     F.tex(d.readout, tex, false, { values: false });
   }
   still(d, draw);

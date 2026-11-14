@@ -232,9 +232,9 @@ const SPECIALS = [{ at: 24, label: 'Cr' }, { at: 29, label: 'Cu' }, { at: 41, la
     });
     /* the key: each kind named once */
     const sample = (e) => (c, x, y) => {
-      box(c, x - 20, y, 40, PAL.ink);
-      if (e >= 1) spin(c, x - 5, y, true, AH, PAL.ink);
-      if (e === 2) spin(c, x + 5, y, false, AH, PAL.ink);
+      c.save(); c.strokeStyle = PAL.ink; c.lineWidth = 2; c.strokeRect(x - 16, y - 11, 32, 22); c.restore();
+      if (e >= 1) spin(c, x - 4, y, true, 15, PAL.ink, 2.5);
+      if (e === 2) spin(c, x + 4, y, false, 15, PAL.ink, 2.5);
     };
     F.legend(ctx, { l: 900, r: 1380, t: 690, b: 900 }, [
       { s: 'an orbital with one electron', draw: sample(1) },
@@ -247,7 +247,7 @@ const SPECIALS = [{ at: 24, label: 'Cr' }, { at: 29, label: 'Cu' }, { at: 41, la
     if (exc) {
       const src = ORDER.filter((s) => (obs[s] || 0) < (pred[s] || 0)), dst = ORDER.filter((s) => (obs[s] || 0) > (pred[s] || 0));
       const cnt = moving.length, names = (a) => a.map((s) => '$' + s + '$').join(' and ');
-      head = el0.name + ', Z = ' + Z + ': ' + (cnt === 1 ? 'one ' : cnt + ' ') + names(src) + (cnt === 1 ? ' electron sits in ' : ' electrons sit in ') + names(dst) + ', so $' + texAbbr(Z, pred) + '$ is observed as $' + texAbbr(Z, obs) + '$.';
+      head = el0.name + ', Z = ' + Z + ': ' + (['', 'one ', 'two ', 'three '][cnt] || cnt + ' ') + names(src) + (cnt === 1 ? ' electron sits in ' : ' electrons sit in ') + names(dst) + ', so $' + texAbbr(Z, pred) + '$ is observed as $' + texAbbr(Z, obs) + '$.';
     } else {
       head = el0.name + ', Z = ' + Z + ': the last electron enters $' + last + '$, leaving ' + un + '.';
     }
@@ -304,6 +304,8 @@ const SPECIALS = [{ at: 24, label: 'Cr' }, { at: 29, label: 'Cu' }, { at: 41, la
     const { ctx } = begin(d.c);
     const sel = Zs.v, s0 = E(sel), got = read(sel), [sub, nth] = term(sel);
     hits = [];
+    /* in a pane too narrow for two lines in a square, a square keeps its symbol and the enlarged one carries the subshell */
+    const narrow = d.c.clientWidth > 0 && d.c.clientWidth < 640;
     /* period and group numbers */
     for (let p = 1; p <= 7; p++) text(ctx, String(p), X0 - 22, TOP + (p - 1) * PY + CH / 2, PAL.muted, { size: 18, align: 'center' });
     ctx.save(); ctx.translate(X0 - 22, TOP - 20); ctx.rotate(-Math.PI / 2); text(ctx, 'period', 0, 0, PAL.muted, { size: 18 }); ctx.restore();
@@ -318,8 +320,8 @@ const SPECIALS = [{ at: 24, label: 'Cr' }, { at: 29, label: 'Cu' }, { at: 41, la
       ctx.strokeStyle = on ? c : alpha(c, 0.6); ctx.lineWidth = 1.5; ctx.strokeRect(x + 1, y, CW - 3, CH); ctx.restore();
       if (differs(Z)) { ctx.save(); ctx.setLineDash([5, 4]); ctx.strokeStyle = on ? PAL.ink : PAL.muted; ctx.lineWidth = 2; ctx.strokeRect(x + 5, y + 4, CW - 11, CH - 8); ctx.restore(); }
       if (Z === sel) { ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 5; ctx.strokeRect(x, y - 1, CW - 1, CH + 2); ctx.restore(); }
-      text(ctx, q.sym, x + CW / 2, y + 21, on ? PAL.ink : PAL.muted, { size: 21, weight: 600, align: 'center' });
-      text(ctx, '$' + s + '^{' + k + '}$', x + CW / 2, y + 48, on ? PAL.ink : PAL.muted, { size: 20, align: 'center', tex: true });
+      text(ctx, q.sym, x + CW / 2, y + (narrow ? CH / 2 : 21), on ? PAL.ink : PAL.muted, { size: 21, weight: 600, align: 'center' });
+      if (!narrow) text(ctx, '$' + s + '^{' + k + '}$', x + CW / 2, y + 48, on ? PAL.ink : PAL.muted, { size: 20, align: 'center', tex: true });
       hits.push({ x: x + CW / 2, y: y + CH / 2, r: 34, name: q.name + ', Z = ' + Z + (Z < 113 ? ', observed ' + (coreOf(Z) ? '[' + coreOf(Z)[1] + ']' : '') + valenceTerms(Z, observed(Z)).map(([a, b]) => a + String(b).split('').map((ch) => '⁰¹²³⁴⁵⁶⁷⁸⁹'[+ch]).join('')).join('') : '') });
     }
     /* the chosen square, enlarged, as the key to a square; and the key to the colours */
@@ -328,10 +330,12 @@ const SPECIALS = [{ at: 24, label: 'Cr' }, { at: 29, label: 'Cu' }, { at: 41, la
     text(ctx, s0.sym, bx + bw / 2, by + 48, PAL.ink, { size: 44, weight: 600, align: 'center' });
     text(ctx, '$' + sub + '^{' + nth + '}$', bx + bw / 2, by + 112, PAL.ink, { size: 44, align: 'center', tex: true });
     const lx = bx + bw + 60;
+    if (!narrow) {
     line(ctx, bx + bw + 8, by + 48, lx - 8, by + 48, PAL.muted, 2); text(ctx, s0.name.toLowerCase(), lx, by + 48, PAL.ink, { size: 20 });
     line(ctx, bx + bw + 8, by + 112, lx - 8, by + 112, PAL.muted, 2);
-    text(ctx, 'its row’s subshell and', lx, by + 100, PAL.ink, { size: 20 });
-    text(ctx, 'its place along the row', lx, by + 126, PAL.ink, { size: 20 });
+    text(ctx, 'the subshell being filled', lx, by + 100, PAL.ink, { size: 20 });
+    text(ctx, 'and the electrons in it', lx, by + 126, PAL.ink, { size: 20 });
+    }
     const sw = (c) => (cx, x, y) => { cx.save(); cx.fillStyle = alpha(c, 0.45); cx.fillRect(x - 18, y - 11, 36, 22); cx.strokeStyle = c; cx.lineWidth = 1.5; cx.strokeRect(x - 18, y - 11, 36, 22); cx.restore(); };
     F.legend(ctx, { l: 700, r: X0 + 12 * CW - 6, t: TOP - 10, b: TOP + 3 * PY - 40 }, [
       ...['s', 'p', 'd', 'f'].map((b) => ({ s: '$' + b + '$ block', draw: sw(F.cat(BLOCK[b])) })),

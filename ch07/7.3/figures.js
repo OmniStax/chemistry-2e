@@ -14,8 +14,8 @@ const RAD = Math.PI / 180;
    to the right one); the lone pairs sit on the sides the images show.
 ===================================================================== */
 (function () {
-  const H = 500, SX = 400, SY = 285, B = 130;      /* stage height, the structure's centre, one bond length */
-  const PX = 790;                                   /* left edge of the count beside the structure */
+  const H = 480, SX = 400, SY = 276, B = 130;      /* stage height, the structure's centre, one bond length */
+  const PX = 760;                                   /* left edge of the count beside the structure */
   const NAMES = { H: 'hydrogen', C: 'carbon', N: 'nitrogen', O: 'oxygen', F: 'fluorine', Si: 'silicon' };
   const U = -90, R = 0, D = 90, L = 180;            /* the four sides of an atom, as screen angles */
   /* atoms in bond lengths; v: valence electrons; lp3, lp4, lp5: the sides that carry a lone pair after steps 3, 4, 5;
@@ -56,7 +56,7 @@ const RAD = Math.PI / 180;
       bonds: [[1, 0], [1, 2], [2, 3]], lp3: [[], [], [], []], lp4: [[], [U], [U], []], lp5: [[], [], [], []], order5: [1, 3, 1], moves: [[1, U, 1], [2, U, 1]],
       rows: [['each C', [1, 2]], ['each H', [0, 3]]],
       s3: 'Hydrogen takes no lone pairs, and 4 electrons remain.', s4: 'The 4 remaining electrons go on the two carbon atoms as lone pairs.',
-      s5: 'Each carbon atom has only 6 electrons, so the two lone pairs become bonds: a C–C triple bond.' },
+      s5: 'Each carbon has only 6 electrons, so both lone pairs become bonds: a C–C triple bond.' },
   ];
   const WORD = ['No', 'One', 'Two', 'Three', 'Four'];
   const BONDNAME = ['', 'single', 'double', 'triple'];
@@ -76,7 +76,7 @@ const RAD = Math.PI / 180;
   }
   /* where the atoms stand: the structure centred on (SX, SY), the lone atoms of step 1 a little further apart */
   function place(m, s) {
-    const k = B * (s === 1 ? 1.25 : 1), xs = m.atoms.map((a) => a.x * k), ys = m.atoms.map((a) => a.y * k);
+    const k = B * (s === 1 ? 1.15 : 1), xs = m.atoms.map((a) => a.x * k), ys = m.atoms.map((a) => a.y * k);
     const ox = SX - (Math.min(...xs) + Math.max(...xs)) / 2, oy = SY - (Math.min(...ys) + Math.max(...ys)) / 2;
     return m.atoms.map((a, i) => [xs[i] + ox, ys[i] + oy]);
   }
@@ -149,7 +149,7 @@ const RAD = Math.PI / 180;
   /* The count beside the structure. Step 1: the valence electrons each element brings, as the book adds them.
      Later steps: the pairs round each atom, a bar for a shared pair and two dots for a lone pair, as in the
      structure, with a dashed place for each pair an octet (or hydrogen's two electrons) still lacks. */
-  const SLOT = 74, GX = PX + 150, TX = PX + 468;
+  const SLOT = 76, GX = PX + 170, TX = PX + 590;
   function pairGlyph(ctx, kind, x, y, color) {
     if (kind === 'shared') line(ctx, x - 22, y, x + 22, y, color, 4);
     else if (kind === 'lone') { F.dot(ctx, x - 9, y, color, true, 5.5); F.dot(ctx, x + 9, y, color, true, 5.5); }
@@ -171,20 +171,20 @@ const RAD = Math.PI / 180;
         rowsOut.push({ label, slots, says: `${st.count[i]} of ${2 * cap}` });
       });
     }
-    const pitch = 58, y0 = SY + 4 - ((rowsOut.length - 1) * pitch) / 2;
-    text(ctx, st.s === 1 ? 'valence electrons' : 'electrons around each atom', PX, y0 - 56, PAL.muted, { size: 20 });
+    const pitch = 60, y0 = SY + 4 - ((rowsOut.length - 1) * pitch) / 2;
+    text(ctx, st.s === 1 ? 'valence electrons' : 'electrons around each atom', PX, y0 - 58, PAL.muted, { size: 24 });
     rowsOut.forEach((r, n) => {
       const y = y0 + n * pitch;
-      text(ctx, r.label, PX, y, PAL.ink, { size: 26, weight: 600 });
+      text(ctx, r.label, PX, y, PAL.ink, { size: 30, weight: 600 });
       if (r.slots) r.slots.forEach(([kind, fresh], q) => { ctx.save(); if (fresh) ctx.globalAlpha *= k; pairGlyph(ctx, kind, GX + SLOT * q + 24, y, fresh ? red : PAL.ink); ctx.restore(); });
       else for (let q = 0; q < r.dots; q++) F.dot(ctx, GX + 8 + 24 * q, y, PAL.ink, !r.hollow, 5.5);
-      text(ctx, r.says, TX, y, PAL.ink, { size: 24, align: 'right' });
+      text(ctx, r.says, TX, y, PAL.ink, { size: 28, align: 'right' });
     });
     if (st.s > 1) F.legend(ctx, { l: PX - 20, r: TX + 20, t: 0, b: H - 4 }, [
       { s: 'shared pair', draw: (c, x, y) => pairGlyph(c, 'shared', x, y, PAL.ink) },
       { s: 'lone pair', draw: (c, x, y) => pairGlyph(c, 'lone', x, y, PAL.ink) },
       { s: 'pair still lacking', draw: (c, x, y) => pairGlyph(c, 'none', x, y, PAL.ink) },
-    ], { corner: 'bottom', row: true, panel: false });
+    ], { corner: 'bottom', row: true, panel: false, size: 21 });
   }
 
   function words(st) {

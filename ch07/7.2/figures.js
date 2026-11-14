@@ -46,9 +46,6 @@ const minus = (s) => s.replace('-', '−');
     text(ctx, '−7.24 × 10⁻¹⁹ J', X(100), Y(-DEPTH), cE, { size: 18, weight: 600, bg: PAL.panel });
     text(ctx, '74', X(RE), box.b + 26, cL, { size: 17, weight: 600, align: 'center', bg: PAL.panel });
     text(ctx, 'bond length of H₂', X(RE), box.b + 52, cL, { size: 17, weight: 600, align: 'center' });
-    /* what holds on each side of the bond length; the side the atoms are on is set in ink */
-    text(ctx, 'closer, the two nuclei repel', X(50), Y(2.6), r < RE ? PAL.ink : PAL.muted, { size: 18, bg: PAL.panel });
-    text(ctx, 'each electron is attracted to both nuclei', X(250), Y(-3.7), r > RE ? PAL.ink : PAL.muted, { size: 18, align: 'center', bg: PAL.panel });
     /* the two atoms on the axis's scale, the right nucleus over the point */
     const xa = X(0), xb = X(r), yb = CY + RC + 18;
     cloud(ctx, xa); cloud(ctx, xb);
@@ -59,6 +56,9 @@ const minus = (s) => s.replace('-', '−');
     line(ctx, xb, CY + 10, xb, yb - 12, alpha(PAL.ink, 0.35), 2, [4, 8]);
     hbracket(ctx, xa, xb, yb, cL, r + ' pm', { side: 'below' });
     line(ctx, xb, yb + 12, xb, Y(Math.min(e, 4)) - 12, alpha(PAL.ink, 0.35), 2, [4, 8]);
+    /* what holds on each side of the bond length; the side the atoms are on is set in ink */
+    text(ctx, 'closer, the two nuclei repel', X(84), Y(2.6), r < RE ? PAL.ink : PAL.muted, { size: 18, bg: PAL.panel });
+    text(ctx, 'each electron is attracted to both nuclei', X(250), Y(-3.7), r > RE ? PAL.ink : PAL.muted, { size: 18, align: 'center', bg: PAL.panel });
     pinned(ctx, box, X, Y, r, e, cE);
     const name = 'a hydrogen atom: its nucleus and the cloud of its 1s electron';
     hits = [{ x: xa, y: CY, r: RC * 0.6, name }, { x: xb, y: CY, r: RC * 0.6, name }];
@@ -76,7 +76,7 @@ const minus = (s) => s.replace('-', '−');
    and 1.8. Still: a choice of pair has no clock.
 ===================================================================== */
 (function () {
-  const d = sim('sim-polarity', 670);
+  const d = sim('sim-polarity', 700);
   /* Pauling's values from Figure 7.6, radii in picometers and the kind of element (M metal, D metalloid, N nonmetal) as Figure 7.6 tints them */
   const EL = {
     H: [2.1, 37, 'N'], Li: [1.0, 134, 'M'], Na: [0.9, 154, 'M'], K: [0.8, 196, 'M'], Cs: [0.7, 225, 'M'], Mg: [1.2, 130, 'M'], Ca: [1.0, 174, 'M'], Ba: [0.9, 198, 'M'], Mn: [1.5, 139, 'M'],
@@ -88,9 +88,9 @@ const minus = (s) => s.replace('-', '−');
   /* the second atom is never a metal, so no pair of two metals can be chosen: the scale is for bonds that hold a nonmetal */
   const SA = F.select(d.controls, { label: '\\text{atom A}', aria: 'first atom of the bond', options: Object.keys(EL).map(opt), value: 'H' });
   const SB = F.select(d.controls, { label: '\\text{atom B}', aria: 'second atom of the bond, a nonmetal or a metalloid', options: Object.keys(EL).filter((s) => EL[s][2] !== 'M').map(opt), value: 'Cl' });
-  const rad = (pm) => 10 * Math.sqrt(pm);         /* drawn radius: larger atoms larger, hydrogen still large enough to shade */
+  const rad = (pm) => 12 * Math.sqrt(pm);         /* drawn radius: larger atoms larger, hydrogen still large enough to shade */
   const cap = (s) => s[0].toUpperCase() + s.slice(1);
-  const CX = 700, CY = 315;
+  const CX = 700, CY = 330;
   let hits = []; F.hover(d.stage, () => hits);
   function draw() {
     const { ctx } = begin(d.c);
@@ -125,9 +125,9 @@ const minus = (s) => s.replace('-', '−');
       line(ctx, x1 + s * 22, ya - 12, x1 + s * 22, ya + 12, cMu, 4);
       hits.push({ x: (x1 + x2) / 2, y: ya, r: 40, name: 'points from the positive end of the bond to the negative end' });
     }
-    legend(ctx, { l: 40, r: 460, t: 330, b: 470 }, [{ ramp: [alpha(PAL.ink, dens(0)), alpha(PAL.ink, dens(1))], ends: ['fewer', 'more'], s: 'shared electrons near the atom' }], { corner: 'bl' });
+    legend(ctx, { l: 40, r: 460, t: 370, b: 510 }, [{ ramp: [alpha(PAL.ink, dens(0)), alpha(PAL.ink, dens(1))], ends: ['fewer', 'more'], s: 'shared electrons near the atom' }], { corner: 'bl' });
     /* the scale of Figure 7.8: ΔEN from 0 to 3.4 (cesium and fluorine differ by 3.3), cut at 0.4 and 1.8 */
-    const l = 120, r = 1280, yt = 548, yb = 596, X = (v) => l + ((r - l) * v) / 3.4;
+    const l = 120, r = 1280, yt = 580, yb = 628, X = (v) => l + ((r - l) * v) / 3.4;
     const BANDS = [[0, 0.4, 'pure covalent', 0.05], [0.4, 1.8, 'polar covalent', 0.12], [1.8, 3.4, 'ionic', 0.22]];
     const type = d10 < 4 ? 0 : d10 <= 18 ? 1 : 2;
     BANDS.forEach(([u, v, n, k], i) => {
@@ -137,9 +137,8 @@ const minus = (s) => s.replace('-', '−');
     [0, 0.4, 1, 1.8, 2, 3].forEach((v) => { line(ctx, X(v), yb, X(v), yb + 10, PAL.muted, 2); text(ctx, fmt(v, v === 0.4 || v === 1.8 ? 1 : 0), X(v), yb + 28, PAL.muted, { size: 17, align: 'center' }); });
     text(ctx, 'ΔEN', l - 18, (yt + yb) / 2, PAL.ink, { size: 22, weight: 600, align: 'right' });
     const m = X(Math.abs(eB - eA));
-    ctx.save(); ctx.fillStyle = PAL.ink; ctx.beginPath(); ctx.moveTo(m, yt + 2); ctx.lineTo(m - 11, yt - 18); ctx.lineTo(m + 11, yt - 18); ctx.closePath(); ctx.fill(); ctx.restore();
-    line(ctx, m, yt, m, yb, PAL.ink, 4);
-    text(ctx, fmt(dEN, 1), Math.min(Math.max(m, l + 20), r - 20), yt - 36, PAL.ink, { size: 22, weight: 600, align: 'center' });
+    ctx.save(); ctx.fillStyle = PAL.ink; ctx.beginPath(); ctx.moveTo(m, yt); ctx.lineTo(m - 13, yt - 22); ctx.lineTo(m + 13, yt - 22); ctx.closePath(); ctx.fill(); ctx.restore();
+    text(ctx, fmt(dEN, 1), Math.min(Math.max(m, l + 20), r - 20), yt - 40, PAL.ink, { size: 22, weight: 600, align: 'center' });
     hits.push({ x: m, y: yt - 10, r: 26, name: 'the electronegativity difference of ' + a + ' and ' + b });
     arrow(ctx, l, yb + 62, r, yb + 62, PAL.muted, 2.5);
     text(ctx, 'covalent character decreases, ionic character increases', (l + r) / 2, yb + 62, PAL.muted, { size: 17, align: 'center', bg: PAL.panel });

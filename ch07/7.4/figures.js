@@ -125,8 +125,8 @@ const book = (S) => S.atoms.map((a, i) => {
     const { ctx } = begin(d.c);
     const si = +pickS.value, ai = +pickA.value, S = STRUCTS[si], B = book(S), from = STRUCTS[+pickS.from], k = pickS.k;
     const swap = k < 1 && from.fam !== S.fam;
-    if (swap) family(ctx, from.fam, 1 - k);
-    family(ctx, S.fam, swap ? k : 1);
+    if (swap && k < 0.5) family(ctx, from.fam, 1 - 2 * k);   // the old candidates leave before the new ones arrive
+    family(ctx, S.fam, swap ? Math.max(0, 2 * k - 1) : 1);
     headline(ctx, S.verdict);
     hits = FAM[S.fam].flatMap((i) => { const T = STRUCTS[i], Bi = book(T); return T.atoms.map((a, n) => ({ x: centre(i) + a.x, y: CY, r: 40, name: `${NAMES[a.s]} (${a.s}): formal charge ${signed(Bi[n].fc)}` })); });
     const b = B[ai], a = S.atoms[ai];
@@ -148,17 +148,17 @@ const book = (S) => S.atoms.map((a, i) => {
    bond and lone pairs carry F.cat(0); the rest is ink.
 ===================================================================== */
 (function () {
-  const H = 506, CY = 236, L0 = 232, R0 = 1382;
+  const H = 490, CY = 232, L0 = 204, R0 = 1390, CAP = 384, ROW = [424, 460];
   const IONS = {
     no2: {
-      label: 'NO₂⁻', bond: 'N–O', charge: '−', small: false, w: 310, q: 26, ox: ['left', 'right'], bo: '1.5', fc: '−½', fcTex: '-\\tfrac{1}{2}',
+      label: 'NO₂⁻', bond: 'N–O', charge: '−', small: false, m: 50, mh: 56, w: 310, wh: 322, q: 26, ox: ['left', 'right'], bo: '1.5', fc: '−½', fcTex: '-\\tfrac{1}{2}',
       atoms: [{ s: 'N', x: 0, y: 0, lp: 1 }, { s: 'O', x: -105, y: 0 }, { s: 'O', x: 105, y: 0 }],
       forms: [[1, 2], [2, 1]],
       head: 'In the hybrid the two N–O bonds are alike, each halfway between a single and a double bond.',
     },
     co3: {
-      label: 'CO₃²⁻', bond: 'C–O', charge: '2−', small: true, w: 216, q: 30, ox: ['left', 'right', 'top'], bo: '1.33', fc: '−⅔', fcTex: '-\\tfrac{2}{3}',
-      atoms: [{ s: 'C', x: 0, y: 12, lp: 0 }, { s: 'O', x: -72, y: 67 }, { s: 'O', x: 72, y: 67 }, { s: 'O', x: 0, y: -93 }],
+      label: 'CO₃²⁻', bond: 'C–O', charge: '2−', small: true, m: 38, mh: 44, w: 208, wh: 220, q: 30, ox: ['left', 'right', 'top'], bo: '1.33', fc: '−⅔', fcTex: '-\\tfrac{2}{3}',
+      atoms: [{ s: 'C', x: 0, y: 12, lp: 0 }, { s: 'O', x: -66, y: 67 }, { s: 'O', x: 66, y: 67 }, { s: 'O', x: 0, y: -93 }],
       forms: [[2, 1, 1], [1, 2, 1], [1, 1, 2]],
       head: 'In the hybrid the three C–O bonds are alike, each one-third of the way from a single to a double bond.',
     },
@@ -182,12 +182,12 @@ const book = (S) => S.atoms.map((a, i) => {
     const I = IONS[key], n = I.forms.length, red = F.cat(0), out = [];
     const oi = Math.min(+pickO.value, I.ox.length - 1);
     const st = (j) => (live ? shown(pickO, String(j)) : j === oi ? 1 : 0), mark = (j) => mixColor(PAL.ink, red, st(j));
-    const col = I.w + I.q, A = (R0 - L0 - (n + 1) * col) / n;      // the gap an arrow, and the rule, stand in
-    const cxOf = (f) => L0 + I.w / 2 + f * (col + A);              // f = n is the hybrid
-    const style = { cy: CY, small: I.small, dots: (i) => (i ? mark(i - 1) : PAL.ink), bond: (p, q) => mark(Math.max(p, q) - 1) };
+    const col = I.w + I.q, A = (R0 - L0 - n * col - I.wh - I.q) / n;   // the gap an arrow, and the rule, stand in
+    const cxOf = (f) => L0 + f * (col + A) + (f < n ? I.w : I.wh) / 2;   // f = n is the hybrid
+    const style = { cy: CY, small: I.small, margin: I.m, dots: (i) => (i ? mark(i - 1) : PAL.ink), bond: (p, q) => mark(Math.max(p, q) - 1) };
     const tally = (x, a, b, lead) => {
-      F.rich(ctx, [lead, [a, red]], x, 440, { size: 22, align: 'center' });
-      F.rich(ctx, [lead, [b, red]], x, 478, { size: 22, align: 'center' });
+      F.rich(ctx, [lead, [a, red]], x, ROW[0], { size: 22, align: 'center' });
+      F.rich(ctx, [lead, [b, red]], x, ROW[1], { size: 22, align: 'center' });
     };
     I.forms.forEach((orders, f) => {
       const cx = cxOf(f), S = form(I, orders), P = lewis(ctx, S, { cx, ...style }), B = book(S);
@@ -198,19 +198,18 @@ const book = (S) => S.atoms.map((a, i) => {
       tally(cx, String(orders[oi]), signed(B[oi + 1].fc), '');
       S.atoms.forEach((a, i) => out.push({ x: P[i][0], y: P[i][1], r: 30, name: `${NAMES[a.s]} (${a.s}): formal charge ${signed(B[i].fc)}` }));
     });
-    const xr = cxOf(n) - I.w / 2 - A / 2, hx = cxOf(n);
+    const xr = cxOf(n) - I.wh / 2 - A / 2, hx = cxOf(n);
     line(ctx, xr, 84, xr, H - 14, PAL.rule, 1.5);
-    const P = lewis(ctx, hybrid(I), { cx: hx, ...style });
+    const P = lewis(ctx, hybrid(I), { cx: hx, ...style, margin: I.mh });
     P.slice(1).forEach(([x, y], j) => {
-      const dx = x - P[0][0], dy = y - P[0][1], L = Math.hypot(dx, dy);
-      const at = I.small ? [x + dx / L * 32, y + dy / L * 32] : [x, y + 40];   // outward of a carbonate oxygen, under a nitrite one
+      const at = y < P[0][1] - 1 ? [x + 40, y] : [x, y + (I.small ? 29 : 37)];   // under its oxygen atom, or beside the one drawn above the centre
       text(ctx, I.fc, at[0], at[1], mark(j), { size: 22, weight: 600, align: 'center' });
     });
     tally(hx, I.bo, I.fc, 'average ');
-    text(ctx, n === 2 ? 'the two resonance forms' : 'the three resonance forms', (cxOf(0) + cxOf(n - 1)) / 2, 398, PAL.muted, { size: 19, align: 'center' });
-    text(ctx, 'resonance hybrid', hx, 398, PAL.muted, { size: 19, align: 'center' });
-    text(ctx, `bonds to the ${I.ox[oi]} O`, L0 - 28, 440, PAL.ink, { size: 20, align: 'right' });
-    text(ctx, 'its formal charge', L0 - 28, 478, PAL.ink, { size: 20, align: 'right' });
+    text(ctx, n === 2 ? 'the two resonance forms' : 'the three resonance forms', (cxOf(0) + cxOf(n - 1)) / 2, CAP, PAL.muted, { size: 19, align: 'center' });
+    text(ctx, 'resonance hybrid', hx, CAP, PAL.muted, { size: 19, align: 'center' });
+    text(ctx, `bonds to the ${I.ox[oi]} O`, L0 - 20, ROW[0], PAL.ink, { size: 19, align: 'right' });
+    text(ctx, 'its formal charge', L0 - 20, ROW[1], PAL.ink, { size: 19, align: 'right' });
     I.atoms.forEach((a, i) => out.push({ x: P[i][0], y: P[i][1], r: 30, name: i ? `oxygen (O): ${I.bo} bonds and a charge of ${I.fc}; its lone pairs are not drawn` : `${NAMES[a.s]} (${a.s}), the central atom` }));
     return out;
   }
@@ -218,9 +217,9 @@ const book = (S) => S.atoms.map((a, i) => {
   function draw() {
     const { ctx } = begin(d.c);
     const key = pick.value, I = IONS[key], swap = pick.k < 1 && pick.from !== key;
-    if (swap) faded(ctx, 1 - pick.k, [0, 0], () => drawIon(ctx, pick.from, false));
+    if (swap && pick.k < 0.5) faded(ctx, 1 - 2 * pick.k, [0, 0], () => drawIon(ctx, pick.from, false));   // the old ion leaves before the new one arrives
     let h = [];
-    faded(ctx, swap ? pick.k : 1, [0, 0], () => { h = drawIon(ctx, key, true); });
+    faded(ctx, swap ? Math.max(0, 2 * pick.k - 1) : 1, [0, 0], () => { h = drawIon(ctx, key, true); });
     hits = h;
     headline(ctx, I.head);
     const oi = Math.min(+pickO.value, I.ox.length - 1), n = I.forms.length;

@@ -65,7 +65,6 @@ const MAIN = (e) => e.group === 1 || e.group === 2 || e.group >= 13;
     /* the period picked out: one band through both graphs */
     const X = ax[0].X, bl = X(m0 - 0.5), br = X(m1 + 0.5);
     ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.07); ctx.fillRect(bl, P[0].box.t, br - bl, P[1].box.b - P[0].box.t); ctx.restore();
-    text(ctx, `period ${p}`, Math.max((bl + br) / 2, P[0].box.l + 50), P[0].box.t - 20, PAL.ink, { size: 20, weight: 600, align: 'center' });
     hits = [];
     P.forEach((Q, i) => {
       const { X, Y } = ax[i], col = Q.col(), last = Math.min(z1, Q.zmax);
@@ -146,11 +145,11 @@ const MAIN = (e) => e.group === 1 || e.group === 2 || e.group >= 13;
       ctx.save(); ctx.fillStyle = prop.mixColor((w) => fillOf(w, e)); ctx.fillRect(x - CW / 2, y - CH / 2, CW, CH);
       ctx.lineWidth = 1.5; ctx.strokeStyle = alpha(PAL.ink, 0.3); ctx.strokeRect(x - CW / 2, y - CH / 2, CW, CH); ctx.restore();
       ['ie', 'ea'].forEach((w) => prop.only(ctx, w, () => {
-        if (breaks(w, e)) { ctx.save(); ctx.setLineDash([6, 4]); ctx.lineWidth = 3; ctx.strokeStyle = ce; ctx.strokeRect(x - CW / 2 + 4, y - CH / 2 + 4, CW - 8, CH - 8); ctx.restore(); }
+        if (breaks(w, e)) { ctx.save(); ctx.setLineDash([6, 4]); ctx.lineWidth = 3; ctx.strokeStyle = ce; ctx.strokeRect(x - CW / 2 + 3, y - CH / 2 + 3, CW - 6, CH - 6); ctx.restore(); }
         /* a value on a deeply shaded cell is set in ink, which reads against the shading where the energy hue does not */
         const n = val(w, e), deep = n !== null && depth(w, frac(w, n)) > 0.36 && !(w === 'ea' && n >= 0);
         const s = w === 'ie' ? (e.ieBook ? String(e.ie) : '…') : eaText(e);
-        text(ctx, s, x, y + 15, deep ? PAL.ink : ce, { size: 19, align: 'center', weight: deep ? 600 : 400 });
+        text(ctx, s, x, y + 15, deep ? PAL.ink : ce, { size: 18, align: 'center', weight: deep ? 600 : 400 });
       }, [0, 0]));
       text(ctx, e.sym, x, y - 14, PAL.ink, { size: 21, weight: 600, align: 'center' });
       const n = val(v, e), what = v === 'ie' ? 'first ionization energy' : 'electron affinity';

@@ -150,10 +150,8 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
     detents: [{ v: Math.log10(589e-9), label: '589 nm' }, { v: Math.log10(CL / 850e6), label: '850 MHz' }] });
   const WY = 86, SY = 166, SH = 56;                /* the wave and the strip of regions */
   const AX = [262, 352, 442];                      /* the wavelength, frequency and energy scales */
-  let hits = []; F.hover(d.stage, () => hits);
   function draw() {
     const { ctx } = begin(d.c);
-    hits = [];
     const lg = LG.v, lam = Math.pow(10, lg), nu = CL / lam, E = HP * nu, nm = lam * 1e9;
     const cw = C('wavelength'), cf = C('frequency'), ce = C('energy'), x = X(lg);
     /* the wave above the strip: short at the gamma end, long at the radio end */
@@ -183,7 +181,7 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
     scaleRow(AX[1], cf, 'frequency ν (Hz)', (q) => Math.log10(CL) - q, 5, 21);
     scaleRow(AX[2], ce, 'photon energy E (J)', (q) => Math.log10(HP * CL) - q, -28, -12);
     /* the chosen wavelength through the strip and all three scales, its value tagged above each scale */
-    line(ctx, x, WY - 26, x, AX[2], alpha(PAL.ink, 0.55), 2, [4, 8]);
+    line(ctx, x, SY - SH / 2, x, AX[2], alpha(PAL.ink, 0.55), 2, [4, 8]);
     line(ctx, x, SY - SH / 2, x, SY + SH / 2, PAL.ink, 4);
     const tag = (s, y, col) => { const w = F.measure(ctx, s, { size: 19, weight: 600 }) / 2 + 10; text(ctx, s, Math.min(Math.max(x, L + w), R - w), y - 24, col, { size: 19, weight: 600, align: 'center', bg: PAL.panel }); };
     tag(lenU(lam) + (visible(nm) ? ', ' + colorName(nm) + ' light' : ''), AX[0], cw);
@@ -191,7 +189,6 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
     tag(sciU(E) + ' J', AX[2], ce);
     dot(ctx, x, AX[0], visible(nm) ? lightColor(nm) : cw, true, 9);
     dot(ctx, x, AX[1], cf, true, 9); dot(ctx, x, AX[2], ce, true, 9);
-    hits.push({ x: x, y: WY, r: 30, name: 'the waves lengthen from the gamma end to the radio end' });
     tex(d.readout,
       `\\knu=\\frac{\\kc}{\\klam}=\\frac{2.998\\times10^{8}\\ \\text{m s}^{-1}}{${sciT(lam)}\\ \\text{m}}=${sciT(nu)}\\ \\text{s}^{-1}\\\\`
       + `\\kE=h\\knu=(6.626\\times10^{-34}\\ \\text{J s})(${sciT(nu)}\\ \\text{s}^{-1})=${sciT(E)}\\ \\text{J}`);
@@ -314,21 +311,18 @@ const DARK = '#000000';
   const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 2000, max: 5500, step: 10, value: 4400, unit: 'K', dec: 0, aria: 'temperature of the blackbody', detents: BOOK });
   function draw() {
     const { ctx } = begin(d.c);
-    const Tv = T.v, cw = C('wavelength'), ct = C('temperature'), lm = WIEN / Tv, pk = planck(Tv)(lm);
+    const Tv = T.v, cw = C('wavelength'), lm = WIEN / Tv, pk = planck(Tv)(lm);
     const ax = axes(ctx, B, [0, 3000], [0, 11], { nx: 6, ny: 0, xl: 'wavelength λ (nm)', xc: cw, yl: 'intensity (arbitrary units)' }), { X, Y } = ax;
     const clip = (f) => { ctx.save(); ctx.beginPath(); ctx.rect(B.l, B.t - 2, B.r - B.l, B.b - B.t + 4); ctx.clip(); f(); ctx.restore(); };
     /* the regions */
     [400, 700].forEach((v) => line(ctx, X(v), B.t, X(v), B.b, alpha(PAL.ink, 0.35), 2, [10, 10]));
     text(ctx, 'ultraviolet', X(200), B.t + 18, PAL.muted, { size: 17, align: 'center' });
     text(ctx, 'visible', X(550), B.t + 18, PAL.muted, { size: 17, align: 'center' });
-    text(ctx, 'infrared', X(1000), B.t + 18, PAL.muted, { size: 17, align: 'center' });
+    text(ctx, 'infrared', X(1750), B.t + 18, PAL.muted, { size: 17, align: 'center' });
     /* the visible band under the chosen curve, in the colours of that light */
     clip(() => paintVisible(ctx, X, B.b, (nm) => Math.max(B.t, Y(planck(Tv)(nm)))));
-    /* the book's four temperatures, faint, each named above its curve, and the line through their maxima */
-    BOOK.forEach((t0) => {
-      F.plot(ctx, ax, planck(t0), alpha(PAL.ink, 0.3), { w: 2, x: [25, 3000] });
-      text(ctx, t0 + ' K', X(1420), Y(planck(t0)(1420)) - 15, ct, { size: 17, weight: 600, align: 'left' });
-    });
+    /* the book's four temperatures, faint and named in the key (the lower two lie too close to the axis to label), and the line through their maxima */
+    BOOK.forEach((t0) => F.plot(ctx, ax, planck(t0), alpha(PAL.ink, 0.3), { w: 2, x: [25, 3000] }));
     F.plot(ctx, ax, (lam) => planck(WIEN / lam)(lam), alpha(cw, 0.7), { w: 2, x: [WIEN / 5500, WIEN / 2000], dash: [6, 8] });
     BOOK.forEach((t0) => dot(ctx, X(WIEN / t0), Y(planck(t0)(WIEN / t0)), cw, true, 5));
     /* the classical prediction, then the observed curve over it */
@@ -340,6 +334,7 @@ const DARK = '#000000';
     F.legend(ctx, ax, [
       { s: 'observed at ' + Tv + ' K', color: PAL.ink, w: 5 },
       { s: 'classical theory at ' + Tv + ' K', color: PAL.ink, w: 3, dash: [10, 10] },
+      { s: 'observed at 2500, 3400, 4400, 5500 K, lowest to highest', color: alpha(PAL.ink, 0.3), w: 2 },
       { s: 'the maxima, λ_{max}', color: alpha(cw, 0.7), w: 2, dash: [6, 8] },
     ], { corner: 'tr' });
     topline(ctx, 'At ' + Tv + ' K the observed curve peaks at ' + fmt(lm, 0) + ' nm, ' + (lm < 400 ? 'in the ultraviolet' : lm <= 700 ? 'in the visible' : 'in the infrared') + '.');
@@ -367,7 +362,7 @@ const DARK = '#000000';
   const LOOP = 8, cy = cycle(() => LOOP, 0);
   const MT = { l: 60, r: 880, y: 440, h: 56 };      /* the metal and its surface */
   const RUN = 330, TRAVEL = 1.2;                    /* a photon comes in at 45° over RUN units each way, in TRAVEL seconds */
-  const BOX = { l: 1040, r: 1310, t: 140, b: 470 }; /* the energy bar */
+  const BOX = { l: 1040, r: 1300, t: 140, b: 470 }; /* the energy bar */
   const Q = Math.SQRT1_2;
   const hash = (i) => { const s = Math.sin(i * 12.9898) * 43758.5453; return s - Math.floor(s); };
   const e19 = (x) => (x / 1e-19).toFixed(2);
@@ -414,13 +409,13 @@ const DARK = '#000000';
     ], { corner: 'bottom', row: true, panel: false });
     /* one photon's energy against the threshold: what is left over is the electron's kinetic energy */
     const ax = axes(ctx, BOX, [0, 1], [0, 10], { nx: 0, ny: 5, yl: 'energy (10⁻¹⁹ J)', yc: ce }), { Y } = ax;
-    const bx0 = 1100, bx1 = 1200, yE = Y(E / 1e-19), yW = Y(W0 / 1e-19);
+    const bx0 = 1170, bx1 = 1260, yE = Y(E / 1e-19), yW = Y(W0 / 1e-19);
     ctx.save();
     ctx.fillStyle = alpha(ce, 0.3); ctx.fillRect(bx0, Math.max(yE, yW), bx1 - bx0, BOX.b - Math.max(yE, yW));
     if (out) { ctx.fillStyle = alpha(ce, 0.9); ctx.fillRect(bx0, yE, bx1 - bx0, yW - yE); }
     ctx.restore();
     line(ctx, BOX.l, yW, BOX.r, yW, PAL.ink, 2.5, [10, 10]);
-    text(ctx, 'threshold', BOX.r, yW + 18, PAL.ink, { size: 17, align: 'right' });
+    text(ctx, 'threshold', BOX.l + 12, yW + 18, PAL.ink, { size: 17, align: 'left' });
     text(ctx, 'one photon', (bx0 + bx1) / 2, BOX.b + 26, PAL.ink, { size: 17, align: 'center' });
     if (out) vbracket(ctx, bx1 + 22, yE, yW, ce, 'KE', 1);
     topline(ctx, out

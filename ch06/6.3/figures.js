@@ -55,7 +55,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     const ra = -2.45, rx = CX + R * Math.cos(ra), ry = CY + R * Math.sin(ra);
     arrow(ctx, CX, CY, rx, ry, cr, 3);
     dot(ctx, CX, CY, PAL.ink, true, 9);
-    text(ctx, 'r = 100 pm', CX + 6, CY - 44, cr, { size: 21, weight: 600 });
+    text(ctx, 'r = 100 pm', CX, CY + 36, cr, { size: 21, weight: 600, align: 'center' });
     /* the wave: arc length s = rθ, displacement AMP·sin(2πs/λ) outward from the orbit */
     const lap = (t0, t1, a, w) => {
       ctx.save(); ctx.strokeStyle = cw; ctx.globalAlpha *= a; ctx.lineWidth = w; ctx.beginPath();
@@ -237,7 +237,7 @@ const ANG = [() => 1, (c) => c, (c) => (3 * c * c - 1) / 2];
 
 /* =====================================================================
    FIGURE 6.20: an orbital with a quarter cut away, above its radial graph.
-   Mathematical 3D: the body is the contour of |ψ| at three tenths of its
+   Mathematical 3D: the body is the contour of |ψ| at 0.18 of its
    outermost peak, lit, in the colour of the sign of ψ; the quarter toward
    the reader is removed, and the two flat faces of the cut are painted
    with the same sign colours, deeper where |ψ|² is greater. A radial node
@@ -249,24 +249,25 @@ const ANG = [() => 1, (c) => c, (c) => (3 * c * c - 1) / 2];
 ===================================================================== */
 (function () {
   const d = sim('sim-radial');
-  const V = F.view3d(d.stage, { h: 520, dist: 7.9, tilt: 0.24, yaw: [-1.4, -0.15], pitch: [-0.9, 0.9] });
-  V.setView(-0.66, 0.24);
+  const V = F.view3d(d.stage, { h: 520, dist: 7.3, tilt: 0.2, yaw: [-0.95, -0.2], pitch: [-0.5, 0.7] });
+  V.setView(-0.46, 0.2);
   const g = V.part(0), c2 = F.makeCanvas(d.stage, 300);
   const KEYS = ['1s', '2s', '3s', '2p', '3p', '3d'];
   const orb = F.choice(d.controls, { label: '\\text{orbital}', options: KEYS.map((k) => ({ value: k, label: k.replace(/([spd])$/, '<em>$1</em>') })), value: '3s', aria: 'the orbital drawn' });
   const W = 1.6;                                     /* the half-width of a cut face in the scene */
   const T3 = window.THREE, live = !!(T3 && V.scene);
+  const LEVEL = 0.18;                                /* the contour drawn, as a fraction of the outermost peak of |ψ| */
   const psi = (o, x, z) => { const r = Math.hypot(x, z) || 1e-9; return o.R(r) * ANG[o.l](z / r); };
   /* the humps of |R| between its nodes, each with its peak; the contour's level; how far the body reaches */
   const SHAPE = {};
   KEYS.forEach((key) => {
     const o = RADIAL[key], cuts = [0, ...o.nodes, 60];
     const humps = cuts.slice(0, -1).map((lo, i) => { const hi = cuts[i + 1]; let rp = lo, m = 0; for (let r = lo; r < hi; r += 0.01) { const v = Math.abs(o.R(r)); if (v > m) { m = v; rp = r; } } return { lo, hi, rp, peak: m }; });
-    const level = 0.3 * humps[humps.length - 1].peak;
+    const level = LEVEL * humps[humps.length - 1].peak;
     const root = (a, b, t) => { for (let i = 0; i < 40; i++) { const m = (a + b) / 2; if ((Math.abs(o.R(m)) > t) === (Math.abs(o.R(a)) > t)) a = m; else b = m; } return (a + b) / 2; };
     /* where |R| falls to t on the far and the near side of a hump's peak; the near side is the nucleus itself where |R| is still above t there */
     const far = (h, t) => root(h.rp, h.hi, t), near = (h, t) => (Math.abs(o.R(h.lo)) > t ? h.lo : root(h.lo, h.rp, t));
-    const reach = far(humps[humps.length - 1], level), ext = reach * 1.12, pm = ext * A0, step = pm < 350 ? 100 : pm < 900 ? 200 : 500;
+    const reach = far(humps[humps.length - 1], level), ext = reach * 1.08, pm = ext * A0, step = [20, 50, 100, 200, 300, 500].find((x) => pm / x < 3.6) ?? 500;
     const ticks = []; for (let t = 0; t <= pm; t += step) ticks.push(t);
     SHAPE[key] = { humps, level, far, near, ext, ticks };
   });
@@ -318,9 +319,9 @@ const ANG = [() => 1, (c) => c, (c) => (3 * c * c - 1) / 2];
         const ring = new T3.Line(new T3.BufferGeometry().setFromPoints(p), dash(TAU * rn * s)); ring.computeLineDistances(); grp.add(ring);
       });
     });
-    const YR = -W - 0.12, seg = (a, b) => grp.add(new T3.Line(new T3.BufferGeometry().setFromPoints([new T3.Vector3(...a), new T3.Vector3(...b)]), solid()));
-    seg([0, YR, 0], [W, YR, 0]);
-    const labels = sh.ticks.map((pm, i) => { const x = (pm / A0) * s; seg([x, YR, 0], [x, YR - 0.07, 0]); return V.label(pm + (i === sh.ticks.length - 1 ? ' pm' : ''), [x, YR - 0.22, 0], g, 0, 'tick'); });
+    const YR = -W / 1.08 - 0.16, seg = (a, b) => grp.add(new T3.Line(new T3.BufferGeometry().setFromPoints([new T3.Vector3(...a), new T3.Vector3(...b)]), solid()));
+    seg([0, YR, 0], [(sh.ticks[sh.ticks.length - 1] / A0) * s, YR, 0]);
+    const labels = sh.ticks.map((pm, i) => { const x = (pm / A0) * s; seg([x, YR, 0], [x, YR - 0.07, 0]); return V.label(pm + (i === sh.ticks.length - 1 ? ' pm' : ''), [x, YR - 0.25, 0], g, 0, 'tick'); });
     const nuc = F.mesh.sphere(grp, [0, 0, 0], 0.03, PAL.ink); V.pickable(nuc, 'the nucleus');
     g.add(grp);
     scenes[key] = { o, sh, grp, meshes: mats.pos, cv, tx, inks, nuc, labels, paint: '' };
@@ -331,7 +332,7 @@ const ANG = [() => 1, (c) => c, (c) => (3 * c * c - 1) / 2];
     const ca = new T3.Color(a), cb = new T3.Color(b);
     sc.meshes.forEach((m) => { const col = m.geometry.getAttribute('color'); m.userData.sgn.forEach((s, i) => { const c = s > 0 ? ca : cb; col.setXYZ(i, c.r, c.g, c.b); }); col.needsUpdate = true; });
     /* the faces: inside the contour, the colour of the sign of ψ over the page's ground, deeper where |ψ|² is greater */
-    const N = sc.cv.width, M = sc.cv.height, c = sc.cv.getContext('2d'), o = sc.o, sh = sc.sh, ref = (sh.level / 0.3) ** 2;
+    const N = sc.cv.width, M = sc.cv.height, c = sc.cv.getContext('2d'), o = sc.o, sh = sc.sh, ref = (sh.level / LEVEL) ** 2;
     const probe = (css) => { c.clearRect(0, 0, 1, 1); c.fillStyle = css; c.fillRect(0, 0, 1, 1); return c.getImageData(0, 0, 1, 1).data; };
     const pa = probe(a), pb = probe(b), pg = probe(PAL.panel), img = c.createImageData(N, M);
     for (let j = 0; j < M; j++) for (let i = 0; i < N; i++) {

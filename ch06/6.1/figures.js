@@ -89,7 +89,7 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
   const X0 = 170, X1 = 1250, PX = (X1 - X0) / V;  /* the frame: 12 m across 1080 units, 90 units per metre */
   const Y = 290;                                  /* the rope at rest */
   const NU = ctl(d.controls, { label: '\\knu', cls: 'frequency', min: 1, max: 12, step: 0.1, value: 3, unit: 'Hz', dec: 1, aria: 'frequency of the wave', detents: [3, 6, 12], snap: true, onInput: () => cy.reset() });
-  const A = ctl(d.controls, { label: 'a', cls: '', min: 0.2, max: 1.2, step: 0.01, value: 0.8, unit: 'm', dec: 2, aria: 'amplitude of the wave' });
+  const A = ctl(d.controls, { label: 'a', cls: '', min: 0.4, max: 1.2, step: 0.01, value: 0.8, unit: 'm', dec: 2, aria: 'amplitude of the wave' });
   const LOOP = 1;                                 /* model seconds: one crest crosses the frame */
   const cy = cycle(() => LOOP, 1.2);
   let hits = []; F.hover(d.stage, () => hits);
@@ -253,7 +253,7 @@ const DARK = '#000000';
    clock), its nodes stay still. A change of n bends the shape into the new one.
 ===================================================================== */
 (function () {
-  const d = sim('sim-string', 420);
+  const d = sim('sim-string', 440);
   const N = F.choice(d.controls, { label: 'n', options: [1, 2, 3, 4, 5, 6].map((k) => ({ value: String(k), label: String(k) })), value: '3', aria: 'number of half-wavelengths on the string' });
   const L = 200, R = 1200, Y = 230, AMP = 110;
   const LOOP = 4, cy = cycle(() => LOOP, 0);     /* model seconds; the string makes n cycles in each loop, so the loop closes on itself */
@@ -400,7 +400,7 @@ const DARK = '#000000';
       }
     }
     ctx.restore();
-    F.rich(ctx, ['light of ', [nm + ' nm', cw]], 50, 330, { size: 22 });
+    F.rich(ctx, ['light of ', [nm + ' nm', cw]], 50, 380, { size: 22 });
     if (out) F.rich(ctx, ['v_{max} = ', [sciU(v) + ' m/s', cv]], 490, 128, { size: 22, align: 'center' });
     else text(ctx, 'no electrons ejected', 770, 400, PAL.muted, { size: 22, align: 'center' });
     F.legend(ctx, { l: MT.l, r: MT.r, t: MT.y + MT.h, b: 566 }, [

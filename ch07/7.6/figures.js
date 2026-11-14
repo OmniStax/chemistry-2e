@@ -95,7 +95,7 @@ function bondArcs(ideal, shown, lone, n) {
    on an atom: the elements are named in a key under the scene and under the pointer, and a number or a name that
    belongs to one place in the scene stands outside it, set after every frame on the line from the molecule's centre
    through that place. */
-const { vec, sphere, stick, setStick, setLobe, lobe: lobe3, bond: bond3, arrow: arrow3, polyline } = F.mesh;
+const { vec, sphere, stick, setStick, setLobe, lobe: lobe3, bond: bond3, polyline } = F.mesh;
 function stage3(d, o) {
   const outs = [], unders = [];
   let v = null;
@@ -143,6 +143,14 @@ function clearSide(axis, others) {
   let best = u, room = -1;
   for (let k = 0; k < 24; k++) { const c = V.add(V.mul(u, Math.cos(k * TAU / 24)), V.mul(w, Math.sin(k * TAU / 24))), r = Math.min(180, ...others.map((o) => V.angle(c, o))); if (r > room + 1e-6) { room = r; best = c; } }
   return best;
+}
+/* an arrow from a to b with a head slim enough that a short arrow is still an arrow */
+function arrowTo(g, a, b, r, color) {
+  const T = window.THREE; if (!T) return;
+  const d = V.sub(b, a), len = V.len(d), u = V.unit(d), hl = Math.min(r * 7, len * 0.55), base = V.sub(b, V.mul(u, hl));
+  if (len - hl > 1e-3) stick(g, a, base, r, color);
+  const cone = new T.Mesh(F.mesh.geo().cone, F.mesh.mat(color));
+  cone.position.copy(vec(V.add(base, V.mul(u, hl / 2)))); cone.quaternion.setFromUnitVectors(vec([0, 1, 0]), vec(u)); cone.scale.set(r * 2.7, hl, r * 2.7); g.add(cone);
 }
 const weak = (s) => `<span style="font-weight:400">${s}</span>`;
 
@@ -350,7 +358,7 @@ const weak = (s) => `<span style="font-weight:400">${s}</span>`;
     const bondsLeft = n - lone;
     topline(ctx, !settled ? 'The ' + COUNT[n] + ' regions are pushing one another apart, and the smallest angle between two of them has grown to ' + fmt(ang, 0) + '°.'
       : lone ? 'The lone pair' + (lone > 1 ? 's push' : ' pushes') + ' harder than a bond, so the ' + COUNT[bondsLeft] + ' bonds settle ' + fmt(ang, 0) + '° apart, less than the ideal ' + ideal + '°.'
-      : 'The ' + COUNT[n] + ' regions have settled into a ' + GEOM[n] + ' arrangement, the nearest of them ' + fmt(ang, 0) + '° apart.');
+      : 'The ' + COUNT[n] + ' regions have settled into ' + (n === 6 ? 'an ' : 'a ') + GEOM[n] + ' arrangement, the nearest of them ' + fmt(ang, 0) + '° apart.');
     tex(d.readout, `\\htmlClass{kv-angle}{\\text{smallest angle}} = ${fmt(ang, 1)}^\\circ`);
   }
   fit();
@@ -408,7 +416,7 @@ const weak = (s) => `<span style="font-weight:400">${s}</span>`;
       text(ctx, 'H', x2, y2 + 1, PAL.ink, { size: 30, align: 'center', bg: PAL.panel });
     });
     text(ctx, 'C', cx, cyy + 1, PAL.ink, { size: 30, align: 'center' });
-    text(ctx, 'the model above, in wedge and dash notation', cx, 342, PAL.muted, { size: 19, align: 'center' });
+    text(ctx, 'the model above, in wedge and dash notation', cx, 336, PAL.muted, { size: 19, align: 'center' });
     F.legend(ctx, { l: 760, r: 1340, t: 70, b: 310 }, [
       keyAtom('C'), keyAtom('H'),
       { s: 'bond in the plane of the page', draw: sampleLine },
@@ -492,12 +500,11 @@ geometryPair('fig-xef4', { c: 'Xe', x: 'F', L: 1.3, dirs: SITES[6], lone: [0, 1]
 (function () {
   const d = sim('sim-bond-moments');
   const top = F.makeCanvas(d.stage, 104);
-  const S = stage3(d, { h: 600, dist: 7.0 }), v = S.v, gA = v.part(-2.3), gB = v.part(2.3);
+  const S = stage3(d, { h: 700, dist: 7.3 }), v = S.v, gA = v.part(-1.95), gB = v.part(1.95);
   const key = F.makeCanvas(d.stage, 60);
   v.setView(0.3, 0.2);
   /* the electronegativities the book prints in Figure 7.6 */
   const EN = { H: 2.1, B: 2.0, C: 2.5, N: 3.0, O: 3.5, F: 4.0, P: 2.1, S: 2.5, Cl: 3.0 };
-  const K = 0.7;   /* scene units of arrow for each unit of electronegativity difference */
   /* three bonds at one polar angle from the upright axis that make the given angle with one another, and two in one plane */
   const pyramid = (angle) => { const cosA = Math.sqrt((1 + 2 * Math.cos(angle * RAD)) / 3), s = Math.sqrt(1 - cosA * cosA); return [90, 210, 330].map((az) => [s * Math.cos(az * RAD), -cosA, s * Math.sin(az * RAD)]); };
   const bent = (angle) => [[-Math.sin(angle / 2 * RAD), -Math.cos(angle / 2 * RAD), 0], [Math.sin(angle / 2 * RAD), -Math.cos(angle / 2 * RAD), 0]];
@@ -519,19 +526,19 @@ geometryPair('fig-xef4', { c: 'Xe', x: 'F', L: 1.3, dirs: SITES[6], lone: [0, 1]
   /* a bond moment from a to b (a the less electronegative end): shaft, head and the crossed tail that is the book's plus sign */
   function moment(g, a, b, heavy) {
     const cM = F.C('dipole-moment'), u = V.unit(V.sub(b, a)), w = upPerp(u), r = heavy ? 0.06 : 0.036;
-    arrow3(g, a, b, r, cM);
-    if (!heavy) { const bar = V.add(a, V.mul(u, 0.07)); stick(g, V.sub(bar, V.mul(w, 0.1)), V.add(bar, V.mul(w, 0.1)), 0.03, cM); }
+    arrowTo(g, a, b, r, cM);
+    if (!heavy) { const bar = V.add(a, V.mul(u, 0.06)); stick(g, V.sub(bar, V.mul(w, 0.1)), V.add(bar, V.mul(w, 0.1)), 0.028, cM); }
   }
   /* the size of a bond's moment on the scale of Figure 7.6 and the atom it points to; carbon and sulfur tie there, and
      the text says sulfur is slightly the more electronegative, so that arrow is drawn at a least length toward sulfur */
-  function momentOf(a, b) { const dEN = EN[b] - EN[a], tie = Math.abs(dEN) < 0.05; return { dEN: Math.abs(dEN), to: tie ? (b === 'S' ? b : a) : dEN > 0 ? b : a, len: Math.max(0.2, Math.abs(dEN) * K), tie }; }
+  function momentOf(a, b, K) { const dEN = EN[b] - EN[a], tie = Math.abs(dEN) < 0.05; return { dEN: Math.abs(dEN), to: tie ? (b === 'S' ? b : a) : dEN > 0 ? b : a, len: Math.max(0.3, Math.abs(dEN) * K), tie }; }
   let sig = '';
   function build(mol, id) {
     const s = id + '|' + palSig(); if (s === sig) return; sig = s;
     S.clear();
     if (mol.pairs) {   /* Figure 7.26: the two bonds side by side, each with its one arrow */
       mol.pairs.forEach(([a, b], k) => {
-        const g = k ? gB : gA, pa = [-0.6, -0.15, 0], pb = [0.6, -0.15, 0], mo = momentOf(a, b);
+        const g = k ? gB : gA, pa = [-0.6, -0.15, 0], pb = [0.6, -0.15, 0], mo = momentOf(a, b, 0.7);
         bond3(g, pa, pb, 1, 0.07); ball(S, g, pa, a); ball(S, g, pb, b);
         const dir = mo.to === b ? 1 : -1, y = 0.62, x0 = -dir * mo.len / 2;
         moment(g, [x0, y, 0], [x0 + dir * mo.len, y, 0], false);
@@ -540,9 +547,11 @@ geometryPair('fig-xef4', { c: 'Xe', x: 'F', L: 1.3, dirs: SITES[6], lone: [0, 1]
       return;
     }
     /* left: the molecule, and beside each bond its moment, on the side away from the other bonds */
+    /* within one molecule an arrow's length follows the difference in electronegativity, the longest drawn 1.1 units long */
+    const K = 1.1 / Math.max(...mol.terms.map((t) => Math.abs(EN[t.x] - EN[mol.c])));
     ball(S, gA, [0, 0, 0], mol.c);
     const vecs = mol.terms.map((t, i) => {
-      const P = V.mul(t.u, t.L), mo = momentOf(mol.c, t.x), dir = mo.to === t.x ? 1 : -1;
+      const P = V.mul(t.u, t.L), mo = momentOf(mol.c, t.x, K), dir = mo.to === t.x ? 1 : -1;
       bond3(gA, [0, 0, 0], P, Array.isArray(mol.order) ? mol.order[i] : mol.order, 0.07); ball(S, gA, P, t.x);
       const w = upPerp(t.u), off = Math.max(rOf(mol.c), rOf(t.x)) + 0.16, mid = V.add(V.mul(t.u, t.L * 0.55), V.mul(w, off));
       const a = V.sub(mid, V.mul(t.u, dir * mo.len / 2)), b = V.add(mid, V.mul(t.u, dir * mo.len / 2));
@@ -561,7 +570,8 @@ geometryPair('fig-xef4', { c: 'Xe', x: 'F', L: 1.3, dirs: SITES[6], lone: [0, 1]
     });
     const net = V.len(V.sub(Q[Q.length - 1], Q[0]));
     if (net > 0.08) { const side = V.mul(upPerp(V.unit(V.sub(Q[Q.length - 1], Q[0]))), mol.terms.length === 2 && Math.abs(V.dot(V.unit(vecs[0]), V.unit(vecs[1]))) > 0.98 ? -0.2 : 0); moment(gB, V.add(Q[0], side), V.add(Q[Q.length - 1], side), true); }
-    S.under(weak('the bond moments, tail to tip: ') + (net > 0.08 ? 'they leave a dipole moment' : 'they cancel'), gB);
+    S.under(weak('the bond moments of ') + mol.label, gA);
+    S.under(weak('added tail to tip: ') + (net > 0.08 ? 'a dipole moment is left' : 'they cancel'), gB);
   }
   function draw() {
     const id = M.value, mol = MOLS[id];

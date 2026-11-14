@@ -26,7 +26,15 @@ const dirOf = (th, az) => [Math.sin(th * RAD) * Math.cos(az * RAD), Math.cos(th 
 const K = 0.62;                                  /* scene units per ångström */
 const RADIUS = { P: 0.36, S: 0.34, O: 0.27, Cl: 0.34 };
 const NAMES = { P: 'phosphorus (P)', S: 'sulfur (S)', O: 'oxygen (O)', Cl: 'chlorine (Cl)' };
-const FREE = { spin: 'idle', views: [{ label: 'side', yaw: 0.35, pitch: 0.22 }, { label: 'down the axis', yaw: 0, pitch: Math.PI / 2 }] };
+const FREE = { spin: 'idle' };
+/* the key under a scene: one entry per element (and the lone pair) the shown species has */
+const KEYNAME = { P: 'phosphorus', S: 'sulfur', O: 'oxygen', Cl: 'chlorine' };
+function key(cnv, syms, lone) {
+  const { ctx } = F.begin(cnv);
+  const e = syms.map((s) => ({ s: KEYNAME[s], draw: (c, x, y) => F.dot(c, x, y, F.el(s), true, 10) }));
+  if (lone) e.push({ s: 'lone pair', draw: (c, x, y) => F.dot(c, x, y, F.alpha(PAL.ink, 0.35), true, 10) });
+  F.legend(ctx, { l: 60, r: 1340, t: 0, b: 60 }, e, { corner: 'top', row: true, panel: false, size: 20 });
+}
 const fade = (a) => (a < 0.999 ? { transparent: true, opacity: a } : undefined);
 /* atoms [{sym, from, p, a}] (p in ångströms, a its presence 0..1, from the element it is turning from) and bonds [{i, j, a}] */
 function molecule(v, g, atoms, bonds, k) {
@@ -43,7 +51,6 @@ function molecule(v, g, atoms, bonds, k) {
     stick(g, V.mul(m, K), V.mul(B.p, K), 0.075, col(B), fade(a));
   });
 }
-const plain = (e, a) => { e.style.opacity = String(Math.max(0, Math.min(1, a))); return e; };
 
 /* =====================================================================
    FIGURE 18.39 + 18.40: P4, P4S3, P4O6 and P4O10 as one cage. Fourteen
@@ -53,8 +60,9 @@ const plain = (e, a) => { e.style.opacity = String(Math.max(0, Math.min(1, a)));
 ===================================================================== */
 (function () {
   const d = sim('sim-phosphorus-cage');
-  const v = F.view3d(d.stage, { ...FREE, h: 640, dist: 9.2 });
+  const v = F.view3d(d.stage, { ...FREE, h: 640, dist: 9.8 });
   const g = v.part(0); g.position.y = -0.45;
+  const kc = F.makeCanvas(d.stage, 60);
   const EDGES = [[0, 1], [0, 2], [0, 3], [1, 2], [2, 3], [1, 3]];      /* apex to base first, then the base */
   const AZ = [90, 210, 330];
   /* a tetrahedron of edge a, apex up, centred on its centroid */
@@ -122,9 +130,7 @@ const plain = (e, a) => { e.style.opacity = String(Math.max(0, Math.min(1, a)));
     const bonds = bb.map((x, n) => ({ i: x.i, j: x.j, a: ba[n].a + (x.a - ba[n].a) * k }));
     v.clear();
     molecule(v, g, atoms, bonds, k);
-    v.label('P', V.mul(atoms[1].p, K), g, -34);
-    const named = B.atoms.findIndex((t, n) => n >= 4 && t.a);
-    if (named >= 0) plain(v.label(B.atoms[named].sym, V.mul(atoms[named].p, K), g, 28), A.atoms[named].a && A.atoms[named].sym === B.atoms[named].sym ? 1 : 2 * k - 1);
+    key(kc, ['P', 'S', 'O'].filter((s) => B.atoms.some((t) => t.a && t.sym === s)));
     v.headline(B.head);
     F.morph(fx, B.tex);
   }
@@ -139,8 +145,9 @@ const plain = (e, a) => { e.style.opacity = String(Math.max(0, Math.min(1, a)));
 ===================================================================== */
 (function () {
   const d = sim('sim-phosphorus-chlorides');
-  const v = F.view3d(d.stage, { ...FREE, h: 600, dist: 7.6 });
+  const v = F.view3d(d.stage, { ...FREE, h: 560, dist: 6.6 });
   const g = v.part(0); g.position.y = -0.35;
+  const kc = F.makeCanvas(d.stage, 60);
   const UP = [0, 1, 0], DOWN = [0, -1, 0];
   /* the three about the axis at polar angle th, the sixth at azimuth 270° on the equator; null for an empty site */
   const three = (th, az = [90, 210, 330]) => az.map((z) => dirOf(th, z));
@@ -185,10 +192,8 @@ const plain = (e, a) => { e.style.opacity = String(Math.max(0, Math.min(1, a)));
     if (lone > 0.01) {
       const m = lobe(g, [0, 0, 0], UP, 1.0, PAL.ink); m.material.opacity = 0.35 * lone;
       v.pickable(m, 'a lone pair');
-      plain(v.label('lone pair', [0, 1.05, 0], g, 14), lone);
     }
-    v.label('P', [0, 0, 0], g, -44);
-    v.label('Cl', V.mul(atoms[3].p, K), g, 30);
+    key(kc, ['P', 'Cl'], B.lone);
     v.headline(B.head);
     F.morph(fx, B.tex);
   }

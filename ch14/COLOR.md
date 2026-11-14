@@ -30,10 +30,10 @@ names "pH meter" and "pH paper".
 
 ## Facts and conventions
 
-`F.el` for every molecule and ion: H₂O, H₃O⁺, OH⁻, HF, F⁻, NH₃, NH₄⁺,
-pyridine, the acid and base of 14.3's Sim, the aquo aluminium ion of 14.13, the
-oxyacids of 14.12; an ion keeps its element colour and carries its charge as a
-mark. Through `F.fact`: an indicator's acid and base forms (methyl orange,
+`F.el` for every molecule and ion a figure draws by its atoms: the acids,
+conjugate bases and hydronium ions of 14.3's Sim; an ion keeps its element
+colour and carries its charge as a mark. The water and ammonia models, the
+aquo aluminium ion of 14.13 and the oxyacids of 14.12 are the book's images. Through `F.fact`: an indicator's acid and base forms (methyl orange,
 bromthymol blue, phenolphthalein, universal indicator) wherever a flask, beaker
 or interval band is tinted. The book's red-to-blue arrow on Figure 14.2 is
 decoration and is drawn in ink in Figure 14.2. As built, `F.fact` paints only
@@ -47,14 +47,13 @@ photographs.
 
 As built:
 
-- **14.1.** `pair-acid` and `pair-base`, the acid with its conjugate base and
-  the base with its conjugate acid, in the three equations that show one
-  reaction (water and ammonia, hydrogen fluoride, pyridine), as the book
-  colours each pair; `water-acid` and `water-base` in the autoionization
-  equation, a group of its own since it shares its block with the K_w Sim.
-- **14.3.** `acid` and `base`, the acid HA and its conjugate base A⁻ of the
-  acid-in-water Sim and the chosen pair of the Figure 14.7 + 14.8 ladder;
-  K_a and K_b are split, the a and b in their colours.
+- **14.1.** `water-acid` and `water-base` in the autoionization equation, a
+  group of its own since it shares its block with the K_w Sim. The other three
+  equations are the book's images, in the book's red and blue.
+- **14.3.** `acid` and `base`, the chosen pair of the Figure 14.7 + 14.8
+  ladder; `base` also rings each conjugate base ion with its hydronium ion in
+  the acid-in-water Sim, whose molecules are `F.el`. K_a and K_b are split,
+  the a and b in their colours.
 - **14.5.** None. The Sim's acid is a choice of three, so its species are
   `F.cat(i)` levels named under the axis rather than one example's things,
   and K_a1 and K_a2 are not split.

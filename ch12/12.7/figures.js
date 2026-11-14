@@ -168,7 +168,7 @@ const knots = (ks) => (x) => {
   const NAME = { H: 'a hydrogen atom, H', C: 'a carbon atom, C' };
   /* atoms a little larger than covalent radii on this scale, so the molecules read beside the metal, as the book draws them */
   const RAD = { H: 0.11, C: 0.165 };
-  const SC = 190, V = F.view({ yaw: 0.32, pitch: 0.5, dist: 2600, cx: 690, cy: 400 });
+  const SC = 190, V = F.view({ yaw: 0.32, pitch: 0.5, dist: 2600, cx: 690, cy: 388 });
   /* a scene point to the canvas, and its depth along the line of sight (larger is farther) */
   const cam = [2600 * Math.sin(0.32) * Math.cos(0.5), 2600 * Math.sin(0.5), 2600 * Math.cos(0.32) * Math.cos(0.5)];
   const P = (p) => V.P([p[0] * SC, p[1] * SC, p[2] * SC]);
@@ -220,70 +220,4 @@ const knots = (ks) => (x) => {
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
 
-/* =====================================================================
-   FIGURE 12.25: an enzyme and its two substrates, flat as the book draws
-   them. A clock carries the substrates along curved paths into the
-   active site, 4 s and a 1.2 s hold; the choice of model decides whether
-   the site already has the shape of their tips (lock-and-key) or takes it
-   as they come close (induced fit). The enzyme's rim is sampled at the
-   same x in both shapes, so one bends point by point into the other.
-===================================================================== */
-(function () {
-  const d = sim('sim-enzyme', 540);
-  const LOOP = 4, cy = cycle(() => LOOP, 1.2);
-  const model = F.choice(d.controls, { label: '\\text{model}', key: 'model', options: [{ value: 'lock', label: 'lock-and-key' }, { value: 'induced', label: 'induced fit' }], value: 'lock', onInput: () => cy.reset() });
-  const Y0 = 330, XL = 470, XR = 930, PL = 650, PR = 750;
-  const bump = (x, c, w) => (Math.abs(x - c) < w ? Math.cos((Math.PI * (x - c)) / (2 * w)) ** 2 : 0);
-  const shoulders = (x) => -14 * bump(x, 530, 50) - 14 * bump(x, 870, 50);
-  const fitTop = (x) => {
-    if (Math.abs(x - PL) < 24) return Y0 + Math.sqrt(24 * 24 - (x - PL) ** 2);
-    if (Math.abs(x - PR) < 22) return Y0 + 30 * (1 - Math.abs(x - PR) / 22);
-    return Y0 + shoulders(x);
-  };
-  const looseTop = (x) => Y0 + shoulders(x) + 9 * bump(x, 652, 34) + 7 * bump(x, 748, 30) - 4 * bump(x, 700, 14);
-  const XS = []; for (let x = XL; x <= XR; x += 2) XS.push(x);
-  /* the substrates as they sit docked: a body and the tip that binds */
-  const SUBS = [
-    { box: [600, 226, 98, 102], radii: [44, 6, 6, 18], tip: 'round', name: 'substrate with a rounded tip', path: [-170, -110] },
-    { box: [702, 226, 98, 102], radii: [6, 44, 18, 6], tip: 'point', name: 'substrate with a pointed tip', path: [170, -110] },
-  ];
-  /* where a substrate is, offset from its docked place along a curve that drops and then swings in */
-  const offset = (s, k) => { const [px, py] = s.path, u = 1 - k; return [u * u * px + 2 * u * k * px, u * u * py + 2 * u * k * -50]; };
-  let hits = [];
-  F.hover(d.stage, () => hits);
-  function substrate(ctx, s, dx, dy, col) {
-    const [x, y, w, h] = s.box;
-    ctx.save(); ctx.translate(dx, dy);
-    ctx.fillStyle = alpha(col, 0.22); ctx.strokeStyle = col; ctx.lineWidth = 3;
-    ctx.beginPath(); ctx.roundRect(x, y, w, h, s.radii); ctx.fill(); ctx.stroke();
-    ctx.fillStyle = col; ctx.beginPath();
-    if (s.tip === 'round') ctx.arc(PL, Y0 - 2, 21, 0, Math.PI);
-    else { ctx.moveTo(PR - 19, Y0 - 2); ctx.lineTo(PR, Y0 + 25); ctx.lineTo(PR + 19, Y0 - 2); ctx.closePath(); }
-    ctx.fill(); ctx.restore();
-  }
-  function draw() {
-    const { ctx, H } = begin(d.c), t = cy.now();
-    const go = beat(t, 0.5, 3.0), fit = beat(go, 0.45, 1), k = model.mix((v) => (v === 'lock' ? 1 : fit));
-    const ce = F.ref('enzyme'), cs = F.ref('substrates');
-    /* the enzyme: its rim across the top, then the bowl of its body */
-    ctx.save(); ctx.beginPath();
-    XS.forEach((x, i) => { const y = lerp(looseTop(x), fitTop(x), k); if (i) ctx.lineTo(x, y); else ctx.moveTo(x, y); });
-    for (let i = 0; i <= 60; i++) { const a = (Math.PI * i) / 60; ctx.lineTo(700 + 230 * Math.cos(a), Y0 + 150 * Math.sin(a)); }
-    ctx.closePath(); ctx.fillStyle = alpha(ce, 0.2); ctx.fill(); ctx.strokeStyle = ce; ctx.lineWidth = 6; ctx.lineJoin = 'round'; ctx.stroke(); ctx.restore();
-    hits = [{ x: 700, y: Y0 + 90, r: 90, name: 'enzyme' }, { x: PL, y: Y0 + 12, r: 26, name: 'pocket of the active site for the rounded tip' }, { x: PR, y: Y0 + 12, r: 26, name: 'pocket of the active site for the pointed tip' }];
-    SUBS.forEach((s) => {
-      const [dx, dy] = offset(s, go);
-      substrate(ctx, s, dx, dy, cs);
-      hits.unshift({ x: s.box[0] + s.box[2] / 2 + dx, y: s.box[1] + s.box[3] / 2 + dy, r: 60, name: s.name });
-    });
-    text(ctx, 'enzyme', 700, Y0 + 176, ce, { size: 22, weight: 600, align: 'center' });
-    F.label(ctx, 'active site', 626, Y0 + 4, { side: 'left', gap: 170, size: 20 });
-    const lx = 1080, ly = 120;
-    ctx.save(); ctx.fillStyle = alpha(cs, 0.22); ctx.strokeStyle = cs; ctx.lineWidth = 3; ctx.beginPath(); ctx.roundRect(lx, ly - 14, 40, 28, 8); ctx.fill(); ctx.stroke(); ctx.restore();
-    text(ctx, 'substrates', lx + 52, ly, cs, { size: 20, weight: 600 });
-    topline(ctx, go >= 1 ? 'The enzyme–substrate complex has formed.' : model.value === 'lock' ? 'The active site already has the shape of the substrates.' : 'The active site changes shape to fit the substrates as they arrive.');
-  }
-  F.tex(d.readout, '\\htmlData{ref=enzyme}{\\text{enzyme}} + \\htmlData{ref=substrates}{\\text{substrates}} \\longrightarrow \\text{enzyme–substrate complex}');
-  register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
-})();
 };

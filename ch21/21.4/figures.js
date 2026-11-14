@@ -189,7 +189,7 @@ function burst(ctx, x, y, R, k, color) {
 ===================================================================== */
 (function () {
   const S0 = 0.6, G = 0.7, NG = 7, T = S0 + (NG - 1) * G + 0.7, VN = 330, YMAX = 20, H = 620;
-  const CX = 330, CY = 350, RC = 150;                        /* the centre of the slice and the critical radius, in canvas units */
+  const CX = 330, CY = 330, RC = 135;                        /* the centre of the slice and the critical radius, in canvas units */
   const d = sim('sim-chain', H);
   const ms = ctl(d.controls, { label: '\\text{mass}', cls: '', key: 'mass', min: 0.3, max: 3, step: 0.01, value: 1, unit: '× critical mass', dec: 2,
     aria: 'the mass of the lump as a multiple of the critical mass', specials: [{ at: 1, label: 'critical mass' }], onInput: () => { key = ''; cy.reset(); } });

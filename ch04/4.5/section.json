@@ -26,6 +26,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -57,8 +60,7 @@
   {
    "id": "fig-map7",
    "kind": "figure",
-   "originals": ["/media/ch04/CNX_Chem_04_05_map7_img.jpg"],
-   "draws": ["volume", "amount", "concentration"],
+   "draws": [],
    "ai": [
     {
      "model": "claude-opus-5-5",
@@ -69,6 +71,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "box names and factor labels kept inside their room"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image"
     }
    ]
   },
@@ -76,8 +82,7 @@
   {
    "id": "fig-map8",
    "kind": "figure",
-   "originals": ["/media/ch04/CNX_Chem_04_05_map8_img.jpg"],
-   "draws": ["mass", "amount"],
+   "draws": [],
    "ai": [
     {
      "model": "claude-opus-5-5",
@@ -88,6 +93,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "box names and factor labels kept inside their room"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image"
     }
    ]
   },
@@ -119,8 +128,7 @@
   {
    "id": "fig-combmap",
    "kind": "figure",
-   "originals": ["/media/ch04/CNX_Chem_04_05_combmap_img.jpg"],
-   "draws": ["mass", "amount"],
+   "draws": [],
    "ai": [
     {
      "model": "claude-opus-5-5",
@@ -131,6 +139,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "box names and factor labels kept inside their room"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image"
     }
    ]
   }

@@ -20,9 +20,9 @@ function ball(ctx, x, y, r, fill, stroke = alpha(PAL.ink, 0.5), w = 1.4) {
    network in which every silicon atom is joined through oxygen atoms to
    three others. Crystalline (quartz): every ring has six silicon atoms
    and every link the one length and angle. Amorphous (fused silica): the
-   same atoms after a third of the rings were turned into pairs of
-   five- and seven-membered rings (one link rotated a quarter turn, the
-   Stone-Wales step) and the net let settle, so rings of five, six, seven
+   same atoms after nine links were each turned a quarter turn, making
+   five- and seven-membered rings (the Stone-Wales step), and the net
+   let settle, so rings of five, six, seven
    and eight silicon atoms sit side by side as in Figure 10.38 (b), and
    the links are bent and stretched by different amounts. The choice
    bends one net into the other: shared links stay, the rest fade.
@@ -39,7 +39,7 @@ function ball(ctx, x, y, r, fill, stroke = alpha(PAL.ink, 0.5), w = 1.4) {
   const FORM = F.choice(d.controls, { label: '\\text{form}', options: [{ value: 'crystal', label: 'crystalline (quartz)' }, { value: 'glass', label: 'amorphous (fused silica)' }], value: 'crystal', aria: 'crystalline or amorphous silicon dioxide' });
   const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 1000, max: 1800, step: 10, value: 1400, unit: '°C', dec: 0, aria: 'temperature in degrees Celsius', specials: [{ at: MP, label: 'melting point' }] });
   /* the net: silicon at the corners of flat-topped hexagons, Si to Si L, an oxygen on every link */
-  const L = 72, BOX = { l: 70, r: 1330, t: 24, b: 404 };
+  const L = 72, BOX = { l: 70, r: 1330, t: 40, b: 404 };
   const nodes = [], key = (x, y) => `${Math.round(x)},${Math.round(y)}`, seen = new Set();
   for (let i = -1; i < 14; i++) for (let j = -1; j < 5; j++) {
     const cx = 1.5 * L * i, cy = R3 * L * (j + (i % 2 ? 0.5 : 0));

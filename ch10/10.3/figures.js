@@ -333,7 +333,7 @@ const bpAt = (k, p) => { const q = LIQ[k]; return 1 / (1 / (q.bp + 273.15) - (R 
       /* a short stretch of ice is named at its cold end, below the melting plateau's name */
       const yw = s.ph === 's' && tall < 60 ? Math.max(Y(s.t0), Y(s.t1)) : ym;
       if (s.kind === 'warm' && (wide > 6 || tall > 24)) label(ctx, FORM[s.ph], xm, yw, { side: 'right', size: 18, gap: 22, weight: 400 });
-      if (s.kind === 'change' && wide > 40) {
+      if (s.kind === 'change' && wide > (s.melt ? 40 : 180)) {
         const both = s.melt ? 'H₂O(s) and H₂O(l)' : 'H₂O(l) and H₂O(g)';
         if (s.melt && wide < 260) {
           /* a short melting plateau: its name above and to the right on a leader, clear of the water's slope and of the ice */

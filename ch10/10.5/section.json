@@ -59,6 +59,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "broken links drawn as gaps"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt: net fills the stage; glass has rings of five to eight"
     }
    ]
   },
@@ -89,6 +93,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "crystal lowered below the headline"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt: crystals fill the stage, packed ions, key, no view buttons"
     }
    ]
   },
@@ -108,6 +116,10 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "sheets lie flat, shapes fill the stage, headline clear of the atoms"
     }
    ]
   },

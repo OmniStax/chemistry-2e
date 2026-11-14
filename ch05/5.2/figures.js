@@ -9,6 +9,8 @@ const sim = (id, H) => F.sim(root, id, H);
    Figure 5.12 drawn in section. Moving: heat leaves the metal for the water
    and both temperatures relax to the final one on one clock, while the two
    heat bars beneath the graph stay equal and opposite. Opens on Example 5.3.
+   The water's heat is the metal's with its sign changed, as the section's
+   equation says, so the two never differ in a last digit.
    Lengths are in centimetres and drawn at one scale, so the water's level
    and the metal's size are the ones their volumes give in this cup.
 ===================================================================== */
@@ -35,18 +37,19 @@ const sim = (id, H) => F.sim(root, id, H);
   const TAU = 0.9, TT = 5.2;
   const cy = cycle(() => TT, 1.4);
   let hits = []; F.hover(d.stage, () => hits);
-  const f1 = (x) => fmt(x, 1), f2 = (x) => fmt(x, 2), tn = (s) => s.replace(/−/g, '-');
-  const kJ = (x) => (x > 0 ? '+' : '') + (Math.abs(x) >= 10 ? f1(x) : f2(x));
+  const f1 = (x) => fmt(x, 1), tn = (s) => s.replace(/−/g, '-');
+  const kJ = (x) => (x > 0 ? '+' : '') + fmt(x, Math.abs(x) >= 10 ? 1 : 2);
   const hu = (type, x) => '\\htmlClass{kv-' + type + '}{' + x + '}';
 
   /* the relaxation, scaled so that it lands on the final state at the end of the loop */
   const R = (x) => (1 - Math.exp(-x / TAU)) / (1 - Math.exp(-TT / TAU));
   function state(t) {
     const m = METALS[MET.value], Cm = m.c * MM.v, Cw = CW * MW.v, Tm0 = TM.v, r = R(t);
-    const Tf = (Cm * Tm0 + Cw * TW0) / (Cm + Cw);
-    const Tm = (x) => Tm0 + (Tf - Tm0) * R(x), Tw = (x) => TW0 + (Tf - TW0) * R(x);
-    const any = Math.abs(Tm0 - TW0) > 0.05;
-    return { m, Cm, Cw, Tm0, Tf, Tm, Tw, any, qm: Cm * (Tm(t) - Tm0) / 1000, qw: Cw * (Tw(t) - TW0) / 1000, flow: any ? 1 - r : 0 };
+    /* the metal's temperature change is taken to the 0.1 °C the readout shows, so the product of the numbers shown is the heat shown */
+    const dT = Math.round(((Cm * Tm0 + Cw * TW0) / (Cm + Cw) - Tm0) * 10) / 10, Tf = Tm0 + dT;
+    const Tm = (x) => Tm0 + dT * R(x), Tw = (x) => TW0 + (Tf - TW0) * R(x);
+    const any = Math.abs(dT) > 0.05, qm = Cm * dT * r / 1000;
+    return { m, Cm, Tm0, dT, Tf, Tm, Tw, any, qm, qw: -qm, flow: any ? 1 - r : 0 };
   }
 
   /* ---- the calorimeter, in centimetres from the centre of the inner cup's floor ---- */
@@ -186,10 +189,9 @@ const sim = (id, H) => F.sim(root, id, H);
 
     /* the readout: the two heats at the final temperature, each formula whole on its line */
     const u = '\\;\\text{J/g}\\,^\\circ\\text{C}', deg = '\\;^\\circ\\text{C}';
-    const qM = st.Cm * (st.Tf - st.Tm0) / 1000, qW = st.Cw * (st.Tf - TW0) / 1000;
-    const row = (sym, c, m, dT, q) => sym + '=\\kcspec\\times\\km\\times\\kdT=(' + hu('heat-capacity', c + u) + ')(' + hu('mass', f1(m) + '\\;\\text{g}') + ')(' + hu('temperature', tn(dT) + deg) + ')=' + hu('energy', tn(kJ(q)) + '\\;\\text{kJ}');
-    tex(d.readout, row('\\kq_{\\htmlData{ref=metal}{\\text{metal}}}', fmt(st.m.c, 3), MM.v, f1(st.Tf - st.Tm0), qM) + ' \\\\ '
-      + row('\\kq_{\\htmlData{ref=water}{\\text{water}}}', '4.184', MW.v, f2(st.Tf - TW0), qW));
+    const qM = st.Cm * st.dT / 1000, sym = (who) => '\\kq_{\\htmlData{ref=' + who + '}{\\text{' + who + '}}}';
+    tex(d.readout, sym('metal') + '=\\kcspec\\times\\km\\times\\kdT=(' + hu('heat-capacity', fmt(st.m.c, 3) + u) + ')(' + hu('mass', f1(MM.v) + '\\;\\text{g}') + ')(' + hu('temperature', tn(f1(st.dT)) + deg) + ')=' + hu('energy', tn(kJ(qM)) + '\\;\\text{kJ}')
+      + ' \\\\ ' + sym('water') + '=-' + sym('metal') + '=' + hu('energy', tn(kJ(-qM)) + '\\;\\text{kJ}'));
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();

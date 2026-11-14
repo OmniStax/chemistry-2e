@@ -305,7 +305,7 @@ const SPECIALS = [{ at: 24, label: 'Cr' }, { at: 29, label: 'Cu' }, { at: 41, la
     const sel = Zs.v, s0 = E(sel), got = read(sel), [sub, nth] = term(sel);
     hits = [];
     /* in a pane too narrow for two lines in a square, a square keeps its symbol and the enlarged one carries the subshell */
-    const narrow = d.c.clientWidth > 0 && d.c.clientWidth < 640;
+    const narrow = d.c.clientWidth > 0 && d.c.clientWidth < 700;
     /* period and group numbers */
     for (let p = 1; p <= 7; p++) text(ctx, String(p), X0 - 22, TOP + (p - 1) * PY + CH / 2, PAL.muted, { size: 18, align: 'center' });
     ctx.save(); ctx.translate(X0 - 22, TOP - 20); ctx.rotate(-Math.PI / 2); text(ctx, 'period', 0, 0, PAL.muted, { size: 18 }); ctx.restore();
@@ -337,10 +337,8 @@ const SPECIALS = [{ at: 24, label: 'Cr' }, { at: 29, label: 'Cu' }, { at: 41, la
     text(ctx, 'and the electrons in it', lx, by + 126, PAL.ink, { size: 20 });
     }
     const sw = (c) => (cx, x, y) => { cx.save(); cx.fillStyle = alpha(c, 0.45); cx.fillRect(x - 18, y - 11, 36, 22); cx.strokeStyle = c; cx.lineWidth = 1.5; cx.strokeRect(x - 18, y - 11, 36, 22); cx.restore(); };
-    F.legend(ctx, { l: 700, r: X0 + 12 * CW - 6, t: TOP - 10, b: TOP + 3 * PY - 40 }, [
-      ...['s', 'p', 'd', 'f'].map((b) => ({ s: '$' + b + '$ block', draw: sw(F.cat(BLOCK[b])) })),
-      { s: 'observed differs', draw: (cx, x, y) => { cx.save(); cx.setLineDash([5, 4]); cx.strokeStyle = PAL.ink; cx.lineWidth = 2; cx.strokeRect(x - 18, y - 11, 36, 22); cx.restore(); } },
-    ], { corner: 'tr', size: 20, panel: false });
+    F.legend(ctx, { l: 700, r: X0 + 12 * CW - 6, t: TOP - 10, b: TOP + 3 * PY - 40 },
+      ['s', 'p', 'd', 'f'].map((b) => ({ s: '$' + b + '$ block', draw: sw(F.cat(BLOCK[b])) })), { corner: 'tr', size: 20, panel: false });
     /* the headline and the readout */
     topline(ctx, differs(sel)
       ? s0.name + ', Z = ' + sel + ': the table reads $' + texAbbr(sel, got) + '$; the atom is observed as $' + texAbbr(sel, observed(sel)) + '$.'

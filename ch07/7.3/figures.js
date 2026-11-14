@@ -183,7 +183,7 @@ const RAD = Math.PI / 180;
     if (st.s > 1) F.legend(ctx, { l: PX - 20, r: TX + 20, t: 0, b: H - 4 }, [
       { s: 'shared pair', draw: (c, x, y) => pairGlyph(c, 'shared', x, y, PAL.ink) },
       { s: 'lone pair', draw: (c, x, y) => pairGlyph(c, 'lone', x, y, PAL.ink) },
-      { s: 'pair still lacking', draw: (c, x, y) => pairGlyph(c, 'none', x, y, PAL.ink) },
+      { s: 'missing pair', draw: (c, x, y) => pairGlyph(c, 'none', x, y, PAL.ink) },
     ], { corner: 'bottom', row: true, panel: false, size: 21 });
   }
 
@@ -231,7 +231,7 @@ const RAD = Math.PI / 180;
       const terms = syms.map((sym) => { const n = m.atoms.filter((a) => a.s === sym).length; return String(m.atoms.find((a) => a.s === sym).v * n); });
       tex(d.readout, `\\text{valence electrons in }${m.tex} = ${terms.join(' + ')}${m.charge ? (m.charge < 0 ? ' + 1' : ' - 1') : ''} = ${T}`);
     } else {
-      tex(d.readout, `\\underbrace{${st.inBonds}}_{\\text{in bonds}} + \\underbrace{${st.inPairs}}_{\\text{in lone pairs}} + \\underbrace{${T - st.inBonds - st.inPairs}}_{\\text{still to place}} = ${T}\\text{ valence electrons}`);
+      tex(d.readout, `\\underbrace{${st.inBonds}}_{\\text{in bonds}} + \\underbrace{${st.inPairs}}_{\\text{in lone pairs}} + \\underbrace{${T - st.inBonds - st.inPairs}}_{\\text{still to place}} = \\underbrace{${T}}_{\\text{valence electrons}}`);
     }
   }
   register(d.fig, { update: () => {}, draw });

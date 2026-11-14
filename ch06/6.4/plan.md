@@ -93,8 +93,9 @@ id · replaces · concepts · value add · arrows · motion · controls · headl
    the square it stands on ("Gallium, Z = 31, is the 1st square of the 4p
    row."), or at an exception the configuration read and the observed one ·
    no graph · readout the configuration read from the table, full where it
-   fits, then core-abbreviated · legend: the four blocks by `F.cat(0..3)`, the
-   dashed outline · hover names each element with its observed configuration
+   fits, then core-abbreviated · legend: the four blocks by `F.cat(0..3)` (the
+   caption names the dashed outline); under 700 px a square keeps only its
+   symbol and the enlarged square carries the subshell · hover names each element with its observed configuration
    · 2D (periodic table).
    works: parts: 18 groups by 7 periods, group numbers over the first square
    of each column and period numbers at the left; s block groups 1, 2 and He,

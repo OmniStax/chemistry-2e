@@ -137,9 +137,9 @@ const sciTxt = (x, sf) => { const p = parts(x, sf); return p.e ? `${p.m} × 10${
     give.set(e.give); want.set(e.want); showSlider(e.give); relight();
   }
   /* box centres: A in the two left columns, B mirrored in the two right */
-  const W = 220, WV = 210, HB = 104, wOf = (key) => (key[0] === 'v' ? WV : W);
-  const P = { vpA: [115, 170], mA: [440, 170], vsA: [115, 340], nA: [440, 340], NA: [440, 510],
-    nB: [960, 340], mB: [960, 170], vpB: [1285, 170], vsB: [1285, 340], NB: [960, 510] };
+  const W = 210, WV = 200, HB = 104, wOf = (key) => (key[0] === 'v' ? WV : W);
+  const P = { vpA: [110, 170], mA: [440, 170], vsA: [110, 340], nA: [440, 340], NA: [440, 510],
+    nB: [960, 340], mB: [960, 170], vpB: [1290, 170], vsB: [1290, 340], NB: [960, 510] };
   const hueOf = (kind) => (kind === 'm' ? C('mass') : kind === 'n' ? C('amount') : kind === 'v' ? C('volume') : PAL.ink);
   /* a name on one line, or on two split at the space that keeps the longer line shortest */
   function fit(ctx, name, room) {
@@ -151,7 +151,7 @@ const sciTxt = (x, sf) => { const p = parts(x, sf); return p.e ? `${p.m} × 10${
   }
   /* a box in the hue of what it holds (a count in ink), its name and, on the route, its value */
   function box(ctx, x, y, kind, name, value, on) {
-    const c = hueOf(kind), W = kind === 'v' ? WV : 220;
+    const c = hueOf(kind), W = kind === 'v' ? WV : 210;
     ctx.save(); ctx.globalAlpha = 0.5 + 0.5 * on;
     ctx.beginPath(); ctx.roundRect(x - W / 2, y - HB / 2, W, HB, 10);
     ctx.fillStyle = kind === 'N' ? PAL.soft : alpha(c, 0.08 + 0.14 * on); ctx.fill();

@@ -38,7 +38,7 @@ const TAU = 2 * Math.PI;
     specials: [{ at: () => TH.v, label: 'same as H' }], onInput: () => cy.reset() });
   const LOOP = 7, TC = 1, SLIDE = 0.6, RELAX = 1.1, R0 = 1.5, R1 = 0.07;
   /* the boxes: S on a side, wall to wall at x = CX once in contact, GAP apart before */
-  const S = 330, CX = 410, TOP = 140, BOT = TOP + S, GAP = 70, PAD = 14, CELL = (S - 2 * PAD) / 4;
+  const S = 330, CX = 410, TOP = 140, BOT = TOP + S, GAP = 70, PAD = 48;
   const cy = cycle(() => LOOP, 1.2);
   const mean = () => (TH.v + TL.v) / 2;
   /* the temperature of a sample that started at T0, t seconds into the loop */
@@ -51,14 +51,18 @@ const TAU = 2 * Math.PI;
   const reach = (T) => 9 + 0.09 * T;
   /* half the gap between the two boxes, closing over the SLIDE seconds before contact */
   const half = (t) => (GAP / 2) * Math.min(1, Math.max(0, (TC - t) / SLIDE));
-  /* fourteen places on a jittered 4 by 4 grid less two cells; each molecule has two rates and two offsets for its jiggle, and a tumble */
-  const SITES = [];
-  for (let i = 0; i < 4; i++) for (let j = 0; j < 4; j++) {
-    if (i * 4 + j === 2 || i * 4 + j === 13) continue;
-    const q = SITES.length;
-    SITES.push({ x: PAD + (j + 0.5) * CELL + (rnd(q * 7) - 0.5) * 12, y: PAD + (i + 0.5) * CELL + (rnd(q * 7 + 1) - 0.5) * 12,
-      f: [0.7 + 0.6 * rnd(q * 7 + 3), 0.7 + 0.6 * rnd(q * 7 + 4)], a: [rnd(q * 3 + 40) * TAU, rnd(q * 3 + 41) * TAU], r: rnd(q * 7 + 6) * TAU });
+  /* fourteen places scattered as in a liquid: thrown at random (deterministically) inside the box, PAD clear of the walls, then pushed apart until no two centres are nearer than MIN, so none overlaps at rest; each molecule has two rates and two offsets for its jiggle, and a tumble */
+  const MIN = 60, SPOT = [];
+  for (let q = 0; q < 14; q++) SPOT.push([PAD + rnd(300 + q * 2) * (S - 2 * PAD), PAD + rnd(301 + q * 2) * (S - 2 * PAD)]);
+  for (let k = 0; k < 400; k++) {
+    for (let i = 0; i < 14; i++) for (let j = i + 1; j < 14; j++) {
+      const dx = SPOT[j][0] - SPOT[i][0], dy = SPOT[j][1] - SPOT[i][1], r = Math.hypot(dx, dy) || 1;
+      if (r < MIN) { const push = (MIN - r) / 2 / r; SPOT[i][0] -= dx * push; SPOT[i][1] -= dy * push; SPOT[j][0] += dx * push; SPOT[j][1] += dy * push; }
+    }
+    SPOT.forEach((p) => { p[0] = Math.min(S - PAD, Math.max(PAD, p[0])); p[1] = Math.min(S - PAD, Math.max(PAD, p[1])); });
   }
+  const SITES = SPOT.map(([x, y], q) => ({ x, y,
+    f: [0.7 + 0.6 * rnd(q * 7 + 3), 0.7 + 0.6 * rnd(q * 7 + 4)], a: [rnd(q * 3 + 40) * TAU, rnd(q * 3 + 41) * TAU], r: rnd(q * 7 + 6) * TAU }));
   const offset = (s, ph, A) => s.f.map((f, i) => A * (Math.sin(f * ph + s.a[i]) * 0.7 + Math.sin(1.9 * f * ph + 2 * s.a[i]) * 0.3));
   /* one water molecule centred on its oxygen at (x, y), turned by a: oxygen and hydrogen in the element palette, hydrogen rimmed in ink so it reads on a light page */
   function water(ctx, x, y, a) {

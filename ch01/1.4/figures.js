@@ -326,10 +326,13 @@ function rule(ctx, x1, x2, y, h) {
     hits.push({ x: bx, y: by - hb / 2, r: Math.max(wb, hb) / 2 + 4, name: 'the ' + name + ' block, ' + mass + ' g' }, { x: PANX, y: PANY + 70, r: 80, name: 'balance, reading ' + (onPan ? mass : '0.00') + ' g' },
       { x: CX, y: (Y(level) + FLOOR) / 2, r: 60, name: 'water in the graduated cylinder, at ' + fmt(level, 1) + ' mL' });
     if (hold > 0) hits.push({ x: bx, y: (by - hb) / 2, r: 14, name: floats ? 'rod that holds the block under the water' : 'thread the block hangs on' });
-    /* the readout is the measurement's result: the two readings subtracted, then the density to the figures the readings allow */
-    const vs = fmt(V, 1), n = Math.min(sigOf(mass), sigOf(vs)), vol = hue('volume', vs + '\\ \\text{mL}');
-    say(`${hue('volume', '\\text{volume}')} = ${hue('volume', fmt(V1 + V, 1) + '\\ \\text{mL}')} - ${hue('volume', fmt(V1, 1) + '\\ \\text{mL}')} = ${vol} \\\\ ` +
-      `${hue('density', '\\text{density}')} = \\frac{${hue('mass', '\\text{mass}')}}{${hue('volume', '\\text{volume}')}} = \\frac{${hue('mass', mass + '\\ \\text{g}')}}{${vol}} = ${hue('density', sig(Number(mass) / Number(vs), n) + '\\ \\text{g/mL}')}`);
+    /* the readout says only what has been measured so far (root rule 24.7): the mass, read on the balance, until the block is
+       under water; once the water has risen, the two readings subtracted and the density to the figures the readings allow.
+       Before then the two lines to come hold their room unseen, so the page does not jump when they appear. */
+    const vs = fmt(V, 1), n = Math.min(sigOf(mass), sigOf(vs)), vol = hue('volume', vs + '\\ \\text{mL}'), ms = hue('mass', mass + '\\ \\text{g}');
+    const volLine = `${hue('volume', '\\text{volume}')} = ${hue('volume', fmt(V1 + V, 1) + '\\ \\text{mL}')} - ${hue('volume', fmt(V1, 1) + '\\ \\text{mL}')} = ${vol}`;
+    const rhoLine = `${hue('density', '\\text{density}')} = \\frac{${hue('mass', '\\text{mass}')}}{${hue('volume', '\\text{volume}')}} = \\frac{${ms}}{${vol}} = ${hue('density', sig(Number(mass) / Number(vs), n) + '\\ \\text{g/mL}')}`;
+    say(under >= hb ? `${volLine} \\\\ ${rhoLine}` : `${hue('mass', '\\text{mass}')} = ${ms} \\\\ \\phantom{${rhoLine}}`);
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();

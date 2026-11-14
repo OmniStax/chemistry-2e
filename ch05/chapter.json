@@ -233,7 +233,6 @@
   {
    "sym": "q_solution",
    "concept": "heat-flow",
-   "ref": "solution",
    "meaning": "the heat absorbed or lost by the solution, the surroundings of a reaction in a calorimeter",
    "unit": "J",
    "section": "5.2",

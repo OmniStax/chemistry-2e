@@ -918,13 +918,6 @@
    ]
   },
   {
-   "id": "solution",
-   "label": "the solution in the calorimeter",
-   "figures": [
-    "sim-calorimeter"
-   ]
-  },
-  {
    "id": "calorimeter",
    "label": "the coffee cup calorimeter",
    "figures": [

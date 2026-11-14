@@ -118,7 +118,7 @@ function spread(n, x1, x2, top, bot, gw, gh) {
     hits.push({ x: (BL + BR) / 2, y: top, r: 16, name: `the surface of ${sig3(vol)} L of solution` });
     hits.push({ x: BR, y: RIM + 40, r: 30, name: 'the beaker' });
     /* the key: what one particle stands for */
-    F.legend(ctx, { l: 500, r: 760, t: 406, b: 442 }, [{ s: `0.04 mol of ${s.f}`, draw: (c, x, y) => glyph(c, x, y, s.pair) }], { corner: 'bottom', panel: false });
+    F.legend(ctx, { l: 484, r: 760, t: 406, b: 442 }, [{ s: `0.04 mol of ${s.f}`, draw: (c, x, y) => glyph(c, x, y, s.pair) }], { corner: 'bl', panel: false });
     const vT = hue('volume', `${sig3(vol)}\\ \\text{L}`);
     tex(d.readout, `\\kM=\\frac{\\km/\\kMM}{\\kV}=\\frac{${hue('mass', `${mass.toFixed(2)}\\ \\text{g}`)}\\,/\\,${hue('mass', `${s.mmS || s.mm}\\ \\text{g/mol}`)}}{${vT}}=\\frac{${hue('amount', `${sig3(n)}\\ \\text{mol}`)}}{${vT}}=${hue('concentration', `${sig3(M)}\\ \\text{M}`)}`);
   }
@@ -180,7 +180,7 @@ function spread(n, x1, x2, top, bot, gw, gh) {
     cylinder(ctx, XS[1], v2, c2, n, '₂', 'the diluted solution', rd);
     arrow(ctx, 310, RIM - 34, 460, RIM - 34, PAL.ink, 4);
     text(ctx, same ? 'no water added' : 'water added', 385, RIM - 10, PAL.ink, { size: 20, align: 'center' });
-    F.legend(ctx, { l: 255, r: 515, t: 207, b: 243 }, [{ s: '0.25 mol of Cu(NO₃)₂', draw: (c, x, y) => disc(c, x, y, 6, 'Cu') }], { corner: 'bottom', panel: false });
+    F.legend(ctx, { l: 255, r: 515, t: 269, b: 305 }, [{ s: '0.25 mol of Cu(NO₃)₂', draw: (c, x, y) => disc(c, x, y, 6, 'Cu') }], { corner: 'bottom', panel: false });
     /* C against V: the curve of constant moles, and under each solution's point the rectangle whose area is its moles */
     const ax = axes(ctx, box, [0, 2.5], [0, 5], { xl: 'V (L)', xc: cv, yl: 'C (M)', yc: cc, nx: 5, ny: 5 });
     const rect = (v, c, col, dash) => {

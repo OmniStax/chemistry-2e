@@ -42,35 +42,35 @@ function dashedArrow(ctx, x1, y1, x2, y2, color, w) {
   const SX = 410, SY = 230, RX = 160, RY = 112;
   /* the boundary arrows run 36 to 186 units for 0 to 50 kJ; the levels move 1.95 units per kJ, ±195 units at ΔU = ±100 kJ */
   const len = (v) => 36 + (Math.abs(v) / 50) * 150, UK = 1.95;
-  const LX0 = 972, LX1 = 1232, QX = 1022, WX = 1107, DX = 1192;
+  const LX0 = 965, LX1 = 1195, QX = 1005, WX = 1080, DX = 1155, UX = 822;
   function draw() {
     const { ctx } = begin(d.c);
     const ce = C('energy'), dU = q.v + w.v;
     hits.length = 0;
     /* the surroundings and the system */
-    rrect(ctx, 24, 20, 766, 420, 8, alpha(PAL.soft, 0.7), PAL.rule, 1.5);
-    text(ctx, 'Surroundings', 407, 56, PAL.ink, { size: 22, align: 'center' });
+    rrect(ctx, 24, 20, 756, 420, 8, alpha(PAL.soft, 0.7), PAL.rule, 1.5);
+    text(ctx, 'Surroundings', 402, 56, PAL.ink, { size: 22, align: 'center' });
     ctx.save(); ctx.beginPath(); ctx.ellipse(SX, SY, RX, RY, 0, 0, 2 * Math.PI);
     ctx.fillStyle = PAL.panel; ctx.fill(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5; ctx.stroke(); ctx.restore();
     text(ctx, 'System', SX, SY - 20, PAL.ink, { size: 24, align: 'center', base: 'middle' });
     text(ctx, dU > 0 ? 'ΔU > 0' : dU < 0 ? 'ΔU < 0' : 'ΔU = 0', SX, SY + 20, ce, { size: 24, weight: 600, align: 'center', base: 'middle' });
     /* heat crosses the boundary on the left, work on the right */
-    const edge = (side, v, sym, into, out, dashed) => {
-      const x0 = SX + side * (RX + 8), cx = x0 + side * 105;
+    const edge = (side, v, sym, words, dashed) => {
+      const x0 = SX + side * (RX + 8), cx = x0 + side * 100;
       text(ctx, sym + ' = ' + (v === 0 ? '0' : signed(v, 0)) + ' kJ', cx, SY - 34, ce, { size: 22, weight: 600, align: 'center' });
-      text(ctx, v > 0 ? into : v < 0 ? out : dashed ? 'no work' : 'no heat', cx, SY + 46, PAL.ink, { size: 20, align: 'center' });
+      words[v > 0 ? 0 : v < 0 ? 1 : 2].forEach((t, i) => text(ctx, t, cx, SY + 46 + 26 * i, PAL.ink, { size: 20, align: 'center' }));
       if (v === 0) return;
       const x1 = x0 + side * len(v), a = v > 0 ? [x1, x0] : [x0, x1];
       (dashed ? dashedArrow : arrow)(ctx, a[0], SY, a[1], SY, ce, 5);
       hits.push({ x: (x0 + x1) / 2, y: SY, r: 40, name: dashed ? 'work, w' : 'heat, q' });
     };
-    edge(-1, q.v, 'q', 'heat in', 'heat out', false);
-    edge(1, w.v, 'w', 'work on the system', 'work by the system', true);
+    edge(-1, q.v, 'q', [['heat in'], ['heat out'], ['no heat']], false);
+    edge(1, w.v, 'w', [['work done', 'on the system'], ['work done', 'by the system'], ['no work']], true);
     /* the internal energy: U before, then q, then w, landing on U after */
     const y0 = SY, yq = y0 - q.v * UK, y1 = y0 - dU * UK, up = dU >= 0 ? 1 : -1;
-    arrow(ctx, 850, 440, 850, 20, alpha(PAL.ink, 0.45), 2.5);
-    text(ctx, 'U', 836, 30, ce, { size: 22, weight: 600, align: 'right', base: 'middle' });
-    hits.push({ x: 850, y: 230, r: 26, name: 'internal energy, increasing upward' });
+    arrow(ctx, UX, 440, UX, 20, alpha(PAL.ink, 0.45), 2.5);
+    text(ctx, 'U', UX - 12, 30, ce, { size: 22, weight: 600, align: 'right', base: 'middle' });
+    hits.push({ x: UX, y: 230, r: 26, name: 'internal energy, increasing upward' });
     line(ctx, LX0, y0, LX1, y0, ce, 3, [10, 10]);
     line(ctx, LX0, y1, LX1, y1, ce, 5);
     text(ctx, 'U before', LX0 - 12, y0 + up * 13, ce, { size: 20, align: 'right', base: 'middle' });

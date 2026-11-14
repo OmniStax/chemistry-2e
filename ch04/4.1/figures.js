@@ -110,7 +110,8 @@ function molecule(ctx, key, x, y, a, s, hits) {
    SIM: balancing by inspection. One of the section's four reactions is
    chosen and its coefficients are set one species at a time; the
    subscripts are fixed. Each species stands as that many whole
-   molecules, with + and the arrow between them as in Figure 4.2, and
+   molecules under its name, the first row reading across as the
+   equation does in Figure 4.2 and the rest stacked beneath it, and
    under them the book's own counting table (Element, Reactants,
    Products, Balanced?) is written with the live coefficients.
    Still: no clock. Counts are ink; atoms are in their element colours.
@@ -144,13 +145,15 @@ function molecule(ctx, key, x, y, a, s, hits) {
     const r = rx();
     /* a reaction of three species has three sliders: the fourth leaves the row, so that the row is laid out for the controls it holds */
     K.forEach((k, i) => { const s = r.sp[i]; if (s) { k.relabel(s.t, 'coefficient of ' + plain(s)); k.set(1); if (!k.el.isConnected) d.controls.appendChild(k.el); } else k.el.remove(); });
+    /* each slider is measured again in the row it now stands in */
+    K.forEach((k) => k.el.classList.remove('ctl-wrap'));
   }
   choose();
   let hits = []; F.hover(d.stage, () => hits);
   const gcd = (a, b) => (b ? gcd(b, a % b) : a);
   /* the room one model takes, at scale 1 */
   const span = (key) => { const a = MOL[key].at; return [2 * Math.max(...a.map(([e, dx]) => Math.abs(dx) + RAD[e])) + 14, 2 * Math.max(...a.map(([e, , dy]) => Math.abs(dy) + RAD[e])) + 14]; };
-  const PY = 190, HT = 660;
+  const PY = 122, HT = 660;
   function draw() {
     const { ctx } = begin(d.c); hits = [];
     const r = rx(), co = r.sp.map((_, i) => Math.round(K[i].v)), m = r.sp.length;
@@ -160,12 +163,11 @@ function molecule(ctx, key, x, y, a, s, hits) {
     const sz = r.sp.map((s) => span(s.m)), SC = Math.min(1.7, ...sz.map(([w, h]) => Math.min(cw / 3 / w, 104 / h))), RH = 104;
     r.sp.forEach((s, i) => {
       const cx = 30 + cw / 2 + i * (cw + OP), wide = Math.max(sz[i][0] * SC, cw / 3.6);
-      const rows = Math.ceil(co[i] / 3);
       for (let k = 0; k < co[i]; k++) {
         const row = Math.floor(k / 3), inRow = Math.min(3, co[i] - 3 * row), col = k % 3;
-        molecule(ctx, s.m, cx + (col - (inRow - 1) / 2) * wide, PY + (row - (rows - 1) / 2) * RH, 0, SC, hits);
+        molecule(ctx, s.m, cx + (col - (inRow - 1) / 2) * wide, PY + row * RH, 0, SC, hits);
       }
-      text(ctx, s.f, cx, PY + 1.5 * RH + 24, PAL.ink, { size: 22, align: 'center' });
+      text(ctx, s.f, cx, 40, PAL.ink, { size: 22, align: 'center' });
       if (i) {
         const ox = cx - cw / 2 - OP / 2;
         if (s.prod && !r.sp[i - 1].prod) arrow(ctx, ox - 30, PY, ox + 30, PY, PAL.ink, 3); else text(ctx, '+', ox, PY, PAL.ink, { size: 34, align: 'center' });

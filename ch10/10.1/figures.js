@@ -169,20 +169,33 @@ const HAL = [
     });
     /* the chart */
     const g = axes(ctx, BOX, [0, 5], [0, 700], { nx: 0, ny: 7, yl: 'temperature (K)', yc: ct, xl: 'larger molecules, stronger dispersion forces →' });
-    const cw = 58;
+    const cw = 58, names = [];
     HAL.forEach((h, i) => {
       const cx = g.X(i + 0.5), x0 = cx - cw / 2, on = h.k === hl.k;
       ctx.save();
-      ctx.fillStyle = alpha(PAL.ink, on ? 0.34 : 0.2); ctx.fillRect(x0, g.Y(h.mp), cw, g.Y(0) - g.Y(h.mp));
-      ctx.fillStyle = alpha(PAL.ink, on ? 0.14 : 0.08); ctx.fillRect(x0, g.Y(h.bp), cw, g.Y(h.mp) - g.Y(h.bp));
+      /* three distinct bands: the solid dense, the liquid half as dense and ruled at its two ends, the gas bare */
+      ctx.fillStyle = PAL.panel; ctx.fillRect(x0, g.Y(700), cw, g.Y(0) - g.Y(700));
+      ctx.fillStyle = alpha(PAL.ink, on ? 0.62 : 0.5); ctx.fillRect(x0, g.Y(h.mp), cw, g.Y(0) - g.Y(h.mp));
+      ctx.fillStyle = alpha(PAL.ink, on ? 0.3 : 0.24); ctx.fillRect(x0, g.Y(h.bp), cw, g.Y(h.mp) - g.Y(h.bp));
+      [h.mp, h.bp].forEach((v) => line(ctx, x0, g.Y(v), x0 + cw, g.Y(v), alpha(PAL.ink, on ? 0.8 : 0.45), on ? 2 : 1.5));
       ctx.strokeStyle = on ? PAL.ink : alpha(PAL.ink, 0.3); ctx.lineWidth = on ? 3 : 1.5; ctx.strokeRect(x0, g.Y(700), cw, g.Y(0) - g.Y(700));
       ctx.restore();
       text(ctx, h.f, cx, BOX.b + 26, on ? PAL.ink : PAL.muted, { size: 20, weight: on ? 600 : 400, align: 'center' });
       hits.push({ x: cx, y: g.Y(h.mp / 2), r: 26, name: h.name + ': solid below ' + h.mp + ' K' }, { x: cx, y: g.Y(Math.min(680, h.bp + 60)), r: 26, name: h.name + ': gas above ' + h.bp + ' K' });
       if (h.bp - h.mp > 25) hits.push({ x: cx, y: g.Y((h.mp + h.bp) / 2), r: 18, name: h.name + ': liquid from ' + h.mp + ' to ' + h.bp + ' K' });
       if (on) {
-        /* the three ranges named inside the chosen column, where a range is tall enough to hold its name */
-        [['solid', 0, h.mp], ['liquid', h.mp, h.bp], ['gas', h.bp, 700]].forEach(([s, lo, hi]) => { const ym = (g.Y(lo) + g.Y(hi)) / 2; if (g.Y(lo) - g.Y(hi) > 26 && Math.abs(ym - g.Y(T.v)) > 16 && Math.abs(ym - g.Y(ROOM)) > 12) text(ctx, s, cx, (g.Y(lo) + g.Y(hi)) / 2, PAL.ink, { size: 16, align: 'center', bg: PAL.panel }); });
+        /* the three ranges named inside the chosen column, where a range is tall enough to hold its name: each name
+           stands at the middle of its range, or at the nearest place clear of the temperature and room-temperature
+           lines, and over the line only where the range has no clear place */
+        const yT = g.Y(T.v), yR = g.Y(ROOM);
+        [['solid', 0, h.mp], ['liquid', h.mp, h.bp], ['gas', h.bp, 700]].forEach(([s, lo, hi]) => {
+          const top = g.Y(hi) + 11, bot = g.Y(lo) - 11; if (bot < top) return;
+          const mid = (top + bot) / 2, ys = [];
+          for (let k = 0; k <= 16; k++) ys.push(top + ((bot - top) * k) / 16);
+          ys.sort((a, b) => Math.abs(a - mid) - Math.abs(b - mid)); ys.unshift(mid);
+          const best = ys.find((y) => Math.abs(y - yT) >= 13 && Math.abs(y - yR) >= 11) ?? mid;
+          names.push([s, cx, best]);
+        });
       }
     });
     /* room temperature, and the temperature set, as levels across every column */
@@ -192,6 +205,8 @@ const HAL = [
       if (Math.abs(yT - yR) > 26) text(ctx, 'room temperature', BOX.r + 10, yR, PAL.muted, { size: 16 });
     }
     line(ctx, BOX.l, yT, BOX.r, yT, ct, 4);
+    /* each name on a plate of the page colour that stays inside its column */
+    names.forEach(([s, x, y]) => { ctx.fillStyle = PAL.panel; ctx.fillRect(x - cw / 2 + 3, y - 10, cw - 6, 20); text(ctx, s, x, y, PAL.ink, { size: 16, align: 'center' }); });
     text(ctx, 'T = ' + T0 + ' K', BOX.r + 10, yT, ct, { size: 18, weight: 600 });
     if (T0 === ROOM) text(ctx, 'room temperature', BOX.r + 10, yT + 24, PAL.muted, { size: 16 });
     topline(ctx, 'At ' + T0 + ' K ' + hl.name + ' is ' + WHAT[ph] + '.');

@@ -65,7 +65,16 @@ function orbital(v, g, at, a, b, L, color, name, { opacity = 1 } = {}) {
   }
   if (!INDEX) { INDEX = []; for (let it = 0; it < NT; it++) for (let ip = 0; ip < NP; ip++) { const p = it * (NP + 1) + ip, q = p + NP + 1; INDEX.push(p, q, p + 1, q, q + 1, p + 1); } }
   const geo = new T.BufferGeometry(); geo.setAttribute('position', new T.BufferAttribute(pos, 3)); geo.setIndex(INDEX); geo.computeVertexNormals();
-  const m = new T.Mesh(geo, F.mesh.mat(color, opacity < 1 ? { transparent: true, opacity, depthWrite: false, side: T.DoubleSide } : { side: T.DoubleSide, shininess: 30 }));
+  const mat = (c) => F.mesh.mat(c, opacity < 1 ? { transparent: true, opacity, depthWrite: false, side: T.DoubleSide } : { side: T.DoubleSide, shininess: 30 });
+  /* a pair of colours draws the two phases, as the book draws a p orbital: the first where f > 0 (the lobe along b),
+     the second where f < 0; f falls with θ, so the positive rings come first */
+  let material;
+  if (Array.isArray(color)) {
+    let split = 0; while (split < NT && A + k * Math.cos((Math.PI * (split + 0.5)) / NT) >= 0) split++;
+    geo.addGroup(0, split * NP * 6, 0); geo.addGroup(split * NP * 6, (NT - split) * NP * 6, 1);
+    material = [mat(color[0]), mat(color[1])];
+  } else material = mat(color);
+  const m = new T.Mesh(geo, material);
   /* lobes with p character drawn a little slimmer than the bare profile, as the book draws them; an s orbital stays round */
   const slim = 1 - 0.38 * bl; m.scale.set(slim, 1, slim);
   m.position.set(at[0], at[1], at[2]);
@@ -76,7 +85,11 @@ function orbital(v, g, at, a, b, L, color, name, { opacity = 1 } = {}) {
 const reachOf = (a, bl, L) => { const n = Math.hypot(a, bl) || 1; return L * Math.pow((a + Math.sqrt(3) * bl) / n / 2, Q); };
 /* the coefficients of the hybrids of a set of n made from s and n − 1 p orbitals */
 const hybridAB = (n, u) => [1 / Math.sqrt(n), V.mul(u, Math.sqrt((n - 1) / n))];
-const S_COL = () => F.cat(0), P_COL = () => F.cat(1), H_COL = () => F.cat(2);
+const S_COL = () => F.cat(0), H_COL = () => F.cat(2);
+/* a p orbital's two phases, as the book and Figure 8.3 + 8.4 + 8.5 draw them: the lobe along +axis in F.cat(0), the other in F.cat(1) */
+const P_PH = () => [F.cat(0), F.cat(1)];
+/* both phases of a p orbital part way to the one colour of a hybrid; flip when the drawn lobe along b is the book's second phase */
+const pMix = (k, flip = false) => { const [a, b] = P_PH(), c = flip ? [b, a] : [a, b]; return c.map((x) => F.mixColor(x, H_COL(), k)); };
 /* the colours a scene is built from, so a theme or a colour switch rebuilds it */
 const palSig = () => [PAL.ink, PAL.muted, PAL.panel, F.C('angle'), F.cat(0), F.cat(1), F.cat(2), F.el('H'), F.el('P'), F.el('Cl'), F.el('S'), F.el('F')].join('|');
 
@@ -158,7 +171,7 @@ function lobeSample(c, x, y, col, minor = 0) {
 }
 const KEY = {
   s: (s = 's orbital') => ({ s, draw: (c, x, y) => { c.save(); c.globalAlpha = 0.85; c.fillStyle = S_COL(); c.beginPath(); c.arc(x, y, 9, 0, TAU); c.fill(); c.restore(); } }),
-  p: (s = 'p orbital') => ({ s, draw: (c, x, y) => { lobeSample(c, x + 6, y, P_COL()); c.save(); c.translate(2 * x - 12, 0); c.scale(-1, 1); lobeSample(c, x - 6, y, P_COL()); c.restore(); } }),
+  p: (s = 'p orbital') => ({ s, draw: (c, x, y) => { lobeSample(c, x + 6, y, P_PH()[0]); c.save(); c.translate(2 * x - 12, 0); c.scale(-1, 1); lobeSample(c, x - 6, y, P_PH()[1]); c.restore(); } }),
   h: (s = 'hybrid orbital') => ({ s, draw: (c, x, y) => lobeSample(c, x + 4, y, H_COL(), 1) }),
   atom: (sym, s) => ({ s, draw: (c, x, y) => { c.save(); c.fillStyle = F.el(sym); c.strokeStyle = alpha(PAL.ink, 0.45); c.lineWidth = 1.5; c.beginPath(); c.arc(x, y, 10, 0, TAU); c.fill(); c.stroke(); c.restore(); } }),
 };
@@ -197,7 +210,8 @@ const headline = (cv, s) => { const { ctx } = begin(cv); topline(ctx, s); };
     if (tag !== sig) {
       sig = tag; S.clear();
       nucleus(S, g, [0, 0, 0], 'the nucleus of the oxygen atom', 0.06);
-      const col = F.mixColor(P_COL(), H_COL(), s.hyb), B = bonds(s.half), Lp = lones(s.lone);
+      /* the book (Figure 8.6) draws each 2p lobe that points at a hydrogen in the second phase */
+      const col = pMix(s.hyb, true), B = bonds(s.half), Lp = lones(s.lone);
       /* a 2p orbital (a = 0) bends into an sp³ hybrid (a = ½) along the same axis */
       const a = 0.5 * s.hyb, b = Math.sqrt(1 - a * a);
       B.forEach((dir) => orbital(v, g, [0, 0, 0], a, V.mul(dir, b), L, col, s.hyb > 0.5 ? 'an sp³ hybrid orbital of oxygen, bonding' : 'a 2p orbital of oxygen'));
@@ -259,7 +273,9 @@ function bench(id, n, o) {
       parts.forEach((g, i) => {
         g.position.x = (i - 1.5) * GAP * (1 - s.close); g.scale.setScalar(grow);
         const q = orbs[i], a = q.atomic[0] + (q.mixed[0] - q.atomic[0]) * s.mix, b = V.lerp(q.atomic[1], q.mixed[1], s.mix);
-        const col = !q.mixes ? P_COL() : F.mixColor(i === 0 ? S_COL() : P_COL(), H_COL(), s.mix);
+        /* a p orbital keeps the book's phases, the lobe along +axis first, whichever lobe leans toward its hybrid */
+        const flip = i > 0 && V.dot(q.atomic[1], P_AX[i - 1]) < 0;
+        const col = !q.mixes ? P_PH() : i === 0 ? F.mixColor(S_COL(), H_COL(), s.mix) : pMix(s.mix, flip);
         /* a p orbital that stays out of the mixing fades as the set closes, so the hybrids read first */
         const op = q.mixes ? 1 : 1 - 0.65 * s.mix;
         const nm = q.mixes && s.mix > 0.5 ? `an ${HYB_U[n]} hybrid orbital` : i === 0 ? 'the valence s orbital' : `a valence p orbital, ${['pₓ', 'p_y', 'p_z'][i - 1]}${q.mixes ? '' : ', unhybridized'}`;

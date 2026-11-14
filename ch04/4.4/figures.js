@@ -40,7 +40,7 @@ const plural = (n, one, many) => n + ' ' + (n === 1 ? one : many);
     specials: [{ at: () => Bs.v / 2, label: '2:1' }] });
   let hits = []; F.hover(d.stage, () => hits);
   /* a slice lying flat, seen from above and in front: its top face a parallelogram, its edge below it */
-  const X0 = 296, PITCH = 72, W = 54, SK = 14, DP = 20, TB = 8, TC = 5;
+  const X0 = 306, PITCH = 72, W = 54, SK = 14, DP = 20, TB = 8, TC = 5;
   function slab(ctx, x, y, c, thick, grow = 0) {
     const l = x - grow, r = x + W + grow;
     const top = [[l + SK, y], [r, y], [r - SK, y + DP], [l, y + DP]];

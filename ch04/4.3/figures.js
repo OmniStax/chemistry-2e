@@ -46,7 +46,7 @@ const sciTxt = (x, sf) => { const p = parts(x, sf); return p.e ? `${p.m} × 10${
     atom(ctx, x, y, 'N', 19); hits.push({ x, y, r: 36, name: 'NH₃, ammonia' });
   }
   /* columns: N2, the plus, three H2, the arrow, two NH3 */
-  const XN = 200, XP = 345, XH = [470, 590, 710], XA = [810, 930], XM = [1045, 1190], PITCH = 70, TOP = 84;
+  const XN = 200, XP = 345, XH = [470, 590, 710], XA = [810, 930], XM = [1045, 1190], PITCH = 70, TOP = 84, ROWS = 6;
   function draw() {
     const { ctx } = begin(d.c); hits.length = 0;
     const h = H2.v, rows = h / 3, n2 = rows, nh3 = 2 * rows, u = U.value;
@@ -55,9 +55,11 @@ const sciTxt = (x, sf) => { const p = parts(x, sf); return p.e ? `${p.m} × 10${
     head(h, 'H_{2}', XH[1]); arrow(ctx, XA[0], 46, XA[1], 46, PAL.ink, 4);
     head(nh3, 'NH_{3}', (XM[0] + XM[1]) / 2);
     const y0 = TOP + PITCH / 2;
-    for (let i = 0; i < rows; i++) {
+    /* six places, filled from the top: an empty one is only its band */
+    for (let i = 0; i < ROWS; i++) {
       const y = y0 + i * PITCH;
-      ctx.save(); ctx.beginPath(); ctx.roundRect(90, y - PITCH / 2 + 4, 1220, PITCH - 8, 10); ctx.fillStyle = PAL.soft; ctx.fill(); ctx.restore();
+      ctx.save(); ctx.globalAlpha = i < rows ? 1 : 0.45; ctx.beginPath(); ctx.roundRect(90, y - PITCH / 2 + 4, 1220, PITCH - 8, 10); ctx.fillStyle = PAL.soft; ctx.fill(); ctx.restore();
+      if (i >= rows) continue;
       pair(ctx, XN, y, 'N', 19, 'N₂, nitrogen');
       text(ctx, '+', XP, y, PAL.muted, { size: 24, align: 'center' });
       XH.forEach((x) => pair(ctx, x, y, 'H', 15, 'H₂, hydrogen'));
@@ -156,9 +158,9 @@ const sciTxt = (x, sf) => { const p = parts(x, sf); return p.e ? `${p.m} × 10${
     ctx.lineWidth = on > 0.5 ? 4 : 2; ctx.strokeStyle = c; ctx.stroke(); ctx.restore();
     /* page text never sets below 11 px, so on a narrow pane a line stands taller than its logical size */
     const px = (ctx.canvas.clientWidth || 1400) / 1400, lh = Math.max(27, 14 / px);
-    const lines = fit(ctx, name, W - 16), n = lines.length + (value ? 1 : 0), y0 = y - ((n - 1) * lh) / 2;
+    const lines = fit(ctx, name, W - 16), n = lines.length + (value ? 1 : 0), up = value ? 6 : 0, y0 = y - ((n - 1) * lh + up) / 2;
     lines.forEach((s, i) => text(ctx, s, x, y0 + i * lh, on > 0.5 ? PAL.ink : PAL.muted, { size: 21, align: 'center' }));
-    if (value) text(ctx, value, x, y0 + lines.length * lh, kind === 'N' ? PAL.ink : c, { size: 23, weight: 600, align: 'center' });
+    if (value) text(ctx, value, x, y0 + lines.length * lh + up, kind === 'N' ? PAL.ink : c, { size: 23, weight: 600, align: 'center' });
   }
   /* a double-headed arrow between two boxes, the symbolic arrow of the book's chart */
   function link(ctx, x1, y1, x2, y2, color, w) {

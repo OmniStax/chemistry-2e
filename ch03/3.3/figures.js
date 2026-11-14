@@ -46,12 +46,12 @@ function spread(n, x1, x2, top, bot, gw, gh) {
      and volume that keep the solution below what dissolves (sucrose 2.6 M, NaCl 5.4 M, CoCl₂ 3.8 M, CaCl₂ 5.5 M,
      KBr 4.5 M; pure acetic acid is 17.4 M) */
   const SOLUTES = [
-    { name: 'sucrose', f: 'C₁₂H₂₂O₁₁', mm: 342.30, rho: 1.59, pair: ['C', 'O'], m: 45.53, V: 0.355, mMax: 80, vMin: 0.1 },
+    { name: 'sucrose', f: 'C₁₂H₂₂O₁₁', mm: 342.30, mmS: '342.30', rho: 1.59, pair: ['C', 'O'], m: 45.53, V: 0.355, mMax: 80, vMin: 0.1 },
     { name: 'acetic acid', f: 'CH₃CO₂H', mm: 60.052, rho: 1.05, liquid: true, pair: ['C', 'O'], m: 25.2, V: 0.500, mMax: 45, vMin: 0.05 },
     { name: 'sodium chloride', f: 'NaCl', mm: 58.44, rho: 2.17, pair: ['Na', 'Cl'], m: 77.4, V: 0.250, mMax: 78, vMin: 0.25 },
     { name: 'cobalt chloride', f: 'CoCl₂', mm: 128.9, rho: 3.36, pair: ['Co', 'Cl'], m: 6.52, V: 0.075, mMax: 20, vMin: 0.05 },
     { name: 'calcium chloride', f: 'CaCl₂', mm: 110.98, rho: 2.15, pair: ['Ca', 'Cl'], m: 5.55, V: 0.250, mMax: 25, vMin: 0.05 },
-    { name: 'potassium bromide', f: 'KBr', mm: 119.00, rho: 2.75, pair: ['K', 'Br'], m: 66.0, V: 0.370, mMax: 75, vMin: 0.15 },
+    { name: 'potassium bromide', f: 'KBr', mm: 119.00, mmS: '119.00', rho: 2.75, pair: ['K', 'Br'], m: 66.0, V: 0.370, mMax: 75, vMin: 0.15 },
   ];
   const S = F.select(d.controls, { label: '\\text{solute}', aria: 'the solute', value: '1', options: SOLUTES.map((s, i) => ({ value: String(i), label: s.name })),
     onInput: (v) => { const s = SOLUTES[+v]; m.range({ min: 0.5, max: s.mMax, step: 0.01, value: s.m, unit: 'g', dec: 2 }); V.range({ min: s.vMin, max: 1, step: 0.005, value: s.V, unit: 'L', dec: 3 }); } });
@@ -92,7 +92,7 @@ function spread(n, x1, x2, top, bot, gw, gh) {
     for (let i = 1; i <= 46; i++) ctx.lineTo(bz(i / 50, 0), bz(i / 50, 1));
     ctx.stroke(); ctx.restore();
     arrow(ctx, bz(0.92, 0), bz(0.92, 1), P2[0], P2[1], PAL.ink, 4);
-    F.rich(ctx, ['÷ ', [`${s.mm} g/mol`, cm]], bz(0.5, 0), bz(0.5, 1) - 34, { size: 22, align: 'center' });
+    F.rich(ctx, ['÷ ', [`${s.mmS || s.mm} g/mol`, cm]], bz(0.5, 0), bz(0.5, 1) - 34, { size: 22, align: 'center' });
     text(ctx, `${sig3(n)} mol`, bz(0.5, 0), bz(0.5, 1) + 36, cn, { size: 24, weight: 600, align: 'center' });
     /* the beaker: the solution, the particles in it, the glass and its marks every 0.1 L */
     const top = FLOOR - PERL * vol;
@@ -114,7 +114,7 @@ function spread(n, x1, x2, top, bot, gw, gh) {
     /* the key: what one particle stands for */
     F.legend(ctx, { l: 490, r: 745, t: 420, b: 484 }, [{ s: `0.04 mol of ${s.f}`, draw: (c, x, y) => glyph(c, x, y, s.pair) }], { corner: 'bottom', panel: false });
     const vT = hue('volume', `${sig3(vol)}\\ \\text{L}`);
-    tex(d.readout, `\\kM=\\frac{\\km/\\kMM}{\\kV}=\\frac{${hue('mass', `${mass.toFixed(2)}\\ \\text{g}`)}\\,/\\,${hue('mass', `${s.mm}\\ \\text{g/mol}`)}}{${vT}}=\\frac{${hue('amount', `${sig3(n)}\\ \\text{mol}`)}}{${vT}}=${hue('concentration', `${sig3(M)}\\ \\text{M}`)}`);
+    tex(d.readout, `\\kM=\\frac{\\km/\\kMM}{\\kV}=\\frac{${hue('mass', `${mass.toFixed(2)}\\ \\text{g}`)}\\,/\\,${hue('mass', `${s.mmS || s.mm}\\ \\text{g/mol}`)}}{${vT}}=\\frac{${hue('amount', `${sig3(n)}\\ \\text{mol}`)}}{${vT}}=${hue('concentration', `${sig3(M)}\\ \\text{M}`)}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -133,7 +133,7 @@ function spread(n, x1, x2, top, bot, gw, gh) {
   const d = sim('sim-dilution', 590);
   const C1 = ctl(d.controls, { label: '\\kCone', cls: 'concentration', min: 0.1, max: 5, step: 0.01, value: 5, unit: 'M', dec: 2, aria: 'concentration of the stock solution' });
   const V1 = ctl(d.controls, { label: '\\kVone', cls: 'volume', min: 0.1, max: 1.25, step: 0.005, value: 0.85, unit: 'L', dec: 3, aria: 'volume of the stock solution' });
-  const V2 = ctl(d.controls, { label: '\\kVtwo', cls: 'volume', min: 0.1, max: 2.5, step: 0.01, value: 1.8, unit: 'L', dec: 2, aria: 'volume after dilution',
+  const V2 = ctl(d.controls, { label: '\\kVtwo', cls: 'volume', min: 0.1, max: 2.5, step: 0.005, value: 1.8, unit: 'L', dec: 3, aria: 'volume after dilution',
     specials: [{ at: () => V1.v, label: 'no water added' }] });
   const PER = 0.25;
   /* both cylinders hold 2.50 L at their top mark, 310 units above the floor, so Example 3.19 stands in them as the

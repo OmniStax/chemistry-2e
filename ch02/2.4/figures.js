@@ -36,14 +36,14 @@ const palSig = () => [PAL.ink, PAL.panel, PAL.muted, F.el('C'), F.el('H'), F.el(
    ===================================================================== */
 const MOL = {
   methane: {
-    mol: 'CH_4', stripH: 250, L: 66,
+    mol: 'CH_4', stripH: 330, L: 92,
     flat: [['C', 0, 0], ['H', 0, -1], ['H', -1, 0], ['H', 1, 0], ['H', 0, 1]], fb: [[0, 1], [0, 2], [0, 3], [0, 4]],
     A: [['C', 0, 0, 0], ['H', 0, 1.09, 0], ['H', 0, -0.363, 1.028], ['H', 0.89, -0.363, -0.514], ['H', -0.89, -0.363, -0.514]],
     B: [[0, 1], [0, 2], [0, 3], [0, 4]],
-    key: ['C', 'H'], dist: 9.6, grow: 1.55, yaw: 0.35, tilt: 0.22,
+    key: ['C', 'H'], dist: 9.6, grow: 1.7, yaw: 0.35, tilt: 0.22,
   },
   sulfur: {
-    mol: 'S_8', stripH: 290, L: 62,
+    mol: 'S_8', stripH: 330, L: 80,
     flat: [0, 1, 2, 3, 4, 5, 6, 7].map((k) => ['S', 1.31 * Math.cos((k + 0.5) * TAU / 8), 1.31 * Math.sin((k + 0.5) * TAU / 8)]),
     fb: [0, 1, 2, 3, 4, 5, 6, 7].map((k) => [k, (k + 1) % 8]),
     A: [['S', 2.3, 0, -0.53], ['S', 1.62, 1.62, 0.53], ['S', 0, 2.3, -0.53], ['S', -1.62, 1.62, 0.53], ['S', -2.3, 0, -0.53], ['S', -1.62, -1.62, 0.53], ['S', 0, -2.3, -0.53], ['S', 1.62, -1.62, 0.53]],
@@ -69,16 +69,16 @@ function models(id, key) {
   }
   function draw() {
     const { ctx } = begin(d.c); hits = [];
-    const yc = (H - 44) / 2 + 6, yn = H - 26;
+    const yc = (H - 50) / 2 + 8, yn = H - 28;
     /* the molecular formula, the structural formula and the key, left to right */
-    text(ctx, m.mol, 300, yc, PAL.ink, { size: 68, align: 'center' });
-    text(ctx, 'molecular formula', 300, yn, PAL.muted, { size: 20, align: 'center' });
+    text(ctx, m.mol, 300, yc, PAL.ink, { size: 84, align: 'center' });
+    text(ctx, 'molecular formula', 300, yn, PAL.muted, { size: 24, align: 'center' });
     const P = m.flat.map((a) => [730 + a[1] * m.L, yc + a[2] * m.L]);
-    m.fb.forEach(([i, j]) => bond2(ctx, P[i], P[j], 22));
-    m.flat.forEach((a, i) => { text(ctx, a[0], P[i][0], P[i][1], PAL.ink, { size: 34, align: 'center' }); hits.push({ x: P[i][0], y: P[i][1], r: 22, name: NAME[a[0]] + ' atom' }); });
-    text(ctx, 'structural formula', 730, yn, PAL.muted, { size: 20, align: 'center' });
-    const rows = m.key.length, kh = rows * 32 + 24;
-    F.legend(ctx, { l: 1040, r: 1330, t: yc - kh / 2 - 12, b: yc + kh / 2 + 12 }, m.key.map((s) => ({ s: NAME[s] + ' atom', draw: (c, x, y) => atom(c, x, y, s, 10) })), { corner: 'tl', size: 20 });
+    m.fb.forEach(([i, j]) => bond2(ctx, P[i], P[j], 27));
+    m.flat.forEach((a, i) => { text(ctx, a[0], P[i][0], P[i][1], PAL.ink, { size: 42, align: 'center' }); hits.push({ x: P[i][0], y: P[i][1], r: 26, name: NAME[a[0]] + ' atom' }); });
+    text(ctx, 'structural formula', 730, yn, PAL.muted, { size: 24, align: 'center' });
+    const rows = m.key.length, kh = rows * 38 + 24;
+    F.legend(ctx, { l: 1040, r: 1330, t: yc - kh / 2 - 12, b: yc + kh / 2 + 12 }, m.key.map((s) => ({ s: NAME[s] + ' atom', draw: (c, x, y) => atom(c, x, y, s, 12) })), { corner: 'tl', size: 24 });
     if (!v.scene) return;
     build();
     const k = M.mix((x) => (x === 'space' ? 1 : 0));
@@ -116,19 +116,19 @@ models('fig-sulfur', 'sulfur');
   const list = (a) => (a.length === 2 ? `${a[0]} and ${a[1]}` : `${a.slice(0, -1).join(', ')} and ${a[a.length - 1]}`);
   const K = F.choice(d.controls, { label: '\\text{compound}', options: Object.keys(CMP).map((k) => ({ value: k, label: CMP[k].name })), value: 'acetic', aria: 'the compound' });
   const D = F.ctl(d.controls, { label: '\\text{divide by}', cls: '', min: 1, max: 6, step: 1, value: 2, unit: '', dec: 0, aria: 'the number that the count of each element is divided by', specials: [{ at: () => gcdOf(K.value) }] });
-  const RA = { C: 19, H: 15, O: 18 }, X0 = 190, GAP = 16, TOP = 112, BH = 250, SP = 50, LEFT = 230;
+  const RA = { C: 24, H: 19, O: 23 }, X0 = 190, GAP = 18, TOP = 104, BH = 270, SP = 64, LEFT = 250;
   /* where everything stands for one compound divided by n: the boxes, and each atom in its box or left over */
   function layout(key, n) {
     const c = CMP[key], els = Object.keys(c.n), per = els.map((s) => Math.floor(c.n[s] / n)), over = els.map((s) => c.n[s] % n);
     const left = Math.max(...over), most = Math.max(1, ...per), avail = 1340 - X0 - (left ? LEFT : 0);
-    const bw = Math.min((avail - (n - 1) * GAP) / n, most * SP + 48), sp = Math.min(SP, (bw - 36) / most);
+    const bw = Math.min((avail - (n - 1) * GAP) / n, most * SP + 56), sp = Math.min(SP, (bw - 40) / most);
     const bx = X0 + (avail - n * bw - (n - 1) * GAP) / 2, end = bx + n * bw + (n - 1) * GAP;
     const rowY = (r) => TOP + 48 + (els.length === 1 ? 0.5 : r / (els.length - 1)) * (BH - 96);
     const atoms = [];
     els.forEach((s, r) => {
       for (let a = 0; a < c.n[s]; a++) {
         const dealt = a < per[r] * n, gi = a % n, slot = Math.floor(a / n);
-        const x = dealt ? bx + gi * (bw + GAP) + bw / 2 + (slot - (per[r] - 1) / 2) * sp : end + 70 + (a - per[r] * n) * 40;
+        const x = dealt ? bx + gi * (bw + GAP) + bw / 2 + (slot - (per[r] - 1) / 2) * sp : end + 76 + (a - per[r] * n) * 46;
         atoms.push({ s, x, y: rowY(r), r: Math.min(RA[s], sp / 2 - 2) });
       }
     });
@@ -145,10 +145,10 @@ models('fig-sulfur', 'sulfur');
       for (let i = 0; i < L.n; i++) {
         const x = L.bx + i * (L.bw + GAP);
         ctx.save(); ctx.strokeStyle = PAL.muted; ctx.lineWidth = 2.5; ctx.setLineDash([8, 6]); ctx.beginPath(); ctx.roundRect(x, TOP, L.bw, BH, 12); ctx.stroke(); ctx.restore();
-        if (whole) text(ctx, sub(group), x + L.bw / 2, TOP + BH + 34, PAL.ink, { size: L.bw < 130 ? 22 : 28, weight: 600, align: 'center' });
+        if (whole) text(ctx, sub(group), x + L.bw / 2, TOP + BH + 36, PAL.ink, { size: L.bw < 130 ? 24 : 30, weight: 600, align: 'center' });
       }
-      if (L.left) text(ctx, 'left over', L.end + 70 + (L.left - 1) * 20, TOP + BH + 34, PAL.muted, { size: 20, align: 'center' });
-      L.els.forEach((s, r) => text(ctx, `${L.counts[r]} ${s}`, L.bx - 30, L.rowY(r), PAL.ink, { size: 26, align: 'right' }));
+      if (L.left) text(ctx, 'left over', L.end + 76 + (L.left - 1) * 23, TOP + BH + 36, PAL.muted, { size: 24, align: 'center' });
+      L.els.forEach((s, r) => text(ctx, `${L.counts[r]} ${s}`, L.bx - 30, L.rowY(r), PAL.ink, { size: 28, align: 'right' }));
     });
   }
   function draw() {
@@ -214,9 +214,9 @@ models('fig-sulfur', 'sulfur');
     turned: `Turned half way round, ${WHICH.R} has its ring and its oxygen atom where ${WHICH.S} has them.`,
     over: `Laid on ${WHICH.S}, ${WHICH.R} matches it in the ring's plane only: what stands in front of the ring in one stands behind it in the other.`,
   };
-  const v = F.view3d(d.stage, { h: 600, dist: 17.5, tilt: 0.12, onRender: names });
+  const v = F.view3d(d.stage, { h: 680, dist: 21, tilt: 0.12, onRender: names });
   v.setView(-0.18, 0.12);
-  const g = v.part(0);
+  const g = v.part(0); g.position.y = -0.55;   /* room for the headline above and the names below */
   let sig = '', gS = null, gR = null, plane = null, lab = null;
   function molecule(grp, atoms, which) {
     B.forEach(([i, j, o]) => F.mesh.bond(grp, atoms[i].slice(1), atoms[j].slice(1), o, 0.07));

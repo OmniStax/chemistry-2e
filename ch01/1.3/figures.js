@@ -23,7 +23,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
   const BASE = 380, BIG = { half: 105, cap: 5200, h: 270, grad: 1000 };
   /* the small beaker is 0.6 as wide as the large ones, so a milliliter stands 1 / 0.36 as high in it */
   const SMALL = { half: 63, cap: 1100, h: (270 * 1100) / 5200 / 0.36, grad: 250 };
-  const COLS = [{ x: 400, b: BIG, name: 'first sample', ref: 'milk-1' }, { x: 745, b: SMALL, name: 'second sample', ref: 'milk-2' }, { x: 1090, b: BIG, name: 'poured together', ref: null }];
+  const COLS = [{ x: 320, b: BIG, name: 'first sample', ref: 'milk-1' }, { x: 690, b: SMALL, name: 'second sample', ref: 'milk-2' }, { x: 1060, b: BIG, name: 'poured together', ref: null }];
   const hits = []; F.hover(d.stage, () => hits);
   /* a beaker standing on BASE: straight walls, rounded foot, a flared rim with a spout at the left */
   function beakerPath(ctx, x, b) {
@@ -99,8 +99,8 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
       text(ctx, adds ? '+' : '=', s1, y, PAL.ink, { size: 26, align: 'center' });
       text(ctx, '=', s2, y, PAL.ink, { size: 26, align: 'center' });
     });
-    F.vbracket(ctx, 1262, BASE + 34, 522, PAL.ink, 'extensive', 1, { size: 20 });
-    F.vbracket(ctx, 1262, 538, 616, PAL.ink, 'intensive', 1, { size: 20 });
+    F.vbracket(ctx, 1204, BASE + 34, 522, PAL.ink, 'extensive', 1, { size: 20 });
+    F.vbracket(ctx, 1204, 538, 616, PAL.ink, 'intensive', 1, { size: 20 });
     tex(d.readout, `\\kd = \\frac{\\km}{\\kV} = \\frac{${hue('mass', m[2] + '\\ \\text{g}')}}{${hue('volume', v[2] + '\\ \\text{mL}')}} = ${hue('density', fmt(m[2] / v[2], 2) + '\\ \\text{g/mL}')}`);
   }
   register(d.fig, { update: () => {}, draw });

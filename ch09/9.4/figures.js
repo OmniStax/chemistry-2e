@@ -44,7 +44,7 @@ const molName = (f) => (MOLS[f].atoms.length === 1 ? 'an atom of ' + MOLS[f].wor
   /* the glass, about the stopcock's centre (X0, Y0): bulbs of inner radius RB centred OFF to either side, a neck of
      inner half-height HN, the stopcock's plug PW to either side, the pinhole plate at XP with a hole G to either side of
      the axis for a molecule's centre; a centre keeps RM from every wall */
-  const X0 = 700, Y0 = 320, OFF = 262, RB = 205, HN = 40, RM = 14, PW = 30, XP = -36, G = 7, HOLE = 14, N = 40, DS = 2;
+  const X0 = 700, Y0 = 320, OFF = 262, RB = 205, HN = 40, RM = 20, PW = 30, XP = -36, G = 7, HOLE = 14, N = 40, DS = 2;
   const RI = RB - RM, HI = HN - RM;
   const speed = (f) => 800 * Math.sqrt(MOLS['H₂'].m / MOLS[f].m);   /* units a second: 800 for H₂, as 1/√ℳ for the rest */
   const gases = () => PAIRS[+pair.value];

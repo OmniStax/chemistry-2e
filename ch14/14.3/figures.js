@@ -51,7 +51,7 @@ const sup = (t) => t.replace(/[0-9−+-]/g, (ch) => '⁰¹²³⁴⁵⁶⁷⁸⁹
   const slots = [];
   for (let i = 0; i < N; i++) {
     const col = i % 10, row = Math.floor(i / 10);
-    const x = BX0 + 48 + col * 54 + (R() - 0.5) * 12, y = LY + 32 + row * 38 + (R() - 0.5) * 8;
+    const x = BX0 + 65 + col * 50 + (R() - 0.5) * 12, y = LY + 30 + row * 36 + (R() - 0.5) * 8;   /* a ringed pair reaches ~38 out from its slot: keep it clear of the glass */
     slots.push({ x, y, flip: R() < 0.5 ? -1 : 1, hx: (R() < 0.5 ? -1 : 1) * (14 + R() * 6), hy: 15 + R() * 4 });
   }
   const order = slots.map((_, i) => i);
@@ -110,7 +110,6 @@ const sup = (t) => t.replace(/[0-9−+-]/g, (ch) => '⁰¹²³⁴⁵⁶⁷⁸⁹
     ctx.lineTo(BX1 - 14, BY); ctx.quadraticCurveTo(BX1, BY, BX1, BY - 14); ctx.lineTo(BX1, TOPY + 6); ctx.quadraticCurveTo(BX1, TOPY, BX1 + 8, TOPY - 2); ctx.stroke();
     ctx.restore();
     line(ctx, BX0, LY, BX1, LY, alpha(PAL.ink, 0.35), 2);
-    for (let k = 1; k <= 4; k++) { const gy = BY - k * 82; line(ctx, BX1 - 34, gy, BX1 - 4, gy, alpha(PAL.ink, 0.4), 2); }
     /* the molecules: whole ones first, then the ionized pairs above them */
     ringA = Math.max(0, Math.min(1, (60 - nk) / 30));
     const lo = Math.min(Math.floor(nk), N), frac = nk - Math.floor(nk);

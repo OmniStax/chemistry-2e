@@ -87,7 +87,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
 ===================================================================== */
 (function () {
   const d = sim('sim-interhalogens');
-  const v = F.view3d(d.stage, { spin: 'idle', h: 560, dist: 6.4 });
+  const v = F.view3d(d.stage, { spin: 'idle', h: 560, dist: 6.9 });
   const kc = F.makeCanvas(d.stage, 60);
   const g = v.part(0);
   const K = 0.62;                                               /* scene units per ångström */
@@ -125,7 +125,6 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
       : `${m.label} is ${SHAPE[m.n].shape}: ${COUNT[m.n]} fluorine atoms about ${NAME[m.X]} in the ${m.n}+ oxidation state${top ? `, the highest ${NAME[m.X]} reaches` : lim ? ', the limit for the halogens' : `, with ${PAIRS[lp]}`}.`;
   });
   const fade = (a) => (a < 0.999 ? { transparent: true, opacity: a } : undefined);
-  const plain = (e, a) => { e.style.opacity = String(Math.max(0, Math.min(1, a))); return e; };
   const pick = F.select(d.controls, { label: '\\text{molecule}', aria: 'the interhalogen', options: Object.entries(MOL).map(([k, m]) => ({ value: k, label: m.label })), value: 'IF3' });
   const ro = F.readout(d);
   function draw() {

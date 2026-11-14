@@ -48,62 +48,83 @@ the glossary go to the tables. No Key Equations table.
 
 ## Figures
 
-id · replaces · concepts · value add · motion · controls · headline · graph · 2D/3D
+Re-examined on 2026-11-14 with the book's images open (figure pass, `claude-fable-5-2`).
+
+id · replaces · concepts · value add · arrows · motion · controls · headline · graph · 2D/3D
 
 1. `sim-aufbau` · Figure 6.24 · orbital-energy-order, aufbau-principle,
    hunds-rule, configuration-exceptions · variation by slider: the book's
-   empty ladder becomes any atom's filled one, the reader sees each electron
-   take the lowest free box, single before paired, 4s before 3d, and the
-   exceptions shift an electron · still: the ladder answers its slider and
-   nothing has a clock; landing on an exception eases the moved electron from
-   its predicted box to its observed one once (a morph, manim 8) · one slider,
-   Z, the number of electrons (1 to 118, step 1, default 15 for Example 6.10's
-   phosphorus, ink, since a count is untyped), dashed circles at Cr 24, Cu 29
-   and Nb 41, the three exceptions the text names. Z is a slider rather than a
-   choice although it names an element: the Aufbau procedure adds one electron
-   at a time, so the ordered count is the idea, and the element name rides in
-   the headline · "Phosphorus, Z = 15: its 15 electrons fill 1s, 2s, 2p and 3s
-   and put three unpaired electrons in the three 3p orbitals." · no graph: the
-   ladder is the book's four columns (capacity 2, 6, 10, 14), rungs in rank
-   order, not to scale as the book says, in the energy hue with the energy
-   arrow; boxes on each rung, half-arrows in ink; the rung being filled
-   emphasised · readout the configuration, full, then core-abbreviated, with
-   a note of valence count and, at an exception, the predicted one · 2D.
-2. `fig-notation` · Figure 6.25 · writing-electron-configurations · faithful
-   copy (standardisation): a hydrogen atom disc in `F.el('H')` with its
-   electron, the notation 1s¹ with the book's two labels · still, no
-   controls · 2D.
-3. `fig-fill-order` · Figure 6.26 · aufbau-principle, orbital-energy-order ·
-   faithful copy: the circles 1s to 7p in columns, blocks by `F.cat(0..3)`,
-   the diagonal arrows drawn in ink along their length on arrival · still ·
-   2D.
-4. `sim-periodic` · Figure 6.27 + 6.29 (fold: one periodic table drawn twice
-   by the book, once with the subshell being filled, once with every outer
-   configuration) · aufbau-principle, periodic-table-blocks,
-   valence-and-core-electrons, configuration-exceptions · variation by choice
-   and hover: any element's configuration is built on request, with its
-   valence electrons underlined as the book underlines gallium's; the blocks
-   by `F.cat(0..3)` (s, p, d, f); exceptions to the building-up order outlined
-   dashed, so the reader sees they cluster in the d and f blocks · still ·
-   controls (the two book views differ only in a superscript, so they are one view: each cell names its last subshell with its count): `F.select` element (118 options, default Ga, the
-   book's valence example); every cell names itself and its full observed
-   configuration under the pointer · headline names the element, its block
-   and category · readout the core-abbreviated configuration with valence
-   underlined, note the count of valence electrons and, for an exception, the
-   predicted configuration; the configurations are the elements sheet's
-   observed ones and the caption says so · 2D (periodic table: flat by the
-   book's rule).
-5. `fig-valence` · Figure 6.28 · valence-and-core-electrons · faithful copy:
-   Na (disc in `F.el('Na')`), its configuration with the core bracketed and
-   the valence electron bracketed, and the abbreviation [Ne]3s¹ · still · 2D.
-6. Unnumbered orbital diagrams, redrawn live as faithful copies in the ink of
-   orbital diagrams with the atom's disc in `F.el`, no controls, one shared
-   drawing routine with `sim-aufbau` so the boxes are the same boxes:
-   `fig-od-h`, `fig-od-he`, `fig-od-li`, `fig-od-be`, `fig-od-b`, `fig-od-c`,
-   `fig-od-nofne` (four rows), `fig-od-p` (inside Example 6.10). Each a
-   `figure` row with no number, eyebrow "Figure", the book's image in
-   `data-original`. Kept live rather than as images because the ladder above
-   draws the same boxes and arrows and the two must look alike.
+   empty ladder becomes any atom's filled one, each electron taking the lowest
+   open box, single before paired, 4s before 3d · arrows: the energy arrow is
+   symbolic; none kinematic · still; landing on an exception eases the moved
+   electron from its predicted box to its observed one once · one slider, Z
+   (1 to 118, default 15, Example 6.10's phosphorus, ink), dashed circles at
+   Cr 24, Cu 29 and Nb 41, the exceptions the text names. Z is a slider though
+   it names an element: the procedure adds one electron at a time · headline
+   "Phosphorus, Z = 15: the last electron enters 3p, leaving 3 unpaired
+   electrons."; at an exception which electron sits where and the two
+   configurations · no graph · readout the configuration, full where it fits
+   the line (to Kr), then core-abbreviated · legend: a box with a pair, a box
+   with one arrow, a rung · 2D.
+   works: parts: the energy arrow E at the left; four columns headed by their
+   capacity 2, 6, 10, 14; a rung for each subshell, its label at its left, one
+   box per orbital on it (1, 3, 5, 7) · flow: nothing flows; an electron is a
+   half-arrow in a box · must hold: each rung stands higher than the one
+   before it in the order 1s 2s 2p 3s 3p 4s 3d 4p 5s 4d 5p 6s 4f 5d 6p 7s 5f
+   6d 7p; nd lies between (n+1)s and (n+1)p, 4f between 6s and 5d; no box
+   holds more than two arrows and a pair points up and down; a subshell takes
+   one arrow in every box before any pairs; at Z = 15 the three 3p boxes hold
+   one up arrow each; Cr shows 4s one arrow and 3d five single, Cu 4s one and
+   3d five pairs, Nb 5s one and 4d four single; the readout's superscripts
+   add to Z · read off the image: the title "Subshell electron capacity" with
+   2, 6, 10, 14; rung order as above up to 6d; the image stops at 6d and 5f
+   (7p is added so Z reaches 118); the alt text says three columns, the image
+   has four.
+2. `sim-periodic` · Figure 6.27 (un-folded from 6.27 + 6.29 on 2026-11-14;
+   6.29 is the book's image again, `fig-ptable-config`) ·
+   aufbau-principle, periodic-table-blocks, configuration-exceptions ·
+   variation by slider: the caption's "building up from hydrogen" done on the
+   table, the squares from hydrogen to the element marked and the rows read
+   in order into its configuration, which the book's still leaves to the
+   reader · arrows: none (the book's double arrows only span a row and are
+   replaced by the subshell written in each square) · still · one slider, Z
+   (1 to 118, default 31, gallium, the text's valence example; dashed circles
+   at Cr, Cu, Nb); a tap on a square sets Z · headline names the element and
+   the square it stands on ("Gallium, Z = 31, is the 1st square of the 4p
+   row."), or at an exception the configuration read and the observed one ·
+   no graph · readout the configuration read from the table, full where it
+   fits, then core-abbreviated · legend: the four blocks by `F.cat(0..3)`, the
+   dashed outline · hover names each element with its observed configuration
+   · 2D (periodic table).
+   works: parts: 18 groups by 7 periods, group numbers over the first square
+   of each column and period numbers at the left; s block groups 1, 2 and He,
+   d block groups 3 to 12 from period 4 with La and Ac in group 3, p block
+   groups 13 to 18 from period 2; two rows beneath for 4f (Ce to Lu) and 5f
+   (Th to Lr), which the image leaves out and its caption sends to Figure
+   6.29; an enlarged square as the key (symbol, subshell, electrons in it) ·
+   flow: none · must hold: each square carries the subshell of its row and
+   its count along that row (Sc 3d¹ to Zn 3d¹⁰, B 2p¹ to Ne 2p⁶, He 1s², La
+   5d¹, Hf 5d²); the squares marked are exactly those with atomic number up
+   to Z; the readout is the rows crossed in order with their counts, summing
+   to Z; a dashed square is one whose observed configuration (Figure 6.29's)
+   is not the one read · read off the image: symbol upper left, electrons in
+   the subshell upper right, subshell in the middle; rows 1s to 7s, 3d to 6d,
+   2p to 6p; La "*1" and Ac "**1" in the 5d and 6d rows; Nh to Og blank in
+   the image (drawn here as 7p); the alt text agrees with the image.
+3. Reverted to the book's images on 2026-11-14, each a still redraw that
+   showed nothing the image does not and drew it smaller: `fig-notation`
+   (6.25, the redraw lost the highlighted superscript and the arrows),
+   `fig-fill-order` (6.26, the redraw's arrows were short stubs without the
+   dashed return paths that make the diagram one continuous route),
+   `fig-valence` (6.28, lost the two shadings), and the eight unnumbered
+   orbital diagrams `fig-od-h`, `fig-od-he`, `fig-od-li`, `fig-od-be`,
+   `fig-od-b`, `fig-od-c`, `fig-od-nofne`, `fig-od-p` (boxes a third the size
+   of the book's). Numbered ones are `photo` rows, the unnumbered ones kept
+   images (`figure` rows without `originals`).
+4. `fig-ptable-config` · Figure 6.29 · the book's image, kept: a reference
+   table the text cites nine times by its colours (blue, red, yellow, green),
+   which a redraw in other hues contradicted. The block referents and their
+   `data-ref` spans went with the fold.
 
 Photographs: none. The five images inside the key of fs-idp45725024 stay on
 the card, copied to `media/ch06/`.
@@ -131,10 +152,9 @@ already shows the neutral configuration to start from).
 
 ## Colour
 
-Binds `energy` only (the rungs and energy arrow of `sim-aufbau`). `F.el` for
-the H and Na atoms and the atom beside each orbital diagram; `F.cat(0..3)` for
-the s, p, d and f blocks in `sim-periodic` and `fig-fill-order`. Ink: boxes,
-arrows, configuration text, Z and every quantum number.
+Binds `energy` only (the rungs and energy arrow of `sim-aufbau`).
+`F.cat(0..3)` for the s, p, d and f blocks in `sim-periodic`. Ink: boxes,
+arrows, configuration text, Z and every quantum number. No referents.
 
 ## Wanted at chapter level
 

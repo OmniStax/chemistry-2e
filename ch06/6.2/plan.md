@@ -126,76 +126,120 @@ headline · graph
 1. `sim-bohr-ladder` · **replaces Figure 6.14 + 6.15** (the hydrogen energy
    levels with their energies, and the same levels with the absorption and
    emission arrows) · bohr-energy-levels, photon-emission-absorption,
-   ground-and-excited-states, hydrogen-like-ions · **still**: a change of
-   transition eases the electron once to its new rung and draws the line to
-   the strip once, so the figure registers no cycle and has no transport · three
-   sliders, all untyped and in ink since a quantum number and a nuclear
-   charge are labels rather than quantities: n<sub>i</sub> (1 to 6, default
-   3), n<sub>f</sub> (1 to 6, default 2) and Z (1 to 3, default 1) · "The
-   electron falls from n = 3 to n = 2 in hydrogen and the atom emits a
-   photon of 656 nm, which is red light." · the scene is the ladder: the
-   levels n = 1 to 6 and the ionization limit drawn to scale in the energy
-   hue with each rung's energy written beside it as Figure 6.14 writes
-   them (the labels of the crowded upper rungs fan out on leaders), the
-   arrow between the two chosen rungs in the energy hue as Figure 6.15
-   draws it, the electron as an ink disc that eases once from one rung to the
-   other, and a straight line in the colour of the light that pairs the
-   transition with its place on the strip, drawn once along its length in
-   about half a second after an emission's fall or before an absorption's
-   rise and then held, since it is a correspondence and not a path (rule
-   24.1); the
-   graph beneath is a wavelength strip in the wavelength hue, logarithmic
-   from 10 nm to 10 000 nm so that the ultraviolet, the visible band and
-   the infrared all fit one fixed frame at every Z, with the visible band
-   painted in the colours of light, and every line the reader has landed
-   stays on it · readout ΔE = kZ²(1/n₁² − 1/n₂²) and λ = hc/|ΔE| with the
-   live numbers, ΔE in the energy hue and λ in the wavelength hue · the
-   fold is the one `config.md` states: the book drew one scene twice
-   because print cannot move, and one figure that moves the electron and
-   writes the energies says both · defaults reproduce the red Balmer line
-   of hydrogen, the one line of Figure 6.13 the reader can see land in the
-   visible; setting n<sub>i</sub> = 4 and n<sub>f</sub> = 6 reproduces
-   Example 6.5 · draws energy, wavelength.
+   ground-and-excited-states, hydrogen-like-ions · value add: flow by
+   animation and variation by choice. The book draws twelve arrows at once
+   and leaves the photon to the caption; here one jump is made at a time, a
+   photon comes in before the electron rises or leaves after it falls, and
+   the photon carries the gap between the two rungs as its energy and its
+   wavelength · arrows: the book's are symbolic (one arrow per transition)
+   and the figure keeps one, still, between the two rungs; what moves is the
+   electron and the photon · **moving**: a cycle of 3 s with the transport,
+   the electron eased between its rungs (a jump has no path in time to be
+   honest about) and the photon travelling at a steady pace · three
+   choices, in ink since a quantum number and a nuclear charge are labels:
+   n<sub>i</sub> (1 to 6, default 3), n<sub>f</sub> (1 to 6, default 2),
+   atom or ion (H, He⁺, Li²⁺) · headline: which way the electron went and
+   what light the photon is, "The electron falls from n = 3 to n = 2 and
+   the atom emits a photon of red light." · no graph · 2D (a ladder).
+   Rebuilt on 2026-11-14: the wavelength strip, the diagonal line to it and
+   the magnified inset are gone (the spectrum is `sim-series`'s), so the
+   ladder takes the stage, 570 units tall, and every rung is told apart at
+   its true height.
+   works: parts: seven horizontal rungs, n = 1 to 6 solid and n = ∞ dashed,
+   at heights in proportion to Eₙ = −kZ²/n², the n = 1 rung at the foot and
+   E = 0 at the top; an energy axis with its arrow up on the left; beside
+   each rung its n and its energy, the crowded upper labels fanned out on
+   leaders as the image fans them; the electron on a rung; one arrow from
+   the rung it starts on to the rung it ends on; a photon, a short wave
+   packet, in the space left of the rungs at the height of the middle of
+   the jump; the words "ground state" at n = 1 and a bracket "excited
+   states" over n = 2 to 6, the two terms the passage defines · flow:
+   absorption, the photon travels in from the left to the electron and is
+   gone, then the electron rises; emission, the electron falls, then the
+   photon leaves to the left · must hold: (1) the rungs are to scale: the
+   gap from n = 1 to n = 2 is three quarters of the ladder and each gap
+   above is smaller than the one below it; (2) the arrow points up and the
+   photon moves toward the ladder when n<sub>f</sub> > n<sub>i</sub>, down
+   and away when n<sub>f</sub> < n<sub>i</sub>, and with n<sub>f</sub> =
+   n<sub>i</sub> there is no arrow and no photon; (3) the photon's energy is
+   |ΔE| of the readout and its wavelength hc/|ΔE|, in the colour of that
+   light when it is visible and in the wavelength hue when it is not; (4)
+   the labels read the book's energies for hydrogen; (5) no label lies on a
+   rung, the arrow or the photon at any choice · read off the image: 6.14
+   labels "Energy, n" and reads 0.0 J, ∞; −8.72 × 10⁻²⁰ J, 5; −1.36 × 10⁻¹⁹
+   J, 4; −2.42 × 10⁻¹⁹ J, 3; −5.45 × 10⁻¹⁹ J, 2; −2.18 × 10⁻¹⁸ J, 1, an
+   arrow E up the left side; 6.15 draws the same six levels with five
+   arrows up from n = 1 and three up from n = 2 over "Electron moves to
+   higher energy as light is absorbed", five down to n = 1 and three down
+   to n = 2 over "Electron moves to lower energy as light is emitted". The
+   image stops at n = 5 and rounds to three figures; the figure adds n = 6,
+   which Example 6.5 jumps to, and writes the four figures the text's k =
+   2.179 × 10⁻¹⁸ J gives (−2.421 × 10⁻¹⁹ J is Example 6.4's answer). The
+   image colours each level differently for no stated reason; the rungs
+   wear the energy hue. Opens on 3 → 2 in hydrogen, the red line; 4 → 6
+   is Example 6.5 (7.566 × 10⁻²⁰ J, 2.626 × 10⁻⁶ m, infrared).
 2. `sim-orbit-rung` · **Sim, replaces nothing** · bohr-orbit-radius,
-   bohr-energy-levels, hydrogen-like-ions · **still**: a set of orbits and a
-   ladder answer their sliders and nothing else, so it registers
-   `update: () => {}`, no cycle and no transport · two sliders, untyped and
-   in ink: n (1 to 8, default 3) and Z (1 to 3, default 1) · "In hydrogen
-   the n = 3 orbit has a radius of 9 a₀, which is 4.76 Å, and the electron
-   in it has an energy of −2.421 × 10⁻¹⁹ J." · no graph: the left panel
-   draws the circular orbits r = n²a₀/Z at a fixed scale of 12 canvas units
-   per Bohr radius with the nucleus at the centre and the chosen orbit and
-   its electron in ink, and the orbits of large n run off the frame, which
-   is the point; the right panel is the energy ladder for n = 1 to 8 with
-   the ionization limit, in the energy hue, with a marker on the chosen rung
-   and a bracket from it to E = 0 for the energy that would remove the
-   electron · readout E<sub>n</sub> = −kZ²/n² and r = n²a₀/Z with the live
-   numbers, E<sub>n</sub> in the energy hue, r in ink since a length is
-   untyped · what print cannot show: the energies crowding toward zero
-   while the orbits spread as n², the same fact seen from two sides, and
-   the ionization limit as the place the two descriptions meet · defaults
-   reproduce Example 6.4; n = 8 in hydrogen reads 33.9 Å, the answer of
-   exercise fs-idm7154736 · draws energy.
+   bohr-energy-levels, hydrogen-like-ions · value add: variation by choice;
+   the section prints r = n²a₀/Z and Eₙ = −kZ²/n² and no picture of an
+   orbit, and here the orbit and its rung are seen together: the orbits
+   spread as n² while the rungs crowd toward E = 0, and a larger nuclear
+   charge draws every orbit in · arrows: none · **still**: it answers its
+   two choices · n (1 to 5, the levels of Figure 6.14, default 3, Example
+   6.4's orbit) and atom or ion · headline: the pattern neither label
+   states, "In hydrogen the n = 3 orbit is 9 times as wide as the n = 1
+   orbit, and its electron takes 1/9 of the energy to remove." · no graph ·
+   2D. Rebuilt on 2026-11-14: the orbits of n = 5 and 6 used to run off the
+   frame, the ladder stood small in a blank half with eight crowded labels,
+   and the headline repeated the readout. Now every orbit is inside the
+   frame at one fixed scale (12.8 units to a Bohr radius), the ladder is as
+   tall as the atom, only the chosen orbit and rung are labelled (the rest
+   answer to the pointer, since their labels would collide once Z shrinks
+   them, rule 26.7), and the readout works out both equations.
+   works: parts: the nucleus, an ink dot with its charge; five circular
+   orbits round it of radius n²a₀/Z; the electron on the chosen orbit and a
+   dashed radius from the nucleus to it, in the length hue; a scale bar of
+   5 a₀; on the right the ladder of the same five levels and E = 0, to
+   scale, the electron on the chosen rung and a bracket from that rung up
+   to E = 0, the energy that removes the electron · must hold: (1) the
+   radii are in the ratio 1 : 4 : 9 : 16 : 25 at one scale for every ion,
+   so He⁺ is half and Li²⁺ a third the size of hydrogen; (2) the rung of
+   the chosen n is the one marked, and the bracket spans it to E = 0; (3)
+   the labelled radius and energy are the readout's; (4) nothing is clipped
+   or covered at n = 5 or at n = 1 of Li²⁺ · no image to read: the numbers
+   are the text's, a₀ = 5.292 × 10⁻¹¹ m and k = 2.179 × 10⁻¹⁸ J.
 3. `sim-series` · **Sim, replaces nothing** · rydberg-constant-recovered,
    photon-emission-absorption, calculating-bohr-transition-energies ·
-   **still**: a family of transitions has no clock in it, so it registers
-   `update: () => {}`, no cycle and no transport · three sliders, untyped
-   and in ink: n₁, the orbit the electron falls to (1 to 4, default 2),
-   the highest n₂ drawn (3 to 12, default 8) and Z (1 to 3, default 1) ·
-   "In hydrogen the transitions from n₂ = 3 to 8 down to n₁ = 2 give six
-   lines from 656 nm to 389 nm, four of them in the visible, crowding
-   toward the series limit at 365 nm." · the graph is the picture: a
-   wavelength axis in the wavelength hue, logarithmic from 10 nm to
-   10 000 nm as in the folded Figure so that every series and every Z fits
-   one fixed frame, the visible band painted in the colours of light, one
-   line per transition labelled with its n₂, and the series limit as a
-   dashed line in the wavelength hue · readout 1/λ = (k/hc) Z² (1/n₁² −
-   1/n₂²) with k/hc = 1.097 × 10⁷ m⁻¹ and the first line's wavelength ·
-   what print cannot show: the finished plate of Figure 6.13 is the end of
-   this loop, and here the reader closes it, watching four lines land in
-   the visible for n₁ = 2 in hydrogen, the whole family move into the
-   ultraviolet for n₁ = 1 or for a larger Z, and every series crowd to its
-   own limit · draws wavelength.
+   value add: variation by choice. The Rydberg equation gives one
+   wavelength at a time; here the four series it gives stand one above the
+   other on one wavelength axis, so the reader sees that each is the same
+   crowding pattern in a different place, that only the lines ending on
+   n = 2 reach the visible band in hydrogen, and that a larger Z slides
+   every series toward shorter wavelengths without changing its shape ·
+   arrows: none · **still** · n₁ (1 to 4, default 2) as a choice, n₂ (n₁ + 1
+   to n₁ + 8, default 3) as a dropdown whose list follows n₁, atom or ion ·
+   headline: how many lines of the chosen series are visible light · the
+   graph is the picture: a logarithmic wavelength axis, 10 nm to 5000 nm
+   (Li²⁺'s shortest limit is 10.1 nm, hydrogen's 5 → 4 line 4051 nm), fixed
+   for every choice; on a logarithmic axis a factor of Z² is one rigid
+   shift · readout 1/λ = R∞Z²(1/n₁² − 1/n₂²) with the live numbers, then λ ·
+   2D. Rebuilt on 2026-11-14: one thin strip in a blank stage, its lines
+   bunched in 60 units and an "n₂ up to" control that changed the drawing
+   and not the idea, a readout that left n₂ a letter.
+   works: parts: four rows, one for each n₁, each a band with one line for
+   every n₂ from n₁ + 1 to 12 and a dashed line at the series limit; the
+   chosen row at full strength and the others faint; the chosen line
+   taller, with its n₂ and wavelength above it; the visible band, 400 to
+   700 nm, painted in the colours of light on the axis and marked through
+   the rows by two faint lines; a line in the visible band is drawn in its
+   own colour, a line outside it in the wavelength hue · must hold: (1) in
+   hydrogen the lines to n₁ = 2 from n₂ = 3, 4, 5, 6 stand at 656, 486, 434
+   and 410 nm inside the visible band and the rest of that row in the
+   ultraviolet, limit 364.7 nm; the row n₁ = 1 lies wholly in the
+   ultraviolet and the rows 3 and 4 in the infrared; (2) every row crowds
+   toward its dashed limit on the short-wavelength side; (3) the readout's
+   wavelength is where the chosen line stands; (4) for He⁺ every line is at
+   a quarter, for Li²⁺ a ninth, of hydrogen's wavelength · no image to
+   read: R∞ = k/hc = 1.097 × 10⁷ m⁻¹ from the text's constants.
 4. `fig-spectra` · **the unnumbered spectra plate**, `CNX_Chem_06_01_2spectra.jpg`,
    which the last exercise prints without a number (the book numbers the
    same file 6.13 in 6.1) · rydberg-constant-recovered · a faithful copy,
@@ -224,6 +268,18 @@ would picture something that does not happen, and an ionization figure of
 its own, since the ionization limit is a readout of the orbit-and-rung Sim.
 
 3D: none; every figure is planar and drawn through `figlib`.
+
+## Re-examined on 2026-11-14
+
+All three drawn figures were set beside the book's images of Figure 6.14 and
+6.15 and rebuilt; none was reverted, since each shows something the still
+images cannot (the order of photon and jump, the orbit beside its rung, the
+series side by side). The three had been built to share one small ladder and
+one wavelength strip, so each stage was half empty and the same things were
+drawn three times. Now each figure has one job: `sim-series` is the
+spectrum, `sim-bohr-ladder` the ladder and one jump with its photon,
+`sim-orbit-rung` the orbit beside its rung. The plan lines above are the
+current ones; the dated passes below describe the figures as they were.
 
 The chapter's `COLOR.md` was written before the element palette landed
 and does not need it: no figure of this section draws an atom by element.

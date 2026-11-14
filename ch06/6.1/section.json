@@ -29,6 +29,9 @@
       {
         "model": "claude-opus-5-5",
         "effort": "low"
+      },
+      {
+        "model": "claude-fable-5-2"
       }
     ]
   },
@@ -53,6 +56,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "distance label off the λ bracket; note repeating the caption dropped"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "caption cut; cycles counted as ν·t; amplitude drawn to the crest line"
         }
       ]
     },
@@ -76,29 +83,14 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "axis titles clear the values; E = hν into the readout; note dropped"
-        }
-      ]
-    },
-    {
-      "id": "sim-amfm",
-      "kind": "sim",
-      "number": "6.5",
-      "originals": ["/media/ch06/CNX_Chem_06_01_AMFM.jpg"],
-      "original_caption": "This schematic depicts how amplitude modulation (AM) and frequency modulation (FM) can be used to transmit a radio wave.",
-      "draws": ["frequency"],
-      "ai": [
-        {
-          "model": "claude-opus-5-5",
-          "effort": "low",
-          "part": "built"
         },
         {
-          "model": "claude-opus-5-5",
-          "effort": "high",
-          "part": "signal off the headline; AM note shortened"
+          "model": "claude-fable-5-2",
+          "part": "rebuilt: regions from the image, three labelled scales, two-line readout"
         }
       ]
     },
+    { "id": "sim-amfm", "kind": "photo", "number": "6.5", "draws": [] },
     { "id": "fig-fringes", "kind": "figure", "number": "6.6", "draws": ["wavelength"], "originals": ["/media/ch06/CNX_Chem_06_01_LiteInterf.jpg"], "original_caption": "Interference fringe patterns are shown for light passing through two closely spaced, narrow slits. The spacing of the fringes depends on the wavelength, with the fringes being more closely spaced for the shorter-wavelength blue light. (credit: PASCO)", "facts": [
   "spectrum",
   "#000000"
@@ -107,6 +99,10 @@
     "model": "claude-opus-5-5",
     "effort": "high",
     "part": "rewritten: four fringe bands drawn from the two-slit pattern"
+  },
+  {
+    "model": "claude-fable-5-2",
+    "part": "kept; caption rewritten for the comparison the bands show"
   }
 ] },
     {
@@ -126,6 +122,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "note repeating caption and headline cut to the quantization fact"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "caption and headline cut; note dropped"
         }
       ]
     },
@@ -137,7 +137,7 @@
       "number": "6.10",
       "originals": ["/media/ch06/CNX_Chem_06_01_Blackbody.jpg"],
       "original_caption": "Blackbody spectral distribution curves are shown for some representative temperatures.",
-      "draws": ["wavelength", "temperature"],
+      "draws": ["wavelength", "temperature", "energy", "velocity"],
       "facts": [
         "spectrum"
       ],
@@ -151,6 +151,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "T to 6000 K, labels kept apart, one-line headline, note through macros"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt on the image: 2500, 3400, 4400, 5500 K, nm axis, classical curve"
         }
       ]
     },
@@ -160,7 +164,7 @@
       "number": "6.11",
       "originals": ["/media/ch06/CNX_Chem_06_01_Ephoton.jpg"],
       "original_caption": "Photons with low frequencies do not have enough energy to cause electrons to be ejected via the photoelectric effect. For any frequency of light above the threshold frequency, the kinetic energy of an ejected electron will increase linearly with the energy of the incoming photon.",
-      "draws": ["wavelength", "frequency", "energy", "velocity"],
+      "draws": ["wavelength", "energy", "velocity"],
       "conventions": [
         "e-"
       ],
@@ -177,6 +181,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "light source moved off its labels; notes repeating the caption cut"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt: larger scene, energy bar against the threshold"
         }
       ]
     },
@@ -404,20 +412,6 @@
       "label": "the marked crest followed across the frame",
       "figures": [
         "sim-wave"
-      ]
-    },
-    {
-      "id": "signal",
-      "label": "the signal the radio wave carries",
-      "figures": [
-        "sim-amfm"
-      ]
-    },
-    {
-      "id": "carrier",
-      "label": "the carrier, the radio wave that transmits the signal",
-      "figures": [
-        "sim-amfm"
       ]
     },
     {

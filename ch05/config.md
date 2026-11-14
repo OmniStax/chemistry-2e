@@ -15,9 +15,9 @@ Proposed by the agent after the chapter exploration (2026-09-28). Status: applie
 | Footnotes | kept as `<sup>N</sup>` in the text and a `<p><small><sup>N</sup>…</small></p>` at the end of the section they stand in |
 | Tables | Table 5.1 (5.1) and Table 5.2 (5.3) as `div.book-table`; the Key Equations tables go to `chapter.json` |
 | Figure numbers | 5.1 to 5.24 as listed in `exploration.md`; examples 5.1 to 5.15; tables 5.1 and 5.2 |
-| Figures | sketches of a quantity become live Figures with the book's numbers (folds suggested: 5.4 + 5.6, 5.11 + 5.14); apparatus drawings are faithful copies unless the plan argues a bench; photographs kept where the text points at them, each plan decides 5.2 and 5.21 |
+| Figures | sketches of a quantity become live Figures with the book's numbers (one fold: 5.4 + 5.6); apparatus drawings are faithful copies unless the plan argues a bench; photographs kept where the text points at them, each plan decides 5.2 and 5.21 |
 | Motion | per figure; heat flowing to equilibrium and a calorimeter settling have a clock, the heating bench, the first-law diagram and the Hess ladder are still |
-| 3D | the particle boxes of 5.4 + 5.6 and a calorimeter bench are 3D by the book's rule if built; everything else flat |
+| 3D | none: the particle boxes of 5.4 + 5.6 and the calorimeter are flat, since turning them shows nothing a flat drawing cannot (root rule 28.5) |
 | Appendix G | linked as the sheet `/chemistry-2e/sheets/thermo/` wherever the text or an exercise names it |
 | Colour coding | `energy`, `temperature`, `mass`; `volume` and `pressure` only in 5.3's enthalpy definition figure if it draws them; see `COLOR.md` |
 | Symbols | added: `ΔT` `\kdT`, `T_initial` `\kTinit`, `T_final` `\kTfin`, `U` `\kU`, `H` `\kH`, `q_p` `\kqp`, `ΔH_c°` `\kdHc`, `ΔV` `\kdV`; untyped `C_heat` (C), `c_spec` (c), `n_coef` (n). Reused: `q`, `w` (`\kwork`), `ΔU`, `ΔH`, `m`, `P`, `V`, `T`, and chapter 7's `ΔH°` `\kdHo` and `ΔH_f°` `\kdHf`. No new type: specific heat and heat capacity stay in ink, as density does |
@@ -33,7 +33,7 @@ Proposed by the agent after the chapter exploration (2026-09-28). Status: applie
 
 ## What the build changed
 
-- Figures: 5.2 (the collage) dropped; 5.21 kept, since Example 5.10 points at it. Folds as built: 5.4 + 5.6 (3D particle boxes, moving) and 5.11 + 5.12 + 5.14 (a flat coffee cup calorimeter, moving); 5.19 and 5.24 still Figures; one Sim, the heating bench of 5.1.
+- Figures: 5.2 (the collage) dropped; 5.21 kept, since Example 5.10 points at it. One fold as built: 5.4 + 5.6 (flat particle boxes, moving). Figure 5.14 is a flat coffee cup calorimeter, moving; Figures 5.11 and 5.12, once folded into it, are the book's images again (2026-11-14); 5.19 and 5.24 still Figures; one Sim, the heating bench of 5.1.
 - Binds: 5.3 binds energy only; no figure draws PΔV, so P, V and ΔV stay in ink there.
 - Exercises: 68 (10, 22, 36), 16 of them Check Your Learning inline; Example 5.3's two items share its source id. The cereal item of 5.2 is keyed and kept.
 - Formulas: every equation and variable row anchored by the chapter pass; 8 prerequisite edges into Chapters 3 and 4 added (39 to 47).

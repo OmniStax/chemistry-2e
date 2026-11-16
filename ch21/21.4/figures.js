@@ -478,7 +478,7 @@ function burst(ctx, x, y, R, k, color) {
     else dot(ctx, X(gEnd), Y(pv), RC, true, 9);
     hits.push({ x: X(gEnd), y: Y(Math.min(pv, RMAX)), r: 14, name: 'the fission rate after ' + fmt(gEnd, 1) + ' generations: ' + (pv < 0.01 ? 'almost nothing' : fmt(pv, 2) + ' times its start') });
 
-    ro.set('\\mk{f}{\\text{to fission}} + \\mk{r}{\\text{to control rods}} + \\mk{l}{\\text{lost}} = \\mk{fv}{' + fmt(kf, 2) + '} + \\mk{rv}{' + fmt(kr, 2) + '} + \\mk{lv}{' + fmt(kl, 2) + '} = 3\\ \\text{neutrons}', undefined,
+    ro.set('\\mk{f}{\\text{to fission}} + \\mk{r}{\\text{to rods}} + \\mk{l}{\\text{lost}} = \\mk{fv}{' + fmt(kf, 2) + '} + \\mk{rv}{' + fmt(kr, 2) + '} + \\mk{lv}{' + fmt(kl, 2) + '} = 3\\ \\text{neutrons}', undefined,
       { form: !wet ? 'none' : crit ? 'c' : kf < 1 ? 'sub' : 'super' });
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });

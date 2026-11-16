@@ -99,113 +99,199 @@ headline · graph
    **photograph, kept**: the opening paragraph is about these flights and
    points at the figure; the book's caption (no credit clause is printed);
    `widths` empty since the bundle gives no width.
-2. `sim-amontons-sphere` · replaces Figure 9.10 (the sealed sphere over a
-   hot plate in three frames) · amontons-law · **moves**: the particles in
-   the sphere travel and quicken as it warms, and the gauge has something to
-   read only because they strike the wall, so the figure registers a
-   continuous cycle (no scrubber, since the motion has no period) and
-   carries the transport · sliders: temperature `T` (150 to 600 K,
-   temperature; default 298) and amount `n` (0.25 to 2.00 mol, amount;
-   default 1.00), the sphere's volume fixed at 1.00 L and written on the
-   canvas · "At 298 K the gauge reads 24.5 atm; P/T stays at 0.0821 atm/K
-   however the sphere is heated." · no graph: the sphere in its bath on the
-   hot plate, the gauge above, the plate's glow and the bath in the
-   temperature hue, the needle and dial in the pressure hue · readout
-   $\kP/\kT = k$ with the live numbers · draws pressure, temperature,
-   amount.
+2. `sim-amontons-sphere` · replaces Figure 9.10 (a sealed flask of gas in
+   a water bath on a hot plate, a gauge on its neck, at three heat
+   settings) · amontons-law · value add: variation by slider and flow by
+   animation, the reader heats one rigid flask and sees the gauge climb
+   while P/T stays put, where the book prints three stills with no numbers
+   · arrows: none drawn; the molecules and the water vapour are kinematic
+   and move · **moves**: the molecules travel and quicken as the bath
+   warms, a continuous cycle with the transport and no scrubber · one
+   slider: the bath's temperature `T` (298 to 373 K, temperature; default
+   298, the book's "hot plate off"). The amount slider is gone: the lesson
+   is P against T at fixed n and V, and a second slider that also moved
+   the needle hid it · no headline: the reading stands beside the gauge and
+   the temperature beside the thermometer · no graph (Figure 9.11 is the
+   graph) · 2D: one flat drawing as the book draws it; turning the scene
+   showed nothing a flat drawing lacks (root 28.5) · readout
+   $\kP/\kT = k$ over the live numbers · draws pressure, temperature,
+   volume; conventions N, O; fact `#e2532b`, the glow of the plate's
+   heating surface.
+   works: parts · a round-bottom flask (the referent `sphere`), sealed by a
+   stopper in its neck; the pressure gauge stands on the stopper and its
+   tube runs through the stopper into the gas, so the gauge reads the gas
+   in the flask; the flask's bulb rests on the bottom of a beaker of water
+   that covers the bulb; the beaker stands on the heating surface of a hot
+   plate with a heat control and a lamp; a thermometer stands in the water
+   (added: the book shows no thermometer, and without one the temperature
+   has no place in the drawing) · flow · heat goes from the plate through
+   the water into the gas; nothing enters or leaves the flask; the
+   molecules of air (four N₂ to one O₂) move inside the bulb, faster as
+   the bath warms; water vapour leaves the bath above about 320 K and
+   bubbles form near 373 K · must hold · the gauge is on the neck and its
+   tube opens into the gas; the flask is closed (stopper in the neck, no
+   gap in the glass); the water surface is above the bulb and below the
+   beaker's rim, and the flask displaces the water rather than showing it
+   through the glass; the same twenty molecules at every temperature
+   (sealed, n fixed) and the same flask outline (rigid, V fixed); the
+   needle reads the number written beside it; 1.00 atm at 298 K with the
+   plate off, 1.25 atm at 373 K, P/T = 0.00336 atm/K throughout; the
+   plate's lamp and glow are off at 298 K and grow with the setting; the
+   thermometer's column stands at the temperature written beside it · read
+   off the image · the three frames are labelled "Hot plate off", "Hot
+   plate on medium", "Hot plate on high" and "Low P", "Medium P", "High
+   P", the flask "Gas"; the book gives no numbers, so the pressures are
+   chosen for glassware: the flask is taken as sealed at 1.00 atm and
+   298 K. The book's water level rises from frame to frame, which no
+   heating does; here it stays. The alt text calls the flask a "spherical
+   container"; the image shows a round-bottom flask with a neck and a
+   stopper. The molecules gain only 12 % in speed from 298 K to 373 K, so
+   the gain is drawn four times its size and the canvas says so (root
+   28.4).
 3. `sim-amontons-graph` · replaces Figure 9.11 (the table and graph of air
-   at constant volume) · amontons-law, absolute-zero · **still**: a state is
-   a place on the line, not a journey · sliders: `T_1` and `T_2` (100 to
-   500 K, temperature; defaults 273 and 373), the initial state hollow and
-   the final filled, as the chapter's colour plan marks a variant · "At 273 K
-   the line gives 56.8 kPa and at 373 K 77.6 kPa; the ratio P/T is the same
-   at both, 0.208 kPa/K." · the book's six data points with their table on
-   the left, the fitted line in the pressure hue, the dashed extrapolation
-   to 0 K in the same hue and the marker at absolute zero in ink · readout
-   $\kPone/\kTone = \kPtwo/\kTtwo$ with the live numbers · draws pressure,
-   temperature.
+   at constant volume) · amontons-law, absolute-zero · value add:
+   variation by slider, any two states on the measured line compared ·
+   arrows: none · **still**: a state is a place on the line, not a journey
+   · sliders: `T_1` and `T_2` (173 to 423 K, the measured stretch,
+   temperature; defaults 273 and 373, two rows of the table), the initial
+   state hollow and the final filled · headline "From 273 K to 373 K the
+   kelvin temperature is multiplied by 1.37, and so is the pressure." ·
+   the graph is the scene, the book's table to its left · 2D · readout
+   $\kPone/\kTone = \kPtwo/\kTtwo$ over the live numbers · draws
+   pressure, temperature.
+   works: read off the image · the table's six rows (−100 °C, 173 K,
+   36.0 kPa; −50, 223, 46.4; 0, 273, 56.7; 50, 323, 67.1; 100, 373, 77.5;
+   150, 423, 88.0) agree with the alt text; the axes are 0 to 500 K by 100
+   and 0 to 100 kPa (the image ticks every 10, here every 20); the line is
+   solid over the six points and dashed from 173 K to the origin. The
+   sliders stay on the solid stretch, so every state read is one the gas
+   could be measured in.
 4. `sim-charles-graph` · replaces Figure 9.12 (the table and graph of one
-   mole of methane at 1 atm) · charles-law, absolute-zero · **still**, for
-   the same reason · sliders: `T_1` and `T_2` (111 to 500 K, temperature;
-   defaults 283 and 303, the temperatures of Example 9.6), the line stopping
-   at 111 K where methane liquefies and dashed from there to the origin ·
-   "At 283 K the line gives 23.2 L and at 303 K 24.9 L; V/T is 0.0821 L/K
-   at both." · the book's five points with their table on the left, the
-   line in the volume hue · readout $\kVone/\kTone = \kVtwo/\kTtwo$ · draws
-   volume, temperature.
+   mole of methane at 1 atm) · charles-law, absolute-zero · value add:
+   variation by slider · arrows: none · **still**, for the same reason ·
+   sliders: `T_1` and `T_2` (111 to 270 K, the measured stretch,
+   temperature; defaults 220 and 270, two rows of the table) · headline
+   "From 220 K to 270 K the kelvin temperature is multiplied by 1.23, and
+   so is the volume." · the graph is the scene, the book's table to its
+   left · 2D · readout $\kVone/\kTone = \kVtwo/\kTtwo$ · draws volume,
+   temperature.
+   works: read off the image · **the image and the alt text disagree, and
+   the image is the book.** The image's table has four rows: −3 °C, 270 K,
+   22 L; −23, 250, 21; −53, 220, 18; −162, 111, 9. The alt text lists five
+   other rows (−100 °C, 173 K, 14.10 L and so on), which the figure used to
+   show. The image's axes are 0 to 300 K, ticks every 100 on a grid every
+   50, and 0 to 30 L, ticks every 10 on a grid every 5; the line is solid
+   from 111 K to 270 K and dashed from 111 K to the origin. The figure now
+   shows those four rows, those axes with the grid's spacing, and the line
+   through the origin fitted to the four points, 0.0823 L/K (the ideal
+   value for one mole at 1 atm is 0.0821 L/K).
 5. `sim-boyle` · replaces Figure 9.13 and folds Figure 9.14 (the syringe
    with its gauge and the two graphs; 9.14 draws the same two graphs with
    the instrument removed), eyebrow "Figure 9.13 + 9.14", `folds` naming
-   9.14, both images under `originals` · boyles-law · **still**: the
-   plunger answers its slider and nothing here has a clock · sliders: `V_1`
-   and `V_2` (5.0 to 30.0 mL, volume; defaults 15.0 and 7.5, the volumes of
-   Example 9.8), with PV = 195 psi·mL from the book's data · "At 7.5 mL the
-   gauge reads 26.0 psi; halving the volume from 15.0 mL has doubled the
-   pressure from 13.0 psi." · the syringe across the top with the plunger at
-   V₂ and a dashed plunger at V₁, the gauge on it; below, P against V with
-   the book's five points and the hyperbola, and 1/P against V with the
-   straight line, both markers on each · readout $\kPone\kVone =
-   \kPtwo\kVtwo$ · draws pressure, volume.
-6. `sim-breathing` · Figure 9.15 · boyles-law · flow by animation: one
-   breath a cycle, lungs swell as the diaphragm flattens · moving, real-time
-   breath of 60/rate s with a 0.6 s pause after the breath out, transport
-   with scrubber · air per breath (volume, L, 0.3–3.0, 0.5), breaths per
-   minute (ink, 8–30, 20) · headline gives V and the 1–3 torr difference ·
-   none · 2D: F.silhouette (stand, face left) on the ground at the right, a
-   lens on its chest opening into the same silhouette magnified at the left,
-   two lungs (the far one dashed) and a domed diaphragm drawn inside its
-   torso at 4× the true swelling or as much as the chest holds, air arrows
-   at the nose and mouth and the diaphragm's way fading as the flow stops;
-   three labels (P_lungs in the book's words, lungs once, the diaphragm),
-   hover names; readout the volume sum and the factor drawn, no note; no
-   fold · draws volume, pressure. Rewritten 2026-10-05 after the review.
+   9.14, both images under `originals` · boyles-law · value add: variation
+   by slider · arrows: none · **still**: the plunger answers its slider and
+   nothing here has a clock · sliders: `V_1` and `V_2` (5.0 to 30.0 mL,
+   volume; defaults 15.0 and 7.5, the volumes of Example 9.8), with PV =
+   195 psi·mL from the book's data · headline "The volume is 0.50 times
+   what it was, and the pressure is 2.00 times." · the syringe across the
+   top with the plunger at V₂ and a dashed mark at V₁, the gauge on its
+   tip; below, P against V with the book's six points and the hyperbola,
+   and 1/P against V with the straight line, both markers on each · 2D ·
+   readout $\kPone\kVone = \kPtwo\kVtwo$ · draws pressure, volume.
+   works: parts · a syringe barrel (the referent `syringe`) closed at its
+   tip by the gauge's tube, a plunger from the open end · flow · none; the
+   plunger moves and the trapped air is squeezed or let out to more room ·
+   must hold · the gauge is joined to the barrel and reads the trapped
+   air; the gas fills the barrel from the tip to the plunger's face; the
+   plunger's face stands at V₂ on the barrel's scale; the gauge reads
+   195/V₂ psi · read off the image · the points (5.0, 39.0), (10.0, 19.5),
+   (15.0, 13.0), (20.0, 9.8), (25.0, 7.8), (30.0, 6.5) mL and psi; the
+   gauge is marked 5 to 40 psi; the barrel 5 to 30 mL; 1/P runs to
+   0.18 psi⁻¹. The book stands the syringe upright with the gauge on top;
+   here it lies along the page over its two graphs.
+6. `sim-breathing` · Figure 9.15 · **the book's image, kept** (a `photo`
+   row with the book's alt text and caption). Reverted 2026-11-14 on the
+   owner's decision: the drawn figure, a silhouette with a lens on its
+   chest and lungs swollen four times life, showed less than the book's
+   anatomical cross-section of the airway, the lungs and the diaphragm at
+   inspiration and expiration, which the note's text describes point by
+   point. Its code, and the referents `lungs` and `diaphragm` that only it
+   drew, are removed.
 7. `fig-scuba` · Figure 9.16, the diver · **photograph, kept**: Example
    9.10 and exercises fs-idp16137760 and fs-idm131888352 point at it; the
    book's caption with its credit clause; `widths` empty.
 8. `sim-gas-box` · Sim, replaces nothing (the PhET simulation of the
    dropped Link to Learning note is what it stands in for) · ideal-gas-law,
-   and the four laws it holds still · **moves**: the particles travel and
-   strike the walls and the piston, their speed rising with the
-   temperature, their count with the amount, and the box widening with the
-   volume; a continuous cycle with no scrubber and the transport · sliders:
-   volume `V` (1.0 to 30.0 L, volume; default 22.4), temperature `T` (100 to
-   600 K; default 273), amount `n` (0.2 to 4.0 mol; default 1.00), and a
-   fourth, named control, the law being held (free, Amontons, Charles,
-   Boyle, Avogadro; in ink): choosing a law locks the two quantities it
-   holds constant, so Boyle locks T and n and leaves the volume slider and
-   the gauge, and Charles holds P fixed so that the piston moves out as T
-   rises and the volume slider follows it · "1.00 mol at 273 K in 22.4 L
-   presses at 1.00 atm; this is the standard molar volume." · no graph: the
-   cylinder with its piston, the gauge in the pressure hue, the gas body in
-   the volume hue, the heat under the cylinder in the temperature hue, the
-   particles in ink; a small honest count of strikes on the walls in the
-   last second is written beside the gauge · readout $\kP\kV = \kn R\kT$
-   with the live numbers each in its hue · draws pressure, volume,
-   temperature, amount.
+   and the four laws it holds still · value add: variation by slider and
+   flow by animation · arrows: none drawn; the molecules are kinematic and
+   move · **moves**: the molecules travel, their speed following
+   √(T/ℳ) and their count the amount (ten to the mole); a continuous cycle
+   with the transport and no scrubber · controls: volume `V` (2.0 to
+   30.0 L; default 22.4), temperature `T` (100 to 600 K; default 273),
+   amount `n` (0.2 to 4.0 mol; default 1.00), the gas (He, N₂, O₂, Ar,
+   CO₂, a row of buttons) and the law held (a dropdown, since a row of
+   five wraps: none, Amontons's, Charles's, Boyle's, Avogadro's, each
+   saying what it fixes). Five controls, past the usual four, because the
+   Sim's point is the whole law: three quantities to set, the gas to show
+   that it does not matter, and the law to hold. A law locks the sliders
+   of what it fixes; under Charles's and Avogadro's laws the pressure is
+   fixed, the piston finds the volume, and the free slider stops where the
+   piston reaches the end of its travel · headline "1.00 mol of nitrogen
+   at 273 K and 1.00 atm fills 22.4 L, the standard molar volume." · no
+   graph (the next Sim is the graphs) · 2D: a cylinder and piston seen
+   from the side shows the volume, the gauge on the gas and the molecules
+   at once; the 3D box it replaces was small, its labels sat on the scene
+   and turning it showed nothing more (root 28.5) · readout: the law in
+   symbols, morphing by meaning from $\kP\kV = \kn R\kT$ into the held
+   law's $= k$ and then its two-state form, with the numbers on a second
+   line · draws pressure, volume, temperature, amount; conventions He, N,
+   O, Ar, C.
+   Parts and what must hold (it redraws nothing of the book): the gauge's
+   tube enters the cylinder's fixed end wall, so it reads the gas at every
+   volume; the piston's face stands at the volume and the bracket beneath
+   spans the gas; the molecules stay between the end wall and the piston;
+   ten molecules to the mole; the gauge, the headline and the equation
+   show one pressure, nRT/V.
 9. `sim-four-graphs` · Sim, replaces nothing · ideal-gas-law, boyles-law,
-   charles-law, amontons-law · **still**: a state is a place, and the
-   marker answers the sliders · sliders `V` (1.0 to 30.0 L), `T` (100 to
-   600 K), `n` (0.2 to 4.0 mol) · "V = 22.4 L, T = 273 K, n = 1.00 mol: the
-   same state is one point on each of the four graphs, and P = 1.00 atm on
-   all of them." · four graphs in a two-by-two grid, P against V (the
-   hyperbola), V against T, P against T and 1/P against V (the three
-   straight lines), each with the curve for the current values of the other
-   two quantities and one marker for the state; the axis ranges are fixed
-   from the slider maxima and a pressure past 10 atm is pinned at the edge
-   · readout: the pressure from $\kP = \kn R\kT/\kV$ · this Sim is what
-   exercise fs-idm188679440 asks the reader to draw · draws pressure,
-   volume, temperature, amount.
+   charles-law, amontons-law · value add: variation by slider · arrows:
+   none · **still**: a state is a place, and the marker answers the
+   sliders · sliders `V` (1.0 to 30.0 L), `T` (100 to 600 K), `n` (0.2 to
+   4.0 mol) · no headline: the readout carries the numbers · four graphs
+   in a two-by-two grid, P against V (the hyperbola), V against T, P
+   against T and 1/P against V (the three straight lines), each with the
+   curve for the current values of the other two quantities, one marker
+   for the state with its drop lines, and the law it is named above it;
+   the pressure axes run 0 to 5 atm so that the opening state, 1.00 atm,
+   is not lost at the foot of an axis sized for the sliders' 98 atm, and a
+   pressure past 5 atm is pinned at the edge · 2D · readout: the pressure
+   from $\kP = \kn R\kT/\kV$ · this Sim is what exercise
+   fs-idm188679440 asks the reader to draw · draws pressure, volume,
+   temperature, amount.
 10. `sim-balloons` · replaces Figure 9.18 (three balloons of He, NH₃ and
     O₂, one mole each) · avogadro-law, standard-temperature-and-pressure ·
-    **still**: the balloons answer their sliders · sliders: the gas in each
-    of the three balloons (a named control over He, H₂, N₂, O₂, NH₃, CH₄,
-    CO₂ and Ar, in ink; defaults He, NH₃, O₂) and the amount `n` in every
-    balloon (0.25 to 2.00 mol, amount; default 1.00) · "One mole each of He,
-    NH₃ and O₂ at STP: 4.0 g, 17.0 g and 32.0 g, and each balloon holds
-    22.4 L." · no graph: three balloons of one size in the volume hue, a
-    few molecules of each gas drawn inside them in the element palette
-    (`F.el`), the mass on each label in ink · readout $\kV = \kn R\kT/\kP$
-    at STP · draws volume, amount.
+    value add: variation by slider and by choice · arrows: none ·
+    **still**: the balloons answer their controls · controls: the gas in
+    the middle balloon (a dropdown over He, H₂, N₂, O₂, NH₃, CH₄, CO₂ and
+    Ar; default NH₃, the book's) and the amount `n` in every balloon (0.25
+    to 2.00 mol, amount; default 1.00, with a dashed circle there). The
+    first and third balloons keep the book's helium and oxygen: one
+    balloon to change tests "whatever the gas" as well as three did, with
+    two controls in place of four · headline "At STP, 1.00 mol of any of
+    these gases fills 22.4 L." · no graph · 2D only: the 3D view of the
+    same three balloons added nothing and is removed (root 28.5) · readout
+    $\kV = \kn R\kT/\kP$ at STP · draws volume, amount, pressure,
+    temperature, mass; conventions He, H, N, O, C, Ar.
+    works: parts · three sealed balloons, each with its knot and string ·
+    flow · none · must hold · the three balloons are one size at every
+    setting; each shows the same number of molecules, nine to the mole as the book draws,
+    so equal volumes show equal numbers; the molecules do not change size
+    with the amount; each label's mass is n times the molar mass and its
+    volume is the one the readout computes · read off the image · the
+    labels He (4 g), NH₃ (17 g), O₂ (32 g); nine or so molecules in each
+    balloon, helium as single spheres, ammonia as one nitrogen with three
+    hydrogens, oxygen as pairs; the book colours each balloon differently,
+    which here would read as three categories, so all three wear the
+    volume hue (chapter colour plan).
 
 Photographs and unnumbered images: Figure 9.9 kept and Figure 9.16 kept as
 above; Figure 9.17, the coral of the Great Barrier Reef, dropped as a stock
@@ -502,3 +588,39 @@ Judged against `docs/prompts/manim-style.md`; only the figures below changed.
 - `amontons`, the two-state forms P₁/T₁ = P₂/T₂ (and Charles's, Boyle's) · score 0 · not built: two moves in prose, under the bar.
 - `ideal-gas-law`, PV = nRT from the four laws · score 4 · not built: the book says only "combining these four laws yields". Done by the book's own facts, the work is three moves (PV a function of T and n by Boyle, then of n times T by Charles, then nRT by Avogadro), under the four-move bar; the shorter route through V ∝ T/P needs the rule for joint proportionality, which the book never states.
 - `combined-gas-law`, P₁V₁/T₁ = P₂V₂/T₂ · score 2 · not built: three moves, told in words.
+
+## Figure re-examination, 2026-11-14 (Claude Fable 5.2)
+
+The owner reviewed the chapter and found figures drawn from the alt text
+without the image open. Every figure of the section was set beside the
+book's image; the plan lines under "Figures" above are rewritten to what
+the figures now are, each with its `works:` block, and they supersede the
+dated passes above wherever those describe a 3D scene, a view choice or
+the breathing figure.
+
+- `sim-amontons-sphere` (Figure 9.10): rebuilt flat. The 3D scene, its
+  view buttons, the strip of status text and the amount slider are gone.
+  Pressures are those of glassware, 1.00 atm at 298 K to 1.25 atm at
+  373 K, in place of 24.5 atm in a glass sphere.
+- `sim-amontons-graph` (Figure 9.11): the table was right. Axes now the
+  book's (0 to 100 kPa), sliders kept to the measured stretch, the value
+  labels placed where no line runs, the two notes moved into keys outside
+  the frame, the headline says the one thing the readout does not.
+- `sim-charles-graph` (Figure 9.12): the data were the alt text's and are
+  now the image's (four rows, 0 to 300 K, 0 to 30 L); same repairs as
+  9.11.
+- `sim-boyle` (Figure 9.13 + 9.14): one-line headline, larger gauge, the
+  curve through `F.plot`, two-line readout, short caption.
+- `sim-breathing` (Figure 9.15): reverted to the book's image.
+- `sim-gas-box`: redrawn flat, the gauge on the cylinder, no view buttons,
+  no labels on the scene; the law choice a dropdown; all four laws reach
+  their two-state form; molecular speeds follow √(T/ℳ); a 40-word caption
+  in place of 170.
+- `sim-four-graphs`: headline dropped, pressure axes 0 to 5 atm, drop
+  lines to the axes, curves through `F.plot`.
+- `sim-balloons` (Figure 9.18): 2D only, one gas picker in place of
+  three, equal counts of molecules that follow the amount, the stray STP
+  label gone.
+- Every readout sets its law and its numbers on two lines (root 26.14);
+  every caption says what to change and what to watch and no more (root
+  17).

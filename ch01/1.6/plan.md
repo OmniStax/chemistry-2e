@@ -101,31 +101,55 @@ id · replaces · concepts · still or moving · sliders · headline · graph
 1. `sim-temperature-scales` · replaces Figure 1.28 (the Fahrenheit,
    Celsius and kelvin thermometers) · temperature-scales,
    linear-versus-proportional-scales, celsius-fahrenheit-conversion,
-   celsius-kelvin-conversion · **still**: the idea has no time in it; a
-   temperature is set and the three thermometers answer it, so the figure
-   registers no cycle and carries no transport · one slider, the
-   temperature on the Celsius scale $\kTC$ (−80 to 120 °C, step 0.1,
-   default 37.0 °C so that Example 1.11 is reproduced on load; type
-   temperature). One slider and not two to four, because the figure is
-   one instrument read on three scales and a second knob would be a
-   second temperature · "At 37.0 °C the three thermometers read 37.0 °C,
-   98.6 °F and 310.2 K", with the freezing and boiling temperatures of
-   water and the one temperature at which the Celsius and Fahrenheit
-   readings agree (−40) named when the slider reaches them · graph beside
-   the thermometers, since the scene is vertical: the reading on the
-   Fahrenheit and kelvin scales against the Celsius temperature, two
-   lines in the temperature hue, the Fahrenheit line solid and the kelvin
-   line dashed, with the current point on each and a drop line from the
-   Celsius axis. Neither line passes through the origin, which is the
-   section's argument about y = mx + b against y = mx in one picture, and
-   the kelvin line's slope of one against the Fahrenheit line's nine
-   fifths is read off the same axes. Readout: the Fahrenheit equation with
-   the live numbers; small line with the kelvin equation and the numbers.
-   The three columns take the temperature hue as `ch01/COLOR.md` says:
-   the Celsius column filled, the Fahrenheit and kelvin columns hollow,
-   the scale names and the two reference temperatures in ink, drawn across
-   all three at the same height. The bulb and tube are drawn in this file
-   under 12 path commands. Draws temperature.
+   celsius-kelvin-conversion · value add: variation by slider (one
+   temperature moved, three readings answering at different rates) and
+   the section's y = mx + b argument drawn on the same axis as the
+   thermometers · arrows: none · **still**: the idea has no time in it,
+   so no cycle and no transport · three sliders, one per scale and all
+   three linked: $\kTF$ (−112 to 248 °F), $\kTC$ (−80 to 120 °C) and
+   $\kTK$ (193.15 to 393.15 K), step 0.1, type temperature, opening on
+   Example 1.11's 37.0 °C; the reader drags whichever scale they have a
+   number on and the other two follow, so the figure converts in every
+   direction the section's four equations do; dashed circles on each at
+   the image's three temperatures (−40, freezing, boiling) · no
+   headline: the reading over each thermometer and the readout say it ·
+   graph below, on the thermometers' own Celsius axis: the three readings
+   against the Celsius temperature, the end of each liquid thread
+   standing over its point. The Celsius line passes through the origin,
+   the kelvin line runs parallel to it 273.15 higher (a degree of the
+   same size, another zero), the Fahrenheit line is steeper and meets 0 °C
+   at 32 °F, and it crosses the Celsius line at −40 · 2D. Readout: the
+   two conversions from the scale the reader set, each whole on its line.
+   One hue, as `ch01/COLOR.md` says: Celsius liquid filled, the other two
+   hollow, names, marks and brackets in ink. Draws temperature.
+
+   works: parts: three glass thermometers, each a bulb joined to a stem
+   with a narrow bore, the liquid filling the bulb and reaching along the
+   bore to the reading; three marks on every stem (boiling point of
+   water, freezing point of water, −40) joined across all three; a
+   bracket on each between freezing and boiling · flow: none; the liquid
+   ends lengthen and shorten together as the temperature is set · must
+   hold: (1) the three liquid ends stand at the same place, since it is
+   one temperature; (2) each of the nine marks sits on its own scale
+   where its number belongs and the three marks of one temperature line
+   up; (3) the three readings are one temperature: T_F = 9/5 T_C + 32 and
+   T_K = T_C + 273.15 with the numbers shown; (4) Fahrenheit graduations
+   are closer together than Celsius and kelvin ones, 180 against 100
+   between the same two marks; (5) on the graph only the Celsius line
+   passes through the origin, the kelvin line is parallel to it, and the
+   Fahrenheit and Celsius lines cross at −40; (6) each dot on the graph
+   is under the end of the liquid; (7) every readout line is true as
+   written · read off the image: heads "Fahrenheit", "Celsius",
+   "Kelvin"; "Boiling point of water" at 212 °F, 100 °C, 373.15 K;
+   "Freezing point of water" at 32 °F, 0 °C, 273.15 K; brackets "180
+   Fahrenheit degrees", "100 Celsius degrees", "100 kelvins"; a black
+   line at −40 °F, −40 °C, 233.15 K. The alt text agrees with the image.
+   The image stands the thermometers upright; they are laid on their
+   sides here so that the graph can share their axis (rule 14: laid out
+   for the one thing to see first, the three readings of one
+   temperature). The kelvin reading is given to a hundredth so that it
+   matches the image's 273.15 K and the readout adds up; Example 1.11
+   rounds the same sum to 310.2 K.
 
 The book's one figure is a sketch and is replaced; there is no photograph
 to keep or drop and no unnumbered image. No exercise refers to a figure.
@@ -289,3 +313,15 @@ Judged against `docs/prompts/manim-style.md`; only the figures below changed.
 
 - `linear-not-proportional`, the Celsius–Fahrenheit equation · score 1, a printed block · built as drv-celsius-fahrenheit: four nodes (slope, intercept, the equation with and without units, its rearrangement for °C); the block's displayed lines and connecting phrases are replaced, its opening sentence kept.
 - `kelvin-scale`, the kelvin–Celsius equations · score 3 · not built: stated with the slope in prose, the intercept skipped; four moves but under the score bar, and the method is the one built just above.
+
+## Figure re-examination, 2026-11-14 (Claude Fable 5.2)
+
+- `sim-temperature-scales` (Figure 1.28): rebuilt with the book's image
+  open. The earlier drawing had left out everything the image is about
+  (the nine numbers at the three marked temperatures, the brackets of 180
+  Fahrenheit degrees, 100 Celsius degrees and 100 kelvins, the line at
+  −40), its readout added 37.0 + 273.15 to 310.1, its headline repeated
+  the three readings, and its caption described the picture. Now: the
+  thermometers lie over the graph's Celsius axis with every number of the
+  image on them, a slider for each scale, the readout's two conversions
+  each on one line with units, and a two-sentence caption.

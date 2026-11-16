@@ -7,7 +7,6 @@ const still = (d, draw) => register(d.fig, { update: () => {}, draw });
 const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
 const TAU = 2 * Math.PI, RAD = Math.PI / 180;
 const lerp = (a, b, k) => a + (b - a) * k;
-const VIEWS = [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }];
 const minus = (s) => String(s).replace('-', '−');
 
 /* ---------- vectors ---------- */
@@ -55,8 +54,11 @@ function lewis(ctx, atoms, bonds, o = {}) {
 const SIDES = [[-1, 0], [0, -1], [1, 0], [0, 1]];
 function grid(cs, cc) {
   const atoms = cs.map(([x, y]) => ({ s: 'C', gx: x, gy: y })), bonds = cc.map(([i, j]) => [i, j, 1, 4.5]), hs = cs.map(() => []);
+  /* a side is taken where a bonded carbon atom lies that way, however long the bond (a branch drawn on a long bond) */
+  const taken = (i, sx, sy) => cc.some(([a, b]) => { const j = a === i ? b : b === i ? a : -1; if (j < 0) return false;
+    const dx = cs[j][0] - cs[i][0], dy = cs[j][1] - cs[i][1]; return Math.sign(dx) === sx && Math.sign(dy) === sy; });
   cs.forEach(([x, y], i) => SIDES.forEach(([sx, sy]) => {
-    if (cs.some(([u, v]) => u === x + sx && v === y + sy)) return;
+    if (taken(i, sx, sy)) return;
     hs[i].push(atoms.length); bonds.push([i, atoms.length, 1, 3]); atoms.push({ s: 'H', gx: x + sx, gy: y + sy, on: i, side: [sx, sy] });
   }));
   return { atoms, bonds, hs };
@@ -109,143 +111,226 @@ function zigzag(n) {
 }
 const chainBonds = (n) => Array.from({ length: n - 1 }, (_, i) => [i, i + 1, 1]);
 
-/* the flat views shared by a figure with a 2D/3D choice: the stage mounts on the first switch and each hides the other */
-function views(d, three, mount, draw) {
-  let v = null;
-  return {
-    get v() { return v; },
-    show() {
-      const on = three();
-      if (on && !v) v = mount();
-      d.c.style.display = on ? 'none' : '';
-      if (v) [v.wrap, d.stage.querySelector('.view3d-bar')].forEach((e) => { if (e) e.style.display = on ? '' : 'none'; });
-      draw();
-    },
-  };
+/* ---------- the book's Lewis drawing of a molecule, laid out in a box ----------
+   An alkane is the book's square drawing (grid); an alkene lies in the plane of the page with its carbon atoms where the
+   model has them, a hydrogen atom of an sp² carbon where the model has it, the three of a methyl group as the book's cross,
+   and 2-butene's methyl groups condensed. Returns { atoms, bonds } for lewis(). */
+function lewisOf(m, CX, TOP, BOT, S2 = 70) {
+  if (m.kind === 'alkane') {
+    const cc = m.m3.bonds.filter(([i, j]) => m.m3.atoms[i].el === 'C' && m.m3.atoms[j].el === 'C').map(([i, j]) => [i, j]);
+    const g = grid(m.g2, cc), ys = g.atoms.map((t) => t.gy), span = Math.max(...ys) - Math.min(...ys);
+    const U = Math.min(80, (BOT - TOP) / span);
+    return { atoms: place(g, CX, (TOP + BOT) / 2, U), bonds: g.bonds.map(([i, j, o]) => [i, j, o, 3]) };
+  }
+  const A = m.m3.atoms, atoms = [], idx = {}, bonds = [];
+  const isMethyl = (i) => A[i].el === 'C' && m.g3.B.filter(([a, b]) => a === i || b === i).length === 1 && m.g3.B.every(([a, b, o]) => !((a === i || b === i) && o === 2));
+  A.forEach((t, i) => {
+    if (t.el !== 'C') return;
+    idx[i] = atoms.length; atoms.push({ s: m.cond2 && isMethyl(i) ? 'CH_{3}' : 'C', x: t.p[0], y: -t.p[1] });
+  });
+  m.g3.B.forEach(([a, b, o]) => bonds.push([idx[a], idx[b], o, 3]));
+  A.forEach((t, i) => {
+    if (t.el !== 'H') return;
+    const c = t.on, ci = idx[c];
+    if (m.cond2 && isMethyl(c)) return;
+    if (!isMethyl(c) && Math.abs(t.p[2] - A[c].p[2]) < 0.05) { bonds.push([ci, atoms.length, 1, 3]); atoms.push({ s: 'H', x: t.p[0], y: -t.p[1] }); return; }
+    if (atoms.some((q) => q.h === i)) return;
+    /* sp³ carbon: its hydrogens as the book's cross, opposite and square to its one carbon neighbour */
+    const nb = m.g3.B.filter(([a, b]) => a === c || b === c).map(([a, b]) => (a === c ? b : a));
+    const u = unit(sub(A[nb[0]].p, A[c].p)), mine = A.map((q, j) => (q.el === 'H' && q.on === c ? j : -1)).filter((j) => j >= 0);
+    const dirs = nb.length === 1 ? [[-1, 0], [0, -1], [1, 0], [0, 1]].map((q) => [q, q[0] * u[0] - q[1] * u[1]]).sort((a, b) => a[1] - b[1]).slice(0, 3).map(([q]) => [q[0], -q[1]])
+      : (() => { const w = unit(sub(A[nb[1]].p, A[c].p)), mm = unit([-(u[0] + w[0]), -(u[1] + w[1]), 0]); return [-40, 40].map((g) => [mm[0] * Math.cos(g * RAD) - mm[1] * Math.sin(g * RAD), mm[0] * Math.sin(g * RAD) + mm[1] * Math.cos(g * RAD)]); })();
+    mine.forEach((j, q) => { const v = dirs[q]; bonds.push([ci, atoms.length, 1, 3]); atoms.push({ s: 'H', x: A[c].p[0] + v[0] * 1.09, y: -A[c].p[1] - v[1] * 1.09, h: j }); });
+  });
+  const xs = atoms.map((t) => t.x), ys = atoms.map((t) => t.y), ox = (Math.min(...xs) + Math.max(...xs)) / 2, oy = (Math.min(...ys) + Math.max(...ys)) / 2;
+  atoms.forEach((t) => { t.x = CX + (t.x - ox) * S2; t.y = (TOP + BOT) / 2 + (t.y - oy) * S2; });
+  return { atoms, bonds };
 }
+const NAME = { C: 'carbon atom', H: 'hydrogen atom' };
+const D2 = 1.34;   /* C=C, Å */
+const palSig = () => [PAL.ink, PAL.panel, PAL.muted, F.el('C'), F.el('H')].join('|');
 
 /* =====================================================================
-   FIGURES 20.2 + 20.7 + 20.10: one molecule at a time as the Lewis
-   structure the text teaches, then as a ball-and-stick model the reader
-   turns, then as a space-filling model; the balls swell and the sticks
-   sink into them between the two models. Still: a structure has no
-   clock. The Lewis structures are the book's: the alkanes straight with
-   hydrogen atoms above and below, the alkenes in 120° zigzags, the
-   methyl groups of 2-butene condensed as the book prints them.
+   FIGURES 20.2 + 20.7: the six molecules of the two figures, one at a
+   time. The Lewis structure stands on a flat strip as the book draws it;
+   under it the same molecule turns as a ball-and-stick model and as a
+   space-filling model, side by side at one scale and each about its own
+   centre, so neither ever passes in front of the other. The reader sets
+   the flat drawing against the shape it flattens: pentane's straight
+   chain against a 109.5° zigzag, ethene's six atoms in one plane.
+   Still: a molecule has no clock. Physical 3D; the orbit turns freely
+   about the vertical and tilts no more than 0.6 rad, so a long chain
+   stays level and can fill its half of the stage. No idle spin: a
+   full turn would pass through end-on views that hide the zigzag, so
+   the scene opens side-on and the reader turns it.
 ===================================================================== */
 (function () {
-  const H = 440, d = sim('sim-hydrocarbon-models', H);
+  const H = 300, d = sim('sim-hydrocarbon-models', H);
   const AL = (n) => ({ C: zigzag(n), B: chainBonds(n) });
-  function methylpropane() {
-    const C = zigzag(3), a = unit(sub(C[0], C[1])), b = unit(sub(C[2], C[1]));
-    const m = unit(mul(add(a, b), -1)), nrm = unit(cross(a, b)), h = TET / 2;
-    C.push(add(C[1], mul(add(mul(m, Math.cos(h)), mul(nrm, Math.sin(h))), 1.54)));
-    return { C, B: [[0, 1, 1], [1, 2, 1], [1, 3, 1]] };
-  }
-  const D2 = 1.34;
   const ene = (C) => ({ C, B: C.slice(1).map((_, i) => [i, i + 1, i === 0 ? 2 : 1]) });
   const MOL = {
     methane: { name: 'methane', kind: 'alkane', n: 1, cond: '\\text{CH}_4', mf: '\\text{CH}_4', g3: { C: [[0, 0, 0]], B: [] }, g2: [[0, 0]],
-      head: 'In methane, CH₄, one carbon atom bonds to four hydrogen atoms, which point to the corners of a tetrahedron.' },
+      head: 'The four hydrogen atoms of methane point to the corners of a tetrahedron, 109.5° apart.' },
     ethane: { name: 'ethane', kind: 'alkane', n: 2, cond: '\\text{CH}_3\\text{CH}_3', mf: '\\text{C}_2\\text{H}_6', g3: AL(2), g2: [[0, 0], [1, 0]],
-      head: 'Ethane’s two carbon atoms share a single bond, and each bonds to three hydrogen atoms.' },
-    butane: { name: 'n-butane', kind: 'alkane', n: 4, cond: '\\text{CH}_3\\text{CH}_2\\text{CH}_2\\text{CH}_3', mf: '\\text{C}_4\\text{H}_{10}', g3: AL(4), g2: [[0, 0], [1, 0], [2, 0], [3, 0]],
-      head: 'The four carbon atoms of $n$-butane form an unbranched chain: none bonds to more than two others.' },
+      head: 'Each carbon atom of ethane bonds to four atoms, the other carbon atom and three hydrogen atoms.' },
     pentane: { name: 'pentane', kind: 'alkane', n: 5, cond: '\\text{CH}_3\\text{CH}_2\\text{CH}_2\\text{CH}_2\\text{CH}_3', mf: '\\text{C}_5\\text{H}_{12}', g3: AL(5), g2: [[0, 0], [1, 0], [2, 0], [3, 0], [4, 0]],
-      head: 'Bond angles of about 109.5° give pentane’s chain a zigzag shape, though its Lewis structure draws it straight.' },
-    methylpropane: { name: '2-methylpropane', kind: 'alkane', n: 4, cond: '\\text{CH}_3\\text{CH(CH}_3)\\text{CH}_3', mf: '\\text{C}_4\\text{H}_{10}', g3: methylpropane(), g2: [[0, 0], [1, 0], [2, 0], [1, -1]],
-      head: 'The central carbon atom of 2-methylpropane bonds to three other carbon atoms, so its chain is branched.' },
+      head: 'The Lewis structure draws pentane’s chain straight, but bond angles near 109.5° make it zigzag.' },
     ethene: { name: 'ethene', kind: 'alkene', cond: '\\text{CH}_2{=}\\text{CH}_2', mf: '\\text{C}_2\\text{H}_4', g3: ene([[0, 0, 0], [D2, 0, 0]]),
-      head: 'Each carbon atom of ethene is trigonal planar, and all six atoms lie in one plane.' },
+      head: 'Each carbon atom of ethene is trigonal planar, so all six atoms lie in one plane.' },
     propene: { name: 'propene', kind: 'alkene', cond: '\\text{CH}_2{=}\\text{CHCH}_3', mf: '\\text{C}_3\\text{H}_6', g3: (() => { const a = [0, 0, 0], b = add(a, mul(dir(30), D2)); return ene([a, b, add(b, mul(dir(-30), 1.5))]); })(),
-      head: 'Propene’s double bond joins its first two carbon atoms; the third belongs to a methyl group.' },
+      head: 'Propene is flat around its double bond; the third carbon atom is tetrahedral.' },
     butene1: { name: '1-butene', kind: 'alkene', cond: '\\text{CH}_2{=}\\text{CHCH}_2\\text{CH}_3', mf: '\\text{C}_4\\text{H}_8',
       g3: (() => { const a = [0, 0, 0], b = add(a, mul(dir(30), D2)), c = add(b, mul(dir(-30), 1.51)); return ene([a, b, c, add(c, mul(dir(150 - TET / RAD), 1.54))]); })(),
-      head: 'In 1-butene the double bond lies between carbon atoms 1 and 2 of a four-carbon chain.' },
-    cis: { name: 'cis-2-butene', kind: 'alkene', cond: '\\textit{cis}\\text{-CH}_3\\text{CH}{=}\\text{CHCH}_3', mf: '\\text{C}_4\\text{H}_8', cond2: true,
-      g3: (() => { const b = [-D2 / 2, 0, 0], c = [D2 / 2, 0, 0]; return { C: [add(b, mul(dir(240), 1.5)), b, c, add(c, mul(dir(300), 1.5))], B: [[0, 1, 1], [1, 2, 2], [2, 3, 1]] }; })(),
-      head: 'In $cis$-2-butene both methyl groups lie on the same side of the rigid double bond.' },
-    trans: { name: 'trans-2-butene', kind: 'alkene', cond: '\\textit{trans}\\text{-CH}_3\\text{CH}{=}\\text{CHCH}_3', mf: '\\text{C}_4\\text{H}_8', cond2: true,
-      g3: (() => { const b = [-D2 / 2, 0, 0], c = [D2 / 2, 0, 0]; return { C: [add(b, mul(dir(240), 1.5)), b, c, add(c, mul(dir(60), 1.5))], B: [[0, 1, 1], [1, 2, 2], [2, 3, 1]] }; })(),
-      head: 'In $trans$-2-butene the methyl groups lie on opposite sides of the rigid double bond.' },
+      head: 'In 1-butene the double bond joins carbon atoms 1 and 2 of a four-carbon chain.' },
   };
   Object.values(MOL).forEach((m) => { m.m3 = hydrogens(m.g3.C, m.g3.B); });
   const KEYS = Object.keys(MOL);
-  const mol = F.select(d.controls, { label: '\\text{molecule}', key: 'molecule', aria: 'the molecule', value: 'pentane',
-    options: KEYS.map((k) => ({ value: k, label: MOL[k].name })), onInput: () => V.show() });
-  const model = F.choice(d.controls, { label: '\\text{model}', key: 'model', aria: 'the Lewis structure or a model to turn', value: 'lewis',
-    options: [{ value: 'lewis', label: 'Lewis' }, { value: 'ball', label: 'ball-and-stick' }, { value: 'fill', label: 'space-filling' }], onInput: () => V.show() });
-  let hits = []; F.hover(d.stage, () => (model.value === 'lewis' ? hits : []));
+  const mol = F.choice(d.controls, { label: '\\text{molecule}', key: 'molecule', aria: 'the molecule', value: 'pentane',
+    options: KEYS.map((k) => ({ value: k, label: MOL[k].name })) });
+  let hits = []; F.hover(d.stage, () => hits);
+  const CX = 700, TOP = 112, BOT = H - 16;
 
-  /* ---------- the Lewis structure ---------- */
-  const U = 74, CX = 700, CY = 262, S2 = 70;   /* 74 units a grid step for the alkanes; 70 units an ångström for the alkenes */
-  function lewisOf(k) {
-    const m = MOL[k];
-    if (m.kind === 'alkane') {
-      const cc = m.m3.bonds.filter(([i, j]) => m.m3.atoms[i].el === 'C' && m.m3.atoms[j].el === 'C').map(([i, j]) => [i, j]);
-      const g = grid(m.g2, cc); return { atoms: place(g, CX, CY, U), bonds: g.bonds.map(([i, j, o]) => [i, j, o, 3]) };
-    }
-    /* an alkene lies in the plane of the page: its carbon atoms where the model has them, a hydrogen atom of an sp² carbon where
-       the model has it, the three of a methyl group spread about the bond's far side; 2-butene's methyl groups condensed */
-    const A = m.m3.atoms, atoms = [], idx = {}, bonds = [];
-    const isMethyl = (i) => A[i].el === 'C' && m.g3.B.filter(([a, b]) => a === i || b === i).length === 1 && m.g3.B.every(([a, b, o]) => !((a === i || b === i) && o === 2));
-    A.forEach((t, i) => {
-      if (t.el !== 'C') return;
-      idx[i] = atoms.length; atoms.push({ s: m.cond2 && isMethyl(i) ? 'CH_{3}' : 'C', x: t.p[0], y: -t.p[1] });
+  /* ---------- the two models under it ---------- */
+  const RB = { C: 0.36, H: 0.24 }, RF = { C: 1.6, H: 1.1 }, PX = 5.5;
+  /* a long lens (14° over 28 units frames what 30° over 13 would), so the two models, off the axis on either side, are seen from nearly the same direction */
+  const v = F.view3d(d.stage, { h: 440, dist: 28, tilt: 0.22, pitch: [-0.6, 0.6] });
+  if (v.scene && v.camera.isPerspectiveCamera) { v.camera.fov = 14; v.camera.updateProjectionMatrix(); }
+  v.setView(-0.25, 0.22);
+  const gB = v.part(-PX), gF = v.part(PX);
+  gB.position.y = gF.position.y = 0.35;
+  let sig = '', fix = null;
+  function build() {
+    const s = mol.value + '|' + palSig(); if (s === sig) return; sig = s;
+    v.clear();
+    const m = MOL[mol.value].m3;
+    m.bonds.forEach(([a, b, o]) => F.mesh.bond(gB, m.atoms[a].p, m.atoms[b].p, o, 0.08));
+    m.atoms.forEach((t) => {
+      v.pickable(F.mesh.sphere(gB, t.p, RB[t.el], F.el(t.el)), `${NAME[t.el]} of ${MOL[mol.value].name}`);
+      v.pickable(F.mesh.sphere(gF, t.p, RF[t.el], F.el(t.el)), `${NAME[t.el]} of ${MOL[mol.value].name}`);
     });
-    m.g3.B.forEach(([a, b, o]) => bonds.push([idx[a], idx[b], o, 3]));
-    A.forEach((t, i) => {
-      if (t.el !== 'H') return;
-      const c = t.on, ci = idx[c];
-      if (m.cond2 && isMethyl(c)) return;
-      if (!isMethyl(c) && Math.abs(t.p[2] - A[c].p[2]) < 0.05) { bonds.push([ci, atoms.length, 1, 3]); atoms.push({ s: 'H', x: t.p[0], y: -t.p[1] }); return; }
-      if (atoms.some((q) => q.h === i)) return;
-      /* sp³ carbon: its hydrogens as the book's cross, opposite and square to its one carbon neighbour */
-      const nb = m.g3.B.filter(([a, b]) => a === c || b === c).map(([a, b]) => (a === c ? b : a));
-      const u = unit(sub(A[nb[0]].p, A[c].p)), mine = A.map((q, j) => (q.el === 'H' && q.on === c ? j : -1)).filter((j) => j >= 0);
-      const dirs = nb.length === 1 ? [[-u[0], -u[1]], [-u[1], u[0]], [u[1], -u[0]]]
-        : (() => { const w = unit(sub(A[nb[1]].p, A[c].p)), mm = unit([-(u[0] + w[0]), -(u[1] + w[1]), 0]); return [-40, 40].map((g) => [mm[0] * Math.cos(g * RAD) - mm[1] * Math.sin(g * RAD), mm[0] * Math.sin(g * RAD) + mm[1] * Math.cos(g * RAD)]); })();
-      mine.forEach((j, q) => { const v = dirs[q]; bonds.push([ci, atoms.length, 1, 3]); atoms.push({ s: 'H', x: A[c].p[0] + v[0] * 1.09, y: -A[c].p[1] - v[1] * 1.09, h: j }); });
-    });
-    const xs = atoms.map((t) => t.x), ys = atoms.map((t) => t.y), ox = (Math.min(...xs) + Math.max(...xs)) / 2, oy = (Math.min(...ys) + Math.max(...ys)) / 2;
-    atoms.forEach((t) => { t.x = CX + (t.x - ox) * S2; t.y = CY + (t.y - oy) * S2; });
-    return { atoms, bonds };
+    /* each model is scaled to fill its own half of the stage as it turns, as the book draws the two at different sizes */
+    const fit = (R) => Math.min(4.3 / Math.max(...m.atoms.map((t) => Math.hypot(t.p[0], t.p[2]) + R[t.el])), 2.15 / Math.max(...m.atoms.map((t) => Math.hypot(t.p[1], t.p[2]) + R[t.el])));
+    gB.scale.setScalar(Math.min(1.9, fit(RB))); gF.scale.setScalar(fit(RF));
+    if (!fix) { fix = new window.THREE.Group(); v.scene.add(fix); }
+    v.label('ball-and-stick model', [-PX, -3.1, 0], fix); v.label('space-filling model', [PX, -3.1, 0], fix);
   }
-  const NAME = { C: 'carbon atom', H: 'hydrogen atom' };
-  function draw2d() {
+  function draw() {
     const { ctx } = begin(d.c); hits = [];
     headline(ctx, MOL[mol.value].head);
     KEYS.forEach((k) => mol.only(ctx, k, () => {
-      const L = lewisOf(k); lewis(ctx, L.atoms, L.bonds);
-      if (k === mol.value) L.atoms.forEach((t) => hits.push({ x: t.x, y: t.y, r: 20, name: `${t.s === 'H' ? NAME.H : t.s === 'C' ? NAME.C : 'methyl group, CH₃'} of ${MOL[k].name}` }));
+      const L = lewisOf(MOL[k], CX, TOP, BOT, 64); lewis(ctx, L.atoms, L.bonds, { size: 28 });
+      if (k === mol.value) L.atoms.forEach((t) => hits.push({ x: t.x, y: t.y, r: 20, name: `${NAME[t.s] ?? 'methyl group, CH₃'} of ${MOL[k].name}` }));
     }, [0, 10]));
-  }
-
-  /* ---------- the models ---------- */
-  const RB = { C: 0.36, H: 0.24 }, RF = { C: 1.55, H: 1.1 };
-  let g = null;
-  function mount() {
-    const v = F.view3d(d.stage, { h: H, dist: 15, tilt: 0.12, spin: 'idle', pitch: [-1.4, 1.4], yaw: 'free', zoomMin: 0.6, zoomMax: 2.4,
-      views: [{ label: 'front', yaw: 0, pitch: 0 }, { label: 'end on', yaw: Math.PI / 2, pitch: 0.12 }] });
-    g = v.part(0); g.position.y = -0.55; return v;
-  }
-  function draw3d(v) {
-    if (!v.scene) return;
-    v.clear();
-    const m = MOL[mol.value].m3, from = model.from === 'lewis' ? model.value : model.from;
-    const k = model.k >= 1 || from === model.value ? (model.value === 'fill' ? 1 : 0) : lerp(from === 'fill' ? 1 : 0, model.value === 'fill' ? 1 : 0, model.k);
-    m.atoms.forEach((t, i) => v.pickable(F.mesh.sphere(g, t.p, lerp(RB[t.el], RF[t.el], k), F.el(t.el)), `${NAME[t.el]} of ${MOL[mol.value].name}`));
-    if (k < 0.92) m.bonds.forEach(([a, b, o]) => F.mesh.bond(g, m.atoms[a].p, m.atoms[b].p, o, 0.09 * (1 - k), PAL.muted));
-    v.headline(MOL[mol.value].head);
-    v.invalidate();
-  }
-  const V = views(d, () => model.value !== 'lewis', mount, draw);
-  function draw() {
-    if (model.value !== 'lewis' && V.v) draw3d(V.v); else draw2d();
+    text(ctx, 'Lewis structure', 150, (TOP + BOT) / 2, PAL.muted, { size: 22, align: 'center' });
+    F.legend(ctx, { l: 1090, r: 1360, t: TOP, b: BOT }, ['C', 'H'].map((s) => ({ s: NAME[s], draw: (c, x, y) => atom(c, x, y, s, 12) })), { corner: 'tl', size: 22 });
     const m = MOL[mol.value];
     tex(d.readout, m.kind === 'alkane'
-      ? `${m.cond === m.mf ? m.mf : `${m.cond}\\;:\\;${m.mf}`} = \\text{C}_{n}\\text{H}_{2n+2},\\quad n = ${m.n}`
-      : `${m.cond}\\;:\\;${m.mf}`);
+      ? `\\text{${m.name}: } ${m.cond === m.mf ? m.mf : `${m.cond}\\ \\text{or}\\ ${m.mf}`} \\\\ \\text{C}_{n}\\text{H}_{2n+2} = \\text{C}_{${m.n}}\\text{H}_{2(${m.n})+2} = ${m.mf}`
+      : `\\text{${m.name}: } ${m.cond}\\ \\text{or}\\ ${m.mf}`);
+    if (!v.scene) return;
+    build();
+    v.invalidate();
+  }
+  still(d, draw);
+})();
+
+/* =====================================================================
+   FIGURE 20.10: why 2-butene has a cis and a trans isomer and n-butane
+   has neither. One four-carbon chain; the reader twists its right half
+   about the bond between carbon atoms 2 and 3. Where that bond is single
+   the chain turns freely and every shape is n-butane. Where it is double,
+   the unhybridized p orbital of each sp² carbon atom is drawn: side by
+   side at 0° (cis) and 180° (trans) they overlap as the π bond, and at
+   any angle between they are out of line and the π bond is broken, which
+   is why the double bond is rigid. The strip holds the book's 120°
+   drawings of the two isomers, the one the model shows in full ink.
+   Still: the twist is the reader's. Physical 3D with a mathematical layer
+   (the p lobes, ink); orbit free about the vertical, tilt within 0.7 rad
+   so the chain stays level; idle spin.
+   C–C 1.54 Å, C=C 1.34 Å, =C–CH₃ 1.50 Å, C–H 1.09 Å.
+===================================================================== */
+(function () {
+  const H = 290, d = sim('sim-geometric-isomers', H);
+  const bond = F.choice(d.controls, { label: '\\text{bond 2–3}', key: 'bond', aria: 'the bond between carbon atoms 2 and 3', value: 'double',
+    options: [{ value: 'double', label: 'double, 2-butene' }, { value: 'single', label: 'single, $n$-butane' }] });
+  const dbl = () => bond.value === 'double';
+  const tw = F.ctl(d.controls, { label: '\\text{twist}', cls: 'angle', key: 'twist', min: 0, max: 360, step: 5, value: 0, unit: '°', dec: 0, fmt: (x) => `${Math.round(x)}°`,
+    aria: 'twist of the right half about the bond between carbon atoms 2 and 3',
+    specials: [{ at: () => (dbl() ? 0 : null), label: 'cis' }, { at: () => (dbl() ? 180 : null), label: 'trans' }, { at: () => (dbl() ? 360 : null), label: 'cis' }] });
+  let hits = []; F.hover(d.stage, () => hits);
+  /* carbon atoms 1 to 4 with the 2–3 bond along x, its midpoint the origin; the right half turned about x by th.
+     At 0 carbon atoms 1 and 4 lie on the same side. */
+  function chain(kind, th) {
+    const L = kind === 'double' ? D2 : 1.54, l = kind === 'double' ? 1.5 : 1.54, a = (kind === 'double' ? 60 : 180 - TET / RAD) * RAD;
+    const c2 = [-L / 2, 0, 0], c3 = [L / 2, 0, 0], c = Math.cos(th), s = Math.sin(th);
+    const c1 = add(c2, mul([-Math.cos(a), -Math.sin(a), 0], l)), c4 = add(c3, mul([Math.cos(a), -Math.sin(a) * c, -Math.sin(a) * s], l));
+    const m = hydrogens([c1, c2, c3, c4], [[0, 1, 1], [1, 2, kind === 'double' ? 2 : 1], [2, 3, 1]]);
+    const o = mul(add(m.atoms[1].p, m.atoms[2].p), 0.5);
+    m.atoms.forEach((t) => { t.p = sub(t.p, o); });
+    return m;
+  }
+  /* the strip's drawings: the book's two isomers at 120°, methyl groups condensed, and n-butane's square Lewis structure */
+  const flat = (th) => { const g3 = { C: [0, 1, 2, 3].map((i) => chain('double', th).atoms[i].p), B: [[0, 1, 1], [1, 2, 2], [2, 3, 1]] }; return { kind: 'alkene', cond2: true, g3, m3: hydrogens(g3.C, g3.B) }; };
+  const CIS = flat(0), TRANS = flat(Math.PI), BUT = { kind: 'alkane', g2: [[0, 0], [1, 0], [2, 0], [3, 0]], m3: hydrogens(zigzag(4), chainBonds(4)) };
+  const TOP = 106, BOT = H - 58;
+  const state = () => { const t = Math.round(tw.v) % 360; return !dbl() ? 'single' : t === 0 ? 'cis' : t === 180 ? 'trans' : 'broken'; };
+  const HEAD = {
+    cis: 'In $cis$-2-butene both methyl groups lie on the same side of the double bond.',
+    trans: 'In $trans$-2-butene the methyl groups lie on opposite sides of the double bond.',
+    broken: 'A double bond is rigid: twisting it turns the two p orbitals out of line and breaks the π bond.',
+    single: 'A single bond turns freely, so every shape of this chain is the same compound, $n$-butane.',
+  };
+
+  const v = F.view3d(d.stage, { spin: 'idle', h: 440, dist: 8.4, tilt: 0.42, pitch: [0, 0.9] });
+  v.setView(-0.5, 0.4);
+  const g = v.part(0);
+  g.rotation.x = -Math.PI / 2;   /* the plane of the double bond lies level, so the p orbitals stand up and the methyl groups of the cis isomer point at the reader */
+  g.position.y = 0.3;
+  let sig = '';
+  function build() {
+    const st = state(), s = [bond.value, tw.v, palSig()].join('|'); if (s === sig) return; sig = s;
+    v.clear();
+    const th = tw.v * RAD, m = chain(bond.value, th), name = dbl() ? '2-butene' : 'n-butane';
+    m.bonds.forEach(([a, b, o]) => F.mesh.bond(g, m.atoms[a].p, m.atoms[b].p, o === 2 && st === 'broken' ? 1 : o, 0.08));
+    m.atoms.forEach((t, i) => v.pickable(F.mesh.sphere(g, t.p, t.el === 'C' ? 0.36 : 0.24, F.el(t.el)), t.el === 'C' ? `carbon atom ${i + 1} of ${name}` : `hydrogen atom on carbon atom ${t.on + 1}`));
+    if (dbl()) {
+      /* each sp² carbon atom's p orbital stands square to the plane of its own three bonds */
+      const n3 = [0, -Math.sin(th), Math.cos(th)];
+      [[1, [0, 0, 1]], [2, n3]].forEach(([i, n]) => [1, -1].forEach((q) => v.pickable(F.mesh.lobe(g, m.atoms[i].p, mul(n, q), 1.15, PAL.ink), `lobe of the p orbital of carbon atom ${i + 1}`)));
+      /* the plane of each sp² carbon atom's three bonds as a faint sheet, so the lobes are seen to stand square to it; the right
+         sheet turns with its half, and the two lie in one plane only at 0° and 180° */
+      const T = window.THREE, c = Math.cos(th), s = Math.sin(th);
+      [[-1, (y) => [y, 0], 2], [1, (y) => [y * c, y * s], 3]].forEach(([sx, yz, k]) => {
+        const P = [[0, -1.75], [2.25 * sx, -1.75], [2.25 * sx, 1.4], [0, 1.4]].map(([x, y]) => [x, ...yz(y)]);
+        const geo = new T.BufferGeometry(); geo.setAttribute('position', new T.Float32BufferAttribute([P[0], P[1], P[2], P[0], P[2], P[3]].flat(), 3)); geo.computeVertexNormals();
+        const sheet = new T.Mesh(geo, F.mesh.mat(PAL.ink, { transparent: true, opacity: 0.13, depthWrite: false, side: T.DoubleSide }));
+        g.add(sheet); v.pickable(sheet, `plane of the three bonds of carbon atom ${k}`);
+      });
+    }
+  }
+  function draw() {
+    const { ctx } = begin(d.c); hits = [];
+    const st = state();
+    headline(ctx, HEAD[st]);
+    const show = (m, cx, a, label, nm) => {
+      ctx.save(); ctx.globalAlpha *= a;
+      const L = lewisOf(m, cx, TOP, BOT, 56); lewis(ctx, L.atoms, L.bonds, { size: 28 });
+      text(ctx, label, cx, H - 16, PAL.ink, { size: 22, align: 'center' });
+      ctx.restore();
+      if (a > 0.9) L.atoms.forEach((t) => hits.push({ x: t.x, y: t.y, r: 20, name: `${NAME[t.s] ?? 'methyl group, CH₃'} of ${nm}` }));
+    };
+    bond.only(ctx, 'double', () => {
+      show(CIS, 470, st === 'cis' ? 1 : 0.3, 'cis isomer, twist 0°', 'cis-2-butene');
+      show(TRANS, 930, st === 'trans' ? 1 : 0.3, 'trans isomer, twist 180°', 'trans-2-butene');
+    }, [0, 10]);
+    bond.only(ctx, 'single', () => show(BUT, 700, 1, 'n-butane, at every twist', 'n-butane'), [0, 10]);
+    const ang = hue('angle', `${Math.round(tw.v)}^\\circ`);
+    tex(d.readout, st === 'single' ? `\\text{twist} = ${ang}:\\ \\text{CH}_3\\text{CH}_2\\text{CH}_2\\text{CH}_3,\\ n\\text{-butane}`
+      : st === 'broken' ? `\\text{twist} = ${ang}:\\ \\pi\\ \\text{bond broken, neither isomer}`
+      : `\\text{twist} = ${ang}:\\ \\text{CH}_3\\text{CH}{=}\\text{CHCH}_3,\\ \\textit{${st}}\\text{-2-butene}`);
+    if (!v.scene) return;
+    build();
+    v.invalidate();
   }
   still(d, draw);
 })();
@@ -258,15 +343,18 @@ function views(d, three, mount, draw) {
    the zigzag. Still: three drawings of one molecule, no clock.
 ===================================================================== */
 (function () {
-  const H = 470, d = sim('sim-line-structures', H);
+  const H = 560, d = sim('sim-line-structures', H);
   /* main chain C1 to C6 left to right; C7 the methyl group above C2; C8 and C9 the ethyl group below C3 */
   const CS = [[0, 0], [1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [1, -1], [2, 1], [2, 2]];
   const CC = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [1, 6], [2, 7], [7, 8]];
   const G = grid(CS, CC);
-  /* the skeletal structure at 120° bends, 100 units a bond: the main chain zigzags, the methyl group stands up from carbon 2, the ethyl group hangs from carbon 3 */
-  const BX = 100 * Math.cos(30 * RAD), BY = 25;
+  /* the expanded formula as the book draws it: the methyl group stands above carbon 2 and the ethyl group hangs below carbon 3 on
+     long bonds, so their hydrogen atoms stay clear of the chain's; the hydrogen atoms come in the same order as in G */
+  const GE = grid([[0, 0], [1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [1, -2], [2, 2], [2, 3]], CC);
+  /* the skeletal structure at 120° bends, 120 units a bond: the main chain zigzags, the methyl group stands up from carbon 2, the ethyl group hangs from carbon 3 */
+  const SL = 120, BX = SL * Math.cos(30 * RAD), BY = SL / 4;
   const SKEL = [0, 1, 2, 3, 4, 5].map((i) => [i * BX, i % 2 ? -BY : BY]);
-  SKEL.push([SKEL[1][0], SKEL[1][1] - 100], [SKEL[2][0], SKEL[2][1] + 100], [SKEL[2][0] + BX, SKEL[2][1] + 150]);
+  SKEL.push([SKEL[1][0], SKEL[1][1] - SL], [SKEL[2][0], SKEL[2][1] + SL], [SKEL[2][0] + BX, SKEL[2][1] + 1.5 * SL]);
   const nH = CS.map((_, i) => G.hs[i].length);
   const LABEL = nH.map((n) => (n === 0 ? 'C' : n === 1 ? 'CH' : `CH_{${n}}`));
   const REP = ['expanded', 'condensed', 'skeletal'];
@@ -278,7 +366,7 @@ function views(d, three, mount, draw) {
     skeletal: 'In the skeletal structure each end or bend of a line is a carbon atom, and its hydrogen atoms are not drawn.',
   };
   let hits = []; F.hover(d.stage, () => hits);
-  const CX = 700, CY = 285;
+  const CX = 700, CY = 318;
   /* each drawing as numbers: per carbon its point and how far its label shows; per hydrogen its point and opacity */
   function state(rep) {
     if (rep === 'skeletal') {
@@ -286,8 +374,8 @@ function views(d, three, mount, draw) {
       const P = SKEL.map(([x, y]) => [CX + x - ox, CY + y - oy]);
       return { c: P.flat(), lab: CS.map(() => 0), cond: CS.map(() => 0), h: G.atoms.filter((t) => t.s === 'H').flatMap((t) => [...P[t.on], 0]) };
     }
-    const sx = rep === 'expanded' ? 70 : 118, sy = rep === 'expanded' ? 62 : 74;
-    const at = G.atoms.map((t) => ({ x: CX + (t.gx - 2.5) * sx, y: CY + (t.gy - 0.5) * sy }));
+    const sx = rep === 'expanded' ? 76 : 150, sy = rep === 'expanded' ? 60 : 96;
+    const at = (rep === 'expanded' ? GE : G).atoms.map((t) => ({ x: CX + (t.gx - 2.5) * sx, y: CY + (t.gy - 0.5) * sy }));
     const C = CS.map((_, i) => [at[i].x, at[i].y]);
     return { c: C.flat(), lab: CS.map(() => 1), cond: CS.map(() => (rep === 'condensed' ? 1 : 0)),
       h: G.atoms.filter((t) => t.s === 'H').flatMap((t, j) => (rep === 'expanded' ? [at[CS.length + j].x, at[CS.length + j].y, 1] : [...C[t.on], 0])) };
@@ -300,7 +388,7 @@ function views(d, three, mount, draw) {
     CS.forEach((_, i) => {
       const x = s.c[2 * i], y = s.c[2 * i + 1];
       atoms.push({ s: '', x, y, g: 0 });
-      hits.push({ x, y, r: 22, name: `carbon atom ${i < 6 ? `${i + 1} of the main chain` : i === 6 ? 'of the methyl group on carbon 2' : 'of the ethyl group on carbon 3'}` });
+      hits.push({ x, y, r: 22, name: `carbon atom ${i < 6 ? `${i + 1} of the main chain` : i === 6 ? 'of the methyl group on carbon 2' : 'of the ethyl group on carbon 3'}, ${LABEL[i].replace(/_\{(\d)\}/, (_, n) => '₀₁₂₃₄'[n])}` });
     });
     G.atoms.slice(nC).forEach((t, j) => atoms.push({ s: 'H', x: s.h[3 * j], y: s.h[3 * j + 1], a: s.h[3 * j + 2] }));
     /* bonds stop short of a label as far as the label shows */
@@ -315,7 +403,9 @@ function views(d, three, mount, draw) {
       if (s.lab[i] * s.cond[i] > 0.01) { ctx.globalAlpha = s.lab[i] * s.cond[i]; text(ctx, LABEL[i], x, y + 1, PAL.ink, { size: 26, weight: 600, align: 'center' }); }
     });
     ctx.restore();
-    tex(d.readout, '\\text{C}_{9}\\text{H}_{20} = \\text{C}_{n}\\text{H}_{2n+2},\\quad n = 9');
+    tex(d.readout, pick.value === 'expanded' ? '\\text{C}_{n}\\text{H}_{2n+2} = \\text{C}_{9}\\text{H}_{2(9)+2} = \\text{C}_{9}\\text{H}_{20}'
+      : pick.value === 'condensed' ? '4\\,\\text{CH}_3 + 3\\,\\text{CH}_2 + 2\\,\\text{CH} = \\text{C}_{9}\\text{H}_{20}'
+      : '4\\ \\text{ends} \\times 3\\ \\text{H} + 3\\ \\text{bends} \\times 2\\ \\text{H} + 2\\ \\text{branch points} \\times 1\\ \\text{H} = 20\\ \\text{H}');
   }
   still(d, draw);
 })();
@@ -328,7 +418,7 @@ function views(d, three, mount, draw) {
    atoms, −200 to 350 °C (the table runs from −187.7 to 316.1 °C).
 ===================================================================== */
 (function () {
-  const H = 640, d = sim('sim-alkane-trend', H);
+  const H = 660, d = sim('sim-alkane-trend', H);
   const T = [
     [1, 'methane', -182.5, -161.5, 'gas'], [2, 'ethane', -183.3, -88.6, 'gas'], [3, 'propane', -187.7, -42.1, 'gas'], [4, 'butane', -138.3, -0.5, 'gas'],
     [5, 'pentane', -129.7, 36.1, 'liquid'], [6, 'hexane', -95.3, 68.7, 'liquid'], [7, 'heptane', -90.6, 98.4, 'liquid'], [8, 'octane', -56.8, 125.7, 'liquid'],
@@ -338,23 +428,27 @@ function views(d, three, mount, draw) {
   const near = (x) => NS.reduce((b, n) => (Math.abs(n - x) < Math.abs(b - x) ? n : b), NS[0]);
   const N = F.ctl(d.controls, { label: '\\text{carbon atoms}', cls: '', key: 'carbons', min: 1, max: 18, step: 1, value: 5, unit: '', dec: 0, aria: 'number of carbon atoms in the chain',
     detents: NS, onInput: () => { const n = near(N.v); if (n !== N.v) N.set(n); } });
-  const box = { l: 170, r: 1320, t: 270, b: 560 };
+  const box = { l: 170, r: 1320, t: 250, b: 580 };
   let hits = []; F.hover(d.stage, () => hits);
   const deg = (v) => `${minus(v.toFixed(1))} °C`;
   function draw() {
     const { ctx } = begin(d.c); hits = [];
     const n = near(N.v), row = T.find((r) => r[0] === n), [, name, mp, bp, phase] = row, cT = C('temperature');
-    const verb = phase === 'gas' ? `boils at ${deg(bp)}, below 0 °C, so it is a gas at STP`
-      : phase === 'liquid' ? `melts at ${deg(mp)} and boils at ${deg(bp)}, either side of 0 °C, so it is a liquid at STP`
-      : `melts at ${deg(mp)}, above 0 °C, so it is a solid at STP`;
-    const lines = headline(ctx, `${name[0].toUpperCase() + name.slice(1)} ${verb}.`);
+    const Name = name[0].toUpperCase() + name.slice(1);
+    const lines = headline(ctx, phase === 'gas' ? `${Name} is a gas at STP: it boils below 0 °C.`
+      : phase === 'liquid' ? `${Name} is a liquid at STP: it melts below 0 °C and boils above it.`
+      : `${Name} is a solid at STP: it melts above 0 °C.`);
     const lab = F.labeller(ctx, H, { headline: lines });
     /* the chain: n carbon atoms zigzagging at 109.5°, its hydrogen atoms left out as a skeletal structure leaves them */
-    const step = Math.min(62, 1080 / Math.max(1, n - 1)), amp = step * 0.36, y0 = 180, x0 = 700 - ((n - 1) * step) / 2;
+    const step = Math.min(110, 1120 / Math.max(1, n - 1)), amp = step * 0.36, y0 = 158, x0 = 700 - ((n - 1) * step) / 2;
     const P = Array.from({ length: n }, (_, i) => [x0 + i * step, y0 + (i % 2 ? -amp : amp)]);
-    P.slice(1).forEach((p, i) => line(ctx, P[i][0], P[i][1], p[0], p[1], PAL.ink, 3));
-    P.forEach(([x, y], i) => { atom(ctx, x, y, 'C', 13); hits.push({ x, y, r: 15, name: `carbon atom ${i + 1} of ${name}` }); });
+    P.slice(1).forEach((p, i) => line(ctx, P[i][0], P[i][1], p[0], p[1], PAL.ink, 4));
+    P.forEach(([x, y], i) => { atom(ctx, x, y, 'C', 17); hits.push({ x, y, r: 19, name: `carbon atom ${i + 1} of ${name}` }); });
     const { X, Y } = F.axes(ctx, box, [0, 19], [-200, 350], { nx: 19, ny: 11, xl: 'number of carbon atoms', yl: 'temperature (°C)', yc: cT, fx: (v) => (v % 2 ? '' : fmt(v, 0)), fy: (v) => minus(fmt(v, 0)) });
+    /* between the two curves an alkane is a liquid; above the boiling points a gas, below the melting points a solid */
+    ctx.save(); ctx.beginPath(); T.forEach((r, i) => (i ? ctx.lineTo(X(r[0]), Y(r[3])) : ctx.moveTo(X(r[0]), Y(r[3])))); [...T].reverse().forEach((r) => ctx.lineTo(X(r[0]), Y(r[2]))); ctx.closePath();
+    ctx.fillStyle = alpha(cT, 0.13); ctx.fill(); ctx.restore();
+    [['gas', 2.6, 190], ['liquid', 12, 120], ['solid', 14.6, -110]].forEach(([s, x, y]) => text(ctx, s, X(x), Y(y), phase === s ? PAL.ink : PAL.muted, { size: 24, weight: phase === s ? 600 : 400, align: 'center' }));
     line(ctx, box.l, Y(0), box.r, Y(0), alpha(PAL.ink, 0.45), 2, [10, 10]);
     lab.add('0 °C, STP', X(16), Y(0), 0, 1, PAL.muted, 18, 12);
     const poly = (k, dash) => { ctx.save(); ctx.strokeStyle = cT; ctx.lineWidth = 4; if (dash) ctx.setLineDash(dash); ctx.beginPath(); T.forEach((r, i) => (i ? ctx.lineTo(X(r[0]), Y(r[k])) : ctx.moveTo(X(r[0]), Y(r[k])))); ctx.stroke(); ctx.restore(); };
@@ -365,312 +459,99 @@ function views(d, three, mount, draw) {
     });
     line(ctx, X(n), box.t, X(n), box.b, alpha(PAL.ink, 0.4), 2, [4, 8]);
     dot(ctx, X(n), Y(bp), cT, true, 10); dot(ctx, X(n), Y(mp), cT, false, 10);
+    dot(ctx, X(n), Y(0), PAL.ink, true, 8); hits.push({ x: X(n), y: Y(0), r: 12, name: `${name} at 0 °C: a ${phase}` });
     lab.add('boiling point', X(18), Y(316.1), -1, -1, cT, 22, 22);
     lab.add('melting point', X(18), Y(28.2), -1, -1, cT, 22, 22);
     lab.flush();
-    const sub = (k) => (k > 1 ? `_{${k}}` : '');
-    tex(d.readout, `\\text{${name}, C}${sub(n)}\\text{H}_{${2 * n + 2}}\\text{:}\\quad \\text{melting point } ${hue('temperature', `${mp.toFixed(1).replace('-', '{-}')}\\ ^\\circ\\text{C}`)},\\quad \\text{boiling point } ${hue('temperature', `${bp.toFixed(1).replace('-', '{-}')}\\ ^\\circ\\text{C}`)}`);
+    const deg2 = (x) => hue('temperature', `${x.toFixed(1).replace('-', '{-}')}\\ ^\\circ\\text{C}`), zero = hue('temperature', '0\\ ^\\circ\\text{C}');
+    const mf = `\\text{C}${n > 1 ? `_{${n}}` : ''}\\text{H}_{${2 * n + 2}}`;
+    tex(d.readout, `\\text{${name}: C}_{n}\\text{H}_{2n+2} = \\text{C}_{${n}}\\text{H}_{2(${n})+2} = ${mf} \\\\ `
+      + (phase === 'gas' ? `\\text{boiling point} = ${deg2(bp)} < ${zero}`
+        : phase === 'liquid' ? `\\text{melting point} = ${deg2(mp)} < ${zero} < ${deg2(bp)} = \\text{boiling point}`
+        : `\\text{melting point} = ${deg2(mp)} > ${zero}`));
   }
   still(d, draw);
 })();
 
 /* =====================================================================
-   FIGURE 20.4 with the book's C4H10 isomers: n-butane drawn four ways,
-   the same atoms sliding from one drawing into the next with every bond
-   kept, and 2-methylpropane beside it, whose central carbon atom bonds
-   to three others. The book's red chain is a heavier stroke in ink.
-   Still: four drawings of one molecule.
+   FIGURE 20.11 with the book's two resonance structures. The strip holds
+   the book's drawings: the two resonance structures and the condensed
+   formula with its circle. Under it the ring turns in three dimensions,
+   flat, with the unhybridized p orbital of each sp² carbon atom standing
+   perpendicular to it, which the book describes and never draws. A choice
+   lets the six p orbitals overlap into the π electron density above and
+   below the ring that all six carbon-carbon bonds share. Still: a molecule
+   has no clock. Free orbit and an idle spin about the ring's axis.
+   C–C 1.39 Å, C–H 1.09 Å.
 ===================================================================== */
 (function () {
-  const H = 460, d = sim('sim-butane-drawings', H);
-  const CC = [[0, 1], [1, 2], [2, 3]];
-  const DRAW = {
-    row: [[0, 0], [1, 0], [2, 0], [3, 0]],
-    up: [[0, -1], [0, 0], [1, 0], [2, 0]],
-    down: [[0, 1], [0, 0], [1, 0], [2, 0]],
-    twice: [[0, -1], [0, 0], [1, 0], [1, 1]],
-  };
+  const H = 300, d = sim('sim-benzene', H);
+  const pick = F.choice(d.controls, { label: '\\text{six } p \\text{ orbitals}', key: 'orbitals', aria: 'the p orbitals apart or overlapping', value: 'p',
+    options: [{ value: 'p', label: 'one on each carbon atom' }, { value: 'pi', label: 'overlapping' }] });
   const HEAD = {
-    row: 'Drawn in a row, $n$-butane is an unbranched chain of four carbon atoms.',
-    up: 'Bent up at one end, the chain still runs through four carbon atoms, none bonded to more than two others.',
-    down: 'Bent down instead, it is the same chain, with the same atoms bonded to the same atoms.',
-    twice: 'Bent at both ends, it is still $n$-butane: an unbranched chain of four carbon atoms.',
+    p: 'Each sp² carbon atom keeps one unhybridized p orbital, perpendicular to the plane of the ring.',
+    pi: 'Overlapping around the ring, the p orbitals share the π electrons among all six bonds.',
   };
-  const pick = F.choice(d.controls, { label: '\\text{n-butane drawn}', key: 'drawing', aria: 'how n-butane is drawn', value: 'row',
-    options: [{ value: 'row', label: 'in a row' }, { value: 'up', label: 'bent up' }, { value: 'down', label: 'bent down' }, { value: 'twice', label: 'bent twice' }] });
-  const U = 64, LX = 440, RX = 1060, CY = 250;
-  const iso = place(grid([[0, 0], [1, 0], [2, 0], [1, -1]], [[0, 1], [1, 2], [1, 3]]), RX, CY, U);
-  const isoB = grid([[0, 0], [1, 0], [2, 0], [1, -1]], [[0, 1], [1, 2], [1, 3]]).bonds;
-  const posOf = (k) => place(grid(DRAW[k], CC), LX, CY, U).flatMap((t) => [t.x, t.y]);
-  const bonds = grid(DRAW.row, CC).bonds;
   let hits = []; F.hover(d.stage, () => hits);
-  function draw() {
-    const { ctx } = begin(d.c); hits = [];
-    headline(ctx, HEAD[pick.value]);
-    const P = pick.mix(posOf), base = grid(DRAW.row, CC).atoms;
-    const atoms = base.map((t, i) => ({ s: t.s, x: P[2 * i], y: P[2 * i + 1] }));
+  /* ---------- the strip: the book's drawings, the ring with a carbon atom at the left and at the right ---------- */
+  const R = 62, RH = 128, CY = 150;
+  const ring = (cx, r) => [0, 60, 120, 180, 240, 300].map((a) => [cx + r * Math.cos(a * RAD), CY - r * Math.sin(a * RAD)]);
+  function resonance(ctx, cx, dbl) {
+    const C = ring(cx, R), Hs = ring(cx, RH), atoms = [], bonds = [];
+    C.forEach(([x, y]) => atoms.push({ s: 'C', x, y }));
+    Hs.forEach(([x, y]) => atoms.push({ s: 'H', x, y }));
+    for (let k = 0; k < 6; k++) bonds.push([k, (k + 1) % 6, dbl.includes(k) ? 2 : 1, 3], [k, k + 6, 1, 3]);
     lewis(ctx, atoms, bonds, { size: 26 });
-    lewis(ctx, iso, isoB, { size: 26 });
-    line(ctx, 750, 110, 750, 400, alpha(PAL.ink, 0.25), 2);
-    text(ctx, 'n-butane', LX, 428, PAL.ink, { size: 22, weight: 600, align: 'center' });
-    text(ctx, '2-methylpropane', RX, 428, PAL.ink, { size: 22, weight: 600, align: 'center' });
-    atoms.forEach((t, i) => hits.push({ x: t.x, y: t.y, r: 20, name: t.s === 'C' ? `carbon atom ${i + 1} of n-butane, bonded to ${i === 0 || i === 3 ? 'one other carbon atom' : 'two other carbon atoms'}` : 'hydrogen atom of n-butane' }));
-    iso.forEach((t, i) => hits.push({ x: t.x, y: t.y, r: 20, name: t.s === 'C' ? `carbon atom of 2-methylpropane, bonded to ${i === 1 ? 'three other carbon atoms' : 'one other carbon atom'}` : 'hydrogen atom of 2-methylpropane' }));
-    tex(d.readout, '\\text{C–C bonds of each carbon atom:}\\quad n\\text{-butane } 1, 2, 2, 1;\\quad \\text{2-methylpropane } 1, 3, 1, 1');
+    atoms.forEach((t, i) => hits.push({ x: t.x, y: t.y, r: 18, name: i < 6 ? 'carbon atom' : 'hydrogen atom' }));
   }
-  still(d, draw);
-})();
-
-/* =====================================================================
-   FIGURE 20.5: the eight alkyl groups of the book's listing. The alkane
-   each comes from is drawn as a Lewis structure with every hydrogen atom
-   in the removed one's environment ringed, the removed one gone and its
-   bond left open; beside it the group in the book's condensed form, its
-   open bond in the same direction. Still: a choice of group, no clock.
-===================================================================== */
-(function () {
-  const H = 460, d = sim('sim-alkyl-groups', H);
-  const PARENT = {
-    methane: { name: 'methane', mf: '\\text{CH}_4', C: [[0, 0]], B: [] },
-    ethane: { name: 'ethane', mf: '\\text{C}_2\\text{H}_6', C: [[0, 0], [1, 0]], B: [[0, 1]] },
-    propane: { name: 'propane', mf: '\\text{C}_3\\text{H}_8', C: [[0, 0], [1, 0], [2, 0]], B: [[0, 1], [1, 2]] },
-    butane: { name: 'butane', mf: '\\text{C}_4\\text{H}_{10}', C: [[0, 0], [1, 0], [2, 0], [3, 0]], B: [[0, 1], [1, 2], [2, 3]] },
-    methylpropane: { name: '2-methylpropane', mf: '\\text{C}_4\\text{H}_{10}', C: [[0, 0], [1, 0], [2, 0], [1, -1]], B: [[0, 1], [1, 2], [1, 3]] },
-  };
-  /* the group: its alkane, the carbon atom that loses a hydrogen atom and which side, and the carbon atoms whose hydrogen atoms share its environment */
-  const GROUP = {
-    methyl: { name: 'methyl', p: 'methane', c: 0, side: [1, 0], eq: [0], mf: '\\text{–CH}_3' },
-    ethyl: { name: 'ethyl', p: 'ethane', c: 1, side: [1, 0], eq: [0, 1], mf: '\\text{–C}_2\\text{H}_5' },
-    npropyl: { name: 'n-propyl', p: 'propane', c: 2, side: [1, 0], eq: [0, 2], mf: '\\text{–C}_3\\text{H}_7' },
-    isopropyl: { name: 'isopropyl', p: 'propane', c: 1, side: [0, -1], eq: [1], mf: '\\text{–C}_3\\text{H}_7' },
-    nbutyl: { name: 'n-butyl', p: 'butane', c: 3, side: [1, 0], eq: [0, 3], mf: '\\text{–C}_4\\text{H}_9' },
-    secbutyl: { name: 'sec-butyl', p: 'butane', c: 2, side: [0, -1], eq: [1, 2], mf: '\\text{–C}_4\\text{H}_9' },
-    isobutyl: { name: 'isobutyl', p: 'methylpropane', c: 2, side: [1, 0], eq: [0, 2, 3], mf: '\\text{–C}_4\\text{H}_9' },
-    tertbutyl: { name: 'tert-butyl', p: 'methylpropane', c: 1, side: [0, 1], eq: [1], mf: '\\text{–C}_4\\text{H}_9' },
-  };
-  const KEYS = Object.keys(GROUP);
-  const pick = F.select(d.controls, { label: '\\text{alkyl group}', key: 'group', aria: 'the alkyl group', value: 'isopropyl',
-    options: KEYS.map((k) => ({ value: k, label: GROUP[k].name })) });
-  const WORD = ['no other carbon atom', 'one other carbon atom', 'two other carbon atoms', 'three other carbon atoms'];
-  const NUM = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
-  const U = 74, LX = 400, RX = 1060, CY = 255;
-  let hits = []; F.hover(d.stage, () => hits);
-  function scene(ctx, k, live) {
-    const gr = GROUP[k], p = PARENT[gr.p], G = grid(p.C, p.B), A = place(G, LX, CY, U);
-    const gone = G.atoms.findIndex((t) => t.s === 'H' && t.on === gr.c && t.side[0] === gr.side[0] && t.side[1] === gr.side[1]);
-    /* the removed hydrogen atom stays as a faint ring where it was, its bond open */
-    lewis(ctx, A.map((t, i) => (i === gone ? { ...t, a: 0.22 } : t)), G.bonds.map((b) => (b[1] === gone ? [b[0], b[1], 1, 3, 0.22] : b)), { size: 26 });
-    const ring = A.filter((t) => t.s === 'H' && gr.eq.includes(t.on));
-    ring.forEach((t) => { ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5; ctx.setLineDash(t === A[gone] ? [5, 5] : []); ctx.beginPath(); ctx.arc(t.x, t.y, 17, 0, TAU); ctx.stroke(); ctx.restore(); });
-    /* the group, condensed: each carbon atom written with the hydrogen atoms it keeps */
-    const left = G.hs.map((h) => h.filter((j) => j !== gone).length), cs = p.C.map(([x, y]) => [x * 1.7, y]);
-    const xs = cs.map((c) => c[0]), ys = cs.map((c) => c[1]), ox = (Math.min(...xs) + Math.max(...xs)) / 2, oy = (Math.min(...ys) + Math.max(...ys)) / 2;
-    const Q = cs.map(([x, y], i) => ({ s: left[i] === 0 ? 'C' : left[i] === 1 ? 'CH' : `CH_{${left[i]}}`, x: RX + (x - ox) * U, y: CY + (y - oy) * U }));
-    const end = { s: '', x: Q[gr.c].x + gr.side[0] * U * 1.1, y: Q[gr.c].y + gr.side[1] * U * 0.95 };
-    lewis(ctx, [...Q, end], [...p.B.map(([a, b]) => [a, b, 1, 3]), [gr.c, Q.length, 1, 3]], { size: 26 });
-    text(ctx, p.name, LX, 430, PAL.ink, { size: 22, weight: 600, align: 'center' });
-    text(ctx, gr.name, RX, 430, PAL.ink, { size: 22, weight: 600, align: 'center' });
-    if (live) {
-      A.forEach((t, i) => hits.push({ x: t.x, y: t.y, r: 20, name: t.s === 'C' ? `carbon atom of ${p.name}` : i === gone ? `the hydrogen atom removed to form the ${gr.name} group` : gr.eq.includes(t.on) ? `a hydrogen atom in the same environment as the removed one` : `a hydrogen atom of ${p.name} in another environment` }));
-      Q.forEach((q) => hits.push({ x: q.x, y: q.y, r: 24, name: `${q.s.replace('_{', '').replace('}', '')} of the ${gr.name} group` }));
-      hits.push({ x: end.x, y: end.y, r: 18, name: 'the open bond, where the group bonds to another atom' });
-    }
+  function draw2d(ctx) {
+    resonance(ctx, 200, [0, 2, 4]);
+    resonance(ctx, 630, [1, 3, 5]);
+    F.arrow(ctx, 372, CY, 458, CY, PAL.ink, 3); F.arrow(ctx, 458, CY, 372, CY, PAL.ink, 3);
+    text(ctx, 'resonance structures', 415, H - 18, PAL.muted, { size: 20, align: 'center' });
+    const C = ring(1080, 78), atoms = C.map(([x, y]) => ({ s: 'CH', x, y }));
+    lewis(ctx, atoms, [0, 1, 2, 3, 4, 5].map((k) => [k, (k + 1) % 6, 1, 3]), { size: 26 });
+    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(1080, CY, 44, 0, TAU); ctx.stroke(); ctx.restore();
+    atoms.forEach((t) => hits.push({ x: t.x, y: t.y, r: 24, name: 'CH group' }));
+    hits.push({ x: 1080, y: CY, r: 36, name: 'circle: six equivalent carbon-carbon bonds' });
+    text(ctx, 'condensed formula', 1080, H - 18, PAL.muted, { size: 20, align: 'center' });
   }
-  function draw() {
-    const { ctx } = begin(d.c); hits = [];
-    const gr = GROUP[pick.value], p = PARENT[gr.p], G = grid(p.C, p.B);
-    const n = G.atoms.filter((t) => t.s === 'H' && gr.eq.includes(t.on)).length;
-    const bonded = p.B.filter(([a, b]) => a === gr.c || b === gr.c).length;
-    headline(ctx, n === 1 ? `Removing the one hydrogen atom of ${p.name}’s central carbon atom, bonded to ${WORD[bonded]}, gives the ${gr.name} group.`
-      : `Removing any one of the ${NUM[n]} ringed hydrogen atoms of ${p.name}, each on a carbon atom bonded to ${WORD[bonded]}, gives the ${gr.name} group.`);
-    F.arrow(ctx, 690, CY, 790, CY, PAL.ink, 4);
-    text(ctx, '− H', 740, CY - 30, PAL.ink, { size: 22, align: 'center' });
-    KEYS.forEach((k) => pick.only(ctx, k, () => scene(ctx, k, k === pick.value), [0, 10]));
-    tex(d.readout, `\\text{${p.name}, }${p.mf}\\;-\\;\\text{H}\\;\\longrightarrow\\;\\text{${gr.name}, }${gr.mf}`);
-  }
-  still(d, draw);
-})();
-
-/* =====================================================================
-   FIGURE 20.6: fractional distillation, the book's cutaway set moving.
-   Crude oil runs into the furnace and, at about 425 °C, into the base of
-   the tower; its molecules, drawn as zigzags of carbon atoms, rise until
-   the tower is cooler than their boiling points, condense on a tray and
-   run off its pipe. The smallest leave at the top as refinery gas; the
-   largest never vaporize and drain from the bottom as residue. The book
-   gives no boiling range for a fraction, so the drawn chain lengths only
-   order the fractions. Moving: a 6 s clock, every path periodic in it.
-===================================================================== */
-(function () {
-  const H = 640, d = sim('sim-fractional-distillation', H);
-  const TL = 560, TR = 780, TT = 92, TB = 600, MX = (TL + TR) / 2;
-  const FR = [
-    { name: 'refinery gas', y: 134, n: 2 }, { name: 'gasoline', y: 192, n: 5 }, { name: 'naphtha', y: 262, n: 7 }, { name: 'kerosene', y: 332, n: 9 },
-    { name: 'diesel oil', y: 402, n: 11 }, { name: 'fuel oil', y: 472, n: 13 }, { name: 'residue', y: 588, n: 16 },
-  ];
-  const TRAYS = [212, 282, 352, 422, 492];
-  const INLET = 540, FUR = { l: 250, r: 420, t: 470, b: 600 };
-  const PX = 900;                                   /* the end of the draw-off pipes */
-  const cy = F.cycle(() => 6, 0);
-  /* a molecule's path: in from the crude oil pipe, through the furnace, into the tower, up (or down) to its draw-off, out the pipe */
-  function path(c) {
-    const f = FR[c], bottom = c === FR.length - 1;
-    const pts = [[70, 568], [FUR.l, 568], [FUR.r - 20, 540], [TL, INLET], [MX, INLET]];
-    if (bottom) pts.push([MX, f.y - 6], [TR, f.y], [PX, f.y]);
-    else pts.push([MX + (c % 2 ? 26 : -26), (f.y + INLET) / 2], [MX, f.y + 22], [TR - 10, f.y], [PX, f.y]);
-    const seg = pts.slice(1).map((p, i) => Math.hypot(p[0] - pts[i][0], p[1] - pts[i][1]));
-    const total = seg.reduce((a, b) => a + b, 0);
-    const upto = (m) => seg.slice(0, m).reduce((a, b) => a + b, 0) / total;
-    /* where the oil leaves the furnace as vapour, and where the vapour condenses (never, for refinery gas; the residue stays liquid) */
-    return { pts, seg, total, boil: bottom ? 1 : upto(2), cond: c === 0 ? 1 : bottom ? 0 : upto(pts.length - 3) };
-  }
-  const PATHS = FR.map((_, c) => path(c));
-  const at = (P, s) => {
-    let L = s * P.total;
-    for (let i = 0; i < P.seg.length; i++) { if (L <= P.seg[i]) { const k = L / P.seg[i], a = P.pts[i], b = P.pts[i + 1]; return [lerp(a[0], b[0], k), lerp(a[1], b[1], k)]; } L -= P.seg[i]; }
-    return P.pts[P.pts.length - 1];
-  };
-  const MOLS = [];
-  FR.forEach((_, c) => { for (let j = 0; j < 4; j++) MOLS.push({ c, ph: (j / 4 + c * 0.137) % 1 }); });
-  let hits = []; F.hover(d.stage, () => hits);
-  function chain(ctx, x, y, n, a) {
-    const s = 7, w = (n - 1) * s;
-    ctx.save(); ctx.globalAlpha *= a;
-    for (let i = 0; i < n; i++) {
-      const px = x - w / 2 + i * s, py = y + (i % 2 ? -3 : 3);
-      if (i) line(ctx, px - s, y + ((i - 1) % 2 ? -3 : 3), px, py, PAL.ink, 1.5);
-    }
-    for (let i = 0; i < n; i++) atom(ctx, x - w / 2 + i * s, y + (i % 2 ? -3 : 3), 'C', 3.6);
-    ctx.restore();
-  }
-  function draw() {
-    const { ctx } = begin(d.c); hits = [];
-    const cT = C('temperature'), t = cy.now() / 6;
-    headline(ctx, 'Small molecules rise high before they condense; large ones condense low or never vaporize.');
-    /* the crude oil pipe, the furnace and the pipe into the tower */
-    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5;
-    ctx.strokeRect(FUR.l, FUR.t, FUR.r - FUR.l, FUR.b - FUR.t);
-    [[40, 560, FUR.l, 560], [40, 576, FUR.l, 576], [FUR.r, 532, TL, 532], [FUR.r, 548, TL, 548]].forEach(([a, b, c2, e]) => line(ctx, a, b, c2, e, PAL.ink, 2.5));
-    ctx.restore();
-    text(ctx, 'furnace', (FUR.l + FUR.r) / 2, FUR.t - 46, PAL.ink, { size: 20, weight: 600, align: 'center' });
-    text(ctx, 'about 425 °C', (FUR.l + FUR.r) / 2, FUR.t - 20, cT, { size: 20, weight: 600, align: 'center' });
-    text(ctx, 'crude oil', 50, 535, PAL.ink, { size: 20, weight: 600 });
-    /* the tower, its trays with bubble caps, and the draw-off pipes */
-    ctx.save(); ctx.fillStyle = PAL.panel; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3;
-    ctx.beginPath(); ctx.moveTo(TL, TB); ctx.lineTo(TL, TT + 30); ctx.quadraticCurveTo(TL, TT, MX, TT); ctx.quadraticCurveTo(TR, TT, TR, TT + 30); ctx.lineTo(TR, TB); ctx.closePath(); ctx.stroke(); ctx.restore();
-    TRAYS.forEach((y) => {
-      line(ctx, TL, y, TR, y, PAL.ink, 2.5);
-      [TL + 45, MX, TR - 45].forEach((x) => { ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(x, y - 2, 11, Math.PI, TAU); ctx.stroke(); ctx.restore(); });
-    });
-    FR.forEach((f) => {
-      line(ctx, TR, f.y - 8, PX, f.y - 8, PAL.ink, 2.5); line(ctx, TR, f.y + 8, PX, f.y + 8, PAL.ink, 2.5);
-      text(ctx, f.name, PX + 14, f.y, PAL.ink, { size: 20, weight: 600 });
-      hits.push({ x: PX - 30, y: f.y, r: 16, name: `the pipe that draws off the ${f.name}` });
-    });
-    hits.push({ x: (FUR.l + FUR.r) / 2, y: (FUR.t + FUR.b) / 2, r: 60, name: 'the furnace, where crude oil is heated to about 425 °C' });
-    /* the book's double arrow beside the tower, drawn on the temperature hue: strongest where the tower is hottest */
-    const BX = 1110, BT = 150, BB = 560;
-    const grad = ctx.createLinearGradient(0, BT, 0, BB); grad.addColorStop(0, alpha(cT, 0.12)); grad.addColorStop(1, alpha(cT, 0.85));
-    ctx.save(); ctx.fillStyle = grad; ctx.fillRect(BX - 9, BT, 18, BB - BT); ctx.restore();
-    text(ctx, 'cooler', BX, BT - 18, PAL.ink, { size: 18, align: 'center' });
-    text(ctx, 'hotter', BX, BB + 22, PAL.ink, { size: 18, align: 'center' });
-    [['Small molecules:', 'low boiling point,', 'very volatile, flows easily,', 'ignites easily'], ['Large molecules:', 'high boiling point,', 'not very volatile, does not', 'flow easily, does not', 'ignite easily']].forEach((ls, i) => {
-      const y0 = i ? 430 : 170;
-      ls.forEach((s, j) => text(ctx, s, BX + 30, y0 + j * 26, PAL.ink, { size: 18, weight: j ? 400 : 600 }));
-    });
-    /* the molecules: vapour as a bare chain, condensed liquid on a faint drop */
-    MOLS.forEach((m) => {
-      const P = PATHS[m.c], s = (t + m.ph) % 1, [x, y] = at(P, s), n = FR[m.c].n;
-      const a = Math.min(1, s / 0.04, (1 - s) / 0.05);
-      if (s < P.boil || s > P.cond) { ctx.save(); ctx.globalAlpha = a; ctx.fillStyle = alpha(PAL.ink, 0.12); ctx.beginPath(); ctx.ellipse(x, y, n * 3.5 + 6, 10, 0, 0, TAU); ctx.fill(); ctx.restore(); }
-      chain(ctx, x, y, n, a);
-      hits.push({ x, y, r: n * 3.5 + 6, name: `a molecule of the ${FR[m.c].name}` });
-    });
-    tex(d.readout, '\\text{boiling point:}\\quad \\text{refinery gas} < \\text{gasoline} < \\text{naphtha} < \\text{kerosene} < \\text{diesel oil} < \\text{fuel oil} < \\text{residue}');
-  }
-  register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
-})();
-
-/* =====================================================================
-   FIGURE 20.11 with the book's two resonance structures: the double
-   bonds slide round the ring from one resonance structure to the other,
-   and at the third choice open into the circle. Built both ways (the
-   book's rule): the flat Lewis drawing by default, and a ball-and-stick
-   ring with the six unhybridized p orbitals above and below its plane,
-   mounted on the first switch. Still: three structures, no clock.
-===================================================================== */
-(function () {
-  const H = 500, d = sim('sim-benzene', H);
-  const pick = F.choice(d.controls, { label: '\\text{structure}', key: 'structure', aria: 'the structure of benzene', value: 'form1',
-    options: [{ value: 'form1', label: 'resonance 1' }, { value: 'form2', label: 'resonance 2' }, { value: 'circle', label: 'delocalized' }], onInput: () => V.show() });
-  const VIEW = F.choice(d.controls, { label: '\\text{view}', options: VIEWS, value: '2d', aria: 'a flat drawing or a scene to turn', ms: 0, onInput: () => V.show() });
-  const HEAD = {
-    form1: 'In one resonance structure, three double bonds alternate with three single bonds around the ring.',
-    form2: 'In the other, each double bond has moved to the next pair of carbon atoms.',
-    circle: 'The six carbon-carbon bonds are equivalent, each between a single and a double bond, and the circle shows it.',
-  };
-  /* the state as numbers: the angle of the first double bond's midpoint and how far the three have opened into the circle */
-  const ST = { form1: { base: 120, arc: 0 }, form2: { base: 180, arc: 0 }, circle: { base: 150, arc: 1 } };
-  let hits = []; F.hover(d.stage, () => (VIEW.value === '2d' ? hits : []));
-  const CX = 700, CY = 300, R = 96, RH = 166;
-  function draw2d() {
-    const { ctx } = begin(d.c); hits = [];
-    headline(ctx, HEAD[pick.value]);
-    const s = pick.mix((v) => ST[v]);
-    const atoms = [], bonds = [];
-    for (let k = 0; k < 6; k++) { const a = (90 + 60 * k) * RAD; atoms.push({ s: 'C', x: CX + R * Math.cos(a), y: CY - R * Math.sin(a) }); }
-    for (let k = 0; k < 6; k++) { const a = (90 + 60 * k) * RAD; atoms.push({ s: 'H', x: CX + RH * Math.cos(a), y: CY - RH * Math.sin(a) }); bonds.push([k, (k + 1) % 6, 1, 3], [k, k + 6, 1, 3]); }
-    lewis(ctx, atoms, bonds, { size: 28 });
-    /* the three second lines: a chord inside a bond, bending into a third of the circle */
-    for (let j = 0; j < 3; j++) {
-      const mid = s.base + 120 * j, pts = [];
-      for (let i = 0; i <= 24; i++) {
-        const q = i / 24;
-        const ch = (() => { const a1 = (mid - 21) * RAD, a2 = (mid + 21) * RAD, r = 76; return [lerp(r * Math.cos(a1), r * Math.cos(a2), q), lerp(r * Math.sin(a1), r * Math.sin(a2), q)]; })();
-        const ar = (() => { const a = (mid - 60 + 120 * q) * RAD, r = 58; return [r * Math.cos(a), r * Math.sin(a)]; })();
-        pts.push([CX + lerp(ch[0], ar[0], s.arc), CY - lerp(ch[1], ar[1], s.arc)]);
-      }
-      ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.beginPath(); pts.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y))); ctx.stroke(); ctx.restore();
-    }
-    atoms.forEach((t, i) => hits.push({ x: t.x, y: t.y, r: 22, name: i < 6 ? 'carbon atom, sp² hybridized' : 'hydrogen atom' }));
-  }
-  /* ---------- the ring in three dimensions ---------- */
-  let g = null;
-  function mount() {
-    const v = F.view3d(d.stage, { h: H, dist: 15.5, tilt: 0.35, spin: 'idle', pitch: [-1.5, 1.5], yaw: 'free', zoomMin: 0.6, zoomMax: 2.4,
-      views: [{ label: 'face on', yaw: 0, pitch: 0 }, { label: 'edge on', yaw: 0, pitch: 1.5 }] });
-    g = v.part(0); g.position.y = -0.5; return v;
-  }
-  function draw3d(v) {
-    if (!v.scene) return;
+  /* ---------- the ring in three dimensions, lying flat ---------- */
+  const v = F.view3d(d.stage, { spin: 'idle', h: 460, dist: 9.6, tilt: 0.55, pitch: [0.15, 1.2] });
+  v.setView(0.3, 0.55);
+  const g = v.part(0);
+  g.position.y = -0.25;
+  let sig = '', lobes = null, cloud = null;
+  function build() {
+    const s = palSig(); if (s === sig) return; sig = s;
     v.clear();
-    const RC = 1.39, RHH = 2.48, Cs = [], Hs = [];
-    for (let k = 0; k < 6; k++) { const a = (90 + 60 * k) * RAD; Cs.push([RC * Math.cos(a), RC * Math.sin(a), 0]); Hs.push([RHH * Math.cos(a), RHH * Math.sin(a), 0]); }
-    const st = pick.value;
-    Cs.forEach((p, k) => {
-      v.pickable(F.mesh.sphere(g, p, 0.34, F.el('C')), 'carbon atom, sp² hybridized');
-      v.pickable(F.mesh.sphere(g, Hs[k], 0.24, F.el('H')), 'hydrogen atom');
-      F.mesh.bond(g, p, Hs[k], 1, 0.08, PAL.muted);
-      const dbl = st === 'form1' ? k % 2 === 0 : st === 'form2' ? k % 2 === 1 : false;
-      F.mesh.bond(g, p, Cs[(k + 1) % 6], dbl ? 2 : 1, 0.08, PAL.muted);
-      [[0, 0, 1], [0, 0, -1]].forEach((u) => v.pickable(F.mesh.lobe(g, p, u, 1.0, PAL.ink), 'a lobe of an unhybridized p orbital, perpendicular to the ring'));
-    });
-    if (st === 'circle') {
-      const T3 = window.THREE;
-      [0.85, -0.85].forEach((z) => {
-        const m = new T3.Mesh(new T3.TorusGeometry(RC, 0.2, 12, 60), F.mesh.mat(PAL.ink, { transparent: true, opacity: 0.32 }));
-        m.position.set(0, 0, z); g.add(m); v.pickable(m, `the delocalized π electrons, ${z > 0 ? 'above' : 'below'} the ring`);
-      });
+    const T = window.THREE, RC = 1.39, RHH = 2.48, at = (r, k) => [r * Math.cos(k * Math.PI / 3), 0, r * Math.sin(k * Math.PI / 3)];
+    lobes = new T.Group(); cloud = new T.Group(); g.add(lobes); g.add(cloud);
+    for (let k = 0; k < 6; k++) {
+      const c = at(RC, k), h = at(RHH, k);
+      v.pickable(F.mesh.sphere(g, c, 0.34, F.el('C')), 'carbon atom, sp² hybridized');
+      v.pickable(F.mesh.sphere(g, h, 0.24, F.el('H')), 'hydrogen atom');
+      F.mesh.bond(g, c, h, 1, 0.08); F.mesh.bond(g, c, at(RC, k + 1), 1, 0.08);
+      [[0, 1, 0], [0, -1, 0]].forEach((u) => v.pickable(F.mesh.lobe(lobes, c, u, 0.95, PAL.ink), 'lobe of an unhybridized p orbital'));
     }
-    v.headline(HEAD[st]);
-    v.invalidate();
+    [0.78, -0.78].forEach((y) => {
+      const m = new T.Mesh(new T.TorusGeometry(RC, 0.3, 16, 72), F.mesh.mat(PAL.ink, { transparent: true, opacity: 0.25, depthWrite: false }));
+      m.rotation.x = Math.PI / 2; m.position.set(0, y, 0); cloud.add(m); v.pickable(m, `π electrons, ${y > 0 ? 'above' : 'below'} the ring`);
+    });
   }
-  const V = views(d, () => VIEW.value === '3d', mount, draw);
   function draw() {
-    if (VIEW.value === '3d' && V.v) draw3d(V.v); else draw2d();
-    tex(d.readout, pick.value === 'circle'
-      ? '\\text{C}_6\\text{H}_6\\text{:}\\quad 6\\ \\text{equivalent C–C bonds, each between a single and a double bond}'
-      : '\\text{C}_6\\text{H}_6\\text{:}\\quad 3\\ \\text{C–C single bonds} + 3\\ \\text{C=C double bonds}');
+    const { ctx } = begin(d.c); hits = [];
+    draw2d(ctx);
+    tex(d.readout, pick.value === 'p'
+      ? '4\\ \\text{valence electrons per carbon atom} = 3\\ \\text{in } sp^{2}\\ (\\sigma\\ \\text{bonds}) + 1\\ \\text{in } p\\ (\\pi\\ \\text{bonds})'
+      : '6 \\times 1 = 6\\ \\pi\\ \\text{electrons, shared by all six carbon-carbon bonds}');
+    if (!v.scene) return;
+    build();
+    const k = pick.mix((x) => (x === 'pi' ? 1 : 0));
+    F.fade3(lobes, 1 - k); F.fade3(cloud, k);
+    lobes.visible = k < 0.99; cloud.visible = k > 0.01;
+    v.headline(HEAD[pick.value]);
+    v.invalidate();
   }
   still(d, draw);
 })();

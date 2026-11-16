@@ -22,6 +22,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-fable-5-2",
+    "effort": "high"
    }
   ]
  },
@@ -35,7 +39,8 @@
    "draws": [
     "concentration",
     "equilibrium-constant",
-    "rate"
+    "rate",
+    "temperature"
    ],
    "conventions": [
     "H",
@@ -48,6 +53,14 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt flat: vessel and piston, graph beside; one stress select"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "Q_c and K_c graphed under the concentrations; units in the readout"
     }
    ]
   },
@@ -73,13 +86,24 @@
    ],
    "original_caption": "Reaction diagrams for an elementary process in the absence (red) and presence (blue) of a catalyst. The presence of catalyst lowers the activation energies of both the forward and reverse reactions but does not affect the value of the equilibrium constant.",
    "draws": [
-    "energy"
+    "energy",
+    "rate-constant",
+    "equilibrium-constant",
+    "temperature"
    ],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "brackets carry values, F.legend, wider; caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: k_f and k_r on a log axis under the diagram, K the span between"
     }
    ]
   },
@@ -92,7 +116,9 @@
    ],
    "original_caption": "The figure shows a typical industrial setup for the commercial production of ammonia by the Haber-Bosch process. The process operates under conditions that stress the chemical equilibrium to favor product formation.",
    "draws": [
-    "energy"
+    "energy",
+    "pressure",
+    "temperature"
    ],
    "conventions": [
     "N",
@@ -104,6 +130,14 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "chamber and catalyst labels fixed, F.legend; caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt from the image: vessels in section, each molecule tracked round"
     }
    ]
   }

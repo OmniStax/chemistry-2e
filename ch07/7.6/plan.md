@@ -550,3 +550,144 @@ Judged against `docs/prompts/manim-style.md`; only the figures below changed.
 ### Applied by the chapter pass of 2026-09-28
 
 The optional edge `bond-angle-and-bond-distance` → `covalent-bond-formation` is merged, since a bond distance is the length of the bond 7.2 forms. The figures of 7.6 are untouched.
+
+## Figure re-examination, 2026-11-14 (Claude Fable 5.2)
+
+Every drawn figure was judged against the book's image, opened beside its
+screenshot. The lines below replace the plan lines above for the figures
+they name; what the earlier passes say about `viewer()`, snap-to-view
+buttons, the Labels choice and the sliders no longer holds.
+
+Common to every 3D figure now: an `F.view3d` stage with the idle spin and
+its one button, no view buttons (26.2), free orbit (a molecule has no
+ground). Nothing is written on an atom: elements, E, X and the lone pair
+are named in an `F.legend` row under the scene and under the pointer, and
+a number or name that belongs to one place stands outside it, set after
+each frame on the line from the molecule's centre through that place
+(`stage3().out`). Stages are 500 to 700 units tall so the model fills them.
+
+Reverted to the book's image (a still redraw that was restyled, not
+better, and in several cases wrong against the image):
+
+- Lewis structures, decided as one kind: `fig-bef2` (7.15; the redraw had
+  lost the arrowheads of the 180° mark), `fig-lewis-co2`, `fig-lewis-bcl3`
+  (drawn as a Y where the book draws a T), `fig-lewis-nh4`, `fig-lewis-h2o`
+  (mirrored), `fig-lewis-sf4`, `fig-lewis-xef4` (drawn as an X; the book's
+  is not), `fig-lewis-glycine` (bonds re-angled). Lewis structures are flat
+  by the book's rule and a redraw adds nothing.
+- Wedge-and-dash and vector sketches, one kind: `fig-bcl3` (7.21; the
+  redraw had no wedge or dash at all), `fig-ammonium` (7.22),
+  `fig-glycine-3d`, `fig-ocs`, `fig-chloromethane`, `fig-h2s-nh3` (both
+  molecules re-angled). The bench of 7.16 shows the two shapes in 3D and
+  the bench of 7.26 shows OCS, CH₃Cl, H₂S and NH₃ with their moments.
+- `sim-formaldehyde` (7.14): formaldehyde is planar, and the book's drawing
+  shows its angle and its bond length exactly, with a ball-and-stick model
+  beside it. Turning a flat molecule showed nothing more (28.5); the
+  "angle a flat drawing would show" was not the passage's idea.
+
+Rebuilt or fixed:
+
+1. `sim-vsepr` · Figure 7.16 + 7.19 + 7.20 · electron-pair-geometry,
+   molecular-structure-versus-electron-pair-geometry,
+   axial-and-equatorial-positions, predict-molecular-structure · value add:
+   depth and variation (every cell of the book's two tables as one solid) ·
+   arrows: none · still, a 0.9 s morph on a change · choices: regions 2 to
+   6, lone pairs 0 to the book's maximum for that count (the options follow
+   the count); a dropdown for where ClF₃'s two lone pairs sit, present only
+   at five regions and two lone pairs · headline: "Four regions of electron
+   density, one of them a lone pair: the electron-pair geometry is
+   tetrahedral and the molecular structure is trigonal pyramidal, as in
+   NH₃." · no graph · 3D physical, free orbit, idle spin.
+   works: parts · E at the centre; each region a direction from it, a bond
+   (stick ending in X) or a lone pair (lobe on E) · flow · none · must hold
+   · the sites are the five ideal geometries; lone pairs take equatorial
+   sites at five regions and opposite sites at six; an arc is drawn only
+   between two bonds, never to a lone pair; where lone pairs press on the
+   bonds the bonds are drawn 2 to 3° closer and the arc reads "<", as the
+   book's table does; opposite lone pairs leave 90° and 180° exact; axial
+   and equatorial are named at five regions only · read off the image ·
+   7.16: 180°, 120°, 109.5°, 90° and 120°, 90°. 7.19, by row: linear 180°;
+   trigonal planar 120°, bent <120°; tetrahedral 109°, trigonal pyramid
+   <109°, bent <<109°; trigonal bipyramid 90° and 120°, seesaw <90° and
+   <120°, T-shape <90°, linear 180°; octahedral 90°, square pyramid <90°,
+   square planar 90°, T-shape <90°, linear 180°. The image prints 109° where
+   Figure 7.16 and the text print 109.5°; the figure writes 109.5°. 7.20:
+   (b) both lone pairs equatorial, T-shaped, observed; (c) both axial;
+   (d) one of each. The earlier figure drew its arcs by site number, so
+   some ran to a lone pair, and it labelled every case with the ideal angle.
+2. `sim-domains` · Sim · electron-pair-geometry, vsepr-theory,
+   electron-pair-repulsion-order · value add: motion (the regions arriving
+   at the geometry) · arrows: none · moving, a 5 s run with the transport ·
+   choices: regions 2 to 6; lone pairs 0 to 2, present only at three and
+   four regions, where a plain repulsion puts them right (at five and six it
+   cannot tell an axial site from an equatorial one, checked numerically) ·
+   headline: "The four regions have settled into a tetrahedral arrangement,
+   the nearest of them 109° apart." · graph below: smallest angle against
+   time, 0 to 180°, 0 to 5 s, the ideal dashed · 3D, free orbit, idle spin.
+3. `fig-methane` · Figure 7.17 · molecular-structure-versus-electron-pair-geometry
+   · value add: depth, and variation by turning (what a wedge and a dash
+   stand for) · arrows: none · still, it answers the turn · no controls ·
+   no headline; the key names the three kinds of bond · flat drawing below
+   the model · 3D, free orbit, idle spin: the drawing changing as the model
+   turns is the point.
+   works: parts · C with four H at the corners of a tetrahedron; beneath,
+   the same atoms as letters where the model now shows them · flow · none ·
+   must hold · the drawing is the model's own view at every moment; a bond
+   within 0.28 of its length of the page's plane is a line, one nearer the
+   reader a wedge with its wide end at the H, one farther a row of dashes
+   widening toward the H; the counts in the readout add to four · read off
+   the image · the book's view: H straight up and H down-left as lines, a
+   wedge to H at lower right, dashes to H at right; the scene opens there.
+4. `fig-ammonia`, `fig-water`, `fig-sf4`, `fig-xef4` · Figures 7.18, 7.23,
+   7.24, 7.25 · one kind · value add: depth · arrows: none · still · no
+   controls · no headline; each model is named beneath it · no graph · 3D,
+   free orbit, idle spin. Two models that turn together: left, the regions
+   about the central atom (bonds as sticks, lone pairs as lobes) and the
+   edges of the solid their ends mark, "electron-pair geometry: …"; right,
+   the atoms alone, "molecular structure: …".
+   works: parts · as above · must hold · NH₃: lone pair at one corner, three
+   H 106.8° apart, trigonal pyramidal. H₂O: two lone pairs, H–O–H 104.5°
+   (Example 7.13), bent. SF₄: lone pair equatorial, two axial and two
+   equatorial F, seesaw. XeF₄: lone pairs opposite, four F in a square, 90°
+   · read off the image · 7.18 (a) lobes with "Lone pair", (b) ball and
+   stick, (c) 106.8°; 7.23 to 7.25 a tetrahedron, a trigonal bipyramid and
+   an octahedron with the lone-pair lines in red and the atoms at the other
+   corners. The book's three panels of 7.18 are two here, the angle on the
+   second.
+5. `sim-bond-moments` · Figure 7.26 + 7.27 · bond-dipole-moment,
+   molecular-polarity · value add: depth and variation (the vector sum in
+   space, which a flat page cannot add for NH₃, CH₄ or SF₆) · arrows:
+   symbolic (bond moments) · still · dropdown: the two bonds of 7.26, then
+   CO₂, H₂O (opens here), OCS, CH₃Cl, H₂S, NH₃, BF₃, CH₄, PF₅, SF₆, every
+   one named in the text · headline: the verdict for the molecule · no
+   graph · 3D, two parts turning together: left the molecule with a moment
+   beside each bond, right the same arrows tail to tip and the heavier
+   arrow of their sum.
+   works: parts · each arrow lies beside its bond and parallel to it · must
+   hold · an arrow points to the more electronegative atom, its crossed
+   tail at the other; within one molecule its length follows ΔEN of Figure
+   7.6 (the longest drawn 1.1 units); the chain on the right closes for CO₂,
+   BF₃, CH₄, PF₅, SF₆ and leaves a sum toward O for H₂O and OCS, toward Cl
+   for CH₃Cl, toward S and N for H₂S and NH₃ · read off the image · 7.26:
+   C–H short, pointing to C; B–F long, pointing to F. 7.27: CO₂ arrows
+   outward and equal, "overall dipole moment = 0"; H₂O arrows from H to O,
+   the overall moment toward O. The unnumbered OCS image draws a short
+   arrow toward S although Figure 7.6 ties C and S at 2.5; the figure draws
+   it at a least length and says so. HF and CO left the list: their one
+   arrow needed no sum, and the text calls CO's moment small.
+6. `sim-field` · Figure 7.28 · molecular-polarity · value add: motion, and
+   the nonpolar case the print lacks · arrows: none · moving: 3 s field off,
+   3 s on, hold · choice: HF or F₂ (the count slider went: it did not change
+   the idea) · headline: "The field is on, and every HF molecule has turned
+   its hydrogen end toward the negative plate." · no graph · flat: every
+   molecule is seen whole and none gains from a turn.
+   works: parts · two plates, eight molecules between them, space-filling
+   as the book draws them · flow · with the field on each HF turns in place
+   · must hold · the hydrogen end (δ+) ends toward the negative plate, the
+   fluorine end (δ−) toward the positive; F₂ does not turn · read off the
+   image · (a) plates unmarked, molecules at random; (b) − on the left
+   plate, + on the right, field shaded, every δ+ to the left.
+
+Exercise `s30` (OmniStax's wording): "sliders" is now "controls" and the
+names are no longer "beneath the drawing". The bench's readout still
+prints the ideal angle that `s30`, `s31` and `s32` ask for.

@@ -26,6 +26,9 @@
       {
         "model": "claude-opus-5-5",
         "effort": "low"
+      },
+      {
+        "model": "claude-fable-5-2"
       }
     ]
   },
@@ -56,6 +59,10 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt flat: real stopcock, opens closed, speeds as 1/√ℳ, passes counted"
         }
       ]
     },
@@ -92,6 +99,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "animated: UF6 flowing, 235UF6 through the barrier to the enriched outlet"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "no molecule outside a tube; open outlets; 4 to 1 separation; isotopes named"
         }
       ]
     }

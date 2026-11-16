@@ -33,6 +33,9 @@
       {
         "model": "claude-opus-5-5",
         "effort": "low"
+      },
+      {
+        "model": "claude-fable-5-2"
       }
     ]
   },
@@ -57,12 +60,14 @@
       "draws": [
         "pressure",
         "temperature",
-        "amount",
         "volume"
       ],
       "conventions": [
         "N",
         "O"
+      ],
+      "facts": [
+        "#e2532b"
       ],
       "ai": [
         {
@@ -79,6 +84,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "framed so label and plate show; dial unit clear; strip and note trimmed"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt flat from the book's image; gauge on the neck; pressures near 1 atm"
         }
       ]
     },
@@ -109,6 +118,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "pressure axis to 120 kPa; notes and labels clear of lines"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "book's axes; labels and keys clear of the lines; two-line readout"
         }
       ]
     },
@@ -139,6 +152,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "notes clear of the line and labels; subscripted V labels"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "data and axes taken from the book's image; labels clear of the lines"
         }
       ]
     },
@@ -173,38 +190,18 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "dial unit clear; P labels and hyperbola note apart; note trimmed"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "one-line headline, larger gauge, two-line readout, short caption"
         }
       ]
     },
     {
       "id": "sim-breathing",
-      "kind": "sim",
+      "kind": "photo",
       "number": "9.15",
-      "originals": [
-        "/media/ch09/CNX_Chem_09_02_BoylesLaw4.jpg"
-      ],
-      "original_caption": "Breathing occurs because expanding and contracting lung volume creates small pressure differences between your lungs and your surroundings, causing air to be drawn into and forced out of your lungs.",
-      "draws": [
-        "volume",
-        "pressure"
-      ],
-      "ai": [
-        {
-          "model": "claude-fable-5-1",
-          "effort": "low",
-          "part": "built"
-        },
-        {
-          "model": "claude-opus-5-5",
-          "effort": "low",
-          "part": "built"
-        },
-        {
-          "model": "claude-opus-5-5",
-          "effort": "high",
-          "part": "rewritten: library silhouette with a chest lens, two lungs, readout"
-        }
-      ]
+      "draws": []
     },
     {
       "id": "fig-scuba",
@@ -243,6 +240,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "dial unit clear of the end labels"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "redrawn flat, gauge on the cylinder; laws in a dropdown; short caption"
         }
       ]
     },
@@ -270,6 +271,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "law names above the frames; note that repeated the caption dropped"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "headline dropped; pressure axes 0 to 5 atm; drop lines; short caption"
         }
       ]
     },
@@ -311,6 +316,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "3D names above the balloons; strip line and note trimmed"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "2D only; one gas picker; molecule count follows the amount"
         }
       ]
     }
@@ -1213,7 +1222,7 @@
   "referents": [
     {
       "id": "sphere",
-      "label": "the sealed sphere",
+      "label": "the sealed flask",
       "figures": [
         "sim-amontons-sphere"
       ]
@@ -1223,20 +1232,6 @@
       "label": "the syringe",
       "figures": [
         "sim-boyle"
-      ]
-    },
-    {
-      "id": "lungs",
-      "label": "the lungs",
-      "figures": [
-        "sim-breathing"
-      ]
-    },
-    {
-      "id": "diaphragm",
-      "label": "the diaphragm",
-      "figures": [
-        "sim-breathing"
       ]
     }
   ]

@@ -15,7 +15,7 @@ Proposed by the prep agent after the chapter exploration (2026-09-28). Status: a
 | Tables | Tables 4.1 and 4.2 in 4.2 as `div.book-table`; the atom-count tables of 4.1 and Example 4.7 are unnumbered book tables kept in the text; the Key Equations table of 4.4 is not printed |
 | Example numbers | 4.1–4.2 (4.1), 4.3–4.7 (4.2), 4.8–4.11 (4.3), 4.12–4.13 (4.4), 4.14–4.16 (4.5) |
 | Figure numbers | 4.1 to 4.18 as `exploration.md` lists them, checked on openstax.org for 4.2 |
-| Unnumbered images | the route boxes inside examples of 4.3 and 4.5 are `figure` rows with no number (eyebrow "Figure"), redrawn or folded into a live route figure as the section judges; images inside exercises go on the exercise card |
+| Unnumbered images | the route boxes inside examples of 4.3 and 4.5 are `figure` rows with no number (eyebrow "Figure"), kept as the book's images; images inside exercises go on the exercise card |
 | Figures | root rules 14, 24–28; Figures keep the book's numbers, agent additions are Sims; each plan line names its value add and tier |
 | Motion | per figure; a still figure registers no cycle and no transport. Candidates for motion: a titration delivering titrant, a reaction box running to completion |
 | 3D | a particle box or a bench only where the plan argues it (book `RULES.md`, root rule 28); default flat |
@@ -36,8 +36,8 @@ Proposed by the prep agent after the chapter exploration (2026-09-28). Status: a
 ## What the build changed
 
 - 3D: none. Every figure of the chapter is flat; the particle-box and bench candidates were judged against the book's drawings and drawn flat.
-- Motion: two figures carry a clock, `sim-hcl` (Figure 4.5, molecules entering the water) and `sim-titration` (4.5, titrant delivered drop by drop); every other figure is still.
-- Folds: one, Figures 4.2 + 4.3 as `sim-methane` in 4.1. Figure 4.11 is `sim-flowchart`, with the route of each 4.3 example lit on it; the unnumbered route boxes stay as their own still copies beside their examples.
+- Motion: five figures carry a clock, `sim-methane` (Figure 4.3, the atoms crossing from one mixture to the other), `sim-hcl` (Figure 4.5, molecules entering the water), `sim-hcl-limiting` (Figure 4.14, the pairs reacting), `sim-titration` (4.5, titrant delivered drop by drop) and `sim-combustion` (Figure 4.18, the gases carried to the absorbers); every other figure is still.
+- Folds: none. Figures 4.2 + 4.3 had been folded as `sim-methane` and were un-folded on 2026-11-14: Figure 4.2 is the book's image (`fig-methane-equation`) and Figure 4.3 is `sim-methane`. Figure 4.11 is `sim-flowchart`, with the route of each 4.3 example lit on it; the unnumbered route boxes of 4.3 and 4.5 are the book's images beside their examples, their redrawn copies reverted on 2026-11-14.
 - Sims added: `sim-balance` (4.1), `sim-precipitation` (4.2), `sim-ammonia` (4.3), `sim-silicon-nitride` and `sim-percent-yield` (4.4), `sim-titration` (4.5).
 - Formulas: `eq-percent-yield` and `eq-atom-economy` anchored in 4.4, `eq-molarity-mmol` and the variable M at `4.5-titration-calc`.
 - Concept edges: 57, of which 14 were staged by the chapter pass into Chapters 2 and 3 and within the chapter.

@@ -26,6 +26,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -251,6 +254,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: caption color wording, step-5 note that repeated the headline"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: book layouts, electrons counted round each atom, shorter caption"
     }
    ]
   },

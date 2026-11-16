@@ -33,7 +33,8 @@
       {
         "model": "claude-opus-5-5",
         "effort": "low"
-      }
+      },
+      {"model": "claude-fable-5-2"}
     ]
   },
   "built": "2026-09-12",
@@ -43,7 +44,7 @@
     {
       "id": "sim-series",
       "kind": "sim",
-      "draws": ["wavelength", "energy", "velocity"],
+      "draws": ["wavelength"],
       "facts": [
         "spectrum"
       ],
@@ -62,7 +63,8 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "n₁ and n₂ as choices; note cut to the Rydberg constant through macros"
-        }
+        },
+        {"model": "claude-fable-5-2", "part": "rebuilt: four series in rows on one axis; n₂ picks a line; whole readout"}
       ]
     },
     {
@@ -72,7 +74,7 @@
       "folds": ["6.15"],
       "originals": ["/media/ch06/CNX_Chem_06_02_Hlevels.jpg", "/media/ch06/CNX_Chem_06_02_BohrArrows.jpg"],
       "original_caption": "(Figure 6.14) Quantum numbers and energy levels in a hydrogen atom. The more negative the calculated value, the lower the energy. (Figure 6.15) The horizontal lines show the relative energy of orbits in the Bohr model of the hydrogen atom, and the vertical arrows depict the energy of photons absorbed (left) or emitted (right) as electrons move between these orbits.",
-      "draws": ["energy", "wavelength"],
+      "draws": ["energy", "wavelength", "velocity"],
       "conventions": [
         "e-"
       ],
@@ -94,7 +96,8 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "nᵢ and n_f as choices; labels on panels; note through macros, shortened"
-        }
+        },
+        {"model": "claude-fable-5-2", "part": "rebuilt: ladder fills the stage; a photon moves in or out; strip and inset gone"}
       ]
     },
     {
@@ -119,7 +122,8 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "n as a choice; radius and charge labels kept apart; columns fit; note cut"
-        }
+        },
+        {"model": "claude-fable-5-2", "part": "rebuilt: every orbit in frame; ladder to scale; both equations in the readout"}
       ]
     },
     {

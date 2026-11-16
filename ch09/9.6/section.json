@@ -28,6 +28,9 @@
       {
         "model": "claude-opus-5-5",
         "effort": "low"
+      },
+      {
+        "model": "claude-fable-5-2"
       }
     ]
   },
@@ -47,6 +50,10 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "opens at 330 K, floor 320 K; curves named at their ends; caption cut"
         }
       ]
     },
@@ -56,7 +63,7 @@
       "number": "9.36",
       "originals": ["/media/ch09/CNX_Chem_09_06_RealGas2.jpg"],
       "original_caption": "(a) Attractions between gas molecules serve to decrease the gas volume at constant pressure compared to an ideal gas whose molecules experience no attractive forces. (b) These attractive forces will decrease the force of collisions between the molecules and container walls, therefore reducing the pressure exerted at constant volume compared to an ideal gas.",
-      "draws": ["pressure", "volume", "temperature", "amount"],
+      "draws": ["pressure", "volume", "temperature", "amount", "velocity"],
       "conventions": [
         "He",
         "N",
@@ -73,6 +80,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "real-gas bar labels above the bar; camera framed for the corner view"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt flat: a molecule followed to the wall, attraction arrows, two bars"
         }
       ]
     }

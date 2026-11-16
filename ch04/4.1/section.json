@@ -26,6 +26,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -34,17 +37,19 @@
  "exercise_notes": "Bloom levels and concept tags are AI-generated. Every Check Your Learning carries the book’s own answer from the note that follows it. Answers to the end-of-chapter exercises come from the book’s key, which covers the odd-numbered items; the key’s answer to part (c) of the fifth exercise prints MgC1₂ with a digit one, and it is carried as printed. The unkeyed items fs-idp14690896, fs-idp106387184, fs-idp109313632 and fs-idp61581984 each ask for balanced equations or a formula the key does not give, and are left out. The unkeyed conceptual item fs-idp138111360 carries a suggested approach marked as OmniStax’s own. Nothing is taken from or held for another section.",
  "figures": [
   {
+   "id": "fig-methane-equation",
+   "kind": "photo",
+   "number": "4.2",
+   "draws": []
+  },
+  {
    "id": "sim-methane",
    "kind": "sim",
-   "number": "4.2",
-   "folds": [
-    "4.3"
-   ],
+   "number": "4.3",
    "originals": [
-    "/media/ch04/CNX_Chem_04_01_rxn2.jpg",
     "/media/ch04/CNX_Chem_04_01_rxn3.jpg"
    ],
-   "original_caption": "(Figure 4.2) The reaction between methane and oxygen to yield carbon dioxide and water (shown at bottom) may be represented by a chemical equation using formulas (top). (Figure 4.3) Regardless of the absolute numbers of molecules involved, the ratios between numbers of molecules of each species that react (the reactants) and molecules of each species that form (the products) are the same and are given by the chemical reaction equation.",
+   "original_caption": "Regardless of the absolute numbers of molecules involved, the ratios between numbers of molecules of each species that react (the reactants) and molecules of each species that form (the products) are the same and are given by the chemical reaction equation.",
    "draws": [],
    "conventions": [
     "C",
@@ -61,6 +66,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "note dropped, it repeated the tallies and the caption"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt as Figure 4.3 alone: atoms cross from one mixture to the other"
     }
    ]
   },
@@ -79,6 +88,10 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: whole molecules per coefficient over the book's counting table"
     }
    ]
   }

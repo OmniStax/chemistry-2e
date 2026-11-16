@@ -25,6 +25,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -34,88 +37,9 @@
  "figures": [
   {
    "id": "sim-halogen-radii",
-   "kind": "sim",
+   "kind": "photo",
    "number": "6.30",
-   "originals": [
-    "/media/ch06/CNX_Chem_06_05_CovalradiT.jpg"
-   ],
-   "original_caption": "(a) The radius of an atom is defined as one-half the distance between the nuclei in a molecule consisting of two identical atoms joined by a covalent bond. The atomic radius for the halogens increases down the group as n increases. (b) Covalent radii of the elements are shown to scale. The general trend is that radii increase down a group and decrease across a period.",
-   "draws": ["length"],
-   "conventions": [
-    "H",
-    "Li",
-    "Be",
-    "B",
-    "C",
-    "N",
-    "O",
-    "F",
-    "Na",
-    "Mg",
-    "Al",
-    "Si",
-    "P",
-    "S",
-    "Cl",
-    "K",
-    "Ca",
-    "Sc",
-    "Ti",
-    "V",
-    "Cr",
-    "Mn",
-    "Fe",
-    "Co",
-    "Ni",
-    "Cu",
-    "Zn",
-    "Ga",
-    "Ge",
-    "As",
-    "Se",
-    "Br",
-    "Rb",
-    "Sr",
-    "Y",
-    "Zr",
-    "Nb",
-    "Mo",
-    "Tc",
-    "Ru",
-    "Rh",
-    "Pd",
-    "Ag",
-    "Cd",
-    "In",
-    "Sn",
-    "Sb",
-    "Te",
-    "I",
-    "Cs",
-    "Ba",
-    "La",
-    "Hf",
-    "Ta",
-    "W",
-    "Re",
-    "Os",
-    "Ir",
-    "Pt",
-    "Au",
-    "Hg",
-    "Tl",
-    "Pb",
-    "Bi",
-    "Po",
-    "At"
-   ],
-   "ai": [
-    {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
+   "draws": []
   },
   {
    "id": "sim-trends-graph",
@@ -138,29 +62,18 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "radii read off the graph; both graphs stacked on one Z axis; caption cut"
     }
    ]
   },
   {
    "id": "sim-ions",
-   "kind": "sim",
+   "kind": "photo",
    "number": "6.32",
-   "originals": [
-    "/media/ch06/CNX_Chem_06_05_Ionradii.jpg"
-   ],
-   "original_caption": "The radius for a cation is smaller than the parent atom (Al), due to the lost electrons; the radius for an anion is larger than the parent (S), due to the gained electrons.",
-   "draws": ["length"],
-   "conventions": [
-    "Al",
-    "S"
-   ],
-   "ai": [
-    {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
+   "draws": []
   },
   {
    "id": "sim-ie-table",
@@ -187,6 +100,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "values on deeply shaded cells set in ink for contrast"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "shading scale and key, trend breaks ringed, a period written out as a chain"
     }
    ]
   },
@@ -218,6 +135,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "headline IE symbols typeset through the macros"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "headline and caption cut to what the readout does not say"
     }
    ]
   }

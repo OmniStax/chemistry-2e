@@ -22,6 +22,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -44,13 +47,22 @@
    "draws": [
     "amount",
     "concentration",
-    "equilibrium-constant"
+    "equilibrium-constant",
+    "volume"
    ],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "partner bars capped at twice the start; caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: what each solution holds side by side, acid and base on one axis"
     }
    ]
   },

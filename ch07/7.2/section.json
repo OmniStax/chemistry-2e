@@ -26,6 +26,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -53,15 +56,17 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: H label kept on stage, shared cloud only on overlap, minimum label"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: atoms on the axis's own scale, both sides of the minimum named"
     }
    ]
   },
   {
    "id": "fig-en",
-   "kind": "figure",
+   "kind": "photo",
    "number": "7.6",
-   "originals": ["/media/ch07/CNX_Chem_07_02_ENTable.jpg"],
-   "original_caption": "The electronegativity values derived by Pauling follow predictable periodic trends, with the higher electronegativities toward the upper right of the periodic table.",
    "draws": [],
    "ai": [
     {
@@ -73,6 +78,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: class tints strengthened, table moved clear of the left edge"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image: the redraw only restyled it"
     }
    ]
   },
@@ -118,6 +127,10 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: larger shaded molecule, kinds of atom named, exceptions flagged"
     }
    ]
   }

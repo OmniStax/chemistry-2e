@@ -1,105 +1,81 @@
 /* Figures for section 7.1 Ionic Bonding. Boots against the section's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['7.1'] = function (root, F) {
-const { el, tex, PAL, alpha, register, begin, text, topline } = F;
+const { tex, PAL, alpha, register, begin } = F;
 const sim = (id, H) => F.sim(root, id, H);
 const still = (d, draw) => register(d.fig, { update: () => {}, draw });
-function readout(host, main, small) { tex(host, main); if (small) host.appendChild(el('small', null, small)); }
 const TAU = 2 * Math.PI;
-const gcd = (a, b) => (b ? gcd(b, a % b) : a);
-const SUP = { 1: '', 2: '²', 3: '³' };
-const charge = (z) => `${SUP[Math.abs(z)]}${z > 0 ? '⁺' : '⁻'}`;
-const mark = (z) => `${Math.abs(z) === 1 ? '' : Math.abs(z)}${z > 0 ? '+' : '−'}`;
-const count = (n, one, many) => `${['', 'One', 'Two', 'Three'][n]} ${n === 1 ? one : many}`;
 
 /* =====================================================================
-   SIM: the charge balance of a binary ionic compound. A cation and an
-   anion are chosen; the smallest numbers of each whose charges cancel
-   are drawn as ions in their element colors, each carrying its charge,
-   and the readout writes the book's sum for aluminum oxide with the
-   chosen numbers. Still: it answers its choices and has no clock.
+   FIGURE 7.3: the sodium chloride lattice in three dimensions, the 27
+   ions of the book's block: chloride at the corners and face centers,
+   sodium between them. One choice morphs the block from packed to
+   expanded and then picks out one Na⁺ and one Cl⁻ with the six ions
+   around each; the sixth Na⁺ of the surface Cl⁻ is the next layer's.
+   Still: the idle turn is not a clock, and there is no transport.
 ===================================================================== */
 (function () {
-  const d = sim('sim-charge-balance', 420);
-  /* ionic radii in pm, which set the drawn sizes */
-  const CATIONS = {
-    Na: { z: 1, r: 102, name: 'sodium' }, K: { z: 1, r: 138, name: 'potassium' },
-    Mg: { z: 2, r: 72, name: 'magnesium' }, Ca: { z: 2, r: 100, name: 'calcium' },
-    Al: { z: 3, r: 54, name: 'aluminum' }, Fe: { z: 3, r: 65, name: 'iron(III)' },
-  };
-  const ANIONS = {
-    Cl: { z: -1, r: 181, name: 'chloride' }, O: { z: -2, r: 140, name: 'oxide' },
-    S: { z: -2, r: 184, name: 'sulfide' }, N: { z: -3, r: 146, name: 'nitride' },
-  };
-  const cat = F.select(d.controls, { label: '\\text{cation}', aria: 'the metal ion', value: 'Al', options: Object.keys(CATIONS).map((s) => ({ value: s, label: s + charge(CATIONS[s].z) })), onInput: () => draw() });
-  const an = F.choice(d.controls, { label: '\\text{anion}', aria: 'the nonmetal ion', value: 'O', options: Object.keys(ANIONS).map((s) => ({ value: s, label: s + charge(ANIONS[s].z) })), onInput: () => draw() });
-  const K = 0.34, GAP = 170, X0 = 470;
-  const hits = [];
-  F.hover(d.stage, () => hits);
-  function row(ctx, sym, ion, n, y, kind) {
-    const r = ion.r * K;
-    text(ctx, `${sym}${charge(ion.z)}`, 250, y, PAL.ink, { size: 26, weight: 600, align: 'center', base: 'middle' });
-    for (let i = 0; i < n; i++) {
-      const x = X0 + GAP * i;
-      ctx.save(); ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fillStyle = F.el(sym); ctx.fill();
-      ctx.lineWidth = 1.5; ctx.strokeStyle = alpha(PAL.ink, 0.45); ctx.stroke(); ctx.restore();
-      text(ctx, mark(ion.z), x + r * 0.72 + 6, y - r * 0.72 - 4, PAL.ink, { size: 20, weight: 600, align: 'left', base: 'middle' });
-      hits.push({ x, y, r, name: `${kind} ${ion.name} ion (${sym}${charge(ion.z)})` });
-    }
-    const q = n * ion.z;
-    text(ctx, `${q > 0 ? '+' : '−'}${Math.abs(q)}`, 1170, y, PAL.ink, { size: 26, weight: 600, align: 'center', base: 'middle' });
-  }
-  function draw() {
-    const { ctx } = begin(d.c);
-    const c = CATIONS[cat.value], a = ANIONS[an.value], m = c.z, n = -a.z, g = gcd(m, n);
-    const nc = n / g, na = m / g;
-    hits.length = 0;
-    topline(ctx, `${count(nc, `${c.name} ion carries`, `${c.name} ions carry`)} ${nc * m} positive charge${nc * m > 1 ? 's' : ''}, and ${count(na, `${a.name} ion carries`, `${a.name} ions carry`).replace(/^./, (x) => x.toLowerCase())} as many negative charges.`);
-    text(ctx, 'total charge', 1170, 96, PAL.muted, { size: 17, align: 'center' });
-    row(ctx, cat.value, c, nc, 170, 'a cation, the');
-    row(ctx, an.value, a, na, 320, 'an anion, the');
-    const sub = (k) => (k > 1 ? `_{${k}}` : '');
-    const formula = `\\text{${cat.value}}${sub(nc)}\\text{${an.value}}${sub(na)}`;
-    readout(d.readout, `(${nc} \\times +${m}) + (${na} \\times -${n}) = 0 \\qquad ${formula}`);
-  }
-  still(d, draw);
-})();
-
-/* =====================================================================
-   FIGURE 7.3: the sodium chloride lattice in three dimensions, 27 ions
-   of a 3 × 3 × 3 block, chloride at the corners and face centers and
-   sodium between them. Panels (a) packed and (b) expanded are one
-   choice, a morph of spacing and size with the rods fading in. Still:
-   the viewer's idle spin is not a clock, and there is no transport.
-===================================================================== */
-(function () {
-  const d = sim('sim-nacl-lattice');
-  /* free yaw; pitch bounded so the rows of the crystal stay readable (rule 26.3) */
-  const v = F.view3d(d.stage, { spin: 'idle', h: 440, dist: 11, tilt: 0.42, pitch: [-0.9, 0.9],
-    views: [{ label: 'face', yaw: 0, pitch: 0 }, { label: 'corner', yaw: Math.PI / 4, pitch: 0.6155 }] });
-  const g = v.part(0);
-  /* ionic radii 102 and 181 pm over an Na–Cl distance of 283 pm, one drawn unit */
+  const H = 76;
+  const d = sim('sim-nacl-lattice', H);
+  /* one drawn unit is the Na–Cl distance, 283 pm; ionic radii 102 and 181 pm */
   const RNA = 102 / 283, RCL = 181 / 283;
-  const P = F.choice(d.controls, { label: '\\text{view}', aria: 'packed or expanded', value: 'a',
-    options: [{ value: 'a', label: '(a) packed' }, { value: 'b', label: '(b) expanded' }], onInput: () => { v.glide({ zoom: P.value === 'a' ? 1 : 0.62 }, 900); draw(); } });
+  /* s spacing, k size of the spheres, rods their opacity, dim the opacity of ions outside the chosen seven,
+     na and cl which ion is picked out, zoom and ty the camera */
+  const STATE = {
+    a: { s: 1, k: 1, rods: 0, dim: 1, na: 0, cl: 0, zoom: 1.42, ty: 0 },
+    b: { s: 1.9, k: 0.6, rods: 1, dim: 1, na: 0, cl: 0, zoom: 1.02, ty: 0 },
+    na: { s: 1.9, k: 0.6, rods: 1, dim: 0.1, na: 1, cl: 0, zoom: 1.02, ty: 0 },
+    cl: { s: 1.9, k: 0.6, rods: 1, dim: 0.1, na: 0, cl: 1, zoom: 0.8, ty: 0.75 },
+  };
+  /* free yaw; pitch bounded so the layers of the crystal stay readable (rule 26.3) */
+  const v = F.view3d(d.stage, { spin: 'idle', h: 640, dist: 13.4, tilt: 0.3, pitch: [-0.9, 0.9] });
+  v.setView(-0.5, 0.3);
+  const g = v.part(0);
+  const aim = (x) => ({ zoom: STATE[x].zoom, target: [0, STATE[x].ty, 0] });
+  const P = F.choice(d.controls, { label: '\\text{lattice}', aria: 'the whole lattice packed or expanded, or one ion and the six around it', value: 'b',
+    options: [{ value: 'a', label: 'packed' }, { value: 'b', label: 'expanded' }, { value: 'na', label: 'six around Na⁺' }, { value: 'cl', label: 'six around Cl⁻' }],
+    onInput: () => { v.glide(aim(P.value), 900); draw(); } });
+  v.look(aim('b'));
   const ions = [];
   for (let i = -1; i <= 1; i++) for (let j = -1; j <= 1; j++) for (let k = -1; k <= 1; k++) ions.push({ q: [i, j, k], na: (i + j + k) % 2 === 0 });
+  const NEXT = { q: [0, 2, 0], na: true };   /* the Na⁺ of the next layer, above the top face */
+  const near = (a, b) => Math.abs(a.q[0] - b.q[0]) + Math.abs(a.q[1] - b.q[1]) + Math.abs(a.q[2] - b.q[2]) === 1;
+  const MID = ions.find((x) => x.q.join() === '0,0,0'), TOP = ions.find((x) => x.q.join() === '0,1,0');
   const links = [];
-  ions.forEach((a, ia) => ions.forEach((b, ib) => { if (ib > ia && Math.abs(a.q[0] - b.q[0]) + Math.abs(a.q[1] - b.q[1]) + Math.abs(a.q[2] - b.q[2]) === 1) links.push([ia, ib]); }));
+  ions.forEach((a, ia) => ions.forEach((b, ib) => { if (ib > ia && near(a, b)) links.push([a, b]); }));
+  const inSet = (c, ion) => (ion === c || near(c, ion) ? 1 : 0);
+  const see = (o) => (o < 0.995 ? { transparent: true, opacity: o, depthWrite: o > 0.5 } : undefined);
   function draw() {
-    const s = P.mix((x) => (x === 'a' ? 1 : 1.9)), k = P.mix((x) => (x === 'a' ? 1 : 0.42)), rods = P.a('b');
+    const { ctx } = begin(d.c);
+    const m = P.mix((x) => STATE[x]);
     v.clear();
-    const pos = (ion) => ion.q.map((c) => c * s);
-    if (rods > 0.01) links.forEach(([a, b]) => F.mesh.stick(g, pos(ions[a]), pos(ions[b]), 0.045, PAL.muted, rods < 1 ? { transparent: true, opacity: rods } : undefined));
-    ions.forEach((ion) => {
-      const m = F.mesh.sphere(g, pos(ion), (ion.na ? RNA : RCL) * k, F.el(ion.na ? 'Na' : 'Cl'));
-      v.pickable(m, ion.na ? 'a sodium ion (Na⁺)' : 'a chloride ion (Cl⁻)');
+    const pos = (ion) => ion.q.map((c) => c * m.s);
+    const lit = (ion) => Math.min(1, m.na * inSet(MID, ion) + m.cl * inSet(TOP, ion));
+    const rod = (a, b, e, o) => {
+      if (o < 0.02) return;
+      const st = F.mesh.stick(g, pos(a), pos(b), 0.04 + 0.035 * e, F.mixColor(PAL.muted, PAL.ink, e), see(o));
+      v.pickable(st, 'attraction between an Na⁺ ion and a Cl⁻ ion next to it');
+    };
+    links.forEach(([a, b]) => {
+      const e = Math.min(1, m.na * (a === MID || b === MID ? 1 : 0) + m.cl * (a === TOP || b === TOP ? 1 : 0));
+      rod(a, b, e, m.rods * (m.dim + (1 - m.dim) * e));
     });
-    v.label('Na⁺', pos(ions.find((x) => x.q.join() === '0,1,1')), g, 30 * k);
-    v.label('Cl⁻', pos(ions.find((x) => x.q.join() === '1,1,1')), g, 40 * k);
-    readout(d.readout, '6\\ \\text{Cl}^{-}\\ \\text{around each Na}^{+}, \\quad 6\\ \\text{Na}^{+}\\ \\text{around each Cl}^{-}, \\quad \\text{Na}^{+} : \\text{Cl}^{-} = 1 : 1',
-      P.value === 'a' ? 'Packed as in the crystal, each ion touches the six ions of opposite charge around it, and no pair of ions forms a molecule of its own.'
-        : 'Spread apart, the rods join each ion to its six nearest neighbors of opposite charge, which sit above and below it, before and behind it, and to either side.');
+    rod(TOP, NEXT, 1, m.cl);
+    ions.forEach((ion) => {
+      const sph = F.mesh.sphere(g, pos(ion), (ion.na ? RNA : RCL) * m.k, F.el(ion.na ? 'Na' : 'Cl'), see(m.dim + (1 - m.dim) * lit(ion)));
+      v.pickable(sph, ion.na ? 'sodium ion, Na⁺' : 'chloride ion, Cl⁻');
+    });
+    if (m.cl > 0.02) {
+      const sph = F.mesh.sphere(g, pos(NEXT), RNA * m.k, F.el('Na'), see(m.cl));
+      v.pickable(sph, 'sodium ion of the next layer, Na⁺');
+      if (P.value === 'cl' && P.k > 0.6) v.label('Na⁺ of the next layer', pos(NEXT), g, 36);
+    }
+    const disc = (sym, r) => (c, x, y) => { c.save(); c.beginPath(); c.arc(x + 14, y + 11, r, 0, TAU); c.fillStyle = F.el(sym); c.fill(); c.lineWidth = 1.5; c.strokeStyle = alpha(PAL.ink, 0.45); c.stroke(); c.restore(); };
+    const key = [{ s: 'Na⁺, sodium ion', draw: disc('Na', 6) }, { s: 'Cl⁻, chloride ion', draw: disc('Cl', 10.5) }];
+    if (P.value !== 'a') key.push({ s: 'attraction between neighbors', color: PAL.muted, w: 4 });
+    F.legend(ctx, { l: 40, r: 1360, t: 8, b: H - 4 }, key, { corner: 'top', row: true, size: 22 });
+    const NA6 = '6\\ \\text{Cl}^{-}\\ \\text{ions around each Na}^{+}', CL6 = '6\\ \\text{Na}^{+}\\ \\text{ions around each Cl}^{-}';
+    tex(d.readout, P.value === 'na' ? NA6 : P.value === 'cl' ? CL6 : `${NA6} \\\\ ${CL6}`);
   }
   still(d, draw);
 })();

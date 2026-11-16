@@ -22,6 +22,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -71,22 +74,16 @@
   {
    "id": "fig-aloh4",
    "kind": "figure",
-   "originals": [
-    "/media/ch15/CNX_Chem_15_02_AlOH4_img.jpg"
-   ],
-   "draws": [
-    "equilibrium-constant"
-   ],
-   "conventions": [
-    "Al",
-    "O",
-    "H"
-   ],
+   "draws": [],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "reverted to the book's image"
     }
    ]
   },
@@ -97,11 +94,22 @@
     "concentration",
     "equilibrium-constant"
    ],
+   "facts": [
+    "#f4f4f2"
+   ],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "caption cut, label moved off the drop line"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: a sample in a beaker beside the curve, lowest point marked"
     }
    ]
   },
@@ -130,7 +138,6 @@
    "id": "aluminate",
    "label": "the complex ion Al(OH)₄⁻",
    "figures": [
-    "fig-aloh4",
     "sim-solubility-ph"
    ]
   }

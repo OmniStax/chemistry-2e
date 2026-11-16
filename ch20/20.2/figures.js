@@ -15,16 +15,19 @@ const RAD = Math.PI / 180;
    base chain, numbered from the carbon on the oxygen. Every placement has
    the formula CₙH₂ₙ₊₂O. The default, –OH on the second of five carbons,
    is Example 20.8's 2-pentanol.
-   Flat: the condensed zigzag the book draws, groups at the vertices, an
-   interior –OH as a branch outward, locants on the inner side, the
-   functional group under a soft ink highlight (the book's red is
-   emphasis). 3D: ball-and-stick at true bond lengths and tetrahedral
-   angles, atoms by F.el; no ground, so yaw is free and the molecule
-   idles round, pitch within ±1.2 rad. Still: a structure has no clock;
-   a change crossfades only the parts that change.
+   Above: the chosen molecule as the condensed zigzag the book draws,
+   groups at the vertices, an interior –OH as a branch outward, locants
+   on the inner side, the functional group under a soft ink highlight
+   (the book's red is emphasis). Below: the map of every place the oxygen
+   can go, the row of carbon atoms with one tile over each carbon (the
+   alcohol that –OH there makes) and one under each bond (the ether that
+   –O– there makes). A tap on a tile picks it. Two tiles with one name
+   are one molecule turned end for end, and are marked together; the
+   headline counts the different ones, all of one formula. Still: a
+   structure has no clock; a change crossfades only the parts that change.
 ===================================================================== */
 (function () {
-  const H = 480, d = sim('sim-oxygen-chain', H);
+  const H = 632, d = sim('sim-oxygen-chain', H);
   const ALKANE = ['', 'methane', 'ethane', 'propane', 'butane', 'pentane', 'hexane'];
   const STEM = ['', 'meth', 'eth', 'prop', 'but', 'pent', 'hex'];
   const ALKYL = ['', 'methyl', 'ethyl', 'propyl', 'butyl', 'pentyl', 'hexyl'];
@@ -85,9 +88,12 @@ const RAD = Math.PI / 180;
     return `${g} group of the ${m.parts.alk} group`;
   };
   const nb = (x) => x.replace(/-/g, '\u2011');
-  const headlineOf = (m) => nb(m.alcohol
-    ? (m.n === 2 ? 'With the –OH group on ethane, the alcohol is ethanol.' : `With the –OH group on carbon ${m.L} of ${ALKANE[m.n]}, the alcohol is ${m.name}.`)
-    : `The oxygen atom joins ${m.small === 2 ? 'an' : 'a'} ${ALKYL[m.small]} group to the ${ALKANE[m.large]} base chain, so the ether is ${m.name}.`);
+  const WORD = ['', 'one', 'two', 'three', 'four', 'five', 'six'];
+  const headlineOf = (m) => {
+    const a = Math.ceil(m.n / 2), e = Math.floor(m.n / 2);
+    return `One oxygen atom in a chain of ${WORD[m.n]} carbon atoms gives ${WORD[a]} alcohol${a > 1 ? 's' : ''} and ${WORD[e]} ether${e > 1 ? 's' : ''}, ${m.n === 2 ? 'both' : 'all'} ${uf(m)}.`;
+  };
+  function uf(m) { return `C${sub(m.n)}H${sub(2 * m.n + 2)}O`; }
   function noteOf(m) {
     if (!m.alcohol) return m.small === m.large ? `Both groups on the oxygen atom are ${ALKYL[m.small]} groups, so the common name is ${m.common}.`
       : `The common name lists the two groups in alphabetical order: ${m.common}.`;
@@ -99,7 +105,7 @@ const RAD = Math.PI / 180;
   }
   function readoutOf(m) {
     const ub = (key, s, under) => `\\mk{${key}}{\\underbrace{\\text{${s}}}_{\\text{${under}}}}`;
-    const f = `\\qquad\\mk{f}{\\text{C}_{${m.n}}\\text{H}_{${2 * m.n + 2}}\\text{O}}`;
+    const f = '';
     const loc = m.parts.loc ? ub('loc', m.parts.loc + '-', 'carbon') : '';
     if (m.alcohol) return loc + ub('base', m.parts.base, 'chain') + ub('suf', 'ol', '–OH') + f;
     const g = m.parts.group.replace(/_\{(\d+)\}/g, '}_{$1}\\text{').replace(/^/, '\\text{') + '}';
@@ -107,8 +113,6 @@ const RAD = Math.PI / 180;
   }
 
   /* ---------- controls ---------- */
-  const view = F.choice(d.controls, { label: '\\text{view}', key: 'view', options: [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }], value: '2d',
-    aria: 'a flat drawing or a model to turn', ms: 0, onInput: () => show() });
   let last = null, prev = null;
   const nPick = F.choice(d.controls, { label: '\\text{carbons}', key: 'carbons', options: NS.map((n) => ({ value: String(n), label: String(n) })), value: '5',
     aria: 'the number of carbon atoms in the chain', onInput: () => switchN() });
@@ -124,15 +128,21 @@ const RAD = Math.PI / 180;
   }
 
   /* ---------- flat drawing ---------- */
-  const DX = 172, AMP = DX * Math.tan(35.26 * RAD), BR = 104, YC = 270, SZ = 30;
+  const DX = 172, AMP = DX * Math.tan(35.26 * RAD), BR = 104, YC = 280, SZ = 30, BAND = [78, 412];
   function layout(m, ctx) {
     const cnt = m.B.length, x0 = 700 - ((cnt - 1) * DX) / 2;
+    const flip = m.branch % 2 === 1;                              /* the carbon that carries a branch sits on an upper vertex, so the –OH always points up */
     const V = m.B.map((v, j) => {
-      const up = j % 2 === 1, s = groupText(m, j), w = measure(ctx, s, { size: SZ, weight: 600 });
+      const up = (j % 2 === 1) !== flip, s = groupText(m, j), w = measure(ctx, s, { size: SZ, weight: 600 });
       return { ...v, j, x: x0 + j * DX, y: YC + (up ? -AMP / 2 : AMP / 2), up, s, w };
     });
     let br = null;
     if (m.branch) { const c = V.find((v) => v.i === m.branch); br = { x: c.x, y: c.y + (c.up ? -BR : BR), s: 'OH', w: measure(ctx, 'OH', { size: SZ, weight: 600 }), from: c }; }
+    /* the molecule, with its branch or its alkoxy label, sits mid-way between the headline and the map */
+    const top = Math.min(...V.map((v) => v.y), br ? br.y : Infinity) - 28;
+    const bot = Math.max(...V.map((v) => v.y)) + (m.alcohol ? 28 : 68);
+    const dy = (BAND[0] + BAND[1]) / 2 - (top + bot) / 2;
+    V.forEach((v) => { v.y += dy; }); if (br) br.y += dy;
     return { V, br };
   }
   const trim = (a, b) => {
@@ -143,7 +153,7 @@ const RAD = Math.PI / 180;
   };
   const r1 = (x) => Math.round(x);
   /* the scene as keyed parts, so a change keeps what both states share and crossfades the rest */
-  function parts(m, ctx) {
+  function moleculeParts(m, ctx) {
     const { V, br } = layout(m, ctx), out = [], ink = PAL.ink;
     const boxOf = (ps, pad) => {
       const l = Math.min(...ps.map((p) => p.x - p.w / 2)) - pad, r = Math.max(...ps.map((p) => p.x + p.w / 2)) + pad;
@@ -183,8 +193,59 @@ const RAD = Math.PI / 180;
     if (br) hits.push({ x: br.x, y: br.y, r: 28, name: 'hydroxyl group, –OH' });
     return { out, hits };
   }
+  /* ---------- the map: every place the oxygen atom can go ---------- */
+  const MX = 800, THT = 48, YA = 457, YCH = 523, YE = 589;
+  const cw = (n) => (n === 6 ? 194 : 226), nameSize = (n) => (n === 6 ? 21 : 24);   /* six carbons fill the width; fewer take larger tiles */
+  const mapX = (n, i) => MX + (i - (n + 1) / 2) * cw(n);             /* carbon i, counted from the left */
+  const places = (n) => [
+    ...Array.from({ length: n }, (_, i) => ({ value: `oh-${i + 1}`, x: mapX(n, i + 1), y: YA })),
+    ...Array.from({ length: n - 1 }, (_, i) => ({ value: `oe-${i + 1}`, x: mapX(n, i + 1.5), y: YE })),
+  ].map((q) => ({ ...q, m: molecule(n, q.value) }));
+  function mapParts(m) {
+    const out = [], hs = [], ink = PAL.ink, mut = PAL.muted, n = m.n, CW = cw(n), TWD = CW - 10, sel = `${m.alcohol ? 'oh' : 'oe'}-${m.k}`;
+    const lab = (s1, s2, y) => {
+      out.push({ key: `ml|${s1}`, draw: (c) => { text(c, s1, 36, y - 12, ink, { size: 25, weight: 600 }); text(c, s2, 36, y + 15, mut, { size: 20 }); } });
+    };
+    lab('alcohols', '–OH on a carbon', YA);
+    lab('ethers', '–O– between two', YE);
+    out.push({ key: 'ml|chain', draw: (c) => text(c, 'the carbon chain', 36, YCH, mut, { size: 20 }) });
+    for (let i = 1; i <= n; i++) {
+      const x = mapX(n, i);
+      out.push({ key: `mc|${r1(x)}`, draw: (c) => { text(c, 'C', x, YCH, ink, { size: 24, weight: 600, align: 'center' }); line(c, x, YA + THT / 2 + 3, x, YCH - 19, alpha(mut, 0.7), 1.5); } });
+      if (i < n) out.push({ key: `mb|${r1(x)}`, draw: (c) => { line(c, x + 16, YCH, x + CW - 16, YCH, ink, 2.5); line(c, x + CW / 2, YCH + 4, x + CW / 2, YE - THT / 2 - 3, alpha(mut, 0.7), 1.5); } });
+      hs.push({ x, y: YCH, r: 16, name: `${ORD[i]} carbon atom from the left` });
+    }
+    places(n).forEach((q) => {
+      const on = q.value === sel, twin = !on && q.m.alcohol === m.alcohol && q.m.name === m.name;
+      const box = (c) => { c.beginPath(); c.roundRect(q.x - TWD / 2, q.y - THT / 2, TWD, THT, 10); };
+      out.push({ key: `mt|${q.value}|${r1(q.x)}|${on ? 2 : twin ? 1 : 0}`, draw: (c) => {
+        c.save(); box(c);
+        if (on || twin) { c.fillStyle = alpha(PAL.ink, on ? 0.1 : 0.05); c.fill(); }
+        c.strokeStyle = on ? ink : alpha(PAL.ink, twin ? 0.55 : 0.22); c.lineWidth = on ? 3 : 1.5;
+        if (twin) c.setLineDash([7, 5]);
+        c.stroke(); c.restore();
+      } });
+      const nm = nb(q.m.name);
+      out.push({ key: `mn|${q.value}|${r1(q.x)}|${on ? 1 : 0}`, draw: (c) => text(c, nm, q.x, q.y, ink, { size: nameSize(n), weight: on ? 600 : 400, align: 'center' }) });
+      const where = q.m.alcohol ? `–OH on the ${ORD[q.m.k]} carbon atom` : `–O– between the ${ORD[q.m.k]} and ${ORD[q.m.k + 1]} carbon atoms`;
+      hs.push({ x: q.x - 50, y: q.y, r: 42, name: `${where}: ${nm}${twin ? `, the chosen molecule turned end for end` : ''}` },
+        { x: q.x + 50, y: q.y, r: 42, name: `${where}: ${nm}${twin ? `, the chosen molecule turned end for end` : ''}` });
+    });
+    return { out, hits: hs };
+  }
   let hits = [];
   F.hover(d.stage, () => hits);
+  d.c.style.cursor = 'pointer';
+  d.c.addEventListener('click', (ev) => {
+    const b = d.c.getBoundingClientRect(); if (!b.width) return;
+    const px = ((ev.clientX - b.left) * 1400) / b.width, py = ((ev.clientY - b.top) * 1400) / b.width;
+    const q = places(shown.n).find((t) => Math.abs(px - t.x) <= cw(shown.n) / 2 - 1 && Math.abs(py - t.y) <= THT / 2 + 6);
+    if (q) oPick.drive(q.value);
+  });
+  function parts(m, ctx) {
+    const a = moleculeParts(m, ctx), b = mapParts(m);
+    return { out: [...a.out, ...b.out], hits: [...a.hits, ...b.hits] };
+  }
   function draw2d() {
     const { ctx } = begin(d.c);
     topline(ctx, headlineOf(shown));
@@ -200,78 +261,10 @@ const RAD = Math.PI / 180;
     hits = cur.hits;
   }
 
-  /* ---------- the model ---------- */
-  const BOND = { CC: 1.54, CO: 1.43, OC: 1.43, CH: 1.09, OH: 0.96 };
-  const R3 = { C: 0.34, O: 0.32, H: 0.2 };
-  const add = (p, q, s = 1) => p.map((x, i) => x + q[i] * s);
-  const sub3 = (p, q) => p.map((x, i) => x - q[i]);
-  const dot3 = (p, q) => p.reduce((s, x, i) => s + x * q[i], 0);
-  const norm = (v) => { const l = Math.hypot(...v); return v.map((x) => x / l); };
-  const cross = (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
-  /* v turned by θ about the unit axis a (Rodrigues) */
-  const turn = (v, a, t) => add(add(v.map((x) => x * Math.cos(t)), cross(a, v), Math.sin(t)), a, dot3(a, v) * (1 - Math.cos(t)));
-  const ZA = 35.26 * RAD, TET = 109.47 * RAD, HALF = 54.74 * RAD;
-  const bondDir = (j) => [Math.cos(ZA), j % 2 === 0 ? Math.sin(ZA) : -Math.sin(ZA), 0];   /* vertex j to j + 1; vertex 0 sits low */
-  function model(m) {
-    const P = [[0, 0, 0]];
-    m.B.forEach((v, j) => { if (j + 1 < m.B.length) P.push(add(P[j], bondDir(j), BOND[v.el + m.B[j + 1].el])); });
-    const atoms = [], sticks = [];
-    m.B.forEach((v, j) => atoms.push({ el: v.el, p: P[j], name: v.el === 'O' ? (v.oh ? 'oxygen atom of the –OH group' : 'oxygen atom of the ether')
-      : m.alcohol || m.base.has(v.i) ? `carbon atom ${m.number(v.i)} of the ${m.alcohol ? 'chain' : 'base chain'}` : `carbon atom of the ${m.parts.alk} group` }));
-    for (let j = 0; j + 1 < m.B.length; j++) sticks.push([P[j], P[j + 1]]);
-    const H = (from, dir, len) => { const q = add(from, dir, len); atoms.push({ el: 'H', p: q, name: 'hydrogen atom' }); sticks.push([from, q]); };
-    m.B.forEach((v, j) => {
-      const p = P[j], U = [];
-      if (j > 0) U.push(norm(sub3(P[j - 1], p)));
-      if (j + 1 < m.B.length) U.push(norm(sub3(P[j + 1], p)));
-      /* the way the zigzag would run on from an end */
-      const onward = j === 0 ? [-Math.cos(ZA), Math.sin(ZA), 0] : bondDir(j);
-      if (v.el === 'O') { if (v.oh) H(p, onward, BOND.OH); return; }
-      if (U.length === 2) {
-        const b = norm(add(U[0], U[1]).map((x) => -x)), z = norm(cross(U[0], U[1]));
-        const up = add(b.map((x) => x * Math.cos(HALF)), z, Math.sin(HALF)), dn = add(b.map((x) => x * Math.cos(HALF)), z, -Math.sin(HALF));
-        if (m.branch === v.i) {
-          const o = add(p, up, BOND.CO);
-          atoms.push({ el: 'O', p: o, name: 'oxygen atom of the –OH group' }); sticks.push([p, o]);
-          const u = norm(sub3(p, o)), perp = norm(add(b, u, -dot3(b, u)));
-          H(o, add(u.map((x) => x * Math.cos(TET)), perp, Math.sin(TET)), BOND.OH);
-          H(p, dn, BOND.CH);
-        } else { H(p, up, BOND.CH); H(p, dn, BOND.CH); }
-      } else {
-        const a = U[0];
-        [0, 120, 240].forEach((t) => H(p, turn(onward, a, t * RAD), BOND.CH));
-      }
-    });
-    const c = atoms.filter((x) => x.el !== 'H').reduce((s, x) => add(s, x.p), [0, 0, 0]).map((x) => x / atoms.filter((y) => y.el !== 'H').length);
-    atoms.forEach((x) => { x.p = sub3(x.p, c); }); sticks.forEach((s) => { s[0] = sub3(s[0], c); s[1] = sub3(s[1], c); });
-    return { atoms, sticks };
-  }
-  let v3 = null, g3 = null, sig3 = '';
-  function build() {
-    const key = [shown.n, shown.alcohol, shown.k, PAL.ink, F.el('C'), F.el('O'), F.el('H')].join('|');
-    if (key === sig3) return; sig3 = key;
-    v3.clear();
-    const { atoms, sticks } = model(shown);
-    sticks.forEach(([a, b]) => F.mesh.stick(g3, a, b, 0.07, PAL.ink));
-    atoms.forEach((a) => v3.pickable(F.mesh.sphere(g3, a.p, R3[a.el], F.el(a.el)), a.name));
-  }
-  const three = () => view.value === '3d' && v3 && v3.scene;
-  function show() {
-    if (view.value === '3d' && !v3) {
-      v3 = F.view3d(d.stage, { h: H, dist: 11, tilt: 0.25, spin: 'idle', yaw: 'free', pitch: [-1.2, 1.2],
-        views: [{ label: 'front', yaw: 0, pitch: 0.2 }, { label: 'along the chain', yaw: Math.PI / 2, pitch: 0.2 }] });
-      g3 = v3.scene ? v3.part(0) : null;
-    }
-    const on = !!three();
-    d.c.style.display = on ? 'none' : '';
-    if (v3) [v3.wrap, d.stage.querySelector('.view3d-bar')].forEach((e) => { if (e) e.style.display = on ? '' : 'none'; });
-    draw();
-  }
   const ro = F.readout(d);
   function draw() {
     ro.set(readoutOf(shown), noteOf(shown), { form: shown.alcohol ? 'alcohol' : 'ether' });
-    if (three()) { build(); v3.headline(headlineOf(shown)); hits = []; v3.invalidate(); }
-    else draw2d();
+    draw2d();
   }
   register(d.fig, { update: () => {}, draw });
 })();

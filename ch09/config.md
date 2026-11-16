@@ -43,7 +43,7 @@ Proposed by the agent after the chapter exploration (2026-09-12 for 9.2, 2026-09
 | Setting | Value |
 |---|---|
 | 3D | the barometer and the manometer of 9.1 are flat side elevations, the book's own view, since their lesson is two heights on one scale; the collection over water of 9.3 and the diffuser of 9.4 are flat for the same kind of reason. The 3D figures are Dalton's cylinders (9.20), the diffusion bulbs (9.27 + 9.28), the KMT cylinders (9.31), the speed-histogram gas box of 9.5 and the ideal and real boxes (9.36), with 9.23's balloons behind a 2D and 3D choice |
-| Folds | Figure 9.21 + 9.22 (the vapor-pressure curve beside the apparatus), 9.27 + 9.28, 9.32 + 9.33 + 9.34; the four manometer images of Examples 9.3 and 9.4 and their checks are unnumbered still copies drawn with the manometer's painter |
+| Folds | Figure 9.21 + 9.22 (the vapor-pressure curve beside the apparatus), 9.27 + 9.28, 9.32 + 9.33 + 9.34; the four manometer images of Examples 9.3 and 9.4 and their checks are kept as the book's images, unnumbered |
 | Sims | two added on 2026-09-28, the gas-density line of 9.3 and the speed-histogram gas box of 9.5, which answers the dropped gas-simulator Link to Learning; 9.2 keeps its two |
 | Colour | 9.3 binds `pressure`, `volume`, `temperature` and `mass`, not `amount`, since no figure draws a count of moles; 9.4 binds `mass` alone, no figure reading a time; 9.5 binds `pressure`, `volume` and `amount` as well, through Figure 9.31's two-state readout and gas bodies |
 | Symbols | 25 rows added on 2026-09-28: the 23 of the prep and `P_gas` (`\kPgas`) and `P_atm` (`\kPatm`), both `pressure`, staged by the chapter pass for the manometer |

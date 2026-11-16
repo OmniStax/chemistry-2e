@@ -21,6 +21,9 @@
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-fable-5-2"
       }
     ]
   },
@@ -75,6 +78,14 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "caption cut"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt: head in section, three timed points, bars with final times"
         }
       ]
     },
@@ -91,6 +102,8 @@
         "time"
       ],
       "conventions": [
+        "p+",
+        "n0",
         "e-",
         "gamma"
       ],
@@ -99,6 +112,10 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt: the decay played by route, energy given off as a column"
         }
       ]
     },
@@ -140,6 +157,14 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "caption cut"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt: cutaway chamber, smoke slider, electrons in the wire"
         }
       ]
     }

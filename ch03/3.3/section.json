@@ -27,6 +27,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -72,6 +75,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "readout numbers in type colours, molar M set upright"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: real balance, dish and beaker, even particles, reachable ranges"
     }
    ]
   },
@@ -95,7 +102,7 @@
     "concentration"
    ],
    "facts": [
-    "#1f6fc5"
+    "#2a9aa6"
    ],
    "ai": [
     {
@@ -107,6 +114,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "readout numbers in type colours, molar M set upright"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: cylinders as in the photograph, C against V graph, dilution only"
     }
    ]
   }

@@ -11,12 +11,12 @@ a ceiling on the page.
 | Section | Categories its figures draw | Referents | Facts and conventions |
 |---|---|---|---|
 | Intro | none | none | the photograph |
-| 10.1 | `temperature` (Figures 10.2, 10.6, 10.7, 10.11 + 10.12), `area` (the contact of 10.7) | the group 14, 15, 16 and 17 hydrides (10.11 + 10.12) | `F.el` for every atom; `F.cat(0)` and `F.cat(1)` for the δ+ and δ− ends of 10.6 and 10.9 |
-| 10.2 | `length`, `angle`, `surface-tension`, `density`, `acceleration` (Figure 10.20) | the narrow tube, the wide tube and the beaker (10.20) | the photographs |
-| 10.3 | `pressure`, `time` (10.22), `temperature`, `energy` (10.23, 10.24, 10.28), `mass` (10.29) | the flask and the manometer (10.22); diethyl ether, ethanol, water and ethylene glycol (10.24) | `F.el` for the molecules of 10.22 |
+| 10.1 | `temperature` (Figures 10.2, 10.6, 10.11 + 10.12) | the group 14, 15, 16 and 17 hydrides (10.11 + 10.12) | `F.el` for every atom; `F.cat(0)` and `F.cat(1)` for the δ+ and δ− ends of 10.6 |
+| 10.2 | `length`, `angle`, `surface-tension`, `density`, `acceleration` (Figure 10.20) | the narrow tube and the wide tube (10.20) | the photographs |
+| 10.3 | `pressure`, `time` (10.22), `temperature`, `energy` (10.23, 10.24, 10.29), `mass` (10.29) | the flask and the manometer (10.22); diethyl ether, ethanol, water and ethylene glycol (10.24) | `F.el` for the molecules of 10.22; `F.cat(0)` and `F.cat(3)` for the rates of vaporization and condensation on its graph |
 | 10.4 | `pressure`, `temperature` (10.30 + 10.31 + 10.34) | the solid-gas, liquid-gas and solid-liquid curves, the triple point and the critical point | `F.el` for the molecules of the sample window |
-| 10.5 | `temperature` (10.37 + 10.38, 10.39–10.42), `length` (the bond of 10.44's readout) | none | `F.el` for every atom and ion; `F.cat(0..2)` for the three impurity atoms of 10.45, which the book gives no element |
-| 10.6 | `mass`, `volume`, `length`, `density` (the density Sim), `angle` (10.55 + 10.56), `length` (10.57 + 10.58), `wavelength`, `length`, `angle` (10.63 + 10.64) | the A, B and C positions and their layers (10.53 + 10.54); the two rays with their waves and the sum (10.63 + 10.64) | `F.el` for every atom and ion |
+| 10.5 | `temperature` (10.37 + 10.38, 10.39–10.42), `length` (the bond of 10.44's readout) | none | `F.el` for every atom and ion |
+| 10.6 | `length` (the line along which the atoms touch, 10.46–10.52), `angle` (10.55 + 10.56), `length` (10.57 + 10.58), `wavelength`, `length`, `angle` (10.63 + 10.64) | the A, B and C positions and their layers (10.53 + 10.54); the two rays with their waves and the sum (10.63 + 10.64) | `F.el` for every atom and ion; `F.cat(0)` for the centering points of 10.55 + 10.56 |
 
 ## Temperature, pressure and energy
 
@@ -35,8 +35,8 @@ row in the section.
   `\kTsurf`, `\kthetacont`, `\krtube`, `\krho`, `\kgrav`. In Figure 10.20 the
   heights, the diameters and the 2r of the close-up wear length, the contact
   angle wears angle, and the readout writes each number in its category.
-- **10.1.** The contact band of the pentanes is an area, as the text's
-  "surface area available for contact" says.
+- **10.1.** The text marks the pentanes' "surface area available for
+  contact" as an area; Figure 10.7 is the book's image, so no figure draws it.
 - **10.6.** The edge length (`\kacell`, and `\kledge` where Example 10.14
   writes l), the face diagonal (`\kddiag`), the radius (`\kratom`), the plane
   spacing (`\kdplane`) and the Bragg angle (`\kthetabragg`) are on their
@@ -50,9 +50,9 @@ row in the section.
   The atoms of 10.53 + 10.54 are identical spheres with no element, so the
   layer positions A, B and C, which the text names one by one, are referents.
 - **Partial charges.** The text marks the partial charges it names on HCl as
-  charge. The δ+ and δ− ends of the dispersion and dipole figures keep the pair
-  `F.cat(0)` and `F.cat(1)`, named in a legend: they recur across both figures
-  and the text names the ends of a kind, not one particular end.
+  charge. The δ+ and δ− ends of the dispersion figure (10.6) keep the pair
+  `F.cat(0)` and `F.cat(1)`, named in a legend: the text names the ends of a
+  kind, not one particular end. The dipole figure (10.9) is the book's image.
 - **Intermolecular attractions** (dotted lines, hydrogen bonds) are ink.
 - **Phases** are told by packing, never by colour; the regions of a phase
   diagram are named in ink.

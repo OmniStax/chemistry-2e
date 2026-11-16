@@ -108,11 +108,11 @@ Pull a helium nucleus apart and watch 0.0305 amu reappear as 28.4 MeV. Slide alo
 Errata the sections found beyond the list above, carried as printed and named in the sections' `notes`:
 
 - 21.3: Figure 21.5's image labels the daughter radon-234 where its caption says thorium-234.
-- 21.4: Figure 21.15 (a) writes ⁹⁷₃₇Rb + ¹³⁷₅₅Cs + 3n, whose mass numbers add to 237, not 236; the live Figure 21.14 + 21.15 takes Figure 21.16's balanced ⁹⁶₃₇Rb in its place, and the original image keeps the book's. Figure 21.16 draws its first fission as Kr-93 and Ba-142 above an equation that writes Ba-140 + Kr-90 + 3n, which itself adds to 233; the original image is kept as printed.
+- 21.4: Figure 21.15 (a) prints ⁹⁶₃₇Rb + ¹³⁷₅₅Cs + 3n and Figure 21.16 draws and writes ¹⁴⁰₅₆Ba + ⁹³₃₆Kr + 3n, both balanced (corrected 2026-11-14 against the images; an earlier note here read 97 and 142 from the alt text).
 
 Departures from the plan above, each argued in its section's plan:
 
-- Figure 21.6 is a moving 2D figure on a locked view (root rule 28.2), not the 3D bench the book's rule names for an apparatus: the beams bend in the one vertical plane the book's perspective already shows, so turning the bench adds no relation (28.5).
+- Figure 21.6 is a moving flat section seen from the side, not the 3D bench the book's rule names for an apparatus: the beams bend in one plane, which the section shows, so turning the bench adds no relation (28.5).
 - Figures 21.30, 21.34 and 21.36 are kept as the book's drawings although each draws a kinematic arrow: the radiation entering the cell begins the event Figure 21.32 plays, the radon routes carry no rate or path the text gives, and the squiggles leaving the source are Figure 21.33's streams. Figures 21.18 and 21.19 are kept as photographs, their arrows carried by the chain-reaction and reactor figures of 21.4.
 - 21.4's untitled opening takes the header "The Nuclear Age".
 - The atomic masses behind Figure 21.3's points are OmniStax's own, from standard tables to four decimals, for 31 of the 33 nuclides; only helium-4 (4.0026 amu) and iron-56 (55.9349 amu) come from the book. The constants are the book's (1.0073, 1.0087 and 0.00055 amu, 1.6605 × 10⁻²⁷ kg per amu, 2.998 × 10⁸ m/s, 1.602 × 10⁻¹³ J per MeV).

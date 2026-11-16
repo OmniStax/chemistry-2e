@@ -22,6 +22,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -41,7 +44,6 @@
    "conventions": [
     "Na",
     "Cl",
-    "H",
     "e-"
    ],
    "ai": [
@@ -49,11 +51,20 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt flat from the book's section, caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt larger: drops and bubbles, screen in or out, recombination"
     }
    ],
    "facts": [
     "#3a3d42",
-    "#c9ced6"
+    "#c9ced6",
+    "#c9dc6a"
    ]
   },
   {
@@ -68,13 +79,22 @@
    "conventions": [
     "Al",
     "O",
-    "C"
+    "C",
+    "e-"
    ],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt flat from the book's section, headline dropped, caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: tap hole, electrons in and out, three per Al counted"
     }
    ],
    "facts": [

@@ -26,6 +26,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5"
    }
   ]
  },
@@ -58,6 +61,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "atoms clear of the edge, stray cloud, axis title and label clearances"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt: atoms on the axis's scale, the book's stages, bond energy bracket"
     }
    ]
   },
@@ -86,15 +93,16 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "rewritten: flat panels by default, 3D lobes behind a view choice"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt in 3D: no view choice or view buttons, phase key"
     }
    ]
   },
   {
    "id": "fig-bond-types",
    "kind": "figure",
-   "originals": [
-    "/media/ch08/CNX_Chem_08_01_bondtype_img.jpg"
-   ],
    "draws": [],
    "ai": [
     {
@@ -106,21 +114,26 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "misplaced name readout dropped"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "reverted to the book's image"
     }
    ]
   },
   {
    "id": "fig-butadiene",
    "kind": "figure",
-   "originals": [
-    "/media/ch08/CNX_Chem_08_01_C4H6_img.jpg"
-   ],
    "draws": [],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "reverted to the book's image"
     }
    ]
   }

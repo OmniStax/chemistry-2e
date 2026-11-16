@@ -23,6 +23,9 @@
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-fable-5-2"
       }
     ]
   },
@@ -51,6 +54,14 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "rebuilt flat from the book's image"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "redrawn larger; source off/on choice; ions hand over electrons at the faces"
         }
       ]
     },
@@ -63,7 +74,8 @@
       ],
       "original_caption": "The electrolysis of water produces stoichiometric amounts of oxygen gas at the anode and hydrogen at the cathode.",
       "draws": [
-        "potential"
+        "potential",
+        "volume"
       ],
       "conventions": [
         "O",
@@ -76,6 +88,14 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "rebuilt flat from the book's image"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "redrawn larger; graduated arms, a molecule a mL, H+ through the cross tube"
         }
       ]
     },
@@ -103,6 +123,14 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "rebuilt flat from the book's image"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "redrawn larger; state follows I and t; mass lost and gained; example readout"
         }
       ]
     }

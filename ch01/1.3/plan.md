@@ -63,8 +63,9 @@ id · replaces · concepts · moving or still · sliders · headline · graph
 1. `fig-physical-change` · keeps Figure 1.18, a `photo` row · physical-and-chemical-change · a photograph · keep: the text points the reader at it ("when steam condenses into liquid water (Figure 1.18)") and the concept's evidence names it; the wax and the steam are the two changes the sentence lists, not a stock scene beside it. Caption kept whole with both credit clauses.
 2. `fig-rust` · keeps Figure 1.19, a `photo` row · chemical-property · a photograph · keep: the text points at it and it shows the thing the passage is about, iron that rusts beside chromium that does not.
 3. `fig-chemical-change` · keeps Figure 1.20, a `photo` row · physical-and-chemical-change · a photograph · keep: the text points at it and its four panels are the four chemical changes the sentence lists (copper in nitric acid, combustion, cooking, rotting).
-4. `sim-extensive` · replaces nothing (a Sim, no number) · extensive-and-intensive-properties · **still**: the figure answers its two sliders and nothing else, no clock is in the idea, so it registers no cycle and gets no transport · the volume of the sample of milk $\kV$ (0.25 to 4.00 L, default 3.79 L, the book's gallon; type volume) and its temperature $\kT$ (0 to 60 °C, default 20 °C, the book's room temperature; type temperature) · "3.79 L of milk at 20 °C has a mass of 3.90 kg and a density of 1.03 g/mL" · no graph: beside the scene stand four bars, mass and volume growing with the slider in their hues, density and temperature standing still · Readout: $\km = d\,\kV$ with the live numbers and $\kT$; small line saying that doubling the sample doubles the first two and leaves the last two. The scene is a jug of milk on a balance with a thermometer in it: the milk and its level are the volume hue, the balance and its reading the mass hue, the thermometer column and its reading the temperature hue, and the density in ink, as the chapter's `COLOR.md` says. The density of milk is taken as 1.03 g/mL, the round figure for whole milk, since the book gives none; it is stated in the caption. Draws mass, volume, temperature.
-5. `fig-hazard-diamond` · Figure 1.21, a `figure` row with the book's image as its original · chemical-property · **still**: a sign has nothing to vary and no clock in it · no sliders · flat · labels on, and every quadrant carries a hover name. Redrawn faithfully: the four small diamonds, the scale of 0 to 4 for fire, health and reactivity in the words of the passage, and the abbreviations of the white diamond. The diamond's red, blue, yellow and white are the NFPA's own convention and the substance of the figure (the text says "the top (red) diamond"), not a type of the scheme and not an element, so they are written as their own values in named constants and stand unchanged in both themes, which is the one exception the book's `RULES.md` makes to drawing colour only through `C`, `PAL`, `F.el` and `F.cat`.
+4. `sim-extensive` · replaces nothing (a Sim, no number) · extensive-and-intensive-properties · value add: variation by slider, on the book's own case: the gallon and the cup of milk, each at 20 °C, and the two poured together, so the reader sees at once which readings add and which are the same in all three · arrows: none · **still**: the picture answers its two sliders and has no clock, so no cycle and no transport · sliders: the volume of the first sample $\kV_1$ (1000 to 4000 mL, opening on 3790 mL, the book's gallon, marked on the slider) and of the second $\kV_2$ (100 to 1000 mL, opening on 240 mL, the book's cup, marked); both type volume. The temperature slider of the first build is gone: it moved one bar and changed nothing in the idea, and a density held at 1.03 g/mL from 0 to 60 °C was not true of milk · no headline: the four rows under the samples say it, mass and volume written with + and =, temperature and density with = and =, bracketed "extensive" and "intensive" · no graph · Readout: $\kd = \km/\kV$ with the mass and volume of the samples poured together, the one thing the rows do not say (why a ratio of two extensive properties stays put, exercise 8) · 2D. The density of milk is taken as 1.03 g/mL, since the book gives none; the caption says so. Draws mass, volume, temperature, density.
+  works: parts: three beakers, each standing on the pan of its own top-pan balance, each with a thermometer standing in the milk; the first two hold the two samples, the third holds both; the balances' displays are the first row of the table of readings beneath · flow: none · must hold: (1) the third volume is the sum of the first two, and its level stands where its graduations say; (2) the third balance reads the sum of the two readings shown, to the gram; (3) the small beaker is drawn to the same scale as the large ones (0.6 as wide, so a milliliter stands 1/0.36 as high), and each level agrees with that beaker's own graduations; (4) every thermometer's bulb is under the milk and all three columns stand at the same height, 20 °C; (5) the density row reads 1.03 g/mL in all three and the readout's quotient of the numbers shown rounds to it at every setting; (6) the figure opens on a gallon and a cup · read off the image: no image; from the text, a gallon and a cup of milk, each at 20 °C, combined, the temperature staying at 20 °C. A gallon is taken as 3790 mL and a cup as 240 mL.
+5. `fig-hazard-diamond` · keeps Figure 1.21, a `photo` row · chemical-property · the book's own drawing, restored on 2026-11-14. The redraw was a still copy that showed less than the image and disagreed with it: it wrote "0–4" in the three numbered diamonds where the book shows a worked sign (4, 3, 2), "OX" where the book shows the struck-through W, left out the radioactive symbol, and moved each scale away from the diamond it rates into a table. The book's image keeps each scale beside its diamond and is the better figure.
 6. `fig-periodic-table` · keeps Figure 1.22, a `photo` row · physical-property (uses) · the book's own image, as `config.md` decides: the periodic table sheet is deferred until the app can serve one, the text keeps the book's words about the table, and the deferral is named in `notes`.
 
 No sketch of a quantity is in the section, so no book figure becomes an
@@ -133,12 +134,12 @@ this section.
 
 ## Colour
 
-The page binds `mass`, `volume` and `temperature`, all through
-`sim-extensive`: the balance and its reading and the $\km$ of the readout
-in the mass hue, the milk, its level and the $\kV$ slider in the volume
-hue, the thermometer column, the $\kT$ slider and its reading in the
-temperature hue. Density is in ink, as the chapter's `COLOR.md` says, and
-so is everything else on the page. The element palette is not used.
+The page binds `mass`, `volume`, `temperature` and `density`, all through
+`sim-extensive`: the balance readings and the $\km$ of the readout in the
+mass hue, the milk, its level, the two volume sliders and the volume row in
+the volume hue, the thermometer columns and the temperature row in the
+temperature hue, the density row and the readout's result in the density
+hue. The element palette is not used.
 
 ## Wanted at chapter level
 
@@ -178,3 +179,10 @@ labels are on.
 Judged against `docs/prompts/manim-style.md`; only the figures below changed.
 
 - `sim-extensive` · readout the mass equation alone, the temperature in the sentence (manim 12).
+
+## Figure re-examination, 2026-11-14 (Claude Fable 5.2)
+
+Both drawn figures were judged with the book's image open.
+
+- `sim-extensive` (Sim): rebuilt, as its plan line now says. The first build was one jug drawn as a toy with four bars and a temperature slider that did not touch the idea. It is now the book's gallon and cup poured together, with the readings in rows that add or stay. Its referents are `milk-1` and `milk-2`, the two samples; the earlier `jug` is gone. The beakers of the two samples wear their referent hues, the third beaker, the balances and the thermometers are ink.
+- `fig-hazard-diamond` (Figure 1.21): reverted to the book's image, as its plan line says. The page no longer draws any fact colour.

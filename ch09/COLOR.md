@@ -19,7 +19,7 @@ definition stay ink. The figures draw these:
 | Category | Where a figure draws it |
 |---|---|
 | `pressure` | every gauge, the pressure axes, the partial-pressure bars, every P of a readout |
-| `volume` | the body of gas in a cylinder, syringe, sphere or balloon, the volume axes, the lungs' fill |
+| `volume` | the body of gas in a cylinder, syringe, flask or balloon, the volume axes |
 | `temperature` | the temperature sliders and axes, every T of a readout |
 | `amount` | the amount sliders and the n of a readout; never the discs |
 | `mass` | the molar-mass axis of the density graph, the masses on Figure 9.18's balloons, ℳ in Graham's law and u_rms |
@@ -27,7 +27,7 @@ definition stay ink. The figures draw these:
 | `length` | the column height h of the barometer and the manometers (`\khcol`) |
 | `force`, `area` | the force arrow and the area bracket of Figure 9.2 (`\kforce`, `\karea`) |
 | `acceleration` | g in p = hρg (`\kgrav`) |
-| `velocity` | the speed axes, v_p and u_rms on the distributions (`\ku`, `\kurms`) |
+| `velocity` | the speed axes, the live distribution curve, u_p and u_rms on the distributions (`\ku`, `\kurms`) |
 | `energy` | KE and KE_avg in the readouts of 9.5 |
 
 `time` and `concentration` reach the chapter only in words (the 243 s of
@@ -43,24 +43,25 @@ ink while the density line and the words are coloured.
   walls and the name under each. The mercury is `F.el('Hg')` and the water a
   fixed ink opacity, as the substances they are; the column height is
   `length`.
-- **9.2** The sealed sphere of Figure 9.10 (its glass and label), the syringe
-  of Figure 9.13 (its barrel; the plunger stays ink), and the lungs and the
-  diaphragm of Figure 9.15 (the lungs' outline over their volume fill, the
-  diaphragm's stroke and label). The three balloons of Figure 9.18 are drawn
+- **9.2** The sealed flask of Figure 9.10 (its glass and label) and the syringe
+  of Figure 9.13 (its barrel; the plunger stays ink). Figure 9.15 is the
+  book's image and has no referents. The three balloons of Figure 9.18 are drawn
   alike in the volume hue, since the figure's argument is that the gas does
   not matter; the gas name is ink and the mass beside it is `mass`.
-- **9.3** The cylinders of hydrogen, helium and neon in Figure 9.20: each
-  cylinder's glass, its name, its row and its share of the partial-pressure
-  bar. The reaction flask and the collection flask of Figure 9.21 (the book's
+- **9.3** Gas A, gas B and gas C of Figure 9.20, which the book names no
+  further: each gas's particles, its name and its share of the
+  partial-pressure bar. The reaction flask and the collection flask of Figure 9.21 (the book's
   "bottle" is the collection flask).
 - **9.4** The left and right bulbs of Figure 9.27, and the lighter and heavier
   gas of the pair chosen (their count bars). ²³⁵UF₆ and ²³⁸UF₆ in the diffuser
   are referents: the uranium atom is `F.el('U')` and the ring round it the
   referent hue, since the isotope is the one difference.
-- **9.5** The baseline and the changed cylinder of Figure 9.31; the xenon,
-  argon, neon and helium curves of the distribution figure; the count of
-  speeds in the gas-box Sim. The four temperature curves of one gas are not
-  named one by one in the text and are told apart by `F.cat(i)`.
+- **9.5** The baseline and the changed cylinder of Figure 9.31 (their walls,
+  names and bars); the xenon, krypton, argon, neon and helium curves of the
+  distribution figure; the count of speeds in the gas-box Sim. The live
+  distribution curve is a single curve and wears `velocity`. The four
+  temperature curves of one gas are not named one by one in the text and are
+  told apart by `F.cat(i)`.
 - **9.6** The five Z curves of Figure 9.35 (hydrogen, nitrogen, oxygen,
   methane, carbon dioxide), with the ideal line ink and dashed; the ideal and
   the real gas of Figure 9.36 (their boxes, labels and bar names).
@@ -84,7 +85,7 @@ amount. They are told apart by what each colour is on:
 - **Amount is the count of moles.** The slider, the moles in the readout and
   the n of the equation. The particles are **not** in the amount hue: a
   particle is a thing, not a quantity. The gas box draws the gas the reader
-  picks (He, N₂, O₂, Ar, CO₂) in its element colours, and the sealed sphere
+  picks (He, N₂, O₂, Ar, CO₂) in its element colours, and the sealed flask
   draws the nitrogen and oxygen of air.
 - **The equation colours all four.** PV = nRT with each symbol and each live
   number in its hue, R and the equals sign in ink.

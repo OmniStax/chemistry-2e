@@ -26,6 +26,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -38,35 +41,6 @@
    "kind": "photo",
    "number": "7.2",
    "draws": []
-  },
-  {
-   "id": "sim-charge-balance",
-   "kind": "sim",
-   "draws": [],
-   "conventions": [
-    "Na",
-    "K",
-    "Mg",
-    "Ca",
-    "Al",
-    "Fe",
-    "Cl",
-    "O",
-    "S",
-    "N"
-   ],
-   "ai": [
-    {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    },
-    {
-     "model": "claude-opus-5-5",
-     "effort": "high",
-     "part": "review: note that repeated the caption dropped"
-    }
-   ]
   },
   {
    "id": "sim-nacl-lattice",
@@ -91,6 +65,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: camera pulled back so the packed crystal fits the stage"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: larger scene, key off the ions, one ion and its six picked out"
     }
    ]
   }

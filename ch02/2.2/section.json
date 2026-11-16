@@ -28,6 +28,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -45,10 +48,7 @@
    "original_caption": "(a) J. J. Thomson produced a visible beam in a cathode ray tube. (b) This is an early cathode ray tube, invented in 1897 by Ferdinand Braun. (c) In the cathode ray, the beam (shown in yellow) comes from the cathode and is accelerated past the anode toward a fluorescent scale at the end of the tube. Simultaneous deflections by applied electric and magnetic fields permitted Thomson to calculate the mass-to-charge ratio of the particles composing the cathode ray. (credit a: modification of work by Nobel Foundation; credit b: modification of work by Eugen Nesper; credit c: modification of work by “Kurzon”/Wikimedia Commons)",
    "draws": ["charge"],
    "conventions": [
-    "e-",
-    "Cu",
-    "Fe",
-    "Zn"
+    "e-"
    ],
    "ai": [
     {
@@ -60,6 +60,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "note dropped; front magnet made see-through over the beam"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt from the image: full tube and circuits, voltage and field sliders"
     }
    ]
   },
@@ -85,6 +89,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "note kept only off the hover, where it says the hover field"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt from the image: chamber in section, charge from the hover field"
     }
    ]
   },
@@ -128,6 +136,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "lead block in lead's colour; camera pulled back so above view fits"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt flat from above beside the foil's cross-section, live counts"
     }
    ]
   }

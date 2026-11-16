@@ -25,6 +25,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -34,22 +37,18 @@
  "figures": [
   {
    "id": "fig-chromate",
-   "kind": "sim",
+   "kind": "photo",
    "number": "2.32",
-   "originals": [
-    "/media/ch02/CNX_Chem_02_07_ErinBrocko.jpg"
-   ],
-   "original_caption": "(a) Erin Brockovich found that Cr(VI), used by PG&amp;E, had contaminated the Hinckley, California, water supply. (b) The Cr(VI) ion is often present in water as the polyatomic ions chromate, CrO₄²⁻ (left), and dichromate, Cr₂O₇²⁻ (right).",
    "draws": [],
-   "conventions": [
-    "Cr",
-    "O"
-   ],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image, which shows the photograph and both ions"
     }
    ]
   }

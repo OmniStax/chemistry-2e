@@ -18,6 +18,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -39,6 +42,14 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "re-examined: headline and readout split, caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: each series read member by member under the table"
     }
    ]
   },
@@ -69,6 +80,14 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "re-examined: atom and ion rows, one-equation readout"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: a column per metal, a cell per 4s and 3d electron; state choice"
     }
    ]
   },
@@ -98,20 +117,33 @@
     "temperature"
    ],
    "conventions": [
-    "Fe",
     "C",
-    "Ca",
-    "O"
+    "O",
+    "N"
    ],
    "facts": [
     "#ff8c1a",
-    "#ffd24d"
+    "#ffd24d",
+    "#8f3b2b",
+    "#3a3d42",
+    "#d8d0bf",
+    "#9aa0a8",
+    "#b3261e",
+    "#ff7a1a"
    ],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "re-examined: book reaction list beside shaft, key row, readout"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: brick furnace in section, glowing bed, followed lump or air"
     }
    ]
   },
@@ -170,6 +202,14 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "re-examined: one-line readout, coolant headline, caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: a bar per material under the graph on one temperature axis"
     }
    ]
   },

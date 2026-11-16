@@ -20,156 +20,187 @@ const amt = (x) => (x <= 0 ? '0' : x >= 100 ? x.toFixed(0) : x.toPrecision(3));
 
 /* =====================================================================
    FIGURE 14.15 + 14.17: 100 mL of an acetate buffer, c in each partner
-   (0.10 M, the book's, or 1.0 M), with n mmol of 0.10 M NaOH or HCl
-   added, beside 100 mL of 1.8 × 10⁻⁵ M HCl (pH 4.74, Example 14.20's
-   unbuffered solution) given the same addition. Ka 1.8 × 10⁻⁵, Kw
-   1.0 × 10⁻¹⁴. Left, the two partners' amounts as bars relative to their
-   start, which the dashed line marks (14.15); right, pH against n added
-   (14.17) for both solutions, each from the exact charge balance
-   Na⁺ + H₃O⁺ = CH₃CO₂⁻ + OH⁻ + Cl⁻. Axes fixed: n 0 to 11 mmol (the
-   slider's range), pH 0 to 14; the unbuffered solution reaches 12.72
-   with 11 mmol NaOH and 1.28 with 11 mmol HCl, so nothing is pinned.
+   (0.10 M, the book's, 0.050 M or 0.025 M), beside 100 mL of
+   1.8 × 10⁻⁵ M HCl (pH 4.74, Example 14.20's unbuffered solution), each
+   given the same volume of 0.10 M HCl or NaOH. Ka 1.8 × 10⁻⁵, Kw
+   1.0 × 10⁻¹⁴. Above, what each solution holds, in mmol on one fixed
+   scale (0 to 20): CH₃CO₂H, CH₃CO₂⁻ (the bars of 14.15) and the H₃O⁺ or
+   OH⁻ left free, inside a dashed outline of what was added. Below, pH
+   against the volume added (14.17 is the right half), HCl to the left of
+   zero and NaOH to the right, for both solutions, each from the exact
+   charge balance Na⁺ + H₃O⁺ = CH₃CO₂⁻ + OH⁻ + Cl⁻. Axes fixed: −120 to
+   120 mL (the slider's range), pH 0 to 14; the unbuffered solution runs
+   from 1.26 to 12.74, so nothing is pinned.
    Still: adding acid or base is an amount, not a clock.
 ===================================================================== */
 (function () {
-  const d = sim('sim-buffer', 560);
-  const KA = 1.8e-5, KW = 1e-14, V0 = 100, CT = 0.1, H0 = 1.8e-5, PKA = '4.74', NMAX = 11;
-  const capOf = (c) => c * V0 * (0.89 / 1.11);
-  let add = null, buf = null, n = null;
-  add = F.choice(d.controls, {
-    label: '\\text{add}', aria: 'the strong acid or base added', value: 'base',
-    options: [{ value: 'acid', label: 'HCl' }, { value: 'base', label: 'NaOH' }],
-    onInput: () => n && n.refresh(),
+  const d = sim('sim-buffer', 910);
+  const KA = 1.8e-5, KW = 1e-14, V0 = 100, CT = 0.1, H0 = 1.8e-5, PKA = '4.74', VMAX = 120, NTOP = 20;
+  /* the volume that leaves the consumed partner at 11 % of the other, where the pH has moved one unit */
+  const capOf = (c) => (c * V0 * (0.89 / 1.11)) / CT;
+  let buf = null, vol = null;
+  vol = ctl(d.controls, {
+    label: '\\text{added}', cls: 'volume', key: 'added', min: -VMAX, max: VMAX, step: 0.1, value: 1, unit: 'mL',
+    fmt: (v) => (Math.abs(v) < 0.05 ? 'nothing' : `${Math.abs(v).toFixed(1)} mL of ${v < 0 ? 'HCl' : 'NaOH'}`),
+    aria: 'volume of 0.10 M strong acid or base added to each solution, hydrochloric acid below zero and sodium hydroxide above',
+    specials: [
+      { at: () => { const x = capOf(+buf.value); return x <= VMAX ? x : null; }, label: 'buffer capacity for base' },
+      { at: () => { const x = capOf(+buf.value); return x <= VMAX ? -x : null; }, label: 'buffer capacity for acid' },
+    ],
   });
   buf = F.choice(d.controls, {
-    label: '\\text{buffer}', aria: 'the concentration of each buffer partner', value: '0.1',
-    options: [{ value: '0.1', label: '0.10 M' }, { value: '1', label: '1.0 M' }],
-    onInput: () => n && n.refresh(),
-  });
-  n = ctl(d.controls, {
-    label: '\\kn', cls: 'amount', min: 0, max: NMAX, step: 0.01, value: 0.1, unit: 'mmol', dec: 2,
-    aria: 'amount of strong acid or base added, in millimoles',
-    specials: [{ at: () => { const x = capOf(+buf.value); return x <= NMAX ? x : null; }, label: 'capacity' }],
+    label: '\\text{each buffer partner}', aria: 'the concentration of acetic acid and of acetate in the buffer', value: '0.1',
+    options: [{ value: '0.025', label: '0.025 M' }, { value: '0.05', label: '0.050 M' }, { value: '0.1', label: '0.10 M' }],
+    onInput: () => vol && vol.refresh(),
   });
   const ro = F.readout(d);
   let hits = [];
   F.hover(d.stage, () => hits);
 
-  const vol = (x) => V0 + x / CT;
   /* the hydronium molarity where the charge balance closes, by bisection on log h */
   function solve(f) {
     let lo = -15, hi = 1;
     for (let i = 0; i < 60; i++) { const m = (lo + hi) / 2; if (f(10 ** m) > 0) hi = m; else lo = m; }
     return 10 ** ((lo + hi) / 2);
   }
-  function hBuf(dir, c, x) {
-    const V = vol(x), CA = (2 * c * V0) / V, Na = (c * V0 + (dir === 'base' ? x : 0)) / V, Cl = (dir === 'acid' ? x : 0) / V;
+  /* s is the volume added in mL: HCl below zero, NaOH above */
+  function hBuf(c, s) {
+    const x = Math.abs(s) * CT, V = V0 + Math.abs(s), CA = (2 * c * V0) / V, Na = (c * V0 + (s > 0 ? x : 0)) / V, Cl = (s < 0 ? x : 0) / V;
     return solve((h) => Na + h - Cl - (CA * KA) / (KA + h) - KW / h);
   }
-  function hUn(dir, x) {
-    const V = vol(x), D = (H0 * V0 + (dir === 'acid' ? x : 0) - (dir === 'base' ? x : 0)) / V, s = Math.sqrt(D * D + 4 * KW);
-    return D >= 0 ? (D + s) / 2 : (2 * KW) / (s - D);
+  function hUn(s) {
+    const V = V0 + Math.abs(s), D = (H0 * V0 - s * CT) / V, r = Math.sqrt(D * D + 4 * KW);
+    return D >= 0 ? (D + r) / 2 : (2 * KW) / (r - D);
   }
-  /* each curve sampled once per state and read by interpolation */
-  const N = 1100, tables = new Map();
-  function table(key, f) {
-    if (!tables.has(key)) tables.set(key, Float64Array.from({ length: N + 1 }, (_, i) => -Math.log10(f((NMAX * i) / N))));
-    return tables.get(key);
-  }
-  const at = (t, x) => { const u = Math.min(N, Math.max(0, (x / NMAX) * N)), i = Math.min(N - 1, Math.floor(u)); return t[i] + (t[i + 1] - t[i]) * (u - i); };
-  const pBufOf = (dir, c) => table(`b|${dir}|${c}`, (x) => hBuf(dir, +c, x));
-  const pUnOf = (dir) => table(`u|${dir}`, (x) => hUn(dir, x));
-  /* a curve while the choices turn: the old state bent into the new one */
-  function blended(fOf) {
-    const fA = add.from ?? add.value, tA = add.value, fB = buf.from ?? buf.value, tB = buf.value, kA = add.k, kB = buf.k;
-    const t00 = fOf(fA, fB), t10 = fOf(tA, fB), t01 = fOf(fA, tB), t11 = fOf(tA, tB);
-    return (x) => { const a = at(t00, x) + (at(t10, x) - at(t00, x)) * kA, b = at(t01, x) + (at(t11, x) - at(t01, x)) * kA; return a + (b - a) * kB; };
+  const pUn = (s) => -Math.log10(hUn(s));
+  /* the buffer's curve is sampled once per concentration, finely where it is steep, and read by interpolation */
+  const tables = new Map();
+  function pBuf(c) {
+    if (!tables.has(c)) {
+      const N = 2400, t = Float64Array.from({ length: N + 1 }, (_, i) => -Math.log10(hBuf(c, -VMAX + (2 * VMAX * i) / N)));
+      tables.set(c, (s) => { const u = Math.min(N, Math.max(0, ((s + VMAX) / (2 * VMAX)) * N)), i = Math.min(N - 1, Math.floor(u)); return t[i] + (t[i + 1] - t[i]) * (u - i); });
+    }
+    return tables.get(c);
   }
 
-  const B = { l: 560, r: 1330, t: 128, b: 462 };
-  const BAR = { base: 462, h: 140, w: 96, x: [150, 266] };
+  /* an amount in mmol: three figures, or m × 10ⁿ below 0.0005 */
+  const mmol = (m) => {
+    if (m <= 0) return '0';
+    if (m >= 0.0005) return m >= 100 ? m.toFixed(0) : m.toPrecision(3);
+    const s = sig(m, 2); return `${s.m} × 10${sup(s.e)}`;
+  };
+  const molar = (x) => `${sigTex(x)}\\ \\text{M}`;
+
+  const P = [{ l: 110 }, { l: 790 }], SLOT = [72, 222, 400], BW = 130, PW = 560, TOP = 112, BASE = 392;
+  const G = { l: 110, r: 1350, t: 520, b: 826 };
   function draw() {
     const { ctx, H } = begin(d.c);
     hits = [];
-    const dir = add.value, c = +buf.value, x = n.v, cA = C('amount'), cC = C('concentration');
-    const cB = F.ref('buffer'), cU = F.ref('unbuffered');
-    const a0 = c * V0, V = vol(x);
-    const ha = dir === 'base' ? a0 - x : a0 + x, ab = dir === 'base' ? a0 + x : a0 - x;
-    const spent = Math.min(ha, ab) <= 0, ratio = ab / ha;
-    const hh = !spent && ratio >= 0.01 && ratio <= 100;
+    const c = +buf.value, s = Math.abs(vol.v) < 0.05 ? 0 : vol.v, x = Math.abs(s) * CT, V = V0 + Math.abs(s), base = s > 0;
+    const cA = C('amount'), cC = C('concentration'), cV = C('volume'), cB = F.ref('buffer'), cU = F.ref('unbuffered');
+    const a0 = c * V0;
+    /* the strong acid or base turns one partner into the other until that partner is gone; past it the excess stays as H₃O⁺ or OH⁻ */
+    const ha = Math.max(0, Math.min(2 * a0, a0 - (base ? x : -x))), ab = Math.max(0, Math.min(2 * a0, a0 + (base ? x : -x)));
+    const spent = Math.min(ha, ab) <= 0, ratio = ab / ha, hh = !spent && ratio >= 0.01 && ratio <= 100;
+    const hB = hBuf(c, s), hU = hUn(s);
 
-    /* the readout's pH, which the headline repeats */
-    let pH, tex, form, note = '';
+    /* the buffer's pH as the book works it: Henderson-Hasselbalch on the stoichiometric concentrations while both partners remain */
+    let pB, texB, form, note = '';
     if (hh) {
-      const sA = sig(ab / V).plain ?? sigTex(ab / V), sHA = sig(ha / V).plain ?? sigTex(ha / V);
-      pH = (+PKA + Math.log10(sigNum(ab / V) / sigNum(ha / V))).toFixed(2);
-      tex = `\\mk{p}{\\kpH} = \\mk{k}{\\kpKa} + \\log\\frac{\\kconcAm}{\\kconcHA} = \\mk{kv}{${hue('equilibrium-constant', PKA)}} + \\log\\frac{\\mk{A}{${hue('concentration', sA)}}}{\\mk{HA}{${hue('concentration', sHA)}}} = \\mk{v}{${hue('concentration', pH)}}`;
+      pB = (+PKA + Math.log10(sigNum(ab / V) / sigNum(ha / V))).toFixed(2);
+      texB = `\\mk{p}{\\kpH} = \\mk{k}{\\kpKa} + \\log\\frac{\\kconcAm}{\\kconcHA} = \\mk{kv}{${hue('equilibrium-constant', PKA)}} + \\log\\frac{\\mk{A}{${hue('concentration', molar(ab / V))}}}{\\mk{HA}{${hue('concentration', molar(ha / V))}}} = \\mk{v}{${hue('concentration', pB)}}`;
       form = 'hh';
+    } else if (base) {
+      const oh = sigNum(KW / hB);
+      pB = (14 + Math.log10(oh)).toFixed(2);
+      texB = `\\mk{p}{\\kpH} = ${hue('equilibrium-constant', '14.00')} + \\log\\kconcOH = ${hue('equilibrium-constant', '14.00')} + \\log(\\mk{c}{${hue('concentration', molar(oh))}}) = \\mk{v}{${hue('concentration', pB)}}`;
+      form = 'base';
     } else {
-      const h = hBuf(dir, c, x);
-      if (dir === 'base') {
-        const oh = sigNum(KW / h);
-        pH = (14 + Math.log10(oh)).toFixed(2);
-        tex = `\\mk{p}{\\kpH} = ${hue('equilibrium-constant', '14.00')} - \\kpOH = ${hue('equilibrium-constant', '14.00')} + \\log\\kconcOH = ${hue('equilibrium-constant', '14.00')} + \\log(\\mk{c}{${hue('concentration', sigTex(oh))}}) = \\mk{v}{${hue('concentration', pH)}}`;
-      } else {
-        const hy = sigNum(h);
-        pH = (-Math.log10(hy)).toFixed(2);
-        tex = `\\mk{p}{\\kpH} = -\\log\\kconcHyd = -\\log(\\mk{c}{${hue('concentration', sigTex(hy))}}) = \\mk{v}{${hue('concentration', pH)}}`;
-      }
-      form = dir;
-      if (spent) note = dir === 'base'
-        ? `All ${amt(a0)} mmol of CH₃CO₂H is used up; the excess OH⁻ sets the pH.`
-        : `All ${amt(a0)} mmol of CH₃CO₂⁻ is used up; the excess H₃O⁺ sets the pH.`;
+      const hy = sigNum(hB);
+      pB = (-Math.log10(hy)).toFixed(2);
+      texB = `\\mk{p}{\\kpH} = -\\log\\kconcHyd = -\\log(\\mk{c}{${hue('concentration', molar(hy))}}) = \\mk{v}{${hue('concentration', pB)}}`;
+      form = 'acid';
     }
-    const pU = (-Math.log10(hUn(dir, x))).toFixed(2), what = dir === 'base' ? 'NaOH' : 'HCl';
-    const lines = topline(ctx, x < 0.005
-      ? 'With nothing added, the buffer and the unbuffered solution both have pH 4.74.'
-      : `Adding ${x.toFixed(2)} mmol of ${what} moves the buffer from pH 4.74 to ${pH} and the unbuffered solution from pH 4.74 to ${pU}.`);
-    const lab = F.labeller(ctx, H, { headline: lines });
+    if (spent) note = base
+      ? `All ${mmol(a0)} mmol of CH₃CO₂H is used up, so the OH⁻ added after that stays in the buffer too.`
+      : `All ${mmol(a0)} mmol of CH₃CO₂⁻ is used up, so the H₃O⁺ added after that stays in the buffer too.`;
+    /* the unbuffered solution's, from what is left of the strong acid or base, as Example 14.20(c) works it */
+    let pU, texU;
+    if (hU < 1e-7) {
+      const oh = sigNum(KW / hU);
+      pU = (14 + Math.log10(oh)).toFixed(2);
+      texU = `\\kpH = ${hue('equilibrium-constant', '14.00')} + \\log\\kconcOH = ${hue('equilibrium-constant', '14.00')} + \\log(${hue('concentration', molar(oh))}) = ${hue('concentration', pU)}`;
+    } else {
+      const hy = sigNum(hU);
+      pU = (-Math.log10(hy)).toFixed(2);
+      texU = `\\kpH = -\\log\\kconcHyd = -\\log(${hue('concentration', molar(hy))}) = ${hue('concentration', pU)}`;
+    }
 
-    /* the two partners, as the book's bars: heights relative to the start, which the dashed line marks */
-    const yS = BAR.base - BAR.h, names = ['CH_{3}CO_{2}H', 'CH_{3}CO_{2}⁻'];
-    line(ctx, BAR.x[0] - 30, yS, BAR.x[1] + BAR.w + 30, yS, alpha(PAL.ink, 0.45), 2, [10, 10]);
-    text(ctx, 'start', BAR.x[0] - 38, yS, PAL.muted, { size: 17, align: 'right' });
-    [ha, ab].forEach((m, i) => {
-      const col = F.cat(i), hgt = (Math.max(0, m) / a0) * BAR.h, x0 = BAR.x[i];
-      ctx.save(); ctx.fillStyle = alpha(col, 0.35); ctx.fillRect(x0, BAR.base - hgt, BAR.w, hgt); ctx.restore();
-      if (hgt > 0) { line(ctx, x0, BAR.base, x0, BAR.base - hgt, col, 3); line(ctx, x0, BAR.base - hgt, x0 + BAR.w, BAR.base - hgt, col, 3); line(ctx, x0 + BAR.w, BAR.base - hgt, x0 + BAR.w, BAR.base, col, 3); }
-      text(ctx, `${amt(m)} mmol`, x0 + BAR.w / 2, BAR.base - hgt - 20, cA, { size: 20, weight: 600, align: 'center', bg: PAL.panel });
-      text(ctx, names[i], x0 + BAR.w / 2, BAR.base + 30, PAL.ink, { size: 22, weight: 600, align: 'center' });
-      hits.push({ x: x0 + BAR.w / 2, y: BAR.base - hgt / 2, r: 40, name: `${names[i].replace('_{3}', '₃').replace('_{2}', '₂')}: ${amt(m)} mmol` });
+    /* what each solution holds: the two partners and the strong acid or base still free, on one scale of amount */
+    const free = base ? 'OH⁻' : 'H_{3}O⁺', freeU = free.replace('_{3}', '₃');
+    const names = ['CH_{3}CO_{2}H', 'CH_{3}CO_{2}⁻', free], plain = ['CH₃CO₂H', 'CH₃CO₂⁻', freeU];
+    const cols = [F.cat(0), F.cat(1), F.cat(base ? 2 : 3)];
+    const k = buf.k < 1 ? buf.mix((v) => +v) / c : 1;          /* the bars slide to a new concentration; their numbers do not */
+    const held = [
+      { name: 'unbuffered solution', col: cU, pH: pU, m: [0, 0, (base ? KW / hU : hU) * V] },
+      { name: 'acetate buffer', col: cB, pH: pB, m: [ha, ab, (base ? KW / hB : hB) * V] },
+    ];
+    held.forEach((S, j) => {
+      const L = P[j].l, a = F.axes(ctx, { l: L, r: L + PW, t: TOP, b: BASE }, [0, 1], [0, NTOP], { nx: 0, ny: 4, yl: 'mmol', yc: cA });
+      F.rich(ctx, [[S.name, S.col, 700], s === 0 ? '   pH ' : '   pH 4.74 → ', [S.pH, cC, 700]], L + PW / 2, 52, { size: 28, align: 'center' });
+      S.m.forEach((m, i) => {
+        const x0 = L + SLOT[i], col = cols[i], top = a.Y(Math.min(NTOP, m * (i < 2 ? k : 1))), none = j === 0 && i < 2;
+        let over = top;
+        if (i === 2 && x > 0) {
+          /* the dashed outline is what was added; the fill inside it is what is still free */
+          const yA = a.Y(x);
+          ctx.save(); ctx.setLineDash([8, 7]); ctx.lineWidth = 2.5; ctx.strokeStyle = alpha(PAL.ink, 0.6); ctx.strokeRect(x0, yA, BW, BASE - yA); ctx.restore();
+          over = Math.min(top, yA);
+          hits.push({ x: x0 + BW / 2, y: (yA + BASE) / 2, r: Math.max(16, (BASE - yA) / 2), name: `${freeU} added to the ${S.name}: ${mmol(x)} mmol, of which ${mmol(m)} mmol is still ${freeU}` });
+        }
+        if (BASE - top > 0.5) {
+          ctx.save(); ctx.fillStyle = alpha(col, 0.4); ctx.fillRect(x0, top, BW, BASE - top); ctx.restore();
+          line(ctx, x0, BASE, x0, top, col, 3); line(ctx, x0, top, x0 + BW, top, col, 3); line(ctx, x0 + BW, top, x0 + BW, BASE, col, 3);
+        }
+        text(ctx, none ? 'none' : `${mmol(m)} mmol`, x0 + BW / 2, over - 20, none ? PAL.muted : cA, { size: 20, weight: none ? 400 : 600, align: 'center', bg: PAL.panel });
+        text(ctx, names[i], x0 + BW / 2, BASE + 30, PAL.ink, { size: 22, weight: 600, align: 'center' });
+        if (i < 2) hits.push({ x: x0 + BW / 2, y: (top + BASE) / 2, r: Math.max(16, (BASE - top) / 2), name: none ? `the unbuffered solution holds no ${plain[i]}` : `${plain[i]} in the buffer: ${mmol(m)} mmol` });
+      });
+      line(ctx, L, BASE, L + PW, BASE, PAL.ink, 3);
     });
-    line(ctx, BAR.x[0] - 30, BAR.base, BAR.x[1] + BAR.w + 30, BAR.base, PAL.ink, 3);
+    if (x > 0) F.legend(ctx, { l: P[1].l, r: P[1].l + PW, t: TOP, b: BASE }, [{ s: `${free} added`, color: alpha(PAL.ink, 0.6), dash: [8, 7], w: 2.5 }], { corner: 'tr' });
 
-    /* pH against the strong acid or base added */
-    const a = F.axes(ctx, B, [0, NMAX], [0, 14], { nx: 11, ny: 7, yl: 'pH', yc: cC });
-    add.only(ctx, 'base', () => text(ctx, 'NaOH added (mmol)', B.r, B.b + 58, cA, { align: 'right', weight: 600, size: 20 }));
-    add.only(ctx, 'acid', () => text(ctx, 'HCl added (mmol)', B.r, B.b + 58, cA, { align: 'right', weight: 600, size: 20 }));
-    lab.block(B.l - 60, B.t - 44, B.l + 40, B.t - 6); lab.block(B.l - 60, B.t, B.l - 4, B.b + 40); lab.block(B.l, B.b + 4, B.r + 10, B.b + 76);
-    const fB = blended(pBufOf), fU = blended((dd) => pUnOf(dd));
-    ctx.save(); ctx.beginPath(); ctx.rect(B.l, B.t - 6, B.r - B.l, B.b - B.t + 12); ctx.clip();
-    F.curve(ctx, fU, 0, NMAX, a.X, a.Y, cU, 4, 1100);
-    F.curve(ctx, fB, 0, NMAX, a.X, a.Y, cB, 5, 1100);
-    ctx.restore();
-    const pb = { x: a.X(x), y: a.Y(fB(x)) }, pu = { x: a.X(x), y: a.Y(fU(x)) };
-    line(ctx, pb.x, pb.y, pb.x, B.b, alpha(PAL.ink, 0.4), 2, [4, 8]);
+    /* pH against the volume added, acid to the left of zero and base to the right */
+    const g = F.axes(ctx, G, [-VMAX, VMAX], [0, 14], { nx: 12, ny: 7, yl: 'pH', yc: cC, fx: (v) => String(Math.abs(v)) });
+    text(ctx, 'mL of 0.10 M HCl added', G.l, G.b + 58, cV, { align: 'left', weight: 600, size: 20 });
+    text(ctx, 'mL of 0.10 M NaOH added', G.r, G.b + 58, cV, { align: 'right', weight: 600, size: 20 });
+    const lab = F.labeller(ctx, H);
+    lab.block(0, 0, 1400, G.t - 2); lab.block(0, G.b + 2, 1400, H);
+    line(ctx, G.l, g.Y(+PKA), G.r, g.Y(+PKA), alpha(PAL.ink, 0.4), 2, [10, 10]);
+    const fB = (v) => buf.mix((cv) => pBuf(+cv)(v));
+    /* sampled on t³, so the unbuffered solution's leap through zero is drawn as the one unbroken line it is */
+    const warp = (t) => VMAX * t * t * t, Xw = (t) => g.X(warp(t));
+    F.curve(ctx, (t) => pUn(warp(t)), -1, 1, Xw, g.Y, cU, 4, 1600);
+    F.curve(ctx, fB, -VMAX, VMAX, g.X, g.Y, cB, 5, 2400);
+    const key = F.legend(ctx, g, [{ s: 'unbuffered solution', color: cU, w: 4 }, { s: 'acetate buffer', color: cB, w: 5 }], { corner: 'tl', lab });
+    text(ctx, 'both start at pH 4.74', G.l + 12, g.Y(+PKA) - 16, PAL.muted, { size: 18, align: 'left', bg: PAL.panel });
+    lab.block(G.l, g.Y(+PKA) - 30, G.l + 230, g.Y(+PKA));
+    const pb = { x: g.X(s), y: g.Y(fB(s)) }, pu = { x: g.X(s), y: g.Y(pUn(s)) };
+    line(ctx, pb.x, Math.min(pb.y, pu.y), pb.x, G.b, alpha(PAL.ink, 0.45), 2, [4, 8]);
     const cap = capOf(c);
-    if (cap <= NMAX) {
-      const pc = { x: a.X(cap), y: a.Y(fB(cap)) };
+    if (cap <= VMAX && buf.k >= 1) [1, -1].forEach((sg) => {
+      const pc = { x: g.X(sg * cap), y: g.Y(fB(sg * cap)) };
       dot(ctx, pc.x, pc.y, cB, false, 10);
       lab.block(pc.x - 12, pc.y - 12, pc.x + 12, pc.y + 12);
-      lab.add(dir === 'base' ? '[CH_{3}CO_{2}H] is 11% of [CH_{3}CO_{2}⁻]' : '[CH_{3}CO_{2}⁻] is 11% of [CH_{3}CO_{2}H]', pc.x, pc.y, -0.5, -0.87, PAL.ink, 20, 60);
-      hits.push({ x: pc.x, y: pc.y, r: 14, name: `the buffer capacity: ${cap.toFixed(2)} mmol, pH ${fB(cap).toFixed(2)}` });
-    }
+      if (sg > 0 === s >= 0) lab.add(sg > 0 ? '[CH_{3}CO_{2}H] is 11% of [CH_{3}CO_{2}⁻]' : '[CH_{3}CO_{2}⁻] is 11% of [CH_{3}CO_{2}H]', pc.x, pc.y, -0.5 * sg, -0.87, PAL.ink, 20, 56);
+      hits.push({ x: pc.x, y: pc.y, r: 14, name: `the buffer capacity: ${cap.toFixed(1)} mL of ${sg > 0 ? 'NaOH' : 'HCl'}, where the pH has moved one unit to ${fB(sg * cap).toFixed(2)}` });
+    });
     dot(ctx, pu.x, pu.y, cU, true, 9);
     dot(ctx, pb.x, pb.y, cB, true, 9);
     lab.block(pb.x - 14, pb.y - 14, pb.x + 14, pb.y + 14); lab.block(pu.x - 14, pu.y - 14, pu.x + 14, pu.y + 14);
-    const s = dir === 'base' ? 1 : -1;
-    lab.add('buffer', a.X(2), a.Y(fB(2)), 0, -s, cB, 20, 26);
-    lab.add('unbuffered', a.X(6), a.Y(fU(6)), 0, s, cU, 20, 26);
     lab.flush();
-    hits.push({ x: pb.x, y: pb.y, r: 14, name: `the buffer: pH ${fB(x).toFixed(2)}` }, { x: pu.x, y: pu.y, r: 14, name: `the unbuffered solution: pH ${pU}` });
-    ro.set(tex, note, { form });
+    hits.push({ x: pb.x, y: pb.y, r: 14, name: `the buffer: pH ${pB}` }, { x: pu.x, y: pu.y, r: 14, name: `the unbuffered solution: pH ${pU}` });
+    ro.set(`\\text{buffer: }${texB} \\\\ \\text{unbuffered: }${texU}`, note, { form: form + (hU < 1e-7 ? 'b' : 'a') });
   }
   register(d.fig, { update: () => {}, draw });
 })();

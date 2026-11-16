@@ -29,6 +29,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -46,6 +49,21 @@
    "id": "sim-precipitation",
    "kind": "sim",
    "draws": [],
+   "conventions": [
+    "K",
+    "Na",
+    "Li",
+    "N",
+    "H",
+    "Pb",
+    "Ag",
+    "Ba",
+    "I",
+    "Cl",
+    "O",
+    "C",
+    "S"
+   ],
    "facts": [
     "#f2c300",
     "#ece29a",
@@ -62,6 +80,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "guideline lines rewrapped inside the stage; notes trimmed to the spectator ions"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: every ion drawn, the insoluble pair packs on the bottom as the solid"
     }
    ]
   },
@@ -90,6 +112,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "HCl note dropped, it repeated the caption"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: a real flask, no overlaps, NH₃ trades its hydrogen ion both ways"
     }
    ]
   },
@@ -840,13 +866,6 @@
    "label": "the second solution",
    "figures": [
     "sim-precipitation"
-   ]
-  },
-  {
-   "id": "flask",
-   "label": "the stoppered flask",
-   "figures": [
-    "sim-hcl"
    ]
   }
  ]

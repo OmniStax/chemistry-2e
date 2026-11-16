@@ -22,6 +22,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -51,6 +54,14 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "readout as one IE₁ chain, outline from first member, caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: group read down by period under the full table, tap a column"
     }
    ]
   },

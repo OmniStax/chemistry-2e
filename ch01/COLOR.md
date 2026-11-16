@@ -8,16 +8,15 @@ convention, referent, category.
 
 ## Facts and conventions
 
-The one fact colour of the chapter is the NFPA hazard diamond of 1.3: its red,
-blue, yellow and white are the sign's own and go through `F.fact`, with the
-sign's black numerals beside them, so the reader's Facts and conventions
-switch reaches them. With that switch off the quadrants are drawn as empty
-panels outlined in ink.
+The chapter draws no fact colour. The NFPA hazard diamond of 1.3 (Figure
+1.21) is the book's own image, which carries the sign's red, blue, yellow and
+white itself, so nothing goes through `F.fact`.
 
-Every atom and molecule takes its element's colour through `F.el`: the water
-of 1.1 and 1.6, the hydrogen and oxygen over the electrodes of 1.15, the
-molecules of 1.14 and the fuel cell of 1.16. The phase of a sample is told by
-how its molecules pack, never by a tint. No particle in this chapter stands for
+Every atom and molecule the chapter draws takes its element's colour through
+`F.el`: the water, the hydrogen and the oxygen counted beside the electrodes
+of 1.15. The molecules of 1.5, 1.14 and the fuel cell of 1.16 are in the
+book's own images. The phase of a sample is told by the shape it takes in its
+container, never by a hue of its own. No particle in this chapter stands for
 matter in general: each picture names what it draws, and what it draws has an
 element.
 
@@ -29,23 +28,23 @@ the categories that figure draws.
 
 | Section | Figure | Referents |
 |---|---|---|
-| 1.1 | Figure 1.5 | the beaker of water |
-| 1.2 | Figure 1.6 | the narrow and the wide container that hold one sample |
+
+| 1.2 | Figure 1.6 | the cylinder and the flask that hold one sample |
 | 1.2 | Figure 1.8 | the sealed bottle of beer precursor and the lead-acid battery |
 | 1.2 | Figure 1.15 | the hydrogen tube and the oxygen tube |
-| 1.3 | the extensive-against-intensive Sim | the jug of milk |
-| 1.4 | the density Sim | the cube of lead of Example 1.1 and the cube of gold beside it; the other five solids of Table 1.4 take the referent palette by index, since the text never names them one by one |
-| 1.4 | the displacement Sim | the iron block and the wood block of Example 1.2; the foam, unknown and other samples that only the exercises name are drawn in ink |
-| 1.5 | the rebar and gold-piece figures of Example 1.7 | the piece of rebar, and the piece of yellowish material |
+| 1.3 | the extensive-against-intensive Sim | the first and the second sample of milk |
+| 1.4 | the density Sim | the cube of lead of Example 1.1 and the cube of gold beside it; the other five solids of Table 1.4 take the palette after them by index through `F.cat`, since the text never names them one by one |
+| 1.4 | the displacement Sim | the iron block and the wood block of Example 1.2; the foam and the unknown sample that only the exercises name are drawn in ink |
+
 | 1.5 | Figure 1.27 | the four archers, (a), (b), (c) and the fourth corner |
 
 A referent's outline, label and hover name wear its hue; a quantity drawn on
-it keeps its category's. The balances, cylinders and thermometers are
+it keeps its category's. The balances, graduated cylinders and thermometers are
 apparatus and stay in ink. The three thermometers of Figure 1.28 are not
 referents: they read one temperature on three scales, and three hues would
 say they were three things.
 
-Where a figure offers a material (gold, lead, water, ethanol) the block is a
+Where a figure offers a material (gold, lead, iron, wood) the block is a
 sample, not an atom: it is drawn in a neutral fill or in its referent hue,
 never in an element colour.
 
@@ -59,10 +58,10 @@ names the kind in general, a unit, a definition or a generic case.
 
 | Category | Where it is coloured |
 |---|---|
-| `temperature` | the slider and thermometer columns of 1.1, 1.3 and 1.6, the reference temperatures and readings the text gives in 1.1, 1.3, 1.4 and 1.6 |
-| `mass` | the balance readings and mass bars of 1.2, 1.3, 1.4 and 1.5, the m of the density readouts, and the masses the text gives in examples |
+| `temperature` | the thermometers of 1.3 and 1.6 and the sliders of 1.6, the reference temperatures and readings the text gives in 1.1, 1.3, 1.4 and 1.6 |
+| `mass` | the balance readings of 1.2, 1.3 and 1.4, the totals bracketed over the bars of 1.2, the mass axis of 1.4's graph, the m of the density readouts, and the masses the text gives in examples |
 | `volume` | the sample and its levels in 1.2, 1.3, 1.4 and 1.5, the gas collected over the electrodes, the V of the readouts, the volumes of the examples and of Table 1.5's dispensers |
-| `density` | the density slider and readout results of 1.4, the density bar of 1.3, the d of 1.3's readout, and the densities the text names in 1.3 to 1.6 |
+| `density` | the readout results of 1.4, the density row of 1.3, the d of 1.3's readout, and the densities the text names in 1.3 to 1.6 |
 | `length` | the bar of Figure 1.23, the edge of the cubes in 1.4, the offset and spread of Figure 1.27, the diameters of 1.2, the bathtub's sides in 1.5 and the distances of 1.6 |
 | `time`, `velocity` | the sprinter of 1.6, in words only |
 
@@ -80,16 +79,19 @@ is on:
 - **Volume is the water and the reading.** The water level, the bracket that
   measures the rise, the volume slider and the V of the readout wear the
   volume hue.
-- **Density is the result.** The density slider, the quotient of the readout
-  and the density bar wear the density hue; the word density in the book's
+- **Density is the result.** The quotient of the readout and the density
+  row of 1.3 wear the density hue; the word density in the book's
   own `\text{density} = \text{mass}/\text{volume}` stays as the book writes it.
-- **A sample doubled keeps its hues.** In 1.3 the mass and the volume bars
-  climb with the sample while the density and the temperature bars stand
-  still; the contrast is carried by what moves.
+- **Two samples poured together keep their hues.** In 1.3 the mass and the
+  volume rows add across the two samples while the temperature and the
+  density rows read the same in all three beakers; the contrast is carried by
+  what adds.
 
 The cubes of 1.4 go through the drawing layer's locked view, their faces the
-page colour under the share of ink each one's angle to the lamp earns it; the
-edge written beside a cube is a length and wears it.
+page colour under the share of ink each one's angle to the lamp earns it. The
+one small cube of Figure 1.25 that the book tints is the exception: it is the
+unit the readout counts and wears the volume hue. The edge written beside a
+cube is a length and wears it.
 
 ## The temperature scales of 1.6
 
@@ -97,9 +99,9 @@ Celsius, Fahrenheit and kelvin are one category and take one hue. They are
 variants of `temperature`: the book's own argument in 1.6 is that the three
 scales differ in where their zero sits and how large their degree is, which
 is a fact about the scales and not about the quantity. Figure 1.28 paints all
-three columns, ticks and readings in the temperature hue and tells the scales
-apart as the book's figure does: by the label at the head of each column, by
-decoration (the Celsius column filled, the other two hollow), and by the
+three liquid threads and readings in the temperature hue and tells the scales
+apart as the book's figure does: by the name beside each thermometer, by
+decoration (the Celsius thread filled, the other two hollow), and by the
 freezing and boiling temperatures of water drawn across all three in ink.
 `T_C`, `T_F` and `T_K` carry `\kTC`, `\kTF` and `\kTK`, so the conversion
 equations wear the one hue on both sides.

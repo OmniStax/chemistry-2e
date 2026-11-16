@@ -1,134 +1,119 @@
 /* Figures for section 18.5 Occurrence, Preparation, and Compounds of Hydrogen. Boots against the section's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['18.5'] = function (root, F) {
-const { PAL, cycle, register, begin, text, dot } = F;
+const { PAL, cycle, register, begin } = F;
 const TAU = 2 * Math.PI;
-const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
-/* a fixed pseudo-random number in [0, 1) for event k and draw j, so every run draws the same */
-const rnd = (k, j) => { const s = Math.sin(k * 127.1 + j * 311.7) * 43758.5453; return s - Math.floor(s); };
 
 /* =====================================================================
-   FIGURE 18.26: the electrolysis of water, on a bench in three dimensions.
-   A beaker of water with sulfuric acid, a battery standing in it, and an
-   inverted test tube over each terminal, held by a ring. Moving: the cell
-   runs for T = 6 s of model time and holds. One H₂ rises from the cathode
-   (−) every TH = 0.2 s and one O₂ from the anode (+) every 2 TH, so the gas
-   at the top of each tube grows as V = VMAX · t / T, hydrogen to 8.0 mL and
-   oxygen to 4.0 mL. The tubes are drawn as 10 mL tubes, a scale of the
-   drawing's own (the book states none), graduated every 2 mL. The cell
-   stands on a bench, so the pitch stays between 2° and 70° above level.
+   FIGURE 18.26: the electrolysis of water, counted in atoms. On the left the
+   book's apparatus, flat: a beaker of water with sulfuric acid, a battery
+   standing in it, an inverted test tube over each terminal, a ring round the
+   tubes. On the right one step of the net reaction close up: the six atoms
+   of two water molecules regroup, the two O meeting as one O₂ and each
+   water's two H leaving as one H₂. Moving: N = 5 steps of BEAT = 1.2 s of
+   model time and a hold. In each step the atoms regroup (0.08 to 0.55 of the
+   step), then two H₂ rise from the − terminal and one O₂ from the + terminal
+   (0.5 to 0.95) and the gas columns lengthen, hydrogen's by twice oxygen's.
+   Every molecule in a tube takes PITCH of its length, so equal numbers fill
+   equal volumes. The book states no volumes and the figure invents none.
 ===================================================================== */
 (function () {
-  const T3D = window.THREE;
-  const d = F.sim(root, 'sim-electrolysis');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: 'front', yaw: 0, pitch: 0.16 }, { label: 'above', yaw: 0, pitch: 1.1 }], h: 640, dist: 9.6, tilt: 0.16 });
-  const grp = v.part(0), cnv = F.makeCanvas(d.stage, 100);
-  if (grp) grp.position.y = -0.55;
-  const T = 6, TH = 0.2, RISE = 1.5;
-  /* the beaker, the battery, the tubes: radius, bottom, rim and liquid level; tube centres, mouth and closed end */
-  const RB = 1.15, YB = -1.5, YT = 0.55, YL = 0.2;
-  const BW = 0.95, BD = 0.55, YBAT = -0.45, YCAP = -0.7;
-  const XT = 0.24, RT = 0.21, YM = -0.58, YC = 2.0, PER_ML = 0.2;
-  const GAS = { H: { x: -XT, el: 'H', max: 8, every: TH, r: 0.034, gap: 0.05, name: 'a hydrogen molecule, H₂, rising from the cathode' },
-    O: { x: XT, el: 'O', max: 4, every: 2 * TH, r: 0.046, gap: 0.066, name: 'an oxygen molecule, O₂, rising from the anode' } };
-  const level = (g, t) => YC - PER_ML * g.max * t / T;
-  const cy = cycle(() => T, 1.2);
-
-  let sig = '', water = {}, pools = {};
-  const palSig = () => [PAL.ink, PAL.soft, PAL.muted, PAL.panel, F.el('H'), F.el('O')].join('|');
-  const glassMat = () => F.mesh.mat(PAL.ink, { transparent: true, opacity: 0.1, depthWrite: false, side: T3D.DoubleSide });
-  const liquidMat = (o = 0.16) => F.mesh.mat(PAL.muted, { transparent: true, opacity: o, depthWrite: false });
-  function cyl(r, y0, y1, mat, open) {
-    const m = new T3D.Mesh(new T3D.CylinderGeometry(r, r, y1 - y0, 40, 1, !!open), mat);
-    m.position.y = (y0 + y1) / 2; grp.add(m); return m;
+  const d = F.sim(root, 'sim-electrolysis', 700);
+  const N = 5, BEAT = 1.2, T = N * BEAT, cy = cycle(() => T, 1.5);
+  const sm = F.ease.smooth, clamp = (x) => Math.min(1, Math.max(0, x)), seg = (p, a, b) => clamp((p - a) / (b - a));
+  const BL = 220, BR = 660, BT = 330, BB = 660, WL = 372;              /* beaker walls, rim, floor; its water level */
+  const BAT = { l: 330, r: 550, t: 498, k: 532 };                       /* battery: its dark cap from t to k, its body below to the floor */
+  const TH = 44, TTOP = 112, TM = 498, Y0 = TTOP, PITCH = 25;            /* tube half width, closed top, mouth; top of the gas; length per molecule */
+  const TUBES = [{ x: 390, key: 'H', per: 2, side: -1 }, { x: 490, key: 'O', per: 1, side: 1 }];
+  const hits = []; F.hover(d.stage, () => hits);
+  function atom(ctx, e, x, y, r) {
+    ctx.save(); ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fillStyle = F.el(e); ctx.fill();
+    ctx.lineWidth = e === 'H' ? Math.max(1.6, r / 9) : 1.2; ctx.strokeStyle = e === 'H' ? PAL.ink : F.alpha(PAL.ink, 0.5); ctx.stroke(); ctx.restore();
   }
-  function ring(x, y, R, r, color) {
-    const m = new T3D.Mesh(new T3D.TorusGeometry(R, r, 8, 48), F.mesh.mat(color));
-    m.rotation.x = Math.PI / 2; m.position.set(x, y, 0); grp.add(m); return m;
-  }
-  function molecule(g) {
-    const m = new T3D.Group(); grp.add(m);
-    for (const s of [-1, 1]) {
-      v.pickable(F.mesh.sphere(m, [s * g.gap / 2, 0, 0], g.r, F.el(g.el)), g.name);
-      F.mesh.sphere(m, [s * g.gap / 2, 0, 0], g.r * 1.18, PAL.ink, { side: T3D.BackSide });
-    }
-    /* drawn after the water so a molecule inside a tube is not veiled by it */
-    m.traverse((o) => { if (o.material) { o.material.transparent = true; o.renderOrder = 2; } });
-    m.position.set(0, -50, 0); return m;
-  }
-  function build() {
-    if (!v.scene || palSig() === sig) return; sig = palSig();
-    v.clear(); water = {}; pools = {};
-    v.pickable(F.mesh.box(grp, [0, YB - 0.06, 0], [4.8, 0.1, 2.8], PAL.soft), 'the bench');
-    cyl(RB, YB, YT, glassMat(), true);
-    const floor = new T3D.Mesh(new T3D.CircleGeometry(RB, 40), glassMat()); floor.rotation.x = -Math.PI / 2; floor.position.y = YB + 0.005; grp.add(floor);
-    ring(0, YT, RB, 0.02, PAL.muted);
-    v.pickable(cyl(RB - 0.02, YB + 0.01, YL, liquidMat()), 'water containing sulfuric acid');
-    /* the battery: its body, its dark top and its two terminals */
-    v.pickable(F.mesh.box(grp, [0, (YB + YCAP) / 2 + 0.01, 0], [BW, YCAP - YB - 0.02, BD], PAL.soft), 'the battery');
-    v.pickable(F.mesh.box(grp, [0, (YCAP + YBAT) / 2, 0], [BW, YBAT - YCAP, BD], PAL.muted), 'the battery');
-    for (const g of [GAS.H, GAS.O]) {
-      v.pickable(F.mesh.stick(grp, [g.x, YBAT, 0], [g.x, YBAT + 0.07, 0], 0.08, PAL.muted), g.el === 'H' ? 'the negative terminal, the cathode, where hydrogen forms' : 'the positive terminal, the anode, where oxygen forms');
-      /* the tube: open at the mouth, closed by a dome above YC */
-      v.pickable(cyl(RT, YM, YC, glassMat(), true), g.el === 'H' ? 'the test tube collecting hydrogen' : 'the test tube collecting oxygen').position.x = g.x;
-      const dome = new T3D.Mesh(new T3D.SphereGeometry(RT, 32, 12, 0, TAU, 0, Math.PI / 2), glassMat()); dome.position.set(g.x, YC, 0); grp.add(dome);
-      for (let ml = 2; ml <= 10; ml += 2) ring(g.x, YC - PER_ML * ml, RT + 0.004, 0.006, PAL.muted);
-      const w = new T3D.Mesh(new T3D.CylinderGeometry(RT - 0.015, RT - 0.015, 1, 32), liquidMat(0.5)); grp.add(w);
-      water[g.el] = v.pickable(w, 'water held up in the tube');
-      water[g.el + 's'] = ring(g.x, 0, RT - 0.01, 0.014, PAL.ink);
-      pools[g.el] = Array.from({ length: Math.ceil(2.2 / RISE / g.every) + 2 }, () => molecule(g));
-    }
-    ring(0, -0.1, RT + XT + 0.03, 0.025, PAL.muted);
-    /* the labels sit off the apparatus, each led to its part by a thin line */
-    const lead = (a, b) => F.mesh.polyline(grp, [a, b], PAL.muted);
-    const tag = (s, p, to) => { v.label(s, p, grp, 0); lead([p[0] + Math.sign(to[0] - p[0]) * 0.35, p[1], p[2]], to); };
-    tag('H<sub>2</sub>(<em>g</em>)', [-1.75, 1.6, 0], [-XT - RT, 1.6, 0]);
-    tag('O<sub>2</sub>(<em>g</em>)', [1.75, 1.6, 0], [XT + RT, 1.6, 0]);
-    tag('cathode (−)', [-1.85, -0.42, 0], [-XT - 0.08, YBAT + 0.04, 0]);
-    tag('anode (+)', [1.85, -0.42, 0], [XT + 0.08, YBAT + 0.04, 0]);
-    tag('battery', [-1.85, -1.15, 0], [-BW / 2, -1.15, 0]);
-    tag('H<sub>2</sub>O(<em>l</em>) + H<sub>2</sub>SO<sub>4</sub>', [1.95, -1.15, 0], [RB - 0.25, -1.15, 0]);
-    v.headline('Hydrogen collects at the cathode (−) twice as fast as oxygen at the anode (+).');
-  }
-  function place(t) {
-    for (const g of [GAS.H, GAS.O]) {
-      const top = level(g, t), w = water[g.el];
-      w.scale.y = top - YM; w.position.set(g.x, (top + YM) / 2, 0); water[g.el + 's'].position.y = top;
-      const pool = pools[g.el]; pool.forEach((m) => m.position.set(0, -50, 0));
-      const K = Math.floor((T - 1.4) / g.every);
-      let n = 0;
-      for (let k = 0; k <= K && n < pool.length; k++) {
-        const tk = k * g.every; if (tk > t) break;
-        const u = RISE * (0.85 + 0.3 * rnd(k, g.max)), y = YBAT + 0.1 + u * (t - tk);
-        if (y >= level(g, t) - 0.05) continue;
-        const a = rnd(k, g.max + 3) * TAU, r = (RT - 0.07) * Math.sqrt(rnd(k, g.max + 5));
-        const m = pool[n++];
-        m.position.set(g.x + r * Math.cos(a) + 0.02 * Math.sin(7 * (t - tk) + k), y, r * Math.sin(a));
-        m.rotation.set(0, rnd(k, g.max + 7) * TAU, (rnd(k, g.max + 9) - 0.5) * 1.6);
-      }
-    }
-  }
-  let lastTex = '';
+  const gasMol = (ctx, key, x, y) => { const r = key === 'H' ? 8 : 11, o = key === 'H' ? 7 : 9.5; atom(ctx, key, x - o, y, r); atom(ctx, key, x + o, y, r); };
+  const tubePath = (ctx, x) => { ctx.beginPath(); ctx.moveTo(x - TH, TM); ctx.lineTo(x - TH, TTOP + TH); ctx.arc(x, TTOP + TH, TH, Math.PI, 0); ctx.lineTo(x + TH, TM); };
+  /* the place molecule i takes in its tube's gas: a zigzag down the tube, one molecule per PITCH */
+  const slot = (g, i) => (i ? [g.x + (i % 2 ? 15 : -15), Y0 + (i + 0.5) * PITCH] : [g.x, Y0 + 15.5]);
+  /* the close-up: a circle, two waters above (their H atoms outward) and the products below */
+  const CX = 1070, CY = 392, CR = 276, RO = 38, RH = 24, YW = 258, YP = 516;
+  const W = [970, 1170], HX = [916, 1224];
+  const ATOMS = [];
+  [0, 1].forEach((w) => { const s = w ? 1 : -1;
+    ATOMS.push({ e: 'O', from: [W[w], YW], to: [CX + s * 33, YP], name: 'an oxygen atom' });
+    [-1, 1].forEach((v) => ATOMS.push({ e: 'H', from: [W[w] + s * 30, YW + v * 36], to: [HX[w] + v * 19, YP], name: 'a hydrogen atom' })); });
   function draw() {
-    build();
-    const t = cy.now();
-    if (v.scene) { place(t); v.invalidate(); }
-    const vO = Math.round(GAS.O.max * t / T * 10) / 10, vH = (GAS.H.max / GAS.O.max) * vO, ml = (x) => hue('volume', x.toFixed(1) + '\\;\\text{mL}');
-    const s = `\\kV_{\\text{H}_2} = 2\\,\\kV_{\\text{O}_2}:\\quad ${ml(vH)} = 2\\,(${ml(vO)})`;
-    if (s !== lastTex) { lastTex = s; F.tex(d.readout, s, false, { values: false }); }
-    /* the legend: the book's three molecules, named once */
-    const { ctx } = begin(cnv), y = 50;
-    const items = [['water, H₂O(l)', [['O', 0, 0, 13], ['H', -13, 11, 9], ['H', 13, 11, 9]]],
-      ['hydrogen, H₂(g)', [['H', -7, 0, 9], ['H', 7, 0, 9]]],
-      ['oxygen, O₂(g)', [['O', -9, 0, 12], ['O', 9, 0, 12]]]];
-    items.forEach(([name, atoms], i) => {
-      const cx = 380 + i * 330;
-      atoms.forEach(([e, dx, dy, r]) => {
-        dot(ctx, cx - 40 + dx, y + dy, F.el(e), true, r);
-        ctx.save(); ctx.strokeStyle = F.alpha(PAL.ink, 0.6); ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(cx - 40 + dx, y + dy, r + 1, 0, TAU); ctx.stroke(); ctx.restore();
-      });
-      text(ctx, name, cx - 10, y, PAL.ink, { size: 26, align: 'left' });
+    const { ctx } = begin(d.c); hits.length = 0;
+    const t = Math.min(cy.now(), T), done = t >= T - 1e-9;
+    const b = done ? N - 1 : Math.floor(t / BEAT), p = done ? 1 : t / BEAT - b;
+    const rise = sm(seg(p, 0.5, 0.95)), made = b + (p >= 0.5 ? 1 : 0);   /* steps whose products have left the terminals */
+    const water = F.alpha(PAL.muted, 0.2), glass = PAL.ink, cv = F.C('volume');
+    /* the beaker: its water, then its glass with a rim that flares */
+    ctx.save(); ctx.fillStyle = water; ctx.beginPath(); ctx.moveTo(BL + 2, WL); ctx.lineTo(BL + 2, BB - 16); ctx.quadraticCurveTo(BL + 2, BB - 2, BL + 16, BB - 2); ctx.lineTo(BR - 16, BB - 2); ctx.quadraticCurveTo(BR - 2, BB - 2, BR - 2, BB - 16); ctx.lineTo(BR - 2, WL); ctx.closePath(); ctx.fill(); ctx.restore();
+    F.line(ctx, BL + 2, WL, BR - 2, WL, F.alpha(PAL.ink, 0.5), 1.5);
+    /* the back half of the ring, behind the tubes */
+    const ring = (a0, a1) => { ctx.save(); ctx.strokeStyle = F.mixColor(PAL.ink, PAL.panel, 0.35); ctx.lineWidth = 7; ctx.lineCap = 'round'; ctx.beginPath(); ctx.ellipse(440, 446, 112, 13, 0, a0, a1); ctx.stroke(); ctx.restore(); };
+    ring(Math.PI, TAU);
+    /* the battery standing on the floor: body, stripe, dark cap, a snap terminal under each tube */
+    ctx.save(); ctx.lineJoin = 'round'; ctx.strokeStyle = glass; ctx.lineWidth = 2;
+    ctx.fillStyle = F.mixColor(PAL.ink, PAL.panel, 0.8); ctx.beginPath(); ctx.rect(BAT.l, BAT.k, BAT.r - BAT.l, BB - 3 - BAT.k); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = F.mixColor(PAL.ink, PAL.panel, 0.18); ctx.beginPath(); ctx.rect(BAT.l, BAT.t, BAT.r - BAT.l, BAT.k - BAT.t); ctx.fill(); ctx.stroke(); ctx.restore();
+    F.line(ctx, BAT.l + 1, BAT.k + 7, BAT.r - 1, BAT.k + 7, F.mixColor(PAL.ink, PAL.panel, 0.45), 3);
+    const snap = (g) => { ctx.save(); ctx.fillStyle = F.mixColor(PAL.ink, PAL.panel, 0.6); ctx.strokeStyle = glass; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.moveTo(g.x - 15, BAT.t); ctx.lineTo(g.x - 15, BAT.t - 9); ctx.quadraticCurveTo(g.x - 15, BAT.t - 15, g.x - 9, BAT.t - 15); ctx.lineTo(g.x + 9, BAT.t - 15); ctx.quadraticCurveTo(g.x + 15, BAT.t - 15, g.x + 15, BAT.t - 9); ctx.lineTo(g.x + 15, BAT.t); ctx.closePath(); ctx.fill(); ctx.stroke(); ctx.restore(); };
+    TUBES.forEach((g) => {
+      F.text(ctx, g.side < 0 ? '−' : '+', g.x, (BAT.t + BAT.k) / 2, PAL.panel, { size: 26, align: 'center', weight: 600 }); });
+    hits.push({ x: 440, y: 600, r: 60, name: 'the battery' }, { x: 390, y: BAT.t - 8, r: 16, name: 'the cathode (−), where hydrogen forms' }, { x: 490, y: BAT.t - 8, r: 16, name: 'the anode (+), where oxygen forms' });
+    /* the tubes: gas above the level, water below it, the molecules collected and the ones rising */
+    TUBES.forEach((g) => {
+      const n0 = g.per * b, n1 = g.per * (b + 1);                        /* molecules before this step and after it */
+      const lev = Y0 + PITCH * (n0 + (n1 - n0) * rise);
+      ctx.save(); tubePath(ctx, g.x); ctx.closePath(); ctx.clip();
+      ctx.fillStyle = PAL.panel; ctx.fillRect(g.x - TH, TTOP, 2 * TH, TM - TTOP);
+      ctx.fillStyle = water; ctx.fillRect(g.x - TH, lev, 2 * TH, TM - lev); ctx.restore();
+      snap(g);
+      if (lev > Y0 + 1) F.line(ctx, g.x - TH + 2, lev, g.x + TH - 2, lev, F.alpha(PAL.ink, 0.5), 1.5);
+      const nm = g.key === 'H' ? 'a hydrogen molecule, H₂' : 'an oxygen molecule, O₂';
+      for (let i = 0; i < n0; i++) { const [x, y] = slot(g, i), w = 1.6 * Math.sin(t * 2.3 + i * 1.9 + g.x); gasMol(ctx, g.key, x + w, y); hits.push({ x, y, r: 14, name: nm }); }
+      if (p >= 0.5) for (let i = n0; i < n1; i++) { const [sx, sy] = slot(g, i), k = sm(seg(p, 0.5 + 0.06 * (i - n0), 0.95));
+        const x = g.x + (sx - g.x) * k + 10 * Math.sin(k * Math.PI * 3 + i), y = BAT.t - 30 + (sy - (BAT.t - 30)) * k;
+        gasMol(ctx, g.key, k >= 1 ? sx : x, y); hits.push({ x, y, r: 14, name: nm + (k < 1 ? ', rising' : '') }); }
+      ctx.save(); ctx.strokeStyle = glass; ctx.lineWidth = 2.6; ctx.lineJoin = 'round'; tubePath(ctx, g.x); ctx.stroke(); ctx.restore();
+      F.line(ctx, g.x - TH - 5, TM, g.x - TH + 1, TM, glass, 2.6); F.line(ctx, g.x + TH - 1, TM, g.x + TH + 5, TM, glass, 2.6);
+      hits.push({ x: g.x, y: 440, r: 30, name: 'a test tube, mouth down over the ' + (g.key === 'H' ? 'cathode' : 'anode') });
+      F.text(ctx, g.key === 'H' ? 'H₂(g)' : 'O₂(g)', g.x, TTOP - 20, PAL.ink, { size: 22, align: 'center' });
+      /* the gas column's length, the volume of the readout */
+      if (lev > Y0 + 14) F.vbracket(ctx, g.x + g.side * (TH + 22), Y0, lev, cv, g.key === 'H' ? 'V_{H₂}' : 'V_{O₂}', g.side);
     });
+    ring(0, Math.PI);
+    hits.push({ x: 440, y: 459, r: 14, name: 'the ring that holds the tubes' }, { x: 334, y: 450, r: 12, name: 'the ring that holds the tubes' }, { x: 546, y: 450, r: 12, name: 'the ring that holds the tubes' });
+    ctx.save(); ctx.strokeStyle = glass; ctx.lineWidth = 3.2; ctx.lineJoin = 'round'; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(BL - 14, BT - 4); ctx.quadraticCurveTo(BL, BT - 2, BL, BT + 14); ctx.lineTo(BL, BB - 18); ctx.quadraticCurveTo(BL, BB, BL + 18, BB); ctx.lineTo(BR - 18, BB); ctx.quadraticCurveTo(BR, BB, BR, BB - 18); ctx.lineTo(BR, BT + 14); ctx.quadraticCurveTo(BR, BT - 2, BR + 14, BT - 4); ctx.stroke(); ctx.restore();
+    /* names of the still parts */
+    const call = (s2, x0, y0, x1, y1, right) => { F.line(ctx, x0, y0, x1, y1, PAL.ink, 1.6); F.text(ctx, s2, x1 + (right ? 8 : -8), y1, PAL.ink, { size: 22, align: right ? 'left' : 'right' }); };
+    call('cathode (−)', 376, BAT.t - 8, 196, 470, false);
+    call('H₂O(l) + H₂SO₄', BL + 44, 560, 196, 560, false);
+    call('battery', BAT.l, 620, 196, 620, false);
+    call('anode (+)', 504, BAT.t - 8, 684, 470, true);
+    /* the close-up: one step of the reaction */
+    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.6; ctx.fillStyle = PAL.panel; ctx.beginPath(); ctx.arc(CX, CY, CR, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore();
+    F.arrow(ctx, CX, YW + 84, CX, YP - 66, PAL.ink, 4);
+    F.text(ctx, 'H₂O(l)', W[0], YW - 82, PAL.ink, { size: 22, align: 'center' }); F.text(ctx, 'H₂O(l)', W[1], YW - 82, PAL.ink, { size: 22, align: 'center' });
+    F.text(ctx, 'H₂(g)', HX[0], YP + 64, PAL.ink, { size: 22, align: 'center' }); F.text(ctx, 'H₂(g)', HX[1], YP + 64, PAL.ink, { size: 22, align: 'center' });
+    F.text(ctx, 'O₂(g)', CX, YP + 64, PAL.ink, { size: 22, align: 'center' });
+    const set = (k, names) => ATOMS.forEach((a, i) => { const x = a.from[0] + (a.to[0] - a.from[0]) * k, y = a.from[1] + (a.to[1] - a.from[1]) * k;
+      atom(ctx, a.e, x, y, a.e === 'O' ? RO : RH); if (names) hits.push({ x, y, r: a.e === 'O' ? RO : RH, name: names(a, i) }); });
+    const inWater = (a) => a.name + ' of a water molecule', inGas = (a) => a.name + (a.e === 'O' ? ' of the O₂ molecule' : ' of an H₂ molecule');
+    /* the products of the step before leave upward as this step begins */
+    if (b > 0 && p < 0.14) F.faded(ctx, 1 - sm(seg(p, 0, 0.14)), [0, -26 * seg(p, 0, 0.14)], () => set(1));
+    /* this step's six atoms: two waters, regrouping, then the products at rest */
+    const k = sm(seg(p, 0.08, 0.55)); set(k, k < 0.5 ? inWater : inGas);
+    /* the next two waters arrive from above; after the last step they stand ready, as the run starts over */
+    if (p > 0.76) F.faded(ctx, sm(seg(p, 0.76, 1)), [0, -26 * (1 - sm(seg(p, 0.76, 1)))], () => set(0));
+    if (done) ATOMS.forEach((a) => hits.push({ x: a.from[0], y: a.from[1], r: a.e === 'O' ? RO : RH, name: inWater(a) }));
+    hits.push({ x: CX, y: CY, r: CR, name: 'one step of the reaction, close up' });
+    F.headline(ctx, 'Every 2 H₂O split gives 2 H₂ at the cathode (−) and 1 O₂ at the anode (+).');
+    const nH = 2 * made, nO = made, m = (x) => `${x}\\ \\text{${x === 1 ? 'molecule' : 'molecules'}}`;
+    const s = `${nH}\\,\\text{H}_2\\text{O}(l) \\longrightarrow ${nH}\\,\\text{H}_2(g) + ${nO}\\,\\text{O}_2(g) \\\\ `
+      + `\\frac{\\kV_{\\text{H}_2}}{\\kV_{\\text{O}_2}} = ` + (made ? `\\frac{${m(nH)}}{${m(nO)}} = 2` : `\\frac{\\text{H}_2\\text{ molecules}}{\\text{O}_2\\text{ molecules}}`);
+    if (s !== draw.last) { draw.last = s; F.tex(d.readout, s, false, { values: false }); }
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();

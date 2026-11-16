@@ -5,164 +5,324 @@ const { fmt, tex, C, PAL, alpha, ctl, cycle, register, begin, line, arrow, text,
 const sim = (id, H) => F.sim(root, id, H);
 const still = (d, draw) => register(d.fig, { update: () => {}, draw });
 const TAU = 2 * Math.PI;
+const SUP = { '-': '⁻', 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴', 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹' };
+const sup = (n) => String(n).split('').map((c) => SUP[c] ?? c).join('');
 
 /* =====================================================================
-   FIGURE 16.2: technetium-99m and uranium-238 decaying, a faithful copy.
-   Time in days over the week the caption names, percent remaining from
-   each half-life: 6.01 h for Tc-99m, 4.47 × 10⁹ y for U-238. Axes fixed,
-   0 to 7 d and 0 to 100 %.
+   FIGURE 16.2: technetium-99m and uranium-238 decaying, on one time axis
+   that runs from a minute to a hundred billion years. Half-lives as the
+   book gives them: 6.01 h for Tc-99m (21.5; the text's "about six
+   hours") and 4.5 × 10⁹ y for U-238 (21.3; "more than four billion
+   years"). The axis is logarithmic, fixed, log₁₀ of the time in hours
+   from LO (1 min) to HI (10¹¹ y), its ticks at named times. The slider is
+   the time t on the same scale and opens on the book's week. Over the
+   graph, a sample of 100 nuclei of each isotope: nucleus k is left while
+   100 × (½)^(t/t½) > k + ½, so the count is the curve's percent rounded.
+   Still: no clock runs.
 ===================================================================== */
 (function () {
-  const H = 470, d = sim('sim-decay', H);
-  const G = { l: 260, r: 1180, t: 70, b: 380 };
-  const HALF = { tc: 6.01 / 24, u: 4.47e9 * 365.25 };
-  const left = (h) => (t) => 100 * Math.pow(0.5, t / h);
+  const H = 690, d = sim('sim-decay', H);
+  const YEAR = 8766, HALF = { tc: 6.01, u: 4.5e9 * YEAR };
+  const LO = Math.log10(1 / 60), HI = Math.log10(1e11 * YEAR), WEEK = Math.log10(168);
+  /* a time of h hours in words: [value, unit] */
+  const words = (h) => (h < 1 ? [h * 60, 'minutes'] : h < 48 ? [h, 'hours'] : h < 2 * YEAR ? [h / 24, 'days'] : h < 1e4 * YEAR ? [h / YEAR, 'years']
+    : h < 1e6 * YEAR ? [h / (1e3 * YEAR), 'thousand years'] : h < 1e9 * YEAR ? [h / (1e6 * YEAR), 'million years'] : [h / (1e9 * YEAR), 'billion years']);
+  const span = (h) => { const [x, w] = words(h); return `${fmt(x, x < 9.95 ? 1 : 0)} ${w}`; };
+  const t = ctl(d.controls, { label: '\\text{time }t', cls: 'time', key: 'span', min: LO, max: HI, step: 0.005, value: WEEK, unit: '', fmt: (lg) => span(10 ** lg),
+    aria: 'the time since the samples were made', detents: [{ v: WEEK, label: '1 week' }],
+    specials: [{ at: Math.log10(HALF.tc), label: 'Tc-99m half-life' }, { at: Math.log10(HALF.u), label: 'U-238 half-life' }] });
+  const SNAP = [HALF.tc, HALF.u, 1e11 * YEAR];
+  const left = (h, k) => 100 * Math.pow(0.5, h / HALF[k]);
+  /* a number to three figures, in TeX */
+  function sci(x) {
+    if (x >= 0.001 && x < 1000) return x.toPrecision(3);
+    if (x < 1e-300) return '0';
+    const e = Math.floor(Math.log10(x)), m = x / 10 ** e;
+    return `${m.toFixed(2)}\\times 10^{${e}}`;
+  }
+  /* the order the hundred nuclei decay in: a fixed shuffle of the grid's places, the same for both samples */
+  const ORDER = (() => { const a = Array.from({ length: 100 }, (_, i) => i); let s = 7; for (let i = 99; i > 0; i--) { s = (s * 1103515245 + 12345) % 2147483648; const j = s % (i + 1); [a[i], a[j]] = [a[j], a[i]]; } return a; })();
+  const G = { l: 170, r: 1310, t: 350, b: 590 };
+  const TICKS = [[1 / 60, '1 minute'], [1, '1 hour'], [24, '1 day'], [YEAR, '1 year'], [1e3 * YEAR, '1000 years'], [1e6 * YEAR, '1 million years'], [1e9 * YEAR, '1 billion years']];
+  const MINOR = [1 / 6, 10, 240, 2400, ...[10, 100, 1e4, 1e5, 1e7, 1e8, 1e10].map((y) => y * YEAR)];
+  const COLS = 20, PITCH = 27, RN = 10, GY = 122;
+  const SAMPLES = [['tc', 'tc-99m', 'Tc-99m', 400], ['u', 'u-238', 'U-238', 1000]];
+  let hits = []; F.hover(d.stage, () => hits);
   function draw() {
-    const { ctx } = begin(d.c);
-    const g = F.axes(ctx, G, [0, 7], [0, 100], { nx: 7, ny: 10, xl: 'time (days)', xc: C('time'), yl: 'amount of isotope remaining (%)' });
-    const tc = F.ref('tc-99m'), u = F.ref('u-238');
-    F.curve(ctx, left(HALF.u), 0, 7, g.X, g.Y, u, 5, 20);
-    F.curve(ctx, left(HALF.tc), 0, 7, g.X, g.Y, tc, 5, 400);
-    text(ctx, 'U-238', G.r, g.Y(100) + 24, u, { size: 22, weight: 600, align: 'right' });
-    text(ctx, 'Tc-99m', g.X(0.5) + 18, g.Y(left(HALF.tc)(0.5)) - 6, tc, { size: 22, weight: 600, align: 'left' });
+    const { ctx } = begin(d.c); hits = [];
+    const h = Math.abs(t.v - WEEK) < 0.004 ? 168 : SNAP.find((x) => Math.abs(t.v - Math.log10(x)) < 0.004) ?? 10 ** t.v, ct = C('time'), col = { tc: F.ref('tc-99m'), u: F.ref('u-238') };
+    text(ctx, `After ${span(h)}`, 700, 46, ct, { size: 26, weight: 600, align: 'center' });
+    /* the two samples */
+    SAMPLES.forEach(([k, , name, cx]) => {
+      const p = left(h, k), n = ORDER.filter((r) => p > r + 0.5).length, x0 = cx - ((COLS - 1) * PITCH) / 2;
+      ctx.save(); ctx.strokeStyle = PAL.rule; ctx.lineWidth = 2; ctx.fillStyle = alpha(PAL.ink, 0.03);
+      ctx.beginPath(); ctx.roundRect(x0 - 24, GY - 24, (COLS - 1) * PITCH + 48, 4 * PITCH + 48, 10); ctx.fill(); ctx.stroke(); ctx.restore();
+      ORDER.forEach((r, i) => {
+        const x = x0 + (i % COLS) * PITCH, y = GY + Math.floor(i / COLS) * PITCH, on = p > r + 0.5;
+        if (on) dot(ctx, x, y, col[k], true, RN);
+        else { ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.3); ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(x, y, RN - 2, 0, TAU); ctx.stroke(); ctx.restore(); }
+        hits.push({ x, y, r: 13, name: on ? `a ${name} nucleus` : `a ${name} nucleus that has decayed` });
+      });
+      F.rich(ctx, [[String(n), col[k], 700], ` of 100 ${name} nuclei left`], cx + (cx < 700 ? -40 : 40), GY + 4 * PITCH + 52, { size: 22, align: 'center' });
+    });
+    F.legend(ctx, { l: 540, r: 860, t: GY + 4 * PITCH + 30, b: GY + 4 * PITCH + 74 }, [{ s: 'not decayed', kind: 'dot', color: PAL.ink }, { s: 'decayed', kind: 'dot', hollow: true, color: alpha(PAL.ink, 0.45) }], { corner: 'top', row: true, panel: false });
+    /* the graph: percent remaining against log time */
+    const g = F.axes(ctx, G, [LO, HI], [0, 100], { nx: 0, ny: 4, yl: 'amount of isotope remaining (%)' });
+    TICKS.forEach(([hr, s], i) => {
+      const x = g.X(Math.log10(hr));
+      if (i) line(ctx, x, G.t, x, G.b, PAL.rule, 1.5);
+      line(ctx, x, G.b, x, G.b + 9, PAL.muted, 2);
+      text(ctx, s, x, G.b + 28, PAL.muted, { size: 17, align: i ? 'center' : 'left' });
+    });
+    MINOR.forEach((hr) => { const x = g.X(Math.log10(hr)); line(ctx, x, G.b, x, G.b + 5, PAL.muted, 1.5); });
+    text(ctx, 'time (logarithmic scale)', G.r, G.b + 62, ct, { size: 20, weight: 600, align: 'right' });
+    const X = (hr) => g.X(Math.log10(hr)), Yh = g.Y(50);
+    /* the time on the slider: a line through both curves, under the labels */
+    const xt = g.X(Math.log10(h));
+    line(ctx, xt, G.t - 8, xt, G.b, ct, 3);
+    /* how far apart the two half-lives stand, from one 50 % mark to the other */
+    const r = HALF.u / HALF.tc, e = Math.floor(Math.log10(r));
+    F.hbracket(ctx, X(HALF.tc) + 14, X(HALF.u) - 14, Yh, PAL.muted, `${fmt(r / 10 ** e, 1)} × 10${sup(e)} times as long`, { side: 'below', size: 20 });
+    [['u', 'U-238'], ['tc', 'Tc-99m']].forEach(([k]) => F.plot(ctx, g, (lg) => left(10 ** lg, k), col[k], { w: 5 }));
+    /* each half-life: a hollow dot where the curve crosses 50 %, dropped to the axis */
+    [['tc', 'Tc-99m', '6.01 hours', 1], ['u', 'U-238', '4.5 billion years', -1]].forEach(([k, name, s, side]) => {
+      const x = X(HALF[k]), al = side > 0 ? 'left' : 'right';
+      line(ctx, x, Yh, x, G.b, alpha(col[k], 0.7), 2.5, [4, 8]);
+      dot(ctx, x, Yh, col[k], false, 10);
+      text(ctx, name, x + (side > 0 ? 44 : -78), g.Y(86), col[k], { size: 24, weight: 600, align: al, bg: PAL.panel });
+      text(ctx, `half-life ${s}`, x + (side > 0 ? 44 : -78), g.Y(69), col[k], { size: 20, align: al, bg: PAL.panel });
+      hits.push({ x, y: Yh, r: 16, name: `half of the ${name} is left after ${s}` });
+    });
+    ['u', 'tc'].forEach((k) => dot(ctx, xt, g.Y(left(h, k)), col[k], true, 9));
+    hits.push({ x: xt, y: (G.t + G.b) / 2, r: 14, name: `${span(h)} after the samples were made` });
+    const [x, w] = words(h), u = w === 'minutes' ? [1 / 60, 'min'] : w === 'hours' ? [1, 'h'] : w === 'days' ? [24, 'd'] : [YEAR, 'y'];
+    const tt = (hr) => `\\htmlClass{kv-time}{${sci(hr / u[0])}\\ \\text{${u[1]}}}`;
+    const row = (k, ref, name) => `\\htmlData{ref=${ref}}{\\text{${name}}}\\ \\text{remaining} = \\left(\\tfrac{1}{2}\\right)^{t/t_{1/2}} = \\left(\\tfrac{1}{2}\\right)^{${tt(h)}\\,/\\,${tt(HALF[k])}} = ${left(h, k) >= 99.95 ? '100' : sci(left(h, k))}\\,\\%`;
+    tex(d.readout, `${row('tc', 'tc-99m', 'Tc-99m')} \\\\ ${row('u', 'u-238', 'U-238')}`);
   }
   still(d, draw);
 })();
 
 /* =====================================================================
-   FIGURE 16.4: an ideal gas expanding into a vacuum, in three dimensions.
-   Two round flasks joined by a tube with a valve, thirty argon atoms.
-   Moving: the atoms travel continuously and turn at random off the glass.
-   Closing the valve puts the gas back in the left flask. The flasks stand
-   on a bench, so the pitch stays between 2° and 70° above level.
+   FIGURE 16.4: an ideal gas expanding into a vacuum, drawn flat. Two
+   round flasks of inner radius RB, centres OFF either side of the valve
+   at (X0, Y0), joined by a tube of inner half-height HN; a stopcock plug
+   PW wide either side of the axis closes the tube. Argon atoms (thirty,
+   as the book draws; ten or four by choice) run straight at one speed,
+   leave the flask glass in a random direction and glance off the tube's
+   straight wall. An atom belongs to the flask it was last in: it changes
+   over where the tube opens into the other flask, at ±XE. Closing the
+   valve starts again with every atom in the left flask. Moving, on an
+   endless clock. The flasks' counts wear F.cat(2) and F.cat(1), a pair that
+   stands apart on both themes. Beneath, both counts against the time since the
+   valve opened; the time axis is a named zoom, 0 to the time so far (30 s
+   of the drawing's time at least), so the whole run stays in view.
 ===================================================================== */
 (function () {
-  const T3D = window.THREE;
-  const d = sim('sim-gas-flasks');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: 'front', yaw: 0, pitch: 0.18 }, { label: 'above', yaw: 0, pitch: 1.1 }], h: 330, dist: 4.8, tilt: 0.18 });
-  const grp = v.part(0), cnv = F.makeCanvas(d.stage, 190);
-  const RB = 0.8, XB = 1.1, RT = 0.3, XT = 0.5, N = 30, R = 0.08, SPEED = 2.4;
-  const valve = F.choice(d.controls, { label: '\\text{valve}', options: [{ value: 'closed', label: 'closed' }, { value: 'open', label: 'open' }], value: 'open', ms: 0, aria: 'the valve between the flasks', onInput: () => { if (valve.value === 'closed') seed(); } });
-  const heading = () => { const z = 2 * Math.random() - 1, a = Math.random() * TAU, r = Math.sqrt(1 - z * z); return [r * Math.cos(a), r * Math.sin(a), z]; };
-  let atoms = [];
-  function seed() {
-    atoms = Array.from({ length: N }, () => {
-      const u = heading(), rr = Math.cbrt(Math.random()) * (RB - R - 0.02);
-      return { x: [-XB + u[0] * rr, u[1] * rr, u[2] * rr], u: heading() };
-    });
-  }
-  seed();
-  const ok = (p) => {
-    for (const s of [-1, 1]) if (Math.hypot(p[0] - s * XB, p[1], p[2]) < RB - R) return true;
-    return valve.value === 'open' && Math.abs(p[0]) < XT && Math.hypot(p[1], p[2]) < RT - R;
-  };
-  function step(dt) {
-    for (const q of atoms) {
-      const nx = q.x.map((c, k) => c + q.u[k] * SPEED * dt);
-      if (ok(nx)) q.x = nx; else q.u = heading();
+  const H = 830, d = sim('sim-gas-flasks', H);
+  const X0 = 700, Y0 = 290, OFF = 285, RB = 190, HN = 50, RM = 13, PW = 32, DS = 2, SPEED = 640, WIN = 30;
+  const RI = RB - RM, HI = HN - RM, XE = OFF - Math.sqrt(RI * RI - HI * HI) + 2;
+  const valve = F.choice(d.controls, { label: '\\text{valve}', aria: 'the valve between the flasks', options: [{ value: 'closed', label: 'closed' }, { value: 'open', label: 'open' }],
+    value: 'open', ms: 500, onInput: (v) => { if (v === 'closed') restart(); } });
+  const atoms = F.choice(d.controls, { label: '\\text{atoms}', aria: 'the number of atoms', key: 'atoms', options: [4, 10, 30].map((n) => ({ value: String(n), label: String(n) })), value: '30', ms: 500, onInput: () => restart() });
+  const turn = () => (valve.value === 'open' ? valve.k : 1 - valve.k);
+  const open = () => valve.value === 'open' && valve.k >= 0.5;
+  const inside = (x, y) => (Math.abs(y) < HI && Math.abs(x) < OFF) || Math.hypot(x + OFF, y) < RI || Math.hypot(x - OFF, y) < RI;
+  const walls = () => (open() ? [] : [{ x: -(PW + RM), dir: 1 }, { x: PW + RM, dir: -1 }]);
+  const leave = (q, nx, ny) => { const s = 2 * Math.random() - 1, c = Math.sqrt(1 - s * s); q.ux = nx * c - ny * s; q.uy = ny * c + nx * s; };
+  function move(q, dist, W) {
+    for (let it = 0; it < 6 && dist > 1e-6; it++) {
+      const x1 = q.x + q.ux * dist;
+      let tt = 1, hit = null;
+      for (const w of W) {
+        if (q.ux * w.dir <= 0 || (q.x - w.x) * w.dir >= 0 || (x1 - w.x) * w.dir < 0) continue;
+        const tw = (w.x - q.x) / (x1 - q.x); if (tw < tt) { tt = tw; hit = w; }
+      }
+      const ex = q.x + q.ux * dist * tt, ey = q.y + q.uy * dist * tt;
+      if (inside(ex, ey)) {
+        if (!hit) { q.x = ex; q.y = ey; return; }
+        q.x = ex - hit.dir * 0.01; q.y = ey; dist *= 1 - tt; leave(q, -hit.dir, 0); continue;
+      }
+      let a = 0, b = tt;
+      for (let i = 0; i < 12; i++) { const m = (a + b) / 2; if (inside(q.x + q.ux * dist * m, q.y + q.uy * dist * m)) a = m; else b = m; }
+      q.x += q.ux * dist * a; q.y += q.uy * dist * a; dist *= 1 - a;
+      const dl = Math.hypot(q.x + OFF, q.y), dr = Math.hypot(q.x - OFF, q.y);
+      if (Math.abs(q.x) < XE - 3 && Math.abs(q.y) > HI - 1) q.uy = -q.uy;   /* the tube's straight wall: a glancing bounce */
+      else { const cx = dl < dr ? -OFF : OFF, r = Math.min(dl, dr) || 1; leave(q, (cx - q.x) / r, -q.y / r); }
     }
+  }
+  /* a place in the left flask, kept off the atoms already placed so the starting gas does not pile up */
+  const place = (P) => {
+    for (let k = 0; ; k++) {
+      const x = -OFF + (2 * Math.random() - 1) * RI, y = (2 * Math.random() - 1) * RI;
+      if (Math.hypot(x + OFF, y) < RI && (k > 200 || P.every((q) => Math.hypot(q.x - x, q.y - y) > 2.4 * RM))) return [x, y];
+    }
+  };
+  /* trace: [time since the valve opened, atoms in the right flask], every DT seconds, thinned as it grows */
+  let P = [], N = 30, clock = 0, trace = [], DT = 0.1, again = 0;
+  function restart() {
+    N = +atoms.value; P = []; clock = 0; trace = [[0, 0]]; DT = 0.1; again = 0;
+    for (let i = 0; i < N; i++) { const [x, y] = place(P), h = Math.random() * TAU; P.push({ x, y, ux: Math.cos(h), uy: Math.sin(h), left: 0, side: -1 }); }
+  }
+  const right = () => P.filter((q) => q.side > 0).length;
+  function step(dt) {
+    const W = walls(), was = right();
+    for (const q of P) {
+      q.left += SPEED * dt;
+      while (q.left >= DS) { q.left -= DS; move(q, DS, W); if (q.x * q.side < -XE) q.side = -q.side; }
+    }
+    if (!open()) return;
+    const n = right();
+    if (was > 0 && n === 0) again++;
+    clock += dt;
+    if (n !== trace[trace.length - 1][1] || clock - trace[trace.length - 1][0] >= DT) trace.push([clock, n]);
+    if (trace.length > 6000) { trace = trace.filter((_, i) => i % 2 === 0 || i === trace.length - 1); DT *= 2; }
   }
   const cy = cycle(() => Infinity, 0);
-  let sig = '', meshes = [];
-  const palSig = () => [PAL.ink, PAL.soft, PAL.muted, F.el('Ar'), valve.value].join('|');
-  const glass = { transparent: true, opacity: 0.12, depthWrite: false, side: T3D ? T3D.DoubleSide : 2 };
-  function build() {
-    if (!v.scene || palSig() === sig) return; sig = palSig();
-    v.clear();
-    v.pickable(F.mesh.box(grp, [0, -RB - 0.26, 0], [4.4, 0.1, 1.6], PAL.soft), 'bench');
-    for (const s of [-1, 1]) {
-      const b = new T3D.Mesh(new T3D.SphereGeometry(RB, 40, 24), F.mesh.mat(PAL.ink, glass)); b.position.set(s * XB, 0, 0); grp.add(b);
-      v.pickable(b, s < 0 ? 'the left flask' : 'the right flask');
-      F.mesh.stick(grp, [s * XB, -RB, 0], [s * XB, -RB - 0.21, 0], 0.05, PAL.muted);
-      v.label(s < 0 ? 'left flask' : 'right flask', [s * XB, -RB - 0.34, 0.85], grp, 16);
-    }
-    const tube = new T3D.Mesh(new T3D.CylinderGeometry(RT, RT, 2 * XT, 32, 1, true), F.mesh.mat(PAL.ink, glass)); tube.rotation.z = Math.PI / 2; grp.add(tube);
-    v.pickable(tube, 'the tube joining the flasks');
-    const open = valve.value === 'open';
-    v.pickable(F.mesh.stick(grp, [0, RT - 0.05, 0], [0, RT + 0.3, 0], 0.07, PAL.muted), open ? 'the valve, open' : 'the valve, closed');
-    v.pickable(F.mesh.box(grp, [0, RT + 0.34, 0], open ? [0.5, 0.08, 0.1] : [0.1, 0.08, 0.5], PAL.muted), 'the valve handle');
-    if (!open) v.pickable(F.mesh.box(grp, [0, 0, 0], [0.06, 2 * RT, 2 * RT], PAL.muted), 'the closed valve');
-    meshes = atoms.map((q) => v.pickable(F.mesh.sphere(grp, q.x, R * 1.3, F.el('Ar')), 'an argon atom, Ar'));
+  restart();
+  F.hover(d.stage, () => [
+    ...P.map((q) => ({ x: X0 + q.x, y: Y0 + q.y, r: 16, name: 'an argon atom, Ar' })),
+    { x: X0, y: Y0 - HN - 40, r: 44, name: 'the valve, ' + valve.value }, { x: X0, y: Y0, r: HN + 20, name: 'the valve, ' + valve.value },
+    { x: X0 - OFF, y: Y0, r: RB, name: 'the left flask' }, { x: X0 + OFF, y: Y0, r: RB, name: 'the right flask' },
+  ]);
+  /* the glass: one outline round both flasks and the tube */
+  function glassware(ctx) {
+    const RG = RB + 2, a = Math.asin((HN + 2) / RG), xl = X0 - OFF, xr = X0 + OFF, nx = RG * Math.cos(a);
+    ctx.save();
+    ctx.beginPath(); ctx.arc(xl, Y0, RG, a, TAU - a); ctx.lineTo(xr - nx, Y0 - HN - 2); ctx.arc(xr, Y0, RG, Math.PI + a, 3 * Math.PI - a); ctx.lineTo(xl + nx, Y0 + HN + 2); ctx.closePath();
+    ctx.fillStyle = alpha(PAL.ink, 0.05); ctx.fill();
+    ctx.lineWidth = 5; ctx.strokeStyle = PAL.ink; ctx.lineJoin = 'round'; ctx.stroke();
+    ctx.restore();
   }
-  tex(d.readout, '\\kwork = -\\kP\\kdV = 0 \\qquad \\kdU = \\kq + \\kwork = 0 + 0 = 0');
+  /* the stopcock from the side, as the book draws it: a tapered plug across the tube, its bore in line with the tube when
+     open and seen end on when closed, a handle on a stem, seen end on when closed and lying along the tube when open */
+  function stopcock(ctx, k) {
+    const top = Y0 - HN - 20, bot = Y0 + HN + 20, wt = PW + 6, wb = PW - 4;
+    const body = () => { ctx.beginPath(); ctx.moveTo(X0 - wt, top); ctx.lineTo(X0 + wt, top); ctx.lineTo(X0 + wb, bot); ctx.lineTo(X0 - wb, bot); ctx.closePath(); };
+    ctx.save();
+    ctx.fillStyle = PAL.panel; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3.5; ctx.lineJoin = 'round';
+    ctx.beginPath(); ctx.roundRect(X0 - 19, bot, 38, 16, 3); ctx.fill(); ctx.stroke();
+    ctx.beginPath(); ctx.rect(X0 - 8, top - 20, 16, 20); ctx.fill(); ctx.stroke();
+    ctx.beginPath(); ctx.ellipse(X0, top - 32, 15 + 40 * k, 14 - 3 * k, 0, 0, TAU); ctx.fill(); ctx.stroke();
+    body(); ctx.fill();
+    ctx.save(); body(); ctx.clip();
+    ctx.fillStyle = alpha(PAL.ink, 0.05); ctx.lineWidth = 3;
+    if (k >= 1) { ctx.fillRect(X0 - wt, Y0 - HN, 2 * wt, 2 * HN); line(ctx, X0 - wt, Y0 - HN, X0 + wt, Y0 - HN, PAL.ink, 3); line(ctx, X0 - wt, Y0 + HN, X0 + wt, Y0 + HN, PAL.ink, 3); }
+    else { ctx.beginPath(); ctx.ellipse(X0, Y0, 22 + (wt + 14 - 22) * k, 22 + (HN - 22) * k, 0, 0, TAU); ctx.fill(); ctx.stroke(); }
+    ctx.restore();
+    body(); ctx.stroke();
+    ctx.restore();
+  }
+  const G = { l: 250, r: 1190, t: 610, b: 760 };
+  tex(d.readout, '\\kwork = -\\kP\\kdV = 0 \\\\ \\kdU = \\kq + \\kwork = 0 + 0 = 0');
   function draw() {
-    build();
-    if (v.scene) { atoms.forEach((q, i) => meshes[i].position.set(q.x[0], q.x[1], q.x[2])); v.invalidate(); }
-    const { ctx } = begin(cnv);
-    const r = atoms.filter((q) => q.x[0] >= 0).length, l = N - r;
-    const X = (n) => 370 + n * 22, y = 128, ar = F.el('Ar');
-    text(ctx, `left flask, ${l}`, X(0), 92, PAL.ink, { size: 18, align: 'left' });
-    text(ctx, `right flask, ${r}`, X(N), 92, PAL.ink, { size: 18, align: 'right' });
-    ctx.save(); ctx.fillStyle = ar; ctx.strokeStyle = alpha(PAL.ink, 0.5); ctx.lineWidth = 1.5;
-    ctx.fillRect(X(0), y - 12, X(l) - X(0), 24); ctx.strokeRect(X(0), y - 12, X(l) - X(0), 24);
-    ctx.globalAlpha = 0.4; ctx.fillRect(X(l), y - 12, X(N) - X(l), 24); ctx.globalAlpha = 1; ctx.strokeRect(X(l), y - 12, X(N) - X(l), 24); ctx.restore();
-    line(ctx, X(N / 2), y - 22, X(N / 2), y + 22, alpha(PAL.ink, 0.4), 2, [10, 10]);
-    text(ctx, 'even split', X(N / 2), y + 40, PAL.muted, { size: 16, align: 'center' });
-    topline(ctx, valve.value === 'closed'
-      ? 'With the valve closed, all 30 atoms are in the left flask and the right flask is empty.'
-      : `${r} of the 30 atoms have crossed into the right flask.`);
+    const { ctx } = begin(d.c), ar = F.el('Ar'), n = right(), cl = F.cat(2), cr = F.cat(1), shut = valve.value === 'closed';
+    glassware(ctx);
+    stopcock(ctx, turn());
+    const fresh = shut ? valve.k : atoms.k;
+    ctx.save(); ctx.globalAlpha = fresh; ctx.fillStyle = ar; ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 1.5;
+    for (const q of P) { ctx.beginPath(); ctx.arc(X0 + q.x, Y0 + q.y, RM, 0, TAU); ctx.fill(); ctx.stroke(); }
+    ctx.restore();
+    F.label(ctx, 'valve', X0, Y0 - HN - 66, { side: 'above', size: 20, color: PAL.ink, gap: 16, leader: false });
+    [[-1, N - n, 'left flask', cl], [1, n, 'right flask', cr]].forEach(([s, c, w, col]) => F.rich(ctx, [w + ': ', [String(c), col, 700], c === 1 ? ' atom' : ' atoms'], X0 + s * OFF, Y0 + RB + 38, { size: 24, align: 'center' }));
+    /* the counts since the valve opened */
+    const t1 = Math.max(WIN, clock), g = F.axes(ctx, G, [0, t1], [0, N], { nx: 0, ny: 2, yl: 'atoms in each flask' });
+    text(ctx, 'time since the valve opened', G.r, G.b + 30, C('time'), { size: 20, weight: 600, align: 'right' });
+    line(ctx, G.l, g.Y(N / 2), G.r, g.Y(N / 2), alpha(PAL.ink, 0.45), 2.5, [10, 10]);
+    text(ctx, 'even split', G.r + 24, g.Y(N / 2), PAL.muted, { size: 17 });
+    F.legend(ctx, g, [{ s: 'left flask', color: cl, w: 4 }, { s: 'right flask', color: cr, w: 4 }], { corner: 'above' });
+    const pts = shut ? [[0, 0]] : trace.concat([[clock, n]]);
+    [[cl, (c) => N - c], [cr, (c) => c]].forEach(([col, f]) => {
+      ctx.save(); ctx.strokeStyle = col; ctx.lineWidth = 4; ctx.lineJoin = 'round'; ctx.beginPath();
+      pts.forEach(([s, c], i) => { if (i) { ctx.lineTo(g.X(s), g.Y(f(pts[i - 1][1]))); ctx.lineTo(g.X(s), g.Y(f(c))); } else ctx.moveTo(g.X(s), g.Y(f(c))); });
+      ctx.stroke(); ctx.restore();
+      const [s, c] = pts[pts.length - 1]; dot(ctx, g.X(s), g.Y(f(c)), col, true, 8);
+    });
+    if (shut) topline(ctx, `Valve closed: all ${N} atoms stay in the left flask, and the right flask holds a vacuum.`);
+    else F.rich(ctx, ['Since the valve opened, the right flask has been empty again ', [again === 1 ? '1 time' : `${again} times`, cr, 700], '.'], 700, 46, { size: 26, align: 'center' });
   }
   register(d.fig, { update: (dt) => { cy.step(dt, () => 1); step(Math.min(dt, 0.05)); }, draw });
 })();
 
 /* =====================================================================
-   FIGURE 16.5: heat flowing from X to Y. Two alike objects of heat
-   capacity 1.00 kJ/K in contact; each temperature closes on the mean as
-   e^(−t/τ), τ = 2 min. Moving: ten minutes of model time in about 6 s.
-   Axes fixed, 0 to 10 min and 250 to 400 K, the slider limits.
+   FIGURE 16.5: heat flowing between two alike objects of heat capacity
+   1.00 kJ/K. For the first minute of model time they stand apart; at
+   contact (t = 0) each temperature closes on the mean as e^(−t/τ),
+   τ = 2 min, over ten minutes; 11 model minutes in about 7 s, then a
+   1.2 s hold. Beside the objects, the heat each has gained so far as a
+   bar from zero, q_X and q_Y, on a fixed axis of ±100 kJ (the sliders
+   reach ±75 kJ). Beneath, both temperatures against time on fixed axes,
+   −1 to 10 min and 250 to 400 K, the slider limits. The heat arrow
+   grows with the temperature difference: 50 long plus 1.4 for each kelvin.
 ===================================================================== */
 (function () {
-  const H = 600, d = sim('sim-heat-flow', H);
-  const CAP = 1.0, TAU_M = 2, TEND = 10;
-  const cy = cycle(() => TEND, 1.2), reset = () => cy.reset();
-  const tx = ctl(d.controls, { label: '\\kTX', cls: 'temperature', key: 'TX', min: 300, max: 400, step: 1, value: 350, unit: 'K', dec: 0, aria: 'the starting temperature of object X', onInput: reset });
-  const ty = ctl(d.controls, { label: '\\kTY', cls: 'temperature', key: 'TY', min: 250, max: 350, step: 1, value: 290, unit: 'K', dec: 0, aria: 'the starting temperature of object Y', onInput: reset });
-  const G = { l: 210, r: 1250, t: 370, b: 510 };
-  const BX = { l: 460, m: 700, r: 940, t: 128, b: 236 };
-  const LANES = [152, 182, 212], PER = 3;
+  const H = 720, d = sim('sim-heat-flow', H);
+  const CAP = 1.0, TAU_M = 2, TEND = 10, PRE = 1;
+  const cy = cycle(() => TEND + PRE, 1.2), reset = () => cy.reset();
+  let ty = null;
+  const tx = ctl(d.controls, { label: '\\kTX', cls: 'temperature', key: 'TX', min: 300, max: 400, step: 1, value: 350, unit: 'K', dec: 0, aria: 'the starting temperature of object X', onInput: reset,
+    specials: [{ at: () => (ty ? ty.v : null), label: 'same as Y' }] });
+  ty = ctl(d.controls, { label: '\\kTY', cls: 'temperature', key: 'TY', min: 250, max: 350, step: 1, value: 290, unit: 'K', dec: 0, aria: 'the starting temperature of object Y', onInput: reset,
+    specials: [{ at: () => tx.v, label: 'same as X' }] });
+  const G = { l: 190, r: 1250, t: 440, b: 630 };          /* temperature against time */
+  const B = { l: 960, r: 1250, t: 110, b: 350 };          /* the heat gained by each object */
+  const S = 240, CX = 480, BT = 110, GAP = 100;
+  const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
+  let hits = []; F.hover(d.stage, () => hits);
   function draw() {
-    const { ctx } = begin(d.c);
-    const t = cy.now(), x0 = tx.v, y0 = ty.v, Tf = (x0 + y0) / 2, k = Math.exp(-t / TAU_M);
-    const TX = Tf + (x0 - Tf) * k, TY = Tf + (y0 - Tf) * k, dir = Math.sign(x0 - y0);
+    const { ctx } = begin(d.c); hits = [];
+    const tm = cy.now() - PRE, t = Math.max(0, tm), x0 = tx.v, y0 = ty.v, Tf = (x0 + y0) / 2, k = Math.exp(-t / TAU_M);
+    /* the temperatures as the readout writes them, to a tenth of a kelvin, so its sums add up */
+    const TX = +(tm < 0 ? x0 : Tf + (x0 - Tf) * k).toFixed(1), TY = +(x0 + y0 - TX).toFixed(1), dir = Math.sign(x0 - y0);
     const rx = F.ref('object-x'), ry = F.ref('object-y'), ce = C('energy'), ct = C('temperature');
-    for (const [l, r, c] of [[BX.l, BX.m, rx], [BX.m, BX.r, ry]]) {
-      ctx.save(); ctx.fillStyle = alpha(c, 0.22); ctx.fillRect(l, BX.t, r - l, BX.b - BX.t); ctx.restore();
+    const qx = +(CAP * (TX - x0)).toFixed(1) || 0, qy = -qx || 0;
+    /* the objects: apart, then closing over the last 0.4 min before contact */
+    const half = (GAP / 2) * Math.min(1, Math.max(0, -tm / 0.4));
+    [[CX - half - S, rx, 'X', TX, '\\kTX'], [CX + half, ry, 'Y', TY, '\\kTY']].forEach(([l, c, w, T, sym]) => {
+      ctx.save(); ctx.fillStyle = alpha(c, 0.16); ctx.fillRect(l, BT, S, S); ctx.strokeStyle = c; ctx.lineWidth = 5; ctx.lineJoin = 'round'; ctx.strokeRect(l + 2.5, BT + 2.5, S - 5, S - 5); ctx.restore();
+      text(ctx, w, l + S / 2, BT + 122, c, { size: 44, weight: 600, align: 'center' });
+      text(ctx, `$${sym} = ${fmt(T, 1)}\\ \\text{K}$`, l + S / 2, BT + 186, PAL.ink, { size: 24, align: 'center', tex: true });
+      hits.push({ x: l + S / 2, y: BT + S / 2, r: 110, name: `object ${w}` });
+    });
+    const diff = TX - TY, flowing = tm >= 0 && Math.abs(diff) >= 0.5;
+    if (flowing) {
+      const L = 50 + 1.4 * Math.abs(diff), sg = Math.sign(diff), ya = BT + 56;
+      arrow(ctx, CX - (sg * L) / 2, ya, CX + (sg * L) / 2, ya, ce, 7);
+      text(ctx, 'heat', CX - sg * (L / 2 + 14), ya, ce, { size: 22, weight: 600, align: sg > 0 ? 'right' : 'left' });
+      hits.push({ x: CX, y: ya, r: 34, name: `heat flowing from ${sg > 0 ? 'X to Y' : 'Y to X'}, faster the further apart the temperatures` });
     }
-    ctx.save(); ctx.strokeStyle = rx; ctx.lineWidth = 3; ctx.strokeRect(BX.l, BX.t, BX.m - BX.l, BX.b - BX.t); ctx.strokeStyle = ry; ctx.strokeRect(BX.m, BX.t, BX.r - BX.m, BX.b - BX.t); ctx.restore();
-    const flow = dir ? k : 0;
-    if (flow > 0.01) {
-      const a = 520, b = 880;
-      LANES.forEach((ly, j) => {
-        for (let i = 0; i < PER; i++) {
-          const u = (((t / 1.4 + i / PER + j * 0.37) % 1) + 1) % 1, s = dir > 0 ? u : 1 - u;
-          ctx.save(); ctx.globalAlpha = Math.sqrt(flow) * Math.sin(Math.PI * u); dot(ctx, a + s * (b - a), ly, ce, true, 6); ctx.restore();
-        }
-      });
-      const [p, q] = dir > 0 ? [640, 760] : [760, 640];
-      arrow(ctx, p, 104, q, 104, alpha(ce, Math.max(0.35, Math.sqrt(flow))), 4);
-      text(ctx, 'heat', dir > 0 ? 628 : 772, 104, alpha(ce, Math.max(0.35, Math.sqrt(flow))), { size: 20, weight: 600, align: dir > 0 ? 'right' : 'left' });
+    /* the heat each object has gained since contact: two bars from zero, equal and opposite */
+    const gb = F.axes(ctx, B, [0, 2], [-100, 100], { nx: 0, ny: 4, yl: 'heat gained (kJ)', yc: ce });
+    [[0.55, qx, rx, '\\kqX', 'X'], [1.45, qy, ry, '\\kqY', 'Y']].forEach(([u, q, c, sym, w]) => {
+      const x = gb.X(u), y0b = gb.Y(0), yq = gb.Y(q);
+      ctx.save(); ctx.fillStyle = alpha(c, 0.75); ctx.fillRect(x - 46, Math.min(y0b, yq), 92, Math.abs(yq - y0b)); ctx.restore();
+      line(ctx, x - 46, yq, x + 46, yq, c, 4);
+      const up = q > 0 || (q === 0 && (w === 'Y' ? dir >= 0 : dir < 0));
+      text(ctx, `$${sym} = ${fmt(q, 1)}\\ \\text{kJ}$`, x, yq + (up ? -22 : 22), PAL.ink, { size: 20, align: 'center', tex: true, bg: PAL.panel });
+      hits.push({ x, y: (y0b + yq) / 2, r: 50, name: `the heat object ${w} has ${q < 0 ? 'lost' : 'gained'}` });
+    });
+    /* the temperatures against time */
+    const g = F.axes(ctx, G, [-PRE, TEND], [250, 400], { nx: 11, ny: 3, fx: (v) => (v < 0 ? '' : fmt(v, 0)), xl: 'time in contact (min)', xc: C('time'), yl: 'temperature (K)', yc: ct });
+    line(ctx, g.X(0), G.t, g.X(0), G.b, alpha(PAL.ink, 0.35), 2, [4, 8]);
+    hits.push({ x: g.X(0), y: (G.t + G.b) / 2, r: 12, name: 'X and Y touch' });
+    if (dir) {
+      line(ctx, g.X(0), g.Y(Tf), G.r, g.Y(Tf), alpha(PAL.ink, 0.4), 2.5, [10, 10]);
+      text(ctx, `${fmt(Tf, 1)} K`, G.r + 10, g.Y(Tf), PAL.muted, { size: 17 });
     }
-    text(ctx, 'X', (BX.l + BX.m) / 2, 262, rx, { size: 24, weight: 600, align: 'center' });
-    text(ctx, 'Y', (BX.m + BX.r) / 2, 262, ry, { size: 24, weight: 600, align: 'center' });
-    text(ctx, `$\\kTX = ${fmt(TX, 0)}\\ \\text{K}$`, (BX.l + BX.m) / 2, 298, PAL.ink, { size: 22, align: 'center', tex: true });
-    text(ctx, `$\\kTY = ${fmt(TY, 0)}\\ \\text{K}$`, (BX.m + BX.r) / 2, 298, PAL.ink, { size: 22, align: 'center', tex: true });
-    const g = F.axes(ctx, G, [0, TEND], [250, 400], { nx: 5, ny: 3, xl: 'time (min)', xc: C('time'), yl: 'temperature (K)', yc: ct });
-    line(ctx, G.l, g.Y(Tf), G.r, g.Y(Tf), alpha(ct, 0.6), 2.5, [10, 10]);
-    text(ctx, `${fmt(Tf, 0)} K`, G.r - 6, g.Y(Tf) - 14, PAL.muted, { size: 17, align: 'right' });
-    const fx = (T0) => (s) => Tf + (T0 - Tf) * Math.exp(-s / TAU_M);
-    if (t > 0) { F.curve(ctx, fx(x0), 0, t, g.X, g.Y, rx, 5); F.curve(ctx, fx(y0), 0, t, g.X, g.Y, ry, 5); }
-    dot(ctx, g.X(t), g.Y(TX), rx, true, 9); dot(ctx, g.X(t), g.Y(TY), ry, true, 9);
-    const up = x0 >= y0, ly = (T, s) => Math.min(Math.max(g.Y(T) + s * 16, G.t + 10), G.b - 10);
-    text(ctx, 'X', g.X(t) + 18, ly(TX, up ? -1 : 1), rx, { size: 20, weight: 600 });
-    text(ctx, 'Y', g.X(t) + 18, ly(TY, up ? 1 : -1), ry, { size: 20, weight: 600 });
-    const done = Math.abs(TX - TY) < 0.5;
+    const fx = (T0) => (s) => (s < 0 ? T0 : Tf + (T0 - Tf) * Math.exp(-s / TAU_M));
+    if (tm > -PRE + 0.01) { F.plot(ctx, g, fx(x0), rx, { w: 5, x: [-PRE, tm] }); F.plot(ctx, g, fx(y0), ry, { w: 5, x: [-PRE, tm] }); }
+    dot(ctx, g.X(tm), g.Y(TX), rx, true, 9); dot(ctx, g.X(tm), g.Y(TY), ry, true, 9);
+    const up = (dir || 1) > 0 ? -1 : 1;
+    text(ctx, 'X', g.X(tm), g.Y(TX) + 24 * up, rx, { size: 20, weight: 600, align: 'center' });
+    text(ctx, 'Y', g.X(tm), g.Y(TY) - 24 * up, ry, { size: 20, weight: 600, align: 'center' });
+    const hot = dir > 0 ? 'X' : 'Y', cold = dir > 0 ? 'Y' : 'X';
     topline(ctx, !dir ? `X and Y start at the same temperature, ${fmt(x0, 0)} K, so no heat flows.`
-      : done ? `X and Y have both reached ${fmt(Tf, 0)} K, and heat no longer flows.`
-        : dir > 0 ? `Heat flows from X to Y: X has cooled to ${fmt(TX, 0)} K and Y has warmed to ${fmt(TY, 0)} K.`
-          : `Heat flows from Y to X: Y has cooled to ${fmt(TY, 0)} K and X has warmed to ${fmt(TX, 0)} K.`);
-    const qx = +(CAP * (TX - x0)).toFixed(1) || 0;
-    tex(d.readout, `\\kqX = ${fmt(qx, 1)}\\ \\text{kJ} \\qquad \\kqY = -\\kqX = ${fmt(-qx, 1)}\\ \\text{kJ}`);
+      : tm < 0 ? `X and Y are apart, at ${fmt(x0, 0)} K and ${fmt(y0, 0)} K.`
+        : flowing ? `In contact, heat flows from ${hot} to ${cold}: ${hot} cools and ${cold} warms.`
+          : `X and Y have both reached ${fmt(Tf, 1)} K, and heat no longer flows.`);
+    const K = (v) => hue('temperature', `${fmt(v, 1)}\\ \\text{K}`), kJ = (v) => hue('energy', `${fmt(v, 1)}\\ \\text{kJ}`);
+    tex(d.readout, `\\kqX = ${hue('heat-capacity', '1.00\\ \\text{kJ/K}')} \\times (${K(TX)} - ${K(x0)}) = ${kJ(qx)} \\\\ \\kqY = -\\kqX = ${kJ(qy)}`);
   }
-  register(d.fig, { update: (dt) => cy.step(dt, () => TEND / 6), draw });
+  register(d.fig, { update: (dt) => cy.step(dt, () => (TEND + PRE) / 7), draw });
 })();
 };

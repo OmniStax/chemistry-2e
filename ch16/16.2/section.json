@@ -23,6 +23,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-fable-5-2",
+    "effort": "high"
    }
   ]
  },
@@ -59,6 +63,14 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "fixed: boxes and particles at full size, caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: one pile per distribution, N from 2 to 100 on a slider"
     }
    ]
   },
@@ -78,21 +90,34 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "fixed: larger boxes, letters and asterisks, caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: piles by units in the cold object, 2 to 12 units"
     }
    ]
   },
   {
    "id": "fig-ex-matter",
    "kind": "figure",
-   "originals": [
-    "/media/ch16/CNX_Chem_16_03_Matter_img.jpg"
-   ],
    "draws": [],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "reverted to the book's image"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "judged again: the book's image stays"
     }
    ]
   },
@@ -111,8 +136,7 @@
    "draws": [
     "temperature",
     "entropy",
-    "energy",
-    "velocity"
+    "energy"
    ],
    "conventions": [
     "O",
@@ -123,6 +147,14 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt flat: moving molecules, S–T and energy spread beside"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "fixed: regular solid, gas streaks, 100 to 600 K, jumps named"
     }
    ]
   }

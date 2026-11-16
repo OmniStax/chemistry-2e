@@ -22,6 +22,9 @@
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-fable-5-2"
       }
     ]
   },
@@ -31,27 +34,9 @@
   "figures": [
     {
       "id": "sim-particles",
-      "kind": "sim",
+      "kind": "photo",
       "number": "21.4",
-      "originals": [
-        "/media/ch21/CNX_Chem_21_03_RadioDecay-d92b.jpg"
-      ],
-      "original_caption": "Although many species are encountered in nuclear reactions, this table summarizes the names, symbols, representations, and descriptions of the most common of these.",
-      "draws": [],
-      "conventions": [
-        "p+",
-        "n0",
-        "e-",
-        "e+",
-        "gamma"
-      ],
-      "ai": [
-        {
-          "model": "claude-opus-5-5",
-          "effort": "high",
-          "part": "built"
-        }
-      ]
+      "draws": []
     },
     {
       "id": "sim-nuclear-balance",
@@ -66,6 +51,14 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "scene tightened, caption cut"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt: nuclei fill the stage, sums in the readout, sliders bounded"
         }
       ]
     }
@@ -360,9 +353,11 @@
     }
   ],
   "referents": [],
-  "footnotes": [{
-  "id": "c-e4-n14",
-  "kind": "correction",
-  "html": "The key writes ${}_{\\;7}^{14}\\text{C}$ as the target; the nucleus with atomic number 7 is nitrogen-14, ${}_{\\;7}^{14}\\text{N}$, which a neutron turns into carbon-14 and a proton."
-}]
+  "footnotes": [
+    {
+      "id": "c-e4-n14",
+      "kind": "correction",
+      "html": "The key writes ${}_{\\;7}^{14}\\text{C}$ as the target; the nucleus with atomic number 7 is nitrogen-14, ${}_{\\;7}^{14}\\text{N}$, which a neutron turns into carbon-14 and a proton."
+    }
+  ]
 }

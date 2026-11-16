@@ -1,9 +1,8 @@
 /* Figures for section 6.4 Electronic Structure of Atoms (Electron Configurations). Boots against the section's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['6.4'] = function (root, F) {
-const { el, tex, C, PAL, alpha, ctl, register, begin, line, arrow, dot, text, topline, measure, hbracket } = F;
+const { C, PAL, alpha, ctl, register, begin, line, arrow, text, topline } = F;
 const sim = (id, H) => F.sim(root, id, H);
-function readout(host, main, small) { tex(host, main); if (small) host.appendChild(el('small', null, small)); }
 
 /* ---------- the elements: symbol, name, ground-state configuration, block, group, period ----------
    The configurations are those Figure 6.29 prints; elements 113 to 118, which the book leaves
@@ -134,8 +133,6 @@ const BOXES = { s: 1, p: 3, d: 5, f: 7 };
 const CAP = { s: 2, p: 6, d: 10, f: 14 };
 const BLOCK = { s: 0, p: 1, d: 2, f: 3 };
 const NOBLE = [[2, 'He'], [10, 'Ne'], [18, 'Ar'], [36, 'Kr'], [54, 'Xe'], [86, 'Rn']];
-const SUP = { '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹' };
-const sup = (k) => String(k).split('').map((c) => SUP[c]).join('');
 
 /* the configuration the building-up order predicts for Z electrons, as counts per subshell */
 function predicted(Z) {
@@ -159,24 +156,12 @@ function valenceTerms(Z, o) {
   return ORDER.filter((s) => (o[s] || 0) > (core[s] || 0)).map((s) => [s, o[s] - (core[s] || 0)]);
 }
 const unpaired = (o) => ORDER.reduce((t, s) => { const k = o[s] || 0, m = BOXES[s[1]]; return t + (k <= m ? k : 2 * m - k); }, 0);
-/* written for the canvas and for KaTeX */
-const plain = (ts) => ts.map(([s, k]) => s + sup(k)).join('');
-const abbr = (Z, o) => { const c = coreOf(Z); return (c ? '[' + c[1] + ']' : '') + plain(c ? valenceTerms(Z, o) : terms(o)); };
-const texTerms = (ts, under) => ts.map(([s, k]) => { const t = `${s[0]}${s[1]}^{${k}}`; return under && under(s) ? `\\underline{${t}}` : t; }).join('');
-
-/* a configuration drawn with the subshell letter in italics, as the book sets it; returns the width */
-function cfgText(ctx, ts, x, y, color, o = {}) {
-  const size = o.size ?? 22, weight = o.weight ?? 400, pre = o.pre ?? '';
-  const parts = [];
-  if (pre) parts.push([pre, false]);
-  ts.forEach(([s, k]) => { parts.push([s[0], false]); parts.push([s[1], true]); if (k !== null) parts.push([sup(k), false]); });
-  const ws = parts.map(([t, it]) => measure(ctx, t, { size, weight, italic: it }));
-  const total = ws.reduce((a, b) => a + b, 0);
-  let cx = o.align === 'center' ? x - total / 2 : o.align === 'right' ? x - total : x;
-  const at = [];
-  parts.forEach(([t, it], i) => { if (!o.measureOnly) text(ctx, t, cx, y, color, { size, weight, italic: it }); at.push([cx, cx + ws[i]]); cx += ws[i]; });
-  return { total, at };
-}
+/* written for KaTeX: the whole configuration, and the core-abbreviated one */
+const texTerms = (ts) => ts.map(([s, k]) => `${s}^{${k}}`).join('');
+const texAbbr = (Z, o) => { const c = coreOf(Z); return c ? `[\\text{${c[1]}}]\\,${texTerms(valenceTerms(Z, o))}` : texTerms(terms(o)); };
+/* the readout: the element, its configuration in full where the line holds it, and core-abbreviated */
+const cfgLine = (Z, o) => { const c = coreOf(Z), sym = `\\text{${E(Z).sym}}:\\ `; return !c ? sym + texTerms(terms(o)) : Z <= FULL ? sym + texTerms(terms(o)) + '=' + texAbbr(Z, o) : sym + texAbbr(Z, o); };
+const FULL = 36;
 
 /* one electron in a box: a half-arrow, up on the left of the box and down on the right */
 function spin(ctx, x, y, up, h, color, w = 3) {
@@ -186,13 +171,7 @@ function spin(ctx, x, y, up, h, color, w = 3) {
 }
 /* where electron i of a subshell sits: singly through every box first, then paired (Hund's rule) */
 const slot = (i, m) => (i < m ? { box: i, up: true } : { box: i - m, up: false });
-
-/* an atom beside its symbol: the disc in the element's colour, the symbol in ink */
-function atomTag(ctx, sym, x, y, r, size) {
-  ctx.save(); ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fillStyle = F.el(sym); ctx.fill();
-  ctx.strokeStyle = PAL.ink; ctx.lineWidth = 1.5; ctx.stroke(); ctx.restore();
-  text(ctx, sym, x + r + 12, y, PAL.ink, { size, weight: 600 });
-}
+const SPECIALS = [{ at: 24, label: 'Cr' }, { at: 29, label: 'Cu' }, { at: 41, label: 'Nb' }];
 
 /* =====================================================================
    FIGURE 6.24: the energy ladder of a many-electron atom, filled by the
@@ -202,12 +181,11 @@ function atomTag(ctx, sym, x, y, r, size) {
    predicted subshell eases once into the observed one, then holds.
 ===================================================================== */
 (function () {
-  const d = sim('sim-aufbau', 820);
+  const d = sim('sim-aufbau', 930);
   const ro = F.readout(d);
   const Zs = ctl(d.controls, {
     label: 'Z', cls: '', min: 1, max: 118, step: 1, value: 15, unit: '', dec: 0, onInput: changed,
-    aria: 'number of electrons, the atomic number',
-    specials: [{ at: 24, label: 'Cr' }, { at: 29, label: 'Cu' }, { at: 41, label: 'Nb' }],
+    aria: 'number of electrons, the atomic number', specials: SPECIALS,
   });
   const move = F.tween(d, 1);
   let lastZ = Zs.v;
@@ -215,19 +193,20 @@ function atomTag(ctx, sym, x, y, r, size) {
     const Z = Zs.v; if (Z === lastZ) return; lastZ = Z;
     if (!same(predicted(Z), observed(Z))) { move.set(0); move.to(1, 1100); } else move.set(1);
   }
-  const COL = { s: 200, p: 400, d: 640, f: 930 }, BW = 34, BH = 26;
-  const Y0 = 770, DY = 32.5;
+  const COL = { s: 200, p: 350, d: 610, f: 980 }, BW = 52, BH = 34;
+  const Y0 = 880, DY = 40, AH = BH - 10;
   const rungY = (s) => Y0 - ORDER.indexOf(s) * DY;
-  const slotXY = (s, i) => { const q = slot(i, BOXES[s[1]]); return { x: COL[s[1]] + q.box * BW + (q.up ? 0.36 : 0.64) * BW, y: rungY(s), up: q.up }; };
+  const slotXY = (s, i) => { const q = slot(i, BOXES[s[1]]); return { x: COL[s[1]] + q.box * BW + (q.up ? 0.38 : 0.62) * BW, y: rungY(s), up: q.up }; };
+  const box = (ctx, x, y, w, color) => { ctx.save(); ctx.strokeStyle = color; ctx.lineWidth = 2; ctx.strokeRect(x, y - BH / 2, w, BH); ctx.restore(); };
   function draw() {
     const { ctx } = begin(d.c);
     const Z = Zs.v, el0 = E(Z), pred = predicted(Z), obs = observed(Z), ce = C('energy');
     const exc = !same(pred, obs), k = F.ease.smooth(move.v);
     const last = ORDER.filter((s) => pred[s]).pop();
     /* the energy axis and the capacity of each column */
-    arrow(ctx, 90, Y0 + 30, 90, 150, ce, 4);
-    text(ctx, 'E', 90, 130, ce, { size: 24, weight: 600, align: 'center' });
-    [['s', 2], ['p', 6], ['d', 10], ['f', 14]].forEach(([l, n]) => text(ctx, l + ' subshells hold ' + n, COL[l] + (BOXES[l] * BW) / 2, 116, PAL.muted, { size: 16, align: 'center' }));
+    arrow(ctx, 90, Y0 + 26, 90, 150, ce, 4);
+    text(ctx, 'E', 90, 126, ce, { size: 26, weight: 600, align: 'center' });
+    [['s', 2], ['p', 6], ['d', 10], ['f', 14]].forEach(([l, n]) => text(ctx, 'holds ' + n, COL[l] + (BOXES[l] * BW) / 2, 104, PAL.muted, { size: 20, align: 'center' }));
     /* the moving electrons: the ones the observed configuration has taken out of a predicted subshell, and where they go */
     const moving = [];
     if (exc) {
@@ -242,251 +221,130 @@ function atomTag(ctx, sym, x, y, r, size) {
     /* the rungs, their boxes and their electrons */
     ORDER.forEach((s) => {
       const l = s[1], x0 = COL[l], m = BOXES[l], y = rungY(s), n = obs[s] || 0, on = n > 0 || (pred[s] || 0) > 0;
-      line(ctx, x0 - 8, y + BH / 2 + 3, x0 + m * BW + 8, y + BH / 2 + 3, on ? ce : alpha(ce, 0.35), s === last ? 5 : 3);
-      ctx.save(); ctx.strokeStyle = on ? PAL.ink : alpha(PAL.ink, 0.3); ctx.lineWidth = 1.5;
-      for (let b = 0; b < m; b++) ctx.strokeRect(x0 + b * BW, y - BH / 2, BW, BH);
-      ctx.restore();
-      cfgText(ctx, [[s, null]], x0 - 14, y, on ? PAL.ink : PAL.muted, { size: 18, weight: s === last ? 600 : 400, align: 'right' });
-      for (let i = 0; i < n; i++) { if (k < 1 && isMoving(s, i)) continue; const p = slotXY(s, i); spin(ctx, p.x, p.y, p.up, BH - 8, PAL.ink); }
+      line(ctx, x0 - 8, y + BH / 2 + 3, x0 + m * BW + 8, y + BH / 2 + 3, on ? ce : alpha(ce, 0.35), s === last ? 6 : 3);
+      for (let b = 0; b < m; b++) box(ctx, x0 + b * BW, y, BW, on ? PAL.ink : alpha(PAL.ink, 0.3));
+      text(ctx, '$' + s + '$', x0 - 16, y, on ? PAL.ink : PAL.muted, { size: 22, align: 'right', tex: true });
+      for (let i = 0; i < n; i++) { if (k < 1 && isMoving(s, i)) continue; const p = slotXY(s, i); spin(ctx, p.x, p.y, p.up, AH, PAL.ink); }
     });
     moving.forEach((q) => {
       const to = slotXY(q.s, q.i), x = q.from.x + (to.x - q.from.x) * k, y = q.from.y + (to.y - q.from.y) * k;
-      if (k < 1) spin(ctx, x, y, k < 0.5 ? q.from.up : to.up, BH - 8, PAL.ink);
+      if (k < 1) spin(ctx, x, y, k < 0.5 ? q.from.up : to.up, AH, PAL.ink);
     });
-    /* the legend: each kind named once */
-    const LX = 1010;
-    [[0, 'a filled orbital', 2], [1, 'an unpaired electron', 1], [2, 'an empty orbital', 0]].forEach(([r, name, e]) => {
-      const y = 620 + r * 44;
-      ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 1.5; ctx.strokeRect(LX, y - BH / 2, BW, BH); ctx.restore();
-      if (e >= 1) spin(ctx, LX + 0.36 * BW, y, true, BH - 8, PAL.ink);
-      if (e === 2) spin(ctx, LX + 0.64 * BW, y, false, BH - 8, PAL.ink);
-      text(ctx, name, LX + BW + 12, y, PAL.muted, { size: 16 });
-    });
-    text(ctx, 'not to scale', LX, 620 + 3 * 44, PAL.muted, { size: 16 });
+    /* the key: each kind named once */
+    const sample = (e) => (c, x, y) => {
+      c.save(); c.strokeStyle = PAL.ink; c.lineWidth = 2; c.strokeRect(x - 16, y - 11, 32, 22); c.restore();
+      if (e >= 1) spin(c, x - 4, y, true, 15, PAL.ink, 2.5);
+      if (e === 2) spin(c, x + 4, y, false, 15, PAL.ink, 2.5);
+    };
+    F.legend(ctx, { l: 900, r: 1380, t: 690, b: 900 }, [
+      { s: 'an orbital with one electron', draw: sample(1) },
+      { s: 'a full orbital: two opposite spins', draw: sample(2) },
+      { s: 'a subshell’s energy, not to scale', color: ce, w: 3 },
+    ], { corner: 'br', size: 20 });
     /* the headline */
-    const u = unpaired(obs), un = u === 0 ? 'no unpaired electrons' : u === 1 ? 'one unpaired electron' : u + ' unpaired electrons';
+    const u = unpaired(obs), un = u === 0 ? 'no unpaired electrons' : u === 1 ? '1 unpaired electron' : u + ' unpaired electrons';
     let head;
     if (exc) {
       const src = ORDER.filter((s) => (obs[s] || 0) < (pred[s] || 0)), dst = ORDER.filter((s) => (obs[s] || 0) > (pred[s] || 0));
-      const cnt = moving.length;
-      head = el0.name + ', Z = ' + Z + ': the filling order predicts ' + abbr(Z, pred) + ', but ' + (cnt === 1 ? 'one electron goes' : cnt + ' electrons go') + ' into the ' + dst.join(' and ') + ' subshell instead of the ' + src.join(' and ') + ', giving the observed ' + abbr(Z, obs) + '.';
+      const cnt = moving.length, names = (a) => a.map((s) => '$' + s + '$').join(' and ');
+      head = el0.name + ', Z = ' + Z + ': ' + (['', 'one ', 'two ', 'three '][cnt] || cnt + ' ') + names(src) + (cnt === 1 ? ' electron sits in ' : ' electrons sit in ') + names(dst) + ', so $' + texAbbr(Z, pred) + '$ is observed as $' + texAbbr(Z, obs) + '$.';
     } else {
-      head = el0.name + ', Z = ' + Z + ', puts its last electron in the ' + last + ' subshell and has ' + un + '.';
+      head = el0.name + ', Z = ' + Z + ': the last electron enters $' + last + '$, leaving ' + un + '.';
     }
     topline(ctx, head);
-    const c = coreOf(Z);
-    const f = `\\text{${el0.sym}}:\\ ${texTerms(terms(obs))}` + (c ? `=[\\text{${c[1]}}]\\,${texTerms(valenceTerms(Z, obs))}` : '');
-    ro.set(f, exc
-      ? 'The observed ground state has ' + un + '.'
-      : '');
+    ro.set(cfgLine(Z, obs), '');
   }
   register(d.fig, { update: () => {}, draw });
 })();
 
 /* =====================================================================
-   FIGURE 6.25: the parts of the notation 1s¹. A faithful copy: a hydrogen
-   atom with its one electron, and the symbol with the book's two labels.
+   FIGURE 6.27: the periodic table read as the filling order. Each square
+   carries the subshell of its row and its place along the row; the squares
+   from hydrogen to the chosen element are marked, and the rows crossed are
+   its configuration. A dashed square is an atom whose observed
+   configuration (Figure 6.29's) differs. Still: a slider and a tap.
 ===================================================================== */
 (function () {
-  const d = sim('fig-notation', 380);
-  let hits = []; F.hover(d.stage, () => hits);
-  function draw() {
-    const { ctx } = begin(d.c);
-    const cx = 300, cy = 200, r = 130;
-    ctx.save(); ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.fillStyle = alpha(F.el('H'), 0.85); ctx.fill();
-    ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.stroke(); ctx.restore();
-    text(ctx, 'H', cx - 70, cy - 70, PAL.ink, { size: 34, weight: 600, align: 'center' });
-    dot(ctx, cx + 60, cy + 20, PAL.ink, true, 11);
-    text(ctx, '−', cx + 60, cy - 8, PAL.ink, { size: 22, weight: 600, align: 'center' });
-    hits = [{ x: cx, y: cy, r, name: 'a hydrogen atom' }, { x: cx + 60, y: cy + 20, r: 16, name: 'its one electron' }];
-    /* the symbol */
-    const SZ = 120, X = 640, Y = 220;
-    const { at } = cfgText(ctx, [['1s', 1]], X, Y, PAL.ink, { size: SZ });
-    const sx = (at[1][0] + at[1][1]) / 2, ex = (at[2][0] + at[2][1]) / 2;
-    line(ctx, sx, Y + 62, sx, Y + 108, alpha(PAL.ink, 0.5), 2);
-    text(ctx, 'Subshell', sx, Y + 128, PAL.ink, { size: 22, align: 'center' });
-    line(ctx, ex, Y - 58, ex + 70, Y - 118, alpha(PAL.ink, 0.5), 2);
-    text(ctx, 'Number of electrons in subshell', ex + 80, Y - 124, PAL.ink, { size: 22 });
-  }
-  register(d.fig, { update: () => {}, draw });
-})();
-
-/* =====================================================================
-   FIGURE 6.26: the diagonal rule for the filling order. A faithful copy:
-   the subshells in rows by n and columns by l, coloured by block, and
-   the arrows read from the top down, drawn along their length once.
-===================================================================== */
-(function () {
-  const d = sim('fig-fill-order', 660);
-  const SHELLS = [['1s'], ['2s', '2p'], ['3s', '3p', '3d'], ['4s', '4p', '4d', '4f'], ['5s', '5p', '5d', '5f'], ['6s', '6p', '6d'], ['7s', '7p']];
-  const X0 = 560, Y0 = 80, DX = 96, DY = 80, R = 31, L = { s: 0, p: 1, d: 2, f: 3 };
-  const pos = (s) => [X0 + L[s[1]] * DX, Y0 + (+s[0] - 1) * DY];
-  function draw() {
-    const { ctx } = begin(d.c);
-    const k = F.ease.smooth(F.arrival(d));
-    /* the diagonals, one per value of n + l */
-    const all = SHELLS.flat();
-    const diag = [];
-    for (let nl = 1; nl <= 8; nl++) { const g = all.filter((s) => +s[0] + L[s[1]] === nl).sort((a, b) => L[b[1]] - L[a[1]]); if (g.length) diag.push(g); }
-    diag.forEach((g, i) => {
-      const [ax, ay] = pos(g[0]), [bx, by] = pos(g[g.length - 1]);
-      const ux = -DX, uy = DY, n = Math.hypot(ux, uy), ex = ux / n, ey = uy / n, ext = 0.62 * Math.hypot(DX, DY);
-      const a = [ax - ex * ext, ay - ey * ext], b = [bx + ex * ext, by + ey * ext];
-      const q = F.partial([a, b], F.stagger(k, i, diag.length));
-      if (q.length > 1) arrow(ctx, q[0][0], q[0][1], q[q.length - 1][0], q[q.length - 1][1], alpha(PAL.ink, 0.55), 3);
-    });
-    all.forEach((s) => {
-      const [x, y] = pos(s), c = F.cat(BLOCK[s[1]]);
-      ctx.save(); ctx.beginPath(); ctx.arc(x, y, R, 0, Math.PI * 2); ctx.fillStyle = PAL.panel; ctx.fill(); ctx.fillStyle = alpha(c, 0.25); ctx.fill();
-      ctx.strokeStyle = c; ctx.lineWidth = 2.5; ctx.stroke(); ctx.restore();
-      cfgText(ctx, [[s, null]], x, y, PAL.ink, { size: 22, weight: 600, align: 'center' });
-    });
-  }
-  register(d.fig, { update: () => {}, draw });
-})();
-
-/* =====================================================================
-   FIGURE 6.27 + 6.29: the periodic table by the subshell being filled.
-   Blocks by the categorical palette, each square naming its last subshell
-   with its electrons, the exceptions to the building-up order outlined
-   dashed, and one chosen element's configuration written out with its
-   valence electrons underlined. Still: a choice and nothing with a clock.
-===================================================================== */
-(function () {
-  const d = sim('sim-periodic', 780);
-  const pick = F.select(d.controls, {
-    label: '\\text{element}', aria: 'the element whose configuration is written out', value: '31',
-    options: ELS.map((q, i) => ({ value: String(i + 1), label: (i + 1) + ' ' + q[0] + ' (' + q[1] + ')' })),
-    onInput: () => {},
+  const d = sim('sim-periodic', 840);
+  const ro = F.readout(d);
+  const Zs = ctl(d.controls, {
+    label: 'Z', cls: '', min: 1, max: 118, step: 1, value: 31, unit: '', dec: 0, onInput: () => {},
+    aria: 'atomic number of the element read from the table', specials: SPECIALS,
   });
-  const X0 = 52, CW = 72.5, CH = 64, PY = 67, TOP = 116, FTOP = 612;
-  /* where each element's square stands: groups and periods, the lanthanides and actinides after La and Ac in two rows beneath */
+  const X0 = 56, CW = 73, CH = 68, PY = 72, TOP = 150, FTOP = TOP + 7 * PY + 22;
+  const inF = (Z) => (Z >= 58 && Z <= 71) || (Z >= 90 && Z <= 103);
+  const blockOf = (Z) => (inF(Z) ? 'f' : Z === 57 || Z === 89 ? 'd' : E(Z).block);
+  /* the subshell a square stands in and its place along that row */
+  function term(Z) {
+    const q = E(Z), b = blockOf(Z);
+    if (b === 'f') return Z < 72 ? ['4f', Z - 57] : ['5f', Z - 89];
+    if (b === 's') return [q.period + 's', Z === 2 ? 2 : q.group];
+    if (b === 'p') return [q.period + 'p', q.group - 12];
+    return [(q.period - 1) + 'd', q.group - 2];
+  }
+  /* the configuration read from the table: every row crossed from hydrogen to Z */
+  function read(Z) { const o = {}; for (let z = 1; z <= Z; z++) { const [s, k] = term(z); o[s] = k; } return o; }
+  const differs = (Z) => Z < 113 && !same(read(Z), observed(Z));
   function cell(Z) {
     const q = E(Z);
     if (Z >= 58 && Z <= 71) return { x: X0 + (3 + Z - 58) * CW, y: FTOP };
     if (Z >= 90 && Z <= 103) return { x: X0 + (3 + Z - 90) * CW, y: FTOP + PY };
     return { x: X0 + (q.group - 1) * CW, y: TOP + (q.period - 1) * PY };
   }
-  const lastOf = (o) => { const ts = terms(o); return ts[ts.length - 1]; };
+  const ord = (k) => k + (k === 1 ? 'st' : k === 2 ? 'nd' : k === 3 ? 'rd' : 'th');
   let hits = []; F.hover(d.stage, () => hits);
+  /* a tap on a square chooses its element */
+  d.c.style.cursor = 'pointer';
+  d.c.addEventListener('click', (e) => {
+    const r = d.c.getBoundingClientRect(); if (!r.width) return;
+    const s = 1400 / r.width, px = (e.clientX - r.left) * s, py = (e.clientY - r.top) * s;
+    for (let Z = 1; Z <= 118; Z++) { const { x, y } = cell(Z); if (px >= x && px < x + CW && py >= y && py < y + CH) { Zs.drive(Z); return; } }
+  });
   function draw() {
     const { ctx } = begin(d.c);
-    const sel = +pick.value, s0 = E(sel);
+    const sel = Zs.v, s0 = E(sel), got = read(sel), [sub, nth] = term(sel);
     hits = [];
+    /* in a pane too narrow for two lines in a square, a square keeps its symbol and the enlarged one carries the subshell */
+    const narrow = d.c.clientWidth > 0 && d.c.clientWidth < 700;
     /* period and group numbers */
-    for (let p = 1; p <= 7; p++) text(ctx, String(p), X0 - 20, TOP + (p - 1) * PY + CH / 2, PAL.muted, { size: 15, align: 'center' });
+    for (let p = 1; p <= 7; p++) text(ctx, String(p), X0 - 22, TOP + (p - 1) * PY + CH / 2, PAL.muted, { size: 18, align: 'center' });
+    ctx.save(); ctx.translate(X0 - 22, TOP - 20); ctx.rotate(-Math.PI / 2); text(ctx, 'period', 0, 0, PAL.muted, { size: 18 }); ctx.restore();
     const firstRow = [1, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 2, 2, 2, 2, 2, 1];
-    firstRow.forEach((p, g) => text(ctx, String(g + 1), X0 + g * CW + CW / 2, TOP + (p - 1) * PY - 12, PAL.muted, { size: 15, align: 'center' }));
-    text(ctx, 'lanthanides', X0 + 3 * CW - 10, FTOP + CH / 2, PAL.muted, { size: 15, align: 'right' });
-    text(ctx, 'actinides', X0 + 3 * CW - 10, FTOP + PY + CH / 2, PAL.muted, { size: 15, align: 'right' });
+    firstRow.forEach((p, g) => text(ctx, String(g + 1), X0 + g * CW + CW / 2, TOP + (p - 1) * PY - 15, PAL.muted, { size: 18, align: 'center' }));
+    text(ctx, 'group', X0 + CW + 8, TOP - 15, PAL.muted, { size: 18 });
+    text(ctx, 'after La', X0 + 3 * CW - 12, FTOP + CH / 2, PAL.muted, { size: 18, align: 'right' });
+    text(ctx, 'after Ac', X0 + 3 * CW - 12, FTOP + PY + CH / 2, PAL.muted, { size: 18, align: 'right' });
     for (let Z = 1; Z <= 118; Z++) {
-      const q = E(Z), { x, y } = cell(Z), c = F.ref(q.block + '-block'), obs = observed(Z), exc = !same(predicted(Z), obs);
-      ctx.save(); ctx.fillStyle = alpha(c, 0.16); ctx.fillRect(x + 1, y, CW - 3, CH); ctx.strokeStyle = c; ctx.lineWidth = 1.5; ctx.strokeRect(x + 1, y, CW - 3, CH); ctx.restore();
-      if (exc) { ctx.save(); ctx.setLineDash([5, 4]); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.strokeRect(x + 5, y + 4, CW - 11, CH - 8); ctx.restore(); }
-      if (Z === sel) { ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 4; ctx.strokeRect(x - 1, y - 2, CW + 1, CH + 4); ctx.restore(); }
-      text(ctx, String(Z), x + 7, y + 13, PAL.muted, { size: 12 });
-      text(ctx, q.sym, x + CW - 8, y + 18, PAL.ink, { size: 19, weight: 600, align: 'right' });
-      cfgText(ctx, [lastOf(obs)], x + CW / 2, y + 46, PAL.ink, { size: 16, align: 'center' });
-      hits.push({ x: x + CW / 2, y: y + CH / 2, r: 30, name: q.name + ', Z = ' + Z + ': ' + abbr(Z, obs) });
+      const q = E(Z), { x, y } = cell(Z), c = F.cat(BLOCK[blockOf(Z)]), on = Z <= sel, [s, k] = term(Z);
+      ctx.save(); ctx.fillStyle = alpha(c, on ? 0.45 : 0.1); ctx.fillRect(x + 1, y, CW - 3, CH);
+      ctx.strokeStyle = on ? c : alpha(c, 0.6); ctx.lineWidth = 1.5; ctx.strokeRect(x + 1, y, CW - 3, CH); ctx.restore();
+      if (differs(Z)) { ctx.save(); ctx.setLineDash([5, 4]); ctx.strokeStyle = on ? PAL.ink : PAL.muted; ctx.lineWidth = 2; ctx.strokeRect(x + 5, y + 4, CW - 11, CH - 8); ctx.restore(); }
+      if (Z === sel) { ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 5; ctx.strokeRect(x, y - 1, CW - 1, CH + 2); ctx.restore(); }
+      text(ctx, q.sym, x + CW / 2, y + (narrow ? CH / 2 : 21), on ? PAL.ink : PAL.muted, { size: 21, weight: 600, align: 'center' });
+      if (!narrow) text(ctx, '$' + s + '^{' + k + '}$', x + CW / 2, y + 48, on ? PAL.ink : PAL.muted, { size: 20, align: 'center', tex: true });
+      hits.push({ x: x + CW / 2, y: y + CH / 2, r: 34, name: q.name + ', Z = ' + Z + (Z < 113 ? ', observed ' + (coreOf(Z) ? '[' + coreOf(Z)[1] + ']' : '') + valenceTerms(Z, observed(Z)).map(([a, b]) => a + String(b).split('').map((ch) => '⁰¹²³⁴⁵⁶⁷⁸⁹'[+ch]).join('')).join('') : '') });
     }
-    /* the chosen element, enlarged, and the key to the colours */
-    const bx = X0 + 2 * CW + 16, by = TOP + 4, bw = 150, bh = 150, bc = F.ref(s0.block + '-block'), so = observed(sel);
-    ctx.save(); ctx.fillStyle = alpha(bc, 0.16); ctx.fillRect(bx, by, bw, bh); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.strokeRect(bx, by, bw, bh); ctx.restore();
-    text(ctx, String(sel), bx + 12, by + 22, PAL.ink, { size: 22 });
-    text(ctx, s0.sym, bx + bw - 12, by + 30, PAL.ink, { size: 40, weight: 600, align: 'right' });
-    text(ctx, s0.name, bx + bw / 2, by + 78, PAL.ink, { size: 18, align: 'center' });
-    cfgText(ctx, [lastOf(so)], bx + bw / 2, by + 118, PAL.ink, { size: 30, align: 'center' });
-    const KX = bx + bw + 40;
-    [['s', 's block'], ['p', 'p block'], ['d', 'd block'], ['f', 'f block']].forEach(([b, name], i) => {
-      const y = by + 14 + i * 32, c = F.ref(b + '-block');
-      ctx.save(); ctx.fillStyle = alpha(c, 0.16); ctx.fillRect(KX, y - 11, 30, 22); ctx.strokeStyle = c; ctx.lineWidth = 1.5; ctx.strokeRect(KX, y - 11, 30, 22); ctx.restore();
-      text(ctx, name, KX + 42, y, PAL.ink, { size: 17 });
-    });
-    const yx = by + 14 + 4 * 32;
-    ctx.save(); ctx.setLineDash([5, 4]); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.strokeRect(KX, yx - 11, 30, 22); ctx.restore();
-    text(ctx, 'observed, not as built up', KX + 42, yx, PAL.ink, { size: 17 });
+    /* the chosen square, enlarged, as the key to a square; and the key to the colours */
+    const bx = X0 + 2 * CW + 40, by = TOP + 6, bw = 160, bh = 160, bc = F.cat(BLOCK[blockOf(sel)]);
+    ctx.save(); ctx.fillStyle = alpha(bc, 0.45); ctx.fillRect(bx, by, bw, bh); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 4; ctx.strokeRect(bx, by, bw, bh); ctx.restore();
+    text(ctx, s0.sym, bx + bw / 2, by + 48, PAL.ink, { size: 44, weight: 600, align: 'center' });
+    text(ctx, '$' + sub + '^{' + nth + '}$', bx + bw / 2, by + 112, PAL.ink, { size: 44, align: 'center', tex: true });
+    const lx = bx + bw + 60;
+    if (!narrow) {
+    line(ctx, bx + bw + 8, by + 48, lx - 8, by + 48, PAL.muted, 2); text(ctx, s0.name.toLowerCase(), lx, by + 48, PAL.ink, { size: 20 });
+    line(ctx, bx + bw + 8, by + 112, lx - 8, by + 112, PAL.muted, 2);
+    text(ctx, 'the subshell being filled', lx, by + 100, PAL.ink, { size: 20 });
+    text(ctx, 'and the electrons in it', lx, by + 126, PAL.ink, { size: 20 });
+    }
+    const sw = (c) => (cx, x, y) => { cx.save(); cx.fillStyle = alpha(c, 0.45); cx.fillRect(x - 18, y - 11, 36, 22); cx.strokeStyle = c; cx.lineWidth = 1.5; cx.strokeRect(x - 18, y - 11, 36, 22); cx.restore(); };
+    F.legend(ctx, { l: 700, r: X0 + 12 * CW - 6, t: TOP - 10, b: TOP + 3 * PY - 40 },
+      ['s', 'p', 'd', 'f'].map((b) => ({ s: '$' + b + '$ block', draw: sw(F.cat(BLOCK[b])) })), { corner: 'tr', size: 20, panel: false });
     /* the headline and the readout */
-    const where = s0.group ? 'period ' + s0.period + ', group ' + s0.group : (sel < 90 ? 'the lanthanide series' : 'the actinide series');
-    const kind = s0.block === 's' || s0.block === 'p' ? 'a main group element' : s0.block === 'd' ? 'a transition element' : 'an inner transition element';
-    topline(ctx, s0.name + ' stands in ' + where + ', in the ' + s0.block + ' block, and is ' + kind + '.');
-    /* valence electrons by the book's three rules */
-    const vt = valenceTerms(sel, so), nMax = s0.period;
-    const isVal = (s) => {
-      const n = +s[0], l = s[1];
-      if (s0.block === 's' || s0.block === 'p') return n === nMax;
-      if (s0.block === 'd') return (l === 's' && n === nMax) || (l === 'd' && n === nMax - 1);
-      return vt.some((t) => t[0] === s);
-    };
-    const nVal = vt.filter(([s]) => isVal(s)).reduce((t, [s]) => t + so[s], 0);
-    const c = coreOf(sel);
-    const f = `\\text{${s0.sym}}:\\ ` + (c ? `[\\text{${c[1]}}]\\,` : '') + texTerms(c ? vt : terms(so), isVal);
-    const rule = kind === 'a main group element'
-      ? 'The valence electrons of a main group element are those in the shell of highest n, the ' + nVal + ' underlined here' + (vt.some(([s]) => !isVal(s)) ? '; the filled subshells beneath them count as core.' : '.')
-      : kind === 'a transition element'
-        ? 'The valence electrons of a transition element are the ns and (n – 1)d electrons, ' + nVal + ' here, underlined.'
-        : 'The valence shell of an inner transition element holds the (n – 2)f, (n – 1)d and ns subshells, ' + nVal + ' electrons here, underlined.';
-    const pred = predicted(sel), extra = !same(pred, so) ? ' The building-up order predicts ' + abbr(sel, pred) + '.' : '';
-    const src = sel >= 113 ? ' The book prints no configuration for this element; this is the predicted one of the elements page.' : '';
-    readout(d.readout, f, rule + extra + src);
+    topline(ctx, differs(sel)
+      ? s0.name + ', Z = ' + sel + ': the table reads $' + texAbbr(sel, got) + '$; the atom is observed as $' + texAbbr(sel, observed(sel)) + '$.'
+      : s0.name + ', Z = ' + sel + ', is the ' + ord(nth) + ' square of the $' + sub + '$ row.');
+    ro.set(cfgLine(sel, got), '');
   }
   register(d.fig, { update: () => {}, draw });
 })();
-
-/* =====================================================================
-   FIGURE 6.28: core and valence electrons of sodium. A faithful copy:
-   the configuration with the core and the valence electron bracketed,
-   and the abbreviation beside it.
-===================================================================== */
-(function () {
-  const d = sim('fig-valence', 300);
-  function draw() {
-    const { ctx } = begin(d.c);
-    atomTag(ctx, 'Na', 90, 140, 24, 40);
-    const SZ = 50, X = 230, Y = 140;
-    const { at } = cfgText(ctx, [['1s', 2], ['2s', 2], ['2p', 6], ['3s', 1]], X, Y, PAL.ink, { size: SZ });
-    hbracket(ctx, at[0][0], at[8][1], Y + 44, PAL.ink, 'core electrons', { side: 'below' });
-    hbracket(ctx, at[9][0], at[11][1], Y - 52, PAL.ink, 'valence electron');
-    const AX = 900;
-    text(ctx, 'Abbreviation', AX, Y - 70, PAL.muted, { size: 22 });
-    cfgText(ctx, [['3s', 1]], AX, Y, PAL.ink, { size: SZ, pre: '[Ne]' });
-  }
-  register(d.fig, { update: () => {}, draw });
-})();
-
-/* =====================================================================
-   The orbital diagrams of the text and of Example 6.10: faithful copies,
-   one row per atom, the symbol, the configuration and a box per orbital
-   with its electrons, the same boxes the ladder of Figure 6.24 draws.
-===================================================================== */
-function orbitalFigure(id, rows) {
-  const RH = 116, d = sim(id, 40 + rows.length * RH);
-  function draw() {
-    const { ctx } = begin(d.c);
-    rows.forEach(([sym, Z], r) => {
-      const y = 70 + r * RH, o = predicted(Z), ts = terms(o);
-      atomTag(ctx, sym, 70, y, 18, 30);
-      cfgText(ctx, ts, 190, y, PAL.ink, { size: 32 });
-      const BW = 56, BH = 48, GAP = 30;
-      let x = 1340 - ts.reduce((t, [s]) => t + BOXES[s[1]] * BW, 0) - GAP * (ts.length - 1);
-      ts.forEach(([s, k]) => {
-        const m = BOXES[s[1]];
-        ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2;
-        for (let b = 0; b < m; b++) ctx.strokeRect(x + b * BW, y - BH / 2, BW, BH);
-        ctx.restore();
-        for (let i = 0; i < k; i++) { const q = slot(i, m); spin(ctx, x + q.box * BW + (q.up ? 0.36 : 0.64) * BW, y, q.up, BH - 14, PAL.ink, 3.5); }
-        cfgText(ctx, [[s, null]], x + (m * BW) / 2, y + BH / 2 + 20, PAL.ink, { size: 20, align: 'center' });
-        x += m * BW + GAP;
-      });
-    });
-  }
-  register(d.fig, { update: () => {}, draw });
-}
-orbitalFigure('fig-od-h', [['H', 1]]);
-orbitalFigure('fig-od-he', [['He', 2]]);
-orbitalFigure('fig-od-li', [['Li', 3]]);
-orbitalFigure('fig-od-be', [['Be', 4]]);
-orbitalFigure('fig-od-b', [['B', 5]]);
-orbitalFigure('fig-od-c', [['C', 6]]);
-orbitalFigure('fig-od-nofne', [['N', 7], ['O', 8], ['F', 9], ['Ne', 10]]);
-orbitalFigure('fig-od-p', [['P', 15]]);
 };

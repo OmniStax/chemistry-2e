@@ -227,3 +227,31 @@ labels are on.
 Judged against `docs/prompts/manim-style.md`; only the figures below changed.
 
 - `sim-water` · the formula is set through the library's text (26.8); dashed circles on T at 0 °C and 100 °C (manim 8); readout the formula alone, the temperature in the sentence (manim 12).
+
+## Figure re-examination, 2026-11-14 (Claude Fable 5.2)
+
+Each drawn figure was set beside the book's image. All three go back to the
+book's image as `photo` rows with the book's alt text and caption; the ids
+are kept, so every citation still links. `figures.js` is deleted, since the
+section now draws nothing, and the referent `beaker`, which only `sim-water`
+drew and only its caption named, is removed.
+
+- `fig-chemweb` (Figure 1.3): **reverted**. A still redraw of the same
+  eighteen boxes and the same links in the same places. It was correct
+  against the image and showed nothing the image does not; the book's
+  drawing, with its heavier lines and tinted centre box, reads better.
+- `fig-scimethod` (Figure 1.4): **reverted**. A still redraw, correct in
+  its boxes and arrows, but weaker than the image: the book sets "not
+  consistent with", "are consistent with" and "does not support" in red and
+  runs each label along its arrow, and the redraw had them in plain type
+  beside the arrows.
+- `sim-water` (Figure 1.5): **reverted**. The lesson is the three domains.
+  The book's photograph of ice, sea and air is the macroscopic domain
+  itself, and its three circles stand side by side to be compared; the Sim
+  put a drawn beaker in the photograph's place and showed one state at a
+  time, as crowded toy molecules. Its temperature slider only switched
+  among three pictures, and the 2D/3D view added nothing. The states of
+  water under a control are the subject of Figure 1.6 in section 1.2.
+
+The page now binds no type in a figure; the temperature words of the last
+paragraph keep their `data-type`.

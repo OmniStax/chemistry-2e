@@ -48,7 +48,10 @@
     "/media/ch10/CNX_Chem_10_04_CO2PhasDi.jpg"
    ],
    "original_caption": "(Figure 10.30) The physical state of a substance and its phase-transition temperatures are represented graphically in a phase diagram. (Figure 10.31) The pressure and temperature axes on this phase diagram of water are not drawn to constant scale in order to illustrate several important properties. (Figure 10.34) A phase diagram for carbon dioxide is shown. The pressure axis is plotted on a logarithmic scale to accommodate the large range of values.",
-   "draws": ["pressure", "temperature"],
+   "draws": [
+    "pressure",
+    "temperature"
+   ],
    "conventions": [
     "H",
     "O",
@@ -64,6 +67,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "pressure slider bound to each diagram's axis, label off the ticks"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt: to scale with water close-up, curve key, reading readout"
     }
    ]
   },

@@ -28,6 +28,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -58,6 +61,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "rewritten: thumbs-up hand under the ball, skater, footprint grid"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "redrawn: load on a foot, area on square inches, log sliders to the elephant"
     }
    ]
   },
@@ -94,6 +101,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "names clear of the bottom edge; note that repeated the headline dropped"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "book's heights at 1 atm; atmosphere label attached; readout for both liquids"
     }
    ]
   },
@@ -124,90 +135,74 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "atmosphere label clear of the level line; closed-end note dropped"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "redrawn: stopcock, elbow, bulb open to the pipe; mm Hg; two-line readout"
     }
    ]
   },
   {
    "id": "fig-manometer-ex3",
    "kind": "figure",
-   "originals": [
-    "/media/ch09/CNX_Chem_09_01_Manometer1_img.jpg"
-   ],
-   "draws": [
-    "pressure",
-    "length"
-   ],
-   "conventions": [
-    "Hg"
-   ],
+   "draws": [],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image"
     }
    ]
   },
   {
    "id": "fig-manometer-cyl3",
    "kind": "figure",
-   "originals": [
-    "/media/ch09/CNX_Chem_09_01_Manometer2_img.jpg"
-   ],
-   "draws": [
-    "pressure",
-    "length"
-   ],
-   "conventions": [
-    "Hg"
-   ],
+   "draws": [],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image"
     }
    ]
   },
   {
    "id": "fig-manometer-ex4",
    "kind": "figure",
-   "originals": [
-    "/media/ch09/CNX_Chem_09_01_Manometer3_img.jpg"
-   ],
-   "draws": [
-    "pressure",
-    "length"
-   ],
-   "conventions": [
-    "Hg"
-   ],
+   "draws": [],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image"
     }
    ]
   },
   {
    "id": "fig-manometer-cyl4",
    "kind": "figure",
-   "originals": [
-    "/media/ch09/CNX_Chem_09_01_manometer4_img.jpg"
-   ],
-   "draws": [
-    "pressure",
-    "length"
-   ],
-   "conventions": [
-    "Hg"
-   ],
+   "draws": [],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image"
     }
    ]
   },

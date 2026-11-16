@@ -21,6 +21,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -35,11 +38,26 @@
     "concentration",
     "equilibrium-constant"
    ],
+   "conventions": [
+    "H",
+    "C",
+    "O",
+    "S",
+    "P"
+   ],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "K_a1 written as m × 10ⁿ; caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: each species drawn a proton short, over its level; both steps read out"
     }
    ]
   },

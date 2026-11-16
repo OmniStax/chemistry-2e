@@ -24,6 +24,9 @@
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-fable-5-2"
       }
     ]
   },
@@ -64,6 +67,14 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "caption cut"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt: one log scale, photon energy against a C–C bond energy"
         }
       ]
     },
@@ -87,6 +98,14 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "two equations on two lines; caption cut"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt: full-size scene, proton transfer shown, steps listed"
         }
       ]
     },
@@ -110,6 +129,14 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "lead dims gamma rather than stopping all; readout on two lines"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt: full-height barriers, ion trails in the text’s ratio"
         }
       ]
     },
@@ -163,25 +190,31 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "caption cut"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt: three RBEs at once over the doses the section names"
         }
       ]
     },
     {
       "id": "sim-doses",
-      "kind": "sim",
+      "kind": "photo",
       "number": "21.37",
-      "originals": [
-        "/media/ch21/CNX_Chem_21_06_Exposure2.jpg"
-      ],
-      "original_caption": "The total annual radiation exposure for a person in the US is about 620 mrem. The various sources and their relative amounts are shown in this bar graph. (source: U.S. Nuclear Regulatory Commission)",
-      "draws": [
-        "dose"
-      ],
+      "draws": [],
       "ai": [
         {
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "reverted to the book’s image"
         }
       ]
     }

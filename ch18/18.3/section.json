@@ -22,6 +22,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-fable-5-2",
+    "effort": "high"
    }
   ]
  },
@@ -56,6 +60,14 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "scene enlarged, view buttons gone, hub atom picked out, caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: wide slabs, bonded unit solid, As–graphite morph, icosahedron faces"
     }
    ]
   },
@@ -76,6 +88,14 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt as the book’s cut-away housing with an impurity profile graph"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "redrawn from the image: cylinder housing, cut-away, rod, labels, clean counts"
     }
    ]
   },
@@ -138,7 +158,9 @@
     "/media/ch18/CNX_Chem_18_03_CO2vsSiO2.jpg"
    ],
    "original_caption": "Because carbon tends to form double and triple bonds and silicon does not, (a) carbon dioxide is a discrete molecule with two C=O double bonds and (b) silicon dioxide is an infinite network of oxygen atoms bridging between silicon atoms with each silicon atom possessing four Si-O single bonds. (credit a photo: modification of work by Erica Gerdes; credit b photo: modification of work by Didier Descouens)",
-   "draws": [],
+   "draws": [
+    "temperature"
+   ],
    "conventions": [
     "C",
     "O",
@@ -149,6 +171,14 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "view buttons gone, scene enlarged, readout one chain, caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: both solids side by side to one scale, warmed from −100 °C to 25 °C"
     }
    ]
   }

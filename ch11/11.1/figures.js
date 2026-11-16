@@ -1,174 +1,264 @@
 /* Figures for section 11.1 The Dissolution Process. Boots against the section's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['11.1'] = function (root, F) {
-const { el, fmt, tex, C, PAL, alpha, ctl, cycle, register, begin, line, arrow, text, topline } = F;
+const { tex, C, PAL, alpha, ctl, cycle, register, begin, line, arrow, text, topline, axes, legend } = F;
 const sim = (id, H) => F.sim(root, id, H);
-function readout(host, main, small) { tex(host, main); if (small) host.appendChild(el('small', null, small)); }
 const TAU = 2 * Math.PI;
 const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
 
 /* =====================================================================
-   FIGURE 11.3: helium and argon mixing, in three dimensions. Two glass
-   bulbs joined by a tube with a stopcock, thirty atoms of each gas.
-   Moving: the atoms travel continuously, helium sqrt(10) times faster
-   than argon, as their masses give. Closing the stopcock sets the gases
-   apart again. The bulbs stand on a bench, so the pitch stays between
-   2° and 70° above level.
+   FIGURE 11.3: helium and argon mixing, the book's two bulbs and valve
+   drawn flat so that every atom is in view, with the count of each gas
+   that has reached the other bulb traced beneath. The passage's point is
+   that nothing but the atoms' own motion mixes them (no attraction acts,
+   no energy changes) and that the mixing goes one way: each count climbs
+   to half and stays near it.
+   The run is one fixed experiment, worked out once: the valve stays shut
+   for T0 seconds, opens, and the gases mix until T. An atom travels in a
+   straight line at a speed proportional to 1/√ℳ (helium √(39.95/4.00) =
+   3.2 times faster than argon) and leaves the glass at an angle drawn
+   from the cosine law, which keeps a gas spread evenly through the space
+   it can reach. Every frame is a function of the transport's time, so the
+   reader can scrub back to the closed valve; the random numbers come from
+   a seeded generator and the arithmetic uses only + − × ÷ and √, so the
+   run is the same in every browser.
+   Canvas units: the valve's centre (X0, Y0), bulbs of inner radius RB
+   centred OFF to either side, a tube of inner half-height HN, the plug
+   PW to either side of the centre.
 ===================================================================== */
 (function () {
-  const T3D = window.THREE;
-  const d = sim('sim-he-ar');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: 'front', yaw: 0, pitch: 0.18 }, { label: 'above', yaw: 0, pitch: 1.1 }], h: 330, dist: 4.8, tilt: 0.18 });
-  const grp = v.part(0), cnv = F.makeCanvas(d.stage, 250);
-  const RB = 0.8, XB = 1.1, RT = 0.4, XT = 0.5, N = 30;
-  const hueOf = (f) => F.el(f);
-  const GAS = { He: { r: 0.06, speed: 4.7, name: 'a helium atom, He', word: 'helium' }, Ar: { r: 0.09, speed: 1.5, name: 'an argon atom, Ar', word: 'argon' } };
-  const cock = F.choice(d.controls, { label: '\\text{stopcock}', options: [{ value: 'closed', label: 'closed' }, { value: 'open', label: 'open' }], value: 'open', aria: 'the stopcock between the bulbs', onInput: () => { if (cock.value === 'closed') seed(); } });
-  const heading = () => { const z = 2 * Math.random() - 1, a = Math.random() * TAU, r = Math.sqrt(1 - z * z); return [r * Math.cos(a), r * Math.sin(a), z]; };
-  let atoms = [];
-  function seed() {
-    atoms = [];
-    for (const [f, side] of [['He', -1], ['Ar', 1]]) for (let j = 0; j < N; j++) {
-      const u = heading(), rr = Math.cbrt(Math.random()) * (RB - GAS[f].r - 0.02);
-      atoms.push({ f, x: [side * XB + u[0] * rr, u[1] * rr, u[2] * rr], u: heading() });
-    }
-  }
-  seed();
-  const ok = (p, r) => {
-    for (const s of [-1, 1]) if (Math.hypot(p[0] - s * XB, p[1], p[2]) < RB - r) return true;
-    return cock.value === 'open' && Math.abs(p[0]) < XT && Math.hypot(p[1], p[2]) < RT - r;
+  const d = sim('sim-he-ar', 798);
+  const X0 = 700, Y0 = 305, OFF = 280, RB = 210, HN = 62, PW = 30, N = 30;
+  const T0 = 2, T = 30, FPS = 60, FR = T * FPS + 1, VHE = 1000, DS = 2, SEED = 40;
+  const GAS = {
+    He: { m: 4.00, r: 11, name: 'a helium atom, He' },
+    Ar: { m: 39.95, r: 16, name: 'an argon atom, Ar' },
   };
-  function step(dt) {
-    for (const q of atoms) {
-      const g = GAS[q.f], nx = q.x.map((c, k) => c + q.u[k] * g.speed * dt);
-      if (ok(nx, g.r)) q.x = nx; else q.u = heading();
-    }
-  }
-  const cy = cycle(() => Infinity, 0);
-  let sig = '', meshes = [];
-  const BULB = (s) => F.ref(s < 0 ? 'helium-bulb' : 'argon-bulb');
-  const palSig = () => [PAL.ink, PAL.panel, PAL.soft, PAL.muted, hueOf('He'), hueOf('Ar'), BULB(-1), BULB(1)].join('|');
-  const glass = { transparent: true, opacity: 0.1, depthWrite: false, side: T3D.DoubleSide };
+  const KIND = (i) => (i < N ? 'He' : 'Ar');                    /* atoms 0 … N − 1 are helium, the rest argon */
+  /* a centre keeps the atom's radius from every wall */
+  const inside = (x, y, r) => (Math.abs(y) < HN - r && Math.abs(x) < OFF) || Math.sqrt((x + OFF) * (x + OFF) + y * y) < RB - r || Math.sqrt((x - OFF) * (x - OFF) + y * y) < RB - r;
   function build() {
-    if (palSig() === sig) return; sig = palSig();
-    v.clear(); meshes = [];
-    v.pickable(F.mesh.box(grp, [0, -RB - 0.26, 0], [4.4, 0.1, 1.6], PAL.soft), 'bench');
-    for (const s of [-1, 1]) {
-      const b = new T3D.Mesh(new T3D.SphereGeometry(RB, 40, 24), F.mesh.mat(BULB(s), { ...glass, opacity: 0.16 })); b.position.set(s * XB, 0, 0); grp.add(b);
-      v.pickable(b, s < 0 ? 'the bulb that first held helium' : 'the bulb that first held argon');
-      F.mesh.stick(grp, [s * XB, -RB, 0], [s * XB, -RB - 0.21, 0], 0.05, PAL.muted);
-      v.label(s < 0 ? 'He' : 'Ar', [s * XB, -RB - 0.34, 0.85], grp, 16).style.color = BULB(s);
+    let a = SEED;
+    const rnd = () => { a = (a + 0x6D2B79F5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+    const leave = (q, nx, ny) => { const s = 2 * rnd() - 1, c = Math.sqrt(1 - s * s); q.ux = nx * c - ny * s; q.uy = ny * c + nx * s; };
+    function move(q, dist, open) {
+      const r = GAS[q.f].r, wall = PW + r;
+      for (let it = 0; it < 6 && dist > 1e-6; it++) {
+        const x1 = q.x + q.ux * dist, y1 = q.y + q.uy * dist;
+        /* the closed plug: a wall on either side of the valve */
+        if (!open && Math.abs(q.x) >= wall && Math.abs(x1) < wall) { const sg = Math.sign(q.x), xw = sg * wall, t = (xw - q.x) / (x1 - q.x); q.x = xw + sg * 0.01; q.y += q.uy * dist * t; dist *= 1 - t; leave(q, sg, 0); continue; }
+        if (inside(x1, y1, r)) { q.x = x1; q.y = y1; return; }
+        let lo = 0, hi = 1;
+        for (let i = 0; i < 12; i++) { const m = (lo + hi) / 2; if (inside(q.x + q.ux * dist * m, q.y + q.uy * dist * m, r)) lo = m; else hi = m; }
+        q.x += q.ux * dist * lo; q.y += q.uy * dist * lo; dist *= 1 - lo;
+        const dl = Math.sqrt((q.x + OFF) * (q.x + OFF) + q.y * q.y), dr = Math.sqrt((q.x - OFF) * (q.x - OFF) + q.y * q.y);
+        if (Math.abs(q.y) > HN - r - 1 && dl > RB - r - 0.5 && dr > RB - r - 0.5) leave(q, 0, -Math.sign(q.y));
+        else { const cx = dl < dr ? -OFF : OFF, rr = Math.min(dl, dr) || 1; leave(q, (cx - q.x) / rr, -q.y / rr); }
+      }
     }
-    const tube = new T3D.Mesh(new T3D.CylinderGeometry(RT, RT, 2 * XT, 32, 1, true), F.mesh.mat(PAL.ink, glass)); tube.rotation.z = Math.PI / 2; grp.add(tube);
-    v.pickable(tube, 'the tube joining the bulbs');
-    v.pickable(F.mesh.stick(grp, [0, RT - 0.05, 0], [0, RT + 0.3, 0], 0.07, PAL.muted), 'the stopcock');
-    v.pickable(F.mesh.box(grp, [0, RT + 0.34, 0], [0.5, 0.08, 0.1], PAL.muted), 'the stopcock handle');
-    meshes = atoms.map((q) => { const m = F.mesh.sphere(grp, q.x, GAS[q.f].r * 1.3, hueOf(q.f)); v.pickable(m, GAS[q.f].name); return m; });
+    const P = [];
+    [['He', -1], ['Ar', 1]].forEach(([f, side]) => {
+      for (let i = 0; i < N; i++) {
+        const r = GAS[f].r; let x, y, ux, uy, n2;
+        for (;;) { x = side * (PW + r + rnd() * (OFF + RB - PW - 2 * r)); y = (2 * rnd() - 1) * RB; if (inside(x, y, r) && P.every((p) => (p.x - x) * (p.x - x) + (p.y - y) * (p.y - y) > 4.84 * r * r)) break; }
+        do { ux = 2 * rnd() - 1; uy = 2 * rnd() - 1; n2 = ux * ux + uy * uy; } while (n2 > 1 || n2 < 1e-4);
+        P.push({ f, x, y, ux: ux / Math.sqrt(n2), uy: uy / Math.sqrt(n2), left: 0 });
+      }
+    });
+    const xy = new Float32Array(FR * 4 * N), he = new Uint8Array(FR), ar = new Uint8Array(FR);
+    for (let k = 0; k < FR; k++) {
+      P.forEach((q, i) => { xy[(k * 2 * N + i) * 2] = q.x; xy[(k * 2 * N + i) * 2 + 1] = q.y; if (q.f === 'He' ? q.x > 0 : q.x < 0) (q.f === 'He' ? he : ar)[k]++; });
+      const open = k / FPS >= T0;
+      for (const q of P) { q.left += VHE * Math.sqrt(GAS.He.m / GAS[q.f].m) / FPS; while (q.left >= DS) { q.left -= DS; move(q, DS, open); } }
+    }
+    /* from this frame on, both counts stay within 5 of half: the gases have spread through both bulbs */
+    let even = FR; for (let k = FR - 1; k >= 0 && Math.abs(he[k] - N / 2) <= 5 && Math.abs(ar[k] - N / 2) <= 5; k--) even = k;
+    return { xy, he, ar, even };
   }
+  let RUN = null; const run = () => RUN || (RUN = build());
+  const cy = cycle(() => T, 3);
+  const at = (t) => {                                           /* every atom's place at time t, between two stored frames */
+    const { xy } = run(), f = Math.min(FR - 1, Math.max(0, t * FPS)), k = Math.min(FR - 2, Math.floor(f)), u = f - k, out = [];
+    for (let i = 0; i < 2 * N; i++) { const a = (k * 2 * N + i) * 2, b = a + 4 * N; out.push([xy[a] + (xy[b] - xy[a]) * u, xy[a + 1] + (xy[b + 1] - xy[a + 1]) * u]); }
+    return out;
+  };
+  const atom = (ctx, f, x, y) => { ctx.save(); ctx.fillStyle = F.el(f); ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(x, y, GAS[f].r, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore(); };
+  let hits = []; F.hover(d.stage, () => hits);
+  /* the glass: one outline round both bulbs and the tube, each bulb's wall in its referent colour */
+  function glassware(ctx) {
+    const RG = RB + 2, a = Math.asin((HN + 2) / RG), xl = X0 - OFF, xr = X0 + OFF, nx = RG * Math.cos(a);
+    ctx.save();
+    ctx.beginPath(); ctx.arc(xl, Y0, RG, a, TAU - a); ctx.arc(xr, Y0, RG, Math.PI + a, 3 * Math.PI - a); ctx.closePath();
+    ctx.fillStyle = alpha(PAL.ink, 0.05); ctx.fill();
+    ctx.lineWidth = 4; ctx.lineCap = 'round';
+    ctx.strokeStyle = F.ref('helium-bulb'); ctx.beginPath(); ctx.arc(xl, Y0, RG, a, TAU - a); ctx.stroke();
+    ctx.strokeStyle = F.ref('argon-bulb'); ctx.beginPath(); ctx.arc(xr, Y0, RG, Math.PI + a, 3 * Math.PI - a); ctx.stroke();
+    ctx.restore();
+    for (const sy of [-1, 1]) line(ctx, xl + nx, Y0 + sy * (HN + 2), xr - nx, Y0 + sy * (HN + 2), PAL.ink, 4);
+  }
+  /* the valve from the side, as the book draws it: a tapered plug through the tube, its bore in line with the tube
+     when open and seen end-on when closed, and a handle on top that lies along the tube when open */
+  function valve(ctx, k) {
+    const top = Y0 - HN - 20, bot = Y0 + HN + 20, wt = PW + 6, wb = PW - 4;
+    const body = () => { ctx.beginPath(); ctx.moveTo(X0 - wt, top); ctx.lineTo(X0 + wt, top); ctx.lineTo(X0 + wb, bot); ctx.lineTo(X0 - wb, bot); ctx.closePath(); };
+    ctx.save();
+    ctx.fillStyle = PAL.panel; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.lineJoin = 'round';
+    ctx.beginPath(); ctx.roundRect(X0 - 19, bot, 38, 15, 3); ctx.fill(); ctx.stroke();           /* the retaining nut under the plug */
+    ctx.beginPath(); ctx.rect(X0 - 8, top - 20, 16, 20); ctx.fill(); ctx.stroke();               /* the stem */
+    ctx.beginPath(); ctx.ellipse(X0, top - 31, 14 + 40 * k, 13 - 2 * k, 0, 0, TAU); ctx.fill(); ctx.stroke();   /* the handle */
+    body(); ctx.fill();
+    ctx.save(); body(); ctx.clip();
+    ctx.fillStyle = alpha(PAL.ink, 0.05);
+    if (k >= 1) { ctx.fillRect(X0 - wt, Y0 - HN, 2 * wt, 2 * HN); line(ctx, X0 - wt, Y0 - HN, X0 + wt, Y0 - HN, PAL.ink, 2.5); line(ctx, X0 - wt, Y0 + HN, X0 + wt, Y0 + HN, PAL.ink, 2.5); }
+    else { ctx.lineWidth = 2.5; ctx.beginPath(); ctx.ellipse(X0, Y0, 22 + (wt + 16 - 22) * k, 22 + (HN - 22) * k, 0, 0, TAU); ctx.fill(); ctx.stroke(); }
+    ctx.restore();
+    body(); ctx.stroke();
+    ctx.restore();
+  }
+  const G = { l: 150, r: 1250, t: 602, b: 750 };
   function draw() {
-    build();
-    atoms.forEach((q, i) => meshes[i].position.set(q.x[0], q.x[1], q.x[2]));
-    v.invalidate();
-    const { ctx } = begin(cnv);
-    const cnt = (f, s) => atoms.filter((q) => q.f === f && (s < 0 ? q.x[0] < 0 : q.x[0] >= 0)).length;
-    const X = (n) => 520 + n * 22, rows = [{ f: 'He', y: 120 }, { f: 'Ar', y: 175 }];
-    text(ctx, 'left bulb', 520 - 30, 84, BULB(-1), { size: 17, align: 'right' });
-    text(ctx, 'right bulb', 1210, 84, BULB(1), { size: 17, align: 'left' });
-    line(ctx, X(N / 2) + 0, 96, X(N / 2), 200, alpha(PAL.ink, 0.35), 2, [10, 10]);
-    for (const { f, y } of rows) {
-      const l = cnt(f, -1), r = N - l;
-      text(ctx, GAS[f].word + ', ' + l + ' left and ' + r + ' right', 480, y, PAL.ink, { size: 18, align: 'right' });
-      ctx.save(); ctx.fillStyle = hueOf(f); ctx.strokeStyle = alpha(PAL.ink, 0.5); ctx.lineWidth = 1.5;
-      ctx.fillRect(X(0), y - 12, X(l) - X(0), 24); ctx.strokeRect(X(0), y - 12, X(l) - X(0), 24);
-      ctx.globalAlpha = 0.45; ctx.fillRect(X(l), y - 12, X(N) - X(l), 24); ctx.globalAlpha = 1; ctx.strokeRect(X(l), y - 12, X(N) - X(l), 24); ctx.restore();
-    }
-    text(ctx, 'even split', X(N / 2), 222, PAL.muted, { size: 16, align: 'center' });
-    const he = cnt('He', 1), ar = cnt('Ar', -1);
-    topline(ctx, cock.value === 'closed'
-      ? 'With the stopcock closed, helium stays in the left bulb and argon in the right.'
-      : he + ' of 30 helium atoms and ' + ar + ' of 30 argon atoms have crossed into the other bulb.');
-    readout(d.readout, `\\text{He: } ${N - he} + ${he} = ${N} \\qquad \\text{Ar: } ${ar} + ${N - ar} = ${N}`,
-      'Each count is left bulb plus right bulb; mixed evenly, each gas fills twice the volume it held before.');
+    const { ctx } = begin(d.c);
+    const t = cy.now(), R = run(), k = Math.min(FR - 1, Math.floor(t * FPS)), P = at(t);
+    const turn = F.ease.smooth(Math.min(1, Math.max(0, (t - T0 + 0.3) / 0.6)));     /* the plug turns as the valve opens */
+    const he = R.he[k], ar = R.ar[k];
+    glassware(ctx);
+    valve(ctx, turn);
+    P.forEach(([x, y], i) => atom(ctx, KIND(i), X0 + x, Y0 + y));
+    const state = t < T0 ? 'closed' : 'open';
+    text(ctx, 'valve ' + state, X0, Y0 - HN - 84, PAL.ink, { size: 20, align: 'center' });
+    hits = [
+      ...P.map(([x, y], i) => ({ x: X0 + x, y: Y0 + y, r: GAS[KIND(i)].r + 3, name: GAS[KIND(i)].name })),
+      { x: X0, y: Y0 - HN - 40, r: 44, name: 'the valve, ' + state }, { x: X0, y: Y0 + HN + 10, r: 34, name: 'the valve, ' + state },
+      { x: X0 - OFF, y: Y0 - RB, r: 30, name: 'the bulb that first held helium' }, { x: X0 + OFF, y: Y0 - RB, r: 30, name: 'the bulb that first held argon' },
+    ];
+    /* beside each bulb, what it holds now; the sample atom beside each symbol is the key */
+    [false, true].forEach((right) => {
+      const x = right ? 1216 : 20;
+      text(ctx, right ? 'right bulb' : 'left bulb', x, Y0 - 54, F.ref(right ? 'argon-bulb' : 'helium-bulb'), { size: 20, weight: 600 });
+      ['He', 'Ar'].forEach((f, g) => {
+        const y = Y0 - 6 + g * 44, n = f === 'He' ? (right ? he : N - he) : (right ? N - ar : ar);
+        atom(ctx, f, x + 16, y);
+        text(ctx, f, x + 42, y, PAL.ink, { size: 20 });
+        text(ctx, String(n), x + 160, y, PAL.ink, { size: 22, weight: 600, align: 'right' });
+      });
+    });
+    /* beneath, how many atoms of each gas are in the bulb they did not start in; no time scale, since the model's seconds are not the gases' */
+    const ax = axes(ctx, G, [0, T], [0, N], { nx: 0, ny: 2, yl: 'atoms in the other bulb' });
+    text(ctx, 'time', G.r, G.b + 24, PAL.ink, { size: 20, weight: 600, align: 'right' });
+    line(ctx, G.l, ax.Y(N / 2), G.r, ax.Y(N / 2), alpha(PAL.ink, 0.4), 2, [10, 10]);
+    text(ctx, 'evenly spread', G.r + 24, ax.Y(N / 2), PAL.muted, { size: 17 });
+    line(ctx, ax.X(T0), G.t, ax.X(T0), G.b, alpha(PAL.ink, 0.4), 2, [4, 8]);
+    text(ctx, 'valve opens', ax.X(T0) + 10, G.t + 12, PAL.muted, { size: 17 });
+    [['He', R.he], ['Ar', R.ar]].forEach(([f, c]) => {
+      ctx.save(); ctx.strokeStyle = F.el(f); ctx.lineWidth = f === 'He' ? 3 : 5; ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+      ctx.beginPath(); ctx.moveTo(ax.X(0), ax.Y(c[0]));
+      for (let j = 1; j <= k; j++) if (c[j] !== c[j - 1] || j === k) { ctx.lineTo(ax.X(j / FPS), ax.Y(c[j - 1])); ctx.lineTo(ax.X(j / FPS), ax.Y(c[j])); }
+      ctx.stroke(); ctx.restore();
+    });
+    atom(ctx, 'Ar', ax.X(k / FPS), ax.Y(ar)); atom(ctx, 'He', ax.X(k / FPS), ax.Y(he));
+    const key = (f) => (c, x, y) => { c.save(); c.strokeStyle = F.el(f); c.lineWidth = f === 'He' ? 3 : 5; c.lineCap = 'round'; c.beginPath(); c.moveTo(x - 20, y); c.lineTo(x + 20, y); c.stroke(); c.restore(); atom(c, f, x, y); };
+    legend(ctx, ax, [{ s: 'helium in the right bulb', draw: key('He') }, { s: 'argon in the left bulb', draw: key('Ar') }], { corner: 'above' });
+    topline(ctx, t < T0 ? 'Valve closed: helium fills the left bulb and argon the right.'
+      : k >= R.even ? 'Each gas has spread through both bulbs, twice the volume it began in, with no change in energy.'
+        : 'No atom attracts another. Each wanders through the open valve on its own.');
   }
-  register(d.fig, { update: (dt) => { cy.step(dt, () => 1); step(Math.min(dt, 0.05)); }, draw });
+  register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw, arrive: false });
 })();
 
 /* =====================================================================
-   FIGURE 11.4: dissolution as three steps on an energy ladder. Step 1
-   expands the solute, step 2 the solvent, step 3 mixes them (solvation);
-   the dashed arrow is the direct formation of the solution, the sum.
-   Still: the ladder answers its sliders. Energy axis fixed, −250 to
-   300 kJ/mol, from the slider limits (0 to 200 up, down to −250).
+   FIGURE 11.4: dissolution as three steps, with the energy of each. The
+   book draws the steps as a cycle of particle boxes with no energies, so
+   whether the solution ends above or below its start is left to words.
+   Here the book's boxes stand in a row, one frame per state (solute and
+   solvent apart, the solute expanded, the solvent expanded, the
+   solution), and under each frame is the energy level of that state:
+   steps 1 and 2 climb, step 3 (solvation) falls, and the arrow at the
+   right is the direct formation of the solution, the sum of the three.
+   Still: the ladder answers its sliders. The energies are the reader's,
+   in kJ/mol; the book gives none. Energy axis fixed, −150 to 150 kJ/mol,
+   from the slider limits (the levels reach 0 + 100 + 50 = 150 and
+   0 − 150 = −150).
 ===================================================================== */
 (function () {
-  const d = sim('sim-steps', 720);
-  const H1 = ctl(d.controls, { label: '\\kdH_{1}', cls: 'energy', min: 0, max: 100, step: 1, value: 60, unit: 'kJ/mol', dec: 0, aria: 'energy of step 1, expanding the solute, in kilojoules per mole' });
-  const H2 = ctl(d.controls, { label: '\\kdH_{2}', cls: 'energy', min: 0, max: 100, step: 1, value: 40, unit: 'kJ/mol', dec: 0, aria: 'energy of step 2, expanding the solvent, in kilojoules per mole' });
-  const H3 = ctl(d.controls, { label: '\\kdH_{3}', cls: 'energy', min: -250, max: 0, step: 1, value: -130, unit: 'kJ/mol', dec: 0, aria: 'energy of step 3, solvation, in kilojoules per mole', specials: [{ at: () => -(H1.v + H2.v), label: 'ideal' }] });
-  const hits = []; F.hover(d.stage, () => hits);
-  /* particle arrangements in a box 64 tall: packed or expanded, solute (7) and solvent (16) */
-  const hex = (n, cols, s, x0, y0) => Array.from({ length: n }, (_, i) => { const r = Math.floor(i / cols), c = i % cols; return [x0 + c * s + (r % 2) * s / 2, y0 - r * s * 0.87]; });
-  function particles(ctx, pts, kind) {
-    const col = F.ref(kind), rr = kind === 'solute' ? 8 : 6;
-    for (const [x, y] of pts) {
-      ctx.save(); ctx.fillStyle = col; ctx.strokeStyle = alpha(PAL.ink, 0.45); ctx.lineWidth = 1; ctx.beginPath(); ctx.arc(x, y, rr, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore();
-      hits.push({ x, y, r: rr + 2, name: 'a ' + kind + ' particle' });
+  const d = sim('sim-steps', 700);
+  const H1 = ctl(d.controls, { label: '\\text{step 1}', cls: 'energy', key: 'step-1', min: 0, max: 100, step: 1, value: 70, unit: 'kJ/mol', dec: 0, aria: 'energy of step 1, separating the solute particles, in kilojoules per mole' });
+  const H2 = ctl(d.controls, { label: '\\text{step 2}', cls: 'energy', key: 'step-2', min: 0, max: 50, step: 1, value: 20, unit: 'kJ/mol', dec: 0, aria: 'energy of step 2, separating the solvent particles, in kilojoules per mole' });
+  const H3 = ctl(d.controls, { label: '\\text{step 3}', cls: 'energy', key: 'step-3', min: -150, max: 0, step: 1, value: -110, unit: 'kJ/mol', dec: 0, aria: 'energy of step 3, solvation, in kilojoules per mole', specials: [{ at: () => -(H1.v + H2.v), label: 'ideal' }] });
+  let hits = []; F.hover(d.stage, () => hits);
+  /* the four frames, left to right; in the first three the solute's box (SW wide) stands beside the solvent's */
+  const FL = 116, FW = 236, GP = 56, FT = 124, FH = 176, SW = 88, RP = 12;
+  const fx = (i) => FL + i * (FW + GP);
+  /* where the particles sit, about their box's centre: packed, a touching cluster; spread, the same particles apart */
+  const hexRows = (rows, dx, dy) => rows.flatMap((n, j) => Array.from({ length: n }, (_, c) => [(c - (n - 1) / 2) * dx, (j - (rows.length - 1) / 2) * dy]));
+  const PACK = { solute: hexRows([2, 3, 2], 24.5, 21.3), solvent: hexRows([3, 4, 5, 4], 24.5, 21.3) };
+  const SPREAD = {
+    solute: [[-22, -66], [20, -44], [-20, -18], [22, 4], [-20, 28], [22, 50], [-10, 70]],
+    solvent: [[-50, -62], [-16, -66], [18, -60], [50, -64], [-46, -22], [-14, -26], [16, -18], [48, -24], [-50, 18], [-18, 22], [14, 18], [50, 24], [-44, 62], [-12, 66], [20, 60], [48, 66]],
+  };
+  const MIX = hexRows([5, 4, 5, 4, 5], 24.5, 21.3), SOLUTE_AT = new Set([1, 4, 7, 9, 13, 15, 21]);
+  function particles(ctx, pts, kind, cx, cy) {
+    const col = F.ref(kind);
+    for (const [dx, dy] of pts) {
+      ctx.save(); ctx.fillStyle = col; ctx.strokeStyle = alpha(PAL.ink, 0.5); ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(cx + dx, cy + dy, RP, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore();
+      hits.push({ x: cx + dx, y: cy + dy, r: RP + 2, name: kind === 'solute' ? 'a solute particle' : 'a solvent particle' });
     }
   }
-  function frame(ctx, l, t, w, h) { ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.5); ctx.lineWidth = 1.5; ctx.strokeRect(l, t, w, h); ctx.restore(); }
-  /* a box of particles standing on the level at y, centred on x */
-  function scene(ctx, stage, x, y) {
-    const b = y - 10;
-    const soluteBox = (cx, open) => { frame(ctx, cx - 38, b - 72, 76, 72); particles(ctx, open ? [[-24, -16], [0, -22], [24, -14], [-20, -52], [4, -46], [26, -56], [-4, -64 + 10]].map(([dx, dy]) => [cx + dx, b + dy]) : hex(7, 3, 17, cx - 17, b - 11), 'solute'); };
-    const solventBox = (cx, open) => { frame(ctx, cx - 38, b - 72, 76, 72); particles(ctx, open ? Array.from({ length: 16 }, (_, i) => [cx - 27 + (i % 4) * 18 + (Math.floor(i / 4) % 2) * 5, b - 10 - Math.floor(i / 4) * 17]) : hex(16, 5, 12.5, cx - 27, b - 8), 'solvent'); };
-    if (stage === 3) {
-      frame(ctx, x - 55, b - 72, 110, 72);
-      const pts = hex(23, 6, 15, x - 40, b - 9);
-      const solute = new Set([2, 7, 9, 13, 16, 20, 11]);
-      pts.forEach((p, i) => particles(ctx, [p], solute.has(i) ? 'solute' : 'solvent'));
-      return;
+  const frame = (ctx, l, w) => { ctx.save(); ctx.fillStyle = PAL.panel; ctx.strokeStyle = alpha(PAL.ink, 0.6); ctx.lineWidth = 2.5; ctx.beginPath(); ctx.roundRect(l, FT, w, FH, 8); ctx.fill(); ctx.stroke(); ctx.restore(); };
+  const NAMES = ['solute and solvent apart', 'expanded solute', 'expanded solvent', 'solution'];
+  function scene(ctx, i) {
+    const l = fx(i), cy = FT + FH / 2;
+    if (i === 3) {
+      frame(ctx, l, FW);
+      particles(ctx, MIX.filter((_, j) => !SOLUTE_AT.has(j)), 'solvent', l + FW / 2, cy);
+      particles(ctx, MIX.filter((_, j) => SOLUTE_AT.has(j)), 'solute', l + FW / 2, cy);
+    } else {
+      frame(ctx, l, SW); particles(ctx, i >= 1 ? SPREAD.solute : PACK.solute, 'solute', l + SW / 2, cy);
+      frame(ctx, l + SW + 8, FW - SW - 8); particles(ctx, i >= 2 ? SPREAD.solvent : PACK.solvent, 'solvent', l + SW + 8 + (FW - SW - 8) / 2, cy);
     }
-    soluteBox(x - 42, stage >= 1); solventBox(x + 42, stage >= 2);
+    text(ctx, NAMES[i], l + FW / 2, FT + FH + 22, PAL.ink, { size: 19, align: 'center' });
+    if (i < 3) arrow(ctx, l + FW + 9, cy, l + FW + GP - 9, cy, PAL.ink, 4);
   }
+  const sgn = (x) => (x > 0 ? '+' : x < 0 ? '−' : '') + Math.abs(x);
   function draw() {
     const { ctx } = begin(d.c);
-    hits.length = 0;
+    hits = [];
     const h = [H1.v, H2.v, H3.v], E = [0, h[0], h[0] + h[1], h[0] + h[1] + h[2]], s = E[3], ce = C('energy');
-    const box = { l: 150, r: 1340, t: 120, b: 680 }, Y = (e) => box.b - ((e + 250) / 550) * (box.b - box.t);
-    line(ctx, box.l, box.t, box.l, box.b, PAL.muted, 2);
-    for (let e = -250; e <= 300; e += 50) { line(ctx, box.l - 6, Y(e), box.l, Y(e), PAL.muted, 2); text(ctx, String(e), box.l - 12, Y(e), PAL.muted, { size: 16, align: 'right' }); }
-    text(ctx, 'energy (kJ/mol)', 40, box.t - 30, ce, { size: 18, weight: 600 });
-    line(ctx, box.l, Y(0), 1310, Y(0), alpha(PAL.ink, 0.3), 2, [10, 10]);
-    const XS = [290, 570, 850, 1110], NAMES = ['solute + solvent', 'expanded solute', 'both expanded', 'solution'];
-    XS.forEach((x, i) => {
-      line(ctx, x - 100, Y(E[i]), x + 100, Y(E[i]), PAL.ink, 4);
-      scene(ctx, i, x, Y(E[i]));
-      text(ctx, NAMES[i], x, Y(E[i]) + 20, PAL.ink, { size: 17, align: 'center' });
-    });
+    for (let i = 0; i < 4; i++) scene(ctx, i);
+    text(ctx, 'solute', fx(0) + SW / 2, FT - 16, F.ref('solute'), { size: 19, weight: 600, align: 'center' });
+    text(ctx, 'solvent', fx(0) + SW + 8 + (FW - SW - 8) / 2, FT - 16, F.ref('solvent'), { size: 19, weight: 600, align: 'center' });
+    /* the ladder: one unit a kJ/mol, zero where the solute and solvent start */
+    const AX = 92, YT = 372, Y = (e) => YT + 150 - e, XD = 1242;
+    line(ctx, AX, YT - 10, AX, Y(-150), PAL.muted, 2);
+    for (let e = -150; e <= 150; e += 50) { line(ctx, AX - 6, Y(e), AX, Y(e), PAL.muted, 2); text(ctx, e < 0 ? '−' + -e : String(e), AX - 12, Y(e), PAL.muted, { size: 17, align: 'right' }); }
+    text(ctx, 'energy (kJ/mol)', 16, YT - 30, ce, { size: 19, weight: 600 });
+    line(ctx, AX, Y(0), 1392, Y(0), alpha(PAL.ink, 0.35), 2, [10, 10]);
+    const xa = (i) => fx(i) + FW + GP / 2;
+    /* how far the solution ends from its start, as a band under its frame */
+    if (s) { ctx.save(); ctx.fillStyle = alpha(ce, 0.14); ctx.fillRect(xa(2), Math.min(Y(0), Y(s)), XD + 14 - xa(2), Math.abs(s)); ctx.restore(); }
+    /* each state's level runs under its frame, and a step's arrow joins the end of one level to the start of the next */
+    for (let i = 0; i < 4; i++) line(ctx, i ? xa(i - 1) : fx(0), Y(E[i]), i < 3 ? xa(i) : XD + 14, Y(E[i]), PAL.ink, 4);
     for (let i = 0; i < 3; i++) {
-      const xa = (XS[i] + XS[i + 1]) / 2;
-      line(ctx, XS[i] + 100, Y(E[i]), xa + 4, Y(E[i]), alpha(PAL.ink, 0.35), 2, [4, 8]);
-      if (Math.abs(h[i]) >= 2) arrow(ctx, xa, Y(E[i]), xa, Y(E[i + 1]), ce, 4);
-      /* under the start level, clear of the arrow: right of a rise and below the next level's name, left of solvation */
-      const up = i < 2, y0 = up ? Math.max(Y(E[i]) + 28, Y(E[i + 1]) + 56) : Y(E[i]) + 56, xl = up ? xa + 8 : xa - 8, al = up ? 'left' : 'right';
-      text(ctx, 'step ' + (i + 1), xl, y0 - 11, PAL.ink, { size: 16, align: al, bg: PAL.panel });
-      text(ctx, (h[i] > 0 ? '+' : h[i] < 0 ? '−' : '') + Math.abs(h[i]), xl, y0 + 11, ce, { size: 17, weight: 600, align: al, bg: PAL.panel });
+      const y0 = Y(E[i]), y1 = Y(E[i + 1]), L = Math.abs(y1 - y0), up = i < 2;
+      if (L >= 2) arrow(ctx, xa(i), y0, xa(i), y1, ce, 5);
+      /* the step's name and energy beside its arrow: left of a climb, right of the fall, clear of both levels */
+      const yl = L >= 52 ? (y0 + y1) / 2 : up ? y0 - 26 : y1 + 26;
+      F.rich(ctx, ['step ' + (i + 1) + '  ', [sgn(h[i]) + ' kJ/mol', ce]], xa(i) + (up ? -14 : 14), yl, { size: 19, align: up ? 'right' : 'left' });
     }
-    const xd = 1250;
-    line(ctx, XS[3] + 100, Y(s), xd, Y(s), alpha(PAL.ink, 0.35), 2, [4, 8]);
-    if (Math.abs(s) >= 2) { ctx.save(); ctx.setLineDash([10, 8]); line(ctx, xd, Y(0), xd, Y(s) + (s < 0 ? -14 : 14), ce, 4); ctx.restore(); arrow(ctx, xd, Y(s) + (s < 0 ? -16 : 16), xd, Y(s), ce, 4); }
-    text(ctx, 'direct, ' + (s > 0 ? '+' : s < 0 ? '−' : '') + Math.abs(s), xd, Math.max(Y(Math.max(s, 0)) - 22, box.t), ce, { size: 17, weight: 600, align: 'center', bg: PAL.panel });
-    /* legend */
-    particles(ctx, [[1180, 150]], 'solute'); text(ctx, 'solute', 1194, 150, PAL.ink, { size: 17 });
-    particles(ctx, [[1260, 150]], 'solvent'); text(ctx, 'solvent', 1274, 150, PAL.ink, { size: 17 });
+    if (Math.abs(s) >= 2) arrow(ctx, XD, Y(0), XD, Y(s), ce, 5);
+    text(ctx, 'direct', XD + 16, Y(0) + (s < 0 ? -48 : 26), PAL.ink, { size: 19 });
+    text(ctx, sgn(s) + ' kJ/mol', XD + 16, Y(0) + (s < 0 ? -24 : 50), ce, { size: 19, weight: 600 });
     const cost = h[0] + h[1], back = -h[2];
-    topline(ctx, s < 0
-      ? 'Separating the solute and the solvent costs ' + cost + ' kJ/mol and solvation returns ' + back + ' kJ/mol, so the solution forms exothermically and releases ' + (-s) + ' kJ/mol.'
+    topline(ctx, cost === 0 && back > 0
+      ? `Nothing is spent separating the particles, so solvation's ${back} kJ/mol is all released: the solution forms exothermically.`
+      : s < 0
+      ? `Solvation returns ${back} kJ/mol, more than the ${cost} kJ/mol spent separating the particles: the solution forms exothermically.`
       : s > 0
-        ? 'Separating the solute and the solvent costs ' + cost + ' kJ/mol and solvation returns only ' + back + ' kJ/mol, so the solution forms endothermically and absorbs ' + s + ' kJ/mol.'
-        : 'Solvation returns exactly the ' + cost + ' kJ/mol spent separating the solute and the solvent, so the solution forms with no change in energy, as an ideal solution does.');
-    const kj = (x) => hue('energy', (x < 0 ? '(' + x + '\\ \\text{kJ/mol})' : x + '\\ \\text{kJ/mol}')).replace('-', '−');
-    readout(d.readout, `\\kdH_{\\text{soln}} = \\kdH_{1} + \\kdH_{2} + \\kdH_{3} = ${kj(h[0])} + ${kj(h[1])} + ${kj(h[2])} = ${hue('energy', s + '\\ \\text{kJ/mol}').replace('-', '−')}`);
+        ? `Solvation returns ${back} kJ/mol, less than the ${cost} kJ/mol spent separating the particles: the solution forms endothermically.`
+        : cost > 0
+          ? `Solvation returns exactly the ${cost} kJ/mol spent separating the particles: no energy change, as in an ideal solution.`
+          : 'No attractions to overcome and none to form: no energy change, as when helium and argon mix.');
+    const v = (x) => hue('energy', String(Math.abs(x)));
+    tex(d.readout, `\\text{step 1} + \\text{step 2} + \\text{step 3} = (${v(h[0])} + ${v(h[1])} - ${v(h[2])})\\ \\text{kJ/mol} = ${hue('energy', (s < 0 ? '-' : '') + Math.abs(s))}\\ \\text{kJ/mol}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

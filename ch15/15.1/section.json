@@ -22,6 +22,9 @@
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-fable-5-2"
       }
     ]
   },
@@ -37,7 +40,12 @@
         "/media/ch15/CNX_Chem_15_01_AgCl.jpg"
       ],
       "original_caption": "Silver chloride is a sparingly soluble ionic solid. When it is added to water, it dissolves slightly and produces a mixture consisting of a very dilute solution of Ag⁺ and Cl⁻ ions in equilibrium with undissolved silver chloride.",
-      "draws": ["equilibrium-constant", "concentration"],
+      "draws": [
+        "equilibrium-constant",
+        "concentration",
+        "rate",
+        "time"
+      ],
       "conventions": [
         "Ag",
         "Cl",
@@ -49,6 +57,14 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "rebuilt flat: beaker of ions beside the two rates meeting"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "second start (supersaturated), both rate curves, live ion product"
         }
       ]
     },
@@ -111,11 +127,28 @@
         "concentration",
         "equilibrium-constant"
       ],
+      "conventions": [
+        "Ag",
+        "Cl",
+        "Br"
+      ],
+      "facts": [
+        "#f4f4f2",
+        "#efe6b4"
+      ],
       "ai": [
         {
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "caption cut; readouts show K_sp and both thresholds"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt: square log plane beside a beaker and a bar for each ion"
         }
       ]
     }

@@ -27,6 +27,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -42,7 +45,6 @@
     "H",
     "C",
     "N",
-    "Ar",
     "O",
     "Cl",
     "F"
@@ -52,6 +54,10 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "gases named at their points; headline gives moles per liter; caption cut"
     }
    ]
   },
@@ -63,11 +69,6 @@
    "originals": ["/media/ch09/CNX_Chem_09_03_DaltonLaw1-f981.jpg"],
    "original_caption": "If equal-volume cylinders containing gasses at pressures of 300 kPa, 450 kPa, and 600 kPa are all combined in the same-size cylinder, the total pressure of the gas mixture is 1350 kPa.",
    "draws": ["pressure"],
-   "conventions": [
-    "H",
-    "He",
-    "Ne"
-   ],
    "ai": [
     {
      "model": "claude-opus-5-5",
@@ -78,6 +79,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "orbit bounded to 52° so names stay off the cylinders; note trimmed"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt flat from the book's image: 300, 600, 450 kPa, gauges, one bar"
     }
    ]
   },
@@ -104,6 +109,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "'levels equal' moved clear of the delivery tube"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "apparatus redrawn from the book's image; total split in a bar by the curve"
     }
    ]
   },
@@ -130,6 +139,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "note that repeated the caption dropped"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "3D view removed; one volume per substance; caption cut"
     }
    ]
   },
@@ -479,22 +492,22 @@
  ],
  "referents": [
   {
-   "id": "hydrogen",
-   "label": "the cylinder of hydrogen",
+   "id": "gas-a",
+   "label": "gas A",
    "figures": [
     "sim-dalton"
    ]
   },
   {
-   "id": "helium",
-   "label": "the cylinder of helium",
+   "id": "gas-b",
+   "label": "gas B",
    "figures": [
     "sim-dalton"
    ]
   },
   {
-   "id": "neon",
-   "label": "the cylinder of neon",
+   "id": "gas-c",
+   "label": "gas C",
    "figures": [
     "sim-dalton"
    ]

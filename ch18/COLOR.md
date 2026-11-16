@@ -12,9 +12,9 @@ the substances really have.
 | Quantity | Type | Sections | Treatment |
 |---|---|---|---|
 | ΔH°, ΔG_f°, ΔH of an exercise, kJ of heat released | `energy` | 18.1, 18.3, 18.5, 18.8, 18.9 | Where the text writes one beside an equation; the endothermic formation of ozone and the Haber process's −92 kJ |
-| E° of the halogen couples and of Br₂ + HI | `potential` | 18.5, and 18.11 where a figure ranks the halogens | Written `\kEo`, never `\kE` |
+| E° of the halogen couples and of Br₂ + HI | `potential` | 18.5, and 18.11 where a figure sets each halogen against the halide ions | Written `\kEo`, never `\kE` |
 | K_P (NO₂/N₂O₄), K_a, K_a1, K_a2, pK_a | `equilibrium-constant` | 18.3, 18.7, 18.9 | The NO₂/N₂O₄ readout and the pK_a column of Table 18.2 |
-| a melting, boiling or working temperature (13.2 °C, 44.2 °C, 113 °C, 230 °C, 600 °C, 1000 °C, 77 K, 90 K) | `temperature` | every section | `data-type` on the value; the slider of the molten-sulfur figure and of the NO₂/N₂O₄ box |
+| a melting, boiling or working temperature (13.2 °C, 44.2 °C, 113 °C, 230 °C, 600 °C, 1000 °C, 77 K, 90 K) | `temperature` | every section | `data-type` on the value; the slider of the molten-sulfur figure and of the NO₂/N₂O₄ box, and the two temperatures of Figure 18.18 |
 | a pressure (10 atm in the Frasch pipes, 1 atm of an exercise) | `pressure` | 18.7, 18.10 | Where a figure varies or states one |
 | density of lithium (0.5 g/cm³), hydrazine, NaCl and SrCl₂ | `density` | 18.1, 18.5 | Where the prose states one |
 | a mass or mass of product in a prose statement | `mass` | 18.1, 18.2, 18.5 | Where a readout states one |
@@ -43,9 +43,9 @@ rating and an energy the chapter never states as a number).
 sulfur yellow, phosphorus orange, sodium purple): the metalloid lattices,
 the carbon allotropes, P₄ and its oxides and chlorides, S₈, the nitrogen
 oxides, the oxyanions, the interhalogens (iodine and fluorine from the
-palette, never a type hue), Na⁺ and Cl⁻ in the Downs cell, Al³⁺ in the
-Hall–Héroult cell, H₂ and O₂ in the electrolysis of water. A free electron
-is `F.el('e-')`. An ion keeps its element colour and carries its charge as a
+palette, never a type hue), Na⁺ and Cl⁻ in the Downs cell, Al³⁺, O²⁻ and
+the O₂, CO and CO₂ of the anodes in the Hall–Héroult cell, H₂ and O₂ in the
+electrolysis of water. A free electron is `F.el('e-')`, in both cells' wires. An ion keeps its element colour and carries its charge as a
 mark.
 
 Facts, drawn as the thing looks and kept when colour coding is off: the
@@ -83,8 +83,8 @@ every figure stays legible from its labels.
 
 As built (chapter pass, 2026-10-05):
 
-- **18.7.** `n2o4` and `no2`, the two gases of `sim-no2-dimer`, one bar each on its strip of partial pressures and marked in the text beside it. No other section has a referent: the groups of 18.1 are lit one at a time by a choice, the hydrogen isotopes of 18.5 are not drawn, the oxyanions of 18.9 are one ion at a time on a strip of pK_a values, and the halogens of 18.11's ladder are elements told apart by name and by the colours of their solutions.
+- **18.7.** `n2o4` and `no2`, the two gases of `sim-no2-dimer`, which colour the count under the cylinder, the curve of the share of NO₂ on the graph beside it and the names of the curve's two regions, and are marked in the text beside it. No other section has a referent: the groups of 18.1 are read down one at a time by a choice, the hydrogen isotopes of 18.5 are not drawn, the oxyanions of 18.9 stand side by side in a table under their names, and the halogens of 18.11's grid are elements told apart by name and by the colours of their solutions. The impurity atoms of Figure 18.14 and the two phases of the p orbitals of Figure 18.21 take `F.cat`, since the text names no one of them as a referent.
 
-Facts as drawn: the Figure 18.2 legend colours deepened so that a tint reads on a dark panel (#e3c46e representative metals, #7392cb transition metals, #c49ac4 metalloids, #8fb8aa nonmetals); graphite and the molten metals of the Downs and Hall–Héroult cells (#3a3d42, #c9ced6); the orange glow of the molten zone in silicon (#ffb347); molten sulfur from straw through amber to dark red (#e3c75a, #d4892b, #8c1d12) in 18.4, and rhombic sulfur's yellow and molten sulfur's straw (#e5c444, #d9a63a) in the Frasch pipes; the brown of NO₂ (#8b4a1c); chlorine water pale yellow-green, bromine orange and iodine brown in 18.11's test tube (#c9dc6a, #d9822b, #8a4b1f).
+Facts as drawn: the Figure 18.2 legend colours deepened so that a tint reads on a dark panel (#e3c46e representative metals, #7392cb transition metals, #c49ac4 metalloids, #8fb8aa nonmetals); graphite and the molten metals of the Downs and Hall–Héroult cells (#3a3d42, #c9ced6); chlorine's yellow-green for the bubbles and the gas in the Downs cell's hood (#c9dc6a); the orange glow of the molten zone in silicon (#ffb347); molten sulfur from straw through amber to dark red (#e3c75a, #d4892b, #8c1d12) in 18.4, and rhombic sulfur's yellow and molten sulfur's straw (#e5c444, #d9a63a) in the Frasch well, with the blue of its water and the brown of the soil over the deposit (#8fc6e8, #b79a80); the brown of NO₂ (#8b4a1c); chlorine water pale yellow-green, bromine water orange and iodine and triiodide brown in 18.11's test tubes and drops (#d6e58e, #d9822b, #8a4b1f).
 
 Types as bound: 18.1 energy (IE₁ in the figure; "ionization energy" in the prose stays ink, as above); 18.3 length (bond lengths in the structures), temperature; 18.4 temperature; 18.5 volume, energy, density, temperature; 18.7 equilibrium-constant, pressure, temperature, volume; 18.9 equilibrium-constant; 18.10 temperature, pressure; 18.11 potential, length (the covalent radius r), concentration; 18.12 temperature, time. `length` is drawn by 18.3 and 18.11 though the plan above did not list it.

@@ -22,6 +22,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -46,21 +49,16 @@
    "id": "sim-corrosion",
    "kind": "sim",
    "number": "17.16",
-   "folds": [
-    "17.17"
-   ],
    "originals": [
-    "/media/ch17/CNX_Chem_17_06_Rust.jpg",
-    "/media/ch17/CNX_Chem_17_06_Protect.jpg"
+    "/media/ch17/CNX_Chem_17_06_Rust.jpg"
    ],
-   "original_caption": "(Figure 17.16) Corrosion can occur when a painted iron or steel surface is exposed to the environment by a scratch through the paint. A galvanic cell results that may be approximated by the simplified cell schematic Fe(s) | Fe²⁺(aq) ||O₂(aq), H₂O(l) | Fe(s). (Figure 17.17) Cathodic protection is a useful approach to electrochemically preventing corrosion of underground storage tanks.",
+   "original_caption": "Corrosion can occur when a painted iron or steel surface is exposed to the environment by a scratch through the paint. A galvanic cell results that may be approximated by the simplified cell schematic Fe(s) | Fe²⁺(aq) ||O₂(aq), H₂O(l) | Fe(s).",
    "draws": [
     "potential"
    ],
    "conventions": [
     "Fe",
     "Zn",
-    "Mg",
     "O",
     "H",
     "e-"
@@ -73,6 +71,44 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "Mg block as drawn, legend, steady readout, short caption"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt as Figure 17.16 alone, larger, coating choice of paint or zinc"
+    }
+   ]
+  },
+  {
+   "id": "sim-protection",
+   "kind": "sim",
+   "number": "17.17",
+   "originals": [
+    "/media/ch17/CNX_Chem_17_06_Protect.jpg"
+   ],
+   "original_caption": "Cathodic protection is a useful approach to electrochemically preventing corrosion of underground storage tanks.",
+   "draws": [
+    "potential"
+   ],
+   "conventions": [
+    "Fe",
+    "Zn",
+    "Mg",
+    "Cu",
+    "O",
+    "H",
+    "e-"
+   ],
+   "facts": [
+    "#7b3f1d"
+   ],
+   "ai": [
+    {
+     "model": "claude-fable-5-2",
+     "part": "built: buried tank, choice of wired metal, E° scale"
     }
    ]
   }

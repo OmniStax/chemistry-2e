@@ -1,23 +1,13 @@
 /* Figures for section 7.6 Molecular Structure and Polarity. Boots against the section's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['7.6'] = function (root, F) {
-const { el, fmt, tex, PAL, alpha, ctl, cycle, register, begin, line, arrow, text, headline, topline, labeller } = F;
+const { el, fmt, tex, PAL, alpha, cycle, register, begin, line, text, topline } = F;
 const sim = (id, H) => F.sim(root, id, H);
-/* a still figure answers its sliders, or nothing at all, and has no clock */
+/* a still figure answers its controls, or a drag, and has no clock */
 const still = (d, draw) => register(d.fig, { update: () => {}, draw });
-function readout(host, main, small) { tex(host, main); if (small) host.appendChild(el('small', null, small)); }
 const hued = (e, type) => { e.style.color = F.C(type); return e; };
 const RAD = Math.PI / 180, TAU = 2 * Math.PI;
-const DEG = '°';
-/* a state the figure switches between rather than slides through (rule 26.1): a
-   row of buttons with the current one marked, or a dropdown where the list of
-   states is long enough that a row of buttons would wrap. The figure still reads
-   it as the index it always read. */
-function pick(controls, o, names) {
-  const make = names.length > 4 ? F.select : F.choice;
-  const c = make(controls, { label: o.label, aria: o.aria, options: names.map((n, i) => ({ value: String(i), label: n })), value: String(o.value ?? 0), onInput: () => o.onInput?.() });
-  return { get v() { return +c.value; }, set(x) { c.set(String(x)); } };
-}
+const clamp = (x, a, b) => Math.max(a, Math.min(b, x));
 
 /* ---------- vectors ---------- */
 const V = {
@@ -36,24 +26,30 @@ function slerp(a, b, t) {
 }
 /* a rotation of v by a degrees about the y axis */
 const rotY = (v, a) => { const c = Math.cos(a * RAD), s = Math.sin(a * RAD); return [v[0] * c + v[2] * s, v[1], -v[0] * s + v[2] * c]; };
+/* the perpendicular to u that leans up the page, or across it where u itself stands upright */
+const upPerp = (u) => { const w = V.sub([0, 1, 0], V.mul(u, u[1])); return V.len(w) > 0.2 ? V.unit(w) : V.unit(V.sub([1, 0, 0], V.mul(u, u[0]))); };
 
-/* ---------- the element palette, and the radii the atoms are drawn with ---------- */
-const RADIUS = { H: 15, C: 24, N: 24, O: 24, F: 22, Cl: 28, S: 28, B: 24, P: 28, Be: 22, Xe: 32, E: 26, X: 20 };
-const rOf = (sym) => RADIUS[sym] ?? 24;
-/* an atom as a filled disc in its element colour; E and X are not elements and take the panel colour with an ink outline */
-function atom(ctx, x, y, sym, r = rOf(sym)) {
-  const generic = sym === 'E' || sym === 'X';
+/* ---------- atoms: the element palette, the radii and the names ---------- */
+const RADIUS = { H: 0.24, C: 0.39, N: 0.39, O: 0.39, F: 0.34, Cl: 0.44, S: 0.44, B: 0.39, P: 0.44, Xe: 0.5, E: 0.36, X: 0.27 };
+const rOf = (sym) => RADIUS[sym] ?? 0.39;
+const NAMES = { H: 'hydrogen', C: 'carbon', N: 'nitrogen', O: 'oxygen', F: 'fluorine', Cl: 'chlorine', S: 'sulfur', B: 'boron', P: 'phosphorus', Xe: 'xenon', E: 'central atom E', X: 'bonded atom X' };
+const nameOf = (sym) => NAMES[sym] ?? sym;
+const hex = (c) => [1, 3, 5].map((i) => parseInt(c.slice(i, i + 2), 16));
+const blend = (a, b, k) => { const A = hex(a), B = hex(b); return '#' + A.map((x, i) => Math.round(x + (B[i] - x) * k).toString(16).padStart(2, '0')).join(''); };
+/* a generic E or X is no element: two greys of the panel, the central atom the darker */
+const atomColor = (sym) => (sym === 'E' ? blend(PAL.ink, PAL.panel, 0.45) : sym === 'X' ? blend(PAL.ink, PAL.panel, 0.78) : F.el(sym));
+/* everything a scene's colours are read from, so a theme or a colour switch rebuilds it */
+const palSig = () => [PAL.ink, PAL.panel, PAL.muted, F.C('angle'), F.C('dipole-moment'), F.el('C'), F.el('H'), F.el('O'), F.el('F')].join('|');
+/* an atom on the flat canvas: a disc in its element colour, for a key or a flat drawing */
+function atom(ctx, x, y, sym, r) {
   ctx.save(); ctx.beginPath(); ctx.arc(x, y, r, 0, TAU);
-  ctx.fillStyle = generic ? PAL.soft : F.el(sym); ctx.fill();
-  ctx.lineWidth = sym === 'H' || generic ? 2.5 : 1.5; ctx.strokeStyle = sym === 'H' || generic ? PAL.ink : alpha(PAL.ink, 0.45); ctx.stroke(); ctx.restore();
-  if (generic) text(ctx, sym, x, y + 1, PAL.ink, { size: 22, weight: 600, align: 'center' });
+  ctx.fillStyle = atomColor(sym); ctx.fill();
+  ctx.lineWidth = 1.5; ctx.strokeStyle = alpha(PAL.ink, sym === 'H' ? 0.8 : 0.45); ctx.stroke(); ctx.restore();
 }
-/* one bond on the canvas between two projected points, of the given order, in ink */
-function bondLine(ctx, x1, y1, x2, y2, order = 1, w = 4) {
-  const dx = x2 - x1, dy = y2 - y1, L = Math.hypot(dx, dy) || 1, px = -dy / L * 7, py = dx / L * 7;
-  const offs = order === 1 ? [0] : order === 2 ? [-1, 1] : [-1.4, 0, 1.4];
-  offs.forEach((o) => line(ctx, x1 + px * o, y1 + py * o, x2 + px * o, y2 + py * o, PAL.ink, w));
-}
+/* key entries: an atom by its name, and a lone pair as the lobe the scenes draw */
+const keyAtom = (sym) => ({ s: nameOf(sym), draw: (c, x, y) => atom(c, x, y, sym, sym === 'H' || sym === 'X' ? 8 : 11) });
+const KEY_LONE = { s: 'lone pair', draw: (c, x, y) => { c.save(); c.fillStyle = alpha(PAL.ink, 0.45); c.beginPath(); c.ellipse(x, y, 16, 9, 0, 0, TAU); c.fill(); c.restore(); } };
+const keyRow = (c, H, entries) => F.legend(c, { l: 60, r: 1340, t: 0, b: H }, entries, { corner: 'top', row: true, panel: false, size: 20 });
 
 /* ---------- the ideal sites of the five electron-pair geometries, as unit directions ---------- */
 const T3 = Math.sqrt(8 / 9), T1 = -1 / 3;
@@ -70,227 +66,140 @@ const MAX_LONE = { 2: 0, 3: 1, 4: 2, 5: 3, 6: 4 };
 const GEOM = { 2: 'linear', 3: 'trigonal planar', 4: 'tetrahedral', 5: 'trigonal bipyramidal', 6: 'octahedral' };
 const STRUCT = { 2: ['linear'], 3: ['trigonal planar', 'bent'], 4: ['tetrahedral', 'trigonal pyramidal', 'bent'], 5: ['trigonal bipyramidal', 'seesaw', 'T-shaped', 'linear'], 6: ['octahedral', 'square pyramidal', 'square planar', 'T-shaped', 'linear'] };
 const IDEAL = { 2: '180°', 3: '120°', 4: '109.5°', 5: '90° and 120°', 6: '90° and 180°' };
-const EXAMPLE = { 2: ['BeF₂ and CO₂'], 3: ['BCl₃', 'SO₂'], 4: ['CH₄', 'NH₃', 'H₂O'], 5: ['PF₅', 'SF₄', 'ClF₃', 'XeF₂'], 6: ['SF₆', 'BrF₅', 'XeF₄', '', ''] };
-/* the arcs the bench marks: pairs of site indices and the ideal angle between them */
-const ARCS = { 2: [[0, 1, '180°']], 3: [[1, 2, '120°']], 4: [[1, 2, '109.5°']], 5: [[0, 2, '90°'], [2, 3, '120°']], 6: [[2, 4, '90°']] };
-/* the molecule of a central atom E with n regions, `lone` of them lone pairs, at bond length L */
-function generic(n, lone, L = 170, sym = { c: 'E', x: 'X' }, at) {
-  const sites = SITES[n], ls = new Set(at ?? LONE_AT[n][lone]);
-  const atoms = [{ sym: sym.c, p: [0, 0, 0] }], bonds = [], lones = [];
-  sites.forEach((s, i) => { if (ls.has(i)) lones.push({ a: 0, dir: s, len: L * 0.8 }); else { atoms.push({ sym: sym.x, p: V.mul(s, L) }); bonds.push([0, atoms.length - 1, 1]); } });
-  return { atoms, bonds, lones, sites, lone: ls };
-}
-/* the book's flat drawing of four, five and six regions, site by site: [across, up, out of the page]. A rigid turn of
-   the solid always lands two sites on one point, so the sketch places them as the book does, the in-plane bonds as
-   lines and one site in front (a wedge) and one behind (a dash) at their own angles */
-const FLAT = {
-  4: [[0, 1, 0], [0.94, -0.34, 0], [-0.5, -0.62, 0.6], [-0.86, -0.2, -0.6]],
-  5: [[0, 1, 0], [0, -1, 0], [1, 0, 0], [-0.62, -0.5, 0.6], [-0.62, 0.5, -0.6]],
-  6: [[0, 1, 0], [0, -1, 0], [1, 0, 0], [-1, 0, 0], [-0.55, -0.55, 0.6], [0.55, 0.55, -0.6]],
-};
-function tilt(mol, n) {
-  if (!FLAT[n]) return mol;
-  let ai = 1, li = 0;
-  mol.sites.forEach((_, i) => { const f = FLAT[n][i]; if (mol.lone.has(i)) mol.lones[li++].dir = f; else { const at = mol.atoms[ai++]; at.p = V.mul(f, V.len(at.p)); } });
-  return mol;
-}
-
-/* ---------- wedge and dash notation: the book's flat drawing of a solid ----------
-   A bond in the plane of the page is a line, one coming toward the reader a filled wedge, one going
-   away a row of dashes. The sketch takes a molecule whose atoms sit about the origin and projects it
-   straight on (x across, y up), reading each bond's z for its notation. */
-function wedge(ctx, x1, y1, x2, y2) {
-  const dx = x2 - x1, dy = y2 - y1, L = Math.hypot(dx, dy) || 1, px = -dy / L * 9, py = dx / L * 9;
-  ctx.save(); ctx.fillStyle = PAL.ink; ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2 + px, y2 + py); ctx.lineTo(x2 - px, y2 - py); ctx.closePath(); ctx.fill(); ctx.restore();
-}
-function dashes(ctx, x1, y1, x2, y2) {
-  const dx = x2 - x1, dy = y2 - y1, L = Math.hypot(dx, dy) || 1, px = -dy / L, py = dx / L;
-  ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3;
-  for (let i = 1; i <= 7; i++) { const t = i / 7.5, w = 2 + 8 * t, x = x1 + dx * t, y = y1 + dy * t; ctx.beginPath(); ctx.moveTo(x + px * w, y + py * w); ctx.lineTo(x - px * w, y - py * w); ctx.stroke(); }
-  ctx.restore();
-}
-/* the sketch: atoms as symbols (letters, as the book prints them) at (cx, cy) with scale k; lone pairs as two dots on a stub */
-function sketch(ctx, cx, cy, mol, k = 1, labels = true) {
-  const P = (p) => [cx + p[0] * k, cy - p[1] * k];
-  const gap = (sym) => (labels ? (sym.length > 1 ? 22 : 16) : 0);
-  mol.bonds.forEach(([i, j, order]) => {
-    const a = mol.atoms[i], b = mol.atoms[j], [x1, y1] = P(a.p), [x2, y2] = P(b.p), dx = x2 - x1, dy = y2 - y1, L = Math.hypot(dx, dy) || 1;
-    const s1 = gap(a.sym) / L, s2 = gap(b.sym) / L, ax = x1 + dx * s1, ay = y1 + dy * s1, bx = x2 - dx * s2, by = y2 - dy * s2;
-    const z = b.p[2] - a.p[2];
-    if (Math.abs(z) < 0.15 * V.len(V.sub(b.p, a.p))) bondLine(ctx, ax, ay, bx, by, order ?? 1, 3.5); else if (z > 0) wedge(ctx, ax, ay, bx, by); else dashes(ctx, ax, ay, bx, by);
+/* the molecules the text itself gives for a case, where it gives one */
+const EXAMPLE = { 2: ['BeF₂'], 3: ['BCl₃', ''], 4: ['CH₄', 'NH₃', 'H₂O'], 5: ['PF₅', 'SF₄', 'ClF₃', ''], 6: ['SF₆', '', 'XeF₄', '', ''] };
+const COUNT = ['no', 'one', 'two', 'three', 'four', 'five', 'six'];
+const Cap = (s) => s[0].toUpperCase() + s.slice(1);
+/* A lone pair takes more room than a bond (the book's size order), so each bond leans a little away from the lone pairs:
+   the drawing closes the angles between bonds by two or three degrees, as Figure 7.19 marks with its "<" signs. Lone pairs
+   set opposite one another push equally from both sides and leave the bonds where they were. */
+const squeeze = (dirs, lone, k = 0.04) => { const s = lone.reduce((a, i) => V.add(a, dirs[i]), [0, 0, 0]); return dirs.map((u, i) => (lone.includes(i) ? u : V.unit(V.sub(u, V.mul(s, k))))); };
+/* the angles worth marking among the bonds: one arc for each ideal angle the bonded sites make with one another, written
+   as Figure 7.19 writes it, "<" where the lone pairs have closed it; a 180° is marked only where it is the only angle */
+function bondArcs(ideal, shown, lone, n) {
+  const bonds = ideal.map((_, i) => i).filter((i) => !lone.includes(i)), seen = new Map();
+  for (let a = 0; a < bonds.length; a++) for (let b = a + 1; b < bonds.length; b++) {
+    const i = bonds[a], j = bonds[b], th = V.angle(ideal[i], ideal[j]), cls = [90, 109.5, 120, 180].find((x) => Math.abs(x - th) < 1);
+    if (cls && !seen.has(cls)) seen.set(cls, [i, j]);
+  }
+  if (seen.size > 1) seen.delete(180);
+  return [...seen].sort((a, b) => a[0] - b[0]).map(([cls, [i, j]]) => {
+    const less = V.angle(shown[i], shown[j]) < cls - 0.3;
+    return { i, j, label: (less ? (n === 4 && lone.length === 2 ? '<<' : '<') : '') + cls + '°' };
   });
-  (mol.lones ?? []).forEach((l) => {
-    const a = mol.atoms[l.a], d = V.unit(l.dir), [x0, y0] = P(a.p), L = (l.len ?? 150) * k * 0.55, x1 = x0 + d[0] * L, y1 = y0 - d[1] * L;
-    const px = d[1], py = d[0];
-    line(ctx, x0 + d[0] * gap(a.sym), y0 - d[1] * gap(a.sym), x1, y1, PAL.ink, 2.5);
-    F.dot(ctx, x1 + px * 7, y1 + py * 7, PAL.ink, true, 4); F.dot(ctx, x1 - px * 7, y1 - py * 7, PAL.ink, true, 4);
-  });
-  if (labels) mol.atoms.forEach((a) => { const [x, y] = P(a.p); text(ctx, a.sym, x, y + 1, PAL.ink, { size: a.sym.length > 1 ? 26 : 30, weight: 600, align: 'center', bg: PAL.panel }); });
-  return P;
-}
-
-/* ---------- Lewis structures: letters, bonds and pairs of dots ---------- */
-/* atoms: [{sym, x, y, lp: [angles in degrees]}]; bonds: [[i, j, order]]; drawn about (cx, cy) */
-function lewis(ctx, cx, cy, atoms, bonds, k = 1) {
-  const gap = (s) => (s.length > 1 ? 26 : 18);
-  bonds.forEach(([i, j, order]) => {
-    const a = atoms[i], b = atoms[j], x1 = cx + a.x * k, y1 = cy + a.y * k, x2 = cx + b.x * k, y2 = cy + b.y * k, dx = x2 - x1, dy = y2 - y1, L = Math.hypot(dx, dy) || 1;
-    bondLine(ctx, x1 + dx * gap(a.sym) / L, y1 + dy * gap(a.sym) / L, x2 - dx * gap(b.sym) / L, y2 - dy * gap(b.sym) / L, order ?? 1, 3.5);
-  });
-  atoms.forEach((a) => {
-    const x = cx + a.x * k, y = cy + a.y * k;
-    text(ctx, a.sym, x, y + 1, PAL.ink, { size: a.sym.length > 1 ? 28 : 32, weight: 600, align: 'center' });
-    (a.lp ?? []).forEach((ang) => { const c = Math.cos(ang * RAD), s = -Math.sin(ang * RAD), d = 30, px = -s, py = c; F.dot(ctx, x + c * d + px * 7, y + s * d + py * 7, PAL.ink, true, 4); F.dot(ctx, x + c * d - px * 7, y + s * d - py * 7, PAL.ink, true, 4); });
-  });
-}
-/* the brackets and charge the book prints round an ion */
-function ionBrackets(ctx, l, r, t, b, charge) {
-  ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.beginPath();
-  ctx.moveTo(l + 16, t); ctx.lineTo(l, t); ctx.lineTo(l, b); ctx.lineTo(l + 16, b); ctx.moveTo(r - 16, t); ctx.lineTo(r, t); ctx.lineTo(r, b); ctx.lineTo(r - 16, b); ctx.stroke(); ctx.restore();
-  text(ctx, charge, r + 8, t + 2, PAL.ink, { size: 24, weight: 600 });
-}
-/* a bond-moment arrow with the book's plus sign at its tail */
-function moment(ctx, x1, y1, x2, y2, w = 4) {
-  const c = F.C('dipole-moment');
-  arrow(ctx, x1, y1, x2, y2, c, w);
-  const dx = x2 - x1, dy = y2 - y1, L = Math.hypot(dx, dy) || 1, ux = dx / L, uy = dy / L, px = -uy, py = ux, s = 6;
-  line(ctx, x1 + px * s, y1 + py * s, x1 - px * s, y1 - py * s, c, w * 0.75);
 }
 
 /* ---------- three dimensions ----------
-   The viewer, the meshes and the navigation buttons all come from the library:
-   F.view3d mounts the transparent WebGL scene inside the figure's stage and
-   carries auto-rotate, the snap-to-view buttons and zoom, and F.mesh draws the
-   balls, sticks, lobes, arrows and arcs a molecule is built from. A molecule
-   turns freely: there is no up to keep, and every viewpoint of it is a real
-   one, so the only bounds here are the pitch that keeps the turntable upright.
-   What stays in this file is what is about chemistry rather than about three
-   dimensions: which colour an atom takes and how a molecule record is built. */
-const { vec, sphere, stick, setStick, setLobe, lobe: lobe3, bond: bond3, arrow: arrow3, polyline, arc: arc3d } = F.mesh;
-/* every molecule turns freely and spins until the reader takes hold of it */
-const FREE = { spin: 'idle', views: [{ label: 'axis', yaw: 0, pitch: 0 }, { label: 'face-on', yaw: Math.PI / 2, pitch: 0.32 }] };
-
-/* atoms as spheres in the element palette, bonds as cylinders and lone pairs as lobes in ink;
-   `mol` is the same record the sketches read, with p in logical units (a bond about 150) */
-const SCALE = 1 / 150;
-const darkPanel = () => parseInt(PAL.panel.slice(1, 3), 16) < 128;
-const atomColor = (sym) => (sym === 'E' || sym === 'X' ? (darkPanel() ? PAL.muted : PAL.soft2) : F.el(sym));
-/* the name of every symbol these figures draw, so no atom is an unnamed coloured ball */
-const NAMES = { H: 'hydrogen', C: 'carbon', N: 'nitrogen', O: 'oxygen', F: 'fluorine', Cl: 'chlorine', S: 'sulfur', B: 'boron', P: 'phosphorus', Be: 'beryllium', Xe: 'xenon', E: 'the central atom', X: 'a bonded atom' };
-const nameOf = (sym) => (NAMES[sym] ? `${NAMES[sym]} (${sym})` : sym);
-function molecule3(g, mol, k = SCALE, v = null) {
-  const P = (p) => V.mul(p, k);
-  const out = { atoms: [], bonds: [], lones: [] };
-  mol.atoms.forEach((a) => { const m = sphere(g, P(a.p), rOf(a.sym) / 62, atomColor(a.sym)); v?.pickable(m, nameOf(a.sym)); out.atoms.push(m); });
-  mol.bonds.forEach(([i, j, order]) => out.bonds.push(bond3(g, P(mol.atoms[i].p), P(mol.atoms[j].p), order ?? 1)));
-  (mol.lones ?? []).forEach((l) => { const m = lobe3(g, P(mol.atoms[l.a].p), l.dir, (l.len ?? 150) * k); v?.pickable(m, 'a lone pair'); out.lones.push(m); });
-  return out;
+   Every scene is an F.view3d stage the reader turns by dragging; it turns slowly by itself until taken hold of, since
+   a tetrahedron reads as a solid only once it moves (root rule 26.2), and carries no other button. Nothing is written
+   on an atom: the elements are named in a key under the scene and under the pointer, and a number or a name that
+   belongs to one place in the scene stands outside it, set after every frame on the line from the molecule's centre
+   through that place. */
+const { vec, sphere, stick, setStick, setLobe, lobe: lobe3, bond: bond3, polyline } = F.mesh;
+function stage3(d, o) {
+  const outs = [], unders = [];
+  let v = null;
+  function place() {
+    if (!v || !v.wrap || !v.wrap.clientHeight) return;
+    const w = v.wrap.clientWidth, h = v.wrap.clientHeight, u = h / (2 * Math.tan(15 * RAD) * o.dist / (v.at.zoom || 1));
+    outs.forEach((l) => {
+      const p = typeof l.p === 'function' ? l.p() : l.p;
+      if (!p) { l.el.style.visibility = 'hidden'; return; }
+      l.el.style.visibility = '';
+      const q = v.project(p, l.g), c = v.project(l.c, l.g);
+      let dx = q[0] - c[0], dy = q[1] - c[1]; const n = Math.hypot(dx, dy);
+      if (n < 6) { dx = 0; dy = -1; } else { dx /= n; dy /= n; }
+      const bw = l.el.offsetWidth / 2, bh = l.el.offsetHeight / 2, push = l.r * u + l.gap + Math.abs(dx) * bw + Math.abs(dy) * bh;
+      l.el.style.left = clamp(q[0] + dx * push, bw + 2, w - bw - 2) + 'px';
+      l.el.style.top = clamp(q[1] + dy * push, bh + 2, h - bh - 2) + 'px';
+    });
+    unders.forEach((l) => { const c = v.project([0, 0, 0], l.g); l.el.style.left = clamp(c[0], l.el.offsetWidth / 2 + 2, w - l.el.offsetWidth / 2 - 2) + 'px'; l.el.style.top = (h - l.el.offsetHeight / 2 - 6) + 'px'; });
+  }
+  v = F.view3d(d.stage, { h: o.h, dist: o.dist, tilt: o.tilt, spin: o.spin ?? 'idle', onRender: () => { place(); o.onRender?.(); } });
+  return {
+    v,
+    /* a label outside the thing at p: clear of a ball of radius r there, on the side away from the centre c of its part */
+    out(s, p, g, { r = 0, gap = 6, c = [0, 0, 0] } = {}) { const e = v.label(s, [0, 0, 0], g, 0, 'bare'); outs.push({ el: e, p, g, r, gap, c }); return e; },
+    /* a line of words under a part, at the stage's foot, whichever way the part is turned */
+    under(s, g) { const e = v.label(s, [0, 0, 0], g, 0, 'bare'); unders.push({ el: e, g }); return e; },
+    clear() { v.clear(); outs.length = 0; unders.length = 0; },
+  };
 }
-/* a figlib canvas beneath the viewer for the headline, the names and any graph */
-const strip = (d, H) => F.makeCanvas(d.stage, H);
-
-/* =====================================================================
-   FIGURE 7.14: formaldehyde in three dimensions with its H–C–H angle
-   and its C=O distance measured on the molecule. Still: it answers a
-   drag and nothing else; the headline reads the angle the flat drawing
-   would show from the reader's viewpoint.
-===================================================================== */
-(function () {
-  const d = sim('sim-formaldehyde');
-  let shown = 118;
-  /* formaldehyde is planar, so the two viewpoints worth a button are the plane of the molecule and its edge (rule 26.2) */
-  const v = F.view3d(d.stage, { spin: 'idle', views: [{ label: 'in plane', yaw: 0, pitch: 0 }, { label: 'edge on', yaw: Math.PI / 2, pitch: 0 }], h: 440, dist: 5.8, onRender: () => { if (Math.round(flat()) !== shown) draw2d(); } });
-  const g = v.part(0), c2 = strip(d, 190);
-  const A = 1.15;   /* scene units per Ångstrom */
-  const dirH1 = [Math.cos(121 * RAD), Math.sin(121 * RAD), 0], dirH2 = [Math.cos(-121 * RAD), Math.sin(-121 * RAD), 0];
-  const P = { C: [0, 0, 0], O: [1.21 * A, 0, 0], H1: V.mul(dirH1, 1.11 * A), H2: V.mul(dirH2, 1.11 * A) };
-  const mol = { atoms: [{ sym: 'C', p: P.C }, { sym: 'O', p: P.O }, { sym: 'H', p: P.H1 }, { sym: 'H', p: P.H2 }], bonds: [[0, 1, 2], [0, 2, 1], [0, 3, 1]] };
-  /* the angle the two C–H bonds make on the canvas, which is what a flat drawing from this viewpoint would show */
-  function flat() {
-    const c = v.project(P.C, g), a = v.project(P.H1, g), b = v.project(P.H2, g), s1 = [a[0] - c[0], a[1] - c[1]], s2 = [b[0] - c[0], b[1] - c[1]];
-    return Math.acos(Math.max(-1, Math.min(1, (s1[0] * s2[0] + s1[1] * s2[1]) / ((Math.hypot(...s1) * Math.hypot(...s2)) || 1)))) / RAD;
-  }
-  function build() {
-    v.clear();
-    molecule3(g, mol, 1, v);
-    const m = arc3d(g, dirH1, dirH2, 0.62, [0, 0, 0], F.C('angle')); hued(v.label('118°', m, g, 0), 'angle');
-    /* the bracket beside the C=O bond, in the molecule's own plane */
-    const y = -0.5 * A, b1 = [P.C[0], y, 0], b2 = [P.O[0], y, 0];
-    polyline(g, [[P.C[0], y + 0.14 * A, 0], b1, b2, [P.O[0], y + 0.14 * A, 0]], F.C('length'));
-    hued(v.label('1.21 Å, center to center', [(P.C[0] + P.O[0]) / 2, y - 0.16 * A, 0], g, -14), 'length');
-    v.label('C', P.C, g, 44); v.label('O', P.O, g, 44); v.label('H', V.mul(dirH1, 1.3 * A), g, -14); v.label('H', V.mul(dirH2, 1.3 * A), g, -14);
-  }
-  function draw2d() {
-    const { ctx } = begin(c2);
-    shown = Math.round(flat());
-    topline(ctx, 'The H–C–H bond angle is 118° and the C=O bond distance is 1.21 Å; from this viewpoint a flat drawing would show the angle as ' + shown + '°.');
-    text(ctx, 'The C–H bonds are 1.11 Å and the H–C=O angles 121°.', 700, 130, PAL.muted, { size: 17, align: 'center' });
-    readout(d.readout, `\\htmlClass{kv-angle}{\\angle\\text{HCH}} = 118^\\circ`);
-  }
-  function draw() { build(); draw2d(); }
-  still(d, draw);
-})();
-
-/* =====================================================================
-   FIGURE 7.15: the Lewis structure of BeF2, faithful, with its 180°.
-===================================================================== */
-(function () {
-  const d = sim('fig-bef2', 300);
-  function draw() {
-    const { ctx } = begin(d.c);
-    lewis(ctx, 700, 150, [{ sym: 'F', x: -190, y: 0, lp: [90, 180, 270] }, { sym: 'Be', x: 0, y: 0 }, { sym: 'F', x: 190, y: 0, lp: [90, 0, 270] }], [[0, 1, 1], [1, 2, 1]]);
-    ctx.save(); ctx.strokeStyle = F.C('angle'); ctx.lineWidth = 2.5; ctx.beginPath(); ctx.arc(700, 150, 70, Math.PI * 1.08, Math.PI * 1.92); ctx.stroke(); ctx.restore();
-    text(ctx, '180°', 700, 52, F.C('angle'), { size: 22, weight: 600, align: 'center' });
-    readout(d.readout, '\\text{F–Be–F}');
-  }
-  still(d, draw);
-})();
+/* an atom as a ball in its element colour, named under the pointer */
+function ball(S, g, p, sym, extra) { const m = sphere(g, p, rOf(sym), atomColor(sym), extra); S.v.pickable(m, nameOf(sym) + (sym === 'E' || sym === 'X' ? '' : ' atom')); return m; }
+/* the arc of an angle as a thin tube, so it keeps its weight on a large stage; returns its midpoint */
+function arcTube(g, a, b, R, color, perp) {
+  const ua = V.unit(a), ub = V.unit(b), pts = [], straight = V.dot(ua, ub) < -0.999, n = straight ? 24 : 14;
+  /* two bonds in one straight line have no one arc between them: the half circle goes round by way of perp */
+  const side = straight ? V.unit(V.sub(perp ?? upPerp(ua), V.mul(ua, V.dot(perp ?? upPerp(ua), ua)))) : null;
+  const at = (k) => (straight ? V.add(V.mul(ua, Math.cos(Math.PI * k)), V.mul(side, Math.sin(Math.PI * k))) : slerp(ua, ub, k));
+  for (let i = 0; i <= n; i++) pts.push(V.mul(at(i / n), R));
+  for (let i = 0; i < n; i++) stick(g, pts[i], pts[i + 1], 0.016, color);
+  return V.mul(V.unit(at(0.5)), R);
+}
+/* of the directions square to an axis, the one that stands farthest from every other region */
+function clearSide(axis, others) {
+  const u = upPerp(axis), w = [axis[1] * u[2] - axis[2] * u[1], axis[2] * u[0] - axis[0] * u[2], axis[0] * u[1] - axis[1] * u[0]];
+  let best = u, room = -1;
+  for (let k = 0; k < 24; k++) { const c = V.add(V.mul(u, Math.cos(k * TAU / 24)), V.mul(w, Math.sin(k * TAU / 24))), r = Math.min(180, ...others.map((o) => V.angle(c, o))); if (r > room + 1e-6) { room = r; best = c; } }
+  return best;
+}
+/* an arrow from a to b with a head slim enough that a short arrow is still an arrow */
+function arrowTo(g, a, b, r, color) {
+  const T = window.THREE; if (!T) return;
+  const d = V.sub(b, a), len = V.len(d), u = V.unit(d), hl = Math.min(r * 7, len * 0.55), base = V.sub(b, V.mul(u, hl));
+  if (len - hl > 1e-3) stick(g, a, base, r, color);
+  const cone = new T.Mesh(F.mesh.geo().cone, F.mesh.mat(color));
+  cone.position.copy(vec(V.add(base, V.mul(u, hl / 2)))); cone.quaternion.setFromUnitVectors(vec([0, 1, 0]), vec(u)); cone.scale.set(r * 2.7, hl, r * 2.7); g.add(cone);
+}
+const weak = (s) => `<span style="font-weight:400">${s}</span>`;
 
 /* =====================================================================
    FIGURE 7.16 + 7.19 + 7.20: the VSEPR bench. A central atom E with its
-   regions in three dimensions, the lone pairs as lobes, the ideal angles
-   as arcs, the axial and equatorial positions named at five regions,
-   and beneath it the two names and the book's wedge-and-dash sketch of
-   the same case. Still: a change of the regions, the lone pairs or the
-   placement of ClF3's two lone pairs is one morph, each region swinging
-   along its great circle to its new place and a bond becoming a lobe as
-   its atom fades, and the equation of the regions morphs with it.
+   regions of electron density in three dimensions: bonds ending in atoms
+   X, lone pairs as lobes, the angles between the bonds marked as Figure
+   7.19 marks them, the axial and equatorial positions named at five
+   regions, and the two names in the headline. Still: a change of the
+   regions, the lone pairs or the placement of ClF3's two lone pairs is
+   one morph, each region swinging along its great circle to its new
+   place and a bond becoming a lobe as its atom fades.
 ===================================================================== */
 (function () {
   const d = sim('sim-vsepr');
-  const v = F.view3d(d.stage, { ...FREE, h: 460, dist: 7.2 });
-  const g = v.part(0), c2 = strip(d, 350);
-  const N = ctl(d.controls, { label: '\\text{regions}', cls: '', min: 2, max: 6, step: 1, value: 4, unit: '', dec: 0, aria: 'regions of electron density', onInput: () => { fitLone(); shift(); } });
-  const LP = ctl(d.controls, { label: '\\text{lone pairs}', cls: '', min: 0, max: 4, step: 1, value: 1, unit: '', dec: 0, aria: 'lone pairs among the regions', detents: [0, 1, 2, 3, 4], onInput: () => shift() });
-  /* Figure 7.20: the three ways two lone pairs could be placed in a trigonal bipyramid, which only ClF3 needs, so the
-     control appears only in that case rather than standing there doing nothing (rule 24.6) */
+  const top = F.makeCanvas(d.stage, 104);
+  const S = stage3(d, { h: 640, dist: 7.1 }), v = S.v, g = v.part(0);
+  const key = F.makeCanvas(d.stage, 60);
+  v.setView(0.45, 0.24);
+  const nums = (a, b) => { const o = []; for (let i = a; i <= b; i++) o.push({ value: String(i), label: String(i) }); return o; };
+  const N = F.choice(d.controls, { label: '\\text{regions}', options: nums(2, 6), value: '4', aria: 'regions of electron density around the central atom', ms: 0, onInput: () => { LP.options(nums(0, MAX_LONE[+N.value]), String(MAX_LONE[+N.value])); shift(); } });
+  const LP = F.choice(d.controls, { label: '\\text{lone pairs}', key: 'lone', options: nums(0, 2), value: '1', aria: 'how many of the regions are lone pairs', ms: 0, onInput: () => shift() });
+  /* Figure 7.20: the three ways two lone pairs could sit in a trigonal bipyramid. Only that case has the choice, so the
+     control stands there only then (rule 24.6) */
   const CLF = {
-    eq: { label: 'both equatorial', at: [2, 3], struct: 'T-shaped', why: 'This is the arrangement ClF₃ actually takes. Both lone pairs sit in equatorial positions, where the 120° angles give them the most room, and the three fluorine atoms make a T.' },
-    one: { label: 'one axial', at: [0, 2], struct: 'neither of the named structures', why: 'One lone pair has been moved to an axial position, where three neighbors stand at 90° to it rather than two, so this arrangement is less stable than the one ClF₃ takes.' },
-    both: { label: 'both axial', at: [0, 1], struct: 'trigonal planar', why: 'Both lone pairs have been moved to axial positions, where each is crowded by three neighbors at 90°, so this is the least stable of the three and is not what ClF₃ does.' },
+    eq: { label: 'both equatorial', at: [2, 3], why: 'This is what ClF₃ does. In an equatorial position a lone pair has two neighbors at 90° and two at 120°; in an axial position it would have three at 90°.' },
+    one: { label: 'one axial', at: [0, 2], why: 'The axial lone pair has three neighbors at 90° where an equatorial one has two, so this arrangement is less stable and ClF₃ does not take it.' },
+    both: { label: 'both axial', at: [0, 1], why: 'Each lone pair now has three neighbors at 90°. This is the most crowded of the three arrangements, and ClF₃ does not take it.' },
   };
-  const PL = F.select(d.controls, { label: '\\text{ClF}_3', options: Object.keys(CLF).map((k) => ({ value: k, label: CLF[k].label })), value: 'eq', aria: 'where the two lone pairs of ClF3 are placed', onInput: () => shift() });
+  const PL = F.select(d.controls, { label: '\\text{placed}', key: 'place', options: Object.keys(CLF).map((k) => ({ value: k, label: CLF[k].label })), value: 'eq', aria: 'where the two lone pairs sit in the trigonal bipyramid', ms: 0, onInput: () => shift() });
   const PLBOX = d.controls.lastElementChild;
-  function fitLone() { const m = MAX_LONE[N.v]; if (LP.v > m) LP.set(m); }
   const { formula: fx, note } = F.readout(d);
-  const L = 170 * SCALE;
+  const L = 1.4;
 
-  /* a state of the bench: its regions as directions, each a bond or a lone pair, and its two names */
+  /* a state of the bench: its regions as directions, each a bond (w 0) or a lone pair (w 1), and its names */
   function state(n, lone, place) {
-    const clf = n === 5 && lone === 2, at = clf ? CLF[place].at : LONE_AT[n][lone], ls = new Set(at);
-    return { n, lone, place, clf, regions: SITES[n].map((s, i) => ({ dir: s, w: ls.has(i) ? 1 : 0 })), struct: clf ? CLF[place].struct : STRUCT[n][lone] };
+    const clf = n === 5 && lone === 2, at = clf ? CLF[place].at : LONE_AT[n][lone], shown = squeeze(SITES[n], at);
+    return { n, lone, place: clf ? place : 'eq', clf, at, ideal: SITES[n], regions: shown.map((s, i) => ({ dir: s, w: at.includes(i) ? 1 : 0 })), struct: clf && place !== 'eq' ? '' : STRUCT[n][lone] };
   }
   /* regions of two states paired by direction, nearest first; a region without a partner grows from or shrinks into E */
   function pair(a, b) {
-    const pairs = [], ua = new Set(a.regions.keys()), ub = new Set(b.regions.keys());
-    const all = [];
+    const pairs = [], ua = new Set(a.regions.keys()), ub = new Set(b.regions.keys()), all = [];
     a.regions.forEach((r, i) => b.regions.forEach((s, j) => all.push([V.dot(r.dir, s.dir), i, j])));
     all.sort((x, y) => y[0] - x[0]).forEach(([, i, j]) => { if (ua.has(i) && ub.has(j)) { ua.delete(i); ub.delete(j); pairs.push([a.regions[i], b.regions[j]]); } });
     ua.forEach((i) => pairs.push([a.regions[i], null])); ub.forEach((j) => pairs.push([null, b.regions[j]]));
     return pairs;
   }
-  /* the regions part way from a to b: a region's direction swings along the great circle, a bond
-     becoming a lone pair loses its atom as its lobe fills, and a region with no partner grows or shrinks */
+  /* the regions part way from a to b: a direction swings along its great circle, a bond becoming a lone pair loses
+     its atom as its lobe fills, and a region with no partner grows or shrinks */
   function between(a, b, q) {
     return pair(a, b).map(([r, s]) => {
       if (!s) return { dir: r.dir, w: r.w, p: 1 - q };
@@ -298,13 +207,10 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
       return { dir: V.dot(r.dir, s.dir) > -0.999 ? slerp(r.dir, s.dir, q) : s.dir, w: r.w + (s.w - r.w) * q, p: 1 };
     });
   }
-
-  /* the morph the draw shows: from, to and its progress, eased over 0.9 s */
-  let from = state(N.v, Math.min(LP.v, MAX_LONE[N.v]), 'eq'), to = from;
+  let from = state(+N.value, +LP.value, 'eq'), to = from, sig = '';
   const mt = F.tween(d, 1);
   function shift() {
-    fitLone();
-    const next = state(N.v, LP.v, PL.value);
+    const next = state(+N.value, +LP.value, PL.value);
     if (next.n === to.n && next.lone === to.lone && next.place === to.place) return;
     from = mt.v >= 1 ? to : snapshot(); to = next; mt.set(0); mt.to(1, 900);
   }
@@ -313,69 +219,50 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
     const q = mt.v, s = q < 0.5 ? from : to;
     return { ...s, regions: between(from, to, q).filter((r) => r.p > 0.5).map((r) => ({ dir: r.dir, w: r.w > 0.5 ? 1 : 0 })) };
   }
-  function rod(a, b, r, color, op = 1) {
-    if (V.len(V.sub(b, a)) < 1e-3 || op <= 0.01) return;
-    stick(g, a, b, r, color, op < 1 ? { transparent: true, opacity: op } : undefined);
+  function headlineOf(t) {
+    const lone = t.lone, lp = lone === 0 ? 'none of them a lone pair' : lone === 1 ? 'one of them a lone pair' : COUNT[lone] + ' of them lone pairs';
+    const open = Cap(COUNT[t.n]) + ' regions of electron density, ' + lp;
+    if (t.clf && t.place !== 'eq') return open + ', with ' + (t.place === 'one' ? 'one lone pair moved to an axial position' : 'both lone pairs moved to axial positions') + ': an arrangement ClF₃ does not take.';
+    const ex = EXAMPLE[t.n][lone], as = ex ? ', as in ' + ex : '';
+    return GEOM[t.n] === t.struct ? open + ': the electron-pair geometry and the molecular structure are both ' + t.struct + as + '.'
+      : open + ': the electron-pair geometry is ' + GEOM[t.n] + ' and the molecular structure is ' + t.struct + as + '.';
   }
-  function arcRods(a, b, R) {
-    const ua = V.unit(a), ub = V.unit(b), pts = [];
-    for (let i = 0; i <= 32; i++) pts.push(V.mul(slerp(ua, ub, i / 32), R));
-    polyline(g, pts, F.C('angle'));
-    return V.mul(V.unit(slerp(ua, ub, 0.5)), R + 0.25);
-  }
-  const plain = (e, a = 1) => { e.style.opacity = String(a); return e; };
-  function flat(ctx, s, a) {
-    if (a <= 0.01) return;
-    const mol = generic(s.n, s.lone, 170, undefined, s.clf ? CLF[s.place].at : undefined);
-    tilt(mol, s.n);
-    ctx.save(); ctx.globalAlpha = a;
-    const P = sketch(ctx, 300, 212, mol, 0.55, false);
-    mol.atoms.forEach((at) => { const [x, y] = P(at.p); atom(ctx, x, y, at.sym, at.sym === 'E' ? 20 : 15); });
-    ctx.restore();
-  }
-  function words(ctx, x, y, a, b, q, o) {
-    if (a === b) { text(ctx, a, x, y, o.color ?? PAL.ink, o); return; }
-    ctx.save(); ctx.globalAlpha = 1 - q; text(ctx, a, x, y, o.color ?? PAL.ink, o); ctx.globalAlpha = q; text(ctx, b, x, y, o.color ?? PAL.ink, o); ctx.restore();
-  }
-
   function draw() {
-    const { ctx } = begin(c2);
-    const q = Math.max(0, Math.min(1, mt.v)), s = q < 0.5 ? from : to;
-    PLBOX.style.display = to.clf ? '' : 'none';
-    v.clear();
-    const rX = rOf('X') / 62;
-    v.pickable(sphere(g, [0, 0, 0], rOf('E') / 62, atomColor('E')), nameOf('E'));
-    between(from, to, q).forEach((r) => {
-      const len = L * r.p, tip = V.mul(r.dir, len), bond = 1 - r.w;
-      rod([0, 0, 0], V.mul(r.dir, len * (0.25 + 0.75 * bond)), 0.05, PAL.ink, bond);
-      if (bond > 0.01) { const m = sphere(g, tip, rX * Math.min(1, r.p * 1.4), atomColor('X'), bond < 1 ? { transparent: true, opacity: bond } : undefined); v.pickable(m, nameOf('X')); }
-      if (r.w > 0.01) { const lb = lobe3(g, [0, 0, 0], r.dir, len * 0.8 * (0.35 + 0.65 * r.w)); lb.material.transparent = true; lb.material.opacity = 0.5 * r.w; v.pickable(lb, 'a lone pair'); }
-    });
-    v.label('E', [0, 0, 0], g, -54);
-    /* one bonded atom is named, since the rest are of the same kind (rule 26.7): a lower axial one at five regions, where
-       the upper takes the name axial, and otherwise the last */
-    const named = to.n === 5 ? to.regions[1] : [...to.regions].reverse().find((r) => r.w < 0.5);
-    if (named && named.w < 0.5) plain(v.label('X', V.mul(named.dir, L * 1.3), g, 0), q);
-    if (from.n === to.n || q > 0.5) ARCS[to.n].forEach(([i, j, lab]) => { const mid = arcRods(to.regions[i].dir, to.regions[j].dir, L * 0.5); plain(hued(v.label(lab, mid, g, 0), 'angle'), from.n === to.n ? 1 : 2 * q - 1); });
-    if (to.n === 5) {
-      const a = from.n === 5 ? 1 : q;
-      plain(v.label('axial', V.mul(to.regions[0].dir, L + 0.4), g, 0), a);
-      const eq = to.regions.slice(2).find((r) => r.w < 0.5) ?? to.regions[2];
-      plain(v.label('equatorial', V.mul(eq.dir, L + 0.55), g, 0), a);
+    const q = Math.max(0, Math.min(1, mt.v)), t = to;
+    PLBOX.style.display = t.clf ? '' : 'none';
+    const s = [t.n, t.lone, t.place, q.toFixed(3), palSig()].join('|');
+    if (s !== sig) {
+      sig = s; S.clear();
+      ball(S, g, [0, 0, 0], 'E');
+      between(from, to, q).forEach((r) => {
+        const len = L * r.p, tip = V.mul(r.dir, len), bond = 1 - r.w;
+        if (bond > 0.01 && len > 0.01) stick(g, [0, 0, 0], V.mul(r.dir, len * (0.25 + 0.75 * bond)), 0.06, PAL.ink, bond < 1 ? { transparent: true, opacity: bond } : undefined);
+        if (bond > 0.01) { const m = ball(S, g, tip, 'X', bond < 1 ? { transparent: true, opacity: bond } : undefined); m.scale.setScalar(rOf('X') * Math.min(1, r.p * 1.4)); }
+        if (r.w > 0.01) { const lb = lobe3(g, [0, 0, 0], r.dir, len * 0.8 * (0.35 + 0.65 * r.w)); lb.material.opacity = 0.5 * r.w; v.pickable(lb, 'lone pair'); }
+      });
+      /* at rest: the angles between the bonds, and at five regions the two kinds of position */
+      if (q >= 1) {
+        const dirs = t.regions.map((r) => r.dir), cA = F.C('angle');
+        bondArcs(t.ideal, dirs, t.at, t.n).forEach(({ i, j, label }) => hued(S.out(label, arcTube(g, dirs[i], dirs[j], L * 0.52, cA, clearSide(dirs[i], dirs.filter((_, k) => k !== i && k !== j))), g, { gap: 5 }), 'angle'));
+        if (t.n === 5) [['axial', 0], ['equatorial', t.regions.findIndex((r, i) => i > 1 && r.w < 0.5) > 0 ? t.regions.findIndex((r, i) => i > 1 && r.w < 0.5) : 2]].forEach(([name, i]) => {
+          const lonePair = t.regions[i].w > 0.5;
+          S.out(weak(name), V.mul(dirs[i], lonePair ? L * 0.93 : L), g, { r: lonePair ? 0 : rOf('X'), gap: 6 });
+        });
+      }
+      v.invalidate();
     }
-    /* beneath: the sketch, straight on as the book draws it, and the two names */
-    flat(ctx, from, 1 - q); flat(ctx, to, q);
-    text(ctx, 'in wedge and dash notation', 300, 336, PAL.muted, { size: 17, align: 'center' });
-    words(ctx, 620, 205, 'The ideal angles are ' + IDEAL[from.n] + '.', 'The ideal angles are ' + IDEAL[to.n] + '.', q, { size: 22, weight: 600 });
-    const t = to, example = t.clf && t.place !== 'eq' ? '' : EXAMPLE[t.n][t.lone];
-    const lone = t.lone, bonds = t.n - lone, lp = lone === 0 ? 'no lone pair' : lone === 1 ? 'one lone pair' : lone + ' lone pairs';
-    topline(ctx, 'With ' + t.n + ' regions of electron density and ' + lp + ', the electron-pair geometry is ' + GEOM[t.n] + ' and the molecular structure is ' + t.struct + (example ? ', as in ' + example : '') + '.');
+    const { ctx } = begin(top);
+    topline(ctx, headlineOf(t));
+    const k = begin(key);
+    keyRow(k.ctx, 60, [keyAtom('E'), keyAtom('X'), KEY_LONE]);
+    const lone = t.lone, bonds = t.n - lone;
     F.morph(fx, `\\mk{n}{${t.n}\\ \\text{regions}} = \\mk{b}{${bonds}\\ \\text{bond${bonds === 1 ? '' : 's'}}}` + (lone ? ` + \\mk{lp}{${lone}\\ \\text{lone pair${lone === 1 ? '' : 's'}}}` : ''));
-    note.textContent = t.clf ? CLF[t.place].why
-      : lone === 0 ? 'With no lone pair on the central atom, the molecular structure is the electron-pair geometry itself.'
-      : t.n === 5 ? 'A lone pair takes an equatorial position, where the 120° angles leave it more room than the 90° angles of an axial position.'
-      : t.n === 6 && lone === 2 ? 'The two lone pairs sit on opposite sides of the octahedron, 180° apart, which keeps them as far from each other as possible.'
-      : 'The lone pair is a region of electron density but not an atom, so it shapes the molecule without appearing in its structure; the real angles are slightly smaller than the ideal ones.';
+    const ideal = 'Ideal angle' + (t.n > 4 ? 's ' : ' ') + IDEAL[t.n] + '. ';
+    note.textContent = ideal + (t.clf ? CLF[t.place].why
+      : lone === 0 ? ''
+      : t.n === 5 ? 'A lone pair takes an equatorial position, where it has two neighbors at 90° and not three.'
+      : t.n === 6 && (lone === 2 || lone === 4) ? 'Lone pairs sit opposite one another, so the bonds between them keep their ideal angle.'
+      : 'A lone pair takes more room than a bond, so the angle between the bonds is a little smaller.');
   }
   still(d, draw);
 })();
@@ -385,37 +272,37 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
    a sphere about the central atom repel one another and settle into the
    arrangement that keeps them farthest apart; a lone pair pushes harder.
    Moving: the regions travel and the smallest angle grows as a clock
-   runs, and the loop is finite, so it gets the scrubber. The sphere is
-   drawn in three dimensions and the reader turns it by dragging.
+   runs, and the run is finite, so it has the transport and its scrubber.
 ===================================================================== */
 (function () {
   const d = sim('sim-domains');
-  const v = F.view3d(d.stage, { ...FREE, h: 420, dist: 5.8 });
-  const g = v.part(0), c2 = strip(d, 400);
-  const N = ctl(d.controls, { label: '\\text{regions}', cls: '', min: 2, max: 6, step: 1, value: 4, unit: '', dec: 0, aria: 'regions of electron density', onInput: onRegions });
-  const LP = ctl(d.controls, { label: '\\text{lone pairs}', cls: '', min: 0, max: 2, step: 1, value: 0, unit: '', dec: 0, aria: 'lone pairs among the regions', detents: [0, 1, 2], onInput: reset });
-  /* a repulsion alone cannot tell an axial site from an equatorial one, so at five and six regions the slider has nothing
-     to say: it is set to none and disabled rather than moved and snapped back (rule 24.6) */
-  function onRegions() { const n = N.v, max = n >= 5 ? 0 : Math.min(2, n - 2); if (LP.v > max) LP.set(max); LP.disable(n >= 5); reset(); }
-  const T = 5, cy = cycle(() => T, 1.4), L = 1.15;
-  /* a repulsion alone cannot tell an axial site from an equatorial one, so the lone pairs of five and six regions are the bench's to place, not this figure's */
-  const simLone = (n, want) => (n >= 5 ? 0 : Math.min(want, n - 2));
+  const S = stage3(d, { h: 560, dist: 6.5 }), v = S.v, g = v.part(0);
+  const c2 = F.makeCanvas(d.stage, 390);
+  v.setView(0.4, 0.3);
+  const nums = (a, b) => { const o = []; for (let i = a; i <= b; i++) o.push({ value: String(i), label: String(i) }); return o; };
+  /* A repulsion alone puts a lone pair in the right place only at three and four regions, where every site is alike;
+     at five and six it cannot tell an axial site from an equatorial one, so the choice stands there only for three and four */
+  const maxLone = (n) => (n === 3 ? 1 : n === 4 ? 2 : 0);
+  const N = F.choice(d.controls, { label: '\\text{regions}', options: nums(2, 6), value: '4', aria: 'regions of electron density around the central atom', ms: 0, onInput: () => { fit(); reset(); } });
+  const LP = F.choice(d.controls, { label: '\\text{lone pairs}', key: 'lone', options: nums(0, 2), value: '0', aria: 'how many of the regions are lone pairs', ms: 0, onInput: reset });
+  const LPBOX = d.controls.lastElementChild;
+  function fit() { const m = maxLone(+N.value); LP.options(nums(0, m), String(m)); LPBOX.style.display = m ? '' : 'none'; }
+  const T = 5, cy = cycle(() => T, 1.4), L = 1.4;
   /* a seeded generator, so that a run starts the same way every time and the scrubber can replay it */
   function rng(seed) { let s = seed >>> 0; return () => { s += 0x6D2B79F5; let z = s; z = Math.imul(z ^ (z >>> 15), z | 1); z ^= z + Math.imul(z ^ (z >>> 7), z | 61); return ((z ^ (z >>> 14)) >>> 0) / 4294967296; }; }
-  let st = null;   /* {p: unit positions, v: velocities, q: charges, tau: model time reached, trace: [[tau, angle]], meshes} */
-  onRegions();
+  let st = null, sig = '';   /* st: {p: unit positions, v: velocities, q: charges, tau: model time reached, trace: [[tau, angle]], meshes} */
   function init() {
-    const n = N.v, lone = simLone(n, LP.v), r = rng(97 + n * 31 + lone * 7);
+    const n = +N.value, lone = Math.min(+LP.value, maxLone(n)), r = rng(97 + n * 31 + lone * 7);
     const p = [], vel = [], q = [];
     for (let i = 0; i < n; i++) {   /* scattered over one side of the sphere, so they have somewhere to go */
       const a = r() * TAU, b = (0.15 + 0.5 * r()) * Math.PI;
       p.push([Math.sin(b) * Math.cos(a), Math.cos(b), Math.sin(b) * Math.sin(a)]); vel.push([0, 0, 0]); q.push(i < lone ? 1.35 : 1);
     }
-    st = { p, v: vel, q, tau: 0, trace: [], built: false };
+    st = { p, v: vel, q, tau: 0, trace: [], lone }; sig = '';
   }
   function reset() { cy.reset(); st = null; }
-  const smallest = (p) => { let m = 180; for (let i = 0; i < p.length; i++) for (let j = i + 1; j < p.length; j++) m = Math.min(m, V.angle(p[i], p[j])); return m; };
-  /* advance the regions to model time tau with fixed steps: a tangential repulsion, damped */
+  const smallest = (p) => { let m = [0, 1, 180]; for (let i = 0; i < p.length; i++) for (let j = i + 1; j < p.length; j++) { const a = V.angle(p[i], p[j]); if (a < m[2]) m = [i, j, a]; } return m; };
+  /* advance the regions to model time tau with fixed steps: a repulsion along the sphere, damped */
   function advance(tau) {
     if (!st || tau < st.tau) init();
     const h = 1 / 120, n = st.p.length;
@@ -431,389 +318,332 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
         st.p[i] = V.unit(V.add(st.p[i], V.mul(st.v[i], h)));
       }
       st.tau += h;
-      if (st.trace.length === 0 || st.tau - st.trace[st.trace.length - 1][0] > 0.04) st.trace.push([st.tau, smallest(st.p)]);
+      if (st.trace.length === 0 || st.tau - st.trace[st.trace.length - 1][0] > 0.04) st.trace.push([st.tau, smallest(st.p)[2]]);
     }
-    if (st.trace.length === 0) st.trace.push([0, smallest(st.p)]);
+    if (st.trace.length === 0) st.trace.push([0, smallest(st.p)[2]]);
   }
-  /* the scene is built once per run and its regions moved every frame; the arc of the smallest angle is redrawn */
+  /* the scene is built once per run and its regions moved every frame */
+  const ARC = 12;
   function build() {
-    v.clear();
-    v.pickable(sphere(g, [0, 0, 0], rOf('E') / 62, atomColor('E')), nameOf('E')); v.label('E', [0, 0, 0], g, -54);
-    sphere(g, [0, 0, 0], L, PAL.ink, { transparent: true, opacity: 0.07, depthWrite: false });
-    st.meshes = st.p.map((u, i) => (st.q[i] > 1 ? { lobe: v.pickable(lobe3(g, [0, 0, 0], u, L * 0.8), 'a lone pair') } : { atom: v.pickable(sphere(g, V.mul(u, L), rOf('X') / 62, atomColor('X')), nameOf('X')), bond: stick(g, [0, 0, 0], V.mul(u, L), 0.07, PAL.ink) }));
-    st.arc = null; st.arcLabel = null; st.built = true;
+    S.clear();
+    ball(S, g, [0, 0, 0], 'E');
+    st.meshes = st.p.map((u, i) => (st.q[i] > 1 ? { lobe: v.pickable(lobe3(g, [0, 0, 0], u, L * 0.8), 'lone pair') } : { atom: ball(S, g, V.mul(u, L), 'X'), bond: stick(g, [0, 0, 0], V.mul(u, L), 0.06, PAL.ink) }));
+    st.arc = []; for (let i = 0; i < ARC; i++) st.arc.push(stick(g, [0, 0, 0], [0, 0.01, 0], 0.016, F.C('angle')));
+    st.mid = [0, 1, 0];
+    st.lab = hued(S.out('', () => st && st.mid, g, { gap: 5 }), 'angle');
   }
   function draw() {
     const { ctx } = begin(c2);
-    const n = N.v, lone = simLone(n, LP.v);
+    const n = +N.value;
     const tau = cy.now(); advance(tau);
-    if (!st.built) build();
+    const lone = st.lone, s = palSig(); if (s !== sig) { sig = s; build(); }
     st.p.forEach((u, i) => { const m = st.meshes[i]; if (m.lobe) setLobe(m.lobe, [0, 0, 0], u, L * 0.8); else { m.atom.position.copy(vec(V.mul(u, L))); setStick(m.bond, [0, 0, 0], V.mul(u, L)); } });
-    /* the smallest angle, marked on the sphere */
-    let best = [0, 1, 180]; for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++) { const a = V.angle(st.p[i], st.p[j]); if (a < best[2]) best = [i, j, a]; }
-    const ang = best[2], settled = tau >= T - 1e-9 || (tau > 1.5 && st.v.every((w) => V.len(w) < 0.02));
-    if (st.arc) { g.remove(st.arc); st.arc.geometry.dispose(); st.arc.material.dispose(); }
-    const pts = []; for (let i = 0; i <= 24; i++) pts.push(V.mul(slerp(st.p[best[0]], st.p[best[1]], i / 24), L * 0.45));
-    st.arc = polyline(g, pts, F.C('angle'));
-    const mid = V.mul(V.unit(slerp(st.p[best[0]], st.p[best[1]], 0.5)), L * 0.45 + 0.2);
-    if (!st.arcLabel) st.arcLabel = v.label('', mid, g, 0);
-    hued(st.arcLabel, 'angle').textContent = fmt(ang, 0) + '°'; st.arcLabelP = mid; st.arcLabel.__p = mid;
+    /* the smallest angle, marked between the two regions that make it */
+    const best = smallest(st.p), ang = best[2], a = st.p[best[0]], b = st.p[best[1]], R = L * 0.5;
+    const settled = tau >= T - 1e-9 || (tau > 1.5 && st.v.every((w) => V.len(w) < 0.02));
+    for (let i = 0; i < ARC; i++) setStick(st.arc[i], V.mul(slerp(a, b, i / ARC), R), V.mul(slerp(a, b, (i + 1) / ARC), R));
+    st.mid = V.mul(V.unit(V.add(a, b)), R);
+    st.lab.textContent = fmt(ang, 0) + '°';
     v.invalidate();
-    /* the trace of the smallest angle against time, on a fixed frame: 0 to 180°, 0 to 5 s */
-    const box = { l: 400, r: 1040, t: 150, b: 320 };
+    /* the smallest angle against time, on a fixed frame: 0 to 180°, 0 to 5 s */
+    const box = { l: 520, r: 1300, t: 150, b: 310 };
     const cA = F.C('angle');
     const { X, Y } = F.axes(ctx, box, [0, T], [0, 180], { xl: 'time (s)', xc: F.C('time'), yl: 'smallest angle between two regions', yc: cA, nx: 5, ny: 3, fy: (q) => fmt(q, 0) + '°' });
-    ctx.save(); ctx.strokeStyle = cA; ctx.lineWidth = 4; ctx.beginPath(); st.trace.forEach(([tt, a], i) => { if (i) ctx.lineTo(X(tt), Y(a)); else ctx.moveTo(X(tt), Y(a)); }); ctx.stroke(); ctx.restore();
+    ctx.save(); ctx.strokeStyle = cA; ctx.lineWidth = 4; ctx.beginPath(); st.trace.forEach(([tt, an], i) => { if (i) ctx.lineTo(X(tt), Y(an)); else ctx.moveTo(X(tt), Y(an)); }); ctx.stroke(); ctx.restore();
     F.dot(ctx, X(Math.min(tau, T)), Y(ang), cA, true, 8);
     const ideal = { 2: 180, 3: 120, 4: 109.5, 5: 90, 6: 90 }[n];
     line(ctx, box.l, Y(ideal), box.r, Y(ideal), alpha(PAL.ink, 0.4), 2, [10, 10]);
-    text(ctx, 'ideal ' + ideal + '°', box.r - 6, Y(ideal) - 16, PAL.muted, { size: 17, align: 'right' });
-    const found = lone ? GEOM[n] + ' electron-pair geometry, ' + STRUCT[n][Math.min(lone, MAX_LONE[n])] + ' molecular structure' : 'a ' + GEOM[n] + ' arrangement';
-    topline(ctx, settled ? 'The ' + n + ' regions have settled into ' + found + ', and the smallest angle between two of them is ' + fmt(ang, 0) + '°.'
-      : 'At t = ' + fmt(tau, 1) + ' s the regions are still pushing apart, and the smallest angle between two of them has grown to ' + fmt(ang, 0) + '°.');
-    readout(d.readout, `\\htmlClass{kv-angle}{\\text{smallest angle}} = ${fmt(ang, 1)}^\\circ`,
-      n >= 5 ? 'A repulsion alone cannot say which of two unlike positions a lone pair takes; that is decided by the size order, which the bench above applies.' : '');
+    text(ctx, 'ideal ' + ideal + '°', box.r - 6, Y(ideal) + (lone ? -16 : 18), PAL.muted, { size: 17, align: 'right' });
+    F.legend(ctx, { l: 60, r: 400, t: 150, b: 310 }, [keyAtom('E'), keyAtom('X')].concat(lone ? [KEY_LONE] : []), { corner: 'tl', panel: false, size: 20 });
+    const bondsLeft = n - lone;
+    topline(ctx, !settled ? 'The ' + COUNT[n] + ' regions are pushing one another apart, and the smallest angle between two of them has grown to ' + fmt(ang, 0) + '°.'
+      : lone ? 'The lone pair' + (lone > 1 ? 's push' : ' pushes') + ' harder than a bond, so the ' + COUNT[bondsLeft] + ' bonds settle ' + fmt(ang, 0) + '° apart, less than the ideal ' + ideal + '°.'
+      : 'The ' + COUNT[n] + ' regions have settled into ' + (n === 6 ? 'an ' : 'a ') + GEOM[n] + ' arrangement, the nearest of them ' + fmt(ang, 0) + '° apart.');
+    tex(d.readout, `\\htmlClass{kv-angle}{\\text{smallest angle}} = ${fmt(ang, 1)}^\\circ`);
   }
+  fit();
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
 
 /* =====================================================================
-   FIGURE 7.17: methane in wedge and dash notation, faithful.
+   FIGURE 7.17: methane as a model the reader turns, and beneath it the
+   wedge and dash drawing of the model as it now stands. A bond lying
+   near the plane of the page is a line, one coming toward the reader a
+   wedge, one going away a row of dashes; as the model turns the drawing
+   is made again, so each bond changes its notation as it swings forward
+   or back. Still: it answers the turn and has no clock of its own.
 ===================================================================== */
 (function () {
-  const d = sim('fig-methane', 400);
-  const mol = tilt(generic(4, 0, 150, { c: 'C', x: 'H' }), 4);
-  function draw() {
-    const { ctx } = begin(d.c);
-    sketch(ctx, 700, 205, mol, 1);
-    readout(d.readout, '\\text{CH}_4', 'Four bonding pairs and no lone pair: the electron-pair geometry and the molecular structure are both tetrahedral, with 109.5° between every pair of bonds.');
+  const d = sim('fig-methane');
+  let counts = '';
+  const S = stage3(d, { h: 500, dist: 5.3, onRender: () => draw2d() }), v = S.v, g = v.part(0);
+  const c2 = F.makeCanvas(d.stage, 360);
+  /* the book's view: one bond straight up and one down to the left, both near the page; one toward the reader; one away */
+  v.setView(-0.17, 0.21);
+  const HS = [[0, 1, 0], [-0.943, -0.333, 0], [0.471, -0.333, 0.816], [0.471, -0.333, -0.816]];
+  const NEAR = 0.28;   /* a bond whose depth is under this share of its length counts as lying in the page */
+  let sig = '';
+  function build() {
+    const s = palSig(); if (s === sig) return; sig = s;
+    S.clear();
+    ball(S, g, [0, 0, 0], 'C');
+    HS.forEach((h) => { bond3(g, [0, 0, 0], h, 1, 0.07); ball(S, g, h, 'H'); });
   }
-  still(d, draw);
-})();
-
-/* =====================================================================
-   FIGURE 7.18: ammonia in the book's three panels, each a molecule in
-   three dimensions that a drag turns together: (a) the four regions,
-   (b) the atoms, (c) the angles. Faithful, still.
-===================================================================== */
-(function () {
-  const d = sim('fig-ammonia');
-  const v = F.view3d(d.stage, { ...FREE, h: 400, dist: 7 });
-  const parts = [-2.7, 0, 2.7].map((x) => v.part(x)), c2 = strip(d, 70);
-  /* the real H–N–H angle of 106.8°: three bonds at one polar angle a from the axis of the lone pair */
-  const cosA = Math.sqrt((1 + 2 * Math.cos(106.8 * RAD)) / 3), a = Math.acos(cosA), sinA = Math.sin(a);
-  const hs = [0, 120, 240].map((az) => [sinA * Math.cos(az * RAD), -cosA, sinA * Math.sin(az * RAD)]);
-  const L = 150;
-  const nh3 = { atoms: [{ sym: 'N', p: [0, 0, 0] }, ...hs.map((h) => ({ sym: 'H', p: V.mul(h, L) }))], bonds: [[0, 1, 1], [0, 2, 1], [0, 3, 1]], lones: [{ a: 0, dir: [0, 1, 0], len: L * 0.85 }] };
-  const noLone = { ...nh3, lones: [] };
-  function draw() {
+  const sampleLine = (c, x, y) => line(c, x - 18, y, x + 18, y, PAL.ink, 3.5);
+  function wedge(c, x1, y1, x2, y2, w = 9) {
+    const dx = x2 - x1, dy = y2 - y1, len = Math.hypot(dx, dy) || 1, px = -dy / len * w, py = dx / len * w;
+    c.save(); c.fillStyle = PAL.ink; c.beginPath(); c.moveTo(x1, y1); c.lineTo(x2 + px, y2 + py); c.lineTo(x2 - px, y2 - py); c.closePath(); c.fill(); c.restore();
+  }
+  function dashes(c, x1, y1, x2, y2, w = 9, n = 7) {
+    const dx = x2 - x1, dy = y2 - y1, len = Math.hypot(dx, dy) || 1, px = -dy / len, py = dx / len;
+    c.save(); c.strokeStyle = PAL.ink; c.lineWidth = 3; c.lineCap = 'butt';
+    for (let i = 1; i <= n; i++) { const t = i / (n + 0.5), ww = 1.5 + (w - 1.5) * t, x = x1 + dx * t, y = y1 + dy * t; c.beginPath(); c.moveTo(x + px * ww, y + py * ww); c.lineTo(x - px * ww, y - py * ww); c.stroke(); }
+    c.restore();
+  }
+  function draw2d() {
     const { ctx } = begin(c2);
-    v.clear();
-    [[nh3, '(a)'], [noLone, '(b)'], [noLone, '(c)']].forEach(([mol, cap], k) => {
-      const g = parts[k];
-      molecule3(g, mol, SCALE, v);
-      if (k === 0) { v.label('N', [0, 0, 0], g, -52); v.label('lone pair', [0, L * 0.85 * SCALE + 0.25, 0], g, 0); }
-      if (k === 2) { const cA = F.C('angle'); [[0, 1], [1, 2], [0, 2]].forEach(([i, j]) => arc3d(g, hs[i], hs[j], 0.5, [0, 0, 0], cA)); hued(v.label('106.8°', arc3d(g, hs[0], hs[1], 0.5, [0, 0, 0], cA), g, -18), 'angle'); }
-      text(ctx, cap, 700 + (k - 1) * 300, 36, PAL.ink, { size: 19, weight: 600, align: 'center' });
+    const cx = 430, cyy = 175, K = 150;
+    /* each hydrogen where the model now has it: across, up, and toward the reader */
+    const at = HS.map((h) => { const w = vec(h); g.localToWorld(w); return [w.x, w.y, w.z]; });
+    const kind = (p) => (Math.abs(p[2]) < NEAR ? 'line' : p[2] > 0 ? 'wedge' : 'dash');
+    const order = at.map((p, i) => i).sort((i, j) => at[i][2] - at[j][2]);
+    order.forEach((i) => {
+      const p = at[i], x2 = cx + p[0] * K, y2 = cyy - p[1] * K, len = Math.hypot(x2 - cx, y2 - cyy);
+      if (len > 46) {
+        const ux = (x2 - cx) / len, uy = (y2 - cyy) / len, ax = cx + ux * 21, ay = cyy + uy * 21, bx = x2 - ux * 19, by = y2 - uy * 19, k = kind(p);
+        if (k === 'line') line(ctx, ax, ay, bx, by, PAL.ink, 3.5); else if (k === 'wedge') wedge(ctx, ax, ay, bx, by); else dashes(ctx, ax, ay, bx, by);
+      }
+      text(ctx, 'H', x2, y2 + 1, PAL.ink, { size: 30, align: 'center', bg: PAL.panel });
     });
-    readout(d.readout, '\\text{NH}_3');
+    text(ctx, 'C', cx, cyy + 1, PAL.ink, { size: 30, align: 'center' });
+    text(ctx, 'the model above, in wedge and dash notation', cx, 336, PAL.muted, { size: 19, align: 'center' });
+    F.legend(ctx, { l: 760, r: 1340, t: 70, b: 310 }, [
+      keyAtom('C'), keyAtom('H'),
+      { s: 'bond in the plane of the page', draw: sampleLine },
+      { s: 'bond coming toward you', draw: (c, x, y) => wedge(c, x - 18, y, x + 18, y, 7) },
+      { s: 'bond going away from you', draw: (c, x, y) => dashes(c, x - 18, y, x + 18, y, 7, 5) },
+    ], { corner: 'tl', panel: false, size: 22 });
+    const n = { line: 0, wedge: 0, dash: 0 }; at.forEach((p) => { n[kind(p)] += 1; });
+    const now = [n.line, n.wedge, n.dash].join(',');
+    if (now !== counts) { counts = now; tex(d.readout, `4\\ \\text{bonds} = ${n.line}\\ \\text{in the plane} + ${n.wedge}\\ \\text{toward you} + ${n.dash}\\ \\text{away from you}`); }
   }
-  still(d, draw);
+  still(d, () => { build(); draw2d(); v.invalidate(); });
 })();
 
 /* =====================================================================
-   FIGURES 7.21 and 7.22: BCl3 and the ammonium ion in wedge and dash
-   notation, faithful.
+   FIGURES 7.18, 7.23, 7.24 and 7.25: ammonia, water, SF4 and XeF4, each
+   as two models that turn together. On the left the regions of electron
+   density about the central atom, bonds as sticks and lone pairs as
+   lobes, with the solid their ends mark out: the electron-pair geometry.
+   On the right the atoms alone: the molecular structure. Still.
 ===================================================================== */
-(function () {
-  const d = sim('fig-bcl3', 380);
-  const mol = generic(3, 0, 150, { c: 'B', x: 'Cl' });
-  function draw() {
-    const { ctx } = begin(d.c);
-    sketch(ctx, 700, 200, mol, 1);
-    ctx.save(); ctx.strokeStyle = F.C('angle'); ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(700, 200, 58, 30 * RAD, 150 * RAD); ctx.stroke(); ctx.restore();
-    text(ctx, '120°', 700, 292, F.C('angle'), { size: 20, weight: 600, align: 'center' });
-    readout(d.readout, '\\text{BCl}_3');
-  }
-  still(d, draw);
-})();
-(function () {
-  const d = sim('fig-ammonium', 420);
-  const mol = tilt(generic(4, 0, 150, { c: 'N', x: 'H' }), 4);
-  function draw() {
-    const { ctx } = begin(d.c);
-    sketch(ctx, 700, 220, mol, 1);
-    ionBrackets(ctx, 520, 880, 40, 400, '+');
-    readout(d.readout, '\\text{NH}_4{}^{+}');
-  }
-  still(d, draw);
-})();
-
-/* =====================================================================
-   FIGURES 7.23, 7.24 and 7.25: water, SF4 and XeF4, each in the book's
-   two panels, (a) the regions of electron density and (b) the atoms,
-   faithful, in three dimensions; a drag turns both together.
-===================================================================== */
-function twoPanels(id, molA, molB, capA, capB, small, formula) {
+function geometryPair(id, m) {
   const d = sim(id);
-  const v = F.view3d(d.stage, { ...FREE, h: 400, dist: 6.4 });
-  const parts = [-2.1, 2.1].map((x) => v.part(x)), c2 = strip(d, 70);
-  function draw() {
-    const { ctx } = begin(c2);
-    v.clear();
-    [[molA, capA], [molB, capB]].forEach(([mol, cap], k) => {
-      const g = parts[k]; molecule3(g, mol, SCALE, v);
-      v.label(mol.atoms[0].sym, [0, 0, 0], g, -56);
-      /* a caption too long for its half of the strip breaks before its ', so' */
-      const lines = cap.length > 70 ? cap.replace(', so ', ',\nso ').split('\n') : [cap];
-      lines.forEach((l, i) => text(ctx, l, 450 + 500 * k, 36 + (i - (lines.length - 1) / 2) * 26, PAL.ink, { size: 19, weight: 600, align: 'center' }));
+  const S = stage3(d, { h: 560, dist: m.dist ?? 6.6 }), v = S.v, gA = v.part(-2.25), gB = v.part(2.25);
+  const key = F.makeCanvas(d.stage, 60);
+  v.setView(m.yaw ?? 0.5, m.pitch ?? 0.26);
+  let sig = '';
+  function build() {
+    const s = palSig(); if (s === sig) return; sig = s;
+    S.clear();
+    const P = m.dirs.map((u) => V.mul(u, m.L));
+    /* left: every region, and the edges of the solid whose corners they point to */
+    ball(S, gA, [0, 0, 0], m.c);
+    m.dirs.forEach((u, i) => {
+      if (m.lone.includes(i)) v.pickable(lobe3(gA, [0, 0, 0], u, m.L * 0.86), 'lone pair');
+      else { v.pickable(stick(gA, [0, 0, 0], P[i], 0.06, PAL.ink), `bond to ${nameOf(m.x)}`); sphere(gA, P[i], 0.06, PAL.ink); }
     });
-    readout(d.readout, formula, small);
+    for (let i = 0; i < P.length; i++) for (let j = i + 1; j < P.length; j++) if (V.angle(m.dirs[i], m.dirs[j]) < 150) polyline(gA, [P[i], P[j]], PAL.muted);
+    S.under(weak('electron-pair geometry: ') + m.geom, gA);
+    /* right: the atoms and their bonds, with the angle the text gives */
+    ball(S, gB, [0, 0, 0], m.c);
+    m.dirs.forEach((u, i) => { if (m.lone.includes(i)) return; bond3(gB, [0, 0, 0], P[i], 1, 0.07); ball(S, gB, P[i], m.x); });
+    if (m.arc) hued(S.out(m.arc[2], arcTube(gB, m.dirs[m.arc[0]], m.dirs[m.arc[1]], m.L * 0.5, F.C('angle')), gB, { gap: 5 }), 'angle');
+    S.under(weak('molecular structure: ') + m.struct, gB);
+  }
+  function draw() {
+    build(); v.invalidate();
+    const { ctx } = begin(key);
+    keyRow(ctx, 60, [keyAtom(m.c), keyAtom(m.x), KEY_LONE]);
+    const n = m.dirs.length, lone = m.lone.length, bonds = n - lone;
+    tex(d.readout, `${m.formula}\\text{: }${n}\\ \\text{regions} = ${bonds}\\ \\text{bonds} + ${lone}\\ \\text{lone pair${lone === 1 ? '' : 's'}}`);
   }
   still(d, draw);
 }
-/* every region drawn as a lobe: the electron-pair geometry alone */
-const allLobes = (n, sym, L = 150) => ({ atoms: [{ sym, p: [0, 0, 0] }], bonds: [], lones: SITES[n].map((s) => ({ a: 0, dir: s, len: L * 0.85 })) });
-twoPanels('fig-water', allLobes(4, 'O'), generic(4, 2, 150, { c: 'O', x: 'H' }), '(a)', '(b)',
-  'The H–O–H angle is 104.5°, slightly less than the 109.5° of a regular tetrahedron.', '\\text{H}_2\\text{O}');
-twoPanels('fig-sf4', allLobes(5, 'S'), generic(5, 1, 150, { c: 'S', x: 'F' }), '(a)', '(b)',
-  'The lone pair takes one of the three equatorial positions, where it has the most room, and the four fluorine atoms make a seesaw.', '\\text{SF}_4');
-twoPanels('fig-xef4', allLobes(6, 'Xe'), generic(6, 2, 150, { c: 'Xe', x: 'F' }), '(a)', '(b)',
-  '', '\\text{XeF}_4');
+/* ammonia with its real H–N–H angle of 106.8°: three bonds at one polar angle from the axis of the lone pair */
+(function () {
+  const cosA = Math.sqrt((1 + 2 * Math.cos(106.8 * RAD)) / 3), sinA = Math.sqrt(1 - cosA * cosA);
+  const hs = [90, 210, 330].map((az) => [sinA * Math.cos(az * RAD), -cosA, sinA * Math.sin(az * RAD)]);
+  geometryPair('fig-ammonia', { c: 'N', x: 'H', L: 1.05, dirs: [[0, 1, 0], ...hs], lone: [0], geom: 'tetrahedral', struct: 'trigonal pyramidal', arc: [1, 2, '106.8°'], formula: '\\text{NH}_3' });
+})();
+/* water with the 104.5° of Example 7.13: the two bonds in one plane, the two lone pairs in the plane across it */
+(function () {
+  const hb = 104.5 / 2 * RAD, lp = 57 * RAD;
+  const dirs = [[0, Math.cos(lp), Math.sin(lp)], [0, Math.cos(lp), -Math.sin(lp)], [Math.sin(hb), -Math.cos(hb), 0], [-Math.sin(hb), -Math.cos(hb), 0]];
+  geometryPair('fig-water', { c: 'O', x: 'H', L: 1.05, dirs, lone: [0, 1], geom: 'tetrahedral', struct: 'bent', arc: [2, 3, '104.5°'], formula: '\\text{H}_2\\text{O}', yaw: 0.6 });
+})();
+/* SF4: the lone pair in an equatorial position of the trigonal bipyramid; XeF4: the two lone pairs across the octahedron */
+geometryPair('fig-sf4', { c: 'S', x: 'F', L: 1.25, dirs: SITES[5], lone: [2], geom: 'trigonal bipyramidal', struct: 'seesaw', arc: null, formula: '\\text{SF}_4', dist: 7.7, yaw: 2.3 });
+geometryPair('fig-xef4', { c: 'Xe', x: 'F', L: 1.3, dirs: SITES[6], lone: [0, 1], geom: 'octahedral', struct: 'square planar', arc: [2, 4, '90°'], formula: '\\text{XeF}_4', dist: 7.7, yaw: 0.5, pitch: 0.36 });
 
 /* =====================================================================
-   The unnumbered Lewis structures of the examples, faithful.
-===================================================================== */
-function lewisFigure(id, H, atoms, bonds, main, small, extra) {
-  const d = sim(id, H);
-  function draw() { const { ctx } = begin(d.c); lewis(ctx, 700, H / 2, atoms, bonds); if (extra) extra(ctx); readout(d.readout, main, small); }
-  still(d, draw);
-}
-lewisFigure('fig-lewis-co2', 220, [{ sym: 'O', x: -190, y: 0, lp: [90, 270] }, { sym: 'C', x: 0, y: 0 }, { sym: 'O', x: 190, y: 0, lp: [90, 270] }], [[0, 1, 2], [1, 2, 2]],
-  '\\text{O=C=O}', 'Each double bond counts as one region of electron density, and there is no lone pair on the carbon atom: two regions.');
-lewisFigure('fig-lewis-bcl3', 340, [{ sym: 'B', x: 0, y: 20 }, { sym: 'Cl', x: 0, y: -130, lp: [90, 0, 180] }, { sym: 'Cl', x: -150, y: 105, lp: [180, 270, 135] }, { sym: 'Cl', x: 150, y: 105, lp: [0, 270, 45] }], [[0, 1, 1], [0, 2, 1], [0, 3, 1]],
-  '\\text{BCl}_3', 'Three bonds and no lone pair on the boron atom: three regions of electron density.');
-lewisFigure('fig-lewis-nh4', 320, [{ sym: 'N', x: 0, y: 0 }, { sym: 'H', x: 0, y: -110 }, { sym: 'H', x: 0, y: 110 }, { sym: 'H', x: -120, y: 0 }, { sym: 'H', x: 120, y: 0 }], [[0, 1, 1], [0, 2, 1], [0, 3, 1], [0, 4, 1]],
-  '\\text{NH}_4{}^{+}', 'Four bonds and no lone pair on the nitrogen atom: four regions of electron density.', (ctx) => ionBrackets(ctx, 540, 860, 30, 290, '+'));
-lewisFigure('fig-lewis-h2o', 260, [{ sym: 'O', x: 0, y: 0, lp: [90, 0] }, { sym: 'H', x: -120, y: 0 }, { sym: 'H', x: 0, y: 100 }], [[0, 1, 1], [0, 2, 1]],
-  '\\text{H}_2\\text{O}', 'Two bonds and two lone pairs on the oxygen atom: four regions of electron density.');
-lewisFigure('fig-lewis-sf4', 360, [{ sym: 'S', x: 0, y: 0, lp: [180] }, { sym: 'F', x: 0, y: -130, lp: [90, 0, 180] }, { sym: 'F', x: 0, y: 130, lp: [270, 0, 180] }, { sym: 'F', x: 150, y: -70, lp: [90, 0, 270] }, { sym: 'F', x: 150, y: 70, lp: [90, 0, 270] }], [[0, 1, 1], [0, 2, 1], [0, 3, 1], [0, 4, 1]],
-  '\\text{SF}_4', 'Four bonds and one lone pair on the sulfur atom: five regions of electron density.');
-lewisFigure('fig-lewis-xef4', 360, [{ sym: 'Xe', x: 0, y: 0, lp: [90, 270] }, { sym: 'F', x: -160, y: -80, lp: [90, 180, 270] }, { sym: 'F', x: 160, y: -80, lp: [90, 0, 270] }, { sym: 'F', x: -160, y: 80, lp: [90, 180, 270] }, { sym: 'F', x: 160, y: 80, lp: [90, 0, 270] }], [[0, 1, 1], [0, 2, 1], [0, 3, 1], [0, 4, 1]],
-  '\\text{XeF}_4', 'Four bonds and two lone pairs on the xenon atom: six regions of electron density.');
-/* glycine: H2N–CH2–C(=O)–OH, laid out as the book prints it */
-const GLY = [{ sym: 'N', x: -300, y: 0, lp: [90] }, { sym: 'H', x: -400, y: -70 }, { sym: 'H', x: -400, y: 70 }, { sym: 'C', x: -140, y: 0 }, { sym: 'H', x: -140, y: -110 }, { sym: 'H', x: -140, y: 110 },
-  { sym: 'C', x: 20, y: 0 }, { sym: 'O', x: 120, y: -100, lp: [90, 0] }, { sym: 'O', x: 120, y: 100, lp: [180, 270] }, { sym: 'H', x: 250, y: 100 }];
-const GLY_BONDS = [[0, 1, 1], [0, 2, 1], [0, 3, 1], [3, 4, 1], [3, 5, 1], [3, 6, 1], [6, 7, 2], [6, 8, 1], [8, 9, 1]];
-lewisFigure('fig-lewis-glycine', 340, GLY, GLY_BONDS, '\\text{H}_2\\text{NCH}_2\\text{CO}_2\\text{H}', 'Four interior atoms, each with a local geometry of its own: the nitrogen, the two carbons and the oxygen that carries a hydrogen.');
-(function () {
-  const d = sim('fig-glycine-3d', 360);
-  /* the same molecule with the bonds about N and the first C in wedge and dash notation */
-  const atoms = GLY.map((a) => ({ ...a, lp: a.sym === 'N' ? [90] : a.lp }));
-  const z = { 1: 1, 2: -1, 4: 1, 5: -1 };   /* which hydrogens come toward the reader and which go away */
-  function draw() {
-    const { ctx } = begin(d.c);
-    const cx = 700, cy = 180;
-    GLY_BONDS.forEach(([i, j, order]) => {
-      const a = atoms[i], b = atoms[j], x1 = cx + a.x, y1 = cy + a.y, x2 = cx + b.x, y2 = cy + b.y, dx = x2 - x1, dy = y2 - y1, L = Math.hypot(dx, dy);
-      const g1 = 18 / L, g2 = 18 / L, ax = x1 + dx * g1, ay = y1 + dy * g1, bx = x2 - dx * g2, by = y2 - dy * g2;
-      if (z[j] === 1) wedge(ctx, ax, ay, bx, by); else if (z[j] === -1) dashes(ctx, ax, ay, bx, by); else bondLine(ctx, ax, ay, bx, by, order, 3.5);
-    });
-    lewis(ctx, cx, cy, atoms, []);
-    readout(d.readout, '\\text{H}_2\\text{NCH}_2\\text{CO}_2\\text{H}');
-  }
-  still(d, draw);
-})();
-
-/* =====================================================================
-   The unnumbered vector sketches of the polarity passage, faithful:
-   OCS with its two unequal bond moments, chloromethane with four, and
-   the partial charges of H2S and NH3.
-===================================================================== */
-(function () {
-  const d = sim('fig-ocs', 320);
-  function draw() {
-    const { ctx, H } = begin(d.c);
-    const lab = labeller(ctx, H);
-    const y = 130, xo = 480, xc = 700, xs = 920;
-    bondLine(ctx, xo + 26, y, xc - 26, y, 2); bondLine(ctx, xc + 26, y, xs - 30, y, 2);
-    atom(ctx, xo, y, 'O'); atom(ctx, xc, y, 'C'); atom(ctx, xs, y, 'S');
-    lab.add('O', xo, y, -1, -0.5, PAL.ink, 20, 34); lab.add('C', xc, y, 0, -1, PAL.ink, 20, 34); lab.add('S', xs, y, 1, -0.5, PAL.ink, 20, 34);
-    moment(ctx, xc - 30, y + 60, xo + 10, y + 60); moment(ctx, xc + 30, y + 60, xs - 60, y + 60);
-    text(ctx, 'bond moments', xc, y + 92, F.C('dipole-moment'), { size: 18, align: 'center' });
-    moment(ctx, xc + 40, y + 150, xc - 130, y + 150, 5);
-    text(ctx, 'overall dipole moment', xc, y + 182, F.C('dipole-moment'), { size: 18, align: 'center' });
-    lab.flush();
-    readout(d.readout, '\\text{O=C=S}');
-  }
-  still(d, draw);
-})();
-(function () {
-  const d = sim('fig-chloromethane', 440);
-  const mol = tilt(generic(4, 0, 150, { c: 'C', x: 'H' }), 4); mol.atoms[1].sym = 'Cl';
-  function draw() {
-    const { ctx, H } = begin(d.c);
-    const lab = labeller(ctx, H);
-    const P = sketch(ctx, 620, 230, mol, 1);
-    const c = P(mol.atoms[0].p);
-    mol.atoms.slice(1).forEach((a) => {
-      const q = P(a.p), dx = q[0] - c[0], dy = q[1] - c[1], L = Math.hypot(dx, dy), ux = dx / L, uy = dy / L, px = -uy * 22, py = ux * 22;
-      if (a.sym === 'Cl') moment(ctx, c[0] + ux * 30 + px, c[1] + uy * 30 + py, q[0] - ux * 30 + px, q[1] - uy * 30 + py, 4);
-      else moment(ctx, q[0] - ux * 26 + px, q[1] - uy * 26 + py, c[0] + ux * 50 + px, c[1] + uy * 50 + py, 3);
-    });
-    text(ctx, 'H < C < Cl in electronegativity', 1060, 230, PAL.muted, { size: 18, align: 'center' });
-    lab.flush();
-    readout(d.readout, '\\text{CH}_3\\text{Cl}', 'All four bond moments point toward the chlorine end of the molecule, so they add rather than cancel, and the molecule is polar.');
-  }
-  still(d, draw);
-})();
-(function () {
-  const d = sim('fig-h2s-nh3', 300);
-  function draw() {
-    const { ctx } = begin(d.c);
-    lewis(ctx, 420, 150, [{ sym: 'S', x: 0, y: 0, lp: [90, 0] }, { sym: 'H', x: -120, y: 0 }, { sym: 'H', x: 0, y: 100 }], [[0, 1, 1], [0, 2, 1]]);
-    const cQ = F.C('charge');
-    text(ctx, 'δ−', 420 + 60, 150 - 60, cQ, { size: 20, weight: 600 }); text(ctx, 'δ+', 420 - 175, 150, cQ, { size: 20, weight: 600, align: 'right' }); text(ctx, 'δ+', 420 + 30, 150 + 118, cQ, { size: 20, weight: 600 });
-    lewis(ctx, 980, 150, [{ sym: 'N', x: 0, y: 0, lp: [90] }, { sym: 'H', x: -120, y: 0 }, { sym: 'H', x: 120, y: 0 }, { sym: 'H', x: 0, y: 100 }], [[0, 1, 1], [0, 2, 1], [0, 3, 1]]);
-    text(ctx, 'δ−', 980 + 40, 150 - 60, cQ, { size: 20, weight: 600 }); text(ctx, 'δ+', 980 - 175, 150, cQ, { size: 20, weight: 600, align: 'right' }); text(ctx, 'δ+', 980 + 175, 150, cQ, { size: 20, weight: 600 }); text(ctx, 'δ+', 980 + 30, 150 + 118, cQ, { size: 20, weight: 600 });
-    readout(d.readout, '\\text{H}_2\\text{S} \\qquad \\text{NH}_3', 'Every bond moment in each molecule is the same, but the bent and the trigonal pyramidal structures do not let them cancel.');
-  }
-  still(d, draw);
-})();
-
-/* =====================================================================
-   FIGURE 7.26 + 7.27: the bond-moment bench. Each bond moment is an
-   arrow along its bond whose length follows the electronegativity
-   difference, and the molecular dipole is their vector sum in three
-   dimensions, all drawn in three dimensions and turned by dragging.
+   FIGURE 7.26 + 7.27: the bond-moment bench. On the left the molecule
+   with a bond moment beside each bond: an arrow from the less
+   electronegative atom toward the more, its tail crossed as the book
+   crosses it, its length the difference in electronegativity. On the
+   right the same arrows moved tail to tip, and from the first tail to
+   the last tip the heavier arrow of their sum, the dipole moment of the
+   molecule; where the chain closes on itself there is none. Both turn
+   together, so every arrow on the right stays parallel to its bond.
    Still: a vector sum has no time in it.
 ===================================================================== */
 (function () {
   const d = sim('sim-bond-moments');
-  /* the list holds molecules of every shape, so the two viewpoints worth a button are the plain ones (rule 26.2) */
-  const v = F.view3d(d.stage, { spin: 'idle', views: [{ label: 'front', yaw: 0, pitch: 0.18 }, { label: 'above', yaw: 0, pitch: 1.2 }], h: 440, dist: 6 });
-  const g = v.part(0), c2 = strip(d, 250);
-  /* the electronegativities the book prints in Figure 7.6, which is the table this figure cites (rule 25) */
+  const top = F.makeCanvas(d.stage, 104);
+  const S = stage3(d, { h: 700, dist: 7.3 }), v = S.v, gA = v.part(-1.95), gB = v.part(1.95);
+  const key = F.makeCanvas(d.stage, 60);
+  v.setView(0.3, 0.2);
+  /* the electronegativities the book prints in Figure 7.6 */
   const EN = { H: 2.1, B: 2.0, C: 2.5, N: 3.0, O: 3.5, F: 4.0, P: 2.1, S: 2.5, Cl: 3.0 };
-  const L = 150;
-  /* three bonds at one polar angle from the axis that make the given angle with one another */
-  const pyramid = (angle) => { const cosA = Math.sqrt((1 + 2 * Math.cos(angle * RAD)) / 3), s = Math.sqrt(1 - cosA * cosA); return [0, 120, 240].map((az) => [s * Math.cos(az * RAD), -cosA, s * Math.sin(az * RAD)]); };
-  const bent = (angle) => [[Math.cos((-90 - angle / 2) * RAD), Math.sin((-90 - angle / 2) * RAD), 0], [Math.cos((-90 + angle / 2) * RAD), Math.sin((-90 + angle / 2) * RAD), 0]];
-  const mk = (name, formula, c, terms, structure, order = 1) => ({ name, formula, structure, atoms: [{ sym: c, p: [0, 0, 0] }, ...terms.map(([s, dir]) => ({ sym: s, p: V.mul(dir, L) }))], bonds: terms.map((_, i) => [0, i + 1, Array.isArray(order) ? order[i] : order]) });
-  /* HF and CO are molecules of two atoms; C–H and B–F are single bonds the book draws on their own in Figure 7.26 */
-  const pair = (name, a, b, whole = true) => ({ name, formula: name, structure: whole ? 'a molecule of two atoms' : 'a single bond', atoms: [{ sym: a, p: [-L / 2, 0, 0] }, { sym: b, p: [L / 2, 0, 0] }], bonds: [[0, 1, 1]], diatomic: true, whole });
-  const MOLS = [
-    pair('HF', 'H', 'F'), pair('CO', 'C', 'O'), pair('C–H', 'C', 'H', false), pair('B–F', 'B', 'F', false),
-    mk('CO₂', '\\text{CO}_2', 'C', [['O', [1, 0, 0]], ['O', [-1, 0, 0]]], 'linear', 2),
-    mk('OCS', '\\text{OCS}', 'C', [['O', [-1, 0, 0]], ['S', [1, 0, 0]]], 'linear', 2),
-    mk('H₂O', '\\text{H}_2\\text{O}', 'O', bent(104.5).map((q) => ['H', q]), 'bent, 104.5°'),
-    mk('H₂S', '\\text{H}_2\\text{S}', 'S', bent(92.1).map((q) => ['H', q]), 'bent, 92°'),
-    mk('BF₃', '\\text{BF}_3', 'B', SITES[3].map((q) => ['F', q]), 'trigonal planar'),
-    mk('NH₃', '\\text{NH}_3', 'N', pyramid(107).map((q) => ['H', q]), 'trigonal pyramidal, 107°'),
-    mk('CH₄', '\\text{CH}_4', 'C', SITES[4].map((q) => ['H', q]), 'tetrahedral'),
-    mk('CH₃Cl', '\\text{CH}_3\\text{Cl}', 'C', SITES[4].map((q, i) => [i === 0 ? 'Cl' : 'H', q]), 'tetrahedral'),
-    mk('PF₅', '\\text{PF}_5', 'P', SITES[5].map((q) => ['F', q]), 'trigonal bipyramidal'),
-    mk('SF₆', '\\text{SF}_6', 'S', SITES[6].map((q) => ['F', q]), 'octahedral'),
-  ];
-  const M = pick(d.controls, { label: '\\text{molecule or bond}', value: 6, aria: 'the molecule or the single bond' }, MOLS.map((m) => m.name));
-  /* the labels are tiered (rule 26.7): the central atom and one bonded atom are named, since the rest are of the same kind;
-     every atom answers the pointer */
-  const K = 0.62;   /* scene units of arrow per unit of electronegativity difference */
-  function draw() {
-    const { ctx } = begin(c2);
-    const mol = MOLS[M.v];
-    v.clear();
-    molecule3(g, mol, SCALE, v);
-    /* the bond moments: from the less electronegative atom toward the more, beside the bond */
-    let sum = [0, 0, 0]; const rows = [];
-    mol.bonds.forEach(([i, j]) => {
-      const a = mol.atoms[i], b = mol.atoms[j], dEN = EN[b.sym] - EN[a.sym], [from, to] = dEN >= 0 ? [a, b] : [b, a];
-      const u = V.unit(V.sub(to.p, from.p)), mag = Math.abs(dEN); sum = V.add(sum, V.mul(u, mag));
-      rows.push({ a, b, dEN });
-      if (mag < 0.02) return;
-      const side = Math.abs(u[1]) < 0.9 ? V.unit([u[2], 0, -u[0]]) : [1, 0, 0];
-      const start = V.add(V.add(V.mul(from.p, SCALE), V.mul(u, 0.22)), V.mul(side, 0.2)), end = V.add(start, V.mul(u, mag * K));
-      /* the book's crossed tail: a short bar across the shaft makes the plus sign at the positive end */
-      const bar = V.add(start, V.mul(u, 0.06));
-      arrow3(g, start, end, 0.035, F.C('dipole-moment')); stick(g, V.sub(bar, V.mul(side, 0.08)), V.add(bar, V.mul(side, 0.08)), 0.03, F.C('dipole-moment'));
+  /* three bonds at one polar angle from the upright axis that make the given angle with one another, and two in one plane */
+  const pyramid = (angle) => { const cosA = Math.sqrt((1 + 2 * Math.cos(angle * RAD)) / 3), s = Math.sqrt(1 - cosA * cosA); return [90, 210, 330].map((az) => [s * Math.cos(az * RAD), -cosA, s * Math.sin(az * RAD)]); };
+  const bent = (angle) => [[-Math.sin(angle / 2 * RAD), -Math.cos(angle / 2 * RAD), 0], [Math.sin(angle / 2 * RAD), -Math.cos(angle / 2 * RAD), 0]];
+  const mk = (c, terms, o = {}) => ({ c, terms: terms.map(([x, u]) => ({ x, u, L: x === 'H' ? 1.05 : 1.25 })), order: o.order ?? 1, chain: o.chain });
+  const MOLS = {
+    pair: { label: 'C–H and B–F bonds', pairs: [['C', 'H'], ['B', 'F']], say: 'The difference in electronegativity is small between C and H and large between B and F, so the C–H bond moment is a short vector and the B–F bond moment a long one.' },
+    co2: { label: 'CO₂', ...mk('C', [['O', [1, 0, 0]], ['O', [-1, 0, 0]]], { order: 2 }), say: 'CO₂ is linear, and its two C=O bond moments are equal and point in opposite directions, so they cancel: the molecule is nonpolar.' },
+    h2o: { label: 'H₂O', ...mk('O', bent(104.5).map((u) => ['H', u])), say: 'H₂O is bent, so its two O–H bond moments do not cancel: the molecule is polar, and its negative end is the oxygen atom.' },
+    ocs: { label: 'OCS', ...mk('C', [['O', [-1, 0, 0]], ['S', [1, 0, 0]]], { order: 2 }), say: 'OCS is linear, but the C=O bond moment is far larger than the C=S bond moment, so they do not cancel: the molecule is polar, and its negative end is the oxygen atom.' },
+    ch3cl: { label: 'CH₃Cl', ...mk('C', SITES[4].map((u, i) => [i === 0 ? 'Cl' : 'H', u])), say: 'In CH₃Cl the C–Cl bond moment and the three C–H bond moments all point toward the chlorine end, so they add: the molecule is polar.' },
+    h2s: { label: 'H₂S', ...mk('S', bent(92).map((u) => ['H', u])), say: 'H₂S is bent, so its two S–H bond moments do not cancel: the molecule is polar, and its negative end is the sulfur atom.' },
+    nh3: { label: 'NH₃', ...mk('N', pyramid(106.8).map((u) => ['H', u])), say: 'NH₃ is trigonal pyramidal, so its three N–H bond moments do not cancel: the molecule is polar, and its negative end is the nitrogen atom.' },
+    bf3: { label: 'BF₃', ...mk('B', SITES[3].map((u) => ['F', u])), say: 'BF₃ is trigonal planar with three equal B–F bond moments 120° apart, so they cancel: the molecule is nonpolar.' },
+    ch4: { label: 'CH₄', ...mk('C', SITES[4].map((u) => ['H', u])), say: 'CH₄ is tetrahedral with four equal C–H bond moments, so they cancel: the molecule is nonpolar.' },
+    pf5: { label: 'PF₅', ...mk('P', SITES[5].map((u) => ['F', u]), { chain: [0, 2, 3, 1, 4] }), say: 'PF₅ is trigonal bipyramidal with five equal P–F bond moments, so they cancel: the molecule is nonpolar.' },
+    sf6: { label: 'SF₆', ...mk('S', SITES[6].map((u) => ['F', u]), { chain: [0, 2, 4, 1, 3, 5] }), say: 'SF₆ is octahedral with six equal S–F bond moments, so they cancel: the molecule is nonpolar.' },
+  };
+  const M = F.select(d.controls, { label: '\\text{molecule}', options: Object.keys(MOLS).map((k) => ({ value: k, label: MOLS[k].label })), value: 'h2o', aria: 'the molecule, or the two bonds of Figure 7.26', ms: 0 });
+  /* a bond moment from a to b (a the less electronegative end): shaft, head and the crossed tail that is the book's plus sign */
+  function moment(g, a, b, heavy) {
+    const cM = F.C('dipole-moment'), u = V.unit(V.sub(b, a)), w = upPerp(u), r = heavy ? 0.06 : 0.036;
+    arrowTo(g, a, b, r, cM);
+    if (!heavy) { const bar = V.add(a, V.mul(u, 0.06)); stick(g, V.sub(bar, V.mul(w, 0.1)), V.add(bar, V.mul(w, 0.1)), 0.028, cM); }
+  }
+  /* the size of a bond's moment on the scale of Figure 7.6 and the atom it points to; carbon and sulfur tie there, and
+     the text says sulfur is slightly the more electronegative, so that arrow is drawn at a least length toward sulfur */
+  function momentOf(a, b, K) { const dEN = EN[b] - EN[a], tie = Math.abs(dEN) < 0.05; return { dEN: Math.abs(dEN), to: tie ? (b === 'S' ? b : a) : dEN > 0 ? b : a, len: Math.max(0.3, Math.abs(dEN) * K), tie }; }
+  let sig = '';
+  function build(mol, id) {
+    const s = id + '|' + palSig(); if (s === sig) return; sig = s;
+    S.clear();
+    if (mol.pairs) {   /* Figure 7.26: the two bonds side by side, each with its one arrow */
+      mol.pairs.forEach(([a, b], k) => {
+        const g = k ? gB : gA, pa = [-0.6, -0.15, 0], pb = [0.6, -0.15, 0], mo = momentOf(a, b, 0.7);
+        bond3(g, pa, pb, 1, 0.07); ball(S, g, pa, a); ball(S, g, pb, b);
+        const dir = mo.to === b ? 1 : -1, y = 0.62, x0 = -dir * mo.len / 2;
+        moment(g, [x0, y, 0], [x0 + dir * mo.len, y, 0], false);
+        S.under(weak(`${a}–${b}: a difference of `) + fmt(mo.dEN, 1), g);
+      });
+      return;
+    }
+    /* left: the molecule, and beside each bond its moment, on the side away from the other bonds */
+    /* within one molecule an arrow's length follows the difference in electronegativity, the longest drawn 1.1 units long */
+    const K = 1.1 / Math.max(...mol.terms.map((t) => Math.abs(EN[t.x] - EN[mol.c])));
+    ball(S, gA, [0, 0, 0], mol.c);
+    const vecs = mol.terms.map((t, i) => {
+      const P = V.mul(t.u, t.L), mo = momentOf(mol.c, t.x, K), dir = mo.to === t.x ? 1 : -1;
+      bond3(gA, [0, 0, 0], P, Array.isArray(mol.order) ? mol.order[i] : mol.order, 0.07); ball(S, gA, P, t.x);
+      const w = upPerp(t.u), off = Math.max(rOf(mol.c), rOf(t.x)) + 0.16, mid = V.add(V.mul(t.u, t.L * 0.55), V.mul(w, off));
+      const a = V.sub(mid, V.mul(t.u, dir * mo.len / 2)), b = V.add(mid, V.mul(t.u, dir * mo.len / 2));
+      moment(gA, a, b, false);
+      return V.mul(t.u, dir * mo.len);
     });
-    const net = V.len(sum), polar = net > 0.05;
-    if (polar) { const c = mol.diatomic ? [0, 0, 0] : [0, 0, 0], u = V.unit(sum), tip = V.add(c, V.mul(u, net * K)); arrow3(g, c, tip, 0.06, F.C('dipole-moment')); }
-    mol.atoms.forEach((a, i) => { if (i > 1) return; v.label(a.sym, V.mul(a.p, SCALE), g, i === 0 && !mol.diatomic ? -52 : 0); });
-    /* the electronegativities the arrows are drawn from */
-    const seen = new Set(); let y = 130;
-    rows.forEach(({ a, b, dEN }) => { const key = a.sym + b.sym; if (seen.has(key)) return; seen.add(key); text(ctx, a.sym + '–' + b.sym + ': ' + fmt(EN[a.sym], 1) + ' and ' + fmt(EN[b.sym], 1) + ', a difference of ' + fmt(Math.abs(dEN), 1), 1360, y, PAL.ink, { size: 18, align: 'right' }); y += 30; });
-    text(ctx, 'electronegativities from Figure 7.6', 1360, y + 4, PAL.muted, { size: 16, align: 'right' });
-    if (polar && !mol.diatomic) text(ctx, 'The heavier arrow is the dipole moment of the molecule.', 40, 130, F.C('dipole-moment'), { size: 19 });
-    const one = rows[0];
-    topline(ctx, mol.diatomic ? 'In ' + (mol.whole ? 'the ' + mol.name + ' molecule' : 'the ' + mol.name + ' bond') + ' the electronegativity difference is ' + fmt(Math.abs(one.dEN), 1) + ', so its bond moment is ' + (Math.abs(one.dEN) > 1 ? 'a long' : Math.abs(one.dEN) > 0.5 ? 'a moderate' : 'a short') + ' vector pointing toward the ' + (one.dEN >= 0 ? one.b.sym : one.a.sym) + ' atom.'
-      : mol.name + ' is ' + mol.structure.split(',')[0] + ', so its ' + mol.bonds.length + ' bond moments ' + (polar ? 'do not cancel and the molecule is polar' : 'cancel and the molecule is nonpolar') + '.');
-    readout(d.readout, mol.diatomic ? `\\kmu \\propto |\\Delta\\text{EN}| = ${fmt(Math.abs(one.dEN), 2)}` : `\\left|\\sum \\vec{\\kmu}_{\\text{bond}}\\right| \\propto ${fmt(net, 2)}`,
-      mol.diatomic ? (mol.whole ? 'For a molecule of two atoms there is only one bond, so its bond dipole moment is the dipole moment of the molecule.' : 'For a single bond there is nothing to add, so the bond moment stands on its own.')
-        : rows.some((r) => Math.abs(r.dEN) < 0.02) ? 'Figure 7.6 gives carbon and sulfur the same electronegativity, so the C–S bond has no bond moment on that scale, and the whole of this dipole moment comes from the C=O bond. The text notes that sulfur is in fact very slightly the more electronegative of the two.'
-        : '');
+    /* right: the same arrows tail to tip, in an order that keeps two opposite arrows from lying on one another */
+    const order = mol.chain ?? vecs.map((_, i) => i), pts = [[0, 0, 0]];
+    order.forEach((i) => pts.push(V.add(pts[pts.length - 1], vecs[i])));
+    const lo = [0, 1, 2].map((k) => Math.min(...pts.map((p) => p[k]))), hi = [0, 1, 2].map((k) => Math.max(...pts.map((p) => p[k])));
+    const shift = V.mul(V.add(lo, hi), -0.5), Q = pts.map((p) => V.add(p, shift));
+    order.forEach((i, k) => {
+      /* an arrow that runs straight back along the one before it is set a little to one side, so both can be seen */
+      const back = k > 0 && V.dot(V.unit(vecs[i]), V.unit(vecs[order[k - 1]])) < -0.98, side = back ? V.mul(upPerp(V.unit(vecs[i])), 0.16) : [0, 0, 0];
+      moment(gB, V.add(Q[k], side), V.add(Q[k + 1], side), false);
+    });
+    const net = V.len(V.sub(Q[Q.length - 1], Q[0]));
+    if (net > 0.08) { const side = V.mul(upPerp(V.unit(V.sub(Q[Q.length - 1], Q[0]))), mol.terms.length === 2 && Math.abs(V.dot(V.unit(vecs[0]), V.unit(vecs[1]))) > 0.98 ? -0.2 : 0); moment(gB, V.add(Q[0], side), V.add(Q[Q.length - 1], side), true); }
+    S.under(weak('the bond moments of ') + mol.label, gA);
+    S.under(weak('added tail to tip: ') + (net > 0.08 ? 'a dipole moment is left' : 'they cancel'), gB);
+  }
+  function draw() {
+    const id = M.value, mol = MOLS[id];
+    build(mol, id); v.invalidate();
+    const { ctx } = begin(top);
+    topline(ctx, mol.say);
+    /* the key: the atoms of this molecule, and the two weights of arrow */
+    const syms = mol.pairs ? [...new Set(mol.pairs.flat())] : [...new Set([mol.c, ...mol.terms.map((t) => t.x)])];
+    const cM = F.C('dipole-moment');
+    const entries = syms.map(keyAtom).concat([{ s: 'bond moment', draw: (c, x, y) => { F.arrow(c, x - 20, y, x + 20, y, cM, 2.5); line(c, x - 13, y - 6, x - 13, y + 6, cM, 2.5); } }]);
+    if (!mol.pairs) entries.push({ s: 'dipole moment of the molecule', draw: (c, x, y) => F.arrow(c, x - 20, y, x + 20, y, cM, 5) });
+    const k = begin(key); keyRow(k.ctx, 60, entries);
+    /* the readout: the difference in electronegativity behind each kind of arrow, from Figure 7.6 */
+    const kinds = mol.pairs ? mol.pairs : [...new Map(mol.terms.map((t) => [t.x, [mol.c, t.x]])).values()];
+    const bondSym = (a, b) => `${a}${!mol.pairs && mol.order === 2 ? '=' : '–'}${b}`;
+    const lines = kinds.map(([a, b]) => { const hi = EN[a] >= EN[b] ? a : b, lo = hi === a ? b : a; return `\\Delta\\text{EN}_{\\text{${bondSym(a, b)}}} = ${fmt(EN[hi], 1)} - ${fmt(EN[lo], 1)} = ${fmt(EN[hi] - EN[lo], 1)}`; });
+    tex(d.readout, lines.join(' \\\\ '));
+    if (id === 'ocs') d.readout.appendChild(el('small', null, 'Figure 7.6 gives carbon and sulfur the same value. Sulfur is very slightly the more electronegative, so the C=S arrow is short and points to sulfur.'));
   }
   still(d, draw);
 })();
 
 /* =====================================================================
-   FIGURE 7.28: molecules between two plates, tumbling at random until
-   the field comes on, and then, if they are polar, turning to align.
-   Moving: the loop runs three seconds with the field off and three with
-   it on, and holds; finite, so it gets the scrubber.
+   FIGURE 7.28: molecules between two plates. With the field off they
+   point every way; when it comes on, polar HF turns its hydrogen end to
+   the negative plate, and nonpolar F2 goes on as before. Moving: three
+   seconds with the field off, three with it on, then a hold; finite, so
+   it has the transport and its scrubber. Flat, as the book draws it:
+   every molecule is seen whole and none gains from a turn.
 ===================================================================== */
 (function () {
-  const d = sim('sim-field', 560);
-  const MOLS = [['HF', 'H', 'F', true], ['F₂', 'F', 'F', false]];
-  const M = pick(d.controls, { label: '\\text{molecule}', value: 0, aria: 'the molecule between the plates', onInput: reset }, MOLS.map((m) => m[0]));
-  const N = ctl(d.controls, { label: '\\text{molecules}', cls: '', min: 6, max: 20, step: 1, value: 12, unit: '', dec: 0, aria: 'number of molecules', onInput: reset });
+  const d = sim('sim-field', 600);
+  const MOLS = { hf: { name: 'HF', a: 'H', b: 'F', polar: true }, f2: { name: 'F₂', a: 'F', b: 'F', polar: false } };
+  const M = F.choice(d.controls, { label: '\\text{molecule}', options: [{ value: 'hf', label: 'HF, polar' }, { value: 'f2', label: 'F₂, nonpolar' }], value: 'hf', aria: 'the molecule between the plates', ms: 0, onInput: () => cy.reset() });
   const T = 6, ON = 3, cy = cycle(() => T, 1.5);
-  function reset() { cy.reset(); }
   let hits = []; F.hover(d.stage, () => hits);
   function rng(seed) { let s = seed >>> 0; return () => { s += 0x6D2B79F5; let z = s; z = Math.imul(z ^ (z >>> 15), z | 1); z ^= z + Math.imul(z ^ (z >>> 7), z | 61); return ((z ^ (z >>> 14)) >>> 0) / 4294967296; }; }
-  /* the molecules' places and their random tumbling, fixed by the seed so a replay repeats */
-  function layout(n) {
-    const r = rng(7 + n), out = [], cols = Math.ceil(Math.sqrt(n * 1.8)), rows = Math.ceil(n / cols);
-    for (let i = 0; i < n; i++) {
-      const cx = 360 + ((i % cols) + 0.5) * (680 / cols) + (r() - 0.5) * 40, cyy = 150 + (Math.floor(i / cols) + 0.5) * (300 / rows) + (r() - 0.5) * 30;
-      out.push({ x: cx, y: cyy, th0: r() * TAU, w: (r() - 0.5) * 2.2, ph: r() * TAU, amp: 0.4 + 0.5 * r() });
-    }
-    return out;
-  }
+  /* eight molecules in two staggered rows, their random turning fixed by the seed so that a replay repeats */
+  const SPOTS = (() => { const r = rng(11), out = []; for (let i = 0; i < 8; i++) { const col = i % 4, row = Math.floor(i / 4); out.push({ x: 430 + col * 180 + (row ? 60 : 0) + (r() - 0.5) * 36, y: 210 + row * 170 + (r() - 0.5) * 44, th0: r() * TAU, w: (r() - 0.5) * 2.0, ph: r() * TAU, amp: 0.4 + 0.5 * r() }); } return out; })();
   const tumble = (m, tau) => m.th0 + m.w * tau + m.amp * Math.sin(1.7 * tau + m.ph);
   const norm = (a) => Math.atan2(Math.sin(a), Math.cos(a));
+  const X0 = 250, X1 = 1150, PW = 30, Y0 = 110, Y1 = 470;
   function draw() {
     const { ctx } = begin(d.c);
-    const [name, A, B, polar] = MOLS[M.v], n = N.v, tau = cy.now(), on = tau >= ON, mols = layout(n);
-    /* the plates */
+    const m = MOLS[M.value], tau = cy.now(), on = tau >= ON;
     const cNeg = F.ref('negative-plate'), cPos = F.ref('positive-plate'), cQ = F.C('charge');
-    [[300, cNeg], [1066, cPos]].forEach(([x, c]) => { ctx.save(); ctx.fillStyle = alpha(c, 0.3); ctx.strokeStyle = c; ctx.lineWidth = 3; ctx.fillRect(x, 110, 34, 360); ctx.strokeRect(x, 110, 34, 360); ctx.restore(); });
-    text(ctx, on ? '−' : '', 317, 96, cNeg, { size: 30, weight: 600, align: 'center' }); text(ctx, on ? '+' : '', 1083, 96, cPos, { size: 30, weight: 600, align: 'center' });
-    text(ctx, on ? 'negative plate' : 'plate', 317, 496, cNeg, { size: 17, align: 'center' }); text(ctx, on ? 'positive plate' : 'plate', 1083, 496, cPos, { size: 17, align: 'center' });
-    if (on) for (let k = 0; k < 6; k++) { const y = 140 + k * 60; arrow(ctx, 1060, y, 342, y, alpha(PAL.ink, 0.22), 2); }
-    /* the molecules: A at the tail end, B at the head end, along the angle th; when the field is on a polar one turns its A end to the negative plate */
+    /* the field fills the space between the plates while it is on */
+    if (on) { ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.06); ctx.fillRect(X0 + PW, Y0, X1 - X0 - PW, Y1 - Y0); ctx.restore(); }
+    [[X0, cNeg], [X1, cPos]].forEach(([x, c]) => { ctx.save(); ctx.fillStyle = alpha(c, on ? 0.45 : 0.18); ctx.strokeStyle = c; ctx.lineWidth = 3; ctx.fillRect(x, Y0, PW, Y1 - Y0); ctx.strokeRect(x, Y0, PW, Y1 - Y0); ctx.restore(); });
+    if (on) { text(ctx, '−', X0 - 34, Y0 + 24, cNeg, { size: 44, weight: 600, align: 'center' }); text(ctx, '+', X1 + PW + 34, Y0 + 24, cPos, { size: 40, weight: 600, align: 'center' }); }
+    text(ctx, on ? 'negative plate' : 'plate', X0 + PW / 2, Y1 + 28, cNeg, { size: 20, align: 'center' }); text(ctx, on ? 'positive plate' : 'plate', X1 + PW / 2, Y1 + 28, cPos, { size: 20, align: 'center' });
+    text(ctx, on ? 'electric field on' : 'electric field off', 700, Y1 + 28, on ? PAL.ink : PAL.muted, { size: 20, align: 'center' });
+    /* the molecules, space-filling as the book draws them: a (hydrogen in HF) carries δ+, and with the field on a polar
+       molecule turns that end toward the negative plate on the left and keeps a slight tremble */
     hits = [];
-    mols.forEach((m, i) => {
-      let th = tumble(m, tau);
-      /* A carries the partial positive charge, and it is drawn at the tail end, to the left; the field pulls it toward the
-         negative plate on the left, so the molecule settles at th = 0 rather than at th = π (rule: check it by eye) */
-      if (on && polar) { const th3 = norm(tumble(m, ON)), k = 1 - Math.exp(-3.2 * (tau - ON)); th = th3 + norm(-th3) * k; }
-      const half = 26, ax = m.x - Math.cos(th) * half, ay = m.y - Math.sin(th) * half, bx = m.x + Math.cos(th) * half, by = m.y + Math.sin(th) * half;
-      line(ctx, ax, ay, bx, by, PAL.ink, 4);
-      atom(ctx, bx, by, B, 15); atom(ctx, ax, ay, A, A === 'H' ? 11 : 15);
-      const nm = { H: 'hydrogen', F: 'fluorine' }, q = (s, end) => (polar ? `, the ${end} end` : '');
-      hits.push({ x: ax, y: ay, r: 16, name: `a ${nm[A]} atom${q(A, 'δ+')}` }, { x: bx, y: by, r: 16, name: `a ${nm[B]} atom${q(B, 'δ−')}` });
-      /* the partial charges are named on one molecule, a representative of the kind (rule 26.7) */
-      if (polar && i === 0) { text(ctx, 'δ+', ax - Math.cos(th) * 22, ay - Math.sin(th) * 22, cQ, { size: 14, weight: 600, align: 'center' }); text(ctx, 'δ−', bx + Math.cos(th) * 22, by + Math.sin(th) * 22, cQ, { size: 14, weight: 600, align: 'center' }); }
+    const R = { H: 21, F: 31 }, half = 19;
+    SPOTS.forEach((sp, i) => {
+      let th = tumble(sp, tau);
+      if (on && m.polar) { const th3 = norm(tumble(sp, ON)), k = 1 - Math.exp(-3.2 * (tau - ON)); th = th3 + norm(Math.PI - th3) * k + 0.07 * k * Math.sin(5 * tau + sp.ph); }
+      const ax = sp.x + Math.cos(th) * half, ay = sp.y + Math.sin(th) * half, bx = sp.x - Math.cos(th) * half, by = sp.y - Math.sin(th) * half;
+      atom(ctx, ax, ay, m.a, R[m.a]); atom(ctx, bx, by, m.b, R[m.b]);
+      hits.push({ x: bx, y: by, r: R[m.b], name: m.polar ? 'fluorine atom, the δ− end' : 'fluorine atom' }, { x: ax, y: ay, r: R[m.a], name: m.polar ? 'hydrogen atom, the δ+ end' : 'fluorine atom' });
+      /* the partial charges are written on one molecule, for the kind (rule 26.7); the pointer names the rest */
+      if (m.polar && i === 0) { text(ctx, 'δ+', ax + Math.cos(th) * (R.H + 20), ay + Math.sin(th) * (R.H + 20), cQ, { size: 22, weight: 600, align: 'center' }); text(ctx, 'δ−', bx - Math.cos(th) * (R.F + 20), by - Math.sin(th) * (R.F + 20), cQ, { size: 22, weight: 600, align: 'center' }); }
     });
-    text(ctx, on ? 'electric field on' : 'no electric field', 700, 496, PAL.ink, { size: 19, weight: 600, align: 'center' });
-    text(ctx, name + (polar ? ': the fluorine end carries δ− and the hydrogen end δ+' : ': two fluorine atoms, no difference in electronegativity, no dipole moment'), 700, 526, PAL.muted, { size: 17, align: 'center' });
-    const aligned = on && polar && tau - ON > 1.2;
-    topline(ctx, !on ? 'At t = ' + fmt(tau, 1) + ' s the field is off and the ' + name + ' molecules lie at random, as they always do in the liquid.'
-      : polar ? (aligned ? 'The field is on, and every HF molecule has turned its hydrogen end toward the negative plate and its fluorine end toward the positive one.' : 'At t = ' + fmt(tau, 1) + ' s the field is on and the HF molecules are turning to align with it.')
-      : 'The field is on, but F₂ has no dipole moment, so the molecules go on tumbling as before.');
-    readout(d.readout, polar ? '\\text{H}^{\\delta+}\\text{–F}^{\\delta-}' : '\\text{F–F}',
-      polar ? '' : 'A nonpolar molecule has no positive and negative ends for the field to pull on, so it is not aligned and not attracted.');
+    F.legend(ctx, { l: 60, r: 1340, t: Y1 + 52, b: 600 }, m.polar ? [{ s: 'hydrogen, δ+', draw: (c, x, y) => atom(c, x, y, 'H', 8) }, { s: 'fluorine, δ−', draw: (c, x, y) => atom(c, x, y, 'F', 11) }] : [keyAtom('F')], { corner: 'top', row: true, panel: false, size: 20 });
+    const turned = on && m.polar && tau - ON > 1.2;
+    topline(ctx, !on ? 'With the field off, the ' + m.name + ' molecules point every way.'
+      : !m.polar ? 'The field is on, but F₂ has no dipole moment, so its molecules go on as before.'
+      : turned ? 'The field is on, and every HF molecule has turned its hydrogen end toward the negative plate.'
+      : 'The field has come on, and the HF molecules are turning.');
+    tex(d.readout, m.polar ? '\\kmu = \\kQpart\\krbond > 0' : '\\kmu = \\kQpart\\krbond = 0');
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();

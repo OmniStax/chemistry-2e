@@ -23,6 +23,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -47,6 +50,14 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "fixed: larger molecule, legend, tidier sums, short caption"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: larger molecule beside a valence − counted = charge table"
     }
    ]
   }

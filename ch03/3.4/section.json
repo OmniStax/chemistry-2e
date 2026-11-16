@@ -26,6 +26,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -61,6 +64,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "short dropdown labels, readout symbols, marker under tick labels"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: named solutions, a numbered stretch per unit, true mass sliders"
     }
    ]
   },

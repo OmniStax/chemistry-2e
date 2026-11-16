@@ -17,7 +17,7 @@ Proposed by the agent after the chapter exploration (2026-09-28). Status: applie
 | Figure numbers | the publisher's, 11.1 to 11.37, listed per section in `exploration.md` and checked on openstax.org |
 | Figures | diagrams and graphs become interactive Figures with the book's numbers where a slider, a choice or a clock teaches; faithful stills where they do not; folds are each section's call, candidates in `exploration.md` |
 | Photographs | Figure 11.1 (intro) and every photograph listed in `exploration.md`, all kept, since the text points at each |
-| 3D | particle pictures (11.3, 11.7, 11.18, 11.28) are 3D boxes with a flat strip of readings; apparatus (11.6, 11.24, 11.25, 11.36) is a 3D bench with a bounded orbit; named structures (11.31–11.32) carry the 2D/3D view choice, 2D by default, while 11.33 is flat (the book's cross section) and 11.34(c) stays inside its photograph; graphs, the phase diagram, energy steps and the red cells stay flat |
+| 3D | none since 2026-11-14: every figure of the chapter is flat. The particle pictures (11.3, 11.7, 11.18) and the apparatus (11.6, 11.24 + 11.25, 11.36) were redrawn flat from the book's images, since every particle must be seen and none of them gains from a turn; 11.28, the book's image after that pass, is a flat figure again since 2026-11-16; 11.31 + 11.32 lost its 2D/3D view choice, since turning the chain teaches nothing the drawing lacks; 11.33 is flat (the book's cross section) and 11.34(c) stays inside its photograph |
 | Motion | per figure in its plan line; clocks are natural for mixing (11.3), dissolving (11.7), evaporation to equilibrium (11.18) and osmosis rising to its height (11.24); graphs and structures are still, with no transport |
 | Colour | `concentration`, `pressure`, `temperature`, `energy` in 11.1's steps where drawn as a quantity, `amount` and `mass` where a readout states them, `time` where a clock is drawn; everything else ink, the element palette or `F.cat`; see `COLOR.md` |
 | Symbols | eighteen rows added: typed `C_g` `\kCg`, `m_molal` `\kmolal` (concentration); `P_g` `\kPg`, `P_A*` `\kPAstar`, `P_i` `\kPcomp`, `P_i*` `\kPcompstar`, `P_solution` `\kPsoln`, `P_solvent*` `\kPsolvstar`, `ΔP_vp` `\kdPvp`, `Π` `\kosm` (pressure); `ΔT_b` `\kdTb`, `ΔT_f` `\kdTf` (temperature); untyped `k_H`, `X_i`, `X_solvent`, `K_b`, `K_f`, `i_vh`; reused `M`, `P_A`, `X_A`, `R`, `T`, `n`, `m` (mass only); no new type |
@@ -38,11 +38,13 @@ Proposed by the agent after the chapter exploration (2026-09-28). Status: applie
 
 ## What the build changed
 
-- Folds: Figures 11.24 + 11.25 (osmosis, with an applied pressure that runs past Π into reverse osmosis) and 11.31 + 11.32 (one amphiphile with a choice of head group). 11.18 and 11.23 stay two figures. Every number from 11.1 to 11.37 is shown and linked.
-- Sims added: the Lake Nyos turnover (11.3) and the Tyndall glass (11.5), each labelled Sim.
+- Folds: Figures 11.24 + 11.25 (osmosis, with an applied pressure that runs past Π into reverse osmosis) and 11.31 + 11.32 (one amphiphile with a slider for the chain length and a choice of ionic end). 11.18 and 11.23 stay two figures. Every number from 11.1 to 11.37 is shown and linked.
+- Sims added: the Lake Nyos turnover (11.3) and the Tyndall beam through three beakers (11.5), each labelled Sim.
 - Unnumbered images kept as figure rows with no number: 11.2's hydronium image, 11.3's ammonia image (`CNX_Chem_11_02_ammonia1_img.jpg`), and the six step diagrams of 11.4's examples.
 - 3D: 11.33 is flat, the book's own cross section, and 11.34(c) stays inside the photograph, a molecule merely named (rule 24.9).
-- Colour: 11.1 binds `energy` only; 11.4 binds no `amount`, `mass` or `time`; see `COLOR.md`, "As built".
+- Figure pass, 2026-11-14: every 3D scene redrawn flat from the book's image (11.3, 11.6, 11.7, 11.18, 11.24 + 11.25, 11.36) or dropped (the view choice of 11.31 + 11.32); 11.23 redrawn as the book's sketch; 11.27 now runs the water's crossing over time; Figure 11.28 reverted to the book's image, its referent `box` dropped.
+- Second figure pass, 2026-11-16: every drawn figure rebuilt; Figure 11.28 is a figure again, flat; the referents `power-supply` (11.6), `butterfat`, `mud` and `glass` (the Tyndall Sim) and `hopper` (11.36) dropped.
+- Colour: 11.1 binds `energy` only; 11.4 binds no `amount` or `mass`, and `time` only on the time axes of 11.24 + 11.25 and 11.28; see `COLOR.md`.
 - Anchors, set at the chapter pass: Henry's law and its three variables to 11.3's henry heading; 11.4's nine equations and twenty variables to its molality, vapor, phase, boiling, freezing, osmosis and electrolytes headings.
 
 - Prerequisites, 2026-10-05: the concept-prerequisite edges were Hasse-reduced from 166 to 129.

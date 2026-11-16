@@ -34,6 +34,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -43,18 +46,9 @@
  "figures": [
   {
    "id": "sim-formaldehyde",
-   "kind": "sim",
+   "kind": "photo",
    "number": "7.14",
-   "originals": [
-    "/media/ch07/CNX_Chem_07_06_CH2O.jpg"
-   ],
-   "original_caption": "Bond distances (lengths) and angles are shown for the formaldehyde molecule, H₂CO.",
-   "draws": ["angle", "length"],
-   "conventions": [
-    "C",
-    "O",
-    "H"
-   ],
+   "draws": [],
    "ai": [
     {
      "model": "claude-fable-5-1",
@@ -70,18 +64,18 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: notes repeating caption and headline dropped, atom labels closer"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image"
     }
    ]
   },
   {
    "id": "fig-bef2",
-   "kind": "figure",
+   "kind": "photo",
    "number": "7.15",
-   "originals": [
-    "/media/ch07/CNX_Chem_07_06_BeF2.jpg"
-   ],
-   "original_caption": "The BeF₂ molecule adopts a linear structure in which the two bonds are as far apart as possible, on opposite sides of the Be atom.",
-   "draws": ["angle"],
+   "draws": [],
    "ai": [
     {
      "model": "claude-fable-5-1",
@@ -97,6 +91,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: note that repeated the caption dropped"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image"
     }
    ]
   },
@@ -114,7 +112,9 @@
     "/media/ch07/CNX_Chem_07_06_Axeq.jpg"
    ],
    "original_caption": "(Figure 7.16) The basic electron-pair geometries predicted by VSEPR theory maximize the space around any region of electron density (bonds or lone pairs). (Figure 7.19) The molecular structures are identical to the electron-pair geometries when there are no lone pairs present (first column). For a particular number of electron pairs (row), the molecular structures for one or more lone pairs are determined based on modifications of the corresponding electron-pair geometry. (Figure 7.20) (a) In a trigonal bipyramid, the two axial positions are located directly across from one another, whereas the three equatorial positions are located in a triangular arrangement. (b–d) The two lone pairs (red lines) in ClF₃ have several possible arrangements, but the T-shaped molecular structure (b) is the one actually observed, consistent with the larger lone pairs both occupying equatorial positions.",
-   "draws": ["angle"],
+   "draws": [
+    "angle"
+   ],
    "ai": [
     {
      "model": "claude-fable-5-1",
@@ -130,13 +130,20 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: sketch sites apart, camera back, name lines and ClF3 row fixed"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: larger scene, key, the book's angle marks, no view buttons"
     }
    ]
   },
   {
    "id": "sim-domains",
    "kind": "sim",
-   "draws": ["angle", "time"],
+   "draws": [
+    "angle",
+    "time"
+   ],
    "ai": [
     {
      "model": "claude-fable-5-1",
@@ -152,12 +159,16 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: camera back, graph clear of headline, repeated notes dropped"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "fixed: larger scene, key, labels off the atoms, choices, short caption"
     }
    ]
   },
   {
    "id": "fig-methane",
-   "kind": "figure",
+   "kind": "sim",
    "number": "7.17",
    "originals": [
     "/media/ch07/CNX_Chem_07_06_CH4.jpg"
@@ -179,18 +190,28 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: fourth hydrogen drawn apart from the third, note dropped"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: a model whose wedge and dash drawing follows as it turns"
     }
+   ],
+   "conventions": [
+    "C",
+    "H"
    ]
   },
   {
    "id": "fig-ammonia",
-   "kind": "figure",
+   "kind": "sim",
    "number": "7.18",
    "originals": [
     "/media/ch07/CNX_Chem_07_06_NH3.jpg"
    ],
    "original_caption": "(a) The electron-pair geometry for the ammonia molecule is tetrahedral with one lone pair and three single bonds. (b) The trigonal pyramidal molecular structure is determined from the electron-pair geometry. (c) The actual bond angles deviate slightly from the idealized angles because the lone pair takes up a larger region of space than do the single bonds, causing the HNH angle to be slightly smaller than 109.5°.",
-   "draws": ["angle"],
+   "draws": [
+    "angle"
+   ],
    "conventions": [
     "N",
     "H"
@@ -210,15 +231,16 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: panel letters replace colliding captions, repeated note dropped"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: two models that turn together, regions and atoms, 106.8° marked"
     }
    ]
   },
   {
    "id": "fig-lewis-co2",
    "kind": "figure",
-   "originals": [
-    "/media/ch07/CNX_Chem_07_06_CO2_img.jpg"
-   ],
    "draws": [],
    "ai": [
     {
@@ -230,15 +252,16 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image"
     }
    ]
   },
   {
    "id": "fig-lewis-bcl3",
    "kind": "figure",
-   "originals": [
-    "/media/ch07/CNX_Chem_07_06_BCl3_img.jpg"
-   ],
    "draws": [],
    "ai": [
     {
@@ -250,17 +273,18 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image"
     }
    ]
   },
   {
    "id": "fig-bcl3",
-   "kind": "figure",
+   "kind": "photo",
    "number": "7.21",
-   "originals": [
-    "/media/ch07/CNX_Chem_07_06_BCl3mol.jpg"
-   ],
-   "draws": ["angle"],
+   "draws": [],
    "ai": [
     {
      "model": "claude-fable-5-1",
@@ -276,15 +300,16 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: note that repeated the caption dropped"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image"
     }
    ]
   },
   {
    "id": "fig-lewis-nh4",
    "kind": "figure",
-   "originals": [
-    "/media/ch07/CNX_Chem_07_06_NH4_img.jpg"
-   ],
    "draws": [],
    "ai": [
     {
@@ -296,17 +321,17 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image"
     }
    ]
   },
   {
    "id": "fig-ammonium",
-   "kind": "figure",
+   "kind": "photo",
    "number": "7.22",
-   "originals": [
-    "/media/ch07/CNX_Chem_07_06_NH4mol.jpg"
-   ],
-   "original_caption": "The ammonium ion displays a tetrahedral electron-pair geometry as well as a tetrahedral molecular structure.",
    "draws": [],
    "ai": [
     {
@@ -323,15 +348,16 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: fourth hydrogen drawn apart, repeated note dropped"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image"
     }
    ]
   },
   {
    "id": "fig-lewis-h2o",
    "kind": "figure",
-   "originals": [
-    "/media/ch07/CNX_Chem_07_06_H2O_img.jpg"
-   ],
    "draws": [],
    "ai": [
     {
@@ -343,18 +369,24 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image"
     }
    ]
   },
   {
    "id": "fig-water",
-   "kind": "figure",
+   "kind": "sim",
    "number": "7.23",
    "originals": [
     "/media/ch07/CNX_Chem_07_06_H2Omol.jpg"
    ],
    "original_caption": "(a) H₂O has four regions of electron density around the central atom, so it has a tetrahedral electron-pair geometry. (b) Two of the electron regions are lone pairs, so the molecular structure is bent.",
-   "draws": [],
+   "draws": [
+    "angle"
+   ],
    "conventions": [
     "O",
     "H"
@@ -374,15 +406,16 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: panel letters replace repeated captions, note trimmed"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: two models that turn together, regions and atoms, 104.5° marked"
     }
    ]
   },
   {
    "id": "fig-lewis-sf4",
    "kind": "figure",
-   "originals": [
-    "/media/ch07/CNX_Chem_07_06_SF4_img.jpg"
-   ],
    "draws": [],
    "ai": [
     {
@@ -394,12 +427,16 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image"
     }
    ]
   },
   {
    "id": "fig-sf4",
-   "kind": "figure",
+   "kind": "sim",
    "number": "7.24",
    "originals": [
     "/media/ch07/CNX_Chem_07_06_SF4mol.jpg"
@@ -425,15 +462,16 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: panel letters replace captions that repeated the figure caption"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: two models that turn together, regions and atoms"
     }
    ]
   },
   {
    "id": "fig-lewis-xef4",
    "kind": "figure",
-   "originals": [
-    "/media/ch07/CNX_Chem_07_06_XeF4_img.jpg"
-   ],
    "draws": [],
    "ai": [
     {
@@ -445,18 +483,24 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image"
     }
    ]
   },
   {
    "id": "fig-xef4",
-   "kind": "figure",
+   "kind": "sim",
    "number": "7.25",
    "originals": [
     "/media/ch07/CNX_Chem_07_06_XEF4mol.jpg"
    ],
    "original_caption": "(a) XeF₄ adopts an octahedral arrangement with two lone pairs (red lines) and four bonds in the electron-pair geometry. (b) The molecular structure is square planar with the lone pairs directly across from one another.",
-   "draws": [],
+   "draws": [
+    "angle"
+   ],
    "conventions": [
     "Xe",
     "F"
@@ -476,15 +520,16 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: panel letters replace repeated captions, note dropped"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: two models that turn together, regions and atoms, 90° marked"
     }
    ]
   },
   {
    "id": "fig-lewis-glycine",
    "kind": "figure",
-   "originals": [
-    "/media/ch07/CNX_Chem_07_06_gly_img.jpg"
-   ],
    "draws": [],
    "ai": [
     {
@@ -496,15 +541,16 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image"
     }
    ]
   },
   {
    "id": "fig-glycine-3d",
    "kind": "figure",
-   "originals": [
-    "/media/ch07/CNX_Chem_07_06_gly3D_img.jpg"
-   ],
    "draws": [],
    "ai": [
     {
@@ -521,6 +567,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: note that repeated the caption dropped"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image"
     }
    ]
   },
@@ -536,7 +586,9 @@
     "/media/ch07/CNX_Chem_07_06_CO2H2Odip.jpg"
    ],
    "original_caption": "(Figure 7.26) (a) There is a small difference in electronegativity between C and H, represented as a short vector. (b) The electronegativity difference between B and F is much larger, so the vector representing the bond moment is much longer. (Figure 7.27) The overall dipole moment of a molecule depends on the individual bond dipole moments and how they are arranged. (a) Each CO bond has a bond dipole moment, but they point in opposite directions so that the net CO₂ molecule is nonpolar. (b) In contrast, water is polar because the OH bond moments do not cancel out.",
-   "draws": ["dipole-moment"],
+   "draws": [
+    "dipole-moment"
+   ],
    "conventions": [
     "C",
     "O",
@@ -563,21 +615,17 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: crossed tails for plus signs, legend line, repeated notes dropped"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: bond moments beside the molecule and added tail to tip, key"
     }
    ]
   },
   {
    "id": "fig-ocs",
    "kind": "figure",
-   "originals": [
-    "/media/ch07/CNX_Chem_07_06_OSC_img.jpg"
-   ],
-   "draws": ["dipole-moment"],
-   "conventions": [
-    "O",
-    "C",
-    "S"
-   ],
+   "draws": [],
    "ai": [
     {
      "model": "claude-fable-5-1",
@@ -593,16 +641,17 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: note that repeated the caption dropped"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image"
     }
    ]
   },
   {
    "id": "fig-chloromethane",
    "kind": "figure",
-   "originals": [
-    "/media/ch07/CNX_Chem_07_06_CHCl3_img.jpg"
-   ],
-   "draws": ["dipole-moment"],
+   "draws": [],
    "ai": [
     {
      "model": "claude-fable-5-1",
@@ -618,16 +667,17 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: fourth hydrogen drawn apart, repeated side notes dropped"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image"
     }
    ]
   },
   {
    "id": "fig-h2s-nh3",
    "kind": "figure",
-   "originals": [
-    "/media/ch07/CNX_Chem_07_06_SH2NH3_img.jpg"
-   ],
-   "draws": ["charge"],
+   "draws": [],
    "ai": [
     {
      "model": "claude-fable-5-1",
@@ -638,6 +688,10 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "reverted to the book's image"
     }
    ]
   },
@@ -649,7 +703,9 @@
     "/media/ch07/CNX_Chem_07_06_Dipolfield.jpg"
    ],
    "original_caption": "(a) Molecules are always randomly distributed in the liquid state in the absence of an electric field. (b) When an electric field is applied, polar molecules like HF will align to the dipoles with the field direction.",
-   "draws": ["charge"],
+   "draws": [
+    "charge"
+   ],
    "conventions": [
     "H",
     "F"
@@ -669,6 +725,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "review: one representative δ pair, hover names, repeated note dropped"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: space-filling molecules as the book draws them, one control, key"
     }
    ]
   }
@@ -1378,7 +1438,7 @@
     "at": "end"
    },
    "cite": "geometries",
-   "prompt": "Build a molecule on the bench of Figure 7.16. Starting with the central atom, count one double bond, one single bond and one lone pair as its regions of electron density, and set the sliders to match. Turn the molecule to observe the complete geometry. Name the electron-pair geometry and molecular structure and predict the bond angle. Then read the two names and the ideal angle beneath the drawing to check your answers.",
+   "prompt": "Build a molecule on the bench of Figure 7.16. Starting with the central atom, count one double bond, one single bond and one lone pair as its regions of electron density, and set the controls to match. Turn the molecule to observe the complete geometry. Name the electron-pair geometry and molecular structure and predict the bond angle. Then read the two names and the ideal angle the bench gives to check your answers.",
    "answer": {
     "type": "open",
     "generated_by": "ai",

@@ -22,6 +22,9 @@
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-fable-5-2"
       }
     ]
   },
@@ -42,6 +45,14 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "fixed: larger bars, names beneath, shorter headline and caption"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt: the sum laid tail to head; sizes against T with the gap"
         }
       ]
     }

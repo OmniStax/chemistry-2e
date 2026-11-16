@@ -1,7 +1,7 @@
 /* Figures for section 15.3 Coupled Equilibria. Boots against the section's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['15.3'] = function (root, F) {
-const { C, PAL, alpha, ctl, register, begin, line, text, topline } = F;
+const { C, PAL, alpha, ctl, register, begin, line, text, topline, dot } = F;
 const sim = (id, H) => F.sim(root, id, H);
 const still = (d, draw) => register(d.fig, { update: () => {}, draw });
 const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
@@ -13,7 +13,7 @@ const pow10 = (k) => (k === 0 ? '1' : k === 1 ? '10' : '10' + sup(k));
 /* x to two significant figures: plain from 0.01 to below 100, otherwise m × 10ⁿ */
 function sig(x) {
   let e = Math.floor(Math.log10(x));
-  if (e >= -2 && e < 2) return { plain: String(Number(x.toPrecision(2))) };
+  if (e >= -2 && e < 2) return { plain: x.toPrecision(2) };
   let m = (x / 10 ** e).toFixed(1);
   if (+m >= 10) { e += 1; m = (x / 10 ** e).toFixed(1); }
   return { m, e };
@@ -23,164 +23,113 @@ const sigText = (x) => { const s = sig(x); return s.plain ?? `${s.m} × 10${sup(
 const sigTex = (x) => { const s = sig(x); return s.plain ?? `${s.m} \\times 10^{${s.e}}`; };
 
 /* =====================================================================
-   SIM: the solubility of Al(OH)₃ against pH, with the book's constants:
-   K_sp = 2 × 10⁻³² and, for Al(OH)₃ + OH⁻ ⇌ Al(OH)₄⁻, K = K_sp K_f = 22.
-   In a solution held at one pH, [Al³⁺] = K_sp/[OH⁻]³ (Example 15.15) and
-   [Al(OH)₄⁻] = K[OH⁻]; the molar solubility is their sum, and [OH⁻] comes
-   from pOH = 14.00 − pH. On log axes the two are lines of slope −3 and +1
-   that cross at pH 5.74, where the sum is lowest, 2.4 × 10⁻⁷ M. Axes fixed:
-   pH 2 to 14, the slider's 3 to 13 with a unit of headroom each side;
-   concentration 10⁻¹² to 10² M, since the sum reaches 20 M at pH 3 and
-   2.2 M at pH 13, so the point never leaves the box. Still: equilibrium
-   at a set pH has no clock.
+   SIM: a sample of Al(OH)₃ in a buffered solution, and its solubility
+   against pH, with the book's constants: K_sp = 2 × 10⁻³² and, for
+   Al(OH)₃ + OH⁻ ⇌ Al(OH)₄⁻, K = K_sp K_f = 22. At a pH the buffer holds,
+   [Al³⁺] = K_sp/[OH⁻]³ (Example 15.15) and [Al(OH)₄⁻] = K[OH⁻]; the
+   molar solubility is their sum, and [OH⁻] comes from pOH = 14.00 − pH.
+   On log axes the two are lines of slope −3 and +1 that cross at pH 5.74;
+   the sum is least just above, 2.1 × 10⁻⁷ M at pH 5.86, where
+   3K_sp/[OH⁻]⁴ = K. The beaker holds 1.0 × 10⁻³ mol of the solid in
+   1.00 L (the sample is the figure's own, chosen so that the buffer of
+   Example 15.15 dissolves a visible part of it); one mark is 5 × 10⁻⁵ mol.
+   Axes fixed: pH 3 to 13, concentration 10⁻¹⁰ to 1 M; the slider runs
+   3.50 to 12.50, where the sum is 0.63 M and 0.70 M, so the point never
+   leaves the box. Still: equilibrium at a set pH has no clock.
 ===================================================================== */
 (function () {
-  const H = 560, d = sim('sim-solubility-ph', H);
+  const H = 690, d = sim('sim-solubility-ph', H);
   const KSP = 2e-32, K = 22, LKSP = Math.log10(KSP), LK = Math.log10(K);
-  const pH = ctl(d.controls, { label: '\\kpH', cls: 'concentration', key: 'pH', min: 3, max: 13, step: 0.01, value: 4.74, unit: '', dec: 2,
-    aria: 'the pH of the buffered solution', detents: [{ v: 4.74, label: 'acetate buffer' }] });
+  const C0 = 1e-3, MARKS = 20;                       /* the sample, mol in 1.00 L, and the marks it is drawn as */
+  const PMIN = 14 + Math.log10(3 * KSP / K) / 4;     /* the pH of least solubility, 5.86 */
+  const pH = ctl(d.controls, { label: '\\kpH', cls: 'concentration', key: 'pH', min: 3.5, max: 12.5, step: 0.01, value: 4.74, unit: '', dec: 2,
+    aria: 'the pH of the buffered solution', detents: [{ v: 4.74, label: 'Example 15.15' }, { v: 5.86, label: 'lowest' }] });
   const ro = F.readout(d);
   let hits = [];
   F.hover(d.stage, () => hits);
-  const G = { l: 210, r: 1250, t: 130, b: 450 };
+  const G = { l: 150, r: 900, t: 150, b: 560 };
   const la = (p) => LKSP + 3 * (14 - p);          /* log [Al³⁺] */
   const lb = (p) => LK - (14 - p);                 /* log [Al(OH)₄⁻] */
   const ls = (p) => Math.log10(10 ** la(p) + 10 ** lb(p));
-  const L0 = -12;   /* log₁₀ of the concentration less L0, so the frame has no zero line inside it */
+  const L0 = -10;   /* log₁₀ of the concentration less L0, so the frame has no zero line inside it */
+  /* the beaker: inner walls, rim, base, the solution's surface */
+  const BL = 1060, BR = 1330, RIM = 196, BASE = 540, LEVEL = 262;
+  const DOTS = []; for (let r = 0; r < 4; r++) for (let c = 0; c < 5; c++) DOTS.push([BL + 38 + c * 48.5 + ((r * 7 + c * 3) % 5) * 4 - 8, LEVEL + 34 + r * 40 + ((c * 5 + r * 2) % 4) * 5 - 7]);
+  const ORDER = DOTS.map((_, i) => (i * 7) % MARKS);
+  /* the settled solid: a layer of 11 lumps across the bottom and 9 on top of it, each [x, y, r], filled from the middle outward */
+  const HEAP = [];
+  [11, 9].forEach((n, r) => { const mid = (n - 1) / 2; Array.from({ length: n }, (_, c) => c).sort((a, b) => Math.abs(a - mid) - Math.abs(b - mid)).forEach((c) => HEAP.push([(BL + BR) / 2 + (c - mid) * 23.4 + ((c * 3 + r) % 3) - 1, BASE - 13 - r * 19 - ((c * 5 + r * 2) % 3), 10 + ((c * 7 + r * 3) % 4) * 0.7])); });
+  function beakerPath(ctx) {
+    ctx.beginPath(); ctx.moveTo(BL - 16, RIM - 6); ctx.quadraticCurveTo(BL - 2, RIM - 4, BL, RIM + 12); ctx.lineTo(BL, BASE - 16); ctx.quadraticCurveTo(BL, BASE, BL + 16, BASE); ctx.lineTo(BR - 16, BASE); ctx.quadraticCurveTo(BR, BASE, BR, BASE - 16); ctx.lineTo(BR, RIM + 8); ctx.quadraticCurveTo(BR, RIM - 2, BR + 8, RIM - 4);
+  }
+  const lump = (ctx, x, y, fill, r = 10.5) => { ctx.save(); ctx.fillStyle = fill; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 1.4; ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore(); };
+  const ion = (ctx, x, y, fill) => { ctx.save(); ctx.fillStyle = fill; ctx.beginPath(); ctx.arc(x, y, 7.5, 0, TAU); ctx.fill(); ctx.restore(); };
   function draw() {
     const { ctx } = begin(d.c);
-    const cC = C('concentration'), cA = F.ref('al-ion'), cB = F.ref('aluminate');
+    const cC = C('concentration'), cA = F.ref('al-ion'), cB = F.ref('aluminate'), white = F.fact('#f4f4f2');
     const p = Math.round(pH.v * 100) / 100, pOH = 14 - p, oh = round2(10 ** -pOH);
     const t1 = round2(KSP / oh ** 3), t2 = round2(K * oh), s = round2(t1 + t2);
-    const f = 10 ** la(p) / (10 ** la(p) + 10 ** lb(p));
+    const f = t1 / (t1 + t2);                          /* the share of the dissolved aluminum that is Al³⁺ */
+    const all = s >= C0, diss = Math.min(s, C0), solid = C0 - diss;
     const share = f > 0.99 ? 'nearly all of it as Al³⁺' : f < 0.01 ? 'nearly all of it as Al(OH)_{4}⁻' : `${Math.round(100 * f)} percent of it as Al³⁺`;
-    const lines = topline(ctx, `At pH ${p.toFixed(2)}, Al(OH)_{3} dissolves to ${sigText(s)} M, ${share}.`);
+    const lowest = Math.abs(p - PMIN) < 0.006;
+    const lines = topline(ctx, all
+      ? `At pH ${p.toFixed(2)}, as much as ${sigText(s)} M of Al(OH)_{3} can dissolve, ${share}, so the whole sample does.`
+      : `At pH ${p.toFixed(2)}, Al(OH)_{3} dissolves to ${sigText(s)} M, ${lowest ? 'the least at any pH' : share}.`);
     const lab = F.labeller(ctx, H, { headline: lines });
-    const ax = F.axes(ctx, G, [2, 14], [0, 14], { nx: 6, ny: 7, fx: (v) => String(Math.round(v)), fy: (v) => pow10(Math.round(v) + L0),
+    /* the graph */
+    const ax = F.axes(ctx, G, [3, 13], [0, 10], { nx: 5, ny: 5, fx: (v) => String(Math.round(v)), fy: (v) => pow10(Math.round(v) + L0),
       xl: 'pH', xc: cC, yl: 'concentration (M)', yc: cC });
     const g = { X: ax.X, Y: (lg) => ax.Y(lg - L0) };
     lab.block(G.l - 120, G.t - 46, G.l + 220, G.t - 4); lab.block(G.l - 120, G.t, G.l - 4, G.b + 70); lab.block(G.l, G.b + 4, G.r, G.b + 70);
+    const yS = g.Y(Math.log10(C0));
+    line(ctx, G.l, yS, G.r, yS, alpha(PAL.ink, 0.5), 2, [10, 10]);
     ctx.save(); ctx.beginPath(); ctx.rect(G.l, G.t, G.r - G.l, G.b - G.t); ctx.clip();
-    F.curve(ctx, ls, 2, 14, g.X, g.Y, cC, 7, 160);
-    F.curve(ctx, la, 2, 14, g.X, g.Y, cA, 3, 2);
-    F.curve(ctx, lb, 2, 14, g.X, g.Y, cB, 3, 2);
+    F.curve(ctx, la, 3, 13, g.X, g.Y, cA, 3, 2);
+    F.curve(ctx, lb, 3, 13, g.X, g.Y, cB, 3, 2);
+    F.curve(ctx, ls, 3, 13, g.X, g.Y, cC, 7, 200);
     ctx.restore();
-    const y = ls(p), inside = y <= 2 && y >= -12;
-    if (inside) {
-      line(ctx, g.X(p), g.Y(y), g.X(p), G.b, alpha(cC, 0.6), 2.5, [4, 8]);
-      line(ctx, G.l, g.Y(y), g.X(p), g.Y(y), alpha(cC, 0.6), 2.5, [4, 8]);
-    }
+    text(ctx, `the whole sample, ${sigText(C0)} M`, g.X(7.05), yS - 17, PAL.muted, { size: 17, align: 'center' });
+    lab.block(g.X(7.05) - 140, yS - 30, g.X(7.05) + 140, yS - 4);
+    const y = ls(p);
+    line(ctx, g.X(p), g.Y(y), g.X(p), G.b, alpha(cC, 0.6), 2.5, [4, 8]);
+    line(ctx, G.l, g.Y(y), g.X(p), g.Y(y), alpha(cC, 0.6), 2.5, [4, 8]);
+    dot(ctx, g.X(PMIN), g.Y(ls(PMIN)), cC, false, 7);
     const pt = F.pinned(ctx, G, g.X, g.Y, p, y, cC);
     lab.place({ l: pt.x - 12, t: pt.y - 12, r: pt.x + 12, b: pt.y + 12 });
-    text(ctx, `${sigText(s)} M`, G.l + 12, Math.min(Math.max(pt.y - 18, G.t + 14), G.b - 30), cC, { size: 17, weight: 600, bg: PAL.panel });
-    lab.add('[Al³⁺]', g.X(6.6), g.Y(la(6.6)), 1, 0, cA, 22, 22);
-    lab.add('[Al(OH)_{4}⁻]', g.X(4.3), g.Y(lb(4.3)), -0.25, 1, cB, 22, 22);
-    lab.add('molar solubility', g.X(10.5), g.Y(ls(10.5)), -0.6, -0.8, cC, 22, 30);
+    lab.add('[Al³⁺]', g.X(6.3), g.Y(la(6.3)), 1, 0, cA, 22, 22);
+    text(ctx, '[Al(OH)_{4}⁻]', g.X(3.88), g.Y(lb(3.88)) - 50, cB, { size: 20, weight: 600, align: 'center', bg: PAL.panel });
+    lab.add('molar solubility', g.X(11.2), g.Y(ls(11.2)), -0.6, -0.8, cC, 22, 30);
+    /* the beaker */
+    ctx.save(); beakerPath(ctx); ctx.lineTo(BR, RIM); ctx.lineTo(BL, RIM); ctx.closePath(); ctx.clip(); ctx.fillStyle = alpha(PAL.muted, 0.2); ctx.fillRect(BL, LEVEL, BR - BL, BASE - LEVEL); ctx.restore();
+    line(ctx, BL + 2, LEVEL, BR - 2, LEVEL, alpha(PAL.ink, 0.45), 1.5);
+    const nd = Math.round(MARKS * diss / C0), ns = MARKS - nd, nA = Math.round(nd * f);
+    ORDER.slice(0, nd).forEach((i, k) => ion(ctx, DOTS[i][0], DOTS[i][1], k < nA ? cA : cB));
+    HEAP.slice(0, ns).forEach(([x, yy, r]) => lump(ctx, x, yy, white, r));
+    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.lineJoin = 'round'; ctx.lineCap = 'round'; beakerPath(ctx); ctx.stroke(); ctx.restore();
+    text(ctx, `${sigText(C0)} mol of Al(OH)_{3}`, (BL + BR) / 2, RIM - 60, PAL.ink, { size: 18, align: 'center' });
+    text(ctx, `in 1.00 L held at pH ${p.toFixed(2)}`, (BL + BR) / 2, RIM - 34, PAL.ink, { size: 18, align: 'center' });
+    const key = [];
+    if (nA > 0 || f >= 0.01) key.push({ s: `Al³⁺, ${sigText(diss * f)} mol`, kind: 'dot', color: cA });
+    if (nd - nA > 0 || f <= 0.99) key.push({ s: `Al(OH)_{4}⁻, ${sigText(diss * (1 - f))} mol`, kind: 'dot', color: cB });
+    if (!all) key.push({ s: `solid, ${sigText(solid)} mol`, draw: (c, x, yy) => lump(c, x + 11, yy, white, 8.5) });
+    F.legend(ctx, { l: BL - 30, r: BR + 30, t: BASE + 18, b: BASE + 140 }, key, { corner: 'tl', panel: false, size: 18 });
     lab.flush();
     hits = [];
-    [3, 4, 5, 6, 7, 8, 9, 10].forEach((q) => { if (la(q) > -12 && la(q) < 2) hits.push({ x: g.X(q), y: g.Y(la(q)), r: 14, name: '[Al³⁺], the line of the acid coupling' }); });
-    [3, 5, 7, 9, 11, 13].forEach((q) => { if (lb(q) > -12 && lb(q) < 2) hits.push({ x: g.X(q), y: g.Y(lb(q)), r: 14, name: '[Al(OH)₄⁻], the line of the complex coupling' }); });
+    [3.5, 4, 5, 6, 6.5].forEach((q) => hits.push({ x: g.X(q), y: g.Y(la(q)), r: 14, name: '[Al³⁺] = K_sp/[OH⁻]³, a thousandth as much for each unit of pH' }));
+    [3.5, 5, 7, 9, 11, 12.5].forEach((q) => hits.push({ x: g.X(q), y: g.Y(lb(q)), r: 14, name: '[Al(OH)₄⁻] = K[OH⁻], ten times as much for each unit of pH' }));
+    [4, 5.5, 7, 8.5, 10, 11.5].forEach((q) => hits.push({ x: g.X(q), y: yS, r: 12, name: `${sigText(C0)} M, what the solution holds once the whole sample has dissolved` }));
+    hits.push({ x: g.X(PMIN), y: g.Y(ls(PMIN)), r: 14, name: `the least soluble: ${sigText(10 ** ls(PMIN))} M at pH ${PMIN.toFixed(2)}` });
     hits.push({ x: pt.x, y: pt.y, r: 16, name: `molar solubility at pH ${p.toFixed(2)}: ${sigText(s)} M` });
-    const ohT = hue('concentration', sigTex(oh));
-    ro.set(`[\\text{Al}^{3+}] + [\\text{Al(OH)}_{4}{}^{-}] = \\frac{\\kKsp}{{\\kconcOH}^{3}} + \\kK\\,\\kconcOH = \\frac{${hue('equilibrium-constant', '2 \\times 10^{-32}')}}{(${ohT})^{3}} + ${hue('equilibrium-constant', '22')}\\,(${ohT}) = ${hue('concentration', sigTex(t1))} + ${hue('concentration', sigTex(t2))} = ${hue('concentration', sigTex(s))}\\ \\text{M}`,
+    if (nd) hits.push({ x: (BL + BR) / 2, y: LEVEL + 90, r: 100, name: 'dissolved aluminum, one dot for each 5 × 10⁻⁵ mol' });
+    if (ns) hits.push({ x: (BL + BR) / 2, y: BASE - 30, r: 70, name: 'solid Al(OH)₃ on the bottom, one lump for each 5 × 10⁻⁵ mol' });
+    const kc = (x) => hue('concentration', x), ke = (x) => hue('equilibrium-constant', x), ohT = kc(sigTex(oh));
+    ro.set(`\\kconcOH = 10^{-\\kpOH} = 10^{-(14.00 - ${kc(p.toFixed(2))})} = ${ohT}\\ \\text{M}`
+      + ` \\\\ [\\text{Al}^{3+}] = \\frac{\\kKsp}{{\\kconcOH}^{3}} = \\frac{${ke('2 \\times 10^{-32}')}}{(${ohT})^{3}} = ${kc(sigTex(t1))}\\ \\text{M}`
+      + ` \\\\ [\\text{Al(OH)}_{4}{}^{-}] = \\kK\\,\\kconcOH = ${ke('22')}\\,(${ohT}) = ${kc(sigTex(t2))}\\ \\text{M}`,
       'Each unit of $\\kpH$ multiplies $\\kconcOH$ by 10, which divides [Al³⁺] by 1000 and multiplies [Al(OH)₄⁻] by 10.');
   }
   still(d, draw);
 })();
 
-/* =====================================================================
-   The complex ion Al(OH)₄⁻, the book's AlOH4_img. Flat: the book's Lewis
-   structure, in ink, each oxygen with its two lone pairs. In 3D: Al–O
-   1.77 Å to the corners of a tetrahedron, O–H 0.96 Å at an Al–O–H angle
-   of 115°. Physical 3D (a coordination geometry): no ground, so yaw is
-   free and the ion idles round; pitch held within 1.2 rad so the view
-   never turns over a pole. The stage mounts on the first switch; without
-   WebGL the flat drawing stays. Still: a structure has no clock.
-===================================================================== */
-(function () {
-  const H = 420, d = sim('fig-aloh4', H);
-  const VIEW = F.choice(d.controls, { label: '\\text{view}', options: [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }], value: '2d',
-    aria: 'a flat drawing or a scene to turn', ms: 0, onInput: () => show() });
-  F.tex(d.readout, '\\text{Al}^{3+}(aq)+4\\text{OH}^{-}(aq)\\rightleftharpoons\\text{Al(OH)}_{4}{}^{-}(aq)\\qquad\\kKfform=1.1\\times 10^{33}');
-  let hits = [];
-  F.hover(d.stage, () => hits);
-  const NAME = { Al: 'aluminum atom', O: 'oxygen atom of a hydroxide ion', H: 'hydrogen atom of a hydroxide ion' };
-
-  /* ---------- flat: the Lewis structure as the book draws it ---------- */
-  const X0 = 700, Y0 = 200, AO = 120, OHL = 105;
-  const ATOMS = [
-    { s: 'Al', x: X0, y: Y0 },
-    { s: 'O', x: X0 - AO, y: Y0, lp: [90, 270] }, { s: 'H', x: X0 - AO - OHL, y: Y0 },
-    { s: 'O', x: X0 + AO, y: Y0, lp: [90, 270] }, { s: 'H', x: X0 + AO + OHL, y: Y0 },
-    { s: 'O', x: X0, y: Y0 - AO, lp: [90, 180] }, { s: 'H', x: X0 + OHL, y: Y0 - AO },
-    { s: 'O', x: X0, y: Y0 + AO, lp: [180, 270] }, { s: 'H', x: X0 + OHL, y: Y0 + AO },
-  ];
-  const BONDS = [[0, 1], [1, 2], [0, 3], [3, 4], [0, 5], [5, 6], [0, 7], [7, 8]];
-  function draw2d() {
-    const { ctx } = begin(d.c), ink = PAL.ink;
-    BONDS.forEach(([i, j]) => {
-      const a = ATOMS[i], b = ATOMS[j], dx = b.x - a.x, dy = b.y - a.y, L = Math.hypot(dx, dy), ux = dx / L, uy = dy / L;
-      const ga = a.s === 'Al' ? 26 : 20, gb = 20;
-      line(ctx, a.x + ux * ga, a.y + uy * ga, b.x - ux * gb, b.y - uy * gb, ink, 3);
-    });
-    hits = [];
-    ATOMS.forEach((a) => {
-      text(ctx, a.s, a.x, a.y + 1, ink, { size: 28, weight: 600, align: 'center' });
-      (a.lp ?? []).forEach((ang) => {
-        const cx = Math.cos(ang * RAD), cy = -Math.sin(ang * RAD), r = 25;
-        [-6.5, 6.5].forEach((o) => F.dot(ctx, a.x + cx * r - cy * o, a.y + cy * r + cx * o, ink, true, 3.5));
-      });
-      hits.push({ x: a.x, y: a.y, r: 20, name: NAME[a.s] });
-    });
-    const x1 = X0 - AO - OHL - 45, x2 = X0 + AO + OHL + 45, y1 = Y0 - AO - 42, y2 = Y0 + AO + 42;
-    [[x1, 1], [x2, -1]].forEach(([x, s]) => {
-      ctx.save(); ctx.strokeStyle = ink; ctx.lineWidth = 3; ctx.beginPath();
-      ctx.moveTo(x + s * 14, y1); ctx.lineTo(x, y1); ctx.lineTo(x, y2); ctx.lineTo(x + s * 14, y2); ctx.stroke(); ctx.restore();
-    });
-    text(ctx, '−', x2 + 16, y1 + 8, ink, { size: 28, weight: 600 });
-    text(ctx, 'Al(OH)_{4}⁻', X0, y2 + 34, F.ref('aluminate'), { size: 22, weight: 600, align: 'center' });
-  }
-
-  /* ---------- 3D: the tetrahedron ---------- */
-  const norm = (v) => { const l = Math.hypot(...v); return v.map((x) => x / l); };
-  const cross = (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
-  const add = (p, q, k = 1) => p.map((x, i) => x + q[i] * k);
-  const DAO = 1.77, DOH = 0.96, BEND = (180 - 115) * RAD;
-  const DIRS = [[1, 1, 1], [1, -1, -1], [-1, 1, -1], [-1, -1, 1]].map(norm);
-  const M = [{ el: 'Al', p: [0, 0, 0] }], STICKS = [];
-  DIRS.forEach((u) => {
-    const o = add([0, 0, 0], u, DAO), w = norm(cross(u, [0, 1, 0]));
-    const h = add(o, add(u.map((x) => x * Math.cos(BEND)), w, Math.sin(BEND)), DOH);
-    STICKS.push([[0, 0, 0], o], [o, h]);
-    M.push({ el: 'O', p: o }, { el: 'H', p: h });
-  });
-  const R3 = { Al: 0.5, O: 0.4, H: 0.24 };
-  let v = null, g = null, sig3 = '';
-  function build() {
-    const key = [PAL.ink, F.el('Al'), F.el('O'), F.el('H')].join('|');
-    if (key === sig3) return; sig3 = key;
-    v.clear();
-    M.forEach((a) => v.pickable(F.mesh.sphere(g, a.p, R3[a.el], F.el(a.el)), NAME[a.el]));
-    STICKS.forEach(([a, b]) => F.mesh.stick(g, a, b, 0.07, PAL.ink));
-  }
-  const three = () => VIEW.value === '3d' && v && v.scene;
-  function show() {
-    if (VIEW.value === '3d' && !v) {
-      v = F.view3d(d.stage, { h: H, dist: 9, tilt: 0.3, spin: 'idle', yaw: 'free', pitch: [-1.2, 1.2],
-        views: [{ label: 'front', yaw: 0, pitch: 0.3 }, { label: 'above', yaw: 0, pitch: 1.2 }] });
-      g = v.scene ? v.part(0) : null;
-    }
-    const on = !!three();
-    d.c.style.display = on ? 'none' : '';
-    if (v) [v.wrap, d.stage.querySelector('.view3d-bar')].forEach((e) => { if (e) e.style.display = on ? '' : 'none'; });
-    draw();
-  }
-  function draw() {
-    if (three()) {
-      build(); hits = [];
-      v.invalidate();
-    } else draw2d();
-  }
-  still(d, draw);
-})();
 };

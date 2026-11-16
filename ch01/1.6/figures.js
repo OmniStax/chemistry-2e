@@ -1,96 +1,134 @@
 /* Figures for section 1.6 Mathematical Treatment of Measurement Results. Boots against the section's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['1.6'] = function (root, F) {
-const { el, fmt, tex, C, PAL, alpha, ctl, register, begin, line, dot, text, headline, axes } = F;
+const { fmt, tex, C, PAL, alpha, ctl, register, begin, line, dot, text, axes, plot, measure } = F;
 const sim = (id, H) => F.sim(root, id, H);
-function readout(host, main, small) { tex(host, main); if (small) host.appendChild(el('small', null, small)); }
-
-/* ---------- small helpers ---------- */
-const TAU = 2 * Math.PI;
-/* a number for the canvas and the prose, with a true minus sign */
-const num = (v, d) => fmt(v, d).replace('-', '−');
-/* the same temperature on the three scales */
-const toF = (tc) => (9 / 5) * tc + 32;
-const toK = (tc) => tc + 273.15;
-
-/* ---------- sprite: a thermometer tube, in ink, under 12 path commands ----------
-   x is the tube's centre line, top and bottom the ends of the tube, r its half-width; the bulb hangs below the bottom. */
-function tube(ctx, x, top, bottom, r, color) {
-  ctx.save(); ctx.strokeStyle = color; ctx.lineWidth = 3; ctx.fillStyle = PAL.panel;
-  ctx.beginPath(); ctx.moveTo(x - r, bottom); ctx.lineTo(x - r, top + r); ctx.arc(x, top + r, r, Math.PI, 0); ctx.lineTo(x + r, bottom);
-  ctx.arc(x, bottom + 1.6 * r, 2 * r, -0.35 * Math.PI, 1.35 * Math.PI); ctx.closePath(); ctx.fill(); ctx.stroke(); ctx.restore();
-}
-/* the liquid column: filled for the Celsius scale, hollow for the other two, as the chapter's colour plan marks a variant */
-function column(ctx, x, yTop, bottom, r, color, filled) {
-  const br = 2 * r, by = bottom + 1.6 * r;
-  ctx.save(); ctx.strokeStyle = color; ctx.lineWidth = 3; ctx.fillStyle = filled ? color : alpha(color, 0.18);
-  ctx.beginPath(); ctx.moveTo(x - r * 0.5, yTop); ctx.lineTo(x - r * 0.5, bottom); ctx.arc(x, by, br - 5, -0.42 * Math.PI, 1.42 * Math.PI); ctx.lineTo(x + r * 0.5, bottom); ctx.lineTo(x + r * 0.5, yTop); ctx.closePath();
-  ctx.fill(); ctx.stroke(); ctx.restore();
-}
+/* a value of the readout in its type's colour (root rule 26.17) */
+const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
+/* a number to one decimal place, halves rounded up, so that binary noise never turns 98.65 into 98.6 */
+const r1 = (v) => Math.round(v * 10 + 1e-6) / 10;
 
 /* =====================================================================
-   FIGURE 1.28: the Fahrenheit, Celsius and kelvin thermometers as one
-   instrument. A still picture: a temperature is set on the slider and the
-   three columns and the graph answer it; nothing in the idea has a time in
-   it, so no cycle is registered and no transport is added.
+   FIGURE 1.28: one temperature read on the Fahrenheit, Celsius and kelvin
+   thermometers. The three lie on their sides over one Celsius axis, so the
+   end of each liquid thread stands over its point on the graph beneath.
+   A still picture: nothing in the idea has a time in it, so no cycle is
+   registered and no transport is added.
 ===================================================================== */
 (function () {
-  const d = sim('sim-temperature-scales', 640);
-  const T = ctl(d.controls, { label: '\\kTC', cls: 'temperature', min: -80, max: 120, step: 0.1, value: 37, unit: '°C', dec: 1, aria: 'temperature on the Celsius scale',
-    specials: [{ at: -40, label: '−40' }, { at: 0, label: 'freezing' }, { at: 100, label: 'boiling' }] });
-  /* the height axis the three tubes share: −80 °C at the bottom, 120 °C at the top */
-  const LO = -80, HI = 120, YB = 540, YT = 130;
-  const Y = (tc) => YB - ((tc - LO) / (HI - LO)) * (YB - YT);
-  const TOP = 108, BOT = 548, R = 13;
-  /* the three scales: name, x of the tube, the reading for a Celsius temperature, the tick spacing in its own unit, how many ticks per label, decimals of the reading, its unit */
+  const d = sim('sim-temperature-scales', 900);
+  /* the Celsius axis the thermometers and the graph share: −80 °C to 120 °C */
+  const LO = -80, HI = 120, XL = 250, XR = 1300;
+  const X = (tc) => XL + ((tc - LO) / (HI - LO)) * (XR - XL);
+  /* each scale: its name, the y of its thermometer, the reading for a Celsius temperature and back, the reading's
+     decimals and unit, the book's bracket between water's freezing and boiling, and its three numbers on the image */
   const SCALES = [
-    { name: 'Fahrenheit', x: 300, of: toF, back: (f) => ((f - 32) * 5) / 9, step: 20, every: 2, dec: 1, unit: '°F', filled: false },
-    { name: 'Celsius', x: 520, of: (tc) => tc, back: (c) => c, step: 20, every: 1, dec: 1, unit: '°C', filled: true },
-    { name: 'Kelvin', x: 740, of: toK, back: (k) => k - 273.15, step: 20, every: 1, dec: 1, unit: 'K', filled: false },
+    { key: 'F', name: 'Fahrenheit', y: 116, of: (c) => 1.8 * c + 32, back: (f) => (f - 32) / 1.8, dec: 1, unit: '°F', span: '180 Fahrenheit degrees', marks: ['−40 °F', '32 °F', '212 °F'], filled: false },
+    { key: 'C', name: 'Celsius', y: 238, of: (c) => c, back: (c) => c, dec: 1, unit: '°C', span: '100 Celsius degrees', marks: ['−40 °C', '0 °C', '100 °C'], filled: true },
+    { key: 'K', name: 'Kelvin', y: 360, of: (c) => c + 273.15, back: (k) => k - 273.15, dec: 2, unit: 'K', span: '100 kelvins', marks: ['233.15 K', '273.15 K', '373.15 K'], filled: false },
   ];
+  const REF = [-40, 0, 100];   /* the temperatures the book's image marks on all three */
+
+  /* The reader sets the temperature on whichever scale they drag; the other two sliders follow. The Celsius
+     reading is kept to a tenth and the other two are computed from it as shown, so every line of the readout is
+     true as written (37.0 °C + 273.15 = 310.15 K). */
+  let active = 'C', c = 37, f = 98.6;
+  const S = {};
+  const pick = (key) => {
+    active = key;
+    if (key === 'C') c = r1(S.C.v);
+    if (key === 'K') c = r1(S.K.v - 273.15);
+    if (key === 'F') { f = r1(S.F.v); c = r1((f - 32) / 1.8); } else f = r1(1.8 * c + 32);
+    if (key !== 'F') S.F.set(f);
+    if (key !== 'C') S.C.set(c);
+    if (key !== 'K') S.K.set(c + 273.15);
+  };
+  const SP = ['°C and °F agree', 'water freezes', 'water boils'];
+  const slider = (s, label, name) => ctl(d.controls, { label, cls: 'temperature', key: 'T' + s.key, min: s.of(LO), max: s.of(HI), step: 0.1, value: s.of(37), unit: s.unit, dec: s.dec,
+    aria: 'temperature on the ' + name + ' scale', specials: REF.map((t, i) => ({ at: s.of(t), label: SP[i] })), onInput: () => pick(s.key) });
+  S.F = slider(SCALES[0], '\\kTF', 'Fahrenheit'); S.C = slider(SCALES[1], '\\kTC', 'Celsius'); S.K = slider(SCALES[2], '\\kTK', 'kelvin');
+
+  let hits = []; F.hover(d.stage, () => hits);
+
+  /* a glass thermometer lying on its side, bulb to the left: the stem, its bore, and the liquid that fills the bulb
+     and reaches along the bore to xe */
+  const SR = 16, BR = 21, BORE = 5;
+  function thermometer(ctx, y, xe, color, filled) {
+    const x0 = XL - 92, xb = XL - 42, x1 = XR + 34;
+    ctx.save(); ctx.lineWidth = 2.5; ctx.strokeStyle = PAL.ink; ctx.fillStyle = PAL.panel;
+    ctx.beginPath(); ctx.moveTo(xb + 10, y - SR); ctx.lineTo(x1 - SR, y - SR); ctx.arc(x1 - SR, y, SR, -Math.PI / 2, Math.PI / 2); ctx.lineTo(xb + 10, y + SR);
+    ctx.lineTo(xb, y + BR); ctx.lineTo(x0 + BR, y + BR); ctx.arc(x0 + BR, y, BR, Math.PI / 2, 1.5 * Math.PI); ctx.lineTo(xb, y - BR); ctx.closePath(); ctx.fill(); ctx.stroke();
+    /* the empty bore ahead of the liquid */
+    ctx.strokeStyle = alpha(PAL.ink, 0.3); ctx.lineWidth = 1.5; ctx.strokeRect(xe, y - BORE, x1 - SR - 6 - xe, 2 * BORE);
+    /* the liquid: bulb and thread as one shape */
+    const q = BR - 6;
+    ctx.strokeStyle = color; ctx.lineWidth = 2.5; ctx.fillStyle = filled ? color : alpha(color, 0.3);
+    ctx.beginPath(); ctx.moveTo(xb, y - BORE); ctx.lineTo(xe, y - BORE); ctx.lineTo(xe, y + BORE); ctx.lineTo(xb, y + BORE);
+    ctx.lineTo(xb - 6, y + q); ctx.lineTo(x0 + BR, y + q); ctx.arc(x0 + BR, y, q, Math.PI / 2, 1.5 * Math.PI); ctx.lineTo(xb - 6, y - q); ctx.closePath(); ctx.fill(); ctx.stroke();
+    ctx.restore();
+  }
+
   function draw() {
     const { ctx } = begin(d.c);
-    const tc = T.v, tf = toF(tc), tk = toK(tc), hue = C('temperature');
-    /* the reference temperatures of water, in ink, across all three tubes at the same height */
-    for (const [t, l1, l2] of [[100, 'Boiling point', 'of water'], [0, 'Freezing point', 'of water']]) {
-      const y = Y(t);
-      text(ctx, l1, 26, y - 11, PAL.ink, { size: 17 }); text(ctx, l2, 26, y + 11, PAL.ink, { size: 17 });
-      for (const [a, b] of [[160, 284], [402, 504], [622, 724]]) line(ctx, a, y, b, y, PAL.ink, 2, [10, 8]);
-    }
-    /* the tubes, their ticks and their columns */
+    const temp = C('temperature'), xe = X(c), box = { l: XL, r: XR, t: 490, b: 820 };
+    const shown = { F: f, C: c, K: c + 273.15 };
+    hits = [];
+    /* the temperatures the book marks, across all three thermometers: water's two in dashes, −40 as a thin rule */
+    const top = SCALES[0].y - 78, foot = SCALES[2].y + 34;
+    line(ctx, X(-40), top + 16, X(-40), foot, alpha(PAL.ink, 0.45), 2);
+    line(ctx, X(0), top + 16, X(0), foot, PAL.ink, 2, [10, 8]); line(ctx, X(100), top + 16, X(100), foot, PAL.ink, 2, [10, 8]);
+    text(ctx, '°C and °F agree', X(-40), top, PAL.ink, { size: 20, align: 'center' });
+    text(ctx, 'Freezing point of water', X(0), top, PAL.ink, { size: 20, align: 'center' });
+    text(ctx, 'Boiling point of water', X(100), top, PAL.ink, { size: 20, align: 'center' });
+    /* the one temperature, dropped from the thermometers to the graph */
+    line(ctx, xe, SCALES[0].y, xe, box.b, alpha(temp, 0.7), 2, [4, 8]);
+
     for (const s of SCALES) {
-      text(ctx, s.name, s.x, 86, PAL.ink, { size: 20, weight: 600, align: 'center' });
-      tube(ctx, s.x, TOP, BOT, R, PAL.muted);
-      const first = Math.ceil(s.of(LO) / s.step) * s.step, last = Math.floor(s.of(HI) / s.step) * s.step;
-      for (let v = first; v <= last + 1e-9; v += s.step) {
-        const y = Y(s.back(v)), big = Math.round(v / s.step) % s.every === 0;
-        line(ctx, s.x + R, y, s.x + R + (big ? 12 : 7), y, PAL.muted, 2);
-        if (big && Math.abs(y - Y(tc)) > 26) text(ctx, num(v, 0), s.x + R + 18, y, PAL.muted, { size: 17 });
-      }
-      column(ctx, s.x, Y(tc), BOT, R, hue, s.filled);
-      dot(ctx, s.x, Y(tc), hue, s.filled, 6);
-      text(ctx, num(s.of(tc), s.dec) + ' ' + s.unit, s.x + R + 18, Y(tc), hue, { size: 20, weight: 600, bg: PAL.panel });
+      const y = s.y, ly = y + 52;
+      text(ctx, s.name, 28, y, PAL.ink, { size: 22, weight: 600 });
+      thermometer(ctx, y, xe, temp, s.filled);
+      hits.push({ x: XL - 70, y, r: 26, name: s.name + ' thermometer' });
+      /* graduations every 10 of the scale's own unit, so the size of its degree shows as their spacing */
+      const lo = Math.ceil(s.of(LO) / 10 - 1e-9) * 10, hi = Math.floor(s.of(HI) / 10 + 1e-9) * 10;
+      for (let v = lo; v <= hi; v += 10) line(ctx, X(s.back(v)), y + SR, X(s.back(v)), y + SR + 8, PAL.muted, 1.5);
+      /* the book's three numbers under their marks, and its bracket between freezing and boiling */
+      REF.forEach((t, i) => { line(ctx, X(t), y + SR, X(t), y + SR + 14, PAL.ink, 2.5); text(ctx, s.marks[i], X(t), ly, PAL.ink, { size: 20, align: 'center', bg: PAL.panel }); });
+      const a = X(0) + measure(ctx, s.marks[1], { size: 20 }) / 2 + 16, b = X(100) - measure(ctx, s.marks[2], { size: 20 }) / 2 - 16, w = measure(ctx, s.span, { size: 20 }) / 2 + 12;
+      const mid = (a + b) / 2;
+      line(ctx, a, ly, mid - w, ly, PAL.ink, 2); line(ctx, mid + w, ly, b, ly, PAL.ink, 2); line(ctx, a, ly - 8, a, ly + 8, PAL.ink, 2); line(ctx, b, ly - 8, b, ly + 8, PAL.ink, 2);
+      text(ctx, s.span, mid, ly, PAL.ink, { size: 20, align: 'center', bg: PAL.panel });
+      /* the reading, over the end of the liquid */
+      const lab = fmt(shown[s.key], s.dec) + ' ' + s.unit, half = measure(ctx, lab, { size: 22, weight: 600 }) / 2;
+      text(ctx, lab, Math.min(Math.max(xe, XL - 20 + half), XR + 40 - half), y - 36, temp, { size: 22, weight: 600, align: 'center', bg: PAL.panel });
     }
-    /* the graph beside the tubes: the Fahrenheit and kelvin readings against the Celsius temperature */
-    const box = { l: 960, r: 1330, t: 130, b: 540 };
-    const g = axes(ctx, box, [LO, HI], [-100, 400], { xl: 'Celsius temperature (°C)', xc: hue, yl: 'reading on the other scale', yc: hue, nx: 5, ny: 5, fx: (v) => num(v, 0), fy: (v) => num(v, 0) });
-    const X = g.X, Yg = g.Y;
-    line(ctx, X(LO), Yg(toF(LO)), X(HI), Yg(toF(HI)), hue, 4);
-    line(ctx, X(LO), Yg(toK(LO)), X(HI), Yg(toK(HI)), hue, 4, [12, 10]);
-    text(ctx, '°F', box.r + 20, Yg(toF(HI)), PAL.ink, { size: 20, weight: 600 });
-    text(ctx, 'K', box.r + 20, Yg(toK(HI)), PAL.ink, { size: 20, weight: 600 });
-    dot(ctx, X(0), Yg(0), PAL.ink, false, 7); text(ctx, 'origin', X(0) + 14, Yg(0) + 20, PAL.muted, { size: 17 });
-    line(ctx, X(tc), box.b, X(tc), Yg(Math.max(tf, tk)), hue, 2, [4, 8]);
-    dot(ctx, X(tc), Yg(tf), hue, true, 9);
-    dot(ctx, X(tc), Yg(tk), hue, false, 9);
-    /* the headline names the reference temperatures and the one temperature at which two of the scales agree */
-    const at = Math.abs(tc) < 0.05 ? 'At 0 °C water freezes, and the thermometers read 0.0 °C, 32.0 °F and 273.2 K, the freezing point being 273.15 K exactly.'
-      : Math.abs(tc - 100) < 0.05 ? 'At 100 °C water boils, and the thermometers read 100.0 °C, 212.0 °F and 373.2 K, the boiling point being 373.15 K exactly.'
-      : Math.abs(tc + 40) < 0.05 ? 'At −40 °C the Celsius and Fahrenheit readings agree, both at −40, and the kelvin reading is 233.2 K.'
-      : 'At ' + num(tc, 1) + ' °C the three thermometers read ' + num(tc, 1) + ' °C, ' + num(tf, 1) + ' °F and ' + num(tk, 1) + ' K.';
-    headline(ctx, at);
-    readout(d.readout, `\\kTF=\\left(\\frac{9}{5}\\times\\kTC\\right)+32=\\left(\\frac{9}{5}\\times ${fmt(tc, 1)}\\right)+32=${fmt(tf, 1)}\\ \\text{°F}`,
-      'On the kelvin scale the same temperature is ' + num(tc, 1) + ' + 273.15 = ' + num(tk, 1) + ' K.');
+
+    /* the graph beneath, on the same Celsius axis: the three readings against the Celsius temperature */
+    const g = axes(ctx, box, [LO, HI], [-200, 400], { xl: 'Celsius temperature (°C)', xc: temp, nx: 5, ny: 6 });
+    text(ctx, 'reading on each scale', box.l, box.t - 24, temp, { size: 20, weight: 600, bg: PAL.panel });
+    for (const s of SCALES) {
+      plot(ctx, g, s.of, temp, { w: 4 });
+      text(ctx, s.unit, box.r + 22, g.Y(s.of(HI)), PAL.ink, { size: 22, weight: 600 });
+    }
+    /* where each line meets 0 °C: the intercept its conversion adds */
+    for (const [s, v] of [[SCALES[0], '32 °F'], [SCALES[2], '273.15 K']]) {
+      dot(ctx, g.X(0), g.Y(s.of(0)), PAL.ink, false, 6);
+      text(ctx, v, g.X(0) - 14, g.Y(s.of(0)) - 16, PAL.ink, { size: 20, align: 'right' });
+      hits.push({ x: g.X(0), y: g.Y(s.of(0)), r: 16, name: 'The ' + s.name.replace('Kelvin', 'kelvin') + ' reading at 0 °C, the intercept' });
+    }
+    dot(ctx, g.X(-40), g.Y(-40), PAL.ink, false, 6);
+    text(ctx, '−40 °F = −40 °C', g.X(-40) + 16, g.Y(-40) + 20, PAL.ink, { size: 20 });
+    for (const s of SCALES) {
+      dot(ctx, g.X(c), g.Y(s.of(c)), temp, s.filled, 8);
+      hits.push({ x: g.X(c), y: g.Y(s.of(c)), r: 16, name: s.name.replace('Kelvin', 'The kelvin').replace(/^(F|C)/, 'The $1') + ' reading, ' + fmt(shown[s.key], s.dec) + ' ' + s.unit });
+    }
+
+    /* the readout: the two conversions from the scale the reader set, each whole on its line */
+    const v = (x, dec, unit) => hue('temperature', fmt(x, dec) + '\\ \\text{' + unit + '}');
+    const toF = `\\kTF = \\left(\\frac{9}{5}\\times\\kTC\\right)+32 = \\left(\\frac{9}{5}\\times ${v(c, 1, '°C')}\\right)+32 = ${v(f, 1, '°F')}`;
+    const toK = `\\kTK = \\kTC+273.15 = ${v(c, 1, '°C')}+273.15 = ${v(c + 273.15, 2, 'K')}`;
+    const fromF = `\\kTC = \\frac{5}{9}\\left(\\kTF-32\\right) = \\frac{5}{9}\\left(${v(f, 1, '°F')}-32\\right) = ${v(c, 1, '°C')}`;
+    const fromK = `\\kTC = \\kTK-273.15 = ${v(c + 273.15, 2, 'K')}-273.15 = ${v(c, 1, '°C')}`;
+    tex(d.readout, active === 'F' ? fromF + ' \\\\ ' + toK : active === 'K' ? fromK + ' \\\\ ' + toF : toF + ' \\\\ ' + toK);
   }
   register(d.fig, { update: () => {}, draw });
 })();

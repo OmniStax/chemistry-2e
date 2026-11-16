@@ -66,7 +66,7 @@ None. Every item tests what its own module teaches. Three reach back and stay: 3
 
 ## 3D (root rule 28)
 
-Physical 3D: the NaCl crystal of Figure 3.4 (a packing), and the molecule insets of 3.2 to 3.4, 3.10 and the example tables, each 2D by default with a 3D view (the book's borderline rule). A dilution or molarity beaker drawn with particles is a particle picture, which the book's rules make 3D (spheres the reader turns, readings on a flat strip); the section may argue a flat beaker instead if the particles are only a count. No locked views: the chapter prints no perspective drawing. Everything else (the flowcharts, the tables, the percentages) is flat. No figure has a clock; the chapter is still throughout.
+No physical 3D as built: the NaCl crystal of Figure 3.4 and the molecule models of Figures 3.2 to 3.4, 3.10 and the example tables are the book's images, since the passages sum masses and turning a model teaches nothing there (the book's rule for a structure the text names). A dilution or molarity beaker drawn with particles is a particle picture, 3D only where turning it shows something a flat drawing cannot (root rule 28.5); both beakers of 3.3 are flat, the particles being a count. No locked views: the chapter prints no perspective drawing. Everything else (the flowcharts, the tables, the percentages) is flat. No figure has a clock; the chapter is still throughout.
 
 ## BE INSPIRING (root rule 23)
 

@@ -22,6 +22,10 @@
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-fable-5-2",
+        "effort": "high"
       }
     ]
   },
@@ -99,11 +103,22 @@
         "C",
         "e-"
       ],
+      "facts": [
+        "#ffc94d"
+      ],
       "ai": [
         {
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "readout on separate lines, short caption"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt as a whole cell: electrons paired with ions, half-reactions"
         }
       ]
     },
@@ -135,13 +150,25 @@
         "H",
         "O",
         "N",
+        "Pt",
         "e-"
+      ],
+      "facts": [
+        "#ffc94d"
       ],
       "ai": [
         {
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "headline dropped, readout split, labels clear, short caption"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt: steady gas streams, catalyst sites, hydrogen and circuit choice"
         }
       ]
     }

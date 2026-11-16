@@ -27,6 +27,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -62,6 +65,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "note repeating the headline and caption dropped"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "orbit enlarged; readout one chain n = 2πr/λ; legend for the laps; caption cut"
     }
    ]
   },
@@ -91,6 +98,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "note repeating the caption dropped"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: wavefronts through both slits, bands computed from them; caption cut"
     }
    ]
   },
@@ -108,27 +119,18 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "value beside the marker; atom and nucleus under their ticks; note cut"
     }
    ]
   },
   {
    "id": "fig-shells",
-   "kind": "figure",
+   "kind": "photo",
    "number": "6.19",
-   "originals": [
-    "/media/ch06/CNX_Chem_06_03_Qnumbers.jpg"
-   ],
-   "original_caption": "Different shells are numbered by principal quantum numbers.",
-   "draws": [
-    "energy"
-   ],
-   "ai": [
-    {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    }
-   ]
+   "draws": []
   },
   {
    "id": "sim-radial",
@@ -138,7 +140,9 @@
     "/media/ch06/CNX_Chem_06_03_sorbit.jpg"
    ],
    "original_caption": "The graphs show the probability (y axis) of finding an electron for the 1s, 2s, 3s orbitals as a function of distance from the nucleus.",
-   "draws": ["length"],
+   "draws": [
+    "length"
+   ],
    "ai": [
     {
      "model": "claude-opus-5-5",
@@ -149,6 +153,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "headline one line clear of the axis title; note repeating caption dropped"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt as a lit cutaway with painted cut faces, a ruler and one distance axis"
     }
    ]
   },
@@ -171,6 +179,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "camera pulled back, axes shortened, clear of the headline; notes cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "lobes as closed contours filling the stage; view buttons gone; axis names clear"
     }
    ]
   },
@@ -195,35 +207,18 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "orbital lines narrowed so 1s clears the axis and 4p the edge"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "readout the order of energies as one chain; headline and caption cut"
     }
    ]
   },
   {
    "id": "fig-spin",
-   "kind": "figure",
+   "kind": "photo",
    "number": "6.23",
-   "originals": [
-    "/media/ch06/CNX_Chem_06_03_spin.jpg"
-   ],
-   "original_caption": "Electrons with spin values ±½ in an external magnetic field.",
-   "draws": [
-    "energy"
-   ],
-   "conventions": [
-    "e-"
-   ],
-   "ai": [
-    {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
-    },
-    {
-     "model": "claude-opus-5-5",
-     "effort": "high",
-     "part": "moment arrows thinned so their heads show"
-    }
-   ]
+   "draws": []
   }
  ],
  "coverage": [

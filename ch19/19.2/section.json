@@ -25,6 +25,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -81,7 +84,6 @@
     "Ag",
     "Cu",
     "Zn",
-    "Ni",
     "Pt",
     "Co",
     "V",
@@ -101,6 +103,14 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "re-examined: key row, no view buttons, one-line readout"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: coordination number on the control, shapes side by side"
     }
    ]
   },
@@ -156,7 +166,8 @@
    ],
    "original_caption": "(Figure 19.21) The cis and trans isomers of [Co(H₂O)₄Cl₂]⁺ contain the same ligands attached to the same metal ion, but the spatial arrangement causes these two compounds to have very different properties. (Figure 19.22) The trans isomer of [Pt(NH₃)₂Cl₂] has each ligand directly across from an adjacent ligand.",
    "draws": [
-    "angle"
+    "angle",
+    "dipole-moment"
    ],
    "conventions": [
     "Co",
@@ -175,6 +186,14 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "re-examined: key row, no view buttons, caption per correction"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: cis and trans side by side with their bond dipoles"
     }
    ]
   },
@@ -203,6 +222,14 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt: propeller view down the threefold axis, key row"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: true mirror pair, image laid over, unmatched atoms ringed"
     }
    ]
   },

@@ -10,67 +10,98 @@ const NAME = { F: 'fluorine', Cl: 'chlorine', Br: 'bromine', I: 'iodine' };
 const cap = (s) => s[0].toUpperCase() + s.slice(1);
 
 /* =====================================================================
-   SIM: a halogen added to a solution of a halide ion. A ladder of the
-   four couples' standard reduction potentials, the chosen two drawn
-   heavy, and a tube whose colour is the solution that results. Still:
-   the pair answers at once; a choice crossfades the colour.
+   SIM: each halogen water added to each halide solution, all twelve
+   tubes at once. Rows run down the group (Cl₂, Br₂, I₂), columns from
+   fluoride to iodide, each headed by its couple's E° (18.5, Appendix L).
+   A tube's solution is the colour that results and the drop above it
+   the colour of what was added, so an oxidized halide shows as a tube
+   unlike its drop. Still: a tap picks a pair for the headline and readout.
 ===================================================================== */
 (function () {
-  const H = 560, d = sim('sim-halogen-ladder', H);
+  const H = 640, d = sim('sim-halogen-ladder', H);
   const E = { F: 2.87, Cl: 1.36, Br: 1.09, I: 0.54 };            /* V; 18.5 prints Cl, Br, I, Appendix L gives F */
-  const ORDER = ['F', 'Cl', 'Br', 'I'];
+  const ROWS = ['Cl', 'Br', 'I'], COLS = ['F', 'Cl', 'Br', 'I'];
   const ION = { F: 'fluoride', Cl: 'chloride', Br: 'bromide', I: 'iodide' };
-  const WATER = { Cl: '#c9dc6a', Br: '#d9822b', I: '#8a4b1f' };   /* chlorine water pale yellow-green, bromine water orange, iodine and triiodide brown */
-  const Y = (e) => 500 - e * 125;                                  /* E° from 0 to 3 V, fixed */
-  const AX = 220, R0 = 250, R1 = 440, TX = 1090, TW = 110, TT = 150, TB = 450, LIQ = 230;
-  const ox = F.choice(d.controls, { label: '\\text{halogen added}', key: 'halogen', aria: 'the halogen added', options: ['Cl', 'Br', 'I'].map((s) => ({ value: s, label: `${s}₂` })), value: 'Cl' });
-  const rd = F.choice(d.controls, { label: '\\text{halide ion}', key: 'halide', aria: 'the halide ion in solution', options: ORDER.map((s) => ({ value: s, label: `${s}⁻` })), value: 'Br' });
+  const WATER = { Cl: '#d6e58e', Br: '#d9822b', I: '#8a4b1f' };   /* chlorine water pale yellow-green, bromine water orange, iodine and triiodide brown */
+  const HUE = { Cl: 'pale yellow-green', Br: 'orange', I: 'brown' };
+  const CX0 = 350, CW = 250, R0 = 172, RH = 126, TW = 58;
+  const colX = (y) => CX0 + CW * (COLS.indexOf(y) + 0.5), rowY = (x) => R0 + RH * (ROWS.indexOf(x) + 0.5);
+  const ox = F.choice(d.controls, { label: '\\text{halogen added}', key: 'halogen', aria: 'the halogen added', options: ROWS.map((s) => ({ value: s, label: `${s}₂` })), value: 'Cl' });
+  const rd = F.choice(d.controls, { label: '\\text{halide ion}', key: 'halide', aria: 'the halide ion in solution', options: COLS.map((s) => ({ value: s, label: `${s}⁻` })), value: 'Br' });
   const { formula: fx } = F.readout(d);
-  const sol = (x, y) => F.fact(E[x] > E[y] ? WATER[y] : WATER[x]);
+  const goes = (x, y) => E[x] > E[y];
+  const after = (x, y) => (goes(x, y) ? y : x);                   /* the halogen left in the tube */
   function story(x, y) {
     const tx = `\\text{${x}}`, ty = `\\text{${y}}`;
-    if (E[x] > E[y]) return { head: `${cap(NAME[x])} oxidizes ${ION[y]} ion to ${NAME[y]}: $${tx}_2 + 2${ty}^- \\longrightarrow ${ty}_2 + 2${tx}^-$.`, has: `${y}_{2}(aq) + ${x}⁻(aq)` };
-    if (x === 'I' && y === 'I') return { head: 'Iodine dissolves in iodide solution as the brown triiodide ion: $\\text{I}_2 + \\text{I}^- \\longrightarrow \\text{I}_3{}^-$.', has: 'I_{3}⁻(aq)' };
-    if (x === y) return { head: `${cap(NAME[x])} and ${ION[y]} ion are the two sides of one couple, so nothing is oxidized.`, has: `${x}_{2}(aq) + ${y}⁻(aq)` };
-    if (y === 'F') return { head: `${cap(NAME[x])} cannot oxidize fluoride ion, the most difficult halide ion to oxidize.`, has: `${x}_{2}(aq) + F⁻(aq)` };
-    return { head: `${cap(NAME[x])}, the weaker oxidizing agent, does not oxidize ${ION[y]} ion.`, has: `${x}_{2}(aq) + ${y}⁻(aq)` };
+    if (goes(x, y)) return `${cap(NAME[x])} oxidizes ${ION[y]} ion to ${NAME[y]}: $${tx}_2 + 2${ty}^- \\longrightarrow ${ty}_2 + 2${tx}^-$.`;
+    if (x === 'I' && y === 'I') return 'Iodine dissolves in iodide solution as the brown triiodide ion: $\\text{I}_2 + \\text{I}^- \\longrightarrow \\text{I}_3{}^-$.';
+    if (x === y) return `${cap(NAME[x])} and ${ION[y]} ion are the two sides of one couple, so nothing is oxidized.`;
+    if (y === 'F') return `${cap(NAME[x])} cannot oxidize fluoride ion, the most difficult halide ion to oxidize.`;
+    return `${cap(NAME[x])}, the weaker oxidizing agent, does not oxidize ${ION[y]} ion.`;
   }
+  const has = (x, y) => (goes(x, y) ? `${y}₂(aq) + ${x}⁻(aq)` : x === 'I' && y === 'I' ? 'I₃⁻(aq)' : x === y ? `${x}₂(aq) + ${x}⁻(aq)` : `${x}₂(aq) + ${y}⁻(aq)`);
+  const said = (x, y) => (goes(x, y) ? `${y}₂ forms` : x === 'I' && y === 'I' ? 'I₃⁻ forms' : 'no reaction');
   let hits = [];
   F.hover(d.stage, () => hits);
+  d.c.style.cursor = 'pointer';
+  d.c.addEventListener('click', (ev) => {
+    const b = d.c.getBoundingClientRect(); if (!b.width) return;
+    const px = ((ev.clientX - b.left) * 1400) / b.width, py = ((ev.clientY - b.top) * 1400) / b.width;
+    const j = Math.floor((px - CX0) / CW), i = Math.floor((py - R0) / RH);
+    if (j < 0 || j >= COLS.length || i < 0 || i >= ROWS.length) return;
+    if (ROWS[i] !== ox.value) ox.drive(ROWS[i]);
+    if (COLS[j] !== rd.value) rd.drive(COLS[j]);
+  });
+  const round = (ctx, x, y, w, h, r) => { ctx.beginPath(); ctx.roundRect(x, y, w, h, r); };
+  function drop(ctx, x, y, r, col) {
+    ctx.save(); ctx.beginPath(); ctx.moveTo(x, y - 2.1 * r); ctx.quadraticCurveTo(x + 1.25 * r, y - 0.2 * r, x + r, y + 0.2 * r);
+    ctx.arc(x, y + 0.2 * r, r, 0, Math.PI); ctx.quadraticCurveTo(x - 1.25 * r, y - 0.2 * r, x, y - 2.1 * r); ctx.closePath();
+    ctx.fillStyle = col; ctx.fill(); ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 1.5; ctx.stroke(); ctx.restore();
+  }
+  function tube(ctx, x, top, bot, col) {
+    const path = () => { ctx.beginPath(); ctx.moveTo(x - TW / 2, top); ctx.lineTo(x - TW / 2, bot - TW / 2); ctx.arc(x, bot - TW / 2, TW / 2, Math.PI, 0, true); ctx.lineTo(x + TW / 2, top); };
+    const liq = top + 26;
+    ctx.save(); path(); ctx.clip(); ctx.fillStyle = col; ctx.fillRect(x - TW / 2, liq, TW, bot - liq + 2); ctx.restore();
+    line(ctx, x - TW / 2 + 2, liq, x + TW / 2 - 2, liq, alpha(PAL.ink, 0.35), 2);
+    ctx.save(); path(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5; ctx.stroke(); ctx.restore();
+    line(ctx, x - TW / 2 - 8, top, x + TW / 2 + 8, top, PAL.ink, 2.5);
+  }
   function draw() {
     const { ctx } = begin(d.c);
-    const x = ox.value, y = rd.value, s = story(x, y), P = C('potential');
+    const x = ox.value, y = rd.value, P = C('potential');
     hits = [];
-    /* the axis of E°, fixed from 0 to 3 V */
-    line(ctx, AX, Y(0), AX, Y(3) - 10, PAL.muted, 2);
-    [0, 1, 2, 3].forEach((e) => { line(ctx, AX - 8, Y(e), AX, Y(e), PAL.muted, 2); text(ctx, String(e), AX - 16, Y(e), PAL.muted, { size: 17, align: 'right' }); });
-    text(ctx, '$\\kEo$ (V)', AX, Y(3) - 34, P, { size: 22, weight: 600, align: 'center', tex: true });
-    /* the four couples, the halogen's and the halide's drawn heavy */
-    const wx = ox.mix((v) => ORDER.map((q) => (q === v ? 1 : 0))), wy = rd.mix((v) => ORDER.map((q) => (q === v ? 1 : 0)));
-    ORDER.forEach((q, i) => {
-      const yy = Y(E[q]), w = Math.max(wx[i], wy[i]);
-      line(ctx, R0, yy, R1, yy, alpha(P, 0.65 + 0.35 * w), 2.5 + 3.5 * w);
-      text(ctx, `${q}_{2} + 2e⁻ ⟶ 2${q}⁻`, R1 + 18, yy, PAL.ink, { size: 20 });
-      text(ctx, `+${E[q].toFixed(2)} V`, R1 + 238, yy, P, { size: 20, weight: 600 });
-      if (wx[i] > 0.01) F.faded(ctx, wx[i], [0, 0], () => text(ctx, q === y ? `${q}_{2} added, ${q}⁻ in solution` : `${q}_{2} added`, R1 + 340, yy, PAL.ink, { size: 17 }));
-      if (wy[i] > 0.01 && !(q === x && q === y)) F.faded(ctx, wy[i], [0, 0], () => text(ctx, `${q}⁻ in solution`, R1 + 340, yy, PAL.ink, { size: 17 }));
-      hits.push({ x: (R0 + R1) / 2, y: yy, r: 14, name: `the ${q}₂/${q}⁻ couple, E° = +${E[q].toFixed(2)} V` });
+    /* the heads of the columns: the halide ion in the tube and its couple's potential */
+    text(ctx, 'in the tube', CX0 - 20, 112, PAL.muted, { size: 19, align: 'right' });
+    text(ctx, '$\\kEo$ of X₂ + 2e⁻ ⟶ 2X⁻', CX0 - 20, 142, P, { size: 19, align: 'right', tex: true });
+    COLS.forEach((q) => {
+      text(ctx, `${q}⁻(aq)`, colX(q), 112, PAL.ink, { size: 24, weight: 600, align: 'center' });
+      text(ctx, `+${E[q].toFixed(2)} V`, colX(q), 142, P, { size: 19, weight: 600, align: 'center' });
     });
-    /* electrons pass from the halide up to the halogen where the halogen's couple lies above */
-    if (E[x] > E[y]) F.faded(ctx, Math.min(ox.k, rd.k), [0, 0], () => {
-      arrow(ctx, R0 + 70, Y(E[y]) - 4, R0 + 70, Y(E[x]) + 6, PAL.ink, 3);
-      text(ctx, '2e⁻', R0 + 84, (Y(E[x]) + Y(E[y])) / 2, PAL.ink, { size: 20, bg: PAL.panel });
+    /* the cells that react stand on a soft ground; the chosen one wears a frame */
+    ROWS.forEach((r) => COLS.forEach((q) => { if (goes(r, q)) { ctx.save(); round(ctx, colX(q) - CW / 2 + 8, rowY(r) - RH / 2 + 7, CW - 16, RH - 14, 10); ctx.fillStyle = PAL.soft; ctx.fill(); ctx.restore(); } }));
+    { const sx = rd.mix((v) => colX(v)), sy = ox.mix((v) => rowY(v));
+      ctx.save(); round(ctx, sx - CW / 2 + 5, sy - RH / 2 + 4, CW - 10, RH - 8, 12); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.stroke(); ctx.restore(); }
+    ROWS.forEach((r) => {
+      const cy = rowY(r);
+      drop(ctx, 76, cy - 8, 11, F.fact(WATER[r]));
+      text(ctx, `${r}₂(aq) added`, 104, cy - 14, PAL.ink, { size: 23, weight: 600 });
+      text(ctx, `+${E[r].toFixed(2)} V`, 104, cy + 16, P, { size: 19, weight: 600 });
+      COLS.forEach((q) => {
+        const cx = colX(q), tx = cx - 62, on = goes(r, q), tri = r === 'I' && q === 'I';
+        drop(ctx, tx, cy - 50, 6.5, F.fact(WATER[r]));
+        tube(ctx, tx, cy - 36, cy + 54, F.fact(WATER[after(r, q)]));
+        text(ctx, said(r, q), cx - 14, cy + 8, on || tri ? PAL.ink : PAL.muted, { size: on ? 22 : 19, weight: on ? 600 : 400 });
+        hits.push({ x: tx, y: cy + 6, r: 50, name: `${r}₂ added to ${q}⁻: ${has(r, q)}, ${HUE[after(r, q)]}` });
+      });
     });
-    /* the tube and its solution, its colour the fact */
-    const col = ox.k < 1 ? ox.mixColor((v) => sol(v, y)) : rd.mixColor((v) => sol(x, v));
-    const tube = () => { ctx.beginPath(); ctx.moveTo(TX - TW / 2, TT); ctx.lineTo(TX - TW / 2, TB - TW / 2); ctx.arc(TX, TB - TW / 2, TW / 2, Math.PI, 0, true); ctx.lineTo(TX + TW / 2, TT); };
-    ctx.save(); tube(); ctx.clip(); ctx.fillStyle = col; ctx.fillRect(TX - TW / 2, LIQ, TW, TB - LIQ + 2); ctx.restore();
-    line(ctx, TX - TW / 2 + 2, LIQ, TX + TW / 2 - 2, LIQ, alpha(PAL.ink, 0.35), 2);
-    ctx.save(); tube(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.stroke(); ctx.restore();
-    line(ctx, TX - TW / 2 - 12, TT, TX + TW / 2 + 12, TT, PAL.ink, 3);
-    text(ctx, s.has, TX, TB + 38, PAL.ink, { size: 22, align: 'center' });
-    hits.push({ x: TX, y: (LIQ + TB) / 2, r: TW / 2, name: `the solution: ${s.has.replace(/_\{(\d)\}/g, (m, n) => '₀₁₂₃₄₅₆₇₈₉'[n])}` });
-    topline(ctx, s.head);
+    /* the two orders the grid is laid out by */
+    const yb = R0 + 3 * RH + 30;
+    arrow(ctx, 44, R0 + 3 * RH - 14, 44, R0 + 14, PAL.muted, 3);
+    text(ctx, '↑ stronger oxidizing agent', 34, yb, PAL.muted, { size: 19 });
+    arrow(ctx, CX0 + 30, yb, CX0 + 4 * CW - 30, yb, PAL.muted, 3);
+    text(ctx, 'halide ion easier to oxidize', CX0 + 2 * CW, yb, PAL.muted, { size: 19, align: 'center', bg: PAL.panel });
+    text(ctx, 'Fluorine has no row: water itself burns in it.', 34, yb + 38, PAL.muted, { size: 17 });
+    topline(ctx, story(x, y));
     const sign = (v) => (v > 0.004 ? `+${v.toFixed(2)}` : v < -0.004 ? `-${(-v).toFixed(2)}` : '0.00');
     F.morph(fx, `\\kEo = \\mk{a}{\\kEo{}_{\\text{${x}}_2/\\text{${x}}^-}} - \\mk{b}{\\kEo{}_{\\text{${y}}_2/\\text{${y}}^-}} = \\mk{av}{${E[x].toFixed(2)}\\ \\text{V}} - \\mk{bv}{${E[y].toFixed(2)}\\ \\text{V}} = \\mk{r}{${sign(E[x] - E[y])}\\ \\text{V}}`);
   }
@@ -78,98 +109,92 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
 })();
 
 /* =====================================================================
-   FIGURE 18.63: the interhalogen fluorides of Table 18.3, a central Cl,
-   Br or I with one, three, five or seven fluorine atoms. Seven fluorine
-   sites and three lone-pair sites in the molecule's own frame; each
-   shape turns the molecule to the book's orientation. Still: a choice
-   is one morph, a lone pair giving way to two fluorine atoms that grow
-   out of the central atom while the others swing to their new places.
+   FIGURE 18.63: the fluorides of one heavier halogen side by side, as
+   the book sets IF₃, IF₅ and IF₇, with the monofluoride added: one,
+   three, five and seven fluorine atoms about Cl, Br or I (Table 18.3).
+   The fourth place is empty for chlorine and bromine. Every atom is
+   drawn to its covalent radius, and one drag turns all four. Still: a
+   choice blends the central atom's size and colour and the bond lengths,
+   and the heptafluoride grows in or shrinks away.
 ===================================================================== */
 (function () {
   const d = sim('sim-interhalogens');
-  const FREE = { spin: 'idle', views: [{ label: 'side', yaw: 0.35, pitch: 0.22 }, { label: 'down the axis', yaw: 0, pitch: Math.PI / 2 }] };
-  const v = F.view3d(d.stage, { ...FREE, h: 600, dist: 7.6 });
-  const g = v.part(0);
-  const K = 0.62;                                               /* scene units per ångström */
+  const HS = 480, FOV = 14, DIST = 14.7;
+  const XS = [-4.27, -1.79, 1.08, 3.89];                        /* each molecule's place, spaced by its own width */
+  const v = F.view3d(d.stage, { spin: 'idle', h: HS, dist: DIST, tilt: 0.3 });
+  /* a long lens, so the molecules at the two ends are seen as squarely as the middle ones */
+  if (v.camera && v.camera.isPerspectiveCamera) { v.camera.fov = FOV; v.camera.updateProjectionMatrix(); }
+  const kc = F.makeCanvas(d.stage, 166);
+  const UNIT = HS / (2 * DIST * Math.tan((FOV / 2) * RAD));     /* logical units of the strip per scene unit */
+  const G = XS.map((x) => v.part(x));
+  const K = 0.56;                                               /* scene units per ångström */
   const RCOV = { F: 64, Cl: 99, Br: 114, I: 133 };              /* covalent radii, pm (Table 6.2) */
-  const rad = (s) => (RCOV[s] / 200) * K;                       /* each sphere half its covalent radius */
-  const V = {
-    add: (a, b) => [a[0] + b[0], a[1] + b[1], a[2] + b[2]],
-    mul: (a, k) => [a[0] * k, a[1] * k, a[2] * k],
-  };
-  function slerp(a, b, t) {
-    const w = Math.acos(Math.max(-1, Math.min(1, a[0] * b[0] + a[1] * b[1] + a[2] * b[2]))); if (w < 1e-6) return a;
-    const s = Math.sin(w); return V.add(V.mul(a, Math.sin((1 - t) * w) / s), V.mul(b, Math.sin(t * w) / s));
-  }
+  const rad = (s) => (RCOV[s] / 100) * 0.6 * K;                 /* each sphere six tenths of its covalent radius */
   const cs = (deg) => [Math.cos(deg * RAD), Math.sin(deg * RAD)];
   const [c82, s82] = cs(82), [c72, s72] = cs(72), [c144, s144] = cs(144), [cT, sT] = cs(87.5);
   const TH = [-1 / 3, Math.sqrt(8) / 3];                        /* cos and sin of the tetrahedral angle */
-  /* fluorine sites 0 to 6 and lone-pair sites 0 to 2 per count of fluorine atoms; rot is the turn to the book's view */
-  const SHAPE = {
-    1: { F: [null, null, [1, 0, 0], null, null, null, null], L: [[TH[0], 0, TH[1]], [TH[0], TH[1] * 0.866, -TH[1] * 0.5], [TH[0], -TH[1] * 0.866, -TH[1] * 0.5]], rot: [0, 0, Math.PI / 2], shape: 'linear', tag: 2 },
-    3: { F: [[-cT, sT, 0], [-cT, -sT, 0], [1, 0, 0], null, null, null, null], L: [[-0.5, 0, 0.866], [-0.5, 0, -0.866], null], rot: [0, 0, 0], shape: 'T-shaped', tag: 2 },
-    5: { F: [[c82, s82, 0], [c82, -s82, 0], [1, 0, 0], [c82, 0, s82], [c82, 0, -s82], null, null], L: [[-1, 0, 0], null, null], rot: [0, 0, Math.PI / 2], shape: 'square pyramidal', tag: 0 },
-    7: { F: [[c72, s72, 0], [c72, -s72, 0], [1, 0, 0], [0, 0, 1], [0, 0, -1], [c144, s144, 0], [c144, -s144, 0]], L: [null, null, null], rot: [-Math.PI / 2, 0, 0], shape: 'pentagonal bipyramidal', tag: 2 },
+  /* fluorine atoms and lone pairs in the molecule's own frame; rot turns it to the book's view */
+  const SHAPE = [
+    { n: 1, F: [[1, 0, 0]], L: [[TH[0], 0, TH[1]], [TH[0], TH[1] * 0.866, -TH[1] * 0.5], [TH[0], -TH[1] * 0.866, -TH[1] * 0.5]], rot: [0, 0, Math.PI / 2], shape: 'linear' },
+    { n: 3, F: [[-cT, sT, 0], [-cT, -sT, 0], [1, 0, 0]], L: [[-0.5, 0, 0.866], [-0.5, 0, -0.866]], rot: [0, 0, 0], shape: 'T-shaped' },
+    { n: 5, F: [[c82, s82, 0], [c82, -s82, 0], [1, 0, 0], [c82, 0, s82], [c82, 0, -s82]], L: [[-1, 0, 0]], rot: [0, 0, Math.PI / 2], shape: 'square pyramidal' },
+    { n: 7, F: [[c72, s72, 0], [c72, -s72, 0], [1, 0, 0], [0, 0, 1], [0, 0, -1], [c144, s144, 0], [c144, -s144, 0]], L: [], rot: [-Math.PI / 2, 0, 0], shape: 'pentagonal bipyramidal' },
+  ];
+  const LEN = { Cl: [1.63, 1.65, 1.65, 1.83], Br: [1.76, 1.77, 1.75, 1.83], I: [1.91, 1.93, 1.86, 1.83] };   /* Å; the fourth is IF₇'s, the only heptafluoride */
+  const STATE = { Cl: ['g', 'g', 'g'], Br: ['g', 'l', 'l'], I: ['s', 's', 'l', 'g'] };                        /* Table 18.3 */
+  const SUB = '₀₁₂₃₄₅₆₇';
+  const HEAD = {
+    I: 'Iodine, the largest of the three, holds as many as seven fluorine atoms: in IF₇ it is in the 7+ oxidation state, the limit for the halogens.',
+    Br: 'Bromine is smaller than iodine and holds five fluorine atoms at most, so it stops at the 5+ oxidation state.',
+    Cl: 'Chlorine, the smallest of the three, holds five fluorine atoms at most, so it stops at the 5+ oxidation state.',
   };
-  const COUNT = ['one', '', '', 'three', '', 'five', '', 'seven'];
-  const PAIRS = ['', 'one lone pair', 'two lone pairs', 'three lone pairs'];
-  const MOL = {};
-  [['Cl', [1.63, 1.65, 1.65]], ['Br', [1.76, 1.77, 1.75]], ['I', [1.91, 1.93, 1.86, 1.83]]].forEach(([X, lens]) => lens.forEach((len, i) => {
-    const n = 2 * i + 1;
-    MOL[`${X}F${n > 1 ? n : ''}`] = { X, n, len, label: `${X}F${n > 1 ? '₀₁₂₃₄₅₆₇'[n] : ''}` };
-  }));
-  Object.values(MOL).forEach((m) => {
-    const lp = (7 - m.n) / 2, top = m.X !== 'I' && m.n === 5, lim = m.n === 7;
-    m.head = m.n === 1
-      ? `${m.label} is linear: one fluorine atom bonded to ${NAME[m.X]} in the 1+ oxidation state, with three lone pairs.`
-      : `${m.label} is ${SHAPE[m.n].shape}: ${COUNT[m.n]} fluorine atoms about ${NAME[m.X]} in the ${m.n}+ oxidation state${top ? `, the highest ${NAME[m.X]} reaches` : lim ? ', the limit for the halogens' : `, with ${PAIRS[lp]}`}.`;
-  });
   const fade = (a) => (a < 0.999 ? { transparent: true, opacity: a } : undefined);
-  const plain = (e, a) => { e.style.opacity = String(Math.max(0, Math.min(1, a))); return e; };
-  const pick = F.select(d.controls, { label: '\\text{molecule}', aria: 'the interhalogen', options: Object.entries(MOL).map(([k, m]) => ({ value: k, label: m.label })), value: 'IF3' });
+  const pick = F.choice(d.controls, { label: '\\text{central atom and its covalent radius }\\kr', key: 'central', aria: 'the central halogen', options: ['Cl', 'Br', 'I'].map((s) => ({ value: s, label: `${s}, ${RCOV[s]} pm` })), value: 'I' });
   const ro = F.readout(d);
   function draw() {
-    const k = pick.k, A = MOL[pick.from], B = MOL[pick.value], SA = SHAPE[A.n], SB = SHAPE[B.n];
-    const len = (A.len + (B.len - A.len) * k) * K;
+    const k = pick.k, A = pick.from, B = pick.value, X = k < 0.5 ? A : B;
+    const cc = A === B ? F.el(B) : F.mixColor(F.el(A), F.el(B), k), rc = rad(A) + (rad(B) - rad(A)) * k;
     v.clear();
-    /* the molecule's own turn sits inside the part, whose orientation the orbit owns */
-    const h = new g.constructor(); g.add(h);
-    h.position.y = -0.22; h.rotation.set(...SA.rot.map((a, i) => a + (SB.rot[i] - a) * k));
-    g.updateMatrixWorld(true);
-    const cc = A.X === B.X ? F.el(B.X) : F.mixColor(F.el(A.X), F.el(B.X), k);
-    const X = k < 0.5 ? A.X : B.X;
-    v.pickable(sphere(h, [0, 0, 0], rad(A.X) + (rad(B.X) - rad(A.X)) * k, cc), `${NAME[X]} (${X})`);
-    let named = null;
-    for (let n = 0; n < 7; n++) {
-      const da = SA.F[n], db = SB.F[n], on = (da ? 1 : 0) + ((db ? 1 : 0) - (da ? 1 : 0)) * k;
-      if (on <= 0.01) continue;
-      /* an arriving or leaving fluorine runs out of or into the central atom along the direction it ends or started at */
-      const p = V.mul(da && db ? slerp(da, db, k) : db || da, len * (da && db ? 1 : 0.35 + 0.65 * on));
-      v.pickable(sphere(h, p, rad('F') * (0.3 + 0.7 * on), F.el('F'), fade(on)), 'fluorine (F)');
-      const m = V.mul(p, 0.5);
-      stick(h, [0, 0, 0], m, 0.075, cc, fade(on));
-      stick(h, m, p, 0.075, F.el('F'), fade(on));
-      if (n === SB.tag) named = p;
-    }
-    let lp = null;
-    for (let n = 0; n < 3; n++) {
-      const la = SA.L[n], lb = SB.L[n], on = (la ? 1 : 0) + ((lb ? 1 : 0) - (la ? 1 : 0)) * k;
-      if (on <= 0.01) continue;
-      const dir = la && lb ? slerp(la, lb, k) : lb || la;
-      const m = lobe(h, [0, 0, 0], dir, 0.95 * (0.4 + 0.6 * on), PAL.ink); m.material.opacity = 0.35 * on;
-      v.pickable(m, `a lone pair on ${NAME[X]}`);
-      /* the lone pair that points most across the line of sight carries the label */
-      const w = h.localToWorld(F.mesh.vec(dir)).sub(h.localToWorld(F.mesh.vec([0, 0, 0]))).normalize();
-      const far = 1 - Math.abs(w.z);
-      if (!lp || far > lp.far + 0.05) lp = { p: V.mul(dir, 1.15), on, far };
-    }
-    v.label(X, [0, 0, 0], h, 0);
-    if (named) v.label('F', named, h, 0);
-    if (lp) plain(v.label('lone pair', lp.p, h, 0), lp.on);
-    v.headline(B.head);
-    const lone = (7 - B.n) / 2;
-    ro.set(`\\mk{m}{\\text{${B.X}F}${B.n > 1 ? `_{${B.n}}` : ''}}:\\ \\mk{b}{${B.n}}\\ \\text{bond${B.n > 1 ? 's' : ''}} + \\mk{l}{${lone}}\\ \\text{lone pair${lone === 1 ? '' : 's'}} = \\mk{p}{${B.n + lone}}\\ \\text{electron pairs}`,
-      `Covalent radii: $\\kr{}_{\\text{${B.X}}} = ${RCOV[B.X]}\\ \\text{pm}$, $\\kr{}_{\\text{F}} = 64\\ \\text{pm}$.`);
+    const shown = SHAPE.map((S, i) => {
+      const on = i < 3 ? 1 : (A === 'I' ? 1 : 0) + ((B === 'I' ? 1 : 0) - (A === 'I' ? 1 : 0)) * k;
+      if (on <= 0.01) { if (v.label) v.label(`no ${B}F<sub>7</sub>`, [0, -0.3, 0], G[i]); return on; }
+      const g = G[i], h = new g.constructor(); g.add(h);
+      /* the molecule's own turn sits inside the part, whose orientation the orbit owns */
+      h.position.y = -0.3; h.rotation.set(...S.rot); h.scale.setScalar(0.45 + 0.55 * on);
+      const len = (LEN[A][i] + (LEN[B][i] - LEN[A][i]) * k) * K;
+      v.pickable(sphere(h, [0, 0, 0], rc, cc, fade(on)), `${NAME[X]} (${X}), covalent radius ${RCOV[X]} pm`);
+      S.F.forEach((dir) => {
+        const p = dir.map((c) => c * len), m = dir.map((c) => c * len * 0.5);
+        v.pickable(sphere(h, p, rad('F'), F.el('F'), fade(on)), 'fluorine (F), covalent radius 64 pm');
+        stick(h, [0, 0, 0], m, 0.06, cc, fade(on));
+        stick(h, m, p, 0.06, F.el('F'), fade(on));
+      });
+      S.L.forEach((dir) => {
+        const m = lobe(h, [0, 0, 0], dir, 0.9, PAL.ink); m.material.opacity = 0.35 * on;
+        v.pickable(m, `a lone pair on ${NAME[X]}`);
+      });
+      return on;
+    });
+    /* under each molecule its formula and state (Table 18.3), its shape, and the central atom's count */
+    { const { ctx } = F.begin(kc);
+      SHAPE.forEach((S, i) => {
+        const on = shown[i]; if (on <= 0.01) return;
+        const x = 700 + XS[i] * UNIT, lp = (7 - S.n) / 2, st = STATE[i < 3 ? B : 'I'][i], el = i < 3 ? B : 'I';
+        F.faded(ctx, on, [0, 0], () => {
+          text(ctx, `${el}F${S.n > 1 ? SUB[S.n] : ''}(${st})`, x, 20, PAL.ink, { size: 25, weight: 600, align: 'center' });
+          text(ctx, S.shape, x, 52, PAL.ink, { size: 20, align: 'center' });
+          text(ctx, `${el} is ${S.n}+, ${lp === 0 ? 'no lone pairs' : lp === 1 ? '1 lone pair' : `${lp} lone pairs`}`, x, 80, PAL.muted, { size: 18, align: 'center' });
+        });
+      });
+      F.legend(ctx, { l: 60, r: 1340, t: 106, b: 166 }, [
+        { s: NAME[B], draw: (c, x, y) => F.dot(c, x, y, F.el(B), true, 11) },
+        { s: NAME.F, draw: (c, x, y) => F.dot(c, x, y, F.el('F'), true, 7) },
+        { s: 'lone pair', draw: (c, x, y) => F.dot(c, x, y, F.alpha(PAL.ink, 0.35), true, 10) },
+      ], { corner: 'top', row: true, panel: false, size: 19 }); }
+    v.headline(HEAD[B]);
+    const terms = SHAPE.filter((S) => S.n < 7 || B === 'I').map((S) => `${S.n} + 2(${(7 - S.n) / 2})`).join(' = ');
+    ro.set(`\\text{valence electrons of }\\mk{x}{\\text{${B}}}:\\ \\mk{v}{7} = ${terms}`,
+      'Each bond takes one of the central atom’s seven valence electrons and each lone pair two, so the fluorine atoms come in odd numbers.');
   }
   still(d, draw);
 })();

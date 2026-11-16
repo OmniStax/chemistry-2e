@@ -23,6 +23,9 @@
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-fable-5-2"
       }
     ]
   },
@@ -64,6 +67,14 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "rebuilt flat from the book's two images"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "second pass: larger bench, parts named, the cell reaction, a headline"
         }
       ]
     },
@@ -78,6 +89,14 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "label colour on the value only, short caption"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "second pass: rebuilt as a ranked table with E° bars"
         }
       ]
     }

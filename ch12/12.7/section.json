@@ -22,6 +22,12 @@
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-opus-5-5"
+      },
+      {
+        "model": "claude-fable-5-2"
       }
     ]
   },
@@ -47,6 +53,14 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "headline states the live E_a and ΔH; caption cut"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "a log bar of times faster under the diagram; E_a values in the key"
         }
       ]
     },
@@ -120,6 +134,14 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "rebuilt flat in the book's perspective, no view buttons; caption cut"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt as a story of the four steps, lit atoms, the new C–H bonds corrected"
         }
       ]
     },
@@ -150,6 +172,14 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "part": "reverted to the book's image, which sets both models side by side"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt: both models side by side on one binding story, the book's shapes"
         }
       ]
     }

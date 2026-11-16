@@ -22,6 +22,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -32,20 +35,16 @@
   {
    "id": "fig-amines",
    "kind": "figure",
-   "originals": [
-    "/media/ch20/CNX_Chem_20_04_amines_img.jpg"
-   ],
    "draws": [],
-   "conventions": [
-    "N",
-    "C",
-    "H"
-   ],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "reverted to the book's image"
     }
    ]
   },
@@ -150,6 +149,14 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "redrawn as the book draws it, larger; leaving atoms followed into the water"
     }
    ]
   },

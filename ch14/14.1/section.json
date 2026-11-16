@@ -12,7 +12,7 @@
   "Describe the acid-base behavior of amphiprotic substances"
  ],
  "summary_html": "<p>A compound that can donate a proton (a hydrogen ion) to another compound is called a <span data-concept=\"bronsted-lowry-acid\">Brønsted-Lowry acid</span>. The compound that accepts the proton is called a <span data-concept=\"bronsted-lowry-base\">Brønsted-Lowry base</span>. The species remaining after a <span data-concept=\"bronsted-lowry-acid\">Brønsted-Lowry acid</span> has lost a proton is the <span data-concept=\"conjugate-base\">conjugate base</span> of the acid. The species formed when a <span data-concept=\"bronsted-lowry-base\">Brønsted-Lowry base</span> gains a proton is the <span data-concept=\"conjugate-acid\">conjugate acid</span> of the base. Thus, an <span data-concept=\"bronsted-lowry-acids-bases\">acid-base reaction</span> occurs when a proton is transferred from an acid to a base, with formation of the <span data-concept=\"conjugate-base\">conjugate base</span> of the reactant acid and formation of the <span data-concept=\"conjugate-acid\">conjugate acid</span> of the reactant base. <span data-concept=\"amphiprotic-species\">Amphiprotic species</span> can act as both proton donors and proton acceptors. Water is the most important <span data-concept=\"amphiprotic-species\">amphiprotic</span> species. It can form both the hydronium ion, H<sub>3</sub>O<sup>+</sup>, and the hydroxide ion, OH<sup>−</sup> when it undergoes <span data-concept=\"autoionization\">autoionization</span>:</p>\n$${\\text{2H}}_{2}\\text{O(}l)\\;\\rightleftharpoons \\;{\\text{H}}_{3}{\\text{O}}^{+}(aq)+{\\text{OH}}^{-}(aq)$$\n<p>The <span data-concept=\"ion-product-constant-for-water\">ion product of water</span>, $\\kKw$ is the <span data-concept=\"equilibrium-constant\">equilibrium constant</span> for the <span data-concept=\"autoionization\">autoionization</span> reaction:</p>\n$$\\kKw=\\kconcHyd\\kconcOH=1.0\\;\\times \\;1{0}^{-14}\\;\\text{at}\\;25\\;{}^{\\circ}\\text{C}$$",
- "notes": "Nothing of the section is left out; the four equation images are redrawn, so the bundle’s alt text, which describes pyridine under both the hydrogen fluoride and the pyridine images, and the minus sign the water image sets on the hydroxide ion’s hydrogen are not carried over.",
+ "notes": "Nothing of the section is left out. Three equation images are the book's own; the bundle sets the hydrogen fluoride image's alt text on the water and ammonia image and pyridine's on the hydrogen fluoride image, so each kept image carries a description of what it shows. The water image sets the hydroxide ion's minus sign on its hydrogen; that equation is redrawn with the sign on the bracket.",
  "ai": {
   "text": [
    {
@@ -24,6 +24,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -33,57 +36,62 @@
  "figures": [
   {
    "id": "fig-water-ammonia",
-   "kind": "figure",
+   "kind": "sim",
    "originals": [
     "/media/ch14/CNX_Chem_14_01_conjugate_img.jpg"
    ],
    "draws": [],
-   "conventions": [
-    "O",
-    "N",
-    "H"
-   ],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "reverted to the book's image"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "new moving figure: the proton crossing and returning in three reactions"
     }
    ]
   },
   {
    "id": "fig-hf-water",
    "kind": "figure",
-   "originals": [
-    "/media/ch14/CNX_Chem_14_01_HF_img.jpg"
-   ],
    "draws": [],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "reverted to the book's image"
     }
    ]
   },
   {
    "id": "fig-pyridine-water",
    "kind": "figure",
-   "originals": [
-    "/media/ch14/CNX_Chem_14_01_NH3_img.jpg"
-   ],
    "draws": [],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "reverted to the book's image"
     }
    ]
   },
   {
    "id": "fig-water-water",
-   "kind": "figure",
+   "kind": "sim",
    "originals": [
     "/media/ch14/CNX_Chem_14_01_Water_img.jpg"
    ],
@@ -93,6 +101,14 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "kept; caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt moving: the proton passes between two water molecules and back"
     }
    ]
   },
@@ -109,6 +125,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "slider reads the concentration; hover names; caption cut"
     }
    ]
   }
@@ -118,18 +138,14 @@
    "id": "pair-acid",
    "label": "the acid and its conjugate base",
    "figures": [
-    "fig-water-ammonia",
-    "fig-hf-water",
-    "fig-pyridine-water"
+    "fig-water-ammonia"
    ]
   },
   {
    "id": "pair-base",
    "label": "the base and its conjugate acid",
    "figures": [
-    "fig-water-ammonia",
-    "fig-hf-water",
-    "fig-pyridine-water"
+    "fig-water-ammonia"
    ]
   },
   {

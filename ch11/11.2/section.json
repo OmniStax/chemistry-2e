@@ -27,7 +27,9 @@
       {
         "model": "claude-opus-5-5",
         "effort": "low"
-      }
+      },
+      {"model": "claude-opus-5-5"},
+      {"model": "claude-fable-5-2"}
     ]
   },
   "built": "2026-09-28",
@@ -46,7 +48,8 @@
         "Cl",
         "C",
         "O",
-        "H"
+        "H",
+        "e-"
       ],
       "facts": [
         "#ffc94d"
@@ -61,7 +64,9 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "notes that restated the headline dropped"
-        }
+        },
+        {"model": "claude-opus-5-5", "part": "rebuilt flat from the image: beaker, plates, supply, bulb, drifting ions"},
+        {"model": "claude-fable-5-2", "part": "rebuilt: three closed circuits side by side, electrons in wires, amount slider"}
       ]
     },
     {
@@ -87,7 +92,9 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "note cut to the fact the caption lacks"
-        }
+        },
+        {"model": "claude-opus-5-5", "part": "rebuilt flat: waters turn and carry ions off a crystal slice"},
+        {"model": "claude-fable-5-2", "part": "rebuilt larger: named ions, two hydrated ions labelled, water all round"}
       ]
     },
     {
@@ -146,14 +153,7 @@
     },
     {
       "id": "bulb",
-      "label": "the light bulb",
-      "figures": [
-        "sim-conductivity"
-      ]
-    },
-    {
-      "id": "power-supply",
-      "label": "the power supply",
+      "label": "the light bulbs",
       "figures": [
         "sim-conductivity"
       ]

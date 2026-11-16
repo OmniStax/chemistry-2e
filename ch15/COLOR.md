@@ -16,6 +16,7 @@ no hue.
 | Grams dissolved, a gram solubility | `mass` | 15.1, where a readout states it |
 | A volume of solution mixed | `volume` | Where a precipitation example mixes two, and 15.3's 1.00 L |
 | The solid in 15.2's Sim | `amount` | Its slider, in moles |
+| The rates of dissolution and precipitation in Figure 15.2 | `rate`, against `time` | The axis titles only; the two curves are told apart with `F.cat` |
 
 These stay in ink: x, the exponents p and q, the logarithm terms, the
 stoichiometric coefficients.
@@ -29,27 +30,31 @@ stays ink.
 ## Facts and conventions
 
 `F.el` for every ion and molecule (Ag⁺, Cl⁻, Ca²⁺, F⁻, water, NH₃, the complex
-ions), the ion keeping its element colour and a charge mark. Through
-`F.fact`: a precipitate's own colour (AgCl white, AgBr cream, PbCrO₄ yellow,
-Ag₂CrO₄ red), unchanged in both themes; as built, 15.2's solid AgCl is the one
-precipitate drawn, white (`#f4f4f2`). The donated electron pair of a Lewis
-equation is an ink arrow.
+ions), the ion keeping its element colour and a charge mark; as built, Ag⁺,
+Cl⁻ and water in Figure 15.2 and the Ag⁺, Cl⁻ and Br⁻ bars of 15.1's Sim.
+Through `F.fact`: a precipitate's own colour (AgCl white, AgBr cream, PbCrO₄
+yellow, Ag₂CrO₄ red), unchanged in both themes; as built, the solids drawn
+are AgCl, white (`#f4f4f2`), in 15.1's and 15.2's Sims, AgBr, cream
+(`#efe6b4`), in 15.1's Sim and Al(OH)₃, white, in 15.3's Sim. The donated
+electron pair of 15.2's Lewis Sim is `F.cat(0)`, with an ink arrow to the atom
+that accepts it.
 
 ## Referents
 
 Each section lists its own in `referents`. As built:
 
 - **15.1.** `agcl` and `agbr`, the two silver salts of Example 15.11, one line
-  each on the K_sp plane in its two-salt state; with one salt the line wears
+  each on the K_sp plane in its two-salt state, with its halide's point, its
+  threshold and its solid's name; with one salt the line wears
   `equilibrium-constant`. Figure 15.2's salt and ions are drawn in the element
   palette (convention wins) and are not referents.
-- **15.2.** `base`, `acid` and `displacer`: the Lewis base, the Lewis acid and
-  the species that displaces another, in the five redrawn Lewis equations and
-  the Cu(CN)₂⁻ structure, each atom in the colour of the species it came from.
-  The metal ion is the acid and the ligand the base, so they are not referents
-  of their own; the Sim tells its [Cl⁻] and [Ag⁺] curves apart with `F.cat`.
+- **15.2.** None. Its Lewis equations and the Cu(CN)₂⁻ structure are the
+  book's images; the Lewis Sim marks the donated pair and its bond with
+  `F.cat(0)` and the pair leaving the S=O bond with `F.cat(2)`; the silver
+  chloride Sim draws its K_sp line in `equilibrium-constant` and uses no
+  `F.cat`.
 - **15.3.** `al-ion` and `aluminate`, one line each on the solubility-against-pH
-  Sim, the aluminate also naming the Al(OH)₄⁻ Figure. The two coupled
+  Sim and the dots of dissolved ion in its beaker. The two coupled
   reactions of a net equilibrium are not split into referents, since each K is
   written once in the book's equations.
 

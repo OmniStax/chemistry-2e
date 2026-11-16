@@ -1,14 +1,15 @@
 /* Figures for section 6.2 The Bohr Model. Boots against the section's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['6.2'] = function (root, F) {
-const { el, fmt, tex, C, PAL, alpha, ctl, cycle, register, begin, line, arrow, dot, text, topline, vbracket } = F;
+const { fmt, tex, C, PAL, alpha, cycle, register, begin, line, arrow, dot, text, topline } = F;
 const sim = (id, H) => F.sim(root, id, H);
-function readout(host, main, small) { tex(host, main); if (small) { const s = el('small', null, small); host.appendChild(s); F.renderMath(s); } }
+/* a value in its category's colour inside a readout: the value is coloured, the equation round it stays in ink */
+const hu = (type, x) => '\\htmlClass{kv-' + type + '}{' + x + '}';
 /* a quantum number is a discrete state, so a choice (a dropdown where the row would wrap), never a slider (rule 26.1) */
+const span = (min, max) => { const o = []; for (let k = min; k <= max; k++) o.push({ value: String(k), label: String(k) }); return o; };
 function qn(controls, { label, min, max, value, aria, onInput }) {
-  const options = []; for (let k = min; k <= max; k++) options.push({ value: String(k), label: String(k) });
-  const c = (max - min > 5 ? F.select : F.choice)(controls, { label, options, value: String(value), aria, onInput });
-  return { get v() { return +c.value; }, set: (k) => c.set(String(k)) };
+  const c = F.choice(controls, { label, options: span(min, max), value: String(value), aria, onInput });
+  return { get v() { return +c.value; } };
 }
 
 /* ---------- the model's constants, as the book states them ---------- */
@@ -16,9 +17,13 @@ const K = 2.179e-18;          /* J, the constant k that gathers the fundamental 
 const HP = 6.626e-34;         /* J s, Planck's constant */
 const CL = 2.998e8;           /* m/s, the speed of light */
 const A0 = 5.292e-11;         /* m, the Bohr radius */
-const RINF = K / (HP * CL);   /* m⁻¹, the Rydberg constant as the model recovers it */
+const RINF = 1.097e7;          /* m⁻¹, the Rydberg constant: k/hc from the three constants above, to the four figures the text carries */
+const sig4 = (x) => Number(x.toPrecision(4));
 const energy = (n, Z) => -K * Z * Z / (n * n);                                   /* J */
-const lambdaNm = (n1, n2, Z) => (HP * CL / Math.abs(energy(n2, Z) - energy(n1, Z))) * 1e9;   /* nm */
+/* the wavelength in nm from the energy difference as it is shown, to four figures, the way Example 6.5 works it */
+const photonNm = (n1, n2, Z) => (HP * CL / sig4(Math.abs(energy(n2, Z) - energy(n1, Z)))) * 1e9;
+/* the same from the Rydberg equation; Z need not be whole while a change of ion slides the lines */
+const lambdaNm = (n1, n2, Z) => 1e9 / (RINF * Z * Z * (1 / (n1 * n1) - 1 / (n2 * n2)));
 const radiusM = (n, Z) => (n * n / Z) * A0;
 
 /* ---------- number formatting ---------- */
@@ -64,78 +69,6 @@ function region(nm) {
   return (nm < 450 ? 'violet' : nm < 495 ? 'blue' : nm < 570 ? 'green' : nm < 590 ? 'yellow' : nm < 620 ? 'orange' : 'red') + ' light';
 }
 
-/* ---------- a logarithmic wavelength axis from 10 nm to 10 000 nm ----------
-   One fixed frame holds the ultraviolet, the visible band and the infrared at every
-   nuclear charge: the lines of Li²⁺ fall near 10 nm and the longest transition the
-   sliders reach lies near 4000 nm. The band is painted in the colours of light. */
-const LOGLO = 1, LOGHI = 4;
-const TICKS = [10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000];
-function wavelengthAxis(ctx, box, h, title, inside) {
-  const X = (nm) => box.l + ((Math.log10(nm) - LOGLO) / (LOGHI - LOGLO)) * (box.r - box.l);
-  const y = box.y, cw = C('wavelength');
-  const ry = inside ? y : y - h / 2 - 12;   /* the region names sit inside the strip where lines stand above it */
-  ctx.save(); ctx.fillStyle = PAL.soft; ctx.fillRect(box.l, y - h / 2, box.r - box.l, h); ctx.restore();
-  /* the visible band, painted sliver by sliver */
-  const N = 96;
-  for (let i = 0; i < N; i++) {
-    const a = 400 + (300 * i) / N, b = 400 + (300 * (i + 1)) / N;
-    ctx.save(); ctx.fillStyle = lightColor((a + b) / 2); ctx.fillRect(X(a), y - h / 2, X(b) - X(a) + 0.6, h); ctx.restore();
-  }
-  if (!inside) text(ctx, 'visible', X(530), ry, PAL.muted, { size: 15, align: 'center' });
-  text(ctx, 'ultraviolet', X(60), ry, PAL.muted, { size: 15, align: 'center' });
-  text(ctx, 'infrared', X(2500), ry, PAL.muted, { size: 15, align: 'center' });
-  line(ctx, box.l, y + h / 2, box.r, y + h / 2, cw, 2);
-  TICKS.forEach((t) => { line(ctx, X(t), y + h / 2, X(t), y + h / 2 + 9, cw, 2); text(ctx, t >= 1000 ? (t / 1000) + ' µm' : String(t), X(t), y + h / 2 + 28, cw, { size: 17, align: 'center' }); });
-  text(ctx, title, box.r, y + h / 2 + 60, cw, { size: 20, weight: 600, align: 'right' });
-  return X;
-}
-
-/* ---------- the energy ladder ----------
-   Rungs at heights in proportion to E_n = −kZ²/n², so the ladder is to scale for every Z: the
-   floor is n = 1 and the top is the ionization limit, E = 0. The labels of the crowded upper
-   rungs fan out on leaders so that each can be read. */
-function ladderY(n, top, bottom) { return bottom - (bottom - top) * (1 - 1 / (n * n)); }
-function ladder(ctx, o) {
-  const { l, r, top, bottom, nmax, Z, labelX } = o, ce = C('energy');
-  const ys = [];
-  for (let n = 1; n <= nmax; n++) ys.push({ n, y: ladderY(n, top, bottom), E: energy(n, Z) });
-  ys.push({ n: Infinity, y: top, E: 0 });
-  /* the rungs */
-  ys.forEach((q) => line(ctx, l, q.y, r, q.y, ce, q.n === Infinity ? 2.5 : 4, q.n === Infinity ? [10, 10] : undefined));
-  /* the energy axis */
-  arrow(ctx, l - 40, bottom + 6, l - 40, top - 34, ce, 3);
-  text(ctx, 'E', l - 40, top - 52, ce, { size: 24, weight: 600, align: 'center' });
-  /* the labels, fanned out from the top down with a slot spacing of 28 */
-  const slots = []; let last = -Infinity;
-  [...ys].sort((a, b) => a.y - b.y).forEach((q) => { const y = Math.max(q.y, last + 28); slots.push({ ...q, sy: y }); last = y; });
-  slots.forEach((q) => {
-    if (Math.abs(q.sy - q.y) > 2) line(ctx, r, q.y, labelX - 12, q.sy, alpha(PAL.ink, 0.35), 1.5);
-    else line(ctx, r, q.y, labelX - 12, q.y, alpha(PAL.ink, 0.35), 1.5);
-    const name = q.n === Infinity ? 'n → ∞' : 'n = ' + q.n;
-    text(ctx, name, labelX, q.sy, PAL.ink, { size: 19, weight: 600, bg: o.plate });
-    text(ctx, (q.n === Infinity ? '0' : sciU(q.E)) + ' J', labelX + 88, q.sy, ce, { size: 18, bg: o.plate });
-  });
-  text(ctx, 'n', labelX, top - 36, PAL.ink, { size: 19, weight: 600 });
-  text(ctx, 'Eₙ', labelX + 88, top - 36, ce, { size: 19, weight: 600 });
-  return Object.fromEntries(ys.map((q) => [q.n, q.y]));
-}
-
-/* ---------- the line pairing a transition with its place on the spectrum ----------
-   A correspondence, not a path (rule 24.1): a straight line drawn along its length once, up to the fraction k, then held. */
-function connector(ctx, from, to, k, color) {
-  const q = F.partial([from, to], k); if (q.length < 2) return;
-  line(ctx, q[0][0], q[0][1], q[q.length - 1][0], q[q.length - 1][1], color, 3);
-}
-const ease = (t) => (t < 0 ? 0 : t > 1 ? 1 : t * t * (3 - 2 * t));
-/* ---------- a change of transition: the electron eases to its rung and the line is drawn, one after the other ----------
-   An emission falls first and then draws its line; an absorption draws its line first and then rises. */
-const STEP = 1100, SPLIT = 0.55;
-function phases(s, emit) {
-  return emit
-    ? { jump: ease(s / SPLIT), draw: ease((s - SPLIT) / (1 - SPLIT)) }
-    : { draw: ease(s / (1 - SPLIT)), jump: ease((s - (1 - SPLIT)) / SPLIT) };
-}
-
 /* ---------- the one-electron species the model holds for ----------
    Hydrogen, He⁺ and Li²⁺ are three named atoms and ions, not three values of a quantity, so the reader
    picks one from a row of buttons rather than sliding a nuclear charge through them (rule 26.1). */
@@ -145,252 +78,270 @@ function ionPick(controls, onInput) {
   return { get v() { return IONS[+c.value].z; }, get name() { return IONS[+c.value].name; }, mix: (f) => c.mix((i) => f(IONS[+i].z)) };
 }
 
+/* ---------- the energy ladder, to scale ----------
+   Rungs at heights in proportion to E_n = −kZ²/n²: the foot is n = 1 and the top is E = 0, for every Z.
+   The labels of the crowded upper rungs fan out on leaders, as Figure 6.14 fans them; `slot` is where
+   each label stands. */
+const ladderY = (n, top, bottom) => (n === Infinity ? top : bottom - (bottom - top) * (1 - 1 / (n * n)));
+function slotsOf(nmax, top, bottom, gap = 28) {
+  const ns = [Infinity]; for (let n = nmax; n >= 1; n--) ns.push(n);
+  let last = top - gap - 6; const out = {};
+  ns.forEach((n) => { const y = Math.max(ladderY(n, top, bottom), last + gap); out[n] = y; last = y; });
+  return out;
+}
+const nName = (n) => (n === Infinity ? 'n = ∞' : 'n = ' + n);
+
 /* =====================================================================
-   FIGURE 6.14 + 6.15: the Bohr ladder. The levels of a one-electron atom
-   to scale with their energies, the electron moving between two rungs, the
-   photon leaving for the wavelength strip or arriving from it, and the
-   line it makes. Still: a change of transition eases the electron to its
-   new rung once and draws the line to the spectrum once, then holds. The
-   equation morphs by meaning between the energy of one level and the jump
-   between two, and the orbit the electron starts in is a dashed circle on
-   the other slider, where no photon is emitted or absorbed.
+   SIM: the series. The four families of lines the Rydberg equation gives,
+   one row for each orbit n₁ the jump ends on, on one logarithmic wavelength
+   axis that never changes: 10 nm (the limit of Li²⁺'s first series is
+   10.1 nm) to 5000 nm (hydrogen's 5 → 4 line is 4051 nm). Still: a family
+   of lines has no clock. A change of ion slides every line once to its new
+   place, a rigid shift on a logarithmic axis.
 ===================================================================== */
 (function () {
-  const d = sim('sim-bohr-ladder', 820);
-  /* the rungs, and their labels fanned out on leaders that return the slot each label took */
-  function rungs(ctx, o) {
-    const { l, r, top, bottom, nmax, Z, labelX } = o, ce = C('energy');
-    const ys = [];
-    for (let n = 1; n <= nmax; n++) ys.push({ n, y: ladderY(n, top, bottom), E: energy(n, Z) });
-    ys.push({ n: Infinity, y: top, E: 0 });
-    ys.forEach((q) => line(ctx, l, q.y, r, q.y, ce, q.n === Infinity ? 2.5 : 4, q.n === Infinity ? [10, 10] : undefined));
-    arrow(ctx, l - 40, bottom + 6, l - 40, top - 34, ce, 4);
-    text(ctx, 'E', l - 40, top - 52, ce, { size: 24, weight: 600, align: 'center' });
-    const slots = []; let last = -Infinity;
-    [...ys].sort((a, b) => a.y - b.y).forEach((q) => { const y = Math.max(q.y, last + 28); slots.push({ ...q, sy: y }); last = y; });
-    slots.forEach((q) => {
-      line(ctx, r + 8, q.y, labelX - 12, q.sy, alpha(PAL.ink, 0.3), 2);
-      text(ctx, q.n === Infinity ? 'n → ∞' : 'n = ' + q.n, labelX, q.sy, PAL.ink, { size: 19, weight: 600, bg: PAL.panel });
-      text(ctx, (q.n === Infinity ? '0' : sciU(q.E)) + ' J', labelX + 88, q.sy, ce, { size: 18, bg: PAL.panel });
-    });
-    text(ctx, 'n', labelX, top - 36, PAL.ink, { size: 19, weight: 600 });
-    text(ctx, 'Eₙ', labelX + 88, top - 36, ce, { size: 19, weight: 600 });
-    return { Y: Object.fromEntries(ys.map((q) => [q.n, q.y])), S: Object.fromEntries(slots.map((q) => [q.n, q.sy])) };
-  }
-  /* the equation and its numbers, one line that morphs by meaning: k and Z² move, 1/n₁² bends into the level's n², the rest fades */
-  const { formula: fx, note } = F.readout(d);
-  let shown = '';
-  const NI = qn(d.controls, { label: 'n_{\\text{i}}', min: 1, max: 6, value: 3, onInput: reset, aria: 'quantum number of the orbit the electron starts in' });
-  const NF = qn(d.controls, { label: 'n_{\\text{f}}', min: 1, max: 6, value: 2, onInput: reset, aria: 'quantum number of the orbit the electron ends in' });
-  const ZC = ionPick(d.controls, reset);
-  const step = F.tween(d, 0);
-  const landed = new Set();                      /* the lines the reader has landed, keyed by Z and the two orbits */
-  function reset() { step.set(0); step.to(1, STEP, F.ease.linear); }
-  const LAD = { l: 300, r: 700, top: 150, bottom: 610 };
-  const STRIP = { l: 300, r: 1300, y: 706 };
-  /* the inset: the band of the ladder from n = 3 to the ionization limit, redrawn at MAG times the height */
-  const INS = { l: 1110, r: 1250, top: 170, bottom: 578, from: 3 };
-  const BX = 1044;                               /* the bracket that gathers the labels of the magnified rungs */
-  const BAND = ladderY(INS.from, LAD.top, LAD.bottom) - LAD.top;
-  const MAG = (INS.bottom - INS.top) / BAND;
-  const iy = (n) => INS.bottom - (ladderY(INS.from, LAD.top, LAD.bottom) - ladderY(n, LAD.top, LAD.bottom)) * MAG;
-  function magnified(ctx, Z, ni, nf, jump, same, S) {
-    const ce = C('energy'), cl = alpha(PAL.ink, 0.3), t0 = S[Infinity] - 12, t1 = S[INS.from] + 12;
-    /* the labels of the rungs the inset enlarges, gathered by a bracket beyond their energies, and two connectors to the inset; nothing crosses a leader */
-    line(ctx, BX, t0, BX, t1, cl, 1.5); line(ctx, BX - 8, t0, BX, t0, cl, 1.5); line(ctx, BX - 8, t1, BX, t1, cl, 1.5);
-    line(ctx, BX, t0, INS.l - 14, INS.top - 12, cl, 1.5);
-    line(ctx, BX, t1, INS.l - 14, INS.bottom + 12, cl, 1.5);
-    for (let n = INS.from; n <= 6; n++) { line(ctx, INS.l, iy(n), INS.r, iy(n), ce, 4); text(ctx, 'n = ' + n, INS.r + 14, iy(n), PAL.ink, { size: 17, weight: 600 }); }
-    line(ctx, INS.l, INS.top, INS.r, INS.top, ce, 2.5, [10, 10]); text(ctx, 'n \u2192 \u221e', INS.r + 14, INS.top, PAL.ink, { size: 17, weight: 600 });
-    const inBand = ni >= INS.from && nf >= INS.from;
-    if (!same && inBand) {
-      arrow(ctx, INS.l + 110, iy(ni), INS.l + 110, iy(nf), ce, 4);
-      dot(ctx, INS.l + 46, iy(ni) + (iy(nf) - iy(ni)) * jump, F.el('e-'), true, 8);
-    }
-    text(ctx, 'the rungs from n = 3 up,', INS.l - 14, INS.top - 62, PAL.muted, { size: 17 });
-    text(ctx, 'magnified ' + fmt(MAG, 0) + ' times', INS.l - 14, INS.top - 38, PAL.muted, { size: 17 });
-    if (!same && !inBand) {
-      const my = (iy(INS.from) + iy(INS.from + 1)) / 2, mx = (INS.l + INS.r) / 2;
-      text(ctx, 'this jump reaches', mx, my - 12, PAL.muted, { size: 16, align: 'center' });
-      text(ctx, 'below n = 3', mx, my + 12, PAL.muted, { size: 16, align: 'center' });
-    }
-  }
-  const EX = 380, AX = 520;                      /* the electron's column and the arrow's column on the ladder */
-  /* the electron names itself under the pointer (rule 26.6) */
+  const d = sim('sim-series', 760);
+  const N2LIST = (n1) => span(n1 + 1, n1 + 8);
+  const N1 = qn(d.controls, { label: 'n_1', min: 1, max: 4, value: 2, aria: 'the orbit the jump ends on', onInput: () => N2.options(N2LIST(N1.v)) });
+  const N2 = F.select(d.controls, { label: 'n_2', options: N2LIST(2), value: '3', aria: 'the orbit the jump starts from' });
+  const ZC = ionPick(d.controls);
+  const AX = { l: 150, r: 1350 }, LO = 1, HI = Math.log10(5000);
+  const X = (nm) => AX.l + ((Math.log10(nm) - LO) / (HI - LO)) * (AX.r - AX.l);
+  const ROW = { y0: 104, h: 40, gap: 14 }, STRIP = { t: 322, b: 344 };
+  const rowTop = (n1) => ROW.y0 + (n1 - 1) * (ROW.h + ROW.gap);
+  const TICKS = [10, 20, 50, 100, 200, 500, 1000, 2000, 5000];
+  /* the chosen series again, spread out on a linear axis from its limit to its longest wavelength */
+  const DET = { l: 150, r: 1350, t: 520, b: 640, in0: 50, in1: 70 }, NFAR = 40;
+  const limitNm = (n1, Z) => (n1 * n1) / (RINF * Z * Z) * 1e9;
+  const sliver = (x0, x1, t, b, a, c) => { const N = 96; for (let i = 0; i < N; i++) { const u = a + ((c - a) * i) / N, v = a + ((c - a) * (i + 1)) / N; ctx2.fillStyle = lightColor((u + v) / 2); ctx2.fillRect(x0(u), t, x0(v) - x0(u) + 0.6, b - t); } };
+  let ctx2 = null;
   let hits = []; F.hover(d.stage, () => hits);
   function draw() {
-    const { ctx } = begin(d.c);
+    const { ctx } = begin(d.c); ctx2 = ctx;
     hits = [];
-    const ni = NI.v, nf = NF.v, Z = ZC.v;
-    const dE = energy(nf, Z) - energy(ni, Z), emit = dE < 0, same = ni === nf;
-    const nm = same ? 0 : lambdaNm(ni, nf, Z), key = `${Z}:${Math.min(ni, nf)}-${Math.max(ni, nf)}`;
-    const ce = C('energy'), cw = C('wavelength'), ion = ZC.name;
-    const { jump, draw: drawn } = phases(step.v, emit);
-    const arrived = emit ? drawn >= 1 : true;    /* an emitted line is on the strip once its connector is drawn; an absorbed one was there from the start */
-    if (!same && drawn >= 1) landed.add(key);
-    /* the ladder and the strip */
-    const X = wavelengthAxis(ctx, STRIP, 44, 'wavelength λ (nm), logarithmic scale');
-    /* the line from the transition to its place on the spectrum, drawn from the side that gives the photon, beneath the rung labels */
-    if (!same) {
-      const y1 = ladderY(ni, LAD.top, LAD.bottom), y2 = ladderY(nf, LAD.top, LAD.bottom);
-      const from = emit ? [AX, y2] : [X(nm), STRIP.y - 80], to = emit ? [X(nm), STRIP.y - 80] : [AX, y1];
-      connector(ctx, from, to, drawn, lineColor(nm));
+    const n1 = N1.v; if (+N2.value <= n1 || +N2.value > n1 + 8) N2.options(N2LIST(n1));
+    const n2 = +N2.value, Z = ZC.v, Zm = ZC.mix((z) => z), cw = C('wavelength'), ion = ZC.name;
+    /* ---- above: the four series on one axis ---- */
+    [400, 700].forEach((nm) => line(ctx, X(nm), ROW.y0 - 30, X(nm), STRIP.t, alpha(PAL.ink, 0.3), 2, [4, 8]));
+    for (let m = 1; m <= 4; m++) {
+      const t = rowTop(m), on = m === n1, limit = limitNm(m, Zm);
+      ctx.save(); ctx.fillStyle = PAL.soft; ctx.fillRect(AX.l, t, AX.r - AX.l, ROW.h); ctx.restore();
+      text(ctx, 'n₁ = ' + m, AX.l - 16, t + ROW.h / 2, on ? PAL.ink : PAL.muted, { size: 20, weight: on ? 600 : 400, align: 'right' });
+      F.faded(ctx, on ? 1 : 0.5, [0, 0], () => {
+        for (let k = 20; k > m; k--) { const nm = lambdaNm(m, k, Zm); line(ctx, X(nm), t + 3, X(nm), t + ROW.h - 3, lineColor(nm), k - m <= 6 ? 3 : 2); }
+        line(ctx, X(limit), t - 4, X(limit), t + ROW.h + 4, cw, 2.5, [6, 5]);
+      });
+      hits.push({ x: (X(limit) + X(lambdaNm(m, m + 1, Zm))) / 2, y: t + ROW.h / 2, r: 24, name: 'the lines that end on n₁ = ' + m + ', ' + nmU(limitNm(m, Z)) + ' to ' + nmU(lambdaNm(m, m + 1, Z)) });
     }
-    const { Y, S } = rungs(ctx, { ...LAD, nmax: 6, Z, labelX: 790 });
-    /* every line landed so far for this ion, the current one drawn last */
-    landed.forEach((k) => {
-      const [z, pair] = k.split(':'); if (+z !== Z) return;
-      const [a, b] = pair.split('-').map(Number), w = lambdaNm(a, b, Z);
-      line(ctx, X(w), STRIP.y - 22, X(w), STRIP.y + 22, lineColor(w), k === key ? 4 : 2.5);
-    });
-    if (!same && arrived) {
-      line(ctx, X(nm), STRIP.y - 22, X(nm), STRIP.y + 22, lineColor(nm), 4);
-      text(ctx, nmU(nm), X(nm), STRIP.y - 58, visible(nm) ? PAL.ink : cw, { size: 17, weight: 600, align: 'center' });
+    /* the chosen row is the one spread out below: a bracket under its lines says so */
+    const t1 = rowTop(n1), xa = X(limitNm(n1, Zm)), xb = X(lambdaNm(n1, n1 + 1, Zm));
+    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.strokeRect(xa - 7, t1 - 5, xb - xa + 14, ROW.h + 10); ctx.restore();
+    /* the axis: its strip, the visible band painted, the regions named */
+    ctx.save(); ctx.fillStyle = PAL.soft; ctx.fillRect(AX.l, STRIP.t, AX.r - AX.l, STRIP.b - STRIP.t);
+    sliver(X, X, STRIP.t, STRIP.b, 400, 700); ctx.restore();
+    /* the three regions, named over their columns */
+    text(ctx, 'ultraviolet', X(63), ROW.y0 - 18, PAL.muted, { size: 17, align: 'center' });
+    text(ctx, 'visible', X(529), ROW.y0 - 18, PAL.muted, { size: 17, align: 'center' });
+    text(ctx, 'infrared', X(1870), ROW.y0 - 18, PAL.muted, { size: 17, align: 'center' });
+    line(ctx, AX.l, STRIP.b, AX.r, STRIP.b, cw, 2);
+    TICKS.forEach((v) => { line(ctx, X(v), STRIP.b, X(v), STRIP.b + 9, cw, 2); text(ctx, String(v), X(v), STRIP.b + 26, cw, { size: 17, align: 'center' }); });
+    text(ctx, 'wavelength λ (nm), logarithmic scale', AX.r, STRIP.b + 56, cw, { size: 19, weight: 600, align: 'right' });
+    /* ---- below: the chosen series spread out ---- */
+    const lim = limitNm(n1, Zm), first = lambdaNm(n1, n1 + 1, Zm), limAt = limitNm(n1, Z), at = lambdaNm(n1, n2, Z);
+    const DX = (nm) => DET.l + DET.in0 + ((nm - lim) / (first - lim)) * (DET.r - DET.in1 - DET.l - DET.in0);
+    F.rich(ctx, ['The lines that end on ', ['n₁ = ' + n1, PAL.ink, 600], ', spread out'], DET.l, DET.t - 62, { size: 20 });
+    ctx.save(); ctx.fillStyle = PAL.soft; ctx.fillRect(DET.l, DET.t, DET.r - DET.l, DET.b - DET.t);
+    /* the part of this stretch the eye sees, painted along its foot */
+    const v0 = Math.max(400, lim), v1 = Math.min(700, first * 1.06);
+    if (v1 > v0) { ctx.beginPath(); ctx.rect(DET.l, DET.b - 12, DET.r - DET.l, 12); ctx.clip(); sliver(DX, DX, DET.b - 12, DET.b, v0, v1); }
+    ctx.restore();
+    for (let k = NFAR; k > n1; k--) {
+      if (k === n2) continue;
+      const nm = lambdaNm(n1, k, Zm);
+      line(ctx, DX(nm), DET.t + 8, DX(nm), DET.b - 16, lineColor(nm), k - n1 <= 8 ? 4 : 2);
     }
-    /* the transition arrow and the bracket for |ΔE| */
-    if (!same) {
-      const y1 = Y[ni], y2 = Y[nf];
-      /* the arrow is notation and stands still; only the electron moves (rule 24.1) */
-      arrow(ctx, AX, y1, AX, y2, ce, 4);
-      vbracket(ctx, AX - 50, Math.min(y1, y2), Math.max(y1, y2), ce);
-      text(ctx, '|ΔE| = ' + sciU(Math.abs(dE)) + ' J', AX + 22, Math.abs(y1 - y2) < 40 ? Y[INS.from] + 24 : (y1 + y2) / 2, ce, { size: 18, weight: 600, align: 'left', bg: PAL.panel });
-      /* the electron on its rung, or between them */
-      dot(ctx, EX, y1 + (y2 - y1) * jump, F.el('e-'), true, 9); hits.push({ x: EX, y: y1 + (y2 - y1) * jump, r: 13, name: 'the electron' });
-    } else {
-      dot(ctx, EX, Y[ni], F.el('e-'), true, 9); hits.push({ x: EX, y: Y[ni], r: 13, name: 'the electron' });
+    line(ctx, DX(lim), DET.t - 10, DX(lim), DET.b + 2, cw, 3, [8, 6]);
+    /* each line's n₂ above it where there is room; the chosen one heavier, with its wavelength */
+    const xs = DX(lambdaNm(n1, n2, Zm));
+    line(ctx, xs, DET.t - 10, xs, DET.b - 16, lineColor(lambdaNm(n1, n2, Zm)), 7);
+    const tag = 'n₂ = ' + n2 + ', ', tw = F.measure(ctx, tag + nmU(at), { size: 20, weight: 600 }), tx = Math.min(DET.r - tw / 2, Math.max(DET.l + tw / 2, xs));
+    F.rich(ctx, [[tag, PAL.ink, 600], [nmU(at), cw]], tx, DET.t - 28, { size: 20, align: 'center' });
+    for (let k = n1 + 1; k <= n1 + 8; k++) {
+      const x = DX(lambdaNm(n1, k, Zm));
+      hits.push({ x, y: (DET.t + DET.b) / 2, r: 10, name: 'n₂ = ' + k + ' to n₁ = ' + n1 + ', ' + nmU(lambdaNm(n1, k, Z)) });
+      if (k !== n2 && Math.abs(x - tx) > tw / 2 + 24 && (k === n1 + 1 || DX(lambdaNm(n1, k - 1, Zm)) - x > 30)) text(ctx, String(k), x, DET.t - 14, PAL.muted, { size: 17, align: 'center' });
     }
-    /* the electron is named beside its place and never on the rung it sits on, with a leader back to it */
-    const eY = same ? Y[ni] : Y[ni] + (Y[nf] - Y[ni]) * jump, lY = eY < 210 ? eY + 38 : eY - 38;
-    line(ctx, EX - 12, eY + (lY > eY ? 10 : -10), EX - 26, lY + (lY > eY ? -10 : 10), alpha(PAL.ink, 0.4), 1.5);
-    text(ctx, 'electron', EX - 32, lY, PAL.muted, { size: 16, align: 'right', bg: PAL.panel });
-    /* the rungs from n = 3 up lie within fifty units of one another, so they are drawn again magnified, with the factor stated (rule 28.4) */
-    magnified(ctx, Z, ni, nf, jump, same, S);
-    /* the headline and the readout */
-    topline(ctx, same
-      ? 'The starting and the ending orbit are both n = ' + ni + ' in ' + ion + ', so the electron keeps its energy of ' + sciU(energy(ni, Z)) + ' J and nothing is emitted or absorbed.'
-      : emit
-        ? 'The electron falls from n = ' + ni + ' to n = ' + nf + ' in ' + ion + ' and the atom emits a photon of ' + nmU(nm) + ', which is ' + region(nm) + '.'
-        : 'A photon of ' + nmU(nm) + ', which is ' + region(nm) + ', is absorbed and the electron rises from n = ' + ni + ' to n = ' + nf + ' in ' + ion + '.');
-    const kZ = `\\mk{k}{\\kk}\\mk{Z}{Z^2}`, kZval = `(\\mk{kval}{${sciT(K)}\\ \\text{J}})(\\mk{Zval}{${Z}})^2`;
-    const f = same
-      ? `\\mk{En}{\\kEn}=-\\frac{${kZ}}{\\mk{n1}{n^2}}=-\\frac{${kZval}}{\\mk{nival}{${ni}}^2}=\\mk{Enval}{${sciT(energy(ni, Z))}\\ \\text{J}}`
-      : `\\mk{dE}{\\kdE}=${kZ}\\left(\\mk{n1}{\\frac{1}{n_1^{2}}}-\\mk{n2}{\\frac{1}{n_2^{2}}}\\right)=${kZval}\\left(\\frac{1}{\\mk{nival}{${ni}}^2}-\\frac{1}{\\mk{nfval}{${nf}}^2}\\right)=\\mk{dEval}{${sciT(dE)}\\ \\text{J}}`;
-    if (f !== shown) { shown = f; F.morph(fx, f); }
-    note.textContent = same
-      ? 'Any other orbit gives a photon that carries the difference between the two energies.'
-      : 'The photon has $\\klam=h\\kc/|\\kdE|$ = ' + nmU(nm) + '. ' + (emit
-        ? 'The energy difference is negative, so the atom emits the photon.'
-        : 'The energy difference is positive, so a photon of exactly this energy must be absorbed.');
-    F.renderMath(note);
+    hits.push({ x: DX(lim), y: (DET.t + DET.b) / 2, r: 9, name: 'the limit of the series, n₂ = ∞' });
+    /* its own axis, in round steps of this stretch */
+    line(ctx, DET.l, DET.b, DET.r, DET.b, cw, 2);
+    const stepOf = (w) => { const p = Math.pow(10, Math.floor(Math.log10(w / 5))), q = w / 5 / p; return (q < 1.5 ? 1 : q < 3.5 ? 2 : q < 7.5 ? 5 : 10) * p; };
+    const stp = stepOf(first - lim);
+    for (let v = Math.ceil((lim + (first - lim) * 0.06) / stp) * stp; v <= first * 1.0001; v += stp) { line(ctx, DX(v), DET.b, DX(v), DET.b + 9, cw, 2); text(ctx, fmt(v, stp < 1 ? 1 : 0), DX(v), DET.b + 26, cw, { size: 17, align: 'center' }); }
+    F.rich(ctx, ['limit, ', [nmU(limAt), cw]], DX(lim) - 6, DET.b + 56, { size: 18 });
+    text(ctx, 'wavelength λ (nm)', DET.r, DET.b + 56, cw, { size: 19, weight: 600, align: 'right' });
+    /* how many lines of the chosen series are light the eye sees */
+    let nVis = 0, nUV = 0, nIR = 0;
+    for (let k = n1 + 1; k <= 400; k++) { const w = lambdaNm(n1, k, Z); if (visible(w)) nVis++; else if (w < 400) nUV++; else nIR++; }
+    topline(ctx, nVis
+      ? 'In ' + ion + ', ' + nVis + ' of the lines that end on n₁ = ' + n1 + (nVis === 1 ? ' is' : ' are') + ' visible light.'
+      : 'In ' + ion + ', ' + (nUV && nIR ? 'no line that ends on n₁ = ' + n1 + ' is visible light.' : 'every line that ends on n₁ = ' + n1 + ' is ' + (nUV ? 'ultraviolet.' : 'infrared.')));
+    const inv = RINF * Z * Z * (1 / (n1 * n1) - 1 / (n2 * n2));
+    tex(d.readout,
+      `\\frac{1}{\\klam}=R_{\\infty}Z^{2}\\left(\\frac{1}{n_1^{2}}-\\frac{1}{n_2^{2}}\\right)=(${sciT(RINF)}\\ \\text{m}^{-1})(${Z})^{2}\\left(\\frac{1}{${n1}^{2}}-\\frac{1}{${n2}^{2}}\\right)=${sciT(inv)}\\ \\text{m}^{-1}`
+      + ' \\\\ ' + `\\klam=${hu('wavelength', sciT(1 / inv) + '\\ \\text{m}')}=${hu('wavelength', fmt(at, at < 100 ? 2 : 1) + '\\ \\text{nm}')}`);
   }
-  reset();
   register(d.fig, { update: () => {}, draw });
 })();
 
 /* =====================================================================
-   SIM: the orbit and the rung. The circular orbit of the electron at a
-   fixed scale on the left, its energy as a rung of the ladder on the
-   right, one n slider moving both. Still: a set of orbits answers its
-   sliders and nothing here has a clock.
+   FIGURE 6.14 + 6.15: the Bohr ladder. The levels of a one-electron atom
+   to scale with their energies as Figure 6.14 writes them, and one jump of
+   Figure 6.15 at a time: a photon comes in and the electron rises, or the
+   electron falls and a photon leaves. Moving: one cycle of 3 s. The
+   electron is eased between its rungs, since a jump has no path in time to
+   be faithful to; the photon travels at a steady pace.
 ===================================================================== */
 (function () {
-  const d = sim('sim-orbit-rung', 720);
-  const N = qn(d.controls, { label: 'n', min: 1, max: 6, value: 3, aria: 'quantum number of the orbit' });
-  const ZC = ionPick(d.controls);
-  const SCALE = 7.5;                              /* canvas units per Bohr radius, fixed so that the largest orbit the buttons reach, n = 6 in hydrogen, still stands inside the frame */
-  const CX = 360, CY = 400, FR = { l: 40, r: 720, t: 96, b: 690 };
+  const d = sim('sim-bohr-ladder', 780);
+  const TT = 3;
+  const cy = cycle(() => TT, 1.4);
+  const NI = qn(d.controls, { label: 'n_{\\text{i}}', min: 1, max: 6, value: 3, onInput: () => cy.reset(), aria: 'quantum number of the orbit the electron starts in' });
+  const NF = qn(d.controls, { label: 'n_{\\text{f}}', min: 1, max: 6, value: 2, onInput: () => cy.reset(), aria: 'quantum number of the orbit the electron ends in' });
+  const ZC = ionPick(d.controls, () => cy.reset());
+  const TOP = 150, BOT = 720, L = 440, R = 800, EX = 520, AXC = 610, NX = 850, VX = 934, PH = { near: 420, far: 230, len: 170 };
+  const Y = (n) => ladderY(n, TOP, BOT), SLOT = slotsOf(6, TOP, BOT);
+  const ease = F.ease.smooth, clamp = (x) => Math.max(0, Math.min(1, x));
+  /* a photon: a short packet of waves with a head on the side it travels to; its drawn wavelength grows with its real one */
+  function photon(ctx, xc, y, dir, nm, color) {
+    const p = 9 + 13 * Math.log10(nm / 10), h = PH.len / 2;
+    ctx.save(); ctx.strokeStyle = color; ctx.fillStyle = color; ctx.lineWidth = 3.5; ctx.lineJoin = 'round'; ctx.beginPath();
+    for (let s = -h; s <= h; s += 1.5) { const yy = y + 14 * Math.exp(-((s / (h * 0.62)) ** 2)) * Math.sin((2 * Math.PI * s) / p); if (s === -h) ctx.moveTo(xc + s, yy); else ctx.lineTo(xc + s, yy); }
+    ctx.stroke();
+    const tip = xc + dir * (h + 22);
+    ctx.beginPath(); ctx.moveTo(tip, y); ctx.lineTo(tip - dir * 18, y - 8); ctx.lineTo(tip - dir * 18, y + 8); ctx.closePath(); ctx.fill(); ctx.restore();
+  }
   let hits = []; F.hover(d.stage, () => hits);
+  function draw() {
+    const { ctx } = begin(d.c);
+    hits = [];
+    const t = cy.now(), ni = NI.v, nf = NF.v, Z = ZC.v, ion = ZC.name;
+    const dE = energy(nf, Z) - energy(ni, Z), emit = dE < 0, same = ni === nf, nm = same ? 0 : photonNm(ni, nf, Z);
+    const ce = C('energy'), cw = C('wavelength'), cel = F.el('e-');
+    /* the energy axis */
+    arrow(ctx, 70, BOT + 10, 70, TOP - 36, ce, 4);
+    text(ctx, 'E', 44, TOP - 20, ce, { size: 24, weight: 600, align: 'center' });
+    /* the rungs, each with its n and its energy; the upper labels fan out on leaders */
+    [1, 2, 3, 4, 5, 6, Infinity].forEach((n) => {
+      const y = Y(n), s = SLOT[n];
+      line(ctx, L, y, R, y, ce, n === Infinity ? 2.5 : 4, n === Infinity ? [10, 10] : undefined);
+      line(ctx, R + 8, y, NX - 10, s, alpha(PAL.ink, 0.35), 2);
+      text(ctx, nName(n), NX, s, PAL.ink, { size: 20, weight: 600 });
+      text(ctx, (n === Infinity ? '0' : sciU(energy(n, Z))) + ' J', VX, s, ce, { size: 20 });
+      hits.push({ x: (L + R) / 2, y, r: 4, name: nName(n) + ', ' + (n === Infinity ? '0' : sciU(energy(n, Z))) + ' J' });
+    });
+    /* the two names the passage gives the states */
+    text(ctx, 'ground state', 1168, SLOT[1], PAL.ink, { size: 20 });
+    const b0 = SLOT[6] - 10, b1 = SLOT[2] + 10;
+    line(ctx, 1150, b0, 1150, b1, PAL.ink, 2); line(ctx, 1140, b0, 1150, b0, PAL.ink, 2); line(ctx, 1140, b1, 1150, b1, PAL.ink, 2);
+    text(ctx, 'excited states', 1168, (b0 + b1) / 2, PAL.ink, { size: 20 });
+    if (same) {
+      dot(ctx, EX, Y(ni), cel, true, 7); hits.push({ x: EX, y: Y(ni), r: 13, name: 'the electron' });
+      topline(ctx, 'In ' + ion + ' the electron stays on n = ' + ni + ', so no photon is absorbed or emitted.');
+      tex(d.readout, `\\kEn=-\\frac{\\kk Z^{2}}{n^{2}}=-\\frac{(${sciT(K)}\\ \\text{J})(${Z})^{2}}{${ni}^{2}}=${hu('energy', sciT(energy(ni, Z)) + '\\ \\text{J}')}`);
+      return;
+    }
+    /* the timeline: an absorbed photon arrives and then the electron rises; an electron falls and then its photon leaves */
+    const jump = emit ? ease(clamp((t - 0.2) / 0.9)) : ease(clamp((t - 1.8) / 0.9));
+    const fly = emit ? clamp((t - 1.0) / 2.0) : clamp(t / 1.8);
+    const seen = emit ? clamp((t - 1.0) / 0.25) : 1 - clamp((t - 1.6) / 0.25);
+    const y1 = Y(ni), y2 = Y(nf), ym = (y1 + y2) / 2, pc = lineColor(nm);
+    /* the arrow of Figure 6.15 is notation and stands still; the electron and the photon move */
+    arrow(ctx, AXC, y1, AXC, y2, ce, 4);
+    const xc = emit ? PH.near + (PH.far - PH.near) * fly : PH.far + (PH.near - PH.far) * fly;
+    F.faded(ctx, seen, [0, 0], () => photon(ctx, xc, ym, emit ? -1 : 1, nm, pc));
+    if (seen > 0.5) hits.push({ x: xc, y: ym, r: 40, name: 'the photon, ' + nmU(nm) });
+    /* the photon's energy is the gap between the rungs; its wavelength follows */
+    F.rich(ctx, ['photon of ', [sciU(Math.abs(dE)) + ' J', ce]], 270, ym + 46, { size: 20, align: 'center', bg: PAL.panel });
+    F.rich(ctx, [[nmU(nm), cw], ', ' + region(nm)], 270, ym + 74, { size: 20, align: 'center', bg: PAL.panel });
+    /* the electron: hollow where it started, filled where it is */
+    const ey = y1 + (y2 - y1) * jump;
+    if (jump > 0.02) dot(ctx, EX, y1, cel, false, 7);
+    dot(ctx, EX, ey, cel, true, 7); hits.push({ x: EX, y: ey, r: 13, name: 'the electron' });
+    topline(ctx, emit
+      ? 'In ' + ion + ' the electron falls from n = ' + ni + ' to n = ' + nf + ' and a photon of ' + region(nm) + ' is emitted.'
+      : 'In ' + ion + ' a photon of ' + region(nm) + ' is absorbed and the electron rises from n = ' + ni + ' to n = ' + nf + '.');
+    tex(d.readout,
+      `\\kdE=\\kk Z^{2}\\left(\\frac{1}{n_{\\text{i}}^{2}}-\\frac{1}{n_{\\text{f}}^{2}}\\right)=(${sciT(K)}\\ \\text{J})(${Z})^{2}\\left(\\frac{1}{${ni}^{2}}-\\frac{1}{${nf}^{2}}\\right)=${hu('energy', sciT(dE) + '\\ \\text{J}')}`
+      + ' \\\\ ' + `\\klam=\\frac{h\\kc}{|\\kdE|}=\\frac{(${sciT(HP)}\\ \\text{J s})(${sciT(CL)}\\ \\text{m/s})}{${sciT(Math.abs(dE))}\\ \\text{J}}=${hu('wavelength', sciT(nm * 1e-9) + '\\ \\text{m}')}`);
+  }
+  register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
+})();
+
+/* =====================================================================
+   SIM: the orbit and the rung. The circular orbits of the electron at one
+   fixed scale on the left (12.6 canvas units to a Bohr radius, so that
+   n = 5 of hydrogen, 25 a₀, stands inside the stage), the ladder of the
+   same five levels on the right, to scale. Still: it answers its choices.
+   Only the chosen orbit and rung are labelled; the others answer to the
+   pointer, since their labels would collide once a larger Z draws them in.
+===================================================================== */
+(function () {
+  const d = sim('sim-orbit-rung', 780);
+  const N = qn(d.controls, { label: 'n', min: 1, max: 5, value: 3, aria: 'quantum number of the orbit' });
+  const ZC = ionPick(d.controls);
+  const SC = 12.6, CX = 360, CY = 440, ANG = 35 * Math.PI / 180, LX = 706;
+  const TOP = 150, BOT = 720, L = 1010, R = 1200;
+  const Y = (n) => ladderY(n, TOP, BOT), SLOT = slotsOf(5, TOP, BOT, 26);
+  let hits = []; F.hover(d.stage, () => hits);
+  function ring(ctx, r, color, w) { ctx.save(); ctx.strokeStyle = color; ctx.lineWidth = w; ctx.beginPath(); ctx.arc(CX, CY, r, 0, Math.PI * 2); ctx.stroke(); ctx.restore(); }
   function draw() {
     const { ctx } = begin(d.c);
     hits = [];
     const n = N.v, Z = ZC.v, Zm = ZC.mix((z) => z), ce = C('energy'), cr = C('length'), cel = F.el('e-');
-    const rA = (n * n) / Z, rD = (n * n) / Zm, rM = radiusM(n, Z), E = energy(n, Z), ion = ZC.name;
-    /* the orbits, clipped to their frame */
-    ctx.save(); ctx.beginPath(); ctx.rect(FR.l, FR.t, FR.r - FR.l, FR.b - FR.t); ctx.clip();
-    for (let m = 1; m <= 6; m++) {
-      const r = (m * m / Zm) * SCALE;
-      ctx.save(); ctx.strokeStyle = m === n ? PAL.ink : alpha(PAL.ink, 0.28); ctx.lineWidth = m === n ? 3 : 1.5; ctx.beginPath(); ctx.arc(CX, CY, r, 0, Math.PI * 2); ctx.stroke(); ctx.restore();
+    const rA = (n * n) / Z, rM = radiusM(n, Z), E = energy(n, Z);
+    /* the orbits, the chosen one in ink */
+    for (let m = 5; m >= 1; m--) {
+      const r = (m * m / Zm) * SC;
+      ring(ctx, r, m === n ? PAL.ink : alpha(PAL.ink, 0.3), m === n ? 3 : 2);
+      for (let a = 0; a < 12; a++) hits.push({ x: CX + r * Math.cos(a * Math.PI / 6 + 0.9), y: CY + r * Math.sin(a * Math.PI / 6 + 0.9), r: 7, name: 'the n = ' + m + ' orbit, ' + fmt(m * m / Z, m * m % Z ? 2 : 0) + ' a₀ from the nucleus' });
     }
-    ctx.restore();
     /* the nucleus and its charge */
-    dot(ctx, CX, CY, PAL.ink, true, 8); hits.push({ x: CX, y: CY, r: 12, name: 'the nucleus, charge +' + Z });
-    text(ctx, '+' + Z, CX - 14, CY + 18, PAL.ink, { size: 17, weight: 600, align: 'right' });
-    /* the electron at the first angle that keeps it inside the frame, else a hollow marker at the frame's edge */
-    const r = rD * SCALE;
-    const angles = [45, 30, 60, 15, 75, 0, 90, -15, -30, -45];
-    let placed = null;
-    for (const a of angles) { const x = CX + r * Math.cos(a * Math.PI / 180), y = CY - r * Math.sin(a * Math.PI / 180); if (x > FR.l + 14 && x < FR.r - 14 && y > FR.t + 14 && y < FR.b - 14) { placed = [x, y]; break; } }
-    if (placed) {
-      line(ctx, CX, CY, placed[0], placed[1], cr, 2, [4, 8]);
-      dot(ctx, placed[0], placed[1], cel, true, 9); hits.push({ x: placed[0], y: placed[1], r: 13, name: 'the electron, on the n = ' + n + ' orbit' });
-      const rs = 'r = ' + fmt(rA, rA < 10 ? 2 : 1) + ' a₀ = ' + fmt(rM * 1e10, 2) + ' Å', far = placed[0] > 500, near = r < 40;
-      text(ctx, rs, near ? CX + 34 : far ? placed[0] - 16 : placed[0] + 16, near ? CY - 44 : placed[1] - 18, cr, { size: 18, weight: 600, align: far ? 'right' : 'left', bg: PAL.panel });
-    } else {
-      const ex = FR.r - 20, ey = CY - (FR.r - 20 - CX) * Math.tan(Math.PI / 12);
-      dot(ctx, ex, ey, cel, false, 9);
-      arrow(ctx, ex - 40, ey, ex - 12, ey, PAL.ink, 3);
-      text(ctx, 'r = ' + fmt(rA, 1) + ' a₀ = ' + fmt(rM * 1e10, 1) + ' Å, beyond the frame', ex - 20, ey - 24, cr, { size: 17, weight: 600, align: 'right', bg: PAL.panel });
-    }
+    dot(ctx, CX, CY, PAL.ink, true, 3.5); hits.push({ x: CX, y: CY, r: 6, name: 'the nucleus, charge +' + Z });
+    text(ctx, '+' + Z, CX - 10, CY + 18, PAL.ink, { size: 18, weight: 600, align: 'right', bg: PAL.panel });
+    /* the electron on its orbit, the radius drawn to it */
+    const r = (n * n / Zm) * SC, ex = CX + r * Math.cos(ANG), ey = CY - r * Math.sin(ANG);
+    line(ctx, CX, CY, ex, ey, cr, 3, [6, 6]);
+    dot(ctx, ex, ey, cel, true, 6); hits.push({ x: ex, y: ey, r: 11, name: 'the electron, on the n = ' + n + ' orbit' });
+    /* its name and radius stand in a column clear of every orbit, on a leader from the electron */
+    line(ctx, ex + 12, ey, LX - 12, ey, alpha(PAL.ink, 0.35), 2);
+    text(ctx, 'n = ' + n, LX, ey - 14, PAL.ink, { size: 20, weight: 600 });
+    text(ctx, 'r = ' + fmt(rA, n * n % Z ? 2 : 0) + ' a₀ = ' + fmt(rM * 1e10, 3) + ' Å', LX, ey + 14, cr, { size: 20, weight: 600 });
     /* the scale bar */
-    line(ctx, FR.l + 20, FR.b - 18, FR.l + 20 + 10 * SCALE, FR.b - 18, PAL.ink, 3);
-    line(ctx, FR.l + 20, FR.b - 26, FR.l + 20, FR.b - 10, PAL.ink, 2); line(ctx, FR.l + 20 + 10 * SCALE, FR.b - 26, FR.l + 20 + 10 * SCALE, FR.b - 10, PAL.ink, 2);
-    text(ctx, '10 a₀ = 5.29 Å', FR.l + 20 + 10 * SCALE + 14, FR.b - 18, PAL.muted, { size: 16 });
-    text(ctx, 'the orbits n = 1 to 6 of ' + ion, FR.l + 20, FR.t + 6, PAL.muted, { size: 16, bg: PAL.panel });
-    /* the ladder on the right, with the chosen rung marked and the energy to the limit bracketed */
-    const LAD = { l: 960, r: 1100, top: 176, bottom: 650 };
-    const Y = ladder(ctx, { ...LAD, nmax: 6, Z, labelX: 1132 });
-    line(ctx, LAD.l, Y[n], LAD.r, Y[n], ce, 7);
-    dot(ctx, LAD.l + 30, Y[n], cel, true, 9); hits.push({ x: LAD.l + 30, y: Y[n], r: 13, name: 'the electron, on the n = ' + n + ' rung' });
-    if (Y[n] - LAD.top > 8) vbracket(ctx, LAD.l - 70, LAD.top, Y[n], ce);
-    text(ctx, 'to E = 0:', 800, (LAD.top + Y[n]) / 2 - 14, ce, { size: 17, weight: 600, align: 'center', bg: PAL.panel });
-    text(ctx, sciU(-E) + ' J', 800, (LAD.top + Y[n]) / 2 + 12, ce, { size: 17, weight: 600, align: 'center', bg: PAL.panel });
-    text(ctx, 'ionization limit', LAD.r, LAD.top - 16, ce, { size: 16, align: 'right' });
-    /* the headline and the readout */
-    topline(ctx, 'In ' + ion + ' the n = ' + n + ' orbit has a radius of ' + fmt(rA, rA < 10 ? 2 : 1) + ' a₀, which is ' + fmt(rM * 1e10, 2) + ' Å, and the electron in it has an energy of ' + sciU(E) + ' J.');
-    readout(d.readout,
-      `\\kEn=-\\frac{\\kk Z^2}{n^2}=-\\frac{(${sciT(K)}\\ \\text{J})(${Z})^2}{${n}^2}=${sciT(E)}\\ \\text{J}`,
-      'The radius is $\\kr=(n^2/Z)\\,\\kao$ = ' + sciU(rM) + ' m.' + (n === 1 && Z === 1 ? ' This is the ground state of hydrogen.' : ''));
-  }
-  register(d.fig, { update: () => {}, draw });
-})();
-
-/* =====================================================================
-   SIM: the series. Every transition that ends on n₁ as one line on a
-   wavelength axis, the visible band painted, the series limit dashed.
-   Still: a family of transitions has no clock in it.
-===================================================================== */
-(function () {
-  const d = sim('sim-series', 440);
-  const N1 = qn(d.controls, { label: 'n_1', min: 1, max: 4, value: 2, aria: 'the orbit the electron falls to' });
-  const N2 = qn(d.controls, { label: 'n_2\\ \\text{up to}', min: 3, max: 12, value: 8, aria: 'the highest orbit the electron falls from' });
-  const ZC = ionPick(d.controls);
-  const STRIP = { l: 200, r: 1300, y: 300 };
-  function draw() {
-    const { ctx } = begin(d.c);
-    const n1 = N1.v; if (N2.v <= n1) N2.set(n1 + 1);   /* the highest orbit is always above the one the electron falls to, and the control is moved rather than silently overridden */
-    const hi = N2.v, Z = ZC.v, Zm = ZC.mix((z) => z), cw = C('wavelength'), ion = ZC.name;
-    const X = wavelengthAxis(ctx, STRIP, 56, 'wavelength λ (nm), logarithmic scale', true);
-    /* a change of ion slides every line to its new wavelength, the same transitions in the same frame */
-    const lines = []; for (let n2 = n1 + 1; n2 <= hi; n2++) lines.push({ n2, nm: lambdaNm(n1, n2, Zm), at: lambdaNm(n1, n2, Z) });
-    const limit = (n1 * n1) / (RINF * Zm * Zm) * 1e9, limitAt = (n1 * n1) / (RINF * Z * Z) * 1e9;
-    /* the limit, then the lines from the longest wavelength down, each labelled where there is room */
-    line(ctx, X(limit), STRIP.y - 88, X(limit), STRIP.y + 34, cw, 2.5, [10, 10]);
-    text(ctx, 'series limit, ' + nmU(limitAt), X(limit) - 10, STRIP.y - 102, cw, { size: 17, weight: 600, align: 'right', bg: PAL.panel });
-    let lastLabel = Infinity;
-    lines.forEach((q) => {
-      line(ctx, X(q.nm), STRIP.y - 40, X(q.nm), STRIP.y + 36, lineColor(q.nm), 3.5);
-      if (lastLabel - X(q.nm) > 24) { text(ctx, String(q.n2), X(q.nm), STRIP.y - 56, PAL.ink, { size: 16, align: 'center' }); lastLabel = X(q.nm); }
+    const bx = 44, by = 752;
+    line(ctx, bx, by, bx + 5 * SC, by, PAL.ink, 3); line(ctx, bx, by - 8, bx, by + 8, PAL.ink, 2); line(ctx, bx + 5 * SC, by - 8, bx + 5 * SC, by + 8, PAL.ink, 2);
+    text(ctx, '5 a₀', bx + 5 * SC + 14, by, PAL.ink, { size: 18 });
+    /* the ladder of the same levels, the chosen rung heavy with the electron on it */
+    arrow(ctx, 1352, BOT + 10, 1352, TOP - 36, ce, 4);
+    text(ctx, 'E', 1326, TOP - 20, ce, { size: 24, weight: 600, align: 'center' });
+    [1, 2, 3, 4, 5, Infinity].forEach((m) => {
+      const y = Y(m), s = SLOT[m], on = m === n;
+      line(ctx, L, y, R, y, ce, m === Infinity ? 2.5 : on ? 7 : 3, m === Infinity ? [10, 10] : undefined);
+      line(ctx, R + 8, y, 1240, s, alpha(PAL.ink, 0.35), 2);
+      text(ctx, nName(m), 1250, s, on ? PAL.ink : PAL.muted, { size: 20, weight: on ? 600 : 400 });
+      hits.push({ x: (L + R) / 2 + 40, y, r: 4, name: nName(m) + ', ' + (m === Infinity ? '0' : sciU(energy(m, Z))) + ' J' });
     });
-    text(ctx, 'each line is one transition from the orbit n₂ written above it down to n₁ = ' + n1, STRIP.l, STRIP.y - 134, PAL.muted, { size: 17 });
-    /* what the reader sees */
-    /* one boundary at each end of the visible band, so the three counts always add up to the number of lines */
-    const nVis = lines.filter((q) => visible(q.at)).length, nUV = lines.filter((q) => q.at < 400).length, nIR = lines.filter((q) => q.at > 700).length;
-    const first = lines[0], last = lines[lines.length - 1];
-    const where = [nVis ? nVis + ' in the visible' : '', nUV ? nUV + ' in the ultraviolet' : '', nIR ? nIR + ' in the infrared' : ''].filter(Boolean).join(', ');
-    topline(ctx, 'In ' + ion + ' the transitions from n₂ = ' + (n1 + 1) + ' to ' + hi + ' down to n₁ = ' + n1 + ' give ' + lines.length + ' lines from ' + nmU(first.at) + ' to ' + nmU(last.at) + ' (' + where + '), crowding toward the series limit at ' + nmU(limitAt) + '.');
-    readout(d.readout,
-      `\\frac{1}{\\klam}=\\frac{\\kk}{h\\kc}\\,Z^2\\left(\\frac{1}{n_1^{2}}-\\frac{1}{n_2^{2}}\\right)=(${sciT(RINF)}\\ \\text{m}^{-1})(${Z})^2\\left(\\frac{1}{${n1}^2}-\\frac{1}{n_2^{2}}\\right)`,
-      (n1 === 2 && Z === 1 ? 'The four visible lines, at 656, 486, 434 and 410 nm, are the ones Balmer fitted to whole numbers; the' : 'The') + ' quotient $\\kk/h\\kc$ is the Rydberg constant, 1.097 × 10⁷ m⁻¹.');
+    dot(ctx, L + 50, Y(n), cel, true, 8); hits.push({ x: L + 50, y: Y(n), r: 12, name: 'the electron, on the n = ' + n + ' rung' });
+    /* from the rung up to E = 0: the energy that removes the electron */
+    const y0 = Y(n), bxx = L - 34;
+    line(ctx, bxx, TOP, bxx, y0, ce, 3); line(ctx, bxx, TOP, bxx + 12, TOP, ce, 3); line(ctx, bxx, y0, bxx + 12, y0, ce, 3);
+    F.rich(ctx, ['energy to remove the electron, ', [sciU(-E) + ' J', ce]], R, TOP - 36, { size: 20, align: 'right' });
+    /* the pattern neither label states */
+    topline(ctx, n === 1
+      ? 'The n = 1 orbit is the smallest, and its electron takes the most energy to remove.'
+      : 'The n = ' + n + ' orbit is ' + n * n + ' times as wide as n = 1, and its electron takes 1/' + n * n + ' of the energy to remove.');
+    tex(d.readout,
+      `\\kr=\\frac{n^{2}}{Z}\\,\\kao=\\frac{${n}^{2}}{${Z}}(${sciT(A0)}\\ \\text{m})=${hu('length', sciT(rM) + '\\ \\text{m}')}`
+      + ' \\\\ ' + `\\kEn=-\\frac{\\kk Z^{2}}{n^{2}}=-\\frac{(${sciT(K)}\\ \\text{J})(${Z})^{2}}{${n}^{2}}=${hu('energy', sciT(E) + '\\ \\text{J}')}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

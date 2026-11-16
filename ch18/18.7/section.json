@@ -21,6 +21,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -127,6 +130,14 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "part": "rebuilt flat with every molecule visible, bars beside, caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: glow on each NO₂, graduated cylinder, share-against-T curve"
     }
    ]
   },

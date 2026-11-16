@@ -248,12 +248,14 @@ const sup = (n) => String(n).split('').map((c) => SUP[c] ?? c).join('');
    1.00 kJ/K. For the first minute of model time they stand apart; at
    contact (t = 0) each temperature closes on the mean as e^(−t/τ),
    τ = 2 min, over ten minutes; 11 model minutes in about 7 s, then a
-   1.2 s hold. Axes fixed, −1 to 10 min and 250 to 400 K, the slider
-   limits. The heat arrow's length is the temperature difference, 100 K
-   drawn 220 long.
+   1.2 s hold. Beside the objects, the heat each has gained so far as a
+   bar from zero, q_X and q_Y, on a fixed axis of ±80 kJ (the sliders
+   reach ±75 kJ). Beneath, both temperatures against time on fixed axes,
+   −1 to 10 min and 250 to 400 K, the slider limits. The heat arrow's
+   length is the temperature difference, 100 K drawn 200 long.
 ===================================================================== */
 (function () {
-  const H = 670, d = sim('sim-heat-flow', H);
+  const H = 720, d = sim('sim-heat-flow', H);
   const CAP = 1.0, TAU_M = 2, TEND = 10, PRE = 1;
   const cy = cycle(() => TEND + PRE, 1.2), reset = () => cy.reset();
   let ty = null;
@@ -261,44 +263,50 @@ const sup = (n) => String(n).split('').map((c) => SUP[c] ?? c).join('');
     specials: [{ at: () => (ty ? ty.v : null), label: 'same as Y' }] });
   ty = ctl(d.controls, { label: '\\kTY', cls: 'temperature', key: 'TY', min: 250, max: 350, step: 1, value: 290, unit: 'K', dec: 0, aria: 'the starting temperature of object Y', onInput: reset,
     specials: [{ at: () => tx.v, label: 'same as X' }] });
-  const G = { l: 190, r: 1250, t: 400, b: 590 };
-  const S = 320, BH = 190, CX = 700, BT = 120, GAP = 80;
-  const LANES = [BT + 55, BT + 95, BT + 135], PER = 3;
+  const G = { l: 190, r: 1250, t: 440, b: 630 };          /* temperature against time */
+  const B = { l: 960, r: 1250, t: 110, b: 350 };          /* the heat gained by each object */
+  const S = 240, CX = 480, BT = 110, GAP = 100;
+  const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
   let hits = []; F.hover(d.stage, () => hits);
   function draw() {
     const { ctx } = begin(d.c); hits = [];
     const tm = cy.now() - PRE, t = Math.max(0, tm), x0 = tx.v, y0 = ty.v, Tf = (x0 + y0) / 2, k = Math.exp(-t / TAU_M);
-    const TX = tm < 0 ? x0 : Tf + (x0 - Tf) * k, TY = tm < 0 ? y0 : Tf + (y0 - Tf) * k, dir = Math.sign(x0 - y0);
+    /* the temperatures as the readout writes them, to a tenth of a kelvin, so its sums add up */
+    const TX = +(tm < 0 ? x0 : Tf + (x0 - Tf) * k).toFixed(1), TY = +(x0 + y0 - TX).toFixed(1), dir = Math.sign(x0 - y0);
     const rx = F.ref('object-x'), ry = F.ref('object-y'), ce = C('energy'), ct = C('temperature');
-    /* half the gap, closing over the last 0.4 min before contact */
+    const qx = +(CAP * (TX - x0)).toFixed(1) || 0, qy = -qx || 0;
+    /* the objects: apart, then closing over the last 0.4 min before contact */
     const half = (GAP / 2) * Math.min(1, Math.max(0, -tm / 0.4));
-    [[CX - half - S, rx, 'X', 'object X'], [CX + half, ry, 'Y', 'object Y']].forEach(([l, c, w, name]) => {
-      ctx.save(); ctx.fillStyle = alpha(c, 0.2); ctx.fillRect(l, BT, S, BH); ctx.strokeStyle = c; ctx.lineWidth = 4; ctx.strokeRect(l + 2, BT + 2, S - 4, BH - 4); ctx.restore();
-      text(ctx, w, l + S / 2, BT + BH / 2, c, { size: 30, weight: 600, align: 'center' });
-      hits.push({ x: l + S / 2, y: BT + BH / 2, r: 80, name });
+    [[CX - half - S, rx, 'X', TX, '\\kTX'], [CX + half, ry, 'Y', TY, '\\kTY']].forEach(([l, c, w, T, sym]) => {
+      ctx.save(); ctx.fillStyle = alpha(c, 0.16); ctx.fillRect(l, BT, S, S); ctx.strokeStyle = c; ctx.lineWidth = 5; ctx.lineJoin = 'round'; ctx.strokeRect(l + 2.5, BT + 2.5, S - 5, S - 5); ctx.restore();
+      text(ctx, w, l + S / 2, BT + 122, c, { size: 44, weight: 600, align: 'center' });
+      text(ctx, `$${sym} = ${fmt(T, 1)}\\ \\text{K}$`, l + S / 2, BT + 186, PAL.ink, { size: 24, align: 'center', tex: true });
+      hits.push({ x: l + S / 2, y: BT + S / 2, r: 110, name: `object ${w}` });
     });
-    text(ctx, `$\\kTX = ${fmt(TX, 0)}\\ \\text{K}$`, CX - half - S / 2, BT + BH + 34, PAL.ink, { size: 22, align: 'center', tex: true });
-    text(ctx, `$\\kTY = ${fmt(TY, 0)}\\ \\text{K}$`, CX + half + S / 2, BT + BH + 34, PAL.ink, { size: 22, align: 'center', tex: true });
     const diff = TX - TY, flowing = tm >= 0 && Math.abs(diff) >= 0.5;
     if (flowing) {
-      const f = Math.min(1, Math.abs(diff) / 40);
-      LANES.forEach((ly, j) => {
-        for (let i = 0; i < PER; i++) {
-          const u = (((t / 1.2 + i / PER + j * 0.37) % 1) + 1) % 1, s = dir > 0 ? u : 1 - u;
-          ctx.save(); ctx.globalAlpha = Math.sqrt(f) * Math.sin(Math.PI * u); dot(ctx, CX - 110 + s * 220, ly, ce, true, 7); ctx.restore();
-        }
-      });
-      const L = Math.max(40, (220 * Math.abs(diff)) / 100), sg = Math.sign(diff);
-      arrow(ctx, CX - (sg * L) / 2, BT - 30, CX + (sg * L) / 2, BT - 30, ce, 5);
-      text(ctx, 'heat', CX - (sg * L) / 2 - sg * 14, BT - 30, ce, { size: 22, weight: 600, align: sg > 0 ? 'right' : 'left' });
-      hits.push({ x: CX, y: BT - 30, r: 30, name: `heat flowing from ${sg > 0 ? 'X to Y' : 'Y to X'}` });
+      const L = Math.max(44, 2 * Math.abs(diff)), sg = Math.sign(diff), ya = BT + 52;
+      arrow(ctx, CX - (sg * L) / 2, ya, CX + (sg * L) / 2, ya, ce, 7);
+      text(ctx, 'heat', CX, ya - 26, ce, { size: 22, weight: 600, align: 'center' });
+      hits.push({ x: CX, y: ya, r: 34, name: `heat flowing from ${sg > 0 ? 'X to Y' : 'Y to X'}, faster the further apart the temperatures` });
     }
-    const g = F.axes(ctx, G, [-PRE, TEND], [250, 400], { nx: 11, ny: 3, fx: (v) => (v < 0 ? '' : fmt(v, 0)), xl: 'time (min)', xc: C('time'), yl: 'temperature (K)', yc: ct });
+    /* the heat each object has gained since contact: two bars from zero, equal and opposite */
+    const gb = F.axes(ctx, B, [0, 2], [-80, 80], { nx: 0, ny: 4, yl: 'heat gained (kJ)', yc: ce });
+    [[0.55, qx, rx, '\\kqX', 'X'], [1.45, qy, ry, '\\kqY', 'Y']].forEach(([u, q, c, sym, w]) => {
+      const x = gb.X(u), y0b = gb.Y(0), yq = gb.Y(q);
+      ctx.save(); ctx.fillStyle = alpha(c, 0.75); ctx.fillRect(x - 46, Math.min(y0b, yq), 92, Math.abs(yq - y0b)); ctx.restore();
+      line(ctx, x - 46, yq, x + 46, yq, c, 4);
+      const up = q > 0 || (q === 0 && (w === 'Y' ? dir >= 0 : dir < 0));
+      text(ctx, `$${sym} = ${fmt(q, 1)}\\ \\text{kJ}$`, x, yq + (up ? -22 : 22), PAL.ink, { size: 20, align: 'center', tex: true, bg: PAL.panel });
+      hits.push({ x, y: (y0b + yq) / 2, r: 50, name: `the heat object ${w} has ${q < 0 ? 'lost' : 'gained'}` });
+    });
+    /* the temperatures against time */
+    const g = F.axes(ctx, G, [-PRE, TEND], [250, 400], { nx: 11, ny: 3, fx: (v) => (v < 0 ? '' : fmt(v, 0)), xl: 'time in contact (min)', xc: C('time'), yl: 'temperature (K)', yc: ct });
     line(ctx, g.X(0), G.t, g.X(0), G.b, alpha(PAL.ink, 0.35), 2, [4, 8]);
     text(ctx, 'contact', g.X(0) + 10, G.t + 14, PAL.muted, { size: 17, bg: PAL.panel });
     if (dir) {
       line(ctx, g.X(0), g.Y(Tf), G.r, g.Y(Tf), alpha(PAL.ink, 0.4), 2.5, [10, 10]);
-      text(ctx, `${fmt(Tf, 0)} K`, G.r + 10, g.Y(Tf), PAL.muted, { size: 17 });
+      text(ctx, `${fmt(Tf, 1)} K`, G.r + 10, g.Y(Tf), PAL.muted, { size: 17 });
     }
     const fx = (T0) => (s) => (s < 0 ? T0 : Tf + (T0 - Tf) * Math.exp(-s / TAU_M));
     if (tm > -PRE + 0.01) { F.plot(ctx, g, fx(x0), rx, { w: 5, x: [-PRE, tm] }); F.plot(ctx, g, fx(y0), ry, { w: 5, x: [-PRE, tm] }); }
@@ -310,9 +318,9 @@ const sup = (n) => String(n).split('').map((c) => SUP[c] ?? c).join('');
     topline(ctx, !dir ? `X and Y start at the same temperature, ${fmt(x0, 0)} K, so no heat flows.`
       : tm < 0 ? `X and Y are apart, at ${fmt(x0, 0)} K and ${fmt(y0, 0)} K.`
         : flowing ? `In contact, heat flows from ${hot} to ${cold}: ${hot} cools and ${cold} warms.`
-          : `X and Y have both reached ${fmt(Tf, 0)} K, and heat no longer flows.`);
-    const qx = +(CAP * (TX - x0)).toFixed(1) || 0;
-    tex(d.readout, `\\kqX = ${fmt(qx, 1)}\\ \\text{kJ} \\\\ \\kqY = -\\kqX = ${fmt(-qx, 1)}\\ \\text{kJ}`);
+          : `X and Y have both reached ${fmt(Tf, 1)} K, and heat no longer flows.`);
+    const K = (v) => hue('temperature', `${fmt(v, 1)}\\ \\text{K}`), kJ = (v) => hue('energy', `${fmt(v, 1)}\\ \\text{kJ}`);
+    tex(d.readout, `\\kqX = ${hue('heat-capacity', '1.00\\ \\text{kJ/K}')} \\times (${K(TX)} - ${K(x0)}) = ${kJ(qx)} \\\\ \\kqY = -\\kqX = ${kJ(qy)}`);
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => (TEND + PRE) / 7), draw });
 })();

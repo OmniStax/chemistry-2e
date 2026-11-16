@@ -398,7 +398,7 @@ const N_OPTS = ['1', '2', '3', '4', '6'].map((v) => ({ value: v, label: v }));
     const L = { l: 110, r: 650, t: 840, b: 1030 }, R = { l: 830, r: 1370, t: 840, b: 1030 };
     const a1 = F.axes(ctx, L, [0, T], [0, 0.6], { nx: 0, ny: 3, xl: 'time', xc: cT, yl: '[Zn²⁺] (M)', yc: cC, fy: (y) => y.toFixed(1) });
     line(ctx, L.l, a1.Y(0.3), L.r, a1.Y(0.3), alpha(PAL.ink, 0.4), 2, [10, 10]);
-    text(ctx, '0.30 M', L.r - 8, a1.Y(0.3) - 16, PAL.muted, { size: 17, align: 'right' });
+    text(ctx, '0.30 M', L.l + 14, a1.Y(0.3) - 16, PAL.muted, { size: 17, align: 'left' });
     if (t > 0) { F.curve(ctx, (s) => 0.10 + xiAt(s), 0, t, a1.X, a1.Y, rA, 5, 120); F.curve(ctx, (s) => 0.50 - xiAt(s), 0, t, a1.X, a1.Y, rC, 5, 120); }
     dot(ctx, a1.X(0), a1.Y(0.10), rA, false, 9); dot(ctx, a1.X(0), a1.Y(0.50), rC, false, 9);
     dot(ctx, a1.X(t), a1.Y(0.10 + xi), rA, true, 9); dot(ctx, a1.X(t), a1.Y(0.50 - xi), rC, true, 9);

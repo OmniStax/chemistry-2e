@@ -263,9 +263,9 @@ function particle(ctx, atoms, x, y, a, k = 1) {
   DONE.forEach((e) => { e.shell = [0.25, 0.75, 1.25, 1.75].map((k) => seat(e.f, k * Math.PI)); });
   const NSHELL = waters.length;
   for (let j = 0; j < 36; j++) waters.push({ x: 60 + 1280 * fr(j * 3 + 100), y: 50 + (HH - 100) * fr(j * 5 + 200), a0: fr(j * 9 + 300) * TAU, i: waters.length });
-  /* spread the waters once: 76 apart, clear of the crystal, of every cluster's resting place, of the two names and the key */
+  /* spread the waters once: 76 apart, clear of the crystal, of where each ion lifts off to, of every cluster's resting place, of the two names and the key */
   {
-    const fixed = [...ions.map((q) => [q.x, q.y, 74]), ...PLAN.map((p) => [p[3][0], p[3][1], 122]), ...DONE.map((e) => [e.x, e.y, 122])];
+    const fixed = [...ions.map((q) => [q.x, q.y, 74]), ...PLAN.map((p) => [p[3][0], p[3][1], 122]), ...DONE.map((e) => [e.x, e.y, 122]), ...ions.filter((q) => q.n >= 0).map((q) => [q.x + q.out[0] * 78, q.y + q.out[1] * 78, 104])];
     const rects = [[40, 20, 395, 128], [1005, 20, 1360, 128], [20, 522, 470, HH]];
     for (let it = 0; it < 200; it++) {
       for (let i = 0; i < waters.length; i++) {

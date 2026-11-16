@@ -110,7 +110,7 @@ const rng = (seed) => () => { seed = (seed * 16807) % 2147483647; return (seed -
   function draw() {
     const { ctx } = begin(d.c);
     hits = [];
-    const x = X.v, cP = C('pressure'), ps = x * P_STAR, tt = cy.now();
+    const x = X.v, cP = C('pressure'), ps = x * P_STAR + 1e-9, tt = cy.now();
     const cols = [F.ref('pure-tank'), F.ref('solution-tank')];
     flasks.forEach((f) => {
       const cx = FXS[f.k], col = cols[f.k];
@@ -221,7 +221,7 @@ const rng = (seed) => () => { seed = (seed * 16807) % 2147483647; return (seed -
     }
     /* the four temperatures, dropped from 1 atm to the axis */
     const drops = [X0, X100].concat(on ? [x3s, xbs] : []);
-    drops.forEach((x) => line(ctx, x, PT, x, PB + 44, guide, 2, [4, 8]));
+    drops.forEach((x) => { line(ctx, x, PT, x, PB, guide, 2, [4, 8]); line(ctx, x, PB + 40, x, PB + 98, guide, 2, [4, 8]); });
     /* the curves: solid–gas, then water's solid–liquid and liquid–vapor, then the solution's dashed */
     poly(ctx, (x) => sub((x - X0) / TS), XL, X0, cSub);
     poly(ctx, vw, X0, X100, cVap);

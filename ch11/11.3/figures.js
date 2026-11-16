@@ -160,6 +160,7 @@ function spline(xs, ys) {
     ctx.restore();
     line(ctx, 24, 132, 120, SURF, PAL.muted, 3); line(ctx, 640, SURF, 668, SURF - 14, PAL.muted, 3); line(ctx, 668, SURF - 14, 740, SURF + 56, PAL.muted, 3);
     ctx.save(); ctx.strokeStyle = lake; ctx.lineWidth = 3; ctx.lineJoin = 'round'; ctx.beginPath(); ctx.moveTo(120, SURF); ctx.lineTo(214, FLOOR); ctx.lineTo(546, FLOOR); ctx.lineTo(640, SURF); ctx.stroke(); ctx.restore();
+    for (let m = 50; m <= 200; m += 50) { const w = 94 * m / 232; line(ctx, 120 + w + 4, Ys(m), 640 - w - 4, Ys(m), alpha(PAL.ink, 0.12), 1.5); }
     line(ctx, 120, SURF, 640, SURF, alpha(PAL.ink, 0.55), 2);
     text(ctx, 'crater lake', 232, FLOOR - 22, lake, { size: 18, weight: 600 });
     text(ctx, 'valley', 736, SURF + 96, PAL.muted, { size: 17, align: 'right' });
@@ -174,7 +175,7 @@ function spline(xs, ys) {
     /* the start, left behind as a ring */
     if (y0 - yp > 12) {
       ctx.save(); ctx.strokeStyle = alpha(parcel, 0.45); ctx.lineWidth = 2; ctx.setLineDash([4, 7]); ctx.beginPath(); ctx.arc(XC, y0, R, 0, TAU); ctx.stroke(); ctx.restore();
-      if (y0 - yp > 2 * R + 10) text(ctx, 'start, ' + d0 + ' m', XC + R + 12, y0, PAL.muted, { size: 17 });
+      if (y0 - yp > 2 * R + 10) text(ctx, 'start', XC, y0, PAL.muted, { size: 17, align: 'center' });
     }
     /* bubbles from the parcel to the surface, larger as the pressure on them falls */
     const top = yp - R - 4, span = top - SURF - 8, nb = out > 0.004 && span > 6 ? Math.max(3, Math.round(3 + 11 * out / 0.68)) : 0;
@@ -199,7 +200,7 @@ function spline(xs, ys) {
     const nm = Math.max(1, Math.round(held / UNIT));
     for (let i = 0; i < Math.min(nm, SPOTS.length); i++) co2(ctx, XC + SPOTS[i][0], yp + SPOTS[i][1], SPOTS[i][2], 1.25);
     hits.push({ x: XC, y: yp, r: R, name: 'a liter of lake water; each CO₂ drawn is 0.06 mol dissolved in it' });
-    F.rich(ctx, [['a liter of water', parcel], ', ', [Mf(held) + ' M', cc]], XC - R - 12, yp, { size: 18, align: 'right', bg: PAL.panel });
+    F.rich(ctx, [['a liter of water', parcel], ', ', [Mf(held) + ' M', cc]], XC - R - 12, yp, { size: 18, align: 'right' });
     /* the graph's curve and points */
     F.plot(ctx, G, (c) => -(c / K - 1) * 10, cc, { w: 5, x: [Csat(0), Csat(200)] });
     text(ctx, 'solubility, kP_{g}', G.X(Csat(62)) - 16, Ys(62) + 4, cc, { size: 19, weight: 600, align: 'right', bg: PAL.panel });
@@ -280,7 +281,7 @@ function spline(xs, ys) {
       text(ctx, q.lab, x, y, F.ref(q.ref), { size: 19, weight: i === si ? 600 : 400, bg: PAL.panel });
     });
     if (sol !== null) { dot(ctx, A.X(t), A.Y(sol), col, false, 10); hits.push({ x: A.X(t), y: A.Y(sol), r: 14, name: 'the solubility of ' + s.plain + ' at ' + t + ' °C, ' + round(sol) + ' g' }); }
-    if (state === 'over' && A.Y(sol) - A.Y(m) > 26) vbracket(ctx, A.X(t) + (t > 80 ? -22 : 22), A.Y(m), A.Y(sol), PAL.ink, round(solid) + ' g solid', t > 80 ? -1 : 1, { size: 18 });
+    if (state === 'over' && A.Y(sol) - A.Y(m) > 26) { const bx = A.X(t) + (t > 80 ? -22 : 22); vbracket(ctx, bx, A.Y(m), A.Y(sol), PAL.ink); text(ctx, round(solid) + ' g solid', bx + (t > 80 ? -16 : 16), (A.Y(m) + A.Y(sol)) / 2, PAL.ink, { size: 18, weight: 600, align: t > 80 ? 'right' : 'left', bg: PAL.panel }); }
     const pt = pinned(ctx, box, A.X, A.Y, t, m, cm);
     const word = { saturated: 'saturated', unsaturated: 'all dissolved', open: 'all dissolved', over: '', none: '' }[state];
     const left = t > 62;
@@ -298,7 +299,7 @@ function spline(xs, ys) {
     if (ns) hits.push({ x: (BL + BR) / 2, y: BASE - 30, r: 60, name: 'solid ' + s.plain + ' on the bottom, one crystal for each 5 g' });
     if (state !== 'none') F.legend(ctx, { l: BL - 12, r: BR + 12, t: BASE + 22, b: BASE + 100 }, [
       { s: round(diss) + ' g dissolved', kind: 'dot', color: col },
-      ...(solid > 0 ? [{ s: round(solid) + ' g solid', color: col, draw: (c, x, y) => { c.save(); c.translate(x + 22, y); c.rotate(Math.PI / 4); c.fillStyle = col; c.strokeStyle = PAL.ink; c.lineWidth = 1.2; c.beginPath(); c.rect(-6.2, -6.2, 12.4, 12.4); c.fill(); c.stroke(); c.restore(); } }] : []),
+      ...(solid > 0 ? [{ s: round(solid) + ' g solid', color: col, draw: (c, x, y) => { c.save(); c.translate(x + 11, y); c.rotate(Math.PI / 4); c.fillStyle = col; c.strokeStyle = PAL.ink; c.lineWidth = 1.2; c.beginPath(); c.rect(-6.2, -6.2, 12.4, 12.4); c.fill(); c.stroke(); c.restore(); } }] : []),
     ], { corner: 'tl', panel: false, size: 18 });
     const sr = sol === null ? '' : round(sol);
     topline(ctx, state === 'none'

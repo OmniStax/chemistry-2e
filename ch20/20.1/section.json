@@ -24,6 +24,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-fable-5-2",
+    "effort": "low"
    }
   ]
  },
@@ -36,15 +40,13 @@
    "kind": "sim",
    "number": "20.2",
    "folds": [
-    "20.7",
-    "20.10"
+    "20.7"
    ],
    "originals": [
     "/media/ch20/CNX_Chem_20_01_alkanes.jpg",
-    "/media/ch20/CNX_Chem_20_01_propene1.jpg",
-    "/media/ch20/CNX_Chem_20_01_geoIsomers_img.jpg"
+    "/media/ch20/CNX_Chem_20_01_propene1.jpg"
    ],
-   "original_caption": "(Figure 20.2) Pictured are the Lewis structures, ball-and-stick models, and space-filling models for molecules of methane, ethane, and pentane. (Figure 20.7) Expanded structures, ball-and-stick structures, and space-filling models for the alkenes ethene, propene, and 1-butene are shown. (Figure 20.10) These molecular models show the structural and geometric isomers of butene.",
+   "original_caption": "(Figure 20.2) Pictured are the Lewis structures, ball-and-stick models, and space-filling models for molecules of methane, ethane, and pentane. (Figure 20.7) Expanded structures, ball-and-stick structures, and space-filling models for the alkenes ethene, propene, and 1-butene are shown.",
    "draws": [],
    "conventions": [
     "C",
@@ -59,6 +61,10 @@
     {
      "model": "claude-opus-5-5",
      "part": "rebuilt: Lewis strip above a turning model, no view switch or buttons"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: both models side by side under the Lewis structure; 20.10 unfolded"
     }
    ]
   },
@@ -345,6 +351,28 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-geometric-isomers",
+   "kind": "sim",
+   "number": "20.10",
+   "originals": [
+    "/media/ch20/CNX_Chem_20_01_geoIsomers_img.jpg"
+   ],
+   "original_caption": "These molecular models show the structural and geometric isomers of butene.",
+   "draws": [
+    "angle"
+   ],
+   "conventions": [
+    "C",
+    "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-fable-5-2",
+     "part": "built: twist about a single or a double bond, with the p orbitals"
     }
    ]
   },

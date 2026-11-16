@@ -23,6 +23,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -116,6 +119,10 @@
     {
      "model": "claude-opus-5-5",
      "part": "3D view dropped, formula moved to the headline, caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "map of every oxygen place added, tappable; twins marked; isomers counted"
     }
    ]
   },

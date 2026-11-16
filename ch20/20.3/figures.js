@@ -1,89 +1,142 @@
 /* Figures for section 20.3 Aldehydes, Ketones, Carboxylic Acids, and Esters. Boots against the section's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['20.3'] = function (root, F) {
-const { PAL, alpha, register, begin, line, text, headline, tex } = F;
-const lerp = (a, b, k) => a + (b - a) * k;
+const { PAL, alpha, register, begin, line, text, headline } = F;
 
 /* =====================================================================
-   FIGURE 20.14: the carbonyl group. The strip holds the book's drawing:
-   the C=O with δ+ on carbon and δ− on oxygen, R¹ and R² on the carbon,
-   and the ~120° angle. Under it the group turns in three dimensions, so
-   the reader sees the three σ bonds of the sp² carbon lie in one plane,
-   with the unhybridized p orbitals of carbon and oxygen standing square
-   to that plane; a choice lets the two overlap into the π bond above and
-   below the C–O axis, as the text describes. Still: a structure has no
-   clock. Free orbit, idle spin. C=O 1.21 Å, C–R 1.5 Å, angles 120°.
+   FIGURE 20.14: the carbonyl group and the orbitals that make its
+   double bond, in three dimensions. Mathematical 3D over a physical
+   frame: the plane of the three σ bonds is the xz plane, oxygen along
+   −z, R¹ and R² at 120° toward the reader, and the p orbitals stand
+   along y. The choice walks the text's sentence: carbon's three sp²
+   hybrids and their σ bonds, the two p orbitals side by side, and their
+   overlap into the π bond, whose cloud is fatter at oxygen because
+   oxygen pulls the shared electrons closer (δ− on O, δ+ on C, as the
+   book marks them). Still: a structure has no clock. Free orbit.
+   C=O 1.21, C–R 1.5 (Å), angles 120°.
 ===================================================================== */
 (function () {
-  const H = 270, d = F.sim(root, 'sim-carbonyl', H);
-  const pick = F.choice(d.controls, { label: '\\text{the two } p \\text{ orbitals}', key: 'orbitals', aria: 'the p orbitals of carbon and oxygen apart or overlapping', value: 'p',
-    options: [{ value: 'p', label: 'one on each atom' }, { value: 'pi', label: 'overlapping' }] });
-  const HEAD = {
-    p: 'The three σ bonds lie in one plane; the p orbitals of C and O stand perpendicular to it.',
-    pi: 'Side by side, the two p orbitals overlap above and below the C–O axis: the π bond.',
-  };
-  let hits = []; F.hover(d.stage, () => hits);
+  const d = F.sim(root, 'sim-carbonyl');
+  const T3 = window.THREE;
+  const DIST = 6.6, RAD = Math.PI / 180;
+  const v = F.view3d(d.stage, { spin: 'off', h: 560, dist: DIST, tilt: 0.42, pitch: [-1.3, 1.3], onRender: () => place() });
+  v.setView(-1.12, 0.42);
+  const g = v.part(0); if (g && g.position) g.position.set(0, -0.12, 0.2);
+  const key = F.makeCanvas(d.stage, 64);
+  const step = F.choice(d.controls, { label: '\\text{the C=O bond}', key: 'bond', aria: 'how far the double bond is built: σ bonds, p orbitals, π bond', value: 'pi',
+    options: [{ value: 'sigma', label: 'σ bonds' }, { value: 'p', label: 'two p orbitals' }, { value: 'pi', label: 'π bond' }] });
   const ro = F.readout(d);
-  const NAME = { C: 'carbonyl carbon atom, sp² hybridized', O: 'carbonyl oxygen atom', R: 'R group, a carbon chain or a hydrogen atom' };
-  /* ---------- the strip: the book's drawing ---------- */
-  const CX = 700, CY = 180, B = 120, A = Math.PI / 6, GAP = 20;
-  const at = (x, y, ang, r) => [x + r * Math.cos(ang), y - r * Math.sin(ang)];
-  function bondLine(ctx, p, q, order = 1, g1 = GAP, g2 = GAP) {
-    const dx = q[0] - p[0], dy = q[1] - p[1], L = Math.hypot(dx, dy), ux = dx / L, uy = dy / L;
-    const a = [p[0] + ux * g1, p[1] + uy * g1], b = [q[0] - ux * g2, q[1] - uy * g2];
-    (order === 2 ? [-5, 5] : [0]).forEach((o) => line(ctx, a[0] - uy * o, a[1] + ux * o, b[0] - uy * o, b[1] + ux * o, PAL.ink, 3));
+  const HEAD = {
+    sigma: 'Three sp² hybrid orbitals on carbon point 120° apart in one plane and form its three σ bonds.',
+    p: 'Carbon’s unhybridized p orbital and a p orbital on oxygen stand perpendicular to that plane, side by side.',
+    pi: 'The two p orbitals overlap above and below the plane: the π bond, its electrons pulled toward oxygen.',
+  };
+  const READ = {
+    sigma: '\\mk{s}{3\\ sp^{2}\\text{ orbitals on C}} \;\\to\; \\mk{g}{3\\ \\sigma\\text{ bonds}}',
+    p: '\\mk{s}{1\\ p\\text{ orbital on C}} + 1\\ p\\text{ orbital on O} \;\\to\; \\mk{q}{1\\ \\pi\\text{ bond}}',
+    pi: '\\text{C=O} = \\mk{g}{1\\ \\sigma\\text{ bond}} + \\mk{q}{1\\ \\pi\\text{ bond}}',
+  };
+  const add = (a, b) => [a[0] + b[0], a[1] + b[1], a[2] + b[2]], mul = (a, k) => [a[0] * k, a[1] * k, a[2] * k];
+  const S60 = Math.sin(60 * RAD);
+  const DIR = { O: [0, 0, -1], L: [-S60, 0, 0.5], R: [S60, 0, 0.5] };
+  const AT = { C: [0, 0, 0], O: mul(DIR.O, 1.21), L: mul(DIR.L, 1.5), R: mul(DIR.R, 1.5) };
+  const HYB = () => F.cat(2), PLUS = () => F.cat(0), MINUS = () => F.cat(1);
+  const palSig = () => [PAL.ink, PAL.panel, PAL.muted, F.el('C'), F.el('O'), F.el('R'), HYB(), PLUS(), MINUS()].join('|');
+
+  /* the shapes, made once: a teardrop lobe pointed at its nucleus, and the π cloud, a rounded bar fatter at its +x end */
+  let DROP = null, CLOUD = null;
+  if (T3 && v.scene) {
+    const prof = [];
+    for (let i = 0; i <= 40; i++) { const u = i / 40; prof.push(new T3.Vector2(Math.max(1e-4, 0.5 * Math.pow(u, 0.62) * Math.sqrt(Math.max(0, 1 - u * u))), u)); }
+    DROP = new T3.LatheGeometry(prof, 36);
+    const sp = (a, e) => Math.sign(a) * Math.pow(Math.abs(a), e), NU = 48, NV = 40, pos = [], idx = [];
+    for (let i = 0; i <= NU; i++) {
+      const th = -Math.PI / 2 + (Math.PI * i) / NU, x = sp(Math.sin(th), 0.45), c = sp(Math.cos(th), 0.45) * (0.8 + 0.34 * x);
+      for (let j = 0; j <= NV; j++) { const ph = -Math.PI + (2 * Math.PI * j) / NV; pos.push(x, c * Math.cos(ph), c * Math.sin(ph)); }
+    }
+    for (let i = 0; i < NU; i++) for (let j = 0; j < NV; j++) { const a = i * (NV + 1) + j, b = a + NV + 1; idx.push(a, a + 1, b, b, a + 1, b + 1); }
+    CLOUD = new T3.BufferGeometry(); CLOUD.setAttribute('position', new T3.Float32BufferAttribute(pos, 3)); CLOUD.setIndex(idx); CLOUD.computeVertexNormals();
   }
-  function draw2d(ctx) {
-    const C0 = [CX, CY], O0 = [CX, CY - B], L0 = at(CX, CY, Math.PI + A, B), R0 = at(CX, CY, -A, B);
-    bondLine(ctx, C0, O0, 2); bondLine(ctx, C0, L0, 1, GAP, 26); bondLine(ctx, C0, R0, 1, GAP, 26);
-    [['C', C0, NAME.C], ['O', O0, NAME.O], ['R¹', L0, NAME.R], ['R²', R0, NAME.R]].forEach(([s, p, name]) => {
-      text(ctx, s, p[0], p[1] + 1, PAL.ink, { size: 30, align: 'center' }); hits.push({ x: p[0], y: p[1], r: 22, name });
-    });
-    text(ctx, 'δ+', CX - 26, CY - 26, PAL.ink, { size: 24, align: 'right' });
-    text(ctx, 'δ−', CX - 24, CY - B - 4, PAL.ink, { size: 24, align: 'right' });
-    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.arc(CX, CY, 58, -Math.PI / 2 + 0.14, -A - 0.14); ctx.stroke(); ctx.restore();
-    text(ctx, '~120°', CX + 70, CY - 56, PAL.ink, { size: 22, align: 'left' });
+  let sig = '', gP = null, gPi = null;
+  function lobe(grp, from, dir, len, c, name, wide = 1) {
+    const m = new T3.Mesh(DROP, F.mesh.mat(c));
+    m.position.set(...add(from, mul(dir, 0.07))); m.quaternion.setFromUnitVectors(new T3.Vector3(0, 1, 0), new T3.Vector3(...dir)); m.scale.set(len * wide, len, len * wide);
+    grp.add(m); v.pickable(m, name); return m;
   }
-  /* ---------- the group in three dimensions: its plane is xy, the p orbitals run along z ---------- */
-  const P3 = { C: [0, 0, 0], O: [0, 1.21, 0], L: [-1.5 * Math.cos(A), -1.5 * Math.sin(A), 0], R: [1.5 * Math.cos(A), -1.5 * Math.sin(A), 0] };
-  const v = F.view3d(d.stage, { spin: 'idle', h: 480, dist: 10, tilt: 0.3 });
-  v.setView(0.6, 0.3);
-  const g = v.part(0); g.position.set(0, -0.45, 0);
-  let sig = '', lobes = null, cloud = null;
-  const palSig = () => [PAL.ink, PAL.panel, PAL.muted, F.el('C'), F.el('O'), F.el('R')].join('|');
   function build() {
-    const s = palSig(); if (s === sig) return; sig = s;
-    v.clear();
-    const T = window.THREE;
-    lobes = new T.Group(); cloud = new T.Group(); g.add(lobes); g.add(cloud);
-    v.pickable(F.mesh.sphere(g, P3.C, 0.32, F.el('C')), NAME.C);
-    v.pickable(F.mesh.sphere(g, P3.O, 0.3, F.el('O')), NAME.O);
-    v.pickable(F.mesh.sphere(g, P3.L, 0.36, F.el('R')), NAME.R);
-    v.pickable(F.mesh.sphere(g, P3.R, 0.36, F.el('R')), NAME.R);
-    F.mesh.bond(g, P3.C, P3.O, 1, 0.08); F.mesh.bond(g, P3.C, P3.L, 1, 0.08); F.mesh.bond(g, P3.C, P3.R, 1, 0.08);
-    v.label('R¹', [P3.L[0] * 1.95, P3.L[1] * 1.95, 0], g); v.label('R²', [P3.R[0] * 1.95, P3.R[1] * 1.95, 0], g);
-    [[P3.C, 'lobe of the unhybridized p orbital on carbon'], [P3.O, 'lobe of a p orbital on oxygen']].forEach(([p, name]) =>
-      [1, -1].forEach((z) => v.pickable(F.mesh.lobe(lobes, p, [0, 0, z], 0.9, PAL.ink), name)));
-    [1, -1].forEach((z) => {
-      const m = F.mesh.sphere(cloud, [0, 0.6, 0.55 * z], 1, PAL.ink, { transparent: true, opacity: 0.4 });
-      m.scale.set(0.34, 0.95, 0.3); v.pickable(m, `π bond, ${z > 0 ? 'one side' : 'the other side'} of the plane`);
+    const s = palSig(); if (s === sig || !T3 || !v.scene || !DROP) return; sig = s;
+    g.children.slice().forEach((c) => { g.remove(c); });
+    gP = new T3.Group(); gPi = new T3.Group(); g.add(gP, gPi);
+    /* the plane of the σ bonds */
+    const X = 2.0, Z0 = -2.05, Z1 = 1.3, pts = [[-X, 0, Z0], [X, 0, Z0], [X, 0, Z1], [-X, 0, Z1]];
+    const geo = new T3.BufferGeometry(); geo.setAttribute('position', new T3.Float32BufferAttribute(pts.flat(), 3)); geo.setIndex([0, 1, 2, 0, 2, 3]); geo.computeVertexNormals();
+    const sheet = new T3.Mesh(geo, new T3.MeshBasicMaterial({ color: new T3.Color(PAL.muted), transparent: true, opacity: 0.16, depthWrite: false, side: T3.DoubleSide }));
+    sheet.renderOrder = 1; g.add(sheet); v.pickable(sheet, 'the plane of the three σ bonds');
+    F.mesh.polyline(g, pts.concat([pts[0]]), PAL.muted);
+    /* atoms and σ bonds */
+    v.pickable(F.mesh.sphere(g, AT.C, 0.13, F.el('C')), 'carbonyl carbon atom, sp² hybridized, δ+');
+    v.pickable(F.mesh.sphere(g, AT.O, 0.17, F.el('O')), 'carbonyl oxygen atom, δ−');
+    ['L', 'R'].forEach((k) => {
+      v.pickable(F.mesh.sphere(g, AT[k], 0.27, F.el('R')), 'R group: a carbon chain or a hydrogen atom');
+      v.pickable(F.mesh.stick(g, AT.C, AT[k], 0.035, PAL.muted), 'σ bond from carbon to an R group');
+      lobe(g, AT.C, DIR[k], 0.95, HYB(), 'sp² hybrid orbital on carbon: a σ bond to an R group', 1.25);
+    });
+    v.pickable(F.mesh.stick(g, AT.C, AT.O, 0.035, PAL.muted), 'σ bond from carbon to oxygen');
+    lobe(g, AT.C, DIR.O, 0.9, HYB(), 'sp² hybrid orbital on carbon: the σ bond to oxygen', 1.25);
+    /* the ~120° angle the book marks, between C=O and C–R² */
+    const N = 20, RA = 1.02, arc = [];
+    for (let i = 0; i <= N; i++) { const a = (-90 + (120 * i) / N) * RAD; arc.push([RA * Math.cos(a), 0.012, RA * Math.sin(a)]); }
+    for (let i = 0; i < N; i++) F.mesh.stick(g, arc[i], arc[i + 1], 0.014, PAL.ink);
+    /* the two p orbitals */
+    [[AT.C, 'unhybridized p orbital on carbon'], [AT.O, 'p orbital on oxygen']].forEach(([p, name]) => {
+      lobe(gP, p, [0, 1, 0], 1.05, PLUS(), `${name}, + phase`);
+      lobe(gP, p, [0, -1, 0], 1.05, MINUS(), `${name}, − phase`);
+    });
+    /* the π bond: one cloud above the plane and one below, fatter over oxygen */
+    [[1, PLUS(), '+'], [-1, MINUS(), '−']].forEach(([y, c, ph]) => {
+      const m = new T3.Mesh(CLOUD, F.mesh.mat(c, { transparent: true, opacity: 0.6, depthWrite: false }));
+      m.position.set(0, 0.64 * y, -0.605); m.rotation.y = Math.PI / 2; m.scale.set(1.2, 0.58, 0.42); m.renderOrder = 2;
+      gPi.add(m); v.pickable(m, `the π bond, ${ph} phase: denser at oxygen`);
+    });
+  }
+  /* labels, each pushed on the screen away from the group's centre until it clears its thing */
+  const outs = [
+    { el: v.label('R¹', [0, 0, 0], g, 0, 'bare'), p: AT.L, r: 0.3 },
+    { el: v.label('R²', [0, 0, 0], g, 0, 'bare'), p: AT.R, r: 0.3 },
+    { el: v.label('δ−', [0, 0, 0], g, 0, 'bare'), p: add(AT.O, [0.2, 0, -0.15]), r: 0.34 },
+    { el: v.label('δ+', [0, 0, 0], g, 0, 'bare'), p: [-0.62, 0, -0.36], r: 0.04 },
+    { el: v.label('~120°', [0, 0, 0], g, 0, 'bare'), p: [1.2 * Math.cos(-30 * RAD), 0, 1.2 * Math.sin(-30 * RAD)], r: 0.04 },
+  ];
+  function place() {
+    if (!v.wrap || !v.wrap.clientHeight) return;
+    const w = v.wrap.clientWidth, h = v.wrap.clientHeight, u = h / (2 * Math.tan(15 * RAD) * DIST / (v.at.zoom || 1));
+    const c = v.project([0, 0, -0.2], g);
+    outs.forEach((l) => {
+      const q = v.project(l.p, g);
+      let dx = q[0] - c[0], dy = q[1] - c[1]; const n = Math.hypot(dx, dy);
+      if (n < 6) { dx = 0; dy = -1; } else { dx /= n; dy /= n; }
+      const bw = l.el.offsetWidth / 2, bh = l.el.offsetHeight / 2, push = l.r * u + 5 + Math.abs(dx) * bw + Math.abs(dy) * bh;
+      l.el.style.left = Math.min(Math.max(q[0] + dx * push, bw + 2), w - bw - 2) + 'px';
+      l.el.style.top = Math.min(Math.max(q[1] + dy * push, bh + 2), h - bh - 2) + 'px';
     });
   }
   function draw() {
-    const { ctx } = begin(d.c); hits = [];
-    draw2d(ctx);
-    ro.set('\\text{C=O} = 1\\ \\sigma\\ \\text{bond}\\ (sp^{2}\\text{ on C}) + 1\\ \\pi\\ \\text{bond}\\ (p\\text{ on C} + p\\text{ on O})');
-    if (!v.scene) return;
     build();
-    const k = pick.mix((x) => (x === 'pi' ? 1 : 0));
-    F.fade3(lobes, 1 - k); F.fade3(cloud, k);
-    lobes.visible = k < 0.99; cloud.visible = k > 0.01;
-    v.headline(HEAD[pick.value]);
+    v.headline(HEAD[step.value]);
+    ro.set(READ[step.value], undefined, { form: step.value });
+    const { ctx } = begin(key);
+    const ball = (sym, r, s) => ({ s, draw: (c, x, y) => { c.save(); c.beginPath(); c.arc(x, y, r, 0, 2 * Math.PI); c.fillStyle = F.el(sym); c.fill(); c.lineWidth = 1.5; c.strokeStyle = alpha(PAL.ink, 0.5); c.stroke(); c.restore(); } });
+    const drop = (col, s) => ({ s, draw: (c, x, y) => { c.save(); c.fillStyle = col; c.beginPath(); c.moveTo(x - 16, y); c.bezierCurveTo(x - 4, y - 12, x + 16, y - 12, x + 16, y); c.bezierCurveTo(x + 16, y + 12, x - 4, y + 12, x - 16, y); c.fill(); c.restore(); } });
+    F.legend(ctx, { l: 40, r: 1360, t: 0, b: 64 }, [ball('C', 7, 'carbon'), ball('O', 8, 'oxygen'), ball('R', 10, 'R group'), drop(HYB(), 'sp² hybrid orbital'), drop(PLUS(), 'p orbital, + phase'), drop(MINUS(), 'p orbital, − phase')], { corner: 'top', row: true, panel: false, size: 20 });
+    if (!gP) return;
+    F.fade3(gP, step.mix((x) => (x === 'sigma' ? 0 : 1)));
+    F.fade3(gPi, step.mix((x) => (x === 'pi' ? 1 : 0)));
     v.invalidate();
   }
   register(d.fig, { update: () => {}, draw });
 })();
 
+const lerp = (a, b, k) => a + (b - a) * k;
 /* =====================================================================
    SIM (Example 20.10): CH4 -> CH3OH -> CH2O -> HCO2H -> CO2, each step
    one C-H bond traded for a C-O bond. The molecule is drawn flat with

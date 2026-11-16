@@ -1,7 +1,7 @@
 /* Figures for section 19.1 Occurrence, Preparation, and Properties of Transition Metals and Their Compounds. Boots against the section's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['19.1'] = function (root, F) {
-const { tex, C, PAL, alpha, register, begin, line, arrow, dot, text, topline, label, hbracket, axes } = F;
+const { tex, C, PAL, alpha, register, begin, line, arrow, dot, text, topline, hbracket } = F;
 const sim = (id, H) => F.sim(root, id, H);
 const TAU = 2 * Math.PI;
 const clamp01 = (x) => Math.min(1, Math.max(0, x));
@@ -29,73 +29,154 @@ function spin(ctx, x, y, up, h, color, w = 3) {
   line(ctx, x, b, x, t, color, w);
   line(ctx, x, t, x - 0.28 * h, t + s * 0.3 * h, color, w);
 }
+const trace = (ctx, pts, close) => { ctx.beginPath(); pts.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y))); if (close) ctx.closePath(); };
 
 /* =====================================================================
-   FIGURE 19.2: the transition series on the periodic table. The book's
-   table with its two f rows beneath; a choice of series lights its
-   members, the light moving from one series to the next. Lanthanum and
-   actinium, members of two series each, are outlined dashed. Still.
+   FIGURE 19.2: the six series on the periodic table, and under the table
+   the chosen series member by member: its outer electrons as a column of
+   squares, the subshell the series fills solid and the electrons beside
+   it open, over each member's configuration (those of Figure 6.29). The
+   point the text makes in words is then seen: lanthanum and actinium
+   hold a d electron and no f electron, so each opens a transition series
+   by its configuration and an f series by its behavior. A choice, or a
+   tap on a member in the table, picks the series. Still.
 ===================================================================== */
 (function () {
-  const d = sim('sim-transition-series', 790);
+  const d = sim('sim-transition-series', 1030);
   const range = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => a + i);
+  const cfgs = (s) => s.split(',').map((m) => m.trim().split(' ').map((t) => { const q = /^(\d[spdf])(\d+)$/.exec(t); return [q[1], +q[2]]; }));
+  /* fill: the subshell the series fills; side: the subshell whose electrons are drawn open on top of it */
   const SERIES = {
-    first: { z: range(21, 29), head: 'The first transition series fills the $3d$ subshell across period 4.', ro: '{}_{21}\\text{Sc}\\ \\text{to}\\ {}_{29}\\text{Cu}\\text{:}\\ 9\\ \\text{elements}' },
-    second: { z: range(39, 47), head: 'The second transition series fills the $4d$ subshell across period 5.', ro: '{}_{39}\\text{Y}\\ \\text{to}\\ {}_{47}\\text{Ag}\\text{:}\\ 9\\ \\text{elements}' },
-    third: { z: [57, ...range(72, 79)], head: 'The third transition series fills the $5d$ subshell: lanthanum, then hafnium to gold.', ro: '{}_{57}\\text{La}\\ \\text{and}\\ {}_{72}\\text{Hf}\\ \\text{to}\\ {}_{79}\\text{Au}\\text{:}\\ 9\\ \\text{elements}' },
-    fourth: { z: [89, ...range(104, 111)], head: 'The fourth transition series fills the $6d$ subshell: actinium, then rutherfordium to roentgenium.', ro: '{}_{89}\\text{Ac}\\ \\text{and}\\ {}_{104}\\text{Rf}\\ \\text{to}\\ {}_{111}\\text{Rg}\\text{:}\\ 9\\ \\text{elements}' },
-    lanthanides: { z: range(57, 71), head: 'Cerium to lutetium fill the $4f$ subshell; lanthanum joins the lanthanides by its behavior.', ro: '{}_{57}\\text{La}\\ \\text{to}\\ {}_{71}\\text{Lu}\\text{:}\\ 15\\ \\text{elements}' },
-    actinides: { z: range(89, 103), head: 'Thorium to lawrencium fill the $5f$ subshell; actinium joins the actinides by its behavior.', ro: '{}_{89}\\text{Ac}\\ \\text{to}\\ {}_{103}\\text{Lr}\\text{:}\\ 15\\ \\text{elements}' },
+    first: { z: range(21, 29), core: 'Ar', fill: '3d', side: '4s',
+      cfg: cfgs('3d1 4s2, 3d2 4s2, 3d3 4s2, 3d5 4s1, 3d5 4s2, 3d6 4s2, 3d7 4s2, 3d8 4s2, 3d10 4s1'),
+      head: 'The first transition series fills the $3d$ subshell, from one electron in scandium to ten in copper.',
+      ro: '{}_{21}\\text{Sc}\\ \\text{to}\\ {}_{29}\\text{Cu:}\\ \\ [\\text{Ar}]\\,3d^{\\,1\\text{–}10}\\,4s^{\\,1\\text{–}2}' },
+    second: { z: range(39, 47), core: 'Kr', fill: '4d', side: '5s',
+      cfg: cfgs('4d1 5s2, 4d2 5s2, 4d4 5s1, 4d5 5s1, 4d5 5s2, 4d7 5s1, 4d8 5s1, 4d10, 4d10 5s1'),
+      head: 'The second transition series fills the $4d$ subshell, from one electron in yttrium to ten in silver.',
+      ro: '{}_{39}\\text{Y}\\ \\text{to}\\ {}_{47}\\text{Ag:}\\ \\ [\\text{Kr}]\\,4d^{\\,1\\text{–}10}\\,5s^{\\,0\\text{–}2}' },
+    third: { z: [57, ...range(72, 79)], core: 'Xe', fill: '5d', side: '6s',
+      cfg: cfgs('5d1 6s2, 4f14 5d2 6s2, 4f14 5d3 6s2, 4f14 5d4 6s2, 4f14 5d5 6s2, 4f14 5d6 6s2, 4f14 5d7 6s2, 4f14 5d9 6s1, 4f14 5d10 6s1'),
+      head: 'Lanthanum holds the first $5d$ electron and hafnium the second, once the lanthanides have filled $4f$.',
+      ro: '{}_{57}\\text{La}\\ \\text{and}\\ {}_{72}\\text{Hf}\\ \\text{to}\\ {}_{79}\\text{Au:}\\ \\ [\\text{Xe}]\\,4f^{\\,0\\text{ or }14}\\,5d^{\\,1\\text{–}10}\\,6s^{\\,1\\text{–}2}' },
+    fourth: { z: [89, ...range(104, 111)], core: 'Rn', fill: '6d', side: '7s',
+      cfg: cfgs('6d1 7s2, 5f14 6d2 7s2, 5f14 6d3 7s2, 5f14 6d4 7s2, 5f14 6d5 7s2, 5f14 6d6 7s2, 5f14 6d7 7s2, 5f14 6d8 7s2, 5f14 6d9 7s2'),
+      head: 'Actinium holds the first $6d$ electron and rutherfordium the second, once the actinides have filled $5f$.',
+      ro: '{}_{89}\\text{Ac}\\ \\text{and}\\ {}_{104}\\text{Rf}\\ \\text{to}\\ {}_{111}\\text{Rg:}\\ \\ [\\text{Rn}]\\,5f^{\\,0\\text{ or }14}\\,6d^{\\,1\\text{–}9}\\,7s^{\\,2}' },
+    lanthanides: { z: range(57, 71), core: 'Xe', fill: '4f', side: '5d',
+      cfg: cfgs('5d1 6s2, 4f1 5d1 6s2, 4f3 6s2, 4f4 6s2, 4f5 6s2, 4f6 6s2, 4f7 6s2, 4f7 5d1 6s2, 4f9 6s2, 4f10 6s2, 4f11 6s2, 4f12 6s2, 4f13 6s2, 4f14 6s2, 4f14 5d1 6s2'),
+      head: 'Cerium to lutetium fill the $4f$ subshell. Lanthanum has no $4f$ electron and is a lanthanide by its behavior.',
+      ro: '{}_{57}\\text{La}\\ \\text{to}\\ {}_{71}\\text{Lu:}\\ \\ [\\text{Xe}]\\,4f^{\\,0\\text{–}14}\\,5d^{\\,0\\text{–}1}\\,6s^{\\,2}' },
+    actinides: { z: range(89, 103), core: 'Rn', fill: '5f', side: '6d',
+      cfg: cfgs('6d1 7s2, 6d2 7s2, 5f2 6d1 7s2, 5f3 6d1 7s2, 5f4 6d1 7s2, 5f6 7s2, 5f7 7s2, 5f7 6d1 7s2, 5f8 6d1 7s2, 5f10 7s2, 5f11 7s2, 5f12 7s2, 5f13 7s2, 5f14 7s2, 5f14 6d1 7s2'),
+      head: 'The actinides fill the $5f$ subshell. Actinium has no $5f$ electron and is an actinide by its behavior.',
+      ro: '{}_{89}\\text{Ac}\\ \\text{to}\\ {}_{103}\\text{Lr:}\\ \\ [\\text{Rn}]\\,5f^{\\,0\\text{–}14}\\,6d^{\\,0\\text{–}2}\\,7s^{\\,2}' },
   };
+  const KEYS = Object.keys(SERIES);
   const pick = F.choice(d.controls, {
-    label: '\\text{series}', aria: 'the series lit on the table', value: 'first',
-    options: [['first', 'first'], ['second', 'second'], ['third', 'third'], ['fourth', 'fourth'], ['lanthanides', 'lanthanides'], ['actinides', 'actinides']].map(([value, l]) => ({ value, label: l })),
+    label: '\\text{series}', aria: 'the series read member by member', value: 'first',
+    options: KEYS.map((value) => ({ value, label: value })),
   });
   const lit = (v) => Array.from({ length: 118 }, (_, i) => (SERIES[v].z.includes(i + 1) ? 1 : 0));
-  const X0 = 60, CW = 70, CH = 54, PY = 60, TOP = 140, FTOP = 590;
+  /* the table: 18 columns of 70 from x = 100, seven rows of 50 from y = 150, the two f rows under groups 3 to 17 */
+  const X0 = 100, CW = 70, CH = 44, PY = 50, TOP = 150, FTOP = 520;
   function cell(Z) {
     const q = place(Z);
     if (q.f !== undefined) return { x: X0 + (2 + q.f) * CW, y: FTOP + (q.period - 6) * PY };
     return { x: X0 + (q.group - 1) * CW, y: TOP + (q.period - 1) * PY };
   }
-  const DUAL = {
-    57: 'Lanthanum, Z = 57: a lanthanide by its behavior, the first member of the third transition series by its electron configuration',
-    89: 'Actinium, Z = 89: an actinide by its behavior, the first member of the fourth transition series by its electron configuration',
-  };
+  const isD = (Z) => { const q = place(Z); return q.f === undefined && q.group >= 3 && q.group <= 11; };
+  const seriesOf = (Z) => (Z === 57 ? 'lanthanides' : Z === 89 ? 'actinides' : KEYS.find((k) => SERIES[k].z.includes(Z)));
+  const tx = (c) => '$' + c.map(([s, n]) => `${s[0]}${s[1]}^{${n}}`).join('\\,') + '$';
+  const plain = (c) => c.map(([s, n]) => s + String(n).split('').map((ch) => '⁰¹²³⁴⁵⁶⁷⁸⁹'[+ch]).join('')).join(' ');
+  const DUAL = { 57: ', a lanthanide by its behavior and the first member of the third transition series by its configuration', 89: ', an actinide by its behavior and the first member of the fourth transition series by its configuration' };
+  const cfgOf = {}; KEYS.forEach((k) => SERIES[k].z.forEach((Z, i) => { cfgOf[Z] = `[${SERIES[k].core}] ${plain(SERIES[k].cfg[i])}`; }));
   let hits = []; F.hover(d.stage, () => hits);
+  /* a tap on a member of a series in the table chooses that series; the two places in group 3 choose the d series that starts there */
+  d.c.style.cursor = 'pointer';
+  d.c.addEventListener('click', (ev) => {
+    const r = d.c.getBoundingClientRect(); if (!r.width) return;
+    const s = 1400 / r.width, px = (ev.clientX - r.left) * s, py = (ev.clientY - r.top) * s;
+    let k = null;
+    for (let Z = 1; Z <= 118 && !k; Z++) { const c = cell(Z); if (px >= c.x && px < c.x + CW && py >= c.y && py < c.y + PY) k = seriesOf(Z); }
+    [[6, 'third'], [7, 'fourth']].forEach(([p, v]) => { if (px >= X0 + 2 * CW && px < X0 + 3 * CW && py >= TOP + (p - 1) * PY && py < TOP + p * PY) k = v; });
+    if (k && k !== pick.value) pick.drive(k);
+  });
+  /* the series below: columns from BASE up, one square to an electron */
+  const BASE = 884, U = 13, SQ = 32;
   function draw() {
     const { ctx } = begin(d.c);
-    const on = pick.mix(lit);
+    const on = pick.mix(lit), v = pick.value;
     hits = [];
-    for (let p = 1; p <= 7; p++) text(ctx, String(p), X0 - 20, TOP + (p - 1) * PY + CH / 2, PAL.muted, { size: 15, align: 'center' });
+    text(ctx, 'period', X0 - 30, TOP - 36, PAL.muted, { size: 15, align: 'center' });
+    text(ctx, 'group', X0 + CW / 2, TOP - 36, PAL.muted, { size: 15, align: 'center' });
+    for (let p = 1; p <= 7; p++) text(ctx, String(p), X0 - 30, TOP + (p - 1) * PY + CH / 2, PAL.muted, { size: 16, weight: 600, align: 'center' });
     const firstRow = [1, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 2, 2, 2, 2, 2, 1];
-    firstRow.forEach((p, g) => text(ctx, String(g + 1), X0 + g * CW + CW / 2, TOP + (p - 1) * PY - 12, PAL.muted, { size: 15, align: 'center' }));
-    hbracket(ctx, X0 + 2 * CW + 2, X0 + 11 * CW - 4, TOP + 3 * PY - 38, PAL.ink, 'transition elements', { side: 'above' });
-    /* the two places in group 3 the f rows stand for */
-    [[6, '57–71'], [7, '89–103']].forEach(([p, s]) => {
-      const x = X0 + 2 * CW, y = TOP + (p - 1) * PY;
-      ctx.save(); ctx.setLineDash([4, 4]); ctx.strokeStyle = PAL.muted; ctx.lineWidth = 1.5; ctx.strokeRect(x + 1, y, CW - 3, CH); ctx.restore();
-      text(ctx, s, x + CW / 2, y + CH / 2, PAL.muted, { size: 14, align: 'center' });
+    firstRow.forEach((p, g) => text(ctx, String(g + 1), X0 + g * CW + CW / 2, TOP + (p - 1) * PY - 13, PAL.muted, { size: 16, weight: 600, align: 'center' }));
+    hbracket(ctx, X0 + 2 * CW + 3, X0 + 11 * CW - 7, TOP + 3 * PY - 44, PAL.ink, 'transition elements', { side: 'above', size: 19 });
+    const box = (x, y, k, soft, dash) => {
+      ctx.save(); ctx.fillStyle = soft ? PAL.soft : PAL.panel; ctx.fillRect(x + 1, y, CW - 4, CH);
+      if (k > 0) { ctx.fillStyle = alpha(PAL.ink, 0.22 * k); ctx.fillRect(x + 1, y, CW - 4, CH); }
+      if (dash) ctx.setLineDash([6, 4]);
+      ctx.strokeStyle = F.mixColor(alpha(PAL.ink, 0.3), PAL.ink, k); ctx.lineWidth = 1.5 + 1.5 * k; ctx.strokeRect(x + 1, y, CW - 4, CH); ctx.restore();
+    };
+    /* the two places in group 3 that the f rows stand for; each lights with the d series lanthanum or actinium opens */
+    [[6, 'La–Lu', 'third', 'Lanthanum to lutetium, Z = 57 to 71'], [7, 'Ac–Lr', 'fourth', 'Actinium to lawrencium, Z = 89 to 103']].forEach(([p, s, key, name]) => {
+      const x = X0 + 2 * CW, y = TOP + (p - 1) * PY, k = pick.mix((w) => (w === key ? 1 : 0));
+      box(x, y, k, true, true);
+      text(ctx, s, x + CW / 2 - 1, y + CH / 2, PAL.ink, { size: 16, align: 'center' });
+      hits.push({ x: x + CW / 2, y: y + CH / 2, r: 24, name });
     });
     for (let Z = 1; Z <= 118; Z++) {
-      const { x, y } = cell(Z), k = on[Z - 1];
-      ctx.save(); ctx.fillStyle = PAL.panel; ctx.fillRect(x + 1, y, CW - 3, CH);
-      if (k > 0) { ctx.fillStyle = alpha(PAL.ink, 0.2 * k); ctx.fillRect(x + 1, y, CW - 3, CH); }
-      if (DUAL[Z] && k > 0.5) ctx.setLineDash([6, 4]);
-      ctx.strokeStyle = k > 0.5 ? PAL.ink : PAL.rule; ctx.lineWidth = 1.5 + 1.5 * k; ctx.strokeRect(x + 1, y, CW - 3, CH); ctx.restore();
-      text(ctx, String(Z), x + 7, y + 12, PAL.muted, { size: 12 });
-      text(ctx, SYM[Z - 1], x + CW / 2, y + 33, PAL.ink, { size: 20, weight: k > 0.5 ? 600 : 400, align: 'center' });
-      hits.push({ x: x + CW / 2, y: y + CH / 2, r: 27, name: DUAL[Z] ?? NAME[Z - 1] + ', Z = ' + Z });
+      const { x, y } = cell(Z), k = on[Z - 1], q = place(Z);
+      box(x, y, k, q.f !== undefined || isD(Z), false);
+      text(ctx, String(Z), x + 5, y + 10, PAL.muted, { size: 12 });
+      text(ctx, SYM[Z - 1], x + CW / 2 + 2, y + 28, PAL.ink, { size: 19, weight: k > 0.5 ? 600 : 400, align: 'center' });
+      hits.push({ x: x + CW / 2, y: y + CH / 2, r: 24, name: `${NAME[Z - 1]}, Z = ${Z}${cfgOf[Z] ? ', ' + cfgOf[Z] : ''}${DUAL[Z] ?? ''}` });
     }
-    text(ctx, 'lanthanides', X0 + 2 * CW - 10, FTOP + CH / 2, PAL.muted, { size: 15, align: 'right' });
-    text(ctx, 'actinides', X0 + 2 * CW - 10, FTOP + PY + CH / 2, PAL.muted, { size: 15, align: 'right' });
-    hbracket(ctx, X0 + 2 * CW + 2, X0 + 17 * CW - 4, FTOP + PY + CH + 16, PAL.ink, 'inner transition elements', { side: 'below' });
-    topline(ctx, SERIES[pick.value].head);
-    tex(d.readout, SERIES[pick.value].ro);
+    text(ctx, 'lanthanides', X0 + 2 * CW - 12, FTOP + CH / 2, PAL.ink, { size: 17, align: 'right' });
+    text(ctx, 'actinides', X0 + 2 * CW - 12, FTOP + PY + CH / 2, PAL.ink, { size: 17, align: 'right' });
+    hbracket(ctx, X0 + 2 * CW + 3, X0 + 17 * CW - 7, FTOP + PY + CH + 18, PAL.ink, 'inner transition elements', { side: 'below', size: 19 });
+
+    /* the chosen series, member by member */
+    KEYS.forEach((key) => pick.only(ctx, key, () => {
+      const S = SERIES[key], n = S.z.length, P = n > 9 ? 80 : 128, x0 = 742 - (n * P) / 2, f = S.fill[1] === 'f';
+      const u = f ? 10.5 : U, top = f ? 15 : 12;
+      /* the count's scale */
+      [0, 5, 10, ...(f ? [14] : [])].forEach((t) => {
+        line(ctx, x0 - 6, BASE - t * u, x0 + n * P - 4, BASE - t * u, t ? PAL.rule : alpha(PAL.ink, 0.6), t ? 1.5 : 2);
+        text(ctx, String(t), x0 - 16, BASE - t * u, PAL.muted, { size: 16, align: 'right' });
+      });
+      text(ctx, 'outer electrons', x0 - 16, BASE - top * u - 12, PAL.muted, { size: 17, align: 'left' });
+      text(ctx, `[${S.core}]`, x0 - 16, BASE + 88, PAL.ink, { size: 19, align: 'right' });
+      S.z.forEach((Z, i) => {
+        const cx = x0 + i * P + P / 2 - 5, c = S.cfg[i], nf = (c.find(([s]) => s === S.fill) ?? [0, 0])[1], ns = (c.find(([s]) => s === S.side) ?? [0, 0])[1];
+        const w = f ? 40 : 56;
+        ctx.save();
+        for (let e = 0; e < nf + ns; e++) {
+          const y = BASE - (e + 1) * u;
+          ctx.fillStyle = e < nf ? alpha(PAL.ink, 0.72) : PAL.panel; ctx.fillRect(cx - w / 2, y + 1, w, u - 2);
+          ctx.strokeStyle = PAL.ink; ctx.lineWidth = 1.5; ctx.strokeRect(cx - w / 2, y + 1, w, u - 2);
+        }
+        ctx.restore();
+        /* the member's square */
+        ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.12); ctx.fillRect(cx - SQ, BASE + 10, 2 * SQ, 46);
+        ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; if (DUAL[Z]) ctx.setLineDash([6, 4]); ctx.strokeRect(cx - SQ, BASE + 10, 2 * SQ, 46); ctx.restore();
+        text(ctx, String(Z), cx - SQ + 5, BASE + 21, PAL.muted, { size: 13 });
+        text(ctx, SYM[Z - 1], cx + 3, BASE + 38, PAL.ink, { size: 21, weight: 600, align: 'center' });
+        text(ctx, tx(c), cx, BASE + 88, PAL.ink, { size: n > 9 ? (c.length > 2 ? 14 : 17) : 19, align: 'center', tex: true });
+        if (key === v) hits.push({ x: cx, y: BASE - ((nf + ns) * u) / 2, r: 26, name: `${NAME[Z - 1]}: ${nf} ${S.fill} and ${ns} ${S.side} ${nf + ns === 1 ? 'electron' : 'electrons'}` },
+          { x: cx, y: BASE + 40, r: 30, name: `${NAME[Z - 1]}, Z = ${Z}, ${cfgOf[Z]}${DUAL[Z] ?? ''}` });
+      });
+      const sw = (solid) => (c2, x, y) => { c2.save(); c2.fillStyle = solid ? alpha(PAL.ink, 0.72) : PAL.panel; c2.fillRect(x - 15, y - 6, 30, 12); c2.strokeStyle = PAL.ink; c2.lineWidth = 1.5; c2.strokeRect(x - 15, y - 6, 30, 12); c2.restore(); };
+      F.legend(ctx, { l: 760, r: x0 + n * P - 4, t: BASE - top * u - 30, b: BASE - top * u + 6 },
+        [{ s: `an electron in $${S.fill[0]}${S.fill[1]}$`, draw: sw(true) }, { s: `an electron in $${S.side[0]}${S.side[1]}$`, draw: sw(false) }], { corner: 'top', row: true, panel: false, size: 17 });
+    }, [0, 10]));
+    topline(ctx, SERIES[v].head);
+    tex(d.readout, SERIES[v].ro);
   }
   register(d.fig, { update: () => {}, draw });
 })();
-
 /* =====================================================================
    FIGURE 19.4: the oxidation states of the first transition series.
    The book's chart, the chosen metal's column lit; beside it the atom's

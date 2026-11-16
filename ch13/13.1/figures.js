@@ -137,7 +137,6 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
   let run = simulate(), hits = [];
   function rerun() { run = simulate(); cy.reset(); }
   F.hover(d.stage, () => hits);
-  /*TEST*/ d.fig.__run = () => run;
 
   function molecule(ctx, kind, x, y, th, s = 1) {
     const c = Math.cos(th), sn = Math.sin(th);
@@ -181,7 +180,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     /* the sealed tube, its gas as brown as the NO₂ in it */
     const brown = F.fact(NO2_BROWN), tint = 0.03 + 0.82 * Math.min(1, B[f] / (2 * A0));
     ctx.save(); tubePath(ctx); ctx.fillStyle = PAL.panel; ctx.fill(); ctx.fillStyle = alpha(brown, tint); ctx.fill(); ctx.strokeStyle = alpha(PAL.ink, 0.75); ctx.lineWidth = 3.5; ctx.stroke(); ctx.restore();
-    line(ctx, TX - TW / 2 + 11, TT + 64, TX - TW / 2 + 11, TB - TW / 2 - 6, alpha(PAL.panel, 0.55), 6);   /* the light along the glass */
+    line(ctx, TX - TW / 2 + 10, TT + 62, TX - TW / 2 + 10, TB - TW / 2 - 4, alpha(PAL.ink, 0.22), 2);   /* the inside of the glass wall */
     label(ctx, 'sealed tube', TX, TB + 26, { side: 'below', size: 17, gap: 0, weight: 400, color: PAL.muted });
 
     /* the magnifier: a ring on the tube, two lines out to the circle */
@@ -197,7 +196,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     seen.filter((e) => t - e.t < FLASH).forEach((e) => {
       const k = (t - e.t) / FLASH, at = now.filter((m) => e.ids.includes(m[4]));
       const x = at.length === e.ids.length ? at.reduce((s, m) => s + m[1], 0) / at.length : e.x, y = at.length === e.ids.length ? at.reduce((s, m) => s + m[2], 0) / at.length : e.y;
-      ctx.save(); ctx.globalAlpha = 1 - k * k; ring(ctx, x, y, MOLS.A.rc + 4 + 24 * F.ease.out(k), e.kind === 'split' ? cfw : crv, 5); ctx.restore();
+      ctx.save(); ctx.globalAlpha = 1 - k * k; ring(ctx, x, y, MOLS.A.rc + 4 + 24 * F.ease.out(k), e.kind === 'split' ? cfw : crv, 4); ctx.restore();
     });
     ctx.restore();
     ring(ctx, CX, CY, CR, alpha(PAL.ink, 0.75), 3);

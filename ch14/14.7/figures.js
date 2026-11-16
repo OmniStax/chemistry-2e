@@ -130,7 +130,7 @@ const clamp01 = (x) => Math.max(0, Math.min(1, x));
     const v0 = reach(which, pKa, ic.lo), v1 = reach(which, pKa, ic.hi), p0 = Math.max(ic.lo, pHof(0, which, pKa));
     const row = KEYS.indexOf(ik), x0 = X(v0), x1 = X(v1);
     if (v1 > 0) {
-      ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.06); ctx.fillRect(x0, Y(ic.hi), Math.max(x1 - x0, 1.5), SY(row) - Y(ic.hi)); ctx.restore();
+      ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.06); ctx.fillRect(x0, Y(ic.hi), Math.max(x1 - x0, 1.5), G.b - Y(ic.hi)); ctx.restore();
       line(ctx, x0, Y(Math.min(p0, ic.hi)), x0, SY(row), alpha(PAL.ink, 0.45), 1.5);
       line(ctx, x1, Y(ic.hi), x1, SY(row), alpha(PAL.ink, 0.45), 1.5);
     }
@@ -212,7 +212,7 @@ const clamp01 = (x) => Math.max(0, Math.min(1, x));
 
     /* the bench, flat: the stand's base and rod, the clamp's boss, arm and jaws */
     ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5; ctx.lineJoin = 'round';
-    ctx.beginPath(); ctx.roundRect(RODX - 36, FB, BX + WB + 28 - (RODX - 36), BENCH - FB, 5); ctx.fill(); ctx.stroke();
+    ctx.beginPath(); ctx.roundRect(RODX - 26, FB, BX + WB + 28 - (RODX - 26), BENCH - FB, 5); ctx.fill(); ctx.stroke();
     ctx.beginPath(); ctx.roundRect(RODX - 5, 96, 10, FB - 96, 3); ctx.fill(); ctx.stroke();
     const CY = Yb(0) - 36;
     ctx.beginPath(); ctx.roundRect(RODX - 14, CY - 16, 28, 32, 4); ctx.fill(); ctx.stroke();

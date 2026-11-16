@@ -288,7 +288,7 @@ function homes() {
    anodes hang in the melt from forked rods on a bus bar (+); a bar (−)
    runs out of the cathode through the left wall. A hood covers the cell,
    with the exhaust at its top left.
-   One run takes T = 9.5 s and holds. Five rounds, 1.4 s apart, the left
+   One run takes T = 8.6 s and holds, the last gases still on their way out. Five rounds, 1.4 s apart, the left
    anode and the right in turn. In a round two Al³⁺ sink to the aluminum,
    each takes three electrons that come up from the cathode, and joins
    the pool, which deepens; three O²⁻ rise to the anode's underside and
@@ -301,7 +301,7 @@ function homes() {
 ===================================================================== */
 (function () {
   const H = 930, d = sim('sim-hall-heroult', H);
-  const T = 9.5, NR = 5, T0 = 1.0, GAP = 1.4, SP = 26, VG = 380;
+  const T = 8.6, NR = 5, T0 = 1.0, GAP = 1.4, SP = 26, VG = 380;
   const CL = 320, CR = 940, TOP = 400, CRUST = 420, AL0 = 672, AB = 572, RAL = 9, RO = 12.5, DX = 30;                    /* the drawing is shown 30 units to the right of its layout */
   const AN = [[376, 576], [684, 884]];
   const cy = cycle(() => T, 1.4);

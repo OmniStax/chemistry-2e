@@ -161,7 +161,7 @@ const { C, PAL, alpha, register, begin, line, text } = F;
     try { F.tex(d.readout, `{${t.acid}(aq)} + {\\text{OH}^{-}(aq)} \\longrightarrow {${t.tex}(aq)} + {\\text{H}_{2}\\text{O}(l)}`); console.warn('TEXOK', d.readout.innerHTML.length, d.readout.isConnected); } catch (e) { console.warn('TEXERR ' + e.message); }
   }
 
-  function draw() { scene(); drawKey(); drawRow(); readout(); }
+  function draw() { console.warn('D0'); scene(); console.warn('D1'); drawKey(); console.warn('D2'); drawRow(); console.warn('D3'); readout(); }
   register(d.fig, { update: () => {}, draw });
 })();
 };

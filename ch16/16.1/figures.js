@@ -251,8 +251,8 @@ const sup = (n) => String(n).split('').map((c) => SUP[c] ?? c).join('');
    1.2 s hold. Beside the objects, the heat each has gained so far as a
    bar from zero, q_X and q_Y, on a fixed axis of ±80 kJ (the sliders
    reach ±75 kJ). Beneath, both temperatures against time on fixed axes,
-   −1 to 10 min and 250 to 400 K, the slider limits. The heat arrow's
-   length is the temperature difference, 100 K drawn 200 long.
+   −1 to 10 min and 250 to 400 K, the slider limits. The heat arrow
+   grows with the temperature difference: 60 long plus 2 for each kelvin.
 ===================================================================== */
 (function () {
   const H = 720, d = sim('sim-heat-flow', H);
@@ -285,9 +285,9 @@ const sup = (n) => String(n).split('').map((c) => SUP[c] ?? c).join('');
     });
     const diff = TX - TY, flowing = tm >= 0 && Math.abs(diff) >= 0.5;
     if (flowing) {
-      const L = Math.max(44, 2 * Math.abs(diff)), sg = Math.sign(diff), ya = BT + 52;
+      const L = 60 + 2 * Math.abs(diff), sg = Math.sign(diff), ya = BT + 64;
       arrow(ctx, CX - (sg * L) / 2, ya, CX + (sg * L) / 2, ya, ce, 7);
-      text(ctx, 'heat', CX, ya - 26, ce, { size: 22, weight: 600, align: 'center' });
+      text(ctx, 'heat', CX, ya - 34, ce, { size: 22, weight: 600, align: 'center' });
       hits.push({ x: CX, y: ya, r: 34, name: `heat flowing from ${sg > 0 ? 'X to Y' : 'Y to X'}, faster the further apart the temperatures` });
     }
     /* the heat each object has gained since contact: two bars from zero, equal and opposite */

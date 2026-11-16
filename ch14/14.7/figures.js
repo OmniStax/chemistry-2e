@@ -192,15 +192,18 @@ const clamp01 = (x) => Math.max(0, Math.min(1, x));
       samples.forEach(([f, pp]) => grad.addColorStop(clamp01(f), tint(key, pp)));
       ctx.save(); ctx.fillStyle = PAL.panel; ctx.fillRect(G.l, SY(i), G.r - G.l, SH); ctx.fillStyle = grad; ctx.fillRect(G.l, SY(i), G.r - G.l, SH);
       ctx.strokeStyle = alpha(PAL.ink, 0.35 + 0.65 * w); ctx.lineWidth = 1.5 + 1.5 * w; ctx.strokeRect(G.l, SY(i), G.r - G.l, SH); ctx.restore();
-      text(ctx, s.name, G.r + 14, SY(i) + SH / 2, PAL.ink, { size: 19, weight: w > 0.5 ? 600 : 400 });
+      text(ctx, s.name, G.r + 22, SY(i) + SH / 2, PAL.ink, { size: 19, weight: w > 0.5 ? 600 : 400 });
       const a = reach(which, pKa, s.lo), b = reach(which, pKa, s.hi);
       const name = b <= 0 ? `${s.name} in the ${sample} solution: ${s.words[2]} at every volume` : `${s.name} in the ${sample} solution: ${s.words[0]} up to ${to(a)} mL, ${s.words[2]} from ${to(b)} mL`;
       for (let x = G.l + 16; x < G.r; x += 32) hits.push({ x, y: SY(i) + SH / 2, r: 16, name });
     });
 
+    /* the equivalence volume carried down across the strips, so each change of color is seen against it */
+    line(ctx, X(VEQ), SY(0) - 7, X(VEQ), SY(2) + SH + 7, PAL.ink, 2);
+    F.rich(ctx, ['equivalence point, ', ['25.00 mL', cV]], X(VEQ), SY(2) + SH + 21, { size: 19, align: 'center' });
     /* the chosen sample now: its point on the curve, dropped through the strips */
     const pNow = acid.mix((s) => pHof(v, s, pKa)), mx = X(v), my = Y(pNow), mc = acid.mixColor((s) => F.ref(REF[s]));
-    line(ctx, mx, my + 10, mx, SY(2) + SH + 6, alpha(cV, 0.8), 2, [4, 8]);
+    line(ctx, mx, my + 10, mx, SY(2) + SH, alpha(cV, 0.8), 2, [4, 8]);
     dot(ctx, mx, my, mc, true, 9);
     hits.push({ x: mx, y: my, r: 16, name: `the ${sample} solution after ${to(v)} mL of NaOH, pH ${to(p)}` });
     const tintNow = ind.mixColor((k) => tint(k, pExact));

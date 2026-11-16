@@ -22,7 +22,7 @@ const { PAL, alpha, register, begin, line, text, topline } = F;
   const d = F.sim(root, 'sim-peptide', HH);
   const NUM = ['', 'one', 'two', 'three', 'four'];
   const CHAIN = { 2: 'dipeptide', 3: 'tripeptide', 4: 'tetrapeptide' };
-  const count = F.choice(d.controls, { label: '\\text{amino acids}', key: 'amino-acids', aria: 'the number of amino acids', ms: 1700,
+  const count = F.choice(d.controls, { label: '\\text{amino acids}', key: 'amino-acids', aria: 'the number of amino acids', ms: 2400,
     options: ['2', '3', '4'].map((v) => ({ value: v, label: v })), value: '2' });
   const step = F.choice(d.controls, { label: '\\text{condensation}', key: 'condensation', aria: 'before or after the condensation reaction', ms: 1700,
     options: [{ value: 'before', label: 'before' }, { value: 'after', label: 'after' }], value: 'after' });
@@ -40,11 +40,13 @@ const { PAL, alpha, register, begin, line, text, topline } = F;
     const w = step.mix((v) => (v === 'after' ? 1 : 0)) * F.ease.smooth(F.arrival(d));
     const pres = [0, 1, 2, 3].map((i) => count.mix((v) => (i < +v ? 1 : 0)));
     /* j[i]: how far the join between amino acids i and i + 1 has gone. Three beats: the atoms leave, the molecules close up, the bond is drawn */
-    const j = [0, 1, 2].map((i) => w * pres[i + 1]);
+    /* a newcomer is given room, then fades in, then reacts */
+    const room = pres.map((q) => sm(q, 0, 0.25)), seen = pres.map((q) => sm(q, 0.2, 0.45));
+    const j = [0, 1, 2].map((i) => w * Math.min(1, Math.max(0, (pres[i + 1] - 0.45) / 0.55)));
     const leave = j.map((q) => sm(q, 0, 0.45)), close = j.map((q) => sm(q, 0.4, 0.85)), bond = j.map((q) => sm(q, 0.78, 1));
     const off = close.map((q) => lerp(PA, PJ, q));
-    const wide = WIDE + off.reduce((s, o, i) => s + pres[i + 1] * o, 0);
-    const u = Math.min(UMAX, 1190 / wide), fs = 0.44 * u, bw = Math.max(3, 0.05 * u), g = 0.27 * u;
+    const wide = WIDE + off.reduce((s, o, i) => s + room[i + 1] * o, 0);
+    const u = Math.min(UMAX, 1250 / wide), fs = 0.44 * u, bw = Math.max(3, 0.05 * u), g = 0.27 * u;
     const xs = [700 - (wide * u) / 2 + LEFT * u]; off.forEach((o, i) => xs.push(xs[i] + o * u));
     const P = (i, a, b) => [xs[i] + a * u, Y + b * u];
 
@@ -67,7 +69,7 @@ const { PAL, alpha, register, begin, line, text, topline } = F;
     const mixP = (p, q, k) => [lerp(p[0], q[0], k), lerp(p[1], q[1], k)];
 
     for (let i = 0; i < 4; i++) {
-      const a = sm(pres[i], 0, 0.3); if (a <= 0.01) continue;
+      const a = seen[i]; if (a <= 0.01) continue;
       const kin = i > 0 ? i - 1 : -1, kout = i < 3 ? i : -1;
       const lin = kin < 0 ? 0 : leave[kin], cin = kin < 0 ? 0 : close[kin];
       const lout = kout < 0 ? 0 : leave[kout], cout = kout < 0 ? 0 : close[kout], next = kout < 0 ? 0 : pres[i + 1];
@@ -89,16 +91,16 @@ const { PAL, alpha, register, begin, line, text, topline } = F;
         /* the OH of the acid group: it leaves with the water of the join on its right */
         const W = kout < 0 ? null : waterAt(kout), o0 = P(i, 2.62, 0.8), h0 = P(i, 2.95, 0.8);
         const Oh = W ? mixP(o0, W.O, lout) : o0, Hh = W ? mixP(h0, W.Ho, lout) : h0;
-        const col = next > 0.5 ? cw : PAL.ink, heavy = next > 0.5;
+        const col = F.mixColor(PAL.ink, cw, seen[i + 1] ?? 0), heavy = next > 0.5;
         atom('O', Oh, col, heavy); atom('H', Hh, col, heavy);
         stick(C, Oh, 1 - sm(lout, 0, 0.35));
         if (W && lout > 0) {
-          const k = sm(lout, 0.7, 1) * next;
+          const k = sm(lout, 0.7, 1);
           stick(W.O, W.Ho, k, 1, cw); stick(W.O, mixP(P(i + 1, -0.62, 0.72), W.Hn, lout), k, 1, cw);
           if (lout > 0.6) hits.push({ x: W.cx, y: W.cy, r: 0.75 * u, name: 'water molecule, from the OH and the H that left' });
         }
         /* the peptide bond, heavier than the rest */
-        if (kout >= 0) stick(C, [xs[i + 1], Y], bond[kout] * next, 1, PAL.ink, 1.9 * bw);
+        if (kout >= 0) stick(C, [xs[i + 1], Y], bond[kout], 1, PAL.ink, 1.9 * bw);
         /* the book's name under each molecule still on its own */
         const own = (1 - sm(Math.max(kin < 0 ? 0 : j[kin], kout < 0 ? 0 : j[kout]), 0, 0.25));
         if (own > 0.01) F.faded(ctx, own, [0, 0], () => text(ctx, 'amino acid', xs[i] + 1.17 * u, Y + 1.8 * u, PAL.ink, { size: 24, align: 'center' }));
@@ -108,20 +110,27 @@ const { PAL, alpha, register, begin, line, text, topline } = F;
           { x: C[0], y: C[1], r: 0.3 * u, name: 'carbon atom of the carbonyl group' });
       });
       /* the plus sign between molecules still apart */
-      if (kout >= 0 && next > 0.01) F.faded(ctx, (1 - sm(j[kout], 0, 0.3)) * sm(next, 0, 0.3), [0, 0], () => atom('+', [(xs[i] + 3.11 * u + xs[i + 1] - LEFT * u) / 2, Y]));
+      if (kout >= 0 && next > 0.01) F.faded(ctx, (1 - sm(j[kout], 0, 0.3)) * seen[i + 1], [0, 0], () => atom('+', [(xs[i] + 3.11 * u + xs[i + 1] - LEFT * u) / 2, Y]));
     }
     function swing(N, th) { return [N[0] + 0.96 * u * Math.cos(th), N[1] + 0.96 * u * Math.sin(th)]; }
 
     /* the two groups still unreacted at the ends, and the first peptide bond, named on one line above the structure */
-    const ly = Y - 1.22 * u - 22, xl = count.mix((v) => xs[+v - 1]);
-    function box(l, t, r, b, name) {
-      ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 2.5; ctx.setLineDash([9, 7]); ctx.strokeRect(l, t, r - l, b - t); ctx.restore();
-      const half = F.measure(ctx, name, { size: 24 }) / 2;
-      text(ctx, name, Math.min(1400 - 16 - half, Math.max(16 + half, (l + r) / 2)), ly, PAL.ink, { size: 24, align: 'center' });
+    const ly = Y - 1.22 * u - 22;
+    function box(a, l, t, r, b, name) {
+      F.faded(ctx, a, [0, 0], () => {
+        ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 2.5; ctx.setLineDash([9, 7]); ctx.strokeRect(l, t, r - l, b - t); ctx.restore();
+        const half = F.measure(ctx, name, { size: 24 }) / 2;
+        text(ctx, name, Math.min(1400 - 16 - half, Math.max(16 + half, (l + r) / 2)), ly, PAL.ink, { size: 24, align: 'center' });
+      });
     }
-    box(xs[0] - 1.02 * u, Y - 1.1 * u, xs[0] + 0.36 * u, Y + 1.1 * u, 'amine group');
-    box(xl + 1.6 * u, Y - 1.22 * u, xl + 3.36 * u, Y + 1.18 * u, 'carboxylic acid group');
-    hits.push({ x: xs[0] - 0.4 * u, y: Y, r: 0.6 * u, name: 'amine group, –NH₂, still free' }, { x: xl + 2.7 * u, y: Y, r: 0.7 * u, name: 'carboxylic acid group, –COOH, still free' });
+    box(1, xs[0] - 1.02 * u, Y - 1.1 * u, xs[0] + 0.36 * u, Y + 1.1 * u, 'amine group');
+    hits.push({ x: xs[0] - 0.4 * u, y: Y, r: 0.6 * u, name: 'amine group, –NH₂, still free' });
+    /* the acid group of whichever amino acid is last: the box leaves one as the next arrives */
+    for (let i = 1; i < 4; i++) {
+      const a = seen[i] * (i < 3 ? 1 - seen[i + 1] : 1); if (a <= 0.01) continue;
+      box(a, xs[i] + 1.6 * u, Y - 1.22 * u, xs[i] + 3.36 * u, Y + 1.18 * u, 'carboxylic acid group');
+      if (a > 0.5) hits.push({ x: xs[i] + 2.7 * u, y: Y, r: 0.7 * u, name: 'carboxylic acid group, –COOH, still free' });
+    }
     if (bond[0] > 0.01) {
       const mx = (xs[0] + 2 * u + xs[1]) / 2;
       F.faded(ctx, bond[0], [0, 0], () => { line(ctx, mx, ly + 18, mx, Y - 0.16 * u, alpha(PAL.ink, 0.5), 2); text(ctx, 'peptide bond', mx, ly, PAL.ink, { size: 24, align: 'center' }); });

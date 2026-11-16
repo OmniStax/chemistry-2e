@@ -145,7 +145,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     });
     /* the axes are named once, on the first orbital, as the book names them */
     const g0 = panels[0].g;
-    [[[3.3, 0, 0], 'x'], [[0, 3.3, 0], 'y'], [[0, 0, 3.25], 'z']].forEach(([p, nm]) => axisNames.push({ e: V.label(`<em>${nm}</em>`, S(p), g0, 0, 'bare'), p: S(p), g: g0 }));
+    [[[3.15, 0, 0], 'x'], [[0, 3.15, 0], 'y'], [[0, 0, 3.15], 'z']].forEach(([p, nm]) => axisNames.push({ e: V.label(`<em>${nm}</em>`, S(p), g0, 0, 'bare'), p: S(p), g: g0 }));
   }
   /* an axis name hides while it is seen against its orbital, so no name sits on a lobe */
   function hideBehind() {

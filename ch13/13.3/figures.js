@@ -465,7 +465,7 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
     lab('condenser', 1204, 390);
     lab('refrigeration', 1112, 632);
     lab('NH_{3}(l) storage', 1204, 716);
-    F.legend(ctx, { l: 850, r: 1380, t: 14, b: 50 }, [['N2', 'N_{2}'], ['H2', 'H_{2}'], ['NH3', 'NH_{3}'], ['H2O', 'water']].map(([k, s]) => ({ s, draw: (c, x, y) => glyph(c, k, x, y) })), { corner: 'top', row: true, panel: false });
+    F.legend(ctx, { l: 10, r: 300, t: 680, b: 812 }, [['N2', 'N_{2}'], ['H2', 'H_{2}'], ['NH3', 'NH_{3}'], ['H2O', 'cooling water']].map(([k, s]) => ({ s, draw: (c, x, y) => glyph(c, k, x + 22, y + 11) })), { corner: 'bl', panel: false });
     ctx.restore();
     hits = [...seen, ...PARTS.map((q) => ({ ...q, y: q.y + OY }))];
   }

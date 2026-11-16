@@ -42,7 +42,7 @@ function burst(ctx, x, y, R, k, color) {
    it as hollow points, the chosen pair filled in their referent colours.
 ===================================================================== */
 (function () {
-  const H = 660, A0 = 0.9, U6 = 1.3, S0 = 2.1, FL = 1.2, T = S0 + FL + 0.2;
+  const H = 700, A0 = 0.9, U6 = 1.3, S0 = 2.1, FL = 1.2, T = S0 + FL + 0.2;
   const RX = {
     'Ba-Kr': { l: ['Kr', 92, 36], h: ['Ba', 141, 56], n: 3, light: false, word: 'krypton-92 and barium-141' },
     'Sr-Xe': { l: ['Sr', 90, 38], h: ['Xe', 144, 54], n: 2, light: true, word: 'strontium-90 and xenon-144' },
@@ -71,11 +71,11 @@ function burst(ctx, x, y, R, k, color) {
   const yieldAt = (A) => { for (let i = 1; i < YIELD.length; i++) if (A <= YIELD[i][0]) { const [a0, y0] = YIELD[i - 1], [a1, y1] = YIELD[i]; return y0 + (y1 - y0) * (A - a0) / (a1 - a0); } return 0.1; };
 
   /* the nucleus: 236 seats, the leftmost one empty until the neutron takes it */
-  const CX = 250, CY = 362, R = 128, NN = 236, RD = R / Math.sqrt(NN) * 0.98;
+  const CX = 340, CY = 368, R = 150, NN = 236, RD = R / Math.sqrt(NN) * 0.98;
   const SEAT = Array.from({ length: NN }, (_, i) => { const rr = Math.sqrt((i + 0.5) / NN), a = i * GOLD; return { u: rr * Math.cos(a), v: rr * Math.sin(a) }; });
   let ABS = 0; SEAT.forEach((s, i) => { if (s.u < SEAT[ABS].u) ABS = i; });
   const PROT = new Set(Array.from({ length: NN }, (_, i) => i).filter((i) => i !== ABS).sort((a, b) => hash(a, 3) - hash(b, 3)).slice(0, 92));
-  const LC = { x: 590, y: 208 }, HC = { x: 590, y: 508 }, BURST = { x: CX + 10, y: CY }, VFREE = 330;
+  const LC = { x: CX, y: 214 }, HC = { x: CX, y: 540 }, BURST = { x: CX, y: CY - 2 }, VFREE = 330;
   let rKey = '', ROLE = null;
   function roles(key) {
     if (rKey === key) return ROLE;
@@ -90,12 +90,12 @@ function burst(ctx, x, y, R, k, color) {
     [[light, 'l', A1], [heavy, 'h', A2]].forEach(([set, g, A]) => {
       set.sort((a, b) => hash(a, 7) - hash(b, 7)).forEach((i, m) => { const rr = Math.sqrt((m + 0.5) / A) * rad(A) * 0.98, a = m * GOLD; role[i] = { g, tx: rr * Math.cos(a), ty: rr * Math.sin(a) }; });
     });
-    free.forEach((i, j) => { const a = (j - (r.n - 1) / 2) * 0.17; role[i] = { g: 'n', ux: Math.cos(a), uy: Math.sin(a), j }; });
+    free.forEach((i, j) => { const a = (j - (r.n - 1) / 2) * 0.11; role[i] = { g: 'n', ux: Math.cos(a), uy: Math.sin(a), j }; });
     ROLE = { role, rl: rad(A1), rh: rad(A2), nl: light.length, nh: heavy.length };
     return ROLE;
   }
   const deformed = (s, k) => [CX + R * s.u * (1 - 0.2 * k) * (1 - 0.5 * k * Math.exp(-((s.v / 0.42) ** 2))), CY + R * s.v * (1 + 0.6 * k)];
-  const nuc = (A, Z, sym) => `{}^{${A}}_{${Z < 100 && Z >= 10 ? '\;' : ''}${Z}}\\text{${sym}}`;
+  const nuc = (A, Z, sym) => `{}^{${A}}_{${Z < 100 && Z >= 10 ? '\\;' : ''}${Z}}\\text{${sym}}`;
 
   function draw() {
     const { ctx } = begin(d.c);
@@ -108,7 +108,7 @@ function burst(ctx, x, y, R, k, color) {
     const k1 = smooth((t - U6) / (S0 - U6)), k2 = smooth((t - S0) / 0.35), sep = smooth((t - S0) / FL), rest = t >= S0 + FL;
     const lc = { x: CX + (LC.x - CX) * sep, y: CY - R * 0.62 + (LC.y - CY + R * 0.62) * sep }, hc = { x: CX + (HC.x - CX) * sep, y: CY + R * 0.75 + (HC.y - CY - R * 0.75) * sep };
     ctx.save(); ctx.beginPath(); ctx.rect(0, 96, 960, H - 96); ctx.clip();
-    burst(ctx, BURST.x, BURST.y, 84, k2, E);
+    burst(ctx, BURST.x, BURST.y, 56, k2, E);
     let nEnd = null;
     SEAT.forEach((s, i) => {
       if (i === ABS && t < A0) return;
@@ -132,27 +132,28 @@ function burst(ctx, x, y, R, k, color) {
     }
     const s0 = SEAT[ABS], tx = CX + R * s0.u, ty = CY + R * s0.v;
     if (t < A0) {
-      const x = 44 + (tx - 44) * (t / A0);
+      const x = 30 + (tx - 30) * (t / A0);
       arrow(ctx, x - 50, ty, x - RD - 3, ty, alpha(INK, 0.5), 2.5);
       disc(ctx, x, ty, RD, N, alpha(INK, 0.45), 0.9);
       hits.push({ x, y: ty, r: 14, name: 'a slow neutron' });
-      text(ctx, 'slow neutron', 20, ty - 34, INK, { size: 20, weight: 600 });
+      text(ctx, 'slow neutron', 16, ty - 36, INK, { size: 19, weight: 600 });
     }
     ctx.restore();
 
     if (t < S0) {
-      const yb = CY + R * (1 + 0.6 * k1) + 34;
+      const yb = CY + R * (1 + 0.6 * k1) + 30;
       text(ctx, t < U6 ? '²³⁵U' : '²³⁶U, unstable', CX, yb, INK, { size: 26, weight: 600, align: 'center' });
-      text(ctx, '92 protons + ' + (t < A0 ? 143 : 144) + ' neutrons', CX, yb + 30, PAL.muted, { size: 18, align: 'center' });
+      text(ctx, '92 protons + ' + (t < A0 ? 143 : 144) + ' neutrons', CX, yb + 30, PAL.muted, { size: 19, align: 'center' });
       hits.push({ x: CX, y: CY, r: R, name: t < A0 ? 'a uranium-235 nucleus: 92 protons and 143 neutrons' : t < U6 ? 'the neutron absorbed: uranium-236' : 'an unstable uranium-236 nucleus, stretching' });
     } else {
       hits.push({ x: lc.x, y: lc.y, r: RL.rl, name: 'the lighter fission fragment, ' + sl + '-' + Al }, { x: hc.x, y: hc.y, r: RL.rh, name: 'the heavier fission fragment, ' + sh + '-' + Ah });
-      hits.push({ x: BURST.x, y: BURST.y, r: 60, name: 'the energy released' });
-      if (k2 >= 1) text(ctx, 'energy', BURST.x, BURST.y + 112, E, { size: 22, weight: 600, align: 'center' });
+      hits.push({ x: BURST.x, y: BURST.y, r: 44, name: 'the energy released' });
+      if (k2 >= 1) text(ctx, 'energy', BURST.x - 70, BURST.y, E, { size: 22, weight: 600, align: 'right' });
       if (rest) {
         [[lc, RL.rl, sl, Al, Zl, FLc], [hc, RL.rh, sh, Ah, Zh, FHc]].forEach(([c, rr, sym, A, Z, col]) => {
-          text(ctx, SUP(A) + sym, c.x + rr + 20, c.y - 14, col, { size: 26, weight: 600 });
-          text(ctx, Z + ' protons + ' + (A - Z) + ' neutrons', c.x + rr + 20, c.y + 16, PAL.muted, { size: 18 });
+          text(ctx, SUP(A) + sym, c.x + rr + 24, c.y - 30, col, { size: 28, weight: 600 });
+          text(ctx, Z + ' protons', c.x + rr + 24, c.y + 4, PAL.muted, { size: 19 });
+          text(ctx, (A - Z) + ' neutrons', c.x + rr + 24, c.y + 30, PAL.muted, { size: 19 });
         });
         if (nEnd) text(ctx, r.n + ' neutrons', nEnd.x + 22, CY, INK, { size: 20, weight: 600 });
       }
@@ -164,7 +165,7 @@ function burst(ctx, x, y, R, k, color) {
     ], { corner: 'tl', row: true, panel: false, size: 18 });
 
     /* fission yield against mass number */
-    const GB = { l: 1010, r: 1360, t: 150, b: 540 };
+    const GB = { l: 1010, r: 1360, t: 170, b: 580 };
     const { X, Y } = axes(ctx, GB, [60, 180], [0, 9], { nx: 6, ny: 9, xl: 'mass number', yl: 'fission yield (%)' });
     F.curve(ctx, (a) => yieldAt(a), 64, 172, X, Y, INK, 3.5, 216);
     Object.keys(RX).forEach((k) => { if (k === key) return; const o = RX[k]; [o.l, o.h].forEach(([sym, A]) => {
@@ -199,15 +200,15 @@ function burst(ctx, x, y, R, k, color) {
    nucleus the first neutron strikes at 0.6 s; generation g splits at
    0.6 + 0.7 g s. The number that go on is carried from 3 × (1 − share) by
    error diffusion, so the critical mass holds exactly one per generation;
-   each goes to an unstruck nucleus 45 to 150 units away, and the rest fly
+   each goes to an unstruck nucleus 40 to 105 units away, and the rest fly
    out through the surface. Neutrons fly linearly at 330 units/s and leave
    their tracks, so the finished picture is the book's Figure 21.17 for
    that mass. Graph: fissions per generation, 0 to 6, fixed 0 to 25,
    pinned() past it.
 ===================================================================== */
 (function () {
-  const S0 = 0.6, G = 0.7, NG = 7, T = S0 + (NG - 1) * G + 1.1, VN = 330, YMAX = 25, H = 700;
-  const CX = 340, CY = 348, RC = 150, OUT = 40;              /* the centre of the slice, the critical radius and how far past the surface a track runs, in canvas units */
+  const S0 = 0.6, G = 0.7, NG = 7, T = S0 + (NG - 1) * G + 1.1, VN = 330, YMAX = 25, H = 720;
+  const CX = 320, CY = 352, RC = 168, OUT = 26;              /* the centre of the slice, the critical radius and how far past the surface a track runs, in canvas units */
   const d = sim('sim-chain', H);
   const ms = ctl(d.controls, { label: '\\text{mass}', cls: '', key: 'mass', min: 0.3, max: 3, step: 0.01, value: 1, unit: '× critical mass', dec: 2,
     aria: 'the mass of the lump as a multiple of the critical mass', specials: [{ at: 1, label: 'critical mass' }], onInput: () => { key = ''; cy.reset(); } });
@@ -236,7 +237,7 @@ function burst(ctx, x, y, R, k, color) {
         const mine = Math.floor(S / cur.length) + (j < S % cur.length ? 1 : 0), P = pts[f];
         for (let q = 0; q < 3; q++) {
           if (q < mine && avail.size) {
-            const near = [...avail].filter((i) => { const L = dist(pts[i], P); return L > 45 && L < 150; });
+            const near = [...avail].filter((i) => { const L = dist(pts[i], P); return L > 40 && L < 105; });
             const pool = near.length ? near : [...avail].sort((a, b) => dist(pts[a], P) - dist(pts[b], P)).slice(0, 3);
             const tgt = pool[Math.floor(hash(f * 5 + q, g + 3) * pool.length)];
             avail.delete(tgt); gen[tgt] = g + 1; next.push(tgt);
@@ -260,7 +261,7 @@ function burst(ctx, x, y, R, k, color) {
   function draw() {
     const { ctx } = begin(d.c);
     if (key !== ms.v.toFixed(2)) { key = ms.v.toFixed(2); M = model(ms.v); CH = chain(M); }
-    const t = cy.now(), crit = M.k === 1, U = F.el('U'), NE = F.el('n0'), FRc = F.cat(0), E = C('energy'), INK = PAL.ink, TR = alpha(INK, 0.5);
+    const t = cy.now(), crit = M.k === 1, U = F.el('U'), NE = F.el('n0'), FRc = F.cat(0), E = C('energy'), INK = PAL.ink, TR = alpha(INK, 0.42);
     hits = [];
     topline(ctx, crit ? 'Each fission sends exactly one neutron on to split another nucleus, so the chain holds steady.'
       : M.k < 1 ? 'Each fission sends only ' + fmt(M.k, 2) + ' neutrons on to split another nucleus, so the chain dies out.'
@@ -271,12 +272,13 @@ function burst(ctx, x, y, R, k, color) {
     if (!crit) { ctx.beginPath(); ctx.arc(CX, CY, RC, 0, 2 * Math.PI); ctx.setLineDash([10, 10]); ctx.strokeStyle = alpha(INK, 0.45); ctx.lineWidth = 2.5; ctx.stroke(); }
     ctx.restore();
     hits.push({ x: CX + M.R * 0.85, y: CY + M.R * 0.4, r: 26, name: 'a lump of uranium-235, ' + fmt(ms.v, 2) + ' times the critical mass' });
-    text(ctx, crit ? 'critical mass' : M.k < 1 ? 'subcritical mass' : 'supercritical mass', CX, 634, INK, { size: 22, weight: 600, align: 'center' });
+    text(ctx, crit ? 'critical mass' : M.k < 1 ? 'subcritical mass' : 'supercritical mass', CX, 656, INK, { size: 22, weight: 600, align: 'center' });
     /* the tracks the neutrons have flown: one that strikes ends at its nucleus, one that escapes ends in an arrowhead outside */
-    const P0 = CH.pts[CH.first], e = [CX - M.R - 100, CY - M.R * 0.75 - 30], d0 = dist(e, P0), tin = S0 - d0 / VN;
+    const P0 = CH.pts[CH.first], e = [Math.max(14, CX - M.R - 100), CY - M.R * 0.75 - 30], d0 = dist(e, P0), tin = S0 - d0 / VN;
     const track = (a, b, w, hit) => {
       const L = dist(a, b), k = Math.min(1, w / L), x = a[0] + (b[0] - a[0]) * k, y = a[1] + (b[1] - a[1]) * k;
-      if (k >= 1 && !hit) arrow(ctx, a[0], a[1], b[0], b[1], TR, 2.5); else line(ctx, a[0], a[1], x, y, TR, 2.5);
+      line(ctx, a[0], a[1], x, y, TR, 2);
+      if (k >= 1 && !hit) { const an = Math.atan2(b[1] - a[1], b[0] - a[0]); ctx.save(); ctx.fillStyle = alpha(INK, 0.6); ctx.beginPath(); ctx.moveTo(b[0] + 4 * Math.cos(an), b[1] + 4 * Math.sin(an)); ctx.lineTo(b[0] - 9 * Math.cos(an - 0.45), b[1] - 9 * Math.sin(an - 0.45)); ctx.lineTo(b[0] - 9 * Math.cos(an + 0.45), b[1] - 9 * Math.sin(an + 0.45)); ctx.closePath(); ctx.fill(); ctx.restore(); }
       return k < 1 ? [x, y] : null;
     };
     const flying = [];
@@ -299,12 +301,12 @@ function burst(ctx, x, y, R, k, color) {
     flying.forEach(([p, name]) => { disc(ctx, p[0], p[1], 6, NE, alpha(INK, 0.55)); hits.push({ x: p[0], y: p[1], r: 10, name }); });
     F.legend(ctx, { l: 20, r: 800, t: H - 50, b: H - 6 }, [
       { s: '²³⁵U nucleus', draw: (c, x, y) => disc(c, x, y, 7.5, U, alpha(INK, 0.45)) },
-      { s: 'neutron and its track', draw: (c, x, y) => { line(c, x - 18, y, x + 6, y, TR, 2.5); disc(c, x + 10, y, 6, NE, alpha(INK, 0.55)); } },
+      { s: 'neutron and its track', draw: (c, x, y) => { line(c, x - 18, y, x + 6, y, TR, 2); disc(c, x + 10, y, 6, NE, alpha(INK, 0.55)); } },
       { s: 'fission', draw: (c, x, y) => { burst(c, x, y, 13, 1, E); disc(c, x - 5, y, 5, FRc, alpha(INK, 0.45)); disc(c, x + 5, y, 4.5, FRc, alpha(INK, 0.45)); } },
       { s: 'size of a critical mass', color: alpha(INK, 0.45), w: 2.5, dash: [10, 10] },
     ], { corner: 'bl', row: true, panel: false, size: 18 });
     /* fissions per generation */
-    const GB = { l: 860, r: 1350, t: 170, b: 560 };
+    const GB = { l: 850, r: 1350, t: 170, b: 580 };
     const { X, Y } = axes(ctx, GB, [0, NG], [0, YMAX], { nx: NG, ny: 5, fx: () => '', xl: 'generation', yl: 'fissions' });
     for (let g = 0; g < NG; g++) {
       text(ctx, String(g), X(g + 0.5), GB.b + 22, PAL.muted, { size: 17, align: 'center' });
@@ -341,7 +343,7 @@ function burst(ctx, x, y, R, k, color) {
    while there is water.
 ===================================================================== */
 (function () {
-  const H = 770, T = 5, NGEN = 10, TAU = T / NGEN, RMAX = 3;
+  const H = 790, OY = 20, T = 5, NGEN = 10, TAU = T / NGEN, RMAX = 3;
   const d = sim('sim-reactor', H);
   const mod = F.choice(d.controls, { label: '\\text{moderator}', key: 'moderator', options: [{ value: 'water', label: 'water' }, { value: 'none', label: 'none' }], value: 'water',
     aria: 'the moderator in the core', onInput: () => { rods.refresh(); cy.reset(); } });
@@ -393,6 +395,8 @@ function burst(ctx, x, y, R, k, color) {
       : crit ? 'With the control rods 25% in, each fission leads to exactly one more, and the fission rate holds steady.'
         : 'With the control rods ' + fmt(rods.v, 0) + '% in, each fission leads to ' + fmt(kf, 2) + ' more, and the fission rate ' + (kf < 1 ? 'dies away.' : 'climbs.'));
 
+    /* the scene, set OY down so the headline has the top to itself */
+    ctx.save(); ctx.translate(0, OY);
     /* the water, then the steel round it */
     ctx.save(); ctx.beginPath(); inner(ctx); ctx.fillStyle = PAL.panel; ctx.fill();
     if (level > 0) { ctx.fillStyle = alpha(INK, 0.09 * level); ctx.fill(); }
@@ -455,13 +459,15 @@ function burst(ctx, x, y, R, k, color) {
       hits.push({ x, y, r: 9, name: fate === 'f' ? 'a slow neutron on its way to split another nucleus' : fate === 'r' ? 'a neutron about to be absorbed by a control rod' : 'a neutron lost from the core' });
     }
 
-    label(ctx, 'steel pressure vessel', 546, 212, { side: 'right', size: 20, gap: 100 });
-    label(ctx, 'control rods', RODX[3] + 4, 258, { side: 'right', size: 20, gap: 172 });
-    label(ctx, 'grid', BR, GT, { side: 'right', size: 20, gap: 146 });
-    label(ctx, 'fuel rods', FUEL[6] + 6, 560, { side: 'right', size: 20, gap: 156 });
+    label(ctx, 'steel pressure vessel', 546, 212, { side: 'right', size: 20, gap: 100, H: H - OY });
+    label(ctx, 'control rods', RODX[3] + 4, 258, { side: 'right', size: 20, gap: 172, H: H - OY });
+    label(ctx, 'grid', BR, GT, { side: 'right', size: 20, gap: 146, H: H - OY });
+    label(ctx, 'fuel rods', FUEL[6] + 6, 560, { side: 'right', size: 20, gap: 156, H: H - OY });
+    ctx.restore();
+    hits.forEach((h) => { h.y += OY; });
 
     /* the fission rate over ten generations */
-    const GRB = { l: 1010, r: 1350, t: 200, b: 580 };
+    const GRB = { l: 1010, r: 1350, t: 220, b: 600 };
     const { X, Y } = axes(ctx, GRB, [0, NGEN], [0, RMAX], { nx: 5, ny: 3, xl: 'neutron generations', yl: 'fission rate ÷ starting rate', yc: RC });
     line(ctx, GRB.l, Y(1), GRB.r, Y(1), alpha(INK, 0.4), 2, [10, 10]);
     const gEnd = Math.min(g, NGEN), pts = [];
@@ -472,7 +478,7 @@ function burst(ctx, x, y, R, k, color) {
     else dot(ctx, X(gEnd), Y(pv), RC, true, 9);
     hits.push({ x: X(gEnd), y: Y(Math.min(pv, RMAX)), r: 14, name: 'the fission rate after ' + fmt(gEnd, 1) + ' generations: ' + (pv < 0.01 ? 'almost nothing' : fmt(pv, 2) + ' times its start') });
 
-    ro.set('\\text{neutrons per fission} = \\mk{f}{\\text{to fission}} + \\mk{r}{\\text{to control rods}} + \\mk{l}{\\text{lost}} = \\mk{fv}{' + fmt(kf, 2) + '} + \\mk{rv}{' + fmt(kr, 2) + '} + \\mk{lv}{' + fmt(kl, 2) + '} = 3', undefined,
+    ro.set('\\mk{f}{\\text{to fission}} + \\mk{r}{\\text{to control rods}} + \\mk{l}{\\text{lost}} = \\mk{fv}{' + fmt(kf, 2) + '} + \\mk{rv}{' + fmt(kr, 2) + '} + \\mk{lv}{' + fmt(kl, 2) + '} = 3\\ \\text{neutrons}', undefined,
       { form: !wet ? 'none' : crit ? 'c' : kf < 1 ? 'sub' : 'super' });
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });

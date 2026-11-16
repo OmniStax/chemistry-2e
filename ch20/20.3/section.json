@@ -21,6 +21,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-fable-5-2",
+    "effort": "high"
    }
   ]
  },
@@ -87,6 +91,10 @@
     {
      "model": "claude-opus-5-5",
      "part": "rebuilt: book drawing above a turning group with its p orbitals"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: sp² lobes, p orbitals and a π cloud leaning to oxygen"
     }
    ]
   },
@@ -120,6 +128,10 @@
     {
      "model": "claude-opus-5-5",
      "part": "readout one chain, caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: five molecules on the scale, carbon's electrons ringed"
     }
    ]
   },

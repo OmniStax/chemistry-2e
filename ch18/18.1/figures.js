@@ -133,7 +133,7 @@ const still = (d, draw) => register(d.fig, { update: () => {}, draw });
     const ST = AR - q(8) - Math.max((two ? m('oxidation') : stW) / 2, q(26));
     const RH = q(26), R0 = HEAD + (two ? LH : 0) + q(9) + RH / 2, KEYLINE = R0 + 4.5 * RH + q(8);
     return { narrow: true, q, LH, heads, keys, keyY, two, H: KEYLINE + LH + q(10), S: u / 1.9, L, PITCH, T, ROW, CW, CH, PX: q(7), gw: q(19), gn: q(6),
-      corner: CW / u >= 30, fblock: F.measure(ctx, 'La–Lu', { size: 15, weight: 600 }) <= CW - q(2),
+      corner: CW / u >= 30, bare: F.measure(ctx, 'Mg', { size: 21, weight: 600 }) > PITCH - q(1), fblock: F.measure(ctx, 'La–Lu', { size: 15, weight: 600 }) <= CW - q(2),
       HEAD, R0, RH, SQ: L + PITCH / 2, X0, PER: (ST - q(58) - X0) / 1400, ST, AR, arl: q(11), KEYLINE,
       up: q(6), bh: q(10), lab: q(3), thin: q(7), th: q(6), tl: q(7), tlab: q(3), cw: q(22), sp: q(4), chh: q(15) };
   };
@@ -184,6 +184,8 @@ const still = (d, draw) => register(d.fig, { update: () => {}, draw });
       ctx.fillStyle = fillOf(cls); ctx.fillRect(x - CW / 2, y - CH / 2, CW, CH);
       ctx.lineWidth = 1.5 * S; ctx.strokeStyle = alpha(PAL.ink, 0.3); ctx.strokeRect(x - CW / 2, y - CH / 2, CW, CH);
       if (corner && A.corner) text(ctx, corner, x - CW / 2 + 4, y - CH / 2 + 10, PAL.ink, { size: 14 });
+      /* where a square is narrower than a symbol, only the chosen column's squares carry theirs */
+      if (A.bare) ctx.globalAlpha *= Math.max(0, (a - 0.62) / 0.38);
       text(ctx, sym, x, A.corner ? y + 6 : y, PAL.ink, { size: symSize, weight: 600, align: 'center' });
       ctx.restore();
     };
@@ -284,8 +286,8 @@ const still = (d, draw) => register(d.fig, { update: () => {}, draw });
     }, [0, 0]));
 
     /* the readout: a lead-in and its equation, the equation a group so that it never breaks; in a pane too narrow for
-       both on a line a lead-in longer than a configuration stands on the line above its equation */
-    tex(d.readout, G.ro.map(([lead, eq]) => `${lead}${A.narrow && lead.length > 20 ? '\\\\' : '\\ \\ '}{${eq}}`).join('\\\\'));
+       both on a line a lead-in longer than a configuration stands whole on the line above its equation */
+    tex(d.readout, G.ro.map(([lead, eq]) => (A.narrow && lead.length > 20 ? `{${lead}}\\\\{${eq}}` : `${lead}\\ \\ {${eq}}`)).join('\\\\'));
   });
 })();
 };

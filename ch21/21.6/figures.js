@@ -54,55 +54,56 @@ function burst(ctx, x, y, r, color, k) {
 }
 
 /* =====================================================================
-   FIGURE 21.31: the electromagnetic spectrum split into nonionizing and
-   ionizing radiation. A slider walks log ν from 10 Hz to 10²² Hz; the
-   strip keeps the book's band widths, each band a stretch of log ν, so
-   the narrow visible band stays readable. Still.
+   FIGURE 21.31: the electromagnetic spectrum, nonionizing and ionizing.
+   One logarithmic scale, 10 Hz to 10²² Hz (60 units a decade): the
+   frequency along the top edge of the band strip, the energy of a mole
+   of photons, N_A hν, along its bottom edge, where 345 kJ/mol, the C–C
+   bond energy of Table 7.2, falls just past the violet edge of visible
+   light, the book's line between nonionizing and ionizing. Still.
 ===================================================================== */
 (function () {
-  const H = 440, X0 = 60, X1 = 1340;
+  const H = 524, L = 70, R = 1330, LO = 1, HI = 22, lg = Math.log10;
   const d = sim('sim-ionizing', H);
-  /* the book's bands: their widths on its strip (of 1300) and their edges in log10 Hz */
+  const X = (lv) => L + ((lv - LO) / (HI - LO)) * (R - L);
+  const PLANCK = 6.626e-34, NA = 6.022e23, BOND = 345;
+  const SPLIT = lg(7.5e14), LVBOND = lg((BOND * 1000) / (PLANCK * NA));
   const BANDS = [
-    { name: 'radio', w: 355, lo: 1, hi: Math.log10(3e8), col: 0 },
-    { name: 'microwave', w: 145, lo: Math.log10(3e8), hi: Math.log10(3e11), col: 1 },
-    { name: 'terahertz', w: 120, lo: Math.log10(3e11), hi: 13, col: 1 },
-    { name: 'infrared', w: 135, lo: 13, hi: Math.log10(4e14), col: 2 },
-    { name: 'visible', w: 150, lo: Math.log10(4e14), hi: Math.log10(7.5e14), col: 2 },
-    { name: 'ultraviolet', w: 120, lo: Math.log10(7.5e14), hi: Math.log10(3e16), col: 3 },
-    { name: 'X-ray', w: 175, lo: Math.log10(3e16), hi: Math.log10(3e19), col: 3 },
-    { name: 'γ ray', w: 100, lo: Math.log10(3e19), hi: 22, col: 3 },
+    { name: 'broadcast and wireless radio', who: 'A radio photon', lo: LO, hi: lg(3e8), cls: 0 },
+    { name: 'microwave', who: 'A microwave photon', lo: lg(3e8), hi: lg(3e11), cls: 1 },
+    { name: 'terahertz', who: 'A terahertz photon', lo: lg(3e11), hi: 13, cls: 1 },
+    { name: 'infrared', who: 'An infrared photon', lo: 13, hi: lg(4e14), cls: 2 },
+    { name: 'visible light', who: 'A photon of visible light', lo: lg(4e14), hi: SPLIT, cls: 2 },
+    { name: 'ultraviolet', who: 'An ultraviolet photon', lo: SPLIT, hi: lg(3e16), cls: 3 },
+    { name: 'X-ray', who: 'An X-ray photon', lo: lg(3e16), hi: lg(3e19), cls: 3 },
+    { name: 'γ ray', who: 'A γ-ray photon', lo: lg(3e19), hi: HI, cls: 3 },
   ];
-  const k = (X1 - X0) / BANDS.reduce((s, b) => s + b.w, 0);
-  let acc = X0; BANDS.forEach((b) => { b.x0 = acc; acc += b.w * k; b.x1 = acc; });
-  const xOf = (lv) => {
-    const b = bandOf(lv);
-    return b.x0 + ((Math.min(Math.max(lv, b.lo), b.hi) - b.lo) / (b.hi - b.lo)) * (b.x1 - b.x0);
-  };
   const bandOf = (lv) => BANDS.find((q) => lv < q.hi) ?? BANDS[BANDS.length - 1];
-  const SPLIT = Math.log10(7.5e14);
-  const COLS = [
-    { head: 'Non-thermal', lines: ['Induces low currents'], effect: 'nonionizing, inducing low currents' },
-    { head: 'Thermal', lines: ['Induces high currents', 'Heating'], effect: 'nonionizing, heating what absorbs it' },
-    { head: 'Optical', lines: ['Excites electrons', 'Photo-chemical effects'], effect: 'nonionizing, exciting electrons' },
-    { head: 'Broken bonds', lines: ['Damages DNA'], effect: 'ionizing, able to break bonds and damage DNA' },
+  /* the book's four effects, each over the bands it covers */
+  const CLASSES = [
+    { head: 'Non-thermal', sub: 'induces low currents', row: 0 },
+    { head: 'Thermal', sub: 'induces high currents, heating', row: 0 },
+    { head: 'Optical', sub: 'excites electrons, photo-chemical effects', row: 1 },
+    { head: 'Broken bonds', sub: 'damages DNA', row: 0 },
   ];
-  COLS.forEach((c, i) => { const bs = BANDS.filter((b) => b.col === i); c.x0 = bs[0].x0; c.x1 = bs[bs.length - 1].x1; });
+  CLASSES.forEach((c, i) => { const bs = BANDS.filter((b) => b.cls === i); c.lo = bs[0].lo; c.hi = bs[bs.length - 1].hi; });
   /* the book's everyday sources, at their usual frequencies */
   const SOURCES = [
-    { name: 'power line', lv: Math.log10(60), row: 0 }, { name: 'AM radio', lv: 6, row: 1 }, { name: 'FM radio', lv: 8, row: 0 },
-    { name: 'microwave oven', lv: Math.log10(2.45e9), row: 1 }, { name: 'heat lamp', lv: Math.log10(3e14), row: 0 },
-    { name: 'tanning booth', lv: 15, row: 1 }, { name: 'medical X-rays', lv: 19, row: 0 },
+    { name: 'power line', lv: lg(60), row: 0 }, { name: 'AM radio', lv: 6, row: 0 }, { name: 'FM radio', lv: 8, row: 1 },
+    { name: 'microwave oven', lv: lg(2.45e9), row: 0 }, { name: 'heat lamp', lv: lg(3e14), row: 0 },
+    { name: 'tanning booth', lv: lg(8.5e14), row: 1 }, { name: 'medical X-rays', lv: 19, row: 0 },
   ];
-  const EDGES = [Math.log10(3e8), Math.log10(3e11), 13, Math.log10(4e14), Math.log10(7.5e14), Math.log10(3e16), Math.log10(3e19)];
-  const edgeText = (lv) => { const v = 10 ** lv, n = Math.floor(lv + 1e-9), m = v / 10 ** n; return (Math.abs(m - 1) < 0.01 ? '' : `${+m.toFixed(1)} × `) + `10${sup(n)}`; };
+  const CATCH = [...SOURCES.map((s) => s.lv), SPLIT];
+  const near = (lv) => CATCH.find((q) => Math.abs(q - lv) < 0.006) ?? lv;
+  const hz = (lv) => { const s = sci(10 ** near(lv)); return `${s.m} × 10${sup(s.n)} Hz`; };
   const nu = F.ctl(d.controls, {
-    label: '\\knu', cls: 'frequency', min: 1, max: 22, step: 0.01, value: +Math.log10(2.45e9).toFixed(2), unit: 'Hz', dec: 2,
-    aria: 'the frequency of the radiation, on a logarithmic scale', specials: [{ at: SPLIT, label: 'ionizing' }], onInput: () => show(),
+    label: '\\knu', cls: 'frequency', min: LO, max: HI, step: 0.01, value: +lg(2.45e9).toFixed(2), unit: '', fmt: hz,
+    aria: 'the frequency of the radiation, on a logarithmic scale', detents: SOURCES.map((s) => s.lv), specials: [{ at: SPLIT, label: 'ionizing' }],
   });
-  const valEl = nu.el.querySelector('.ctl-val'), inp = nu.el.querySelector('input');
-  const show = () => { const s = sciText(10 ** nu.v) + ' Hz'; valEl.textContent = s; inp.setAttribute('aria-valuetext', s); };
-  show();
+  /* a ratio in words: 350,000 or 2.9 × 10⁹ */
+  const count = (n) => {
+    if (n >= 1e6) { const e = Math.floor(lg(n) + 1e-9), m = +(n / 10 ** e).toPrecision(2); return m >= 10 ? `1.0 × 10${sup(e + 1)}` : `${m.toFixed(1)} × 10${sup(e)}`; }
+    return (+n.toPrecision(2)).toLocaleString('en-US');
+  };
   /* the visible band in the colours of light, a physical fact */
   function lightRGB(nm) {
     let r = 0, g = 0, b = 0;
@@ -113,356 +114,389 @@ function burst(ctx, x, y, r, color, k) {
   }
   let hits = [];
   F.hover(d.stage, () => hits);
-  const SY = 196, SH = 40;
+  const ST = 160, SB = 228;
   function draw() {
-    const { ctx } = begin(d.c), lv = nu.v, sv = sci(10 ** lv), v = +sv.m * 10 ** sv.n, band = bandOf(lv), col = COLS[band.col], E = 6.626e-34 * v;
-    topline(ctx, `At $\\knu$ = ${sciText(v)} Hz the radiation is ${band.name === 'γ ray' ? 'a γ ray' : band.name}: ${col.effect}.`);
-    /* the book's wave, its wavelength shortening along the strip */
-    ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.45); ctx.lineWidth = 2; ctx.beginPath();
-    let ph = 0;
-    for (let x = X0; x <= X1; x += 1) { ph += TAU / (90 * Math.pow(0.04, (x - X0) / (X1 - X0)) + 3); const y = 104 + 9 * Math.sin(ph); x === X0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y); }
-    ctx.stroke(); ctx.restore();
-    /* nonionizing | ionizing */
-    const xs = xOf(SPLIT);
-    arrow(ctx, xs, 146, X0, 146, PAL.ink, 4); arrow(ctx, xs, 146, X1, 146, PAL.ink, 4);
-    line(ctx, xs, 134, xs, 158, PAL.ink, 3);
-    text(ctx, 'nonionizing', (X0 + xs) / 2, 128, PAL.ink, { size: 20, align: 'center', weight: 600 });
-    text(ctx, 'ionizing', (xs + X1) / 2, 128, PAL.ink, { size: 20, align: 'center', weight: 600 });
-    EDGES.forEach((e) => { const x = xOf(e); line(ctx, x, SY - 6, x, SY, PAL.muted, 2); });
-    EDGES.forEach((e, i) => text(ctx, edgeText(e), xOf(e), 178, PAL.muted, { size: 15, align: i === 3 || i === 4 ? 'right' : i === 5 ? 'left' : 'center' }));
-    /* the effect columns, the current one shaded */
-    ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.07); ctx.fillRect(col.x0, SY + SH, col.x1 - col.x0, H - 6 - SY - SH); ctx.restore();
+    const { ctx } = begin(d.c), lv = near(nu.v), sv = sci(10 ** lv), v = +sv.m * 10 ** sv.n, band = bandOf(lv), cls = CLASSES[band.cls];
+    const E = PLANCK * v, Em = (E * NA) / 1000, r = Em / BOND, cf = C('frequency'), ce = C('energy'), x = X(lv), xs = X(SPLIT), xb = X(LVBOND);
+    hits = [];
+    topline(ctx, `${band.who} has ${r < 0.01 ? `1/${count(1 / r)} of` : `${count(r)} times`} the energy that breaks a C–C bond.`);
+    /* nonionizing | ionizing, the book's line at the violet edge of the visible */
+    text(ctx, 'nonionizing', (L + xs) / 2, 84, PAL.ink, { size: 22, align: 'center', weight: 600 });
+    text(ctx, 'ionizing', (xs + R) / 2, 84, PAL.ink, { size: 22, align: 'center', weight: 600 });
+    arrow(ctx, xs, 110, L, 110, PAL.ink, 4); arrow(ctx, xs, 110, R, 110, PAL.ink, 4);
+    line(ctx, xs, 97, xs, 123, PAL.ink, 3);
+    /* the frequency scale, along the top edge */
+    text(ctx, 'frequency ν (Hz)', L, 142, cf, { size: 20, weight: 600 });
+    for (let n = 2; n <= 21; n++) {
+      const big = n % 3 === 0, tx = X(n);
+      line(ctx, tx, ST - (big ? 9 : 5), tx, ST, PAL.muted, big ? 2 : 1.5);
+      if (big && n >= 6) text(ctx, `10${sup(n)}`, tx, 142, PAL.muted, { size: 18, align: 'center' });
+    }
     /* the bands */
     BANDS.forEach((b) => {
-      if (b.name === 'visible') for (let x = b.x0; x < b.x1; x += 2) { ctx.save(); ctx.fillStyle = lightRGB(700 - ((x - b.x0) / (b.x1 - b.x0)) * 300); ctx.fillRect(x, SY, 2.5, SH); ctx.restore(); }
-      else if (b === band) { ctx.save(); ctx.fillStyle = alpha(C('frequency'), 0.14); ctx.fillRect(b.x0, SY, b.x1 - b.x0, SH); ctx.restore(); }
-      line(ctx, b.x0, SY, b.x0, SY + SH, PAL.rule, 2);
-      text(ctx, b.name, (b.x0 + b.x1) / 2, SY + SH / 2, PAL.ink, { size: 18, align: 'center', weight: b === band ? 700 : 400, bg: b.name === 'visible' ? PAL.panel : undefined });
+      const x0 = X(b.lo), x1 = X(b.hi), on = b === band;
+      ctx.save();
+      if (b.name === 'visible light') for (let q = x0; q < x1; q += 1) { ctx.fillStyle = lightRGB(700 - ((q - x0) / (x1 - x0)) * 300); ctx.fillRect(q, ST, 1.5, SB - ST); }
+      else if (on) { ctx.fillStyle = alpha(cf, 0.16); ctx.fillRect(x0, ST, x1 - x0, SB - ST); }
+      ctx.restore();
+      if (b.lo > LO) line(ctx, x0, ST, x0, SB, PAL.muted, 1.5);
+      if (b.name !== 'visible light') text(ctx, b.name, (x0 + x1) / 2, (ST + SB) / 2, PAL.ink, { size: 18, align: 'center', weight: on ? 700 : 400 });
+      hits.push({ x: (x0 + x1) / 2, y: (ST + SB) / 2, r: Math.max(14, Math.min(30, (x1 - x0) / 2)), name: `${b.name}, ${sciText(10 ** b.lo)} to ${sciText(10 ** b.hi)} Hz` });
     });
-    ctx.save(); ctx.strokeStyle = PAL.muted; ctx.lineWidth = 2; ctx.strokeRect(X0, SY, X1 - X0, SH); ctx.restore();
-    /* the sources */
-    SOURCES.forEach((s) => { const x = xOf(s.lv), y = SY + SH + 20 + s.row * 24; line(ctx, x, SY + SH, x, y - 10, alpha(PAL.ink, 0.35), 1.5); text(ctx, s.name, x, y, PAL.muted, { size: 16, align: 'center' }); });
-    COLS.forEach((c, i) => {
-      const cx = (c.x0 + c.x1) / 2, on = c === col;
-      if (i) line(ctx, c.x0, SY + SH + 70, c.x0, H - 10, PAL.rule, 1.5);
-      text(ctx, c.head, cx, SY + SH + 92, on ? PAL.ink : PAL.muted, { size: 20, align: 'center', weight: 700 });
-      c.lines.forEach((l, j) => text(ctx, l, cx, SY + SH + 122 + j * 26, on ? PAL.ink : PAL.muted, { size: 17, align: 'center' }));
+    ctx.save(); ctx.strokeStyle = PAL.muted; ctx.lineWidth = 2; ctx.strokeRect(L, ST, R - L, SB - ST); ctx.restore();
+    /* the energy scale, along the bottom edge: N_A hν in kJ/mol */
+    for (let n = -10; n <= 9; n++) {
+      const tx = X(lg((10 ** n * 1000) / (PLANCK * NA))), big = (n + 12) % 3 === 0;
+      line(ctx, tx, SB, tx, SB + (big ? 9 : 5), PAL.muted, big ? 2 : 1.5);
+      if (big) text(ctx, n === 0 ? '1' : `10${sup(n)}`, tx, 252, PAL.muted, { size: 18, align: 'center' });
+    }
+    text(ctx, 'visible light', X(SPLIT) - 2, 253, PAL.ink, { size: 17, align: 'right' });
+    text(ctx, 'energy of a mole of photons (kJ/mol)', L, 282, ce, { size: 20, weight: 600 });
+    /* the energy of a C–C bond */
+    line(ctx, xb, ST, xb, 266, PAL.ink, 3, [7, 6]);
+    F.rich(ctx, ['a C–C bond breaks, ', ['345 kJ/mol', ce]], xb, 282, { size: 20, align: 'center' });
+    hits.push({ x: xb, y: 274, r: 22, name: 'the bond energy of a C–C bond, 345 kJ/mol' });
+    /* the book's everyday sources */
+    SOURCES.forEach((s) => {
+      const sx = X(s.lv), y = 334 + s.row * 27, on = Math.abs(s.lv - lv) < 1e-9;
+      line(ctx, sx, 312, sx, y - 13, on ? cf : PAL.muted, 2);
+      text(ctx, s.name, sx, y, on ? PAL.ink : PAL.muted, { size: 19, align: 'center', weight: on ? 700 : 400 });
+      hits.push({ x: sx, y, r: 24, name: `${s.name}, about ${sciText(10 ** s.lv)} Hz` });
+    });
+    /* the book's four effects */
+    CLASSES.forEach((c) => {
+      const x0 = X(c.lo) + 5, x1 = X(c.hi) - 5, cx = (x0 + x1) / 2, on = c === cls, col = on ? PAL.ink : PAL.muted, y = 428 + c.row * 50;
+      F.hbracket(ctx, x0, x1, 398, on ? PAL.ink : alpha(PAL.ink, 0.35));
+      if (c.row) line(ctx, cx, 398, cx, y - 14, alpha(PAL.ink, 0.35), 1.5);
+      text(ctx, c.head, cx, y, col, { size: 21, align: 'center', weight: 700, bg: PAL.panel });
+      text(ctx, c.sub, cx, y + 26, col, { size: 19, align: 'center' });
     });
     /* the reader's frequency */
-    const x = xOf(lv), cf = C('frequency');
-    F.dot(ctx, x, 104, cf, true, 7);
-    line(ctx, x, SY - 8, x, SY + 6, cf, 4);
-    line(ctx, x, SY + SH - 6, x, SY + SH + 6, cf, 4);
-    F.dot(ctx, x, SY, cf, true, 9);
-    hits = [{ x, y: SY + SH / 2, r: 18, name: `ν = ${sciText(v)} Hz, ${band.name}` }].concat(BANDS.map((b) => ({ x: (b.x0 + b.x1) / 2, y: SY + SH / 2, r: 30, name: `${b.name}: ${edgeText(b.lo)} to ${edgeText(b.hi)} Hz` })));
-    tex(d.readout, `\\kE = h\\knu = (6.626\\times10^{-34}\\ \\text{J s})(${sciTex(v)}\\ \\text{Hz}) = ${sciTex(E)}\\ \\text{J}`);
+    line(ctx, x, ST - 12, x, SB + 12, cf, 4);
+    F.dot(ctx, x, ST, cf, true, 8); F.dot(ctx, x, SB, ce, true, 8);
+    hits.push({ x, y: (ST + SB) / 2, r: 16, name: `ν = ${sciText(v)} Hz, ${band.name}` });
+    const kv = (k, s) => `\\htmlClass{kv-${k}}{${s}}`, emTex = Em >= 0.01 && Em < 1e4 ? String(+Em.toPrecision(3)) : sciTex(Em);
+    tex(d.readout, `\\kE = h\\knu = (6.626\\times10^{-34}\\ \\text{J s})(${kv('frequency', `${sciTex(v)}\\ \\text{Hz}`)}) = ${kv('energy', `${sciTex(E)}\\ \\text{J}`)} \\\\ `
+      + `N_{\\text{A}}\\kE = (6.022\\times10^{23}\\ \\text{mol}^{-1})(${kv('energy', `${sciTex(E)}\\ \\text{J}`)}) = ${kv('energy', `${emTex}\\ \\text{kJ/mol}`)}`);
   }
   still(d, draw);
 })();
 
 /* =====================================================================
-   FIGURE 21.32: direct and indirect damage. A γ photon arrives; in the
-   direct path it ionizes the DNA and a strand breaks; in the indirect
-   path it ionizes a water molecule, a proton passes from H₂O⁺ to a
-   second water molecule, and the hydroxyl radical drifts to the DNA and
-   breaks a strand. Moving: one event, 3 s or 5.6 s, holding 1.2 s.
+   FIGURE 21.32: direct and indirect damage, one scene. A γ photon
+   arrives. Direct: it strikes the DNA, an electron leaves and a strand
+   breaks. Indirect: it knocks an electron out of a water molecule; the
+   H₂O⁺ ion meets a second water molecule and passes it a proton; what
+   is left is the OH• radical, which travels to the DNA and breaks a
+   strand. Moving: one event, 3.6 s or 7.2 s, holding 1.2 s.
 ===================================================================== */
 (function () {
-  const H = 440;
+  const H = 560;
   const d = sim('sim-damage', H);
-  const path = F.choice(d.controls, { label: 'path', options: [{ value: 'direct', label: 'direct' }, { value: 'indirect', label: 'indirect' }], value: 'indirect', onInput: () => { cy.reset(); say(); } });
-  const T = () => (path.value === 'direct' ? 3.2 : 5.6);
+  const path = F.choice(d.controls, { label: '\\text{effect}', options: [{ value: 'direct', label: 'direct' }, { value: 'indirect', label: 'indirect' }], value: 'indirect', aria: 'the direct or the indirect effect', onInput: () => { cy.reset(); say(); } });
+  const T = () => (path.value === 'direct' ? 3.6 : 7.2);
   const cy = cycle(T, 1.2);
   const EQ = {
-    direct: '\\mk{m}{\\text{biomolecule}}+\\mk{r}{\\text{radiation}}\\longrightarrow\\mk{i}{\\text{biomolecule}^{+}}+\\mk{e}{\\text{e}^{-}}',
-    indirect: '\\mk{m}{\\text{H}_{2}\\text{O}}+\\mk{r}{\\text{radiation}}\\longrightarrow\\mk{i}{\\text{H}_{2}\\text{O}^{+}}+\\mk{e}{\\text{e}^{-}} \\\\ \\mk{i2}{\\text{H}_{2}\\text{O}^{+}}+\\mk{w}{\\text{H}_{2}\\text{O}}\\longrightarrow\\mk{h}{\\text{H}_{3}\\text{O}^{+}}+\\mk{oh}{\\text{OH}^{\\bullet}}',
+    direct: '\\text{biomolecule}+\\text{radiation}\\longrightarrow\\text{biomolecule}^{+}+\\text{e}^{-}',
+    indirect: '\\text{H}_{2}\\text{O}+\\text{radiation}\\longrightarrow\\text{H}_{2}\\text{O}^{+}+\\text{e}^{-} \\\\ \\text{H}_{2}\\text{O}^{+}+\\text{H}_{2}\\text{O}\\longrightarrow\\text{H}_{3}\\text{O}^{+}+\\text{OH}^{\\bullet}',
   };
-  const say = () => F.tex(d.readout, EQ[path.value].replace(/\\mk\{\w+\}/g, ''));
+  const say = () => tex(d.readout, EQ[path.value], false, { values: false });
   say();
-  /* the DNA: two strands about a vertical axis */
-  const DX = 1110, DY0 = 92, DY1 = 420, AMP = 62, PER = 170;
-  const strand = (y, s) => DX + AMP * Math.sin(((y - DY0) / PER) * TAU + s * Math.PI);
-  const BREAK = { direct: 214, indirect: 300 };
+  const STEPS = {
+    direct: [[0, 'Radiation strikes the DNA itself.'], [1, 'An electron leaves, and a bond in the strand breaks.']],
+    indirect: [[0, 'Radiation knocks an electron out of a water molecule.'], [2.3, 'The H₂O⁺ ion passes a proton to a second water molecule.'], [4.6, 'The OH• radical that is left reaches the DNA and breaks a strand.']],
+  };
+  /* the DNA: a double helix about a vertical axis; z > 0 faces the reader */
+  const DX = 1190, DY0 = 64, DY1 = 524, AMP = 80, PER = 228;
+  const ph = (y, s) => ((y - DY0) / PER) * TAU + s * Math.PI;
+  const sx = (y, s) => DX + AMP * Math.sin(ph(y, s));
+  /* each path breaks strand 1 where it faces the reader on the left of the helix */
+  const BREAK = { direct: DY0 + PER * (0.25 + 0.5 / TAU), indirect: DY0 + PER * (1.25 + 0.5 / TAU) };
   function dna(ctx, yb, kb) {
-    for (let y = DY0 + 6; y < DY1; y += 15) {
-      const a = strand(y, 0), b = strand(y, 1);
-      if (Math.abs(a - b) > 14) line(ctx, a, y, b, y, alpha(PAL.ink, 0.28), 4);
-    }
-    [1, 0].forEach((s) => {
-      ctx.save(); ctx.strokeStyle = s ? PAL.muted : PAL.ink; ctx.lineWidth = 6; ctx.beginPath();
+    const part = (front) => [0, 1].forEach((s) => {
+      ctx.save(); ctx.strokeStyle = front ? PAL.ink : PAL.muted; ctx.lineWidth = front ? 11 : 8; ctx.lineCap = 'round'; ctx.beginPath();
       let on = false;
       for (let y = DY0; y <= DY1; y += 2) {
-        const gap = s === 0 && kb > 0 && Math.abs(y - yb) < 9 * kb;
-        if (gap) { on = false; continue; }
-        const x = strand(y, s); on ? ctx.lineTo(x, y) : ctx.moveTo(x, y); on = true;
+        const show = Math.cos(ph(y, s)) >= 0 === front && !(s === 1 && kb > 0 && Math.abs(y - yb) < 12 * kb);
+        if (!show) { on = false; continue; }
+        on ? ctx.lineTo(sx(y, s), y) : ctx.moveTo(sx(y, s), y); on = true;
       }
       ctx.stroke(); ctx.restore();
     });
+    part(false);
+    for (let y = DY0 + 10; y < DY1; y += 19) {
+      const a = sx(y, 0), b = sx(y, 1);
+      if (Math.abs(a - b) > 26) line(ctx, a, y, b, y, alpha(PAL.ink, 0.3), 5);
+    }
+    part(true);
   }
-  function water(ctx, x, y, nH, radical, plus) {
-    const O = F.el('O'), Hc = F.el('H');
-    const spots = nH === 3 ? [[-30, 16], [30, 16], [0, -32]] : nH === 2 ? [[-30, 18], [30, 18]] : [[30, 18]];
-    spots.forEach(([dx, dy]) => disc(ctx, x + dx, y + dy, 15, Hc));
-    disc(ctx, x, y, 24, O);
-    if (radical) F.dot(ctx, x - 18, y - 30, PAL.ink, true, 5);
-    if (plus) { ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.6); ctx.lineWidth = 2; ctx.setLineDash([5, 5]); ctx.beginPath(); ctx.arc(x, y + 4, 46, 0, TAU); ctx.stroke(); ctx.restore(); }
+  /* a water molecule or what it becomes: an O with its H atoms at the given offsets */
+  const RO = 52, RH = 33, HL = [-51, 40], HR = [51, 40];
+  function oxy(ctx, x, y, hs, radical) {
+    hs.forEach(([dx, dy]) => disc(ctx, x + dx, y + dy, RH, F.el('H')));
+    disc(ctx, x, y, RO, F.el('O'));
+    if (radical > 0) { ctx.save(); ctx.globalAlpha *= radical; F.dot(ctx, x + 38, y + 54, PAL.ink, true, 7); ctx.restore(); }
   }
+  const bez = (a, c, b, k) => ({ x: (1 - k) * (1 - k) * a.x + 2 * k * (1 - k) * c.x + k * k * b.x, y: (1 - k) * (1 - k) * a.y + 2 * k * (1 - k) * c.y + k * k * b.y });
   let hits = [];
   F.hover(d.stage, () => hits);
-  const A = { x: 560, y: 250 }, B = { x: 720, y: 250 };
+  const A0 = { x: 380, y: 226 }, A1 = { x: 590, y: 226 }, B0 = { x: 800, y: 226 }, B1 = { x: 800, y: 150 };
   function draw() {
-    const { ctx } = begin(d.c), t = cy.now(), ind = path.value === 'indirect';
+    const { ctx } = begin(d.c), t = cy.now(), ind = path.value === 'indirect', yb = BREAK[path.value], bx = sx(yb, 1);
+    const sm = F.ease.smooth, name = (s, x, y) => text(ctx, s, x, y, PAL.ink, { size: 24, align: 'center', weight: 600 });
     hits = [];
-    topline(ctx, ind ? 'Indirect effect: radiation ionizes water, and the hydroxyl radical formed breaks the DNA.' : 'Direct effect: the radiation ionizes the DNA itself, and a strand breaks.');
-    const tgt = ind ? A : { x: strand(BREAK.direct, 0), y: BREAK.direct };
-    const tBreak = ind ? 4.75 : 1.0, kb = clamp01((t - tBreak) / 0.3);
-    dna(ctx, BREAK[path.value], kb);
-    text(ctx, 'DNA', DX, DY0 - 2 + 0, PAL.ink, { size: 20, align: 'center', weight: 600, bg: PAL.panel });
-    hits.push({ x: DX, y: (DY0 + DY1) / 2, r: 70, name: 'DNA, a biomolecule' });
-    const bx = strand(BREAK[path.value], 0), by = BREAK[path.value];
-    burst(ctx, bx, by, 26, PAL.ink, kb * (1 - 0.5 * clamp01((t - tBreak - 0.8) / 0.6)));
-    if (kb > 0) hits.push({ x: bx, y: by, r: 26, name: 'a broken strand of the DNA' });
+    const tBreak = ind ? 6.3 : 1.0, kb = clamp01((t - tBreak) / 0.35);
+    burst(ctx, bx, yb, 36, PAL.ink, kb);
+    dna(ctx, yb, kb);
+    text(ctx, 'DNA', DX, 34, PAL.ink, { size: 22, align: 'center', weight: 600 });
+    hits.push({ x: DX, y: (DY0 + DY1) / 2, r: 90, name: 'DNA, a biomolecule' });
+    if (kb > 0) hits.push({ x: bx, y: yb, r: 30, name: 'a broken strand of the DNA' });
     /* the photon arrives over the first second */
-    const P0 = ind ? { x: 300, y: 112 } : { x: 760, y: 108 };
+    const P0 = ind ? { x: 150, y: 62 } : { x: 640, y: 50 }, tgt = ind ? { x: A0.x - 32, y: A0.y - 42 } : { x: bx - 8, y: yb - 2 };
+    const ux = tgt.x - P0.x, uy = tgt.y - P0.y, PL = Math.hypot(ux, uy);
     if (t < 1.0) {
-      const kp = t / 1.0, ux = tgt.x - P0.x, uy = tgt.y - P0.y, L = Math.hypot(ux, uy);
-      const hx = lerp(P0.x, tgt.x - (ux / L) * 26, kp), hy = lerp(P0.y, tgt.y - (uy / L) * 26, kp);
-      photon(ctx, hx, hy, ux / L, uy / L, 90, 8, F.el('gamma'));
-      hits.push({ x: hx, y: hy, r: 30, name: 'a γ photon' });
+      const hx = lerp(P0.x, tgt.x, t), hy = lerp(P0.y, tgt.y, t);
+      photon(ctx, hx, hy, ux / PL, uy / PL, 120, 11, F.el('gamma'), 4);
+      if (t < 0.5) text(ctx, 'radiation', hx + 26, hy - 34, PAL.ink, { size: 20, align: 'center' });
+      hits.push({ x: hx - (ux / PL) * 50, y: hy - (uy / PL) * 50, r: 50, name: 'ionizing radiation, a γ photon' });
     }
+    /* the water molecules */
+    let a = { ...A0 }, b = { ...B0 }, aH = [HL, HR], bH = [HL, HR], aName = 'H₂O', bName = 'H₂O', aRest = true, bRest = true, rad = 0, proton = null;
+    if (ind) {
+      if (t >= 1.0) aName = 'H₂O⁺';
+      if (t > 2.3) { const k = sm(clamp01((t - 2.3) / 0.8)); a = { x: lerp(A0.x, A1.x, k), y: A0.y }; aRest = k >= 1; }
+      if (t > 3.1) {
+        const k = sm(clamp01((t - 3.1) / 1.0)), from = [A1.x + HR[0], A1.y + HR[1]], to = [B0.x - 62, B0.y - 25];
+        aH = [HL];
+        if (k < 1) proton = { x: lerp(from[0], to[0], k), y: lerp(from[1], to[1], k) };
+        else { bH = [HL, HR, [-62, -25]]; bName = 'H₃O⁺'; aName = 'OH•'; }
+        rad = k;
+      }
+      if (t > 4.1) {
+        const k = sm(clamp01((t - 4.1) / 0.9)), q = lerp(0, 1, k);
+        b = { x: B0.x, y: lerp(B0.y, B1.y, k) }; bRest = k >= 1;
+        bH = [[lerp(HL[0], -56, q), lerp(HL[1], 32, q)], [lerp(HR[0], 56, q), lerp(HR[1], 32, q)], [lerp(-62, 0, q), lerp(-25, -65, q)]];
+      }
+      if (t > 4.6) {
+        const k = sm(clamp01((t - 4.6) / 1.7));
+        a = bez(A1, { x: 840, y: 500 }, { x: bx - 80, y: yb + 8 }, k); aRest = k >= 1;
+        aH = [[lerp(HL[0], -60, k), lerp(HL[1], 24, k)]];
+      }
+    }
+    oxy(ctx, b.x, b.y, bH, 0);
+    if (proton) disc(ctx, proton.x, proton.y, RH, F.el('H'));
+    oxy(ctx, a.x, a.y, aH, rad);
+    if (proton) hits.push({ x: proton.x, y: proton.y, r: RH, name: 'a proton, H⁺, passing to the second water molecule' });
+    const full = { 'H₂O': 'a water molecule, H₂O', 'H₂O⁺': 'the H₂O⁺ ion', 'H₃O⁺': 'a hydronium ion, H₃O⁺', 'OH•': 'the hydroxyl radical, OH•, with its unpaired electron' };
+    hits.push({ x: a.x, y: a.y + 10, r: 76, name: full[aName] }, { x: b.x, y: b.y + 10, r: 76, name: full[bName] });
+    if (aRest) name(aName, a.x - (aName === 'OH•' && t > 4.6 ? 20 : 0), a.y + (aName === 'OH•' && t > 4.6 ? -76 : 104));
+    if (bRest) name(bName, b.x, b.y + 104);
     /* the electron knocked out */
-    if (t >= 1.0 && t < 2.2) {
-      const ke = F.ease.out(clamp01((t - 1.0) / 1.0)), ex = tgt.x - 30 - 170 * ke, ey = tgt.y + 30 + 120 * ke;
-      ctx.save(); ctx.globalAlpha = 1 - clamp01((t - 1.8) / 0.4); disc(ctx, ex, ey, 10, F.el('e-'), -1); ctx.restore();
-      hits.push({ x: ex, y: ey, r: 16, name: 'an electron, knocked out' });
+    if (t >= 1.0) {
+      const k = F.ease.out(clamp01((t - 1.0) / 1.2)), from = ind ? { x: A0.x - 50, y: A0.y + 60 } : { x: bx - 20, y: yb + 16 }, to = ind ? { x: 190, y: 372 } : { x: 960, y: 340 };
+      const ex = lerp(from.x, to.x, k), ey = lerp(from.y, to.y, k);
+      disc(ctx, ex, ey, 17, F.el('e-'), -1);
+      if (k >= 1) name('e⁻', ex, ey + 40);
+      hits.push({ x: ex, y: ey, r: 22, name: 'the electron knocked out' });
     }
-    if (!ind) return;
-    /* water A: H₂O, then H₂O⁺, then OH• that leaves for the DNA */
-    const kh = F.ease.smooth(clamp01((t - 2.0) / 0.8));
-    const kr = F.ease.smooth(clamp01((t - 3.3) / 1.45));
-    const R = { x: lerp(A.x, bx - 40, kr), y: lerp(A.y, by, kr) - 70 * Math.sin(Math.PI * kr) };
-    if (t < 2.8) water(ctx, A.x, A.y, t >= 2.0 ? 1 : 2, false, t >= 1.0);
-    else if (kr < 1 || t < 4.75) water(ctx, R.x, R.y, 1, true, false);
-    /* the proton passing from H₂O⁺ to the second water */
-    if (t >= 2.0 && t < 2.8) { const px = lerp(A.x - 30, B.x - 52, kh), py = A.y + 18 - 30 * Math.sin(Math.PI * kh); disc(ctx, px, py, 15, F.el('H'), 1); hits.push({ x: px, y: py, r: 18, name: 'a proton, H⁺, passing to the second water molecule' }); }
-    water(ctx, B.x, B.y, t >= 2.8 ? 3 : 2, false, t >= 2.8);
-    const lab = (s, x, y) => text(ctx, s, x, y + 76, PAL.ink, { size: 22, align: 'center', tex: true });
-    const restA = t < 2.0 || (t >= 2.8 && t < 3.3);
-    if (restA) lab(t < 1.0 ? '$\\text{H}_{2}\\text{O}$' : t < 2.0 ? '$\\text{H}_{2}\\text{O}^{+}$' : '$\\text{OH}^{\\bullet}$', A.x, A.y);
-    if (t < 2.0 || t >= 2.8) lab(t < 2.8 ? '$\\text{H}_{2}\\text{O}$' : '$\\text{H}_{3}\\text{O}^{+}$', B.x, B.y);
-    hits.push({ x: B.x, y: B.y, r: 40, name: t < 2.8 ? 'a water molecule, H₂O' : 'a hydronium ion, H₃O⁺' });
-    hits.push(t < 2.8 ? { x: A.x, y: A.y, r: 40, name: t < 1.0 ? 'a water molecule, H₂O' : 'an ionized water molecule, H₂O⁺' } : { x: R.x, y: R.y, r: 36, name: 'a hydroxyl radical, OH•' });
+    /* the steps, in order */
+    const steps = STEPS[path.value], now = steps.reduce((n, s, i) => (t >= s[0] ? i : n), 0);
+    steps.forEach(([, s], i) => {
+      const y = 560 - 36 * (steps.length - i) + 6, col = i <= now ? PAL.ink : PAL.muted;
+      text(ctx, `${i + 1}`, 52, y, col, { size: 23, weight: 700, align: 'center' });
+      text(ctx, s, 80, y, col, { size: 23, weight: i === now ? 600 : 400 });
+    });
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
 
 /* =====================================================================
-   FIGURE 21.33: α, β, neutron and γ against paper, a hand, metal, water,
-   concrete and lead. Particles leave the source every 0.8 s and stop
-   where the book's arrows stop; each leaves ions behind it, the density
-   in the text's ratio α : n : β : γ = 20 : 10 : 2 : 1. Moving: a 6 s
-   loop holding 1.2 s.
+   FIGURE 21.33: what stops each radiation. Four lanes cross the book's
+   barriers in the book's order: paper, a hand, metal, a glass of water,
+   concrete, lead. α stops at the paper, β at the metal, neutrons in the
+   water, and the γ ray crosses the concrete and dies away in the lead.
+   Each leaves ions along its path at a density in the text's ratio,
+   α : neutron : β : γ = 20 : 10 : 2 : 1. Moving: a particle leaves each
+   source every second through a 6 s loop, holding 1.2 s.
 ===================================================================== */
 (function () {
-  const H = 520, T = 6, XS = 236;
+  const H = 600, T = 6;
   const d = sim('sim-penetration', H);
   const cy = cycle(() => T, 1.2);
+  const X0 = 204, TOP = 100, BOT = 524, DXS = 22, DYS = 16;
+  const PAPER = [330, 337], METAL = [636, 654], GLASS = [716, 862], CONC = [930, 1110], LEAD = [1180, 1290], HAND = 466;
   const LANES = [
-    { key: 'a', name: 'α particle', y: 140, stop: 292, v: 170, per100: 10 },
-    { key: 'b', name: 'β particle', y: 225, stop: 509, v: 420, per100: 1 },
-    { key: 'n', name: 'neutron', y: 310, stop: 662, v: 320, per100: 5 },
-    { key: 'g', name: 'γ ray', y: 395, stop: 1072, v: 760, per100: 0.5 },
+    { key: 'a', name: 'α particle', rel: 'ionizes most', y: 152, stop: 333, speed: 150, gap: 7, hov: 'an α particle, two protons and two neutrons', end: 'stopped by the paper' },
+    { key: 'b', name: 'β particle', rel: '1/10 as much', y: 258, stop: 645, speed: 300, gap: 70, hov: 'a β particle, an electron', end: 'stopped by the metal' },
+    { key: 'n', name: 'neutron', rel: '1/2 as much', y: 366, stop: 792, speed: 300, gap: 14, hov: 'a neutron', end: 'stopped in the water' },
+    { key: 'g', name: 'γ ray', rel: '1/20 as much', y: 472, stop: 1266, speed: 520, gap: 140, hov: 'a γ ray', end: 'attenuated by the lead' },
   ];
-  const EMIT = [0, 0.8, 1.6, 2.4, 3.2, 4.0, 4.8];
-  /* a fixed scatter of ions along each particle's track */
-  let seed = 7;
-  const rnd = () => { seed = (seed * 16807) % 2147483647; return seed / 2147483647; };
-  /* lead dims γ rays and does not stop them all: every other one passes through and leaves the scene */
-  LANES.forEach((l) => {
-    l.stops = EMIT.map((_, i) => (l.key === 'g' && i % 2 ? 1400 : l.stop));
-    l.ions = EMIT.map((_, i) => { const st = Math.min(l.stops[i], 1330), n = Math.max(1, Math.round(((st - XS) * l.per100) / 100)); return Array.from({ length: n }, () => ({ x: XS + 20 + rnd() * (st - XS - 20), dy: (rnd() - 0.5) * 34 })); });
-  });
-  const BAR = { paper: [296, 312], metal: [512, 530], glass: [600, 712], concrete: [790, 930], lead: [1030, 1120] };
-  function ionMark(ctx, x, y, a) {
-    if (a <= 0) return;
-    ctx.save(); ctx.globalAlpha *= a;
-    line(ctx, x - 4, y, x + 4, y, PAL.ink, 2); line(ctx, x, y - 4, x, y + 4, PAL.ink, 2);
-    line(ctx, x + 8, y + 5, x + 15, y + 5, PAL.ink, 2);
+  /* where the ions of each lane lie: a fixed scatter about the path */
+  const rnd = (i, j) => { const s = Math.sin(i * 127.1 + j * 311.7) * 43758.5453; return s - Math.floor(s); };
+  LANES.forEach((l, j) => { l.ions = []; for (let x = X0 + 26, i = 0; x < l.stop - 2; x += l.gap, i++) l.ions.push([x + (rnd(i, j) - 0.5) * l.gap * 0.6, l.y + (rnd(i, j + 9) - 0.5) * 34]); });
+  /* a slab seen a little from the right and above */
+  function slab(ctx, [x0, x1], fill, speck) {
+    const edge = alpha(PAL.ink, 0.6);
+    ctx.save(); ctx.lineWidth = 2; ctx.strokeStyle = edge; ctx.lineJoin = 'round';
+    const face = (pts, f) => { ctx.beginPath(); pts.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y))); ctx.closePath(); ctx.fillStyle = PAL.panel; ctx.fill(); ctx.fillStyle = f; ctx.fill(); ctx.stroke(); };
+    face([[x1, TOP], [x1 + DXS, TOP - DYS], [x1 + DXS, BOT - DYS], [x1, BOT]], fill(1.35));
+    face([[x0, TOP], [x0 + DXS, TOP - DYS], [x1 + DXS, TOP - DYS], [x1, TOP]], fill(0.6));
+    face([[x0, TOP], [x1, TOP], [x1, BOT], [x0, BOT]], fill(1));
+    if (speck) { ctx.fillStyle = alpha(PAL.ink, 0.4); for (let i = 0; i < speck; i++) { ctx.beginPath(); ctx.arc(x0 + 10 + rnd(i, 3) * (x1 - x0 - 20), TOP + 10 + rnd(i, 5) * (BOT - TOP - 20), 1.5 + rnd(i, 7) * 2, 0, TAU); ctx.fill(); } }
     ctx.restore();
   }
-  function particle(ctx, key, x, y) {
-    if (key === 'a') alphaParticle(ctx, x, y, 8);
-    else if (key === 'b') disc(ctx, x, y, 8, F.el('e-'), -1);
-    else if (key === 'n') disc(ctx, x, y, 10, F.el('n0'));
-    else photon(ctx, x + 20, y, 1, 0, 64, 7, F.el('gamma'));
+  function glass(ctx) {
+    const [x0, x1] = GLASS, top = 296, lvl = 326, tx = (y) => 13 * ((y - top) / (BOT - top));
+    ctx.save();
+    ctx.beginPath(); ctx.moveTo(x0 + tx(lvl), lvl); ctx.lineTo(x1 - tx(lvl), lvl); ctx.lineTo(x1 - 13, BOT - 5); ctx.lineTo(x0 + 13, BOT - 5); ctx.closePath();
+    ctx.fillStyle = PAL.panel; ctx.fill(); ctx.fillStyle = alpha(PAL.ink, 0.1); ctx.fill();
+    ctx.strokeStyle = alpha(PAL.ink, 0.6); ctx.lineWidth = 3; ctx.lineJoin = 'round';
+    ctx.beginPath(); ctx.moveTo(x0, top); ctx.lineTo(x0 + 13, BOT); ctx.lineTo(x1 - 13, BOT); ctx.lineTo(x1, top); ctx.stroke();
+    ctx.lineWidth = 2; ctx.beginPath(); ctx.ellipse((x0 + x1) / 2, top, (x1 - x0) / 2, 9, 0, 0, TAU); ctx.stroke();
+    ctx.beginPath(); ctx.ellipse((x0 + x1) / 2, lvl, (x1 - x0) / 2 - tx(lvl), 8, 0, 0, TAU); ctx.fillStyle = alpha(PAL.ink, 0.08); ctx.fill(); ctx.stroke();
+    ctx.restore();
   }
   let hits = [];
   F.hover(d.stage, () => hits);
   function draw() {
     const { ctx } = begin(d.c), t = cy.now();
     hits = [];
-    topline(ctx, 'α particles stop in paper, β particles in metal and neutrons in water; γ rays cross the concrete, and lead dims them.');
-    const top = 92, bot = 448;
-    /* the barriers, back to front */
-    const slab = (x0, x1, fill, name) => { ctx.save(); ctx.fillStyle = fill; ctx.fillRect(x0, top, x1 - x0, bot - top); ctx.strokeStyle = PAL.muted; ctx.lineWidth = 2; ctx.strokeRect(x0, top, x1 - x0, bot - top); ctx.restore(); hits.push({ x: (x0 + x1) / 2, y: 110, r: Math.max(16, (x1 - x0) / 2), name }); };
-    slab(BAR.paper[0], BAR.paper[1], alpha(PAL.ink, 0.06), 'a sheet of paper');
-    F.hand(ctx, 408, 462, { aim: [0, -1], view: 'palm', thumb: 'along', s: 2.3 });
-    hits.push({ x: 410, y: 300, r: 50, name: 'a hand' });
-    slab(BAR.metal[0], BAR.metal[1], alpha(PAL.ink, 0.28), 'a thin sheet of metal');
-    { const [g0, g1] = BAR.glass, gt = 200;
-      ctx.save(); ctx.beginPath(); ctx.moveTo(g0 + 4, gt + 30); ctx.lineTo(g1 - 4, gt + 30); ctx.lineTo(g1 - 12, bot); ctx.lineTo(g0 + 12, bot); ctx.closePath(); ctx.fillStyle = alpha(PAL.ink, 0.1); ctx.fill(); ctx.restore();
-      ctx.save(); ctx.beginPath(); ctx.moveTo(g0, gt); ctx.lineTo(g0 + 12, bot); ctx.lineTo(g1 - 12, bot); ctx.lineTo(g1, gt); ctx.strokeStyle = PAL.muted; ctx.lineWidth = 3; ctx.stroke(); ctx.restore();
-      line(ctx, g0 + 4, gt + 30, g1 - 4, gt + 30, alpha(PAL.ink, 0.4), 2);
-      hits.push({ x: (g0 + g1) / 2, y: 330, r: 50, name: 'a glass of water' }); }
-    slab(BAR.concrete[0], BAR.concrete[1], alpha(PAL.ink, 0.13), 'a thick block of concrete');
-    for (let i = 0; i < 70; i++) { const x = BAR.concrete[0] + 8 + ((i * 0.6180339887 * 124) % 124), y = top + 10 + ((i * 0.7548776662 * 336 + i * i * 7.3) % 336); F.dot(ctx, x, y, alpha(PAL.ink, 0.35), true, 1.6); }
-    slab(BAR.lead[0], BAR.lead[1], alpha(PAL.ink, 0.42), 'a thick block of lead');
-    [['Paper', BAR.paper], ['Metal', BAR.metal], ['Water', BAR.glass], ['Concrete', BAR.concrete], ['Lead', BAR.lead]].forEach(([s, [a, b]]) => text(ctx, s, (a + b) / 2, 482, PAL.ink, { size: 20, align: 'center' }));
-    /* the sources */
-    LANES.forEach((l) => {
-      text(ctx, l.name, 28, l.y, PAL.ink, { size: 20, weight: 600 });
-      particle(ctx, l.key, l.key === 'g' ? 176 : 196, l.y);
+    topline(ctx, 'α particles stop in paper, β particles in metal and neutrons in water; lead attenuates γ rays.');
+    /* the barriers, in the book's order */
+    slab(ctx, PAPER, () => alpha(PAL.ink, 0.02));
+    F.hand(ctx, HAND, BOT + 4, { aim: [0, -1], view: 'palm', s: 2.45, color: alpha(PAL.ink, 0.22) });
+    slab(ctx, METAL, (k) => alpha(PAL.ink, 0.3 * k));
+    glass(ctx);
+    slab(ctx, CONC, (k) => alpha(PAL.ink, 0.13 * k), 70);
+    slab(ctx, LEAD, (k) => alpha(PAL.ink, Math.min(0.85, 0.5 * k)));
+    [['paper', 334, PAPER], ['hand', HAND, null], ['metal', 645, METAL], ['water', 789, GLASS], ['concrete', 1020, CONC], ['lead', 1235, LEAD]].forEach(([s, x, b]) => {
+      text(ctx, s, x, 574, PAL.ink, { size: 22, align: 'center' });
+      hits.push({ x, y: 300, r: b ? Math.max(24, (b[1] - b[0]) / 2) : 80, name: s === 'water' ? 'a glass of water' : s === 'hand' ? 'a hand' : s === 'metal' ? 'a thin sheet of metal' : s === 'paper' ? 'a sheet of paper' : s === 'lead' ? 'a block of lead' : 'a block of concrete' });
     });
-    /* ions, which fade as they recombine, then the particles in flight */
-    LANES.forEach((l) => EMIT.forEach((e, i) => {
-      const x = Math.min(XS + l.v * (t - e), l.stops[i]);
-      if (t < e) return;
-      l.ions[i].forEach((q) => { if (q.x <= x) { const tq = e + (q.x - XS) / l.v; ionMark(ctx, q.x, l.y + q.dy, 1 - clamp01((t - tq - 1.4) / 0.8)); } });
-    }));
-    LANES.forEach((l) => EMIT.forEach((e, i) => {
-      if (t < e) return;
-      const x = Math.min(XS + l.v * (t - e), l.stops[i]), tStop = e + (l.stops[i] - XS) / l.v, a = 1 - clamp01((t - tStop) / 0.35);
-      if (a <= 0) return;
-      ctx.save(); ctx.globalAlpha = a; particle(ctx, l.key, x, l.y); ctx.restore();
-      hits.push({ x, y: l.y, r: 18, name: `${l.name === 'neutron' ? 'a neutron' : l.name === 'γ ray' ? 'a γ ray' : 'an ' + l.name}` });
-    }));
-    /* the legend */
-    ionMark(ctx, 1180, 482, 1); text(ctx, 'ion pair formed', 1204, 482, PAL.ink, { size: 18 });
-    hits.push({ x: 1190, y: 482, r: 14, name: 'an ion pair, left where the radiation knocked out an electron' });
+    F.legend(ctx, { l: 24, r: 300, t: 556, b: 592 }, [{ s: 'ions formed', draw: (g, x, y) => { g.save(); g.fillStyle = PAL.ink; g.globalAlpha = 0.8; [[-13, -4], [0, 5], [12, -3]].forEach(([dx, dy]) => { g.beginPath(); g.arc(x + dx, y + dy, 3.4, 0, TAU); g.fill(); }); g.restore(); } }], { corner: 'tl', panel: false });
+    LANES.forEach((l) => {
+      const lead = X0 + l.speed * t;
+      text(ctx, l.name, 26, l.y - 12, PAL.ink, { size: 22, weight: 600 });
+      text(ctx, l.rel, 26, l.y + 16, PAL.muted, { size: 19 });
+      /* the path, as far as the first particle has gone */
+      const reach = Math.min(lead, l.stop);
+      line(ctx, X0, l.y, reach, l.y, alpha(PAL.ink, 0.28), 2);
+      if (lead >= l.stop) { line(ctx, l.stop, l.y - 13, l.stop, l.y + 13, PAL.ink, 4); hits.push({ x: l.stop, y: l.y, r: 16, name: `${l.name}: ${l.end}` }); }
+      /* the ions left behind it */
+      ctx.save(); ctx.fillStyle = PAL.ink;
+      l.ions.forEach(([x, y]) => { const k = clamp01((reach - x) / 30); if (k <= 0) return; ctx.globalAlpha = 0.8 * k; ctx.beginPath(); ctx.arc(x, y, 3.4, 0, TAU); ctx.fill(); });
+      ctx.restore();
+      /* the particles, one a second */
+      for (let k = 0; k < T; k++) {
+        if (t < k) break;
+        const x = X0 + l.speed * (t - k), gone = clamp01((x - l.stop) / (l.speed * 0.25));
+        if (gone >= 1) continue;
+        const px = Math.min(x, l.stop);
+        ctx.save(); ctx.globalAlpha *= 1 - gone;
+        if (l.key === 'a') alphaParticle(ctx, px - 14, l.y, 9);
+        else if (l.key === 'b') disc(ctx, px - 10, l.y, 10, F.el('e-'), -1);
+        else if (l.key === 'n') disc(ctx, px - 12, l.y, 12, F.el('n0'));
+        else {
+          /* the γ ray keeps its strength to the lead and dies away inside it */
+          const amp = 10 * (px <= LEAD[0] ? 1 : Math.max(0.12, 1 - (px - LEAD[0]) / (l.stop - LEAD[0])));
+          photon(ctx, px, l.y, 1, 0, 96, amp, F.el('gamma'), 4);
+        }
+        ctx.restore();
+        hits.push({ x: px - 12, y: l.y, r: 24, name: l.hov });
+      }
+    });
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
-  tex(d.readout, '\\text{penetration: }\\alpha<\\beta<\\text{n}<\\gamma \\\\ \\text{ionizing power: }\\alpha:\\text{n}:\\beta:\\gamma\\approx20:10:2:1');
 })();
 
 /* =====================================================================
-   SIM: number of rems = RBE × number of rads. The radiation sets the RBE
-   and a slider the absorbed dose on a log scale; two strips share one
-   logarithmic spacing, so the rem bar runs past the rad bar by log RBE.
-   Table 21.5's exposures tick the rem strip. Still.
+   SIM: the absorbed dose and the damage it does. One logarithmic scale,
+   0.001 to 10,000, read in rad for the absorbed dose and in rem for the
+   dose equivalent. The one absorbed dose is carried to the right by each
+   radiation's RBE (1 for β and γ, 2 for protons and neutrons, 10 for α,
+   the text's), a fixed step on this scale. Beneath, the doses the
+   section names: a flight and the average year of Figure 21.37, the
+   health effects of Table 21.5 and the text's 500 rem. Still.
 ===================================================================== */
 (function () {
-  const H = 400, L0 = 230, L1 = 1330, LO = -2, HI = 4;
+  const H = 590, L = 250, R = 1330, LO = -3, HI = 4, lg = Math.log10;
   const d = sim('sim-dose', H);
-  const RBE = { a: 10, pn: 2, bg: 1 }, NAME = { a: 'α radiation', pn: 'protons or neutrons', bg: 'β or γ radiation' };
-  const kind = F.choice(d.controls, { label: 'radiation', options: [{ value: 'a', label: 'α' }, { value: 'pn', label: 'protons, neutrons' }, { value: 'bg', label: 'β, γ' }], value: 'a', ms: 0, onInput: () => { rad.refresh(); show(); } });
-  const rad = F.ctl(d.controls, {
-    label: '\\text{absorbed dose}', cls: 'dose', key: 'rad', min: -1, max: 3, step: 0.01, value: Math.log10(5), unit: 'rad', dec: 2,
-    aria: 'the absorbed dose in rad, on a logarithmic scale', specials: [{ at: () => Math.log10(500 / RBE[kind.value]), label: '500 rem' }], onInput: () => show(),
-  });
-  const valEl = rad.el.querySelector('.ctl-val'), inp = rad.el.querySelector('input');
-  const radOf = () => sig2(10 ** rad.v);
-  const radText = (v) => v.toFixed(decOf(v));
-  const show = () => { const s = radText(radOf()) + ' rad'; valEl.textContent = s; inp.setAttribute('aria-valuetext', s); };
-  show();
-  const X = (v) => L0 + ((Math.log10(v) - LO) / (HI - LO)) * (L1 - L0);
-  const EFFECTS = [
-    { at: 5, to: 10, name: 'changes in blood chemistry' }, { at: 50, name: 'nausea' }, { at: 55, name: 'fatigue' }, { at: 70, name: 'vomiting' },
-    { at: 75, name: 'hair loss' }, { at: 90, name: 'diarrhea' }, { at: 100, name: 'hemorrhage' }, { at: 400, name: 'possible death' },
-    { at: 1000, name: 'destruction of intestinal lining, internal bleeding, death' }, { at: 2000, name: 'damage to central nervous system, loss of consciousness, death' },
+  const X = (v) => L + ((lg(v) - LO) / (HI - LO)) * (R - L);
+  const KINDS = [
+    { value: 'bg', label: 'β, γ', name: 'β or γ radiation', rbe: 1, y: 158 },
+    { value: 'pn', label: 'protons, neutrons', name: 'protons or neutrons', rbe: 2, y: 214 },
+    { value: 'a', label: 'α', name: 'α radiation', rbe: 10, y: 270 },
   ];
-  const S1 = 112, S2 = 222, SH = 38;
-  const big = (v, dec) => (v >= 1000 ? v.toLocaleString('en-US') : v.toFixed(dec));
-  const svOf = (s) => { const n = Math.min(3, s.replace(/[.,]/g, '').replace(/^0+/, '').length); return (+s.replace(/,/g, '') / 100).toPrecision(n); };
+  const kind = F.choice(d.controls, { label: '\\text{radiation}', options: KINDS.map(({ value, label }) => ({ value, label })), value: 'a', aria: 'the kind of radiation' });
+  const rbe = () => KINDS.find((k) => k.value === kind.value).rbe;
+  const num = (v) => (v >= 1000 ? v.toLocaleString('en-US') : String(v));
+  const two = (v) => +v.toPrecision(2);
+  /* a dose to two figures, as it is written */
+  const str = (v) => (v >= 100 ? num(two(v)) : v.toPrecision(2));
+  const dose = F.ctl(d.controls, {
+    label: '\\text{absorbed dose}', cls: 'dose', min: -3, max: 3, step: 0.01, value: 1.7, unit: '', fmt: (q) => `${str(10 ** q)} rad`,
+    aria: 'the absorbed dose in rad, on a logarithmic scale', specials: [{ at: () => lg(500 / rbe()), label: '500 rem' }],
+  });
+  /* what the section says of each dose: Figure 21.37's (per year) and Table 21.5's (short-term) */
+  const MARKS = [
+    { v: 0.62, s: 'average US dose in a year', val: '0.62 rem', side: -1, hov: 'the average annual dose in the US, 620 mrem (Figure 21.37)' },
+    { v: 0.0025, s: 'trans-Atlantic flight', val: '0.0025 rem', side: 1, hov: 'a trans-Atlantic flight, 2.5 mrem (Figure 21.37)' },
+    { v: 5, to: 10, s: 'changes in blood chemistry', val: '5–10 rem', side: -1, hov: '5–10 rem: changes in blood chemistry (Table 21.5)' },
+    { v: 50, to: 100, s: 'nausea, hair loss, hemorrhage', val: '50–100 rem', side: -1, hov: '50 rem nausea, 55 rem fatigue, 70 rem vomiting, 75 rem hair loss, 90 rem diarrhea, 100 rem hemorrhage (Table 21.5)' },
+    { v: 400, s: 'possible death within 2 months', val: '400 rem', side: -1, hov: '400 rem: possible death within 2 months (Table 21.5)' },
+    { v: 500, s: 'half die within 30 days', val: '500 rem', side: -1, hov: 'about 500 rem: a 50% probability of death within 30 days' },
+    { v: 1000, s: 'death in 1–2 weeks', val: '1000 rem', side: -1, hov: '1000 rem: destruction of the intestinal lining, internal bleeding, death in 1–2 weeks (Table 21.5)' },
+    { v: 2000, s: 'death in hours to days', val: '2000 rem', side: -1, hov: '2000 rem: damage to the central nervous system, loss of consciousness within minutes, death in hours to days (Table 21.5)' },
+  ];
+  const AX = 318, ROW0 = 376, ROWH = 27;
   let hits = [];
   F.hover(d.stage, () => hits);
   function draw() {
-    const { ctx } = begin(d.c), r = RBE[kind.value], a = radOf(), dec = Math.max(0, decOf(a) - (r === 10 ? 1 : 0)), e = +(a * r).toFixed(dec), cd = C('dose');
-    topline(ctx, `With ${NAME[kind.value]} (RBE = ${r}), an absorbed dose of ${radText(a)} rad does the damage of ${big(e, dec)} rem.`);
-    /* decades */
-    for (let p = LO; p <= HI; p++) {
-      const x = X(10 ** p);
-      line(ctx, x, S1 - 6, x, S2 + SH, PAL.rule, 1.5);
-      text(ctx, p < 0 ? String(+(10 ** p).toFixed(2)) : (10 ** p).toLocaleString('en-US'), x, S1 - 18, PAL.muted, { size: 17, align: 'center' });
-    }
-    [[S1, 'absorbed dose', '(rad)'], [S2, 'dose equivalent', '(rem)']].forEach(([y, a1, a2]) => {
-      text(ctx, a1, L0 - 20, y + SH / 2 - 11, cd, { size: 20, align: 'right', weight: 600 });
-      text(ctx, a2, L0 - 20, y + SH / 2 + 13, cd, { size: 18, align: 'right' });
-      ctx.save(); ctx.strokeStyle = PAL.muted; ctx.lineWidth = 2; ctx.strokeRect(L0, y, L1 - L0, SH); ctx.restore();
-    });
-    /* the absorbed dose, hollow, and the dose equivalent, filled */
-    const xa = X(a), xe = X(Math.min(e, 10 ** HI));
-    ctx.save(); ctx.fillStyle = alpha(cd, 0.16); ctx.fillRect(L0, S1, xa - L0, SH); ctx.strokeStyle = cd; ctx.lineWidth = 3; ctx.strokeRect(L0, S1, xa - L0, SH); ctx.restore();
-    ctx.save(); ctx.fillStyle = cd; ctx.fillRect(L0, S2, xe - L0, SH); ctx.restore();
-    /* × RBE */
-    const yA = S1 + SH + 6, yB = S2 - 6;
-    if (Math.abs(xe - xa) > 4) arrow(ctx, xa, yA, xe, yB, PAL.ink, 3); else line(ctx, xa, yA, xe, yB, PAL.ink, 3, [6, 6]);
-    const xm = Math.max(xa, xe) + 14 > L1 - 60 ? Math.min(xa, xe) - 70 : Math.max(xa, xe) + 14;
-    text(ctx, `× ${r}`, xm, (yA + yB) / 2, PAL.ink, { size: 22, weight: 600, bg: PAL.panel });
-    /* the marks: Table 21.5's exposures, the US annual dose and 500 rem */
+    const { ctx } = begin(d.c), D = Math.abs(dose.v - lg(500 / rbe())) < 0.004 ? two(500 / rbe()) : two(10 ** dose.v), cd = C('dose'), sel = KINDS.find((k) => k.value === kind.value);
+    const rem = (k) => two(k.rbe * D), xd = X(D), e = rem(sel);
     hits = [];
-    EFFECTS.forEach((f) => {
-      const x0 = X(f.at), x1 = f.to ? X(f.to) : x0;
-      if (f.to) { line(ctx, x0, S2 + SH + 8, x1, S2 + SH + 8, PAL.ink, 3); }
-      line(ctx, x0, S2 + SH, x0, S2 + SH + 12, PAL.ink, 2); if (f.to) line(ctx, x1, S2 + SH, x1, S2 + SH + 12, PAL.ink, 2);
-      hits.push({ x: (x0 + x1) / 2, y: S2 + SH + 8, r: 10, name: `${f.to ? f.at + '–' + f.to : f.at} rem: ${f.name}` });
-    });
-    const x5 = X(500), xu = X(0.62);
-    line(ctx, x5, S2 - 8, x5, S2 + SH + 26, PAL.ink, 2.5, [7, 6]);
-    line(ctx, xu, S2 - 8, xu, S2 + SH + 26, PAL.ink, 2.5, [3, 6]);
-    text(ctx, '500 rem', x5, S2 + SH + 42, PAL.ink, { size: 18, align: 'center', weight: 600 });
-    text(ctx, 'US annual dose', xu, S2 + SH + 42, PAL.ink, { size: 18, align: 'center', weight: 600 });
-    hits.push({ x: x5, y: S2 + SH / 2, r: 12, name: '500 rem: a 50% probability of death within 30 days' }, { x: xu, y: S2 + SH / 2, r: 12, name: '0.62 rem (620 mrem): the average annual dose in the US' });
-    hits.push({ x: xa, y: S1 + SH / 2, r: 14, name: `absorbed dose: ${radText(a)} rad` }, { x: xe, y: S2 + SH / 2, r: 14, name: `dose equivalent: ${big(e, dec)} rem` });
-    /* the effect reached */
-    const reached = EFFECTS.filter((f) => e >= f.at).pop();
-    const say = reached ? `${reached.name.split(',')[0]} (${reached.to ? reached.at + '–' + reached.to : reached.at} rem)` : 'below every exposure of Table 21.5';
-    F.label(ctx, say, xe, S2 + SH + 14, { side: 'below', gap: 80, size: 19, H });
-    tex(d.readout, `\\htmlClass{kv-dose}{\\text{number of rems}} = \\text{RBE}\\times\\htmlClass{kv-dose}{\\text{number of rads}} = ${r}\\times\\htmlClass{kv-dose}{${radText(a)}\\ \\text{rad}} = \\htmlClass{kv-dose}{${big(e, dec).replace(',', '{,}')}\\ \\text{rem}} = \\htmlClass{kv-dose}{${svOf(big(e, dec))}\\ \\text{Sv}}`);
-  }
-  still(d, draw);
-})();
-
-/* =====================================================================
-   FIGURE 21.37: the book's doses and regulatory limits in millirem, one
-   bar each, on one logarithmic axis from 1 to 10,000 mrem. Dose limits
-   hollow, doses filled. A faithful copy: nothing varies.
-===================================================================== */
-(function () {
-  const H = 560, L0 = 500, L1 = 1320, LO = 0, HI = 4;
-  const d = sim('sim-doses', H);
-  const BARS = [
-    ['Annual nuclear worker dose limit (NRC)', 5000, 1], ['Whole body CT', 1000, 0], ['Average US annual dose', 620, 0],
-    ['US avg. natural background dose', 310, 0], ['Annual public dose limit (NRC)', 100, 1], ['From your body', 40, 0],
-    ['Cosmic rays', 30, 0], ['Chest X-rays', 10, 0], ['Safe drinking water limit (EPA)', 4, 0], ['Trans-Atlantic flight', 2.5, 0],
-  ];
-  const X = (v) => L0 + ((Math.log10(v) - LO) / (HI - LO)) * (L1 - L0);
-  const Y0 = 112, ROW = 36, BH = 22;
-  function draw() {
-    const { ctx } = begin(d.c), cd = C('dose'), yb = Y0 + ROW * BARS.length;
-    text(ctx, 'Radiation Doses and Regulatory Limits (in Millirems)', 700, 40, PAL.ink, { size: 22, align: 'center', weight: 700 });
+    topline(ctx, `The same ${str(D)} rad is ${str(rem(KINDS[0]))} rem from β or γ radiation and ${str(rem(KINDS[2]))} rem from α radiation.`);
+    /* the scale */
     for (let p = LO; p <= HI; p++) {
       const x = X(10 ** p);
-      if (p) line(ctx, x, Y0 - 16, x, yb, PAL.rule, 1.5);
-      line(ctx, x, yb, x, yb + 8, PAL.muted, 2);
-      text(ctx, (10 ** p).toLocaleString('en-US'), x, yb + 26, PAL.muted, { size: 17, align: 'center' });
+      line(ctx, x, 136, x, AX, PAL.rule, 1.5);
+      line(ctx, x, AX, x, AX + 9, PAL.muted, 2);
+      text(ctx, num(10 ** p < 1 ? +(10 ** p).toFixed(3) : 10 ** p), x, AX + 28, PAL.muted, { size: 17, align: 'center' });
     }
-    line(ctx, L0, Y0 - 16, L0, yb, PAL.muted, 2); line(ctx, L0, yb, L1, yb, PAL.muted, 2);
-    text(ctx, 'Dose (millirem)', L1, yb + 58, cd, { size: 20, align: 'right', weight: 600 });
-    BARS.forEach(([name, v, limit], i) => {
-      const y = Y0 + ROW * i + ROW / 2 - 8, x = X(v);
-      text(ctx, name, L0 - 16, y, PAL.ink, { size: 18, align: 'right' });
-      ctx.save();
-      if (limit) { ctx.fillStyle = alpha(cd, 0.16); ctx.fillRect(L0, y - BH / 2, x - L0, BH); ctx.strokeStyle = cd; ctx.lineWidth = 3; ctx.strokeRect(L0, y - BH / 2, x - L0, BH); }
-      else { ctx.fillStyle = cd; ctx.fillRect(L0, y - BH / 2, x - L0, BH); }
-      ctx.restore();
-      text(ctx, v.toLocaleString('en-US'), x + 10, y, PAL.ink, { size: 17 });
+    line(ctx, L, AX, R, AX, PAL.muted, 2);
+    text(ctx, 'rad or rem', L - 16, AX, cd, { size: 20, align: 'right', weight: 600 });
+    /* the absorbed dose: one line through the three rows */
+    line(ctx, xd, 108, xd, AX, cd, 3, [8, 6]);
+    F.rich(ctx, ['absorbed dose ', [`${str(D)} rad`, cd, 700]], Math.min(Math.max(xd, L + 60), R - 60), 92, { size: 20, align: 'center' });
+    hits.push({ x: xd, y: 120, r: 18, name: `the absorbed dose, ${str(D)} rad` });
+    KINDS.forEach((k) => {
+      const on = k === sel, v = rem(k), xe = X(v), col = on ? cd : alpha(cd, 0.55), ink = on ? PAL.ink : PAL.muted;
+      text(ctx, k.name, L - 16, k.y - 11, ink, { size: 20, align: 'right', weight: on ? 700 : 400 });
+      text(ctx, `RBE ${k.rbe}`, L - 16, k.y + 14, PAL.muted, { size: 18, align: 'right' });
+      F.dot(ctx, xd, k.y, col, false, 8);
+      if (xe - xd > 30) {
+        arrow(ctx, xd + 9, k.y, xe - (on ? 13 : 11), k.y, col, on ? 5 : 4);
+        text(ctx, `× ${k.rbe}`, (xd + xe) / 2 - 4, k.y - 18, ink, { size: 18, align: 'center', weight: on ? 700 : 400 });
+      }
+      F.dot(ctx, xe, k.y, col, true, on ? 11 : 9);
+      const right = xe < R - 130;
+      F.rich(ctx, [[`${str(v)} rem`, col, on ? 700 : 400]], right ? xe + 20 : xe - 4, right ? k.y : k.y + 26, { size: 20, align: right ? 'left' : 'right' });
+      hits.push({ x: xe, y: k.y, r: 16, name: `${k.name}: ${k.rbe} × ${str(D)} rad = ${str(v)} rem` });
     });
-    /* the legend */
-    const lx = 1000, ly = 380;
-    ctx.save(); ctx.fillStyle = alpha(cd, 0.16); ctx.fillRect(lx, ly - 9, 26, 18); ctx.strokeStyle = cd; ctx.lineWidth = 3; ctx.strokeRect(lx, ly - 9, 26, 18); ctx.restore();
-    text(ctx, 'Dose limit from NRC-licensed activity', lx + 38, ly, PAL.ink, { size: 17 });
-    ctx.save(); ctx.fillStyle = cd; ctx.fillRect(lx, ly + 21, 26, 18); ctx.restore();
-    text(ctx, 'Radiation doses', lx + 38, ly + 30, PAL.ink, { size: 17 });
+    /* the dose equivalent picked, carried down to what the section says of it */
+    const xe = X(e);
+    line(ctx, xe, sel.y + 12, xe, ROW0 + ROWH * (MARKS.length - 1) + 14, alpha(cd, 0.6), 2.5, [4, 8]);
+    MARKS.forEach((m, i) => {
+      const y = ROW0 + ROWH * i, x0 = X(m.v), x1 = X(m.to ?? m.v), got = e >= m.v, ink = got ? PAL.ink : PAL.muted, vc = got ? cd : alpha(cd, 0.6);
+      if (m.to) line(ctx, x0, AX, x1, AX, ink, 6);
+      line(ctx, x0, AX - 7, x0, AX + 7, ink, 3);
+      line(ctx, x0, AX + 42, x0, y + 4, alpha(PAL.ink, got ? 0.5 : 0.28), 1.5);
+      if (m.side < 0) F.rich(ctx, [[m.s + '  ', ink, got ? 600 : 400], [m.val, vc, got ? 700 : 400]], x0 - 8, y, { size: 19, align: 'right' });
+      else F.rich(ctx, [[m.val, vc, got ? 700 : 400], ['  ' + m.s, ink, got ? 600 : 400]], x0 + 8, y, { size: 19, align: 'left' });
+      hits.push({ x: x0, y, r: 16, name: m.hov }, { x: x0, y: AX, r: 12, name: m.hov });
+    });
+    const kv = (s) => `\\htmlClass{kv-dose}{${s}}`, t = (v) => str(v).replace(/,/g, '{,}');
+    tex(d.readout, `${kv('\\text{number of rems}')} = \\text{RBE}\\times${kv('\\text{number of rads}')} = ${sel.rbe}\\times${kv(`${t(D)}\\ \\text{rad}`)} = ${kv(`${t(e)}\\ \\text{rem}`)} = ${kv(`${t(e / 100)}\\ \\text{Sv}`)}`);
   }
   still(d, draw);
 })();

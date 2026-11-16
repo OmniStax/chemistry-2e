@@ -21,6 +21,9 @@
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-fable-5-2"
       }
     ]
   },
@@ -79,14 +82,42 @@
         {
           "model": "claude-opus-5-5",
           "part": "caption cut"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt: head in section, three timed points, bars with final times"
         }
       ]
     },
     {
       "id": "sim-co60-decay",
-      "kind": "photo",
+      "kind": "sim",
       "number": "21.27",
-      "draws": []
+      "originals": [
+        "/media/ch21/CNX_Chem_21_05_Co60Decay.jpg"
+      ],
+      "original_caption": "Co-60 undergoes a series of radioactive decays. The γ emissions are used for radiation therapy.",
+      "draws": [
+        "energy",
+        "time"
+      ],
+      "conventions": [
+        "p+",
+        "n0",
+        "e-",
+        "gamma"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt: the decay played by route, energy given off as a column"
+        }
+      ]
     },
     {
       "id": "fig-uses",
@@ -130,6 +161,10 @@
         {
           "model": "claude-opus-5-5",
           "part": "caption cut"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt: cutaway chamber, smoke slider, electrons in the wire"
         }
       ]
     }

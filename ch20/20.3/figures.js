@@ -18,10 +18,10 @@ const { PAL, alpha, register, begin, line, text, headline } = F;
 (function () {
   const d = F.sim(root, 'sim-carbonyl');
   const T3 = window.THREE;
-  const DIST = 12.4, FOV = 16, RAD = Math.PI / 180;
-  const v = F.view3d(d.stage, { spin: 'off', h: 560, dist: DIST, tilt: 0.42, pitch: [-1.3, 1.3], onRender: () => place() });
+  const DIST = 10.6, FOV = 16, RAD = Math.PI / 180;
+  const v = F.view3d(d.stage, { spin: 'off', h: 560, dist: DIST, tilt: 0.47, pitch: [-1.3, 1.3], onRender: () => place() });
   if (v.camera && 'fov' in v.camera) { v.camera.fov = FOV; v.camera.updateProjectionMatrix(); }   /* a long lens: the near R group is not drawn larger than the far one */
-  v.setView(-1.12, 0.42);
+  v.setView(-1.7, 0.47);
   const g = v.part(0); if (g && g.position) g.position.set(0, -0.12, 0.2);
   const key = F.makeCanvas(d.stage, 64);
   const step = F.choice(d.controls, { label: '\\text{the C=O bond}', key: 'bond', aria: 'how far the double bond is built: σ bonds, p orbitals, π bond', value: 'pi',
@@ -104,10 +104,11 @@ const { PAL, alpha, register, begin, line, text, headline } = F;
   const outs = [
     { el: v.label('R¹', [0, 0, 0], g, 0, 'bare'), p: AT.L, r: 0.3 },
     { el: v.label('R²', [0, 0, 0], g, 0, 'bare'), p: AT.R, r: 0.3 },
-    { el: v.label('δ−', [0, 0, 0], g, 0, 'bare'), p: add(AT.O, [0.2, 0, -0.15]), r: 0.34 },
-    { el: v.label('δ+', [0, 0, 0], g, 0, 'bare'), p: [-0.12, 0, 0.6], r: 0.04 },
-    { el: v.label('~120°', [0, 0, 0], g, 0, 'bare'), p: [1.2 * Math.cos(-30 * RAD), 0, 1.2 * Math.sin(-30 * RAD)], r: 0.04 },
+    { el: v.label('δ−', [0, 0, 0], g), p: add(AT.O, [0.2, 0, -0.15]), r: 0.34 },
+    { el: v.label('δ+', [0, 0, 0], g), p: [-0.12, 0, 0.6], r: 0.04 },
+    { el: v.label('~120°', [0, 0, 0], g), p: [1.2 * Math.cos(-30 * RAD), 0, 1.2 * Math.sin(-30 * RAD)], r: 0.04 },
   ];
+  outs.forEach((l) => { l.el.style.transform = 'translate(-50%, -50%)'; });
   function place() {
     if (!v.wrap || !v.wrap.clientHeight) return;
     const w = v.wrap.clientWidth, h = v.wrap.clientHeight, u = h / (2 * Math.tan((FOV / 2) * RAD) * DIST / (v.at.zoom || 1));
@@ -137,124 +138,111 @@ const { PAL, alpha, register, begin, line, text, headline } = F;
   register(d.fig, { update: () => {}, draw });
 })();
 
-const lerp = (a, b, k) => a + (b - a) * k;
 /* =====================================================================
-   SIM (Example 20.10): CH4 -> CH3OH -> CH2O -> HCO2H -> CO2, each step
-   one C-H bond traded for a C-O bond. The molecule is drawn flat with
-   its atoms in their element colours; beneath it, carbon's oxidation
-   number on a fixed scale from -4 to +4. Still: a series of states;
-   the choice morphs, atoms that stay gliding to their new places, a
-   leaving hydrogen fading where the oxygen arrives.
+   SIM (Example 20.10): CH4, CH3OH, CH2O, HCO2H and CO2 side by side,
+   each with its carbon standing over its oxidation number on one scale
+   from −4 to +4. Every bond is drawn with its two electrons beside the
+   atom that holds them more tightly (carbon in C–H, oxygen in C–O and
+   O–H), and a dashed ring gathers the ones counted as carbon's: 8, 6,
+   4, 2, 0. So each C–H bond replaced by a C–O bond is seen to cost
+   carbon two electrons, which is the book's "this carbon atom has lost
+   two electrons so it was oxidized". The choice picks the molecule the
+   headline and the readout work out. Flat: a ladder of structures on a
+   scale. Still: five states of one comparison, nothing with a clock.
 ===================================================================== */
 (function () {
-  const d = F.sim(root, 'sim-carbon-oxidation', 480);
+  const d = F.sim(root, 'sim-carbon-oxidation', 566);
   const ORDER = ['CH4', 'CH3OH', 'CH2O', 'HCO2H', 'CO2'];
-  const c30 = Math.cos(Math.PI / 6), s30 = 0.5;
-  /* atoms by key in bond lengths about carbon, y down; bonds by key pair and order */
+  const c30 = Math.cos(Math.PI / 6), s30 = 0.5, CO = 1.05;
+  /* atoms by key in bond lengths about carbon, y down; bonds as [a, b, order]; nH and nO count the atoms of the formula */
   const MOL = {
-    CH4: { label: 'CH₄', tex: '\\text{CH}_{4}', name: 'methane', ox: -4, nH: 4, nO: 0,
+    CH4: { label: 'CH₄', name: 'methane', ox: -4, nH: 4, nO: 0,
       atoms: { C: [0, 0], Ha: [0, -1], Hb: [-1, 0], Hc: [0, 1], Hd: [1, 0] },
-      bonds: [['C', 'Ha', 1], ['C', 'Hb', 1], ['C', 'Hc', 1], ['C', 'Hd', 1]] },
-    CH3OH: { label: 'CH₃OH', tex: '\\text{CH}_{3}\\text{OH}', name: 'methanol', ox: -2, nH: 4, nO: 1,
-      atoms: { C: [0, 0], Ha: [0, -1], Hb: [-1, 0], Hc: [0, 1], O1: [1, 0], Ho1: [1.8, 0] },
-      bonds: [['C', 'Ha', 1], ['C', 'Hb', 1], ['C', 'Hc', 1], ['C', 'O1', 1], ['O1', 'Ho1', 1]] },
-    CH2O: { label: 'CH₂O', tex: '\\text{CH}_{2}\\text{O}', name: 'formaldehyde', ox: 0, nH: 2, nO: 1,
-      atoms: { C: [0, 0], O1: [0, -1.05], Hb: [-c30, s30], Hc: [c30, s30] },
-      bonds: [['C', 'O1', 2], ['C', 'Hb', 1], ['C', 'Hc', 1]] },
-    HCO2H: { label: 'HCO₂H', tex: '\\text{HCO}_{2}\\text{H}', name: 'formic acid', ox: 2, nH: 2, nO: 2,
-      atoms: { C: [0, 0], O1: [0, -1.05], Hb: [-c30, s30], O2: [c30, s30], Ho2: [c30 + 0.8, s30] },
-      bonds: [['C', 'O1', 2], ['C', 'Hb', 1], ['C', 'O2', 1], ['O2', 'Ho2', 1]] },
-    CO2: { label: 'CO₂', tex: '\\text{CO}_{2}', name: 'carbon dioxide', ox: 4, nH: 0, nO: 2,
+      bonds: [['C', 'Ha', 1], ['C', 'Hb', 1], ['C', 'Hc', 1], ['C', 'Hd', 1]],
+      head: 'In methane, carbon pulls all four C–H pairs its way and is counted 8 electrons.' },
+    CH3OH: { label: 'CH₃OH', name: 'methanol', ox: -2, nH: 4, nO: 1,
+      atoms: { C: [0, 0], Ha: [0, -1], Hb: [-1, 0], Hc: [0, 1], O1: [CO, 0], Ho1: [CO + 0.52, 0.64] },
+      bonds: [['C', 'Ha', 1], ['C', 'Hb', 1], ['C', 'Hc', 1], ['C', 'O1', 1], ['O1', 'Ho1', 1]],
+      head: 'In methanol one pair sits with oxygen, so carbon is counted 6 electrons, 2 fewer than in methane.' },
+    CH2O: { label: 'CH₂O', name: 'formaldehyde', ox: 0, nH: 2, nO: 1,
+      atoms: { C: [0, 0], O1: [0, -CO], Hb: [-c30, s30], Hc: [c30, s30] },
+      bonds: [['C', 'O1', 2], ['C', 'Hb', 1], ['C', 'Hc', 1]],
+      head: 'In formaldehyde two pairs sit with oxygen, and carbon is counted 4 electrons, its own number.' },
+    HCO2H: { label: 'HCO₂H', name: 'formic acid', ox: 2, nH: 2, nO: 2,
+      atoms: { C: [0, 0], O1: [0, -CO], Hb: [-c30, s30], O2: [c30 * CO, s30 * CO], Ho2: [c30 * CO + 0.12, s30 * CO + 0.82] },
+      bonds: [['C', 'O1', 2], ['C', 'Hb', 1], ['C', 'O2', 1], ['O2', 'Ho2', 1]],
+      head: 'In formic acid three pairs sit with oxygen, and carbon is counted 2 electrons.' },
+    CO2: { label: 'CO₂', name: 'carbon dioxide', ox: 4, nH: 0, nO: 2,
       atoms: { C: [0, 0], O1: [-1.1, 0], O2: [1.1, 0] },
-      bonds: [['C', 'O1', 2], ['C', 'O2', 2]] },
+      bonds: [['C', 'O1', 2], ['C', 'O2', 2]],
+      head: 'In carbon dioxide all four pairs sit with oxygen, and carbon is counted no electrons.' },
   };
-  const COUNT = ['no', 'one', 'two', 'three', 'four'];
-  const tally = (m) => {
-    const ch = MOL[m].bonds.filter(([a, b]) => a === 'C' && b[0] === 'H').length;
-    const co = MOL[m].bonds.filter(([a, b]) => a === 'C' && b[0] === 'O').reduce((s, b) => s + b[2], 0);
-    return [ch, co];
-  };
-  const HEAD = Object.fromEntries(ORDER.map((m) => {
-    const [ch, co] = tally(m), t = MOL[m];
-    const bonds = (n, w) => `${COUNT[n]} ${w}${n === 1 ? '' : 's'}`;
-    return [m, `In ${t.name}, $${t.tex}$, carbon has ${bonds(ch, 'C–H bond')} and ${bonds(co, 'bond')} to oxygen.`];
-  }));
-  const mol = F.choice(d.controls, { label: '\\text{molecule}', key: 'molecule', aria: 'the molecule on the oxidation ladder',
-    options: ORDER.map((v) => ({ value: v, label: MOL[v].label })), value: 'CH4', onInput: () => draw() });
+  /* the electrons counted as carbon's: two for each C–H bond */
+  ORDER.forEach((m) => { MOL[m].e = 2 * MOL[m].bonds.filter(([a, b]) => a === 'C' && b[0] === 'H').length; });
+  const mol = F.choice(d.controls, { label: '\\text{molecule}', key: 'molecule', aria: 'the molecule worked out',
+    options: ORDER.map((m) => ({ value: m, label: MOL[m].label })), value: 'CH4' });
   const ro = F.readout(d);
   let hits = []; F.hover(d.stage, () => hits);
 
-  const MX = 640, MY = 200, BL = 112, RAD = { C: 22, O: 21, H: 14 };
+  const XA = 180, XB = 1220, X = (n) => XA + ((n + 4) / 8) * (XB - XA);
+  const MY = 262, BL = 86, RAD = { C: 19, O: 19, H: 12 }, RING = 45, SY = 478;
   const NAME = { C: 'carbon atom', O: 'oxygen atom', H: 'hydrogen atom' };
-  const P = (p) => [MX + p[0] * BL, MY + p[1] * BL];
-  function disc(ctx, x, y, s, a) {
-    if (a <= 0.01) return;
-    ctx.save(); ctx.globalAlpha *= a; ctx.beginPath(); ctx.arc(x, y, RAD[s], 0, 2 * Math.PI); ctx.fillStyle = F.el(s); ctx.fill();
+  /* which end of a bond holds its electrons: oxygen over carbon over hydrogen */
+  const RANK = { O: 3, C: 2, H: 1 };
+  function disc(ctx, x, y, s) {
+    ctx.save(); ctx.beginPath(); ctx.arc(x, y, RAD[s], 0, 2 * Math.PI); ctx.fillStyle = F.el(s); ctx.fill();
     ctx.lineWidth = s === 'H' ? 2 : 1.2; ctx.strokeStyle = s === 'H' ? PAL.ink : alpha(PAL.ink, 0.4); ctx.stroke(); ctx.restore();
   }
-  function stick(ctx, p, q, sa, sb, order2, a) {
-    if (a <= 0.01) return;
-    const dx = q[0] - p[0], dy = q[1] - p[1], L = Math.hypot(dx, dy) || 1, ux = dx / L, uy = dy / L;
-    const x1 = p[0] + ux * (RAD[sa] - 4), y1 = p[1] + uy * (RAD[sa] - 4), x2 = q[0] - ux * (RAD[sb] - 4), y2 = q[1] - uy * (RAD[sb] - 4);
-    const o = 5 * order2;
-    ctx.save(); ctx.globalAlpha *= a;
-    line(ctx, x1 + uy * o, y1 - ux * o, x2 + uy * o, y2 - ux * o, PAL.ink, 3.5);
-    if (order2 > 0.01) { ctx.save(); ctx.globalAlpha *= order2; line(ctx, x1 - uy * o, y1 + ux * o, x2 - uy * o, y2 + ux * o, PAL.ink, 3.5); ctx.restore(); }
-    ctx.restore();
+  function molecule(ctx, m) {
+    const t = MOL[m], cx = X(t.ox), P = (k) => [cx + t.atoms[k][0] * BL, MY + t.atoms[k][1] * BL];
+    t.bonds.forEach(([a, b, order]) => {
+      const p = P(a), q = P(b), L = Math.hypot(q[0] - p[0], q[1] - p[1]), ux = (q[0] - p[0]) / L, uy = (q[1] - p[1]) / L;
+      /* w is the atom that holds the pair, and the dots step from its rim toward the other atom */
+      const wa = RANK[a[0]] > RANK[b[0]], w = wa ? p : q, sg = wa ? 1 : -1, rw = RAD[(wa ? a : b)[0]];
+      (order === 2 ? [-6.5, 6.5] : [0]).forEach((o) => {
+        line(ctx, p[0] - uy * o, p[1] + ux * o, q[0] - uy * o, q[1] + ux * o, PAL.muted, 3);
+        [rw + 7.5, rw + 19].forEach((r) => F.dot(ctx, w[0] + sg * ux * r - uy * o, w[1] + sg * uy * r + ux * o, PAL.ink, true, 4.6));
+      });
+    });
+    Object.keys(t.atoms).forEach((k) => { const p = P(k), s = k[0]; disc(ctx, p[0], p[1], s); hits.push({ x: p[0], y: p[1], r: RAD[s] + 3, name: NAME[s] }); });
+    ctx.save(); ctx.setLineDash([7, 6]); ctx.lineWidth = 2; ctx.strokeStyle = PAL.ink; ctx.beginPath(); ctx.arc(cx, MY, RING, 0, 2 * Math.PI); ctx.stroke(); ctx.restore();
+    text(ctx, `${t.e} e⁻ counted to C`, cx, 404, PAL.ink, { size: 21, align: 'center' });
   }
-
-  /* the oxidation-number scale, fixed from -4 to +4 */
-  const SY = 400, XA = 300, XB = 1100, X = (n) => XA + ((n + 4) / 8) * (XB - XA);
+  const num = (n) => (n > 0 ? `+${n}` : n < 0 ? `−${-n}` : '0');
   function drawScale(ctx) {
     line(ctx, XA, SY, XB, SY, PAL.muted, 3);
     for (let n = -4; n <= 4; n++) {
       line(ctx, X(n), SY, X(n), SY + 9, PAL.muted, 2);
-      text(ctx, n > 0 ? `+${n}` : n < 0 ? `−${-n}` : '0', X(n), SY + 30, PAL.muted, { size: 17, align: 'center' });
+      text(ctx, num(n), X(n), SY + 28, PAL.muted, { size: 18, align: 'center' });
+      /* between two molecules of the ladder: what the step costs carbon */
+      if (n % 2) text(ctx, '−2 e⁻', X(n), SY - 30, PAL.muted, { size: 18, align: 'center' });
     }
-    text(ctx, 'oxidation number of carbon', (XA + XB) / 2, SY + 60, PAL.ink, { size: 20, align: 'center' });
-    text(ctx, 'more reduced', XA - 20, SY + 2, PAL.muted, { size: 17, align: 'right' });
-    text(ctx, 'more oxidized', XB + 20, SY + 2, PAL.muted, { size: 17, align: 'left' });
+    text(ctx, 'oxidation number of carbon', (XA + XB) / 2, SY + 62, PAL.ink, { size: 20, align: 'center' });
+    text(ctx, 'more reduced', XA - 28, SY + 62, PAL.muted, { size: 18, align: 'center' });
+    text(ctx, 'more oxidized', XB + 28, SY + 62, PAL.muted, { size: 18, align: 'center' });
     ORDER.forEach((m) => {
-      const on = mol.a(m) > 0.5 && m === mol.value;
       F.dot(ctx, X(MOL[m].ox), SY, PAL.ink, false, 9);
-      text(ctx, MOL[m].label, X(MOL[m].ox), SY - 34, PAL.ink, { size: 22, align: 'center', weight: on ? 600 : 400 });
+      text(ctx, MOL[m].label, X(MOL[m].ox), SY - 30, PAL.ink, { size: 22, align: 'center', weight: m === mol.value ? 600 : 400 });
     });
     F.dot(ctx, X(mol.mix((m) => MOL[m].ox)), SY, PAL.ink, true, 11);
   }
-  function legend(ctx) {
-    [['C', 'carbon'], ['H', 'hydrogen'], ['O', 'oxygen']].forEach(([s, n], i) => {
-      const y = 130 + i * 44; disc(ctx, 1120, y, s, 1); text(ctx, n, 1150, y + 1, PAL.ink, { size: 20, align: 'left' });
-    });
-  }
-
   function draw() {
     const { ctx } = begin(d.c); hits = [];
-    const A = MOL[mol.from] ?? MOL[mol.value], Z = MOL[mol.value], k = mol.from === mol.value ? 1 : mol.k;
-    headline(ctx, HEAD[mol.value]);
-    const keys = [...new Set([...Object.keys(A.atoms), ...Object.keys(Z.atoms)])];
-    const pos = {}, op = {};
-    keys.forEach((key) => {
-      const a = A.atoms[key], z = Z.atoms[key];
-      pos[key] = P(a && z ? [lerp(a[0], z[0], k), lerp(a[1], z[1], k)] : (a ?? z));
-      op[key] = a && z ? 1 : a ? mol.a(mol.from) : mol.a(mol.value);
-    });
-    const bkey = ([a, b]) => `${a}-${b}`;
-    const BA = Object.fromEntries(A.bonds.map((b) => [bkey(b), b[2]])), BZ = Object.fromEntries(Z.bonds.map((b) => [bkey(b), b[2]]));
-    [...new Set([...Object.keys(BA), ...Object.keys(BZ)])].forEach((bk) => {
-      const [a, b] = bk.split('-'), oa = BA[bk], oz = BZ[bk];
-      const al = oa && oz ? 1 : oa ? mol.a(mol.from) : mol.a(mol.value);
-      const second = oa && oz ? lerp(oa === 2 ? 1 : 0, oz === 2 ? 1 : 0, k) : (oa ?? oz) === 2 ? 1 : 0;
-      stick(ctx, pos[a], pos[b], a[0], b[0], second, Math.min(al, op[a], op[b]));
-    });
-    keys.forEach((key) => {
-      const s = key[0]; disc(ctx, ...pos[key], s, op[key]);
-      if (op[key] > 0.5) hits.push({ x: pos[key][0], y: pos[key][1], r: RAD[s] + 4, name: NAME[s] });
-    });
-    legend(ctx);
+    const t = MOL[mol.value];
+    const rows = headline(ctx, t.head);
+    /* the chosen molecule's column */
+    const hx = X(mol.mix((m) => MOL[m].ox));
+    ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.07); ctx.beginPath(); ctx.roundRect(hx - 126, 124, 252, 304, 14); ctx.fill(); ctx.restore();
+    ORDER.forEach((m) => molecule(ctx, m));
     drawScale(ctx);
-    const t = Z, ox = t.ox, sgn = (n) => (n > 0 ? `+${n}` : n < 0 ? `-${-n}` : '0');
+    const ball = (s, n) => ({ s: n, draw: (c, x, y) => disc(c, x, y, s) });
+    F.legend(ctx, { l: 40, r: 1360, t: 62 + (rows > 1 ? 26 : 0), b: 112 + (rows > 1 ? 26 : 0) }, [ball('C', 'carbon'), ball('H', 'hydrogen'), ball('O', 'oxygen'),
+      { s: 'a bond’s two electrons, beside the atom that holds them', draw: (c, x, y) => { F.dot(c, x - 6.5, y, PAL.ink, true, 4.6); F.dot(c, x + 6.5, y, PAL.ink, true, 4.6); } },
+      { s: 'counted to carbon', draw: (c, x, y) => { c.save(); c.setLineDash([5, 4]); c.lineWidth = 2; c.strokeStyle = PAL.ink; c.beginPath(); c.arc(x, y, 10, 0, 2 * Math.PI); c.stroke(); c.restore(); } }],
+      { corner: 'top', row: true, panel: false, size: 19 });
     const terms = [t.nH ? `\\mk{h}{${t.nH}(+1)}` : '', t.nO ? `\\mk{o}{${t.nO}(-2)}` : ''].filter(Boolean).join(' + ');
-    ro.set(`\\mk{x}{x_{\\text{C}}} = 0 - (${terms}) = \\mk{r}{${sgn(ox)}}`, undefined, { form: `${!!t.nH}${!!t.nO}` });
+    const sg = (n) => (n > 0 ? `+${n}` : `${n}`);
+    ro.set(`\\mk{x}{x_{\\text{C}}} = 0 - [${terms}] = \\mk{r}{${sg(t.ox)}} \\\\ \\mk{y}{x_{\\text{C}}} = \\mk{v}{4\\text{ valence }e^{-}} - \\mk{c}{${t.e}\\ e^{-}\\text{ counted to C}} = \\mk{z}{${sg(t.ox)}}`, undefined, { form: `${!!t.nH}${!!t.nO}` });
   }
   register(d.fig, { update: () => {}, draw });
 })();

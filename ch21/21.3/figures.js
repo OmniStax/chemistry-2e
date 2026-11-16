@@ -1,16 +1,18 @@
 /* Figures for section 21.3 Radioactive Decay.
-   The page binds time, rate-constant, rate, mass and charge. Z, A, N, n:p, counts
+   The page binds time, rate-constant, rate and charge. Z, A, N, n:p, counts
    and percents stay ink. Protons, neutrons, electrons, positrons and photons wear
-   the particle convention of F.el, atoms their element; a nuclide on the chart and
-   a nucleus of a sample are told by fill, solid while unstable or undecayed as the
-   figure says, never by hue (ch21/COLOR.md). */
+   the particle convention of F.el, atoms their element; a nuclide on a chart and
+   a nucleus of a sample are told by fill, hollow while radioactive or once decayed
+   as the figure's key says, never by hue (ch21/COLOR.md). */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['21.3'] = function (root, F) {
-const { fmt, C, PAL, alpha, ctl, choice, select, register, cycle, begin, line, arrow, dot, text, topline, axes, curve, hover, readout, labeller, label } = F;
+const { fmt, tex, C, PAL, alpha, ctl, choice, register, cycle, begin, line, arrow, dot, text, topline, axes, hover } = F;
 const sim = (id, H) => F.sim(root, id, H);
+const still = (d, draw) => register(d.fig, { update: () => {}, draw });
 const TAU = 2 * Math.PI;
 const hash = (i, s) => { const x = Math.sin(i * 127.1 + s * 311.7) * 43758.5453; return x - Math.floor(x); };
 function rng(seed) { let s = seed >>> 0; return () => { s = (s * 1664525 + 1013904223) >>> 0; return (s + 0.5) / 4294967296; }; }
+const clamp = (x) => Math.max(0, Math.min(1, x));
 const sig = (x, n) => Number(x.toPrecision(n));
 const decOf = (x, n) => Math.max(0, n - 1 - Math.floor(Math.log10(Math.abs(x))));
 const fsig = (x, n) => (x === 0 ? '0' : fmt(sig(x, n), decOf(sig(x, n), n)));
@@ -18,30 +20,30 @@ const grp = (x, sep) => { const s = String(Math.round(Math.abs(x))).replace(/\B(
 const SUP = { 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴', 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹' };
 const sup = (n) => String(n).split('').map((ch) => SUP[ch]).join('');
 /* a nuclide in the book's notation, mass number over atomic number */
-const nucTex = (A, Z, s) => '{}_{' + Z + '}^{' + A + '}\\text{' + s + '}';
-const hue = (s) => '\\htmlClass{kv-charge}{' + s + '}';
+const nucTex = (A, Z, s) => '{}_{' + (String(Z).length < String(A).length ? '\\;'.repeat(String(A).length - String(Z).length) : '') + Z + '}^{' + A + '}\\text{' + s + '}';
+const kv = (type, s) => '\\htmlClass{kv-' + type + '}{' + s + '}';
 function disc(ctx, x, y, r, fill, rim = alpha(PAL.ink, 0.45), w = 1.5) {
   ctx.save(); ctx.fillStyle = fill; ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill();
   if (rim) { ctx.strokeStyle = rim; ctx.lineWidth = w; ctx.stroke(); }
   ctx.restore();
 }
-const nucleon = (ctx, x, y, isP, r = 13) => disc(ctx, x, y, r, F.el(isP ? 'p+' : 'n0'), alpha(PAL.ink, 0.4));
+const nucleon = (ctx, x, y, isP, r = 13) => disc(ctx, x, y, r, F.el(isP ? 'p+' : 'n0'), alpha(PAL.ink, 0.5));
 /* an α particle: two protons and two neutrons */
 function alphaParticle(ctx, x, y, r = 11) {
-  const o = r * 0.88;
+  const o = r * 0.86;
   [[-1, -1, true], [1, -1, false], [-1, 1, false], [1, 1, true]].forEach(([i, j, p]) => nucleon(ctx, x + i * o, y + j * o, p, r));
 }
 /* a photon: a wave packet of length len ending in its head at (hx, hy), moving along u */
-function photon(ctx, hx, hy, u, len = 60, amp = 6, wl = 16) {
+function photon(ctx, hx, hy, u, len = 60, amp = 6, wl = 16, w = 3) {
   const col = F.el('gamma'), nx = -u[1], ny = u[0];
-  ctx.save(); ctx.strokeStyle = col; ctx.lineWidth = 3; ctx.lineCap = 'round'; ctx.beginPath();
+  ctx.save(); ctx.strokeStyle = col; ctx.lineWidth = w; ctx.lineCap = 'round'; ctx.beginPath();
   for (let k = 0; k <= 40; k++) {
-    const s = -len + (len - 12) * (k / 40), w = amp * Math.sin((s / wl) * TAU);
-    const x = hx + u[0] * s + nx * w, y = hy + u[1] * s + ny * w;
+    const s = -len + (len - 12) * (k / 40), q = amp * Math.sin((s / wl) * TAU);
+    const x = hx + u[0] * s + nx * q, y = hy + u[1] * s + ny * q;
     if (k) ctx.lineTo(x, y); else ctx.moveTo(x, y);
   }
   ctx.stroke(); ctx.restore();
-  arrow(ctx, hx - u[0] * 14, hy - u[1] * 14, hx, hy, col, 3);
+  arrow(ctx, hx - u[0] * 14, hy - u[1] * 14, hx, hy, col, w);
 }
 function ring(ctx, x, y, r, color, w = 2.5, dash) {
   ctx.save(); ctx.strokeStyle = color; ctx.lineWidth = w; if (dash) ctx.setLineDash(dash);
@@ -49,613 +51,506 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
 }
 
 /* =====================================================================
-   FIGURE 21.6 · sim-rays-field · moving · 2D on a locked view (rule 28.2)
-   The book's bench in its own perspective: the lead block with its bore,
-   the two plates, the photographic plate, in logical units of the scene.
-   A particle leaves the bore at x = −420 and runs at constant speed along x;
-   between the plates (x from −160 to 120) it falls along a parabola, then
-   flies straight to the plate at x = 560, so its height there is
-   k(L² + 2LD) with L = 280 and D = 440. β lands at 150 and α at −43, the
-   3.5 : 1 ratio of a 1-MeV β particle's deflection to a 4.7-MeV α
-   particle's in one field; γ goes straight. The plates' state is a choice;
-   a change bends every path over 0.9 s while the particles keep flying.
+   FIGURE 21.6 · sim-rays-field · moving · flat, the bench seen from the side
+   A lead block in section with its bore, the radioactive substance at the
+   bore's closed end; two plates edge on; the photographic plate edge on.
+   A particle runs along x at constant speed; between the plates (x from P1
+   to P2) it falls along a parabola, then flies straight to the plate at
+   FILM, so its height there is k(L² + 2LD). With + above, β lands 175 up
+   and α 50 down: the 3.5 : 1 ratio of the deflections a 1-MeV β particle
+   and a 4.7-MeV α particle take in one field; γ goes straight. α particles
+   are drawn slower than β particles, as they are. The plates' state is a
+   choice; the paths bend over 0.9 s when it changes. A spot on the plate
+   darkens with each particle that lands on it.
 ===================================================================== */
 (function () {
-  const H = 560, X0 = -540, XB = -420, XP1 = -160, XP2 = 120, XS = 560, L = XP2 - XP1, D = XS - XP2;
-  const AT = { a: -43, b: 150, g: 0 };                           /* landing heights with the positive plate above */
-  const SPEED = { a: 230, b: 520, g: 640 }, RATE = { a: 3.2, b: 4, g: 3.6 };
-  const V = F.view({ yaw: 0.2, pitch: 0.3, dist: 2600, cx: 690, cy: 318 }), SC = 0.84;
-  const P = (x, y, z = 0) => V.P([x * SC, y * SC, z * SC]);
-  const PL = (y, w) => P(XS - w * 0.64, y, w * 0.77);   /* a point of the photographic plate, turned 40° toward the viewer */
-  const d = sim('sim-rays-field', H);
-  const SIGN = { off: 0, up: 1, down: -1 };
-  const plates = choice(d.controls, {
-    label: '\\text{plates}', aria: 'how the plates are charged', value: 'up',
-    options: [{ value: 'off', label: 'uncharged' }, { value: 'up', label: '+ above' }, { value: 'down', label: '+ below' }],
-    onInput: () => { hits0.a = hits0.b = hits0.g = 0; },
-  });
-  const cy = cycle(() => Infinity, 0);
-  
-  let hits = [];
-  hover(d.stage, () => hits);
-  const flights = [], debt = { a: 0, b: 0, g: 0 }, hits0 = { a: 0, b: 0, g: 0 };
-  /* the height of beam k at x, for a sign s of the plates (blended while they change) */
-  function yAt(k, x, s) {
-    const kk = (AT[k] * s) / (L * L + 2 * L * D);
-    if (x <= XP1) return 0;
-    if (x <= XP2) return kk * (x - XP1) ** 2;
-    return kk * (L * L + 2 * L * (x - XP2));
-  }
+  const H = 560, d = sim('sim-rays-field', H);
+  const AX = 290, BL = { l: 50, r: 330, t: 160, b: 420 }, SRC = 128, BORE = 20;
+  const P1 = 520, P2 = 800, GAP = 112, PT = 16, FILM = 1250, FW = 26, FT = 60, FB = 520;
+  const Lp = P2 - P1, DEN = Lp * Lp + 2 * Lp * (FILM - P2);
+  const KIND = { a: { off: 50, v: 300, at: 0 }, b: { off: -175, v: 560, at: 0.23 }, g: { off: 0, v: 720, at: 0.47 } };
+  const NAME = { a: 'an α particle: two protons and two neutrons, charge 2+', b: 'a β particle: an electron, charge 1−', g: 'a γ ray: a photon, no charge' };
+  let spots = [], P = [], clock = 0;
+  const plates = choice(d.controls, { label: '\\text{plates}', aria: 'the charge on the plates', ms: 900, value: 'up',
+    options: [{ value: 'none', label: 'uncharged' }, { value: 'up', label: '+ above, − below' }, { value: 'down', label: '− above, + below' }],
+    onInput: () => { spots.forEach((s) => { s.live = false; }); } });
+  const sign = (v) => (v === 'up' ? 1 : v === 'down' ? -1 : 0);
+  const bend = (x) => (x <= P1 ? 0 : x <= P2 ? ((x - P1) * (x - P1)) / DEN : (Lp * Lp + 2 * Lp * (x - P2)) / DEN);
+  const slope = (x) => (x <= P1 ? 0 : x <= P2 ? (2 * (x - P1)) / DEN : (2 * Lp) / DEN);
   function step(dt) {
-    ['a', 'b', 'g'].forEach((k) => {
-      debt[k] += RATE[k] * dt;
-      while (debt[k] >= 1) { debt[k] -= 1; flights.push({ k, x: X0 - Math.random() * 40, z: (Math.random() - 0.5) * 14 }); }
+    clock += dt;
+    for (const k of ['a', 'b', 'g']) { const K = KIND[k]; while (clock >= K.at) { P.push({ k, x: SRC + 18 + (clock - K.at) * K.v }); K.at += 0.7; } }
+    for (const q of P) q.x += KIND[q.k].v * dt;
+    const s = sign(plates.value), settled = plates.k >= 1;
+    P = P.filter((q) => {
+      if (q.x < FILM) return true;
+      if (settled) { const y = AX + s * KIND[q.k].off; let sp = spots.find((z) => z.live && Math.abs(z.y - y) < 3); if (!sp) { sp = { y, n: 0, live: true, a: 1, kinds: {} }; spots.push(sp); } sp.n++; sp.kinds[q.k] = 1; }
+      return false;
     });
-    for (let i = flights.length - 1; i >= 0; i--) {
-      const f = flights[i]; f.x += SPEED[f.k] * dt;
-      if (f.x >= XS) { flights.splice(i, 1); hits0[f.k] = Math.min(40, hits0[f.k] + 1); }
-    }
+    spots.forEach((z) => { if (!z.live) z.a -= dt / 0.9; });
+    spots = spots.filter((z) => z.a > 0);
   }
-  /* a box from its two opposite corners, the faces the viewer sees, shaded */
-  function box(ctx, [x0, y0, z0], [x1, y1, z1], fill, edge = 1.5) {
-    const c = (x, y, z) => P(x, y, z);
-    const faces = [
-      [[x0, y0, z1], [x1, y0, z1], [x1, y1, z1], [x0, y1, z1], [0, 0, 1]],
-      [[x0, y1, z0], [x1, y1, z0], [x1, y1, z1], [x0, y1, z1], [0, 1, 0]],
-      [[x1, y0, z0], [x1, y1, z0], [x1, y1, z1], [x1, y0, z1], [1, 0, 0]],
-      [[x0, y0, z0], [x0, y1, z0], [x0, y1, z1], [x0, y0, z1], [-1, 0, 0]],
-    ];
-    const eye = [2600 * Math.sin(0.2) * Math.cos(0.3) / SC, 2600 * Math.sin(0.3) / SC, 2600 * Math.cos(0.2) * Math.cos(0.3) / SC];
-    faces.forEach((f) => {
-      const n = f[4], p = f[0], toEye = [eye[0] - p[0], eye[1] - p[1], eye[2] - p[2]];
-      if (n[0] * toEye[0] + n[1] * toEye[1] + n[2] * toEye[2] <= 0) return;
-      const pts = f.slice(0, 4).map((q) => c(...q));
-      ctx.save(); ctx.beginPath(); pts.forEach((q, i) => (i ? ctx.lineTo(q[0], q[1]) : ctx.moveTo(q[0], q[1]))); ctx.closePath();
-      ctx.fillStyle = fill; ctx.fill(); ctx.fillStyle = alpha(PAL.ink, V.shade(n)); ctx.fill();
-      ctx.strokeStyle = alpha(PAL.ink, 0.7); ctx.lineWidth = edge; ctx.lineJoin = 'round'; ctx.stroke(); ctx.restore();
-    });
-  }
+  for (let i = 0; i < 300; i++) step(0.02);          /* the beams are already flying, and the spots made, when the figure is first seen */
+  const cy = cycle(() => Infinity, 0);
+  let hits = []; hover(d.stage, () => hits);
   function draw() {
-    const { ctx } = begin(d.c);
-    const s = plates.mix((v) => SIGN[v]), st = plates.value, CQ = C('charge');
-    hits = [];
-    const head = {
-      up: 'β particles bend up toward the positive plate, α particles down toward the negative one, and γ rays go straight.',
-      down: 'β particles bend down toward the positive plate, α particles up toward the negative one, and γ rays go straight.',
-      off: 'Between uncharged plates all three kinds of radiation go straight to the same spot.',
-    }[st];
-    const lab = labeller(ctx, H, { headline: topline(ctx, head) });
-
-    /* the lead block, its bore dashed through it, and the radium at the bottom of the bore */
-    box(ctx, [-640, -95, -95], [-420, 95, 95], F.el('Pb'));
-    const b0 = P(X0, 0, 0), b1 = P(XB, 0, 0);
-    line(ctx, b0[0], b0[1], b1[0], b1[1], alpha(PAL.panel, 0.85), 3, [8, 7]);
-    disc(ctx, b0[0], b0[1], 10, F.el('Ra'), PAL.panel, 2);
-    hits.push({ x: b0[0], y: b0[1], r: 16, name: 'radium, the radioactive substance, at the bottom of a bore in the lead block' });
-    const bc = P(-530, 95, 0);
-    hits.push({ x: bc[0], y: bc[1] + 60, r: 70, name: 'lead block, which absorbs the radiation that does not leave through the bore' });
-    lab.add('lead block', bc[0], bc[1] - 10, 0, -1, PAL.ink, 22, 30);
-    const bb = P(-560, -95, 95);
-    lab.add('radioactive substance', b0[0], b0[1], -0.25, 1, PAL.ink, 22, bb[1] - b0[1] + 40);
-
-    /* the plates: the lower first, the beams between them, the upper over them */
-    const plate = (y) => box(ctx, [XP1, y - 5, -85], [XP2, y + 5, 85], PAL.soft, 1.5);
-    plate(-75);
-    const stemB = P(-20, -80, 0), stemT = P(-20, 80, 0);
-    line(ctx, stemB[0], stemB[1], stemB[0], stemB[1] + 60, PAL.ink, 4);
-
-    /* each beam's path, faint, as it is bent now */
-    ['a', 'b', 'g'].forEach((k) => {
-      ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.24); ctx.lineWidth = 2.5; ctx.beginPath();
-      for (let x = XB; x <= XS; x += 10) { const q = P(x, yAt(k, x, s)); if (x === XB) ctx.moveTo(q[0], q[1]); else ctx.lineTo(q[0], q[1]); }
-      ctx.stroke(); ctx.restore();
+    const { ctx } = begin(d.c); hits = [];
+    const s = plates.mix(sign), on = Math.abs(s), sg = s >= 0 ? 1 : -1, cc = C('charge'), ink = PAL.ink;
+    const yOf = (k, x) => AX + s * KIND[k].off * bend(x);
+    /* the three paths, faint */
+    ctx.save(); ctx.strokeStyle = alpha(ink, 0.22); ctx.lineWidth = 2;
+    ['b', 'g', 'a'].forEach((k) => { ctx.beginPath(); ctx.moveTo(SRC, AX); for (let x = P1; x <= FILM; x += 10) ctx.lineTo(x, yOf(k, x)); ctx.lineTo(FILM, yOf(k, FILM)); ctx.stroke(); });
+    ctx.restore();
+    /* the lead block in section, its bore open to the right, the radioactive substance at the closed end */
+    ctx.save(); ctx.fillStyle = F.el('Pb'); ctx.strokeStyle = ink; ctx.lineWidth = 3; ctx.lineJoin = 'round';
+    ctx.beginPath(); ctx.roundRect(BL.l, BL.t, BL.r - BL.l, BL.b - BL.t, 8); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = PAL.panel; ctx.fillRect(SRC - 26, AX - BORE, BL.r - SRC + 30, 2 * BORE);
+    ctx.beginPath(); ctx.moveTo(BL.r, AX - BORE); ctx.lineTo(SRC - 26, AX - BORE); ctx.lineTo(SRC - 26, AX + BORE); ctx.lineTo(BL.r, AX + BORE); ctx.lineWidth = 2.5; ctx.stroke();
+    ctx.restore();
+    disc(ctx, SRC, AX, 15, F.el('Ra'), ink, 2);
+    hits.push({ x: SRC, y: AX, r: 22, name: 'the radioactive substance, which gives off all three kinds of radiation' });
+    hits.push({ x: (BL.l + BL.r) / 2, y: BL.t + 50, r: 70, name: 'the lead block, which lets radiation out only through its bore' }, { x: (BL.l + BL.r) / 2, y: BL.b - 50, r: 70, name: 'the lead block, which lets radiation out only through its bore' });
+    F.label(ctx, 'lead block', (BL.l + BL.r) / 2, BL.t, { side: 'above', size: 22, gap: 22, leader: false });
+    F.label(ctx, 'radioactive substance', SRC, BL.b + 34, { side: 'below', size: 22, gap: 0, leader: false });
+    line(ctx, SRC, AX + 20, SRC, BL.b + 18, alpha(PAL.panel, 0.9), 2, [5, 6]);
+    /* the plates, edge on, each with its lead and its sign */
+    [[-1, AX - GAP - PT], [1, AX + GAP]].forEach(([side, top]) => {
+      ctx.save(); ctx.fillStyle = alpha(ink, 0.16); ctx.strokeStyle = ink; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.rect(P1, top, Lp, PT); ctx.fill(); ctx.stroke(); ctx.restore();
+      const y0 = side < 0 ? top : top + PT, y1 = y0 + side * 54, xm = (P1 + P2) / 2;
+      line(ctx, xm, y0, xm, y1, ink, 3);
+      ctx.save(); ctx.globalAlpha = on; text(ctx, side * sg < 0 ? '+' : '−', xm + 36, y0 + side * 32, cc, { size: 44, weight: 600, align: 'center' }); ctx.restore();
+      hits.push({ x: xm, y: top + PT / 2, r: 30, name: on < 0.5 ? 'a plate, uncharged' : 'the ' + (side * sg < 0 ? 'positive' : 'negative') + ' plate' });
     });
-    /* the particles in flight, behind the photographic plate's face only where they have not reached it */
-    const seen = { a: false, b: false, g: false };
-    flights.forEach((f) => {
-      if (f.x < XB) return;
-      const y = yAt(f.k, f.x, s), q = P(f.x, y, f.z);
-      if (f.k === 'a') alphaParticle(ctx, q[0], q[1], 5.5);
-      else if (f.k === 'b') disc(ctx, q[0], q[1], 6.5, F.el('e-'), alpha(PAL.ink, 0.5));
-      else { const q2 = P(f.x - 20, yAt('g', f.x - 20, s), f.z), L2 = Math.hypot(q[0] - q2[0], q[1] - q2[1]) || 1; photon(ctx, q[0], q[1], [(q[0] - q2[0]) / L2, (q[1] - q2[1]) / L2], 40, 4, 12); }
-      if (!seen[f.k] && f.x > XP2) {
-        seen[f.k] = true;
-        hits.push({ x: q[0], y: q[1], r: 14, name: { a: 'an α particle, a helium nucleus: charge 2+, mass 4 u', b: 'a β particle, an electron: charge 1−, mass 0.00055 u', g: 'a γ ray, a photon: no charge and no mass' }[f.k] });
-      }
+    text(ctx, plates.value === 'none' ? 'uncharged plates' : 'electrically charged plates', (P1 + P2) / 2, AX + GAP + PT + 82, ink, { size: 22, weight: 600, align: 'center' });
+    /* the photographic plate, edge on, darkened where the radiation lands */
+    ctx.save(); ctx.fillStyle = alpha(ink, 0.07); ctx.strokeStyle = ink; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.rect(FILM, FT, FW, FB - FT); ctx.fill(); ctx.stroke();
+    spots.forEach((z) => {
+      ctx.fillStyle = alpha(ink, 0.9 * z.a * Math.min(1, z.n / 6)); ctx.beginPath(); ctx.ellipse(FILM + FW / 2, z.y, FW / 2 - 3, 17, 0, 0, TAU); ctx.fill();
+      const ks = Object.keys(z.kinds).map((k) => ({ a: 'α particles', b: 'β particles', g: 'γ rays' })[k]);
+      hits.push({ x: FILM + FW / 2, y: z.y, r: 20, name: 'the plate darkened where ' + (ks.length > 1 ? 'all three kinds land' : ks[0] + ' land') });
     });
-    plate(75);
-    line(ctx, stemT[0], stemT[1] - 8, stemT[0], stemT[1] - 66, PAL.ink, 4);
-    if (st !== 'off') {
-      const top = st === 'up' ? '+' : '−', bot = st === 'up' ? '−' : '+';
-      text(ctx, top, stemT[0] + 26, stemT[1] - 52, CQ, { size: 30, weight: 600, align: 'left' });
-      text(ctx, bot, stemB[0] + 26, stemB[1] + 46, CQ, { size: 30, weight: 600, align: 'left' });
-    }
-    const pm = P((XP1 + XP2) / 2, -80, 85);
-    hits.push({ x: pm[0], y: pm[1], r: 60, name: st === 'off' ? 'two uncharged metal plates: no field between them' : 'two charged metal plates, the field between them pointing from + to −' });
-    hits.push({ x: P((XP1 + XP2) / 2, 80, 85)[0], y: P((XP1 + XP2) / 2, 80, 85)[1], r: 60, name: st === 'off' ? 'an uncharged metal plate' : 'the plate charged ' + (st === 'up' ? 'positive' : 'negative') });
-    const pl = P(XP1, -80, 85);
-    lab.add(st === 'off' ? 'uncharged plates' : 'charged plates', pl[0], pl[1], -0.8, 0.6, PAL.ink, 22, 24);
-
-    /* the photographic plate: a thin sheet the viewer sees from the source's side, darkened where each beam lands */
-    const sheet = [PL(-210, -130), PL(210, -130), PL(210, 130), PL(-210, 130)];
-    ctx.save(); ctx.beginPath(); sheet.forEach((q, i) => (i ? ctx.lineTo(q[0], q[1]) : ctx.moveTo(q[0], q[1]))); ctx.closePath();
-    ctx.fillStyle = alpha(PAL.soft, 0.8); ctx.fill(); ctx.strokeStyle = alpha(PAL.ink, 0.7); ctx.lineWidth = 2; ctx.stroke(); ctx.restore();
-    const back = [P(XS - 130 * 0.64 + 8, -210, 130 * 0.77 + 6), P(XS - 130 * 0.64 + 8, 210, 130 * 0.77 + 6)];
-    line(ctx, sheet[3][0], sheet[3][1], back[0][0], back[0][1], alpha(PAL.ink, 0.7), 2);
-    line(ctx, sheet[2][0], sheet[2][1], back[1][0], back[1][1], alpha(PAL.ink, 0.7), 2);
-    line(ctx, back[0][0], back[0][1], back[1][0], back[1][1], alpha(PAL.ink, 0.7), 2);
-    ['a', 'b', 'g'].forEach((k) => {
-      const q = P(XS, yAt(k, XS, s), 0), e = F.REDUCED ? 1 : Math.min(1, hits0[k] / 12);
-      ctx.save(); ctx.globalAlpha = 0.15 + 0.7 * e; ctx.fillStyle = PAL.ink; ctx.beginPath(); ctx.ellipse(q[0], q[1], 9, 13, 0, 0, TAU); ctx.fill(); ctx.restore();
-      hits.push({ x: q[0], y: q[1], r: 16, name: 'the spot the ' + { a: 'α particles', b: 'β particles', g: 'γ rays' }[k] + ' darken on the photographic plate' });
+    ctx.restore();
+    text(ctx, 'photographic plate', FILM + FW, FB + 24, ink, { size: 22, weight: 600, align: 'right' });
+    /* the particles */
+    P.forEach((q) => {
+      const y = yOf(q.k, q.x);
+      if (q.k === 'a') alphaParticle(ctx, q.x, y, 10);
+      else if (q.k === 'b') disc(ctx, q.x, y, 10, F.el('e-'), alpha(ink, 0.5));
+      else { const m = s * KIND.g.off * slope(q.x), n = Math.hypot(1, m); photon(ctx, q.x, y, [1 / n, m / n], 70, 9, 22, 4); }
+      hits.push({ x: q.x, y, r: 18, name: NAME[q.k] });
     });
-    const sb = PL(-200, 110);
-    lab.add('photographic plate', sb[0], sb[1], -0.7, 0.7, PAL.ink, 22, 20);
-
-    /* the three kinds named once, beside their beams just short of the plate */
-    const names = { a: 'α', b: 'β', g: 'γ' }, stack = { a: 30, b: -30, g: 0 };
-    const side = (k) => (k === 'g' ? -Math.sign(yAt('a', 440, s)) : Math.sign(yAt(k, 440, s)));
-    ['a', 'b', 'g'].forEach((k) => {
-      const q = P(440, yAt(k, 440, s), 0), flat = Math.abs(s) < 0.5;
-      const dy = flat ? -24 + stack[k] : -side(k) * 26;
-      text(ctx, names[k], q[0], q[1] + dy, PAL.ink, { size: 24, weight: 600, align: 'center', bg: PAL.panel });
-    });
-    lab.flush();
-
-    const dir = (k) => {
-      if (st === 'off' || k === 'g') return '\\text{straight}';
-      const towardPlus = k === 'b', upward = (st === 'up') === towardPlus;
-      return '\\text{' + (upward ? 'up' : 'down') + ', toward }' + hue(towardPlus ? '+' : '-');
-    };
-    F.tex(d.readout, '{}_{2}^{4}\\alpha\\;' + dir('a') + ' \\\\ {}_{-1}^{\\;0}\\beta\\;' + dir('b') + ' \\\\ {}_{0}^{0}\\gamma\\;' + dir('g'));
+    /* each beam named once, beside its end; one name where they run together */
+    const LX = FILM - 120, f = bend(LX);
+    ctx.save(); ctx.globalAlpha = on;
+    text(ctx, 'β particles', LX, AX + s * KIND.b.off * f - sg * 30, ink, { size: 24, weight: 600, align: 'center' });
+    text(ctx, 'α particles', LX, AX + s * KIND.a.off * f + sg * 42, ink, { size: 24, weight: 600, align: 'center' });
+    text(ctx, 'γ rays', LX - 150, AX - sg * 26, ink, { size: 24, weight: 600, align: 'center' });
+    ctx.globalAlpha = 1 - on;
+    text(ctx, 'α particles, β particles and γ rays', LX - 60, AX - 30, ink, { size: 24, weight: 600, align: 'center' });
+    ctx.restore();
+    const to = (k) => (KIND[k].off * sign(plates.value) > 0 ? 'lower' : 'upper');
+    tex(d.readout, plates.value === 'none' ? '\\text{No field acts between the plates, so all three go straight to one spot.}'
+      : '{}_{2}^{4}\\alpha\\text{ bends a little, toward the ' + to('a') + ' plate }(' + kv('charge', '-') + ')\\text{: positive and massive} \\\\ '
+        + '{}_{-1}^{\\;0}\\beta\\text{ bends far, toward the ' + to('b') + ' plate }(' + kv('charge', '+') + ')\\text{: negative and light} \\\\ '
+        + '{}_{0}^{0}\\gamma\\text{ goes straight: uncharged}', false, { values: false });
   }
-  register(d.fig, { update: (dt) => { cy.step(dt, () => 1); step(dt); }, draw, arrive: false });
+  register(d.fig, { update: (dt) => { cy.step(dt, () => 1); step(Math.min(dt, 0.05)); }, draw });
 })();
 
 /* =====================================================================
-   FIGURE 21.5 + 21.7 · sim-decay-modes · moving · flat (rule 28.1)
-   A parent at rest waits 0.8 s and decays; the products fly for 3.7 s (a
-   4.5 s loop holding 1.2 s). The nucleus is a packed disc of about
-   1.25 A^(2/3) nucleons, its visible face, so its radius grows as A^(1/3);
-   protons and neutrons in the proportion Z : N. The nucleon that changes is
-   ringed before the decay; the α particle's four are ringed together. In γ
-   emission a dashed ring marks the excited nucleus until the γ ray leaves.
-   In electron capture an inner-shell electron falls in over 0.65 s before
-   the decay, then an outer electron drops into the vacancy and an X-ray
-   leaves. Everything at time t follows from t alone.
+   FIGURE 21.5 + 21.7 · sim-decay-modes · moving · flat
+   One nucleus, the text's own example of each mode, decaying in place:
+   it waits 0.9 s, the marked nucleon or nucleons leave or change, and the
+   particle made flies off; 4.6 s, then a 1.4 s hold. The nucleus is its
+   face: discs on a sunflower spiral, protons and neutrons in the
+   proportion Z : N (oxygen-15 and potassium-40 show every nucleon). The
+   nuclides are drawn to fill the stage, not to one scale. Beside it, the
+   same decay as a move on a chart of neutrons against atomic number, the
+   axes of Figure 21.9: α two left and two down, β one right and one down,
+   positron emission and electron capture one left and one up, γ no move.
 ===================================================================== */
 (function () {
-  const H = 540, T = 4.5, T0 = 0.8, CX = 520, CY = 305, NS = 17, SP = 21, VA = 110, VL = 150, VG = 170;
-  const unit = (x, y) => { const l = Math.hypot(x, y); return [x / l, y / l]; };
+  const H = 610, d = sim('sim-decay-modes', H), T = 4.6, T0 = 0.9;
+  const CX = 330, CY = 300, END = [770, 190];
+  const G = { l: 1010, r: 1320, t: 160, b: 470 };
   const MODES = {
-    a: { label: 'alpha decay', P: [238, 92, 'U', 'uranium'], D: [234, 90, 'Th', 'thorium'] },
-    bm: { label: 'beta decay', P: [131, 53, 'I', 'iodine'], D: [131, 54, 'Xe', 'xenon'], u: unit(0.92, -0.4) },
-    g: { label: 'gamma emission', P: [60, 27, 'Co', 'cobalt'], D: [60, 27, 'Co', 'cobalt'], u: unit(0.9, -0.44) },
-    bp: { label: 'positron emission', P: [15, 8, 'O', 'oxygen'], D: [15, 7, 'N', 'nitrogen'], u: unit(0.92, -0.4) },
-    ec: { label: 'electron capture', P: [40, 19, 'K', 'potassium'], D: [40, 18, 'Ar', 'argon'] },
+    alpha: { P: [238, 92, 'U', 'uranium-238'], D: [234, 90, 'Th', 'thorium-234'], n: 106, rd: 14.5, after: ', still radioactive', change: 'A − 4,  Z − 2',
+      part: '{}_{2}^{4}\\text{He}', head: 'Uranium-238 emits an α particle, two protons and two neutrons, and becomes thorium-234.' },
+    beta: { P: [131, 53, 'I', 'iodine-131'], D: [131, 54, 'Xe', 'xenon-131'], n: 72, rd: 16, after: ', stable', change: 'A unchanged,  Z + 1',
+      part: '{}_{-1}^{\\;0}\\text{e}', head: 'A neutron of iodine-131 becomes a proton and a β particle, an electron, which leaves. The nucleus is now xenon-131.' },
+    gamma: { P: [60, 27, 'Co*', 'cobalt-60 in an excited state'], D: [60, 27, 'Co', 'cobalt-60 in its ground state'], n: 44, rd: 18.5, after: '', change: 'A and Z unchanged',
+      part: '{}_{0}^{0}\\gamma', head: 'Excited cobalt-60 emits a γ ray. No nucleon changes, so it is still cobalt-60.' },
+    positron: { P: [15, 8, 'O', 'oxygen-15'], D: [15, 7, 'N', 'nitrogen-15'], n: 15, rd: 27, after: ', stable', change: 'A unchanged,  Z − 1',
+      part: '{}_{+1}^{\\;0}\\text{e}', head: 'A proton of oxygen-15 becomes a neutron and a positron, which leaves. The nucleus is now nitrogen-15.' },
+    ec: { P: [40, 19, 'K', 'potassium-40'], D: [40, 18, 'Ar', 'argon-40'], n: 40, rd: 19, after: ', stable', change: 'A unchanged,  Z − 1',
+      part: '', head: 'Potassium-40 captures an inner electron, and a proton becomes a neutron: argon-40. An outer electron drops into the vacancy and an X-ray leaves.' },
   };
-  const d = sim('sim-decay-modes', H);
-  const mode = select(d.controls, {
-    label: '\\text{decay}', aria: 'the type of radioactive decay',
-    options: Object.keys(MODES).map((k) => ({ value: k, label: MODES[k].label })), value: 'a', onInput: () => cy.reset(),
+  /* each nucleus: disc places, which are protons, which are the ones the mode marks */
+  Object.entries(MODES).forEach(([id, m]) => {
+    const c = 0.93 * m.rd, pts = Array.from({ length: m.n }, (_, i) => { const r = c * Math.sqrt(i + 0.6), a = i * 2.39996 + 0.5; return [r * Math.cos(a), r * Math.sin(a)]; });
+    m.R = c * Math.sqrt(m.n) + m.rd * 0.6;
+    let act;
+    if (id === 'alpha') {                       /* the four on the right-hand rim, nearest the way out */
+      const far = pts.map((p, i) => [p[0], i]).sort((a, b) => b[0] - a[0])[0][1];
+      act = pts.map((p, i) => [Math.hypot(p[0] - pts[far][0], p[1] - pts[far][1]), i]).sort((a, b) => a[0] - b[0]).slice(0, 4).map((z) => z[1]);
+    } else act = id === 'gamma' ? [] : [0];
+    const np = Math.round((m.n * m.P[1]) / m.P[0]), isP = new Array(m.n).fill(false);
+    const actP = id === 'alpha' ? 2 : id === 'beta' || id === 'gamma' ? 0 : 1;
+    if (id === 'alpha') { isP[act[0]] = true; isP[act[3]] = true; } else if (actP) isP[0] = true;
+    pts.map((_, i) => i).filter((i) => !act.includes(i)).sort((a, b) => hash(a, 3) - hash(b, 3)).slice(0, np - actP).forEach((i) => { isP[i] = true; });
+    Object.assign(m, { pts, act, isP });
   });
-  const cy = cycle(() => T, 1.2);
-  
-  let hits = [];
-  hover(d.stage, () => hits);
-
-  /* a round packing: the k-th nucleon on a sunflower spiral, so any count fills a disc */
-  const LATTICE = Array.from({ length: 80 }, (_, k) => { const r = 16.2 * Math.sqrt(k + 0.5), a = k * 2.39996; return { x: r * Math.cos(a), y: r * Math.sin(a) }; });
-  function nucleus(A, Z, salt) {
-    const n = Math.round(1.25 * Math.pow(A, 2 / 3)), pts = LATTICE.slice(0, n).map((p) => ({ x: p.x, y: p.y }));
-    const order = pts.map((_, i) => i).sort((i, j) => hash(i, salt) - hash(j, salt));
-    const np = Math.round((n * Z) / A);
-    order.forEach((i, k) => { pts[i].p = k < np; });
-    const R = Math.max(...pts.map((p) => Math.hypot(p.x, p.y))) + NS;
-    return { pts, R };
-  }
-  const head = (ctx, x, y, u, gap) => arrow(ctx, x + u[0] * gap, y + u[1] * gap, x + u[0] * (gap + 30), y + u[1] * (gap + 30), alpha(PAL.ink, 0.55), 3);
-  const name = (n) => n[3] + '-' + n[0];
-  const NP = (n) => (n[0] - n[1]) + '/' + n[1] + ' = ' + fmt((n[0] - n[1]) / n[1], 2);
-
+  const mode = choice(d.controls, { label: '\\text{decay}', aria: 'the type of decay', value: 'alpha', ms: 500, onInput: () => cy.reset(),
+    options: [{ value: 'alpha', label: 'α' }, { value: 'beta', label: 'β' }, { value: 'gamma', label: 'γ' }, { value: 'positron', label: 'positron' }, { value: 'ec', label: 'electron capture' }] });
+  const cy = cycle(() => T, 1.4);
+  let hits = []; hover(d.stage, () => hits);
+  const electron = (ctx, x, y, pos) => disc(ctx, x, y, 9, F.el(pos ? 'e+' : 'e-'), alpha(PAL.ink, 0.5));
+  const mixc = (a, b, k) => F.mixColor(a, b, k);
   function draw() {
-    const { ctx } = begin(d.c);
-    const m = mode.value, M = MODES[m], t = cy.now(), dt = Math.max(0, t - T0), after = t >= T0;
-    const [Ap, Zp, sp] = M.P, [Ad, Zd, sd] = M.D;
-    hits = [];
-    topline(ctx, {
-      a: 'Uranium-238 emits an α particle, two protons and two neutrons, and becomes thorium-234.',
-      bm: 'A neutron in iodine-131 becomes a proton as the nucleus emits a β particle, and xenon-131 remains.',
-      g: 'Excited cobalt-60 emits a γ ray and settles into its ground state, still cobalt-60.',
-      bp: 'A proton in oxygen-15 becomes a neutron as the nucleus emits a positron, and nitrogen-15 remains.',
-      ec: 'Potassium-40 captures an inner electron, a proton becomes a neutron, and argon-40 remains; an outer electron fills the vacancy and an X-ray leaves.',
-    }[m]);
-    ctx.save(); ctx.beginPath(); ctx.rect(20, 92, 1360, H - 92); ctx.clip();
-    let R;
-    if (m === 'a') {
-      const Dn = nucleus(Ad, Zd, 3); R = Dn.R;
-      const nx = CX - ((VA * 4.0026) / 234.04) * dt;
-      Dn.pts.forEach((p) => nucleon(ctx, nx + p.x, CY + p.y, p.p, NS));
-      const ax = CX + Dn.R - 2 + VA * dt;
-      alphaParticle(ctx, ax, CY, NS);
-      if (!after) ring(ctx, ax, CY, NS * 2.3, PAL.ink, 2.5);
-      else head(ctx, ax, CY, [1, 0], 30);
-      hits.push({ x: ax, y: CY, r: 24, name: after ? 'the α particle, a helium-4 nucleus: two protons and two neutrons' : 'the two protons and two neutrons that will leave as an α particle' });
+    const { ctx } = begin(d.c); hits = [];
+    const id = mode.value, m = MODES[id], t = cy.now(), ink = PAL.ink, pc = F.el('p+'), nc = F.el('n0');
+    const ch = id === 'ec' ? clamp((t - 1.7) / 0.5) : clamp((t - T0) / 0.6);           /* the nucleon's change, 0 to 1 */
+    const fly = clamp((t - T0) / (T - T0));
+    topline(ctx, m.head);
+    /* electron shells, for electron capture only */
+    const R1 = m.R + 40, R2 = m.R + 76, A1 = -0.62, A2 = -0.5;
+    const shellPt = (R, a) => [CX + R * Math.cos(a), CY + R * Math.sin(a)];
+    if (id === 'ec') {
+      ring(ctx, CX, CY, R1, alpha(ink, 0.35), 2, [6, 8]); ring(ctx, CX, CY, R2, alpha(ink, 0.35), 2, [6, 8]);
+      const e1 = shellPt(R1, A1 + Math.PI); electron(ctx, e1[0], e1[1]);
+      [1.2, 2.5, 3.9].forEach((a) => { const p = shellPt(R2, a); electron(ctx, p[0], p[1]); });
+      hits.push({ x: CX - R1, y: CY, r: 16, name: 'the inner shell of electrons' }, { x: CX - R2, y: CY, r: 16, name: 'an outer shell of electrons' });
+    }
+    /* the nucleus, rim first so the middle lies on top */
+    const gone = id === 'alpha' && t >= T0;
+    for (let i = m.n - 1; i >= 0; i--) {
+      if (m.act.includes(i)) continue;
+      nucleon(ctx, CX + m.pts[i][0], CY + m.pts[i][1], m.isP[i], m.rd);
+    }
+    if (id === 'beta' || id === 'positron' || id === 'ec') {
+      const from = m.isP[0] ? pc : nc, to = m.isP[0] ? nc : pc;
+      disc(ctx, CX + m.pts[0][0], CY + m.pts[0][1], m.rd, mixc(from, to, ch), alpha(ink, 0.5));
+      ring(ctx, CX + m.pts[0][0], CY + m.pts[0][1], m.rd + 3, ink, 3, ch > 0.5 ? [6, 6] : undefined);
+    }
+    if (id === 'gamma') ring(ctx, CX, CY, m.R + 10, alpha(ink, 1 - ch), 3, [10, 8]);
+    hits.push({ x: CX, y: CY, r: m.R, name: (ch < 0.5 ? 'the parent nucleus, ' + m.P[3] : 'the daughter nucleus, ' + m.D[3]) });
+    /* what leaves */
+    if (id === 'alpha') {
+      const c0 = m.act.reduce((s, i) => [s[0] + m.pts[i][0] / 4, s[1] + m.pts[i][1] / 4], [0, 0]), o = m.rd * 0.86;
+      const form = [[-o, -o], [o, -o], [-o, o], [o, o]], k = clamp((t - T0) / 0.8);
+      const px = CX + c0[0] + (END[0] - CX - c0[0]) * fly, py = CY + c0[1] + (END[1] - CY - c0[1]) * fly;
+      if (gone) ring(ctx, CX + c0[0], CY + c0[1], m.rd * 2.1, alpha(ink, 0.7), 2.5, [6, 6]);
+      m.act.forEach((i, j) => {
+        const x = px + (m.pts[i][0] - c0[0]) * (1 - k) + form[j][0] * k, y = py + (m.pts[i][1] - c0[1]) * (1 - k) + form[j][1] * k;
+        nucleon(ctx, x, y, m.isP[i], m.rd);
+      });
+      if (!gone) ring(ctx, CX + c0[0], CY + c0[1], m.rd * 2.1, ink, 3);
+      hits.push({ x: px, y: py, r: 34, name: 'the α particle: two protons and two neutrons' });
+    } else if (id === 'beta' || id === 'positron') {
+      if (t >= T0) {
+        const x = CX + m.pts[0][0] + (END[0] - CX) * fly, y = CY + m.pts[0][1] + (END[1] - CY) * fly;
+        electron(ctx, x, y, id === 'positron');
+        hits.push({ x, y, r: 20, name: id === 'beta' ? 'the β particle, an electron made in the nucleus' : 'the positron' });
+      }
+    } else if (id === 'gamma') {
+      if (t >= T0) {
+        const u = [END[0] - CX, END[1] - CY], n = Math.hypot(u[0], u[1]), s = m.R + 20 + (n - m.R - 20) * fly;
+        photon(ctx, CX + (u[0] / n) * s, CY + (u[1] / n) * s, [u[0] / n, u[1] / n], 64, 9, 20, 4);
+        hits.push({ x: CX + (u[0] / n) * s, y: CY + (u[1] / n) * s, r: 30, name: 'the γ ray' });
+      }
     } else {
-      const Pn = nucleus(Ap, Zp, m === 'g' ? 7 : m === 'bp' ? 2 : 5); R = Pn.R;
-      let flip = -1;
-      if (m === 'bm') flip = Pn.pts.findIndex((p, i) => !p.p && i > Pn.pts.length * 0.3);
-      if (m === 'bp' || m === 'ec') flip = Pn.pts.findIndex((p, i) => p.p && (i > Pn.pts.length * 0.3 || Pn.pts.length < 10));
-      Pn.pts.forEach((p, i) => nucleon(ctx, CX + p.x, CY + p.y, i === flip && after ? !p.p : p.p, NS));
-      if (flip >= 0) {
-        const f = Pn.pts[flip];
-        if (!after) ring(ctx, CX + f.x, CY + f.y, NS + 4, PAL.ink, 2.5);
-        else ring(ctx, CX + f.x, CY + f.y, NS + 4, PAL.ink, 2.5, [6, 6]);
-        hits.push({ x: CX + f.x, y: CY + f.y, r: 14, name: (after ? 'the nucleon that changed: now a ' : 'the nucleon that changes: a ') + ((m === 'bm') === after ? 'proton' : 'neutron') });
-      }
-      if (m === 'g' && !after) ring(ctx, CX, CY, R + 8, PAL.ink, 2.5, [8, 7]);
-      if (m === 'bm' || m === 'bp') {
-        const s = R + 12 + VL * dt, ex = CX + M.u[0] * s, ey = CY + M.u[1] * s;
-        if (after) {
-          disc(ctx, ex, ey, 8, F.el(m === 'bm' ? 'e-' : 'e+'), alpha(PAL.ink, 0.5));
-          head(ctx, ex, ey, M.u, 13);
-          hits.push({ x: ex, y: ey, r: 16, name: m === 'bm' ? 'the β particle, an electron made in the nucleus' : 'the positron, made in the nucleus' });
-        }
-      }
-      if (m === 'g' && after) {
-        const s = R + 14 + VG * dt, hx = CX + M.u[0] * s, hy = CY + M.u[1] * s;
-        photon(ctx, hx, hy, M.u, Math.min(64, 14 + VG * dt));
-        hits.push({ x: hx, y: hy, r: 18, name: 'the γ ray, a quantum of high-energy electromagnetic radiation' });
-      }
-      if (m === 'ec') {
-        const R1 = 135, R2 = 198;
-        ring(ctx, CX, CY, R1, alpha(PAL.ink, 0.35), 2, [6, 8]);
-        ring(ctx, CX, CY, R2, alpha(PAL.ink, 0.35), 2, [6, 8]);
-        hits.push({ x: CX - R1 * 0.71, y: CY + R1 * 0.71, r: 14, name: 'an inner electron shell' });
-        hits.push({ x: CX - R2 * 0.71, y: CY + R2 * 0.71, r: 14, name: 'an outer electron shell' });
-        const a1 = -2.3, k = Math.min(1, Math.max(0, (t - 0.15) / (T0 - 0.15))), rr = R1 - (R1 - R + 6) * F.ease.smooth(k);
-        disc(ctx, CX + R1, CY, 8, F.el('e-'), alpha(PAL.ink, 0.5));
-        if (!after) {
-          disc(ctx, CX + rr * Math.cos(a1), CY + rr * Math.sin(a1), 8, F.el('e-'), alpha(PAL.ink, 0.5));
-          hits.push({ x: CX + rr * Math.cos(a1), y: CY + rr * Math.sin(a1), r: 14, name: 'the inner electron the nucleus captures' });
-        }
-        /* an outer electron drops into the vacancy, then the X-ray leaves from there */
-        const a2 = -2.0, kd = F.ease.smooth(Math.min(1, Math.max(0, (dt - 0.2) / 0.7))), ro2 = R2 - (R2 - R1) * kd;
-        const ang = a2 + (a1 - a2) * kd, exx = CX + ro2 * Math.cos(ang), eyy = CY + ro2 * Math.sin(ang);
-        disc(ctx, exx, eyy, 8, F.el('e-'), alpha(PAL.ink, 0.5));
-        hits.push({ x: exx, y: eyy, r: 14, name: kd < 1 ? 'an outer electron, which drops into the vacancy' : 'the electron that filled the vacancy' });
-        if (dt > 0.9) {
-          const u = unit(-1, -0.22), s = 14 + VG * (dt - 0.9), hx = CX + R1 * Math.cos(a1) + u[0] * s, hy = CY + R1 * Math.sin(a1) + u[1] * s;
-          photon(ctx, hx, hy, u, Math.min(56, s), 5, 13);
-          hits.push({ x: hx, y: hy, r: 18, name: 'the X-ray emitted as the outer electron drops into the vacancy' });
-        }
+      /* the captured electron falls from the inner shell into the nucleus; an outer electron takes its place; an X-ray leaves */
+      const s0 = shellPt(R1, A1), k1 = clamp((t - T0) / 0.8), k2 = clamp((t - 1.9) / 0.8), k3 = clamp((t - 2.7) / (T - 2.7));
+      if (k1 < 1) { const x = s0[0] + (CX - s0[0]) * k1, y = s0[1] + (CY - s0[1]) * k1; electron(ctx, x, y); if (t < T0) ring(ctx, x, y, 13, ink, 2.5); hits.push({ x, y, r: 18, name: 'the inner electron the nucleus captures' }); }
+      else if (k2 < 1) ring(ctx, s0[0], s0[1], 10, alpha(ink, 0.6), 2, [4, 4]);
+      const o0 = shellPt(R2, A2), ox = o0[0] + (s0[0] - o0[0]) * k2, oy = o0[1] + (s0[1] - o0[1]) * k2;
+      electron(ctx, ox, oy); hits.push({ x: ox, y: oy, r: 18, name: k2 > 0 ? 'the outer electron that fills the vacancy' : 'an outer electron' });
+      if (t >= 2.7) {
+        const u = [0.86, -0.51], x = s0[0] + u[0] * (40 + 300 * k3), y = s0[1] + u[1] * (40 + 300 * k3);
+        photon(ctx, x, y, u, 60, 8, 18, 4); hits.push({ x, y, r: 30, name: 'the X-ray given off as the outer electron drops' });
       }
     }
+    /* the nucleus named, with its counts */
+    const who = ch < 0.5 ? m.P : m.D, N = who[0] - who[1], ly = Math.min(H - 76, CY + (id === 'ec' ? R2 : m.R) + 40), fade = Math.abs(2 * ch - 1);
+    ctx.save(); ctx.globalAlpha = fade;
+    text(ctx, (ch < 0.5 ? 'parent: ' + who[3] : 'daughter: ' + who[3] + m.after), CX, ly, ink, { size: 24, weight: 600, align: 'center' });
+    F.rich(ctx, [[String(who[1]), pc, 700], who[1] === 1 ? ' proton, ' : ' protons, ', [String(N), nc, 700], ' neutrons'], CX, ly + 30, { size: 22, align: 'center' });
     ctx.restore();
-
-    const isParent = !after;
-    const nm = isParent ? (m === 'g' ? 'excited cobalt-60' : 'parent ' + name(M.P)) : (m === 'g' ? 'cobalt-60, ground state' : 'daughter ' + name(M.D));
-    text(ctx, nm, CX, Math.min(H - 24, CY + R + 38), PAL.ink, { size: 22, weight: 600, align: 'center', bg: PAL.panel });
-    hits.push({ x: CX, y: CY, r: R, name: (isParent ? name(M.P) : name(M.D)) + ' nucleus: ' + (isParent ? Zp : Zd) + ' protons, ' + ((isParent ? Ap - Zp : Ad - Zd)) + ' neutrons' });
-
-    /* legend: the kinds this mode draws */
-    const rows = [['p+', 'proton'], ['n0', 'neutron']];
-    if (m === 'a') rows.push(['alpha', 'α particle']);
-    if (m === 'bm') rows.push(['e-', 'β particle (electron)']);
-    if (m === 'bp') rows.push(['e+', 'positron']);
-    if (m === 'g') rows.push(['gamma', 'γ ray']);
-    if (m === 'ec') rows.push(['e-', 'electron'], ['gamma', 'X-ray']);
-    F.legend(ctx, { l: 700, r: 1380, t: H - 70, b: H - 10 }, rows.map(([k, s]) => ({ s, draw: (c, x, y) => {
-      if (k === 'p+' || k === 'n0') nucleon(c, x, y, k === 'p+', 10);
-      else if (k === 'alpha') alphaParticle(c, x, y, 5.5);
-      else if (k === 'gamma') photon(c, x + 20, y, [1, 0], 40, 4, 10);
-      else disc(c, x, y, 8, F.el(k), alpha(PAL.ink, 0.5));
-    } })), { corner: 'br', row: true, panel: false, size: 19 });
-
-    const P0 = nucTex(Ap, Zp, sp + (m === 'g' ? '*' : '')), D0 = nucTex(Ad, Zd, sd);
-    const tex = {
-      a: '\\mk{p}{' + P0 + '}\\longrightarrow\\mk{x}{' + nucTex(4, 2, 'He') + '}+\\mk{d}{' + D0 + '}',
-      bm: '\\mk{p}{' + P0 + '}\\longrightarrow\\mk{x}{{}_{-1}^{\\;0}\\text{e}}+\\mk{d}{' + D0 + '}',
-      g: '\\mk{p}{' + P0 + '}\\longrightarrow\\mk{x}{{}_{0}^{0}\\gamma}+\\mk{d}{' + D0 + '}',
-      bp: '\\mk{p}{' + P0 + '}\\longrightarrow\\mk{x}{{}_{+1}^{\\;0}\\text{e}}+\\mk{d}{' + D0 + '}',
-      ec: '\\mk{p}{' + P0 + '}+\\mk{x}{{}_{-1}^{\\;0}\\text{e}}\\longrightarrow\\mk{d}{' + D0 + '}',
-    }[m];
-    const X = '{}_{\\text{Z}}^{\\text{A}}\\text{X}';
-    const gen = {
-      a: X + '\\longrightarrow{}_{2}^{4}\\text{He}+{}_{\\text{Z}-2}^{\\text{A}-4}\\text{Y}',
-      bm: X + '\\longrightarrow{}_{-1}^{\\;0}\\text{e}+{}_{\\text{Z}+1}^{\\;\\text{A}}\\text{Y}',
-      g: X + '\\longrightarrow{}_{0}^{0}\\gamma+{}_{\\text{Z}}^{\\text{A}}\\text{Y}',
-      bp: X + '\\longrightarrow{}_{+1}^{\\;0}\\text{e}+{}_{\\text{Z}-1}^{\\;\\text{A}}\\text{Y}',
-      ec: X + '+{}_{-1}^{\\;0}\\text{e}\\longrightarrow{}_{\\text{Z}-1}^{\\;\\text{A}}\\text{Y}',
-    }[m];
-    F.tex(d.readout, tex.replace(/\\mk\{\w+\}/g, '') + ' \\\\ ' + gen);
+    /* the key: only what this mode draws */
+    const key = [{ s: 'proton', draw: (c, x, y) => nucleon(c, x, y, true, 10) }, { s: 'neutron', draw: (c, x, y) => nucleon(c, x, y, false, 10) }];
+    if (id === 'alpha') key.push({ s: 'α particle', draw: (c, x, y) => alphaParticle(c, x, y, 6) });
+    if (id === 'beta') key.push({ s: 'β particle (electron)', draw: (c, x, y) => electron(c, x, y) });
+    if (id === 'positron') key.push({ s: 'positron', draw: (c, x, y) => electron(c, x, y, true) });
+    if (id === 'gamma') key.push({ s: 'γ ray', draw: (c, x, y) => photon(c, x + 20, y, [1, 0], 40, 5, 13, 2.5) });
+    if (id === 'ec') key.push({ s: 'electron', draw: (c, x, y) => electron(c, x, y) }, { s: 'X-ray', draw: (c, x, y) => photon(c, x + 20, y, [1, 0], 40, 5, 13, 2.5) });
+    F.legend(ctx, { l: 500, r: 940, t: H - 60, b: H - 14 }, key, { corner: 'bottom', row: true, panel: false, size: 19 });
+    /* the same decay on the chart of neutrons against atomic number */
+    const Zp = m.P[1], Np = m.P[0] - m.P[1], Zd = m.D[1], Nd = m.D[0] - m.D[1];
+    const ax = axes(ctx, G, [Zp - 3, Zp + 2], [Np - 3, Np + 2], { nx: 5, ny: 5, xl: 'atomic number (Z)', yl: 'number of neutrons (n)', fx: (v) => String(Math.round(v)), fy: (v) => String(Math.round(v)) });
+    text(ctx, m.change, (G.l + G.r) / 2, G.t - 62, ink, { size: 24, weight: 600, align: 'center' });
+    const x0 = ax.X(Zp), y0 = ax.Y(Np), x1 = ax.X(Zd), y1 = ax.Y(Nd), ka = F.ease.smooth(clamp((t - T0) / 0.9));
+    const nuc = (w) => sup(w[0]) + w[2];
+    if (id === 'gamma') {
+      dot(ctx, x0, y0, ink, true, 10);
+      if (ka > 0 && ka < 1) ring(ctx, x0, y0, 10 + 26 * ka, alpha(ink, 1 - ka), 3);
+      text(ctx, ka < 0.5 ? nuc(m.P) : nuc(m.D), x0 + 20, y0 - 22, ink, { size: 24, weight: 600, bg: PAL.panel });
+      text(ctx, 'stays where it is', x0, y0 + 34, PAL.muted, { size: 19, align: 'center', bg: PAL.panel });
+    } else {
+      const ux = x1 - x0, uy = y1 - y0, L = Math.hypot(ux, uy), a = 16 / L, b = 1 - 18 / L;
+      dot(ctx, x0, y0, ink, false, 10);
+      if (ka > 0.02) arrow(ctx, x0 + ux * a, y0 + uy * a, x0 + ux * (a + (b - a) * ka), y0 + uy * (a + (b - a) * ka), ink, 5);
+      if (ka >= 1) dot(ctx, x1, y1, ink, true, 10);
+      text(ctx, nuc(m.P), x0 + 18, y0 - 24, ink, { size: 24, weight: 600, bg: PAL.panel });
+      if (ka >= 1) text(ctx, nuc(m.D), x1 + (uy > 0 ? 16 : -16), y1 + (uy > 0 ? 28 : -26), ink, { size: 24, weight: 600, align: uy > 0 ? 'left' : 'right', bg: PAL.panel });
+    }
+    hits.push({ x: x0, y: y0, r: 18, name: m.P[3] + ': ' + Zp + ' protons, ' + Np + ' neutrons' });
+    if (id !== 'gamma') hits.push({ x: x1, y: y1, r: 18, name: m.D[3] + ': ' + Zd + ' protons, ' + Nd + ' neutrons' });
+    const eq = id === 'ec' ? nucTex(40, 19, 'K') + '+{}_{-1}^{\\;0}\\text{e}\\longrightarrow ' + nucTex(40, 18, 'Ar')
+      : nucTex(m.P[0], m.P[1], m.P[2]) + '\\longrightarrow ' + m.part + '+' + nucTex(m.D[0], m.D[1], m.D[2]);
+    tex(d.readout, eq + ' \\\\ \\text{n:p ratio: }\\frac{' + Np + '}{' + Zp + '}=' + fmt(Np / Zp, 3) + '\\;\\longrightarrow\\;\\frac{' + Nd + '}{' + Zd + '}=' + fmt(Nd / Zd, 3), false, { values: false });
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
 
 /* =====================================================================
-   FIGURE 21.9 · sim-decay-series · still · flat (rule 28.1)
-   The uranium-238 series on the book's own axes, the atomic number across
-   (80 to 92) and the number of neutrons up (122 to 148). One step is
-   chosen: the steps before it solid, it thick, the steps after it faint;
-   its parent and daughter are named, with the two ends of the series.
-   α arrows in ink, β arrows in F.cat(1), named by the key.
+   FIGURE 21.9 · sim-decay-series · still · flat
+   The uranium-238 series on the book's axes: atomic number across, 80 to
+   92, and number of neutrons up, 122 to 148, both fixed. An α decay goes
+   two left and two down, a β decay one right and one down. The slider is
+   how many of the fourteen decays have happened; it opens on all fourteen,
+   the book's picture. Every nuclide is named, as in the book.
 ===================================================================== */
 (function () {
-  const H = 640;
-  const NUC = [
-    [92, 146, 'U', 'uranium'], [90, 144, 'Th', 'thorium'], [91, 143, 'Pa', 'protactinium'], [92, 142, 'U', 'uranium'],
-    [90, 140, 'Th', 'thorium'], [88, 138, 'Ra', 'radium'], [86, 136, 'Rn', 'radon'], [84, 134, 'Po', 'polonium'],
-    [82, 132, 'Pb', 'lead'], [83, 131, 'Bi', 'bismuth'], [84, 130, 'Po', 'polonium'], [82, 128, 'Pb', 'lead'],
-    [83, 127, 'Bi', 'bismuth'], [84, 126, 'Po', 'polonium'], [82, 124, 'Pb', 'lead'],
-  ];
-  const A = (k) => NUC[k][0] + NUC[k][1];
-  const short = (k) => sup(A(k)) + NUC[k][2];
-  const long = (k) => NUC[k][3] + '-' + A(k);
-  const isAlpha = (i) => NUC[i + 1][0] === NUC[i][0] - 2;
-  const d = sim('sim-decay-series', H);
-  const pick = select(d.controls, {
-    label: '\\text{step}', aria: 'the step of the series',
-    options: NUC.slice(0, 14).map((_, i) => ({ value: String(i), label: (i + 1) + ': ' + short(i) + ' → ' + short(i + 1) + (isAlpha(i) ? ' (α)' : ' (β)') })),
-    value: '0',
-  });
-  let hits = [];
-  hover(d.stage, () => hits);
-  const BOX = { l: 140, r: 1320, t: 110, b: 570 };
-
+  const H = 700, d = sim('sim-decay-series', H);
+  const S = [[238, 92, 'U', 'uranium', 'r'], [234, 90, 'Th', 'thorium', 'l'], [234, 91, 'Pa', 'protactinium', 'ar'], [234, 92, 'U', 'uranium', 'r'], [230, 90, 'Th', 'thorium', 'br'],
+    [226, 88, 'Ra', 'radium', 'br'], [222, 86, 'Rn', 'radon', 'br'], [218, 84, 'Po', 'polonium', 'br'], [214, 82, 'Pb', 'lead', 'l'], [214, 83, 'Bi', 'bismuth', 'ar'],
+    [214, 84, 'Po', 'polonium', 'r'], [210, 82, 'Pb', 'lead', 'l'], [210, 83, 'Bi', 'bismuth', 'ar'], [210, 84, 'Po', 'polonium', 'r'], [206, 82, 'Pb', 'lead', 'l']];
+  const isA = (i) => S[i + 1][0] < S[i][0];                 /* step i, from nuclide i to i + 1, is an α decay */
+  const n = ctl(d.controls, { label: '\\text{decays so far}', cls: '', key: 'decays', min: 0, max: 14, step: 1, value: 14, unit: '', dec: 0, aria: 'the number of decays so far' });
+  const G = { l: 170, r: 1230, t: 120, b: 610 };
+  let hits = []; hover(d.stage, () => hits);
   function draw() {
-    const { ctx } = begin(d.c);
-    const k = +pick.value || 0, al = isAlpha(k), CA = PAL.ink, CB = F.cat(1);
-    let na = 0; for (let i = 0; i <= k; i++) if (isAlpha(i)) na++;
-    const nb = k + 1 - na;
-    hits = [];
-    const lab = labeller(ctx, H, { headline: topline(ctx, 'Step ' + (k + 1) + ' of 14: ' + long(k) + ' emits ' + (al ? 'an α particle' : 'a β particle') + ' and becomes ' + long(k + 1)
-      + ' (' + na + ' α and ' + nb + ' β ' + (nb === 1 && na === 1 ? 'decay' : 'decays') + ' so far).') });
-    const ax = axes(ctx, BOX, [80, 92], [122, 148], { nx: 12, ny: 13, fx: (v) => String(Math.round(v)), fy: (v) => String(Math.round(v)),
-      xl: 'atomic number (Z)', yl: 'number of neutrons (n)' });
-    const { X, Y } = ax;
-    const P = (i) => ({ x: X(NUC[i][0]), y: Y(NUC[i][1]) });
+    const { ctx } = begin(d.c); hits = [];
+    const k = Math.round(n.v), ink = PAL.ink, ca = F.cat(0), cb = F.cat(1);
+    let na = 0, nb = 0; for (let i = 0; i < k; i++) { if (isA(i)) na++; else nb++; }
+    const ax = axes(ctx, G, [80, 92], [122, 148], { nx: 12, ny: 13, xl: 'atomic number (Z)', yl: 'number of neutrons (n)', fx: (v) => String(Math.round(v)), fy: (v) => String(Math.round(v)) });
+    const at = (i) => [ax.X(S[i][1]), ax.Y(S[i][0] - S[i][1])], name = (i) => S[i][3] + '-' + S[i][0];
+    /* the fourteen decays: taken ones solid, the latest heavier, the rest faint */
     for (let i = 0; i < 14; i++) {
-      const a = P(i), b = P(i + 1), L = Math.hypot(b.x - a.x, b.y - a.y), ux = (b.x - a.x) / L, uy = (b.y - a.y) / L;
-      const col = isAlpha(i) ? CA : CB, now = i === k, done = i < k;
-      arrow(ctx, a.x + ux * 12, a.y + uy * 12, b.x - ux * 12, b.y - uy * 12, now ? col : alpha(col, done ? 0.75 : 0.3), now ? 5 : 3);
-      hits.push({ x: (a.x + b.x) / 2, y: (a.y + b.y) / 2, r: 12, name: 'step ' + (i + 1) + ': ' + (isAlpha(i) ? 'α' : 'β') + ' decay of ' + long(i) + ' to ' + long(i + 1) });
+      const [x0, y0] = at(i), [x1, y1] = at(i + 1), L = Math.hypot(x1 - x0, y1 - y0), a = 14 / L, b = 1 - 16 / L, c = isA(i) ? ca : cb, done = i < k;
+      arrow(ctx, x0 + (x1 - x0) * a, y0 + (y1 - y0) * a, x0 + (x1 - x0) * b, y0 + (y1 - y0) * b, done ? c : alpha(c, 0.28), i === k - 1 ? 7 : done ? 4.5 : 3);
+      hits.push({ x: (x0 + x1) / 2, y: (y0 + y1) / 2, r: 18, name: name(i) + ' → ' + name(i + 1) + (isA(i) ? ', an α decay' : ', a β decay') });
     }
-    NUC.forEach((n, i) => {
-      const p = P(i), stable = i === 14;
-      if (i === k || i === k + 1) dot(ctx, p.x, p.y, PAL.ink, false, 14);
-      dot(ctx, p.x, p.y, PAL.ink, stable, 7);
-      hits.push({ x: p.x, y: p.y, r: 12, name: long(i) + ': Z = ' + n[0] + ', n = ' + n[1] + ', A = ' + A(i) + (stable ? ', stable' : ', radioactive') });
+    S.forEach((s, i) => {
+      const [x, y] = at(i), reached = i <= k, col = reached ? ink : alpha(ink, 0.45), side = s[4];
+      if (i === k) ring(ctx, x, y, 17, alpha(ink, 0.55), 2.5);
+      if (i === 14) dot(ctx, x, y, col, true, 9); else { disc(ctx, x, y, 8, PAL.panel, col, 3); }
+      const lx = side === 'r' ? x + 18 : side === 'l' ? x - 18 : x + 12, ly = side === 'ar' ? y - 22 : side === 'br' ? y + 24 : y;
+      text(ctx, sup(s[0]) + s[2], lx, ly, col, { size: 23, weight: reached ? 600 : 400, align: side === 'l' ? 'right' : 'left' });
+      hits.push({ x, y, r: 14, name: name(i) + ': ' + s[1] + ' protons, ' + (s[0] - s[1]) + ' neutrons, ' + (i === 14 ? 'stable' : 'radioactive') });
     });
-    /* the names sit above their points, clear of the arrows, which run nearly level on this scale */
-    [...new Set([k, k + 1, 0, 14])].forEach((i) => {
-      const p = P(i);
-      lab.add(short(i), p.x, p.y, 0, i === 14 ? 1 : -1, PAL.ink, 22, 20);
-    });
-    F.legend(ctx, ax, [
-      { s: 'α decay', draw: (c, x, y) => arrow(c, x + 20, y - 6, x - 20, y + 6, CA, 4) },
-      { s: 'β decay', draw: (c, x, y) => arrow(c, x - 14, y - 6, x + 14, y + 6, CB, 4) },
-      { s: 'stable', kind: 'dot', draw: (c, x, y) => dot(c, x, y, PAL.ink, true, 7) },
-      { s: 'radioactive', draw: (c, x, y) => dot(c, x, y, PAL.ink, false, 7) },
-    ], { corner: 'br' });
-    lab.flush();
-
-    const [zp, , sp] = NUC[k], [zd, , sd] = NUC[k + 1];
-    F.tex(d.readout, nucTex(A(k), zp, sp) + '\\longrightarrow' + nucTex(A(k + 1), zd, sd) + '+' + (al ? nucTex(4, 2, 'He') : '{}_{-1}^{\\;0}\\text{e}'));
+    /* the count, in the clear corner above the chain */
+    const TX = G.l + 40, TY = G.t + 46;
+    F.rich(ctx, [[String(na), ca, 700], na === 1 ? ' α decay' : ' α decays', ', each two left and two down'], TX, TY, { size: 24 });
+    F.rich(ctx, [[String(nb), cb, 700], nb === 1 ? ' β decay' : ' β decays', ', each one right and one down'], TX, TY + 38, { size: 24 });
+    if (k > 0) {
+      const p = S[k - 1], q = S[k], al = isA(k - 1);
+      text(ctx, '$' + nucTex(p[0], p[1], p[2]) + '\\longrightarrow ' + (al ? '{}_{2}^{4}\\text{He}' : '{}_{-1}^{\\;0}\\text{e}') + '+' + nucTex(q[0], q[1], q[2]) + '$', TX, TY + 100, ink, { size: 30, tex: true });
+    }
+    F.legend(ctx, ax, [{ s: 'α decay', color: ca, w: 4.5 }, { s: 'β decay', color: cb, w: 4.5 }, { s: 'radioactive', kind: 'dot', hollow: true, color: ink }, { s: 'stable', kind: 'dot', color: ink }], { corner: 'br', size: 19 });
+    const an = (w) => (/^[aeiou]/.test(w) ? 'an ' : 'a ');
+    topline(ctx, k === 0 ? 'Uranium-238, the parent of the series, before any decay.'
+      : 'Decay ' + k + ' of 14: ' + name(k - 1) + ' emits ' + (isA(k - 1) ? 'an α particle' : 'a β particle') + ' and becomes ' + name(k) + (k === 14 ? ', which is stable.' : '.'));
+    tex(d.readout, 'A = 238 - 4\\,n_{\\alpha} = 238 - 4(' + na + ') = ' + S[k][0] + ' \\\\ Z = 92 - 2\\,n_{\\alpha} + n_{\\beta} = 92 - 2(' + na + ') + ' + nb + ' = ' + S[k][1]);
   }
-  register(d.fig, { update: () => {}, draw });
+  still(d, draw);
 })();
 
 /* =====================================================================
-   FIGURE 21.10 · sim-half-life · moving · flat (rule 28.1)
-   Cobalt-60 with λ = 0.132 y⁻¹ (Example 21.5). Each of 400 nuclei lasts
-   −ln(u)/λ years, u uniform, which gives each a fixed chance of decaying in
-   each year whatever its age; the clock runs 0 to 26.35 y (five half-lives)
-   in 6 s and holds 1.2 s, and each loop draws a fresh sample. Graph: % of
-   cobalt-60 remaining 0 to 100 against t from 0 to 26.35 y, fixed, ticks at
-   each half-life as the book has them.
+   FIGURE 21.10 · sim-half-life · moving · flat
+   A sample of cobalt-60 nuclei (400, 200 or 100), each decaying to
+   nickel-60 at a random moment of its own, −ln(u)/λ years with
+   λ = 0.132 y⁻¹ (Example 21.5). The clock runs 0 to 26.35 y, five
+   half-lives of 5.27 y, in 8 s, holds 1.2 s and starts on a fresh sample.
+   Top graph: cobalt-60 remaining, 0 to 100 %, the law in ink and this
+   sample's own count as a thin step line. Bottom graph: the decay rate,
+   0 to 60 decays per year, the sample's decays counted in bins a fifth of
+   a half-life wide, with λN₀e^(−λt) dashed over them. Both on t from 0 to
+   26.35 y with a tick at each half-life, as the book has them; all fixed.
 ===================================================================== */
 (function () {
-  const H = 600, LAM = 0.132, TH = 5.27, TMAX = 5 * TH, NN = 400, RUN = 6, FLASH = 1.0, M0 = 10;
-  const SX = 250, SY = 320, SR = 200;
-  const GB = { l: 600, r: 1320, t: 120, b: 500 };
+  const H = 700, LAM = 0.132, TH = 5.27, TMAX = 5 * TH, RUN = 8, FLASH = 0.8, BIN = TH / 5;
+  const BX = { l: 60, r: 480, t: 150, b: 570 };
+  const GT = { l: 640, r: 1330, t: 130, b: 350 }, GR = { l: 640, r: 1330, t: 440, b: 600 };
   const d = sim('sim-half-life', H);
   const cy = cycle(() => TMAX, 1.2);
-  const ro = readout(d);
-  let seed = 1, U = [], sorted = [];
-  function draws() { const r = rng(seed * 2654435761); U = Array.from({ length: NN }, () => -Math.log(r()) / LAM); sorted = U.slice().sort((a, b) => a - b); }
+  let seed = 1, NN = 400, U = [], sorted = [], bins = [], PTS = [], ANG = [];
+  function draws() {
+    const r = rng(seed * 2654435761);
+    U = Array.from({ length: NN }, () => -Math.log(r()) / LAM); ANG = U.map(() => r() * TAU); sorted = U.slice().sort((a, b) => a - b);
+    const cols = Math.ceil(Math.sqrt(NN)), rows = Math.ceil(NN / cols), p = (BX.r - BX.l) / cols, y0 = (BX.t + BX.b) / 2 - ((rows - 1) * p) / 2;
+    PTS = U.map((_, i) => [BX.l + p / 2 + (i % cols) * p, y0 + Math.floor(i / cols) * p]);
+    bins = new Array(25).fill(0); U.forEach((u) => { if (u < TMAX) bins[Math.min(24, Math.floor(u / BIN))]++; });
+  }
+  const size = choice(d.controls, { label: '\\text{nuclei at the start, }N_{0}', aria: 'the number of cobalt-60 nuclei at the start', value: '400', ms: 0,
+    options: [100, 200, 400].map((v) => ({ value: String(v), label: String(v) })), onInput: (v) => { NN = +v; seed++; draws(); cy.reset(); } });
   draws();
-  const PTS = Array.from({ length: NN }, (_, i) => { const r = SR * 0.95 * Math.sqrt((i + 0.5) / NN), a = i * 2.399963; return [SX + r * Math.cos(a), SY + r * Math.sin(a)]; });
-  let hits = [];
-  hover(d.stage, () => hits);
-
+  let hits = []; hover(d.stage, () => hits);
   function draw() {
-    const { ctx } = begin(d.c);
-    const t = cy.now(), TC = C('time'), MC = C('mass');
-    const tt = Math.round(t * 10) / 10, f = sig(Math.exp(-LAM * tt), 3);
+    const { ctx } = begin(d.c); hits = [];
+    const t = cy.now(), TC = C('time'), RC = C('rate'), ink = PAL.ink, tt = Math.round(t * 10) / 10;
     let left = 0; for (let i = 0; i < NN; i++) if (U[i] > t) left++;
-    const lab = labeller(ctx, H, { headline: topline(ctx, 'After $\\kt = ' + fmt(tt, 1) + '$ y, ' + fmt(tt / TH, 2) + ' half-lives, ' + fmt(100 * f, 1) + '% of the cobalt-60 remains.') });
-    hits = [];
-
+    F.rich(ctx, ['After ', [fmt(tt, 1) + ' y', TC], ', ' + fmt(tt / TH, 2) + ' half-lives, ', [String(left), ink, 700], ' of the ' + NN + ' cobalt-60 nuclei are left.'], 700, 46, { size: 26, align: 'center' });
     /* the sample */
-    ring(ctx, SX, SY, SR, alpha(PAL.ink, 0.6), 2.5);
-    ctx.save(); ctx.fillStyle = PAL.ink; ctx.beginPath();
-    PTS.forEach(([x, y], i) => { if (U[i] > t) { ctx.moveTo(x + 6.5, y); ctx.arc(x, y, 6.5, 0, TAU); } });
+    ctx.save(); ctx.strokeStyle = PAL.rule; ctx.lineWidth = 2; ctx.fillStyle = alpha(ink, 0.03); ctx.beginPath(); ctx.roundRect(BX.l - 14, BX.t - 14, BX.r - BX.l + 28, BX.b - BX.t + 28, 10); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = ink; ctx.beginPath();
+    PTS.forEach(([x, y], i) => { if (U[i] > t) { ctx.moveTo(x + 8, y); ctx.arc(x, y, 8, 0, TAU); } });
     ctx.fill();
-    ctx.strokeStyle = alpha(PAL.ink, 0.4); ctx.lineWidth = 1.5; ctx.beginPath();
-    PTS.forEach(([x, y], i) => { if (U[i] <= t) { ctx.moveTo(x + 6, y); ctx.arc(x, y, 6, 0, TAU); } });
-    ctx.stroke();
+    ctx.strokeStyle = alpha(ink, 0.32); ctx.lineWidth = 2; ctx.beginPath();
+    PTS.forEach(([x, y], i) => { if (U[i] <= t) { ctx.moveTo(x + 6.5, y); ctx.arc(x, y, 6.5, 0, TAU); } });
+    ctx.stroke(); ctx.restore();
+    /* each decay as it happens: a ring, and the radiation leaving */
     PTS.forEach(([x, y], i) => {
       const k = (t - U[i]) / FLASH; if (k < 0 || k >= 1) return;
-      ctx.strokeStyle = alpha(PAL.ink, 0.8 * (1 - k)); ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(x, y, 6 + 14 * k, 0, TAU); ctx.stroke();
+      ring(ctx, x, y, 8 + 12 * k, alpha(RC, 1 - k), 3);
+      const ux = Math.cos(ANG[i]), uy = Math.sin(ANG[i]), a = 12 + 44 * k;
+      line(ctx, x + ux * a, y + uy * a, x + ux * (a + 18), y + uy * (a + 18), alpha(RC, 0.9 * (1 - k)), 3.5);
+    });
+    hits.push({ x: (BX.l + BX.r) / 2, y: (BX.t + BX.b) / 2, r: 210, name: 'the sample: ' + left + ' of its ' + NN + ' cobalt-60 nuclei have not decayed' });
+    F.legend(ctx, { l: BX.l - 14, r: BX.r + 14, t: BX.b + 26, b: BX.b + 70 }, [{ s: 'cobalt-60', kind: 'dot', color: ink }, { s: 'decayed to nickel-60', kind: 'dot', hollow: true, color: alpha(ink, 0.45) },
+      { s: 'a decay', draw: (c, x, y) => { ring(c, x - 8, y, 8, RC, 3); line(c, x + 4, y, x + 20, y, RC, 3.5); } }], { corner: 'top', row: true, panel: false, size: 19 });
+    /* cobalt-60 remaining */
+    const g = axes(ctx, GT, [0, TMAX], [0, 100], { nx: 5, ny: 8, yl: 'Co-60 remaining (%)', fx: () => '', fy: (v) => ([0, 12.5, 25, 50, 75, 100].some((w) => Math.abs(w - v) < 0.01) ? fmt(v, v % 1 ? 1 : 0) : '') });
+    const r = axes(ctx, GR, [0, TMAX], [0, 60], { nx: 5, ny: 3, xl: 'time, t (y)', xc: TC, yl: 'decay rate (decays per year)', yc: RC, fx: (v) => fmt(v, 2), fy: (v) => String(Math.round(v)) });
+    const FR = ['', '1/2', '1/4', '1/8', '1/16', '1/32'];
+    for (let k = 1; k <= 5; k++) {
+      const x = g.X(k * TH), y = g.Y(100 / 2 ** k);
+      line(ctx, x, y, x, GR.b, alpha(ink, 0.35), 2, [4, 8]);
+      line(ctx, GT.l, y, x, y, alpha(ink, 0.35), 2, [4, 8]);
+      hits.push({ x, y, r: 14, name: 'after ' + k + (k === 1 ? ' half-life, ' : ' half-lives, ') + fmt(k * TH, 2) + ' y: ' + fmt(100 / 2 ** k, k > 3 ? 3 : 1) + '% remains' });
+    }
+    F.plot(ctx, g, (s) => 100 * Math.exp(-LAM * s), ink, { w: 5 });
+    for (let k = 0; k <= 5; k++) {
+      const x = g.X(k * TH), y = g.Y(100 / 2 ** k);
+      dot(ctx, x, y, ink, false, 8);
+      if (k) text(ctx, FR[k], x + (k < 5 ? 12 : -4), y - 22, ink, { size: 21, weight: 600, align: k < 5 ? 'left' : 'right' });
+    }
+    ctx.save(); ctx.strokeStyle = alpha(PAL.muted, 0.95); ctx.lineWidth = 2; ctx.lineJoin = 'round'; ctx.beginPath(); ctx.moveTo(g.X(0), g.Y(100));
+    let m = NN;
+    for (const u of sorted) { if (u > t) break; ctx.lineTo(g.X(u), g.Y((100 * m) / NN)); m--; ctx.lineTo(g.X(u), g.Y((100 * m) / NN)); }
+    ctx.lineTo(g.X(t), g.Y((100 * m) / NN)); ctx.stroke(); ctx.restore();
+    F.legend(ctx, g, [{ s: 'the law, $100\\,e^{-\\klamdecay\\kt}$', color: ink, w: 5 }, { s: 'this sample', color: PAL.muted, w: 2 }], { corner: 'tr', size: 19 });
+    /* the decay rate: the sample's decays in each fifth of a half-life, and the law λN */
+    ctx.save(); ctx.fillStyle = alpha(RC, 0.55);
+    bins.forEach((c, b) => {
+      const t0 = b * BIN; if (t <= t0) return;
+      let cnt = c; if (t < t0 + BIN) { cnt = 0; for (const u of U) if (u >= t0 && u <= t) cnt++; }
+      const x0 = r.X(t0) + 2, x1 = r.X(Math.min(t, t0 + BIN)) - 2, y = r.Y(cnt / BIN);
+      if (x1 > x0) ctx.fillRect(x0, y, x1 - x0, GR.b - y);
     });
     ctx.restore();
-    hits.push({ x: SX, y: SY, r: SR, name: 'the sample: ' + left + ' of its ' + NN + ' cobalt-60 nuclei have not yet decayed' });
-    const LY = SY + SR + 40;
-    dot(ctx, SX - 170, LY, PAL.ink, true, 7);
-    text(ctx, 'cobalt-60', SX - 150, LY, PAL.ink, { size: 19 });
-    ring(ctx, SX + 30, LY, 7, alpha(PAL.ink, 0.5), 2);
-    text(ctx, 'nickel-60', SX + 50, LY, PAL.ink, { size: 19 });
-
-    /* the graph */
-    const { X, Y } = axes(ctx, GB, [0, TMAX], [0, 100], {
-      nx: 5, ny: 8, xl: 't (y)', xc: TC, yl: 'Co-60 remaining (%)',
-      fx: (v) => fmt(v, 2), fy: (v) => ([0, 12.5, 25, 50, 75, 100].some((w) => Math.abs(w - v) < 0.01) ? fmt(v, v % 1 ? 1 : 0) : ''),
-    });
-    const MASS = ['10 g', '5 g', '2.5 g', '1.25 g', '0.625 g'];
-    for (let k = 0; k <= 5; k++) {
-      const x = X(k * TH), y = Y(100 * Math.exp(-LAM * k * TH));
-      if (k) line(ctx, x, y, x, GB.b, alpha(PAL.ink, 0.35), 2, [4, 8]);
-      dot(ctx, x, y, PAL.muted, true, 6);
-      if (k < 5) lab.add(MASS[k], x, y, k ? 0.8 : 1, k ? -0.6 : 0.2, MC, 19, 16);
-      hits.push({ x, y, r: 12, name: k === 0 ? 'the start: 10 g of cobalt-60' : 'after ' + k + (k === 1 ? ' half-life, ' : ' half-lives, ') + fmt(k * TH, 2) + ' y: ' + fmt(100 * Math.exp(-LAM * k * TH), 1) + '% remains' });
-    }
-    curve(ctx, (s) => 100 * Math.exp(-LAM * s), 0, TMAX, X, Y, PAL.ink, 5, 200);
-    ctx.save(); ctx.strokeStyle = alpha(PAL.muted, 0.9); ctx.lineWidth = 2; ctx.lineJoin = 'round'; ctx.beginPath(); ctx.moveTo(X(0), Y(100));
-    let n = NN;
-    for (const u of sorted) { if (u > t) break; ctx.lineTo(X(u), Y((100 * n) / NN)); n--; ctx.lineTo(X(u), Y((100 * n) / NN)); }
-    ctx.lineTo(X(t), Y((100 * n) / NN)); ctx.stroke(); ctx.restore();
-    dot(ctx, X(t), Y(100 * Math.exp(-LAM * t)), PAL.ink, true, 9);
-    hits.push({ x: X(t), y: Y((100 * left) / NN), r: 12, name: 'this sample: ' + left + ' of ' + NN + ' nuclei, ' + fmt((100 * left) / NN, 1) + '%' });
-    const KX = GB.r - 230, KY = GB.t + 10;
-    line(ctx, KX, KY, KX + 40, KY, PAL.ink, 5);
-    text(ctx, '$100\\,e^{-\\klamdecay\\kt}$', KX + 54, KY, PAL.ink, { size: 20, tex: true });
-    line(ctx, KX, KY + 34, KX + 40, KY + 34, PAL.muted, 2);
-    text(ctx, 'this sample', KX + 54, KY + 34, PAL.ink, { size: 19 });
-    lab.place({ l: KX - 8, r: GB.r, t: KY - 16, b: KY + 50 });
-    lab.flush();
-
-    ro.set('\\frac{N_{t}}{N_{0}}=e^{-\\klamdecay\\kt}=e^{-(0.132\\;\\text{y}^{-1})(' + fmt(tt, 1) + '\\;\\text{y})}=' + fsig(f, 3),
-      'Of ' + fmt(M0, 1) + ' g of cobalt-60, $\\km = ' + fsig(M0 * f, 3) + '$ g remains.');
+    F.plot(ctx, r, (s) => LAM * NN * Math.exp(-LAM * s), RC, { w: 4, dash: [10, 10] });
+    F.legend(ctx, r, [{ s: 'decays counted', kind: 'swatch', color: alpha(RC, 0.55) }, { s: '$\\klamdecay N$, the law', color: RC, w: 4, dash: [10, 10] }], { corner: 'tr', size: 19 });
+    /* the clock */
+    const xt = g.X(t);
+    line(ctx, xt, GT.t, xt, GT.b, TC, 2.5); line(ctx, xt, GR.t, xt, GR.b, TC, 2.5);
+    dot(ctx, xt, g.Y(100 * Math.exp(-LAM * t)), ink, true, 9);
+    dot(ctx, xt, r.Y(LAM * NN * Math.exp(-LAM * t)), RC, true, 8);
+    hits.push({ x: xt, y: g.Y((100 * left) / NN), r: 12, name: 'this sample: ' + left + ' of ' + NN + ' nuclei, ' + fmt((100 * left) / NN, 1) + '%' });
+    const lam = kv('rate-constant', '0.132\\;\\text{y}^{-1}');
+    tex(d.readout, '\\text{decay rate} = \\klamdecay N = (' + lam + ')(' + left + ') = ' + kv('rate', fmt(LAM * left, 1) + '\\;\\text{decays/y}')
+      + ' \\\\ \\frac{N_{t}}{N_{0}} = e^{-\\klamdecay\\kt} = e^{-(' + lam + ')(' + kv('time', fmt(tt, 1) + '\\;\\text{y}') + ')} = ' + fmt(Math.exp(-LAM * tt), 3), false, { values: false });
   }
-  register(d.fig, {
-    update: (dt) => { const was = cy.now(); cy.step(dt, () => TMAX / RUN); if (cy.now() < was) { seed++; draws(); } },
-    draw,
-  });
+  register(d.fig, { update: (dt) => { const was = cy.now(); cy.step(dt, () => TMAX / RUN); if (cy.now() < was) { seed++; draws(); } }, draw });
 })();
 
 /* =====================================================================
-   FIGURE 21.11 · sim-carbon-dating · moving · flat (rule 28.1)
-   Years run from −5000 (alive) to 25 000 after death in 7 s and hold 1.2 s.
-   While the tree lives, CO₂ drifts into it and every carbon-14 atom that
-   decays is replaced 1500 y later, so the count holds; at death the intake
-   stops and each of the 48 carbon-14 atoms becomes nitrogen-14 at −ln(u)/λ
-   years, λ = 1.21 × 10⁻⁴ y⁻¹ (Example 21.6). The slider is the decay rate
-   measured now; the readout and the graph's crossing give the age from it.
-   Graph: decay rate 0 to 15 dis/min/g C against t from −5000 to 25 000 y.
+   FIGURE 21.11 · sim-carbon-dating · still · flat
+   The decay rate per gram of carbon against the time since the tree died:
+   level at 13.6 dis/min/g while it lives and takes in CO₂, then
+   13.6e^(−λt), λ = 1.21 × 10⁻⁴ y⁻¹ (Example 21.6). Axes fixed: −5000 to
+   25 000 y, 0 to 15 dis/min/g. The slider is the rate measured in the
+   sample now; where its level meets the curve is the age. Over the graph,
+   a hundred carbon-14 atoms of the wood, of which 100 × rate/13.6 are
+   left, the rest nitrogen-14, since the rate is proportional to the
+   number of carbon-14 atoms. The slider opens on Example 21.6's 10.8.
 ===================================================================== */
 (function () {
-  const H = 620, LAM = 1.21e-4, R0 = 13.6, TA = -5000, TB = 25000, RUN = 7, NA = 48, REFILL = 1500, FLASH = 500;
-  const GB = { l: 700, r: 1320, t: 130, b: 470 };
-  const BX = { l: 300, r: 540, t: 210, b: 450 };
+  const H = 710, LAM = 1.21e-4, R0 = 13.6, TA = -5000, TB = 25000;
+  const G = { l: 150, r: 1300, t: 350, b: 610 }, GY = 268;
+  const COLS = 20, PITCH = 29, SX = 690, SY = 128, RA = 11;
   const d = sim('sim-carbon-dating', H);
-  const RT = ctl(d.controls, {
-    label: '\\krate_{t}', cls: 'rate', min: 1, max: 13.6, step: 0.01, value: 10.8, unit: 'dis/min/g', dec: 2,
-    detents: [{ v: 9.07, label: 'King Tut' }], specials: [{ at: R0 / 2, label: 'one half-life' }], aria: 'the decay rate measured in the sample now, in disintegrations per minute per gram of carbon',
-  });
-  const cy = cycle(() => TB - TA, 1.2);
-  const ro = readout(d);
-  let seed = 3, LIFE = [], EVENTS = [];
-  function draws() {
-    const r = rng(seed * 2246822519);
-    LIFE = Array.from({ length: NA }, () => -Math.log(r()) / LAM);
-    EVENTS = Array.from({ length: NA }, () => { const ev = []; let s = TA - Math.log(r()) / LAM; while (s < -REFILL) { ev.push(s); s += REFILL - Math.log(r()) / LAM; } return ev; });
-  }
-  draws();
-  const CELL = (i) => { const c = i % 6, rr = Math.floor(i / 6); return [BX.l + 24 + c * 38.4, BX.t + 22 + rr * 28.6]; };
+  const RT = ctl(d.controls, { label: '\\krate_{t}', cls: 'rate', min: 1, max: 13.6, step: 0.01, value: 10.8, unit: 'dis/min/g', dec: 2,
+    detents: [{ v: 10.8, label: 'Dead Sea Scrolls' }, { v: 9.07, label: 'King Tut' }], specials: [{ at: R0 / 2, label: 'one half-life' }],
+    aria: 'the decay rate measured in the sample now, in disintegrations per minute per gram of carbon' });
+  const ORDER = (() => { const a = Array.from({ length: 100 }, (_, i) => i); const r = rng(11); for (let i = 99; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; })();
   const rateAt = (s) => (s < 0 ? R0 : R0 * Math.exp(-LAM * s));
-  let hits = [];
-  hover(d.stage, () => hits);
-  function co2(ctx, x, y) {
-    disc(ctx, x - 12, y, 6, F.el('O'), alpha(PAL.ink, 0.4), 1);
-    disc(ctx, x + 12, y, 6, F.el('O'), alpha(PAL.ink, 0.4), 1);
-    disc(ctx, x, y, 7, F.el('C'), alpha(PAL.ink, 0.4), 1);
+  let hits = []; hover(d.stage, () => hits);
+  function co2(ctx, x, y) { disc(ctx, x - 13, y, 7, F.el('O'), alpha(PAL.ink, 0.45), 1.2); disc(ctx, x + 13, y, 7, F.el('O'), alpha(PAL.ink, 0.45), 1.2); disc(ctx, x, y, 8, F.el('C'), alpha(PAL.ink, 0.45), 1.2); }
+  /* a tree in leaf, its foot at (x, GY) */
+  function tree(ctx, x) {
+    const ink = PAL.ink;
+    ctx.save(); ctx.fillStyle = alpha(ink, 0.14); ctx.strokeStyle = ink; ctx.lineWidth = 3; ctx.lineJoin = 'round';
+    ctx.beginPath(); ctx.moveTo(x - 26, GY); ctx.quadraticCurveTo(x - 10, GY - 14, x - 10, GY - 60); ctx.lineTo(x - 8, GY - 90); ctx.lineTo(x + 8, GY - 90); ctx.lineTo(x + 10, GY - 60); ctx.quadraticCurveTo(x + 10, GY - 14, x + 26, GY); ctx.closePath(); ctx.fill(); ctx.stroke();
+    const LOBES = [[0, -138, 36], [-40, -120, 32], [40, -120, 32], [-58, -92, 28], [58, -92, 28], [-24, -82, 30], [24, -82, 30], [0, -106, 38]];
+    const crown = () => { ctx.beginPath(); LOBES.forEach(([dx, dy, r]) => { ctx.moveTo(x + dx + r, GY + dy); ctx.arc(x + dx, GY + dy, r, 0, TAU); }); };
+    ctx.lineWidth = 6; crown(); ctx.stroke();
+    ctx.fillStyle = PAL.panel; crown(); ctx.fill();
+    ctx.fillStyle = alpha(ink, 0.1); crown(); ctx.fill();
+    ctx.restore();
   }
-
+  /* a cut log lying on the ground, its sawn end toward the reader */
+  function log(ctx, x, w) {
+    const ink = PAL.ink, r = 30, y = GY - r;
+    ctx.save(); ctx.fillStyle = alpha(ink, 0.14); ctx.strokeStyle = ink; ctx.lineWidth = 3; ctx.lineJoin = 'round';
+    ctx.beginPath(); ctx.moveTo(x, y - r); ctx.lineTo(x + w, y - r); ctx.ellipse(x + w, y, 12, r, 0, -Math.PI / 2, Math.PI / 2); ctx.lineTo(x, y + r); ctx.ellipse(x, y, 12, r, 0, Math.PI / 2, -Math.PI / 2, true); ctx.closePath(); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = PAL.panel; ctx.beginPath(); ctx.ellipse(x + w, y, 12, r, 0, 0, TAU); ctx.fill(); ctx.stroke();
+    ctx.lineWidth = 1.5; [0.66, 0.33].forEach((k) => { ctx.beginPath(); ctx.ellipse(x + w, y, 12 * k, r * k, 0, 0, TAU); ctx.stroke(); });
+    ctx.restore();
+  }
   function draw() {
-    const { ctx } = begin(d.c);
-    const tau = TA + cy.now(), Rm = RT.v, TC = C('time'), RC = C('rate');
-    const age = sig(-Math.log(sig(Rm, 3) / R0) / LAM, 3);
-    const live = Math.max(0, Math.min(1, -tau / 600 + 1)), crown = Math.max(0, Math.min(1, 1 - tau / 1500));
-    const lab = labeller(ctx, H, { headline: topline(ctx, 'Carbon giving ' + fsig(Rm, 3) + ' dis/min/g, against 13.6 while alive, is about ' + grp(age, ',') + ' years old.') });
-    hits = [];
-
-    /* the ground and the tree, leafless once dead */
-    line(ctx, 30, 520, 280, 520, alpha(PAL.ink, 0.6), 3);
-    const TXc = 150;
-    ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5; ctx.lineJoin = 'round';
-    ctx.beginPath(); ctx.moveTo(TXc - 18, 520); ctx.lineTo(TXc - 9, 360); ctx.lineTo(TXc - 50, 290); ctx.lineTo(TXc - 42, 284); ctx.lineTo(TXc - 2, 340);
-    ctx.lineTo(TXc + 2, 270); ctx.lineTo(TXc + 10, 270); ctx.lineTo(TXc + 9, 330); ctx.lineTo(TXc + 52, 278); ctx.lineTo(TXc + 58, 286); ctx.lineTo(TXc + 10, 368); ctx.lineTo(TXc + 18, 520); ctx.closePath();
-    ctx.fill(); ctx.stroke(); ctx.restore();
-    if (crown > 0) {
-      ctx.save(); ctx.globalAlpha = crown;
-      const LOBES = [[0, -44, 70], [-52, 0, 50], [52, 4, 50], [-28, 30, 44], [30, 32, 44]];
-      LOBES.forEach(([dx, dy, r]) => ring(ctx, TXc + dx, 280 + dy, r, PAL.ink, 5));
-      LOBES.forEach(([dx, dy, r]) => disc(ctx, TXc + dx, 280 + dy, r, PAL.soft, null));
-      ctx.restore();
-    }
-    hits.push({ x: TXc, y: 300, r: 110, name: tau < 0 ? 'a living tree, taking in carbon from the CO₂ of the air' : 'the dead tree, which takes in no more carbon' });
-
-    /* CO₂ drifting from the air into the living tree */
-    if (live > 0) {
-      ctx.save(); ctx.globalAlpha = live;
-      for (let i = 0; i < 6; i++) {
-        const ph = (((tau - TA) / 1100 + i / 6) % 1 + 1) % 1, x = 70 + i * 32 + 30 * Math.sin(i * 1.7), y = 100 + ph * 150;
-        ctx.globalAlpha = live * Math.min(1, ph * 5, (1 - ph) * 5);
-        co2(ctx, x, y);
-      }
-      ctx.globalAlpha = live;
-      text(ctx, 'CO₂ from the air', 250, 130, PAL.ink, { size: 19, align: 'left', bg: PAL.panel });
-      ctx.restore();
-    }
-
-    /* the sample's carbon-14, magnified */
-    ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.6); ctx.lineWidth = 2; ctx.strokeRect(BX.l, BX.t, BX.r - BX.l, BX.b - BX.t); ctx.restore();
-    line(ctx, TXc + 14, 430, BX.l, BX.b - 30, alpha(PAL.ink, 0.35), 2, [4, 8]);
-    text(ctx, 'its carbon-14, magnified', (BX.l + BX.r) / 2, BX.t - 20, PAL.ink, { size: 19, align: 'center' });
-    let left = 0;
-    for (let i = 0; i < NA; i++) {
-      const [x, y] = CELL(i);
-      let isN, at = null;
-      if (tau >= 0) { isN = LIFE[i] <= tau; if (isN) at = LIFE[i]; }
-      else { const e = EVENTS[i].find((s) => tau >= s && tau < s + REFILL); isN = e !== undefined; if (isN) at = e; }
-      if (!isN) left++;
-      disc(ctx, x, y, 10, F.el(isN ? 'N' : 'C'), alpha(PAL.ink, 0.45));
-      if (at !== null && tau - at < FLASH) ring(ctx, x, y, 10 + 16 * ((tau - at) / FLASH), alpha(PAL.ink, 0.8 * (1 - (tau - at) / FLASH)), 2);
-    }
-    hits.push({ x: (BX.l + BX.r) / 2, y: (BX.t + BX.b) / 2, r: 110, name: 'carbon-14 atoms of the sample, drawn alone: ' + left + ' of ' + NA + ' left' });
-    const LY = BX.b + 34;
-    disc(ctx, BX.l + 10, LY, 9, F.el('C'), alpha(PAL.ink, 0.45));
-    text(ctx, 'carbon-14', BX.l + 26, LY, PAL.ink, { size: 18 });
-    disc(ctx, BX.l + 140, LY, 9, F.el('N'), alpha(PAL.ink, 0.45));
-    text(ctx, 'nitrogen-14', BX.l + 156, LY, PAL.ink, { size: 18 });
-
-    /* the graph */
-    const { X, Y } = axes(ctx, GB, [TA, TB], [0, 15], {
-      nx: 6, ny: 3, xl: 't (y)', xc: TC, yl: 'decay rate (dis/min/g C)', yc: RC, fx: (v) => grp(v, ','), fy: (v) => String(Math.round(v)),
+    const { ctx } = begin(d.c); hits = [];
+    const Rm = sig(RT.v, 3), TC = C('time'), RC = C('rate'), ink = PAL.ink, cC = F.el('C'), cN = F.el('N');
+    const age = sig(-Math.log(Rm / R0) / LAM, 3), left = Math.round((100 * Rm) / R0);
+    F.rich(ctx, ['Carbon that gives ', [fsig(Rm, 3) + ' dis/min/g', RC], ', against 13.6 in living wood, died about ', [grp(age, ',') + ' years', TC], ' ago.'], 700, 46, { size: 26, align: 'center' });
+    const g = axes(ctx, G, [TA, TB], [0, 15], { nx: 6, ny: 3, xl: 'time since the tree died, t (y)', xc: TC, yl: 'decay rate (dis/min/g of carbon)', yc: RC, fx: (v) => grp(v, ','), fy: (v) => String(Math.round(v)) });
+    const x0 = g.X(0);
+    /* above the graph: the living tree taking in CO₂, the dead wood, and a hundred of its carbon-14 atoms */
+    line(ctx, 40, GY, 620, GY, alpha(ink, 0.6), 3);
+    line(ctx, x0, 96, x0, G.b, alpha(ink, 0.4), 2, [10, 10]);
+    text(ctx, 'the tree dies', x0 + 12, 108, ink, { size: 20, weight: 600 });
+    tree(ctx, 252);
+    [[64, 156], [100, 196], [52, 236]].forEach(([x, y], i) => { co2(ctx, x, y); arrow(ctx, x + 26, y + (i === 1 ? 0 : i ? -4 : 4), x + 62, y + (i === 1 ? 0 : i ? -12 : 12), alpha(ink, 0.7), 3); hits.push({ x, y, r: 22, name: 'CO₂ from the air: about one carbon atom in a trillion is carbon-14' }); });
+    text(ctx, 'CO₂ from the air', 24, 114, ink, { size: 20, weight: 600 });
+    hits.push({ x: 252, y: GY - 100, r: 80, name: 'the living tree: it takes in carbon-14 as fast as its carbon-14 decays' });
+    log(ctx, 400, 150);
+    text(ctx, 'wood from the dead tree', 462, GY - 86, ink, { size: 20, weight: 600, align: 'center' });
+    hits.push({ x: 475, y: GY - 30, r: 60, name: 'wood from the dead tree: it takes in no more carbon' });
+    const bx = { l: SX - 24, r: SX + (COLS - 1) * PITCH + 24, t: SY - 24, b: SY + 4 * PITCH + 24 };
+    line(ctx, 562, GY - 60, bx.l, bx.t + 6, alpha(ink, 0.4), 2, [5, 6]); line(ctx, 562, GY, bx.l, bx.b - 6, alpha(ink, 0.4), 2, [5, 6]);
+    ctx.save(); ctx.strokeStyle = PAL.rule; ctx.lineWidth = 2; ctx.fillStyle = alpha(ink, 0.03); ctx.beginPath(); ctx.roundRect(bx.l, bx.t, bx.r - bx.l, bx.b - bx.t, 10); ctx.fill(); ctx.stroke(); ctx.restore();
+    ORDER.forEach((rk, i) => {
+      const x = SX + (i % COLS) * PITCH, y = SY + Math.floor(i / COLS) * PITCH, isC = rk < left;
+      disc(ctx, x, y, RA, isC ? cC : cN, alpha(ink, 0.45));
+      hits.push({ x, y, r: 14, name: isC ? 'a carbon-14 atom' : 'a nitrogen-14 atom, made when a carbon-14 atom decayed' });
     });
-    const x0 = X(0);
-    line(ctx, x0, GB.t, x0, GB.b, alpha(PAL.ink, 0.4), 2, [10, 10]);
-    lab.add('organism dies', x0, GB.t + 4, 1, 0.2, PAL.ink, 18, 10);
-    curve(ctx, rateAt, TA, TB, X, Y, PAL.ink, 5, 300);
-    const ly = Y(Rm), ax = X(Math.min(TB, age));
-    line(ctx, x0, ly, GB.r, ly, alpha(RC, 0.7), 2, [10, 10]);
-    line(ctx, ax, ly, ax, GB.b, alpha(PAL.ink, 0.45), 2, [4, 8]);
-    dot(ctx, ax, ly, PAL.ink, false, 10);
-    lab.place({ l: ax - 12, r: ax + 12, t: ly - 12, b: ly + 12 });
-    lab.add(grp(age, ',') + ' y', ax, ly, ax > (GB.l + GB.r) / 2 ? -0.6 : 0.6, -0.8, TC, 19, 18);
-    hits.push({ x: ax, y: ly, r: 14, name: 'the measured rate, ' + fsig(Rm, 3) + ' dis/min/g, meets the curve at ' + grp(age, ',') + ' y' });
-    const px = X(tau), py = Y(rateAt(tau));
-    dot(ctx, px, py, PAL.ink, true, 9);
-    hits.push({ x: px, y: py, r: 12, name: (tau < 0 ? 'alive: ' : grp(tau, ',') + ' y after death: ') + fsig(rateAt(tau), 3) + ' dis/min/g' });
-    lab.flush();
-
-    ro.set('\\kt=-\\frac{1}{\\klamdecay}\\ln\\left(\\frac{\\krate_{t}}{\\krate_{0}}\\right)=-\\frac{1}{1.21\\times10^{-4}\\;\\text{y}^{-1}}\\ln\\left(\\frac{' + fsig(Rm, 3) + '\\;\\text{dis/min/g}}{13.6\\;\\text{dis/min/g}}\\right)=' + grp(age, '{,}') + '\\;\\text{y}',
-      'The sample drawn has ' + left + ' of its ' + NA + ' carbon-14 atoms left.');
+    F.rich(ctx, [[String(left), cC, 700], ' of 100 carbon-14 atoms left'], bx.l + 4, bx.b + 28, { size: 22 });
+    F.legend(ctx, { l: bx.l + 330, r: bx.r, t: bx.b + 8, b: bx.b + 48 }, [{ s: 'carbon-14', kind: 'dot', color: cC }, { s: 'nitrogen-14', kind: 'dot', color: cN }], { corner: 'top', row: true, panel: false, size: 19 });
+    /* the curve, the measured level and the age it gives */
+    F.plot(ctx, g, rateAt, ink, { w: 5 });
+    const xa = g.X(age), ya = g.Y(Rm);
+    line(ctx, G.l, ya, xa, ya, RC, 3, [10, 10]);
+    line(ctx, xa, ya, xa, G.b, TC, 3, [4, 8]);
+    dot(ctx, xa, ya, ink, false, 10);
+    dot(ctx, xa, G.b, TC, true, 7);
+    F.rich(ctx, [[grp(age, ',') + ' y', TC]], xa + 18, ya - 22, { size: 24 });
+    text(ctx, 'alive: 13.6', (G.l + x0) / 2, g.Y(R0) - 22, PAL.muted, { size: 19, align: 'center' });
+    const xh = g.X(5730), yh = g.Y(R0 / 2);
+    dot(ctx, xh, yh, PAL.muted, true, 5);
+    text(ctx, 'half-life, 5730 y: 6.80', xh - 12, yh + 20, PAL.muted, { size: 19, align: 'right' });
+    hits.push({ x: xa, y: ya, r: 16, name: 'where the measured rate meets the curve' }, { x: xa, y: G.b, r: 14, name: 'the age of the sample, ' + grp(age, ',') + ' years' });
+    tex(d.readout, '\\kt = -\\frac{1}{\\klamdecay}\\ln\\left(\\frac{\\krate_{t}}{\\krate_{0}}\\right) = -\\frac{1}{' + kv('rate-constant', '1.21\\times 10^{-4}\\;\\text{y}^{-1}') + '}\\ln\\left(\\frac{' + kv('rate', fsig(Rm, 3) + '\\;\\text{dis/min/g}') + '}{' + kv('rate', '13.6\\;\\text{dis/min/g}') + '}\\right) = ' + kv('time', grp(age, '{,}') + '\\;\\text{y}'));
   }
-  register(d.fig, {
-    update: (dt) => { const was = cy.now(); cy.step(dt, () => (TB - TA) / RUN); if (cy.now() < was) { seed++; draws(); } },
-    draw,
-  });
+  still(d, draw);
 })();
 };

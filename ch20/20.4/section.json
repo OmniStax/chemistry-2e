@@ -22,6 +22,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -150,6 +153,10 @@
     {
      "model": "claude-opus-5-5",
      "part": "caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "redrawn as the book draws it, larger; leaving atoms followed into the water"
     }
    ]
   },

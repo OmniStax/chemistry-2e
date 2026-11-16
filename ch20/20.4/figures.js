@@ -18,7 +18,7 @@ const { PAL, alpha, register, begin, line, text, topline } = F;
    Still: a reaction's two sides, the change a morph.
 ===================================================================== */
 (function () {
-  const HH = 520, Y = 252, UMAX = 92, PA = 5.2, PJ = 3, WIDE = 3.9, LEFT = 0.77;
+  const HH = 536, Y = 252, UMAX = 92, PA = 5.2, PJ = 3, WIDE = 3.9, LEFT = 0.77;
   const d = F.sim(root, 'sim-peptide', HH);
   const NUM = ['', 'one', 'two', 'three', 'four'];
   const CHAIN = { 2: 'dipeptide', 3: 'tripeptide', 4: 'tetrapeptide' };
@@ -60,7 +60,7 @@ const { PAL, alpha, register, begin, line, text, topline } = F;
     /* the water of join i: beneath the middle of the gap, then of the bond. Its atoms arrive O, H, H as they
        left (O on the left) and the molecule turns upright as the chain closes over it */
     const waterAt = (i) => {
-      const cx = (xs[i] + 2 * u + xs[i + 1]) / 2, cy = Y + 1.86 * u, t = close[i] * Math.PI / 2, c = Math.cos(t), s = Math.sin(t);
+      const cx = (xs[i] + 2 * u + xs[i + 1]) / 2, cy = Y + 1.82 * u, t = close[i] * Math.PI / 2, c = Math.cos(t), s = Math.sin(t);
       const turn = ([a, b]) => [cx + (a * c - b * s) * u, cy + (a * s + b * c) * u];
       return { cx, cy, O: turn([-0.3, 0]), Hn: turn([0.3, -0.42]), Ho: turn([0.3, 0.42]) };
     };
@@ -87,7 +87,7 @@ const { PAL, alpha, register, begin, line, text, topline } = F;
         atom('H', Hl, kin < 0 ? PAL.ink : cw, kin >= 0);
         stick(N, Hl, 1 - sm(lin, 0, 0.35));
         /* the OH of the acid group: it leaves with the water of the join on its right */
-        const W = kout < 0 ? null : waterAt(kout), o0 = P(i, 2.62, 0.8), h0 = P(i, 2.98, 0.8);
+        const W = kout < 0 ? null : waterAt(kout), o0 = P(i, 2.62, 0.8), h0 = P(i, 2.95, 0.8);
         const Oh = W ? mixP(o0, W.O, lout) : o0, Hh = W ? mixP(h0, W.Ho, lout) : h0;
         const col = next > 0.5 ? cw : PAL.ink, heavy = next > 0.5;
         atom('O', Oh, col, heavy); atom('H', Hh, col, heavy);
@@ -99,6 +99,9 @@ const { PAL, alpha, register, begin, line, text, topline } = F;
         }
         /* the peptide bond, heavier than the rest */
         if (kout >= 0) stick(C, [xs[i + 1], Y], bond[kout] * next, 1, PAL.ink, 1.9 * bw);
+        /* the book's name under each molecule still on its own */
+        const own = (1 - sm(Math.max(kin < 0 ? 0 : j[kin], kout < 0 ? 0 : j[kout]), 0, 0.25));
+        if (own > 0.01) F.faded(ctx, own, [0, 0], () => text(ctx, 'amino acid', xs[i] + 1.17 * u, Y + 1.8 * u, PAL.ink, { size: 24, align: 'center' }));
         hits.push({ x: N[0], y: N[1], r: 0.3 * u, name: cin > 0.5 ? 'nitrogen atom of a peptide bond' : 'nitrogen atom of the amine group' },
           { x: Ca[0], y: Y + u, r: 0.3 * u, name: 'side chain R, different in each amino acid' },
           { x: O[0], y: O[1], r: 0.3 * u, name: 'oxygen atom of the carbonyl group' },
@@ -125,14 +128,14 @@ const { PAL, alpha, register, begin, line, text, topline } = F;
     }
     [0, 1, 2].forEach((i) => { if (bond[i] > 0.5) hits.push({ x: (xs[i] + 2 * u + xs[i + 1]) / 2, y: Y, r: 0.3 * u, name: 'peptide bond, from a carbonyl carbon atom to an amine nitrogen atom' }); });
 
-    const sample = (s) => (cx, x, y) => text(cx, s, x, y + 1, cw, { size: 22, weight: 700, align: 'center' });
-    F.legend(ctx, { l: 100, r: 1300, t: 0, b: HH - 8 }, [after ? { s: 'water, one molecule for each peptide bond', draw: sample('H₂O') } : { s: 'and H: the atoms that leave as water', draw: sample('OH') }],
+    const sample = (s) => (cx, x, y) => text(cx, s, x, y + 1, cw, { size: 20, weight: 700, align: 'center' });
+    F.legend(ctx, { l: 100, r: 1300, t: 0, b: HH - 8 }, [after ? { s: 'water, one molecule for each peptide bond', draw: sample('H₂O') } : { s: 'atoms that leave as water', draw: sample('H') }],
       { corner: 'bottom', row: true, panel: false, size: 22 });
     topline(ctx, after
       ? `${cap(NUM[n - 1])} peptide bond${n > 2 ? 's join' : ' joins'} ${NUM[n]} amino acids, and the chain still has a free group at each end.`
       : 'Each amino acid has an amine group, a carboxylic acid group, and a side chain R.');
     const water = n > 2 ? `${n - 1}\\,\\text{H}_{2}\\text{O}` : '\\text{H}_{2}\\text{O}';
-    ro.set(`\\mk{n}{${n}\\ \\text{amino acids}}\\mk{r}{\;\\longrightarrow\;}\\mk{p}{\\text{${CHAIN[n]}}} + \\mk{w}{${water}}`, '', { form: 'rx' });
+    ro.set(`\\mk{n}{${n}\\ \\text{amino acids}}\\mk{r}{\\longrightarrow}\\mk{p}{\\text{${CHAIN[n]}}} + \\mk{w}{${water}}`, '', { form: 'rx' });
   }
   register(d.fig, { update: () => {}, draw });
 })();

@@ -34,9 +34,9 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
   const d = F.sim(root, 'sim-le-chatelier', 680);
   /* each molecule's atoms [element, dx, dy, r] in canvas units, space-filling */
   const MOLS = {
-    H2: { name: 'hydrogen, H₂', atoms: [['H', -5, 0, 7], ['H', 5, 0, 7]] },
+    H2: { name: 'hydrogen, H₂', atoms: [['H', -6, 0, 8.5], ['H', 6, 0, 8.5]] },
     I2: { name: 'iodine, I₂', atoms: [['I', -11, 0, 13], ['I', 11, 0, 13]] },
-    HI: { name: 'hydrogen iodide, HI', atoms: [['H', -12, 0, 7], ['I', 3, 0, 13]] },
+    HI: { name: 'hydrogen iodide, HI', atoms: [['H', -13, 0, 8.5], ['I', 3, 0, 13]] },
     N2O4: { name: 'dinitrogen tetroxide, N₂O₄', atoms: [['O', -12.8, -7.2, 6.8], ['O', -12.8, 7.2, 6.8], ['O', 12.8, -7.2, 6.8], ['O', 12.8, 7.2, 6.8], ['N', -5.6, 0, 7.2], ['N', 5.6, 0, 7.2]] },
     NO2: { name: 'nitrogen dioxide, NO₂', atoms: [['O', -8.8, 4, 6.8], ['O', 8.8, 4, 6.8], ['N', 0, -2.4, 7.2]] },
   };
@@ -248,7 +248,7 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
    peak on the slider (20 to 100 kJ/mol, default 63, the book's
    proportion). Each path is flat, rises on a half cosine from 0.25 to its
    peak at 0.52, and falls on another to the products at 0.80. The energy
-   axis runs −80 to 120 kJ/mol (drawn as 0 to 200 from a base B, so that
+   axis runs −95 to 120 kJ/mol (drawn as 0 to 215 from a base B, so that
    no zero line crosses it) and carries no numbers, as the book's does.
    Below, k/A = e^(−Ea/RT) at 298 K on a logarithmic axis fixed at 10⁻³⁰
    to 1 (the smallest is the uncatalyzed reverse, 10⁻²⁸; the largest the
@@ -260,7 +260,7 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
   const d = F.sim(root, 'sim-catalyst-diagram', 780);
   const Ec = ctl(d.controls, { label: '\\kEa\\ \\text{forward, catalyzed}', cls: 'energy', min: 20, max: 100, step: 1, value: 63, unit: 'kJ/mol', dec: 0, specials: [{ at: 100, label: 'no catalyst' }], aria: 'forward activation energy of the catalyzed path, in kilojoules per mole' });
   const ro = F.readout(d);
-  const G = { l: 170, r: 1290, t: 100, b: 420 }, B = 80, ER = 0, EP = -60, EU = 100, X0 = 0.25, XP = 0.52, X1 = 0.8;
+  const G = { l: 170, r: 1290, t: 100, b: 420 }, B = 95, ER = 0, EP = -60, EU = 100, X0 = 0.25, XP = 0.52, X1 = 0.8;
   const S = { l: 170, r: 1290, t: 510, b: 706 }, TK = 298, RT = (R8 * TK) / 1000, LN10 = Math.log(10);
   const lg = (ea) => -ea / (RT * LN10);
   const SUP = '⁰¹²³⁴⁵⁶⁷⁸⁹', pow = (e) => '10' + (e < 0 ? '⁻' : '') + String(Math.abs(e)).split('').map((c) => SUP[+c]).join('');
@@ -274,14 +274,14 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
   }
   function draw() {
     const { ctx } = begin(d.c), pk = Ec.v, drop = EU - pk, on = drop > 0.5;
-    const a = F.axes(ctx, G, [0, 1], [0, 200], { nx: 1, ny: 1, fx: () => '', fy: () => '', xl: 'extent of reaction', yl: 'energy', yc: C('energy') });
+    const a = F.axes(ctx, G, [0, 1], [0, 215], { nx: 1, ny: 1, fx: () => '', fy: () => '', xl: 'extent of reaction', yl: 'energy', yc: C('energy') });
     const g = { X: a.X, Y: (e) => a.Y(e + B) }, c0 = F.cat(0), c1 = F.cat(1), ce = C('energy'), ck = C('rate-constant'), cK = C('equilibrium-constant');
     line(ctx, g.X(0.13), g.Y(EU), g.X(0.93), g.Y(EU), alpha(c0, 0.8), 3, [10, 10]);
     if (on) line(ctx, g.X(0.18), g.Y(pk), g.X(0.86), g.Y(pk), alpha(c1, 0.8), 3, [10, 10]);
     F.curve(ctx, prof(EU), 0, 1, g.X, g.Y, c0, 5, 200);
     F.curve(ctx, prof(pk), 0, 1, g.X, g.Y, c1, 5, 200);
     text(ctx, 'transition state', g.X(XP), g.Y(EU) - 22, PAL.ink, { size: 19, align: 'center', bg: PAL.panel });
-    text(ctx, 'reactants', g.X(0.02), g.Y(ER) + 26, PAL.ink, { size: 19 });
+    text(ctx, 'reactants', g.X(0.02), g.Y(ER) - 22, PAL.ink, { size: 19 });
     text(ctx, 'products', g.X(0.98), g.Y(EP) + 20, PAL.ink, { size: 19, align: 'right' });
     const kj = (x) => [fmt(x, 0) + ' kJ/mol', ce];
     bracket(ctx, g.X(0.13), g.Y(ER), g.Y(EU), -1, [['E_{a} forward', PAL.ink], kj(EU)]);
@@ -346,7 +346,7 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
     react: mk([[460, 740], [460, 90], [1070, 90], ...COIL]),
     liquid: mk([[1070, 600], [1070, 716]]),
     recycle: mk([[1070, 600], [900, 600], [900, 140], [720, 140], [720, 740], [460, 740]]),
-    water: mk([[1350, 510], [1162, 510], [1162, 270], [1350, 270]]),
+    water: mk([[1350, 510], [1152, 510], [1152, 270], [1350, 270]]),
   };
   const near = (x, m) => Math.round(x / m) * m;
   const Lr = near(PATH.react.L, S), LfL = near(PATH.feedL.L, S), LfR = LfL + near(PATH.feedR.L - PATH.feedL.L, 4 * S);
@@ -465,7 +465,7 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
     lab('condenser', 1204, 390);
     lab('refrigeration', 1112, 632);
     lab('NH_{3}(l) storage', 1204, 716);
-    F.legend(ctx, { l: 1000, r: 1385, t: 14, b: 50 }, [['N2', 'N_{2}'], ['H2', 'H_{2}'], ['NH3', 'NH_{3}'], ['H2O', 'water']].map(([k, s]) => ({ s, draw: (c, x, y) => glyph(c, k, x, y) })), { corner: 'top', row: true, panel: false });
+    F.legend(ctx, { l: 850, r: 1380, t: 14, b: 50 }, [['N2', 'N_{2}'], ['H2', 'H_{2}'], ['NH3', 'NH_{3}'], ['H2O', 'water']].map(([k, s]) => ({ s, draw: (c, x, y) => glyph(c, k, x, y) })), { corner: 'top', row: true, panel: false });
     ctx.restore();
     hits = [...seen, ...PARTS.map((q) => ({ ...q, y: q.y + OY }))];
   }

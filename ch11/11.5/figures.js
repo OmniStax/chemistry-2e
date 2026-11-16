@@ -337,7 +337,7 @@ function turn(p, yaw, pitch) {
     ];
     F.legend(ctx, { l: 0, r: 1400, t: 0, b: H }, v === 'soap' ? key : [key[0], key[4]], { corner: 'bottom', row: true, panel: false });
     topline(ctx, v === 'soap'
-      ? (t < 3.3 ? 'Each soap anion turns its hydrocarbon tail into the oil and leaves its ionic end in the water.' : 'Coated with ionic ends, the two drops of oil come close, stay apart and stay dispersed in the water.')
+      ? (t < 3.3 ? 'Each soap anion turns its hydrocarbon tail into the oil and leaves its ionic end in the water.' : 'Coated with ionic ends, the two drops of oil meet without merging and stay dispersed in the water.')
       : (g.one < 1 ? 'With no soap, nothing keeps the two drops of oil apart when they meet.' : 'With no soap, the two drops of oil have merged into one larger drop.'));
     tex(d.readout, v === 'soap'
       ? '\\underbrace{\\text{C}_{17}\\text{H}_{35}}_{\\text{in the oil}}\\text{—}\\underbrace{\\text{CO}_{2}{}^{-}}_{\\text{in the water}}'

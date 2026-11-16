@@ -92,7 +92,7 @@ function spline(xs, ys) {
       if (Math.abs(B.Y(lineAt(tt)(125)) - B.Y(k * 1e3 * 125)) > 24) text(ctx, s, br.r + 12, B.Y(lineAt(tt)(125)), alpha(col, 0.75), { size: 17 });
     });
     line(ctx, B.X(ATM), br.b, B.X(ATM), br.t, PAL.muted, 2, [10, 10]);
-    text(ctx, '101.3 kPa', B.X(ATM) - 8, br.b - 18, PAL.muted, { size: 17, align: 'right', bg: PAL.panel });
+    text(ctx, '101.3 kPa', B.X(ATM) + 8, br.b - 18, PAL.muted, { size: 17, bg: PAL.panel });
     F.plot(ctx, B, (x) => k * 1e3 * x, col, { w: 6 });
     text(ctx, fmt(t, 1) + ' °C', br.r + 12, B.Y(k * 1e3 * 125), col, { size: 19, weight: 600 });
     text(ctx, g.name + ', C_{g} = kP_{g}', br.l + 16, br.t + 18, col, { size: 19, weight: 600, bg: PAL.panel });
@@ -162,7 +162,7 @@ function spline(xs, ys) {
     ctx.save(); ctx.strokeStyle = lake; ctx.lineWidth = 3; ctx.lineJoin = 'round'; ctx.beginPath(); ctx.moveTo(120, SURF); ctx.lineTo(170, FLOOR); ctx.lineTo(590, FLOOR); ctx.lineTo(640, SURF); ctx.stroke(); ctx.restore();
     for (let m = 50; m <= 200; m += 50) { const w = 50 * m / 232; line(ctx, 120 + w + 4, Ys(m), 640 - w - 4, Ys(m), alpha(PAL.ink, 0.12), 1.5); }
     line(ctx, 120, SURF, 640, SURF, alpha(PAL.ink, 0.55), 2);
-    text(ctx, 'crater lake', 572, FLOOR - 22, lake, { size: 18, weight: 600, align: 'right' });
+    text(ctx, 'crater lake', 190, FLOOR - 20, lake, { size: 18, weight: 600 });
     text(ctx, 'valley', 736, SURF + 96, PAL.muted, { size: 17, align: 'right' });
     /* the graph, on the scene's depth scale */
     const box = { l: 900, r: 1340, t: Ys(0), b: Ys(200) };

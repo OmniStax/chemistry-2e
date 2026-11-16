@@ -48,10 +48,10 @@ const local = (c, e) => { const r = c.getBoundingClientRect(); return r.width ? 
 
   /* the four cases as the book's table sets them: columns ΔH > 0, ΔH < 0; rows ΔS > 0, ΔS < 0 */
   const CASES = [
-    { h: 1, s: 1, a: 0.5, b: -0.35, word: 'spontaneous', when: 'at high ', name: 'ΔH > 0 and ΔS > 0: ΔG < 0 at high temperature, ΔG > 0 at low temperature' },
-    { h: -1, s: 1, a: -0.5, b: -0.95, word: 'spontaneous', when: 'at any ', name: 'ΔH < 0 and ΔS > 0: ΔG < 0 at any temperature' },
-    { h: 1, s: -1, a: 0.5, b: 0.95, word: 'nonspontaneous', when: 'at any ', name: 'ΔH > 0 and ΔS < 0: ΔG > 0 at any temperature' },
-    { h: -1, s: -1, a: -0.5, b: 0.35, word: 'spontaneous', when: 'at low ', name: 'ΔH < 0 and ΔS < 0: ΔG < 0 at low temperature, ΔG > 0 at high temperature' },
+    { h: 1, s: 1, a: 0.5, b: -0.35, word: 'spontaneous', when: 'at high ', name: 'ΔG < 0 above ΔH/ΔS, ΔG > 0 below it' },
+    { h: -1, s: 1, a: -0.5, b: -0.95, word: 'spontaneous', when: 'at any ', name: 'ΔG < 0 at any temperature' },
+    { h: 1, s: -1, a: 0.5, b: 0.95, word: 'nonspontaneous', when: 'at any ', name: 'ΔG > 0 at any temperature' },
+    { h: -1, s: -1, a: -0.5, b: 0.35, word: 'spontaneous', when: 'at low ', name: 'ΔG < 0 below ΔH/ΔS, ΔG > 0 above it' },
   ];
   const TB = { l: 1000, w: 180, gap: 10, t: 190, h: 186 };
   const cellXY = (c) => [TB.l + (c.h > 0 ? 0 : 1) * (TB.w + TB.gap), TB.t + (c.s > 0 ? 0 : 1) * (TB.h + TB.gap)];
@@ -120,7 +120,10 @@ const local = (c, e) => { const r = c.getBoundingClientRect(); return r.width ? 
     F.plot(ctx, ax, f, cE, { w: 5 });
     const inside = (v) => v > YR[0] && v < YR[1];
     if (inside(h)) {
-      lab.add('ΔH', G.r - 50, Y(h), 0, s > 0 ? -1 : 1, cE, 24, 24);
+      /* on the side away from the wedge, unless that side is too near the frame's edge and the half's name */
+      let dir = s > 0 ? -1 : 1;
+      if (Y(h) + dir * 100 < G.t || Y(h) + dir * 100 > G.b) dir = -dir;
+      lab.add('ΔH', G.r - 50, Y(h), 0, dir, cE, 24, 24);
       hits.push({ x: G.r - 50, y: Y(h), r: 18, name: `ΔH = ${minus(h.toFixed(2))} kJ, the value of ΔG at T = 0` });
     }
     /* the ΔG label where the line is still inside the frame, toward the right, on the side away from the wedge */
@@ -131,11 +134,14 @@ const local = (c, e) => { const r = c.getBoundingClientRect(); return r.width ? 
 
     /* the −TΔS term at the reader's temperature, from the ΔH level to ΔG */
     const px = X(t);
-    const side = t > 620 ? -1 : 1;
+    const side = px > 610 ? -1 : 1;
     if (inside(h) && inside(g) && Math.abs(Y(g) - Y(h)) > 30) {
-      const bx = px + side * 26, bl = `−TΔS = ${minus((-t * s).toFixed(1))} kJ`;
-      F.vbracket(ctx, bx, Y(h), Y(g), cE, bl, side, { H });
-      const ly = (Y(h) + Y(g)) / 2, w = F.measure(ctx, bl, { size: 22, weight: 600 }) + 20;
+      /* named at mid-height on the right; on the left a quarter of the way from the ΔH level, where the line (which
+         passes mid-height at T/2) is farther off */
+      const bx = px + side * 26, bl = `−TΔS = ${minus((-t * s).toFixed(1))} kJ`, tall = Math.abs(Y(g) - Y(h));
+      const ly = side < 0 && tall > 90 ? Y(h) + (Y(g) - Y(h)) / 4 : (Y(h) + Y(g)) / 2, w = F.measure(ctx, bl, { size: 22, weight: 600 }) + 20;
+      F.vbracket(ctx, bx, Y(h), Y(g), cE);
+      text(ctx, bl, bx + side * 16, ly, cE, { size: 22, weight: 600, align: side > 0 ? 'left' : 'right', bg: PAL.panel });
       if (side < 0) lab.block(bx - 16 - w, ly - 16, bx + 10, ly + 16); else lab.block(bx - 10, ly - 16, bx + 16 + w, ly + 16);
       hits.push({ x: bx, y: ly, r: 22, name: `−TΔS = −(${t.toFixed(1)} K)(${minus(s.toFixed(4))} kJ/K) = ${minus((-t * s).toFixed(2))} kJ` });
     }

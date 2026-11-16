@@ -165,11 +165,11 @@ function piles(ctx, o) {
     if (q <= 4) tiles = W.map((_, j) => { const out = []; for (let a = q - j; a >= 0; a--) for (let c = j; c >= 0; c--) out.push([a, q - j - a, c, j - c]); return out; });
     hits = [];
     const tile = (c, m, x, y, w, h) => {
-      const fs = clamp(h * 0.66, 17, 46), lw = F.measure(c, 'A', { size: fs, weight: 600 }), gap = Math.min(fs * 0.36, (w / 4 - lw - 6) / 4);
+      const fs = clamp(h * 0.66, 17, 46), lw = F.measure(c, 'A', { size: fs, weight: 600 }), pad = w / 40 + 3, gap = Math.min(fs * 0.3, (w / 4 - lw - pad - 2) / 4);
       c.save(); c.strokeStyle = PAL.muted; c.lineWidth = 2; c.strokeRect(x, y, w, h); c.restore(); line(c, x + w / 2, y, x + w / 2, y + h, PAL.muted, 2);
       P.forEach((p, i) => {
         /* the letter at a fixed place in its quarter and, close after it, one raised asterisk for each unit it holds */
-        const px = x + (i + 0.5) * (w / 4), x0 = x + i * (w / 4) + Math.max(4, (w / 4 - lw - 4 * gap) / 2);
+        const px = x + (i + 0.5) * (w / 4), x0 = x + i * (w / 4) + pad;
         text(c, p, x0, y + h / 2 + 1, i < 2 ? hot : cold, { size: fs, weight: 600 });
         for (let u = 0; u < m[i]; u++) text(c, '*', x0 + lw + (u + 0.5) * gap, y + h / 2 - fs * 0.1, PAL.ink, { size: fs * 0.72, weight: 600, align: 'center' });
         hits.push({ x: px, y: y + h / 2, r: w / 8, name: `particle ${p} of the ${i < 2 ? 'hot' : 'cold'} object, ${UNITS[m[i]]} of energy` });

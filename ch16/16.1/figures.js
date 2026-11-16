@@ -217,6 +217,7 @@ const sup = (n) => String(n).split('').map((c) => SUP[c] ?? c).join('');
   function draw() {
     const { ctx } = begin(d.c), ar = F.el('Ar'), n = right(), cl = F.cat(0), cr = F.cat(1), shut = valve.value === 'closed';
     glassware(ctx);
+    /*DBG*/ for (let i = 0; i < 8; i++) dot(ctx, 60 + i * 40, 560, F.cat(i), true, 16);
     stopcock(ctx, turn());
     const fresh = shut ? valve.k : atoms.k;
     ctx.save(); ctx.globalAlpha = fresh; ctx.fillStyle = ar; ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 1.5;

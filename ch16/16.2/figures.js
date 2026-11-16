@@ -48,7 +48,7 @@ function piles(ctx, o) {
     const x = xc(k);
     let top;
     if (o.tiles) {
-      o.tiles[k].forEach((m, j) => o.tile(ctx, m, x - tw / 2, PBASE - (j + 1) * th + Math.min(4, th * 0.12), tw, th - Math.min(8, th * 0.24)));
+      o.tiles[k].forEach((m, j) => o.tile(ctx, m, x - tw / 2, PBASE - (w - j) * th + Math.min(4, th * 0.12), tw, th - Math.min(8, th * 0.24)));
       top = PBASE - w * th;
     } else {
       const bw = Math.max(2, Math.min(slot * 0.78, 120)), h = Math.max(1.5, ((PBASE - PTOP) * w) / wmax);
@@ -80,24 +80,26 @@ function piles(ctx, o) {
    microstate is drawn as the book draws it, two boxes side by side with
    each particle in its own place, so the piles at N = 4 are the book's
    rows (a) to (e) stood on end: 1, 4, 6, 4, 1. From eight particles on a
-   pile is a bar of height W = N!/(k!(N − k)!). N runs over the even
-   numbers 2 to 100, so there is always an even split; 2¹⁰⁰ = 1.27 × 10³⁰
+   pile is a bar of height W = N!/(k!(N − k)!). N steps through 2, 4, 6, 8, 10, 12, 16, 20, 30, 50 and
+   100, all even, so there is always an even split; 2¹⁰⁰ = 1.27 × 10³⁰
    and the even split of 100 holds 1.01 × 10²⁹. Still: a count has no time
    in it. The particles are told apart by colour and named on hover; the
    text names none, so they are instances (F.cat), not referents.
 ===================================================================== */
 (function () {
   const d = sim('sim-microstates', PILE_H);
+  /* the slider steps through these particle counts, so that 2, 4 and 6 are as easy to land on as 100 */
+  const NS = [2, 4, 6, 8, 10, 12, 16, 20, 30, 50, 100], nOf = () => NS[clamp(Math.round(N.v), 0, NS.length - 1)];
   const side = (label, key, aria, value) => ctl(d.controls, { label, cls: '', key, min: 0, max: 4, step: 1, value, unit: '', dec: 0, aria,
-    fmt: (v) => `${N.v - v} left, ${v} right`, onInput: () => draw() });
-  const N = ctl(d.controls, { label: 'N', cls: '', key: 'N', min: 2, max: 100, step: 2, value: 4, unit: '', dec: 0, aria: 'the number of particles',
-    fmt: (v) => `${v} particles`, onInput: () => { A.range({ min: 0, max: N.v, step: 1, value: 0 }); B.range({ min: 0, max: N.v, step: 1, value: N.v / 2 }); draw(); } });
+    fmt: (v) => `${nOf() - v} left, ${v} right`, onInput: () => draw() });
+  const N = ctl(d.controls, { label: 'N', cls: '', key: 'N', min: 0, max: NS.length - 1, step: 1, value: 1, unit: '', dec: 0, aria: 'the number of particles',
+    fmt: (v) => `${NS[clamp(Math.round(v), 0, NS.length - 1)]} particles`, onInput: () => { A.range({ min: 0, max: nOf(), step: 1, value: 0 }); B.range({ min: 0, max: nOf(), step: 1, value: nOf() / 2 }); draw(); } });
   const A = side('\\text{initial}', 'from', 'the initial distribution, as the number of particles in the right box', 0);
   const B = side('\\text{final}', 'to', 'the final distribution, as the number of particles in the right box', 2);
   const ro = F.readout(d);
   let hits = []; F.hover(d.stage, () => hits);
   function draw() {
-    const { ctx } = begin(d.c), n = N.v, total = 2 ** n, ia = clamp(Math.round(A.v), 0, n), ib = clamp(Math.round(B.v), 0, n);
+    const { ctx } = begin(d.c), n = nOf(), total = 2 ** n, ia = clamp(Math.round(A.v), 0, n), ib = clamp(Math.round(B.v), 0, n);
     const W = Array.from({ length: n + 1 }, (_, k) => choose(n, k));
     let tiles = null;
     if (n <= 6) {
@@ -156,10 +158,10 @@ function piles(ctx, o) {
     const W = Array.from({ length: q + 1 }, (_, j) => (q - j + 1) * (j + 1)), total = W.reduce((a, b) => a + b, 0);
     let tiles = null;
     /* in the book's order: the hot object's units on A first, then the cold object's on C first */
-    if (q <= 4) tiles = W.map((_, j) => { const out = []; for (let a = q - j; a >= 0; a--) for (let c = j; c >= 0; c--) out.unshift([a, q - j - a, c, j - c]); return out.reverse(); });
+    if (q <= 4) tiles = W.map((_, j) => { const out = []; for (let a = q - j; a >= 0; a--) for (let c = j; c >= 0; c--) out.push([a, q - j - a, c, j - c]); return out; });
     hits = [];
     const tile = (c, m, x, y, w, h) => {
-      const fs = clamp(h * 0.44, 17, 36), ly = y + h - fs * 0.62, sy = ly - fs * 0.78, gap = fs * 0.42;
+      const fs = clamp(h * 0.44, 17, 36), ly = y + h - fs * 0.62, sy = ly - fs * 0.78, gap = fs * 0.5;
       c.save(); c.strokeStyle = PAL.muted; c.lineWidth = 2; c.strokeRect(x, y, w, h); c.restore(); line(c, x + w / 2, y, x + w / 2, y + h, PAL.muted, 2);
       P.forEach((p, i) => {
         const px = x + (i + 0.5) * (w / 4);

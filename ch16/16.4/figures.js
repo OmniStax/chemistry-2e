@@ -115,7 +115,7 @@ const local = (c, e) => { const r = c.getBoundingClientRect(); return r.width ? 
     }
 
     /* −TΔS, the wedge between the ΔH level and the line; then the level and the line */
-    F.shade(ctx, ax, f, h, 0, 1000, cE, { alpha: 0.14 });
+    F.shade(ctx, ax, f, h, 0, 1000, cE, { alpha: 0.12 });
     F.plot(ctx, ax, () => h, cE, { w: 3, dash: [10, 10] });
     F.plot(ctx, ax, f, cE, { w: 5 });
     const inside = (v) => v > YR[0] && v < YR[1];
@@ -129,10 +129,9 @@ const local = (c, e) => { const r = c.getBoundingClientRect(); return r.width ? 
       if (y > YR[0] + 20 && y < YR[1] - 20) { lab.add('ΔG', X(x), Y(y), 0, s > 0 ? 1 : -1, cE, 24, 28); break; }
     }
 
-    /* the −TΔS term at the reader's temperature, from the ΔH level to ΔG, on the side away from the crossing */
+    /* the −TΔS term at the reader's temperature, from the ΔH level to ΔG */
     const px = X(t);
-    let side = crosses && tc > t ? -1 : 1;
-    if (t > 760) side = -1; else if (t < 240) side = 1;
+    const side = t > 620 ? -1 : 1;
     if (inside(h) && inside(g) && Math.abs(Y(g) - Y(h)) > 30) {
       const bx = px + side * 26, bl = `−TΔS = ${minus((-t * s).toFixed(1))} kJ`;
       F.vbracket(ctx, bx, Y(h), Y(g), cE, bl, side, { H });
@@ -141,10 +140,9 @@ const local = (c, e) => { const r = c.getBoundingClientRect(); return r.width ? 
       hits.push({ x: bx, y: ly, r: 22, name: `−TΔS = −(${t.toFixed(1)} K)(${minus(s.toFixed(4))} kJ/K) = ${minus((-t * s).toFixed(2))} kJ` });
     }
     if (crosses) {
-      /* named in the open quarter beside the line, on the side away from the reader's point */
-      const right = t <= tc, up = (s > 0) === right;
+      /* named across the zero line from the ΔH level, where the wedge and its bracket are not */
       dot(ctx, X(tc), Y(0), PAL.ink, false, 9);
-      lab.add(`${tc.toFixed(1)} K`, X(tc), Y(0), right ? 0.75 : -0.75, up ? -0.66 : 0.66, cT, 22, 30);
+      lab.add(`${tc.toFixed(1)} K`, X(tc), Y(0), 0, h > 0 ? 1 : -1, cT, 22, 38);
       hits.push({ x: X(tc), y: Y(0), r: 16, name: `ΔG = 0 at T = ΔH/ΔS = ${tc.toFixed(1)} K` });
     }
 
@@ -175,23 +173,25 @@ const local = (c, e) => { const r = c.getBoundingClientRect(); return r.width ? 
 
 /* =====================================================================
    FIGURE 16.14: G against reaction progress for one mole of A turning
-   into B at 298.15 K, measured from G°(A): G(x) = xΔG° + RT[x ln x +
-   (1−x) ln(1−x)]. Its slope at a mixture is ΔG = ΔG° + RT ln Q with
+   into B at 298.15 K: G(x) = (x − ½)ΔG° + RT[x ln x + (1−x) ln(1−x)],
+   measured from midway between the two standard values so that the
+   curve stays in the middle of the frame whatever ΔG° is. Its slope at a mixture is ΔG = ΔG° + RT ln Q with
    Q = x/(1 − x), drawn as the tangent there with its head downhill, the
    way the reaction runs; the slope is zero at the minimum, where Q = K =
    e^(−ΔG°/RT). ΔG°, the bracket between the two end levels, runs from
    −2.5 to 2.5 kJ/mol, which puts the minimum between 27 % and 73 %
-   product. The frame is fixed at −4.5 to 3 kJ, which holds every curve
-   the slider reaches (lowest −3.27) above the Q and K labels. RT is
+   product. The frame is fixed at −2.9 to 1.7 kJ, which holds every curve
+   the slider reaches (ends at ±1.25, lowest −2.02) above the Q and K
+   labels. No tick numbers on G, as the book prints none. RT is
    2.479 kJ/mol. The mixture's point can be dragged along the curve.
    Still: a relation with no clock.
 ===================================================================== */
 (function () {
   const H = 690, d = sim('sim-gibbs', H);
   const G = { l: 150, r: 1080, t: 124, b: 590 };
-  const YR = [-4.5, 3], RT = 8.314e-3 * 298.15, BX = 1112;
+  const YR = [-2.9, 1.7], RT = 8.314e-3 * 298.15, BX = 1112;
   const xlnx = (x) => (x > 0 ? x * Math.log(x) : 0);
-  const Gof = (g0) => (x) => x * g0 + RT * (xlnx(x) + xlnx(1 - x));
+  const Gof = (g0) => (x) => (x - 0.5) * g0 + RT * (xlnx(x) + xlnx(1 - x));
   const Kof = (g0) => Math.exp(-g0 / RT);
   const xeq = (g0) => { const k = Kof(g0); return k / (1 + k); };
   const sig3 = (v) => (v >= 100 ? v.toFixed(1) : v.toPrecision(3));
@@ -213,11 +213,12 @@ const local = (c, e) => { const r = c.getBoundingClientRect(); return r.width ? 
     const g0 = +g0c.v.toFixed(2), x = xc.v, f = Gof(g0), xe = xeq(g0), at = Math.abs(x - xe) < 1e-6;
     const cE = C('energy'), cK = C('equilibrium-constant');
     hits = [];
-    const ax = F.axes(ctx, G, [0, 1], YR, {
-      nx: 4, ny: 5, xl: 'reaction progress', yl: 'G − G°(reactants) (kJ)', yc: cE,
-      fx: (v) => (v === 0 ? 'Reactants' : v === 1 ? 'Products' : `${Math.round(v * 100)} % product`), fy: (v) => (v === 0 ? '0' : minus(v.toFixed(1))),
+    /* the frame is drawn on G − YR[0], so that no axis line is ruled at the arbitrary zero of G */
+    const ax0 = F.axes(ctx, G, [0, 1], [0, YR[1] - YR[0]], {
+      nx: 4, ny: 0, xl: 'reaction progress', yl: 'Gibbs free energy (G)', yc: cE,
+      fx: (v) => (v === 0 ? 'Reactants' : v === 1 ? 'Products' : `${Math.round(v * 100)} % product`),
     });
-    const { X, Y } = ax;
+    const ax = { ...ax0, Y: (v) => ax0.Y(v - YR[0]), yr: YR }, { X, Y } = ax;
     const q = x / (1 - x), qs = sig3(q), k = Kof(g0), ks = sig3(k);
     const dg = at ? 0 : g0 + RT * Math.log(+qs);
     const head = at
@@ -228,15 +229,16 @@ const local = (c, e) => { const r = c.getBoundingClientRect(); return r.width ? 
 
     /* the two standard free energies, each named over its own end, and the bracket between them beside the frame */
     const lev = alpha(PAL.ink, 0.45);
-    line(ctx, G.l, Y(0), BX + 10, Y(0), lev, 2, [10, 10]);
-    line(ctx, G.l, Y(g0), BX + 10, Y(g0), lev, 2, [10, 10]);
+    const yr = Y(-g0 / 2), yp = Y(g0 / 2);
+    line(ctx, G.l, yr, BX + 10, yr, lev, 2, [10, 10]);
+    line(ctx, G.l, yp, BX + 10, yp, lev, 2, [10, 10]);
     const wr = F.measure(ctx, 'G°(reactants)', { size: 22 }), wp = F.measure(ctx, 'G°(products)', { size: 22 });
-    text(ctx, 'G°(reactants)', G.l + 16, Y(0) - 22, PAL.ink, { size: 22 });
-    lab.block(G.l + 8, Y(0) - 38, G.l + 24 + wr, Y(0) - 6);
-    text(ctx, 'G°(products)', G.r - 16, Y(g0) - 22, PAL.ink, { size: 22, align: 'right' });
-    lab.block(G.r - 24 - wp, Y(g0) - 38, G.r - 8, Y(g0) - 6);
-    F.vbracket(ctx, BX, Y(0), Y(g0), cE, `ΔG° = ${minus(g0.toFixed(2))} kJ/mol`, 1, { H });
-    hits.push({ x: BX, y: (Y(0) + Y(g0)) / 2, r: 24, name: `ΔG° = G°(products) − G°(reactants) = ${minus(g0.toFixed(2))} kJ/mol` });
+    text(ctx, 'G°(reactants)', G.l + 16, yr - 22, PAL.ink, { size: 22 });
+    lab.block(G.l + 8, yr - 38, G.l + 24 + wr, yr - 6);
+    text(ctx, 'G°(products)', G.r - 16, yp - 22, PAL.ink, { size: 22, align: 'right' });
+    lab.block(G.r - 24 - wp, yp - 38, G.r - 8, yp - 6);
+    F.vbracket(ctx, BX, yr, yp, cE, `ΔG° = ${minus(g0.toFixed(2))} kJ/mol`, 1, { H });
+    hits.push({ x: BX, y: (yr + yp) / 2, r: 24, name: `ΔG° = G°(products) − G°(reactants) = ${minus(g0.toFixed(2))} kJ/mol` });
 
     F.curve(ctx, f, 0, 1, X, Y, cE, 5, 240);
 
@@ -265,7 +267,9 @@ const local = (c, e) => { const r = c.getBoundingClientRect(); return r.width ? 
       lab.add(`Q = ${x.toFixed(2)}/${(1 - x).toFixed(2)} = ${qs}`, px, G.b - 6, 0.55 * qSide, -0.85, cK, 22, 34);
     }
     P.draw(ctx, ax, cE);
-    lab.add(at ? 'slope = ΔG = 0' : `slope = ΔG = ${minus(dg.toFixed(2))} kJ/mol`, px, py, 0, -1, cE, 22, 40);
+    /* the slope named inside the bowl, on the side the reaction runs to */
+    if (at) lab.add('slope = ΔG = 0', px, py, 0, -1, cE, 22, 40);
+    else lab.add(`slope = ΔG = ${minus(dg.toFixed(2))} kJ/mol`, px, py, m < 0 ? 0.7 : -0.7, -0.7, cE, 22, 46);
     hits.push({ x: px, y: py, r: 18, name: at ? `the mixture at equilibrium: ${Math.round(x * 100)} % product` : `the mixture: ${Math.round(x * 100)} % product, Q = ${qs}; the tangent's slope is ΔG, and its head points the way the reaction runs` });
     lab.flush();
 

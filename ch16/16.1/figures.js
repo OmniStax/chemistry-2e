@@ -89,8 +89,8 @@ const sup = (n) => String(n).split('').map((c) => SUP[c] ?? c).join('');
       const x = X(HALF[k]), al = side > 0 ? 'left' : 'right';
       line(ctx, x, Yh, x, G.b, alpha(col[k], 0.7), 2.5, [4, 8]);
       dot(ctx, x, Yh, col[k], false, 10);
-      text(ctx, name, x + side * 44, g.Y(86), col[k], { size: 24, weight: 600, align: al, bg: PAL.panel });
-      text(ctx, `half-life ${s}`, x + side * 44, g.Y(69), col[k], { size: 20, align: al, bg: PAL.panel });
+      text(ctx, name, x + (side > 0 ? 44 : -78), g.Y(86), col[k], { size: 24, weight: 600, align: al, bg: PAL.panel });
+      text(ctx, `half-life ${s}`, x + (side > 0 ? 44 : -78), g.Y(69), col[k], { size: 20, align: al, bg: PAL.panel });
       hits.push({ x, y: Yh, r: 16, name: `half of the ${name} is left after ${s}` });
     });
     ['u', 'tc'].forEach((k) => dot(ctx, xt, g.Y(left(h, k)), col[k], true, 9));
@@ -107,18 +107,23 @@ const sup = (n) => String(n).split('').map((c) => SUP[c] ?? c).join('');
    FIGURE 16.4: an ideal gas expanding into a vacuum, drawn flat. Two
    round flasks of inner radius RB, centres OFF either side of the valve
    at (X0, Y0), joined by a tube of inner half-height HN; a stopcock plug
-   PW wide either side of the axis closes the tube. Thirty argon atoms run
-   straight and leave the glass in a random direction (9.4's bulbs).
-   Closing the valve puts all thirty back in the left flask. Moving, on an
-   endless clock. Beneath, the right flask's count against time over the
-   last WIN seconds of the drawing's time, 0 to 30, the even split dashed.
+   PW wide either side of the axis closes the tube. Argon atoms (thirty,
+   as the book draws; ten or four by choice) run straight at one speed,
+   leave the flask glass in a random direction and glance off the tube's
+   straight wall. An atom belongs to the flask it was last in: it changes
+   over where the tube opens into the other flask, at ±XE. Closing the
+   valve starts again with every atom in the left flask. Moving, on an
+   endless clock. Beneath, both flasks' counts against the time since the
+   valve opened; the time axis is a named zoom, 0 to the time so far (30 s
+   of the drawing's time at least), so the whole run stays in view.
 ===================================================================== */
 (function () {
-  const H = 780, d = sim('sim-gas-flasks', H);
-  const X0 = 700, Y0 = 270, OFF = 290, RB = 175, HN = 44, RM = 13, PW = 32, N = 30, DS = 2, SPEED = 640, WIN = 40;
-  const RI = RB - RM, HI = HN - RM;
+  const H = 830, d = sim('sim-gas-flasks', H);
+  const X0 = 700, Y0 = 290, OFF = 285, RB = 190, HN = 50, RM = 13, PW = 32, DS = 2, SPEED = 640, WIN = 30;
+  const RI = RB - RM, HI = HN - RM, XE = OFF - Math.sqrt(RI * RI - HI * HI) + 2;
   const valve = F.choice(d.controls, { label: '\\text{valve}', aria: 'the valve between the flasks', options: [{ value: 'closed', label: 'closed' }, { value: 'open', label: 'open' }],
     value: 'open', ms: 500, onInput: (v) => { if (v === 'closed') restart(); } });
+  const atoms = F.choice(d.controls, { label: '\\text{atoms}', aria: 'the number of atoms', key: 'atoms', options: [4, 10, 30].map((n) => ({ value: String(n), label: String(n) })), value: '30', ms: 500, onInput: () => restart() });
   const turn = () => (valve.value === 'open' ? valve.k : 1 - valve.k);
   const open = () => valve.value === 'open' && valve.k >= 0.5;
   const inside = (x, y) => (Math.abs(y) < HI && Math.abs(x) < OFF) || Math.hypot(x + OFF, y) < RI || Math.hypot(x - OFF, y) < RI;
@@ -141,7 +146,7 @@ const sup = (n) => String(n).split('').map((c) => SUP[c] ?? c).join('');
       for (let i = 0; i < 12; i++) { const m = (a + b) / 2; if (inside(q.x + q.ux * dist * m, q.y + q.uy * dist * m)) a = m; else b = m; }
       q.x += q.ux * dist * a; q.y += q.uy * dist * a; dist *= 1 - a;
       const dl = Math.hypot(q.x + OFF, q.y), dr = Math.hypot(q.x - OFF, q.y);
-      if (Math.abs(q.y) > HI - 1 && dl > RI - 0.5 && dr > RI - 0.5) leave(q, 0, -Math.sign(q.y));
+      if (Math.abs(q.y) > HI - 1 && dl > RI - 0.5 && dr > RI - 0.5) q.uy = -q.uy;   /* the tube's wall: a glancing bounce */
       else { const cx = dl < dr ? -OFF : OFF, r = Math.min(dl, dr) || 1; leave(q, (cx - q.x) / r, -q.y / r); }
     }
   }
@@ -152,17 +157,25 @@ const sup = (n) => String(n).split('').map((c) => SUP[c] ?? c).join('');
       if (Math.hypot(x + OFF, y) < RI && (k > 200 || P.every((q) => Math.hypot(q.x - x, q.y - y) > 2.4 * RM))) return [x, y];
     }
   };
-  let P = [], clock = 0, trace = [];
+  /* trace: [time since the valve opened, atoms in the right flask], every DT seconds, thinned as it grows */
+  let P = [], N = 30, clock = 0, trace = [], DT = 0.1, again = 0;
   function restart() {
-    P = []; clock = 0; trace = [[0, 0]];
-    for (let i = 0; i < N; i++) { const [x, y] = place(P), h = Math.random() * TAU; P.push({ x, y, ux: Math.cos(h), uy: Math.sin(h), left: 0 }); }
+    N = +atoms.value; P = []; clock = 0; trace = [[0, 0]]; DT = 0.1; again = 0;
+    for (let i = 0; i < N; i++) { const [x, y] = place(P), h = Math.random() * TAU; P.push({ x, y, ux: Math.cos(h), uy: Math.sin(h), left: 0, side: -1 }); }
   }
-  const right = () => P.filter((q) => q.x > 0).length;
+  const right = () => P.filter((q) => q.side > 0).length;
   function step(dt) {
-    const W = walls();
-    for (const q of P) { q.left += SPEED * dt; while (q.left >= DS) { q.left -= DS; move(q, DS, W); } }
+    const W = walls(), was = right();
+    for (const q of P) {
+      q.left += SPEED * dt;
+      while (q.left >= DS) { q.left -= DS; move(q, DS, W); if (q.x * q.side < -XE) q.side = -q.side; }
+    }
+    if (!open()) return;
+    const n = right();
+    if (was > 0 && n === 0) again++;
     clock += dt;
-    if (clock - trace[trace.length - 1][0] >= 0.1) { trace.push([clock, right()]); while (trace.length && trace[0][0] < clock - WIN - 1) trace.shift(); }
+    if (n !== trace[trace.length - 1][1] || clock - trace[trace.length - 1][0] >= DT) trace.push([clock, n]);
+    if (trace.length > 6000) { trace = trace.filter((_, i) => i % 2 === 0 || i === trace.length - 1); DT *= 2; }
   }
   const cy = cycle(() => Infinity, 0);
   restart();
@@ -177,54 +190,55 @@ const sup = (n) => String(n).split('').map((c) => SUP[c] ?? c).join('');
     ctx.save();
     ctx.beginPath(); ctx.arc(xl, Y0, RG, a, TAU - a); ctx.lineTo(xr - nx, Y0 - HN - 2); ctx.arc(xr, Y0, RG, Math.PI + a, 3 * Math.PI - a); ctx.lineTo(xl + nx, Y0 + HN + 2); ctx.closePath();
     ctx.fillStyle = alpha(PAL.ink, 0.05); ctx.fill();
-    ctx.lineWidth = 4; ctx.strokeStyle = PAL.ink; ctx.stroke();
+    ctx.lineWidth = 5; ctx.strokeStyle = PAL.ink; ctx.lineJoin = 'round'; ctx.stroke();
     ctx.restore();
   }
   /* the stopcock from the side, as the book draws it: a tapered plug across the tube, its bore in line with the tube when
-     open and seen end on when closed, a knob on a stem that turns flat along the tube when open */
+     open and seen end on when closed, a handle on a stem, seen end on when closed and lying along the tube when open */
   function stopcock(ctx, k) {
-    const top = Y0 - HN - 18, bot = Y0 + HN + 18, wt = PW + 5, wb = PW - 3;
+    const top = Y0 - HN - 20, bot = Y0 + HN + 20, wt = PW + 6, wb = PW - 4;
     const body = () => { ctx.beginPath(); ctx.moveTo(X0 - wt, top); ctx.lineTo(X0 + wt, top); ctx.lineTo(X0 + wb, bot); ctx.lineTo(X0 - wb, bot); ctx.closePath(); };
     ctx.save();
-    ctx.fillStyle = PAL.panel; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.lineJoin = 'round';
-    ctx.beginPath(); ctx.roundRect(X0 - 17, bot, 34, 14, 3); ctx.fill(); ctx.stroke();
-    ctx.beginPath(); ctx.rect(X0 - 7, top - 18, 14, 18); ctx.fill(); ctx.stroke();
-    ctx.beginPath(); ctx.ellipse(X0, top - 28, 13 + 37 * k, 12 - 2 * k, 0, 0, TAU); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = PAL.panel; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3.5; ctx.lineJoin = 'round';
+    ctx.beginPath(); ctx.roundRect(X0 - 19, bot, 38, 16, 3); ctx.fill(); ctx.stroke();
+    ctx.beginPath(); ctx.rect(X0 - 8, top - 20, 16, 20); ctx.fill(); ctx.stroke();
+    ctx.beginPath(); ctx.ellipse(X0, top - 32, 15 + 40 * k, 14 - 3 * k, 0, 0, TAU); ctx.fill(); ctx.stroke();
     body(); ctx.fill();
     ctx.save(); body(); ctx.clip();
-    ctx.fillStyle = alpha(PAL.ink, 0.05); ctx.lineWidth = 2.5;
-    if (k >= 1) { ctx.fillRect(X0 - wt, Y0 - HN, 2 * wt, 2 * HN); line(ctx, X0 - wt, Y0 - HN, X0 + wt, Y0 - HN, PAL.ink, 2.5); line(ctx, X0 - wt, Y0 + HN, X0 + wt, Y0 + HN, PAL.ink, 2.5); }
-    else { ctx.beginPath(); ctx.ellipse(X0, Y0, 20 + (wt + 14 - 20) * k, 20 + (HN - 20) * k, 0, 0, TAU); ctx.fill(); ctx.stroke(); }
+    ctx.fillStyle = alpha(PAL.ink, 0.05); ctx.lineWidth = 3;
+    if (k >= 1) { ctx.fillRect(X0 - wt, Y0 - HN, 2 * wt, 2 * HN); line(ctx, X0 - wt, Y0 - HN, X0 + wt, Y0 - HN, PAL.ink, 3); line(ctx, X0 - wt, Y0 + HN, X0 + wt, Y0 + HN, PAL.ink, 3); }
+    else { ctx.beginPath(); ctx.ellipse(X0, Y0, 22 + (wt + 14 - 22) * k, 22 + (HN - 22) * k, 0, 0, TAU); ctx.fill(); ctx.stroke(); }
     ctx.restore();
     body(); ctx.stroke();
     ctx.restore();
   }
-  const G = { l: 260, r: 1140, t: 560, b: 690 };
+  const G = { l: 250, r: 1190, t: 610, b: 760 };
   tex(d.readout, '\\kwork = -\\kP\\kdV = 0 \\\\ \\kdU = \\kq + \\kwork = 0 + 0 = 0');
   function draw() {
-    const { ctx } = begin(d.c), ar = F.el('Ar'), n = right();
+    const { ctx } = begin(d.c), ar = F.el('Ar'), n = right(), cl = F.cat(0), cr = F.cat(1), shut = valve.value === 'closed';
     glassware(ctx);
     stopcock(ctx, turn());
-    const fresh = valve.value === 'closed' ? valve.k : 1;
+    const fresh = shut ? valve.k : atoms.k;
     ctx.save(); ctx.globalAlpha = fresh; ctx.fillStyle = ar; ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 1.5;
     for (const q of P) { ctx.beginPath(); ctx.arc(X0 + q.x, Y0 + q.y, RM, 0, TAU); ctx.fill(); ctx.stroke(); }
     ctx.restore();
-    F.label(ctx, 'valve', X0, Y0 - HN - 58, { side: 'above', size: 20, color: PAL.ink, gap: 16, leader: false });
-    [[-1, N - n, 'left flask'], [1, n, 'right flask']].forEach(([s, c, w]) => F.rich(ctx, [w + ' ', [String(c), PAL.ink, 700]], X0 + s * OFF, Y0 + RB + 34, { size: 22, align: 'center' }));
-    /* the trace: the right flask's count over the last WIN seconds */
-    const t1 = Math.max(WIN, clock), g = F.axes(ctx, G, [t1 - WIN, t1], [0, 30], { nx: 0, ny: 2, xl: 'time', xc: C('time'), yl: 'atoms in the right flask' });
-    line(ctx, G.l, g.Y(15), G.r, g.Y(15), alpha(PAL.ink, 0.45), 2.5, [10, 10]);
-    text(ctx, 'even split', G.r + 12, g.Y(15), PAL.muted, { size: 17 });
-    const pts = trace.filter(([s]) => s >= t1 - WIN);
-    if (pts.length > 1) {
-      ctx.save(); ctx.beginPath(); ctx.rect(G.l, G.t - 4, G.r - G.l, G.b - G.t + 8); ctx.clip();
-      ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3.5; ctx.lineJoin = 'round'; ctx.beginPath();
-      pts.forEach(([s, c], i) => (i ? ctx.lineTo(g.X(s), g.Y(c)) : ctx.moveTo(g.X(s), g.Y(c)))); ctx.stroke(); ctx.restore();
-      const [s, c] = pts[pts.length - 1]; dot(ctx, g.X(s), g.Y(c), PAL.ink, true, 8);
-    }
-    topline(ctx, valve.value === 'closed'
-      ? 'Valve closed: all 30 atoms are in the left flask, and the right flask holds a vacuum.'
-      : `${n} of the 30 atoms ${n === 1 ? 'is' : 'are'} in the right flask.`);
+    F.label(ctx, 'valve', X0, Y0 - HN - 66, { side: 'above', size: 20, color: PAL.ink, gap: 16, leader: false });
+    [[-1, N - n, 'left flask', cl], [1, n, 'right flask', cr]].forEach(([s, c, w, col]) => F.rich(ctx, [w + ': ', [String(c), col, 700], c === 1 ? ' atom' : ' atoms'], X0 + s * OFF, Y0 + RB + 38, { size: 24, align: 'center' }));
+    /* the counts since the valve opened */
+    const t1 = Math.max(WIN, clock), g = F.axes(ctx, G, [0, t1], [0, N], { nx: 0, ny: 2, yl: 'atoms in each flask' });
+    text(ctx, 'time since the valve opened', G.r, G.b + 30, C('time'), { size: 20, weight: 600, align: 'right' });
+    line(ctx, G.l, g.Y(N / 2), G.r, g.Y(N / 2), alpha(PAL.ink, 0.45), 2.5, [10, 10]);
+    text(ctx, 'even split', G.r + 12, g.Y(N / 2), PAL.muted, { size: 17 });
+    F.legend(ctx, g, [{ s: 'left flask', color: cl, w: 4 }, { s: 'right flask', color: cr, w: 4 }], { corner: 'above' });
+    const pts = shut ? [[0, 0]] : trace.concat([[clock, n]]);
+    [[cl, (c) => N - c], [cr, (c) => c]].forEach(([col, f]) => {
+      ctx.save(); ctx.strokeStyle = col; ctx.lineWidth = 4; ctx.lineJoin = 'round'; ctx.beginPath();
+      pts.forEach(([s, c], i) => { if (i) { ctx.lineTo(g.X(s), g.Y(f(pts[i - 1][1]))); ctx.lineTo(g.X(s), g.Y(f(c))); } else ctx.moveTo(g.X(s), g.Y(f(c))); });
+      ctx.stroke(); ctx.restore();
+      const [s, c] = pts[pts.length - 1]; dot(ctx, g.X(s), g.Y(f(c)), col, true, 8);
+    });
+    if (shut) topline(ctx, `Valve closed: all ${N} atoms stay in the left flask, and the right flask holds a vacuum.`);
+    else F.rich(ctx, ['Since the valve opened, the right flask has been empty again ', [again === 1 ? '1 time' : `${again} times`, cr, 700], '.'], 700, 46, { size: 26, align: 'center' });
   }
   register(d.fig, { update: (dt) => { cy.step(dt, () => 1); step(Math.min(dt, 0.05)); }, draw });
 })();

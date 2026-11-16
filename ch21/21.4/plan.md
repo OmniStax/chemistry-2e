@@ -2,7 +2,7 @@
 
 Written 2026-10-05 before the build and left for review, as `ch21/config.md` records (applied as proposed on Chen's instruction to finish the book without check-ins).
 
-Four objectives, eleven numbered figures (21.13 to 21.23: four drawn figures and seven with photographs), one table (Table 21.3, Seaborgium on two lines), two Chemistry in Everyday Life notes (CERN Particle Accelerator, Nuclear Accidents), four Link to Learning notes, no worked example and no Check Your Learning, eight end-of-section items (chapter exercises 47 to 54). No Key Equations.
+Four objectives, eleven numbered figures (21.13 to 21.23: three drawn figures over five of the numbers and six kept photographs), one table (Table 21.3, Seaborgium on two lines), two Chemistry in Everyday Life notes (CERN Particle Accelerator, Nuclear Accidents), four Link to Learning notes, no worked example and no Check Your Learning, eight end-of-section items (chapter exercises 47 to 54). No Key Equations.
 
 ## Sub-concepts and spans
 

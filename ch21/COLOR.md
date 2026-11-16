@@ -13,7 +13,7 @@ script places in the palette; until it is run the type wears the fallback.
 | a half-life t<sub>1/2</sub> (5.27 y, 5730 y, 4.5 × 10⁹ y, 110. minutes), a time t, an age found by dating | `time` | 21.3, 21.4, 21.5, 21.6 | the time axis of a decay curve and its clock; the half-life a marked interval on it |
 | the decay constant λ (0.132 y⁻¹, 1.21 × 10⁻⁴ y⁻¹) | `rate-constant` | 21.3, 21.6 | the book calls it "the same as a rate constant"; `\klamdecay`, never `\klam` |
 | a decay rate, the activity (10.8 disintegrations/min/g, Bq, Ci, mCi values) | `rate` | 21.3, 21.5, 21.6 | the activity is a rate stated in decays per second, as the book defines it; Bq and Ci values take `data-type` |
-| binding energy, binding energy per nucleon (28.4 MeV, 7.10 MeV/nucleon, 8.820 MeV/nucleon), a photon or decay energy, a fission or fusion energy (1.8 × 10¹⁰ kJ, 3.6 × 10¹¹ kJ), an enthalpy compared | `energy` | 21.1, 21.2, 21.3, 21.4, 21.5, 21.6 | the curve and readout of 21.1; a photon energy on 21.31's slider (21.27's levels stay in the book's image) |
+| binding energy, binding energy per nucleon (28.4 MeV, 7.10 MeV/nucleon, 8.820 MeV/nucleon), a photon or decay energy, a fission or fusion energy (1.8 × 10¹⁰ kJ, 3.6 × 10¹¹ kJ), an enthalpy compared | `energy` | 21.1, 21.2, 21.3, 21.4, 21.5, 21.6 | the curve and readout of 21.1; a photon energy on 21.31's slider; the energy axis of 21.27 and its column of the energy given off |
 | the mass defect (0.0305 amu, 0.5302 amu), a mass of a particle, a nuclide or a sample (9.58 × 10⁻⁵ g of U-238, 5.00 g of Co-60), a solar mass | `mass` | 21.1, 21.3, 21.4, 21.6 | the mass that goes missing in the binding-energy figure |
 | nuclear density (1.8 × 10¹⁴ g/cm³, 5.2 × 10¹⁷ kg/m³), iridium's 22.6 g/cm³ | `density` | 21.1 | `data-type` on values |
 | the volume of a sphere in Example 21.1, 0.0001 mL of radon | `volume` | 21.1, 21.3 | in the example and one exercise |
@@ -21,7 +21,7 @@ script places in the palette; until it is run the type wears the fallback.
 | the speed of light c | `velocity` | 21.1 | as Chapter 6 colours it |
 | a temperature (15,000,000 K, 2200 °C, 273 K) | `temperature` | 21.2, 21.4 | `data-type` on values |
 | a pressure (1 atm) | `pressure` | 21.2 | in one exercise |
-| an absorbed dose (Gy, rad) and a dose equivalent (Sv, rem, mrem: 620 mrem, 500 rems, Table 21.5's exposures) | `dose` (new) | 21.4, 21.6 | one hue; Sv and rem the dose equivalent, a variant told by label; the bars of 21.37, Table 21.5's first column, the readout of rem = RBE × rad |
+| an absorbed dose (Gy, rad) and a dose equivalent (Sv, rem, mrem: 620 mrem, 500 rems, Table 21.5's exposures) | `dose` (new) | 21.4, 21.6 | one hue; Sv and rem the dose equivalent, a variant told by label; the scale, slider and readout (rem = RBE × rad) of the dose Sim, Table 21.5's first column; 21.37 is the book's image |
 | a frequency or wavelength on the spectrum of 21.31 | `frequency`, `wavelength` | 21.6 | the axis of the ionizing-threshold figure |
 | a percent remaining, a fraction N<sub>t</sub>/N<sub>0</sub>, a yield of fission products, an abundance (99%, 1%, 0.7% U-235) | none | — | ink, a rating |
 
@@ -56,7 +56,7 @@ only the visible band is drawn in its real colours (fact), and the book's
 pink and green ionizing panels are emphasis, drawn in ink. The red and blue
 glows of the PET scans, the scans of 21.25 and the map of 21.22 stay in their
 photographs. A stable nuclide and an unstable one on the n–Z chart are told by
-fill (solid or hollow) or a hover name, never by the book's blue and green; the
+fill (solid, or hollow or shaded) or a hover name, never by the book's blue and green; the
 band itself is a shaded region in ink.
 
 ## Referents
@@ -73,8 +73,7 @@ Each section lists its own when it is built. Planned:
   if the text names them beside a figure that draws them; the subcritical and
   critical spheres of 21.17.
 - **21.5, 21.6.** None by default; 21.33's four radiations are kinds
-  (`F.cat` with labels) or particles in their palette colours, and 21.37's
-  sources are categories of one bar each, so `F.cat`.
+  (`F.cat` with labels) or particles in their palette colours.
 
 The frame of a figure and its labels stay in ink, and with colour coding off
 every figure stays legible from its labels.
@@ -89,10 +88,10 @@ Checked at the chapter pass against every page's `data-type` and
 |---|---|---|
 | 21.1 | `length`, `density`, `mass`, `energy` values; density, mass, mass defect, molar mass, energy, binding energy, binding energy per nucleon and enthalpy change words; "strong nuclear force" in `force` | Figure 21.3 draws `energy`, `mass`, `velocity` (its readout's E = mc²) |
 | 21.2 | mass and energy words; E = mc² through `\kE`, `\km`, `\kc` | none binds a type; the balancing Sim's nucleons by `F.el`; Figure 21.4 is the book's image |
-| 21.3 | `time`, `mass`, `rate` values; half-life, time, decay rate, decay constant, rate constant and activation energy words | Figure 21.6 `charge` (the plates' signs; the lead block `F.el('Pb')`, the source `F.el('Ra')`); 21.10 `time`, `rate-constant`, `mass`; 21.11 `time`, `rate`, `rate-constant`, its carbon dioxide and nitrogen by `F.el` |
+| 21.3 | `time`, `mass`, `rate` values; half-life, time, decay rate, decay constant, rate constant and activation energy words | Figure 21.6 `charge` (the plates' signs; the lead block `F.el('Pb')`, the source `F.el('Ra')`); 21.9 its α arrows `F.cat(0)` and β arrows `F.cat(1)`; 21.10 `time`, `rate`, `rate-constant`; 21.11 `time`, `rate`, `rate-constant`, its carbon dioxide and nitrogen by `F.el` |
 | 21.4 | `length`, `time`, `mass`, `energy`, `volume`, `temperature` values; energy, kinetic energy, heat, binding energy per nucleon, mass, mass defect, half-life, temperature, reaction rate and pressure words | Figure 21.14 + 21.15 `energy`; 21.16 + 21.17 `energy`; 21.20 `rate` (the fission rate curve) and `energy`; fuel `F.el('U')`, neutrons `F.el('n0')` |
-| 21.5 | `time`, `mass` values; half-life, electrical potential and electric current words | Figure 21.26 `time`, `angle`, `length`; 21.29 `current`, `charge`, `time`; 21.27 is the book's image |
-| 21.6 | `dose`, `time`, `rate`, `mass` values; energy, bond energy, frequency, half-life, decay rate, absorbed dose and dose equivalent words | Figure 21.31 `frequency`, `energy` and the visible band as fact (`spectrum`); the dose Sim and Figure 21.37 `dose`, absorbed dose hollow and dose equivalent filled |
+| 21.5 | `time`, `mass` values; half-life, electrical potential and electric current words | Figure 21.26 `time`, `angle`, `length`; 21.27 `energy` and `time` (cobalt-60's half-life), its β particle and γ rays by `F.el`, the excited nickel-60 a dashed ink ring; 21.29 `current`, `charge`, `time` |
+| 21.6 | `dose`, `time`, `rate`, `mass` values; energy, bond energy, frequency, half-life, decay rate, absorbed dose and dose equivalent words | Figure 21.31 `frequency`, `energy` and the visible band as fact (`spectrum`); the dose Sim `dose`, absorbed dose hollow and dose equivalent filled; Figure 21.37 is the book's image |
 
 Beyond the plan above: 21.3 binds `charge`; 21.4 binds `rate`, `time`,
 `volume` and `pressure`; 21.5 binds `current`, `charge`, `potential`, `angle`,
@@ -104,16 +103,19 @@ the light and heavy fission fragments, krypton-92 and barium-141 by default,
 on Figure 21.14 + 21.15 and its yield curve (21.4). The planned referents of
 21.3 and the two spheres of 21.17 were not built: Figure 21.10 draws cobalt-60
 alone, each decay figure names its parent and daughter in its labels and
-readout, and the chain-reaction figure is one lump on a mass slider. 21.33's
-four radiations wear their particle colours, and 21.37's ten sources are one
-`dose` hue told apart by their names, so neither uses `F.cat`. `F.cat` is used
-twice: 21.9's β arrows are `F.cat(1)` against the α arrows' ink, and the
-unnamed fission fragments in the chain-reaction lump are `F.cat(0)`, each
-named in its figure's legend.
+readout, and the chain-reaction figure is one lump whose size follows a mass
+slider, beside a dashed ink circle the size of a critical mass. 21.33's four
+radiations wear their particle colours, and the doses of Figure 21.37 that the
+dose Sim sets on its scale are one `dose` hue told apart by their names, so
+neither uses `F.cat`. `F.cat` is used three times: Figure 21.2's chosen
+nuclide is `F.cat(0)` where the text does not name it, 21.9's α arrows are
+`F.cat(0)` and its β arrows `F.cat(1)`, and the unnamed fission fragments in
+the chain-reaction lump are `F.cat(0)`, each named in its figure's legend.
 
-Figure pass of 2026-11-14: Figures 21.4 and 21.27 went back to the book's
-images, so the particle table and the cobalt-60 decay scheme wear the book's
-own colours inside their images; the chain-reaction figure (21.16 + 21.17) is
-now a flat slice, its fragments still `F.cat(0)`; Figure 21.2's chosen nuclide
-wears its referent colour (nitrogen-14, iron-56, lead-207) where the text names
-it and ink elsewhere.
+Figures 21.4 and 21.37 are the book's images, so the particle table and the
+bar graph of doses wear the book's own colours inside their images; the
+chain-reaction figure (21.16 + 21.17) is a flat slice of the lump, its nuclei
+`F.el('U')`, its neutrons `F.el('n0')` with their tracks in ink, its fragments
+`F.cat(0)` and the burst of each fission in `energy`; Figure 21.2's chosen
+nuclide wears its referent colour (nitrogen-14, iron-56, lead-207) where the
+text names it and `F.cat(0)` elsewhere.

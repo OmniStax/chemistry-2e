@@ -1,163 +1,159 @@
 /* Figures for section 18.9 Occurrence, Preparation, and Compounds of Oxygen. Boots against the section's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['18.9'] = function (root, F) {
-const { C, PAL, alpha, register, begin, line, text, headline } = F;
+const { C, PAL, alpha, register, begin, line, text } = F;
 
 /* =====================================================================
    FIGURE 18.55 + 18.56 + 18.57: the oxyanions of chlorine. Chlorine
    keeps four electron pairs at the corners of a tetrahedron; from ClO-
    to ClO4- each step turns one of its lone pairs into the pair it
-   shares with a new oxygen atom. 2D is the book's electron-dot Lewis
-   structure, 3D its perspective drawing as balls, sticks and lobes,
-   mounted on the first switch. Beneath both, the parent acid on a
-   strip of Table 18.2's pKa values (HOCl 7.5, HClO2 2.0; HClO3 and
-   HClO4 strong, with no value given). Still: a series of states.
+   shares with a new oxygen atom. Above, the chosen ion as the book's
+   perspective drawing, in three dimensions: balls, sticks, lobes for
+   the lone pairs and the tetrahedron's edges. Beneath, the four ions
+   side by side as the book's electron-dot structures, each over its
+   name, chlorine's oxidation state and its parent acid with Table
+   18.2's pKa (HOCl 7.5, HClO2 2.0; HClO3 and HClO4 strong, no value
+   given). Still: a series of states; the choice morphs between them.
 ===================================================================== */
 (function () {
-  const d = F.sim(root, 'sim-chlorine-oxyanions', 440);
+  const d = F.sim(root, 'sim-chlorine-oxyanions');
   const ORDER = ['ClO', 'ClO2', 'ClO3', 'ClO4'];
   /* the sites in the order oxygen takes them, as the book draws them: right, then left, then down, then up */
   const SITES = ['right', 'left', 'down', 'up'];
   const ION = {
-    ClO: { n: 1, label: 'ClO⁻', tex: '\\text{ClO}^{-}', acid: '\\text{HOCl}', acidPlain: 'HOCl', pKa: 7.5 },
-    ClO2: { n: 2, label: 'ClO₂⁻', tex: '\\text{ClO}_{2}^{-}', acid: '\\text{HClO}_{2}', acidPlain: 'HClO_{2}', pKa: 2.0 },
-    ClO3: { n: 3, label: 'ClO₃⁻', tex: '\\text{ClO}_{3}^{-}', acid: '\\text{HClO}_{3}', acidPlain: 'HClO_{3}', pKa: null },
-    ClO4: { n: 4, label: 'ClO₄⁻', tex: '\\text{ClO}_{4}^{-}', acid: '\\text{HClO}_{4}', acidPlain: 'HClO_{4}', pKa: null },
+    ClO: { n: 1, label: 'ClO⁻', name: 'hypochlorite', tex: '\\text{ClO}^{-}', acid: '\\text{HOCl}', acidPlain: 'HOCl', pKa: '7.5',
+      head: 'In hypochlorite, $\\text{ClO}^{-}$, one of chlorine’s four electron pairs bonds the oxygen atom and three are lone pairs.' },
+    ClO2: { n: 2, label: 'ClO₂⁻', name: 'chlorite', tex: '\\text{ClO}_{2}^{-}', acid: '\\text{HClO}_{2}', acidPlain: 'HClO₂', pKa: '2.0',
+      head: 'In chlorite, $\\text{ClO}_{2}^{-}$, two of chlorine’s four electron pairs bond oxygen atoms and two are lone pairs, so the ion is bent.' },
+    ClO3: { n: 3, label: 'ClO₃⁻', name: 'chlorate', tex: '\\text{ClO}_{3}^{-}', acid: '\\text{HClO}_{3}', acidPlain: 'HClO₃', pKa: null,
+      head: 'In chlorate, $\\text{ClO}_{3}^{-}$, three of chlorine’s four electron pairs bond oxygen atoms and one is a lone pair, so the ion is trigonal pyramidal.' },
+    ClO4: { n: 4, label: 'ClO₄⁻', name: 'perchlorate', tex: '\\text{ClO}_{4}^{-}', acid: '\\text{HClO}_{4}', acidPlain: 'HClO₄', pKa: null,
+      head: 'In perchlorate, $\\text{ClO}_{4}^{-}$, all four of chlorine’s electron pairs bond oxygen atoms, so the ion is tetrahedral.' },
   };
-  const COUNT = ['', 'one', 'two', 'three', 'four'];
-  const HEAD = {
-    ClO: 'In $\\text{ClO}^{-}$, one of chlorine’s four electron pairs bonds an oxygen atom and three are lone pairs.',
-    ClO2: 'In $\\text{ClO}_{2}^{-}$, two of chlorine’s four electron pairs bond oxygen atoms and two are lone pairs.',
-    ClO3: 'In $\\text{ClO}_{3}^{-}$, three of chlorine’s four electron pairs bond oxygen atoms and one is a lone pair.',
-    ClO4: 'In $\\text{ClO}_{4}^{-}$, all four of chlorine’s electron pairs bond oxygen atoms and no lone pair is left.',
-  };
-  const ion = F.choice(d.controls, { label: '\\text{ion}', key: 'ion', aria: 'the chlorine oxyanion',
-    options: ORDER.map((v) => ({ value: v, label: ION[v].label })), value: 'ClO2', onInput: () => draw() });
-  const VIEW = F.choice(d.controls, { label: '\\text{view}', key: 'view', aria: 'a flat Lewis structure or a scene to turn',
-    options: [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }], value: '2d', ms: 0, onInput: () => show() });
-  const strip = F.makeCanvas(d.stage, 200);
-  const ro = F.readout(d);
-  let hits = []; F.hover(d.stage, () => hits);
-
-  /* how far each site has become an oxygen atom, 0 a lone pair on chlorine and 1 a bonded oxygen, mid-morph between */
   const has = (v, s) => (SITES.indexOf(s) < ION[v].n ? 1 : 0);
-  const weight = (s) => ion.mix((v) => has(v, s));
 
-  /* ---------- the flat view: the book's electron-dot structure ---------- */
-  const CX = 700, CY = 246, BOND = 116, LP = 35, SPREAD = 7;
-  const DIR = { right: [1, 0], left: [-1, 0], down: [0, 1], up: [0, -1] };
-  const NAME = { Cl: 'chlorine atom', O: 'oxygen atom' };
-  function pair(ctx, x, y, dx, dy, name, a = 1) {
-    if (a <= 0.01) return;
-    ctx.save(); ctx.globalAlpha *= a;
-    [-SPREAD, SPREAD].forEach((o) => F.dot(ctx, x - dy * o, y + dx * o, PAL.ink, true, 4.2));
-    ctx.restore();
-    if (a > 0.5 && name) hits.push({ x, y, r: 13, name });
-  }
-  function brackets(ctx) {
-    const x1 = CX - 200, x2 = CX + 200, y1 = CY - 166, y2 = CY + 166;
-    [[x1, 1], [x2, -1]].forEach(([x, s]) => {
-      ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.beginPath();
-      ctx.moveTo(x + s * 14, y1); ctx.lineTo(x, y1); ctx.lineTo(x, y2); ctx.lineTo(x + s * 14, y2); ctx.stroke(); ctx.restore();
-    });
-    text(ctx, '−', x2 + 16, y1 + 8, PAL.ink, { size: 30, weight: 600 });
-  }
-  function draw2d() {
-    const { ctx } = begin(d.c); hits = [];
-    headline(ctx, HEAD[ion.value]);
-    brackets(ctx);
-    text(ctx, 'Cl', CX, CY + 1, PAL.ink, { size: 36, align: 'center' });
-    hits.push({ x: CX, y: CY, r: 22, name: NAME.Cl });
-    SITES.forEach((s) => {
-      const w = weight(s), [dx, dy] = DIR[s];
-      /* chlorine's pair on this side slides out to the shared place as the oxygen arrives */
-      const r = LP + (BOND / 2 - LP) * w;
-      pair(ctx, CX + dx * r, CY + dy * r, dx, dy, w > 0.5 ? 'bonding pair shared by chlorine and oxygen' : 'lone pair on chlorine');
-      if (w <= 0.01) return;
-      const back = (1 - w) * 24, ox = CX + dx * (BOND - back), oy = CY + dy * (BOND - back);
-      F.faded(ctx, w, [0, 0], () => {
-        text(ctx, 'O', ox, oy + 1, PAL.ink, { size: 36, align: 'center' });
-        Object.keys(DIR).filter((t) => t !== { right: 'left', left: 'right', up: 'down', down: 'up' }[s])
-          .forEach((t) => { const [ex, ey] = DIR[t]; pair(ctx, ox + ex * LP, oy + ey * LP, ex, ey, w > 0.5 ? 'lone pair on oxygen' : null); });
-      });
-      if (w > 0.5) hits.push({ x: ox, y: oy, r: 22, name: NAME.O });
-    });
-  }
-
-  /* ---------- the same ion in three dimensions ---------- */
+  /* ---------- the chosen ion in three dimensions ---------- */
   const R3 = 1.6, k3 = 1 / Math.sqrt(1.5), h3 = 1 / Math.SQRT2;
   /* a regular tetrahedron with left and right in one plane and up and down in the plane across it, the book's view */
   const T3 = { right: [k3, 0, -h3 * k3], left: [-k3, 0, -h3 * k3], down: [0, -k3, h3 * k3], up: [0, k3, h3 * k3] };
-  let V = null, g = null;
-  function mount() {
-    V = F.view3d(d.stage, { spin: 'idle', h: 470, dist: 6.8, tilt: 0.2, pitch: [-Math.PI / 2, Math.PI / 2] });
-    d.stage.insertBefore(V.wrap, strip);
-    const bar = d.stage.querySelector('.view3d-bar'); if (bar) d.stage.insertBefore(bar, strip);
-    g = V.part(0); g.position.y = -0.3;
-  }
-  function draw3d() {
-    V.clear(); hits = [];
-    const { sphere, bond, lobe, polyline } = F.mesh;
-    V.pickable(sphere(g, [0, 0, 0], 0.5, F.el('Cl')), NAME.Cl);
-    SITES.forEach((s) => {
-      const w = weight(s), u = T3[s], tip = u.map((x) => x * R3);
+  const V = F.view3d(d.stage, { spin: 'idle', h: 560, dist: 7.4, tilt: 0.16, pitch: [-Math.PI / 2, Math.PI / 2] });
+  const g = V.part(0); g.position.y = -0.42;
+  V.setView(0.38, 0.16);
+  const key = F.makeCanvas(d.stage, 56);
+  const row = F.makeCanvas(d.stage, 446);
+  const ion = F.choice(d.controls, { label: '\\text{ion}', key: 'ion', aria: 'the chlorine oxyanion',
+    options: ORDER.map((v) => ({ value: v, label: ION[v].label })), value: 'ClO2' });
+  const ro = F.readout(d);
+  let hits = []; F.hover(d.stage, () => hits, row);
+
+  /* how far each site has become an oxygen atom, 0 a lone pair on chlorine and 1 a bonded oxygen, mid-morph between */
+  const weight = (s) => ion.mix((v) => has(v, s));
+  let sig = '';
+  function scene() {
+    const ws = SITES.map(weight), s = [ws.map((w) => w.toFixed(3)).join(','), PAL.ink, F.el('Cl'), F.el('O')].join('|');
+    V.headline(ION[ion.value].head);
+    if (s === sig) return;
+    sig = s; V.clear();
+    const { sphere, stick, bond, lobe } = F.mesh;
+    V.pickable(sphere(g, [0, 0, 0], 0.5, F.el('Cl')), 'chlorine atom');
+    SITES.forEach((site, i) => {
+      const w = ws[i], u = T3[site], tip = u.map((x) => x * R3);
       if (w > 0.01) {
-        const m = sphere(g, tip, 0.4 * (0.4 + 0.6 * w), F.el('O'), w < 1 ? { transparent: true, opacity: w } : undefined);
-        V.pickable(m, NAME.O);
-        bond(g, [0, 0, 0], u.map((x) => x * R3 * (0.3 + 0.7 * w)), 1);
+        V.pickable(sphere(g, tip, 0.42 * (0.4 + 0.6 * w), F.el('O'), w < 1 ? { transparent: true, opacity: w } : undefined), 'oxygen atom');
+        bond(g, [0, 0, 0], u.map((x) => x * R3 * (0.3 + 0.7 * w)), 1, 0.075);
       }
-      if (w < 0.99) { const lb = lobe(g, [0, 0, 0], u, 1.45 * (1 - 0.6 * w)); lb.material.opacity = 0.5 * (1 - w); V.pickable(lb, 'lone pair on chlorine'); }
+      if (w < 0.99) { const lb = lobe(g, [0, 0, 0], u, 1.5 * (1 - 0.6 * w)); lb.material.opacity = 0.5 * (1 - w); V.pickable(lb, 'lone pair on chlorine'); }
     });
-    const P = (s) => T3[s].map((x) => x * R3), edge = alpha(PAL.ink, 0.35);
-    polyline(g, ['right', 'left', 'down', 'right', 'up', 'left'].map(P), edge);
-    polyline(g, ['up', 'down'].map(P), edge);
-    V.headline(HEAD[ion.value]);
+    /* the tetrahedron whose corners the four pairs point to */
+    const P = (t) => T3[t].map((x) => x * R3), faint = { transparent: true, opacity: 0.38 };
+    SITES.forEach((a, i) => SITES.slice(i + 1).forEach((b) => stick(g, P(a), P(b), 0.013, PAL.ink, faint)));
     V.invalidate();
   }
-  function show() {
-    if (VIEW.value === '3d' && !V) mount();
-    const three = VIEW.value === '3d' && !!V?.scene;
-    d.c.style.display = three ? 'none' : '';
-    if (V) [V.wrap, d.stage.querySelector('.view3d-bar')].forEach((e) => { if (e) e.style.display = VIEW.value === '3d' ? '' : 'none'; });
-    draw();
+
+  /* ---------- the key: what the scene is made of ---------- */
+  const TAU = 2 * Math.PI;
+  const disc = (sym, r) => (c, x, y) => { c.save(); c.beginPath(); c.arc(x, y, r, 0, TAU); c.fillStyle = F.el(sym); c.fill(); c.lineWidth = 1.5; c.strokeStyle = alpha(PAL.ink, 0.45); c.stroke(); c.restore(); };
+  function drawKey() {
+    const { ctx } = begin(key);
+    F.legend(ctx, { l: 60, r: 1340, t: 0, b: 56 }, [
+      { s: 'chlorine atom', draw: disc('Cl', 11) },
+      { s: 'oxygen atom', draw: disc('O', 9) },
+      { s: 'lone pair on chlorine', draw: (c, x, y) => { c.save(); c.fillStyle = alpha(PAL.ink, 0.45); c.beginPath(); c.ellipse(x, y, 16, 9, 0, 0, TAU); c.fill(); c.restore(); } },
+      { s: 'edge of the tetrahedron', color: alpha(PAL.ink, 0.45), w: 2 },
+    ], { corner: 'top', row: true, panel: false, size: 20 });
   }
 
-  /* ---------- the strip: the parent acid's pKa, fixed from 9 to 0, the strong acids in a band past 0 ---------- */
-  const XA = 230, XB = 1000, Y = 112, X = (p) => XA + ((9 - p) / 9) * (XB - XA);
-  const BAND = [1030, 1300], SPOT = { ClO: X(7.5), ClO2: X(2.0), ClO3: 1105, ClO4: 1225 };
-  function drawStrip() {
-    const { ctx } = begin(strip), hue = C('equilibrium-constant');
-    text(ctx, '$\\kpKa$', 140, Y + 2, PAL.ink, { size: 24, align: 'center', tex: true });
-    line(ctx, XA, Y, XB, Y, PAL.muted, 3);
-    for (let p = 9; p >= 0; p--) {
-      line(ctx, X(p), Y, X(p), Y + 9, PAL.muted, 2);
-      text(ctx, String(p), X(p), Y + 30, PAL.muted, { size: 17, align: 'center' });
-    }
-    ctx.save(); ctx.fillStyle = alpha(hue, 0.1); ctx.fillRect(BAND[0], Y - 26, BAND[1] - BAND[0], 52); ctx.restore();
-    text(ctx, 'strong acids', (BAND[0] + BAND[1]) / 2, Y + 30, PAL.muted, { size: 17, align: 'center' });
-    F.arrow(ctx, 680, 176, 960, 176, PAL.muted, 3);
-    text(ctx, 'stronger acid', 668, 176, PAL.muted, { size: 17, align: 'right' });
-    ORDER.forEach((v) => {
-      const x = SPOT[v], on = ion.a(v);
-      F.dot(ctx, x, Y, hue, false, 10);
-      if (on > 0.01) { ctx.save(); ctx.globalAlpha = on; F.dot(ctx, x, Y, hue, true, 11); ctx.restore(); }
-      text(ctx, ION[v].acidPlain, x, Y - 40, PAL.ink, { size: 22, align: 'center', weight: on > 0.5 ? 600 : 400 });
+  /* ---------- the series: four electron-dot structures over what changes from one to the next ---------- */
+  const X0 = 300, COLW = 270, CY = 128, BOND = 62, LP = 23, SPREAD = 5.5;
+  const colX = (i) => X0 + COLW * (i + 0.5);
+  const ROWS = { name: 272, ox: 310, acid: 348, pKa: 386, arrow: 426 };
+  const DIR = { right: [1, 0], left: [-1, 0], down: [0, 1], up: [0, -1] }, OPP = { right: 'left', left: 'right', up: 'down', down: 'up' };
+  function pair(ctx, x, y, dx, dy, name) {
+    [-SPREAD, SPREAD].forEach((o) => F.dot(ctx, x - dy * o, y + dx * o, PAL.ink, true, 3.3));
+    hits.push({ x, y, r: 10, name });
+  }
+  function lewis(ctx, v, cx) {
+    text(ctx, 'Cl', cx, CY + 1, PAL.ink, { size: 27, align: 'center' });
+    hits.push({ x: cx, y: CY, r: 16, name: 'chlorine atom' });
+    const reach = {};
+    SITES.forEach((s) => {
+      const [dx, dy] = DIR[s];
+      if (!has(v, s)) { pair(ctx, cx + dx * LP, CY + dy * LP, dx, dy, 'lone pair on chlorine'); reach[s] = LP + 12; return; }
+      pair(ctx, cx + dx * BOND / 2, CY + dy * BOND / 2, dx, dy, 'bonding pair shared by chlorine and oxygen');
+      const ox = cx + dx * BOND, oy = CY + dy * BOND;
+      text(ctx, 'O', ox, oy + 1, PAL.ink, { size: 27, align: 'center' });
+      hits.push({ x: ox, y: oy, r: 16, name: 'oxygen atom' });
+      Object.keys(DIR).filter((t) => t !== OPP[s]).forEach((t) => { const [ex, ey] = DIR[t]; pair(ctx, ox + ex * LP, oy + ey * LP, ex, ey, 'lone pair on oxygen'); });
+      reach[s] = BOND + LP + 12;
     });
+    /* brackets hug the structure, the charge at the upper right as the book sets it */
+    const sideY = (has(v, 'left') || has(v, 'right')) ? LP + 12 : 0;
+    const top = Math.max(reach.up, sideY), bot = Math.max(reach.down, sideY);
+    const x1 = cx - reach.left - 6, x2 = cx + reach.right + 6, y1 = CY - top - 4, y2 = CY + bot + 4;
+    [[x1, 1], [x2, -1]].forEach(([x, sgn]) => {
+      ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5; ctx.beginPath();
+      ctx.moveTo(x + sgn * 10, y1); ctx.lineTo(x, y1); ctx.lineTo(x, y2); ctx.lineTo(x + sgn * 10, y2); ctx.stroke(); ctx.restore();
+    });
+    text(ctx, '−', x2 + 12, y1 + 4, PAL.ink, { size: 24, weight: 600, align: 'center' });
   }
+  function drawRow() {
+    const { ctx } = begin(row), hue = C('equilibrium-constant'); hits = [];
+    /* the chosen ion's column */
+    ORDER.forEach((v, i) => {
+      const on = ion.a(v); if (on <= 0.01) return;
+      ctx.save(); ctx.globalAlpha = on; ctx.fillStyle = alpha(PAL.ink, 0.07);
+      ctx.beginPath(); ctx.roundRect(colX(i) - COLW / 2 + 8, 6, COLW - 16, 398, 10); ctx.fill(); ctx.restore();
+    });
+    const lab = (s, y) => text(ctx, s, X0 - 20, y, PAL.muted, { size: 20, align: 'right' });
+    lab('electron-dot structure', CY); lab('ion', ROWS.name); lab('oxidation state of Cl', ROWS.ox); lab('parent acid', ROWS.acid);
+    F.rich(ctx, [['p', hue], ['K', hue], ['ₐ', hue], ' of the acid'], X0 - 20, ROWS.pKa, { size: 20, align: 'right' });
+    ORDER.forEach((v, i) => {
+      const t = ION[v], cx = colX(i), w = v === ion.value ? 600 : 400;
+      lewis(ctx, v, cx);
+      text(ctx, t.name, cx, ROWS.name, PAL.ink, { size: 22, align: 'center', weight: w });
+      text(ctx, (2 * t.n - 1) + '+', cx, ROWS.ox, PAL.ink, { size: 22, align: 'center', weight: w });
+      text(ctx, t.acidPlain, cx, ROWS.acid, PAL.ink, { size: 22, align: 'center', weight: w });
+      if (t.pKa) text(ctx, t.pKa, cx, ROWS.pKa, hue, { size: 22, align: 'center', weight: 600 });
+      else text(ctx, 'strong acid', cx, ROWS.pKa, PAL.ink, { size: 22, align: 'center', weight: w });
+    });
+    lab('stronger acid', ROWS.arrow);
+    F.arrow(ctx, X0, ROWS.arrow, X0 + 4 * COLW - 10, ROWS.arrow, PAL.muted, 3);
+  }
+  /* a tap on a column chooses its ion */
+  row.style.cursor = 'pointer';
+  row.addEventListener('click', (e) => {
+    const r = row.getBoundingClientRect(); if (!r.width) return;
+    const i = Math.floor((((e.clientX - r.left) / r.width) * 1400 - X0) / COLW);
+    if (i >= 0 && i < ORDER.length) ion.drive(ORDER[i]);
+  });
 
+  /* the caption of each of the book's three figures: the acid meets a base and leaves its ion */
   function readout() {
-    const t = ION[ion.value], weak = t.pKa !== null;
-    const tex = `\\mk{a}{${t.acid}(aq)} + \\mk{w}{\\text{H}_{2}\\text{O}(l)}\\mk{r}{\\;${weak ? '\\rightleftharpoons' : '\\longrightarrow'}\\;}\\mk{h}{\\text{H}_{3}\\text{O}^{+}(aq)} + \\mk{b}{${t.tex}(aq)}`;
-    const n = t.n, ox = 2 * n - 1;
-    const note = `With ${COUNT[n]} oxygen atom${n > 1 ? 's' : ''} at 2− and a charge of 1− on the ion, chlorine’s oxidation state is ${ox}+.`;
-    ro.set(tex, note, { form: weak });
+    const t = ION[ion.value];
+    ro.set(`\\mk{a}{${t.acid}(aq)} + \\mk{b}{\\text{OH}^{-}(aq)}\\mk{r}{\;\\longrightarrow\;}\\mk{i}{${t.tex}(aq)} + \\mk{w}{\\text{H}_{2}\\text{O}(l)}`);
   }
 
-  function draw() {
-    if (VIEW.value === '3d' && V?.scene) draw3d(); else draw2d();
-    drawStrip();
-    readout();
-  }
+  function draw() { scene(); drawKey(); drawRow(); readout(); }
   register(d.fig, { update: () => {}, draw });
 })();
 };

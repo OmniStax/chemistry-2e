@@ -232,7 +232,7 @@ const N_OPTS = ['1', '2', '3', '4', '6'].map((v) => ({ value: v, label: v }));
     hits.push({ x: px, y: py, r: 18, name: `this mixture: Q = ${q.u}, E_cell = ${signed(Ec, 3)} V` });
     lab.flush();
 
-    const nv = hue('amount', c.n), cv = (s, p) => (p > 1 ? `(${hue('concentration', s + '\\ M')})^{${p}}` : hue('concentration', s + '\\ M'));
+    const nv = hue('amount', c.n), cv = (s, p) => (p > 1 ? `(${hue('concentration', s + '\\ \\text{M}')})^{${p}}` : hue('concentration', s + '\\ \\text{M}'));
     const pw = (s, p) => (p > 1 ? `${s}^{${p}}` : s);
     let tex;
     if (at) {
@@ -385,7 +385,7 @@ const N_OPTS = ['1', '2', '3', '4', '6'].map((v) => ({ value: v, label: v }));
     /* the readout, written from the rounded concentrations so that it is true as shown */
     const ca = (0.10 + xi).toFixed(2), cc = (0.50 - xi).toFixed(2);
     const E = -(NERNST / 2) * Math.log10(+ca / +cc), Es = signedT(E, 3);
-    const tx = `\\mk{E}{\\kEcell} = \\mk{Eo}{\\kEocell} - \\frac{0.0592\\ \\text{V}}{\\mk{n}{\\kn}}\\log\\mk{Q}{\\kQrxn} = \\mk{eo}{${hue('potential', '0.000')}\\ \\text{V}} - \\frac{0.0592\\ \\text{V}}{\\mk{nv}{${hue('amount', 2)}}}\\log\\frac{\\mk{ca}{${hue('concentration', ca + '\\ M')}}}{\\mk{cc}{${hue('concentration', cc + '\\ M')}}} = \\mk{e}{${hue('potential', Es)}}\\ \\text{V}`;
+    const tx = `\\mk{E}{\\kEcell} = \\mk{Eo}{\\kEocell} - \\frac{0.0592\\ \\text{V}}{\\mk{n}{\\kn}}\\log\\mk{Q}{\\kQrxn} = \\mk{eo}{${hue('potential', '0.000')}\\ \\text{V}} - \\frac{0.0592\\ \\text{V}}{\\mk{nv}{${hue('amount', 2)}}}\\log\\frac{\\mk{ca}{${hue('concentration', ca + '\\ \\text{M}')}}}{\\mk{cc}{${hue('concentration', cc + '\\ \\text{M}')}}} = \\mk{e}{${hue('potential', Es)}}\\ \\text{V}`;
     if (tx !== lastTex) { lastTex = tx; ro.set(tx, undefined, { values: false }); }
     F.rich(ctx, ['E_{cell} = ', [`${signed(E, 3)} V`, C('potential')]], BOX.x, BOX.y + 16, { size: 26, align: 'center' });
     F.rich(ctx, ['anode solution, ', [`${ca} M`, rA], ' Zn²⁺'], LX, 678, { size: 24, align: 'center' });

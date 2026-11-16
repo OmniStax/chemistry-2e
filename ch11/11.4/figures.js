@@ -451,7 +451,7 @@ const rng = (seed) => () => { seed = (seed * 16807) % 2147483647; return (seed -
   const aAt = (t) => { const { as } = path(), j = Math.min(as.length - 1.001, Math.max(0, t * 100)), i = Math.floor(j); return as[i] + (as[i + 1] - as[i]) * (j - i); };
   /* solute: N_IN particles inside, placed by their share of the half-width and of the thickness there; outside, places over the whole field */
   const rnd = rng(20261116);
-  const INSIDE = []; while (INSIDE.length < N_IN) { const u = (rnd() * 2 - 1) * 0.9; const f = (rnd() * 2 - 1) * 0.66; if (Math.abs(u) > 0.16 && rnd() * 0.36 < zEF(u) && INSIDE.every((q) => Math.hypot(q.u - u, (q.f * zEF(q.u) - f * zEF(u))) > 0.17)) INSIDE.push({ u, f }); }
+  const INSIDE = []; for (let tries = 0; INSIDE.length < N_IN && tries < 20000; tries++) { const u = (rnd() * 2 - 1) * 0.9, f = (rnd() * 2 - 1) * 0.66, gap = tries < 6000 ? 0.12 : tries < 12000 ? 0.08 : 0; if (Math.abs(u) > 0.16 && rnd() * 0.36 < zEF(u) && INSIDE.every((q) => Math.hypot(q.u - u, q.f * zEF(q.u) - f * zEF(u)) > gap)) INSIDE.push({ u, f }); }
   const FIELD = { l: 60, r: 1340, t: 96, b: 540 }, DENS = N_IN / (A0 * W0 * W0);
   const N_OUT = (po) => Math.round((po / PI_IN) * DENS * (FIELD.r - FIELD.l) * (FIELD.b - FIELD.t));
   const OUTSIDE = Array.from({ length: N_OUT(16) }, () => ({ x: FIELD.l + 8 + rnd() * (FIELD.r - FIELD.l - 16), y: FIELD.t + 8 + rnd() * (FIELD.b - FIELD.t - 16), p: rnd() * TAU }));

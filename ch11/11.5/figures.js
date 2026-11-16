@@ -174,7 +174,7 @@ function turn(p, yaw, pitch) {
   const P0 = cpos(0), C1 = cpos(1), OUT = unit(sub(P0, C1)), A1 = Math.atan2(C1[1] - P0[1], C1[0] - P0[0]);
   const dir = (a) => [Math.cos(a), Math.sin(a), 0];
   /* three oxygen atoms round a sulfur atom, spread in the plane of the zigzag as a structural formula spreads them, so that all three show */
-  const three = (S, back) => { const u = Math.atan2(-back[1], -back[0]); return [0, 1.83, -1.83].map((f, m) => add(S, [1.45 * Math.cos(u + f), 1.45 * Math.sin(u + f), m === 1 ? 0.25 : m === 2 ? -0.25 : 0])); };
+  const three = (S, back, fs = [0, 1.83, -1.83]) => { const u = Math.atan2(-back[1], -back[0]); return fs.map((f, m) => add(S, [1.45 * Math.cos(u + f), 1.45 * Math.sin(u + f), m === 1 ? 0.25 : m === 2 ? -0.25 : 0])); };
   const HEADS = {};
   {
     const Oa = add(P0, mul(dir(A1 - TAU / 3), 1.26)), Ob = add(P0, mul(dir(A1 + TAU / 3), 1.26));
@@ -182,7 +182,7 @@ function turn(p, yaw, pitch) {
     const S1 = add(P0, mul(dir(-A1 + Math.PI), 1.6)), O1 = three(S1, unit(sub(P0, S1)));
     HEADS.sulfate = { atoms: { X0: { el: 'O', p: P0, name: 'the oxygen atom that joins the chain to the sulfur atom of the sulfate group, —OSO<sub>3</sub><sup>−</sup>' }, S: { el: 'S', p: S1, name: 'the sulfur atom of the sulfate group' }, Na: { el: 'Na', p: add(S1, [2.75, -1.0, 0]) } }, bonds: [['C1', 'X0'], ['X0', 'S']], tex: '\\text{OSO}_{3}{}^{-}', group: 'sulfate', kind: 'detergent' };
     O1.forEach((p, m) => { HEADS.sulfate.atoms['Os' + m] = { el: 'O', p, name: 'an oxygen atom of the sulfate group' }; HEADS.sulfate.bonds.push(['S', 'Os' + m]); });
-    const S2 = add(C1, mul(OUT, 1.8)), O2 = three(S2, unit(sub(C1, S2)));
+    const S2 = add(C1, mul(OUT, 1.8)), O2 = three(S2, unit(sub(C1, S2)), [0.3, 1.9, -1.45]);
     HEADS.sulfonate = { atoms: { S: { el: 'S', p: S2, name: 'the sulfur atom of the sulfonate group, —SO<sub>3</sub><sup>−</sup>, bonded to the chain itself' }, Na: { el: 'Na', p: add(S2, [2.75, -0.7, 0]) } }, bonds: [['C1', 'S']], tex: '\\text{SO}_{3}{}^{-}', group: 'sulfonate', kind: 'detergent' };
     O2.forEach((p, m) => { HEADS.sulfonate.atoms['Os' + m] = { el: 'O', p, name: 'an oxygen atom of the sulfonate group' }; HEADS.sulfonate.bonds.push(['S', 'Os' + m]); });
     for (const k of ['sulfate', 'sulfonate']) HEADS[k].minus = ['Os0', 'Os1', 'Os2'].sort((a, b) => HEADS[k].atoms[a].p[1] - HEADS[k].atoms[b].p[1])[0];
@@ -234,7 +234,7 @@ function turn(p, yaw, pitch) {
     ctx.restore();
     text(ctx, '+', Na[0] + 30, Na[1] - 20, PAL.ink, { size: 28, weight: 600, align: 'center' });
     const xs = atoms.filter((a) => a.o > 0.5 && !/^[CH]\d/.test(a.key)).map((a) => P(a.p)[0]);
-    const xC1 = P(C1)[0], xCn = P(cpos(n))[0], xSplit = (xC1 + P(P0)[0]) / 2 + 2;
+    const xC1 = P(C1)[0], xCn = P(cpos(n))[0], xSplit = (xC1 + R.C * S + Math.min(...atoms.filter((a) => a.o > 0.5 && !/^[CH]\d/.test(a.key)).map((a) => P(a.p)[0] - R[a.el] * S))) / 2;
     hbracket(ctx, xCn - 46, xSplit - 6, 296, F.ref('tail'), 'nonpolar hydrocarbon chain', { side: 'below', size: 21 });
     hbracket(ctx, xSplit + 6, Math.max(...xs) + 28, 296, F.ref('head'), 'ionic end', { side: 'below', size: 21 });
     const named = NAMED[to][n];
@@ -264,11 +264,11 @@ function turn(p, yaw, pitch) {
 (function () {
   const OIL_AMBER = '#e6c46a';
   const d = sim('sim-emulsion', 690);
-  const CY = 366, RD = 135, TAIL = 100, NA = 26, XA = 520, XB = 1040, MID = (XA + XB) / 2;
+  const CY = 368, RD = 150, TAIL = 112, NA = 28, XA = 500, XB = 1060, MID = (XA + XB) / 2;
   const rnd = seeded(5), Rn = (a, b) => a + rnd() * (b - a);
   /* each anion: its place on the drop, where it starts in the water (as an offset from the drop's centre) and which way its tail points there */
   const anions = [0, 1].flatMap((dr) => Array.from({ length: NA }, (_, i) => {
-    const th = (i / NA) * TAU + TAU / (2 * NA), a = th + Rn(-0.1, 0.1), r0 = RD + Rn(58, 104), sg = rnd() < 0.5 ? 1 : -1;
+    const th = (i / NA) * TAU + TAU / (2 * NA), a = th + Rn(-0.1, 0.1), r0 = RD + Rn(56, 100), sg = rnd() < 0.5 ? 1 : -1;
     return { dr, th, sx: r0 * Math.cos(a), sy: r0 * Math.sin(a), a0: a + sg * (Math.PI / 2 + Rn(-0.6, 0.6)), ph: Rn(0, TAU), delay: 0.25 + 1.6 * (((i * 7) % NA) / NA) };
   }));
   const IONS = [[262, 128], [780, 122], [1298, 132], [258, 606], [1302, 600]].map(([x, y]) => ({ x, y, ph: Rn(0, TAU), w: [0.3, 1.9, 3.5, 5.1].map((a) => a + Rn(-0.2, 0.2)) }));
@@ -280,7 +280,7 @@ function turn(p, yaw, pitch) {
   const ramp = (t, a, b) => smooth(clamp01((t - a) / (b - a)));
   /* the two drops at time t: how far each centre has come in from its start, and the radius */
   function shape(v, t) {
-    if (v === 'soap') { const k = ramp(t, 3.4, 6.2) - ramp(t, 6.4, 8.8); return { in: 100 * k, r: RD, one: 0 }; }
+    if (v === 'soap') { const k = ramp(t, 3.4, 6.2) - ramp(t, 6.4, 8.8); return { in: 104 * k, r: RD, one: 0 }; }
     const k = ramp(t, 0.8, 3.8), m = ramp(t, 3.8, 5.8);
     return { in: (MID - XA - RD) * k + RD * m, r: lerp(RD, 1.26 * RD, m), one: m };
   }
@@ -328,13 +328,14 @@ function turn(p, yaw, pitch) {
     for (const w of FREE) { const x = w.x + 4 * Math.sin(1.3 * clock + w.ph), y = w.y + 4 * Math.cos(0.9 * clock + w.ph); water(ctx, x, y, w.a + 0.3 * Math.sin(clock + w.ph)); hits.push({ x, y, r: 14, name: 'a water molecule, H<sub>2</sub>O' }); }
     if (g.one > 0.5) hits.push({ x: MID, y: CY, r: g.r, name: 'one larger drop of oil' }); else cx.forEach((x) => hits.push({ x, y: CY, r: g.r, name: 'a drop of oil' }));
     const amber = F.fact(OIL_AMBER);
-    F.legend(ctx, { l: 0, r: 1400, t: 0, b: H }, [
+    const key = [
       { s: 'drop of oil', draw: (c, x, y) => { c.save(); c.fillStyle = alpha(amber, 0.6); c.beginPath(); c.arc(x, y, 10, 0, TAU); c.fill(); c.restore(); } },
       { s: 'ionic end', draw: (c, x, y) => ball(c, x, y, 7.5, F.el('O')) },
       { s: 'hydrocarbon tail', draw: (c, x, y) => zig(c, x - 20, y, 0, 40, F.el('C'), 8, 4) },
       { s: 'solvated cation, Na⁺', draw: (c, x, y) => { [0.3, 1.9, 3.5, 5.1].forEach((a) => water(c, x + 11 * Math.cos(a), y + 11 * Math.sin(a), a, 0.5)); ball(c, x, y, 6, F.el('Na')); } },
       { s: 'water molecule', draw: (c, x, y) => water(c, x - 3, y, 0, 0.9) },
-    ], { corner: 'bottom', row: true, panel: false });
+    ];
+    F.legend(ctx, { l: 0, r: 1400, t: 0, b: H }, v === 'soap' ? key : [key[0], key[4]], { corner: 'bottom', row: true, panel: false });
     topline(ctx, v === 'soap'
       ? (t < 3.3 ? 'Each soap anion turns its hydrocarbon tail into the oil and leaves its ionic end in the water.' : 'Coated with ionic ends, the two drops of oil come close, stay apart and stay dispersed in the water.')
       : (g.one < 1 ? 'With no soap, nothing keeps the two drops of oil apart when they meet.' : 'With no soap, the two drops of oil have merged into one larger drop.'));

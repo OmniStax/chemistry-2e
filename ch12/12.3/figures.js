@@ -87,7 +87,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     panel(ctx, lab, STEPS[1], b, n, nO.mix((v) => +v));
     lab.flush();
     const okM = m === 2, okN = n === 1;
-    const miss = (letter, o, t, got) => `With $${letter} = ${o}$ the rate law puts trial ${t} at ${times(Math.pow(1.5, o))} times the rate of trial 1, and ${got} times was measured.`;
+    const miss = (letter, o, t, got) => `With $${letter} = ${o}$ the rate law puts trial ${t} at ${o ? times(Math.pow(1.5, o)) + ' times the rate of trial 1' : 'the same rate as trial 1'}, and ${got} times was measured.`;
     topline(ctx, okM && okN ? `With $m = ${m}$ and $n = ${n}$ the rate law passes through all three trials.`
       : okN ? miss('m', m, 3, '2.25') : okM ? miss('n', n, 2, '1.5')
       : `With $m = ${m}$ and $n = ${n}$ the rate law misses trials 2 and 3.`);

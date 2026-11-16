@@ -149,7 +149,7 @@ const knots = (ks) => (x) => {
   function state(s) {
     const a1 = beat(s, 0, 0.6), a2 = beat(s, 0.6, 1), b1 = beat(s, 1, 1.6), b2 = beat(s, 1.6, 2);
     const c1 = beat(s, 2, 2.75), c2 = beat(s, 2.75, 3), d1 = beat(s, 3, 4);
-    const lift = [0, 1.05 * d1, 0];
+    const lift = [0, 0.95 * d1, 0];
     const atoms = {}, bonds = [];
     HH.forEach((h, i) => {
       /* the molecule comes down onto the nickel atom between its two hollows, then its atoms slide off into them */
@@ -192,8 +192,8 @@ const knots = (ks) => (x) => {
   ];
   const KIND = { h: 'H', c: 'C', e: 'H' };
   const NAME = { H: 'a hydrogen atom, H', C: 'a carbon atom, C' };
-  const YAW = 0.3, PITCH = 0.46, DIST = 3000, SC = 232;
-  const V = F.view({ yaw: YAW, pitch: PITCH, dist: DIST, cx: 690, cy: 478 });
+  const YAW = 0.3, PITCH = 0.62, DIST = 3000, SC = 216;
+  const V = F.view({ yaw: YAW, pitch: PITCH, dist: DIST, cx: 690, cy: 418 });
   /* a scene point to the canvas, and its depth along the line of sight (larger is farther) */
   const cam = [DIST * Math.sin(YAW) * Math.cos(PITCH), DIST * Math.sin(PITCH), DIST * Math.cos(YAW) * Math.cos(PITCH)];
   const P = (p) => V.P([p[0] * SC, p[1] * SC, p[2] * SC]);
@@ -243,11 +243,11 @@ const knots = (ks) => (x) => {
     const gas = 1 - beat(s, 0.03, 0.3);
     named(ctx, gas, 'hydrogen, H₂', add(HH[0].from, [0, 0.2, 0]), 0, 'center');
     named(ctx, 1 - beat(s, 1.03, 1.3), 'ethylene, C₂H₄', [0, 1.5, 0], 150, 'left');
-    named(ctx, beat(s, 3.7, 3.98), 'ethane, C₂H₆', [0, YC + 1.05, 0], 160, 'left');
+    named(ctx, beat(s, 3.7, 3.98), 'ethane, C₂H₆', [0, YC + 0.95, 0], 160, 'left');
     hits.push({ x: 690, y: P([0, NI_Y, 0])[1] + 40, r: 120, name: 'the nickel catalyst, a solid' });
     F.legend(ctx, { l: 1060, r: 1384, t: 84, b: 300 }, ['Ni', 'C', 'H'].map((e) => ({ s: { Ni: 'nickel', C: 'carbon', H: 'hydrogen' }[e], draw: (c, x, y) => lit(c, x, y, { Ni: 12, C: 10.5, H: 8 }[e], e) })), { corner: 'tr', size: 20 });
   }
-  F.tex(d.readout, '\\text{C}_{2}\\text{H}_{4}(g) + \\text{H}_{2}(g) \\xrightarrow{\;\\text{Ni}\;} \\text{C}_{2}\\text{H}_{6}(g)');
+  F.tex(d.readout, '\\text{C}_{2}\\text{H}_{4}(g) + \\text{H}_{2}(g) \\xrightarrow{\\ \\text{Ni}\\ } \\text{C}_{2}\\text{H}_{6}(g)');
   register(d.fig, { update: () => {}, draw });
 })();
 
@@ -263,7 +263,7 @@ const knots = (ks) => (x) => {
    the exact pockets. Story time: binding has no measured clock here.
 ===================================================================== */
 (function () {
-  const d = sim('sim-enzyme', 620);
+  const d = sim('sim-enzyme', 640);
   const st = ctl(d.controls, { label: '\\text{binding}', cls: '', key: 'binding', min: 0, max: 1, step: 0.005, value: 0, unit: '', dec: 2, aria: 'how far the substrates have come toward the active site' });
   F.story(d, st, { stops: [{ v: 0, label: 'substrates apart' }, { v: 1, label: 'complex formed' }], ms: 4200, rest: 1800 });
   const TY = 372, FLOOR = 16, PX = 50, TIP = 27, VEE = 42, NECK = 16, SITE = 104;
@@ -314,14 +314,12 @@ const knots = (ks) => (x) => {
         substrate(ctx, x, y, rot, sg, cs);
         hits.push({ x: x - sg * 4, y: y - 76, r: 56, name: 'a substrate, a reactant molecule' }, { x, y: y + 14, r: 26, name: sg < 0 ? 'the round tip of this substrate, which binds in the active site' : 'the pointed tip of this substrate, which binds in the active site' });
       });
-      text(ctx, 'enzyme', M.x, TY + 118, ce, { size: 22, weight: 600, align: 'center' });
-      F.faded(ctx, 1 - beat(k, 0.1, 0.4), [0, 0], () => text(ctx, 'substrates', M.x, yf - 196, cs, { size: 22, weight: 600, align: 'center' }));
-      F.faded(ctx, 1 - beat(k, 0.3, 0.55), [0, 0], () => {
-        line(ctx, M.x, yf - 62, M.x, yf - 8, alpha(PAL.ink, 0.5), 1.5, [5, 6]);
-        text(ctx, M.id === 'key' ? 'active site, the proper shape' : 'active site, not yet the shape', M.x, yf - 80, PAL.ink, { size: 20, align: 'center' });
-      });
-      const state = M.id === 'key' ? 'The active site keeps its shape.' : fit <= 0 ? 'The active site keeps its shape.' : fit < 1 ? 'The active site is changing to fit.' : 'The active site has changed to fit.';
-      F.faded(ctx, beat(k, 0.55, 0.7), [0, 0], () => text(ctx, state, M.x, TY + 236, PAL.ink, { size: 20, align: 'center' }));
+      text(ctx, 'enzyme', M.x, TY + 150, ce, { size: 22, weight: 600, align: 'center' });
+      line(ctx, M.x, yf + 12, M.x, yf + 52, alpha(PAL.ink, 0.5), 1.5, [5, 6]);
+      text(ctx, 'active site', M.x, yf + 68, PAL.ink, { size: 20, align: 'center' });
+      F.faded(ctx, 1 - beat(k, 0.02, 0.18), [0, 0], () => text(ctx, 'substrates', M.x, yf - 200, cs, { size: 22, weight: 600, align: 'center' }));
+      const says = M.id === 'key' ? 'The active site has the proper shape from the start.' : fit <= 0 ? 'The active site does not have the proper shape yet.' : fit < 1 ? 'The active site is changing to fit.' : 'The active site has changed to fit.';
+      text(ctx, says, M.x, TY + 240, PAL.ink, { size: 20, align: 'center' });
       hits.push({ x: M.x, y: yf + 16, r: 44, name: 'the active site of the enzyme' }, { x: M.x, y: TY + 120, r: 80, name: 'the enzyme' });
     });
   }

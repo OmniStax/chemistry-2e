@@ -26,7 +26,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
   const ro = F.readout(d);
 
   /*MODEL*/
-  const NC = 24, NR = 6, NA = NC * NR, DA = 14, RA = 7, RH = 6, RF = 6;      /* the bar of atoms, 24 by 6; radii of Fe, H⁺ and Fe²⁺ */
+  const NC = 24, NR = 6, NA = NC * NR, DA = 14, RA = 7, RH = 6, RF = 4.5;      /* the bar of atoms, 24 by 6; radii of Fe, H⁺ and Fe²⁺ */
   const WB = 590, TOP = 130, BOT = 450;                                        /* a vessel's inside width, and the liquid drawn */
   const TRUN = 6, DT = 1 / 240, EVERY = 4, NF = Math.round(TRUN / DT / EVERY);
   const P25 = 0.5, VH = 420, PER = 40, SEED = 2;                              /* share reacting at 25 °C, ion speed, ions per 1.0 M */
@@ -195,7 +195,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
       { s: 'Fe atom, exposed', draw: fe(0.7, 1) }, { s: 'Fe atom, inside', draw: fe(0.25, 0.38) },
       { s: 'H^+', draw: (c, x, y) => ball(c, x, y, 6.5, F.el('H'), 0.75, 1.4) },
       { s: 'H_2', draw: (c, x, y) => pair(c, x, y, 0) },
-      { s: 'Fe^{2+}', draw: (c, x, y) => ball(c, x, y, 6.5, F.el('Fe')) },
+      { s: 'Fe^{2+}', draw: (c, x, y) => ball(c, x, y, 4.5, F.el('Fe')) },
     ], { corner: 'below' });
     /* the graph: iron atoms left against t, a step down as each atom leaves */
     const g = axes(ctx, { l: 150, r: 1300, t: 580, b: 800 }, [0, TRUN], [0, NA], { nx: 6, ny: 4, xl: 'time (s)', xc: C('time'), yl: 'iron atoms left' });

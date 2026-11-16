@@ -146,17 +146,17 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     const ax = axes(ctx, G, [0, T], [0, N], { nx: 0, ny: 2, yl: 'atoms in the other bulb' });
     text(ctx, 'time', G.r, G.b + 24, PAL.ink, { size: 20, weight: 600, align: 'right' });
     line(ctx, G.l, ax.Y(N / 2), G.r, ax.Y(N / 2), alpha(PAL.ink, 0.4), 2, [10, 10]);
-    text(ctx, 'evenly spread', G.r + 10, ax.Y(N / 2), PAL.muted, { size: 17 });
+    text(ctx, 'evenly spread', G.r + 24, ax.Y(N / 2), PAL.muted, { size: 17 });
     line(ctx, ax.X(T0), G.t, ax.X(T0), G.b, alpha(PAL.ink, 0.4), 2, [4, 8]);
     text(ctx, 'valve opens', ax.X(T0) + 10, G.t + 12, PAL.muted, { size: 17 });
     [['He', R.he], ['Ar', R.ar]].forEach(([f, c]) => {
-      ctx.save(); ctx.strokeStyle = F.el(f); ctx.lineWidth = 4; ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+      ctx.save(); ctx.strokeStyle = F.el(f); ctx.lineWidth = f === 'He' ? 3 : 5; ctx.lineJoin = 'round'; ctx.lineCap = 'round';
       ctx.beginPath(); ctx.moveTo(ax.X(0), ax.Y(c[0]));
       for (let j = 1; j <= k; j++) if (c[j] !== c[j - 1] || j === k) { ctx.lineTo(ax.X(j / FPS), ax.Y(c[j - 1])); ctx.lineTo(ax.X(j / FPS), ax.Y(c[j])); }
       ctx.stroke(); ctx.restore();
     });
     atom(ctx, 'Ar', ax.X(k / FPS), ax.Y(ar)); atom(ctx, 'He', ax.X(k / FPS), ax.Y(he));
-    const key = (f) => (c, x, y) => { c.save(); c.strokeStyle = F.el(f); c.lineWidth = 4; c.lineCap = 'round'; c.beginPath(); c.moveTo(x - 20, y); c.lineTo(x + 20, y); c.stroke(); c.restore(); atom(c, f, x, y); };
+    const key = (f) => (c, x, y) => { c.save(); c.strokeStyle = F.el(f); c.lineWidth = f === 'He' ? 3 : 5; c.lineCap = 'round'; c.beginPath(); c.moveTo(x - 20, y); c.lineTo(x + 20, y); c.stroke(); c.restore(); atom(c, f, x, y); };
     legend(ctx, ax, [{ s: 'helium in the right bulb', draw: key('He') }, { s: 'argon in the left bulb', draw: key('Ar') }], { corner: 'above' });
     topline(ctx, t < T0 ? 'Valve closed: helium fills the left bulb and argon the right.'
       : k >= R.even ? 'Each gas has spread through both bulbs, twice the volume it began in, with no change in energy.'
@@ -232,8 +232,10 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     for (let e = -150; e <= 150; e += 50) { line(ctx, AX - 6, Y(e), AX, Y(e), PAL.muted, 2); text(ctx, e < 0 ? '−' + -e : String(e), AX - 12, Y(e), PAL.muted, { size: 17, align: 'right' }); }
     text(ctx, 'energy (kJ/mol)', 16, YT - 30, ce, { size: 19, weight: 600 });
     line(ctx, AX, Y(0), 1392, Y(0), alpha(PAL.ink, 0.35), 2, [10, 10]);
-    /* each state's level runs under its frame, and a step's arrow joins the end of one level to the start of the next */
     const xa = (i) => fx(i) + FW + GP / 2;
+    /* how far the solution ends from its start, as a band under its frame */
+    if (s) { ctx.save(); ctx.fillStyle = alpha(ce, 0.14); ctx.fillRect(xa(2), Math.min(Y(0), Y(s)), XD + 14 - xa(2), Math.abs(s)); ctx.restore(); }
+    /* each state's level runs under its frame, and a step's arrow joins the end of one level to the start of the next */
     for (let i = 0; i < 4; i++) line(ctx, i ? xa(i - 1) : fx(0), Y(E[i]), i < 3 ? xa(i) : XD + 14, Y(E[i]), PAL.ink, 4);
     for (let i = 0; i < 3; i++) {
       const y0 = Y(E[i]), y1 = Y(E[i + 1]), L = Math.abs(y1 - y0), up = i < 2;
@@ -246,7 +248,9 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     text(ctx, 'direct', XD + 16, Y(0) + (s < 0 ? -48 : 26), PAL.ink, { size: 19 });
     text(ctx, sgn(s) + ' kJ/mol', XD + 16, Y(0) + (s < 0 ? -24 : 50), ce, { size: 19, weight: 600 });
     const cost = h[0] + h[1], back = -h[2];
-    topline(ctx, s < 0
+    topline(ctx, cost === 0 && back > 0
+      ? `Nothing is spent separating the particles, so solvation's ${back} kJ/mol is all released: the solution forms exothermically.`
+      : s < 0
       ? `Solvation returns ${back} kJ/mol, more than the ${cost} kJ/mol spent separating the particles: the solution forms exothermically.`
       : s > 0
         ? `Solvation returns ${back} kJ/mol, less than the ${cost} kJ/mol spent separating the particles: the solution forms endothermically.`

@@ -9,12 +9,15 @@
     "Describe the effects of chemical nature, physical state, temperature, concentration, and catalysis on reaction rates"
   ],
   "summary_html": "<p>The <span data-concept=\"reaction-rate\">rate of a chemical reaction</span> is affected by several parameters. Reactions involving two phases proceed more rapidly when there is greater surface <span data-concept=\"area\">area</span> contact. If <span data-concept=\"temperature\">temperature</span> or reactant <span data-concept=\"concentration\">concentration</span> is increased, the <span data-concept=\"reaction-rate\">rate of a given reaction</span> generally increases as well. A <span data-concept=\"catalyst\">catalyst</span> can increase the <span data-concept=\"reaction-rate\">rate of a reaction</span> by providing an alternative pathway with a lower <span data-concept=\"activation-energy\">activation energy</span>.</p>",
-  "notes": "The three Link to Learning notes are left out: the videos of cesium reacting with water and of phosphorus burning in oxygen, and the PhET Reactions &amp; Rates interactive, which the Sim of nitric oxide and ozone answers. Figure 12.6 keeps the book’s unbalanced equation for iron and hydrochloric acid as printed.",
+  "notes": "The three Link to Learning notes are left out: the videos of cesium reacting with water and of phosphorus burning in oxygen, and the PhET Reactions &amp; Rates interactive, which the Sim of iron in hydrochloric acid answers. Figure 12.6 keeps the book’s unbalanced equation for iron and hydrochloric acid as printed.",
   "ai": {
     "text": [
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-fable-5-2"
       }
     ],
     "figures": [
@@ -24,12 +27,15 @@
       },
       {
         "model": "claude-opus-5-5"
+      },
+      {
+        "model": "claude-fable-5-2"
       }
     ]
   },
   "built": "2026-10-05",
   "exercises_lead": "",
-  "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key. The unkeyed conceptual exercise fs-idm86018304 carries a suggested approach marked as OmniStax’s own. Of the three items that are instructions for the PhET Reactions &amp; Rates simulation, fs-idm66455280 is set against the Sim of nitric oxide and ozone, its prompt rewritten to name it, and carries a suggested approach marked as OmniStax’s own since the book gives no key; fs-idm66513728, on a single aimed collision, and fs-idm49710224, whose key describes the simulation’s reversible reaction of A and BC settling into a mixture, are held, since the Sim draws neither.",
+  "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key. The unkeyed conceptual exercise fs-idm86018304 carries a suggested approach marked as OmniStax’s own. Of the three items that are instructions for the PhET Reactions &amp; Rates simulation, fs-idm66455280 is set against the Sim of iron in hydrochloric acid, its prompt rewritten to name it, and carries a suggested approach marked as OmniStax’s own since the book gives no key; fs-idm66513728, on a single aimed collision, and fs-idm49710224, whose key describes the simulation’s reversible reaction of A and BC settling into a mixture, are held, since the Sim draws neither.",
   "figures": [
     {
       "id": "fig-acid-dissol",
@@ -67,8 +73,8 @@
         "time"
       ],
       "conventions": [
-        "N",
-        "O"
+        "Fe",
+        "H"
       ],
       "ai": [
         {
@@ -79,6 +85,10 @@
         {
           "model": "claude-opus-5-5",
           "part": "rebuilt flat: every molecule seen, legend, seeded runs; caption cut"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt as iron in acid: pieces, [HCl] and T beside a fixed single piece"
         }
       ]
     }
@@ -206,11 +216,11 @@
         "at": "end"
       },
       "cite": "concentration",
-      "prompt": "In the Sim of nitric oxide and ozone in a closed box, observe how the molecules collide and react under varying conditions. Set the temperature and the initial concentrations of each reactant, and watch the count of collisions above the graph and the concentration of ozone falling on it. How is the rate of the reaction affected by concentration and temperature?",
+      "prompt": "In the Sim of iron in hydrochloric acid, observe how the hydrogen ions strike the iron and react under varying conditions. Leave the iron in one piece, set the temperature and the concentration of the acid, and watch the count of iron atoms left fall on the graph. How is the rate of the reaction affected by concentration and temperature?",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "The rate increases when the concentration of either reactant increases and when the temperature increases. At 300 K, a higher initial concentration of nitric oxide or of ozone puts more molecules in the box, so they meet more often: the collision count grows faster, more reactions occur in the same time, and the ozone concentration falls more steeply, giving a steeper dashed line and a larger average rate. Raising the temperature from 200 K to 600 K at 1.00 M of each reactant makes the molecules move faster, so they collide more often, and a larger share of those collisions react, so the ozone is again used up faster. Because a run holds only a few dozen collisions, single runs scatter, but repeated runs show both trends. Both agree with this section: rates usually increase when the concentration of a reactant increases, and reactions occur faster at higher temperatures."
+        "solution": "The rate increases when the concentration of the acid increases and when the temperature increases. With the iron in one piece at 25 °C, 0.5 M acid takes 27 of the 144 iron atoms in the 6.0 s of a run, 1.0 M takes 45, 1.5 M takes 77 and 2.0 M takes 86: stronger acid puts more hydrogen ions in the vessel, so more of them strike the iron each second and the curve of iron atoms left falls more steeply. With 1.0 M acid, 15 atoms react at 5 °C, 27 at 15 °C, 45 at 25 °C and 94 at 35 °C: in warmer acid a larger share of the ions that strike the iron react, and the ions move a little faster. Both agree with this section: rates usually increase when the concentration of a reactant increases, and reactions typically occur faster at higher temperatures."
       }
     }
   ],

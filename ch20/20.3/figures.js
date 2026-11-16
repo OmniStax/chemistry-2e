@@ -18,8 +18,9 @@ const { PAL, alpha, register, begin, line, text, headline } = F;
 (function () {
   const d = F.sim(root, 'sim-carbonyl');
   const T3 = window.THREE;
-  const DIST = 6.6, RAD = Math.PI / 180;
+  const DIST = 12.4, FOV = 16, RAD = Math.PI / 180;
   const v = F.view3d(d.stage, { spin: 'off', h: 560, dist: DIST, tilt: 0.42, pitch: [-1.3, 1.3], onRender: () => place() });
+  if (v.camera && 'fov' in v.camera) { v.camera.fov = FOV; v.camera.updateProjectionMatrix(); }   /* a long lens: the near R group is not drawn larger than the far one */
   v.setView(-1.12, 0.42);
   const g = v.part(0); if (g && g.position) g.position.set(0, -0.12, 0.2);
   const key = F.makeCanvas(d.stage, 64);
@@ -32,8 +33,8 @@ const { PAL, alpha, register, begin, line, text, headline } = F;
     pi: 'The two p orbitals overlap above and below the plane: the π bond, its electrons pulled toward oxygen.',
   };
   const READ = {
-    sigma: '\\mk{s}{3\\ sp^{2}\\text{ orbitals on C}} \;\\to\; \\mk{g}{3\\ \\sigma\\text{ bonds}}',
-    p: '\\mk{s}{1\\ p\\text{ orbital on C}} + 1\\ p\\text{ orbital on O} \;\\to\; \\mk{q}{1\\ \\pi\\text{ bond}}',
+    sigma: '\\mk{s}{3\\ sp^{2}\\text{ orbitals on C}} \\to \\mk{g}{3\\ \\sigma\\text{ bonds}}',
+    p: '\\mk{s}{1\\ p\\text{ orbital on C}} + 1\\ p\\text{ orbital on O} \\to \\mk{q}{1\\ \\pi\\text{ bond}}',
     pi: '\\text{C=O} = \\mk{g}{1\\ \\sigma\\text{ bond}} + \\mk{q}{1\\ \\pi\\text{ bond}}',
   };
   const add = (a, b) => [a[0] + b[0], a[1] + b[1], a[2] + b[2]], mul = (a, k) => [a[0] * k, a[1] * k, a[2] * k];
@@ -51,7 +52,7 @@ const { PAL, alpha, register, begin, line, text, headline } = F;
     DROP = new T3.LatheGeometry(prof, 36);
     const sp = (a, e) => Math.sign(a) * Math.pow(Math.abs(a), e), NU = 48, NV = 40, pos = [], idx = [];
     for (let i = 0; i <= NU; i++) {
-      const th = -Math.PI / 2 + (Math.PI * i) / NU, x = sp(Math.sin(th), 0.45), c = sp(Math.cos(th), 0.45) * (0.8 + 0.34 * x);
+      const th = -Math.PI / 2 + (Math.PI * i) / NU, x = sp(Math.sin(th), 0.45), c = sp(Math.cos(th), 0.45) * (0.74 + 0.4 * x);
       for (let j = 0; j <= NV; j++) { const ph = -Math.PI + (2 * Math.PI * j) / NV; pos.push(x, c * Math.cos(ph), c * Math.sin(ph)); }
     }
     for (let i = 0; i < NU; i++) for (let j = 0; j < NV; j++) { const a = i * (NV + 1) + j, b = a + NV + 1; idx.push(a, a + 1, b, b, a + 1, b + 1); }
@@ -68,7 +69,7 @@ const { PAL, alpha, register, begin, line, text, headline } = F;
     g.children.slice().forEach((c) => { g.remove(c); });
     gP = new T3.Group(); gPi = new T3.Group(); g.add(gP, gPi);
     /* the plane of the σ bonds */
-    const X = 2.0, Z0 = -2.05, Z1 = 1.3, pts = [[-X, 0, Z0], [X, 0, Z0], [X, 0, Z1], [-X, 0, Z1]];
+    const X = 1.75, Z0 = -1.9, Z1 = 1.15, pts = [[-X, 0, Z0], [X, 0, Z0], [X, 0, Z1], [-X, 0, Z1]];
     const geo = new T3.BufferGeometry(); geo.setAttribute('position', new T3.Float32BufferAttribute(pts.flat(), 3)); geo.setIndex([0, 1, 2, 0, 2, 3]); geo.computeVertexNormals();
     const sheet = new T3.Mesh(geo, new T3.MeshBasicMaterial({ color: new T3.Color(PAL.muted), transparent: true, opacity: 0.16, depthWrite: false, side: T3.DoubleSide }));
     sheet.renderOrder = 1; g.add(sheet); v.pickable(sheet, 'the plane of the three σ bonds');
@@ -104,12 +105,12 @@ const { PAL, alpha, register, begin, line, text, headline } = F;
     { el: v.label('R¹', [0, 0, 0], g, 0, 'bare'), p: AT.L, r: 0.3 },
     { el: v.label('R²', [0, 0, 0], g, 0, 'bare'), p: AT.R, r: 0.3 },
     { el: v.label('δ−', [0, 0, 0], g, 0, 'bare'), p: add(AT.O, [0.2, 0, -0.15]), r: 0.34 },
-    { el: v.label('δ+', [0, 0, 0], g, 0, 'bare'), p: [-0.62, 0, -0.36], r: 0.04 },
+    { el: v.label('δ+', [0, 0, 0], g, 0, 'bare'), p: [-0.12, 0, 0.6], r: 0.04 },
     { el: v.label('~120°', [0, 0, 0], g, 0, 'bare'), p: [1.2 * Math.cos(-30 * RAD), 0, 1.2 * Math.sin(-30 * RAD)], r: 0.04 },
   ];
   function place() {
     if (!v.wrap || !v.wrap.clientHeight) return;
-    const w = v.wrap.clientWidth, h = v.wrap.clientHeight, u = h / (2 * Math.tan(15 * RAD) * DIST / (v.at.zoom || 1));
+    const w = v.wrap.clientWidth, h = v.wrap.clientHeight, u = h / (2 * Math.tan((FOV / 2) * RAD) * DIST / (v.at.zoom || 1));
     const c = v.project([0, 0, -0.2], g);
     outs.forEach((l) => {
       const q = v.project(l.p, g);

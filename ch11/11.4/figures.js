@@ -1,154 +1,150 @@
 /* Figures for section 11.4 Colligative Properties. Boots against the section's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['11.4'] = function (root, F) {
-const { el, fmt, tex, C, PAL, alpha, ctl, cycle, register, begin, line, text, topline, hbracket, vbracket, legend, label } = F;
+const { fmt, tex, C, PAL, alpha, ctl, cycle, register, begin, line, text, topline, hbracket, legend, label, axes, plot, dot } = F;
 /* one atom: a filled ball in its element colour, ink rim */
 function ball(ctx, x, y, r, col) { ctx.save(); ctx.fillStyle = col; ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 1.2; ctx.beginPath(); ctx.arc(x, y, r, 0, 2 * Math.PI); ctx.fill(); ctx.stroke(); ctx.restore(); }
 const sim = (id, H) => F.sim(root, id, H);
-function readout(host, main, small) { tex(host, main); if (small) host.appendChild(el('small', null, small)); }
 const TAU = 2 * Math.PI;
 const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
 const minus = (s) => String(s).replace(/^-/, '−');
 /* a small seeded generator, so a slider position always draws the same arrangement */
 const rng = (seed) => () => { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; };
-const glassOf = (T3D) => ({ transparent: true, opacity: 0.1, depthWrite: false, side: T3D.DoubleSide });
-/* a closed cylinder of radius r standing from a to b along y */
-function column(T3D, g, x, y0, y1, z, r, color, extra) {
-  const m = new T3D.Mesh(new T3D.CylinderGeometry(r, r, 1, 28, 1, false), F.mesh.mat(color, extra));
-  const set = (a, b) => { const h = Math.max(1e-3, b - a); m.scale.y = h; m.position.set(x, a + h / 2, z); };
-  set(y0, y1); g.add(m); m.setSpan = set; return m;
-}
-/* a water molecule, O and two H, in a group at p, turned by the angle a about y */
-function water(g, p, a, s = 1) {
-  const T3D = window.THREE, w = new T3D.Group(), hs = [];
-  const o = F.mesh.sphere(w, [0, 0, 0], 0.075 * s, F.el('O'));
-  for (const k of [-1, 1]) hs.push(F.mesh.sphere(w, [0.075 * s * k, 0.06 * s, 0], 0.048 * s, F.el('H')));
-  w.position.set(p[0], p[1], p[2]); w.rotation.y = a; g.add(w);
-  return { g: w, parts: [o, ...hs] };
-}
 
 /* =====================================================================
    FIGURE 11.18: the vapor above pure water and above a solution of urea,
-   drawn flat as the book draws it: two stoppered Erlenmeyer flasks at
-   the same temperature, every molecule in view. The liquid is three
-   rows of sites; urea takes the same share of every row, so the share
-   of the surface held by water is the mole fraction of water, X. Moving:
-   water molecules leave from the surface sites that water holds, evenly
-   spaced in time at R_EV per site per second, fly straight, turn at the
-   glass, and return to the liquid when they next strike its surface. The
-   vapor above each flask therefore settles at R_EV × (water's surface
-   sites) × the mean time aloft, so the solution's count is X times the
-   pure water's, which is Raoult's law. 23.7 torr is the vapor pressure of
-   water at 25 °C that Example 11.6's Check Your Learning uses.
+   two stoppered Erlenmeyer flasks at 25 °C drawn flat as the book draws
+   them, and beside them Raoult's law as its line. Each liquid is three
+   rows of ten places; urea takes the same share of every row, so with X
+   in tenths the share of the surface that water holds is exactly X.
+   Moving: water leaves the surface from places water holds, R0 × X × 10
+   molecules a second (evenly spaced), flies straight, turns at the
+   glass, and goes back into the liquid at its first strike on the
+   surface after AIR seconds aloft, in either flask alike (the rate of
+   return per molecule is not changed by the solute). The number aloft
+   therefore settles at X times the pure water's, which is the law.
+   23.7 torr is the vapor pressure of water at 25 °C (Example 11.6's
+   Check Your Learning); 0.800 is the mole fraction of Example 11.6.
    Canvas units: flask centres FXS, base at YB, neck from YN up to YT,
    liquid surface at YS.
 ===================================================================== */
 (function () {
   const d = sim('sim-vapor-lowering', 600);
   const P_STAR = 23.7;
-  const X = ctl(d.controls, { label: 'X_{\\text{solvent}}', cls: '', min: 0.5, max: 1, step: 0.025, value: 0.8, unit: '', dec: 3, detents: [0.8], aria: 'mole fraction of water in the solution' });
-  const FXS = [370, 1030], YB = 548, YN = 236, YT = 128, YS = 432, HB = 210, HN = 54;
+  const X = ctl(d.controls, { label: 'X_{\\text{solvent}}', cls: '', min: 0.5, max: 1, step: 0.1, value: 0.8, unit: '', dec: 3, aria: 'mole fraction of water in the solution' });
+  const FXS = [232, 692], YB = 548, YN = 236, YT = 128, YS = 426, HB = 212, HN = 56, NS = 10;
   const hw = (y) => (y <= YN ? HN : HN + ((HB - HN) * (y - YN)) / (YB - YN));   /* inner half-width of the flask at height y */
-  /* the liquid's sites, three rows, the top one the surface */
-  const ROWS = [YS + 20, YS + 52, YS + 84];
-  const SITES = ROWS.flatMap((y, r) => { const w = hw(y) - 24, n = Math.floor((2 * w) / 32) + 1; return Array.from({ length: n }, (_, i) => ({ r, x: -w + (2 * w * i) / (n - 1) + (r % 2 ? 8 : -8), y })); });
-  /* which sites urea takes: the same share of every row, spread evenly along it */
+  /* the liquid's places: three rows of NS, the top one the surface */
+  const ROWS = [YS + 24, YS + 58, YS + 92];
+  const SITES = ROWS.flatMap((y, r) => { const w = hw(y) - 26; return Array.from({ length: NS }, (_, i) => ({ r, i, x: -w + (2 * w * (i + 0.5 + (r % 2 ? 0.18 : -0.18))) / NS, y })); });
+  /* which places urea takes: round((1 − X) NS) of each row, spread evenly along it and staggered row to row */
   function soluteSites(x) {
-    const s = new Set();
-    ROWS.forEach((_, r) => {
-      const row = SITES.map((q, i) => [q, i]).filter(([q]) => q.r === r), n = Math.round((1 - x) * row.length);
-      for (let j = 0; j < n; j++) s.add(row[Math.floor(((j + 0.5 + r * 0.33) * row.length) / n) % row.length][1]);
-    });
+    const s = new Set(), n = Math.round((1 - x) * NS);
+    ROWS.forEach((_, r) => { for (let j = 0; j < n; j++) s.add(r * NS + (Math.floor(((j + 0.5) * NS) / n + r * 1.4) % NS)); });
     return s;
   }
-  const R_EV = 1.1, SPEED = 260, R = 10;
+  const R0 = 0.5, AIR = 3.3, R = 12;                 /* departures per surface place per second; least time aloft; a molecule's reach */
   const fr = (i) => { const v = Math.sin(i * 12.9898 + 78.233) * 43758.5453; return v - Math.floor(v); };
-  /* a flask's vapor: molecules aloft, and the time to the next departure from each water site at the surface */
-  const flasks = [0, 1].map((k) => ({ k, mols: [], next: 0, born: 0 }));
+  const flasks = [0, 1].map((k) => ({ k, mols: [], acc: 0.5, born: 0 }));
   let urea = soluteSites(X.v);
-  const surface = (f) => SITES.map((q, i) => [q, i]).filter(([q, i]) => q.r === 0 && !(f.k === 1 && urea.has(i)));
   function step(dt) {
     urea = soluteSites(X.v);
     for (const f of flasks) {
-      const sites = surface(f), rate = R_EV * sites.length;
-      f.next -= dt;
-      while (rate > 0 && f.next <= 0) {
-        const n = f.born++, [q] = sites[Math.floor(fr(n * 3 + f.k) * sites.length)], a = -Math.PI / 2 + (fr(n * 7 + 1) - 0.5) * 2.2;
-        f.mols.push({ age: 0, x: q.x, y: YS - R, vx: SPEED * Math.cos(a), vy: SPEED * Math.sin(a), up: false, rot: fr(n * 5) * TAU, w: (fr(n * 11) - 0.5) * 4 });
-        f.next += 1 / rate;
+      const sites = SITES.filter((q) => q.r === 0 && !(f.k === 1 && urea.has(q.i)));
+      f.acc += R0 * sites.length * dt;
+      while (f.acc >= 1 && sites.length) {
+        f.acc -= 1;
+        const n = f.born++, q = sites[(n * 7 + f.k * 3) % sites.length], a = -Math.PI / 2 + (fr(n * 7 + 1 + f.k) - 0.5) * 2.0, sp = 150 + 90 * fr(n * 3 + 2);
+        f.mols.push({ age: 0, least: AIR + 0.5 * fr(n * 13 + 5), x: q.x, y: YS - 4, vx: sp * Math.cos(a), vy: sp * Math.sin(a), rot: fr(n * 5) * TAU, w: (fr(n * 11) - 0.5) * 4, out: 0 });
       }
-      if (rate === 0) f.next = 0;
       for (const m of f.mols) {
-        m.x += m.vx * dt; m.y += m.vy * dt; m.rot += m.w * dt; m.age += dt;
-        if (m.y < YS - 3 * R) m.up = true;
-        if (m.y < YT + R + 30) { m.y = YT + R + 30; m.vy = Math.abs(m.vy); }
-        const lim = hw(m.y) - R - 4;
+        m.age += dt;
+        if (m.out) { m.out += dt; m.y += 60 * dt; continue; }
+        m.x += m.vx * dt; m.y += m.vy * dt; m.rot += m.w * dt;
+        const top = YT + 30 + R;
+        if (m.y < top) { m.y = top; m.vy = Math.abs(m.vy); }
+        const lim = hw(m.y) - R - 3;
         if (Math.abs(m.x) > lim) {
           m.x = Math.sign(m.x) * lim;
-          /* reflect off the wall: upright in the neck, slanted in the cone */
-          if (m.y <= YN) m.vx = -m.vx;
+          /* turn at the glass: upright in the neck, slanted in the cone */
+          if (m.y <= YN) m.vx = -Math.sign(m.x) * Math.abs(m.vx);
           else { const sl = (HB - HN) / (YB - YN), nx = Math.sign(m.x) / Math.hypot(1, sl), ny = -sl / Math.hypot(1, sl), dd = m.vx * nx + m.vy * ny; if (dd > 0) { m.vx -= 2 * dd * nx; m.vy -= 2 * dd * ny; } }
         }
-        if ((m.up || m.age > 0.1) && m.vy > 0 && m.y >= YS - R) m.gone = true;
+        /* at the surface: back into the liquid once it has been aloft long enough, else off it again */
+        if (m.vy > 0 && m.y >= YS - R && m.age > 0.2) { if (m.age >= m.least) m.out = 1e-6; else { m.y = YS - R; m.vy = -m.vy; } }
       }
-      f.mols = f.mols.filter((m) => !m.gone);
+      f.mols = f.mols.filter((m) => m.out < 0.25);
     }
   }
+  /* start with each flask's vapor already settled */
+  for (let i = 0; i < 900; i++) step(1 / 60);
   const cy = cycle(() => Infinity, 0);
   let hits = [];
   F.hover(d.stage, () => hits);
-  function water(ctx, x, y, a, k = 1) {
-    const atoms = [['O', 0, 0, 7.5], ['H', 9 * Math.cos(a + 0.91), 9 * Math.sin(a + 0.91), 4.8], ['H', 9 * Math.cos(a - 0.91), 9 * Math.sin(a - 0.91), 4.8]];
-    for (const [e, dx, dy, r] of atoms.slice(1).concat([atoms[0]])) ball(ctx, x + dx * k, y + dy * k, r * k, F.el(e));
+  function water(ctx, x, y, a) {
+    for (const s of [0.91, -0.91]) ball(ctx, x + 10 * Math.cos(a + s), y + 10 * Math.sin(a + s), 5.4, F.el('H'));
+    ball(ctx, x, y, 8.4, F.el('O'));
   }
-  /* urea, CO(NH₂)₂: C with O above and the two N below, each N with its two H */
-  function urea_(ctx, x, y) {
-    const H = [[-21, 12], [-14, 22], [21, 12], [14, 22]];
-    H.forEach(([dx, dy]) => ball(ctx, x + dx, y + dy, 4.5, F.el('H')));
-    ball(ctx, x - 11, y + 8, 7.5, F.el('N')); ball(ctx, x + 11, y + 8, 7.5, F.el('N'));
-    ball(ctx, x, y - 13, 7.5, F.el('O')); ball(ctx, x, y, 8, F.el('C'));
+  /* urea, CO(NH₂)₂: C with O above and the two N below it, each N with its two H */
+  function ureaMol(ctx, x, y) {
+    [[-19, 8], [-13, 19], [19, 8], [13, 19]].forEach(([dx, dy]) => ball(ctx, x + dx, y + dy, 4.6, F.el('H')));
+    ball(ctx, x - 10, y + 8, 7.4, F.el('N')); ball(ctx, x + 10, y + 8, 7.4, F.el('N'));
+    ball(ctx, x, y - 12, 7.4, F.el('O')); ball(ctx, x, y, 7.8, F.el('C'));
   }
   function flask(ctx, cx, col) {
     ctx.save(); ctx.lineJoin = 'round';
     /* the liquid */
     ctx.beginPath(); ctx.moveTo(cx - hw(YS), YS); ctx.lineTo(cx + hw(YS), YS); ctx.lineTo(cx + HB, YB - 14); ctx.quadraticCurveTo(cx + HB, YB, cx + HB - 14, YB); ctx.lineTo(cx - HB + 14, YB); ctx.quadraticCurveTo(cx - HB, YB, cx - HB, YB - 14); ctx.closePath();
-    ctx.fillStyle = alpha(PAL.ink, 0.07); ctx.fill();
-    line(ctx, cx - hw(YS), YS, cx + hw(YS), YS, alpha(PAL.ink, 0.35), 2);
-    /* the glass, in the flask's referent colour */
+    ctx.fillStyle = alpha(PAL.ink, 0.08); ctx.fill();
+    line(ctx, cx - hw(YS), YS, cx + hw(YS), YS, alpha(PAL.ink, 0.4), 2);
+    /* the glass, in the flask's referent colour, with its lip */
     ctx.strokeStyle = col; ctx.lineWidth = 4; ctx.beginPath();
-    ctx.moveTo(cx - HN - 8, YT - 6); ctx.lineTo(cx - HN, YT); ctx.lineTo(cx - HN, YN); ctx.lineTo(cx - HB, YB - 14); ctx.quadraticCurveTo(cx - HB, YB, cx - HB + 14, YB);
-    ctx.lineTo(cx + HB - 14, YB); ctx.quadraticCurveTo(cx + HB, YB, cx + HB, YB - 14); ctx.lineTo(cx + HN, YN); ctx.lineTo(cx + HN, YT); ctx.lineTo(cx + HN + 8, YT - 6);
+    ctx.moveTo(cx - HN - 9, YT - 7); ctx.lineTo(cx - HN, YT); ctx.lineTo(cx - HN, YN); ctx.lineTo(cx - HB, YB - 14); ctx.quadraticCurveTo(cx - HB, YB, cx - HB + 14, YB);
+    ctx.lineTo(cx + HB - 14, YB); ctx.quadraticCurveTo(cx + HB, YB, cx + HB, YB - 14); ctx.lineTo(cx + HN, YN); ctx.lineTo(cx + HN, YT); ctx.lineTo(cx + HN + 9, YT - 7);
     ctx.stroke();
-    /* the stopper, seated in the neck */
-    ctx.fillStyle = alpha(PAL.ink, 0.28); ctx.strokeStyle = alpha(PAL.ink, 0.6); ctx.lineWidth = 2;
-    ctx.beginPath(); ctx.moveTo(cx - HN - 12, YT - 40); ctx.lineTo(cx + HN + 12, YT - 40); ctx.lineTo(cx + HN - 2, YT + 30); ctx.lineTo(cx - HN + 2, YT + 30); ctx.closePath(); ctx.fill(); ctx.stroke();
+    /* the cork stopper, seated in the neck */
+    ctx.fillStyle = alpha(PAL.ink, 0.3); ctx.strokeStyle = alpha(PAL.ink, 0.6); ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(cx - HN - 12, YT - 44); ctx.lineTo(cx + HN + 12, YT - 44); ctx.lineTo(cx + HN - 2, YT + 30); ctx.lineTo(cx - HN + 2, YT + 30); ctx.closePath(); ctx.fill(); ctx.stroke();
     ctx.restore();
   }
   function draw() {
     const { ctx } = begin(d.c);
     hits = [];
-    const x = X.v, cP = C('pressure');
+    const x = X.v, cP = C('pressure'), ps = x * P_STAR, tt = cy.now();
+    const cols = [F.ref('pure-tank'), F.ref('solution-tank')];
     flasks.forEach((f) => {
-      const cx = FXS[f.k], col = F.ref(f.k ? 'solution-tank' : 'pure-tank');
+      const cx = FXS[f.k], col = cols[f.k];
       flask(ctx, cx, col);
-      SITES.forEach((q, i) => {
-        const tt = cy.now(), j = Math.sin(tt * 3.3 + i * 1.7) * 1.5, px = cx + q.x + j, py = q.y + Math.cos(tt * 2.7 + i) * 1.5;
-        if (f.k === 1 && urea.has(i)) { urea_(ctx, px, py); hits.push({ x: px, y: py, r: 16, name: 'a urea molecule, CO(NH₂)₂, a nonvolatile solute' }); }
-        else { water(ctx, px, py, -Math.PI / 2 + Math.sin(i * 2.3) * 1.2); hits.push({ x: px, y: py, r: 12, name: 'a water molecule in the liquid' }); }
+      SITES.forEach((q, n) => {
+        const px = cx + q.x + Math.sin(tt * 3.3 + n * 1.7) * 1.5, py = q.y + Math.cos(tt * 2.7 + n) * 1.5;
+        if (f.k === 1 && urea.has(n)) { ureaMol(ctx, px, py); hits.push({ x: px, y: py, r: 18, name: 'a urea molecule, CO(NH₂)₂, which does not leave the liquid' }); }
+        else { water(ctx, px, py, -Math.PI / 2 + Math.sin(n * 2.3) * 1.2); hits.push({ x: px, y: py, r: 13, name: q.r ? 'a water molecule in the liquid' : 'a water molecule at the surface' }); }
       });
-      for (const m of f.mols) { water(ctx, cx + m.x, m.y, m.rot); hits.push({ x: cx + m.x, y: m.y, r: 12, name: 'a water molecule in the vapor' }); }
-      hits.push({ x: cx, y: YT - 5, r: 40, name: 'the stopper' });
-      text(ctx, f.k ? '(b) aqueous solution of urea' : '(a) pure water', cx, YB + 26, col, { size: 20, weight: 600, align: 'center' });
+      for (const m of f.mols) {
+        ctx.save(); if (m.out) ctx.globalAlpha = Math.max(0, 1 - m.out / 0.25);
+        water(ctx, cx + m.x, m.y, m.rot); ctx.restore();
+        hits.push({ x: cx + m.x, y: m.y, r: 13, name: 'a water molecule in the vapor' });
+      }
+      hits.push({ x: cx, y: YT - 8, r: 44, name: 'the stopper' });
+      text(ctx, f.k ? 'solution of urea in water' : 'pure water', cx, YB + 28, col, { size: 21, weight: 600, align: 'center' });
+      F.rich(ctx, ['vapor pressure ', [fmt(f.k ? ps : P_STAR, 1) + ' torr', cP]], cx + HN + 26, YT + 52, { size: 19 });
     });
-    /* each flask's vapor pressure, on the stopper's level beside it */
-    const ps = x * P_STAR;
-    F.rich(ctx, ['vapor pressure ', [fmt(P_STAR, 1) + ' torr', cP]], FXS[0] + HN + 30, YT + 40, { size: 18 });
-    F.rich(ctx, ['vapor pressure ', [fmt(ps, 1) + ' torr', cP]], FXS[1] + HN + 30, YT + 40, { size: 18 });
-    const key = [{ s: 'water', draw: (c, a, b) => water(c, a, b, -Math.PI / 2) }, { s: 'urea', draw: (c, a, b) => urea_(c, a, b + 2) }];
-    legend(ctx, { l: 560, r: 840, t: 260, b: 420 }, key, { corner: 'top' });
+    legend(ctx, { l: FXS[0] + 150, r: FXS[1] - 150, t: 270, b: 400 }, [{ s: 'water', draw: (c, a, b) => water(c, a + 22, b + 9, -Math.PI / 2) }, { s: 'urea', draw: (c, a, b) => ureaMol(c, a + 22, b + 8) }], { corner: 'top' });
+    /* Raoult's law as its line: the vapor pressure against the mole fraction of water, 0 to 1 and 0 to 25 torr */
+    const ax = axes(ctx, { l: 1040, r: 1310, t: 150, b: 470 }, [0, 1], [0, 25], { nx: 2, ny: 5, xl: 'X_{solvent}', yl: 'vapor pressure (torr)', yc: cP });
+    plot(ctx, ax, (u) => u * P_STAR, cP, { w: 5 });
+    const gx = ax.X(x), gy = ax.Y(ps), guide = alpha(PAL.ink, 0.4);
+    line(ctx, gx, gy, gx, ax.box.b, guide, 2, [4, 8]); line(ctx, ax.box.l, gy, gx, gy, guide, 2, [4, 8]);
+    dot(ctx, ax.X(1), ax.Y(P_STAR), cols[0], true, 10);
+    text(ctx, 'pure water', ax.X(1) - 18, ax.Y(P_STAR) - 4, cols[0], { size: 18, weight: 600, align: 'right' });
+    if (x < 1) {
+      dot(ctx, gx, gy, cols[1], true, 10);
+      text(ctx, 'solution', gx + 16, gy + 24, cols[1], { size: 18, weight: 600, align: 'left' });
+    }
+    hits.push({ x: ax.X(1), y: ax.Y(P_STAR), r: 16, name: 'pure water: mole fraction 1, 23.7 torr' }, { x: gx, y: gy, r: 16, name: 'the solution' });
     const pc = Math.round(100 * (1 - x));
-    topline(ctx, pc === 0 ? 'With no urea, both flasks lose and regain water at the same rate: the same vapor pressure.'
-      : `Urea holds ${pc}% of the surface, so ${pc}% fewer water molecules escape and the vapor settles ${pc}% lower.`);
+    topline(ctx, pc === 0 ? 'With no urea, water leaves both surfaces at the same rate and both flasks hold vapor at 23.7 torr.'
+      : `Urea holds ${pc}% of the surface, so ${pc}% fewer water molecules leave it each second and the vapor pressure settles ${pc}% lower.`);
     tex(d.readout, `\\kPsoln = X_{\\text{solvent}}\\kPsolvstar = ${fmt(x, 3)} \\times ${hue('pressure', '23.7\\ \\text{torr}')} = ${hue('pressure', fmt(ps, 1) + '\\ \\text{torr}')}`);
   }
   register(d.fig, { update: (dt) => { cy.step(dt, () => 1); step(Math.min(dt, 0.05)); }, draw });

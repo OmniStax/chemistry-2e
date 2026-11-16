@@ -26,6 +26,9 @@
       },
       {
         "model": "claude-opus-5-5"
+      },
+      {
+        "model": "claude-fable-5-2"
       }
     ]
   },
@@ -59,6 +62,10 @@
         {
           "model": "claude-opus-5-5",
           "part": "triangle labels clear, units substituted, both rates in readout; caption cut"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "points dragged on the curve, larger table in the book's units, Example 12.2 marked"
         }
       ]
     },
@@ -97,6 +104,10 @@
         {
           "model": "claude-opus-5-5",
           "part": "book's 0–4 axis; readout substitutes each slope; caption cut"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt: slopes as bars of coefficient blocks beside the curves; readout per species"
         }
       ]
     }

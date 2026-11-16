@@ -244,7 +244,7 @@ const conc = (s) => hue('concentration', s);
 (function () {
   const d = sim('sim-magnitude-k', 590);
   const C0 = 0.10, NS = 20, TAU = 2 * Math.PI;
-  const kFmt = (lg) => { const [m, e] = sciParts(10 ** lg); return e === 0 ? m : `${m} × 10${String(e).split('').map((ch) => SUPD[ch]).join('')}`; };
+  const kFmt = (lg) => { const [m, e] = sciParts(10 ** lg); return e >= -2 && e <= 1 ? sig(+m * 10 ** e, 2) : `${m} × 10${String(e).split('').map((ch) => SUPD[ch]).join('')}`; };
   const s = ctl(d.controls, { label: '\\kKc', cls: 'equilibrium-constant', key: 'logK', min: -2, max: 4, step: 0.001, value: Math.log10(160),
     fmt: kFmt, detents: [-2, -1, 0, 1, 2, 3, 4], specials: [{ at: Math.log10(160), label: 'Example 13.2' }], aria: 'the equilibrium constant, on a logarithmic scale' });
   const eq = (K) => { const c = (-1 + Math.sqrt(1 + 8 * K * C0)) / (4 * K); return [c, (C0 - c) / 2]; };
@@ -254,7 +254,7 @@ const conc = (s) => hue('concentration', s);
   /* the 20 sites, 5 by 4, each with a fixed jitter, a fixed axis and its place in the order of joining */
   let seed = 7; const rnd = () => { seed = (seed * 16807) % 2147483647; return seed / 2147483647; };
   const SITES = [];
-  for (let r = 0; r < 4; r++) for (let c = 0; c < 5; c++) SITES.push({ x: BOX.l + 60 + c * 100 + (rnd() - 0.5) * 6, y: BOX.t + 50 + r * 84 + (rnd() - 0.5) * 6, th: (rnd() - 0.5) * 1.1 + (rnd() < 0.5 ? Math.PI : 0), ra: (rnd() - 0.5) * 2.4, rb: (rnd() - 0.5) * 2.4, k: 0 });
+  for (let r = 0; r < 4; r++) for (let c = 0; c < 5; c++) SITES.push({ x: BOX.l + 66 + c * 97 + (rnd() - 0.5) * 6, y: BOX.t + 50 + r * 84 + (rnd() - 0.5) * 6, th: (rnd() - 0.5) * 1.1 + (rnd() < 0.5 ? Math.PI : 0), ra: (rnd() - 0.5) * 2.4, rb: (rnd() - 0.5) * 2.4, k: 0 });
   SITES.map((_, i) => i).sort(() => rnd() - 0.5).forEach((i, k) => { SITES[i].k = k; });
   const ball = (ctx, e, x, y, r) => { ctx.save(); ctx.fillStyle = F.el(e); ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 1.2; ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore(); };
   /* one NO2, its N at (x, y) and its two O on the side away from th, 134° apart */
@@ -298,10 +298,10 @@ const conc = (s) => hue('concentration', s);
     F.curve(ctx, cOf, -2, 4, g.X, g.Y, cN, 5, 160);
     F.curve(ctx, nOf, -2, 4, g.X, g.Y, cD, 5, 160);
     /* each curve named at its end, the slider's value under the name */
-    text(ctx, '[N_{2}O_{4}]', G.r + 16, g.Y(nOf(4)) - 12, cD, { size: 22, weight: 600 });
-    text(ctx, `${concTxt(n)} M`, G.r + 16, g.Y(nOf(4)) + 14, cD, { size: 19, weight: 600 });
-    text(ctx, '[NO_{2}]', G.r + 16, g.Y(cOf(4)) - 30, cN, { size: 22, weight: 600 });
-    text(ctx, `${concTxt(c)} M`, G.r + 16, g.Y(cOf(4)) - 4, cN, { size: 19, weight: 600 });
+    text(ctx, '[N_{2}O_{4}]', G.r + 26, g.Y(nOf(4)) - 12, cD, { size: 22, weight: 600 });
+    text(ctx, `${concTxt(n)} M`, G.r + 26, g.Y(nOf(4)) + 14, cD, { size: 19, weight: 600 });
+    text(ctx, '[NO_{2}]', G.r + 26, g.Y(cOf(4)) - 30, cN, { size: 22, weight: 600 });
+    text(ctx, `${concTxt(c)} M`, G.r + 26, g.Y(cOf(4)) - 4, cN, { size: 19, weight: 600 });
     text(ctx, 'half the starting [NO_{2}]', G.r - 10, g.Y(C0 / 2) - 18, PAL.muted, { size: 17, align: 'right' });
     line(ctx, G.l, g.Y(C0 / 2), G.r, g.Y(C0 / 2), alpha(PAL.ink, 0.3), 2, [4, 8]);
     dot(ctx, xs, g.Y(n), cD, true, 9);

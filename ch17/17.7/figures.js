@@ -134,7 +134,7 @@ const lead = (ctx, x1, y1, x2, y2) => line(ctx, x1, y1, x2, y2, alpha(PAL.ink, 0
     .map(([z, e], i) => ({ e, h: home(z, e === 'Cl' ? RCL : RNA, 70 + i), ph: rnd(i, 60) * TAU }));
   /* where the products come to rest: Cl₂ in the gas over the melt on the anode's side, Na afloat on the melt on the cathode's,
      the first atoms farthest from the cathode so that later ones stop short of them */
-  const GAS = [[488, 332], [548, 312], [606, 334], [652, 310]];
+  const GAS = [[482, 332], [540, 310], [598, 334], [654, 312]];
   EV.forEach((e) => { e.gas = GAS[e.k]; e.pool = [0, 1].map((j) => XC - EW / 2 - 20 - 31 * (2 * NEV - 1 - 2 * e.k - j)); });
   const jig = (p, a = 5) => [a * Math.sin(2.1 * wob + p), a * Math.cos(1.7 * wob + p)];
   const cl2 = (ctx, x, y, th, a = 1) => { const dx = 11 * Math.cos(th), dy = 11 * Math.sin(th); ball(ctx, x - dx, y - dy, RCLA, F.el('Cl'), a); ball(ctx, x + dx, y + dy, RCLA, F.el('Cl'), a); };
@@ -289,8 +289,8 @@ const lead = (ctx, x1, y1, x2, y2) => line(ctx, x1, y1, x2, y2, alpha(PAL.ink, 0
   };
   /* the liquid's top in an arm holding v mL of gas: full to the stopcock at 0, on the scale from there */
   const top = (v) => (v < 0.2 ? lerp(COCK + 14, Y0 + PX * 0.2, v / 0.2) : Y0 + PX * v);
-  const o2 = (ctx, x, y, th, a = 1) => { const dx = 7 * Math.cos(th), dy = 7 * Math.sin(th); ball(ctx, x - dx, y - dy, 8.5, F.el('O'), a); ball(ctx, x + dx, y + dy, 8.5, F.el('O'), a); };
-  const h2 = (ctx, x, y, th, a = 1) => { const dx = 5.5 * Math.cos(th), dy = 5.5 * Math.sin(th); ball(ctx, x - dx, y - dy, 6.5, F.el('H'), a); ball(ctx, x + dx, y + dy, 6.5, F.el('H'), a); };
+  const o2 = (ctx, x, y, th, a = 1) => { const dx = 7 * Math.cos(th), dy = 7 * Math.sin(th); ball(ctx, x - dx, y - dy, 9, F.el('O'), a); ball(ctx, x + dx, y + dy, 9, F.el('O'), a); };
+  const h2 = (ctx, x, y, th, a = 1) => { const dx = 6 * Math.cos(th), dy = 6 * Math.sin(th); ball(ctx, x - dx, y - dy, 7.5, F.el('H'), a); ball(ctx, x + dx, y + dy, 7.5, F.el('H'), a); };
   let lastTex = '', lastNote = null;
   function draw() {
     const { ctx } = begin(d.c);
@@ -404,7 +404,8 @@ const lead = (ctx, x1, y1, x2, y2) => line(ctx, x1, y1, x2, y2, alpha(PAL.ink, 0
    rounds it (0.3817 mol, 41.19 g). The state follows the sliders: the
    bar has lost that mass from the face in the solution (its first
    outline stays, dashed) and the spoon wears it as a coat on the part in
-   the solution (its first outline dashed inside), both drawn in
+   the solution (its first outline dashed inside; the first 10 g turn
+   its colour to silver's), both drawn in
    proportion to the mass (161 g, the most the sliders reach, takes 0.6
    of the bar's width and coats the spoon 16 units thick). Moving, and
    endlessly: Ag⁺ leave the bar's face and cross to the spoon while one
@@ -453,7 +454,7 @@ const lead = (ctx, x1, y1, x2, y2) => line(ctx, x1, y1, x2, y2, alpha(PAL.ink, 0
     /* the spoon: its own metal above the solution, silvered below it */
     const base = F.mixColor(PAL.panel, PAL.ink, 0.16);
     ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 4; ctx.lineJoin = 'round';
-    ctx.save(); ctx.beginPath(); ctx.rect(0, LEVEL, 1400, H); ctx.clip(); spoon(ctx, coat); ctx.stroke(); ctx.fillStyle = ag; ctx.fill(); ctx.restore();
+    ctx.save(); ctx.beginPath(); ctx.rect(0, LEVEL, 1400, H); ctx.clip(); spoon(ctx, coat); ctx.stroke(); ctx.fillStyle = F.mixColor(base, ag, clamp01(m / 10)); ctx.fill(); ctx.restore();
     ctx.save(); ctx.beginPath(); ctx.rect(0, 0, 1400, LEVEL); ctx.clip(); spoon(ctx, 0); ctx.stroke(); ctx.fillStyle = base; ctx.fill(); ctx.restore();
     if (coat > 1.5) { ctx.save(); ctx.beginPath(); ctx.rect(0, LEVEL + 2, 1400, H); ctx.clip(); ctx.setLineDash([6, 6]); ctx.strokeStyle = alpha(onBall(ctx, ag), 0.75); ctx.lineWidth = 1.5; spoon(ctx, 0); ctx.stroke(); ctx.restore(); }
     ctx.restore();

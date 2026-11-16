@@ -71,7 +71,7 @@ function onBall(ctx, col) {
       ox: 'Mg(s) → Mg²⁺(aq) + 2e⁻', red: '2Fe³⁺(aq) + 2e⁻ → 2Fe²⁺(aq)', bridge: 'Salt bridge (NaCl)',
       from: [[200, 548], [222, 543], [245, 548], [262, 558]], madeSlots: [[196, 480], [248, 496], [300, 478], [340, 504]],
       /* each Fe³⁺ touches the top of the platinum coil and goes back into the solution as Fe²⁺ */
-      sites: Array.from({ length: 2 * NB }, (_, i) => [1112 + 17.5 * i, 586]),
+      sites: Array.from({ length: 2 * NB }, (_, i) => [1118 + 16 * Math.floor(i / 2) + 72 * (i % 2), 586]),
       origin: (i, s) => [s[0] - 30, s[1] - 34],
       redSlots: [[1216, 468], [1174, 468], [1132, 468], [1090, 468], [1195, 518], [1153, 518], [1111, 518], [1069, 518]],
       an: (n) => [[(0.1 + 0.01 * n).toFixed(2) + ' M', ' MgCl₂(aq)']], cat: (n) => [[(0.2 - 0.02 * n).toFixed(2) + ' M', ' FeCl₃(aq), '], [(0.3 + 0.02 * n).toFixed(2) + ' M', ' FeCl₂(aq)']],
@@ -178,7 +178,9 @@ function onBall(ctx, col) {
       ctx.restore();
     } else {
       const done = clamp01(t / T), w = 14 - 5 * done;
-      stroke(ctx, ribbon, alpha(PAL.ink, 0.6), w + 3); stroke(ctx, ribbon, F.el('Mg'), w);
+      /* the ribbon thins only where the solution touches it */
+      const dry = [[XA, TOP], [XA, LEVEL + 4]], wet = [[XA, LEVEL], ...ribbon.slice(1)];
+      stroke(ctx, wet, alpha(PAL.ink, 0.6), w + 3); stroke(ctx, dry, alpha(PAL.ink, 0.6), 17, 'butt'); stroke(ctx, dry, F.el('Mg'), 14, 'butt'); stroke(ctx, wet, F.el('Mg'), w);
       stroke(ctx, ptWire, alpha(PAL.ink, 0.6), 9); stroke(ctx, ptWire, F.el('Pt'), 6);
     }
   }

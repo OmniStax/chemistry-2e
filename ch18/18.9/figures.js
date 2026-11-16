@@ -158,7 +158,7 @@ const { C, PAL, alpha, register, begin, line, text } = F;
   /* the caption of each of the book's three figures: the acid meets a base and leaves its ion */
   function readout() {
     const t = ION[ion.value];
-    F.tex(d.readout, `{${t.acid}(aq)} + {\\text{OH}^{-}(aq)} \\longrightarrow {${t.tex}(aq)} + {\\text{H}_{2}\\text{O}(l)}`);
+    try { F.tex(d.readout, `{${t.acid}(aq)} + {\\text{OH}^{-}(aq)} \\longrightarrow {${t.tex}(aq)} + {\\text{H}_{2}\\text{O}(l)}`); console.warn('TEXOK', d.readout.innerHTML.length, d.readout.isConnected); } catch (e) { console.warn('TEXERR ' + e.message); }
   }
 
   function draw() { scene(); drawKey(); drawRow(); readout(); }

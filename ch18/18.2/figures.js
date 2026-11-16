@@ -155,7 +155,7 @@ function homes() {
       EVS.push({ s, j, X, yc, ya, ph: j / 3 + (s > 0 ? 1 / 6 : 0), lost: j !== 1,
         na: [0, 1].map((i) => ({ h: home([416, 474], [618, 750], RNA, seed + i), to: [326 + RNA + 1, yc + (i ? 9 : -9)], ph: rnd(seed, 90 + i) * TAU })),
         cl: [0, 1].map((i) => ({ h: home([340, 384], i ? [700, 752] : [496, 530], RCL, seed + 2 + i), to: [490 - RCL - 1, ya + (i ? 12.5 : -12.5)], ph: rnd(seed, 95 + i) * TAU })),
-        up: walker(rounded([[478, ya], [470, 474], [534 + 14 * j, 398], [546 + 12 * j, MLV + 4]], 30)), meet: [404, Math.min(yc, ya) - 44 + 30 * (j === 2)] });
+        up: walker(rounded([[478, ya], [470, 474], [534 + 14 * j, 398], [546 + 12 * j, MLV + 4]], 30)), meet: [404, ya - 20] });
     }
   }
   /* ions of the melt that only jostle, left side then mirrored */
@@ -244,7 +244,7 @@ function homes() {
         blob(ctx, X(x), y, 13 * born, cl2, gone); if (gone > 0.3) hits.push({ x: X(x), y, r: 15, name: 'a bubble of chlorine gas, Cl₂' });
       }
       if (lost && u > 0.8) {
-        const k = clamp01((u - 0.8) / 0.18);
+        const k = clamp01((u - 0.8) / 0.2);
         ctx.save(); ctx.globalAlpha = 1 - k; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(X(mx), my, 10 + 22 * k, 0, TAU); ctx.stroke(); ctx.restore();
         ctx.save(); ctx.globalAlpha = Math.min(1, 3 * (1 - k)); text(ctx, 'NaCl', X(mx), my - 2, PAL.ink, { size: 19, weight: 600, align: 'center', bg: PAL.panel }); ctx.restore();
       }

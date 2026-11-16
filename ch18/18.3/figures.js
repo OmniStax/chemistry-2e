@@ -75,7 +75,7 @@ function hubOf(pts, bonds, deg, ok = () => true) {
       let pts = [];
       for (let i = -3; i <= 3; i++) for (let j = -2; j <= 2; j++) for (let k = -2; k <= 2; k++) base.forEach((f) => [0, 0.25].forEach((o) => {
         const p = [(i + f[0] + o) * a - a / 8, (j + f[1] + o) * a - a / 8, (k + f[2] + o) * a - a / 8];
-        if (Math.abs(p[0]) <= 2.2 && Math.abs(p[1]) <= 1.1 && Math.abs(p[2]) <= 1.1) pts.push(p);
+        if (Math.abs(p[0]) <= 3.0 && Math.abs(p[1]) <= 1.1 && Math.abs(p[2]) <= 1.25) pts.push(p);
       }));
       let bonds = bondsBy(pts, B);
       [pts, bonds] = prune(pts, bonds, 2); [pts, bonds] = prune(pts, bonds, 2);
@@ -112,6 +112,7 @@ function hubOf(pts, bonds, deg, ok = () => true) {
     B: { label: 'boron', atom: 'boron atom, one at each of the 12 corners', name: 'a boron atom, B', ro: `\\text{B–B bonds} = \\frac{20\\ \\text{faces} \\times 3\\ \\text{edges}}{2} = 30,\\ \\text{each about}\\ ${hue('length', '176\\ \\text{pm}')}` },
   };
   const S = F.choice(d.controls, { label: '\\text{solid}', options: Object.keys(INFO).map((k) => ({ value: k, label: INFO[k].label })), value: 'As', aria: 'the solid whose structure is shown' });
+  const ZOOM = { C: 0.8, B: 0.9 };   /* graphite's sheets stand farthest apart, so they are drawn a little smaller */
   let sig = '', atomM = [], bondM = [], cur = null;
   const palSig = () => [PAL.ink, PAL.muted, ...Object.keys(INFO).map((e) => F.el(e))].join('|');
   const pale = { transparent: true, opacity: 0.3, depthWrite: false };
@@ -140,11 +141,12 @@ function hubOf(pts, bonds, deg, ok = () => true) {
         atomM.forEach((m, i) => { m.position.set(P[i][0], P[i][1], P[i][2]); m.material.color.set(col); });
         bondM.forEach((m, i) => F.mesh.setStick(m, P[net.bonds[i][0]], P[net.bonds[i][1]]));
       }
+      grp.scale.setScalar(twin ? S.mix((k) => ZOOM[k] || 1) : ZOOM[kind] || 1);
       F.fade3(grp, twin ? 1 : S.a(kind));
     }
     v.invalidate();
     const info = INFO[kind];
-    const key2 = [{ s: info.atom, draw: (c, x, y) => ball(c, x + 30, y + 11, 10, F.el(kind)) }, { s: kind === 'B' ? 'B–B bond' : 'covalent bond', color: kind === 'B' ? PAL.ink : PAL.muted, w: 5 }];
+    const key2 = [{ s: info.atom, draw: (c, x, y) => ball(c, x + 12, y + 11, 10, F.el(kind)) }, { s: kind === 'B' ? 'B–B bond' : 'covalent bond', color: kind === 'B' ? PAL.ink : PAL.muted, w: 5 }];
     if (kind !== 'B') key2.push({ s: 'the bonds of one atom', color: PAL.ink, w: 8 });
     F.legend(ctx, { l: 40, r: 1360, t: 6, b: KH - 4 }, key2, { corner: 'top', row: true, size: 22 });
     tex(d.readout, info.ro);
@@ -373,7 +375,7 @@ function hubOf(pts, bonds, deg, ok = () => true) {
     const XL = 700 * (1 - PX / (DIST * Math.tan(Math.PI / 12) * (1400 / VH))), XR = 1400 - XL;   /* the canvas x over each solid */
     TEMP.only(ctx, 'cold', () => { row(XL, ['carbon dioxide at ', TT('−100 °C'), ': separate molecules in a crystal']); row(XR, ['silicon dioxide at ', TT('−100 °C'), ': one network']); });
     TEMP.only(ctx, 'room', () => { row(XL, ['carbon dioxide at ', TT('25 °C'), ': the same molecules, now a gas']); row(XR, ['silicon dioxide at ', TT('25 °C'), ': the same network']); });
-    const at = (sym) => (c, x, y) => ball(c, x + 30, y + 11, 10, F.el(sym));
+    const at = (sym) => (c, x, y) => ball(c, x + 12, y + 11, 10, F.el(sym));
     const dbl = (c, x, y) => { line(c, x, y + 7, x + 44, y + 7, PAL.muted, 4); line(c, x, y + 15, x + 44, y + 15, PAL.muted, 4); };
     F.legend(ctx, { l: XL - 340, r: XL + 340, t: 54, b: KH - 2 }, [{ s: 'carbon', draw: at('C') }, { s: 'oxygen', draw: at('O') }, { s: 'C=O double bond', draw: dbl }], { corner: 'top', row: true, size: 20 });
     F.legend(ctx, { l: XR - 340, r: XR + 340, t: 54, b: KH - 2 }, [{ s: 'silicon', draw: at('Si') }, { s: 'oxygen', draw: at('O') }, { s: 'Si–O single bond', color: PAL.muted, w: 5 }], { corner: 'top', row: true, size: 20 });

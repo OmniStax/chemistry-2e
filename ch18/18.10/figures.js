@@ -26,7 +26,7 @@ const rnd = (i, j) => { const s = Math.sin(i * 127.1 + j * 311.7) * 43758.5453; 
   const CX = 780, RI = 26, RM = 80, RO = 134, PH = 24, CW = RM + 54;   /* the three pipes' radii, a side pipe's half bore, the chamber's half width */
   const YAIR = 146, YCH = [190, 270], YOUT = 230, YCAP = 326, YWIN = 372;
   const GROUND = 440, DEPOSIT = 608, YI = 772, YM = 822, YO = 850, YS = 524;   /* YS: where the column stands with the air off */
-  const XS = 236, YSP = 296, VAT = { l: 70, r: 402, t: 322, b: GROUND - 4 };
+  const XS = 236, YSP = 296, VAT = { l: 56, r: 430, t: 316, b: GROUND - 4 };
   const POOL = { x: CX, y: YO + 14 };
   const V = 431, TM = 0.4;                          /* the riser's speed in units a second; when the pool reaches the middle pipe's mouth */
   const L1 = YM - YOUT, LOUT = (CX - CW - XS) + (YSP - YOUT), LTOP = L1 + CW + LOUT;
@@ -57,8 +57,8 @@ const rnd = (i, j) => { const s = Math.sin(i * 127.1 + j * 311.7) * 43758.5453; 
     mk([[CX + 9, YI - 30], [CX + 12, YI + 22], [CX + XA, YI + 24], [CX + XA, YCH[1] + 10], [CX + 34, YOUT + 4], [CX - 60, YOUT + 8], [CX - CW, YOUT + 6], [XS, YOUT + 6], [XS + 4, YSP]]),
   ];
   const WAT = [
-    mk([[1400, YWIN], [CX + XW, YWIN], [CX + XW, YO - 2], [CX + XW + 30, YO + 32], [CX + XW + 84, YO + 46]]),
-    mk([[CX - XW, YCAP + 22], [CX - XW, YO - 2], [CX - XW - 30, YO + 32], [CX - XW - 84, YO + 46]]),
+    mk([[1400, YWIN], [CX + XW, YWIN], [CX + XW, YO - 2], [CX + XW, YO + 30]]),
+    mk([[CX - XW, YCAP + 22], [CX - XW, YO - 2], [CX - XW, YO + 30]]),
   ];
   const AIRP = mk([[1400, YAIR], [CX + 44, YAIR], [CX + 12, YAIR + 10], [CX, YAIR + 44], [CX, YI - 10]]);
 
@@ -159,7 +159,7 @@ const rnd = (i, j) => { const s = Math.sin(i * 127.1 + j * 311.7) * 43758.5453; 
       const N = Math.round(p.L / 56);
       for (let i = 0; i < N; i++) {
         const s = frac(i / N + (t * 2) / T) * p.L, [x, y, ang] = at(p, s);
-        chevron(ctx, x, y, ang, mark, clamp01(s / 20) * clamp01((p.L - s) / 70));
+        chevron(ctx, x, y, ang, mark, clamp01(s / 20) * clamp01((p.L - s) / 44));
       }
     });
 
@@ -188,7 +188,7 @@ const rnd = (i, j) => { const s = Math.sin(i * 127.1 + j * 311.7) * 43758.5453; 
     F.label(ctx, 'superheated water', 1200, YWIN - PH - 6, { side: 'above', gap: 22, size: 22 });
     F.rich(ctx, [[`${Tv.toFixed(0)} °C`, C('temperature')], ', ', ['10 atm', C('pressure')]], 1200, YWIN + PH + 30, { size: 22, align: 'center' });
     if (air) F.label(ctx, hot && q > 0 ? 'sulfur, water, and air' : 'water and air', (XS + CX - CW) / 2 + 20, YOUT - PH - 6, { side: 'above', gap: 22, size: 22 });
-    F.label(ctx, 'settling vat', VAT.r + 4, 384, { side: 'right', gap: 22, size: 22 });
+    F.label(ctx, 'settling vat', VAT.r + 4, 380, { side: 'right', gap: 22, size: 22 });
     text(ctx, 'soil', 1230, (GROUND + DEPOSIT) / 2, PAL.ink, { size: 22, weight: 600, align: 'center', bg: PAL.panel });
     text(ctx, 'solid sulfur deposit', 1230, DEPOSIT + 66, PAL.ink, { size: 22, weight: 600, align: 'center', bg: PAL.panel });
     if (R > 1) F.faded(ctx, clamp01((R - 50) / 60), [0, 0], () => F.label(ctx, 'liquid sulfur', CX + 0.72 * R, POOL.y + 26, { side: 'right', gap: 1150 - CX - 0.72 * R, size: 22 }));

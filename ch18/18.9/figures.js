@@ -33,29 +33,35 @@ const { C, PAL, alpha, register, begin, line, text } = F;
   const has = (v, s) => (SITES.indexOf(s) < ION[v].n ? 1 : 0);
 
   /* ---------- the chosen ion in three dimensions ---------- */
-  const R3 = 1.6, k3 = 1 / Math.sqrt(1.5), h3 = 1 / Math.SQRT2;
-  /* a regular tetrahedron with left and right in one plane and up and down in the plane across it, as the book draws it;
-     the oxygen atoms of chlorite stand nearer the reader, so chlorine hides neither */
-  const T3 = { right: [k3, 0, h3 * k3], left: [-k3, 0, h3 * k3], down: [0, -k3, -h3 * k3], up: [0, k3, -h3 * k3] };
+  const R3 = 1.6, a3 = Math.sqrt(2 / 3), b3 = Math.sqrt(1 / 3);
+  /* a regular tetrahedron (every angle at chlorine 109.5°, every corner R3 from it). Right and left lie in the plane of
+     the screen below chlorine, so chlorite's two bonds open as a V toward the reader; the other two corners rise in
+     front and behind. Oxygen takes them in the book's order: right, left, then the two the dot structure draws down and up */
+  const T3 = { right: [a3, -b3, 0], left: [-a3, -b3, 0], down: [0, b3, a3], up: [0, b3, -a3] };
+  /* how each ion is stood up so its shape reads at once: hypochlorite's one bond level, chlorite's V upright, and
+     chlorate and perchlorate tipped until the last corner stands straight up over a base of three oxygen atoms;
+     y lifts or lowers the ion to the middle of its stage */
+  const POSE = { ClO: { x: 0, z: Math.atan(b3 / a3), y: 0.1 }, ClO2: { x: 0, z: 0, y: 0.2 }, ClO3: { x: Math.acos(b3), z: 0, y: -0.2 }, ClO4: { x: Math.acos(b3), z: 0, y: -0.5 } };
   const top = F.makeCanvas(d.stage, 104);
-  const V = F.view3d(d.stage, { spin: 'idle', h: 600, dist: 6.7, tilt: 0.16, pitch: [-Math.PI / 2, Math.PI / 2] });
+  const V = F.view3d(d.stage, { h: 500, dist: 6.2, tilt: 0.2, pitch: [-Math.PI / 2, Math.PI / 2] });
   const g = V.part(0);
-  V.setView(0.3, 0.16);
+  V.setView(0.45, 0.2);
   const key = F.makeCanvas(d.stage, 56);
   const row = F.makeCanvas(d.stage, 446);
   const ion = F.choice(d.controls, { label: '\\text{ion}', key: 'ion', aria: 'the chlorine oxyanion',
     options: ORDER.map((v) => ({ value: v, label: ION[v].label })), value: 'ClO2' });
-  const ro = F.readout(d);
   let hits = []; F.hover(d.stage, () => hits, row);
 
   /* how far each site has become an oxygen atom, 0 a lone pair on chlorine and 1 a bonded oxygen, mid-morph between */
   const weight = (s) => ion.mix((v) => has(v, s));
   let sig = '';
   function scene() {
-    const ws = SITES.map(weight), s = [ws.map((w) => w.toFixed(3)).join(','), PAL.ink, F.el('Cl'), F.el('O')].join('|');
+    const ws = SITES.map(weight), pose = ['x', 'z', 'y'].map((q) => ion.mix((v) => POSE[v][q]));
+    const s = [ws.concat(pose).map((w) => w.toFixed(3)).join(','), PAL.ink, F.el('Cl'), F.el('O')].join('|');
     F.topline(begin(top).ctx, ION[ion.value].head);
     if (s === sig) return;
     sig = s; V.clear();
+    g.rotation.set(pose[0], 0, pose[1]); g.position.y = pose[2];
     const { sphere, stick, bond, lobe } = F.mesh;
     V.pickable(sphere(g, [0, 0, 0], 0.5, F.el('Cl')), 'chlorine atom');
     SITES.forEach((site, i) => {
@@ -152,7 +158,7 @@ const { C, PAL, alpha, register, begin, line, text } = F;
   /* the caption of each of the book's three figures: the acid meets a base and leaves its ion */
   function readout() {
     const t = ION[ion.value];
-    ro.set(`\\mk{a}{${t.acid}(aq)} + \\mk{b}{\\text{OH}^{-}(aq)}\\mk{r}{\\longrightarrow}\\mk{i}{${t.tex}(aq)} + \\mk{w}{\\text{H}_{2}\\text{O}(l)}`);
+    F.tex(d.readout, `{${t.acid}(aq)} + {\\text{OH}^{-}(aq)} \\longrightarrow {${t.tex}(aq)} + {\\text{H}_{2}\\text{O}(l)}`);
   }
 
   function draw() { scene(); drawKey(); drawRow(); readout(); }

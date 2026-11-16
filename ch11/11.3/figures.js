@@ -1,7 +1,7 @@
 /* Figures for section 11.3 Solubility. Boots against the section's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['11.3'] = function (root, F) {
-const { el, fmt, tex, C, PAL, alpha, ctl, cycle, register, begin, line, text, topline, axes, curve, pinned, dot, hbracket } = F;
+const { el, fmt, tex, C, PAL, alpha, ctl, cycle, register, begin, line, text, topline, axes, curve, pinned, dot, hbracket, vbracket } = F;
 const sim = (id, H) => F.sim(root, id, H);
 function readout(host, main, small) { tex(host, main); if (small) host.appendChild(el('small', null, small)); }
 const TAU = 2 * Math.PI;

@@ -146,12 +146,12 @@ function particle(ctx, atoms, x, y, a, k = 1) {
   function bulb(ctx, BX, b) {
     const R = 40, BY = RAIL - 82, glow = F.fact(BULB_LIGHT), cb = F.ref('bulb');
     if (b > 0.01) {
-      const G = R + 6 + 72 * b;
+      const G = R + 80 * Math.pow(b, 0.9);
       ctx.save(); const g = ctx.createRadialGradient(BX, BY, 6, BX, BY, G);
-      g.addColorStop(0, alpha(glow, Math.min(1, 0.15 + 0.9 * b))); g.addColorStop(0.5, alpha(glow, 0.65 * b)); g.addColorStop(1, alpha(glow, 0));
+      g.addColorStop(0, alpha(glow, Math.min(1, 1.5 * b))); g.addColorStop(0.5, alpha(glow, Math.min(0.75, 0.9 * b))); g.addColorStop(1, alpha(glow, 0));
       ctx.fillStyle = g; ctx.beginPath(); ctx.arc(BX, BY, G, 0, TAU); ctx.fill(); ctx.restore();
     }
-    ctx.save(); ctx.strokeStyle = cb; ctx.lineWidth = 3.5; ctx.lineJoin = 'round'; ctx.fillStyle = b > 0.01 ? alpha(glow, 0.08 + 0.85 * b) : alpha(PAL.panel, 0.4);
+    ctx.save(); ctx.strokeStyle = cb; ctx.lineWidth = 3.5; ctx.lineJoin = 'round'; ctx.fillStyle = b > 0.01 ? alpha(glow, Math.min(0.95, 1.6 * Math.pow(b, 1.3))) : alpha(PAL.panel, 0.4);
     ctx.beginPath(); ctx.arc(BX, BY, R, Math.PI * 0.7, Math.PI * 2.3); ctx.lineTo(BX + 16, BY + R + 8); ctx.lineTo(BX - 16, BY + R + 8); ctx.closePath(); ctx.fill(); ctx.stroke();
     /* the filament on its two leads */
     ctx.strokeStyle = b > 0.01 ? F.mixColor(PAL.ink, glow, Math.min(0.85, 0.3 + b)) : alpha(PAL.ink, 0.8); ctx.lineWidth = 2;
@@ -170,7 +170,7 @@ function particle(ctx, atoms, x, y, a, k = 1) {
     hits = [];
     const n = N.v;
     STATIONS.forEach((s, i) => {
-      const cx = CX[i], XL = cx - PX, XR = cx + PX, ions = ionsIn(i), b = ions ? Math.pow(ions / 16, 0.8) : 0;
+      const cx = CX[i], XL = cx - PX, XR = cx + PX, ions = ionsIn(i), b = ions / 16;
       /* the loop: battery − end → − plate; + plate → bulb → battery + end. The electrons run that way round */
       const toPlate = [[cx - 100, RAIL], [XL, RAIL], [XL, PT]], fromPlate = [[XR, PT], [XR, RAIL], [cx - 6, RAIL]];
       wire(ctx, toPlate); wire(ctx, fromPlate);
@@ -259,7 +259,7 @@ function particle(ctx, atoms, x, y, a, k = 1) {
   /* spread the waters once: 76 apart, clear of the crystal, of every cluster's resting place, of the two names and the key */
   {
     const fixed = [...ions.map((q) => [q.x, q.y, 74]), ...PLAN.map((p) => [p[3][0], p[3][1], 122]), ...DONE.map((e) => [e.x, e.y, 122])];
-    const rects = [[60, 40, 370, 100], [1030, 40, 1340, 100], [20, 522, 470, HH]];
+    const rects = [[40, 20, 395, 128], [1005, 20, 1360, 128], [20, 522, 470, HH]];
     for (let it = 0; it < 200; it++) {
       for (let i = 0; i < waters.length; i++) {
         const p = waters[i];

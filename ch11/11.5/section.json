@@ -27,7 +27,8 @@
         "model": "claude-opus-5-5",
         "effort": "low"
       },
-      {"model": "claude-opus-5-5"}
+      {"model": "claude-opus-5-5"},
+      {"model": "claude-fable-5-2"}
     ]
   },
   "built": "2026-09-28",
@@ -45,7 +46,9 @@
         "Cl"
       ],
       "facts": [
-        "#22b04a"
+        "#22b04a",
+        "#f4e7b0",
+        "#8a5a33"
       ],
       "ai": [
         {
@@ -58,7 +61,8 @@
           "effort": "high",
           "part": "ion legend glyphs fixed; notes that repeated the caption dropped"
         },
-        {"model": "claude-opus-5-5", "part": "no beam inside saltwater or clear water; caption cut"}
+        {"model": "claude-opus-5-5", "part": "no beam inside saltwater or clear water; caption cut"},
+        {"model": "claude-fable-5-2", "part": "rebuilt: one beam through three beakers, seen only where it is scattered"}
       ]
     },
     {
@@ -87,7 +91,8 @@
           "effort": "high",
           "part": "notes that repeated the caption dropped"
         },
-        {"model": "claude-opus-5-5", "part": "3D view choice removed; canvas fitted; caption cut"}
+        {"model": "claude-opus-5-5", "part": "3D view choice removed; canvas fitted; caption cut"},
+        {"model": "claude-fable-5-2", "part": "rebuilt: chain-length slider and a choice of three ionic ends"}
       ]
     },
     {
@@ -117,7 +122,8 @@
           "effort": "high",
           "part": "anion labels wait until all have settled; note dropped"
         },
-        {"model": "claude-opus-5-5", "part": "larger drop, 40 anions; labels show at rest; caption cut"}
+        {"model": "claude-opus-5-5", "part": "larger drop, 40 anions; labels show at rest; caption cut"},
+        {"model": "claude-fable-5-2", "part": "rebuilt: two oil drops that merge without soap and stay apart with it"}
       ]
     },
     {"id": "fig-oil-spill", "kind": "photo", "number": "11.34", "draws": []},
@@ -143,7 +149,8 @@
           "effort": "high",
           "part": "camera closer, labels off the chamber, oblique view, readout at zero, notes"
         },
-        {"model": "claude-opus-5-5", "part": "rebuilt flat from the image: chamber, barbed electrode, hopper, soot flow"}
+        {"model": "claude-opus-5-5", "part": "rebuilt flat from the image: chamber, barbed electrode, hopper, soot flow"},
+        {"model": "claude-fable-5-2", "part": "rebuilt larger from the image: soot of both signs, polarity choice, tally"}
       ]
     },
     {"id": "fig-gel", "kind": "photo", "number": "11.37", "draws": []}
@@ -183,27 +190,6 @@
   ],
   "referents": [
     {
-      "id": "butterfat",
-      "label": "the droplets of butterfat in milk",
-      "figures": [
-        "sim-tyndall"
-      ]
-    },
-    {
-      "id": "mud",
-      "label": "the grains of mud",
-      "figures": [
-        "sim-tyndall"
-      ]
-    },
-    {
-      "id": "glass",
-      "label": "the glass",
-      "figures": [
-        "sim-tyndall"
-      ]
-    },
-    {
       "id": "tail",
       "label": "the nonpolar hydrocarbon end",
       "figures": [
@@ -227,13 +213,6 @@
     {
       "id": "plate-electrode",
       "label": "the plate electrode, the chamber wall",
-      "figures": [
-        "sim-precipitator"
-      ]
-    },
-    {
-      "id": "hopper",
-      "label": "the hopper",
       "figures": [
         "sim-precipitator"
       ]

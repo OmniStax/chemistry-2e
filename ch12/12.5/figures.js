@@ -174,7 +174,8 @@ const sciText = (x, sig) => { const { m, e } = sci(x, sig); return `${minus(m.to
    made of. The slope is rounded to two figures before it is multiplied
    by R, as the book does, so the opening pair (the first and the last)
    gives the book's −2.2 × 10⁴ K and 1.8 × 10⁵ J/mol and the readout's
-   numbers multiply to its result. Axes fixed: 1/T 1.1 to 1.9 × 10⁻³ K⁻¹
+   numbers multiply to its result. ln k and 1/T stay in ink (the chapter's
+   COLOR.md); T1, T2 wear temperature and E_a energy. Axes fixed: 1/T 1.1 to 1.9 × 10⁻³ K⁻¹
    (the book's runs from about 1.2), ln k −18 to −2.
 ===================================================================== */
 (function () {
@@ -186,7 +187,7 @@ const sciText = (x, sig) => { const { m, e } = sci(x, sig); return `${minus(m.to
   let hits = []; F.hover(d.stage, () => hits);
   const B = { l: 170, r: 1290, t: 120, b: 520 };
   function draw() {
-    const { ctx, H } = begin(d.c), i = Math.round(t1.v), j = Math.round(t2.v), ck = C('rate-constant'), ct = C('temperature');
+    const { ctx, H } = begin(d.c), i = Math.round(t1.v), j = Math.round(t2.v), ct = C('temperature'), leg = PAL.muted;
     const dl = lk[i] - lk[j], dx = +(inv[i] - inv[j]).toFixed(2), exact = dl / (dx * 1e-3), sr = sci(exact, 2), slope = sr.m * 10 ** sr.e;
     const Ea = -slope * 8.314, through = (x) => lk[j] + exact * 1e-3 * (x - inv[j]);
     /* how far the line through the two picked points passes from the worst of the other three, in ln k */
@@ -196,15 +197,15 @@ const sciText = (x, sig) => { const { m, e } = sci(x, sig); return `${minus(m.to
       ? `The line through ${Ts[i]} K and ${Ts[j]} K passes close to the other three points, and its slope gives $\\kEa$ = ${sciText(Ea, 2)} J/mol.`
       : `The line through ${Ts[i]} K and ${Ts[j]} K misses the point at ${Ts[worst]} K, and its slope gives $\\kEa$ = ${sciText(Ea, 2)} J/mol.`);
     const lab = F.labeller(ctx, H, { headline: head });
-    const { X, Y } = F.axes(ctx, B, [1.1, 1.9], [-18, -2], { nx: 8, ny: 8, fx: (x) => fmt(x, 1), fy: (y) => minus(fmt(y, 0)), xl: '1/T (10⁻³ K⁻¹)', xc: ct, yl: 'ln k', yc: ck });
+    const { X, Y } = F.axes(ctx, B, [1.1, 1.9], [-18, -2], { nx: 8, ny: 8, fx: (x) => fmt(x, 1), fy: (y) => minus(fmt(y, 0)), xl: '1/T (10⁻³ K⁻¹)', yl: 'ln k' });
     const k = F.arrival(d);
     hits = [];
     clipTo(ctx, B, () => F.curve(ctx, through, 1.1, 1.9, X, Y, PAL.ink, 4, 2));
     /* the slope triangle, its right angle under the line as the book draws it: down from the warmer point, across to the cooler */
     const xa = X(inv[j]), ya = Y(lk[j]), xb = X(inv[i]), yb = Y(lk[i]);
     ctx.save(); ctx.globalAlpha *= k;
-    line(ctx, xa, ya, xa, yb, ck, 3, [10, 8]);
-    line(ctx, xa, yb, xb, yb, ct, 3, [10, 8]);
+    line(ctx, xa, ya, xa, yb, leg, 3, [10, 8]);
+    line(ctx, xa, yb, xb, yb, leg, 3, [10, 8]);
     ctx.restore();
     inv.forEach((x, m) => {
       const on = m === i || m === j;
@@ -212,12 +213,12 @@ const sciText = (x, sig) => { const { m, e } = sci(x, sig); return `${minus(m.to
       hits.push({ x: X(x), y: Y(lk[m]), r: 16, name: `${Ts[m]} K: k = ${ks[m]} L/mol/s, so 1/T = ${inv[m].toFixed(2)} × 10⁻³ K⁻¹ and ln k = ${minus(lk[m].toFixed(3))}` });
     });
     lab.add(`T_{2} = ${Ts[j]} K`, xa, ya, 0.7, -0.7, ct, 22, 22);
-    lab.add(`T_{1} = ${Ts[i]} K`, xb, yb, 0.7, -0.7, ct, 22, 22);
-    lab.add(`Δ(ln k) = ${minus(dl.toFixed(3))}`, xa, (ya + yb) / 2, -1, 0, ck, 22, 18);
+    lab.add(`T_{1} = ${Ts[i]} K`, xb, yb, 0.9, -0.45, ct, 22, 26);
+    lab.add(`Δ(ln k) = ${minus(dl.toFixed(3))}`, xa, (ya + yb) / 2, -1, 0, PAL.ink, 22, 18);
     /* set toward the corner, clear of the line falling away on the right */
-    lab.add(`Δ(1/T) = ${dx.toFixed(2)} × 10⁻³ K⁻¹`, xa + 0.2 * (xb - xa), yb, 0, 1, ct, 22, 34);
+    lab.add(`Δ(1/T) = ${dx.toFixed(2)} × 10⁻³ K⁻¹`, xb - xa < 260 ? xa - 40 : xa + 0.2 * (xb - xa), yb, 0, 1, PAL.ink, 22, 34);
     lab.flush();
-    const kv = (v) => hue('rate-constant', `(${v.toFixed(3)})`), tv = (v) => hue('temperature', `${v.toFixed(2)}\\times10^{-3}\\ \\text{K}^{-1}`);
+    const kv = (v) => `(${v.toFixed(3)})`, tv = (v) => `${v.toFixed(2)}\\times10^{-3}\\ \\text{K}^{-1}`;
     tex(d.readout, `\\text{slope} = \\frac{\\Delta(\\ln \\kk)}{\\Delta(1/\\kT)} = \\frac{${kv(lk[i])}-${kv(lk[j])}}{${tv(inv[i])}-${tv(inv[j])}} = ${sciTex(slope, 2)}\\ \\text{K} \\\\ \\kEa = -\\text{slope}\\times R = -(${sciTex(slope, 2)}\\ \\text{K})(8.314\\ \\text{J/mol/K}) = ${hue('energy', sciTex(Ea, 2) + '\\ \\text{J/mol}')}`);
   }
   register(d.fig, { update: () => {}, draw });

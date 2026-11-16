@@ -27,9 +27,9 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
    PW to either side of the centre.
 ===================================================================== */
 (function () {
-  const d = sim('sim-he-ar', 775);
+  const d = sim('sim-he-ar', 798);
   const X0 = 700, Y0 = 305, OFF = 280, RB = 210, HN = 62, PW = 30, N = 30;
-  const T0 = 2, T = 30, FPS = 60, FR = T * FPS + 1, VHE = 800, DS = 2, SEED = 4;
+  const T0 = 2, T = 30, FPS = 60, FR = T * FPS + 1, VHE = 1000, DS = 2, SEED = 40;
   const GAS = {
     He: { m: 4.00, r: 11, name: 'a helium atom, He' },
     Ar: { m: 39.95, r: 16, name: 'an argon atom, Ar' },
@@ -115,7 +115,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     body(); ctx.stroke();
     ctx.restore();
   }
-  const G = { l: 150, r: 1240, t: 602, b: 728 };
+  const G = { l: 150, r: 1250, t: 602, b: 750 };
   function draw() {
     const { ctx } = begin(d.c);
     const t = cy.now(), R = run(), k = Math.min(FR - 1, Math.floor(t * FPS)), P = at(t);
@@ -146,7 +146,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     const ax = axes(ctx, G, [0, T], [0, N], { nx: 0, ny: 2, yl: 'atoms in the other bulb' });
     text(ctx, 'time', G.r, G.b + 24, PAL.ink, { size: 20, weight: 600, align: 'right' });
     line(ctx, G.l, ax.Y(N / 2), G.r, ax.Y(N / 2), alpha(PAL.ink, 0.4), 2, [10, 10]);
-    text(ctx, 'half: spread evenly', G.r + 10, ax.Y(N / 2), PAL.muted, { size: 17 });
+    text(ctx, 'evenly spread', G.r + 10, ax.Y(N / 2), PAL.muted, { size: 17 });
     line(ctx, ax.X(T0), G.t, ax.X(T0), G.b, alpha(PAL.ink, 0.4), 2, [4, 8]);
     text(ctx, 'valve opens', ax.X(T0) + 10, G.t + 12, PAL.muted, { size: 17 });
     [['He', R.he], ['Ar', R.ar]].forEach(([f, c]) => {
@@ -227,7 +227,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     text(ctx, 'solute', fx(0) + SW / 2, FT - 16, F.ref('solute'), { size: 19, weight: 600, align: 'center' });
     text(ctx, 'solvent', fx(0) + SW + 8 + (FW - SW - 8) / 2, FT - 16, F.ref('solvent'), { size: 19, weight: 600, align: 'center' });
     /* the ladder: one unit a kJ/mol, zero where the solute and solvent start */
-    const AX = 92, YT = 372, Y = (e) => YT + 150 - e, XD = 1262;
+    const AX = 92, YT = 372, Y = (e) => YT + 150 - e, XD = 1242;
     line(ctx, AX, YT - 10, AX, Y(-150), PAL.muted, 2);
     for (let e = -150; e <= 150; e += 50) { line(ctx, AX - 6, Y(e), AX, Y(e), PAL.muted, 2); text(ctx, e < 0 ? '−' + -e : String(e), AX - 12, Y(e), PAL.muted, { size: 17, align: 'right' }); }
     text(ctx, 'energy (kJ/mol)', 16, YT - 30, ce, { size: 19, weight: 600 });

@@ -26,6 +26,9 @@
       },
       {
         "model": "claude-opus-5-5"
+      },
+      {
+        "model": "claude-fable-5-2"
       }
     ]
   },
@@ -62,6 +65,10 @@
         {
           "model": "claude-opus-5-5",
           "part": "axes and sliders name NO and Cl₂ as the example does; caption cut"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt: one concentration raised per graph, ratio brackets, three orders"
         }
       ]
     }

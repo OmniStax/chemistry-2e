@@ -65,7 +65,7 @@
         },
         {
           "model": "claude-fable-5-2",
-          "part": "points dragged on the curve, larger table in the book's units, Example 12.2 marked"
+          "part": "points dragged on the curve; larger table; Example 12.2 marked"
         }
       ]
     },
@@ -107,7 +107,7 @@
         },
         {
           "model": "claude-fable-5-2",
-          "part": "rebuilt: slopes as bars of coefficient blocks beside the curves; readout per species"
+          "part": "rebuilt: slopes as bars of coefficient blocks; readout per species"
         }
       ]
     }

@@ -50,7 +50,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     /* the three rate laws through trial 1, one per order, the chosen one heavy */
     [0, 1, 2].forEach((o) => {
       F.curve(ctx, (x) => law(x, o), XR[0], XR[1], g.X, g.Y, alpha(cr, 0.3), 2.5, 80);
-      text(ctx, `${s.letter} = ${o}`, box.r + 12, Math.max(g.Y(law(XR[1], o)), box.t + 10), o === order ? PAL.ink : PAL.muted, { size: 20, weight: o === order ? 600 : 400, base: 'middle' });
+      text(ctx, `${s.letter} = ${o}`, box.r + 18, Math.max(g.Y(law(XR[1], o)), box.t + 10), o === order ? PAL.ink : PAL.muted, { size: 20, weight: o === order ? 600 : 400, base: 'middle' });
       hits.push({ x: g.X(0.185), y: g.Y(law(0.185, o)), r: 14, name: `the rate law through trial 1 if ${s.letter} = ${o}` });
     });
     F.curve(ctx, (x) => law(x, orderE), XR[0], XR[1], g.X, g.Y, cr, 5, 120);
@@ -63,7 +63,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
       F.hbracket(ctx, x1, px, by, cc);
       text(ctx, run, Math.max((x1 + px) / 2, x1 + 10 + half), by - 24, cc, { size: 22, weight: 600, align: 'center', base: 'middle' });
       F.vbracket(ctx, bx, y1, py, cr);
-      const rise = `rate × ${times(r)}`, wy = y1 - py < 34 ? y1 - 24 : (y1 + py) / 2;
+      const rise = `rate × ${times(r)}`, wy = y1 - py < 44 ? py - 18 : (y1 + py) / 2;
       text(ctx, rise, bx + 16, wy, cr, { size: 22, weight: 600, base: 'middle' });
       lab.block(bx - 12, Math.min(wy - 16, py), bx + 30 + F.measure(ctx, rise, { size: 22, weight: 600 }), y1);
     }

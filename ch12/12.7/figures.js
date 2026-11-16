@@ -27,7 +27,7 @@ const knots = (ks) => (x) => {
    sets the catalyzed barrier above the reactants; on the two-step path
    the intermediate and the second barrier keep their share of the height
    between the products and the first barrier, so the first step stays
-   the slower one. Energy axis fixed at 0 to 40 kJ/mol, above the highest
+   the slower one. Energy axis fixed at 0 to 35 kJ/mol, above the highest
    barrier the slider can reach. Under the diagram a bar on a logarithmic
    scale, 1 to 10⁴ (the slider's lowest barrier gives 3200), says how
    many times faster the catalyzed path is at 298 K with the same
@@ -65,12 +65,12 @@ const knots = (ks) => (x) => {
     const { ctx, H } = begin(d.c), lab = F.labeller(ctx, H, { headline: true });
     const e = ea.v, ce = C('energy'), ck = C('rate-constant'), cu = F.ref('uncatalyzed'), cc = F.ref('catalyzed');
     const ratio = Math.exp((EU - e) / RT);
-    const g = F.axes(ctx, G, [0, 1], [0, 40], { nx: 0, ny: 4, xl: 'extent of reaction', yl: 'energy (kJ/mol)', yc: ce });
+    const g = F.axes(ctx, G, [0, 1], [0, 35], { nx: 0, ny: 7, xl: 'extent of reaction', yl: 'energy (kJ/mol)', yc: ce });
     line(ctx, g.X(0), g.Y(R0), g.X(0.985), g.Y(R0), alpha(PAL.ink, 0.45), 3, [10, 10]);
     F.curve(ctx, uncat, 0, 1, g.X, g.Y, cu, 5, 220);
     path.curve(ctx, (v) => shape(v, e).f, 0, 1, g.X, g.Y, cc, 5, 220);
     /* the two barriers from the reactants' level, each under its own highest peak, as the book sets its two arrows */
-    const xc = g.X(path.mix((v) => shape(v, e).x)) - 14, xu = g.X(0.5) + 14, xh = g.X(0.945);
+    const xc = g.X(path.mix((v) => shape(v, e).x)) - 20, xu = g.X(0.5) + 20, xh = g.X(0.945);
     F.vbracket(ctx, xc, g.Y(R0), g.Y(R0 + e), ce);
     F.vbracket(ctx, xu, g.Y(R0), g.Y(R0 + EU), ce);
     F.vbracket(ctx, xh, g.Y(R0), g.Y(P0), ce);
@@ -98,12 +98,10 @@ const knots = (ks) => (x) => {
     /* how many times faster, on a logarithmic scale: the bar grows by the same length for every kJ/mol the barrier falls */
     const BX = (v) => G.l + ((G.r - G.l) * Math.log10(v)) / LOG, by = BAR.y;
     text(ctx, 'times faster than the uncatalyzed path at 298 K', G.l, by - 38, PAL.ink, { size: 20, weight: 600 });
-    F.strip(ctx, G.l, G.r, by, BAR.h);
-    ctx.save(); ctx.fillStyle = alpha(ck, 0.75); ctx.fillRect(G.l, by - BAR.h / 2, BX(ratio) - G.l, BAR.h); ctx.restore();
+    ctx.save(); ctx.fillStyle = PAL.soft; ctx.fillRect(G.l, by - BAR.h / 2, G.r - G.l, BAR.h); ctx.fillStyle = alpha(ck, 0.75); ctx.fillRect(G.l, by - BAR.h / 2, BX(ratio) - G.l, BAR.h); ctx.restore();
     line(ctx, BX(ratio), by - BAR.h / 2 - 5, BX(ratio), by + BAR.h / 2 + 5, ck, 4);
     ['1', '10', '100', '1000', '10 000'].forEach((s, i) => { const x = BX(10 ** i); line(ctx, x, by + BAR.h / 2, x, by + BAR.h / 2 + 8, PAL.muted, 2); text(ctx, s, x, by + BAR.h / 2 + 24, PAL.muted, { size: 17, align: i === 4 ? 'right' : i ? 'center' : 'left' }); });
-    const right = BX(ratio) < G.r - 150;
-    text(ctx, plain(ratio) + ' times', BX(ratio) + (right ? 14 : -14), by, right ? ck : PAL.ink, { size: 22, weight: 600, align: right ? 'left' : 'right' });
+    text(ctx, plain(ratio) + '×', BX(ratio) + 14, by, ck, { size: 22, weight: 600 });
     hits.push({ x: (G.l + BX(ratio)) / 2, y: by, r: BAR.h, name: 'the rate constant with the catalyst, as a multiple of the one without' });
     topline(ctx, e >= EU ? 'With equal barriers neither path is faster.' : `Lowering $\\kEa$ by ${EU - e} kJ/mol makes the reaction ${plain(ratio)} times faster; ΔH stays 4 kJ/mol.`);
     ro.set(`\\mk{ratio}{\\frac{${kcat}}{${kun}}} = \\mk{law}{\\exp\\left(\\frac{${Eun} - ${Ecat}}{R\\kT}\\right)} = \\exp\\left(\\frac{(${hue('energy', '26')} - \\mk{ec}{${hue('energy', String(e))}})\\ \\text{kJ/mol}}{(8.314 \\times 10^{-3}\\ \\text{kJ mol}^{-1}\\,\\text{K}^{-1})(${hue('temperature', '298\\ \\text{K}')})}\\right) = \\mk{val}{${big(ratio)}}`);

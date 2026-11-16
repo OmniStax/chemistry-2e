@@ -89,7 +89,7 @@ function burst(ctx, x, y, r, color, k) {
   /* the book's everyday sources, at their usual frequencies */
   const SOURCES = [
     { name: 'power line', lv: lg(60), row: 0 }, { name: 'AM radio', lv: 6, row: 0 }, { name: 'FM radio', lv: 8, row: 1 },
-    { name: 'microwave oven', lv: lg(2.45e9), row: 0 }, { name: 'heat lamp', lv: lg(3e14), row: 0 },
+    { name: 'microwave oven', lv: lg(2.45e9), row: 0 }, { name: 'heat lamp', lv: lg(3e14), row: 0, align: 'right' },
     { name: 'tanning booth', lv: lg(8.5e14), row: 1 }, { name: 'medical X-rays', lv: 19, row: 0 },
   ];
   const CATCH = [...SOURCES.map((s) => s.lv), SPLIT];
@@ -140,7 +140,7 @@ function burst(ctx, x, y, r, color, k) {
       else if (on) { ctx.fillStyle = alpha(cf, 0.16); ctx.fillRect(x0, ST, x1 - x0, SB - ST); }
       ctx.restore();
       if (b.lo > LO) line(ctx, x0, ST, x0, SB, PAL.muted, 1.5);
-      if (b.name !== 'visible light') text(ctx, b.name, (x0 + x1) / 2, (ST + SB) / 2, PAL.ink, { size: 18, align: 'center', weight: on ? 700 : 400 });
+      if (b.name !== 'visible light') text(ctx, b.name, (x0 + x1) / 2, (ST + SB) / 2, PAL.ink, { size: x1 - x0 < 110 ? 17 : 19, align: 'center', weight: on ? 700 : 400 });
       hits.push({ x: (x0 + x1) / 2, y: (ST + SB) / 2, r: Math.max(14, Math.min(30, (x1 - x0) / 2)), name: `${b.name}, ${sciText(10 ** b.lo)} to ${sciText(10 ** b.hi)} Hz` });
     });
     ctx.save(); ctx.strokeStyle = PAL.muted; ctx.lineWidth = 2; ctx.strokeRect(L, ST, R - L, SB - ST); ctx.restore();
@@ -153,14 +153,14 @@ function burst(ctx, x, y, r, color, k) {
     text(ctx, 'visible light', X(SPLIT) - 2, 253, PAL.ink, { size: 17, align: 'right' });
     text(ctx, 'energy of a mole of photons (kJ/mol)', L, 282, ce, { size: 20, weight: 600 });
     /* the energy of a C–C bond */
-    line(ctx, xb, ST, xb, 266, PAL.ink, 3, [7, 6]);
+    line(ctx, xb, SB, xb, 266, PAL.ink, 3, [7, 6]);
     F.rich(ctx, ['a C–C bond breaks, ', ['345 kJ/mol', ce]], xb, 282, { size: 20, align: 'center' });
     hits.push({ x: xb, y: 274, r: 22, name: 'the bond energy of a C–C bond, 345 kJ/mol' });
     /* the book's everyday sources */
     SOURCES.forEach((s) => {
       const sx = X(s.lv), y = 334 + s.row * 27, on = Math.abs(s.lv - lv) < 1e-9;
       line(ctx, sx, 312, sx, y - 13, on ? cf : PAL.muted, 2);
-      text(ctx, s.name, sx, y, on ? PAL.ink : PAL.muted, { size: 19, align: 'center', weight: on ? 700 : 400 });
+      text(ctx, s.name, s.align ? sx + 12 : sx, y, on ? PAL.ink : PAL.muted, { size: 19, align: s.align ?? 'center', weight: on ? 700 : 400 });
       hits.push({ x: sx, y, r: 24, name: `${s.name}, about ${sciText(10 ** s.lv)} Hz` });
     });
     /* the book's four effects */
@@ -172,7 +172,7 @@ function burst(ctx, x, y, r, color, k) {
       text(ctx, c.sub, cx, y + 26, col, { size: 19, align: 'center' });
     });
     /* the reader's frequency */
-    line(ctx, x, ST - 12, x, SB + 12, cf, 4);
+    line(ctx, x, ST - 13, x, ST + 9, cf, 4); line(ctx, x, SB - 9, x, SB + 13, ce, 4);
     F.dot(ctx, x, ST, cf, true, 8); F.dot(ctx, x, SB, ce, true, 8);
     hits.push({ x, y: (ST + SB) / 2, r: 16, name: `ν = ${sciText(v)} Hz, ${band.name}` });
     const kv = (k, s) => `\\htmlClass{kv-${k}}{${s}}`, emTex = Em >= 0.01 && Em < 1e4 ? String(+Em.toPrecision(3)) : sciTex(Em);
@@ -444,7 +444,7 @@ function burst(ctx, x, y, r, color, k) {
     { v: 5, to: 10, s: 'changes in blood chemistry', val: '5–10 rem', side: -1, hov: '5–10 rem: changes in blood chemistry (Table 21.5)' },
     { v: 50, to: 100, s: 'nausea, hair loss, hemorrhage', val: '50–100 rem', side: -1, hov: '50 rem nausea, 55 rem fatigue, 70 rem vomiting, 75 rem hair loss, 90 rem diarrhea, 100 rem hemorrhage (Table 21.5)' },
     { v: 400, s: 'possible death within 2 months', val: '400 rem', side: -1, hov: '400 rem: possible death within 2 months (Table 21.5)' },
-    { v: 500, s: 'half die within 30 days', val: '500 rem', side: -1, hov: 'about 500 rem: a 50% probability of death within 30 days' },
+    { v: 500, s: '50% chance of death within 30 days', val: '500 rem', side: -1, hov: 'about 500 rem: a 50% probability of death within 30 days' },
     { v: 1000, s: 'death in 1–2 weeks', val: '1000 rem', side: -1, hov: '1000 rem: destruction of the intestinal lining, internal bleeding, death in 1–2 weeks (Table 21.5)' },
     { v: 2000, s: 'death in hours to days', val: '2000 rem', side: -1, hov: '2000 rem: damage to the central nervous system, loss of consciousness within minutes, death in hours to days (Table 21.5)' },
   ];

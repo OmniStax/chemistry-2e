@@ -18,11 +18,11 @@ const { PAL, alpha, register, begin, line, text, headline } = F;
 (function () {
   const d = F.sim(root, 'sim-carbonyl');
   const T3 = window.THREE;
-  const DIST = 10.6, FOV = 16, RAD = Math.PI / 180;
-  const v = F.view3d(d.stage, { spin: 'off', h: 560, dist: DIST, tilt: 0.47, pitch: [-1.3, 1.3], onRender: () => place() });
+  const DIST = 11.5, FOV = 16, RAD = Math.PI / 180;
+  const v = F.view3d(d.stage, { spin: 'off', h: 560, dist: DIST, tilt: 0.52, pitch: [-1.3, 1.3], onRender: () => place() });
   if (v.camera && 'fov' in v.camera) { v.camera.fov = FOV; v.camera.updateProjectionMatrix(); }   /* a long lens: the near R group is not drawn larger than the far one */
-  v.setView(-1.7, 0.47);
-  const g = v.part(0); if (g && g.position) g.position.set(0, -0.12, 0.2);
+  v.setView(-1.25, 0.52);
+  const g = v.part(0); if (g && g.position) g.position.set(0, -0.3, 0.2);
   const key = F.makeCanvas(d.stage, 64);
   const step = F.choice(d.controls, { label: '\\text{the C=O bond}', key: 'bond', aria: 'how far the double bond is built: σ bonds, p orbitals, π bond', value: 'pi',
     options: [{ value: 'sigma', label: 'σ bonds' }, { value: 'p', label: 'two p orbitals' }, { value: 'pi', label: 'π bond' }] });
@@ -59,8 +59,8 @@ const { PAL, alpha, register, begin, line, text, headline } = F;
     CLOUD = new T3.BufferGeometry(); CLOUD.setAttribute('position', new T3.Float32BufferAttribute(pos, 3)); CLOUD.setIndex(idx); CLOUD.computeVertexNormals();
   }
   let sig = '', gP = null, gPi = null;
-  function lobe(grp, from, dir, len, c, name, wide = 1) {
-    const m = new T3.Mesh(DROP, F.mesh.mat(c));
+  function lobe(grp, from, dir, len, c, name, wide = 1, op = 1) {
+    const m = new T3.Mesh(DROP, F.mesh.mat(c, op < 1 ? { transparent: true, opacity: op, depthWrite: false } : {})); if (op < 1) m.renderOrder = 3;
     m.position.set(...add(from, mul(dir, 0.07))); m.quaternion.setFromUnitVectors(new T3.Vector3(0, 1, 0), new T3.Vector3(...dir)); m.scale.set(len * wide, len, len * wide);
     grp.add(m); v.pickable(m, name); return m;
   }
@@ -69,34 +69,34 @@ const { PAL, alpha, register, begin, line, text, headline } = F;
     g.children.slice().forEach((c) => { g.remove(c); });
     gP = new T3.Group(); gPi = new T3.Group(); g.add(gP, gPi);
     /* the plane of the σ bonds */
-    const X = 1.75, Z0 = -1.9, Z1 = 1.15, pts = [[-X, 0, Z0], [X, 0, Z0], [X, 0, Z1], [-X, 0, Z1]];
+    const X = 1.62, Z0 = -1.9, Z1 = 1.15, pts = [[-X, 0, Z0], [X, 0, Z0], [X, 0, Z1], [-X, 0, Z1]];
     const geo = new T3.BufferGeometry(); geo.setAttribute('position', new T3.Float32BufferAttribute(pts.flat(), 3)); geo.setIndex([0, 1, 2, 0, 2, 3]); geo.computeVertexNormals();
     const sheet = new T3.Mesh(geo, new T3.MeshBasicMaterial({ color: new T3.Color(PAL.muted), transparent: true, opacity: 0.16, depthWrite: false, side: T3.DoubleSide }));
     sheet.renderOrder = 1; g.add(sheet); v.pickable(sheet, 'the plane of the three σ bonds');
     F.mesh.polyline(g, pts.concat([pts[0]]), PAL.muted);
     /* atoms and σ bonds */
-    v.pickable(F.mesh.sphere(g, AT.C, 0.13, F.el('C')), 'carbonyl carbon atom, sp² hybridized, δ+');
-    v.pickable(F.mesh.sphere(g, AT.O, 0.17, F.el('O')), 'carbonyl oxygen atom, δ−');
+    v.pickable(F.mesh.sphere(g, AT.C, 0.18, F.el('C')), 'carbonyl carbon atom, sp² hybridized, δ+');
+    v.pickable(F.mesh.sphere(g, AT.O, 0.2, F.el('O')), 'carbonyl oxygen atom, δ−');
     ['L', 'R'].forEach((k) => {
-      v.pickable(F.mesh.sphere(g, AT[k], 0.27, F.el('R')), 'R group: a carbon chain or a hydrogen atom');
-      v.pickable(F.mesh.stick(g, AT.C, AT[k], 0.035, PAL.muted), 'σ bond from carbon to an R group');
-      lobe(g, AT.C, DIR[k], 0.95, HYB(), 'sp² hybrid orbital on carbon: a σ bond to an R group', 1.25);
+      v.pickable(F.mesh.sphere(g, AT[k], 0.24, F.el('R')), 'R group: a carbon chain or a hydrogen atom');
+      v.pickable(F.mesh.stick(g, AT.C, AT[k], 0.045, PAL.ink), 'σ bond from carbon to an R group');
+      lobe(g, AT.C, DIR[k], 0.95, HYB(), 'sp² hybrid orbital on carbon: a σ bond to an R group', 0.8, 0.5);
     });
-    v.pickable(F.mesh.stick(g, AT.C, AT.O, 0.035, PAL.muted), 'σ bond from carbon to oxygen');
-    lobe(g, AT.C, DIR.O, 0.9, HYB(), 'sp² hybrid orbital on carbon: the σ bond to oxygen', 1.25);
+    v.pickable(F.mesh.stick(g, AT.C, AT.O, 0.045, PAL.ink), 'σ bond from carbon to oxygen');
+    lobe(g, AT.C, DIR.O, 0.9, HYB(), 'sp² hybrid orbital on carbon: the σ bond to oxygen', 0.8, 0.5);
     /* the ~120° angle the book marks, between C=O and C–R² */
-    const N = 20, RA = 1.02, arc = [];
-    for (let i = 0; i <= N; i++) { const a = (-90 + (120 * i) / N) * RAD; arc.push([RA * Math.cos(a), 0.012, RA * Math.sin(a)]); }
+    const N = 20, RA = 1.12, arc = [];
+    for (let i = 0; i <= N; i++) { const a = (-80 + (100 * i) / N) * RAD; arc.push([RA * Math.cos(a), 0.012, RA * Math.sin(a)]); }
     for (let i = 0; i < N; i++) F.mesh.stick(g, arc[i], arc[i + 1], 0.014, PAL.ink);
     /* the two p orbitals */
     [[AT.C, 'unhybridized p orbital on carbon'], [AT.O, 'p orbital on oxygen']].forEach(([p, name]) => {
-      lobe(gP, p, [0, 1, 0], 1.05, PLUS(), `${name}, + phase`);
-      lobe(gP, p, [0, -1, 0], 1.05, MINUS(), `${name}, − phase`);
+      lobe(gP, p, [0, 1, 0], 1.05, PLUS(), `${name}, + phase`, 0.85);
+      lobe(gP, p, [0, -1, 0], 1.05, MINUS(), `${name}, − phase`, 0.85);
     });
     /* the π bond: one cloud above the plane and one below, fatter over oxygen */
     [[1, PLUS(), '+'], [-1, MINUS(), '−']].forEach(([y, c, ph]) => {
-      const m = new T3.Mesh(CLOUD, F.mesh.mat(c, { transparent: true, opacity: 0.6, depthWrite: false }));
-      m.position.set(0, 0.64 * y, -0.605); m.rotation.y = Math.PI / 2; m.scale.set(1.2, 0.58, 0.42); m.renderOrder = 2;
+      const m = new T3.Mesh(CLOUD, F.mesh.mat(c, { transparent: true, opacity: 0.32, depthWrite: false }));
+      m.position.set(0, 0.64 * y, -0.605); m.rotation.y = Math.PI / 2; m.scale.set(1.2, 0.58, 0.42); m.renderOrder = 4;
       gPi.add(m); v.pickable(m, `the π bond, ${ph} phase: denser at oxygen`);
     });
   }
@@ -106,7 +106,7 @@ const { PAL, alpha, register, begin, line, text, headline } = F;
     { el: v.label('R²', [0, 0, 0], g, 0, 'bare'), p: AT.R, r: 0.3 },
     { el: v.label('δ−', [0, 0, 0], g), p: add(AT.O, [0.2, 0, -0.15]), r: 0.34 },
     { el: v.label('δ+', [0, 0, 0], g), p: [-0.12, 0, 0.6], r: 0.04 },
-    { el: v.label('~120°', [0, 0, 0], g), p: [1.2 * Math.cos(-30 * RAD), 0, 1.2 * Math.sin(-30 * RAD)], r: 0.04 },
+    { el: v.label('~120°', [0, 0, 0], g), p: [1.42 * Math.cos(-22 * RAD), 0, 1.42 * Math.sin(-22 * RAD)], r: 0.04 },
   ];
   outs.forEach((l) => { l.el.style.transform = 'translate(-50%, -50%)'; });
   function place() {

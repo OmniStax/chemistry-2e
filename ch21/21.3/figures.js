@@ -170,7 +170,7 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
    positron emission and electron capture one left and one up, γ no move.
 ===================================================================== */
 (function () {
-  const H = 610, d = sim('sim-decay-modes', H), T = 4.6, T0 = 0.9;
+  const H = 640, d = sim('sim-decay-modes', H), T = 4.6, T0 = 0.9;
   const CX = 300, CY = 305, END = [790, 190];
   const G = { l: 1010, r: 1320, t: 180, b: 490 };
   const MODES = {
@@ -351,14 +351,13 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
     });
     /* the count, in the clear corner above the chain */
     const TX = G.l + 40, TY = G.t + 46;
-    F.rich(ctx, [[String(na), ca, 700], na === 1 ? ' α decay' : ' α decays', ', each two left and two down'], TX, TY, { size: 24 });
-    F.rich(ctx, [[String(nb), cb, 700], nb === 1 ? ' β decay' : ' β decays', ', each one right and one down'], TX, TY + 38, { size: 24 });
+    F.rich(ctx, [[String(na), ca, 700], na === 1 ? ' α decay' : ' α decays', ', two left and two down'], TX, TY, { size: 24 });
+    F.rich(ctx, [[String(nb), cb, 700], nb === 1 ? ' β decay' : ' β decays', ', one right and one down'], TX, TY + 38, { size: 24 });
     if (k > 0) {
       const p = S[k - 1], q = S[k], al = isA(k - 1);
       text(ctx, '$' + nucTex(p[0], p[1], p[2]) + '\\longrightarrow ' + (al ? '{}_{2}^{4}\\text{He}' : '{}_{-1}^{\\;0}\\text{e}') + '+' + nucTex(q[0], q[1], q[2]) + '$', TX, TY + 100, ink, { size: 30, tex: true });
     }
     F.legend(ctx, ax, [{ s: 'α decay', color: ca, w: 4.5 }, { s: 'β decay', color: cb, w: 4.5 }, { s: 'radioactive', kind: 'dot', hollow: true, color: ink }, { s: 'stable', kind: 'dot', color: ink }], { corner: 'br', size: 19 });
-    const an = (w) => (/^[aeiou]/.test(w) ? 'an ' : 'a ');
     topline(ctx, k === 0 ? 'Uranium-238, the parent of the series, before any decay.'
       : 'Decay ' + k + ' of 14: ' + name(k - 1) + ' emits ' + (isA(k - 1) ? 'an α particle' : 'a β particle') + ' and becomes ' + name(k) + (k === 14 ? ', which is stable.' : '.'));
     tex(d.readout, 'A = 238 - 4\\,n_{\\alpha} = 238 - 4(' + na + ') = ' + S[k][0] + ' \\\\ Z = 92 - 2\\,n_{\\alpha} + n_{\\beta} = 92 - 2(' + na + ') + ' + nb + ' = ' + S[k][1]);
@@ -384,12 +383,12 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
   const GT = { l: 640, r: 1330, t: 130, b: 350 }, GR = { l: 640, r: 1330, t: 440, b: 600 };
   const d = sim('sim-half-life', H);
   const cy = cycle(() => TMAX, 1.2);
-  let seed = 1, NN = 400, U = [], sorted = [], bins = [], PTS = [], ANG = [];
+  let seed = 1, NN = 400, U = [], sorted = [], bins = [], PTS = [], ANG = [], RN = 8;
   function draws() {
     const r = rng(seed * 2654435761);
     U = Array.from({ length: NN }, () => -Math.log(r()) / LAM); ANG = U.map(() => r() * TAU); sorted = U.slice().sort((a, b) => a - b);
     const cols = Math.ceil(Math.sqrt(NN)), rows = Math.ceil(NN / cols), p = (BX.r - BX.l) / cols, y0 = (BX.t + BX.b) / 2 - ((rows - 1) * p) / 2;
-    PTS = U.map((_, i) => [BX.l + p / 2 + (i % cols) * p, y0 + Math.floor(i / cols) * p]);
+    PTS = U.map((_, i) => [BX.l + p / 2 + (i % cols) * p, y0 + Math.floor(i / cols) * p]); RN = Math.min(13, p * 0.4);
     bins = new Array(25).fill(0); U.forEach((u) => { if (u < TMAX) bins[Math.min(24, Math.floor(u / BIN))]++; });
   }
   const size = choice(d.controls, { label: '\\text{nuclei at the start, }N_{0}', aria: 'the number of cobalt-60 nuclei at the start', value: '400', ms: 0,
@@ -404,16 +403,16 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
     /* the sample */
     ctx.save(); ctx.strokeStyle = PAL.rule; ctx.lineWidth = 2; ctx.fillStyle = alpha(ink, 0.03); ctx.beginPath(); ctx.roundRect(BX.l - 14, BX.t - 14, BX.r - BX.l + 28, BX.b - BX.t + 28, 10); ctx.fill(); ctx.stroke();
     ctx.fillStyle = ink; ctx.beginPath();
-    PTS.forEach(([x, y], i) => { if (U[i] > t) { ctx.moveTo(x + 8, y); ctx.arc(x, y, 8, 0, TAU); } });
+    PTS.forEach(([x, y], i) => { if (U[i] > t) { ctx.moveTo(x + RN, y); ctx.arc(x, y, RN, 0, TAU); } });
     ctx.fill();
     ctx.strokeStyle = alpha(ink, 0.32); ctx.lineWidth = 2; ctx.beginPath();
-    PTS.forEach(([x, y], i) => { if (U[i] <= t) { ctx.moveTo(x + 6.5, y); ctx.arc(x, y, 6.5, 0, TAU); } });
+    PTS.forEach(([x, y], i) => { if (U[i] <= t) { ctx.moveTo(x + RN - 1.5, y); ctx.arc(x, y, RN - 1.5, 0, TAU); } });
     ctx.stroke(); ctx.restore();
     /* each decay as it happens: a ring, and the radiation leaving */
     PTS.forEach(([x, y], i) => {
       const k = (t - U[i]) / FLASH; if (k < 0 || k >= 1) return;
-      ring(ctx, x, y, 8 + 12 * k, alpha(RC, 1 - k), 3);
-      const ux = Math.cos(ANG[i]), uy = Math.sin(ANG[i]), a = 12 + 44 * k;
+      ring(ctx, x, y, RN + 12 * k, alpha(RC, 1 - k), 3);
+      const ux = Math.cos(ANG[i]), uy = Math.sin(ANG[i]), a = RN + 4 + 44 * k;
       line(ctx, x + ux * a, y + uy * a, x + ux * (a + 18), y + uy * (a + 18), alpha(RC, 0.9 * (1 - k)), 3.5);
     });
     hits.push({ x: (BX.l + BX.r) / 2, y: (BX.t + BX.b) / 2, r: 210, name: 'the sample: ' + left + ' of its ' + NN + ' cobalt-60 nuclei have not decayed' });

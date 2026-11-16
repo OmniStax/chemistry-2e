@@ -35,7 +35,7 @@ function burst(ctx, x, y, R, k, color) {
    book's upright dumbbell (1.3 to 2.1 s) and splits: each proton and
    neutron glides to its seat in the light fragment (up) or the heavy one
    (down), the n neutrons nearest the waist fly off right between them at
-   330 units/s, the fragments fly apart until 3.3 s; hold 1.2 s. The five
+   280 units/s, the fragments move apart until 3.3 s; hold 1.2 s. The five
    reactions are the book's 21.15(a), with ⁹⁶Rb + ¹³⁷Cs as its image prints
    them. Graph: the book's yield curve read from its points, on its axes,
    60 to 180 by 0 to 9 %; the ten fragments of the five reactions stand on
@@ -71,11 +71,11 @@ function burst(ctx, x, y, R, k, color) {
   const yieldAt = (A) => { for (let i = 1; i < YIELD.length; i++) if (A <= YIELD[i][0]) { const [a0, y0] = YIELD[i - 1], [a1, y1] = YIELD[i]; return y0 + (y1 - y0) * (A - a0) / (a1 - a0); } return 0.1; };
 
   /* the nucleus: 236 seats, the leftmost one empty until the neutron takes it */
-  const CX = 340, CY = 368, R = 150, NN = 236, RD = R / Math.sqrt(NN) * 0.98;
+  const CX = 400, CY = 368, R = 150, NN = 236, RD = R / Math.sqrt(NN) * 0.98;
   const SEAT = Array.from({ length: NN }, (_, i) => { const rr = Math.sqrt((i + 0.5) / NN), a = i * GOLD; return { u: rr * Math.cos(a), v: rr * Math.sin(a) }; });
   let ABS = 0; SEAT.forEach((s, i) => { if (s.u < SEAT[ABS].u) ABS = i; });
   const PROT = new Set(Array.from({ length: NN }, (_, i) => i).filter((i) => i !== ABS).sort((a, b) => hash(a, 3) - hash(b, 3)).slice(0, 92));
-  const LC = { x: CX, y: 214 }, HC = { x: CX, y: 540 }, BURST = { x: CX, y: CY - 2 }, VFREE = 330;
+  const LC = { x: CX, y: 214 }, HC = { x: CX, y: 540 }, BURST = { x: CX, y: CY - 2 }, VFREE = 280;
   let rKey = '', ROLE = null;
   function roles(key) {
     if (rKey === key) return ROLE;
@@ -141,7 +141,7 @@ function burst(ctx, x, y, R, k, color) {
     ctx.restore();
 
     if (t < S0) {
-      const yb = CY + R * (1 + 0.6 * k1) + 30;
+      const yb = CY + R * (1 + 0.6 * k1) + 38;
       text(ctx, t < U6 ? '²³⁵U' : '²³⁶U, unstable', CX, yb, INK, { size: 26, weight: 600, align: 'center' });
       text(ctx, '92 protons + ' + (t < A0 ? 143 : 144) + ' neutrons', CX, yb + 30, PAL.muted, { size: 19, align: 'center' });
       hits.push({ x: CX, y: CY, r: R, name: t < A0 ? 'a uranium-235 nucleus: 92 protons and 143 neutrons' : t < U6 ? 'the neutron absorbed: uranium-236' : 'an unstable uranium-236 nucleus, stretching' });
@@ -207,7 +207,7 @@ function burst(ctx, x, y, R, k, color) {
    pinned() past it.
 ===================================================================== */
 (function () {
-  const S0 = 0.6, G = 0.7, NG = 7, T = S0 + (NG - 1) * G + 1.1, VN = 330, YMAX = 25, H = 720;
+  const S0 = 0.6, G = 0.7, NG = 7, T = S0 + (NG - 1) * G + 1.1, VN = 330, YMAX = 25, H = 740;
   const CX = 320, CY = 352, RC = 168, OUT = 26;              /* the centre of the slice, the critical radius and how far past the surface a track runs, in canvas units */
   const d = sim('sim-chain', H);
   const ms = ctl(d.controls, { label: '\\text{mass}', cls: '', key: 'mass', min: 0.3, max: 3, step: 0.01, value: 1, unit: '× critical mass', dec: 2,
@@ -271,7 +271,7 @@ function burst(ctx, x, y, R, k, color) {
     ctx.strokeStyle = alpha(INK, 0.6); ctx.lineWidth = 3; ctx.stroke();
     ctx.restore();
     hits.push({ x: CX + M.R * 0.85, y: CY + M.R * 0.4, r: 26, name: 'a lump of uranium-235, ' + fmt(ms.v, 2) + ' times the critical mass' });
-    text(ctx, crit ? 'critical mass' : M.k < 1 ? 'subcritical mass' : 'supercritical mass', CX, 656, INK, { size: 22, weight: 600, align: 'center' });
+    text(ctx, crit ? 'critical mass' : M.k < 1 ? 'subcritical mass' : 'supercritical mass', CX, 652, INK, { size: 22, weight: 600, align: 'center' });
     /* the tracks the neutrons have flown: one that strikes ends at its nucleus, one that escapes ends in an arrowhead outside */
     const P0 = CH.pts[CH.first], e = [Math.max(14, CX - M.R - 100), CY - M.R * 0.75 - 30], d0 = dist(e, P0), tin = S0 - d0 / VN;
     const track = (a, b, w, hit) => {
@@ -297,13 +297,13 @@ function burst(ctx, x, y, R, k, color) {
       disc(ctx, p[0] - ux * (2 + 5 * q), p[1] - uy * (2 + 5 * q), 5, FRc, alpha(INK, 0.45));
       hits.push({ x: p[0], y: p[1], r: 14, name: 'a fission in generation ' + g + ': two fragments, three neutrons and energy' });
     });
-    if (!crit) { ctx.save(); ctx.beginPath(); ctx.arc(CX, CY, RC, 0, 2 * Math.PI); ctx.setLineDash([10, 10]); ctx.strokeStyle = alpha(INK, 0.7); ctx.lineWidth = 3; ctx.stroke(); ctx.restore(); hits.push({ x: CX, y: CY - RC, r: 12, name: 'the size of a critical mass' }, { x: CX, y: CY + RC, r: 12, name: 'the size of a critical mass' }); }
+    if (!crit) { ctx.save(); ctx.beginPath(); ctx.arc(CX, CY, RC, 0, 2 * Math.PI); ctx.strokeStyle = alpha(PAL.panel, 0.85); ctx.lineWidth = 8; ctx.stroke(); ctx.setLineDash([12, 9]); ctx.strokeStyle = alpha(INK, 0.85); ctx.lineWidth = 3; ctx.stroke(); ctx.restore(); hits.push({ x: CX, y: CY - RC, r: 12, name: 'the size of a critical mass' }, { x: CX, y: CY + RC, r: 12, name: 'the size of a critical mass' }); }
     flying.forEach(([p, name]) => { disc(ctx, p[0], p[1], 6, NE, alpha(INK, 0.55)); hits.push({ x: p[0], y: p[1], r: 10, name }); });
     F.legend(ctx, { l: 20, r: 800, t: H - 50, b: H - 6 }, [
       { s: '²³⁵U nucleus', draw: (c, x, y) => disc(c, x, y, 7.5, U, alpha(INK, 0.45)) },
       { s: 'neutron and its track', draw: (c, x, y) => { line(c, x - 18, y, x + 6, y, TR, 2); disc(c, x + 10, y, 6, NE, alpha(INK, 0.55)); } },
       { s: 'fission', draw: (c, x, y) => { burst(c, x, y, 13, 1, E); disc(c, x - 5, y, 5, FRc, alpha(INK, 0.45)); disc(c, x + 5, y, 4.5, FRc, alpha(INK, 0.45)); } },
-      { s: 'size of a critical mass', color: alpha(INK, 0.7), w: 3, dash: [10, 10] },
+      { s: 'size of a critical mass', color: alpha(INK, 0.85), w: 3, dash: [12, 9] },
     ], { corner: 'bl', row: true, panel: false, size: 18 });
     /* fissions per generation */
     const GB = { l: 850, r: 1350, t: 170, b: 580 };

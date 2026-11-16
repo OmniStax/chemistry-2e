@@ -258,7 +258,7 @@ const lerp = (a, b, k) => a + (b - a) * k;
       line(ctx, BL, yb, BR, yb, ec, 2.5);
       F.faded(ctx, clamp(st.fr[i] * 2.5), [0, 0], () => F.rich(ctx, [s.k === 'b' ? 'β  ' : 'γ  ', [`${s.mev} MeV`, ec, 600]], BR + 12, (Y(s.from) + Y(s.to)) / 2, { size: 20 }));
     });
-    if (st.e < E0 - 0.01) line(ctx, BR, Y(st.e), st.x - R - 8, Y(st.e), alpha(PAL.ink, 0.3), 2, [4, 8]);
+    if (st.e < E0 - 0.01 && st.e > 0.01) line(ctx, BR, Y(st.e), st.x - R - 8, Y(st.e), alpha(PAL.ink, 0.3), 2, [4, 8]);
     text(ctx, 'energy given off', BL - 10, Y0 + 34, ec, { size: 20, weight: 600 });
     hits.push({ x: (BL + BR) / 2, y: (Y(E0) + Y(st.e)) / 2, r: 34, name: `energy given off so far: ${(E0 - st.e).toFixed(2)} MeV` });
     /* the levels */
@@ -282,14 +282,14 @@ const lerp = (a, b, k) => a + (b - a) * k;
     beta(E2, '1.48', '0.12%', 392, Y(E2) - 62, lit('rare'));
     const gam = (a, b, mev, f) => F.faded(ctx, f, [0, 0], () => {
       wavy(ctx, GX, Y(a) + 5, GX, Y(b) - 5, G, 6, 20, 3);
-      F.rich(ctx, [[`${mev} MeV`, ec, 600], '  γ'], GX + 22, (Y(a) + Y(b)) / 2 + 44, { size: 20 });
+      F.rich(ctx, [[`${mev} MeV`, ec, 600], '  γ'], GX - 46, (Y(a) + Y(b)) / 2, { size: 20, align: 'right' });
     });
     gam(E1, E2, '1.1732', lit('main')); gam(E2, 0, '1.3325', 1);
     /* the particles that have left, in flight */
     route.steps.forEach((s) => {
       const t = now - (s.t0 + 0.4 * DUR), FLY = 1.5;
       if (t < 0 || t > FLY) return;
-      const at = state(route, s.t0 + 0.4 * DUR), k = t / FLY, x = at.x + 30 + k * (s.k === 'b' ? 640 : 500), y = s.k === 'b' ? Y(E0) - 22 : Y(at.e) - R - 4, fade = clamp((1 - k) * 4);
+      const at = state(route, s.t0 + 0.4 * DUR), k = t / FLY, x = at.x + 30 + k * (s.k === 'b' ? 640 : 500), y = s.k === 'b' ? Y(E0) - 22 : (Y(s.from) + Y(s.to)) / 2, fade = clamp((1 - k) * 4);
       F.faded(ctx, fade, [0, 0], () => {
         if (s.k === 'b') { line(ctx, x - 46, y, x - 8, y, alpha(PAL.ink, 0.35), 2); disc(ctx, x, y, 9, be); } else wavy(ctx, x - 62, y, x, y, G, 6, 16, 3);
         F.rich(ctx, [s.k === 'b' ? 'β  ' : 'γ  ', [`${s.mev} MeV`, ec, 600]], x - 40, y - 26, { size: 19 });
@@ -338,7 +338,7 @@ const lerp = (a, b, k) => a + (b - a) * k;
   const smoke = F.ctl(d.controls, { label: '\\text{smoke}', cls: '', key: 'smoke', min: 0, max: NS, step: 1, value: 0, dec: 0, fmt: (v) => `${v} ${v === 1 ? 'particle' : 'particles'}`,
     aria: 'the number of smoke particles in the chamber' });
   const cy = cycle(() => P, 0);
-  const r = rng(90);
+  const r = rng(77);
   /* the α particles and the ion pairs they leave, fixed once */
   const EVENTS = Array.from({ length: NA }, (_, k) => {
     const te = ((k + 0.15 + 0.7 * r()) * P) / NA, a = (k % 2 ? 1 : -1) * (16 + 26 * ((((k >> 1) * 4) % 9) + r()) / 9) * Math.PI / 180;

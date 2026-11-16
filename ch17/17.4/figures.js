@@ -218,7 +218,8 @@ const N_OPTS = ['1', '2', '3', '4', '6'].map((v) => ({ value: v, label: v }));
     hits.push({ x: X(0), y: Y(c.E0), r: 16, name: `E°cell = ${E0u}, where Q = 1` });
     if (zeroIn && lK >= -10 && lK <= 10) {
       if (lK !== 0) dot(ctx, X(lK), Y(0), cK, false, 10);
-      if (!at) lab.add(`Q = K = ${kU}`, X(lK), Y(0), -0.7, 0.7, cK, 22, 40);
+      if (!at && lK !== 0) { text(ctx, `Q = K = ${kU}`, X(lK) - 20, Y(0) + 30, cK, { size: 22, align: 'right', bg: PAL.panel }); lab.block(X(lK) - 250, Y(0) + 14, X(lK), Y(0) + 46); }
+      else if (!at) lab.add('Q = K = 1', X(lK), Y(0), -0.5, 0.85, cK, 22, 30);
       hits.push({ x: X(lK), y: Y(0), r: 16, name: `Q = K = ${kU}, where E_cell = 0` });
     }
 

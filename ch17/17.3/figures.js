@@ -351,8 +351,10 @@ const inTex = (s) => s.replace(MINUS, '-');
       text(ctx, r.ox, CX - 14, y, F.mixColor(PAL.ink, cC, wc), { size: 22, weight: wc > 0.5 ? 600 : 400, align: 'right' });
       text(ctx, r.red, CX + 14, y, F.mixColor(PAL.ink, cA, wa), { size: 22, weight: wa > 0.5 ? 600 : 400 });
       text(ctx, r.s, XV, y, F.mixColor(PAL.muted, cp, w), { size: 20, weight: w > 0.5 ? 600 : 400, align: 'right' });
-      const name = `${r.half},  E° = ${r.s} V`;
-      hits.push({ x: CX - 50, y, r: 13, name }, { x: CX + 50, y, r: 13, name }, { x: XV - 40, y, r: 13, name }, { x: (X0 + x1) / 2, y, r: 13, name });
+      /* the species by their pair; the whole half-reaction where its tip has room to stand, from the E° column across the chart */
+      const pair = `${r.ox}/${r.red},  E° = ${r.s} V`;
+      hits.push({ x: CX - 26, y, r: 14, name: pair }, { x: CX - 54, y, r: 14, name: pair }, { x: CX - 82, y, r: 14, name: pair }, { x: CX + 26, y, r: 14, name: pair }, { x: CX + 54, y, r: 14, name: pair }, { x: CX + 82, y, r: 14, name: pair });
+      for (let hx = 540; hx <= 940; hx += 25) hits.push({ x: hx, y, r: 14, name: r.half });
     });
     /* what the sign of E° says, each where no bar and no guide line ever runs */
     ['E° > 0:', 'a stronger oxidant', 'than H⁺'].forEach((w, i) => text(ctx, w, X(1.82), Y1 + (5 + i) * ROWH, PAL.ink, { size: 20 }));

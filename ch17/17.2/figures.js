@@ -39,14 +39,14 @@ function onBall(ctx, col) {
   /* beakers: centres, inner half-width, rim, floor, liquid level */
   const LX = 315, RX = 1085, HW = 215, RIM = 318, FLOOR = 692, LEVEL = 440;
   /* the wire's height, the external circuit's box; the bridge's legs, centreline top, width, feet, and its lift when taken out */
-  const WY = 84, BOX = { x: 700, y: 84, w: 250, h: 64 }, BL = 472, BR = 928, BT = 252, BW = 88, FOOT = 500, LIFT = 80;
+  const WY = 84, BOX = { x: 700, y: 84, w: 250, h: 64 }, BL = 472, BR = 928, BT = 252, BW = 92, FOOT = 500, LIFT = 80;
   const XA = 152, XC = 1248, SW = 46, TOP = 258, BOT = 652;   /* the electrodes' x, the strips' width, top and foot */
   const NS = 14;                                             /* ions of each sign drawn in the bridge at the start */
   /* an ion: its element, radius and charge mark; nitrate is drawn atom by atom */
   const ION = {
     Cu: { el: 'Cu', r: 15, q: '2+', s: 'Cu²⁺' }, Mg: { el: 'Mg', r: 14, q: '2+', s: 'Mg²⁺' }, Ag: { el: 'Ag', r: 16, q: '+', s: 'Ag⁺' },
     Fe3: { el: 'Fe', r: 15, q: '3+', s: 'Fe³⁺' }, Fe2: { el: 'Fe', r: 15, q: '2+', s: 'Fe²⁺' }, Na: { el: 'Na', r: 15, q: '+', s: 'Na⁺' },
-    Cl: { el: 'Cl', r: 19, q: '−', s: 'Cl⁻' }, NO3: { r: 19, q: '−', s: 'NO₃⁻' },
+    Cl: { el: 'Cl', r: 21, q: '−', s: 'Cl⁻' }, NO3: { r: 19, q: '−', s: 'NO₃⁻' },
   };
   /* where the ions come to rest: anions under the left foot, cations under the right, the anode's ions beside it */
   const AN_SLOTS = [[372, 664], [432, 664], [342, 612], [462, 612], [402, 612], [492, 556], [372, 556], [432, 556]];
@@ -69,7 +69,7 @@ function onBall(ctx, col) {
     mg: {
       anode: 'Mg', cathode: 'Pt', anion: 'Cl', cation: 'Na', made: 'Mg', used: 'Fe3',
       ox: 'Mg(s) → Mg²⁺(aq) + 2e⁻', red: '2Fe³⁺(aq) + 2e⁻ → 2Fe²⁺(aq)', bridge: 'Salt bridge (NaCl)',
-      from: [[222, 543], [261, 557], [280, 596], [265, 639]], madeSlots: [[215, 478], [292, 486], [326, 548], [322, 668]],
+      from: [[200, 548], [222, 543], [245, 548], [262, 558]], madeSlots: [[196, 480], [248, 496], [300, 478], [340, 504]],
       /* each Fe³⁺ touches the top of the platinum coil and goes back into the solution as Fe²⁺ */
       sites: Array.from({ length: 2 * NB }, (_, i) => [1112 + 17.5 * i, 586]),
       origin: (i, s) => [s[0] - 30, s[1] - 34],
@@ -191,11 +191,11 @@ function onBall(ctx, col) {
     for (let k = NS - 1; k >= 0; k--) {
       const s = (k + 0.5 - e) * tube.L / (NS - e);
       if (s > 0) {
-        const pa = tube.at(s, 18.5), pc = tube.at(tube.L - s, -22);
+        const pa = tube.at(s, 18), pc = tube.at(tube.L - s, -24);
         ion(ctx, K.anion, pa[0], pa[1] - lift, 1, true, K.names.anion + ', in the salt bridge'); ion(ctx, K.cation, pc[0], pc[1] - lift, 1, true, K.names.cation + ', in the salt bridge');
       } else {
         const g = flown(t, cross(k)), w = wob(t, k, g);
-        const pa = lerp2([BL - 18.5, FOOT + 6], AN_SLOTS[k], g), pc = lerp2([BR + 22, FOOT + 6], CAT_SLOTS[k], g);
+        const pa = lerp2([BL - 18, FOOT + 6], AN_SLOTS[k], g), pc = lerp2([BR + 24, FOOT + 6], CAT_SLOTS[k], g);
         ion(ctx, K.anion, pa[0] + w[0], pa[1] + w[1], 1, true, K.names.anion + ', from the salt bridge'); ion(ctx, K.cation, pc[0] - w[0], pc[1] + w[1], 1, true, K.names.cation + ', from the salt bridge');
       }
     }
@@ -232,9 +232,8 @@ function onBall(ctx, col) {
     const an = parts(K.an(n)), cat = parts(K.cat(n));
     const xb1 = XA + wa / 2 + 24, xb2 = XC - wk / 2 - 24;
     text(ctx, a, XA, y, PAL.ink, { size, align: 'center' }); text(ctx, k, XC, y, PAL.ink, { size, align: 'center' });
-    text(ctx, '|', xb1, y - 1, PAL.ink, { size: 26, align: 'center' }); text(ctx, '|', xb2, y - 1, PAL.ink, { size: 26, align: 'center' });
+    for (const x of [xb1, xb2, 696, 704]) line(ctx, x, y - 15, x, y + 13, PAL.ink, 2);
     F.rich(ctx, an, xb1 + 22, y, { size }); F.rich(ctx, cat, xb2 - 22, y, { size, align: 'right' });
-    text(ctx, '‖', 700, y - 1, PAL.ink, { size: 26, align: 'center' });
     hits.push({ x: XA, y, r: 24, name: `${a}: the ${c === 'cu' ? 'copper' : 'magnesium'} anode, written first` }, { x: XC, y, r: 24, name: `${k}: the ${c === 'cu' ? 'silver' : 'platinum'} cathode, written last` },
       { x: xb1, y, r: 14, name: 'a single line: the boundary between the electrode and its solution' }, { x: xb2, y, r: 14, name: 'a single line: the boundary between the solution and its electrode' },
       { x: 700, y, r: 18, name: 'a double line: the salt bridge' },
@@ -268,7 +267,7 @@ function onBall(ctx, col) {
     stroke(ctx, tube.pts, alpha(PAL.muted, 0.12), BW - 8, 'butt');
     for (const bx of [BL, BR]) {
       ctx.fillStyle = alpha(PAL.muted, 0.75); ctx.fillRect(bx - BW / 2 + 4, FOOT - 18, BW - 8, 18);
-      ctx.fillStyle = PAL.panel; for (let i = 0; i < 9; i++) { ctx.beginPath(); ctx.arc(bx - 32 + 8 * i, FOOT - 9 + (i % 2 ? 4 : -4), 2, 0, TAU); ctx.fill(); }
+      ctx.fillStyle = PAL.panel; for (let i = 0; i < 10; i++) { ctx.beginPath(); ctx.arc(bx - 36 + 8 * i, FOOT - 9 + (i % 2 ? 4 : -4), 2, 0, TAU); ctx.fill(); }
       ctx.strokeStyle = alpha(PAL.ink, 0.6); ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(bx - BW / 2, FOOT); ctx.lineTo(bx + BW / 2, FOOT); ctx.stroke();
     }
     ctx.restore();

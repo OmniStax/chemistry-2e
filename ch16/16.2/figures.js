@@ -36,7 +36,7 @@ function deltaS(ro, wi, wf) {
 const PX0 = 60, PX1 = 1340, PTOP = 168, PBASE = 560, PILE_H = 690;
 function piles(ctx, o) {
   const n = o.W.length, slot = (PX1 - PX0) / n, xc = (k) => PX0 + (k + 0.5) * slot, wmax = Math.max(...o.W), hits = [];
-  const tw = Math.min(slot - 36, 300), th = o.tiles ? Math.min(104, (PBASE - PTOP) / wmax) : 0;
+  const tw = Math.min(slot - 22, 390), th = o.tiles ? Math.min(tw * 0.42, (PBASE - PTOP) / wmax) : 0;
   const frac = n <= 13 && F.measure(ctx, `${count(wmax)}/${count(o.total)}`, { size: 17 }) < slot - 14;
   const band = (k) => [xc(k) - Math.max(slot, 10) / 2 + 3, PTOP - 76, Math.max(slot, 10) - 6, PBASE - PTOP + 76];
   /* the final distribution stands on a filled band, the initial one inside a dashed outline */
@@ -113,7 +113,7 @@ function piles(ctx, o) {
     /* one microstate: each particle keeps its own place in whichever box it is, as the book draws them */
     const cols = n === 6 ? 6 : 2, rows = n / cols;
     const tile = (c, m, x, y, w, h) => {
-      const r = Math.min(13, h / (2 * rows) - 3, w / (4 * cols) - 2), gx = Math.min(w / 2 / (cols + 0.4), 3.2 * r), gy = Math.min(h / rows, 3 * r);
+      const r = Math.min(22, h / (2 * rows) - 3, w / (4 * cols) - 2), gx = Math.min(w / 2 / (cols + 0.4), 3.2 * r), gy = Math.min(h / rows, 3 * r);
       c.save(); c.strokeStyle = PAL.muted; c.lineWidth = 2; c.strokeRect(x, y, w, h); c.restore(); line(c, x + w / 2, y, x + w / 2, y + h, PAL.muted, 2);
       for (let i = 0; i < n; i++) {
         const s = m >> i & 1, cx = x + (s ? 0.75 : 0.25) * w + ((i % cols) - (cols - 1) / 2) * gx, cy = y + h / 2 + (Math.floor(i / cols) - (rows - 1) / 2) * gy;
@@ -164,13 +164,13 @@ function piles(ctx, o) {
     if (q <= 4) tiles = W.map((_, j) => { const out = []; for (let a = q - j; a >= 0; a--) for (let c = j; c >= 0; c--) out.push([a, q - j - a, c, j - c]); return out; });
     hits = [];
     const tile = (c, m, x, y, w, h) => {
-      const fs = clamp(h * 0.66, 17, 44), gap = fs * 0.36, lw = F.measure(c, 'A', { size: fs, weight: 600 });
+      const fs = clamp(h * 0.66, 17, 52), lw = F.measure(c, 'A', { size: fs, weight: 600 }), gap = Math.min(fs * 0.36, (w / 4 - lw - 6) / 4);
       c.save(); c.strokeStyle = PAL.muted; c.lineWidth = 2; c.strokeRect(x, y, w, h); c.restore(); line(c, x + w / 2, y, x + w / 2, y + h, PAL.muted, 2);
       P.forEach((p, i) => {
         /* the letter at a fixed place in its quarter and, close after it, one raised asterisk for each unit it holds */
-        const px = x + (i + 0.5) * (w / 4), x0 = x + i * (w / 4) + Math.max(5, (w / 4 - lw - 4 * gap) / 2);
+        const px = x + (i + 0.5) * (w / 4), x0 = x + i * (w / 4) + Math.max(4, (w / 4 - lw - 4 * gap) / 2);
         text(c, p, x0, y + h / 2 + 1, i < 2 ? hot : cold, { size: fs, weight: 600 });
-        for (let u = 0; u < m[i]; u++) text(c, '*', x0 + lw + (u + 0.5) * gap, y + h / 2 - fs * 0.1, PAL.ink, { size: fs * 0.8, weight: 600, align: 'center' });
+        for (let u = 0; u < m[i]; u++) text(c, '*', x0 + lw + (u + 0.5) * gap, y + h / 2 - fs * 0.1, PAL.ink, { size: fs * 0.72, weight: 600, align: 'center' });
         hits.push({ x: px, y: y + h / 2, r: w / 8, name: `particle ${p} of the ${i < 2 ? 'hot' : 'cold'} object, ${UNITS[m[i]]} of energy` });
       });
     };
@@ -316,8 +316,9 @@ function piles(ctx, o) {
     F.plot(ctx, g, Sg, ce, { w: 4, x: [TB, 600] });
     const jump = (x, lo, hi, hot) => line(ctx, g.X(x), g.Y(lo), g.X(x), g.Y(hi), ce, hot ? 6 : 4);
     jump(TM, SS0, SL0, p === 0.5); jump(TB, SLB, SG0, p === 1.5);
-    text(ctx, 'melting', g.X(TM) - 12, g.Y(SL0 + 4), PAL.muted, { size: 17, align: 'right' });
-    text(ctx, 'boiling', g.X(TB) + 14, g.Y((SLB + SG0) / 2), PAL.muted, { size: 17 });
+    /* the two jumps are named over the band edges they stand on, clear of the curve and the drop lines */
+    text(ctx, 'melting', g.X(TM), GS.t - 14, PAL.muted, { size: 17, align: 'center' });
+    text(ctx, 'boiling', g.X(TB), GS.t - 14, PAL.muted, { size: 17, align: 'center' });
     const drop = (sv) => { line(ctx, g.X(t), g.Y(sv), g.X(t), GS.b, alpha(ce, 0.6), 2.5, [4, 8]); line(ctx, GS.l, g.Y(sv), g.X(t), g.Y(sv), alpha(ce, 0.6), 2.5, [4, 8]); };
     if (p === 0.5 || p === 1.5) {
       const [lo, hi] = p === 0.5 ? [SS0, SL0] : [SLB, SG0];

@@ -83,7 +83,7 @@ const lead = (ctx, x1, y1, x2, y2) => line(ctx, x1, y1, x2, y2, alpha(PAL.ink, 0
    left half wired to the + of a voltage source and an iron cathode in the
    right half wired to its −. A choice switches the source off and on.
    Off, the ions only jostle and nothing forms: the cell potential is
-   negative. On, the run takes T = 8.4 s and holds. Six events, 0.95 s
+   negative. On, the run takes T = 7.4 s and holds. Four events, 1.2 s
    apart. In each, two Cl⁻ cross the melt to the anode (one of them
    through the screen) and two Na⁺ cross to the cathode; at the anode each
    Cl⁻ hands one electron to the carbon, shrinks to an atom and pairs into
@@ -98,7 +98,7 @@ const lead = (ctx, x1, y1, x2, y2) => line(ctx, x1, y1, x2, y2, alpha(PAL.ink, 0
 ===================================================================== */
 (function () {
   const H = 820, d = sim('sim-downs-cell', H);
-  const T = 8.4, NEV = 6, T0 = 1.5, GAP = 0.95, SPEED = 330, SP = 46;
+  const T = 7.4, NEV = 4, T0 = 1.5, GAP = 1.2, SPEED = 330, SP = 46;
   const TL = 110, TR = 1290, RIM = 292, FLOOR = 690, MELT = 372, SCR = 700, SW = 20;
   const XA = 380, XC = 1020, EW = 96, ETOP = 232, EBOT = 612;
   const RCL = 19, RNA = 12, RCLA = 14, RNAA = 15;
@@ -122,22 +122,20 @@ const lead = (ctx, x1, y1, x2, y2) => line(ctx, x1, y1, x2, y2, alpha(PAL.ink, 0
     }
     placed.push({ ...best, r }); return best;
   }
-  /* the events: every third one takes its ions from the outer zones to the electrodes' outer faces */
+  /* the events: each takes one Cl⁻ and one Na⁺ from either side of the screen, so one ion of each kind passes through it,
+     and brings them to the faces the electrodes turn to each other; every zone keeps as many Na⁺ as Cl⁻ throughout */
   const EV = Array.from({ length: NEV }, (_, k) => {
-    const outer = k % 3 === 2, ys = k % 2 ? 548 : 446;
-    const fa = outer ? XA - EW / 2 : XA + EW / 2, sa = outer ? -1 : 1;         /* the anode's face and the way out of it */
-    const fc = outer ? XC + EW / 2 : XC - EW / 2, sc = outer ? 1 : -1;
-    const cl = [0, 1].map((j) => ({ h: home(outer ? 'L' : j ? 'M2' : 'M1', RCL, 10 + 2 * k + j), to: [fa + sa * (RCL + 1), ys + (j ? 21 : -21)], ph: rnd(k, 40 + j) * TAU }));
-    const na = [0, 1].map((j) => ({ h: home(outer ? 'R' : j ? 'M1' : 'M2', RNA, 30 + 2 * k + j), to: [fc + sc * (RNA + 1), ys + (j ? 19 : -19)], ph: rnd(k, 50 + j) * TAU }));
-    return { k, outer, ys, fa, sa, fc, sc, cl, na };
+    const ys = k % 2 ? 548 : 446, fa = XA + EW / 2, sa = 1, fc = XC - EW / 2, sc = -1;     /* each electrode's face and the way out of it */
+    const cl = [0, 1].map((j) => ({ h: home(j ? 'M2' : 'M1', RCL, 10 + 2 * k + j), to: [fa + sa * (RCL + 1), ys + (j ? 21 : -21)], ph: rnd(k, 40 + j) * TAU }));
+    const na = [0, 1].map((j) => ({ h: home(j ? 'M1' : 'M2', RNA, 30 + 2 * k + j), to: [fc + sc * (RNA + 1), ys + (j ? 19 : -19)], ph: rnd(k, 50 + j) * TAU }));
+    return { k, ys, fa, sa, fc, sc, cl, na };
   });
-  const BG = [['L', 'Na'], ['L', 'Na'], ['L', 'Na'], ['L', 'Na'], ['M1', 'Na'], ['M1', 'Cl'], ['M1', 'Cl'], ['M2', 'Na'], ['M2', 'Na'], ['M2', 'Cl'], ['R', 'Cl'], ['R', 'Cl'], ['R', 'Cl'], ['R', 'Cl'], ['M1', 'Na'], ['M2', 'Cl']]
+  const BG = [['L', 'Na'], ['L', 'Cl'], ['L', 'Na'], ['L', 'Cl'], ['L', 'Na'], ['L', 'Cl'], ['M1', 'Na'], ['M1', 'Cl'], ['M1', 'Na'], ['M1', 'Cl'], ['M2', 'Na'], ['M2', 'Cl'], ['M2', 'Na'], ['M2', 'Cl'], ['R', 'Na'], ['R', 'Cl'], ['R', 'Na'], ['R', 'Cl'], ['R', 'Na'], ['R', 'Cl']]
     .map(([z, e], i) => ({ e, h: home(z, e === 'Cl' ? RCL : RNA, 70 + i), ph: rnd(i, 60) * TAU }));
-  /* where the products come to rest: Cl₂ in the gas over the melt on the anode's side, Na afloat on the melt on the cathode's */
-  const GAS = [[500, 330], [590, 314], [236, 326], [654, 340], [540, 300], [170, 312]];
-  const inner = [0, 1, 2, 3, 4, 5, 6, 7].map((i) => XC - EW / 2 - 20 - 31 * i), outerS = [0, 1, 2, 3].map((i) => XC + EW / 2 + 20 + 31 * i);
-  let ni = 0, no = 0;
-  EV.forEach((e) => { e.gas = GAS[e.k]; e.pool = [0, 1].map(() => (e.outer ? outerS[no++] : inner[ni++])); });
+  /* where the products come to rest: Cl₂ in the gas over the melt on the anode's side, Na afloat on the melt on the cathode's,
+     the first atoms farthest from the cathode so that later ones stop short of them */
+  const GAS = [[488, 332], [548, 312], [606, 334], [652, 310]];
+  EV.forEach((e) => { e.gas = GAS[e.k]; e.pool = [0, 1].map((j) => XC - EW / 2 - 20 - 31 * (2 * NEV - 1 - 2 * e.k - j)); });
   const jig = (p, a = 5) => [a * Math.sin(2.1 * wob + p), a * Math.cos(1.7 * wob + p)];
   const cl2 = (ctx, x, y, th, a = 1) => { const dx = 11 * Math.cos(th), dy = 11 * Math.sin(th); ball(ctx, x - dx, y - dy, RCLA, F.el('Cl'), a); ball(ctx, x + dx, y + dy, RCLA, F.el('Cl'), a); };
   let lastTex = '', lastNote = null;
@@ -232,8 +230,8 @@ const lead = (ctx, x1, y1, x2, y2) => line(ctx, x1, y1, x2, y2, alpha(PAL.ink, 0
     text(ctx, '2Cl⁻ ⟶ Cl₂(g) + 2e⁻', XA, 730, PAL.ink, { size: 25, align: 'center' });
     text(ctx, 'Molten NaCl', SCR, 730, PAL.ink, { size: 22, align: 'center' });
     text(ctx, '2Na⁺ + 2e⁻ ⟶ 2Na(l)', XC, 730, PAL.ink, { size: 25, align: 'center' });
-    if (gasN) { text(ctx, 'Cl₂(g)', 86, 262, PAL.ink, { size: 22, align: 'center' }); lead(ctx, 104, 276, 150, 304); }
-    if (poolN) { text(ctx, 'Na(l)', 1322, 318, PAL.ink, { size: 22, align: 'center' }); lead(ctx, 1304, 332, TR - 24, MELT - 10); }
+    if (gasN) text(ctx, 'Cl₂(g)', 566, 268, PAL.ink, { size: 23, align: 'center' });
+    if (poolN) text(ctx, 'Na(l)', 836, 326, PAL.ink, { size: 23, align: 'center' });
     F.legend(ctx, { l: 0, r: 1400, t: 756, b: H }, [
       { s: 'electron', draw: (g, x, y) => electron(g, x, y) }, { s: 'Cl⁻', draw: (g, x, y) => ion(g, x, y, 13, 'Cl', -1) }, { s: 'Na⁺', draw: (g, x, y) => ion(g, x, y, 10, 'Na', 1) },
       { s: 'Cl₂', draw: (g, x, y) => { ball(g, x - 7, y, 9, F.el('Cl')); ball(g, x + 7, y, 9, F.el('Cl')); } }, { s: 'Na', draw: (g, x, y) => ball(g, x, y, 11, F.el('Na')) },
@@ -308,7 +306,7 @@ const lead = (ctx, x1, y1, x2, y2) => line(ctx, x1, y1, x2, y2, alpha(PAL.ink, 0
     ctx.save(); ctx.fillStyle = liq;
     for (const [x, L] of [[XA, LA], [XC, LC]]) { ctx.save(); armPath(ctx, x); ctx.clip(); ctx.fillRect(x - AW / 2, L, AW, FOOT - L); ctx.restore(); }
     ctx.fillRect(XA + AW / 2, CT, XC - XA - AW, CB - CT); ctx.fillRect(CX - CW / 2, BJ - 1, CW, CT - BJ + 1);
-    ctx.save(); ctx.beginPath(); pear(ctx, -1); ctx.lineTo(CX + BNW / 2, BN); pear(ctx, 1); ctx.closePath(); ctx.clip(); ctx.fillRect(CX - BRX, LR, 2 * BRX, BJ - LR); ctx.restore();
+    ctx.save(); ctx.beginPath(); ctx.rect(CX - BRX - 4, LR, 2 * BRX + 8, BJ - LR); ctx.clip(); ctx.beginPath(); pear(ctx, -1); ctx.lineTo(CX + BNW / 2, BN); ctx.lineTo(CX + BNW / 2, BN + 40); ctx.bezierCurveTo(CX + BNW / 2, BY - 80, CX + BRX, BY - 95, CX + BRX, BY); ctx.bezierCurveTo(CX + BRX, BY + 110, CX + CW / 2, BJ - 90, CX + CW / 2, BJ); ctx.closePath(); ctx.fill(); ctx.restore();
     ctx.restore();
     /* the glass */
     ctx.save(); ctx.strokeStyle = glass; ctx.lineWidth = 3.5; ctx.lineJoin = 'round'; ctx.lineCap = 'round';
@@ -369,14 +367,14 @@ const lead = (ctx, x1, y1, x2, y2) => line(ctx, x1, y1, x2, y2, alpha(PAL.ink, 0
     /* labels */
     text(ctx, 'H₂O + H₂SO₄', 944, 122, PAL.ink, { size: 23 }); lead(ctx, 936, 130, CX + 96, LR + 34);
     text(ctx, 'Anode +', 306, 786, PAL.ink, { size: 25, weight: 600, align: 'right' }); lead(ctx, 314, 788, XA - 28, 796);
-    text(ctx, '2H₂O ⟶ O₂ + 4H⁺ + 4e⁻', 306, 822, PAL.ink, { size: 21, align: 'right' });
+    text(ctx, '2H₂O ⟶ O₂ + 4H⁺ + 4e⁻', 306, 822, PAL.ink, { size: 22, align: 'right' });
     text(ctx, 'Cathode −', 1094, 786, PAL.ink, { size: 25, weight: 600 }); lead(ctx, 1086, 788, XC + 28, 796);
-    text(ctx, '2H⁺ + 2e⁻ ⟶ H₂', 1094, 822, PAL.ink, { size: 21 });
+    text(ctx, '2H⁺ + 2e⁻ ⟶ H₂', 1094, 822, PAL.ink, { size: 22 });
     if (VO > 0.05) {
       const a = clamp01(VO), vc = C('volume');
       ctx.save(); ctx.globalAlpha = a;
-      text(ctx, 'O₂(g)', 270, 292, PAL.ink, { size: 25, weight: 600, align: 'right' }); lead(ctx, 278, 294, XA - 22, 318);
-      text(ctx, 'H₂(g)', 1130, 292, PAL.ink, { size: 25, weight: 600 }); lead(ctx, 1122, 294, XC + 22, 318);
+      text(ctx, 'O₂(g)', 262, 258, PAL.ink, { size: 25, weight: 600, align: 'right' }); lead(ctx, 270, 262, XA - 22, 310);
+      text(ctx, 'H₂(g)', 1138, 258, PAL.ink, { size: 25, weight: 600 }); lead(ctx, 1130, 262, XC + 22, 310);
       if (VO > 0.3) {
         F.vbracket(ctx, XA + AW / 2 + 30, Y0, LA, vc, nO + ' mL', 1, { size: 24 });
         F.vbracket(ctx, XC - AW / 2 - 30, Y0, LC, vc, 2 * nO + ' mL', -1, { size: 24 });

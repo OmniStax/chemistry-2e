@@ -647,6 +647,7 @@ const trace = (ctx, pts, close) => { ctx.beginPath(); pts.forEach(([x, y], i) =>
       : coolant ? `Cooled by ${coolant} to ${T} K, $\\text{${name.replace(/_\{(\d)\}/g, '}_{$1}\\text{')}}$ still ${pl ? 'have' : 'has'} resistance.`
       : below ? `At ${T} K, $\\text{${name.replace(/_\{(\d)\}/g, '}_{$1}\\text{')}}$ ${pl ? 'conduct' : 'conducts'} with no resistance.`
       : `At ${T} K, $\\text{${name.replace(/_\{(\d)\}/g, '}_{$1}\\text{')}}$ ${pl ? 'have' : 'has'} resistance.`);
+    console.log('SCDRAW', d.readout.isConnected, d.readout.innerHTML.length);
     tex(d.readout, `\\text{resistance} ${below ? '= 0' : '> 0'}\\ \\text{at}\\ \\kT = ${T}\\ \\text{K} ${below ? '<' : '\\geq'} ${kv('temperature', Tc + '\\ \\text{K}')}`);
   }
   register(d.fig, { update: () => {}, draw });

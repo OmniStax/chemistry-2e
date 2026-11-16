@@ -282,7 +282,7 @@ const palSig = () => [PAL.ink, PAL.panel, PAL.muted, F.el('C'), F.el('H')].join(
   };
 
   const v = F.view3d(d.stage, { spin: 'idle', h: 440, dist: 8.4, tilt: 0.42, pitch: [0, 0.9] });
-  v.setView(-0.3, 0.42);
+  v.setView(-0.5, 0.4);
   const g = v.part(0);
   g.rotation.x = -Math.PI / 2;   /* the plane of the double bond lies level, so the p orbitals stand up and the methyl groups of the cis isomer point at the reader */
   g.position.y = 0.3;
@@ -297,6 +297,15 @@ const palSig = () => [PAL.ink, PAL.panel, PAL.muted, F.el('C'), F.el('H')].join(
       /* each sp² carbon atom's p orbital stands square to the plane of its own three bonds */
       const n3 = [0, -Math.sin(th), Math.cos(th)];
       [[1, [0, 0, 1]], [2, n3]].forEach(([i, n]) => [1, -1].forEach((q) => v.pickable(F.mesh.lobe(g, m.atoms[i].p, mul(n, q), 1.15, PAL.ink), `lobe of the p orbital of carbon atom ${i + 1}`)));
+      /* the plane of each sp² carbon atom's three bonds as a faint sheet, so the lobes are seen to stand square to it; the right
+         sheet turns with its half, and the two lie in one plane only at 0° and 180° */
+      const T = window.THREE, c = Math.cos(th), s = Math.sin(th);
+      [[-1, (y) => [y, 0], 2], [1, (y) => [y * c, y * s], 3]].forEach(([sx, yz, k]) => {
+        const P = [[0, -1.75], [2.25 * sx, -1.75], [2.25 * sx, 1.4], [0, 1.4]].map(([x, y]) => [x, ...yz(y)]);
+        const geo = new T.BufferGeometry(); geo.setAttribute('position', new T.Float32BufferAttribute([P[0], P[1], P[2], P[0], P[2], P[3]].flat(), 3)); geo.computeVertexNormals();
+        const sheet = new T.Mesh(geo, F.mesh.mat(PAL.ink, { transparent: true, opacity: 0.13, depthWrite: false, side: T.DoubleSide }));
+        g.add(sheet); v.pickable(sheet, `plane of the three bonds of carbon atom ${k}`);
+      });
     }
   }
   function draw() {

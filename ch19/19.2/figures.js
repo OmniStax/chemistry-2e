@@ -259,8 +259,9 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
   /* the ions shown for each coordination number, set in a row at one scale that fills the stage */
   const SETS = {};
   Object.entries({ 2: ['ag'], 3: ['cucn3'], 4: ['cucl4', 'zncn4', 'ptnh3cl2'], 5: ['cocl5', 'vocn4'], 6: ['coh2o6', 'cren3', 'ptcl6'], 7: ['zrf7'], 8: ['ref8', 'mocn8'] }).forEach(([cn, ids]) => {
-    const list = ids.map((id) => C[id]), gap = 0.8, wide = 1400 / UNIT - 0.8, tall = 2.2;
-    const s = Math.min(2.1, tall / Math.max(...list.map((c) => c.R)), wide / (list.reduce((a, c) => a + 2 * c.R, 0) + gap * (list.length - 1)));
+    const list = ids.map((id) => C[id]), gap = 0.8, wide = 1400 / UNIT - 0.8;
+    /* one scale for the row: as large as lets every ion turn without crossing its neighbour or the stage's edge, and stand clear of the headline as it opens */
+    const s = Math.min(2.6, 2.6 / Math.max(...list.map((c) => c.R)), 4.35 / (Math.max(...list.map((c) => c.hi)) - Math.min(...list.map((c) => c.lo))), wide / (list.reduce((a, c) => a + 2 * c.R, 0) + gap * (list.length - 1)));
     let x = -(list.reduce((a, c) => a + 2 * c.R * s, 0) + gap * s * (list.length - 1)) / 2;
     /* the row stands with its opening view centred between the headline and the foot of the stage */
     const y = -0.4 - (s * (Math.max(...list.map((c) => c.hi)) + Math.min(...list.map((c) => c.lo)))) / 2;
@@ -301,7 +302,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
         if (c.out) text(ctx, c.out, X, 107, PAL.muted, { size: 18, align: 'center' });
       });
     });
-    keyRow(ctx, 134, [...elKey([...syms]), { s: 'shape with a donor atom at each corner', kind: 'swatch', color: F.alpha(PAL.muted, 0.35) }]);
+    keyRow(ctx, 134, [...elKey([...syms]), ...(B.cn > 2 ? [{ s: 'shape with a donor atom at each corner', kind: 'swatch', color: F.alpha(PAL.muted, 0.35) }] : [])]);
     v.headline(HEAD[B.cn]);
     const terms = [...new Set(B.list.map(({ c }) => `${c.ligands} \\times ${c.cn / c.ligands}`))].join(' = ');
     ro.set(`\\text{coordination number} = \\text{ligands} \\times \\text{donor atoms on each} = ${terms} = ${B.cn}`, '', { form: terms.length });

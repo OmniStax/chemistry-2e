@@ -204,7 +204,7 @@ function burst(ctx, x, y, r, color, k) {
   say();
   const STEPS = {
     direct: [[0, 'Radiation strikes the DNA itself.'], [1, 'An electron leaves, and a bond in the strand breaks.']],
-    indirect: [[0, 'Radiation knocks an electron out of a water molecule.'], [2.3, 'The H₂O⁺ ion passes a proton to a second water molecule.'], [4.6, 'The OH• radical that is left reaches the DNA and breaks a strand.']],
+    indirect: [[0, 'Radiation knocks an electron out of a water molecule.'], [2.3, 'The H₂O⁺ ion passes a proton to a second water molecule.'], [4.6, 'The hydroxyl radical that is left reaches the DNA and breaks a strand.']],
   };
   /* the DNA: a double helix about a vertical axis; z > 0 faces the reader */
   const DX = 1190, DY0 = 64, DY1 = 524, AMP = 80, PER = 228;
@@ -269,7 +269,7 @@ function burst(ctx, x, y, r, color, k) {
         const k = sm(clamp01((t - 3.1) / 1.0)), from = [A1.x + HR[0], A1.y + HR[1]], to = [B0.x - 62, B0.y - 25];
         aH = [HL];
         if (k < 1) proton = { x: lerp(from[0], to[0], k), y: lerp(from[1], to[1], k) };
-        else { bH = [HL, HR, [-62, -25]]; bName = 'H₃O⁺'; aName = 'OH•'; }
+        else { bH = [HL, HR, [-62, -25]]; bName = 'H₃O⁺'; aName = 'OH·'; }
         rad = k;
       }
       if (t > 4.1) {
@@ -286,10 +286,14 @@ function burst(ctx, x, y, r, color, k) {
     oxy(ctx, b.x, b.y, bH, 0);
     if (proton) disc(ctx, proton.x, proton.y, RH, F.el('H'));
     oxy(ctx, a.x, a.y, aH, rad);
+    /* the charge travels with its ion */
+    const plus = (q) => text(ctx, '+', q.x + 50, q.y - 44, PAL.ink, { size: 30, weight: 700, align: 'center' });
+    if (aName === 'H₂O⁺') plus(a);
+    if (bName === 'H₃O⁺') plus({ x: b.x + 8, y: b.y - 10 });
     if (proton) hits.push({ x: proton.x, y: proton.y, r: RH, name: 'a proton, H⁺, passing to the second water molecule' });
-    const full = { 'H₂O': 'a water molecule, H₂O', 'H₂O⁺': 'the H₂O⁺ ion', 'H₃O⁺': 'a hydronium ion, H₃O⁺', 'OH•': 'the hydroxyl radical, OH•, with its unpaired electron' };
+    const full = { 'H₂O': 'a water molecule, H₂O', 'H₂O⁺': 'the H₂O⁺ ion', 'H₃O⁺': 'a hydronium ion, H₃O⁺', 'OH·': 'the hydroxyl radical, OH·, with its unpaired electron' };
     hits.push({ x: a.x, y: a.y + 10, r: 76, name: full[aName] }, { x: b.x, y: b.y + 10, r: 76, name: full[bName] });
-    if (aRest) name(aName, a.x - (aName === 'OH•' && t > 4.6 ? 20 : 0), a.y + (aName === 'OH•' && t > 4.6 ? -76 : 104));
+    if (aRest) name(aName, a.x - (aName === 'OH·' && t > 4.6 ? 20 : 0), a.y + (aName === 'OH·' && t > 4.6 ? -76 : 104));
     if (bRest) name(bName, b.x, b.y + 104);
     /* the electron knocked out */
     if (t >= 1.0) {
@@ -327,9 +331,9 @@ function burst(ctx, x, y, r, color, k) {
   const PAPER = [330, 337], METAL = [636, 654], GLASS = [716, 862], CONC = [930, 1110], LEAD = [1180, 1290], HAND = 466;
   const LANES = [
     { key: 'a', name: 'α particle', rel: 'ionizes most', y: 152, stop: 333, speed: 150, gap: 7, hov: 'an α particle, two protons and two neutrons', end: 'stopped by the paper' },
-    { key: 'b', name: 'β particle', rel: '1/10 as much', y: 258, stop: 645, speed: 300, gap: 70, hov: 'a β particle, an electron', end: 'stopped by the metal' },
-    { key: 'n', name: 'neutron', rel: '1/2 as much', y: 366, stop: 792, speed: 300, gap: 14, hov: 'a neutron', end: 'stopped in the water' },
-    { key: 'g', name: 'γ ray', rel: '1/20 as much', y: 472, stop: 1266, speed: 520, gap: 140, hov: 'a γ ray', end: 'attenuated by the lead' },
+    { key: 'b', name: 'β particle', rel: '1/10 the ions', y: 258, stop: 645, speed: 300, gap: 70, hov: 'a β particle, an electron', end: 'stopped by the metal' },
+    { key: 'n', name: 'neutron', rel: '1/2 the ions', y: 366, stop: 792, speed: 300, gap: 14, hov: 'a neutron', end: 'stopped in the water' },
+    { key: 'g', name: 'γ ray', rel: '1/20 the ions', y: 472, stop: 1266, speed: 520, gap: 140, hov: 'a γ ray', end: 'attenuated by the lead' },
   ];
   /* where the ions of each lane lie: a fixed scatter about the path */
   const rnd = (i, j) => { const s = Math.sin(i * 127.1 + j * 311.7) * 43758.5453; return s - Math.floor(s); };
@@ -364,7 +368,7 @@ function burst(ctx, x, y, r, color, k) {
     topline(ctx, 'α particles stop in paper, β particles in metal and neutrons in water; lead attenuates γ rays.');
     /* the barriers, in the book's order */
     slab(ctx, PAPER, () => alpha(PAL.ink, 0.02));
-    F.hand(ctx, HAND, BOT + 4, { aim: [0, -1], view: 'palm', s: 2.45, color: alpha(PAL.ink, 0.22) });
+    F.hand(ctx, HAND, BOT - 62, { aim: [0, -1], view: 'palm', s: 2.45, color: alpha(PAL.ink, 0.22) });
     slab(ctx, METAL, (k) => alpha(PAL.ink, 0.3 * k));
     glass(ctx);
     slab(ctx, CONC, (k) => alpha(PAL.ink, 0.13 * k), 70);

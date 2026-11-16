@@ -25,6 +25,9 @@
       },
       {
         "model": "claude-opus-5-5"
+      },
+      {
+        "model": "claude-fable-5-2"
       }
     ]
   },
@@ -54,6 +57,10 @@
         {
           "model": "claude-opus-5-5",
           "part": "headline states the live E_a and ΔH; caption cut"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "a log bar of times faster under the diagram; E_a values in the key"
         }
       ]
     },
@@ -131,6 +138,10 @@
         {
           "model": "claude-opus-5-5",
           "part": "rebuilt flat in the book's perspective, no view buttons; caption cut"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt as a story of the four steps, lit atoms, the new C–H bonds corrected"
         }
       ]
     },
@@ -149,8 +160,12 @@
     },
     {
       "id": "sim-enzyme",
-      "kind": "photo",
+      "kind": "sim",
       "number": "12.25",
+      "originals": [
+        "/media/ch12/CNX_Chem_12_07_Enzyme.jpg"
+      ],
+      "original_caption": "(a) According to the lock-and-key model, the shape of an enzyme’s active site is a perfect fit for the substrate. (b) According to the induced fit model, the active site is somewhat flexible, and can change shape in order to bond with the substrate.",
       "draws": [],
       "ai": [
         {
@@ -161,6 +176,10 @@
         {
           "model": "claude-opus-5-5",
           "part": "reverted to the book's image, which sets both models side by side"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt: both models side by side on one binding story, the book's shapes"
         }
       ]
     }
@@ -178,6 +197,20 @@
       "label": "the catalyzed reaction",
       "figures": [
         "sim-catalysis"
+      ]
+    },
+    {
+      "id": "enzyme",
+      "label": "the enzyme",
+      "figures": [
+        "sim-enzyme"
+      ]
+    },
+    {
+      "id": "substrates",
+      "label": "the substrates",
+      "figures": [
+        "sim-enzyme"
       ]
     }
   ],

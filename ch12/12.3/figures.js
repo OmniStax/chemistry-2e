@@ -53,9 +53,13 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
       text(ctx, `${s.letter} = ${o}`, box.r + 18, Math.max(g.Y(law(XR[1], o)), box.t + 10), o === order ? PAL.ink : PAL.muted, { size: 20, weight: o === order ? 600 : 400, base: 'middle' });
       hits.push({ x: g.X(0.185), y: g.Y(law(0.185, o)), r: 14, name: `the rate law through trial 1 if ${s.letter} = ${o}` });
     });
-    F.curve(ctx, (x) => law(x, orderE), XR[0], XR[1], g.X, g.Y, cr, 5, 120);
     const x1 = g.X(C0), y1 = g.Y(R1), px = g.X(c), py = g.Y(law(c, orderE)), r = law(c, order) / R1;
     [[x1, y1], [px, py]].forEach(([x, y]) => { line(ctx, x, y, x, box.b, guide, 2, [4, 8]); line(ctx, x, y, box.l, y, guide, 2, [4, 8]); });
+    /* the measured trials, rings in their referent colours. The second trial's name sits below and right of its ring,
+       between the first-order line and the curve above it, on a panel so a guide never runs through it */
+    const t1 = F.ref('trial-1'), t2 = F.ref(s.trial.id), tx = g.X(s.trial.c), ty = g.Y(s.trial.r);
+    text(ctx, 'trial ' + s.trial.n, tx + 20, ty + 17, t2, { size: 20, weight: 600, base: 'middle', bg: PAL.panel });
+    F.curve(ctx, (x) => law(x, orderE), XR[0], XR[1], g.X, g.Y, cr, 5, 120);
     /* how many times the concentration and the rate have grown since trial 1 */
     const by = g.Y(1.1), bx = g.X(0.028);
     if (c > C0 + 0.005) {
@@ -68,13 +72,10 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
       lab.block(bx - 12, Math.min(wy - 16, py), bx + 30 + F.measure(ctx, rise, { size: 22, weight: 600 }), y1);
     }
     for (let x = XR[0]; x <= XR[1]; x += 0.004) [0, 1, 2].forEach((o) => { const yy = g.Y(law(x, o)); lab.block(g.X(x) - 3, yy - 3, g.X(x) + 3, yy + 3); });
-    /* the measured trials, rings in their referent colours; the dot is the chosen law's rate.
-       The second trial's name sits below and right of its ring, between the first-order line and the curve above it. */
-    const t1 = F.ref('trial-1'), t2 = F.ref(s.trial.id), tx = g.X(s.trial.c), ty = g.Y(s.trial.r);
+    /* the dot is the rate the chosen law gives */
     ring(ctx, x1, y1, t1); ring(ctx, tx, ty, t2);
     F.dot(ctx, px, py, cr, true, 9);
     lab.add('trial 1', x1, y1, -0.5, -0.85, t1, 20, 30);
-    text(ctx, 'trial ' + s.trial.n, tx + 20, ty + 17, t2, { size: 20, weight: 600, base: 'middle', bg: PAL.panel });
     hits.push({ x: x1, y: y1, r: 16, name: 'trial 1 of Example 12.5: 0.00300 mol L⁻¹ s⁻¹' });
     hits.push({ x: tx, y: ty, r: 16, name: `trial ${s.trial.n} of Example 12.5: ${fmt(s.trial.r / 1000, 5)} mol L⁻¹ s⁻¹` });
     hits.push({ x: px, y: py, r: 12, name: `the rate this rate law gives: ${fmt(law(c, order) / 1000, 5)} mol L⁻¹ s⁻¹` });

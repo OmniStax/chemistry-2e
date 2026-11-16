@@ -133,9 +133,9 @@ function spline(xs, ys) {
   const D0 = ctl(d.controls, { label: '\\text{starting depth}', cls: 'length', min: 20, max: 200, step: 5, value: 200, unit: 'm', dec: 0, aria: 'depth the parcel starts from, in meters', onInput: () => cy.reset() });
   const cy = cycle(() => RISE, 1.5);
   const hits = []; F.hover(d.stage, () => hits);
-  const Ys = (m) => 170 + m * 1.9, SURF = Ys(0), FLOOR = Ys(226), XC = 380, R = 44, UNIT = 0.06;
+  const Ys = (m) => 170 + m * 1.9, SURF = Ys(0), FLOOR = Ys(232), XC = 380, R = 58, UNIT = 0.06;
   /* twelve places inside the parcel: one molecule drawn for each 0.06 mol/L */
-  const SPOTS = [[-20, -22], [6, -27], [26, -10], [-30, -2], [-6, -8], [14, 6], [-18, 14], [28, 16], [2, 22], [-26, 28], [16, 31], [-4, 36]].map(([x, y], i) => [x * 0.95, (y - 4) * 0.95, (i * 2.3) % Math.PI]);
+  const SPOTS = [[-20, -22], [6, -27], [26, -10], [-30, -2], [-6, -8], [14, 6], [-18, 14], [28, 16], [2, 22], [-26, 28], [16, 31], [-4, 36]].map(([x, y], i) => [x * 1.32, (y - 4) * 1.32, (i * 2.3) % Math.PI]);
   function co2(ctx, x, y, a, s = 1) {
     const ux = Math.cos(a), uy = Math.sin(a);
     for (const [k, colr, r] of [[-7.4 * s, F.el('O'), 4.4 * s], [7.4 * s, F.el('O'), 4.4 * s], [0, F.el('C'), 4.8 * s]]) {
@@ -197,7 +197,7 @@ function spline(xs, ys) {
     /* the parcel and the carbon dioxide still dissolved in it */
     ctx.save(); ctx.fillStyle = PAL.panel; ctx.beginPath(); ctx.arc(XC, yp, R, 0, TAU); ctx.fill(); ctx.fillStyle = alpha(cl, 0.1); ctx.fill(); ctx.strokeStyle = parcel; ctx.lineWidth = 3; ctx.setLineDash([7, 5]); ctx.stroke(); ctx.restore();
     const nm = Math.max(1, Math.round(held / UNIT));
-    for (let i = 0; i < Math.min(nm, SPOTS.length); i++) co2(ctx, XC + SPOTS[i][0], yp + SPOTS[i][1], SPOTS[i][2], 0.95);
+    for (let i = 0; i < Math.min(nm, SPOTS.length); i++) co2(ctx, XC + SPOTS[i][0], yp + SPOTS[i][1], SPOTS[i][2], 1.25);
     hits.push({ x: XC, y: yp, r: R, name: 'a liter of lake water; each CO₂ drawn is 0.06 mol dissolved in it' });
     F.rich(ctx, [['a liter of water', parcel], ', ', [Mf(held) + ' M', cc]], XC - R - 12, yp, { size: 18, align: 'right', bg: PAL.panel });
     /* the graph's curve and points */
@@ -290,7 +290,7 @@ function spline(xs, ys) {
     line(ctx, BL + 2, LEVEL, BR - 2, LEVEL, alpha(PAL.ink, 0.45), 1.5);
     const nd = Math.min(DOTS.length, Math.round(diss / PER)), ns = solid > 0 ? Math.min(HEAP.length, Math.max(1, Math.round(solid / PER))) : 0;
     const lit = new Set(ORDER.slice(0, nd));
-    DOTS.forEach(([x, y], i) => { if (!lit.has(i)) return; ctx.save(); ctx.fillStyle = col; ctx.beginPath(); ctx.arc(x, y, 5.5, 0, TAU); ctx.fill(); ctx.restore(); });
+    DOTS.forEach(([x, y], i) => { if (!lit.has(i)) return; ctx.save(); ctx.fillStyle = col; ctx.beginPath(); ctx.arc(x, y, 6.5, 0, TAU); ctx.fill(); ctx.restore(); });
     HEAP_ORDER.slice(0, ns).forEach((i) => { const [x, y] = HEAP[i]; ctx.save(); ctx.translate(x, y); ctx.rotate(Math.PI / 4); ctx.fillStyle = col; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.rect(-6.2, -6.2, 12.4, 12.4); ctx.fill(); ctx.stroke(); ctx.restore(); });
     ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.lineJoin = 'round'; ctx.lineCap = 'round'; beakerPath(ctx); ctx.stroke(); ctx.restore();
     text(ctx, '100 g of water at ' + t + ' °C', (BL + BR) / 2, RIM - 34, PAL.ink, { size: 18, align: 'center' });
@@ -298,7 +298,7 @@ function spline(xs, ys) {
     if (ns) hits.push({ x: (BL + BR) / 2, y: BASE - 30, r: 60, name: 'solid ' + s.plain + ' on the bottom, one crystal for each 5 g' });
     if (state !== 'none') F.legend(ctx, { l: BL - 12, r: BR + 12, t: BASE + 22, b: BASE + 100 }, [
       { s: round(diss) + ' g dissolved', kind: 'dot', color: col },
-      ...(solid > 0 ? [{ s: round(solid) + ' g solid', color: col, draw: (c, x, y) => { c.save(); c.translate(x + 22, y + 11); c.rotate(Math.PI / 4); c.fillStyle = col; c.strokeStyle = PAL.ink; c.lineWidth = 1.2; c.beginPath(); c.rect(-6.2, -6.2, 12.4, 12.4); c.fill(); c.stroke(); c.restore(); } }] : []),
+      ...(solid > 0 ? [{ s: round(solid) + ' g solid', color: col, draw: (c, x, y) => { c.save(); c.translate(x + 22, y); c.rotate(Math.PI / 4); c.fillStyle = col; c.strokeStyle = PAL.ink; c.lineWidth = 1.2; c.beginPath(); c.rect(-6.2, -6.2, 12.4, 12.4); c.fill(); c.stroke(); c.restore(); } }] : []),
     ], { corner: 'tl', panel: false, size: 18 });
     const sr = sol === null ? '' : round(sol);
     topline(ctx, state === 'none'

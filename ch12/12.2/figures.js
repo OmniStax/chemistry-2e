@@ -68,14 +68,23 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
       if (s === NF * EVERY) break;
       for (let j = 0; j < n; j++) {
         hx[j] += hu[j] * DT; hy[j] += hv[j] * DT; [hu[j], hv[j]] = wall(hx[j], hy[j], hu[j], hv[j], RH);
-        for (let i = 0; i < NA; i++) {
-          if (!here[i]) continue;
-          const dx = hx[j] - at[i].x, dy = hy[j] - at[i].y; if (Math.abs(dx) > RA + RH || Math.abs(dy) > RA + RH) continue;
-          const q = Math.hypot(dx, dy); if (q >= RA + RH || q === 0) continue;
-          const nx = dx / q, ny = dy / q, vn = hu[j] * nx + hv[j] * ny; if (vn >= 0) continue;
+        hx[j] = Math.max(RH, Math.min(WB - RH, hx[j])); hy[j] = Math.max(TOP + RH, Math.min(BOT - RH, hy[j]));
+        /* the atom the ion is deepest into is the one it struck; it is set back on that atom's surface, and one strike is one draw */
+        for (let pass = 0; pass < 3; pass++) {
+          let i = -1, q = RA + RH;
+          for (let o = 0; o < NA; o++) {
+            if (!here[o]) continue;
+            const ex = hx[j] - at[o].x, ey = hy[j] - at[o].y; if (Math.abs(ex) > RA + RH || Math.abs(ey) > RA + RH) continue;
+            const e = Math.hypot(ex, ey); if (e < q && e > 0) { q = e; i = o; }
+          }
+          if (i < 0) break;
+          const nx = (hx[j] - at[i].x) / q, ny = (hy[j] - at[i].y) / q, vn = hu[j] * nx + hv[j] * ny;
+          hx[j] = at[i].x + nx * (RA + RH); hy[j] = at[i].y + ny * (RA + RH);
+          if (vn >= 0) continue;
+          if (pass) { hu[j] -= 2 * vn * nx; hv[j] -= 2 * vn * ny; continue; }
           const r = streams[j], react = r() < p;
           events.push({ t: now, x: at[i].x + nx * RA, y: at[i].y + ny * RA, react });
-          if (!react) { hu[j] -= 2 * vn * nx; hv[j] -= 2 * vn * ny; break; }
+          if (!react) { hu[j] -= 2 * vn * nx; hv[j] -= 2 * vn * ny; continue; }
           /* The ion takes an electron from the iron and stays on the piece as a hydrogen atom; the next ion to react on that
              piece joins it and the two leave as H₂. Each pair costs the piece one atom, which goes into the solution as Fe²⁺:
              on even pieces with the first ion of the pair, on odd pieces with the second, so the count favours neither few

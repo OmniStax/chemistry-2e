@@ -367,9 +367,9 @@ function turn(p, yaw, pitch) {
    the crossbars of the point electrode at BARS, each reaching HALF.
 ===================================================================== */
 (function () {
-  const d = sim('sim-precipitator', 770);
-  const XC = 520, XL = 370, XR = 670, YT = 150, YF = 548, NL = 484, NR = 556, YN = 622, YB = 694, YI = 424, YO = 236, PH = 19, WALL = 16, RC = 54;
-  const BARS = [222, 254, 286, 318, 350, 382, 414, 446, 478], HALF = 62, YE = 494;
+  const d = sim('sim-precipitator', 790);
+  const XC = 520, XL = 370, XR = 670, YT = 162, YF = 560, NL = 484, NR = 556, YN = 634, YB = 706, YI = 436, YO = 248, PH = 19, WALL = 16, RC = 54;
+  const BARS = [234, 266, 298, 330, 362, 394, 426, 458, 490], HALF = 62, YE = 506;
   const rnd = (a, b) => a + Math.random() * (b - a);
   let parts = [], n = { point: 0, plate: 0, out: 0 }, gen = 0, due = 0;
   const V = F.choice(d.controls, { label: '\\text{point electrode}', options: [{ value: 'off', label: 'uncharged' }, { value: 'neg', label: 'negative' }, { value: 'pos', label: 'positive' }], value: 'neg', aria: 'the charge the high DC voltage gives the point electrode', onInput: () => { n = { point: 0, plate: 0, out: 0 }; gen++; } });
@@ -378,7 +378,7 @@ function turn(p, yaw, pitch) {
   const done = (p, key) => { p.done = true; if (p.gen === gen) n[key]++; };
   function step(dt) {
     due -= dt;
-    while (due <= 0) { parts.push({ x: XL - 150, y: YI + rnd(-PH + 7, PH - 7), vx: 200, ph: 'in', q: Math.random() < 0.5 ? 1 : -1, gen, j: rnd(0, 6.3), wait: 0 }); due += 0.3; }
+    while (due <= 0) { parts.push({ x: XL - 150, y: YI + rnd(-PH + 7, PH - 7), vx: 200, ph: 'in', q: Math.random() < 0.5 ? 1 : -1, gen, j: rnd(0, 6.3), wait: 0 }); due += 0.21; }
     const se = V.value === 'neg' ? -1 : V.value === 'pos' ? 1 : 0;
     for (const p of parts) {
       p.j += dt * 3;
@@ -386,8 +386,9 @@ function turn(p, yaw, pitch) {
       if (p.ph === 'gas') {
         /* the gas carries it in from the inlet, up the chamber and out of the outlet */
         p.vx += (30 - p.vx) * Math.min(1, dt * 2.2);
-        const toOut = p.y < YO + 80 ? (XR + 30 - p.x) * 1.5 : 0;
-        let vx = p.vx + toOut + 12 * Math.sin(p.j), vy = -112 + 10 * Math.cos(p.j * 1.3);
+        let vx = p.vx + 12 * Math.sin(p.j), vy = -112 + 10 * Math.cos(p.j * 1.3);
+        /* near the top the gas turns toward the outlet */
+        if (p.y < YO + 70) { const ux = XR + 20 - p.x, uy = YO - p.y, m = Math.hypot(ux, uy) || 1; vx = (130 * ux) / m + 8 * Math.sin(p.j); vy = (130 * uy) / m; }
         if (se && p.y > BARS[0] - 26 && p.y < YE) {
           const pull = p.q * se < 0, dx = XC - p.x;
           if (pull) {
@@ -431,13 +432,13 @@ function turn(p, yaw, pitch) {
     };
     ctx.save(); ctx.lineJoin = 'round'; ctx.lineCap = 'butt';
     ctx.strokeStyle = col; ctx.lineWidth = WALL; runs(); ctx.stroke();
-    ctx.strokeStyle = F.mixColor(PAL.panel, col, 0.42); ctx.lineWidth = WALL - 5; runs(); ctx.stroke();
+    ctx.strokeStyle = F.mixColor(PAL.panel, PAL.muted, 0.55); ctx.lineWidth = WALL - 5; runs(); ctx.stroke();
     ctx.restore();
   }
   function electrode(ctx, col) {
     /* the insulator in the roof, the wire through it, and the barbed crossbars */
     ctx.save(); ctx.fillStyle = F.mixColor(PAL.panel, PAL.muted, 0.45); ctx.strokeStyle = PAL.muted; ctx.lineWidth = 2; ctx.beginPath(); ctx.roundRect(XC - 52, YT - 40, 104, 56, 10); ctx.fill(); ctx.stroke(); ctx.restore();
-    line(ctx, XC, YT - 84, XC, YE, col, 3);
+    line(ctx, XC, YT - 64, XC, YE, col, 3);
     ctx.save(); ctx.fillStyle = col; ctx.fillRect(XC - 5, YT - 34, 10, 44); ctx.restore();
     for (const y of BARS) for (const s of [-1, 1]) {
       line(ctx, XC, y, XC + s * HALF, y, col, 2.5);
@@ -469,13 +470,13 @@ function turn(p, yaw, pitch) {
     }
     /* the book's arrows and labels */
     arrow(ctx, XL - 232, YI, XL - 166, YI, PAL.ink, 3); arrow(ctx, XR + 166, YO, XR + 232, YO, PAL.ink, 3); arrow(ctx, XC, YB + 10, XC, YB + 58, PAL.ink, 3);
-    text(ctx, 'high DC voltage', XC, YT - 104, PAL.ink, { size: 20, align: 'center' });
+    text(ctx, 'high DC voltage', XC - 64, YT - 40, PAL.ink, { size: 20, align: 'right' });
     text(ctx, 'soot-laden smoke', XL - 250, YI - 52, PAL.ink, { size: 20 });
     text(ctx, v === 'off' ? 'gases escape with the soot' : 'soot-free gases escape', XR + 34, YO - 52, PAL.ink, { size: 20 });
     text(ctx, 'soot particles removed here', XC + 22, YB + 40, PAL.ink, { size: 20 });
-    label(ctx, 'plate electrode' + (se ? ` (${sgn(-se)})` : ''), XR + WALL, 336, { side: 'right', size: 20, gap: 44, color: cp });
+    label(ctx, 'plate electrode' + (se ? ` (${sgn(-se)})` : ''), XR + WALL, 348, { side: 'right', size: 20, gap: 44, color: cp });
     label(ctx, 'point electrode' + (se ? ` (${sgn(se)})` : ''), XC + HALF + 4, BARS[6], { side: 'right', size: 20, gap: XR + WALL + 44 - (XC + HALF + 4), color: ce });
-    hits.push({ x: XR + WALL / 2, y: 336, r: 16, name: 'the plate electrode, the grounded wall of the chamber' }, { x: XL - WALL / 2, y: 300, r: 16, name: 'the plate electrode, the grounded wall of the chamber' }, { x: XC, y: 330, r: 14, name: 'the point electrode' }, { x: XC, y: YT - 12, r: 44, name: 'the insulator that holds the point electrode clear of the wall' }, { x: XC, y: YN + 40, r: 34, name: 'the neck, where the dust leaves' });
+    hits.push({ x: XR + WALL / 2, y: 348, r: 16, name: 'the plate electrode, the grounded wall of the chamber' }, { x: XL - WALL / 2, y: 300, r: 16, name: 'the plate electrode, the grounded wall of the chamber' }, { x: XC, y: 330, r: 14, name: 'the point electrode' }, { x: XC, y: YT - 12, r: 44, name: 'the insulator that holds the point electrode clear of the wall' }, { x: XC, y: YN + 40, r: 34, name: 'the neck, where the dust leaves' });
     /* where the particles that have finished since the last switch ended up */
     const tot = n.point + n.plate + n.out, BX = 930, BW = 400;
     const row = (y, name, k, col) => {
@@ -483,10 +484,10 @@ function turn(p, yaw, pitch) {
       ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.07); ctx.fillRect(BX, y - 10, BW, 22); ctx.fillStyle = col; ctx.fillRect(BX, y - 10, tot ? (BW * k) / tot : 0, 22); ctx.strokeStyle = alpha(PAL.ink, 0.5); ctx.lineWidth = 1.5; ctx.strokeRect(BX, y - 10, BW, 22); ctx.restore();
       text(ctx, String(k), BX + BW, y - 26, PAL.ink, { size: 20, weight: 600, align: 'right' });
     };
-    text(ctx, 'soot particles, by where they ended up', BX, 250, PAL.muted, { size: 18 });
-    row(318, 'neutralized on the point electrode', n.point, ce);
-    row(398, 'neutralized on the plate electrode', n.plate, cp);
-    row(478, 'escaped with the gases', n.out, F.el('C'));
+    text(ctx, 'soot particles, by where they ended up', BX, 290, PAL.muted, { size: 18 });
+    row(358, 'neutralized on the point electrode', n.point, ce);
+    row(438, 'neutralized on the plate electrode', n.plate, cp);
+    row(518, 'escaped with the gases', n.out, F.el('C'));
     topline(ctx, v === 'off'
       ? 'With the point electrode uncharged, the soot rides out with the gases, whatever its charge.'
       : `With the point electrode ${v === 'neg' ? 'negative' : 'positive'}, the ${v === 'neg' ? 'positive' : 'negative'} soot particles go to it and the ${v === 'neg' ? 'negative' : 'positive'} ones to the plate electrode.`);

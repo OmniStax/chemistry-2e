@@ -17,7 +17,7 @@ function sig(x, n = 3) {
 }
 const sigText = (x, n) => { const s = sig(x, n); return s.plain ?? `${s.m} × 10${sup(s.e)}`; };
 const sigTex = (x, n) => { const s = sig(x, n); return s.plain ?? `${s.m} \\times 10^{${s.e}}`; };
-const pct = (v) => String(Number((100 * v).toPrecision(2)));
+const pct = (v) => String(Number((100 * v).toPrecision(100 * v >= 10 ? 3 : 2)));
 const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
 
 /* =====================================================================

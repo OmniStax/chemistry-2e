@@ -120,7 +120,7 @@ const clamp01 = (x) => Math.max(0, Math.min(1, x));
     const v0 = reach(which, pKa, ic.lo), v1 = reach(which, pKa, ic.hi), p0 = Math.max(ic.lo, pHof(0, which, pKa));
     const row = KEYS.indexOf(ik), x0 = X(v0), x1 = X(v1);
     if (v1 > 0) {
-      ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.07); ctx.fillRect(x0, Y(ic.hi), Math.max(x1 - x0, 1.5), SY(row) - Y(ic.hi)); ctx.restore();
+      ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.06); ctx.fillRect(x0, Y(ic.hi), Math.max(x1 - x0, 1.5), SY(row) - Y(ic.hi)); ctx.restore();
       line(ctx, x0, Y(Math.min(p0, ic.hi)), x0, SY(row), alpha(PAL.ink, 0.45), 1.5);
       line(ctx, x1, Y(ic.hi), x1, SY(row), alpha(PAL.ink, 0.45), 1.5);
     }
@@ -155,6 +155,7 @@ const clamp01 = (x) => Math.max(0, Math.min(1, x));
       const s = IND[key], w = ind.mix((k) => (k === key ? 1 : 0)), my = (Y(s.lo) + Y(s.hi)) / 2, str = s.name;
       text(ctx, str, G.r - 12, my, PAL.ink, { size: 19, align: 'right', bg: PAL.panel, weight: w > 0.5 ? 600 : 400 });
       lab.block(G.r - 26 - F.measure(ctx, str, { size: 19, weight: 600 }), my - 16, G.r, my + 16);
+      hits.push({ x: G.r - 12 - F.measure(ctx, str, { size: 19, weight: 600 }) / 2, y: my, r: 22, name: `${s.name} changes color from pH ${s.lo.toFixed(1)} to ${s.hi.toFixed(1)}: ${s.words[0]} below, ${s.words[2]} above` });
     });
 
     /* the two curves; the one not in the flask stays, fainter */

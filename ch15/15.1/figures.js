@@ -175,7 +175,10 @@ function beakerGlass(ctx, B) {
     const run = RUNS[start.value], sup0 = start.value === 'super';
     const t = cy.now(), n = run.dissolved(t, 'Ag'), ns = run.nSmooth(t);
     hits = [];
-    const settled = Math.abs(ns / NEQ - 1) < 0.05;
+    /* the ion product on its way to K_sp, from factors as they are written */
+    const x = CEQ * ns / NEQ, cx = x > 1e-7 ? sciTex(x, 3) : '0', xr = x > 1e-7 ? +sig(x, 3)[0] * 10 ** sig(x, 3)[1] : 0;
+    const q = xr * xr, qr = q > 0 ? round2(q) : 0, how = Math.abs(qr / KSP - 1) < 0.01 ? '=' : qr > KSP ? '\\gt' : '\\lt';
+    const settled = how === '=';
     topline(ctx, settled ? 'Ions now leave the solid and return to it at the same rate, so the number dissolved holds steady.'
       : sup0 ? `Ions return to the solid faster than they leave it: ${n} Ag⁺ and ${n} Cl⁻ are still dissolved.`
         : `Ions leave the solid faster than they return: ${n} Ag⁺ and ${n} Cl⁻ are dissolved so far.`);
@@ -201,13 +204,14 @@ function beakerGlass(ctx, B) {
     /* the two rates against time */
     const ax = F.axes(ctx, GB, [0, T], [0, 6], { nx: 0, ny: 0, xl: 'time', xc: C('time'), yl: 'rate', yc: C('rate') });
     const cOut = F.cat(0), cIn = F.cat(1), rateOut = () => RD;
+    /* the precipitation rate of the other start, dashed and faint: from either side it ends on the dissolution rate */
+    F.plot(ctx, ax, RUNS[sup0 ? 'solid' : 'super'].rateIn, alpha(cIn, 0.4), { w: 3, dash: [10, 10] });
+    text(ctx, 'from a supersaturated solution', ax.X(0.62), ax.Y(5.2), sup0 ? PAL.ink : PAL.muted, { size: 18 });
+    text(ctx, 'from the solid in pure water', ax.X(1.75), ax.Y(0.55), sup0 ? PAL.muted : PAL.ink, { size: 18 });
     if (t > 0.01) { F.plot(ctx, ax, rateOut, cOut, { w: 5, x: [0, t] }); F.plot(ctx, ax, run.rateIn, cIn, { w: 5, x: [0, t] }); }
     dot(ctx, ax.X(t), ax.Y(RD), cOut, true, 9); dot(ctx, ax.X(t), ax.Y(run.rateIn(t)), cIn, true, 9);
     hits.push({ x: ax.X(t), y: ax.Y(RD), r: 12, name: 'the rate of dissolution' }, { x: ax.X(t), y: ax.Y(run.rateIn(t)), r: 12, name: 'the rate of precipitation' });
     F.legend(ctx, ax, [{ s: 'dissolution', color: cOut, w: 5 }, { s: 'precipitation', color: cIn, w: 5 }], { corner: 'above' });
-    /* the ion product on its way to K_sp, from factors as they are written */
-    const x = CEQ * ns / NEQ, cx = x > 1e-7 ? sciTex(x, 3) : '0', xr = x > 1e-7 ? +sig(x, 3)[0] * 10 ** sig(x, 3)[1] : 0;
-    const q = xr * xr, qr = q > 0 ? round2(q) : 0, how = Math.abs(qr / KSP - 1) < 0.01 ? '=' : qr > KSP ? '\\gt' : '\\lt';
     ro.set(`[\\text{Ag}^{+}][\\text{Cl}^{-}] = (${hue('concentration', cx)})(${hue('concentration', cx)}) = ${hue('equilibrium-constant', q > 0 ? sciTex(qr) : '0')} ${how} \\kKsp = ${hue('equilibrium-constant', '1.6 \\times 10^{-10}')}`, NOTE, { values: false });
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
@@ -255,10 +259,10 @@ function beakerGlass(ctx, B) {
   F.hover(d.stage, () => hits);
 
   const G = { l: 170, r: 740, t: 150, b: 620 }, XR = [-12, -2], YR = [-10, 0];
-  const BK = { x: 1060, half: 150, top: 142, base: 356, lv: 190 };
+  const BK = { x: 1075, half: 150, top: 142, base: 356, lv: 190 };
   const BAR = { l: 860, r: 1320, y: [452, 566], h: 26 };
   const rel = (q, k) => (Math.abs(q / k - 1) < 0.03 ? '=' : q > k ? '>' : '<');
-  const pct = (f) => (f <= 0 ? '0%' : f >= 1 ? '100%' : f < 0.005 ? 'under 1%' : f > 0.995 ? 'over 99%' : `${Math.round(100 * f)}%`);
+  const pct = (f) => (f <= 0 ? '0%' : f >= 1 ? '100%' : f < 0.01 ? 'under 1%' : f > 0.99 ? 'over 99%' : `${Math.round(100 * f)}%`);
   /* a settled solid across the floor of the beaker, from height y0 up by th, its top uneven */
   function layer(ctx, y0, th, fill) {
     const l = BK.x - BK.half + 8, r = BK.x + BK.half - 8, n = 12;
@@ -338,7 +342,7 @@ function beakerGlass(ctx, B) {
       hits.push({ x: X(xa), y: Y(cl.v), r: 14, name: `as mixed: [Ag⁺] = ${sciText(a)} M, [Cl⁻] = ${sciText(c)} M` });
       lab.block(X(xa) - 12, Y(cl.v) - 12, X(xa) + 12, Y(cl.v) + 12);
       lab.add('as mixed', X(xa), Y(cl.v), 0.71, -0.71, PAL.ink, 19, 16);
-      lab.add('[Ag⁺][Cl⁻] = K_{sp}', X(-3.4), Y(LK.cl + 3.4), -0.71, 0.71, colCl, 20, 22);
+      lab.add('[Ag⁺][Cl⁻] = K_{sp}', X(-2.7), Y(LK.cl + 2.7), -0.6, 0.8, colCl, 20, 26);
     } else {
       line(ctx, X(xa), G.t, X(xa), G.b, alpha(cC, 0.6), 2.5, [4, 8]);
       ['cl', 'br'].forEach((k) => {
@@ -349,14 +353,15 @@ function beakerGlass(ctx, B) {
           line(ctx, X(xt), Y(y0[k]), X(xt), G.b, alpha(col[k], 0.75), 2.5, [10, 8]);
           dot(ctx, X(xt), G.b, col[k], true, 7);
           hits.push({ x: X(xt), y: G.b, r: 12, name: `${NAMES[k]} begins to precipitate at [Ag⁺] = ${sciText(10 ** xt)} M` });
-          lab.block(X(xt) - 8, Y(y0[k]) - 8, X(xt) + 8, Y(y0[k]) + 8);
-          lab.add(`${NAMES[k]} begins`, X(xt), Y(y0[k]), 0.71, -0.71, col[k], 19, 12);
+          /* named just above the axis, the first to begin on the left of its line and the other on the right of its own */
+          const room = thr[first] > XR[0] + 2.4, lft = k === first && room;
+          text(ctx, `${NAMES[k]} begins`, X(xt) + (lft ? -10 : 10), G.b - (k === first && !room ? 44 : 18), col[k], { size: 18, align: lft ? 'right' : 'left', bg: PAL.panel });
         }
         const yk = Math.max(YR[0], Math.log10(left[k]));
         dot(ctx, X(xa), Y(yk), col[k], true, 10);
         hits.push({ x: X(xa), y: Y(yk), r: 14, name: `[${ION[k]}] = ${sciText(left[k])} M: ${NAMES[k]} ${on[k] ? 'is precipitating' : 'has not begun to precipitate'}` });
         lab.block(X(xa) - 12, Y(yk) - 12, X(xa) + 12, Y(yk) + 12);
-        lab.add(ION[k], X(xa), Y(yk), -0.71, -0.71, col[k], 20, 14);
+        lab.add(ION[k], X(xa), Y(yk), 0.71, -0.71, col[k], 20, 14);
       });
       lab.add('AgCl', X(-3.0), Y(LK.cl + 3.0), 0.71, -0.71, colCl, 20, 22);
       lab.add('AgBr', X(-3.6), Y(LK.br + 3.6), -0.71, 0.71, colBr, 20, 22);

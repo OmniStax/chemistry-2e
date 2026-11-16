@@ -220,7 +220,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "The rate increases when the concentration of the acid increases and when the temperature increases. With the iron in one piece at 25 °C, 0.5 M acid takes 27 of the 144 iron atoms in the 6.0 s of a run, 1.0 M takes 45, 1.5 M takes 77 and 2.0 M takes 86: stronger acid puts more hydrogen ions in the vessel, so more of them strike the iron each second and the curve of iron atoms left falls more steeply. With 1.0 M acid, 15 atoms react at 5 °C, 27 at 15 °C, 45 at 25 °C and 94 at 35 °C: in warmer acid a larger share of the ions that strike the iron react, and the ions move a little faster. Both agree with this section: rates usually increase when the concentration of a reactant increases, and reactions typically occur faster at higher temperatures."
+        "solution": "The rate increases when the concentration of the acid increases and when the temperature increases. With the iron in one piece at 25 °C, 0.5 M acid takes 23 of the 144 iron atoms in the 6.0 s of a run, 1.0 M takes 48, 1.5 M takes 70 and 2.0 M takes 91: stronger acid puts more hydrogen ions in the vessel, so more of them strike the iron each second and the curve of iron atoms left falls more steeply. With 1.0 M acid, 16 atoms react at 5 °C, 26 at 15 °C, 48 at 25 °C and 95 at 35 °C, close to twice as many for each 10 °C: in warmer acid a larger share of the ions that strike the iron react, and the ions move a little faster. Both agree with this section: rates usually increase when the concentration of a reactant increases, and reactions typically occur faster at higher temperatures."
       }
     }
   ],

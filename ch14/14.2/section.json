@@ -23,6 +23,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -52,6 +55,10 @@
     {
      "model": "claude-opus-5-5",
      "part": "row values fade clear of the marker; labels spread; caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: the two concentration columns drawn as crossing lines"
     }
    ]
   },

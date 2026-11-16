@@ -37,7 +37,9 @@ const clamp01 = (x) => Math.max(0, Math.min(1, x));
     label: '\\kpH', cls: 'concentration', min: -1, max: 15, step: 0.01, value: 2.92, unit: '', dec: 2,
     aria: 'pH of the solution', specials: [{ at: () => PKW[tc ? tc.value : '25'] / 2, label: 'neutral' }],
   });
-  tc = F.choice(d.controls, { label: '\\kT', options: [{ value: '25', label: '25 °C' }, { value: '80', label: '80 °C' }], value: '25', aria: 'temperature of the solutions' });
+  tc = F.choice(d.controls, { label: '\\kT', options: [{ value: '25', label: '25 °C' }, { value: '80', label: '80 °C' }], value: '25', aria: 'temperature of the solutions',
+    /* at 80 °C the chart's [OH−] axis ends at pH 13.62, where [OH−] is 10 M */
+    onInput: () => ph.range({ min: -1, max: tc.value === '80' ? 13.62 : 15, step: 0.01, unit: '', dec: 2 }) });
   let hits = [];
   F.hover(d.stage, () => hits);
   /* a concentration to three significant figures, so that its logarithm gives back the pH shown: [mantissa, exponent] */

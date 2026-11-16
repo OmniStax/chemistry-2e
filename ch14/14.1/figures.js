@@ -76,7 +76,7 @@ function transfer(ctx, R, k, A, B, eqY) {
   atom(ctx, ac.X, xA, CY, A);
   F.faded(ctx, leave, [0, 0], () => bond(ctx, xA, CY, xH, CY, A));
   F.faded(ctx, left, [0, 0], () => lone(ctx, xA, CY, 0, A));
-  F.faded(ctx, ion, [0, 0], () => (ac.br ? brackets(ctx, xA + ac.box[0], xA + ac.box[1], CY + ac.box[2], CY + ac.box[3], '−') : text(ctx, '−', xA + 52, CY - 56, PAL.ink, { size: 36, weight: 600 })));
+  F.faded(ctx, ion, [0, 0], () => (ac.br ? brackets(ctx, xA + ac.box[0], xA + ac.box[1], CY + ac.box[2], CY + ac.box[3], '−') : text(ctx, '−', xA + 50, CY - 52, PAL.ink, { size: 36, weight: 600 })));
   /* the base and what it becomes */
   if (ba.ring) ring(ctx, xB, B);
   else {
@@ -205,11 +205,11 @@ const RX = {
    is pure water, log sqrt(Kw). Still: the relation answers its controls.
 ===================================================================== */
 (function () {
-  const H = 520, d = sim('sim-kw', H);
+  const H = 640, d = sim('sim-kw', H);
   const KW = { 25: 1.0e-14, 40: 2.9e-14, 60: 9.3e-14, 80: 2.4e-13, 100: 5.6e-13 };
   const LOG = Object.fromEntries(Object.entries(KW).map(([t, k]) => [t, Math.log10(k)]));
   const ro = F.readout(d);
-  const G = { l: 210, r: 1250, t: 112, b: 420 };
+  const G = { l: 210, r: 1250, t: 112, b: 540 };
   const SUP = { '-': '⁻', 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴', 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹' };
   const sup = (n) => String(n).split('').map((c) => SUP[c]).join('');
   const parts = (v) => { let e = Math.floor(Math.log10(v)), m = +(v / 10 ** e).toFixed(1); if (m >= 10) { m = 1; e += 1; } return [m, e]; };
@@ -236,7 +236,7 @@ const RX = {
       xl: '[H_{3}O⁺] (M)', xc: cc, yl: '[OH⁻] (M)', yc: cc });
     const seg = (lk) => [Math.max(-14, lk), Math.min(0, lk + 14)];
     line(ctx, g.X(-14), g.Y(-14), g.X(0), g.Y(0), alpha(PAL.ink, 0.35), 2.5, [10, 10]);
-    text(ctx, '[OH⁻] = [H_{3}O⁺]', g.X(-3.6) + 14, g.Y(-3.6) + 8, PAL.muted, { size: 17, base: 'top' });
+    text(ctx, '[OH⁻] = [H_{3}O⁺]', g.X(-3.6) + 14, g.Y(-3.6) + 8, PAL.muted, { size: 20, base: 'top' });
     const warm = t !== '25' || T.k < 1;
     if (warm) {
       const [a, b] = seg(LOG[25]);
@@ -246,7 +246,7 @@ const RX = {
     const [a, b] = seg(L);
     F.curve(ctx, (u) => L - u, a, b, g.X, g.Y, ck, 5);
     const lx = x > L / 2 ? L + 3 : L + 10.5;   /* the value on the half of the line the point is not on */
-    text(ctx, `$\\kKw = ${sciTex(K)}$`, g.X(lx) + 12, g.Y(L - lx) - 30, ck, { size: 22, tex: true, bg: PAL.panel });
+    text(ctx, `$\\kKw = ${sciTex(K)}$`, g.X(lx) + 12, g.Y(L - lx) - 30, ck, { size: 24, tex: true, bg: PAL.panel });
     F.dot(ctx, g.X(L / 2), g.Y(L / 2), ck, false, 10);
     const y = L - x, inside = y <= 0;
     if (inside) {
@@ -256,10 +256,10 @@ const RX = {
     const p = F.pinned(ctx, G, g.X, g.Y, x, y, cc);
     const Hv = round2(10 ** x), Ov = round2(K / Hv);
     /* each value on its drop line at the frame's edge, or beside the point where the point is near that edge */
-    const sH = `${sciTxt(Hv)} M`, sO = `${sciTxt(Ov)} M`, wO = F.measure(ctx, sO, { size: 17, weight: 600 });
+    const sH = `${sciTxt(Hv)} M`, sO = `${sciTxt(Ov)} M`, wO = F.measure(ctx, sO, { size: 21, weight: 600 });
     const xLow = G.b - p.y < 56, yLeft = p.x - G.l < wO + 40;
-    text(ctx, sH, Math.min(Math.max(p.x, G.l + 80), G.r - 80), xLow ? p.y - 30 : G.b - 18, cc, { size: 17, weight: 600, align: 'center', bg: PAL.panel });
-    text(ctx, sO, yLeft ? p.x + 18 : G.l + 12, Math.min(Math.max(p.y, G.t + 30), G.b - 46) + (yLeft ? -26 : 0), cc, { size: 17, weight: 600, bg: PAL.panel });
+    text(ctx, sH, Math.min(Math.max(p.x, G.l + 80), G.r - 80), xLow ? p.y - 30 : G.b - 18, cc, { size: 21, weight: 600, align: 'center', bg: PAL.panel });
+    text(ctx, sO, yLeft ? p.x + 18 : G.l + 12, Math.min(Math.max(p.y, G.t + 30), G.b - 46) + (yLeft ? -26 : 0), cc, { size: 21, weight: 600, bg: PAL.panel });
     hits = [{ x: g.X(L / 2), y: g.Y(L / 2), r: 16, name: `pure water at ${t} °C` },
       { x: p.x, y: p.y, r: 16, name: `the solution: [H₃O⁺] = ${sciTxt(Hv)} M, [OH⁻] = ${sciTxt(Ov)} M` }];
     const r = Hv / Ov;

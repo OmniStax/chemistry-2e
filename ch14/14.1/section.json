@@ -24,6 +24,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -33,7 +36,10 @@
  "figures": [
   {
    "id": "fig-water-ammonia",
-   "kind": "figure",
+   "kind": "sim",
+   "originals": [
+    "/media/ch14/CNX_Chem_14_01_conjugate_img.jpg"
+   ],
    "draws": [],
    "ai": [
     {
@@ -44,6 +50,10 @@
     {
      "model": "claude-opus-5-5",
      "part": "reverted to the book's image"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "new moving figure: the proton crossing and returning in three reactions"
     }
    ]
   },
@@ -81,7 +91,7 @@
   },
   {
    "id": "fig-water-water",
-   "kind": "figure",
+   "kind": "sim",
    "originals": [
     "/media/ch14/CNX_Chem_14_01_Water_img.jpg"
    ],
@@ -95,6 +105,10 @@
     {
      "model": "claude-opus-5-5",
      "part": "kept; caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt moving: the proton passes between two water molecules and back"
     }
    ]
   },
@@ -120,6 +134,20 @@
   }
  ],
  "referents": [
+  {
+   "id": "pair-acid",
+   "label": "the acid and its conjugate base",
+   "figures": [
+    "fig-water-ammonia"
+   ]
+  },
+  {
+   "id": "pair-base",
+   "label": "the base and its conjugate acid",
+   "figures": [
+    "fig-water-ammonia"
+   ]
+  },
   {
    "id": "water-acid",
    "label": "the water molecule that acts as the acid, and its conjugate base",

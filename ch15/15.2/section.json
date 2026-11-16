@@ -23,6 +23,9 @@
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-fable-5-2"
       }
     ]
   },
@@ -95,6 +98,17 @@
       ]
     },
     {
+      "id": "sim-lewis-pair",
+      "kind": "sim",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-fable-5-2",
+          "part": "built: the donated lone pair followed into the new bond, five reactions"
+        }
+      ]
+    },
+    {
       "id": "fig-displace",
       "kind": "figure",
       "draws": [],
@@ -146,6 +160,10 @@
         {
           "model": "claude-opus-5-5",
           "part": "real beaker, opens at 0.10 M ammonia, caption cut"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt on the K_sp plane, solution's contents listed, K_f in the readout"
         }
       ]
     }

@@ -22,6 +22,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -45,6 +48,10 @@
     {
      "model": "claude-opus-5-5",
      "part": "slider fmt and example circles; caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: percent reacted against K_c/c₀, 5% stretch, both examples, bar"
     }
    ]
   }

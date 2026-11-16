@@ -23,19 +23,20 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
 /* =====================================================================
    SIM: the equilibrium of A ⇌ B + C from A alone, K_c = x²/(c₀ − x),
    for the two decompositions the section solves (PCl₅, Example 13.9;
-   HCN, Example 13.10). Above, the ICE table with the live numbers;
-   below, on log–log axes, Q_c of the mixture after a change x (solid,
-   rising to the vertical x = c₀), the approximation x²/c₀ (dashed), and
-   the K_c level. The exact x is the positive root of the book's
-   quadratic, written as 2Kc₀/(K + √(K² + 4Kc₀)) so that it keeps its
-   digits at K = 10⁻¹⁰; the approximate x is √(K c₀). Axes fixed: x from
-   10⁻⁸ to 10 M, Q_c from 10⁻¹² to 10²; at the slider extremes (K 10⁻¹⁰
-   to 10, c₀ 0.01 to 2.00 M) the exact x runs from 10⁻⁶ to 2 M and the
-   approximate x to 4.5 M, so every state stays inside. Still: the
-   arithmetic of an equilibrium has no clock.
+   HCN, Example 13.10). Top: the book's ICE table with the live numbers.
+   Below: the share of A that reacts, x/c₀, against K_c/c₀, the only
+   thing it depends on: x/c₀ = 2r/(r + √(r² + 4r)) with r = K_c/c₀ (the
+   positive root of the book's quadratic, in a form that keeps its digits
+   at r = 10⁻¹⁰), solid; the approximation c₀ − x ≈ c₀ gives √r, dashed.
+   The bar on the right shares the percent axis: the slice is x, the rest
+   the A left. Tinted: where x is under 5% of c₀ (r < 0.05²/0.95), the
+   limit Section 14.3 uses. Axes fixed: K_c/c₀ from 10⁻¹⁰ to 10² (the
+   sliders reach exactly that: K_c 10⁻¹⁰ to 1, c₀ 0.01 to 1.00 M), 0 to
+   100%; the approximation passes 100% at r = 1 and is pinned there.
+   Still: the arithmetic of an equilibrium has no clock.
 ===================================================================== */
 (function () {
-  const d = sim('sim-small-x', 720);
+  const d = sim('sim-small-x', 780);
   const RX = {
     pcl5: { K: 0.0211, c0: 1.0, sp: ['PCl_{5}', 'PCl_{3}', 'Cl_{2}'], a: '[\\text{PCl}_{5}]_{i}', aria: 'initial concentration of PCl5' },
     hcn: { K: 4.9e-10, c0: 0.15, sp: ['HCN', 'H⁺', 'CN⁻'], a: '[\\text{HCN}]_{i}', aria: 'initial concentration of HCN' },
@@ -45,15 +46,17 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     options: [{ value: 'pcl5', label: 'PCl₅ ⇌ PCl₃ + Cl₂' }, { value: 'hcn', label: 'HCN ⇌ H⁺ + CN⁻' }],
     onInput: () => { const r = RX[pick.value]; K.set(Math.log10(r.K)); c0.set(r.c0); c0.relabel(hue('concentration', r.a), r.aria); },
   });
-  const K = ctl(d.controls, { label: '\\kKc', cls: 'equilibrium-constant', min: -10, max: 1, step: 0.001, value: Math.log10(4.9e-10), fmt: (lg) => sigText(10 ** lg), specials: [{ at: () => Math.log10(RX[pick.value].K), label: 'the example' }], aria: 'equilibrium constant Kc, on a logarithmic scale' });
-  const c0 = ctl(d.controls, { label: hue('concentration', RX.hcn.a), cls: 'concentration', min: 0.01, max: 2, step: 0.01, value: 0.15, unit: 'M', dec: 2, specials: [{ at: () => RX[pick.value].c0, label: 'the example' }], aria: RX.hcn.aria });
+  const K = ctl(d.controls, { label: '\\kKc', cls: 'equilibrium-constant', min: -10, max: 0, step: 0.001, value: Math.log10(4.9e-10), fmt: (lg) => sigText(10 ** lg), specials: [{ at: () => Math.log10(RX[pick.value].K), label: 'the example' }], aria: 'equilibrium constant Kc, on a logarithmic scale' });
+  const c0 = ctl(d.controls, { label: hue('concentration', RX.hcn.a), cls: 'concentration', min: 0.01, max: 1, step: 0.01, value: 0.15, unit: 'M', dec: 2, specials: [{ at: () => RX[pick.value].c0, label: 'the example' }], aria: RX.hcn.aria });
   const ro = F.readout(d);
   let hits = [];
   F.hover(d.stage, () => hits);
 
-  const COLS = [150, 520, 770, 1020, 1270], ROWS = [124, 164, 204, 244];
-  const B = { l: 200, r: 1300, t: 340, b: 640 };
-  const LX = [-8, 1], LY = [-12, 2];
+  const COLS = [110, 470, 743, 1016, 1290], ROWS = [136, 176, 216, 256];
+  const B = { l: 130, r: 900, t: 372, b: 712 }, BAR = { l: 1000, r: 1080 };
+  const LX = -10, DEC = 12, LIM = 0.05, RLIM = (LIM * LIM) / (1 - LIM);
+  const share = (r) => (2 * r) / (r + Math.sqrt(r * r + 4 * r));
+  const EX = [{ n: '13.10', r: 4.9e-10 / 0.15, what: 'HCN, K_c = 4.9 × 10⁻¹⁰, 0.15 M', ux: 0, uy: -1, gap: 48 }, { n: '13.9', r: 0.0211, what: 'PCl₅, K_c = 0.0211, 1.00 M', ux: 0.86, uy: 0.5, gap: 30 }];
   function table(ctx, r, c, x) {
     const cC = C('concentration'), mid = (i) => (COLS[i] + COLS[i + 1]) / 2;
     for (let i = 0; i < 5; i++) line(ctx, COLS[i], ROWS[0] - 20, COLS[i], ROWS[3] + 20, PAL.rule, 1.5);
@@ -61,59 +64,83 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     r.sp.forEach((s, i) => text(ctx, s, mid(i + 1), ROWS[0], PAL.ink, { size: 22, weight: 600, align: 'center' }));
     text(ctx, '⇌', COLS[2], ROWS[0], PAL.ink, { size: 24, align: 'center', bg: PAL.panel });
     text(ctx, '+', COLS[3], ROWS[0], PAL.ink, { size: 22, align: 'center', bg: PAL.panel });
-    ['Initial concentration (M)', 'Change (M)', 'Equilibrium concentration (M)'].forEach((s, j) => text(ctx, s, COLS[0] + 16, ROWS[j + 1], PAL.ink, { size: 19, weight: 600 }));
-    const cs = c.toFixed(2), xs = sigText(x);
-    const cells = [[cs, '0', '0'], ['−x = −' + xs, '+x = ' + xs, '+x = ' + xs], [`${cs} − x = ${sigText(c - x)}`, 'x = ' + xs, 'x = ' + xs]];
-    cells.forEach((row, j) => row.forEach((s, i) => text(ctx, s, mid(i + 1), ROWS[j + 1], cC, { size: 19, align: 'center' })));
+    ['Initial concentration (M)', 'Change (M)', 'Equilibrium concentration (M)'].forEach((s, j) => text(ctx, s, COLS[0] + 16, ROWS[j + 1], PAL.ink, { size: 20, weight: 600 }));
+    const cs = c.toFixed(2), xs = sigText(x), v = (s) => [s, cC];
+    const cells = [[[v(cs)], [v('0')], [v('0')]], [['−x = ', v('−' + xs)], ['+x = ', v('+' + xs)], ['+x = ', v('+' + xs)]], [[`${cs} − x = `, v(sigText(c - x))], ['x = ', v(xs)], ['x = ', v(xs)]]];
+    cells.forEach((row, j) => row.forEach((parts, i) => F.rich(ctx, parts, mid(i + 1), ROWS[j + 1], { size: 20, align: 'center' })));
   }
   function draw() {
     const { ctx, H } = begin(d.c);
-    const r = RX[pick.value], k = 10 ** K.v, c = c0.v, lk = K.v, lc = Math.log10(c);
-    const x = (2 * k * c) / (k + Math.sqrt(k * k + 4 * k * c)), xa = Math.sqrt(k * c);
-    const cK = C('equilibrium-constant'), cC = C('concentration');
-    const spA = `[${r.sp[0]}]_{i}`, cs = c.toFixed(2);
-    const lines = topline(ctx, `$x$ is ${pct(x / c)}% of ${spA}, and the approximation $${cs} - x \\approx ${cs}$ puts $x$ ${pct(xa / x - 1)}% too high.`);
+    hits = [];
+    const r = RX[pick.value], k = 10 ** K.v, c = c0.v, ratio = k / c;
+    const fx = share(ratio), fa = Math.sqrt(ratio), x = fx * c, xa = fa * c, ok = fx < LIM;
+    const cC = C('concentration'), guide = alpha(PAL.ink, 0.4);
+    const A = r.sp[0], spA = `[${A}]_{i}`, cs = c.toFixed(2), xs = sigText(x);
+    const lines = topline(ctx, ok
+      ? `$x$ is ${pct(fx)}% of ${spA}, so $${cs} - x \\approx ${cs}$ is justified: it puts $x$ ${pct(fa / fx - 1)}% too high.`
+      : `$x$ is ${pct(fx)}% of ${spA}, too much to neglect: $${cs} - x \\approx ${cs}$ puts $x$ ${pct(fa / fx - 1)}% too high.`);
     const lab = F.labeller(ctx, H, { headline: lines });
     table(ctx, r, c, x);
     lab.block(COLS[0], ROWS[0] - 20, COLS[4], ROWS[3] + 20);
 
-    /* the decades are counted from the lower ends, so the axes draw no zero lines at x = 1 M and Q_c = 1 */
-    const a = F.axes(ctx, B, [0, LX[1] - LX[0]], [0, LY[1] - LY[0]], { nx: 9, ny: 7, fx: (v) => pow10(v + LX[0]), fy: (v) => pow10(v + LY[0]), xl: 'x (M)', yl: 'Q_{c}', yc: cK });
-    lab.block(B.l - 120, B.t - 44, B.l + 60, B.t - 6); lab.block(B.l - 120, B.t, B.l - 4, B.b + 40); lab.block(B.l, B.b + 4, B.r + 10, B.b + 76);
-    const X = (s) => a.X(s - LX[0]), Y = (s) => a.Y(s - LY[0]), L = Math.log10;
-    ctx.save(); ctx.beginPath(); ctx.rect(B.l, B.t, B.r - B.l, B.b - B.t); ctx.clip();
-    const xc = X(lc);
-    line(ctx, xc, B.t, xc, B.b, cC, 2.5, [10, 10]);
-    line(ctx, X(LX[0]), Y(2 * LX[0] - lc), X(LX[1]), Y(2 * LX[1] - lc), PAL.muted, 3, [14, 9]);
-    F.curve(ctx, (s) => { const v = 10 ** s; return Math.min(4, L((v * v) / (c - v))); }, LX[0], lc - 1e-7, X, Y, cK, 5, 700);
-    const yK = Y(lk);
-    line(ctx, B.l, yK, B.r, yK, cK, 3, [10, 10]);
-    const pe = { x: X(L(x)), y: yK }, pa = { x: X(L(xa)), y: yK };
-    line(ctx, pa.x, yK, pa.x, B.b, alpha(PAL.ink, 0.4), 2, [4, 8]);
-    line(ctx, pe.x, yK, pe.x, B.b, alpha(PAL.ink, 0.4), 2, [4, 8]);
-    ctx.restore();
-    dot(ctx, pa.x, pa.y, PAL.ink, false, 11);
-    dot(ctx, pe.x, pe.y, PAL.ink, true, 8);
-    lab.block(pe.x - 14, yK - 14, pa.x + 14, yK + 14);
+    /* the decades are counted from the left end, so the axes draw no zero line at K_c/c₀ = 1 */
+    const a = F.axes(ctx, B, [0, DEC], [0, 100], { nx: 6, ny: 5, fx: (v) => pow10(v + LX), fy: (v) => v + '%', xl: `K_{c} / ${spA}`, yl: `x as a percent of ${spA}` });
+    const X = (ra) => a.X(Math.log10(ra) - LX), Y = a.Y, y0 = Y(0), yT = Y(100), y5 = Y(100 * LIM);
+    /* where x stays under 5% of the initial concentration */
+    const xl = X(RLIM);
+    ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.06); ctx.fillRect(B.l, B.t, xl - B.l, B.b - B.t); ctx.restore();
+    line(ctx, xl, B.t, xl, y5, PAL.muted, 2, [10, 10]);
+    line(ctx, B.l, y5, BAR.r, y5, PAL.muted, 2, [10, 10]);
+    text(ctx, `x under 5% of ${spA}`, xl - 16, Y(46), PAL.muted, { size: 20, weight: 600, align: 'right' });
+    lab.block(xl - 300, Y(46) - 16, xl, Y(46) + 16);
 
-    /* the names: the K_c level at its left end, each curve where it runs clear of the other, the vertical at its foot */
-    const up = lk > -4 ? -1 : 1;
-    lab.add(`K_{c} = ${sigText(k)}`, B.l + 16, yK, 0.5, -0.87 * up, cK, 20, 24);
-    const q = lk > -0.5 ? -2 : 1, xq = (-(10 ** q) + Math.sqrt(10 ** (2 * q) + 4 * 10 ** q * c)) / 2;
-    lab.add(`x²/(${cs} − x)`, X(L(xq)), Y(q), -1, 0, cK, 20, 22);
-    const q2 = Math.abs(lk + 3) < 1.5 ? -6 : -3, sq = (q2 + lc) / 2;
-    lab.add(`x²/${cs}`, X(sq), Y(q2), 0.71, 0.71, PAL.muted, 20, 26);
-    lab.add(spA, xc, B.b - 18, 1, 0, cC, 20, 16);
+    F.plot(ctx, a, (s) => 100 * Math.sqrt(10 ** (s + LX)), PAL.muted, { w: 3, dash: [10, 10] });
+    F.plot(ctx, a, (s) => 100 * share(10 ** (s + LX)), PAL.ink, { w: 5 });
+    const key = F.legend(ctx, a, [{ s: 'x from the quadratic formula', color: PAL.ink, w: 5 }, { s: `x if ${cs} − x ≈ ${cs}`, color: PAL.muted, w: 3, dash: [10, 10] }], { corner: 'tl' });
+    lab.place(key);
+
+    /* the two worked examples, rings on the curve */
+    EX.forEach((e) => {
+      const ex = X(e.r), ey = Y(100 * share(e.r));
+      ctx.save(); ctx.strokeStyle = PAL.muted; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(ex, ey, 14, 0, 2 * Math.PI); ctx.stroke(); ctx.restore();
+      lab.add('Example ' + e.n, ex, ey, e.ux, e.uy, PAL.muted, 18, e.gap);
+      hits.push({ x: ex, y: ey, r: 16, name: `Example ${e.n}: ${e.what}` });
+    });
+
+    /* this mixture: the exact x (filled) and the approximate x (hollow), each carried across to the bar */
+    const px = X(ratio), pe = Y(100 * fx), over = fa > 1, pa = Y(100 * Math.min(fa, 1));
+    line(ctx, px, Math.min(pe, pa), px, y0, guide, 2, [4, 8]);
+    line(ctx, px, pe, BAR.l, pe, guide, 2, [4, 8]);
+
+    /* the bar: all of the A put in, on the graph's percent scale; the slice is x */
+    ctx.save();
+    ctx.fillStyle = alpha(cC, 0.16); ctx.fillRect(BAR.l, yT, BAR.r - BAR.l, pe - yT);
+    ctx.fillStyle = alpha(cC, 0.85); ctx.fillRect(BAR.l, pe, BAR.r - BAR.l, y0 - pe);
+    ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.strokeRect(BAR.l, yT, BAR.r - BAR.l, y0 - yT);
+    ctx.restore();
+    if (!over) { line(ctx, px, pa, BAR.l, pa, PAL.muted, 2, [4, 8]); line(ctx, BAR.l - 8, pa, BAR.r + 8, pa, PAL.muted, 3); }
+    text(ctx, '5%', (B.r + BAR.l) / 2, y5, PAL.muted, { size: 17, weight: 600, align: 'center', bg: PAL.panel });
+    F.rich(ctx, [spA + ' = ', [cs + ' M', cC]], BAR.l, B.t - 24, { size: 20, weight: 600 });
+    const ySl = Math.min((pe + y0) / 2, y0 - 14), yRem = Math.min(Math.max((yT + pe) / 2, yT + 14), ySl - 30);
+    F.rich(ctx, [`[${A}] = `, [sigText(c - x) + ' M', cC]], BAR.r + 18, yRem, { size: 19 });
+    F.rich(ctx, [`[${r.sp[1]}] = [${r.sp[2]}] = `, [xs + ' M', cC]], BAR.r + 18, ySl, { size: 19 });
+
+    dot(ctx, px, pa, PAL.ink, false, 11);
+    if (over) { F.arrow(ctx, px, yT - 16, px, yT - 44, PAL.muted, 3); text(ctx, `${pct(fa)}%`, px - 14, yT - 30, PAL.muted, { size: 17, weight: 600, align: 'right' }); }
+    dot(ctx, px, pe, PAL.ink, true, 8);
+    lab.block(px - 14, Math.min(pe, pa) - 14, px + 14, y0);
     lab.flush();
 
-    hits = [
-      { x: pe.x, y: pe.y, r: 14, name: `x = ${sigText(x)} M, the positive root of the quadratic` },
-      { x: pa.x, y: pa.y, r: 14, name: `x ≈ √(K_c × ${cs}) = ${sigText(xa)} M` },
-      { x: xc, y: B.t + 20, r: 16, name: `x cannot exceed ${spA.replace(/_\{(\w+)\}/g, '$1')} = ${cs} M` },
-    ];
-    const xt = sigTex(x), ct = hue('concentration', cs);
-    ro.set(`\\kKc = \\frac{(x)(x)}{${ct}\\,-\\,x} = \\frac{(\\mk{x1}{${xt}})(\\mk{x2}{${xt}})}{\\mk{c}{${ct}}\\,-\\,\\mk{x3}{${xt}}} = \\mk{K}{${hue('equilibrium-constant', sigTex(k))}}`,
-      `If $x \\ll ${cs}$, then $x \\approx \\sqrt{\\kKc \\times ${cs}}$ = ${sigText(xa)} M.`);
+    hits.push(
+      { x: px, y: pe, r: 14, name: `x = ${xs} M from the quadratic formula, ${pct(fx)}% of ${cs} M` },
+      { x: px, y: pa, r: 14, name: `x ≈ √(K_c × ${cs}) = ${sigText(xa)} M, ${pct(fa)}% of ${cs} M` },
+      { x: (BAR.l + BAR.r) / 2, y: (yT + pe) / 2, r: Math.max(12, Math.min(35, (pe - yT) / 2)), name: `${A} left at equilibrium, ${sigText(c - x)} M` },
+      { x: (BAR.l + BAR.r) / 2, y: Math.min((pe + y0) / 2, y0 - 6), r: Math.max(12, Math.min(35, (y0 - pe) / 2)), name: `${A} that reacted, x = ${xs} M` },
+      { x: xl, y: (B.t + y5) / 2, r: 14, name: `left of this line x is under 5% of ${spA.replace(/_\{(\w+)\}/g, '$1')}` },
+    );
+    const xt = sigTex(x), ct = hue('concentration', cs), kt = hue('equilibrium-constant', sigTex(k));
+    ro.set(`\\kKc = \\frac{(x)(x)}{${ct}\\,-\\,x} = \\frac{(\\mk{x1}{${xt}})(\\mk{x2}{${xt}})}{\\mk{c}{${ct}}\\,-\\,\\mk{x3}{${xt}}} = \\mk{K}{${kt}} \\\\ `
+      + `x \\approx \\sqrt{\\kKc \\times ${ct}} = \\sqrt{\\mk{K2}{${kt}} \\times \\mk{c2}{${ct}}} = \\mk{xa}{${sigTex(xa)}}\\ \\text{M}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

@@ -7,69 +7,191 @@ const still = (d, draw) => register(d.fig, { update: () => {}, draw });
 const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
 const RAD = Math.PI / 180;
 
-/* ---------- Lewis structures, flat, each atom in its molecule's colour ----------
-   atoms: [{ s, x, y, c, lp: [angles in degrees, 0 to the right, 90 up] }]; bonds: [[i, j, order, colour]] */
-function lewis(ctx, atoms, bonds) {
-  const gap = 19;
-  bonds.forEach(([i, j, order, c]) => {
-    const a = atoms[i], b = atoms[j], dx = b.x - a.x, dy = b.y - a.y, L = Math.hypot(dx, dy), ux = dx / L, uy = dy / L;
-    (order === 2 ? [-5, 5] : [0]).forEach((o) => line(ctx, a.x + ux * gap - uy * o, a.y + uy * gap + ux * o, b.x - ux * gap - uy * o, b.y - uy * gap + ux * o, c, 3));
-  });
-  atoms.forEach((a) => {
-    text(ctx, a.s, a.x, a.y + 1, a.c, { size: 28, weight: 600, align: 'center' });
-    (a.lp ?? []).forEach((ang) => {
-      const cx = Math.cos(ang * RAD), cy = -Math.sin(ang * RAD), r = 25;
-      [-6.5, 6.5].forEach((o) => F.dot(ctx, a.x + cx * r - cy * o, a.y + cy * r + cx * o, a.c, true, 3.5));
-    });
-  });
+/* =====================================================================
+   One proton passing from an acid to a base and back, drawn as Lewis
+   structures: the two species stay where they are and become their
+   conjugates in place, so each conjugate pair is one thing before and
+   after. The pair the proton leaves keeps the bonding electrons as a
+   new lone pair; the lone pair of the base that faces the proton
+   becomes the new bond. Beneath, the book's equation in its own order,
+   each acid joined to its conjugate base by a bracket as the book's
+   first image joins them; the side present now is at full strength and
+   the half of the equilibrium arrow now running is the dark one.
+   The clock is schematic (a real transfer takes about a picosecond).
+===================================================================== */
+const L = 140, TRAVEL = 270, SZ = 52, CY = 276, RING = 110, RH = 76;
+const smooth = F.ease.smooth, ramp = (k, a, b) => smooth(Math.min(1, Math.max(0, (k - a) / (b - a))));
+function atom(ctx, s, x, y, c, size = SZ) { text(ctx, s, x, y + 1, c, { size, weight: 600, align: 'center' }); }
+function bond(ctx, x1, y1, x2, y2, c, order = 1, GAP = 34) {
+  const dx = x2 - x1, dy = y2 - y1, D = Math.hypot(dx, dy), ux = dx / D, uy = dy / D;
+  (order === 2 ? [-7, 7] : [0]).forEach((o) => line(ctx, x1 + ux * GAP - uy * o, y1 + uy * GAP + ux * o, x2 - ux * GAP - uy * o, y2 - uy * GAP + ux * o, c, 4));
+}
+function lone(ctx, x, y, ang, c) {
+  const cx = Math.cos(ang * RAD), cy = -Math.sin(ang * RAD), r = 44;
+  [-10, 10].forEach((o) => F.dot(ctx, x + cx * r - cy * o, y + cy * r + cx * o, c, true, 5.5));
 }
 /* square brackets round an ion, its charge at the top right */
 function brackets(ctx, x1, x2, y1, y2, q) {
   [[x1, 1], [x2, -1]].forEach(([x, s]) => {
-    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.beginPath();
-    ctx.moveTo(x + s * 12, y1); ctx.lineTo(x, y1); ctx.lineTo(x, y2); ctx.lineTo(x + s * 12, y2); ctx.stroke(); ctx.restore();
+    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3.5; ctx.beginPath();
+    ctx.moveTo(x + s * 14, y1); ctx.lineTo(x, y1); ctx.lineTo(x, y2); ctx.lineTo(x + s * 14, y2); ctx.stroke(); ctx.restore();
   });
-  text(ctx, q, x2 + 14, y1 + 6, PAL.ink, { size: 26, weight: 600 });
+  text(ctx, q, x2 + 12, y1 + 4, PAL.ink, { size: 36, weight: 600 });
 }
-/* the equilibrium arrow, two half-arrows; back > 1 draws the reverse half longer */
-function equilibrium(ctx, x1, x2, y, back = 1) {
-  const ink = PAL.ink, gap = 6, m = (x1 + x2) / 2, half = (x2 - x1) / 2, f = half / Math.max(1, back), b = half;
-  line(ctx, m - f, y - gap, m + f, y - gap, ink, 3); line(ctx, m + f, y - gap, m + f - 16, y - gap - 10, ink, 3);
-  line(ctx, m - b, y + gap, m + b, y + gap, ink, 3); line(ctx, m - b, y + gap, m - b + 16, y + gap + 10, ink, 3);
-}
-/* the book's second row: formulas in ink, each with its role beneath in its pair's colour */
-function equationRow(ctx, y, items, plus, arrowAt, back) {
-  items.forEach(([s, x, role, c]) => {
-    text(ctx, s, x, y, PAL.ink, { size: 26, align: 'center' });
-    text(ctx, role, x, y + 40, c, { size: 22, weight: 600, align: 'center' });
+/* the acids: the atom X that holds the proton, what else is on it, and the box of its ion.
+   The proton always leaves to the right, toward the base. */
+const ACID = {
+  water: { X: 'O', H: [[0, -1]], lp: [180, 270], box: [-72, 72, -L - 38, 70], br: true, w: [-66, 66] },
+  hf: { X: 'F', H: [], lp: [90, 180, 270], box: [-72, 72, -72, 70], br: false, w: [-66, 66] },
+};
+/* the bases: the atom Y whose lone pair faces the proton; box is the ion's, w the molecule's reach right of Y */
+const BASE = {
+  ammonia: { Y: 'N', H: [[0, -1], [1, 0], [0, 1]], lp: [], box: [-L - 40, L + 40, -L - 38, L + 38], mid: 0, w: L + 40 },
+  water: { Y: 'O', H: [[0, -1], [1, 0]], lp: [270], box: [-L - 40, L + 40, -L - 38, 70], mid: 0, w: L + 40 },
+  pyridine: { Y: 'N', ring: true, lp: [], box: [-L - 40, 2 * RING + RH + 56, -(RING + RH + 14) * 0.866 - 36, (RING + RH + 14) * 0.866 + 36], mid: RING, w: 2 * RING + RH + 56 },
+};
+function ring(ctx, xN, c) {
+  const cx = xN + RING, v = [180, 120, 60, 0, -60, -120].map((a) => [cx + RING * Math.cos(a * RAD), CY - RING * Math.sin(a * RAD), a]);
+  /* the book's Kekulé structure: N=C, C–C, C=C, C–C, C=C, C–N round the ring from N upward */
+  v.forEach((p, i) => { const q = v[(i + 1) % 6]; bond(ctx, p[0], p[1], q[0], q[1], c, i % 2 ? 1 : 2, 30); });
+  v.forEach((p, i) => {
+    atom(ctx, i ? 'C' : 'N', p[0], p[1], c, i ? 46 : SZ);
+    if (!i) return;
+    const hx = cx + (RING + RH + 14) * Math.cos(p[2] * RAD), hy = CY - (RING + RH + 14) * Math.sin(p[2] * RAD);
+    bond(ctx, p[0], p[1], hx, hy, c, 1, 30); atom(ctx, 'H', hx, hy, c, 46);
   });
-  plus.forEach((x) => text(ctx, '+', x, y, PAL.ink, { size: 28, align: 'center' }));
-  equilibrium(ctx, arrowAt[0], arrowAt[1], y, back);
 }
+/* the scene at progress k (0 the reactants, 1 the products); returns the hover names */
+function transfer(ctx, R, k, A, B, eqY) {
+  const ac = ACID[R.acid], ba = BASE[R.base];
+  /* the scene and its names stand midway between the headline and the equation */
+  const dy = (70 + eqY - 44) / 2 - (CY + (Math.min(ac.box[2], ba.box[2]) + Math.max(ac.box[3], ba.box[3]) + 58) / 2);
+  ctx.save(); ctx.translate(0, dy);
+  const span = -ac.w[0] + 2 * L + TRAVEL + ba.w, xA = 700 - span / 2 - ac.w[0], xB = xA + 2 * L + TRAVEL;
+  const xH = xA + L + k * TRAVEL;
+  const leave = 1 - ramp(k, 0.06, 0.42), left = ramp(k, 0.2, 0.5), facing = 1 - ramp(k, 0.5, 0.8), join = ramp(k, 0.58, 0.94), ion = ramp(k, 0.86, 1);
+  /* the acid and what it becomes */
+  ac.H.forEach(([dx, dy]) => { bond(ctx, xA, CY, xA + dx * L, CY + dy * L, A); atom(ctx, 'H', xA + dx * L, CY + dy * L, A); });
+  ac.lp.forEach((a) => lone(ctx, xA, CY, a, A));
+  atom(ctx, ac.X, xA, CY, A);
+  F.faded(ctx, leave, [0, 0], () => bond(ctx, xA, CY, xH, CY, A));
+  F.faded(ctx, left, [0, 0], () => lone(ctx, xA, CY, 0, A));
+  F.faded(ctx, ion, [0, 0], () => (ac.br ? brackets(ctx, xA + ac.box[0], xA + ac.box[1], CY + ac.box[2], CY + ac.box[3], '−') : text(ctx, '−', xA + 52, CY - 56, PAL.ink, { size: 36, weight: 600 })));
+  /* the base and what it becomes */
+  if (ba.ring) ring(ctx, xB, B);
+  else {
+    ba.H.forEach(([dx, dy]) => { bond(ctx, xB, CY, xB + dx * L, CY + dy * L, B); atom(ctx, 'H', xB + dx * L, CY + dy * L, B); });
+    atom(ctx, ba.Y, xB, CY, B);
+  }
+  ba.lp.forEach((a) => lone(ctx, xB, CY, a, B));
+  F.faded(ctx, facing, [0, 0], () => lone(ctx, xB, CY, 180, B));
+  F.faded(ctx, join, [0, 0], () => bond(ctx, xH, CY, xB, CY, A));
+  F.faded(ctx, ion, [0, 0], () => brackets(ctx, xB + ba.box[0], xB + ba.box[1], CY + ba.box[2], CY + ba.box[3], '+'));
+  /* the proton, in the acid's colour as the book draws it on the conjugate acid; H⁺ while it is bonded to neither */
+  atom(ctx, 'H', xH, CY, A);
+  F.faded(ctx, Math.min(1 - leave, 1 - join), [0, 0], () => text(ctx, '+', xH + 24, CY - 24, A, { size: 32, weight: 600 }));
+  /* the names, as the text gives them, each under its species */
+  const after = ramp(k, 0.4, 0.6), xb = xB + ba.mid;
+  const name = (s, x, y, c, a) => F.faded(ctx, a, [0, 0], () => text(ctx, s, x, CY + y + 40, c, { size: 28, weight: 600, align: 'center' }));
+  name(R.names[0], xA, ac.box[3], A, 1 - after); name(R.names[2], xA, ac.box[3], A, after);
+  name(R.names[1], xb, ba.box[3], B, 1 - after); name(R.names[3], xb, ba.box[3], B, after);
+  ctx.restore();
+  return [
+    { x: xH, y: CY, r: 36, name: k < 0.06 ? `the hydrogen ${R.names[0]} gives up` : k > 0.94 ? `the hydrogen that came from ${R.names[0]}` : 'the proton, H⁺' },
+    ...(k < 0.5 ? [{ x: xB - 44, y: CY, r: 24, name: 'the lone pair that takes the proton' }] : []),
+    ...(k > 0.5 ? [{ x: xA + 44, y: CY, r: 24, name: 'the pair of electrons the proton left behind' }] : []),
+    { x: xA, y: CY, r: 36, name: k < 0.5 ? R.names[0] : R.names[2] }, { x: xb, y: CY, r: ba.ring ? RING : 36, name: k < 0.5 ? R.names[1] : R.names[3] },
+  ].map((h) => ({ ...h, y: h.y + dy }));
+}
+/* the book's equation: formulas and roles in their pair's colours, the two conjugate pairs bracketed
+   beneath. order: the pair (acid's or base's) of each of the four species, left to right. */
+function equation(ctx, R, k, fwd, A, B, y) {
+  const X = [300, 520, 880, 1100], col = (p) => (p === 'a' ? A : B), back = R.back ?? 1;
+  const item = (i) => { text(ctx, R.eq[i], X[i], y, col(R.order[i]), { size: 32, weight: 600, align: 'center' }); text(ctx, R.roles[i], X[i], y + 44, col(R.order[i]), { size: 24, align: 'center' }); };
+  const here = 0.4 + 0.6 * (1 - k), there = 0.4 + 0.6 * k;
+  F.faded(ctx, here, [0, 0], () => { item(0); item(1); text(ctx, '+', 410, y, PAL.ink, { size: 32, align: 'center' }); });
+  F.faded(ctx, there, [0, 0], () => { item(2); item(3); text(ctx, '+', 990, y, PAL.ink, { size: 32, align: 'center' }); });
+  /* the equilibrium arrow: two half arrows, the reverse one longer where the book prints it so */
+  const m = 700, hb = 66, hf = hb / back, ink = PAL.ink;
+  F.faded(ctx, fwd ? 1 : 0.35, [0, 0], () => { line(ctx, m - hf, y - 7, m + hf, y - 7, ink, 3.5); line(ctx, m + hf, y - 7, m + hf - 17, y - 18, ink, 3.5); });
+  F.faded(ctx, fwd ? 0.35 : 1, [0, 0], () => { line(ctx, m - hb, y + 7, m + hb, y + 7, ink, 3.5); line(ctx, m - hb, y + 7, m - hb + 17, y + 18, ink, 3.5); });
+  /* each acid joined to its conjugate base: the pair that ends nearer is the shallower bracket */
+  const ia = [0, 2 + R.order.slice(2).indexOf('a')], ib = [1, 2 + R.order.slice(2).indexOf('b')];
+  const deepA = ia[1] > ib[1];
+  [[ia, A, deepA], [ib, B, !deepA]].forEach(([[i, j], c, deep]) => {
+    const yb = y + (deep ? 112 : 88);
+    ctx.save(); ctx.strokeStyle = c; ctx.lineWidth = 3; ctx.lineJoin = 'miter'; ctx.beginPath();
+    ctx.moveTo(X[i], y + 64); ctx.lineTo(X[i], yb); ctx.lineTo(X[j], yb); ctx.lineTo(X[j], y + 64); ctx.stroke(); ctx.restore();
+  });
+}
+/* the clock: rest, the proton crosses, rest, it crosses back, rest */
+const clock = (t, s) => ({
+  k: t < s[0] ? 0 : t < s[1] ? smooth((t - s[0]) / (s[1] - s[0])) : t < s[2] ? 1 : t < s[3] ? 1 - smooth((t - s[2]) / (s[3] - s[2])) : 0,
+  fwd: t < s[1] || t >= s[3],
+});
+const half = (a, b, c, d) => `\\mathrm{${a}} \\rightleftharpoons \\mathrm{${b}} + \\mathrm{H^{+}} \\\\ \\mathrm{${c}} + \\mathrm{H^{+}} \\rightleftharpoons \\mathrm{${d}}`;
+const RX = {
+  ammonia: { acid: 'water', base: 'ammonia', names: ['water', 'ammonia', 'hydroxide ion', 'ammonium ion'],
+    eq: ['H_{2}O(l)', 'NH_{3}(aq)', 'OH⁻(aq)', 'NH_{4}⁺(aq)'], order: ['a', 'b', 'a', 'b'], roles: ['Acid', 'Base', 'Conjugate base', 'Conjugate acid'],
+    say: ['Water gives a proton to ammonia.', 'Ammonium ion gives the proton back to hydroxide ion.'],
+    tex: half('H_{2}O', 'OH^{-}', 'NH_{3}', 'NH_{4}{}^{+}') },
+  hf: { acid: 'hf', base: 'water', names: ['hydrogen fluoride', 'water', 'fluoride ion', 'hydronium ion'],
+    eq: ['HF', 'H_{2}O', 'H_{3}O⁺', 'F⁻'], order: ['a', 'b', 'b', 'a'], roles: ['Acid', 'Base', 'Acid', 'Base'],
+    say: ['Hydrogen fluoride gives a proton to water.', 'Hydronium ion gives the proton back to fluoride ion.'],
+    tex: half('HF', 'F^{-}', 'H_{2}O', 'H_{3}O^{+}') },
+  pyridine: { acid: 'water', base: 'pyridine', names: ['water', 'pyridine', 'hydroxide ion', 'pyridinium ion'],
+    eq: ['H_{2}O', 'C_{5}NH_{5}', 'C_{5}NH_{6}⁺', 'OH⁻'], order: ['a', 'b', 'b', 'a'], roles: ['Acid', 'Base', 'Acid', 'Base'],
+    say: ['Water gives a proton to pyridine.', 'Pyridinium ion gives the proton back to hydroxide ion.'],
+    tex: half('H_{2}O', 'OH^{-}', 'C_{5}NH_{5}', 'C_{5}NH_{6}{}^{+}') },
+  water: { acid: 'water', base: 'water', names: ['water', 'water', 'hydroxide ion', 'hydronium ion'], back: 1.6,
+    eq: ['H_{2}O', 'H_{2}O', 'H_{3}O⁺', 'OH⁻'], order: ['a', 'b', 'b', 'a'], roles: ['Acid', 'Base', 'Acid', 'Base'],
+    say: ['One water molecule gives a proton to another.', 'Hydronium ion gives the proton back to hydroxide ion.'],
+    tex: half('H_{2}O', 'OH^{-}', 'H_{2}O', 'H_{3}O^{+}') },
+};
 
 /* =====================================================================
-   H2O + H2O ⇌ H3O+ + OH-, the book's Water_img, faithful: the reverse
-   half of the arrow drawn the longer, as printed. The image puts the
+   SIM: the proton transfer in the three reactions the section writes
+   between two different species, the book's conjugate_img, HF_img and
+   NH3_img. Water is the acid toward ammonia and pyridine and the base
+   toward hydrogen fluoride.
+===================================================================== */
+(function () {
+  const H = 744, d = sim('fig-water-ammonia', H), T = 7, STOPS = [0.9, 2.6, 4.1, 5.8];
+  const cy = F.cycle(() => T, 0.4);
+  const pick = F.choice(d.controls, { label: '\\text{reaction}', aria: 'the acid and the base that react', value: 'ammonia',
+    options: [{ value: 'ammonia', label: 'H₂O + NH₃' }, { value: 'hf', label: 'HF + H₂O' }, { value: 'pyridine', label: 'H₂O + C₅NH₅' }], ms: 0,
+    onInput: () => cy.reset() });
+  let hits = [];
+  F.hover(d.stage, () => hits);
+  function draw() {
+    const { ctx } = begin(d.c), R = RX[pick.value], s = clock(cy.now(), STOPS), A = F.ref('pair-acid'), B = F.ref('pair-base');
+    headline(ctx, R.say[s.fwd ? 0 : 1]);
+    hits = transfer(ctx, R, s.k, A, B, 610);
+    equation(ctx, R, s.k, s.fwd, A, B, 610);
+    F.tex(d.readout, R.tex);
+  }
+  register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw, arrive: false });
+})();
+
+/* =====================================================================
+   H2O + H2O ⇌ H3O+ + OH-, the book's Water_img, with the proton moving.
+   The reverse half of the arrow is the longer, as printed, and the ions
+   last a shorter time here than the molecules. The image puts the
    hydroxide's minus on its hydrogen; it is drawn on the bracket.
 ===================================================================== */
 (function () {
-  const H = 330, d = sim('fig-water-water', H);
+  const H = 620, d = sim('fig-water-water', H), T = 7, STOPS = [1.6, 3.2, 3.9, 5.5];
+  const cy = F.cycle(() => T, 0.4);
+  let hits = [];
+  F.hover(d.stage, () => hits);
   function draw() {
-    const { ctx } = begin(d.c), A = F.ref('water-acid'), B = F.ref('water-base'), Y = 112, L = 72;
-    const water = (x, c) => lewis(ctx, [{ s: 'O', x, y: Y, c, lp: [180, 270] }, { s: 'H', x, y: Y - L, c }, { s: 'H', x: x + L, y: Y, c }], [[0, 1, 1, c], [0, 2, 1, c]]);
-    water(110, A);
-    text(ctx, '+', 270, Y, PAL.ink, { size: 30, align: 'center' });
-    water(390, B);
-    equilibrium(ctx, 560, 730, Y, 1.6);
-    const h3o = [{ s: 'O', x: 900, y: Y, c: B, lp: [270] }, { s: 'H', x: 900, y: Y - L, c: B }, { s: 'H', x: 900 + L, y: Y, c: B }, { s: 'H', x: 900 - L, y: Y, c: A }];
-    lewis(ctx, h3o, [[0, 1, 1, B], [0, 2, 1, B], [0, 3, 1, A]]);
-    brackets(ctx, 805, 995, Y - L - 26, Y + 48, '+');
-    text(ctx, '+', 1085, Y, PAL.ink, { size: 30, align: 'center' });
-    lewis(ctx, [{ s: 'O', x: 1180, y: Y, c: A, lp: [90, 180, 270] }, { s: 'H', x: 1180 + L, y: Y, c: A }], [[0, 1, 1, A]]);
-    brackets(ctx, 1135, 1277, Y - 40, Y + 40, '⁻');
-    equationRow(ctx, 238, [['H_{2}O', 130, 'Acid', A], ['H_{2}O', 410, 'Base', B], ['H_{3}O⁺', 900, 'Acid', B], ['OH⁻', 1206, 'Base', A]], [270, 1085], [560, 730], 1.6);
+    const { ctx } = begin(d.c), R = RX.water, s = clock(cy.now(), STOPS), A = F.ref('water-acid'), B = F.ref('water-base');
+    headline(ctx, R.say[s.fwd ? 0 : 1]);
+    hits = transfer(ctx, R, s.k, A, B, 486);
+    equation(ctx, R, s.k, s.fwd, A, B, 486);
+    F.tex(d.readout, R.tex);
   }
-  still(d, draw);
+  register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw, arrive: false });
 })();
 
 /* =====================================================================

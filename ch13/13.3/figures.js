@@ -22,12 +22,16 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
    computed whole when a choice changes, so the transport scrubs it
    exactly. Flat (book rule: every molecule must be seen and turning the
    vessel shows nothing): the vessel in side view, its piston at the
-   height h(t) sets; positions fold into it. The graph beside plots every
-   concentration against unscaled time, its range fixed per run from the
-   largest concentration it reaches.
+   height h(t) sets; positions fold into it. Beside it two graphs share
+   one unscaled time axis: every concentration, its range fixed per run
+   from the largest concentration it reaches, and under it Qc (dashed,
+   the variant away from equilibrium) against Kc (solid), on a range
+   fixed per reaction (0 to 120 for HI, where Qc reaches 112.5 on adding
+   HI; 0 to 0.04 for N2O4, where Kc reaches 0.036 at 50 °C), so the
+   reader sees which of the two a stress moves.
 ===================================================================== */
 (function () {
-  const d = F.sim(root, 'sim-le-chatelier', 600);
+  const d = F.sim(root, 'sim-le-chatelier', 680);
   /* each molecule's atoms [element, dx, dy, r] in canvas units, space-filling */
   const MOLS = {
     H2: { name: 'hydrogen, H₂', atoms: [['H', -5, 0, 7], ['H', 5, 0, 7]] },
@@ -37,13 +41,13 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
     NO2: { name: 'nitrogen dioxide, NO₂', atoms: [['O', -8.8, 4, 6.8], ['O', 8.8, 4, 6.8], ['N', 0, -2.4, 7.2]] },
   };
   const RX = {
-    hi: { label: 'H_{2} + I_{2} ⇌ 2HI', T: 673.15, deg: 400, K: 50, u: 0.02, sig: 3,
+    hi: { label: 'H_{2} + I_{2} ⇌ 2HI', T: 673.15, deg: 400, K: 50, u: 0.02, sig: 3, qr: [0, 120, 3],
       sp: [{ k: 'H2', nu: -1, n: 2, M: 2.016, f: 'H_{2}', t: '\\text{H}_{2}' }, { k: 'I2', nu: -1, n: 4, M: 253.8, f: 'I_{2}', t: '\\text{I}_{2}' }, { k: 'HI', nu: 2, n: 20, M: 127.9, f: 'HI', t: '\\text{HI}' }],
       stresses: [
         { value: 'add-H2', label: 'add H₂', add: { H2: 4 } }, { value: 'add-I2', label: 'add I₂', add: { I2: 4 } },
         { value: 'remove-HI', label: 'remove HI', add: { HI: -10 } }, { value: 'add-HI', label: 'add HI', add: { HI: 10 } },
         { value: 'compress', label: 'compress to V/3', vol: 1 / 3 }] },
-    n2o4: { label: 'N_{2}O_{4} ⇌ 2NO_{2}', T: 298.15, deg: 25, K: (0.016 * 0.016) / 0.042, u: 0.002, sig: 2, dH: 57200,
+    n2o4: { label: 'N_{2}O_{4} ⇌ 2NO_{2}', T: 298.15, deg: 25, K: (0.016 * 0.016) / 0.042, u: 0.002, sig: 2, dH: 57200, qr: [0, 0.04, 4],
       sp: [{ k: 'N2O4', nu: -1, n: 21, M: 92.01, f: 'N_{2}O_{4}', t: '\\text{N}_{2}\\text{O}_{4}' }, { k: 'NO2', nu: 2, n: 8, M: 46.01, f: 'NO_{2}', t: '\\text{NO}_{2}' }],
       stresses: [
         { value: 'add-N2O4', label: 'add N₂O₄', add: { N2O4: 10 } }, { value: 'add-NO2', label: 'add NO₂', add: { NO2: 8 } },
@@ -58,7 +62,7 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
 
   const RC = 0.2, TS = 1.5, TRUN = 7, DT = 1 / 60, NF = Math.round(TRUN / DT), TAUK = 0.6, PISTON = 0.6, GROW = 0.3;
   /* the vessel's inside, in canvas units: full height at h = 1 */
-  const VL = 70, VR = 500, VB = 520, VT = 150, PAD = 22;
+  const VL = 70, VR = 500, VB = 570, VT = 160, PAD = 22;
   const cy = cycle(() => TRUN, 1.5);
   let run = null, hits = [];
   F.hover(d.stage, () => hits);
@@ -87,6 +91,7 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
     const cAt = (f) => (f < fs ? conc(n0, 0, 1) : conc(n1, xi[f], hOf(f * DT)));
     const series = Array.from({ length: NF + 1 }, (_, f) => cAt(f));
     const Q = (c) => { let num = 1, den = 1; R.sp.forEach((s, i) => { if (s.nu < 0) den *= c[i] ** -s.nu; else num *= c[i] ** s.nu; }); return num / den; };
+    const qs = series.map(Q);
     const kf = (x) => (R.sig === 3 ? x.toFixed(1) : sci(x));
     let settled = Infinity;
     for (let f = fs + Math.round((PISTON + 0.2) / DT); f <= NF; f++) if (kf(Q(series[f])) === kf(K2)) { settled = f * DT; break; }
@@ -129,7 +134,7 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
       else { const ps = alive(pK, t); if (ps.length < 2) continue; const a1 = pick(ps), b1 = pick(ps.filter((q) => q !== a1)); a1.kinds.push([t, rA]); b1.died = t; halos.push({ t, s: a1 }); }
     }
     if (!stressed) stress();
-    return { R, st, vol, K1: R.K, K2, hOf, series, settled, cmax, slots, halos, posN, kindAt, xe, id: Math.random() };
+    return { R, st, vol, K1: R.K, K2, hOf, series, qs, settled, cmax, slots, halos, posN, kindAt, xe, id: Math.random() };
   }
   function rerun() { run = simulate(); cy.reset(); }
   rerun();
@@ -172,14 +177,23 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
       hits.push({ x, y, r: 18, name: MOLS[k].name });
     });
     ctx.restore();
-    F.legend(ctx, { l: VL, r: VR, t: VB + 14, b: VB + 50 }, R.sp.map((s) => ({ s: s.f, draw: (c, x, y) => molecule(c, s.k, x, y, 0, 0.75) })), { corner: 'top', row: true, panel: false });
+    const ring = (c, x, y) => { c.save(); c.strokeStyle = alpha(PAL.ink, 0.45); c.lineWidth = 3; c.beginPath(); c.arc(x, y, 12, 0, TAU); c.stroke(); c.restore(); };
+    F.legend(ctx, { l: VL, r: VR, t: VB + 16, b: VB + 52 }, [...R.sp.map((s) => ({ s: s.f, draw: (c, x, y) => molecule(c, s.k, x, y, 0, 0.75) })), { s: 'just reacted', draw: ring }], { corner: 'top', row: true, panel: false });
 
     /* the concentrations against time, the stress at the dashed line */
     const c = series[f], c0 = series[0], cEnd = series[NF], K = t < TS ? run.K1 : run.K2;
-    const G = { l: 650, r: 1240, t: 150, b: 480 }, yr = F.nice(0, run.cmax * 1.08, 4);
-    const g = F.axes(ctx, G, [0, TRUN], [0, yr.hi], { nx: 7, ny: yr.n, fx: () => '', fy: (q) => (q ? fmt(q, R.sig === 3 ? 2 : 3) : '0'), xl: 'time', yl: 'concentration (M)', yc: C('concentration') });
-    line(ctx, g.X(TS), G.t, g.X(TS), G.b, alpha(PAL.ink, 0.4), 2, [10, 10]);
+    const G = { l: 660, r: 1240, t: 150, b: 370 }, GQ = { l: 660, r: 1240, t: 450, b: 600 }, yr = F.nice(0, run.cmax * 1.08, 4);
+    const g = F.axes(ctx, G, [0, TRUN], [0, yr.hi], { nx: 7, ny: yr.n, fx: () => '', fy: (q) => (q ? fmt(q, R.sig === 3 ? 2 : 3) : '0'), yl: 'concentration (M)', yc: C('concentration') });
+    const gq = F.axes(ctx, GQ, [0, TRUN], [R.qr[0], R.qr[1]], { nx: 7, ny: R.qr[2], fx: () => '', fy: (q) => (q ? String(+q.toPrecision(2)) : '0'), xl: 'time' });
+    line(ctx, g.X(TS), G.t, g.X(TS), GQ.b, alpha(PAL.ink, 0.4), 2, [10, 10]);
     text(ctx, st.label, g.X(TS) + 10, G.t + 16, PAL.muted, { size: 17, bg: PAL.panel });
+    /* Qc against Kc: the solid level is Kc, stepping only when the temperature changes; the dashed curve is Qc */
+    const cK = C('equilibrium-constant'), tn = f * DT;
+    line(ctx, gq.X(0), gq.Y(run.K1), gq.X(Math.min(tn, TS)), gq.Y(run.K1), cK, 3);
+    if (tn > TS) { if (run.K2 !== run.K1) line(ctx, gq.X(TS), gq.Y(run.K1), gq.X(TS), gq.Y(run.K2), alpha(cK, 0.5), 2, [4, 8]); line(ctx, gq.X(TS), gq.Y(run.K2), gq.X(tn), gq.Y(run.K2), cK, 3); }
+    if (f > 0) F.plot(ctx, gq, (x) => run.qs[Math.min(NF, Math.max(0, Math.round(x / DT)))], cK, { w: 5, x: [0, tn], dash: [10, 10] });
+    dot(ctx, gq.X(tn), gq.Y(run.qs[f]), cK, false, 8);
+    F.legend(ctx, gq, [{ s: 'Q_{c}', color: cK, w: 5, dash: [10, 10] }, { s: 'K_{c}', color: cK, w: 3 }], { corner: 'above' });
     R.sp.forEach((s, i) => {
       const col = F.cat(i);
       ctx.save(); ctx.strokeStyle = col; ctx.lineWidth = 5; ctx.lineJoin = 'round'; ctx.beginPath();
@@ -190,7 +204,7 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
     /* each curve named at the right edge, at its final value, stepped apart where two would touch */
     const tags = R.sp.map((s, i) => ({ s: `[${s.f}]`, y0: g.Y(cEnd[i]), y: g.Y(cEnd[i]), col: F.cat(i) })).sort((p, q) => p.y0 - q.y0);
     for (let k = 1; k < tags.length; k++) tags[k].y = Math.max(tags[k].y, tags[k - 1].y + 26);
-    const over = tags[tags.length - 1].y - (G.b + 12);
+    const over = tags[tags.length - 1].y - (G.b + 8);
     if (over > 0) tags.forEach((q) => { q.y -= over; });
     for (let k = tags.length - 2; k >= 0; k--) tags[k].y = Math.min(tags[k].y, tags[k + 1].y - 26);
     tags.forEach((q) => { if (Math.abs(q.y - q.y0) > 3) line(ctx, G.r + 4, q.y0, G.r + 22, q.y, alpha(q.col, 0.6), 1.5); text(ctx, q.s, G.r + 26, q.y, q.col, { size: 20, weight: 600 }); });
@@ -216,7 +230,7 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
     }
     topline(ctx, head);
 
-    const cc = (i) => hue('concentration', R.sig === 3 ? c[i].toFixed(3) : c[i].toPrecision(2));
+    const cc = (i) => hue('concentration', (R.sig === 3 ? c[i].toFixed(3) : c[i].toPrecision(2)) + '\\,M');
     const kv = (x) => hue('equilibrium-constant', kfmt(x));
     const tex = R.sp.length === 3
       ? `\\kQc = \\frac{[${R.sp[2].t}]^{2}}{[${R.sp[0].t}][${R.sp[1].t}]} = \\frac{(${cc(2)})^{2}}{(${cc(0)})(${cc(1)})} = ${kv(q)} ${rel} \\kKc = ${kv(K)}`
@@ -228,20 +242,29 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
 
 /* =====================================================================
    FIGURE 13.8: reaction diagrams of one elementary process without and
-   with a catalyst. Energies are illustrative, since the book prints
-   none: reactants 0 kJ, products −60 kJ, (each bracket carries its value) the uncatalyzed peak 100 kJ, the
-   catalyzed peak on the slider (20 to 100 kJ, default 63 kJ, the book's
-   proportion). Each path is flat, rises on a half cosine from 0.25 to its peak at
-   0.52, and falls on another to the products at 0.80. The energy axis
-   runs −80 to 120 kJ (drawn as 0 to 200 from a base B, so that no zero
-   line crosses it) and carries no numbers, as the book's does. A catalyzed
-   forward bracket too short for its label puts the label under its foot.
+   with a catalyst, and under them the four rate constants the diagrams
+   fix. Energies are illustrative, since the book prints none: reactants
+   0, products −60 kJ/mol, the uncatalyzed peak 100 kJ/mol, the catalyzed
+   peak on the slider (20 to 100 kJ/mol, default 63, the book's
+   proportion). Each path is flat, rises on a half cosine from 0.25 to its
+   peak at 0.52, and falls on another to the products at 0.80. The energy
+   axis runs −80 to 120 kJ/mol (drawn as 0 to 200 from a base B, so that
+   no zero line crosses it) and carries no numbers, as the book's does.
+   Below, k/A = e^(−Ea/RT) at 298 K on a logarithmic axis fixed at 10⁻³⁰
+   to 1 (the smallest is the uncatalyzed reverse, 10⁻²⁸; the largest the
+   catalyzed forward at 20 kJ/mol, 10⁻³·⁵), every rate constant given one
+   frequency factor A. On that axis the span from k_r to k_f is K, the
+   same length on both rows, and the catalyst moves both ends one distance.
 ===================================================================== */
 (function () {
-  const d = F.sim(root, 'sim-catalyst-diagram', 560);
-  const Ec = ctl(d.controls, { label: '\\kEa\\ \\text{forward, catalyzed}', cls: 'energy', min: 20, max: 100, step: 1, value: 63, unit: 'kJ', dec: 0, specials: [{ at: 100, label: 'no catalyst' }], aria: 'forward activation energy of the catalyzed path, in kilojoules' });
+  const d = F.sim(root, 'sim-catalyst-diagram', 780);
+  const Ec = ctl(d.controls, { label: '\\kEa\\ \\text{forward, catalyzed}', cls: 'energy', min: 20, max: 100, step: 1, value: 63, unit: 'kJ/mol', dec: 0, specials: [{ at: 100, label: 'no catalyst' }], aria: 'forward activation energy of the catalyzed path, in kilojoules per mole' });
   const ro = F.readout(d);
-  const G = { l: 170, r: 1290, t: 110, b: 500 }, B = 80, ER = 0, EP = -60, EU = 100, X0 = 0.25, XP = 0.52, X1 = 0.8;
+  const G = { l: 170, r: 1290, t: 100, b: 420 }, B = 80, ER = 0, EP = -60, EU = 100, X0 = 0.25, XP = 0.52, X1 = 0.8;
+  const S = { l: 170, r: 1290, t: 510, b: 706 }, TK = 298, RT = (R8 * TK) / 1000, LN10 = Math.log(10);
+  const lg = (ea) => -ea / (RT * LN10);
+  const SUP = '⁰¹²³⁴⁵⁶⁷⁸⁹', pow = (e) => '10' + (e < 0 ? '⁻' : '') + String(Math.abs(e)).split('').map((c) => SUP[+c]).join('');
+  const sciU = (v) => { let e = Math.floor(Math.log10(v)), m = +(v / 10 ** e).toFixed(1); if (m >= 10) { m = 1; e += 1; } return e < 2 ? String(+v.toPrecision(2)) : `${m.toFixed(1)} × ${pow(e)}`; };
   const prof = (pk) => (x) => (x < X0 ? ER : x < XP ? ER + ((pk - ER) * (1 - Math.cos((Math.PI * (x - X0)) / (XP - X0)))) / 2 : x < X1 ? pk + ((EP - pk) * (1 - Math.cos((Math.PI * (x - XP)) / (X1 - XP)))) / 2 : EP);
   function bracket(ctx, x, y1, y2, side, lines, below) {
     const col = C('energy');
@@ -250,146 +273,201 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
     lines.forEach(([s, c], i) => text(ctx, s, x + side * 12, ym + (i - (lines.length - 1) / 2) * 24, c, { size: 19, weight: c === col ? 600 : 400, align: ax, bg: PAL.panel }));
   }
   function draw() {
-    const { ctx } = begin(d.c), pk = Ec.v, drop = EU - pk;
+    const { ctx } = begin(d.c), pk = Ec.v, drop = EU - pk, on = drop > 0.5;
     const a = F.axes(ctx, G, [0, 1], [0, 200], { nx: 1, ny: 1, fx: () => '', fy: () => '', xl: 'extent of reaction', yl: 'energy', yc: C('energy') });
-    const g = { X: a.X, Y: (e) => a.Y(e + B) }, c0 = F.cat(0), c1 = F.cat(1);
+    const g = { X: a.X, Y: (e) => a.Y(e + B) }, c0 = F.cat(0), c1 = F.cat(1), ce = C('energy'), ck = C('rate-constant'), cK = C('equilibrium-constant');
     line(ctx, g.X(0.13), g.Y(EU), g.X(0.93), g.Y(EU), alpha(c0, 0.8), 3, [10, 10]);
-    if (drop > 0.5) line(ctx, g.X(0.18), g.Y(pk), g.X(0.86), g.Y(pk), alpha(c1, 0.8), 3, [10, 10]);
+    if (on) line(ctx, g.X(0.18), g.Y(pk), g.X(0.86), g.Y(pk), alpha(c1, 0.8), 3, [10, 10]);
     F.curve(ctx, prof(EU), 0, 1, g.X, g.Y, c0, 5, 200);
     F.curve(ctx, prof(pk), 0, 1, g.X, g.Y, c1, 5, 200);
     text(ctx, 'transition state', g.X(XP), g.Y(EU) - 22, PAL.ink, { size: 19, align: 'center', bg: PAL.panel });
-    const ce = C('energy'), kj = (x) => [fmt(x, 0) + ' kJ', ce];
+    text(ctx, 'reactants', g.X(0.02), g.Y(ER) + 26, PAL.ink, { size: 19 });
+    text(ctx, 'products', g.X(0.98), g.Y(EP) + 20, PAL.ink, { size: 19, align: 'right' });
+    const kj = (x) => [fmt(x, 0) + ' kJ/mol', ce];
     bracket(ctx, g.X(0.13), g.Y(ER), g.Y(EU), -1, [['E_{a} forward', PAL.ink], kj(EU)]);
     bracket(ctx, g.X(0.93), g.Y(EP), g.Y(EU), 1, [['E_{a} reverse', PAL.ink], kj(EU - EP)]);
-    if (drop > 0.5) {
+    if (on) {
       bracket(ctx, g.X(0.18), g.Y(ER), g.Y(pk), 1, [['E_{a} forward', PAL.ink], kj(pk)], g.Y(ER) - g.Y(pk) < 64 ? g.Y(ER) + 40 : undefined);
       bracket(ctx, g.X(0.86), g.Y(EP), g.Y(pk), -1, [['E_{a} reverse', PAL.ink], kj(pk - EP)]);
     }
+
+    /* the rate constants: each row's span from k_r to k_f is K */
+    const s = F.axes(ctx, S, [-30, 0], [0, 1], { nx: 6, ny: 0, fx: (v) => (v ? pow(v) : '1'), xl: 'k / A at 298 K', xc: ck });
+    const K = Math.exp(-EP / RT), fac = Math.exp(drop / RT), Kt = `K_{c} = ${sciU(K)}`;
+    const rows = [{ name: 'uncatalyzed', col: c0, y: 560, f: lg(EU), r: lg(EU - EP) }, { name: 'catalyzed', col: c1, y: 664, f: lg(pk), r: lg(pk - EP) }];
+    if (on) [['r', 0], ['f', 1]].forEach(([k]) => line(ctx, s.X(rows[0][k]), rows[0].y + 12, s.X(rows[1][k]), rows[1].y - 12, alpha(PAL.ink, 0.4), 2, [4, 8]));
+    rows.forEach((q) => {
+      const xr = s.X(q.r), xf = s.X(q.f);
+      text(ctx, q.name, S.l - 14, q.y, q.col, { size: 19, weight: 600, align: 'right' });
+      line(ctx, xr, q.y, xf, q.y, cK, 5);
+      dot(ctx, xr, q.y, q.col, true, 10); dot(ctx, xf, q.y, q.col, true, 10);
+      text(ctx, 'k_{r}', xr - 18, q.y, ck, { size: 22, weight: 600, align: 'right', bg: PAL.panel });
+      text(ctx, 'k_{f}', xf + 18, q.y, ck, { size: 22, weight: 600, bg: PAL.panel });
+      text(ctx, Kt, (xr + xf) / 2, q.y - 24, cK, { size: 20, weight: 600, align: 'center', bg: PAL.panel });
+    });
+    if (on) F.rich(ctx, ['each ', [`× ${sciU(fac)}`, ck]], (s.X(rows[0].f) + s.X(rows[1].f)) / 2 + 22, (rows[0].y + rows[1].y) / 2 - 14, { size: 19, bg: PAL.panel });
+
     F.legend(ctx, a, [{ s: 'uncatalyzed', color: c0, w: 5 }, { s: 'catalyzed', color: c1, w: 5 }], { corner: 'bl' });
-    topline(ctx, drop > 0.5 ? `Both activation energies of the catalyzed path are ${fmt(drop, 0)} kJ lower than without the catalyst.` : 'Without a catalyst, the two paths are one.');
-    const en = (x) => hue('energy', fmt(x, 0) + '\\ \\text{kJ}');
-    ro.set(`\\kEa(\\text{forward}) - \\kEa(\\text{reverse}) = ${en(pk)} - ${en(pk - EP)} = ${en(EP)}`,
-      `Without the catalyst, $\\kEa(\\text{forward}) - \\kEa(\\text{reverse}) = ${en(EU)} - ${en(EU - EP)} = ${en(EP)}$ as well.`);
+    topline(ctx, on ? `The catalyst makes $\\kkf$ and $\\kkr$ each ${sciU(fac)} times larger, so their ratio $\\kKc$ is unchanged.` : 'Without a catalyst, the two paths are one.');
+    const en = (x) => hue('energy', fmt(x, 0));
+    ro.set(`\\kKc = \\frac{\\kkf}{\\kkr} = \\frac{A e^{-\\kEa(\\text{forward})/R\\kT}}{A e^{-\\kEa(\\text{reverse})/R\\kT}} = \\exp\\left(\\frac{(${en(pk - EP)} - ${en(pk)})\\ \\text{kJ/mol}}{(8.314 \\times 10^{-3}\\ \\text{kJ mol}^{-1}\\,\\text{K}^{-1})(${hue('temperature', '298\\ \\text{K}')})}\\right) = ${hue('equilibrium-constant', sci(K))}`,
+      'Every rate constant is given the same frequency factor $A$.');
   }
   register(d.fig, { update: () => {}, draw });
 })();
 
 /* =====================================================================
-   FIGURE 13.9: the Haber-Bosch plant as a flow diagram on an 8 s loop
-   with no hold. Each stream is a polyline its molecules travel at about
-   120 units a second, the speed rounded so that every stream laps a
-   whole number of times in the loop and the loop is seamless. Feed and
-   recycled gases (N2 : H2 as 1 : 3) run down the jacket of the catalyst
-   chamber and up its middle; past the catalyst, of each eight molecules
-   one N2 and one H2 become NH3 and two H2 are used up (N2 + 3H2 → 2NH3),
-   the other four going through unreacted. NH3 drops from the
-   refrigeration to storage; N2 and H2 return through the heat exchanger.
-   Molecules fade in and out over the first and last 20 units of their
-   stream, where streams meet.
+   FIGURE 13.9: the Haber-Bosch plant in section, its gases moving on an
+   8 s loop with no hold. Every molecule is followed all the way round:
+   a ticket j passes the foot of the catalyst chamber at time j S / V,
+   and its kind repeats every eight tickets, fresh feed on the even ones
+   (N2, H2, H2, H2) and recycled gas on the odd ones (the same), so the
+   chamber is fed N2 : H2 as 1 : 3 and half of what it is fed has been
+   round before. Over the catalyst the four fresh molecules of each eight
+   become two NH3 (N2 + 3H2 → 2NH3); the recycled four pass unreacted.
+   Below the condenser the NH3 falls to storage and the other four take
+   the recycle line, which is as long as it must be for them to arrive
+   back as the odd tickets they were: each path's length is rounded to a
+   whole number of spacings (the recycle so that chamber + recycle is a
+   multiple of eight), and a molecule's place along it is scaled to the
+   path drawn, which changes its speed by a few percent at most. V LOOP
+   is 32 spacings, so the loop is seamless. Cooling water runs on its own.
 ===================================================================== */
 (function () {
-  const d = F.sim(root, 'sim-haber-bosch', 880);
-  const LOOP = 8, SPACE = 40, SPEED = 120;
+  const d = F.sim(root, 'sim-haber-bosch', 850);
+  const LOOP = 8, S = 40, V = 160, OY = 26, PW = 38;
   const cy = cycle(() => LOOP, 0);
-  const COIL = [[1060, 350], [1035, 372], [1125, 402], [1035, 432], [1125, 462], [1035, 492], [1125, 522], [1035, 552], [1125, 582], [1060, 612], [1060, 700]];
-  const PATHS = {
-    feedL: [[40, 270], [390, 270], [390, 370], [335, 370], [335, 790], [420, 795]],
-    feedR: [[40, 270], [390, 270], [390, 370], [505, 370], [505, 770], [420, 795]],
-    react: [[420, 795], [420, 400], [450, 378], [450, 180], [1060, 180], ...COIL],
-    liquid: [[1060, 700], [1060, 800]],
-    recycle: [[1060, 700], [870, 700], [870, 214], [680, 214], [680, 790], [420, 795]],
-    water: [[1300, 600], [1178, 600], [1178, 380], [1300, 380]],
+  const COIL = [[1070, 220], [1070, 246], [1104, 284], [1036, 336], [1104, 388], [1036, 440], [1104, 492], [1070, 530], [1070, 600]];
+  const mk = (pts) => { const cum = [0]; for (let i = 1; i < pts.length; i++) cum.push(cum[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1])); return { pts, cum, L: cum[cum.length - 1] }; };
+  const at = (p, s) => { const c = p.cum; let i = 1; while (i < c.length - 1 && c[i] < s) i++; const f = Math.min(1, Math.max(0, (s - c[i - 1]) / (c[i] - c[i - 1] || 1))); return [p.pts[i - 1][0] + f * (p.pts[i][0] - p.pts[i - 1][0]), p.pts[i - 1][1] + f * (p.pts[i][1] - p.pts[i - 1][1])]; };
+  const PATH = {
+    feedL: mk([[20, 150], [380, 150], [380, 270], [370, 296], [370, 700], [398, 740], [460, 740]]),
+    feedR: mk([[20, 150], [380, 150], [380, 270], [524, 270], [550, 300], [550, 700], [522, 740], [460, 740]]),
+    react: mk([[460, 740], [460, 90], [1070, 90], ...COIL]),
+    liquid: mk([[1070, 600], [1070, 716]]),
+    recycle: mk([[1070, 600], [900, 600], [900, 140], [720, 140], [720, 740], [460, 740]]),
+    water: mk([[1350, 510], [1162, 510], [1162, 270], [1350, 270]]),
   };
-  const CAT = 540;
-  const lens = {}, cum = {};
-  for (const [k, p] of Object.entries(PATHS)) { let s = 0; cum[k] = [0]; for (let i = 1; i < p.length; i++) { s += Math.hypot(p[i][0] - p[i - 1][0], p[i][1] - p[i - 1][1]); cum[k].push(s); } lens[k] = s; }
-  const at = (k, s) => { const p = PATHS[k], c = cum[k]; let i = 1; while (i < c.length - 1 && c[i] < s) i++; const f = (s - c[i - 1]) / (c[i] - c[i - 1] || 1); return [p[i - 1][0] + f * (p[i][0] - p[i - 1][0]), p[i - 1][1] + f * (p[i][1] - p[i - 1][1])]; };
-  const sCat = 795 - CAT;
-  const STREAMS = Object.keys(PATHS).map((k) => ({ k, n: Math.max(2, Math.floor(lens[k] / SPACE)), laps: Math.max(1, Math.round((SPEED * LOOP) / lens[k])) }));
+  const near = (x, m) => Math.round(x / m) * m;
+  const Lr = near(PATH.react.L, S), LfL = near(PATH.feedL.L, S), LfR = LfL + near(PATH.feedR.L - PATH.feedL.L, 4 * S);
+  const Lrec = near(PATH.recycle.L + Lr, 8 * S) - Lr, Lw = near(PATH.water.L, 64);
+  const CAT0 = 740 - 552, CAT1 = 740 - 458;
+  const ANG = [0.3, 2.1, 4.4, 1.2, 5.3, 3.5, 0.9, 2.8];
   const NAMES = { N2: 'nitrogen, N₂', H2: 'hydrogen, H₂', NH3: 'ammonia, NH₃', H2O: 'cooling water, H₂O' };
-  function glyph(ctx, kind, x, y) {
-    const N = F.el('N'), Hh = F.el('H'), O = F.el('O');
-    if (kind === 'N2') { disc(ctx, x - 6, y, 7, N); disc(ctx, x + 6, y, 7, N); }
-    else if (kind === 'H2') { disc(ctx, x - 4.5, y, 5, Hh); disc(ctx, x + 4.5, y, 5, Hh); }
-    else if (kind === 'NH3') { disc(ctx, x - 7, y + 5, 4.5, Hh); disc(ctx, x + 7, y + 5, 4.5, Hh); disc(ctx, x, y - 8, 4.5, Hh); disc(ctx, x, y + 1, 7.5, N); }
-    else { disc(ctx, x - 6, y + 4, 4, Hh); disc(ctx, x + 6, y + 4, 4, Hh); disc(ctx, x, y, 6.5, O); }
+  function glyph(ctx, kind, x, y, th = 0) {
+    const c = Math.cos(th), s = Math.sin(th), a = (dx, dy, r, el) => disc(ctx, x + dx * c - dy * s, y + dx * s + dy * c, r, F.el(el));
+    if (kind === 'N2') { a(-7, 0, 8, 'N'); a(7, 0, 8, 'N'); }
+    else if (kind === 'H2') { a(-5, 0, 5.5, 'H'); a(5, 0, 5.5, 'H'); }
+    else if (kind === 'NH3') { a(-8, 5, 5, 'H'); a(8, 5, 5, 'H'); a(0, -9, 5, 'H'); a(0, 0, 8.5, 'N'); }
+    else { a(-7, 5, 4.5, 'H'); a(7, 5, 4.5, 'H'); a(0, 0, 7, 'O'); }
   }
-  function pipe(ctx, pts, w = 26) {
-    for (const [col, ww] of [[PAL.muted, w], [PAL.panel, w - 5]]) {
+  const steel = () => alpha(PAL.muted, 0.5), edge = () => alpha(PAL.ink, 0.65);
+  function pipe(ctx, pts, w = PW) {
+    for (const [col, ww] of [[edge(), w], [PAL.panel, w - 5]]) {
       ctx.save(); ctx.strokeStyle = col; ctx.lineWidth = ww; ctx.lineJoin = 'round'; ctx.lineCap = 'butt'; ctx.beginPath();
       pts.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y))); ctx.stroke(); ctx.restore();
     }
   }
-  function vessel(ctx, x, y, w, h, r, fill) {
-    ctx.save(); ctx.beginPath(); ctx.roundRect(x, y, w, h, r); ctx.fillStyle = fill; ctx.fill(); ctx.lineWidth = 3; ctx.strokeStyle = PAL.muted; ctx.stroke(); ctx.restore();
+  /* a pressure vessel in section: a steel wall round its inside */
+  function tank(ctx, x, y, w, h, r, wall, fill) {
+    ctx.save(); ctx.beginPath(); ctx.roundRect(x, y, w, h, r); ctx.fillStyle = steel(); ctx.fill(); ctx.lineWidth = 2.5; ctx.strokeStyle = edge(); ctx.stroke();
+    ctx.beginPath(); ctx.roundRect(x + wall, y + wall, w - 2 * wall, h - 2 * wall, Math.max(2, r - wall)); ctx.fillStyle = fill; ctx.fill(); ctx.lineWidth = 1.5; ctx.strokeStyle = alpha(PAL.ink, 0.4); ctx.stroke(); ctx.restore();
+  }
+  function flange(ctx, x, y, across) {
+    ctx.save(); ctx.fillStyle = PAL.muted; ctx.strokeStyle = edge(); ctx.lineWidth = 1.5;
+    const [w, h] = across ? [PW + 12, 10] : [10, PW + 12];
+    ctx.beginPath(); ctx.rect(x - w / 2, y - h / 2, w, h); ctx.fill(); ctx.stroke(); ctx.restore();
   }
   function compressor(ctx, x, y, a) {
-    ctx.save(); ctx.beginPath(); ctx.arc(x, y, 28, 0, TAU); ctx.fillStyle = PAL.panel; ctx.fill(); ctx.lineWidth = 3; ctx.strokeStyle = PAL.muted; ctx.stroke();
-    ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3;
-    for (let i = 0; i < 3; i++) { const b = a + (i * TAU) / 3; ctx.beginPath(); ctx.moveTo(x, y); ctx.quadraticCurveTo(x + 14 * Math.cos(b + 0.6), y + 14 * Math.sin(b + 0.6), x + 22 * Math.cos(b), y + 22 * Math.sin(b)); ctx.stroke(); }
-    ctx.restore();
+    ctx.save(); ctx.beginPath(); ctx.arc(x, y, 34, 0, TAU); ctx.fillStyle = PAL.panel; ctx.fill(); ctx.lineWidth = 3; ctx.strokeStyle = edge(); ctx.stroke();
+    ctx.fillStyle = steel(); ctx.strokeStyle = edge(); ctx.lineWidth = 2;
+    for (let i = 0; i < 3; i++) { const b = a + (i * TAU) / 3; ctx.beginPath(); ctx.moveTo(x, y); ctx.quadraticCurveTo(x + 24 * Math.cos(b - 0.9), y + 24 * Math.sin(b - 0.9), x + 27 * Math.cos(b), y + 27 * Math.sin(b)); ctx.quadraticCurveTo(x + 16 * Math.cos(b + 0.5), y + 16 * Math.sin(b + 0.5), x, y); ctx.fill(); ctx.stroke(); }
+    ctx.beginPath(); ctx.arc(x, y, 5, 0, TAU); ctx.fillStyle = PAL.ink; ctx.fill(); ctx.restore();
   }
+  function zig(ctx, pts, w, col) { ctx.save(); ctx.strokeStyle = col; ctx.lineWidth = w; ctx.lineJoin = 'round'; ctx.lineCap = 'round'; ctx.beginPath(); pts.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y))); ctx.stroke(); ctx.restore(); }
   let hits = [];
   F.hover(d.stage, () => hits);
   const PARTS = [
-    { x: 250, y: 270, r: 30, name: 'compressor for the feed gases' }, { x: 600, y: 790, r: 30, name: 'compressor for the recycled gases' },
-    { x: 420, y: 450, r: 45, name: 'heat exchanger inside the catalyst chamber' }, { x: 420, y: 580, r: 40, name: 'catalyst' },
-    { x: 420, y: 705, r: 50, name: 'heater' }, { x: 320, y: 560, r: 25, name: 'catalyst chamber, 400 to 500 °C' }, { x: 520, y: 560, r: 25, name: 'catalyst chamber, 400 to 500 °C' },
-    { x: 770, y: 195, r: 60, name: 'heat exchanger: the hot mixture warms the recycled gases' }, { x: 1060, y: 700, r: 35, name: 'refrigeration' }, { x: 1090, y: 820, r: 60, name: 'liquid ammonia, NH₃(l), in storage' },
-    { x: 1280, y: 600, r: 22, name: 'cold water in' }, { x: 1280, y: 380, r: 22, name: 'hot water out' },
+    { x: 240, y: 150, r: 36, name: 'compressor: raises the feed gases to 150 to 250 atm' }, { x: 655, y: 740, r: 36, name: 'compressor for the recycled gases' },
+    { x: 460, y: 380, r: 48, name: 'heat exchanger: the hot gases leaving warm the feed gases in the jacket' }, { x: 460, y: 505, r: 52, name: 'catalyst' },
+    { x: 460, y: 640, r: 50, name: 'heater' }, { x: 370, y: 500, r: 28, name: 'feed gases, preheated on the way down' }, { x: 550, y: 500, r: 28, name: 'feed gases, preheated on the way down' },
+    { x: 460, y: 740, r: 26, name: 'preheated feed gases' }, { x: 810, y: 115, r: 70, name: 'heat exchanger: the hot mixture warms the recycled gases' },
+    { x: 1070, y: 390, r: 60, name: 'condenser' }, { x: 1070, y: 632, r: 34, name: 'refrigeration' }, { x: 1070, y: 735, r: 60, name: 'liquid ammonia, NH₃(l), in storage' },
+    { x: 1290, y: 510, r: 24, name: 'cold water in' }, { x: 1290, y: 270, r: 24, name: 'hot water out' }, { x: 336, y: 600, r: 14, name: 'catalyst chamber, 400 to 500 °C' }, { x: 584, y: 600, r: 14, name: 'catalyst chamber, 400 to 500 °C' },
   ];
   function draw() {
-    const { ctx } = begin(d.c), t = cy.now(), a = (t / LOOP) * TAU * 6;
-    pipe(ctx, [[40, 270], [390, 270], [390, 344]]);
-    pipe(ctx, [[450, 344], [450, 180], [1060, 180], [1060, 344]]);
-    pipe(ctx, [[1060, 700], [870, 700], [870, 214]]);
-    pipe(ctx, [[680, 214], [680, 790], [540, 790]]);
-    pipe(ctx, [[1300, 600], [1198, 600]], 22); pipe(ctx, [[1300, 380], [1198, 380]], 22);
-    vessel(ctx, 640, 150, 260, 90, 30, PAL.soft);
-    [180, 214].forEach((y) => line(ctx, 660, y, 880, y, alpha(PAL.ink, 0.3), 14));
-    vessel(ctx, 300, 340, 240, 480, 70, PAL.soft);
-    vessel(ctx, 372, 395, 96, 380, 14, PAL.panel);
-    for (let x = 384; x <= 456; x += 12) line(ctx, x, 408, x, 492, alpha(PAL.ink, 0.35), 3);
-    [548, 582, 616].forEach((y) => vessel(ctx, 378, y - 9, 84, 18, 8, alpha(PAL.ink, 0.22)));
-    ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.45); ctx.lineWidth = 5; ctx.beginPath();
-    for (let i = 0; i <= 8; i++) { const y = 650 + i * 14, x = i % 2 ? 452 : 388; if (i) ctx.lineTo(x, y); else ctx.moveTo(x, y); } ctx.stroke(); ctx.restore();
-    vessel(ctx, 990, 340, 210, 300, 50, alpha(PAL.ink, 0.07));
-    ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.25); ctx.lineWidth = 18; ctx.lineJoin = 'round'; ctx.beginPath(); COIL.slice(0, -1).forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y))); ctx.stroke(); ctx.restore();
-    vessel(ctx, 960, 760, 260, 90, 18, PAL.soft);
-    ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.14); ctx.fillRect(966, 802, 248, 42); ctx.restore();
-    pipe(ctx, [[1060, 640], [1060, 760]], 30);
-    vessel(ctx, 1030, 668, 60, 64, 10, PAL.soft);
-    for (let y = 676; y <= 724; y += 12) line(ctx, 1036, y, 1084, y + 6, alpha(PAL.ink, 0.35), 3);
-    compressor(ctx, 250, 270, a); compressor(ctx, 600, 790, -a);
+    const { ctx } = begin(d.c), t = cy.now(), spin = (t / LOOP) * TAU * 6, vt = V * t;
+    ctx.save(); ctx.translate(0, OY);
+    /* the vessels */
+    tank(ctx, 660, 40, 300, 150, 40, 10, PAL.soft);
+    tank(ctx, 330, 240, 260, 530, 64, 12, PAL.panel);
+    tank(ctx, 990, 220, 200, 340, 50, 10, PAL.soft);
+    tank(ctx, 1042, 556, 56, 118, 4, 8, PAL.panel);
+    tank(ctx, 950, 668, 240, 96, 14, 10, PAL.panel);
+    ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.07); ctx.fillRect(961, 716, 218, 37); ctx.restore();
+    /* the pipes */
+    pipe(ctx, [[20, 150], [380, 150], [380, 246]]);
+    pipe(ctx, [[460, 246], [460, 90], [1070, 90], [1070, 226]]);
+    pipe(ctx, [[1046, 600], [900, 600], [900, 140], [720, 140], [720, 740], [584, 740]]);
+    pipe(ctx, COIL.slice(0, -1).concat([[1070, 560]]));
+    pipe(ctx, [[1350, 510], [1186, 510]], 34); pipe(ctx, [[1186, 270], [1350, 270]], 34);
+    [[380, 240, 1], [460, 240, 1], [720, 190, 1], [900, 190, 1], [1070, 220, 1], [660, 90, 0], [960, 90, 0], [1190, 510, 0], [1190, 270, 0], [1042, 600, 0], [586, 740, 0]].forEach(([x, y, a]) => flange(ctx, x, y, a));
+    for (let y = 614; y <= 662; y += 12) line(ctx, 1046, y, 1094, y + 7, alpha(PAL.ink, 0.45), 4);
 
-    const seen = [];
-    for (const { k, n, laps } of STREAMS) {
-      const Lk = lens[k];
-      for (let i = 0; i < n; i++) {
-        const s = ((((i / n) + (laps * t) / LOOP) % 1) + 1) % 1 * Lk;
-        const edge = Math.min(1, s / 20, (Lk - s) / 20);
-        if (edge <= 0) continue;
-        const [x, y] = at(k, s);
-        let kind = k === 'liquid' ? 'NH3' : k === 'water' ? 'H2O' : i % 4 === 0 ? 'N2' : 'H2', alt = null, mix = 0;
-        if (k === 'react' && s > sCat && i % 8 < 4) { mix = Math.min(1, (s - sCat) / 30); alt = i % 8 < 2 ? 'NH3' : null; }
-        F.faded(ctx, edge * (1 - mix), [0, 0], () => glyph(ctx, kind, x, y));
-        if (mix > 0 && alt) F.faded(ctx, edge * mix, [0, 0], () => glyph(ctx, alt, x, y));
-        if (edge > 0.5) seen.push({ x, y, r: 12, name: NAMES[mix > 0.5 ? alt ?? kind : kind] });
-      }
+    /* every gas molecule, by its ticket */
+    const pre = [], main = [], seen = [];
+    for (let j = Math.floor((vt - Lr - PATH.liquid.L) / S); j <= Math.ceil((vt + Math.max(Lrec, LfR)) / S); j++) {
+      const a = vt - j * S, m = ((j % 8) + 8) % 8, fresh = m % 2 === 0, th = ANG[m], base = m < 2 ? 'N2' : 'H2';
+      if (a < 0) {
+        if (fresh) { const R = m === 2 || m === 6, Lf = R ? LfR : LfL, p = R ? PATH.feedR : PATH.feedL, s = a + Lf; if (s >= 0) pre.push({ k: base, p: at(p, (s / Lf) * p.L), al: Math.min(1, s / 30), th }); }
+        else { const s = a + Lrec; if (s >= 0) pre.push({ k: base, p: at(PATH.recycle, (s / Lrec) * PATH.recycle.L), al: 1, th }); }
+      } else if (a <= Lr) {
+        const s = (a / Lr) * PATH.react.L, p = at(PATH.react, s), mix = Math.min(1, Math.max(0, (s - CAT0) / (CAT1 - CAT0)));
+        if (!fresh || mix <= 0) main.push({ k: base, p, al: 1, th });
+        else { main.push({ k: base, p, al: 1 - mix, th }); if (m < 4) main.push({ k: 'NH3', p, al: mix, th }); }
+      } else if (m === 0 || m === 2) { const s = a - Lr; if (s <= PATH.liquid.L) main.push({ k: 'NH3', p: at(PATH.liquid, s), al: Math.min(1, (PATH.liquid.L - s) / 24), th }); }
     }
-    hits = [...seen.filter((h) => h.name), ...PARTS];
+    const put = (q) => { if (q.al <= 0.02) return; F.faded(ctx, q.al, [0, 0], () => glyph(ctx, q.k, q.p[0], q.p[1], q.th)); if (q.al > 0.5) seen.push({ x: q.p[0], y: q.p[1] + OY, r: 15, name: NAMES[q.k] }); };
+    pre.forEach(put);
+
+    /* inside the chamber: the inner vessel, open at its foot, with its exchanger tubes, catalyst beds and heater */
+    ctx.save(); ctx.fillStyle = PAL.soft; ctx.fillRect(402, 304, 116, 412); ctx.restore();
+    pipe(ctx, [[460, 252], [460, 306]]);
+    ctx.save(); ctx.strokeStyle = edge(); ctx.lineWidth = 4; ctx.lineJoin = 'round'; ctx.beginPath(); ctx.moveTo(402, 716); ctx.lineTo(402, 304); ctx.lineTo(442, 304); ctx.moveTo(478, 304); ctx.lineTo(518, 304); ctx.lineTo(518, 716); ctx.stroke(); ctx.restore();
+    [414, 428, 492, 506].forEach((x) => zig(ctx, [[x, 334], [x, 426]], 7, alpha(PAL.ink, 0.4)));
+    [470, 505, 540].forEach((y) => {
+      ctx.save(); ctx.beginPath(); ctx.roundRect(408, y - 12, 104, 24, 6); ctx.fillStyle = alpha(PAL.ink, 0.12); ctx.fill(); ctx.lineWidth = 1.5; ctx.strokeStyle = alpha(PAL.ink, 0.5); ctx.stroke();
+      ctx.fillStyle = alpha(PAL.ink, 0.5); for (let i = 0; i < 12; i++) { ctx.beginPath(); ctx.arc(416 + i * 8, y + (i % 2 ? 5 : -5), 2.6, 0, TAU); ctx.fill(); } ctx.restore();
+    });
+    zig(ctx, Array.from({ length: 9 }, (_, i) => [i % 2 ? 500 : 420, 592 + i * 12]), 7, alpha(PAL.ink, 0.5));
+
+    main.forEach(put);
+    /* liquid ammonia in storage, and the cooling water */
+    for (let i = 0; i < 15; i++) { const x = 976 + (i >> 1) * 28 + (i % 2 ? 14 : 0), y = i % 2 ? 744 : 728; glyph(ctx, 'NH3', x, y, ANG[i % 8]); }
+    const nw = Lw / 64;
+    for (let i = 0; i < nw; i++) { const s = (((vt + i * 64) % Lw) + Lw) % Lw, p = at(PATH.water, (s / Lw) * PATH.water.L), al = Math.min(1, s / 25, (Lw - s) / 25); if (al > 0.02) { F.faded(ctx, al, [0, 0], () => glyph(ctx, 'H2O', p[0], p[1], ANG[i % 8])); if (al > 0.5) seen.push({ x: p[0], y: p[1] + OY, r: 14, name: NAMES.H2O }); } }
+    compressor(ctx, 240, 150, spin); compressor(ctx, 655, 740, -spin);
 
     const lab = (s, x, y, align = 'left') => text(ctx, s, x, y, PAL.ink, { size: 19, align, bg: PAL.panel });
-    lab('N_{2}, H_{2} feed gases', 40, 236);
-    lab('catalyst chamber,', 286, 440, 'right'); lab('400 to 500 °C', 286, 464, 'right');
-    line(ctx, 292, 452, 304, 452, alpha(PAL.ink, 0.5), 1.5);
-    lab('catalyst', 250, 582, 'right');
-    line(ctx, 258, 582, 376, 582, alpha(PAL.ink, 0.5), 1.5);
-    lab('condenser', 1214, 490);
-    lab('NH_{3}(l) storage', 1232, 812);
-    lab('recycled N_{2}, H_{2}', 775, 460, 'center');
-    F.legend(ctx, { l: 1000, r: 1380, t: 110, b: 146 }, [['N2', 'N_{2}'], ['H2', 'H_{2}'], ['NH3', 'NH_{3}']].map(([k, s]) => ({ s, draw: (c, x, y) => glyph(c, k, x, y) })), { corner: 'top', row: true, panel: false });
-    topline(ctx, 'NH_{3} forms over the catalyst and is condensed out of the stream, while the unreacted N_{2} and H_{2} go round again.');
+    const lead = (x1, y1, x2, y2) => line(ctx, x1, y1, x2, y2, alpha(PAL.ink, 0.6), 1.5);
+    lab('N_{2}, H_{2} feed gases', 22, 192);
+    F.rich(ctx, ['compressor, ', ['150 to 250 atm', C('pressure')]], 240, 98, { size: 19, align: 'center', bg: PAL.panel });
+    lab('NH_{3} and unreacted N_{2}, H_{2}', 432, 48, 'right');
+    lead(436, 52, 452, 70);
+    lab('heat exchanger', 810, 16, 'center');
+    lab('heat exchanger', 296, 380, 'right'); lead(302, 380, 412, 380);
+    lab('catalyst chamber,', 296, 440, 'right'); F.rich(ctx, [['400 to 500 °C', C('temperature')]], 296, 466, { size: 19, align: 'right', bg: PAL.panel }); lead(302, 452, 334, 452);
+    lab('catalyst', 296, 505, 'right'); lead(302, 505, 410, 505);
+    lab('heater', 296, 640, 'right'); lead(302, 640, 420, 640);
+    lab('recycled', 810, 400, 'center'); lab('N_{2}, H_{2}', 810, 426, 'center');
+    lab('compressor', 655, 794, 'center');
+    lab('hot water out', 1204, 232); lab('cold water in', 1204, 548);
+    lab('condenser', 1204, 390);
+    lab('refrigeration', 1112, 632);
+    lab('NH_{3}(l) storage', 1204, 716);
+    F.legend(ctx, { l: 1000, r: 1385, t: 14, b: 50 }, [['N2', 'N_{2}'], ['H2', 'H_{2}'], ['NH3', 'NH_{3}'], ['H2O', 'water']].map(([k, s]) => ({ s, draw: (c, x, y) => glyph(c, k, x, y) })), { corner: 'top', row: true, panel: false });
+    ctx.restore();
+    hits = [...seen, ...PARTS.map((q) => ({ ...q, y: q.y + OY }))];
   }
   F.tex(d.readout, '\\text{N}_{2}(g) + 3\\text{H}_{2}(g) \\rightleftharpoons 2\\text{NH}_{3}(g) \\\\ \\kdH = -92.2\\ \\text{kJ}');
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });

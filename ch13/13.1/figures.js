@@ -8,48 +8,57 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
 
 /* =====================================================================
    FIGURE 13.2: a sealed tube of N₂O₄ ⇌ 2NO₂, its gas magnified to a
-   circle of molecules, beside [N₂O₄], [NO₂] and the two rates against t.
-   Flat (book rule: a particle picture is 3D only where turning shows
-   something; here every molecule must be seen and none gains from a turn).
-   The concentrations follow d[N₂O₄]/dt = −k_f[N₂O₄] + k_r[NO₂]² from
-   [N₂O₄]₀ = 0.140 M; the circle splits an N₂O₄ each time ∫rate_f dt passes
-   a multiple of Q = 0.010 M and joins the closest free pair of NO₂ each
-   time ∫rate_r dt does (offset by half), so its counts stay within a
-   molecule of the curves and both kinds of event go on at equilibrium.
-   A run of TRUN model seconds is computed whole when a slider moves.
+   circle of molecules, beside [N₂O₄] and [NO₂], every split and join
+   ticked on the time axis, and the two rates. Flat (book rule: a particle
+   picture is 3D only where turning shows something; here every molecule
+   must be seen and none gains from a turn).
+   The run starts from N₂O₄ alone (0.140 M, the book's case) or from NO₂
+   alone (0.280 M, the same atoms), and the concentrations follow
+   d[N₂O₄]/dt = −k_f[N₂O₄] + k_r[NO₂]². The circle splits an N₂O₄ each
+   time ∫rate_f dt passes a multiple of Q = 0.010 M and joins the closest
+   free pair of NO₂ each time ∫rate_r dt does (offset by half), so its
+   counts keep to the curves and both kinds of event go on at equilibrium.
+   Equilibrium is drawn from the moment the two rates stay within
+   0.0005 M/s of each other, half a unit of the readout's last place; from
+   then on the readout writes their mean for both.
+   A run of TRUN model seconds is computed whole when a control moves.
    Axes fixed: t 0 to 8 s; concentration 0 to 0.30 M (all NO₂ is 0.28 M);
-   rate 0 to 0.18 M/s (largest initial rate 1.20 × 0.140 = 0.168 M/s).
+   rate 0 to 0.18 M/s (largest initial rates 1.20 × 0.140 = 0.168 M/s
+   forward and 2.20 × 0.280² = 0.172 M/s reverse).
 ===================================================================== */
 (function () {
-  const d = F.sim(root, 'sim-n2o4-equilibrium', 600);
-  const kf = ctl(d.controls, { label: '\\kkf', cls: 'rate-constant', key: 'kf', min: 0.1, max: 1.2, step: 0.05, value: 0.6, unit: 's⁻¹', dec: 2, onInput: rerun, aria: 'forward rate constant in per second' });
-  const kr = ctl(d.controls, { label: '\\kkr', cls: 'rate-constant', key: 'kr', min: 1, max: 3, step: 0.01, value: 1.41, unit: 'M⁻¹ s⁻¹', dec: 2, onInput: rerun, aria: 'reverse rate constant in per molar per second' });
+  const d = F.sim(root, 'sim-n2o4-equilibrium', 730);
+  const st = F.choice(d.controls, { label: '\\text{start with}', aria: 'the gas the tube starts with', options: [{ value: 'n2o4', label: 'N₂O₄' }, { value: 'no2', label: 'NO₂' }], value: 'n2o4', onInput: rerun });
+  const kf = ctl(d.controls, { label: '\\kkf', cls: 'rate-constant', key: 'kf', min: 0.3, max: 1.2, step: 0.05, value: 0.6, unit: 's⁻¹', dec: 2, onInput: rerun, aria: 'forward rate constant in per second' });
+  const kr = ctl(d.controls, { label: '\\kkr', cls: 'rate-constant', key: 'kr', min: 1, max: 2.2, step: 0.05, value: 1.4, unit: 'M⁻¹ s⁻¹', dec: 2, onInput: rerun, aria: 'reverse rate constant in per molar per second' });
 
   /* the magnified circle and the tube, in canvas units */
-  const CX = 360, CY = 330, CR = 205, RI = CR - 4, TX = 92, TT = 150, TB = 520, TW = 40, RX = TX, RY = 335, RR = 26;
+  const CX = 362, CY = 392, CR = 250, RI = CR - 4, TX = 66, TT = 200, TB = 600, TW = 54, RX = TX, RY = 396, RR = 34;
   /* each molecule's atoms [element, dx, dy, r], space-filling as the book draws them; rc its collision radius */
   const MOLS = {
-    A: { M: 92.01, rc: 30, name: 'dinitrogen tetroxide, N₂O₄', atoms: [['O', -19, -11, 10], ['O', -19, 11, 10], ['O', 19, -11, 10], ['O', 19, 11, 10], ['N', -8.5, 0, 10.5], ['N', 8.5, 0, 10.5]] },
-    B: { M: 46.01, rc: 22, name: 'nitrogen dioxide, NO₂', atoms: [['O', -13, 6, 10], ['O', 13, 6, 10], ['N', 0, -3, 10.5]] },
+    A: { M: 92.01, rc: 35, name: 'dinitrogen tetroxide, N₂O₄', atoms: [['O', -22, -12.5, 11.5], ['O', -22, 12.5, 11.5], ['O', 22, -12.5, 11.5], ['O', 22, 12.5, 11.5], ['N', -10, 0, 12], ['N', 10, 0, 12]] },
+    B: { M: 46.01, rc: 25, name: 'nitrogen dioxide, NO₂', atoms: [['O', -15, 7, 11.5], ['O', 15, 7, 11.5], ['N', 0, -3.5, 12]] },
   };
-  const Q = 0.01, N0 = 14, A0 = N0 * Q, TRUN = 8, PLAY = 1.4, DT = 1 / 60, NF = Math.round(TRUN / DT), GLIDE = 260;
-  const gauss = () => { let a = 0; while (!a) a = Math.random(); return Math.sqrt(-2 * Math.log(a)) * Math.cos(TAU * Math.random()); };
-  const kick = (M) => [gauss() * 110 * Math.sqrt(46 / M), gauss() * 110 * Math.sqrt(46 / M)];
+  const Q = 0.01, N0 = 14, A0 = N0 * Q, TRUN = 8, PLAY = 1.4, DT = 1 / 60, NF = Math.round(TRUN / DT), GLIDE = 260, HALF = 18, FLASH = 0.55, TOL = 0.0005;
+  const rng = (seed) => () => { seed = (seed + 0x6D2B79F5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
   const inside = (p, r) => { const dx = p[0] - CX, dy = p[1] - CY, q = Math.hypot(dx, dy), lim = RI - r; return q <= lim ? p : [CX + (dx / q) * lim, CY + (dy / q) * lim]; };
   const smooth = F.ease.smooth;
 
-  /* one run: the concentrations every frame, and every molecule's place and turn every frame */
+  /* one run: the concentrations every frame, every molecule's place and turn every frame, and every split and join */
   function simulate() {
-    const f1 = kf.v, r1 = kr.v;
+    const f1 = kf.v, r1 = kr.v, fromA = st.value === 'n2o4', rnd = rng(fromA ? 11 : 29);
+    const gauss = () => { let a = 0; while (!a) a = rnd(); return Math.sqrt(-2 * Math.log(a)) * Math.cos(TAU * rnd()); };
+    const kick = (M) => [gauss() * 110 * Math.sqrt(46 / M), gauss() * 110 * Math.sqrt(46 / M)];
     const A = new Float64Array(NF + 1), B = new Float64Array(NF + 1), frames = [];
-    let a = A0, b = 0, cf = 0, cr = 0, uid = 0;
+    let a = fromA ? A0 : 0, b = fromA ? 0 : 2 * A0, cf = 0, cr = 0, uid = 0;
     const mols = [];
-    const add = (kind, x, u, th) => { const m = { id: uid++, kind, x, u, th, w: (Math.random() - 0.5) * 3, glide: null }; mols.push(m); return m; };
-    for (let i = 0; i < N0; i++) {
+    const add = (kind, x, u, th) => { const m = { id: uid++, kind, x, u, th, w: (rnd() - 0.5) * 3, glide: null }; mols.push(m); return m; };
+    const K0 = fromA ? 'A' : 'B', n0 = fromA ? N0 : 2 * N0, sep = 2 * MOLS[K0].rc + 6;
+    for (let i = 0; i < n0; i++) {
       let p, tries = 0;
-      do { const rr = Math.sqrt(Math.random()) * (RI - 30), aa = Math.random() * TAU; p = [CX + rr * Math.cos(aa), CY + rr * Math.sin(aa)]; tries++; }
-      while (tries < 200 && mols.some((m) => Math.hypot(m.x[0] - p[0], m.x[1] - p[1]) < 72));
-      add('A', p, kick(MOLS.A.M), Math.random() * TAU);
+      do { const rr = Math.sqrt(rnd()) * (RI - MOLS[K0].rc - 2), aa = rnd() * TAU; p = [CX + rr * Math.cos(aa), CY + rr * Math.sin(aa)]; tries++; }
+      while (tries < 400 && mols.some((m) => Math.hypot(m.x[0] - p[0], m.x[1] - p[1]) < sep));
+      add(K0, p, kick(MOLS[K0].M), rnd() * TAU);
     }
     let splits = 0, joins = 0;
     const events = [];
@@ -66,10 +75,10 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
       while (splits < Math.floor(cf / Q + 1e-9)) {
         const pool = mols.filter((m) => m.kind === 'A');
         if (!pool.length) break;
-        const m = pool[Math.floor(Math.random() * pool.length)], c = Math.cos(m.th), s = Math.sin(m.th);
+        const m = pool[Math.floor(rnd() * pool.length)], c = Math.cos(m.th), s = Math.sin(m.th);
         mols.splice(mols.indexOf(m), 1);
-        [1, -1].forEach((sg) => add('B', inside([m.x[0] + sg * 16 * c, m.x[1] + sg * 16 * s], MOLS.B.rc), [m.u[0] + sg * 70 * c, m.u[1] + sg * 70 * s], m.th + (sg > 0 ? Math.PI / 2 : -Math.PI / 2)));
-        splits++; events.push({ t: t + DT, kind: 'split' });
+        const made = [1, -1].map((sg) => add('B', inside([m.x[0] + sg * HALF * c, m.x[1] + sg * HALF * s], MOLS.B.rc), [m.u[0] + sg * 70 * c, m.u[1] + sg * 70 * s], m.th + (sg > 0 ? Math.PI / 2 : -Math.PI / 2)));
+        splits++; events.push({ t: t + DT, kind: 'split', ids: made.map((w) => w.id), x: m.x[0], y: m.x[1] });
       }
       /* joins: the closest free pair of NO₂ glides together and becomes one N₂O₄ */
       while (joins < Math.floor(cr / Q + 0.5)) {
@@ -80,11 +89,11 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
           const dd = Math.hypot(free[i].x[0] - free[j].x[0], free[i].x[1] - free[j].x[1]);
           if (dd < bd) { bd = dd; best = [free[i], free[j]]; }
         }
-        const mid = [(best[0].x[0] + best[1].x[0]) / 2, (best[0].x[1] + best[1].x[1]) / 2], n = Math.max(12, Math.round(bd / GLIDE / DT));
+        const mid = inside([(best[0].x[0] + best[1].x[0]) / 2, (best[0].x[1] + best[1].x[1]) / 2], MOLS.A.rc), n = Math.max(12, Math.round(bd / GLIDE / DT));
         const ax = Math.atan2(best[1].x[1] - best[0].x[1], best[1].x[0] - best[0].x[0]);
         best.forEach((m, i) => {
           const sg = i === 0 ? -1 : 1;
-          m.glide = { from: m.x.slice(), to: [mid[0] + sg * 16 * Math.cos(ax), mid[1] + sg * 16 * Math.sin(ax)], th0: m.th, th1: ax + (sg > 0 ? Math.PI / 2 : -Math.PI / 2), mid, ax, f0: f, n, mate: best[1 - i] };
+          m.glide = { from: m.x.slice(), to: [mid[0] + sg * HALF * Math.cos(ax), mid[1] + sg * HALF * Math.sin(ax)], th0: m.th, th1: ax + (sg > 0 ? Math.PI / 2 : -Math.PI / 2), mid, ax, f0: f, n, mate: best[1 - i] };
         });
         joins++;
       }
@@ -104,8 +113,8 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
       done.forEach((m) => {
         const w = m.glide.mate, u = [(m.u[0] + w.u[0]) / 2, (m.u[1] + w.u[1]) / 2];
         mols.splice(mols.indexOf(m), 1); mols.splice(mols.indexOf(w), 1);
-        add('A', inside(m.glide.mid.slice(), MOLS.A.rc), u, m.glide.ax);
-        events.push({ t: t + DT, kind: 'join' });
+        const made = add('A', m.glide.mid.slice(), u, m.glide.ax);
+        events.push({ t: t + DT, kind: 'join', ids: [made.id], x: made.x[0], y: made.x[1] });
       });
       /* elastic bounces between molecules that are not gliding */
       const live = mols.filter((m) => !m.glide);
@@ -119,15 +128,16 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
         q.u[0] -= ((2 * mp) / (mp + mq)) * vn * nx; q.u[1] -= ((2 * mp) / (mp + mq)) * vn * ny;
       }
     }
-    /* equilibrium: the first time the two rates agree to the readout's three decimals, and stay so */
+    /* equilibrium: from the frame after which the two rates stay within TOL of each other */
     let teq = Infinity;
-    for (let f = NF; f >= 0; f--) { if (fmt(f1 * A[f], 3) !== fmt(r1 * B[f] * B[f], 3)) break; teq = f * DT; }
-    return { A, B, frames, events, teq, f1, r1 };
+    for (let f = NF; f >= 0; f--) { if (Math.abs(f1 * A[f] - r1 * B[f] * B[f]) >= TOL) break; teq = f * DT; }
+    return { A, B, frames, events, teq, f1, r1, fromA, n0 };
   }
   const cy = cycle(() => TRUN, 1.2);
   let run = simulate(), hits = [];
   function rerun() { run = simulate(); cy.reset(); }
   F.hover(d.stage, () => hits);
+  /*TEST*/ d.fig.__run = () => run;
 
   function molecule(ctx, kind, x, y, th, s = 1) {
     const c = Math.cos(th), sn = Math.sin(th);
@@ -136,70 +146,100 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
       ctx.beginPath(); ctx.arc(x + s * (dx * c - dy * sn), y + s * (dx * sn + dy * c), r * s, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore();
     });
   }
+  const ring = (ctx, x, y, r, color, w = 4) => { ctx.save(); ctx.strokeStyle = color; ctx.lineWidth = w; ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.stroke(); ctx.restore(); };
   /* the outer tangents of the ring on the tube and the magnified circle: the two lines of the magnifier */
   function tangents() {
     const dx = CX - RX, dy = CY - RY, D = Math.hypot(dx, dy), base = Math.atan2(dy, dx), g = Math.acos((RR - CR) / D);
     return [base + g, base - g].map((a) => [RX + RR * Math.cos(a), RY + RR * Math.sin(a), CX + CR * Math.cos(a), CY + CR * Math.sin(a)]);
   }
+  /* the sealed tube: a glass ampoule drawn off to a closed tip, round at the bottom */
+  function tubePath(ctx) {
+    const h = TW / 2;
+    ctx.beginPath(); ctx.moveTo(TX - h, TT + 52); ctx.bezierCurveTo(TX - h, TT + 18, TX - 7, TT + 22, TX - 7, TT - 6); ctx.lineTo(TX - 6, TT - 34); ctx.arc(TX, TT - 34, 6, Math.PI, 0);
+    ctx.lineTo(TX + 7, TT - 6); ctx.bezierCurveTo(TX + 7, TT + 22, TX + h, TT + 18, TX + h, TT + 52); ctx.lineTo(TX + h, TB - h); ctx.arc(TX, TB - h, h, 0, Math.PI); ctx.closePath();
+  }
+  /* a curve's name beside its newest point, ahead of the curve; two names never closer than GAP */
+  function names(ctx, ax, x, items) {
+    const GAP = 34, ys = items.map((it) => Math.min(ax.box.b - 14, Math.max(ax.box.t + 14, it.y)));
+    if (Math.abs(ys[1] - ys[0]) < GAP) { const m = Math.min(ax.box.b - 14 - GAP / 2, Math.max(ax.box.t + 14 + GAP / 2, (ys[0] + ys[1]) / 2)), sg = items[0].over ? -1 : 1; ys[0] = m + sg * GAP / 2; ys[1] = m - sg * GAP / 2; }
+    items.forEach((it, i) => text(ctx, it.s, x + 18, ys[i], it.color, { size: 20, weight: 600, tex: true, bg: PAL.panel }));
+  }
 
   function draw() {
     const { ctx } = begin(d.c);
-    const t = cy.now(), f = Math.min(NF, Math.round(t / DT)), { A, B, teq, f1, r1 } = run;
+    const t = cy.now(), f = Math.min(NF, Math.round(t / DT)), { A, B, teq, f1, r1, fromA, n0 } = run;
     const eq = t >= teq;
-    const seen = run.events.filter((e) => e.t <= t + 1e-9), nS = seen.filter((e) => e.kind === 'split').length, nJ = seen.length - nS;
+    const cn = F.ref('n2o4'), co = F.ref('no2'), cfw = F.ref('forward'), crv = F.ref('reverse');
+    const seen = run.events.filter((e) => e.t <= t + 1e-9);
+    const count = (list, kind) => list.filter((e) => e.kind === kind).length;
     const pl = (n, one, many) => n + ' ' + (n === 1 ? one : many);
-    const lines = topline(ctx, t < DT / 2 ? 'At $\\kt = 0$ the tube holds only N₂O₄: ' + N0 + ' molecules in the circle and no NO₂.'
-      : (eq ? 'At equilibrium: ' : 'Pre-equilibrium: ') + pl(nS, 'N₂O₄ has', 'N₂O₄ have') + ' split and ' + pl(nJ, 'pair', 'pairs') + ' of NO₂ ' + (nJ === 1 ? 'has' : 'have') + ' joined' + (eq ? ', and both go on.' : '.'));
+    const said = (list) => pl(count(list, 'split'), 'N₂O₄ has', 'N₂O₄ have') + ' split and ' + pl(count(list, 'join'), 'pair of NO₂ has', 'pairs of NO₂ have') + ' joined';
+    const lines = topline(ctx, t < DT / 2 ? 'At $\\kt = 0$ the tube holds only ' + (fromA ? 'N₂O₄' : 'NO₂') + ', ' + n0 + ' molecules in the circle.'
+      : eq ? 'At equilibrium: since $\\kt = ' + fmt(teq, 1) + '\\ \\text{s}$, ' + said(seen.filter((e) => e.t > teq)) + '.'
+        : 'Pre-equilibrium: ' + said(seen) + '.');
 
     /* the sealed tube, its gas as brown as the NO₂ in it */
-    const brown = F.fact(NO2_BROWN), tint = 0.04 + 0.8 * Math.min(1, B[f] / (2 * A0));
-    const tube = () => { ctx.beginPath(); ctx.moveTo(TX - TW / 2, TT + 34); ctx.quadraticCurveTo(TX - TW / 2, TT + 8, TX - 6, TT); ctx.lineTo(TX - 3, TT - 26); ctx.arc(TX, TT - 26, 3, Math.PI, 0); ctx.lineTo(TX + 6, TT); ctx.quadraticCurveTo(TX + TW / 2, TT + 8, TX + TW / 2, TT + 34); ctx.lineTo(TX + TW / 2, TB - TW / 2); ctx.arc(TX, TB - TW / 2, TW / 2, 0, Math.PI); ctx.closePath(); };
-    ctx.save(); tube(); ctx.fillStyle = alpha(brown, tint); ctx.fill(); ctx.strokeStyle = alpha(PAL.ink, 0.7); ctx.lineWidth = 3; ctx.stroke(); ctx.restore();
-    label(ctx, 'sealed tube', TX, TB + 24, { side: 'below', size: 17, gap: 0, weight: 400, color: PAL.muted });
+    const brown = F.fact(NO2_BROWN), tint = 0.03 + 0.82 * Math.min(1, B[f] / (2 * A0));
+    ctx.save(); tubePath(ctx); ctx.fillStyle = PAL.panel; ctx.fill(); ctx.fillStyle = alpha(brown, tint); ctx.fill(); ctx.strokeStyle = alpha(PAL.ink, 0.75); ctx.lineWidth = 3.5; ctx.stroke(); ctx.restore();
+    line(ctx, TX - TW / 2 + 11, TT + 64, TX - TW / 2 + 11, TB - TW / 2 - 6, alpha(PAL.panel, 0.55), 6);   /* the light along the glass */
+    label(ctx, 'sealed tube', TX, TB + 26, { side: 'below', size: 17, gap: 0, weight: 400, color: PAL.muted });
 
     /* the magnifier: a ring on the tube, two lines out to the circle */
     tangents().forEach(([x1, y1, x2, y2]) => line(ctx, x1, y1, x2, y2, alpha(PAL.ink, 0.35), 2));
-    ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.6); ctx.lineWidth = 2.5; ctx.beginPath(); ctx.arc(RX, RY, RR, 0, TAU); ctx.stroke(); ctx.restore();
-    ctx.save(); ctx.fillStyle = PAL.panel; ctx.beginPath(); ctx.arc(CX, CY, CR, 0, TAU); ctx.fill(); ctx.fillStyle = alpha(brown, tint * 0.25); ctx.fill(); ctx.restore();
+    ring(ctx, RX, RY, RR, alpha(PAL.ink, 0.6), 2.5);
+    ctx.save(); ctx.fillStyle = PAL.panel; ctx.beginPath(); ctx.arc(CX, CY, CR, 0, TAU); ctx.fill(); ctx.fillStyle = alpha(brown, tint * 0.22); ctx.fill(); ctx.restore();
 
-    /* the molecules, clipped to the circle */
+    /* the molecules, clipped to the circle, and a ring spreading from each split and each join just made */
     hits = [];
+    const now = run.frames[f];
     ctx.save(); ctx.beginPath(); ctx.arc(CX, CY, RI, 0, TAU); ctx.clip();
-    run.frames[f].forEach(([kind, x, y, th]) => { molecule(ctx, kind, x, y, th); hits.push({ x, y, r: MOLS[kind].rc, name: MOLS[kind].name }); });
+    now.forEach(([kind, x, y, th]) => { molecule(ctx, kind, x, y, th); hits.push({ x, y, r: MOLS[kind].rc, name: MOLS[kind].name }); });
+    seen.filter((e) => t - e.t < FLASH).forEach((e) => {
+      const k = (t - e.t) / FLASH, at = now.filter((m) => e.ids.includes(m[4]));
+      const x = at.length === e.ids.length ? at.reduce((s, m) => s + m[1], 0) / at.length : e.x, y = at.length === e.ids.length ? at.reduce((s, m) => s + m[2], 0) / at.length : e.y;
+      ctx.save(); ctx.globalAlpha = 1 - k * k; ring(ctx, x, y, MOLS.A.rc + 4 + 24 * F.ease.out(k), e.kind === 'split' ? cfw : crv, 5); ctx.restore();
+    });
     ctx.restore();
-    ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.75); ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(CX, CY, CR, 0, TAU); ctx.stroke(); ctx.restore();
-    hits.push({ x: TX, y: (TT + TB) / 2, r: 30, name: 'the sealed tube of gas' });
-    legend(ctx, { l: CX - CR, r: CX + CR, t: CY + CR + 8, b: CY + CR + 50 }, [
-      { s: 'N₂O₄', draw: (c, x, y) => molecule(c, 'A', x, y, 0, 0.7) },
-      { s: 'NO₂', draw: (c, x, y) => molecule(c, 'B', x, y, 0, 0.7) },
+    ring(ctx, CX, CY, CR, alpha(PAL.ink, 0.75), 3);
+    hits.push({ x: TX, y: (TT + TB) / 2, r: 34, name: 'the sealed tube; its gas is as brown as the NO₂ in it' });
+    legend(ctx, { l: CX - CR - 30, r: CX + CR + 30, t: CY + CR + 8, b: CY + CR + 50 }, [
+      { s: '$\\text{N}_2\\text{O}_4$', draw: (c, x, y) => molecule(c, 'A', x, y, 0, 0.6) },
+      { s: '$\\text{NO}_2$', draw: (c, x, y) => molecule(c, 'B', x, y, 0, 0.6) },
+      { s: 'a split', draw: (c, x, y) => ring(c, x, y, 9, cfw, 4) },
+      { s: 'a join', draw: (c, x, y) => ring(c, x, y, 9, crv, 4) },
     ], { corner: 'top', row: true, panel: false });
 
-    /* the two graphs, drawn up to the clock, the stretch at equilibrium shaded */
+    /* the graphs, drawn up to the clock, the stretch at equilibrium shaded */
     const at = (arr) => (s) => { const g = Math.min(NF, s / DT), i = Math.floor(g), k = g - i; return i >= NF ? arr[NF] : arr[i] + (arr[i + 1] - arr[i]) * k; };
     const cA = at(A), cB = at(B), rf = (s) => f1 * cA(s), rr = (s) => r1 * cB(s) * cB(s);
-    const shade = (ax) => {
-      if (!eq) return;
-      const { box, X } = ax;
-      ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.07); ctx.fillRect(X(teq), box.t, box.r - X(teq), box.b - box.t); ctx.restore();
-      line(ctx, X(teq), box.t, X(teq), box.b, alpha(PAL.ink, 0.55), 2, [10, 10]);
-      const room = box.r - X(teq) > 210;   /* a late equilibrium leaves a narrow stretch: the words stand left of the line */
-      text(ctx, 'equilibrium achieved', room ? (X(teq) + box.r) / 2 : X(teq) - 12, box.t + 18, PAL.muted, { size: 17, align: room ? 'center' : 'right', bg: PAL.panel });
-    };
-    const top = 120 + (lines > 1 ? 26 : 0);
-    const g1 = axes(ctx, { l: 690, r: 1340, t: top, b: 300 }, [0, TRUN], [0, 0.3], { nx: 4, ny: 3, fy: (q) => fmt(q, 2), yl: 'concentration (M)', yc: C('concentration') });
-    shade(g1);
-    const cn = F.ref('n2o4'), co = F.ref('no2'), cfw = F.ref('forward'), crv = F.ref('reverse');
+    const GL = 770, GR = 1250, top = 142 + (lines > 1 ? 20 : 0), TY = [392, 422];
+    const g1 = axes(ctx, { l: GL, r: GR, t: top, b: 332 }, [0, TRUN], [0, 0.3], { nx: 4, ny: 3, fy: (q) => fmt(q, 2), yl: 'concentration (M)', yc: C('concentration') });
+    const g2 = axes(ctx, { l: GL, r: GR, t: 488, b: 678 }, [0, TRUN], [0, 0.18], { nx: 4, ny: 3, fy: (q) => fmt(q, 2), xl: 'time t (s)', xc: C('time'), yl: 'rate (M/s)', yc: C('rate') });
+    if (eq) {
+      const xe = g1.X(teq);
+      [g1, g2].forEach(({ box }) => { ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.07); ctx.fillRect(xe, box.t, box.r - xe, box.b - box.t); ctx.restore(); });
+      line(ctx, xe, g1.box.t, xe, g2.box.b, alpha(PAL.ink, 0.55), 2, [10, 10]);
+      const room = GR - xe > 210;   /* a late equilibrium leaves a narrow stretch: the words stand left of the line */
+      text(ctx, 'equilibrium achieved', room ? (xe + GR) / 2 : xe - 12, g1.box.t + 18, PAL.muted, { size: 17, align: room ? 'center' : 'right', bg: PAL.panel });
+    }
     if (t > 0.01) { plot(ctx, g1, cA, cn, { w: 5, x: [0, t] }); plot(ctx, g1, cB, co, { w: 5, x: [0, t] }); }
     dot(ctx, g1.X(t), g1.Y(cA(t)), cn, true, 9); dot(ctx, g1.X(t), g1.Y(cB(t)), co, true, 9);
-    legend(ctx, g1, [{ s: '$[\\text{N}_2\\text{O}_4]$', color: cn, w: 5, f: cA }, { s: '$[\\text{NO}_2]$', color: co, w: 5, f: cB }], { corner: 'above' });
+    names(ctx, g1, g1.X(t), [{ s: '$\\text{N}_2\\text{O}_4$', y: g1.Y(cA(t)), color: cn, over: cA(t) >= cB(t) }, { s: '$\\text{NO}_2$', y: g1.Y(cB(t)), color: co }]);
 
-    const g2 = axes(ctx, { l: 690, r: 1340, t: 390, b: 540 }, [0, TRUN], [0, 0.18], { nx: 4, ny: 3, fy: (q) => fmt(q, 2), xl: 'time t (s)', xc: C('time'), yl: 'rate (M/s)', yc: C('rate') });
-    shade(g2);
-    if (t > 0.01) { plot(ctx, g2, rf, cfw, { w: 5, x: [0, t] }); plot(ctx, g2, rr, crv, { w: 5, x: [0, t] }); }
-    dot(ctx, g2.X(t), g2.Y(rf(t)), cfw, true, 9); dot(ctx, g2.X(t), g2.Y(rr(t)), crv, true, 9);
-    legend(ctx, g2, [{ s: '$\\kkf[\\text{N}_2\\text{O}_4]$', color: cfw, w: 5, f: rf }, { s: '$\\kkr[\\text{NO}_2]^2$', color: crv, w: 5, f: rr }], { corner: 'above' });
+    /* every split and every join so far, a tick at its time: the closer the ticks, the greater the rate */
+    [['splits', 'split', cfw], ['joins', 'join', crv]].forEach(([s, kind, color], i) => {
+      line(ctx, GL, TY[i], GR, TY[i], alpha(PAL.ink, 0.18), 1.5);
+      seen.forEach((e) => { if (e.kind === kind) line(ctx, g1.X(e.t), TY[i] - 10, g1.X(e.t), TY[i] + 10, color, 3.5); });
+      text(ctx, s, GL - 14, TY[i], color, { size: 18, weight: 600, align: 'right' });
+    });
 
-    const ca = fmt(cA(t), 3), cb = fmt(cB(t), 3), sf = fmt(rf(t), 3), sr = fmt(rr(t), 3);
+    /* the forward rate dashed over the reverse, so both show where they run together */
+    if (t > 0.01) { plot(ctx, g2, rr, crv, { w: 5, x: [0, t] }); plot(ctx, g2, rf, cfw, { w: 5, x: [0, t], dash: [10, 10] }); }
+    dot(ctx, g2.X(t), g2.Y(rr(t)), crv, true, 9); dot(ctx, g2.X(t), g2.Y(rf(t)), cfw, true, 9);
+    names(ctx, g2, g2.X(t), [{ s: '$\\kkf[\\text{N}_2\\text{O}_4]$', y: g2.Y(rf(t)), color: cfw, over: fromA }, { s: '$\\kkr[\\text{NO}_2]^2$', y: g2.Y(rr(t)), color: crv }]);
+
+    const both = (rf(t) + rr(t)) / 2;
+    const ca = fmt(cA(t), 3), cb = fmt(cB(t), 3), sf = fmt(eq ? both : rf(t), 3), sr = fmt(eq ? both : rr(t), 3);
     tex(d.readout, `\\kratef = \\kkf[\\text{N}_2\\text{O}_4] = (${hue('rate-constant', fmt(f1, 2) + '\\ \\text{s}^{-1}')})(${hue('concentration', ca + '\\ \\text{M}')}) = ${hue('rate', sf + '\\ \\text{M/s}')}`
       + ` \\\\ \\krater = \\kkr[\\text{NO}_2]^2 = (${hue('rate-constant', fmt(r1, 2) + '\\ \\text{M}^{-1}\\,\\text{s}^{-1}')})(${hue('concentration', cb + '\\ \\text{M}')})^2 = ${hue('rate', sr + '\\ \\text{M/s}')}`);
   }

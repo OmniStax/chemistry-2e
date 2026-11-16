@@ -199,8 +199,9 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
 ===================================================================== */
 (function () {
   const d = sim('sim-complex-geometry');
-  const HS = 540, DIST = 22.7, K = 0.62, Y0 = -0.4;
-  const v = F.view3d(d.stage, { spin: 'idle', h: HS, dist: DIST, tilt: 0.3 });
+  const HS = 540, DIST = 22.7, K = 0.62, TILT = 0.3;
+  /* the tilt is bounded so that no ion is seen from underneath, where up and down in a shape would swap */
+  const v = F.view3d(d.stage, { spin: 'idle', h: HS, dist: DIST, tilt: TILT, pitch: [-0.5, 1.45] });
   v.look({});                                      /* the shapes are compared at rest; the spin button starts the turn */
   const UNIT = lens(v, HS, DIST);
   const strip = F.makeCanvas(d.stage, 196);
@@ -242,7 +243,9 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
   Object.entries(ROWS).forEach(([id, [label, metal, geom, lig, r, ligands, o = {}]]) => {
     const sites = GEOM[geom].dirs.map((dd, i) => { const [type, rr] = Array.isArray(lig) ? lig[i] : [lig, r]; return { d: dd, type, r: rr }; });
     const S = { metal, sites, bridges: o.bridges || [] };
-    C[id] = { id, label, geom, S, ligands, cn: sites.length, arc: o.arc, out: o.out, R: reach(blend(S, S, 1, K).atoms) };
+    const atoms = blend(S, S, 1, K).atoms, ys = atoms.map((t) => [t.p[1] * Math.cos(TILT) - t.p[2] * Math.sin(TILT), rad(t.sym)]);
+    /* R is the ion's reach at any turn; lo and hi are how far it reaches down and up in the opening view */
+    C[id] = { id, label, geom, S, ligands, cn: sites.length, arc: o.arc, out: o.out, R: reach(atoms), lo: Math.min(...ys.map(([y, r]) => y - r)), hi: Math.max(...ys.map(([y, r]) => y + r)) };
   });
   const HEAD = {
     2: 'Two donor atoms lie in a line through the metal.',
@@ -259,7 +262,9 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
     const list = ids.map((id) => C[id]), gap = 0.8, wide = 1400 / UNIT - 0.8, tall = 2.2;
     const s = Math.min(2.1, tall / Math.max(...list.map((c) => c.R)), wide / (list.reduce((a, c) => a + 2 * c.R, 0) + gap * (list.length - 1)));
     let x = -(list.reduce((a, c) => a + 2 * c.R * s, 0) + gap * s * (list.length - 1)) / 2;
-    SETS[cn] = { cn: +cn, list: list.map((c) => { const o = { c, s, x: x + c.R * s }; x += 2 * c.R * s + gap * s; return o; }) };
+    /* the row stands with its opening view centred between the headline and the foot of the stage */
+    const y = -0.4 - (s * (Math.max(...list.map((c) => c.hi)) + Math.min(...list.map((c) => c.lo)))) / 2;
+    SETS[cn] = { cn: +cn, list: list.map((c) => { const o = { c, s, y, x: x + c.R * s }; x += 2 * c.R * s + gap * s; return o; }) };
   });
   const pick = F.choice(d.controls, { label: '\\text{coordination number}', key: 'cn', aria: 'the coordination number', options: Object.keys(SETS).map((n) => ({ value: n, label: n })), value: '4' });
   const ro = F.readout(d);
@@ -272,7 +277,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
       const both = a && b, on = both ? 1 : b ? k : 1 - k, kk = both ? k : 1;
       const st = blend((a || b).c.S, (b || a).c.S, kk, K);
       const x = both ? lerp(a.x, b.x, k) : (b || a).x, s = (both ? lerp(a.s, b.s, k) : (b || a).s) * (0.45 + 0.55 * on);
-      g.position.set(x, Y0, 0); g.scale.setScalar(s);
+      g.position.set(x, both ? lerp(a.y, b.y, k) : (b || a).y, 0); g.scale.setScalar(s);
       molecule(v, g, st.atoms, st.bonds, kk, on);
       /* the polyhedron of whichever ion the morph is nearer, gone at the half-way point where its corners are in flight */
       const near = both ? (k < 0.5 ? a : b).c : (b || a).c, fa = (both && a.c !== b.c ? Math.abs(2 * k - 1) : 1) * on;
@@ -283,7 +288,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
         plain(hued(v.label(lab, V.mul(pt, 1.2), g, 0, 'bare'), 'angle'), (fa - 0.6) / 0.4);
       }
       if (on > 0.5) st.atoms.forEach((t, m) => { if (m > 0 && t.a > 0.5) syms.add(t.sym); });
-      if (both && a.c !== b.c) labels.push([a.c, lerp(a.x, b.x, k), 1 - k], [b.c, lerp(a.x, b.x, k), k]); else labels.push([near, x, on]);
+      if (both && a.c !== b.c) labels.push([a.c, x, 1 - 2 * k], [b.c, x, 2 * k - 1]); else labels.push([near, x, on]);
     }
     /* under each ion: its formula, the geometry as Table 19.5 names it, its ligands and donor atoms, and Figure 19.19's ions outside the brackets */
     labels.forEach(([c, x, a]) => {
@@ -313,7 +318,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
 (function () {
   const d = sim('sim-cis-trans');
   const HS = 520, DIST = 21.5, K = 0.62, Y0 = -0.5, X0 = 3.3;
-  const v = F.view3d(d.stage, { spin: 'idle', h: HS, dist: DIST, tilt: 0.3 });
+  const v = F.view3d(d.stage, { spin: 'idle', h: HS, dist: DIST, tilt: 0.3, pitch: [-0.5, 1.45] });
   v.look({});
   const UNIT = lens(v, HS, DIST);
   const strip = F.makeCanvas(d.stage, 172);

@@ -160,7 +160,9 @@ const palSig = () => [PAL.ink, PAL.panel, PAL.muted, F.el('C'), F.el('H')].join(
    chain against a 109.5° zigzag, ethene's six atoms in one plane.
    Still: a molecule has no clock. Physical 3D; the orbit turns freely
    about the vertical and tilts no more than 0.6 rad, so a long chain
-   stays level and can fill its half of the stage. Idle spin.
+   stays level and can fill its half of the stage. No idle spin: a
+   full turn would pass through end-on views that hide the zigzag, so
+   the scene opens side-on and the reader turns it.
 ===================================================================== */
 (function () {
   const H = 300, d = sim('sim-hydrocarbon-models', H);
@@ -191,7 +193,7 @@ const palSig = () => [PAL.ink, PAL.panel, PAL.muted, F.el('C'), F.el('H')].join(
   /* ---------- the two models under it ---------- */
   const RB = { C: 0.36, H: 0.24 }, RF = { C: 1.6, H: 1.1 }, PX = 5.5;
   /* a long lens (14° over 28 units frames what 30° over 13 would), so the two models, off the axis on either side, are seen from nearly the same direction */
-  const v = F.view3d(d.stage, { spin: 'idle', h: 440, dist: 28, tilt: 0.22, pitch: [-0.6, 0.6] });
+  const v = F.view3d(d.stage, { h: 440, dist: 28, tilt: 0.22, pitch: [-0.6, 0.6] });
   if (v.scene && v.camera.isPerspectiveCamera) { v.camera.fov = 14; v.camera.updateProjectionMatrix(); }
   v.setView(-0.25, 0.22);
   const gB = v.part(-PX), gF = v.part(PX);
@@ -340,10 +342,10 @@ const palSig = () => [PAL.ink, PAL.panel, PAL.muted, F.el('C'), F.el('H')].join(
   /* the expanded formula as the book draws it: the methyl group stands above carbon 2 and the ethyl group hangs below carbon 3 on
      long bonds, so their hydrogen atoms stay clear of the chain's; the hydrogen atoms come in the same order as in G */
   const GE = grid([[0, 0], [1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [1, -2], [2, 2], [2, 3]], CC);
-  /* the skeletal structure at 120° bends, 100 units a bond: the main chain zigzags, the methyl group stands up from carbon 2, the ethyl group hangs from carbon 3 */
-  const BX = 100 * Math.cos(30 * RAD), BY = 25;
+  /* the skeletal structure at 120° bends, 120 units a bond: the main chain zigzags, the methyl group stands up from carbon 2, the ethyl group hangs from carbon 3 */
+  const SL = 120, BX = SL * Math.cos(30 * RAD), BY = SL / 4;
   const SKEL = [0, 1, 2, 3, 4, 5].map((i) => [i * BX, i % 2 ? -BY : BY]);
-  SKEL.push([SKEL[1][0], SKEL[1][1] - 100], [SKEL[2][0], SKEL[2][1] + 100], [SKEL[2][0] + BX, SKEL[2][1] + 150]);
+  SKEL.push([SKEL[1][0], SKEL[1][1] - SL], [SKEL[2][0], SKEL[2][1] + SL], [SKEL[2][0] + BX, SKEL[2][1] + 1.5 * SL]);
   const nH = CS.map((_, i) => G.hs[i].length);
   const LABEL = nH.map((n) => (n === 0 ? 'C' : n === 1 ? 'CH' : `CH_{${n}}`));
   const REP = ['expanded', 'condensed', 'skeletal'];
@@ -363,7 +365,7 @@ const palSig = () => [PAL.ink, PAL.panel, PAL.muted, F.el('C'), F.el('H')].join(
       const P = SKEL.map(([x, y]) => [CX + x - ox, CY + y - oy]);
       return { c: P.flat(), lab: CS.map(() => 0), cond: CS.map(() => 0), h: G.atoms.filter((t) => t.s === 'H').flatMap((t) => [...P[t.on], 0]) };
     }
-    const sx = rep === 'expanded' ? 76 : 118, sy = rep === 'expanded' ? 60 : 74;
+    const sx = rep === 'expanded' ? 76 : 150, sy = rep === 'expanded' ? 60 : 96;
     const at = (rep === 'expanded' ? GE : G).atoms.map((t) => ({ x: CX + (t.gx - 2.5) * sx, y: CY + (t.gy - 0.5) * sy }));
     const C = CS.map((_, i) => [at[i].x, at[i].y]);
     return { c: C.flat(), lab: CS.map(() => 1), cond: CS.map(() => (rep === 'condensed' ? 1 : 0)),

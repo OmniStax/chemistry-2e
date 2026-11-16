@@ -22,6 +22,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -49,7 +52,7 @@
     "potential"
    ],
    "facts": [
-    "#c9dc6a",
+    "#d6e58e",
     "#d9822b",
     "#8a4b1f"
    ],
@@ -62,6 +65,10 @@
     {
      "model": "claude-opus-5-5",
      "part": "caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "second pass: rebuilt as a grid of all twelve halogen and halide pairings"
     }
    ]
   },
@@ -117,6 +124,10 @@
     {
      "model": "claude-opus-5-5",
      "part": "view buttons and on-atom labels gone, key added, caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "second pass: rebuilt as each halogen's fluorides side by side"
     }
    ]
   }

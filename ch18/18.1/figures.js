@@ -1,20 +1,21 @@
 /* Figures for section 18.1 Periodicity. Boots against the section's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['18.1'] = function (root, F) {
-const { tex, C, PAL, alpha, register, begin, line, text, headline, axes } = F;
+const { tex, C, PAL, alpha, register, begin, line, text, headline } = F;
 const sim = (id, H) => F.sim(root, id, H);
 const still = (d, draw) => register(d.fig, { update: () => {}, draw });
 
 /* =====================================================================
    FIGURE 18.2: the periodic table shaded by class, as the text classes
-   the elements, with a choice of group. A group lights its column and
-   sets its members' first ionization energies (the book's values of
-   Figure 6.34) as bars, with the oxidation states the text gives each
-   metal. Still: nothing here has a clock; the choice crossfades the
-   shading, the bars and the f-block rows.
+   the elements, with one of its six groups of representative metals read
+   down beneath it: each member's first ionization energy (the book's
+   values of Figure 6.34) as a bar, the oxidation states the text gives
+   each metal, and the way reactivity runs where the text states it.
+   Still: nothing here has a clock; a choice morphs the bars and
+   crossfades the rest.
 ===================================================================== */
 (function () {
-  const d = sim('sim-periodic', 890);
+  const d = sim('sim-periodic', 940);
   const ELEMENTS = [
     ['H','Hydrogen','g'], ['He','Helium','g'], ['Li','Lithium','s'], ['Be','Beryllium','s'], ['B','Boron','s'], ['C','Carbon','s'], ['N','Nitrogen','g'],
     ['O','Oxygen','g'], ['F','Fluorine','g'], ['Ne','Neon','g'], ['Na','Sodium','s'], ['Mg','Magnesium','s'], ['Al','Aluminum','s'], ['Si','Silicon','s'],
@@ -64,136 +65,161 @@ const still = (d, draw) => register(d.fig, { update: () => {}, draw });
   const EL = ELEMENTS.map(([sym, name, st], i) => ({ sym, name, st, Z: i + 1, cls: classOf(sym, i + 1), ...place(i + 1) }));
   const BY = Object.fromEntries(EL.map((e) => [e.sym, e]));
 
-  /* each group the text takes: its members from the top (the radioactive ones left out), IE₁ in kJ/mol as Figure 6.34
-     prints it, and the oxidation states the text gives each metal, a trailing * marking the state two below the group's */
+  /* each group the text takes, its members by period (2 to 6; the radioactive seventh is left out): IE₁ in kJ/mol as
+     Figure 6.34 prints it, and the oxidation states the text gives each metal, a trailing * marking the state two below
+     the group's. `react` is the run of periods along which the text says reactivity rises, tail to head. */
   const GROUPS = {
-    1: { m: [['Li', 520, '1+'], ['Na', 490, '1+'], ['K', 420, '1+'], ['Rb', 400, '1+'], ['Cs', 380, '1+']],
-      head: 'Down group 1 the first ionization energy falls and reactivity rises; each alkali metal forms a 1+ ion.' },
-    2: { m: [['Be', 900, '2+'], ['Mg', 730, '2+'], ['Ca', 590, '2+'], ['Sr', 550, '2+'], ['Ba', 500, '2+']],
-      head: 'Each group 2 metal has a higher first ionization energy than the group 1 metal of its period, and forms a 2+ ion.' },
-    12: { m: [['Zn', 910, '2+'], ['Cd', 870, '2+'], ['Hg', 1000, '2+ 1+']],
-      head: 'Zinc, cadmium and mercury form 2+ ions, and mercury also 1+ in $\\text{Hg}_{2}{}^{2+}$; zinc is the most reactive and mercury the least.' },
-    13: { m: [['B', 800], ['Al', 580, '3+'], ['Ga', 580, '3+ 1+*'], ['In', 560, '3+ 1+*'], ['Tl', 590, '3+ 1+*']],
-      head: 'Gallium, indium and thallium form 1+ ions as well as 3+, two below the group oxidation state: the inert pair effect.' },
-    14: { m: [['C', 1090], ['Si', 780], ['Ge', 780], ['Sn', 700, '4+ 2+*'], ['Pb', 710, '4+ 2+*']],
-      head: 'Tin and lead form stable 2+ cations, two below the group oxidation state of 4+, as well as covalent 4+ compounds.' },
-    15: { m: [['N', 1400], ['P', 1060], ['As', 960], ['Sb', 830], ['Bi', 800, '5+ 3+*']],
-      head: 'Bismuth readily gives up three of its five valence electrons as $\\text{Bi}^{3+}$, and reaches 5+ only with strong oxidizing agents.' },
+    1: { m: { 2: ['Li', 520, '1+'], 3: ['Na', 490, '1+'], 4: ['K', 420, '1+'], 5: ['Rb', 400, '1+'], 6: ['Cs', 380, '1+'] }, react: [2, 6],
+      head: 'Down group 1 the first ionization energy falls, so each metal gives up its one valence electron more easily than the one above it.',
+      ro: 'ns^{1}\\text{:}\\ \\ \\text{M}\\longrightarrow\\text{M}^{+}+\\text{e}^{-}' },
+    2: { m: { 2: ['Be', 900, '2+'], 3: ['Mg', 730, '2+'], 4: ['Ca', 590, '2+'], 5: ['Sr', 550, '2+'], 6: ['Ba', 500, '2+'] }, react: [2, 6],
+      head: 'Each alkaline earth metal has a higher first ionization energy than the alkali metal of its period and is less reactive than it.',
+      ro: 'ns^{2}\\text{:}\\ \\ \\text{M}\\longrightarrow\\text{M}^{2+}+2\\,\\text{e}^{-}' },
+    12: { m: { 4: ['Zn', 910, '2+'], 5: ['Cd', 870, '2+'], 6: ['Hg', 1000, '2+ 1+'] }, react: [6, 4],
+      head: 'Group 12 runs the other way: zinc is the most reactive and mercury the least. Mercury also shows 1+, in $\\text{Hg}_{2}{}^{2+}$.',
+      ro: 'ns^{2}\\text{:}\\ \\ \\text{M}\\longrightarrow\\text{M}^{2+}+2\\,\\text{e}^{-}' },
+    13: { m: { 2: ['B', 800], 3: ['Al', 580, '3+'], 4: ['Ga', 580, '3+ 1+*'], 5: ['In', 560, '3+ 1+*'], 6: ['Tl', 590, '3+ 1+*'] },
+      head: 'Aluminum normally shows 3+. Gallium, indium and thallium also form 1+ ions, two below the group oxidation state.',
+      ro: 'ns^{2}np^{1}\\text{:}\\ \\ \\text{M}\\longrightarrow\\text{M}^{3+}+3\\,\\text{e}^{-}\\\\\\text{Ga, In and Tl, keeping the }ns^{2}\\text{ pair:}\\ \\ \\text{M}\\longrightarrow\\text{M}^{+}+\\text{e}^{-}' },
+    14: { m: { 2: ['C', 1090], 3: ['Si', 780], 4: ['Ge', 780], 5: ['Sn', 700, '4+ 2+*'], 6: ['Pb', 710, '4+ 2+*'] },
+      head: 'Tin and lead form stable 2+ cations, two below the group oxidation state of 4+, and covalent compounds in the 4+ state.',
+      ro: '\\text{Sn and Pb, keeping the }ns^{2}\\text{ pair of }ns^{2}np^{2}\\text{:}\\ \\ \\text{M}\\longrightarrow\\text{M}^{2+}+2\\,\\text{e}^{-}' },
+    15: { m: { 2: ['N', 1400], 3: ['P', 1060], 4: ['As', 960], 5: ['Sb', 830], 6: ['Bi', 800, '5+ 3+*'] },
+      head: 'Bismuth readily gives up three of its five valence electrons as $\\text{Bi}^{3+}$ and reaches 5+ only with strong oxidizing agents.',
+      ro: '\\text{Bi, keeping the }6s^{2}\\text{ pair of }6s^{2}6p^{3}\\text{:}\\ \\ \\text{Bi}\\longrightarrow\\text{Bi}^{3+}+3\\,\\text{e}^{-}' },
   };
-  const KEYS = ['all', '1', '2', '12', '13', '14', '15'];
-  const pick = F.choice(d.controls, { label: '\\text{group}', options: KEYS.map((k) => ({ value: k, label: k })), value: 'all', aria: 'which group is lit' });
+  const KEYS = ['1', '2', '12', '13', '14', '15'], PERIODS = [2, 3, 4, 5, 6];
+  const pick = F.choice(d.controls, { label: '\\text{group}', options: KEYS.map((k) => ({ value: k, label: k })), value: '1', aria: 'which group is read down' });
 
-  /* the table: 18 columns of 70 units from x = 100, seven rows of 58 from y = 140; the f-block two rows below */
-  const L = 100, PITCH = 70, T = 140, ROW = 58, CW = 64, CH = 52;
+  /* the table: 18 columns of 70 units from x = 100, seven rows of 56 from y = 150 */
+  const L = 100, PITCH = 70, T = 150, ROW = 56, CW = 64, CH = 50;
   const cx = (g) => L + (g - 0.5) * PITCH, cy = (p) => T + (p - 0.5) * ROW;
-  const FY = (r) => T + 7 * ROW + 56 + (r - 1) * ROW;
   const TOP = { 1: 1, 2: 2, 13: 2, 14: 2, 15: 2, 16: 2, 17: 2, 18: 1 };
-  /* the bars: one fixed axis, 0 to 2000 kJ/mol (nitrogen's 1400 the largest, its value clear of the axis title), slots 200 units apart about the centre */
-  const box = { l: 230, r: 1300, t: 612, b: 800 }, SLOT = 200, BW = 84, MID = (box.l + box.r) / 2;
-  const slotX = (i, n) => MID + (i - (n - 1) / 2) * SLOT;
+  /* the chosen group below it, one row to a period: its square, its IE₁ as a bar on a fixed scale of 0 to 1500 kJ/mol
+     (nitrogen's 1400 the longest), its oxidation states */
+  const HEAD = 590, RY = (p) => 644 + (p - 2) * 56, SQ = 215, X0 = 290, PER = 0.44, XE = (ie) => X0 + ie * PER;
+  const ST = 1110, AR = 1292, KEYLINE = 912;
   const fillOf = (cls) => (CLASS[cls].hex ? F.mixColor(PAL.panel, F.fact(CLASS[cls].hex), 0.5) : PAL.panel);
-  const inGroup = (e, v) => v !== 'all' && e.g === +v;
-  const box3 = (ctx, x, y, w, h, stroke, dash) => {
-    ctx.save(); ctx.beginPath(); ctx.roundRect(x, y, w, h, 6); ctx.lineWidth = 2; ctx.strokeStyle = stroke;
+  const rbox = (ctx, x, y, w, h, stroke, dash, lw = 2) => {
+    ctx.save(); ctx.beginPath(); ctx.roundRect(x, y, w, h, 6); ctx.lineWidth = lw; ctx.strokeStyle = stroke;
     if (dash) ctx.setLineDash([5, 4]); ctx.stroke(); ctx.restore();
   };
+  const swatch = (cls) => (ctx, x, y) => {
+    ctx.save(); ctx.fillStyle = fillOf(cls); ctx.fillRect(x - 15, y - 10, 30, 20);
+    ctx.lineWidth = 1.5; ctx.strokeStyle = alpha(PAL.ink, 0.3); ctx.strokeRect(x - 15, y - 10, 30, 20); ctx.restore();
+  };
   let hits = []; F.hover(d.stage, () => hits);
+  /* a tap on a square of one of the six groups chooses that group */
+  d.c.style.cursor = 'pointer';
+  d.c.addEventListener('click', (ev) => {
+    const r = d.c.getBoundingClientRect(); if (!r.width) return;
+    const s = 1400 / r.width, px = (ev.clientX - r.left) * s, py = (ev.clientY - r.top) * s;
+    if (py < T || py > T + 7 * ROW) return;
+    const g = String(Math.floor((px - L) / PITCH) + 1);
+    if (KEYS.includes(g) && g !== pick.value && py >= cy(TOP[+g] ?? 4) - ROW / 2) pick.drive(g);
+  });
 
   still(d, () => {
     const { ctx } = begin(d.c);
-    const v = pick.value, ce = C('energy');
-    headline(ctx, v === 'all' ? 'The 20 nonradioactive representative metals lie in groups 1, 2, 12, 13, 14 and 15.' : GROUPS[v].head);
+    const v = pick.value, ce = C('energy'), G = GROUPS[v];
+    headline(ctx, G.head);
     hits = [];
     text(ctx, 'period', L - 34, T - 40, PAL.muted, { size: 15, align: 'center' });
     text(ctx, 'group', cx(1), T - 40, PAL.muted, { size: 15, align: 'center' });
     for (let g = 1; g <= 18; g++) text(ctx, String(g), cx(g), T + ((TOP[g] ?? 4) - 1) * ROW - 14, PAL.muted, { size: 15, weight: 600, align: 'center' });
     for (let p = 1; p <= 7; p++) text(ctx, String(p), L - 34, cy(p), PAL.muted, { size: 15, weight: 600, align: 'center' });
 
-    const cell = (e, x, y, a) => {
+    const cell = (cls, x, y, a, sym, corner, symSize = 21) => {
       ctx.save(); ctx.globalAlpha *= a;
-      ctx.fillStyle = fillOf(e.cls); ctx.fillRect(x - CW / 2, y - CH / 2, CW, CH);
+      ctx.fillStyle = fillOf(cls); ctx.fillRect(x - CW / 2, y - CH / 2, CW, CH);
       ctx.lineWidth = 1.5; ctx.strokeStyle = alpha(PAL.ink, 0.3); ctx.strokeRect(x - CW / 2, y - CH / 2, CW, CH);
-      text(ctx, String(e.Z), x - CW / 2 + 4, y - CH / 2 + 10, PAL.ink, { size: 14 });
-      text(ctx, e.sym, x, y + 6, PAL.ink, { size: 21, weight: 600, align: 'center' });
+      if (corner) text(ctx, corner, x - CW / 2 + 4, y - CH / 2 + 10, PAL.ink, { size: 14 });
+      text(ctx, sym, x, y + 6, PAL.ink, { size: symSize, weight: 600, align: 'center' });
       ctx.restore();
     };
     const nameOf = (e) => `${e.name} (${e.sym}, Z = ${e.Z}): ${CLASS[e.cls].name}${STATE[e.st] ? ', ' + STATE[e.st] : ''}`;
+    const dim = (g) => pick.mix((w) => (g === +w ? 1 : 0.62));
     EL.forEach((e) => {
       if (e.f) return;
-      const x = cx(e.g), y = cy(e.p), a = pick.mix((w) => (w === 'all' || inGroup(e, w) ? 1 : 0.35));
-      cell(e, x, y, a);
+      const x = cx(e.g), y = cy(e.p);
+      cell(e.cls, x, y, dim(e.g), e.sym, String(e.Z));
       hits.push({ x, y, r: 30, name: nameOf(e) });
     });
     /* the two places of the f-block in group 3 */
-    [[6, 'La–Lu', 'trans', '*'], [7, 'Ac–Lr', 'radio', '**']].forEach(([p, s, cls, mark]) => {
-      const x = cx(3), y = cy(p), a = pick.mix((w) => (w === 'all' ? 1 : 0.35));
-      ctx.save(); ctx.globalAlpha *= a; ctx.fillStyle = fillOf(cls); ctx.fillRect(x - CW / 2, y - CH / 2, CW, CH);
-      ctx.lineWidth = 1.5; ctx.strokeStyle = alpha(PAL.ink, 0.3); ctx.strokeRect(x - CW / 2, y - CH / 2, CW, CH);
-      text(ctx, s, x, y + 6, PAL.ink, { size: 15, weight: 600, align: 'center' });
-      text(ctx, mark, x + CW / 2 - 4, y - CH / 2 + 10, PAL.ink, { size: 14, align: 'right' });
-      ctx.restore();
+    [[6, 'La–Lu', 'trans', 'Lanthanum to lutetium (Z = 57 to 71): inner transition metals'],
+      [7, 'Ac–Lr', 'radio', 'Actinium to lawrencium (Z = 89 to 103): inner transition metals, radioactive']].forEach(([p, s, cls, name]) => {
+      cell(cls, cx(3), cy(p), dim(3), s, '', 15);
+      hits.push({ x: cx(3), y: cy(p), r: 30, name });
     });
-    /* the chosen group's column, outlined from its first period to its last */
-    ['1', '2', '12', '13', '14', '15'].forEach((k) => pick.only(ctx, k, () => {
-      const g = +k, p0 = BY[GROUPS[k].m[0][0]].p;
-      box3(ctx, cx(g) - CW / 2 - 5, cy(p0) - CH / 2 - 5, CW + 10, cy(7) - cy(p0) + CH + 10, PAL.ink, false);
+    /* the key to the shading, in the gap above the transition metals */
+    const gap = { l: cx(3) - CW / 2 - 12, r: cx(12) + CW / 2, t: T - 22, b: T + 3 * ROW - 30 };
+    F.legend(ctx, gap, ['rep', 'trans', 'radio'].map((c) => ({ s: CLASS[c].legend, draw: swatch(c) })), { corner: 'tl', panel: false });
+    F.legend(ctx, { ...gap, l: gap.l + 440 }, ['metalloid', 'nonmetal'].map((c) => ({ s: CLASS[c].legend, draw: swatch(c) })), { corner: 'tl', panel: false });
+    /* the chosen group's column, outlined from its first member down */
+    KEYS.forEach((k) => pick.only(ctx, k, () => {
+      const g = +k, p0 = Math.min(...Object.keys(GROUPS[k].m).map(Number));
+      rbox(ctx, cx(g) - CW / 2 - 5, cy(p0) - CH / 2 - 5, CW + 10, cy(7) - cy(p0) + CH + 10, PAL.ink, false, 2.5);
     }, [0, 0]));
 
-    /* with every group shown: the f-block rows and the legend */
-    pick.only(ctx, 'all', () => {
-      text(ctx, '*', cx(4) - 46, FY(1), PAL.ink, { size: 20, align: 'center' });
-      text(ctx, '**', cx(4) - 46, FY(2), PAL.ink, { size: 20, align: 'center' });
-      EL.forEach((e) => { if (e.f) cell(e, cx(4 + e.i), FY(e.f), 1); });
-      const rows = [['rep', 200, 750], ['trans', 560, 750], ['radio', 1010, 750], ['metalloid', 200, 794], ['nonmetal', 560, 794]];
-      rows.forEach(([cls, x, y]) => {
-        ctx.save(); ctx.fillStyle = fillOf(cls); ctx.fillRect(x, y - 13, 32, 26);
-        ctx.lineWidth = 1.5; ctx.strokeStyle = alpha(PAL.ink, 0.3); ctx.strokeRect(x, y - 13, 32, 26); ctx.restore();
-        text(ctx, CLASS[cls].legend, x + 44, y, PAL.ink, { size: 19 });
-      });
-    }, [0, 12]);
-    if (v === 'all') EL.forEach((e) => { if (e.f) hits.push({ x: cx(4 + e.i), y: FY(e.f), r: 30, name: nameOf(e) }); });
-
-    /* with one group chosen: its members' first ionization energies, top of the group at the left */
-    const frame = 1 - pick.a('all');
-    if (frame > 0) {
-      ctx.save(); ctx.globalAlpha *= frame;
-      axes(ctx, box, [0, 1], [0, 2000], { nx: 1, ny: 4, fx: () => '', yl: 'first ionization energy (kJ/mol)', yc: ce });
-      ctx.restore();
-    }
-    ['1', '2', '12', '13', '14', '15'].forEach((k) => pick.only(ctx, k, () => {
-      const G = GROUPS[k], n = G.m.length, Y = (val) => box.b - (val / 2000) * (box.b - box.t);
+    /* the group read down: the frame every group shares */
+    text(ctx, 'period', L - 34, HEAD, PAL.muted, { size: 15, align: 'center' });
+    text(ctx, 'first ionization energy (kJ/mol)', X0, HEAD, ce, { size: 17 });
+    text(ctx, 'oxidation states', ST, HEAD, PAL.muted, { size: 17, align: 'center' });
+    PERIODS.forEach((p) => text(ctx, String(p), L - 34, RY(p), PAL.muted, { size: 15, weight: 600, align: 'center' }));
+    [0, 500, 1000, 1500].forEach((t) => {
+      line(ctx, XE(t), RY(2) - 28, XE(t), RY(6) + 28, t ? PAL.rule : alpha(PAL.ink, 0.6), t ? 1.5 : 2);
+      text(ctx, String(t), XE(t), KEYLINE, PAL.muted, { size: 17, align: 'center' });
+    });
+    /* the bars lengthen and shorten from one group to the next; a metal's is filled, a metalloid's or nonmetal's hollow */
+    PERIODS.forEach((p) => {
+      const ie = pick.mix((w) => GROUPS[w].m[p]?.[1] ?? 0), solid = pick.mix((w) => (GROUPS[w].m[p]?.[2] ? 0.55 : 0));
+      if (ie < 1) return;
+      ctx.save(); ctx.fillStyle = alpha(ce, solid); ctx.fillRect(X0, RY(p) - 19, ie * PER, 24);
+      ctx.lineWidth = 3; ctx.strokeStyle = ce; ctx.strokeRect(X0, RY(p) - 19, ie * PER, 24); ctx.restore();
+    });
+    KEYS.forEach((k) => pick.only(ctx, k, () => {
+      const K = GROUPS[k];
       let inert = false;
-      G.m.forEach(([sym, ie, states], i) => {
-        const x = slotX(i, n), top = Y(ie), e = BY[sym], metal = !!states;
-        ctx.save(); ctx.fillStyle = metal ? alpha(ce, 0.55) : PAL.panel; ctx.fillRect(x - BW / 2, top, BW, box.b - top);
-        ctx.lineWidth = 3; ctx.strokeStyle = ce; ctx.strokeRect(x - BW / 2, top, BW, box.b - top); ctx.restore();
-        text(ctx, String(ie), x, top - 16, ce, { size: 17, align: 'center', bg: PAL.panel });
-        text(ctx, sym, x, box.b + 26, PAL.ink, { size: 22, weight: 600, align: 'center' });
-        if (!metal) text(ctx, CLASS[e.cls].name, x, box.b + 60, PAL.muted, { size: 17, align: 'center' });
-        else {
-          const chips = states.split(' '), w = 50, gap = 10, x0 = x - (chips.length * w + (chips.length - 1) * gap) / 2;
-          chips.forEach((c, j) => {
-            const two = c.endsWith('*'), cxp = x0 + j * (w + gap);
-            if (two) { inert = true; box3(ctx, cxp, box.b + 44, w, 32, PAL.ink, true); }
-            text(ctx, two ? c.slice(0, -1) : c, cxp + w / 2, box.b + 60, PAL.ink, { size: 19, weight: 600, align: 'center' });
-          });
+      text(ctx, `group ${k}`, SQ, HEAD, PAL.ink, { size: 17, weight: 600, align: 'center' });
+      PERIODS.forEach((p) => {
+        const row = K.m[p]; if (!row) return;
+        const [sym, ie, states] = row, e = BY[sym], y = RY(p), live = k === v;
+        cell(e.cls, SQ, y, 1, sym, String(e.Z));
+        text(ctx, String(ie), XE(ie) + 12, y - 7, ce, { size: 19, weight: 600 });
+        if (live) hits.push({ x: SQ, y, r: 30, name: nameOf(e) }, { x: X0 + (ie * PER) / 2, y: y - 7, r: 16, name: `first ionization energy of ${e.name.toLowerCase()}, ${ie} kJ/mol` });
+        /* group 2 beside group 1: the alkali metal of the same period as a thin bar under the row's own */
+        if (k === '2') {
+          const [s1, ie1] = GROUPS[1].m[p];
+          ctx.save(); ctx.lineWidth = 1.5; ctx.strokeStyle = alpha(PAL.ink, 0.7); ctx.fillStyle = alpha(PAL.ink, 0.22);
+          ctx.fillRect(X0, y + 11, ie1 * PER, 10); ctx.strokeRect(X0, y + 11, ie1 * PER, 10); ctx.restore();
+          text(ctx, `${s1} ${ie1}`, XE(ie1) + 10, y + 17, PAL.muted, { size: 16 });
+          if (live) hits.push({ x: X0 + (ie1 * PER) / 2, y: y + 16, r: 8, name: `first ionization energy of ${BY[s1].name.toLowerCase()}, ${ie1} kJ/mol` });
         }
-        if (k === v) hits.push({ x, y: (top + box.b) / 2, r: BW / 2, name: `first ionization energy of ${e.name.toLowerCase()}, ${ie} kJ/mol` });
+        if (!states) { text(ctx, CLASS[e.cls].name, ST, y, PAL.muted, { size: 17, align: 'center' }); return; }
+        const chips = states.split(' '), w = 54, sp = 12, x0 = ST - (chips.length * w + (chips.length - 1) * sp) / 2;
+        chips.forEach((c, j) => {
+          const two = c.endsWith('*'), cl = x0 + j * (w + sp), s = two ? c.slice(0, -1) : c;
+          if (two) { inert = true; rbox(ctx, cl, y - 17, w, 34, PAL.ink, true); }
+          text(ctx, s, cl + w / 2, y, PAL.ink, { size: 20, weight: 600, align: 'center' });
+          if (live) hits.push({ x: cl + w / 2, y, r: 22, name: two ? `${e.name.toLowerCase()} in the ${s} state, two below the group oxidation state` : `${e.name.toLowerCase()} in the ${s} state` });
+        });
       });
-      if (inert) {
-        box3(ctx, box.r - 330, box.t - 38, 40, 26, PAL.ink, true);
-        text(ctx, 'inert pair effect', box.r - 280, box.t - 25, PAL.ink, { size: 17 });
+      if (K.react) {
+        const [a, b] = K.react, ya = RY(a) + (a < b ? -18 : 18), yb = RY(b) + (a < b ? 18 : -18);
+        F.arrow(ctx, AR, ya, AR, yb, PAL.ink, 3);
+        ctx.save(); ctx.translate(AR + 34, (ya + yb) / 2); ctx.rotate(-Math.PI / 2);
+        text(ctx, 'more reactive', 0, 0, PAL.ink, { size: 17, align: 'center' }); ctx.restore();
       }
-    }, [0, 12]));
+      const keys = [];
+      if (k === '2') keys.push({ s: 'the alkali metal of the same period', draw: (c2, x, y) => {
+        c2.save(); c2.lineWidth = 1.5; c2.strokeStyle = alpha(PAL.ink, 0.7); c2.fillStyle = alpha(PAL.ink, 0.22);
+        c2.fillRect(x - 20, y - 5, 40, 10); c2.strokeRect(x - 20, y - 5, 40, 10); c2.restore();
+      } });
+      if (inert) keys.push({ s: 'the inert pair effect', draw: (c2, x, y) => rbox(c2, x - 18, y - 10, 36, 20, PAL.ink, true) });
+      if (keys.length) F.legend(ctx, { l: 1000, r: 1390, t: KEYLINE - 24, b: KEYLINE + 20 }, keys, { corner: 'top', panel: false });
+    }, [0, 0]));
 
-    if (v === 'all') {
-      tex(d.readout, '\\text{representative metals: }\\underset{1}{5}+\\underset{2}{5}+\\underset{12}{3}+\\underset{13}{4}+\\underset{14}{2}+\\underset{15}{1}=20');
-    } else {
-      /* the group's IE₁ from top to bottom as one chain, the sign between each pair the comparison of the two */
-      const m = GROUPS[v].m;
-      const chain = m.map(([sym, ie], i) => (i ? (ie < m[i - 1][1] ? ' > ' : ie > m[i - 1][1] ? ' < ' : ' = ') : '') + `\\text{${sym}}\\ ${ie}`).join('');
-      tex(d.readout, `\\kIE_{1}\\ \\text{(kJ/mol):}\\ ${chain}`);
-    }
+    tex(d.readout, G.ro);
   });
 })();
 };

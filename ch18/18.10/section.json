@@ -21,6 +21,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -53,15 +56,12 @@
     "temperature",
     "pressure"
    ],
-   "conventions": [
-    "H",
-    "O",
-    "N",
-    "S"
-   ],
+   "conventions": [],
    "facts": [
     "#e5c444",
-    "#d9a63a"
+    "#d9a63a",
+    "#8fc6e8",
+    "#b79a80"
    ],
    "ai": [
     {
@@ -72,6 +72,10 @@
     {
      "model": "claude-opus-5-5",
      "part": "checked against the image, caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt as a working well: fluids, air switch, settling vat"
     }
    ]
   }

@@ -21,6 +21,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -52,6 +55,10 @@
     {
      "model": "claude-opus-5-5",
      "part": "rebuilt flat from the book’s drawing with its insets, caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt larger: atoms of two waters tracked into 2 H₂ and O₂, counted"
     }
    ]
   },

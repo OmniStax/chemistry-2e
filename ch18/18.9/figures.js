@@ -22,23 +22,25 @@ const { C, PAL, alpha, register, begin, line, text } = F;
   const SITES = ['right', 'left', 'down', 'up'];
   const ION = {
     ClO: { n: 1, label: 'ClO⁻', name: 'hypochlorite', tex: '\\text{ClO}^{-}', acid: '\\text{HOCl}', acidPlain: 'HOCl', pKa: '7.5',
-      head: 'In hypochlorite, $\\text{ClO}^{-}$, one of chlorine’s four electron pairs bonds the oxygen atom and three are lone pairs.' },
+      head: 'In hypochlorite, ClO⁻, one of chlorine’s four electron pairs bonds the oxygen atom and three are lone pairs.' },
     ClO2: { n: 2, label: 'ClO₂⁻', name: 'chlorite', tex: '\\text{ClO}_{2}^{-}', acid: '\\text{HClO}_{2}', acidPlain: 'HClO₂', pKa: '2.0',
-      head: 'In chlorite, $\\text{ClO}_{2}^{-}$, two of chlorine’s four electron pairs bond oxygen atoms and two are lone pairs, so the ion is bent.' },
+      head: 'In chlorite, ClO₂⁻, two of chlorine’s four electron pairs bond oxygen atoms and two are lone pairs, so the ion is bent.' },
     ClO3: { n: 3, label: 'ClO₃⁻', name: 'chlorate', tex: '\\text{ClO}_{3}^{-}', acid: '\\text{HClO}_{3}', acidPlain: 'HClO₃', pKa: null,
-      head: 'In chlorate, $\\text{ClO}_{3}^{-}$, three of chlorine’s four electron pairs bond oxygen atoms and one is a lone pair, so the ion is trigonal pyramidal.' },
+      head: 'In chlorate, ClO₃⁻, three of chlorine’s four electron pairs bond oxygen atoms and one is a lone pair, so the ion is trigonal pyramidal.' },
     ClO4: { n: 4, label: 'ClO₄⁻', name: 'perchlorate', tex: '\\text{ClO}_{4}^{-}', acid: '\\text{HClO}_{4}', acidPlain: 'HClO₄', pKa: null,
-      head: 'In perchlorate, $\\text{ClO}_{4}^{-}$, all four of chlorine’s electron pairs bond oxygen atoms, so the ion is tetrahedral.' },
+      head: 'In perchlorate, ClO₄⁻, all four of chlorine’s electron pairs bond oxygen atoms, so the ion is tetrahedral.' },
   };
   const has = (v, s) => (SITES.indexOf(s) < ION[v].n ? 1 : 0);
 
   /* ---------- the chosen ion in three dimensions ---------- */
   const R3 = 1.6, k3 = 1 / Math.sqrt(1.5), h3 = 1 / Math.SQRT2;
-  /* a regular tetrahedron with left and right in one plane and up and down in the plane across it, the book's view */
-  const T3 = { right: [k3, 0, -h3 * k3], left: [-k3, 0, -h3 * k3], down: [0, -k3, h3 * k3], up: [0, k3, h3 * k3] };
-  const V = F.view3d(d.stage, { spin: 'idle', h: 560, dist: 7.4, tilt: 0.16, pitch: [-Math.PI / 2, Math.PI / 2] });
-  const g = V.part(0); g.position.y = -0.42;
-  V.setView(0.38, 0.16);
+  /* a regular tetrahedron with left and right in one plane and up and down in the plane across it, as the book draws it;
+     the oxygen atoms of chlorite stand nearer the reader, so chlorine hides neither */
+  const T3 = { right: [k3, 0, h3 * k3], left: [-k3, 0, h3 * k3], down: [0, -k3, -h3 * k3], up: [0, k3, -h3 * k3] };
+  const top = F.makeCanvas(d.stage, 104);
+  const V = F.view3d(d.stage, { spin: 'idle', h: 600, dist: 6.7, tilt: 0.16, pitch: [-Math.PI / 2, Math.PI / 2] });
+  const g = V.part(0);
+  V.setView(0.3, 0.16);
   const key = F.makeCanvas(d.stage, 56);
   const row = F.makeCanvas(d.stage, 446);
   const ion = F.choice(d.controls, { label: '\\text{ion}', key: 'ion', aria: 'the chlorine oxyanion',
@@ -51,7 +53,7 @@ const { C, PAL, alpha, register, begin, line, text } = F;
   let sig = '';
   function scene() {
     const ws = SITES.map(weight), s = [ws.map((w) => w.toFixed(3)).join(','), PAL.ink, F.el('Cl'), F.el('O')].join('|');
-    V.headline(ION[ion.value].head);
+    F.topline(begin(top).ctx, ION[ion.value].head);
     if (s === sig) return;
     sig = s; V.clear();
     const { sphere, stick, bond, lobe } = F.mesh;
@@ -62,7 +64,7 @@ const { C, PAL, alpha, register, begin, line, text } = F;
         V.pickable(sphere(g, tip, 0.42 * (0.4 + 0.6 * w), F.el('O'), w < 1 ? { transparent: true, opacity: w } : undefined), 'oxygen atom');
         bond(g, [0, 0, 0], u.map((x) => x * R3 * (0.3 + 0.7 * w)), 1, 0.075);
       }
-      if (w < 0.99) { const lb = lobe(g, [0, 0, 0], u, 1.5 * (1 - 0.6 * w)); lb.material.opacity = 0.5 * (1 - w); V.pickable(lb, 'lone pair on chlorine'); }
+      if (w < 0.99) { const lb = lobe(g, [0, 0, 0], u, 1.2 * (1 - 0.6 * w)); lb.material.opacity = 0.5 * (1 - w); V.pickable(lb, 'lone pair on chlorine'); }
     });
     /* the tetrahedron whose corners the four pairs point to */
     const P = (t) => T3[t].map((x) => x * R3), faint = { transparent: true, opacity: 0.38 };
@@ -114,7 +116,7 @@ const { C, PAL, alpha, register, begin, line, text } = F;
       ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5; ctx.beginPath();
       ctx.moveTo(x + sgn * 10, y1); ctx.lineTo(x, y1); ctx.lineTo(x, y2); ctx.lineTo(x + sgn * 10, y2); ctx.stroke(); ctx.restore();
     });
-    text(ctx, '−', x2 + 12, y1 + 4, PAL.ink, { size: 24, weight: 600, align: 'center' });
+    text(ctx, '−', x2 + 17, y1 + 8, PAL.ink, { size: 24, weight: 600, align: 'center' });
   }
   function drawRow() {
     const { ctx } = begin(row), hue = C('equilibrium-constant'); hits = [];
@@ -150,7 +152,7 @@ const { C, PAL, alpha, register, begin, line, text } = F;
   /* the caption of each of the book's three figures: the acid meets a base and leaves its ion */
   function readout() {
     const t = ION[ion.value];
-    ro.set(`\\mk{a}{${t.acid}(aq)} + \\mk{b}{\\text{OH}^{-}(aq)}\\mk{r}{\;\\longrightarrow\;}\\mk{i}{${t.tex}(aq)} + \\mk{w}{\\text{H}_{2}\\text{O}(l)}`);
+    ro.set(`\\mk{a}{${t.acid}(aq)} + \\mk{b}{\\text{OH}^{-}(aq)}\\mk{r}{\\longrightarrow}\\mk{i}{${t.tex}(aq)} + \\mk{w}{\\text{H}_{2}\\text{O}(l)}`);
   }
 
   function draw() { scene(); drawKey(); drawRow(); readout(); }

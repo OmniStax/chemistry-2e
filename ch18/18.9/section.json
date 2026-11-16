@@ -22,6 +22,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -228,6 +231,10 @@
     {
      "model": "claude-opus-5-5",
      "part": "readout one equation, view buttons gone, Lewis structure enlarged, caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: ion in 3D on load, four Lewis structures in a row over the acid data"
     }
    ]
   }

@@ -367,9 +367,9 @@ const lead = (ctx, x1, y1, x2, y2) => line(ctx, x1, y1, x2, y2, alpha(PAL.ink, 0
     /* labels */
     text(ctx, 'H₂O + H₂SO₄', 944, 122, PAL.ink, { size: 23 }); lead(ctx, 936, 130, CX + 96, LR + 34);
     text(ctx, 'Anode +', 306, 786, PAL.ink, { size: 25, weight: 600, align: 'right' }); lead(ctx, 314, 788, XA - 28, 796);
-    text(ctx, '2H₂O ⟶ O₂ + 4H⁺ + 4e⁻', 306, 822, PAL.ink, { size: 22, align: 'right' });
+    text(ctx, '2H₂O ⟶ O₂ + 4H⁺ + 4e⁻', 370, 916, PAL.ink, { size: 23, align: 'right' });
     text(ctx, 'Cathode −', 1094, 786, PAL.ink, { size: 25, weight: 600 }); lead(ctx, 1086, 788, XC + 28, 796);
-    text(ctx, '2H⁺ + 2e⁻ ⟶ H₂', 1094, 822, PAL.ink, { size: 22 });
+    text(ctx, '2H⁺ + 2e⁻ ⟶ H₂', 1030, 916, PAL.ink, { size: 23 });
     if (VO > 0.05) {
       const a = clamp01(VO), vc = C('volume');
       ctx.save(); ctx.globalAlpha = a;

@@ -10,7 +10,7 @@
     "Describe the dispersal of matter and energy that accompanies certain spontaneous processes"
   ],
   "summary_html": "<p>Chemical and physical processes have a natural tendency to occur in one direction under certain conditions. A <span data-concept=\"spontaneous-process\">spontaneous process</span> occurs without the need for a continual input of <span data-concept=\"energy-and-work\">energy</span> from some external source, while a <span data-concept=\"nonspontaneous-process\">nonspontaneous process</span> requires such. Systems undergoing a <span data-concept=\"spontaneous-process\">spontaneous process</span> may or may not experience a gain or loss of <span data-concept=\"energy-and-work\">energy</span>, but they will experience a change in the way matter and/or <span data-concept=\"energy-and-work\">energy</span> is distributed within the system.</p>",
-  "notes": "Nothing of the section is left out. The stray full stop of “(P = 0). (Figure 16.4).” is kept as printed. Figure 16.2 is drawn from the half-lives the text gives, about six hours for technetium-99m and 4.47 billion years for uranium-238, over a span of time the reader sets, where the book’s axis reads hours.",
+  "notes": "Nothing of the section is left out. The stray full stop of “(P = 0). (Figure 16.4).” is kept as printed. Figure 16.2 is drawn from the half-lives the book gives, 6.01 hours for technetium-99m and 4.5 billion years for uranium-238, on one time axis that runs from a minute to a hundred billion years, where the book’s axis reads hours.",
   "ai": {
     "text": [
       {
@@ -22,6 +22,9 @@
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-fable-5-2"
       }
     ]
   },
@@ -49,6 +52,10 @@
         {
           "model": "claude-opus-5-5",
           "part": "rebuilt: time-shown slider from an hour to billions of years"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt: one log time axis, both decays in view, 100 nuclei of each"
         }
       ]
     },
@@ -91,6 +98,10 @@
         {
           "model": "claude-opus-5-5",
           "part": "rebuilt flat: section through the flasks, count trace beneath"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt: both counts traced, 4, 10 or 30 atoms, returns counted"
         }
       ]
     },
@@ -105,7 +116,8 @@
       "draws": [
         "temperature",
         "energy",
-        "time"
+        "time",
+        "heat-capacity"
       ],
       "ai": [
         {
@@ -116,6 +128,10 @@
         {
           "model": "claude-opus-5-5",
           "part": "fixed: apart then in contact, larger blocks, readout lines"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt: larger objects, heat gained as two bars, readout worked"
         }
       ]
     },

@@ -250,7 +250,7 @@ function spline(xs, ys) {
   const M = ctl(d.controls, { label: '\\text{added}', cls: 'mass', min: 0, max: 300, step: 1, value: 100, unit: 'g', dec: 0, aria: 'grams of solid added to 100 grams of water',
     specials: [{ at: () => { const s = cur(); return T.v <= s.end ? Math.round(s.f(T.v)) : null; }, label: 'saturated' }] });
   const round = (x) => (x < 10 ? fmt(x, 1) : fmt(x, 0));
-  const left = (x, sol) => (sol < 10 ? fmt(x, 1) : fmt(x, 0));   /* the solid left, to the place its solubility is given to, so the two add up to the mass added */
+  const rest = (x, sol) => (sol < 10 ? fmt(x, 1) : fmt(x, 0));   /* the solid left, to the place its solubility is given to, so the two add up to the mass added */
   const hits = []; F.hover(d.stage, () => hits);
   /* the beaker: inner walls, rim, base, the water's surface; one mark for each 5 g */
   const BL = 1096, BR = 1346, RIM = 196, BASE = 566, LEVEL = 286, PER = 5;
@@ -282,7 +282,7 @@ function spline(xs, ys) {
       text(ctx, q.lab, x, y, F.ref(q.ref), { size: 19, weight: i === si ? 600 : 400, bg: PAL.panel });
     });
     if (sol !== null) { dot(ctx, A.X(t), A.Y(sol), col, false, 10); hits.push({ x: A.X(t), y: A.Y(sol), r: 14, name: 'the solubility of ' + s.plain + ' at ' + t + ' °C, ' + round(sol) + ' g' }); }
-    if (state === 'over' && A.Y(sol) - A.Y(m) > 26) { const bx = A.X(t) + (t > 80 ? -22 : 22); vbracket(ctx, bx, A.Y(m), A.Y(sol), PAL.ink); text(ctx, left(solid, sol) + ' g solid', bx + (t > 80 ? -16 : 16), (A.Y(m) + A.Y(sol)) / 2, PAL.ink, { size: 18, weight: 600, align: t > 80 ? 'right' : 'left', bg: PAL.panel }); }
+    if (state === 'over' && A.Y(sol) - A.Y(m) > 26) { const bx = A.X(t) + (t > 80 ? -22 : 22); vbracket(ctx, bx, A.Y(m), A.Y(sol), PAL.ink); text(ctx, rest(solid, sol) + ' g solid', bx + (t > 80 ? -16 : 16), (A.Y(m) + A.Y(sol)) / 2, PAL.ink, { size: 18, weight: 600, align: t > 80 ? 'right' : 'left', bg: PAL.panel }); }
     const pt = pinned(ctx, box, A.X, A.Y, t, m, cm);
     const word = { saturated: 'saturated', unsaturated: 'all dissolved', open: 'all dissolved', over: '', none: '' }[state];
     const left = t > 62;
@@ -300,7 +300,7 @@ function spline(xs, ys) {
     if (ns) hits.push({ x: (BL + BR) / 2, y: BASE - 30, r: 60, name: 'solid ' + s.plain + ' on the bottom, one crystal for each 5 g' });
     if (state !== 'none') F.legend(ctx, { l: BL - 12, r: BR + 12, t: BASE + 22, b: BASE + 100 }, [
       { s: round(diss) + ' g dissolved', kind: 'dot', color: col },
-      ...(solid > 0 ? [{ s: left(solid, sol) + ' g solid', color: col, draw: (c, x, y) => { c.save(); c.translate(x + 11, y); c.rotate(Math.PI / 4); c.fillStyle = col; c.strokeStyle = PAL.ink; c.lineWidth = 1.2; c.beginPath(); c.rect(-6.2, -6.2, 12.4, 12.4); c.fill(); c.stroke(); c.restore(); } }] : []),
+      ...(solid > 0 ? [{ s: rest(solid, sol) + ' g solid', color: col, draw: (c, x, y) => { c.save(); c.translate(x + 11, y); c.rotate(Math.PI / 4); c.fillStyle = col; c.strokeStyle = PAL.ink; c.lineWidth = 1.2; c.beginPath(); c.rect(-6.2, -6.2, 12.4, 12.4); c.fill(); c.stroke(); c.restore(); } }] : []),
     ], { corner: 'tl', panel: false, size: 18 });
     const sr = sol === null ? '' : round(sol);
     topline(ctx, state === 'none'
@@ -311,11 +311,11 @@ function spline(xs, ys) {
           ? 'At ' + t + ' °C, 100 g of water dissolves ' + sr + ' g of ' + s.plain + ', just the amount added: a saturated solution.'
           : state === 'unsaturated'
             ? 'At ' + t + ' °C, 100 g of water can dissolve ' + sr + ' g of ' + s.plain + ', so all ' + m + ' g dissolves: an unsaturated solution.'
-            : 'At ' + t + ' °C, 100 g of water dissolves ' + sr + ' g of ' + s.plain + '; the other ' + left(solid, sol) + ' g of the ' + m + ' g added stays solid.');
+            : 'At ' + t + ' °C, 100 g of water dissolves ' + sr + ' g of ' + s.plain + '; the other ' + rest(solid, sol) + ' g of the ' + m + ' g added stays solid.');
     const hm = (x) => hue('mass', x + '\\ \\text{g}'), hT = hue('temperature', t + '\\ ^\\circ\\text{C}');
     if (state === 'none') { tex(d.readout, `\\text{no curve for }${s.tex}\\text{ above }${hue('temperature', s.end + '\\ ^\\circ\\text{C}')}`); return; }
     if (state === 'open') { tex(d.readout, `${hm(m)}\\ \\text{added} < \\text{the solubility of }${s.tex}\\text{ at }${hT}\\text{, more than 300 g}`); return; }
-    if (state === 'over') { tex(d.readout, `\\text{solid left} = ${hm(m)}\\ \\text{added} - ${sr}\\ \\text{g dissolved at }${hT} = ${left(solid, sol)}\\ \\text{g of }${s.tex}`); return; }
+    if (state === 'over') { tex(d.readout, `\\text{solid left} = ${hm(m)}\\ \\text{added} - ${sr}\\ \\text{g dissolved at }${hT} = ${rest(solid, sol)}\\ \\text{g of }${s.tex}`); return; }
     tex(d.readout, `${hm(m)}\\ \\text{added} ${state === 'saturated' ? '=' : '<'} ${sr}\\ \\text{g, the solubility of }${s.tex}\\text{ in 100 g of water at }${hT}`);
   }
   register(d.fig, { update: () => {}, draw });

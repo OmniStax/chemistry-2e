@@ -26,6 +26,9 @@
       },
       {
         "model": "claude-opus-5-5"
+      },
+      {
+        "model": "claude-fable-5-2"
       }
     ]
   },
@@ -61,6 +64,10 @@
         {
           "model": "claude-opus-5-5",
           "part": "rebuilt flat: atoms on the line of approach, no view buttons; caption cut"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "scene enlarged to fill its band, stage named, diagram taller and relabelled"
         }
       ]
     },
@@ -91,9 +98,13 @@
     },
     {
       "id": "sim-arrhenius-plot",
-      "kind": "photo",
+      "kind": "sim",
       "number": "12.16",
-      "draws": [],
+      "draws": [
+        "energy",
+        "rate-constant",
+        "temperature"
+      ],
       "ai": [
         {
           "model": "claude-opus-5-5",
@@ -103,8 +114,16 @@
         {
           "model": "claude-opus-5-5",
           "part": "reverted to the book's image: the choice of pair added nothing"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt: line through any two measurements, legs numbered, slope to E_a"
         }
-      ]
+      ],
+      "originals": [
+        "/media/ch12/CNX_Chem_12_05_ArrhPlot.jpg"
+      ],
+      "original_caption": "This graph shows the linear relationship between ln k and 1/T for the reaction 2HI ⟶ H2 + I2 according to the Arrhenius equation."
     }
   ],
   "coverage": [

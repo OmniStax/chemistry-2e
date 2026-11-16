@@ -12,10 +12,10 @@ built.
 | Quantity | Type | Treatment |
 |---|---|---|
 | [H₃O⁺], [OH⁻], [HA], [A⁻], [B], [HB⁺], pH, pOH | `concentration` | pH and pOH are its logarithmic variants, so every pH axis wears it |
-| K_w, K_a, K_b, K_a1 to K_a3, K_b1, K_b2, pK_w, pK_a, pK_b | `equilibrium-constant` | Typed in the tables and written through their macros (`\kKw`, `\kKa`, `\kKbion`, `\kKaone` to `\kKathree`, `\kKbone`, `\kKbtwo`, `\kpKw`, `\kpKa`, `\kpKb`), as every section was built; the chapter notes' "untyped" and "never a `\k` macro on any K" are withdrawn. The K axes of 14.3's ladder and 14.4's salt bars, and 14.7's pK_a slider, wear it |
+| K_w, K_a, K_b, K_a1 to K_a3, K_b1, K_b2, pK_w, pK_a, pK_b | `equilibrium-constant` | Typed in the tables and written through their macros (`\kKw`, `\kKa`, `\kKbion`, `\kKaone` to `\kKathree`, `\kKbone`, `\kKbtwo`, `\kpKw`, `\kpKa`, `\kpKb`), as every section was built; the chapter notes' "untyped" and "never a `\k` macro on any K" are withdrawn. The K scales of 14.3's table of pairs and 14.4's salt bars, and 14.7's pK_a slider, wear it |
 | T | `temperature` | 14.1 and 14.2, where K_w is read at 25 °C against 80 °C |
-| Moles of strong acid or base added, moles of titrant | `amount` | 14.6's slider and bars, the amounts in 14.7's examples |
-| The titrant volume | `volume` | 14.7's axis and slider |
+| Moles of strong acid or base added, moles of titrant | `amount` | 14.6's bars, in mmol, the amounts in 14.7's examples |
+| The titrant volume, the volume of strong acid or base added | `volume` | 14.7's axis and slider, 14.6's axis and slider |
 
 These stay in ink: the percent ionization, x, the logarithm terms, the
 stoichiometric coefficients.
@@ -31,15 +31,17 @@ names "pH meter" and "pH paper".
 ## Facts and conventions
 
 `F.el` for every molecule and ion a figure draws by its atoms: the acids,
-conjugate bases and hydronium ions of 14.3's Sim; an ion keeps its element
-colour and carries its charge as a mark. The water and ammonia models, the
-aquo aluminium ion of 14.13 and the oxyacids of 14.12 are the book's images. Through `F.fact`: an indicator's acid and base forms (methyl orange,
+conjugate bases and hydronium ions of 14.3's Sim, the aquo aluminium ion of
+Figure 14.13 (Al, O, H) and the species of 14.5's Sim (H, C, O, S, P); an ion
+keeps its element colour and carries its charge as a mark. 14.1's Lewis
+structures are letters in their pair's colour, and the oxyacids of 14.12 are
+the book's image. Through `F.fact`: an indicator's acid and base forms (methyl orange,
 bromthymol blue, phenolphthalein, universal indicator) wherever a flask, beaker
 or interval band is tinted. The book's red-to-blue arrow on Figure 14.2 is
 decoration and is drawn in ink in Figure 14.2. As built, `F.fact` paints only
 14.7's indicators: methyl orange red `#d9342b` to yellow `#f2c12e`, litmus red
 `#c8323c` to blue `#3a56b8`, phenolphthalein colourless to pink `#e0479e`, in
-the flask, the bands on the curve and the bar on the volume axis. The
+the flask, the bands on the curve and the strips under the volume axis. The
 indicator colours of Figures 14.5, 14.14, 14.16 and 14.19 are their
 photographs.
 
@@ -47,22 +49,29 @@ photographs.
 
 As built:
 
-- **14.1.** `water-acid` and `water-base` in the autoionization equation, a
-  group of its own since it shares its block with the K_w Sim. The other three
-  equations are the book's images, in the book's red and blue.
+- **14.1.** `pair-acid` and `pair-base` in the proton-transfer Sim, whose
+  choice is the section's three reactions (water and ammonia, hydrogen
+  fluoride and water, water and pyridine); `water-acid` and `water-base` in
+  the autoionization Sim, a group of its own since it shares its block with
+  the K_w Sim. The hydrogen fluoride and pyridine equations are the book's
+  images, in the book's red and blue.
+- **14.2.** None. Figure 14.2's [H₃O⁺] and [OH⁻] lines are `F.cat(0)` and
+  `F.cat(1)`.
 - **14.3.** `acid` and `base`, the chosen pair of the Figure 14.7 + 14.8
-  ladder; `base` also rings each conjugate base ion with its hydronium ion in
+  ranked table of mirrored bars; `base` also rings each conjugate base ion with its hydronium ion in
   the acid-in-water Sim, whose molecules are `F.el`. K_a and K_b are split,
   the a and b in their colours.
 - **14.5.** None. The Sim's acid is a choice of three, so its species are
-  `F.cat(i)` levels named under the axis rather than one example's things,
-  and K_a1 and K_a2 are not split.
+  `F.cat(i)` levels, each formula in its level's colour under the drawing of
+  its species, rather than one example's things, and K_a1 and K_a2 are not
+  split.
 - **14.6.** `buffer` and `unbuffered`, one pH curve each in Figure 14.15 +
   14.17, marked in Example 14.20. Acetic acid and acetate are `F.cat(0)` and
-  `F.cat(1)` bars, since the section names the two species everywhere.
+  `F.cat(1)` bars, since the section names the two species everywhere; the
+  OH⁻ or H₃O⁺ still free is a third `F.cat` bar.
 - **14.7.** `strong-titration` and `weak-titration`, one curve each in Figure
   14.18 + 14.20; the indicators are facts.
-- **14.2, 14.4.** None.
+- **14.4.** None.
 
 The frame of a figure and its labels stay in ink, and with colour coding off
 every figure stays legible from its labels.

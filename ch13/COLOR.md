@@ -12,12 +12,12 @@ built.
 | Quantity | Type | Treatment |
 |---|---|---|
 | [A] to [D], an initial or equilibrium concentration, a change in concentration | `concentration` | The axes and bars of 13.5 and 13.6, the I, C and E rows |
-| K, K_c, K_P, K_c', K_c1, K_c2, Q, Q_c, Q_P | `equilibrium-constant` | Typed in the tables and written through their macros (`\kK`, `\kKc`, `\kKP`, `\kQrxn`, `\kQc`, `\kQP`, …), as every section was built; Q is its variant away from equilibrium, drawn dashed or hollow beside K |
-| k_f, k_r | `rate-constant` | 13.1's sliders and rate laws, 13.3's rate laws (`\kkf`, `\kkr`) |
+| K, K_c, K_P, K_c', K_c1, K_c2, Q, Q_c, Q_P | `equilibrium-constant` | Typed in the tables and written through their macros (`\kK`, `\kKc`, `\kKP`, `\kQrxn`, `\kQc`, `\kQP`, …), as every section was built; Q is its variant away from equilibrium, drawn dashed or hollow beside K; the bar from k_r to k_f under Figure 13.8 |
+| k_f, k_r | `rate-constant` | 13.1's sliders and rate laws, 13.3's rate laws (`\kkf`, `\kkr`), the rate-constant axis under Figure 13.8 |
 | rate_f, rate_r | `rate` | 13.1's rate axis and readout, 13.3's rate laws |
 | t | `time` | 13.1, the time axis of 13.5 |
-| A partial pressure P_A to P_D | `pressure` | A K_P item |
-| T | `temperature` | The vessel's temperature in the Le Châtelier Sim |
+| A partial pressure P_A to P_D | `pressure` | A K_P item; the compressor's 150 to 250 atm in Figure 13.9 |
+| T | `temperature` | The vessel's temperature in the Le Châtelier Sim, the 298 K of Figure 13.8's readout, the catalyst chamber's 400 to 500 °C in Figure 13.9 |
 | V and n in the ideal gas equation (13.2, 13.3) | `volume`, `amount` | |
 | ΔH, E_a, q, the energy axis of 13.8 | `energy` | |
 
@@ -33,8 +33,9 @@ ink.
 
 ## Facts and conventions
 
-`F.el` for every molecule drawn: N₂O₄ and NO₂ in Figure 13.2; H₂, I₂, HI,
-N₂O₄ and NO₂ in the Le Châtelier Sim; N₂, H₂, NH₃ and water in Figure 13.9.
+`F.el` for every molecule drawn: N₂O₄ and NO₂ in Figure 13.2 and in 13.2's
+Sim of the magnitude of K; H₂, I₂, HI, N₂O₄ and NO₂ in the Le Châtelier Sim;
+N₂, H₂, NH₃ and water in Figure 13.9.
 Through `F.fact`: NO₂'s brown (`#8b4a1c`) darkening the sealed tube of Figure 13.2 in
 proportion to [NO₂], never a stand-in for a concentration elsewhere. Bromine's
 vapour is the photograph of Figure 13.4 and is not drawn.
@@ -44,8 +45,9 @@ vapour is the photograph of Figure 13.4 and is not drawn.
 As built:
 
 - **13.1.** `n2o4` and `no2`, one concentration curve each in Figure 13.2;
-  `forward` and `reverse`, one rate curve each, with rate_f and rate_r split,
-  the f and r in their colours.
+  `forward` and `reverse`, one rate curve each and the rings and ticks of the
+  splits and the joins, with rate_f and rate_r split, the f and r in their
+  colours.
 - **13.2.** `so2`, `o2`, `so3` (Figure 13.5), `co`, `h2o`, `co2`, `h2`
   (Figure 13.6) and `no2`, `n2o4` (the Sim of the magnitude of K), one curve,
   bar or segment each. K_c1 and K_c2 are not split, since no figure draws the
@@ -54,7 +56,8 @@ As built:
   the uncatalyzed and catalyzed paths of Figure 13.8 are `F.cat(0)` and
   `F.cat(1)`, as 12.19 draws them, with the E_a brackets in `energy`.
 - **13.4.** None. The ICE tables are written in ink, since no figure draws one
-  species apart from another; the Sim plots x only.
+  species apart from another; the Sim plots x and splits one bar of the
+  reactant into what reacted and what is left.
 
 The frame of a figure and its labels stay in ink, and with colour coding off
 every figure stays legible from its labels.

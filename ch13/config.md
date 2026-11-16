@@ -15,12 +15,12 @@ Proposed by the agent after the chapter exploration (2026-09-28). Status: applie
 | Tables | none numbered; Example 13.3's table of initial concentrations stays unnumbered as `div.book-table`; 13.4's ICE tables are unnumbered images written as tables or one live unnumbered Figure; Key Equations tables not printed |
 | Example numbers | the publisher's: 13.1–13.5 (13.2), 13.6–13.10 (13.4) |
 | Figure numbers | the publisher's, 13.1 to 13.9, listed per section in `exploration.md` |
-| Figures | Figure 13.2 a moving flat figure, the sealed tube and a magnified circle of molecules beside its two graphs; 13.5 a moving Figure with a choice of starting mixture; 13.6 a still Figure with a choice of mixture; 13.8 a still reaction diagram; 13.9 a moving Figure, since its arrows are gas and water flowing through the plant (root rule 24.5); 13.3's Le Châtelier box a Sim; folds are each section's call |
+| Figures | Figure 13.2 a moving flat figure, the sealed tube and a magnified circle of molecules beside its two graphs; 13.5 a moving Figure with a choice of starting mixture; 13.6 a still Figure of the three mixtures in rows; 13.8 a still reaction diagram over its rate constants; 13.9 a moving Figure, since its arrows are gas and water flowing through the plant (root rule 24.5); 13.3's Le Châtelier box a Sim; folds are each section's call |
 | Photographs | Figures 13.3, 13.4 (13.1) and 13.7 (13.3) kept, since the text points at each; Figure 13.1 kept on the introduction page |
 | Unnumbered images kept as `figure` rows | 13.4's ICE tables if a section keeps them as images rather than HTML tables; the exercise image `CNX_Chem_13_05_Butane_img.jpg` is left out with its unkeyed item |
 | 3D | none: the particle pictures of Figure 13.2 and the Le Châtelier Sim were redrawn flat on 2026-11-14, since every molecule must be seen and turning them showed nothing (the book's `RULES.md`); graphs, reaction diagrams, ICE tables and the plant diagram are flat |
 | Motion | per figure in its plan line; clocks are natural for 13.2 and 13.5 and for the Le Châtelier box's return to equilibrium; 13.6, 13.8 and the ICE tables are still, with no transport |
-| Colour | `concentration`, `time`, `rate` for curves and boxes; `pressure` where K_P or a partial pressure is written; `temperature` for the Le Châtelier Sim's vessel; `energy` for ΔH and reaction-diagram energies; K and Q in `equilibrium-constant` and k_f, k_r in `rate-constant`, through their macros; see `COLOR.md` |
+| Colour | `concentration`, `time`, `rate` for curves and boxes; `pressure` where K_P or a partial pressure is written; `temperature` for the Le Châtelier Sim's vessel and the temperatures of Figures 13.8 and 13.9; `energy` for ΔH and reaction-diagram energies; K and Q in `equilibrium-constant` and k_f, k_r in `rate-constant`, through their macros; see `COLOR.md` |
 | Symbols | sixteen rows added: typed `rate_f` `\kratef`, `rate_r` `\krater` (rate), `[C]` `\kconcC`, `[D]` `\kconcD` (concentration), `P_D` `\kPD` (pressure); with macros `k_f` `\kkf`, `k_r` `\kkr` (rate constant), `Q_conc` `\kQc`, `Q_P` `\kQP`, `K_c` `\kKc`, `K_P` `\kKP`, `K_c_prime` `\kKcprime`, `K_c1` `\kKcone`, `K_c2` `\kKctwo` (equilibrium constant); untyped `Δn_gas`, `x_ice`; reused `K` `\kK`, `Q_c` `\kQrxn` (latex Q), `[A]` `\kconcA`, `[B]` `\kconcB`, `P_A`–`P_C`, `P` `\kP`, `M` `\kM`, `T` `\kT`, `ΔH` `\kdH`, `rate` `\krate`, `t` `\kt`, untyped `R`; no new type |
 | Inline exercises | eleven Check Your Learning items (5 in 13.2, 6 in 13.4, two of them in Example 13.9), inline after their examples, each with a `data-place` host |
 | Exercises tab | the end-of-section items of each module, kind `exercise`; no `simulation-exercise` in the chapter |
@@ -34,13 +34,13 @@ Proposed by the agent after the chapter exploration (2026-09-28). Status: applie
 | Cross references | plain text to other sections; Appendix B (the quadratic formula) points at the publisher's page, since no sheet holds it; Appendix E (water's vapor pressure) links the `water` sheet |
 | Voice | root rule 17 and the book's Voice section |
 | Labels | Figure for a book number, Sim for an addition; the word "demo" nowhere |
-| `ai` and `built` | `claude-opus-5-5` at high effort for text and figures, `2026-10-05` (the introduction page `2026-09-28`) |
+| `ai` and `built` | `claude-opus-5-5` at high effort for text and figures, the figures rebuilt by `claude-fable-5-2`, `2026-10-05` (the introduction page `2026-09-28`) |
 | Book manifest | `ch13` added to `book.json` by `ost merge chemistry-2e 13` |
 
 ## What the build changed
 
 - Figure 13.9 is a moving Figure, not a faithful copy: the book's coloured arrows are gas and water flowing through the plant, kinematic by root rule 24.1, so the streams flow on an 8 s loop.
-- Figure 13.5 stays flat, two runs of a reaction drawn on one clock with a choice of start; Figure 13.6 is still, a choice of mixture and a slider for its progress to equilibrium.
+- Figure 13.5 stays flat, a run of a reaction drawn on a clock with a choice of three starts, the other starts' Q_c paths kept faint; Figure 13.6 is still, the three mixtures in rows and one slider for their progress to equilibrium. Figure 13.8 is still, the reaction diagram over k_f and k_r on a logarithmic axis for each path.
 - Sims added: the magnitude of K (13.2), the stressed equilibrium in a vessel closed by a piston (13.3) and the small-x approximation over a live ICE table (13.4), each labelled Sim.
 - 13.4's four ICE tables are written as unnumbered tables in the text; no unnumbered image is kept as a `figure` row, and the exercise image `CNX_Chem_13_05_Butane_img.jpg` goes with its unkeyed item.
 - Colour: K, Q, k_f and k_r are typed and written through their macros on every page, as the tables declare them; general mentions of a concept are marked as root rule 7 asks; 13.3 and 13.4 have no referents. See `COLOR.md`.

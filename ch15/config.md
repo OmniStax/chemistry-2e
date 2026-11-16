@@ -15,7 +15,7 @@ Proposed by the agent after the chapter exploration (2026-09-28). Status: applie
 | Tables | none numbered; ICE tables as HTML tables or kept `figure` rows; Key Equations not printed |
 | Example numbers | 15.1–15.13 (15.1), 15.14 (15.2), 15.15–15.16 (15.3) |
 | Figure numbers | 15.1 to 15.9, listed per section in `exploration.md` |
-| Figures | 15.2 a flat moving particle Figure of a dissolving salt; a flat K_sp-plane Sim in 15.1 (Q_sp, common ion, selective precipitation); 15.2's Lewis equations kept as the book's images; a silver chloride and ammonia Sim in 15.2; a solubility-against-pH Sim in 15.3; each section's plan decides |
+| Figures | 15.2 a flat moving particle Figure of a dissolving salt; a flat K_sp-plane Sim in 15.1 (Q_sp, common ion, selective precipitation); 15.2's Lewis equations kept as the book's images, with one Sim of the donated pair beside them; a silver chloride and ammonia Sim in 15.2; a solubility-against-pH Sim in 15.3; each section's plan decides |
 | Photographs | 15.3, 15.4, 15.5, 15.6, 15.7, 15.8, 15.9 kept, since the text points at each; Figure 15.1 on the introduction page |
 | Unnumbered images kept as `figure` rows | any ICE table or Lewis equation image a section keeps as an image |
 | 3D | none: Figure 15.2's particle picture is flat, since every ion must be seen and turning shows nothing, and the complex ions are the book's Lewis images; every graph flat |
@@ -34,15 +34,15 @@ Proposed by the agent after the chapter exploration (2026-09-28). Status: applie
 | Cross references | plain text to other sections; Appendix J links `/chemistry-2e/sheets/ksp/`, Appendix K `/chemistry-2e/sheets/kf/` |
 | Voice | root rule 17 and the book's Voice section |
 | Labels | Figure for a book number, Sim for an addition |
-| `ai` and `built` | `{"text": "Claude Opus 5.5", "figures": "Claude Opus 5.5"}`, `2026-09-28` |
+| `ai` and `built` | `claude-opus-5-5` at high effort for text and figures, the figures rebuilt by `claude-fable-5-2`, `2026-10-05` (the introduction page `2026-09-28`) |
 | Book manifest | `ch15` added to `book.json` by `ost merge chemistry-2e 15` |
 
 ## What the build changed
 
 - K_sp, Q_sp, K_f, K_d, the book's plain Q and the net K are typed `equilibrium-constant` and written through their macros on every page, as the symbols and concepts tables declared them; the Colour and Symbols rows above are corrected to say so. The concept `molar-solubility` is typed `concentration` at the chapter pass, as 15.1 asked.
-- Figure 15.2 is a moving flat Figure: ion pairs leave a silver chloride block in a beaker and return on a 6 s clock, beside a graph of the two rates meeting (rebuilt flat on 2026-11-14 from a 3D scene). A K_sp-plane Sim (15.1), a Sim of silver chloride dissolving in ammonia (15.2) and a solubility-against-pH Sim for aluminum hydroxide (15.3) are added, each labelled Sim.
+- Figure 15.2 is a moving flat Figure: ion pairs leave a silver chloride block in a beaker and return on a 6 s clock, beside a graph of the two rates meeting, with a choice of starting from the solid in pure water or from a supersaturated solution (rebuilt flat on 2026-11-14 from a 3D scene). A K_sp-plane Sim (15.1), a Sim of the lone pair a Lewis base donates (15.2), a Sim of silver chloride dissolving in ammonia (15.2) and a solubility-against-pH Sim for aluminum hydroxide (15.3) are added, each labelled Sim.
 - ICE tables: 15.1's four (Examples 15.3, 15.4, 15.6, 15.13) and 15.2's one (Example 15.14) are written as unnumbered HTML tables in the text; no ICE image is copied.
-- Unnumbered images as `figure` rows with no number, each the book's image: 15.2's five Lewis equations (hydronium and ammonium, BF₄⁻, Ag(NH₃)₂⁺, sulfate, the two displacements) and the Cu(CN)₂⁻ structure; 15.3's Al(OH)₄⁻ structure and Example 15.16's thiosulfate equation. The 15.2 redraws and 15.3's two-view Al(OH)₄⁻ Figure were reverted on 2026-11-14, as restyled stills that showed nothing the book's images do not.
+- Unnumbered images as `figure` rows with no number, each the book's image: 15.2's five Lewis equations (hydronium and ammonium, BF₄⁻, Ag(NH₃)₂⁺, sulfate, the two displacements) and the Cu(CN)₂⁻ structure; 15.3's Al(OH)₄⁻ structure and Example 15.16's thiosulfate equation. The 15.2 redraws and 15.3's two-view Al(OH)₄⁻ Figure were reverted on 2026-11-14, as restyled stills that showed nothing the book's images do not; on 2026-11-16 the images were kept again and 15.2's Lewis Sim was added, which follows the donated pair through the five combination reactions.
 - No 3D complex ion is built: Ag(NH₃)₂⁺ and Cu(CN)₂⁻ are linear, and the passages only name Al(OH)₄⁻ as a product.
 - `fs-idp2894848` (15.1) stays held: the K_sp-plane Sim draws AgCl and AgBr, not the simulation's salts.
 - Anchors, set at the chapter pass: the five forms and every variables row, including twelve rows added for the symbols the pages write through macros ([OH⁻], pH and pOH in 15.1; K_sp and Q in 15.2; K_sp, K_a1, K_f, pK_a, pH, pOH and [OH⁻] in 15.3).

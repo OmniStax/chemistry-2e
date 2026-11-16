@@ -11,7 +11,7 @@
     "Perform equilibrium calculations involving formation constants"
   ],
   "summary_html": "<p>A Lewis acid is a species that can accept an electron pair, whereas a Lewis base has an electron pair available for donation to a Lewis acid. Complex ions are examples of Lewis acid-base adducts and comprise central metal atoms or ions acting as Lewis acids bonded to molecules or ions called ligands that act as Lewis bases. The equilibrium constant for the reaction between a metal ion and ligands produces a complex ion called a formation constant; for the reverse reaction, it is called a dissociation constant.</p>",
-  "notes": "Nothing of the section is left out; its five Lewis equations and the structure of Cu(CN)<sub>2</sub><sup>–</sup> are redrawn from the book’s images, the ICE table of Example 15.14 is written as a table and keeps the example’s [Ag(NH<sub>3</sub>)<sub>2</sub><sup>+</sup>] = 0.099 without a unit, and the exercises keep as printed the “0.100 NH<sub>3</sub>” of exercise 64, the “potassium cyanide ion” of exercise 72 and the chargeless BF<sub>4</sub> in the key of exercise 82.",
+  "notes": "Nothing of the section is left out; its five Lewis equations and the structure of Cu(CN)<sub>2</sub><sup>–</sup> are kept as the book’s images, the ICE table of Example 15.14 is written as a table and keeps the example’s [Ag(NH<sub>3</sub>)<sub>2</sub><sup>+</sup>] = 0.099 without a unit, and the exercises keep as printed the “0.100 NH<sub>3</sub>” of exercise 64, the “potassium cyanide ion” of exercise 72 and the chargeless BF<sub>4</sub> in the key of exercise 82.",
   "ai": {
     "text": [
       {

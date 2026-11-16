@@ -203,8 +203,8 @@ const RAD = Math.PI / 180;
   const big = (r) => (r >= 1e4 ? sciTxt(r) : String(+r.toPrecision(2)));
   const conc = (v) => (v >= 0.01 ? `${v.toPrecision(2)} M` : `${sciTxt(v)} M`);      /* a concentration as the list writes it */
 
-  const BK = { l: 70, r: 350, t: 128, b: 500 }, LV = BK.t + 64;
-  const LX = 392;
+  const BK = { l: 62, r: 322, t: 128, b: 500 }, LV = BK.t + 64;
+  const LX = 362, LW = 326;
   const G = { l: 760, r: 1330, t: 150, b: 492 };
   /* a beaker standing on its base: straight walls, a rounded foot, a flared rim with a spout at the left */
   function beakerPath(ctx) {
@@ -236,12 +236,12 @@ const RAD = Math.PI / 180;
   function contents(ctx, st, N) {
     const cc = C('concentration'), c = Math.max(0, st.s - st.a), f = Math.max(0, N - 2 * c);
     text(ctx, 'in the solution', LX, LV + 6, PAL.muted, { size: 21 });
-    line(ctx, LX, LV + 24, LX + 290, LV + 24, PAL.rule, 1.5);
+    line(ctx, LX, LV + 24, LX + LW, LV + 24, PAL.rule, 1.5);
     const rows = [['NH₃, free', f], ['Cl⁻', st.s], ['Ag(NH₃)₂⁺', c], ['Ag⁺, free', st.a]];
     rows.forEach(([name, v], i) => {
       const y = LV + 62 + i * 52;
       text(ctx, name, LX, y, PAL.ink, { size: 24, weight: 600 });
-      text(ctx, v > 0 ? conc(v) : '0 M', LX + 290, y, cc, { size: 24, weight: 600, align: 'right' });
+      text(ctx, v > 0 ? conc(v) : '0 M', LX + LW, y, cc, { size: 24, weight: 600, align: 'right' });
     });
   }
   function draw() {
@@ -255,8 +255,10 @@ const RAD = Math.PI / 180;
     /* the Ksp line, and the two sides of it */
     const X = (v) => g.X(Math.log10(v)), Y = (v) => g.Y(Math.log10(v));
     line(ctx, X(KSP / 1e-4), Y(1e-4), X(1e-1), Y(KSP / 1e-1), ke, 3);
-    text(ctx, 'Q > K_{sp}: AgCl precipitates', G.r - 14, G.t + 26, PAL.muted, { size: 20, align: 'right' });
-    text(ctx, 'Q < K_{sp}: more AgCl can dissolve', G.l + 16, G.b - 24, PAL.muted, { size: 20 });
+    text(ctx, 'Q > K_{sp}:', G.r - 14, G.t + 24, PAL.muted, { size: 20, align: 'right' });
+    text(ctx, 'AgCl precipitates', G.r - 14, G.t + 50, PAL.muted, { size: 20, align: 'right' });
+    text(ctx, 'Q < K_{sp}:', G.l + 16, G.b - 50, PAL.muted, { size: 20 });
+    text(ctx, 'more AgCl can dissolve', G.l + 16, G.b - 24, PAL.muted, { size: 20 });
     text(ctx, 'Q = K_{sp}', G.r - 14, G.b - 24, ke, { size: 22, weight: 600, align: 'right' });
     /* the path of the solution as ammonia goes in: down the line while solid is left, then straight down; the part still ahead is dashed */
     const corner = Math.min(n, satS(1)), endA = state(1, n).a, sNow = st.s, aNow = st.a, ink = PAL.ink, ahead = alpha(PAL.ink, 0.4);
@@ -266,7 +268,7 @@ const RAD = Math.PI / 180;
     if (Nstar <= 1) {
       line(ctx, X(n), Y(done ? aNow : KSP / n), X(n), Y(endA), ahead, 3, [4, 8]);
       if (!onCircle) F.dot(ctx, X(n), Y(KSP / n), ink, false, 6);
-      F.label(ctx, 'last solid dissolves', X(n), Y(KSP / n), { side: 'above', size: 20, gap: 64, leader: true });
+      F.label(ctx, 'last solid dissolves', X(n), Y(KSP / n), { side: 'above', size: 20, gap: 84, leader: true });
       hits.push({ x: X(n), y: Y(KSP / n), r: 12, name: `the last solid dissolves here, at ${Nstar.toFixed(2)} M ammonia` });
     }
     F.dot(ctx, X(S0), Y(S0), ink, false, 9);

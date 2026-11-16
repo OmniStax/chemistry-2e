@@ -279,7 +279,8 @@ function beakerGlass(ctx, B) {
     const colCl = pick.mixColor((m) => (m === 'two' ? F.ref('agcl') : cK)), colBr = F.ref('agbr'), aBr = pick.a('two'), aOne = pick.a('one');
     const ar = round2(a), cr = round2(c), rr = round2(r);
     /* one salt: Q against K_sp from the numbers as written, and the amount u of each ion that precipitates */
-    const q1 = round2(ar * cr), how = rel(q1, KS.cl), above = how === '>';
+    /* (a mixture within the rounding of its two factors of the line counts as saturated) */
+    const q1 = round2(ar * cr), near = Math.abs((a * c) / KS.cl - 1) < 0.07, how = near ? (rel(q1, KS.cl) === '=' ? '=' : '≈') : a * c > KS.cl ? '>' : '<', above = how === '>';
     const u = above ? Math.max(0, ((a + c) - Math.sqrt((a - c) ** 2 + 4 * KS.cl)) / 2) : 0;
     /* two salts: where each begins, and what is left of each halide at this [Ag+] */
     const tc = LK.cl - cl.v, tb = LK.br - br.v, first = tc <= tb ? 'cl' : 'br', other = first === 'cl' ? 'br' : 'cl';
@@ -291,11 +292,11 @@ function beakerGlass(ctx, B) {
     if (!two) {
       if (above) {
         const fa = sciText(a - u), fc = sciText(c - u), ratio = q1 / KS.cl;
-        head = `$\\kQsp$ is ${ratio >= 100 ? sciText(ratio) : Math.round(ratio)} times $\\kKsp$, so AgCl precipitates until ` + (fa === fc ? `[Ag⁺] and [Cl⁻] fall to ${fa} M.` : `[Ag⁺] falls to ${fa} M and [Cl⁻] to ${fc} M.`);
-      } else if (how === '=') head = '$\\kQsp = \\kKsp$: the solution is saturated, and nothing precipitates.';
+        head = `$\\kQsp$ is ${ratio >= 100 ? sciText(ratio) : ratio < 10 ? ratio.toPrecision(2) : Math.round(ratio)} times $\\kKsp$, so AgCl precipitates until ` + (fa === fc ? `[Ag⁺] and [Cl⁻] fall to ${fa} M.` : `[Ag⁺] falls to ${fa} M and [Cl⁻] to ${fc} M.`);
+      } else if (how !== '<') head = '$\\kQsp = \\kKsp$: the solution is saturated, and nothing precipitates.';
       else head = `$\\kQsp$ is ${q1 / KS.cl >= 0.01 ? String(+(100 * q1 / KS.cl).toPrecision(2)) + '%' : 'less than 1%'} of $\\kKsp$, so no precipitate forms.`;
     } else {
-      const th = { cl: sciText(10 ** tc), br: sciText(10 ** tb) };
+      const th = { cl: sciText(round2(KS.cl / cr)), br: sciText(round2(KS.br / rr)) };      /* as the readout works them, from the rounded concentrations */
       head = !on[first] ? `Neither salt precipitates yet: ${NAMES[first]} begins at [Ag⁺] = ${th[first]} M, ${NAMES[other]} at ${th[other]} M.`
         : !on[other] ? `${NAMES[first]} is precipitating and [${ION[first]}] has fallen to ${sciText(left[first])} M; ${NAMES[other]} begins at [Ag⁺] = ${th[other]} M.`
           : `Both salts precipitate; ${NAMES[first]} began first, at [Ag⁺] = ${th[first]} M.`;
@@ -311,14 +312,23 @@ function beakerGlass(ctx, B) {
     lab.block(G.l - 150, G.t - 50, G.l + 240, G.t - 4); lab.block(G.l - 150, G.t, G.l - 4, G.b + 40); lab.block(G.l, G.b + 4, G.r + 10, G.b + 70);
     const seg = (lk) => [Math.max(XR[0], lk - YR[1]), Math.min(XR[1], lk - YR[0])];
     const [c0, c1] = seg(LK.cl), [b0, b1] = seg(LK.br);
+    /* where the mixture and its path stand, which the names of the two sides keep clear of */
+    const busy = [];
+    for (let i = 0; i <= 8; i++) { const w = u * (i / 8); busy.push([X(Math.log10(a - w)), Y(Math.log10(c - w))]); }
+    for (let y = Y(cl.v); y < G.b; y += 40) busy.push([X(ag.v), y]);
+    for (let x = X(ag.v); x > G.l; x -= 40) busy.push([x, Y(cl.v)]);
     /* one salt: the side of the line where Q_sp > K_sp, faint, and both sides named */
     if (aOne > 0) F.faded(ctx, aOne, [0, 0], () => {
       ctx.save(); ctx.globalAlpha *= 0.09; ctx.fillStyle = cK; ctx.beginPath();
       ctx.moveTo(X(c0), Y(LK.cl - c0)); ctx.lineTo(X(c1), Y(LK.cl - c1)); ctx.lineTo(X(XR[1]), Y(YR[1])); ctx.closePath(); ctx.fill(); ctx.restore();
-      text(ctx, '$\\kQsp > \\kKsp$', X(-4.3), Y(-1.0), PAL.ink, { size: 22, align: 'center', tex: true });
-      text(ctx, 'AgCl precipitates', X(-4.3), Y(-1.0) + 28, PAL.ink, { size: 19, align: 'center' });
-      text(ctx, '$\\kQsp < \\kKsp$', X(-9.3), Y(-7.6), PAL.ink, { size: 22, align: 'center', tex: true });
-      text(ctx, 'no precipitate', X(-9.3), Y(-7.6) + 28, PAL.ink, { size: 19, align: 'center' });
+      /* each name stands in its usual place unless the mixture is there, and then in the other */
+      const far = (p) => Math.min(...busy.map((b) => Math.hypot((X(p[0]) - b[0]) / 1.6, Y(p[1]) + 14 - b[1])));
+      const spot = (...ps) => (far(ps[0]) > 60 ? ps[0] : ps.reduce((p, q) => (far(q) > far(p) ? q : p)));
+      const up = spot([-4.3, -1.0], [-3.6, -3.2], [-5.2, -1.9]), dn = spot([-9.3, -7.6], [-10.2, -2.6]);
+      text(ctx, '$\\kQsp > \\kKsp$', X(up[0]), Y(up[1]), PAL.ink, { size: 22, align: 'center', tex: true });
+      text(ctx, 'AgCl precipitates', X(up[0]), Y(up[1]) + 28, PAL.ink, { size: 19, align: 'center' });
+      text(ctx, '$\\kQsp < \\kKsp$', X(dn[0]), Y(dn[1]), PAL.ink, { size: 22, align: 'center', tex: true });
+      text(ctx, 'no precipitate', X(dn[0]), Y(dn[1]) + 28, PAL.ink, { size: 19, align: 'center' });
     });
     line(ctx, X(c0), Y(LK.cl - c0), X(c1), Y(LK.cl - c1), colCl, 5);
     if (aBr > 0) F.faded(ctx, aBr, [0, 0], () => line(ctx, X(b0), Y(LK.br - b0), X(b1), Y(LK.br - b1), colBr, 5));
@@ -337,7 +347,7 @@ function beakerGlass(ctx, B) {
         dot(ctx, ex, ey, PAL.ink, true, 9);
         hits.push({ x: ex, y: ey, r: 14, name: `at equilibrium: [Ag⁺] = ${sciText(a - u)} M, [Cl⁻] = ${sciText(c - u)} M` });
         lab.block(ex - 12, ey - 12, ex + 12, ey + 12);
-        lab.add('at equilibrium', ex, ey, -0.71, 0.71, PAL.ink, 19, 16);
+        lab.add('at equilibrium', ex, ey, ...(ex < G.l + 160 ? [0.5, 0.87] : [-0.71, 0.71]), PAL.ink, 19, 16);
       }
       dot(ctx, X(xa), Y(cl.v), PAL.ink, !above, 10);
       hits.push({ x: X(xa), y: Y(cl.v), r: 14, name: `as mixed: [Ag⁺] = ${sciText(a)} M, [Cl⁻] = ${sciText(c)} M` });
@@ -353,7 +363,7 @@ function beakerGlass(ctx, B) {
           line(ctx, G.l, Y(y0[k]), X(xt), Y(y0[k]), alpha(col[k], 0.75), 2.5, [10, 8]);
           line(ctx, X(xt), Y(y0[k]), X(xt), G.b, alpha(col[k], 0.75), 2.5, [10, 8]);
           dot(ctx, X(xt), G.b, col[k], true, 7);
-          hits.push({ x: X(xt), y: G.b, r: 12, name: `${NAMES[k]} begins to precipitate at [Ag⁺] = ${sciText(10 ** xt)} M` });
+          hits.push({ x: X(xt), y: G.b, r: 12, name: `${NAMES[k]} begins to precipitate at [Ag⁺] = ${sciText(round2(KS[k] / round2(y0x(k))))} M` });
           /* named just above the axis, the first to begin on the left of its line and the other on the right of its own */
           const room = thr[first] > XR[0] + 2.4, lft = k === first && room;
           text(ctx, `${NAMES[k]} begins`, X(xt) + (lft ? -10 : 10), G.b - (k === first && !room ? 44 : 18), col[k], { size: 18, align: lft ? 'right' : 'left', bg: PAL.panel });
@@ -361,7 +371,7 @@ function beakerGlass(ctx, B) {
         const yk = Math.max(YR[0], Math.log10(left[k]));
         dot(ctx, X(xa), Y(yk), col[k], true, 10);
         hits.push({ x: X(xa), y: Y(yk), r: 14, name: `[${ION[k]}] = ${sciText(left[k])} M: ${NAMES[k]} ${on[k] ? 'is precipitating' : 'has not begun to precipitate'}` });
-        lab.add(ION[k], X(xa), Y(yk), 0.71, -0.71, col[k], 20, 20);
+        lab.add(ION[k], X(xa), Y(yk), ...(xa < XR[0] + 1.6 ? [0.35, 0.94] : [-0.71, 0.71]), col[k], 20, 32);
       });
       lab.add('AgCl', X(-3.0), Y(LK.cl + 3.0), 0.71, -0.71, colCl, 20, 22);
       lab.add('AgBr', X(-3.6), Y(LK.br + 3.6), -0.71, 0.71, colBr, 20, 22);
@@ -405,7 +415,7 @@ function beakerGlass(ctx, B) {
     });
 
     if (!two) {
-      ro.set(`\\kQsp = [\\text{Ag}^{+}][\\text{Cl}^{-}] = (\\mk{a}{${hue('concentration', sciTex(ar))}})(\\mk{c}{${hue('concentration', sciTex(cr))}}) = \\mk{q}{${hue('equilibrium-constant', sciTex(q1))}} \\mk{rel}{${how === '>' ? '\\gt' : how === '<' ? '\\lt' : '='}} \\mk{K}{\\kKsp} = \\mk{Kv}{${hue('equilibrium-constant', '1.6 \\times 10^{-10}')}}`, undefined, { form: 'one' });
+      ro.set(`\\kQsp = [\\text{Ag}^{+}][\\text{Cl}^{-}] = (\\mk{a}{${hue('concentration', sciTex(ar))}})(\\mk{c}{${hue('concentration', sciTex(cr))}}) = \\mk{q}{${hue('equilibrium-constant', sciTex(q1))}} \\mk{rel}{${how === '>' ? '\\gt' : how === '<' ? '\\lt' : how === '=' ? '=' : '\\approx'}} \\mk{K}{\\kKsp} = \\mk{Kv}{${hue('equilibrium-constant', '1.6 \\times 10^{-10}')}}`, undefined, { form: 'one' });
     } else {
       /* the [Ag+] at which each salt begins to precipitate, AgCl's line first as Example 15.11 works them */
       const line2 = (k, xr, ion) => `[\\text{Ag}^{+}] = \\frac{\\kKsp}{${ion}} = \\frac{\\mk{K${k}}{${hue('equilibrium-constant', sciTex(KS[k]))}}}{\\mk{x${k}}{${hue('concentration', sciTex(xr))}}} = \\mk{t${k}}{${hue('concentration', sciTex(round2(KS[k] / xr)))}}\\ \\text{M}`;

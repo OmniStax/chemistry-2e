@@ -330,8 +330,13 @@ function beakerGlass(ctx, B) {
       text(ctx, '$\\kQsp < \\kKsp$', X(dn[0]), Y(dn[1]), PAL.ink, { size: 22, align: 'center', tex: true });
       text(ctx, 'no precipitate', X(dn[0]), Y(dn[1]) + 28, PAL.ink, { size: 19, align: 'center' });
     });
-    line(ctx, X(c0), Y(LK.cl - c0), X(c1), Y(LK.cl - c1), colCl, 5);
-    if (aBr > 0) F.faded(ctx, aBr, [0, 0], () => line(ctx, X(b0), Y(LK.br - b0), X(b1), Y(LK.br - b1), colBr, 5));
+    /* the lines and the points are drawn again over the labels' panels, so no label breaks a line */
+    const top = [];
+    const kLines = () => {
+      line(ctx, X(c0), Y(LK.cl - c0), X(c1), Y(LK.cl - c1), colCl, 5);
+      if (aBr > 0) F.faded(ctx, aBr, [0, 0], () => line(ctx, X(b0), Y(LK.br - b0), X(b1), Y(LK.br - b1), colBr, 5));
+    };
+    kLines();
 
     hits = [];
     const xa = ag.v, drop = (x, y, color) => { line(ctx, X(x), Y(y), X(x), G.b, color, 2, [4, 8]); line(ctx, G.l, Y(y), X(x), Y(y), color, 2, [4, 8]); };
@@ -344,12 +349,12 @@ function beakerGlass(ctx, B) {
         ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.setLineDash([9, 7]); ctx.beginPath();
         pts.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y))); ctx.stroke(); ctx.restore();
         if (Math.hypot(ex - X(xa), ey - Y(cl.v)) > 50) F.arrow(ctx, ex - 34 * ux, ey - 34 * uy, ex - 12 * ux, ey - 12 * uy, PAL.ink, 3);
-        dot(ctx, ex, ey, PAL.ink, true, 9);
+        top.push(() => dot(ctx, ex, ey, PAL.ink, true, 9));
         hits.push({ x: ex, y: ey, r: 14, name: `at equilibrium: [Ag⁺] = ${sciText(a - u)} M, [Cl⁻] = ${sciText(c - u)} M` });
         lab.block(ex - 12, ey - 12, ex + 12, ey + 12);
         lab.add('at equilibrium', ex, ey, ...(ex < G.l + 160 ? [0.5, 0.87] : [-0.71, 0.71]), PAL.ink, 19, 16);
       }
-      dot(ctx, X(xa), Y(cl.v), PAL.ink, !above, 10);
+      top.push(() => dot(ctx, X(xa), Y(cl.v), PAL.ink, !above, 10));
       hits.push({ x: X(xa), y: Y(cl.v), r: 14, name: `as mixed: [Ag⁺] = ${sciText(a)} M, [Cl⁻] = ${sciText(c)} M` });
       lab.block(X(xa) - 12, Y(cl.v) - 12, X(xa) + 12, Y(cl.v) + 12);
       lab.add('as mixed', X(xa), Y(cl.v), 0.71, -0.71, PAL.ink, 19, 16);
@@ -369,14 +374,15 @@ function beakerGlass(ctx, B) {
           text(ctx, `${NAMES[k]} begins`, X(xt) + (lft ? -10 : 10), G.b - (k === first && !room ? 44 : 18), col[k], { size: 18, align: lft ? 'right' : 'left', bg: PAL.panel });
         }
         const yk = Math.max(YR[0], Math.log10(left[k]));
-        dot(ctx, X(xa), Y(yk), col[k], true, 10);
+        top.push(() => dot(ctx, X(xa), Y(yk), col[k], true, 10));
         hits.push({ x: X(xa), y: Y(yk), r: 14, name: `[${ION[k]}] = ${sciText(left[k])} M: ${NAMES[k]} ${on[k] ? 'is precipitating' : 'has not begun to precipitate'}` });
-        lab.add(ION[k], X(xa), Y(yk), ...(xa < XR[0] + 1.6 ? [0.35, 0.94] : [-0.71, 0.71]), col[k], 20, 32);
+        lab.add(ION[k], X(xa), Y(yk), ...(yk < YR[0] + 1.5 ? [0.71, -0.71] : xa < XR[0] + 1.6 ? [1, 0] : [-0.71, 0.71]), col[k], 20, 32);
       });
       lab.add('AgCl', X(-3.0), Y(LK.cl + 3.0), 0.71, -0.71, colCl, 20, 22);
       lab.add('AgBr', X(-3.6), Y(LK.br + 3.6), -0.71, 0.71, colBr, 20, 22);
     }
     lab.flush();
+    kLines(); top.forEach((f) => f());
 
     /* ---- the beaker: the solids that have formed, the first on the floor ---- */
     const solids = two ? [first, other].filter((k) => on[k] && left[k] < y0x(k)).map((k) => ({ k, f: 1 - left[k] / y0x(k) }))

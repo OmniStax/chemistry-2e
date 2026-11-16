@@ -394,7 +394,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
 ===================================================================== */
 (function () {
   const d = sim('sim-optical-isomers');
-  const HS = 520, DIST = 21.5, K = 0.62, Y0 = -0.4, D = 2.9;
+  const HS = 520, DIST = 21.5, K = 0.75, Y0 = -0.4, D = 3.2;
   let t = 0, seen = [NaN, NaN];
   /* a drag turns the original; the image turns the opposite way about the upright axis, as a reflection does, and the
      mirror stays edge-on between them. Laid over (t = 1), the image turns with the original. */

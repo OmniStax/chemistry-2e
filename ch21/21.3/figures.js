@@ -523,7 +523,7 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
     text(ctx, 'CO₂ from the air', 24, 114, ink, { size: 20, weight: 600 });
     hits.push({ x: 252, y: GY - 100, r: 80, name: 'the living tree: it takes in carbon-14 as fast as its carbon-14 decays' });
     log(ctx, 400, 150);
-    text(ctx, 'wood from the dead tree', 452, GY - 86, ink, { size: 20, weight: 600, align: 'center' });
+    text(ctx, 'the dead wood', 475, GY - 86, ink, { size: 20, weight: 600, align: 'center' });
     hits.push({ x: 475, y: GY - 30, r: 60, name: 'wood from the dead tree: it takes in no more carbon' });
     const bx = { l: SX - 24, r: SX + (COLS - 1) * PITCH + 24, t: SY - 24, b: SY + 4 * PITCH + 24 };
     line(ctx, 562, GY - 60, bx.l, bx.t + 6, alpha(ink, 0.4), 2, [5, 6]); line(ctx, 562, GY, bx.l, bx.b - 6, alpha(ink, 0.4), 2, [5, 6]);

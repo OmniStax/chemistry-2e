@@ -141,8 +141,8 @@ const inTex = (s) => s.replace(MINUS, '-');
     const k = pick.value, x = X[k], t = cy.now(), dir = Math.sign(x.E), reduceAtX = dir > 0;
     const right = pick.mixColor((q) => (q === 'cu' ? alpha(F.fact(CU_BLUE), 0.32) : alpha(PAL.muted, 0.13))), left = alpha(PAL.muted, 0.13);
     const reading = `${signed(x.E, x.dec)} V`;
-    topline(ctx, reduceAtX ? `Electrons run from the SHE to the ${x.name}, ${x.ion} is reduced, and the voltmeter reads ${reading}.`
-      : `Electrons run from the ${x.name} to the SHE, ${x.name} is oxidized, and the voltmeter reads ${reading}.`);
+    topline(ctx, reduceAtX ? `Electrons run from the SHE to the ${x.name}, where ${x.ion} is reduced, so the voltmeter reads ${reading}.`
+      : `Electrons run from the ${x.name} to the SHE, where H⁺ is reduced, so the voltmeter reads ${reading}.`);
 
     /* the magnified surfaces first, so the bench's callout lines run under nothing */
     const RING = [[JX, 632], [XC, 606]];
@@ -364,7 +364,7 @@ const inTex = (s) => s.replace(MINUS, '-');
     if (!same && Math.abs(yc - ya) > 20) {
       const s = Math.sign(yc - ya), y0 = ya + s * (ROWH / 2 - 1), y1 = yc - s * (ROWH / 2 - 1), ink = ec > 0 ? PAL.ink : alpha(PAL.ink, 0.55);
       if (Math.abs(y1 - y0) > 22) { line(ctx, CX, y0, CX, y1 - s * 16, ink, 4, ec > 0 ? undefined : [7, 7]); arrow(ctx, CX, y1 - s * 18, CX, y1, ink, 4); }
-      hits.push({ x: CX, y: (y0 + y1) / 2, r: 12, name: ec > 0 ? `electrons pass from ${ra.red} to ${rc.ox}` : `electrons do not pass from ${ra.red} to ${rc.ox} of themselves` });
+      hits.push({ x: CX, y: (y0 + y1) / 2, r: 12, name: ec > 0 ? `electrons pass from ${ra.red} to ${rc.ox}` : `electrons do not pass from ${ra.red} to ${rc.ox} on their own` });
     }
     /* E°cell on the scale: each chosen bar's end carried up to the band under the axis, and the arrow from the anode's to the cathode's */
     line(ctx, xa, ya - BH / 2, xa, YARR, cA, 2.5, [4, 8]); line(ctx, xc, yc - BH / 2, xc, YARR, cC, 2.5, [4, 8]);

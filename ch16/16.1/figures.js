@@ -249,10 +249,10 @@ const sup = (n) => String(n).split('').map((c) => SUP[c] ?? c).join('');
    contact (t = 0) each temperature closes on the mean as e^(−t/τ),
    τ = 2 min, over ten minutes; 11 model minutes in about 7 s, then a
    1.2 s hold. Beside the objects, the heat each has gained so far as a
-   bar from zero, q_X and q_Y, on a fixed axis of ±80 kJ (the sliders
+   bar from zero, q_X and q_Y, on a fixed axis of ±100 kJ (the sliders
    reach ±75 kJ). Beneath, both temperatures against time on fixed axes,
    −1 to 10 min and 250 to 400 K, the slider limits. The heat arrow
-   grows with the temperature difference: 60 long plus 2 for each kelvin.
+   grows with the temperature difference: 50 long plus 1.4 for each kelvin.
 ===================================================================== */
 (function () {
   const H = 720, d = sim('sim-heat-flow', H);
@@ -285,13 +285,13 @@ const sup = (n) => String(n).split('').map((c) => SUP[c] ?? c).join('');
     });
     const diff = TX - TY, flowing = tm >= 0 && Math.abs(diff) >= 0.5;
     if (flowing) {
-      const L = 60 + 2 * Math.abs(diff), sg = Math.sign(diff), ya = BT + 64;
+      const L = 50 + 1.4 * Math.abs(diff), sg = Math.sign(diff), ya = BT + 56;
       arrow(ctx, CX - (sg * L) / 2, ya, CX + (sg * L) / 2, ya, ce, 7);
-      text(ctx, 'heat', CX, ya - 34, ce, { size: 22, weight: 600, align: 'center' });
+      text(ctx, 'heat', CX - sg * (L / 2 + 14), ya, ce, { size: 22, weight: 600, align: sg > 0 ? 'right' : 'left' });
       hits.push({ x: CX, y: ya, r: 34, name: `heat flowing from ${sg > 0 ? 'X to Y' : 'Y to X'}, faster the further apart the temperatures` });
     }
     /* the heat each object has gained since contact: two bars from zero, equal and opposite */
-    const gb = F.axes(ctx, B, [0, 2], [-80, 80], { nx: 0, ny: 4, yl: 'heat gained (kJ)', yc: ce });
+    const gb = F.axes(ctx, B, [0, 2], [-100, 100], { nx: 0, ny: 4, yl: 'heat gained (kJ)', yc: ce });
     [[0.55, qx, rx, '\\kqX', 'X'], [1.45, qy, ry, '\\kqY', 'Y']].forEach(([u, q, c, sym, w]) => {
       const x = gb.X(u), y0b = gb.Y(0), yq = gb.Y(q);
       ctx.save(); ctx.fillStyle = alpha(c, 0.75); ctx.fillRect(x - 46, Math.min(y0b, yq), 92, Math.abs(yq - y0b)); ctx.restore();
@@ -303,7 +303,7 @@ const sup = (n) => String(n).split('').map((c) => SUP[c] ?? c).join('');
     /* the temperatures against time */
     const g = F.axes(ctx, G, [-PRE, TEND], [250, 400], { nx: 11, ny: 3, fx: (v) => (v < 0 ? '' : fmt(v, 0)), xl: 'time in contact (min)', xc: C('time'), yl: 'temperature (K)', yc: ct });
     line(ctx, g.X(0), G.t, g.X(0), G.b, alpha(PAL.ink, 0.35), 2, [4, 8]);
-    text(ctx, 'contact', g.X(0) + 10, G.t + 14, PAL.muted, { size: 17, bg: PAL.panel });
+    hits.push({ x: g.X(0), y: (G.t + G.b) / 2, r: 12, name: 'X and Y touch' });
     if (dir) {
       line(ctx, g.X(0), g.Y(Tf), G.r, g.Y(Tf), alpha(PAL.ink, 0.4), 2.5, [10, 10]);
       text(ctx, `${fmt(Tf, 1)} K`, G.r + 10, g.Y(Tf), PAL.muted, { size: 17 });
@@ -311,9 +311,9 @@ const sup = (n) => String(n).split('').map((c) => SUP[c] ?? c).join('');
     const fx = (T0) => (s) => (s < 0 ? T0 : Tf + (T0 - Tf) * Math.exp(-s / TAU_M));
     if (tm > -PRE + 0.01) { F.plot(ctx, g, fx(x0), rx, { w: 5, x: [-PRE, tm] }); F.plot(ctx, g, fx(y0), ry, { w: 5, x: [-PRE, tm] }); }
     dot(ctx, g.X(tm), g.Y(TX), rx, true, 9); dot(ctx, g.X(tm), g.Y(TY), ry, true, 9);
-    const apart = Math.abs(g.Y(TX) - g.Y(TY)) > 30, up = TX >= TY ? -1 : 1;
-    text(ctx, 'X', g.X(tm) + 16, g.Y(TX) + (apart ? 0 : 13 * up), rx, { size: 20, weight: 600, bg: PAL.panel });
-    text(ctx, 'Y', g.X(tm) + 16, g.Y(TY) - (apart ? 0 : 13 * up), ry, { size: 20, weight: 600, bg: PAL.panel });
+    const up = (dir || 1) > 0 ? -1 : 1;
+    text(ctx, 'X', g.X(tm), g.Y(TX) + 24 * up, rx, { size: 20, weight: 600, align: 'center' });
+    text(ctx, 'Y', g.X(tm), g.Y(TY) - 24 * up, ry, { size: 20, weight: 600, align: 'center' });
     const hot = dir > 0 ? 'X' : 'Y', cold = dir > 0 ? 'Y' : 'X';
     topline(ctx, !dir ? `X and Y start at the same temperature, ${fmt(x0, 0)} K, so no heat flows.`
       : tm < 0 ? `X and Y are apart, at ${fmt(x0, 0)} K and ${fmt(y0, 0)} K.`

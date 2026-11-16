@@ -59,7 +59,7 @@ function onBall(ctx, col) {
       from: [[175, 478], [175, 548], [175, 612], [175, 655]], madeSlots: [[232, 478], [282, 548], [226, 612], [290, 655]],
       /* silver atoms stack up the cathode's face; each Ag⁺ comes out of the solution a little way off */
       sites: Array.from({ length: 2 * NB }, (_, i) => [XC - SW / 2 - 12, 462 + 25 * i]),
-      origin: (i, s) => [s[0] - 96 - 22 * (i % 3), s[1] + (i % 2 ? 34 : -30)],
+      origin: (i, s) => [s[0] - 70 - 14 * (i % 3), s[1] + (i % 2 ? 34 : -30)],
       an: (n) => [[(1 + 0.05 * n).toFixed(2) + ' M', ' Cu(NO₃)₂(aq)']], cat: (n) => [[(1 - 0.1 * n).toFixed(2) + ' M', ' AgNO₃(aq)']],
       tally: (n) => `\\text{charge added to the anode solution} = \\underbrace{${n}(+2)}_{\\text{Cu}^{2+}} + \\underbrace{${2 * n}(-1)}_{\\text{NO}_3^{-}} = 0 \\\\ \\text{charge added to the cathode solution} = \\underbrace{-${2 * n}(+1)}_{\\text{Ag}^{+}\\text{ plated out}} + \\underbrace{${2 * n}(+1)}_{\\text{Na}^{+}} = 0`,
       stop: 'With the salt bridge out, one more Cu²⁺ would leave the anode solution with a charge of 2+ and the cathode solution with 2−. Nothing can balance them, so no electrons flow.',

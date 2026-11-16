@@ -212,7 +212,8 @@ function beakerGlass(ctx, B) {
     dot(ctx, ax.X(t), ax.Y(RD), cOut, true, 9); dot(ctx, ax.X(t), ax.Y(run.rateIn(t)), cIn, true, 9);
     hits.push({ x: ax.X(t), y: ax.Y(RD), r: 12, name: 'the rate of dissolution' }, { x: ax.X(t), y: ax.Y(run.rateIn(t)), r: 12, name: 'the rate of precipitation' });
     F.legend(ctx, ax, [{ s: 'dissolution', color: cOut, w: 5 }, { s: 'precipitation', color: cIn, w: 5 }], { corner: 'above' });
-    ro.set(`[\\text{Ag}^{+}][\\text{Cl}^{-}] = (${hue('concentration', cx)})(${hue('concentration', cx)}) = ${hue('equilibrium-constant', q > 0 ? sciTex(qr) : '0')} ${how} \\kKsp = ${hue('equilibrium-constant', '1.6 \\times 10^{-10}')}`, NOTE, { values: false });
+    const prod = `[\\text{Ag}^{+}][\\text{Cl}^{-}] = (${hue('concentration', cx)})(${hue('concentration', cx)}) = ${hue('equilibrium-constant', q > 0 ? sciTex(qr) : '0')}`;
+    ro.set(settled ? `\\kKsp = ${prod}` : `${prod} ${how} \\kKsp = ${hue('equilibrium-constant', '1.6 \\times 10^{-10}')}`, NOTE, { values: false, form: settled });
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();

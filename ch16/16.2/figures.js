@@ -64,7 +64,7 @@ function piles(ctx, o) {
       if (frac) text(ctx, `${count(w)}/${count(o.total)}`, x, top - 14, PAL.muted, { size: 17, align: 'center' });
       text(ctx, n > 9 ? count(w) : `W = ${count(w)}`, x, top - lift, PAL.ink, { size: n > 9 ? 18 : 20, weight: 600, align: 'center' });
       if (o.letters) text(ctx, `(${o.letters[k]})`, x, top - lift - 26, PAL.ink, { size: 21, weight: 600, align: 'center' });
-    } else if (k === 0 || k === n - 1 || w === wmax) text(ctx, `W = ${count(w)}`, k === 0 ? x + 12 : k === n - 1 ? x - 12 : x, top - 28, PAL.ink, { size: 19, weight: 600, align: k === 0 ? 'left' : k === n - 1 ? 'right' : 'center' });
+    } else if (k === 0 || k === n - 1 || w === wmax) text(ctx, `W = ${count(w)}`, k === 0 ? x + Math.max(slot, 10) / 2 + 6 : k === n - 1 ? x - Math.max(slot, 10) / 2 - 6 : x, top - (w === wmax ? 28 : 16), PAL.ink, { size: 19, weight: 600, align: k === 0 ? 'left' : k === n - 1 ? 'right' : 'center' });
     if (k % o.every === 0) { line(ctx, x, PBASE, x, PBASE + 8, PAL.muted, 2); text(ctx, String(k), x, PBASE + 24, PAL.muted, { size: 17, align: 'center' }); }
   });
   /* the names of the two marks, under their piles; on one line unless they would touch */
@@ -299,7 +299,7 @@ function piles(ctx, o) {
       const pts = m.tr; if (phaseI(i) !== 2 || pts.length < 3) return;
       const L = [], Rr = [];
       for (let j = 0; j < pts.length; j++) {
-        const a = pts[Math.max(0, j - 1)], b = pts[Math.min(pts.length - 1, j + 1)], dx = b[1] - a[1], dy = b[2] - a[2], q = Math.hypot(dx, dy) || 1, hw = 15 * (j / (pts.length - 1));
+        const a = pts[Math.max(0, j - 1)], b = pts[Math.min(pts.length - 1, j + 1)], dx = b[1] - a[1], dy = b[2] - a[2], q = Math.hypot(dx, dy) || 1, hw = 12 * (j / (pts.length - 1));
         L.push([BX + pts[j][1] - (dy / q) * hw, BY + pts[j][2] + (dx / q) * hw]); Rr.unshift([BX + pts[j][1] + (dy / q) * hw, BY + pts[j][2] - (dx / q) * hw]);
       }
       ctx.save(); ctx.beginPath(); ctx.rect(BX, BY, BW, BH); ctx.clip(); ctx.fillStyle = alpha(F.el('O'), 0.22); ctx.beginPath();

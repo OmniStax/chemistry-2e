@@ -24,8 +24,8 @@ const RAD = Math.PI / 180;
      bonds [giver, taker, order]; rows [atom index, name, valence electrons], one per kind of atom */
   const MOL = {
     H2O: {
-      to: 'O', charge: 0, k: 1.3, formula: 'H₂O', ions: 'water would be O²⁻ and two H⁺ ions',
-      atoms: [['O', 400, 285, 0, [-60, -120], -90], ['H', ...at(400, 285, 142, 310), 0, [], 90], ['H', ...at(400, 285, 38, 310), 0, [], 90]],
+      to: 'O', charge: 0, k: 1.45, formula: 'H₂O', ions: 'water would be O²⁻ and two H⁺ ions',
+      atoms: [['O', 400, 300, 0, [-60, -120], -90], ['H', ...at(400, 300, 142, 340), 0, [], 90], ['H', ...at(400, 300, 38, 340), 0, [], 90]],
       bonds: [[1, 0, 1], [2, 0, 1]],
       rows: [[0, 'O', 6], [1, 'H', 1]],
     },
@@ -107,22 +107,22 @@ const RAD = Math.PI / 180;
   }
 
   /* the count behind each charge: valence electrons of the atom in its element, less the electrons it counts here */
-  const COL = { sw: 846, name: 872, val: 1078, minus: 1136, cnt: 1202, eq: 1272, q: 1340 };
+  const COL = { sw: 838, name: 862, val: 1064, minus: 1128, cnt: 1206, eq: 1276, q: 1342 };
   function ledger(ctx, key, p) {
     const m = MOL[key], q = charges(m, p), dec = p === 1 || p === 0 ? 0 : 2, n = m.rows.length;
     const y0 = 345 - (n - 1) * 42, hy = y0 - 108;
     const head = (a, b, x, strong) => {
-      text(ctx, a, x, hy, strong ? PAL.ink : PAL.muted, { size: 20, align: 'center', weight: strong ? 600 : 400 });
-      if (b) text(ctx, b, x, hy + 27, strong ? PAL.ink : PAL.muted, { size: 20, align: 'center', weight: strong ? 600 : 400 });
+      text(ctx, a, x, hy, strong ? PAL.ink : PAL.muted, { size: 21, align: 'center', weight: strong ? 600 : 400 });
+      if (b) text(ctx, b, x, hy + 27, strong ? PAL.ink : PAL.muted, { size: 21, align: 'center', weight: strong ? 600 : 400 });
     };
     head('valence e⁻', 'in the element', COL.val);
     head('e⁻ counted', `in ${m.formula}`, COL.cnt);
     if (p === 1) head('oxidation', 'number', COL.q, true); else if (p === 0) head('formal', 'charge', COL.q, true); else head('charge', '', COL.q);
     line(ctx, COL.sw - 22, hy + 48, 1388, hy + 48, PAL.rule, 1.5);
     m.rows.forEach(([i, name, val], j) => {
-      const y = y0 + j * 84, o = { size: 30, align: 'center' };
+      const y = y0 + j * 84, o = { size: 32, align: 'center' };
       disc(ctx, m.atoms[i][0], COL.sw, y, 16);
-      text(ctx, name, COL.name, y, PAL.ink, { size: 26, align: 'left', base: 'middle' });
+      text(ctx, name, COL.name, y, PAL.ink, { size: 24, align: 'left', base: 'middle' });
       text(ctx, String(val), COL.val, y, PAL.ink, { ...o, base: 'middle' });
       text(ctx, '−', COL.minus, y, PAL.muted, { ...o, base: 'middle' });
       text(ctx, (val - q[i]).toFixed(dec), COL.cnt, y, PAL.ink, { ...o, base: 'middle' });

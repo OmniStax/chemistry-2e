@@ -14,149 +14,165 @@ function sci(x) {
   if (Math.abs(m) >= 10) { m /= 10; e += 1; }
   return `${m < 0 ? '-' : ''}${Math.abs(m).toFixed(2)}\\times 10^{${e}}`;
 }
-/* the probability column of both counting figures: W at XW, the fraction right-aligned at XF, the bar from XB,
-   on one scale where a probability of 1 is BAR units, so the largest, 2/4, ends at the canvas edge */
-const XW = 1100, XF = 1236, XB = 1248, BAR = 270;
+/* a count as the page writes it: digits with commas below a million, three figures and a power of ten above */
+const SUP = { '-': '⁻', 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴', 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹' };
+const parts = (x) => { let e = Math.floor(Math.log10(x)), m = +(x / 10 ** e).toFixed(2); if (m >= 10) { m /= 10; e += 1; } return [m.toFixed(2), e]; };
+const count = (x) => (x < 1e6 ? Math.round(x).toLocaleString('en-US') : (([m, e]) => `${m} × 10${String(e).split('').map((c) => SUP[c]).join('')}`)(parts(x)));
+const countTex = (x) => (x < 1e6 ? Math.round(x).toLocaleString('en-US').replace(/,/g, '{,}') : (([m, e]) => `${m}\\times 10^{${e}}`)(parts(x)));
+const choose = (n, k) => { let c = 1; for (let i = 1; i <= k; i++) c = (c * (n - k + i)) / i; return Math.round(c); };
 /* the readout of both counting figures, ΔS = k ln(W_f/W_i) with the live counts */
 function deltaS(ro, wi, wf) {
   const ds = KB * Math.log(wf / wi);
-  ro.set(`\\kdS = k\\ln\\frac{W_{\\text{f}}}{W_{\\text{i}}} = 1.38\\times 10^{-23}\\ \\mathrm{J/K}\\times\\ln\\frac{\\mk{wf}{${wf}}}{\\mk{wi}{${wi}}} = \\mk{ds}{${hue('entropy', sci(ds))}}\\ \\mathrm{J/K}`);
+  ro.set(`\\kdS = k\\ln\\frac{W_{\\text{f}}}{W_{\\text{i}}} = 1.38\\times 10^{-23}\\ \\mathrm{J/K}\\times\\ln\\frac{\\mk{wf}{${countTex(wf)}}}{\\mk{wi}{${countTex(wi)}}} = \\mk{ds}{${hue('entropy', sci(ds))}}\\ \\mathrm{J/K}`);
 }
-/* one microstate as the book draws it: two boxes side by side, each bw by bh, top left at (x, y) */
-function domino(ctx, x, y, bw, bh) {
-  ctx.save(); ctx.strokeStyle = PAL.muted; ctx.lineWidth = 2.5;
-  ctx.strokeRect(x, y, 2 * bw, bh); line(ctx, x + bw, y, x + bw, y + bh, PAL.muted, 2.5); ctx.restore();
-}
-/* the row a distribution occupies, marked as the initial state (dashed outline) or the final one (filled) */
-function rowMark(ctx, y0, y1, initial, final) {
+/* Both counting figures draw one pile per distribution along a number line: the microstates of a distribution
+   stacked on its place, one tile each, so a pile's height is its W; where there are too many to draw, a bar of
+   that height. The tallest pile fills the stage at every setting (the heights are relative; each pile carries
+   its own W), so the frame is fixed and only the piles change.
+   o: W [count per distribution], total, tiles (null for bars, else [per distribution [microstate …]]),
+   tile(ctx, m, x, y, w, h) draws one microstate, letters (the book's (a), (b), … or null), ia, ib the initial
+   and final distributions, title the number line's name, every the tick step, name(k) a bar's hover name.
+   Returns the hover hits of the bars. */
+const PX0 = 60, PX1 = 1340, PTOP = 168, PBASE = 560, PILE_H = 690;
+function piles(ctx, o) {
+  const n = o.W.length, slot = (PX1 - PX0) / n, xc = (k) => PX0 + (k + 0.5) * slot, wmax = Math.max(...o.W), hits = [];
+  const tw = Math.min(slot - 36, 300), th = o.tiles ? Math.min(104, (PBASE - PTOP) / wmax) : 0;
+  const band = (k) => [xc(k) - Math.max(slot, 10) / 2 + 3, PTOP - 76, Math.max(slot, 10) - 6, PBASE - PTOP + 76];
+  /* the final distribution stands on a filled band, the initial one inside a dashed outline */
   ctx.save();
-  if (final) { ctx.fillStyle = alpha(PAL.ink, 0.07); ctx.fillRect(16, y0, 1368, y1 - y0); }
-  if (initial) { ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 2; ctx.setLineDash([10, 10]); ctx.strokeRect(16, y0, 1368, y1 - y0); }
+  ctx.fillStyle = alpha(PAL.ink, 0.08); ctx.fillRect(...band(o.ib));
+  ctx.strokeStyle = alpha(PAL.ink, 0.6); ctx.lineWidth = 2; ctx.setLineDash([10, 8]); ctx.strokeRect(...band(o.ia));
   ctx.restore();
-}
-/* the key to the two row marks and the column heads, on the line at y */
-function heads(ctx, y) {
-  text(ctx, 'microstates', 96, y, PAL.muted, { size: 17 });
-  const x = 600;
-  ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 2; ctx.setLineDash([6, 5]); ctx.strokeRect(x, y - 9, 34, 18);
-  ctx.setLineDash([]); ctx.fillStyle = alpha(PAL.ink, 0.12); ctx.fillRect(x + 130, y - 9, 34, 18); ctx.restore();
-  text(ctx, 'initial', x + 42, y, PAL.muted, { size: 17 });
-  text(ctx, 'final', x + 172, y, PAL.muted, { size: 17 });
-  text(ctx, 'probability', XW, y, PAL.muted, { size: 17 });
-}
-/* a distribution's letter at the left, and W with its probability bar at the right */
-function rowFrame(ctx, k, yc, W, total, final) {
-  text(ctx, `(${LET[k]})`, 48, yc, PAL.ink, { size: 22, weight: 600, align: 'center' });
-  text(ctx, `W = ${W}`, XW, yc, PAL.ink, { size: 20, weight: 600 });
-  text(ctx, `${W}/${total}`, XF, yc, PAL.muted, { size: 18, align: 'right' });
-  ctx.save(); ctx.fillStyle = alpha(PAL.ink, final ? 0.55 : 0.3); ctx.fillRect(XB, yc - 9, Math.max(2, (BAR * W) / total), 18); ctx.restore();
+  line(ctx, PX0 - 10, PBASE, PX1 + 10, PBASE, PAL.muted, 2.5);
+  o.W.forEach((w, k) => {
+    const x = xc(k);
+    let top;
+    if (o.tiles) {
+      o.tiles[k].forEach((m, j) => o.tile(ctx, m, x - tw / 2, PBASE - (j + 1) * th + Math.min(4, th * 0.12), tw, th - Math.min(8, th * 0.24)));
+      top = PBASE - w * th;
+    } else {
+      const bw = Math.max(2, Math.min(slot * 0.78, 120)), h = Math.max(1.5, ((PBASE - PTOP) * w) / wmax);
+      ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.34); ctx.fillRect(x - bw / 2, PBASE - h, bw, h); ctx.restore();
+      top = PBASE - h;
+      hits.push({ x, y: Math.min(PBASE - 14, top + h / 2), r: Math.max(8, Math.min(slot / 2, 40)), name: o.name(k) });
+    }
+    if (n <= 13) {
+      text(ctx, `${count(w)}/${count(o.total)}`, x, top - 14, PAL.muted, { size: n > 9 ? 14 : 17, align: 'center' });
+      text(ctx, n > 9 ? count(w) : `W = ${count(w)}`, x, top - 36, PAL.ink, { size: n > 9 ? 17 : 20, weight: 600, align: 'center' });
+      if (o.letters) text(ctx, `(${o.letters[k]})`, x, top - 62, PAL.ink, { size: 21, weight: 600, align: 'center' });
+    } else if (k === 0 || k === n - 1 || w === wmax) text(ctx, `W = ${count(w)}`, x, top - 18, PAL.ink, { size: 19, weight: 600, align: k === 0 ? 'left' : k === n - 1 ? 'right' : 'center' });
+    if (k % o.every === 0) { line(ctx, x, PBASE, x, PBASE + 8, PAL.muted, 2); text(ctx, String(k), x, PBASE + 24, PAL.muted, { size: 17, align: 'center' }); }
+  });
+  /* the names of the two marks, under their piles; on one line unless they would touch */
+  const xa = clamp(xc(o.ia), PX0 + 30, PX1 - 30), xb = clamp(xc(o.ib), PX0 + 22, PX1 - 22);
+  if (o.ia === o.ib) text(ctx, 'initial and final', clamp(xa, PX0 + 70, PX1 - 70), PBASE + 54, PAL.ink, { size: 18, weight: 600, align: 'center' });
+  else {
+    text(ctx, 'initial', xa, PBASE + 54, PAL.ink, { size: 18, weight: 600, align: 'center' });
+    text(ctx, 'final', xb, PBASE + (Math.abs(xa - xb) < 76 ? 78 : 54), PAL.ink, { size: 18, weight: 600, align: 'center' });
+  }
+  text(ctx, o.title, (PX0 + PX1) / 2, PBASE + 106, PAL.muted, { size: 18, align: 'center' });
+  return hits;
 }
 
 /* =====================================================================
-   FIGURE 16.8: N particles in two boxes, every microstate drawn and
-   grouped by distribution, row k holding the C(N, k) microstates with k
-   particles in the right box, ordered by which particles those are (the
-   book's order). Two, four or six particles: 4, 16 or 64 microstates;
-   rows of more than ten wrapped at six particles. Still: a count has no
-   time in it. The particles are told apart by colour and named on hover;
-   the text names none, so they are instances (F.cat), not referents.
+   FIGURE 16.8: N particles in two boxes, one pile per distribution on a
+   number line of the count in the right box. Up to six particles every
+   microstate is drawn as the book draws it, two boxes side by side with
+   each particle in its own place, so the piles at N = 4 are the book's
+   rows (a) to (e) stood on end: 1, 4, 6, 4, 1. From eight particles on a
+   pile is a bar of height W = N!/(k!(N − k)!). N runs over the even
+   numbers 2 to 100, so there is always an even split; 2¹⁰⁰ = 1.27 × 10³⁰
+   and the even split of 100 holds 1.01 × 10²⁹. Still: a count has no time
+   in it. The particles are told apart by colour and named on hover; the
+   text names none, so they are instances (F.cat), not referents.
 ===================================================================== */
 (function () {
-  const H = 620, d = sim('sim-microstates', H);
-  const N = F.choice(d.controls, { label: 'N', key: 'N', aria: 'the number of particles', value: '4',
-    options: ['2', '4', '6'].map((v) => ({ value: v, label: v })), onInput: () => fit() });
-  const pick = (label, key, aria, value) => F.select(d.controls, { label, key, aria, value, options: [...LET].map((c) => ({ value: c, label: `(${c})` })), onInput: () => draw() });
-  const A = pick('\\text{initial}', 'from', 'the initial distribution', 'a');
-  const B = pick('\\text{final}', 'to', 'the final distribution', 'c');
+  const d = sim('sim-microstates', PILE_H);
+  const side = (label, key, aria, value) => ctl(d.controls, { label, cls: '', key, min: 0, max: 4, step: 1, value, unit: '', dec: 0, aria,
+    fmt: (v) => `${N.v - v} left, ${v} right`, onInput: () => draw() });
+  const N = ctl(d.controls, { label: 'N', cls: '', key: 'N', min: 2, max: 100, step: 2, value: 4, unit: '', dec: 0, aria: 'the number of particles',
+    fmt: (v) => `${v} particles`, onInput: () => { A.range({ min: 0, max: N.v, step: 1, value: 0 }); B.range({ min: 0, max: N.v, step: 1, value: N.v / 2 }); draw(); } });
+  const A = side('\\text{initial}', 'from', 'the initial distribution, as the number of particles in the right box', 0);
+  const B = side('\\text{final}', 'to', 'the final distribution, as the number of particles in the right box', 2);
   const ro = F.readout(d);
-  function fit(redraw = true) {
-    const n = +N.value, offered = [...LET].slice(0, n + 1).map((c) => ({ value: c, label: `(${c})` }));
-    A.options(offered, 'a'); B.options(offered, LET[n / 2]);
-    if (redraw) { A.set('a'); B.set(LET[n / 2]); }   /* a new count opens on Example 16.2's pair: all in one box to the even split */
-    if (redraw) draw();
-  }
   let hits = []; F.hover(d.stage, () => hits);
-  const word = { 2: 'Both', 4: 'All four', 6: 'All six' };
-  /* per particle count: microstates a line, slot width, half-domino w and h, particle radius, particle spacing, columns a box */
-  const LAY = { 2: [6, 165, 70, 62, 13, 30, 2], 4: [6, 165, 70, 62, 11, 26, 2], 6: [10, 98, 42, 42, 6.5, 13, 3] };
   function draw() {
-    const { ctx } = begin(d.c), n = +N.value, total = 2 ** n;
-    const rows = Array.from({ length: n + 1 }, () => []);
-    for (let m = 0; m < total; m++) { let k = 0; for (let i = 0; i < n; i++) if (m >> i & 1) k++; rows[k].push(m); }
-    const [per, slot, bw, bh, r, gap, cols] = LAY[n];
-    const lines = rows.map((row) => Math.ceil(row.length / per)), nl = lines.reduce((a, b) => a + b, 0);
-    const top = 112, lh = Math.min(96, (H - top - 10) / nl);
-    let y = top + ((H - top - 10) - nl * lh) / 2;
-    const ia = LET.indexOf(A.value), ib = LET.indexOf(B.value);
+    const { ctx } = begin(d.c), n = N.v, total = 2 ** n, ia = clamp(Math.round(A.v), 0, n), ib = clamp(Math.round(B.v), 0, n);
+    const W = Array.from({ length: n + 1 }, (_, k) => choose(n, k));
+    let tiles = null;
+    if (n <= 6) {
+      tiles = W.map(() => []);
+      for (let m = 0; m < total; m++) { let k = 0; for (let i = 0; i < n; i++) if (m >> i & 1) k++; tiles[k].push(m); }
+    }
     hits = [];
-    heads(ctx, 92);
-    rows.forEach((row, k) => {
-      const y0 = y, y1 = y + lines[k] * lh;
-      rowMark(ctx, y0 + 2, y1 - 2, k === ia, k === ib);
-      row.forEach((m, j) => {
-        const x = 96 + (j % per) * slot, yt = y0 + Math.floor(j / per) * lh + (lh - bh) / 2;
-        domino(ctx, x, yt, bw, bh);
-        /* each particle keeps its own place in whichever box it is, as the book draws them */
-        for (let i = 0; i < n; i++) {
-          const s = m >> i & 1, cx = x + s * bw + bw / 2 + ((i % cols) - (cols - 1) / 2) * gap, cy = yt + bh / 2 + (Math.floor(i / cols) - (Math.ceil(n / cols) - 1) / 2) * gap;
-          dot(ctx, cx, cy, F.cat(i), true, r);
-          hits.push({ x: cx, y: cy, r: r + 4, name: `particle ${i + 1}, in the ${s ? 'right' : 'left'} box` });
-        }
-      });
-      rowFrame(ctx, k, (y0 + y1) / 2, row.length, total, k === ib);
-      y = y1;
-    });
-    topline(ctx, `${word[n]} particles sit in one box in 2 of the ${total} microstates, a probability of 1/${total / 2}.`);
-    deltaS(ro, rows[ia].length, rows[ib].length);
+    /* one microstate: each particle keeps its own place in whichever box it is, as the book draws them */
+    const cols = n === 6 ? 6 : 2, rows = n / cols;
+    const tile = (c, m, x, y, w, h) => {
+      const r = Math.min(13, h / (2 * rows) - 3, w / (4 * cols) - 2), gx = Math.min(w / 2 / (cols + 0.4), 3.2 * r), gy = Math.min(h / rows, 3 * r);
+      c.save(); c.strokeStyle = PAL.muted; c.lineWidth = 2; c.strokeRect(x, y, w, h); c.restore(); line(c, x + w / 2, y, x + w / 2, y + h, PAL.muted, 2);
+      for (let i = 0; i < n; i++) {
+        const s = m >> i & 1, cx = x + (s ? 0.75 : 0.25) * w + ((i % cols) - (cols - 1) / 2) * gx, cy = y + h / 2 + (Math.floor(i / cols) - (rows - 1) / 2) * gy;
+        dot(c, cx, cy, F.cat(i), true, r);
+        hits.push({ x: cx, y: cy, r: r + 3, name: `particle ${i + 1}, in the ${s ? 'right' : 'left'} box` });
+      }
+    };
+    const bars = piles(ctx, { W, total, tiles, tile, letters: n === 4 ? LET : null, ia, ib, title: 'particles in the right box',
+      every: n <= 12 ? 1 : n <= 24 ? 2 : n <= 50 ? 5 : 10,
+      name: (k) => `${n - k} in the left box and ${k} in the right: ${count(W[k])} microstates` });
+    hits.push(...bars);
+    topline(ctx, `With ${n} particles, ${count(W[n / 2])} of the ${count(total)} microstates split them evenly and 2 put them all in one box.`);
+    deltaS(ro, W[ia], W[ib]);
   }
-  fit(false);
   still(d, draw);
 })();
 
 /* =====================================================================
-   FIGURE 16.9: two units of thermal energy shared by the hot object
-   (particles A, B) and the cold object (C, D). The units cannot be told
-   apart, so a microstate is a pair of particles, one particle taken twice
-   when it holds both: (a) both units in the hot object, 3 microstates;
-   (b) one in each, 4; (c) both in the cold one, 3. The energy units are
-   the book's asterisks, in ink. Still.
+   FIGURE 16.9: q units of thermal energy shared by the hot object
+   (particles A, B) and the cold object (C, D), one pile per distribution
+   on a number line of the units in the cold object. The units cannot be
+   told apart, so a microstate is how many each particle holds: with j
+   units in the cold object there are (q − j + 1)(j + 1) of them, and
+   (q + 1)(q + 2)(q + 3)/6 in all. q = 2 is the book's figure, its rows
+   (a), (b), (c) stood on end: 3, 4, 3 of 10. At 2 and 4 units every
+   microstate is drawn, the units as the book's asterisks (ink) in a row
+   over the particle that holds them; from 6 units on a pile is a bar.
+   q runs over the even numbers 2 to 12, so an even sharing always
+   exists. Still.
 ===================================================================== */
 (function () {
-  const H = 470, d = sim('sim-energy-microstates', H);
-  const opts = ['a', 'b', 'c'].map((c) => ({ value: c, label: `(${c})` }));
-  const A = F.choice(d.controls, { label: '\\text{initial}', key: 'from', aria: 'the initial distribution', value: 'a', options: opts, onInput: () => draw() });
-  const B = F.choice(d.controls, { label: '\\text{final}', key: 'to', aria: 'the final distribution', value: 'b', options: opts, onInput: () => draw() });
+  const d = sim('sim-energy-microstates', PILE_H);
+  const side = (label, key, aria, value) => ctl(d.controls, { label, cls: '', key, min: 0, max: 2, step: 1, value, unit: '', dec: 0, aria,
+    fmt: (v) => `${Q.v - v} hot, ${v} cold`, onInput: () => draw() });
+  const Q = ctl(d.controls, { label: '\\text{energy}', cls: '', key: 'q', min: 2, max: 12, step: 2, value: 2, unit: '', dec: 0, aria: 'the number of units of energy',
+    fmt: (v) => `${v} units`, onInput: () => { A.range({ min: 0, max: Q.v, step: 1, value: 0 }); B.range({ min: 0, max: Q.v, step: 1, value: Q.v / 2 }); draw(); } });
+  const A = side('\\text{initial}', 'from', 'the initial distribution, as the units of energy in the cold object', 0);
+  const B = side('\\text{final}', 'to', 'the final distribution, as the units of energy in the cold object', 1);
   const ro = F.readout(d);
-  const P = ['A', 'B', 'C', 'D'];
-  const ROWS = [[[0, 0], [0, 1], [1, 1]], [[0, 2], [0, 3], [1, 2], [1, 3]], [[2, 2], [2, 3], [3, 3]]];
+  const P = ['A', 'B', 'C', 'D'], UNITS = ['no unit', 'one unit', 'two units', 'three units', 'four units'];
   let hits = []; F.hover(d.stage, () => hits);
   function draw() {
-    const { ctx } = begin(d.c), hot = F.ref('hot-object'), cold = F.ref('cold-object');
-    const ia = LET.indexOf(A.value), ib = LET.indexOf(B.value), bw = 104, bh = 90, slot = 248;
+    const { ctx } = begin(d.c), q = Q.v, hot = F.ref('hot-object'), cold = F.ref('cold-object');
+    const ia = clamp(Math.round(A.v), 0, q), ib = clamp(Math.round(B.v), 0, q);
+    const W = Array.from({ length: q + 1 }, (_, j) => (q - j + 1) * (j + 1)), total = W.reduce((a, b) => a + b, 0);
+    let tiles = null;
+    /* in the book's order: the hot object's units on A first, then the cold object's on C first */
+    if (q <= 4) tiles = W.map((_, j) => { const out = []; for (let a = q - j; a >= 0; a--) for (let c = j; c >= 0; c--) out.unshift([a, q - j - a, c, j - c]); return out.reverse(); });
     hits = [];
-    heads(ctx, 92);
-    ROWS.forEach((row, k) => {
-      const yc = 172 + k * 116;
-      rowMark(ctx, yc - 56, yc + 56, k === ia, k === ib);
-      row.forEach((units, j) => {
-        const x = 96 + j * slot, yt = yc - bh / 2;
-        domino(ctx, x, yt, bw, bh);
-        P.forEach((p, i) => {
-          const px = x + (i < 2 ? 0 : bw) + bw / 2 + (i % 2 ? 22 : -22), c = i < 2 ? hot : cold;
-          text(ctx, p, px, yc + 3, c, { size: 32, weight: 600, align: 'center' });
-          const q = units.filter((u) => u === i).length;
-          if (q) text(ctx, '*', px, yc - 26, PAL.ink, { size: 32, weight: 600, align: 'center' });
-          if (q === 2) text(ctx, '*', px, yc + 34, PAL.ink, { size: 32, weight: 600, align: 'center' });
-          hits.push({ x: px, y: yc, r: 20, name: `particle ${p} of the ${i < 2 ? 'hot' : 'cold'} object, ${['no unit', 'one unit', 'two units'][q]} of energy` });
-        });
+    const tile = (c, m, x, y, w, h) => {
+      const fs = clamp(h * 0.44, 17, 36), ly = y + h - fs * 0.62, sy = ly - fs * 0.78, gap = fs * 0.42;
+      c.save(); c.strokeStyle = PAL.muted; c.lineWidth = 2; c.strokeRect(x, y, w, h); c.restore(); line(c, x + w / 2, y, x + w / 2, y + h, PAL.muted, 2);
+      P.forEach((p, i) => {
+        const px = x + (i + 0.5) * (w / 4);
+        text(c, p, px, ly, i < 2 ? hot : cold, { size: fs, weight: 600, align: 'center' });
+        for (let u = 0; u < m[i]; u++) text(c, '*', px + (u - (m[i] - 1) / 2) * gap, sy + fs * 0.16, PAL.ink, { size: fs, weight: 600, align: 'center' });
+        hits.push({ x: px, y: (ly + sy) / 2, r: w / 8, name: `particle ${p} of the ${i < 2 ? 'hot' : 'cold'} object, ${UNITS[m[i]]} of energy` });
       });
-      rowFrame(ctx, k, yc, row.length, 10, k === ib);
-    });
-    const wi = ROWS[ia].length, wf = ROWS[ib].length;
-    topline(ctx, ia === ib
-      ? `Distribution (${A.value}) holds ${wi} of the 10 microstates, a probability of ${wi}/10.`
-      : `From (${A.value}) to (${B.value}) the number of microstates ${wf > wi ? 'rises' : wf < wi ? 'falls' : 'stays'} ${wf === wi ? `at ${wi}` : `from ${wi} to ${wf}`}, and the probability ${wf === wi ? `stays at ${wi}/10` : `from ${wi}/10 to ${wf}/10`}.`);
-    deltaS(ro, wi, wf);
+    };
+    const bars = piles(ctx, { W, total, tiles, tile, letters: q === 2 ? LET : null, ia, ib, title: 'units of energy in the cold object', every: 1,
+      name: (j) => `${q - j} units in the hot object and ${j} in the cold: ${W[j]} microstates` });
+    hits.push(...bars);
+    topline(ctx, `The ${q} units of energy all stay in the hot object in ${W[0]} of the ${total} microstates and are shared evenly in ${W[q / 2]}.`);
+    deltaS(ro, W[ia], W[ib]);
   }
   still(d, draw);
 })();

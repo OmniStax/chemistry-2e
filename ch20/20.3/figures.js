@@ -169,7 +169,7 @@ const { PAL, alpha, register, begin, line, text, headline } = F;
       bonds: [['C', 'O1', 2], ['C', 'Hb', 1], ['C', 'Hc', 1]],
       head: 'In formaldehyde two pairs sit with oxygen, and carbon is counted 4 electrons, its own number.' },
     HCO2H: { label: 'HCO₂H', name: 'formic acid', ox: 2, nH: 2, nO: 2,
-      atoms: { C: [0, 0], O1: [0, -CO], Hb: [-c30, s30], O2: [c30 * CO, s30 * CO], Ho2: [c30 * CO + 0.12, s30 * CO + 0.82] },
+      atoms: { C: [0, 0], O1: [0, -CO], Hb: [-c30, s30], O2: [c30 * CO, s30 * CO], Ho2: [c30 * CO + 0.12, s30 * CO + 0.7] },
       bonds: [['C', 'O1', 2], ['C', 'Hb', 1], ['C', 'O2', 1], ['O2', 'Ho2', 1]],
       head: 'In formic acid three pairs sit with oxygen, and carbon is counted 2 electrons.' },
     CO2: { label: 'CO₂', name: 'carbon dioxide', ox: 4, nH: 0, nO: 2,
@@ -206,7 +206,7 @@ const { PAL, alpha, register, begin, line, text, headline } = F;
     });
     Object.keys(t.atoms).forEach((k) => { const p = P(k), s = k[0]; disc(ctx, p[0], p[1], s); hits.push({ x: p[0], y: p[1], r: RAD[s] + 3, name: NAME[s] }); });
     ctx.save(); ctx.setLineDash([7, 6]); ctx.lineWidth = 2; ctx.strokeStyle = PAL.ink; ctx.beginPath(); ctx.arc(cx, MY, RING, 0, 2 * Math.PI); ctx.stroke(); ctx.restore();
-    text(ctx, `${t.e} e⁻ counted to C`, cx, 404, PAL.ink, { size: 21, align: 'center' });
+    text(ctx, `${t.e} e⁻ counted to C`, cx, 412, PAL.ink, { size: 21, align: 'center' });
   }
   const num = (n) => (n > 0 ? `+${n}` : n < 0 ? `−${-n}` : '0');
   function drawScale(ctx) {
@@ -232,7 +232,7 @@ const { PAL, alpha, register, begin, line, text, headline } = F;
     const rows = headline(ctx, t.head);
     /* the chosen molecule's column */
     const hx = X(mol.mix((m) => MOL[m].ox));
-    ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.07); ctx.beginPath(); ctx.roundRect(hx - 126, 124, 252, 304, 14); ctx.fill(); ctx.restore();
+    ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.07); ctx.beginPath(); ctx.roundRect(hx - 126, 124, 252, 310, 14); ctx.fill(); ctx.restore();
     ORDER.forEach((m) => molecule(ctx, m));
     drawScale(ctx);
     const ball = (s, n) => ({ s: n, draw: (c, x, y) => disc(c, x, y, s) });

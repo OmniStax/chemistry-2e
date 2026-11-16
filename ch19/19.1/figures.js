@@ -272,8 +272,8 @@ const trace = (ctx, pts, close) => { ctx.beginPath(); pts.forEach(([x, y], i) =>
       text(ctx, String(p.Z), x + 4 - F.measure(ctx, p.sym, { size: 22 }) / 2, YB + 16, PAL.muted, { size: 13, align: 'right' });
       hits.push({ x, y: YB + 24, r: 22, name: `${p.name}, Z = ${p.Z}: ${p.val} electrons in 4s and 3d` });
     });
-    text(ctx, 'A column has a cell for each', GX + 6, YB - 10.7 * RH, PAL.ink, { size: 18 });
-    F.rich(ctx, [['4s', PAL.ink, 400], [' and ', PAL.ink, 400], ['3d', PAL.ink, 400], [' electron of the atom.', PAL.ink, 400]], GX + 6, YB - 10.7 * RH + 26, { size: 18 });
+    text(ctx, 'A column has a cell for each', GX + 6, YB - 10.7 * RH, PAL.ink, { size: 19 });
+    text(ctx, '$4s$ and $3d$ electron of the atom.', GX + 6, YB - 10.7 * RH + 27, PAL.ink, { size: 19, tex: true });
 
     /* the atom above, the ion in the chosen state below */
     boxes(ctx, Y1); boxes(ctx, Y2);
@@ -581,7 +581,7 @@ const trace = (ctx, pts, close) => { ctx.beginPath(); pts.forEach(([x, y], i) =>
    carries a circle at each transition. Still.
 ===================================================================== */
 (function () {
-  const d = sim('sim-superconductor', 640);
+  const d = sim('sim-superconductor', 670);
   const MAT = {
     nb: { Tc: 23, name: 'NbTi and Nb_{3}Sn', row: 'NbTi, Nb₃Sn', hover: 'NbTi and Nb₃Sn', plural: true },
     ybco: { Tc: 92, name: 'YBa_{2}Cu_{3}O_{7}', row: 'YBa₂Cu₃O₇', hover: 'YBa₂Cu₃O₇' },
@@ -600,7 +600,7 @@ const trace = (ctx, pts, close) => { ctx.beginPath(); pts.forEach(([x, y], i) =>
   /* the book's shape: zero below the transition, a jump to five sixths of the axis, then a slow rise */
   const R = (Tc) => (T) => (T < Tc ? 0 : 0.8 + (0.15 * (T - Tc)) / (300 - Tc));
   const box = { l: 230, r: 1310, t: 170, b: 380 };
-  const ROW0 = 462, RSTEP = 50, BAR = 24, rowY = (i) => ROW0 + i * RSTEP;
+  const ROW0 = 506, RSTEP = 50, BAR = 24, rowY = (i) => ROW0 + i * RSTEP;
   const X = (v) => box.l + (v / 300) * (box.r - box.l);
   let hits = []; F.hover(d.stage, () => hits);
   /* a tap on a material's row chooses it */
@@ -627,7 +627,7 @@ const trace = (ctx, pts, close) => { ctx.beginPath(); pts.forEach(([x, y], i) =>
     });
     mat.curve(ctx, (v) => R(MAT[v].Tc), 0, 300, X, Y, PAL.ink, 4, 1200);
     /* each material's bar: the temperatures at which it has no resistance */
-    text(ctx, 'superconducting, no resistance', box.l, ROW0 - 36, PAL.muted, { size: 17 });
+    text(ctx, 'superconducting, no resistance', box.l, ROW0 - 38, PAL.muted, { size: 17 });
     KEYS.forEach((k, i) => {
       const q = MAT[k], y = rowY(i), sel = mat.mix((v) => (v === k ? 1 : 0)), on = T < q.Tc;
       line(ctx, X(0), y, box.r, y, PAL.rule, 2);

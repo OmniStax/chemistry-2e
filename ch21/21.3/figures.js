@@ -171,19 +171,19 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
 ===================================================================== */
 (function () {
   const H = 610, d = sim('sim-decay-modes', H), T = 4.6, T0 = 0.9;
-  const CX = 330, CY = 300, END = [770, 190];
-  const G = { l: 1010, r: 1320, t: 160, b: 470 };
+  const CX = 300, CY = 305, END = [790, 190];
+  const G = { l: 1010, r: 1320, t: 180, b: 490 };
   const MODES = {
-    alpha: { P: [238, 92, 'U', 'uranium-238'], D: [234, 90, 'Th', 'thorium-234'], n: 106, rd: 14.5, after: ', still radioactive', change: 'A − 4,  Z − 2',
+    alpha: { P: [238, 92, 'U', 'uranium-238'], D: [234, 90, 'Th', 'thorium-234'], n: 106, rd: 17, after: ', still radioactive', change: 'A − 4,  Z − 2',
       part: '{}_{2}^{4}\\text{He}', head: 'Uranium-238 emits an α particle, two protons and two neutrons, and becomes thorium-234.' },
-    beta: { P: [131, 53, 'I', 'iodine-131'], D: [131, 54, 'Xe', 'xenon-131'], n: 72, rd: 16, after: ', stable', change: 'A unchanged,  Z + 1',
-      part: '{}_{-1}^{\\;0}\\text{e}', head: 'A neutron of iodine-131 becomes a proton and a β particle, an electron, which leaves. The nucleus is now xenon-131.' },
-    gamma: { P: [60, 27, 'Co*', 'cobalt-60 in an excited state'], D: [60, 27, 'Co', 'cobalt-60 in its ground state'], n: 44, rd: 18.5, after: '', change: 'A and Z unchanged',
+    beta: { P: [131, 53, 'I', 'iodine-131'], D: [131, 54, 'Xe', 'xenon-131'], n: 72, rd: 19, after: ', stable', change: 'A unchanged,  Z + 1',
+      part: '{}_{-1}^{\\;0}\\text{e}', head: 'A neutron of iodine-131 becomes a proton, a β particle leaves, and xenon-131 is left.' },
+    gamma: { P: [60, 27, 'Co*', 'cobalt-60 in an excited state'], D: [60, 27, 'Co', 'cobalt-60 in its ground state'], n: 44, rd: 22, after: '', change: 'A and Z unchanged',
       part: '{}_{0}^{0}\\gamma', head: 'Excited cobalt-60 emits a γ ray. No nucleon changes, so it is still cobalt-60.' },
-    positron: { P: [15, 8, 'O', 'oxygen-15'], D: [15, 7, 'N', 'nitrogen-15'], n: 15, rd: 27, after: ', stable', change: 'A unchanged,  Z − 1',
-      part: '{}_{+1}^{\\;0}\\text{e}', head: 'A proton of oxygen-15 becomes a neutron and a positron, which leaves. The nucleus is now nitrogen-15.' },
-    ec: { P: [40, 19, 'K', 'potassium-40'], D: [40, 18, 'Ar', 'argon-40'], n: 40, rd: 19, after: ', stable', change: 'A unchanged,  Z − 1',
-      part: '', head: 'Potassium-40 captures an inner electron, and a proton becomes a neutron: argon-40. An outer electron drops into the vacancy and an X-ray leaves.' },
+    positron: { P: [15, 8, 'O', 'oxygen-15'], D: [15, 7, 'N', 'nitrogen-15'], n: 15, rd: 30, after: ', stable', change: 'A unchanged,  Z − 1',
+      part: '{}_{+1}^{\\;0}\\text{e}', head: 'A proton of oxygen-15 becomes a neutron, a positron leaves, and nitrogen-15 is left.' },
+    ec: { P: [40, 19, 'K', 'potassium-40'], D: [40, 18, 'Ar', 'argon-40'], n: 40, rd: 22, after: ', stable', change: 'A unchanged,  Z − 1',
+      part: '', head: 'Potassium-40 captures an inner electron, a proton becomes a neutron, and argon-40 is left.' },
   };
   /* each nucleus: disc places, which are protons, which are the ones the mode marks */
   Object.entries(MODES).forEach(([id, m]) => {
@@ -213,7 +213,7 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
     const fly = clamp((t - T0) / (T - T0));
     topline(ctx, m.head);
     /* electron shells, for electron capture only */
-    const R1 = m.R + 40, R2 = m.R + 76, A1 = -0.62, A2 = -0.5;
+    const R1 = m.R + 38, R2 = m.R + 72, A1 = -0.62, A2 = -0.5;
     const shellPt = (R, a) => [CX + R * Math.cos(a), CY + R * Math.sin(a)];
     if (id === 'ec') {
       ring(ctx, CX, CY, R1, alpha(ink, 0.35), 2, [6, 8]); ring(ctx, CX, CY, R2, alpha(ink, 0.35), 2, [6, 8]);
@@ -266,8 +266,8 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
       const o0 = shellPt(R2, A2), ox = o0[0] + (s0[0] - o0[0]) * k2, oy = o0[1] + (s0[1] - o0[1]) * k2;
       electron(ctx, ox, oy); hits.push({ x: ox, y: oy, r: 18, name: k2 > 0 ? 'the outer electron that fills the vacancy' : 'an outer electron' });
       if (t >= 2.7) {
-        const u = [0.86, -0.51], x = s0[0] + u[0] * (40 + 300 * k3), y = s0[1] + u[1] * (40 + 300 * k3);
-        photon(ctx, x, y, u, 60, 8, 18, 4); hits.push({ x, y, r: 30, name: 'the X-ray given off as the outer electron drops' });
+        const u = [0.97, -0.24], x = s0[0] + u[0] * (40 + 300 * k3), y = s0[1] + u[1] * (40 + 300 * k3);
+        photon(ctx, x, y, u, 60, 8, 18, 4); hits.push({ x, y, r: 30, name: 'the X-ray given off as the outer electron drops into the vacancy' });
       }
     }
     /* the nucleus named, with its counts */
@@ -283,7 +283,7 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
     if (id === 'positron') key.push({ s: 'positron', draw: (c, x, y) => electron(c, x, y, true) });
     if (id === 'gamma') key.push({ s: 'γ ray', draw: (c, x, y) => photon(c, x + 20, y, [1, 0], 40, 5, 13, 2.5) });
     if (id === 'ec') key.push({ s: 'electron', draw: (c, x, y) => electron(c, x, y) }, { s: 'X-ray', draw: (c, x, y) => photon(c, x + 20, y, [1, 0], 40, 5, 13, 2.5) });
-    F.legend(ctx, { l: 500, r: 940, t: H - 60, b: H - 14 }, key, { corner: 'bottom', row: true, panel: false, size: 19 });
+    F.legend(ctx, { l: 520, r: 980, t: H - 60, b: H - 14 }, key, { corner: 'bottom', row: true, panel: false, size: 19 });
     /* the same decay on the chart of neutrons against atomic number */
     const Zp = m.P[1], Np = m.P[0] - m.P[1], Zd = m.D[1], Nd = m.D[0] - m.D[1];
     const ax = axes(ctx, G, [Zp - 3, Zp + 2], [Np - 3, Np + 2], { nx: 5, ny: 5, xl: 'atomic number (Z)', yl: 'number of neutrons (n)', fx: (v) => String(Math.round(v)), fy: (v) => String(Math.round(v)) });

@@ -68,14 +68,14 @@ function burst(ctx, x, y, r, color, k) {
   const PLANCK = 6.626e-34, NA = 6.022e23, BOND = 345;
   const SPLIT = lg(7.5e14), LVBOND = lg((BOND * 1000) / (PLANCK * NA));
   const BANDS = [
-    { name: 'broadcast and wireless radio', who: 'A radio photon', lo: LO, hi: lg(3e8), cls: 0 },
-    { name: 'microwave', who: 'A microwave photon', lo: lg(3e8), hi: lg(3e11), cls: 1 },
-    { name: 'terahertz', who: 'A terahertz photon', lo: lg(3e11), hi: 13, cls: 1 },
-    { name: 'infrared', who: 'An infrared photon', lo: 13, hi: lg(4e14), cls: 2 },
-    { name: 'visible light', who: 'A photon of visible light', lo: lg(4e14), hi: SPLIT, cls: 2 },
-    { name: 'ultraviolet', who: 'An ultraviolet photon', lo: SPLIT, hi: lg(3e16), cls: 3 },
-    { name: 'X-ray', who: 'An X-ray photon', lo: lg(3e16), hi: lg(3e19), cls: 3 },
-    { name: 'γ ray', who: 'A γ-ray photon', lo: lg(3e19), hi: HI, cls: 3 },
+    { name: 'broadcast and wireless radio', who: 'a radio photon', lo: LO, hi: lg(3e8), cls: 0 },
+    { name: 'microwave', who: 'a microwave photon', lo: lg(3e8), hi: lg(3e11), cls: 1 },
+    { name: 'terahertz', who: 'a terahertz photon', lo: lg(3e11), hi: 13, cls: 1 },
+    { name: 'infrared', who: 'an infrared photon', lo: 13, hi: lg(4e14), cls: 2 },
+    { name: 'visible light', who: 'a photon of visible light', lo: lg(4e14), hi: SPLIT, cls: 2 },
+    { name: 'ultraviolet', who: 'an ultraviolet photon', lo: SPLIT, hi: lg(3e16), cls: 3 },
+    { name: 'X-ray', who: 'an X-ray photon', lo: lg(3e16), hi: lg(3e19), cls: 3 },
+    { name: 'γ ray', who: 'a γ-ray photon', lo: lg(3e19), hi: HI, cls: 3 },
   ];
   const bandOf = (lv) => BANDS.find((q) => lv < q.hi) ?? BANDS[BANDS.length - 1];
   /* the book's four effects, each over the bands it covers */
@@ -119,7 +119,7 @@ function burst(ctx, x, y, r, color, k) {
     const { ctx } = begin(d.c), lv = near(nu.v), sv = sci(10 ** lv), v = +sv.m * 10 ** sv.n, band = bandOf(lv), cls = CLASSES[band.cls];
     const E = PLANCK * v, Em = (E * NA) / 1000, r = Em / BOND, cf = C('frequency'), ce = C('energy'), x = X(lv), xs = X(SPLIT), xb = X(LVBOND);
     hits = [];
-    topline(ctx, `${band.who} has ${r < 0.01 ? `1/${count(1 / r)} of` : `${count(r)} times`} the energy that breaks a C–C bond.`);
+    topline(ctx, r < 1 ? `The energy that breaks a C–C bond is ${count(1 / r)} times the energy of ${band.who}.` : `${band.who[0].toUpperCase()}${band.who.slice(1)} has ${count(r)} times the energy that breaks a C–C bond.`);
     /* nonionizing | ionizing, the book's line at the violet edge of the visible */
     text(ctx, 'nonionizing', (L + xs) / 2, 84, PAL.ink, { size: 22, align: 'center', weight: 600 });
     text(ctx, 'ionizing', (xs + R) / 2, 84, PAL.ink, { size: 22, align: 'center', weight: 600 });
@@ -476,16 +476,16 @@ function burst(ctx, x, y, r, color, k) {
       F.dot(ctx, xd, k.y, col, false, 8);
       if (xe - xd > 30) {
         arrow(ctx, xd + 9, k.y, xe - (on ? 13 : 11), k.y, col, on ? 5 : 4);
-        text(ctx, `× ${k.rbe}`, (xd + xe) / 2 - 4, k.y - 18, ink, { size: 18, align: 'center', weight: on ? 700 : 400 });
+        text(ctx, `× ${k.rbe}`, Math.max((xd + xe) / 2 - 4, xd + 34), k.y - 19, ink, { size: 18, align: 'center', weight: on ? 700 : 400 });
       }
       F.dot(ctx, xe, k.y, col, true, on ? 11 : 9);
       const right = xe < R - 130;
-      F.rich(ctx, [[`${str(v)} rem`, col, on ? 700 : 400]], right ? xe + 20 : xe - 4, right ? k.y : k.y + 26, { size: 20, align: right ? 'left' : 'right' });
+      F.rich(ctx, [[`${str(v)} rem`, col, on ? 700 : 400]], right ? xe + 20 : xd - 18, k.y, { size: 20, align: right ? 'left' : 'right' });
       hits.push({ x: xe, y: k.y, r: 16, name: `${k.name}: ${k.rbe} × ${str(D)} rad = ${str(v)} rem` });
     });
     /* the dose equivalent picked, carried down to what the section says of it */
     const xe = X(e);
-    line(ctx, xe, sel.y + 12, xe, ROW0 + ROWH * (MARKS.length - 1) + 14, alpha(cd, 0.6), 2.5, [4, 8]);
+    line(ctx, xe, sel.y + 12, xe, AX, alpha(cd, 0.7), 2.5, [4, 8]);
     MARKS.forEach((m, i) => {
       const y = ROW0 + ROWH * i, x0 = X(m.v), x1 = X(m.to ?? m.v), got = e >= m.v, ink = got ? PAL.ink : PAL.muted, vc = got ? cd : alpha(cd, 0.6);
       if (m.to) line(ctx, x0, AX, x1, AX, ink, 6);
@@ -495,8 +495,9 @@ function burst(ctx, x, y, r, color, k) {
       else F.rich(ctx, [[m.val, vc, got ? 700 : 400], ['  ' + m.s, ink, got ? 600 : 400]], x0 + 8, y, { size: 19, align: 'left' });
       hits.push({ x: x0, y, r: 16, name: m.hov }, { x: x0, y: AX, r: 12, name: m.hov });
     });
+    F.dot(ctx, xe, AX, cd, true, 8);
     const kv = (s) => `\\htmlClass{kv-dose}{${s}}`, t = (v) => str(v).replace(/,/g, '{,}');
-    tex(d.readout, `${kv('\\text{number of rems}')} = \\text{RBE}\\times${kv('\\text{number of rads}')} = ${sel.rbe}\\times${kv(`${t(D)}\\ \\text{rad}`)} = ${kv(`${t(e)}\\ \\text{rem}`)} = ${kv(`${t(e / 100)}\\ \\text{Sv}`)}`);
+    tex(d.readout, `${kv('\\text{number of rems}')} = \\text{RBE}\\times${kv('\\text{number of rads}')} = ${sel.rbe}\\times${kv(`${t(D)}\\ \\text{rad}`)} = ${kv(`${t(e)}\\ \\text{rem}`)} \\\\ ${kv(`${t(e)}\\ \\text{rem}`)}\\times\\frac{1\\ \\text{Sv}}{100\\ \\text{rem}} = ${kv(`${t(e / 100)}\\ \\text{Sv}`)}`);
   }
   still(d, draw);
 })();

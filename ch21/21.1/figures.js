@@ -45,7 +45,7 @@ const SYM = 'H He Li Be B C N O F Ne Na Mg Al Si P S Cl Ar K Ca Sc Ti V Cr Mn Fe
   const KHI = [[10, 24], [15, 31], [20, 40], [25, 45], [30, 54], [35, 61], [40, 67], [45, 77], [50, 88], [55, 92], [60, 101], [65, 106], [70, 110], [75, 118], [80, 127], [85, 136], [90, 149], [95, 154], [100, 159], [103, 163]];
   /* the lightest and the heaviest elements one by one: [fewest, most] neutrons */
   const ENDS = { 1: [0, 2], 2: [1, 8], 3: [1, 8], 4: [2, 10], 5: [2, 14], 6: [2, 16], 7: [3, 16], 8: [4, 18], 9: [5, 22], 10: [5, 24],
-    104: [149, 163], 105: [150, 165], 106: [152, 165], 107: [153, 167], 108: [155, 169], 109: [157, 169], 110: [157, 171], 111: [161, 175], 112: [165, 174], 113: [165, 177], 114: [170, 176], 115: [171, 175], 116: [172, 177], 117: [175, 177], 118: [175, 177] };
+    104: [149, 163], 105: [150, 165], 106: [152, 165], 107: [153, 167], 108: [155, 169], 109: [157, 169], 110: [157, 171], 111: [161, 175], 112: [165, 174], 113: [165, 177], 114: [170, 176], 115: [171, 175], 116: [172, 177], 117: [176, 177], 118: [176, 176] };
   const knot = (E, z) => { for (let i = 1; i < E.length; i++) if (z <= E[i][0]) { const [z0, n0] = E[i - 1], [z1, n1] = E[i]; return n0 + ((n1 - n0) * (z - z0)) / (z1 - z0); } return E[E.length - 1][1]; };
   const stableN = (z) => (STABLE[z - 1] || []).map((A) => A - z);
   const home = (z) => (MAIN[z - 1] || LONG[z]) - z;
@@ -136,7 +136,7 @@ const SYM = 'H He Li Be B C N O F Ne Na Mg Al Si P S Cl Ar K Ca Sc Ti V Cr Mn Fe
         text(ctx, String(z + m), x + cs / 2, y + cs / 2, st ? PAL.panel : me ? col : PAL.muted, { size: st || me ? 20 : 18, weight: st || me ? 600 : 400, align: 'center', base: 'middle' });
         hits.push({ x: x + cs / 2, y: y + cs / 2, r: cs / 2, name: `${NAME[z - 1]}-${z + m}: ${z} protons, ${m} neutrons, ${st ? 'stable' : 'radioactive'}` });
       }
-      if (z === m) { ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5; ctx.strokeRect(x + 5.5, y + 5.5, cs - 11, cs - 11); ctx.restore(); }
+      if (z === m) { ctx.save(); ctx.strokeStyle = known(z, m) && isStable(z, m) && !me ? PAL.panel : PAL.ink; ctx.lineWidth = 2.5; ctx.strokeRect(x + 5.5, y + 5.5, cs - 11, cs - 11); ctx.restore(); }
     }
     for (let i = 0; i < 11; i++) {
       const z = z0 + i, m = n0 + i, x = GX + i * cs + cs / 2, y = GY + (10 - i) * cs + cs / 2;

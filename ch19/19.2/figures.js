@@ -75,7 +75,7 @@ const LIG = {
   O: { atoms: [T('O', 0, 0, 'oxo ligand (O), a donor atom')], bonds: [] },
   CN: { atoms: [T('C', 0, 0, 'cyanide ligand: carbon (C), the donor atom'), T('N', 1.16, 0, 'nitrogen (N) of a cyanide ligand')], bonds: [[0, 1]] },
   CO: { atoms: [T('C', 0, 0, 'carbonyl ligand: carbon (C), the donor atom'), T('O', 1.13, 0, 'oxygen (O) of a carbonyl ligand')], bonds: [[0, 1]] },
-  en: { atoms: [T('N', 0, 0, 'ethylenediamine (en): nitrogen (N), a donor atom')], bonds: [] },
+  en: { atoms: [T('N', 0, 0, 'ethylenediamine (en): nitrogen (N) of an NH₂ group, a donor atom; its hydrogen atoms are not drawn')], bonds: [] },
 };
 /* the atoms of one ligand at donor direction d, distance r Å, scale K */
 function ligandAtoms(type, d, r, K) {
@@ -89,7 +89,7 @@ function ligandAtoms(type, d, r, K) {
 /* the two CH₂ carbons of an en ring closing sites a and b */
 function enCarbons(a, b, r, K) {
   const ca = V.add(V.mul(a, r), V.mul(V.unit(V.add(b, V.mul(a, 0.3))), 1.48)), cb = V.add(V.mul(b, r), V.mul(V.unit(V.add(a, V.mul(b, 0.3))), 1.48));
-  return [ca, cb].map((p) => ({ sym: 'C', p: V.mul(p, K), name: 'ethylenediamine (en): carbon (C) of a CH₂ group' }));
+  return [ca, cb].map((p) => ({ sym: 'C', p: V.mul(p, K), name: 'ethylenediamine (en): carbon (C) of a CH₂ group; its hydrogen atoms are not drawn' }));
 }
 /* the two hydrogen atoms on an atom at p whose other two bonds go to n1 and n2 */
 function twoH(p, n1, n2, len) {
@@ -199,7 +199,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
 ===================================================================== */
 (function () {
   const d = sim('sim-complex-geometry');
-  const HS = 540, DIST = 22.7, K = 0.62, Y0 = -0.42;
+  const HS = 540, DIST = 22.7, K = 0.62, Y0 = -0.4;
   const v = F.view3d(d.stage, { spin: 'idle', h: HS, dist: DIST, tilt: 0.3 });
   v.look({});                                      /* the shapes are compared at rest; the spin button starts the turn */
   const UNIT = lens(v, HS, DIST);
@@ -228,7 +228,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
     cucl4: ['[CuCl₄]²⁻', 'Cu', 'tetrahedral', 'Cl', 2.23, 4],
     zncn4: ['[Zn(CN)₄]²⁻', 'Zn', 'tetrahedral', 'CN', 2.02, 4, { arc: [0, 2, '109.5°'] }],
     /* Figure 19.20 (b): the two Cl on the left, the two NH₃ on the right */
-    ptnh3cl2: ['[Pt(NH₃)₂Cl₂]', 'Pt', 'square', [['Cl', 2.32], ['NH3', 2.05], ['NH3', 2.05], ['Cl', 2.32]], 0, 4, { arc: [1, 2, '90°'] }],
+    ptnh3cl2: ['[Pt(NH₃)₂Cl₂]', 'Pt', 'square', [['Cl', 2.32], ['NH3', 2.05], ['NH3', 2.05], ['Cl', 2.32]], 0, 4, { arc: [0, 3, '90°'] }],
     cocl5: ['[CoCl₅]²⁻', 'Co', 'tbp', 'Cl', 2.3, 5],
     vocn4: ['[VO(CN)₄]²⁻', 'V', 'spy', [['O', 1.6], ['CN', 2.15], ['CN', 2.15], ['CN', 2.15], ['CN', 2.15]], 0, 5],
     coh2o6: ['[Co(H₂O)₆]²⁺', 'Co', 'octahedral', 'OH2', 2.1, 6, { arc: [0, 2, '90°'], out: '2 Cl⁻ outside the brackets' }],
@@ -242,7 +242,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
   Object.entries(ROWS).forEach(([id, [label, metal, geom, lig, r, ligands, o = {}]]) => {
     const sites = GEOM[geom].dirs.map((dd, i) => { const [type, rr] = Array.isArray(lig) ? lig[i] : [lig, r]; return { d: dd, type, r: rr }; });
     const S = { metal, sites, bridges: o.bridges || [] };
-    C[id] = { id, label, geom, S, ligands, cn: sites.length, arc: o.arc, out: o.out, R: reach(blend(S, S, 1, K, { H: true }).atoms) };
+    C[id] = { id, label, geom, S, ligands, cn: sites.length, arc: o.arc, out: o.out, R: reach(blend(S, S, 1, K).atoms) };
   });
   const HEAD = {
     2: 'Two donor atoms lie in a line through the metal.',
@@ -256,7 +256,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
   /* the ions shown for each coordination number, set in a row at one scale that fills the stage */
   const SETS = {};
   Object.entries({ 2: ['ag'], 3: ['cucn3'], 4: ['cucl4', 'zncn4', 'ptnh3cl2'], 5: ['cocl5', 'vocn4'], 6: ['coh2o6', 'cren3', 'ptcl6'], 7: ['zrf7'], 8: ['ref8', 'mocn8'] }).forEach(([cn, ids]) => {
-    const list = ids.map((id) => C[id]), gap = 0.75, wide = 1400 / UNIT - 0.9, tall = 2.02;
+    const list = ids.map((id) => C[id]), gap = 0.8, wide = 1400 / UNIT - 0.8, tall = 2.3;
     const s = Math.min(1.7, tall / Math.max(...list.map((c) => c.R)), wide / (list.reduce((a, c) => a + 2 * c.R, 0) + gap * (list.length - 1)));
     let x = -(list.reduce((a, c) => a + 2 * c.R * s, 0) + gap * s * (list.length - 1)) / 2;
     SETS[cn] = { cn: +cn, list: list.map((c) => { const o = { c, s, x: x + c.R * s }; x += 2 * c.R * s + gap * s; return o; }) };
@@ -270,7 +270,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
     for (let i = 0; i < 3; i++) {
       const a = A.list[i], b = B.list[i], g = G[i]; if (!a && !b) continue;
       const both = a && b, on = both ? 1 : b ? k : 1 - k, kk = both ? k : 1;
-      const st = blend((a || b).c.S, (b || a).c.S, kk, K, { H: true });
+      const st = blend((a || b).c.S, (b || a).c.S, kk, K);
       const x = both ? lerp(a.x, b.x, k) : (b || a).x, s = (both ? lerp(a.s, b.s, k) : (b || a).s) * (0.45 + 0.55 * on);
       g.position.set(x, Y0, 0); g.scale.setScalar(s);
       molecule(v, g, st.atoms, st.bonds, kk, on);
@@ -279,10 +279,10 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
       const P = st.donors.slice(0, near.cn).map((q) => V.mul(q.d, q.r * K));
       if (P.length === near.cn) polyhedron(g, GEOM[near.geom].faces, P, fa);
       if (near.arc && fa > 0.6) {
-        const [p, q, lab] = near.arc, pt = F.mesh.arc(g, st.donors[p].d, st.donors[q].d, 0.6, [0, 0, 0], F.C('angle'));
-        plain(hued(v.label(lab, V.mul(pt, 1.12), g, 0, 'bare'), 'angle'), (fa - 0.6) / 0.4);
+        const [p, q, lab] = near.arc, pt = F.mesh.arc(g, st.donors[p].d, st.donors[q].d, 0.72, [0, 0, 0], F.C('angle'));
+        plain(hued(v.label(lab, V.mul(pt, 1.2), g, 0, 'bare'), 'angle'), (fa - 0.6) / 0.4);
       }
-      st.atoms.forEach((t, m) => { if (m > 0 && t.a > 0.5) syms.add(t.sym); });
+      if (on > 0.5) st.atoms.forEach((t, m) => { if (m > 0 && t.a > 0.5) syms.add(t.sym); });
       if (both && a.c !== b.c) labels.push([a.c, lerp(a.x, b.x, k), 1 - k], [b.c, lerp(a.x, b.x, k), k]); else labels.push([near, x, on]);
     }
     /* under each ion: its formula, the geometry as Table 19.5 names it, its ligands and donor atoms, and Figure 19.19's ions outside the brackets */

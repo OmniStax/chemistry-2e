@@ -159,10 +159,10 @@ function burst(ctx, x, y, R, k, color) {
       }
     }
 
-    F.legend(ctx, { l: 20, r: 420, t: 100, b: 140 }, [
+    F.legend(ctx, { l: 20, r: 220, t: 100, b: 170 }, [
       { s: 'proton', draw: (c, x, y) => disc(c, x, y, 8, P, alpha(INK, 0.45), 0.9) },
       { s: 'neutron', draw: (c, x, y) => disc(c, x, y, 8, N, alpha(INK, 0.45), 0.9) },
-    ], { corner: 'tl', row: true, panel: false, size: 18 });
+    ], { corner: 'tl', panel: false, size: 18 });
 
     /* fission yield against mass number */
     const GB = { l: 1010, r: 1360, t: 170, b: 580 };
@@ -269,7 +269,6 @@ function burst(ctx, x, y, R, k, color) {
     /* the slice of the lump, and the size of a critical mass beside it */
     ctx.save(); ctx.beginPath(); ctx.arc(CX, CY, M.R, 0, 2 * Math.PI); ctx.fillStyle = alpha(U, 0.12); ctx.fill();
     ctx.strokeStyle = alpha(INK, 0.6); ctx.lineWidth = 3; ctx.stroke();
-    if (!crit) { ctx.beginPath(); ctx.arc(CX, CY, RC, 0, 2 * Math.PI); ctx.setLineDash([10, 10]); ctx.strokeStyle = alpha(INK, 0.45); ctx.lineWidth = 2.5; ctx.stroke(); }
     ctx.restore();
     hits.push({ x: CX + M.R * 0.85, y: CY + M.R * 0.4, r: 26, name: 'a lump of uranium-235, ' + fmt(ms.v, 2) + ' times the critical mass' });
     text(ctx, crit ? 'critical mass' : M.k < 1 ? 'subcritical mass' : 'supercritical mass', CX, 656, INK, { size: 22, weight: 600, align: 'center' });
@@ -298,12 +297,13 @@ function burst(ctx, x, y, R, k, color) {
       disc(ctx, p[0] - ux * (2 + 5 * q), p[1] - uy * (2 + 5 * q), 5, FRc, alpha(INK, 0.45));
       hits.push({ x: p[0], y: p[1], r: 14, name: 'a fission in generation ' + g + ': two fragments, three neutrons and energy' });
     });
+    if (!crit) { ctx.save(); ctx.beginPath(); ctx.arc(CX, CY, RC, 0, 2 * Math.PI); ctx.setLineDash([10, 10]); ctx.strokeStyle = alpha(INK, 0.7); ctx.lineWidth = 3; ctx.stroke(); ctx.restore(); hits.push({ x: CX, y: CY - RC, r: 12, name: 'the size of a critical mass' }, { x: CX, y: CY + RC, r: 12, name: 'the size of a critical mass' }); }
     flying.forEach(([p, name]) => { disc(ctx, p[0], p[1], 6, NE, alpha(INK, 0.55)); hits.push({ x: p[0], y: p[1], r: 10, name }); });
     F.legend(ctx, { l: 20, r: 800, t: H - 50, b: H - 6 }, [
       { s: '²³⁵U nucleus', draw: (c, x, y) => disc(c, x, y, 7.5, U, alpha(INK, 0.45)) },
       { s: 'neutron and its track', draw: (c, x, y) => { line(c, x - 18, y, x + 6, y, TR, 2); disc(c, x + 10, y, 6, NE, alpha(INK, 0.55)); } },
       { s: 'fission', draw: (c, x, y) => { burst(c, x, y, 13, 1, E); disc(c, x - 5, y, 5, FRc, alpha(INK, 0.45)); disc(c, x + 5, y, 4.5, FRc, alpha(INK, 0.45)); } },
-      { s: 'size of a critical mass', color: alpha(INK, 0.45), w: 2.5, dash: [10, 10] },
+      { s: 'size of a critical mass', color: alpha(INK, 0.7), w: 3, dash: [10, 10] },
     ], { corner: 'bl', row: true, panel: false, size: 18 });
     /* fissions per generation */
     const GB = { l: 850, r: 1350, t: 170, b: 580 };

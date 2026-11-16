@@ -29,7 +29,7 @@ function atom(ctx, x, y, sym, r, a = 1) {
 function gapOf(ctx, s, ux, uy, size) {
   if (!s) return 0;
   const w = F.measure(ctx, s, { size, weight: 600 });
-  return Math.min(Math.abs(ux) > 1e-6 ? (w / 2 + 7) / Math.abs(ux) : Infinity, Math.abs(uy) > 1e-6 ? (size * 0.62 + 4) / Math.abs(uy) : Infinity);
+  return Math.min(Math.abs(ux) > 1e-6 ? (w / 2 + 7) / Math.abs(ux) : Infinity, Math.abs(uy) > 1e-6 ? (size * 0.7 + 6) / Math.abs(uy) : Infinity);
 }
 function lewis(ctx, atoms, bonds, o = {}) {
   const size = o.size ?? 28, ink = o.color ?? PAL.ink;
@@ -216,7 +216,7 @@ const palSig = () => [PAL.ink, PAL.panel, PAL.muted, F.el('C'), F.el('H')].join(
     const { ctx } = begin(d.c); hits = [];
     headline(ctx, MOL[mol.value].head);
     KEYS.forEach((k) => mol.only(ctx, k, () => {
-      const L = lewisOf(MOL[k], CX, TOP, BOT); lewis(ctx, L.atoms, L.bonds, { size: 28 });
+      const L = lewisOf(MOL[k], CX, TOP, BOT, 64); lewis(ctx, L.atoms, L.bonds, { size: 28 });
       if (k === mol.value) L.atoms.forEach((t) => hits.push({ x: t.x, y: t.y, r: 20, name: `${NAME[t.s] ?? 'methyl group, CH₃'} of ${MOL[k].name}` }));
     }, [0, 10]));
     text(ctx, 'Lewis structure', 150, (TOP + BOT) / 2, PAL.muted, { size: 22, align: 'center' });

@@ -24,6 +24,9 @@
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-fable-5-2"
       }
     ]
   },
@@ -72,6 +75,10 @@
         {
           "model": "claude-opus-5-5",
           "part": "caption cut; Rb-96 erratum note withdrawn"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt larger: counts on each nuclide, all five pairs on the yield curve"
         }
       ]
     },
@@ -103,6 +110,10 @@
         {
           "model": "claude-opus-5-5",
           "part": "rebuilt flat: a slice of the lump with bars of fissions beside"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt: lump sized by mass, neutron tracks kept, critical size dashed"
         }
       ]
     },
@@ -157,6 +168,10 @@
         {
           "model": "claude-opus-5-5",
           "part": "coolant flow and nozzle arrows bolder; caption cut"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt: vessel, core barrel and coolant path drawn as the real thing"
         }
       ]
     },

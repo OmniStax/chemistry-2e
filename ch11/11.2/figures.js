@@ -8,6 +8,12 @@ const clamp01 = (x) => Math.max(0, Math.min(1, x));
 const smooth = F.ease.smooth;
 /* one atom: a filled ball in its element colour, ink rim */
 function ball(ctx, x, y, r, col) { ctx.save(); ctx.fillStyle = col; ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore(); }
+/* the page's ink or panel colour, whichever reads better on a ball of colour col */
+function onBall(ctx, col) {
+  const lum = (c) => { ctx.save(); ctx.fillStyle = c; const h = String(ctx.fillStyle); ctx.restore(); const m = /^#(..)(..)(..)$/.exec(h); return m ? (0.299 * parseInt(m[1], 16) + 0.587 * parseInt(m[2], 16) + 0.114 * parseInt(m[3], 16)) / 255 : 0.5; };
+  const l = lum(col), a = lum(PAL.ink), b = lum(PAL.panel);
+  return Math.abs(a - l) >= Math.abs(b - l) ? PAL.ink : PAL.panel;
+}
 /* a particle drawn from its atoms [element, dx, dy, r], turned by a and scaled by k; hydrogens behind */
 function particle(ctx, atoms, x, y, a, k = 1) {
   const c = Math.cos(a), s = Math.sin(a);
@@ -185,7 +191,7 @@ function particle(ctx, atoms, x, y, a, k = 1) {
         particle(ctx, m.atoms, p.x, p.y, one ? 0 : p.a, KS);
         ctx.restore();
         if (m.q && p.born > 0.6) {
-          if (one) text(ctx, m.q > 0 ? '+' : '−', p.x, p.y + 1, PAL.panel, { size: 22, weight: 700, align: 'center' });
+          if (one) text(ctx, m.q > 0 ? '+' : '−', p.x, p.y + 1, onBall(ctx, F.el(m.atoms[0][0])), { size: 22, weight: 700, align: 'center' });
           else text(ctx, m.q > 0 ? '+' : '−', p.x + 17, p.y - 17, PAL.ink, { size: 22, weight: 700, align: 'center' });
         }
         hits.push({ x: p.x, y: p.y, r: r + 6, name: m.word });
@@ -286,7 +292,7 @@ function particle(ctx, atoms, x, y, a, k = 1) {
   const faces = (f) => 'a water molecule, ' + (f === 'K' ? 'its oxygen end toward the K⁺' : 'a hydrogen end toward the Cl⁻');
   function ion(ctx, f, x, y, name) {
     ball(ctx, x, y, R[f], F.el(f));
-    text(ctx, SYM[f], x, y + 1, f === 'K' ? PAL.panel : PAL.ink, { size: 21, weight: 700, align: 'center' });
+    text(ctx, SYM[f], x, y + 1, onBall(ctx, F.el(f)), { size: 21, weight: 700, align: 'center' });
     hits.push({ x, y, r: R[f], name });
   }
   function draw() {

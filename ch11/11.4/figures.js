@@ -500,16 +500,19 @@ const rng = (seed) => () => { seed = (seed * 16807) % 2147483647; return (seed -
     ctx.beginPath(); sh.pts.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y))); ctx.closePath();
     ctx.fillStyle = PAL.panel; ctx.globalAlpha = 1 - kb; ctx.fill(); ctx.fillStyle = alpha(cell, 0.2); ctx.fill(); ctx.globalAlpha = 1;
     ctx.fillStyle = cs;
+    const GAP = 0.03 * TAU, ke = kb * (2 - kb);                 /* where the membrane tears, and the spill eased */
     INSIDE.forEach((q, i) => {
-      const x = q.u * sh.W * 0.94, y = q.f * sh.top(Math.abs(q.u)), out = 1 + 1.5 * kb * (0.6 + 0.4 * Math.sin(i * 2.4) ** 2), jx = 2 * Math.sin(tt * 2.3 + i), jy = 2 * Math.cos(tt * 1.9 + i * 1.7);
-      ctx.beginPath(); ctx.arc(x * out + (burst ? 0 : jx), y * out + (burst ? 0 : jy), 5, 0, TAU); ctx.fill();
+      const x = q.u * sh.W * 0.94, y = q.f * sh.top(Math.abs(q.u)), jx = 2 * Math.sin(tt * 2.3 + i), jy = 2 * Math.cos(tt * 1.9 + i * 1.7);
+      /* a burst cell's solute leaves through the tear and spreads into the solution */
+      const ga = GAP + (((i * 7) % N_IN) / N_IN - 0.5) * 1.5, gr = sh.W * (1.25 + 1.3 * (((i * 11) % N_IN) / N_IN)), gx = gr * Math.cos(ga), gy = gr * Math.sin(ga);
+      ctx.beginPath(); ctx.arc(x + (gx - x) * ke + jx, y + (gy - y) * ke + jy, 5, 0, TAU); ctx.fill();
     });
     ctx.strokeStyle = cell; ctx.lineWidth = 6; ctx.lineJoin = 'round'; ctx.lineCap = 'round'; ctx.beginPath();
-    if (burst) { const gap = Math.round(NP * 0.05 * (1 + 2 * kb)), i0 = Math.round(NP * 0.06); for (let i = i0 + gap; i <= NP + i0 - gap; i++) { const [x, y] = sh.pts[i % NP]; i === i0 + gap ? ctx.moveTo(x, y) : ctx.lineTo(x, y); } }
+    if (burst) { const gap = Math.round(NP * 0.02 * (1 + 2.5 * kb)), i0 = Math.round(NP * 0.03); for (let i = i0 + gap; i <= NP + i0 - gap; i++) { const [x, y] = sh.pts[i % NP]; i === i0 + gap ? ctx.moveTo(x, y) : ctx.lineTo(x, y); } }
     else { sh.pts.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y))); ctx.closePath(); }
     ctx.stroke(); ctx.restore();
     hits.push({ x: CX, y: CY, r: sh.W * 0.8, name: burst ? 'the burst cell: its membrane has torn and its contents spill out' : 'a red blood cell, cut through its middle' });
-    const yb = CY + Math.max(sh.top(0.72), sh.top(0)) * (1 + sh.rip) + 34;
+    const yb = CY - Math.max(sh.top(0.72), sh.top(0)) * (1 + sh.rip) - 30;
     text(ctx, 'red blood cell, in section', CX, yb, cell, { size: 19, weight: 600, align: 'center', bg: PAL.panel });
     /* the two osmotic pressures, each beside what it belongs to */
     const tag = (parts, x, y) => { const w = parts.reduce((s, q) => s + F.measure(ctx, typeof q === 'string' ? q : q[0], { size: 20, weight: typeof q === 'string' ? 400 : 600 }), 0); ctx.save(); ctx.fillStyle = PAL.panel; ctx.beginPath(); ctx.roundRect(x - 10, y - 17, w + 20, 34, 6); ctx.fill(); ctx.restore(); F.rich(ctx, parts, x, y, { size: 20 }); };
@@ -539,7 +542,8 @@ const rng = (seed) => () => { seed = (seed * 16807) % 2147483647; return (seed -
    drawing, and i = particles / formula units is the book's definition
    with those counts, an ion pair counting as one particle. Fewer formula
    units in the same water meet less often, so i climbs toward 2. The
-   run for each count is fixed (a seeded generator), T_RUN s long after
+   run for each count is fixed (a seeded generator, the seed chosen so
+   that the run's average is its long-run average), T_RUN s long after
    a warm-up, so the timeline can be dragged; the graph is i against
    time with its average so far. The numbers are the drawing's own, not
    measured values: Table 11.3 gives measured i only at 0.050 m.
@@ -551,10 +555,12 @@ const rng = (seed) => () => { seed = (seed * 16807) % 2147483647; return (seed -
   const Nv = ctl(d.controls, { label: '\\text{KCl dissolved}', cls: '', min: 1, max: 8, step: 1, value: 4, unit: '', fmt: (v) => v + (v === 1 ? ' formula unit' : ' formula units'), aria: 'formula units of potassium chloride dissolved in the water', onInput: () => cy.reset() });
   const cy = cycle(() => T_RUN, 2.5);
   const runs = {};
+  /* for each count, the run of forty whose 20 s average of i lies nearest its long-run average (1.91, 1.86, 1.78, 1.75, 1.72, 1.67, 1.65, 1.64) */
+  const PICK = [13, 21, 12, 4, 8, 14, 36, 5];
   /* the whole run for n formula units: positions every 1/FPS s, who is paired with whom, and i */
   function runOf(n) {
     if (runs[n]) return runs[n];
-    const rnd = rng(7919 * n + 13), ions = [];
+    const rnd = rng(7919 * n + 13 + 101 * PICK[n - 1]), ions = [];
     for (let i = 0; i < 2 * n; i++) {
       let x, y, tries = 0;
       do { x = BOX.l + 70 + rnd() * (BOX.r - BOX.l - 140); y = BOX.t + 70 + rnd() * (BOX.b - BOX.t - 140); tries++; } while (tries < 400 && ions.some((q) => Math.hypot(q.x - x, q.y - y) < DMIN + 6));
@@ -665,7 +671,8 @@ const rng = (seed) => () => { seed = (seed * 16807) % 2147483647; return (seed -
     dot(ctx, ax.X(t), ax.Y(iOf(t)), PAL.ink, true, 7); dot(ctx, ax.X(t), ax.Y(mOf(t)), cAvg, true, 8);
     legend(ctx, ax, [{ s: 'now', color: alpha(PAL.ink, 0.55), w: 3 }, { s: 'average so far', color: cAvg, w: 5 }], { corner: 'bl' });
     const parts = 2 * n - pairs, u1 = n === 1 ? 'formula unit' : 'formula units';
-    topline(ctx, done ? `Over ${T_RUN} s, ${n} ${u1} of KCl averaged ${fmt(mOf(T_RUN) * n, 1)} particles: i = ${fmt(mOf(T_RUN), 2)}, where complete dissociation predicts 2.`
+    topline(ctx, done && mOf(T_RUN) > 1.999 ? `Over ${T_RUN} s the two ions never met: i = 2.00, as complete dissociation predicts.`
+      : done ? `Over ${T_RUN} s, ${n} ${u1} of KCl averaged ${fmt(mOf(T_RUN) * n, 1)} particles: i = ${fmt(mOf(T_RUN), 2)}, where complete dissociation predicts 2.`
       : pairs === 0 ? `Just now every ion is free: ${n} ${u1} of KCl, ${parts} particles.`
         : `Just now ${pairs} ion ${pairs === 1 ? 'pair moves' : 'pairs move'} as one particle each: ${n} ${u1} of KCl, ${parts} particles.`);
     tex(d.readout, `i = \\frac{\\text{particles in solution}}{\\text{formula units dissolved}} = \\frac{${parts}}{${n}} = ${fmt(parts / n, 2)}`, false, { values: false });

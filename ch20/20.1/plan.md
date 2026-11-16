@@ -65,7 +65,7 @@ Table 20.1 as `div.book-table` with its two footnotes as `p.tnote`; the temperat
 
 ## Types bound
 
-`temperature` (Table 20.1, 425 °C, the trend Sim's graph and readout, the tower's temperature bar), `pressure` (1 atm), `mass` (135 million tons of ethylene; the exercises' 25.5 g, 74.5 g, 1.000 × 10³ kg, 9.328 × 10² kg). Carbon counts, locants, bond angles as the book states them (109.5°, 120°, 180°), hybridizations, counts of compounds and percents stay ink. No symbol is written by a readout: the temperatures are words with hued numbers, so no variables row is wanted. Atoms by `F.el` (C, H). No referents: the propane image keeps the book's colours, which its text names.
+`temperature` (Table 20.1, 425 °C, the trend Sim's graph and readout), `angle` (the twist of Figure 20.10, the one angle a figure varies), `pressure` (1 atm), `mass` (135 million tons of ethylene; the exercises' 25.5 g, 74.5 g, 1.000 × 10³ kg, 9.328 × 10² kg). Carbon counts, locants, bond angles as the book states them (109.5°, 120°, 180°), hybridizations, counts of compounds and percents stay ink. No symbol is written by a readout: the temperatures are words with hued numbers, so no variables row is wanted. Atoms by `F.el` (C, H). No referents: the propane image keeps the book's colours, which its text names.
 
 ## Exercises
 

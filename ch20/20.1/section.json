@@ -86,6 +86,10 @@
     {
      "model": "claude-opus-5-5",
      "part": "expanded formula on long branch bonds as the book draws it"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "expanded formula enlarged; a hydrogen count in the readout per drawing"
     }
    ]
   },
@@ -155,6 +159,10 @@
     {
      "model": "claude-opus-5-5",
      "part": "readout one formula per line, headline shortened"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "liquid band shaded between the curves, phases named, 0 °C dot, larger chain"
     }
    ]
   },
@@ -471,6 +479,10 @@
     {
      "model": "claude-opus-5-5",
      "part": "rebuilt: book drawings above a turning ring with its p orbitals"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "ring enlarged, readout filled on load, resonance arrow given room"
     }
    ]
   },

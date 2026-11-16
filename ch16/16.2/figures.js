@@ -14,11 +14,11 @@ function sci(x) {
   if (Math.abs(m) >= 10) { m /= 10; e += 1; }
   return `${m < 0 ? '-' : ''}${Math.abs(m).toFixed(2)}\\times 10^{${e}}`;
 }
-/* a count as the page writes it: digits with commas below a million, three figures and a power of ten above */
+/* a count as the page writes it: digits with commas below ten million, three figures and a power of ten above */
 const SUP = { '-': '⁻', 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴', 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹' };
 const parts = (x) => { let e = Math.floor(Math.log10(x)), m = +(x / 10 ** e).toFixed(2); if (m >= 10) { m /= 10; e += 1; } return [m.toFixed(2), e]; };
-const count = (x) => (x < 1e6 ? Math.round(x).toLocaleString('en-US') : (([m, e]) => `${m} × 10${String(e).split('').map((c) => SUP[c]).join('')}`)(parts(x)));
-const countTex = (x) => (x < 1e6 ? Math.round(x).toLocaleString('en-US').replace(/,/g, '{,}') : (([m, e]) => `${m}\\times 10^{${e}}`)(parts(x)));
+const count = (x) => (x < 1e7 ? Math.round(x).toLocaleString('en-US') : (([m, e]) => `${m} × 10${String(e).split('').map((c) => SUP[c]).join('')}`)(parts(x)));
+const countTex = (x) => (x < 1e7 ? Math.round(x).toLocaleString('en-US').replace(/,/g, '{,}') : (([m, e]) => `${m}\\times 10^{${e}}`)(parts(x)));
 const choose = (n, k) => { let c = 1; for (let i = 1; i <= k; i++) c = (c * (n - k + i)) / i; return Math.round(c); };
 /* the readout of both counting figures, ΔS = k ln(W_f/W_i) with the live counts */
 function deltaS(ro, wi, wf) {
@@ -38,7 +38,8 @@ function piles(ctx, o) {
   const n = o.W.length, slot = (PX1 - PX0) / n, xc = (k) => PX0 + (k + 0.5) * slot, wmax = Math.max(...o.W), hits = [];
   const tw = Math.min(slot - 22, 390), th = o.tiles ? Math.min(tw * 0.42, (PBASE - PTOP) / wmax) : 0;
   const frac = n <= 13 && F.measure(ctx, `${count(wmax)}/${count(o.total)}`, { size: 17 }) < slot - 14;
-  const band = (k) => [xc(k) - Math.max(slot, 10) / 2 + 3, PTOP - 76, Math.max(slot, 10) - 6, PBASE - PTOP + 76];
+  /* a mark's band reaches over its pile's labels; where only the tallest pile is labelled, the label stands above the bands */
+  const up = n <= 13 ? 76 : 6, band = (k) => [xc(k) - Math.max(slot, 10) / 2 + 3, PTOP - up, Math.max(slot, 10) - 6, PBASE - PTOP + up];
   /* the final distribution stands on a filled band, the initial one inside a dashed outline */
   ctx.save();
   ctx.fillStyle = alpha(PAL.ink, 0.08); ctx.fillRect(...band(o.ib));
@@ -59,11 +60,11 @@ function piles(ctx, o) {
     }
     if (n <= 13) {
       /* each pile's W, and its share of all the microstates where the fraction fits over the pile */
-      const up = frac ? 36 : 16;
+      const lift = frac ? 36 : 16;
       if (frac) text(ctx, `${count(w)}/${count(o.total)}`, x, top - 14, PAL.muted, { size: 17, align: 'center' });
-      text(ctx, n > 9 ? count(w) : `W = ${count(w)}`, x, top - up, PAL.ink, { size: n > 9 ? 18 : 20, weight: 600, align: 'center' });
-      if (o.letters) text(ctx, `(${o.letters[k]})`, x, top - up - 26, PAL.ink, { size: 21, weight: 600, align: 'center' });
-    } else if (k === 0 || k === n - 1 || w === wmax) text(ctx, `W = ${count(w)}`, k === 0 ? x + 12 : k === n - 1 ? x - 12 : x, top - 20, PAL.ink, { size: 19, weight: 600, align: k === 0 ? 'left' : k === n - 1 ? 'right' : 'center' });
+      text(ctx, n > 9 ? count(w) : `W = ${count(w)}`, x, top - lift, PAL.ink, { size: n > 9 ? 18 : 20, weight: 600, align: 'center' });
+      if (o.letters) text(ctx, `(${o.letters[k]})`, x, top - lift - 26, PAL.ink, { size: 21, weight: 600, align: 'center' });
+    } else if (k === 0 || k === n - 1 || w === wmax) text(ctx, `W = ${count(w)}`, k === 0 ? x + 12 : k === n - 1 ? x - 12 : x, top - 28, PAL.ink, { size: 19, weight: 600, align: k === 0 ? 'left' : k === n - 1 ? 'right' : 'center' });
     if (k % o.every === 0) { line(ctx, x, PBASE, x, PBASE + 8, PAL.muted, 2); text(ctx, String(k), x, PBASE + 24, PAL.muted, { size: 17, align: 'center' }); }
   });
   /* the names of the two marks, under their piles; on one line unless they would touch */
@@ -164,7 +165,7 @@ function piles(ctx, o) {
     if (q <= 4) tiles = W.map((_, j) => { const out = []; for (let a = q - j; a >= 0; a--) for (let c = j; c >= 0; c--) out.push([a, q - j - a, c, j - c]); return out; });
     hits = [];
     const tile = (c, m, x, y, w, h) => {
-      const fs = clamp(h * 0.66, 17, 52), lw = F.measure(c, 'A', { size: fs, weight: 600 }), gap = Math.min(fs * 0.36, (w / 4 - lw - 6) / 4);
+      const fs = clamp(h * 0.66, 17, 46), lw = F.measure(c, 'A', { size: fs, weight: 600 }), gap = Math.min(fs * 0.36, (w / 4 - lw - 6) / 4);
       c.save(); c.strokeStyle = PAL.muted; c.lineWidth = 2; c.strokeRect(x, y, w, h); c.restore(); line(c, x + w / 2, y, x + w / 2, y + h, PAL.muted, 2);
       P.forEach((p, i) => {
         /* the letter at a fixed place in its quarter and, close after it, one raised asterisk for each unit it holds */

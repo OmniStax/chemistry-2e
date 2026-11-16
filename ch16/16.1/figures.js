@@ -31,7 +31,7 @@ const sup = (n) => String(n).split('').map((c) => SUP[c] ?? c).join('');
   const t = ctl(d.controls, { label: '\\text{time }t', cls: 'time', key: 'span', min: LO, max: HI, step: 0.005, value: WEEK, unit: '', fmt: (lg) => span(10 ** lg),
     aria: 'the time since the samples were made', detents: [{ v: WEEK, label: '1 week' }],
     specials: [{ at: Math.log10(HALF.tc), label: 'Tc-99m half-life' }, { at: Math.log10(HALF.u), label: 'U-238 half-life' }] });
-  const SNAP = [HALF.tc, HALF.u];
+  const SNAP = [HALF.tc, HALF.u, 1e11 * YEAR];
   const left = (h, k) => 100 * Math.pow(0.5, h / HALF[k]);
   /* a number to three figures, in TeX */
   function sci(x) {
@@ -97,7 +97,7 @@ const sup = (n) => String(n).split('').map((c) => SUP[c] ?? c).join('');
     hits.push({ x: xt, y: (G.t + G.b) / 2, r: 14, name: `${span(h)} after the samples were made` });
     const [x, w] = words(h), u = w === 'minutes' ? [1 / 60, 'min'] : w === 'hours' ? [1, 'h'] : w === 'days' ? [24, 'd'] : [YEAR, 'y'];
     const tt = (hr) => `\\htmlClass{kv-time}{${sci(hr / u[0])}\\ \\text{${u[1]}}}`;
-    const row = (k, ref, name) => `\\htmlData{ref=${ref}}{\\text{${name}}}\\ \\text{remaining} = 100\\,\\% \\times \\left(\\tfrac{1}{2}\\right)^{t/t_{1/2}} = 100\\,\\% \\times \\left(\\tfrac{1}{2}\\right)^{${tt(h)}\\,/\\,${tt(HALF[k])}} = ${left(h, k) >= 99.95 ? '100' : sci(left(h, k))}\\,\\%`;
+    const row = (k, ref, name) => `\\htmlData{ref=${ref}}{\\text{${name}}}\\ \\text{remaining} = \\left(\\tfrac{1}{2}\\right)^{t/t_{1/2}} = \\left(\\tfrac{1}{2}\\right)^{${tt(h)}\\,/\\,${tt(HALF[k])}} = ${left(h, k) >= 99.95 ? '100' : sci(left(h, k))}\\,\\%`;
     tex(d.readout, `${row('tc', 'tc-99m', 'Tc-99m')} \\\\ ${row('u', 'u-238', 'U-238')}`);
   }
   still(d, draw);

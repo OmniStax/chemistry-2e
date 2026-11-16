@@ -376,12 +376,12 @@ const rng = (seed) => () => { seed = (seed * 16807) % 2147483647; return (seed -
       text(ctx, `A real column for ${fmt(Math.abs(h), 1)} atm is ${fmt(Math.abs(h) * 10.33, 0)} m of water; the arms are drawn far shorter.`, XC, 668, PAL.muted, { size: 16, align: 'center' });
     }
     /* the two rates of crossing against time, 0 to PER s; the rate axis 0 to 1.8 times the rate into the solution */
-    const ax = axes(ctx, { l: 960, r: 1330, t: 170, b: 480 }, [0, PER], [0, 1.8], { nx: 7, ny: 0, xl: 't (s)', xc: ctm, yl: 'water molecules crossing per second' });
+    const ax = axes(ctx, { l: 960, r: 1330, t: 170, b: 460 }, [0, PER], [0, 1.8], { nx: 7, ny: 0, xl: 't (s)', xc: ctm, yl: 'water molecules crossing per second' });
     plot(ctx, ax, () => 1, alpha(cIn, 0.3), { w: 4 }); plot(ctx, ax, back, alpha(cBack, 0.3), { w: 4 });
     if (t > 0.01) { plot(ctx, ax, () => 1, cIn, { w: 5, x: [0, t] }); plot(ctx, ax, back, cBack, { w: 5, x: [0, t] }); }
     dot(ctx, ax.X(t), ax.Y(1), cIn, true, 8); dot(ctx, ax.X(t), ax.Y(back(t)), cBack, true, 8);
-    legend(ctx, ax, [{ s: 'into the solution', color: cIn, w: 5, f: () => 1 }, { s: 'back to the pure water', color: cBack, w: 5, f: back }]);
-    legend(ctx, { l: XL + TW + 8, r: XR - TW - 8, t: YTOP - 6, b: YTOP + 110 }, [{ s: 'water', draw: (c, x, y) => water(c, x, y + 3, -Math.PI / 2) }, { s: 'glucose', draw: (c, x, y) => glucose(c, x - 4, y, 0.5) }], { corner: 'top' });
+    legend(ctx, { l: ax.box.l, r: ax.box.r - 90, t: ax.box.b + 44, b: ax.box.b + 130 }, [{ s: 'into the solution', color: cIn, w: 5 }, { s: 'back to the pure water', color: cBack, w: 5 }], { corner: 'tl', panel: false });
+    legend(ctx, { l: XC - 110, r: XC + 110, t: YC - 4, b: YC + 100 }, [{ s: 'water', draw: (c, x, y) => water(c, x, y + 3, -Math.PI / 2) }, { s: 'glucose', draw: (c, x, y) => glucose(c, x - 4, y, 0.5) }], { corner: 'top' });
     const head = pi < 0.05 && pa < 0.05 ? 'With no glucose, water crosses both ways at the same rate and the levels stay equal.'
       : !rest ? (target >= 0 ? 'More water crosses into the solution than back, and its column is still rising.' : 'The piston drives more water out of the solution than crosses in, and its column falls.')
         : pa < 0.05 ? `The two rates meet when the solution’s column stands ${fmt(pi, 1)} atm higher: its osmotic pressure.`

@@ -8,11 +8,12 @@ const clamp01 = (x) => Math.max(0, Math.min(1, x));
 const smooth = F.ease.smooth;
 /* one atom: a filled ball in its element colour, ink rim */
 function ball(ctx, x, y, r, col) { ctx.save(); ctx.fillStyle = col; ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore(); }
-/* the page's ink or panel colour, whichever reads better on a ball of colour col */
+/* the page's ink or panel colour, whichever has the greater contrast on a ball of colour col */
 function onBall(ctx, col) {
-  const lum = (c) => { ctx.save(); ctx.fillStyle = c; const h = String(ctx.fillStyle); ctx.restore(); const m = /^#(..)(..)(..)$/.exec(h); return m ? (0.299 * parseInt(m[1], 16) + 0.587 * parseInt(m[2], 16) + 0.114 * parseInt(m[3], 16)) / 255 : 0.5; };
-  const l = lum(col), a = lum(PAL.ink), b = lum(PAL.panel);
-  return Math.abs(a - l) >= Math.abs(b - l) ? PAL.ink : PAL.panel;
+  const lin = (v) => (v <= 0.04045 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4));
+  const lum = (c) => { ctx.save(); ctx.fillStyle = c; const h = String(ctx.fillStyle); ctx.restore(); const m = /^#(..)(..)(..)$/.exec(h); return m ? 0.2126 * lin(parseInt(m[1], 16) / 255) + 0.7152 * lin(parseInt(m[2], 16) / 255) + 0.0722 * lin(parseInt(m[3], 16) / 255) : 0.2; };
+  const l = lum(col), ratio = (c) => { const k = lum(c); return (Math.max(k, l) + 0.05) / (Math.min(k, l) + 0.05); };
+  return ratio(PAL.ink) >= ratio(PAL.panel) ? PAL.ink : PAL.panel;
 }
 /* a particle drawn from its atoms [element, dx, dy, r], turned by a and scaled by k; hydrogens behind */
 function particle(ctx, atoms, x, y, a, k = 1) {

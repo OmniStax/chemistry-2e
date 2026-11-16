@@ -189,7 +189,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
       ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.6 * (1 - q)); ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(L + e.x, e.y, 9 + 16 * q, 0, TAU); ctx.stroke(); ctx.restore();
     }
     F.rich(ctx, [[pieces(set.mode), col, 700], ', ', [fmt(set.conc, 1) + ' M', C('concentration')], ' HCl, ', [fmt(set.T, 0) + ' °C', C('temperature')]], L, TOP - 36, { size: 22 });
-    F.rich(ctx, [[String(surface), col, 700], ' of ' + remain + ' atoms exposed'], L + WB, TOP - 36, { size: 22, align: 'right' });
+    F.rich(ctx, remain ? [[String(surface), col, 700], ' of ' + remain + (remain === 1 ? ' atom exposed' : ' atoms exposed')] : ['all the iron has reacted'], L + WB, TOP - 36, { size: 22, align: 'right' });
     return remain;
   }
 

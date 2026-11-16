@@ -48,7 +48,7 @@ const plain = (q) => sci(q).replace(/ \\times 10\^\{(-?\d+)\}/, (_, e) => ' × 1
   const cOf = (lg) => +cM(10 ** lg);
   const pick = F.choice(d.controls, { label: '\\text{acid}', options: [{ value: 'HCl', label: 'HCl' }, { value: 'HSO4', label: 'HSO₄⁻' }, { value: 'HNO2', label: 'HNO₂' }, { value: 'CH3CO2H', label: 'CH₃CO₂H' }], value: 'CH3CO2H', aria: 'acid dissolved in the water', onInput: () => shown.set(solve(pick.value, cOf(c0.v)).n) });
   const c0 = ctl(d.controls, { label: '\\kconcHAz', cls: 'concentration', key: 'c0', min: -2, max: 0, step: 0.001, value: -1, fmt: (lg) => `${cM(10 ** lg)} M`,
-    detents: [{ v: Math.log10(0.0516), label: '0.0516' }, { v: -1, label: '0.100' }, { v: Math.log10(0.5), label: '0.50' }], snap: true, aria: 'initial concentration of the acid', onInput: () => moved() });
+    detents: [{ v: Math.log10(0.0516), label: '0.0516' }, { v: Math.log10(0.5), label: '0.50' }], snap: true, aria: 'initial concentration of the acid', onInput: () => moved() });
   const N = 100, R = rng(29);
   function cM(c) { return c < 0.0995 ? c.toPrecision(2 + (Math.abs(c - 0.0516) < 2e-4 ? 1 : 0)) : c.toPrecision(3); }
   /* the beaker: glass from BX0 to BX1, liquid from LY to BY; 10 by 10 slots, jittered */
@@ -163,9 +163,9 @@ const plain = (q) => sci(q).replace(/ \\times 10\^\{(-?\d+)\}/, (_, e) => ' × 1
     const num = (q, nsig) => (q < 0.00995 ? sci(q, nsig) : q.toPrecision(nsig));
     const conc = (q) => (q < 0.0095 ? sci(q) : cM(q)) + '\\ M';
     const ka = A.K === Infinity
-      ? `\\kKa = \\frac{\\kconcHyd\\kconcAm}{\\kconcHA} \\approx \\infty`
-      : `\\kKa = \\frac{\\kconcHyd\\kconcAm}{\\kconcHA} = \\frac{(${cv(num(s.x, 3))})(${cv(num(s.x, 3))})}{${cv(num(c - s.x, 3))}} = ${kv(sci(A.K))}`;
-    tex(d.readout, `${ka} \\\\ \\text{\\% ionization} = \\frac{\\kconcHydeq}{\\kconcHAz}\\times 100 = \\frac{${cv(conc(s.x))}}{${cv(conc(c))}}\\times 100 = ${Ps}\\%`);
+      ? `\\kKa = \\dfrac{\\kconcHyd\\kconcAm}{\\kconcHA} \\approx \\infty`
+      : `\\kKa = \\dfrac{\\kconcHyd\\kconcAm}{\\kconcHA} = \\dfrac{(${cv(num(s.x, 3))})(${cv(num(s.x, 3))})}{${cv(num(c - s.x, 3))}} = ${kv(sci(A.K))}`;
+    tex(d.readout, `${ka} \\\\ \\text{\\% ionization} = \\dfrac{\\kconcHydeq}{\\kconcHAz}\\times 100 = \\dfrac{${cv(conc(s.x))}}{${cv(conc(c))}}\\times 100 = ${Ps}\\%`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -263,8 +263,10 @@ const plain = (q) => sci(q).replace(/ \\times 10\^\{(-?\d+)\}/, (_, e) => ' × 1
     for (let e = 0; e <= 14; e += 2) {
       const lx = XA0 - (14 - e) * DEC, rx = XB0 + (14 - e) * DEC, t = up ? -8 : 8, s = e === 0 ? '1.0' : '10' + sup('−' + e);
       line(ctx, lx, yy, lx, yy + t, hc, 3); line(ctx, rx, yy, rx, yy + t, hc, 3);
-      text(ctx, s, lx, yy + (up ? -24 : 26), hc, { size: 20, align: 'center' });
-      text(ctx, s, rx, yy + (up ? -24 : 26), hc, { size: 20, align: 'center' });
+      if (e === 0) { text(ctx, s, lx, yy + (up ? -24 : 26), hc, { size: 21, align: 'center' }); text(ctx, s, rx, yy + (up ? -24 : 26), hc, { size: 21, align: 'center' }); }
+      if (e % 4 === 0) continue;   /* 1.0, then every fourth decade, in to 10⁻¹⁴ at the formulas */
+      text(ctx, s, lx, yy + (up ? -24 : 26), hc, { size: 21, align: 'center' });
+      text(ctx, s, rx, yy + (up ? -24 : 26), hc, { size: 21, align: 'center' });
     }
   }
   function draw() {
@@ -290,9 +292,12 @@ const plain = (q) => sci(q).replace(/ \\times 10\^\{(-?\d+)\}/, (_, e) => ' × 1
     line(ctx, CX, YT - 44, CX, YB, alpha(PAL.ink, 0.3), 2);
     /* the band notes, each in the half of its band that holds no bars */
     const nt = top[0].y + 2.5 * ROW, nl = low[0].y + 2 * ROW;
-    text(ctx, 'strong acids', 990, nt - 30, PAL.ink, { size: 22, weight: 600 });
-    text(ctx, 'ionize completely in water;', 990, nt, PAL.ink, { size: 21 });
-    text(ctx, 'their bases do not ionize', 990, nt + 28, PAL.ink, { size: 21 });
+    const mid = PAIRS.filter((p) => p.grp === 'mid'), NX = 1076;
+    text(ctx, 'strong acids', NX, nt - 30, PAL.ink, { size: 22, weight: 600 });
+    text(ctx, 'ionize completely in water;', NX, nt, PAL.ink, { size: 21 });
+    text(ctx, 'their bases do not ionize', NX, nt + 28, PAL.ink, { size: 21 });
+    text(ctx, 'weak acids, weak bases', NX, mid[0].y + 2, PAL.ink, { size: 22, weight: 600 });
+    text(ctx, 'ionize in part', NX, mid[0].y + 32, PAL.ink, { size: 21 });
     text(ctx, 'strong bases', 410, nl - 30, PAL.ink, { size: 22, weight: 600, align: 'right' });
     text(ctx, 'ionize completely in water;', 410, nl, PAL.ink, { size: 21, align: 'right' });
     text(ctx, 'their acids do not ionize', 410, nl + 28, PAL.ink, { size: 21, align: 'right' });

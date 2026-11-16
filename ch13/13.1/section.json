@@ -22,6 +22,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -59,6 +62,10 @@
     {
      "model": "claude-opus-5-5",
      "part": "rebuilt flat: tube, magnified circle, graphs beside; caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: splits and joins ringed and ticked, start from NO\u2082, curves named"
     }
    ]
   },

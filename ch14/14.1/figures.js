@@ -270,7 +270,7 @@ const RX = {
     const k = hue('equilibrium-constant', sciTex(K)), hv = hue('concentration', sciTex(Hv)), ov = hue('concentration', sciTex(Ov));
     ro.set(onWater
       ? `\\mk{H}{\\kconcHyd} = \\mk{O}{\\kconcOH} = \\sqrt{\\mk{K}{\\kKw}} = \\sqrt{\\mk{Kv}{${k}}} = \\mk{Ov}{${ov}}\\ M`
-      : `\\mk{O}{\\kconcOH} = \\frac{\\mk{K}{\\kKw}}{\\mk{H}{\\kconcHyd}} = \\frac{\\mk{Kv}{${k}}}{\\mk{Hv}{${hv}}} = \\mk{Ov}{${ov}}\\ M`, undefined, { form: onWater });
+      : `\\mk{O}{\\kconcOH} = \\frac{\\mk{K}{\\kKw}}{\\mk{H}{\\kconcHyd}} = \\frac{\\mk{Kv}{${k}}}{\\mk{Hv}{${hv}}\\ M} = \\mk{Ov}{${ov}}\\ M`, undefined, { form: onWater });
   }
   still(d, draw);
 })();

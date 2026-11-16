@@ -39,7 +39,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     A: { M: 92.01, rc: 35, name: 'dinitrogen tetroxide, N₂O₄', atoms: [['O', -22, -12.5, 11.5], ['O', -22, 12.5, 11.5], ['O', 22, -12.5, 11.5], ['O', 22, 12.5, 11.5], ['N', -10, 0, 12], ['N', 10, 0, 12]] },
     B: { M: 46.01, rc: 25, name: 'nitrogen dioxide, NO₂', atoms: [['O', -15, 7, 11.5], ['O', 15, 7, 11.5], ['N', 0, -3.5, 12]] },
   };
-  const Q = 0.01, N0 = 14, A0 = N0 * Q, TRUN = 8, PLAY = 1.4, DT = 1 / 60, NF = Math.round(TRUN / DT), GLIDE = 260, HALF = 18, FLASH = 0.55, TOL = 0.0005;
+  const Q = 0.01, N0 = 14, A0 = N0 * Q, TRUN = 8, PLAY = 1.4, DT = 1 / 60, NF = Math.round(TRUN / DT), GLIDE = 320, HALF = 18, FLASH = 0.55, TOL = 0.0005;
   const rng = (seed) => () => { seed = (seed + 0x6D2B79F5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
   const inside = (p, r) => { const dx = p[0] - CX, dy = p[1] - CY, q = Math.hypot(dx, dy), lim = RI - r; return q <= lim ? p : [CX + (dx / q) * lim, CY + (dy / q) * lim]; };
   const smooth = F.ease.smooth;
@@ -89,7 +89,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
           const dd = Math.hypot(free[i].x[0] - free[j].x[0], free[i].x[1] - free[j].x[1]);
           if (dd < bd) { bd = dd; best = [free[i], free[j]]; }
         }
-        const mid = inside([(best[0].x[0] + best[1].x[0]) / 2, (best[0].x[1] + best[1].x[1]) / 2], MOLS.A.rc), n = Math.max(12, Math.round(bd / GLIDE / DT));
+        const mid = inside([(best[0].x[0] + best[1].x[0]) / 2, (best[0].x[1] + best[1].x[1]) / 2], MOLS.B.rc + HALF + 2), n = Math.max(9, Math.round(bd / GLIDE / DT));
         const ax = Math.atan2(best[1].x[1] - best[0].x[1], best[1].x[0] - best[0].x[0]);
         best.forEach((m, i) => {
           const sg = i === 0 ? -1 : 1;

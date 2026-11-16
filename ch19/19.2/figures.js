@@ -114,7 +114,7 @@ function blend(A, B, k, K, o = {}) {
     donors.push({ d, r, a: a && b ? 1 : b ? k : 1 - k });
     parts.forEach(([type, pres]) => {
       const at0 = atoms.length;
-      ligandAtoms(type, d, r, K).forEach((t) => atoms.push({ ...t, a: pres, site: s }));
+      ligandAtoms(type, d, r, K).forEach((t) => atoms.push({ ...t, a: pres, site: s, lig: type }));
       bonds.push({ i: 0, j: at0, a: pres });
       LIG[type].bonds.forEach(([i, j]) => bonds.push({ i: at0 + i, j: at0 + j, a: pres }));
     });
@@ -123,7 +123,7 @@ function blend(A, B, k, K, o = {}) {
   const bridges = [...B.bridges.map((p) => [p, A.bridges.some((q) => key(q) === key(p)) ? 1 : k]), ...A.bridges.filter((p) => !B.bridges.some((q) => key(q) === key(p))).map((p) => [p, 1 - k])];
   bridges.forEach(([[i, j], pres]) => {
     const di = donors[i], dj = donors[j]; if (!di || !dj) return;
-    const ni = atoms.findIndex((t, m) => m > 0 && t.sym === 'N' && t.site === i), nj = atoms.findIndex((t, m) => m > 0 && t.sym === 'N' && t.site === j);
+    const ni = atoms.findIndex((t) => t.lig === 'en' && t.site === i), nj = atoms.findIndex((t) => t.lig === 'en' && t.site === j);
     const c0 = atoms.length;
     enCarbons(di.d, dj.d, (di.r + dj.r) / 2, K).forEach((t) => atoms.push({ ...t, a: pres, ring: key([i, j]) }));
     if (ni > 0) bonds.push({ i: ni, j: c0, a: pres });
@@ -213,7 +213,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
     trigonal: { name: 'trigonal planar', dirs: tip(ring(3, 90, 100)) },
     tetrahedral: { name: 'tetrahedral', dirs: [[0, 1, 0], ...ring(3, 109.47, 80)] },
     square: { name: 'square planar', dirs: tip(ring(4, 90, 218)) },
-    tbp: { name: 'trigonal bipyramidal', dirs: [[0, 1, 0], [0, -1, 0], ...ring(3, 90, 80)] },
+    tbp: { name: 'trigonal bipyramidal', dirs: [[0, 1, 0], [0, -1, 0], ...ring(3, 90, 50)] },
     spy: { name: 'square pyramidal', dirs: [[0, 1, 0], ...ring(4, 104, 38)] },
     octahedral: { name: 'octahedral', dirs: OCT },
     pbp: { name: 'pentagonal bipyramid', dirs: [[0, 1, 0], [0, -1, 0], ...ring(5, 90, 100)] },
@@ -256,8 +256,8 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
   /* the ions shown for each coordination number, set in a row at one scale that fills the stage */
   const SETS = {};
   Object.entries({ 2: ['ag'], 3: ['cucn3'], 4: ['cucl4', 'zncn4', 'ptnh3cl2'], 5: ['cocl5', 'vocn4'], 6: ['coh2o6', 'cren3', 'ptcl6'], 7: ['zrf7'], 8: ['ref8', 'mocn8'] }).forEach(([cn, ids]) => {
-    const list = ids.map((id) => C[id]), gap = 0.8, wide = 1400 / UNIT - 0.8, tall = 2.3;
-    const s = Math.min(1.7, tall / Math.max(...list.map((c) => c.R)), wide / (list.reduce((a, c) => a + 2 * c.R, 0) + gap * (list.length - 1)));
+    const list = ids.map((id) => C[id]), gap = 0.8, wide = 1400 / UNIT - 0.8, tall = 2.2;
+    const s = Math.min(2.1, tall / Math.max(...list.map((c) => c.R)), wide / (list.reduce((a, c) => a + 2 * c.R, 0) + gap * (list.length - 1)));
     let x = -(list.reduce((a, c) => a + 2 * c.R * s, 0) + gap * s * (list.length - 1)) / 2;
     SETS[cn] = { cn: +cn, list: list.map((c) => { const o = { c, s, x: x + c.R * s }; x += 2 * c.R * s + gap * s; return o; }) };
   });

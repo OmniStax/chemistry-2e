@@ -155,15 +155,15 @@ const conc = (s) => hue('concentration', s);
       rect(ctx, l, t, r, b, alpha(col, 0.3), null);
       ctx.save(); ctx.strokeStyle = col; ctx.lineWidth = 2.5; ctx.strokeRect(l + 1.25, t + 1.25, Math.max(0.5, r - l - 2.5), BH - 2.5); ctx.restore();
       hits.push({ x: (l + r) / 2, y, r: Math.max(12, Math.min(30, (r - l) / 2)), name: `${NAMES[j]} in mixture ${i + 1}: ${sig(v)} M` });
-      const s = sig(v), w = F.measure(ctx, s, { size: 18, weight: 600 });
-      if (r - l >= w + 14) text(ctx, s, (l + r) / 2, y, PAL.ink, { size: 18, weight: 600, align: 'center' });
+      const s = sig(v), w = F.measure(ctx, s, { size: 17, weight: 600 });
+      if (r - l >= w + 8) text(ctx, s, (l + r) / 2, y, PAL.ink, { size: 17, weight: 600, align: 'center' });
       else if (v >= 0.0005) thin.push({ s, w, x: (l + r) / 2 });
     });
     /* a value its segment cannot hold stands over the bar on a leader, as the book sets 0.00175 and 0.00160 */
     thin.forEach((k) => {
-      const x = Math.max(k.x, right + 12 + k.w / 2, B.l + k.w / 2); right = x + k.w / 2;
+      const x = Math.max(k.x, right + 12 + k.w / 2, B.l + 8 + k.w / 2); right = x + k.w / 2;
       line(ctx, k.x, t - 2, x, t - 14, alpha(PAL.ink, 0.6), 1.5);
-      text(ctx, k.s, x, t - 26, PAL.ink, { size: 18, weight: 600, align: 'center' });
+      text(ctx, k.s, x, t - 26, PAL.ink, { size: 17, weight: 600, align: 'center' });
     });
     text(ctx, `Mixture ${i + 1}`, B.l - 22, y, on ? PAL.ink : PAL.muted, { size: 20, weight: on ? 600 : 400, align: 'right' });
   }
@@ -203,7 +203,10 @@ const conc = (s) => hue('concentration', s);
       dot(ctx, xa, y, cK, false, 10);
       dot(ctx, xn, y, cK, true, on ? 11 : 9);
       const s = qTxt(qn), w = F.measure(ctx, s, { size: 18, weight: on ? 600 : 400 });
-      text(ctx, s, Math.min(Math.max(xn, 30 + w / 2), 1388 - w / 2), y + 32, PAL.ink, { size: 18, weight: on ? 600 : 400, align: 'center' });
+      /* the value under its dot, kept to the dot's own side of the K_c line */
+      let lx = Math.min(Math.max(xn, 30 + w / 2), 1388 - w / 2);
+      if (Math.abs(lx - xk) < w / 2 + 10) lx = xk - dir * (w / 2 + 10);
+      text(ctx, s, lx, y + 32, PAL.ink, { size: 18, weight: on ? 600 : 400, align: 'center' });
       hits.push({ x: xa, y, r: 14, name: `mixture ${i + 1} before reaction: Q = ${qTxt(qa)}` });
       if (Math.abs(xn - xa) > 20) hits.push({ x: xn, y, r: 14, name: `mixture ${i + 1} now: Q = ${s}` });
     });

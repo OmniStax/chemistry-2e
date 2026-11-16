@@ -186,7 +186,7 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
     const g = F.axes(ctx, G, [0, TRUN], [0, yr.hi], { nx: 7, ny: yr.n, fx: () => '', fy: (q) => (q ? fmt(q, R.sig === 3 ? 2 : 3) : '0'), yl: 'concentration (M)', yc: C('concentration') });
     const gq = F.axes(ctx, GQ, [0, TRUN], [R.qr[0], R.qr[1]], { nx: 7, ny: R.qr[2], fx: () => '', fy: (q) => (q ? String(+q.toPrecision(2)) : '0'), xl: 'time' });
     line(ctx, g.X(TS), G.t, g.X(TS), GQ.b, alpha(PAL.ink, 0.4), 2, [10, 10]);
-    text(ctx, st.label, g.X(TS) + 10, G.t + 16, PAL.muted, { size: 17, bg: PAL.panel });
+    text(ctx, st.label, g.X(TS), (G.b + GQ.t) / 2 + 2, PAL.ink, { size: 18, align: 'center', bg: PAL.panel });
     /* Qc against Kc: the solid level is Kc, stepping only when the temperature changes; the dashed curve is Qc */
     const cK = C('equilibrium-constant'), tn = f * DT;
     line(ctx, gq.X(0), gq.Y(run.K1), gq.X(Math.min(tn, TS)), gq.Y(run.K1), cK, 3);
@@ -465,7 +465,7 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
     lab('condenser', 1204, 390);
     lab('refrigeration', 1112, 632);
     lab('NH_{3}(l) storage', 1204, 716);
-    F.legend(ctx, { l: 10, r: 300, t: 680, b: 812 }, [['N2', 'N_{2}'], ['H2', 'H_{2}'], ['NH3', 'NH_{3}'], ['H2O', 'cooling water']].map(([k, s]) => ({ s, draw: (c, x, y) => glyph(c, k, x + 22, y + 11) })), { corner: 'bl', panel: false });
+    F.legend(ctx, { l: 10, r: 300, t: 680, b: 812 }, [['N2', 'N_{2}'], ['H2', 'H_{2}'], ['NH3', 'NH_{3}'], ['H2O', 'cooling water']].map(([k, s]) => ({ s, draw: (c, x, y) => glyph(c, k, x, y) })), { corner: 'bl', panel: false });
     ctx.restore();
     hits = [...seen, ...PARTS.map((q) => ({ ...q, y: q.y + OY }))];
   }

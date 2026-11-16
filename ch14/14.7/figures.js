@@ -35,10 +35,20 @@ const clamp01 = (x) => Math.max(0, Math.min(1, x));
   };
   const KEYS = Object.keys(IND);
   const REF = { strong: 'strong-titration', weak: 'weak-titration' };
+  /* The volume slider is fine near the equivalence point, as a titration is run: its position u in [-1, 1] gives
+     V = 25 mL ± 25 mL × u², read to the buret's 0.01 mL within 1.5 mL of the equivalence point, to 0.05 mL within
+     6 mL and to 0.25 mL beyond, so every volume of Table 14.2 and of the two examples can be set and the color
+     change of an indicator can be crossed drop by drop. */
+  const Uof = (mL) => Math.sign(mL - VEQ) * Math.sqrt(Math.abs(mL - VEQ) / (mL < VEQ ? VEQ : 50 - VEQ));
+  const Vof = (u) => {
+    const raw = VEQ + (u < 0 ? -VEQ : 50 - VEQ) * u * u, far = Math.abs(raw - VEQ), g = far < 1.5 ? 0.01 : far < 6 ? 0.05 : 0.25;
+    return Math.min(50, Math.max(0, +(Math.round(raw / g) * g).toFixed(2)));
+  };
   const V = F.ctl(d.controls, {
-    label: '\\kV', cls: 'volume', min: 0, max: 50, step: 0.05, value: 25, unit: 'mL', dec: 2, detents: [0, 37.5],
+    label: '\\kV', cls: 'volume', min: -1, max: 1, step: 0.002, value: 0, unit: 'mL', fmt: (u) => `${Vof(u).toFixed(2)} mL`,
+    detents: [{ v: Uof(37.5), label: '37.50 mL' }], snap: true,
     aria: 'volume of 0.100 M NaOH added, in milliliters',
-    specials: [{ at: VEQ / 2, label: 'half-equivalence' }, { at: VEQ, label: 'equivalence' }],
+    specials: [{ at: Uof(VEQ / 2), label: 'half-equivalence' }, { at: 0, label: 'equivalence' }],
   });
   const PK = F.ctl(d.controls, {
     label: '\\kpKa', cls: 'equilibrium-constant', min: 3, max: 9, step: 0.01, value: 4.74, unit: '', dec: 2,
@@ -97,7 +107,7 @@ const clamp01 = (x) => Math.max(0, Math.min(1, x));
   const SY = (i) => 700 + 35 * i, SH = 27;            /* the three colour strips under the volume axis */
 
   function draw() {
-    const { ctx, H } = begin(d.c), v = V.v, pKa = PK.v, which = acid.value, ik = ind.value, ic = IND[ik];
+    const { ctx, H } = begin(d.c), v = Vof(V.v), pKa = PK.v, which = acid.value, ik = ind.value, ic = IND[ik];
     const cV = C('volume'), cP = C('concentration');
     const g = F.axes(ctx, G, [0, 50], [0, 14], { nx: 10, ny: 14, xl: 'volume of 0.100 M NaOH added (mL)', xc: cV, yl: 'pH', yc: cP });
     const { X, Y } = g;
@@ -146,7 +156,7 @@ const clamp01 = (x) => Math.max(0, Math.min(1, x));
       : `${cap(ic.name)} turns ${ic.words[2]} between $${vol(v0)}$ and $${vol(v1)}$, ${Math.abs(off) < 0.005 ? 'at' : `$${vol(Math.abs(off))}$ ${off < 0 ? 'before' : 'past'}`} the equivalence point.`;
     ro.set(tex, turns, { form: `${which}-${past}` });
 
-    const stage = v <= 1e-9 ? 'the initial state' : Math.abs(v - VEQ / 2) < 1e-9 ? 'halfway to the equivalence point' : v < VEQ - 1e-9 ? 'before the equivalence point' : past && v <= VEQ + 1e-9 ? 'the equivalence point' : 'past the equivalence point';
+    const stage = v <= 1e-9 ? 'the initial state' : Math.abs(v - VEQ / 2) < 1e-6 ? 'halfway to the equivalence point' : v < VEQ - 1e-9 ? 'before the equivalence point' : past && v <= VEQ + 1e-9 ? 'the equivalence point' : 'past the equivalence point';
     const lines = topline(ctx, `At ${to(v)} mL of NaOH, ${stage}, the ${sample} solution is at pH ${to(p)} and ${ic.name} is ${word}.`);
     const lab = F.labeller(ctx, H, { headline: lines });
 

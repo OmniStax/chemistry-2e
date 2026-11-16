@@ -133,7 +133,7 @@ const plain = (q) => sci(q).replace(/ \\times 10\^\{(-?\d+)\}/, (_, e) => ' × 1
     F.legend(ctx, { l: BX0, r: BX1, t: LY, b: BY - 26 }, [
       { s: A.a, draw: (cx, x, y) => atoms(cx, A.atoms, x, y, 0.7, 1, false, 0.5) },
       { s: `${A.b} + H_{3}O⁺`, draw: (cx, x, y) => {
-        cx.save(); cx.setLineDash([4, 4]); cx.strokeStyle = F.ref('base'); cx.lineWidth = 2.5; cx.beginPath(); cx.arc(x + 2, y + 2, 20, 0, 2 * Math.PI); cx.stroke(); cx.restore();
+        cx.save(); cx.setLineDash([4, 4]); cx.strokeStyle = alpha(F.ref('base'), ringA); cx.lineWidth = 2.5; cx.beginPath(); cx.arc(x + 2, y + 2, 20, 0, 2 * Math.PI); cx.stroke(); cx.restore();
         atoms(cx, A.atoms, x - 5, y - 2, 0.55, 1, true); atoms(cx, H3O, x + 10, y + 9, 0.45, 1, false);
       } },
     ], { corner: 'below', size: 22 });
@@ -292,7 +292,7 @@ const plain = (q) => sci(q).replace(/ \\times 10\^\{(-?\d+)\}/, (_, e) => ' × 1
     line(ctx, CX, YT - 44, CX, YB, alpha(PAL.ink, 0.3), 2);
     /* the band notes, each in the half of its band that holds no bars */
     const nt = top[0].y + 2.5 * ROW, nl = low[0].y + 2 * ROW;
-    const mid = PAIRS.filter((p) => p.grp === 'mid'), NX = 1076;
+    const mid = PAIRS.filter((p) => p.grp === 'mid'), NX = 1092;
     text(ctx, 'strong acids', NX, nt - 30, PAL.ink, { size: 22, weight: 600 });
     text(ctx, 'ionize completely in water;', NX, nt, PAL.ink, { size: 21 });
     text(ctx, 'their bases do not ionize', NX, nt + 28, PAL.ink, { size: 21 });

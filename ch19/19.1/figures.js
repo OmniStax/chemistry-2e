@@ -611,6 +611,7 @@ const trace = (ctx, pts, close) => { ctx.beginPath(); pts.forEach(([x, y], i) =>
     if (i >= 0 && i < 3 && Math.abs(py - rowY(i)) < RSTEP / 2 && KEYS[i] !== mat.value) mat.drive(KEYS[i]);
   });
   function draw() {
+    (window.__sc = window.__sc || []).push('SC0');
     const { ctx } = begin(d.c);
     const m = MAT[mat.value], T = Tk.v, Tc = m.Tc, below = T < Tc;
     const ct = C('temperature');
@@ -642,14 +643,15 @@ const trace = (ctx, pts, close) => { ctx.beginPath(); pts.forEach(([x, y], i) =>
     const r = R(Tc)(T);
     line(ctx, X(T), Y(r), X(T), rowY(2) + BAR, alpha(ct, 0.7), 2, [4, 8]);
     dot(ctx, X(T), Y(r), PAL.ink, true, 9);
+    window.__sc.push('SC1');
     const name = m.name, pl = m.plural, coolant = { 4: 'liquid helium', 77: 'liquid nitrogen' }[T];
     topline(ctx, coolant && below ? `Cooled by ${coolant} to ${T} K, $\\text{${name.replace(/_\{(\d)\}/g, '}_{$1}\\text{')}}$ ${pl ? 'conduct' : 'conducts'} with no resistance.`
       : coolant ? `Cooled by ${coolant} to ${T} K, $\\text{${name.replace(/_\{(\d)\}/g, '}_{$1}\\text{')}}$ still ${pl ? 'have' : 'has'} resistance.`
       : below ? `At ${T} K, $\\text{${name.replace(/_\{(\d)\}/g, '}_{$1}\\text{')}}$ ${pl ? 'conduct' : 'conducts'} with no resistance.`
       : `At ${T} K, $\\text{${name.replace(/_\{(\d)\}/g, '}_{$1}\\text{')}}$ ${pl ? 'have' : 'has'} resistance.`);
-    console.log('SCDRAW', d.readout.isConnected, d.readout.innerHTML.length);
+    window.__sc.push('SC2');
     tex(d.readout, `\\text{resistance} ${below ? '= 0' : '> 0'}\\ \\text{at}\\ \\kT = ${T}\\ \\text{K} ${below ? '<' : '\\geq'} ${kv('temperature', Tc + '\\ \\text{K}')}`);
   }
-  register(d.fig, { update: () => {}, draw });
+  register(d.fig, { update: () => {}, draw: () => { try { draw(); } catch (e) { window.__sc.push(String(e.stack).slice(0, 400)); throw e; } } });
 })();
 };

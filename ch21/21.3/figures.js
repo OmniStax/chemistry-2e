@@ -523,7 +523,7 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
     text(ctx, 'CO₂ from the air', 24, 114, ink, { size: 20, weight: 600 });
     hits.push({ x: 252, y: GY - 100, r: 80, name: 'the living tree: it takes in carbon-14 as fast as its carbon-14 decays' });
     log(ctx, 400, 150);
-    text(ctx, 'wood from the dead tree', 462, GY - 86, ink, { size: 20, weight: 600, align: 'center' });
+    text(ctx, 'wood from the dead tree', 452, GY - 86, ink, { size: 20, weight: 600, align: 'center' });
     hits.push({ x: 475, y: GY - 30, r: 60, name: 'wood from the dead tree: it takes in no more carbon' });
     const bx = { l: SX - 24, r: SX + (COLS - 1) * PITCH + 24, t: SY - 24, b: SY + 4 * PITCH + 24 };
     line(ctx, 562, GY - 60, bx.l, bx.t + 6, alpha(ink, 0.4), 2, [5, 6]); line(ctx, 562, GY, bx.l, bx.b - 6, alpha(ink, 0.4), 2, [5, 6]);
@@ -545,8 +545,7 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
     F.rich(ctx, [[grp(age, ',') + ' y', TC]], xa + 18, ya - 22, { size: 24 });
     text(ctx, 'alive: 13.6', (G.l + x0) / 2, g.Y(R0) - 22, PAL.muted, { size: 19, align: 'center' });
     const xh = g.X(5730), yh = g.Y(R0 / 2);
-    dot(ctx, xh, yh, PAL.muted, true, 5);
-    text(ctx, 'half-life, 5730 y: 6.80', xh - 12, yh + 20, PAL.muted, { size: 19, align: 'right' });
+    if (Math.abs(Rm - R0 / 2) > 1.6) { dot(ctx, xh, yh, PAL.muted, true, 5); text(ctx, 'one half-life, 5730 y: 6.80', xh + 14, yh - 16, PAL.muted, { size: 19 }); }
     hits.push({ x: xa, y: ya, r: 16, name: 'where the measured rate meets the curve' }, { x: xa, y: G.b, r: 14, name: 'the age of the sample, ' + grp(age, ',') + ' years' });
     tex(d.readout, '\\kt = -\\frac{1}{\\klamdecay}\\ln\\left(\\frac{\\krate_{t}}{\\krate_{0}}\\right) = -\\frac{1}{' + kv('rate-constant', '1.21\\times 10^{-4}\\;\\text{y}^{-1}') + '}\\ln\\left(\\frac{' + kv('rate', fsig(Rm, 3) + '\\;\\text{dis/min/g}') + '}{' + kv('rate', '13.6\\;\\text{dis/min/g}') + '}\\right) = ' + kv('time', grp(age, '{,}') + '\\;\\text{y}'));
   }

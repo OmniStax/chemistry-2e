@@ -504,7 +504,7 @@ const rng = (seed) => () => { seed = (seed * 16807) % 2147483647; return (seed -
     INSIDE.forEach((q, i) => {
       const x = q.u * sh.W * 0.94, y = q.f * sh.top(Math.abs(q.u)), jx = 2 * Math.sin(tt * 2.3 + i), jy = 2 * Math.cos(tt * 1.9 + i * 1.7);
       /* a burst cell's solute leaves through the tear and spreads into the solution */
-      const ga = GAP + (((i * 7) % N_IN) / N_IN - 0.5) * 1.5, gr = sh.W * (1.25 + 1.3 * (((i * 11) % N_IN) / N_IN)), gx = gr * Math.cos(ga), gy = gr * Math.sin(ga);
+      const ga = GAP + (((i * 7) % N_IN) / N_IN - 0.5) * 1.1, gr = sh.W * (1.2 + 1.0 * (((i * 11) % N_IN) / N_IN)), gx = gr * Math.cos(ga), gy = gr * Math.sin(ga);
       ctx.beginPath(); ctx.arc(x + (gx - x) * ke + jx, y + (gy - y) * ke + jy, 5, 0, TAU); ctx.fill();
     });
     ctx.strokeStyle = cell; ctx.lineWidth = 6; ctx.lineJoin = 'round'; ctx.lineCap = 'round'; ctx.beginPath();
@@ -582,7 +582,7 @@ const rng = (seed) => () => { seed = (seed * 16807) % 2147483647; return (seed -
       });
       /* the walls, then one another */
       ions.forEach((q) => {
-        const lead = q.mate >= 0 && !q.k ? ions[q.mate] : q, pad = 66;
+        const lead = q.mate >= 0 && !q.k ? ions[q.mate] : q, pad = 74;
         if (q.x < BOX.l + pad) { lead.x += BOX.l + pad - q.x; lead.th = Math.atan2(Math.sin(lead.th), Math.abs(Math.cos(lead.th))); }
         if (q.x > BOX.r - pad) { lead.x -= q.x - (BOX.r - pad); lead.th = Math.atan2(Math.sin(lead.th), -Math.abs(Math.cos(lead.th))); }
         if (q.y < BOX.t + pad) { lead.y += BOX.t + pad - q.y; lead.th = Math.atan2(Math.abs(Math.sin(lead.th)), Math.cos(lead.th)); }
@@ -653,7 +653,7 @@ const rng = (seed) => () => { seed = (seed * 16807) % 2147483647; return (seed -
     pos.forEach(([x, y, mate], i) => {
       const k = R.kinds[i];
       let dir = null, close = 0;
-      if (mate >= 0) { const m = pos[mate], dd = Math.hypot(m[0] - x, m[1] - y); dir = Math.atan2(m[1] - y, m[0] - x); close = Math.max(0, Math.min(1, (DMIN - dd) / (DMIN - TOUCH - 8))); if (k) { pairs++; ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 2.5; ctx.setLineDash([7, 7]); ctx.beginPath(); ctx.ellipse((x + m[0]) / 2, (y + m[1]) / 2, dd / 2 + 78, 74, dir, 0, TAU); ctx.stroke(); ctx.restore(); hits.push({ x: (x + m[0]) / 2, y: (y + m[1]) / 2, r: 30, name: 'an ion pair: K⁺ and Cl⁻ touching, one particle' }); } }
+      if (mate >= 0) { const m = pos[mate], dd = Math.hypot(m[0] - x, m[1] - y); dir = Math.atan2(m[1] - y, m[0] - x); close = Math.max(0, Math.min(1, (DMIN - dd) / (DMIN - TOUCH - 8))); if (k) { pairs++; ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 2.5; ctx.setLineDash([7, 7]); ctx.beginPath(); ctx.ellipse((x + m[0]) / 2, (y + m[1]) / 2, dd / 2 + 72, 68, dir, 0, TAU); ctx.stroke(); ctx.restore(); hits.push({ x: (x + m[0]) / 2, y: (y + m[1]) / 2, r: 30, name: 'an ion pair: K⁺ and Cl⁻ touching, one particle' }); } }
       shell(ctx, x, y, k, (k ? 0.3 : 1.1) * i + (k ? 0.25 : -0.3) * t, dir, close);
     });
     pos.forEach(([x, y], i) => { ion(ctx, x, y, R.kinds[i]); hits.push({ x, y, r: 30, name: R.kinds[i] ? 'a potassium ion, K⁺, the oxygen atoms of its water molecules toward it' : 'a chloride ion, Cl⁻, a hydrogen atom of each water molecule toward it' }); });

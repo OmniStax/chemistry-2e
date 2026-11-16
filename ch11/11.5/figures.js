@@ -263,13 +263,13 @@ function turn(p, yaw, pitch) {
 ===================================================================== */
 (function () {
   const OIL_AMBER = '#e6c46a';
-  const d = sim('sim-emulsion', 690);
+  const d = sim('sim-emulsion', 700);
   const CY = 368, RD = 150, TAIL = 112, NA = 28, XA = 500, XB = 1060, MID = (XA + XB) / 2;
   const rnd = seeded(5), Rn = (a, b) => a + rnd() * (b - a);
   /* each anion: its place on the drop, where it starts in the water (as an offset from the drop's centre) and which way its tail points there */
   const anions = [0, 1].flatMap((dr) => Array.from({ length: NA }, (_, i) => {
-    const th = (i / NA) * TAU + TAU / (2 * NA), a = th + Rn(-0.1, 0.1), r0 = RD + Rn(56, 100), sg = rnd() < 0.5 ? 1 : -1;
-    return { dr, th, sx: r0 * Math.cos(a), sy: r0 * Math.sin(a), a0: a + sg * (Math.PI / 2 + Rn(-0.6, 0.6)), ph: Rn(0, TAU), delay: 0.25 + 1.6 * (((i * 7) % NA) / NA) };
+    const th = (i / NA) * TAU + TAU / (2 * NA), a = th + Rn(-0.1, 0.1), r0 = RD + Rn(40, 80), sg = rnd() < 0.5 ? 1 : -1;
+    return { dr, th, sx: r0 * Math.cos(a), sy: r0 * Math.sin(a), a0: a + sg * (Math.PI / 2 + Rn(-0.1, 0.4)), ph: Rn(0, TAU), delay: 0.25 + 1.6 * (((i * 7) % NA) / NA) };
   }));
   const IONS = [[262, 128], [780, 122], [1298, 132], [258, 606], [1302, 600]].map(([x, y]) => ({ x, y, ph: Rn(0, TAU), w: [0.3, 1.9, 3.5, 5.1].map((a) => a + Rn(-0.2, 0.2)) }));
   const FREE = [[70, 170], [150, 300], [64, 430], [160, 560], [1350, 250], [1368, 400], [1340, 500], [690, 150], [880, 160], [700, 610], [860, 600], [400, 112], [1150, 110], [1120, 636]].map(([x, y]) => ({ x, y, a: Rn(0, TAU), ph: Rn(0, TAU) }));
@@ -491,7 +491,7 @@ function turn(p, yaw, pitch) {
     topline(ctx, v === 'off'
       ? 'With the point electrode uncharged, the soot rides out with the gases, whatever its charge.'
       : `With the point electrode ${v === 'neg' ? 'negative' : 'positive'}, the ${v === 'neg' ? 'positive' : 'negative'} soot particles go to it and the ${v === 'neg' ? 'negative' : 'positive'} ones to the plate electrode.`);
-    tex(d.readout, tot ? `\\text{share of the soot removed} = \\frac{${n.point} + ${n.plate}}{${n.point} + ${n.plate} + ${n.out}} = ${Math.round((100 * (n.point + n.plate)) / tot)}\\,\\%` : '\\text{share of the soot removed} = \\frac{\\text{on the two electrodes}}{\\text{all that came in}}', false, { values: false });
+    tex(d.readout, tot ? `\\text{share of the soot removed} = \\dfrac{${n.point} + ${n.plate}}{${n.point} + ${n.plate} + ${n.out}} = ${Math.round((100 * (n.point + n.plate)) / tot)}\\,\\%` : '\\text{share of the soot removed} = \\dfrac{\\text{on the two electrodes}}{\\text{all that came in}}', false, { values: false });
   }
   register(d.fig, { update: (dt) => { cy.step(dt, () => 1); const m = Math.ceil(Math.min(dt, 0.2) / 0.04); for (let i = 0; i < m; i++) step(Math.min(dt, 0.2) / m); }, draw });
 })();

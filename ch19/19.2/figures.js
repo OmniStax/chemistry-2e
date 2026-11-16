@@ -318,7 +318,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
 ===================================================================== */
 (function () {
   const d = sim('sim-cis-trans');
-  const HS = 520, DIST = 21.5, K = 0.62, Y0 = -0.5, X0 = 3.3;
+  const HS = 520, DIST = 21.5, K = 0.62, Y0 = -0.6, X0 = 3.3;
   const v = F.view3d(d.stage, { spin: 'idle', h: HS, dist: DIST, tilt: 0.3, pitch: [-0.5, 1.45] });
   v.look({});
   const UNIT = lens(v, HS, DIST);
@@ -386,7 +386,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
     keyRow(ctx, 110, [...elKey([...syms]),
       { s: `${M}–Cl bond dipole`, draw: (c, x, y) => { F.arrow(c, x - 20, y, x + 20, y, cD, 2.5); F.line(c, x - 13, y - 6, x - 13, y + 6, cD, 2.5); } },
       { s: 'their sum', draw: (c, x, y) => F.arrow(c, x - 20, y, x + 20, y, cD, 5) }]);
-    v.headline(`The same ${P.many} ligands surround ${P.el} in both isomers. The two chloride ligands are adjacent in <i>cis</i>-${P.name} and directly across from one another in <i>trans</i>-${P.name}.`);
+    v.headline(`The same ${P.many} ligands surround ${P.el} in both. The two chloride ligands are adjacent in the <i>cis</i> isomer and directly across from one another in the <i>trans</i> isomer.`);
     ro.set(`\\textit{cis}:\\ \\htmlClass{kv-angle}{\\angle\\text{Cl–${M}–Cl}} = 90^\\circ \\\\ \\textit{trans}:\\ \\htmlClass{kv-angle}{\\angle\\text{Cl–${M}–Cl}} = 180^\\circ`);
   }
   still(d, draw);

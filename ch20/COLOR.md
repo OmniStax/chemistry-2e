@@ -16,13 +16,14 @@ ball-and-stick and space-filling models already draw them.
 | a mass of an exercise (25.5 g, 0.2352 g, 1.000 × 10³ kg, 1000 kg, 13.0 g) | `mass` | 20.1, 20.2, 20.3 | `data-type` where a prompt or key states one |
 | a volume of methanol (4.593 × 10² L) | `volume` | 20.2 | in one key |
 | the density of methanol (0.7915 g/mL) | `density` | 20.2 | in one prompt |
+| the twist of a four-carbon chain about the bond between carbon atoms 2 and 3 (0° to 360°) | `angle` | 20.1 | the slider and readout of Figure 20.10 |
 | a percent of yield or ionization (100%, 1%, 37%, 3.3%) | none | — | ink, a rating |
 
 These stay in ink: the number of carbon atoms n and the C<sub>n</sub>H<sub>2n+2</sub>
 and C<sub>m</sub>(H<sub>2</sub>O)<sub>n</sub> subscripts, locants in names (2-methyl,
 3,4-dichloro), numbers of structural isomers, oxidation numbers (−4 to +4),
-bond angles as the book states them in prose (109.5°, 120°, 180°, which no
-figure varies; a figure that does vary one colours it `angle`), hybridizations,
+bond angles as the book states them in prose (109.5°, 120°, 180°; the twist
+Figure 20.10 varies is `angle`), hybridizations,
 partial charges δ+ and δ− (as 7.2 writes them), recycling codes, and counts
 of molecules (10 million, 10<sup>60</sup>, 350 volatile molecules).
 
@@ -40,11 +41,18 @@ takes the palette's `other` fallback through `F.el('R')` with its label,
 never a type hue. An ion keeps its element colour and carries its charge as
 a mark.
 
+The orbitals of Figure 20.14 are drawn in the book's orbital colours of 8.3,
+the sp² hybrids in `F.cat(2)` and the two phases of a p orbital in `F.cat(0)`
+and `F.cat(1)`, named in the figure's key; the p lobes of Figures 20.10 and
+20.11 are in ink.
+
 The book's red marking of a functional group, a substituent or the atoms
 that change in a reaction, and the purple and green hydrogens of propane and
 2-methylpropane, are emphasis, not facts: a redrawn figure marks them by
 outline, weight or a highlight in ink, or as referents where the text names
-them ("the two purple hydrogen atoms"), never in a type hue. The blue-to-red
+them ("the two purple hydrogen atoms"), never in a type hue. Figure 20.20
+follows the atoms that leave as water, so they and the water they form are
+the one coloured thing in it, in `F.cat(0)` with a key. The blue-to-red
 arrow beside the distillation column (small molecules to large) is the
 book's gradient of volatility, drawn on the `temperature` hue's scale when a
 figure shows the column's temperatures, never as a warm-to-cold tint on the
@@ -74,6 +82,7 @@ every figure stays legible from its labels.
 ## As built
 
 - `temperature`: 20.1 Table 20.1's melting and boiling points and its footnote's 0 °C, the 425 °C of the furnace in Figure 20.6's caption (the book's image, kept), the curves and readout of the carbon-count Sim; 20.2 the 140 °C of the ether synthesis; 20.4 the –196 °C of liquid nitrogen. "Melting point" and "boiling point" are marked where they name the temperature.
+- `angle`: 20.1, the twist slider and readout of Figure 20.10.
 - `pressure`: 20.1, the footnote's 1 atm. `mass`: 20.1's exercises, and 20.2's 1000 kg of MTBE. `volume` and `density`: 20.2's methanol item. 20.3 binds no type, since its items with masses are left out unkeyed; "vapor pressure" is its one typed word.
-- Conventions: `F.el` for every atom drawn as a ball, in the five figures that draw them (20.1's molecule models, carbon-count chain and benzene ring; 20.3's carbonyl group and oxidation ladder); R groups through `F.el('R')`. The line structures, the oxygen-chain names and the peptides are drawn in ink. The book's red, purple and green emphasis is drawn as weight or an ink ring.
+- Conventions: `F.el` for every atom drawn as a ball, in the six figures that draw them (20.1's molecule models, twisted chain, carbon-count chain and benzene ring; 20.3's carbonyl group and oxidation ladder); R groups through `F.el('R')`. Figure 20.14's orbitals are in `F.cat(0)` to `F.cat(2)`; the p lobes of Figures 20.10 and 20.11 are in ink. The line structures and the oxygen-chain structures and names are drawn in ink, the functional group under a soft ink highlight. The peptides of Figure 20.20 are in ink with the peptide bond a heavier stroke, and the atoms that leave as water in `F.cat(0)`.
 - Referents: none in any section. The propane image is kept as printed, its purple and green hydrogen atoms named by the text.

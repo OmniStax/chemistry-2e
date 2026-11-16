@@ -21,6 +21,7 @@ the colour a complex shows is drawn as the colour it is.
 | a furnace height (5–75 ft, 80–100 feet) | `length` | 19.1 | `data-type` where a figure or the prose states one |
 | a pressure (760 torr) | `pressure` | 19.1 | in one exercise |
 | a bond angle (109.5°, 90°, 180°), the arcs of the geometry and cis–trans Sims | `angle` | 19.2 | `data-type` on the three angles the text states, as 7.6 marks them; added by the build where the plan bound nothing |
+| the M–Cl bond dipoles of the cis–trans Sim and their sum | `dipole-moment` | 19.2 | arrows in the hue with the crossed tail, as 7.6 draws bond moments; no value is stated; added by the build |
 
 These stay in ink: oxidation states and numbers, charges, coordination
 numbers, the number of d electrons and of unpaired electrons, the
@@ -59,17 +60,19 @@ anhydrous CoCl₂; the red of heme and green of chlorophyll; the glow of
 molten iron. The colour wheel and the absorbed and transmitted light of
 Figure 19.37 are `"spectrum"`, light in its own colour. A d orbital's two
 phases, the two signs of ψ, are drawn in `F.cat(0)` and `F.cat(1)`, never in
-type hues, as 6.3 draws its orbitals, and named in the figure's key.
+type hues, as 6.3 draws its orbitals, and named in the figure's key. The ring
+round an atom of the mirror image that lands on nothing, in 19.2's
+optical-isomer Sim, is `F.cat(0)`, named in its key.
 
 ## Referents
 
-As built (chapter pass, 2026-10-05): none. 19.1's series and metals, 19.2's isomers and 19.3's complexes are told apart by their labels and by a choice, one at a time; no figure sets two of them side by side in their own colours, so the referents planned for Example 19.2's ladder and Figure 19.35's two iron complexes were not needed.
+As built (chapter pass, 2026-10-05): none. 19.1's series, metals and superconductors, 19.2's complexes and isomers and 19.3's complexes are told apart by their labels and their places; where a figure sets two or three side by side (the shapes of one coordination number, a cis and a trans isomer, an ion and its mirror image, the three superconductors' bars) each keeps `F.el` or ink and none takes a colour of its own, so the referents planned for Example 19.2's ladder and Figure 19.35's two iron complexes were not needed.
 
 ## As built
 
-- 19.1: the blast furnace draws `temperature` on its zone scale and `length` on its heights, with the glow of molten iron and of molten slag as facts and `F.el` for Fe, C, Ca and O; the superconductor Sim draws `temperature`; the series and oxidation-state Sims are ink with a neutral highlight. Resistance stays ink.
-- 19.2: `angle` on the geometry and cis–trans Sims' arcs; violet cis- and green trans-[Co(NH₃)₄Cl₂]⁺ as facts; `F.el` for every atom, a generic M through its fallback.
-- 19.3: `energy` for Δ<sub>oct</sub>, Δ<sub>tet</sub>, P and the splitting diagrams; the colour wheel draws `wavelength`, `frequency`, `velocity` and `energy` in its readout, with the wheel, the light and the solution as `"spectrum"`; M and L through `F.el`'s fallback; the orbital's two signs in `F.cat(0)` and `F.cat(1)`.
+- 19.1: the blast furnace draws `temperature` on its zone scale and `length` on its heights, with roasted ore, coke, limestone, solid iron, molten iron, molten slag and the glow of the bed as facts and `F.el` for the C, O and N of the gas molecules (O₂, CO, CO₂, N₂); the superconductor Sim draws `temperature` on its slider, its axis and its readout; the series and oxidation-state Sims are ink with a neutral highlight. Resistance stays ink.
+- 19.2: `angle` on the geometry and cis–trans Sims' arcs; `dipole-moment` on the cis–trans Sim's bond dipoles and their sum; violet cis and green trans for the cobalt ions as facts; `F.el` for every atom, a generic M through its fallback; `F.cat(0)` for the ring round an unmatched atom in the optical-isomer Sim.
+- 19.3: `energy` for Δ<sub>oct</sub>, Δ<sub>tet</sub>, P, the Δ arrows and the energy axes; the d-orbital Sim stands all five orbitals at their energies, each with its two signs in `F.cat(0)` and `F.cat(1)`, and the ligands L through `F.el`'s fallback; the colour wheel draws `wavelength` on its slider and `wavelength`, `frequency`, `velocity` and `energy` in its readout, with the wheel, the rays, the photon and the solution as `"spectrum"`, and the band absorbed (60° of the wheel either side of λ) and the band across from it marked in ink.
 
 The frame of a figure and its labels stay in ink, and with colour coding off
 every figure stays legible from its labels.

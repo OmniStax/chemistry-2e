@@ -212,7 +212,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
   const GEOM = {
     linear: { name: 'linear', dirs: [[-1, 0, 0], [1, 0, 0]] },
     trigonal: { name: 'trigonal planar', dirs: tip(ring(3, 90, 100)) },
-    tetrahedral: { name: 'tetrahedral', dirs: [[0, 1, 0], ...ring(3, 109.47, 80)] },
+    tetrahedral: { name: 'tetrahedral', dirs: [[0, 1, 0], ...ring(3, 109.47, 65)] },
     square: { name: 'square planar', dirs: tip(ring(4, 90, 218)) },
     tbp: { name: 'trigonal bipyramidal', dirs: [[0, 1, 0], [0, -1, 0], ...ring(3, 90, 50)] },
     spy: { name: 'square pyramidal', dirs: [[0, 1, 0], ...ring(4, 104, 38)] },
@@ -425,7 +425,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
   const frame = (x, y, lean = 0) => { const X = V.unit(x), Yv = V.unit(y), Z = V.cross(X, Yv); return (p) => rotX([V.dot(p, X), V.dot(p, Yv), V.dot(p, Z)], lean); };
   const F3 = frame([0, 1, -1], [-1, 1, 1]), FT = frame([1, 0, 1], [0, 1, 0], 0.3 - TILT);
   const CPX = {
-    en3: { metal: 'M', name: '[M(en)₃]ⁿ⁺', sites: [0, 1, 2, 3, 4, 5].map((i) => site(i, 'en', 2.1)), bridges: [[0, 2], [1, 4], [3, 5]], fr: F3 },
+    en3: { metal: 'M', name: '[M(en)₃]<sup>n+</sup>', flat: '[M(en)₃]ⁿ⁺', sites: [0, 1, 2, 3, 4, 5].map((i) => site(i, 'en', 2.1)), bridges: [[0, 2], [1, 4], [3, 5]], fr: F3 },
     cis: { metal: 'Co', name: '<i>cis</i>-[Co(en)₂Cl₂]⁺', plain: ['cis', '[Co(en)₂Cl₂]⁺'], sites: [0, 1, 2, 3, 4, 5].map((i) => (i === 0 || i === 2 ? site(i, 'Cl', 2.3) : site(i, 'en', 2.0))), bridges: [[1, 4], [3, 5]], fr: F3 },
     trans: { metal: 'Co', name: '<i>trans</i>-[Co(en)₂Cl₂]⁺', plain: ['trans', '[Co(en)₂Cl₂]⁺'], sites: [0, 1, 2, 3, 4, 5].map((i) => (i < 2 ? site(i, 'Cl', 2.3) : site(i, 'en', 2.0))), bridges: [[2, 4], [3, 5]], fr: FT },
   };
@@ -451,7 +451,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
     });
     Object.assign(c, { S, best, total: orig.length });
   });
-  const cx = F.select(d.controls, { label: '\\text{complex}', aria: 'the complex', options: [{ value: 'en3', label: '[M(en)₃]ⁿ⁺' }, { value: 'cis', label: 'cis-[Co(en)₂Cl₂]⁺' }, { value: 'trans', label: 'trans-[Co(en)₂Cl₂]⁺' }], value: 'en3' });
+  const cx = F.select(d.controls, { label: '\\text{complex}', aria: 'the complex', options: [{ value: 'en3', label: '[M(en)₃]$^{n+}$' }, { value: 'cis', label: 'cis-[Co(en)₂Cl₂]⁺' }, { value: 'trans', label: 'trans-[Co(en)₂Cl₂]⁺' }], value: 'en3' });
   const arr = F.choice(d.controls, { label: '\\text{arrangement}', aria: 'the arrangement', options: [{ value: 'mirror', label: 'mirror images' }, { value: 'over', label: 'laid over' }], value: 'mirror', ms: 2400 });
   const ro = F.readout(d);
   const NAMES = { N: 'nitrogen of an NH₂ group', C: 'carbon of a CH₂ group' };
@@ -483,7 +483,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
     }
     sync();
     const { ctx } = F.begin(strip), over = arr.value === 'over', miss = B.best.miss;
-    const nameAt = (c, X, y, a0) => F.faded(ctx, a0, [0, 0], () => (c.plain ? prefixed(ctx, c.plain[0], c.plain[1], X, y) : text(ctx, c.name, X, y, PAL.ink, { size: 25, weight: 600, align: 'center' })));
+    const nameAt = (c, X, y, a0) => F.faded(ctx, a0, [0, 0], () => (c.plain ? prefixed(ctx, c.plain[0], c.plain[1], X, y) : text(ctx, c.flat, X, y, PAL.ink, { size: 25, weight: 600, align: 'center' })));
     const xL = 700 - D * (1 - slide) * UNIT, xR = 700 + D * (1 - slide) * UNIT;
     [[A, 1 - 2 * k], [B, A === B ? 1 : 2 * k - 1]].forEach(([c, a0]) => { if (a0 > 0.01 && (c === B || A !== B)) nameAt(c, xL, 20, a0 * apart); });
     F.faded(ctx, apart, [0, 0], () => text(ctx, 'its mirror image', xR, 20, PAL.ink, { size: 25, weight: 600, align: 'center' }));

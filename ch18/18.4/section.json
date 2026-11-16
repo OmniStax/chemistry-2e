@@ -21,6 +21,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-fable-5-2",
+    "effort": "high"
    }
   ]
  },
@@ -42,6 +46,10 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: a compound beside each state, each group’s window of states shaded"
     }
    ]
   },
@@ -74,6 +82,10 @@
     {
      "model": "claude-opus-5-5",
      "part": "view buttons gone, sheets laid flat, diamond tetrahedron picked out"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt larger: one atom and its neighbours picked out, tube rolled lengthwise"
     }
    ]
   },
@@ -128,6 +140,10 @@
     {
      "model": "claude-opus-5-5",
      "part": "view buttons and spin gone, enlarged, readout one line, caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "five molecules fill the stage, new bonds in ink, labels, long lens"
     }
    ]
   },
@@ -159,6 +175,10 @@
     {
      "model": "claude-opus-5-5",
      "part": "tangle keeps its bond lengths, view buttons gone, caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt flat: 64 atoms, bonds keep their length, tipped tube shows the pour"
     }
    ]
   }

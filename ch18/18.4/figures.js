@@ -11,6 +11,8 @@ const dist3 = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2]);
 const lerp3 = (a, b, k) => [a[0] + (b[0] - a[0]) * k, a[1] + (b[1] - a[1]) * k, a[2] + (b[2] - a[2]) * k];
 const clamp01 = (x) => Math.min(1, Math.max(0, x));
 const smooth = (a, b, x) => { const t = clamp01((x - a) / (b - a)); return t * t * (3 - 2 * t); };
+/* a long lens, so the near atoms of a scene are not drawn larger than the far ones */
+const lens = (v, fov) => { if (v.camera && 'fov' in v.camera) { v.camera.fov = fov; v.camera.updateProjectionMatrix(); } };
 const palSig = (els, more = []) => [PAL.ink, PAL.panel, PAL.muted, ...els.map((e) => F.el(e)), ...more].join('|');
 
 /* =====================================================================
@@ -84,9 +86,9 @@ const palSig = (els, more = []) => [PAL.ink, PAL.panel, PAL.muted, ...els.map((e
 ===================================================================== */
 (function () {
   const d = sim('sim-carbon');
-  const v = F.view3d(d.stage, { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.34, h: 600, dist: 6.1 });
+  const v = F.view3d(d.stage, { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.34, h: 600, dist: 11.6 }); lens(v, 16);
   const grp = v.part(0); if (grp) grp.position.y = -0.18;
-  const A = 0.3, NC = 8, NR = 10, PER = R3 * A, Wd = NC * PER, RT = Wd / TAU, GAP = 0.71, RA = 0.075, RB = 0.028, RAH = 0.125, RBH = 0.055;
+  const A = 0.3, NC = 8, NR = 10, PER = R3 * A, Wd = NC * PER, RT = Wd / TAU, GAP = 0.71, RA = 0.07, RB = 0.028, RAH = 0.13, RBH = 0.06;
   /* the sheet in its own plane: w runs round the tube (period Wd), u along it */
   const flat = [];
   for (let j = 0; j < NR; j++) for (let i = 0; i < NC; i++) { const w = ((i + j / 2) * PER) % Wd; flat.push([w, j * 1.5 * A], [w, j * 1.5 * A + A]); }
@@ -162,8 +164,8 @@ const palSig = (els, more = []) => [PAL.ink, PAL.panel, PAL.muted, ...els.map((e
     bb.forEach(([i, j]) => bond(ballG, bp[i], bp[j], i === hubB || j === hubB, NAME.sp2));
   }
   const HEAD = {
-    diamond: 'In diamond each carbon atom bonds to four others at the corners of a tetrahedron, and the network runs on in every direction.',
-    graphite: 'In graphite each carbon atom bonds to three others in a flat layer, and only weak London forces hold the layers together.',
+    diamond: 'In diamond each carbon atom bonds to four others at the corners of a tetrahedron.',
+    graphite: 'Graphite is flat layers, each atom bonded to three others, held together by weak London forces.',
     graphene: 'Graphene is a single layer of graphite, one atom thick.',
     tube: 'A carbon nanotube is the same layer of six-membered rings rolled into a tube.',
     ball: 'C₆₀, buckminsterfullerene, is a closed cage of 60 carbon atoms, each bonded to three others.',
@@ -176,7 +178,7 @@ const palSig = (els, more = []) => [PAL.ink, PAL.panel, PAL.muted, ...els.map((e
     ball: '\\text{3 }\\sigma\\text{ bonds per atom, 60 atoms in an icosahedral molecule}',
   };
   /* each form is scaled to fill the stage */
-  const SC = { diamond: 1.0, graphite: 0.95, graphene: 1.15, tube: 1.3, ball: 1.05 };
+  const SC = { diamond: 1.15, graphite: 0.95, graphene: 1.05, tube: 0.95, ball: 1.1 };
   function draw() {
     build(); if (!grp || !sheet) return;
     const kStack = FORM.mix((f) => (f === 'graphite' ? 1 : 0)), kRoll = FORM.mix((f) => (f === 'tube' ? 1 : 0));
@@ -208,12 +210,12 @@ const palSig = (els, more = []) => [PAL.ink, PAL.panel, PAL.muted, ...els.map((e
 ===================================================================== */
 (function () {
   const d = sim('fig-graphite-orbitals');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [-1.3, 1.3], tilt: 0.52, h: 600, dist: 8.4 });
-  v.setView(-0.32, 0.52);
-  const grp = v.part(0); if (grp) grp.position.y = -0.25;
-  /* three rings by two of the honeycomb, bond length 1: 22 atoms */
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [-1.3, 1.3], tilt: 0.85, h: 600, dist: 23.5 }); lens(v, 16);
+  v.setView(-0.3, 0.85);
+  const grp = v.part(0); if (grp) grp.position.y = -0.3;
+  /* four rings by two of the honeycomb, bond length 1: 28 atoms */
   const at = [];
-  for (let j = 0; j < 2; j++) for (let i = 0; i < 3; i++) for (let k = 0; k < 6; k++) {
+  for (let j = 0; j < 2; j++) for (let i = 0; i < 4; i++) for (let k = 0; k < 6; k++) {
     const p = [i * R3 + (j * R3) / 2 + Math.sin((k * Math.PI) / 3), j * 1.5 + Math.cos((k * Math.PI) / 3)];
     if (!at.some((q) => Math.hypot(q[0] - p[0], q[1] - p[1]) < 1e-6)) at.push(p);
   }
@@ -236,7 +238,7 @@ const palSig = (els, more = []) => [PAL.ink, PAL.panel, PAL.muted, ...els.map((e
   let M1 = forms[0], M2 = forms[1], shared = Infinity;
   forms.forEach((a, x) => forms.forEach((b, y) => { if (y <= x) return; const s = a.filter((n) => b.includes(n)).length; if (s < shared) { shared = s; M1 = a; M2 = b; } }));
   const FORM = F.choice(d.controls, { label: '\\pi\\text{ bonding}', options: [{ value: 'a', label: 'resonance form 1' }, { value: 'b', label: 'resonance form 2' }, { value: 'hybrid', label: 'resonance hybrid' }], value: 'a', aria: 'how the p orbitals are paired' });
-  const HP = 0.56, RP = 0.2;
+  const HP = 0.56, RP = 0.34;
   let sig = '', gA, gB, gH;
   function build() {
     const up = F.cat(0), down = F.cat(1);
@@ -245,15 +247,17 @@ const palSig = (els, more = []) => [PAL.ink, PAL.panel, PAL.muted, ...els.map((e
     gA = new T3.Group(); gB = new T3.Group(); gH = new T3.Group(); grp.add(gA, gB, gH);
     P.forEach((p) => {
       v.pickable(F.mesh.sphere(grp, p, 0.17, F.el('C')), 'a carbon atom, sp² hybridized, bonded to three others in the layer');
-      v.pickable(F.mesh.lobe(grp, p, [0, 1, 0], 0.95, up), 'one lobe of an unhybridized p orbital, above the layer');
-      v.pickable(F.mesh.lobe(grp, p, [0, -1, 0], 0.95, down), 'the other lobe of the p orbital, below the layer');
+      [[1, up, 'one lobe of an unhybridized p orbital, above the layer'], [-1, down, 'the other lobe of the p orbital, below the layer']].forEach(([y, c, name]) => {
+        const m = v.pickable(F.mesh.lobe(grp, p, [0, y, 0], 0.95, c), name); m.material.opacity = 0.4; m.material.depthWrite = false;
+      });
     });
     bonds.forEach(([i, j]) => v.pickable(F.mesh.stick(grp, P[i], P[j], 0.05, PAL.muted), 'a σ bond between two sp² hybrid orbitals'));
     stubs.forEach(([a, b]) => v.pickable(F.mesh.stick(grp, a, b, 0.05, PAL.muted, { transparent: true, opacity: 0.45 }), 'a σ bond to the next atom of the layer'));
     /* the band of a π bond over the bond i–j, at height ±HP, and the double bond's second line in the plane */
     const band = (g, i, j, r, name) => [[HP, up], [-HP, down]].forEach(([y, c]) => {
-      const a = [P[i][0], y, P[i][2]], b = [P[j][0], y, P[j][2]], m = { transparent: true, opacity: 0.55, depthWrite: false };
-      v.pickable(F.mesh.stick(g, a, b, r, c, m), name);
+      const m = F.mesh.sphere(g, [(P[i][0] + P[j][0]) / 2, y, (P[i][2] + P[j][2]) / 2], 1, c, { transparent: true, opacity: 0.62, depthWrite: false });
+      m.scale.set(0.8, r, r * 0.85); m.rotation.y = -Math.atan2(P[j][2] - P[i][2], P[j][0] - P[i][0]);
+      v.pickable(m, name);
     });
     const second = (g, i, j) => {
       const dx = P[j][0] - P[i][0], dz = P[j][2] - P[i][2], o = [-dz * 0.17, 0, dx * 0.17], s = 0.16;
@@ -262,7 +266,7 @@ const palSig = (els, more = []) => [PAL.ink, PAL.panel, PAL.muted, ...els.map((e
     };
     M1.forEach((n) => { band(gA, ...bonds[n], RP, 'a π bond: two p orbitals overlapping side by side'); second(gA, ...bonds[n]); });
     M2.forEach((n) => { band(gB, ...bonds[n], RP, 'a π bond: two p orbitals overlapping side by side'); second(gB, ...bonds[n]); });
-    bonds.forEach(([i, j]) => band(gH, i, j, RP * 0.8, 'π electrons shared by the whole layer'));
+    bonds.forEach(([i, j]) => band(gH, i, j, RP * 0.7, 'π electrons shared by the whole layer'));
     v.label('p orbital', [P[0][0], 1.02, P[0][2]], grp, 6);
   }
   const HEAD = {
@@ -297,15 +301,15 @@ const palSig = (els, more = []) => [PAL.ink, PAL.panel, PAL.muted, ...els.map((e
 ===================================================================== */
 (function () {
   const d = sim('sim-phosphorus');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [-1.0, 1.0], yaw: [-0.9, 0.9], tilt: 0.3, h: 400, dist: 4.25 });
-  const grp = v.part(0); if (grp) grp.position.y = -0.16;
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [-1.0, 1.0], yaw: [-0.9, 0.9], tilt: 0.36, h: 340, dist: 9.6 }); lens(v, 12); v.setView(0.14, 0.36);
+  const grp = v.part(0); if (grp) grp.position.y = -0.1;
   const E = 0.6, H = E * Math.sqrt(2 / 3), OPEN = 1.35, SP = OPEN * E + E, N = 5;
   /* a tetrahedron, base in the xz plane, a and b at the front, apex up; s spreads a and b to OPEN × E */
   const tet = (s) => { const half = (E / 2) * (1 + (OPEN - 1) * s); return [[-half, -H / 3, E / (2 * R3)], [half, -H / 3, E / (2 * R3)], [0, -H / 3, -E / R3], [0, (2 * H) / 3, 0]]; };
   const EDGES = [[0, 2], [0, 3], [1, 2], [1, 3], [2, 3]];
   const T3 = window.THREE;
   /* the molecules of the white form: where each floats, and how it is turned */
-  const WHITE = [[-2.85, 0.3, 0.2, 0.9, 0.4, 0.2], [-1.45, -0.42, -0.3, 2.1, 1.3, 0.5], [0, 0.34, 0.25, 0.3, 2.4, 1.1], [1.45, -0.4, -0.2, 1.5, 0.7, 2.6], [2.85, 0.28, 0.2, 2.6, 0.2, 1.7]];
+  const WHITE = [[-2.85, 0.16, 0.2, 0.9, 0.4, 0.2], [-1.45, -0.3, -0.3, 2.1, 1.3, 0.5], [0, 0.18, 0.25, 0.3, 2.4, 1.1], [1.45, -0.28, -0.2, 1.5, 0.7, 2.6], [2.85, 0.14, 0.2, 2.6, 0.2, 1.7]];
   const qW = T3 ? WHITE.map(([, , , a, b, c]) => new T3.Quaternion().setFromEuler(new T3.Euler(a, b, c))) : [];
   const FORM = F.choice(d.controls, { label: '\\text{form}', options: [{ value: 'white', label: 'white phosphorus' }, { value: 'red', label: 'red phosphorus' }], value: 'white', aria: 'the allotrope of phosphorus' });
   let sig = '', atoms = [], sticks = [], ab = [], links = [], stubs = [], gOpen, gLink, labW, labR;
@@ -320,7 +324,7 @@ const palSig = (els, more = []) => [PAL.ink, PAL.panel, PAL.muted, ...els.map((e
       if (m + 1 < N) links.push(v.pickable(F.mesh.stick(gLink, [0, 0, 0], [1, 0, 0], 0.065, PAL.ink), 'a new P–P single bond joining two tetrahedra'));
     }
     stubs = [0, 1].map(() => v.pickable(F.mesh.stick(gLink, [0, 0, 0], [1, 0, 0], 0.065, PAL.ink), 'a P–P bond to the next tetrahedron of the network'));
-    labW = v.label('a P₄ molecule', [0, 0, 0], grp, 8); labR = v.label('new P–P bond', [0, 0, 0], grp, 8);
+    labW = v.label('a P₄ molecule', [0, 0, 0], grp, 8); labR = v.label('new P–P bond', [0, 0, 0], grp, -40);
   }
   function draw() {
     build(); if (!grp || !T3 || !atoms.length) return;
@@ -340,7 +344,7 @@ const palSig = (els, more = []) => [PAL.ink, PAL.panel, PAL.muted, ...els.map((e
     F.mesh.setStick(stubs[1], pos[N - 1][1], [pos[N - 1][1][0] + E * 0.55, pos[N - 1][1][1], pos[N - 1][1][2]]);
     F.fade3(gOpen, 1 - smooth(0.1, 0.45, k));
     F.fade3(gLink, smooth(0.8, 1, k));
-    const mid = (N - 1) / 2, top = pos[mid].reduce((a, b) => (b[1] > a[1] ? b : a));
+    const mid = (N - 1) / 2, top = pos[1].reduce((a, b) => (b[1] > a[1] ? b : a));
     v.move(labW, [top[0], top[1] + 0.2, top[2]]); v.move(labR, lerp3(pos[mid][1], pos[mid + 1][0], 0.5));
     labW.style.opacity = String(1 - smooth(0, 0.3, k)); labR.style.opacity = String(smooth(0.85, 1, k));
     v.headline(FORM.value === 'white' ? 'White phosphorus is separate P₄ molecules, each a tetrahedron of four atoms.' : 'In red phosphorus one bond of each tetrahedron has opened, and new P–P bonds join the tetrahedra.');
@@ -390,18 +394,18 @@ const palSig = (els, more = []) => [PAL.ink, PAL.panel, PAL.muted, ...els.map((e
     { f0: 1.5708, a1: 1.1, p1: 10, q1: 0.3, a2: 0, p2: 5, q2: 0, c: [880, 325] },
   ];
   const TANGLED = [
-    { f0: 0.498, a1: 0.924, p1: 14.58, q1: 4.168, a2: 0.211, p2: 6.082, q2: 1.292, c: [407, 372] },
-    { f0: -0.087, a1: 0.952, p1: 13.671, q1: 2.376, a2: 0.205, p2: 4.592, q2: 5.086, c: [457, 279] },
-    { f0: 1.469, a1: 1.502, p1: 10.284, q1: 0.958, a2: 0.082, p2: 4.172, q2: 0.595, c: [565, 343] },
+    { f0: -0.488, a1: 1.368, p1: 16.015, q1: -1.492, a2: 0.2, p2: 5.287, q2: 0.362, c: [513, 358] },
+    { f0: -0.033, a1: 1.071, p1: 9.463, q1: 2.028, a2: 0.224, p2: 4.624, q2: -0.044, c: [457, 262] },
+    { f0: 2.457, a1: 1.066, p1: 8.726, q1: 0.283, a2: 0.193, p2: 6.687, q2: -0.711, c: [542, 382] },
   ];
+  const mixp = (a, b, k) => { const o = {}; Object.keys(a).forEach((q) => { o[q] = q === 'c' ? [a.c[0] + (b.c[0] - a.c[0]) * k, a.c[1] + (b.c[1] - a.c[1]) * k] : a[q] + (b[q] - a[q]) * k; }); return o; };
   const dC = CHAIN.map((segs, c) => dirs(8 * segs.length, APART[c])), pC = dC.map((ds, c) => walk(ds, APART[c].c));
-  const dD = CHAIN.map((segs, c) => dirs(8 * segs.length, TANGLED[c]));
   /* each S8 unit: a ring at home, an S8 chain at home, and its stretch of the long chain */
   const HOME = [[160, 205], [400, 205], [640, 205], [160, 445], [400, 445], [640, 445], [880, 228], [880, 428]];
-  const TILT = 0.55;
+  const TILT = [0.45, 0.62, 0.52, 0.6, 0.48, 0.66, 0.5, 0.6];
   const SEG = [];
   CHAIN.forEach((segs, c) => segs.forEach((g, k) => {
-    const axis = APART[c].f0 + TILT;
+    const axis = APART[c].f0 + TILT[g];
     SEG[g] = {
       chain: c, k,
       ring: Array.from({ length: 7 }, (_, j) => axis + ((j - 3) * Math.PI) / 4),
@@ -419,7 +423,7 @@ const palSig = (els, more = []) => [PAL.ink, PAL.panel, PAL.muted, ...els.map((e
     const kt = kTangle(T);
     return CHAIN.map((segs, c) => {
       let pts;
-      if (kt > 0) pts = walk(mix(dC[c], dD[c], kt), mix(APART[c].c, TANGLED[c].c, kt));
+      if (kt > 0) { const q = mixp(APART[c], TANGLED[c], kt); pts = walk(dirs(8 * segs.length, q), q.c); }
       else pts = segs.flatMap((g) => { const s = SEG[g], kj = kJoin(g, T), ko = kOpen(g, T); return kj > 0 ? walk(mix(s.open, s.join, kj), mix(HOME[g], s.at, kj)) : walk(mix(s.ring, s.open, ko), HOME[g]); });
       const near = (i, j) => Math.hypot(pts[i][0] - pts[j][0], pts[i][1] - pts[j][1]) < 1.2 * BD;
       const bonds = [], deg = pts.map(() => 0), chains = []; let rings = 0, cur = null;
@@ -440,7 +444,7 @@ const palSig = (els, more = []) => [PAL.ink, PAL.panel, PAL.muted, ...els.map((e
   const hits = []; F.hover(d.stage, () => hits);
   const HEAD = [
     (T) => `At ${T} °C the liquid is S₈ rings that slip past one another, so it pours freely.`,
-    (T) => `At ${T} °C S–S bonds break, and rings open into chains.`,
+    (T, rings) => (rings ? `At ${T} °C S–S bonds break, and rings open into chains.` : `At ${T} °C every ring has opened into a chain of eight atoms.`),
     (T) => `At ${T} °C the chains join end to end into longer chains, and the liquid thickens and darkens.`,
     (T) => `At ${T} °C the long chains tangle, and the dark red liquid does not pour easily.`,
   ];
@@ -481,7 +485,7 @@ const palSig = (els, more = []) => [PAL.ink, PAL.panel, PAL.muted, ...els.map((e
     const { ctx } = begin(d.c); hits.length = 0;
     const T = Tsl.v, S = state(T);
     const rings = S.reduce((s, c) => s + c.rings, 0), chains = S.flatMap((c) => c.chains), longest = Math.max(0, ...chains);
-    F.headline(ctx, HEAD[kTangle(T) > 0.5 ? 3 : longest > 8 ? 2 : chains.length ? 1 : 0](T));
+    F.headline(ctx, HEAD[kTangle(T) > 0.5 ? 3 : longest > 8 ? 2 : chains.length ? 1 : 0](T, rings));
     ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.035); ctx.strokeStyle = PAL.rule; ctx.lineWidth = 1.5;
     ctx.beginPath(); ctx.roundRect(BOX.l, BOX.t, BOX.r - BOX.l, BOX.b - BOX.t, 10); ctx.fill(); ctx.stroke(); ctx.restore();
     const sulfur = F.el('S'), end = F.fact(DARK);

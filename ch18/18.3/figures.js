@@ -40,16 +40,23 @@ function hubOf(pts, bonds, deg, ok = () => true) {
    the arsenic sheets and the tellurium chains are set a little farther
    apart than in the crystal so that each reads on its own. Arsenic and
    graphite have the same net, so that choice flattens or puckers the
-   sheets in place; the others fade. Still: a solid answers its choice.
+   sheets in place; the others fade. Each solid opens held on the view
+   that shows its marked atom with every bond apart; the spin button
+   turns it. Still: a solid answers its choice.
    No ground; pitch bounded to ±1.3 rad so the solid never flips over.
 ===================================================================== */
 (function () {
   const KH = 64;
   const d = sim('sim-structures', KH);
   const v = F.view3d(d.stage, { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3, h: 620, dist: 7.8 });
-  v.setView(-0.45, 0.3);
+  /* each solid opens from the side that shows its marked atom with every one of its bonds apart: the sheets from above, so their six-membered rings read */
+  const YAWS = { Si: 0.14, As: -0.3, C: -0.3, Te: -0.25, B: 0.1 }, PITCH = { Si: 0.2, As: 1.3, C: 1.3, Te: 0.5, B: 0.5 };
+  v.look({ yaw: YAWS.As, pitch: PITCH.As });   /* held still on that view; the spin button turns it */
+  const toward = (k) => [-Math.cos(PITCH[k]) * Math.sin(YAWS[k]), Math.sin(PITCH[k]), Math.cos(PITCH[k]) * Math.cos(YAWS[k])];   /* the way to the camera, in the solid's own axes */
+  const front = (pts, k, ok) => { const c = toward(k); let best = -1, bd = -Infinity; pts.forEach((p, i) => { const s = p[0] * c[0] + p[1] * c[1] + p[2] * c[2]; if (ok(i) && s > bd) { bd = s; best = i; } }); return best; };
+  const degs = (pts, bonds) => { const n = pts.map(() => 0); bonds.forEach(([i, j]) => { n[i]++; n[j]++; }); return n; };
   const grp = v.part(0);
-  const B = 0.6, HX = 3.45, HZ = 1.7;
+  const B = 0.6, HX = 2.75, HZ = 1.75;
   /* the layered pair: a honeycomb net in the x–z plane, its two sublattices lifted ±h; three sheets, each shifted along z */
   const LAY = { As: { h: 0.152, gap: 1.0, sh: [-1, 0, 1] }, C: { h: 0, gap: 1.42, sh: [0, 1, 0] } };
   const net = (() => {
@@ -61,9 +68,10 @@ function hubOf(pts, bonds, deg, ok = () => true) {
     let bonds = bondsBy(ref, B);
     [ref, bonds, lay, sub] = prune(ref, bonds, 2, lay, sub);
     const at = ([h, gap, s0, s1, s2]) => { const a = Math.sqrt(B * B - 4 * h * h), q = a / B, sh = [s0, s1, s2]; return ref.map((p, i) => [p[0] * q, (lay[i] - 1) * gap + (sub[i] ? h : -h), p[2] * q + sh[lay[i]] * a]); };
-    const flat = ref.map((p, i) => [p[0], lay[i] === 1 ? 0 : 9, p[2]]);
-    const hub = hubOf(flat, bonds, 3);
-    return { at, bonds, hub, unit: lay.map((k) => k === 1) };
+    /* the marked atom is in the top sheet, which nothing stands in front of */
+    const flat = ref.map((p, i) => [p[0], lay[i] === 2 ? 0 : 9, p[2]]);
+    const hub = hubOf(flat, bonds, 3, (i) => sub[i] === 1);   /* an atom of the upper half of the sheet, seen from the side its three bonds fall away to, so none hides behind it */
+    return { at, bonds, hub, unit: lay.map((k) => k === 2) };
   })();
   const par = (k) => { const L = LAY[k]; return [L.h, L.gap, ...L.sh]; };
   const BUILD = {
@@ -75,16 +83,17 @@ function hubOf(pts, bonds, deg, ok = () => true) {
       let pts = [];
       for (let i = -3; i <= 3; i++) for (let j = -2; j <= 2; j++) for (let k = -2; k <= 2; k++) base.forEach((f) => [0, 0.25].forEach((o) => {
         const p = [(i + f[0] + o) * a - a / 8, (j + f[1] + o) * a - a / 8, (k + f[2] + o) * a - a / 8];
-        if (Math.abs(p[0]) <= 3.0 && Math.abs(p[1]) <= 1.1 && Math.abs(p[2]) <= 1.25) pts.push(p);
+        if (Math.abs(p[0]) <= 3.0 && Math.abs(p[1]) <= 1.1 && Math.abs(p[2]) <= 0.9) pts.push(p);
       }));
       let bonds = bondsBy(pts, B);
       [pts, bonds] = prune(pts, bonds, 2); [pts, bonds] = prune(pts, bonds, 2);
-      return { pts, bonds, hub: hubOf(pts, bonds, 4), unit: pts.map(() => true) };
+      const n = degs(pts, bonds);
+      return { pts, bonds, hub: front(pts, 'Si', (i) => n[i] === 4 && Math.abs(pts[i][0]) < 1.2), unit: pts.map(() => true) };
     },
     /* seven spiral chains lying along x on a hexagonal array, three atoms to a turn */
-    Te() {
+    Te() {   /* the marked atom is in the top chain */
       const rh = 0.248, step = Math.sqrt(B * B - 3 * rh * rh), sp = 1.2, pts = [], bonds = [], unit = [];
-      const centres = [[0, 0]]; for (let k = 0; k < 6; k++) centres.push([sp * Math.cos((k * TAU) / 6 + TAU / 12), sp * Math.sin((k * TAU) / 6 + TAU / 12)]);
+      const centres = [[sp, 0]]; for (let k = 0; k < 6; k++) if (k !== 1) centres.push([sp * Math.cos((k * TAU) / 6 + TAU / 12), sp * Math.sin((k * TAU) / 6 + TAU / 12)]); else centres.push([0, 0]);
       const n = 17;
       centres.forEach(([cy, cz], c) => { for (let m = 0; m < n; m++) {
         const th = (m * TAU) / 3;
@@ -101,7 +110,7 @@ function hubOf(pts, bonds, deg, ok = () => true) {
       const bonds = bondsBy(pts, E), faces = [];
       const joined = (i, j) => bonds.some(([a, b]) => (a === i && b === j) || (a === j && b === i));
       for (let i = 0; i < 12; i++) for (let j = i + 1; j < 12; j++) for (let k = j + 1; k < 12; k++) if (joined(i, j) && joined(j, k) && joined(i, k)) faces.push([i, j, k]);
-      return { pts, bonds, hub: -1, unit: pts.map(() => true), faces, r: 0.21 };
+      return { pts, bonds, hub: front(pts, 'B', (i) => Math.abs(pts[i][0]) < 1e-6)   /* the corner the view looks straight at, its five bonds spread round it */, unit: pts.map(() => true), faces, r: 0.21 };
     },
   };
   const INFO = {
@@ -109,20 +118,23 @@ function hubOf(pts, bonds, deg, ok = () => true) {
     As: { label: 'arsenic', atom: 'arsenic or antimony atom', name: 'an arsenic or antimony atom', ro: '3\\ \\text{bonds per atom}\\ \\Rightarrow\\ \\text{puckered sheets}' },
     C: { label: 'graphite', atom: 'carbon atom', name: 'a carbon atom, C', ro: '3\\ \\text{bonds per atom}\\ \\Rightarrow\\ \\text{planar sheets}' },
     Te: { label: 'tellurium', atom: 'tellurium atom', name: 'a tellurium atom, Te', ro: '2\\ \\text{bonds per atom}\\ \\Rightarrow\\ \\text{spiral chains}' },
-    B: { label: 'boron', atom: 'boron atom, one at each of the 12 corners', name: 'a boron atom, B', ro: `\\text{B–B bonds} = \\frac{20\\ \\text{faces} \\times 3\\ \\text{edges}}{2} = 30,\\ \\text{each about}\\ ${hue('length', '176\\ \\text{pm}')}` },
+    B: { label: 'boron', atom: 'boron atom', name: 'a boron atom, B', ro: `\\text{B–B bonds} = \\frac{20\\ \\text{faces} \\times 3\\ \\text{edges}}{2} = 30,\\ \\text{each about}\\ ${hue('length', '176\\ \\text{pm}')}` },
   };
   const S = F.choice(d.controls, { label: '\\text{solid}', options: Object.keys(INFO).map((k) => ({ value: k, label: INFO[k].label })), value: 'As', aria: 'the solid whose structure is shown' });
-  const ZOOM = { C: 0.8, B: 0.9 };   /* graphite's sheets stand farthest apart, so they are drawn a little smaller */
-  let sig = '', atomM = [], bondM = [], cur = null;
+  let shown = 'As';
+  const ZOOM = { As: 0.72, C: 0.64, Te: 0.88, B: 0.9 };   /* graphite's sheets stand farthest apart, so they are drawn a little smaller */
+  let sig = '', atomM = [], bondM = [], cur = null, halo = null;
   const palSig = () => [PAL.ink, PAL.muted, ...Object.keys(INFO).map((e) => F.el(e))].join('|');
   const pale = { transparent: true, opacity: 0.3, depthWrite: false };
   function build(kind) {
     v.clear(); atomM = []; bondM = [];
     const s = cur = BUILD[kind](), info = INFO[kind], r = s.r || 0.135;
-    s.pts.forEach((p, i) => atomM.push(v.pickable(F.mesh.sphere(grp, p, i === s.hub ? r * 1.2 : r, F.el(kind), s.unit[i] ? undefined : pale), info.name)));
+    s.pts.forEach((p, i) => atomM.push(v.pickable(F.mesh.sphere(grp, p, i === s.hub ? r * 1.2 : kind === 'Si' ? r * 0.85 : r, F.el(kind), s.unit[i] ? undefined : pale), i === s.hub ? `the marked atom: ${info.name.replace(/^an? /, '')}` : info.name)));
+    /* the marked atom wears a dark shell */
+    halo = F.mesh.sphere(grp, s.pts[s.hub], r * 1.75, PAL.ink, { transparent: true, opacity: 0.22, depthWrite: false });
     s.bonds.forEach(([i, j]) => {
-      const on = i === s.hub || j === s.hub || kind === 'B';
-      bondM.push(v.pickable(F.mesh.stick(grp, s.pts[i], s.pts[j], on ? (kind === 'B' ? 0.045 : 0.075) : 0.04, on ? PAL.ink : PAL.muted, s.unit[i] ? undefined : pale), on && kind !== 'B' ? 'one of this atom’s bonds' : kind === 'B' ? 'a B–B bond, about 176 pm' : 'a covalent bond'));
+      const on = i === s.hub || j === s.hub;
+      bondM.push(v.pickable(F.mesh.stick(grp, s.pts[i], s.pts[j], on ? 0.08 : kind === 'Si' ? 0.03 : 0.04, on ? PAL.ink : PAL.muted, s.unit[i] ? undefined : pale), on ? 'one of the marked atom’s bonds' : kind === 'B' ? 'a B–B bond, about 176 pm' : 'a covalent bond'));
     });
     if (s.faces) {
       const T = window.THREE, g = new T.BufferGeometry();
@@ -135,19 +147,21 @@ function hubOf(pts, bonds, deg, ok = () => true) {
     const kind = S.value, key = kind + '|' + palSig();
     const twin = !!LAY[kind] && !!LAY[S.from] && S.from !== kind && S.k < 1;   /* arsenic and graphite: one net bends into the other */
     if (grp && window.THREE) {
+      if (kind !== shown) { if (!(LAY[kind] && LAY[shown])) v.look({ yaw: YAWS[kind], pitch: PITCH[kind] }); shown = kind; }   /* a new solid opens on its own view */
       if (key !== sig) { sig = key; build(kind); }
       if (LAY[kind]) {
         const P = net.at(S.mix((k) => par(LAY[k] ? k : kind))), col = S.mixColor((k) => F.el(LAY[k] ? k : kind));
         atomM.forEach((m, i) => { m.position.set(P[i][0], P[i][1], P[i][2]); m.material.color.set(col); });
         bondM.forEach((m, i) => F.mesh.setStick(m, P[net.bonds[i][0]], P[net.bonds[i][1]]));
+        halo.position.set(P[net.hub][0], P[net.hub][1], P[net.hub][2]);
       }
       grp.scale.setScalar(twin ? S.mix((k) => ZOOM[k] || 1) : ZOOM[kind] || 1);
       F.fade3(grp, twin ? 1 : S.a(kind));
     }
     v.invalidate();
     const info = INFO[kind];
-    const key2 = [{ s: info.atom, draw: (c, x, y) => ball(c, x + 12, y + 11, 10, F.el(kind)) }, { s: kind === 'B' ? 'B–B bond' : 'covalent bond', color: kind === 'B' ? PAL.ink : PAL.muted, w: 5 }];
-    if (kind !== 'B') key2.push({ s: 'the bonds of one atom', color: PAL.ink, w: 8 });
+    const key2 = [{ s: info.atom, draw: (c, x, y) => ball(c, x + 12, y + 11, 10, F.el(kind)) }, { s: kind === 'B' ? 'B–B bond' : 'covalent bond', color: PAL.muted, w: 5 },
+      { s: 'one atom', draw: (c, x, y) => { c.save(); c.fillStyle = alpha(PAL.ink, 0.25); c.beginPath(); c.arc(x + 12, y + 11, 15, 0, TAU); c.fill(); c.restore(); ball(c, x + 12, y + 11, 9, F.el(kind)); } }, { s: 'its bonds', color: PAL.ink, w: 8 }];
     F.legend(ctx, { l: 40, r: 1360, t: 6, b: KH - 4 }, key2, { corner: 'top', row: true, size: 22 });
     tex(d.readout, info.ro);
   }

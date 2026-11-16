@@ -394,7 +394,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
 ===================================================================== */
 (function () {
   const d = sim('sim-optical-isomers');
-  const HS = 520, DIST = 21.5, K = 0.75, Y0 = -0.4, D = 3.2, TILT = 1.2;
+  const HS = 520, DIST = 21.5, K = 0.72, Y0 = -0.55, D = 3.2, TILT = 1.2;
   let t = 0, seen = [NaN, NaN, NaN];
   /* a drag turns the original; the image turns the opposite way about the upright axis, as a reflection does, and the
      mirror stays edge-on between them. Laid over (t = 1), the image turns with the original. */
@@ -437,8 +437,11 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
     ROTS.forEach(([n0, a]) => {
       const n = Q(n0);
       const lost = orig.map((a0) => !orig.some((o) => o.sym === a0.sym && V.len(V.sub(o.p, rot(mirror(a0.p), n, a))) < 0.15));
-      const miss = lost.filter(Boolean).length;
-      if (!best || miss < best.miss || (miss === best.miss && a < best.a)) best = { n, a, miss, lost };
+      const miss = lost.filter(Boolean).length, off = orig.filter((a0, i) => lost[i] && a0.sym !== 'C').length;
+      /* among equal fits, the one that keeps every donor atom matched, then the one whose unmatched atoms stand clearest of the rest in the opening view */
+      const flat = (q) => { const r = rotX(q, TILT); return [r[0], r[1]]; };
+      const clear = Math.min(9, ...orig.flatMap((a0, i) => (lost[i] ? orig.map((o) => Math.hypot(...flat(V.sub(rot(mirror(a0.p), n, a), o.p)))) : [])));
+      if (!best || miss < best.miss || (miss === best.miss && (off < best.off || (off === best.off && clear > best.clear + 1e-6)))) best = { n, a, miss, lost, off, clear };
     });
     Object.assign(c, { S, best, total: orig.length });
   });
@@ -486,7 +489,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
       ...(t > 0.5 && miss ? [{ s: 'atom of the image that lands on nothing', draw: (c, x, y) => { c.save(); c.globalAlpha = 0.4; c.beginPath(); c.arc(x, y, 12, 0, 2 * Math.PI); c.fillStyle = cR; c.fill(); c.restore(); F.dot(c, x, y, F.el('C'), true, 6); } }] : [])]);
     v.headline(over
       ? (miss ? `Turned to its closest fit and laid over ${B.name}, the mirror image still puts ${miss} atoms where the original has none. The two are optical isomers.` : `Turned and laid over ${B.name}, the mirror image matches it atom for atom. The two are the same ion.`)
-      : (miss ? `In ${B.name} the rings climb one way round the metal, and in its mirror image they climb the other way.` : `${B.name} and its mirror image look alike.`));
+      : `${B.name} beside its mirror image.`);
     ro.set(`\\text{atoms of the mirror image with no match} = ${miss}\\ \\text{of}\\ ${B.total}\\;\\Rightarrow\\;\\text{${miss ? 'optical isomers' : 'the same ion'}}`);
   }
   still(d, draw);

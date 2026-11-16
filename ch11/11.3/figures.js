@@ -92,7 +92,7 @@ function spline(xs, ys) {
       if (Math.abs(B.Y(lineAt(tt)(125)) - B.Y(k * 1e3 * 125)) > 24) text(ctx, s, br.r + 12, B.Y(lineAt(tt)(125)), alpha(col, 0.75), { size: 17 });
     });
     line(ctx, B.X(ATM), br.b, B.X(ATM), br.t, PAL.muted, 2, [10, 10]);
-    text(ctx, '101.3 kPa', B.X(ATM) - 8, br.t + 18, PAL.muted, { size: 17, align: 'right', bg: PAL.panel });
+    text(ctx, '101.3 kPa', B.X(ATM) - 8, br.b - 18, PAL.muted, { size: 17, align: 'right', bg: PAL.panel });
     F.plot(ctx, B, (x) => k * 1e3 * x, col, { w: 6 });
     text(ctx, fmt(t, 1) + ' °C', br.r + 12, B.Y(k * 1e3 * 125), col, { size: 19, weight: 600 });
     text(ctx, g.name + ', C_{g} = kP_{g}', br.l + 16, br.t + 18, col, { size: 19, weight: 600, bg: PAL.panel });
@@ -103,7 +103,9 @@ function spline(xs, ys) {
     const s = sci(cg), sk = sci(k), right = p < 62;
     text(ctx, p > 0 ? s.plain + ' mol/L' : '0 mol/L', B.X(p) + (right ? 18 : -16), right ? Math.min(B.Y(yg) + 24, br.b - 18) : B.Y(yg) - 24, cc, { size: 19, weight: 600, align: right ? 'left' : 'right', bg: PAL.panel });
     const cap = g.name[0].toUpperCase() + g.name.slice(1);
-    topline(ctx, p > 0
+    topline(ctx, Math.abs(p - ATM) < 0.05
+      ? cap + ' at ' + fmt(t, 1) + ' °C and 101.3 kPa, the pressure the curves were measured at: ' + s.plain + ' mol/L dissolves.'
+      : p > 0
       ? cap + ' at ' + fmt(t, 1) + ' °C: ' + fmt(p, 1) + ' kPa is ' + fmt(frac, 3) + ' of 101.3 kPa, so ' + fmt(frac, 3) + ' times as much dissolves, ' + s.plain + ' mol/L.'
       : 'With no ' + g.name + ' above the water, none of it stays dissolved.');
     const cgT = p > 0 ? s.tex : '0';

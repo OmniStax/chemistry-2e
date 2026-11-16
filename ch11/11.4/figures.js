@@ -517,10 +517,10 @@ const rng = (seed) => () => { seed = (seed * 16807) % 2147483647; return (seed -
     if (!burst) { const lx = CX + sh.W + 70, ly = CY - 74; line(ctx, CX + sh.W * 0.62, CY - sh.top(0.62) * 0.5, lx - 14, ly + 12, alpha(PAL.ink, 0.5), 1.5, [5, 6]); tag(['the cell’s fluid, ', [fmt(rest ? po : piIn, 1) + ' atm', cp]], lx, ly); }
     legend(ctx, FIELD, [{ s: 'solute, which cannot cross the membrane', kind: 'dot', color: cs }], { corner: 'br' });
     const kind = Math.abs(po - PI_IN) < 0.05 ? 'isotonic' : po < PI_IN ? 'hypotonic' : 'hypertonic';
-    topline(ctx, burst ? 'The cell is round and its membrane cannot stretch, yet water keeps entering: the cell bursts (hemolysis).'
-      : kind === 'isotonic' ? 'In an isotonic solution water enters and leaves at the same rate, and the cell keeps its shape.'
-        : !rest ? (kind === 'hypotonic' ? 'The solution is less concentrated than the cell’s fluid: more water enters than leaves, and the cell swells.' : 'The solution is more concentrated than the cell’s fluid: more water leaves than enters, and the cell shrivels (crenation).')
-          : (kind === 'hypotonic' ? 'The swollen cell’s fluid is now as dilute as the solution, and water enters and leaves at the same rate.' : 'The shriveled cell’s fluid is now as concentrated as the solution, and water enters and leaves at the same rate.'));
+    topline(ctx, burst ? 'The rounded cell can stretch no further, water keeps entering, and it bursts (hemolysis).'
+      : kind === 'isotonic' ? 'An isotonic solution: water enters and leaves at the same rate, and the cell keeps its shape.'
+        : !rest ? (kind === 'hypotonic' ? 'A hypotonic solution: more water enters the cell than leaves, and the cell swells.' : 'A hypertonic solution: more water leaves the cell than enters, and it shrivels (crenation).')
+          : `The ${kind === 'hypotonic' ? 'swollen' : 'shriveled'} cell’s fluid now matches the solution: water enters and leaves at the same rate.`);
     const rel = kind === 'isotonic' ? '=' : po < PI_IN ? '<' : '>';
     tex(d.readout, `\\kosm_{\\text{solution}} = ${hue('pressure', fmt(po, 1) + '\\ \\text{atm}')} ${rel} \\kosm_{\\text{blood serum}} = ${hue('pressure', '7.7\\ \\text{atm}')}`);
   }
@@ -545,9 +545,9 @@ const rng = (seed) => () => { seed = (seed * 16807) % 2147483647; return (seed -
    measured values: Table 11.3 gives measured i only at 0.050 m.
 ===================================================================== */
 (function () {
-  const d = sim('sim-ion-pairs', 620);
-  const T_RUN = 20, FPS = 30, PAIR_S = 2.2, V = 58, DMIN = 106, RK = 27, RCL = 22, TOUCH = RK + RCL - 1;
-  const BOX = { l: 44, r: 884, t: 100, b: 588 };
+  const d = sim('sim-ion-pairs', 660);
+  const T_RUN = 20, FPS = 30, PAIR_S = 2.2, V = 62, DMIN = 126, RK = 32, RCL = 26, TOUCH = RK + RCL - 1;
+  const BOX = { l: 40, r: 900, t: 100, b: 592 };
   const Nv = ctl(d.controls, { label: '\\text{KCl dissolved}', cls: '', min: 1, max: 8, step: 1, value: 4, unit: '', fmt: (v) => v + (v === 1 ? ' formula unit' : ' formula units'), aria: 'formula units of potassium chloride dissolved in the water', onInput: () => cy.reset() });
   const cy = cycle(() => T_RUN, 2.5);
   const runs = {};
@@ -557,7 +557,7 @@ const rng = (seed) => () => { seed = (seed * 16807) % 2147483647; return (seed -
     const rnd = rng(7919 * n + 13), ions = [];
     for (let i = 0; i < 2 * n; i++) {
       let x, y, tries = 0;
-      do { x = BOX.l + 60 + rnd() * (BOX.r - BOX.l - 120); y = BOX.t + 60 + rnd() * (BOX.b - BOX.t - 120); tries++; } while (tries < 400 && ions.some((q) => Math.hypot(q.x - x, q.y - y) < DMIN + 6));
+      do { x = BOX.l + 70 + rnd() * (BOX.r - BOX.l - 140); y = BOX.t + 70 + rnd() * (BOX.b - BOX.t - 140); tries++; } while (tries < 400 && ions.some((q) => Math.hypot(q.x - x, q.y - y) < DMIN + 6));
       ions.push({ k: i < n, x, y, th: rnd() * TAU, mate: -1, age: 0, life: 0, cool: 0, d: 0, phi: 0, spin: 0 });
     }
     const DT = 1 / 60, frames = [], iAt = [];
@@ -576,7 +576,7 @@ const rng = (seed) => () => { seed = (seed * 16807) % 2147483647; return (seed -
       });
       /* the walls, then one another */
       ions.forEach((q) => {
-        const lead = q.mate >= 0 && !q.k ? ions[q.mate] : q, pad = 56;
+        const lead = q.mate >= 0 && !q.k ? ions[q.mate] : q, pad = 66;
         if (q.x < BOX.l + pad) { lead.x += BOX.l + pad - q.x; lead.th = Math.atan2(Math.sin(lead.th), Math.abs(Math.cos(lead.th))); }
         if (q.x > BOX.r - pad) { lead.x -= q.x - (BOX.r - pad); lead.th = Math.atan2(Math.sin(lead.th), -Math.abs(Math.cos(lead.th))); }
         if (q.y < BOX.t + pad) { lead.y += BOX.t + pad - q.y; lead.th = Math.atan2(Math.abs(Math.sin(lead.th)), Math.cos(lead.th)); }
@@ -614,10 +614,14 @@ const rng = (seed) => () => { seed = (seed * 16807) % 2147483647; return (seed -
   let hits = [];
   F.hover(d.stage, () => hits);
   function waterAt(ctx, ox, oy, a) {            /* O at (ox, oy), the two H either side of the direction a */
-    for (const k of [0.91, -0.91]) ball(ctx, ox + 10.5 * Math.cos(a + k), oy + 10.5 * Math.sin(a + k), 6, F.el('H'));
-    ball(ctx, ox, oy, 9, F.el('O'));
+    for (const k of [0.91, -0.91]) ball(ctx, ox + 12.5 * Math.cos(a + k), oy + 12.5 * Math.sin(a + k), 7.2, F.el('H'));
+    ball(ctx, ox, oy, 11, F.el('O'));
   }
-  function ion(ctx, x, y, k) { ball(ctx, x, y, k ? RK : RCL, F.el(k ? 'K' : 'Cl')); }
+  /* an ion, its charge marked on it: a plus on K⁺, a minus on Cl⁻ */
+  function ion(ctx, x, y, k, r = k ? RK : RCL) {
+    ball(ctx, x, y, r, F.el(k ? 'K' : 'Cl'));
+    const h = r * 0.34; ctx.save(); ctx.strokeStyle = PAL.panel; ctx.lineWidth = Math.max(2, r * 0.13); ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(x - h, y); ctx.lineTo(x + h, y); if (k) { ctx.moveTo(x, y - h); ctx.lineTo(x, y + h); } ctx.stroke(); ctx.restore();
+  }
   /* the waters round an ion: O toward K⁺, an H toward Cl⁻; none where its partner in an ion pair sits */
   function shell(ctx, x, y, k, turn, mateDir, close) {
     const n = k ? 4 : 3;
@@ -627,8 +631,8 @@ const rng = (seed) => () => { seed = (seed * 16807) % 2147483647; return (seed -
       if (mateDir !== null) { const da = Math.abs(Math.atan2(Math.sin(a - mateDir), Math.cos(a - mateDir))); al = 1 - close * Math.max(0, Math.min(1, (1.25 - da) / 0.3)); }
       if (al <= 0.02) continue;
       ctx.save(); ctx.globalAlpha = al;
-      if (k) waterAt(ctx, x + (RK + 8) * Math.cos(a), y + (RK + 8) * Math.sin(a), a);
-      else waterAt(ctx, x + (RCL + 15) * Math.cos(a), y + (RCL + 15) * Math.sin(a), a + Math.PI - 0.91);
+      if (k) waterAt(ctx, x + (RK + 9) * Math.cos(a), y + (RK + 9) * Math.sin(a), a);
+      else waterAt(ctx, x + (RCL + 18) * Math.cos(a), y + (RCL + 18) * Math.sin(a), a + Math.PI - 0.91);
       ctx.restore();
     }
   }
@@ -643,14 +647,14 @@ const rng = (seed) => () => { seed = (seed * 16807) % 2147483647; return (seed -
     pos.forEach(([x, y, mate], i) => {
       const k = R.kinds[i];
       let dir = null, close = 0;
-      if (mate >= 0) { const m = pos[mate], dd = Math.hypot(m[0] - x, m[1] - y); dir = Math.atan2(m[1] - y, m[0] - x); close = Math.max(0, Math.min(1, (DMIN - dd) / (DMIN - TOUCH - 8))); if (k) { pairs++; ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 2.5; ctx.setLineDash([7, 7]); ctx.beginPath(); ctx.ellipse((x + m[0]) / 2, (y + m[1]) / 2, dd / 2 + 66, 62, dir, 0, TAU); ctx.stroke(); ctx.restore(); hits.push({ x: (x + m[0]) / 2, y: (y + m[1]) / 2, r: 30, name: 'an ion pair: K⁺ and Cl⁻ touching, one particle' }); } }
+      if (mate >= 0) { const m = pos[mate], dd = Math.hypot(m[0] - x, m[1] - y); dir = Math.atan2(m[1] - y, m[0] - x); close = Math.max(0, Math.min(1, (DMIN - dd) / (DMIN - TOUCH - 8))); if (k) { pairs++; ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 2.5; ctx.setLineDash([7, 7]); ctx.beginPath(); ctx.ellipse((x + m[0]) / 2, (y + m[1]) / 2, dd / 2 + 78, 74, dir, 0, TAU); ctx.stroke(); ctx.restore(); hits.push({ x: (x + m[0]) / 2, y: (y + m[1]) / 2, r: 30, name: 'an ion pair: K⁺ and Cl⁻ touching, one particle' }); } }
       shell(ctx, x, y, k, (k ? 0.3 : 1.1) * i + (k ? 0.25 : -0.3) * t, dir, close);
     });
-    pos.forEach(([x, y], i) => { ion(ctx, x, y, R.kinds[i]); hits.push({ x, y, r: 26, name: R.kinds[i] ? 'a potassium ion, K⁺, the oxygen atoms of its water molecules toward it' : 'a chloride ion, Cl⁻, a hydrogen atom of each water molecule toward it' }); });
-    legend(ctx, { l: BOX.l, r: BOX.r, t: BOX.b + 2, b: 620 }, [{ s: 'K⁺', draw: (c, x, y) => ball(c, x, y, 13, F.el('K')) }, { s: 'Cl⁻', draw: (c, x, y) => ball(c, x, y, 11, F.el('Cl')) }, { s: 'water', draw: (c, x, y) => waterAt(c, x, y + 3, -Math.PI / 2) },
-      { s: 'ion pair', draw: (c, x, y) => { c.save(); c.strokeStyle = alpha(PAL.ink, 0.55); c.lineWidth = 2; c.setLineDash([4, 4]); c.beginPath(); c.ellipse(x, y, 21, 11, 0, 0, TAU); c.stroke(); c.restore(); ball(c, x - 7, y, 8, F.el('K')); ball(c, x + 7, y, 6.5, F.el('Cl')); } }], { corner: 'below' });
+    pos.forEach(([x, y], i) => { ion(ctx, x, y, R.kinds[i]); hits.push({ x, y, r: 30, name: R.kinds[i] ? 'a potassium ion, K⁺, the oxygen atoms of its water molecules toward it' : 'a chloride ion, Cl⁻, a hydrogen atom of each water molecule toward it' }); });
+    legend(ctx, { l: BOX.l, r: BOX.r, t: BOX.b + 6, b: 656 }, [{ s: 'K⁺', draw: (c, x, y) => ion(c, x, y, true, 13) }, { s: 'Cl⁻', draw: (c, x, y) => ion(c, x, y, false, 11) }, { s: 'water', draw: (c, x, y) => { ball(c, x - 7, y + 6, 4.5, F.el('H')); ball(c, x + 7, y + 6, 4.5, F.el('H')); ball(c, x, y, 7, F.el('O')); } },
+      { s: 'ion pair, one particle', draw: (c, x, y) => { c.save(); c.strokeStyle = alpha(PAL.ink, 0.55); c.lineWidth = 2; c.setLineDash([4, 4]); c.beginPath(); c.ellipse(x, y, 22, 11, 0, 0, TAU); c.stroke(); c.restore(); ion(c, x - 7, y, true, 8); ion(c, x + 8, y, false, 6.5); } }], { corner: 'top', row: true, panel: false });
     /* i against time, 0 to T_RUN s and 1 (every ion paired) to 2 (every ion free) */
-    const ax = axes(ctx, { l: 1010, r: 1340, t: 190, b: 480 }, [0, T_RUN], [1, 2], { nx: 4, ny: 4, xl: 't (s)', xc: ctm, yl: 'i, particles per formula unit' });
+    const ax = axes(ctx, { l: 1030, r: 1350, t: 200, b: 500 }, [0, T_RUN], [1, 2], { nx: 4, ny: 4, xl: 't (s)', xc: ctm, yl: 'i, particles per formula unit' });
     const iOf = (s) => R.iAt[Math.min(R.iAt.length - 1, Math.floor(s * FPS + 1e-6))], mOf = (s) => R.mean[Math.min(R.mean.length - 1, Math.floor(s * FPS + 1e-6))];
     if (t > 0.05) {
       ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 3; ctx.lineJoin = 'round'; ctx.beginPath();

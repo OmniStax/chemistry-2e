@@ -131,7 +131,7 @@ const knots = (ks) => (x) => {
 (function () {
   const d = sim('sim-hydrogenation', 720);
   const st = ctl(d.controls, { label: '\\text{step}', cls: '', key: 'step', min: 0, max: 4, step: 0.01, value: 0, unit: '', dec: 2, aria: 'the steps of the hydrogenation of ethylene on nickel' });
-  F.story(d, st, { stops: [{ v: 0, label: 'gases' }, { v: 1, label: '(a) H₂ adsorbs' }, { v: 2, label: '(b) C₂H₄ adsorbs' }, { v: 3, label: '(c) C–H bonds form' }, { v: 4, label: '(d) C₂H₆ desorbs' }], ms: 2600, rest: 1300 });
+  F.story(d, st, { stops: [{ v: 0, label: 'gases' }, { v: 1, label: '(a) H₂ adsorbed' }, { v: 2, label: '(b) C₂H₄ adsorbed' }, { v: 3, label: '(c) C–H bonds formed' }, { v: 4, label: '(d) C₂H₆ desorbed' }], ms: 2600, rest: 1300 });
   const NI_R = 0.25, NI_Y = -0.13, TOP = NI_Y + NI_R, YC = 0.53, CH = 0.3;
   const RAD = { H: 0.12, C: 0.19, Ni: NI_R };
   const NI = [];

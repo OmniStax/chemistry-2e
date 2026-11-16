@@ -46,7 +46,7 @@ function hubOf(pts, bonds, deg, ok = () => true) {
 (function () {
   const KH = 64;
   const d = sim('sim-structures', KH);
-  const v = F.view3d(d.stage, { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3, h: 620, dist: 9 });
+  const v = F.view3d(d.stage, { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3, h: 620, dist: 7.8 });
   v.setView(-0.45, 0.3);
   const grp = v.part(0);
   const B = 0.6, HX = 3.45, HZ = 1.7;
@@ -105,10 +105,10 @@ function hubOf(pts, bonds, deg, ok = () => true) {
     },
   };
   const INFO = {
-    Si: { label: 'silicon', atom: 'silicon or germanium atom', name: 'a silicon or germanium atom', ro: '4\\ \\text{bonds per atom} \;\\Rightarrow\; \\text{one three-dimensional network}' },
-    As: { label: 'arsenic', atom: 'arsenic or antimony atom', name: 'an arsenic or antimony atom', ro: '3\\ \\text{bonds per atom} \;\\Rightarrow\; \\text{puckered sheets}' },
-    C: { label: 'graphite', atom: 'carbon atom', name: 'a carbon atom, C', ro: '3\\ \\text{bonds per atom} \;\\Rightarrow\; \\text{planar sheets}' },
-    Te: { label: 'tellurium', atom: 'tellurium atom', name: 'a tellurium atom, Te', ro: '2\\ \\text{bonds per atom} \;\\Rightarrow\; \\text{spiral chains}' },
+    Si: { label: 'silicon', atom: 'silicon or germanium atom', name: 'a silicon or germanium atom', ro: '4\\ \\text{bonds per atom}\\ \\Rightarrow\\ \\text{one three-dimensional network}' },
+    As: { label: 'arsenic', atom: 'arsenic or antimony atom', name: 'an arsenic or antimony atom', ro: '3\\ \\text{bonds per atom}\\ \\Rightarrow\\ \\text{puckered sheets}' },
+    C: { label: 'graphite', atom: 'carbon atom', name: 'a carbon atom, C', ro: '3\\ \\text{bonds per atom}\\ \\Rightarrow\\ \\text{planar sheets}' },
+    Te: { label: 'tellurium', atom: 'tellurium atom', name: 'a tellurium atom, Te', ro: '2\\ \\text{bonds per atom}\\ \\Rightarrow\\ \\text{spiral chains}' },
     B: { label: 'boron', atom: 'boron atom, one at each of the 12 corners', name: 'a boron atom, B', ro: `\\text{B–B bonds} = \\frac{20\\ \\text{faces} \\times 3\\ \\text{edges}}{2} = 30,\\ \\text{each about}\\ ${hue('length', '176\\ \\text{pm}')}` },
   };
   const S = F.choice(d.controls, { label: '\\text{solid}', options: Object.keys(INFO).map((k) => ({ value: k, label: INFO[k].label })), value: 'As', aria: 'the solid whose structure is shown' });
@@ -144,7 +144,7 @@ function hubOf(pts, bonds, deg, ok = () => true) {
     }
     v.invalidate();
     const info = INFO[kind];
-    const key2 = [{ s: info.atom, draw: (c, x, y) => ball(c, x + 22, y + 11, 10, F.el(kind)) }, { s: kind === 'B' ? 'B–B bond' : 'covalent bond', color: kind === 'B' ? PAL.ink : PAL.muted, w: 5 }];
+    const key2 = [{ s: info.atom, draw: (c, x, y) => ball(c, x + 30, y + 11, 10, F.el(kind)) }, { s: kind === 'B' ? 'B–B bond' : 'covalent bond', color: kind === 'B' ? PAL.ink : PAL.muted, w: 5 }];
     if (kind !== 'B') key2.push({ s: 'the bonds of one atom', color: PAL.ink, w: 8 });
     F.legend(ctx, { l: 40, r: 1360, t: 6, b: KH - 4 }, key2, { corner: 'top', row: true, size: 22 });
     tex(d.readout, info.ro);
@@ -166,7 +166,7 @@ function hubOf(pts, bonds, deg, ok = () => true) {
 (function () {
   const H = 700, d = sim('sim-zone-refining', H);
   const MOLTEN = '#ffb347';                       /* the orange glow of molten silicon */
-  const CX = 345, HW = 178, TOP = 108, BOT = 672;   /* the housing */
+  const CX = 372, HW = 178, TOP = 108, BOT = 672;   /* the housing */
   const HY = 384, RL = 236, RW = 112, ZH = RL / 10, A = ZH / (2 * RL), FOOT = 24, TP = 5.5, T = 7;
   const N = 20, UC = 1 - 2 * A - 0.012;           /* twenty impurity atoms; where the impure end is cut */
   const rnd = rng(1814);
@@ -243,7 +243,7 @@ function hubOf(pts, bonds, deg, ok = () => true) {
     hits.push({ x: CX - RW / 2 - 26, y: HY, r: 16, name: 'the heat source, a ring round the rod' }, { x: CX + RW / 2 + 26, y: HY, r: 16, name: 'the heat source, a ring round the rod' });
     ctx.restore();
     /* the rod's motion while it is lowered, as the book's arrow shows it */
-    if (cut === 0 && s < 1) { arrow(ctx, CX - HW - 34, 470, CX - HW - 34, 560, PAL.ink, 4); text(ctx, 'rod', CX - HW - 34, 584, PAL.ink, { size: 22, align: 'center' }); text(ctx, 'lowered', CX - HW - 34, 610, PAL.ink, { size: 22, align: 'center' }); }
+    if (cut === 0 && s < 1) { arrow(ctx, CX - HW - 56, 470, CX - HW - 56, 560, PAL.ink, 4); text(ctx, 'rod', CX - HW - 56, 584, PAL.ink, { size: 22, align: 'center' }); text(ctx, 'lowered', CX - HW - 56, 610, PAL.ink, { size: 22, align: 'center' }); }
     /* the book's names, each beside its part of the rod */
     const LX = CX + HW + 26;
     const name = (s2, y, a, x0 = CX + RW / 2 + 2) => F.faded(ctx, clamp01(a), [0, 0], () => { line(ctx, x0, y, LX - 8, y, PAL.ink, 1.8); text(ctx, s2, LX, y, PAL.ink, { size: 22, align: 'left', base: 'middle' }); });
@@ -259,7 +259,7 @@ function hubOf(pts, bonds, deg, ok = () => true) {
     line(ctx, CX - RW / 2 - 40, HY, CX - HW - 12, HY - 70, PAL.ink, 1.8); text(ctx, 'heat source', CX - HW - 18, HY - 82, PAL.ink, { size: 22, align: 'right', base: 'middle' });
     /* the impurities in each tenth of the rod, on the rod's own scale */
     const ax = F.axes(ctx, BOX, [0, N], [0, 1], { nx: 4, ny: 0, xl: 'impurity atoms in each tenth of the rod' });
-    text(ctx, 'top of the rod', BOX.l - 12, BOX.t + 6, PAL.muted, { size: 17, align: 'right' }); text(ctx, 'foot', BOX.l - 12, BOX.b - 6, PAL.muted, { size: 17, align: 'right' });
+    text(ctx, 'top of rod', BOX.l - 12, BOX.t + 6, PAL.muted, { size: 17, align: 'right' }); text(ctx, 'foot', BOX.l - 12, BOX.b - 6, PAL.muted, { size: 17, align: 'right' });
     const now = slices(cut > 0 ? us.filter((u) => u <= UC) : us), gone = cut > 0 ? us.filter((u) => u > UC).length : 0;
     const zy = ax.Y(uz), zh = (BOX.b - BOX.t) * A;
     if (k < 1) F.faded(ctx, 1 - k, [0, 0], () => { ctx.save(); ctx.fillStyle = alpha(F.fact(MOLTEN), 0.4); ctx.fillRect(BOX.l, zy - zh, BOX.r - BOX.l, 2 * zh); ctx.restore(); text(ctx, 'molten zone', BOX.r - 8, zy, PAL.ink, { size: 17, align: 'right', base: 'middle' }); });
@@ -278,7 +278,7 @@ function hubOf(pts, bonds, deg, ok = () => true) {
 
 /* =====================================================================
    FIGURE 18.18: solid carbon dioxide beside silicon dioxide, to one scale
-   (1 unit = 247 pm). Dry ice is its crystal of separate linear molecules
+   (1 unit = 215 pm). Dry ice is its crystal of separate linear molecules
    (cubic, a = 562 pm, C=O 116 pm, each molecule along a body diagonal),
    every C=O a double bond; silica is the simplest network of SiO₄
    tetrahedra sharing corners (the ideal cristobalite pattern, a = 716 pm),
@@ -290,11 +290,11 @@ function hubOf(pts, bonds, deg, ok = () => true) {
 (function () {
   const KH = 112;
   const d = sim('sim-co2-sio2', KH);
-  const DIST = 10.4, VH = 600;
+  const DIST = 9.8, VH = 600;
   const v = F.view3d(d.stage, { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3, h: VH, dist: DIST });
   v.setView(-0.5, 0.3);
   const PX = 2.85, gL = v.part(-PX), gR = v.part(PX);
-  const U = 1 / 247, FCC = [[0, 0, 0], [0.5, 0.5, 0], [0.5, 0, 0.5], [0, 0.5, 0.5]];
+  const U = 1 / 215, FCC = [[0, 0, 0], [0.5, 0.5, 0], [0.5, 0, 0.5], [0, 0.5, 0.5]];
   /* dry ice: 14 molecules of one cell, and where each has gone as a gas */
   const CO2 = (() => {
     const a = 562 * U, L = 116 * U, dir = [[1, 1, 1], [1, -1, -1], [-1, 1, -1], [-1, -1, 1]].map((u) => u.map((x) => x / R3)), mol = [], rnd = rng(1818);
@@ -306,7 +306,7 @@ function hubOf(pts, bonds, deg, ok = () => true) {
     const far = [];
     mol.forEach((m) => {
       for (let tries = 0; tries < 400; tries++) {
-        const th = rnd() * TAU, r = 2.3 * Math.sqrt(rnd()), p = [r * Math.cos(th), (rnd() - 0.5) * 3.9, r * Math.sin(th)];
+        const th = rnd() * TAU, r = 2.45 * Math.sqrt(rnd()), p = [r * Math.cos(th), (rnd() - 0.5) * 4.2, r * Math.sin(th)];
         if (far.every((q) => dist3(q, p) > 1.25) || tries === 399) { far.push(p); break; }
       }
       const z = 2 * rnd() - 1, ph = rnd() * TAU, s = Math.sqrt(1 - z * z); m.u2 = [s * Math.cos(ph), z, s * Math.sin(ph)];
@@ -320,10 +320,10 @@ function hubOf(pts, bonds, deg, ok = () => true) {
     const all = [...new Set([0, 1].flatMap((i) => [0, 1].flatMap((j) => [0, 1].flatMap((k) => FCC.map((f) => [f[0] + i, f[1] + j, f[2] + k].join())))))].map((s) => s.split(',').map(Number)).filter((p) => p.every((x) => x < 1.01));
     const DIA = [[0.25, 0.25, 0.25], [0.75, 0.75, 0.25], [0.75, 0.25, 0.75], [0.25, 0.75, 0.75]];
     const pts = [...all, ...DIA].map((p) => p.map((x) => (x - 0.5) * a)), sb = bondsBy(pts, (R3 / 4) * a);
-    const used = pts.map((_, i) => sb.some((b) => b.includes(i)));
-    pts.forEach((p, i) => { if (used[i]) si.push({ p, inner: i >= all.length, id: i }); });
+    const deg = pts.map((_, i) => sb.filter((b) => b.includes(i)).length);
+    pts.forEach((p, i) => { if (deg[i] >= 2) si.push({ p, inner: i >= all.length, id: i }); });
     const idx = (id) => si.findIndex((x) => x.id === id);
-    sb.forEach(([i, j]) => { o.push({ p: pts[i].map((x, n) => (x + pts[j][n]) / 2), bridge: true }); bonds.push([idx(i), o.length - 1], [idx(j), o.length - 1]); });
+    sb.filter(([i, j]) => deg[i] >= 2 && deg[j] >= 2).forEach(([i, j]) => { o.push({ p: pts[i].map((x, n) => (x + pts[j][n]) / 2), bridge: true }); bonds.push([idx(i), o.length - 1], [idx(j), o.length - 1]); });
     /* the oxygen atoms that lead on into the rest of the network */
     const T4 = [[[1, 1, 1], [1, -1, -1], [-1, 1, -1], [-1, -1, 1]], [[-1, -1, -1], [-1, 1, 1], [1, -1, 1], [1, 1, -1]]];
     si.forEach((s2, n) => T4[s2.inner ? 1 : 0].forEach((u) => {
@@ -373,7 +373,7 @@ function hubOf(pts, bonds, deg, ok = () => true) {
     const XL = 700 * (1 - PX / (DIST * Math.tan(Math.PI / 12) * (1400 / VH))), XR = 1400 - XL;   /* the canvas x over each solid */
     TEMP.only(ctx, 'cold', () => { row(XL, ['carbon dioxide at ', TT('−100 °C'), ': separate molecules in a crystal']); row(XR, ['silicon dioxide at ', TT('−100 °C'), ': one network']); });
     TEMP.only(ctx, 'room', () => { row(XL, ['carbon dioxide at ', TT('25 °C'), ': the same molecules, now a gas']); row(XR, ['silicon dioxide at ', TT('25 °C'), ': the same network']); });
-    const at = (sym) => (c, x, y) => ball(c, x + 22, y + 11, 10, F.el(sym));
+    const at = (sym) => (c, x, y) => ball(c, x + 30, y + 11, 10, F.el(sym));
     const dbl = (c, x, y) => { line(c, x, y + 7, x + 44, y + 7, PAL.muted, 4); line(c, x, y + 15, x + 44, y + 15, PAL.muted, 4); };
     F.legend(ctx, { l: XL - 340, r: XL + 340, t: 54, b: KH - 2 }, [{ s: 'carbon', draw: at('C') }, { s: 'oxygen', draw: at('O') }, { s: 'C=O double bond', draw: dbl }], { corner: 'top', row: true, size: 20 });
     F.legend(ctx, { l: XR - 340, r: XR + 340, t: 54, b: KH - 2 }, [{ s: 'silicon', draw: at('Si') }, { s: 'oxygen', draw: at('O') }, { s: 'Si–O single bond', color: PAL.muted, w: 5 }], { corner: 'top', row: true, size: 20 });

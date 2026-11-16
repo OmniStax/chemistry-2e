@@ -138,17 +138,18 @@ const still = (d, draw) => register(d.fig, { update: () => {}, draw });
       ctx.restore();
     };
     const nameOf = (e) => `${e.name} (${e.sym}, Z = ${e.Z}): ${CLASS[e.cls].name}${STATE[e.st] ? ', ' + STATE[e.st] : ''}`;
-    const dim = (g) => pick.mix((w) => (g === +w ? 1 : 0.62));
+    const P0 = (k) => Math.min(...Object.keys(GROUPS[k].m).map(Number));
+    const dim = (g, p) => pick.mix((w) => (g === +w && p >= P0(w) ? 1 : 0.62));   /* hydrogen stays out of group 1's column */
     EL.forEach((e) => {
       if (e.f) return;
       const x = cx(e.g), y = cy(e.p);
-      cell(e.cls, x, y, dim(e.g), e.sym, String(e.Z));
+      cell(e.cls, x, y, dim(e.g, e.p), e.sym, String(e.Z));
       hits.push({ x, y, r: 30, name: nameOf(e) });
     });
     /* the two places of the f-block in group 3 */
     [[6, 'La–Lu', 'trans', 'Lanthanum to lutetium (Z = 57 to 71): inner transition metals'],
       [7, 'Ac–Lr', 'radio', 'Actinium to lawrencium (Z = 89 to 103): inner transition metals, radioactive']].forEach(([p, s, cls, name]) => {
-      cell(cls, cx(3), cy(p), dim(3), s, '', 15);
+      cell(cls, cx(3), cy(p), dim(3, p), s, '', 15);
       hits.push({ x: cx(3), y: cy(p), r: 30, name });
     });
     /* the key to the shading, in the gap above the transition metals */
@@ -157,7 +158,7 @@ const still = (d, draw) => register(d.fig, { update: () => {}, draw });
     F.legend(ctx, { ...gap, l: gap.l + 440 }, ['metalloid', 'nonmetal'].map((c) => ({ s: CLASS[c].legend, draw: swatch(c) })), { corner: 'tl', panel: false });
     /* the chosen group's column, outlined from its first member down */
     KEYS.forEach((k) => pick.only(ctx, k, () => {
-      const g = +k, p0 = Math.min(...Object.keys(GROUPS[k].m).map(Number));
+      const g = +k, p0 = P0(k);
       rbox(ctx, cx(g) - CW / 2 - 5, cy(p0) - CH / 2 - 5, CW + 10, cy(7) - cy(p0) + CH + 10, PAL.ink, false, 2.5);
     }, [0, 0]));
 

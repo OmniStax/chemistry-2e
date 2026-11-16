@@ -394,18 +394,18 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
 ===================================================================== */
 (function () {
   const d = sim('sim-optical-isomers');
-  const HS = 520, DIST = 21.5, K = 0.75, Y0 = -0.4, D = 3.2;
-  let t = 0, seen = [NaN, NaN];
+  const HS = 520, DIST = 21.5, K = 0.75, Y0 = -0.4, D = 3.2, TILT = 1.2;
+  let t = 0, seen = [NaN, NaN, NaN];
   /* a drag turns the original; the image turns the opposite way about the upright axis, as a reflection does, and the
      mirror stays edge-on between them. Laid over (t = 1), the image turns with the original. */
   function sync() {
     if (!gR) return;
-    const yaw = v.at.yaw;
-    if (seen[0] === yaw && seen[1] === t) return;
-    seen = [yaw, t]; gR.rotation.y = -2 * yaw * (1 - t); gM.rotation.y = -yaw; v.invalidate();
+    const { yaw, pitch } = v.at;
+    if (seen[0] === yaw && seen[1] === t && seen[2] === pitch) return;
+    seen = [yaw, t, pitch]; gR.rotation.y = -2 * yaw * (1 - t); gM.rotation.set(-pitch, -yaw, 0, 'YXZ'); v.invalidate();
   }
   let gR = null, gM = null;
-  const v = F.view3d(d.stage, { h: HS, dist: DIST, tilt: 0.3, onRender: sync });
+  const v = F.view3d(d.stage, { h: HS, dist: DIST, tilt: TILT, onRender: sync });
   const UNIT = lens(v, HS, DIST);
   const strip = F.makeCanvas(d.stage, 122);
   const gL = v.part(-D); gR = v.part(D); gM = v.part(0);
@@ -416,14 +416,13 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
      octahedron's 24 rotations are the ways of fitting it. [M(en)₃]ⁿ⁺ and the cis ion stand with the threefold axis of the
      three rings upright, so each ring climbs from a lower corner to an upper one, all one way round; the trans ion stands
      with Cl–Co–Cl upright and a ring to the left and right, as Figure 19.24 draws it. */
-  const frame = (x, y) => { const X = V.unit(x), Yv = V.unit(y); return [X, Yv, V.cross(X, Yv)]; };
-  const F3 = frame([0, 1, -1], [-1, 1, 1]), FT = frame([1, 0, 1], [0, 1, 0]);
+  const frame = (x, y, lean = 0) => { const X = V.unit(x), Yv = V.unit(y), Z = V.cross(X, Yv); return (p) => rotX([V.dot(p, X), V.dot(p, Yv), V.dot(p, Z)], lean); };
+  const F3 = frame([0, 1, -1], [-1, 1, 1]), FT = frame([1, 0, 1], [0, 1, 0], 0.3 - TILT);
   const CPX = {
     en3: { metal: 'M', name: '[M(en)₃]ⁿ⁺', sites: [0, 1, 2, 3, 4, 5].map((i) => site(i, 'en', 2.1)), bridges: [[0, 2], [1, 4], [3, 5]], fr: F3 },
     cis: { metal: 'Co', name: '<i>cis</i>-[Co(en)₂Cl₂]⁺', plain: ['cis', '[Co(en)₂Cl₂]⁺'], sites: [0, 1, 2, 3, 4, 5].map((i) => (i === 0 || i === 2 ? site(i, 'Cl', 2.3) : site(i, 'en', 2.0))), bridges: [[1, 4], [3, 5]], fr: F3 },
     trans: { metal: 'Co', name: '<i>trans</i>-[Co(en)₂Cl₂]⁺', plain: ['trans', '[Co(en)₂Cl₂]⁺'], sites: [0, 1, 2, 3, 4, 5].map((i) => (i < 2 ? site(i, 'Cl', 2.3) : site(i, 'en', 2.0))), bridges: [[2, 4], [3, 5]], fr: FT },
   };
-  const into = (fr) => (p) => [V.dot(p, fr[0]), V.dot(p, fr[1]), V.dot(p, fr[2])];
   /* the 24 rotations of the octahedron as axis and angle */
   const ROTS = [[[0, 1, 0], 0]];
   [[1, 0, 0], [0, 1, 0], [0, 0, 1]].forEach((n) => [1, 2, 3].forEach((q) => ROTS.push([n, (q * Math.PI) / 2])));
@@ -432,7 +431,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
   const mirror = (p) => [-p[0], p[1], p[2]];
   /* for each complex, the rotation of its mirror image that leaves the fewest atoms without a twin of the same element, and which atoms those are */
   Object.values(CPX).forEach((c) => {
-    const S = { metal: c.metal, sites: c.sites, bridges: c.bridges }, Q = into(c.fr);
+    const S = { metal: c.metal, sites: c.sites, bridges: c.bridges }, Q = c.fr;
     const orig = blend(S, S, 1, K).atoms.map((a) => ({ ...a, p: Q(a.p) }));
     let best = null;
     ROTS.forEach(([n0, a]) => {
@@ -448,8 +447,8 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
   const ro = F.readout(d);
   /* the frame part-way between two ions' frames, as a turn about one axis */
   function between(A, B, k) {
-    if (A === B || !T3 || k > 0.999) return into(B);
-    const m = (fr) => new T3.Quaternion().setFromRotationMatrix(new T3.Matrix4().makeBasis(...fr.map((a) => new T3.Vector3(...a)))).invert();
+    if (A === B || !T3 || k > 0.999) return B;
+    const m = (fr) => new T3.Quaternion().setFromRotationMatrix(new T3.Matrix4().makeBasis(...o6.filter((_, i) => i % 2 === 0).map((e) => new T3.Vector3(...fr(e)))));
     const q = m(A).slerp(m(B), k);
     return (p) => new T3.Vector3(...p).applyQuaternion(q).toArray();
   }

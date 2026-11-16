@@ -29,7 +29,7 @@ function atom(ctx, x, y, sym, r, a = 1) {
 function gapOf(ctx, s, ux, uy, size) {
   if (!s) return 0;
   const w = F.measure(ctx, s, { size, weight: 600 });
-  return Math.min(Math.abs(ux) > 1e-6 ? (w / 2 + 7) / Math.abs(ux) : Infinity, Math.abs(uy) > 1e-6 ? (size * 0.7 + 6) / Math.abs(uy) : Infinity);
+  return Math.min(Math.abs(ux) > 1e-6 ? (w / 2 + 7) / Math.abs(ux) : Infinity, Math.abs(uy) > 1e-6 ? (size * 0.62 + 4) / Math.abs(uy) : Infinity);
 }
 function lewis(ctx, atoms, bonds, o = {}) {
   const size = o.size ?? 28, ink = o.color ?? PAL.ink;
@@ -332,7 +332,7 @@ const palSig = () => [PAL.ink, PAL.panel, PAL.muted, F.el('C'), F.el('H')].join(
    the zigzag. Still: three drawings of one molecule, no clock.
 ===================================================================== */
 (function () {
-  const H = 510, d = sim('sim-line-structures', H);
+  const H = 560, d = sim('sim-line-structures', H);
   /* main chain C1 to C6 left to right; C7 the methyl group above C2; C8 and C9 the ethyl group below C3 */
   const CS = [[0, 0], [1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [1, -1], [2, 1], [2, 2]];
   const CC = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [1, 6], [2, 7], [7, 8]];
@@ -355,7 +355,7 @@ const palSig = () => [PAL.ink, PAL.panel, PAL.muted, F.el('C'), F.el('H')].join(
     skeletal: 'In the skeletal structure each end or bend of a line is a carbon atom, and its hydrogen atoms are not drawn.',
   };
   let hits = []; F.hover(d.stage, () => hits);
-  const CX = 700, CY = 302;
+  const CX = 700, CY = 318;
   /* each drawing as numbers: per carbon its point and how far its label shows; per hydrogen its point and opacity */
   function state(rep) {
     if (rep === 'skeletal') {
@@ -363,7 +363,7 @@ const palSig = () => [PAL.ink, PAL.panel, PAL.muted, F.el('C'), F.el('H')].join(
       const P = SKEL.map(([x, y]) => [CX + x - ox, CY + y - oy]);
       return { c: P.flat(), lab: CS.map(() => 0), cond: CS.map(() => 0), h: G.atoms.filter((t) => t.s === 'H').flatMap((t) => [...P[t.on], 0]) };
     }
-    const sx = rep === 'expanded' ? 66 : 118, sy = rep === 'expanded' ? 52 : 74;
+    const sx = rep === 'expanded' ? 76 : 118, sy = rep === 'expanded' ? 60 : 74;
     const at = (rep === 'expanded' ? GE : G).atoms.map((t) => ({ x: CX + (t.gx - 2.5) * sx, y: CY + (t.gy - 0.5) * sy }));
     const C = CS.map((_, i) => [at[i].x, at[i].y]);
     return { c: C.flat(), lab: CS.map(() => 1), cond: CS.map(() => (rep === 'condensed' ? 1 : 0)),
@@ -494,16 +494,16 @@ const palSig = () => [PAL.ink, PAL.panel, PAL.muted, F.el('C'), F.el('H')].join(
     atoms.forEach((t, i) => hits.push({ x: t.x, y: t.y, r: 18, name: i < 6 ? 'carbon atom' : 'hydrogen atom' }));
   }
   function draw2d(ctx) {
-    resonance(ctx, 230, [0, 2, 4]);
-    resonance(ctx, 590, [1, 3, 5]);
-    F.arrow(ctx, 380, CY, 440, CY, PAL.ink, 3); F.arrow(ctx, 440, CY, 380, CY, PAL.ink, 3);
-    text(ctx, 'resonance structures', 410, H - 18, PAL.muted, { size: 20, align: 'center' });
-    const C = ring(1030, 78), atoms = C.map(([x, y]) => ({ s: 'CH', x, y }));
+    resonance(ctx, 200, [0, 2, 4]);
+    resonance(ctx, 630, [1, 3, 5]);
+    F.arrow(ctx, 372, CY, 458, CY, PAL.ink, 3); F.arrow(ctx, 458, CY, 372, CY, PAL.ink, 3);
+    text(ctx, 'resonance structures', 415, H - 18, PAL.muted, { size: 20, align: 'center' });
+    const C = ring(1080, 78), atoms = C.map(([x, y]) => ({ s: 'CH', x, y }));
     lewis(ctx, atoms, [0, 1, 2, 3, 4, 5].map((k) => [k, (k + 1) % 6, 1, 3]), { size: 26 });
-    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(1030, CY, 44, 0, TAU); ctx.stroke(); ctx.restore();
+    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(1080, CY, 44, 0, TAU); ctx.stroke(); ctx.restore();
     atoms.forEach((t) => hits.push({ x: t.x, y: t.y, r: 24, name: 'CH group' }));
-    hits.push({ x: 1030, y: CY, r: 36, name: 'circle: six equivalent carbon-carbon bonds' });
-    text(ctx, 'condensed formula', 1030, H - 18, PAL.muted, { size: 20, align: 'center' });
+    hits.push({ x: 1080, y: CY, r: 36, name: 'circle: six equivalent carbon-carbon bonds' });
+    text(ctx, 'condensed formula', 1080, H - 18, PAL.muted, { size: 20, align: 'center' });
   }
   /* ---------- the ring in three dimensions, lying flat ---------- */
   const v = F.view3d(d.stage, { spin: 'idle', h: 460, dist: 9.6, tilt: 0.55, pitch: [0.15, 1.2] });

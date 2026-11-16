@@ -25,6 +25,9 @@
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-fable-5-2"
       }
     ]
   },
@@ -58,6 +61,10 @@
         {
           "model": "claude-opus-5-5",
           "part": "fixed: larger table cells and words, caption cut"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt: −TΔS wedge, tappable table of cases, draggable point, larger type"
         }
       ]
     },
@@ -83,6 +90,10 @@
         {
           "model": "claude-opus-5-5",
           "part": "fixed: frame fits the curve, readout units, caption cut"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt: tangent whose slope is ΔG, draggable mixture, curve fills the frame"
         }
       ]
     }

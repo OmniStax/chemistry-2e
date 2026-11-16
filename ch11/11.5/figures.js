@@ -161,7 +161,8 @@ function turn(p, yaw, pitch) {
    prints it, and the chain grows to the left. Coordinates in ångströms:
    C–C 1.54 Å as a 1.26 Å step along the zigzag, C–O 1.26, O–S 1.6,
    C–S 1.8, S–O 1.45, hydrogens tetrahedral out of the plane of the
-   zigzag, seen from one locked viewpoint. Still: nothing here has a
+   zigzag, the oxygen atoms round sulfur spread in that plane so all show,
+   seen from one locked viewpoint. Still: nothing here has a
    clock. Flat: the lesson is the two ends and the chain's length, which
    a turn does not show better.
 ===================================================================== */
@@ -172,8 +173,8 @@ function turn(p, yaw, pitch) {
   const cpos = (k) => [-1.26 * k, k % 2 ? 0.44 : -0.44, 0];
   const P0 = cpos(0), C1 = cpos(1), OUT = unit(sub(P0, C1)), A1 = Math.atan2(C1[1] - P0[1], C1[0] - P0[0]);
   const dir = (a) => [Math.cos(a), Math.sin(a), 0];
-  /* three oxygen atoms round a sulfur atom, tetrahedral with the bond that runs back from it */
-  const three = (S, back) => { const side = unit(cross(back, [0, 0, 1])); return [0, 1, 2].map((m) => { const f = 0.35 + m * TAU / 3; return add(S, mul(unit(add(mul(back, -1 / 3), add(mul(side, 0.943 * Math.cos(f)), mul([0, 0, 1], 0.943 * Math.sin(f))))), 1.45)); }); };
+  /* three oxygen atoms round a sulfur atom, spread in the plane of the zigzag as a structural formula spreads them, so that all three show */
+  const three = (S, back) => { const u = Math.atan2(-back[1], -back[0]); return [0, 1.83, -1.83].map((f, m) => add(S, [1.45 * Math.cos(u + f), 1.45 * Math.sin(u + f), m === 1 ? 0.25 : m === 2 ? -0.25 : 0])); };
   const HEADS = {};
   {
     const Oa = add(P0, mul(dir(A1 - TAU / 3), 1.26)), Ob = add(P0, mul(dir(A1 + TAU / 3), 1.26));
@@ -192,7 +193,9 @@ function turn(p, yaw, pitch) {
   const AM = F.choice(d.controls, { label: '\\text{ionic end}', options: [{ value: 'carboxylate', label: 'carboxylate' }, { value: 'sulfate', label: 'sulfate' }, { value: 'sulfonate', label: 'sulfonate' }], value: 'carboxylate', aria: 'the group at the ionic end', onInput: (v) => N.mark(MARKS[v]) });
   const hits = []; F.hover(d.stage, () => hits);
   const S = 44, PX = 1118, PY = 186;
-  const P = (p) => { const q = turn(p, 0.22, 0.42); return [PX + q[0] * S, PY - q[1] * S, q[2]]; };
+  /* the locked viewpoint, with the slope it gives the chain's axis taken out again so the chain lies level */
+  const YAW = 0.22, PITCH = 0.42, LEAN = Math.sin(YAW) * Math.sin(PITCH);
+  const P = (p) => { const q = turn(p, YAW, PITCH); return [PX + q[0] * S, PY - (q[1] - LEAN * p[0]) * S, q[2]]; };
   function draw() {
     const { ctx } = begin(d.c); hits.length = 0;
     const n = Math.round(N.v), to = AM.value, from = AM.from ?? to, k = smooth(AM.k ?? 1), A = HEADS[from], B = HEADS[to];

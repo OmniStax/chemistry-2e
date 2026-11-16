@@ -527,4 +527,146 @@ const rng = (seed) => () => { seed = (seed * 16807) % 2147483647; return (seed -
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
 
+/* =====================================================================
+   FIGURE 11.28: potassium chloride dissolved in water, drawn flat as the
+   book draws it: K⁺ ions with the oxygen atoms of their water molecules
+   turned toward them, Cl⁻ ions with a hydrogen atom of each water turned
+   toward them, and here and there a K⁺ and a Cl⁻ touching as an ion
+   pair. Moving: the ions wander at one speed, turning at random and off
+   the walls and one another; a free K⁺ and a free Cl⁻ that meet stay
+   together for about PAIR_S seconds, moving as one particle, then part.
+   Nothing sets how many pairs there are: they are counted from the
+   drawing, and i = particles / formula units is the book's definition
+   with those counts, an ion pair counting as one particle. Fewer formula
+   units in the same water meet less often, so i climbs toward 2. The
+   run for each count is fixed (a seeded generator), T_RUN s long after
+   a warm-up, so the timeline can be dragged; the graph is i against
+   time with its average so far. The numbers are the drawing's own, not
+   measured values: Table 11.3 gives measured i only at 0.050 m.
+===================================================================== */
+(function () {
+  const d = sim('sim-ion-pairs', 620);
+  const T_RUN = 20, FPS = 30, PAIR_S = 2.2, V = 58, DMIN = 106, RK = 27, RCL = 22, TOUCH = RK + RCL - 1;
+  const BOX = { l: 44, r: 884, t: 100, b: 588 };
+  const Nv = ctl(d.controls, { label: '\\text{KCl dissolved}', cls: '', min: 1, max: 8, step: 1, value: 4, unit: '', fmt: (v) => v + (v === 1 ? ' formula unit' : ' formula units'), aria: 'formula units of potassium chloride dissolved in the water', onInput: () => cy.reset() });
+  const cy = cycle(() => T_RUN, 2.5);
+  const runs = {};
+  /* the whole run for n formula units: positions every 1/FPS s, who is paired with whom, and i */
+  function runOf(n) {
+    if (runs[n]) return runs[n];
+    const rnd = rng(7919 * n + 13), ions = [];
+    for (let i = 0; i < 2 * n; i++) {
+      let x, y, tries = 0;
+      do { x = BOX.l + 60 + rnd() * (BOX.r - BOX.l - 120); y = BOX.t + 60 + rnd() * (BOX.b - BOX.t - 120); tries++; } while (tries < 400 && ions.some((q) => Math.hypot(q.x - x, q.y - y) < DMIN + 6));
+      ions.push({ k: i < n, x, y, th: rnd() * TAU, mate: -1, age: 0, life: 0, cool: 0, d: 0, phi: 0, spin: 0 });
+    }
+    const DT = 1 / 60, frames = [], iAt = [];
+    const stepOnce = () => {
+      ions.forEach((q, i) => {
+        q.cool = Math.max(0, q.cool - DT);
+        if (q.mate >= 0 && !q.k) return;                                   /* a paired Cl⁻ is carried by its K⁺ */
+        q.th += (rnd() - 0.5) * 2.4 * Math.sqrt(DT) * 3.2;
+        const sp = q.mate >= 0 ? V * 0.75 : V;
+        q.x += sp * Math.cos(q.th) * DT; q.y += sp * Math.sin(q.th) * DT;
+        if (q.mate >= 0) {
+          const m = ions[q.mate]; q.age += DT; q.d += (TOUCH - q.d) * Math.min(1, DT / 0.12); q.phi += q.spin * DT;
+          m.x = q.x + q.d * Math.cos(q.phi); m.y = q.y + q.d * Math.sin(q.phi);
+          if (q.age > q.life) { m.th = q.phi; q.th = q.phi + Math.PI; q.cool = m.cool = 1.6; q.mate = m.mate = -1; }
+        }
+      });
+      /* the walls, then one another */
+      ions.forEach((q) => {
+        const lead = q.mate >= 0 && !q.k ? ions[q.mate] : q, pad = 56;
+        if (q.x < BOX.l + pad) { lead.x += BOX.l + pad - q.x; lead.th = Math.atan2(Math.sin(lead.th), Math.abs(Math.cos(lead.th))); }
+        if (q.x > BOX.r - pad) { lead.x -= q.x - (BOX.r - pad); lead.th = Math.atan2(Math.sin(lead.th), -Math.abs(Math.cos(lead.th))); }
+        if (q.y < BOX.t + pad) { lead.y += BOX.t + pad - q.y; lead.th = Math.atan2(Math.abs(Math.sin(lead.th)), Math.cos(lead.th)); }
+        if (q.y > BOX.b - pad) { lead.y -= q.y - (BOX.b - pad); lead.th = Math.atan2(-Math.abs(Math.sin(lead.th)), Math.cos(lead.th)); }
+        if (lead !== q) { q.x = lead.x + lead.d * Math.cos(lead.phi); q.y = lead.y + lead.d * Math.sin(lead.phi); }
+      });
+      for (let i = 0; i < ions.length; i++) for (let j = i + 1; j < ions.length; j++) {
+        const a = ions[i], b = ions[j]; if (a.mate === j) continue;
+        const dx = b.x - a.x, dy = b.y - a.y, r = Math.hypot(dx, dy) || 1;
+        if (r >= DMIN) continue;
+        if (a.k !== b.k && a.mate < 0 && b.mate < 0 && a.cool <= 0 && b.cool <= 0) {
+          const kk = a.k ? a : b, cl = a.k ? b : a, ki = a.k ? i : j, ci = a.k ? j : i;
+          kk.mate = ci; cl.mate = ki; kk.age = 0; kk.life = PAIR_S * (0.8 + 0.4 * rnd()); kk.d = r; kk.phi = Math.atan2(cl.y - kk.y, cl.x - kk.x); kk.spin = (rnd() - 0.5) * 0.8;
+          continue;
+        }
+        const push = Math.min((DMIN - r) / 2, 150 * DT), nx = dx / r, ny = dy / r;
+        for (const [q, sgn] of [[a, -1], [b, 1]]) {
+          const lead = q.mate >= 0 && !q.k ? ions[q.mate] : q;
+          lead.x += sgn * nx * push; lead.y += sgn * ny * push;
+          const vn = Math.cos(lead.th) * sgn * nx + Math.sin(lead.th) * sgn * ny;
+          if (vn < 0) { const vx = Math.cos(lead.th) - 2 * vn * sgn * nx, vy = Math.sin(lead.th) - 2 * vn * sgn * ny; lead.th = Math.atan2(vy, vx); }
+        }
+      }
+      ions.forEach((q) => { if (q.mate >= 0 && !q.k) { const m = ions[q.mate]; q.x = m.x + m.d * Math.cos(m.phi); q.y = m.y + m.d * Math.sin(m.phi); } });
+    };
+    for (let i = 0; i < 60 * 25; i++) stepOnce();                          /* warm-up: the run opens already mixed */
+    for (let f = 0; f <= T_RUN * FPS; f++) {
+      frames.push(ions.map((q) => [q.x, q.y, q.mate]));
+      iAt.push((2 * n - ions.filter((q) => q.k && q.mate >= 0).length) / n);
+      for (let k = 0; k < 60 / FPS; k++) stepOnce();
+    }
+    const mean = []; let sum = 0; iAt.forEach((v, f) => { sum += v; mean.push(sum / (f + 1)); });
+    return (runs[n] = { n, frames, iAt, mean, kinds: ions.map((q) => q.k) });
+  }
+  let hits = [];
+  F.hover(d.stage, () => hits);
+  function waterAt(ctx, ox, oy, a) {            /* O at (ox, oy), the two H either side of the direction a */
+    for (const k of [0.91, -0.91]) ball(ctx, ox + 10.5 * Math.cos(a + k), oy + 10.5 * Math.sin(a + k), 6, F.el('H'));
+    ball(ctx, ox, oy, 9, F.el('O'));
+  }
+  function ion(ctx, x, y, k) { ball(ctx, x, y, k ? RK : RCL, F.el(k ? 'K' : 'Cl')); }
+  /* the waters round an ion: O toward K⁺, an H toward Cl⁻; none where its partner in an ion pair sits */
+  function shell(ctx, x, y, k, turn, mateDir, close) {
+    const n = k ? 4 : 3;
+    for (let j = 0; j < n; j++) {
+      const a = turn + (j * TAU) / n;
+      let al = 1;
+      if (mateDir !== null) { const da = Math.abs(Math.atan2(Math.sin(a - mateDir), Math.cos(a - mateDir))); al = 1 - close * Math.max(0, Math.min(1, (1.25 - da) / 0.3)); }
+      if (al <= 0.02) continue;
+      ctx.save(); ctx.globalAlpha = al;
+      if (k) waterAt(ctx, x + (RK + 8) * Math.cos(a), y + (RK + 8) * Math.sin(a), a);
+      else waterAt(ctx, x + (RCL + 15) * Math.cos(a), y + (RCL + 15) * Math.sin(a), a + Math.PI - 0.91);
+      ctx.restore();
+    }
+  }
+  function draw() {
+    const { ctx } = begin(d.c);
+    hits = [];
+    const n = Nv.v, R = runOf(n), t = cy.now(), fj = Math.min(T_RUN * FPS - 0.001, t * FPS), f0 = Math.floor(fj), u = fj - f0, A = R.frames[f0], B = R.frames[f0 + 1];
+    const ctm = C('time'), cAvg = F.cat(0), done = t >= T_RUN - 0.01;
+    ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.05); ctx.strokeStyle = PAL.rule; ctx.lineWidth = 2; ctx.beginPath(); ctx.roundRect(BOX.l, BOX.t, BOX.r - BOX.l, BOX.b - BOX.t, 18); ctx.fill(); ctx.stroke(); ctx.restore();
+    const pos = A.map((q, i) => [q[0] + (B[i][0] - q[0]) * u, q[1] + (B[i][1] - q[1]) * u, q[2]]);
+    let pairs = 0;
+    pos.forEach(([x, y, mate], i) => {
+      const k = R.kinds[i];
+      let dir = null, close = 0;
+      if (mate >= 0) { const m = pos[mate], dd = Math.hypot(m[0] - x, m[1] - y); dir = Math.atan2(m[1] - y, m[0] - x); close = Math.max(0, Math.min(1, (DMIN - dd) / (DMIN - TOUCH - 8))); if (k) { pairs++; ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 2.5; ctx.setLineDash([7, 7]); ctx.beginPath(); ctx.ellipse((x + m[0]) / 2, (y + m[1]) / 2, dd / 2 + 66, 62, dir, 0, TAU); ctx.stroke(); ctx.restore(); hits.push({ x: (x + m[0]) / 2, y: (y + m[1]) / 2, r: 30, name: 'an ion pair: K⁺ and Cl⁻ touching, one particle' }); } }
+      shell(ctx, x, y, k, (k ? 0.3 : 1.1) * i + (k ? 0.25 : -0.3) * t, dir, close);
+    });
+    pos.forEach(([x, y], i) => { ion(ctx, x, y, R.kinds[i]); hits.push({ x, y, r: 26, name: R.kinds[i] ? 'a potassium ion, K⁺, the oxygen atoms of its water molecules toward it' : 'a chloride ion, Cl⁻, a hydrogen atom of each water molecule toward it' }); });
+    legend(ctx, { l: BOX.l, r: BOX.r, t: BOX.b + 2, b: 620 }, [{ s: 'K⁺', draw: (c, x, y) => ball(c, x, y, 13, F.el('K')) }, { s: 'Cl⁻', draw: (c, x, y) => ball(c, x, y, 11, F.el('Cl')) }, { s: 'water', draw: (c, x, y) => waterAt(c, x, y + 3, -Math.PI / 2) },
+      { s: 'ion pair', draw: (c, x, y) => { c.save(); c.strokeStyle = alpha(PAL.ink, 0.55); c.lineWidth = 2; c.setLineDash([4, 4]); c.beginPath(); c.ellipse(x, y, 21, 11, 0, 0, TAU); c.stroke(); c.restore(); ball(c, x - 7, y, 8, F.el('K')); ball(c, x + 7, y, 6.5, F.el('Cl')); } }], { corner: 'below' });
+    /* i against time, 0 to T_RUN s and 1 (every ion paired) to 2 (every ion free) */
+    const ax = axes(ctx, { l: 1010, r: 1340, t: 190, b: 480 }, [0, T_RUN], [1, 2], { nx: 4, ny: 4, xl: 't (s)', xc: ctm, yl: 'i, particles per formula unit' });
+    const iOf = (s) => R.iAt[Math.min(R.iAt.length - 1, Math.floor(s * FPS + 1e-6))], mOf = (s) => R.mean[Math.min(R.mean.length - 1, Math.floor(s * FPS + 1e-6))];
+    if (t > 0.05) {
+      ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 3; ctx.lineJoin = 'round'; ctx.beginPath();
+      for (let f = 0; f <= f0; f++) { const x = ax.X(f / FPS), y = ax.Y(R.iAt[f]); if (!f) ctx.moveTo(x, y); else { ctx.lineTo(x, ax.Y(R.iAt[f - 1])); ctx.lineTo(x, y); } }
+      ctx.lineTo(ax.X(t), ax.Y(iOf(t))); ctx.stroke(); ctx.restore();
+      plot(ctx, ax, mOf, cAvg, { w: 5, x: [0, t] });
+    }
+    dot(ctx, ax.X(t), ax.Y(iOf(t)), PAL.ink, true, 7); dot(ctx, ax.X(t), ax.Y(mOf(t)), cAvg, true, 8);
+    legend(ctx, ax, [{ s: 'now', color: alpha(PAL.ink, 0.55), w: 3 }, { s: 'average so far', color: cAvg, w: 5 }], { corner: 'bl' });
+    const parts = 2 * n - pairs, u1 = n === 1 ? 'formula unit' : 'formula units';
+    topline(ctx, done ? `Over ${T_RUN} s, ${n} ${u1} of KCl averaged ${fmt(mOf(T_RUN) * n, 1)} particles: i = ${fmt(mOf(T_RUN), 2)}, where complete dissociation predicts 2.`
+      : pairs === 0 ? `Just now every ion is free: ${n} ${u1} of KCl, ${parts} particles.`
+        : `Just now ${pairs} ion ${pairs === 1 ? 'pair moves' : 'pairs move'} as one particle each: ${n} ${u1} of KCl, ${parts} particles.`);
+    tex(d.readout, `i = \\frac{\\text{particles in solution}}{\\text{formula units dissolved}} = \\frac{${parts}}{${n}} = ${fmt(parts / n, 2)}`, false, { values: false });
+  }
+  register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
+})();
+
 };

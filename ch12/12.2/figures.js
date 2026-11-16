@@ -11,7 +11,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
    in one piece, 1.0 M acid, 25 °C. The right one holds the same 144 atoms
    cut into the pieces chosen, in acid of the concentration and temperature
    set. Hydrogen ions fly straight and bounce; one that strikes an iron
-   atom reacts with a chance of 1 in 4 at 25 °C, doubled with each 10 °C
+   atom reacts with a chance of 1 in 2 at 25 °C, doubled with each 10 °C
    (the section's rule of thumb), and their speed goes as √T. Acid that
    reacts is replaced from above, so its concentration holds. A run of
    TRUN seconds is computed whole when a control moves, so the transport
@@ -22,14 +22,14 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
   const d = F.sim(root, 'sim-collisions', 870);
   const Pc = F.choice(d.controls, { label: '\\text{pieces of iron}', aria: 'the number of pieces the iron is cut into', options: ['1', '4', '16'].map((v) => ({ value: v, label: v })), value: '16', ms: 500, onInput: rerun });
   const Cc = ctl(d.controls, { label: hue('concentration', '[\\text{HCl}]'), cls: 'concentration', min: 0.5, max: 2, step: 0.5, value: 1, unit: 'M', dec: 1, onInput: rerun, aria: 'concentration of the hydrochloric acid in mol per liter' });
-  const Tc = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 5, max: 45, step: 10, value: 25, unit: '°C', dec: 0, onInput: rerun, aria: 'temperature of the acid in degrees Celsius' });
+  const Tc = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 5, max: 35, step: 5, value: 25, unit: '°C', dec: 0, onInput: rerun, aria: 'temperature of the acid in degrees Celsius' });
   const ro = F.readout(d);
 
   /*MODEL*/
   const NC = 24, NR = 6, NA = NC * NR, DA = 14, RA = 7, RH = 6, RF = 6;      /* the bar of atoms, 24 by 6; radii of Fe, H⁺ and Fe²⁺ */
   const WB = 590, TOP = 130, BOT = 450;                                        /* a vessel's inside width, and the liquid drawn */
   const TRUN = 6, DT = 1 / 240, EVERY = 4, NF = Math.round(TRUN / DT / EVERY);
-  const P25 = 0.25, VH = 420, PER = 40, SEED = 2;                              /* share reacting at 25 °C, ion speed, ions per 1.0 M */
+  const P25 = 0.5, VH = 420, PER = 40, SEED = 2;                              /* share reacting at 25 °C, ion speed, ions per 1.0 M */
   const MODES = { 1: { w: 24, h: 6, gx: 0, gy: 0 }, 4: { w: 6, h: 6, gx: 50, gy: 0 }, 16: { w: 3, h: 3, gx: 28, gy: 28 } };
   const rng = (seed) => () => { seed = (seed + 0x6D2B79F5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
   const gauss = (r) => { let a = 0; while (!a) a = r(); return Math.sqrt(-2 * Math.log(a)) * Math.cos(TAU * r()); };
@@ -190,12 +190,12 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     hits = [];
     const a = vessel(ctx, LX[0], base, t, cols[0], BASE, BASE.mode, 1), b = vessel(ctx, LX[1], run, t, cols[1], set, Pc.from, Pc.k);
     topline(ctx, `After ${fmt(t, 1)} s, ${NA - a} iron ${NA - a === 1 ? 'atom has' : 'atoms have'} reacted on the left and ${NA - b} on the right.`);
-    const fe = (edge, fillA) => (c, x, y) => ball(c, x + 22, y + 11, 8, alpha(F.el('Fe'), fillA), edge, 1.4);
+    const fe = (edge, fillA) => (c, x, y) => ball(c, x, y, 8, alpha(F.el('Fe'), fillA), edge, 1.4);
     legend(ctx, { l: LX[0], r: LX[1] + WB, t: TOP, b: BOT + 8 }, [
       { s: 'Fe atom, exposed', draw: fe(0.7, 1) }, { s: 'Fe atom, inside', draw: fe(0.25, 0.38) },
-      { s: 'H^+', draw: (c, x, y) => ball(c, x + 22, y + 11, 6, F.el('H'), 0.75, 1.4) },
-      { s: 'H_2', draw: (c, x, y) => pair(c, x + 22, y + 11, 0) },
-      { s: 'Fe^{2+}', draw: (c, x, y) => ball(c, x + 22, y + 11, 6.5, F.el('Fe')) },
+      { s: 'H^+', draw: (c, x, y) => ball(c, x, y, 6.5, F.el('H'), 0.75, 1.4) },
+      { s: 'H_2', draw: (c, x, y) => pair(c, x, y, 0) },
+      { s: 'Fe^{2+}', draw: (c, x, y) => ball(c, x, y, 6.5, F.el('Fe')) },
     ], { corner: 'below' });
     /* the graph: iron atoms left against t, a step down as each atom leaves */
     const g = axes(ctx, { l: 150, r: 1300, t: 580, b: 800 }, [0, TRUN], [0, NA], { nx: 6, ny: 4, xl: 'time (s)', xc: C('time'), yl: 'iron atoms left' });
@@ -208,7 +208,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     legend(ctx, g, [{ s: 'left', color: cols[0], w: 5 }, { s: 'right', color: cols[1], w: 5 }], { corner: 'bl' });
     const tt = Math.max(t, 0.1);
     const rate = (name, left) => `\\text{${name}: }\\krate = -\\frac{\\Delta(\\text{iron atoms})}{\\kdt} = -\\frac{${left} - ${NA}}{${hue('time', fmt(tt, 1) + '\\ \\text{s}')} - ${hue('time', '0.0\\ \\text{s}')}} = ${hue('rate', fmt((NA - left) / tt, 1) + '\\ \\text{atoms/s}')}`;
-    ro.set(`${rate('left', a)} \\\\ ${rate('right', b)}`, 'Water and chloride ions are not drawn, and acid that reacts is replaced from above. One hit in four reacts at 25 °C, and that share is made to double with each 10 °C.');
+    ro.set(`${rate('left', a)} \\\\ ${rate('right', b)}`, 'Water and chloride ions are not drawn, and acid that reacts is replaced from above. One hit in two reacts at 25 °C, and that share is made to double with each 10 °C.');
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => (Pc.k < 1 ? 0 : 1)), draw });
 })();

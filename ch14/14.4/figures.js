@@ -140,10 +140,10 @@ const TAU = 2 * Math.PI;
     return [q[0] * Math.cos(YAW) - z * Math.sin(YAW), y, q[0] * Math.sin(YAW) + z * Math.cos(YAW)];
   };
   /* the three free water molecules, a column to the right of the complex, placed in the view */
-  const FREE = [[5.2, 0.15, 0.3], [4.95, 2.2, 0.3], [4.95, -1.95, 0.3]].map(world);
+  const FREE = [[5.55, 0.15, 0.3], [5.3, 2.2, 0.3], [5.3, -1.95, 0.3]].map(world);
   /* the six bonded water molecules, each with the direction in the view its two hydrogens fan out along, so that
      both show; the first three (right, top, bottom) give up the hydrogen on their right, one per ionization */
-  const AXES = [[[1, 0, 0], [0.3, -1, 0]], [[0, 1, 0], [1, 0, 0]], [[0, -1, 0], [1, 0, 0]], [[-1, 0, 0], [0, 1, 0]], [[0, 0, 1], [0.6, 0.8, 0]], [[0, 0, -1], [0.6, 0.8, 0]]];
+  const AXES = [[[1, 0, 0], [-0.3, 1, 0]], [[0, 1, 0], [1, 0, 0]], [[0, -1, 0], [1, 0, 0]], [[-1, 0, 0], [0, 1, 0]], [[0, 0, 1], [0.6, 0.8, 0]], [[0, 0, -1], [0.6, 0.8, 0]]];
   const waters = AXES.map(([u, fan], i) => {
     const o = add([0, 0, 0], u, AO), t = world(fan), w = unit(add(t, u, -dot3(t, u)));
     return { o, h: [1, -1].map((sg) => add(o, add(add([0, 0, 0], u, Math.cos(HA)), w, sg * Math.sin(HA)), OH)), gives: i < 3 ? i : -1 };
@@ -151,7 +151,7 @@ const TAU = 2 * Math.PI;
   /* each free water molecule: its own two hydrogens turned away from the complex, and the place the third takes */
   const free = FREE.map((o, j) => {
     const from = waters[j].h[0], back = unit(add(from, o, -1));
-    const out = world([1, 0, 0]), tilt = world([0, 0.45, 0.89]);
+    const out = world([1, 0, 0]), tilt = world([0, 0.8, 0.6]);
     return { o, h: [1, -1].map((sg) => add(o, add(add([0, 0, 0], out, Math.cos(HA)), tilt, sg * Math.sin(HA)), OH)), from, to: add(o, back, 0.98) };
   });
   const R = { Al: 0.52 * K, O: 0.4 * K, H: 0.25 * K };
@@ -178,7 +178,8 @@ const TAU = 2 * Math.PI;
     topline(ctx, HEAD[n - 1]);
     /* everything drawn, far to near: balls and the sticks between them */
     const balls = [], sticks = [];
-    const ball = (el, p, name) => { const q = view(p); balls.push({ el, q, name: name ?? NAME[el] }); return q; };
+    const rad = (el, q) => R[el] * (1 + 0.035 * q[2]);
+    const ball = (el, p, name) => { const q = view(p); q.r = rad(el, q); balls.push({ el, q, name: name ?? NAME[el] }); return q; };
     const stick = (a, b, col, w) => sticks.push({ a, b, col, w, z: (a[2] + b[2]) / 2 });
     const al = ball('Al', [0, 0, 0]);
     let inTransit = null, lost = 0;
@@ -201,8 +202,13 @@ const TAU = 2 * Math.PI;
     const all = sticks.map((s) => ({ z: s.z - 0.01, s })).concat(balls.map((b) => ({ z: b.q[2], b }))).sort((p, q) => p.z - q.z);
     hits = [];
     all.forEach(({ s, b }) => {
-      if (s) { line(ctx, X(s.a), Y(s.a), X(s.b), Y(s.b), s.col, s.w); return; }
-      const r = R[b.el] * (1 + 0.035 * b.q[2]);
+      if (s) {
+        /* a stick shows only between the two balls it joins */
+        const dx = X(s.b) - X(s.a), dy = Y(s.b) - Y(s.a), l = Math.hypot(dx, dy);
+        if (l > s.a.r + s.b.r) line(ctx, X(s.a) + dx / l * s.a.r, Y(s.a) + dy / l * s.a.r, X(s.b) - dx / l * s.b.r, Y(s.b) - dy / l * s.b.r, s.col, s.w);
+        return;
+      }
+      const r = b.q.r;
       ctx.save(); ctx.fillStyle = F.el(b.el); ctx.strokeStyle = alpha(PAL.ink, 0.6); ctx.lineWidth = 2;
       ctx.beginPath(); ctx.arc(X(b.q), Y(b.q), r, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore();
       hits.push({ x: X(b.q), y: Y(b.q), r, name: b.name });
@@ -213,7 +219,7 @@ const TAU = 2 * Math.PI;
     text(ctx, CHARGE[lost], xr + 14, yt + 6, PAL.ink, { size: 34, weight: 600 });
     text(ctx, FORM[lost], CX, yb + 34, PAL.ink, { size: 26, weight: 600, align: 'center' });
     free.forEach((f, j) => { const q = view(f.o); text(ctx, moved(j) >= 1 ? 'H₃O⁺' : 'H₂O', X(q) + 1.5 * K, Y(q), PAL.ink, { size: 26, weight: 600 }); });
-    if (inTransit) text(ctx, 'H⁺', X(inTransit), Y(inTransit) - R.H - 16, PAL.ink, { size: 22, weight: 600, align: 'center' });
+    if (inTransit) text(ctx, 'H⁺', X(inTransit), Y(inTransit) - R.H - 18, PAL.ink, { size: 26, weight: 600, align: 'center' });
     const key = (el) => ({ s: { Al: 'aluminum', O: 'oxygen', H: 'hydrogen' }[el], draw: (c, x, y) => { c.save(); c.fillStyle = F.el(el); c.strokeStyle = alpha(PAL.ink, 0.6); c.lineWidth = 1.5; c.beginPath(); c.arc(x, y, 10, 0, TAU); c.fill(); c.stroke(); c.restore(); } });
     F.legend(ctx, { l: 24, r: 260, t: 84, b: 300 }, ['Al', 'O', 'H'].map(key), { corner: 'tl', panel: false, size: 20 });
     tex(d.readout, EQ[n - 1], false, { values: false });

@@ -277,7 +277,7 @@ const plain = (q) => sci(q).replace(/ \\times 10\^\{(-?\d+)\}/, (_, e) => ' × 1
     /* the two bands of Figure 14.8's brackets */
     const top = PAIRS.filter((p) => p.grp === 'top'), low = PAIRS.filter((p) => p.grp === 'low');
     ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.05);
-    ctx.fillRect(40, top[0].y - ROW / 2, 1320, top.length * ROW); ctx.fillRect(40, low[0].y - ROW / 2, 1320, low.length * ROW);
+    ctx.fillRect(20, top[0].y - ROW / 2, 1360, top.length * ROW); ctx.fillRect(20, low[0].y - ROW / 2, 1360, low.length * ROW);
     ctx.restore();
     /* faint rules every two decades, the scales above and below */
     for (let e = 0; e <= 14; e += 2) {
@@ -306,7 +306,7 @@ const plain = (q) => sci(q).replace(/ \\times 10\^\{(-?\d+)\}/, (_, e) => ' × 1
       const w = pick.a(p.id), on = w > 0.5;
       const fa = F.mixColor(PAL.ink, ca, w), fb = F.mixColor(PAL.ink, cb, w);
       const ba = F.mixColor(alpha(hc, 0.4), ca, w), bb = F.mixColor(alpha(hc, 0.4), cb, w);
-      if (w > 0) { ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.09 * w); ctx.fillRect(40, p.y - ROW / 2, 1320, ROW); ctx.restore(); }
+      if (w > 0) { ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.09 * w); ctx.fillRect(20, p.y - ROW / 2, 1360, ROW); ctx.restore(); }
       /* water, the reference, on a soft panel wherever it stands */
       if (p.id === 'H3O' || p.id === 'H2O') {
         ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.1);

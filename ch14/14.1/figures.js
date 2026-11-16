@@ -91,10 +91,10 @@ function transfer(ctx, R, k, A, B, eqY) {
   atom(ctx, 'H', xH, CY, A);
   F.faded(ctx, Math.min(1 - leave, 1 - join), [0, 0], () => text(ctx, '+', xH + 24, CY - 24, A, { size: 32, weight: 600 }));
   /* the names, as the text gives them, each under its species */
-  const after = ramp(k, 0.4, 0.6), xb = xB + ba.mid;
+  const before = 1 - ramp(k, 0.3, 0.48), after = ramp(k, 0.52, 0.7), xb = xB + ba.mid;
   const name = (s, x, y, c, a) => F.faded(ctx, a, [0, 0], () => text(ctx, s, x, CY + y + 40, c, { size: 28, weight: 600, align: 'center' }));
-  name(R.names[0], xA, ac.box[3], A, 1 - after); name(R.names[2], xA, ac.box[3], A, after);
-  name(R.names[1], xb, ba.box[3], B, 1 - after); name(R.names[3], xb, ba.box[3], B, after);
+  name(R.names[0], xA, ac.box[3], A, before); name(R.names[2], xA, ac.box[3], A, after);
+  name(R.names[1], xb, ba.box[3], B, before); name(R.names[3], xb, ba.box[3], B, after);
   ctx.restore();
   return [
     { x: xH, y: CY, r: 36, name: k < 0.06 ? `the hydrogen ${R.names[0]} gives up` : k > 0.94 ? `the hydrogen that came from ${R.names[0]}` : 'the proton, H⁺' },

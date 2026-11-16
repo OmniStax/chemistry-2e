@@ -36,7 +36,7 @@ const conc = (s) => hue('concentration', s);
    the top edge).
 ===================================================================== */
 (function () {
-  const d = sim('sim-quotient', 800);
+  const d = sim('sim-quotient', 840);
   const K = 11, KR = 1 / K, N = 1400, TMAX = 12, QMAX = 20;
   const rhs = (c) => { const r = c[0] * c[0] * c[1] - KR * c[2] * c[2]; return [-2 * r, -r, 2 * r]; };
   const Qof = (c) => c[2] * c[2] / (c[0] * c[0] * c[1]);
@@ -60,7 +60,7 @@ const conc = (s) => hue('concentration', s);
   const cy = cycle(() => 5, 1.2);
   const start = F.choice(d.controls, { label: '\\text{start}', aria: 'the starting mixture', value: 'r',
     options: STARTS.map(({ value, label }) => ({ value, label })), onInput: () => cy.reset() });
-  const G1 = { l: 150, r: 1300, t: 130, b: 340 }, G2 = { l: 150, r: 1300, t: 440, b: 730 };
+  const G1 = { l: 150, r: 1300, t: 130, b: 370 }, G2 = { l: 150, r: 1300, t: 470, b: 770 };
   const qTxt = (q) => q < 0.095 ? sig(q, 2) : q < 9.95 ? fmt(q, 1) : fmt(q, 0);
   let hits = [];
   F.hover(d.stage, () => hits);

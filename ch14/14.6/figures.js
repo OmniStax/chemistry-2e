@@ -91,7 +91,7 @@ const amt = (x) => (x <= 0 ? '0' : x >= 100 ? x.toFixed(0) : x.toPrecision(3));
   };
   const molar = (x) => `${sigTex(x)}\\ \\text{M}`;
 
-  const P = [{ l: 110 }, { l: 790 }], SLOT = [72, 236, 400], BW = 130, PW = 560, TOP = 112, BASE = 392;
+  const P = [{ l: 110 }, { l: 790 }], SLOT = [72, 222, 400], BW = 130, PW = 560, TOP = 112, BASE = 392;
   const G = { l: 110, r: 1350, t: 520, b: 826 };
   function draw() {
     const { ctx, H } = begin(d.c);

@@ -53,7 +53,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
   F.hover(d.stage, () => hits);
 
   const COLS = [110, 470, 743, 1016, 1290], ROWS = [136, 176, 216, 256];
-  const B = { l: 130, r: 900, t: 372, b: 712 }, BAR = { l: 1000, r: 1080 };
+  const B = { l: 120, r: 850, t: 372, b: 712 }, BAR = { l: 940, r: 1020 };
   const LX = -10, DEC = 12, LIM = 0.05, RLIM = (LIM * LIM) / (1 - LIM);
   const share = (r) => (2 * r) / (r + Math.sqrt(r * r + 4 * r));
   const EX = [{ n: '13.10', r: 4.9e-10 / 0.15, what: 'HCN, K_c = 4.9 × 10⁻¹⁰, 0.15 M', ux: 0, uy: -1, gap: 48 }, { n: '13.9', r: 0.0211, what: 'PCl₅, K_c = 0.0211, 1.00 M', ux: 0.86, uy: 0.5, gap: 30 }];

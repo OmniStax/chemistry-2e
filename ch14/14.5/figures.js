@@ -169,7 +169,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
         const ty = below ? y + 24 : y - 22;
         if (i === 2) F.rich(ctx, [[val, cC], ' = ', [KS[1], cK]], mid(i), ty, { size: 22, align: 'center' });
         else text(ctx, val, mid(i), ty, cC, { size: 22, weight: 600, align: 'center' });
-        hits.push({ x: mid(i), y, r: 26, name: `[${a.hover[i]}] = ${val}` });
+        hits.push({ x: mid(i), y, r: 40, name: `[${a.hover[i]}] = ${val}` });
       });
       text(ctx, `[H_{3}O⁺] = ${sigText(x, 2)} M`, B.r - 14, yH - 22, cC, { size: 22, weight: 600, align: 'right' });
       hits.push({ x: B.r - 150, y: yH, r: 26, name: `[H₃O⁺] = ${sigText(x, 2)} M, nearly all of it from the first step` });

@@ -133,7 +133,7 @@ const conc = (s) => hue('concentration', s);
     options: [{ value: '1', label: 'Mixture 1' }, { value: '2', label: 'Mixture 2' }, { value: '3', label: 'Mixture 3' }] });
   const pr = ctl(d.controls, { label: '\\text{progress}', cls: '', key: 'progress', min: 0, max: 100, step: 1, value: 0, unit: '%', dec: 0,
     aria: 'how far the mixtures have gone toward equilibrium, in percent', specials: [{ at: 100, label: 'equilibrium' }] });
-  const B = { l: 170, r: 770 }, BX = (v) => B.l + v / 0.10 * (B.r - B.l);
+  const B = { l: 170, r: 800 }, BX = (v) => B.l + v / 0.10 * (B.r - B.l);
   const S = { l: 926, r: 1306 }, LMIN = -4, LMAX = 4, X0 = S.l - 56, XINF = S.r + 56;
   const SX = (lq) => S.l + (lq - LMIN) / (LMAX - LMIN) * (S.r - S.l);
   const ROWS = [222, 342, 462], BH = 60, AX = 524, TOP = 176;
@@ -156,7 +156,7 @@ const conc = (s) => hue('concentration', s);
       ctx.save(); ctx.strokeStyle = col; ctx.lineWidth = 2.5; ctx.strokeRect(l + 1.25, t + 1.25, Math.max(0.5, r - l - 2.5), BH - 2.5); ctx.restore();
       hits.push({ x: (l + r) / 2, y, r: Math.max(12, Math.min(30, (r - l) / 2)), name: `${NAMES[j]} in mixture ${i + 1}: ${sig(v)} M` });
       const s = sig(v), w = F.measure(ctx, s, { size: 17, weight: 600 });
-      if (r - l >= w + 8) text(ctx, s, (l + r) / 2, y, PAL.ink, { size: 17, weight: 600, align: 'center' });
+      if (r - l >= w + 6) text(ctx, s, (l + r) / 2, y, PAL.ink, { size: 17, weight: 600, align: 'center' });
       else if (v >= 0.0005) thin.push({ s, w, x: (l + r) / 2 });
     });
     /* a value its segment cannot hold stands over the bar on a leader, as the book sets 0.00175 and 0.00160 */

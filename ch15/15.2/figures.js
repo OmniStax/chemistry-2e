@@ -59,7 +59,7 @@ const RAD = Math.PI / 180;
         ...lone(1, [L, U, R]), ...lone(2, [U, R]), ...lone(3, [L, D, R]), ...lone(4, [U, L, D]), give(4, R, 0)],
       marks: [[4, '2−']], charge: '2−', groups: [['Lewis base', [4]], ['Lewis acid', [0, 1, 2, 3]]],
       before: 'O²⁻ donates one of its four lone pairs to the sulfur atom of SO₃.', link: 'the new O–S bond', from: 'the oxide ion',
-      note: 'Sulfur keeps 8 electrons: as the new bond forms, one pair of the S=O double bond moves onto that oxygen atom.' },
+      note: 'As the new bond forms, one pair of the S=O double bond moves onto its oxygen atom, so sulfur keeps 8 electrons.' },
   ];
   const gapOf = (s) => (s.length > 1 ? 42 : 28), ringOf = (s) => (s.length > 1 ? 48 : 38);
   /* each state centred on the stage; the labels' line is the same in both, under the lowest atom of either */
@@ -172,7 +172,7 @@ const RAD = Math.PI / 180;
    on which Ksp is a straight line: the solution moves down the line as
    the solid dissolves and leaves it, straight down, once none is left.
    Axes fixed: [Cl-] from 1e-6 to 1e-1 M (the slider maximum is 0.040 M),
-   [Ag+] from 1e-10 to 1e-4 M (the least is 1.2e-10 M, with 0.002 mol of
+   [Ag+] from 1e-10 to 1e-4 M (the least is 3.0e-10 M, with 0.005 mol of
    solid in 1.00 M ammonia). Still: each equilibrium answers its sliders.
 ===================================================================== */
 (function () {
@@ -186,7 +186,7 @@ const RAD = Math.PI / 180;
     const a = 10 ** bisect((la) => { const x = 10 ** la, c = n - x; return KF * x * (N - 2 * c) ** 2 - c; }, -40, Math.log10(n));
     return { s: n, a, sat: false };
   }
-  const nS = ctl(d.controls, { label: '\\text{AgCl}(s)', cls: 'amount', key: 'n', min: 0.002, max: NMAX, step: 0.001, value: 0.02, unit: 'mol', dec: 3,
+  const nS = ctl(d.controls, { label: '\\text{AgCl}(s)', cls: 'amount', key: 'n', min: 0.005, max: NMAX, step: 0.001, value: 0.02, unit: 'mol', dec: 3,
     aria: 'the amount of solid silver chloride put in the water, in moles', onInput: () => draw() });
   const nh3 = ctl(d.controls, { label: '\\text{NH}_{3}\\text{ added}', cls: 'concentration', key: 'N', min: 0, max: 1, step: 0.005, value: 0.1, unit: 'M', dec: 3,
     aria: 'the concentration of ammonia added, in molar',
@@ -254,10 +254,10 @@ const RAD = Math.PI / 180;
     const g = F.axes(ctx, G, [-6, -1], [-10, -4], { nx: 5, ny: 6, fx: (v) => '10' + sup(Math.round(v)), fy: ft, xl: '[Cl⁻] (M)', xc: cc, yl: '[Ag⁺] (M)', yc: cc });
     /* the Ksp line, and the two sides of it */
     const X = (v) => g.X(Math.log10(v)), Y = (v) => g.Y(Math.log10(v));
-    line(ctx, X(1e-6), Y(KSP / 1e-6), X(1e-1), Y(KSP / 1e-1), ke, 3);
+    line(ctx, X(KSP / 1e-4), Y(1e-4), X(1e-1), Y(KSP / 1e-1), ke, 3);
     text(ctx, 'Q > K_{sp}: AgCl precipitates', G.r - 14, G.t + 26, PAL.muted, { size: 20, align: 'right' });
     text(ctx, 'Q < K_{sp}: more AgCl can dissolve', G.l + 16, G.b - 24, PAL.muted, { size: 20 });
-    text(ctx, 'Q = K_{sp}', X(1.6e-6), Y(KSP / 1.6e-6) + 34, ke, { size: 22, weight: 600, align: 'left' });
+    text(ctx, 'Q = K_{sp}', G.r - 14, G.b - 24, ke, { size: 22, weight: 600, align: 'right' });
     /* the path of the solution as ammonia goes in: down the line while solid is left, then straight down; the part still ahead is dashed */
     const corner = Math.min(n, satS(1)), endA = state(1, n).a, sNow = st.s, aNow = st.a, ink = PAL.ink, ahead = alpha(PAL.ink, 0.4);
     line(ctx, X(S0), Y(S0), X(sNow), Y(KSP / sNow), ink, 6);
@@ -266,6 +266,7 @@ const RAD = Math.PI / 180;
     if (Nstar <= 1) {
       line(ctx, X(n), Y(done ? aNow : KSP / n), X(n), Y(endA), ahead, 3, [4, 8]);
       if (!onCircle) F.dot(ctx, X(n), Y(KSP / n), ink, false, 6);
+      F.label(ctx, 'last solid dissolves', X(n), Y(KSP / n), { side: 'above', size: 20, gap: 64, leader: true });
       hits.push({ x: X(n), y: Y(KSP / n), r: 12, name: `the last solid dissolves here, at ${Nstar.toFixed(2)} M ammonia` });
     }
     F.dot(ctx, X(S0), Y(S0), ink, false, 9);
@@ -274,8 +275,7 @@ const RAD = Math.PI / 180;
     F.dot(ctx, X(sNow), Y(aNow), ink, true, 10);
     hits.push({ x: X(sNow), y: Y(aNow), r: 16, name: `the solution: [Cl⁻] = ${sciTxt(sNow, 3)} M, [Ag⁺] = ${sciTxt(aNow, 3)} M` });
     const NTxt = N.toFixed(N < 0.1 ? 3 : 2);
-    if (N > 0) text(ctx, `in ${NTxt} M NH₃`, X(sNow) - 16, Y(aNow) + 28, PAL.ink, { size: 20, align: 'right', bg: PAL.panel });
-    if (Nstar <= 1) text(ctx, 'no solid left', X(n) + 14, Y(endA) + 4, PAL.muted, { size: 20 });
+    if (N > 0) text(ctx, `in ${NTxt} M NH₃`, X(sNow) - 16, Y(aNow) + (done && !onCircle ? 14 : 28), PAL.ink, { size: 20, align: 'right', bg: PAL.panel });
     topline(ctx, N <= 0 ? `In pure water, only ${sciTxt(st.s)} mol of the silver chloride dissolves.`
       : done ? `All ${n.toFixed(3)} mol of the silver chloride has dissolved in ${NTxt} M ammonia.`
         : `In ${NTxt} M ammonia, ${sciTxt(st.s)} mol of AgCl dissolves, ${big(st.s / S0)} times as much as in pure water.`);

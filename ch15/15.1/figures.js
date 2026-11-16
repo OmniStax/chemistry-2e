@@ -360,8 +360,7 @@ function beakerGlass(ctx, B) {
         const yk = Math.max(YR[0], Math.log10(left[k]));
         dot(ctx, X(xa), Y(yk), col[k], true, 10);
         hits.push({ x: X(xa), y: Y(yk), r: 14, name: `[${ION[k]}] = ${sciText(left[k])} M: ${NAMES[k]} ${on[k] ? 'is precipitating' : 'has not begun to precipitate'}` });
-        lab.block(X(xa) - 12, Y(yk) - 12, X(xa) + 12, Y(yk) + 12);
-        lab.add(ION[k], X(xa), Y(yk), 0.71, -0.71, col[k], 20, 14);
+        lab.add(ION[k], X(xa), Y(yk), 0.71, -0.71, col[k], 20, 20);
       });
       lab.add('AgCl', X(-3.0), Y(LK.cl + 3.0), 0.71, -0.71, colCl, 20, 22);
       lab.add('AgBr', X(-3.6), Y(LK.br + 3.6), -0.71, 0.71, colBr, 20, 22);

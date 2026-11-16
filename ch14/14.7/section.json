@@ -23,6 +23,9 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-fable-5-2"
    }
   ]
  },
@@ -63,6 +66,10 @@
     {
      "model": "claude-opus-5-5",
      "part": "bench redrawn: stand, clamp, ruled buret, flask; caption cut"
+    },
+    {
+     "model": "claude-fable-5-2",
+     "part": "rebuilt: a color strip per indicator, fine volume slider, larger bench"
     }
    ]
   },

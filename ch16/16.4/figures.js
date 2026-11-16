@@ -271,7 +271,7 @@ const local = (c, e) => { const r = c.getBoundingClientRect(); return r.width ? 
     /* the slope named inside the bowl, on the side the reaction runs to */
     if (at) lab.add('slope = ΔG = 0', px, py, 0, -1, cE, 22, 40);
     else if (py < G.t + 110) lab.add(`slope = ΔG = ${minus(dg.toFixed(2))} kJ/mol`, px, py + 24, m < 0 ? 1 : -1, 0, cE, 22, 64);
-    else lab.add(`slope = ΔG = ${minus(dg.toFixed(2))} kJ/mol`, px, py, m < 0 ? 0.7 : -0.7, -0.7, cE, 22, 46);
+    else lab.add(`slope = ΔG = ${minus(dg.toFixed(2))} kJ/mol`, px, py, m < 0 ? 0.7 : -0.7, -0.7, cE, 22, Math.abs(px - mx) < 220 ? 62 : 46);
     hits.push({ x: px, y: py, r: 18, name: at ? `the mixture at equilibrium: ${Math.round(x * 100)} % product` : `the mixture: ${Math.round(x * 100)} % product, Q = ${qs}; the tangent's slope is ΔG, and its head points the way the reaction runs` });
     lab.flush();
 

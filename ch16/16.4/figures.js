@@ -246,9 +246,10 @@ const local = (c, e) => { const r = c.getBoundingClientRect(); return r.width ? 
     const mx = X(xe), my = Y(f(xe));
     line(ctx, mx, my + 8, mx, G.b, alpha(PAL.ink, 0.45), 2, [4, 8]);
     dot(ctx, mx, my, cE, false, 8);
-    const room = (px) => (px - G.l < 240 ? 1 : G.r - px < 240 ? -1 : 0);
-    const px = X(x), py = Y(f(x)), qSide = room(px) || (x < xe ? -1 : 1), kSide = room(mx) || -qSide;
-    lab.add(at ? `Q = K = ${ks}` : `K = ${ks}`, mx, G.b - 6, 0.55 * kSide, -0.85, cK, 22, 34);
+    /* K is named on the bottom row and Q on the row above, each on the outer side of its drop line where there is room */
+    const room = (px, w) => (px - G.l < w ? 1 : G.r - px < w ? -1 : 0);
+    const px = X(x), py = Y(f(x)), qSide = room(px, 290) || (x < xe ? -1 : 1), kSide = room(mx, 190) || (x < xe ? 1 : -1);
+    lab.add(at ? `Q = K = ${ks}` : `K = ${ks}`, mx, G.b - 26, kSide, 0, cK, 22, 16);
     hits.push({ x: mx, y: my, r: 16, name: `the minimum of G, where Q = K = ${ks}: ${Math.round(xe * 100)} % product at equilibrium` });
 
     /* the reader's mixture: its tangent, whose slope is ΔG, the head on the downhill end */
@@ -264,11 +265,12 @@ const local = (c, e) => { const r = c.getBoundingClientRect(); return r.width ? 
       const a = reach(-down, 80), b = reach(down, Math.max(46, Math.min(150, toMin)));
       F.arrow(ctx, px - down * a * ux, py - down * a * uy, px + down * b * ux, py + down * b * uy, cE, 3);
       line(ctx, px, py + 12, px, G.b, alpha(PAL.ink, 0.45), 2, [4, 8]);
-      lab.add(`Q = ${x.toFixed(2)}/${(1 - x).toFixed(2)} = ${qs}`, px, G.b - 6, 0.55 * qSide, -0.85, cK, 22, 34);
+      lab.add(`Q = ${x.toFixed(2)}/${(1 - x).toFixed(2)} = ${qs}`, px, G.b - 62, qSide, 0, cK, 22, 16);
     }
     P.draw(ctx, ax, cE);
     /* the slope named inside the bowl, on the side the reaction runs to */
     if (at) lab.add('slope = ΔG = 0', px, py, 0, -1, cE, 22, 40);
+    else if (py < G.t + 110) lab.add(`slope = ΔG = ${minus(dg.toFixed(2))} kJ/mol`, px, py + 24, m < 0 ? 1 : -1, 0, cE, 22, 64);
     else lab.add(`slope = ΔG = ${minus(dg.toFixed(2))} kJ/mol`, px, py, m < 0 ? 0.7 : -0.7, -0.7, cE, 22, 46);
     hits.push({ x: px, y: py, r: 18, name: at ? `the mixture at equilibrium: ${Math.round(x * 100)} % product` : `the mixture: ${Math.round(x * 100)} % product, Q = ${qs}; the tangent's slope is ΔG, and its head points the way the reaction runs` });
     lab.flush();

@@ -146,7 +146,7 @@ const sup = (n) => String(n).split('').map((c) => SUP[c] ?? c).join('');
       for (let i = 0; i < 12; i++) { const m = (a + b) / 2; if (inside(q.x + q.ux * dist * m, q.y + q.uy * dist * m)) a = m; else b = m; }
       q.x += q.ux * dist * a; q.y += q.uy * dist * a; dist *= 1 - a;
       const dl = Math.hypot(q.x + OFF, q.y), dr = Math.hypot(q.x - OFF, q.y);
-      if (Math.abs(q.y) > HI - 1 && dl > RI - 0.5 && dr > RI - 0.5) q.uy = -q.uy;   /* the tube's wall: a glancing bounce */
+      if (Math.abs(q.x) < XE - 3 && Math.abs(q.y) > HI - 1) q.uy = -q.uy;   /* the tube's straight wall: a glancing bounce */
       else { const cx = dl < dr ? -OFF : OFF, r = Math.min(dl, dr) || 1; leave(q, (cx - q.x) / r, -q.y / r); }
     }
   }
@@ -228,7 +228,7 @@ const sup = (n) => String(n).split('').map((c) => SUP[c] ?? c).join('');
     const t1 = Math.max(WIN, clock), g = F.axes(ctx, G, [0, t1], [0, N], { nx: 0, ny: 2, yl: 'atoms in each flask' });
     text(ctx, 'time since the valve opened', G.r, G.b + 30, C('time'), { size: 20, weight: 600, align: 'right' });
     line(ctx, G.l, g.Y(N / 2), G.r, g.Y(N / 2), alpha(PAL.ink, 0.45), 2.5, [10, 10]);
-    text(ctx, 'even split', G.r + 12, g.Y(N / 2), PAL.muted, { size: 17 });
+    text(ctx, 'even split', G.r + 24, g.Y(N / 2), PAL.muted, { size: 17 });
     F.legend(ctx, g, [{ s: 'left flask', color: cl, w: 4 }, { s: 'right flask', color: cr, w: 4 }], { corner: 'above' });
     const pts = shut ? [[0, 0]] : trace.concat([[clock, n]]);
     [[cl, (c) => N - c], [cr, (c) => c]].forEach(([col, f]) => {

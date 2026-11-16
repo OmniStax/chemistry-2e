@@ -23,6 +23,9 @@
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-fable-5-2"
       }
     ]
   },
@@ -55,6 +58,10 @@
         {
           "model": "claude-opus-5-5",
           "part": "larger triangle, labels clear, readout split, short caption"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt as three aligned scales with one cursor; triangle unfolded"
         }
       ]
     },
@@ -64,7 +71,8 @@
       "draws": [
         "potential",
         "equilibrium-constant",
-        "amount"
+        "amount",
+        "concentration"
       ],
       "ai": [
         {
@@ -75,6 +83,10 @@
         {
           "model": "claude-opus-5-5",
           "part": "readout split at Q = K, short caption"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "rebuilt: the book's three cells, concentrations on the sliders"
         }
       ]
     },
@@ -101,6 +113,10 @@
         {
           "model": "claude-opus-5-5",
           "part": "rebuilt flat with ions counted per 0.02 M"
+        },
+        {
+          "model": "claude-fable-5-2",
+          "part": "live concentrations and E_cell on the cell, taller graphs"
         }
       ]
     }

@@ -33,7 +33,7 @@ function onBall(ctx, col) {
    half-cells of equal volume. CU_BLUE is the colour of Cu²⁺(aq), a fact.
 ===================================================================== */
 (function () {
-  const H = 830, d = sim('sim-galvanic-cell', H);
+  const H = 858, d = sim('sim-galvanic-cell', H);
   const CU_BLUE = '#3b8fd9';                    /* the blue of Cu²⁺(aq) */
   const NB = 4, P = 1.75, T = NB * P, FLY = 0.9;
   /* beakers: centres, inner half-width, rim, floor, liquid level */
@@ -46,7 +46,7 @@ function onBall(ctx, col) {
   const ION = {
     Cu: { el: 'Cu', r: 15, q: '2+', s: 'Cu²⁺' }, Mg: { el: 'Mg', r: 14, q: '2+', s: 'Mg²⁺' }, Ag: { el: 'Ag', r: 16, q: '+', s: 'Ag⁺' },
     Fe3: { el: 'Fe', r: 15, q: '3+', s: 'Fe³⁺' }, Fe2: { el: 'Fe', r: 15, q: '2+', s: 'Fe²⁺' }, Na: { el: 'Na', r: 15, q: '+', s: 'Na⁺' },
-    Cl: { el: 'Cl', r: 19, q: '−', s: 'Cl⁻' }, NO3: { r: 18.5, q: '−', s: 'NO₃⁻' },
+    Cl: { el: 'Cl', r: 19, q: '−', s: 'Cl⁻' }, NO3: { r: 19, q: '−', s: 'NO₃⁻' },
   };
   /* where the ions come to rest: anions under the left foot, cations under the right, the anode's ions beside it */
   const AN_SLOTS = [[372, 664], [432, 664], [342, 612], [462, 612], [402, 612], [492, 556], [372, 556], [432, 556]];
@@ -129,9 +129,9 @@ function onBall(ctx, col) {
     const k = ION[kind];
     ctx.save(); ctx.globalAlpha *= a;
     if (kind === 'NO3') {
-      for (let i = 0; i < 3; i++) { const an = i * TAU / 3 - Math.PI / 2; ball(ctx, x + 11 * Math.cos(an), y + 11 * Math.sin(an), 7.5, F.el('O')); }
-      ball(ctx, x, y, 8, F.el('N'));
-      text(ctx, '−', x, y, onBall(ctx, F.el('N')), { size: 17, weight: 700, align: 'center' });
+      for (let i = 0; i < 3; i++) { const an = i * TAU / 3 - Math.PI / 2; ball(ctx, x + 12 * Math.cos(an), y + 12 * Math.sin(an), 7, F.el('O')); }
+      ball(ctx, x, y, 10, F.el('N'));
+      text(ctx, '−', x, y, onBall(ctx, F.el('N')), { size: 19, weight: 700, align: 'center' });
     } else {
       ball(ctx, x, y, k.r, F.el(k.el));
       if (mark) text(ctx, k.q, x, y + 1, onBall(ctx, F.el(k.el)), { size: 17, weight: 700, align: 'center' });
@@ -225,7 +225,7 @@ function onBall(ctx, col) {
   }
   /* the cell schematic, each term under the part it names */
   function schematic(ctx, c, n) {
-    const K = CELLS[c], y = 752, cc = C('concentration'), size = 22;
+    const K = CELLS[c], y = 748, cc = C('concentration'), size = 22;
     const parts = (rows) => rows.flatMap(([v, s]) => [[v, cc], s]);
     const width = (ps) => ps.reduce((a, p) => a + F.measure(ctx, typeof p === 'string' ? p : p[0], { size, weight: typeof p === 'string' ? 400 : 600 }), 0);
     const a = `${K.anode}(s)`, k = `${K.cathode}(s)`, wa = F.measure(ctx, a, { size }), wk = F.measure(ctx, k, { size });
@@ -294,15 +294,16 @@ function onBall(ctx, col) {
 
     /* labels, all on parts that hold still; the flow labels go when the bridge does */
     br.only(ctx, 'in', () => {
-      text(ctx, 'flow of electrons', 716, 26, PAL.ink, { size: 22, align: 'right' }); arrow(ctx, 732, 26, 802, 26, PAL.ink, 3);
-      text(ctx, 'Flow of anions', 690, 166, PAL.ink, { size: 22, align: 'right' }); arrow(ctx, 548, 166, 492, 166, PAL.ink, 3);
-      text(ctx, 'Flow of cations', 710, 166, PAL.ink, { size: 22, align: 'left' }); arrow(ctx, 852, 166, 908, 166, PAL.ink, 3);
+      text(ctx, 'flow of electrons', 716, 26, PAL.ink, { size: 22, align: 'right' }); arrow(ctx, 730, 26, 794, 26, PAL.ink, 3);
+      const wa = F.measure(ctx, 'Flow of anions', { size: 22 }), wc = F.measure(ctx, 'Flow of cations', { size: 22 });
+      text(ctx, 'Flow of anions', 686, 166, PAL.ink, { size: 22, align: 'right' }); arrow(ctx, 686 - wa - 14, 166, 686 - wa - 72, 166, PAL.ink, 3);
+      text(ctx, 'Flow of cations', 714, 166, PAL.ink, { size: 22, align: 'left' }); arrow(ctx, 714 + wc + 14, 166, 714 + wc + 72, 166, PAL.ink, 3);
     }, [0, 0]);
     br.only(ctx, 'out', () => text(ctx, 'no electrons flow', 700, 26, PAL.ink, { size: 22, align: 'center' }), [0, 0]);
     /* the dashed guide from the bridge down to its double line, and from each electrode to its symbol */
     line(ctx, 700, BT + BW / 2 - lift + 2, 700, 334, alpha(PAL.ink, 0.55), 1.5);
-    line(ctx, 700, 368, 700, 732, alpha(PAL.ink, 0.35), 2, [4, 8]);
-    line(ctx, XA, FLOOR + 8, XA, 734, alpha(PAL.ink, 0.35), 2, [4, 8]); line(ctx, XC, FLOOR + 8, XC, 734, alpha(PAL.ink, 0.35), 2, [4, 8]);
+    line(ctx, 700, 368, 700, 728, alpha(PAL.ink, 0.35), 2, [4, 8]);
+    line(ctx, XA, FLOOR + 8, XA, 728, alpha(PAL.ink, 0.35), 2, [4, 8]); line(ctx, XC, FLOOR + 8, XC, 728, alpha(PAL.ink, 0.35), 2, [4, 8]);
     lead(ctx, 636, 560, BL + BW / 2 - 6, FOOT - 9 - lift); lead(ctx, 764, 560, BR - BW / 2 + 6, FOOT - 9 - lift);
     text(ctx, 'Porous plug', 700, 560, PAL.ink, { size: 22, align: 'center', bg: PAL.panel });
     for (const v of ['cu', 'mg']) cell.only(ctx, v, () => { labels(ctx, v); schematic(ctx, v, v === c ? n : 0); }, [0, 0]);

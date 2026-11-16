@@ -135,6 +135,7 @@ function rust(ctx, cx, y, w, h, dir = 1) {
       ctx.fillStyle = water; ctx.fillRect(652, CB - 18, 476, 18);
       const thin = (x) => 16 * s * Math.pow(Math.max(0, 1 - Math.pow((x - 890) / 235, 2)), 1.5);
       fillPath(ctx, () => { ctx.moveTo(0, FB); ctx.lineTo(1400, FB); ctx.lineTo(1400, CB); for (let x = 1400; x >= 0; x -= 10) ctx.lineTo(x, CB - thin(x)); }, zinc, null);
+      if (s > 0.05) line(ctx, 700, CB, 1080, CB, alpha(PAL.ink, 0.45), 2, [7, 7]);
     }, [0, 0]);
 
     /* rust gathering under the paint at the edge of the lower drop */
@@ -183,7 +184,7 @@ function rust(ctx, cx, y, w, h, dir = 1) {
       { x: 400, y: 150, r: 70, name: 'a drop of water' }, { x: 890, y: 540, r: 60, name: 'a drop of water' }, { x: (SC[0] + SC[1]) / 2, y: FT, r: 30, name: 'the cathodic site, bare iron under the scratch' });
     [100, 620, 820, 1100, 1300].forEach((x) => hits.push({ x, y: CT + 11, r: 14, name: o.coat }, { x: x - 60, y: FB + 11, r: 14, name: o.coat }));
     if (v === 'paint') hits.push({ x: 1050, y: CB + 18, r: 34, name: 'rust, Fe₂O₃·xH₂O' }, { x: BR[0] + 30, y: FB - D / 2, r: 36, name: 'the anodic site, a pit in the iron' });
-    else hits.push({ x: 890, y: FB + 8, r: 22, name: 'the anodic site, zinc under the drop' });
+    else hits.push({ x: 890, y: FB + 6, r: 16, name: 'the anodic site, zinc under the drop' }, { x: 890, y: CB, r: 8, name: 'the zinc coat when new' }, { x: 760, y: CB, r: 8, name: 'the zinc coat when new' }, { x: 1020, y: CB, r: 8, name: 'the zinc coat when new' });
 
     /* labels: each site with its half-reaction beside its drop, then the parts */
     F.rich(ctx, [['cathodic site', PAL.ink], '   O₂ + 4H⁺ + 4e⁻ ⟶ 2H₂O'], 405, 34, { size: 22, align: 'center' });
@@ -222,7 +223,7 @@ function rust(ctx, cx, y, w, h, dir = 1) {
 (function () {
   const H = 640, d = sim('sim-protection', H);
   const T = 6;
-  const GY = 84, SR = 1040;                                    /* the ground line, the right edge of the soil */
+  const GY = 84, SR = 1024;                                    /* the ground line, the right edge of the soil */
   const AX = 220, NT = 186, NB = 224, AW = 160, AB = 545;      /* the block: centre, neck top and bottom, body width, bottom */
   const TL = 500, TR = 990, TT = 262, TB = 482, TC = (TT + TB) / 2, RY = (TB - TT) / 2, RX = 44, LUG = 700, WY = 130;
   const M = {
@@ -239,7 +240,7 @@ function rust(ctx, cx, y, w, h, dir = 1) {
 
   /* pebbles fixed once, none under a label */
   const PEB = Array.from({ length: 110 }, (_, i) => [hash(i) * SR, GY + 26 + hash(i + 500) * (H - GY - 40), 3 + 3 * hash(i + 900)])
-    .filter(([x, y]) => !(y > 556 && x < 420) && !(y > 150 && y < 228 && x > 340 && x < 1040));
+    .filter(([x, y]) => !(y > 556 && x < 420) && !(y > 150 && y < 228 && x > 340 && x < 1024));
   const GRASS = Array.from({ length: 52 }, (_, i) => [10 + i * 20 + 8 * hash(i + 40), 9 + 7 * hash(i + 70)]);
   /* the block: a cast cylinder seen from the side, w wide and ending at bot, with shoulders up to its neck */
   const block = (ctx, w, bot) => {
@@ -348,14 +349,14 @@ function rust(ctx, cx, y, w, h, dir = 1) {
       { s: 'water, H₂O', draw: (g, x, y) => h2o(g, x, y - 3) }], { corner: 'tl', row: true, panel: false, size: 20 });
 
     /* the couples on one E° scale; the arrow from the anode's rung up to O₂/H₂O is E°cell */
-    const X0 = 1150;
+    const X0 = 1136;
     text(ctx, '$\\kEo$ (V)', X0, 126, cp, { size: 22, weight: 600, align: 'center', tex: true });
     line(ctx, X0, 150, X0, 604, PAL.ink, 3);
     const rung = (e, name, val, on, dot) => {
       const y = EY(e);
       line(ctx, X0, y, X0 + 40, y, on ? PAL.ink : alpha(PAL.ink, 0.4), on ? 4 : 2);
       if (dot) ball(ctx, X0 + 40, y, 7, dot);
-      ctx.save(); ctx.globalAlpha *= on ? 1 : 0.6; F.rich(ctx, [name + '  ', [val, cp, on ? 600 : 400], ' V'], X0 + 56, y, { size: 19, weight: on ? 600 : 400 }); ctx.restore();
+      ctx.save(); ctx.globalAlpha *= on ? 1 : 0.6; F.rich(ctx, [name + '  ', [val, cp, on ? 600 : 400]], X0 + 52, y, { size: 19, weight: on ? 600 : 400 }); ctx.restore();
       hits.push({ x: X0 + 20, y, r: 14, name: `${name}, E° = ${val} V` });
     };
     rung(O2E, 'O₂/H₂O', '+1.23', true, null);

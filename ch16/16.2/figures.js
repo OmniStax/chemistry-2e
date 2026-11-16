@@ -37,6 +37,7 @@ const PX0 = 60, PX1 = 1340, PTOP = 168, PBASE = 560, PILE_H = 690;
 function piles(ctx, o) {
   const n = o.W.length, slot = (PX1 - PX0) / n, xc = (k) => PX0 + (k + 0.5) * slot, wmax = Math.max(...o.W), hits = [];
   const tw = Math.min(slot - 36, 300), th = o.tiles ? Math.min(104, (PBASE - PTOP) / wmax) : 0;
+  const frac = n <= 13 && F.measure(ctx, `${count(wmax)}/${count(o.total)}`, { size: 17 }) < slot - 14;
   const band = (k) => [xc(k) - Math.max(slot, 10) / 2 + 3, PTOP - 76, Math.max(slot, 10) - 6, PBASE - PTOP + 76];
   /* the final distribution stands on a filled band, the initial one inside a dashed outline */
   ctx.save();
@@ -52,15 +53,17 @@ function piles(ctx, o) {
       top = PBASE - w * th;
     } else {
       const bw = Math.max(2, Math.min(slot * 0.78, 120)), h = Math.max(1.5, ((PBASE - PTOP) * w) / wmax);
-      ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.34); ctx.fillRect(x - bw / 2, PBASE - h, bw, h); ctx.restore();
+      ctx.save(); ctx.fillStyle = alpha(PAL.ink, k === o.ib ? 0.62 : 0.34); ctx.fillRect(x - bw / 2, PBASE - h, bw, h); ctx.restore();
       top = PBASE - h;
       hits.push({ x, y: Math.min(PBASE - 14, top + h / 2), r: Math.max(8, Math.min(slot / 2, 40)), name: o.name(k) });
     }
     if (n <= 13) {
-      text(ctx, `${count(w)}/${count(o.total)}`, x, top - 14, PAL.muted, { size: n > 9 ? 14 : 17, align: 'center' });
-      text(ctx, n > 9 ? count(w) : `W = ${count(w)}`, x, top - 36, PAL.ink, { size: n > 9 ? 17 : 20, weight: 600, align: 'center' });
-      if (o.letters) text(ctx, `(${o.letters[k]})`, x, top - 62, PAL.ink, { size: 21, weight: 600, align: 'center' });
-    } else if (k === 0 || k === n - 1 || w === wmax) text(ctx, `W = ${count(w)}`, x, top - 18, PAL.ink, { size: 19, weight: 600, align: k === 0 ? 'left' : k === n - 1 ? 'right' : 'center' });
+      /* each pile's W, and its share of all the microstates where the fraction fits over the pile */
+      const up = frac ? 36 : 16;
+      if (frac) text(ctx, `${count(w)}/${count(o.total)}`, x, top - 14, PAL.muted, { size: 17, align: 'center' });
+      text(ctx, n > 9 ? count(w) : `W = ${count(w)}`, x, top - up, PAL.ink, { size: n > 9 ? 18 : 20, weight: 600, align: 'center' });
+      if (o.letters) text(ctx, `(${o.letters[k]})`, x, top - up - 26, PAL.ink, { size: 21, weight: 600, align: 'center' });
+    } else if (k === 0 || k === n - 1 || w === wmax) text(ctx, `W = ${count(w)}`, k === 0 ? x + 12 : k === n - 1 ? x - 12 : x, top - 20, PAL.ink, { size: 19, weight: 600, align: k === 0 ? 'left' : k === n - 1 ? 'right' : 'center' });
     if (k % o.every === 0) { line(ctx, x, PBASE, x, PBASE + 8, PAL.muted, 2); text(ctx, String(k), x, PBASE + 24, PAL.muted, { size: 17, align: 'center' }); }
   });
   /* the names of the two marks, under their piles; on one line unless they would touch */
@@ -136,8 +139,8 @@ function piles(ctx, o) {
    units in the cold object there are (q − j + 1)(j + 1) of them, and
    (q + 1)(q + 2)(q + 3)/6 in all. q = 2 is the book's figure, its rows
    (a), (b), (c) stood on end: 3, 4, 3 of 10. At 2 and 4 units every
-   microstate is drawn, the units as the book's asterisks (ink) in a row
-   over the particle that holds them; from 6 units on a pile is a bar.
+   microstate is drawn, the units as the book's asterisks (ink) set after the
+   letter of the particle that holds them; from 6 units on a pile is a bar.
    q runs over the even numbers 2 to 12, so an even sharing always
    exists. Still.
 ===================================================================== */
@@ -161,13 +164,14 @@ function piles(ctx, o) {
     if (q <= 4) tiles = W.map((_, j) => { const out = []; for (let a = q - j; a >= 0; a--) for (let c = j; c >= 0; c--) out.push([a, q - j - a, c, j - c]); return out; });
     hits = [];
     const tile = (c, m, x, y, w, h) => {
-      const fs = clamp(h * 0.44, 17, 36), ly = y + h - fs * 0.62, sy = ly - fs * 0.78, gap = fs * 0.5;
+      const fs = clamp(h * 0.66, 17, 44), gap = fs * 0.36, lw = F.measure(c, 'A', { size: fs, weight: 600 });
       c.save(); c.strokeStyle = PAL.muted; c.lineWidth = 2; c.strokeRect(x, y, w, h); c.restore(); line(c, x + w / 2, y, x + w / 2, y + h, PAL.muted, 2);
       P.forEach((p, i) => {
-        const px = x + (i + 0.5) * (w / 4);
-        text(c, p, px, ly, i < 2 ? hot : cold, { size: fs, weight: 600, align: 'center' });
-        for (let u = 0; u < m[i]; u++) text(c, '*', px + (u - (m[i] - 1) / 2) * gap, sy + fs * 0.16, PAL.ink, { size: fs, weight: 600, align: 'center' });
-        hits.push({ x: px, y: (ly + sy) / 2, r: w / 8, name: `particle ${p} of the ${i < 2 ? 'hot' : 'cold'} object, ${UNITS[m[i]]} of energy` });
+        /* the letter at a fixed place in its quarter and, close after it, one raised asterisk for each unit it holds */
+        const px = x + (i + 0.5) * (w / 4), x0 = x + i * (w / 4) + Math.max(5, (w / 4 - lw - 4 * gap) / 2);
+        text(c, p, x0, y + h / 2 + 1, i < 2 ? hot : cold, { size: fs, weight: 600 });
+        for (let u = 0; u < m[i]; u++) text(c, '*', x0 + lw + (u + 0.5) * gap, y + h / 2 - fs * 0.1, PAL.ink, { size: fs * 0.8, weight: 600, align: 'center' });
+        hits.push({ x: px, y: y + h / 2, r: w / 8, name: `particle ${p} of the ${i < 2 ? 'hot' : 'cold'} object, ${UNITS[m[i]]} of energy` });
       });
     };
     const bars = piles(ctx, { W, total, tiles, tile, letters: q === 2 ? LET : null, ia, ib, title: 'units of energy in the cold object', every: 1,
@@ -180,17 +184,17 @@ function piles(ctx, o) {
 })();
 
 /* =====================================================================
-   FIGURE 16.10 + 16.11: one mole of water heated from 100 to 1000 K,
+   FIGURE 16.10 + 16.11: one mole of water heated from 100 to 600 K,
    drawn flat. NM water molecules in a closed container whose inside is
    BW by BH. Solid: each molecule is pulled to its site in a compact block
    on the floor and vibrates about it. Liquid: the molecules collide as
    disks, a pull to the floor keeps them together at the bottom, and a
    thermostat holds their speed near VL·√(T/298). Gas: no pull, speed near
-   VG·√(T/298), trails behind. Speeds are the drawing's, not water's.
+   VG·√(T/298), a streak behind each as the book draws them. Speeds are the drawing's, not water's.
    A change of phase tweens a phase coordinate; molecule i crosses when
    the coordinate passes its own threshold (LaggedStart); at 273.15 K and
    373.15 K, the dashed circles, half hold the old phase and half the new.
-   Beside it, S against T (0 to 1000 K, 0 to 250 J/K, fixed) and the
+   Beside it, S against T (0 to 600 K, 0 to 250 J/K, fixed) and the
    distribution of kinetic energies f(E) = 2/√π (RT)^(−3/2) √E e^(−E/RT)
    per mole (0 to 20 kJ/mol; its peak at 100 K, 0.58 per kJ/mol, under
    the 0.62 top). S of one mole: ΔH_fus 6.01 kJ and ΔH_vap 40.7 kJ
@@ -206,7 +210,7 @@ function piles(ctx, o) {
   const S = (t) => (t < TM ? Ss(t) : t < TB ? Sl(t) : Sg(t));
   const on = (t, x) => Math.abs(t - x) < 1e-6;
   const phaseOf = (t) => (on(t, TM) ? 0.5 : on(t, TB) ? 1.5 : t < TM ? 0 : t < TB ? 1 : 2);
-  const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', key: 'T', min: 100, max: 1000, step: 1, value: 298, unit: 'K', dec: 0,
+  const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', key: 'T', min: 100, max: 600, step: 1, value: 298, unit: 'K', dec: 0,
     aria: 'the temperature of the water in kelvin',
     specials: [{ at: TM, label: 'melting' }, { at: TB, label: 'boiling' }],
     onInput: () => { const p = phaseOf(T.v); ph.to(p, 1400 * Math.max(0.5, Math.abs(p - ph.v))); } });
@@ -215,12 +219,12 @@ function piles(ctx, o) {
   const ro = F.readout(d);
 
   /* the container's inside: left BX, top BY, BW by BH; a molecule is a disk of radius RM for collisions */
-  const BX = 70, BY = 100, BW = 440, BH = 500, RM = 22, NM = 24, VL = 150, VG = 520, GL = 900;
+  const BX = 50, BY = 100, BW = 500, BH = 500, RM = 22, NM = 24, VL = 150, VG = 520, GL = 900;
   const rnd = (i) => { const x = Math.sin(i * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); };
-  /* the solid's sites: a block six wide and four high on the floor, rows offset as in a close packing */
+  /* the solid's sites: a regular block six wide and four high on the floor, every molecule turned the same way */
   const SITE = Array.from({ length: NM }, (_, i) => {
     const c = i % 6, r = Math.floor(i / 6);
-    return [BW / 2 + (c - 2.5) * 46 + (r % 2 ? 11 : -11), BH - RM - 4 - r * 42];
+    return [BW / 2 + (c - 2.5) * 54 + (r % 2 ? 13 : -13), BH - RM - 10 - r * 45];
   });
   const M = SITE.map((s, i) => ({ x: s[0], y: s[1], vx: 0, vy: 0, a: rnd(i + 7) * TAU, w: (i % 2 ? 0.5 : 0) + (Math.floor(i / 2) / 12) * 0.45, f: [5 + (i % 4), 6 + ((i + 1) % 3)], q: [rnd(i + 3) * TAU, rnd(i + 5) * TAU], tr: [] }));
   /* molecule i's phase now: 0 solid, 1 liquid, 2 gas */
@@ -240,7 +244,7 @@ function piles(ctx, o) {
     M.forEach((m, i) => {
       const p = ps[i];
       if (p === 0) {
-        const amp = 3 + 4 * Math.sqrt(T.v / 273), sx = SITE[i][0] + amp * Math.sin(m.f[0] * clock + m.q[0]), sy = SITE[i][1] + amp * Math.sin(m.f[1] * clock + m.q[1]);
+        const amp = 2 + 5 * (T.v / 273), sx = SITE[i][0] + amp * Math.sin(m.f[0] * clock + m.q[0]), sy = SITE[i][1] + amp * Math.sin(m.f[1] * clock + m.q[1]);
         const k = Math.min(1, 5 * dt); m.vx = (sx - m.x) / Math.max(dt, 1e-3) * k; m.vy = (sy - m.y) / Math.max(dt, 1e-3) * k;
         m.x += (sx - m.x) * k; m.y += (sy - m.y) * k; return;
       }
@@ -280,7 +284,7 @@ function piles(ctx, o) {
     ctx.beginPath(); ctx.arc(x, y, 14, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore();
   }
   const fE = (E, t) => { const rt = (R * t) / 1000; return (2 / Math.sqrt(Math.PI)) * Math.pow(rt, -1.5) * Math.sqrt(E) * Math.exp(-E / rt); };
-  const GS = { l: 700, r: 1310, t: 110, b: 330 }, GE = { l: 700, r: 1310, t: 430, b: 570 };
+  const GS = { l: 720, r: 1330, t: 110, b: 340 }, GE = { l: 720, r: 1330, t: 440, b: 580 };
   let hits = []; F.hover(d.stage, () => hits);
   function draw() {
     const { ctx } = begin(d.c), t = T.v, p = phaseOf(t), ce = C('entropy'), ct = C('temperature');
@@ -288,29 +292,32 @@ function piles(ctx, o) {
     hits = [];
     /* the container and its molecules: trails first, the last 0.15 s of each moving molecule */
     ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.04); ctx.fillRect(BX, BY, BW, BH); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 4; ctx.strokeRect(BX - 2, BY - 2, BW + 4, BH + 4); ctx.restore();
-    M.forEach((m) => {
-      m.tr.push([clock, m.x, m.y]); while (m.tr.length && m.tr[0][0] < clock - 0.15) m.tr.shift();
-      const pts = m.tr;
-      for (let i = 1; i < pts.length; i++) {
-        const k = i / (pts.length - 1 || 1);
-        ctx.save(); ctx.strokeStyle = alpha(F.el('O'), 0.05 + 0.25 * k); ctx.lineWidth = 24 * (0.35 + 0.65 * k); ctx.lineCap = 'round';
-        ctx.beginPath(); ctx.moveTo(BX + pts[i - 1][1], BY + pts[i - 1][2]); ctx.lineTo(BX + pts[i][1], BY + pts[i][2]); ctx.stroke(); ctx.restore();
+    M.forEach((m, i) => {
+      m.tr.push([clock, m.x, m.y]); while (m.tr.length && m.tr[0][0] < clock - 0.11) m.tr.shift();
+      /* a gas molecule's streak: one wedge from a point at where it was 0.11 s ago to its own width now */
+      const pts = m.tr; if (phaseI(i) !== 2 || pts.length < 3) return;
+      const L = [], Rr = [];
+      for (let j = 0; j < pts.length; j++) {
+        const a = pts[Math.max(0, j - 1)], b = pts[Math.min(pts.length - 1, j + 1)], dx = b[1] - a[1], dy = b[2] - a[2], q = Math.hypot(dx, dy) || 1, hw = 15 * (j / (pts.length - 1));
+        L.push([BX + pts[j][1] - (dy / q) * hw, BY + pts[j][2] + (dx / q) * hw]); Rr.unshift([BX + pts[j][1] + (dy / q) * hw, BY + pts[j][2] - (dx / q) * hw]);
       }
+      ctx.save(); ctx.beginPath(); ctx.rect(BX, BY, BW, BH); ctx.clip(); ctx.fillStyle = alpha(F.el('O'), 0.22); ctx.beginPath();
+      [...L, ...Rr].forEach(([x, y], j) => (j ? ctx.lineTo(x, y) : ctx.moveTo(x, y))); ctx.closePath(); ctx.fill(); ctx.restore();
     });
-    M.forEach((m, i) => { water(ctx, BX + m.x, BY + m.y, phaseI(i) === 0 ? 0.3 * Math.sin(m.f[0] * clock + m.q[1]) : m.a); hits.push({ x: BX + m.x, y: BY + m.y, r: 24, name: 'a water molecule, H₂O' }); });
+    M.forEach((m, i) => { water(ctx, BX + m.x, BY + m.y, phaseI(i) === 0 ? 0 : m.a); hits.push({ x: BX + m.x, y: BY + m.y, r: 24, name: 'a water molecule, H₂O' }); });
     hits.push({ x: BX + BW / 2, y: BY + 16, r: 30, name: 'the closed container' });
 
     /* S against T, the three ranges shaded as the book does */
-    const g = F.axes(ctx, GS, [0, 1000], [0, 250], { nx: 5, ny: 5, xl: 'T (K)', xc: ct, yl: 'S (J/K)', yc: ce });
-    [[0, TM, 0.08], [TM, TB, 0.04], [TB, 1000, 0.08]].forEach(([a, b, k]) => { ctx.save(); ctx.fillStyle = alpha(PAL.ink, k); ctx.fillRect(g.X(a), GS.t, g.X(b) - g.X(a), GS.b - GS.t); ctx.restore(); });
-    [['solid', TM / 2, GS.t + 16], ['liquid', (TM + TB) / 2, GS.t + 16], ['gas', (TB + 1000) / 2, GS.b - 18]].forEach(([s, x, y]) => text(ctx, s, g.X(x), y, PAL.muted, { size: 17, align: 'center' }));
+    const g = F.axes(ctx, GS, [0, 600], [0, 250], { nx: 6, ny: 5, xl: 'T (K)', xc: ct, yl: 'S (J/K)', yc: ce });
+    [[0, TM, 0.08], [TM, TB, 0.04], [TB, 600, 0.08]].forEach(([a, b, k]) => { ctx.save(); ctx.fillStyle = alpha(PAL.ink, k); ctx.fillRect(g.X(a), GS.t, g.X(b) - g.X(a), GS.b - GS.t); ctx.restore(); });
+    [['solid', TM / 2, GS.t + 16], ['liquid', (TM + TB) / 2, GS.t + 16], ['gas', (TB + 600) / 2, GS.t + 16]].forEach(([s, x, y]) => text(ctx, s, g.X(x), y, PAL.muted, { size: 17, align: 'center' }));
     F.plot(ctx, g, Ss, ce, { w: 4, x: [0, TM] });
     F.plot(ctx, g, Sl, ce, { w: 4, x: [TM, TB] });
-    F.plot(ctx, g, Sg, ce, { w: 4, x: [TB, 1000] });
+    F.plot(ctx, g, Sg, ce, { w: 4, x: [TB, 600] });
     const jump = (x, lo, hi, hot) => line(ctx, g.X(x), g.Y(lo), g.X(x), g.Y(hi), ce, hot ? 6 : 4);
     jump(TM, SS0, SL0, p === 0.5); jump(TB, SLB, SG0, p === 1.5);
-    text(ctx, 'melting', g.X(TM) + 12, g.Y(SS0 + 2), PAL.muted, { size: 17 });
-    text(ctx, 'boiling', g.X(TB) + 14, g.Y((SLB + SG0) / 2), PAL.muted, { size: 17, bg: PAL.panel });
+    text(ctx, 'melting', g.X(TM) - 12, g.Y(SL0 + 4), PAL.muted, { size: 17, align: 'right' });
+    text(ctx, 'boiling', g.X(TB) + 14, g.Y((SLB + SG0) / 2), PAL.muted, { size: 17 });
     const drop = (sv) => { line(ctx, g.X(t), g.Y(sv), g.X(t), GS.b, alpha(ce, 0.6), 2.5, [4, 8]); line(ctx, GS.l, g.Y(sv), g.X(t), g.Y(sv), alpha(ce, 0.6), 2.5, [4, 8]); };
     if (p === 0.5 || p === 1.5) {
       const [lo, hi] = p === 0.5 ? [SS0, SL0] : [SLB, SG0];
@@ -321,7 +328,7 @@ function piles(ctx, o) {
     const e = F.axes(ctx, GE, [0, 20], [0, 0.62], { nx: 4, ny: 0, xl: 'kinetic energy (kJ/mol)', xc: C('energy'), yl: 'fraction of molecules' });
     F.plot(ctx, e, (E) => fE(E, 100), alpha(PAL.ink, 0.3), { w: 3 });
     F.plot(ctx, e, (E) => fE(E, t), PAL.ink, { w: 4 });
-    F.legend(ctx, e, [{ s: `${tt} K`, color: PAL.ink, w: 4 }, { s: '100 K', color: alpha(PAL.ink, 0.3), w: 3 }], { corner: 'tr' });
+    F.legend(ctx, e, [{ s: `${tt} K`, color: PAL.ink, w: 4 }, ...(t > 100 ? [{ s: '100 K', color: alpha(PAL.ink, 0.3), w: 3 }] : [])], { corner: 'tr' });
 
     topline(ctx, p === 0 ? `At ${tt} K the molecules of ice only vibrate about fixed positions.`
       : p === 0.5 ? 'At 273.15 K ice melts, and its molecules gain the freedom to move over and around one another.'

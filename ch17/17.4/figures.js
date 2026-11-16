@@ -89,7 +89,7 @@ const N_OPTS = ['1', '2', '3', '4', '6'].map((v) => ({ value: v, label: v }));
     row(ctx, YE, tE); row(ctx, YG, tG); row(ctx, YK, tK);
 
     /* the three values that belong together */
-    const gS = fx0(g, 1), kU = sciU(lk), right = cx < 470, lx = cx + (right ? 22 : -22), al = right ? 'left' : 'right';
+    const gS = (g > 0.05 ? '+' : '') + fx0(g, 1), kU = sciU(lk), right = cx < 470, lx = cx + (right ? 22 : -22), al = right ? 'left' : 'right';
     const val = (sym, s, y, col) => F.rich(ctx, [`$${sym}$ = `, [s, col]], lx, y - 44, { size: 28, align: al, tex: true, bg: PAL.panel });
     val('\\kEocell', `${signed(E, 3)} V`, YE, cE);
     val('\\kdGo', `${minus(gS)} kJ/mol`, YG, cG);
@@ -142,8 +142,8 @@ const N_OPTS = ['1', '2', '3', '4', '6'].map((v) => ({ value: v, label: v }));
   const G = { l: 150, r: 1320, t: 130, b: 540 }, LMAX = 0.301;
   const CELLS = {
     cofe: { name: 'Co and Fe²⁺ (Example 17.7)', n: 2, E0: -0.17, E0s: '-0.17', an: 'Co', anIon: 'Co²⁺', cat: 'Fe', catIon: 'Fe²⁺', anT: '[\\text{Co}^{2+}]', catT: '[\\text{Fe}^{2+}]', pa: 1, pc: 1, ca: 0.15, cc: 1.94, lmin: -6, yr: [-0.5, 0.2], ny: 7 },
-    alcu: { name: 'Al and Cu²⁺ (Check Your Learning)', n: 6, E0: 2.00, E0s: '2.00', an: 'Al', anIon: 'Al³⁺', cat: 'Cu', catIon: 'Cu²⁺', anT: '[\\text{Al}^{3+}]', catT: '[\\text{Cu}^{2+}]', pa: 2, pc: 3, ca: 0.15, cc: 0.025, lmin: -3, yr: [1.7, 2.3], ny: 6 },
-    zn: { name: 'Zn concentration cell (Example 17.8)', n: 2, E0: 0, E0s: '0.000', an: 'Zn', anIon: 'Zn²⁺', cat: 'Zn', catIon: 'Zn²⁺', anT: '[\\text{Zn}^{2+}]_{\\text{anode}}', catT: '[\\text{Zn}^{2+}]_{\\text{cathode}}', pa: 1, pc: 1, ca: 0.10, cc: 0.50, lmin: -6, yr: [-0.3, 0.3], ny: 6 },
+    alcu: { name: 'Al and Cu²⁺ (17.7’s check)', n: 6, E0: 2.00, E0s: '2.00', an: 'Al', anIon: 'Al³⁺', cat: 'Cu', catIon: 'Cu²⁺', anT: '[\\text{Al}^{3+}]', catT: '[\\text{Cu}^{2+}]', pa: 2, pc: 3, ca: 0.15, cc: 0.025, lmin: -3, yr: [1.7, 2.3], ny: 6 },
+    zn: { name: 'Zn and Zn²⁺ (Example 17.8)', n: 2, E0: 0, E0s: '0.000', an: 'Zn', anIon: 'Zn²⁺', cat: 'Zn', catIon: 'Zn²⁺', anT: '[\\text{Zn}^{2+}]_{\\text{anode}}', catT: '[\\text{Zn}^{2+}]_{\\text{cathode}}', pa: 1, pc: 1, ca: 0.10, cc: 0.50, lmin: -6, yr: [-0.3, 0.3], ny: 6 },
   };
   let cell = null, ca = null, cc = null;
   const cur = () => CELLS[cell ? cell.value : 'cofe'];
@@ -169,12 +169,12 @@ const N_OPTS = ['1', '2', '3', '4', '6'].map((v) => ({ value: v, label: v }));
     },
   });
   ca = F.ctl(d.controls, {
-    label: '\\text{anode solution}', cls: 'concentration', key: 'anode', min: -6, max: LMAX, step: 0.001, value: Math.log10(0.15), unit: 'M',
+    label: '\\text{anode}', cls: 'concentration', key: 'anode', min: -6, max: LMAX, step: 0.001, value: Math.log10(0.15), unit: 'M',
     fmt: (lg) => `${concU(conc(lg))} M ${cur().anIon}`, aria: 'concentration of the ion in the anode solution, on a logarithmic scale',
     specials: [{ at: () => (ready() ? inRange(cur(), (logK() + cur().pc * cc.v) / cur().pa) : null), label: 'Q = K' }],
   });
   cc = F.ctl(d.controls, {
-    label: '\\text{cathode solution}', cls: 'concentration', key: 'cathode', min: -6, max: LMAX, step: 0.001, value: Math.log10(1.94), unit: 'M',
+    label: '\\text{cathode}', cls: 'concentration', key: 'cathode', min: -6, max: LMAX, step: 0.001, value: Math.log10(1.94), unit: 'M',
     fmt: (lg) => `${concU(conc(lg))} M ${cur().catIon}`, aria: 'concentration of the ion in the cathode solution, on a logarithmic scale',
     specials: [{ at: () => (ready() ? inRange(cur(), (cur().pa * ca.v - logK()) / cur().pc) : null), label: 'Q = K' }],
   });
@@ -211,17 +211,14 @@ const N_OPTS = ['1', '2', '3', '4', '6'].map((v) => ({ value: v, label: v }));
     ctx.save(); ctx.beginPath(); ctx.rect(G.l, G.t, G.r - G.l, G.b - G.t); ctx.clip();
     F.curve(ctx, f, -10, 10, X, Y, cE, 5, 2);
     ctx.restore();
-    text(ctx, `${slope.toFixed(4)} V lower for each tenfold rise in Q`, X(3.4), Y(f(3.4)) - 36, PAL.ink, { size: 20, align: 'left' });
-    lab.block(X(3.4), Y(f(3.4)) - 52, X(3.4) + 420, Y(f(3.4)) - 20);
 
     /* E°cell where Q = 1, and Q = K where the line meets zero */
-    const side = x < 0 ? -1 : 1;
     dot(ctx, X(0), Y(c.E0), cE, false, 10);
-    lab.add(`E°_{cell} = ${E0u}`, X(0), Y(c.E0), -0.5 * side, 0.85 * side, cE, 22, 26);
+    lab.add(`E°_{cell} = ${E0u}`, X(0), Y(c.E0), -0.5, 0.85, cE, 22, 26);
     hits.push({ x: X(0), y: Y(c.E0), r: 16, name: `E°cell = ${E0u}, where Q = 1` });
     if (zeroIn && lK >= -10 && lK <= 10) {
       if (lK !== 0) dot(ctx, X(lK), Y(0), cK, false, 10);
-      if (!at) lab.add(`Q = K = ${kU}`, X(lK), Y(0), 0.5 * side, -0.85 * side, cK, 22, 26);
+      if (!at) lab.add(`Q = K = ${kU}`, X(lK), Y(0), -0.7, 0.7, cK, 22, 40);
       hits.push({ x: X(lK), y: Y(0), r: 16, name: `Q = K = ${kU}, where E_cell = 0` });
     }
 
@@ -230,7 +227,7 @@ const N_OPTS = ['1', '2', '3', '4', '6'].map((v) => ({ value: v, label: v }));
     line(ctx, px, py, px, G.b, alpha(cK, 0.7), 2, [4, 8]);
     line(ctx, G.l, py, px, py, alpha(cE, 0.7), 2, [4, 8]);
     dot(ctx, px, py, cE, true, 11);
-    lab.add(at ? 'Q = K, E_{cell} = 0' : `E_{cell} = ${signed(Ec, 3)} V`, px, py, 0.5 * side, -0.85 * side, cE, 26, 30);
+    lab.add(at ? 'Q = K, E_{cell} = 0' : `E_{cell} = ${signed(Ec, 3)} V`, px, py, 0.5, -0.85, cE, 26, 30);
     hits.push({ x: px, y: py, r: 18, name: `this mixture: Q = ${q.u}, E_cell = ${signed(Ec, 3)} V` });
     lab.flush();
 
@@ -243,7 +240,7 @@ const N_OPTS = ['1', '2', '3', '4', '6'].map((v) => ({ value: v, label: v }));
       tex = `\\mk{Q}{\\kQrxn} = \\frac{${pw(c.anT, c.pa)}}{${pw(c.catT, c.pc)}} = \\frac{\\mk{a}{${cv(concT(A), c.pa)}}}{\\mk{b}{${cv(concT(B), c.pc)}}} = \\mk{q}{${hue('equilibrium-constant', q.t)}}`
         + ` \\\\ \\mk{E}{\\kEcell} = \\mk{Eo}{\\kEocell} - \\frac{0.0592\\ \\text{V}}{\\mk{n}{\\kn}}\\log\\mk{Q2}{\\kQrxn} = \\mk{eo}{${hue('potential', c.E0s)}\\ \\text{V}} - \\frac{0.0592\\ \\text{V}}{\\mk{nv}{${nv}}}\\log\\mk{q2}{${hue('equilibrium-constant', q.t)}} = \\mk{e}{${hue('potential', signedT(Ec, 3))}}\\ \\text{V}`;
     }
-    ro.set(tex, undefined, { form: at });
+    ro.set(tex, `Each tenfold rise in $\\kQrxn$ lowers $\\kEcell$ by ${slope.toFixed(4)} V.`, { form: at });
   }
   still(d, draw);
 })();

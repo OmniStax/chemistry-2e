@@ -12,7 +12,7 @@ const mk = (pts) => { const cum = [0]; for (let i = 1; i < pts.length; i++) cum.
 const along = (p, s) => { const c = p.cum; let i = 1; while (i < c.length - 1 && c[i] < s) i++; const f = Math.min(1, Math.max(0, (s - c[i - 1]) / (c[i] - c[i - 1] || 1))); return [p.pts[i - 1][0] + f * (p.pts[i][0] - p.pts[i - 1][0]), p.pts[i - 1][1] + f * (p.pts[i][1] - p.pts[i - 1][1])]; };
 const clamp = (x) => Math.max(0, Math.min(1, x));
 function atom(ctx, x, y, r, sym) {
-  ctx.save(); ctx.fillStyle = F.el(sym); ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 1.5;
+  ctx.save(); ctx.fillStyle = F.el(sym); ctx.strokeStyle = alpha(PAL.ink, sym === 'H' ? 0.8 : 0.55); ctx.lineWidth = sym === 'H' ? 1.8 : 1.5;
   ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore();
 }
 /* an ion's charge, a small + or − set just above and right of its disc */
@@ -59,7 +59,7 @@ function lamp(ctx, x, wy, b) {
    cobalt above the site its ion fills.
 ===================================================================== */
 (function () {
-  const d = sim('sim-li-ion', 780);
+  const d = sim('sim-li-ion', 792);
   const mode = F.choice(d.controls, { label: '\\text{process}', options: [{ value: 'discharge', label: 'discharge' }, { value: 'charge', label: 'charge' }], value: 'discharge', aria: 'whether the battery discharges or is being charged', onInput: () => cy.reset() });
   const N = 9, D = 2.4, S0 = 0.2, DS = 0.45, T = S0 + (N - 1) * DS + D + 0.1;
   const WY = 98, TOP = 196, BOT = 606, PLX = 153, PRX = 1247, PT = 168, FACE_OX = 606, FACE_GR = 806;
@@ -135,26 +135,26 @@ function lamp(ctx, x, wy, b) {
     text(ctx, '−', PRX + 34, PT + 2, ink, { size: 30, align: 'center', weight: 600 });
     /* which way each carrier goes */
     const way = (v) => { const s = v === 'discharge' ? -1 : 1;
-      for (const x of [400, 1000]) { F.arrow(ctx, x - 44 * s, WY + 30, x + 44 * s, WY + 30, alpha(ink, 0.75), 3); text(ctx, 'e⁻', x, WY + 56, ink, { size: 22, align: 'center' }); }
-      F.arrow(ctx, 706 - 54 * s, 240, 706 + 54 * s, 240, alpha(ink, 0.75), 3); text(ctx, 'Li⁺', 706, 216, ink, { size: 22, align: 'center' }); };
+      for (const x of [400, 1000]) { F.arrow(ctx, x - 44 * s, WY + 30, x + 44 * s, WY + 30, alpha(ink, 0.75), 3); text(ctx, 'e⁻', x, WY + 58, ink, { size: 24, align: 'center' }); }
+      F.arrow(ctx, 706 - 54 * s, 240, 706 + 54 * s, 240, alpha(ink, 0.75), 3); text(ctx, 'Li⁺', 706, 216, ink, { size: 24, align: 'center' }); };
     mode.only(ctx, 'discharge', () => way('discharge'), [0, 0]); mode.only(ctx, 'charge', () => way('charge'), [0, 0]);
     /* names, and the half-reaction each electrode runs now */
-    text(ctx, 'positive electrode', 375, 646, ink, { size: 22, align: 'center', weight: 600 });
-    text(ctx, 'negative electrode', 1021, 646, ink, { size: 22, align: 'center', weight: 600 });
-    text(ctx, 'electrolyte', 706, 646, ink, { size: 22, align: 'center' });
+    text(ctx, 'positive electrode', 375, 648, ink, { size: 24, align: 'center', weight: 600 });
+    text(ctx, 'negative electrode', 1021, 648, ink, { size: 24, align: 'center', weight: 600 });
+    text(ctx, 'electrolyte', 706, 648, ink, { size: 24, align: 'center' });
     for (const v of ['discharge', 'charge']) mode.only(ctx, v, () => {
       const [a, ra, b, rb] = RX[v];
-      text(ctx, a, 375, 676, ink, { size: 20, align: 'center' }); text(ctx, ra, 375, 708, ink, { size: 20, align: 'center', tex: true });
-      text(ctx, b, 1021, 676, ink, { size: 20, align: 'center' }); text(ctx, rb, 1021, 708, ink, { size: 20, align: 'center', tex: true });
+      text(ctx, a, 375, 680, ink, { size: 22, align: 'center' }); text(ctx, ra, 375, 714, ink, { size: 22, align: 'center', tex: true });
+      text(ctx, b, 1021, 680, ink, { size: 22, align: 'center' }); text(ctx, rb, 1021, 714, ink, { size: 22, align: 'center', tex: true });
     }, [0, 0]);
-    F.legend(ctx, { l: 0, r: 1400, t: 728, b: 780 }, [
+    F.legend(ctx, { l: 0, r: 1400, t: 738, b: 792 }, [
       { s: 'lithium', draw: (c, x, y) => atom(c, x, y, 11, 'Li') },
       { s: 'cobalt', draw: (c, x, y) => atom(c, x, y, 11, 'Co') },
       { s: 'oxygen', draw: (c, x, y) => atom(c, x, y, 10, 'O') },
       { s: 'carbon', draw: (c, x, y) => atom(c, x, y, 10, 'C') },
       { s: 'electron', draw: (c, x, y) => electron(c, x, y) },
       { s: 'empty lithium site', draw: (c, x, y) => { c.save(); c.strokeStyle = alpha(PAL.ink, 0.6); c.lineWidth = 2; c.setLineDash([4, 4]); c.beginPath(); c.arc(x, y, 10, 0, TAU); c.stroke(); c.restore(); } },
-    ], { corner: 'bottom', row: true, panel: false, size: 19 });
+    ], { corner: 'bottom', row: true, panel: false, size: 21 });
     d.hits = hits;
     const x = (dis ? N - arrived : arrived) / 18;
     const s = dis
@@ -181,31 +181,32 @@ function lamp(ctx, x, wy, b) {
    off the hydrogen or opens the circuit, and either stops the current.
 ===================================================================== */
 (function () {
-  const d = sim('sim-fuel-cell', 800);
+  const d = sim('sim-fuel-cell', 814);
   const mode = F.choice(d.controls, { label: '\\text{cell}', options: [{ value: 'run', label: 'running' }, { value: 'off', label: 'hydrogen shut off' }, { value: 'open', label: 'circuit open' }], value: 'run', aria: 'the cell running, with its hydrogen shut off, or with its circuit open' });
   const out = F.readout(d);
-  const T = 6, V = 140, S = 70, NS = 12, WY = 92, AX = 545, CX = 855, ET = 196, EB = 644, DX = 1.5;
-  const XS = 560, XO = 840, LANE = 955;
+  const T = 6, V = 140, S = 70, NS = 12, WY = 92, AX = 545, CX = 855, ET = 196, EB = 654, DX = 1.5;
+  const XS = 560, XO = 840, LANE = 964, FX = 410, GX = 1016;
   /* the two anode sites and the cathode site of each parity of turn, and the stream tickets that feed them */
   const SITES = [{ ya: [300, 370], yc: 335, h2: [1, 0], o2: 2 }, { ya: [510, 580], yc: 545, h2: [4, 3], o2: 5 }];
-  const FUEL = mk([[20, 254], [425, 254], [425, 586], [20, 586]]), AIR = mk([[1380, 254], [995, 254], [995, 566], [1380, 566]]);
-  const toAnode = (y) => mk([[20, 254], [425, 254], [425, y], [XS, y]]), toCathode = (y) => mk([[1380, 254], [995, 254], [995, y], [XO, y]]);
+  const FUEL = mk([[20, 254], [FX, 254], [FX, 591], [20, 591]]), AIR = mk([[1380, 254], [GX, 254], [GX, 569], [1380, 569]]);
+  const toAnode = (y) => mk([[20, 254], [FX, 254], [FX, y], [XS, y]]), toCathode = (y) => mk([[1380, 254], [GX, 254], [GX, y], [XO, y]]);
   const BR_H = {}, BR_O = {};
   SITES.forEach((s) => { s.ya.forEach((y, i) => { BR_H[s.h2[i]] = toAnode(y); }); BR_O[s.o2] = toCathode(s.yc); });
   const TAU0 = (BR_H[1].L + S) / V;                      /* when the even turn's two H2 reach the anode */
   const AIRKIND = (m) => (m === 2 || m === 5 || m === 9 ? 'O2' : 'N2');
-  const ATT = [[-25, -13], [-25, 13], [25, -13], [25, 13]];   /* where the four H join the O2, two to each O */
+  const ATT = [[-29, -14], [-29, 14], [29, -14], [29, 14]];   /* where the four H join the O2, two to each O */
   const NAMES = { H2: 'a hydrogen molecule, H₂', O2: 'an oxygen molecule, O₂', N2: 'a nitrogen molecule, N₂, which takes no part', H2O: 'a water molecule, H₂O' };
-  const PT_AT = [[XS, 300], [XS, 370], [XS, 510], [XS, 580], [XO, 335], [XO, 545], [520, 440], [590, 232], [505, 262], [596, 620], [888, 262], [812, 440], [900, 610], [806, 232]];
+  const PT_AT = [[XS, 300], [XS, 370], [XS, 510], [XS, 580], [XO, 335], [XO, 545], [510, 420], [585, 216], [500, 600], [890, 240], [890, 440], [820, 600]];
   const cy = cycle(() => T, 0);
   function glyph(ctx, kind, x, y, th = 0) {
     const c = Math.cos(th), s = Math.sin(th), a = (dx, dy, r, e) => atom(ctx, x + dx * c - dy * s, y + dx * s + dy * c, r, e);
-    if (kind === 'H2') { a(-7, 0, 7.5, 'H'); a(7, 0, 7.5, 'H'); }
-    else if (kind === 'O2') { a(-10, 0, 11, 'O'); a(10, 0, 11, 'O'); }
-    else if (kind === 'N2') { a(-9.5, 0, 11, 'N'); a(9.5, 0, 11, 'N'); }
-    else { a(-10, 8, 7, 'H'); a(10, 8, 7, 'H'); a(0, 0, 11, 'O'); }
+    if (kind === 'H2') { a(-8.5, 0, 9.5, 'H'); a(8.5, 0, 9.5, 'H'); }
+    else if (kind === 'O2') { a(-11.5, 0, 13, 'O'); a(11.5, 0, 13, 'O'); }
+    else if (kind === 'N2') { a(-11, 0, 13, 'N'); a(11, 0, 13, 'N'); }
+    else { a(-12, 9, 8.5, 'H'); a(12, 9, 8.5, 'H'); a(0, 0, 13, 'O'); }
   }
-  const hplus = (ctx, x, y) => { atom(ctx, x, y, 7.5, 'H'); charge(ctx, x, y, 7.5, true); };
+  const hplus = (ctx, x, y) => { atom(ctx, x, y, 9.5, 'H'); charge(ctx, x, y, 9.5, true); };
+  const island = (ctx, x, y) => { ctx.save(); ctx.fillStyle = F.el('Pt'); ctx.strokeStyle = alpha(PAL.ink, 0.6); ctx.lineWidth = 1.5; ctx.beginPath(); ctx.ellipse(x, y, 20, 8, 0, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore(); };
   /* the way a path runs at s, for a molecule carried along it */
   const heading = (p, s) => { const a = along(p, Math.max(0, s - 22)), b = along(p, Math.min(p.L, s + 22)); return Math.atan2(b[1] - a[1], b[0] - a[0]); };
   function draw() {
@@ -214,16 +215,16 @@ function lamp(ctx, x, wy, b) {
     const put = (kind, x, y, th, al, name) => { if (al <= 0.02) return; F.faded(ctx, al, [0, 0], () => glyph(ctx, kind, x, y, th)); if (al > 0.5) hits.push({ x, y, r: 18, name: name || NAMES[kind] }); };
     /* the plates that hold the gas channels, and the pipes in and out */
     ctx.save(); ctx.fillStyle = alpha(PAL.muted, 0.38); ctx.strokeStyle = edge; ctx.lineWidth = 2;
-    for (const [l, tp, r, b] of [[210, 180, 470, 214], [210, 294, 380, 546], [210, 626, 470, 660], [930, 180, 1190, 214], [1020, 294, 1190, 546], [930, 626, 1190, 660]]) { ctx.beginPath(); ctx.rect(l, tp, r - l, b - tp); ctx.fill(); ctx.stroke(); }
+    for (const [l, tp, r, b] of [[240, 180, 470, 214], [240, 294, 350, 546], [240, 636, 470, 670], [930, 180, 1160, 214], [1050, 294, 1160, 546], [930, 636, 1160, 670]]) { ctx.beginPath(); ctx.rect(l, tp, r - l, b - tp); ctx.fill(); ctx.stroke(); }
     ctx.restore();
-    for (const y of [214, 294, 546, 626]) { line(ctx, 20, y, 210, y, edge, 2); line(ctx, 1190, y, 1380, y, edge, 2); }
+    for (const y of [214, 294, 546, 636]) { line(ctx, 20, y, 240, y, edge, 2); line(ctx, 1160, y, 1380, y, edge, 2); }
     /* the electrodes, porous graphite, and the electrolyte between them */
     ctx.save();
     for (const [l, r, a] of [[470, 620, 0.13], [620, 780, 0.04], [780, 930, 0.13]]) { ctx.beginPath(); ctx.rect(l, ET, r - l, EB - ET); ctx.fillStyle = PAL.panel; ctx.fill(); ctx.fillStyle = alpha(ink, a); ctx.fill(); ctx.strokeStyle = edge; ctx.lineWidth = 2; ctx.stroke(); }
     ctx.fillStyle = alpha(ink, 0.2);
     for (let r = 0, y = ET + 14; y < EB - 6; y += 20, r++) for (const x0 of [470, 780]) for (let x = x0 + 12 + (r % 2 ? 10 : 0); x < x0 + 142; x += 20) { ctx.beginPath(); ctx.arc(x, y, 2.4, 0, TAU); ctx.fill(); }
     ctx.restore();
-    PT_AT.forEach(([x, y]) => { atom(ctx, x - 4, y + 15, 9, 'Pt'); atom(ctx, x + 9, y + 17, 7, 'Pt'); hits.push({ x: x + 2, y: y + 16, r: 12, name: 'platinum catalyst in the graphite electrode' }); });
+    PT_AT.forEach(([x, y]) => { island(ctx, x, y + 24); hits.push({ x, y: y + 24, r: 14, name: 'platinum catalyst in the graphite electrode' }); });
     hits.push({ x: 700, y: 420, r: 70, name: 'the electrolyte, which lets H⁺ ions through from the anode to the cathode' });
     for (const y of [330, 420, 600]) hits.push({ x: 500, y, r: 30, name: 'the anode, porous graphite holding a platinum catalyst' }, { x: 900, y, r: 30, name: 'the cathode, porous graphite holding a platinum catalyst' });
     /* the external circuit: a switch and a lamp */
@@ -260,19 +261,19 @@ function lamp(ctx, x, wy, b) {
         const tO = u - (BR_O[g.o2].L + g.o2 * S) / V + TAU0 + (g === SITES[1] ? 3 : 0);   /* time since this turn's O2 landed */
         const TW = 0.35 + 0.36 + DX + 0.2;
         if (tO >= 0 && u < TW) { glyph(ctx, 'O2', O[0], O[1]); hits.push({ x: O[0], y: O[1], r: 22, name: 'an oxygen molecule, O₂, on the catalyst, taking up H⁺ and electrons' }); }
-        if (u >= 0 && u < 0.35) g.ya.forEach((y) => { const k = u / 0.35; atom(ctx, XS, y - 7 - 3 * k, 7.5, 'H'); atom(ctx, XS, y + 7 + 3 * k, 7.5, 'H'); hits.push({ x: XS, y, r: 16, name: 'a hydrogen molecule splitting on the catalyst' }); });
+        if (u >= 0 && u < 0.35) g.ya.forEach((y) => { const k = u / 0.35; atom(ctx, XS, y - 8.5 - 1.5 * k, 9.5, 'H'); atom(ctx, XS, y + 8.5 + 1.5 * k, 9.5, 'H'); hits.push({ x: XS, y, r: 16, name: 'a hydrogen molecule splitting on the catalyst' }); });
         for (let q = 0; q < 4; q++) {
           const y0 = g.ya[q >> 1] + (q % 2 ? 10 : -10), k = (u - 0.35 - 0.12 * q) / DX, to = [O[0] + ATT[q][0], O[1] + ATT[q][1]];
           if (u < 0.35 || u >= TW) continue;
-          if (k >= 1) { atom(ctx, to[0], to[1], 7.5, 'H'); continue; }
-          if (k < 0) { atom(ctx, XS, y0, 7.5, 'H'); continue; }
+          if (k >= 1) { atom(ctx, to[0], to[1], 8.5, 'H'); continue; }
+          if (k < 0) { atom(ctx, XS, y0, 9.5, 'H'); continue; }
           const ion = mk([[XS, y0], [620, y0], [780, to[1]], to]), wire = mk([[XS, y0], [AX, y0], [AX, WY], [CX, WY], [CX, to[1]], to]);
           const [hx, hy] = along(ion, k * ion.L), [ex, ey] = along(wire, k * wire.L);
           hplus(ctx, hx, hy); hits.push({ x: hx, y: hy, r: 12, name: 'a hydrogen ion, H⁺, crossing the electrolyte' });
           if (!(Math.abs(ey - WY) < 1 && Math.abs(ex - 700) < 24)) { electron(ctx, ex, ey); hits.push({ x: ex, y: ey, r: 12, name: 'an electron, e⁻, in the external circuit' }); }
         }
         if (u >= TW) [-1, 1].forEach((sg, i) => {
-          const w = mk([[O[0] + 10 * sg, O[1]], [O[0] + 10 * sg, O[1] + 14 * sg], [LANE, O[1] + 14 * sg], [LANE, 606], [1380, 606]]), s = V * (u - TW - 0.25 * i);
+          const w = mk([[O[0] + 11.5 * sg, O[1]], [O[0] + 11.5 * sg, O[1] + 16 * sg], [LANE, O[1] + 16 * sg], [LANE, 613], [1380, 613]]), s = V * (u - TW - 0.25 * i);
           if (s > w.L) return; const p = along(w, Math.max(0, s)); const al = Math.min(1, (w.L - s) / 30);
           F.faded(ctx, al, [0, 0], () => glyph(ctx, 'H2O', p[0], p[1])); hits.push({ x: p[0], y: p[1], r: 18, name: 'a water molecule, H₂O, formed at the cathode' });
         });
@@ -282,28 +283,29 @@ function lamp(ctx, x, wy, b) {
     hits.push({ x: 700, y: WY - 34, r: 46, name: 'a lamp, lit by the electric current' });
 
     /* names */
-    text(ctx, 'fuel in', 24, 190, ink, { size: 22 }); text(ctx, 'excess fuel out', 24, 652, ink, { size: 22 });
-    text(ctx, 'air in', 1376, 190, ink, { size: 22, align: 'right' }); text(ctx, 'unused gases out', 1376, 652, ink, { size: 22, align: 'right' });
-    text(ctx, 'electric current', 700, WY + 30, ink, { size: 22, align: 'center' });
+    text(ctx, 'fuel in', 24, 190, ink, { size: 24 }); text(ctx, 'excess', 24, 494, ink, { size: 24 }); text(ctx, 'fuel out', 24, 522, ink, { size: 24 });
+    text(ctx, 'air in', 1376, 190, ink, { size: 24, align: 'right' }); text(ctx, 'unused', 1376, 494, ink, { size: 24, align: 'right' }); text(ctx, 'gases out', 1376, 522, ink, { size: 24, align: 'right' });
+    text(ctx, 'electric current', 700, WY + 32, ink, { size: 24, align: 'center' });
     F.faded(ctx, run, [0, 0], () => {
-      F.arrow(ctx, AX - 24, 172, AX - 24, 118, alpha(ink, 0.75), 3); text(ctx, 'e⁻', AX - 50, 145, ink, { size: 22, align: 'center' });
-      F.arrow(ctx, CX + 24, 118, CX + 24, 172, alpha(ink, 0.75), 3); text(ctx, 'e⁻', CX + 50, 145, ink, { size: 22, align: 'center' });
-      F.arrow(ctx, 664, 222, 736, 222, alpha(ink, 0.75), 3); text(ctx, 'H⁺', 700, 246, ink, { size: 22, align: 'center' });
+      F.arrow(ctx, AX - 24, 172, AX - 24, 118, alpha(ink, 0.75), 3); text(ctx, 'e⁻', AX - 52, 145, ink, { size: 24, align: 'center' });
+      F.arrow(ctx, CX + 24, 118, CX + 24, 172, alpha(ink, 0.75), 3); text(ctx, 'e⁻', CX + 52, 145, ink, { size: 24, align: 'center' });
+      F.arrow(ctx, 664, 222, 736, 222, alpha(ink, 0.75), 3); text(ctx, 'H⁺', 700, 248, ink, { size: 24, align: 'center' });
     });
-    text(ctx, 'anode', AX, 690, ink, { size: 22, align: 'center', weight: 600 });
-    text(ctx, 'electrolyte', 700, 690, ink, { size: 22, align: 'center' });
-    text(ctx, 'cathode', CX, 690, ink, { size: 22, align: 'center', weight: 600 });
-    text(ctx, 'oxidation: $2\\text{H}_{2}\\longrightarrow 4\\text{H}^{+}+4\\text{e}^{-}$', 620, 724, ink, { size: 20, align: 'right', tex: true });
-    text(ctx, 'reduction: $\\text{O}_{2}+4\\text{H}^{+}+4\\text{e}^{-}\\longrightarrow 2\\text{H}_{2}\\text{O}$', 780, 724, ink, { size: 20, align: 'left', tex: true });
-    F.legend(ctx, { l: 0, r: 1400, t: 746, b: 800 }, [
+    text(ctx, 'anode', AX, 700, ink, { size: 24, align: 'center', weight: 600 });
+    text(ctx, 'electrolyte', 700, 700, ink, { size: 24, align: 'center' });
+    text(ctx, 'cathode', CX, 700, ink, { size: 24, align: 'center', weight: 600 });
+    text(ctx, 'oxidation: $2\\text{H}_{2}\\longrightarrow 4\\text{H}^{+}+4\\text{e}^{-}$', 620, 736, ink, { size: 22, align: 'right', tex: true });
+    text(ctx, 'reduction: $\\text{O}_{2}+4\\text{H}^{+}+4\\text{e}^{-}\\longrightarrow 2\\text{H}_{2}\\text{O}$', 780, 736, ink, { size: 22, align: 'left', tex: true });
+    F.legend(ctx, { l: 0, r: 1400, t: 760, b: 814 }, [
       { s: 'H_{2}', draw: (c, x, y) => glyph(c, 'H2', x, y) }, { s: 'O_{2}', draw: (c, x, y) => glyph(c, 'O2', x, y) },
-      { s: 'N_{2}', draw: (c, x, y) => glyph(c, 'N2', x, y) }, { s: 'H_{2}O', draw: (c, x, y) => glyph(c, 'H2O', x, y - 3) },
+      { s: 'N_{2}', draw: (c, x, y) => glyph(c, 'N2', x, y) }, { s: 'H_{2}O', draw: (c, x, y) => glyph(c, 'H2O', x, y - 4) },
       { s: 'H⁺', draw: (c, x, y) => hplus(c, x, y) }, { s: 'e⁻', draw: (c, x, y) => electron(c, x, y) },
-      { s: 'platinum catalyst', draw: (c, x, y) => { atom(c, x - 6, y, 9, 'Pt'); atom(c, x + 8, y + 2, 7, 'Pt'); } },
-    ], { corner: 'bottom', row: true, panel: false, size: 19 });
+      { s: 'platinum catalyst', draw: (c, x, y) => island(c, x, y) },
+    ], { corner: 'bottom', row: true, panel: false, size: 21 });
     d.hits = hits;
-    out.set(`2\\text{H}_{2}(g)+\\text{O}_{2}(g)\\longrightarrow 2\\text{H}_{2}\\text{O}(g) \\\\ \\kEcell\\sim ${hue('potential', '1.2\\ \\text{V}')}`,
-      mode.value === 'off' ? 'With no hydrogen coming in there is nothing to oxidize, and the current stops. The cell stores no fuel of its own.' : mode.value === 'open' ? 'With the circuit open the electrons have no path to the cathode, so the hydrogen leaves unreacted.' : '');
+    const rxn = '2\\text{H}_{2}(g)+\\text{O}_{2}(g)\\longrightarrow 2\\text{H}_{2}\\text{O}(g)';
+    out.set(mode.value === 'off' ? rxn : `${rxn} \\\\ \\kEcell\\sim ${hue('potential', '1.2\\ \\text{V}')}`,
+      mode.value === 'off' ? 'With no hydrogen coming in the current stops: the cell stores no fuel of its own.' : mode.value === 'open' ? 'With the circuit open the electrons have no path to the cathode, so the hydrogen leaves unreacted.' : '');
   }
   F.hover(d.stage, () => d.hits || []);
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });

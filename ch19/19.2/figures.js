@@ -355,7 +355,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
       symsOf(atoms).forEach((s) => syms.add(s));
       const a = donors[0], b = donors[2], bis = V.unit(V.add(a.d, b.d));
       /* the angle between the two M–Cl bonds; in trans the half circle goes round the side the dipoles are not on */
-      const { pts, mid } = arcPts(a.d, b.d, 0.7, V.mul(P.side, -1), 0.27);
+      const { pts, mid } = arcPts(a.d, b.d, 0.7, V.mul(P.side, -1), 0.34);
       polyline(g, pts, F.C('angle'));
       if (show > 0) plain(hued(v.label(cis ? '90°' : '180°', mid, g, 0, 'bare'), 'angle'), show);
       if (show <= 0) return;
@@ -446,7 +446,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
     Object.assign(c, { S, best, total: orig.length });
   });
   const cx = F.select(d.controls, { label: '\\text{complex}', aria: 'the complex', options: [{ value: 'en3', label: '[M(en)₃]ⁿ⁺' }, { value: 'cis', label: 'cis-[Co(en)₂Cl₂]⁺' }, { value: 'trans', label: 'trans-[Co(en)₂Cl₂]⁺' }], value: 'en3' });
-  const arr = F.choice(d.controls, { label: '\\text{arrangement}', aria: 'the arrangement', options: [{ value: 'mirror', label: 'mirror images' }, { value: 'over', label: 'laid over' }], value: 'mirror' });
+  const arr = F.choice(d.controls, { label: '\\text{arrangement}', aria: 'the arrangement', options: [{ value: 'mirror', label: 'mirror images' }, { value: 'over', label: 'laid over' }], value: 'mirror', ms: 2400 });
   const ro = F.readout(d);
   /* the frame part-way between two ions' frames, as a turn about one axis */
   function between(A, B, k) {
@@ -458,9 +458,9 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
   const NAMES = { N: 'nitrogen of an NH₂ group', C: 'carbon of a CH₂ group' };
   function draw() {
     const k = cx.k, B = CPX[cx.value], A = k > 0.999 ? B : CPX[cx.from];
-    t = F.ease.smooth(arr.mix((x) => (x === 'over' ? 1 : 0)));
+    t = arr.mix((x) => (x === 'over' ? 1 : 0));
     /* the image turns to its fit over the first two thirds of the way and slides across over the last two thirds */
-    const turn = F.ease.smooth(Math.min(1, t / 0.66)), slide = F.ease.smooth(Math.max(0, (t - 0.34) / 0.66));
+    const turn = Math.min(1, t / 0.62), slide = Math.max(0, (t - 0.3) / 0.7), ringed = Math.max(0, (t - 0.86) / 0.14);
     const { n, a, lost } = B.best, Q = between(A.fr, B.fr, k);
     const left = blend(A.S, B.S, k, K), right = blend(A.S, B.S, k, K);
     left.atoms.forEach((x) => { x.p = Q(x.p); });
@@ -472,7 +472,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
     molecule(v, gR, right.atoms, right.bonds, k);
     /* a ring round each atom of the image that has landed on nothing */
     const cR = F.cat(0);
-    if (t > 0.5) right.atoms.forEach((x) => { if (x.lost) v.pickable(sphere(gR, x.p, rad(x.sym) * 1.75, cR, { transparent: true, opacity: 0.38 * (t - 0.5) * 2, depthWrite: false }), 'an atom of the mirror image with no atom of the original under it'); });
+    if (ringed > 0) right.atoms.forEach((x) => { if (x.lost) v.pickable(sphere(gR, x.p, rad(x.sym) * 1.75, cR, { transparent: true, opacity: 0.38 * ringed, depthWrite: false }), 'an atom of the mirror image with no atom of the original under it'); });
     if (t < 0.99) {
       const m = F.mesh.box(gM, [0, 0.15, 0], [0.035, 4.1, 0.035], PAL.muted, { transparent: true, opacity: 1 - t });
       v.pickable(m, 'the mirror, seen edge-on');
@@ -486,7 +486,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
     F.faded(ctx, 1 - t, [0, 0], () => text(ctx, 'its mirror image', xR, 20, PAL.ink, { size: 25, weight: 600, align: 'center' }));
     F.faded(ctx, t, [0, 0], () => text(ctx, miss ? 'the mirror image, turned and laid over the original' : 'the mirror image, turned and laid over the original: one ion', 700, 20, PAL.ink, { size: 23, align: 'center' }));
     keyRow(ctx, 56, [...elKey(symsOf(left.atoms), NAMES),
-      ...(t > 0.5 && miss ? [{ s: 'atom of the image that lands on nothing', draw: (c, x, y) => { c.save(); c.globalAlpha = 0.4; c.beginPath(); c.arc(x, y, 12, 0, 2 * Math.PI); c.fillStyle = cR; c.fill(); c.restore(); F.dot(c, x, y, F.el('C'), true, 6); } }] : [])]);
+      ...(ringed > 0.5 && miss ? [{ s: 'atom of the image that lands on nothing', draw: (c, x, y) => { c.save(); c.globalAlpha = 0.4; c.beginPath(); c.arc(x, y, 12, 0, 2 * Math.PI); c.fillStyle = cR; c.fill(); c.restore(); F.dot(c, x, y, F.el('C'), true, 6); } }] : [])]);
     v.headline(over
       ? (miss ? `Turned to its closest fit and laid over ${B.name}, the mirror image still puts ${miss} atoms where the original has none. The two are optical isomers.` : `Turned and laid over ${B.name}, the mirror image matches it atom for atom. The two are the same ion.`)
       : `${B.name} beside its mirror image.`);

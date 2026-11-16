@@ -113,7 +113,8 @@ const sup = (n) => String(n).split('').map((c) => SUP[c] ?? c).join('');
    straight wall. An atom belongs to the flask it was last in: it changes
    over where the tube opens into the other flask, at ±XE. Closing the
    valve starts again with every atom in the left flask. Moving, on an
-   endless clock. Beneath, both flasks' counts against the time since the
+   endless clock. The flasks' counts wear F.cat(2) and F.cat(1), a pair that
+   stands apart on both themes. Beneath, both counts against the time since the
    valve opened; the time axis is a named zoom, 0 to the time so far (30 s
    of the drawing's time at least), so the whole run stays in view.
 ===================================================================== */
@@ -215,9 +216,8 @@ const sup = (n) => String(n).split('').map((c) => SUP[c] ?? c).join('');
   const G = { l: 250, r: 1190, t: 610, b: 760 };
   tex(d.readout, '\\kwork = -\\kP\\kdV = 0 \\\\ \\kdU = \\kq + \\kwork = 0 + 0 = 0');
   function draw() {
-    const { ctx } = begin(d.c), ar = F.el('Ar'), n = right(), cl = F.cat(0), cr = F.cat(1), shut = valve.value === 'closed';
+    const { ctx } = begin(d.c), ar = F.el('Ar'), n = right(), cl = F.cat(2), cr = F.cat(1), shut = valve.value === 'closed';
     glassware(ctx);
-    /*DBG*/ for (let i = 0; i < 8; i++) dot(ctx, 60 + i * 40, 560, F.cat(i), true, 16);
     stopcock(ctx, turn());
     const fresh = shut ? valve.k : atoms.k;
     ctx.save(); ctx.globalAlpha = fresh; ctx.fillStyle = ar; ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 1.5;

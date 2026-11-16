@@ -139,7 +139,7 @@ function homes() {
   const DY = 70, H = 880, d = sim('sim-downs-cell', H);                 /* the drawing is laid out 70 units lower than it is shown */
   const T = 9, P = 3;
   const X0 = 230, X1 = 890, Y0 = 300, Y1 = 800, IL = 254, IR = 866, IT = 324, IB = 776, MLV = 356, CX = 560;
-  const ROOF = 470, LAYER = 16, RNA = 6.5, RCL = 10.5;
+  const ROOF = 470, LAYER = 16, RNA = 8, RCL = 12.5;
   const sw = F.choice(d.controls, { label: '\\text{iron screen}', options: [{ value: 'in', label: 'in place' }, { value: 'out', label: 'taken out' }], value: 'in', aria: 'the iron screen', onInput: () => cy.reset() });
   const cy = cycle(() => T, 1.4);
   const ro = F.readout(d);
@@ -151,10 +151,10 @@ function homes() {
   for (const s of [-1, 1]) {
     const home = homes(), X = (x) => (s < 0 ? x : 2 * CX - x);
     for (let j = 0; j < 3; j++) {
-      const yc = [578, 622, 666][j], ya = [524, 550, 576][j], seed = (s > 0 ? 50 : 0) + 10 * j;
+      const yc = [578, 622, 666][j], ya = [526, 550, 574][j], seed = (s > 0 ? 50 : 0) + 10 * j;
       EVS.push({ s, j, X, yc, ya, ph: j / 3 + (s > 0 ? 1 / 6 : 0), lost: j !== 1,
-        na: [0, 1].map((i) => ({ h: home([416, 474], [618, 750], RNA, seed + i), to: [326 + RNA + 1, yc + (i ? 8 : -8)], ph: rnd(seed, 90 + i) * TAU })),
-        cl: [0, 1].map((i) => ({ h: home([340, 384], i ? [700, 752] : [496, 530], RCL, seed + 2 + i), to: [490 - RCL - 1, ya + (i ? 10.5 : -10.5)], ph: rnd(seed, 95 + i) * TAU })),
+        na: [0, 1].map((i) => ({ h: home([416, 474], [618, 750], RNA, seed + i), to: [326 + RNA + 1, yc + (i ? 9 : -9)], ph: rnd(seed, 90 + i) * TAU })),
+        cl: [0, 1].map((i) => ({ h: home([340, 384], i ? [700, 752] : [496, 530], RCL, seed + 2 + i), to: [490 - RCL - 1, ya + (i ? 12.5 : -12.5)], ph: rnd(seed, 95 + i) * TAU })),
         up: walker(rounded([[478, ya], [470, 474], [534 + 14 * j, 398], [546 + 12 * j, MLV + 4]], 30)), meet: [404, Math.min(yc, ya) - 44 + 30 * (j === 2)] });
     }
   }
@@ -235,13 +235,13 @@ function homes() {
       e.na.forEach((p, i) => {
         const q = smooth(clamp01((u - 0.5) / 0.42));
         const x = lost ? lerp(335, mx - 9, qm) : 336 + 3 * Math.sin(8 * q + i * 2), y = lost ? lerp(p.to[1], my + (i ? 9 : -9), qm) : lerp(p.to[1], ROOF + LAYER - 4, q);
-        blob(ctx, X(x), y, 9.5 * born, metal, gone); if (gone > 0.3) hits.push({ x: X(x), y, r: 14, name: 'a drop of liquid sodium, which floats on the melt' });
+        blob(ctx, X(x), y, 11 * born, metal, gone); if (gone > 0.3) hits.push({ x: X(x), y, r: 14, name: 'a drop of liquid sodium, which floats on the melt' });
       });
       /* one bubble of chlorine */
       {
         const q = smooth(clamp01((u - 0.5) / 0.42)), [ux, uy] = e.up.at(q * e.up.L);
         const x = lost ? lerp(478, mx + 10, qm) : ux + 3 * Math.sin(10 * q + e.j), y = lost ? lerp(e.ya, my, qm) : uy;
-        blob(ctx, X(x), y, 10.5 * born, cl2, gone); if (gone > 0.3) hits.push({ x: X(x), y, r: 15, name: 'a bubble of chlorine gas, Cl₂' });
+        blob(ctx, X(x), y, 13 * born, cl2, gone); if (gone > 0.3) hits.push({ x: X(x), y, r: 15, name: 'a bubble of chlorine gas, Cl₂' });
       }
       if (lost && u > 0.8) {
         const k = clamp01((u - 0.8) / 0.18);
@@ -269,7 +269,7 @@ function homes() {
     text(ctx, 'Cl₂ outlet', 1022, 150, PAL.ink, { size: 22 }); text(ctx, 'Na outlet', 1260, 560, PAL.ink, { size: 22 });
     lead(ctx, 'liquid Na', 1098, 470, 1024, 470);
     F.legend(ctx, { l: 0, r: 1400, t: 906, b: H + DY }, [
-      { s: 'Na⁺', draw: (g, x, y) => ion(g, x, y, 9, 'Na', 1) }, { s: 'Cl⁻', draw: (g, x, y) => ion(g, x, y, 11, 'Cl', -1) },
+      { s: 'Na⁺', draw: (g, x, y) => ion(g, x, y, 8, 'Na', 1) }, { s: 'Cl⁻', draw: (g, x, y) => ion(g, x, y, 11, 'Cl', -1) },
       { s: 'liquid Na', draw: (g, x, y) => blob(g, x, y, 9.5, metal) }, { s: 'Cl₂ gas', draw: (g, x, y) => blob(g, x, y, 10.5, cl2) }, { s: 'electron', draw: (g, x, y) => electron(g, x, y) },
     ], { corner: 'bottom', row: true, size: 20, panel: false });
     ctx.restore(); hits.forEach((h) => { h.y -= DY; });
@@ -297,12 +297,12 @@ function homes() {
    anode, through the crust and out of the exhaust. So six electrons come
    in at − and six leave at + in every round: the charges of two Al³⁺ and
    three O²⁻ balance. The mix of gases is the figure's own; the book names
-   the three and gives no proportions. Radii: Al³⁺ 7, O²⁻ 11.
+   the three and gives no proportions. Radii: Al³⁺ 9, O²⁻ 12.5.
 ===================================================================== */
 (function () {
   const H = 930, d = sim('sim-hall-heroult', H);
   const T = 9.5, NR = 5, T0 = 1.0, GAP = 1.4, SP = 26, VG = 380;
-  const CL = 320, CR = 940, TOP = 400, CRUST = 420, AL0 = 672, AB = 572, RAL = 7, RO = 11;
+  const CL = 320, CR = 940, TOP = 400, CRUST = 420, AL0 = 672, AB = 572, RAL = 9, RO = 12.5, DX = 30;                    /* the drawing is shown 30 units to the right of its layout */
   const AN = [[376, 576], [684, 884]];
   const cy = cycle(() => T, 1.4);
   const ro = F.readout(d);
@@ -331,6 +331,7 @@ function homes() {
   function draw() {
     const { ctx } = begin(d.c); hits = [];
     const t = cy.now();
+    ctx.save(); ctx.translate(DX, 0);
     const steel = F.mixColor(PAL.ink, PAL.panel, 0.55), ceramic = F.mixColor(PAL.ink, PAL.panel, 0.86), carbon = F.fact(GRAPHITE), metal = F.fact(MOLTEN_METAL);
     let nAl = 0, moved = 0, movedR = 0;
     for (const R of RND) { const u = t - R.tau; if (u >= 0.35) nAl += 2; const m = smooth(clamp01(u / 0.7)); moved += m; if (R.side) movedR += m; }
@@ -379,7 +380,7 @@ function homes() {
         const ys = AL0 - 2.4 * 2 * R.r - RAL, dist = Math.hypot(p.x - p.h.x, ys - p.h.y), dur = Math.min(dist / 150, R.tau - 0.1), f = smooth(clamp01((t - (R.tau - dur)) / dur));
         const [jx, jy] = jig(p.ph), sink = smooth(clamp01((u - 0.45) / 0.6)), x = lerp(p.h.x, p.x, f) + jx * (1 - f), y = lerp(p.h.y, ys, f) + jy * (1 - f) + 15 * sink;
         const neutral = clamp01((u - 0.15) / 0.25);
-        if (sink < 1) { ion(ctx, x, y, lerp(RAL, 10, neutral), 'Al', 1, 1 - sink, 1 - neutral); hits.push({ x, y, r: 14, name: u >= 0.4 ? 'an aluminum atom, Al, joining the molten aluminum' : f > 0 ? 'an aluminum ion, Al³⁺, drawn to the cathode' : 'an aluminum ion, Al³⁺, of the dissolved Al₂O₃' }); }
+        if (sink < 1) { ion(ctx, x, y, lerp(RAL, 11, neutral), 'Al', 1, 1 - sink, 1 - neutral); hits.push({ x, y, r: 14, name: u >= 0.4 ? 'an aluminum atom, Al, joining the molten aluminum' : f > 0 ? 'an aluminum ion, Al³⁺, drawn to the cathode' : 'an aluminum ion, Al³⁺, of the dissolved Al₂O₃' }); }
         if (u >= 0 && u < 0.4) for (const dx of [-10, 0, 10]) hops.push([p.x + dx, floorY(p.x) - 4, p.x + dx * 0.4, ys + 3, u / 0.4]);
       });
       const pm = (R.o[0].x + R.o[1].x) / 2, sgn = R.side ? 1 : -1, form = smooth(clamp01((u - 0.2) / 0.4)), yF = AB + RO + 1;
@@ -428,11 +429,12 @@ function homes() {
       { x: 500, y: (AL + 700) / 2, r: 20, name: 'molten aluminum, Al(l), which collects on the cathode' }, { x: 760, y: (AL + 710) / 2, r: 20, name: 'molten aluminum, Al(l), which collects on the cathode' },
       { x: 1050, y: 716, r: 22, name: 'the tap hole, where the molten aluminum is drawn off' }, { x: 630, y: 410, r: 12, name: 'the crust over the melt' }, { x: 348, y: 410, r: 12, name: 'the crust over the melt' },
       { x: 200, y: 733, r: 16, name: 'the bar that carries electrons into the cathode' }, { x: 900, y: 195, r: 16, name: 'the bus bar, which carries electrons away from the anodes' }, { x: 340, y: 90, r: 40, name: 'the exhaust' });
-    F.legend(ctx, { l: 0, r: 1400, t: 886, b: H }, [
-      { s: 'Al³⁺', draw: (g, x, y) => ion(g, x, y, 8, 'Al', 1) }, { s: 'O²⁻', draw: (g, x, y) => ion(g, x, y, 11, 'O', -1) }, { s: 'Al', draw: (g, x, y) => ball(g, x, y, 10, F.el('Al')) },
+    F.legend(ctx, { l: -DX, r: 1400 - DX, t: 886, b: H }, [
+      { s: 'Al³⁺', draw: (g, x, y) => ion(g, x, y, 9, 'Al', 1) }, { s: 'O²⁻', draw: (g, x, y) => ion(g, x, y, 11, 'O', -1) }, { s: 'Al', draw: (g, x, y) => ball(g, x, y, 11, F.el('Al')) },
       { s: 'O₂', draw: (g, x, y) => mol(g, x, y, O2.map(([s, r, dx]) => [s, 8, dx * 0.85])) }, { s: 'CO', draw: (g, x, y) => mol(g, x, y, CO.map(([s, r, dx]) => [s, 8, dx * 0.85])) },
       { s: 'CO₂', draw: (g, x, y) => mol(g, x + 6, y, CO2.map(([s, r, dx]) => [s, 7.5, dx * 0.8])) }, { s: 'electron', draw: (g, x, y) => electron(g, x, y) },
     ], { corner: 'bottom', row: true, size: 20, panel: false });
+    ctx.restore(); hits.forEach((h) => { h.x += DX; });
     const tex = `\\text{Al}^{3+} + 3\\text{e}^{-} \\longrightarrow \\text{Al}(l) \\\\ N_{\\text{e}^{-}} = 3\\,N_{\\text{Al}} = 3 \\times ${nAl} = ${3 * nAl}`;
     if (tex !== last) { last = tex; ro.set(tex, '', { values: false }); }
   }

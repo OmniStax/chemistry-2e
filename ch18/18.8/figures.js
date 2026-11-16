@@ -119,7 +119,7 @@ function bond(g, pa, pb, ca, cb, a, r = 0.075) {
     },
     P4O10: {
       atoms: [...P6.map((p) => site('P', p, 1)), ...edgeO.map((p) => site('O', p, 1)), ...P6.map((p) => site('O', V.add(p, V.mul(V.unit(p), 1.43)), 1))],
-      pp: [0, 0, 0, 0, 0, 0], term: 1, ox: ['+5', '+5', '+5', '+5'], zoom: 1.2, y: -0.25,
+      pp: [0, 0, 0, 0, 0, 0], term: 1, ox: ['+5', '+5', '+5', '+5'], zoom: 1.05, y: -0.42,
       head: 'P₄O₁₀ is the cage of P₄O₆ with one more oxygen atom on each phosphorus atom.',
       tex: '\\text{oxidation number of P} = 3(+1) + 2 = +5',
       note: 'The oxygen atom at a corner is held by one phosphorus atom alone and counts +2 for it.',
@@ -194,7 +194,7 @@ function bond(g, pa, pb, ca, cb, a, r = 0.075) {
     gas: {
       cl: () => [own([0, AX, 0]), own([0, -AX, 0]), ...AZ.map((z) => own(V.mul(dirOf(90, z), EQ)))],
       cl2: 0, lone: 0, names: ['PCl<sub>5</sub>, trigonal bipyramidal', 'PCl<sub>5</sub>, trigonal bipyramidal'],
-      head: 'In the gas phase PCl₅ is a molecule: three chlorine atoms round the phosphorus atom, one above it and one below.',
+      head: 'Gaseous PCl₅ is a molecule: three chlorine atoms round the phosphorus atom, one above and one below.',
       tex: '\\mk{a}{\\text{PCl}_3} + \\mk{c}{\\text{Cl}_2} \\mk{r}{\\rightleftharpoons} \\mk{b}{\\text{PCl}_5}',
     },
     solid: {

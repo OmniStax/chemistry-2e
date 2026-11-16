@@ -41,9 +41,9 @@ const { C, PAL, alpha, register, begin, line, text } = F;
   /* how each ion is stood up so its shape reads at once: hypochlorite's one bond level, chlorite's V upright, and
      chlorate and perchlorate tipped until the last corner stands straight up over a base of three oxygen atoms;
      y lifts or lowers the ion to the middle of its stage */
-  const POSE = { ClO: { x: 0, z: Math.atan(b3 / a3), y: 0.1 }, ClO2: { x: 0, z: 0, y: 0.2 }, ClO3: { x: Math.acos(b3), z: 0, y: -0.2 }, ClO4: { x: Math.acos(b3), z: 0, y: -0.5 } };
+  const POSE = { ClO: { x: 0, z: Math.atan(b3 / a3), y: 0.1 }, ClO2: { x: 0, z: 0, y: 0.25 }, ClO3: { x: Math.acos(b3), z: 0, y: 0.15 }, ClO4: { x: Math.acos(b3), z: 0, y: -0.12 } };
   const top = F.makeCanvas(d.stage, 104);
-  const V = F.view3d(d.stage, { h: 500, dist: 6.2, tilt: 0.2, pitch: [-Math.PI / 2, Math.PI / 2] });
+  const V = F.view3d(d.stage, { h: 520, dist: 7.3, tilt: 0.2, pitch: [-Math.PI / 2, Math.PI / 2] });
   const g = V.part(0);
   V.setView(0.45, 0.2);
   const key = F.makeCanvas(d.stage, 56);

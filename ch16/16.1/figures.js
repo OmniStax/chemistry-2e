@@ -9,67 +9,96 @@ const SUP = { '-': '⁻', 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴', 5: '⁵
 const sup = (n) => String(n).split('').map((c) => SUP[c] ?? c).join('');
 
 /* =====================================================================
-   FIGURE 16.2: technetium-99m and uranium-238 decaying over a span of
-   time the reader stretches. Half-lives from the text: 6.01 h for
-   Tc-99m ("about six hours"), 4.47 × 10⁹ y for U-238 ("more than four
-   billion years"). The slider is log₁₀ of the span in hours, 0 (1 h) to
-   14 (11.4 billion years); the time axis is a named zoom that follows it,
-   in hours, days or years as the span needs. Opens on the book's week.
-   Still: the slider sets what is shown, no clock runs.
+   FIGURE 16.2: technetium-99m and uranium-238 decaying, on one time axis
+   that runs from a minute to a hundred billion years. Half-lives as the
+   book gives them: 6.01 h for Tc-99m (21.5; the text's "about six
+   hours") and 4.5 × 10⁹ y for U-238 (21.3; "more than four billion
+   years"). The axis is logarithmic, fixed, log₁₀ of the time in hours
+   from LO (1 min) to HI (10¹¹ y), its ticks at named times. The slider is
+   the time t on the same scale and opens on the book's week. Over the
+   graph, a sample of 100 nuclei of each isotope: nucleus k is left while
+   100 × (½)^(t/t½) > k + ½, so the count is the curve's percent rounded.
+   Still: no clock runs.
 ===================================================================== */
 (function () {
-  const H = 500, d = sim('sim-decay', H);
-  const HR = { day: 24, year: 8766 };
-  const HALF = { tc: 6.01, u: 4.47e9 * HR.year };
-  const WEEK = Math.log10(168);
-  /* the unit a span of h hours is read in, as [hours per unit, axis word, phrase for n of them] */
-  const unitOf = (h) => (h < 48 ? [1, 'hours', 'hours'] : h < 2 * HR.year ? [HR.day, 'days', 'days'] : h < 2e6 * HR.year ? [HR.year, 'years', 'years']
-    : h < 2e9 * HR.year ? [1e6 * HR.year, 'millions of years', 'million years'] : [1e9 * HR.year, 'billions of years', 'billion years']);
-  const two = (x) => (x < 10 ? fmt(x, 1) : x < 1000 ? fmt(x, 0) : fmt(x, 0));
-  const span = (h) => { const [u, , w] = unitOf(h); return `${two(h / u)} ${w}`; };
-  const t = ctl(d.controls, { label: '\\text{time shown}', cls: 'time', key: 'span', min: 0, max: 14, step: 0.005, value: WEEK, unit: '', fmt: (lg) => span(10 ** lg),
-    aria: 'the span of time shown', detents: [{ v: WEEK, label: '1 week' }],
+  const H = 650, d = sim('sim-decay', H);
+  const YEAR = 8766, HALF = { tc: 6.01, u: 4.5e9 * YEAR };
+  const LO = Math.log10(1 / 60), HI = Math.log10(1e11 * YEAR), WEEK = Math.log10(168);
+  /* a time of h hours in words: [value, unit] */
+  const words = (h) => (h < 1 ? [h * 60, 'minutes'] : h < 48 ? [h, 'hours'] : h < 2 * YEAR ? [h / 24, 'days'] : h < 1e4 * YEAR ? [h / YEAR, 'years']
+    : h < 1e6 * YEAR ? [h / (1e3 * YEAR), 'thousand years'] : h < 1e9 * YEAR ? [h / (1e6 * YEAR), 'million years'] : [h / (1e9 * YEAR), 'billion years']);
+  const span = (h) => { const [x, w] = words(h); return `${fmt(x, x < 9.95 ? 1 : 0)} ${w}`; };
+  const t = ctl(d.controls, { label: '\\text{time }t', cls: 'time', key: 'span', min: LO, max: HI, step: 0.005, value: WEEK, unit: '', fmt: (lg) => span(10 ** lg),
+    aria: 'the time since the samples were made', detents: [{ v: WEEK, label: '1 week' }],
     specials: [{ at: Math.log10(HALF.tc), label: 'Tc-99m half-life' }, { at: Math.log10(HALF.u), label: 'U-238 half-life' }] });
-  const left = (h) => 100 * Math.pow(0.5, h);
-  /* a percentage as the headline writes it: whole near 100, one place above 1, two figures below, powers of ten under 0.01 */
-  function pct(p) {
-    if (p >= 99.95) return '100 %';
-    if (p >= 1) return `${fmt(p, 1)} %`;
-    if (p >= 0.01) return `${p.toPrecision(2)} %`;
-    if (p < 1e-30) return '0 %';
-    const e = Math.floor(Math.log10(p)), m = p / 10 ** e;
-    return `${m.toFixed(1)} × 10${sup(e)} %`;
-  }
-  /* a number for the readout to three figures, in TeX */
+  const left = (h, k) => 100 * Math.pow(0.5, h / HALF[k]);
+  /* a number to three figures, in TeX */
   function sci(x) {
-    if (x >= 0.9995 && x < 1) return '1.00';
+    if (x >= 99.95) return '100';
     if (x >= 0.001 && x < 1000) return x.toPrecision(3);
     if (x < 1e-300) return '0';
     const e = Math.floor(Math.log10(x)), m = x / 10 ** e;
     return `${m.toFixed(2)}\\times 10^{${e}}`;
   }
-  const G = { l: 170, r: 1300, t: 110, b: 400 };
+  /* the order the hundred nuclei decay in: a fixed shuffle of the grid's places, the same for both samples */
+  const ORDER = (() => { const a = Array.from({ length: 100 }, (_, i) => i); let s = 7; for (let i = 99; i > 0; i--) { s = (s * 1103515245 + 12345) % 2147483648; const j = s % (i + 1); [a[i], a[j]] = [a[j], a[i]]; } return a; })();
+  const G = { l: 170, r: 1310, t: 350, b: 550 };
+  const TICKS = [[1 / 60, '1 minute'], [1, '1 hour'], [24, '1 day'], [YEAR, '1 year'], [1e3 * YEAR, '1000 years'], [1e6 * YEAR, '1 million years'], [1e9 * YEAR, '1 billion years']];
+  const MINOR = [1 / 6, 10, 240, 2400, ...[10, 100, 1e4, 1e5, 1e7, 1e8, 1e10].map((y) => y * YEAR)];
+  const COLS = 20, PITCH = 27, RN = 10, GY = 122;
+  const SAMPLES = [['tc', 'tc-99m', 'Tc-99m', 400], ['u', 'u-238', 'U-238', 1000]];
+  let hits = []; F.hover(d.stage, () => hits);
   function draw() {
-    const { ctx } = begin(d.c);
-    const h = 10 ** t.v, [u, word] = unitOf(h), tc = F.ref('tc-99m'), ur = F.ref('u-238'), ct = C('time');
-    const g = F.axes(ctx, G, [0, h / u], [0, 100], { nx: 7, ny: 5, nice: true, xl: `time (${word})`, xc: ct, yl: 'amount of isotope remaining (%)' });
-    const iso = [['u', ur, 'U-238'], ['tc', tc, 'Tc-99m']];
-    iso.forEach(([k, c]) => F.plot(ctx, g, (x) => left((x * u) / HALF[k]), c, { w: 5 }));
-    /* a half-life inside the span, not crowded against the axis, is marked where its curve crosses 50 % */
-    iso.forEach(([k, c]) => {
-      const x = HALF[k] / u;
-      if (x > (h / u) * 1.0001 || x < (h / u) * 0.02) return;
-      line(ctx, g.X(x), g.Y(50), g.X(x), G.b, alpha(c, 0.7), 2.5, [4, 8]);
-      line(ctx, G.l, g.Y(50), g.X(x), g.Y(50), alpha(c, 0.7), 2.5, [4, 8]);
-      dot(ctx, g.X(x), g.Y(50), c, false, 10);
-      const far = x > (h / u) * 0.75;
-      F.label(ctx, 'half-life', g.X(x) - (far ? 56 : 0), g.Y(50), { side: far ? 'below' : 'right', size: 18, color: c, gap: far ? 24 : 18, leader: false });
+    const { ctx } = begin(d.c); hits = [];
+    const h = 10 ** t.v, ct = C('time'), col = { tc: F.ref('tc-99m'), u: F.ref('u-238') };
+    text(ctx, `After ${span(h)}`, 700, 46, ct, { size: 26, weight: 600, align: 'center' });
+    /* the two samples */
+    SAMPLES.forEach(([k, , name, cx]) => {
+      const p = left(h, k), n = ORDER.filter((r) => p > r + 0.5).length, x0 = cx - ((COLS - 1) * PITCH) / 2;
+      ctx.save(); ctx.strokeStyle = PAL.rule; ctx.lineWidth = 2; ctx.fillStyle = alpha(PAL.ink, 0.03);
+      ctx.beginPath(); ctx.roundRect(x0 - 24, GY - 24, (COLS - 1) * PITCH + 48, 4 * PITCH + 48, 10); ctx.fill(); ctx.stroke(); ctx.restore();
+      ORDER.forEach((r, i) => {
+        const x = x0 + (i % COLS) * PITCH, y = GY + Math.floor(i / COLS) * PITCH, on = p > r + 0.5;
+        if (on) dot(ctx, x, y, col[k], true, RN);
+        else { ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.3); ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(x, y, RN - 2, 0, TAU); ctx.stroke(); ctx.restore(); }
+        hits.push({ x, y, r: 13, name: on ? `a ${name} nucleus` : `a ${name} nucleus that has decayed` });
+      });
+      F.rich(ctx, [[String(n), col[k], 700], ` of 100 ${name} nuclei left`], cx, GY + 4 * PITCH + 52, { size: 22, align: 'center' });
     });
-    F.legend(ctx, g, iso.map(([, c, s]) => ({ s, color: c, w: 5 })), { corner: 'above' });
-    const [pt, pu] = [left(h / HALF.tc), left(h / HALF.u)];
-    F.rich(ctx, ['After ', [span(h), ct], ', ', [pct(pt), tc], ' of the Tc-99m and ', [pct(pu), ur], ' of the U-238 remain.'], 700, 46, { size: 24, align: 'center' });
-    const tt = (x) => `\\htmlClass{kv-time}{${sci(x)}\\ \\text{${word === 'hours' ? 'h' : word === 'days' ? 'd' : word === 'years' ? 'y' : word === 'millions of years' ? 'My' : 'Gy'}}}`;
-    const row = (k, ref, name) => `\\htmlData{ref=${ref}}{\\text{${name}}}\\ \\text{remaining} = \\left(\\tfrac{1}{2}\\right)^{t/t_{1/2}} = \\left(\\tfrac{1}{2}\\right)^{${tt(h / u)}\\,/\\,${tt(HALF[k] / u)}} = ${sci(Math.pow(0.5, h / HALF[k]))}`;
+    F.legend(ctx, { l: 560, r: 840, t: GY + 4 * PITCH + 30, b: GY + 4 * PITCH + 74 }, [{ s: 'left', kind: 'dot', color: PAL.ink }, { s: 'decayed', kind: 'dot', hollow: true, color: alpha(PAL.ink, 0.45) }], { corner: 'top', row: true, panel: false });
+    /* the graph: percent remaining against log time */
+    const g = F.axes(ctx, G, [LO, HI], [0, 100], { nx: 0, ny: 4, yl: 'amount of isotope remaining (%)' });
+    TICKS.forEach(([hr, s], i) => {
+      const x = g.X(Math.log10(hr));
+      if (i) line(ctx, x, G.t, x, G.b, PAL.rule, 1.5);
+      line(ctx, x, G.b, x, G.b + 9, PAL.muted, 2);
+      text(ctx, s, x, G.b + 28, PAL.muted, { size: 17, align: i ? 'center' : 'left' });
+    });
+    MINOR.forEach((hr) => { const x = g.X(Math.log10(hr)); line(ctx, x, G.b, x, G.b + 5, PAL.muted, 1.5); });
+    text(ctx, 'time, each small step ten times as long', G.r, G.b + 62, ct, { size: 20, weight: 600, align: 'right' });
+    const X = (hr) => g.X(Math.log10(hr)), Yh = g.Y(50);
+    /* how far apart the two half-lives stand */
+    const yb = g.Y(24), r = HALF.u / HALF.tc, e = Math.floor(Math.log10(r));
+    F.hbracket(ctx, X(HALF.tc) + 16, X(HALF.u) - 16, yb, PAL.muted, `${fmt(r / 10 ** e, 1)} × 10${sup(e)} times as long`, { side: 'below', size: 20 });
+    [['u', 'U-238'], ['tc', 'Tc-99m']].forEach(([k]) => F.plot(ctx, g, (lg) => left(10 ** lg, k), col[k], { w: 5 }));
+    /* each half-life: a hollow dot where the curve crosses 50 %, dropped to the axis */
+    [['tc', 'Tc-99m', '6.01 hours', 1], ['u', 'U-238', '4.5 billion years', -1]].forEach(([k, name, s, side]) => {
+      const x = X(HALF[k]);
+      line(ctx, x, Yh, x, G.b, alpha(col[k], 0.7), 2.5, [4, 8]);
+      dot(ctx, x, Yh, col[k], false, 10);
+      const al = side > 0 ? 'left' : 'right';
+      text(ctx, name, x + side * 40, g.Y(82), col[k], { size: 24, weight: 600, align: al, bg: PAL.panel });
+      text(ctx, `half-life ${s}`, x + side * 22, Yh, col[k], { size: 20, align: al, bg: PAL.panel });
+      hits.push({ x, y: Yh, r: 16, name: `half of the ${name} is left after ${s}` });
+    });
+    /* the time on the slider: a line through both curves */
+    const xt = g.X(t.v);
+    line(ctx, xt, G.t - 8, xt, G.b, ct, 3);
+    ['u', 'tc'].forEach((k) => dot(ctx, xt, g.Y(left(h, k)), col[k], true, 9));
+    hits.push({ x: xt, y: (G.t + G.b) / 2, r: 14, name: `${span(h)} after the samples were made` });
+    const [x, w] = words(h), u = w === 'minutes' ? [1 / 60, 'min'] : w === 'hours' ? [1, 'h'] : w === 'days' ? [24, 'd'] : [YEAR, 'y'];
+    const tt = (hr) => `\\htmlClass{kv-time}{${sci(hr / u[0])}\\ \\text{${u[1]}}}`;
+    const row = (k, ref, name) => `\\htmlData{ref=${ref}}{\\text{${name}}}\\ \\text{remaining} = 100\\,\\% \\times \\left(\\tfrac{1}{2}\\right)^{t/t_{1/2}} = 100\\,\\% \\times \\left(\\tfrac{1}{2}\\right)^{${tt(h)}\\,/\\,${tt(HALF[k])}} = ${sci(left(h, k))}\\,\\%`;
     tex(d.readout, `${row('tc', 'tc-99m', 'Tc-99m')} \\\\ ${row('u', 'u-238', 'U-238')}`);
   }
   still(d, draw);

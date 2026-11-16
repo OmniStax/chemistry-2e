@@ -12,14 +12,14 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
    x = 330 for melting and 1098 for freezing, so the stage holds -2.9 to
    +22.1 J/K either way): dS_sys from zero, dS_surr = q_surr/T from its
    head, and dS_univ, solid, from zero to where they end.
-   Below, the sizes of the two against T (240 to 310 K, 19 to 26 J/K:
+   Below, the sizes of the two against T (240 to 310 K, 19 to 26 J/K, keyed above the box:
    6000/T runs 25.0 to 19.35): the level 22.1 and the curve 6000/T cross
    at T = 6000/22.1 = 271.5 K, and the gap between them is dS_univ.
    Freezing reverses every sign; the sizes, and so the graph's curves, stay.
    Still: the temperature and the process are states, not a clock.
 ===================================================================== */
 (function () {
-  const H = 720, d = sim('sim-ice-universe', H);
+  const H = 768, d = sim('sim-ice-universe', H);
   const DS = 22.1, Q = 6.00e3, TX = Q / DS;
   const PROC = F.choice(d.controls, { label: '\\text{process}', key: 'process', aria: 'the process, melting of ice or freezing of water',
     options: [{ value: 'melting', label: 'melting' }, { value: 'freezing', label: 'freezing' }], value: 'melting', onInput: () => draw() });
@@ -29,7 +29,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     specials: [{ at: TX, label: 'equilibrium' }], onInput: () => draw() });
   const ro = F.readout(d);
   const K = 40, ROW = [140, 218, 296], BH = 36, AXY = 334;
-  const G = { l: 200, r: 1280, t: 446, b: 652 };
+  const G = { l: 200, r: 1280, t: 446, b: 700 };
   const signed = (u) => (Math.abs(u) < 0.05 ? '0.0' : (u > 0 ? '+' : '−') + Math.abs(u).toFixed(1));
   let hits = [];
   F.hover(d.stage, () => hits);
@@ -73,7 +73,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     bar(ctx, X(sys), X(univ), ROW[1], ce, false);
     bar(ctx, X0, X(univ), ROW[2], ce, true);
     text(ctx, `${signed(sys)} J/K`, X(sys), ROW[0] - BH / 2 - 17, ce, { size: 20, weight: 600, align: sg > 0 ? 'right' : 'left' });
-    text(ctx, `${signed(surr)} J/K`, X(univ), ROW[1] - BH / 2 - 17, ce, { size: 20, weight: 600, align: sg > 0 ? 'left' : 'right' });
+    text(ctx, `${signed(surr)} J/K`, sg > 0 ? Math.max(X(univ), X0 + 12) : Math.min(X(univ), X0 - 12), ROW[1] - BH / 2 - 17, ce, { size: 20, weight: 600, align: sg > 0 ? 'left' : 'right' });
     const shown = signed(univ), zero = shown === '0.0';
     const verdict = zero ? 'equilibrium' : univ > 0 ? 'spontaneous' : 'nonspontaneous';
     const edge = sg > 0 ? Math.max(X0, X(univ)) + 18 : Math.min(X0, X(univ)) - 18;
@@ -92,11 +92,11 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     F.plot(ctx, g, fs, ce, { w: 5 });
     ['melting', 'freezing'].forEach((q) => PROC.only(ctx, q, () => {
       const m = q === 'melting';
-      F.rich(ctx, [m ? 'the ice gains ' : 'the water loses ', ['22.1 J/K', ce]], G.l + 16, g.Y(DS) + 24, { size: 19 });
-      F.rich(ctx, [m ? 'the surroundings lose ' : 'the surroundings gain ', ['6.00 kJ / T', ce]], g.X(256.5), G.t + 14, { size: 19 });
       text(ctx, m ? 'nonspontaneous' : 'spontaneous', G.l + 16, G.b - 18, PAL.muted, { size: 17 });
       text(ctx, m ? 'spontaneous' : 'nonspontaneous', G.r - 16, G.t + 18, PAL.muted, { size: 17, align: 'right' });
     }, [0, 0]));
+    F.legend(ctx, g, [{ s: melt ? 'the ice gains 22.1 J/K' : 'the water loses 22.1 J/K', color: ce, w: 4, dash: [10, 10] },
+      { s: melt ? 'the surroundings lose 6.00 kJ / T' : 'the surroundings gain 6.00 kJ / T', color: ce, w: 5 }], { corner: 'above' });
     /* the gap at this T is dS_univ, solid like its bar */
     const px = g.X(t), ya = g.Y(DS), yb = g.Y(fs(t)), top = Math.min(ya, yb);
     line(ctx, px, Math.max(ya, yb), px, G.b, alpha(ct, 0.6), 2.5, [4, 8]);

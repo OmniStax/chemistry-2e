@@ -24,21 +24,21 @@ const RAD = Math.PI / 180;
      bonds [giver, taker, order]; rows [atom index, name, valence electrons], one per kind of atom */
   const MOL = {
     H2O: {
-      to: 'O', charge: 0, k: 1.35, formula: 'H₂O', ions: 'water would be O²⁻ and two H⁺ ions',
-      atoms: [['O', 430, 290, 0, [-60, -120], -90], ['H', ...at(430, 290, 142, 315), 0, [], 142], ['H', ...at(430, 290, 38, 315), 0, [], 38]],
+      to: 'O', charge: 0, k: 1.3, formula: 'H₂O', ions: 'water would be O²⁻ and two H⁺ ions',
+      atoms: [['O', 400, 285, 0, [-60, -120], -90], ['H', ...at(400, 285, 142, 310), 0, [], 90], ['H', ...at(400, 285, 38, 310), 0, [], 90]],
       bonds: [[1, 0, 1], [2, 0, 1]],
       rows: [[0, 'O', 6], [1, 'H', 1]],
     },
     CCl4: {
       to: 'Cl', charge: 0, k: 1, formula: 'CCl₄', ions: 'CCl₄ would be C⁴⁺ and four Cl⁻ ions',
-      atoms: [['C', 430, 372, 0, [], -45], ...[-90, 0, 90, 180].map((a) => ['Cl', ...at(430, 372, a, 185), 0, [a - 90, a, a + 90], a + 45])],
+      atoms: [['C', 400, 372, 0, [], -45], ...[-90, 0, 90, 180].map((a) => ['Cl', ...at(400, 372, a, 185), 0, [a - 90, a, a + 90], a + 45])],
       bonds: [[0, 1, 1], [0, 2, 1], [0, 3, 1], [0, 4, 1]],
       rows: [[0, 'C', 4], [1, 'Cl', 7]],
     },
     NO3: {
       to: 'O', charge: -1, k: 1.15, formula: 'NO₃⁻', ions: 'NO₃⁻ would be N⁵⁺ and three O²⁻ ions',
-      atoms: [['N', 430, 425, 1, [], 90], ['O', ...at(430, 425, -90, 215), 0, [-30, -150], -90],
-        ['O', ...at(430, 425, 150, 215), -1, [60, 150, 240], 195], ['O', ...at(430, 425, 30, 215), -1, [-60, 30, 120], -15]],
+      atoms: [['N', 400, 425, 1, [], 90], ['O', ...at(400, 425, -90, 215), 0, [-30, -150], -90],
+        ['O', ...at(400, 425, 150, 215), -1, [60, 150, 240], 195], ['O', ...at(400, 425, 30, 215), -1, [-60, 30, 120], -15]],
       bonds: [[0, 1, 2], [0, 2, 1], [0, 3, 1]],
       rows: [[0, 'N', 5], [1, 'O, double bond', 6], [2, 'O, single bond', 6]],
     },
@@ -102,18 +102,18 @@ const RAD = Math.PI / 180;
       disc(ctx, el, x, y, r(el));
       if (live) hits.push({ x, y, r: r(el), name: NAME[el] });
       if (lab) lab.block(x - r(el), y - r(el), x + r(el), y + r(el));
-      if (lab) { const ux = Math.cos(la * RAD), uy = Math.sin(la * RAD); lab.add(`${el} ${shown(q[i], whole || p === 0 ? 0 : 2)}`, x + ux * (r(el) + 12), y + uy * (r(el) + 12), ux, uy, PAL.ink, 28, 44); }
+      if (lab) { const ux = Math.cos(la * RAD), uy = Math.sin(la * RAD); lab.add(`${el} ${shown(q[i], whole || p === 0 ? 0 : 2)}`, x + ux * (r(el) + 12), y + uy * (r(el) + 12), ux, uy, PAL.ink, 28, 26); }
     });
   }
 
   /* the count behind each charge: valence electrons of the atom in its element, less the electrons it counts here */
-  const COL = { sw: 902, name: 930, val: 1120, minus: 1178, cnt: 1235, eq: 1292, q: 1345 };
+  const COL = { sw: 846, name: 872, val: 1078, minus: 1136, cnt: 1202, eq: 1272, q: 1340 };
   function ledger(ctx, key, p) {
     const m = MOL[key], q = charges(m, p), dec = p === 1 || p === 0 ? 0 : 2, n = m.rows.length;
-    const y0 = 345 - (n - 1) * 42, hy = y0 - 104;
+    const y0 = 345 - (n - 1) * 42, hy = y0 - 108;
     const head = (a, b, x, strong) => {
-      text(ctx, a, x, hy, strong ? PAL.ink : PAL.muted, { size: 18, align: 'center', weight: strong ? 600 : 400 });
-      if (b) text(ctx, b, x, hy + 24, strong ? PAL.ink : PAL.muted, { size: 18, align: 'center', weight: strong ? 600 : 400 });
+      text(ctx, a, x, hy, strong ? PAL.ink : PAL.muted, { size: 20, align: 'center', weight: strong ? 600 : 400 });
+      if (b) text(ctx, b, x, hy + 27, strong ? PAL.ink : PAL.muted, { size: 20, align: 'center', weight: strong ? 600 : 400 });
     };
     head('valence e⁻', 'in the element', COL.val);
     head('e⁻ counted', `in ${m.formula}`, COL.cnt);
@@ -122,7 +122,7 @@ const RAD = Math.PI / 180;
     m.rows.forEach(([i, name, val], j) => {
       const y = y0 + j * 84, o = { size: 30, align: 'center' };
       disc(ctx, m.atoms[i][0], COL.sw, y, 16);
-      text(ctx, name, COL.name, y, PAL.ink, { size: 22, align: 'left', base: 'middle' });
+      text(ctx, name, COL.name, y, PAL.ink, { size: 26, align: 'left', base: 'middle' });
       text(ctx, String(val), COL.val, y, PAL.ink, { ...o, base: 'middle' });
       text(ctx, '−', COL.minus, y, PAL.muted, { ...o, base: 'middle' });
       text(ctx, (val - q[i]).toFixed(dec), COL.cnt, y, PAL.ink, { ...o, base: 'middle' });
@@ -143,7 +143,7 @@ const RAD = Math.PI / 180;
       mol.only(ctx, o, () => { scene(ctx, o, p, null, false); ledger(ctx, o, p); });
     }
     mol.only(ctx, key, () => { scene(ctx, key, p, lab, true); ledger(ctx, key, p); lab.flush(); });
-    F.legend(ctx, { l: 0, r: 1400, t: 0, b: H }, [{ s: 'electron', kind: 'dot', color: F.el('e-') }], { corner: 'bl' });
+    F.legend(ctx, { l: 0, r: 1400, t: 0, b: H }, [{ s: 'electron', kind: 'dot', color: F.el('e-') }], { corner: 'br' });
     setReadout();
   }
   register(d.fig, { update: () => {}, draw });

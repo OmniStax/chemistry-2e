@@ -138,11 +138,11 @@ function blend(A, B, k, K, o = {}) {
   return { atoms, bonds, donors };
 }
 /* an arc of radius R from direction a to b, through their bisector, or through m when they are opposite; returns the points and the label's point */
-function arcPts(a, b, R, m) {
+function arcPts(a, b, R, m, at = 0.5) {
   const pts = [];
   const opp = V.dot(a, b) < -0.99;
   for (let i = 0; i <= 32; i++) { const t = i / 32; pts.push(V.mul(opp ? V.add(V.mul(a, Math.cos(Math.PI * t)), V.mul(m, Math.sin(Math.PI * t))) : slerp(a, b, t), R)); }
-  return { pts, mid: V.mul(opp ? m : V.unit(V.add(a, b)), R + 0.24) };
+  return { pts, mid: V.mul(opp ? V.add(V.mul(a, Math.cos(Math.PI * at)), V.mul(m, Math.sin(Math.PI * at))) : V.unit(V.add(a, b)), R + 0.28) };
 }
 /* an element's disc as a key sample; nothing is written on an atom, and every atom is named on hover */
 const ELNAME = { Ag: 'silver', Cu: 'copper', Zn: 'zinc', Ni: 'nickel', Pt: 'platinum', Co: 'cobalt', V: 'vanadium', Cr: 'chromium', Zr: 'zirconium', Re: 'rhenium', Mo: 'molybdenum', M: 'metal ion M', N: 'nitrogen', H: 'hydrogen', O: 'oxygen', C: 'carbon', Cl: 'chlorine', F: 'fluorine' };
@@ -231,9 +231,9 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
     ptnh3cl2: ['[Pt(NH₃)₂Cl₂]', 'Pt', 'square', [['Cl', 2.32], ['NH3', 2.05], ['NH3', 2.05], ['Cl', 2.32]], 0, 4, { arc: [0, 3, '90°'] }],
     cocl5: ['[CoCl₅]²⁻', 'Co', 'tbp', 'Cl', 2.3, 5],
     vocn4: ['[VO(CN)₄]²⁻', 'V', 'spy', [['O', 1.6], ['CN', 2.15], ['CN', 2.15], ['CN', 2.15], ['CN', 2.15]], 0, 5],
-    coh2o6: ['[Co(H₂O)₆]²⁺', 'Co', 'octahedral', 'OH2', 2.1, 6, { arc: [0, 2, '90°'], out: '2 Cl⁻ outside the brackets' }],
+    coh2o6: ['[Co(H₂O)₆]²⁺', 'Co', 'octahedral', 'OH2', 2.1, 6, { out: '2 Cl⁻ outside the brackets' }],
     cren3: ['[Cr(en)₃]³⁺', 'Cr', 'octahedral', 'en', 2.08, 3, { bridges: [[0, 2], [1, 4], [3, 5]], out: '3 NO₃⁻ outside the brackets' }],
-    ptcl6: ['[PtCl₆]²⁻', 'Pt', 'octahedral', 'Cl', 2.32, 6, { out: '2 K⁺ outside the brackets' }],
+    ptcl6: ['[PtCl₆]²⁻', 'Pt', 'octahedral', 'Cl', 2.32, 6, { arc: [0, 2, '90°'], out: '2 K⁺ outside the brackets' }],
     zrf7: ['[ZrF₇]³⁻', 'Zr', 'pbp', 'F', 2.05, 7],
     ref8: ['[ReF₈]²⁻', 'Re', 'sap', 'F', 1.95, 8],
     mocn8: ['[Mo(CN)₈]⁴⁻', 'Mo', 'dodec', 'CN', 2.17, 8],
@@ -312,7 +312,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
 ===================================================================== */
 (function () {
   const d = sim('sim-cis-trans');
-  const HS = 520, DIST = 21.5, K = 0.62, Y0 = -0.45, X0 = 3.1;
+  const HS = 520, DIST = 21.5, K = 0.62, Y0 = -0.5, X0 = 3.3;
   const v = F.view3d(d.stage, { spin: 'idle', h: HS, dist: DIST, tilt: 0.3 });
   v.look({});
   const UNIT = lens(v, HS, DIST);
@@ -342,7 +342,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
     if (T3) { const cone = new T3.Mesh(F.mesh.geo().cone, F.mesh.mat(c, ex)); cone.position.copy(F.mesh.vec(V.add(base, V.mul(u, hl / 2)))); cone.quaternion.setFromUnitVectors(new T3.Vector3(0, 1, 0), F.mesh.vec(u)); cone.scale.set(r * 3.2, hl, r * 3.2); g.add(cone); }
     if (!heavy) { const bar = V.add(a, V.mul(u, 0.07)); stick(g, V.sub(bar, V.mul(w, 0.11)), V.add(bar, V.mul(w, 0.11)), 0.03, c, ex); }
   }
-  const LEN = 0.78;                                            /* the length of a bond dipole's arrow, scene units */
+  const LEN = 0.9;                                             /* the length of a bond dipole's arrow, scene units */
   function draw() {
     const k = cx.k, P = CPX[cx.value], show = Math.max(0, (k - 0.6) / 0.4);
     v.clear();
@@ -350,21 +350,21 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
     ['cis', 'trans'].forEach((iso) => {
       const cis = iso === 'cis', g = G[iso];
       const { atoms, bonds, donors } = blend(state(cx.from, cis), state(cx.value, cis), k, K);
-      g.position.y = Y0;
+      g.position.y = Y0; g.scale.setScalar(1.16);
       molecule(v, g, atoms, bonds, k);
       symsOf(atoms).forEach((s) => syms.add(s));
       const a = donors[0], b = donors[2], bis = V.unit(V.add(a.d, b.d));
       /* the angle between the two M–Cl bonds; in trans the half circle goes round the side the dipoles are not on */
-      const { pts, mid } = arcPts(a.d, b.d, 0.6, V.mul(P.side, -1));
+      const { pts, mid } = arcPts(a.d, b.d, 0.7, V.mul(P.side, -1), 0.27);
       polyline(g, pts, F.C('angle'));
       if (show > 0) plain(hued(v.label(cis ? '90°' : '180°', mid, g, 0, 'bare'), 'angle'), show);
       if (show <= 0) return;
       /* each bond dipole beside its bond, on the side away from the other chloride, pointing to the chlorine */
       [[a, b], [b, a]].forEach(([p, q]) => {
-        const away = cis ? V.unit(V.sub(V.mul(p.d, V.dot(p.d, q.d)), q.d)) : P.side, off = V.mul(away, 0.46), r = p.r * K;
+        const away = cis ? V.unit(V.sub(V.mul(p.d, V.dot(p.d, q.d)), q.d)) : P.side, off = V.mul(away, 0.5), r = p.r * K;
         dipole(g, V.add(V.mul(p.d, r * 0.5 - LEN / 2 + 0.12), off), V.add(V.mul(p.d, r * 0.5 + LEN / 2 + 0.12), off), false, show);
       });
-      if (cis) dipole(g, V.mul(bis, 1.22), V.mul(bis, 1.22 + LEN * Math.SQRT2), true, show);
+      if (cis) dipole(g, V.mul(bis, 1.25), V.mul(bis, 1.25 + LEN * Math.SQRT2), true, show);
     });
     const { ctx } = F.begin(strip), cD = F.C('dipole-moment'), M = P.metal;
     [['cis', -X0, VIOLET, 'violet', 'add: the ion is polar'], ['trans', X0, GREEN, 'green', 'cancel: the ion is nonpolar']].forEach(([iso, x, hex, word, verdict]) => {
@@ -394,7 +394,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
 ===================================================================== */
 (function () {
   const d = sim('sim-optical-isomers');
-  const HS = 520, DIST = 21.5, K = 0.72, Y0 = -0.55, D = 3.2, TILT = 1.2;
+  const HS = 520, DIST = 21.5, K = 0.65, Y0 = -0.47, D = 3.05, TILT = 1.2;
   let t = 0, seen = [NaN, NaN, NaN];
   /* a drag turns the original; the image turns the opposite way about the upright axis, as a reflection does, and the
      mirror stays edge-on between them. Laid over (t = 1), the image turns with the original. */
@@ -474,9 +474,9 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
     const cR = F.cat(0);
     if (t > 0.5) right.atoms.forEach((x) => { if (x.lost) v.pickable(sphere(gR, x.p, rad(x.sym) * 1.75, cR, { transparent: true, opacity: 0.38 * (t - 0.5) * 2, depthWrite: false }), 'an atom of the mirror image with no atom of the original under it'); });
     if (t < 0.99) {
-      const m = F.mesh.box(gM, [0, 0, 0], [0.035, 4.5, 0.035], PAL.muted, { transparent: true, opacity: 1 - t });
+      const m = F.mesh.box(gM, [0, 0.15, 0], [0.035, 4.1, 0.035], PAL.muted, { transparent: true, opacity: 1 - t });
       v.pickable(m, 'the mirror, seen edge-on');
-      plain(v.label('mirror', [0, -2.42, 0], gM, 0, 'bare'), 1 - t);
+      plain(v.label('mirror', [0, -2.0, 0], gM, 0), 1 - t);
     }
     sync();
     const { ctx } = F.begin(strip), over = arr.value === 'over', miss = B.best.miss;

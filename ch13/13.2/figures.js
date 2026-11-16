@@ -242,7 +242,7 @@ const conc = (s) => hue('concentration', s);
    starting [NO2]); the point on the NO2 curve is the slider's.
 ===================================================================== */
 (function () {
-  const d = sim('sim-magnitude-k', 560);
+  const d = sim('sim-magnitude-k', 590);
   const C0 = 0.10, NS = 20, TAU = 2 * Math.PI;
   const kFmt = (lg) => { const [m, e] = sciParts(10 ** lg); return e === 0 ? m : `${m} × 10${String(e).split('').map((ch) => SUPD[ch]).join('')}`; };
   const s = ctl(d.controls, { label: '\\kKc', cls: 'equilibrium-constant', key: 'logK', min: -2, max: 4, step: 0.001, value: Math.log10(160),
@@ -250,11 +250,11 @@ const conc = (s) => hue('concentration', s);
   const eq = (K) => { const c = (-1 + Math.sqrt(1 + 8 * K * C0)) / (4 * K); return [c, (C0 - c) / 2]; };
   const cOf = (lg) => eq(10 ** lg)[0], nOf = (lg) => eq(10 ** lg)[1];
   const P = F.drag(d, { x: s, y: cOf });
-  const BOX = { l: 70, r: 590, t: 128, b: 448 }, G = { l: 770, r: 1250, t: 150, b: 450 };
+  const BOX = { l: 70, r: 590, t: 128, b: 480 }, G = { l: 770, r: 1240, t: 150, b: 470 };
   /* the 20 sites, 5 by 4, each with a fixed jitter, a fixed axis and its place in the order of joining */
   let seed = 7; const rnd = () => { seed = (seed * 16807) % 2147483647; return seed / 2147483647; };
   const SITES = [];
-  for (let r = 0; r < 4; r++) for (let c = 0; c < 5; c++) SITES.push({ x: BOX.l + 52 + c * 104 + (rnd() - 0.5) * 16, y: BOX.t + 42 + r * 79 + (rnd() - 0.5) * 10, th: rnd() * TAU, ra: (rnd() - 0.5) * 2.4, rb: (rnd() - 0.5) * 2.4, k: 0 });
+  for (let r = 0; r < 4; r++) for (let c = 0; c < 5; c++) SITES.push({ x: BOX.l + 60 + c * 100 + (rnd() - 0.5) * 6, y: BOX.t + 50 + r * 84 + (rnd() - 0.5) * 6, th: (rnd() - 0.5) * 1.1 + (rnd() < 0.5 ? Math.PI : 0), ra: (rnd() - 0.5) * 2.4, rb: (rnd() - 0.5) * 2.4, k: 0 });
   SITES.map((_, i) => i).sort(() => rnd() - 0.5).forEach((i, k) => { SITES[i].k = k; });
   const ball = (ctx, e, x, y, r) => { ctx.save(); ctx.fillStyle = F.el(e); ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 1.2; ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore(); };
   /* one NO2, its N at (x, y) and its two O on the side away from th, 134° apart */
@@ -277,7 +277,7 @@ const conc = (s) => hue('concentration', s);
     SITES.forEach((q) => {
       const j = Math.min(1, Math.max(0, NS * frac - q.k)), ux = Math.cos(q.th), uy = Math.sin(q.th);
       if (j >= 0.5) { joined += 1; n2o4(ctx, q.x, q.y, q.th); hits.push({ x: q.x, y: q.y, r: 30, name: 'N₂O₄' }); return; }
-      const k = j * 2, e = k * k * (3 - 2 * k), off = 29 - 17 * e;
+      const k = j * 2, e = k * k * (3 - 2 * k), off = 24 - 15 * e;
       [1, -1].forEach((sg) => {
         const x = q.x + sg * off * ux, y = q.y + sg * off * uy, home = q.th + (sg > 0 ? Math.PI : 0), turn = (sg > 0 ? q.ra : q.rb) * (1 - e);
         no2(ctx, x, y, home + turn); hits.push({ x, y, r: 18, name: 'NO₂' });
@@ -297,16 +297,16 @@ const conc = (s) => hue('concentration', s);
     line(ctx, xs, G.t, xs, G.b, alpha(PAL.ink, 0.4), 2, [10, 10]);
     F.curve(ctx, cOf, -2, 4, g.X, g.Y, cN, 5, 160);
     F.curve(ctx, nOf, -2, 4, g.X, g.Y, cD, 5, 160);
-    text(ctx, '[NO_{2}]', G.r + 16, g.Y(cOf(4)) - 4, cN, { size: 22, weight: 600 });
-    text(ctx, '[N_{2}O_{4}]', G.r + 16, g.Y(nOf(4)), cD, { size: 22, weight: 600 });
-    text(ctx, 'half the starting [NO_{2}]', G.l + 14, g.Y(C0 / 2) - 18, PAL.muted, { size: 17 });
+    /* each curve named at its end, the slider's value under the name */
+    text(ctx, '[N_{2}O_{4}]', G.r + 16, g.Y(nOf(4)) - 12, cD, { size: 22, weight: 600 });
+    text(ctx, `${concTxt(n)} M`, G.r + 16, g.Y(nOf(4)) + 14, cD, { size: 19, weight: 600 });
+    text(ctx, '[NO_{2}]', G.r + 16, g.Y(cOf(4)) - 30, cN, { size: 22, weight: 600 });
+    text(ctx, `${concTxt(c)} M`, G.r + 16, g.Y(cOf(4)) - 4, cN, { size: 19, weight: 600 });
+    text(ctx, 'half the starting [NO_{2}]', G.r - 10, g.Y(C0 / 2) - 18, PAL.muted, { size: 17, align: 'right' });
     line(ctx, G.l, g.Y(C0 / 2), G.r, g.Y(C0 / 2), alpha(PAL.ink, 0.3), 2, [4, 8]);
     dot(ctx, xs, g.Y(n), cD, true, 9);
     P.draw(ctx, g, cN);
-    const left = xs > G.r - 150, lx = left ? xs - 18 : xs + 18, al = left ? 'right' : 'left';
-    const yN = g.Y(c), yD = g.Y(n), gap = Math.abs(yN - yD) < 26 ? (yN <= yD ? [-14, 14] : [14, -14]) : [0, 0];
-    text(ctx, `${concTxt(c)} M`, lx, Math.min(G.b - 14, Math.max(G.t + 12, yN + gap[0])), cN, { size: 18, weight: 600, align: al, bg: PAL.panel });
-    text(ctx, `${concTxt(n)} M`, lx, Math.min(G.b - 14, Math.max(G.t + 12, yD + gap[1])), cD, { size: 18, weight: 600, align: al, bg: PAL.panel });
+    const yN = g.Y(c), yD = g.Y(n);
     hits.push({ x: xs, y: yN, r: 16, name: '[NO₂] at equilibrium' }, { x: xs, y: yD, r: 16, name: '[N₂O₄] at equilibrium' });
     const f = frac * 100, pct = f < 9.95 ? fmt(f, 1) : fmt(f, 0);
     topline(ctx, `At $\\kKc = ${sciTex(K)}$, ${pct}% of the NO_{2} has become N_{2}O_{4}.`);

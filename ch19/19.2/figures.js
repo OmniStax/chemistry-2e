@@ -448,43 +448,40 @@ const OCT = [[0, 1, 0], [0, -1, 0], dirOf(90, 38), dirOf(90, 218), dirOf(90, 128
   const cx = F.select(d.controls, { label: '\\text{complex}', aria: 'the complex', options: [{ value: 'en3', label: '[M(en)₃]ⁿ⁺' }, { value: 'cis', label: 'cis-[Co(en)₂Cl₂]⁺' }, { value: 'trans', label: 'trans-[Co(en)₂Cl₂]⁺' }], value: 'en3' });
   const arr = F.choice(d.controls, { label: '\\text{arrangement}', aria: 'the arrangement', options: [{ value: 'mirror', label: 'mirror images' }, { value: 'over', label: 'laid over' }], value: 'mirror', ms: 2400 });
   const ro = F.readout(d);
-  /* the frame part-way between two ions' frames, as a turn about one axis */
-  function between(A, B, k) {
-    if (A === B || !T3 || k > 0.999) return B;
-    const m = (fr) => new T3.Quaternion().setFromRotationMatrix(new T3.Matrix4().makeBasis(...o6.filter((_, i) => i % 2 === 0).map((e) => new T3.Vector3(...fr(e)))));
-    const q = m(A).slerp(m(B), k);
-    return (p) => new T3.Vector3(...p).applyQuaternion(q).toArray();
-  }
   const NAMES = { N: 'nitrogen of an NH₂ group', C: 'carbon of a CH₂ group' };
   function draw() {
     const k = cx.k, B = CPX[cx.value], A = k > 0.999 ? B : CPX[cx.from];
     t = arr.mix((x) => (x === 'over' ? 1 : 0));
     /* the image turns to its fit over the first two thirds of the way and slides across over the last two thirds */
-    const turn = Math.min(1, t / 0.62), slide = Math.max(0, (t - 0.3) / 0.7), ringed = Math.max(0, (t - 0.86) / 0.14);
-    const { n, a, lost } = B.best, Q = between(A.fr, B.fr, k);
-    const left = blend(A.S, B.S, k, K), right = blend(A.S, B.S, k, K);
+    const turn = Math.min(1, t / 0.62), slide = Math.max(0, (t - 0.3) / 0.7), ringed = Math.max(0, (t - 0.86) / 0.14), apart = Math.max(0, 1 - 2 * t), joined = Math.max(0, 2 * t - 1);
+    /* [M(en)₃]ⁿ⁺ and the cis ion stand alike, so one becomes the other ligand by ligand; the trans ion stands differently, so
+       the old ion shrinks away and the new one grows in its place */
+    const swap = A.fr !== B.fr, now = swap && k < 0.5 ? A : B, whole = swap ? Math.abs(2 * k - 1) : 1;
+    const { n, a, lost } = B.best, Q = now.fr;
+    const left = swap ? blend(now.S, now.S, 1, K) : blend(A.S, B.S, k, K), right = swap ? blend(now.S, now.S, 1, K) : blend(A.S, B.S, k, K);
     left.atoms.forEach((x) => { x.p = Q(x.p); });
     /* the image is drawn a little smaller, so that an atom it shares with the original lies inside the original's */
     right.atoms.forEach((x, i) => { x.p = rot(mirror(Q(x.p)), n, a * turn); x.name = 'mirror image: ' + x.name; x.s = 1 - 0.06 * t; x.lost = k > 0.99 && lost[i]; x.hide = t > 0.97 && !x.lost; });
     v.clear();
     gL.position.set(-D * (1 - slide), Y0, 0); gR.position.set(D * (1 - slide), Y0, 0); gM.position.y = Y0;
-    molecule(v, gL, left.atoms, left.bonds, k);
-    molecule(v, gR, right.atoms, right.bonds, k);
+    gL.scale.setScalar(0.55 + 0.45 * whole); gR.scale.setScalar(0.55 + 0.45 * whole);
+    molecule(v, gL, left.atoms, left.bonds, swap ? 1 : k, whole);
+    molecule(v, gR, right.atoms, right.bonds, swap ? 1 : k, whole);
     /* a ring round each atom of the image that has landed on nothing */
     const cR = F.cat(0);
     if (ringed > 0) right.atoms.forEach((x) => { if (x.lost) v.pickable(sphere(gR, x.p, rad(x.sym) * 1.75, cR, { transparent: true, opacity: 0.38 * ringed, depthWrite: false }), 'an atom of the mirror image with no atom of the original under it'); });
-    if (t < 0.99) {
-      const m = F.mesh.box(gM, [0, 0.15, 0], [0.035, 4.1, 0.035], PAL.muted, { transparent: true, opacity: 1 - t });
+    if (t < 0.5) {
+      const m = F.mesh.box(gM, [0, 0.15, 0], [0.035, 4.1, 0.035], PAL.muted, { transparent: true, opacity: apart });
       v.pickable(m, 'the mirror, seen edge-on');
-      plain(v.label('mirror', [0, -2.0, 0], gM, 0), 1 - t);
+      plain(v.label('mirror', [0, -2.0, 0], gM, 0), apart);
     }
     sync();
     const { ctx } = F.begin(strip), over = arr.value === 'over', miss = B.best.miss;
     const nameAt = (c, X, y, a0) => F.faded(ctx, a0, [0, 0], () => (c.plain ? prefixed(ctx, c.plain[0], c.plain[1], X, y) : text(ctx, c.name, X, y, PAL.ink, { size: 25, weight: 600, align: 'center' })));
     const xL = 700 - D * (1 - slide) * UNIT, xR = 700 + D * (1 - slide) * UNIT;
-    [[A, 1 - k], [B, k]].forEach(([c, a0]) => { if (a0 > 0.01 && (c === B || A !== B)) nameAt(c, xL, 20, a0 * (1 - t)); });
-    F.faded(ctx, 1 - t, [0, 0], () => text(ctx, 'its mirror image', xR, 20, PAL.ink, { size: 25, weight: 600, align: 'center' }));
-    F.faded(ctx, t, [0, 0], () => text(ctx, miss ? 'the mirror image, turned and laid over the original' : 'the mirror image, turned and laid over the original: one ion', 700, 20, PAL.ink, { size: 23, align: 'center' }));
+    [[A, 1 - 2 * k], [B, A === B ? 1 : 2 * k - 1]].forEach(([c, a0]) => { if (a0 > 0.01 && (c === B || A !== B)) nameAt(c, xL, 20, a0 * apart); });
+    F.faded(ctx, apart, [0, 0], () => text(ctx, 'its mirror image', xR, 20, PAL.ink, { size: 25, weight: 600, align: 'center' }));
+    F.faded(ctx, joined, [0, 0], () => text(ctx, miss ? 'the mirror image, turned and laid over the original' : 'the mirror image, turned and laid over the original: one ion', 700, 20, PAL.ink, { size: 23, align: 'center' }));
     keyRow(ctx, 56, [...elKey(symsOf(left.atoms), NAMES),
       ...(ringed > 0.5 && miss ? [{ s: 'atom of the image that lands on nothing', draw: (c, x, y) => { c.save(); c.globalAlpha = 0.4; c.beginPath(); c.arc(x, y, 12, 0, 2 * Math.PI); c.fillStyle = cR; c.fill(); c.restore(); F.dot(c, x, y, F.el('C'), true, 6); } }] : [])]);
     v.headline(over

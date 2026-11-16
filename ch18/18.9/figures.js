@@ -41,11 +41,11 @@ const { C, PAL, alpha, register, begin, line, text } = F;
   /* how each ion is stood up so its shape reads at once: hypochlorite's one bond level, chlorite's V upright, and
      chlorate and perchlorate tipped until the last corner stands straight up over a base of three oxygen atoms;
      y lifts or lowers the ion to the middle of its stage */
-  const POSE = { ClO: { x: 0, z: Math.atan(b3 / a3), y: 0.1 }, ClO2: { x: 0, z: 0, y: 0.25 }, ClO3: { x: Math.acos(b3), z: 0, y: 0.15 }, ClO4: { x: Math.acos(b3), z: 0, y: -0.12 } };
+  const POSE = { ClO: { x: 0, z: Math.atan(b3 / a3), y: 0.1 }, ClO2: { x: 0, z: 0, y: 0.25 }, ClO3: { x: Math.acos(b3), z: 0, y: 0.15 }, ClO4: { x: Math.acos(b3), z: 0, y: -0.3 } };
   const top = F.makeCanvas(d.stage, 104);
-  const V = F.view3d(d.stage, { h: 520, dist: 7.3, tilt: 0.2, pitch: [-Math.PI / 2, Math.PI / 2] });
+  const V = F.view3d(d.stage, { h: 500, dist: 6.9, tilt: 0.2, pitch: [-Math.PI / 2, Math.PI / 2] });
   const g = V.part(0);
-  V.setView(0.45, 0.2);
+  V.setView(0.6, 0.2);
   const key = F.makeCanvas(d.stage, 56);
   const row = F.makeCanvas(d.stage, 446);
   const ion = F.choice(d.controls, { label: '\\text{ion}', key: 'ion', aria: 'the chlorine oxyanion',
@@ -158,10 +158,12 @@ const { C, PAL, alpha, register, begin, line, text } = F;
   /* the caption of each of the book's three figures: the acid meets a base and leaves its ion */
   function readout() {
     const t = ION[ion.value];
-    try { F.tex(d.readout, `{${t.acid}(aq)} + {\\text{OH}^{-}(aq)} \\longrightarrow {${t.tex}(aq)} + {\\text{H}_{2}\\text{O}(l)}`); console.error('TEXOK', d.readout.innerHTML.length, d.readout.isConnected); } catch (e) { console.error('TEXERR ' + e.message); }
+    F.tex(d.readout, `{${t.acid}(aq)} + {\\text{OH}^{-}(aq)} \\longrightarrow {${t.tex}(aq)} + {\\text{H}_{2}\\text{O}(l)}`);
   }
 
-  function draw() { console.error('D0'); scene(); console.error('D1'); drawKey(); console.error('D2'); drawRow(); console.error('D3'); readout(); }
+  function draw() { scene(); drawKey(); drawRow(); readout(); }
+  /* set once now, before the first draw, so the equation stands at first paint */
+  readout();
   register(d.fig, { update: () => {}, draw });
 })();
 };

@@ -209,11 +209,12 @@ function hubOf(pts, bonds, deg, ok = () => true) {
     /* the rod, a cylinder: impure silicon above the zone, the purer silicon that has frozen below it, the foot tapered to the holder */
     const impure = F.mixColor(PAL.soft, PAL.ink, 0.16), pure = F.mixColor(PAL.panel, PAL.soft, 0.35), E = 9;
     const piece = (y1, y2, oy, foot, top) => {   /* top: the piece that holds the zone */
-      ctx.save(); ctx.beginPath();
+      const body = () => {
+      ctx.beginPath();
       ctx.moveTo(CX - RW / 2, y1 + oy); ctx.ellipse(CX, y1 + oy, RW / 2, E, 0, Math.PI, TAU); ctx.lineTo(CX + RW / 2, y2 + oy);
       if (foot) { ctx.lineTo(CX + 7, y2 + FOOT); ctx.lineTo(CX - 7, y2 + FOOT); } else ctx.ellipse(CX, y2 + oy, RW / 2, E, 0, 0, Math.PI);
-      ctx.lineTo(CX - RW / 2, y2 + oy); ctx.closePath();
-      ctx.save(); ctx.clip();
+      ctx.lineTo(CX - RW / 2, y2 + oy); ctx.closePath(); };
+      ctx.save(); body(); ctx.save(); ctx.clip();
       const zt = HY - ZH / 2 + oy, zb = HY + ZH / 2 + oy;
       ctx.fillStyle = impure; ctx.fillRect(CX - RW, y1 + oy - 20, 2 * RW, 900);
       if (!(top && cut > 0)) { ctx.fillStyle = pure; ctx.beginPath(); ctx.moveTo(CX - RW, zb); ctx.lineTo(CX - RW / 2, zb); ctx.ellipse(CX, zb, RW / 2, E, 0, Math.PI, 0, true); ctx.lineTo(CX + RW, zb); ctx.lineTo(CX + RW, 900); ctx.lineTo(CX - RW, 900); ctx.closePath(); ctx.fill(); }
@@ -222,7 +223,7 @@ function hubOf(pts, bonds, deg, ok = () => true) {
       const sh = ctx.createLinearGradient(CX - RW / 2, 0, CX + RW / 2, 0); sh.addColorStop(0, alpha(PAL.ink, 0.16)); sh.addColorStop(0.4, alpha(PAL.ink, 0)); sh.addColorStop(1, alpha(PAL.ink, 0.2));
       ctx.fillStyle = sh; ctx.fillRect(CX - RW, y1 + oy - 20, 2 * RW, 900);
       ctx.restore();
-      ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.stroke();
+      body(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.stroke();
       ctx.beginPath(); ctx.ellipse(CX, y1 + oy, RW / 2, E, 0, 0, TAU); ctx.fillStyle = F.mixColor(top ? impure : pure, PAL.panel, 0.35); ctx.fill(); ctx.stroke();
       ctx.restore();
     };
@@ -264,7 +265,7 @@ function hubOf(pts, bonds, deg, ok = () => true) {
     text(ctx, 'top of rod', BOX.l - 12, BOX.t + 6, PAL.muted, { size: 17, align: 'right' }); text(ctx, 'foot', BOX.l - 12, BOX.b - 6, PAL.muted, { size: 17, align: 'right' });
     const now = slices(cut > 0 ? us.filter((u) => u <= UC) : us), gone = cut > 0 ? us.filter((u) => u > UC).length : 0;
     const zy = ax.Y(uz), zh = (BOX.b - BOX.t) * A;
-    if (k < 1) F.faded(ctx, 1 - k, [0, 0], () => { ctx.save(); ctx.fillStyle = alpha(F.fact(MOLTEN), 0.4); ctx.fillRect(BOX.l, zy - zh, BOX.r - BOX.l, 2 * zh); ctx.restore(); text(ctx, 'molten zone', BOX.r - 8, zy, PAL.ink, { size: 17, align: 'right', base: 'middle' }); });
+    if (k < 1) F.faded(ctx, 1 - k, [0, 0], () => { ctx.save(); ctx.fillStyle = alpha(F.fact(MOLTEN), 0.4); ctx.fillRect(BOX.l, zy - zh, BOX.r - BOX.l, 2 * zh); ctx.restore(); if (cut === 0) text(ctx, 'molten zone', BOX.r - 8, zy, PAL.ink, { size: 17, align: 'right', base: 'middle' }); });
     if (cut > 0) F.faded(ctx, k, [0, 0], () => { ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.08); ctx.fillRect(BOX.l, BOX.t, BOX.r - BOX.l, ax.Y(UC) - BOX.t); ctx.restore(); text(ctx, `cut off, with all ${gone}`, BOX.r - 8, (BOX.t + ax.Y(UC)) / 2, PAL.ink, { size: 17, align: 'right', base: 'middle' }); });
     now.forEach((n, i) => { if (!n) return; const y0 = ax.Y((i + 1) / 10), y1 = ax.Y(i / 10); ctx.save(); ctx.fillStyle = alpha(F.cat(0), 0.6); ctx.strokeStyle = F.cat(0); ctx.lineWidth = 2; ctx.fillRect(ax.X(0), y0 + 4, ax.X(n) - ax.X(0), y1 - y0 - 8); ctx.strokeRect(ax.X(0), y0 + 4, ax.X(n) - ax.X(0), y1 - y0 - 8); ctx.restore(); hits.push({ x: ax.X(n / 2), y: (y0 + y1) / 2, r: 20, name: `${n} impurity atom${n === 1 ? '' : 's'} in this tenth of the rod` }); });
     line(ctx, ax.X(2), BOX.t, ax.X(2), BOX.b, PAL.ink, 2.5, [8, 7]);
@@ -314,7 +315,7 @@ function hubOf(pts, bonds, deg, ok = () => true) {
       const z = 2 * rnd() - 1, ph = rnd() * TAU, s = Math.sqrt(1 - z * z); m.u2 = [s * Math.cos(ph), z, s * Math.sin(ph)];
     });
     mol.forEach((m, i) => { m.c2 = far[i]; });
-    return { mol, L };
+    return { mol, L, a };
   })();
   /* silica: the silicon atoms of one diamond cell that are bonded inside it, and all four oxygen atoms of each */
   const SIO2 = (() => {
@@ -336,7 +337,7 @@ function hubOf(pts, bonds, deg, ok = () => true) {
     return { si, o, bonds, hub };
   })();
   const TEMP = F.choice(d.controls, { label: '\\text{temperature}', options: [{ value: 'cold', label: '−100 °C' }, { value: 'room', label: '25 °C' }], value: 'cold', aria: 'the temperature of both solids', ms: 1600 });
-  let sig = '', mols = [];
+  let sig = '', mols = [], cell = null;
   const palSig = () => [PAL.ink, PAL.muted, ...['C', 'O', 'Si'].map((e) => F.el(e))].join('|');
   function build() {
     v.clear(); mols = [];
@@ -346,6 +347,10 @@ function hubOf(pts, bonds, deg, ok = () => true) {
       const st = [0, 1, 2, 3].map(() => v.pickable(F.mesh.stick(gL, [0, 0, 0], [0, 1, 0], 0.035, PAL.muted), 'a C=O double bond'));
       mols.push({ c, os, st });
     });
+    /* the edges of the crystal's cubic cell, which go when the crystal does */
+    cell = new window.THREE.Group(); gL.add(cell);
+    const h = CO2.a / 2 + 0.3;
+    [-1, 1].forEach((p) => [-1, 1].forEach((q) => [0, 1, 2].forEach((ax) => { const e = (sg) => { const w = [p * h, q * h, 0]; w.splice(ax, 0, sg * h); return w.slice(0, 3); }; v.pickable(F.mesh.stick(cell, e(-1), e(1), 0.014, PAL.muted), 'the crystal: every molecule in its place'); })));
     const { si, o, bonds, hub } = SIO2;
     si.forEach((s2, i) => v.pickable(F.mesh.sphere(gR, s2.p, i === hub ? 0.24 : 0.21, F.el('Si')), 'a silicon atom, Si'));
     o.forEach((x) => v.pickable(F.mesh.sphere(gR, x.p, 0.16, F.el('O')), x.bridge ? 'an oxygen atom, O, between two silicon atoms' : 'an oxygen atom, O; its second silicon atom is not drawn'));
@@ -357,6 +362,7 @@ function hubOf(pts, bonds, deg, ok = () => true) {
     if (gL && window.THREE) {
       const key = palSig(); if (key !== sig) { sig = key; build(); }
       const k = TEMP.mix((t) => (t === 'room' ? 1 : 0));
+      F.fade3(cell, clamp01(1 - 2.5 * k));
       mols.forEach((m, i) => {
         const q = CO2.mol[i], c = mixv(q.c, q.c2, k), u0 = mixv(q.u, q.u2, k), n = Math.hypot(...u0) || 1, u = u0.map((x) => x / n);
         /* a side direction square to the axis, for the two sticks of each double bond */
@@ -376,7 +382,7 @@ function hubOf(pts, bonds, deg, ok = () => true) {
     TEMP.only(ctx, 'cold', () => { row(XL, ['carbon dioxide at ', TT('−100 °C'), ': separate molecules in a crystal']); row(XR, ['silicon dioxide at ', TT('−100 °C'), ': one network']); });
     TEMP.only(ctx, 'room', () => { row(XL, ['carbon dioxide at ', TT('25 °C'), ': the same molecules, now a gas']); row(XR, ['silicon dioxide at ', TT('25 °C'), ': the same network']); });
     const at = (sym) => (c, x, y) => ball(c, x + 12, y + 11, 10, F.el(sym));
-    const dbl = (c, x, y) => { line(c, x, y + 7, x + 44, y + 7, PAL.muted, 4); line(c, x, y + 15, x + 44, y + 15, PAL.muted, 4); };
+    const dbl = (c, x, y) => { line(c, x, y + 7, x + 24, y + 7, PAL.muted, 4); line(c, x, y + 15, x + 24, y + 15, PAL.muted, 4); };
     F.legend(ctx, { l: XL - 340, r: XL + 340, t: 54, b: KH - 2 }, [{ s: 'carbon', draw: at('C') }, { s: 'oxygen', draw: at('O') }, { s: 'C=O double bond', draw: dbl }], { corner: 'top', row: true, size: 20 });
     F.legend(ctx, { l: XR - 340, r: XR + 340, t: 54, b: KH - 2 }, [{ s: 'silicon', draw: at('Si') }, { s: 'oxygen', draw: at('O') }, { s: 'Si–O single bond', color: PAL.muted, w: 5 }], { corner: 'top', row: true, size: 20 });
     tex(d.readout, '\\text{CO}_{2}\\text{: O atoms per C} = 2 \\times 1 = 2\\ \\text{(each O bonded to one C)} \\\\ \\text{SiO}_{2}\\text{: O atoms per Si} = 4 \\times \\tfrac{1}{2} = 2\\ \\text{(each O shared by two Si)}');
